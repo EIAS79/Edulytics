@@ -1,0 +1,176 @@
+@model Edulytics.Web.ViewModels.SchoolUsers.SchoolHomeViewModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.PlatformResource> T
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AcademicResource> A
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.CurriculumResource> C
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentResource> S
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AnalyticsResource> N
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.ImportResource> D
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.ReportResource> R
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.NotificationResource> Q
+
+@{
+    ViewData["Title"] = T["SchoolDashboardTitle"].Value;
+}
+
+<section class="user-page">
+    <header class="user-page-header">
+        <div>
+            <div class="user-eyebrow">
+                @T["YourSchool"]
+            </div>
+
+            <h1>@Model.SchoolName</h1>
+
+            <p class="user-page-subtitle">
+                @T["SchoolDashboardSubtitle"]
+            </p>
+        </div>
+    </header>
+
+    <section class="school-detail-card">
+        <h2>@T["AccountReady"]</h2>
+
+        <dl class="school-detail-grid">
+            <div>
+                <dt>@T["YourSchool"]</dt>
+                <dd>@Model.SchoolName</dd>
+            </div>
+
+            <div>
+                <dt>@T["YourRole"]</dt>
+                <dd>@T[$"Role{Model.Role}"]</dd>
+            </div>
+        </dl>
+    </section>
+
+    @if (Model.CanManageUsers)
+    {
+        <section class="user-dashboard-action">
+            <div>
+                <h2>@T["SchoolUsersTitle"]</h2>
+                <p>@T["SchoolUsersSubtitle"]</p>
+            </div>
+
+            <a class="school-button school-button-primary"
+               asp-controller="SchoolUsers"
+               asp-action="Index">
+                @T["ManageUsers"]
+            </a>
+        </section>
+
+        <section class="user-dashboard-action">
+            <div>
+                <h2>@T["SubjectSupervisorAssignmentsTitle"]</h2>
+                <p>@T["SubjectSupervisorAssignmentsSubtitle"]</p>
+            </div>
+
+            <a class="school-button school-button-primary"
+               asp-controller="SubjectSupervisorAssignments"
+               asp-action="Index">
+                @T["ManageSubjectSupervisorAssignments"]
+            </a>
+        </section>
+
+        <section class="user-dashboard-action">
+            <div>
+                <h2>@A["AcademicStructureTitle"]</h2>
+                <p>@A["AcademicStructureSubtitle"]</p>
+            </div>
+
+            <a class="school-button school-button-primary"
+               asp-controller="AcademicStructure"
+               asp-action="Index">
+                @A["ManageAcademicStructure"]
+            </a>
+        </section>
+
+        <section class="user-dashboard-action">
+            <div>
+                <h2>@C["CurriculumTitle"]</h2>
+                <p>@C["CurriculumSubtitle"]</p>
+            </div>
+
+            <a class="school-button school-button-primary"
+               asp-controller="Curriculum"
+               asp-action="Index">
+                @C["ManageCurriculum"]
+            </a>
+        </section>
+
+        <section class="user-dashboard-action">
+            <div>
+                <h2>@S["AssessmentTitle"]</h2>
+                <p>@S["AssessmentSubtitle"]</p>
+            </div>
+
+            <a class="school-button school-button-primary"
+               asp-controller="Assessments"
+               asp-action="Index">
+                @S["ManageAssessments"]
+            </a>
+        </section>
+    }
+
+    @if (Model.CanViewAnalytics)
+    {
+        <section class="user-dashboard-action">
+            <div>
+                <h2>@N["AnalyticsTitle"]</h2>
+                <p>@N["AnalyticsSubtitle"]</p>
+            </div>
+
+            <a class="school-button school-button-primary"
+               asp-controller="Analytics"
+               asp-action="Index">
+                @N["ManageAnalytics"]
+            </a>
+        </section>
+
+        @if (Model.CanViewReports)
+        {
+            <section class="user-dashboard-action">
+                <div>
+                    <h2>@R["DashboardReportsTitle"]</h2>
+                    <p>@R["DashboardReportsSubtitle"]</p>
+                </div>
+
+                <a class="school-button school-button-primary"
+                   asp-controller="Reports"
+                   asp-action="Index">
+                    @R["ManageReports"]
+                </a>
+            </section>
+        }
+    }
+
+    @if (Model.Role == Edulytics.Core.Constants.RoleNames.SchoolAdmin ||
+         Model.Role == Edulytics.Core.Constants.RoleNames.Teacher)
+    {
+        <section class="user-dashboard-action">
+            <div>
+                <h2>@D["DashboardImportTitle"]</h2>
+                <p>@D["DashboardImportSubtitle"]</p>
+            </div>
+
+            <a class="school-button school-button-primary"
+               asp-controller="Imports"
+               asp-action="Index">
+                @D["ManageImports"]
+            </a>
+        </section>
+    }
+
+    <section class="user-dashboard-action">
+        <div>
+            <h2>@Q["DashboardNotificationsTitle"]</h2>
+            <p>@Q["DashboardNotificationsSubtitle"]</p>
+        </div>
+
+        <a class="school-button school-button-primary"
+           asp-controller="Notifications"
+           asp-action="Index">
+            @Q["OpenNotifications"]
+        </a>
+    </section>
+
+</section>

@@ -1,0 +1,189 @@
+@model Edulytics.Web.ViewModels.Analytics.AnalyticsIndexViewModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AnalyticsResource> A
+@using Edulytics.Web.ViewModels.Analytics
+
+@{
+    ViewData["Title"] = A["AnalyticsTitle"].Value;
+    var d = Model.Dashboard;
+}
+
+<section class="analytics-page" data-analytics-live="true">
+    <header class="analytics-header">
+        <div>
+            <div class="user-eyebrow">
+                @A["AnalyticsTitle"]
+            </div>
+
+            <h1>@A["AnalyticsTitle"]</h1>
+
+            <p>@A["AnalyticsSubtitle"]</p>
+        </div>
+
+        <a class="school-button school-button-secondary"
+           asp-controller="SchoolHome"
+           asp-action="Dashboard">
+            @A["BackToDashboard"]
+        </a>
+    </header>
+
+    @if (TempData["Success"] is string success)
+    {
+        <div class="school-alert school-alert-success"
+             role="status">
+            @success
+        </div>
+    }
+
+    @if (TempData["Error"] is string error)
+    {
+        <div class="school-alert school-alert-error"
+             role="alert">
+            @error
+        </div>
+    }
+
+    <section class="analytics-status-card"
+             aria-label="@A["GeneratedAt"]">
+
+        <div>
+            @if (d.IsStale)
+            {
+                <strong class="analytics-stale">
+                    @A["StaleData"]
+                </strong>
+
+                <p>@A["StaleDataHelp"]</p>
+            }
+            else
+            {
+                <strong class="analytics-current">
+                    @A["UpToDate"]
+                </strong>
+            }
+
+            @if (d.CalculatedAtUtc.HasValue)
+            {
+                <p class="analytics-generated">
+                    @A["GeneratedAt"]:
+                    <time datetime="@d.CalculatedAtUtc.Value.ToString("O")">
+                        @d.CalculatedAtUtc.Value.ToString("yyyy-MM-dd HH:mm 'UTC'")
+                    </time>
+                </p>
+            }
+
+            <p>@A["EvidenceRule"]</p>
+        </div>
+
+        @if (d.CanRecalculate)
+        {
+            <form asp-controller="Analytics"
+                  asp-action="Recalculate"
+                  method="post"
+                  class="analytics-recalculate-form">
+
+                @Html.AntiForgeryToken()
+
+                <button type="submit"
+                        class="school-button school-button-primary">
+                    @A["Recalculate"]
+                </button>
+
+                <small>@A["RecalculateHelp"]</small>
+            </form>
+        }
+    </section>
+
+    <form method="get"
+          asp-controller="Analytics"
+          asp-action="Index"
+          class="analytics-filter-card">
+
+        <h2>@A["Filters"]</h2>
+
+        <div class="analytics-filter-grid">
+            <div>
+                <label for="academicYearId">
+                    @A["AcademicYear"]
+                </label>
+
+                <select id="academicYearId"
+                        name="academicYearId">
+                    <option value="">
+                        @A["AllYears"]
+                    </option>
+
+                    @foreach (var item in d.AcademicYears)
+                    {
+                        <option value="@item.Id"
+                                selected="@(d.SelectedAcademicYearId == item.Id ? "selected" : null)">
+                            @item.Name
+                        </option>
+                    }
+                </select>
+            </div>
+
+            <div>
+                <label for="classGroupId">
+                    @A["Class"]
+                </label>
+
+                <select id="classGroupId"
+                        name="classGroupId">
+                    <option value="">
+                        @A["AllClasses"]
+                    </option>
+
+                    @foreach (var item in d.ClassGroups)
+                    {
+                        <option value="@item.Id"
+                                selected="@(d.SelectedClassGroupId == item.Id ? "selected" : null)">
+                            @item.Name
+                        </option>
+                    }
+                </select>
+            </div>
+
+            <div>
+                <label for="subjectId">
+                    @A["Subject"]
+                </label>
+
+                <select id="subjectId"
+                        name="subjectId">
+                    <option value="">
+                        @A["AllSubjects"]
+                    </option>
+
+                    @foreach (var item in d.Subjects)
+                    {
+                        <option value="@item.Id"
+                                selected="@(d.SelectedSubjectId == item.Id ? "selected" : null)">
+                            @item.Name
+                        </option>
+                    }
+                </select>
+            </div>
+
+            <button type="submit"
+                    class="school-button school-button-primary">
+                @A["ApplyFilters"]
+            </button>
+        </div>
+    </form>
+
+    @if (!d.HasData)
+    {
+        <section class="analytics-empty">
+            <h2>@A["NoAnalytics"]</h2>
+            <p>@A["NoAnalyticsHint"]</p>
+        </section>
+    }
+    else
+    {
+        <partial name="_AnalyticsDashboardResults"
+                 model="d" />
+    }
+</section>
+
+<script src="~/lib/signalr/signalr.min.js"></script>
+<script src="~/js/analytics-live.js"></script>

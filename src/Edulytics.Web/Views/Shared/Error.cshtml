@@ -1,0 +1,68 @@
+@model Edulytics.Web.Models.ErrorViewModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SharedResource> T
+@{
+    var isNotFound =
+        Model.StatusCode == 404;
+
+    var isUnavailable =
+        Model.StatusCode >= 500;
+
+    var title =
+        isNotFound
+            ? T["NotFoundTitle"].Value
+            : isUnavailable
+                ? T["ServiceUnavailableTitle"].Value
+                : T["ErrorTitle"].Value;
+
+    var heading =
+        isNotFound
+            ? T["NotFoundHeading"].Value
+            : isUnavailable
+                ? T["ServiceUnavailableHeading"].Value
+                : T["ErrorHeading"].Value;
+
+    var message =
+        isNotFound
+            ? T["NotFoundMessage"].Value
+            : isUnavailable
+                ? T["ServiceUnavailableMessage"].Value
+                : T["ErrorMessage"].Value;
+
+    ViewData["Title"] = title;
+}
+
+<main class="production-error-page">
+    <section class="production-error-card"
+             aria-labelledby="production-error-heading">
+        <p class="production-error-status">
+            @Model.StatusCode
+        </p>
+
+        <h1 id="production-error-heading">
+            @heading
+        </h1>
+
+        <p class="production-error-message">
+            @message
+        </p>
+
+        @if (Model.ShowRequestId)
+        {
+            <div class="production-error-correlation">
+                <strong>
+                    @T["ErrorCorrelationLabel"]:
+                </strong>
+
+                <code>
+                    @Model.RequestId
+                </code>
+            </div>
+        }
+
+        <a class="production-error-link"
+           asp-controller="Home"
+           asp-action="Index">
+            @T["ErrorReturnHome"]
+        </a>
+    </section>
+</main>

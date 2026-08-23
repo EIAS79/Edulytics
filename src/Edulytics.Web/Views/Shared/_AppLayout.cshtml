@@ -1,0 +1,68 @@
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SharedResource> Brand
+@{
+    var localizedProductName = Brand["ProductName"].Value;
+}
+@using System.Globalization
+@inject IStringLocalizer<SharedResource> SharedText
+@inject IStringLocalizer<AuditResource> AuditText
+<!DOCTYPE html>
+<html lang="@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] | @localizedProductName</title>
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+</head>
+<body class="ed-app-body">
+    <header class="ed-app-header">
+        <div class="ed-app-header-inner">
+            <a class="ed-brand"
+               asp-controller="Platform"
+               asp-action="Dashboard">
+            <partial name="_LocalizedBrand" />
+        </a>
+
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                @if (User.IsInRole("SchoolAdmin") ||
+                     User.IsInRole("SuperAdmin"))
+                {
+                    <a class="ed-signout-button text-decoration-none"
+                       asp-controller="Audit"
+                       asp-action="Index">
+                        @AuditText["AuditLog"]
+                    </a>
+                }
+
+                <form asp-controller="Account"
+                      asp-action="Logout"
+                      method="post"
+                      class="m-0">
+                    @Html.AntiForgeryToken()
+                    <button type="submit"
+                            class="ed-signout-button"
+                            aria-label="@SharedText["SignOut"]">
+                        @SharedText["SignOut"]
+                    </button>
+                </form>
+            }
+        </div>
+    </header>
+
+    <main class="ed-app-main">
+        @RenderBody()
+    </main>
+
+    <script src="~/js/site.js"
+            asp-append-version="true"></script>
+
+    @await RenderSectionAsync(
+        "Scripts",
+        required: false)
+</body>
+</html>
