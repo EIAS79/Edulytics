@@ -6,10 +6,12 @@ public sealed class LearningOutcome : ISchoolScoped
 {
     public Guid Id { get; set; }
     public Guid SchoolId { get; set; }
+    public Guid AcademicProgramId { get; set; }
     public Guid FrameworkVersionId { get; set; }
     public Guid SubjectId { get; set; }
     public Guid GradeLevelId { get; set; }
     public Guid TopicId { get; set; }
+    public Guid? OfficialContentNodeId { get; set; }
     public string Code { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public decimal Weight { get; set; }

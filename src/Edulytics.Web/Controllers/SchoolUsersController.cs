@@ -1,6 +1,8 @@
 using System.Security.Claims;
 using Edulytics.Core.Constants;
+using Edulytics.Services.Academics;
 using Edulytics.Services.Users;
+using Edulytics.Services.StudentSetup;
 using Edulytics.Web.Email;
 using Edulytics.Web.ViewModels.SchoolUsers;
 using Microsoft.AspNetCore.Authorization;
@@ -19,15 +21,19 @@ public sealed class SchoolUsersController : Controller
     private readonly ISchoolUserManagementService _users;
     private readonly IStringLocalizer<PlatformResource> _text;
     private readonly IUserInvitationDeliveryService _invitations;
+    private readonly IStudentRoleProvisioningService
+        _studentProvisioning;
 
     public SchoolUsersController(
         ISchoolUserManagementService users,
         IStringLocalizer<PlatformResource> text,
-        IUserInvitationDeliveryService invitations)
+        IUserInvitationDeliveryService invitations,
+        IStudentRoleProvisioningService studentProvisioning)
     {
         _users = users;
         _text = text;
         _invitations = invitations;
+        _studentProvisioning = studentProvisioning;
     }
 
     [HttpGet("")]
@@ -105,6 +111,7 @@ public sealed class SchoolUsersController : Controller
             });
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor + "," + RoleNames.SuperAdmin)]
     [HttpPost("Create")]
     [ValidateAntiForgeryToken]
     [EnableRateLimiting("SchoolUserCreate")]
@@ -232,15 +239,25 @@ public sealed class SchoolUsersController : Controller
             return QueryFailure(result.Error);
         }
 
+        var studentSetup =
+            await _studentProvisioning.GetContextAsync(
+                actorUserId,
+                result.Value.Context.SchoolId,
+                result.Value.Id,
+                cancellationToken);
+
         return View(
             new SchoolUserDetailsViewModel
             {
                 User = result.Value,
                 RoleOptions =
-                    BuildRoleOptions()
+                    BuildRoleOptions(),
+                StudentSetup =
+                    studentSetup
             });
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor + "," + RoleNames.SuperAdmin)]
     [HttpPost("{id:guid}/Active")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> SetActive(
@@ -286,6 +303,7 @@ public sealed class SchoolUsersController : Controller
             });
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor + "," + RoleNames.SuperAdmin)]
     [HttpPost("{id:guid}/Lock")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> SetLocked(
@@ -331,17 +349,83 @@ public sealed class SchoolUsersController : Controller
             });
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor + "," + RoleNames.SuperAdmin)]
     [HttpPost("{id:guid}/Role")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> ChangeRole(
         Guid id,
         Guid schoolId,
         string role,
+        string? studentNumber,
+        string? firstName,
+        string? lastName,
+        Guid? classGroupId,
         CancellationToken cancellationToken)
     {
         if (!TryGetActorId(out var actorUserId))
         {
             return Forbid();
+        }
+
+        if (string.Equals(
+                role,
+                RoleNames.Student,
+                StringComparison.Ordinal))
+        {
+            if (!classGroupId.HasValue)
+            {
+                TempData["SchoolUserError"] =
+                    _text["StudentSetupMissingFields"].Value;
+
+                return RedirectToAction(
+                    nameof(Details),
+                    new
+                    {
+                        id,
+                        schoolId
+                    });
+            }
+
+            var setup =
+                await _studentProvisioning
+                    .ConvertToStudentAsync(
+                        actorUserId,
+                        schoolId,
+                        id,
+                        new StudentRoleProvisioningRequest(
+                            studentNumber ?? string.Empty,
+                            firstName ?? string.Empty,
+                            lastName ?? string.Empty,
+                            classGroupId.Value),
+                        cancellationToken);
+
+            if (!setup.Succeeded)
+            {
+                var key =
+                    StudentSetupErrorKey(setup);
+
+                TempData["SchoolUserError"] =
+                    _text[key].Value;
+
+                return RedirectToAction(
+                    nameof(Details),
+                    new
+                    {
+                        id,
+                        schoolId
+                    });
+            }
+
+            TempData["SchoolUserSuccess"] =
+                _text["StudentRoleSetupSuccess"].Value;
+
+            return RedirectToAction(
+                nameof(Details),
+                new
+                {
+                    id,
+                    schoolId
+                });
         }
 
         var result =
@@ -372,6 +456,7 @@ public sealed class SchoolUsersController : Controller
             });
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor + "," + RoleNames.SuperAdmin)]
     [HttpPost("{id:guid}/Password-Link")]
     [ValidateAntiForgeryToken]
     [EnableRateLimiting("InvitationResend")]
@@ -460,6 +545,127 @@ public sealed class SchoolUsersController : Controller
                 id,
                 schoolId
             });
+    }
+
+    private static string StudentSetupErrorKey(
+        StudentRoleProvisioningResult setup)
+    {
+        if (setup.Error ==
+            StudentRoleProvisioningErrorCode
+                .UnderlyingOperationFailed)
+        {
+            return setup.AcademicError switch
+            {
+                AcademicStructureErrorCode
+                    .DuplicateStudentNumber =>
+                    "StudentSetupDuplicateStudentNumber",
+
+                AcademicStructureErrorCode
+                    .StudentSeatLimitReached =>
+                    "StudentSetupSeatLimitReached",
+
+                AcademicStructureErrorCode
+                    .InvalidStudentAccount =>
+                    "StudentSetupInvalidStudentAccount",
+
+                AcademicStructureErrorCode
+                    .DuplicateStudentUserLink =>
+                    "StudentSetupDuplicateStudentUserLink",
+
+                AcademicStructureErrorCode
+                    .ClassGroupNotFound =>
+                    "StudentSetupClassNotFound",
+
+                AcademicStructureErrorCode
+                    .DuplicateEnrollment =>
+                    "StudentSetupDuplicateEnrollment",
+
+                AcademicStructureErrorCode
+                    .StudentProfileNotFound =>
+                    "StudentSetupProfileStateChanged",
+
+                AcademicStructureErrorCode
+                    .StudentAlreadyArchived =>
+                    "StudentSetupProfileStateChanged",
+
+                AcademicStructureErrorCode
+                    .StudentNotArchived =>
+                    "StudentSetupProfileStateChanged",
+
+                AcademicStructureErrorCode
+                    .ConcurrencyConflict =>
+                    "StudentSetupConcurrencyConflict",
+
+                AcademicStructureErrorCode
+                    .InvalidCode =>
+                    "StudentSetupInvalidStudentNumber",
+
+                AcademicStructureErrorCode
+                    .InvalidName =>
+                    "StudentSetupInvalidName",
+
+                AcademicStructureErrorCode
+                    .Required =>
+                    "StudentSetupMissingFields",
+
+                AcademicStructureErrorCode
+                    .SchoolNotActive =>
+                    "StudentSetupUnavailable",
+
+                AcademicStructureErrorCode
+                    .AccessDenied =>
+                    "StudentSetupUnavailable",
+
+                AcademicStructureErrorCode
+                    .PersistenceError =>
+                    "StudentSetupPersistenceError",
+
+                _ =>
+                    "StudentSetupFailed"
+            };
+        }
+
+        return setup.Error switch
+        {
+            StudentRoleProvisioningErrorCode
+                .MissingStudentNumber =>
+                "StudentSetupMissingFields",
+
+            StudentRoleProvisioningErrorCode
+                .MissingFirstName =>
+                "StudentSetupMissingFields",
+
+            StudentRoleProvisioningErrorCode
+                .MissingLastName =>
+                "StudentSetupMissingFields",
+
+            StudentRoleProvisioningErrorCode
+                .MissingClass =>
+                "StudentSetupMissingFields",
+
+            StudentRoleProvisioningErrorCode
+                .ClassNotFound =>
+                "StudentSetupClassNotFound",
+
+            StudentRoleProvisioningErrorCode
+                .EnrollmentConflict =>
+                "StudentSetupEnrollmentConflict",
+
+            StudentRoleProvisioningErrorCode
+                .RecoveryFailed =>
+                "StudentSetupRecoveryFailed",
+
+            StudentRoleProvisioningErrorCode
+                .AccessDenied =>
+                "StudentSetupUnavailable",
+
+            StudentRoleProvisioningErrorCode
+                .InvalidTargetRole =>
+                "StudentSetupUnavailable",
+
+            _ =>
+                "StudentSetupFailed"
+        };
     }
 
     private static string GetInvitationCulture()

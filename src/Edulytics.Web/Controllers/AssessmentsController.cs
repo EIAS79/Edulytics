@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using Edulytics.Core.Constants;
 using Edulytics.Services.Assessments;
 using Edulytics.Web.ViewModels.Assessments;
 using Microsoft.AspNetCore.Authorization;
@@ -36,6 +37,7 @@ public sealed class AssessmentsController : Controller
             : View(new AssessmentIndexViewModel(result.Value));
     }
 
+    [Authorize(Roles = RoleNames.Teacher)]
     [HttpPost("")]
     [ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
@@ -80,6 +82,7 @@ public sealed class AssessmentsController : Controller
             : View(new AssessmentDetailsViewModel(result.Value));
     }
 
+    [Authorize(Roles = RoleNames.Teacher)]
     [HttpGet("{id:guid}/edit")]
     public async Task<IActionResult> Edit(Guid id, CancellationToken cancellationToken)
     {
@@ -91,6 +94,7 @@ public sealed class AssessmentsController : Controller
             : View(new AssessmentEditViewModel(result.Value));
     }
 
+    [Authorize(Roles = RoleNames.Teacher)]
     [HttpPost("{id:guid}/edit")]
     [ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
@@ -123,6 +127,7 @@ public sealed class AssessmentsController : Controller
             : RedirectToAction(nameof(Edit), new { id });
     }
 
+    [Authorize(Roles = RoleNames.Teacher)]
     [HttpPost("{id:guid}/questions")]
     [ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
@@ -132,6 +137,7 @@ public sealed class AssessmentsController : Controller
         string prompt,
         decimal maxScore,
         int order,
+        Guid[]? outcomeIds,
         string rowVersion,
         CancellationToken cancellationToken)
     {
@@ -145,13 +151,20 @@ public sealed class AssessmentsController : Controller
 
         var result = await _service.CreateQuestionAsync(
             actorId,
-            new CreateAssessmentQuestionRequest(id, prompt, maxScore, order, bytes),
+            new CreateAssessmentQuestionRequest(
+                id,
+                prompt,
+                maxScore,
+                order,
+                outcomeIds ?? [],
+                bytes),
             cancellationToken);
 
         SetFeedback(result, "SuccessQuestionCreated");
         return RedirectToAction(nameof(Details), new { id });
     }
 
+    [Authorize(Roles = RoleNames.Teacher)]
     [HttpGet("questions/{questionId:guid}/edit")]
     public async Task<IActionResult> EditQuestion(
         Guid questionId,
@@ -169,9 +182,11 @@ public sealed class AssessmentsController : Controller
         return View(new AssessmentQuestionEditViewModel(
             assessmentId,
             question.Value,
+            assessment.Value.EligibleOutcomes,
             assessment.Value.Assessment.RowVersion));
     }
 
+    [Authorize(Roles = RoleNames.Teacher)]
     [HttpPost("questions/{questionId:guid}/edit")]
     [ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
@@ -182,6 +197,7 @@ public sealed class AssessmentsController : Controller
         string prompt,
         decimal maxScore,
         int order,
+        Guid[]? outcomeIds,
         string rowVersion,
         CancellationToken cancellationToken)
     {
@@ -195,7 +211,13 @@ public sealed class AssessmentsController : Controller
 
         var result = await _service.UpdateQuestionAsync(
             actorId,
-            new UpdateAssessmentQuestionRequest(questionId, prompt, maxScore, order, bytes),
+            new UpdateAssessmentQuestionRequest(
+                questionId,
+                prompt,
+                maxScore,
+                order,
+                outcomeIds ?? [],
+                bytes),
             cancellationToken);
 
         SetFeedback(result, "SuccessQuestionUpdated");
@@ -205,6 +227,89 @@ public sealed class AssessmentsController : Controller
             : RedirectToAction(nameof(EditQuestion), new { questionId, assessmentId });
     }
 
+
+    [Authorize(Roles = RoleNames.Teacher)]
+    [HttpPost("{id:guid}/delete")]
+    [ValidateAntiForgeryToken]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public async Task<IActionResult> DeleteAssessment(
+        Guid id,
+        string rowVersion,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        if (!TryDecodeRowVersion(rowVersion, out var bytes))
+        {
+            TempData["Error"] =
+                _text["ErrorConcurrencyConflict"].Value;
+
+            return RedirectToAction(
+                nameof(Details),
+                new { id });
+        }
+
+        var result = await _service.DeleteAssessmentAsync(
+            actorId,
+            new DeleteAssessmentRequest(
+                id,
+                bytes),
+            cancellationToken);
+
+        SetFeedback(
+            result,
+            "SuccessAssessmentDeleted");
+
+        return result.Succeeded
+            ? RedirectToAction(nameof(Index))
+            : RedirectToAction(
+                nameof(Details),
+                new { id });
+    }
+
+    [Authorize(Roles = RoleNames.Teacher)]
+    [HttpPost("questions/{questionId:guid}/delete")]
+    [ValidateAntiForgeryToken]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public async Task<IActionResult> DeleteQuestion(
+        Guid questionId,
+        Guid assessmentId,
+        string rowVersion,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        if (!TryDecodeRowVersion(rowVersion, out var bytes))
+        {
+            TempData["Error"] =
+                _text["ErrorConcurrencyConflict"].Value;
+
+            return RedirectToAction(
+                nameof(Details),
+                new { id = assessmentId });
+        }
+
+        var result = await _service.DeleteQuestionAsync(
+            actorId,
+            new DeleteAssessmentQuestionRequest(
+                questionId,
+                bytes),
+            cancellationToken);
+
+        SetFeedback(
+            result,
+            "SuccessQuestionDeleted");
+
+        return RedirectToAction(
+            nameof(Details),
+            new { id = assessmentId });
+    }
+
+    [Authorize(Roles = RoleNames.Teacher)]
     [HttpPost("questions/{questionId:guid}/outcomes")]
     [ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
@@ -233,6 +338,7 @@ public sealed class AssessmentsController : Controller
         return RedirectToAction(nameof(Details), new { id = assessmentId });
     }
 
+    [Authorize(Roles = RoleNames.Teacher)]
     [HttpPost("questions/{questionId:guid}/outcomes/{outcomeId:guid}/remove")]
     [ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
@@ -261,6 +367,7 @@ public sealed class AssessmentsController : Controller
         return RedirectToAction(nameof(Details), new { id = assessmentId });
     }
 
+    [Authorize(Roles = RoleNames.Teacher)]
     [HttpPost("{id:guid}/open")]
     [ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
@@ -283,6 +390,7 @@ public sealed class AssessmentsController : Controller
         return RedirectToAction(nameof(Details), new { id });
     }
 
+    [Authorize(Roles = RoleNames.Teacher)]
     [HttpPost("{id:guid}/close")]
     [ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
@@ -326,6 +434,7 @@ public sealed class AssessmentsController : Controller
         return View(new AssessmentResultsViewModel(result.Value));
     }
 
+    [Authorize(Roles = RoleNames.Teacher)]
     [HttpPost("{id:guid}/results/{studentProfileId:guid}")]
     [ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]

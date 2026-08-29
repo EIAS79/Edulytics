@@ -61,7 +61,7 @@
     <value>Status</value>
   </data>
   <data name="CountryCode" xml:space="preserve">
-    <value>Country code</value>
+    <value>Country</value>
   </data>
   <data name="City" xml:space="preserve">
     <value>City</value>
@@ -244,7 +244,7 @@
     <value>School users</value>
   </data>
   <data name="SchoolUsersSubtitle" xml:space="preserve">
-    <value>Create and manage user accounts for this school.</value>
+    <value>School user accounts and access status.</value>
   </data>
   <data name="CreateSchoolUser" xml:space="preserve">
     <value>Create user</value>
@@ -376,7 +376,7 @@
     <value>This school is archived. User accounts are read-only.</value>
   </data>
   <data name="SelfManagementProtected" xml:space="preserve">
-    <value>For safety, a school administrator cannot change their own role, activation state, lock state, or password through this administration screen.</value>
+    <value>Your own account is protected on this screen. Role, activation, lock and password-management actions are unavailable.</value>
   </data>
   <data name="UserAccessDenied" xml:space="preserve">
     <value>You do not have permission to manage these users.</value>
@@ -403,7 +403,7 @@
     <value>Select a valid school role.</value>
   </data>
   <data name="UserCannotManageSelf" xml:space="preserve">
-    <value>You cannot perform this action on your own administrator account.</value>
+    <value>You cannot perform this action on your own protected account.</value>
   </data>
   <data name="UserPersistenceError" xml:space="preserve">
     <value>The user change could not be saved. Try again.</value>
@@ -445,7 +445,7 @@
     <value>School dashboard</value>
   </data>
   <data name="SchoolDashboardSubtitle" xml:space="preserve">
-    <value>Your Edulytics school account is ready.</value>
+    <value>A clear view of your school workspace, responsibilities and next actions.</value>
   </data>
   <data name="YourSchool" xml:space="preserve">
     <value>Your school</value>
@@ -454,7 +454,7 @@
     <value>Your role</value>
   </data>
   <data name="AccountReady" xml:space="preserve">
-    <value>Account information</value>
+    <value>Workspace overview</value>
   </data>
   <data name="ManageUsers" xml:space="preserve">
     <value>Manage users</value>
@@ -561,4 +561,173 @@
   <data name="SubjectSupervisorErrorAssignmentNotFound" xml:space="preserve">
     <value>The assignment could not be found.</value>
   </data>
+  <data name="CountryPoland" xml:space="preserve">
+    <value>Poland (PL)</value>
+  </data>
+  <data name="CountryUnitedArabEmirates" xml:space="preserve">
+    <value>United Arab Emirates (UAE)</value>
+  </data>
+  <data name="TimeZoneAutoHelp" xml:space="preserve">
+    <value>Set automatically from the selected country.</value>
+  </data>
+  <data name="InvalidCountryCode" xml:space="preserve">
+    <value>Select Poland or the United Arab Emirates.</value>
+  </data>
+  <data name="SchoolUsersAdminSubtitle" xml:space="preserve">
+    <value>View school users and account status. User account changes are handled by the subject supervisor.</value>
+  </data>
+  <data name="SchoolUsersSupervisorSubtitle" xml:space="preserve">
+    <value>Create and manage Teacher and Student accounts for this school.</value>
+  </data>
+  <data name="SchoolUsersPlatformSubtitle" xml:space="preserve">
+    <value>Create and manage school-scoped user accounts.</value>
+  </data>
+  <data name="CreateOperationalUserIntro" xml:space="preserve">
+    <value>Create a Teacher or Student account. A secure password setup link is generated after creation.</value>
+  </data>
+  <data name="DashboardRoleScope" xml:space="preserve">
+    <value>Your access</value>
+  </data>
+  <data name="AccessView" xml:space="preserve">
+    <value>View only</value>
+  </data>
+  <data name="AccessManage" xml:space="preserve">
+    <value>Manage</value>
+  </data>
+  <data name="AccessMonitor" xml:space="preserve">
+    <value>Monitor</value>
+  </data>
+  <data name="AccessTeach" xml:space="preserve">
+    <value>Teach &amp; assess</value>
+  </data>
+  <data name="AccessExport" xml:space="preserve">
+    <value>Manage &amp; export</value>
+  </data>
+  <data name="DashboardSchoolUsersAdminDescription" xml:space="preserve">
+    <value>Review school users, roles and account status without changing accounts.</value>
+  </data>
+  <data name="DashboardSchoolUsersSupervisorDescription" xml:space="preserve">
+    <value>Create and manage Teacher and Student accounts and their access state.</value>
+  </data>
+  <data name="DashboardSupervisorAssignmentsDescription" xml:space="preserve">
+    <value>Assign existing subject supervisors to the subjects they oversee.</value>
+  </data>
+  <data name="DashboardAcademicViewDescription" xml:space="preserve">
+    <value>Review years, terms, grades, classes, subjects, assignments and enrollment.</value>
+  </data>
+  <data name="DashboardAcademicManageDescription" xml:space="preserve">
+    <value>Manage years, terms, grades, classes, subjects, teacher assignments and enrollment.</value>
+  </data>
+  <data name="DashboardCurriculumViewDescription" xml:space="preserve">
+    <value>Review the adopted curriculum, topics and official learning outcomes.</value>
+  </data>
+  <data name="DashboardCurriculumManageDescription" xml:space="preserve">
+    <value>Manage the adopted curriculum, topics and official learning outcomes.</value>
+  </data>
+  <data name="DashboardAssessmentMonitorDescription" xml:space="preserve">
+    <value>Monitor assessments, questions, learning-outcome coverage and student results.</value>
+  </data>
+  <data name="DashboardAssessmentTeacherDescription" xml:space="preserve">
+    <value>Create assessments, manage questions and learning-outcome mappings, and enter results.</value>
+  </data>
+  <data name="DashboardAnalyticsDescription" xml:space="preserve">
+    <value>Explore mastery, outcome gaps, progress and students who may need intervention.</value>
+  </data>
+  <data name="DashboardReportsViewDescription" xml:space="preserve">
+    <value>Review school reports and previously generated exports within your role scope.</value>
+  </data>
+  <data name="DashboardReportsManageDescription" xml:space="preserve">
+    <value>Create role-scoped reports and request CSV/XLSX exports.</value>
+  </data>
+  <data name="DashboardImportsViewDescription" xml:space="preserve">
+    <value>Review import history, batch status and validation results.</value>
+  </data>
+  <data name="DashboardImportsManageDescription" xml:space="preserve">
+    <value>Validate and import school data from CSV or Excel files.</value>
+  </data>
+  <data name="DashboardNotificationsDescription" xml:space="preserve">
+    <value>Review your notification inbox and email delivery status.</value>
+  </data>
+  <data name="ViewUsers" xml:space="preserve">
+    <value>View users</value>
+  </data>
+  <data name="ManageUsersOperational" xml:space="preserve">
+    <value>Manage users</value>
+  </data>
+  <data name="ManageSupervisors" xml:space="preserve">
+    <value>Manage supervisors</value>
+  </data>
+  <data name="ViewStructure" xml:space="preserve">
+    <value>View structure</value>
+  </data>
+  <data name="ManageStructure" xml:space="preserve">
+    <value>Manage structure</value>
+  </data>
+  <data name="ViewCurriculum" xml:space="preserve">
+    <value>View curriculum</value>
+  </data>
+  <data name="ManageCurriculumLink" xml:space="preserve">
+    <value>Manage curriculum</value>
+  </data>
+  <data name="MonitorAssessments" xml:space="preserve">
+    <value>Monitor assessments</value>
+  </data>
+  <data name="ManageAssessmentsLink" xml:space="preserve">
+    <value>Manage assessments</value>
+  </data>
+  <data name="ViewAnalytics" xml:space="preserve">
+    <value>View analytics</value>
+  </data>
+  <data name="ViewReports" xml:space="preserve">
+    <value>View reports</value>
+  </data>
+  <data name="ManageReportsLink" xml:space="preserve">
+    <value>Open reports &amp; exports</value>
+  </data>
+  <data name="ViewImportHistory" xml:space="preserve">
+    <value>View import history</value>
+  </data>
+  <data name="ManageImportsLink" xml:space="preserve">
+    <value>Manage imports</value>
+  </data>
+  <data name="OpenNotificationsLink" xml:space="preserve">
+    <value>Open notifications</value>
+  </data>
+  <data name="AccessExportOwn" xml:space="preserve">
+    <value>Export own scope</value>
+  </data>
+  <data name="DashboardReportsTeacherDescription" xml:space="preserve">
+    <value>Review reports for your assigned scope and request CSV/XLSX exports for that scope.</value>
+  </data>
+  <data name="ExportOwnScope" xml:space="preserve">
+    <value>Export own scope</value>
+  </data>
+  <data name="StudentSetupTitle" xml:space="preserve"><value>Student account setup</value></data>
+  <data name="StudentSetupDescription" xml:space="preserve"><value>Student role requires a linked student profile and class enrollment. These fields are used when saving the Student role.</value></data>
+  <data name="StudentNumber" xml:space="preserve"><value>Student number</value></data>
+  <data name="FirstName" xml:space="preserve"><value>First name</value></data>
+  <data name="LastName" xml:space="preserve"><value>Last name</value></data>
+  <data name="StudentClass" xml:space="preserve"><value>Class</value></data>
+  <data name="SelectStudentClass" xml:space="preserve"><value>Select a class</value></data>
+  <data name="StudentSetupCurrentEnrollment" xml:space="preserve"><value>Current enrollment</value></data>
+  <data name="StudentSetupComplete" xml:space="preserve"><value>Setup complete</value></data>
+  <data name="StudentSetupIncomplete" xml:space="preserve"><value>Setup required</value></data>
+  <data name="StudentSetupUnavailable" xml:space="preserve"><value>Student setup is unavailable for this action or account.</value></data>
+  <data name="StudentRoleSetupSuccess" xml:space="preserve"><value>Student role, profile and enrollment were saved successfully.</value></data>
+  <data name="StudentSetupMissingFields" xml:space="preserve"><value>Student number, first name, last name and class are required for the Student role.</value></data>
+  <data name="StudentSetupClassNotFound" xml:space="preserve"><value>The selected class is not available in this school.</value></data>
+  <data name="StudentSetupEnrollmentConflict" xml:space="preserve"><value>This student already has a different class enrollment for the same academic year.</value></data>
+  <data name="StudentSetupFailed" xml:space="preserve"><value>Student setup could not be completed. No incomplete Teacher-to-Student conversion was left behind.</value></data>
+  <data name="StudentSetupRecoveryFailed" xml:space="preserve"><value>Student setup failed and automatic recovery could not be completed. Review this account before retrying.</value></data>
+
+  <data name="StudentSetupDuplicateStudentNumber" xml:space="preserve"><value>This student number already exists. Enter a different student number.</value></data>
+  <data name="StudentSetupSeatLimitReached" xml:space="preserve"><value>The committed student-seat limit has been reached. Increase the committed seats before adding another active student.</value></data>
+  <data name="StudentSetupInvalidStudentAccount" xml:space="preserve"><value>This account cannot be linked as an active Student account. Review the account status and role.</value></data>
+  <data name="StudentSetupDuplicateStudentUserLink" xml:space="preserve"><value>This login account is already linked to a student profile.</value></data>
+  <data name="StudentSetupDuplicateEnrollment" xml:space="preserve"><value>This student is already enrolled in a class for this academic year.</value></data>
+  <data name="StudentSetupProfileStateChanged" xml:space="preserve"><value>The student profile changed while setup was running. Reload the account before retrying.</value></data>
+  <data name="StudentSetupConcurrencyConflict" xml:space="preserve"><value>This student record changed while you were saving. Reload the account and try again.</value></data>
+  <data name="StudentSetupInvalidStudentNumber" xml:space="preserve"><value>The student number is invalid. Use only A-Z, 0-9 and hyphen.</value></data>
+  <data name="StudentSetupInvalidName" xml:space="preserve"><value>The student's first or last name is invalid or too long.</value></data>
+  <data name="StudentSetupPersistenceError" xml:space="preserve"><value>The student setup could not be saved. The role change was rolled back. Reload the account and try again.</value></data>
 </root>

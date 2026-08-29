@@ -39,6 +39,18 @@ public sealed class AcademicStructureRepository : IAcademicStructureRepository
             .ThenBy(x => x.Name)
             .ToArrayAsync(cancellationToken);
 
+        var programs = await _db.AcademicPrograms.AsNoTracking()
+            .Where(x => x.SchoolId == schoolId)
+            .OrderBy(x => x.Name)
+            .ToArrayAsync(cancellationToken);
+
+        var programOfferings =
+            await _db.AcademicYearProgramOfferings
+                .AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .OrderByDescending(x => x.CreatedAtUtc)
+                .ToArrayAsync(cancellationToken);
+
         var classes = await _db.ClassGroups.AsNoTracking()
             .Where(x => x.SchoolId == schoolId)
             .OrderBy(x => x.Code)
@@ -65,13 +77,92 @@ public sealed class AcademicStructureRepository : IAcademicStructureRepository
             .ToArrayAsync(cancellationToken);
 
         return new AcademicStructureSnapshot(
-            years, terms, grades, classes, subjects, students, assignments, enrollments);
+            years, terms, grades, classes, subjects, students, assignments, enrollments)
+        {
+            AcademicPrograms = programs,
+            AcademicYearProgramOfferings = programOfferings
+        };
     }
 
     public Task<AcademicYear?> GetAcademicYearAsync(
         Guid schoolId, Guid id, CancellationToken cancellationToken = default) =>
         _db.AcademicYears.SingleOrDefaultAsync(
             x => x.SchoolId == schoolId && x.Id == id, cancellationToken);
+
+    public Task<AcademicProgram?> GetAcademicProgramAsync(
+        Guid schoolId, Guid id, CancellationToken cancellationToken = default) =>
+        _db.AcademicPrograms.SingleOrDefaultAsync(
+            x => x.SchoolId == schoolId && x.Id == id, cancellationToken);
+
+    public Task<AcademicProgram?> GetDefaultAcademicProgramAsync(
+        Guid schoolId, CancellationToken cancellationToken = default) =>
+        _db.AcademicPrograms.SingleOrDefaultAsync(
+            x => x.SchoolId == schoolId && x.IsDefault, cancellationToken);
+
+    public Task<AcademicProgram?>
+        GetAcademicProgramByCodeAsync(
+            Guid schoolId,
+            string normalizedCode,
+            CancellationToken cancellationToken = default) =>
+        _db.AcademicPrograms.SingleOrDefaultAsync(
+            x =>
+                x.SchoolId == schoolId &&
+                x.NormalizedCode == normalizedCode,
+            cancellationToken);
+
+    public Task<AcademicYearProgramOffering?>
+        GetAcademicYearProgramOfferingAsync(
+            Guid schoolId,
+            Guid academicYearId,
+            Guid academicProgramId,
+            CancellationToken cancellationToken = default) =>
+        _db.AcademicYearProgramOfferings
+            .SingleOrDefaultAsync(
+                x =>
+                    x.SchoolId == schoolId &&
+                    x.AcademicYearId == academicYearId &&
+                    x.AcademicProgramId == academicProgramId,
+                cancellationToken);
+
+    public Task<bool> AcademicYearProgramIsOfferedAsync(
+        Guid schoolId,
+        Guid academicYearId,
+        Guid academicProgramId,
+        CancellationToken cancellationToken = default) =>
+        _db.AcademicYearProgramOfferings
+            .AnyAsync(
+                x =>
+                    x.SchoolId == schoolId &&
+                    x.AcademicYearId == academicYearId &&
+                    x.AcademicProgramId == academicProgramId &&
+                    x.IsOffered,
+                cancellationToken);
+
+    public async Task<bool> AcademicYearProgramHasUsageAsync(
+        Guid schoolId,
+        Guid academicYearId,
+        Guid academicProgramId,
+        CancellationToken cancellationToken = default)
+    {
+        if (await _db.ClassGroups.AnyAsync(
+                x =>
+                    x.SchoolId == schoolId &&
+                    x.AcademicYearId == academicYearId &&
+                    x.AcademicProgramId == academicProgramId,
+                cancellationToken))
+        {
+            return true;
+        }
+
+        return await _db.SchoolCurriculumAdoptions
+            .AnyAsync(
+                x =>
+                    x.SchoolId == schoolId &&
+                    x.AcademicYearId == academicYearId &&
+                    x.AcademicProgramId == academicProgramId &&
+                    x.IsActive,
+                cancellationToken);
+    }
 
     public Task<GradeLevel?> GetGradeLevelAsync(
         Guid schoolId, Guid id, CancellationToken cancellationToken = default) =>
@@ -126,6 +217,13 @@ public sealed class AcademicStructureRepository : IAcademicStructureRepository
             x => x.SchoolId == schoolId && x.Order == order,
             cancellationToken);
 
+    public Task<bool> AcademicProgramCodeExistsAsync(
+        Guid schoolId, string normalizedCode,
+        CancellationToken cancellationToken = default) =>
+        _db.AcademicPrograms.AnyAsync(
+            x => x.SchoolId == schoolId && x.NormalizedCode == normalizedCode,
+            cancellationToken);
+
     public Task<bool> ClassCodeExistsAsync(
         Guid schoolId, Guid academicYearId, string normalizedCode,
         Guid? excludeId = null,
@@ -133,6 +231,18 @@ public sealed class AcademicStructureRepository : IAcademicStructureRepository
         _db.ClassGroups.AnyAsync(
             x => x.SchoolId == schoolId &&
                  x.AcademicYearId == academicYearId &&
+                 x.NormalizedCode == normalizedCode &&
+                 (!excludeId.HasValue || x.Id != excludeId.Value),
+            cancellationToken);
+
+    public Task<bool> ClassCodeExistsInProgramAsync(
+        Guid schoolId, Guid academicYearId, Guid academicProgramId,
+        string normalizedCode, Guid? excludeId = null,
+        CancellationToken cancellationToken = default) =>
+        _db.ClassGroups.AnyAsync(
+            x => x.SchoolId == schoolId &&
+                 x.AcademicYearId == academicYearId &&
+                 x.AcademicProgramId == academicProgramId &&
                  x.NormalizedCode == normalizedCode &&
                  (!excludeId.HasValue || x.Id != excludeId.Value),
             cancellationToken);

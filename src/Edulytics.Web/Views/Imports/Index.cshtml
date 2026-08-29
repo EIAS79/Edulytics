@@ -1,11 +1,16 @@
+@using Edulytics.Core.Constants
 @model Edulytics.Web.ViewModels.Imports.ImportIndexViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.ImportResource> I
+
+@{
+    var canManageImports = User.IsInRole(RoleNames.SubjectSupervisor);
+}
 
 @{
     ViewData["Title"] = I["ImportTitle"].Value;
 }
 
-<section class="import-page">
+<section class="import-page import-index @(canManageImports ? "" : "is-readonly")">
     <header class="import-page-header">
         <div>
             <div class="user-eyebrow">
@@ -15,7 +20,7 @@
             <h1>@I["ImportTitle"]</h1>
 
             <p class="user-page-subtitle">
-                @I["ImportSubtitle"]
+                @(canManageImports ? I["ImportSubtitle"] : I["ImportViewSubtitle"])
             </p>
         </div>
 
@@ -42,53 +47,64 @@
         </div>
     }
 
-    <section class="import-panel">
+    @if (!canManageImports)
+    {
+        <div class="import-message import-message-info"
+             role="status">
+            @I["ImportReadOnlyNotice"]
+        </div>
+    }
+
+    <section class="import-panel import-operational-panel">
         <h2>@I["UploadFile"]</h2>
 
         <p>@I["FileRules"]</p>
 
-        <form asp-action="Upload"
-              method="post"
-              enctype="multipart/form-data"
-              class="import-upload-form">
+        @if (canManageImports)
+        {
+            <form asp-action="Upload"
+                          method="post"
+                          enctype="multipart/form-data"
+                          class="import-upload-form">
 
-            <div class="import-field">
-                <label for="importType">
-                    @I["ImportType"]
-                </label>
+                        <div class="import-field">
+                            <label for="importType">
+                                @I["ImportType"]
+                            </label>
 
-                <select id="importType"
-                        name="importType"
-                        required>
-                    @foreach (var option in Model.Workspace.AllowedTypes)
-                    {
-                        <option value="@option.Type">
-                            @I[$"Type{option.Type}"]
-                        </option>
-                    }
-                </select>
-            </div>
+                            <select id="importType"
+                                    name="importType"
+                                    required>
+                                @foreach (var option in Model.Workspace.AllowedTypes)
+                                {
+                                    <option value="@option.Type">
+                                        @I[$"Type{option.Type}"]
+                                    </option>
+                                }
+                            </select>
+                        </div>
 
-            <div class="import-field">
-                <label for="importFile">
-                    @I["File"]
-                </label>
+                        <div class="import-field">
+                            <label for="importFile">
+                                @I["File"]
+                            </label>
 
-                <input id="importFile"
-                       name="file"
-                       type="file"
-                       accept=".csv,.xlsx,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-                       required />
-            </div>
+                            <input id="importFile"
+                                   name="file"
+                                   type="file"
+                                   accept=".csv,.xlsx,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                                   required />
+                        </div>
 
-            <button type="submit"
-                    class="school-button school-button-primary">
-                @I["UploadAndValidate"]
-            </button>
-        </form>
+                        <button type="submit"
+                                class="school-button school-button-primary">
+                            @I["UploadAndValidate"]
+                        </button>
+                    </form>
+        }
     </section>
 
-    <section class="import-schema-grid">
+    <section class="import-schema-grid import-operational-schema">
         @foreach (var option in Model.Workspace.AllowedTypes)
         {
             <article class="import-panel import-schema-card">
@@ -100,10 +116,13 @@
                     @string.Join(",", option.RequiredHeaders)
                 </code>
 
-                <a asp-action="Template"
-                   asp-route-importType="@option.Type">
-                    @I["DownloadTemplate"]
-                </a>
+                @if (canManageImports)
+                {
+                    <a asp-action="Template"
+                                       asp-route-importType="@option.Type">
+                                        @I["DownloadTemplate"]
+                                    </a>
+                }
 
                 @if (option.Type == Edulytics.Core.Enums.ImportType.Teachers)
                 {

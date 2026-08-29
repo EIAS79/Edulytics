@@ -61,7 +61,7 @@
     <value>Status</value>
   </data>
   <data name="CountryCode" xml:space="preserve">
-    <value>Kod kraju</value>
+    <value>Kraj</value>
   </data>
   <data name="City" xml:space="preserve">
     <value>Miasto</value>
@@ -244,7 +244,7 @@
     <value>Użytkownicy szkoły</value>
   </data>
   <data name="SchoolUsersSubtitle" xml:space="preserve">
-    <value>Twórz i zarządzaj kontami użytkowników tej szkoły.</value>
+    <value>Konta użytkowników szkoły i ich status dostępu.</value>
   </data>
   <data name="CreateSchoolUser" xml:space="preserve">
     <value>Utwórz użytkownika</value>
@@ -376,7 +376,7 @@
     <value>Ta szkoła jest zarchiwizowana. Konta użytkowników są tylko do odczytu.</value>
   </data>
   <data name="SelfManagementProtected" xml:space="preserve">
-    <value>Ze względów bezpieczeństwa administrator szkoły nie może z tego ekranu zmienić własnej roli, statusu aktywacji, blokady ani hasła.</value>
+    <value>Twoje własne konto jest chronione na tym ekranie. Zmiana roli, aktywacji, blokady i ustawień hasła jest niedostępna.</value>
   </data>
   <data name="UserAccessDenied" xml:space="preserve">
     <value>Nie masz uprawnień do zarządzania tymi użytkownikami.</value>
@@ -403,7 +403,7 @@
     <value>Wybierz prawidłową rolę szkolną.</value>
   </data>
   <data name="UserCannotManageSelf" xml:space="preserve">
-    <value>Nie możesz wykonać tej operacji na własnym koncie administratora.</value>
+    <value>Nie możesz wykonać tej czynności na własnym chronionym koncie.</value>
   </data>
   <data name="UserPersistenceError" xml:space="preserve">
     <value>Nie udało się zapisać zmiany użytkownika. Spróbuj ponownie.</value>
@@ -445,7 +445,7 @@
     <value>Panel szkoły</value>
   </data>
   <data name="SchoolDashboardSubtitle" xml:space="preserve">
-    <value>Twoje konto szkolne Edulityks jest gotowe.</value>
+    <value>Przejrzysty widok obszaru roboczego szkoły, Twoich obowiązków i kolejnych działań.</value>
   </data>
   <data name="YourSchool" xml:space="preserve">
     <value>Twoja szkoła</value>
@@ -454,7 +454,7 @@
     <value>Twoja rola</value>
   </data>
   <data name="AccountReady" xml:space="preserve">
-    <value>Informacje o koncie</value>
+    <value>Przegląd obszaru roboczego</value>
   </data>
   <data name="ManageUsers" xml:space="preserve">
     <value>Zarządzaj użytkownikami</value>
@@ -561,4 +561,173 @@
   <data name="SubjectSupervisorErrorAssignmentNotFound" xml:space="preserve">
     <value>Nie znaleziono przypisania.</value>
   </data>
+  <data name="CountryPoland" xml:space="preserve">
+    <value>Polska (PL)</value>
+  </data>
+  <data name="CountryUnitedArabEmirates" xml:space="preserve">
+    <value>Zjednoczone Emiraty Arabskie (UAE)</value>
+  </data>
+  <data name="TimeZoneAutoHelp" xml:space="preserve">
+    <value>Ustawiana automatycznie na podstawie wybranego kraju.</value>
+  </data>
+  <data name="InvalidCountryCode" xml:space="preserve">
+    <value>Wybierz Polskę lub Zjednoczone Emiraty Arabskie.</value>
+  </data>
+  <data name="SchoolUsersAdminSubtitle" xml:space="preserve">
+    <value>Przeglądaj użytkowników szkoły i status ich kont. Zmiany kont użytkowników obsługuje opiekun przedmiotu.</value>
+  </data>
+  <data name="SchoolUsersSupervisorSubtitle" xml:space="preserve">
+    <value>Twórz i zarządzaj kontami nauczycieli i uczniów w tej szkole.</value>
+  </data>
+  <data name="SchoolUsersPlatformSubtitle" xml:space="preserve">
+    <value>Twórz i zarządzaj kontami użytkowników przypisanymi do szkoły.</value>
+  </data>
+  <data name="CreateOperationalUserIntro" xml:space="preserve">
+    <value>Utwórz konto nauczyciela lub ucznia. Po utworzeniu zostanie wygenerowany bezpieczny link do ustawienia hasła.</value>
+  </data>
+  <data name="DashboardRoleScope" xml:space="preserve">
+    <value>Twój dostęp</value>
+  </data>
+  <data name="AccessView" xml:space="preserve">
+    <value>Tylko podgląd</value>
+  </data>
+  <data name="AccessManage" xml:space="preserve">
+    <value>Zarządzanie</value>
+  </data>
+  <data name="AccessMonitor" xml:space="preserve">
+    <value>Nadzór</value>
+  </data>
+  <data name="AccessTeach" xml:space="preserve">
+    <value>Nauczanie i ocenianie</value>
+  </data>
+  <data name="AccessExport" xml:space="preserve">
+    <value>Zarządzanie i eksport</value>
+  </data>
+  <data name="DashboardSchoolUsersAdminDescription" xml:space="preserve">
+    <value>Przeglądaj użytkowników szkoły, role i status kont bez wprowadzania zmian.</value>
+  </data>
+  <data name="DashboardSchoolUsersSupervisorDescription" xml:space="preserve">
+    <value>Twórz i zarządzaj kontami nauczycieli i uczniów oraz ich statusem dostępu.</value>
+  </data>
+  <data name="DashboardSupervisorAssignmentsDescription" xml:space="preserve">
+    <value>Przypisuj istniejących opiekunów przedmiotów do przedmiotów, które nadzorują.</value>
+  </data>
+  <data name="DashboardAcademicViewDescription" xml:space="preserve">
+    <value>Przeglądaj lata, okresy, poziomy, klasy, przedmioty, przydziały i zapisy uczniów.</value>
+  </data>
+  <data name="DashboardAcademicManageDescription" xml:space="preserve">
+    <value>Zarządzaj latami, okresami, poziomami, klasami, przedmiotami, przydziałami nauczycieli i zapisami uczniów.</value>
+  </data>
+  <data name="DashboardCurriculumViewDescription" xml:space="preserve">
+    <value>Przeglądaj przyjęty program nauczania, tematy i oficjalne efekty uczenia się.</value>
+  </data>
+  <data name="DashboardCurriculumManageDescription" xml:space="preserve">
+    <value>Zarządzaj przyjętym programem nauczania, tematami i oficjalnymi efektami uczenia się.</value>
+  </data>
+  <data name="DashboardAssessmentMonitorDescription" xml:space="preserve">
+    <value>Monitoruj sprawdziany, pytania, pokrycie efektów uczenia się i wyniki uczniów.</value>
+  </data>
+  <data name="DashboardAssessmentTeacherDescription" xml:space="preserve">
+    <value>Twórz sprawdziany, zarządzaj pytaniami i mapowaniem efektów oraz wprowadzaj wyniki.</value>
+  </data>
+  <data name="DashboardAnalyticsDescription" xml:space="preserve">
+    <value>Analizuj opanowanie materiału, braki w efektach, postępy i uczniów wymagających wsparcia.</value>
+  </data>
+  <data name="DashboardReportsViewDescription" xml:space="preserve">
+    <value>Przeglądaj raporty szkoły i wcześniej wygenerowane eksporty w zakresie swojej roli.</value>
+  </data>
+  <data name="DashboardReportsManageDescription" xml:space="preserve">
+    <value>Twórz raporty zgodne z zakresem roli i zlecaj eksporty CSV/XLSX.</value>
+  </data>
+  <data name="DashboardImportsViewDescription" xml:space="preserve">
+    <value>Przeglądaj historię importów, status partii i wyniki walidacji.</value>
+  </data>
+  <data name="DashboardImportsManageDescription" xml:space="preserve">
+    <value>Weryfikuj i importuj dane szkoły z plików CSV lub Excel.</value>
+  </data>
+  <data name="DashboardNotificationsDescription" xml:space="preserve">
+    <value>Przeglądaj skrzynkę powiadomień i status dostarczania wiadomości e-mail.</value>
+  </data>
+  <data name="ViewUsers" xml:space="preserve">
+    <value>Wyświetl użytkowników</value>
+  </data>
+  <data name="ManageUsersOperational" xml:space="preserve">
+    <value>Zarządzaj użytkownikami</value>
+  </data>
+  <data name="ManageSupervisors" xml:space="preserve">
+    <value>Zarządzaj opiekunami</value>
+  </data>
+  <data name="ViewStructure" xml:space="preserve">
+    <value>Wyświetl strukturę</value>
+  </data>
+  <data name="ManageStructure" xml:space="preserve">
+    <value>Zarządzaj strukturą</value>
+  </data>
+  <data name="ViewCurriculum" xml:space="preserve">
+    <value>Wyświetl program</value>
+  </data>
+  <data name="ManageCurriculumLink" xml:space="preserve">
+    <value>Zarządzaj programem</value>
+  </data>
+  <data name="MonitorAssessments" xml:space="preserve">
+    <value>Monitoruj sprawdziany</value>
+  </data>
+  <data name="ManageAssessmentsLink" xml:space="preserve">
+    <value>Zarządzaj sprawdzianami</value>
+  </data>
+  <data name="ViewAnalytics" xml:space="preserve">
+    <value>Wyświetl analitykę</value>
+  </data>
+  <data name="ViewReports" xml:space="preserve">
+    <value>Wyświetl raporty</value>
+  </data>
+  <data name="ManageReportsLink" xml:space="preserve">
+    <value>Otwórz raporty i eksporty</value>
+  </data>
+  <data name="ViewImportHistory" xml:space="preserve">
+    <value>Wyświetl historię importów</value>
+  </data>
+  <data name="ManageImportsLink" xml:space="preserve">
+    <value>Zarządzaj importami</value>
+  </data>
+  <data name="OpenNotificationsLink" xml:space="preserve">
+    <value>Otwórz powiadomienia</value>
+  </data>
+  <data name="AccessExportOwn" xml:space="preserve">
+    <value>Eksport własnego zakresu</value>
+  </data>
+  <data name="DashboardReportsTeacherDescription" xml:space="preserve">
+    <value>Przeglądaj raporty w swoim przypisanym zakresie i zlecaj dla niego eksporty CSV/XLSX.</value>
+  </data>
+  <data name="ExportOwnScope" xml:space="preserve">
+    <value>Eksportuj własny zakres</value>
+  </data>
+  <data name="StudentSetupTitle" xml:space="preserve"><value>Konfiguracja konta ucznia</value></data>
+  <data name="StudentSetupDescription" xml:space="preserve"><value>Rola ucznia wymaga powiązanego profilu ucznia i przypisania do klasy. Te pola są używane podczas zapisywania roli ucznia.</value></data>
+  <data name="StudentNumber" xml:space="preserve"><value>Numer ucznia</value></data>
+  <data name="FirstName" xml:space="preserve"><value>Imię</value></data>
+  <data name="LastName" xml:space="preserve"><value>Nazwisko</value></data>
+  <data name="StudentClass" xml:space="preserve"><value>Klasa</value></data>
+  <data name="SelectStudentClass" xml:space="preserve"><value>Wybierz klasę</value></data>
+  <data name="StudentSetupCurrentEnrollment" xml:space="preserve"><value>Aktualne przypisanie</value></data>
+  <data name="StudentSetupComplete" xml:space="preserve"><value>Konfiguracja zakończona</value></data>
+  <data name="StudentSetupIncomplete" xml:space="preserve"><value>Wymagana konfiguracja</value></data>
+  <data name="StudentSetupUnavailable" xml:space="preserve"><value>Konfiguracja ucznia jest niedostępna dla tej operacji lub tego konta.</value></data>
+  <data name="StudentRoleSetupSuccess" xml:space="preserve"><value>Rola ucznia, profil i przypisanie do klasy zostały zapisane.</value></data>
+  <data name="StudentSetupMissingFields" xml:space="preserve"><value>Numer ucznia, imię, nazwisko i klasa są wymagane dla roli ucznia.</value></data>
+  <data name="StudentSetupClassNotFound" xml:space="preserve"><value>Wybrana klasa nie jest dostępna w tej szkole.</value></data>
+  <data name="StudentSetupEnrollmentConflict" xml:space="preserve"><value>Uczeń ma już inne przypisanie do klasy w tym samym roku szkolnym.</value></data>
+  <data name="StudentSetupFailed" xml:space="preserve"><value>Nie udało się zakończyć konfiguracji ucznia. Nie pozostawiono niepełnej zmiany roli nauczyciela na ucznia.</value></data>
+  <data name="StudentSetupRecoveryFailed" xml:space="preserve"><value>Konfiguracja ucznia nie powiodła się i automatyczne przywrócenie stanu nie zostało zakończone. Sprawdź konto przed ponowną próbą.</value></data>
+
+  <data name="StudentSetupDuplicateStudentNumber" xml:space="preserve"><value>Ten numer ucznia już istnieje. Wprowadź inny numer ucznia.</value></data>
+  <data name="StudentSetupSeatLimitReached" xml:space="preserve"><value>Osiągnięto limit zakontraktowanych miejsc dla uczniów. Zwiększ limit miejsc przed dodaniem kolejnego aktywnego ucznia.</value></data>
+  <data name="StudentSetupInvalidStudentAccount" xml:space="preserve"><value>Tego konta nie można powiązać jako aktywnego konta ucznia. Sprawdź status i rolę konta.</value></data>
+  <data name="StudentSetupDuplicateStudentUserLink" xml:space="preserve"><value>To konto logowania jest już powiązane z profilem ucznia.</value></data>
+  <data name="StudentSetupDuplicateEnrollment" xml:space="preserve"><value>Uczeń jest już zapisany do klasy w tym roku szkolnym.</value></data>
+  <data name="StudentSetupProfileStateChanged" xml:space="preserve"><value>Profil ucznia zmienił się podczas konfiguracji. Odśwież dane konta przed ponowną próbą.</value></data>
+  <data name="StudentSetupConcurrencyConflict" xml:space="preserve"><value>Rekord ucznia zmienił się podczas zapisywania. Odśwież dane konta i spróbuj ponownie.</value></data>
+  <data name="StudentSetupInvalidStudentNumber" xml:space="preserve"><value>Numer ucznia jest nieprawidłowy. Użyj tylko A-Z, 0-9 i łącznika.</value></data>
+  <data name="StudentSetupInvalidName" xml:space="preserve"><value>Imię lub nazwisko ucznia jest nieprawidłowe albo zbyt długie.</value></data>
+  <data name="StudentSetupPersistenceError" xml:space="preserve"><value>Nie udało się zapisać konfiguracji ucznia. Zmiana roli została wycofana. Odśwież dane konta i spróbuj ponownie.</value></data>
 </root>

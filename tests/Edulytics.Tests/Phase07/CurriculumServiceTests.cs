@@ -1,4 +1,5 @@
 using Edulytics.Core.Constants;
+using Edulytics.Core.Curriculum;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Interfaces;
@@ -13,43 +14,176 @@ namespace Edulytics.Tests.Phase07;
 public sealed class CurriculumServiceTests
 {
     [Fact]
-    public async Task SchoolAdmin_CanCreateTopicAndOutcome()
+    public async Task OfficialOutcome_IsSelectedFromActivePack_AndCodeIsAutomatic()
     {
         using var f = CreateFixture();
-
         var topic = await CreateTopic(f);
+        var option = Assert.Single(topic.OfficialOutcomes);
 
-        var result = await f.Service.CreateOutcomeAsync(
-            f.Admin.Id,
-            new CreateLearningOutcomeRequest(
+        var result = await f.Service.CreateOfficialOutcomeAsync(
+            f.Supervisor.Id,
+            new CreateOfficialLearningOutcomeRequest(
                 topic.Id,
-                "G6.N.1",
-                "Uses place value to reason about whole numbers.",
-                25m,
-                1));
+                option.ContentNodeId,
+                option.LessonNodeId,
+                1
+));
 
         Assert.True(result.Succeeded);
 
-        var dashboard = await f.Service.GetDashboardAsync(f.Admin.Id);
-        var savedTopic = Assert.Single(dashboard.Value!.Topics);
-        var outcome = Assert.Single(savedTopic.Outcomes);
+        var saved = Assert.Single(await f.Db.LearningOutcomes
+            .AsNoTracking()
+            .ToListAsync());
+        Assert.Equal(f.OfficialNode.Id, saved.OfficialContentNodeId);
+        Assert.Equal("PL:VI:ADDITION:001", saved.Code);
+        Assert.Equal("Add whole numbers accurately.", saved.Description);
 
-        Assert.Equal("G6.N.1", outcome.Code);
-        Assert.Equal(25m, outcome.Weight);
+        var dashboard = await f.Service.GetDashboardAsync(f.Supervisor.Id);
+        var savedTopic = Assert.Single(dashboard.Value!.Topics);
+        Assert.Equal(
+            "Polish National Curriculum Mathematics",
+            savedTopic.FrameworkDisplayName);
+        Assert.True(Assert.Single(savedTopic.Outcomes).IsOfficial);
     }
 
     [Fact]
-    public async Task Teacher_CannotManageCurriculum()
+    public async Task OfficialOutcome_CodeAndDescriptionCannotBeEdited()
+    {
+        using var f = CreateFixture();
+        var topic = await CreateTopic(f);
+        var option = Assert.Single(topic.OfficialOutcomes);
+
+        Assert.True((await f.Service.CreateOfficialOutcomeAsync(
+            f.Supervisor.Id,
+            new CreateOfficialLearningOutcomeRequest(
+                topic.Id,
+                option.ContentNodeId,
+                option.LessonNodeId,
+                1
+))).Succeeded);
+
+        var outcome = Assert.Single(await f.Db.LearningOutcomes.ToListAsync());
+        var update = await f.Service.UpdateOutcomeAsync(
+            f.Supervisor.Id,
+            new UpdateLearningOutcomeRequest(
+                outcome.Id,
+                "FAKE.CODE",
+                "Changed",
+                2
+));
+
+        Assert.False(update.Succeeded);
+        Assert.Equal(
+            CurriculumErrorCode.OfficialOutcomeReadOnly,
+            update.Error);
+    }
+
+
+    [Fact]
+    public async Task SubjectSupervisor_CanSelectVerifiedFramework_ThenCreateTopic()
+    {
+        using var f = CreateFixture(withAdoption: false);
+
+        var selected = await f.Service.SelectFrameworkAsync(
+            f.Supervisor.Id,
+            new SelectCurriculumFrameworkRequest(
+                f.Subject.Id,
+                f.Grade.Id,
+                MathematicsCurriculumPackRegistry.PolandCode));
+
+        Assert.True(selected.Succeeded);
+
+        var created = await f.Service.CreateTopicAsync(
+            f.Supervisor.Id,
+            new CreateCurriculumTopicRequest(
+                f.Subject.Id,
+                f.Grade.Id,
+                "Numbers",
+                1));
+
+        Assert.True(created.Succeeded);
+
+        var adoption = Assert.Single(
+            await f.Db.SchoolCurriculumAdoptions
+                .AsNoTracking()
+                .ToListAsync());
+
+        Assert.Equal(
+            f.FrameworkVersion.Id,
+            adoption.FrameworkVersionId);
+    }
+
+    [Fact]
+    public async Task CreateTopic_RequiresExplicitCurriculumSelection()
+    {
+        using var f = CreateFixture(withAdoption: false);
+
+        var result = await f.Service.CreateTopicAsync(
+            f.Supervisor.Id,
+            new CreateCurriculumTopicRequest(
+                f.Subject.Id,
+                f.Grade.Id,
+                "Numbers",
+                1));
+
+        Assert.False(result.Succeeded);
+        Assert.Equal(
+            CurriculumErrorCode.CurriculumNotSelected,
+            result.Error);
+    }
+
+    [Fact]
+    public async Task UnapprovedLegacyDefaultFramework_IsRejected()
+    {
+        using var f = CreateFixture(withAdoption: false);
+
+        var result = await f.Service.SelectFrameworkAsync(
+            f.Supervisor.Id,
+            new SelectCurriculumFrameworkRequest(
+                f.Subject.Id,
+                f.Grade.Id,
+                "EDULYTICS-DEFAULT"));
+
+        Assert.False(result.Succeeded);
+        Assert.Equal(
+            CurriculumErrorCode.FrameworkNotFound,
+            result.Error);
+    }
+
+    [Fact]
+    public async Task TeacherAndSchoolAdmin_CanRead_ButCannotManageCurriculum()
     {
         using var f = CreateFixture();
 
-        var teacher = NewUser(f.School.Id, RoleNames.Teacher);
+        var teacher =
+            NewUser(
+                f.School.Id,
+                RoleNames.Teacher);
+
         f.Users.Seed(teacher);
 
-        var result = await f.Service.GetDashboardAsync(teacher.Id);
+        Assert.NotNull(
+            (await f.Service.GetDashboardAsync(teacher.Id)).Value);
 
-        Assert.Null(result.Value);
-        Assert.Equal(CurriculumErrorCode.AccessDenied, result.Error);
+        Assert.NotNull(
+            (await f.Service.GetDashboardAsync(f.Admin.Id)).Value);
+
+        foreach (var actorId in new[] { teacher.Id, f.Admin.Id })
+        {
+            var denied =
+                await f.Service.CreateTopicAsync(
+                    actorId,
+                    new CreateCurriculumTopicRequest(
+                        f.Subject.Id,
+                        f.Grade.Id,
+                        "Blocked",
+                        99));
+
+            Assert.False(denied.Succeeded);
+            Assert.Equal(
+                CurriculumErrorCode.AccessDenied,
+                denied.Error);
+        }
     }
 
     [Fact]
@@ -67,7 +201,7 @@ public sealed class CurriculumServiceTests
         await f.Db.SaveChangesAsync();
 
         var result = await f.Service.CreateTopicAsync(
-            f.Admin.Id,
+            f.Supervisor.Id,
             new CreateCurriculumTopicRequest(
                 otherSubject.Id,
                 otherGrade.Id,
@@ -76,83 +210,6 @@ public sealed class CurriculumServiceTests
 
         Assert.False(result.Succeeded);
         Assert.Equal(CurriculumErrorCode.SubjectNotFound, result.Error);
-    }
-
-    [Fact]
-    public async Task DuplicateOutcomeCode_IsCaseInsensitive()
-    {
-        using var f = CreateFixture();
-        var topic = await CreateTopic(f);
-
-        Assert.True((await f.Service.CreateOutcomeAsync(
-            f.Admin.Id,
-            new CreateLearningOutcomeRequest(
-                topic.Id,
-                "G6.A.1",
-                "First",
-                20m,
-                1))).Succeeded);
-
-        var duplicate = await f.Service.CreateOutcomeAsync(
-            f.Admin.Id,
-            new CreateLearningOutcomeRequest(
-                topic.Id,
-                "g6.a.1",
-                "Duplicate",
-                20m,
-                2));
-
-        Assert.False(duplicate.Succeeded);
-        Assert.Equal(
-            CurriculumErrorCode.DuplicateOutcomeCode,
-            duplicate.Error);
-    }
-
-    [Theory]
-    [InlineData(0)]
-    [InlineData(-1)]
-    [InlineData(100.001)]
-    public async Task InvalidWeight_IsRejected(decimal weight)
-    {
-        using var f = CreateFixture();
-        var topic = await CreateTopic(f);
-
-        var result = await f.Service.CreateOutcomeAsync(
-            f.Admin.Id,
-            new CreateLearningOutcomeRequest(
-                topic.Id,
-                $"W{Guid.NewGuid():N}"[..12],
-                "Weight test",
-                weight,
-                1));
-
-        Assert.False(result.Succeeded);
-        Assert.Equal(CurriculumErrorCode.InvalidWeight, result.Error);
-    }
-
-    [Fact]
-    public async Task Service_DoesNotInventSumToHundredRule()
-    {
-        using var f = CreateFixture();
-        var topic = await CreateTopic(f);
-
-        Assert.True((await f.Service.CreateOutcomeAsync(
-            f.Admin.Id,
-            new CreateLearningOutcomeRequest(
-                topic.Id,
-                "SUM.A",
-                "Outcome A",
-                80m,
-                1))).Succeeded);
-
-        Assert.True((await f.Service.CreateOutcomeAsync(
-            f.Admin.Id,
-            new CreateLearningOutcomeRequest(
-                topic.Id,
-                "SUM.B",
-                "Outcome B",
-                80m,
-                2))).Succeeded);
     }
 
     [Theory]
@@ -167,7 +224,7 @@ public sealed class CurriculumServiceTests
         await f.Db.SaveChangesAsync();
 
         var result = await f.Service.CreateTopicAsync(
-            f.Admin.Id,
+            f.Supervisor.Id,
             new CreateCurriculumTopicRequest(
                 f.Subject.Id,
                 f.Grade.Id,
@@ -184,7 +241,7 @@ public sealed class CurriculumServiceTests
         using var f = CreateFixture();
 
         Assert.True((await f.Service.CreateTopicAsync(
-            f.Admin.Id,
+            f.Supervisor.Id,
             new CreateCurriculumTopicRequest(
                 f.Subject.Id,
                 f.Grade.Id,
@@ -192,7 +249,7 @@ public sealed class CurriculumServiceTests
                 1))).Succeeded);
 
         var duplicate = await f.Service.CreateTopicAsync(
-            f.Admin.Id,
+            f.Supervisor.Id,
             new CreateCurriculumTopicRequest(
                 f.Subject.Id,
                 f.Grade.Id,
@@ -205,10 +262,390 @@ public sealed class CurriculumServiceTests
             duplicate.Error);
     }
 
+
+    [Fact]
+    public async Task SameGradeSubject_CanUseIndependentCurriculumScopes_PerProgram()
+    {
+        using var f = CreateFixture(withAdoption: false);
+
+        var mainProgram = await f.Db.AcademicPrograms
+            .SingleAsync(x => x.SchoolId == f.School.Id && x.IsDefault);
+
+        var secondProgram = new AcademicProgram
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = f.School.Id,
+            Name = "Second Stream",
+            Code = "SECOND",
+            NormalizedCode = "SECOND",
+            Status = AcademicStructureStatus.Active,
+            IsDefault = false,
+            CreatedAtUtc = DateTime.UtcNow,
+            UpdatedAtUtc = DateTime.UtcNow,
+            RowVersion = BitConverter.GetBytes(1L)
+        };
+
+        f.Db.AcademicPrograms.Add(secondProgram);
+        await f.Db.SaveChangesAsync();
+
+        var selectMain = await f.Service.SelectFrameworkAsync(
+            f.Supervisor.Id,
+            new SelectCurriculumFrameworkRequest(
+                f.Subject.Id,
+                f.Grade.Id,
+                MathematicsCurriculumPackRegistry.PolandCode,
+                mainProgram.Id));
+
+        var selectSecond = await f.Service.SelectFrameworkAsync(
+            f.Supervisor.Id,
+            new SelectCurriculumFrameworkRequest(
+                f.Subject.Id,
+                f.Grade.Id,
+                MathematicsCurriculumPackRegistry.PolandCode,
+                secondProgram.Id));
+
+        Assert.True(selectMain.Succeeded);
+        Assert.True(selectSecond.Succeeded);
+
+        var topicMain = await f.Service.CreateTopicAsync(
+            f.Supervisor.Id,
+            new CreateCurriculumTopicRequest(
+                f.Subject.Id,
+                f.Grade.Id,
+                "Numbers",
+                1,
+                mainProgram.Id));
+
+        var topicSecond = await f.Service.CreateTopicAsync(
+            f.Supervisor.Id,
+            new CreateCurriculumTopicRequest(
+                f.Subject.Id,
+                f.Grade.Id,
+                "Numbers",
+                1,
+                secondProgram.Id));
+
+        Assert.True(topicMain.Succeeded);
+        Assert.True(topicSecond.Succeeded);
+
+        var duplicateMain = await f.Service.CreateTopicAsync(
+            f.Supervisor.Id,
+            new CreateCurriculumTopicRequest(
+                f.Subject.Id,
+                f.Grade.Id,
+                "Another name",
+                1,
+                mainProgram.Id));
+
+        Assert.False(duplicateMain.Succeeded);
+        Assert.Equal(
+            CurriculumErrorCode.DuplicateTopicOrder,
+            duplicateMain.Error);
+
+        var dashboard = await f.Service.GetDashboardAsync(f.Supervisor.Id);
+
+        Assert.Equal(2, dashboard.Value!.AcademicPrograms.Count);
+        Assert.Equal(2, dashboard.Value.Adoptions.Count);
+        Assert.Equal(2, dashboard.Value.Topics.Count);
+
+        var mainTopic = dashboard.Value.Topics.Single(
+            x => x.AcademicProgramId == mainProgram.Id);
+        var secondTopic = dashboard.Value.Topics.Single(
+            x => x.AcademicProgramId == secondProgram.Id);
+
+        Assert.Equal("Phase 07 Default Program", mainTopic.AcademicProgramName);
+        Assert.Equal("Second Stream", secondTopic.AcademicProgramName);
+
+        var mainOption = Assert.Single(mainTopic.OfficialOutcomes);
+        var secondOption = Assert.Single(secondTopic.OfficialOutcomes);
+
+        var mainOutcome = await f.Service.CreateOfficialOutcomeAsync(
+            f.Supervisor.Id,
+            new CreateOfficialLearningOutcomeRequest(
+                mainTopic.Id,
+                mainOption.ContentNodeId,
+                mainOption.LessonNodeId,
+                1));
+
+        var secondOutcome = await f.Service.CreateOfficialOutcomeAsync(
+            f.Supervisor.Id,
+            new CreateOfficialLearningOutcomeRequest(
+                secondTopic.Id,
+                secondOption.ContentNodeId,
+                secondOption.LessonNodeId,
+                1));
+
+        Assert.True(mainOutcome.Succeeded);
+        Assert.True(secondOutcome.Succeeded);
+
+        var outcomes = await f.Db.LearningOutcomes
+            .AsNoTracking()
+            .OrderBy(x => x.AcademicProgramId)
+            .ToArrayAsync();
+
+        Assert.Equal(2, outcomes.Length);
+        Assert.Equal(
+            outcomes[0].Code,
+            outcomes[1].Code);
+        Assert.NotEqual(
+            outcomes[0].AcademicProgramId,
+            outcomes[1].AcademicProgramId);
+    }
+
+    [Fact]
+    public async Task ForeignAcademicProgram_IsRejectedByCurriculumSelectionAndTopicCreation()
+    {
+        using var f = CreateFixture(withAdoption: false);
+
+        var other = NewSchool();
+        f.Db.Schools.Add(other);
+
+        var foreignProgram = new AcademicProgram
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = other.Id,
+            Name = "Foreign Stream",
+            Code = "FOREIGN",
+            NormalizedCode = "FOREIGN",
+            Status = AcademicStructureStatus.Active,
+            IsDefault = true,
+            CreatedAtUtc = DateTime.UtcNow,
+            UpdatedAtUtc = DateTime.UtcNow,
+            RowVersion = BitConverter.GetBytes(1L)
+        };
+
+        f.Db.AcademicPrograms.Add(foreignProgram);
+        await f.Db.SaveChangesAsync();
+
+        var select = await f.Service.SelectFrameworkAsync(
+            f.Supervisor.Id,
+            new SelectCurriculumFrameworkRequest(
+                f.Subject.Id,
+                f.Grade.Id,
+                MathematicsCurriculumPackRegistry.PolandCode,
+                foreignProgram.Id));
+
+        Assert.False(select.Succeeded);
+        Assert.Equal(
+            CurriculumErrorCode.AcademicProgramNotFound,
+            select.Error);
+
+        var topic = await f.Service.CreateTopicAsync(
+            f.Supervisor.Id,
+            new CreateCurriculumTopicRequest(
+                f.Subject.Id,
+                f.Grade.Id,
+                "Blocked",
+                1,
+                foreignProgram.Id));
+
+        Assert.False(topic.Succeeded);
+        Assert.Equal(
+            CurriculumErrorCode.AcademicProgramNotFound,
+            topic.Error);
+    }
+
+    [Fact]
+    public async Task CurriculumDashboard_ReportsAdoptionProgramMetadata()
+    {
+        using var f = CreateFixture();
+
+        var program = await f.Db.AcademicPrograms
+            .SingleAsync(x => x.SchoolId == f.School.Id && x.IsDefault);
+
+        var dashboard = await f.Service.GetDashboardAsync(f.Supervisor.Id);
+
+        var adoption = Assert.Single(dashboard.Value!.Adoptions);
+
+        Assert.Equal(program.Id, adoption.AcademicProgramId);
+        Assert.Equal("Phase 07 Default Program", adoption.AcademicProgramName);
+        Assert.Equal("MAIN", adoption.AcademicProgramCode);
+    }
+
+
+    [Fact]
+    public async Task CurriculumReadUpdateAndRepositoryQueries_CoverProgramScopedPaths()
+    {
+        using var f = CreateFixture();
+
+        var topic = await CreateTopic(f);
+
+        var readTopic = await f.Service.GetTopicAsync(
+            f.Supervisor.Id,
+            topic.Id);
+
+        Assert.NotNull(readTopic.Value);
+        Assert.NotEqual(
+            Guid.Empty,
+            readTopic.Value!.AcademicProgramId);
+
+        var updated = await f.Service.UpdateTopicAsync(
+            f.Supervisor.Id,
+            new UpdateCurriculumTopicRequest(
+                topic.Id,
+                "Numbers updated",
+                2));
+
+        Assert.True(updated.Succeeded);
+
+        var refreshed = await f.Service.GetTopicAsync(
+            f.Supervisor.Id,
+            topic.Id);
+
+        Assert.Equal("Numbers updated", refreshed.Value!.Name);
+        Assert.Equal(2, refreshed.Value.Order);
+
+        var option = Assert.Single(refreshed.Value.OfficialOutcomes);
+
+        var outcomeCreate = await f.Service.CreateOfficialOutcomeAsync(
+            f.Supervisor.Id,
+            new CreateOfficialLearningOutcomeRequest(
+                refreshed.Value.Id,
+                option.ContentNodeId,
+                option.LessonNodeId,
+                1));
+
+        Assert.True(outcomeCreate.Succeeded);
+
+        var savedOutcome = Assert.Single(
+            await f.Db.LearningOutcomes
+                .AsNoTracking()
+                .ToListAsync());
+
+        var readOutcome = await f.Service.GetOutcomeAsync(
+            f.Supervisor.Id,
+            savedOutcome.Id);
+
+        Assert.NotNull(readOutcome.Value);
+        Assert.True(readOutcome.Value!.IsOfficial);
+
+        var repo = new CurriculumRepository(f.Db);
+
+        var program = await f.Db.AcademicPrograms
+            .SingleAsync(
+                x => x.SchoolId == f.School.Id && x.IsDefault);
+
+        Assert.NotNull(
+            await repo.GetAcademicProgramAsync(
+                f.School.Id,
+                program.Id));
+
+        Assert.NotNull(
+            await repo.GetDefaultAcademicProgramAsync(
+                f.School.Id));
+
+        Assert.NotNull(
+            await repo.GetPrimaryAdoptionAsync(
+                f.School.Id,
+                program.Id,
+                f.Grade.Id,
+                f.Subject.Id));
+
+        Assert.Equal(
+            f.FrameworkVersion.Id,
+            await repo.GetPrimaryFrameworkVersionIdAsync(
+                f.School.Id,
+                program.Id,
+                f.Grade.Id,
+                f.Subject.Id));
+
+        Assert.True(
+            await repo.TopicNameExistsInProgramAsync(
+                f.School.Id,
+                program.Id,
+                f.FrameworkVersion.Id,
+                f.Subject.Id,
+                f.Grade.Id,
+                "NUMBERS UPDATED"));
+
+        Assert.True(
+            await repo.TopicOrderExistsInProgramAsync(
+                f.School.Id,
+                program.Id,
+                f.FrameworkVersion.Id,
+                f.Subject.Id,
+                f.Grade.Id,
+                2));
+
+        Assert.True(
+            await repo.OutcomeCodeExistsInProgramAsync(
+                f.School.Id,
+                program.Id,
+                f.FrameworkVersion.Id,
+                f.Subject.Id,
+                f.Grade.Id,
+                savedOutcome.Code));
+
+        Assert.False(
+            await repo.TopicNameExistsInProgramAsync(
+                f.School.Id,
+                Guid.NewGuid(),
+                f.FrameworkVersion.Id,
+                f.Subject.Id,
+                f.Grade.Id,
+                "NUMBERS UPDATED"));
+    }
+
+    [Fact]
+    public async Task CurriculumValidationBranches_CoverRequiredDuplicateAndMissingRows()
+    {
+        using var f = CreateFixture();
+
+        var blank = await f.Service.CreateTopicAsync(
+            f.Supervisor.Id,
+            new CreateCurriculumTopicRequest(
+                f.Subject.Id,
+                f.Grade.Id,
+                " ",
+                1));
+
+        Assert.False(blank.Succeeded);
+
+        var badOrder = await f.Service.CreateTopicAsync(
+            f.Supervisor.Id,
+            new CreateCurriculumTopicRequest(
+                f.Subject.Id,
+                f.Grade.Id,
+                "Bad order",
+                0));
+
+        Assert.False(badOrder.Succeeded);
+
+        Assert.True((await f.Service.CreateTopicAsync(
+            f.Supervisor.Id,
+            new CreateCurriculumTopicRequest(
+                f.Subject.Id,
+                f.Grade.Id,
+                "Numbers",
+                1))).Succeeded);
+
+        var duplicateName = await f.Service.CreateTopicAsync(
+            f.Supervisor.Id,
+            new CreateCurriculumTopicRequest(
+                f.Subject.Id,
+                f.Grade.Id,
+                "Numbers",
+                2));
+
+        Assert.False(duplicateName.Succeeded);
+
+        var missingTopic = await f.Service.GetTopicAsync(
+            f.Supervisor.Id,
+            Guid.NewGuid());
+
+        Assert.Null(missingTopic.Value);
+
+        var missingOutcome = await f.Service.GetOutcomeAsync(
+            f.Supervisor.Id,
+            Guid.NewGuid());
+
+        Assert.Null(missingOutcome.Value);
+    }
+
     private static async Task<CurriculumTopicItem> CreateTopic(Fixture f)
     {
         var result = await f.Service.CreateTopicAsync(
-            f.Admin.Id,
+            f.Supervisor.Id,
             new CreateCurriculumTopicRequest(
                 f.Subject.Id,
                 f.Grade.Id,
@@ -217,11 +654,12 @@ public sealed class CurriculumServiceTests
 
         Assert.True(result.Succeeded);
 
-        var dashboard = await f.Service.GetDashboardAsync(f.Admin.Id);
+        var dashboard = await f.Service.GetDashboardAsync(f.Supervisor.Id);
         return Assert.Single(dashboard.Value!.Topics);
     }
 
-    private static Fixture CreateFixture()
+    private static Fixture CreateFixture(
+        bool withAdoption = true)
     {
         var options =
             new DbContextOptionsBuilder<EdulyticsDbContext>()
@@ -233,18 +671,33 @@ public sealed class CurriculumServiceTests
         var school = NewSchool();
         var subject = NewSubject(school.Id, "MATH");
         var grade = NewGrade(school.Id, "Grade 6", 6);
+        var program = new AcademicProgram
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = school.Id,
+            Name = "Phase 07 Default Program",
+            Code = "MAIN",
+            NormalizedCode = "MAIN",
+            Status = AcademicStructureStatus.Active,
+            IsDefault = true,
+            CreatedAtUtc = DateTime.UtcNow,
+            UpdatedAtUtc = DateTime.UtcNow,
+            RowVersion = BitConverter.GetBytes(1L)
+        };
 
         db.Schools.Add(school);
         db.Subjects.Add(subject);
         db.GradeLevels.Add(grade);
+        db.AcademicPrograms.Add(program);
 
         var framework = new CurriculumFramework
         {
             Id = Guid.Parse("07500000-0000-0000-0000-000000000001"),
             OwnerSchoolId = null,
-            Code = "EDULYTICS-DEFAULT",
-            NormalizedCode = "EDULYTICS-DEFAULT",
-            Name = "Edulytics Default Curriculum",
+            Code = MathematicsCurriculumPackRegistry.PolandCode,
+            NormalizedCode = MathematicsCurriculumPackRegistry.PolandCode,
+            Name = "Polish National Curriculum Mathematics",
+            CountryCode = "PL",
             IsActive = true,
             CreatedAtUtc = DateTime.UtcNow,
             UpdatedAtUtc = DateTime.UtcNow
@@ -264,6 +717,54 @@ public sealed class CurriculumServiceTests
 
         db.CurriculumFrameworks.Add(framework);
         db.CurriculumFrameworkVersions.Add(version);
+
+        var officialNode = new CurriculumPackContentNode
+        {
+            Id = Guid.Parse("07500000-0000-0000-0000-000000000003"),
+            FrameworkVersionId = version.Id,
+            FrameworkCode = MathematicsCurriculumPackRegistry.PolandCode,
+            VersionCode = "V1",
+            NodeKind = "Outcome",
+            Code = "PL:REQ:PL:VI:ADDITION:001",
+            LogicalLevelFrom = 6,
+            LogicalLevelTo = 6,
+            NativeLevel = "Klasa VI",
+            Title = "PL:VI:ADDITION:001",
+            OfficialText = "Add whole numbers accurately.",
+            SourceAuthority = "Official test authority",
+            SourceUrl = "https://example.com/official",
+            SourceLocator = "PL:VI:ADDITION:001",
+            Attribution = "Official test content.",
+            IsOfficial = true,
+            IsActive = true,
+            SortOrder = 1,
+            ContentHash = new string('a', 64),
+            CreatedAtUtc = DateTime.UtcNow,
+            UpdatedAtUtc = DateTime.UtcNow,
+            RowVersion = BitConverter.GetBytes(1L)
+        };
+        db.CurriculumPackContentNodes.Add(officialNode);
+
+        if (withAdoption)
+        {
+            db.SchoolCurriculumAdoptions.Add(
+                new SchoolCurriculumAdoption
+                {
+                    Id = Guid.NewGuid(),
+                    SchoolId = school.Id,
+                    AcademicYearId = null,
+                    AcademicProgramId = program.Id,
+                    GradeLevelId = grade.Id,
+                    SubjectId = subject.Id,
+                    FrameworkVersionId = version.Id,
+                    IsPrimary = true,
+                    IsActive = true,
+                    CreatedAtUtc = DateTime.UtcNow,
+                    UpdatedAtUtc = DateTime.UtcNow,
+                    RowVersion = BitConverter.GetBytes(1L)
+                });
+        }
+
         db.SaveChanges();
 
         var schools = new FakeSchoolRepository();
@@ -271,7 +772,12 @@ public sealed class CurriculumServiceTests
 
         var users = new FakeUserRepository();
         var admin = NewUser(school.Id, RoleNames.SchoolAdmin);
+        var supervisor = NewUser(
+            school.Id,
+            RoleNames.SubjectSupervisor);
+
         users.Seed(admin);
+        users.Seed(supervisor);
 
         var service = new CurriculumService(
             new CurriculumRepository(db),
@@ -284,9 +790,12 @@ public sealed class CurriculumServiceTests
             subject,
             grade,
             admin,
+            supervisor,
             schools,
             users,
-            service);
+            service,
+            version,
+            officialNode);
     }
 
     private static School NewSchool()
@@ -352,9 +861,12 @@ public sealed class CurriculumServiceTests
         Subject Subject,
         GradeLevel Grade,
         SchoolUserRecord Admin,
+        SchoolUserRecord Supervisor,
         FakeSchoolRepository Schools,
         FakeUserRepository Users,
-        CurriculumService Service)
+        CurriculumService Service,
+        CurriculumFrameworkVersion FrameworkVersion,
+        CurriculumPackContentNode OfficialNode)
         : IDisposable
     {
         public void Dispose() => Db.Dispose();

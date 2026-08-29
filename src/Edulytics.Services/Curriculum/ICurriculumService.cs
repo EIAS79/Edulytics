@@ -16,6 +16,11 @@ public interface ICurriculumService
         Guid id,
         CancellationToken cancellationToken = default);
 
+    Task<CurriculumCommandResult> SelectFrameworkAsync(
+        Guid actorUserId,
+        SelectCurriculumFrameworkRequest request,
+        CancellationToken cancellationToken = default);
+
     Task<CurriculumCommandResult> CreateTopicAsync(
         Guid actorUserId,
         CreateCurriculumTopicRequest request,
@@ -26,9 +31,10 @@ public interface ICurriculumService
         UpdateCurriculumTopicRequest request,
         CancellationToken cancellationToken = default);
 
-    Task<CurriculumCommandResult> CreateOutcomeAsync(
+
+    Task<CurriculumCommandResult> CreateOfficialOutcomeAsync(
         Guid actorUserId,
-        CreateLearningOutcomeRequest request,
+        CreateOfficialLearningOutcomeRequest request,
         CancellationToken cancellationToken = default);
 
     Task<CurriculumCommandResult> UpdateOutcomeAsync(

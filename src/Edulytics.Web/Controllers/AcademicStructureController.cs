@@ -1,4 +1,6 @@
 using System.Security.Claims;
+using Edulytics.Core.Academics;
+using Edulytics.Core.Constants;
 using Edulytics.Core.Enums;
 using Edulytics.Services.Academics;
 using Edulytics.Web.ViewModels.Academics;
@@ -8,7 +10,7 @@ using Microsoft.Extensions.Localization;
 
 namespace Edulytics.Web.Controllers;
 
-[Authorize(Policy = "AcademicStructureAdministration")]
+[Authorize(Policy = "SchoolAccess")]
 [Route("school/academic-structure")]
 public sealed class AcademicStructureController : Controller
 {
@@ -33,6 +35,7 @@ public sealed class AcademicStructureController : Controller
         return result.Value is not null ? View(result.Value) : Forbid();
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("academic-years")]
     [ValidateAntiForgeryToken]
     public Task<IActionResult> CreateAcademicYear(
@@ -62,6 +65,7 @@ public sealed class AcademicStructureController : Controller
             : View(new AcademicYearEditViewModel { Year = result.Value });
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("academic-years/{id:guid}/edit")]
     [ValidateAntiForgeryToken]
     public Task<IActionResult> EditAcademicYear(
@@ -81,6 +85,7 @@ public sealed class AcademicStructureController : Controller
             "SuccessAcademicYearUpdated");
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("terms")]
     [ValidateAntiForgeryToken]
     public Task<IActionResult> CreateTerm(
@@ -95,6 +100,7 @@ public sealed class AcademicStructureController : Controller
                 cancellationToken),
             "SuccessTermCreated");
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("grade-levels")]
     [ValidateAntiForgeryToken]
     public Task<IActionResult> CreateGradeLevel(
@@ -105,17 +111,76 @@ public sealed class AcademicStructureController : Controller
                 id, new CreateGradeLevelRequest(name, order), cancellationToken),
             "SuccessGradeCreated");
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
+    [HttpPost("academic-programs")]
+    [ValidateAntiForgeryToken]
+    public Task<IActionResult> CreateAcademicProgram(
+        Guid academicYearId,
+        string programChoice,
+        CancellationToken cancellationToken) =>
+        ExecuteAsync(
+            id =>
+                _academic.OfferAcademicProgramAsync(
+                    id,
+                    new OfferAcademicProgramRequest(
+                        academicYearId,
+                        programChoice),
+                    cancellationToken),
+            "SuccessAcademicProgramOffered");
+
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
+    [HttpPost(
+        "academic-programs/{academicProgramId:guid}/years/" +
+        "{academicYearId:guid}/stop")]
+    [ValidateAntiForgeryToken]
+    public Task<IActionResult> StopAcademicProgramForYear(
+        Guid academicProgramId,
+        Guid academicYearId,
+        string rowVersion,
+        CancellationToken cancellationToken)
+    {
+        if (!TryDecodeRowVersion(
+                rowVersion,
+                out var expected))
+        {
+            return Task.FromResult(
+                RedirectWithError(
+                    "ErrorConcurrencyConflict"));
+        }
+
+        return ExecuteAsync(
+            id =>
+                _academic
+                    .StopAcademicProgramOfferingAsync(
+                        id,
+                        new StopAcademicProgramOfferingRequest(
+                            academicYearId,
+                            academicProgramId,
+                            expected),
+                        cancellationToken),
+            "SuccessAcademicProgramStopped");
+    }
+
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("classes")]
     [ValidateAntiForgeryToken]
     public Task<IActionResult> CreateClassGroup(
-        Guid academicYearId, Guid gradeLevelId, string name, string code,
+        Guid academicYearId,
+        Guid academicProgramId,
+        Guid gradeLevelId,
+        string name,
         AcademicStructureStatus status,
         CancellationToken cancellationToken) =>
         ExecuteAsync(
             id => _academic.CreateClassGroupAsync(
                 id,
                 new CreateClassGroupRequest(
-                    academicYearId, gradeLevelId, name, code, status),
+                    academicYearId,
+                    gradeLevelId,
+                    name,
+                    string.Empty,
+                    status,
+                    academicProgramId),
                 cancellationToken),
             "SuccessClassCreated");
 
@@ -139,15 +204,37 @@ public sealed class AcademicStructureController : Controller
         return View(new ClassGroupEditViewModel
         {
             ClassGroup = item.Value,
-            GradeLevels = dashboard.Value.GradeLevels
+            GradeLevels = dashboard.Value.GradeLevels,
+            AcademicPrograms =
+                dashboard.Value.AcademicPrograms
+                    .Where(
+                        x =>
+                            x.Id ==
+                                item.Value.AcademicProgramId ||
+                            dashboard.Value
+                                .AcademicYearProgramOfferings
+                                .Any(
+                                    offering =>
+                                        offering.AcademicYearId ==
+                                            item.Value.AcademicYearId &&
+                                        offering.AcademicProgramId ==
+                                            x.Id &&
+                                        offering.IsOffered))
+                    .OrderBy(x => x.Name)
+                    .ToArray()
         });
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("classes/{id:guid}/edit")]
     [ValidateAntiForgeryToken]
     public Task<IActionResult> EditClassGroup(
-        Guid id, Guid gradeLevelId, string name, string code,
-        AcademicStructureStatus status, string rowVersion,
+        Guid id,
+        Guid academicProgramId,
+        Guid gradeLevelId,
+        string name,
+        AcademicStructureStatus status,
+        string rowVersion,
         CancellationToken cancellationToken)
     {
         if (!TryDecodeRowVersion(rowVersion, out var expected))
@@ -157,11 +244,18 @@ public sealed class AcademicStructureController : Controller
             actorId => _academic.UpdateClassGroupAsync(
                 actorId,
                 new UpdateClassGroupRequest(
-                    id, gradeLevelId, name, code, status, expected),
+                    id,
+                    gradeLevelId,
+                    name,
+                    string.Empty,
+                    status,
+                    expected,
+                    academicProgramId),
                 cancellationToken),
             "SuccessClassUpdated");
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("subjects")]
     [ValidateAntiForgeryToken]
     public Task<IActionResult> CreateSubject(
@@ -188,6 +282,7 @@ public sealed class AcademicStructureController : Controller
             : View(new SubjectEditViewModel { Subject = result.Value });
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("subjects/{id:guid}/edit")]
     [ValidateAntiForgeryToken]
     public Task<IActionResult> EditSubject(
@@ -206,6 +301,7 @@ public sealed class AcademicStructureController : Controller
             "SuccessSubjectUpdated");
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("teacher-assignments")]
     [ValidateAntiForgeryToken]
     public Task<IActionResult> CreateTeacherAssignment(
@@ -219,6 +315,7 @@ public sealed class AcademicStructureController : Controller
                 cancellationToken),
             "SuccessTeacherAssigned");
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("students")]
     [ValidateAntiForgeryToken]
     public Task<IActionResult> CreateStudentProfile(
@@ -233,6 +330,7 @@ public sealed class AcademicStructureController : Controller
                 cancellationToken),
             "SuccessStudentCreated");
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("students/{id:guid}/archive")]
     [ValidateAntiForgeryToken]
     public Task<IActionResult> ArchiveStudentProfile(
@@ -252,6 +350,7 @@ public sealed class AcademicStructureController : Controller
             "SuccessStudentArchived");
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("students/{id:guid}/restore")]
     [ValidateAntiForgeryToken]
     public Task<IActionResult> RestoreStudentProfile(
@@ -271,6 +370,7 @@ public sealed class AcademicStructureController : Controller
             "SuccessStudentRestored");
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("student-enrollments")]
     [ValidateAntiForgeryToken]
     public Task<IActionResult> CreateStudentEnrollment(

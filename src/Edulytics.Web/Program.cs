@@ -152,6 +152,12 @@ builder.Services
     .AddNotificationsPhase21();
 
 builder.Services
+    .AddStudentPortalPhase28();
+
+builder.Services
+    .AddLessonContentPhase29();
+
+builder.Services
     .AddInvitationEmailDelivery(
         builder.Configuration);
 
@@ -223,6 +229,30 @@ using (var scope =
 
     await bootstrapper
         .InitializeAsync();
+
+    var mathematicsCurriculumPackSeeder =
+        scope.ServiceProvider
+            .GetRequiredService<
+                Edulytics.Data.Seeding.MathematicsCurriculumPackSeeder>();
+
+    await mathematicsCurriculumPackSeeder
+        .SeedAsync();
+
+    var mathematicsPedagogicalLessonSeeder =
+        scope.ServiceProvider
+            .GetRequiredService<
+                Edulytics.Data.Seeding.MathematicsPedagogicalLessonSeeder>();
+
+    await mathematicsPedagogicalLessonSeeder
+        .SeedAsync();
+
+    var mathematicsCanonicalLessonContentSeeder =
+        scope.ServiceProvider
+            .GetRequiredService<
+                Edulytics.Data.Seeding.MathematicsCanonicalLessonContentSeeder>();
+
+    await mathematicsCanonicalLessonContentSeeder
+        .SeedAsync();
 }
 
 app.UseForwardedHeaders();

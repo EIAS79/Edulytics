@@ -15,7 +15,7 @@ public sealed class CurriculumUiContractTests
             .Single();
 
         Assert.Equal(
-            "AcademicStructureAdministration",
+            "SchoolAccess",
             attribute.Policy);
     }
 
@@ -31,10 +31,112 @@ public sealed class CurriculumUiContractTests
 
         Assert.All(
             posts,
-            method => Assert.True(
-                method.GetCustomAttributes<
-                    ValidateAntiForgeryTokenAttribute>().Any(),
-                method.Name));
+            method =>
+            {
+                Assert.True(
+                    method.GetCustomAttributes<
+                        ValidateAntiForgeryTokenAttribute>().Any(),
+                    method.Name);
+
+                var authorization = method
+                    .GetCustomAttributes<AuthorizeAttribute>()
+                    .Single();
+
+                Assert.Equal(
+                    "SubjectSupervisor",
+                    authorization.Roles);
+            });
+    }
+
+
+    [Fact]
+    public void Dashboard_RequiresVerifiedFrameworkSelectionBeforeTopicAuthoring()
+    {
+        var root = FindRepositoryRoot();
+        var view = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Curriculum/Index.cshtml"));
+
+        Assert.Contains(
+            "asp-action=\"SelectFramework\"",
+            view);
+        Assert.Contains(
+            "name=\"frameworkCode\"",
+            view);
+        Assert.Contains(
+            "@foreach (var framework in Model.Frameworks)",
+            view);
+        Assert.Contains(
+            "TopicRequiresFramework",
+            view);
+    }
+
+    [Fact]
+    public void OfficialOutcome_IsSelected_AndOfficialFieldsAreReadOnly()
+    {
+        var root = FindRepositoryRoot();
+        var view = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Curriculum/Index.cshtml"));
+
+        Assert.Contains(
+            "asp-action=\"CreateOfficialOutcome\"",
+            view);
+        Assert.Contains(
+            "name=\"selectionKey\"",
+            view);
+        Assert.Contains(
+            "data-code=\"@outcome.Code\"",
+            view);
+        Assert.Contains(
+            "id=\"officialCode\" readonly",
+            view);
+        Assert.Contains(
+            "id=\"officialDescription\"",
+            view);
+        Assert.Contains(
+            "@topic.FrameworkDisplayName",
+            view);
+        Assert.DoesNotContain(
+            "AddCustomOutcome",
+            view);
+        Assert.DoesNotContain(
+            "asp-action=\"CreateOutcome\"",
+            view);
+        Assert.DoesNotContain(
+            "SchoolOutcomeCode",
+            view);
+        Assert.DoesNotContain(
+            "name=\"weight\"",
+            view);
+    }
+
+    [Fact]
+    public void CurriculumViews_DoNotExposeOutcomeWeight()
+    {
+        var root = FindRepositoryRoot();
+
+        foreach (var name in new[]
+        {
+            "Index.cshtml",
+            "EditOutcome.cshtml"
+        })
+        {
+            var view = File.ReadAllText(Path.Combine(
+                root,
+                "src/Edulytics.Web/Views/Curriculum",
+                name));
+
+            Assert.DoesNotContain(
+                "name=\"weight\"",
+                view);
+            Assert.DoesNotContain(
+                "@C[\"WeightHelp\"]",
+                view);
+            Assert.DoesNotContain(
+                "outcome.Weight",
+                view);
+        }
     }
 
     [Fact]

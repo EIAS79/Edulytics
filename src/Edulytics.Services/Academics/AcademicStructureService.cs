@@ -50,6 +50,7 @@ public sealed class AcademicStructureService : IAcademicStructureService
 
         var years = snapshot.AcademicYears.ToDictionary(x => x.Id);
         var grades = snapshot.GradeLevels.ToDictionary(x => x.Id);
+        var programs = snapshot.AcademicPrograms.ToDictionary(x => x.Id);
         var classes = snapshot.ClassGroups.ToDictionary(x => x.Id);
         var subjects = snapshot.Subjects.ToDictionary(x => x.Id);
         var profiles = snapshot.StudentProfiles.ToDictionary(x => x.Id);
@@ -102,7 +103,12 @@ public sealed class AcademicStructureService : IAcademicStructureService
                 x.Name,
                 x.Code,
                 x.Status,
-                x.RowVersion)).ToArray(),
+                x.RowVersion)
+            {
+                AcademicProgramId = x.AcademicProgramId,
+                AcademicProgramName = programs.GetValueOrDefault(x.AcademicProgramId)?.Name ?? string.Empty,
+                AcademicProgramCode = programs.GetValueOrDefault(x.AcademicProgramId)?.Code ?? string.Empty
+            }).ToArray(),
             snapshot.Subjects.Select(MapSubject).ToArray(),
             snapshot.TeacherAssignments.Select(x =>
             {
@@ -141,7 +147,26 @@ public sealed class AcademicStructureService : IAcademicStructureService
                     years.GetValueOrDefault(x.AcademicYearId)?.Name ?? string.Empty);
             }).ToArray(),
             teacherCandidates,
-            studentCandidates);
+            studentCandidates)
+        {
+            AcademicPrograms = snapshot.AcademicPrograms
+                .OrderBy(x => x.Name)
+                .Select(x => new AcademicProgramItem(
+                    x.Id, x.Name, x.Code, x.Status, x.IsDefault, x.RowVersion))
+                .ToArray(),
+
+            AcademicYearProgramOfferings =
+                snapshot.AcademicYearProgramOfferings
+                    .Select(
+                        x =>
+                            new AcademicYearProgramOfferingItem(
+                                x.Id,
+                                x.AcademicYearId,
+                                x.AcademicProgramId,
+                                x.IsOffered,
+                                x.RowVersion))
+                    .ToArray()
+        };
 
         return AcademicQueryResult<AcademicStructureDashboard>.Success(dashboard);
     }
@@ -194,6 +219,9 @@ public sealed class AcademicStructureService : IAcademicStructureService
         var grade = await _academic.GetGradeLevelAsync(
             schoolId, entity.GradeLevelId, cancellationToken);
 
+        var program = await _academic.GetAcademicProgramAsync(
+            schoolId, entity.AcademicProgramId, cancellationToken);
+
         return AcademicQueryResult<ClassGroupItem>.Success(new ClassGroupItem(
             entity.Id,
             entity.AcademicYearId,
@@ -203,7 +231,12 @@ public sealed class AcademicStructureService : IAcademicStructureService
             entity.Name,
             entity.Code,
             entity.Status,
-            entity.RowVersion));
+            entity.RowVersion)
+        {
+            AcademicProgramId = entity.AcademicProgramId,
+            AcademicProgramName = program?.Name ?? string.Empty,
+            AcademicProgramCode = program?.Code ?? string.Empty
+        });
     }
 
     public async Task<AcademicQueryResult<SubjectItem>> GetSubjectAsync(
@@ -233,8 +266,11 @@ public sealed class AcademicStructureService : IAcademicStructureService
         CancellationToken cancellationToken = default)
     {
         var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
-        if (!scope.Succeeded) return Fail(scope.Error!.Value);
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
 
+        if (SingleRole(scope.Actor!.Roles) != RoleNames.SubjectSupervisor)
+            return Fail(AcademicStructureErrorCode.AccessDenied);
         var name = Clean(request.Name);
         var validation = ValidateName(name);
         if (validation is not null) return validation;
@@ -293,8 +329,11 @@ public sealed class AcademicStructureService : IAcademicStructureService
         CancellationToken cancellationToken = default)
     {
         var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
-        if (!scope.Succeeded) return Fail(scope.Error!.Value);
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
 
+        if (SingleRole(scope.Actor!.Roles) != RoleNames.SubjectSupervisor)
+            return Fail(AcademicStructureErrorCode.AccessDenied);
         if (request.ExpectedRowVersion.Length == 0)
             return Fail(AcademicStructureErrorCode.ConcurrencyConflict);
 
@@ -370,8 +409,11 @@ public sealed class AcademicStructureService : IAcademicStructureService
         CancellationToken cancellationToken = default)
     {
         var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
-        if (!scope.Succeeded) return Fail(scope.Error!.Value);
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
 
+        if (SingleRole(scope.Actor!.Roles) != RoleNames.SubjectSupervisor)
+            return Fail(AcademicStructureErrorCode.AccessDenied);
         var name = Clean(request.Name);
         var validation = ValidateName(name);
         if (validation is not null) return validation;
@@ -439,8 +481,11 @@ public sealed class AcademicStructureService : IAcademicStructureService
         CancellationToken cancellationToken = default)
     {
         var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
-        if (!scope.Succeeded) return Fail(scope.Error!.Value);
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
 
+        if (SingleRole(scope.Actor!.Roles) != RoleNames.SubjectSupervisor)
+            return Fail(AcademicStructureErrorCode.AccessDenied);
         var name = Clean(request.Name);
         var validation = ValidateName(name);
         if (validation is not null) return validation;
@@ -490,21 +535,424 @@ public sealed class AcademicStructureService : IAcademicStructureService
         return await PersistAsync(cancellationToken);
     }
 
+    public async Task<AcademicCommandResult> CreateAcademicProgramAsync(
+        Guid actorUserId,
+        CreateAcademicProgramRequest request,
+        CancellationToken cancellationToken = default)
+    {
+        var scope =
+            await ResolveScopeAsync(
+                actorUserId,
+                cancellationToken);
+
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
+
+        if (SingleRole(scope.Actor!.Roles) !=
+            RoleNames.SubjectSupervisor)
+        {
+            return Fail(
+                AcademicStructureErrorCode.AccessDenied);
+        }
+
+        var code =
+            NormalizeCode(request.Code);
+
+        var choice =
+            AcademicProgramCatalog.FindByCode(code);
+
+        if (choice is null)
+        {
+            return Fail(
+                nameof(request.Code),
+                AcademicStructureErrorCode
+                    .AcademicProgramNotFound);
+        }
+
+        var schoolId =
+            scope.School!.Id;
+
+        // Duplicate is resolved before comparing the submitted name so
+        // existing callers receive the stable duplicate-program result.
+        if (await _academic
+                .AcademicProgramCodeExistsAsync(
+                    schoolId,
+                    choice.Code,
+                    cancellationToken))
+        {
+            return Fail(
+                nameof(request.Code),
+                AcademicStructureErrorCode
+                    .DuplicateAcademicProgram);
+        }
+
+        var submittedName =
+            Clean(request.Name);
+
+        // The friendly name and technical code are a controlled pair.
+        // A crafted/internal caller cannot create an arbitrary combination.
+        if (!string.Equals(
+                submittedName,
+                choice.Name,
+                StringComparison.Ordinal))
+        {
+            return Fail(
+                nameof(request.Name),
+                AcademicStructureErrorCode.InvalidName);
+        }
+
+        var now =
+            DateTime.UtcNow;
+
+        var entity =
+            new AcademicProgram
+            {
+                Id = Guid.NewGuid(),
+                SchoolId = schoolId,
+                Name = choice.Name,
+                Code = choice.Code,
+                NormalizedCode = choice.Code,
+                Status = request.Status,
+                IsDefault = false,
+                CreatedAtUtc = now,
+                UpdatedAtUtc = now
+            };
+
+        await _academic.AddAsync(
+            entity,
+            cancellationToken);
+
+        await QueueAuditAsync(
+            scope,
+            "AcademicProgram.Created",
+            "AcademicProgram",
+            entity.Id,
+            oldValues: null,
+            newValues:
+                new Dictionary<string, object?>
+                {
+                    ["name"] = entity.Name,
+                    ["code"] = entity.Code,
+                    ["status"] =
+                        entity.Status.ToString(),
+                    ["isDefault"] =
+                        entity.IsDefault
+                },
+            "Academic program / curriculum stream created.",
+            cancellationToken);
+
+        return await PersistAsync(
+            cancellationToken);
+    }
+
+    public async Task<AcademicCommandResult>
+        OfferAcademicProgramAsync(
+            Guid actorUserId,
+            OfferAcademicProgramRequest request,
+            CancellationToken cancellationToken = default)
+    {
+        var scope =
+            await ResolveScopeAsync(
+                actorUserId,
+                cancellationToken);
+
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
+
+        if (SingleRole(scope.Actor!.Roles) !=
+            RoleNames.SubjectSupervisor)
+        {
+            return Fail(
+                AcademicStructureErrorCode.AccessDenied);
+        }
+
+        var schoolId =
+            scope.School!.Id;
+
+        var year =
+            await _academic.GetAcademicYearAsync(
+                schoolId,
+                request.AcademicYearId,
+                cancellationToken);
+
+        if (year is null)
+        {
+            return Fail(
+                nameof(request.AcademicYearId),
+                AcademicStructureErrorCode
+                    .AcademicYearNotFound);
+        }
+
+        var choice =
+            AcademicProgramCatalog.FindByKey(
+                request.ProgramChoice);
+
+        if (choice is null)
+        {
+            return Fail(
+                nameof(request.ProgramChoice),
+                AcademicStructureErrorCode
+                    .AcademicProgramNotFound);
+        }
+
+        var program =
+            await _academic
+                .GetAcademicProgramByCodeAsync(
+                    schoolId,
+                    choice.Code,
+                    cancellationToken);
+
+        var now =
+            DateTime.UtcNow;
+
+        if (program is null)
+        {
+            program =
+                new AcademicProgram
+                {
+                    Id = Guid.NewGuid(),
+                    SchoolId = schoolId,
+                    Name = choice.Name,
+                    Code = choice.Code,
+                    NormalizedCode = choice.Code,
+                    Status =
+                        AcademicStructureStatus.Active,
+                    IsDefault = false,
+                    CreatedAtUtc = now,
+                    UpdatedAtUtc = now
+                };
+
+            await _academic.AddAsync(
+                program,
+                cancellationToken);
+        }
+        else
+        {
+            if (program.IsDefault)
+            {
+                return Fail(
+                    nameof(request.ProgramChoice),
+                    AcademicStructureErrorCode
+                        .AcademicProgramNotFound);
+            }
+
+            // Catalog identity is authoritative.
+            program.Name = choice.Name;
+            program.Code = choice.Code;
+            program.NormalizedCode = choice.Code;
+            program.Status =
+                AcademicStructureStatus.Active;
+            program.UpdatedAtUtc = now;
+        }
+
+        var offering =
+            await _academic
+                .GetAcademicYearProgramOfferingAsync(
+                    schoolId,
+                    year.Id,
+                    program.Id,
+                    cancellationToken);
+
+        if (offering is not null &&
+            offering.IsOffered)
+        {
+            return Fail(
+                nameof(request.ProgramChoice),
+                AcademicStructureErrorCode
+                    .DuplicateAcademicYearProgramOffering);
+        }
+
+        if (offering is null)
+        {
+            offering =
+                new AcademicYearProgramOffering
+                {
+                    Id = Guid.NewGuid(),
+                    SchoolId = schoolId,
+                    AcademicYearId = year.Id,
+                    AcademicProgramId = program.Id,
+                    IsOffered = true,
+                    CreatedAtUtc = now,
+                    UpdatedAtUtc = now
+                };
+
+            await _academic.AddAsync(
+                offering,
+                cancellationToken);
+        }
+        else
+        {
+            offering.IsOffered = true;
+            offering.UpdatedAtUtc = now;
+        }
+
+        await QueueAuditAsync(
+            scope,
+            "AcademicProgram.OfferedForAcademicYear",
+            "AcademicYearProgramOffering",
+            offering.Id,
+            oldValues: null,
+            newValues:
+                new Dictionary<string, object?>
+                {
+                    ["academicYearId"] =
+                        year.Id,
+                    ["academicProgramId"] =
+                        program.Id,
+                    ["programName"] =
+                        program.Name,
+                    ["isOffered"] =
+                        true
+                },
+            "Academic program offered for academic year.",
+            cancellationToken);
+
+        return await PersistAsync(
+            cancellationToken);
+    }
+
+    public async Task<AcademicCommandResult>
+        StopAcademicProgramOfferingAsync(
+            Guid actorUserId,
+            StopAcademicProgramOfferingRequest request,
+            CancellationToken cancellationToken = default)
+    {
+        var scope =
+            await ResolveScopeAsync(
+                actorUserId,
+                cancellationToken);
+
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
+
+        if (SingleRole(scope.Actor!.Roles) !=
+            RoleNames.SubjectSupervisor)
+        {
+            return Fail(
+                AcademicStructureErrorCode.AccessDenied);
+        }
+
+        if (request.ExpectedRowVersion.Length == 0)
+        {
+            return Fail(
+                AcademicStructureErrorCode
+                    .ConcurrencyConflict);
+        }
+
+        var schoolId =
+            scope.School!.Id;
+
+        var year =
+            await _academic.GetAcademicYearAsync(
+                schoolId,
+                request.AcademicYearId,
+                cancellationToken);
+
+        if (year is null)
+        {
+            return Fail(
+                nameof(request.AcademicYearId),
+                AcademicStructureErrorCode
+                    .AcademicYearNotFound);
+        }
+
+        var program =
+            await _academic.GetAcademicProgramAsync(
+                schoolId,
+                request.AcademicProgramId,
+                cancellationToken);
+
+        if (program is null ||
+            program.IsDefault)
+        {
+            return Fail(
+                nameof(request.AcademicProgramId),
+                AcademicStructureErrorCode
+                    .AcademicProgramNotFound);
+        }
+
+        var offering =
+            await _academic
+                .GetAcademicYearProgramOfferingAsync(
+                    schoolId,
+                    year.Id,
+                    program.Id,
+                    cancellationToken);
+
+        if (offering is null ||
+            !offering.IsOffered)
+        {
+            return Fail(
+                nameof(request.AcademicProgramId),
+                AcademicStructureErrorCode
+                    .AcademicProgramNotOffered);
+        }
+
+        if (await _academic
+                .AcademicYearProgramHasUsageAsync(
+                    schoolId,
+                    year.Id,
+                    program.Id,
+                    cancellationToken))
+        {
+            return Fail(
+                nameof(request.AcademicProgramId),
+                AcademicStructureErrorCode
+                    .AcademicProgramInUseForAcademicYear);
+        }
+
+        offering.IsOffered = false;
+        offering.UpdatedAtUtc =
+            DateTime.UtcNow;
+
+        await QueueAuditAsync(
+            scope,
+            "AcademicProgram.StoppedForAcademicYear",
+            "AcademicYearProgramOffering",
+            offering.Id,
+            oldValues:
+                new Dictionary<string, object?>
+                {
+                    ["isOffered"] = true
+                },
+            newValues:
+                new Dictionary<string, object?>
+                {
+                    ["academicYearId"] =
+                        year.Id,
+                    ["academicProgramId"] =
+                        program.Id,
+                    ["programName"] =
+                        program.Name,
+                    ["isOffered"] =
+                        false
+                },
+            "Academic program stopped for academic year.",
+            cancellationToken);
+
+        return MapPersistence(
+            await _academic
+                .SaveWithRowVersionAsync(
+                    offering,
+                    request.ExpectedRowVersion,
+                    cancellationToken));
+    }
+
     public async Task<AcademicCommandResult> CreateClassGroupAsync(
         Guid actorUserId,
         CreateClassGroupRequest request,
         CancellationToken cancellationToken = default)
     {
         var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
-        if (!scope.Succeeded) return Fail(scope.Error!.Value);
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
 
+        if (SingleRole(scope.Actor!.Roles) != RoleNames.SubjectSupervisor)
+            return Fail(AcademicStructureErrorCode.AccessDenied);
         var name = Clean(request.Name);
-        var code = NormalizeCode(request.Code);
+        var requestedCode = NormalizeCode(request.Code);
         var validation = ValidateName(name);
         if (validation is not null) return validation;
-
-        if (!ValidCode(code))
-            return Fail(nameof(request.Code), AcademicStructureErrorCode.InvalidCode);
 
         var schoolId = scope.School!.Id;
         var year = await _academic.GetAcademicYearAsync(
@@ -521,16 +969,72 @@ public sealed class AcademicStructureService : IAcademicStructureService
             return Fail(nameof(request.GradeLevelId),
                 AcademicStructureErrorCode.GradeLevelNotFound);
 
-        if (await _academic.ClassCodeExistsAsync(
-                schoolId, year.Id, code, cancellationToken: cancellationToken))
+        if (request.AcademicProgramId == Guid.Empty)
+        {
+            return Fail(
+                nameof(request.AcademicProgramId),
+                AcademicStructureErrorCode
+                    .AcademicProgramNotFound);
+        }
+
+        var program =
+            await _academic.GetAcademicProgramAsync(
+                schoolId,
+                request.AcademicProgramId,
+                cancellationToken);
+
+        if (program is null ||
+            program.IsDefault ||
+            program.Status != AcademicStructureStatus.Active)
+        {
+            return Fail(
+                nameof(request.AcademicProgramId),
+                AcademicStructureErrorCode
+                    .AcademicProgramNotFound);
+        }
+
+        if (!await _academic
+                .AcademicYearProgramIsOfferedAsync(
+                    schoolId,
+                    year.Id,
+                    program.Id,
+                    cancellationToken))
+        {
+            return Fail(
+                nameof(request.AcademicProgramId),
+                AcademicStructureErrorCode
+                    .AcademicProgramNotOffered);
+        }
+
+        var programId =
+            program.Id;
+
+        var entityId =
+            Guid.NewGuid();
+
+        var code =
+            requestedCode.Length == 0
+                ? GenerateInternalClassCode(entityId)
+                : requestedCode;
+
+        if (!ValidCode(code))
+        {
+            return Fail(
+                nameof(request.Code),
+                AcademicStructureErrorCode.InvalidCode);
+        }
+
+        if (await _academic.ClassCodeExistsInProgramAsync(
+                schoolId, year.Id, programId, code, cancellationToken: cancellationToken))
             return Fail(nameof(request.Code),
                 AcademicStructureErrorCode.DuplicateClassCode);
 
         var entity = new ClassGroup
         {
-            Id = Guid.NewGuid(),
+            Id = entityId,
             SchoolId = schoolId,
             AcademicYearId = year.Id,
+            AcademicProgramId = programId,
             GradeLevelId = grade.Id,
             Name = name,
             Code = code,
@@ -572,18 +1076,17 @@ public sealed class AcademicStructureService : IAcademicStructureService
         CancellationToken cancellationToken = default)
     {
         var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
-        if (!scope.Succeeded) return Fail(scope.Error!.Value);
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
 
+        if (SingleRole(scope.Actor!.Roles) != RoleNames.SubjectSupervisor)
+            return Fail(AcademicStructureErrorCode.AccessDenied);
         if (request.ExpectedRowVersion.Length == 0)
             return Fail(AcademicStructureErrorCode.ConcurrencyConflict);
 
         var name = Clean(request.Name);
-        var code = NormalizeCode(request.Code);
         var validation = ValidateName(name);
         if (validation is not null) return validation;
-
-        if (!ValidCode(code))
-            return Fail(nameof(request.Code), AcademicStructureErrorCode.InvalidCode);
 
         var schoolId = scope.School!.Id;
         var entity = await _academic.GetClassGroupAsync(
@@ -592,6 +1095,18 @@ public sealed class AcademicStructureService : IAcademicStructureService
         if (entity is null)
             return Fail(AcademicStructureErrorCode.ClassGroupNotFound);
 
+        var code =
+            string.IsNullOrWhiteSpace(request.Code)
+                ? entity.Code
+                : NormalizeCode(request.Code);
+
+        if (!ValidCode(code))
+        {
+            return Fail(
+                nameof(request.Code),
+                AcademicStructureErrorCode.InvalidCode);
+        }
+
         var grade = await _academic.GetGradeLevelAsync(
             schoolId, request.GradeLevelId, cancellationToken);
 
@@ -599,8 +1114,44 @@ public sealed class AcademicStructureService : IAcademicStructureService
             return Fail(nameof(request.GradeLevelId),
                 AcademicStructureErrorCode.GradeLevelNotFound);
 
-        if (await _academic.ClassCodeExistsAsync(
-                schoolId, entity.AcademicYearId, code,
+        var requestedProgramId =
+            request.AcademicProgramId == Guid.Empty
+                ? entity.AcademicProgramId
+                : request.AcademicProgramId;
+
+        var program =
+            await _academic.GetAcademicProgramAsync(
+                schoolId,
+                requestedProgramId,
+                cancellationToken);
+
+        if (program is null)
+        {
+            return Fail(
+                nameof(request.AcademicProgramId),
+                AcademicStructureErrorCode
+                    .AcademicProgramNotFound);
+        }
+
+        if (!program.IsDefault &&
+            !await _academic
+                .AcademicYearProgramIsOfferedAsync(
+                    schoolId,
+                    entity.AcademicYearId,
+                    program.Id,
+                    cancellationToken))
+        {
+            return Fail(
+                nameof(request.AcademicProgramId),
+                AcademicStructureErrorCode
+                    .AcademicProgramNotOffered);
+        }
+
+        var programId =
+            program.Id;
+
+        if (await _academic.ClassCodeExistsInProgramAsync(
+                schoolId, entity.AcademicYearId, programId, code,
                 request.Id, cancellationToken))
             return Fail(nameof(request.Code),
                 AcademicStructureErrorCode.DuplicateClassCode);
@@ -616,6 +1167,7 @@ public sealed class AcademicStructureService : IAcademicStructureService
                     entity.Status.ToString()
             };
 
+        entity.AcademicProgramId = programId;
         entity.GradeLevelId = grade.Id;
         entity.Name = name;
         entity.Code = code;
@@ -653,8 +1205,11 @@ public sealed class AcademicStructureService : IAcademicStructureService
         CancellationToken cancellationToken = default)
     {
         var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
-        if (!scope.Succeeded) return Fail(scope.Error!.Value);
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
 
+        if (SingleRole(scope.Actor!.Roles) != RoleNames.SubjectSupervisor)
+            return Fail(AcademicStructureErrorCode.AccessDenied);
         var name = Clean(request.Name);
         var code = NormalizeCode(request.Code);
         var validation = ValidateName(name);
@@ -710,8 +1265,11 @@ public sealed class AcademicStructureService : IAcademicStructureService
         CancellationToken cancellationToken = default)
     {
         var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
-        if (!scope.Succeeded) return Fail(scope.Error!.Value);
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
 
+        if (SingleRole(scope.Actor!.Roles) != RoleNames.SubjectSupervisor)
+            return Fail(AcademicStructureErrorCode.AccessDenied);
         if (request.ExpectedRowVersion.Length == 0)
             return Fail(AcademicStructureErrorCode.ConcurrencyConflict);
 
@@ -778,8 +1336,11 @@ public sealed class AcademicStructureService : IAcademicStructureService
         CancellationToken cancellationToken = default)
     {
         var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
-        if (!scope.Succeeded) return Fail(scope.Error!.Value);
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
 
+        if (SingleRole(scope.Actor!.Roles) != RoleNames.SubjectSupervisor)
+            return Fail(AcademicStructureErrorCode.AccessDenied);
         var schoolId = scope.School!.Id;
         var teacher = await _users.GetBySchoolAndIdAsync(
             schoolId, request.TeacherUserId, cancellationToken);
@@ -855,8 +1416,11 @@ public sealed class AcademicStructureService : IAcademicStructureService
         CancellationToken cancellationToken = default)
     {
         var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
-        if (!scope.Succeeded) return Fail(scope.Error!.Value);
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
 
+        if (SingleRole(scope.Actor!.Roles) != RoleNames.SubjectSupervisor)
+            return Fail(AcademicStructureErrorCode.AccessDenied);
         var studentNumber = NormalizeCode(request.StudentNumber);
         if (!ValidCode(studentNumber))
             return Fail(nameof(request.StudentNumber), AcademicStructureErrorCode.InvalidCode);
@@ -961,7 +1525,11 @@ public sealed class AcademicStructureService : IAcademicStructureService
         CancellationToken cancellationToken = default)
     {
         var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
-        if (!scope.Succeeded) return Fail(scope.Error!.Value);
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
+
+        if (SingleRole(scope.Actor!.Roles) != RoleNames.SubjectSupervisor)
+            return Fail(AcademicStructureErrorCode.AccessDenied);
 
         if (expectedRowVersion.Length == 0)
             return Fail(AcademicStructureErrorCode.ConcurrencyConflict);
@@ -1011,7 +1579,11 @@ public sealed class AcademicStructureService : IAcademicStructureService
         CancellationToken cancellationToken = default)
     {
         var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
-        if (!scope.Succeeded) return Fail(scope.Error!.Value);
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
+
+        if (SingleRole(scope.Actor!.Roles) != RoleNames.SubjectSupervisor)
+            return Fail(AcademicStructureErrorCode.AccessDenied);
 
         if (expectedRowVersion.Length == 0)
             return Fail(AcademicStructureErrorCode.ConcurrencyConflict);
@@ -1055,8 +1627,11 @@ public sealed class AcademicStructureService : IAcademicStructureService
         CancellationToken cancellationToken = default)
     {
         var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
-        if (!scope.Succeeded) return Fail(scope.Error!.Value);
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
 
+        if (SingleRole(scope.Actor!.Roles) != RoleNames.SubjectSupervisor)
+            return Fail(AcademicStructureErrorCode.AccessDenied);
         var schoolId = scope.School!.Id;
         var profile = await _academic.GetStudentProfileAsync(
             schoolId, request.StudentProfileId, cancellationToken);
@@ -1170,9 +1745,18 @@ public sealed class AcademicStructureService : IAcademicStructureService
         if (actor is null ||
             !actor.IsActive ||
             actor.IsLocked ||
-            !actor.SchoolId.HasValue ||
-            SingleRole(actor.Roles) != RoleNames.SchoolAdmin)
+            !actor.SchoolId.HasValue)
             return ScopeResult.Fail(AcademicStructureErrorCode.AccessDenied);
+
+        var role = SingleRole(actor.Roles);
+
+        if (role != RoleNames.SchoolAdmin &&
+            role != RoleNames.SubjectSupervisor &&
+            role != RoleNames.Teacher)
+        {
+            return ScopeResult.Fail(
+                AcademicStructureErrorCode.AccessDenied);
+        }
 
         var school = await _schools.GetByIdAsync(
             actor.SchoolId.Value, cancellationToken);
@@ -1218,6 +1802,9 @@ public sealed class AcademicStructureService : IAcademicStructureService
 
     private static bool ValidCode(string value) =>
         value.Length is > 0 and <= 50 && CodePattern.IsMatch(value);
+
+    private static string GenerateInternalClassCode(Guid id) =>
+        $"CLS-{id:N}".ToUpperInvariant();
 
     private static string Clean(string? value) =>
         value?.Trim() ?? string.Empty;

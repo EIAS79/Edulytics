@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using Edulytics.Core.Constants;
 using Edulytics.Services.Curriculum;
 using Edulytics.Web.ViewModels.Curriculum;
 using Microsoft.AspNetCore.Authorization;
@@ -7,7 +8,7 @@ using Microsoft.Extensions.Localization;
 
 namespace Edulytics.Web.Controllers;
 
-[Authorize(Policy = "AcademicStructureAdministration")]
+[Authorize(Policy = "SchoolAccess")]
 [Route("school/curriculum")]
 public sealed class CurriculumController : Controller
 {
@@ -40,14 +41,48 @@ public sealed class CurriculumController : Controller
             new CurriculumIndexViewModel(
                 result.Value.GradeLevels,
                 result.Value.Subjects,
-                result.Value.Topics));
+                result.Value.Topics)
+            {
+                AcademicPrograms = result.Value.AcademicPrograms,
+                Frameworks = result.Value.Frameworks,
+                Adoptions = result.Value.Adoptions
+            });
     }
 
+
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
+    [HttpPost("framework")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> SelectFramework(
+        Guid subjectId,
+        Guid gradeLevelId,
+        Guid academicProgramId,
+        string frameworkCode,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        var result = await _curriculum.SelectFrameworkAsync(
+            actorId,
+            new SelectCurriculumFrameworkRequest(
+                subjectId,
+                gradeLevelId,
+                frameworkCode,
+                academicProgramId),
+            cancellationToken);
+
+        SetFeedback(result, "SuccessFrameworkSelected");
+        return RedirectToAction(nameof(Index));
+    }
+
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("topics")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> CreateTopic(
         Guid subjectId,
         Guid gradeLevelId,
+        Guid academicProgramId,
         string name,
         int order,
         CancellationToken cancellationToken)
@@ -61,13 +96,15 @@ public sealed class CurriculumController : Controller
                 subjectId,
                 gradeLevelId,
                 name,
-                order),
+                order,
+                academicProgramId),
             cancellationToken);
 
         SetFeedback(result, "SuccessTopicCreated");
         return RedirectToAction(nameof(Index));
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpGet("topics/{id:guid}/edit")]
     public async Task<IActionResult> EditTopic(
         Guid id,
@@ -88,6 +125,7 @@ public sealed class CurriculumController : Controller
             new CurriculumTopicEditViewModel(result.Value));
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("topics/{id:guid}/edit")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> EditTopic(
@@ -111,33 +149,38 @@ public sealed class CurriculumController : Controller
             : RedirectToAction(nameof(EditTopic), new { id });
     }
 
-    [HttpPost("outcomes")]
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
+    [HttpPost("outcomes/official")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> CreateOutcome(
+    public async Task<IActionResult> CreateOfficialOutcome(
         Guid topicId,
-        string code,
-        string description,
-        decimal weight,
+        string selectionKey,
         int order,
         CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId))
             return Forbid();
 
-        var result = await _curriculum.CreateOutcomeAsync(
-            actorId,
-            new CreateLearningOutcomeRequest(
-                topicId,
-                code,
-                description,
-                weight,
-                order),
-            cancellationToken);
+        var selection = ParseOfficialSelection(selectionKey);
+        var result = selection is null
+            ? CurriculumCommandResult.Failure(
+                "ContentNodeId",
+                CurriculumErrorCode.OfficialOutcomeNotFound)
+            : await _curriculum.CreateOfficialOutcomeAsync(
+                actorId,
+                new CreateOfficialLearningOutcomeRequest(
+                    topicId,
+                    selection.Value.ContentNodeId,
+                    selection.Value.LessonNodeId,
+                    order
+),
+                cancellationToken);
 
-        SetFeedback(result, "SuccessOutcomeCreated");
+        SetFeedback(result, "SuccessOfficialOutcomeAdded");
         return RedirectToAction(nameof(Index));
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpGet("outcomes/{id:guid}/edit")]
     public async Task<IActionResult> EditOutcome(
         Guid id,
@@ -158,13 +201,13 @@ public sealed class CurriculumController : Controller
             new LearningOutcomeEditViewModel(result.Value));
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("outcomes/{id:guid}/edit")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> EditOutcome(
         Guid id,
         string code,
         string description,
-        decimal weight,
         int order,
         CancellationToken cancellationToken)
     {
@@ -177,7 +220,6 @@ public sealed class CurriculumController : Controller
                 id,
                 code,
                 description,
-                weight,
                 order),
             cancellationToken);
 
@@ -230,6 +272,30 @@ public sealed class CurriculumController : Controller
             CurriculumErrorCode.DuplicateTopicOrder => "ErrorDuplicateTopicOrder",
             CurriculumErrorCode.DuplicateOutcomeCode => "ErrorDuplicateOutcomeCode",
             CurriculumErrorCode.DuplicateOutcomeOrder => "ErrorDuplicateOutcomeOrder",
+            CurriculumErrorCode.FrameworkNotFound => "ErrorFrameworkNotFound",
+            CurriculumErrorCode.CurriculumNotSelected => "ErrorCurriculumNotSelected",
+            CurriculumErrorCode.CurriculumFrameworkInUse => "ErrorCurriculumFrameworkInUse",
+            CurriculumErrorCode.OfficialOutcomeNotFound => "ErrorOfficialOutcomeNotFound",
+            CurriculumErrorCode.OfficialOutcomeReadOnly => "ErrorOfficialOutcomeReadOnly",
+            CurriculumErrorCode.AcademicProgramNotFound => "ErrorAcademicProgramNotFound",
             _ => "ErrorPersistence"
         };
+
+    private static (Guid ContentNodeId, Guid? LessonNodeId)?
+        ParseOfficialSelection(string? value)
+    {
+        var parts = (value ?? string.Empty).Split('|');
+        if (parts.Length is < 1 or > 2 ||
+            !Guid.TryParse(parts[0], out var contentNodeId))
+        {
+            return null;
+        }
+
+        if (parts.Length == 1 || string.IsNullOrWhiteSpace(parts[1]))
+            return (contentNodeId, null);
+
+        return Guid.TryParse(parts[1], out var lessonNodeId)
+            ? (contentNodeId, lessonNodeId)
+            : null;
+    }
 }

@@ -31,50 +31,73 @@ public sealed class AssessmentServiceTests
         Assert.Equal(AssessmentErrorCode.TeacherNotAssigned, denied.Error);
     }
 
+
     [Fact]
-    public async Task OpeningRequiresExactQuestionTotalAndOutcomeMapping()
+    public async Task CreateQuestionRequiresOutcome_AndOpeningUsesIntegratedMapping()
     {
         using var f = Fixture.Create();
 
-        var assessmentId = await f.CreateAssessmentAsync();
-        var details = await f.Service.GetDetailsAsync(f.Admin.Id, assessmentId);
+        var assessmentId =
+            await f.CreateAssessmentAsync();
 
-        var q = await f.Service.CreateQuestionAsync(
-            f.Admin.Id,
-            new CreateAssessmentQuestionRequest(
+        var details =
+            await f.Service.GetDetailsAsync(
+                f.Teacher.Id,
+                assessmentId);
+
+        var noOutcome =
+            await f.Service.CreateQuestionAsync(
+                f.Teacher.Id,
+                new CreateAssessmentQuestionRequest(
+                    assessmentId,
+                    "Only question",
+                    10m,
+                    1,
+                    [],
+                    details.Value!.Assessment.RowVersion));
+
+        Assert.False(noOutcome.Succeeded);
+
+        Assert.Equal(
+            AssessmentErrorCode.Required,
+            noOutcome.Error);
+
+        details =
+            await f.Service.GetDetailsAsync(
+                f.Teacher.Id,
+                assessmentId);
+
+        var question =
+            await f.Service.CreateQuestionAsync(
+                f.Teacher.Id,
+                new CreateAssessmentQuestionRequest(
+                    assessmentId,
+                    "Only question",
+                    10m,
+                    1,
+                    [f.Outcome.Id],
+                    details.Value!.Assessment.RowVersion));
+
+        Assert.True(question.Succeeded);
+
+        details =
+            await f.Service.GetDetailsAsync(
+                f.Teacher.Id,
+                assessmentId);
+
+        var createdQuestion =
+            Assert.Single(
+                details.Value!.Questions);
+
+        Assert.Contains(
+            f.Outcome.Id,
+            createdQuestion.OutcomeIds);
+
+        var opened =
+            await f.Service.OpenAssessmentAsync(
+                f.Teacher.Id,
                 assessmentId,
-                "Only question",
-                10m,
-                1,
-                details.Value!.Assessment.RowVersion));
-
-        Assert.True(q.Succeeded);
-
-        details = await f.Service.GetDetailsAsync(f.Admin.Id, assessmentId);
-
-        var noMap = await f.Service.OpenAssessmentAsync(
-            f.Admin.Id,
-            assessmentId,
-            details.Value!.Assessment.RowVersion);
-
-        Assert.False(noMap.Succeeded);
-        Assert.Equal(AssessmentErrorCode.QuestionMissingOutcome, noMap.Error);
-
-        var map = await f.Service.MapOutcomeAsync(
-            f.Admin.Id,
-            new MapQuestionOutcomeRequest(
-                q.EntityId!.Value,
-                f.Outcome.Id,
-                details.Value.Assessment.RowVersion));
-
-        Assert.True(map.Succeeded);
-
-        details = await f.Service.GetDetailsAsync(f.Admin.Id, assessmentId);
-
-        var opened = await f.Service.OpenAssessmentAsync(
-            f.Admin.Id,
-            assessmentId,
-            details.Value!.Assessment.RowVersion);
+                details.Value.Assessment.RowVersion);
 
         Assert.True(opened.Succeeded);
     }
@@ -87,7 +110,7 @@ public sealed class AssessmentServiceTests
         var assessmentId = await f.BuildOpenAssessmentAsync();
 
         var save = await f.Service.SaveStudentResultAsync(
-            f.Admin.Id,
+            f.Teacher.Id,
             new SaveStudentAssessmentResultRequest(
                 assessmentId,
                 f.Student.Id,
@@ -97,7 +120,7 @@ public sealed class AssessmentServiceTests
 
         Assert.True(save.Succeeded);
 
-        var results = await f.Service.GetResultsAsync(f.Admin.Id, assessmentId);
+        var results = await f.Service.GetResultsAsync(f.Teacher.Id, assessmentId);
         var student = Assert.Single(results.Value!.Students);
 
         Assert.Equal(9m, student.Score);
@@ -112,7 +135,7 @@ public sealed class AssessmentServiceTests
         var assessmentId = await f.BuildOpenAssessmentAsync();
 
         var save = await f.Service.SaveStudentResultAsync(
-            f.Admin.Id,
+            f.Teacher.Id,
             new SaveStudentAssessmentResultRequest(
                 assessmentId,
                 f.Student.Id,
@@ -123,6 +146,7 @@ public sealed class AssessmentServiceTests
         Assert.False(save.Succeeded);
         Assert.Equal(AssessmentErrorCode.InvalidQuestionScore, save.Error);
     }
+
 
     [Fact]
     public async Task YearSpecificAdoptionOverridesDefaultAdoption()
@@ -154,12 +178,14 @@ public sealed class AssessmentServiceTests
 
         f.Db.CurriculumFrameworks.Add(yearFramework);
         f.Db.CurriculumFrameworkVersions.Add(yearVersion);
+
         f.Db.SchoolCurriculumAdoptions.Add(
             new SchoolCurriculumAdoption
             {
                 Id = Guid.NewGuid(),
                 SchoolId = f.School.Id,
                 AcademicYearId = f.Year.Id,
+                AcademicProgramId = f.Class.AcademicProgramId,
                 GradeLevelId = f.Grade.Id,
                 SubjectId = f.Subject.Id,
                 FrameworkVersionId = yearVersion.Id,
@@ -168,35 +194,276 @@ public sealed class AssessmentServiceTests
                 CreatedAtUtc = DateTime.UtcNow,
                 UpdatedAtUtc = DateTime.UtcNow
             });
+
         await f.Db.SaveChangesAsync();
 
-        var assessmentId = await f.CreateAssessmentAsync();
-        var details = await f.Service.GetDetailsAsync(f.Admin.Id, assessmentId);
+        var assessmentId =
+            await f.CreateAssessmentAsync();
 
-        var question = await f.Service.CreateQuestionAsync(
-            f.Admin.Id,
-            new CreateAssessmentQuestionRequest(
-                assessmentId,
-                "Year-specific precedence question",
-                10m,
-                1,
-                details.Value!.Assessment.RowVersion));
+        var details =
+            await f.Service.GetDetailsAsync(
+                f.Teacher.Id,
+                assessmentId);
 
-        Assert.True(question.Succeeded);
+        var result =
+            await f.Service.CreateQuestionAsync(
+                f.Teacher.Id,
+                new CreateAssessmentQuestionRequest(
+                    assessmentId,
+                    "Year-specific precedence question",
+                    10m,
+                    1,
+                    [f.Outcome.Id],
+                    details.Value!.Assessment.RowVersion));
 
-        details = await f.Service.GetDetailsAsync(f.Admin.Id, assessmentId);
+        Assert.False(result.Succeeded);
 
-        var mapDefaultOutcome = await f.Service.MapOutcomeAsync(
-            f.Admin.Id,
-            new MapQuestionOutcomeRequest(
-                question.EntityId!.Value,
-                f.Outcome.Id,
-                details.Value!.Assessment.RowVersion));
-
-        Assert.False(mapDefaultOutcome.Succeeded);
         Assert.Equal(
             AssessmentErrorCode.OutcomeDoesNotMatchAssessment,
-            mapDefaultOutcome.Error);
+            result.Error);
+    }
+
+
+    [Fact]
+    public async Task DraftQuestionCanBeDeleted_WithItsMappings()
+    {
+        using var f = Fixture.Create();
+
+        var assessmentId =
+            await f.CreateAssessmentAsync();
+
+        var questionId =
+            await f.CreateQuestionAsync(
+                assessmentId,
+                "Question to delete",
+                10m,
+                1);
+
+        Assert.True(
+            await f.Db.QuestionLearningOutcomes.AnyAsync(
+                x => x.AssessmentQuestionId == questionId));
+
+        var details =
+            await f.Service.GetDetailsAsync(
+                f.Teacher.Id,
+                assessmentId);
+
+        var deleted =
+            await f.Service.DeleteQuestionAsync(
+                f.Teacher.Id,
+                new DeleteAssessmentQuestionRequest(
+                    questionId,
+                    details.Value!.Assessment.RowVersion));
+
+        Assert.True(deleted.Succeeded);
+
+        Assert.False(
+            await f.Db.AssessmentQuestions.AnyAsync(
+                x => x.Id == questionId));
+
+        Assert.False(
+            await f.Db.QuestionLearningOutcomes.AnyAsync(
+                x => x.AssessmentQuestionId == questionId));
+    }
+
+    [Fact]
+    public async Task DraftAssessmentCanBeDeleted_WithQuestionsAndMappings()
+    {
+        using var f = Fixture.Create();
+
+        var assessmentId =
+            await f.CreateAssessmentAsync();
+
+        var questionId =
+            await f.CreateQuestionAsync(
+                assessmentId,
+                "Question inside deleted assessment",
+                10m,
+                1);
+
+        var details =
+            await f.Service.GetDetailsAsync(
+                f.Teacher.Id,
+                assessmentId);
+
+        var deleted =
+            await f.Service.DeleteAssessmentAsync(
+                f.Teacher.Id,
+                new DeleteAssessmentRequest(
+                    assessmentId,
+                    details.Value!.Assessment.RowVersion));
+
+        Assert.True(deleted.Succeeded);
+
+        Assert.False(
+            await f.Db.Assessments.AnyAsync(
+                x => x.Id == assessmentId));
+
+        Assert.False(
+            await f.Db.AssessmentQuestions.AnyAsync(
+                x => x.Id == questionId));
+
+        Assert.False(
+            await f.Db.QuestionLearningOutcomes.AnyAsync(
+                x => x.AssessmentQuestionId == questionId));
+    }
+
+    [Fact]
+    public async Task OpenAssessmentCannotBeDeleted()
+    {
+        using var f = Fixture.Create();
+
+        var assessmentId =
+            await f.BuildOpenAssessmentAsync();
+
+        var details =
+            await f.Service.GetDetailsAsync(
+                f.Teacher.Id,
+                assessmentId);
+
+        var deleted =
+            await f.Service.DeleteAssessmentAsync(
+                f.Teacher.Id,
+                new DeleteAssessmentRequest(
+                    assessmentId,
+                    details.Value!.Assessment.RowVersion));
+
+        Assert.False(deleted.Succeeded);
+
+        Assert.Equal(
+            AssessmentErrorCode.AssessmentNotDraft,
+            deleted.Error);
+    }
+
+    [Fact]
+    public async Task OpenAssessmentQuestionCannotBeDeleted()
+    {
+        using var f = Fixture.Create();
+
+        var assessmentId =
+            await f.BuildOpenAssessmentAsync();
+
+        var details =
+            await f.Service.GetDetailsAsync(
+                f.Teacher.Id,
+                assessmentId);
+
+        var deleted =
+            await f.Service.DeleteQuestionAsync(
+                f.Teacher.Id,
+                new DeleteAssessmentQuestionRequest(
+                    f.Question1,
+                    details.Value!.Assessment.RowVersion));
+
+        Assert.False(deleted.Succeeded);
+
+        Assert.Equal(
+            AssessmentErrorCode.AssessmentNotDraft,
+            deleted.Error);
+    }
+
+    [Fact]
+    public async Task EditQuestionUpdatesOutcomeMappingsAtomically()
+    {
+        using var f = Fixture.Create();
+
+        var secondOutcome = new LearningOutcome
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = f.School.Id,
+            AcademicProgramId = f.Class.AcademicProgramId,
+            FrameworkVersionId =
+                f.Outcome.FrameworkVersionId,
+            SubjectId =
+                f.Outcome.SubjectId,
+            GradeLevelId =
+                f.Outcome.GradeLevelId,
+            TopicId =
+                f.Outcome.TopicId,
+            Code = "G6.N.2",
+            Description = "Second number outcome",
+            Weight = 1m,
+            Order = 2
+        };
+
+        f.Db.LearningOutcomes.Add(secondOutcome);
+        await f.Db.SaveChangesAsync();
+
+        var assessmentId =
+            await f.CreateAssessmentAsync();
+
+        var questionId =
+            await f.CreateQuestionAsync(
+                assessmentId,
+                "Original question",
+                10m,
+                1);
+
+        var details =
+            await f.Service.GetDetailsAsync(
+                f.Teacher.Id,
+                assessmentId);
+
+        var updated =
+            await f.Service.UpdateQuestionAsync(
+                f.Teacher.Id,
+                new UpdateAssessmentQuestionRequest(
+                    questionId,
+                    "Updated question",
+                    10m,
+                    1,
+                    [secondOutcome.Id],
+                    details.Value!.Assessment.RowVersion));
+
+        Assert.True(updated.Succeeded);
+
+        details =
+            await f.Service.GetDetailsAsync(
+                f.Teacher.Id,
+                assessmentId);
+
+        var question =
+            Assert.Single(
+                details.Value!.Questions);
+
+        Assert.Single(
+            question.OutcomeIds);
+
+        Assert.Equal(
+            secondOutcome.Id,
+            question.OutcomeIds[0]);
+    }
+
+
+    [Fact]
+    public async Task AdminAndSupervisor_CanInspect_ButCannotMutateAssessment()
+    {
+        using var f = Fixture.Create();
+        var assessmentId = await f.CreateAssessmentAsync();
+
+        var teacherDetails = await f.Service.GetDetailsAsync(
+            f.Teacher.Id,
+            assessmentId);
+
+        Assert.NotNull((await f.Service.GetDetailsAsync(
+            f.Admin.Id,
+            assessmentId)).Value);
+
+        Assert.NotNull((await f.Service.GetDetailsAsync(
+            f.Supervisor.Id,
+            assessmentId)).Value);
+
+        foreach (var actorId in new[] { f.Admin.Id, f.Supervisor.Id })
+        {
+            var denied = await f.Service.DeleteAssessmentAsync(
+                actorId,
+                new DeleteAssessmentRequest(
+                    assessmentId,
+                    teacherDetails.Value!.Assessment.RowVersion));
+
+            Assert.False(denied.Succeeded);
+            Assert.Equal(AssessmentErrorCode.AccessDenied, denied.Error);
+        }
     }
 
     private sealed class Fixture : IDisposable
@@ -212,6 +479,7 @@ public sealed class AssessmentServiceTests
             StudentProfile student,
             LearningOutcome outcome,
             SchoolUserRecord admin,
+            SchoolUserRecord supervisor,
             SchoolUserRecord teacher,
             AssessmentService service)
         {
@@ -225,6 +493,7 @@ public sealed class AssessmentServiceTests
             Student = student;
             Outcome = outcome;
             Admin = admin;
+            Supervisor = supervisor;
             Teacher = teacher;
             Service = service;
         }
@@ -239,6 +508,7 @@ public sealed class AssessmentServiceTests
         public StudentProfile Student { get; }
         public LearningOutcome Outcome { get; }
         public SchoolUserRecord Admin { get; }
+        public SchoolUserRecord Supervisor { get; }
         public SchoolUserRecord Teacher { get; }
         public AssessmentService Service { get; }
         public Guid Question1 { get; private set; }
@@ -255,7 +525,7 @@ public sealed class AssessmentServiceTests
 
         public async Task<Guid> CreateAssessmentAsync()
         {
-            var result = await Service.CreateAssessmentAsync(Admin.Id, Request());
+            var result = await Service.CreateAssessmentAsync(Teacher.Id, Request());
             Assert.True(result.Succeeded);
             return result.EntityId!.Value;
         }
@@ -265,12 +535,10 @@ public sealed class AssessmentServiceTests
             var assessmentId = await CreateAssessmentAsync();
             Question1 = await CreateQuestionAsync(assessmentId, "Q1", 4m, 1);
             Question2 = await CreateQuestionAsync(assessmentId, "Q2", 6m, 2);
-            await MapAsync(assessmentId, Question1);
-            await MapAsync(assessmentId, Question2);
 
-            var details = await Service.GetDetailsAsync(Admin.Id, assessmentId);
+            var details = await Service.GetDetailsAsync(Teacher.Id, assessmentId);
             var open = await Service.OpenAssessmentAsync(
-                Admin.Id,
+                Teacher.Id,
                 assessmentId,
                 details.Value!.Assessment.RowVersion);
 
@@ -278,40 +546,29 @@ public sealed class AssessmentServiceTests
             return assessmentId;
         }
 
-        private async Task<Guid> CreateQuestionAsync(
+        public async Task<Guid> CreateQuestionAsync(
             Guid assessmentId,
             string prompt,
             decimal maxScore,
             int order)
         {
-            var details = await Service.GetDetailsAsync(Admin.Id, assessmentId);
+            var details = await Service.GetDetailsAsync(Teacher.Id, assessmentId);
 
             var result = await Service.CreateQuestionAsync(
-                Admin.Id,
+                Teacher.Id,
                 new CreateAssessmentQuestionRequest(
                     assessmentId,
                     prompt,
                     maxScore,
                     order,
+                    [Outcome.Id],
                     details.Value!.Assessment.RowVersion));
 
             Assert.True(result.Succeeded);
             return result.EntityId!.Value;
         }
 
-        private async Task MapAsync(Guid assessmentId, Guid questionId)
-        {
-            var details = await Service.GetDetailsAsync(Admin.Id, assessmentId);
 
-            var result = await Service.MapOutcomeAsync(
-                Admin.Id,
-                new MapQuestionOutcomeRequest(
-                    questionId,
-                    Outcome.Id,
-                    details.Value!.Assessment.RowVersion));
-
-            Assert.True(result.Succeeded);
-        }
 
         public static Fixture Create(bool assignTeacher = true)
         {
@@ -330,7 +587,24 @@ public sealed class AssessmentServiceTests
                 Name = "Grade 6",
                 Order = 6
             };
-            var classGroup = NewClass(school.Id, year.Id, grade.Id);
+            var program = new AcademicProgram
+            {
+                Id = Guid.NewGuid(),
+                SchoolId = school.Id,
+                Name = "Phase 08 Default Program",
+                Code = "MAIN",
+                NormalizedCode = "MAIN",
+                Status = AcademicStructureStatus.Active,
+                IsDefault = true,
+                CreatedAtUtc = DateTime.UtcNow,
+                UpdatedAtUtc = DateTime.UtcNow,
+                RowVersion = BitConverter.GetBytes(1L)
+            };
+            var classGroup = NewClass(
+                school.Id,
+                year.Id,
+                grade.Id,
+                program.Id);
             var subject = NewSubject(school.Id);
             var student = NewStudent(school.Id);
 
@@ -359,6 +633,7 @@ public sealed class AssessmentServiceTests
             {
                 Id = Guid.NewGuid(),
                 SchoolId = school.Id,
+                AcademicProgramId = program.Id,
                 FrameworkVersionId = frameworkVersion.Id,
                 SubjectId = subject.Id,
                 GradeLevelId = grade.Id,
@@ -369,6 +644,7 @@ public sealed class AssessmentServiceTests
             {
                 Id = Guid.NewGuid(),
                 SchoolId = school.Id,
+                AcademicProgramId = program.Id,
                 FrameworkVersionId = frameworkVersion.Id,
                 SubjectId = subject.Id,
                 GradeLevelId = grade.Id,
@@ -383,6 +659,7 @@ public sealed class AssessmentServiceTests
                 Id = Guid.NewGuid(),
                 SchoolId = school.Id,
                 AcademicYearId = null,
+                AcademicProgramId = program.Id,
                 GradeLevelId = grade.Id,
                 SubjectId = subject.Id,
                 FrameworkVersionId = frameworkVersion.Id,
@@ -393,12 +670,16 @@ public sealed class AssessmentServiceTests
             };
 
             var admin = NewUser(school.Id, RoleNames.SchoolAdmin);
+            var supervisor = NewUser(
+                school.Id,
+                RoleNames.SubjectSupervisor);
             var teacher = NewUser(school.Id, RoleNames.Teacher);
 
             db.Schools.Add(school);
             db.AcademicYears.Add(year);
             db.Terms.Add(term);
             db.GradeLevels.Add(grade);
+            db.AcademicPrograms.Add(program);
             db.ClassGroups.Add(classGroup);
             db.Subjects.Add(subject);
             db.StudentProfiles.Add(student);
@@ -439,6 +720,7 @@ public sealed class AssessmentServiceTests
 
             var users = new FakeUserRepository();
             users.Seed(admin);
+            users.Seed(supervisor);
             users.Seed(teacher);
 
             var service = new AssessmentService(
@@ -457,6 +739,7 @@ public sealed class AssessmentServiceTests
                 student,
                 outcome,
                 admin,
+                supervisor,
                 teacher,
                 service);
         }
@@ -511,7 +794,11 @@ public sealed class AssessmentServiceTests
                 Status = AcademicStructureStatus.Active
             };
 
-        private static ClassGroup NewClass(Guid schoolId, Guid yearId, Guid gradeId)
+        private static ClassGroup NewClass(
+            Guid schoolId,
+            Guid yearId,
+            Guid gradeId,
+            Guid academicProgramId)
         {
             var code = $"C-{Guid.NewGuid():N}"[..10].ToUpperInvariant();
             return new ClassGroup
@@ -519,6 +806,7 @@ public sealed class AssessmentServiceTests
                 Id = Guid.NewGuid(),
                 SchoolId = schoolId,
                 AcademicYearId = yearId,
+                AcademicProgramId = academicProgramId,
                 GradeLevelId = gradeId,
                 Name = "6A",
                 Code = code,

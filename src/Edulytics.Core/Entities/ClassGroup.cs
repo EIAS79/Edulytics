@@ -8,6 +8,7 @@ public sealed class ClassGroup : ISchoolScoped
     public Guid Id { get; set; }
     public Guid SchoolId { get; set; }
     public Guid AcademicYearId { get; set; }
+    public Guid AcademicProgramId { get; set; }
     public Guid GradeLevelId { get; set; }
     public string Name { get; set; } = string.Empty;
     public string Code { get; set; } = string.Empty;

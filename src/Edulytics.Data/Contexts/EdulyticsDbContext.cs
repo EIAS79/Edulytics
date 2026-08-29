@@ -21,6 +21,9 @@ public class EdulyticsDbContext
     public DbSet<AcademicYear> AcademicYears => Set<AcademicYear>();
     public DbSet<Term> Terms => Set<Term>();
     public DbSet<GradeLevel> GradeLevels => Set<GradeLevel>();
+    public DbSet<AcademicProgram> AcademicPrograms => Set<AcademicProgram>();
+    public DbSet<AcademicYearProgramOffering> AcademicYearProgramOfferings =>
+        Set<AcademicYearProgramOffering>();
     public DbSet<ClassGroup> ClassGroups => Set<ClassGroup>();
     public DbSet<Subject> Subjects => Set<Subject>();
     public DbSet<StudentProfile> StudentProfiles => Set<StudentProfile>();
@@ -32,6 +35,16 @@ public class EdulyticsDbContext
     public DbSet<StudentEnrollment> StudentEnrollments => Set<StudentEnrollment>();
     public DbSet<CurriculumTopic> CurriculumTopics => Set<CurriculumTopic>();
     public DbSet<LearningOutcome> LearningOutcomes => Set<LearningOutcome>();
+    public DbSet<LearningLesson> LearningLessons => Set<LearningLesson>();
+    public DbSet<LearningLessonOutcome> LearningLessonOutcomes => Set<LearningLessonOutcome>();
+    public DbSet<LearningLessonTranslation> LearningLessonTranslations => Set<LearningLessonTranslation>();
+    public DbSet<CurriculumPedagogicalLesson> CurriculumPedagogicalLessons => Set<CurriculumPedagogicalLesson>();
+    public DbSet<CurriculumPedagogicalLessonOutcome> CurriculumPedagogicalLessonOutcomes => Set<CurriculumPedagogicalLessonOutcome>();
+    public DbSet<CurriculumLessonContent> CurriculumLessonContents => Set<CurriculumLessonContent>();
+    public DbSet<CurriculumLessonContentTranslation> CurriculumLessonContentTranslations => Set<CurriculumLessonContentTranslation>();
+    public DbSet<CurriculumPackContentNode> CurriculumPackContentNodes => Set<CurriculumPackContentNode>();
+    public DbSet<CurriculumPackNodeLink> CurriculumPackNodeLinks => Set<CurriculumPackNodeLink>();
+    public DbSet<CurriculumPackImportState> CurriculumPackImportStates => Set<CurriculumPackImportState>();
     public DbSet<Assessment> Assessments => Set<Assessment>();
     public DbSet<AssessmentQuestion> AssessmentQuestions => Set<AssessmentQuestion>();
     public DbSet<QuestionLearningOutcome> QuestionLearningOutcomes => Set<QuestionLearningOutcome>();
@@ -138,6 +151,9 @@ public class EdulyticsDbContext
         builder.ApplyConfiguration(new AcademicYearConfiguration());
         builder.ApplyConfiguration(new TermConfiguration());
         builder.ApplyConfiguration(new GradeLevelConfiguration());
+        builder.ApplyConfiguration(new AcademicProgramConfiguration());
+        builder.ApplyConfiguration(
+            new AcademicYearProgramOfferingConfiguration());
         builder.ApplyConfiguration(new ClassGroupConfiguration());
         builder.ApplyConfiguration(new SubjectConfiguration());
         builder.ApplyConfiguration(new StudentProfileConfiguration());
@@ -149,6 +165,16 @@ public class EdulyticsDbContext
         builder.ApplyConfiguration(new StudentEnrollmentConfiguration());
         builder.ApplyConfiguration(new CurriculumTopicConfiguration());
         builder.ApplyConfiguration(new LearningOutcomeConfiguration());
+        builder.ApplyConfiguration(new LearningLessonConfiguration());
+        builder.ApplyConfiguration(new LearningLessonOutcomeConfiguration());
+        builder.ApplyConfiguration(new LearningLessonTranslationConfiguration());
+        builder.ApplyConfiguration(new CurriculumPedagogicalLessonConfiguration());
+        builder.ApplyConfiguration(new CurriculumPedagogicalLessonOutcomeConfiguration());
+        builder.ApplyConfiguration(new CurriculumLessonContentConfiguration());
+        builder.ApplyConfiguration(new CurriculumLessonContentTranslationConfiguration());
+        builder.ApplyConfiguration(new CurriculumPackContentNodeConfiguration());
+        builder.ApplyConfiguration(new CurriculumPackNodeLinkConfiguration());
+        builder.ApplyConfiguration(new CurriculumPackImportStateConfiguration());
         builder.ApplyConfiguration(new AssessmentConfiguration());
         builder.ApplyConfiguration(new AssessmentQuestionConfiguration());
         builder.ApplyConfiguration(new QuestionLearningOutcomeConfiguration());

@@ -17,7 +17,13 @@ public enum CurriculumErrorCode
     DuplicateTopicOrder = 13,
     DuplicateOutcomeCode = 14,
     DuplicateOutcomeOrder = 15,
-    PersistenceError = 16
+    PersistenceError = 16,
+    FrameworkNotFound = 17,
+    CurriculumNotSelected = 18,
+    CurriculumFrameworkInUse = 19,
+    OfficialOutcomeNotFound = 20,
+    OfficialOutcomeReadOnly = 21,
+    AcademicProgramNotFound = 22
 }
 
 public sealed record CurriculumCommandResult(
@@ -51,10 +57,16 @@ public sealed record CurriculumGradeItem(
     string Name,
     int Order);
 
+public sealed record CurriculumProgramItem(Guid Id, string Name, string Code);
+
 public sealed record CurriculumSubjectItem(
     Guid Id,
     string Name,
     string Code);
+
+public sealed record CurriculumFrameworkItem(
+    string Code,
+    string DisplayName);
 
 public sealed record LearningOutcomeItem(
     Guid Id,
@@ -62,7 +74,30 @@ public sealed record LearningOutcomeItem(
     string Code,
     string Description,
     decimal Weight,
-    int Order);
+    int Order)
+{
+    public bool IsOfficial { get; init; }
+}
+
+public sealed record OfficialCurriculumOutcomeOption(
+    Guid ContentNodeId,
+    Guid? LessonNodeId,
+    string Code,
+    string Description,
+    string SelectionLabel,
+    string? GroupLabel,
+    int SortOrder);
+
+public sealed record CurriculumAdoptionItem(
+    Guid GradeLevelId,
+    Guid SubjectId,
+    string FrameworkCode,
+    string FrameworkDisplayName)
+{
+    public Guid AcademicProgramId { get; init; }
+    public string AcademicProgramName { get; init; } = string.Empty;
+    public string AcademicProgramCode { get; init; } = string.Empty;
+}
 
 public sealed record CurriculumTopicItem(
     Guid Id,
@@ -70,35 +105,68 @@ public sealed record CurriculumTopicItem(
     Guid GradeLevelId,
     string Name,
     int Order,
-    IReadOnlyList<LearningOutcomeItem> Outcomes);
+    IReadOnlyList<LearningOutcomeItem> Outcomes)
+{
+    public Guid AcademicProgramId { get; init; }
+    public string AcademicProgramName { get; init; } = string.Empty;
+    public string FrameworkCode { get; init; } = string.Empty;
+    public string FrameworkDisplayName { get; init; } = string.Empty;
+    public IReadOnlyList<OfficialCurriculumOutcomeOption> OfficialOutcomes
+    {
+        get;
+        init;
+    } = [];
+}
 
 public sealed record CurriculumDashboard(
     Guid SchoolId,
     IReadOnlyList<CurriculumGradeItem> GradeLevels,
     IReadOnlyList<CurriculumSubjectItem> Subjects,
-    IReadOnlyList<CurriculumTopicItem> Topics);
+    IReadOnlyList<CurriculumTopicItem> Topics)
+{
+    public IReadOnlyList<CurriculumProgramItem> AcademicPrograms { get; init; } = [];
+
+    public IReadOnlyList<CurriculumFrameworkItem> Frameworks
+    {
+        get;
+        init;
+    } = [];
+
+    public IReadOnlyList<CurriculumAdoptionItem> Adoptions
+    {
+        get;
+        init;
+    } = [];
+}
+
+public sealed record SelectCurriculumFrameworkRequest(
+    Guid SubjectId,
+    Guid GradeLevelId,
+    string FrameworkCode,
+    Guid AcademicProgramId = default);
 
 public sealed record CreateCurriculumTopicRequest(
     Guid SubjectId,
     Guid GradeLevelId,
     string Name,
-    int Order);
+    int Order,
+    Guid AcademicProgramId = default);
 
 public sealed record UpdateCurriculumTopicRequest(
     Guid Id,
     string Name,
     int Order);
 
-public sealed record CreateLearningOutcomeRequest(
+
+public sealed record CreateOfficialLearningOutcomeRequest(
     Guid TopicId,
-    string Code,
-    string Description,
-    decimal Weight,
-    int Order);
+    Guid ContentNodeId,
+    Guid? LessonNodeId,
+    int Order
+);
 
 public sealed record UpdateLearningOutcomeRequest(
     Guid Id,
     string Code,
     string Description,
-    decimal Weight,
     int Order);

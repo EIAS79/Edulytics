@@ -47,6 +47,13 @@ public sealed class SchoolHomeController : Controller
             return Forbid();
         }
 
+        if (context.Role == RoleNames.Student)
+        {
+            return RedirectToAction(
+                "Dashboard",
+                "StudentPortal");
+        }
+
         var reportCatalog =
             await _reports.GetCatalogAsync(
                 userId,
@@ -60,7 +67,9 @@ public sealed class SchoolHomeController : Controller
                 Role =
                     context.Role,
                 CanManageUsers =
-                    context.CanManageUsers,
+                    context.Role == RoleNames.SubjectSupervisor,
+                CanManageAssessments =
+                    context.Role == RoleNames.Teacher,
                 CanViewReports =
                     reportCatalog.Value is not null,
                 CanViewAnalytics =

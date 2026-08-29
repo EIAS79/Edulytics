@@ -1,94 +1,111 @@
-# Edulytics Production Deployment
+# Edulytics Deployment and Future Production Handoff
 
-## Database architecture
+## Current approved deployment policy
 
-Edulytics uses .NET 10, ASP.NET Core, Entity Framework Core, Npgsql and PostgreSQL.
-Neon is the target managed PostgreSQL platform. SQL Server is not an active runtime provider.
+During application development and final pre-production qualification:
 
-## Connection separation
+```text
+Render Free staging
++
+current Neon Edulytics environment
+```
 
-Runtime configuration:
+No paid Render production service is required or approved at this stage.
+
+The existing staging URL remains:
+
+```text
+https://staging.edulytiks.com
+```
+
+The final production domain is reserved as:
+
+```text
+https://edulytiks.com
+```
+
+Do not perform the final DNS/application cutover until the later Oracle
+production plan is explicitly started.
+
+## Immutable delivery
+
+Protected GitHub CI builds/tests the exact release SHA. Immutable SHA-tagged
+container artifacts remain the promotion unit.
+
+This rule is retained even though the actual paid production host is deferred.
+
+## Database connection contract
+
+Application runtime configuration:
 
 ```text
 ConnectionStrings__DefaultConnection
 ```
 
-For Neon use the pooled runtime endpoint.
-
-Migration configuration:
+Migration/admin configuration:
 
 ```text
 ConnectionStrings__MigrationConnection
 ```
 
-For Neon use the direct/non-pooler endpoint. Do not run schema migrations through the pooled endpoint.
-Never commit either database connection string.
+Keep runtime and migration credentials separate.
 
-## Migration
+The current PostgreSQL/Neon implementation remains the accepted application
+baseline. The final database placement during Oracle go-live must be explicitly
+decided and revalidated; this document does not silently assume a future move or
+non-move.
 
-Linux/macOS/Codespaces:
+## Migration ordering contract
 
-```text
-EDULYTICS_MIGRATION_CONNECTION="<secure direct PostgreSQL connection>" ./scripts/update-database.sh
-```
+Normal production-style startup defaults to **no automatic migration**.
 
-PowerShell:
-
-```text
-$env:EDULYTICS_MIGRATION_CONNECTION = "<secure direct PostgreSQL connection>"
-.\scripts\update-database.ps1
-```
-
-## Build
+A controlled release must run the migration bundle separately before serving
+traffic. The existing container helper remains:
 
 ```text
-dotnet restore Edulytics.sln
-dotnet build Edulytics.sln -c Release --no-restore
-dotnet test Edulytics.sln -c Release --no-build --no-restore
-dotnet publish src/Edulytics.Web/Edulytics.Web.csproj -c Release --no-restore
+/app/phase27-predeploy.sh
 ```
 
-## Health
-
-Verify:
+The Render Free staging compatibility flag may remain enabled only for the
+temporary staging topology:
 
 ```text
-GET /health/live
-GET /health/ready
+Edulytics__Deployment__RunStartupMigrations=true
 ```
 
-Readiness covers PostgreSQL connectivity, EF migration state and Outbox worker heartbeat.
+The future real production topology must keep startup migration disabled and use
+a controlled migration/release step.
 
-## Identity and tenancy
+## Current acceptance surface
 
-ASP.NET Core Identity is persisted in PostgreSQL through EF Core/Npgsql.
-Public registration remains disabled. SuperAdmin is platform-scoped with `SchoolId = null`.
-School users remain scoped to one school.
+Free-environment qualification verifies:
 
-## PostgreSQL concurrency
+```text
+GET https://staging.edulytiks.com/health/live
+GET https://staging.edulytiks.com/health/ready
+```
 
-Phase 13 keeps the existing `byte[] RowVersion` contracts but uses the accepted PostgreSQL-compatible application-managed optimistic-concurrency strategy. Stale writes must fail rather than silently overwrite newer state.
+It also verifies security headers and EN/PL entry flow.
 
-## Neon Phase 13 acceptance
+Authenticated tenant, concurrency, SignalR, Outbox and long-duration performance
+evidence is inherited from the accepted test suites and Phase 26 qualification
+unless a material runtime change invalidates that evidence.
 
-Phase 13 validates a non-production Neon environment with:
+## Future Oracle production
 
-- direct migration connection;
-- pooled runtime connection;
-- Identity persistence and login;
-- real PostgreSQL concurrency;
-- all six import types;
-- analytics refresh/readback;
-- Outbox processing;
-- realtime notification dispatch path;
-- MVC runtime and health endpoints.
+Actual production provisioning/cutover is governed by:
 
-Production HA, multi-instance behavior, CI/CD hard gates, backup/restore evidence and final go-live are handled by later Production Master Plan phases.
+`docs/ORACLE_PRODUCTION_HANDOFF.md`
 
-## Data Protection
+That later plan must revalidate capacity and performance on Oracle before
+customer production acceptance.
 
-Persistent shared ASP.NET Core Data Protection key storage is required before restart-sensitive or multi-instance production acceptance.
+## Explicit non-goals now
 
-## Rollback
+Current Phase 27 work does not:
 
-Do not automatically reverse production database migrations. Prefer backward-compatible application/schema releases and the later backup/restore runbook.
+- create or upgrade a paid Render service;
+- purchase Oracle resources;
+- perform final `edulytiks.com` DNS cutover;
+- claim production customer traffic is live;
+- start Phase 28.

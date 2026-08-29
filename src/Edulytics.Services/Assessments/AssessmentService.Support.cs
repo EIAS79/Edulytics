@@ -58,7 +58,8 @@ public sealed partial class AssessmentService
         AssessmentSnapshot snapshot,
         Guid academicYearId,
         Guid gradeLevelId,
-        Guid subjectId)
+        Guid subjectId,
+        Guid academicProgramId = default)
     {
         var activeVersionIds = snapshot.FrameworkVersions
             .Where(x => x.IsActive)
@@ -69,6 +70,7 @@ public sealed partial class AssessmentService
             .Where(x =>
                 x.IsActive &&
                 x.AcademicYearId == academicYearId &&
+                x.AcademicProgramId == academicProgramId &&
                 x.GradeLevelId == gradeLevelId &&
                 x.SubjectId == subjectId &&
                 activeVersionIds.Contains(x.FrameworkVersionId))
@@ -80,6 +82,7 @@ public sealed partial class AssessmentService
                 .Where(x =>
                     x.IsActive &&
                     x.AcademicYearId is null &&
+                    x.AcademicProgramId == academicProgramId &&
                     x.GradeLevelId == gradeLevelId &&
                     x.SubjectId == subjectId &&
                     activeVersionIds.Contains(x.FrameworkVersionId))
@@ -189,7 +192,9 @@ public sealed partial class AssessmentService
             return ScopeResult.Fail(AssessmentErrorCode.AccessDenied);
 
         var role = actor.Roles.Count == 1 ? actor.Roles[0] : null;
-        if (role != RoleNames.SchoolAdmin && role != RoleNames.Teacher)
+        if (role != RoleNames.SchoolAdmin &&
+            role != RoleNames.SubjectSupervisor &&
+            role != RoleNames.Teacher)
             return ScopeResult.Fail(AssessmentErrorCode.AccessDenied);
 
         var school = await _schools.GetByIdAsync(actor.SchoolId.Value, cancellationToken);
@@ -205,8 +210,8 @@ public sealed partial class AssessmentService
         Guid subjectId,
         CancellationToken cancellationToken)
     {
-        if (scope.Role == RoleNames.SchoolAdmin)
-            return true;
+        if (scope.Role != RoleNames.Teacher)
+            return false;
 
         return await _repo.IsTeacherAssignedAsync(
             scope.School!.Id,
@@ -231,8 +236,11 @@ public sealed partial class AssessmentService
         AssessmentSnapshot snapshot,
         Assessment assessment)
     {
-        if (scope.Role == RoleNames.SchoolAdmin)
+        if (scope.Role == RoleNames.SchoolAdmin ||
+            scope.Role == RoleNames.SubjectSupervisor)
+        {
             return true;
+        }
 
         return snapshot.TeacherAssignments.Any(
             x => x.TeacherUserId == scope.Actor!.Id &&
@@ -258,6 +266,59 @@ public sealed partial class AssessmentService
             return QuestionContext.Fail(AssessmentErrorCode.AccessDenied);
 
         return QuestionContext.Ok(scope, assessment, question);
+    }
+
+
+    private static Guid[] NormalizeOutcomeIds(
+        IReadOnlyList<Guid>? outcomeIds) =>
+        (outcomeIds ?? [])
+            .Where(x => x != Guid.Empty)
+            .Distinct()
+            .OrderBy(x => x)
+            .ToArray();
+
+    private static AssessmentErrorCode? ValidateOutcomeSelection(
+        AssessmentSnapshot snapshot,
+        Assessment assessment,
+        Guid gradeLevelId,
+        IReadOnlyCollection<Guid> outcomeIds)
+    {
+        if (outcomeIds.Count == 0)
+            return AssessmentErrorCode.Required;
+
+        var classGroup = snapshot.ClassGroups.FirstOrDefault(x => x.Id == assessment.ClassGroupId);
+        if (classGroup is null) return AssessmentErrorCode.ClassGroupNotFound;
+        var eligibleFrameworkVersionIds = ResolveEligibleFrameworkVersionIds(snapshot, assessment.AcademicYearId, gradeLevelId, assessment.SubjectId, classGroup.AcademicProgramId);
+
+        foreach (var outcomeId in outcomeIds)
+        {
+            var outcome = snapshot.LearningOutcomes
+                .FirstOrDefault(x => x.Id == outcomeId);
+
+            if (outcome is null)
+                return AssessmentErrorCode.OutcomeNotFound;
+
+            var topic = snapshot.CurriculumTopics
+                .FirstOrDefault(x => x.Id == outcome.TopicId);
+
+            if (topic is null)
+                return AssessmentErrorCode.OutcomeNotFound;
+
+            if (outcome.AcademicProgramId != classGroup.AcademicProgramId ||
+                topic.AcademicProgramId != classGroup.AcademicProgramId ||
+                outcome.SubjectId != assessment.SubjectId ||
+                outcome.GradeLevelId != gradeLevelId ||
+                topic.SubjectId != assessment.SubjectId ||
+                topic.GradeLevelId != gradeLevelId ||
+                topic.FrameworkVersionId != outcome.FrameworkVersionId ||
+                !eligibleFrameworkVersionIds.Contains(
+                    outcome.FrameworkVersionId))
+            {
+                return AssessmentErrorCode.OutcomeDoesNotMatchAssessment;
+            }
+        }
+
+        return null;
     }
 
     private static bool ValidMax(decimal value) => value > 0m && value <= 10000m;
