@@ -1,3 +1,5 @@
+using Edulytics.Core.Academics;
+using Edulytics.Core.Constants;
 using Edulytics.Core.Curriculum;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
@@ -12,19 +14,39 @@ public sealed class LessonContentService : ILessonContentService
     private readonly ILessonContentRepository _lessons;
     private readonly ISchoolUserRepository _users;
     private readonly ISchoolRepository _schools;
+    private readonly IAcademicStructureRepository? _academics;
 
     public LessonContentService(
         ILessonContentRepository lessons,
         ISchoolUserRepository users,
         ISchoolRepository schools)
+        : this(lessons, users, schools, null)
+    {
+    }
+
+    public LessonContentService(
+        ILessonContentRepository lessons,
+        ISchoolUserRepository users,
+        ISchoolRepository schools,
+        IAcademicStructureRepository? academics)
     {
         _lessons = lessons;
         _users = users;
         _schools = schools;
+        _academics = academics;
     }
+
+    public Task<LessonContentQueryResult<LessonContentDashboard>> GetDashboardAsync(
+        Guid actorUserId,
+        CancellationToken cancellationToken = default) =>
+        GetDashboardAsync(
+            actorUserId,
+            new LessonContentSelection(),
+            cancellationToken);
 
     public async Task<LessonContentQueryResult<LessonContentDashboard>> GetDashboardAsync(
         Guid actorUserId,
+        LessonContentSelection selection,
         CancellationToken cancellationToken = default)
     {
         var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
@@ -37,12 +59,57 @@ public sealed class LessonContentService : ILessonContentService
         var contexts = await _lessons.ListStaffAdoptionsAsync(
             scope.School!.Id,
             cancellationToken);
+
+        contexts = await ScopeAndEnrichStaffContextsAsync(
+            scope.Actor,
+            scope.School.Id,
+            contexts,
+            cancellationToken);
+
         var resolvableContexts = contexts
             .Where(CanResolveContext)
+            .Where(x => x.AcademicYearId.HasValue)
             .ToArray();
 
+        var options = resolvableContexts
+            .Select(x => new LessonContentCurriculumOption(
+                x.CurriculumAdoptionId,
+                x.AcademicYearId!.Value,
+                x.AcademicYearName,
+                x.AcademicProgramId,
+                x.AcademicProgramName,
+                x.AcademicProgramCode,
+                x.FrameworkName,
+                x.CurriculumLevelKey ?? string.Empty,
+                DisplayLevel(x),
+                x.CurriculumPathway))
+            .GroupBy(x => x.CurriculumAdoptionId)
+            .Select(x => x.First())
+            .OrderByDescending(x => x.AcademicYearName)
+            .ThenBy(x => x.AcademicProgramName)
+            .ThenBy(x => x.CurriculumLevelLabel)
+            .ThenBy(x => x.CurriculumPathway ?? string.Empty)
+            .ToArray();
+
+        var hasSelection =
+            selection.AcademicYearId.HasValue ||
+            selection.AcademicProgramId.HasValue ||
+            selection.CurriculumAdoptionId.HasValue;
+
+        var selectedContexts = hasSelection
+            ? resolvableContexts
+                .Where(x =>
+                    (!selection.AcademicYearId.HasValue ||
+                     x.AcademicYearId == selection.AcademicYearId) &&
+                    (!selection.AcademicProgramId.HasValue ||
+                     x.AcademicProgramId == selection.AcademicProgramId) &&
+                    (!selection.CurriculumAdoptionId.HasValue ||
+                     x.CurriculumAdoptionId == selection.CurriculumAdoptionId))
+                .ToArray()
+            : [];
+
         var lessons = await _lessons.ListPedagogicalLessonsAsync(
-            resolvableContexts
+            selectedContexts
                 .Select(x => x.FrameworkVersionId)
                 .Distinct()
                 .ToArray(),
@@ -52,12 +119,18 @@ public sealed class LessonContentService : ILessonContentService
             cancellationToken);
         var contentByLesson = contents.ToDictionary(x => x.PedagogicalLessonId);
 
-        var groups = resolvableContexts
+        var groups = selectedContexts
             .GroupBy(x => new
             {
                 x.CurriculumAdoptionId,
+                x.AcademicYearId,
+                x.AcademicYearName,
+                x.AcademicProgramId,
+                x.AcademicProgramName,
+                x.AcademicProgramCode,
                 x.CurriculumLevelKey,
                 x.CurriculumLogicalLevel,
+                x.CurriculumLevelLabel,
                 x.CurriculumPathway,
                 x.FrameworkVersionId,
                 x.FrameworkCode,
@@ -101,15 +174,33 @@ public sealed class LessonContentService : ILessonContentService
                     items.Count(x => LessonContentPolicy.IsProductionReady(
                         x.Status,
                         x.HasOfficialAlignment)),
-                    items);
+                    items)
+                {
+                    CurriculumAdoptionId = context.CurriculumAdoptionId,
+                    AcademicYearId = context.AcademicYearId!.Value,
+                    AcademicYearName = context.AcademicYearName,
+                    AcademicProgramId = context.AcademicProgramId,
+                    AcademicProgramName = context.AcademicProgramName,
+                    AcademicProgramCode = context.AcademicProgramCode,
+                    CurriculumLevelKey = context.CurriculumLevelKey ?? string.Empty,
+                    CurriculumLevelLabel = DisplayLevel(context),
+                    CurriculumPathway = context.CurriculumPathway
+                };
             })
-            .OrderBy(x => x.SubjectCode)
-            .ThenBy(x => x.GradeName)
-            .ThenBy(x => x.FrameworkName)
+            .OrderBy(x => x.AcademicYearName)
+            .ThenBy(x => x.AcademicProgramName)
+            .ThenBy(x => x.CurriculumLevelLabel)
+            .ThenBy(x => x.CurriculumPathway ?? string.Empty)
             .ToArray();
 
         return LessonContentQueryResult<LessonContentDashboard>.Success(
-            new LessonContentDashboard(scope.School.Id, groups));
+            new LessonContentDashboard(scope.School.Id, groups)
+            {
+                Options = options,
+                SelectedAcademicYearId = selection.AcademicYearId,
+                SelectedAcademicProgramId = selection.AcademicProgramId,
+                SelectedCurriculumAdoptionId = selection.CurriculumAdoptionId
+            });
     }
 
     public async Task<LessonContentQueryResult<CanonicalLessonDetail>> GetStaffLessonAsync(
@@ -128,6 +219,12 @@ public sealed class LessonContentService : ILessonContentService
         var contexts = await _lessons.ListStaffAdoptionsAsync(
             scope.School!.Id,
             cancellationToken);
+        contexts = await ScopeAndEnrichStaffContextsAsync(
+            scope.Actor,
+            scope.School.Id,
+            contexts,
+            cancellationToken);
+
         return await BuildStaffDetailAsync(
             contexts,
             lessonId,
@@ -158,6 +255,12 @@ public sealed class LessonContentService : ILessonContentService
             actorUserId,
             scope.School!.Id,
             cancellationToken);
+        contexts = await ScopeAndEnrichStudentContextsAsync(
+            actorUserId,
+            scope.School.Id,
+            contexts,
+            cancellationToken);
+
         var resolvableContexts = contexts
             .Where(CanResolveContext)
             .ToArray();
@@ -232,6 +335,12 @@ public sealed class LessonContentService : ILessonContentService
             actorUserId,
             scope.School!.Id,
             cancellationToken);
+        contexts = await ScopeAndEnrichStudentContextsAsync(
+            actorUserId,
+            scope.School.Id,
+            contexts,
+            cancellationToken);
+
         var resolvableContexts = contexts
             .Where(CanResolveContext)
             .ToArray();
@@ -365,6 +474,128 @@ public sealed class LessonContentService : ILessonContentService
                 content?.PublishedAtUtc,
                 body,
                 outcomes));
+    }
+
+    private async Task<IReadOnlyList<CanonicalCurriculumContextRecord>> ScopeAndEnrichStaffContextsAsync(
+        SchoolUserRecord actor,
+        Guid schoolId,
+        IReadOnlyList<CanonicalCurriculumContextRecord> contexts,
+        CancellationToken cancellationToken)
+    {
+        if (_academics is null)
+            return contexts;
+
+        var snapshot = await _academics.GetSnapshotAsync(schoolId, cancellationToken);
+        var adoptionById = snapshot.CurriculumAdoptions.ToDictionary(x => x.Id);
+        var yearById = snapshot.AcademicYears.ToDictionary(x => x.Id);
+
+        IEnumerable<CanonicalCurriculumContextRecord> scoped = contexts;
+
+        if (actor.Roles.Contains(RoleNames.Teacher, StringComparer.Ordinal))
+        {
+            var assignedClassIds = snapshot.TeacherAssignments
+                .Where(x => x.TeacherUserId == actor.Id)
+                .Select(x => x.ClassGroupId)
+                .ToHashSet();
+
+            var allowedAdoptionIds = snapshot.ClassGroups
+                .Where(x =>
+                    assignedClassIds.Contains(x.Id) &&
+                    x.Status == AcademicStructureStatus.Active &&
+                    x.CurriculumAdoptionId.HasValue)
+                .Select(x => x.CurriculumAdoptionId!.Value)
+                .ToHashSet();
+
+            scoped = scoped.Where(x => allowedAdoptionIds.Contains(x.CurriculumAdoptionId));
+        }
+
+        return scoped
+            .Select(x => EnrichYearContext(x, adoptionById, yearById))
+            .Where(x => x is not null)
+            .Select(x => x!)
+            .ToArray();
+    }
+
+    private async Task<IReadOnlyList<CanonicalCurriculumContextRecord>> ScopeAndEnrichStudentContextsAsync(
+        Guid actorUserId,
+        Guid schoolId,
+        IReadOnlyList<CanonicalCurriculumContextRecord> contexts,
+        CancellationToken cancellationToken)
+    {
+        if (_academics is null)
+            return contexts;
+
+        var snapshot = await _academics.GetSnapshotAsync(schoolId, cancellationToken);
+        var profile = snapshot.StudentProfiles.SingleOrDefault(x =>
+            x.UserId == actorUserId &&
+            !x.IsArchived &&
+            x.Status == AcademicStructureStatus.Active);
+        if (profile is null)
+            return [];
+
+        var activeYearIds = snapshot.AcademicYears
+            .Where(x => x.Status == AcademicStructureStatus.Active)
+            .Select(x => x.Id)
+            .ToHashSet();
+
+        var enrollmentClassIds = snapshot.StudentEnrollments
+            .Where(x =>
+                x.StudentProfileId == profile.Id &&
+                activeYearIds.Contains(x.AcademicYearId))
+            .Select(x => x.ClassGroupId)
+            .ToHashSet();
+
+        var activeClasses = snapshot.ClassGroups
+            .Where(x =>
+                enrollmentClassIds.Contains(x.Id) &&
+                x.Status == AcademicStructureStatus.Active)
+            .ToArray();
+
+        var explicitAdoptionIds = activeClasses
+            .Where(x => x.CurriculumAdoptionId.HasValue)
+            .Select(x => x.CurriculumAdoptionId!.Value)
+            .ToHashSet();
+
+        var legacyKeys = activeClasses
+            .Where(x => !x.CurriculumAdoptionId.HasValue)
+            .Select(x => (x.AcademicYearId, x.AcademicProgramId, x.GradeLevelId))
+            .ToHashSet();
+
+        var adoptionById = snapshot.CurriculumAdoptions.ToDictionary(x => x.Id);
+        var yearById = snapshot.AcademicYears.ToDictionary(x => x.Id);
+
+        return contexts
+            .Where(x =>
+                explicitAdoptionIds.Contains(x.CurriculumAdoptionId) ||
+                (adoptionById.TryGetValue(x.CurriculumAdoptionId, out var adoption) &&
+                 adoption.AcademicYearId.HasValue &&
+                 legacyKeys.Contains((
+                     adoption.AcademicYearId.Value,
+                     adoption.AcademicProgramId,
+                     adoption.GradeLevelId))))
+            .Select(x => EnrichYearContext(x, adoptionById, yearById))
+            .Where(x => x is not null)
+            .Select(x => x!)
+            .ToArray();
+    }
+
+    private static CanonicalCurriculumContextRecord? EnrichYearContext(
+        CanonicalCurriculumContextRecord context,
+        IReadOnlyDictionary<Guid, SchoolCurriculumAdoption> adoptionById,
+        IReadOnlyDictionary<Guid, AcademicYear> yearById)
+    {
+        if (!adoptionById.TryGetValue(context.CurriculumAdoptionId, out var adoption) ||
+            !adoption.AcademicYearId.HasValue ||
+            !yearById.TryGetValue(adoption.AcademicYearId.Value, out var year))
+        {
+            return null;
+        }
+
+        return context with
+        {
+            AcademicYearId = year.Id,
+            AcademicYearName = year.Name
+        };
     }
 
     private async Task<ScopeResult> ResolveScopeAsync(
