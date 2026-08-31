@@ -13,27 +13,44 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7.0.1
-      - name: Inspect UAE book TOC text
+      - name: Read UAE textbook TOCs with Python
         shell: bash
         run: |
           set -euo pipefail
-          command -v pdftotext
+          python3 -m pip install --quiet pypdf gdown
           python3 - <<'PY'
-          import urllib.request
+          import re
+          import gdown
+          from pypdf import PdfReader
+
           files={
             'G1':'1j4sRW2biioeWS8LyK_n-B7IGAxeSTjyz',
-            'G12A':'1b6BPBNDo7AJXs8QHGaKGOFaQf6N77K86',
+            'G12':'1b6BPBNDo7AJXs8QHGaKGOFaQf6N77K86',
           }
+          patterns=[
+            re.compile(r'\b(?:lesson|unit|module|chapter)\s*[0-9A-Za-z.-]*\s*[:\-]?\s*.+',re.I),
+            re.compile(r'(?:الدرس|الوحدة|الفصل)\s*[0-9٠-٩A-Za-z.-]*\s*[:\-]?\s*.+'),
+            re.compile(r'^\s*[0-9]{1,2}[.-][0-9]{1,2}\s+.+')
+          ]
           for name,file_id in files.items():
-              url=f'https://drive.google.com/uc?export=download&id={file_id}&confirm=t'
-              req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0'})
-              with urllib.request.urlopen(req,timeout=60) as r:
-                  data=r.read()
-              print(name,'downloaded',len(data),'bytes',data[:8])
-              open(f'/tmp/{name}.pdf','wb').write(data)
+              out=f'/tmp/{name}.pdf'
+              got=gdown.download(id=file_id, output=out, quiet=True, fuzzy=True)
+              print('\n====',name,'DOWNLOAD',got,'====')
+              if not got:
+                  continue
+              reader=PdfReader(out)
+              print('PAGES',len(reader.pages))
+              hits=[]
+              for i,page in enumerate(reader.pages[:60]):
+                  text=page.extract_text() or ''
+                  for raw in text.splitlines():
+                      line=' '.join(raw.split())
+                      if not line or len(line)>220:
+                          continue
+                      if any(p.search(line) for p in patterns):
+                          key=(i+1,line)
+                          if key not in hits:
+                              hits.append(key)
+              for page,line in hits[:220]:
+                  print(f'P{page:03d}',line)
           PY
-          for name in G1 G12A; do
-            pdftotext -f 1 -l 35 -layout "/tmp/${name}.pdf" "/tmp/${name}.txt" || true
-            echo "===== ${name} CANDIDATE HEADINGS ====="
-            grep -E -i '(^|[[:space:]])(lesson|unit|module|chapter|الدرس|الوحدة|الفصل)[[:space:]:0-9.-]|^[[:space:]]*[0-9]{1,2}[-.][0-9]{1,2}[[:space:]]+' "/tmp/${name}.txt" | head -n 160 || true
-          done
