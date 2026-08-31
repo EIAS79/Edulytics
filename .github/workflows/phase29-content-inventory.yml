@@ -13,13 +13,12 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7.0.1
-      - name: Read UAE textbook TOCs with Python
+      - name: Inspect UAE PDF outlines
         shell: bash
         run: |
           set -euo pipefail
           python3 -m pip install --quiet pypdf gdown
           python3 - <<'PY'
-          import re
           import gdown
           from pypdf import PdfReader
 
@@ -27,31 +26,28 @@ jobs:
             'G1':'1j4sRW2biioeWS8LyK_n-B7IGAxeSTjyz',
             'G12':'1b6BPBNDo7AJXs8QHGaKGOFaQf6N77K86',
           }
-          patterns=[
-            re.compile(r'\b(?:lesson|unit|module|chapter)\s*[0-9A-Za-z.-]*\s*[:\-]?\s*.+',re.I),
-            re.compile(r'(?:الدرس|الوحدة|الفصل)\s*[0-9٠-٩A-Za-z.-]*\s*[:\-]?\s*.+'),
-            re.compile(r'^\s*[0-9]{1,2}[.-][0-9]{1,2}\s+.+')
-          ]
+          def walk(items,depth=0):
+              for item in items:
+                  if isinstance(item,list):
+                      walk(item,depth+1)
+                  else:
+                      title=getattr(item,'title',None)
+                      if title:
+                          print('  '*depth + str(title)[:220])
           for name,file_id in files.items():
               out=f'/tmp/{name}.pdf'
-              url=f'https://drive.google.com/uc?id={file_id}&export=download'
-              got=gdown.download(url=url, output=out, quiet=True)
-              print('\n====',name,'DOWNLOAD',got,'====')
-              if not got:
-                  continue
+              got=gdown.download(url=f'https://drive.google.com/uc?id={file_id}&export=download', output=out, quiet=True)
+              print('\n====',name,'====')
               reader=PdfReader(out)
               print('PAGES',len(reader.pages))
-              hits=[]
-              for i,page in enumerate(reader.pages[:60]):
-                  text=page.extract_text() or ''
-                  for raw in text.splitlines():
-                      line=' '.join(raw.split())
-                      if not line or len(line)>220:
-                          continue
-                      if any(p.search(line) for p in patterns):
-                          key=(i+1,line)
-                          if key not in hits:
-                              hits.append(key)
-              for page,line in hits[:220]:
-                  print(f'P{page:03d}',line)
+              print('OUTLINE')
+              try:
+                  walk(reader.outline)
+              except Exception as e:
+                  print('OUTLINE_ERROR',repr(e))
+              print('FIRST_PAGES_TEXT')
+              for i,page in enumerate(reader.pages[:20]):
+                  text=' '.join((page.extract_text() or '').split())
+                  if text:
+                      print('P',i+1,text[:1000])
           PY
