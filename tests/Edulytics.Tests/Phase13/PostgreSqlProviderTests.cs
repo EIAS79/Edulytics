@@ -233,8 +233,11 @@ public sealed class PostgreSqlProviderTests
                                     .AcademicYearId)))
                 .ToArray();
 
+        // Phase29 keeps the two historical nullable uniqueness scopes and adds
+        // equivalent explicit-curriculum-level scopes. All four must preserve
+        // PostgreSQL NULLS NOT DISTINCT behavior for AcademicYearId.
         Assert.Equal(
-            2,
+            4,
             nullableIndexes.Length);
 
         Assert.All(
@@ -244,15 +247,26 @@ public sealed class PostgreSqlProviderTests
                     index
                         .GetAreNullsDistinct()));
 
-        var primary =
-            nullableIndexes.Single(
-                index =>
-                    index.Properties.Count ==
-                    5);
+        var primaryIndexes =
+            nullableIndexes
+                .Where(index => index.Properties.Count == 5)
+                .ToArray();
 
-        Assert.Equal(
-            "\"IsPrimary\" = TRUE",
-            primary.GetFilter());
+        Assert.Equal(2, primaryIndexes.Length);
+
+        Assert.Contains(
+            primaryIndexes,
+            index => string.Equals(
+                index.GetFilter(),
+                "\"IsPrimary\" = TRUE AND \"CurriculumLevelKey\" IS NOT NULL",
+                StringComparison.Ordinal));
+
+        Assert.Contains(
+            primaryIndexes,
+            index => string.Equals(
+                index.GetFilter(),
+                "\"IsPrimary\" = TRUE AND \"CurriculumLevelKey\" IS NULL",
+                StringComparison.Ordinal));
     }
 
     private static EdulyticsDbContext CreateDb(
