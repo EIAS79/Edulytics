@@ -4,6 +4,7 @@ using Edulytics.Services.Curriculum;
 using Edulytics.Web.ViewModels.Curriculum;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Localization;
 
 namespace Edulytics.Web.Controllers;
@@ -15,6 +16,7 @@ public sealed class CurriculumController : Controller
     private readonly ICurriculumService _curriculum;
     private readonly IStringLocalizer<CurriculumResource> _text;
 
+    // Historical constructor intentionally preserved for Phase07 regression tests.
     public CurriculumController(
         ICurriculumService curriculum,
         IStringLocalizer<CurriculumResource> text)
@@ -37,6 +39,29 @@ public sealed class CurriculumController : Controller
         if (result.Value is null)
             return HandleQueryError(result.Error);
 
+        var levels = ExplicitLevels;
+        var contentQuery = ExplicitContentQuery;
+
+        if (levels is not null)
+        {
+            var levelResult = await levels.GetDashboardAsync(
+                actorId,
+                cancellationToken);
+            ViewData["ExplicitCurriculum"] =
+                levelResult.Value ?? new ExplicitCurriculumLevelDashboard([], []);
+        }
+        else
+        {
+            ViewData["ExplicitCurriculum"] =
+                new ExplicitCurriculumLevelDashboard([], []);
+        }
+
+        ViewData["ExplicitTopics"] = contentQuery is null
+            ? Array.Empty<ExplicitCurriculumTopicUiItem>()
+            : await contentQuery.ListTopicsAsync(actorId, cancellationToken);
+
+        // Keep the established view-model contract for compatibility. The normal
+        // Phase29 UI reads explicit adoption/topic data from ViewData above.
         return View(
             new CurriculumIndexViewModel(
                 result.Value.GradeLevels,
@@ -49,6 +74,63 @@ public sealed class CurriculumController : Controller
             });
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
+    [HttpPost("curriculum-topics")]
+    [ValidateAntiForgeryToken]
+    public Task<IActionResult> CreateCurriculumTopic(
+        Guid curriculumAdoptionId,
+        string name,
+        int order,
+        CancellationToken cancellationToken)
+    {
+        var levels = ExplicitLevels;
+        if (levels is null)
+            return Task.FromResult<IActionResult>(StatusCode(500));
+
+        return ExecuteExplicitAsync(
+            id => levels.CreateTopicAsync(
+                id,
+                new CreateTopicForCurriculumLevelRequest(
+                    curriculumAdoptionId,
+                    name,
+                    order),
+                cancellationToken),
+            "SuccessTopicCreated");
+    }
+
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
+    [HttpPost("curriculum-outcomes/official")]
+    [ValidateAntiForgeryToken]
+    public Task<IActionResult> CreateCurriculumOfficialOutcome(
+        Guid topicId,
+        string selectionKey,
+        int order,
+        CancellationToken cancellationToken)
+    {
+        var levels = ExplicitLevels;
+        if (levels is null)
+            return Task.FromResult<IActionResult>(StatusCode(500));
+
+        var selection = ParseOfficialSelection(selectionKey);
+        if (selection is null)
+        {
+            TempData["Error"] = _text["ErrorOfficialOutcomeNotFound"].Value;
+            return Task.FromResult<IActionResult>(RedirectToAction(nameof(Index)));
+        }
+
+        return ExecuteExplicitAsync(
+            id => levels.CreateOfficialOutcomeAsync(
+                id,
+                new CreateOfficialOutcomeForCurriculumLevelRequest(
+                    topicId,
+                    selection.Value.ContentNodeId,
+                    selection.Value.LessonNodeId,
+                    order),
+                cancellationToken),
+            "SuccessOfficialOutcomeAdded");
+    }
+
+    // -------- Legacy compatibility API below. --------
 
     [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("framework")]
@@ -172,8 +254,7 @@ public sealed class CurriculumController : Controller
                     topicId,
                     selection.Value.ContentNodeId,
                     selection.Value.LessonNodeId,
-                    order
-),
+                    order),
                 cancellationToken);
 
         SetFeedback(result, "SuccessOfficialOutcomeAdded");
@@ -229,6 +310,39 @@ public sealed class CurriculumController : Controller
             ? RedirectToAction(nameof(Index))
             : RedirectToAction(nameof(EditOutcome), new { id });
     }
+
+    private async Task<IActionResult> ExecuteExplicitAsync(
+        Func<Guid, Task<ExplicitCurriculumLevelCommandResult>> action,
+        string successKey)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        var result = await action(actorId);
+        if (result.Succeeded)
+        {
+            var success = _text[successKey];
+            TempData["Success"] = success.ResourceNotFound
+                ? "Curriculum updated."
+                : success.Value;
+        }
+        else
+        {
+            var code = result.Error ?? ExplicitCurriculumLevelErrorCode.PersistenceError;
+            var localized = _text[$"ExplicitError{code}"];
+            TempData["Error"] = localized.ResourceNotFound
+                ? code.ToString()
+                : localized.Value;
+        }
+
+        return RedirectToAction(nameof(Index));
+    }
+
+    private IExplicitCurriculumLevelService? ExplicitLevels =>
+        HttpContext?.RequestServices.GetService<IExplicitCurriculumLevelService>();
+
+    private IExplicitCurriculumContentUiQuery? ExplicitContentQuery =>
+        HttpContext?.RequestServices.GetService<IExplicitCurriculumContentUiQuery>();
 
     private bool TryActor(out Guid id) =>
         Guid.TryParse(
