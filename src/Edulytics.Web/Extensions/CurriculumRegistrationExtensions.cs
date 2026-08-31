@@ -14,6 +14,7 @@ public static class CurriculumRegistrationExtensions
         services.AddScoped<ICurriculumService, CurriculumService>();
         services.AddScoped<IExplicitCurriculumLevelService, ExplicitCurriculumLevelService>();
         services.AddScoped<IExplicitCurriculumLevelUiQuery, ExplicitCurriculumLevelUiQuery>();
+        services.AddScoped<IExplicitCurriculumContentUiQuery, ExplicitCurriculumContentUiQuery>();
         services.AddScoped<MathematicsCurriculumPackSeeder>();
         return services;
     }
