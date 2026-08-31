@@ -67,7 +67,6 @@ public sealed class StudentPortalService : IStudentPortalService
         var subjectMap = snapshot.Subjects.ToDictionary(x => x.Id);
         var versionMap = snapshot.FrameworkVersions.ToDictionary(x => x.Id);
         var frameworkMap = snapshot.Frameworks.ToDictionary(x => x.Id);
-        var adoptionMap = snapshot.CurriculumAdoptions.ToDictionary(x => x.Id);
 
         var enrollmentItems = snapshot.Enrollments
             .Select(enrollment =>
@@ -275,18 +274,34 @@ public sealed class StudentPortalService : IStudentPortalService
             return false;
         }
 
-        var legacyMatches = adoptions
+        var candidates = adoptions
             .Where(x =>
                 x.IsActive &&
                 x.IsPrimary &&
                 x.AcademicProgramId == classGroup.AcademicProgramId &&
-                x.GradeLevelId == classGroup.GradeLevelId &&
-                (!x.AcademicYearId.HasValue || x.AcademicYearId == academicYearId))
+                x.GradeLevelId == classGroup.GradeLevelId)
             .ToArray();
 
-        if (legacyMatches.Length == 1)
+        var yearSpecific = candidates
+            .Where(x => x.AcademicYearId == academicYearId)
+            .ToArray();
+        if (yearSpecific.Length == 1)
         {
-            adoption = legacyMatches[0];
+            adoption = yearSpecific[0];
+            return true;
+        }
+        if (yearSpecific.Length > 1)
+        {
+            adoption = null!;
+            return false;
+        }
+
+        var defaults = candidates
+            .Where(x => !x.AcademicYearId.HasValue)
+            .ToArray();
+        if (defaults.Length == 1)
+        {
+            adoption = defaults[0];
             return true;
         }
 
@@ -318,7 +333,17 @@ public sealed class StudentPortalService : IStudentPortalService
             grade.Name,
             grade.Order);
 
-        if (legacy is null)
+        if (legacy is not null)
+        {
+            logicalLevel = legacy.LogicalLevel;
+            pathway = legacy.Pathway;
+            levelLabel = legacy.Label;
+            return true;
+        }
+
+        var approvedPack = MathematicsCurriculumPackRegistry.All.Any(x =>
+            string.Equals(x.Code, frameworkCode, StringComparison.Ordinal));
+        if (approvedPack || grade.Order is < 1 or > 13)
         {
             logicalLevel = 0;
             pathway = null;
@@ -326,9 +351,11 @@ public sealed class StudentPortalService : IStudentPortalService
             return false;
         }
 
-        logicalLevel = legacy.LogicalLevel;
-        pathway = legacy.Pathway;
-        levelLabel = legacy.Label;
+        // Compatibility only for pre-pack/custom legacy frameworks. The four
+        // approved Mathematics packs above must resolve through their registry.
+        logicalLevel = grade.Order;
+        pathway = null;
+        levelLabel = grade.Name;
         return true;
     }
 
