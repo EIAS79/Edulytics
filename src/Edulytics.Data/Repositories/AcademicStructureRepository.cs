@@ -51,6 +51,15 @@ public sealed class AcademicStructureRepository : IAcademicStructureRepository
                 .OrderByDescending(x => x.CreatedAtUtc)
                 .ToArrayAsync(cancellationToken);
 
+        var curriculumAdoptions = await _db.SchoolCurriculumAdoptions
+            .AsNoTracking()
+            .Where(x => x.SchoolId == schoolId)
+            .OrderBy(x => x.AcademicYearId)
+            .ThenBy(x => x.AcademicProgramId)
+            .ThenBy(x => x.CurriculumLogicalLevel)
+            .ThenBy(x => x.CurriculumPathway)
+            .ToArrayAsync(cancellationToken);
+
         var classes = await _db.ClassGroups.AsNoTracking()
             .Where(x => x.SchoolId == schoolId)
             .OrderBy(x => x.Code)
@@ -80,7 +89,8 @@ public sealed class AcademicStructureRepository : IAcademicStructureRepository
             years, terms, grades, classes, subjects, students, assignments, enrollments)
         {
             AcademicPrograms = programs,
-            AcademicYearProgramOfferings = programOfferings
+            AcademicYearProgramOfferings = programOfferings,
+            CurriculumAdoptions = curriculumAdoptions
         };
     }
 
