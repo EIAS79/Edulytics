@@ -1,3 +1,4 @@
+using Edulytics.Core.Curriculum;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Interfaces;
 using Edulytics.Core.Lessons;
@@ -63,11 +64,6 @@ public sealed class LessonContentRepository : ILessonContentRepository
             .Distinct()
             .ToArray();
 
-        var yearIds = enrollments
-            .Select(x => x.AcademicYearId)
-            .Distinct()
-            .ToArray();
-
         var classes = await _db.ClassGroups
             .AsNoTracking()
             .Where(x =>
@@ -75,17 +71,98 @@ public sealed class LessonContentRepository : ILessonContentRepository
                 classIds.Contains(x.Id))
             .ToArrayAsync(cancellationToken);
 
-        var classById = classes.ToDictionary(x => x.Id);
-        var scopes = enrollments.Where(x => classById.ContainsKey(x.ClassGroupId)).Select(x => new { classById[x.ClassGroupId].AcademicProgramId, classById[x.ClassGroupId].GradeLevelId, x.AcademicYearId }).Distinct().ToArray();
-        if (scopes.Length == 0) return [];
-        var programIds = scopes.Select(x => x.AcademicProgramId).Distinct().ToArray();
-        var gradeIds = scopes.Select(x => x.GradeLevelId).Distinct().ToArray();
-        var candidates = await _db.SchoolCurriculumAdoptions.AsNoTracking().Where(x => x.SchoolId == schoolId && x.IsActive && x.IsPrimary && programIds.Contains(x.AcademicProgramId) && gradeIds.Contains(x.GradeLevelId) && (!x.AcademicYearId.HasValue || yearIds.Contains(x.AcademicYearId.Value))).ToArrayAsync(cancellationToken);
-        var adoptions = candidates.Where(a => scopes.Any(q => a.AcademicProgramId == q.AcademicProgramId && a.GradeLevelId == q.GradeLevelId && (!a.AcademicYearId.HasValue || a.AcademicYearId.Value == q.AcademicYearId))).ToArray();
+        if (classes.Length == 0)
+            return [];
+
+        var explicitAdoptionIds = classes
+            .Where(x => x.CurriculumAdoptionId.HasValue)
+            .Select(x => x.CurriculumAdoptionId!.Value)
+            .Distinct()
+            .ToArray();
+
+        var explicitAdoptions = explicitAdoptionIds.Length == 0
+            ? []
+            : await _db.SchoolCurriculumAdoptions
+                .AsNoTracking()
+                .Where(x =>
+                    x.SchoolId == schoolId &&
+                    x.IsActive &&
+                    x.IsPrimary &&
+                    explicitAdoptionIds.Contains(x.Id))
+                .ToArrayAsync(cancellationToken);
+
+        var explicitById = explicitAdoptions.ToDictionary(x => x.Id);
+
+        var legacyClasses = classes
+            .Where(x => !x.CurriculumAdoptionId.HasValue)
+            .ToArray();
+
+        var legacyProgramIds = legacyClasses
+            .Select(x => x.AcademicProgramId)
+            .Distinct()
+            .ToArray();
+        var legacyGradeIds = legacyClasses
+            .Select(x => x.GradeLevelId)
+            .Distinct()
+            .ToArray();
+        var legacyYearIds = legacyClasses
+            .Select(x => x.AcademicYearId)
+            .Distinct()
+            .ToArray();
+
+        var legacyCandidates = legacyClasses.Length == 0
+            ? []
+            : await _db.SchoolCurriculumAdoptions
+                .AsNoTracking()
+                .Where(x =>
+                    x.SchoolId == schoolId &&
+                    x.IsActive &&
+                    x.IsPrimary &&
+                    legacyProgramIds.Contains(x.AcademicProgramId) &&
+                    legacyGradeIds.Contains(x.GradeLevelId) &&
+                    (!x.AcademicYearId.HasValue ||
+                     legacyYearIds.Contains(x.AcademicYearId.Value)))
+                .ToArrayAsync(cancellationToken);
+
+        var selected = new Dictionary<Guid, Edulytics.Core.Entities.SchoolCurriculumAdoption>();
+
+        foreach (var classGroup in classes)
+        {
+            if (classGroup.CurriculumAdoptionId.HasValue)
+            {
+                if (!explicitById.TryGetValue(
+                        classGroup.CurriculumAdoptionId.Value,
+                        out var adoption))
+                {
+                    continue;
+                }
+
+                // Explicit class identity is authoritative and must belong to
+                // the class academic year. A mismatch is rejected, not guessed.
+                if (adoption.AcademicYearId != classGroup.AcademicYearId)
+                    continue;
+
+                selected.TryAdd(adoption.Id, adoption);
+                continue;
+            }
+
+            // Compatibility-only fallback for pre-identity classes. Exactly one
+            // adoption must match program + grade + year compatibility.
+            var matches = legacyCandidates
+                .Where(x =>
+                    x.AcademicProgramId == classGroup.AcademicProgramId &&
+                    x.GradeLevelId == classGroup.GradeLevelId &&
+                    (!x.AcademicYearId.HasValue ||
+                     x.AcademicYearId.Value == classGroup.AcademicYearId))
+                .ToArray();
+
+            if (matches.Length == 1)
+                selected.TryAdd(matches[0].Id, matches[0]);
+        }
 
         return await HydrateContextsAsync(
             schoolId,
-            adoptions,
+            selected.Values.ToArray(),
             cancellationToken);
     }
 
@@ -271,51 +348,43 @@ public sealed class LessonContentRepository : ILessonContentRepository
             .Select(x => x.SubjectId)
             .Distinct()
             .ToArray();
-
         var gradeIds = adoptions
             .Select(x => x.GradeLevelId)
             .Distinct()
             .ToArray();
-
         var versionIds = adoptions
             .Select(x => x.FrameworkVersionId)
             .Distinct()
             .ToArray();
+        var programIds = adoptions
+            .Select(x => x.AcademicProgramId)
+            .Distinct()
+            .ToArray();
 
-        var programIds = adoptions.Select(x => x.AcademicProgramId).Distinct().ToArray();
-        var programs = await _db.AcademicPrograms.AsNoTracking().Where(x => x.SchoolId == schoolId && programIds.Contains(x.Id)).ToArrayAsync(cancellationToken);
-
+        var programs = await _db.AcademicPrograms
+            .AsNoTracking()
+            .Where(x => x.SchoolId == schoolId && programIds.Contains(x.Id))
+            .ToArrayAsync(cancellationToken);
         var subjects = await _db.Subjects
             .AsNoTracking()
-            .Where(x =>
-                x.SchoolId == schoolId &&
-                subjectIds.Contains(x.Id))
+            .Where(x => x.SchoolId == schoolId && subjectIds.Contains(x.Id))
             .ToArrayAsync(cancellationToken);
-
         var grades = await _db.GradeLevels
             .AsNoTracking()
-            .Where(x =>
-                x.SchoolId == schoolId &&
-                gradeIds.Contains(x.Id))
+            .Where(x => x.SchoolId == schoolId && gradeIds.Contains(x.Id))
             .ToArrayAsync(cancellationToken);
-
         var versions = await _db.CurriculumFrameworkVersions
             .AsNoTracking()
-            .Where(x =>
-                versionIds.Contains(x.Id) &&
-                x.IsActive)
+            .Where(x => versionIds.Contains(x.Id) && x.IsActive)
             .ToArrayAsync(cancellationToken);
 
         var frameworkIds = versions
             .Select(x => x.FrameworkId)
             .Distinct()
             .ToArray();
-
         var frameworks = await _db.CurriculumFrameworks
             .AsNoTracking()
-            .Where(x =>
-                frameworkIds.Contains(x.Id) &&
-                x.IsActive)
+            .Where(x => frameworkIds.Contains(x.Id) && x.IsActive)
             .ToArrayAsync(cancellationToken);
 
         var programsById = programs.ToDictionary(x => x.Id);
@@ -337,6 +406,29 @@ public sealed class LessonContentRepository : ILessonContentRepository
                 continue;
             }
 
+            var legacyIdentity =
+                string.IsNullOrWhiteSpace(adoption.CurriculumLevelKey) ||
+                !adoption.CurriculumLogicalLevel.HasValue
+                    ? CurriculumLevelIdentityRegistry.ResolveLegacy(
+                        framework.Code,
+                        grade.Name,
+                        grade.Order)
+                    : null;
+
+            var levelKey = !string.IsNullOrWhiteSpace(adoption.CurriculumLevelKey)
+                ? adoption.CurriculumLevelKey
+                : legacyIdentity?.Key;
+            var logicalLevel = adoption.CurriculumLogicalLevel ?? legacyIdentity?.LogicalLevel;
+            var levelLabel = !string.IsNullOrWhiteSpace(adoption.CurriculumLevelLabel)
+                ? adoption.CurriculumLevelLabel
+                : legacyIdentity?.Label;
+            var stage = !string.IsNullOrWhiteSpace(adoption.CurriculumStage)
+                ? adoption.CurriculumStage
+                : legacyIdentity?.Stage;
+            var pathway = !string.IsNullOrWhiteSpace(adoption.CurriculumLevelKey)
+                ? adoption.CurriculumPathway
+                : legacyIdentity?.Pathway;
+
             result.Add(new CanonicalCurriculumContextRecord(
                 version.Id,
                 framework.Code,
@@ -347,13 +439,25 @@ public sealed class LessonContentRepository : ILessonContentRepository
                 subject.Code,
                 grade.Id,
                 grade.Name,
-                grade.Order) { AcademicProgramId = program.Id, AcademicProgramName = program.Name, AcademicProgramCode = program.Code });
+                grade.Order)
+            {
+                CurriculumAdoptionId = adoption.Id,
+                CurriculumLevelKey = levelKey,
+                CurriculumLogicalLevel = logicalLevel,
+                CurriculumLevelLabel = levelLabel,
+                CurriculumStage = stage,
+                CurriculumPathway = pathway,
+                AcademicProgramId = program.Id,
+                AcademicProgramName = program.Name,
+                AcademicProgramCode = program.Code
+            });
         }
 
         return result
             .Distinct()
             .OrderBy(x => x.SubjectCode)
-            .ThenBy(x => x.GradeOrder)
+            .ThenBy(x => x.CurriculumLogicalLevel ?? x.GradeOrder)
+            .ThenBy(x => x.CurriculumPathway ?? string.Empty)
             .ThenBy(x => x.FrameworkName)
             .ToArray();
     }
