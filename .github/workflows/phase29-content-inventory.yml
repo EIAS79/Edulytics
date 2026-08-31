@@ -1,0 +1,49 @@
+name: Phase29 Content Inventory
+
+on:
+  push:
+    paths:
+      - '.github/workflows/phase29-content-inventory.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Inventory curriculum packs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from collections import Counter, defaultdict
+
+          root = Path('src/Edulytics.Core/Curriculum/Packs')
+          files = [
+              root/'cambridge-intl-math.curriculum-pack.json',
+              root/'uae-moe-math.curriculum-pack.json',
+              root/'pl-national-math.curriculum-pack.json',
+          ]
+          for path in files:
+              d=json.loads(path.read_text(encoding='utf-8'))
+              print('\n===', d['PackCode'], d['VersionCode'], '===')
+              print('NodeCount',d.get('NodeCount'),'Official',d.get('OfficialNodeCount'),'Units',d.get('UnitCount'),'Lessons',d.get('LessonCount'),'Links',d.get('LinkCount'))
+              kinds=Counter(n.get('Kind') for n in d['Nodes'])
+              print('Kinds', dict(sorted(kinds.items())))
+              by=defaultdict(Counter)
+              samples=defaultdict(list)
+              for n in d['Nodes']:
+                  lo=n.get('LogicalLevelFrom')
+                  hi=n.get('LogicalLevelTo')
+                  pw=(n.get('Pathway') or 'SHARED')
+                  for level in range(lo, hi+1):
+                      by[(level,pw)][n.get('Kind')]+=1
+                      if n.get('Kind') in ('Lesson','Outcome','Standard','Reference') and len(samples[(level,pw)])<5:
+                          samples[(level,pw)].append((n.get('Code'),n.get('Title'),n.get('NativeLevel')))
+              for key in sorted(by, key=lambda x:(x[0],x[1])):
+                  print('LEVEL',key,'COUNTS',dict(by[key]))
+                  for s in samples[key]: print('  SAMPLE',s)
+          PY
