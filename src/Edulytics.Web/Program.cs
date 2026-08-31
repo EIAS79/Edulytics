@@ -254,15 +254,6 @@ using (var scope =
     await mathematicsPedagogicalLessonSeeder
         .SeedAsync();
 
-    var curriculumDb =
-        scope.ServiceProvider
-            .GetRequiredService<
-                Edulytics.Data.Contexts.EdulyticsDbContext>();
-
-    await new Edulytics.Data.Seeding.CambridgeCompletePedagogicalInventorySeeder(
-            curriculumDb)
-        .SeedAsync();
-
     var mathematicsCanonicalLessonContentSeeder =
         scope.ServiceProvider
             .GetRequiredService<
