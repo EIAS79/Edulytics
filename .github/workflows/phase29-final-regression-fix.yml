@@ -8,7 +8,7 @@ on:
 permissions:
   contents: write
 
-# Retry marker: namespace dependency is now explicit in the coverage fixture.
+# Retry marker: UAE lesson fixtures now carry the exact General pathway.
 jobs:
   apply:
     runs-on: ubuntu-24.04
