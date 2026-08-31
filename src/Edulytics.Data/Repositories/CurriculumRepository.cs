@@ -31,7 +31,29 @@ public sealed class CurriculumRepository : ICurriculumRepository
             .OrderBy(x => x.Name)
             .ToListAsync(cancellationToken);
 
-        var programs = await _db.AcademicPrograms.AsNoTracking().Where(x => x.SchoolId == schoolId).OrderBy(x => x.Name).ToListAsync(cancellationToken);
+        var programs = await _db.AcademicPrograms
+            .AsNoTracking()
+            .Where(x => x.SchoolId == schoolId)
+            .OrderBy(x => x.Name)
+            .ToListAsync(cancellationToken);
+
+        var years = await _db.AcademicYears
+            .AsNoTracking()
+            .Where(x => x.SchoolId == schoolId)
+            .OrderByDescending(x => x.StartsOn)
+            .ToListAsync(cancellationToken);
+
+        var offerings = await _db.AcademicYearProgramOfferings
+            .AsNoTracking()
+            .Where(x => x.SchoolId == schoolId)
+            .ToListAsync(cancellationToken);
+
+        var adoptions = await _db.SchoolCurriculumAdoptions
+            .AsNoTracking()
+            .Where(x => x.SchoolId == schoolId)
+            .OrderByDescending(x => x.UpdatedAtUtc)
+            .ToListAsync(cancellationToken);
+
         var topics = await _db.CurriculumTopics
             .AsNoTracking()
             .Where(x => x.SchoolId == schoolId)
@@ -47,13 +69,29 @@ public sealed class CurriculumRepository : ICurriculumRepository
             .ThenBy(x => x.Order)
             .ToListAsync(cancellationToken);
 
-        return new CurriculumSnapshot(grades, subjects, topics, outcomes) { AcademicPrograms = programs };
+        return new CurriculumSnapshot(grades, subjects, topics, outcomes)
+        {
+            AcademicPrograms = programs,
+            AcademicYears = years,
+            AcademicYearProgramOfferings = offerings,
+            CurriculumAdoptions = adoptions
+        };
     }
 
-    public Task<AcademicProgram?> GetAcademicProgramAsync(Guid schoolId, Guid id, CancellationToken cancellationToken = default) =>
-        _db.AcademicPrograms.FirstOrDefaultAsync(x => x.SchoolId == schoolId && x.Id == id, cancellationToken);
-    public Task<AcademicProgram?> GetDefaultAcademicProgramAsync(Guid schoolId, CancellationToken cancellationToken = default) =>
-        _db.AcademicPrograms.FirstOrDefaultAsync(x => x.SchoolId == schoolId && x.IsDefault, cancellationToken);
+    public Task<AcademicProgram?> GetAcademicProgramAsync(
+        Guid schoolId,
+        Guid id,
+        CancellationToken cancellationToken = default) =>
+        _db.AcademicPrograms.FirstOrDefaultAsync(
+            x => x.SchoolId == schoolId && x.Id == id,
+            cancellationToken);
+
+    public Task<AcademicProgram?> GetDefaultAcademicProgramAsync(
+        Guid schoolId,
+        CancellationToken cancellationToken = default) =>
+        _db.AcademicPrograms.FirstOrDefaultAsync(
+            x => x.SchoolId == schoolId && x.IsDefault,
+            cancellationToken);
 
     public Task<GradeLevel?> GetGradeLevelAsync(
         Guid schoolId,
@@ -103,8 +141,22 @@ public sealed class CurriculumRepository : ICurriculumRepository
                     x.IsActive,
                 cancellationToken);
 
-    public Task<SchoolCurriculumAdoption?> GetPrimaryAdoptionAsync(Guid schoolId, Guid academicProgramId, Guid gradeLevelId, Guid subjectId, CancellationToken cancellationToken = default) =>
-        _db.SchoolCurriculumAdoptions.FirstOrDefaultAsync(x => x.SchoolId == schoolId && x.AcademicYearId == null && x.AcademicProgramId == academicProgramId && x.GradeLevelId == gradeLevelId && x.SubjectId == subjectId && x.IsPrimary && x.IsActive, cancellationToken);
+    public Task<SchoolCurriculumAdoption?> GetPrimaryAdoptionAsync(
+        Guid schoolId,
+        Guid academicProgramId,
+        Guid gradeLevelId,
+        Guid subjectId,
+        CancellationToken cancellationToken = default) =>
+        _db.SchoolCurriculumAdoptions.FirstOrDefaultAsync(
+            x =>
+                x.SchoolId == schoolId &&
+                x.AcademicYearId == null &&
+                x.AcademicProgramId == academicProgramId &&
+                x.GradeLevelId == gradeLevelId &&
+                x.SubjectId == subjectId &&
+                x.IsPrimary &&
+                x.IsActive,
+            cancellationToken);
 
     public Task<Guid?> GetActivePlatformFrameworkVersionIdAsync(
         string normalizedFrameworkCode,
@@ -137,8 +189,23 @@ public sealed class CurriculumRepository : ICurriculumRepository
             .Select(x => (Guid?)x.FrameworkVersionId)
             .FirstOrDefaultAsync(cancellationToken);
 
-    public Task<Guid?> GetPrimaryFrameworkVersionIdAsync(Guid schoolId, Guid academicProgramId, Guid gradeLevelId, Guid subjectId, CancellationToken cancellationToken = default) =>
-        _db.SchoolCurriculumAdoptions.Where(x => x.SchoolId == schoolId && x.AcademicYearId == null && x.AcademicProgramId == academicProgramId && x.GradeLevelId == gradeLevelId && x.SubjectId == subjectId && x.IsPrimary && x.IsActive).Select(x => (Guid?)x.FrameworkVersionId).FirstOrDefaultAsync(cancellationToken);
+    public Task<Guid?> GetPrimaryFrameworkVersionIdAsync(
+        Guid schoolId,
+        Guid academicProgramId,
+        Guid gradeLevelId,
+        Guid subjectId,
+        CancellationToken cancellationToken = default) =>
+        _db.SchoolCurriculumAdoptions
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                x.AcademicYearId == null &&
+                x.AcademicProgramId == academicProgramId &&
+                x.GradeLevelId == gradeLevelId &&
+                x.SubjectId == subjectId &&
+                x.IsPrimary &&
+                x.IsActive)
+            .Select(x => (Guid?)x.FrameworkVersionId)
+            .FirstOrDefaultAsync(cancellationToken);
 
     public async Task<IReadOnlyList<AdoptedCurriculumContext>>
         GetAdoptedCurriculumContextsAsync(
@@ -146,13 +213,14 @@ public sealed class CurriculumRepository : ICurriculumRepository
             CancellationToken cancellationToken = default) =>
         await (
             from adoption in _db.SchoolCurriculumAdoptions.AsNoTracking()
-            join program in _db.AcademicPrograms.AsNoTracking() on new { adoption.SchoolId, adoption.AcademicProgramId } equals new { program.SchoolId, AcademicProgramId = program.Id }
+            join program in _db.AcademicPrograms.AsNoTracking()
+                on new { adoption.SchoolId, adoption.AcademicProgramId }
+                equals new { program.SchoolId, AcademicProgramId = program.Id }
             join version in _db.CurriculumFrameworkVersions.AsNoTracking()
                 on adoption.FrameworkVersionId equals version.Id
             join framework in _db.CurriculumFrameworks.AsNoTracking()
                 on version.FrameworkId equals framework.Id
             where adoption.SchoolId == schoolId &&
-                  adoption.AcademicYearId == null &&
                   adoption.IsPrimary &&
                   adoption.IsActive &&
                   version.IsActive &&
@@ -163,15 +231,40 @@ public sealed class CurriculumRepository : ICurriculumRepository
                 version.Id,
                 framework.Code,
                 framework.Name)
-            { AcademicProgramId = adoption.AcademicProgramId, AcademicProgramName = program.Name, AcademicProgramCode = program.Code }
+            {
+                AdoptionId = adoption.Id,
+                AcademicYearId = adoption.AcademicYearId,
+                AcademicProgramId = adoption.AcademicProgramId,
+                AcademicProgramName = program.Name,
+                AcademicProgramCode = program.Code,
+                CurriculumLevelKey = adoption.CurriculumLevelKey,
+                CurriculumLogicalLevel = adoption.CurriculumLogicalLevel,
+                CurriculumLevelLabel = adoption.CurriculumLevelLabel,
+                CurriculumStage = adoption.CurriculumStage,
+                CurriculumPathway = adoption.CurriculumPathway
+            }
         ).ToListAsync(cancellationToken);
+
+    public Task<IReadOnlyList<OfficialCurriculumOutcomeSource>>
+        GetOfficialOutcomeSourcesAsync(
+            Guid frameworkVersionId,
+            int logicalLevel,
+            CancellationToken cancellationToken = default) =>
+        GetOfficialOutcomeSourcesAsync(
+            frameworkVersionId,
+            logicalLevel,
+            pathway: null,
+            cancellationToken);
 
     public async Task<IReadOnlyList<OfficialCurriculumOutcomeSource>>
         GetOfficialOutcomeSourcesAsync(
             Guid frameworkVersionId,
             int logicalLevel,
+            string? pathway,
             CancellationToken cancellationToken = default)
     {
+        var normalizedPathway = NormalizePathway(pathway);
+
         var nodes = await _db.CurriculumPackContentNodes
             .AsNoTracking()
             .Where(x =>
@@ -181,7 +274,10 @@ public sealed class CurriculumRepository : ICurriculumRepository
                 (x.NodeKind == "Standard" ||
                  x.NodeKind == "Outcome") &&
                 x.LogicalLevelFrom <= logicalLevel &&
-                x.LogicalLevelTo >= logicalLevel)
+                x.LogicalLevelTo >= logicalLevel &&
+                (normalizedPathway == null
+                    ? x.Pathway == null || x.Pathway == string.Empty
+                    : x.Pathway == normalizedPathway))
             .OrderBy(x => x.SortOrder)
             .ToListAsync(cancellationToken);
 
@@ -213,14 +309,19 @@ public sealed class CurriculumRepository : ICurriculumRepository
             .Select(x => x.FromNodeId)
             .Distinct()
             .ToArray();
+
         var lessons = await _db.CurriculumPackContentNodes
             .AsNoTracking()
             .Where(x =>
                 lessonIds.Contains(x.Id) &&
                 x.IsActive &&
                 x.LogicalLevelFrom <= logicalLevel &&
-                x.LogicalLevelTo >= logicalLevel)
+                x.LogicalLevelTo >= logicalLevel &&
+                (normalizedPathway == null
+                    ? x.Pathway == null || x.Pathway == string.Empty
+                    : x.Pathway == normalizedPathway))
             .ToDictionaryAsync(x => x.Id, cancellationToken);
+
         var linksByOutcome = links
             .Where(x => lessons.ContainsKey(x.FromNodeId))
             .GroupBy(x => x.ToNodeId)
@@ -254,10 +355,26 @@ public sealed class CurriculumRepository : ICurriculumRepository
             .ToArray();
     }
 
+    public Task<OfficialCurriculumOutcomeSource?>
+        GetOfficialOutcomeSourceAsync(
+            Guid frameworkVersionId,
+            int logicalLevel,
+            Guid contentNodeId,
+            Guid? lessonNodeId,
+            CancellationToken cancellationToken = default) =>
+        GetOfficialOutcomeSourceAsync(
+            frameworkVersionId,
+            logicalLevel,
+            pathway: null,
+            contentNodeId,
+            lessonNodeId,
+            cancellationToken);
+
     public async Task<OfficialCurriculumOutcomeSource?>
         GetOfficialOutcomeSourceAsync(
             Guid frameworkVersionId,
             int logicalLevel,
+            string? pathway,
             Guid contentNodeId,
             Guid? lessonNodeId,
             CancellationToken cancellationToken = default)
@@ -265,6 +382,7 @@ public sealed class CurriculumRepository : ICurriculumRepository
         var sources = await GetOfficialOutcomeSourcesAsync(
             frameworkVersionId,
             logicalLevel,
+            pathway,
             cancellationToken);
 
         return sources.SingleOrDefault(x =>
@@ -324,10 +442,45 @@ public sealed class CurriculumRepository : ICurriculumRepository
                 (!excludeId.HasValue || x.Id != excludeId.Value),
             cancellationToken);
 
-    public Task<bool> TopicNameExistsInProgramAsync(Guid schoolId, Guid academicProgramId, Guid frameworkVersionId, Guid subjectId, Guid gradeLevelId, string normalizedName, Guid? excludeId = null, CancellationToken cancellationToken = default) =>
-        _db.CurriculumTopics.AnyAsync(x => x.SchoolId == schoolId && x.AcademicProgramId == academicProgramId && x.FrameworkVersionId == frameworkVersionId && x.SubjectId == subjectId && x.GradeLevelId == gradeLevelId && x.Name.ToUpper() == normalizedName && (!excludeId.HasValue || x.Id != excludeId.Value), cancellationToken);
-    public Task<bool> TopicOrderExistsInProgramAsync(Guid schoolId, Guid academicProgramId, Guid frameworkVersionId, Guid subjectId, Guid gradeLevelId, int order, Guid? excludeId = null, CancellationToken cancellationToken = default) =>
-        _db.CurriculumTopics.AnyAsync(x => x.SchoolId == schoolId && x.AcademicProgramId == academicProgramId && x.FrameworkVersionId == frameworkVersionId && x.SubjectId == subjectId && x.GradeLevelId == gradeLevelId && x.Order == order && (!excludeId.HasValue || x.Id != excludeId.Value), cancellationToken);
+    public Task<bool> TopicNameExistsInProgramAsync(
+        Guid schoolId,
+        Guid academicProgramId,
+        Guid frameworkVersionId,
+        Guid subjectId,
+        Guid gradeLevelId,
+        string normalizedName,
+        Guid? excludeId = null,
+        CancellationToken cancellationToken = default) =>
+        _db.CurriculumTopics.AnyAsync(
+            x =>
+                x.SchoolId == schoolId &&
+                x.AcademicProgramId == academicProgramId &&
+                x.FrameworkVersionId == frameworkVersionId &&
+                x.SubjectId == subjectId &&
+                x.GradeLevelId == gradeLevelId &&
+                x.Name.ToUpper() == normalizedName &&
+                (!excludeId.HasValue || x.Id != excludeId.Value),
+            cancellationToken);
+
+    public Task<bool> TopicOrderExistsInProgramAsync(
+        Guid schoolId,
+        Guid academicProgramId,
+        Guid frameworkVersionId,
+        Guid subjectId,
+        Guid gradeLevelId,
+        int order,
+        Guid? excludeId = null,
+        CancellationToken cancellationToken = default) =>
+        _db.CurriculumTopics.AnyAsync(
+            x =>
+                x.SchoolId == schoolId &&
+                x.AcademicProgramId == academicProgramId &&
+                x.FrameworkVersionId == frameworkVersionId &&
+                x.SubjectId == subjectId &&
+                x.GradeLevelId == gradeLevelId &&
+                x.Order == order &&
+                (!excludeId.HasValue || x.Id != excludeId.Value),
+            cancellationToken);
 
     public Task<bool> OutcomeCodeExistsAsync(
         Guid schoolId,
@@ -347,8 +500,25 @@ public sealed class CurriculumRepository : ICurriculumRepository
                 (!excludeId.HasValue || x.Id != excludeId.Value),
             cancellationToken);
 
-    public Task<bool> OutcomeCodeExistsInProgramAsync(Guid schoolId, Guid academicProgramId, Guid frameworkVersionId, Guid subjectId, Guid gradeLevelId, string normalizedCode, Guid? excludeId = null, CancellationToken cancellationToken = default) =>
-        _db.LearningOutcomes.AnyAsync(x => x.SchoolId == schoolId && x.AcademicProgramId == academicProgramId && x.FrameworkVersionId == frameworkVersionId && x.SubjectId == subjectId && x.GradeLevelId == gradeLevelId && x.Code == normalizedCode && (!excludeId.HasValue || x.Id != excludeId.Value), cancellationToken);
+    public Task<bool> OutcomeCodeExistsInProgramAsync(
+        Guid schoolId,
+        Guid academicProgramId,
+        Guid frameworkVersionId,
+        Guid subjectId,
+        Guid gradeLevelId,
+        string normalizedCode,
+        Guid? excludeId = null,
+        CancellationToken cancellationToken = default) =>
+        _db.LearningOutcomes.AnyAsync(
+            x =>
+                x.SchoolId == schoolId &&
+                x.AcademicProgramId == academicProgramId &&
+                x.FrameworkVersionId == frameworkVersionId &&
+                x.SubjectId == subjectId &&
+                x.GradeLevelId == gradeLevelId &&
+                x.Code == normalizedCode &&
+                (!excludeId.HasValue || x.Id != excludeId.Value),
+            cancellationToken);
 
     public Task<bool> OutcomeOrderExistsAsync(
         Guid schoolId,
@@ -430,6 +600,11 @@ public sealed class CurriculumRepository : ICurriculumRepository
             group,
             lesson?.SortOrder ?? node.SortOrder);
     }
+
+    private static string? NormalizePathway(string? value) =>
+        string.IsNullOrWhiteSpace(value)
+            ? null
+            : value.Trim();
 
     private static string Compact(string value, int maximumLength)
     {
