@@ -68,8 +68,9 @@ public static class CurriculumLevelIdentityRegistry
 
     /// <summary>
     /// Compatibility-only resolver for records created before explicit level
-    /// identity existed. It fails closed whenever label/order can identify more
-    /// than one pathway. New writes must never call this method to choose a level.
+    /// identity existed. Label and legacy order may be used together, but the
+    /// method fails closed whenever they still identify more than one pathway.
+    /// New writes must never call this method to choose a level.
     /// </summary>
     public static CurriculumLevelIdentity? ResolveLegacy(
         string? packCode,
@@ -92,6 +93,18 @@ public static class CurriculumLevelIdentityRegistry
 
             if (byNativeLabel.Length == 1)
                 return byNativeLabel[0];
+
+            if (byNativeLabel.Length > 1 && gradeOrder > 0)
+            {
+                var byLabelAndOrder = byNativeLabel
+                    .Where(x => x.LogicalLevel == gradeOrder)
+                    .ToArray();
+
+                if (byLabelAndOrder.Length == 1)
+                    return byLabelAndOrder[0];
+
+                return null;
+            }
 
             if (byNativeLabel.Length > 1)
                 return null;
