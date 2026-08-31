@@ -11,6 +11,9 @@ namespace Edulytics.Services.LessonContent;
 
 public sealed class LessonContentService : ILessonContentService
 {
+    private static readonly LessonContentSelection LegacyAllSelection =
+        new(Guid.Empty, Guid.Empty, Guid.Empty);
+
     private readonly ILessonContentRepository _lessons;
     private readonly ISchoolUserRepository _users;
     private readonly ISchoolRepository _schools;
@@ -36,12 +39,14 @@ public sealed class LessonContentService : ILessonContentService
         _academics = academics;
     }
 
+    // Compatibility overload retained for legacy callers and historical tests.
+    // The browser surface uses the explicit selection overload below.
     public Task<LessonContentQueryResult<LessonContentDashboard>> GetDashboardAsync(
         Guid actorUserId,
         CancellationToken cancellationToken = default) =>
         GetDashboardAsync(
             actorUserId,
-            new LessonContentSelection(),
+            LegacyAllSelection,
             cancellationToken);
 
     public async Task<LessonContentQueryResult<LessonContentDashboard>> GetDashboardAsync(
@@ -68,10 +73,13 @@ public sealed class LessonContentService : ILessonContentService
 
         var resolvableContexts = contexts
             .Where(CanResolveContext)
+            .ToArray();
+
+        var selectableContexts = resolvableContexts
             .Where(x => x.AcademicYearId.HasValue)
             .ToArray();
 
-        var options = resolvableContexts
+        var options = selectableContexts
             .Select(x => new LessonContentCurriculumOption(
                 x.CurriculumAdoptionId,
                 x.AcademicYearId!.Value,
@@ -91,22 +99,30 @@ public sealed class LessonContentService : ILessonContentService
             .ThenBy(x => x.CurriculumPathway ?? string.Empty)
             .ToArray();
 
-        var hasSelection =
-            selection.AcademicYearId.HasValue ||
-            selection.AcademicProgramId.HasValue ||
-            selection.CurriculumAdoptionId.HasValue;
+        var legacyAll =
+            selection.AcademicYearId == Guid.Empty &&
+            selection.AcademicProgramId == Guid.Empty &&
+            selection.CurriculumAdoptionId == Guid.Empty;
 
-        var selectedContexts = hasSelection
+        var hasSelection =
+            !legacyAll &&
+            (selection.AcademicYearId.HasValue ||
+             selection.AcademicProgramId.HasValue ||
+             selection.CurriculumAdoptionId.HasValue);
+
+        var selectedContexts = legacyAll
             ? resolvableContexts
-                .Where(x =>
-                    (!selection.AcademicYearId.HasValue ||
-                     x.AcademicYearId == selection.AcademicYearId) &&
-                    (!selection.AcademicProgramId.HasValue ||
-                     x.AcademicProgramId == selection.AcademicProgramId) &&
-                    (!selection.CurriculumAdoptionId.HasValue ||
-                     x.CurriculumAdoptionId == selection.CurriculumAdoptionId))
-                .ToArray()
-            : [];
+            : hasSelection
+                ? selectableContexts
+                    .Where(x =>
+                        (!selection.AcademicYearId.HasValue ||
+                         x.AcademicYearId == selection.AcademicYearId) &&
+                        (!selection.AcademicProgramId.HasValue ||
+                         x.AcademicProgramId == selection.AcademicProgramId) &&
+                        (!selection.CurriculumAdoptionId.HasValue ||
+                         x.CurriculumAdoptionId == selection.CurriculumAdoptionId))
+                    .ToArray()
+                : [];
 
         var lessons = await _lessons.ListPedagogicalLessonsAsync(
             selectedContexts
@@ -177,7 +193,7 @@ public sealed class LessonContentService : ILessonContentService
                     items)
                 {
                     CurriculumAdoptionId = context.CurriculumAdoptionId,
-                    AcademicYearId = context.AcademicYearId!.Value,
+                    AcademicYearId = context.AcademicYearId ?? Guid.Empty,
                     AcademicYearName = context.AcademicYearName,
                     AcademicProgramId = context.AcademicProgramId,
                     AcademicProgramName = context.AcademicProgramName,
@@ -197,9 +213,9 @@ public sealed class LessonContentService : ILessonContentService
             new LessonContentDashboard(scope.School.Id, groups)
             {
                 Options = options,
-                SelectedAcademicYearId = selection.AcademicYearId,
-                SelectedAcademicProgramId = selection.AcademicProgramId,
-                SelectedCurriculumAdoptionId = selection.CurriculumAdoptionId
+                SelectedAcademicYearId = legacyAll ? null : selection.AcademicYearId,
+                SelectedAcademicProgramId = legacyAll ? null : selection.AcademicProgramId,
+                SelectedCurriculumAdoptionId = legacyAll ? null : selection.CurriculumAdoptionId
             });
     }
 
