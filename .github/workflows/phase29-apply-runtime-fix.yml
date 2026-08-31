@@ -27,17 +27,18 @@ jobs:
       - name: Normalize xUnit single assertion
         run: |
           python3 - <<'PY'
+          import re
           from pathlib import Path
           p = Path('tests/Edulytics.Tests/Phase29/Phase29CurriculumExperienceRuntimeTests.cs')
           s = p.read_text(encoding='utf-8')
-          old = '''            var level = Assert.Single(
-                levels.Where(x => x.LogicalLevel == logicalLevel));'''
-          new = '''            var level = Assert.Single(
+          pattern = r'''var level = Assert\.Single\(\s*levels\.Where\(x => x\.LogicalLevel == logicalLevel\)\);'''
+          replacement = '''var level = Assert.Single(
                 levels,
                 x => x.LogicalLevel == logicalLevel);'''
-          if s.count(old) != 1:
-              raise SystemExit('Expected xUnit assertion pattern not found exactly once.')
-          p.write_text(s.replace(old, new, 1), encoding='utf-8')
+          s, count = re.subn(pattern, replacement, s, count=1)
+          if count != 1:
+              raise SystemExit(f'Expected xUnit assertion pattern once, found {count}.')
+          p.write_text(s, encoding='utf-8')
           PY
 
       - name: Verify build and focused Phase 29 gates
