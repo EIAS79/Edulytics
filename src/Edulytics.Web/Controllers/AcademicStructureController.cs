@@ -7,6 +7,7 @@ using Edulytics.Services.Curriculum;
 using Edulytics.Web.ViewModels.Academics;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Localization;
 
 namespace Edulytics.Web.Controllers;
@@ -16,16 +17,16 @@ namespace Edulytics.Web.Controllers;
 public sealed class AcademicStructureController : Controller
 {
     private readonly IAcademicStructureService _academic;
-    private readonly IExplicitCurriculumLevelService _levels;
     private readonly IStringLocalizer<AcademicResource> _text;
 
+    // Keep the historical constructor contract because Phase06/07 regression
+    // tests instantiate this controller directly. Explicit curriculum services
+    // are resolved only by the new actions/UI path.
     public AcademicStructureController(
         IAcademicStructureService academic,
-        IExplicitCurriculumLevelService levels,
         IStringLocalizer<AcademicResource> text)
     {
         _academic = academic;
-        _levels = levels;
         _text = text;
     }
 
@@ -39,11 +40,20 @@ public sealed class AcademicStructureController : Controller
         if (result.Value is null)
             return Forbid();
 
-        var explicitResult = await _levels.GetDashboardAsync(
-            actorUserId,
-            cancellationToken);
-        ViewData["ExplicitCurriculum"] =
-            explicitResult.Value ?? new ExplicitCurriculumLevelDashboard([], []);
+        var levels = ExplicitLevels;
+        if (levels is not null)
+        {
+            var explicitResult = await levels.GetDashboardAsync(
+                actorUserId,
+                cancellationToken);
+            ViewData["ExplicitCurriculum"] =
+                explicitResult.Value ?? new ExplicitCurriculumLevelDashboard([], []);
+        }
+        else
+        {
+            ViewData["ExplicitCurriculum"] =
+                new ExplicitCurriculumLevelDashboard([], []);
+        }
 
         return View(result.Value);
     }
@@ -113,8 +123,7 @@ public sealed class AcademicStructureController : Controller
                 cancellationToken),
             "SuccessTermCreated");
 
-    // Legacy compatibility endpoint. The normal browser flow no longer exposes
-    // manual grade creation; curriculum level identity comes from the pack registry.
+    // Compatibility-only endpoint. The normal browser no longer exposes it.
     [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("grade-levels")]
     [ValidateAntiForgeryToken]
@@ -134,13 +143,12 @@ public sealed class AcademicStructureController : Controller
         string programChoice,
         CancellationToken cancellationToken) =>
         ExecuteAsync(
-            id =>
-                _academic.OfferAcademicProgramAsync(
-                    id,
-                    new OfferAcademicProgramRequest(
-                        academicYearId,
-                        programChoice),
-                    cancellationToken),
+            id => _academic.OfferAcademicProgramAsync(
+                id,
+                new OfferAcademicProgramRequest(
+                    academicYearId,
+                    programChoice),
+                cancellationToken),
             "SuccessAcademicProgramOffered");
 
     [Authorize(Roles = RoleNames.SubjectSupervisor)]
@@ -154,25 +162,17 @@ public sealed class AcademicStructureController : Controller
         string rowVersion,
         CancellationToken cancellationToken)
     {
-        if (!TryDecodeRowVersion(
-                rowVersion,
-                out var expected))
-        {
-            return Task.FromResult(
-                RedirectWithError(
-                    "ErrorConcurrencyConflict"));
-        }
+        if (!TryDecodeRowVersion(rowVersion, out var expected))
+            return Task.FromResult(RedirectWithError("ErrorConcurrencyConflict"));
 
         return ExecuteAsync(
-            id =>
-                _academic
-                    .StopAcademicProgramOfferingAsync(
-                        id,
-                        new StopAcademicProgramOfferingRequest(
-                            academicYearId,
-                            academicProgramId,
-                            expected),
-                        cancellationToken),
+            id => _academic.StopAcademicProgramOfferingAsync(
+                id,
+                new StopAcademicProgramOfferingRequest(
+                    academicYearId,
+                    academicProgramId,
+                    expected),
+                cancellationToken),
             "SuccessAcademicProgramStopped");
     }
 
@@ -183,9 +183,14 @@ public sealed class AcademicStructureController : Controller
         Guid academicYearId,
         Guid academicProgramId,
         string curriculumLevelKey,
-        CancellationToken cancellationToken) =>
-        ExecuteExplicitAsync(
-            id => _levels.AdoptLevelAsync(
+        CancellationToken cancellationToken)
+    {
+        var levels = ExplicitLevels;
+        if (levels is null)
+            return Task.FromResult<IActionResult>(StatusCode(500));
+
+        return ExecuteExplicitAsync(
+            id => levels.AdoptLevelAsync(
                 id,
                 new AdoptExplicitCurriculumLevelRequest(
                     academicYearId,
@@ -193,6 +198,7 @@ public sealed class AcademicStructureController : Controller
                     curriculumLevelKey),
                 cancellationToken),
             "SuccessCurriculumLevelAdded");
+    }
 
     [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("curriculum-classes")]
@@ -202,9 +208,14 @@ public sealed class AcademicStructureController : Controller
         Guid curriculumAdoptionId,
         string name,
         AcademicStructureStatus status,
-        CancellationToken cancellationToken) =>
-        ExecuteExplicitAsync(
-            id => _levels.CreateClassAsync(
+        CancellationToken cancellationToken)
+    {
+        var levels = ExplicitLevels;
+        if (levels is null)
+            return Task.FromResult<IActionResult>(StatusCode(500));
+
+        return ExecuteExplicitAsync(
+            id => levels.CreateClassAsync(
                 id,
                 new CreateClassForCurriculumLevelRequest(
                     academicYearId,
@@ -213,9 +224,9 @@ public sealed class AcademicStructureController : Controller
                     status),
                 cancellationToken),
             "SuccessClassCreated");
+    }
 
-    // Legacy compatibility endpoint. New browser submissions use
-    // CreateCurriculumClass and therefore bind directly to CurriculumAdoptionId.
+    // Compatibility-only endpoint. New browser submissions bind directly to an adoption.
     [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("classes")]
     [ValidateAntiForgeryToken]
@@ -249,7 +260,6 @@ public sealed class AcademicStructureController : Controller
 
         var item = await _academic.GetClassGroupAsync(
             actorUserId, id, cancellationToken);
-
         var dashboard = await _academic.GetDashboardAsync(
             actorUserId, cancellationToken);
 
@@ -260,23 +270,15 @@ public sealed class AcademicStructureController : Controller
         {
             ClassGroup = item.Value,
             GradeLevels = dashboard.Value.GradeLevels,
-            AcademicPrograms =
-                dashboard.Value.AcademicPrograms
-                    .Where(
-                        x =>
-                            x.Id ==
-                                item.Value.AcademicProgramId ||
-                            dashboard.Value
-                                .AcademicYearProgramOfferings
-                                .Any(
-                                    offering =>
-                                        offering.AcademicYearId ==
-                                            item.Value.AcademicYearId &&
-                                        offering.AcademicProgramId ==
-                                            x.Id &&
-                                        offering.IsOffered))
-                    .OrderBy(x => x.Name)
-                    .ToArray()
+            AcademicPrograms = dashboard.Value.AcademicPrograms
+                .Where(x =>
+                    x.Id == item.Value.AcademicProgramId ||
+                    dashboard.Value.AcademicYearProgramOfferings.Any(offering =>
+                        offering.AcademicYearId == item.Value.AcademicYearId &&
+                        offering.AcademicProgramId == x.Id &&
+                        offering.IsOffered))
+                .OrderBy(x => x.Name)
+                .ToArray()
         });
     }
 
@@ -310,7 +312,7 @@ public sealed class AcademicStructureController : Controller
             "SuccessClassUpdated");
     }
 
-    // Legacy compatibility endpoint. The normal UI exposes Mathematics only.
+    // Compatibility-only endpoint. Normal UI exposes fixed Mathematics only.
     [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("subjects")]
     [ValidateAntiForgeryToken]
@@ -363,18 +365,23 @@ public sealed class AcademicStructureController : Controller
     public Task<IActionResult> CreateCurriculumTeacherAssignment(
         Guid teacherUserId,
         Guid classGroupId,
-        CancellationToken cancellationToken) =>
-        ExecuteExplicitAsync(
-            id => _levels.AssignTeacherAsync(
+        CancellationToken cancellationToken)
+    {
+        var levels = ExplicitLevels;
+        if (levels is null)
+            return Task.FromResult<IActionResult>(StatusCode(500));
+
+        return ExecuteExplicitAsync(
+            id => levels.AssignTeacherAsync(
                 id,
                 new AssignTeacherToCurriculumClassRequest(
                     teacherUserId,
                     classGroupId),
                 cancellationToken),
             "SuccessTeacherAssigned");
+    }
 
-    // Legacy compatibility endpoint. The normal UI infers Mathematics from
-    // the selected class curriculum adoption.
+    // Compatibility-only endpoint. New flow infers Mathematics from the class adoption.
     [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("teacher-assignments")]
     [ValidateAntiForgeryToken]
@@ -507,6 +514,9 @@ public sealed class AcademicStructureController : Controller
 
         return RedirectToAction(nameof(Index));
     }
+
+    private IExplicitCurriculumLevelService? ExplicitLevels =>
+        HttpContext?.RequestServices.GetService<IExplicitCurriculumLevelService>();
 
     private IActionResult RedirectWithError(string key)
     {
