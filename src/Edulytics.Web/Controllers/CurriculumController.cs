@@ -32,46 +32,53 @@ public sealed class CurriculumController : Controller
         if (!TryActor(out var actorId))
             return Forbid();
 
-        var result = await _curriculum.GetDashboardAsync(
-            actorId,
-            cancellationToken);
-
-        if (result.Value is null)
-            return HandleQueryError(result.Error);
-
         var levels = ExplicitLevels;
         var contentQuery = ExplicitContentQuery;
 
-        if (levels is not null)
+        // Compatibility fallback for direct controller tests / legacy hosts that
+        // have not registered Phase29 explicit services. Production registers both.
+        if (levels is null || contentQuery is null)
         {
-            var levelResult = await levels.GetDashboardAsync(
+            var legacy = await _curriculum.GetDashboardAsync(
                 actorId,
                 cancellationToken);
-            ViewData["ExplicitCurriculum"] =
-                levelResult.Value ?? new ExplicitCurriculumLevelDashboard([], []);
+
+            if (legacy.Value is null)
+                return HandleQueryError(legacy.Error);
+
+            return View(
+                new CurriculumIndexViewModel(
+                    legacy.Value.GradeLevels,
+                    legacy.Value.Subjects,
+                    legacy.Value.Topics)
+                {
+                    AcademicPrograms = legacy.Value.AcademicPrograms,
+                    Frameworks = legacy.Value.Frameworks,
+                    Adoptions = legacy.Value.Adoptions
+                });
         }
-        else
+
+        if (!User.IsInRole(RoleNames.SchoolAdmin) &&
+            !User.IsInRole(RoleNames.SubjectSupervisor) &&
+            !User.IsInRole(RoleNames.Teacher))
         {
-            ViewData["ExplicitCurriculum"] =
-                new ExplicitCurriculumLevelDashboard([], []);
+            return Forbid();
         }
 
-        ViewData["ExplicitTopics"] = contentQuery is null
-            ? Array.Empty<ExplicitCurriculumTopicUiItem>()
-            : await contentQuery.ListTopicsAsync(actorId, cancellationToken);
+        var levelResult = await levels.GetDashboardAsync(
+            actorId,
+            cancellationToken);
+        if (levelResult.Value is null)
+            return Forbid();
 
-        // Keep the established view-model contract for compatibility. The normal
-        // Phase29 UI reads explicit adoption/topic data from ViewData above.
-        return View(
-            new CurriculumIndexViewModel(
-                result.Value.GradeLevels,
-                result.Value.Subjects,
-                result.Value.Topics)
-            {
-                AcademicPrograms = result.Value.AcademicPrograms,
-                Frameworks = result.Value.Frameworks,
-                Adoptions = result.Value.Adoptions
-            });
+        ViewData["ExplicitCurriculum"] = levelResult.Value;
+        ViewData["ExplicitTopics"] = await contentQuery.ListTopicsAsync(
+            actorId,
+            cancellationToken);
+
+        // The Razor contract type is retained so older compiled callers do not
+        // break. Normal Phase29 rendering reads explicit ViewData only.
+        return View(new CurriculumIndexViewModel([], [], []));
     }
 
     [Authorize(Roles = RoleNames.SubjectSupervisor)]
