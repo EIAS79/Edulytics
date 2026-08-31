@@ -68,8 +68,9 @@ public static class CurriculumLevelIdentityRegistry
 
     /// <summary>
     /// Compatibility-only resolver for records created before explicit level
-    /// identity existed. Label and legacy order may be used together, but the
-    /// method fails closed whenever they still identify more than one pathway.
+    /// identity existed. Label and legacy order may be used together, and a
+    /// small set of deterministic historic label aliases may be normalized.
+    /// The method fails closed whenever more than one pathway remains possible.
     /// New writes must never call this method to choose a level.
     /// </summary>
     public static CurriculumLevelIdentity? ResolveLegacy(
@@ -108,6 +109,12 @@ public static class CurriculumLevelIdentityRegistry
 
             if (byNativeLabel.Length > 1)
                 return null;
+
+            var alias = ResolveDeterministicLegacyAlias(
+                levels,
+                cleanedName);
+            if (alias is not null)
+                return alias;
         }
 
         if (gradeOrder <= 0)
@@ -139,6 +146,56 @@ public static class CurriculumLevelIdentityRegistry
             : NormalizeToken(pathway);
 
         return $"{normalizedPackCode}:L{logicalLevel:D2}:{pathwayToken}";
+    }
+
+    private static CurriculumLevelIdentity? ResolveDeterministicLegacyAlias(
+        IReadOnlyList<CurriculumLevelIdentity> levels,
+        string cleanedName)
+    {
+        if (TryReadHistoricOrdinal(cleanedName, "Grade Level ", out var gradeNumber))
+        {
+            return SingleByNativeLabel(
+                levels,
+                $"Grade {gradeNumber}");
+        }
+
+        if (TryReadHistoricOrdinal(cleanedName, "Year Level ", out var yearNumber))
+        {
+            return SingleByNativeLabel(
+                levels,
+                $"Year {yearNumber}");
+        }
+
+        return null;
+    }
+
+    private static CurriculumLevelIdentity? SingleByNativeLabel(
+        IReadOnlyList<CurriculumLevelIdentity> levels,
+        string label)
+    {
+        var matches = levels
+            .Where(x => string.Equals(
+                x.Label,
+                label,
+                StringComparison.OrdinalIgnoreCase))
+            .ToArray();
+
+        return matches.Length == 1
+            ? matches[0]
+            : null;
+    }
+
+    private static bool TryReadHistoricOrdinal(
+        string value,
+        string prefix,
+        out int number)
+    {
+        number = 0;
+        if (!value.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+            return false;
+
+        var suffix = value[prefix.Length..].Trim();
+        return int.TryParse(suffix, out number) && number > 0;
     }
 
     private static CurriculumLevelIdentity Create(
