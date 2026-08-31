@@ -24,6 +24,22 @@ jobs:
       - name: Apply runtime fix and permanent gates
         run: python3 scripts/phase29-finalize-runtime-fix.py
 
+      - name: Normalize xUnit single assertion
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('tests/Edulytics.Tests/Phase29/Phase29CurriculumExperienceRuntimeTests.cs')
+          s = p.read_text(encoding='utf-8')
+          old = '''            var level = Assert.Single(
+                levels.Where(x => x.LogicalLevel == logicalLevel));'''
+          new = '''            var level = Assert.Single(
+                levels,
+                x => x.LogicalLevel == logicalLevel);'''
+          if s.count(old) != 1:
+              raise SystemExit('Expected xUnit assertion pattern not found exactly once.')
+          p.write_text(s.replace(old, new, 1), encoding='utf-8')
+          PY
+
       - name: Verify build and focused Phase 29 gates
         run: |
           dotnet restore Edulytics.sln
