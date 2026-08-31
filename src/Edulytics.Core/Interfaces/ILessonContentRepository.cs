@@ -6,6 +6,7 @@ public interface ILessonContentRepository
 {
     Task<IReadOnlyList<CanonicalCurriculumContextRecord>> ListStaffAdoptionsAsync(
         Guid schoolId,
+        Guid? teacherUserId = null,
         CancellationToken cancellationToken = default);
 
     Task<IReadOnlyList<CanonicalCurriculumContextRecord>> ListStudentAdoptionsAsync(
