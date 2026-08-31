@@ -14,6 +14,12 @@ public sealed record CanonicalCurriculumContextRecord(
     string GradeName,
     int GradeOrder)
 {
+    public Guid CurriculumAdoptionId { get; init; }
+    public string? CurriculumLevelKey { get; init; }
+    public int? CurriculumLogicalLevel { get; init; }
+    public string? CurriculumLevelLabel { get; init; }
+    public string? CurriculumStage { get; init; }
+    public string? CurriculumPathway { get; init; }
     public Guid AcademicProgramId { get; init; }
     public string AcademicProgramName { get; init; } = string.Empty;
     public string AcademicProgramCode { get; init; } = string.Empty;
