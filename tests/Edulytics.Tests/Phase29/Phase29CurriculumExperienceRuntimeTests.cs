@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Edulytics.Tests.Phase29;
 
 // Runtime acceptance gates for the explicit curriculum selector/scoping path.
+// These also pin the verified UAE Common/General/Advanced topology used by Lesson Content.
 public sealed class Phase29CurriculumExperienceRuntimeTests
 {
     private static EdulyticsDbContext Db(string name) =>
