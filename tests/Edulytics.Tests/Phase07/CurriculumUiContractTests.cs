@@ -48,9 +48,8 @@ public sealed class CurriculumUiContractTests
             });
     }
 
-
     [Fact]
-    public void Dashboard_RequiresVerifiedFrameworkSelectionBeforeTopicAuthoring()
+    public void NormalDashboard_UsesExplicitCurriculumAdoption_NotIndependentFrameworkGradeSubject()
     {
         var root = FindRepositoryRoot();
         var view = File.ReadAllText(Path.Combine(
@@ -58,21 +57,53 @@ public sealed class CurriculumUiContractTests
             "src/Edulytics.Web/Views/Curriculum/Index.cshtml"));
 
         Assert.Contains(
+            "asp-action=\"CreateCurriculumTopic\"",
+            view);
+        Assert.Contains(
+            "name=\"curriculumAdoptionId\"",
+            view);
+        Assert.Contains(
+            "ExplicitCurriculumLevelDashboard",
+            view);
+        Assert.Contains(
+            "ExplicitCurriculumTopicUiItem",
+            view);
+
+        Assert.DoesNotContain(
             "asp-action=\"SelectFramework\"",
             view);
-        Assert.Contains(
+        Assert.DoesNotContain(
             "name=\"frameworkCode\"",
             view);
-        Assert.Contains(
-            "@foreach (var framework in Model.Frameworks)",
+        Assert.DoesNotContain(
+            "name=\"gradeLevelId\"",
             view);
-        Assert.Contains(
-            "TopicRequiresFramework",
+        Assert.DoesNotContain(
+            "name=\"subjectId\"",
             view);
     }
 
     [Fact]
-    public void OfficialOutcome_IsSelected_AndOfficialFieldsAreReadOnly()
+    public void LegacyFrameworkAndTopicEndpoints_RemainForCompatibility()
+    {
+        var methods = typeof(CurriculumController)
+            .GetMethods(BindingFlags.Instance | BindingFlags.Public);
+
+        Assert.Contains(methods, x =>
+            x.Name == nameof(CurriculumController.SelectFramework));
+        Assert.Contains(methods, x =>
+            x.Name == nameof(CurriculumController.CreateTopic));
+        Assert.Contains(methods, x =>
+            x.Name == nameof(CurriculumController.CreateOfficialOutcome));
+
+        Assert.Contains(methods, x =>
+            x.Name == nameof(CurriculumController.CreateCurriculumTopic));
+        Assert.Contains(methods, x =>
+            x.Name == nameof(CurriculumController.CreateCurriculumOfficialOutcome));
+    }
+
+    [Fact]
+    public void OfficialOutcome_IsSelectedFromExactCurriculumContext_AndFieldsAreReadOnly()
     {
         var root = FindRepositoryRoot();
         var view = File.ReadAllText(Path.Combine(
@@ -80,7 +111,7 @@ public sealed class CurriculumUiContractTests
             "src/Edulytics.Web/Views/Curriculum/Index.cshtml"));
 
         Assert.Contains(
-            "asp-action=\"CreateOfficialOutcome\"",
+            "asp-action=\"CreateCurriculumOfficialOutcome\"",
             view);
         Assert.Contains(
             "name=\"selectionKey\"",
@@ -95,7 +126,13 @@ public sealed class CurriculumUiContractTests
             "id=\"officialDescription\"",
             view);
         Assert.Contains(
-            "@topic.FrameworkDisplayName",
+            "@topic.FrameworkName",
+            view);
+        Assert.Contains(
+            "@topic.CurriculumLevelLabel",
+            view);
+        Assert.Contains(
+            "@topic.CurriculumPathway",
             view);
         Assert.DoesNotContain(
             "AddCustomOutcome",
