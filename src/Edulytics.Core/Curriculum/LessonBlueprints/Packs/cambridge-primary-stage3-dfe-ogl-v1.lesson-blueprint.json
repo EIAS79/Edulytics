@@ -1,0 +1,675 @@
+{
+  "SchemaVersion": 1,
+  "BlueprintCode": "CAMBRIDGE-PRIMARY-S3:DFE-OGL-V1",
+  "PackCode": "CAMBRIDGE-INTL-MATH",
+  "VersionCode": "CAMBRIDGE-PATHWAY-2026",
+  "LogicalLevel": 3,
+  "NativeLevel": "Cambridge Primary Stage 3",
+  "Pathway": null,
+  "OfficialAuthority": "Cambridge International Education",
+  "OfficialSourceUrl": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-primary/curriculum/mathematics/",
+  "PedagogicalSourceType": "OpenEducationalResource",
+  "SourceTitle": "Mathematics guidance: year 3",
+  "SourcePublisher": "UK Department for Education",
+  "SourceEdition": "DfE-00112-2020 / June 2020",
+  "SourceRootUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+  "SourceCheckedAtUtc": "2026-09-01T00:00:00Z",
+  "SourceLicense": "Open Government Licence v3.0",
+  "RequiredDigitalAttribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
+  "SourceSelectionReason": "Cambridge official material remains reference-only. DfE primary Mathematics guidance supplies an open, structured pedagogical sequence that Edulytics can lawfully adapt for commercial use.",
+  "SourceSelectionEvidence": "The official DfE Year 3 PDF was retrieved and parsed. Every ready-to-progress criterion found in the Year 3 guidance is represented by an Edulytics concept lesson and an application lesson. These lessons are supporting lessons: no Cambridge objective mapping is claimed without explicit evidence.",
+  "SourceEvidenceUrls": [
+    "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
+    "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+    "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  ],
+  "SourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. No government logos or identified third-party copyright material is reproduced. Cambridge objective prose is not reproduced.",
+  "SemanticGraphSha256": "935c28314efe57a5313585b8713d67a8fd925b5f81628bacdd43452caf28a21e",
+  "AcquisitionDiagnostics": {
+    "UnitCount": 6,
+    "LessonCount": 34,
+    "OfficialStandardCount": 0,
+    "AddressingCoverageCount": 0,
+    "FormalMappingCount": 0,
+    "LessonsWithoutNumberedGradeReferenceAnyRole": 34,
+    "LessonsWithoutNumberedAddressingStandard": 34,
+    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 34,
+    "MultiStandardLessons": 0
+  },
+  "Units": [
+    {
+      "Number": 3,
+      "UnitCode": "S3-U03-AS",
+      "SortOrder": 3,
+      "Title": "Additive Structures and Relationships",
+      "LessonCount": 6,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "7f69bdd71283e58afd83a096a64958edb8dcaf94fe36f6a4f7deb6045234b183"
+    },
+    {
+      "Number": 5,
+      "UnitCode": "S3-U05-F",
+      "SortOrder": 5,
+      "Title": "Fractions",
+      "LessonCount": 8,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "f1862bc1638fe4b8d490f5fc4349cec186fbfd6120c91907200d029304a1850d"
+    },
+    {
+      "Number": 6,
+      "UnitCode": "S3-U06-G",
+      "SortOrder": 6,
+      "Title": "Geometry and Measure",
+      "LessonCount": 4,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "97400d7864531c4de6c7588198b629eaa7f848a28a8cb217bf165ae1b66de78f"
+    },
+    {
+      "Number": 4,
+      "UnitCode": "S3-U04-MD",
+      "SortOrder": 4,
+      "Title": "Multiplicative Structures and Relationships",
+      "LessonCount": 2,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "7b6064b9672265f4606a4b4b7c12442441d666aa98cb723da2dd648d7beb29ec"
+    },
+    {
+      "Number": 2,
+      "UnitCode": "S3-U02-NF",
+      "SortOrder": 2,
+      "Title": "Number Facts and Fluency",
+      "LessonCount": 6,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "db0a802a1bac94964b0211162f931fb282137013521bcb01ce54efce94d8f920"
+    },
+    {
+      "Number": 1,
+      "UnitCode": "S3-U01-NPV",
+      "SortOrder": 1,
+      "Title": "Number and Place Value",
+      "LessonCount": 8,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "6fc3654a48bad23171aab6be8215d81e9f759e5612c4e14a58160823806c23aa"
+    }
+  ],
+  "Lessons": [
+    {
+      "SourceLessonCode": "DFE-Y3:3AS-1:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3AS-1:BUILD",
+      "UnitNumber": 3,
+      "UnitTitle": "Additive Structures and Relationships",
+      "LessonNumber": 1,
+      "Title": "Calculate complements to 100: Build the Idea",
+      "SortOrder": 1,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "35788487215adbf1266fb337468af2f3d5e494db7df3ab4942e76003d6327256",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3AS-1:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3AS-1:APPLY",
+      "UnitNumber": 3,
+      "UnitTitle": "Additive Structures and Relationships",
+      "LessonNumber": 2,
+      "Title": "Calculate complements to 100: Reason and Apply",
+      "SortOrder": 2,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "ddab6d50ed873e2ba8a2fef0e4a6c60f93edb62cc09e54f752cda5a369d2d6fb",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3AS-2:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3AS-2:BUILD",
+      "UnitNumber": 3,
+      "UnitTitle": "Additive Structures and Relationships",
+      "LessonNumber": 3,
+      "Title": "Columnar addition and subtraction: Build the Idea",
+      "SortOrder": 3,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "d532b150423aeb7dd5d886a8b2105b7a60e0c49da654d9f5b1854390af740868",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3AS-2:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3AS-2:APPLY",
+      "UnitNumber": 3,
+      "UnitTitle": "Additive Structures and Relationships",
+      "LessonNumber": 4,
+      "Title": "Columnar addition and subtraction: Reason and Apply",
+      "SortOrder": 4,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "f9bb689a25c9a50e43963f4aa066672e22502e72ebc8b25015815cc1e629c9fa",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3AS-3:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3AS-3:BUILD",
+      "UnitNumber": 3,
+      "UnitTitle": "Additive Structures and Relationships",
+      "LessonNumber": 5,
+      "Title": "Manipulate the additive relationship: Build the Idea",
+      "SortOrder": 5,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "52ec779a369d4132bd115342bc850a16749b47ac8aacadf27d1980e7df8e5569",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3AS-3:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3AS-3:APPLY",
+      "UnitNumber": 3,
+      "UnitTitle": "Additive Structures and Relationships",
+      "LessonNumber": 6,
+      "Title": "Manipulate the additive relationship: Reason and Apply",
+      "SortOrder": 6,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "93a36f3323b04b150fc61d39c9f800972b89ef243f900ddadde014530334aa0d",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3F-1:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-1:BUILD",
+      "UnitNumber": 5,
+      "UnitTitle": "Fractions",
+      "LessonNumber": 1,
+      "Title": "Use and understand fraction notation: Build the Idea",
+      "SortOrder": 7,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "d277b8768485685ceb50b52b3f54a2e9678a6c1992d11c6f8e6323bd408b7655",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3F-1:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-1:APPLY",
+      "UnitNumber": 5,
+      "UnitTitle": "Fractions",
+      "LessonNumber": 2,
+      "Title": "Use and understand fraction notation: Reason and Apply",
+      "SortOrder": 8,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "4dc31f63b3f731581ef48292c476998eab82859dd2d716cb896d244a7a0128d6",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3F-2:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-2:BUILD",
+      "UnitNumber": 5,
+      "UnitTitle": "Fractions",
+      "LessonNumber": 3,
+      "Title": "Find unit fractions of quantities: Build the Idea",
+      "SortOrder": 9,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "ef30a69018225b5da220934d8cfdd4362f1f2712b3474c36fe224468a05c1443",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3F-2:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-2:APPLY",
+      "UnitNumber": 5,
+      "UnitTitle": "Fractions",
+      "LessonNumber": 4,
+      "Title": "Find unit fractions of quantities: Reason and Apply",
+      "SortOrder": 10,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "0b296da4299054de554176ac101e169c35ec45a5da14d42d03802e2df8d92f2f",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3F-3:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-3:BUILD",
+      "UnitNumber": 5,
+      "UnitTitle": "Fractions",
+      "LessonNumber": 5,
+      "Title": "Fractions within 1 in the linear number system: Build the Idea",
+      "SortOrder": 11,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "27ceff1b5ebeddfa284ce351a320aa8a6a91c1025078c2c3cf708726f06304f0",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3F-3:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-3:APPLY",
+      "UnitNumber": 5,
+      "UnitTitle": "Fractions",
+      "LessonNumber": 6,
+      "Title": "Fractions within 1 in the linear number system: Reason and Apply",
+      "SortOrder": 12,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "b39efc28e528f72d769b5e50ba667e0675a47ff4b34ccde51b58cfc31ceccd42",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3F-4:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-4:BUILD",
+      "UnitNumber": 5,
+      "UnitTitle": "Fractions",
+      "LessonNumber": 7,
+      "Title": "Add and subtract fractions within 1: Build the Idea",
+      "SortOrder": 13,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "a6ad328e9c23f0c6d0a3496a33a408b54ddf23aff1ca4833fb4c67f0591df7ae",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3F-4:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-4:APPLY",
+      "UnitNumber": 5,
+      "UnitTitle": "Fractions",
+      "LessonNumber": 8,
+      "Title": "Add and subtract fractions within 1: Reason and Apply",
+      "SortOrder": 14,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "98fafafa800749b7afb501a0efb0be223e8d66ddc1843ba38c1781fad0aa84f4",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3G-1:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3G-1:BUILD",
+      "UnitNumber": 6,
+      "UnitTitle": "Geometry and Measure",
+      "LessonNumber": 1,
+      "Title": "Recognise right angles: Build the Idea",
+      "SortOrder": 15,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "278f3f13a2ab71789013caee1dc9180aed18231592ee0197841fbb0076895e2a",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3G-1:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3G-1:APPLY",
+      "UnitNumber": 6,
+      "UnitTitle": "Geometry and Measure",
+      "LessonNumber": 2,
+      "Title": "Recognise right angles: Reason and Apply",
+      "SortOrder": 16,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "9b110baf835bbff1c883791d64416251eaf2c03a3349114a1ba872a3f6655ee3",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3G-2:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3G-2:BUILD",
+      "UnitNumber": 6,
+      "UnitTitle": "Geometry and Measure",
+      "LessonNumber": 3,
+      "Title": "Draw polygons and identify parallel and perpendicular: Build the Idea",
+      "SortOrder": 17,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "5ab656f1090c4bcb31dcab1048f298fc0f92ec24e5150e5e8b7205436137bfe5",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3G-2:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3G-2:APPLY",
+      "UnitNumber": 6,
+      "UnitTitle": "Geometry and Measure",
+      "LessonNumber": 4,
+      "Title": "Draw polygons and identify parallel and perpendicular: Reason and Apply",
+      "SortOrder": 18,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "60b95beaa4968b36ab1c4f2882ce660a5d007b0d579626798b368a14f8224008",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3MD-1:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3MD-1:BUILD",
+      "UnitNumber": 4,
+      "UnitTitle": "Multiplicative Structures and Relationships",
+      "LessonNumber": 1,
+      "Title": "Multiplication and division structures: Build the Idea",
+      "SortOrder": 19,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "9b8a454cb248d5e5f778ad6e38145949deb07882973c22595284ecd93c49967f",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3MD-1:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3MD-1:APPLY",
+      "UnitNumber": 4,
+      "UnitTitle": "Multiplicative Structures and Relationships",
+      "LessonNumber": 2,
+      "Title": "Multiplication and division structures: Reason and Apply",
+      "SortOrder": 20,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "259c1bff88fef4d1ce96b0b34dc0971c77fb0e1ef67617ed3e524bfe7828b359",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3NF-1:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NF-1:BUILD",
+      "UnitNumber": 2,
+      "UnitTitle": "Number Facts and Fluency",
+      "LessonNumber": 1,
+      "Title": "Fluently add and subtract within and across 10: Build the Idea",
+      "SortOrder": 21,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "bb06030d2ee29c6a1e60ba0b1f81fbe5e785c3c99e0bd50b02a29be30bf4e693",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3NF-1:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NF-1:APPLY",
+      "UnitNumber": 2,
+      "UnitTitle": "Number Facts and Fluency",
+      "LessonNumber": 2,
+      "Title": "Fluently add and subtract within and across 10: Reason and Apply",
+      "SortOrder": 22,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "08c485bdbd524f0c70b7705130fa85e6b5a2344d144db2107e1a5efa8006ef87",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3NF-2:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NF-2:BUILD",
+      "UnitNumber": 2,
+      "UnitTitle": "Number Facts and Fluency",
+      "LessonNumber": 3,
+      "Title": "Recall of multiplication tables: Build the Idea",
+      "SortOrder": 23,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "a581bec99e439dee03fb67086fb88cb8ba919b95072d17833723be067a4cce53",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3NF-2:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NF-2:APPLY",
+      "UnitNumber": 2,
+      "UnitTitle": "Number Facts and Fluency",
+      "LessonNumber": 4,
+      "Title": "Recall of multiplication tables: Reason and Apply",
+      "SortOrder": 24,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "c7755ca30bdfbe30f164126af1f7d8e3d5cce89bbf42fb81b94ca12214fb125a",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3NF-3:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NF-3:BUILD",
+      "UnitNumber": 2,
+      "UnitTitle": "Number Facts and Fluency",
+      "LessonNumber": 5,
+      "Title": "Scaling number facts by 10: Build the Idea",
+      "SortOrder": 25,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "ed8e996f5159f0915e9bf75f5b2d95f48dd9b265e621385fb463f02eb231ab3f",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3NF-3:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NF-3:APPLY",
+      "UnitNumber": 2,
+      "UnitTitle": "Number Facts and Fluency",
+      "LessonNumber": 6,
+      "Title": "Scaling number facts by 10: Reason and Apply",
+      "SortOrder": 26,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "af520cb4de9ea4376de9dd8b0700ab89095d541234534e67e67a373f98078609",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3NPV-1:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NPV-1:BUILD",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Place Value",
+      "LessonNumber": 1,
+      "Title": "Equivalence of 10 hundreds and 1 thousand: Build the Idea",
+      "SortOrder": 27,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "10cfaeaf533e56062de2b829f97a36111f729ed38848cc5509a7d5f51539bf8c",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3NPV-1:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NPV-1:APPLY",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Place Value",
+      "LessonNumber": 2,
+      "Title": "Equivalence of 10 hundreds and 1 thousand: Reason and Apply",
+      "SortOrder": 28,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "f677242a034ed2f28094026fc6bf135d0aa6c65bd610b5150e4295125a7b45ff",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3NPV-2:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NPV-2:BUILD",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Place Value",
+      "LessonNumber": 3,
+      "Title": "Place value in three-digit numbers: Build the Idea",
+      "SortOrder": 29,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "0a12a5438282eeb7c8e854a2ca60bc39e176b927e40dd9d25cb10400443fe27e",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3NPV-2:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NPV-2:APPLY",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Place Value",
+      "LessonNumber": 4,
+      "Title": "Place value in three-digit numbers: Reason and Apply",
+      "SortOrder": 30,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "29c27a099fca2494df028a4e5a597d332caa8dac8922b75e350fcfcf9e5451a8",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3NPV-3:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NPV-3:BUILD",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Place Value",
+      "LessonNumber": 5,
+      "Title": "Three-digit numbers in the linear number system: Build the Idea",
+      "SortOrder": 31,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "d6f0756982d4c17442936d20033ee5b46ab1c8d580330e230461f303c022f8b0",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3NPV-3:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NPV-3:APPLY",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Place Value",
+      "LessonNumber": 6,
+      "Title": "Three-digit numbers in the linear number system: Reason and Apply",
+      "SortOrder": 32,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "d9a6f43f03f3c73900e8a2662ae5961c3647ef276734cfa06cb054c4fac7380c",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3NPV-4:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NPV-4:BUILD",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Place Value",
+      "LessonNumber": 7,
+      "Title": "Reading scales with 2, 4, 5 or 10 intervals: Build the Idea",
+      "SortOrder": 33,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "10a644afe1c961553bc16cd21d71c08ec428bdfe48fccc8f29284f91b4f86da8",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y3:3NPV-4:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NPV-4:APPLY",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Place Value",
+      "LessonNumber": 8,
+      "Title": "Reading scales with 2, 4, 5 or 10 intervals: Reason and Apply",
+      "SortOrder": 34,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/61409475e90e07043fea1c45/Maths_guidance_year_3.pdf",
+      "SemanticSha256": "97b48bc27d4c8037038c719fd0a36eed4dd04b89ca8b406f1609b7777b770dd4",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S3"
+      ],
+      "FormalTargets": []
+    }
+  ]
+}

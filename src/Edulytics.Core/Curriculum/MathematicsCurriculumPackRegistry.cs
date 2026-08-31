@@ -220,18 +220,26 @@ public static class MathematicsCurriculumPackRegistry
                     true)
             ],
             [
-                new(1,"Grade 1","Cycle 1",null,true),
-                new(2,"Grade 2","Cycle 1",null,true),
-                new(3,"Grade 3","Cycle 1",null,true),
-                new(4,"Grade 4","Cycle 1",null,true),
-                new(5,"Grade 5","Cycle 2",null,true),
-                new(6,"Grade 6","Cycle 2",null,true),
-                new(7,"Grade 7","Cycle 2",null,true),
-                new(8,"Grade 8","Cycle 2",null,true),
-                new(9,"Grade 9","Secondary","Preserve current pathway metadata",true),
-                new(10,"Grade 10","Secondary","Preserve current pathway metadata",true),
-                new(11,"Grade 11","Secondary","Preserve current pathway metadata",true),
-                new(12,"Grade 12","Secondary","Preserve current pathway metadata",true)
+                new(1,"Grade 1","Cycle 1","Common",true),
+                new(2,"Grade 2","Cycle 1","Common",true),
+                new(3,"Grade 3","Cycle 1","Common",true),
+                new(4,"Grade 4","Cycle 1","Common",true),
+                new(5,"Grade 5","Cycle 2","General",true),
+                new(5,"Grade 5","Cycle 2","Advanced",true),
+                new(6,"Grade 6","Cycle 2","General",true),
+                new(6,"Grade 6","Cycle 2","Advanced",true),
+                new(7,"Grade 7","Cycle 2","General",true),
+                new(7,"Grade 7","Cycle 2","Advanced",true),
+                new(8,"Grade 8","Cycle 2","General",true),
+                new(8,"Grade 8","Cycle 2","Advanced",true),
+                new(9,"Grade 9","Secondary","General",true),
+                new(9,"Grade 9","Secondary","Advanced",true),
+                new(10,"Grade 10","Secondary","General",true),
+                new(10,"Grade 10","Secondary","Advanced",true),
+                new(11,"Grade 11","Secondary","General",true),
+                new(11,"Grade 11","Secondary","Advanced",true),
+                new(12,"Grade 12","Secondary","General",true),
+                new(12,"Grade 12","Secondary","Advanced",true)
             ]),
 
         new(
@@ -341,9 +349,22 @@ public static class MathematicsCurriculumPackRegistry
 
         var uae = All.Single(x => x.Code == UaeCode);
         if (uae.Levels.Max(x => x.LogicalLevel) != 12 ||
-            uae.Levels.Any(x => x.LogicalLevel == 13))
+            uae.Levels.Any(x => x.LogicalLevel == 13) ||
+            uae.Levels.Count != 20 ||
+            Enumerable.Range(1, 4).Any(level =>
+                !uae.Levels.Any(x =>
+                    x.LogicalLevel == level &&
+                    x.Pathway == "Common")) ||
+            Enumerable.Range(5, 8).Any(level =>
+                !uae.Levels.Any(x =>
+                    x.LogicalLevel == level &&
+                    x.Pathway == "General") ||
+                !uae.Levels.Any(x =>
+                    x.LogicalLevel == level &&
+                    x.Pathway == "Advanced")))
         {
-            throw new InvalidOperationException("UAE must stop at Grade 12.");
+            throw new InvalidOperationException(
+                "UAE level/pathway topology must be Grade 1-4 Common and Grade 5-12 General/Advanced.");
         }
 
         var cambridgePack =

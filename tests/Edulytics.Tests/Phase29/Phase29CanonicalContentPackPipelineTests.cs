@@ -365,7 +365,9 @@ public sealed class Phase29CanonicalContentPackPipelineTests
         var uae =
             Assert.Single(documents, x =>
                         x.PackCode ==
-                        MathematicsCurriculumPackRegistry.UaeCode);
+                            MathematicsCurriculumPackRegistry.UaeCode &&
+                        x.ContentVersion ==
+                            "uae-g9-adv-t1-pilot-v1");
 
         Assert.Equal(
             "MOE-2026-2027-T1",

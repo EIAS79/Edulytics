@@ -6,6 +6,11 @@ public interface ILessonContentService
         Guid actorUserId,
         CancellationToken cancellationToken = default);
 
+    Task<LessonContentQueryResult<LessonContentDashboard>> GetDashboardAsync(
+        Guid actorUserId,
+        LessonContentSelection selection,
+        CancellationToken cancellationToken = default);
+
     Task<LessonContentQueryResult<CanonicalLessonDetail>> GetStaffLessonAsync(
         Guid actorUserId,
         Guid lessonId,

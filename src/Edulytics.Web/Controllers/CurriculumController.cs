@@ -27,7 +27,10 @@ public sealed class CurriculumController : Controller
 
     [HttpGet("")]
     public async Task<IActionResult> Index(
-        CancellationToken cancellationToken)
+        Guid? academicYearId = null,
+        Guid? academicProgramId = null,
+        Guid? curriculumAdoptionId = null,
+        CancellationToken cancellationToken = default)
     {
         if (!TryActor(out var actorId))
             return Forbid();
@@ -71,15 +74,52 @@ public sealed class CurriculumController : Controller
         if (levelResult.Value is null)
             return Forbid();
 
-        ViewData["ExplicitCurriculum"] = levelResult.Value;
-        ViewData["ExplicitTopics"] = await contentQuery.ListTopicsAsync(
+        var allAdoptions = levelResult.Value.Adoptions;
+        var allTopics = await contentQuery.ListTopicsAsync(
             actorId,
             cancellationToken);
+
+        var hasContext =
+            academicYearId.HasValue ||
+            academicProgramId.HasValue ||
+            curriculumAdoptionId.HasValue;
+
+        var selectedAdoptions = hasContext
+            ? allAdoptions
+                .Where(x =>
+                    (!academicYearId.HasValue || x.AcademicYearId == academicYearId.Value) &&
+                    (!academicProgramId.HasValue || x.AcademicProgramId == academicProgramId.Value) &&
+                    (!curriculumAdoptionId.HasValue || x.Id == curriculumAdoptionId.Value))
+                .ToArray()
+            : [];
+
+        var selectedAdoptionIds = selectedAdoptions
+            .Select(x => x.Id)
+            .ToHashSet();
+
+        var selectedTopics = hasContext
+            ? allTopics
+                .Where(x => selectedAdoptionIds.Contains(x.CurriculumAdoptionId))
+                .ToArray()
+            : [];
+
+        ViewData["ExplicitCurriculum"] = new ExplicitCurriculumLevelDashboard(
+            levelResult.Value.AvailableLevels,
+            selectedAdoptions);
+        ViewData["AllCurriculumAdoptions"] = allAdoptions;
+        ViewData["ExplicitTopics"] = selectedTopics;
+        ViewData["SelectedAcademicYearId"] = academicYearId;
+        ViewData["SelectedAcademicProgramId"] = academicProgramId;
+        ViewData["SelectedCurriculumAdoptionId"] = curriculumAdoptionId;
 
         // The Razor contract type is retained so older compiled callers do not
         // break. Normal Phase29 rendering reads explicit ViewData only.
         return View(new CurriculumIndexViewModel([], [], []));
     }
+
+    [NonAction]
+    public Task<IActionResult> Index(CancellationToken cancellationToken) =>
+        Index(null, null, null, cancellationToken);
 
     [Authorize(Roles = RoleNames.SubjectSupervisor)]
     [HttpPost("curriculum-topics")]

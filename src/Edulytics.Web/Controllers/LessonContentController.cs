@@ -15,12 +15,26 @@ public sealed class LessonContentController : Controller
     public LessonContentController(ILessonContentService lessons)=>_lessons=lessons;
 
     [HttpGet("")]
-    public async Task<IActionResult> Index(CancellationToken cancellationToken)
+    public async Task<IActionResult> Index(
+        Guid? academicYearId = null,
+        Guid? academicProgramId = null,
+        Guid? curriculumAdoptionId = null,
+        CancellationToken cancellationToken = default)
     {
         if(!TryActor(out var actorId))return Forbid();
-        var r=await _lessons.GetDashboardAsync(actorId,cancellationToken);
+        var r=await _lessons.GetDashboardAsync(
+            actorId,
+            new LessonContentSelection(
+                academicYearId,
+                academicProgramId,
+                curriculumAdoptionId),
+            cancellationToken);
         return r.Value is null?HandleError(r.Error):View(new LessonContentIndexViewModel(r.Value));
     }
+
+    [NonAction]
+    public Task<IActionResult> Index(CancellationToken cancellationToken) =>
+        Index(null, null, null, cancellationToken);
 
     [HttpGet("{id:guid}")]
     public async Task<IActionResult> Detail(Guid id,CancellationToken cancellationToken)
