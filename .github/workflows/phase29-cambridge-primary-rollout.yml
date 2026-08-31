@@ -42,6 +42,96 @@ jobs:
           p.write_text(text.replace(old, new), encoding='utf-8')
           PY
 
+      - name: Extend blueprint contract for fail-closed supporting-only documents
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('src/Edulytics.Core/Curriculum/PedagogicalLessonBlueprint.cs')
+          text = p.read_text(encoding='utf-8')
+          old = '''        var diagnostics =
+            document.AcquisitionDiagnostics;
+
+        if (diagnostics.UnitCount !=
+                document.Units.Count ||
+            diagnostics.LessonCount !=
+                document.Lessons.Count ||
+            diagnostics.EffectiveOfficialStandardCount <= 0 ||
+            diagnostics.AddressingCoverageCount !=
+                diagnostics.EffectiveOfficialStandardCount ||
+            diagnostics.FormalMappingCount !=
+                document.Lessons.Sum(
+                    x => x.OutcomeCodes.Count))
+        {
+            throw new InvalidOperationException(
+                $"Blueprint acquisition diagnostics drift: " +
+                $"{document.BlueprintCode}.");
+        }
+'''
+          new = '''        var diagnostics =
+            document.AcquisitionDiagnostics;
+
+        var formalMappingCount =
+            document.Lessons.Sum(
+                x => x.OutcomeCodes.Count);
+
+        var hasFormalMappings =
+            formalMappingCount > 0;
+
+        var hasResolvedAlignment =
+            document.Lessons
+                .SelectMany(x => x.Alignments)
+                .Any(
+                    x =>
+                        x.ResolutionKind is
+                            "ExactAcceptedStandard" or
+                            "SubpartToAcceptedParent" ||
+                        !string.IsNullOrWhiteSpace(
+                            x.OutcomeCode));
+
+        var supportingOnly =
+            !hasFormalMappings &&
+            !hasResolvedAlignment &&
+            document.Lessons.All(
+                x => x.OutcomeCodes.Count == 0);
+
+        var diagnosticsDrift =
+            diagnostics.UnitCount !=
+                document.Units.Count ||
+            diagnostics.LessonCount !=
+                document.Lessons.Count ||
+            diagnostics.FormalMappingCount !=
+                formalMappingCount;
+
+        if (hasFormalMappings)
+        {
+            diagnosticsDrift =
+                diagnosticsDrift ||
+                diagnostics.EffectiveOfficialStandardCount <= 0 ||
+                diagnostics.AddressingCoverageCount !=
+                    diagnostics.EffectiveOfficialStandardCount;
+        }
+        else
+        {
+            diagnosticsDrift =
+                diagnosticsDrift ||
+                !supportingOnly ||
+                diagnostics.EffectiveOfficialStandardCount != 0 ||
+                diagnostics.AddressingCoverageCount != 0;
+        }
+
+        if (diagnosticsDrift)
+        {
+            throw new InvalidOperationException(
+                $"Blueprint acquisition diagnostics drift: " +
+                $"{document.BlueprintCode}.");
+        }
+'''
+          if old not in text:
+              raise SystemExit('FAIL: expected V1 diagnostics contract not found')
+          p.write_text(text.replace(old, new), encoding='utf-8')
+          PY
+
       - name: Generate Cambridge Primary Stages 2-6
         run: |
           set -euo pipefail
@@ -70,6 +160,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add \
             tools/phase29/cambridge_primary_dfe_rollout.py \
+            src/Edulytics.Core/Curriculum/PedagogicalLessonBlueprint.cs \
             src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/cambridge-primary-stage{2,3,4,5,6}-dfe-ogl-v1.lesson-blueprint.json \
             src/Edulytics.Core/Curriculum/LessonContent/Packs/cambridge-primary-stage{2,3,4,5,6}-dfe-ogl-v1.lesson-content-pack.json \
             docs/PHASE_29_CAMBRIDGE_PRIMARY_2_6_ROLLOUT_AUDIT.json
