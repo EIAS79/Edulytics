@@ -13,16 +13,33 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7.0.1
-      - name: Inventory UAE source catalog
+      - name: Probe UAE source catalog
         shell: bash
         run: |
           python3 - <<'PY'
-          import json
+          import json,re,urllib.request,urllib.error
           from pathlib import Path
-          p=Path('src/Edulytics.Core/Curriculum/Packs/uae-moe-math.curriculum-pack.json')
-          d=json.loads(p.read_text(encoding='utf-8'))
-          print('PACK',d['PackCode'],d['VersionCode'])
+          from html import unescape
+          d=json.loads(Path('src/Edulytics.Core/Curriculum/Packs/uae-moe-math.curriculum-pack.json').read_text(encoding='utf-8'))
+          seen=[]
           for n in d['Nodes']:
-              if n.get('Kind')=='SourceCatalog':
-                  print(json.dumps(n,ensure_ascii=False,sort_keys=True))
+              if n.get('Kind')!='SourceCatalog': continue
+              for url in [x.strip() for x in (n.get('SourceLocator') or '').split(';') if x.strip()]:
+                  if url in seen: continue
+                  seen.append(url)
+                  print('\nURL',url)
+                  req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 (Edulytics curriculum verification)})
+                  try:
+                      with urllib.request.urlopen(req,timeout=20) as r:
+                          body=r.read(600000).decode('utf-8','replace')
+                          print('STATUS',r.status,'FINAL',r.geturl(),'LEN',len(body))
+                          title=re.search(r'<title[^>]*>(.*?)</title>',body,re.I|re.S)
+                          print('TITLE',unescape(re.sub(r'<[^>]+>',' ',title.group(1))).strip() if title else '')
+                          links=re.findall(r'href=["\']([^"\']+)',body,re.I)
+                          for link in links:
+                              low=link.lower()
+                              if '.pdf' in low or 'download' in low or 'drive.google' in low:
+                                  print('LINK',unescape(link))
+                  except Exception as e:
+                      print('ERROR',type(e).__name__,str(e))
           PY
