@@ -1,11 +1,15 @@
 # Phase 29 — Full Mathematics Lesson Content Rollout
 
-## Decision
+## Current authoritative decision (2026-08-30)
 
-Phase 29 is no longer closed by a pilot-only acceptance.
+Phase 29 is a LOCAL CLOSURE CANDIDATE. Protected PR CI, merge, merged-main CI,
+Render staging, and human browser/content acceptance remain pending. Phase 30
+is NOT STARTED.
 
-Phase 29 remains OPEN until the four Mathematics curriculum tracks have
-completed the supported full-school-stage lesson-content rollout.
+Curriculum content stays in its official/source academic language; Edulytics
+UI localization is independent. Common Core canonical content is English.
+The former Polish Common Core translation requirement is cancelled and not
+applicable. See `architecture/CURRICULUM_LANGUAGE_POLICY.md`.
 
 ## Curriculum tracks
 
@@ -70,6 +74,55 @@ Every Published lesson must have:
 - Edulytics curriculum review evidence.
 
 Generic `Lesson 01` shells are not Production Ready.
+
+
+### Supporting pedagogical lessons
+
+A source-valid pedagogical lesson that has no formal official OutcomeCode is
+not automatically an error. It may be retained only when that zero-formal
+state is locked by the accepted pedagogical source blueprint.
+
+Edulytics MUST NOT fabricate an official Standard / Learning Outcome mapping
+to make such a lesson independently publishable.
+
+Supporting-only lessons are:
+
+- preserved in the pedagogical source sequence;
+- included in the overall Content Ready denominator;
+- exposed as independent Supporting lessons to authorized staff and enrolled
+  students;
+- rendered with their full canonical body and no fabricated official outcome.
+
+Common Core currently locks 94 such source-valid supporting lessons.
+
+Kindergarten remains present only in the verified official Common Core
+framework and is outside the Edulytics product lesson scope.
+
+The Common Core product rollout therefore begins at Grade 1 and contains:
+
+- 1,560 in-scope pedagogical lessons;
+- 1,466 standalone canonical-content targets;
+- 94 source-valid supporting-only lessons;
+- 0 Kindergarten product pedagogical lessons.
+
+See `PHASE_29_COMMON_CORE_SUPPORTING_LESSON_POLICY.md`.
+
+## Common Core repository content checkpoint
+
+The US Common Core repository candidate is complete only when the automated
+Phase 29 audit proves all of the following simultaneously:
+
+- 1,560 in-scope pedagogical lessons;
+- 1,466 officially aligned lessons represented by Published English content;
+- 94 Published English Supporting lessons with zero independent OutcomeCodes;
+- zero Kindergarten product lessons;
+- exact blueprint-to-Standard mappings with no fabricated OutcomeCode;
+- approved OER provenance and traceable review evidence for every content pack;
+- deterministic mathematical verification for generated worked examples;
+- final full regression, PR CI, main CI, automatic staging seed, and staging DB audit.
+
+Overall Common Core Content Ready coverage is **1,560 / 1,560**. The aligned
+count (1,466) is not the readiness denominator. Phase 30 remains not started.
 
 ## Rollout workstreams
 

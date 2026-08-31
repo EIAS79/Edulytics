@@ -236,9 +236,67 @@ public sealed class Phase29SourceAcquisitionMatrixTests
     }
 
     [Fact]
-    public void FirstCorrectiveTarget_RemainsCommonCoreGrade6()
+    public void CommonCoreGradesOneToEightAreResolvedKindergartenIsOutOfScopeAndNextTargetAdvancesToCambridgePrimaryStage1()
     {
         using var document = Load();
+
+        var commonCore =
+            document.RootElement
+                .GetProperty("curricula")
+                .EnumerateArray()
+                .Single(
+                    x =>
+                        x.GetProperty("packCode")
+                            .GetString() ==
+                        MathematicsCurriculumPackRegistry.CommonCoreCode);
+
+        var scopes =
+            commonCore
+                .GetProperty("scopes")
+                .EnumerateArray()
+                .ToArray();
+
+        foreach (var grade in
+                 Enumerable.Range(1, 8))
+        {
+            var scope =
+                scopes.Single(
+                    x =>
+                        x.GetProperty("nativeLevel")
+                            .GetString() ==
+                        $"Grade {grade}");
+
+            Assert.Equal(
+                "ResolvedExact",
+                scope.GetProperty(
+                        "pedagogicalSelectionStatus")
+                    .GetString());
+
+            Assert.True(
+                string.IsNullOrWhiteSpace(
+                    scope.GetProperty(
+                            "blockingReason")
+                        .GetString()));
+        }
+
+        var kindergarten =
+            scopes.Single(
+                x =>
+                    x.GetProperty("nativeLevel")
+                        .GetString() ==
+                    "Kindergarten");
+
+        Assert.Equal(
+            "OutOfCurrentProductScope",
+            kindergarten.GetProperty(
+                    "pedagogicalSelectionStatus")
+                .GetString());
+
+        Assert.True(
+            string.IsNullOrWhiteSpace(
+                kindergarten.GetProperty(
+                        "blockingReason")
+                    .GetString()));
 
         var next =
             document.RootElement
@@ -246,12 +304,12 @@ public sealed class Phase29SourceAcquisitionMatrixTests
                     "nextResearchAndContentTarget");
 
         Assert.Equal(
-            MathematicsCurriculumPackRegistry.CommonCoreCode,
+            MathematicsCurriculumPackRegistry.CambridgeCode,
             next.GetProperty("packCode")
                 .GetString());
 
         Assert.Equal(
-            "Grade 6",
+            "Cambridge Primary Stage 1",
             next.GetProperty("nativeLevel")
                 .GetString());
     }

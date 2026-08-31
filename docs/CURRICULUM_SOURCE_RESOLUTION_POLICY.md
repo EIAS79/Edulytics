@@ -196,3 +196,79 @@ Fallback reason:
 `Product Owner selected the complete verified 2025-2026 Polish curriculum as
 the stable baseline for the current rollout instead of mixing transitional
 2026 curriculum cohorts.`
+
+
+## Cambridge International Mathematics baseline decision
+
+For the current Edulytics international/British Mathematics pathway, the
+Product Owner selected Cambridge International Mathematics as the active
+curriculum family:
+
+- Cambridge Primary Mathematics 0096;
+- Cambridge Lower Secondary Mathematics 0862;
+- Cambridge IGCSE Mathematics 0580;
+- Cambridge International AS & A Level Mathematics 9709.
+
+The verified official-source layer is reference-only.
+
+Therefore:
+
+- official Cambridge copyrighted objective prose is not stored or reproduced;
+- only verified programme/reference identifiers, hierarchy, source locators,
+  source metadata, digests, and other necessary provenance are retained;
+- curriculum academic language is English;
+- UI localization is independent of curriculum academic language;
+- curriculum translation is not performed;
+- identifiers/objectives are never invented;
+- synthetic Cambridge pedagogical lessons are prohibited;
+- Cambridge one-outcome-per-lesson fallback is prohibited;
+- IGCSE Core and Extended are preserved independently;
+- 9709 component/route structure is preserved in the reference graph rather
+  than being fabricated as an official Year 12 / Year 13 syllabus mapping;
+- Edulytics logical levels are application placement scopes, not claims that
+  Cambridge publishes those logical-level mappings;
+- real pedagogical lesson sequencing/content is a separate Phase 29 source and
+  authorship task;
+- historical England/DfE data is retained for auditability but is not
+  automatically remapped to Cambridge.
+
+The accepted source gate records 296 0096 references, 187 0862 references,
+100 0580 Core leaf references, 158 0580 Extended leaf references and 38 9709
+topic/section references, for 779 official/reference identifiers inside 888
+canonical curriculum nodes.
+
+## Cambridge Primary Stage 1 lawful pedagogy resolution
+
+Cambridge International Mathematics remains the academic authority for
+the accepted 0096 identifiers. Cambridge copyrighted objective prose is
+not stored in Edulytics lesson blueprints or canonical lesson bodies.
+
+For Cambridge Primary Stage 1, the reviewed pedagogical source family is
+the UK Department for Education primary Mathematics guidance and KS1
+National Curriculum Mathematics material made available under the Open
+Government Licence v3.0.
+
+OGL v3.0 is accepted only after explicit rights verification because it
+permits royalty-free commercial reuse and adaptation subject to
+attribution. Government logos, identified third-party copyrighted
+material, trademarks and other excluded rights are not reused.
+
+The required attribution is provided centrally through the product
+Content sources & licences page:
+
+> Contains public sector information licensed under the Open Government Licence v3.0.
+
+The Stage 1 sequence is an `EdulyticsOwnedSequence`. It contains 27
+explicit learner-facing lessons and 36 explicit
+`VerifiedContentCoverage` mappings to accepted Cambridge Stage 1
+reference identifiers. The mapping is reviewed evidence, not a runtime
+text match and not a generated outcome fallback.
+
+`TWM.01` through `TWM.08` are intentionally not formal mastery mappings
+in Stage 1 v1. Thinking and Working Mathematically may occur naturally
+inside lesson reasoning, but formal TWM mapping requires a separate
+review decision.
+
+Cambridge outcome-backed fallback remains prohibited outside explicit
+reviewed blueprints. Stage 2 remains blocked until Stage 1 browser/manual
+acceptance is completed on staging.
