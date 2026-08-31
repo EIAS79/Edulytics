@@ -10,6 +10,7 @@ public sealed class LearningOutcome : ISchoolScoped
     public Guid FrameworkVersionId { get; set; }
     public Guid SubjectId { get; set; }
     public Guid GradeLevelId { get; set; }
+    public Guid? CurriculumAdoptionId { get; set; }
     public Guid TopicId { get; set; }
     public Guid? OfficialContentNodeId { get; set; }
     public string Code { get; set; } = string.Empty;
