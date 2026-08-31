@@ -9,28 +9,29 @@
         <h1>@A["EditClass"]</h1>
         <input type="hidden" name="rowVersion"
                value="@Convert.ToBase64String(Model.ClassGroup.RowVersion)" />
+
+        <input type="hidden"
+               name="academicProgramId"
+               value="@Model.ClassGroup.AcademicProgramId" />
+        <input type="hidden"
+               name="gradeLevelId"
+               value="@Model.ClassGroup.GradeLevelId" />
+
         <label>@A["AcademicYear"]</label>
         <input value="@Model.ClassGroup.AcademicYearName" disabled />
-        <label for="academicProgramId">@A["AcademicProgram"]</label>
-        <select id="academicProgramId" name="academicProgramId" required>
-            @foreach (var program in Model.AcademicPrograms)
-            {
-                <option value="@program.Id" selected="@(program.Id == Model.ClassGroup.AcademicProgramId)">@program.Name</option>
-            }
-        </select>
 
-        <label for="gradeLevelId">@A["GradeLevel"]</label>
-        <select id="gradeLevelId" name="gradeLevelId" required>
-            @foreach (var grade in Model.GradeLevels)
-            {
-                <option value="@grade.Id"
-                        selected="@(grade.Id == Model.ClassGroup.GradeLevelId ? "selected" : null)">
-                    @grade.Name
-                </option>
-            }
-        </select>
+        <label>@A["AcademicProgram"]</label>
+        <input value="@Model.ClassGroup.AcademicProgramName" disabled />
+
+        <label>@A["GradeLevel"]</label>
+        <input value="@Model.ClassGroup.GradeLevelName" disabled />
+        <small class="academic-help">
+            The curriculum identity is inherited from the class curriculum level and cannot be changed here.
+        </small>
+
         <label for="name">@A["Name"]</label>
         <input id="name" name="name" value="@Model.ClassGroup.Name" maxlength="150" required />
+
         <label for="status">@A["Status"]</label>
         <select id="status" name="status">
             <option value="@((int)AcademicStructureStatus.Active)"
@@ -42,6 +43,7 @@
                 @A["StatusInactive"]
             </option>
         </select>
+
         <button type="submit" class="school-button school-button-primary">@A["SaveChanges"]</button>
     </form>
 </section>
