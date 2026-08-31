@@ -4,6 +4,24 @@
 @{
     Layout = "_AppLayout";
     ViewData["Title"] = L["PageTitle"].Value;
+
+    var options = Model.Dashboard.Options;
+    var years = options
+        .GroupBy(x => new { x.AcademicYearId, x.AcademicYearName })
+        .Select(x => x.Key)
+        .OrderByDescending(x => x.AcademicYearName)
+        .ToArray();
+    var programs = options
+        .GroupBy(x => new
+        {
+            x.AcademicYearId,
+            x.AcademicProgramId,
+            x.AcademicProgramName,
+            x.AcademicProgramCode
+        })
+        .Select(x => x.Key)
+        .OrderBy(x => x.AcademicProgramName)
+        .ToArray();
 }
 
 <div class="lesson-library">
@@ -24,7 +42,7 @@
         <span>@L["CanonicalNotice"]</span>
     </div>
 
-    @if (Model.Dashboard.Curricula.Count == 0)
+    @if (options.Count == 0)
     {
         <div class="lesson-content-empty">
             @L["NoAdoptedCurricula"]
@@ -32,162 +50,228 @@
     }
     else
     {
-        <div class="lesson-content-topic-stack">
-            @foreach (var group in Model.Dashboard.Curricula)
-            {
-                var officiallyAlignedCount =
-                    group.Lessons.Count(x => x.HasOfficialAlignment);
+        <form method="get"
+              asp-controller="LessonContent"
+              asp-action="Index"
+              class="lesson-content-filter"
+              id="lessonContentFilter">
+            <div class="lesson-content-filter__field">
+                <label for="academicYearId">@L["AcademicYear"]</label>
+                <select id="academicYearId" name="academicYearId" required>
+                    <option value="">@L["SelectAcademicYear"]</option>
+                    @foreach (var year in years)
+                    {
+                        <option value="@year.AcademicYearId"
+                                selected="@(Model.Dashboard.SelectedAcademicYearId == year.AcademicYearId ? "selected" : null)">
+                            @year.AcademicYearName
+                        </option>
+                    }
+                </select>
+            </div>
 
-                var supportingCount =
-                    group.Lessons.Count - officiallyAlignedCount;
+            <div class="lesson-content-filter__field">
+                <label for="academicProgramId">@L["ProgramStream"]</label>
+                <select id="academicProgramId" name="academicProgramId" required>
+                    <option value="">@L["SelectProgramStream"]</option>
+                    @foreach (var program in programs)
+                    {
+                        <option value="@program.AcademicProgramId"
+                                data-year="@program.AcademicYearId"
+                                selected="@(Model.Dashboard.SelectedAcademicYearId == program.AcademicYearId && Model.Dashboard.SelectedAcademicProgramId == program.AcademicProgramId ? "selected" : null)">
+                            @program.AcademicProgramName
+                        </option>
+                    }
+                </select>
+            </div>
 
-                <section class="lesson-content-topic-card">
-                    <header class="lesson-content-topic-card__header">
-                        <div class="lesson-content-topic-card__identity">
-                            <span class="student-subject-code">
-                                @group.SubjectCode
-                            </span>
+            <div class="lesson-content-filter__field">
+                <label for="curriculumAdoptionId">@L["CurriculumLevel"]</label>
+                <select id="curriculumAdoptionId" name="curriculumAdoptionId" required>
+                    <option value="">@L["SelectCurriculumLevel"]</option>
+                    @foreach (var option in options)
+                    {
+                        var pathway = string.IsNullOrWhiteSpace(option.CurriculumPathway)
+                            ? string.Empty
+                            : $" — {option.CurriculumPathway}";
+                        <option value="@option.CurriculumAdoptionId"
+                                data-year="@option.AcademicYearId"
+                                data-program="@option.AcademicProgramId"
+                                selected="@(Model.Dashboard.SelectedCurriculumAdoptionId == option.CurriculumAdoptionId ? "selected" : null)">
+                            @option.FrameworkName — @option.CurriculumLevelLabel@pathway
+                        </option>
+                    }
+                </select>
+            </div>
 
-                            <div>
-                                <h2>@group.FrameworkName</h2>
+            <div class="lesson-content-filter__action">
+                <button type="submit" class="school-button school-button-primary">
+                    @L["ShowLessons"]
+                </button>
+            </div>
+        </form>
 
-                                <div class="lesson-content-meta">
-                                    <span>
-                                        @L["Grade"]:
-                                        <strong>@group.GradeName</strong>
-                                    </span>
+        @if (!Model.Dashboard.SelectedCurriculumAdoptionId.HasValue)
+        {
+            <div class="lesson-content-empty lesson-content-empty--prompt">
+                @L["ChooseContextPrompt"]
+            </div>
+        }
+        else if (Model.Dashboard.Curricula.Count == 0)
+        {
+            <div class="lesson-content-empty">
+                @L["NoCanonicalLessons"]
+            </div>
+        }
+        else
+        {
+            <div class="lesson-content-topic-stack">
+                @foreach (var group in Model.Dashboard.Curricula)
+                {
+                    var officiallyAlignedCount = group.Lessons.Count(x => x.HasOfficialAlignment);
+                    var supportingCount = group.Lessons.Count - officiallyAlignedCount;
+                    var coveragePercent = group.TotalLessons == 0
+                        ? 0
+                        : (int)Math.Round(100m * group.ProductionReadyLessons / group.TotalLessons);
 
-                                    <span>
-                                        @L["Version"]:
-                                        <strong>
-                                            @group.FrameworkVersionName
-                                        </strong>
-                                    </span>
+                    <section class="lesson-content-topic-card">
+                        <header class="lesson-content-topic-card__header">
+                            <div class="lesson-content-topic-card__identity">
+                                <span class="student-subject-code">@group.SubjectCode</span>
+                                <div>
+                                    <h2>@group.FrameworkName</h2>
+                                    <div class="lesson-content-meta">
+                                        <span>@L["AcademicYear"]: <strong>@group.AcademicYearName</strong></span>
+                                        <span>@L["ProgramStream"]: <strong>@group.AcademicProgramName</strong></span>
+                                        <span>@L["CurriculumLevel"]: <strong>@group.CurriculumLevelLabel</strong></span>
+                                        @if (!string.IsNullOrWhiteSpace(group.CurriculumPathway))
+                                        {
+                                            <span>@L["Pathway"]: <strong>@group.CurriculumPathway</strong></span>
+                                        }
+                                        <span>@L["Version"]: <strong>@group.FrameworkVersionName</strong></span>
+                                    </div>
                                 </div>
+                            </div>
+                        </header>
+
+                        <div class="lesson-content-metrics">
+                            <div class="lesson-content-metric">
+                                <span class="lesson-content-metric__value">@group.TotalLessons</span>
+                                <span class="lesson-content-metric__label">@L["TotalLessons"]</span>
+                            </div>
+                            <div class="lesson-content-metric">
+                                <span class="lesson-content-metric__value">@group.ProductionReadyLessons</span>
+                                <span class="lesson-content-metric__label">@L["ProductionReady"]</span>
+                            </div>
+                            <div class="lesson-content-metric">
+                                <span class="lesson-content-metric__value">@coveragePercent%</span>
+                                <span class="lesson-content-metric__label">@L["Coverage"]</span>
+                            </div>
+                            <div class="lesson-content-metric">
+                                <span class="lesson-content-metric__value">@officiallyAlignedCount</span>
+                                <span class="lesson-content-metric__label">@L["OfficiallyAligned"]</span>
+                            </div>
+                            <div class="lesson-content-metric lesson-content-metric--supporting">
+                                <span class="lesson-content-metric__value">@supportingCount</span>
+                                <span class="lesson-content-metric__label">@L["SupportingLessons"]</span>
                             </div>
                         </div>
 
-                    </header>
-
-                    <div class="lesson-content-metrics">
-                        <div class="lesson-content-metric">
-                            <span class="lesson-content-metric__value">
-                                @group.TotalLessons
-                            </span>
-                            <span class="lesson-content-metric__label">
-                                @L["TotalLessons"]
-                            </span>
-                        </div>
-
-                        <div class="lesson-content-metric">
-                            <span class="lesson-content-metric__value">
-                                @officiallyAlignedCount
-                            </span>
-                            <span class="lesson-content-metric__label">
-                                @L["OfficiallyAligned"]
-                            </span>
-                        </div>
-
-                        <div class="lesson-content-metric
-                                    lesson-content-metric--supporting">
-                            <span class="lesson-content-metric__value">
-                                @supportingCount
-                            </span>
-                            <span class="lesson-content-metric__label">
-                                @L["SupportingLessons"]
-                            </span>
-                        </div>
-
-                    </div>
-
-                    @if (group.Lessons.Count == 0)
-                    {
-                        <p class="lesson-content-empty">
-                            @L["NoCanonicalLessons"]
-                        </p>
-                    }
-                    else
-                    {
-                        <div class="lesson-content-list"
-                             role="list">
-                            @foreach (var lesson in group.Lessons)
-                            {
-                                var isSupporting =
-                                    !lesson.HasOfficialAlignment;
-
-                                var statusText =
-                                    isSupporting
+                        @if (group.Lessons.Count == 0)
+                        {
+                            <p class="lesson-content-empty">@L["NoCanonicalLessons"]</p>
+                        }
+                        else
+                        {
+                            <div class="lesson-content-list" role="list">
+                                @foreach (var lesson in group.Lessons)
+                                {
+                                    var isSupporting = !lesson.HasOfficialAlignment;
+                                    var statusText = isSupporting
                                         ? L["SupportingLesson"].Value
                                         : lesson.Status switch
                                         {
-                                            CanonicalLessonContentStatus.Draft
-                                                => L["InPreparation"].Value,
-
-                                            CanonicalLessonContentStatus.Verified
-                                                => L["Verified"].Value,
-
-                                            CanonicalLessonContentStatus.Published
-                                                => L["PublishedLesson"].Value,
-
+                                            CanonicalLessonContentStatus.Draft => L["InPreparation"].Value,
+                                            CanonicalLessonContentStatus.Verified => L["Verified"].Value,
+                                            CanonicalLessonContentStatus.Published => L["PublishedLesson"].Value,
                                             _ => L["NotStarted"].Value
                                         };
-
-                                var statusClass =
-                                    isSupporting
+                                    var statusClass = isSupporting
                                         ? "supporting"
                                         : lesson.Status switch
                                         {
-                                            CanonicalLessonContentStatus.Draft
-                                                => "draft",
-
-                                            CanonicalLessonContentStatus.Verified
-                                                => "verified",
-
-                                            CanonicalLessonContentStatus.Published
-                                                => "published",
-
+                                            CanonicalLessonContentStatus.Draft => "draft",
+                                            CanonicalLessonContentStatus.Verified => "verified",
+                                            CanonicalLessonContentStatus.Published => "published",
                                             _ => "notstarted"
                                         };
 
-                                <a class="lesson-content-row @(isSupporting ? "lesson-content-row--supporting" : "")"
-                                   role="listitem"
-                                   asp-controller="LessonContent"
-                                   asp-action="Detail"
-                                   asp-route-id="@lesson.LessonId">
-                                    <span class="lesson-content-row__order">
-                                        @lesson.SortOrder
-                                    </span>
-
-                                    <span class="lesson-content-row__title">
-                                        @lesson.LessonTitle
-
-                                        @if (!string.IsNullOrWhiteSpace(lesson.UnitTitle))
+                                    <a class="lesson-content-row @(isSupporting ? "lesson-content-row--supporting" : "")"
+                                       role="listitem"
+                                       asp-controller="LessonContent"
+                                       asp-action="Detail"
+                                       asp-route-id="@lesson.LessonId">
+                                        <span class="lesson-content-row__order">@lesson.SortOrder</span>
+                                        <span class="lesson-content-row__title">
+                                            @lesson.LessonTitle
+                                            @if (!string.IsNullOrWhiteSpace(lesson.UnitTitle))
+                                            {
+                                                <small>@lesson.UnitTitle</small>
+                                            }
+                                        </span>
+                                        <span class="lesson-content-status lesson-content-status--@statusClass">@statusText</span>
+                                        @if (isSupporting)
                                         {
-                                            <small>@lesson.UnitTitle</small>
+                                            <span class="lesson-content-row__support"
+                                                  title="@L["SupportingLessonHelp"]"
+                                                  aria-label="@L["SupportingLessonHelp"]">i</span>
                                         }
-                                    </span>
-
-                                    <span class="lesson-content-status lesson-content-status--@statusClass">
-                                        @statusText
-                                    </span>
-
-                                    @if (isSupporting)
-                                    {
-                                        <span class="lesson-content-row__support"
-                                              title="@L["SupportingLessonHelp"]"
-                                              aria-label="@L["SupportingLessonHelp"]">i</span>
-                                    }
-                                    else
-                                    {
-                                        <span class="lesson-content-row__chevron"
-                                              aria-hidden="true">→</span>
-                                    }
-                                </a>
-                            }
-                        </div>
-                    }
-                </section>
-            }
-        </div>
+                                        else
+                                        {
+                                            <span class="lesson-content-row__chevron" aria-hidden="true">→</span>
+                                        }
+                                    </a>
+                                }
+                            </div>
+                        }
+                    </section>
+                }
+            </div>
+        }
     }
 </div>
+
+<script>
+(() => {
+    const year = document.getElementById('academicYearId');
+    const program = document.getElementById('academicProgramId');
+    const adoption = document.getElementById('curriculumAdoptionId');
+    if (!year || !program || !adoption) return;
+
+    const filter = () => {
+        const yearValue = year.value;
+        const programValue = program.value;
+
+        for (const option of program.options) {
+            if (!option.value) continue;
+            option.disabled = !!yearValue && option.dataset.year !== yearValue;
+        }
+        if (program.selectedOptions.length && program.selectedOptions[0].disabled) {
+            program.value = '';
+        }
+
+        for (const option of adoption.options) {
+            if (!option.value) continue;
+            option.disabled =
+                (!!yearValue && option.dataset.year !== yearValue) ||
+                (!!program.value && option.dataset.program !== program.value);
+        }
+        if (adoption.selectedOptions.length && adoption.selectedOptions[0].disabled) {
+            adoption.value = '';
+        }
+    };
+
+    year.addEventListener('change', filter);
+    program.addEventListener('change', filter);
+    filter();
+})();
+</script>
