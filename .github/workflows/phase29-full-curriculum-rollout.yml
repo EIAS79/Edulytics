@@ -1,0 +1,73 @@
+name: Phase29 Full Curriculum Rollout
+
+on:
+  push:
+    branches:
+      - phase29/curriculum-experience-and-content
+    paths:
+      - 'tools/phase29/complete_remaining_curricula.py'
+      - 'tools/phase29/full_curriculum_closure_audit.py'
+      - '.github/workflows/phase29-full-curriculum-rollout.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-verify-commit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: phase29/curriculum-experience-and-content
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Generate all remaining Phase 29 curricula
+        run: |
+          set -euo pipefail
+          python tools/phase29/complete_remaining_curricula.py --write-audit
+
+      - name: Enforce Phase 29 64-of-64 curriculum closure
+        run: |
+          set -euo pipefail
+          python tools/phase29/full_curriculum_closure_audit.py --write-report --strict
+
+      - uses: actions/setup-dotnet@v6.0.0
+        with:
+          dotnet-version: '10.0.200'
+
+      - name: Restore and build full solution
+        run: |
+          set -euo pipefail
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --no-restore
+
+      - name: Run Phase 29 regression suite
+        run: |
+          set -euo pipefail
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --filter 'FullyQualifiedName~Phase29'
+
+      - name: Run full test suite
+        run: |
+          set -euo pipefail
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build
+
+      - name: Commit generated full curriculum corpus
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            src/Edulytics.Core/Curriculum/LessonBlueprints/Packs \
+            src/Edulytics.Core/Curriculum/LessonContent/Packs \
+            docs/PHASE_29_REMAINING_CURRICULA_ROLLOUT_AUDIT.json
+          if git diff --cached --quiet; then
+            echo 'No generated curriculum changes.'
+            exit 0
+          fi
+          git commit -m 'Phase29: complete remaining curriculum lesson corpus'
+          git push origin HEAD:phase29/curriculum-experience-and-content
