@@ -145,6 +145,67 @@ new_helper = '''    private static CanonicalCurriculumContextRecord Context(
 if text.count(old_helper) != 1:
     raise SystemExit('Expected Context helper baseline not found exactly once.')
 text = text.replace(old_helper, new_helper, 1)
+
+old_lesson_helper = '''    private static PedagogicalLessonRecord Lesson(
+        Guid id,
+        Guid versionId,
+        int logicalLevel,
+        int sortOrder,
+        int officialOutcomeCount) =>
+        new(
+            id,
+            versionId,
+            null,
+            "PED:" + id.ToString("N"),
+            "UNIT",
+            "Unit",
+            "Lesson " + sortOrder,
+            null,
+            logicalLevel,
+            logicalLevel,
+            sortOrder,
+            officialOutcomeCount);
+'''
+new_lesson_helper = '''    private static PedagogicalLessonRecord Lesson(
+        Guid id,
+        Guid versionId,
+        int logicalLevel,
+        int sortOrder,
+        int officialOutcomeCount,
+        string? pathway = null) =>
+        new(
+            id,
+            versionId,
+            null,
+            "PED:" + id.ToString("N"),
+            "UNIT",
+            "Unit",
+            "Lesson " + sortOrder,
+            pathway,
+            logicalLevel,
+            logicalLevel,
+            sortOrder,
+            officialOutcomeCount);
+'''
+if text.count(old_lesson_helper) != 1:
+    raise SystemExit('Expected Lesson helper baseline not found exactly once.')
+text = text.replace(old_lesson_helper, new_lesson_helper, 1)
+
+replacements = {
+    'Lessons = [Lesson(lessonId, versionId, 6, 1, 1)],':
+        'Lessons = [Lesson(lessonId, versionId, 6, 1, 1, "General")],',
+    'repo.Lessons = [Lesson(lessonId, versionId, 6, 1, 0)];':
+        'repo.Lessons = [Lesson(lessonId, versionId, 6, 1, 0, "General")];',
+    'repo.Lessons = [Lesson(lessonId, versionId, 7, 1, 1)];':
+        'repo.Lessons = [Lesson(lessonId, versionId, 7, 1, 1, "General")];',
+    'repo.Lessons = [Lesson(lessonId, versionId, 6, 1, 1)];':
+        'repo.Lessons = [Lesson(lessonId, versionId, 6, 1, 1, "General")];',
+}
+for old, new in replacements.items():
+    if old not in text:
+        raise SystemExit(f'Expected lesson fixture pattern missing: {old}')
+    text = text.replace(old, new, 1)
+
 test_path.write_text(text, encoding='utf-8')
 
 print('Phase 29 final regression alignment applied.')
