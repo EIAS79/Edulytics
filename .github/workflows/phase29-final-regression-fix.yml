@@ -1,0 +1,43 @@
+name: Phase29 Final Regression Alignment
+
+on:
+  push:
+    paths:
+      - '.github/workflows/phase29-final-regression-fix.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-dotnet@v6.0.0
+        with:
+          dotnet-version: '10.0.200'
+
+      - name: Apply matrix and fixture alignment
+        run: python3 scripts/phase29-finalize-regression-fix.py
+
+      - name: Verify focused regressions
+        run: |
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --no-restore
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --filter "FullyQualifiedName~Phase29SourceAcquisitionMatrixTests|FullyQualifiedName~Phase29LessonContentServiceCoverageTests|FullyQualifiedName~Phase29CurriculumExperienceRuntimeTests"
+          git diff --check
+
+      - name: Commit verified product changes only
+        run: |
+          git rm scripts/phase29-finalize-regression-fix.py
+          git rm .github/workflows/phase29-final-regression-fix.yml
+          git config user.name 'Edulytics Phase29 Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add docs/PHASE_29_SOURCE_ACQUISITION_MATRIX.json
+          git add tests/Edulytics.Tests/Phase29/Phase29CanonicalRepositoryCoverageTests.cs
+          git commit -m 'Phase29: align UAE scope matrix and explicit fixtures'
+          git push origin HEAD:${{ github.ref_name }}
