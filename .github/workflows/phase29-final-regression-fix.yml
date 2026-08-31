@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
 
+# Retry marker: namespace dependency is now explicit in the coverage fixture.
 jobs:
   apply:
     runs-on: ubuntu-24.04
