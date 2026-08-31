@@ -1,0 +1,62 @@
+name: Phase29 Migration Generation
+
+on:
+  push:
+    branches:
+      - phase29/explicit-curriculum-level-identity
+    paths:
+      - .github/workflows/phase29-migration-generation.yml
+
+permissions:
+  contents: write
+
+jobs:
+  generate-migration:
+    runs-on: ubuntu-24.04
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+      DOTNET_NOLOGO: "1"
+      ConnectionStrings__DefaultConnection: "Host=127.0.0.1;Port=5432;Database=edulytics_migration_gen;Username=postgres;Password=postgres;SSL Mode=Disable"
+
+    steps:
+      - name: Checkout feature branch
+        uses: actions/checkout@v7.0.1
+        with:
+          ref: phase29/explicit-curriculum-level-identity
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6.0.0
+        with:
+          dotnet-version: 10.0.200
+
+      - name: Restore tools
+        run: dotnet tool restore
+
+      - name: Restore
+        run: dotnet restore Edulytics.sln
+
+      - name: Generate EF migration
+        run: |
+          set -euo pipefail
+          dotnet ef migrations add Phase29ExplicitCurriculumLevelIdentity \
+            --project src/Edulytics.Data/Edulytics.Data.csproj \
+            --startup-project src/Edulytics.Web/Edulytics.Web.csproj \
+            --context EdulyticsDbContext
+          git diff --check
+          git status --short
+
+      - name: Commit generated migration only
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/Edulytics.Data/Migrations
+          git diff --cached --check
+          git diff --cached --quiet && {
+            echo "dotnet ef produced no migration changes"
+            exit 1
+          }
+          git commit -m "Phase29: generate explicit curriculum level migration"
+          git push origin HEAD:phase29/explicit-curriculum-level-identity
