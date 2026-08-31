@@ -49,7 +49,14 @@ public sealed class Phase29ExplicitCurriculumLevelIdentityTests
     [Fact]
     public void CambridgeCoreAndExtended_AreDistinctStableIdentities()
     {
-        var levels = CurriculumLevelIdentityRegistry.AllForProgramCode("BRITISH");
+        var packCode = CurriculumLevelIdentityRegistry
+            .PackCodeForProgramCode("BRITISH");
+
+        Assert.Equal(
+            MathematicsCurriculumPackRegistry.CambridgeCode,
+            packCode);
+
+        var levels = CurriculumLevelIdentityRegistry.ForPack(packCode);
 
         var core = Assert.Single(levels, x =>
             x.LogicalLevel == 10 && x.Pathway == "Core");
