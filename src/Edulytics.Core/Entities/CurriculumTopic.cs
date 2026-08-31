@@ -10,6 +10,7 @@ public sealed class CurriculumTopic : ISchoolScoped
     public Guid FrameworkVersionId { get; set; }
     public Guid SubjectId { get; set; }
     public Guid GradeLevelId { get; set; }
+    public Guid? CurriculumAdoptionId { get; set; }
     public string Name { get; set; } = string.Empty;
     public int Order { get; set; }
 }
