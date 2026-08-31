@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Edulytics.Tests.Phase29;
 
+// Runtime acceptance gates for the explicit curriculum selector/scoping path.
 public sealed class Phase29CurriculumExperienceRuntimeTests
 {
     private static EdulyticsDbContext Db(string name) =>
@@ -63,8 +64,8 @@ public sealed class Phase29CurriculumExperienceRuntimeTests
         foreach (var logicalLevel in Enumerable.Range(1, 4))
         {
             var level = Assert.Single(
-      levels,
-      x => x.LogicalLevel == logicalLevel);
+                levels,
+                x => x.LogicalLevel == logicalLevel);
             Assert.Equal("Common", level.Pathway);
         }
 
