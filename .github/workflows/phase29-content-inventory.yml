@@ -34,7 +34,8 @@ jobs:
           ]
           for name,file_id in files.items():
               out=f'/tmp/{name}.pdf'
-              got=gdown.download(id=file_id, output=out, quiet=True, fuzzy=True)
+              url=f'https://drive.google.com/uc?id={file_id}&export=download'
+              got=gdown.download(url=url, output=out, quiet=True)
               print('\n====',name,'DOWNLOAD',got,'====')
               if not got:
                   continue
