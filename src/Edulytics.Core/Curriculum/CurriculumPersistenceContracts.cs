@@ -9,6 +9,9 @@ public sealed record CurriculumSnapshot(
     IReadOnlyList<LearningOutcome> Outcomes)
 {
     public IReadOnlyList<AcademicProgram> AcademicPrograms { get; init; } = [];
+    public IReadOnlyList<AcademicYear> AcademicYears { get; init; } = [];
+    public IReadOnlyList<AcademicYearProgramOffering> AcademicYearProgramOfferings { get; init; } = [];
+    public IReadOnlyList<SchoolCurriculumAdoption> CurriculumAdoptions { get; init; } = [];
 }
 
 public sealed record AdoptedCurriculumContext(
@@ -18,9 +21,16 @@ public sealed record AdoptedCurriculumContext(
     string FrameworkCode,
     string FrameworkName)
 {
+    public Guid AdoptionId { get; init; }
+    public Guid? AcademicYearId { get; init; }
     public Guid AcademicProgramId { get; init; }
     public string AcademicProgramName { get; init; } = string.Empty;
     public string AcademicProgramCode { get; init; } = string.Empty;
+    public string? CurriculumLevelKey { get; init; }
+    public int? CurriculumLogicalLevel { get; init; }
+    public string? CurriculumLevelLabel { get; init; }
+    public string? CurriculumStage { get; init; }
+    public string? CurriculumPathway { get; init; }
 }
 
 public sealed record OfficialCurriculumOutcomeSource(

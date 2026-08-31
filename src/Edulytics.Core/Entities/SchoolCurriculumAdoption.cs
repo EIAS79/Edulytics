@@ -11,6 +11,15 @@ public sealed class SchoolCurriculumAdoption : ISchoolScoped
     public Guid GradeLevelId { get; set; }
     public Guid SubjectId { get; set; }
     public Guid FrameworkVersionId { get; set; }
+
+    // Explicit curriculum identity. Nullable/empty values are retained only for
+    // legacy rows until the deterministic compatibility backfill can resolve them.
+    public string? CurriculumLevelKey { get; set; }
+    public int? CurriculumLogicalLevel { get; set; }
+    public string? CurriculumLevelLabel { get; set; }
+    public string? CurriculumStage { get; set; }
+    public string? CurriculumPathway { get; set; }
+
     public bool IsPrimary { get; set; }
     public bool IsActive { get; set; }
     public DateTime CreatedAtUtc { get; set; }

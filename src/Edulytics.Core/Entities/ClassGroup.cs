@@ -10,7 +10,9 @@ public sealed class ClassGroup : ISchoolScoped
     public Guid AcademicYearId { get; set; }
     public Guid AcademicProgramId { get; set; }
     public Guid GradeLevelId { get; set; }
+    public Guid? CurriculumAdoptionId { get; set; }
     public string Name { get; set; } = string.Empty;
+    public string? NormalizedName { get; set; }
     public string Code { get; set; } = string.Empty;
     public string NormalizedCode { get; set; } = string.Empty;
     public AcademicStructureStatus Status { get; set; }

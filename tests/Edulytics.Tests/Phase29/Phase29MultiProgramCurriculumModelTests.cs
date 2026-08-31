@@ -8,7 +8,7 @@ namespace Edulytics.Tests.Phase29;
 public sealed class Phase29MultiProgramCurriculumModelTests
 {
     [Fact]
-    public void ProgramScopeIsPartOfClassCurriculumTopicAndOutcomeIdentity()
+    public void ProgramScopeIsPartOfLegacyIdentity_AndAdoptionOwnsExplicitIdentity()
     {
         var options = new DbContextOptionsBuilder<EdulyticsDbContext>()
             .UseInMemoryDatabase("p29-program-model-" + Guid.NewGuid())
@@ -33,10 +33,20 @@ public sealed class Phase29MultiProgramCurriculumModelTests
                  string.Join("|", i.Properties.Select(p => p.Name)) ==
                  "SchoolId|AcademicYearId|AcademicProgramId|NormalizedCode");
         Assert.Contains(
+            classGroup.GetIndexes(),
+            i => i.IsUnique &&
+                 string.Join("|", i.Properties.Select(p => p.Name)) ==
+                 "SchoolId|AcademicYearId|CurriculumAdoptionId|NormalizedName");
+        Assert.Contains(
             classGroup.GetForeignKeys(),
             fk => fk.PrincipalEntityType.ClrType == typeof(AcademicProgram) &&
                   string.Join("|", fk.Properties.Select(p => p.Name)) ==
                   "SchoolId|AcademicProgramId");
+        Assert.Contains(
+            classGroup.GetForeignKeys(),
+            fk => fk.PrincipalEntityType.ClrType == typeof(SchoolCurriculumAdoption) &&
+                  string.Join("|", fk.Properties.Select(p => p.Name)) ==
+                  "SchoolId|CurriculumAdoptionId");
 
         var adoption = db.Model.FindEntityType(typeof(SchoolCurriculumAdoption));
         Assert.NotNull(adoption);
@@ -48,20 +58,46 @@ public sealed class Phase29MultiProgramCurriculumModelTests
             i => i.IsUnique &&
                  string.Join("|", i.Properties.Select(p => p.Name)) ==
                  "SchoolId|AcademicYearId|AcademicProgramId|GradeLevelId|SubjectId");
+        Assert.Contains(
+            adoption.GetIndexes(),
+            i => i.IsUnique &&
+                 string.Join("|", i.Properties.Select(p => p.Name)) ==
+                 "SchoolId|AcademicYearId|AcademicProgramId|CurriculumLevelKey|SubjectId");
 
         var topic = db.Model.FindEntityType(typeof(CurriculumTopic));
         Assert.NotNull(topic);
         Assert.False(topic!.FindProperty(nameof(CurriculumTopic.AcademicProgramId))!.IsNullable);
-        Assert.All(
-            topic.GetIndexes().Where(i => i.IsUnique),
-            i => Assert.Contains(
-                i.Properties,
-                p => p.Name == nameof(CurriculumTopic.AcademicProgramId)));
+
+        Assert.Contains(
+            topic.GetIndexes(),
+            i => i.IsUnique &&
+                 string.Join("|", i.Properties.Select(p => p.Name)) ==
+                 "SchoolId|CurriculumAdoptionId|Name");
+        Assert.Contains(
+            topic.GetIndexes(),
+            i => i.IsUnique &&
+                 string.Join("|", i.Properties.Select(p => p.Name)) ==
+                 "SchoolId|CurriculumAdoptionId|Order");
+        Assert.Contains(
+            topic.GetIndexes(),
+            i => i.IsUnique &&
+                 string.Join("|", i.Properties.Select(p => p.Name)) ==
+                 "SchoolId|AcademicProgramId|FrameworkVersionId|SubjectId|GradeLevelId|Name");
+        Assert.Contains(
+            topic.GetIndexes(),
+            i => i.IsUnique &&
+                 string.Join("|", i.Properties.Select(p => p.Name)) ==
+                 "SchoolId|AcademicProgramId|FrameworkVersionId|SubjectId|GradeLevelId|Order");
 
         var outcome = db.Model.FindEntityType(typeof(LearningOutcome));
         Assert.NotNull(outcome);
         Assert.False(
             outcome!.FindProperty(nameof(LearningOutcome.AcademicProgramId))!.IsNullable);
+        Assert.Contains(
+            outcome.GetIndexes(),
+            i => i.IsUnique &&
+                 string.Join("|", i.Properties.Select(p => p.Name)) ==
+                 "SchoolId|CurriculumAdoptionId|Code");
         Assert.Contains(
             outcome.GetIndexes(),
             i => i.IsUnique &&
