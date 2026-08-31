@@ -7,6 +7,7 @@ on:
     paths:
       - 'tools/phase29/cambridge_primary_dfe_rollout.py'
       - 'tools/phase29/patch_supporting_blueprint_contract.py'
+      - 'tools/phase29/patch_cambridge_primary_rollout_tests.py'
       - '.github/workflows/phase29-cambridge-primary-rollout.yml'
   workflow_dispatch:
 
@@ -47,6 +48,9 @@ jobs:
       - name: Apply fail-closed supporting blueprint contract
         run: python tools/phase29/patch_supporting_blueprint_contract.py
 
+      - name: Advance Cambridge Primary regression baselines
+        run: python tools/phase29/patch_cambridge_primary_rollout_tests.py
+
       - name: Generate Cambridge Primary Stages 2-6
         run: |
           set -euo pipefail
@@ -76,6 +80,9 @@ jobs:
           git add \
             tools/phase29/cambridge_primary_dfe_rollout.py \
             src/Edulytics.Core/Curriculum/PedagogicalLessonBlueprint.cs \
+            tests/Edulytics.Tests/Phase29/Phase29PedagogicalLessonArchitectureTests.cs \
+            tests/Edulytics.Tests/Phase29/Phase29CambridgeCurriculumBaselineTests.cs \
+            tests/Edulytics.Tests/Phase29/Phase29CambridgePrimaryStage1ContentTests.cs \
             src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/cambridge-primary-stage{2,3,4,5,6}-dfe-ogl-v1.lesson-blueprint.json \
             src/Edulytics.Core/Curriculum/LessonContent/Packs/cambridge-primary-stage{2,3,4,5,6}-dfe-ogl-v1.lesson-content-pack.json \
             docs/PHASE_29_CAMBRIDGE_PRIMARY_2_6_ROLLOUT_AUDIT.json
