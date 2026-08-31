@@ -253,14 +253,16 @@ public sealed class Phase29CambridgeCurriculumBaselineTests
             .OrderBy(x => x.SortOrder)
             .ToArrayAsync();
 
-        Assert.Equal(169, lessons.Length);
+        Assert.Equal(566, lessons.Length);
         var stageOne = lessons.Where(x => x.LogicalLevelFrom == 1 && x.LogicalLevelTo == 1).ToArray();
         var stagesTwoToSix = lessons.Where(x => x.LogicalLevelFrom >= 2 && x.LogicalLevelFrom <= 6).ToArray();
+        var laterScopes = lessons.Where(x => x.LogicalLevelFrom >= 7 && x.LogicalLevelFrom <= 13).ToArray();
         Assert.Equal(27, stageOne.Length);
         Assert.Equal(142, stagesTwoToSix.Length);
+        Assert.Equal(397, laterScopes.Length);
 
         var stageOneIds = stageOne.Select(x => x.Id).ToArray();
-        var supportingIds = stagesTwoToSix.Select(x => x.Id).ToArray();
+        var supportingIds = stagesTwoToSix.Concat(laterScopes).Select(x => x.Id).ToArray();
 
         var mappings = await (
             from mapping in db.CurriculumPedagogicalLessonOutcomes
@@ -280,7 +282,7 @@ public sealed class Phase29CambridgeCurriculumBaselineTests
         Assert.False(
             await db.CurriculumPedagogicalLessons.AnyAsync(
                 x => x.FrameworkVersionId == state.FrameworkVersionId &&
-                     (x.LogicalLevelFrom < 1 || x.LogicalLevelTo > 6)));
+                     (x.LogicalLevelFrom < 1 || x.LogicalLevelTo > 13)));
     }
 
     [Fact]

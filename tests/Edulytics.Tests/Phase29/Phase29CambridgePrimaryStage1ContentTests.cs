@@ -390,11 +390,11 @@ public sealed class
             .OrderBy(x => x.SortOrder)
             .ToArrayAsync();
 
-        Assert.Equal(169, lessons.Length);
+        Assert.Equal(566, lessons.Length);
         var stageOne = lessons.Where(x => x.LogicalLevelFrom == 1 && x.LogicalLevelTo == 1).ToArray();
-        var supporting = lessons.Where(x => x.LogicalLevelFrom >= 2 && x.LogicalLevelFrom <= 6).ToArray();
+        var supporting = lessons.Where(x => x.LogicalLevelFrom >= 2 && x.LogicalLevelFrom <= 13).ToArray();
         Assert.Equal(27, stageOne.Length);
-        Assert.Equal(142, supporting.Length);
+        Assert.Equal(539, supporting.Length);
         Assert.All(stageOne, x => Assert.Equal("Cambridge Primary Stage 1", x.NativeLevel));
 
         var stageOneIds = stageOne.Select(x => x.Id).ToArray();
@@ -416,7 +416,7 @@ public sealed class
                 x => x.FrameworkVersionId == versionId && supportingIds.Contains(x.PedagogicalLessonId)));
 
         Assert.Equal(
-            169,
+            566,
             await db.CurriculumLessonContents.CountAsync(
                 x => allLessonIds.Contains(x.PedagogicalLessonId)));
 
@@ -426,7 +426,7 @@ public sealed class
             .ToArrayAsync();
 
         Assert.Equal(
-            169,
+            566,
             await db.CurriculumLessonContentTranslations.CountAsync(
                 x => contentIds.Contains(x.CurriculumLessonContentId) && x.CultureCode == "en"));
 
