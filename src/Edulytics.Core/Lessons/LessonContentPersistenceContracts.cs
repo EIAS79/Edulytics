@@ -15,6 +15,8 @@ public sealed record CanonicalCurriculumContextRecord(
     int GradeOrder)
 {
     public Guid CurriculumAdoptionId { get; init; }
+    public Guid? AcademicYearId { get; init; }
+    public string AcademicYearName { get; init; } = string.Empty;
     public string? CurriculumLevelKey { get; init; }
     public int? CurriculumLogicalLevel { get; init; }
     public string? CurriculumLevelLabel { get; init; }
