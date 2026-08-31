@@ -230,6 +230,14 @@ using (var scope =
     await bootstrapper
         .InitializeAsync();
 
+    var curriculumLevelIdentityBackfill =
+        scope.ServiceProvider
+            .GetRequiredService<
+                Edulytics.Data.Seeding.CurriculumLevelIdentityBackfill>();
+
+    await curriculumLevelIdentityBackfill
+        .RunAsync();
+
     var mathematicsCurriculumPackSeeder =
         scope.ServiceProvider
             .GetRequiredService<
