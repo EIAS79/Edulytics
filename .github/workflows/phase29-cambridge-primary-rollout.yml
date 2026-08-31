@@ -6,6 +6,7 @@ on:
       - phase29/curriculum-experience-and-content
     paths:
       - 'tools/phase29/cambridge_primary_dfe_rollout.py'
+      - 'tools/phase29/patch_supporting_blueprint_contract.py'
       - '.github/workflows/phase29-cambridge-primary-rollout.yml'
   workflow_dispatch:
 
@@ -37,100 +38,14 @@ jobs:
           text = p.read_text(encoding='utf-8')
           old = '        guide = re.search(rf"(?m)^{re.escape(code)}\\s+Teaching guidance\\s*$", after)\n'
           new = '''        guide = None\n        for guide_code in (code, code.replace("/", "")):\n            candidate = re.search(\n                rf"(?m)^{re.escape(guide_code)}\\s+Teaching guidance\\s*$",\n                after,\n            )\n            if candidate is not None and (guide is None or candidate.start() < guide.start()):\n                guide = candidate\n'''
-          if old not in text:
-              raise SystemExit('FAIL: expected parser line not found')
-          p.write_text(text.replace(old, new), encoding='utf-8')
+          if old in text:
+              p.write_text(text.replace(old, new), encoding='utf-8')
+          elif new not in text:
+              raise SystemExit('FAIL: DfE parser layout drift')
           PY
 
-      - name: Extend blueprint contract for fail-closed supporting-only documents
-        run: |
-          set -euo pipefail
-          python - <<'PY'
-          from pathlib import Path
-          p = Path('src/Edulytics.Core/Curriculum/PedagogicalLessonBlueprint.cs')
-          text = p.read_text(encoding='utf-8')
-          old = '''        var diagnostics =
-            document.AcquisitionDiagnostics;
-
-        if (diagnostics.UnitCount !=
-                document.Units.Count ||
-            diagnostics.LessonCount !=
-                document.Lessons.Count ||
-            diagnostics.EffectiveOfficialStandardCount <= 0 ||
-            diagnostics.AddressingCoverageCount !=
-                diagnostics.EffectiveOfficialStandardCount ||
-            diagnostics.FormalMappingCount !=
-                document.Lessons.Sum(
-                    x => x.OutcomeCodes.Count))
-        {
-            throw new InvalidOperationException(
-                $"Blueprint acquisition diagnostics drift: " +
-                $"{document.BlueprintCode}.");
-        }
-'''
-          new = '''        var diagnostics =
-            document.AcquisitionDiagnostics;
-
-        var formalMappingCount =
-            document.Lessons.Sum(
-                x => x.OutcomeCodes.Count);
-
-        var hasFormalMappings =
-            formalMappingCount > 0;
-
-        var hasResolvedAlignment =
-            document.Lessons
-                .SelectMany(x => x.Alignments)
-                .Any(
-                    x =>
-                        x.ResolutionKind is
-                            "ExactAcceptedStandard" or
-                            "SubpartToAcceptedParent" ||
-                        !string.IsNullOrWhiteSpace(
-                            x.OutcomeCode));
-
-        var supportingOnly =
-            !hasFormalMappings &&
-            !hasResolvedAlignment &&
-            document.Lessons.All(
-                x => x.OutcomeCodes.Count == 0);
-
-        var diagnosticsDrift =
-            diagnostics.UnitCount !=
-                document.Units.Count ||
-            diagnostics.LessonCount !=
-                document.Lessons.Count ||
-            diagnostics.FormalMappingCount !=
-                formalMappingCount;
-
-        if (hasFormalMappings)
-        {
-            diagnosticsDrift =
-                diagnosticsDrift ||
-                diagnostics.EffectiveOfficialStandardCount <= 0 ||
-                diagnostics.AddressingCoverageCount !=
-                    diagnostics.EffectiveOfficialStandardCount;
-        }
-        else
-        {
-            diagnosticsDrift =
-                diagnosticsDrift ||
-                !supportingOnly ||
-                diagnostics.EffectiveOfficialStandardCount != 0 ||
-                diagnostics.AddressingCoverageCount != 0;
-        }
-
-        if (diagnosticsDrift)
-        {
-            throw new InvalidOperationException(
-                $"Blueprint acquisition diagnostics drift: " +
-                $"{document.BlueprintCode}.");
-        }
-'''
-          if old not in text:
-              raise SystemExit('FAIL: expected V1 diagnostics contract not found')
-          p.write_text(text.replace(old, new), encoding='utf-8')
-          PY
+      - name: Apply fail-closed supporting blueprint contract
+        run: python tools/phase29/patch_supporting_blueprint_contract.py
 
       - name: Generate Cambridge Primary Stages 2-6
         run: |
