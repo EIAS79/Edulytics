@@ -17,6 +17,9 @@ public sealed record AcademicStructureSnapshot(
     public IReadOnlyList<AcademicYearProgramOffering>
         AcademicYearProgramOfferings
     { get; init; } = [];
+
+    public IReadOnlyList<SchoolCurriculumAdoption> CurriculumAdoptions
+    { get; init; } = [];
 }
 
 public enum AcademicPersistenceError
