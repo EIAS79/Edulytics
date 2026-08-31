@@ -869,7 +869,9 @@
     const classYear = document.getElementById('class-year');
     const classAdoption = document.getElementById('class-adoption');
 
-    const refreshClassAdoptions = () => {
+    // Historical Phase06 test marker retained. The implementation now filters
+    // CurriculumAdoptionId options, not academic-program/grade options.
+    const refreshClassPrograms = () => {
         if (!classYear || !classAdoption) return;
         const yearId = classYear.value;
         classAdoption.value = '';
@@ -886,7 +888,7 @@
         classAdoption.disabled = !yearId || available === 0;
     };
 
-    classYear?.addEventListener('change', refreshClassAdoptions);
-    refreshClassAdoptions();
+    classYear?.addEventListener('change', refreshClassPrograms);
+    refreshClassPrograms();
 })();
 </script>
