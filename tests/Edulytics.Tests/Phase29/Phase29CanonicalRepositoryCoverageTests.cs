@@ -1,3 +1,4 @@
+using Edulytics.Core.Curriculum;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Data.Contexts;
@@ -504,8 +505,8 @@ public sealed class Phase29LessonContentServiceCoverageTests
 
         var repo = new FakeLessonRepository
         {
-            StudentContexts = [Context(versionId, "UAE-MOE-MATH", "Grade 6", 6)],
-            Lessons = [Lesson(lessonId, versionId, 6, 1, 1)],
+            StudentContexts = [Context(versionId, "UAE-MOE-MATH", "Grade 6", 6, "General")],
+            Lessons = [Lesson(lessonId, versionId, 6, 1, 1, "General")],
             Contents =
             [
                 new CanonicalLessonContentRecord(
@@ -550,7 +551,7 @@ public sealed class Phase29LessonContentServiceCoverageTests
 
         var repo = new FakeLessonRepository
         {
-            StudentContexts = [Context(versionId, "UAE-MOE-MATH", "Grade 6", 6)]
+            StudentContexts = [Context(versionId, "UAE-MOE-MATH", "Grade 6", 6, "General")]
         };
 
         var service = Service(
@@ -561,7 +562,7 @@ public sealed class Phase29LessonContentServiceCoverageTests
         var missingLesson = await service.GetPublishedForStudentAsync(actorId, lessonId, "en");
         Assert.Equal(LessonContentErrorCode.LessonNotFound, missingLesson.Error);
 
-        repo.Lessons = [Lesson(lessonId, versionId, 6, 1, 0)];
+        repo.Lessons = [Lesson(lessonId, versionId, 6, 1, 0, "General")];
         repo.Contents = [Content(versionId, lessonId, CanonicalLessonContentStatus.Published, En("Supporting"))];
         var supporting = await service.GetPublishedForStudentAsync(actorId, lessonId, "pl-PL");
         Assert.Null(supporting.Error);
@@ -569,11 +570,11 @@ public sealed class Phase29LessonContentServiceCoverageTests
         Assert.Empty(supporting.Value.Outcomes);
         Assert.Equal("Supporting", supporting.Value.Title);
 
-        repo.Lessons = [Lesson(lessonId, versionId, 7, 1, 1)];
+        repo.Lessons = [Lesson(lessonId, versionId, 7, 1, 1, "General")];
         var wrongGrade = await service.GetPublishedForStudentAsync(actorId, lessonId, "en");
         Assert.Equal(LessonContentErrorCode.LessonNotFound, wrongGrade.Error);
 
-        repo.Lessons = [Lesson(lessonId, versionId, 6, 1, 1)];
+        repo.Lessons = [Lesson(lessonId, versionId, 6, 1, 1, "General")];
         repo.Contents = [];
         var noContent = await service.GetPublishedForStudentAsync(actorId, lessonId, "en");
         Assert.Equal(LessonContentErrorCode.LessonNotFound, noContent.Error);
@@ -756,8 +757,10 @@ public sealed class Phase29LessonContentServiceCoverageTests
         Guid versionId,
         string frameworkCode,
         string gradeName,
-        int gradeOrder) =>
-        new(
+        int gradeOrder,
+        string? pathway = null)
+    {
+        var context = new CanonicalCurriculumContextRecord(
             versionId,
             frameworkCode,
             frameworkCode + " Framework",
@@ -769,12 +772,31 @@ public sealed class Phase29LessonContentServiceCoverageTests
             gradeName,
             gradeOrder);
 
+        if (string.IsNullOrWhiteSpace(pathway))
+            return context;
+
+        var identity = Assert.Single(
+            CurriculumLevelIdentityRegistry.ForPack(frameworkCode),
+            x => x.LogicalLevel == gradeOrder &&
+                 string.Equals(x.Pathway, pathway, StringComparison.Ordinal));
+
+        return context with
+        {
+            CurriculumLevelKey = identity.Key,
+            CurriculumLogicalLevel = identity.LogicalLevel,
+            CurriculumLevelLabel = identity.Label,
+            CurriculumStage = identity.Stage,
+            CurriculumPathway = identity.Pathway
+        };
+    }
+
     private static PedagogicalLessonRecord Lesson(
         Guid id,
         Guid versionId,
         int logicalLevel,
         int sortOrder,
-        int officialOutcomeCount) =>
+        int officialOutcomeCount,
+        string? pathway = null) =>
         new(
             id,
             versionId,
@@ -783,7 +805,7 @@ public sealed class Phase29LessonContentServiceCoverageTests
             "UNIT",
             "Unit",
             "Lesson " + sortOrder,
-            null,
+            pathway,
             logicalLevel,
             logicalLevel,
             sortOrder,
