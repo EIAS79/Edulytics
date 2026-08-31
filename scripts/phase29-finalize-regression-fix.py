@@ -74,6 +74,12 @@ matrix_path.write_text(
 # Keep production fail-closed behavior and make the successful fixtures explicit.
 test_path = Path('tests/Edulytics.Tests/Phase29/Phase29CanonicalRepositoryCoverageTests.cs')
 text = test_path.read_text(encoding='utf-8')
+if 'using Edulytics.Core.Curriculum;\n' not in text:
+    anchor = 'using Edulytics.Core.Entities;\n'
+    if text.count(anchor) != 1:
+        raise SystemExit('Expected test using anchor not found exactly once.')
+    text = text.replace(anchor, 'using Edulytics.Core.Curriculum;\n' + anchor, 1)
+
 old_call = 'StudentContexts = [Context(versionId, "UAE-MOE-MATH", "Grade 6", 6)]'
 count = text.count(old_call)
 if count != 2:
