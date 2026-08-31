@@ -110,7 +110,14 @@ def extract_criteria(text: str, year: int) -> list[dict[str, str]]:
         code = match.group(1)
         title = clean(match.group(2))
         after = segment[match.end():]
-        guide = re.search(rf"(?m)^{re.escape(code)}\s+Teaching guidance\s*$", after)
+        guide = None
+        for guide_code in (code, code.replace("/", "")):
+            candidate = re.search(
+                rf"(?m)^{re.escape(guide_code)}\s+Teaching guidance\s*$",
+                after,
+            )
+            if candidate is not None and (guide is None or candidate.start() < guide.start()):
+                guide = candidate
         if guide is None or guide.start() > 2500:
             continue
         criterion = clean(after[:guide.start()])

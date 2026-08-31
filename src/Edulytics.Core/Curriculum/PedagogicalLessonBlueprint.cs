@@ -750,16 +750,56 @@ public static class PedagogicalLessonBlueprintContract
         var diagnostics =
             document.AcquisitionDiagnostics;
 
-        if (diagnostics.UnitCount !=
+        var formalMappingCount =
+            document.Lessons.Sum(
+                x => x.OutcomeCodes.Count);
+
+        var hasFormalMappings =
+            formalMappingCount > 0;
+
+        var hasResolvedAlignment =
+            document.Lessons
+                .SelectMany(x => x.Alignments)
+                .Any(
+                    x =>
+                        x.ResolutionKind is
+                            "ExactAcceptedStandard" or
+                            "SubpartToAcceptedParent" ||
+                        !string.IsNullOrWhiteSpace(
+                            x.OutcomeCode));
+
+        var supportingOnly =
+            !hasFormalMappings &&
+            !hasResolvedAlignment &&
+            document.Lessons.All(
+                x => x.OutcomeCodes.Count == 0);
+
+        var diagnosticsDrift =
+            diagnostics.UnitCount !=
                 document.Units.Count ||
             diagnostics.LessonCount !=
                 document.Lessons.Count ||
-            diagnostics.EffectiveOfficialStandardCount <= 0 ||
-            diagnostics.AddressingCoverageCount !=
-                diagnostics.EffectiveOfficialStandardCount ||
             diagnostics.FormalMappingCount !=
-                document.Lessons.Sum(
-                    x => x.OutcomeCodes.Count))
+                formalMappingCount;
+
+        if (hasFormalMappings)
+        {
+            diagnosticsDrift =
+                diagnosticsDrift ||
+                diagnostics.EffectiveOfficialStandardCount <= 0 ||
+                diagnostics.AddressingCoverageCount !=
+                    diagnostics.EffectiveOfficialStandardCount;
+        }
+        else
+        {
+            diagnosticsDrift =
+                diagnosticsDrift ||
+                !supportingOnly ||
+                diagnostics.EffectiveOfficialStandardCount != 0 ||
+                diagnostics.AddressingCoverageCount != 0;
+        }
+
+        if (diagnosticsDrift)
         {
             throw new InvalidOperationException(
                 $"Blueprint acquisition diagnostics drift: " +

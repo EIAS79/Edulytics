@@ -223,139 +223,64 @@ public sealed class Phase29CambridgeCurriculumBaselineTests
     }
 
     [Fact]
-    public async Task CambridgeSeederIsIdempotentAndCreatesOnlyReviewedStageOneLessons()
+    public async Task CambridgeSeederIsIdempotentAndCreatesReviewedPrimaryStageOneToSixLessons()
     {
-        await using var db =
-            Db(
-                "cambridge-v2-" +
-                Guid.NewGuid().ToString("N"));
+        await using var db = Db("cambridge-v2-" + Guid.NewGuid().ToString("N"));
 
-        var packSeeder =
-            new MathematicsCurriculumPackSeeder(db);
-
+        var packSeeder = new MathematicsCurriculumPackSeeder(db);
         await packSeeder.SeedAsync();
         await packSeeder.SeedAsync();
 
-        var state =
-            await db.CurriculumPackImportStates
-                .SingleAsync(
-                    x =>
-                        x.FrameworkCode ==
-                        MathematicsCurriculumPackRegistry.CambridgeCode);
+        var state = await db.CurriculumPackImportStates.SingleAsync(
+            x => x.FrameworkCode == MathematicsCurriculumPackRegistry.CambridgeCode);
 
-        Assert.Equal(
-            779,
-            state.OfficialNodeCount);
-
+        Assert.Equal(779, state.OfficialNodeCount);
+        Assert.Equal(888, state.NodeCount);
         Assert.Equal(
             888,
-            state.NodeCount);
-
-        Assert.Equal(
-            888,
-            await db.CurriculumPackContentNodes
-                .CountAsync(
-                    x =>
-                        x.FrameworkVersionId ==
-                        state.FrameworkVersionId));
-
+            await db.CurriculumPackContentNodes.CountAsync(
+                x => x.FrameworkVersionId == state.FrameworkVersionId));
         Assert.False(
-            await db.CurriculumPackContentNodes
-                .AnyAsync(
-                    x =>
-                        x.FrameworkVersionId ==
-                            state.FrameworkVersionId &&
-                        x.OfficialText != null));
+            await db.CurriculumPackContentNodes.AnyAsync(
+                x => x.FrameworkVersionId == state.FrameworkVersionId && x.OfficialText != null));
 
-        var pedagogical =
-            new MathematicsPedagogicalLessonSeeder(db);
-
+        var pedagogical = new MathematicsPedagogicalLessonSeeder(db);
         await pedagogical.SeedAsync();
         await pedagogical.SeedAsync();
 
-        var lessons =
-            await db.CurriculumPedagogicalLessons
-                .Where(
-                    x =>
-                        x.FrameworkVersionId ==
-                        state.FrameworkVersionId)
-                .OrderBy(x => x.SortOrder)
-                .ToArrayAsync();
+        var lessons = await db.CurriculumPedagogicalLessons
+            .Where(x => x.FrameworkVersionId == state.FrameworkVersionId)
+            .OrderBy(x => x.SortOrder)
+            .ToArrayAsync();
 
-        Assert.Equal(
-            27,
-            lessons.Length);
+        Assert.Equal(169, lessons.Length);
+        var stageOne = lessons.Where(x => x.LogicalLevelFrom == 1 && x.LogicalLevelTo == 1).ToArray();
+        var stagesTwoToSix = lessons.Where(x => x.LogicalLevelFrom >= 2 && x.LogicalLevelFrom <= 6).ToArray();
+        Assert.Equal(27, stageOne.Length);
+        Assert.Equal(142, stagesTwoToSix.Length);
 
-        Assert.All(
-            lessons,
-            lesson =>
-            {
-                Assert.Equal(
-                    1,
-                    lesson.LogicalLevelFrom);
+        var stageOneIds = stageOne.Select(x => x.Id).ToArray();
+        var supportingIds = stagesTwoToSix.Select(x => x.Id).ToArray();
 
-                Assert.Equal(
-                    1,
-                    lesson.LogicalLevelTo);
+        var mappings = await (
+            from mapping in db.CurriculumPedagogicalLessonOutcomes
+            join node in db.CurriculumPackContentNodes on mapping.OutcomeNodeId equals node.Id
+            where mapping.FrameworkVersionId == state.FrameworkVersionId &&
+                  stageOneIds.Contains(mapping.PedagogicalLessonId)
+            select node.Code).ToArrayAsync();
 
-                Assert.Equal(
-                    "Cambridge Primary Stage 1",
-                    lesson.NativeLevel);
-
-                Assert.StartsWith(
-                    "PED:CAMBRIDGE-INTL-MATH:S1:",
-                    lesson.Code,
-                    StringComparison.Ordinal);
-            });
-
-        var lessonIds =
-            lessons
-                .Select(x => x.Id)
-                .ToArray();
-
-        var mappings =
-            await (
-                from mapping in
-                    db.CurriculumPedagogicalLessonOutcomes
-                join node in
-                    db.CurriculumPackContentNodes
-                    on mapping.OutcomeNodeId equals node.Id
-                where
-                    mapping.FrameworkVersionId ==
-                        state.FrameworkVersionId &&
-                    lessonIds.Contains(
-                        mapping.PedagogicalLessonId)
-                select node.Code)
-                .ToArrayAsync();
-
-        Assert.Equal(
-            36,
-            mappings.Length);
-
-        Assert.Equal(
-            36,
-            mappings
-                .Distinct(StringComparer.Ordinal)
-                .Count());
-
-        Assert.All(
-            mappings,
-            code =>
-                Assert.StartsWith(
-                    "CAM:OUT:0096:1",
-                    code,
-                    StringComparison.Ordinal));
+        Assert.Equal(36, mappings.Length);
+        Assert.Equal(36, mappings.Distinct(StringComparer.Ordinal).Count());
+        Assert.All(mappings, code => Assert.StartsWith("CAM:OUT:0096:1", code, StringComparison.Ordinal));
+        Assert.False(
+            await db.CurriculumPedagogicalLessonOutcomes.AnyAsync(
+                x => x.FrameworkVersionId == state.FrameworkVersionId &&
+                     supportingIds.Contains(x.PedagogicalLessonId)));
 
         Assert.False(
-            await db.CurriculumPedagogicalLessons
-                .AnyAsync(
-                    x =>
-                        x.FrameworkVersionId ==
-                            state.FrameworkVersionId &&
-                        (
-                            x.LogicalLevelFrom != 1 ||
-                            x.LogicalLevelTo != 1
-                        )));
+            await db.CurriculumPedagogicalLessons.AnyAsync(
+                x => x.FrameworkVersionId == state.FrameworkVersionId &&
+                     (x.LogicalLevelFrom < 1 || x.LogicalLevelTo > 6)));
     }
 
     [Fact]
