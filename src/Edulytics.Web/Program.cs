@@ -164,6 +164,9 @@ builder.Services
     .AddAssessmentIntelligencePhase32();
 
 builder.Services
+    .AddMathematicsGenerationPhase33();
+
+builder.Services
     .AddInvitationEmailDelivery(
         builder.Configuration);
 
