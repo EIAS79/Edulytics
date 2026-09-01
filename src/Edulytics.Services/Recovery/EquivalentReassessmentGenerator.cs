@@ -10,7 +10,7 @@ namespace Edulytics.Services.Recovery;
 /// </summary>
 public sealed class EquivalentReassessmentGenerator
 {
-    private const int MaxGenerationAttempts = 64;
+    private const int MaxGenerationAttempts = 128;
 
     private readonly MathematicsQuestionGenerationEngine _generator;
     private readonly WeaknessRecoveryEngine _recovery;
@@ -35,52 +35,78 @@ public sealed class EquivalentReassessmentGenerator
             .ToHashSet(StringComparer.Ordinal);
         var previousShapes = plan.PreviousPromptShapes
             .ToHashSet(StringComparer.Ordinal);
+        var selectedFingerprints = new HashSet<string>(StringComparer.Ordinal);
+        var selected = new GeneratedMathematicsItem?[plan.EquivalentReassessmentBlueprint.QuestionCount];
 
-        for (var attempt = 0; attempt < MaxGenerationAttempts; attempt++)
+        for (var attempt = 0; attempt < MaxGenerationAttempts && selected.Any(x => x is null); attempt++)
         {
             var batch = _generator.Generate(new MathematicsGenerationRequest(
                 plan.EquivalentReassessmentBlueprint,
                 outcomeProfiles,
                 unchecked(seed + attempt)));
 
-            if (!IsFresh(batch, previousFingerprints, previousShapes))
+            if (batch.Items.Count != selected.Length)
             {
-                continue;
+                throw new InvalidOperationException(
+                    "Generated equivalent reassessment batch does not match the blueprint item count.");
             }
 
-            // Do not weaken or bypass the Phase 36 acceptance contract. Once a
-            // fresh candidate is found, the existing validator remains authoritative
-            // for scope, difficulty, coverage, exposure and equivalence semantics.
-            _recovery.ValidateEquivalentReassessment(plan, batch);
-            return batch;
+            for (var index = 0; index < batch.Items.Count; index++)
+            {
+                if (selected[index] is not null)
+                {
+                    continue;
+                }
+
+                var candidate = batch.Items[index];
+                if (!IsFresh(
+                        candidate,
+                        previousFingerprints,
+                        previousShapes,
+                        selectedFingerprints))
+                {
+                    continue;
+                }
+
+                selected[index] = candidate;
+                selectedFingerprints.Add(candidate.Item.ExposureFingerprint);
+            }
         }
 
-        throw new InvalidOperationException(
-            "Unable to generate a fresh equivalent reassessment within the retry budget.");
+        if (selected.Any(x => x is null))
+        {
+            throw new InvalidOperationException(
+                "Unable to generate a fresh equivalent reassessment within the retry budget.");
+        }
+
+        var result = new MathematicsGenerationBatch(
+            plan.SchoolId,
+            plan.CurriculumAdoptionId,
+            plan.CurriculumLevelKey,
+            selected.Select(x => x!).ToArray(),
+            MathematicsQuestionGenerationEngine.GeneratorVersion);
+
+        // Do not weaken or bypass the Phase 36 acceptance contract. Every selected
+        // item came from a fully validated Phase 33 batch at the same blueprint slot;
+        // the Phase 36 validator remains authoritative for scope, difficulty,
+        // coverage, exposure and equivalence semantics across the recomposed batch.
+        _recovery.ValidateEquivalentReassessment(plan, result);
+        return result;
     }
 
     private static bool IsFresh(
-        MathematicsGenerationBatch batch,
+        GeneratedMathematicsItem candidate,
         IReadOnlySet<string> previousFingerprints,
-        IReadOnlySet<string> previousShapes)
+        IReadOnlySet<string> previousShapes,
+        IReadOnlySet<string> selectedFingerprints)
     {
-        var generatedFingerprints = new HashSet<string>(StringComparer.Ordinal);
-
-        foreach (var generated in batch.Items)
+        var fingerprint = candidate.Item.ExposureFingerprint;
+        if (previousFingerprints.Contains(fingerprint) || selectedFingerprints.Contains(fingerprint))
         {
-            if (previousFingerprints.Contains(generated.Item.ExposureFingerprint)
-                || !generatedFingerprints.Add(generated.Item.ExposureFingerprint))
-            {
-                return false;
-            }
-
-            var promptShape = WeaknessRecoveryEngine.NormalizePromptShape(generated.Item.Prompt);
-            if (previousShapes.Contains(promptShape))
-            {
-                return false;
-            }
+            return false;
         }
 
-        return true;
+        var promptShape = WeaknessRecoveryEngine.NormalizePromptShape(candidate.Item.Prompt);
+        return !previousShapes.Contains(promptShape);
     }
 }
