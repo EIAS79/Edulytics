@@ -7,9 +7,6 @@ namespace Edulytics.Web.Health;
 public sealed class OutboxWorkerReadinessHealthCheck
     : IHealthCheck
 {
-    private const string Phase38StagingServiceId =
-        "srv-da1o4url550s73aecsn0";
-
     private readonly OutboxWorkerHealthState _state;
 
     private readonly IOptions<
@@ -36,18 +33,6 @@ public sealed class OutboxWorkerReadinessHealthCheck
             CancellationToken cancellationToken =
                 default)
     {
-        if (string.Equals(
-                Environment.GetEnvironmentVariable(
-                    "RENDER_SERVICE_ID"),
-                Phase38StagingServiceId,
-                StringComparison.Ordinal))
-        {
-            return Task.FromResult(
-                HealthCheckResult
-                    .Healthy(
-                        "Outbox worker is intentionally disabled during the Phase 38 staging maintenance freeze."));
-        }
-
         var snapshot =
             _state.Snapshot();
 
