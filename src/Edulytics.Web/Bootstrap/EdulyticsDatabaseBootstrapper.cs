@@ -68,6 +68,8 @@ public sealed class EdulyticsDatabaseBootstrapper
         {
             await _db.Database.CloseConnectionAsync();
         }
+
+        await Phase38LaunchGateInventory.RunAsync(_db);
     }
 
     private async Task ExecuteAdvisoryLockAsync(
