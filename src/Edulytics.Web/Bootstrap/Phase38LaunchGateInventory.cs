@@ -8,8 +8,12 @@ internal static class Phase38LaunchGateInventory
 {
     private const string ExpectedRenderServiceId = "srv-da1o4url550s73aecsn0";
 
-    public static async Task RunAsync(IServiceProvider services, CancellationToken cancellationToken = default)
+    public static async Task RunAsync(
+        EdulyticsDbContext db,
+        CancellationToken cancellationToken = default)
     {
+        ArgumentNullException.ThrowIfNull(db);
+
         if (!string.Equals(
                 Environment.GetEnvironmentVariable("RENDER_SERVICE_ID"),
                 ExpectedRenderServiceId,
@@ -18,23 +22,18 @@ internal static class Phase38LaunchGateInventory
             return;
         }
 
-        var logger = services
-            .GetRequiredService<ILoggerFactory>()
-            .CreateLogger("Phase38.Inventory");
-        var db = services.GetRequiredService<EdulyticsDbContext>();
-
         await db.Database.OpenConnectionAsync(cancellationToken);
         try
         {
             var connection = db.Database.GetDbConnection();
 
-            logger.LogWarning("PHASE38_INVENTORY_BEGIN database={Database}", connection.Database);
+            Write("PHASE38_INVENTORY_BEGIN database={0}", connection.Database);
 
             var databaseSize = await ScalarAsync<string>(
                 connection,
                 "SELECT pg_size_pretty(pg_database_size(current_database()))",
                 cancellationToken);
-            logger.LogWarning("PHASE38_DATABASE_SIZE {DatabaseSize}", databaseSize ?? "unknown");
+            Write("PHASE38_DATABASE_SIZE size={0}", databaseSize ?? "unknown");
 
             var tables = await ReadFirstColumnAsync(
                 connection,
@@ -50,14 +49,14 @@ internal static class Phase38LaunchGateInventory
                     connection,
                     $"SELECT COUNT(*) FROM \"{table}\"",
                     cancellationToken);
-                logger.LogWarning("PHASE38_TABLE_COUNT table={Table} rows={Rows}", table, count);
+                Write("PHASE38_TABLE_COUNT table={0} rows={1}", table, count);
             }
 
-            await LogSchoolsAsync(connection, logger, cancellationToken);
-            await LogIdentitySummaryAsync(connection, logger, cancellationToken);
-            await LogCurriculumOwnershipAsync(connection, logger, cancellationToken);
+            await LogSchoolsAsync(connection, cancellationToken);
+            await LogIdentitySummaryAsync(connection, cancellationToken);
+            await LogCurriculumOwnershipAsync(connection, cancellationToken);
 
-            logger.LogWarning("PHASE38_INVENTORY_END");
+            Write("PHASE38_INVENTORY_END");
         }
         finally
         {
@@ -67,7 +66,6 @@ internal static class Phase38LaunchGateInventory
 
     private static async Task LogSchoolsAsync(
         DbConnection connection,
-        ILogger logger,
         CancellationToken cancellationToken)
     {
         await using var command = connection.CreateCommand();
@@ -78,8 +76,8 @@ internal static class Phase38LaunchGateInventory
         await using var reader = await command.ExecuteReaderAsync(cancellationToken);
         while (await reader.ReadAsync(cancellationToken))
         {
-            logger.LogWarning(
-                "PHASE38_SCHOOL id={SchoolId} name={SchoolName} code={SchoolCode} status={Status} country={Country} city={City} archived={Archived}",
+            Write(
+                "PHASE38_SCHOOL id={0} name={1} code={2} status={3} country={4} city={5} archived={6}",
                 reader.GetGuid(0),
                 reader.GetString(1),
                 reader.GetString(2),
@@ -92,7 +90,6 @@ internal static class Phase38LaunchGateInventory
 
     private static async Task LogIdentitySummaryAsync(
         DbConnection connection,
-        ILogger logger,
         CancellationToken cancellationToken)
     {
         await using (var command = connection.CreateCommand())
@@ -102,8 +99,8 @@ internal static class Phase38LaunchGateInventory
             await using var reader = await command.ExecuteReaderAsync(cancellationToken);
             if (await reader.ReadAsync(cancellationToken))
             {
-                logger.LogWarning(
-                    "PHASE38_USERS global={GlobalUsers} school_scoped={SchoolUsers}",
+                Write(
+                    "PHASE38_USERS global={0} school_scoped={1}",
                     reader.GetInt64(0),
                     reader.GetInt64(1));
             }
@@ -118,8 +115,8 @@ internal static class Phase38LaunchGateInventory
             await using var reader = await command.ExecuteReaderAsync(cancellationToken);
             while (await reader.ReadAsync(cancellationToken))
             {
-                logger.LogWarning(
-                    "PHASE38_ROLE role={Role} users={Users}",
+                Write(
+                    "PHASE38_ROLE role={0} users={1}",
                     reader.IsDBNull(0) ? "<null>" : reader.GetString(0),
                     reader.GetInt64(1));
             }
@@ -128,7 +125,6 @@ internal static class Phase38LaunchGateInventory
 
     private static async Task LogCurriculumOwnershipAsync(
         DbConnection connection,
-        ILogger logger,
         CancellationToken cancellationToken)
     {
         await using var command = connection.CreateCommand();
@@ -137,8 +133,8 @@ internal static class Phase38LaunchGateInventory
         await using var reader = await command.ExecuteReaderAsync(cancellationToken);
         if (await reader.ReadAsync(cancellationToken))
         {
-            logger.LogWarning(
-                "PHASE38_CURRICULUM_FRAMEWORKS global={GlobalFrameworks} school_owned={SchoolOwnedFrameworks}",
+            Write(
+                "PHASE38_CURRICULUM_FRAMEWORKS global={0} school_owned={1}",
                 reader.GetInt64(0),
                 reader.GetInt64(1));
         }
@@ -170,4 +166,7 @@ internal static class Phase38LaunchGateInventory
             return default;
         return (T)Convert.ChangeType(result, typeof(T), System.Globalization.CultureInfo.InvariantCulture);
     }
+
+    private static void Write(string format, params object?[] values) =>
+        Console.WriteLine(format, values);
 }
