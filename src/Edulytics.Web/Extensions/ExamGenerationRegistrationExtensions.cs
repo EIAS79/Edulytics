@@ -9,6 +9,7 @@ public static class ExamGenerationRegistrationExtensions
     {
         services.AddSingleton<ExamGenerationEngine>();
         services.AddAdaptiveAssessmentPhase35();
+        services.AddWeaknessRecoveryPhase36();
         return services;
     }
 }
