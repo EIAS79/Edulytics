@@ -8,6 +8,7 @@ public static class ExamGenerationRegistrationExtensions
         this IServiceCollection services)
     {
         services.AddSingleton<ExamGenerationEngine>();
+        services.AddAdaptiveAssessmentPhase35();
         return services;
     }
 }
