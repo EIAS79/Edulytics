@@ -31,7 +31,7 @@ public sealed class EquivalentReassessmentGenerator
         ArgumentNullException.ThrowIfNull(plan);
         ArgumentNullException.ThrowIfNull(outcomeProfiles);
 
-        var previousFingerprints = plan.PreviousExposureFingerprints
+        var previousFingerprints = plan.ExcludedExposureFingerprints
             .ToHashSet(StringComparer.Ordinal);
         var previousShapes = plan.PreviousPromptShapes
             .ToHashSet(StringComparer.Ordinal);
