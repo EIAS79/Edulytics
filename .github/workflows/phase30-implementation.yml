@@ -48,8 +48,7 @@ jobs:
           Edulytics__Hosting__RequireDataProtectionCertificate: 'false'
         run: |
           set -euo pipefail
-          dotnet tool install --global dotnet-ef --version 10.0.11
-          export PATH="$PATH:$HOME/.dotnet/tools"
+          dotnet tool restore
           if ! ls src/Edulytics.Data/Migrations/*_Phase30PracticeAssessmentItemEngine.cs >/dev/null 2>&1; then
             dotnet ef migrations add Phase30PracticeAssessmentItemEngine \
               --project src/Edulytics.Data/Edulytics.Data.csproj \
