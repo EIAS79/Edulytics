@@ -50,6 +50,13 @@ public class EdulyticsDbContext
     public DbSet<QuestionLearningOutcome> QuestionLearningOutcomes => Set<QuestionLearningOutcome>();
     public DbSet<AssessmentResult> AssessmentResults => Set<AssessmentResult>();
     public DbSet<StudentAnswer> StudentAnswers => Set<StudentAnswer>();
+    public DbSet<AssessmentItem> AssessmentItems => Set<AssessmentItem>();
+    public DbSet<AssessmentItemOutcome> AssessmentItemOutcomes => Set<AssessmentItemOutcome>();
+    public DbSet<PracticeAttempt> PracticeAttempts => Set<PracticeAttempt>();
+    public DbSet<PracticeAttemptItem> PracticeAttemptItems => Set<PracticeAttemptItem>();
+    public DbSet<PracticeResponse> PracticeResponses => Set<PracticeResponse>();
+    public DbSet<LearningEvidence> LearningEvidence => Set<LearningEvidence>();
+    public DbSet<StudentItemExposure> StudentItemExposures => Set<StudentItemExposure>();
     public DbSet<StudentOutcomeMastery> StudentOutcomeMasteries => Set<StudentOutcomeMastery>();
     public DbSet<ClassOutcomeSummary> ClassOutcomeSummaries => Set<ClassOutcomeSummary>();
     public DbSet<ClassTopicSummary> ClassTopicSummaries => Set<ClassTopicSummary>();
@@ -180,6 +187,13 @@ public class EdulyticsDbContext
         builder.ApplyConfiguration(new QuestionLearningOutcomeConfiguration());
         builder.ApplyConfiguration(new AssessmentResultConfiguration());
         builder.ApplyConfiguration(new StudentAnswerConfiguration());
+        builder.ApplyConfiguration(new AssessmentItemConfiguration());
+        builder.ApplyConfiguration(new AssessmentItemOutcomeConfiguration());
+        builder.ApplyConfiguration(new PracticeAttemptConfiguration());
+        builder.ApplyConfiguration(new PracticeAttemptItemConfiguration());
+        builder.ApplyConfiguration(new PracticeResponseConfiguration());
+        builder.ApplyConfiguration(new LearningEvidenceConfiguration());
+        builder.ApplyConfiguration(new StudentItemExposureConfiguration());
         builder.ApplyConfiguration(new StudentOutcomeMasteryConfiguration());
         builder.ApplyConfiguration(new ClassOutcomeSummaryConfiguration());
         builder.ApplyConfiguration(new ClassTopicSummaryConfiguration());

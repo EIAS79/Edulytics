@@ -158,6 +158,9 @@ builder.Services
     .AddLessonContentPhase29();
 
 builder.Services
+    .AddPracticePhase30();
+
+builder.Services
     .AddInvitationEmailDelivery(
         builder.Configuration);
 
