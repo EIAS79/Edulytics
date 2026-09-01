@@ -15,8 +15,18 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.RateLimiting;
 
+const string phase38StagingServiceId =
+    "srv-da1o4url550s73aecsn0";
+
 var builder =
     WebApplication.CreateBuilder(args);
+
+var phase38MaintenanceFreeze =
+    string.Equals(
+        Environment.GetEnvironmentVariable(
+            "RENDER_SERVICE_ID"),
+        phase38StagingServiceId,
+        StringComparison.Ordinal);
 
 if (builder.Environment.IsProduction())
 {
@@ -228,6 +238,45 @@ builder.Services
             }
         });
 
+if (phase38MaintenanceFreeze)
+{
+    var webAssembly =
+        typeof(EdulyticsDatabaseBootstrapper)
+            .Assembly;
+
+    var backgroundWorkers =
+        builder.Services
+            .Where(
+                descriptor =>
+                    descriptor.ServiceType ==
+                        typeof(IHostedService) &&
+                    descriptor.ImplementationType?
+                        .Assembly == webAssembly)
+            .ToArray();
+
+    foreach (var descriptor in
+             backgroundWorkers)
+    {
+        builder.Services.Remove(
+            descriptor);
+    }
+
+    Console.WriteLine(
+        "PHASE38_MAINTENANCE_BACKGROUND_WORKERS_DISABLED count={0} workers={1}",
+        backgroundWorkers.Length,
+        string.Join(
+            ',',
+            backgroundWorkers
+                .Select(
+                    x =>
+                        x.ImplementationType?
+                            .Name ??
+                        "unknown")
+                .OrderBy(
+                    x => x,
+                    StringComparer.Ordinal)));
+}
+
 var app =
     builder.Build();
 
@@ -282,6 +331,35 @@ app.UseMiddleware<
 
 app.UseMiddleware<
     SecurityHeadersMiddleware>();
+
+if (phase38MaintenanceFreeze)
+{
+    app.Use(
+        async (context, next) =>
+        {
+            if (context.Request.Path
+                .StartsWithSegments(
+                    "/health"))
+            {
+                await next();
+                return;
+            }
+
+            context.Response.StatusCode =
+                StatusCodes
+                    .Status503ServiceUnavailable;
+
+            context.Response.ContentType =
+                "text/plain; charset=utf-8";
+
+            context.Response.Headers
+                .RetryAfter =
+                "3600";
+
+            await context.Response.WriteAsync(
+                "Edulytics staging is temporarily unavailable during the Phase 38 launch-gate maintenance window.");
+        });
+}
 
 if (!app.Environment.IsDevelopment())
 {
