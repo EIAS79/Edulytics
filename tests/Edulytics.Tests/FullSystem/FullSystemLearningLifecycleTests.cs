@@ -68,7 +68,7 @@ public sealed class FullSystemLearningLifecycleTests
         await PersistBatchAsync(context, initialBatch);
         await CompletePracticeAsync(
             practice,
-            fixture.Student.UserId,
+            fixture.Student.UserId!.Value,
             fixture.AdoptionId,
             initialBatch,
             answerCorrectly: false);
@@ -158,7 +158,7 @@ public sealed class FullSystemLearningLifecycleTests
         await PersistBatchAsync(context, reassessmentBatch);
         await CompletePracticeAsync(
             practice,
-            fixture.Student.UserId,
+            fixture.Student.UserId!.Value,
             fixture.AdoptionId,
             reassessmentBatch,
             answerCorrectly: true);
