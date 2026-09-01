@@ -31,6 +31,7 @@ public sealed class OutboxMessageConfiguration
 
         builder.Property(x => x.Status)
             .HasConversion<int>()
+            .HasSentinel((OutboxMessageStatus)0)
             .HasDefaultValue(
                 OutboxMessageStatus.Pending)
             .IsRequired();
