@@ -6,6 +6,7 @@ on:
       - phase29/final-acceptance-fixes
     paths:
       - 'tools/phase29/apply_final_acceptance_fixes.py'
+      - 'tools/phase29/normalize_final_acceptance_controller.py'
       - '.github/workflows/phase29-final-acceptance-fixes.yml'
   workflow_dispatch:
 
@@ -26,52 +27,10 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Normalize compact lesson controller for context-preserving navigation
-        run: |
-          set -euo pipefail
-          python - <<'PY'
-          from pathlib import Path
-          p = Path('src/Edulytics.Web/Controllers/LessonContentController.cs')
-          text = p.read_text(encoding='utf-8')
-          old = '''    [HttpGet("{id:guid}")]
-    public async Task<IActionResult> Detail(Guid id,CancellationToken cancellationToken)
-    {
-        if(!TryActor(out var actorId))return Forbid();
-        var r=await _lessons.GetStaffLessonAsync(actorId,id,CultureInfo.CurrentUICulture.Name,cancellationToken);
-        return r.Value is null?HandleError(r.Error):View(new LessonContentDetailViewModel(r.Value));
-    }
-'''
-          new = '''    [HttpGet("{id:guid}")]
-    public async Task<IActionResult> Detail(
-        Guid id,
-        Guid? academicYearId,
-        Guid? academicProgramId,
-        Guid? curriculumAdoptionId,
-        CancellationToken cancellationToken)
-    {
-        if(!TryActor(out var actorId))return Forbid();
-        var r=await _lessons.GetStaffLessonAsync(actorId,id,CultureInfo.CurrentUICulture.Name,cancellationToken);
-        if (r.Value is null)
-            return HandleError(r.Error);
-
-        ViewData["BackAcademicYearId"] = academicYearId;
-        ViewData["BackAcademicProgramId"] = academicProgramId;
-        ViewData["BackCurriculumAdoptionId"] = curriculumAdoptionId;
-
-        return View(
-            new LessonContentDetailViewModel(
-                r.Value));
-    }
-'''
-          if old in text:
-              p.write_text(text.replace(old, new, 1), encoding='utf-8')
-          elif new not in text:
-              raise SystemExit('FAIL: compact LessonContentController Detail block not found')
-          PY
-
       - name: Apply final acceptance fixes
         run: |
           set -euo pipefail
+          python tools/phase29/normalize_final_acceptance_controller.py
           python tools/phase29/apply_final_acceptance_fixes.py
           python tools/phase29/full_curriculum_closure_audit.py --strict --write-report
 
@@ -103,14 +62,15 @@ jobs:
           set -euo pipefail
           grep -q 'var isSupporting = lesson.IsSupporting;' src/Edulytics.Web/Views/LessonContent/Index.cshtml
           grep -q 'asp-route-curriculumAdoptionId' src/Edulytics.Web/Views/LessonContent/Detail.cshtml
-          ! grep -q '@L\["Coverage"\]' src/Edulytics.Web/Views/LessonContent/Index.cshtml
-          ! grep -q '@L\["OfficiallyAligned"\]' src/Edulytics.Web/Views/LessonContent/Index.cshtml
+          if grep -q '@L\["Coverage"\]' src/Edulytics.Web/Views/LessonContent/Index.cshtml; then exit 1; fi
+          if grep -q '@L\["OfficiallyAligned"\]' src/Edulytics.Web/Views/LessonContent/Index.cshtml; then exit 1; fi
           test "$(grep -c 'lesson-content-metric__label' src/Edulytics.Web/Views/LessonContent/Index.cshtml)" -eq 3
           git diff --check
 
       - name: Remove maintenance-only runner files
         run: |
           rm -f tools/phase29/apply_final_acceptance_fixes.py
+          rm -f tools/phase29/normalize_final_acceptance_controller.py
           rm -f .github/workflows/phase29-final-acceptance-fixes.yml
 
       - name: Commit verified product changes
