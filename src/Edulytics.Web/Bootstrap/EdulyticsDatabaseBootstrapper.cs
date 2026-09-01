@@ -71,7 +71,7 @@ public sealed class EdulyticsDatabaseBootstrapper
 
         await Phase38LaunchGateInventory.RunAsync(_db);
         await Phase38BackupSnapshot.RunAsync(_db);
-        await Phase38CleanBaseline.RunAsync(
+        await Phase38CleanBaselineV2.RunAsync(
             _db,
             _configuration["Edulytics:SuperAdmin:Email"]);
     }
