@@ -79,7 +79,7 @@ public sealed class AssessmentBlueprintEngineTests
 
         Assert.Equal(
             unseen,
-            Assert.Single(blueprint.OutcomeAllocations.Where(x => x.ItemCount == 1)).LearningOutcomeId);
+            Assert.Single(blueprint.OutcomeAllocations, x => x.ItemCount == 1).LearningOutcomeId);
     }
 
     [Fact]
