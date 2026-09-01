@@ -161,6 +161,9 @@ builder.Services
     .AddPracticePhase30();
 
 builder.Services
+    .AddAssessmentIntelligencePhase32();
+
+builder.Services
     .AddInvitationEmailDelivery(
         builder.Configuration);
 
