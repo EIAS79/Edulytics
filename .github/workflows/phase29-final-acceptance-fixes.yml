@@ -7,6 +7,7 @@ on:
     paths:
       - 'tools/phase29/apply_final_acceptance_fixes.py'
       - 'tools/phase29/normalize_final_acceptance_controller.py'
+      - 'tools/phase29/normalize_final_acceptance_detail.py'
       - '.github/workflows/phase29-final-acceptance-fixes.yml'
   workflow_dispatch:
 
@@ -31,6 +32,7 @@ jobs:
         run: |
           set -euo pipefail
           python tools/phase29/normalize_final_acceptance_controller.py
+          python tools/phase29/normalize_final_acceptance_detail.py
           python tools/phase29/apply_final_acceptance_fixes.py
           python tools/phase29/full_curriculum_closure_audit.py --strict --write-report
 
@@ -61,6 +63,7 @@ jobs:
         run: |
           set -euo pipefail
           grep -q 'var isSupporting = lesson.IsSupporting;' src/Edulytics.Web/Views/LessonContent/Index.cshtml
+          grep -q 'var isSupporting = Model.Lesson.IsSupporting;' src/Edulytics.Web/Views/LessonContent/Detail.cshtml
           grep -q 'asp-route-curriculumAdoptionId' src/Edulytics.Web/Views/LessonContent/Detail.cshtml
           if grep -q '@L\["Coverage"\]' src/Edulytics.Web/Views/LessonContent/Index.cshtml; then exit 1; fi
           if grep -q '@L\["OfficiallyAligned"\]' src/Edulytics.Web/Views/LessonContent/Index.cshtml; then exit 1; fi
@@ -71,6 +74,7 @@ jobs:
         run: |
           rm -f tools/phase29/apply_final_acceptance_fixes.py
           rm -f tools/phase29/normalize_final_acceptance_controller.py
+          rm -f tools/phase29/normalize_final_acceptance_detail.py
           rm -f .github/workflows/phase29-final-acceptance-fixes.yml
 
       - name: Commit verified product changes
