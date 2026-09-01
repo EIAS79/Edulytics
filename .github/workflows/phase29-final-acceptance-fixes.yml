@@ -1,0 +1,84 @@
+name: Phase29 Final Acceptance Fixes
+
+on:
+  push:
+    branches:
+      - phase29/final-acceptance-fixes
+    paths:
+      - 'tools/phase29/apply_final_acceptance_fixes.py'
+      - '.github/workflows/phase29-final-acceptance-fixes.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply-test-commit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: phase29/final-acceptance-fixes
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Apply final acceptance fixes
+        run: |
+          set -euo pipefail
+          python tools/phase29/apply_final_acceptance_fixes.py
+          python tools/phase29/full_curriculum_closure_audit.py --strict --write-report
+
+      - uses: actions/setup-dotnet@v6.0.0
+        with:
+          dotnet-version: '10.0.200'
+
+      - name: Restore and build
+        run: |
+          set -euo pipefail
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --no-restore
+
+      - name: Phase 29 regression gate
+        run: |
+          set -euo pipefail
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
+            --no-build --no-restore \
+            --filter 'FullyQualifiedName~Phase29'
+
+      - name: Full regression gate
+        run: |
+          set -euo pipefail
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
+            --no-build --no-restore
+
+      - name: Final static acceptance assertions
+        run: |
+          set -euo pipefail
+          grep -q 'var isSupporting = lesson.IsSupporting;' src/Edulytics.Web/Views/LessonContent/Index.cshtml
+          grep -q 'asp-route-curriculumAdoptionId' src/Edulytics.Web/Views/LessonContent/Detail.cshtml
+          ! grep -q '@L\["Coverage"\]' src/Edulytics.Web/Views/LessonContent/Index.cshtml
+          ! grep -q '@L\["OfficiallyAligned"\]' src/Edulytics.Web/Views/LessonContent/Index.cshtml
+          test "$(grep -c 'lesson-content-metric__label' src/Edulytics.Web/Views/LessonContent/Index.cshtml)" -eq 3
+          git diff --check
+
+      - name: Remove maintenance-only runner files
+        run: |
+          rm -f tools/phase29/apply_final_acceptance_fixes.py
+          rm -f .github/workflows/phase29-final-acceptance-fixes.yml
+
+      - name: Commit verified product changes
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No product changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Phase29: fix final lesson-content acceptance issues'
+          git push origin HEAD:phase29/final-acceptance-fixes
