@@ -1,0 +1,169 @@
+#!/usr/bin/env python3
+from pathlib import Path
+import re
+
+root = Path('.')
+
+# Add explicit editorial role to the staff detail contract without breaking
+# existing positional constructors.
+contracts = root / 'src/Edulytics.Services/LessonContent/LessonContentContracts.cs'
+text = contracts.read_text(encoding='utf-8')
+old = '''public sealed record CanonicalLessonDetail(
+    Guid LessonId,string LessonCode,string LessonTitle,string UnitTitle,string FrameworkName,string FrameworkVersionName,
+    string SubjectName,string SubjectCode,string GradeName,CanonicalLessonContentStatus? Status,DateTime? PublishedAtUtc,
+    CanonicalLessonTranslationRecord? Body,IReadOnlyList<LessonOutcomeRecord> Outcomes);
+'''
+new = '''public sealed record CanonicalLessonDetail(
+    Guid LessonId,string LessonCode,string LessonTitle,string UnitTitle,string FrameworkName,string FrameworkVersionName,
+    string SubjectName,string SubjectCode,string GradeName,CanonicalLessonContentStatus? Status,DateTime? PublishedAtUtc,
+    CanonicalLessonTranslationRecord? Body,IReadOnlyList<LessonOutcomeRecord> Outcomes)
+{
+    public bool IsSupporting { get; init; }
+}
+'''
+if old in text:
+    text = text.replace(old, new, 1)
+elif new not in text:
+    raise SystemExit('FAIL: CanonicalLessonDetail contract anchor missing')
+contracts.write_text(text, encoding='utf-8')
+
+# Propagate the canonical editorial role into the staff detail response.
+service = root / 'src/Edulytics.Services/LessonContent/LessonContentService.cs'
+text = service.read_text(encoding='utf-8')
+pattern = re.compile(
+    r'''return LessonContentQueryResult<CanonicalLessonDetail>\.Success\(\s*new CanonicalLessonDetail\((?P<body>.*?)\n\s*outcomes\)\);''',
+    re.S)
+match = pattern.search(text)
+if match:
+    replacement = (
+        'return LessonContentQueryResult<CanonicalLessonDetail>.Success(\n'
+        '            new CanonicalLessonDetail(' + match.group('body') + '\n'
+        '                outcomes)\n'
+        '            {\n'
+        '                IsSupporting = ResolveIsSupporting(lesson)\n'
+        '            });'
+    )
+    text = text[:match.start()] + replacement + text[match.end():]
+elif 'IsSupporting = ResolveIsSupporting(lesson)' not in text:
+    raise SystemExit('FAIL: CanonicalLessonDetail service return anchor missing')
+service.write_text(text, encoding='utf-8')
+
+# Replace the compact detail Razor with the same reader used by all curricula,
+# now using the explicit role and preserving exact lesson-library context.
+detail = root / 'src/Edulytics.Web/Views/LessonContent/Detail.cshtml'
+detail.write_text(r'''@model Edulytics.Web.ViewModels.LessonContent.LessonContentDetailViewModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonContentResource> L
+@using Edulytics.Core.Enums
+@using Edulytics.Web.Presentation
+@{
+    Layout = "_AppLayout";
+    ViewData["Title"] = Model.Lesson.LessonTitle;
+    var backAcademicYearId = ViewData["BackAcademicYearId"] is Guid yearId ? yearId : (Guid?)null;
+    var backAcademicProgramId = ViewData["BackAcademicProgramId"] is Guid programId ? programId : (Guid?)null;
+    var backCurriculumAdoptionId = ViewData["BackCurriculumAdoptionId"] is Guid adoptionId ? adoptionId : (Guid?)null;
+    var isSupporting = Model.Lesson.IsSupporting;
+    var statusText = isSupporting ? L["SupportingLesson"].Value : Model.Lesson.Status switch
+    {
+        CanonicalLessonContentStatus.Draft => L["InPreparation"].Value,
+        CanonicalLessonContentStatus.Verified => L["Verified"].Value,
+        CanonicalLessonContentStatus.Published => L["PublishedLesson"].Value,
+        _ => L["NotStarted"].Value
+    };
+    var statusClass = isSupporting ? "supporting" : Model.Lesson.Status?.ToString().ToLowerInvariant() ?? "notstarted";
+    var body = Model.Lesson.Body;
+    var sections = body is null ? Array.Empty<LessonReaderSection>() : new[]
+    {
+        new LessonReaderSection("01", L["Explanation"], "explanation", LessonPresentationParser.Parse(body.Explanation, sectionKind: "explanation")),
+        new LessonReaderSection("02", L["KeyConceptsAndRules"], "concepts", LessonPresentationParser.Parse(body.KeyConceptsAndRules, sectionKind: "concepts")),
+        new LessonReaderSection("03", L["WorkedExamples"], "examples", LessonPresentationParser.Parse(body.WorkedExamples, sectionKind: "examples")),
+        new LessonReaderSection("04", L["StepByStepSolutions"], "steps", LessonPresentationParser.Parse(body.StepByStepSolutions, orderedSteps: true, sectionKind: "steps")),
+        new LessonReaderSection("05", L["CommonMistakes"], "mistakes", LessonPresentationParser.Parse(body.CommonMistakes, sectionKind: "mistakes")),
+        new LessonReaderSection("06", L["QuickSummary"], "summary", LessonPresentationParser.Parse(body.QuickSummary, sectionKind: "summary"))
+    };
+}
+<div class="lesson-reader">
+    <a class="lesson-reader-back"
+       asp-controller="LessonContent"
+       asp-action="Index"
+       asp-route-academicYearId="@backAcademicYearId"
+       asp-route-academicProgramId="@backAcademicProgramId"
+       asp-route-curriculumAdoptionId="@backCurriculumAdoptionId">
+        <span aria-hidden="true">←</span> @L["BackToLessons"]
+    </a>
+
+    <header class="lesson-reader-hero">
+        <div class="lesson-reader-hero__main">
+            <div class="lesson-reader-hero__topline">
+                <span class="student-subject-code">@Model.Lesson.SubjectCode</span>
+                <span class="lesson-content-status lesson-content-status--@statusClass">@statusText</span>
+            </div>
+            <p class="lesson-library-eyebrow">@L["LearningContent"]</p>
+            <h1>@Model.Lesson.LessonTitle</h1>
+            @if (!string.IsNullOrWhiteSpace(Model.Lesson.UnitTitle))
+            {
+                <p class="lesson-reader-hero__unit">@Model.Lesson.UnitTitle</p>
+            }
+            <div class="lesson-reader-meta">
+                <span><small>@L["Subject"]</small><strong>@Model.Lesson.SubjectName</strong></span>
+                <span><small>@L["Grade"]</small><strong>@Model.Lesson.GradeName</strong></span>
+                <span><small>@L["Framework"]</small><strong>@Model.Lesson.FrameworkName</strong></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="lesson-reader-layout">
+        <main class="lesson-reader-main">
+            @if (isSupporting)
+            {
+                <section class="lesson-supporting-message">
+                    <span class="lesson-supporting-message__icon" aria-hidden="true">i</span>
+                    <div><h2>@L["SupportingLesson"]</h2><p>@L["SupportingLessonHelp"]</p></div>
+                </section>
+            }
+            @if (body is null)
+            {
+                <div class="lesson-library-notice">
+                    <span class="lesson-library-notice__icon" aria-hidden="true">i</span>
+                    <span><strong>@statusText</strong><br />@L["ContentPreparationMessage"]</span>
+                </div>
+            }
+            else
+            {
+                @foreach (var section in sections)
+                {
+                    <partial name="_LessonReaderSection" model="section" />
+                }
+            }
+        </main>
+
+        <aside class="lesson-reader-sidebar" aria-label="@L["LessonReference"]">
+            <section class="lesson-reader-sidecard">
+                <h2>@L["OfficialLessonIdentity"]</h2>
+                <dl class="lesson-reader-facts">
+                    <div><dt>@L["LessonCode"]</dt><dd>@Model.Lesson.LessonCode</dd></div>
+                    <div><dt>@L["Unit"]</dt><dd>@(string.IsNullOrWhiteSpace(Model.Lesson.UnitTitle) ? "—" : Model.Lesson.UnitTitle)</dd></div>
+                    <div><dt>@L["Version"]</dt><dd>@Model.Lesson.FrameworkVersionName</dd></div>
+                </dl>
+            </section>
+            <section class="lesson-reader-sidecard">
+                <h2>@L["StandardsReference"]</h2>
+                @if (Model.Lesson.Outcomes.Count == 0)
+                {
+                    <div class="lesson-content-empty">—</div>
+                }
+                else
+                {
+                    <div class="lesson-reader-outcomes">
+                        @foreach (var outcome in Model.Lesson.Outcomes)
+                        {
+                            <article class="lesson-reader-outcome"><strong>@outcome.Code</strong><p>@outcome.Description</p></article>
+                        }
+                    </div>
+                }
+            </section>
+        </aside>
+    </div>
+</div>
+''', encoding='utf-8')
+
+print('PASS: staff lesson detail uses explicit role and preserves library context')
