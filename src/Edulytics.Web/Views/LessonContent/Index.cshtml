@@ -53,11 +53,12 @@
         <form method="get"
               asp-controller="LessonContent"
               asp-action="Index"
-              class="lesson-content-filter"
+              class="lesson-content-filter app-surface-card"
               id="lessonContentFilter">
             <div class="lesson-content-filter__field">
+                <span class="lesson-content-filter__step" aria-hidden="true">1</span>
                 <label for="academicYearId">@L["AcademicYear"]</label>
-                <select id="academicYearId" name="academicYearId" required>
+                <select id="academicYearId" name="academicYearId" class="lesson-content-select" required>
                     <option value="">@L["SelectAcademicYear"]</option>
                     @foreach (var year in years)
                     {
@@ -70,8 +71,9 @@
             </div>
 
             <div class="lesson-content-filter__field">
+                <span class="lesson-content-filter__step" aria-hidden="true">2</span>
                 <label for="academicProgramId">@L["ProgramStream"]</label>
-                <select id="academicProgramId" name="academicProgramId" required>
+                <select id="academicProgramId" name="academicProgramId" class="lesson-content-select" required>
                     <option value="">@L["SelectProgramStream"]</option>
                     @foreach (var program in programs)
                     {
@@ -85,8 +87,9 @@
             </div>
 
             <div class="lesson-content-filter__field">
+                <span class="lesson-content-filter__step" aria-hidden="true">3</span>
                 <label for="curriculumAdoptionId">@L["CurriculumLevel"]</label>
-                <select id="curriculumAdoptionId" name="curriculumAdoptionId" required>
+                <select id="curriculumAdoptionId" name="curriculumAdoptionId" class="lesson-content-select" required>
                     <option value="">@L["SelectCurriculumLevel"]</option>
                     @foreach (var option in options)
                     {
@@ -127,11 +130,7 @@
             <div class="lesson-content-topic-stack">
                 @foreach (var group in Model.Dashboard.Curricula)
                 {
-                    var officiallyAlignedCount = group.Lessons.Count(x => x.HasOfficialAlignment);
-                    var supportingCount = group.Lessons.Count - officiallyAlignedCount;
-                    var coveragePercent = group.TotalLessons == 0
-                        ? 0
-                        : (int)Math.Round(100m * group.ProductionReadyLessons / group.TotalLessons);
+                    var supportingCount = group.Lessons.Count(x => x.IsSupporting);
 
                     <section class="lesson-content-topic-card">
                         <header class="lesson-content-topic-card__header">
@@ -162,14 +161,6 @@
                                 <span class="lesson-content-metric__value">@group.ProductionReadyLessons</span>
                                 <span class="lesson-content-metric__label">@L["ProductionReady"]</span>
                             </div>
-                            <div class="lesson-content-metric">
-                                <span class="lesson-content-metric__value">@coveragePercent%</span>
-                                <span class="lesson-content-metric__label">@L["Coverage"]</span>
-                            </div>
-                            <div class="lesson-content-metric">
-                                <span class="lesson-content-metric__value">@officiallyAlignedCount</span>
-                                <span class="lesson-content-metric__label">@L["OfficiallyAligned"]</span>
-                            </div>
                             <div class="lesson-content-metric lesson-content-metric--supporting">
                                 <span class="lesson-content-metric__value">@supportingCount</span>
                                 <span class="lesson-content-metric__label">@L["SupportingLessons"]</span>
@@ -185,7 +176,7 @@
                             <div class="lesson-content-list" role="list">
                                 @foreach (var lesson in group.Lessons)
                                 {
-                                    var isSupporting = !lesson.HasOfficialAlignment;
+                                    var isSupporting = lesson.IsSupporting;
                                     var statusText = isSupporting
                                         ? L["SupportingLesson"].Value
                                         : lesson.Status switch
@@ -209,7 +200,10 @@
                                        role="listitem"
                                        asp-controller="LessonContent"
                                        asp-action="Detail"
-                                       asp-route-id="@lesson.LessonId">
+                                       asp-route-id="@lesson.LessonId"
+                                       asp-route-academicYearId="@Model.Dashboard.SelectedAcademicYearId"
+                                       asp-route-academicProgramId="@Model.Dashboard.SelectedAcademicProgramId"
+                                       asp-route-curriculumAdoptionId="@Model.Dashboard.SelectedCurriculumAdoptionId">
                                         <span class="lesson-content-row__order">@lesson.SortOrder</span>
                                         <span class="lesson-content-row__title">
                                             @lesson.LessonTitle

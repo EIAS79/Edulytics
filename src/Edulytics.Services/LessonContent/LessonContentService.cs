@@ -175,7 +175,10 @@ public sealed class LessonContentService : ILessonContentService
                             content?.Status,
                             content?.PublishedAtUtc,
                             LessonContentPolicy.IsStandaloneCanonicalTarget(
-                                lesson.OfficialOutcomeCount));
+                                lesson.OfficialOutcomeCount))
+                        {
+                            IsSupporting = ResolveIsSupporting(lesson)
+                        };
                     })
                     .ToArray();
 
@@ -322,8 +325,7 @@ public sealed class LessonContentService : ILessonContentService
                         DisplayLevel(context),
                         context.FrameworkName,
                         lesson.SortOrder,
-                        LessonContentPolicy.IsSupporting(
-                            lesson.OfficialOutcomeCount)));
+                        ResolveIsSupporting(lesson)));
             }
         }
 
@@ -489,7 +491,10 @@ public sealed class LessonContentService : ILessonContentService
                 content?.Status,
                 content?.PublishedAtUtc,
                 body,
-                outcomes));
+                outcomes)
+            {
+                IsSupporting = ResolveIsSupporting(lesson)
+            });
     }
 
     private async Task<IReadOnlyList<CanonicalCurriculumContextRecord>> ScopeAndEnrichStaffContextsAsync(
@@ -709,6 +714,12 @@ public sealed class LessonContentService : ILessonContentService
         pathway = legacy.Pathway;
         return true;
     }
+
+    private static bool ResolveIsSupporting(
+        PedagogicalLessonRecord lesson) =>
+        lesson.IsSupporting ??
+        LessonContentPolicy.IsSupporting(
+            lesson.OfficialOutcomeCount);
 
     private static string DisplayLevel(
         CanonicalCurriculumContextRecord context) =>

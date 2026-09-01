@@ -280,12 +280,11 @@ public static class CanonicalLessonContentPackContract
                 throw new InvalidOperationException(
                     $"Duplicate LessonCode: {lesson.LessonCode}.");
 
-            if ((!lesson.IsSupporting && lesson.OutcomeCodes.Count == 0) ||
-                (lesson.IsSupporting && lesson.OutcomeCodes.Count != 0) ||
+            if ((lesson.IsSupporting && lesson.OutcomeCodes.Count != 0) ||
                 lesson.OutcomeCodes.Any(string.IsNullOrWhiteSpace))
             {
                 throw new InvalidOperationException(
-                    $"Lesson {lesson.LessonCode} must have exact OutcomeCodes when aligned and zero OutcomeCodes when Supporting.");
+                    $"Lesson {lesson.LessonCode} must have zero OutcomeCodes when Supporting; curriculum lessons may remain unmapped when no verified formal mapping exists.");
             }
 
             if (lesson.OutcomeCodes.Count !=

@@ -532,7 +532,7 @@ def build_supporting_scope(
         "SourceLicense": OGL,
         "RequiredDigitalAttribution": OGL_ATTRIBUTION,
         "SourceSelectionReason": "The official curriculum source remains the academic authority. Edulytics uses open DfE Mathematics material only as lawful pedagogical scaffolding for independently authored lesson explanations where official copyrighted or source-linked prose is not reproduced.",
-        "SourceSelectionEvidence": f"This scope contains {len(lessons)} Edulytics-authored supporting lessons across {len(units)} units. No formal outcome mapping is claimed without explicit source evidence; every formal OutcomeCodes collection is empty.",
+        "SourceSelectionEvidence": f"This scope contains {len(lessons)} Edulytics-authored curriculum lessons across {len(units)} units. No formal outcome mapping is claimed without explicit source evidence; every formal OutcomeCodes collection is empty.",
         "SourceEvidenceUrls": evidence,
         "SourceRightsNote": f"{OGL_ATTRIBUTION} Official {official_authority} wording is not reproduced. Edulytics learner-facing bodies are independently authored.",
         "SemanticGraphSha256": graph_sha,
@@ -559,7 +559,7 @@ def build_supporting_scope(
             "TitleProvenance": "PedagogicalSource",
             "TitleSourceReference": f"{source_title}; Edulytics-authored scope sequence for {native}{' / ' + pathway if pathway else ''}.",
             "OutcomeCodes": [],
-            "IsSupporting": True,
+            "IsSupporting": False,
             "SourceUrl": source_url,
             "SourceLocator": f"{native} / {lesson['UnitTitle']} / {lesson['LessonNumber']:02d}",
             "SourceTitle": source_title,
@@ -572,7 +572,7 @@ def build_supporting_scope(
             "RetrievalUrl": source_url,
             "RetrievalChannel": "HTTPS",
             "RetrievalTimestamp": CHECKED_AT,
-            "AdaptationStatus": "Edulytics-authored supporting lesson informed by open OGL Mathematics pedagogy. The official curriculum remains the authority; no unverified formal mapping is claimed.",
+            "AdaptationStatus": "Edulytics-authored curriculum lesson informed by open OGL Mathematics pedagogy. The official curriculum remains the authority; no unverified formal mapping is claimed.",
             "Translations": [translation],
         })
 

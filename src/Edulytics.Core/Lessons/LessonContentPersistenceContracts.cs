@@ -39,7 +39,10 @@ public sealed record PedagogicalLessonRecord(
     int LogicalLevelFrom,
     int LogicalLevelTo,
     int SortOrder,
-    int OfficialOutcomeCount);
+    int OfficialOutcomeCount)
+{
+    public bool? IsSupporting { get; init; }
+}
 
 public sealed record LessonOutcomeRecord(
     Guid Id,

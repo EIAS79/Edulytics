@@ -633,6 +633,45 @@
             }
         </svg>
     }
+
+    else if (visual.Type == LessonVisualType.ConceptFlow)
+    {
+        var labels = visual.Labels.Count >= 3
+            ? visual.Labels
+            : new[] { "Understand", "Represent", "Check" };
+
+        <svg viewBox="0 0 760 250"
+             role="img"
+             aria-label="@visual.AccessibilityText">
+
+            <title>@visual.AccessibilityText</title>
+
+            <path d="M220 125h95 M445 125h95"
+                  class="visual-arrow" />
+
+            @for (var i = 0; i < 3; i++)
+            {
+                var x = 35 + i * 250;
+
+                <rect x="@x"
+                      y="72"
+                      width="180"
+                      height="106"
+                      rx="24"
+                      class="visual-area-fill" />
+
+                <foreignObject x="@(x + 15)"
+                               y="100"
+                               width="150"
+                               height="54">
+                    <div xmlns="http://www.w3.org/1999/xhtml"
+                         class="visual-svg-concept">
+                        @labels[i]
+                    </div>
+                </foreignObject>
+            }
+        </svg>
+    }
     else if (visual.Type == LessonVisualType.GeometricFigure)
     {
         <svg viewBox="0 0 520 340"

@@ -37,11 +37,29 @@ public sealed class LessonContentController : Controller
         Index(null, null, null, cancellationToken);
 
     [HttpGet("{id:guid}")]
-    public async Task<IActionResult> Detail(Guid id,CancellationToken cancellationToken)
+    public async Task<IActionResult> Detail(
+        Guid id,
+        Guid? academicYearId,
+        Guid? academicProgramId,
+        Guid? curriculumAdoptionId,
+        CancellationToken cancellationToken)
     {
         if(!TryActor(out var actorId))return Forbid();
-        var r=await _lessons.GetStaffLessonAsync(actorId,id,CultureInfo.CurrentUICulture.Name,cancellationToken);
-        return r.Value is null?HandleError(r.Error):View(new LessonContentDetailViewModel(r.Value));
+        var result=await _lessons.GetStaffLessonAsync(actorId,id,CultureInfo.CurrentUICulture.Name,cancellationToken);
+        if (result.Value is null)
+            return HandleError(result.Error);
+
+        ViewData["BackAcademicYearId"] = academicYearId;
+        ViewData["BackAcademicProgramId"] = academicProgramId;
+        ViewData["BackCurriculumAdoptionId"] = curriculumAdoptionId;
+
+        ViewData["BackAcademicYearId"] = academicYearId;
+        ViewData["BackAcademicProgramId"] = academicProgramId;
+        ViewData["BackCurriculumAdoptionId"] = curriculumAdoptionId;
+
+        return View(
+            new LessonContentDetailViewModel(
+                result.Value));
     }
 
     private IActionResult HandleError(LessonContentErrorCode? error)=>

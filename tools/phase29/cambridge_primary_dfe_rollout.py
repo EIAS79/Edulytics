@@ -312,7 +312,7 @@ def build_stage(year: int) -> tuple[dict, dict, dict]:
             "TitleProvenance": "PedagogicalSource",
             "TitleSourceReference": f"DfE Year {year} ready-to-progress criterion {criterion['code']}; Edulytics supporting sequence; no Cambridge outcome mapping claimed.",
             "OutcomeCodes": [],
-            "IsSupporting": True,
+            "IsSupporting": False,
             "SourceUrl": pdf_url,
             "SourceLocator": criterion["code"],
             "SourceTitle": f"Mathematics guidance: year {year}",
@@ -325,7 +325,7 @@ def build_stage(year: int) -> tuple[dict, dict, dict]:
             "RetrievalUrl": pdf_url,
             "RetrievalChannel": "HTTPS",
             "RetrievalTimestamp": CHECKED_AT,
-            "AdaptationStatus": "Edulytics-authored supporting lesson informed by OGL DfE guidance for the corresponding year. Cambridge official identifiers remain in the curriculum reference graph; this lesson does not claim an unverified formal Cambridge mapping.",
+            "AdaptationStatus": "Edulytics-authored curriculum lesson informed by OGL DfE guidance for the corresponding year. Cambridge official identifiers remain in the curriculum reference graph; this lesson does not claim an unverified formal Cambridge mapping.",
             "Translations": [body],
         })
 

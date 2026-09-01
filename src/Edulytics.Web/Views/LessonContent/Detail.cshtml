@@ -5,7 +5,10 @@
 @{
     Layout = "_AppLayout";
     ViewData["Title"] = Model.Lesson.LessonTitle;
-    var isSupporting = Model.Lesson.Outcomes.Count == 0;
+    var backAcademicYearId = ViewData["BackAcademicYearId"] is Guid yearId ? yearId : (Guid?)null;
+    var backAcademicProgramId = ViewData["BackAcademicProgramId"] is Guid programId ? programId : (Guid?)null;
+    var backCurriculumAdoptionId = ViewData["BackCurriculumAdoptionId"] is Guid adoptionId ? adoptionId : (Guid?)null;
+    var isSupporting = Model.Lesson.IsSupporting;
     var statusText = isSupporting ? L["SupportingLesson"].Value : Model.Lesson.Status switch
     {
         CanonicalLessonContentStatus.Draft => L["InPreparation"].Value,
@@ -26,24 +29,84 @@
     };
 }
 <div class="lesson-reader">
-    <a class="lesson-reader-back" asp-action="Index"><span aria-hidden="true">←</span> @L["BackToLessons"]</a>
-    <header class="lesson-reader-hero"><div class="lesson-reader-hero__main">
-        <div class="lesson-reader-hero__topline"><span class="student-subject-code">@Model.Lesson.SubjectCode</span><span class="lesson-content-status lesson-content-status--@statusClass">@statusText</span></div>
-        <p class="lesson-library-eyebrow">@L["LearningContent"]</p><h1>@Model.Lesson.LessonTitle</h1>
-        @if (!string.IsNullOrWhiteSpace(Model.Lesson.UnitTitle)) { <p class="lesson-reader-hero__unit">@Model.Lesson.UnitTitle</p> }
-        <div class="lesson-reader-meta"><span><small>@L["Subject"]</small><strong>@Model.Lesson.SubjectName</strong></span><span><small>@L["Grade"]</small><strong>@Model.Lesson.GradeName</strong></span><span><small>@L["Framework"]</small><strong>@Model.Lesson.FrameworkName</strong></span></div>
-    </div></header>
+    <a class="lesson-reader-back"
+       asp-controller="LessonContent"
+       asp-action="Index"
+       asp-route-academicYearId="@backAcademicYearId"
+       asp-route-academicProgramId="@backAcademicProgramId"
+       asp-route-curriculumAdoptionId="@backCurriculumAdoptionId">
+        <span aria-hidden="true">←</span> @L["BackToLessons"]
+    </a>
+
+    <header class="lesson-reader-hero">
+        <div class="lesson-reader-hero__main">
+            <div class="lesson-reader-hero__topline">
+                <span class="student-subject-code">@Model.Lesson.SubjectCode</span>
+                <span class="lesson-content-status lesson-content-status--@statusClass">@statusText</span>
+            </div>
+            <p class="lesson-library-eyebrow">@L["LearningContent"]</p>
+            <h1>@Model.Lesson.LessonTitle</h1>
+            @if (!string.IsNullOrWhiteSpace(Model.Lesson.UnitTitle))
+            {
+                <p class="lesson-reader-hero__unit">@Model.Lesson.UnitTitle</p>
+            }
+            <div class="lesson-reader-meta">
+                <span><small>@L["Subject"]</small><strong>@Model.Lesson.SubjectName</strong></span>
+                <span><small>@L["Grade"]</small><strong>@Model.Lesson.GradeName</strong></span>
+                <span><small>@L["Framework"]</small><strong>@Model.Lesson.FrameworkName</strong></span>
+            </div>
+        </div>
+    </header>
+
     <div class="lesson-reader-layout">
         <main class="lesson-reader-main">
-            @if (isSupporting) { <section class="lesson-supporting-message"><span class="lesson-supporting-message__icon" aria-hidden="true">i</span><div><h2>@L["SupportingLesson"]</h2><p>@L["SupportingLessonHelp"]</p></div></section> }
-            @if (body is null) { <div class="lesson-library-notice"><span class="lesson-library-notice__icon" aria-hidden="true">i</span><span><strong>@statusText</strong><br />@L["ContentPreparationMessage"]</span></div> }
-            else { @foreach (var section in sections) { <partial name="_LessonReaderSection" model="section" /> } }
+            @if (isSupporting)
+            {
+                <section class="lesson-supporting-message">
+                    <span class="lesson-supporting-message__icon" aria-hidden="true">i</span>
+                    <div><h2>@L["SupportingLesson"]</h2><p>@L["SupportingLessonHelp"]</p></div>
+                </section>
+            }
+            @if (body is null)
+            {
+                <div class="lesson-library-notice">
+                    <span class="lesson-library-notice__icon" aria-hidden="true">i</span>
+                    <span><strong>@statusText</strong><br />@L["ContentPreparationMessage"]</span>
+                </div>
+            }
+            else
+            {
+                @foreach (var section in sections)
+                {
+                    <partial name="_LessonReaderSection" model="section" />
+                }
+            }
         </main>
+
         <aside class="lesson-reader-sidebar" aria-label="@L["LessonReference"]">
-            <section class="lesson-reader-sidecard"><h2>@L["OfficialLessonIdentity"]</h2><dl class="lesson-reader-facts"><div><dt>@L["LessonCode"]</dt><dd>@Model.Lesson.LessonCode</dd></div><div><dt>@L["Unit"]</dt><dd>@(string.IsNullOrWhiteSpace(Model.Lesson.UnitTitle) ? "—" : Model.Lesson.UnitTitle)</dd></div><div><dt>@L["Version"]</dt><dd>@Model.Lesson.FrameworkVersionName</dd></div></dl></section>
-            <section class="lesson-reader-sidecard"><h2>@L["StandardsReference"]</h2>
-                @if (Model.Lesson.Outcomes.Count == 0) { <div class="lesson-content-empty">@L["SupportingLessonHelp"]</div> }
-                else { <div class="lesson-reader-outcomes">@foreach (var outcome in Model.Lesson.Outcomes) { <article class="lesson-reader-outcome"><strong>@outcome.Code</strong><p>@outcome.Description</p></article> }</div> }
+            <section class="lesson-reader-sidecard">
+                <h2>@L["OfficialLessonIdentity"]</h2>
+                <dl class="lesson-reader-facts">
+                    <div><dt>@L["LessonCode"]</dt><dd>@Model.Lesson.LessonCode</dd></div>
+                    <div><dt>@L["Unit"]</dt><dd>@(string.IsNullOrWhiteSpace(Model.Lesson.UnitTitle) ? "—" : Model.Lesson.UnitTitle)</dd></div>
+                    <div><dt>@L["Version"]</dt><dd>@Model.Lesson.FrameworkVersionName</dd></div>
+                </dl>
+            </section>
+            <section class="lesson-reader-sidecard">
+                <h2>@L["StandardsReference"]</h2>
+                @if (Model.Lesson.Outcomes.Count == 0)
+                {
+                    <div class="lesson-content-empty">—</div>
+                }
+                else
+                {
+                    <div class="lesson-reader-outcomes">
+                        @foreach (var outcome in Model.Lesson.Outcomes)
+                        {
+                            <article class="lesson-reader-outcome"><strong>@outcome.Code</strong><p>@outcome.Description</p></article>
+                        }
+                    </div>
+                }
             </section>
         </aside>
     </div>
