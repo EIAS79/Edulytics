@@ -1,3 +1,4 @@
+using System.Text;
 using Edulytics.Core.Analytics;
 using Edulytics.Core.AssessmentIntelligence;
 using Edulytics.Core.Enums;
@@ -67,8 +68,6 @@ public sealed class EquivalentReassessmentGeneratorTests
         var orchestrator = new EquivalentReassessmentGenerator(generator, recovery);
         var freshBatch = orchestrator.Generate(recoveryPlan, [profileDefinition], seed: 97);
 
-        // This is the authoritative Phase 36 gate. It verifies comparable scope,
-        // difficulty, prior exposure exclusion and prompt-shape freshness.
         recovery.ValidateEquivalentReassessment(recoveryPlan, freshBatch);
 
         var previousFingerprintSet = previousFingerprints.ToHashSet(StringComparer.Ordinal);
@@ -188,7 +187,7 @@ public sealed class EquivalentReassessmentGeneratorTests
                     generated.Item.ExposureFingerprint,
                     previousFingerprintSet);
                 Assert.DoesNotContain(
-                    WeaknessRecoveryEngine.NormalizePromptShape(generated.Item.Prompt),
+                    NormalizePromptShape(generated.Item.Prompt),
                     previousShapeSet);
             });
         }
@@ -240,6 +239,43 @@ public sealed class EquivalentReassessmentGeneratorTests
             DateTime.UtcNow,
             [row],
             "phase31-v1");
+    }
+
+    private static string NormalizePromptShape(string prompt)
+    {
+        if (string.IsNullOrWhiteSpace(prompt))
+            return string.Empty;
+
+        var builder = new StringBuilder(prompt.Length);
+        var inNumber = false;
+        var pendingSpace = false;
+
+        foreach (var raw in prompt.Trim().ToLowerInvariant())
+        {
+            if (char.IsDigit(raw) || raw == '.' || raw == ',')
+            {
+                if (!inNumber)
+                    builder.Append('#');
+                inNumber = true;
+                pendingSpace = false;
+                continue;
+            }
+
+            inNumber = false;
+            if (char.IsLetter(raw))
+            {
+                if (pendingSpace && builder.Length > 0 && builder[^1] != ' ')
+                    builder.Append(' ');
+                builder.Append(raw);
+                pendingSpace = false;
+            }
+            else
+            {
+                pendingSpace = true;
+            }
+        }
+
+        return builder.ToString().Trim();
     }
 
     private static Guid ScopeGuid(int scope, byte salt) =>
