@@ -9,6 +9,7 @@ on:
       - 'tools/phase29/normalize_final_acceptance_controller.py'
       - 'tools/phase29/normalize_final_acceptance_detail.py'
       - 'tools/phase29/prepare_detail_for_main_patch.py'
+      - 'tools/phase29/fix_final_acceptance_regressions.py'
       - '.github/workflows/phase29-final-acceptance-fixes.yml'
   workflow_dispatch:
 
@@ -36,6 +37,7 @@ jobs:
           python tools/phase29/normalize_final_acceptance_detail.py
           python tools/phase29/prepare_detail_for_main_patch.py
           python tools/phase29/apply_final_acceptance_fixes.py
+          python tools/phase29/fix_final_acceptance_regressions.py
           python tools/phase29/full_curriculum_closure_audit.py --strict --write-report
 
       - uses: actions/setup-dotnet@v6.0.0
@@ -78,6 +80,7 @@ jobs:
           rm -f tools/phase29/normalize_final_acceptance_controller.py
           rm -f tools/phase29/normalize_final_acceptance_detail.py
           rm -f tools/phase29/prepare_detail_for_main_patch.py
+          rm -f tools/phase29/fix_final_acceptance_regressions.py
           rm -f .github/workflows/phase29-final-acceptance-fixes.yml
 
       - name: Commit verified product changes
