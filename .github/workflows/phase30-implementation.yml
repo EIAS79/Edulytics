@@ -33,6 +33,8 @@ jobs:
         run: |
           set -euo pipefail
           python tools/phase30/apply_phase30.py
+          sed -i 's/internal static bool AnswersMatch/public static bool AnswersMatch/' \
+            src/Edulytics.Services/Practice/PracticeService.cs
 
       - name: Restore and compile model
         run: |
