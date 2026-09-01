@@ -63,14 +63,27 @@ jobs:
           set -euo pipefail
           migration="$(ls src/Edulytics.Data/Migrations/*_Phase30PracticeAssessmentItemEngine.cs | head -1)"
           test -n "$migration"
-          if grep -E 'Drop(Table|Column)|Rename(Table|Column)' "$migration"; then
-            echo 'ERROR: Phase30 migration contains destructive/rename operations.'
-            exit 1
-          fi
-          grep -q 'AssessmentItems' "$migration"
-          grep -q 'PracticeAttempts' "$migration"
-          grep -q 'LearningEvidence' "$migration"
-          grep -q 'StudentItemExposures' "$migration"
+          python - "$migration" <<'PY'
+          import pathlib, re, sys
+          path = pathlib.Path(sys.argv[1])
+          text = path.read_text(encoding='utf-8')
+          match = re.search(
+              r'protected override void Up\(MigrationBuilder migrationBuilder\)(.*?)protected override void Down\(MigrationBuilder migrationBuilder\)',
+              text,
+              re.S,
+          )
+          if not match:
+              raise SystemExit('ERROR: could not isolate migration Up method.')
+          up = match.group(1)
+          forbidden = re.findall(r'migrationBuilder\.(Drop(?:Table|Column)|Rename(?:Table|Column))\s*\(', up)
+          if forbidden:
+              raise SystemExit(f'ERROR: destructive/rename operation in Up(): {forbidden}')
+          required = ['AssessmentItems', 'PracticeAttempts', 'LearningEvidence', 'StudentItemExposures']
+          missing = [name for name in required if name not in up]
+          if missing:
+              raise SystemExit(f'ERROR: required Phase30 tables missing from Up(): {missing}')
+          print('PASS: Phase30 migration Up() is additive; Down() rollback drops are allowed.')
+          PY
 
       - name: Build after migration
         run: |
