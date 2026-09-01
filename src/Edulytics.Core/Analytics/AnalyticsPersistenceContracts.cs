@@ -15,7 +15,9 @@ public sealed record AnalyticsSourceSnapshot(
     IReadOnlyList<AssessmentQuestion> AssessmentQuestions,
     IReadOnlyList<QuestionLearningOutcome> OutcomeMappings,
     IReadOnlyList<AssessmentResult> AssessmentResults,
-    IReadOnlyList<StudentAnswer> StudentAnswers);
+    IReadOnlyList<StudentAnswer> StudentAnswers,
+    IReadOnlyList<PracticeAttempt>? PracticeAttempts = null,
+    IReadOnlyList<LearningEvidence>? LearningEvidence = null);
 
 public sealed record AnalyticsProjectionSnapshot(
     IReadOnlyList<AcademicYear> AcademicYears,
