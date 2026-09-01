@@ -167,6 +167,9 @@ builder.Services
     .AddMathematicsGenerationPhase33();
 
 builder.Services
+    .AddExamGenerationPhase34();
+
+builder.Services
     .AddInvitationEmailDelivery(
         builder.Configuration);
 
