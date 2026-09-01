@@ -136,10 +136,11 @@ public sealed class FullSystemLearningLifecycleTests
             priorFingerprints.OrderBy(x => x, StringComparer.Ordinal),
             recoveryPlan.ExcludedExposureFingerprints);
 
-        var reassessmentBatch = generationEngine.Generate(new MathematicsGenerationRequest(
-            recoveryPlan.EquivalentReassessmentBlueprint,
+        var reassessmentGenerator = new EquivalentReassessmentGenerator(generationEngine, recovery);
+        var reassessmentBatch = reassessmentGenerator.Generate(
+            recoveryPlan,
             [GenerationProfile(fixture.Outcome.Id)],
-            97));
+            97);
 
         recovery.ValidateEquivalentReassessment(recoveryPlan, reassessmentBatch);
 
