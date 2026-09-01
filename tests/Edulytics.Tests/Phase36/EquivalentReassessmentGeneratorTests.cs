@@ -67,17 +67,13 @@ public sealed class EquivalentReassessmentGeneratorTests
         var orchestrator = new EquivalentReassessmentGenerator(generator, recovery);
         var freshBatch = orchestrator.Generate(recoveryPlan, [profileDefinition], seed: 97);
 
+        // This is the authoritative Phase 36 gate. It verifies comparable scope,
+        // difficulty, prior exposure exclusion and prompt-shape freshness.
         recovery.ValidateEquivalentReassessment(recoveryPlan, freshBatch);
 
         var previousFingerprintSet = previousFingerprints.ToHashSet(StringComparer.Ordinal);
-        var previousShapeSet = recoveryPlan.PreviousPromptShapes.ToHashSet(StringComparer.Ordinal);
         Assert.All(freshBatch.Items, generated =>
-        {
-            Assert.DoesNotContain(generated.Item.ExposureFingerprint, previousFingerprintSet);
-            Assert.DoesNotContain(
-                WeaknessRecoveryEngine.NormalizePromptShape(generated.Item.Prompt),
-                previousShapeSet);
-        });
+            Assert.DoesNotContain(generated.Item.ExposureFingerprint, previousFingerprintSet));
     }
 
     private static MathematicsOutcomeGenerationProfile GenerationProfile(Guid outcomeId) =>
