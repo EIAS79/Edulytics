@@ -20,9 +20,9 @@ new = '''    [HttpGet("{id:guid}")]
         CancellationToken cancellationToken)
     {
         if(!TryActor(out var actorId))return Forbid();
-        var r=await _lessons.GetStaffLessonAsync(actorId,id,CultureInfo.CurrentUICulture.Name,cancellationToken);
-        if (r.Value is null)
-            return HandleError(r.Error);
+        var result=await _lessons.GetStaffLessonAsync(actorId,id,CultureInfo.CurrentUICulture.Name,cancellationToken);
+        if (result.Value is null)
+            return HandleError(result.Error);
 
         ViewData["BackAcademicYearId"] = academicYearId;
         ViewData["BackAcademicProgramId"] = academicProgramId;
@@ -30,7 +30,7 @@ new = '''    [HttpGet("{id:guid}")]
 
         return View(
             new LessonContentDetailViewModel(
-                r.Value));
+                result.Value));
     }
 '''
 if old in text:
