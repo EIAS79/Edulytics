@@ -122,10 +122,6 @@ public sealed class EquivalentReassessmentGenerator
             selected.Select(x => x!).ToArray(),
             MathematicsQuestionGenerationEngine.GeneratorVersion);
 
-        // Do not weaken or bypass the Phase 36 acceptance contract. Every selected
-        // item came from a fully validated Phase 33 batch at the same blueprint slot;
-        // the Phase 36 validator remains authoritative for scope, difficulty,
-        // coverage, exposure and equivalence semantics across the recomposed batch.
         _recovery.ValidateEquivalentReassessment(plan, result);
         return result;
     }
@@ -173,7 +169,7 @@ public sealed class EquivalentReassessmentGenerator
         return candidate;
     }
 
-    internal static string RecalculateExposureFingerprint(
+    public static string RecalculateExposureFingerprint(
         AssessmentBlueprint blueprint,
         Guid outcomeId,
         AssessmentItem item,
