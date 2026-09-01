@@ -33,6 +33,7 @@ public static class AnalyticsRegistrationExtensions
                             RoleNames.Teacher));
             });
 
+        services.AddLearningIntelligencePhase37();
         return services;
     }
 }
