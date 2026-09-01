@@ -12,7 +12,8 @@ public enum LessonVisualType
     AreaDecomposition,
     ArrayOrGrid,
     FractionOrRatioBar,
-    GeometricFigure
+    GeometricFigure,
+    ConceptFlow
 }
 
 public sealed record LessonVisualSpec(
@@ -258,6 +259,19 @@ public static class LessonPresentationParser
                 block);
         }
 
+        if (
+            sectionKind is "explanation" or "examples" &&
+            result.All(x => !x.IsVisual))
+        {
+            var fallback = TryCreateFallbackVisual(safe);
+            if (fallback is not null)
+            {
+                result.Insert(
+                    Math.Min(1, result.Count),
+                    new LessonPresentationItem(null, fallback));
+            }
+        }
+
         return result;
     }
 
@@ -381,15 +395,39 @@ public static class LessonPresentationParser
                 "examples" or
                 "mistakes")
         {
-            return value
+            var sourceBlocks = value
                 .Split(
                     '\n',
                     StringSplitOptions.RemoveEmptyEntries |
                     StringSplitOptions.TrimEntries)
-                .Where(
-                    x =>
-                        !string.IsNullOrWhiteSpace(x))
+                .Where(x => !string.IsNullOrWhiteSpace(x))
                 .ToArray();
+
+            var readable = new List<string>();
+            foreach (var sourceBlock in sourceBlocks)
+            {
+                var sentences = SentenceBoundaryRegex
+                    .Split(sourceBlock)
+                    .Select(x => x.Trim())
+                    .Where(x => x.Length > 0)
+                    .ToArray();
+
+                if (sentences.Length <= 2)
+                {
+                    readable.Add(sourceBlock);
+                    continue;
+                }
+
+                for (var i = 0; i < sentences.Length; i += 2)
+                {
+                    readable.Add(
+                        string.Join(
+                            " ",
+                            sentences.Skip(i).Take(2)));
+                }
+            }
+
+            return readable;
         }
 
         return BlockBoundaryRegex.Split(value);
@@ -497,6 +535,89 @@ public static class LessonPresentationParser
             }
         }
     }
+
+
+    private static LessonVisualSpec? TryCreateFallbackVisual(
+        string value)
+    {
+        var plain = NormalizeText(value);
+        if (string.IsNullOrWhiteSpace(plain))
+            return null;
+
+        var lower = plain.ToLowerInvariant();
+        var polish = Regex.IsMatch(
+            lower,
+            @"[ąćęłńóśźż]|\b(?:liczb|ułam|kąt|figur|pole|wykres|współrzęd|proporcj)" +
+            @"",
+            RegexOptions.CultureInvariant);
+
+        var title = polish
+            ? "Model pojęcia"
+            : "Concept model";
+        var accessibility = polish
+            ? "Schemat wspierający rozumienie pojęcia matematycznego."
+            : "Instructional diagram supporting the mathematical concept.";
+
+        if (ContainsAny(lower,
+                "coordinate", "coordinates", "graph", "function", "współrzęd", "wykres", "funkcj"))
+        {
+            return new(
+                LessonVisualType.CoordinatePlane,
+                accessibility,
+                title,
+                string.Empty,
+                string.Empty,
+                [], [], [], [],
+                "concept-coordinate-plane");
+        }
+
+        if (ContainsAny(lower,
+                "area", "perimeter", "geometry", "shape", "angle", "triangle", "polygon",
+                "pole", "obwód", "geometri", "figur", "kąt", "trójkąt", "wielokąt"))
+        {
+            return new(
+                LessonVisualType.AreaDecomposition,
+                accessibility,
+                title,
+                string.Empty,
+                string.Empty,
+                [], [], [], [],
+                "concept-area-decomposition");
+        }
+
+        if (ContainsAny(lower,
+                "number", "integer", "fraction", "decimal", "percent", "ratio", "proportion", "rate",
+                "liczb", "ułam", "dziesięt", "procent", "stosunk", "proporcj"))
+        {
+            return new(
+                LessonVisualType.NumberLine,
+                accessibility,
+                title,
+                string.Empty,
+                string.Empty,
+                [], [], [], [],
+                "concept-number-line");
+        }
+
+        return new(
+            LessonVisualType.ConceptFlow,
+            accessibility,
+            title,
+            string.Empty,
+            string.Empty,
+            [],
+            [],
+            polish
+                ? ["Zrozum", "Przedstaw", "Sprawdź"]
+                : ["Understand", "Represent", "Check"],
+            [],
+            "concept-flow");
+    }
+
+    private static bool ContainsAny(
+        string value,
+        params string[] terms) =>
+        terms.Any(term => value.Contains(term, StringComparison.OrdinalIgnoreCase));
 
     private static LessonVisualSpec? TryCreateVisual(
         string description)

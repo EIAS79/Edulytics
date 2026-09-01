@@ -35,7 +35,7 @@ public sealed class Phase29LessonContentVisualContractTests
             "group.TotalLessons",
             index);
 
-        Assert.Contains(
+        Assert.DoesNotContain(
             "officiallyAlignedCount",
             index);
 

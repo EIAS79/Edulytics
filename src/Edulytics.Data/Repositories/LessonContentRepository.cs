@@ -221,7 +221,15 @@ public sealed class LessonContentRepository : ILessonContentRepository
                 x.LogicalLevelFrom,
                 x.LogicalLevelTo,
                 x.SortOrder,
-                countByLesson.GetValueOrDefault(x.Id)))
+                countByLesson.GetValueOrDefault(x.Id))
+            {
+                IsSupporting =
+                    CanonicalLessonRoleRegistry.TryGetIsSupporting(
+                        x.Code,
+                        out var isSupporting)
+                        ? isSupporting
+                        : null
+            })
             .ToArray();
     }
 

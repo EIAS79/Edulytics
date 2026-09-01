@@ -8790,3 +8790,111 @@ a.lesson-content-row:hover
         top: 2.25rem !important;
     }
 }
+
+
+/* Phase 29 final acceptance — lesson library selector parity */
+.lesson-content-filter.app-surface-card {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+    gap: 1rem;
+    align-items: end;
+    padding: 1.15rem;
+    margin: 1.25rem 0 1.5rem;
+    border: 1px solid var(--app-border, #dfe5f1);
+    border-radius: 18px;
+    background: var(--app-surface, #fff);
+    box-shadow: 0 10px 30px rgba(25, 39, 75, .06);
+}
+
+.lesson-content-filter__field {
+    position: relative;
+    display: grid;
+    gap: .45rem;
+    min-width: 0;
+}
+
+.lesson-content-filter__field label {
+    padding-left: 2rem;
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .035em;
+    text-transform: uppercase;
+    color: #475569;
+}
+
+.lesson-content-filter__step {
+    position: absolute;
+    top: -.12rem;
+    left: 0;
+    display: inline-grid;
+    place-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 999px;
+    background: #eef2ff;
+    color: #4f46e5;
+    font-size: .74rem;
+    font-weight: 900;
+}
+
+.lesson-content-select {
+    width: 100%;
+    min-height: 46px;
+    padding: .68rem 2.35rem .68rem .82rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    background: #fff;
+    color: #0f172a;
+    font: inherit;
+    font-weight: 650;
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.lesson-content-select:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, .14);
+}
+
+.lesson-content-filter__action .school-button {
+    min-height: 46px;
+    padding-inline: 1.25rem;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.lesson-content-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.lesson-reader-blocks--explanation,
+.lesson-reader-blocks--concepts,
+.lesson-reader-blocks--examples,
+.lesson-reader-blocks--mistakes {
+    gap: 1rem;
+}
+
+.lesson-reader-text {
+    line-height: 1.75;
+}
+
+.lesson-instructional-visual {
+    margin-block: 1rem 1.25rem;
+}
+
+@media (max-width: 1050px) {
+    .lesson-content-filter.app-surface-card {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+    .lesson-content-filter.app-surface-card,
+    .lesson-content-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-content-filter__action .school-button {
+        width: 100%;
+    }
+}

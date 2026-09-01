@@ -29,7 +29,10 @@ public sealed record LessonContentCurriculumOption(
 
 public sealed record CanonicalLessonLibraryItem(
     Guid LessonId,string LessonCode,string LessonTitle,string UnitTitle,int SortOrder,
-    CanonicalLessonContentStatus? Status,DateTime? PublishedAtUtc,bool HasOfficialAlignment);
+    CanonicalLessonContentStatus? Status,DateTime? PublishedAtUtc,bool HasOfficialAlignment)
+{
+    public bool IsSupporting { get; init; }
+}
 
 public sealed record CanonicalCurriculumLibraryGroup(
     Guid FrameworkVersionId,string FrameworkName,string FrameworkVersionName,string SubjectName,string SubjectCode,
@@ -57,7 +60,10 @@ public sealed record LessonContentDashboard(Guid SchoolId,IReadOnlyList<Canonica
 public sealed record CanonicalLessonDetail(
     Guid LessonId,string LessonCode,string LessonTitle,string UnitTitle,string FrameworkName,string FrameworkVersionName,
     string SubjectName,string SubjectCode,string GradeName,CanonicalLessonContentStatus? Status,DateTime? PublishedAtUtc,
-    CanonicalLessonTranslationRecord? Body,IReadOnlyList<LessonOutcomeRecord> Outcomes);
+    CanonicalLessonTranslationRecord? Body,IReadOnlyList<LessonOutcomeRecord> Outcomes)
+{
+    public bool IsSupporting { get; init; }
+}
 
 public sealed record StudentLessonSummary(
     Guid Id,string Title,string TopicName,string SubjectName,string SubjectCode,string GradeName,string FrameworkName,int Order,
