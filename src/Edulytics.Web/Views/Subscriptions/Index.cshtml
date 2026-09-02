@@ -1,9 +1,15 @@
 @model Edulytics.Web.ViewModels.Subscriptions.SubscriptionIndexViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SubscriptionResource> S
 @using Edulytics.Core.Enums
+@using Edulytics.Services.Subscriptions
 
 @{
     ViewData["Title"] = S["Title"].Value;
+    var minimumSeats = SubscriptionCommercialPolicy.MinimumCommittedSeats;
+    var defaultCurrency = Model.EligibleSchools.FirstOrDefault()?.CurrencyCode ?? string.Empty;
+    var threeMonthPrice = SubscriptionCommercialPolicy.MonthlyUnitPrice(SubscriptionTerm.ThreeMonths);
+    var sixMonthPrice = SubscriptionCommercialPolicy.MonthlyUnitPrice(SubscriptionTerm.SixMonths);
+    var tenMonthPrice = SubscriptionCommercialPolicy.MonthlyUnitPrice(SubscriptionTerm.SchoolYearTenMonths);
 }
 
 <section class="subscription-page">
@@ -47,7 +53,7 @@
                     <select id="subscription-school" name="schoolId" required>
                         @foreach (var school in Model.EligibleSchools)
                         {
-                            <option value="@school.Id">
+                            <option value="@school.Id" data-currency="@school.CurrencyCode">
                                 @school.Name (@school.SchoolCode) — @school.CountryCode
                             </option>
                         }
@@ -56,10 +62,24 @@
 
                 <div>
                     <label for="subscription-term">@S["Term"]</label>
-                    <select id="subscription-term" name="term">
-                        <option value="@((int)SubscriptionTerm.ThreeMonths)">@S["ThreeMonths"]</option>
-                        <option value="@((int)SubscriptionTerm.SixMonths)">@S["SixMonths"]</option>
-                        <option value="@((int)SubscriptionTerm.SchoolYearTenMonths)">@S["TenMonths"]</option>
+                    <select id="subscription-term"
+                            name="term"
+                            data-price-suffix="@S["PerStudentMonth"]">
+                        <option value="@((int)SubscriptionTerm.ThreeMonths)"
+                                data-term-label="@S["TermThreeMonths"]"
+                                data-price="@threeMonthPrice.ToString("0.##")">
+                            @S["TermThreeMonths"] — @threeMonthPrice.ToString("0.##") @defaultCurrency @S["PerStudentMonth"]
+                        </option>
+                        <option value="@((int)SubscriptionTerm.SixMonths)"
+                                data-term-label="@S["TermSixMonths"]"
+                                data-price="@sixMonthPrice.ToString("0.##")">
+                            @S["TermSixMonths"] — @sixMonthPrice.ToString("0.##") @defaultCurrency @S["PerStudentMonth"]
+                        </option>
+                        <option value="@((int)SubscriptionTerm.SchoolYearTenMonths)"
+                                data-term-label="@S["TermSchoolYearTenMonths"]"
+                                data-price="@tenMonthPrice.ToString("0.##")">
+                            @S["TermSchoolYearTenMonths"] — @tenMonthPrice.ToString("0.##") @defaultCurrency @S["PerStudentMonth"]
+                        </option>
                     </select>
                 </div>
 
@@ -76,8 +96,8 @@
                     <input id="subscription-seats"
                            name="committedSeats"
                            type="number"
-                           min="500"
-                           value="500"
+                           min="@minimumSeats"
+                           value="@minimumSeats"
                            required />
                 </div>
 
@@ -157,7 +177,7 @@
                                 <button class="school-button" type="submit">@S["Increase"]</button>
                             </form>
 
-                            @if (item.CommittedSeats > 500)
+                            @if (item.CommittedSeats > minimumSeats)
                             {
                                 <form asp-action="ScheduleReduction"
                                       asp-route-schoolId="@item.SchoolId"
@@ -168,9 +188,9 @@
                                         @S["RenewalSeats"]
                                         <input name="renewalSeats"
                                                type="number"
-                                               min="500"
+                                               min="@minimumSeats"
                                                max="@(item.CommittedSeats - 1)"
-                                               value="500"
+                                               value="@minimumSeats"
                                                required />
                                     </label>
                                     <button class="school-button" type="submit">@S["ScheduleReduction"]</button>
@@ -215,3 +235,32 @@
         }
     </section>
 </section>
+
+@if (Model.EligibleSchools.Count > 0)
+{
+    <script>
+        (() => {
+            const schoolSelect = document.getElementById('subscription-school');
+            const termSelect = document.getElementById('subscription-term');
+
+            if (!schoolSelect || !termSelect) {
+                return;
+            }
+
+            const updateTermPrices = () => {
+                const schoolOption = schoolSelect.options[schoolSelect.selectedIndex];
+                const currency = schoolOption?.dataset.currency ?? '';
+                const suffix = termSelect.dataset.priceSuffix ?? '';
+
+                for (const option of termSelect.options) {
+                    const label = option.dataset.termLabel ?? '';
+                    const price = option.dataset.price ?? '';
+                    option.textContent = `${label} — ${price} ${currency} ${suffix}`.trim();
+                }
+            };
+
+            schoolSelect.addEventListener('change', updateTermPrices);
+            updateTermPrices();
+        })();
+    </script>
+}
