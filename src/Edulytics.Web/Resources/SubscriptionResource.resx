@@ -19,7 +19,7 @@
     <value>Subscriptions &amp; entitlements</value>
   </data>
   <data name="Subtitle" xml:space="preserve">
-    <value>Manage committed student seats, activation, renewal and operational access. Billing and payment reconciliation remain in Phase 25D.</value>
+    <value>Manage committed student seats, activation, renewal and operational access. Billing and payment reconciliation are managed in Billing &amp; finance.</value>
   </data>
   <data name="BackToPlatform" xml:space="preserve">
     <value>Back to platform</value>
@@ -37,7 +37,7 @@
     <value>Create a commercial subscription</value>
   </data>
   <data name="NoEligibleSchools" xml:space="preserve">
-    <value>No supported suspended school is currently eligible for a new subscription.</value>
+    <value>No supported school pending commercial activation is currently eligible for a new subscription.</value>
   </data>
   <data name="School" xml:space="preserve">
     <value>School</value>
@@ -56,6 +56,9 @@
   </data>
   <data name="TenMonths" xml:space="preserve">
     <value>10 months — 10 per student/month</value>
+  </data>
+  <data name="PerStudentMonth" xml:space="preserve">
+    <value>per student/month</value>
   </data>
   <data name="MonthlyInstallments" xml:space="preserve">
     <value>Monthly instalments</value>
@@ -205,7 +208,7 @@
     <value>Invalid billing cadence.</value>
   </data>
   <data name="InvalidCommittedSeats" xml:space="preserve">
-    <value>Committed seats must be at least 500 and cannot be below active students.</value>
+    <value>Committed seats must be at least 100 and cannot be below active students.</value>
   </data>
   <data name="SubscriptionAlreadyExists" xml:space="preserve">
     <value>This school already has a subscription.</value>
@@ -226,7 +229,7 @@
     <value>The renewal seat target must be lower than the current commitment.</value>
   </data>
   <data name="RenewalSeatFloor" xml:space="preserve">
-    <value>Renewal seats cannot be below 500.</value>
+    <value>Renewal seats cannot be below 100.</value>
   </data>
   <data name="RenewalBelowActiveStudents" xml:space="preserve">
     <value>Renewal seats cannot be below the current active-student count.</value>
