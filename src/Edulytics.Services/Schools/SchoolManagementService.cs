@@ -101,7 +101,7 @@ public sealed class SchoolManagementService : ISchoolManagementService
             Name = request.Name.Trim(),
             SchoolCode = normalizedCode,
             NormalizedSchoolCode = normalizedCode,
-            Status = SchoolStatus.Suspended,
+            Status = SchoolStatus.PendingActivation,
             CountryCode = normalizedCountryCode,
             City = request.City.Trim(),
             ContactEmail = request.ContactEmail.Trim(),
@@ -346,6 +346,7 @@ public sealed class SchoolManagementService : ISchoolManagementService
             (SchoolStatus.Active, SchoolStatus.Archived) => true,
             (SchoolStatus.Suspended, SchoolStatus.Active) => true,
             (SchoolStatus.Suspended, SchoolStatus.Archived) => true,
+            (SchoolStatus.PendingActivation, SchoolStatus.Archived) => true,
             _ => false
         };
 
@@ -563,7 +564,7 @@ public sealed class SchoolManagementService : ISchoolManagementService
             CanEdit(school.Status),
             school.Status == SchoolStatus.Active,
             school.Status == SchoolStatus.Suspended,
-            school.Status is SchoolStatus.Active or SchoolStatus.Suspended);
+            school.Status is SchoolStatus.Active or SchoolStatus.Suspended or SchoolStatus.PendingActivation);
 
     private static SchoolDetails MapDetails(School school) =>
         new(
@@ -583,7 +584,7 @@ public sealed class SchoolManagementService : ISchoolManagementService
             CanEdit(school.Status),
             school.Status == SchoolStatus.Active,
             school.Status == SchoolStatus.Suspended,
-            school.Status is SchoolStatus.Active or SchoolStatus.Suspended);
+            school.Status is SchoolStatus.Active or SchoolStatus.Suspended or SchoolStatus.PendingActivation);
 
     private static bool CanEdit(SchoolStatus status) =>
         status != SchoolStatus.Archived;
