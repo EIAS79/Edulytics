@@ -43,6 +43,10 @@ public sealed class EdulyticsDatabaseBootstrapper
         {
             await EnsureRolesExistAsync();
             await EnsureSuperAdminAsync();
+            await PresentationDemoProvisioner.RunAsync(
+                _db,
+                _userManager,
+                _configuration);
             return;
         }
 
@@ -57,6 +61,10 @@ public sealed class EdulyticsDatabaseBootstrapper
             {
                 await EnsureRolesExistAsync();
                 await EnsureSuperAdminAsync();
+                await PresentationDemoProvisioner.RunAsync(
+                    _db,
+                    _userManager,
+                    _configuration);
             }
             finally
             {
