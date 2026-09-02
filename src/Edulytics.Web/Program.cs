@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Globalization;
 using System.Security.Claims;
 using System.Threading.RateLimiting;
@@ -231,9 +232,18 @@ builder.Services
 var app =
     builder.Build();
 
+var runStartupDataMaintenance =
+    app.Configuration
+        .GetValue<bool?>(
+            "Edulytics:Deployment:RunStartupDataMaintenance") ??
+    true;
+
 using (var scope =
        app.Services.CreateScope())
 {
+    var bootstrapTimer =
+        Stopwatch.StartNew();
+
     var bootstrapper =
         scope.ServiceProvider
             .GetRequiredService<
@@ -242,37 +252,58 @@ using (var scope =
     await bootstrapper
         .InitializeAsync();
 
-    var curriculumLevelIdentityBackfill =
-        scope.ServiceProvider
-            .GetRequiredService<
-                Edulytics.Data.Seeding.CurriculumLevelIdentityBackfill>();
+    bootstrapTimer.Stop();
 
-    await curriculumLevelIdentityBackfill
-        .RunAsync();
+    Console.WriteLine(
+        $"STARTUP_BOOTSTRAP_COMPLETED elapsedMs={bootstrapTimer.ElapsedMilliseconds}");
 
-    var mathematicsCurriculumPackSeeder =
-        scope.ServiceProvider
-            .GetRequiredService<
-                Edulytics.Data.Seeding.MathematicsCurriculumPackSeeder>();
+    if (runStartupDataMaintenance)
+    {
+        var maintenanceTimer =
+            Stopwatch.StartNew();
 
-    await mathematicsCurriculumPackSeeder
-        .SeedAsync();
+        var curriculumLevelIdentityBackfill =
+            scope.ServiceProvider
+                .GetRequiredService<
+                    Edulytics.Data.Seeding.CurriculumLevelIdentityBackfill>();
 
-    var mathematicsPedagogicalLessonSeeder =
-        scope.ServiceProvider
-            .GetRequiredService<
-                Edulytics.Data.Seeding.MathematicsPedagogicalLessonSeeder>();
+        await curriculumLevelIdentityBackfill
+            .RunAsync();
 
-    await mathematicsPedagogicalLessonSeeder
-        .SeedAsync();
+        var mathematicsCurriculumPackSeeder =
+            scope.ServiceProvider
+                .GetRequiredService<
+                    Edulytics.Data.Seeding.MathematicsCurriculumPackSeeder>();
 
-    var mathematicsCanonicalLessonContentSeeder =
-        scope.ServiceProvider
-            .GetRequiredService<
-                Edulytics.Data.Seeding.MathematicsCanonicalLessonContentSeeder>();
+        await mathematicsCurriculumPackSeeder
+            .SeedAsync();
 
-    await mathematicsCanonicalLessonContentSeeder
-        .SeedAsync();
+        var mathematicsPedagogicalLessonSeeder =
+            scope.ServiceProvider
+                .GetRequiredService<
+                    Edulytics.Data.Seeding.MathematicsPedagogicalLessonSeeder>();
+
+        await mathematicsPedagogicalLessonSeeder
+            .SeedAsync();
+
+        var mathematicsCanonicalLessonContentSeeder =
+            scope.ServiceProvider
+                .GetRequiredService<
+                    Edulytics.Data.Seeding.MathematicsCanonicalLessonContentSeeder>();
+
+        await mathematicsCanonicalLessonContentSeeder
+            .SeedAsync();
+
+        maintenanceTimer.Stop();
+
+        Console.WriteLine(
+            $"STARTUP_DATA_MAINTENANCE_COMPLETED elapsedMs={maintenanceTimer.ElapsedMilliseconds}");
+    }
+    else
+    {
+        Console.WriteLine(
+            "STARTUP_DATA_MAINTENANCE_SKIPPED");
+    }
 }
 
 app.UseForwardedHeaders();
