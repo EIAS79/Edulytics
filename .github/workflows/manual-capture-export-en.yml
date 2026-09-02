@@ -1,0 +1,33 @@
+name: Manual screenshot export EN
+
+on:
+  push:
+    branches: [manual-screenshot-capture-20260902]
+    paths: ['.github/workflows/manual-capture-export-en.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download current English screenshots
+        shell: bash
+        run: |
+          set -euo pipefail
+          base='https://edulytics-manual-capture-temp.onrender.com'
+          mkdir -p screenshots
+          curl -fsSL --retry 5 --retry-delay 2 "$base/manifest.json" -o manifest.json
+          jq -r '.screenshots[] | select(.locale=="en") | .filename' manifest.json | while IFS= read -r f; do
+            curl -fsSL --retry 5 --retry-delay 2 "$base/shots/$f" -o "screenshots/$f"
+          done
+          jq '{baseUrl,startedAt,status,screenshots:[.screenshots[]|select(.locale=="en")]}' manifest.json > screenshots/manifest-en.json
+          count=$(find screenshots -type f -name 'en_*.jpg' | wc -l)
+          echo "English screenshots: $count"
+          test "$count" -ge 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: edulytics-real-manual-screenshots-en
+          path: screenshots/
+          retention-days: 7
