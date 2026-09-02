@@ -1,0 +1,194 @@
+name: Presentation Capture
+
+on:
+  push:
+    branches:
+      - presentation/capture-real-screens
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Playwright
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/edulytics-capture
+          cd /tmp/edulytics-capture
+          npm init -y >/dev/null 2>&1
+          npm install playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Capture live Edulytics screens
+        shell: bash
+        env:
+          EDULYTICS_BASE_URL: https://edulytiks.com
+          EDULYTICS_DEMO_PASSWORD: EdulytiksDemo#2026!
+        run: |
+          set -euo pipefail
+          cd /tmp/edulytics-capture
+          cat > capture.js <<'NODE'
+          const { chromium } = require('playwright');
+          const fs = require('fs');
+          const path = require('path');
+
+          const BASE = process.env.EDULYTICS_BASE_URL;
+          const PASSWORD = process.env.EDULYTICS_DEMO_PASSWORD;
+          const out = path.join(process.env.GITHUB_WORKSPACE, 'artifacts', 'presentation-screens');
+          fs.mkdirSync(out, { recursive: true });
+
+          const roles = {
+            admin: {
+              email: 'demo.admin@edulytiks.com',
+              pages: [
+                ['dashboard', '/school/dashboard'],
+                ['users', '/school/users'],
+                ['supervisors', '/school/subject-supervisors'],
+                ['analytics', '/school/analytics']
+              ]
+            },
+            supervisor: {
+              email: 'demo.supervisor@edulytiks.com',
+              pages: [
+                ['dashboard', '/school/dashboard'],
+                ['users', '/school/users'],
+                ['academic-structure', '/school/academic-structure'],
+                ['curriculum', '/school/curriculum'],
+                ['imports', '/school/imports'],
+                ['reports', '/school/reports']
+              ]
+            },
+            teacher: {
+              email: 'demo.teacher@edulytiks.com',
+              pages: [
+                ['dashboard', '/school/dashboard'],
+                ['curriculum', '/school/curriculum'],
+                ['assessments', '/school/assessments'],
+                ['analytics', '/school/analytics'],
+                ['reports', '/school/reports']
+              ]
+            },
+            student: {
+              email: 'demo.student@edulytiks.com',
+              pages: [
+                ['dashboard', '/student/dashboard'],
+                ['learning', '/student/learning'],
+                ['assessments', '/student/assessments'],
+                ['results', '/student/results'],
+                ['notifications', '/student/notifications']
+              ]
+            }
+          };
+
+          const languages = [
+            ['en', 'English'],
+            ['pl', 'Polski']
+          ];
+
+          async function waitReady(page) {
+            for (let i = 0; i < 12; i++) {
+              try {
+                const r = await page.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 120000 });
+                if (r && r.status() < 500) return;
+              } catch (_) {}
+              await page.waitForTimeout(10000);
+            }
+            throw new Error('Edulytics did not become reachable.');
+          }
+
+          async function chooseLanguage(page, label) {
+            await page.goto(BASE + '/', { waitUntil: 'networkidle', timeout: 120000 });
+            const button = page.getByRole('button', { name: label, exact: true });
+            await button.waitFor({ state: 'visible', timeout: 30000 });
+            await Promise.all([
+              page.waitForLoadState('networkidle'),
+              button.click()
+            ]);
+          }
+
+          async function login(page, langLabel, email) {
+            await chooseLanguage(page, langLabel);
+            await page.locator('input[type="email"]').fill(email);
+            await page.locator('input[type="password"]').fill(PASSWORD);
+            await Promise.all([
+              page.waitForLoadState('networkidle'),
+              page.locator('form button[type="submit"]').click()
+            ]);
+            if (page.url().includes('/account/login')) {
+              const text = (await page.locator('body').innerText()).slice(0, 1000);
+              throw new Error(`Login failed for ${email}: ${text}`);
+            }
+          }
+
+          async function capture(page, file, route, manifest, lang, role, name) {
+            const response = await page.goto(BASE + route, { waitUntil: 'networkidle', timeout: 120000 });
+            await page.waitForTimeout(700);
+            const status = response ? response.status() : 0;
+            const title = await page.title();
+            const finalUrl = page.url();
+            await page.screenshot({ path: file, fullPage: true });
+            manifest.push({ lang, role, name, route, status, finalUrl, title, file: path.basename(file) });
+          }
+
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+            const manifest = [];
+            try {
+              for (const [lang, langLabel] of languages) {
+                // Public language selection.
+                {
+                  const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
+                  const page = await context.newPage();
+                  await waitReady(page);
+                  await page.goto(BASE + '/', { waitUntil: 'networkidle', timeout: 120000 });
+                  await page.screenshot({ path: path.join(out, `${lang}-shared-language.png`), fullPage: true });
+                  await chooseLanguage(page, langLabel);
+                  await page.screenshot({ path: path.join(out, `${lang}-shared-login.png`), fullPage: true });
+                  await context.close();
+                }
+
+                for (const [role, cfg] of Object.entries(roles)) {
+                  const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
+                  const page = await context.newPage();
+                  await waitReady(page);
+                  await login(page, langLabel, cfg.email);
+                  for (const [name, route] of cfg.pages) {
+                    await capture(
+                      page,
+                      path.join(out, `${lang}-${role}-${name}.png`),
+                      route,
+                      manifest,
+                      lang,
+                      role,
+                      name
+                    );
+                  }
+                  await context.close();
+                }
+              }
+            } finally {
+              await browser.close();
+            }
+            fs.writeFileSync(path.join(out, 'manifest.json'), JSON.stringify(manifest, null, 2));
+            console.log(JSON.stringify(manifest, null, 2));
+          })().catch(err => {
+            console.error(err);
+            process.exit(1);
+          });
+          NODE
+          node capture.js
+
+      - name: Upload presentation screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: edulytics-real-presentation-screens
+          path: artifacts/presentation-screens
+          retention-days: 3
+          if-no-files-found: error
