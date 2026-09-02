@@ -11,6 +11,22 @@ namespace Edulytics.Web.Controllers;
 [Route("Platform/Billing")]
 public sealed class BillingController : Controller
 {
+    private static readonly HashSet<string> SupportedBillingCountryCodes =
+        new(StringComparer.OrdinalIgnoreCase)
+        {
+            "PL",
+            "AE"
+        };
+
+    private static readonly HashSet<string> SupportedSettlementCurrencyCodes =
+        new(StringComparer.OrdinalIgnoreCase)
+        {
+            "EUR",
+            "PLN",
+            "AED",
+            "USD"
+        };
+
     private readonly IBillingService _billing;
     private readonly IStringLocalizer<BillingResource> _text;
 
@@ -57,17 +73,27 @@ public sealed class BillingController : Controller
         if (!string.IsNullOrWhiteSpace(rowVersion) && !TryDecode(rowVersion, out version))
             return RedirectError(BillingErrorCode.ConcurrencyConflict);
 
+        var normalizedCountryCode = countryCode?.Trim() ?? string.Empty;
+        var normalizedSettlementCurrency =
+            defaultSettlementCurrencyCode?.Trim() ?? string.Empty;
+
+        if (!SupportedBillingCountryCodes.Contains(normalizedCountryCode) ||
+            !SupportedSettlementCurrencyCodes.Contains(normalizedSettlementCurrency))
+        {
+            return RedirectError(BillingErrorCode.InvalidInput);
+        }
+
         var result = await _billing.UpsertProfileAsync(
             actorId,
             new UpsertBillingProfileRequest(
                 schoolId,
                 legalName,
                 billingAddress,
-                countryCode,
+                normalizedCountryCode.ToUpperInvariant(),
                 taxIdentifier,
                 invoiceEmail,
                 taxTreatmentCode,
-                defaultSettlementCurrencyCode,
+                normalizedSettlementCurrency.ToUpperInvariant(),
                 paymentInstructions,
                 version),
             cancellationToken);
