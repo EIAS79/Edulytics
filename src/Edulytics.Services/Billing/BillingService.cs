@@ -1005,7 +1005,10 @@ public sealed class BillingService : IBillingService
         var school = await _schools.GetForUpdateAsync(schoolId, cancellationToken);
         if (school is null)
             return Fail(BillingErrorCode.SchoolNotFound);
-        if (school.Status != SchoolStatus.Suspended)
+        if (school.Status is not
+            (SchoolStatus.PendingActivation or
+             SchoolStatus.Suspended or
+             SchoolStatus.Active))
             return Fail(BillingErrorCode.InvalidState);
 
         var now = DateTime.UtcNow;
