@@ -28,7 +28,7 @@ jobs:
       - name: Capture live Edulytics screens
         shell: bash
         env:
-          EDULYTICS_BASE_URL: https://edulytiks.com
+          EDULYTICS_BASE_URL: https://edulytics-staging.onrender.com
           EDULYTICS_DEMO_PASSWORD: EdulytiksDemo#2026!
         run: |
           set -euo pipefail
@@ -92,7 +92,7 @@ jobs:
           ];
 
           async function waitReady(page) {
-            for (let i = 0; i < 12; i++) {
+            for (let i = 0; i < 18; i++) {
               try {
                 const r = await page.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 120000 });
                 if (r && r.status() < 500) return;
@@ -141,7 +141,6 @@ jobs:
             const manifest = [];
             try {
               for (const [lang, langLabel] of languages) {
-                // Public language selection.
                 {
                   const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
                   const page = await context.newPage();
