@@ -153,7 +153,8 @@ public sealed class SchoolSubscriptionService
             return Fail(SubscriptionErrorCode.SchoolNotFound);
         }
 
-        if (school.Status != SchoolStatus.Suspended)
+        if (school.Status is not
+            (SchoolStatus.PendingActivation or SchoolStatus.Suspended))
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(
@@ -310,7 +311,10 @@ public sealed class SchoolSubscriptionService
             return Fail(SubscriptionErrorCode.SchoolNotFound);
         }
 
-        if (school.Status != SchoolStatus.Suspended)
+        if (school.Status is not
+            (SchoolStatus.PendingActivation or
+             SchoolStatus.Suspended or
+             SchoolStatus.Active))
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(

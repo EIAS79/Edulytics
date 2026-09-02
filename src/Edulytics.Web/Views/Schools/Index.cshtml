@@ -1,5 +1,7 @@
+@using Edulytics.Core.Enums
 @model Edulytics.Web.ViewModels.Schools.SchoolListViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.PlatformResource> T
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SubscriptionResource> S
 
 @{
     ViewData["Title"] = T["SchoolsTitle"].Value;
@@ -83,7 +85,9 @@
                             <td>
                                 <span class="school-status"
                                       data-status="@school.Status">
-                                    @T[$"Status{school.Status}"]
+                                    @(school.Status == SchoolStatus.PendingActivation
+                                        ? S["PendingActivation"]
+                                        : T[$"Status{school.Status}"])
                                 </span>
                             </td>
                             <td>
@@ -128,7 +132,9 @@
 
                         <span class="school-status"
                               data-status="@school.Status">
-                            @T[$"Status{school.Status}"]
+                            @(school.Status == SchoolStatus.PendingActivation
+                                ? S["PendingActivation"]
+                                : T[$"Status{school.Status}"])
                         </span>
                     </div>
 

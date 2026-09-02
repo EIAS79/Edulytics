@@ -54,7 +54,7 @@ public sealed class SchoolManagementServiceTests
     }
 
     [Fact]
-    public async Task CreateAsync_CreatesSuspendedSchoolPendingCommercialActivation()
+    public async Task CreateAsync_CreatesSchoolPendingCommercialActivation()
     {
         var repository = new FakeSchoolRepository();
         var service = new SchoolManagementService(repository);
@@ -65,7 +65,7 @@ public sealed class SchoolManagementServiceTests
 
         var school = Assert.Single(repository.Schools);
 
-        Assert.Equal(SchoolStatus.Suspended, school.Status);
+        Assert.Equal(SchoolStatus.PendingActivation, school.Status);
         Assert.Equal("WAW-001", school.SchoolCode);
         Assert.Equal("WAW-001", school.NormalizedSchoolCode);
         Assert.Equal("PL", school.CountryCode);
@@ -179,6 +179,34 @@ public sealed class SchoolManagementServiceTests
         Assert.True(archive.Succeeded);
         Assert.Equal(SchoolStatus.Archived, school.Status);
         Assert.NotNull(school.ArchivedAtUtc);
+    }
+
+    [Fact]
+    public async Task PendingActivation_CannotBeManuallyActivated()
+    {
+        var repository = new FakeSchoolRepository();
+        var school = NewSchool(
+            "School",
+            "WAW-001",
+            SchoolStatus.PendingActivation);
+
+        repository.Seed(school);
+
+        var service = new SchoolManagementService(repository);
+
+        var result = await service.ChangeStatusAsync(
+            new(
+                school.Id,
+                SchoolStatus.Active,
+                school.RowVersion.ToArray()));
+
+        Assert.False(result.Succeeded);
+        Assert.Equal(SchoolStatus.PendingActivation, school.Status);
+        Assert.Contains(
+            result.Errors,
+            error =>
+                error.Code ==
+                SchoolErrorCode.InvalidStatusTransition);
     }
 
     [Fact]

@@ -71,7 +71,8 @@ public sealed class SubscriptionsController : Controller
             EligibleSchools =
                 schools
                     .Where(x =>
-                        x.Status == SchoolStatus.Suspended &&
+                        (x.Status == SchoolStatus.PendingActivation ||
+                         x.Status == SchoolStatus.Suspended) &&
                         !subscribed.Contains(x.Id) &&
                         (x.CountryCode == "PL" ||
                          x.CountryCode == "AE"))
