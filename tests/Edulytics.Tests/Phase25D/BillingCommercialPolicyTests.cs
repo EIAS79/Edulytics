@@ -7,11 +7,11 @@ namespace Edulytics.Tests.Phase25D;
 public sealed class BillingCommercialPolicyTests
 {
     [Fact]
-    public void BillableSeats_Enforces500Floor()
+    public void BillableSeats_Enforces100Floor()
     {
-        Assert.Equal(500, BillingCommercialPolicy.BillableSeats(0));
-        Assert.Equal(500, BillingCommercialPolicy.BillableSeats(499));
-        Assert.Equal(500, BillingCommercialPolicy.BillableSeats(500));
+        Assert.Equal(100, BillingCommercialPolicy.BillableSeats(0));
+        Assert.Equal(100, BillingCommercialPolicy.BillableSeats(99));
+        Assert.Equal(100, BillingCommercialPolicy.BillableSeats(100));
         Assert.Equal(725, BillingCommercialPolicy.BillableSeats(725));
     }
 
