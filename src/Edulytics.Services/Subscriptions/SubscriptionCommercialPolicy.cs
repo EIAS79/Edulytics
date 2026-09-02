@@ -4,7 +4,7 @@ namespace Edulytics.Services.Subscriptions;
 
 public static class SubscriptionCommercialPolicy
 {
-    public const int MinimumCommittedSeats = 500;
+    public const int MinimumCommittedSeats = 100;
     public const int NonRenewalNoticeDays = 30;
 
     public static bool IsSupportedTerm(SubscriptionTerm term) =>

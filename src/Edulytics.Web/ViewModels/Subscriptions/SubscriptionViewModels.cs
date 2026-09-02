@@ -6,7 +6,15 @@ public sealed record SubscriptionSchoolOptionViewModel(
     Guid Id,
     string Name,
     string SchoolCode,
-    string CountryCode);
+    string CountryCode)
+{
+    public string CurrencyCode =>
+        SubscriptionCommercialPolicy.TryCurrency(
+            CountryCode,
+            out var currency)
+            ? currency.ToString()
+            : string.Empty;
+}
 
 public sealed record SubscriptionRowViewModel(
     SchoolSubscriptionDetails Subscription,

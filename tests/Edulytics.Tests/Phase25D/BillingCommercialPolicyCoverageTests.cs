@@ -13,11 +13,11 @@ public sealed class BillingCommercialPolicyCoverageTests
             SubscriptionBillingCadence.MonthlyInstallments,
             SubscriptionTerm.ThreeMonths,
             price: 20m,
-            committedSeats: 200);
+            committedSeats: 50);
 
         Assert.Equal(
-            10000m,
-            BillingCommercialPolicy.RenewalNetAmount(subscription, 200));
+            2000m,
+            BillingCommercialPolicy.RenewalNetAmount(subscription, 50));
     }
 
     [Fact]

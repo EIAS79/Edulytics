@@ -17,7 +17,7 @@ public sealed class Phase25CCoreTests
     public void CommercialPolicy_MatchesAcceptedPhase25A()
     {
         Assert.Equal(
-            500,
+            100,
             SubscriptionCommercialPolicy.MinimumCommittedSeats);
 
         Assert.Equal(
@@ -119,7 +119,7 @@ public sealed class Phase25CCoreTests
     }
 
     [Fact]
-    public async Task Create_RequiresMinimum500Seats()
+    public async Task Create_RequiresMinimum100Seats()
     {
         await using var fixture =
             await Fixture.CreateAsync(
@@ -133,7 +133,7 @@ public sealed class Phase25CCoreTests
                     SubscriptionTerm.ThreeMonths,
                     SubscriptionBillingCadence
                         .MonthlyInstallments,
-                    499,
+                    99,
                     AutoRenew: true));
 
         Assert.False(result.Succeeded);
