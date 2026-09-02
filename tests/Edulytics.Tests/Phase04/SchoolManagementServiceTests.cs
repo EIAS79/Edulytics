@@ -54,7 +54,7 @@ public sealed class SchoolManagementServiceTests
     }
 
     [Fact]
-    public async Task CreateAsync_CreatesActiveSchool()
+    public async Task CreateAsync_CreatesSuspendedSchoolPendingCommercialActivation()
     {
         var repository = new FakeSchoolRepository();
         var service = new SchoolManagementService(repository);
@@ -65,7 +65,7 @@ public sealed class SchoolManagementServiceTests
 
         var school = Assert.Single(repository.Schools);
 
-        Assert.Equal(SchoolStatus.Active, school.Status);
+        Assert.Equal(SchoolStatus.Suspended, school.Status);
         Assert.Equal("WAW-001", school.SchoolCode);
         Assert.Equal("WAW-001", school.NormalizedSchoolCode);
         Assert.Equal("PL", school.CountryCode);
