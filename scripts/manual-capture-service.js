@@ -1,1 +1,1 @@
-require('./manual-capture-service-v2.js');
+require('./manual-capture-service-v3.js');
