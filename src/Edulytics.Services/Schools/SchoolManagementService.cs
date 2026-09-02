@@ -101,7 +101,7 @@ public sealed class SchoolManagementService : ISchoolManagementService
             Name = request.Name.Trim(),
             SchoolCode = normalizedCode,
             NormalizedSchoolCode = normalizedCode,
-            Status = SchoolStatus.Active,
+            Status = SchoolStatus.Suspended,
             CountryCode = normalizedCountryCode,
             City = request.City.Trim(),
             ContactEmail = request.ContactEmail.Trim(),
