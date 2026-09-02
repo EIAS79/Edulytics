@@ -1,8 +1,13 @@
+@using Edulytics.Core.Enums
 @model Edulytics.Web.ViewModels.Schools.SchoolDetailsViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.PlatformResource> T
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SubscriptionResource> S
 
 @{
     ViewData["Title"] = T["SchoolDetails"].Value;
+    var statusText = Model.Status == SchoolStatus.PendingActivation
+        ? S["PendingActivation"]
+        : T[$"Status{Model.Status}"];
 }
 
 <section class="school-page">
@@ -22,7 +27,7 @@
 
                 <span class="school-status"
                       data-status="@Model.Status">
-                    @T[$"Status{Model.Status}"]
+                    @statusText
                 </span>
             </div>
         </div>
@@ -77,7 +82,7 @@
 
             <div>
                 <dt>@T["Status"]</dt>
-                <dd>@T[$"Status{Model.Status}"]</dd>
+                <dd>@statusText</dd>
             </div>
 
             <div>
