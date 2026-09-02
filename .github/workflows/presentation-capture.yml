@@ -11,9 +11,85 @@ permissions:
 jobs:
   capture:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
+
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_DB: edulytics_capture
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_capture"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=20
+
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+      DOTNET_NOLOGO: "1"
+      ConnectionStrings__DefaultConnection: "Host=127.0.0.1;Port=5432;Database=edulytics_capture;Username=postgres;Password=postgres;SSL Mode=Disable;Include Error Detail=true"
+      EDULYTICS_CONNECTION_STRING: "Host=127.0.0.1;Port=5432;Database=edulytics_capture;Username=postgres;Password=postgres;SSL Mode=Disable;Include Error Detail=true"
+      EDULYTICS_CI_POSTGRES_CONNECTION: "Host=127.0.0.1;Port=5432;Database=edulytics_capture;Username=postgres;Password=postgres;SSL Mode=Disable;Include Error Detail=true"
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://127.0.0.1:5080
+      RENDER_SERVICE_ID: srv-da1o4url550s73aecsn0
+      Edulytics__PresentationDemo__Provision: "true"
+      Edulytics__PresentationDemo__Password: "EdulytiksDemo#2026!"
+
     steps:
       - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: "10.0.200"
+
+      - name: Restore and build Edulytics
+        run: |
+          set -euo pipefail
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --no-restore -c Release
+
+      - name: Apply database migrations
+        run: |
+          set -euo pipefail
+          dotnet ef database update \
+            --project src/Edulytics.Data/Edulytics.Data.csproj \
+            --startup-project src/Edulytics.Web/Edulytics.Web.csproj \
+            --context EdulyticsDbContext \
+            --configuration Release
+
+      - name: Start local Edulytics and provision demo accounts
+        shell: bash
+        run: |
+          set -euo pipefail
+          nohup dotnet run \
+            --project src/Edulytics.Web/Edulytics.Web.csproj \
+            -c Release \
+            --no-build \
+            > /tmp/edulytics-app.log 2>&1 &
+          echo $! > /tmp/edulytics-app.pid
+
+          ready=0
+          for i in $(seq 1 90); do
+            if curl -fsS http://127.0.0.1:5080/health/live >/dev/null 2>&1; then
+              ready=1
+              break
+            fi
+            sleep 2
+          done
+
+          cat /tmp/edulytics-app.log || true
+          if [[ "$ready" != "1" ]]; then
+            echo "Local Edulytics did not become ready." >&2
+            exit 1
+          fi
+          grep -q 'PRESENTATION_DEMO_PROVISION_COMMITTED' /tmp/edulytics-app.log
 
       - name: Install Playwright
         shell: bash
@@ -25,11 +101,11 @@ jobs:
           npm install playwright@1.55.0
           npx playwright install --with-deps chromium
 
-      - name: Capture live Edulytics screens
+      - name: Capture real Edulytics screens
         shell: bash
         env:
-          EDULYTICS_BASE_URL: https://edulytics-staging.onrender.com
-          EDULYTICS_DEMO_PASSWORD: EdulytiksDemo#2026!
+          EDULYTICS_BASE_URL: http://127.0.0.1:5080
+          EDULYTICS_DEMO_PASSWORD: "EdulytiksDemo#2026!"
         run: |
           set -euo pipefail
           cd /tmp/edulytics-capture
@@ -49,7 +125,6 @@ jobs:
               pages: [
                 ['dashboard', '/school/dashboard'],
                 ['users', '/school/users'],
-                ['supervisors', '/school/subject-supervisors'],
                 ['analytics', '/school/analytics']
               ]
             },
@@ -92,29 +167,18 @@ jobs:
           ];
 
           async function open(page, route) {
-            const r = await page.goto(BASE + route, { waitUntil: 'domcontentloaded', timeout: 45000 });
-            await page.waitForTimeout(900);
+            const r = await page.goto(BASE + route, { waitUntil: 'domcontentloaded', timeout: 30000 });
+            await page.waitForTimeout(600);
             return r;
-          }
-
-          async function waitReady(page) {
-            for (let i = 0; i < 12; i++) {
-              try {
-                const r = await open(page, '/');
-                if (r && r.status() < 500) return;
-              } catch (_) {}
-              await page.waitForTimeout(5000);
-            }
-            throw new Error('Edulytics did not become reachable.');
           }
 
           async function chooseLanguage(page, label) {
             await open(page, '/');
             const button = page.getByRole('button', { name: label, exact: true });
-            await button.waitFor({ state: 'visible', timeout: 20000 });
+            await button.waitFor({ state: 'visible', timeout: 15000 });
             await button.click();
-            await page.waitForURL(/\/account\/login/, { timeout: 20000 });
-            await page.waitForTimeout(700);
+            await page.waitForURL(/\/account\/login/, { timeout: 15000 });
+            await page.waitForTimeout(500);
           }
 
           async function login(page, langLabel, email) {
@@ -122,9 +186,9 @@ jobs:
             await page.locator('input[type="email"]').fill(email);
             await page.locator('input[type="password"]').fill(PASSWORD);
             await page.locator('form button[type="submit"]').click();
-            await page.waitForTimeout(1500);
+            await page.waitForTimeout(1200);
             if (page.url().includes('/account/login')) {
-              const text = (await page.locator('body').innerText()).slice(0, 1200);
+              const text = (await page.locator('body').innerText()).slice(0, 1500);
               throw new Error(`Login failed for ${email}: ${text}`);
             }
           }
@@ -146,7 +210,6 @@ jobs:
                 {
                   const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
                   const page = await context.newPage();
-                  await waitReady(page);
                   await open(page, '/');
                   await page.screenshot({ path: path.join(out, `${lang}-shared-language.png`), fullPage: true });
                   await chooseLanguage(page, langLabel);
@@ -157,7 +220,6 @@ jobs:
                 for (const [role, cfg] of Object.entries(roles)) {
                   const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
                   const page = await context.newPage();
-                  await waitReady(page);
                   await login(page, langLabel, cfg.email);
                   for (const [name, route] of cfg.pages) {
                     await capture(
@@ -193,3 +255,7 @@ jobs:
           path: artifacts/presentation-screens
           retention-days: 3
           if-no-files-found: error
+
+      - name: Show app logs
+        if: always()
+        run: cat /tmp/edulytics-app.log || true
