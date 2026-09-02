@@ -11,7 +11,7 @@ permissions:
 jobs:
   capture:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -91,44 +91,46 @@ jobs:
             ['pl', 'Polski']
           ];
 
+          async function open(page, route) {
+            const r = await page.goto(BASE + route, { waitUntil: 'domcontentloaded', timeout: 45000 });
+            await page.waitForTimeout(900);
+            return r;
+          }
+
           async function waitReady(page) {
-            for (let i = 0; i < 18; i++) {
+            for (let i = 0; i < 12; i++) {
               try {
-                const r = await page.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 120000 });
+                const r = await open(page, '/');
                 if (r && r.status() < 500) return;
               } catch (_) {}
-              await page.waitForTimeout(10000);
+              await page.waitForTimeout(5000);
             }
             throw new Error('Edulytics did not become reachable.');
           }
 
           async function chooseLanguage(page, label) {
-            await page.goto(BASE + '/', { waitUntil: 'networkidle', timeout: 120000 });
+            await open(page, '/');
             const button = page.getByRole('button', { name: label, exact: true });
-            await button.waitFor({ state: 'visible', timeout: 30000 });
-            await Promise.all([
-              page.waitForLoadState('networkidle'),
-              button.click()
-            ]);
+            await button.waitFor({ state: 'visible', timeout: 20000 });
+            await button.click();
+            await page.waitForURL(/\/account\/login/, { timeout: 20000 });
+            await page.waitForTimeout(700);
           }
 
           async function login(page, langLabel, email) {
             await chooseLanguage(page, langLabel);
             await page.locator('input[type="email"]').fill(email);
             await page.locator('input[type="password"]').fill(PASSWORD);
-            await Promise.all([
-              page.waitForLoadState('networkidle'),
-              page.locator('form button[type="submit"]').click()
-            ]);
+            await page.locator('form button[type="submit"]').click();
+            await page.waitForTimeout(1500);
             if (page.url().includes('/account/login')) {
-              const text = (await page.locator('body').innerText()).slice(0, 1000);
+              const text = (await page.locator('body').innerText()).slice(0, 1200);
               throw new Error(`Login failed for ${email}: ${text}`);
             }
           }
 
           async function capture(page, file, route, manifest, lang, role, name) {
-            const response = await page.goto(BASE + route, { waitUntil: 'networkidle', timeout: 120000 });
-            await page.waitForTimeout(700);
+            const response = await open(page, route);
             const status = response ? response.status() : 0;
             const title = await page.title();
             const finalUrl = page.url();
@@ -145,7 +147,7 @@ jobs:
                   const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
                   const page = await context.newPage();
                   await waitReady(page);
-                  await page.goto(BASE + '/', { waitUntil: 'networkidle', timeout: 120000 });
+                  await open(page, '/');
                   await page.screenshot({ path: path.join(out, `${lang}-shared-language.png`), fullPage: true });
                   await chooseLanguage(page, langLabel);
                   await page.screenshot({ path: path.join(out, `${lang}-shared-login.png`), fullPage: true });
