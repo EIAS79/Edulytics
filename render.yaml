@@ -11,7 +11,11 @@ services:
     dockerfilePath: ./Dockerfile
     dockerContext: .
 
-    healthCheckPath: /health/ready
+    # Render's deploy gate should only verify that the web process is
+    # accepting traffic. The deeper /health/ready endpoint remains
+    # available for database/background-worker diagnostics without
+    # blocking a Free-tier rollout for up to 15 minutes.
+    healthCheckPath: /health/live
     maxShutdownDelaySeconds: 60
 
     # Temporary free staging applies migrations in
