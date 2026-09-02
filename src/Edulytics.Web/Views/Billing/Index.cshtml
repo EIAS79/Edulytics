@@ -2,6 +2,7 @@
 @using Edulytics.Services.Billing
 @model Edulytics.Web.ViewModels.Billing.BillingIndexViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.BillingResource> B
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.PlatformResource> T
 
 @{
     ViewData["Title"] = B["Title"];
@@ -37,6 +38,12 @@
         var profileVersion = school.Profile is null
             ? string.Empty
             : Convert.ToBase64String(school.Profile.RowVersion);
+        var billingCountryCode =
+            (school.Profile?.CountryCode ?? school.CountryCode).ToUpperInvariant();
+        var settlementCurrencyCode =
+            (school.Profile?.DefaultSettlementCurrencyCode ??
+             (school.CommercialCurrency == CommercialCurrency.AED ? "EUR" : "PLN"))
+            .ToUpperInvariant();
 
         <article class="school-card billing-school"
                  data-billing-school-id="@school.SchoolId"
@@ -60,11 +67,25 @@
                     <input type="hidden" name="rowVersion" value="@profileVersion" />
                     <label>@B["LegalName"]<input name="legalName" value="@(school.Profile?.LegalName ?? school.SchoolName)" required /></label>
                     <label>@B["BillingAddress"]<input name="billingAddress" value="@(school.Profile?.BillingAddress ?? string.Empty)" required /></label>
-                    <label>@B["CountryCode"]<input name="countryCode" value="@(school.Profile?.CountryCode ?? school.CountryCode)" maxlength="2" required /></label>
+                    <label>
+                        @B["CountryCode"]
+                        <select name="countryCode" autocomplete="country" required>
+                            <option value="PL" selected="@(billingCountryCode == "PL")">@T["CountryPoland"]</option>
+                            <option value="AE" selected="@(billingCountryCode == "AE")">@T["CountryUnitedArabEmirates"]</option>
+                        </select>
+                    </label>
                     <label>@B["TaxIdentifier"]<input name="taxIdentifier" value="@(school.Profile?.TaxIdentifier ?? string.Empty)" /></label>
                     <label>@B["InvoiceEmail"]<input name="invoiceEmail" type="email" value="@(school.Profile?.InvoiceEmail ?? string.Empty)" required /></label>
                     <label>@B["TaxTreatment"]<input name="taxTreatmentCode" value="@(school.Profile?.TaxTreatmentCode ?? string.Empty)" /></label>
-                    <label>@B["SettlementCurrency"]<input name="defaultSettlementCurrencyCode" maxlength="3" value="@(school.Profile?.DefaultSettlementCurrencyCode ?? (school.CommercialCurrency == CommercialCurrency.AED ? "EUR" : "PLN"))" /></label>
+                    <label>
+                        @B["SettlementCurrency"]
+                        <select name="defaultSettlementCurrencyCode" required>
+                            <option value="EUR" selected="@(settlementCurrencyCode == "EUR")">EUR</option>
+                            <option value="PLN" selected="@(settlementCurrencyCode == "PLN")">PLN</option>
+                            <option value="AED" selected="@(settlementCurrencyCode == "AED")">AED</option>
+                            <option value="USD" selected="@(settlementCurrencyCode == "USD")">USD</option>
+                        </select>
+                    </label>
                     <label class="billing-span-2">@B["PaymentInstructions"]<textarea name="paymentInstructions" rows="3" required>@(school.Profile?.PaymentInstructions ?? string.Empty)</textarea></label>
                     <button type="submit" class="school-button school-button-primary">@B["SaveProfile"]</button>
                 </form>
