@@ -102,11 +102,11 @@ public sealed class Phase05TeacherWorkflowContractTests
             controller,
             StringComparison.Ordinal);
         Assert.Contains(
-            "asp-for=\"TeacherUserId\"",
+            "name=\"teacherUserId\"",
             view,
             StringComparison.Ordinal);
         Assert.Contains(
-            "asp-for=\"ClassGroupId\"",
+            "name=\"classGroupId\"",
             view,
             StringComparison.Ordinal);
         Assert.Contains(
