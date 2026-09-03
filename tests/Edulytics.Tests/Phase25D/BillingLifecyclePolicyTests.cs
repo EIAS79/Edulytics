@@ -40,7 +40,26 @@ public sealed class BillingLifecyclePolicyTests
     }
 
     [Fact]
-    public void ClearedBalance_ReturnsToActive()
+    public void SuspendedWithDelinquency_RemainsSuspended()
+    {
+        var aging = new BillingAgingState(
+            BillingInvoiceStatus.Overdue,
+            InGracePeriod: false,
+            SuspensionEligible: true,
+            OutstandingAmount: 100m);
+
+        Assert.Equal(
+            SubscriptionStatus.Suspended,
+            BillingLifecyclePolicy.ResolveOperationalStatus(
+                SubscriptionStatus.Suspended,
+                aging,
+                nonRenewalRequested: false));
+    }
+
+    [Theory]
+    [InlineData(SubscriptionStatus.PastDue)]
+    [InlineData(SubscriptionStatus.Suspended)]
+    public void ClearedBalance_ReturnsToActive(SubscriptionStatus currentStatus)
     {
         var aging = new BillingAgingState(
             BillingInvoiceStatus.Paid,
@@ -51,7 +70,7 @@ public sealed class BillingLifecyclePolicyTests
         Assert.Equal(
             SubscriptionStatus.Active,
             BillingLifecyclePolicy.ResolveOperationalStatus(
-                SubscriptionStatus.PastDue,
+                currentStatus,
                 aging,
                 nonRenewalRequested: false));
     }
@@ -73,11 +92,27 @@ public sealed class BillingLifecyclePolicyTests
                 nonRenewalRequested: true));
     }
 
+    [Fact]
+    public void CurrentDueBalanceWithNonRenewal_RemainsCancellationPending()
+    {
+        var aging = new BillingAgingState(
+            BillingInvoiceStatus.Due,
+            InGracePeriod: false,
+            SuspensionEligible: false,
+            OutstandingAmount: 100m);
+
+        Assert.Equal(
+            SubscriptionStatus.CancellationPending,
+            BillingLifecyclePolicy.ResolveOperationalStatus(
+                SubscriptionStatus.Active,
+                aging,
+                nonRenewalRequested: true));
+    }
+
     [Theory]
-    [InlineData(SubscriptionStatus.Suspended)]
     [InlineData(SubscriptionStatus.Expired)]
     [InlineData(SubscriptionStatus.Cancelled)]
-    public void BillingProjection_DoesNotBypassBlockedOrTerminalStates(
+    public void BillingProjection_DoesNotBypassTerminalStates(
         SubscriptionStatus status)
     {
         var aging = new BillingAgingState(
