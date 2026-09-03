@@ -6,6 +6,8 @@ namespace Edulytics.Services.Billing;
 /// <summary>
 /// Projects invoice aging into the commercial subscription lifecycle without
 /// changing invoice calculations or the existing 14-day due / 7-day grace policy.
+/// Suspension remains an explicit administrative action; payment recovery can
+/// restore a payment-suspended subscription once enforceable delinquency is gone.
 /// </summary>
 public static class BillingLifecyclePolicy
 {
@@ -16,10 +18,15 @@ public static class BillingLifecyclePolicy
     {
         if (SubscriptionLifecyclePolicy.IsTerminal(currentStatus) ||
             currentStatus is SubscriptionStatus.PendingActivation
-                or SubscriptionStatus.Trial
-                or SubscriptionStatus.Suspended)
+                or SubscriptionStatus.Trial)
         {
             return currentStatus;
+        }
+
+        if (currentStatus == SubscriptionStatus.Suspended &&
+            (aging.SuspensionEligible || aging.InGracePeriod))
+        {
+            return SubscriptionStatus.Suspended;
         }
 
         if (aging.OutstandingAmount <= 0m)
@@ -35,7 +42,7 @@ public static class BillingLifecyclePolicy
         if (aging.InGracePeriod)
             return SubscriptionStatus.GracePeriod;
 
-        return nonRenewalRequested && currentStatus == SubscriptionStatus.CancellationPending
+        return nonRenewalRequested
             ? SubscriptionStatus.CancellationPending
             : SubscriptionStatus.Active;
     }
