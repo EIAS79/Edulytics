@@ -323,6 +323,13 @@ public sealed class AcademicStructureRepository : IAcademicStructureRepository
             return await SaveAsync(cancellationToken);
         }
 
+        if (_db.Database.CurrentTransaction is not null)
+        {
+            return await AddStudentProfileWithinAmbientTransactionAsync(
+                student,
+                cancellationToken);
+        }
+
         await using var transaction =
             await _db.Database.BeginTransactionAsync(
                 IsolationLevel.Serializable,
@@ -400,6 +407,15 @@ public sealed class AcademicStructureRepository : IAcademicStructureRepository
             return await SaveAsync(cancellationToken);
         }
 
+        if (_db.Database.CurrentTransaction is not null)
+        {
+            return await SaveStudentArchiveStateWithinAmbientTransactionAsync(
+                student,
+                expectedRowVersion,
+                restoring,
+                cancellationToken);
+        }
+
         await using var transaction =
             await _db.Database.BeginTransactionAsync(
                 IsolationLevel.Serializable,
@@ -439,6 +455,86 @@ public sealed class AcademicStructureRepository : IAcademicStructureRepository
         catch (DbUpdateException)
         {
             await transaction.RollbackAsync(cancellationToken);
+            _db.ChangeTracker.Clear();
+            return AcademicPersistenceResult.Failure(
+                AcademicPersistenceError.Constraint);
+        }
+    }
+
+    private async Task<AcademicPersistenceResult>
+        AddStudentProfileWithinAmbientTransactionAsync(
+            StudentProfile student,
+            CancellationToken cancellationToken)
+    {
+        try
+        {
+            if (!await HasSeatCapacityAsync(
+                    student.SchoolId,
+                    student,
+                    additionalSeats: 1,
+                    lockSubscription: true,
+                    cancellationToken))
+            {
+                _db.ChangeTracker.Clear();
+                return AcademicPersistenceResult.Failure(
+                    AcademicPersistenceError.SeatLimit);
+            }
+
+            _db.StudentProfiles.Add(student);
+            await _db.SaveChangesAsync(cancellationToken);
+            return AcademicPersistenceResult.Success();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            _db.ChangeTracker.Clear();
+            return AcademicPersistenceResult.Failure(
+                AcademicPersistenceError.Conflict);
+        }
+        catch (DbUpdateException)
+        {
+            _db.ChangeTracker.Clear();
+            return AcademicPersistenceResult.Failure(
+                AcademicPersistenceError.Constraint);
+        }
+    }
+
+    private async Task<AcademicPersistenceResult>
+        SaveStudentArchiveStateWithinAmbientTransactionAsync(
+            StudentProfile student,
+            byte[] expectedRowVersion,
+            bool restoring,
+            CancellationToken cancellationToken)
+    {
+        try
+        {
+            if (restoring &&
+                !await HasSeatCapacityAsync(
+                    student.SchoolId,
+                    student,
+                    additionalSeats: 1,
+                    lockSubscription: true,
+                    cancellationToken))
+            {
+                _db.ChangeTracker.Clear();
+                return AcademicPersistenceResult.Failure(
+                    AcademicPersistenceError.SeatLimit);
+            }
+
+            _db.Entry(student)
+                .Property(x => x.RowVersion)
+                .OriginalValue = expectedRowVersion;
+
+            await _db.SaveChangesAsync(cancellationToken);
+            return AcademicPersistenceResult.Success();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            _db.ChangeTracker.Clear();
+            return AcademicPersistenceResult.Failure(
+                AcademicPersistenceError.Conflict);
+        }
+        catch (DbUpdateException)
+        {
             _db.ChangeTracker.Clear();
             return AcademicPersistenceResult.Failure(
                 AcademicPersistenceError.Constraint);
