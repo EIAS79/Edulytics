@@ -465,15 +465,18 @@ public sealed class Phase05AcceptanceCoverageTests
                 SchoolUserErrorCode.UserInvalidRole);
     }
 
-
     [Fact]
-    public async Task SchoolAdmin_CanViewUsers_ButCannotMutateThem()
+    public async Task SchoolAdmin_ManagesOnlySubjectSupervisorUsers()
     {
         var school = NewSchool(SchoolStatus.Active);
         var users = new FakeUserRepository();
         var admin = NewUser(school.Id, RoleNames.SchoolAdmin);
+        var supervisor = NewUser(
+            school.Id,
+            RoleNames.SubjectSupervisor);
         var teacher = NewUser(school.Id, RoleNames.Teacher);
         users.Seed(admin);
+        users.Seed(supervisor);
         users.Seed(teacher);
         var schools = new FakeSchoolRepository();
         schools.Seed(school);
@@ -481,17 +484,25 @@ public sealed class Phase05AcceptanceCoverageTests
 
         var list = await service.ListAsync(admin.Id, school.Id);
         Assert.NotNull(list.Value);
-        Assert.False(list.Value!.Context.CanMutate);
+        Assert.True(list.Value!.Context.CanMutate);
 
-        var mutation = await service.SetLockedAsync(
+        var supervisorMutation = await service.SetLockedAsync(
+            admin.Id,
+            school.Id,
+            supervisor.Id,
+            true);
+
+        Assert.True(supervisorMutation.Succeeded);
+
+        var teacherMutation = await service.SetLockedAsync(
             admin.Id,
             school.Id,
             teacher.Id,
             true);
 
-        Assert.False(mutation.Succeeded);
+        Assert.False(teacherMutation.Succeeded);
         Assert.Contains(
-            mutation.Errors,
+            teacherMutation.Errors,
             x => x.Code == SchoolUserErrorCode.UserAccessDenied);
     }
 

@@ -3,18 +3,15 @@
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.PlatformResource> T
 
 @{
-    var canManageSchoolUsers = User.IsInRole(RoleNames.SubjectSupervisor) || User.IsInRole(RoleNames.SuperAdmin);
-    var operationalRoleOptions =
-        User.IsInRole(RoleNames.SuperAdmin)
-            ? Model.RoleOptions
-            : Model.RoleOptions
-                .Where(x =>
-                    x.Value == RoleNames.Teacher ||
-                    x.Value == RoleNames.Student)
-                .ToArray();
-}
+    var canManageAccount =
+        User.IsInRole(RoleNames.SchoolAdmin) ||
+        User.IsInRole(RoleNames.SubjectSupervisor) ||
+        User.IsInRole(RoleNames.SuperAdmin);
 
-@{
+    var canChangeRole =
+        User.IsInRole(RoleNames.SubjectSupervisor) ||
+        User.IsInRole(RoleNames.SuperAdmin);
+
     ViewData["Title"] = T["UserDetails"].Value;
     var user = Model.User;
 }
@@ -123,215 +120,209 @@
         </div>
     }
 
-    @if (user.CanModify)
+    @if (user.CanModify && canManageAccount)
     {
         <section class="user-admin-grid">
-            <div class="user-action-card">
-                <h2>@T["ChangeRole"]</h2>
+            @if (canChangeRole)
+            {
+                <div class="user-action-card">
+                    <h2>@T["ChangeRole"]</h2>
 
-                @if (canManageSchoolUsers)
-                {
                     <form method="post"
-                      asp-controller="SchoolUsers"
-                      asp-action="ChangeRole"
-                      asp-route-id="@user.Id"
-                      class="student-role-setup-form">
-                    <input type="hidden"
-                           name="schoolId"
-                           value="@user.Context.SchoolId" />
+                          asp-controller="SchoolUsers"
+                          asp-action="ChangeRole"
+                          asp-route-id="@user.Id"
+                          class="student-role-setup-form">
+                        <input type="hidden"
+                               name="schoolId"
+                               value="@user.Context.SchoolId" />
 
-                    <label class="student-role-field">
-                        <span>@T["UserRole"]</span>
+                        <label class="student-role-field">
+                            <span>@T["UserRole"]</span>
 
-                        <select name="role"
-                                aria-label="@T["UserRole"]">
-                            @foreach (var option in operationalRoleOptions)
-                            {
-                                if (option.Value == user.Role)
+                            <select name="role"
+                                    aria-label="@T["UserRole"]">
+                                @foreach (var option in Model.RoleOptions)
                                 {
-                                    <option value="@option.Value"
-                                            selected>
-                                        @T[option.ResourceKey]
-                                    </option>
-                                }
-                                else
-                                {
-                                    <option value="@option.Value">
-                                        @T[option.ResourceKey]
-                                    </option>
-                                }
-                            }
-                        </select>
-                    </label>
-
-                    @if (Model.StudentSetup is { } setup)
-                    {
-                        <section class="student-role-setup-fields"
-                                 aria-label="@T["StudentSetupTitle"]">
-                            <div class="student-role-setup-heading">
-                                <div>
-                                    <strong>
-                                        @T["StudentSetupTitle"]
-                                    </strong>
-
-                                    <p>
-                                        @T["StudentSetupDescription"]
-                                    </p>
-                                </div>
-
-                                <span class="student-setup-state @(setup.IsComplete ? "is-complete" : "is-incomplete")">
-                                    @(setup.IsComplete
-                                        ? T["StudentSetupComplete"]
-                                        : T["StudentSetupIncomplete"])
-                                </span>
-                            </div>
-
-                            @if (!string.IsNullOrWhiteSpace(
-                                    setup.CurrentEnrollmentSummary))
-                            {
-                                <div class="student-setup-current">
-                                    <strong>
-                                        @T["StudentSetupCurrentEnrollment"]:
-                                    </strong>
-
-                                    @setup.CurrentEnrollmentSummary
-                                </div>
-                            }
-
-                            <div class="student-role-setup-grid">
-                                <label class="student-role-field">
-                                    <span>@T["StudentNumber"]</span>
-
-                                    <input name="studentNumber"
-                                           maxlength="50"
-                                           value="@setup.StudentNumber" />
-                                </label>
-
-                                <label class="student-role-field">
-                                    <span>@T["FirstName"]</span>
-
-                                    <input name="firstName"
-                                           maxlength="100"
-                                           value="@setup.FirstName" />
-                                </label>
-
-                                <label class="student-role-field">
-                                    <span>@T["LastName"]</span>
-
-                                    <input name="lastName"
-                                           maxlength="100"
-                                           value="@setup.LastName" />
-                                </label>
-
-                                <label class="student-role-field">
-                                    <span>@T["StudentClass"]</span>
-
-                                    <select name="classGroupId">
-                                        <option value="">
-                                            @T["SelectStudentClass"]
+                                    if (option.Value == user.Role)
+                                    {
+                                        <option value="@option.Value"
+                                                selected>
+                                            @T[option.ResourceKey]
                                         </option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@option.Value">
+                                            @T[option.ResourceKey]
+                                        </option>
+                                    }
+                                }
+                            </select>
+                        </label>
 
-                                        @foreach (var classOption
-                                                  in setup.Classes)
-                                        {
-                                            if (
-                                                setup.CurrentClassGroupId ==
-                                                classOption.Id)
+                        @if (Model.StudentSetup is { } setup)
+                        {
+                            <section class="student-role-setup-fields"
+                                     aria-label="@T["StudentSetupTitle"]">
+                                <div class="student-role-setup-heading">
+                                    <div>
+                                        <strong>
+                                            @T["StudentSetupTitle"]
+                                        </strong>
+
+                                        <p>
+                                            @T["StudentSetupDescription"]
+                                        </p>
+                                    </div>
+
+                                    <span class="student-setup-state @(setup.IsComplete ? "is-complete" : "is-incomplete")">
+                                        @(setup.IsComplete
+                                            ? T["StudentSetupComplete"]
+                                            : T["StudentSetupIncomplete"])
+                                    </span>
+                                </div>
+
+                                @if (!string.IsNullOrWhiteSpace(
+                                        setup.CurrentEnrollmentSummary))
+                                {
+                                    <div class="student-setup-current">
+                                        <strong>
+                                            @T["StudentSetupCurrentEnrollment"]:
+                                        </strong>
+
+                                        @setup.CurrentEnrollmentSummary
+                                    </div>
+                                }
+
+                                <div class="student-role-setup-grid">
+                                    <label class="student-role-field">
+                                        <span>@T["StudentNumber"]</span>
+
+                                        <input name="studentNumber"
+                                               maxlength="50"
+                                               value="@setup.StudentNumber" />
+                                    </label>
+
+                                    <label class="student-role-field">
+                                        <span>@T["FirstName"]</span>
+
+                                        <input name="firstName"
+                                               maxlength="100"
+                                               value="@setup.FirstName" />
+                                    </label>
+
+                                    <label class="student-role-field">
+                                        <span>@T["LastName"]</span>
+
+                                        <input name="lastName"
+                                               maxlength="100"
+                                               value="@setup.LastName" />
+                                    </label>
+
+                                    <label class="student-role-field">
+                                        <span>@T["StudentClass"]</span>
+
+                                        <select name="classGroupId">
+                                            <option value="">
+                                                @T["SelectStudentClass"]
+                                            </option>
+
+                                            @foreach (var classOption
+                                                      in setup.Classes)
                                             {
-                                                <option
-                                                    value="@classOption.Id"
-                                                    selected>
-                                                    @classOption.AcademicYearName
-                                                    ·
-                                                    @classOption.GradeLevelName
-                                                    ·
-                                                    @classOption.Name
-                                                </option>
+                                                if (
+                                                    setup.CurrentClassGroupId ==
+                                                    classOption.Id)
+                                                {
+                                                    <option
+                                                        value="@classOption.Id"
+                                                        selected>
+                                                        @classOption.AcademicYearName
+                                                        ·
+                                                        @classOption.GradeLevelName
+                                                        ·
+                                                        @classOption.Name
+                                                    </option>
+                                                }
+                                                else
+                                                {
+                                                    <option
+                                                        value="@classOption.Id">
+                                                        @classOption.AcademicYearName
+                                                        ·
+                                                        @classOption.GradeLevelName
+                                                        ·
+                                                        @classOption.Name
+                                                    </option>
+                                                }
                                             }
-                                            else
-                                            {
-                                                <option
-                                                    value="@classOption.Id">
-                                                    @classOption.AcademicYearName
-                                                    ·
-                                                    @classOption.GradeLevelName
-                                                    ·
-                                                    @classOption.Name
-                                                </option>
-                                            }
-                                        }
-                                    </select>
-                                </label>
+                                        </select>
+                                    </label>
+                                </div>
+                            </section>
+                        }
+                        else
+                        {
+                            <div class="user-info-box">
+                                @T["StudentSetupUnavailable"]
                             </div>
-                        </section>
-                    }
-                    else
-                    {
-                        <div class="user-info-box">
-                            @T["StudentSetupUnavailable"]
-                        </div>
-                    }
+                        }
 
-                    <button type="submit"
-                            class="school-button school-button-primary">
-                        @T["SaveChanges"]
-                    </button>
-                </form>
-                }
-            </div>
+                        <button type="submit"
+                                class="school-button school-button-primary">
+                            @T["SaveChanges"]
+                        </button>
+                    </form>
+                </div>
+            }
 
             <div class="user-action-card">
                 <h2>@T["AccountStatus"]</h2>
 
-                @if (canManageSchoolUsers)
-                {
-                    <form method="post"
-                                          asp-controller="SchoolUsers"
-                                          asp-action="SetActive"
-                                          asp-route-id="@user.Id">
-                                        <input type="hidden"
-                                               name="schoolId"
-                                               value="@user.Context.SchoolId" />
+                <form method="post"
+                      asp-controller="SchoolUsers"
+                      asp-action="SetActive"
+                      asp-route-id="@user.Id">
+                    <input type="hidden"
+                           name="schoolId"
+                           value="@user.Context.SchoolId" />
 
-                                        <input type="hidden"
-                                               name="isActive"
-                                               value="@(!user.IsActive ? "true" : "false")" />
+                    <input type="hidden"
+                           name="isActive"
+                           value="@(!user.IsActive ? "true" : "false")" />
 
-                                        <button type="submit"
-                                                class="school-button @(user.IsActive ? "school-button-warning" : "school-button-primary")">
-                                            @(user.IsActive
-                                                ? T["DeactivateUser"]
-                                                : T["ActivateUser"])
-                                        </button>
-                                    </form>
-                }
+                    <button type="submit"
+                            class="school-button @(user.IsActive ? "school-button-warning" : "school-button-primary")">
+                        @(user.IsActive
+                            ? T["DeactivateUser"]
+                            : T["ActivateUser"])
+                    </button>
+                </form>
             </div>
 
             <div class="user-action-card">
                 <h2>@T["LockState"]</h2>
 
-                @if (canManageSchoolUsers)
-                {
-                    <form method="post"
-                                          asp-controller="SchoolUsers"
-                                          asp-action="SetLocked"
-                                          asp-route-id="@user.Id">
-                                        <input type="hidden"
-                                               name="schoolId"
-                                               value="@user.Context.SchoolId" />
+                <form method="post"
+                      asp-controller="SchoolUsers"
+                      asp-action="SetLocked"
+                      asp-route-id="@user.Id">
+                    <input type="hidden"
+                           name="schoolId"
+                           value="@user.Context.SchoolId" />
 
-                                        <input type="hidden"
-                                               name="isLocked"
-                                               value="@(!user.IsLocked ? "true" : "false")" />
+                    <input type="hidden"
+                           name="isLocked"
+                           value="@(!user.IsLocked ? "true" : "false")" />
 
-                                        <button type="submit"
-                                                class="school-button @(user.IsLocked ? "school-button-primary" : "school-button-warning")">
-                                            @(user.IsLocked
-                                                ? T["UnlockUser"]
-                                                : T["LockUser"])
-                                        </button>
-                                    </form>
-                }
+                    <button type="submit"
+                            class="school-button @(user.IsLocked ? "school-button-primary" : "school-button-warning")">
+                        @(user.IsLocked
+                            ? T["UnlockUser"]
+                            : T["LockUser"])
+                    </button>
+                </form>
             </div>
 
             <div class="user-action-card">
@@ -339,22 +330,19 @@
 
                 <p>@T["ResendInvitationDescription"]</p>
 
-                @if (canManageSchoolUsers)
-                {
-                    <form method="post"
-                                          asp-controller="SchoolUsers"
-                                          asp-action="PasswordLink"
-                                          asp-route-id="@user.Id">
-                                        <input type="hidden"
-                                               name="schoolId"
-                                               value="@user.Context.SchoolId" />
+                <form method="post"
+                      asp-controller="SchoolUsers"
+                      asp-action="PasswordLink"
+                      asp-route-id="@user.Id">
+                    <input type="hidden"
+                           name="schoolId"
+                           value="@user.Context.SchoolId" />
 
-                                        <button type="submit"
-                                                class="school-button school-button-primary">
-                                            @T["ResendInvitation"]
-                                        </button>
-                                    </form>
-                }
+                    <button type="submit"
+                            class="school-button school-button-primary">
+                        @T["ResendInvitation"]
+                    </button>
+                </form>
             </div>
         </section>
     }
