@@ -5,6 +5,7 @@ using Edulytics.Core.Enums;
 using Edulytics.Core.Interfaces;
 using Edulytics.Core.Users;
 using Edulytics.Services.Auditing;
+using Edulytics.Services.Subscriptions;
 
 namespace Edulytics.Services.Users;
 
@@ -22,7 +23,6 @@ public sealed class SchoolUserManagementService
                 RoleNames.Student
             ],
             StringComparer.Ordinal);
-
 
     private static readonly HashSet<string> OperationalUserRoles =
         new(
@@ -228,7 +228,6 @@ public sealed class SchoolUserManagementService
                 SchoolUserErrorCode.UserInvalidRole);
         }
 
-
         if (!scope.IsPlatformActor &&
             !OperationalUserRoles.Contains(role))
         {
@@ -267,30 +266,22 @@ public sealed class SchoolUserManagementService
                     SchoolId: scope.School.Id,
                     Action: "SchoolUser.Created",
                     EntityType: "ApplicationUser",
-                    EntityId:
-                        write.User.Id.ToString("D"),
+                    EntityId: write.User.Id.ToString("D"),
                     Feature: "UserManagement",
                     NewValues:
                         new Dictionary<string, object?>
                         {
-                            ["email"] =
-                                write.User.Email,
+                            ["email"] = write.User.Email,
                             ["role"] =
-                                GetSingleRole(
-                                    write.User.Roles)
+                                GetSingleRole(write.User.Roles)
                                 ?? role,
-                            ["isActive"] =
-                                write.User.IsActive,
-                            ["isLocked"] =
-                                write.User.IsLocked
+                            ["isActive"] = write.User.IsActive,
+                            ["isLocked"] = write.User.IsLocked
                         },
-                    ResultSummary:
-                        "School user created.",
-                    ActorUserIdOverride:
-                        actorUserId,
+                    ResultSummary: "School user created.",
+                    ActorUserIdOverride: actorUserId,
                     ActorRoleOverride:
-                        GetSingleRole(
-                            scope.Actor!.Roles)
+                        GetSingleRole(scope.Actor!.Roles)
                         ?? string.Empty),
                 cancellationToken);
         }
@@ -369,7 +360,6 @@ public sealed class SchoolUserManagementService
                 SchoolUserErrorCode.UserInvalidRole);
         }
 
-
         var scope = await ResolveScopeAsync(
             actorUserId,
             requestedSchoolId,
@@ -438,7 +428,6 @@ public sealed class SchoolUserManagementService
                 SchoolUserErrorCode.UserNotFound);
         }
 
-
         if (!scope.IsPlatformActor &&
             !OperationalUserRoles.Contains(
                 GetSingleRole(target.Roles) ?? string.Empty))
@@ -460,11 +449,10 @@ public sealed class SchoolUserManagementService
             await BeginAuditTransactionAsync(
                 cancellationToken);
 
-        var write =
-            await _users.GeneratePasswordSetupAsync(
-                scope.School.Id,
-                userId,
-                cancellationToken);
+        var write = await _users.GeneratePasswordSetupAsync(
+            scope.School.Id,
+            userId,
+            cancellationToken);
 
         if (!write.Succeeded ||
             write.User is null ||
@@ -480,29 +468,21 @@ public sealed class SchoolUserManagementService
             await _audit.RecordAsync(
                 new AuditEvent(
                     SchoolId: scope.School.Id,
-                    Action:
-                        "SchoolUser.PasswordSetupIssued",
-                    EntityType:
-                        "ApplicationUser",
-                    EntityId:
-                        write.User.Id.ToString("D"),
-                    Feature:
-                        "UserManagement",
+                    Action: "SchoolUser.PasswordSetupIssued",
+                    EntityType: "ApplicationUser",
+                    EntityId: write.User.Id.ToString("D"),
+                    Feature: "UserManagement",
                     NewValues:
                         new Dictionary<string, object?>
                         {
-                            ["email"] =
-                                write.User.Email,
-                            ["invitationGenerated"] =
-                                true
+                            ["email"] = write.User.Email,
+                            ["invitationGenerated"] = true
                         },
                     ResultSummary:
                         "Password setup invitation generated.",
-                    ActorUserIdOverride:
-                        actorUserId,
+                    ActorUserIdOverride: actorUserId,
                     ActorRoleOverride:
-                        GetSingleRole(
-                            scope.Actor!.Roles)
+                        GetSingleRole(scope.Actor!.Roles)
                         ?? string.Empty),
                 cancellationToken);
         }
@@ -543,12 +523,11 @@ public sealed class SchoolUserManagementService
             await BeginAuditTransactionAsync(
                 cancellationToken);
 
-        var write =
-            await _users.CompletePasswordSetupAsync(
-                userId,
-                token,
-                newPassword,
-                cancellationToken);
+        var write = await _users.CompletePasswordSetupAsync(
+            userId,
+            token,
+            newPassword,
+            cancellationToken);
 
         if (!write.Succeeded)
         {
@@ -563,29 +542,21 @@ public sealed class SchoolUserManagementService
         {
             await _audit.RecordAsync(
                 new AuditEvent(
-                    SchoolId:
-                        write.User.SchoolId.Value,
-                    Action:
-                        "SchoolUser.PasswordSetupCompleted",
-                    EntityType:
-                        "ApplicationUser",
-                    EntityId:
-                        write.User.Id.ToString("D"),
-                    Feature:
-                        "UserManagement",
+                    SchoolId: write.User.SchoolId.Value,
+                    Action: "SchoolUser.PasswordSetupCompleted",
+                    EntityType: "ApplicationUser",
+                    EntityId: write.User.Id.ToString("D"),
+                    Feature: "UserManagement",
                     NewValues:
                         new Dictionary<string, object?>
                         {
-                            ["passwordSetupCompleted"] =
-                                true
+                            ["passwordSetupCompleted"] = true
                         },
                     ResultSummary:
                         "Password setup completed.",
-                    ActorUserIdOverride:
-                        write.User.Id,
+                    ActorUserIdOverride: write.User.Id,
                     ActorRoleOverride:
-                        GetSingleRole(
-                            write.User.Roles)
+                        GetSingleRole(write.User.Roles)
                         ?? string.Empty),
                 cancellationToken);
         }
@@ -637,7 +608,8 @@ public sealed class SchoolUserManagementService
             cancellationToken);
 
         if (school is null ||
-            school.Status != SchoolStatus.Active)
+            !SubscriptionLifecyclePolicy.IsOperationalSchoolState(
+                school.Status))
         {
             return Denied();
         }
@@ -714,9 +686,7 @@ public sealed class SchoolUserManagementService
             cancellationToken);
 
         if (school is null)
-        {
             return null;
-        }
 
         return new SchoolUserActorContext(
             actorUserId,
@@ -762,7 +732,6 @@ public sealed class SchoolUserManagementService
                 SchoolUserErrorCode.UserNotFound);
         }
 
-
         if (!scope.IsPlatformActor &&
             !OperationalUserRoles.Contains(
                 GetSingleRole(target.Roles) ?? string.Empty))
@@ -800,47 +769,33 @@ public sealed class SchoolUserManagementService
         {
             await _audit.RecordAsync(
                 new AuditEvent(
-                    SchoolId:
-                        scope.School.Id,
-                    Action:
-                        auditAction,
-                    EntityType:
-                        "ApplicationUser",
-                    EntityId:
-                        targetUserId.ToString("D"),
-                    Feature:
-                        "UserManagement",
+                    SchoolId: scope.School.Id,
+                    Action: auditAction,
+                    EntityType: "ApplicationUser",
+                    EntityId: targetUserId.ToString("D"),
+                    Feature: "UserManagement",
                     OldValues:
                         new Dictionary<string, object?>
                         {
                             ["role"] =
-                                GetSingleRole(
-                                    target.Roles)
+                                GetSingleRole(target.Roles)
                                 ?? string.Empty,
-                            ["isActive"] =
-                                target.IsActive,
-                            ["isLocked"] =
-                                target.IsLocked
+                            ["isActive"] = target.IsActive,
+                            ["isLocked"] = target.IsLocked
                         },
                     NewValues:
                         new Dictionary<string, object?>
                         {
                             ["role"] =
-                                GetSingleRole(
-                                    write.User.Roles)
+                                GetSingleRole(write.User.Roles)
                                 ?? string.Empty,
-                            ["isActive"] =
-                                write.User.IsActive,
-                            ["isLocked"] =
-                                write.User.IsLocked
+                            ["isActive"] = write.User.IsActive,
+                            ["isLocked"] = write.User.IsLocked
                         },
-                    ResultSummary:
-                        auditResultSummary,
-                    ActorUserIdOverride:
-                        actorUserId,
+                    ResultSummary: auditResultSummary,
+                    ActorUserIdOverride: actorUserId,
                     ActorRoleOverride:
-                        GetSingleRole(
-                            scope.Actor!.Roles)
+                        GetSingleRole(scope.Actor!.Roles)
                         ?? string.Empty),
                 cancellationToken);
         }
@@ -868,8 +823,7 @@ public sealed class SchoolUserManagementService
         CancellationToken cancellationToken) =>
         transaction is null
             ? Task.CompletedTask
-            : transaction.CommitAsync(
-                cancellationToken);
+            : transaction.CommitAsync(cancellationToken);
 
     private async Task<ScopeResult> ResolveScopeAsync(
         Guid actorUserId,
@@ -917,13 +871,11 @@ public sealed class SchoolUserManagementService
                     SchoolUserErrorCode.UserAccessDenied);
             }
 
-            targetSchoolId =
-                requestedSchoolId.Value;
+            targetSchoolId = requestedSchoolId.Value;
         }
         else if (isSchoolActor)
         {
-            targetSchoolId =
-                actor.SchoolId!.Value;
+            targetSchoolId = actor.SchoolId!.Value;
 
             if (requestedSchoolId.HasValue &&
                 requestedSchoolId.Value != targetSchoolId)
@@ -956,7 +908,8 @@ public sealed class SchoolUserManagementService
         }
 
         if (!isPlatformActor &&
-            school.Status != SchoolStatus.Active)
+            !SubscriptionLifecyclePolicy.IsOperationalSchoolState(
+                school.Status))
         {
             return ScopeResult.Fail(
                 SchoolUserErrorCode.UserAccessDenied);
@@ -1043,8 +996,8 @@ public sealed class SchoolUserManagementService
         var now = DateTime.UtcNow;
 
         var operational =
-            subscription.Status ==
-                SubscriptionStatus.Active &&
+            SubscriptionLifecyclePolicy.IsOperationalSubscriptionState(
+                subscription.Status) &&
             subscription.CurrentTermStartsAtUtc.HasValue &&
             subscription.CurrentTermEndsAtUtc.HasValue &&
             subscription.CurrentTermStartsAtUtc.Value <= now &&
