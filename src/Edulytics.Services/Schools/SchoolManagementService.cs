@@ -15,46 +15,44 @@ public sealed class SchoolManagementService : ISchoolManagementService
     private const int CityMaxLength = 150;
     private const int ContactEmailMaxLength = 255;
     private const int TimeZoneIdMaxLength = 100;
+    private const int MaximumTrialDays = 365;
 
     private static readonly Regex SchoolCodePattern = new(
         "^[A-Z0-9-]+$",
         RegexOptions.Compiled | RegexOptions.CultureInvariant);
 
     private static readonly HashSet<string> SupportedCultures =
-        new(StringComparer.OrdinalIgnoreCase)
-        {
-            "en",
-            "pl"
-        };
+        new(StringComparer.OrdinalIgnoreCase) { "en", "pl" };
 
-    private static readonly IReadOnlyDictionary<string, string>
-        SupportedCountryTimeZones =
-            new Dictionary<string, string>(
-                StringComparer.OrdinalIgnoreCase)
-            {
-                ["PL"] = "Europe/Warsaw",
-                ["AE"] = "Asia/Dubai"
-            };
+    private static readonly IReadOnlyDictionary<string, string> SupportedCountryTimeZones =
+        new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+        {
+            ["PL"] = "Europe/Warsaw",
+            ["AE"] = "Asia/Dubai"
+        };
 
     private readonly ISchoolRepository _repository;
     private readonly IAuditService? _audit;
+    private readonly ISchoolTrialRepository? _trials;
+    private readonly IApplicationTransactionManager? _transactions;
 
     public SchoolManagementService(
         ISchoolRepository repository,
-        IAuditService? audit = null)
+        IAuditService? audit = null,
+        ISchoolTrialRepository? trials = null,
+        IApplicationTransactionManager? transactions = null)
     {
         _repository = repository;
         _audit = audit;
+        _trials = trials;
+        _transactions = transactions;
     }
 
     public async Task<IReadOnlyList<SchoolListItem>> ListAsync(
         CancellationToken cancellationToken = default)
     {
         var schools = await _repository.ListAsync(cancellationToken);
-
-        return schools
-            .Select(MapListItem)
-            .ToArray();
+        return schools.Select(MapListItem).ToArray();
     }
 
     public async Task<SchoolDetails?> GetAsync(
@@ -62,8 +60,14 @@ public sealed class SchoolManagementService : ISchoolManagementService
         CancellationToken cancellationToken = default)
     {
         var school = await _repository.GetByIdAsync(id, cancellationToken);
+        if (school is null)
+            return null;
 
-        return school is null ? null : MapDetails(school);
+        var trial = _trials is null
+            ? null
+            : await _trials.GetAsync(id, cancellationToken);
+
+        return MapDetails(school, trial);
     }
 
     public async Task<SchoolCommandResult> CreateAsync(
@@ -71,29 +75,19 @@ public sealed class SchoolManagementService : ISchoolManagementService
         CancellationToken cancellationToken = default)
     {
         var errors = ValidateCreate(request);
-
         if (errors.Count > 0)
-        {
             return SchoolCommandResult.Failure(errors);
-        }
 
         var normalizedCode = NormalizeSchoolCode(request.SchoolCode);
-
-        if (await _repository.ExistsByNormalizedCodeAsync(
-                normalizedCode,
-                cancellationToken))
+        if (await _repository.ExistsByNormalizedCodeAsync(normalizedCode, cancellationToken))
         {
-            return SchoolCommandResult.Failure(
-                new SchoolValidationError(
-                    nameof(CreateSchoolRequest.SchoolCode),
-                    SchoolErrorCode.DuplicateSchoolCode));
+            return SchoolCommandResult.Failure(new SchoolValidationError(
+                nameof(CreateSchoolRequest.SchoolCode), SchoolErrorCode.DuplicateSchoolCode));
         }
 
         var now = DateTime.UtcNow;
-        var normalizedCountryCode =
-            NormalizeCountryCode(request.CountryCode);
-        var timeZoneId =
-            ResolveTimeZoneId(normalizedCountryCode)!;
+        var normalizedCountryCode = NormalizeCountryCode(request.CountryCode);
+        var timeZoneId = ResolveTimeZoneId(normalizedCountryCode)!;
 
         var school = new School
         {
@@ -117,55 +111,36 @@ public sealed class SchoolManagementService : ISchoolManagementService
 
         if (_audit is not null)
         {
-            await _audit.QueueAsync(
-                new AuditEvent(
-                    SchoolId: school.Id,
-                    Action: "School.Created",
-                    EntityType: "School",
-                    EntityId: school.Id.ToString("D"),
-                    Feature: "SchoolManagement",
-                    NewValues: new Dictionary<string, object?>
-                    {
-                        ["name"] = school.Name,
-                        ["schoolCode"] = school.SchoolCode,
-                        ["status"] = school.Status.ToString(),
-                        ["countryCode"] = school.CountryCode,
-                        ["city"] = school.City,
-                        ["contactEmail"] = school.ContactEmail,
-                        ["defaultCulture"] = school.DefaultCulture,
-                        ["timeZoneId"] = school.TimeZoneId
-                    },
-                    ResultSummary: "School created."),
-                cancellationToken);
+            await _audit.QueueAsync(new AuditEvent(
+                SchoolId: school.Id,
+                Action: "School.Created",
+                EntityType: "School",
+                EntityId: school.Id.ToString("D"),
+                Feature: "SchoolManagement",
+                NewValues: new Dictionary<string, object?>
+                {
+                    ["name"] = school.Name,
+                    ["schoolCode"] = school.SchoolCode,
+                    ["status"] = school.Status.ToString(),
+                    ["countryCode"] = school.CountryCode,
+                    ["city"] = school.City,
+                    ["contactEmail"] = school.ContactEmail,
+                    ["defaultCulture"] = school.DefaultCulture,
+                    ["timeZoneId"] = school.TimeZoneId
+                },
+                ResultSummary: "School created pending commercial activation."), cancellationToken);
         }
 
-        var saveResult = await _repository.SaveAsync(
-            school,
-            expectedRowVersion: null,
-            cancellationToken);
-
+        var saveResult = await _repository.SaveAsync(school, null, cancellationToken);
         return saveResult switch
         {
-            SchoolRepositoryWriteResult.Success =>
-                SchoolCommandResult.Success(school.Id),
-
-            SchoolRepositoryWriteResult.ConstraintViolation =>
-                SchoolCommandResult.Failure(
-                    new SchoolValidationError(
-                        nameof(CreateSchoolRequest.SchoolCode),
-                        SchoolErrorCode.DuplicateSchoolCode)),
-
-            SchoolRepositoryWriteResult.ConcurrencyConflict =>
-                SchoolCommandResult.Failure(
-                    new SchoolValidationError(
-                        string.Empty,
-                        SchoolErrorCode.ConcurrencyConflict)),
-
-            _ =>
-                SchoolCommandResult.Failure(
-                    new SchoolValidationError(
-                        string.Empty,
-                        SchoolErrorCode.PersistenceError))
+            SchoolRepositoryWriteResult.Success => SchoolCommandResult.Success(school.Id),
+            SchoolRepositoryWriteResult.ConstraintViolation => SchoolCommandResult.Failure(
+                new SchoolValidationError(nameof(CreateSchoolRequest.SchoolCode), SchoolErrorCode.DuplicateSchoolCode)),
+            SchoolRepositoryWriteResult.ConcurrencyConflict => SchoolCommandResult.Failure(
+                new SchoolValidationError(string.Empty, SchoolErrorCode.ConcurrencyConflict)),
+            _ => SchoolCommandResult.Failure(
+                new SchoolValidationError(string.Empty, SchoolErrorCode.PersistenceError))
         };
     }
 
@@ -174,37 +149,17 @@ public sealed class SchoolManagementService : ISchoolManagementService
         CancellationToken cancellationToken = default)
     {
         var errors = ValidateUpdate(request);
-
         if (errors.Count > 0)
-        {
             return SchoolCommandResult.Failure(errors);
-        }
 
-        var school = await _repository.GetForUpdateAsync(
-            request.Id,
-            cancellationToken);
-
+        var school = await _repository.GetForUpdateAsync(request.Id, cancellationToken);
         if (school is null)
-        {
-            return SchoolCommandResult.Failure(
-                new SchoolValidationError(
-                    string.Empty,
-                    SchoolErrorCode.SchoolNotFound));
-        }
-
+            return Failure(SchoolErrorCode.SchoolNotFound);
         if (school.Status == SchoolStatus.Archived)
-        {
-            return SchoolCommandResult.Failure(
-                new SchoolValidationError(
-                    string.Empty,
-                    SchoolErrorCode.ArchivedCannotEdit));
-        }
+            return Failure(SchoolErrorCode.ArchivedCannotEdit);
 
-        var normalizedCountryCode =
-            NormalizeCountryCode(request.CountryCode);
-        var timeZoneId =
-            ResolveTimeZoneId(normalizedCountryCode)!;
-
+        var normalizedCountryCode = NormalizeCountryCode(request.CountryCode);
+        var timeZoneId = ResolveTimeZoneId(normalizedCountryCode)!;
         var oldValues = new Dictionary<string, object?>
         {
             ["name"] = school.Name,
@@ -219,104 +174,138 @@ public sealed class SchoolManagementService : ISchoolManagementService
         school.CountryCode = normalizedCountryCode;
         school.City = request.City.Trim();
         school.ContactEmail = request.ContactEmail.Trim();
-        school.DefaultCulture =
-            request.DefaultCulture.Trim().ToLowerInvariant();
+        school.DefaultCulture = request.DefaultCulture.Trim().ToLowerInvariant();
         school.TimeZoneId = timeZoneId;
         school.UpdatedAtUtc = DateTime.UtcNow;
 
         if (_audit is not null)
         {
-            await _audit.QueueAsync(
-                new AuditEvent(
-                    SchoolId: school.Id,
-                    Action: "School.Updated",
-                    EntityType: "School",
-                    EntityId: school.Id.ToString("D"),
-                    Feature: "SchoolManagement",
-                    OldValues: oldValues,
-                    NewValues: new Dictionary<string, object?>
-                    {
-                        ["name"] = school.Name,
-                        ["countryCode"] = school.CountryCode,
-                        ["city"] = school.City,
-                        ["contactEmail"] = school.ContactEmail,
-                        ["defaultCulture"] = school.DefaultCulture,
-                        ["timeZoneId"] = school.TimeZoneId
-                    },
-                    ResultSummary: "School details updated."),
-                cancellationToken);
+            await _audit.QueueAsync(new AuditEvent(
+                SchoolId: school.Id,
+                Action: "School.Updated",
+                EntityType: "School",
+                EntityId: school.Id.ToString("D"),
+                Feature: "SchoolManagement",
+                OldValues: oldValues,
+                NewValues: new Dictionary<string, object?>
+                {
+                    ["name"] = school.Name,
+                    ["countryCode"] = school.CountryCode,
+                    ["city"] = school.City,
+                    ["contactEmail"] = school.ContactEmail,
+                    ["defaultCulture"] = school.DefaultCulture,
+                    ["timeZoneId"] = school.TimeZoneId
+                },
+                ResultSummary: "School details updated."), cancellationToken);
         }
 
-        var saveResult = await _repository.SaveAsync(
-            school,
-            request.RowVersion,
-            cancellationToken);
+        return MapWriteResult(await _repository.SaveAsync(
+            school, request.RowVersion, cancellationToken), school.Id);
+    }
 
-        return MapWriteResult(saveResult, school.Id);
+    public async Task<SchoolCommandResult> StartTrialAsync(
+        StartSchoolTrialRequest request,
+        CancellationToken cancellationToken = default)
+    {
+        if (request.DurationDays < 1 || request.DurationDays > MaximumTrialDays)
+            return Failure(SchoolErrorCode.InvalidTrialDuration, nameof(request.DurationDays));
+        if (request.RowVersion is not { Length: > 0 })
+            return Failure(SchoolErrorCode.ConcurrencyConflict);
+        if (_trials is null || _transactions is null)
+            return Failure(SchoolErrorCode.PersistenceError);
+
+        await using var transaction = await _transactions.BeginAsync(cancellationToken);
+        var school = await _repository.GetForUpdateAsync(request.Id, cancellationToken);
+        if (school is null)
+        {
+            await transaction.RollbackAsync(cancellationToken);
+            return Failure(SchoolErrorCode.SchoolNotFound);
+        }
+        if (school.Status != SchoolStatus.PendingActivation)
+        {
+            await transaction.RollbackAsync(cancellationToken);
+            return Failure(SchoolErrorCode.InvalidStatusTransition);
+        }
+        if (await _trials.GetAsync(school.Id, cancellationToken) is not null)
+        {
+            await transaction.RollbackAsync(cancellationToken);
+            return Failure(SchoolErrorCode.TrialAlreadyExists);
+        }
+
+        var now = DateTime.UtcNow;
+        var trial = new SchoolTrialWindow(
+            school.Id, now, now.AddDays(request.DurationDays), null, now, now);
+
+        if (!await _trials.CreateAsync(trial, cancellationToken))
+        {
+            await transaction.RollbackAsync(cancellationToken);
+            return Failure(SchoolErrorCode.TrialAlreadyExists);
+        }
+
+        school.Status = SchoolStatus.Trial;
+        school.UpdatedAtUtc = now;
+
+        if (_audit is not null)
+        {
+            await _audit.QueueAsync(new AuditEvent(
+                SchoolId: school.Id,
+                Action: "School.TrialStarted",
+                EntityType: "School",
+                EntityId: school.Id.ToString("D"),
+                Feature: "SchoolManagement",
+                OldValues: new Dictionary<string, object?> { ["status"] = SchoolStatus.PendingActivation.ToString() },
+                NewValues: new Dictionary<string, object?>
+                {
+                    ["status"] = SchoolStatus.Trial.ToString(),
+                    ["trialStartsAtUtc"] = trial.StartsAtUtc,
+                    ["trialEndsAtUtc"] = trial.EndsAtUtc,
+                    ["durationDays"] = request.DurationDays
+                },
+                ResultSummary: "School trial started with an explicit expiry date."), cancellationToken);
+        }
+
+        var saved = await _repository.SaveAsync(school, request.RowVersion, cancellationToken);
+        if (saved != SchoolRepositoryWriteResult.Success)
+        {
+            await transaction.RollbackAsync(cancellationToken);
+            return MapWriteResult(saved, school.Id);
+        }
+
+        await transaction.CommitAsync(cancellationToken);
+        return SchoolCommandResult.Success(school.Id);
     }
 
     public async Task<SchoolCommandResult> ChangeStatusAsync(
         SchoolStatusChangeRequest request,
         CancellationToken cancellationToken = default)
     {
-        var school = await _repository.GetForUpdateAsync(
-            request.Id,
-            cancellationToken);
-
+        var school = await _repository.GetForUpdateAsync(request.Id, cancellationToken);
         if (school is null)
-        {
-            return SchoolCommandResult.Failure(
-                new SchoolValidationError(
-                    string.Empty,
-                    SchoolErrorCode.SchoolNotFound));
-        }
-
+            return Failure(SchoolErrorCode.SchoolNotFound);
         if (!IsAllowedTransition(school.Status, request.TargetStatus))
-        {
-            return SchoolCommandResult.Failure(
-                new SchoolValidationError(
-                    string.Empty,
-                    SchoolErrorCode.InvalidStatusTransition));
-        }
+            return Failure(SchoolErrorCode.InvalidStatusTransition);
 
         var previousStatus = school.Status;
-
         school.Status = request.TargetStatus;
         school.UpdatedAtUtc = DateTime.UtcNow;
-
         if (request.TargetStatus == SchoolStatus.Archived)
-        {
             school.ArchivedAtUtc = school.UpdatedAtUtc;
-        }
 
         if (_audit is not null)
         {
-            await _audit.QueueAsync(
-                new AuditEvent(
-                    SchoolId: school.Id,
-                    Action: "School.StatusChanged",
-                    EntityType: "School",
-                    EntityId: school.Id.ToString("D"),
-                    Feature: "SchoolManagement",
-                    OldValues: new Dictionary<string, object?>
-                    {
-                        ["status"] = previousStatus.ToString()
-                    },
-                    NewValues: new Dictionary<string, object?>
-                    {
-                        ["status"] = school.Status.ToString()
-                    },
-                    ResultSummary:
-                        $"School status changed from {previousStatus} to {school.Status}."),
-                cancellationToken);
+            await _audit.QueueAsync(new AuditEvent(
+                SchoolId: school.Id,
+                Action: "School.StatusChanged",
+                EntityType: "School",
+                EntityId: school.Id.ToString("D"),
+                Feature: "SchoolManagement",
+                OldValues: new Dictionary<string, object?> { ["status"] = previousStatus.ToString() },
+                NewValues: new Dictionary<string, object?> { ["status"] = school.Status.ToString() },
+                ResultSummary: $"School status changed from {previousStatus} to {school.Status}."), cancellationToken);
         }
 
-        var saveResult = await _repository.SaveAsync(
-            school,
-            request.RowVersion,
-            cancellationToken);
-
-        return MapWriteResult(saveResult, school.Id);
+        return MapWriteResult(await _repository.SaveAsync(
+            school, request.RowVersion, cancellationToken), school.Id);
     }
 
     public static string NormalizeSchoolCode(string value) =>
@@ -327,19 +316,13 @@ public sealed class SchoolManagementService : ISchoolManagementService
 
     public static string? ResolveTimeZoneId(string countryCode)
     {
-        var normalizedCountryCode =
-            NormalizeCountryCode(countryCode);
-
-        return SupportedCountryTimeZones.TryGetValue(
-            normalizedCountryCode,
-            out var timeZoneId)
-                ? timeZoneId
-                : null;
+        var normalizedCountryCode = NormalizeCountryCode(countryCode);
+        return SupportedCountryTimeZones.TryGetValue(normalizedCountryCode, out var timeZoneId)
+            ? timeZoneId
+            : null;
     }
 
-    private static bool IsAllowedTransition(
-        SchoolStatus current,
-        SchoolStatus target) =>
+    private static bool IsAllowedTransition(SchoolStatus current, SchoolStatus target) =>
         (current, target) switch
         {
             (SchoolStatus.Active, SchoolStatus.Suspended) => true,
@@ -347,165 +330,62 @@ public sealed class SchoolManagementService : ISchoolManagementService
             (SchoolStatus.Suspended, SchoolStatus.Active) => true,
             (SchoolStatus.Suspended, SchoolStatus.Archived) => true,
             (SchoolStatus.PendingActivation, SchoolStatus.Archived) => true,
+            (SchoolStatus.Trial, SchoolStatus.Archived) => true,
             _ => false
         };
 
-    private static List<SchoolValidationError> ValidateCreate(
-        CreateSchoolRequest request)
+    private static List<SchoolValidationError> ValidateCreate(CreateSchoolRequest request)
     {
-        var errors = ValidateCommon(
-            request.Name,
-            request.CountryCode,
-            request.City,
-            request.ContactEmail,
-            request.DefaultCulture);
-
+        var errors = ValidateCommon(request.Name, request.CountryCode, request.City, request.ContactEmail, request.DefaultCulture);
         var code = NormalizeSchoolCode(request.SchoolCode);
-
         if (string.IsNullOrWhiteSpace(code))
-        {
-            errors.Add(new(
-                nameof(CreateSchoolRequest.SchoolCode),
-                SchoolErrorCode.RequiredSchoolCode));
-        }
+            errors.Add(new(nameof(CreateSchoolRequest.SchoolCode), SchoolErrorCode.RequiredSchoolCode));
         else
         {
             if (code.Length > SchoolCodeMaxLength)
-            {
-                errors.Add(new(
-                    nameof(CreateSchoolRequest.SchoolCode),
-                    SchoolErrorCode.SchoolCodeTooLong));
-            }
-
+                errors.Add(new(nameof(CreateSchoolRequest.SchoolCode), SchoolErrorCode.SchoolCodeTooLong));
             if (!SchoolCodePattern.IsMatch(code))
-            {
-                errors.Add(new(
-                    nameof(CreateSchoolRequest.SchoolCode),
-                    SchoolErrorCode.InvalidSchoolCode));
-            }
+                errors.Add(new(nameof(CreateSchoolRequest.SchoolCode), SchoolErrorCode.InvalidSchoolCode));
         }
-
         return errors;
     }
 
-    private static List<SchoolValidationError> ValidateUpdate(
-        UpdateSchoolRequest request)
+    private static List<SchoolValidationError> ValidateUpdate(UpdateSchoolRequest request)
     {
-        var errors = ValidateCommon(
-            request.Name,
-            request.CountryCode,
-            request.City,
-            request.ContactEmail,
-            request.DefaultCulture);
-
+        var errors = ValidateCommon(request.Name, request.CountryCode, request.City, request.ContactEmail, request.DefaultCulture);
         if (request.RowVersion is not { Length: > 0 })
-        {
-            errors.Add(new(
-                string.Empty,
-                SchoolErrorCode.ConcurrencyConflict));
-        }
-
+            errors.Add(new(string.Empty, SchoolErrorCode.ConcurrencyConflict));
         return errors;
     }
 
     private static List<SchoolValidationError> ValidateCommon(
-        string name,
-        string countryCode,
-        string city,
-        string contactEmail,
-        string defaultCulture)
+        string name, string countryCode, string city, string contactEmail, string defaultCulture)
     {
         var errors = new List<SchoolValidationError>();
+        if (string.IsNullOrWhiteSpace(name)) errors.Add(new("Name", SchoolErrorCode.RequiredName));
+        else if (name.Trim().Length > NameMaxLength) errors.Add(new("Name", SchoolErrorCode.NameTooLong));
 
-        if (string.IsNullOrWhiteSpace(name))
-        {
-            errors.Add(new(
-                "Name",
-                SchoolErrorCode.RequiredName));
-        }
-        else if (name.Trim().Length > NameMaxLength)
-        {
-            errors.Add(new(
-                "Name",
-                SchoolErrorCode.NameTooLong));
-        }
-
-        if (string.IsNullOrWhiteSpace(countryCode))
-        {
-            errors.Add(new(
-                "CountryCode",
-                SchoolErrorCode.RequiredCountryCode));
-        }
+        if (string.IsNullOrWhiteSpace(countryCode)) errors.Add(new("CountryCode", SchoolErrorCode.RequiredCountryCode));
         else
         {
-            var normalizedCountryCode =
-                NormalizeCountryCode(countryCode);
-
-            if (normalizedCountryCode.Length > CountryCodeMaxLength)
-            {
-                errors.Add(new(
-                    "CountryCode",
-                    SchoolErrorCode.CountryCodeTooLong));
-            }
-            else if (!SupportedCountryTimeZones.ContainsKey(
-                         normalizedCountryCode))
-            {
-                errors.Add(new(
-                    "CountryCode",
-                    SchoolErrorCode.InvalidCountryCode));
-            }
+            var normalized = NormalizeCountryCode(countryCode);
+            if (normalized.Length > CountryCodeMaxLength) errors.Add(new("CountryCode", SchoolErrorCode.CountryCodeTooLong));
+            else if (!SupportedCountryTimeZones.ContainsKey(normalized)) errors.Add(new("CountryCode", SchoolErrorCode.InvalidCountryCode));
         }
 
-        if (string.IsNullOrWhiteSpace(city))
-        {
-            errors.Add(new(
-                "City",
-                SchoolErrorCode.RequiredCity));
-        }
-        else if (city.Trim().Length > CityMaxLength)
-        {
-            errors.Add(new(
-                "City",
-                SchoolErrorCode.CityTooLong));
-        }
+        if (string.IsNullOrWhiteSpace(city)) errors.Add(new("City", SchoolErrorCode.RequiredCity));
+        else if (city.Trim().Length > CityMaxLength) errors.Add(new("City", SchoolErrorCode.CityTooLong));
 
-        if (string.IsNullOrWhiteSpace(contactEmail))
-        {
-            errors.Add(new(
-                "ContactEmail",
-                SchoolErrorCode.RequiredContactEmail));
-        }
+        if (string.IsNullOrWhiteSpace(contactEmail)) errors.Add(new("ContactEmail", SchoolErrorCode.RequiredContactEmail));
         else
         {
             var email = contactEmail.Trim();
-
-            if (email.Length > ContactEmailMaxLength)
-            {
-                errors.Add(new(
-                    "ContactEmail",
-                    SchoolErrorCode.ContactEmailTooLong));
-            }
-            else if (!IsValidEmail(email))
-            {
-                errors.Add(new(
-                    "ContactEmail",
-                    SchoolErrorCode.InvalidContactEmail));
-            }
+            if (email.Length > ContactEmailMaxLength) errors.Add(new("ContactEmail", SchoolErrorCode.ContactEmailTooLong));
+            else if (!IsValidEmail(email)) errors.Add(new("ContactEmail", SchoolErrorCode.InvalidContactEmail));
         }
 
-        if (string.IsNullOrWhiteSpace(defaultCulture))
-        {
-            errors.Add(new(
-                "DefaultCulture",
-                SchoolErrorCode.RequiredDefaultCulture));
-        }
-        else if (!SupportedCultures.Contains(defaultCulture.Trim()))
-        {
-            errors.Add(new(
-                "DefaultCulture",
-                SchoolErrorCode.InvalidDefaultCulture));
-        }
-
+        if (string.IsNullOrWhiteSpace(defaultCulture)) errors.Add(new("DefaultCulture", SchoolErrorCode.RequiredDefaultCulture));
+        else if (!SupportedCultures.Contains(defaultCulture.Trim())) errors.Add(new("DefaultCulture", SchoolErrorCode.InvalidDefaultCulture));
         return errors;
     }
 
@@ -514,78 +394,41 @@ public sealed class SchoolManagementService : ISchoolManagementService
         try
         {
             var parsed = new MailAddress(email);
-            return string.Equals(
-                parsed.Address,
-                email,
-                StringComparison.OrdinalIgnoreCase);
+            return string.Equals(parsed.Address, email, StringComparison.OrdinalIgnoreCase);
         }
-        catch (FormatException)
-        {
-            return false;
-        }
+        catch (FormatException) { return false; }
     }
 
-    private static SchoolCommandResult MapWriteResult(
-        SchoolRepositoryWriteResult result,
-        Guid schoolId) =>
+    private static SchoolCommandResult MapWriteResult(SchoolRepositoryWriteResult result, Guid schoolId) =>
         result switch
         {
-            SchoolRepositoryWriteResult.Success =>
-                SchoolCommandResult.Success(schoolId),
-
-            SchoolRepositoryWriteResult.ConcurrencyConflict =>
-                SchoolCommandResult.Failure(
-                    new SchoolValidationError(
-                        string.Empty,
-                        SchoolErrorCode.ConcurrencyConflict)),
-
-            SchoolRepositoryWriteResult.ConstraintViolation =>
-                SchoolCommandResult.Failure(
-                    new SchoolValidationError(
-                        string.Empty,
-                        SchoolErrorCode.PersistenceError)),
-
-            _ =>
-                SchoolCommandResult.Failure(
-                    new SchoolValidationError(
-                        string.Empty,
-                        SchoolErrorCode.PersistenceError))
+            SchoolRepositoryWriteResult.Success => SchoolCommandResult.Success(schoolId),
+            SchoolRepositoryWriteResult.ConcurrencyConflict => Failure(SchoolErrorCode.ConcurrencyConflict),
+            _ => Failure(SchoolErrorCode.PersistenceError)
         };
+
+    private static SchoolCommandResult Failure(SchoolErrorCode code, string field = "") =>
+        SchoolCommandResult.Failure(new SchoolValidationError(field, code));
 
     private static SchoolListItem MapListItem(School school) =>
         new(
-            school.Id,
-            school.Name,
-            school.SchoolCode,
-            school.Status,
-            school.CountryCode,
-            school.City,
-            school.CreatedAtUtc,
-            CanEdit(school.Status),
-            school.Status == SchoolStatus.Active,
+            school.Id, school.Name, school.SchoolCode, school.Status, school.CountryCode, school.City,
+            school.CreatedAtUtc, CanEdit(school.Status), school.Status == SchoolStatus.Active,
             school.Status == SchoolStatus.Suspended,
-            school.Status is SchoolStatus.Active or SchoolStatus.Suspended or SchoolStatus.PendingActivation);
+            school.Status is SchoolStatus.Active or SchoolStatus.Suspended or SchoolStatus.PendingActivation or SchoolStatus.Trial);
 
-    private static SchoolDetails MapDetails(School school) =>
-        new(
-            school.Id,
-            school.Name,
-            school.SchoolCode,
-            school.Status,
-            school.CountryCode,
-            school.City,
-            school.ContactEmail,
-            school.DefaultCulture,
-            school.TimeZoneId,
-            school.CreatedAtUtc,
-            school.UpdatedAtUtc,
-            school.ArchivedAtUtc,
-            school.RowVersion.ToArray(),
-            CanEdit(school.Status),
-            school.Status == SchoolStatus.Active,
-            school.Status == SchoolStatus.Suspended,
-            school.Status is SchoolStatus.Active or SchoolStatus.Suspended or SchoolStatus.PendingActivation);
+    private static SchoolDetails MapDetails(School school, SchoolTrialWindow? trial)
+    {
+        var now = DateTime.UtcNow;
+        return new SchoolDetails(
+            school.Id, school.Name, school.SchoolCode, school.Status, school.CountryCode, school.City,
+            school.ContactEmail, school.DefaultCulture, school.TimeZoneId, school.CreatedAtUtc,
+            school.UpdatedAtUtc, school.ArchivedAtUtc, school.RowVersion.ToArray(), CanEdit(school.Status),
+            school.Status == SchoolStatus.Active, school.Status == SchoolStatus.Suspended,
+            school.Status is SchoolStatus.Active or SchoolStatus.Suspended or SchoolStatus.PendingActivation or SchoolStatus.Trial,
+            school.Status == SchoolStatus.PendingActivation && trial is null,
+            trial?.StartsAtUtc, trial?.EndsAtUtc, trial?.IsUsableAt(now) ?? false);
+    }
 
-    private static bool CanEdit(SchoolStatus status) =>
-        status != SchoolStatus.Archived;
+    private static bool CanEdit(SchoolStatus status) => status != SchoolStatus.Archived;
 }
