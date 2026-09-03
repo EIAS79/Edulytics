@@ -67,7 +67,8 @@ public sealed class Phase05DirectStudentCreationContractTests
         Assert.Contains("direct-student-setup", createView);
         Assert.Contains("StudentNumber", createView);
         Assert.Contains("ClassGroupId", createView);
-        Assert.Contains("Student-Classes", createView);
+        Assert.Contains("StudentCreationOptions", createView);
+        Assert.Contains("Classes", createView);
     }
 
     [Fact]
