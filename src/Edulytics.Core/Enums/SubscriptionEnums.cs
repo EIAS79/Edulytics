@@ -12,7 +12,13 @@ public enum SubscriptionStatus
     PendingActivation = 1,
     Active = 2,
     Suspended = 3,
-    Ended = 4
+    Ended = 4,
+    Trial = 5,
+    PastDue = 6,
+    GracePeriod = 7,
+    CancellationPending = 8,
+    Expired = 9,
+    Cancelled = 10
 }
 
 public enum SubscriptionBillingCadence
