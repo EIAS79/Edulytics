@@ -18,6 +18,11 @@ namespace Edulytics.Web.Controllers;
 [Route("School/Users")]
 public sealed class SchoolUsersController : Controller
 {
+    private const string UserManagerRoles =
+        RoleNames.SchoolAdmin + "," +
+        RoleNames.SubjectSupervisor + "," +
+        RoleNames.SuperAdmin;
+
     private readonly ISchoolUserManagementService _users;
     private readonly IStringLocalizer<PlatformResource> _text;
     private readonly IUserInvitationDeliveryService _invitations;
@@ -99,19 +104,23 @@ public sealed class SchoolUsersController : Controller
                 });
         }
 
+        var roleOptions = BuildRoleOptions();
+
+        if (roleOptions.Count == 0)
+        {
+            return Forbid();
+        }
+
         return View(
             new SchoolUserCreateViewModel
             {
-                SchoolId =
-                    context.Value.SchoolId,
-                Role =
-                    RoleNames.Teacher,
-                RoleOptions =
-                    BuildRoleOptions()
+                SchoolId = context.Value.SchoolId,
+                Role = roleOptions[0].Value,
+                RoleOptions = roleOptions
             });
     }
 
-    [Authorize(Roles = RoleNames.SubjectSupervisor + "," + RoleNames.SuperAdmin)]
+    [Authorize(Roles = UserManagerRoles)]
     [HttpPost("Create")]
     [ValidateAntiForgeryToken]
     [EnableRateLimiting("SchoolUserCreate")]
@@ -250,14 +259,12 @@ public sealed class SchoolUsersController : Controller
             new SchoolUserDetailsViewModel
             {
                 User = result.Value,
-                RoleOptions =
-                    BuildRoleOptions(),
-                StudentSetup =
-                    studentSetup
+                RoleOptions = BuildRoleOptions(),
+                StudentSetup = studentSetup
             });
     }
 
-    [Authorize(Roles = RoleNames.SubjectSupervisor + "," + RoleNames.SuperAdmin)]
+    [Authorize(Roles = UserManagerRoles)]
     [HttpPost("{id:guid}/Active")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> SetActive(
@@ -303,7 +310,7 @@ public sealed class SchoolUsersController : Controller
             });
     }
 
-    [Authorize(Roles = RoleNames.SubjectSupervisor + "," + RoleNames.SuperAdmin)]
+    [Authorize(Roles = UserManagerRoles)]
     [HttpPost("{id:guid}/Lock")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> SetLocked(
@@ -456,7 +463,7 @@ public sealed class SchoolUsersController : Controller
             });
     }
 
-    [Authorize(Roles = RoleNames.SubjectSupervisor + "," + RoleNames.SuperAdmin)]
+    [Authorize(Roles = UserManagerRoles)]
     [HttpPost("{id:guid}/Password-Link")]
     [ValidateAntiForgeryToken]
     [EnableRateLimiting("InvitationResend")]
@@ -507,8 +514,7 @@ public sealed class SchoolUsersController : Controller
             result.PasswordSetupToken,
             invitationCulture);
 
-        UserInvitationDeliveryResult? delivery =
-            null;
+        UserInvitationDeliveryResult? delivery = null;
 
         if (link is not null)
         {
@@ -526,16 +532,12 @@ public sealed class SchoolUsersController : Controller
         if (delivery?.Succeeded == true)
         {
             TempData["SchoolUserSuccess"] =
-                _text[
-                    "InvitationResentSuccess"
-                ].Value;
+                _text["InvitationResentSuccess"].Value;
         }
         else
         {
             TempData["SchoolUserError"] =
-                _text[
-                    "InvitationDeliveryFailed"
-                ].Value;
+                _text["InvitationDeliveryFailed"].Value;
         }
 
         return RedirectToAction(
@@ -756,20 +758,16 @@ public sealed class SchoolUsersController : Controller
         IReadOnlyList<SchoolUserError> errors,
         out IActionResult result)
     {
-        var error =
-            errors.FirstOrDefault()?.Code;
+        var error = errors.FirstOrDefault()?.Code;
 
-        if (error ==
-            SchoolUserErrorCode.UserAccessDenied)
+        if (error == SchoolUserErrorCode.UserAccessDenied)
         {
             result = Forbid();
             return true;
         }
 
-        if (error ==
-                SchoolUserErrorCode.SchoolNotFound ||
-            error ==
-                SchoolUserErrorCode.UserNotFound)
+        if (error == SchoolUserErrorCode.SchoolNotFound ||
+            error == SchoolUserErrorCode.UserNotFound)
         {
             result = NotFound();
             return true;
@@ -797,24 +795,39 @@ public sealed class SchoolUsersController : Controller
                 ClaimTypes.NameIdentifier),
             out actorUserId);
 
-    private static IReadOnlyList<
-        SchoolUserRoleOptionViewModel>
-        BuildRoleOptions() =>
-        [
-            new(
-                RoleNames.SchoolAdmin,
-                "RoleSchoolAdmin"),
+    private IReadOnlyList<SchoolUserRoleOptionViewModel>
+        BuildRoleOptions()
+    {
+        if (User.IsInRole(RoleNames.SuperAdmin))
+        {
+            return
+            [
+                new(RoleNames.SchoolAdmin, "RoleSchoolAdmin"),
+                new(RoleNames.SubjectSupervisor, "RoleSubjectSupervisor"),
+                new(RoleNames.Teacher, "RoleTeacher"),
+                new(RoleNames.Student, "RoleStudent")
+            ];
+        }
 
-            new(
-                RoleNames.SubjectSupervisor,
-                "RoleSubjectSupervisor"),
+        if (User.IsInRole(RoleNames.SchoolAdmin))
+        {
+            return
+            [
+                new(
+                    RoleNames.SubjectSupervisor,
+                    "RoleSubjectSupervisor")
+            ];
+        }
 
-            new(
-                RoleNames.Teacher,
-                "RoleTeacher"),
+        if (User.IsInRole(RoleNames.SubjectSupervisor))
+        {
+            return
+            [
+                new(RoleNames.Teacher, "RoleTeacher"),
+                new(RoleNames.Student, "RoleStudent")
+            ];
+        }
 
-            new(
-                RoleNames.Student,
-                "RoleStudent")
-        ];
+        return [];
+    }
 }
