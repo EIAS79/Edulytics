@@ -38,7 +38,6 @@ public sealed class Phase25CAccessEnforcementTests
 
     [Theory]
     [InlineData(SubscriptionStatus.Active)]
-    [InlineData(SubscriptionStatus.Trial)]
     [InlineData(SubscriptionStatus.GracePeriod)]
     [InlineData(SubscriptionStatus.PastDue)]
     [InlineData(SubscriptionStatus.CancellationPending)]
@@ -61,6 +60,54 @@ public sealed class Phase25CAccessEnforcementTests
         var decision = await service.EvaluateSignInAsync(actor.Id);
 
         Assert.True(decision.Allowed);
+    }
+
+    [Fact]
+    public async Task CurrentSchoolTrial_AllowsSchoolAccess()
+    {
+        var school = ActiveSchool();
+        school.Status = SchoolStatus.Trial;
+        var actor = User(school.Id, RoleNames.Teacher);
+        var now = DateTime.UtcNow;
+        var service = Service(
+            actor,
+            school,
+            subscription: null,
+            trial: new SchoolTrialWindow(
+                school.Id,
+                now.AddHours(-1),
+                now.AddDays(7),
+                null,
+                now.AddHours(-1),
+                now.AddHours(-1)));
+
+        var decision = await service.EvaluateSignInAsync(actor.Id);
+
+        Assert.True(decision.Allowed);
+    }
+
+    [Fact]
+    public async Task ExpiredSchoolTrial_DeniesSchoolAccess()
+    {
+        var school = ActiveSchool();
+        school.Status = SchoolStatus.Trial;
+        var actor = User(school.Id, RoleNames.Teacher);
+        var now = DateTime.UtcNow;
+        var service = Service(
+            actor,
+            school,
+            subscription: null,
+            trial: new SchoolTrialWindow(
+                school.Id,
+                now.AddDays(-8),
+                now.AddMinutes(-1),
+                null,
+                now.AddDays(-8),
+                now.AddDays(-8)));
+
+        var decision = await service.EvaluateSignInAsync(actor.Id);
+
+        Assert.False(decision.Allowed);
     }
 
     [Theory]
@@ -128,14 +175,16 @@ public sealed class Phase25CAccessEnforcementTests
     private static SchoolUserManagementService Service(
         SchoolUserRecord actor,
         School? school,
-        SchoolSubscription? subscription) =>
+        SchoolSubscription? subscription,
+        SchoolTrialWindow? trial = null) =>
         new(
             new FakeUsers(actor),
             new FakeSchools(school),
             audit: null,
             transactions: null,
             onboarding: null,
-            subscriptions: new FakeSubscriptions(subscription));
+            subscriptions: new FakeSubscriptions(subscription),
+            trials: new FakeTrials(trial));
 
     private static School ActiveSchool() =>
         new()
@@ -272,5 +321,28 @@ public sealed class Phase25CAccessEnforcementTests
 
         private static Task<SubscriptionPersistenceResult> Unsupported() =>
             Task.FromResult(SubscriptionPersistenceResult.Failure(SubscriptionPersistenceError.Unknown));
+    }
+
+    private sealed class FakeTrials : ISchoolTrialRepository
+    {
+        private readonly SchoolTrialWindow? _trial;
+
+        public FakeTrials(SchoolTrialWindow? trial) => _trial = trial;
+
+        public Task<SchoolTrialWindow?> GetAsync(
+            Guid schoolId,
+            CancellationToken cancellationToken = default) =>
+            Task.FromResult(_trial?.SchoolId == schoolId ? _trial : null);
+
+        public Task<bool> CreateAsync(
+            SchoolTrialWindow trial,
+            CancellationToken cancellationToken = default) =>
+            Task.FromResult(false);
+
+        public Task EndAsync(
+            Guid schoolId,
+            DateTime endedAtUtc,
+            CancellationToken cancellationToken = default) =>
+            Task.CompletedTask;
     }
 }

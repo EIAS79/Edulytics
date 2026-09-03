@@ -24,45 +24,30 @@ public sealed class SchoolsController : Controller
     }
 
     [HttpGet("")]
-    public async Task<IActionResult> Index(
-        CancellationToken cancellationToken)
+    public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         var schools = await _schoolService.ListAsync(cancellationToken);
-
-        var model = new SchoolListViewModel
+        return View(new SchoolListViewModel
         {
-            Schools = schools
-                .Select(SchoolListRowViewModel.FromService)
-                .ToArray()
-        };
-
-        return View(model);
+            Schools = schools.Select(SchoolListRowViewModel.FromService).ToArray()
+        });
     }
 
     [HttpGet("Create")]
     public IActionResult Create()
     {
-        var culture =
-            System.Globalization.CultureInfo
-                .CurrentUICulture
-                .TwoLetterISOLanguageName;
-
-        var model = new SchoolFormViewModel
+        var culture = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+        return View(new SchoolFormViewModel
         {
             CountryCode = "PL",
-            DefaultCulture =
-                culture is "pl" ? "pl" : "en",
+            DefaultCulture = culture is "pl" ? "pl" : "en",
             TimeZoneId = "Europe/Warsaw"
-        };
-
-        return View(model);
+        });
     }
 
     [HttpPost("Create")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(
-        SchoolFormViewModel model,
-        CancellationToken cancellationToken)
+    public async Task<IActionResult> Create(SchoolFormViewModel model, CancellationToken cancellationToken)
     {
         var result = await _schoolService.CreateAsync(
             new CreateSchoolRequest(
@@ -82,55 +67,29 @@ public sealed class SchoolsController : Controller
         }
 
         TempData["SchoolSuccess"] = _text["CreateSuccess"].Value;
-
-        return RedirectToAction(
-            nameof(Details),
-            new { id = result.SchoolId });
+        return RedirectToAction(nameof(Details), new { id = result.SchoolId });
     }
 
     [HttpGet("{id:guid}")]
-    public async Task<IActionResult> Details(
-        Guid id,
-        CancellationToken cancellationToken)
+    public async Task<IActionResult> Details(Guid id, CancellationToken cancellationToken)
     {
-        var school = await _schoolService.GetAsync(
-            id,
-            cancellationToken);
-
-        if (school is null)
-        {
-            return NotFound();
-        }
-
-        return View(
-            SchoolDetailsViewModel.FromService(school));
+        var school = await _schoolService.GetAsync(id, cancellationToken);
+        return school is null ? NotFound() : View(SchoolDetailsViewModel.FromService(school));
     }
 
     [HttpGet("{id:guid}/Edit")]
-    public async Task<IActionResult> Edit(
-        Guid id,
-        CancellationToken cancellationToken)
+    public async Task<IActionResult> Edit(Guid id, CancellationToken cancellationToken)
     {
-        var school = await _schoolService.GetAsync(
-            id,
-            cancellationToken);
-
+        var school = await _schoolService.GetAsync(id, cancellationToken);
         if (school is null)
-        {
             return NotFound();
-        }
-
         if (!school.CanEdit)
         {
-            TempData["SchoolError"] =
-                _text["ArchivedCannotEdit"].Value;
-
-            return RedirectToAction(
-                nameof(Details),
-                new { id });
+            TempData["SchoolError"] = _text["ArchivedCannotEdit"].Value;
+            return RedirectToAction(nameof(Details), new { id });
         }
 
-        var model = new SchoolFormViewModel
+        return View(new SchoolFormViewModel
         {
             Id = school.Id,
             Name = school.Name,
@@ -140,11 +99,8 @@ public sealed class SchoolsController : Controller
             ContactEmail = school.ContactEmail,
             DefaultCulture = school.DefaultCulture,
             TimeZoneId = school.TimeZoneId,
-            RowVersionBase64 =
-                Convert.ToBase64String(school.RowVersion)
-        };
-
-        return View(model);
+            RowVersionBase64 = Convert.ToBase64String(school.RowVersion)
+        });
     }
 
     [HttpPost("{id:guid}/Edit")]
@@ -154,14 +110,9 @@ public sealed class SchoolsController : Controller
         SchoolFormViewModel model,
         CancellationToken cancellationToken)
     {
-        if (!TryDecodeRowVersion(
-                model.RowVersionBase64,
-                out var rowVersion))
+        if (!TryDecodeRowVersion(model.RowVersionBase64, out var rowVersion))
         {
-            ModelState.AddModelError(
-                string.Empty,
-                _text["ConcurrencyConflict"].Value);
-
+            ModelState.AddModelError(string.Empty, _text["ConcurrencyConflict"].Value);
             model.Id = id;
             return View(model);
         }
@@ -186,50 +137,55 @@ public sealed class SchoolsController : Controller
         }
 
         TempData["SchoolSuccess"] = _text["UpdateSuccess"].Value;
+        return RedirectToAction(nameof(Details), new { id });
+    }
 
-        return RedirectToAction(
-            nameof(Details),
-            new { id });
+    [HttpPost("{id:guid}/StartTrial")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> StartTrial(
+        Guid id,
+        int durationDays,
+        string rowVersion,
+        CancellationToken cancellationToken)
+    {
+        if (!TryDecodeRowVersion(rowVersion, out var version))
+        {
+            TempData["SchoolError"] = _text["ConcurrencyConflict"].Value;
+            return RedirectToAction(nameof(Details), new { id });
+        }
+
+        var result = await _schoolService.StartTrialAsync(
+            new StartSchoolTrialRequest(id, durationDays, version), cancellationToken);
+
+        if (!result.Succeeded)
+        {
+            var error = result.Errors.FirstOrDefault();
+            if (error?.Code == SchoolErrorCode.SchoolNotFound)
+                return NotFound();
+            TempData["SchoolError"] = error is null
+                ? _text["PersistenceError"].Value
+                : _text[error.Code.ToString()].Value;
+            return RedirectToAction(nameof(Details), new { id });
+        }
+
+        TempData["SchoolSuccess"] = _text["TrialStartedSuccess"].Value;
+        return RedirectToAction(nameof(Details), new { id });
     }
 
     [HttpPost("{id:guid}/Suspend")]
     [ValidateAntiForgeryToken]
-    public Task<IActionResult> Suspend(
-        Guid id,
-        string rowVersion,
-        CancellationToken cancellationToken) =>
-        ChangeStatus(
-            id,
-            rowVersion,
-            SchoolStatus.Suspended,
-            "SuspendSuccess",
-            cancellationToken);
+    public Task<IActionResult> Suspend(Guid id, string rowVersion, CancellationToken cancellationToken) =>
+        ChangeStatus(id, rowVersion, SchoolStatus.Suspended, "SuspendSuccess", cancellationToken);
 
     [HttpPost("{id:guid}/Reactivate")]
     [ValidateAntiForgeryToken]
-    public Task<IActionResult> Reactivate(
-        Guid id,
-        string rowVersion,
-        CancellationToken cancellationToken) =>
-        ChangeStatus(
-            id,
-            rowVersion,
-            SchoolStatus.Active,
-            "ReactivateSuccess",
-            cancellationToken);
+    public Task<IActionResult> Reactivate(Guid id, string rowVersion, CancellationToken cancellationToken) =>
+        ChangeStatus(id, rowVersion, SchoolStatus.Active, "ReactivateSuccess", cancellationToken);
 
     [HttpPost("{id:guid}/Archive")]
     [ValidateAntiForgeryToken]
-    public Task<IActionResult> Archive(
-        Guid id,
-        string rowVersion,
-        CancellationToken cancellationToken) =>
-        ChangeStatus(
-            id,
-            rowVersion,
-            SchoolStatus.Archived,
-            "ArchiveSuccess",
-            cancellationToken);
+    public Task<IActionResult> Archive(Guid id, string rowVersion, CancellationToken cancellationToken) =>
+        ChangeStatus(id, rowVersion, SchoolStatus.Archived, "ArchiveSuccess", cancellationToken);
 
     private async Task<IActionResult> ChangeStatus(
         Guid id,
@@ -238,72 +194,41 @@ public sealed class SchoolsController : Controller
         string successKey,
         CancellationToken cancellationToken)
     {
-        if (!TryDecodeRowVersion(
-                rowVersionValue,
-                out var rowVersion))
+        if (!TryDecodeRowVersion(rowVersionValue, out var rowVersion))
         {
-            TempData["SchoolError"] =
-                _text["ConcurrencyConflict"].Value;
-
-            return RedirectToAction(
-                nameof(Details),
-                new { id });
+            TempData["SchoolError"] = _text["ConcurrencyConflict"].Value;
+            return RedirectToAction(nameof(Details), new { id });
         }
 
         var result = await _schoolService.ChangeStatusAsync(
-            new SchoolStatusChangeRequest(
-                id,
-                targetStatus,
-                rowVersion),
-            cancellationToken);
+            new SchoolStatusChangeRequest(id, targetStatus, rowVersion), cancellationToken);
 
         if (!result.Succeeded)
         {
             var firstError = result.Errors.FirstOrDefault();
-
             if (firstError?.Code == SchoolErrorCode.SchoolNotFound)
-            {
                 return NotFound();
-            }
-
-            TempData["SchoolError"] =
-                firstError is null
-                    ? _text["PersistenceError"].Value
-                    : _text[firstError.Code.ToString()].Value;
-
-            return RedirectToAction(
-                nameof(Details),
-                new { id });
+            TempData["SchoolError"] = firstError is null
+                ? _text["PersistenceError"].Value
+                : _text[firstError.Code.ToString()].Value;
+            return RedirectToAction(nameof(Details), new { id });
         }
 
         TempData["SchoolSuccess"] = _text[successKey].Value;
-
-        return RedirectToAction(
-            nameof(Details),
-            new { id });
+        return RedirectToAction(nameof(Details), new { id });
     }
 
     private void AddErrors(SchoolCommandResult result)
     {
         foreach (var error in result.Errors)
-        {
-            ModelState.AddModelError(
-                error.Field,
-                _text[error.Code.ToString()].Value);
-        }
+            ModelState.AddModelError(error.Field, _text[error.Code.ToString()].Value);
     }
 
-    private static bool TryDecodeRowVersion(
-        string? value,
-        out byte[] rowVersion)
+    private static bool TryDecodeRowVersion(string? value, out byte[] rowVersion)
     {
         rowVersion = Array.Empty<byte>();
-
         if (string.IsNullOrWhiteSpace(value))
-        {
             return false;
-        }
-
         try
         {
             rowVersion = Convert.FromBase64String(value);

@@ -72,7 +72,7 @@ public sealed class SubscriptionsController : Controller
                 schools
                     .Where(x =>
                         (x.Status == SchoolStatus.PendingActivation ||
-                         x.Status == SchoolStatus.Suspended) &&
+                         x.Status == SchoolStatus.Trial) &&
                         !subscribed.Contains(x.Id) &&
                         (x.CountryCode == "PL" ||
                          x.CountryCode == "AE"))

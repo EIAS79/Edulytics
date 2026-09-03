@@ -20,4 +20,8 @@ public interface ISchoolManagementService
     Task<SchoolCommandResult> ChangeStatusAsync(
         SchoolStatusChangeRequest request,
         CancellationToken cancellationToken = default);
+
+    Task<SchoolCommandResult> StartTrialAsync(
+        StartSchoolTrialRequest request,
+        CancellationToken cancellationToken = default);
 }

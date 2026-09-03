@@ -7,192 +7,95 @@
     ViewData["Title"] = T["SchoolDetails"].Value;
     var statusText = Model.Status == SchoolStatus.PendingActivation
         ? S["PendingActivation"]
-        : T[$"Status{Model.Status}"];
+        : Model.Status == SchoolStatus.Trial
+            ? T["StatusTrial"]
+            : T[$"Status{Model.Status}"];
 }
 
 <section class="school-page">
     <header class="school-page-header">
         <div>
-            <a class="school-back-link"
-               asp-controller="Schools"
-               asp-action="Index">
-                ← @T["BackToSchools"]
-            </a>
-
+            <a class="school-back-link" asp-controller="Schools" asp-action="Index">← @T["BackToSchools"]</a>
             <div class="school-title-line">
-                <div>
-                    <h1>@Model.Name</h1>
-                    <span class="school-code">@Model.SchoolCode</span>
-                </div>
-
-                <span class="school-status"
-                      data-status="@Model.Status">
-                    @statusText
-                </span>
+                <div><h1>@Model.Name</h1><span class="school-code">@Model.SchoolCode</span></div>
+                <span class="school-status" data-status="@Model.Status">@statusText</span>
             </div>
         </div>
-
         <div class="school-header-actions">
-            <a class="school-button school-button-primary"
-               asp-controller="SchoolUsers"
-               asp-action="Index"
-               asp-route-schoolId="@Model.Id">
-                @T["ManageSchoolUsers"]
-            </a>
-
+            <a class="school-button school-button-primary" asp-controller="SchoolUsers" asp-action="Index" asp-route-schoolId="@Model.Id">@T["ManageSchoolUsers"]</a>
             @if (Model.CanEdit)
             {
-                <a class="school-button school-button-secondary"
-                   asp-controller="Schools"
-                   asp-action="Edit"
-                   asp-route-id="@Model.Id">
-                    @T["Edit"]
-                </a>
+                <a class="school-button school-button-secondary" asp-controller="Schools" asp-action="Edit" asp-route-id="@Model.Id">@T["Edit"]</a>
             }
         </div>
     </header>
 
     @if (TempData["SchoolSuccess"] is string success)
-    {
-        <div class="school-alert school-alert-success" role="status">
-            @success
-        </div>
-    }
-
+    { <div class="school-alert school-alert-success" role="status">@success</div> }
     @if (TempData["SchoolError"] is string error)
-    {
-        <div class="school-alert school-alert-error" role="alert">
-            @error
-        </div>
-    }
+    { <div class="school-alert school-alert-error" role="alert">@error</div> }
 
     <section class="school-detail-card">
         <h2>@T["SchoolInformation"]</h2>
-
         <dl class="school-detail-grid">
-            <div>
-                <dt>@T["Name"]</dt>
-                <dd>@Model.Name</dd>
-            </div>
-
-            <div>
-                <dt>@T["SchoolCode"]</dt>
-                <dd><span class="school-code">@Model.SchoolCode</span></dd>
-            </div>
-
-            <div>
-                <dt>@T["Status"]</dt>
-                <dd>@statusText</dd>
-            </div>
-
-            <div>
-                <dt>@T["CountryCode"]</dt>
-                <dd>@Model.CountryCode</dd>
-            </div>
-
-            <div>
-                <dt>@T["City"]</dt>
-                <dd>@Model.City</dd>
-            </div>
-
-            <div>
-                <dt>@T["ContactEmail"]</dt>
-                <dd>@Model.ContactEmail</dd>
-            </div>
-
-            <div>
-                <dt>@T["DefaultCulture"]</dt>
-                <dd>
-                    @(Model.DefaultCulture == "pl"
-                        ? T["CulturePolish"]
-                        : T["CultureEnglish"])
-                </dd>
-            </div>
-
-            <div>
-                <dt>@T["TimeZoneId"]</dt>
-                <dd>@Model.TimeZoneId</dd>
-            </div>
-
-            <div>
-                <dt>@T["CreatedAt"]</dt>
-                <dd>@Model.CreatedAtUtc.ToString("g") @T["UtcSuffix"]</dd>
-            </div>
-
-            <div>
-                <dt>@T["UpdatedAt"]</dt>
-                <dd>@Model.UpdatedAtUtc.ToString("g") @T["UtcSuffix"]</dd>
-            </div>
-
+            <div><dt>@T["Name"]</dt><dd>@Model.Name</dd></div>
+            <div><dt>@T["SchoolCode"]</dt><dd><span class="school-code">@Model.SchoolCode</span></dd></div>
+            <div><dt>@T["Status"]</dt><dd>@statusText</dd></div>
+            <div><dt>@T["CountryCode"]</dt><dd>@Model.CountryCode</dd></div>
+            <div><dt>@T["City"]</dt><dd>@Model.City</dd></div>
+            <div><dt>@T["ContactEmail"]</dt><dd>@Model.ContactEmail</dd></div>
+            <div><dt>@T["DefaultCulture"]</dt><dd>@(Model.DefaultCulture == "pl" ? T["CulturePolish"] : T["CultureEnglish"])</dd></div>
+            <div><dt>@T["TimeZoneId"]</dt><dd>@Model.TimeZoneId</dd></div>
+            <div><dt>@T["CreatedAt"]</dt><dd>@Model.CreatedAtUtc.ToString("g") @T["UtcSuffix"]</dd></div>
+            <div><dt>@T["UpdatedAt"]</dt><dd>@Model.UpdatedAtUtc.ToString("g") @T["UtcSuffix"]</dd></div>
+            @if (Model.TrialStartsAtUtc.HasValue)
+            {
+                <div><dt>@T["TrialStarts"]</dt><dd>@Model.TrialStartsAtUtc.Value.ToString("g") @T["UtcSuffix"]</dd></div>
+                <div><dt>@T["TrialEnds"]</dt><dd>@Model.TrialEndsAtUtc!.Value.ToString("g") @T["UtcSuffix"]</dd></div>
+                <div><dt>@T["TrialAccess"]</dt><dd>@(Model.TrialIsCurrentlyUsable ? T["TrialAvailable"] : T["TrialExpired"])</dd></div>
+            }
             @if (Model.ArchivedAtUtc.HasValue)
             {
-                <div>
-                    <dt>@T["ArchivedAt"]</dt>
-                    <dd>
-                        @Model.ArchivedAtUtc.Value.ToString("g")
-                        @T["UtcSuffix"]
-                    </dd>
-                </div>
+                <div><dt>@T["ArchivedAt"]</dt><dd>@Model.ArchivedAtUtc.Value.ToString("g") @T["UtcSuffix"]</dd></div>
             }
         </dl>
     </section>
 
+    @if (Model.CanStartTrial)
+    {
+        <section class="school-status-actions" aria-label="@T["Trial"]">
+            <form method="post" asp-controller="Schools" asp-action="StartTrial" asp-route-id="@Model.Id" class="billing-inline-form">
+                <input type="hidden" name="rowVersion" value="@Model.RowVersionBase64" />
+                <label>@T["TrialDurationDays"]
+                    <input type="number" name="durationDays" min="1" max="365" value="7" required />
+                </label>
+                <button type="submit" class="school-button school-button-primary">@T["StartTrial"]</button>
+            </form>
+        </section>
+    }
+
     @if (Model.CanSuspend || Model.CanReactivate || Model.CanArchive)
     {
-        <section class="school-status-actions"
-                 aria-label="@T["Actions"]">
-
+        <section class="school-status-actions" aria-label="@T["Actions"]">
             @if (Model.CanSuspend)
             {
-                <form method="post"
-                      asp-controller="Schools"
-                      asp-action="Suspend"
-                      asp-route-id="@Model.Id"
-                      data-confirm="@T["ConfirmSuspend"]">
-                    <input type="hidden"
-                           name="rowVersion"
-                           value="@Model.RowVersionBase64" />
-
-                    <button type="submit"
-                            class="school-button school-button-warning">
-                        @T["Suspend"]
-                    </button>
+                <form method="post" asp-controller="Schools" asp-action="Suspend" asp-route-id="@Model.Id" data-confirm="@T["ConfirmSuspend"]">
+                    <input type="hidden" name="rowVersion" value="@Model.RowVersionBase64" />
+                    <button type="submit" class="school-button school-button-warning">@T["Suspend"]</button>
                 </form>
             }
-
             @if (Model.CanReactivate)
             {
-                <form method="post"
-                      asp-controller="Schools"
-                      asp-action="Reactivate"
-                      asp-route-id="@Model.Id"
-                      data-confirm="@T["ConfirmReactivate"]">
-                    <input type="hidden"
-                           name="rowVersion"
-                           value="@Model.RowVersionBase64" />
-
-                    <button type="submit"
-                            class="school-button school-button-primary">
-                        @T["Reactivate"]
-                    </button>
+                <form method="post" asp-controller="Schools" asp-action="Reactivate" asp-route-id="@Model.Id" data-confirm="@T["ConfirmReactivate"]">
+                    <input type="hidden" name="rowVersion" value="@Model.RowVersionBase64" />
+                    <button type="submit" class="school-button school-button-primary">@T["Reactivate"]</button>
                 </form>
             }
-
             @if (Model.CanArchive)
             {
-                <form method="post"
-                      asp-controller="Schools"
-                      asp-action="Archive"
-                      asp-route-id="@Model.Id"
-                      data-confirm="@T["ConfirmArchive"]">
-                    <input type="hidden"
-                           name="rowVersion"
-                           value="@Model.RowVersionBase64" />
-
-                    <button type="submit"
-                            class="school-button school-button-danger">
-                        @T["Archive"]
-                    </button>
+                <form method="post" asp-controller="Schools" asp-action="Archive" asp-route-id="@Model.Id" data-confirm="@T["ConfirmArchive"]">
+                    <input type="hidden" name="rowVersion" value="@Model.RowVersionBase64" />
+                    <button type="submit" class="school-button school-button-danger">@T["Archive"]</button>
                 </form>
             }
         </section>
