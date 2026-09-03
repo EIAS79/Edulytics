@@ -145,18 +145,6 @@
                             </a>
                         }
 
-                        @if (isSchoolAdmin)
-                        {
-                            <a class="ed-v3-nav-link @(currentController == "SubjectSupervisorAssignments" ? "is-active" : null)"
-                               asp-controller="SubjectSupervisorAssignments"
-                               asp-action="Index">
-                                <span class="ed-v3-nav-icon" aria-hidden="true">
-                                    <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8m-8 4h5m4 0 2 2 3-4"/></svg>
-                                </span>
-                                <span>@S["NavSupervisorAssignments"]</span>
-                            </a>
-                        }
-
                         @if (isSchoolAdmin || isSupervisor || isTeacher)
                         {
                             <a class="ed-v3-nav-link @(currentController == "AcademicStructure" ? "is-active" : null)"
