@@ -181,6 +181,17 @@ public sealed class ImportsController
         if (!TryActor(out var actorId))
             return Forbid();
 
+        var batch = await _imports.GetBatchAsync(
+            actorId,
+            batchId,
+            cancellationToken);
+
+        if (!batch.Succeeded)
+            return Failure(batch.Error);
+
+        if (!MathOnlyImportAdapter.IsSupported(batch.Value!.Type))
+            return BadRequest();
+
         if (!TryRowVersion(
                 rowVersion,
                 out var bytes))
