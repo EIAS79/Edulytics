@@ -12,7 +12,8 @@ public enum SubscriptionStatus
     PendingActivation = 1,
     Active = 2,
     Suspended = 3,
-    Ended = 4,
+    // Value 4 intentionally remains unused. The former Ended state was removed;
+    // retaining the gap avoids unnecessary persistence/migration risk.
     Trial = 5,
     PastDue = 6,
     GracePeriod = 7,
