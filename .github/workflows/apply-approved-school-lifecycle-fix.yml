@@ -1,0 +1,341 @@
+name: Apply approved school lifecycle completion
+
+on:
+  push:
+    branches:
+      - fix/approved-school-lifecycle
+
+permissions:
+  contents: write
+
+env:
+  DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+  DOTNET_NOLOGO: "1"
+
+jobs:
+  apply-and-verify:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+
+    steps:
+      - name: Checkout lifecycle branch
+        uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+          ref: fix/approved-school-lifecycle
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6.0.0
+        with:
+          dotnet-version: "10.0.200"
+
+      - name: Apply approved lifecycle corrections
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 <<'PY'
+          from pathlib import Path
+
+          ROOT = Path.cwd()
+
+          def replace_once(rel, old, new, label):
+              path = ROOT / rel
+              text = path.read_text(encoding="utf-8")
+              if new in text:
+                  print(f"SKIP: {label} already applied")
+                  return
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(
+                      f"ERROR: expected exactly one source block for {label}; found {count} in {rel}")
+              path.write_text(text.replace(old, new, 1), encoding="utf-8")
+              print(f"PASS: {label}")
+
+          billing = "src/Edulytics.Services/Billing/BillingService.cs"
+          replace_once(
+              billing,
+              '''    private readonly IAuditService _audit;\n    private readonly IApplicationTransactionManager _transactions;\n\n    public BillingService(\n        IBillingRepository billing,\n        ISchoolSubscriptionRepository subscriptions,\n        ISchoolRepository schools,\n        ISchoolUserRepository users,\n        IAuditService audit,\n        IApplicationTransactionManager transactions)\n    {\n        _billing = billing;\n        _subscriptions = subscriptions;\n        _schools = schools;\n        _users = users;\n        _audit = audit;\n        _transactions = transactions;\n    }''',
+              '''    private readonly IAuditService _audit;\n    private readonly IApplicationTransactionManager _transactions;\n    private readonly ISchoolTrialRepository? _trials;\n\n    public BillingService(\n        IBillingRepository billing,\n        ISchoolSubscriptionRepository subscriptions,\n        ISchoolRepository schools,\n        ISchoolUserRepository users,\n        IAuditService audit,\n        IApplicationTransactionManager transactions,\n        ISchoolTrialRepository? trials = null)\n    {\n        _billing = billing;\n        _subscriptions = subscriptions;\n        _schools = schools;\n        _users = users;\n        _audit = audit;\n        _transactions = transactions;\n        _trials = trials;\n    }''',
+              "BillingService trial repository integration")
+
+          replace_once(
+              billing,
+              '        profile.TaxIdentifier = Clean(request.TaxIdentifier);',
+              '        profile.TaxIdentifier = Optional(request.TaxIdentifier) ?? string.Empty;',
+              "optional TaxIdentifier null safety")
+
+          replace_once(
+              billing,
+              '''        if (school.Status is not\n            (SchoolStatus.PendingActivation or\n             SchoolStatus.Suspended or\n             SchoolStatus.Active))\n            return Fail(BillingErrorCode.InvalidState);\n\n        var now = DateTime.UtcNow;''',
+              '''        if (school.Status is not\n            (SchoolStatus.PendingActivation or\n             SchoolStatus.Trial or\n             SchoolStatus.Suspended or\n             SchoolStatus.Active))\n            return Fail(BillingErrorCode.InvalidState);\n\n        var wasTrial = school.Status == SchoolStatus.Trial;\n        var now = DateTime.UtcNow;''',
+              "Billing Trial-to-Active eligibility")
+
+          replace_once(
+              billing,
+              '''        var saved = await _subscriptions.SaveWithSchoolAsync(\n            subscription,\n            subscriptionVersion,\n            school,\n            schoolVersion,\n            cancellationToken: cancellationToken);\n\n        return saved.Succeeded\n            ? BillingCommandResult.Success(subscription.Id)\n            : Fail(MapSubscriptionPersistence(saved.Error));\n    }\n\n    private async Task<BillingCommandResult> ApplyPaidRenewalInsideTransactionAsync''',
+              '''        var saved = await _subscriptions.SaveWithSchoolAsync(\n            subscription,\n            subscriptionVersion,\n            school,\n            schoolVersion,\n            cancellationToken: cancellationToken);\n\n        if (!saved.Succeeded)\n            return Fail(MapSubscriptionPersistence(saved.Error));\n\n        if (wasTrial)\n        {\n            if (_trials is null)\n                return Fail(BillingErrorCode.PersistenceError);\n\n            await _trials.EndAsync(\n                schoolId,\n                now,\n                cancellationToken);\n        }\n\n        return BillingCommandResult.Success(subscription.Id);\n    }\n\n    private async Task<BillingCommandResult> ApplyPaidRenewalInsideTransactionAsync''',
+              "Billing paid activation closes Trial")
+
+          subscriptions = "src/Edulytics.Services/Subscriptions/SchoolSubscriptionService.cs"
+          replace_once(
+              subscriptions,
+              '''    private readonly IAuditService _audit;\n    private readonly IApplicationTransactionManager _transactions;\n\n    public SchoolSubscriptionService(\n        ISchoolSubscriptionRepository subscriptions,\n        ISchoolRepository schools,\n        ISchoolUserRepository users,\n        IAuditService audit,\n        IApplicationTransactionManager transactions)\n    {\n        _subscriptions = subscriptions;\n        _schools = schools;\n        _users = users;\n        _audit = audit;\n        _transactions = transactions;\n    }''',
+              '''    private readonly IAuditService _audit;\n    private readonly IApplicationTransactionManager _transactions;\n    private readonly ISchoolTrialRepository? _trials;\n\n    public SchoolSubscriptionService(\n        ISchoolSubscriptionRepository subscriptions,\n        ISchoolRepository schools,\n        ISchoolUserRepository users,\n        IAuditService audit,\n        IApplicationTransactionManager transactions,\n        ISchoolTrialRepository? trials = null)\n    {\n        _subscriptions = subscriptions;\n        _schools = schools;\n        _users = users;\n        _audit = audit;\n        _transactions = transactions;\n        _trials = trials;\n    }''',
+              "SubscriptionService trial repository integration")
+
+          replace_once(
+              subscriptions,
+              '''        if (school.Status is not (SchoolStatus.PendingActivation or SchoolStatus.Suspended))\n        {\n            await transaction.RollbackAsync(cancellationToken);\n            return Fail(SubscriptionErrorCode.SchoolMustBeSuspended);\n        }''',
+              '''        if (school.Status is not\n            (SchoolStatus.PendingActivation or\n             SchoolStatus.Trial or\n             SchoolStatus.Suspended))\n        {\n            await transaction.RollbackAsync(cancellationToken);\n            return Fail(SubscriptionErrorCode.SchoolMustBeSuspended);\n        }''',
+              "allow subscription creation during Trial")
+
+          replace_once(
+              subscriptions,
+              '''        if (school.Status is not (SchoolStatus.PendingActivation or SchoolStatus.Suspended or SchoolStatus.Active))\n        {\n            await transaction.RollbackAsync(cancellationToken);\n            return Fail(SubscriptionErrorCode.SchoolMustBeSuspended);\n        }\n\n        var now = DateTime.UtcNow;''',
+              '''        if (school.Status is not\n            (SchoolStatus.PendingActivation or\n             SchoolStatus.Trial or\n             SchoolStatus.Suspended or\n             SchoolStatus.Active))\n        {\n            await transaction.RollbackAsync(cancellationToken);\n            return Fail(SubscriptionErrorCode.SchoolMustBeSuspended);\n        }\n\n        var wasTrial = school.Status == SchoolStatus.Trial;\n        var now = DateTime.UtcNow;''',
+              "allow agreement activation from Trial")
+
+          replace_once(
+              subscriptions,
+              '''        var saved = await _subscriptions.SaveWithSchoolAsync(\n            subscription,\n            expectedRowVersion,\n            school,\n            schoolRowVersion,\n            cancellationToken: cancellationToken);\n        if (!saved.Succeeded)\n        {\n            await transaction.RollbackAsync(cancellationToken);\n            return Fail(MapPersistence(saved.Error));\n        }\n\n        await transaction.CommitAsync(cancellationToken);\n        return SubscriptionCommandResult.Success(await MapAsync(subscription, cancellationToken));\n    }\n\n    public async Task<SubscriptionCommandResult> IncreaseSeatsAsync''',
+              '''        var saved = await _subscriptions.SaveWithSchoolAsync(\n            subscription,\n            expectedRowVersion,\n            school,\n            schoolRowVersion,\n            cancellationToken: cancellationToken);\n        if (!saved.Succeeded)\n        {\n            await transaction.RollbackAsync(cancellationToken);\n            return Fail(MapPersistence(saved.Error));\n        }\n\n        if (wasTrial)\n        {\n            if (_trials is null)\n            {\n                await transaction.RollbackAsync(cancellationToken);\n                return Fail(SubscriptionErrorCode.PersistenceError);\n            }\n\n            await _trials.EndAsync(\n                schoolId,\n                now,\n                cancellationToken);\n        }\n\n        await transaction.CommitAsync(cancellationToken);\n        return SubscriptionCommandResult.Success(await MapAsync(subscription, cancellationToken));\n    }\n\n    public async Task<SubscriptionCommandResult> IncreaseSeatsAsync''',
+              "agreement activation closes Trial")
+
+          users = "src/Edulytics.Services/Users/SchoolUserManagementService.cs"
+          replace_once(
+              users,
+              '''    private readonly ICustomerOnboardingRepository? _onboarding;\n    private readonly ISchoolSubscriptionRepository? _subscriptions;\n\n    public SchoolUserManagementService(\n        ISchoolUserRepository users,\n        ISchoolRepository schools,\n        IAuditService? audit = null,\n        IApplicationTransactionManager? transactions = null,\n        ICustomerOnboardingRepository? onboarding = null,\n        ISchoolSubscriptionRepository? subscriptions = null)\n    {\n        _users = users;\n        _schools = schools;\n        _audit = audit;\n        _transactions = transactions;\n        _onboarding = onboarding;\n        _subscriptions = subscriptions;\n    }''',
+              '''    private readonly ICustomerOnboardingRepository? _onboarding;\n    private readonly ISchoolSubscriptionRepository? _subscriptions;\n    private readonly ISchoolTrialRepository? _trials;\n\n    public SchoolUserManagementService(\n        ISchoolUserRepository users,\n        ISchoolRepository schools,\n        IAuditService? audit = null,\n        IApplicationTransactionManager? transactions = null,\n        ICustomerOnboardingRepository? onboarding = null,\n        ISchoolSubscriptionRepository? subscriptions = null,\n        ISchoolTrialRepository? trials = null)\n    {\n        _users = users;\n        _schools = schools;\n        _audit = audit;\n        _transactions = transactions;\n        _onboarding = onboarding;\n        _subscriptions = subscriptions;\n        _trials = trials;\n    }''',
+              "School user trial repository integration")
+
+          replace_once(
+              users,
+              '''        if (!await HasCommercialOperationalAccessAsync(\n                school.Id,\n                user.Id,\n                role,\n                cancellationToken))''',
+              '''        if (!await HasCommercialOperationalAccessAsync(\n                school.Id,\n                school.Status,\n                user.Id,\n                role,\n                cancellationToken))''',
+              "sign-in passes school lifecycle state")
+
+          replace_once(
+              users,
+              '''            !await HasCommercialOperationalAccessAsync(\n                school.Id,\n                actor.Id,\n                actorRole!,\n                cancellationToken))''',
+              '''            !await HasCommercialOperationalAccessAsync(\n                school.Id,\n                school.Status,\n                actor.Id,\n                actorRole!,\n                cancellationToken))''',
+              "management authorization passes school lifecycle state")
+
+          replace_once(
+              users,
+              '''    private async Task<bool> HasCommercialOperationalAccessAsync(\n        Guid schoolId,\n        Guid userId,\n        string role,\n        CancellationToken cancellationToken)\n    {\n        if (_subscriptions is null)\n            return true;\n\n        var subscription =\n            await _subscriptions.GetBySchoolAsync(\n                schoolId,\n                cancellationToken);\n\n        if (subscription is null)\n            return true;\n\n        var now = DateTime.UtcNow;\n\n        var operational =\n            SubscriptionLifecyclePolicy.IsOperationalSubscriptionState(\n                subscription.Status) &&\n            subscription.CurrentTermStartsAtUtc.HasValue &&\n            subscription.CurrentTermEndsAtUtc.HasValue &&\n            subscription.CurrentTermStartsAtUtc.Value <= now &&\n            now < subscription.CurrentTermEndsAtUtc.Value;\n\n        if (!operational)\n            return false;\n\n        if (role != RoleNames.Student)\n            return true;\n\n        return await _subscriptions\n            .HasActiveStudentProfileForUserAsync(\n                schoolId,\n                userId,\n                cancellationToken);\n    }''',
+              '''    private async Task<bool> HasCommercialOperationalAccessAsync(\n        Guid schoolId,\n        SchoolStatus schoolStatus,\n        Guid userId,\n        string role,\n        CancellationToken cancellationToken)\n    {\n        var now = DateTime.UtcNow;\n\n        // Trial access is governed by its explicit time window.\n        // A pending paid subscription must not disable a valid Trial.\n        if (schoolStatus == SchoolStatus.Trial)\n        {\n            if (_trials is null)\n                return false;\n\n            var trial = await _trials.GetAsync(\n                schoolId,\n                cancellationToken);\n\n            return trial?.IsUsableAt(now) == true;\n        }\n\n        if (_subscriptions is null)\n            return true;\n\n        var subscription =\n            await _subscriptions.GetBySchoolAsync(\n                schoolId,\n                cancellationToken);\n\n        if (subscription is null)\n            return true;\n\n        var operational =\n            SubscriptionLifecyclePolicy.IsOperationalSubscriptionState(\n                subscription.Status) &&\n            subscription.CurrentTermStartsAtUtc.HasValue &&\n            subscription.CurrentTermEndsAtUtc.HasValue &&\n            subscription.CurrentTermStartsAtUtc.Value <= now &&\n            now < subscription.CurrentTermEndsAtUtc.Value;\n\n        if (!operational)\n            return false;\n\n        if (role != RoleNames.Student)\n            return true;\n\n        return await _subscriptions\n            .HasActiveStudentProfileForUserAsync(\n                schoolId,\n                userId,\n                cancellationToken);\n    }''',
+              "Trial expiry access guard")
+
+          view = "src/Edulytics.Web/Views/Schools/Details.cshtml"
+          replace_once(
+              view,
+              '''        : Model.Status == SchoolStatus.Trial\n            ? "Trial"\n            : T[$"Status{Model.Status}"];''',
+              '''        : Model.Status == SchoolStatus.Trial\n            ? T["StatusTrial"]\n            : T[$"Status{Model.Status}"];''',
+              "localized Trial status")
+
+          replace_once(
+              view,
+              '''                <div><dt>Trial starts</dt><dd>@Model.TrialStartsAtUtc.Value.ToString("g") @T["UtcSuffix"]</dd></div>\n                <div><dt>Trial ends</dt><dd>@Model.TrialEndsAtUtc!.Value.ToString("g") @T["UtcSuffix"]</dd></div>\n                <div><dt>Trial access</dt><dd>@(Model.TrialIsCurrentlyUsable ? "Available" : "Expired")</dd></div>''',
+              '''                <div><dt>@T["TrialStarts"]</dt><dd>@Model.TrialStartsAtUtc.Value.ToString("g") @T["UtcSuffix"]</dd></div>\n                <div><dt>@T["TrialEnds"]</dt><dd>@Model.TrialEndsAtUtc!.Value.ToString("g") @T["UtcSuffix"]</dd></div>\n                <div><dt>@T["TrialAccess"]</dt><dd>@(Model.TrialIsCurrentlyUsable ? T["TrialAvailable"] : T["TrialExpired"])</dd></div>''',
+              "localized Trial details")
+
+          replace_once(
+              view,
+              '''        <section class="school-status-actions" aria-label="Trial">\n            <form method="post" asp-controller="Schools" asp-action="StartTrial" asp-route-id="@Model.Id" class="billing-inline-form">\n                <input type="hidden" name="rowVersion" value="@Model.RowVersionBase64" />\n                <label>Trial duration (days)\n                    <input type="number" name="durationDays" min="1" max="365" value="7" required />\n                </label>\n                <button type="submit" class="school-button school-button-primary">Start trial</button>\n            </form>\n        </section>''',
+              '''        <section class="school-status-actions" aria-label="@T["Trial"]">\n            <form method="post" asp-controller="Schools" asp-action="StartTrial" asp-route-id="@Model.Id" class="billing-inline-form">\n                <input type="hidden" name="rowVersion" value="@Model.RowVersionBase64" />\n                <label>@T["TrialDurationDays"]\n                    <input type="number" name="durationDays" min="1" max="365" value="7" required />\n                </label>\n                <button type="submit" class="school-button school-button-primary">@T["StartTrial"]</button>\n            </form>\n        </section>''',
+              "localized Start Trial controls")
+
+          def add_resources(rel, entries):
+              path = ROOT / rel
+              text = path.read_text(encoding="utf-8")
+              additions = []
+              for key, value in entries.items():
+                  marker = f'<data name="{key}" '
+                  if marker in text:
+                      continue
+                  additions.append(
+                      f'  <data name="{key}" xml:space="preserve">\n'
+                      f'    <value>{value}</value>\n'
+                      f'  </data>\n')
+              if additions:
+                  if "</root>" not in text:
+                      raise SystemExit(f"ERROR: malformed RESX: {rel}")
+                  path.write_text(text.replace("</root>", "".join(additions) + "</root>", 1), encoding="utf-8")
+                  print(f"PASS: resources added: {rel}")
+              else:
+                  print(f"SKIP: resources already present: {rel}")
+
+          english = {
+              "StatusTrial": "Trial",
+              "Trial": "Trial",
+              "TrialStarts": "Trial starts",
+              "TrialEnds": "Trial ends",
+              "TrialAccess": "Trial access",
+              "TrialAvailable": "Available",
+              "TrialExpired": "Expired",
+              "TrialDurationDays": "Trial duration (days)",
+              "StartTrial": "Start trial",
+              "TrialStartedSuccess": "The trial has started successfully.",
+              "InvalidTrialDuration": "Trial duration must be between 1 and 365 days.",
+              "TrialAlreadyExists": "A trial has already been created for this school."
+          }
+
+          polish = {
+              "StatusTrial": "Okres próbny",
+              "Trial": "Okres próbny",
+              "TrialStarts": "Początek okresu próbnego",
+              "TrialEnds": "Koniec okresu próbnego",
+              "TrialAccess": "Dostęp próbny",
+              "TrialAvailable": "Dostępny",
+              "TrialExpired": "Wygasł",
+              "TrialDurationDays": "Czas trwania okresu próbnego (dni)",
+              "StartTrial": "Rozpocznij okres próbny",
+              "TrialStartedSuccess": "Okres próbny został rozpoczęty.",
+              "InvalidTrialDuration": "Czas trwania okresu próbnego musi wynosić od 1 do 365 dni.",
+              "TrialAlreadyExists": "Okres próbny dla tej szkoły został już utworzony."
+          }
+
+          add_resources("src/Edulytics.Web/Resources/PlatformResource.resx", english)
+          add_resources("src/Edulytics.Web/Resources/PlatformResource.pl.resx", polish)
+
+          test_path = ROOT / "tests/Edulytics.Tests/CommercialLifecycle/ApprovedSchoolLifecycleContractTests.cs"
+          test_path.parent.mkdir(parents=True, exist_ok=True)
+          test_path.write_text(r'''using Edulytics.Core.Interfaces;
+
+namespace Edulytics.Tests.CommercialLifecycle;
+
+public sealed class ApprovedSchoolLifecycleContractTests
+{
+    [Fact]
+    public void TrialWindow_IsUsableOnlyInsideExplicitWindow()
+    {
+        var now = new DateTime(2026, 9, 3, 12, 0, 0, DateTimeKind.Utc);
+        var trial = new SchoolTrialWindow(
+            Guid.NewGuid(),
+            now.AddDays(-1),
+            now.AddDays(6),
+            null,
+            now.AddDays(-1),
+            now.AddDays(-1));
+
+        Assert.True(trial.IsUsableAt(now));
+        Assert.False(trial.IsUsableAt(now.AddDays(6)));
+    }
+
+    [Fact]
+    public void EndedTrial_IsNeverUsable()
+    {
+        var now = DateTime.UtcNow;
+        var trial = new SchoolTrialWindow(
+            Guid.NewGuid(),
+            now.AddDays(-1),
+            now.AddDays(6),
+            now,
+            now.AddDays(-1),
+            now);
+
+        Assert.False(trial.IsUsableAt(now));
+    }
+
+    [Fact]
+    public void LifecycleImplementation_ContainsApprovedGuards()
+    {
+        var root = FindRepositoryRoot();
+        var billing = File.ReadAllText(Path.Combine(root, "src/Edulytics.Services/Billing/BillingService.cs"));
+        var subscriptions = File.ReadAllText(Path.Combine(root, "src/Edulytics.Services/Subscriptions/SchoolSubscriptionService.cs"));
+        var users = File.ReadAllText(Path.Combine(root, "src/Edulytics.Services/Users/SchoolUserManagementService.cs"));
+
+        Assert.Contains("Optional(request.TaxIdentifier) ?? string.Empty", billing);
+        Assert.Contains("SchoolStatus.Trial", billing);
+        Assert.Contains("SchoolStatus.Trial", subscriptions);
+        Assert.Contains("trial?.IsUsableAt(now) == true", users);
+    }
+
+    [Fact]
+    public void SchoolDetails_HasNoHardCodedTrialEnglish()
+    {
+        var root = FindRepositoryRoot();
+        var view = File.ReadAllText(Path.Combine(root, "src/Edulytics.Web/Views/Schools/Details.cshtml"));
+
+        Assert.DoesNotContain("<dt>Trial starts</dt>", view);
+        Assert.DoesNotContain("<dt>Trial ends</dt>", view);
+        Assert.DoesNotContain(">Start trial</button>", view);
+        Assert.Contains("T[\"TrialDurationDays\"]", view);
+        Assert.Contains("T[\"StartTrial\"]", view);
+    }
+
+    private static string FindRepositoryRoot()
+    {
+        var directory = new DirectoryInfo(AppContext.BaseDirectory);
+        while (directory is not null)
+        {
+            if (File.Exists(Path.Combine(directory.FullName, "Edulytics.sln")))
+                return directory.FullName;
+            directory = directory.Parent;
+        }
+
+        throw new DirectoryNotFoundException("Edulytics repository root not found.");
+    }
+}
+''', encoding="utf-8")
+          print("PASS: regression contract tests written")
+          PY
+
+      - name: Verify migration set unchanged
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! git diff --quiet -- src/Edulytics.Data/Migrations; then
+            echo "Unexpected migration changes detected."
+            git diff -- src/Edulytics.Data/Migrations
+            exit 1
+          fi
+
+      - name: Restore tools
+        run: dotnet tool restore
+
+      - name: Restore
+        run: dotnet restore Edulytics.sln
+
+      - name: Build
+        run: dotnet build Edulytics.sln --no-restore
+
+      - name: Targeted lifecycle tests
+        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --filter "FullyQualifiedName~CommercialLifecycle"
+
+      - name: Full regression
+        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore
+
+      - name: Localization parity
+        run: python3 scripts/ci-localization-parity.py
+
+      - name: Dependency vulnerability gate
+        run: bash scripts/ci-dependency-gate.sh artifacts/security/nuget-vulnerabilities.txt
+
+      - name: Security/privacy/accessibility gate
+        run: bash scripts/verify-phase23-security.sh
+
+      - name: Diff whitespace gate
+        run: git diff --check
+
+      - name: Commit verified implementation
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/Edulytics.Services/Billing/BillingService.cs \
+            src/Edulytics.Services/Subscriptions/SchoolSubscriptionService.cs \
+            src/Edulytics.Services/Users/SchoolUserManagementService.cs \
+            src/Edulytics.Web/Views/Schools/Details.cshtml \
+            src/Edulytics.Web/Resources/PlatformResource.resx \
+            src/Edulytics.Web/Resources/PlatformResource.pl.resx \
+            tests/Edulytics.Tests/CommercialLifecycle/ApprovedSchoolLifecycleContractTests.cs
+          if git diff --cached --quiet; then
+            echo "No implementation changes to commit."
+            exit 0
+          fi
+          git commit -m "fix: complete approved school commercial lifecycle"
+          git push origin HEAD:fix/approved-school-lifecycle
