@@ -10,6 +10,7 @@ public static class SchoolManagementRegistrationExtensions
         this IServiceCollection services)
     {
         services.AddScoped<ISchoolRepository, SchoolRepository>();
+        services.AddScoped<ISchoolTrialRepository, SchoolTrialRepository>();
         services.AddScoped<ISchoolManagementService, SchoolManagementService>();
 
         return services;
