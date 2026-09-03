@@ -6,7 +6,7 @@ namespace Edulytics.Tests.Phase25C;
 public sealed class CommercialLifecyclePolicyTests
 {
     [Fact]
-    public void ExistingPersistedStatusValues_RemainStable()
+    public void PersistedStatusValues_RemainStableWithoutObsoleteEndedState()
     {
         Assert.Equal(1, (int)SchoolStatus.Active);
         Assert.Equal(2, (int)SchoolStatus.Suspended);
@@ -17,13 +17,14 @@ public sealed class CommercialLifecyclePolicyTests
         Assert.Equal(1, (int)SubscriptionStatus.PendingActivation);
         Assert.Equal(2, (int)SubscriptionStatus.Active);
         Assert.Equal(3, (int)SubscriptionStatus.Suspended);
-        Assert.Equal(4, (int)SubscriptionStatus.Ended);
         Assert.Equal(5, (int)SubscriptionStatus.Trial);
         Assert.Equal(6, (int)SubscriptionStatus.PastDue);
         Assert.Equal(7, (int)SubscriptionStatus.GracePeriod);
         Assert.Equal(8, (int)SubscriptionStatus.CancellationPending);
         Assert.Equal(9, (int)SubscriptionStatus.Expired);
         Assert.Equal(10, (int)SubscriptionStatus.Cancelled);
+
+        Assert.DoesNotContain("Ended", Enum.GetNames<SubscriptionStatus>());
     }
 
     [Theory]
@@ -41,7 +42,6 @@ public sealed class CommercialLifecyclePolicyTests
     [Theory]
     [InlineData(SubscriptionStatus.PendingActivation)]
     [InlineData(SubscriptionStatus.Suspended)]
-    [InlineData(SubscriptionStatus.Ended)]
     [InlineData(SubscriptionStatus.Expired)]
     [InlineData(SubscriptionStatus.Cancelled)]
     public void BlockedSubscriptionStates_DoNotAllowOperationalUse(SubscriptionStatus status)
@@ -51,7 +51,6 @@ public sealed class CommercialLifecyclePolicyTests
     }
 
     [Theory]
-    [InlineData(SubscriptionStatus.Ended)]
     [InlineData(SubscriptionStatus.Expired)]
     [InlineData(SubscriptionStatus.Cancelled)]
     public void TerminalStates_AreExplicit(SubscriptionStatus status)
