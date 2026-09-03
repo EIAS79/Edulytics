@@ -39,6 +39,34 @@ public sealed class Phase05UiContractTests
     }
 
     [Fact]
+    public void LegacySupervisorSubjectAssignmentEndpoint_FailsClosed()
+    {
+        var root = FindRepositoryRoot();
+
+        var controller = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Web/Controllers/"
+                + "SubjectSupervisorAssignmentsController.cs"));
+
+        Assert.Contains(
+            "[Route(\"school/subject-supervisors\")]",
+            controller);
+        Assert.DoesNotContain(
+            "ISubjectSupervisorAssignmentService",
+            controller);
+        Assert.Contains(
+            "public IActionResult Index() => NotFound();",
+            controller);
+        Assert.Contains(
+            "public IActionResult Assign() => NotFound();",
+            controller);
+        Assert.Contains(
+            "public IActionResult Remove(Guid assignmentId) => NotFound();",
+            controller);
+    }
+
+    [Fact]
     public void PasswordSetupPost_UsesIdentityTokenAndRateLimit()
     {
         var method =
