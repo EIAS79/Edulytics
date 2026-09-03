@@ -8,7 +8,7 @@
     var statusText = Model.Status == SchoolStatus.PendingActivation
         ? S["PendingActivation"]
         : Model.Status == SchoolStatus.Trial
-            ? "Trial"
+            ? T["StatusTrial"]
             : T[$"Status{Model.Status}"];
 }
 
@@ -50,9 +50,9 @@
             <div><dt>@T["UpdatedAt"]</dt><dd>@Model.UpdatedAtUtc.ToString("g") @T["UtcSuffix"]</dd></div>
             @if (Model.TrialStartsAtUtc.HasValue)
             {
-                <div><dt>Trial starts</dt><dd>@Model.TrialStartsAtUtc.Value.ToString("g") @T["UtcSuffix"]</dd></div>
-                <div><dt>Trial ends</dt><dd>@Model.TrialEndsAtUtc!.Value.ToString("g") @T["UtcSuffix"]</dd></div>
-                <div><dt>Trial access</dt><dd>@(Model.TrialIsCurrentlyUsable ? "Available" : "Expired")</dd></div>
+                <div><dt>@T["TrialStarts"]</dt><dd>@Model.TrialStartsAtUtc.Value.ToString("g") @T["UtcSuffix"]</dd></div>
+                <div><dt>@T["TrialEnds"]</dt><dd>@Model.TrialEndsAtUtc!.Value.ToString("g") @T["UtcSuffix"]</dd></div>
+                <div><dt>@T["TrialAccess"]</dt><dd>@(Model.TrialIsCurrentlyUsable ? T["TrialAvailable"] : T["TrialExpired"])</dd></div>
             }
             @if (Model.ArchivedAtUtc.HasValue)
             {
@@ -63,13 +63,13 @@
 
     @if (Model.CanStartTrial)
     {
-        <section class="school-status-actions" aria-label="Trial">
+        <section class="school-status-actions" aria-label="@T["Trial"]">
             <form method="post" asp-controller="Schools" asp-action="StartTrial" asp-route-id="@Model.Id" class="billing-inline-form">
                 <input type="hidden" name="rowVersion" value="@Model.RowVersionBase64" />
-                <label>Trial duration (days)
+                <label>@T["TrialDurationDays"]
                     <input type="number" name="durationDays" min="1" max="365" value="7" required />
                 </label>
-                <button type="submit" class="school-button school-button-primary">Start trial</button>
+                <button type="submit" class="school-button school-button-primary">@T["StartTrial"]</button>
             </form>
         </section>
     }

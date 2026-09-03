@@ -18,6 +18,7 @@ public sealed class BillingService : IBillingService
     private readonly ISchoolUserRepository _users;
     private readonly IAuditService _audit;
     private readonly IApplicationTransactionManager _transactions;
+    private readonly ISchoolTrialRepository? _trials;
 
     public BillingService(
         IBillingRepository billing,
@@ -25,7 +26,8 @@ public sealed class BillingService : IBillingService
         ISchoolRepository schools,
         ISchoolUserRepository users,
         IAuditService audit,
-        IApplicationTransactionManager transactions)
+        IApplicationTransactionManager transactions,
+        ISchoolTrialRepository? trials = null)
     {
         _billing = billing;
         _subscriptions = subscriptions;
@@ -33,6 +35,7 @@ public sealed class BillingService : IBillingService
         _users = users;
         _audit = audit;
         _transactions = transactions;
+        _trials = trials;
     }
 
     public async Task<BillingQueryResult<IReadOnlyList<BillingSchoolDetails>>> ListAsync(
@@ -142,7 +145,7 @@ public sealed class BillingService : IBillingService
         profile.LegalName = Clean(request.LegalName);
         profile.BillingAddress = Clean(request.BillingAddress);
         profile.CountryCode = Clean(request.CountryCode).ToUpperInvariant();
-        profile.TaxIdentifier = Clean(request.TaxIdentifier);
+        profile.TaxIdentifier = Optional(request.TaxIdentifier) ?? string.Empty;
         profile.InvoiceEmail = Clean(request.InvoiceEmail);
         profile.TaxTreatmentCode = Optional(request.TaxTreatmentCode);
         profile.DefaultSettlementCurrencyCode = Optional(request.DefaultSettlementCurrencyCode)?.ToUpperInvariant();
@@ -1007,10 +1010,12 @@ public sealed class BillingService : IBillingService
             return Fail(BillingErrorCode.SchoolNotFound);
         if (school.Status is not
             (SchoolStatus.PendingActivation or
+             SchoolStatus.Trial or
              SchoolStatus.Suspended or
              SchoolStatus.Active))
             return Fail(BillingErrorCode.InvalidState);
 
+        var wasTrial = school.Status == SchoolStatus.Trial;
         var now = DateTime.UtcNow;
         var activationAt = agreedActivationAtUtc ?? now;
         if (activationAt > now.AddMinutes(1))
@@ -1069,9 +1074,21 @@ public sealed class BillingService : IBillingService
             schoolVersion,
             cancellationToken: cancellationToken);
 
-        return saved.Succeeded
-            ? BillingCommandResult.Success(subscription.Id)
-            : Fail(MapSubscriptionPersistence(saved.Error));
+        if (!saved.Succeeded)
+            return Fail(MapSubscriptionPersistence(saved.Error));
+
+        if (wasTrial)
+        {
+            if (_trials is null)
+                return Fail(BillingErrorCode.PersistenceError);
+
+            await _trials.EndAsync(
+                schoolId,
+                now,
+                cancellationToken);
+        }
+
+        return BillingCommandResult.Success(subscription.Id);
     }
 
     private async Task<BillingCommandResult> ApplyPaidRenewalInsideTransactionAsync(

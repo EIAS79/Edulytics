@@ -15,19 +15,22 @@ public sealed class SchoolSubscriptionService : ISchoolSubscriptionService
     private readonly ISchoolUserRepository _users;
     private readonly IAuditService _audit;
     private readonly IApplicationTransactionManager _transactions;
+    private readonly ISchoolTrialRepository? _trials;
 
     public SchoolSubscriptionService(
         ISchoolSubscriptionRepository subscriptions,
         ISchoolRepository schools,
         ISchoolUserRepository users,
         IAuditService audit,
-        IApplicationTransactionManager transactions)
+        IApplicationTransactionManager transactions,
+        ISchoolTrialRepository? trials = null)
     {
         _subscriptions = subscriptions;
         _schools = schools;
         _users = users;
         _audit = audit;
         _transactions = transactions;
+        _trials = trials;
     }
 
     public async Task<SubscriptionQueryResult<IReadOnlyList<SchoolSubscriptionDetails>>> ListAsync(
@@ -87,7 +90,10 @@ public sealed class SchoolSubscriptionService : ISchoolSubscriptionService
             return Fail(SubscriptionErrorCode.SchoolNotFound);
         }
 
-        if (school.Status is not (SchoolStatus.PendingActivation or SchoolStatus.Suspended))
+        if (school.Status is not
+            (SchoolStatus.PendingActivation or
+             SchoolStatus.Trial or
+             SchoolStatus.Suspended))
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(SubscriptionErrorCode.SchoolMustBeSuspended);
@@ -196,12 +202,17 @@ public sealed class SchoolSubscriptionService : ISchoolSubscriptionService
             await transaction.RollbackAsync(cancellationToken);
             return Fail(SubscriptionErrorCode.SchoolNotFound);
         }
-        if (school.Status is not (SchoolStatus.PendingActivation or SchoolStatus.Suspended or SchoolStatus.Active))
+        if (school.Status is not
+            (SchoolStatus.PendingActivation or
+             SchoolStatus.Trial or
+             SchoolStatus.Suspended or
+             SchoolStatus.Active))
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(SubscriptionErrorCode.SchoolMustBeSuspended);
         }
 
+        var wasTrial = school.Status == SchoolStatus.Trial;
         var now = DateTime.UtcNow;
         var activationAt = agreedActivationAtUtc ?? now;
         if (activationAt > now.AddMinutes(1))
@@ -246,6 +257,20 @@ public sealed class SchoolSubscriptionService : ISchoolSubscriptionService
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(MapPersistence(saved.Error));
+        }
+
+        if (wasTrial)
+        {
+            if (_trials is null)
+            {
+                await transaction.RollbackAsync(cancellationToken);
+                return Fail(SubscriptionErrorCode.PersistenceError);
+            }
+
+            await _trials.EndAsync(
+                schoolId,
+                now,
+                cancellationToken);
         }
 
         await transaction.CommitAsync(cancellationToken);

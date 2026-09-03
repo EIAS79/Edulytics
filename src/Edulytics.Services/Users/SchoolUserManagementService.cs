@@ -38,6 +38,7 @@ public sealed class SchoolUserManagementService
     private readonly IApplicationTransactionManager? _transactions;
     private readonly ICustomerOnboardingRepository? _onboarding;
     private readonly ISchoolSubscriptionRepository? _subscriptions;
+    private readonly ISchoolTrialRepository? _trials;
 
     public SchoolUserManagementService(
         ISchoolUserRepository users,
@@ -45,7 +46,8 @@ public sealed class SchoolUserManagementService
         IAuditService? audit = null,
         IApplicationTransactionManager? transactions = null,
         ICustomerOnboardingRepository? onboarding = null,
-        ISchoolSubscriptionRepository? subscriptions = null)
+        ISchoolSubscriptionRepository? subscriptions = null,
+        ISchoolTrialRepository? trials = null)
     {
         _users = users;
         _schools = schools;
@@ -53,6 +55,7 @@ public sealed class SchoolUserManagementService
         _transactions = transactions;
         _onboarding = onboarding;
         _subscriptions = subscriptions;
+        _trials = trials;
     }
 
     public async Task<SchoolUserQueryResult<SchoolUserListData>>
@@ -632,6 +635,7 @@ public sealed class SchoolUserManagementService
 
         if (!await HasCommercialOperationalAccessAsync(
                 school.Id,
+                school.Status,
                 user.Id,
                 role,
                 cancellationToken))
@@ -918,6 +922,7 @@ public sealed class SchoolUserManagementService
         if (!isPlatformActor &&
             !await HasCommercialOperationalAccessAsync(
                 school.Id,
+                school.Status,
                 actor.Id,
                 actorRole!,
                 cancellationToken))
@@ -978,10 +983,27 @@ public sealed class SchoolUserManagementService
 
     private async Task<bool> HasCommercialOperationalAccessAsync(
         Guid schoolId,
+        SchoolStatus schoolStatus,
         Guid userId,
         string role,
         CancellationToken cancellationToken)
     {
+        var now = DateTime.UtcNow;
+
+        // Trial access is governed by its explicit time window.
+        // A pending paid subscription must not disable a valid Trial.
+        if (schoolStatus == SchoolStatus.Trial)
+        {
+            if (_trials is null)
+                return false;
+
+            var trial = await _trials.GetAsync(
+                schoolId,
+                cancellationToken);
+
+            return trial?.IsUsableAt(now) == true;
+        }
+
         if (_subscriptions is null)
             return true;
 
@@ -992,8 +1014,6 @@ public sealed class SchoolUserManagementService
 
         if (subscription is null)
             return true;
-
-        var now = DateTime.UtcNow;
 
         var operational =
             SubscriptionLifecyclePolicy.IsOperationalSubscriptionState(
