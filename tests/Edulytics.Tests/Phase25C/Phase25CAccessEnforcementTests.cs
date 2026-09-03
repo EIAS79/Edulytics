@@ -13,17 +13,10 @@ public sealed class Phase25CAccessEnforcementTests
     [Fact]
     public async Task SuperAdmin_RemainsPlatformAllowed()
     {
-        var actor = User(
-            schoolId: null,
-            RoleNames.SuperAdmin);
+        var actor = User(schoolId: null, RoleNames.SuperAdmin);
+        var service = Service(actor, school: null, subscription: null);
 
-        var service = Service(
-            actor,
-            school: null,
-            subscription: null);
-
-        var decision =
-            await service.EvaluateSignInAsync(actor.Id);
+        var decision = await service.EvaluateSignInAsync(actor.Id);
 
         Assert.True(decision.Allowed);
         Assert.True(decision.IsPlatformAdministrator);
@@ -33,61 +26,29 @@ public sealed class Phase25CAccessEnforcementTests
     public async Task LegacyActiveSchool_WithoutSubscription_RemainsAllowed()
     {
         var school = ActiveSchool();
+        var actor = User(school.Id, RoleNames.SchoolAdmin);
+        var service = Service(actor, school, subscription: null);
 
-        var actor = User(
-            school.Id,
-            RoleNames.SchoolAdmin);
-
-        var service = Service(
-            actor,
-            school,
-            subscription: null);
-
-        var decision =
-            await service.EvaluateSignInAsync(actor.Id);
+        var decision = await service.EvaluateSignInAsync(actor.Id);
 
         Assert.True(decision.Allowed);
         Assert.False(decision.IsPlatformAdministrator);
         Assert.Equal(school.Id, decision.SchoolId);
     }
 
-    [Fact]
-    public async Task ActiveCurrentSubscription_AllowsSchoolAccess()
-    {
-        var school = ActiveSchool();
-
-        var actor = User(
-            school.Id,
-            RoleNames.Teacher);
-
-        var service = Service(
-            actor,
-            school,
-            Subscription(
-                school.Id,
-                SubscriptionStatus.Active,
-                DateTime.UtcNow.AddDays(-1),
-                DateTime.UtcNow.AddDays(20)));
-
-        var decision =
-            await service.EvaluateSignInAsync(actor.Id);
-
-        Assert.True(decision.Allowed);
-    }
-
     [Theory]
-    [InlineData(SubscriptionStatus.PendingActivation)]
-    [InlineData(SubscriptionStatus.Suspended)]
-    [InlineData(SubscriptionStatus.Ended)]
-    public async Task NonOperationalSubscription_DeniesSchoolAccess(
-        SubscriptionStatus status)
+    [InlineData(SubscriptionStatus.Active)]
+    [InlineData(SubscriptionStatus.Trial)]
+    [InlineData(SubscriptionStatus.GracePeriod)]
+    [InlineData(SubscriptionStatus.PastDue)]
+    [InlineData(SubscriptionStatus.CancellationPending)]
+    public async Task OperationalCurrentSubscription_AllowsSchoolAccess(SubscriptionStatus status)
     {
         var school = ActiveSchool();
+        if (status == SubscriptionStatus.Trial)
+            school.Status = SchoolStatus.Trial;
 
-        var actor = User(
-            school.Id,
-            RoleNames.SchoolAdmin);
-
+        var actor = User(school.Id, RoleNames.Teacher);
         var service = Service(
             actor,
             school,
@@ -97,24 +58,40 @@ public sealed class Phase25CAccessEnforcementTests
                 DateTime.UtcNow.AddDays(-1),
                 DateTime.UtcNow.AddDays(20)));
 
-        var decision =
-            await service.EvaluateSignInAsync(actor.Id);
+        var decision = await service.EvaluateSignInAsync(actor.Id);
+
+        Assert.True(decision.Allowed);
+    }
+
+    [Theory]
+    [InlineData(SubscriptionStatus.PendingActivation)]
+    [InlineData(SubscriptionStatus.Suspended)]
+    [InlineData(SubscriptionStatus.Expired)]
+    [InlineData(SubscriptionStatus.Cancelled)]
+    public async Task NonOperationalSubscription_DeniesSchoolAccess(SubscriptionStatus status)
+    {
+        var school = ActiveSchool();
+        var actor = User(school.Id, RoleNames.SchoolAdmin);
+        var service = Service(
+            actor,
+            school,
+            Subscription(
+                school.Id,
+                status,
+                DateTime.UtcNow.AddDays(-1),
+                DateTime.UtcNow.AddDays(20)));
+
+        var decision = await service.EvaluateSignInAsync(actor.Id);
 
         Assert.False(decision.Allowed);
-
-        Assert.False(
-            await service.CanManageUsersAsync(actor.Id));
+        Assert.False(await service.CanManageUsersAsync(actor.Id));
     }
 
     [Fact]
-    public async Task ExpiredActiveSubscription_DeniesSchoolAccess()
+    public async Task ExpiredOperationalSubscription_DeniesSchoolAccess()
     {
         var school = ActiveSchool();
-
-        var actor = User(
-            school.Id,
-            RoleNames.Student);
-
+        var actor = User(school.Id, RoleNames.Student);
         var service = Service(
             actor,
             school,
@@ -124,21 +101,16 @@ public sealed class Phase25CAccessEnforcementTests
                 DateTime.UtcNow.AddDays(-20),
                 DateTime.UtcNow.AddMinutes(-1)));
 
-        var decision =
-            await service.EvaluateSignInAsync(actor.Id);
+        var decision = await service.EvaluateSignInAsync(actor.Id);
 
         Assert.False(decision.Allowed);
     }
 
     [Fact]
-    public async Task FutureActiveSubscription_DeniesSchoolAccess()
+    public async Task FutureOperationalSubscription_DeniesSchoolAccess()
     {
         var school = ActiveSchool();
-
-        var actor = User(
-            school.Id,
-            RoleNames.SubjectSupervisor);
-
+        var actor = User(school.Id, RoleNames.SubjectSupervisor);
         var service = Service(
             actor,
             school,
@@ -148,8 +120,7 @@ public sealed class Phase25CAccessEnforcementTests
                 DateTime.UtcNow.AddHours(1),
                 DateTime.UtcNow.AddDays(20)));
 
-        var decision =
-            await service.EvaluateSignInAsync(actor.Id);
+        var decision = await service.EvaluateSignInAsync(actor.Id);
 
         Assert.False(decision.Allowed);
     }
@@ -164,8 +135,7 @@ public sealed class Phase25CAccessEnforcementTests
             audit: null,
             transactions: null,
             onboarding: null,
-            subscriptions:
-                new FakeSubscriptions(subscription));
+            subscriptions: new FakeSubscriptions(subscription));
 
     private static School ActiveSchool() =>
         new()
@@ -185,9 +155,7 @@ public sealed class Phase25CAccessEnforcementTests
             RowVersion = [1]
         };
 
-    private static SchoolUserRecord User(
-        Guid? schoolId,
-        string role) =>
+    private static SchoolUserRecord User(Guid? schoolId, string role) =>
         new(
             Guid.NewGuid(),
             schoolId,
@@ -208,11 +176,10 @@ public sealed class Phase25CAccessEnforcementTests
             Id = Guid.NewGuid(),
             SchoolId = schoolId,
             Term = SubscriptionTerm.ThreeMonths,
-            BillingCadence =
-                SubscriptionBillingCadence.MonthlyInstallments,
+            BillingCadence = SubscriptionBillingCadence.MonthlyInstallments,
             CommercialCurrency = CommercialCurrency.PLN,
             PricePerStudentPerMonth = 20m,
-            CommittedSeats = 500,
+            CommittedSeats = 100,
             AutoRenew = true,
             Status = status,
             ActivatedAtUtc = startsAt,
@@ -226,197 +193,84 @@ public sealed class Phase25CAccessEnforcementTests
     private sealed class FakeUsers : ISchoolUserRepository
     {
         private readonly SchoolUserRecord _actor;
+        public FakeUsers(SchoolUserRecord actor) => _actor = actor;
 
-        public FakeUsers(SchoolUserRecord actor) =>
-            _actor = actor;
+        public Task<SchoolUserRecord?> GetActorAsync(Guid userId, CancellationToken cancellationToken = default) =>
+            Task.FromResult<SchoolUserRecord?>(userId == _actor.Id ? _actor : null);
 
-        public Task<SchoolUserRecord?> GetActorAsync(
-            Guid userId,
-            CancellationToken cancellationToken = default) =>
-            Task.FromResult<SchoolUserRecord?>(
-                userId == _actor.Id
-                    ? _actor
-                    : null);
+        public Task<IReadOnlyList<SchoolUserRecord>> ListBySchoolAsync(Guid schoolId, CancellationToken cancellationToken = default) =>
+            Task.FromResult<IReadOnlyList<SchoolUserRecord>>([]);
 
-        public Task<IReadOnlyList<SchoolUserRecord>>
-            ListBySchoolAsync(
-                Guid schoolId,
-                CancellationToken cancellationToken = default) =>
-            Task.FromResult<
-                IReadOnlyList<SchoolUserRecord>>([]);
-
-        public Task<SchoolUserRecord?> GetBySchoolAndIdAsync(
-            Guid schoolId,
-            Guid userId,
-            CancellationToken cancellationToken = default) =>
+        public Task<SchoolUserRecord?> GetBySchoolAndIdAsync(Guid schoolId, Guid userId, CancellationToken cancellationToken = default) =>
             Task.FromResult<SchoolUserRecord?>(null);
 
-        public Task<SchoolUserPersistenceResult> CreateAsync(
-            Guid schoolId,
-            string email,
-            string role,
-            CancellationToken cancellationToken = default) =>
-            Unsupported();
+        public Task<SchoolUserPersistenceResult> CreateAsync(Guid schoolId, string email, string role, CancellationToken cancellationToken = default) => Unsupported();
+        public Task<SchoolUserPersistenceResult> SetActiveAsync(Guid schoolId, Guid userId, bool isActive, CancellationToken cancellationToken = default) => Unsupported();
+        public Task<SchoolUserPersistenceResult> SetLockedAsync(Guid schoolId, Guid userId, bool isLocked, CancellationToken cancellationToken = default) => Unsupported();
+        public Task<SchoolUserPersistenceResult> SetRoleAsync(Guid schoolId, Guid userId, string role, CancellationToken cancellationToken = default) => Unsupported();
+        public Task<SchoolUserPersistenceResult> GeneratePasswordSetupAsync(Guid schoolId, Guid userId, CancellationToken cancellationToken = default) => Unsupported();
+        public Task<SchoolUserPersistenceResult> CompletePasswordSetupAsync(Guid userId, string token, string newPassword, CancellationToken cancellationToken = default) => Unsupported();
 
-        public Task<SchoolUserPersistenceResult> SetActiveAsync(
-            Guid schoolId,
-            Guid userId,
-            bool isActive,
-            CancellationToken cancellationToken = default) =>
-            Unsupported();
-
-        public Task<SchoolUserPersistenceResult> SetLockedAsync(
-            Guid schoolId,
-            Guid userId,
-            bool isLocked,
-            CancellationToken cancellationToken = default) =>
-            Unsupported();
-
-        public Task<SchoolUserPersistenceResult> SetRoleAsync(
-            Guid schoolId,
-            Guid userId,
-            string role,
-            CancellationToken cancellationToken = default) =>
-            Unsupported();
-
-        public Task<SchoolUserPersistenceResult>
-            GeneratePasswordSetupAsync(
-                Guid schoolId,
-                Guid userId,
-                CancellationToken cancellationToken = default) =>
-            Unsupported();
-
-        public Task<SchoolUserPersistenceResult>
-            CompletePasswordSetupAsync(
-                Guid userId,
-                string token,
-                string newPassword,
-                CancellationToken cancellationToken = default) =>
-            Unsupported();
-
-        private static Task<SchoolUserPersistenceResult>
-            Unsupported() =>
-            Task.FromResult(
-                SchoolUserPersistenceResult.Failure(
-                    SchoolUserPersistenceError.IdentityFailure));
+        private static Task<SchoolUserPersistenceResult> Unsupported() =>
+            Task.FromResult(SchoolUserPersistenceResult.Failure(SchoolUserPersistenceError.IdentityFailure));
     }
 
     private sealed class FakeSchools : ISchoolRepository
     {
         private readonly School? _school;
+        public FakeSchools(School? school) => _school = school;
 
-        public FakeSchools(School? school) =>
-            _school = school;
+        public Task<IReadOnlyList<School>> ListAsync(CancellationToken cancellationToken = default) =>
+            Task.FromResult<IReadOnlyList<School>>(_school is null ? [] : [_school]);
 
-        public Task<IReadOnlyList<School>> ListAsync(
-            CancellationToken cancellationToken = default) =>
-            Task.FromResult<IReadOnlyList<School>>(
-                _school is null
-                    ? []
-                    : [_school]);
+        public Task<School?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default) =>
+            Task.FromResult(_school?.Id == id ? _school : null);
 
-        public Task<School?> GetByIdAsync(
-            Guid id,
-            CancellationToken cancellationToken = default) =>
-            Task.FromResult(
-                _school?.Id == id
-                    ? _school
-                    : null);
-
-        public Task<School?> GetForUpdateAsync(
-            Guid id,
-            CancellationToken cancellationToken = default) =>
+        public Task<School?> GetForUpdateAsync(Guid id, CancellationToken cancellationToken = default) =>
             GetByIdAsync(id, cancellationToken);
 
-        public Task<bool> ExistsByNormalizedCodeAsync(
-            string normalizedSchoolCode,
-            CancellationToken cancellationToken = default) =>
+        public Task<bool> ExistsByNormalizedCodeAsync(string normalizedSchoolCode, CancellationToken cancellationToken = default) =>
             Task.FromResult(false);
 
-        public Task AddAsync(
-            School school,
-            CancellationToken cancellationToken = default) =>
-            Task.CompletedTask;
+        public Task AddAsync(School school, CancellationToken cancellationToken = default) => Task.CompletedTask;
 
-        public Task<SchoolRepositoryWriteResult> SaveAsync(
-            School school,
-            byte[]? expectedRowVersion,
-            CancellationToken cancellationToken = default) =>
-            Task.FromResult(
-                SchoolRepositoryWriteResult.Success);
+        public Task<SchoolRepositoryWriteResult> SaveAsync(School school, byte[]? expectedRowVersion, CancellationToken cancellationToken = default) =>
+            Task.FromResult(SchoolRepositoryWriteResult.Success);
     }
 
-    private sealed class FakeSubscriptions
-        : ISchoolSubscriptionRepository
+    private sealed class FakeSubscriptions : ISchoolSubscriptionRepository
     {
         private readonly SchoolSubscription? _subscription;
+        public FakeSubscriptions(SchoolSubscription? subscription) => _subscription = subscription;
 
-        public FakeSubscriptions(
-            SchoolSubscription? subscription) =>
-            _subscription = subscription;
+        public Task<IReadOnlyList<SchoolSubscription>> ListAsync(CancellationToken cancellationToken = default) =>
+            Task.FromResult<IReadOnlyList<SchoolSubscription>>(_subscription is null ? [] : [_subscription]);
 
-        public Task<IReadOnlyList<SchoolSubscription>> ListAsync(
-            CancellationToken cancellationToken = default) =>
-            Task.FromResult<
-                IReadOnlyList<SchoolSubscription>>(
-                    _subscription is null
-                        ? []
-                        : [_subscription]);
+        public Task<SchoolSubscription?> GetBySchoolAsync(Guid schoolId, CancellationToken cancellationToken = default) =>
+            Task.FromResult(_subscription?.SchoolId == schoolId ? _subscription : null);
 
-        public Task<SchoolSubscription?> GetBySchoolAsync(
-            Guid schoolId,
-            CancellationToken cancellationToken = default) =>
-            Task.FromResult(
-                _subscription?.SchoolId == schoolId
-                    ? _subscription
-                    : null);
+        public Task<SchoolSubscription?> GetForUpdateBySchoolAsync(Guid schoolId, CancellationToken cancellationToken = default) =>
+            GetBySchoolAsync(schoolId, cancellationToken);
 
-        public Task<SchoolSubscription?>
-            GetForUpdateBySchoolAsync(
-                Guid schoolId,
-                CancellationToken cancellationToken = default) =>
-            GetBySchoolAsync(
-                schoolId,
-                cancellationToken);
-
-        public Task<int> CountActiveStudentsAsync(
-            Guid schoolId,
-            CancellationToken cancellationToken = default) =>
+        public Task<int> CountActiveStudentsAsync(Guid schoolId, CancellationToken cancellationToken = default) =>
             Task.FromResult(0);
 
-        public Task<bool> HasActiveStudentProfileForUserAsync(
-            Guid schoolId,
-            Guid userId,
-            CancellationToken cancellationToken = default) =>
+        public Task<bool> HasActiveStudentProfileForUserAsync(Guid schoolId, Guid userId, CancellationToken cancellationToken = default) =>
             Task.FromResult(true);
 
-        public Task<SubscriptionPersistenceResult> AddAsync(
-            SchoolSubscription subscription,
-            SubscriptionSeatChange initialSeatChange,
-            CancellationToken cancellationToken = default) =>
-            Unsupported();
+        public Task<SubscriptionPersistenceResult> AddAsync(SchoolSubscription subscription, SubscriptionSeatChange initialSeatChange, CancellationToken cancellationToken = default) => Unsupported();
 
-        public Task<SubscriptionPersistenceResult> SaveAsync(
+        public Task<SubscriptionPersistenceResult> SaveAsync(SchoolSubscription subscription, byte[] expectedRowVersion, SubscriptionSeatChange? seatChange = null, CancellationToken cancellationToken = default) => Unsupported();
+
+        public Task<SubscriptionPersistenceResult> SaveWithSchoolAsync(
             SchoolSubscription subscription,
-            byte[] expectedRowVersion,
+            byte[] expectedSubscriptionRowVersion,
+            School school,
+            byte[] expectedSchoolRowVersion,
             SubscriptionSeatChange? seatChange = null,
-            CancellationToken cancellationToken = default) =>
-            Unsupported();
+            CancellationToken cancellationToken = default) => Unsupported();
 
-        public Task<SubscriptionPersistenceResult>
-            SaveWithSchoolAsync(
-                SchoolSubscription subscription,
-                byte[] expectedSubscriptionRowVersion,
-                School school,
-                byte[] expectedSchoolRowVersion,
-                SubscriptionSeatChange? seatChange = null,
-                CancellationToken cancellationToken = default) =>
-            Unsupported();
-
-        private static Task<SubscriptionPersistenceResult>
-            Unsupported() =>
-            Task.FromResult(
-                SubscriptionPersistenceResult.Failure(
-                    SubscriptionPersistenceError.Unknown));
+        private static Task<SubscriptionPersistenceResult> Unsupported() =>
+            Task.FromResult(SubscriptionPersistenceResult.Failure(SubscriptionPersistenceError.Unknown));
     }
 }
