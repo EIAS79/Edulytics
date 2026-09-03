@@ -54,6 +54,9 @@
 
             <input asp-for="SchoolId"
                    type="hidden" />
+            <input type="hidden"
+                   name="_idempotencyKey"
+                   value="@Guid.NewGuid().ToString("N")" />
 
             <div asp-validation-summary="ModelOnly"
                  class="user-validation-summary"
