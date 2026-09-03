@@ -1,6 +1,7 @@
 @using Edulytics.Core.Constants
 @model Edulytics.Web.ViewModels.SchoolUsers.SchoolHomeViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.PlatformResource> T
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.UserHierarchyResource> H
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AcademicResource> A
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.CurriculumResource> C
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentResource> S
@@ -62,10 +63,8 @@
                 <div>
                     <div class="ed-module-meta">
                         <span class="ed-access-pill"
-                              data-access="@(isSupervisor ? "AccessManage" : "AccessView")">
-                            @(isSupervisor
-                                ? T["AccessManage"]
-                                : T["AccessView"])
+                              data-access="AccessManage">
+                            @T["AccessManage"]
                         </span>
                     </div>
 
@@ -74,41 +73,14 @@
                     <p>
                         @(isSupervisor
                             ? T["DashboardSchoolUsersSupervisorDescription"]
-                            : T["DashboardSchoolUsersAdminDescription"])
+                            : H["AdminDashboardDescription"])
                     </p>
                 </div>
 
-                <a class="school-button @(isSupervisor ? "school-button-primary" : "school-button-secondary")"
+                <a class="school-button school-button-primary"
                    asp-controller="SchoolUsers"
                    asp-action="Index">
-                    @(isSupervisor
-                        ? T["ManageUsersOperational"]
-                        : T["ViewUsers"])
-                </a>
-            </article>
-        }
-
-        @if (isAdmin)
-        {
-            <article class="user-dashboard-action ed-module-card"
-                     data-tone="violet">
-                <div>
-                    <div class="ed-module-meta">
-                        <span class="ed-access-pill"
-                              data-access="AccessManage">
-                            @T["AccessManage"]
-                        </span>
-                    </div>
-
-                    <h2>@T["SubjectSupervisorAssignmentsTitle"]</h2>
-
-                    <p>@T["DashboardSupervisorAssignmentsDescription"]</p>
-                </div>
-
-                <a class="school-button school-button-primary"
-                   asp-controller="SubjectSupervisorAssignments"
-                   asp-action="Index">
-                    @T["ManageSupervisors"]
+                    @T["ManageUsersOperational"]
                 </a>
             </article>
         }
