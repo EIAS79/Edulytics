@@ -4,8 +4,7 @@ namespace Edulytics.Services.Subscriptions;
 
 /// <summary>
 /// Central commercial lifecycle semantics for schools and subscriptions.
-/// This policy is intentionally additive: persisted legacy enum values keep
-/// their numeric values, while newer lifecycle states are interpreted here.
+/// Existing persisted enum values are not renumbered when lifecycle states evolve.
 /// </summary>
 public static class SubscriptionLifecyclePolicy
 {
@@ -22,13 +21,11 @@ public static class SubscriptionLifecyclePolicy
     public static bool IsCommerciallyBlocked(SubscriptionStatus status) =>
         status is SubscriptionStatus.PendingActivation
             or SubscriptionStatus.Suspended
-            or SubscriptionStatus.Ended
             or SubscriptionStatus.Expired
             or SubscriptionStatus.Cancelled;
 
     public static bool IsTerminal(SubscriptionStatus status) =>
-        status is SubscriptionStatus.Ended
-            or SubscriptionStatus.Expired
+        status is SubscriptionStatus.Expired
             or SubscriptionStatus.Cancelled;
 
     public static bool IsPaymentRecoveryState(SubscriptionStatus status) =>
