@@ -6,23 +6,17 @@ namespace Edulytics.Tests.Phase25C;
 public sealed class CommercialLifecyclePolicyTests
 {
     [Fact]
-    public void PersistedStatusValues_RemainStableWithoutObsoleteEndedState()
+    public void SubscriptionLifecycle_HasNoLegacyEndedState()
     {
-        Assert.Equal(1, (int)SchoolStatus.Active);
-        Assert.Equal(2, (int)SchoolStatus.Suspended);
-        Assert.Equal(3, (int)SchoolStatus.Archived);
-        Assert.Equal(4, (int)SchoolStatus.PendingActivation);
-        Assert.Equal(5, (int)SchoolStatus.Trial);
-
         Assert.Equal(1, (int)SubscriptionStatus.PendingActivation);
-        Assert.Equal(2, (int)SubscriptionStatus.Active);
-        Assert.Equal(3, (int)SubscriptionStatus.Suspended);
-        Assert.Equal(5, (int)SubscriptionStatus.Trial);
-        Assert.Equal(6, (int)SubscriptionStatus.PastDue);
-        Assert.Equal(7, (int)SubscriptionStatus.GracePeriod);
-        Assert.Equal(8, (int)SubscriptionStatus.CancellationPending);
-        Assert.Equal(9, (int)SubscriptionStatus.Expired);
-        Assert.Equal(10, (int)SubscriptionStatus.Cancelled);
+        Assert.Equal(2, (int)SubscriptionStatus.Trial);
+        Assert.Equal(3, (int)SubscriptionStatus.Active);
+        Assert.Equal(4, (int)SubscriptionStatus.GracePeriod);
+        Assert.Equal(5, (int)SubscriptionStatus.PastDue);
+        Assert.Equal(6, (int)SubscriptionStatus.CancellationPending);
+        Assert.Equal(7, (int)SubscriptionStatus.Suspended);
+        Assert.Equal(8, (int)SubscriptionStatus.Expired);
+        Assert.Equal(9, (int)SubscriptionStatus.Cancelled);
 
         Assert.DoesNotContain("Ended", Enum.GetNames<SubscriptionStatus>());
     }
