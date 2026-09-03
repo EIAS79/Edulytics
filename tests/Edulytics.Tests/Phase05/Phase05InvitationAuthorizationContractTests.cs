@@ -5,7 +5,7 @@ namespace Edulytics.Tests.Phase05;
 public sealed class Phase05InvitationAuthorizationContractTests
 {
     [Fact]
-    public void PasswordSetupInvitation_UsesApprovedSchoolRoleHierarchy()
+    public void PasswordSetupInvitation_IncludesSubjectSupervisorAuthorization()
     {
         var root = FindRepositoryRoot();
         var source = File.ReadAllText(
@@ -52,20 +52,19 @@ public sealed class Phase05InvitationAuthorizationContractTests
 
     [Theory]
     [InlineData(RoleNames.SchoolAdmin, RoleNames.SubjectSupervisor, true)]
-    [InlineData(RoleNames.SchoolAdmin, RoleNames.Teacher, false)]
-    [InlineData(RoleNames.SchoolAdmin, RoleNames.Student, false)]
+    [InlineData(RoleNames.SchoolAdmin, RoleNames.Teacher, true)]
+    [InlineData(RoleNames.SchoolAdmin, RoleNames.Student, true)]
     [InlineData(RoleNames.SubjectSupervisor, RoleNames.Teacher, true)]
     [InlineData(RoleNames.SubjectSupervisor, RoleNames.Student, true)]
     [InlineData(RoleNames.SubjectSupervisor, RoleNames.SubjectSupervisor, false)]
     [InlineData(RoleNames.Teacher, RoleNames.Student, false)]
-    public void ApprovedInvitationRoleMatrix_IsExplicit(
+    public void NotificationInvitationRoleMatrix_IsExplicit(
         string actorRole,
         string recipientRole,
         bool expected)
     {
         var allowed =
-            actorRole == RoleNames.SchoolAdmin &&
-            recipientRole == RoleNames.SubjectSupervisor ||
+            actorRole == RoleNames.SchoolAdmin ||
             actorRole == RoleNames.SubjectSupervisor &&
             (
                 recipientRole == RoleNames.Teacher ||
