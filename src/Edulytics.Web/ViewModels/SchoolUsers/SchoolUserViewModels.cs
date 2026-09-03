@@ -30,6 +30,17 @@ public sealed class SchoolUserCreateViewModel
     [Required(ErrorMessage = "UserRoleRequired")]
     public string Role { get; set; } = string.Empty;
 
+    public string StudentNumber { get; set; } = string.Empty;
+
+    public string FirstName { get; set; } = string.Empty;
+
+    public string LastName { get; set; } = string.Empty;
+
+    public Guid? ClassGroupId { get; set; }
+
+    public IReadOnlyList<StudentRoleClassOption>
+        StudentClasses { get; set; } = [];
+
     public IReadOnlyList<SchoolUserRoleOptionViewModel>
         RoleOptions { get; set; } = [];
 }
