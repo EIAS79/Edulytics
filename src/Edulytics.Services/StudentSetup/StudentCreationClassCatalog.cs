@@ -61,8 +61,7 @@ public sealed class StudentCreationClassCatalog
             .ThenBy(x => x.Name)
             .Select(x =>
             {
-                var displayLabel =
-                    $"{x.AcademicYearName} · {x.GradeLevelName} · {x.Name}";
+                string? curriculumDisplayLabel = null;
 
                 if (x.CurriculumAdoptionId.HasValue &&
                     contextsByAdoptionId.TryGetValue(
@@ -74,7 +73,7 @@ public sealed class StudentCreationClassCatalog
                         ? context.CurriculumLevelLabel
                         : $"{context.CurriculumLevelLabel} — " +
                           context.CurriculumPathway;
-                    displayLabel =
+                    curriculumDisplayLabel =
                         $"{context.AcademicProgramName} · {level} · {x.Name}";
                 }
 
@@ -86,7 +85,7 @@ public sealed class StudentCreationClassCatalog
                     x.Name,
                     x.Code)
                 {
-                    DisplayLabel = displayLabel
+                    CurriculumDisplayLabel = curriculumDisplayLabel
                 };
             })
             .ToArray();
