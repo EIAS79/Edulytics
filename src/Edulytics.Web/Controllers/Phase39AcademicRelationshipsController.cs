@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using Edulytics.Core.Constants;
 using Edulytics.Core.Enums;
+using Edulytics.Core.Interfaces;
 using Edulytics.Services.Curriculum;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,15 +15,18 @@ public sealed class Phase39AcademicRelationshipsController : Controller
 {
     private readonly IExplicitCurriculumLevelService _curriculumLevels;
     private readonly IExplicitCurriculumLevelUiQuery _classQuery;
+    private readonly IApplicationTransactionManager _transactions;
     private readonly IStringLocalizer<AcademicResource> _text;
 
     public Phase39AcademicRelationshipsController(
         IExplicitCurriculumLevelService curriculumLevels,
         IExplicitCurriculumLevelUiQuery classQuery,
+        IApplicationTransactionManager transactions,
         IStringLocalizer<AcademicResource> text)
     {
         _curriculumLevels = curriculumLevels;
         _classQuery = classQuery;
+        _transactions = transactions;
         _text = text;
     }
 
@@ -77,6 +81,9 @@ public sealed class Phase39AcademicRelationshipsController : Controller
         if (selectedClassIds.Any(id => !activeClassIds.Contains(id)))
             return Forbid();
 
+        await using var transaction =
+            await _transactions.BeginAsync(cancellationToken);
+
         foreach (var classGroupId in selectedClassIds)
         {
             var result = await _curriculumLevels.AssignTeacherAsync(
@@ -92,10 +99,14 @@ public sealed class Phase39AcademicRelationshipsController : Controller
                 continue;
             }
 
+            await transaction.RollbackAsync(cancellationToken);
+
             SetExplicitError(
                 result.Error ?? ExplicitCurriculumLevelErrorCode.PersistenceError);
             return RedirectToAcademicStructure();
         }
+
+        await transaction.CommitAsync(cancellationToken);
 
         var success = _text["SuccessTeacherAssigned"];
         TempData["AcademicSuccess"] = success.ResourceNotFound
