@@ -151,20 +151,12 @@ public sealed class SchoolUserManagementService
         }
 
         var isSelf = user.Id == scope.Actor!.Id;
-        var actorRole = GetSingleRole(scope.Actor!.Roles);
         var targetRole = GetSingleRole(user.Roles);
 
         var canModify =
             scope.School.Status != SchoolStatus.Archived &&
             !isSelf &&
-            (
-                scope.IsPlatformActor ||
-                (
-                    actorRole == RoleNames.SubjectSupervisor &&
-                    OperationalUserRoles.Contains(
-                        targetRole ?? string.Empty)
-                )
-            );
+            CanManageTargetRole(scope, targetRole);
 
         return SchoolUserQueryResult<SchoolUserDetails>
             .Success(
@@ -172,7 +164,7 @@ public sealed class SchoolUserManagementService
                     BuildContext(scope),
                     user.Id,
                     user.Email,
-                    GetSingleRole(user.Roles) ?? string.Empty,
+                    targetRole ?? string.Empty,
                     user.IsActive,
                     user.IsLocked,
                     isSelf,
@@ -231,8 +223,7 @@ public sealed class SchoolUserManagementService
                 SchoolUserErrorCode.UserInvalidRole);
         }
 
-        if (!scope.IsPlatformActor &&
-            !OperationalUserRoles.Contains(role))
+        if (!CanCreateRole(scope, role))
         {
             return SchoolUserCreateResult.Failure(
                 nameof(request.Role),
@@ -376,12 +367,17 @@ public sealed class SchoolUserManagementService
                 scope.Error!.Value);
         }
 
-        if (!scope.IsPlatformActor &&
-            !OperationalUserRoles.Contains(role))
+        if (!scope.IsPlatformActor)
         {
-            return SchoolUserCommandResult.Failure(
-                nameof(role),
-                SchoolUserErrorCode.UserAccessDenied);
+            var actorRole = GetSingleRole(scope.Actor!.Roles);
+
+            if (actorRole != RoleNames.SubjectSupervisor ||
+                !OperationalUserRoles.Contains(role))
+            {
+                return SchoolUserCommandResult.Failure(
+                    nameof(role),
+                    SchoolUserErrorCode.UserAccessDenied);
+            }
         }
 
         return await MutateUserAsync(
@@ -431,9 +427,9 @@ public sealed class SchoolUserManagementService
                 SchoolUserErrorCode.UserNotFound);
         }
 
-        if (!scope.IsPlatformActor &&
-            !OperationalUserRoles.Contains(
-                GetSingleRole(target.Roles) ?? string.Empty))
+        if (!CanManageTargetRole(
+                scope,
+                GetSingleRole(target.Roles)))
         {
             return SchoolUserPasswordLinkResult.Failure(
                 string.Empty,
@@ -736,9 +732,9 @@ public sealed class SchoolUserManagementService
                 SchoolUserErrorCode.UserNotFound);
         }
 
-        if (!scope.IsPlatformActor &&
-            !OperationalUserRoles.Contains(
-                GetSingleRole(target.Roles) ?? string.Empty))
+        if (!CanManageTargetRole(
+                scope,
+                GetSingleRole(target.Roles)))
         {
             return SchoolUserCommandResult.Failure(
                 string.Empty,
@@ -887,13 +883,6 @@ public sealed class SchoolUserManagementService
                 return ScopeResult.Fail(
                     SchoolUserErrorCode.UserAccessDenied);
             }
-
-            if (forMutation &&
-                !isSubjectSupervisor)
-            {
-                return ScopeResult.Fail(
-                    SchoolUserErrorCode.UserAccessDenied);
-            }
         }
         else
         {
@@ -945,18 +934,61 @@ public sealed class SchoolUserManagementService
     }
 
     private static SchoolUserManagementContext BuildContext(
-        ScopeResult scope) =>
-        new(
+        ScopeResult scope)
+    {
+        var actorRole = GetSingleRole(scope.Actor!.Roles);
+
+        return new SchoolUserManagementContext(
             scope.School!.Id,
             scope.School.Name,
             scope.School.Status,
             scope.School.Status != SchoolStatus.Archived &&
             (
                 scope.IsPlatformActor ||
-                GetSingleRole(scope.Actor!.Roles) ==
-                    RoleNames.SubjectSupervisor
+                actorRole == RoleNames.SchoolAdmin ||
+                actorRole == RoleNames.SubjectSupervisor
             ),
             scope.IsPlatformActor);
+    }
+
+    private static bool CanCreateRole(
+        ScopeResult scope,
+        string requestedRole)
+    {
+        if (scope.IsPlatformActor)
+            return TenantRoles.Contains(requestedRole);
+
+        var actorRole = GetSingleRole(scope.Actor!.Roles);
+
+        if (actorRole == RoleNames.SchoolAdmin)
+        {
+            return requestedRole == RoleNames.SubjectSupervisor;
+        }
+
+        return actorRole == RoleNames.SubjectSupervisor &&
+               OperationalUserRoles.Contains(requestedRole);
+    }
+
+    private static bool CanManageTargetRole(
+        ScopeResult scope,
+        string? targetRole)
+    {
+        if (string.IsNullOrWhiteSpace(targetRole))
+            return false;
+
+        if (scope.IsPlatformActor)
+            return TenantRoles.Contains(targetRole);
+
+        var actorRole = GetSingleRole(scope.Actor!.Roles);
+
+        if (actorRole == RoleNames.SchoolAdmin)
+        {
+            return targetRole == RoleNames.SubjectSupervisor;
+        }
+
+        return actorRole == RoleNames.SubjectSupervisor &&
+               OperationalUserRoles.Contains(targetRole);
+    }
 
     private static string? GetSingleRole(
         IReadOnlyList<string> roles) =>
