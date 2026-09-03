@@ -66,47 +66,17 @@ public sealed class Phase05TeacherWorkflowContractTests
                 root,
                 "src/Edulytics.Web/Extensions/SchoolUserManagementRegistrationExtensions.cs"));
 
-        Assert.Contains(
-            "var isOperationalAccount =",
-            details,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "user.Role == RoleNames.Teacher",
-            details,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "user.Role == RoleNames.Student",
-            details,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "!isOperationalAccount",
-            details,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "var canEditStudentSetup =",
-            details,
-            StringComparison.Ordinal);
-        Assert.DoesNotContain(
-            "StudentSetupUnavailable",
-            details,
-            StringComparison.Ordinal);
+        Assert.Contains("var isOperationalAccount =", details, StringComparison.Ordinal);
+        Assert.Contains("user.Role == RoleNames.Teacher", details, StringComparison.Ordinal);
+        Assert.Contains("user.Role == RoleNames.Student", details, StringComparison.Ordinal);
+        Assert.Contains("!isOperationalAccount", details, StringComparison.Ordinal);
+        Assert.Contains("var canEditStudentSetup =", details, StringComparison.Ordinal);
+        Assert.DoesNotContain("StudentSetupUnavailable", details, StringComparison.Ordinal);
 
-        Assert.Contains(
-            "IsBlockedOperationalTransition",
-            guard,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "RoleNames.Teacher",
-            guard,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "RoleNames.Student",
-            guard,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "OperationalRoleTransitionGuardFilter",
-            registration,
-            StringComparison.Ordinal);
+        Assert.Contains("IsBlockedOperationalTransition", guard, StringComparison.Ordinal);
+        Assert.Contains("RoleNames.Teacher", guard, StringComparison.Ordinal);
+        Assert.Contains("RoleNames.Student", guard, StringComparison.Ordinal);
+        Assert.Contains("OperationalRoleTransitionGuardFilter", registration, StringComparison.Ordinal);
         Assert.Contains(
             "Filters.AddService<\n                    OperationalRoleTransitionGuardFilter>()",
             registration,
@@ -126,22 +96,12 @@ public sealed class Phase05TeacherWorkflowContractTests
                 root,
                 "src/Edulytics.Web/Views/AcademicStructure/Index.cshtml"));
 
-        Assert.Contains(
-            "AssignTeacherToActiveMathematicsAsync",
-            controller,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "name=\"teacherUserId\"",
-            view,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "name=\"classGroupId\"",
-            view,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "Mathematics is inferred",
-            view,
-            StringComparison.Ordinal);
+        Assert.Contains("CreateCurriculumTeacherAssignment", controller, StringComparison.Ordinal);
+        Assert.Contains("levels.AssignTeacherAsync", controller, StringComparison.Ordinal);
+        Assert.Contains("AssignTeacherToCurriculumClassRequest", controller, StringComparison.Ordinal);
+        Assert.Contains("name=\"teacherUserId\"", view, StringComparison.Ordinal);
+        Assert.Contains("name=\"classGroupId\"", view, StringComparison.Ordinal);
+        Assert.Contains("Mathematics is inferred", view, StringComparison.Ordinal);
     }
 
     [Fact]
@@ -157,18 +117,9 @@ public sealed class Phase05TeacherWorkflowContractTests
                 root,
                 "src/Edulytics.Services/Assessments/AssessmentService.Commands.cs"));
 
-        Assert.Contains(
-            "public Guid EnteredByUserId",
-            resultEntity,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "EnteredByUserId = request.Actor.Id",
-            commands,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "[\"enteredByUserId\"] = result.EnteredByUserId",
-            commands,
-            StringComparison.Ordinal);
+        Assert.Contains("public Guid EnteredByUserId", resultEntity, StringComparison.Ordinal);
+        Assert.Contains("EnteredByUserId = actorUserId", commands, StringComparison.Ordinal);
+        Assert.Contains("result.EnteredByUserId = actorUserId", commands, StringComparison.Ordinal);
     }
 
     private static string FindRepositoryRoot()
