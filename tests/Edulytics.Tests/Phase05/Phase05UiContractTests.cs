@@ -1,7 +1,5 @@
-using System.Reflection;
 using Edulytics.Core.Constants;
 using Edulytics.Web.Controllers;
-using Edulytics.Web.ViewModels.SchoolUsers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 
@@ -10,28 +8,33 @@ namespace Edulytics.Tests.Phase05;
 public sealed class Phase05UiContractTests
 {
     [Fact]
-    public void SchoolRolePicker_DoesNotExposeSuperAdmin()
+    public void SchoolRolePicker_IsActorScopedAndNeverExposesSuperAdmin()
     {
-        var method =
-            typeof(SchoolUsersController)
-                .GetMethod(
-                    "BuildRoleOptions",
-                    BindingFlags.NonPublic |
-                    BindingFlags.Static);
+        var root = FindRepositoryRoot();
 
-        Assert.NotNull(method);
+        var controller = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Web/Controllers/SchoolUsersController.cs"));
 
-        var options =
-            Assert.IsAssignableFrom<
-                IReadOnlyList<
-                    SchoolUserRoleOptionViewModel>>(
-                method!.Invoke(null, null));
-
+        Assert.Contains(
+            "User.IsInRole(RoleNames.SchoolAdmin)",
+            controller);
+        Assert.Contains(
+            "User.IsInRole(RoleNames.SubjectSupervisor)",
+            controller);
+        Assert.Contains(
+            "new(RoleNames.SubjectSupervisor, \"RoleSubjectSupervisor\")",
+            controller);
+        Assert.Contains(
+            "new(RoleNames.Teacher, \"RoleTeacher\")",
+            controller);
+        Assert.Contains(
+            "new(RoleNames.Student, \"RoleStudent\")",
+            controller);
         Assert.DoesNotContain(
-            options,
-            x => x.Value == RoleNames.SuperAdmin);
-
-        Assert.Equal(4, options.Count);
+            "new(RoleNames.SuperAdmin",
+            controller);
     }
 
     [Fact]
