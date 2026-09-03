@@ -55,6 +55,168 @@ async function login(page) {
   event('login-pass', { url: page.url() });
 }
 
+async function academicPage(page) {
+  const response = await page.goto(`${BASE}/school/academic-structure`, { waitUntil: 'networkidle2', timeout: 60000 });
+  if (!response || response.status() >= 400) throw new Error(`academic structure unavailable: ${response?.status()}`);
+  const error = await page.$eval('.academic-alert-error', el => el.innerText.trim()).catch(() => '');
+  if (error) throw new Error(`academic structure error: ${error}`);
+}
+
+async function submitForm(page, actionSuffix, configure) {
+  const nav = page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 60000 }).catch(() => null);
+  const snapshot = await page.evaluate(({ actionSuffix, configure }) => {
+    const forms = [...document.forms];
+    const form = forms.find(f => {
+      try { return new URL(f.action).pathname.toLowerCase().endsWith(actionSuffix.toLowerCase()); }
+      catch { return false; }
+    });
+    if (!form) {
+      return { ok: false, reason: 'form-not-found', actions: forms.map(f => f.action) };
+    }
+
+    const setValue = (name, value) => {
+      const el = form.querySelector(`[name="${name}"]`);
+      if (!el) throw new Error(`missing field ${name}`);
+      el.disabled = false;
+      el.value = value;
+      el.dispatchEvent(new Event('input', { bubbles: true }));
+      el.dispatchEvent(new Event('change', { bubbles: true }));
+    };
+
+    const firstValue = name => {
+      const el = form.querySelector(`[name="${name}"]`);
+      if (!el) throw new Error(`missing field ${name}`);
+      if (el.tagName === 'SELECT') {
+        const option = [...el.options].find(o => o.value);
+        if (!option) throw new Error(`no option for ${name}`);
+        option.disabled = false;
+        option.hidden = false;
+        el.disabled = false;
+        el.value = option.value;
+        return option.value;
+      }
+      return el.value;
+    };
+
+    try {
+      if (configure.kind === 'year') {
+        setValue('name', configure.name);
+        setValue('startsOn', '2026-09-01');
+        setValue('endsOn', '2027-06-30');
+        firstValue('status');
+      } else if (configure.kind === 'program') {
+        setValue('academicYearId', configure.academicYearId);
+        setValue('programChoice', 'american');
+      } else if (configure.kind === 'level') {
+        setValue('academicYearId', configure.academicYearId);
+        const program = form.querySelector('[name="academicProgramId"]');
+        if (!program) throw new Error('missing academicProgramId');
+        const programOption = [...program.options].find(o => o.value && (o.dataset.offeredYears || '').split('|').includes(configure.academicYearId)) || [...program.options].find(o => o.value);
+        if (!programOption) throw new Error('no program option');
+        programOption.disabled = false;
+        programOption.hidden = false;
+        program.disabled = false;
+        program.value = programOption.value;
+        program.dispatchEvent(new Event('change', { bubbles: true }));
+
+        const level = form.querySelector('[name="curriculumLevelKey"]');
+        if (!level) throw new Error('missing curriculumLevelKey');
+        const levelOption = [...level.options].find(o => o.value && o.dataset.programId === programOption.value) || [...level.options].find(o => o.value);
+        if (!levelOption) throw new Error('no curriculum level option');
+        levelOption.disabled = false;
+        levelOption.hidden = false;
+        level.disabled = false;
+        level.value = levelOption.value;
+      } else if (configure.kind === 'class') {
+        setValue('academicYearId', configure.academicYearId);
+        firstValue('curriculumAdoptionId');
+        setValue('name', configure.name);
+        firstValue('status');
+      }
+    } catch (error) {
+      return {
+        ok: false,
+        reason: error.message,
+        action: form.action,
+        controls: [...form.elements].map(el => ({ name: el.name, value: el.value, disabled: el.disabled, tag: el.tagName }))
+      };
+    }
+
+    const controls = [...form.elements].map(el => ({ name: el.name, value: el.value, disabled: el.disabled, tag: el.tagName }));
+    form.requestSubmit();
+    return { ok: true, action: form.action, controls };
+  }, { actionSuffix, configure });
+
+  if (!snapshot.ok) {
+    throw new Error(`academic submit ${actionSuffix} failed before POST: ${JSON.stringify(snapshot)}`);
+  }
+  await nav;
+  const error = await page.$eval('.academic-alert-error', el => el.innerText.trim()).catch(() => '');
+  event('academic-submit', { actionSuffix, snapshot, finalUrl: page.url(), error });
+  if (error) throw new Error(`academic submit ${actionSuffix} returned error: ${error}`);
+}
+
+async function ensureActiveClass(page) {
+  await academicPage(page);
+
+  let existingClassCount = await page.evaluate(() => {
+    const form = [...document.forms].find(f => {
+      try { return new URL(f.action).pathname.toLowerCase().endsWith('/curriculum-classes'); }
+      catch { return false; }
+    });
+    if (!form) return -1;
+    const adoption = form.querySelector('[name="curriculumAdoptionId"]');
+    return adoption && adoption.tagName === 'SELECT' ? [...adoption.options].filter(o => o.value).length : 0;
+  });
+
+  const existingYearId = await page.evaluate(() => {
+    const select = document.querySelector('#level-year');
+    return select ? [...select.options].find(o => o.value)?.value || null : null;
+  });
+
+  let academicYearId = existingYearId;
+  if (!academicYearId) {
+    await submitForm(page, '/academic-years', { kind: 'year', name: `Smoke AY ${runId}` });
+    academicYearId = await page.evaluate(() => {
+      const select = document.querySelector('#level-year');
+      return select ? [...select.options].find(o => o.value)?.value || null : null;
+    });
+    if (!academicYearId) throw new Error('academic year not visible after creation');
+  }
+
+  const offered = await page.evaluate(yearId => {
+    const select = document.querySelector('#program-choice');
+    if (!select) return false;
+    return [...select.options].some(o => o.value && (o.dataset.offeredYears || '').split('|').includes(yearId));
+  }, academicYearId);
+  if (!offered) {
+    await submitForm(page, '/academic-programs', { kind: 'program', academicYearId });
+  }
+
+  const hasAdoption = await page.evaluate(yearId => {
+    const form = [...document.forms].find(f => {
+      try { return new URL(f.action).pathname.toLowerCase().endsWith('/curriculum-classes'); }
+      catch { return false; }
+    });
+    if (!form) return false;
+    const adoption = form.querySelector('[name="curriculumAdoptionId"]');
+    return !!adoption && [...adoption.options].some(o => o.value);
+  }, academicYearId);
+  if (!hasAdoption) {
+    await submitForm(page, '/curriculum-levels', { kind: 'level', academicYearId });
+  }
+
+  await submitForm(page, '/curriculum-classes', { kind: 'class', academicYearId, name: `Smoke Class ${runId}` });
+
+  const active = await page.goto(`${BASE}/School/Users/Student-Classes`, { waitUntil: 'networkidle2', timeout: 60000 });
+  const body = await page.evaluate(() => document.body.innerText);
+  event('academic-class-ready', { status: active?.status() || null, body });
+  if (!active || active.status() !== 200) throw new Error(`Student-Classes status ${active?.status()}`);
+  let parsed;
+  try { parsed = JSON.parse(body); } catch { throw new Error(`Student-Classes not JSON: ${body}`); }
+  if (!Array.isArray(parsed) || parsed.length === 0) throw new Error('Student-Classes still empty after academic setup');
+}
+
 async function openCreate(page) {
   const response = await page.goto(`${BASE}/School/Users/Create`, { waitUntil: 'networkidle2', timeout: 60000 });
   const status = response?.status() || null;
@@ -112,7 +274,7 @@ async function submitCreate(page, role) {
 
   const finalUrl = page.url();
   const detailsMatch = /\/School\/Users\/[0-9a-f-]{36}(?:\?|$)/i.test(finalUrl);
-  const errors = await page.evaluate(() => [...document.querySelectorAll('.validation-summary-errors,.user-field-error,.alert-danger')]
+  const errors = await page.evaluate(() => [...document.querySelectorAll('.validation-summary-errors,.user-field-error,.alert-danger,.academic-alert-error')]
     .map(x => (x.innerText || '').trim()).filter(Boolean));
   const result = { role, email, key, classId, posts, finalUrl, detailsMatch, errors };
   event(detailsMatch ? 'create-pass' : 'create-fail', result);
@@ -128,6 +290,7 @@ async function run() {
     browser = await launch();
     const page = await browser.newPage();
     await login(page);
+    await ensureActiveClass(page);
     const student = await submitCreate(page, 'Student');
     const teacher = await submitCreate(page, 'Teacher');
     event('done', { status: 'PASS', studentEmail: student.email, teacherEmail: teacher.email });
