@@ -136,7 +136,7 @@ public sealed class
             StringComparison.Ordinal);
 
         Assert.Contains(
-            "school.Status != SchoolStatus.Active",
+            "SubscriptionLifecyclePolicy.IsOperationalSchoolState",
             source,
             StringComparison.Ordinal);
     }

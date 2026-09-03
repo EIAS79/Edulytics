@@ -8,8 +8,7 @@ using Edulytics.Services.Auditing;
 
 namespace Edulytics.Services.Subscriptions;
 
-public sealed class SchoolSubscriptionService
-    : ISchoolSubscriptionService
+public sealed class SchoolSubscriptionService : ISchoolSubscriptionService
 {
     private readonly ISchoolSubscriptionRepository _subscriptions;
     private readonly ISchoolRepository _schools;
@@ -31,80 +30,37 @@ public sealed class SchoolSubscriptionService
         _transactions = transactions;
     }
 
-    public async Task<
-        SubscriptionQueryResult<
-            IReadOnlyList<SchoolSubscriptionDetails>>>
-        ListAsync(
-            Guid actorUserId,
-            CancellationToken cancellationToken = default)
+    public async Task<SubscriptionQueryResult<IReadOnlyList<SchoolSubscriptionDetails>>> ListAsync(
+        Guid actorUserId,
+        CancellationToken cancellationToken = default)
     {
-        var actor = await RequirePlatformActorAsync(
-            actorUserId,
-            cancellationToken);
-
+        var actor = await RequirePlatformActorAsync(actorUserId, cancellationToken);
         if (actor is null)
-        {
-            return SubscriptionQueryResult<
-                IReadOnlyList<SchoolSubscriptionDetails>>
-                .Failure(SubscriptionErrorCode.AccessDenied);
-        }
+            return SubscriptionQueryResult<IReadOnlyList<SchoolSubscriptionDetails>>.Failure(SubscriptionErrorCode.AccessDenied);
 
-        var rows = await _subscriptions.ListAsync(
-            cancellationToken);
-
-        var result = new List<SchoolSubscriptionDetails>(
-            rows.Count);
-
+        var rows = await _subscriptions.ListAsync(cancellationToken);
+        var result = new List<SchoolSubscriptionDetails>(rows.Count);
         foreach (var row in rows)
-        {
-            result.Add(
-                await MapAsync(
-                    row,
-                    cancellationToken));
-        }
+            result.Add(await MapAsync(row, cancellationToken));
 
-        return SubscriptionQueryResult<
-            IReadOnlyList<SchoolSubscriptionDetails>>
-            .Success(result);
+        return SubscriptionQueryResult<IReadOnlyList<SchoolSubscriptionDetails>>.Success(result);
     }
 
-    public async Task<
-        SubscriptionQueryResult<SchoolSubscriptionDetails>>
-        GetAsync(
-            Guid actorUserId,
-            Guid schoolId,
-            CancellationToken cancellationToken = default)
+    public async Task<SubscriptionQueryResult<SchoolSubscriptionDetails>> GetAsync(
+        Guid actorUserId,
+        Guid schoolId,
+        CancellationToken cancellationToken = default)
     {
-        var actor = await RequirePlatformActorAsync(
-            actorUserId,
-            cancellationToken);
-
+        var actor = await RequirePlatformActorAsync(actorUserId, cancellationToken);
         if (actor is null)
-        {
-            return SubscriptionQueryResult<
-                SchoolSubscriptionDetails>
-                .Failure(SubscriptionErrorCode.AccessDenied);
-        }
+            return SubscriptionQueryResult<SchoolSubscriptionDetails>.Failure(SubscriptionErrorCode.AccessDenied);
 
-        var subscription =
-            await _subscriptions.GetBySchoolAsync(
-                schoolId,
-                cancellationToken);
-
+        var subscription = await _subscriptions.GetBySchoolAsync(schoolId, cancellationToken);
         if (subscription is null)
-        {
-            return SubscriptionQueryResult<
-                SchoolSubscriptionDetails>
-                .Failure(
-                    SubscriptionErrorCode.SubscriptionNotFound);
-        }
+            return SubscriptionQueryResult<SchoolSubscriptionDetails>.Failure(SubscriptionErrorCode.SubscriptionNotFound);
 
-        return SubscriptionQueryResult<
-            SchoolSubscriptionDetails>
-            .Success(
-                await MapAsync(
-                    subscription,
-                    cancellationToken));
+        return SubscriptionQueryResult<SchoolSubscriptionDetails>.Success(
+            await MapAsync(subscription, cancellationToken));
     }
 
     public async Task<SubscriptionCommandResult> CreateAsync(
@@ -112,143 +68,94 @@ public sealed class SchoolSubscriptionService
         CreateSubscriptionRequest request,
         CancellationToken cancellationToken = default)
     {
-        var actor = await RequirePlatformActorAsync(
-            actorUserId,
-            cancellationToken);
-
+        var actor = await RequirePlatformActorAsync(actorUserId, cancellationToken);
         if (actor is null)
             return Fail(SubscriptionErrorCode.AccessDenied);
 
-        if (!SubscriptionCommercialPolicy
-                .IsSupportedTerm(request.Term))
-        {
+        if (!SubscriptionCommercialPolicy.IsSupportedTerm(request.Term))
             return Fail(SubscriptionErrorCode.InvalidTerm);
-        }
+        if (!SubscriptionCommercialPolicy.IsSupportedCadence(request.BillingCadence))
+            return Fail(SubscriptionErrorCode.InvalidBillingCadence);
+        if (request.CommittedSeats < SubscriptionCommercialPolicy.MinimumCommittedSeats)
+            return Fail(SubscriptionErrorCode.InvalidCommittedSeats);
 
-        if (!SubscriptionCommercialPolicy
-                .IsSupportedCadence(request.BillingCadence))
-        {
-            return Fail(
-                SubscriptionErrorCode.InvalidBillingCadence);
-        }
-
-        if (request.CommittedSeats <
-            SubscriptionCommercialPolicy.MinimumCommittedSeats)
-        {
-            return Fail(
-                SubscriptionErrorCode.InvalidCommittedSeats);
-        }
-
-        await using var transaction =
-            await _transactions.BeginAsync(
-                cancellationToken);
-
-        var school = await _schools.GetForUpdateAsync(
-            request.SchoolId,
-            cancellationToken);
-
+        await using var transaction = await _transactions.BeginAsync(cancellationToken);
+        var school = await _schools.GetForUpdateAsync(request.SchoolId, cancellationToken);
         if (school is null)
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(SubscriptionErrorCode.SchoolNotFound);
         }
 
-        if (school.Status is not
-            (SchoolStatus.PendingActivation or SchoolStatus.Suspended))
+        if (school.Status is not (SchoolStatus.PendingActivation or SchoolStatus.Suspended))
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode.SchoolMustBeSuspended);
+            return Fail(SubscriptionErrorCode.SchoolMustBeSuspended);
         }
 
-        if (!SubscriptionCommercialPolicy.TryCurrency(
-                school.CountryCode,
-                out var currency))
+        if (!SubscriptionCommercialPolicy.TryCurrency(school.CountryCode, out var currency))
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(SubscriptionErrorCode.UnsupportedMarket);
         }
 
-        if (await _subscriptions.GetBySchoolAsync(
-                school.Id,
-                cancellationToken) is not null)
+        if (await _subscriptions.GetBySchoolAsync(school.Id, cancellationToken) is not null)
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode.SubscriptionAlreadyExists);
+            return Fail(SubscriptionErrorCode.SubscriptionAlreadyExists);
         }
 
-        var activeStudents =
-            await _subscriptions.CountActiveStudentsAsync(
-                school.Id,
-                cancellationToken);
-
+        var activeStudents = await _subscriptions.CountActiveStudentsAsync(school.Id, cancellationToken);
         if (activeStudents > request.CommittedSeats)
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode.InvalidCommittedSeats);
+            return Fail(SubscriptionErrorCode.InvalidCommittedSeats);
         }
 
         var now = DateTime.UtcNow;
+        var subscription = new SchoolSubscription
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = school.Id,
+            Term = request.Term,
+            BillingCadence = request.BillingCadence,
+            CommercialCurrency = currency,
+            PricePerStudentPerMonth = SubscriptionCommercialPolicy.MonthlyUnitPrice(request.Term),
+            CommittedSeats = request.CommittedSeats,
+            PendingRenewalSeats = null,
+            AutoRenew = request.AutoRenew,
+            Status = SubscriptionStatus.PendingActivation,
+            CreatedAtUtc = now,
+            UpdatedAtUtc = now,
+            RowVersion = []
+        };
 
-        var subscription =
-            new SchoolSubscription
-            {
-                Id = Guid.NewGuid(),
-                SchoolId = school.Id,
-                Term = request.Term,
-                BillingCadence = request.BillingCadence,
-                CommercialCurrency = currency,
-                PricePerStudentPerMonth =
-                    SubscriptionCommercialPolicy
-                        .MonthlyUnitPrice(request.Term),
-                CommittedSeats = request.CommittedSeats,
-                PendingRenewalSeats = null,
-                AutoRenew = request.AutoRenew,
-                Status =
-                    SubscriptionStatus.PendingActivation,
-                CreatedAtUtc = now,
-                UpdatedAtUtc = now,
-                RowVersion = []
-            };
-
-        var initialSeatChange =
-            SeatChange(
-                subscription,
-                SeatCommitmentChangeType.Initial,
-                previousSeats: 0,
-                newSeats: subscription.CommittedSeats,
-                effectiveAtUtc: now);
+        var initialSeatChange = SeatChange(
+            subscription,
+            SeatCommitmentChangeType.Initial,
+            previousSeats: 0,
+            newSeats: subscription.CommittedSeats,
+            effectiveAtUtc: now);
 
         await QueueAuditAsync(
             actor.Id,
             subscription,
             "Subscription.Created",
-            oldValues: null,
+            null,
             new Dictionary<string, object?>
             {
                 ["term"] = subscription.Term.ToString(),
-                ["billingCadence"] =
-                    subscription.BillingCadence.ToString(),
-                ["commercialCurrency"] =
-                    subscription.CommercialCurrency.ToString(),
-                ["pricePerStudentPerMonth"] =
-                    subscription.PricePerStudentPerMonth,
-                ["committedSeats"] =
-                    subscription.CommittedSeats,
+                ["billingCadence"] = subscription.BillingCadence.ToString(),
+                ["commercialCurrency"] = subscription.CommercialCurrency.ToString(),
+                ["pricePerStudentPerMonth"] = subscription.PricePerStudentPerMonth,
+                ["committedSeats"] = subscription.CommittedSeats,
                 ["autoRenew"] = subscription.AutoRenew,
                 ["status"] = subscription.Status.ToString()
             },
             "Commercial subscription created pending activation.",
             cancellationToken);
 
-        var persisted =
-            await _subscriptions.AddAsync(
-                subscription,
-                initialSeatChange,
-                cancellationToken);
-
+        var persisted = await _subscriptions.AddAsync(subscription, initialSeatChange, cancellationToken);
         if (!persisted.Succeeded)
         {
             await transaction.RollbackAsync(cancellationToken);
@@ -256,11 +163,7 @@ public sealed class SchoolSubscriptionService
         }
 
         await transaction.CommitAsync(cancellationToken);
-
-        return SubscriptionCommandResult.Success(
-            await MapAsync(
-                subscription,
-                cancellationToken));
+        return SubscriptionCommandResult.Success(await MapAsync(subscription, cancellationToken));
     }
 
     public async Task<SubscriptionCommandResult> ActivateAsync(
@@ -270,82 +173,51 @@ public sealed class SchoolSubscriptionService
         byte[] expectedRowVersion,
         CancellationToken cancellationToken = default)
     {
-        var actor = await RequirePlatformActorAsync(
-            actorUserId,
-            cancellationToken);
-
+        var actor = await RequirePlatformActorAsync(actorUserId, cancellationToken);
         if (actor is null)
             return Fail(SubscriptionErrorCode.AccessDenied);
 
-        await using var transaction =
-            await _transactions.BeginAsync(
-                cancellationToken);
-
-        var subscription =
-            await _subscriptions.GetForUpdateBySchoolAsync(
-                schoolId,
-                cancellationToken);
-
+        await using var transaction = await _transactions.BeginAsync(cancellationToken);
+        var subscription = await _subscriptions.GetForUpdateBySchoolAsync(schoolId, cancellationToken);
         if (subscription is null)
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode.SubscriptionNotFound);
+            return Fail(SubscriptionErrorCode.SubscriptionNotFound);
         }
-
-        if (subscription.Status !=
-            SubscriptionStatus.PendingActivation)
+        if (subscription.Status != SubscriptionStatus.PendingActivation)
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(SubscriptionErrorCode.InvalidState);
         }
 
-        var school =
-            await _schools.GetForUpdateAsync(
-                schoolId,
-                cancellationToken);
-
+        var school = await _schools.GetForUpdateAsync(schoolId, cancellationToken);
         if (school is null)
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(SubscriptionErrorCode.SchoolNotFound);
         }
-
-        if (school.Status is not
-            (SchoolStatus.PendingActivation or
-             SchoolStatus.Suspended or
-             SchoolStatus.Active))
+        if (school.Status is not (SchoolStatus.PendingActivation or SchoolStatus.Suspended or SchoolStatus.Active))
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode.SchoolMustBeSuspended);
+            return Fail(SubscriptionErrorCode.SchoolMustBeSuspended);
         }
 
         var now = DateTime.UtcNow;
-        var activationAt =
-            agreedActivationAtUtc ?? now;
-
+        var activationAt = agreedActivationAtUtc ?? now;
         if (activationAt > now.AddMinutes(1))
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode.InvalidActivationDate);
+            return Fail(SubscriptionErrorCode.InvalidActivationDate);
         }
 
-        var schoolRowVersion =
-            school.RowVersion.ToArray();
-
+        var schoolRowVersion = school.RowVersion.ToArray();
         subscription.Status = SubscriptionStatus.Active;
         subscription.ActivatedAtUtc = activationAt;
         subscription.CurrentTermStartsAtUtc = activationAt;
-        subscription.CurrentTermEndsAtUtc =
-            activationAt.AddMonths(
-                SubscriptionCommercialPolicy
-                    .Months(subscription.Term));
+        subscription.CurrentTermEndsAtUtc = activationAt.AddMonths(SubscriptionCommercialPolicy.Months(subscription.Term));
         subscription.SuspendedAtUtc = null;
         subscription.EndedAtUtc = null;
         subscription.UpdatedAtUtc = now;
-
         school.Status = SchoolStatus.Active;
         school.UpdatedAtUtc = now;
 
@@ -353,34 +225,23 @@ public sealed class SchoolSubscriptionService
             actor.Id,
             subscription,
             "Subscription.Activated",
+            new Dictionary<string, object?> { ["status"] = SubscriptionStatus.PendingActivation.ToString() },
             new Dictionary<string, object?>
             {
-                ["status"] =
-                    SubscriptionStatus.PendingActivation
-                        .ToString()
-            },
-            new Dictionary<string, object?>
-            {
-                ["status"] =
-                    subscription.Status.ToString(),
-                ["activatedAtUtc"] =
-                    subscription.ActivatedAtUtc,
-                ["currentTermStartsAtUtc"] =
-                    subscription.CurrentTermStartsAtUtc,
-                ["currentTermEndsAtUtc"] =
-                    subscription.CurrentTermEndsAtUtc
+                ["status"] = subscription.Status.ToString(),
+                ["activatedAtUtc"] = subscription.ActivatedAtUtc,
+                ["currentTermStartsAtUtc"] = subscription.CurrentTermStartsAtUtc,
+                ["currentTermEndsAtUtc"] = subscription.CurrentTermEndsAtUtc
             },
             "Subscription activated and school operational access enabled.",
             cancellationToken);
 
-        var saved =
-            await _subscriptions.SaveWithSchoolAsync(
-                subscription,
-                expectedRowVersion,
-                school,
-                schoolRowVersion,
-                cancellationToken: cancellationToken);
-
+        var saved = await _subscriptions.SaveWithSchoolAsync(
+            subscription,
+            expectedRowVersion,
+            school,
+            schoolRowVersion,
+            cancellationToken: cancellationToken);
         if (!saved.Succeeded)
         {
             await transaction.RollbackAsync(cancellationToken);
@@ -388,11 +249,7 @@ public sealed class SchoolSubscriptionService
         }
 
         await transaction.CommitAsync(cancellationToken);
-
-        return SubscriptionCommandResult.Success(
-            await MapAsync(
-                subscription,
-                cancellationToken));
+        return SubscriptionCommandResult.Success(await MapAsync(subscription, cancellationToken));
     }
 
     public async Task<SubscriptionCommandResult> IncreaseSeatsAsync(
@@ -402,85 +259,48 @@ public sealed class SchoolSubscriptionService
         byte[] expectedRowVersion,
         CancellationToken cancellationToken = default)
     {
-        var actor = await RequirePlatformActorAsync(
-            actorUserId,
-            cancellationToken);
-
+        var actor = await RequirePlatformActorAsync(actorUserId, cancellationToken);
         if (actor is null)
             return Fail(SubscriptionErrorCode.AccessDenied);
 
-        await using var transaction =
-            await _transactions.BeginAsync(
-                cancellationToken);
-
-        var subscription =
-            await _subscriptions.GetForUpdateBySchoolAsync(
-                schoolId,
-                cancellationToken);
-
+        await using var transaction = await _transactions.BeginAsync(cancellationToken);
+        var subscription = await _subscriptions.GetForUpdateBySchoolAsync(schoolId, cancellationToken);
         if (subscription is null)
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode.SubscriptionNotFound);
+            return Fail(SubscriptionErrorCode.SubscriptionNotFound);
         }
-
-        if (subscription.Status ==
-            SubscriptionStatus.Ended)
+        if (SubscriptionLifecyclePolicy.IsTerminal(subscription.Status))
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(SubscriptionErrorCode.InvalidState);
         }
-
-        if (newCommittedSeats <=
-            subscription.CommittedSeats)
+        if (newCommittedSeats <= subscription.CommittedSeats)
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode
-                    .SeatIncreaseMustExceedCurrent);
+            return Fail(SubscriptionErrorCode.SeatIncreaseMustExceedCurrent);
         }
 
         var now = DateTime.UtcNow;
-        var previous =
-            subscription.CommittedSeats;
-
-        subscription.CommittedSeats =
-            newCommittedSeats;
+        var previous = subscription.CommittedSeats;
+        subscription.CommittedSeats = newCommittedSeats;
         subscription.UpdatedAtUtc = now;
-
-        var change =
-            SeatChange(
-                subscription,
-                SeatCommitmentChangeType.Increase,
-                previous,
-                newCommittedSeats,
-                now);
+        var change = SeatChange(subscription, SeatCommitmentChangeType.Increase, previous, newCommittedSeats, now);
 
         await QueueAuditAsync(
             actor.Id,
             subscription,
             "Subscription.SeatsIncreased",
+            new Dictionary<string, object?> { ["committedSeats"] = previous },
             new Dictionary<string, object?>
             {
-                ["committedSeats"] = previous
-            },
-            new Dictionary<string, object?>
-            {
-                ["committedSeats"] =
-                    newCommittedSeats,
+                ["committedSeats"] = newCommittedSeats,
                 ["effectiveAtUtc"] = now
             },
             "Committed seats increased immediately.",
             cancellationToken);
 
-        var saved =
-            await _subscriptions.SaveAsync(
-                subscription,
-                expectedRowVersion,
-                change,
-                cancellationToken);
-
+        var saved = await _subscriptions.SaveAsync(subscription, expectedRowVersion, change, cancellationToken);
         if (!saved.Succeeded)
         {
             await transaction.RollbackAsync(cancellationToken);
@@ -488,100 +308,61 @@ public sealed class SchoolSubscriptionService
         }
 
         await transaction.CommitAsync(cancellationToken);
-
-        return SubscriptionCommandResult.Success(
-            await MapAsync(
-                subscription,
-                cancellationToken));
+        return SubscriptionCommandResult.Success(await MapAsync(subscription, cancellationToken));
     }
 
-    public async Task<SubscriptionCommandResult>
-        ScheduleRenewalSeatReductionAsync(
-            Guid actorUserId,
-            Guid schoolId,
-            int renewalSeats,
-            byte[] expectedRowVersion,
-            CancellationToken cancellationToken = default)
+    public async Task<SubscriptionCommandResult> ScheduleRenewalSeatReductionAsync(
+        Guid actorUserId,
+        Guid schoolId,
+        int renewalSeats,
+        byte[] expectedRowVersion,
+        CancellationToken cancellationToken = default)
     {
-        var actor = await RequirePlatformActorAsync(
-            actorUserId,
-            cancellationToken);
-
+        var actor = await RequirePlatformActorAsync(actorUserId, cancellationToken);
         if (actor is null)
             return Fail(SubscriptionErrorCode.AccessDenied);
+        if (renewalSeats < SubscriptionCommercialPolicy.MinimumCommittedSeats)
+            return Fail(SubscriptionErrorCode.RenewalSeatFloor);
 
-        if (renewalSeats <
-            SubscriptionCommercialPolicy.MinimumCommittedSeats)
-        {
-            return Fail(
-                SubscriptionErrorCode.RenewalSeatFloor);
-        }
-
-        await using var transaction =
-            await _transactions.BeginAsync(
-                cancellationToken);
-
-        var subscription =
-            await _subscriptions.GetForUpdateBySchoolAsync(
-                schoolId,
-                cancellationToken);
-
+        await using var transaction = await _transactions.BeginAsync(cancellationToken);
+        var subscription = await _subscriptions.GetForUpdateBySchoolAsync(schoolId, cancellationToken);
         if (subscription is null)
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode.SubscriptionNotFound);
+            return Fail(SubscriptionErrorCode.SubscriptionNotFound);
         }
-
-        if (subscription.Status ==
-            SubscriptionStatus.Ended)
+        if (SubscriptionLifecyclePolicy.IsTerminal(subscription.Status))
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(SubscriptionErrorCode.InvalidState);
         }
-
-        if (renewalSeats >=
-            subscription.CommittedSeats)
+        if (renewalSeats >= subscription.CommittedSeats)
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode
-                    .SeatReductionMustBeLower);
+            return Fail(SubscriptionErrorCode.SeatReductionMustBeLower);
         }
 
-        var previousPending =
-            subscription.PendingRenewalSeats;
-
-        subscription.PendingRenewalSeats =
-            renewalSeats;
-        subscription.UpdatedAtUtc =
-            DateTime.UtcNow;
+        var previousPending = subscription.PendingRenewalSeats;
+        subscription.PendingRenewalSeats = renewalSeats;
+        subscription.UpdatedAtUtc = DateTime.UtcNow;
 
         await QueueAuditAsync(
             actor.Id,
             subscription,
             "Subscription.SeatReductionScheduled",
+            new Dictionary<string, object?> { ["pendingRenewalSeats"] = previousPending },
             new Dictionary<string, object?>
             {
-                ["pendingRenewalSeats"] =
-                    previousPending
-            },
-            new Dictionary<string, object?>
-            {
-                ["pendingRenewalSeats"] =
-                    renewalSeats,
-                ["currentCommittedSeats"] =
-                    subscription.CommittedSeats
+                ["pendingRenewalSeats"] = renewalSeats,
+                ["currentCommittedSeats"] = subscription.CommittedSeats
             },
             "Seat reduction scheduled for renewal; current commitment unchanged.",
             cancellationToken);
 
-        var saved =
-            await _subscriptions.SaveAsync(
-                subscription,
-                expectedRowVersion,
-                cancellationToken: cancellationToken);
-
+        var saved = await _subscriptions.SaveAsync(
+            subscription,
+            expectedRowVersion,
+            cancellationToken: cancellationToken);
         if (!saved.Succeeded)
         {
             await transaction.RollbackAsync(cancellationToken);
@@ -589,11 +370,7 @@ public sealed class SchoolSubscriptionService
         }
 
         await transaction.CommitAsync(cancellationToken);
-
-        return SubscriptionCommandResult.Success(
-            await MapAsync(
-                subscription,
-                cancellationToken));
+        return SubscriptionCommandResult.Success(await MapAsync(subscription, cancellationToken));
     }
 
     public async Task<SubscriptionCommandResult> SetAutoRenewAsync(
@@ -603,61 +380,43 @@ public sealed class SchoolSubscriptionService
         byte[] expectedRowVersion,
         CancellationToken cancellationToken = default)
     {
-        var actor = await RequirePlatformActorAsync(
-            actorUserId,
-            cancellationToken);
-
+        var actor = await RequirePlatformActorAsync(actorUserId, cancellationToken);
         if (actor is null)
             return Fail(SubscriptionErrorCode.AccessDenied);
 
-        await using var transaction =
-            await _transactions.BeginAsync(
-                cancellationToken);
-
-        var subscription =
-            await _subscriptions.GetForUpdateBySchoolAsync(
-                schoolId,
-                cancellationToken);
-
+        await using var transaction = await _transactions.BeginAsync(cancellationToken);
+        var subscription = await _subscriptions.GetForUpdateBySchoolAsync(schoolId, cancellationToken);
         if (subscription is null)
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode.SubscriptionNotFound);
+            return Fail(SubscriptionErrorCode.SubscriptionNotFound);
         }
-
-        if (subscription.Status ==
-            SubscriptionStatus.Ended)
+        if (SubscriptionLifecyclePolicy.IsTerminal(subscription.Status))
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(SubscriptionErrorCode.InvalidState);
         }
 
         var now = DateTime.UtcNow;
-
         if (!autoRenew &&
             subscription.AutoRenew &&
             subscription.CurrentTermEndsAtUtc.HasValue &&
-            now >
-                subscription.CurrentTermEndsAtUtc.Value
-                    .AddDays(
-                        -SubscriptionCommercialPolicy
-                            .NonRenewalNoticeDays))
+            now > subscription.CurrentTermEndsAtUtc.Value.AddDays(-SubscriptionCommercialPolicy.NonRenewalNoticeDays))
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode
-                    .AutoRenewNoticeTooLate);
+            return Fail(SubscriptionErrorCode.AutoRenewNoticeTooLate);
         }
 
-        var previous =
-            subscription.AutoRenew;
-
+        var previousAutoRenew = subscription.AutoRenew;
+        var previousStatus = subscription.Status;
         subscription.AutoRenew = autoRenew;
-        subscription.NonRenewalRequestedAtUtc =
-            autoRenew
-                ? null
-                : now;
+        subscription.NonRenewalRequestedAtUtc = autoRenew ? null : now;
+
+        if (!autoRenew && subscription.Status == SubscriptionStatus.Active)
+            subscription.Status = SubscriptionStatus.CancellationPending;
+        else if (autoRenew && subscription.Status == SubscriptionStatus.CancellationPending)
+            subscription.Status = SubscriptionStatus.Active;
+
         subscription.UpdatedAtUtc = now;
 
         await QueueAuditAsync(
@@ -666,24 +425,24 @@ public sealed class SchoolSubscriptionService
             "Subscription.AutoRenewChanged",
             new Dictionary<string, object?>
             {
-                ["autoRenew"] = previous
+                ["autoRenew"] = previousAutoRenew,
+                ["status"] = previousStatus.ToString()
             },
             new Dictionary<string, object?>
             {
-                ["autoRenew"] =
-                    subscription.AutoRenew,
-                ["nonRenewalRequestedAtUtc"] =
-                    subscription.NonRenewalRequestedAtUtc
+                ["autoRenew"] = subscription.AutoRenew,
+                ["nonRenewalRequestedAtUtc"] = subscription.NonRenewalRequestedAtUtc,
+                ["status"] = subscription.Status.ToString()
             },
-            "Subscription auto-renew preference changed.",
+            autoRenew
+                ? "Subscription renewal restored."
+                : "Non-renewal requested; paid access remains available through the current term.",
             cancellationToken);
 
-        var saved =
-            await _subscriptions.SaveAsync(
-                subscription,
-                expectedRowVersion,
-                cancellationToken: cancellationToken);
-
+        var saved = await _subscriptions.SaveAsync(
+            subscription,
+            expectedRowVersion,
+            cancellationToken: cancellationToken);
         if (!saved.Succeeded)
         {
             await transaction.RollbackAsync(cancellationToken);
@@ -691,11 +450,7 @@ public sealed class SchoolSubscriptionService
         }
 
         await transaction.CommitAsync(cancellationToken);
-
-        return SubscriptionCommandResult.Success(
-            await MapAsync(
-                subscription,
-                cancellationToken));
+        return SubscriptionCommandResult.Success(await MapAsync(subscription, cancellationToken));
     }
 
     public async Task<SubscriptionCommandResult> RenewAsync(
@@ -704,32 +459,19 @@ public sealed class SchoolSubscriptionService
         byte[] expectedRowVersion,
         CancellationToken cancellationToken = default)
     {
-        var actor = await RequirePlatformActorAsync(
-            actorUserId,
-            cancellationToken);
-
+        var actor = await RequirePlatformActorAsync(actorUserId, cancellationToken);
         if (actor is null)
             return Fail(SubscriptionErrorCode.AccessDenied);
 
-        await using var transaction =
-            await _transactions.BeginAsync(
-                cancellationToken);
-
-        var subscription =
-            await _subscriptions.GetForUpdateBySchoolAsync(
-                schoolId,
-                cancellationToken);
-
+        await using var transaction = await _transactions.BeginAsync(cancellationToken);
+        var subscription = await _subscriptions.GetForUpdateBySchoolAsync(schoolId, cancellationToken);
         if (subscription is null)
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode.SubscriptionNotFound);
+            return Fail(SubscriptionErrorCode.SubscriptionNotFound);
         }
-
-        if (subscription.Status is
-                SubscriptionStatus.PendingActivation or
-                SubscriptionStatus.Ended ||
+        if (subscription.Status == SubscriptionStatus.PendingActivation ||
+            SubscriptionLifecyclePolicy.IsTerminal(subscription.Status) ||
             !subscription.CurrentTermEndsAtUtc.HasValue)
         {
             await transaction.RollbackAsync(cancellationToken);
@@ -737,70 +479,48 @@ public sealed class SchoolSubscriptionService
         }
 
         var now = DateTime.UtcNow;
-        var oldEnd =
-            subscription.CurrentTermEndsAtUtc.Value;
-
+        var oldEnd = subscription.CurrentTermEndsAtUtc.Value;
         if (now < oldEnd)
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(SubscriptionErrorCode.InvalidState);
         }
 
-        var nextSeats =
-            subscription.PendingRenewalSeats ??
-            subscription.CommittedSeats;
-
-        if (nextSeats <
-            SubscriptionCommercialPolicy.MinimumCommittedSeats)
+        var nextSeats = subscription.PendingRenewalSeats ?? subscription.CommittedSeats;
+        if (nextSeats < SubscriptionCommercialPolicy.MinimumCommittedSeats)
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode.RenewalSeatFloor);
+            return Fail(SubscriptionErrorCode.RenewalSeatFloor);
         }
 
-        var activeStudents =
-            await _subscriptions.CountActiveStudentsAsync(
-                schoolId,
-                cancellationToken);
-
+        var activeStudents = await _subscriptions.CountActiveStudentsAsync(schoolId, cancellationToken);
         if (nextSeats < activeStudents)
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode
-                    .RenewalBelowActiveStudents);
+            return Fail(SubscriptionErrorCode.RenewalBelowActiveStudents);
         }
 
-        var previousSeats =
-            subscription.CommittedSeats;
-
-        subscription.CurrentTermStartsAtUtc =
-            oldEnd;
-        subscription.CurrentTermEndsAtUtc =
-            oldEnd.AddMonths(
-                SubscriptionCommercialPolicy
-                    .Months(subscription.Term));
-        subscription.CommittedSeats =
-            nextSeats;
-        subscription.PendingRenewalSeats =
-            null;
-        subscription.NonRenewalRequestedAtUtc =
-            null;
-        subscription.UpdatedAtUtc =
-            now;
+        var previousSeats = subscription.CommittedSeats;
+        var previousStatus = subscription.Status;
+        subscription.CurrentTermStartsAtUtc = oldEnd;
+        subscription.CurrentTermEndsAtUtc = oldEnd.AddMonths(SubscriptionCommercialPolicy.Months(subscription.Term));
+        subscription.CommittedSeats = nextSeats;
+        subscription.PendingRenewalSeats = null;
+        subscription.NonRenewalRequestedAtUtc = null;
+        subscription.Status = SubscriptionStatus.Active;
+        subscription.EndedAtUtc = null;
+        subscription.SuspendedAtUtc = null;
+        subscription.UpdatedAtUtc = now;
 
         SubscriptionSeatChange? seatChange = null;
-
         if (previousSeats != nextSeats)
         {
-            seatChange =
-                SeatChange(
-                    subscription,
-                    SeatCommitmentChangeType
-                        .RenewalAdjustment,
-                    previousSeats,
-                    nextSeats,
-                    oldEnd);
+            seatChange = SeatChange(
+                subscription,
+                SeatCommitmentChangeType.RenewalAdjustment,
+                previousSeats,
+                nextSeats,
+                oldEnd);
         }
 
         await QueueAuditAsync(
@@ -809,30 +529,25 @@ public sealed class SchoolSubscriptionService
             "Subscription.Renewed",
             new Dictionary<string, object?>
             {
-                ["currentTermEndsAtUtc"] =
-                    oldEnd,
-                ["committedSeats"] =
-                    previousSeats
+                ["status"] = previousStatus.ToString(),
+                ["currentTermEndsAtUtc"] = oldEnd,
+                ["committedSeats"] = previousSeats
             },
             new Dictionary<string, object?>
             {
-                ["currentTermStartsAtUtc"] =
-                    subscription.CurrentTermStartsAtUtc,
-                ["currentTermEndsAtUtc"] =
-                    subscription.CurrentTermEndsAtUtc,
-                ["committedSeats"] =
-                    subscription.CommittedSeats
+                ["status"] = subscription.Status.ToString(),
+                ["currentTermStartsAtUtc"] = subscription.CurrentTermStartsAtUtc,
+                ["currentTermEndsAtUtc"] = subscription.CurrentTermEndsAtUtc,
+                ["committedSeats"] = subscription.CommittedSeats
             },
             "Subscription term renewed; scheduled seat target applied.",
             cancellationToken);
 
-        var saved =
-            await _subscriptions.SaveAsync(
-                subscription,
-                expectedRowVersion,
-                seatChange,
-                cancellationToken);
-
+        var saved = await _subscriptions.SaveAsync(
+            subscription,
+            expectedRowVersion,
+            seatChange,
+            cancellationToken);
         if (!saved.Succeeded)
         {
             await transaction.RollbackAsync(cancellationToken);
@@ -840,11 +555,7 @@ public sealed class SchoolSubscriptionService
         }
 
         await transaction.CommitAsync(cancellationToken);
-
-        return SubscriptionCommandResult.Success(
-            await MapAsync(
-                subscription,
-                cancellationToken));
+        return SubscriptionCommandResult.Success(await MapAsync(subscription, cancellationToken));
     }
 
     public Task<SubscriptionCommandResult> SuspendAsync(
@@ -856,7 +567,13 @@ public sealed class SchoolSubscriptionService
             actorUserId,
             schoolId,
             expectedRowVersion,
-            SubscriptionStatus.Active,
+            [
+                SubscriptionStatus.Trial,
+                SubscriptionStatus.Active,
+                SubscriptionStatus.GracePeriod,
+                SubscriptionStatus.PastDue,
+                SubscriptionStatus.CancellationPending
+            ],
             SubscriptionStatus.Suspended,
             SchoolStatus.Suspended,
             "Subscription.Suspended",
@@ -868,26 +585,23 @@ public sealed class SchoolSubscriptionService
         byte[] expectedRowVersion,
         CancellationToken cancellationToken = default)
     {
-        var entitlement =
-            await EvaluateEntitlementsAsync(
-                schoolId,
-                utcNow: DateTime.UtcNow,
-                cancellationToken: cancellationToken);
+        var entitlement = await EvaluateEntitlementsAsync(
+            schoolId,
+            utcNow: DateTime.UtcNow,
+            cancellationToken: cancellationToken);
 
         if (entitlement.IsCommerciallyManaged &&
             entitlement.CurrentTermEndsAtUtc.HasValue &&
-            entitlement.CurrentTermEndsAtUtc.Value <=
-                DateTime.UtcNow)
+            entitlement.CurrentTermEndsAtUtc.Value <= DateTime.UtcNow)
         {
-            return Fail(
-                SubscriptionErrorCode.SubscriptionExpired);
+            return Fail(SubscriptionErrorCode.SubscriptionExpired);
         }
 
         return await ChangeOperationalStateAsync(
             actorUserId,
             schoolId,
             expectedRowVersion,
-            SubscriptionStatus.Suspended,
+            [SubscriptionStatus.Suspended],
             SubscriptionStatus.Active,
             SchoolStatus.Active,
             "Subscription.Reactivated",
@@ -900,65 +614,45 @@ public sealed class SchoolSubscriptionService
         byte[] expectedRowVersion,
         CancellationToken cancellationToken = default)
     {
-        var actor = await RequirePlatformActorAsync(
-            actorUserId,
-            cancellationToken);
-
+        var actor = await RequirePlatformActorAsync(actorUserId, cancellationToken);
         if (actor is null)
             return Fail(SubscriptionErrorCode.AccessDenied);
 
-        await using var transaction =
-            await _transactions.BeginAsync(
-                cancellationToken);
-
-        var subscription =
-            await _subscriptions.GetForUpdateBySchoolAsync(
-                schoolId,
-                cancellationToken);
-
+        await using var transaction = await _transactions.BeginAsync(cancellationToken);
+        var subscription = await _subscriptions.GetForUpdateBySchoolAsync(schoolId, cancellationToken);
         if (subscription is null)
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode.SubscriptionNotFound);
+            return Fail(SubscriptionErrorCode.SubscriptionNotFound);
         }
 
         var now = DateTime.UtcNow;
-
         if (!subscription.CurrentTermEndsAtUtc.HasValue ||
             subscription.CurrentTermEndsAtUtc.Value > now ||
-            subscription.Status is
-                SubscriptionStatus.PendingActivation or
-                SubscriptionStatus.Ended)
+            subscription.Status == SubscriptionStatus.PendingActivation ||
+            SubscriptionLifecyclePolicy.IsTerminal(subscription.Status))
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(SubscriptionErrorCode.InvalidState);
         }
 
-        var school =
-            await _schools.GetForUpdateAsync(
-                schoolId,
-                cancellationToken);
-
+        var school = await _schools.GetForUpdateAsync(schoolId, cancellationToken);
         if (school is null)
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(SubscriptionErrorCode.SchoolNotFound);
         }
 
-        var previousStatus =
-            subscription.Status;
-        var schoolRowVersion =
-            school.RowVersion.ToArray();
-
-        subscription.Status =
-            SubscriptionStatus.Ended;
+        var previousStatus = subscription.Status;
+        var schoolRowVersion = school.RowVersion.ToArray();
+        var cancelledByRequest = subscription.NonRenewalRequestedAtUtc.HasValue;
+        subscription.Status = cancelledByRequest
+            ? SubscriptionStatus.Cancelled
+            : SubscriptionStatus.Expired;
         subscription.EndedAtUtc = now;
         subscription.UpdatedAtUtc = now;
 
-        var shouldSuspendSchool =
-            school.Status != SchoolStatus.Archived;
-
+        var shouldSuspendSchool = school.Status != SchoolStatus.Archived;
         if (shouldSuspendSchool)
         {
             school.Status = SchoolStatus.Suspended;
@@ -968,41 +662,34 @@ public sealed class SchoolSubscriptionService
         await QueueAuditAsync(
             actor.Id,
             subscription,
-            "Subscription.Ended",
+            cancelledByRequest ? "Subscription.Cancelled" : "Subscription.Expired",
+            new Dictionary<string, object?> { ["status"] = previousStatus.ToString() },
             new Dictionary<string, object?>
             {
-                ["status"] =
-                    previousStatus.ToString()
+                ["status"] = subscription.Status.ToString(),
+                ["endedAtUtc"] = subscription.EndedAtUtc
             },
-            new Dictionary<string, object?>
-            {
-                ["status"] =
-                    subscription.Status.ToString(),
-                ["endedAtUtc"] =
-                    subscription.EndedAtUtc
-            },
-            "Expired subscription ended; school operational access disabled.",
+            cancelledByRequest
+                ? "Subscription cancelled at the end of the paid term; school operational access disabled."
+                : "Subscription expired without renewal; school operational access disabled.",
             cancellationToken);
 
         SubscriptionPersistenceResult saved;
-
         if (shouldSuspendSchool)
         {
-            saved =
-                await _subscriptions.SaveWithSchoolAsync(
-                    subscription,
-                    expectedRowVersion,
-                    school,
-                    schoolRowVersion,
-                    cancellationToken: cancellationToken);
+            saved = await _subscriptions.SaveWithSchoolAsync(
+                subscription,
+                expectedRowVersion,
+                school,
+                schoolRowVersion,
+                cancellationToken: cancellationToken);
         }
         else
         {
-            saved =
-                await _subscriptions.SaveAsync(
-                    subscription,
-                    expectedRowVersion,
-                    cancellationToken: cancellationToken);
+            saved = await _subscriptions.SaveAsync(
+                subscription,
+                expectedRowVersion,
+                cancellationToken: cancellationToken);
         }
 
         if (!saved.Succeeded)
@@ -1012,31 +699,19 @@ public sealed class SchoolSubscriptionService
         }
 
         await transaction.CommitAsync(cancellationToken);
-
-        return SubscriptionCommandResult.Success(
-            await MapAsync(
-                subscription,
-                cancellationToken));
+        return SubscriptionCommandResult.Success(await MapAsync(subscription, cancellationToken));
     }
 
-    public async Task<SubscriptionEntitlementSnapshot>
-        EvaluateEntitlementsAsync(
-            Guid schoolId,
-            int additionalActiveStudents = 0,
-            DateTime? utcNow = null,
-            CancellationToken cancellationToken = default)
+    public async Task<SubscriptionEntitlementSnapshot> EvaluateEntitlementsAsync(
+        Guid schoolId,
+        int additionalActiveStudents = 0,
+        DateTime? utcNow = null,
+        CancellationToken cancellationToken = default)
     {
         if (additionalActiveStudents < 0)
-        {
-            throw new ArgumentOutOfRangeException(
-                nameof(additionalActiveStudents));
-        }
+            throw new ArgumentOutOfRangeException(nameof(additionalActiveStudents));
 
-        var subscription =
-            await _subscriptions.GetBySchoolAsync(
-                schoolId,
-                cancellationToken);
-
+        var subscription = await _subscriptions.GetBySchoolAsync(schoolId, cancellationToken);
         if (subscription is null)
         {
             return new SubscriptionEntitlementSnapshot(
@@ -1050,20 +725,9 @@ public sealed class SchoolSubscriptionService
                 CurrentTermEndsAtUtc: null);
         }
 
-        var now =
-            utcNow ?? DateTime.UtcNow;
-
-        var activeStudents =
-            await _subscriptions.CountActiveStudentsAsync(
-                schoolId,
-                cancellationToken);
-
-        var available =
-            Math.Max(
-                0,
-                subscription.CommittedSeats -
-                activeStudents);
-
+        var now = utcNow ?? DateTime.UtcNow;
+        var activeStudents = await _subscriptions.CountActiveStudentsAsync(schoolId, cancellationToken);
+        var available = Math.Max(0, subscription.CommittedSeats - activeStudents);
         var termActive =
             subscription.CurrentTermStartsAtUtc.HasValue &&
             subscription.CurrentTermEndsAtUtc.HasValue &&
@@ -1071,8 +735,7 @@ public sealed class SchoolSubscriptionService
             now < subscription.CurrentTermEndsAtUtc.Value;
 
         var operational =
-            subscription.Status ==
-                SubscriptionStatus.Active &&
+            SubscriptionLifecyclePolicy.IsOperationalSubscriptionState(subscription.Status) &&
             termActive;
 
         return new SubscriptionEntitlementSnapshot(
@@ -1080,71 +743,47 @@ public sealed class SchoolSubscriptionService
             OperationalAccessAllowed: operational,
             SeatCapacityAvailable:
                 operational &&
-                activeStudents +
-                    additionalActiveStudents <=
-                subscription.CommittedSeats,
+                activeStudents + additionalActiveStudents <= subscription.CommittedSeats,
             ActiveStudents: activeStudents,
-            CommittedSeats:
-                subscription.CommittedSeats,
-            AvailableSeats:
-                available,
-            Status:
-                subscription.Status,
-            CurrentTermEndsAtUtc:
-                subscription.CurrentTermEndsAtUtc);
+            CommittedSeats: subscription.CommittedSeats,
+            AvailableSeats: available,
+            Status: subscription.Status,
+            CurrentTermEndsAtUtc: subscription.CurrentTermEndsAtUtc);
     }
 
-    private async Task<SubscriptionCommandResult>
-        ChangeOperationalStateAsync(
-            Guid actorUserId,
-            Guid schoolId,
-            byte[] expectedRowVersion,
-            SubscriptionStatus requiredCurrent,
-            SubscriptionStatus target,
-            SchoolStatus targetSchoolStatus,
-            string action,
-            CancellationToken cancellationToken)
+    private async Task<SubscriptionCommandResult> ChangeOperationalStateAsync(
+        Guid actorUserId,
+        Guid schoolId,
+        byte[] expectedRowVersion,
+        IReadOnlyCollection<SubscriptionStatus> requiredCurrentStates,
+        SubscriptionStatus target,
+        SchoolStatus targetSchoolStatus,
+        string action,
+        CancellationToken cancellationToken)
     {
-        var actor = await RequirePlatformActorAsync(
-            actorUserId,
-            cancellationToken);
-
+        var actor = await RequirePlatformActorAsync(actorUserId, cancellationToken);
         if (actor is null)
             return Fail(SubscriptionErrorCode.AccessDenied);
 
-        await using var transaction =
-            await _transactions.BeginAsync(
-                cancellationToken);
-
-        var subscription =
-            await _subscriptions.GetForUpdateBySchoolAsync(
-                schoolId,
-                cancellationToken);
-
+        await using var transaction = await _transactions.BeginAsync(cancellationToken);
+        var subscription = await _subscriptions.GetForUpdateBySchoolAsync(schoolId, cancellationToken);
         if (subscription is null)
         {
             await transaction.RollbackAsync(cancellationToken);
-            return Fail(
-                SubscriptionErrorCode.SubscriptionNotFound);
+            return Fail(SubscriptionErrorCode.SubscriptionNotFound);
         }
-
-        if (subscription.Status != requiredCurrent)
+        if (!requiredCurrentStates.Contains(subscription.Status))
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(SubscriptionErrorCode.InvalidState);
         }
 
-        var school =
-            await _schools.GetForUpdateAsync(
-                schoolId,
-                cancellationToken);
-
+        var school = await _schools.GetForUpdateAsync(schoolId, cancellationToken);
         if (school is null)
         {
             await transaction.RollbackAsync(cancellationToken);
             return Fail(SubscriptionErrorCode.SchoolNotFound);
         }
-
         if (school.Status == SchoolStatus.Archived)
         {
             await transaction.RollbackAsync(cancellationToken);
@@ -1152,18 +791,11 @@ public sealed class SchoolSubscriptionService
         }
 
         var now = DateTime.UtcNow;
-        var previous =
-            subscription.Status;
-        var schoolRowVersion =
-            school.RowVersion.ToArray();
-
+        var previous = subscription.Status;
+        var schoolRowVersion = school.RowVersion.ToArray();
         subscription.Status = target;
         subscription.UpdatedAtUtc = now;
-        subscription.SuspendedAtUtc =
-            target == SubscriptionStatus.Suspended
-                ? now
-                : null;
-
+        subscription.SuspendedAtUtc = target == SubscriptionStatus.Suspended ? now : null;
         school.Status = targetSchoolStatus;
         school.UpdatedAtUtc = now;
 
@@ -1171,30 +803,23 @@ public sealed class SchoolSubscriptionService
             actor.Id,
             subscription,
             action,
+            new Dictionary<string, object?> { ["status"] = previous.ToString() },
             new Dictionary<string, object?>
             {
-                ["status"] = previous.ToString()
-            },
-            new Dictionary<string, object?>
-            {
-                ["status"] =
-                    subscription.Status.ToString(),
-                ["schoolStatus"] =
-                    school.Status.ToString()
+                ["status"] = subscription.Status.ToString(),
+                ["schoolStatus"] = school.Status.ToString()
             },
             target == SubscriptionStatus.Suspended
                 ? "Subscription suspended and school operational access disabled."
                 : "Subscription reactivated and school operational access restored.",
             cancellationToken);
 
-        var saved =
-            await _subscriptions.SaveWithSchoolAsync(
-                subscription,
-                expectedRowVersion,
-                school,
-                schoolRowVersion,
-                cancellationToken: cancellationToken);
-
+        var saved = await _subscriptions.SaveWithSchoolAsync(
+            subscription,
+            expectedRowVersion,
+            school,
+            schoolRowVersion,
+            cancellationToken: cancellationToken);
         if (!saved.Succeeded)
         {
             await transaction.RollbackAsync(cancellationToken);
@@ -1202,22 +827,14 @@ public sealed class SchoolSubscriptionService
         }
 
         await transaction.CommitAsync(cancellationToken);
-
-        return SubscriptionCommandResult.Success(
-            await MapAsync(
-                subscription,
-                cancellationToken));
+        return SubscriptionCommandResult.Success(await MapAsync(subscription, cancellationToken));
     }
 
     private async Task<SchoolUserRecord?> RequirePlatformActorAsync(
         Guid actorUserId,
         CancellationToken cancellationToken)
     {
-        var actor =
-            await _users.GetActorAsync(
-                actorUserId,
-                cancellationToken);
-
+        var actor = await _users.GetActorAsync(actorUserId, cancellationToken);
         if (actor is null ||
             !actor.IsActive ||
             actor.IsLocked ||
@@ -1235,10 +852,9 @@ public sealed class SchoolSubscriptionService
         SchoolSubscription subscription,
         CancellationToken cancellationToken)
     {
-        var activeStudents =
-            await _subscriptions.CountActiveStudentsAsync(
-                subscription.SchoolId,
-                cancellationToken);
+        var activeStudents = await _subscriptions.CountActiveStudentsAsync(
+            subscription.SchoolId,
+            cancellationToken);
 
         return new SchoolSubscriptionDetails(
             subscription.Id,
@@ -1250,10 +866,7 @@ public sealed class SchoolSubscriptionService
             subscription.CommittedSeats,
             subscription.PendingRenewalSeats,
             activeStudents,
-            Math.Max(
-                0,
-                subscription.CommittedSeats -
-                activeStudents),
+            Math.Max(0, subscription.CommittedSeats - activeStudents),
             subscription.AutoRenew,
             subscription.NonRenewalRequestedAtUtc,
             subscription.Status,
@@ -1307,12 +920,10 @@ public sealed class SchoolSubscriptionService
             CreatedAtUtc = DateTime.UtcNow
         };
 
-    private static SubscriptionCommandResult Fail(
-        SubscriptionErrorCode error) =>
+    private static SubscriptionCommandResult Fail(SubscriptionErrorCode error) =>
         SubscriptionCommandResult.Failure(error);
 
-    private static SubscriptionErrorCode MapPersistence(
-        SubscriptionPersistenceError error) =>
+    private static SubscriptionErrorCode MapPersistence(SubscriptionPersistenceError error) =>
         error == SubscriptionPersistenceError.Concurrency
             ? SubscriptionErrorCode.ConcurrencyConflict
             : SubscriptionErrorCode.PersistenceError;
