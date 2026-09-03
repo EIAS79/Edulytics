@@ -50,13 +50,21 @@ public sealed class Phase05TeacherWorkflowContractTests
     }
 
     [Fact]
-    public void TeacherAndStudent_DoNotExposeOrdinaryCrossRolePicker()
+    public void TeacherAndStudent_DoNotExposeOrAcceptOrdinaryCrossRoleChange()
     {
         var root = FindRepositoryRoot();
         var details = File.ReadAllText(
             Path.Combine(
                 root,
                 "src/Edulytics.Web/Views/SchoolUsers/Details.cshtml"));
+        var guard = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Web/Filters/OperationalRoleTransitionGuardFilter.cs"));
+        var registration = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Web/Extensions/SchoolUserManagementRegistrationExtensions.cs"));
 
         Assert.Contains(
             "var isOperationalAccount =",
@@ -81,6 +89,27 @@ public sealed class Phase05TeacherWorkflowContractTests
         Assert.DoesNotContain(
             "StudentSetupUnavailable",
             details,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "IsBlockedOperationalTransition",
+            guard,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "RoleNames.Teacher",
+            guard,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "RoleNames.Student",
+            guard,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "OperationalRoleTransitionGuardFilter",
+            registration,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "Filters.AddService<\n                    OperationalRoleTransitionGuardFilter>()",
+            registration,
             StringComparison.Ordinal);
     }
 
