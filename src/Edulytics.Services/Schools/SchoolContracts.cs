@@ -26,7 +26,9 @@ public enum SchoolErrorCode
     ArchivedCannotEdit,
     InvalidStatusTransition,
     ConcurrencyConflict,
-    PersistenceError
+    PersistenceError,
+    InvalidTrialDuration,
+    TrialAlreadyExists
 }
 
 public sealed record SchoolValidationError(
@@ -63,7 +65,11 @@ public sealed record SchoolDetails(
     bool CanEdit,
     bool CanSuspend,
     bool CanReactivate,
-    bool CanArchive);
+    bool CanArchive,
+    bool CanStartTrial,
+    DateTime? TrialStartsAtUtc,
+    DateTime? TrialEndsAtUtc,
+    bool TrialIsCurrentlyUsable);
 
 public sealed record CreateSchoolRequest(
     string Name,
@@ -89,6 +95,11 @@ public sealed record SchoolStatusChangeRequest(
     SchoolStatus TargetStatus,
     byte[] RowVersion);
 
+public sealed record StartSchoolTrialRequest(
+    Guid Id,
+    int DurationDays,
+    byte[] RowVersion);
+
 public sealed class SchoolCommandResult
 {
     private SchoolCommandResult(
@@ -102,19 +113,15 @@ public sealed class SchoolCommandResult
     }
 
     public bool Succeeded { get; }
-
     public Guid? SchoolId { get; }
-
     public IReadOnlyList<SchoolValidationError> Errors { get; }
 
     public static SchoolCommandResult Success(Guid schoolId) =>
         new(true, schoolId, Array.Empty<SchoolValidationError>());
 
-    public static SchoolCommandResult Failure(
-        params SchoolValidationError[] errors) =>
+    public static SchoolCommandResult Failure(params SchoolValidationError[] errors) =>
         new(false, null, errors);
 
-    public static SchoolCommandResult Failure(
-        IReadOnlyList<SchoolValidationError> errors) =>
+    public static SchoolCommandResult Failure(IReadOnlyList<SchoolValidationError> errors) =>
         new(false, null, errors);
 }
