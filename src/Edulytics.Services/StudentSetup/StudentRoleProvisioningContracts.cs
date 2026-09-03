@@ -24,7 +24,11 @@ public sealed record StudentRoleClassOption(
     string AcademicYearName,
     string GradeLevelName,
     string Name,
-    string Code);
+    string Code)
+{
+    public string DisplayLabel { get; init; } =
+        $"{AcademicYearName} · {GradeLevelName} · {Name}";
+}
 
 public sealed record StudentRoleEnrollmentState(
     Guid? ClassGroupId,
