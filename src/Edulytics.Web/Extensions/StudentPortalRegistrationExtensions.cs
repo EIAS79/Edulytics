@@ -27,6 +27,10 @@ public static class StudentPortalRegistrationExtensions
             IStudentRoleProvisioningService,
             StudentRoleProvisioningService>();
 
+        services.AddScoped<
+            IStudentCreationClassCatalog,
+            StudentCreationClassCatalog>();
+
         services.AddAuthorization(
             options =>
             {

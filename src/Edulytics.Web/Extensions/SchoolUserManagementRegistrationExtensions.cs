@@ -2,6 +2,8 @@ using Edulytics.Core.Interfaces;
 using Edulytics.Data.Repositories;
 using Edulytics.Services.Auditing;
 using Edulytics.Services.Users;
+using Edulytics.Web.Filters;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Edulytics.Web.Extensions;
 
@@ -30,6 +32,14 @@ public static class SchoolUserManagementRegistrationExtensions
                         ICustomerOnboardingRepository>(),
                     provider.GetRequiredService<
                         ISchoolSubscriptionRepository>()));
+
+        services.AddScoped<
+            DirectStudentCreationFilter>();
+
+        services.Configure<MvcOptions>(
+            options =>
+                options.Filters.AddService<
+                    DirectStudentCreationFilter>());
 
         return services;
     }
