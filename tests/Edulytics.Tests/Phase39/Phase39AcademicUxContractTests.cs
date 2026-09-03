@@ -61,8 +61,9 @@ public sealed class Phase39AcademicUxContractTests
         Assert.Contains("profileForm.hidden = true", javascript, StringComparison.Ordinal);
         Assert.Contains("/School/Users/Create", javascript, StringComparison.Ordinal);
         Assert.Contains("Change student class enrollment", javascript, StringComparison.Ordinal);
-        Assert.Contains("BeginTransactionAsync", filter, StringComparison.Ordinal);
+        Assert.Contains("_transactions.BeginAsync", filter, StringComparison.Ordinal);
         Assert.Contains("ConvertToStudentAsync", filter, StringComparison.Ordinal);
+        Assert.Contains("RollbackAsync", filter, StringComparison.Ordinal);
         Assert.Contains("CommitAsync", filter, StringComparison.Ordinal);
     }
 
