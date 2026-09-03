@@ -106,8 +106,6 @@ public sealed class DirectStudentCreationFilter
         }
 
         Guid createdUserId;
-        string passwordSetupToken;
-        string schoolCulture;
 
         await using (
             var transaction =
@@ -173,39 +171,33 @@ public sealed class DirectStudentCreationFilter
                 return;
             }
 
-            // Role changes update the Identity security stamp, so the
-            // token created with the temporary Teacher account must not
-            // be used. Generate a fresh token only after Student setup.
-            var password =
-                await _users.GeneratePasswordSetupAsync(
-                    actorUserId,
-                    model.SchoolId,
-                    createdUserId,
-                    context.HttpContext.RequestAborted);
+            // Commit the identity + student provisioning work before
+            // generating a password setup token. Password setup writes
+            // audit data through a separate context/connection; doing it
+            // while the student rows are still uncommitted can block on
+            // PostgreSQL locks until the request times out.
+            await transaction.CommitAsync(
+                context.HttpContext.RequestAborted);
+        }
 
-            if (!password.Succeeded ||
-                string.IsNullOrWhiteSpace(
-                    password.PasswordSetupToken))
-            {
-                await transaction.RollbackAsync(
-                    context.HttpContext.RequestAborted);
+        // Role changes update the Identity security stamp, so generate a
+        // fresh token only after Student setup has committed. Invitation
+        // setup is intentionally post-commit: a mail/token failure must
+        // not roll back or delete an otherwise valid Student account.
+        var password =
+            await _users.GeneratePasswordSetupAsync(
+                actorUserId,
+                model.SchoolId,
+                createdUserId,
+                context.HttpContext.RequestAborted);
 
-                if (TrySecurityFailure(
-                        password.Errors,
-                        out var failure))
-                {
-                    context.Result = failure;
-                    return;
-                }
+        string? passwordSetupToken = null;
+        var schoolCulture = "en";
 
-                AddSchoolUserErrors(
-                    context,
-                    password.Errors);
-
-                context.Result = controller.View("Create", model);
-                return;
-            }
-
+        if (password.Succeeded &&
+            !string.IsNullOrWhiteSpace(
+                password.PasswordSetupToken))
+        {
             passwordSetupToken =
                 password.PasswordSetupToken;
 
@@ -213,25 +205,27 @@ public sealed class DirectStudentCreationFilter
                 string.IsNullOrWhiteSpace(password.SchoolCulture)
                     ? "en"
                     : password.SchoolCulture;
-
-            await transaction.CommitAsync(
-                context.HttpContext.RequestAborted);
         }
 
         var invitationCulture =
             GetInvitationCulture(schoolCulture);
 
-        var link =
-            controller.Url.Action(
-                "SetPassword",
-                "Account",
-                new
-                {
-                    userId = createdUserId,
-                    token = passwordSetupToken,
-                    culture = invitationCulture
-                },
-                controller.Request.Scheme);
+        string? link = null;
+
+        if (!string.IsNullOrWhiteSpace(passwordSetupToken))
+        {
+            link =
+                controller.Url.Action(
+                    "SetPassword",
+                    "Account",
+                    new
+                    {
+                        userId = createdUserId,
+                        token = passwordSetupToken,
+                        culture = invitationCulture
+                    },
+                    controller.Request.Scheme);
+        }
 
         UserInvitationDeliveryResult? delivery = null;
 
