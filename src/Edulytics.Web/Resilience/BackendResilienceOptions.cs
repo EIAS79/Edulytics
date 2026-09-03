@@ -6,7 +6,7 @@ public sealed class BackendResilienceOptions
         "Edulytics:Resilience";
 
     public int InteractiveReadTimeoutSeconds { get; set; } = 15;
-    public int InteractiveWriteTimeoutSeconds { get; set; } = 20;
+    public int InteractiveWriteTimeoutSeconds { get; set; } = 45;
     public int ImportTimeoutSeconds { get; set; } = 45;
     public int AnalyticsTimeoutSeconds { get; set; } = 30;
     public int ReportTimeoutSeconds { get; set; } = 30;
