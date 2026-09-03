@@ -1,0 +1,73 @@
+name: Align approved trial access tests
+
+on:
+  push:
+    branches:
+      - fix/approved-school-lifecycle
+
+permissions:
+  contents: write
+
+jobs:
+  align-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+          ref: fix/approved-school-lifecycle
+
+      - name: Align Phase25C access regression with SchoolTrials lifecycle
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 <<'PY'
+          from pathlib import Path
+
+          path = Path("tests/Edulytics.Tests/Phase25C/Phase25CAccessEnforcementTests.cs")
+          text = path.read_text(encoding="utf-8")
+
+          text = text.replace(
+              "    [InlineData(SubscriptionStatus.Active)]\n    [InlineData(SubscriptionStatus.Trial)]\n    [InlineData(SubscriptionStatus.GracePeriod)]",
+              "    [InlineData(SubscriptionStatus.Active)]\n    [InlineData(SubscriptionStatus.GracePeriod)]",
+              1)
+
+          anchor = '''    [Theory]\n    [InlineData(SubscriptionStatus.PendingActivation)]'''
+          if "CurrentSchoolTrial_AllowsSchoolAccess" not in text:
+              addition = '''    [Fact]\n    public async Task CurrentSchoolTrial_AllowsSchoolAccess()\n    {\n        var school = ActiveSchool();\n        school.Status = SchoolStatus.Trial;\n        var actor = User(school.Id, RoleNames.Teacher);\n        var now = DateTime.UtcNow;\n        var service = Service(\n            actor,\n            school,\n            subscription: null,\n            trial: new SchoolTrialWindow(\n                school.Id,\n                now.AddHours(-1),\n                now.AddDays(7),\n                null,\n                now.AddHours(-1),\n                now.AddHours(-1)));\n\n        var decision = await service.EvaluateSignInAsync(actor.Id);\n\n        Assert.True(decision.Allowed);\n    }\n\n    [Fact]\n    public async Task ExpiredSchoolTrial_DeniesSchoolAccess()\n    {\n        var school = ActiveSchool();\n        school.Status = SchoolStatus.Trial;\n        var actor = User(school.Id, RoleNames.Teacher);\n        var now = DateTime.UtcNow;\n        var service = Service(\n            actor,\n            school,\n            subscription: null,\n            trial: new SchoolTrialWindow(\n                school.Id,\n                now.AddDays(-8),\n                now.AddMinutes(-1),\n                null,\n                now.AddDays(-8),\n                now.AddDays(-8)));\n\n        var decision = await service.EvaluateSignInAsync(actor.Id);\n\n        Assert.False(decision.Allowed);\n    }\n\n'''
+              if anchor not in text:
+                  raise SystemExit("ERROR: test insertion anchor not found")
+              text = text.replace(anchor, addition + anchor, 1)
+
+          old_service = '''    private static SchoolUserManagementService Service(\n        SchoolUserRecord actor,\n        School? school,\n        SchoolSubscription? subscription) =>\n        new(\n            new FakeUsers(actor),\n            new FakeSchools(school),\n            audit: null,\n            transactions: null,\n            onboarding: null,\n            subscriptions: new FakeSubscriptions(subscription));'''
+          new_service = '''    private static SchoolUserManagementService Service(\n        SchoolUserRecord actor,\n        School? school,\n        SchoolSubscription? subscription,\n        SchoolTrialWindow? trial = null) =>\n        new(\n            new FakeUsers(actor),\n            new FakeSchools(school),\n            audit: null,\n            transactions: null,\n            onboarding: null,\n            subscriptions: new FakeSubscriptions(subscription),\n            trials: new FakeTrials(trial));'''
+          if new_service not in text:
+              if old_service not in text:
+                  raise SystemExit("ERROR: Service helper anchor not found")
+              text = text.replace(old_service, new_service, 1)
+
+          if "private sealed class FakeTrials" not in text:
+              insert_at = text.rfind("\n}")
+              if insert_at < 0:
+                  raise SystemExit("ERROR: final class boundary not found")
+              fake = '''\n\n    private sealed class FakeTrials : ISchoolTrialRepository\n    {\n        private readonly SchoolTrialWindow? _trial;\n\n        public FakeTrials(SchoolTrialWindow? trial) => _trial = trial;\n\n        public Task<SchoolTrialWindow?> GetAsync(\n            Guid schoolId,\n            CancellationToken cancellationToken = default) =>\n            Task.FromResult(_trial?.SchoolId == schoolId ? _trial : null);\n\n        public Task<bool> CreateAsync(\n            SchoolTrialWindow trial,\n            CancellationToken cancellationToken = default) =>\n            Task.FromResult(false);\n\n        public Task EndAsync(\n            Guid schoolId,\n            DateTime endedAtUtc,\n            CancellationToken cancellationToken = default) =>\n            Task.CompletedTask;\n    }'''
+              text = text[:insert_at] + fake + text[insert_at:]
+
+          path.write_text(text, encoding="utf-8")
+          PY
+
+      - name: Commit aligned tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tests/Edulytics.Tests/Phase25C/Phase25CAccessEnforcementTests.cs
+          if git diff --cached --quiet; then
+            echo "Tests already aligned."
+            exit 0
+          fi
+          git commit -m "test: align trial access with SchoolTrials lifecycle"
+          git push origin HEAD:fix/approved-school-lifecycle
