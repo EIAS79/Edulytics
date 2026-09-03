@@ -3,6 +3,7 @@ using System.Text;
 using Edulytics.Core.Constants;
 using Edulytics.Core.Enums;
 using Edulytics.Services.Imports;
+using Edulytics.Web.Imports;
 using Edulytics.Web.ViewModels.Imports;
 using Edulytics.Web.Resilience;
 using Microsoft.AspNetCore.Authorization;
@@ -44,9 +45,14 @@ public sealed class ImportsController
         if (!result.Succeeded)
             return Failure(result.Error);
 
+        var workspace = result.Value!;
+        var productWorkspace = new ImportWorkspace(
+            MathOnlyImportAdapter.FilterOptions(workspace.AllowedTypes),
+            workspace.Batches);
+
         return View(
             new ImportIndexViewModel(
-                result.Value!));
+                productWorkspace));
     }
 
     [HttpGet("/school/imports/{batchId:guid}")]
@@ -86,8 +92,11 @@ public sealed class ImportsController
         if (!TryActor(out var actorId))
             return Forbid();
 
-        if (!Enum.IsDefined(importType))
+        if (!Enum.IsDefined(importType) ||
+            !MathOnlyImportAdapter.IsSupported(importType))
+        {
             return BadRequest();
+        }
 
         if (file is null ||
             file.Length <= 0)
@@ -116,12 +125,17 @@ public sealed class ImportsController
             stream,
             cancellationToken);
 
+        var upload = MathOnlyImportAdapter.NormalizeUpload(
+            importType,
+            file.FileName,
+            stream.ToArray());
+
         var result =
             await _imports.UploadAsync(
                 actorId,
                 importType,
-                file.FileName,
-                stream.ToArray(),
+                upload.FileName,
+                upload.Bytes,
                 cancellationToken);
 
         if (!result.Succeeded)
@@ -227,8 +241,11 @@ public sealed class ImportsController
         if (!TryActor(out var actorId))
             return Forbid();
 
-        if (!Enum.IsDefined(importType))
+        if (!Enum.IsDefined(importType) ||
+            !MathOnlyImportAdapter.IsSupported(importType))
+        {
             return NotFound();
+        }
 
         var workspace =
             await _imports.GetWorkspaceAsync(
@@ -244,8 +261,10 @@ public sealed class ImportsController
         }
 
         var headers =
-            _imports.GetTemplateHeaders(
-                importType);
+            MathOnlyImportAdapter.TemplateHeaders(
+                importType,
+                _imports.GetTemplateHeaders(
+                    importType));
 
         var content =
             string.Join(
