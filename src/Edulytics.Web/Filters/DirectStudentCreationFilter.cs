@@ -7,6 +7,7 @@ using Edulytics.Services.Users;
 using Edulytics.Web.Email;
 using Edulytics.Web.ViewModels.SchoolUsers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Localization;
 
@@ -281,24 +282,35 @@ public sealed class DirectStudentCreationFilter
     {
         model = null!;
 
-        return string.Equals(
-                   context.ActionDescriptor.ControllerName,
-                   "SchoolUsers",
-                   StringComparison.Ordinal) &&
-               string.Equals(
-                   context.ActionDescriptor.ActionName,
-                   "Create",
-                   StringComparison.Ordinal) &&
-               context.HttpContext.Request.Method == "POST" &&
-               context.ActionArguments.TryGetValue(
-                   "model",
-                   out var value) &&
-               value is SchoolUserCreateViewModel candidate &&
-               string.Equals(
-                   candidate.Role,
-                   RoleNames.Student,
-                   StringComparison.Ordinal) &&
-               (model = candidate) is not null;
+        if (context.ActionDescriptor is not
+            ControllerActionDescriptor action)
+        {
+            return false;
+        }
+
+        if (!string.Equals(
+                action.ControllerName,
+                "SchoolUsers",
+                StringComparison.Ordinal) ||
+            !string.Equals(
+                action.ActionName,
+                "Create",
+                StringComparison.Ordinal) ||
+            context.HttpContext.Request.Method != "POST" ||
+            !context.ActionArguments.TryGetValue(
+                "model",
+                out var value) ||
+            value is not SchoolUserCreateViewModel candidate ||
+            !string.Equals(
+                candidate.Role,
+                RoleNames.Student,
+                StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        model = candidate;
+        return true;
     }
 
     private void ValidateStudentFields(
