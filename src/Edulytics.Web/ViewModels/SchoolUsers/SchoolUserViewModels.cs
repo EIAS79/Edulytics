@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Edulytics.Services.Users;
 using Edulytics.Services.StudentSetup;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Edulytics.Web.ViewModels.SchoolUsers;
 
@@ -30,10 +31,17 @@ public sealed class SchoolUserCreateViewModel
     [Required(ErrorMessage = "UserRoleRequired")]
     public string Role { get; set; } = string.Empty;
 
+    // These fields are required only for direct Student creation. They are
+    // validated explicitly by DirectStudentCreationFilter so a Teacher create
+    // request from a SubjectSupervisor is not rejected by MVC's implicit
+    // non-nullable-string validation when the hidden Student fields are empty.
+    [ValidateNever]
     public string StudentNumber { get; set; } = string.Empty;
 
+    [ValidateNever]
     public string FirstName { get; set; } = string.Empty;
 
+    [ValidateNever]
     public string LastName { get; set; } = string.Empty;
 
     public Guid? ClassGroupId { get; set; }
