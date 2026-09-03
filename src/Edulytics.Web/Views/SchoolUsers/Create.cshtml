@@ -10,11 +10,19 @@
 
     var isPlatformActor = User.IsInRole(RoleNames.SuperAdmin);
     var isSchoolAdmin = User.IsInRole(RoleNames.SchoolAdmin);
+    var isSubjectSupervisor =
+        User.IsInRole(RoleNames.SubjectSupervisor);
 
     var createUserIntroKey =
         isPlatformActor || isSchoolAdmin
             ? "CreateUserIntro"
             : "CreateOperationalUserIntro";
+
+    var studentClassesUrl =
+        Url.Action(
+            "Classes",
+            "StudentCreationOptions",
+            new { schoolId = Model.SchoolId }) ?? string.Empty;
 
     ViewData["Title"] = T["CreateSchoolUser"].Value;
 }
@@ -86,6 +94,73 @@
                 </span>
             </div>
 
+            @if (isSubjectSupervisor)
+            {
+                <section id="direct-student-setup"
+                         class="student-role-setup-fields"
+                         data-classes-url="@studentClassesUrl"
+                         data-selected-class="@(Model.ClassGroupId?.ToString("D") ?? string.Empty)"
+                         hidden>
+                    <div class="student-role-setup-heading">
+                        <div>
+                            <strong>@T["StudentSetupTitle"]</strong>
+                            <p>@T["StudentSetupDescription"]</p>
+                        </div>
+                    </div>
+
+                    <div class="student-role-setup-grid">
+                        <label class="student-role-field">
+                            <span>@T["StudentNumber"]</span>
+                            <input asp-for="StudentNumber"
+                                   maxlength="50" />
+                            <span asp-validation-for="StudentNumber"
+                                  class="user-field-error">
+                            </span>
+                        </label>
+
+                        <label class="student-role-field">
+                            <span>@T["FirstName"]</span>
+                            <input asp-for="FirstName"
+                                   maxlength="100" />
+                            <span asp-validation-for="FirstName"
+                                  class="user-field-error">
+                            </span>
+                        </label>
+
+                        <label class="student-role-field">
+                            <span>@T["LastName"]</span>
+                            <input asp-for="LastName"
+                                   maxlength="100" />
+                            <span asp-validation-for="LastName"
+                                  class="user-field-error">
+                            </span>
+                        </label>
+
+                        <label class="student-role-field">
+                            <span>@T["StudentClass"]</span>
+                            <select asp-for="ClassGroupId">
+                                <option value="">
+                                    @T["SelectStudentClass"]
+                                </option>
+
+                                @foreach (var classOption
+                                          in Model.StudentClasses)
+                                {
+                                    <option value="@classOption.Id">
+                                        @classOption.AcademicYearName
+                                        · @classOption.GradeLevelName
+                                        · @classOption.Name
+                                    </option>
+                                }
+                            </select>
+                            <span asp-validation-for="ClassGroupId"
+                                  class="user-field-error">
+                            </span>
+                        </label>
+                    </div>
+                </section>
+            }
+
             <div class="user-info-box">
                 <strong>@T["PasswordSetupTitle"]</strong>
                 <p>@T["InitialSetupExplanation"]</p>
@@ -107,3 +182,73 @@
         </form>
     }
 </section>
+
+@if (isSubjectSupervisor)
+{
+    <script>
+        (() => {
+            const role = document.getElementById("Role");
+            const section = document.getElementById("direct-student-setup");
+            const classSelect = document.getElementById("ClassGroupId");
+
+            if (!role || !section || !classSelect) {
+                return;
+            }
+
+            let classesLoaded = classSelect.options.length > 1;
+
+            const loadClasses = async () => {
+                if (classesLoaded) {
+                    return;
+                }
+
+                const url = section.dataset.classesUrl;
+                if (!url) {
+                    return;
+                }
+
+                try {
+                    const response = await fetch(url, {
+                        credentials: "same-origin",
+                        headers: { "Accept": "application/json" }
+                    });
+
+                    if (!response.ok) {
+                        return;
+                    }
+
+                    const items = await response.json();
+                    const selected = section.dataset.selectedClass;
+
+                    for (const item of items) {
+                        const option = document.createElement("option");
+                        option.value = item.id;
+                        option.textContent = item.label;
+
+                        if (selected && item.id === selected) {
+                            option.selected = true;
+                        }
+
+                        classSelect.appendChild(option);
+                    }
+
+                    classesLoaded = true;
+                } catch {
+                    // Server-side validation remains authoritative.
+                }
+            };
+
+            const sync = async () => {
+                const isStudent = role.value === "@RoleNames.Student";
+                section.hidden = !isStudent;
+
+                if (isStudent) {
+                    await loadClasses();
+                }
+            };
+
+            role.addEventListener("change", sync);
+            void sync();
+        })();
+    </script>
+}
