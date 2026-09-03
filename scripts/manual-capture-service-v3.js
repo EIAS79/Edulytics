@@ -22,7 +22,20 @@ async function launch() {
   });
 }
 
+async function setCulture(page) {
+  const url = new URL(BASE);
+  await page.setCookie({
+    name: 'Edulytics.Culture',
+    value: 'c=en|uic=en',
+    domain: url.hostname,
+    path: '/',
+    secure: true,
+    sameSite: 'Strict'
+  });
+}
+
 async function login(page) {
+  await setCulture(page);
   const response = await page.goto(`${BASE}/account/login`, { waitUntil: 'networkidle2', timeout: 60000 });
   event('login-page', { status: response?.status() || null, url: page.url() });
   const email = await page.$('input[type="email"],input[name="Email"],input[name$=".Email"]');
