@@ -75,14 +75,30 @@ public sealed class NotificationService
         var actorRole =
             SingleRole(actor.Roles);
 
+        var recipientRole =
+            SingleRole(recipient.Roles);
+
         var canManage =
             actor.SchoolId is null
                 ? actorRole ==
                     RoleNames.SuperAdmin
                 : actor.SchoolId ==
                     recipient.SchoolId &&
-                  actorRole ==
-                    RoleNames.SchoolAdmin;
+                  recipientRole is not null &&
+                  (
+                      actorRole ==
+                          RoleNames.SchoolAdmin &&
+                      recipientRole ==
+                          RoleNames.SubjectSupervisor ||
+                      actorRole ==
+                          RoleNames.SubjectSupervisor &&
+                      (
+                          recipientRole ==
+                              RoleNames.Teacher ||
+                          recipientRole ==
+                              RoleNames.Student
+                      )
+                  );
 
         if (!canManage)
         {
