@@ -26,8 +26,12 @@ public sealed record StudentRoleClassOption(
     string Name,
     string Code)
 {
-    public string DisplayLabel { get; init; } =
-        $"{AcademicYearName} · {GradeLevelName} · {Name}";
+    public string? CurriculumDisplayLabel { get; init; }
+
+    public string DisplayLabel =>
+        string.IsNullOrWhiteSpace(CurriculumDisplayLabel)
+            ? $"{AcademicYearName} · {GradeLevelName} · {Name}"
+            : CurriculumDisplayLabel;
 }
 
 public sealed record StudentRoleEnrollmentState(
