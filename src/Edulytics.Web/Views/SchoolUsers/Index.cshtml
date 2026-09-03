@@ -1,21 +1,21 @@
 @using Edulytics.Core.Constants
 @model Edulytics.Web.ViewModels.SchoolUsers.SchoolUserListViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.PlatformResource> T
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.UserHierarchyResource> H
 
 @{
     var canManageSchoolUsers =
+        User.IsInRole(RoleNames.SchoolAdmin) ||
         User.IsInRole(RoleNames.SubjectSupervisor) ||
         User.IsInRole(RoleNames.SuperAdmin);
 
-    var schoolUsersSubtitleKey =
+    var schoolUsersSubtitle =
         Model.Context.IsPlatformActor
-            ? "SchoolUsersPlatformSubtitle"
+            ? T["SchoolUsersPlatformSubtitle"].Value
             : User.IsInRole(RoleNames.SubjectSupervisor)
-                ? "SchoolUsersSupervisorSubtitle"
-                : "SchoolUsersAdminSubtitle";
-}
+                ? T["SchoolUsersSupervisorSubtitle"].Value
+                : H["AdminUsersSubtitle"].Value;
 
-@{
     ViewData["Title"] = T["SchoolUsersTitle"].Value;
 }
 
@@ -47,21 +47,18 @@
             <h1>@T["SchoolUsersTitle"]</h1>
 
             <p class="user-page-subtitle">
-                @T[schoolUsersSubtitleKey]
+                @schoolUsersSubtitle
             </p>
         </div>
 
-        @if (Model.Context.CanMutate)
+        @if (Model.Context.CanMutate && canManageSchoolUsers)
         {
-            @if (canManageSchoolUsers)
-            {
-                <a class="school-button school-button-primary"
-                               asp-controller="SchoolUsers"
-                               asp-action="Create"
-                               asp-route-schoolId="@Model.Context.SchoolId">
-                                @T["CreateSchoolUser"]
-                            </a>
-            }
+            <a class="school-button school-button-primary"
+               asp-controller="SchoolUsers"
+               asp-action="Create"
+               asp-route-schoolId="@Model.Context.SchoolId">
+                @T["CreateSchoolUser"]
+            </a>
         }
     </header>
 
@@ -96,17 +93,14 @@
             <h2>@T["NoSchoolUsers"]</h2>
             <p>@T["NoSchoolUsersDescription"]</p>
 
-            @if (Model.Context.CanMutate)
+            @if (Model.Context.CanMutate && canManageSchoolUsers)
             {
-                @if (canManageSchoolUsers)
-                {
-                    <a class="school-button school-button-primary"
-                                       asp-controller="SchoolUsers"
-                                       asp-action="Create"
-                                       asp-route-schoolId="@Model.Context.SchoolId">
-                                        @T["CreateSchoolUser"]
-                                    </a>
-                }
+                <a class="school-button school-button-primary"
+                   asp-controller="SchoolUsers"
+                   asp-action="Create"
+                   asp-route-schoolId="@Model.Context.SchoolId">
+                    @T["CreateSchoolUser"]
+                </a>
             }
         </section>
     }
