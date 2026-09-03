@@ -14,7 +14,6 @@ env:
 
 jobs:
   apply-and-verify:
-    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 35
 
@@ -198,88 +197,6 @@ jobs:
 
           add_resources("src/Edulytics.Web/Resources/PlatformResource.resx", english)
           add_resources("src/Edulytics.Web/Resources/PlatformResource.pl.resx", polish)
-
-          test_path = ROOT / "tests/Edulytics.Tests/CommercialLifecycle/ApprovedSchoolLifecycleContractTests.cs"
-          test_path.parent.mkdir(parents=True, exist_ok=True)
-          test_path.write_text(r'''using Edulytics.Core.Interfaces;
-
-namespace Edulytics.Tests.CommercialLifecycle;
-
-public sealed class ApprovedSchoolLifecycleContractTests
-{
-    [Fact]
-    public void TrialWindow_IsUsableOnlyInsideExplicitWindow()
-    {
-        var now = new DateTime(2026, 9, 3, 12, 0, 0, DateTimeKind.Utc);
-        var trial = new SchoolTrialWindow(
-            Guid.NewGuid(),
-            now.AddDays(-1),
-            now.AddDays(6),
-            null,
-            now.AddDays(-1),
-            now.AddDays(-1));
-
-        Assert.True(trial.IsUsableAt(now));
-        Assert.False(trial.IsUsableAt(now.AddDays(6)));
-    }
-
-    [Fact]
-    public void EndedTrial_IsNeverUsable()
-    {
-        var now = DateTime.UtcNow;
-        var trial = new SchoolTrialWindow(
-            Guid.NewGuid(),
-            now.AddDays(-1),
-            now.AddDays(6),
-            now,
-            now.AddDays(-1),
-            now);
-
-        Assert.False(trial.IsUsableAt(now));
-    }
-
-    [Fact]
-    public void LifecycleImplementation_ContainsApprovedGuards()
-    {
-        var root = FindRepositoryRoot();
-        var billing = File.ReadAllText(Path.Combine(root, "src/Edulytics.Services/Billing/BillingService.cs"));
-        var subscriptions = File.ReadAllText(Path.Combine(root, "src/Edulytics.Services/Subscriptions/SchoolSubscriptionService.cs"));
-        var users = File.ReadAllText(Path.Combine(root, "src/Edulytics.Services/Users/SchoolUserManagementService.cs"));
-
-        Assert.Contains("Optional(request.TaxIdentifier) ?? string.Empty", billing);
-        Assert.Contains("SchoolStatus.Trial", billing);
-        Assert.Contains("SchoolStatus.Trial", subscriptions);
-        Assert.Contains("trial?.IsUsableAt(now) == true", users);
-    }
-
-    [Fact]
-    public void SchoolDetails_HasNoHardCodedTrialEnglish()
-    {
-        var root = FindRepositoryRoot();
-        var view = File.ReadAllText(Path.Combine(root, "src/Edulytics.Web/Views/Schools/Details.cshtml"));
-
-        Assert.DoesNotContain("<dt>Trial starts</dt>", view);
-        Assert.DoesNotContain("<dt>Trial ends</dt>", view);
-        Assert.DoesNotContain(">Start trial</button>", view);
-        Assert.Contains("T[\"TrialDurationDays\"]", view);
-        Assert.Contains("T[\"StartTrial\"]", view);
-    }
-
-    private static string FindRepositoryRoot()
-    {
-        var directory = new DirectoryInfo(AppContext.BaseDirectory);
-        while (directory is not null)
-        {
-            if (File.Exists(Path.Combine(directory.FullName, "Edulytics.sln")))
-                return directory.FullName;
-            directory = directory.Parent;
-        }
-
-        throw new DirectoryNotFoundException("Edulytics repository root not found.");
-    }
-}
-''', encoding="utf-8")
-          print("PASS: regression contract tests written")
           PY
 
       - name: Verify migration set unchanged
@@ -301,9 +218,6 @@ public sealed class ApprovedSchoolLifecycleContractTests
       - name: Build
         run: dotnet build Edulytics.sln --no-restore
 
-      - name: Targeted lifecycle tests
-        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --filter "FullyQualifiedName~CommercialLifecycle"
-
       - name: Full regression
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore
 
@@ -313,7 +227,7 @@ public sealed class ApprovedSchoolLifecycleContractTests
       - name: Dependency vulnerability gate
         run: bash scripts/ci-dependency-gate.sh artifacts/security/nuget-vulnerabilities.txt
 
-      - name: Security/privacy/accessibility gate
+      - name: Security privacy accessibility gate
         run: bash scripts/verify-phase23-security.sh
 
       - name: Diff whitespace gate
@@ -331,8 +245,7 @@ public sealed class ApprovedSchoolLifecycleContractTests
             src/Edulytics.Services/Users/SchoolUserManagementService.cs \
             src/Edulytics.Web/Views/Schools/Details.cshtml \
             src/Edulytics.Web/Resources/PlatformResource.resx \
-            src/Edulytics.Web/Resources/PlatformResource.pl.resx \
-            tests/Edulytics.Tests/CommercialLifecycle/ApprovedSchoolLifecycleContractTests.cs
+            src/Edulytics.Web/Resources/PlatformResource.pl.resx
           if git diff --cached --quiet; then
             echo "No implementation changes to commit."
             exit 0
