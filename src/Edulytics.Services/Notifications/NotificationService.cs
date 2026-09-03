@@ -84,14 +84,12 @@ public sealed class NotificationService
                     RoleNames.SuperAdmin
                 : actor.SchoolId ==
                     recipient.SchoolId &&
-                  recipientRole is not null &&
                   (
                       actorRole ==
-                          RoleNames.SchoolAdmin &&
-                      recipientRole ==
-                          RoleNames.SubjectSupervisor ||
+                          RoleNames.SchoolAdmin ||
                       actorRole ==
                           RoleNames.SubjectSupervisor &&
+                      recipientRole is not null &&
                       (
                           recipientRole ==
                               RoleNames.Teacher ||
