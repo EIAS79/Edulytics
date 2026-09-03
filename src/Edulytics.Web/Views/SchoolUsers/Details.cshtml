@@ -3,17 +3,35 @@
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.PlatformResource> T
 
 @{
+    var user = Model.User;
+
     var canManageAccount =
         User.IsInRole(RoleNames.SchoolAdmin) ||
         User.IsInRole(RoleNames.SubjectSupervisor) ||
         User.IsInRole(RoleNames.SuperAdmin);
 
+    var isOperationalAccount =
+        user.Role == RoleNames.Teacher ||
+        user.Role == RoleNames.Student;
+
+    // Teacher and Student are different account types with different data
+    // models. Do not expose an ordinary role picker between them.
     var canChangeRole =
-        User.IsInRole(RoleNames.SubjectSupervisor) ||
-        User.IsInRole(RoleNames.SuperAdmin);
+        !isOperationalAccount &&
+        (
+            User.IsInRole(RoleNames.SubjectSupervisor) ||
+            User.IsInRole(RoleNames.SuperAdmin)
+        );
+
+    var canEditStudentSetup =
+        user.Role == RoleNames.Student &&
+        Model.StudentSetup is not null &&
+        (
+            User.IsInRole(RoleNames.SubjectSupervisor) ||
+            User.IsInRole(RoleNames.SuperAdmin)
+        );
 
     ViewData["Title"] = T["UserDetails"].Value;
-    var user = Model.User;
 }
 
 <section class="user-page">
@@ -262,12 +280,119 @@
                                 </div>
                             </section>
                         }
-                        else
-                        {
-                            <div class="user-info-box">
-                                @T["StudentSetupUnavailable"]
+
+                        <button type="submit"
+                                class="school-button school-button-primary">
+                            @T["SaveChanges"]
+                        </button>
+                    </form>
+                </div>
+            }
+
+            @if (canEditStudentSetup && Model.StudentSetup is { } studentSetup)
+            {
+                <div class="user-action-card">
+                    <h2>@T["StudentSetupTitle"]</h2>
+
+                    <form method="post"
+                          asp-controller="SchoolUsers"
+                          asp-action="ChangeRole"
+                          asp-route-id="@user.Id"
+                          class="student-role-setup-form">
+                        <input type="hidden"
+                               name="schoolId"
+                               value="@user.Context.SchoolId" />
+                        <input type="hidden"
+                               name="role"
+                               value="@RoleNames.Student" />
+
+                        <section class="student-role-setup-fields"
+                                 aria-label="@T["StudentSetupTitle"]">
+                            <div class="student-role-setup-heading">
+                                <div>
+                                    <strong>@T["StudentSetupTitle"]</strong>
+                                    <p>@T["StudentSetupDescription"]</p>
+                                </div>
+
+                                <span class="student-setup-state @(studentSetup.IsComplete ? "is-complete" : "is-incomplete")">
+                                    @(studentSetup.IsComplete
+                                        ? T["StudentSetupComplete"]
+                                        : T["StudentSetupIncomplete"])
+                                </span>
                             </div>
-                        }
+
+                            @if (!string.IsNullOrWhiteSpace(
+                                    studentSetup.CurrentEnrollmentSummary))
+                            {
+                                <div class="student-setup-current">
+                                    <strong>
+                                        @T["StudentSetupCurrentEnrollment"]:
+                                    </strong>
+
+                                    @studentSetup.CurrentEnrollmentSummary
+                                </div>
+                            }
+
+                            <div class="student-role-setup-grid">
+                                <label class="student-role-field">
+                                    <span>@T["StudentNumber"]</span>
+                                    <input name="studentNumber"
+                                           maxlength="50"
+                                           value="@studentSetup.StudentNumber" />
+                                </label>
+
+                                <label class="student-role-field">
+                                    <span>@T["FirstName"]</span>
+                                    <input name="firstName"
+                                           maxlength="100"
+                                           value="@studentSetup.FirstName" />
+                                </label>
+
+                                <label class="student-role-field">
+                                    <span>@T["LastName"]</span>
+                                    <input name="lastName"
+                                           maxlength="100"
+                                           value="@studentSetup.LastName" />
+                                </label>
+
+                                <label class="student-role-field">
+                                    <span>@T["StudentClass"]</span>
+                                    <select name="classGroupId">
+                                        <option value="">
+                                            @T["SelectStudentClass"]
+                                        </option>
+
+                                        @foreach (var classOption
+                                                  in studentSetup.Classes)
+                                        {
+                                            if (
+                                                studentSetup.CurrentClassGroupId ==
+                                                classOption.Id)
+                                            {
+                                                <option value="@classOption.Id"
+                                                        selected>
+                                                    @classOption.AcademicYearName
+                                                    ·
+                                                    @classOption.GradeLevelName
+                                                    ·
+                                                    @classOption.Name
+                                                </option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@classOption.Id">
+                                                    @classOption.AcademicYearName
+                                                    ·
+                                                    @classOption.GradeLevelName
+                                                    ·
+                                                    @classOption.Name
+                                                </option>
+                                            }
+                                        }
+                                    </select>
+                                </label>
+                            </div>
+                        </section>
 
                         <button type="submit"
                                 class="school-button school-button-primary">

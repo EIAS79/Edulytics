@@ -35,11 +35,17 @@ public static class SchoolUserManagementRegistrationExtensions
 
         services.AddScoped<
             DirectStudentCreationFilter>();
+        services.AddScoped<
+            OperationalRoleTransitionGuardFilter>();
 
         services.Configure<MvcOptions>(
             options =>
+            {
                 options.Filters.AddService<
-                    DirectStudentCreationFilter>());
+                    DirectStudentCreationFilter>();
+                options.Filters.AddService<
+                    OperationalRoleTransitionGuardFilter>();
+            });
 
         return services;
     }
