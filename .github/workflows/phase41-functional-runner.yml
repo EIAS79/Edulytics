@@ -1,0 +1,70 @@
+name: Phase41 Functional Runner
+
+on:
+  push:
+    branches:
+      - phase41-online-assessments
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Stop when patch already committed
+        id: state
+        shell: bash
+        run: |
+          if [ -f src/Edulytics.Services/Assessments/StudentAssessmentDeliveryService.cs ]; then
+            echo 'apply=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'apply=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Setup .NET
+        if: steps.state.outputs.apply == 'true'
+        uses: actions/setup-dotnet@v6.0.0
+        with:
+          dotnet-version: "10.0.200"
+
+      - name: Restore
+        if: steps.state.outputs.apply == 'true'
+        run: dotnet restore Edulytics.sln
+
+      - name: Apply deterministic patch
+        if: steps.state.outputs.apply == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          sed -i 's/saved.Error == Core\.Assessments\.AssessmentPersistenceError\.Conflict/saved.Error == Edulytics.Core.Assessments.AssessmentPersistenceError.Conflict/' scripts/phase41-functional-patch.py
+          python3 scripts/phase41-functional-patch.py
+
+      - name: Build
+        if: steps.state.outputs.apply == 'true'
+        run: dotnet build Edulytics.sln --no-restore
+
+      - name: Full regression
+        if: steps.state.outputs.apply == 'true'
+        run: dotnet test Edulytics.sln --no-build --no-restore
+
+      - name: Diff gate
+        if: steps.state.outputs.apply == 'true'
+        run: git diff --check
+
+      - name: Commit patch
+        if: steps.state.outputs.apply == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Edulytics CI"
+          git config user.email "actions@users.noreply.github.com"
+          git add src tests
+          git commit -m "Phase 41: online official assessment delivery"
+          git push origin HEAD:phase41-online-assessments
