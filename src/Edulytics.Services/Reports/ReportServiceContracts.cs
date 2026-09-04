@@ -32,6 +32,121 @@ public sealed record ReportRequest(
     Guid? StudentProfileId = null,
     Guid? LearningOutcomeId = null);
 
+public static class ReportRequestPolicy
+{
+    public static ReportRequest Normalize(
+        ReportRequest request) =>
+        request.Kind switch
+        {
+            ReportKind.School =>
+                new ReportRequest(
+                    request.Kind,
+                    AcademicYearId: request.AcademicYearId),
+
+            ReportKind.Class =>
+                new ReportRequest(
+                    request.Kind,
+                    AcademicYearId: request.AcademicYearId,
+                    ClassGroupId: request.ClassGroupId),
+
+            ReportKind.Subject =>
+                new ReportRequest(
+                    request.Kind,
+                    AcademicYearId: request.AcademicYearId,
+                    ClassGroupId: request.ClassGroupId,
+                    SubjectId: request.SubjectId),
+
+            ReportKind.Student =>
+                new ReportRequest(
+                    request.Kind,
+                    AcademicYearId: request.AcademicYearId,
+                    ClassGroupId: request.ClassGroupId,
+                    StudentProfileId: request.StudentProfileId),
+
+            ReportKind.LearningOutcome =>
+                new ReportRequest(
+                    request.Kind,
+                    AcademicYearId: request.AcademicYearId,
+                    ClassGroupId: request.ClassGroupId,
+                    LearningOutcomeId: request.LearningOutcomeId),
+
+            _ => request
+        };
+
+    public static bool HasRequiredSelection(
+        ReportRequest request)
+    {
+        request = Normalize(request);
+
+        return request.Kind switch
+        {
+            ReportKind.School => true,
+
+            ReportKind.Class =>
+                request.AcademicYearId.HasValue &&
+                request.ClassGroupId.HasValue,
+
+            ReportKind.Subject =>
+                request.SubjectId.HasValue,
+
+            ReportKind.Student =>
+                request.AcademicYearId.HasValue &&
+                request.ClassGroupId.HasValue &&
+                request.StudentProfileId.HasValue,
+
+            ReportKind.LearningOutcome =>
+                request.AcademicYearId.HasValue &&
+                request.ClassGroupId.HasValue &&
+                request.LearningOutcomeId.HasValue,
+
+            _ => false
+        };
+    }
+
+    public static bool UsesAcademicYear(
+        ReportKind kind) =>
+        kind is
+            ReportKind.School or
+            ReportKind.Class or
+            ReportKind.Subject or
+            ReportKind.Student or
+            ReportKind.LearningOutcome;
+
+    public static bool UsesClass(
+        ReportKind kind) =>
+        kind is
+            ReportKind.Class or
+            ReportKind.Subject or
+            ReportKind.Student or
+            ReportKind.LearningOutcome;
+
+    public static bool UsesSubject(
+        ReportKind kind) =>
+        kind == ReportKind.Subject;
+
+    public static bool UsesStudent(
+        ReportKind kind) =>
+        kind == ReportKind.Student;
+
+    public static bool UsesLearningOutcome(
+        ReportKind kind) =>
+        kind == ReportKind.LearningOutcome;
+
+    public static bool RequiresAcademicYear(
+        ReportKind kind) =>
+        kind is
+            ReportKind.Class or
+            ReportKind.Student or
+            ReportKind.LearningOutcome;
+
+    public static bool RequiresClass(
+        ReportKind kind) =>
+        kind is
+            ReportKind.Class or
+            ReportKind.Student or
+            ReportKind.LearningOutcome;
+}
+
 public sealed record ReportFilterItem(
     Guid Id,
     string Name);

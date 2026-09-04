@@ -33,6 +33,21 @@
         });
     }
 
+    function wireReportKindFilters() {
+        document.querySelectorAll("[data-report-kind-filter]")
+            .forEach(select => {
+                const form = select.closest("form[data-report-filter-form]");
+
+                if (!form) {
+                    return;
+                }
+
+                select.addEventListener("change", () => {
+                    form.requestSubmit();
+                });
+            });
+    }
+
     function wireSchoolCountryTimeZones() {
         document.querySelectorAll("[data-school-country]").forEach(country => {
             const form = country.closest("form");
@@ -214,6 +229,8 @@
 
     document.addEventListener("DOMContentLoaded", () => {
         wirePrintButtons();
+
+        wireReportKindFilters();
 
         wireConfirmationForms();
 

@@ -52,6 +52,9 @@ public sealed class ReportExportService
                         .UnsupportedFormat);
         }
 
+        request =
+            ReportRequestPolicy.Normalize(request);
+
         var validation =
             await _reports.ValidateAsync(
                 actorUserId,
@@ -326,13 +329,14 @@ public sealed class ReportExportService
 
     public static ReportRequest ToRequest(
         ReportExportJob job) =>
-        new(
-            job.ReportKind,
-            job.AcademicYearId,
-            job.ClassGroupId,
-            job.SubjectId,
-            job.StudentProfileId,
-            job.LearningOutcomeId);
+        ReportRequestPolicy.Normalize(
+            new ReportRequest(
+                job.ReportKind,
+                job.AcademicYearId,
+                job.ClassGroupId,
+                job.SubjectId,
+                job.StudentProfileId,
+                job.LearningOutcomeId));
 
     public static IReadOnlyDictionary<
         string,

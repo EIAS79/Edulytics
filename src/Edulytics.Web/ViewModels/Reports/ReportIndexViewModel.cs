@@ -95,24 +95,41 @@ public sealed class ReportIndexViewModel
 
     public static bool HasRequiredSelection(
         ReportRequest request) =>
-        request.Kind switch
-        {
-            ReportKind.School =>
-                true,
+        ReportRequestPolicy
+            .HasRequiredSelection(request);
 
-            ReportKind.Class =>
-                request.ClassGroupId.HasValue,
+    public static bool ShowAcademicYear(
+        ReportKind kind) =>
+        ReportRequestPolicy
+            .UsesAcademicYear(kind);
 
-            ReportKind.Subject =>
-                request.SubjectId.HasValue,
+    public static bool ShowClass(
+        ReportKind kind) =>
+        ReportRequestPolicy
+            .UsesClass(kind);
 
-            ReportKind.Student =>
-                request.StudentProfileId.HasValue,
+    public static bool ShowSubject(
+        ReportKind kind) =>
+        ReportRequestPolicy
+            .UsesSubject(kind);
 
-            ReportKind.LearningOutcome =>
-                request.LearningOutcomeId.HasValue,
+    public static bool ShowStudent(
+        ReportKind kind) =>
+        ReportRequestPolicy
+            .UsesStudent(kind);
 
-            _ =>
-                false
-        };
+    public static bool ShowLearningOutcome(
+        ReportKind kind) =>
+        ReportRequestPolicy
+            .UsesLearningOutcome(kind);
+
+    public static bool RequireAcademicYear(
+        ReportKind kind) =>
+        ReportRequestPolicy
+            .RequiresAcademicYear(kind);
+
+    public static bool RequireClass(
+        ReportKind kind) =>
+        ReportRequestPolicy
+            .RequiresClass(kind);
 }

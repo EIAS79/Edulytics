@@ -79,13 +79,14 @@ public sealed class ReportsController
                 .First();
 
         var request =
-            new ReportRequest(
-                selectedKind,
-                academicYearId,
-                classGroupId,
-                subjectId,
-                studentProfileId,
-                learningOutcomeId);
+            ReportRequestPolicy.Normalize(
+                new ReportRequest(
+                    selectedKind,
+                    academicYearId,
+                    classGroupId,
+                    subjectId,
+                    studentProfileId,
+                    learningOutcomeId));
 
         ReportDocument? document = null;
 
@@ -167,13 +168,14 @@ public sealed class ReportsController
         }
 
         var request =
-            new ReportRequest(
-                kind,
-                academicYearId,
-                classGroupId,
-                subjectId,
-                studentProfileId,
-                learningOutcomeId);
+            ReportRequestPolicy.Normalize(
+                new ReportRequest(
+                    kind,
+                    academicYearId,
+                    classGroupId,
+                    subjectId,
+                    studentProfileId,
+                    learningOutcomeId));
 
         var result =
             await _exports.RequestAsync(
@@ -211,12 +213,17 @@ public sealed class ReportsController
             nameof(Index),
             new
             {
-                kind,
-                academicYearId,
-                classGroupId,
-                subjectId,
-                studentProfileId,
-                learningOutcomeId
+                kind = request.Kind,
+                academicYearId =
+                    request.AcademicYearId,
+                classGroupId =
+                    request.ClassGroupId,
+                subjectId =
+                    request.SubjectId,
+                studentProfileId =
+                    request.StudentProfileId,
+                learningOutcomeId =
+                    request.LearningOutcomeId
             });
     }
 
