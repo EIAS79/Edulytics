@@ -4,9 +4,6 @@
 
 @{
     var canManageImports = User.IsInRole(RoleNames.SubjectSupervisor);
-}
-
-@{
     ViewData["Title"] = I["Batch"].Value;
 }
 
@@ -146,7 +143,7 @@
     </section>
 
     <section class="import-panel">
-        @if (Model.Batch.CanConfirm)
+        @if (Model.CanConfirm)
         {
             <h2>@I["ConfirmImport"]</h2>
             <p>@I["ConfirmHelp"]</p>
@@ -154,19 +151,23 @@
             @if (canManageImports)
             {
                 <form asp-action="Confirm"
-                                  asp-route-batchId="@Model.Batch.Id"
-                                  method="post">
+                      asp-route-batchId="@Model.Batch.Id"
+                      method="post">
 
-                                <input type="hidden"
-                                       name="rowVersion"
-                                       value="@Model.RowVersionBase64" />
+                    <input type="hidden"
+                           name="rowVersion"
+                           value="@Model.RowVersionBase64" />
 
-                                <button type="submit"
-                                        class="school-button school-button-primary">
-                                    @I["ConfirmImport"]
-                                </button>
-                            </form>
+                    <button type="submit"
+                            class="school-button school-button-primary">
+                        @I["ConfirmImport"]
+                    </button>
+                </form>
             }
+        }
+        else if (Model.IsLegacyReadOnly)
+        {
+            <p>@I["ImportReadOnlyNotice"]</p>
         }
         else
         {
