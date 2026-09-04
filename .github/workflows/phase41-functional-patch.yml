@@ -1,0 +1,709 @@
+name: Phase41 Functional Patch
+
+on:
+  push:
+    branches:
+      - phase41-online-assessments
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: ${{ !contains(github.event.head_commit.message, '[phase41-functional-patch]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6.0.0
+        with:
+          dotnet-version: "10.0.200"
+
+      - name: Restore
+        run: dotnet restore Edulytics.sln
+
+      - name: Apply Phase 41 functional patch
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 <<'PY'
+          from pathlib import Path
+          from xml.sax.saxutils import escape
+
+          def replace(path, old, new):
+              p = Path(path)
+              text = p.read_text(encoding='utf-8')
+              if old not in text:
+                  raise SystemExit(f'PATCH_PATTERN_MISSING: {path}: {old[:120]!r}')
+              p.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          def append_resx(path, entries):
+              p = Path(path)
+              text = p.read_text(encoding='utf-8')
+              additions = []
+              for key, value in entries:
+                  if f'name="{key}"' in text:
+                      continue
+                  additions.append(f'  <data name="{key}" xml:space="preserve"><value>{escape(value)}</value></data>')
+              if additions:
+                  if '</root>' not in text:
+                      raise SystemExit(f'INVALID_RESX: {path}')
+                  text = text.replace('</root>', '\n'.join(additions) + '\n</root>')
+                  p.write_text(text, encoding='utf-8')
+
+          # Fix fully-qualified enum reference in the repository patch already on the branch.
+          replace(
+              'src/Edulytics.Data/Repositories/AssessmentBuilderRepository.cs',
+              'x.Status == Core.Enums.AcademicStructureStatus.Active)',
+              'x.Status == Edulytics.Core.Enums.AcademicStructureStatus.Active)')
+
+          # Assessment Builder service: surface eligible students and persist target/delivery/difficulty.
+          replace(
+              'src/Edulytics.Services/Assessments/AssessmentBuilderService.cs',
+              '''        var context = await repository.GetContextAsync(access.SchoolId, assessmentId, cancellationToken);\n        return context is null\n            ? AssessmentQueryResult<AssessmentBuilderWorkspace>.Failure(AssessmentErrorCode.AssessmentNotFound)\n            : AssessmentQueryResult<AssessmentBuilderWorkspace>.Success(BuildWorkspace(access.Details!, context));\n    }\n\n    public async Task<AssessmentCommandResult> CreateManualQuestionAsync(''',
+              '''        var context = await repository.GetContextAsync(access.SchoolId, assessmentId, cancellationToken);\n        if (context is null)\n            return AssessmentQueryResult<AssessmentBuilderWorkspace>.Failure(AssessmentErrorCode.AssessmentNotFound);\n\n        var targetStudents = (await repository.ListTargetStudentsAsync(access.SchoolId, assessmentId, cancellationToken))\n            .Select(x => new AssessmentTargetStudentOption(x.Id, x.StudentNumber, x.DisplayName))\n            .ToArray();\n\n        return AssessmentQueryResult<AssessmentBuilderWorkspace>.Success(\n            BuildWorkspace(access.Details!, context, targetStudents));\n    }\n\n    public async Task<AssessmentCommandResult> UpdateDeliverySettingsAsync(\n        Guid actorUserId,\n        UpdateAssessmentDeliverySettingsRequest request,\n        CancellationToken cancellationToken = default)\n    {\n        var resolved = await ResolveEditableAsync(actorUserId, request.AssessmentId, cancellationToken);\n        if (resolved.Error.HasValue) return Failure(resolved.Error.Value);\n\n        if (!Enum.IsDefined(request.TargetType) ||\n            !Enum.IsDefined(request.DeliveryMode) ||\n            !Enum.IsDefined(request.DifficultyBand))\n            return Failure(AssessmentErrorCode.Required);\n\n        Guid? targetStudentId = null;\n        if (request.TargetType == AssessmentTargetType.IndividualStudent)\n        {\n            if (!request.TargetStudentProfileId.HasValue || request.TargetStudentProfileId.Value == Guid.Empty)\n                return Failure(AssessmentErrorCode.StudentNotFound);\n\n            var eligible = await repository.ListTargetStudentsAsync(\n                resolved.SchoolId, request.AssessmentId, cancellationToken);\n            if (eligible.All(x => x.Id != request.TargetStudentProfileId.Value))\n                return Failure(AssessmentErrorCode.StudentNotEnrolled);\n\n            targetStudentId = request.TargetStudentProfileId.Value;\n        }\n\n        var assessment = resolved.Context!.Assessment;\n        assessment.TargetType = request.TargetType;\n        assessment.TargetStudentProfileId = targetStudentId;\n        assessment.DeliveryMode = request.DeliveryMode;\n        assessment.DifficultyBand = request.DifficultyBand;\n\n        return await SaveAsync(\n            resolved.Context, request.AssessmentRowVersion, assessment.Id, cancellationToken);\n    }\n\n    public async Task<AssessmentCommandResult> CreateManualQuestionAsync(''')
+
+          replace(
+              'src/Edulytics.Services/Assessments/AssessmentBuilderService.cs',
+              'private static AssessmentBuilderWorkspace BuildWorkspace(AssessmentDetails details, AssessmentBuilderPersistenceContext context)',
+              'private static AssessmentBuilderWorkspace BuildWorkspace(AssessmentDetails details, AssessmentBuilderPersistenceContext context, IReadOnlyList<AssessmentTargetStudentOption> targetStudents)')
+
+          replace(
+              'src/Edulytics.Services/Assessments/AssessmentBuilderService.cs',
+              'return new AssessmentBuilderWorkspace(details, questions, current, Math.Max(0m, details.Assessment.MaxScore - current), mastery, canGenerate, ready, message);',
+              'return new AssessmentBuilderWorkspace(details, questions, current, Math.Max(0m, details.Assessment.MaxScore - current), mastery, canGenerate, ready, message, targetStudents);')
+
+          # Builder controller endpoint for delivery settings.
+          replace(
+              'src/Edulytics.Web/Controllers/AssessmentBuilderController.cs',
+              '''    [HttpPost("manual"), ValidateAntiForgeryToken]\n''',
+              '''    [HttpPost("settings"), ValidateAntiForgeryToken]\n    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]\n    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]\n    public async Task<IActionResult> UpdateDeliverySettings(\n        Guid assessmentId,\n        AssessmentTargetType targetType,\n        Guid? targetStudentProfileId,\n        AssessmentDeliveryMode deliveryMode,\n        AssessmentDifficultyBand difficultyBand,\n        string rowVersion,\n        CancellationToken cancellationToken)\n    {\n        if (!TryActor(out var actorId)) return Forbid();\n        if (!TryDecode(rowVersion, out var version)) return ConcurrencyRedirect(assessmentId);\n\n        var result = await service.UpdateDeliverySettingsAsync(\n            actorId,\n            new UpdateAssessmentDeliverySettingsRequest(\n                assessmentId,\n                targetType,\n                targetStudentProfileId,\n                deliveryMode,\n                difficultyBand,\n                version),\n            cancellationToken);\n\n        Feedback(result, "DeliverySettingsSaved");\n        return RedirectToAction(nameof(Index), new { assessmentId });\n    }\n\n    [HttpPost("manual"), ValidateAntiForgeryToken]\n''')
+
+          # Builder UI settings card.
+          replace(
+              'src/Edulytics.Web/Views/AssessmentBuilder/Index.cshtml',
+              '''<div class="assessment-info">@A[Model.ReadinessMessage]</div>\n@if(assessment.Status == AssessmentStatus.Draft){\n<section class="assessment-card"><h2>@A["AddQuestionManually"]</h2>''',
+              '''<div class="assessment-info">@A[Model.ReadinessMessage]</div>\n@if(assessment.Status == AssessmentStatus.Draft){\n<section class="assessment-card"><h2>@A["DeliverySettings"]</h2><p>@A["DeliverySettingsHelp"]</p><form asp-action="UpdateDeliverySettings" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form">@Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion"/><label>@A["AssessmentTarget"]</label><select name="targetType"><option value="@AssessmentTargetType.Class" selected="@(assessment.TargetType == AssessmentTargetType.Class)">@A["TargetClass"]</option><option value="@AssessmentTargetType.IndividualStudent" selected="@(assessment.TargetType == AssessmentTargetType.IndividualStudent)">@A["TargetIndividualStudent"]</option></select><label>@A["TargetStudent"]</label><select name="targetStudentProfileId"><option value="">@A["SelectStudentWhenIndividual"]</option>@foreach(var student in Model.TargetStudents ?? Array.Empty<Edulytics.Services.Assessments.AssessmentTargetStudentOption>()){<option value="@student.Id" selected="@(assessment.TargetStudentProfileId == student.Id)">@student.DisplayName (@student.StudentNumber)</option>}</select><label>@A["DeliveryMode"]</label><select name="deliveryMode"><option value="@AssessmentDeliveryMode.Online" selected="@(assessment.DeliveryMode == AssessmentDeliveryMode.Online)">@A["DeliveryOnline"]</option><option value="@AssessmentDeliveryMode.Offline" selected="@(assessment.DeliveryMode == AssessmentDeliveryMode.Offline)">@A["DeliveryOffline"]</option></select><label>@A["AssessmentDifficulty"]</label><select name="difficultyBand"><option value="@AssessmentDifficultyBand.AtClassLevel" selected="@(assessment.DifficultyBand == AssessmentDifficultyBand.AtClassLevel)">@A["AtClassLevel"]</option><option value="@AssessmentDifficultyBand.Stretch" selected="@(assessment.DifficultyBand == AssessmentDifficultyBand.Stretch)">@A["Stretch"]</option><option value="@AssessmentDifficultyBand.Challenge" selected="@(assessment.DifficultyBand == AssessmentDifficultyBand.Challenge)">@A["Challenge"]</option></select><button class="school-button school-button-primary" type="submit">@A["SaveDeliverySettings"]</button></form></section>\n<section class="assessment-card"><h2>@A["AddQuestionManually"]</h2>''')
+
+          append_resx('src/Edulytics.Web/Resources/AssessmentBuilderResource.resx', [
+              ('DeliverySettings', 'Assessment delivery'),
+              ('DeliverySettingsHelp', 'Choose who receives this assessment, how it is delivered, and its intended difficulty before publishing.'),
+              ('AssessmentTarget', 'Assessment target'),
+              ('TargetClass', 'Class'),
+              ('TargetIndividualStudent', 'Individual student'),
+              ('TargetStudent', 'Student'),
+              ('SelectStudentWhenIndividual', 'Select a student when the target is Individual student'),
+              ('DeliveryMode', 'Delivery mode'),
+              ('DeliveryOnline', 'Online assessment — student answers and submits in Edulytics'),
+              ('DeliveryOffline', 'Offline / manual assessment — teacher records or imports results'),
+              ('SaveDeliverySettings', 'Save delivery settings'),
+              ('DeliverySettingsSaved', 'Assessment delivery settings saved.')
+          ])
+          append_resx('src/Edulytics.Web/Resources/AssessmentBuilderResource.pl.resx', [
+              ('DeliverySettings', 'Sposób przeprowadzenia sprawdzianu'),
+              ('DeliverySettingsHelp', 'Przed publikacją wybierz odbiorców sprawdzianu, sposób jego przeprowadzenia oraz zamierzony poziom trudności.'),
+              ('AssessmentTarget', 'Odbiorca sprawdzianu'),
+              ('TargetClass', 'Klasa'),
+              ('TargetIndividualStudent', 'Pojedynczy uczeń'),
+              ('TargetStudent', 'Uczeń'),
+              ('SelectStudentWhenIndividual', 'Wybierz ucznia, gdy odbiorcą jest pojedynczy uczeń'),
+              ('DeliveryMode', 'Sposób przeprowadzenia'),
+              ('DeliveryOnline', 'Online — uczeń odpowiada i wysyła sprawdzian w Edulityks'),
+              ('DeliveryOffline', 'Offline / ręcznie — nauczyciel wprowadza lub importuje wyniki'),
+              ('SaveDeliverySettings', 'Zapisz ustawienia'),
+              ('DeliverySettingsSaved', 'Zapisano ustawienia sposobu przeprowadzenia sprawdzianu.')
+          ])
+
+          # Teacher results and manual entry respect individual targeting.
+          replace(
+              'src/Edulytics.Services/Assessments/AssessmentService.cs',
+              '''        var studentIds = snapshot.StudentEnrollments\n            .Where(x => x.AcademicYearId == assessment.AcademicYearId &&\n                        x.ClassGroupId == assessment.ClassGroupId)\n            .Select(x => x.StudentProfileId)\n            .ToHashSet();\n\n        var students = snapshot.StudentProfiles''',
+              '''        var studentIds = snapshot.StudentEnrollments\n            .Where(x => x.AcademicYearId == assessment.AcademicYearId &&\n                        x.ClassGroupId == assessment.ClassGroupId)\n            .Select(x => x.StudentProfileId)\n            .ToHashSet();\n\n        if (assessment.TargetType == AssessmentTargetType.IndividualStudent)\n        {\n            if (assessment.TargetStudentProfileId.HasValue)\n                studentIds.RemoveWhere(x => x != assessment.TargetStudentProfileId.Value);\n            else\n                studentIds.Clear();\n        }\n\n        var students = snapshot.StudentProfiles''')
+
+          replace(
+              'src/Edulytics.Services/Assessments/AssessmentService.Commands.cs',
+              '''        if (!await _repo.IsStudentEnrolledAsync(\n                schoolId,\n                assessment.AcademicYearId,\n                assessment.ClassGroupId,\n                student.Id,\n                cancellationToken))\n            return Fail(AssessmentErrorCode.StudentNotEnrolled);\n\n        var snapshot = await _repo.GetSnapshotAsync(schoolId, cancellationToken);''',
+              '''        if (!await _repo.IsStudentEnrolledAsync(\n                schoolId,\n                assessment.AcademicYearId,\n                assessment.ClassGroupId,\n                student.Id,\n                cancellationToken))\n            return Fail(AssessmentErrorCode.StudentNotEnrolled);\n\n        if (assessment.TargetType == AssessmentTargetType.IndividualStudent &&\n            assessment.TargetStudentProfileId != student.Id)\n            return Fail(AssessmentErrorCode.StudentNotEnrolled);\n\n        var snapshot = await _repo.GetSnapshotAsync(schoolId, cancellationToken);''')
+
+          replace(
+              'src/Edulytics.Services/Assessments/AssessmentService.Commands.cs',
+              '''        if (!mappedOutcomeIds.SetEquals(eligibleMappedOutcomeIds))\n            return Fail(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);\n\n        var previousStatus =''',
+              '''        if (!mappedOutcomeIds.SetEquals(eligibleMappedOutcomeIds))\n            return Fail(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);\n\n        if (assessment.TargetType == AssessmentTargetType.IndividualStudent)\n        {\n            if (!assessment.TargetStudentProfileId.HasValue)\n                return Fail(AssessmentErrorCode.StudentNotFound);\n\n            var targetStudent = await _repo.GetStudentProfileAsync(\n                scope.School.Id, assessment.TargetStudentProfileId.Value, cancellationToken);\n            if (targetStudent is null || targetStudent.IsArchived || targetStudent.Status != AcademicStructureStatus.Active)\n                return Fail(AssessmentErrorCode.StudentNotFound);\n\n            if (!await _repo.IsStudentEnrolledAsync(\n                    scope.School.Id,\n                    assessment.AcademicYearId,\n                    assessment.ClassGroupId,\n                    targetStudent.Id,\n                    cancellationToken))\n                return Fail(AssessmentErrorCode.StudentNotEnrolled);\n        }\n\n        var previousStatus =''')
+
+          # Student portal contracts and filtering.
+          replace(
+              'src/Edulytics.Services/StudentPortal/StudentPortalContracts.cs',
+              'namespace Edulytics.Services.StudentPortal;\n',
+              'using Edulytics.Core.Enums;\n\nnamespace Edulytics.Services.StudentPortal;\n')
+
+          replace(
+              'src/Edulytics.Services/StudentPortal/StudentPortalContracts.cs',
+              '''public sealed record StudentAssessmentItem(\n    Guid AssessmentId,\n    string Title,\n    string SubjectName,\n    string ClassName,\n    DateOnly AssessmentDate,\n    decimal MaxScore);''',
+              '''public sealed record StudentAssessmentItem(\n    Guid AssessmentId,\n    string Title,\n    string SubjectName,\n    string ClassName,\n    DateOnly AssessmentDate,\n    decimal MaxScore,\n    AssessmentDeliveryMode DeliveryMode = AssessmentDeliveryMode.Offline,\n    AssessmentDifficultyBand DifficultyBand = AssessmentDifficultyBand.AtClassLevel,\n    AssessmentTargetType TargetType = AssessmentTargetType.Class,\n    bool IsSubmitted = false);''')
+
+          replace(
+              'src/Edulytics.Services/StudentPortal/StudentPortalService.cs',
+              '''            .Where(x =>\n                x.Status == AssessmentStatus.Open &&\n                enrollmentKeys.Contains((x.ClassGroupId, x.AcademicYearId)))''',
+              '''            .Where(x =>\n                x.Status == AssessmentStatus.Open &&\n                enrollmentKeys.Contains((x.ClassGroupId, x.AcademicYearId)) &&\n                (x.TargetType == AssessmentTargetType.Class ||\n                 x.TargetStudentProfileId == snapshot.Profile.Id))''')
+
+          replace(
+              'src/Edulytics.Services/StudentPortal/StudentPortalService.cs',
+              '''                return new StudentAssessmentItem(\n                    x.Id,\n                    x.Title,\n                    subject?.Name ?? string.Empty,\n                    classGroup?.Name ?? string.Empty,\n                    x.AssessmentDate,\n                    x.MaxScore);''',
+              '''                return new StudentAssessmentItem(\n                    x.Id,\n                    x.Title,\n                    subject?.Name ?? string.Empty,\n                    classGroup?.Name ?? string.Empty,\n                    x.AssessmentDate,\n                    x.MaxScore,\n                    x.DeliveryMode,\n                    x.DifficultyBand,\n                    x.TargetType,\n                    snapshot.Results.Any(result =>\n                        result.AssessmentId == x.Id &&\n                        result.StudentProfileId == snapshot.Profile.Id));''')
+
+          # New official online assessment delivery contracts/service.
+          Path('src/Edulytics.Services/Assessments/StudentAssessmentDeliveryContracts.cs').write_text(r'''using Edulytics.Core.Enums;
+
+namespace Edulytics.Services.Assessments;
+
+public enum StudentAssessmentDeliveryErrorCode
+{
+    AccessDenied = 1,
+    SchoolNotActive = 2,
+    ProfileNotLinked = 3,
+    AssessmentNotFound = 4,
+    AssessmentNotOpen = 5,
+    AssessmentOffline = 6,
+    NotTargeted = 7,
+    AlreadySubmitted = 8,
+    InvalidSubmission = 9,
+    PersistenceError = 10
+}
+
+public sealed record StudentAssessmentQuestion(
+    Guid Id,
+    int Order,
+    string Prompt,
+    decimal MaxScore);
+
+public sealed record StudentAssessmentAttempt(
+    Guid AssessmentId,
+    string Title,
+    DateOnly AssessmentDate,
+    decimal MaxScore,
+    AssessmentDifficultyBand DifficultyBand,
+    IReadOnlyList<StudentAssessmentQuestion> Questions);
+
+public sealed record StudentAssessmentResponse(
+    Guid QuestionId,
+    string ResponseText);
+
+public sealed record StudentAssessmentSubmission(
+    Guid AssessmentId,
+    string Title,
+    decimal Score,
+    decimal MaxScore,
+    decimal Percentage,
+    DateTime SubmittedAtUtc);
+
+public sealed record StudentAssessmentDeliveryResult<T>(
+    T? Value,
+    StudentAssessmentDeliveryErrorCode? Error)
+    where T : class
+{
+    public static StudentAssessmentDeliveryResult<T> Success(T value) => new(value, null);
+    public static StudentAssessmentDeliveryResult<T> Failure(StudentAssessmentDeliveryErrorCode error) => new(null, error);
+}
+
+public interface IStudentAssessmentDeliveryService
+{
+    Task<StudentAssessmentDeliveryResult<StudentAssessmentAttempt>> GetAttemptAsync(
+        Guid actorUserId,
+        Guid assessmentId,
+        CancellationToken cancellationToken = default);
+
+    Task<StudentAssessmentDeliveryResult<StudentAssessmentSubmission>> SubmitAsync(
+        Guid actorUserId,
+        Guid assessmentId,
+        IReadOnlyList<StudentAssessmentResponse> responses,
+        CancellationToken cancellationToken = default);
+}
+''', encoding='utf-8')
+
+          Path('src/Edulytics.Services/Assessments/StudentAssessmentDeliveryService.cs').write_text(r'''using System.Globalization;
+using System.Text.Json;
+using Edulytics.Core.Constants;
+using Edulytics.Core.Entities;
+using Edulytics.Core.Enums;
+using Edulytics.Core.Interfaces;
+using Edulytics.Core.Realtime;
+using Edulytics.Services.Auditing;
+
+namespace Edulytics.Services.Assessments;
+
+public sealed class StudentAssessmentDeliveryService(
+    IAssessmentRepository assessments,
+    IAssessmentBuilderRepository builder,
+    ISchoolUserRepository users,
+    ISchoolRepository schools,
+    IAuditService? audit = null) : IStudentAssessmentDeliveryService
+{
+    public async Task<StudentAssessmentDeliveryResult<StudentAssessmentAttempt>> GetAttemptAsync(
+        Guid actorUserId,
+        Guid assessmentId,
+        CancellationToken cancellationToken = default)
+    {
+        var resolved = await ResolveAsync(actorUserId, assessmentId, cancellationToken);
+        if (resolved.Error.HasValue)
+            return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(resolved.Error.Value);
+
+        if (resolved.Snapshot!.Results.Any(x =>
+                x.AssessmentId == assessmentId &&
+                x.StudentProfileId == resolved.Profile!.Id))
+            return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(
+                StudentAssessmentDeliveryErrorCode.AlreadySubmitted);
+
+        var context = await builder.GetContextAsync(resolved.SchoolId, assessmentId, cancellationToken);
+        if (context is null)
+            return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(
+                StudentAssessmentDeliveryErrorCode.AssessmentNotFound);
+
+        var itemIds = context.Items.Select(x => x.Id).ToHashSet();
+        if (context.Questions.Count == 0 || context.Questions.Any(x => !itemIds.Contains(x.Id)))
+            return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(
+                StudentAssessmentDeliveryErrorCode.AssessmentNotFound);
+
+        var attempt = new StudentAssessmentAttempt(
+            context.Assessment.Id,
+            context.Assessment.Title,
+            context.Assessment.AssessmentDate,
+            context.Assessment.MaxScore,
+            context.Assessment.DifficultyBand,
+            context.Questions
+                .OrderBy(x => x.Order)
+                .Select(x => new StudentAssessmentQuestion(x.Id, x.Order, x.Prompt, x.MaxScore))
+                .ToArray());
+
+        return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Success(attempt);
+    }
+
+    public async Task<StudentAssessmentDeliveryResult<StudentAssessmentSubmission>> SubmitAsync(
+        Guid actorUserId,
+        Guid assessmentId,
+        IReadOnlyList<StudentAssessmentResponse> responses,
+        CancellationToken cancellationToken = default)
+    {
+        var resolved = await ResolveAsync(actorUserId, assessmentId, cancellationToken);
+        if (resolved.Error.HasValue)
+            return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(resolved.Error.Value);
+
+        if (resolved.Snapshot!.Results.Any(x =>
+                x.AssessmentId == assessmentId &&
+                x.StudentProfileId == resolved.Profile!.Id))
+            return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
+                StudentAssessmentDeliveryErrorCode.AlreadySubmitted);
+
+        var context = await builder.GetContextAsync(resolved.SchoolId, assessmentId, cancellationToken);
+        if (context is null)
+            return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
+                StudentAssessmentDeliveryErrorCode.AssessmentNotFound);
+
+        var questions = context.Questions.OrderBy(x => x.Order).ToArray();
+        if (questions.Length == 0 ||
+            responses.Count != questions.Length ||
+            responses.Select(x => x.QuestionId).Distinct().Count() != questions.Length)
+            return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
+                StudentAssessmentDeliveryErrorCode.InvalidSubmission);
+
+        var responseMap = responses.ToDictionary(x => x.QuestionId);
+        var itemMap = context.Items.ToDictionary(x => x.Id);
+        if (questions.Any(x => !responseMap.ContainsKey(x.Id) || !itemMap.ContainsKey(x.Id)))
+            return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
+                StudentAssessmentDeliveryErrorCode.InvalidSubmission);
+
+        decimal score = 0m;
+        var scored = new List<(AssessmentQuestion Question, string Response, decimal Score)>();
+        foreach (var question in questions)
+        {
+            var response = (responseMap[question.Id].ResponseText ?? string.Empty).Trim();
+            if (response.Length > 4000)
+                return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
+                    StudentAssessmentDeliveryErrorCode.InvalidSubmission);
+
+            var earned = AnswersEquivalent(response, itemMap[question.Id].CorrectAnswer)
+                ? question.MaxScore
+                : 0m;
+            earned = Round(earned);
+            score += earned;
+            scored.Add((question, response, earned));
+        }
+
+        score = Round(score);
+        var percentage = decimal.Round(
+            score / context.Assessment.MaxScore * 100m,
+            2,
+            MidpointRounding.AwayFromZero);
+        var now = DateTime.UtcNow;
+
+        var result = new AssessmentResult
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = resolved.SchoolId,
+            AssessmentId = assessmentId,
+            StudentProfileId = resolved.Profile!.Id,
+            Score = score,
+            Percentage = percentage,
+            EnteredByUserId = actorUserId,
+            EnteredAtUtc = now,
+            UpdatedAtUtc = now
+        };
+        await assessments.AddAsync(result, cancellationToken);
+
+        foreach (var row in scored)
+        {
+            await assessments.AddAsync(
+                new StudentAnswer
+                {
+                    Id = Guid.NewGuid(),
+                    SchoolId = resolved.SchoolId,
+                    AssessmentResultId = result.Id,
+                    AssessmentQuestionId = row.Question.Id,
+                    ResponseText = row.Response,
+                    Score = row.Score,
+                    UpdatedAtUtc = now
+                },
+                cancellationToken);
+        }
+
+        var eventId = Guid.NewGuid();
+        var changed = new AssessmentResultChangedEvent(
+            eventId,
+            resolved.SchoolId,
+            assessmentId,
+            result.Id,
+            context.Assessment.ClassGroupId,
+            context.Assessment.SubjectId,
+            resolved.Profile.Id,
+            now);
+
+        await assessments.AddOutboxAsync(
+            new OutboxMessage
+            {
+                Id = eventId,
+                SchoolId = resolved.SchoolId,
+                EventType = RealtimeEventTypes.AssessmentResultEntered,
+                PayloadJson = JsonSerializer.Serialize(changed),
+                OccurredAtUtc = now,
+                AvailableAtUtc = now,
+                ProcessingAttempts = 0,
+                CorrelationId = $"assessment-result:{eventId:N}"
+            },
+            cancellationToken);
+
+        if (audit is not null)
+        {
+            await audit.QueueAsync(
+                new AuditEvent(
+                    SchoolId: resolved.SchoolId,
+                    Action: "StudentAssessment.Submitted",
+                    EntityType: "AssessmentResult",
+                    EntityId: result.Id.ToString("D"),
+                    Feature: "Assessments",
+                    NewValues: new Dictionary<string, object?>
+                    {
+                        ["assessmentId"] = assessmentId,
+                        ["studentProfileId"] = resolved.Profile.Id,
+                        ["answerCount"] = scored.Count
+                    },
+                    ResultSummary: "Online assessment submitted by student.",
+                    ActorUserIdOverride: actorUserId,
+                    ActorRoleOverride: RoleNames.Student),
+                cancellationToken);
+        }
+
+        var saved = await assessments.SaveAsync(cancellationToken);
+        if (!saved.Succeeded)
+            return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
+                StudentAssessmentDeliveryErrorCode.PersistenceError);
+
+        return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Success(
+            new StudentAssessmentSubmission(
+                assessmentId,
+                context.Assessment.Title,
+                score,
+                context.Assessment.MaxScore,
+                percentage,
+                now));
+    }
+
+    private async Task<ResolvedDelivery> ResolveAsync(
+        Guid actorUserId,
+        Guid assessmentId,
+        CancellationToken cancellationToken)
+    {
+        var actor = await users.GetActorAsync(actorUserId, cancellationToken);
+        if (actor is null || !actor.IsActive || actor.IsLocked || !actor.SchoolId.HasValue ||
+            actor.Roles.Count != 1 || actor.Roles[0] != RoleNames.Student)
+            return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.AccessDenied);
+
+        var school = await schools.GetByIdAsync(actor.SchoolId.Value, cancellationToken);
+        if (school is null || school.Status != SchoolStatus.Active)
+            return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.SchoolNotActive);
+
+        var snapshot = await assessments.GetSnapshotAsync(school.Id, cancellationToken);
+        var profile = snapshot.StudentProfiles.SingleOrDefault(x =>
+            x.UserId == actorUserId &&
+            !x.IsArchived &&
+            x.Status == AcademicStructureStatus.Active);
+        if (profile is null)
+            return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.ProfileNotLinked);
+
+        var assessment = snapshot.Assessments.SingleOrDefault(x => x.Id == assessmentId);
+        if (assessment is null)
+            return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.AssessmentNotFound);
+        if (assessment.Status != AssessmentStatus.Open)
+            return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.AssessmentNotOpen);
+        if (assessment.DeliveryMode != AssessmentDeliveryMode.Online)
+            return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.AssessmentOffline);
+
+        var enrolled = snapshot.StudentEnrollments.Any(x =>
+            x.StudentProfileId == profile.Id &&
+            x.AcademicYearId == assessment.AcademicYearId &&
+            x.ClassGroupId == assessment.ClassGroupId);
+        if (!enrolled)
+            return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.NotTargeted);
+
+        if (assessment.TargetType == AssessmentTargetType.IndividualStudent &&
+            assessment.TargetStudentProfileId != profile.Id)
+            return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.NotTargeted);
+
+        return ResolvedDelivery.Ok(school.Id, profile, snapshot);
+    }
+
+    private static bool AnswersEquivalent(string actual, string expected)
+    {
+        actual = actual.Trim();
+        expected = (expected ?? string.Empty).Trim();
+
+        if (decimal.TryParse(actual, NumberStyles.Number, CultureInfo.InvariantCulture, out var actualNumber) &&
+            decimal.TryParse(expected, NumberStyles.Number, CultureInfo.InvariantCulture, out var expectedNumber))
+            return actualNumber == expectedNumber;
+
+        return string.Equals(actual, expected, StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static decimal Round(decimal value) =>
+        decimal.Round(value, 2, MidpointRounding.AwayFromZero);
+
+    private sealed record ResolvedDelivery(
+        Guid SchoolId,
+        StudentProfile? Profile,
+        Core.Assessments.AssessmentSnapshot? Snapshot,
+        StudentAssessmentDeliveryErrorCode? Error)
+    {
+        public static ResolvedDelivery Ok(
+            Guid schoolId,
+            StudentProfile profile,
+            Core.Assessments.AssessmentSnapshot snapshot) =>
+            new(schoolId, profile, snapshot, null);
+
+        public static ResolvedDelivery Fail(StudentAssessmentDeliveryErrorCode error) =>
+            new(Guid.Empty, null, null, error);
+    }
+}
+''', encoding='utf-8')
+
+          # Register online delivery service.
+          replace(
+              'src/Edulytics.Web/Extensions/AssessmentRegistrationExtensions.cs',
+              '''        services.AddScoped<IAssessmentBuilderService, AssessmentBuilderService>();\n''',
+              '''        services.AddScoped<IAssessmentBuilderService, AssessmentBuilderService>();\n        services.AddScoped<IStudentAssessmentDeliveryService, StudentAssessmentDeliveryService>();\n''')
+
+          # Student controller routes for official online assessments.
+          replace(
+              'src/Edulytics.Web/Controllers/StudentPortalController.cs',
+              'using Edulytics.Services.Notifications;\n',
+              'using Edulytics.Services.Notifications;\nusing Edulytics.Services.Assessments;\n')
+          replace(
+              'src/Edulytics.Web/Controllers/StudentPortalController.cs',
+              '''    private readonly ILessonContentService _lessonContent;\n''',
+              '''    private readonly ILessonContentService _lessonContent;\n    private readonly IStudentAssessmentDeliveryService _assessmentDelivery;\n''')
+          replace(
+              'src/Edulytics.Web/Controllers/StudentPortalController.cs',
+              '''        IStudentPortalService portal,\n        INotificationService notifications,\n        ILessonContentService lessonContent)\n    {\n        _portal = portal;\n        _notifications = notifications;\n        _lessonContent = lessonContent;\n    }''',
+              '''        IStudentPortalService portal,\n        INotificationService notifications,\n        ILessonContentService lessonContent,\n        IStudentAssessmentDeliveryService assessmentDelivery)\n    {\n        _portal = portal;\n        _notifications = notifications;\n        _lessonContent = lessonContent;\n        _assessmentDelivery = assessmentDelivery;\n    }''')
+          replace(
+              'src/Edulytics.Web/Controllers/StudentPortalController.cs',
+              '''    [HttpGet("results")]\n''',
+              '''    [HttpGet("assessments/{id:guid}")]\n    public async Task<IActionResult> TakeAssessment(\n        Guid id,\n        CancellationToken cancellationToken)\n    {\n        if (!TryActor(out var actorId))\n            return Forbid();\n\n        var attempt = await _assessmentDelivery.GetAttemptAsync(actorId, id, cancellationToken);\n        if (attempt.Value is not null)\n            return View(nameof(TakeAssessment), attempt.Value);\n\n        return attempt.Error switch\n        {\n            StudentAssessmentDeliveryErrorCode.AlreadySubmitted => RedirectToAction(nameof(Results)),\n            StudentAssessmentDeliveryErrorCode.AccessDenied or\n            StudentAssessmentDeliveryErrorCode.SchoolNotActive or\n            StudentAssessmentDeliveryErrorCode.ProfileNotLinked or\n            StudentAssessmentDeliveryErrorCode.NotTargeted => Forbid(),\n            _ => NotFound()\n        };\n    }\n\n    [HttpPost("assessments/{id:guid}/submit")]\n    [ValidateAntiForgeryToken]\n    public async Task<IActionResult> SubmitAssessment(\n        Guid id,\n        Guid[]? questionIds,\n        string[]? responses,\n        CancellationToken cancellationToken)\n    {\n        if (!TryActor(out var actorId))\n            return Forbid();\n\n        questionIds ??= [];\n        responses ??= [];\n        if (questionIds.Length != responses.Length)\n            return BadRequest();\n\n        var payload = questionIds\n            .Select((questionId, index) => new StudentAssessmentResponse(questionId, responses[index]))\n            .ToArray();\n\n        var submitted = await _assessmentDelivery.SubmitAsync(actorId, id, payload, cancellationToken);\n        if (submitted.Value is not null)\n            return View("AssessmentSubmitted", submitted.Value);\n\n        return submitted.Error switch\n        {\n            StudentAssessmentDeliveryErrorCode.AlreadySubmitted => RedirectToAction(nameof(Results)),\n            StudentAssessmentDeliveryErrorCode.InvalidSubmission => BadRequest(),\n            StudentAssessmentDeliveryErrorCode.AccessDenied or\n            StudentAssessmentDeliveryErrorCode.SchoolNotActive or\n            StudentAssessmentDeliveryErrorCode.ProfileNotLinked or\n            StudentAssessmentDeliveryErrorCode.NotTargeted => Forbid(),\n            _ => NotFound()\n        };\n    }\n\n    [HttpGet("results")]\n''')
+
+          # Student assessment list with delivery state and actions.
+          Path('src/Edulytics.Web/Views/StudentPortal/Assessments.cshtml').write_text(r'''@using Edulytics.Core.Enums
+@model Edulytics.Web.ViewModels.StudentPortal.StudentAssessmentsViewModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = S["AssessmentsTitle"].Value;
+}
+<header class="student-page-header">
+    <span class="student-eyebrow">@S["Assessments"]</span>
+    <h1>@S["AssessmentsTitle"]</h1>
+    <p>@S["AssessmentsSubtitle"]</p>
+</header>
+
+@if (Model.Workspace.Assessments.Count == 0)
+{
+    <div class="student-empty-state">@S["NoActiveAssessments"]</div>
+}
+else
+{
+    <div class="student-card-list">
+        @foreach (var item in Model.Workspace.Assessments)
+        {
+            <article class="student-assessment-card">
+                <div>
+                    <span class="student-subject-code">@item.SubjectName</span>
+                    <h2>@item.Title</h2>
+                    <p>@S["Class"]: @item.ClassName</p>
+                    <p>@S["AssessmentMode"]: @(item.DeliveryMode == AssessmentDeliveryMode.Online ? S["OnlineAssessment"] : S["OfflineAssessment"])</p>
+                    <p>@S["AssessmentDifficulty"]: @S[$"AssessmentDifficulty{item.DifficultyBand}"]</p>
+                </div>
+                <dl>
+                    <div>
+                        <dt>@S["AssessmentDate"]</dt>
+                        <dd>@item.AssessmentDate.ToString("yyyy-MM-dd")</dd>
+                    </div>
+                    <div>
+                        <dt>@S["MaxScore"]</dt>
+                        <dd>@item.MaxScore.ToString("0.##")</dd>
+                    </div>
+                </dl>
+                <div class="student-actions">
+                    @if (item.IsSubmitted)
+                    {
+                        <a class="student-button" asp-action="Results">@S["ViewResults"]</a>
+                    }
+                    else if (item.DeliveryMode == AssessmentDeliveryMode.Online)
+                    {
+                        <a class="student-button student-button-primary" asp-action="TakeAssessment" asp-route-id="@item.AssessmentId">@S["StartAssessment"]</a>
+                    }
+                    else
+                    {
+                        <span class="student-muted">@S["TeacherManagedAssessment"]</span>
+                    }
+                </div>
+            </article>
+        }
+    </div>
+}
+''', encoding='utf-8')
+
+          Path('src/Edulytics.Web/Views/StudentPortal/TakeAssessment.cshtml').write_text(r'''@model Edulytics.Services.Assessments.StudentAssessmentAttempt
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = Model.Title;
+}
+<header class="student-page-header">
+    <span class="student-eyebrow">@S["OnlineAssessment"]</span>
+    <h1>@Model.Title</h1>
+    <p>@S["AssessmentDifficulty"]: @S[$"AssessmentDifficulty{Model.DifficultyBand}"] · @S["MaxScore"]: @Model.MaxScore.ToString("0.##")</p>
+</header>
+
+<form asp-action="SubmitAssessment" asp-route-id="@Model.AssessmentId" method="post" class="student-card-list">
+    @Html.AntiForgeryToken()
+    @foreach (var question in Model.Questions)
+    {
+        <article class="student-assessment-card">
+            <div>
+                <span class="student-subject-code">@S["Question"] @question.Order</span>
+                <h2>@question.Prompt</h2>
+                <p>@S["MaxScore"]: @question.MaxScore.ToString("0.##")</p>
+            </div>
+            <input type="hidden" name="questionIds" value="@question.Id" />
+            <label for="answer-@question.Id">@S["YourAnswer"]</label>
+            <textarea id="answer-@question.Id" name="responses" maxlength="4000" rows="4"></textarea>
+        </article>
+    }
+    <button class="student-button student-button-primary" type="submit">@S["SubmitAssessment"]</button>
+</form>
+''', encoding='utf-8')
+
+          Path('src/Edulytics.Web/Views/StudentPortal/AssessmentSubmitted.cshtml').write_text(r'''@model Edulytics.Services.Assessments.StudentAssessmentSubmission
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = S["AssessmentSubmittedTitle"].Value;
+}
+<header class="student-page-header">
+    <span class="student-eyebrow">@S["Assessments"]</span>
+    <h1>@S["AssessmentSubmittedTitle"]</h1>
+    <p>@S["AssessmentSubmittedSubtitle"]</p>
+</header>
+<section class="student-assessment-card">
+    <h2>@Model.Title</h2>
+    <dl>
+        <div><dt>@S["AssessmentScore"]</dt><dd>@Model.Score.ToString("0.##") / @Model.MaxScore.ToString("0.##")</dd></div>
+        <div><dt>@S["Percentage"]</dt><dd>@Model.Percentage.ToString("0.##")%</dd></div>
+    </dl>
+    <a class="student-button student-button-primary" asp-action="Results">@S["ViewResults"]</a>
+</section>
+''', encoding='utf-8')
+
+          append_resx('src/Edulytics.Web/Resources/StudentResource.resx', [
+              ('AssessmentMode', 'Mode'),
+              ('OnlineAssessment', 'Online assessment'),
+              ('OfflineAssessment', 'Offline / manual assessment'),
+              ('AssessmentDifficulty', 'Difficulty'),
+              ('AssessmentDifficultyAtClassLevel', 'At my class level'),
+              ('AssessmentDifficultyStretch', 'Stretch'),
+              ('AssessmentDifficultyChallenge', 'Challenge'),
+              ('StartAssessment', 'Start assessment'),
+              ('TeacherManagedAssessment', 'Your teacher will record or import this assessment result.'),
+              ('ViewResults', 'View results'),
+              ('Question', 'Question'),
+              ('YourAnswer', 'Your answer'),
+              ('SubmitAssessment', 'Submit assessment'),
+              ('AssessmentSubmittedTitle', 'Assessment submitted'),
+              ('AssessmentSubmittedSubtitle', 'Your official assessment has been submitted and scored.'),
+              ('AssessmentScore', 'Score'),
+              ('Percentage', 'Percentage')
+          ])
+          append_resx('src/Edulytics.Web/Resources/StudentResource.pl.resx', [
+              ('AssessmentMode', 'Tryb'),
+              ('OnlineAssessment', 'Sprawdzian online'),
+              ('OfflineAssessment', 'Sprawdzian offline / ręczny'),
+              ('AssessmentDifficulty', 'Trudność'),
+              ('AssessmentDifficultyAtClassLevel', 'Na poziomie mojej klasy'),
+              ('AssessmentDifficultyStretch', 'Rozszerzony'),
+              ('AssessmentDifficultyChallenge', 'Wymagający'),
+              ('StartAssessment', 'Rozpocznij sprawdzian'),
+              ('TeacherManagedAssessment', 'Nauczyciel wprowadzi lub zaimportuje wynik tego sprawdzianu.'),
+              ('ViewResults', 'Zobacz wyniki'),
+              ('Question', 'Pytanie'),
+              ('YourAnswer', 'Twoja odpowiedź'),
+              ('SubmitAssessment', 'Wyślij sprawdzian'),
+              ('AssessmentSubmittedTitle', 'Sprawdzian wysłany'),
+              ('AssessmentSubmittedSubtitle', 'Twój oficjalny sprawdzian został wysłany i oceniony.'),
+              ('AssessmentScore', 'Wynik'),
+              ('Percentage', 'Procent')
+          ])
+          PY
+
+      - name: Build
+        run: dotnet build Edulytics.sln --no-restore
+
+      - name: Full regression
+        run: dotnet test Edulytics.sln --no-build --no-restore
+
+      - name: Diff gate
+        run: git diff --check
+
+      - name: Commit patch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Edulytics CI"
+          git config user.email "actions@users.noreply.github.com"
+          git add src tests
+          if git diff --cached --quiet; then
+            echo "No functional patch changes to commit."
+            exit 0
+          fi
+          git commit -m "Phase 41: online official assessment delivery [phase41-functional-patch]"
+          git push origin HEAD:phase41-online-assessments
