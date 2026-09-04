@@ -94,9 +94,8 @@ public sealed class AssessmentUiContractTests
             dashboard);
     }
 
-
     [Fact]
-    public void DraftAssessmentUi_IntegratesOutcomesAndExposesDeleteActions()
+    public void DraftAssessmentUi_RoutesQuestionLifecycleThroughBuilder()
     {
         var root = FindRoot();
 
@@ -105,26 +104,42 @@ public sealed class AssessmentUiContractTests
                 root,
                 "src/Edulytics.Web/Views/Assessments/Details.cshtml"));
 
-        var editQuestion = File.ReadAllText(
+        var builder = File.ReadAllText(
             Path.Combine(
                 root,
-                "src/Edulytics.Web/Views/Assessments/EditQuestion.cshtml"));
+                "src/Edulytics.Web/Views/AssessmentBuilder/Index.cshtml"));
 
         Assert.Contains(
             "asp-action=\"DeleteAssessment\"",
             details);
 
         Assert.Contains(
+            "asp-controller=\"AssessmentBuilder\"",
+            details);
+
+        Assert.DoesNotContain(
             "asp-action=\"DeleteQuestion\"",
             details);
 
-        Assert.Contains(
-            "name=\"outcomeIds\"",
+        Assert.DoesNotContain(
+            "asp-action=\"Open\"",
             details);
 
         Assert.Contains(
             "name=\"outcomeIds\"",
-            editQuestion);
+            builder);
+
+        Assert.Contains(
+            "asp-action=\"Delete\"",
+            builder);
+
+        Assert.Contains(
+            "asp-action=\"Approve\"",
+            builder);
+
+        Assert.Contains(
+            "asp-action=\"Publish\"",
+            builder);
 
         Assert.DoesNotContain(
             "asp-action=\"MapOutcome\"",
