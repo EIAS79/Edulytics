@@ -38,8 +38,11 @@ public static class ReportRegistrationExtensions
             ReportExportRepository>();
 
         services.AddScoped<
-            IReportQueryService,
             ReportQueryService>();
+
+        services.AddScoped<
+            IReportQueryService,
+            Phase43ReportQueryService>();
 
         services.AddScoped<
             IReportExportService,
