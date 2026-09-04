@@ -64,11 +64,13 @@ public sealed class PracticeAttemptConfiguration : IEntityTypeConfiguration<Prac
         builder.HasKey(x => x.Id);
         builder.HasAlternateKey(x => new { x.SchoolId, x.Id });
         builder.Property(x => x.Status).HasConversion<int>();
+        builder.Property(x => x.IsPrivate).IsRequired().HasDefaultValue(false);
         builder.Property(x => x.Score).HasPrecision(10, 2);
         builder.Property(x => x.MaxScore).HasPrecision(10, 2);
         builder.Property(x => x.Percentage).HasPrecision(7, 2);
         builder.Property(x => x.RowVersion).IsRequired().IsConcurrencyToken().ValueGeneratedNever();
         builder.HasIndex(x => new { x.SchoolId, x.StudentProfileId, x.StartedAtUtc });
+        builder.HasIndex(x => new { x.SchoolId, x.IsPrivate, x.StudentProfileId, x.SubmittedAtUtc });
         builder.HasOne<StudentProfile>().WithMany()
             .HasForeignKey(x => new { x.SchoolId, x.StudentProfileId })
             .HasPrincipalKey(x => new { x.SchoolId, x.Id }).OnDelete(DeleteBehavior.Restrict);
