@@ -1,5 +1,6 @@
 using Edulytics.Core.Enums;
 using Edulytics.Services.Imports;
+using Edulytics.Web.Imports;
 
 namespace Edulytics.Web.ViewModels.Imports;
 
@@ -24,6 +25,14 @@ public sealed record ImportDetailsViewModel(
             _ =>
                 "StatusCompleted"
         };
+
+    public bool IsLegacyReadOnly =>
+        !MathOnlyImportAdapter.IsSupported(
+            Batch.Type);
+
+    public bool CanConfirm =>
+        !IsLegacyReadOnly &&
+        Batch.CanConfirm;
 
     public string RowVersionBase64 =>
         Convert.ToBase64String(
