@@ -122,4 +122,14 @@ public sealed class ReportIndexViewModel
         ReportKind kind) =>
         ReportRequestPolicy
             .UsesLearningOutcome(kind);
+
+    public static bool RequireAcademicYear(
+        ReportKind kind) =>
+        ReportRequestPolicy
+            .RequiresAcademicYear(kind);
+
+    public static bool RequireClass(
+        ReportKind kind) =>
+        ReportRequestPolicy
+            .RequiresClass(kind);
 }
