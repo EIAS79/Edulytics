@@ -23,14 +23,15 @@
 else
 {
     <section class="student-card">
-        <form method="get" asp-action="Index">
+        <form method="get" asp-action="Index" class="assessment-form">
             <label>@S["Curriculum"]</label>
-            <select name="curriculumAdoptionId" onchange="this.form.submit()">
+            <select name="curriculumAdoptionId">
                 @foreach (var curriculum in Model.Curricula)
                 {
                     <option value="@curriculum.CurriculumAdoptionId" selected="@(curriculum.CurriculumAdoptionId == selected)">@curriculum.CurriculumLevelLabel · @curriculum.ClassName</option>
                 }
             </select>
+            <button class="school-button" type="submit">@S["OpenLearning"]</button>
         </form>
     </section>
     @if (selected.HasValue)
