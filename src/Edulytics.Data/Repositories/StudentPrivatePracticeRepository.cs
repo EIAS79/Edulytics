@@ -8,6 +8,50 @@ namespace Edulytics.Data.Repositories;
 public sealed class StudentPrivatePracticeRepository(EdulyticsDbContext db)
     : IStudentPrivatePracticeRepository
 {
+    public async Task<IReadOnlyList<PrivatePracticeCurriculumOption>> ListCurriculaAsync(
+        Guid studentUserId,
+        CancellationToken cancellationToken = default)
+    {
+        var student = await db.StudentProfiles.AsNoTracking()
+            .SingleOrDefaultAsync(x => x.UserId == studentUserId && !x.IsArchived, cancellationToken);
+        if (student is null) return [];
+
+        var enrollments = await db.StudentEnrollments.AsNoTracking()
+            .Where(x => x.SchoolId == student.SchoolId && x.StudentProfileId == student.Id)
+            .ToListAsync(cancellationToken);
+        var classIds = enrollments.Select(x => x.ClassGroupId).ToArray();
+        var classes = await db.ClassGroups.AsNoTracking()
+            .Where(x => x.SchoolId == student.SchoolId && classIds.Contains(x.Id))
+            .ToListAsync(cancellationToken);
+        var adoptionIds = classes.Where(x => x.CurriculumAdoptionId.HasValue)
+            .Select(x => x.CurriculumAdoptionId!.Value).Distinct().ToArray();
+        var adoptions = await db.SchoolCurriculumAdoptions.AsNoTracking()
+            .Where(x => x.SchoolId == student.SchoolId && x.IsActive && adoptionIds.Contains(x.Id))
+            .ToListAsync(cancellationToken);
+
+        var result = new List<PrivatePracticeCurriculumOption>();
+        foreach (var enrollment in enrollments)
+        {
+            var classGroup = classes.FirstOrDefault(x => x.Id == enrollment.ClassGroupId);
+            if (classGroup?.CurriculumAdoptionId is not Guid adoptionId) continue;
+            var adoption = adoptions.FirstOrDefault(x => x.Id == adoptionId);
+            if (adoption is null || string.IsNullOrWhiteSpace(adoption.CurriculumLevelKey)) continue;
+            result.Add(new PrivatePracticeCurriculumOption(
+                adoption.Id,
+                classGroup.Id,
+                enrollment.AcademicYearId,
+                adoption.CurriculumLevelLabel ?? adoption.CurriculumLevelKey!,
+                classGroup.Name));
+        }
+
+        return result
+            .GroupBy(x => x.CurriculumAdoptionId)
+            .Select(x => x.First())
+            .OrderBy(x => x.CurriculumLevelLabel)
+            .ThenBy(x => x.ClassName)
+            .ToArray();
+    }
+
     public async Task<StudentPrivatePracticeContext?> GetContextAsync(
         Guid studentUserId,
         Guid curriculumAdoptionId,
