@@ -94,6 +94,36 @@ public sealed class AssessmentBuilderRepository(EdulyticsDbContext db) : IAssess
             summaries);
     }
 
+    public async Task<IReadOnlyList<StudentProfile>> ListTargetStudentsAsync(
+        Guid schoolId,
+        Guid assessmentId,
+        CancellationToken cancellationToken = default)
+    {
+        var assessment = await db.Assessments.AsNoTracking()
+            .SingleOrDefaultAsync(x => x.SchoolId == schoolId && x.Id == assessmentId, cancellationToken);
+        if (assessment is null)
+            return [];
+
+        var studentIds = await db.StudentEnrollments.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                x.AcademicYearId == assessment.AcademicYearId &&
+                x.ClassGroupId == assessment.ClassGroupId)
+            .Select(x => x.StudentProfileId)
+            .Distinct()
+            .ToArrayAsync(cancellationToken);
+
+        return await db.StudentProfiles.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                studentIds.Contains(x.Id) &&
+                !x.IsArchived &&
+                x.Status == Core.Enums.AcademicStructureStatus.Active)
+            .OrderBy(x => x.DisplayName)
+            .ThenBy(x => x.StudentNumber)
+            .ToListAsync(cancellationToken);
+    }
+
     public void AddBundle(AssessmentBuilderQuestionBundle bundle)
     {
         db.AssessmentQuestions.Add(bundle.Question);
