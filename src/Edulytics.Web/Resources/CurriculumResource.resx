@@ -5,7 +5,7 @@
   <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms</value></resheader>
   <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms</value></resheader>
   <data name="CurriculumTitle" xml:space="preserve"><value>Curriculum and learning outcomes</value></data>
-  <data name="CurriculumSubtitle" xml:space="preserve"><value>Structure topics and measurable learning outcomes for each grade and subject.</value></data>
+  <data name="CurriculumSubtitle" xml:space="preserve"><value>Choose the adopted Mathematics curriculum, grade or level, teaching topics, lessons and learning outcomes.</value></data>
   <data name="ManageCurriculum" xml:space="preserve"><value>Manage curriculum</value></data>
   <data name="BackToDashboard" xml:space="preserve"><value>Back to school dashboard</value></data>
   <data name="CreateTopic" xml:space="preserve"><value>Create topic</value></data>
@@ -15,7 +15,7 @@
   <data name="Subject" xml:space="preserve"><value>Subject</value></data>
   <data name="GradeLevel" xml:space="preserve"><value>Grade level</value></data>
   <data name="Topic" xml:space="preserve"><value>Topic</value></data>
-  <data name="Topics" xml:space="preserve"><value>Topics</value></data>
+  <data name="Topics" xml:space="preserve"><value>Units / topics</value></data>
   <data name="Name" xml:space="preserve"><value>Name</value></data>
   <data name="Order" xml:space="preserve"><value>Order</value></data>
   <data name="OutcomeCode" xml:space="preserve"><value>Outcome code</value></data>
@@ -26,11 +26,11 @@
   <data name="Create" xml:space="preserve"><value>Create</value></data>
   <data name="Edit" xml:space="preserve"><value>Edit</value></data>
   <data name="NoTopics" xml:space="preserve"><value>No curriculum topics have been created yet.</value></data>
-  <data name="NoOutcomes" xml:space="preserve"><value>No learning outcomes have been created for this topic yet.</value></data>
+  <data name="NoOutcomes" xml:space="preserve"><value>No learning outcomes have been added to this teaching topic yet.</value></data>
   <data name="InitialFocus" xml:space="preserve"><value>Initial product focus: Grade 6 Mathematics.</value></data>
   <data name="OutcomeMappingReady" xml:space="preserve"><value>Stable outcome IDs and codes are ready for Phase 08 question mapping.</value></data>
-  <data name="SuccessTopicCreated" xml:space="preserve"><value>Curriculum topic created.</value></data>
-  <data name="SuccessTopicUpdated" xml:space="preserve"><value>Curriculum topic updated.</value></data>
+  <data name="SuccessTopicCreated" xml:space="preserve"><value>Teaching topic created.</value></data>
+  <data name="SuccessTopicUpdated" xml:space="preserve"><value>Teaching topic updated.</value></data>
   <data name="SuccessOutcomeUpdated" xml:space="preserve"><value>Learning outcome updated.</value></data>
   <data name="ErrorAccessDenied" xml:space="preserve"><value>You do not have permission to manage curriculum.</value></data>
   <data name="ErrorSchoolNotActive" xml:space="preserve"><value>Curriculum cannot be changed while the school is not active.</value></data>
@@ -41,16 +41,16 @@
   <data name="ErrorInvalidWeight" xml:space="preserve"><value>Weight must be greater than 0 and no more than 100.</value></data>
   <data name="ErrorSubjectNotFound" xml:space="preserve"><value>The selected subject does not belong to this school.</value></data>
   <data name="ErrorGradeLevelNotFound" xml:space="preserve"><value>The selected grade level does not belong to this school.</value></data>
-  <data name="ErrorTopicNotFound" xml:space="preserve"><value>The curriculum topic was not found.</value></data>
+  <data name="ErrorTopicNotFound" xml:space="preserve"><value>The teaching topic was not found.</value></data>
   <data name="ErrorOutcomeNotFound" xml:space="preserve"><value>The learning outcome was not found.</value></data>
-  <data name="ErrorDuplicateTopicName" xml:space="preserve"><value>A topic with this name already exists for the selected subject and grade.</value></data>
-  <data name="ErrorDuplicateTopicOrder" xml:space="preserve"><value>This topic order is already used for the selected subject and grade.</value></data>
+  <data name="ErrorDuplicateTopicName" xml:space="preserve"><value>A topic with this name already exists for the selected curriculum and level.</value></data>
+  <data name="ErrorDuplicateTopicOrder" xml:space="preserve"><value>This topic order is already used for the selected curriculum and level.</value></data>
   <data name="ErrorDuplicateOutcomeCode" xml:space="preserve"><value>A learning outcome with this code already exists in this school.</value></data>
   <data name="ErrorDuplicateOutcomeOrder" xml:space="preserve"><value>This outcome order is already used inside the topic.</value></data>
   <data name="ErrorPersistence" xml:space="preserve"><value>The change could not be saved. Reload and try again.</value></data>
   <data name="SelectSubject" xml:space="preserve"><value>Select subject</value></data>
   <data name="SelectGrade" xml:space="preserve"><value>Select grade level</value></data>
-  <data name="SelectTopic" xml:space="preserve"><value>Select topic</value></data>
+  <data name="SelectTopic" xml:space="preserve"><value>Select unit / topic</value></data>
   <data name="WeightHelp" xml:space="preserve"><value>Weight is a percentage greater than 0 and no more than 100. No sum-to-100 rule is imposed because the specification does not define one.</value></data>
   <data name="FrameworkTitle" xml:space="preserve"><value>Curriculum framework</value></data>
   <data name="FrameworkSubtitle" xml:space="preserve"><value>Choose the verified curriculum pack used by this grade and subject before creating school-authored topics.</value></data>
@@ -58,40 +58,40 @@
   <data name="SelectFramework" xml:space="preserve"><value>Select curriculum pack</value></data>
   <data name="UseFramework" xml:space="preserve"><value>Use curriculum</value></data>
   <data name="FrameworkHelp" xml:space="preserve"><value>Available Mathematics packs are the four verified Edulytics packs. Official content remains immutable and is selected below; school-authored additions stay separate.</value></data>
-  <data name="TopicRequiresFramework" xml:space="preserve"><value>First select and save a curriculum pack for this subject and grade.</value></data>
-  <data name="SuccessFrameworkSelected" xml:space="preserve"><value>Curriculum framework selected for this subject and grade.</value></data>
+  <data name="TopicRequiresFramework" xml:space="preserve"><value>First adopt a Mathematics curriculum and level for this school.</value></data>
+  <data name="SuccessFrameworkSelected" xml:space="preserve"><value>Curriculum framework selected.</value></data>
   <data name="ErrorFrameworkNotFound" xml:space="preserve"><value>The selected verified curriculum pack is unavailable.</value></data>
-  <data name="ErrorCurriculumNotSelected" xml:space="preserve"><value>Select a curriculum pack for this subject and grade before creating a topic.</value></data>
-  <data name="ErrorCurriculumFrameworkInUse" xml:space="preserve"><value>This subject and grade already contain topics under another curriculum pack, so the curriculum cannot be changed here.</value></data>
+  <data name="ErrorCurriculumNotSelected" xml:space="preserve"><value>Select an adopted curriculum and level before creating a teaching topic.</value></data>
+  <data name="ErrorCurriculumFrameworkInUse" xml:space="preserve"><value>This level already contains teaching topics under another curriculum pack, so the curriculum cannot be changed here.</value></data>
   <data name="ActiveCurricula" xml:space="preserve"><value>Active curriculum selections</value></data>
-  <data name="CreateSchoolTopic" xml:space="preserve"><value>Add school topic</value></data>
-  <data name="SchoolTopic" xml:space="preserve"><value>School topic</value></data>
-  <data name="AddOfficialOutcome" xml:space="preserve"><value>Add official curriculum outcome</value></data>
-  <data name="OfficialOutcomeHelp" xml:space="preserve"><value>Select an official item from the active curriculum. Its official code and description are filled automatically and cannot be edited.</value></data>
-  <data name="OfficialCurriculumItem" xml:space="preserve"><value>Official lesson / standard / learning outcome</value></data>
-  <data name="SelectOfficialItem" xml:space="preserve"><value>Select official curriculum item</value></data>
-  <data name="NoOfficialItemsForTopic" xml:space="preserve"><value>No verified official outcomes are available for this curriculum and grade.</value></data>
-  <data name="OfficialOutcomeCode" xml:space="preserve"><value>Official outcome code (automatic)</value></data>
+  <data name="CreateSchoolTopic" xml:space="preserve"><value>Add unit / topic</value></data>
+  <data name="SchoolTopic" xml:space="preserve"><value>Unit / topic</value></data>
+  <data name="AddOfficialOutcome" xml:space="preserve"><value>Add to teaching plan</value></data>
+  <data name="OfficialOutcomeHelp" xml:space="preserve"><value>Choose an official lesson, standard or learning outcome from the adopted curriculum. Its official code and description are filled automatically and remain read-only.</value></data>
+  <data name="OfficialCurriculumItem" xml:space="preserve"><value>Lesson / standard / learning outcome</value></data>
+  <data name="SelectOfficialItem" xml:space="preserve"><value>Select lesson, standard or learning outcome</value></data>
+  <data name="NoOfficialItemsForTopic" xml:space="preserve"><value>No verified official curriculum items are available for this curriculum and level.</value></data>
+  <data name="OfficialOutcomeCode" xml:space="preserve"><value>Official code (automatic)</value></data>
   <data name="OfficialDescription" xml:space="preserve"><value>Official description (automatic)</value></data>
   <data name="Official" xml:space="preserve"><value>Official</value></data>
-  <data name="SuccessOfficialOutcomeAdded" xml:space="preserve"><value>Official curriculum outcome added to the school topic.</value></data>
-  <data name="ErrorOfficialOutcomeNotFound" xml:space="preserve"><value>The selected item is not an official outcome for this curriculum and grade.</value></data>
+  <data name="SuccessOfficialOutcomeAdded" xml:space="preserve"><value>Official curriculum item added to the teaching plan.</value></data>
+  <data name="ErrorOfficialOutcomeNotFound" xml:space="preserve"><value>The selected item is not an official item for this curriculum and level.</value></data>
   <data name="ErrorOfficialOutcomeReadOnly" xml:space="preserve"><value>Official curriculum codes and descriptions are read-only.</value></data>
-  <data name="CurriculumViewSubtitle" xml:space="preserve"><value>View the adopted curriculum, topics and official learning outcomes for each grade and subject.</value></data>
-  <data name="AcademicProgram" xml:space="preserve"><value>Program / stream</value></data>
-  <data name="SelectProgram" xml:space="preserve"><value>Select program / stream</value></data>
-  <data name="ErrorAcademicProgramNotFound" xml:space="preserve"><value>Select a valid program / curriculum stream.</value></data>
+  <data name="CurriculumViewSubtitle" xml:space="preserve"><value>View the adopted Mathematics curriculum by level, teaching topics, lessons and official learning outcomes.</value></data>
+  <data name="AcademicProgram" xml:space="preserve"><value>Curriculum</value></data>
+  <data name="SelectProgram" xml:space="preserve"><value>Select curriculum</value></data>
+  <data name="ErrorAcademicProgramNotFound" xml:space="preserve"><value>Select a valid curriculum.</value></data>
   <data name="AcademicYear" xml:space="preserve"><value>Academic year</value></data>
   <data name="SelectAcademicYear" xml:space="preserve"><value>Select academic year</value></data>
-  <data name="CurriculumLevel" xml:space="preserve"><value>Curriculum level</value></data>
-  <data name="SelectCurriculumLevel" xml:space="preserve"><value>Select curriculum level</value></data>
+  <data name="CurriculumLevel" xml:space="preserve"><value>Grade / level</value></data>
+  <data name="SelectCurriculumLevel" xml:space="preserve"><value>Select grade / level</value></data>
   <data name="ShowCurriculum" xml:space="preserve"><value>Show curriculum</value></data>
-  <data name="ChooseCurriculumContext" xml:space="preserve"><value>Select an academic year, program / stream and curriculum level first.</value></data>
+  <data name="ChooseCurriculumContext" xml:space="preserve"><value>Select an academic year, curriculum and grade / level first.</value></data>
   <data name="OfficialCurriculum" xml:space="preserve"><value>Official curriculum</value></data>
-  <data name="OfficialCurriculumHelp" xml:space="preserve"><value>This is the adopted official curriculum identity. It is read-only here and is not rebuilt by the school.</value></data>
-  <data name="SchoolTeachingPlan" xml:space="preserve"><value>School teaching plan / mapping</value></data>
-  <data name="SchoolTeachingPlanHelp" xml:space="preserve"><value>Optional school-authored teaching topics may organize the official outcomes without changing the official curriculum pack.</value></data>
+  <data name="OfficialCurriculumHelp" xml:space="preserve"><value>This is the adopted official curriculum. It is read-only here; the school organises it for teaching without rewriting the official content.</value></data>
+  <data name="SchoolTeachingPlan" xml:space="preserve"><value>Units / topics and teaching plan</value></data>
+  <data name="SchoolTeachingPlanHelp" xml:space="preserve"><value>Organise official lessons and learning outcomes into the school's teaching plan without changing the official curriculum content.</value></data>
   <data name="Curriculum" xml:space="preserve"><value>Curriculum</value></data>
   <data name="StagePathway" xml:space="preserve"><value>Stage / pathway</value></data>
-  <data name="NoSchoolPlan" xml:space="preserve"><value>No school teaching-plan topics have been added for this curriculum level.</value></data>
+  <data name="NoSchoolPlan" xml:space="preserve"><value>No units or teaching topics have been added for this curriculum level.</value></data>
 </root>

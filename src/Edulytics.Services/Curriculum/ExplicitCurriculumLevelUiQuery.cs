@@ -21,7 +21,20 @@ public sealed record ExplicitCurriculumClassItem(
     string? CurriculumPathway,
     string Name,
     string Code,
-    AcademicStructureStatus Status);
+    AcademicStructureStatus Status)
+{
+    public string DisplayLabel
+    {
+        get
+        {
+            var level = string.IsNullOrWhiteSpace(CurriculumPathway)
+                ? CurriculumLevelLabel
+                : $"{CurriculumLevelLabel} — {CurriculumPathway}";
+
+            return $"{AcademicProgramName} · {level} · {Name}";
+        }
+    }
+}
 
 public interface IExplicitCurriculumLevelUiQuery
 {

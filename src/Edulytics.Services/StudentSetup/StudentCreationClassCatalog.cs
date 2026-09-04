@@ -1,4 +1,5 @@
 using Edulytics.Core.Enums;
+using Edulytics.Core.Interfaces;
 using Edulytics.Services.Academics;
 
 namespace Edulytics.Services.StudentSetup;
@@ -15,11 +16,14 @@ public sealed class StudentCreationClassCatalog
     : IStudentCreationClassCatalog
 {
     private readonly IAcademicStructureService _academic;
+    private readonly ICurriculumRepository _curriculum;
 
     public StudentCreationClassCatalog(
-        IAcademicStructureService academic)
+        IAcademicStructureService academic,
+        ICurriculumRepository curriculum)
     {
         _academic = academic;
+        _curriculum = curriculum;
     }
 
     public async Task<IReadOnlyList<StudentRoleClassOption>?> ListAsync(
@@ -38,23 +42,52 @@ public sealed class StudentCreationClassCatalog
             return null;
         }
 
+        var contexts = await _curriculum.GetAdoptedCurriculumContextsAsync(
+            schoolId,
+            cancellationToken);
+        var contextsByAdoptionId = contexts
+            .Where(x => x.AdoptionId != Guid.Empty)
+            .GroupBy(x => x.AdoptionId)
+            .ToDictionary(x => x.Key, x => x.First());
+
         return dashboard.Value.ClassGroups
             .Where(
                 x =>
                     x.Status ==
                     AcademicStructureStatus.Active)
             .OrderByDescending(x => x.AcademicYearName)
+            .ThenBy(x => x.AcademicProgramName)
             .ThenBy(x => x.GradeLevelName)
             .ThenBy(x => x.Name)
-            .Select(
-                x =>
-                    new StudentRoleClassOption(
-                        x.Id,
-                        x.AcademicYearId,
-                        x.AcademicYearName,
-                        x.GradeLevelName,
-                        x.Name,
-                        x.Code))
+            .Select(x =>
+            {
+                string? curriculumDisplayLabel = null;
+
+                if (x.CurriculumAdoptionId.HasValue &&
+                    contextsByAdoptionId.TryGetValue(
+                        x.CurriculumAdoptionId.Value,
+                        out var context))
+                {
+                    var level = string.IsNullOrWhiteSpace(
+                        context.CurriculumPathway)
+                        ? context.CurriculumLevelLabel
+                        : $"{context.CurriculumLevelLabel} — " +
+                          context.CurriculumPathway;
+                    curriculumDisplayLabel =
+                        $"{context.AcademicProgramName} · {level} · {x.Name}";
+                }
+
+                return new StudentRoleClassOption(
+                    x.Id,
+                    x.AcademicYearId,
+                    x.AcademicYearName,
+                    x.GradeLevelName,
+                    x.Name,
+                    x.Code)
+                {
+                    CurriculumDisplayLabel = curriculumDisplayLabel
+                };
+            })
             .ToArray();
     }
 }

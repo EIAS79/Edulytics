@@ -46,9 +46,8 @@ public sealed class StudentCreationOptionsController : Controller
                 x => new
                 {
                     id = x.Id,
-                    label =
-                        $"{x.AcademicYearName} · " +
-                        $"{x.GradeLevelName} · {x.Name}"
+                    label = x.DisplayLabel,
+                    academicYearName = x.AcademicYearName
                 }));
     }
 }

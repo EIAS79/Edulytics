@@ -5,7 +5,7 @@
   <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms</value></resheader>
   <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms</value></resheader>
   <data name="CurriculumTitle" xml:space="preserve"><value>Program nauczania i efekty uczenia się</value></data>
-  <data name="CurriculumSubtitle" xml:space="preserve"><value>Uporządkuj tematy i mierzalne efekty uczenia się dla każdej klasy i przedmiotu.</value></data>
+  <data name="CurriculumSubtitle" xml:space="preserve"><value>Wybierz przyjęty program matematyki, klasę lub poziom, tematy nauczania, lekcje i efekty uczenia się.</value></data>
   <data name="ManageCurriculum" xml:space="preserve"><value>Zarządzaj programem nauczania</value></data>
   <data name="BackToDashboard" xml:space="preserve"><value>Powrót do panelu szkoły</value></data>
   <data name="CreateTopic" xml:space="preserve"><value>Utwórz temat</value></data>
@@ -15,7 +15,7 @@
   <data name="Subject" xml:space="preserve"><value>Przedmiot</value></data>
   <data name="GradeLevel" xml:space="preserve"><value>Poziom klasy</value></data>
   <data name="Topic" xml:space="preserve"><value>Temat</value></data>
-  <data name="Topics" xml:space="preserve"><value>Tematy</value></data>
+  <data name="Topics" xml:space="preserve"><value>Działy / tematy</value></data>
   <data name="Name" xml:space="preserve"><value>Nazwa</value></data>
   <data name="Order" xml:space="preserve"><value>Kolejność</value></data>
   <data name="OutcomeCode" xml:space="preserve"><value>Kod efektu</value></data>
@@ -26,11 +26,11 @@
   <data name="Create" xml:space="preserve"><value>Utwórz</value></data>
   <data name="Edit" xml:space="preserve"><value>Edytuj</value></data>
   <data name="NoTopics" xml:space="preserve"><value>Nie utworzono jeszcze tematów programu nauczania.</value></data>
-  <data name="NoOutcomes" xml:space="preserve"><value>Dla tego tematu nie utworzono jeszcze efektów uczenia się.</value></data>
+  <data name="NoOutcomes" xml:space="preserve"><value>Do tego tematu nauczania nie dodano jeszcze efektów uczenia się.</value></data>
   <data name="InitialFocus" xml:space="preserve"><value>Początkowy zakres produktu: matematyka w klasie 6.</value></data>
   <data name="OutcomeMappingReady" xml:space="preserve"><value>Stabilne identyfikatory i kody efektów są gotowe do mapowania pytań w fazie 08.</value></data>
-  <data name="SuccessTopicCreated" xml:space="preserve"><value>Utworzono temat programu nauczania.</value></data>
-  <data name="SuccessTopicUpdated" xml:space="preserve"><value>Zaktualizowano temat programu nauczania.</value></data>
+  <data name="SuccessTopicCreated" xml:space="preserve"><value>Utworzono temat nauczania.</value></data>
+  <data name="SuccessTopicUpdated" xml:space="preserve"><value>Zaktualizowano temat nauczania.</value></data>
   <data name="SuccessOutcomeUpdated" xml:space="preserve"><value>Zaktualizowano efekt uczenia się.</value></data>
   <data name="ErrorAccessDenied" xml:space="preserve"><value>Nie masz uprawnień do zarządzania programem nauczania.</value></data>
   <data name="ErrorSchoolNotActive" xml:space="preserve"><value>Nie można zmieniać programu nauczania, gdy szkoła nie jest aktywna.</value></data>
@@ -41,57 +41,57 @@
   <data name="ErrorInvalidWeight" xml:space="preserve"><value>Waga musi być większa od 0 i nie większa niż 100.</value></data>
   <data name="ErrorSubjectNotFound" xml:space="preserve"><value>Wybrany przedmiot nie należy do tej szkoły.</value></data>
   <data name="ErrorGradeLevelNotFound" xml:space="preserve"><value>Wybrany poziom klasy nie należy do tej szkoły.</value></data>
-  <data name="ErrorTopicNotFound" xml:space="preserve"><value>Nie znaleziono tematu programu nauczania.</value></data>
+  <data name="ErrorTopicNotFound" xml:space="preserve"><value>Nie znaleziono tematu nauczania.</value></data>
   <data name="ErrorOutcomeNotFound" xml:space="preserve"><value>Nie znaleziono efektu uczenia się.</value></data>
-  <data name="ErrorDuplicateTopicName" xml:space="preserve"><value>Temat o tej nazwie już istnieje dla wybranego przedmiotu i klasy.</value></data>
-  <data name="ErrorDuplicateTopicOrder" xml:space="preserve"><value>Ta kolejność tematu jest już używana dla wybranego przedmiotu i klasy.</value></data>
+  <data name="ErrorDuplicateTopicName" xml:space="preserve"><value>Temat o tej nazwie już istnieje dla wybranego programu i poziomu.</value></data>
+  <data name="ErrorDuplicateTopicOrder" xml:space="preserve"><value>Ta kolejność tematu jest już używana dla wybranego programu i poziomu.</value></data>
   <data name="ErrorDuplicateOutcomeCode" xml:space="preserve"><value>Efekt uczenia się o tym kodzie już istnieje w tej szkole.</value></data>
   <data name="ErrorDuplicateOutcomeOrder" xml:space="preserve"><value>Ta kolejność efektu jest już używana w tym temacie.</value></data>
   <data name="ErrorPersistence" xml:space="preserve"><value>Nie udało się zapisać zmiany. Odśwież stronę i spróbuj ponownie.</value></data>
   <data name="SelectSubject" xml:space="preserve"><value>Wybierz przedmiot</value></data>
   <data name="SelectGrade" xml:space="preserve"><value>Wybierz poziom klasy</value></data>
-  <data name="SelectTopic" xml:space="preserve"><value>Wybierz temat</value></data>
+  <data name="SelectTopic" xml:space="preserve"><value>Wybierz dział / temat</value></data>
   <data name="WeightHelp" xml:space="preserve"><value>Waga jest wartością procentową większą od 0 i nie większą niż 100. Nie narzucamy sumy 100, ponieważ specyfikacja nie definiuje takiej zasady.</value></data>
   <data name="FrameworkTitle" xml:space="preserve"><value>Program bazowy</value></data>
   <data name="FrameworkSubtitle" xml:space="preserve"><value>Wybierz zweryfikowany program bazowy używany dla tej klasy i przedmiotu przed dodaniem tematów szkolnych.</value></data>
   <data name="CurriculumFramework" xml:space="preserve"><value>Pakiet programu</value></data>
   <data name="SelectFramework" xml:space="preserve"><value>Wybierz pakiet programu</value></data>
   <data name="UseFramework" xml:space="preserve"><value>Użyj programu</value></data>
-  <data name="FrameworkHelp" xml:space="preserve"><value>Dostępne pakiety matematyki to cztery zweryfikowane pakiety Edulityks. Oficjalna zawartość pozostaje niezmienna i jest wybierana poniżej; dodatki szkoły są przechowywane oddzielnie.</value></data>
-  <data name="TopicRequiresFramework" xml:space="preserve"><value>Najpierw wybierz i zapisz pakiet programu dla tego przedmiotu i poziomu klasy.</value></data>
-  <data name="SuccessFrameworkSelected" xml:space="preserve"><value>Wybrano program bazowy dla tego przedmiotu i poziomu klasy.</value></data>
+  <data name="FrameworkHelp" xml:space="preserve"><value>Dostępne pakiety matematyki to cztery zweryfikowane pakiety Edulityks. Oficjalna zawartość pozostaje niezmienna; dodatki szkoły są przechowywane oddzielnie.</value></data>
+  <data name="TopicRequiresFramework" xml:space="preserve"><value>Najpierw przyjmij program matematyki i poziom dla tej szkoły.</value></data>
+  <data name="SuccessFrameworkSelected" xml:space="preserve"><value>Wybrano program nauczania.</value></data>
   <data name="ErrorFrameworkNotFound" xml:space="preserve"><value>Wybrany zweryfikowany pakiet programu jest niedostępny.</value></data>
-  <data name="ErrorCurriculumNotSelected" xml:space="preserve"><value>Przed utworzeniem tematu wybierz pakiet programu dla tego przedmiotu i poziomu klasy.</value></data>
-  <data name="ErrorCurriculumFrameworkInUse" xml:space="preserve"><value>Ten przedmiot i poziom klasy zawierają już tematy w innym pakiecie programu, dlatego programu nie można tutaj zmienić.</value></data>
+  <data name="ErrorCurriculumNotSelected" xml:space="preserve"><value>Przed utworzeniem tematu nauczania wybierz przyjęty program i poziom.</value></data>
+  <data name="ErrorCurriculumFrameworkInUse" xml:space="preserve"><value>Ten poziom zawiera już tematy nauczania w innym pakiecie programu, dlatego programu nie można tutaj zmienić.</value></data>
   <data name="ActiveCurricula" xml:space="preserve"><value>Aktywne wybory programu</value></data>
-  <data name="CreateSchoolTopic" xml:space="preserve"><value>Dodaj temat szkolny</value></data>
-  <data name="SchoolTopic" xml:space="preserve"><value>Temat szkolny</value></data>
-  <data name="AddOfficialOutcome" xml:space="preserve"><value>Dodaj oficjalny efekt programu</value></data>
-  <data name="OfficialOutcomeHelp" xml:space="preserve"><value>Wybierz oficjalną pozycję z aktywnego programu. Oficjalny kod i opis zostaną uzupełnione automatycznie i nie można ich edytować.</value></data>
-  <data name="OfficialCurriculumItem" xml:space="preserve"><value>Oficjalna lekcja / standard / efekt uczenia się</value></data>
-  <data name="SelectOfficialItem" xml:space="preserve"><value>Wybierz oficjalną pozycję programu</value></data>
-  <data name="NoOfficialItemsForTopic" xml:space="preserve"><value>Brak zweryfikowanych oficjalnych efektów dla tego programu i klasy.</value></data>
-  <data name="OfficialOutcomeCode" xml:space="preserve"><value>Oficjalny kod efektu (automatycznie)</value></data>
+  <data name="CreateSchoolTopic" xml:space="preserve"><value>Dodaj dział / temat</value></data>
+  <data name="SchoolTopic" xml:space="preserve"><value>Dział / temat</value></data>
+  <data name="AddOfficialOutcome" xml:space="preserve"><value>Dodaj do planu nauczania</value></data>
+  <data name="OfficialOutcomeHelp" xml:space="preserve"><value>Wybierz oficjalną lekcję, standard lub efekt uczenia się z przyjętego programu. Oficjalny kod i opis zostaną uzupełnione automatycznie i pozostaną tylko do odczytu.</value></data>
+  <data name="OfficialCurriculumItem" xml:space="preserve"><value>Lekcja / standard / efekt uczenia się</value></data>
+  <data name="SelectOfficialItem" xml:space="preserve"><value>Wybierz lekcję, standard lub efekt uczenia się</value></data>
+  <data name="NoOfficialItemsForTopic" xml:space="preserve"><value>Brak zweryfikowanych oficjalnych pozycji dla tego programu i poziomu.</value></data>
+  <data name="OfficialOutcomeCode" xml:space="preserve"><value>Oficjalny kod (automatycznie)</value></data>
   <data name="OfficialDescription" xml:space="preserve"><value>Oficjalny opis (automatycznie)</value></data>
   <data name="Official" xml:space="preserve"><value>Oficjalny</value></data>
-  <data name="SuccessOfficialOutcomeAdded" xml:space="preserve"><value>Dodano oficjalny efekt programu do tematu szkolnego.</value></data>
-  <data name="ErrorOfficialOutcomeNotFound" xml:space="preserve"><value>Wybrana pozycja nie jest oficjalnym efektem dla tego programu i klasy.</value></data>
+  <data name="SuccessOfficialOutcomeAdded" xml:space="preserve"><value>Dodano oficjalną pozycję programu do planu nauczania.</value></data>
+  <data name="ErrorOfficialOutcomeNotFound" xml:space="preserve"><value>Wybrana pozycja nie jest oficjalną pozycją dla tego programu i poziomu.</value></data>
   <data name="ErrorOfficialOutcomeReadOnly" xml:space="preserve"><value>Oficjalne kody i opisy programu są tylko do odczytu.</value></data>
-  <data name="CurriculumViewSubtitle" xml:space="preserve"><value>Przeglądaj przyjęty program nauczania, tematy i oficjalne efekty uczenia się dla każdego poziomu i przedmiotu.</value></data>
-  <data name="AcademicProgram" xml:space="preserve"><value>Program / ścieżka</value></data>
-  <data name="SelectProgram" xml:space="preserve"><value>Wybierz program / ścieżkę</value></data>
-  <data name="ErrorAcademicProgramNotFound" xml:space="preserve"><value>Wybierz prawidłowy program / ścieżkę.</value></data>
+  <data name="CurriculumViewSubtitle" xml:space="preserve"><value>Przeglądaj przyjęty program matematyki według poziomu, tematów nauczania, lekcji i oficjalnych efektów uczenia się.</value></data>
+  <data name="AcademicProgram" xml:space="preserve"><value>Program nauczania</value></data>
+  <data name="SelectProgram" xml:space="preserve"><value>Wybierz program nauczania</value></data>
+  <data name="ErrorAcademicProgramNotFound" xml:space="preserve"><value>Wybierz prawidłowy program nauczania.</value></data>
   <data name="AcademicYear" xml:space="preserve"><value>Rok szkolny</value></data>
   <data name="SelectAcademicYear" xml:space="preserve"><value>Wybierz rok szkolny</value></data>
-  <data name="CurriculumLevel" xml:space="preserve"><value>Poziom programu</value></data>
-  <data name="SelectCurriculumLevel" xml:space="preserve"><value>Wybierz poziom programu</value></data>
+  <data name="CurriculumLevel" xml:space="preserve"><value>Klasa / poziom</value></data>
+  <data name="SelectCurriculumLevel" xml:space="preserve"><value>Wybierz klasę / poziom</value></data>
   <data name="ShowCurriculum" xml:space="preserve"><value>Pokaż program</value></data>
-  <data name="ChooseCurriculumContext" xml:space="preserve"><value>Najpierw wybierz rok szkolny, program / ścieżkę i poziom programu.</value></data>
+  <data name="ChooseCurriculumContext" xml:space="preserve"><value>Najpierw wybierz rok szkolny, program nauczania i klasę / poziom.</value></data>
   <data name="OfficialCurriculum" xml:space="preserve"><value>Oficjalny program nauczania</value></data>
-  <data name="OfficialCurriculumHelp" xml:space="preserve"><value>To jest przyjęta oficjalna tożsamość programu. W tym miejscu jest tylko do odczytu i szkoła nie tworzy jej ponownie.</value></data>
-  <data name="SchoolTeachingPlan" xml:space="preserve"><value>Szkolny plan nauczania / mapowanie</value></data>
-  <data name="SchoolTeachingPlanHelp" xml:space="preserve"><value>Opcjonalne tematy tworzone przez szkołę mogą porządkować oficjalne efekty bez zmieniania oficjalnego pakietu programu.</value></data>
+  <data name="OfficialCurriculumHelp" xml:space="preserve"><value>To jest przyjęty oficjalny program. W tym miejscu jest tylko do odczytu; szkoła organizuje go do nauczania bez zmieniania oficjalnej treści.</value></data>
+  <data name="SchoolTeachingPlan" xml:space="preserve"><value>Działy / tematy i plan nauczania</value></data>
+  <data name="SchoolTeachingPlanHelp" xml:space="preserve"><value>Uporządkuj oficjalne lekcje i efekty uczenia się w szkolnym planie nauczania bez zmieniania oficjalnej treści programu.</value></data>
   <data name="Curriculum" xml:space="preserve"><value>Program nauczania</value></data>
   <data name="StagePathway" xml:space="preserve"><value>Etap / ścieżka</value></data>
-  <data name="NoSchoolPlan" xml:space="preserve"><value>Dla tego poziomu programu nie dodano jeszcze tematów szkolnego planu nauczania.</value></data>
+  <data name="NoSchoolPlan" xml:space="preserve"><value>Dla tego poziomu programu nie dodano jeszcze działów ani tematów nauczania.</value></data>
 </root>
