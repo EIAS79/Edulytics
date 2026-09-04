@@ -1,0 +1,102 @@
+@using Edulytics.Services.Practice
+@model StudentPrivatePracticeWorkspace
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = S["PrivatePracticeTitle"].Value;
+    var selected = Model.SelectedCurriculumAdoptionId;
+}
+<header class="student-page-header">
+    <span class="student-eyebrow">@S["PrivatePractice"]</span>
+    <h1>@S["PrivatePracticeTitle"]</h1>
+    <p>@S["PrivatePracticeSubtitle"]</p>
+</header>
+<div class="student-card"><strong>@S["PrivatePracticeNotice"]</strong></div>
+@if (TempData["Error"] is string error)
+{
+    <div class="school-alert school-alert-error" role="alert">@error</div>
+}
+@if (Model.Curricula.Count == 0)
+{
+    <div class="student-empty-state">@S["PrivatePracticeNoCurriculum"]</div>
+}
+else
+{
+    <section class="student-card">
+        <form method="get" asp-action="Index">
+            <label>@S["Curriculum"]</label>
+            <select name="curriculumAdoptionId" onchange="this.form.submit()">
+                @foreach (var curriculum in Model.Curricula)
+                {
+                    <option value="@curriculum.CurriculumAdoptionId" selected="@(curriculum.CurriculumAdoptionId == selected)">@curriculum.CurriculumLevelLabel · @curriculum.ClassName</option>
+                }
+            </select>
+        </form>
+    </section>
+    @if (selected.HasValue)
+    {
+        <section class="student-card">
+            <h2>@S["GeneratePrivatePractice"]</h2>
+            <form asp-action="Generate" method="post" class="assessment-form">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="curriculumAdoptionId" value="@selected.Value" />
+                <label>@S["PracticeScope"]</label>
+                <select name="scope">
+                    <option value="@StudentPrivatePracticeScope.WeakAreas">@S["PracticeWeakAreas"]</option>
+                    <option value="@StudentPrivatePracticeScope.Lesson">@S["PracticeLesson"]</option>
+                    <option value="@StudentPrivatePracticeScope.Unit">@S["PracticeUnit"]</option>
+                    <option value="@StudentPrivatePracticeScope.WholeCurriculum">@S["PracticeWholeCurriculum"]</option>
+                </select>
+                <label>@S["Lesson"]</label>
+                <select name="lessonId">
+                    <option value="">@S["PracticeNotRequired"]</option>
+                    @foreach (var lesson in Model.Lessons)
+                    {
+                        <option value="@lesson.LessonId">@lesson.UnitTitle · @lesson.LessonCode · @lesson.LessonTitle</option>
+                    }
+                </select>
+                <label>@S["Unit"]</label>
+                <select name="unitKey">
+                    <option value="">@S["PracticeNotRequired"]</option>
+                    @foreach (var unit in Model.UnitKeys)
+                    {
+                        <option value="@unit">@unit</option>
+                    }
+                </select>
+                <label>@S["AssessmentDifficulty"]</label>
+                <select name="difficulty">
+                    <option value="@StudentPrivatePracticeDifficulty.MyLevel">@S["PracticeMyLevel"]</option>
+                    <option value="@StudentPrivatePracticeDifficulty.AtClassLevel">@S["AssessmentDifficultyAtClassLevel"]</option>
+                    <option value="@StudentPrivatePracticeDifficulty.Stretch">@S["AssessmentDifficultyStretch"]</option>
+                    <option value="@StudentPrivatePracticeDifficulty.Challenge">@S["AssessmentDifficultyChallenge"]</option>
+                </select>
+                <label>@S["PracticeQuestionCount"]</label>
+                <input type="number" name="questionCount" min="1" max="20" value="10" required />
+                <button class="school-button school-button-primary" type="submit">@S["GeneratePrivatePractice"]</button>
+            </form>
+        </section>
+    }
+}
+<section class="student-card">
+    <h2>@S["PrivatePracticeHistory"]</h2>
+    @if (Model.Attempts.Count == 0)
+    {
+        <div class="student-empty-state">@S["PrivatePracticeNoHistory"]</div>
+    }
+    else
+    {
+        <div class="student-card-list">
+            @foreach (var attempt in Model.Attempts)
+            {
+                <article class="student-assessment-card">
+                    <div>
+                        <h3>@S["PrivatePractice"]</h3>
+                        <p>@attempt.StartedAtUtc.ToString("yyyy-MM-dd HH:mm") · @attempt.Status</p>
+                    </div>
+                    <dl><div><dt>@S["Score"]</dt><dd>@attempt.Score.ToString("0.##") / @attempt.MaxScore.ToString("0.##")</dd></div><div><dt>@S["Percentage"]</dt><dd>@attempt.Percentage.ToString("0.##")%</dd></div></dl>
+                    <a class="school-button" asp-action="Attempt" asp-route-id="@attempt.AttemptId">@S["OpenPracticeAttempt"]</a>
+                </article>
+            }
+        </div>
+    }
+</section>
