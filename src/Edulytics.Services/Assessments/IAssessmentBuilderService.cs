@@ -36,6 +36,16 @@ public sealed record CreateManualBuilderQuestionRequest(
     IReadOnlyList<Guid> OutcomeIds,
     byte[] AssessmentRowVersion);
 
+public sealed record EditBuilderQuestionRequest(
+    Guid AssessmentId,
+    Guid QuestionId,
+    string Prompt,
+    string CorrectAnswer,
+    string Solution,
+    decimal MaxScore,
+    AssessmentItemDifficulty Difficulty,
+    byte[] AssessmentRowVersion);
+
 public sealed record GenerateBuilderQuestionsRequest(
     Guid AssessmentId,
     int QuestionCount,
@@ -47,38 +57,12 @@ public sealed record GenerateBuilderQuestionsRequest(
 
 public interface IAssessmentBuilderService
 {
-    Task<AssessmentQueryResult<AssessmentBuilderWorkspace>> GetWorkspaceAsync(
-        Guid actorUserId,
-        Guid assessmentId,
-        CancellationToken cancellationToken = default);
-
-    Task<AssessmentCommandResult> CreateManualQuestionAsync(
-        Guid actorUserId,
-        CreateManualBuilderQuestionRequest request,
-        CancellationToken cancellationToken = default);
-
-    Task<AssessmentCommandResult> GenerateQuestionsAsync(
-        Guid actorUserId,
-        GenerateBuilderQuestionsRequest request,
-        CancellationToken cancellationToken = default);
-
-    Task<AssessmentCommandResult> ApproveQuestionAsync(
-        Guid actorUserId,
-        Guid assessmentId,
-        Guid questionId,
-        byte[] assessmentRowVersion,
-        CancellationToken cancellationToken = default);
-
-    Task<AssessmentCommandResult> DeleteQuestionAsync(
-        Guid actorUserId,
-        Guid assessmentId,
-        Guid questionId,
-        byte[] assessmentRowVersion,
-        CancellationToken cancellationToken = default);
-
-    Task<AssessmentCommandResult> PublishAsync(
-        Guid actorUserId,
-        Guid assessmentId,
-        byte[] assessmentRowVersion,
-        CancellationToken cancellationToken = default);
+    Task<AssessmentQueryResult<AssessmentBuilderWorkspace>> GetWorkspaceAsync(Guid actorUserId, Guid assessmentId, CancellationToken cancellationToken = default);
+    Task<AssessmentCommandResult> CreateManualQuestionAsync(Guid actorUserId, CreateManualBuilderQuestionRequest request, CancellationToken cancellationToken = default);
+    Task<AssessmentCommandResult> EditQuestionAsync(Guid actorUserId, EditBuilderQuestionRequest request, CancellationToken cancellationToken = default);
+    Task<AssessmentCommandResult> GenerateQuestionsAsync(Guid actorUserId, GenerateBuilderQuestionsRequest request, CancellationToken cancellationToken = default);
+    Task<AssessmentCommandResult> RegenerateQuestionAsync(Guid actorUserId, Guid assessmentId, Guid questionId, int seed, byte[] assessmentRowVersion, CancellationToken cancellationToken = default);
+    Task<AssessmentCommandResult> ApproveQuestionAsync(Guid actorUserId, Guid assessmentId, Guid questionId, byte[] assessmentRowVersion, CancellationToken cancellationToken = default);
+    Task<AssessmentCommandResult> DeleteQuestionAsync(Guid actorUserId, Guid assessmentId, Guid questionId, byte[] assessmentRowVersion, CancellationToken cancellationToken = default);
+    Task<AssessmentCommandResult> PublishAsync(Guid actorUserId, Guid assessmentId, byte[] assessmentRowVersion, CancellationToken cancellationToken = default);
 }

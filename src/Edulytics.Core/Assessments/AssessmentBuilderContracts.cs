@@ -14,7 +14,8 @@ public enum AssessmentBuilderQuestionStatus
 {
     Draft = 1,
     Approved = 2,
-    Legacy = 3
+    Legacy = 3,
+    Edited = 4
 }
 
 public sealed record AssessmentBuilderPersistenceContext(

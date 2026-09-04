@@ -21,56 +21,44 @@ public sealed class AssessmentBuilderService(
     ISchoolUserRepository users) : IAssessmentBuilderService
 {
     public async Task<AssessmentQueryResult<AssessmentBuilderWorkspace>> GetWorkspaceAsync(
-        Guid actorUserId,
-        Guid assessmentId,
-        CancellationToken cancellationToken = default)
+        Guid actorUserId, Guid assessmentId, CancellationToken cancellationToken = default)
     {
         var access = await ResolveAccessAsync(actorUserId, assessmentId, cancellationToken);
         if (access.Error.HasValue)
             return AssessmentQueryResult<AssessmentBuilderWorkspace>.Failure(access.Error.Value);
-
         var context = await repository.GetContextAsync(access.SchoolId, assessmentId, cancellationToken);
-        if (context is null)
-            return AssessmentQueryResult<AssessmentBuilderWorkspace>.Failure(AssessmentErrorCode.AssessmentNotFound);
-
-        return AssessmentQueryResult<AssessmentBuilderWorkspace>.Success(BuildWorkspace(access.Details!, context));
+        return context is null
+            ? AssessmentQueryResult<AssessmentBuilderWorkspace>.Failure(AssessmentErrorCode.AssessmentNotFound)
+            : AssessmentQueryResult<AssessmentBuilderWorkspace>.Success(BuildWorkspace(access.Details!, context));
     }
 
     public async Task<AssessmentCommandResult> CreateManualQuestionAsync(
-        Guid actorUserId,
-        CreateManualBuilderQuestionRequest request,
-        CancellationToken cancellationToken = default)
+        Guid actorUserId, CreateManualBuilderQuestionRequest request, CancellationToken cancellationToken = default)
     {
-        var access = await ResolveAccessAsync(actorUserId, request.AssessmentId, cancellationToken);
-        if (access.Error.HasValue) return Failure(access.Error.Value);
-        var details = access.Details!;
-        if (details.Assessment.Status != AssessmentStatus.Draft) return Failure(AssessmentErrorCode.AssessmentNotDraft);
-
-        var context = await repository.GetContextAsync(access.SchoolId, request.AssessmentId, cancellationToken);
-        if (context is null) return Failure(AssessmentErrorCode.AssessmentNotFound);
+        var resolved = await ResolveEditableAsync(actorUserId, request.AssessmentId, cancellationToken);
+        if (resolved.Error.HasValue) return Failure(resolved.Error.Value);
+        var context = resolved.Context!;
         if (context.CurriculumAdoption is null || string.IsNullOrWhiteSpace(context.CurriculumAdoption.CurriculumLevelKey))
             return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
 
-        var prompt = request.Prompt?.Trim() ?? string.Empty;
-        var answer = request.CorrectAnswer?.Trim() ?? string.Empty;
-        var solution = request.Solution?.Trim() ?? string.Empty;
-        if (prompt.Length is < 1 or > 1000 || answer.Length is < 1 or > 1000 || solution.Length is < 1 or > 4000)
-            return Failure(AssessmentErrorCode.InvalidText);
+        var prompt = Clean(request.Prompt);
+        var answer = Clean(request.CorrectAnswer);
+        var solution = Clean(request.Solution);
+        if (!ValidContent(prompt, answer, solution)) return Failure(AssessmentErrorCode.InvalidText);
         if (request.Order <= 0) return Failure(AssessmentErrorCode.InvalidOrder);
-        if (request.MaxScore <= 0 || request.MaxScore > 10000) return Failure(AssessmentErrorCode.InvalidQuestionScore);
+        if (!ValidScore(request.MaxScore)) return Failure(AssessmentErrorCode.InvalidQuestionScore);
         if (context.Questions.Any(x => x.Order == request.Order)) return Failure(AssessmentErrorCode.DuplicateQuestionOrder);
-
-        var outcomeIds = NormalizeOutcomes(request.OutcomeIds);
-        if (!ValidateOutcomes(details, outcomeIds)) return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
         if (context.Questions.Sum(x => x.MaxScore) + request.MaxScore > context.Assessment.MaxScore)
             return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
 
+        var outcomeIds = NormalizeOutcomes(request.OutcomeIds);
+        if (!ValidateOutcomes(resolved.Details!, outcomeIds)) return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+
         var id = Guid.NewGuid();
-        var now = DateTime.UtcNow;
         var item = new AssessmentItem
         {
             Id = id,
-            SchoolId = access.SchoolId,
+            SchoolId = resolved.SchoolId,
             CurriculumAdoptionId = context.CurriculumAdoption.Id,
             CurriculumTopicId = ResolveSingleTopic(context, outcomeIds),
             Source = AssessmentItemSource.TeacherCreated,
@@ -82,173 +70,154 @@ public sealed class AssessmentBuilderService(
             CreatedByUserId = actorUserId,
             GenerationMethod = "teacher-created",
             ExposureFingerprint = Fingerprint($"teacher:{id:D}:{prompt}:{answer}"),
-            ValidationMetadataJson = SetBuilderStatus(null, AssessmentBuilderQuestionStatus.Draft),
-            CreatedAtUtc = now
+            ValidationMetadataJson = SetStatus(null, AssessmentBuilderQuestionStatus.Draft),
+            CreatedAtUtc = DateTime.UtcNow
         };
-
         var question = new AssessmentQuestion
         {
             Id = id,
-            SchoolId = access.SchoolId,
+            SchoolId = resolved.SchoolId,
             AssessmentId = request.AssessmentId,
             Prompt = prompt,
-            MaxScore = decimal.Round(request.MaxScore, 2, MidpointRounding.AwayFromZero),
+            MaxScore = Round(request.MaxScore),
             Order = request.Order
         };
+        repository.AddBundle(new AssessmentBuilderQuestionBundle(
+            question,
+            item,
+            outcomeIds.Select(x => new QuestionLearningOutcome { Id = Guid.NewGuid(), SchoolId = resolved.SchoolId, AssessmentQuestionId = id, LearningOutcomeId = x }).ToArray(),
+            outcomeIds.Select(x => new AssessmentItemOutcome { Id = Guid.NewGuid(), SchoolId = resolved.SchoolId, AssessmentItemId = id, LearningOutcomeId = x }).ToArray()));
 
-        var qMappings = outcomeIds.Select(outcomeId => new QuestionLearningOutcome
-        {
-            Id = Guid.NewGuid(),
-            SchoolId = access.SchoolId,
-            AssessmentQuestionId = id,
-            LearningOutcomeId = outcomeId
-        }).ToArray();
-        var itemMappings = outcomeIds.Select(outcomeId => new AssessmentItemOutcome
-        {
-            Id = Guid.NewGuid(),
-            SchoolId = access.SchoolId,
-            AssessmentItemId = id,
-            LearningOutcomeId = outcomeId
-        }).ToArray();
+        return await SaveAsync(context, request.AssessmentRowVersion, id, cancellationToken);
+    }
 
-        repository.AddBundle(new AssessmentBuilderQuestionBundle(question, item, qMappings, itemMappings));
-        context.Assessment.UpdatedAtUtc = now;
-        var saved = await repository.SaveAsync(context.Assessment, request.AssessmentRowVersion, cancellationToken);
-        return saved.Succeeded ? AssessmentCommandResult.Success(id) : PersistenceFailure(saved);
+    public async Task<AssessmentCommandResult> EditQuestionAsync(
+        Guid actorUserId, EditBuilderQuestionRequest request, CancellationToken cancellationToken = default)
+    {
+        var resolved = await ResolveEditableAsync(actorUserId, request.AssessmentId, cancellationToken);
+        if (resolved.Error.HasValue) return Failure(resolved.Error.Value);
+        var context = resolved.Context!;
+        var question = context.Questions.SingleOrDefault(x => x.Id == request.QuestionId);
+        var item = context.Items.SingleOrDefault(x => x.Id == request.QuestionId);
+        if (question is null || item is null) return Failure(AssessmentErrorCode.QuestionNotFound);
+
+        var prompt = Clean(request.Prompt);
+        var answer = Clean(request.CorrectAnswer);
+        var solution = Clean(request.Solution);
+        if (!ValidContent(prompt, answer, solution)) return Failure(AssessmentErrorCode.InvalidText);
+        if (!ValidScore(request.MaxScore)) return Failure(AssessmentErrorCode.InvalidQuestionScore);
+        if (context.Questions.Where(x => x.Id != question.Id).Sum(x => x.MaxScore) + request.MaxScore > context.Assessment.MaxScore)
+            return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
+
+        question.Prompt = prompt;
+        question.MaxScore = Round(request.MaxScore);
+        item.Prompt = prompt;
+        item.CorrectAnswer = answer;
+        item.Solution = solution;
+        item.Difficulty = request.Difficulty;
+        item.ValidationMetadataJson = SetStatus(item.ValidationMetadataJson, AssessmentBuilderQuestionStatus.Edited);
+        return await SaveAsync(context, request.AssessmentRowVersion, question.Id, cancellationToken);
     }
 
     public async Task<AssessmentCommandResult> GenerateQuestionsAsync(
-        Guid actorUserId,
-        GenerateBuilderQuestionsRequest request,
-        CancellationToken cancellationToken = default)
+        Guid actorUserId, GenerateBuilderQuestionsRequest request, CancellationToken cancellationToken = default)
     {
-        var access = await ResolveAccessAsync(actorUserId, request.AssessmentId, cancellationToken);
-        if (access.Error.HasValue) return Failure(access.Error.Value);
-        var details = access.Details!;
-        if (details.Assessment.Status != AssessmentStatus.Draft) return Failure(AssessmentErrorCode.AssessmentNotDraft);
-        if (request.QuestionCount is < 1 or > 100 || request.MaxScorePerQuestion <= 0)
-            return Failure(AssessmentErrorCode.InvalidQuestionScore);
-
-        var context = await repository.GetContextAsync(access.SchoolId, request.AssessmentId, cancellationToken);
-        if (context?.CurriculumAdoption is null || string.IsNullOrWhiteSpace(context.CurriculumAdoption.CurriculumLevelKey))
+        var resolved = await ResolveEditableAsync(actorUserId, request.AssessmentId, cancellationToken);
+        if (resolved.Error.HasValue) return Failure(resolved.Error.Value);
+        var context = resolved.Context!;
+        if (context.CurriculumAdoption is null || string.IsNullOrWhiteSpace(context.CurriculumAdoption.CurriculumLevelKey))
             return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
-
-        var outcomeIds = NormalizeOutcomes(request.OutcomeIds);
-        if (!ValidateOutcomes(details, outcomeIds)) return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
-        var requestedMarks = request.QuestionCount * request.MaxScorePerQuestion;
-        if (context.Questions.Sum(x => x.MaxScore) + requestedMarks > context.Assessment.MaxScore)
+        if (request.QuestionCount is < 1 or > 100 || !ValidScore(request.MaxScorePerQuestion))
+            return Failure(AssessmentErrorCode.InvalidQuestionScore);
+        if (context.Questions.Sum(x => x.MaxScore) + request.QuestionCount * request.MaxScorePerQuestion > context.Assessment.MaxScore)
             return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
 
-        var selected = context.LearningOutcomes.Where(x => outcomeIds.Contains(x.Id)).ToArray();
-        var profiles = selected.Select(NativeMathematicsOutcomeProfileResolver.Resolve).ToArray();
-        if (profiles.Any(x => x is null) || profiles.Length != outcomeIds.Length)
-            return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+        var outcomeIds = NormalizeOutcomes(request.OutcomeIds);
+        if (!ValidateOutcomes(resolved.Details!, outcomeIds)) return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+        var batch = TryGenerate(context, resolved.SchoolId, outcomeIds, request.QuestionCount, request.Difficulty, request.Seed);
+        if (batch is null) return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
 
-        var policy = request.Difficulty switch
-        {
-            AssessmentBuilderDifficulty.AtClassLevel => AssessmentDifficultyPolicy.Balanced,
-            AssessmentBuilderDifficulty.Stretch => AssessmentDifficultyPolicy.Stretch,
-            AssessmentBuilderDifficulty.Challenge => new AssessmentDifficultyPolicy(5, 30, 65),
-            _ => AssessmentDifficultyPolicy.Balanced
-        };
-
-        var excluded = context.Items
-            .Select(x => x.ExposureFingerprint)
-            .Where(x => !string.IsNullOrWhiteSpace(x))
-            .ToArray();
-        var topicId = ResolveSingleTopic(context, outcomeIds);
-        var blueprint = new AssessmentBlueprintEngine().Build(new AssessmentBlueprintRequest(
-            access.SchoolId,
-            context.CurriculumAdoption.Id,
-            context.CurriculumAdoption.CurriculumLevelKey!,
-            topicId,
-            null,
-            outcomeIds,
-            null,
-            AssessmentPurpose.TeacherAssessment,
-            request.QuestionCount,
-            policy,
-            excluded));
-
-        MathematicsGenerationBatch batch;
-        try
-        {
-            batch = new MathematicsQuestionGenerationEngine().Generate(new MathematicsGenerationRequest(
-                blueprint,
-                profiles.Select(x => x!).ToArray(),
-                request.Seed));
-        }
-        catch (InvalidOperationException)
-        {
-            return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
-        }
-
-        var nextOrder = context.Questions.Count == 0 ? 1 : context.Questions.Max(x => x.Order) + 1;
+        var order = context.Questions.Count == 0 ? 1 : context.Questions.Max(x => x.Order) + 1;
         foreach (var generated in batch.Items)
         {
-            var item = generated.Item;
-            item.CreatedByUserId = actorUserId;
-            item.ValidationMetadataJson = SetBuilderStatus(item.ValidationMetadataJson, AssessmentBuilderQuestionStatus.Draft);
+            generated.Item.CreatedByUserId = actorUserId;
+            generated.Item.ValidationMetadataJson = SetStatus(generated.Item.ValidationMetadataJson, AssessmentBuilderQuestionStatus.Draft);
             var question = new AssessmentQuestion
             {
-                Id = item.Id,
-                SchoolId = access.SchoolId,
+                Id = generated.Item.Id,
+                SchoolId = resolved.SchoolId,
                 AssessmentId = request.AssessmentId,
-                Prompt = item.Prompt,
-                MaxScore = decimal.Round(request.MaxScorePerQuestion, 2, MidpointRounding.AwayFromZero),
-                Order = nextOrder++
-            };
-            var qMapping = new QuestionLearningOutcome
-            {
-                Id = Guid.NewGuid(),
-                SchoolId = access.SchoolId,
-                AssessmentQuestionId = question.Id,
-                LearningOutcomeId = generated.OutcomeLink.LearningOutcomeId
+                Prompt = generated.Item.Prompt,
+                MaxScore = Round(request.MaxScorePerQuestion),
+                Order = order++
             };
             repository.AddBundle(new AssessmentBuilderQuestionBundle(
                 question,
-                item,
-                [qMapping],
+                generated.Item,
+                [new QuestionLearningOutcome { Id = Guid.NewGuid(), SchoolId = resolved.SchoolId, AssessmentQuestionId = question.Id, LearningOutcomeId = generated.OutcomeLink.LearningOutcomeId }],
                 [generated.OutcomeLink]));
         }
+        return await SaveAsync(context, request.AssessmentRowVersion, request.AssessmentId, cancellationToken);
+    }
 
-        context.Assessment.UpdatedAtUtc = DateTime.UtcNow;
-        var saved = await repository.SaveAsync(context.Assessment, request.AssessmentRowVersion, cancellationToken);
-        return saved.Succeeded ? AssessmentCommandResult.Success(request.AssessmentId) : PersistenceFailure(saved);
+    public async Task<AssessmentCommandResult> RegenerateQuestionAsync(
+        Guid actorUserId, Guid assessmentId, Guid questionId, int seed, byte[] assessmentRowVersion, CancellationToken cancellationToken = default)
+    {
+        var resolved = await ResolveEditableAsync(actorUserId, assessmentId, cancellationToken);
+        if (resolved.Error.HasValue) return Failure(resolved.Error.Value);
+        var context = resolved.Context!;
+        var question = context.Questions.SingleOrDefault(x => x.Id == questionId);
+        var item = context.Items.SingleOrDefault(x => x.Id == questionId);
+        if (question is null || item is null || item.Source != AssessmentItemSource.SystemGenerated)
+            return Failure(AssessmentErrorCode.QuestionNotFound);
+        if (context.CurriculumAdoption is null || string.IsNullOrWhiteSpace(context.CurriculumAdoption.CurriculumLevelKey))
+            return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+
+        var outcomeIds = context.QuestionOutcomeMappings
+            .Where(x => x.AssessmentQuestionId == questionId)
+            .Select(x => x.LearningOutcomeId).Distinct().ToArray();
+        if (outcomeIds.Length != 1) return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+        var difficulty = item.Difficulty switch
+        {
+            AssessmentItemDifficulty.Easy => AssessmentBuilderDifficulty.AtClassLevel,
+            AssessmentItemDifficulty.Medium => AssessmentBuilderDifficulty.Stretch,
+            _ => AssessmentBuilderDifficulty.Challenge
+        };
+        var batch = TryGenerate(context, resolved.SchoolId, outcomeIds, 1, difficulty, seed);
+        var replacement = batch?.Items.SingleOrDefault();
+        if (replacement is null) return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+
+        question.Prompt = replacement.Item.Prompt;
+        item.Prompt = replacement.Item.Prompt;
+        item.CorrectAnswer = replacement.Item.CorrectAnswer;
+        item.Solution = replacement.Item.Solution;
+        item.ItemType = replacement.Item.ItemType;
+        item.Difficulty = replacement.Item.Difficulty;
+        item.GenerationMethod = replacement.Item.GenerationMethod;
+        item.GenerationFamily = replacement.Item.GenerationFamily;
+        item.GenerationParametersJson = replacement.Item.GenerationParametersJson;
+        item.ExposureFingerprint = replacement.Item.ExposureFingerprint;
+        item.ValidationMetadataJson = SetStatus(replacement.Item.ValidationMetadataJson, AssessmentBuilderQuestionStatus.Draft);
+        return await SaveAsync(context, assessmentRowVersion, question.Id, cancellationToken);
     }
 
     public async Task<AssessmentCommandResult> ApproveQuestionAsync(
-        Guid actorUserId,
-        Guid assessmentId,
-        Guid questionId,
-        byte[] assessmentRowVersion,
-        CancellationToken cancellationToken = default)
+        Guid actorUserId, Guid assessmentId, Guid questionId, byte[] assessmentRowVersion, CancellationToken cancellationToken = default)
     {
-        var access = await ResolveAccessAsync(actorUserId, assessmentId, cancellationToken);
-        if (access.Error.HasValue) return Failure(access.Error.Value);
-        if (access.Details!.Assessment.Status != AssessmentStatus.Draft) return Failure(AssessmentErrorCode.AssessmentNotDraft);
-        var context = await repository.GetContextAsync(access.SchoolId, assessmentId, cancellationToken);
-        if (context is null) return Failure(AssessmentErrorCode.AssessmentNotFound);
-        var item = context.Items.SingleOrDefault(x => x.Id == questionId);
-        if (item is null || context.Questions.All(x => x.Id != questionId)) return Failure(AssessmentErrorCode.QuestionNotFound);
-        item.ValidationMetadataJson = SetBuilderStatus(item.ValidationMetadataJson, AssessmentBuilderQuestionStatus.Approved);
-        context.Assessment.UpdatedAtUtc = DateTime.UtcNow;
-        var saved = await repository.SaveAsync(context.Assessment, assessmentRowVersion, cancellationToken);
-        return saved.Succeeded ? AssessmentCommandResult.Success(questionId) : PersistenceFailure(saved);
+        var resolved = await ResolveEditableAsync(actorUserId, assessmentId, cancellationToken);
+        if (resolved.Error.HasValue) return Failure(resolved.Error.Value);
+        var item = resolved.Context!.Items.SingleOrDefault(x => x.Id == questionId);
+        if (item is null || resolved.Context.Questions.All(x => x.Id != questionId)) return Failure(AssessmentErrorCode.QuestionNotFound);
+        item.ValidationMetadataJson = SetStatus(item.ValidationMetadataJson, AssessmentBuilderQuestionStatus.Approved);
+        return await SaveAsync(resolved.Context, assessmentRowVersion, questionId, cancellationToken);
     }
 
     public async Task<AssessmentCommandResult> DeleteQuestionAsync(
-        Guid actorUserId,
-        Guid assessmentId,
-        Guid questionId,
-        byte[] assessmentRowVersion,
-        CancellationToken cancellationToken = default)
+        Guid actorUserId, Guid assessmentId, Guid questionId, byte[] assessmentRowVersion, CancellationToken cancellationToken = default)
     {
-        var access = await ResolveAccessAsync(actorUserId, assessmentId, cancellationToken);
-        if (access.Error.HasValue) return Failure(access.Error.Value);
-        if (access.Details!.Assessment.Status != AssessmentStatus.Draft) return Failure(AssessmentErrorCode.AssessmentNotDraft);
-        var context = await repository.GetContextAsync(access.SchoolId, assessmentId, cancellationToken);
-        if (context is null) return Failure(AssessmentErrorCode.AssessmentNotFound);
+        var resolved = await ResolveEditableAsync(actorUserId, assessmentId, cancellationToken);
+        if (resolved.Error.HasValue) return Failure(resolved.Error.Value);
+        var context = resolved.Context!;
         var question = context.Questions.SingleOrDefault(x => x.Id == questionId);
         if (question is null) return Failure(AssessmentErrorCode.QuestionNotFound);
         var item = context.Items.SingleOrDefault(x => x.Id == questionId);
@@ -257,16 +226,11 @@ public sealed class AssessmentBuilderService(
             item,
             context.QuestionOutcomeMappings.Where(x => x.AssessmentQuestionId == questionId).ToArray(),
             context.ItemOutcomeMappings.Where(x => x.AssessmentItemId == questionId).ToArray());
-        context.Assessment.UpdatedAtUtc = DateTime.UtcNow;
-        var saved = await repository.SaveAsync(context.Assessment, assessmentRowVersion, cancellationToken);
-        return saved.Succeeded ? AssessmentCommandResult.Success(questionId) : PersistenceFailure(saved);
+        return await SaveAsync(context, assessmentRowVersion, questionId, cancellationToken);
     }
 
     public async Task<AssessmentCommandResult> PublishAsync(
-        Guid actorUserId,
-        Guid assessmentId,
-        byte[] assessmentRowVersion,
-        CancellationToken cancellationToken = default)
+        Guid actorUserId, Guid assessmentId, byte[] assessmentRowVersion, CancellationToken cancellationToken = default)
     {
         var workspace = await GetWorkspaceAsync(actorUserId, assessmentId, cancellationToken);
         if (workspace.Value is null) return Failure(workspace.Error ?? AssessmentErrorCode.AccessDenied);
@@ -274,32 +238,74 @@ public sealed class AssessmentBuilderService(
         return await assessments.OpenAssessmentAsync(actorUserId, assessmentId, assessmentRowVersion, cancellationToken);
     }
 
+    private async Task<(AssessmentDetails? Details, AssessmentBuilderPersistenceContext? Context, Guid SchoolId, AssessmentErrorCode? Error)> ResolveEditableAsync(
+        Guid actorUserId, Guid assessmentId, CancellationToken cancellationToken)
+    {
+        var access = await ResolveAccessAsync(actorUserId, assessmentId, cancellationToken);
+        if (access.Error.HasValue) return (access.Details, null, access.SchoolId, access.Error);
+        if (access.Details!.Assessment.Status != AssessmentStatus.Draft)
+            return (access.Details, null, access.SchoolId, AssessmentErrorCode.AssessmentNotDraft);
+        var context = await repository.GetContextAsync(access.SchoolId, assessmentId, cancellationToken);
+        return context is null
+            ? (access.Details, null, access.SchoolId, AssessmentErrorCode.AssessmentNotFound)
+            : (access.Details, context, access.SchoolId, null);
+    }
+
     private async Task<(AssessmentDetails? Details, Guid SchoolId, AssessmentErrorCode? Error)> ResolveAccessAsync(
-        Guid actorUserId,
-        Guid assessmentId,
-        CancellationToken cancellationToken)
+        Guid actorUserId, Guid assessmentId, CancellationToken cancellationToken)
     {
         var actor = await users.GetActorAsync(actorUserId, cancellationToken);
-        if (actor is null || !actor.IsActive || actor.IsLocked || !actor.SchoolId.HasValue ||
-            actor.Roles.Count != 1 || actor.Roles[0] != RoleNames.Teacher)
-        {
+        if (actor is null || !actor.IsActive || actor.IsLocked || !actor.SchoolId.HasValue || actor.Roles.Count != 1 || actor.Roles[0] != RoleNames.Teacher)
             return (null, Guid.Empty, AssessmentErrorCode.AccessDenied);
-        }
         var details = await assessments.GetDetailsAsync(actorUserId, assessmentId, cancellationToken);
         return details.Value is null
             ? (null, actor.SchoolId.Value, details.Error ?? AssessmentErrorCode.AccessDenied)
             : (details.Value, actor.SchoolId.Value, null);
     }
 
-    private static AssessmentBuilderWorkspace BuildWorkspace(
-        AssessmentDetails details,
-        AssessmentBuilderPersistenceContext context)
+    private MathematicsGenerationBatch? TryGenerate(
+        AssessmentBuilderPersistenceContext context, Guid schoolId, IReadOnlyList<Guid> outcomeIds,
+        int count, AssessmentBuilderDifficulty difficulty, int seed)
+    {
+        if (context.CurriculumAdoption is null || string.IsNullOrWhiteSpace(context.CurriculumAdoption.CurriculumLevelKey)) return null;
+        var selected = context.LearningOutcomes.Where(x => outcomeIds.Contains(x.Id)).ToArray();
+        var profiles = selected.Select(NativeMathematicsOutcomeProfileResolver.Resolve).ToArray();
+        if (profiles.Length != outcomeIds.Count || profiles.Any(x => x is null)) return null;
+        var policy = difficulty switch
+        {
+            AssessmentBuilderDifficulty.AtClassLevel => AssessmentDifficultyPolicy.Balanced,
+            AssessmentBuilderDifficulty.Stretch => AssessmentDifficultyPolicy.Stretch,
+            AssessmentBuilderDifficulty.Challenge => new AssessmentDifficultyPolicy(5, 30, 65),
+            _ => AssessmentDifficultyPolicy.Balanced
+        };
+        try
+        {
+            var blueprint = new AssessmentBlueprintEngine().Build(new AssessmentBlueprintRequest(
+                schoolId,
+                context.CurriculumAdoption.Id,
+                context.CurriculumAdoption.CurriculumLevelKey!,
+                ResolveSingleTopic(context, outcomeIds),
+                null,
+                outcomeIds,
+                null,
+                AssessmentPurpose.TeacherAssessment,
+                count,
+                policy,
+                context.Items.Select(x => x.ExposureFingerprint).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray()));
+            return new MathematicsQuestionGenerationEngine().Generate(new MathematicsGenerationRequest(blueprint, profiles.Select(x => x!).ToArray(), seed));
+        }
+        catch (InvalidOperationException)
+        {
+            return null;
+        }
+    }
+
+    private static AssessmentBuilderWorkspace BuildWorkspace(AssessmentDetails details, AssessmentBuilderPersistenceContext context)
     {
         var itemById = context.Items.ToDictionary(x => x.Id);
         var questions = context.Questions.OrderBy(x => x.Order).Select(question =>
         {
             itemById.TryGetValue(question.Id, out var item);
-            var status = item is null ? AssessmentBuilderQuestionStatus.Legacy : ReadBuilderStatus(item.ValidationMetadataJson);
             return new AssessmentBuilderQuestion(
                 question.Id,
                 question.Order,
@@ -307,111 +313,78 @@ public sealed class AssessmentBuilderService(
                 question.MaxScore,
                 item?.Source,
                 item?.Difficulty,
-                status,
+                item is null ? AssessmentBuilderQuestionStatus.Legacy : ReadStatus(item.ValidationMetadataJson),
                 item?.CorrectAnswer ?? string.Empty,
                 item?.Solution ?? string.Empty,
-                context.QuestionOutcomeMappings
-                    .Where(x => x.AssessmentQuestionId == question.Id)
-                    .Select(x => x.LearningOutcomeId)
-                    .OrderBy(x => x)
-                    .ToArray());
+                context.QuestionOutcomeMappings.Where(x => x.AssessmentQuestionId == question.Id).Select(x => x.LearningOutcomeId).Distinct().OrderBy(x => x).ToArray());
         }).ToArray();
-
         var current = questions.Sum(x => x.MaxScore);
-        var mappedOutcomeIds = questions.SelectMany(x => x.OutcomeIds).Distinct().ToArray();
-        var masteryRows = context.ClassOutcomeSummaries.Where(x => mappedOutcomeIds.Contains(x.LearningOutcomeId)).ToArray();
-        decimal? mastery = masteryRows.Length == 0 ? null : decimal.Round(masteryRows.Average(x => x.AverageMasteryPercentage), 1);
-        var allRich = questions.Count > 0 && questions.All(x => x.Status != AssessmentBuilderQuestionStatus.Legacy);
+        var mappedIds = questions.SelectMany(x => x.OutcomeIds).Distinct().ToArray();
+        var masteryRows = context.ClassOutcomeSummaries.Where(x => mappedIds.Contains(x.LearningOutcomeId)).ToArray();
+        decimal? mastery = masteryRows.Length == 0 ? null : Round(masteryRows.Average(x => x.AverageMasteryPercentage));
+        var allRich = questions.Length > 0 && questions.All(x => x.Status != AssessmentBuilderQuestionStatus.Legacy);
         var allApproved = allRich && questions.All(x => x.Status == AssessmentBuilderQuestionStatus.Approved);
-        var allMapped = questions.Count > 0 && questions.All(x => x.OutcomeIds.Count > 0);
+        var allMapped = questions.Length > 0 && questions.All(x => x.OutcomeIds.Count > 0);
         var marksMatch = current == details.Assessment.MaxScore;
         var ready = details.Assessment.Status == AssessmentStatus.Draft && allApproved && allMapped && marksMatch;
-        var message = ready
-            ? "ReadyToPublish"
+        var message = ready ? "ReadyToPublish"
             : !allRich ? "BuilderLegacyQuestionsNeedReplacement"
             : !allApproved ? "BuilderQuestionsNeedApproval"
             : !allMapped ? "BuilderQuestionsNeedOutcomes"
             : !marksMatch ? "BuilderMarksMustMatch"
             : "BuilderNotDraft";
-
         var canGenerate = context.CurriculumAdoption is not null &&
             !string.IsNullOrWhiteSpace(context.CurriculumAdoption.CurriculumLevelKey) &&
-            details.EligibleOutcomes.Any(outcome =>
-                context.LearningOutcomes.Any(x => x.Id == outcome.Id && NativeMathematicsOutcomeProfileResolver.Resolve(x) is not null));
-
-        return new AssessmentBuilderWorkspace(
-            details,
-            questions,
-            current,
-            Math.Max(0m, details.Assessment.MaxScore - current),
-            mastery,
-            canGenerate,
-            ready,
-            message);
+            details.EligibleOutcomes.Any(o => context.LearningOutcomes.Any(x => x.Id == o.Id && NativeMathematicsOutcomeProfileResolver.Resolve(x) is not null));
+        return new AssessmentBuilderWorkspace(details, questions, current, Math.Max(0m, details.Assessment.MaxScore - current), mastery, canGenerate, ready, message);
     }
 
-    private static bool ValidateOutcomes(AssessmentDetails details, IReadOnlyCollection<Guid> outcomeIds)
+    private async Task<AssessmentCommandResult> SaveAsync(
+        AssessmentBuilderPersistenceContext context, byte[] rowVersion, Guid entityId, CancellationToken cancellationToken)
     {
-        if (outcomeIds.Count == 0) return false;
-        var eligible = details.EligibleOutcomes.Select(x => x.Id).ToHashSet();
-        return outcomeIds.All(eligible.Contains);
+        context.Assessment.UpdatedAtUtc = DateTime.UtcNow;
+        var saved = await repository.SaveAsync(context.Assessment, rowVersion, cancellationToken);
+        return saved.Succeeded ? AssessmentCommandResult.Success(entityId) : PersistenceFailure(saved);
     }
 
+    private static bool ValidContent(string prompt, string answer, string solution) =>
+        prompt.Length is >= 1 and <= 1000 && answer.Length is >= 1 and <= 1000 && solution.Length is >= 1 and <= 4000;
+    private static bool ValidScore(decimal value) => value > 0m && value <= 10000m;
+    private static string Clean(string? value) => value?.Trim() ?? string.Empty;
+    private static decimal Round(decimal value) => decimal.Round(value, 2, MidpointRounding.AwayFromZero);
+    private static bool ValidateOutcomes(AssessmentDetails details, IReadOnlyCollection<Guid> ids)
+    {
+        if (ids.Count == 0) return false;
+        var eligible = details.EligibleOutcomes.Select(x => x.Id).ToHashSet();
+        return ids.All(eligible.Contains);
+    }
     private static Guid[] NormalizeOutcomes(IReadOnlyList<Guid>? ids) =>
         (ids ?? []).Where(x => x != Guid.Empty).Distinct().OrderBy(x => x).ToArray();
-
-    private static Guid? ResolveSingleTopic(AssessmentBuilderPersistenceContext context, IReadOnlyCollection<Guid> outcomeIds)
+    private static Guid? ResolveSingleTopic(AssessmentBuilderPersistenceContext context, IReadOnlyCollection<Guid> ids)
     {
-        var topics = context.LearningOutcomes
-            .Where(x => outcomeIds.Contains(x.Id))
-            .Select(x => x.TopicId)
-            .Distinct()
-            .ToArray();
+        var topics = context.LearningOutcomes.Where(x => ids.Contains(x.Id)).Select(x => x.TopicId).Distinct().ToArray();
         return topics.Length == 1 ? topics[0] : null;
     }
-
-    private static AssessmentBuilderQuestionStatus ReadBuilderStatus(string? json)
+    private static AssessmentBuilderQuestionStatus ReadStatus(string? json)
     {
         if (string.IsNullOrWhiteSpace(json)) return AssessmentBuilderQuestionStatus.Draft;
         try
         {
-            var node = JsonNode.Parse(json);
-            var value = node?["builderStatus"]?.GetValue<string>();
-            return Enum.TryParse<AssessmentBuilderQuestionStatus>(value, true, out var status)
-                ? status
-                : AssessmentBuilderQuestionStatus.Draft;
+            var value = JsonNode.Parse(json)?["builderStatus"]?.GetValue<string>();
+            return Enum.TryParse<AssessmentBuilderQuestionStatus>(value, true, out var status) ? status : AssessmentBuilderQuestionStatus.Draft;
         }
-        catch (JsonException)
-        {
-            return AssessmentBuilderQuestionStatus.Draft;
-        }
+        catch (JsonException) { return AssessmentBuilderQuestionStatus.Draft; }
     }
-
-    private static string SetBuilderStatus(string? json, AssessmentBuilderQuestionStatus status)
+    private static string SetStatus(string? json, AssessmentBuilderQuestionStatus status)
     {
         JsonObject root;
-        try
-        {
-            root = string.IsNullOrWhiteSpace(json)
-                ? new JsonObject()
-                : JsonNode.Parse(json) as JsonObject ?? new JsonObject();
-        }
-        catch (JsonException)
-        {
-            root = new JsonObject();
-        }
+        try { root = string.IsNullOrWhiteSpace(json) ? new JsonObject() : JsonNode.Parse(json) as JsonObject ?? new JsonObject(); }
+        catch (JsonException) { root = new JsonObject(); }
         root["builderStatus"] = status.ToString();
         return root.ToJsonString(new JsonSerializerOptions { WriteIndented = false });
     }
-
-    private static string Fingerprint(string value) =>
-        Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(value))).ToLowerInvariant();
-
-    private static AssessmentCommandResult Failure(AssessmentErrorCode error) =>
-        AssessmentCommandResult.Failure(string.Empty, error);
-
+    private static string Fingerprint(string value) => Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(value))).ToLowerInvariant();
+    private static AssessmentCommandResult Failure(AssessmentErrorCode error) => AssessmentCommandResult.Failure(string.Empty, error);
     private static AssessmentCommandResult PersistenceFailure(AssessmentPersistenceResult result) =>
-        Failure(result.Error == AssessmentPersistenceError.Conflict
-            ? AssessmentErrorCode.ConcurrencyConflict
-            : AssessmentErrorCode.PersistenceError);
+        Failure(result.Error == AssessmentPersistenceError.Conflict ? AssessmentErrorCode.ConcurrencyConflict : AssessmentErrorCode.PersistenceError);
 }
