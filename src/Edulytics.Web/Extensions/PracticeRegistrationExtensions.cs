@@ -11,6 +11,8 @@ public static class PracticeRegistrationExtensions
     {
         services.AddScoped<IPracticeRepository, PracticeRepository>();
         services.AddScoped<IPracticeService, PracticeService>();
+        services.AddScoped<IStudentPrivatePracticeRepository, StudentPrivatePracticeRepository>();
+        services.AddScoped<IStudentPrivatePracticeService, StudentPrivatePracticeService>();
         return services;
     }
 }

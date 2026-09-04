@@ -1,0 +1,84 @@
+@using Edulytics.Core.Enums
+@using Edulytics.Services.Practice
+@model PracticeAttemptDetails
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = S["PrivatePracticeAttemptTitle"].Value;
+}
+<header class="student-page-header">
+    <span class="student-eyebrow">@S["PrivatePractice"]</span>
+    <h1>@S["PrivatePracticeAttemptTitle"]</h1>
+    <p>@S["PrivatePracticeAttemptSubtitle"]</p>
+</header>
+@if (TempData["Error"] is string error)
+{
+    <div class="school-alert school-alert-error" role="alert">@error</div>
+}
+@if (TempData["PracticeFeedback"] is string feedback)
+{
+    <div class="school-alert @(feedback == "correct" ? "school-alert-success" : "school-alert-error")" role="status">
+        @(feedback == "correct" ? S["PracticeCorrect"].Value : S["PracticeIncorrect"].Value)
+        @if (TempData["PracticeSolution"] is string solution)
+        {
+            <div><strong>@S["PracticeSolution"]:</strong> @solution</div>
+        }
+    </div>
+}
+<section class="student-card">
+    <p><strong>@S["Status"]:</strong> @Model.Status</p>
+    @if (Model.Status == PracticeAttemptStatus.Submitted)
+    {
+        <p><strong>@S["Score"]:</strong> @Model.Score.ToString("0.##") / @Model.MaxScore.ToString("0.##") · <strong>@S["Percentage"]:</strong> @Model.Percentage.ToString("0.##")%</p>
+    }
+</section>
+<div class="student-card-list">
+@foreach (var question in Model.Questions.OrderBy(x => x.Order))
+{
+    <article class="student-assessment-card">
+        <div>
+            <span class="student-subject-code">@S["Question"] @question.Order</span>
+            <h2>@question.Prompt</h2>
+            <p>@S["AssessmentDifficulty"]: @question.Difficulty</p>
+        </div>
+        @if (question.Answered)
+        {
+            <div class="school-alert @(question.IsCorrect == true ? "school-alert-success" : "school-alert-error")">
+                @(question.IsCorrect == true ? S["PracticeCorrect"].Value : S["PracticeIncorrect"].Value)
+                @if (!string.IsNullOrWhiteSpace(question.Feedback))
+                {
+                    <div><strong>@S["PracticeSolution"]:</strong> @question.Feedback</div>
+                }
+            </div>
+        }
+        else if (Model.Status == PracticeAttemptStatus.InProgress)
+        {
+            <form asp-action="Answer" asp-route-id="@Model.AttemptId" method="post" class="assessment-form">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="attemptItemId" value="@question.AttemptItemId" />
+                <label>@S["YourAnswer"]</label>
+                <input name="answer" maxlength="2000" required autocomplete="off" />
+                <button class="school-button school-button-primary" type="submit">@S["PracticeCheckAnswer"]</button>
+            </form>
+        }
+    </article>
+}
+</div>
+@if (Model.Status == PracticeAttemptStatus.InProgress)
+{
+    var complete = Model.Questions.Count > 0 && Model.Questions.All(x => x.Answered);
+    <section class="student-card">
+        @if (complete)
+        {
+            <form asp-action="Submit" asp-route-id="@Model.AttemptId" method="post">
+                @Html.AntiForgeryToken()
+                <button class="school-button school-button-primary" type="submit">@S["PracticeFinish"]</button>
+            </form>
+        }
+        else
+        {
+            <button class="school-button" type="button" disabled>@S["PracticeAnswerAll"]</button>
+        }
+    </section>
+}
+<a class="school-button" asp-action="Index">@S["BackToPrivatePractice"]</a>
