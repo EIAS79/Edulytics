@@ -31,6 +31,10 @@ public sealed class AnalyticsRepository : IAnalyticsRepository
 
         try
         {
+            var officialPracticeAttemptIds = _db.PracticeAttempts.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId && !x.IsPrivate)
+                .Select(x => x.Id);
+
             var snapshot = new AnalyticsSourceSnapshot(
                 await _db.AcademicYears.AsNoTracking()
                     .Where(x => x.SchoolId == schoolId)
@@ -72,10 +76,10 @@ public sealed class AnalyticsRepository : IAnalyticsRepository
                     .Where(x => x.SchoolId == schoolId)
                     .ToListAsync(cancellationToken),
                 await _db.PracticeAttempts.AsNoTracking()
-                    .Where(x => x.SchoolId == schoolId)
+                    .Where(x => x.SchoolId == schoolId && !x.IsPrivate)
                     .ToListAsync(cancellationToken),
                 await _db.LearningEvidence.AsNoTracking()
-                    .Where(x => x.SchoolId == schoolId)
+                    .Where(x => x.SchoolId == schoolId && officialPracticeAttemptIds.Contains(x.PracticeAttemptId))
                     .ToListAsync(cancellationToken));
 
             if (transaction is not null)
@@ -121,8 +125,12 @@ public sealed class AnalyticsRepository : IAnalyticsRepository
             .Select(x => (DateTime?)x.UpdatedAtUtc)
             .MaxAsync(cancellationToken);
 
+        var officialPracticeAttemptIds = _db.PracticeAttempts.AsNoTracking()
+            .Where(x => x.SchoolId == schoolId && !x.IsPrivate)
+            .Select(x => x.Id);
+
         var evidenceMax = await _db.LearningEvidence
-            .Where(x => x.SchoolId == schoolId)
+            .Where(x => x.SchoolId == schoolId && officialPracticeAttemptIds.Contains(x.PracticeAttemptId))
             .Select(x => (DateTime?)x.OccurredAtUtc)
             .MaxAsync(cancellationToken);
 
