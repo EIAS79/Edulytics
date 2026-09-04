@@ -1,3 +1,4 @@
+@using Edulytics.Core.Enums
 @model Edulytics.Web.ViewModels.StudentPortal.StudentAssessmentsViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @{
@@ -24,17 +25,27 @@ else
                     <span class="student-subject-code">@item.SubjectName</span>
                     <h2>@item.Title</h2>
                     <p>@S["Class"]: @item.ClassName</p>
+                    <p>@S["AssessmentMode"]: @(item.DeliveryMode == AssessmentDeliveryMode.Online ? S["OnlineAssessment"] : S["OfflineAssessment"])</p>
+                    <p>@S["AssessmentDifficulty"]: @S[$"AssessmentDifficulty{item.DifficultyBand}"]</p>
                 </div>
                 <dl>
-                    <div>
-                        <dt>@S["AssessmentDate"]</dt>
-                        <dd>@item.AssessmentDate.ToString("yyyy-MM-dd")</dd>
-                    </div>
-                    <div>
-                        <dt>@S["MaxScore"]</dt>
-                        <dd>@item.MaxScore.ToString("0.##")</dd>
-                    </div>
+                    <div><dt>@S["AssessmentDate"]</dt><dd>@item.AssessmentDate.ToString("yyyy-MM-dd")</dd></div>
+                    <div><dt>@S["MaxScore"]</dt><dd>@item.MaxScore.ToString("0.##")</dd></div>
                 </dl>
+                <div class="student-actions">
+                    @if (item.IsSubmitted)
+                    {
+                        <a class="student-button" asp-action="Results">@S["ViewResults"]</a>
+                    }
+                    else if (item.DeliveryMode == AssessmentDeliveryMode.Online)
+                    {
+                        <a class="student-button student-button-primary" asp-action="TakeAssessment" asp-route-id="@item.AssessmentId">@S["StartAssessment"]</a>
+                    }
+                    else
+                    {
+                        <span class="student-muted">@S["TeacherManagedAssessment"]</span>
+                    }
+                </div>
             </article>
         }
     </div>

@@ -12,6 +12,7 @@ public sealed class StudentAnswerConfiguration
         builder.ToTable("StudentAnswers");
         builder.HasKey(x => x.Id);
 
+        builder.Property(x => x.ResponseText).HasMaxLength(4000);
         builder.Property(x => x.Score).HasPrecision(10, 2).IsRequired();
         builder.Property(x => x.UpdatedAtUtc).IsRequired();
 

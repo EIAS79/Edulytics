@@ -71,7 +71,11 @@ public sealed record AssessmentListItem(
     DateOnly AssessmentDate,
     decimal MaxScore,
     AssessmentStatus Status,
-    byte[] RowVersion);
+    byte[] RowVersion,
+    AssessmentTargetType TargetType = AssessmentTargetType.Class,
+    Guid? TargetStudentProfileId = null,
+    AssessmentDeliveryMode DeliveryMode = AssessmentDeliveryMode.Offline,
+    AssessmentDifficultyBand DifficultyBand = AssessmentDifficultyBand.AtClassLevel);
 
 public sealed record AssessmentQuestionItem(
     Guid Id,

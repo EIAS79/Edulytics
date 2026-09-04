@@ -15,6 +15,10 @@ public sealed class Assessment : ISchoolScoped
     public DateOnly AssessmentDate { get; set; }
     public decimal MaxScore { get; set; }
     public AssessmentStatus Status { get; set; }
+    public AssessmentTargetType TargetType { get; set; } = AssessmentTargetType.Class;
+    public Guid? TargetStudentProfileId { get; set; }
+    public AssessmentDeliveryMode DeliveryMode { get; set; } = AssessmentDeliveryMode.Offline;
+    public AssessmentDifficultyBand DifficultyBand { get; set; } = AssessmentDifficultyBand.AtClassLevel;
     public Guid CreatedByUserId { get; set; }
     public DateTime CreatedAtUtc { get; set; }
     public DateTime UpdatedAtUtc { get; set; }

@@ -937,6 +937,25 @@ public sealed partial class AssessmentService
         if (!mappedOutcomeIds.SetEquals(eligibleMappedOutcomeIds))
             return Fail(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
 
+        if (assessment.TargetType == AssessmentTargetType.Student)
+        {
+            if (!assessment.TargetStudentProfileId.HasValue)
+                return Fail(AssessmentErrorCode.StudentNotFound);
+
+            var targetStudent = await _repo.GetStudentProfileAsync(
+                scope.School.Id, assessment.TargetStudentProfileId.Value, cancellationToken);
+            if (targetStudent is null || targetStudent.IsArchived || targetStudent.Status != AcademicStructureStatus.Active)
+                return Fail(AssessmentErrorCode.StudentNotFound);
+
+            if (!await _repo.IsStudentEnrolledAsync(
+                    scope.School.Id,
+                    assessment.AcademicYearId,
+                    assessment.ClassGroupId,
+                    targetStudent.Id,
+                    cancellationToken))
+                return Fail(AssessmentErrorCode.StudentNotEnrolled);
+        }
+
         var previousStatus =
             assessment.Status;
 
@@ -1057,6 +1076,10 @@ public sealed partial class AssessmentService
                 assessment.ClassGroupId,
                 student.Id,
                 cancellationToken))
+            return Fail(AssessmentErrorCode.StudentNotEnrolled);
+
+        if (assessment.TargetType == AssessmentTargetType.Student &&
+            assessment.TargetStudentProfileId != student.Id)
             return Fail(AssessmentErrorCode.StudentNotEnrolled);
 
         var snapshot = await _repo.GetSnapshotAsync(schoolId, cancellationToken);

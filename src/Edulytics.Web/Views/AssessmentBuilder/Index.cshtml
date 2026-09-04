@@ -6,15 +6,240 @@
     ViewData["Title"] = A["AssessmentBuilder"];
     var assessment = Model.Details.Assessment;
     var rowVersion = Convert.ToBase64String(assessment.RowVersion);
+    var targetStudents = Model.TargetStudents ?? Array.Empty<Edulytics.Services.Assessments.AssessmentTargetStudentOption>();
 }
 <section class="assessment-page">
-<header class="assessment-header"><div><span class="assessment-context">@A["AssessmentBuilder"]</span><h1>@assessment.Title</h1><p>@A["Questions"]: @Model.Questions.Count · @A["CurrentMarks"]: @Model.CurrentMarks.ToString("0.##") / @assessment.MaxScore.ToString("0.##") @if(Model.ClassMasteryPercentage.HasValue){<span> · @A["ClassMastery"]: @Model.ClassMasteryPercentage.Value.ToString("0.#")%</span>}</p></div><div class="assessment-actions"><a class="school-button" asp-controller="Assessments" asp-action="Details" asp-route-id="@assessment.Id">@A["Assessment"]</a></div></header>
-@if(TempData["Success"] is string success){<div class="school-alert school-alert-success" role="status">@success</div>}
-@if(TempData["Error"] is string error){<div class="school-alert school-alert-error" role="alert">@error</div>}
-<div class="assessment-info">@A[Model.ReadinessMessage]</div>
-@if(assessment.Status == AssessmentStatus.Draft){
-<section class="assessment-card"><h2>@A["AddQuestionManually"]</h2><form asp-action="CreateManual" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form">@Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion"/><label>@A["QuestionPrompt"]</label><textarea name="prompt" maxlength="1000" rows="3" required></textarea><label>@A["CorrectAnswer"]</label><input name="correctAnswer" maxlength="1000" required/><label>@A["Solution"]</label><textarea name="solution" maxlength="4000" rows="3" required></textarea><label>@A["QuestionMaxScore"]</label><input name="maxScore" type="number" min="0.01" max="10000" step="0.01" required/><label>@A["Order"]</label><input name="order" type="number" min="1" value="@(Model.Questions.Count+1)" required/><label>@A["Difficulty"]</label><select name="difficulty"><option value="@AssessmentItemDifficulty.Easy">@A["DifficultyEasy"]</option><option value="@AssessmentItemDifficulty.Medium" selected>@A["DifficultyMedium"]</option><option value="@AssessmentItemDifficulty.Challenging">@A["DifficultyChallenging"]</option></select><fieldset><legend>@A["LearningOutcomes"]</legend>@foreach(var outcome in Model.Details.EligibleOutcomes){<label><input type="checkbox" name="outcomeIds" value="@outcome.Id"/> <strong>@outcome.Code</strong> — @outcome.Description</label>}</fieldset><button class="school-button school-button-primary" type="submit">@A["AddQuestionManually"]</button></form></section>
-<section class="assessment-card"><h2>@A["GenerateQuestionsWithAI"]</h2><p>@A["NativeGenerationNotice"]</p>@if(Model.CanGenerateNatively){<form asp-action="Generate" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form">@Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion"/><label>@A["PlannedQuestionCount"]</label><input name="questionCount" type="number" min="1" max="100" value="5" required/><label>@A["QuestionMaxScore"]</label><input name="maxScorePerQuestion" type="number" min="0.01" step="0.01" value="1" required/><label>@A["AssessmentDifficulty"]</label><select name="difficulty"><option value="@AssessmentBuilderDifficulty.AtClassLevel">@A["AtClassLevel"]</option><option value="@AssessmentBuilderDifficulty.Stretch">@A["Stretch"]</option><option value="@AssessmentBuilderDifficulty.Challenge">@A["Challenge"]</option></select><input type="hidden" name="seed" value="0"/><fieldset><legend>@A["LearningOutcomes"]</legend>@foreach(var outcome in Model.Details.EligibleOutcomes){<label><input type="checkbox" name="outcomeIds" value="@outcome.Id"/> <strong>@outcome.Code</strong> — @outcome.Description</label>}</fieldset><button class="school-button school-button-primary" type="submit">@A["GenerateQuestionsWithAI"]</button></form>}else{<div class="assessment-empty">@A["NativeGenerationUnavailable"]</div>}</section>}
-<section class="assessment-question-list"><h2>@A["Questions"]</h2>@if(Model.Questions.Count==0){<div class="assessment-empty">@A["NoQuestions"]</div>}@foreach(var question in Model.Questions){<article class="assessment-question-card"><header><div><h3>@question.Order. @question.Prompt</h3><p>@A["QuestionMaxScore"]: @question.MaxScore.ToString("0.##") · @A["Source"]: @(question.Source?.ToString() ?? A["Legacy"].Value) · @A["Difficulty"]: @(question.Difficulty?.ToString() ?? A["Legacy"].Value) · @A["Status"]: @A[$"BuilderStatus{question.Status}"]</p></div></header>@if(!string.IsNullOrWhiteSpace(question.CorrectAnswer)){<p><strong>@A["CorrectAnswer"]:</strong> @question.CorrectAnswer</p><p><strong>@A["Solution"]:</strong> @question.Solution</p>}<div class="assessment-mapping-tags">@foreach(var outcomeId in question.OutcomeIds){var outcome=Model.Details.EligibleOutcomes.FirstOrDefault(x=>x.Id==outcomeId);if(outcome is not null){<span class="assessment-mapping-tag"><strong>@outcome.Code</strong> — @outcome.Description</span>}}</div>@if(assessment.Status==AssessmentStatus.Draft && question.Status!=AssessmentBuilderQuestionStatus.Legacy){<details><summary>@A["EditQuestion"]</summary><form asp-action="Edit" asp-route-assessmentId="@assessment.Id" asp-route-questionId="@question.Id" method="post" class="assessment-form">@Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion"/><label>@A["QuestionPrompt"]</label><textarea name="prompt" maxlength="1000" rows="3" required>@question.Prompt</textarea><label>@A["CorrectAnswer"]</label><input name="correctAnswer" maxlength="1000" value="@question.CorrectAnswer" required/><label>@A["Solution"]</label><textarea name="solution" maxlength="4000" rows="3" required>@question.Solution</textarea><label>@A["QuestionMaxScore"]</label><input name="maxScore" type="number" min="0.01" step="0.01" value="@question.MaxScore" required/><label>@A["Difficulty"]</label><select name="difficulty"><option value="@AssessmentItemDifficulty.Easy">@A["DifficultyEasy"]</option><option value="@AssessmentItemDifficulty.Medium">@A["DifficultyMedium"]</option><option value="@AssessmentItemDifficulty.Challenging">@A["DifficultyChallenging"]</option></select><button class="school-button" type="submit">@A["EditQuestion"]</button></form></details><div class="assessment-actions">@if(question.Status!=AssessmentBuilderQuestionStatus.Approved){<form asp-action="Approve" asp-route-assessmentId="@assessment.Id" asp-route-questionId="@question.Id" method="post">@Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion"/><button class="school-button school-button-primary" type="submit">@A["ApproveQuestion"]</button></form>}@if(question.Source==AssessmentItemSource.SystemGenerated){<form asp-action="Regenerate" asp-route-assessmentId="@assessment.Id" asp-route-questionId="@question.Id" method="post">@Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion"/><input type="hidden" name="seed" value="@(question.Order+1)"/><button class="school-button" type="submit">@A["RegenerateQuestion"]</button></form>}<form asp-action="Delete" asp-route-assessmentId="@assessment.Id" asp-route-questionId="@question.Id" method="post">@Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion"/><button class="school-button" type="submit">@A["DeleteQuestion"]</button></form></div>}</article>}</section>
-@if(assessment.Status==AssessmentStatus.Draft){<section class="assessment-lifecycle">@if(Model.ReadyToPublish){<form asp-action="Publish" asp-route-assessmentId="@assessment.Id" method="post">@Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion"/><button class="school-button school-button-primary" type="submit">@A["PublishAssessment"]</button></form>}else{<button class="school-button" type="button" disabled>@A["PublishAssessment"]</button>}</section>}
+    <header class="assessment-header">
+        <div>
+            <span class="assessment-context">@A["AssessmentBuilder"]</span>
+            <h1>@assessment.Title</h1>
+            <p>
+                @A["Questions"]: @Model.Questions.Count ·
+                @A["CurrentMarks"]: @Model.CurrentMarks.ToString("0.##") / @assessment.MaxScore.ToString("0.##")
+                @if (Model.ClassMasteryPercentage.HasValue)
+                {
+                    <span> · @A["ClassMastery"]: @Model.ClassMasteryPercentage.Value.ToString("0.#")%</span>
+                }
+            </p>
+        </div>
+        <div class="assessment-actions">
+            <a class="school-button" asp-controller="Assessments" asp-action="Details" asp-route-id="@assessment.Id">@A["Assessment"]</a>
+        </div>
+    </header>
+
+    @if (TempData["Success"] is string success)
+    {
+        <div class="school-alert school-alert-success" role="status">@success</div>
+    }
+    @if (TempData["Error"] is string error)
+    {
+        <div class="school-alert school-alert-error" role="alert">@error</div>
+    }
+
+    <div class="assessment-info">@A[Model.ReadinessMessage]</div>
+
+    @if (assessment.Status == AssessmentStatus.Draft)
+    {
+        <section class="assessment-card">
+            <h2>@A["DeliverySettings"]</h2>
+            <p>@A["DeliverySettingsHelp"]</p>
+            <form asp-action="UpdateDeliverySettings" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="rowVersion" value="@rowVersion" />
+
+                <label>@A["AssessmentTarget"]</label>
+                <select name="targetType">
+                    <option value="@AssessmentTargetType.Class" selected="@(assessment.TargetType == AssessmentTargetType.Class)">@A["TargetClass"]</option>
+                    <option value="@AssessmentTargetType.Student" selected="@(assessment.TargetType == AssessmentTargetType.Student)">@A["TargetIndividualStudent"]</option>
+                </select>
+
+                <label>@A["TargetStudent"]</label>
+                <select name="targetStudentProfileId">
+                    <option value="">@A["SelectStudentWhenIndividual"]</option>
+                    @foreach (var student in targetStudents)
+                    {
+                        <option value="@student.Id" selected="@(assessment.TargetStudentProfileId == student.Id)">@student.DisplayName (@student.StudentNumber)</option>
+                    }
+                </select>
+
+                <label>@A["DeliveryMode"]</label>
+                <select name="deliveryMode">
+                    <option value="@AssessmentDeliveryMode.Online" selected="@(assessment.DeliveryMode == AssessmentDeliveryMode.Online)">@A["DeliveryOnline"]</option>
+                    <option value="@AssessmentDeliveryMode.Offline" selected="@(assessment.DeliveryMode == AssessmentDeliveryMode.Offline)">@A["DeliveryOffline"]</option>
+                </select>
+
+                <label>@A["AssessmentDifficulty"]</label>
+                <select name="difficultyBand">
+                    <option value="@AssessmentDifficultyBand.AtClassLevel" selected="@(assessment.DifficultyBand == AssessmentDifficultyBand.AtClassLevel)">@A["AtClassLevel"]</option>
+                    <option value="@AssessmentDifficultyBand.Stretch" selected="@(assessment.DifficultyBand == AssessmentDifficultyBand.Stretch)">@A["Stretch"]</option>
+                    <option value="@AssessmentDifficultyBand.Challenge" selected="@(assessment.DifficultyBand == AssessmentDifficultyBand.Challenge)">@A["Challenge"]</option>
+                </select>
+
+                <button class="school-button school-button-primary" type="submit">@A["SaveDeliverySettings"]</button>
+            </form>
+        </section>
+
+        <section class="assessment-card">
+            <h2>@A["AddQuestionManually"]</h2>
+            <form asp-action="CreateManual" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="rowVersion" value="@rowVersion" />
+                <label>@A["QuestionPrompt"]</label>
+                <textarea name="prompt" maxlength="1000" rows="3" required></textarea>
+                <label>@A["CorrectAnswer"]</label>
+                <input name="correctAnswer" maxlength="1000" required />
+                <label>@A["Solution"]</label>
+                <textarea name="solution" maxlength="4000" rows="3" required></textarea>
+                <label>@A["QuestionMaxScore"]</label>
+                <input name="maxScore" type="number" min="0.01" max="10000" step="0.01" required />
+                <label>@A["Order"]</label>
+                <input name="order" type="number" min="1" value="@(Model.Questions.Count + 1)" required />
+                <label>@A["Difficulty"]</label>
+                <select name="difficulty">
+                    <option value="@AssessmentItemDifficulty.Easy">@A["DifficultyEasy"]</option>
+                    <option value="@AssessmentItemDifficulty.Medium" selected>@A["DifficultyMedium"]</option>
+                    <option value="@AssessmentItemDifficulty.Challenging">@A["DifficultyChallenging"]</option>
+                </select>
+                <fieldset>
+                    <legend>@A["LearningOutcomes"]</legend>
+                    @foreach (var outcome in Model.Details.EligibleOutcomes)
+                    {
+                        <label><input type="checkbox" name="outcomeIds" value="@outcome.Id" /> <strong>@outcome.Code</strong> — @outcome.Description</label>
+                    }
+                </fieldset>
+                <button class="school-button school-button-primary" type="submit">@A["AddQuestionManually"]</button>
+            </form>
+        </section>
+
+        <section class="assessment-card">
+            <h2>@A["GenerateQuestionsWithAI"]</h2>
+            <p>@A["NativeGenerationNotice"]</p>
+            @if (Model.CanGenerateNatively)
+            {
+                <form asp-action="Generate" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="rowVersion" value="@rowVersion" />
+                    <label>@A["PlannedQuestionCount"]</label>
+                    <input name="questionCount" type="number" min="1" max="100" value="5" required />
+                    <label>@A["QuestionMaxScore"]</label>
+                    <input name="maxScorePerQuestion" type="number" min="0.01" step="0.01" value="1" required />
+                    <label>@A["AssessmentDifficulty"]</label>
+                    <select name="difficulty">
+                        <option value="@AssessmentBuilderDifficulty.AtClassLevel">@A["AtClassLevel"]</option>
+                        <option value="@AssessmentBuilderDifficulty.Stretch">@A["Stretch"]</option>
+                        <option value="@AssessmentBuilderDifficulty.Challenge">@A["Challenge"]</option>
+                    </select>
+                    <input type="hidden" name="seed" value="0" />
+                    <fieldset>
+                        <legend>@A["LearningOutcomes"]</legend>
+                        @foreach (var outcome in Model.Details.EligibleOutcomes)
+                        {
+                            <label><input type="checkbox" name="outcomeIds" value="@outcome.Id" /> <strong>@outcome.Code</strong> — @outcome.Description</label>
+                        }
+                    </fieldset>
+                    <button class="school-button school-button-primary" type="submit">@A["GenerateQuestionsWithAI"]</button>
+                </form>
+            }
+            else
+            {
+                <div class="assessment-empty">@A["NativeGenerationUnavailable"]</div>
+            }
+        </section>
+    }
+
+    <section class="assessment-question-list">
+        <h2>@A["Questions"]</h2>
+        @if (Model.Questions.Count == 0)
+        {
+            <div class="assessment-empty">@A["NoQuestions"]</div>
+        }
+        @foreach (var question in Model.Questions)
+        {
+            <article class="assessment-question-card">
+                <header>
+                    <div>
+                        <h3>@question.Order. @question.Prompt</h3>
+                        <p>@A["QuestionMaxScore"]: @question.MaxScore.ToString("0.##") · @A["Source"]: @(question.Source?.ToString() ?? A["Legacy"].Value) · @A["Difficulty"]: @(question.Difficulty?.ToString() ?? A["Legacy"].Value) · @A["Status"]: @A[$"BuilderStatus{question.Status}"]</p>
+                    </div>
+                </header>
+                @if (!string.IsNullOrWhiteSpace(question.CorrectAnswer))
+                {
+                    <p><strong>@A["CorrectAnswer"]:</strong> @question.CorrectAnswer</p>
+                    <p><strong>@A["Solution"]:</strong> @question.Solution</p>
+                }
+                <div class="assessment-mapping-tags">
+                    @foreach (var outcomeId in question.OutcomeIds)
+                    {
+                        var outcome = Model.Details.EligibleOutcomes.FirstOrDefault(x => x.Id == outcomeId);
+                        if (outcome is not null)
+                        {
+                            <span class="assessment-mapping-tag"><strong>@outcome.Code</strong> — @outcome.Description</span>
+                        }
+                    }
+                </div>
+                @if (assessment.Status == AssessmentStatus.Draft && question.Status != AssessmentBuilderQuestionStatus.Legacy)
+                {
+                    <details>
+                        <summary>@A["EditQuestion"]</summary>
+                        <form asp-action="Edit" asp-route-assessmentId="@assessment.Id" asp-route-questionId="@question.Id" method="post" class="assessment-form">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="rowVersion" value="@rowVersion" />
+                            <label>@A["QuestionPrompt"]</label>
+                            <textarea name="prompt" maxlength="1000" rows="3" required>@question.Prompt</textarea>
+                            <label>@A["CorrectAnswer"]</label>
+                            <input name="correctAnswer" maxlength="1000" value="@question.CorrectAnswer" required />
+                            <label>@A["Solution"]</label>
+                            <textarea name="solution" maxlength="4000" rows="3" required>@question.Solution</textarea>
+                            <label>@A["QuestionMaxScore"]</label>
+                            <input name="maxScore" type="number" min="0.01" step="0.01" value="@question.MaxScore" required />
+                            <label>@A["Difficulty"]</label>
+                            <select name="difficulty">
+                                <option value="@AssessmentItemDifficulty.Easy">@A["DifficultyEasy"]</option>
+                                <option value="@AssessmentItemDifficulty.Medium">@A["DifficultyMedium"]</option>
+                                <option value="@AssessmentItemDifficulty.Challenging">@A["DifficultyChallenging"]</option>
+                            </select>
+                            <button class="school-button" type="submit">@A["EditQuestion"]</button>
+                        </form>
+                    </details>
+                    <div class="assessment-actions">
+                        @if (question.Status != AssessmentBuilderQuestionStatus.Approved)
+                        {
+                            <form asp-action="Approve" asp-route-assessmentId="@assessment.Id" asp-route-questionId="@question.Id" method="post">
+                                @Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion" />
+                                <button class="school-button school-button-primary" type="submit">@A["ApproveQuestion"]</button>
+                            </form>
+                        }
+                        @if (question.Source == AssessmentItemSource.SystemGenerated)
+                        {
+                            <form asp-action="Regenerate" asp-route-assessmentId="@assessment.Id" asp-route-questionId="@question.Id" method="post">
+                                @Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion" /><input type="hidden" name="seed" value="@(question.Order + 1)" />
+                                <button class="school-button" type="submit">@A["RegenerateQuestion"]</button>
+                            </form>
+                        }
+                        <form asp-action="Delete" asp-route-assessmentId="@assessment.Id" asp-route-questionId="@question.Id" method="post">
+                            @Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion" />
+                            <button class="school-button" type="submit">@A["DeleteQuestion"]</button>
+                        </form>
+                    </div>
+                }
+            </article>
+        }
+    </section>
+
+    @if (assessment.Status == AssessmentStatus.Draft)
+    {
+        <section class="assessment-lifecycle">
+            @if (Model.ReadyToPublish)
+            {
+                <form asp-action="Publish" asp-route-assessmentId="@assessment.Id" method="post">
+                    @Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion" />
+                    <button class="school-button school-button-primary" type="submit">@A["PublishAssessment"]</button>
+                </form>
+            }
+            else
+            {
+                <button class="school-button" type="button" disabled>@A["PublishAssessment"]</button>
+            }
+        </section>
+    }
 </section>

@@ -17,6 +17,9 @@ public sealed class AssessmentConfiguration : IEntityTypeConfiguration<Assessmen
         builder.Property(x => x.AssessmentDate).HasColumnType("date");
         builder.Property(x => x.MaxScore).HasPrecision(10, 2).IsRequired();
         builder.Property(x => x.Status).HasConversion<int>();
+        builder.Property(x => x.TargetType).HasConversion<int>().IsRequired();
+        builder.Property(x => x.DeliveryMode).HasConversion<int>().IsRequired();
+        builder.Property(x => x.DifficultyBand).HasConversion<int>().IsRequired();
         builder.Property(x => x.CreatedAtUtc).IsRequired();
         builder.Property(x => x.UpdatedAtUtc).IsRequired();
         builder.Property(x => x.RowVersion).IsRequired()
@@ -30,6 +33,12 @@ public sealed class AssessmentConfiguration : IEntityTypeConfiguration<Assessmen
             x.TermId,
             x.Title
         }).IsUnique();
+
+        builder.HasIndex(x => new
+        {
+            x.SchoolId,
+            x.TargetStudentProfileId
+        });
 
         builder.HasOne<School>()
             .WithMany()
