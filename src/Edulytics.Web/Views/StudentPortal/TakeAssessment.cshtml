@@ -1,0 +1,28 @@
+@model Edulytics.Services.Assessments.StudentAssessmentAttempt
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = Model.Title;
+}
+<header class="student-page-header">
+    <span class="student-eyebrow">@S["OnlineAssessment"]</span>
+    <h1>@Model.Title</h1>
+    <p>@S["AssessmentDifficulty"]: @S[$"AssessmentDifficulty{Model.DifficultyBand}"] · @S["MaxScore"]: @Model.MaxScore.ToString("0.##")</p>
+</header>
+<form asp-action="SubmitAssessment" asp-route-id="@Model.AssessmentId" method="post" class="student-card-list">
+    @Html.AntiForgeryToken()
+    @foreach (var question in Model.Questions)
+    {
+        <article class="student-assessment-card">
+            <div>
+                <span class="student-subject-code">@S["Question"] @question.Order</span>
+                <h2>@question.Prompt</h2>
+                <p>@S["MaxScore"]: @question.MaxScore.ToString("0.##")</p>
+            </div>
+            <input type="hidden" name="questionIds" value="@question.Id" />
+            <label for="answer-@question.Id">@S["YourAnswer"]</label>
+            <textarea id="answer-@question.Id" name="responses" maxlength="4000" rows="4"></textarea>
+        </article>
+    }
+    <button class="student-button student-button-primary" type="submit">@S["SubmitAssessment"]</button>
+</form>

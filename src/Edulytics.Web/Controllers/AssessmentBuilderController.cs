@@ -16,6 +16,7 @@ namespace Edulytics.Web.Controllers;
 [Route("school/assessments/{assessmentId:guid}/builder")]
 public sealed class AssessmentBuilderController(
     IAssessmentBuilderService service,
+    IAssessmentDeliverySettingsService deliverySettings,
     IStringLocalizer<AssessmentBuilderResource> text) : Controller
 {
     [HttpGet("")]
@@ -23,7 +24,42 @@ public sealed class AssessmentBuilderController(
     {
         if (!TryActor(out var actorId)) return Forbid();
         var result = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
-        return result.Value is null ? Handle(result.Error) : View(result.Value);
+        if (result.Value is null) return Handle(result.Error);
+
+        var delivery = await deliverySettings.GetAsync(actorId, assessmentId, cancellationToken);
+        if (delivery.Value is null) return Handle(delivery.Error);
+
+        return View(result.Value with { TargetStudents = delivery.Value.TargetStudents });
+    }
+
+    [HttpPost("settings"), ValidateAntiForgeryToken]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public async Task<IActionResult> UpdateDeliverySettings(
+        Guid assessmentId,
+        AssessmentTargetType targetType,
+        Guid? targetStudentProfileId,
+        AssessmentDeliveryMode deliveryMode,
+        AssessmentDifficultyBand difficultyBand,
+        string rowVersion,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+        if (!TryDecode(rowVersion, out var version)) return ConcurrencyRedirect(assessmentId);
+
+        var result = await deliverySettings.UpdateAsync(
+            actorId,
+            new UpdateAssessmentDeliverySettingsRequest(
+                assessmentId,
+                targetType,
+                targetStudentProfileId,
+                deliveryMode,
+                difficultyBand,
+                version),
+            cancellationToken);
+
+        Feedback(result, "DeliverySettingsSaved");
+        return RedirectToAction(nameof(Index), new { assessmentId });
     }
 
     [HttpPost("manual"), ValidateAntiForgeryToken]

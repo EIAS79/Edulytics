@@ -193,7 +193,9 @@ public sealed class StudentPortalService : IStudentPortalService
         var openAssessments = snapshot.Assessments
             .Where(x =>
                 x.Status == AssessmentStatus.Open &&
-                enrollmentKeys.Contains((x.ClassGroupId, x.AcademicYearId)))
+                enrollmentKeys.Contains((x.ClassGroupId, x.AcademicYearId)) &&
+                (x.TargetType == AssessmentTargetType.Class ||
+                 x.TargetStudentProfileId == snapshot.Profile.Id))
             .OrderBy(x => x.AssessmentDate)
             .ThenBy(x => x.Title)
             .Select(x =>
@@ -207,7 +209,13 @@ public sealed class StudentPortalService : IStudentPortalService
                     subject?.Name ?? string.Empty,
                     classGroup?.Name ?? string.Empty,
                     x.AssessmentDate,
-                    x.MaxScore);
+                    x.MaxScore,
+                    x.DeliveryMode,
+                    x.DifficultyBand,
+                    x.TargetType,
+                    snapshot.Results.Any(result =>
+                        result.AssessmentId == x.Id &&
+                        result.StudentProfileId == snapshot.Profile.Id));
             })
             .ToArray();
 

@@ -1,0 +1,19 @@
+@model Edulytics.Services.Assessments.StudentAssessmentSubmission
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = S["AssessmentSubmittedTitle"].Value;
+}
+<header class="student-page-header">
+    <span class="student-eyebrow">@S["Assessments"]</span>
+    <h1>@S["AssessmentSubmittedTitle"]</h1>
+    <p>@S["AssessmentSubmittedSubtitle"]</p>
+</header>
+<section class="student-assessment-card">
+    <h2>@Model.Title</h2>
+    <dl>
+        <div><dt>@S["AssessmentScore"]</dt><dd>@Model.Score.ToString("0.##") / @Model.MaxScore.ToString("0.##")</dd></div>
+        <div><dt>@S["Percentage"]</dt><dd>@Model.Percentage.ToString("0.##")%</dd></div>
+    </dl>
+    <a class="student-button student-button-primary" asp-action="Results">@S["ViewResults"]</a>
+</section>

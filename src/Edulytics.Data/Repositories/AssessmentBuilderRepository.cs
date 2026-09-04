@@ -118,7 +118,7 @@ public sealed class AssessmentBuilderRepository(EdulyticsDbContext db) : IAssess
                 x.SchoolId == schoolId &&
                 studentIds.Contains(x.Id) &&
                 !x.IsArchived &&
-                x.Status == Core.Enums.AcademicStructureStatus.Active)
+                x.Status == Edulytics.Core.Enums.AcademicStructureStatus.Active)
             .OrderBy(x => x.DisplayName)
             .ThenBy(x => x.StudentNumber)
             .ToListAsync(cancellationToken);

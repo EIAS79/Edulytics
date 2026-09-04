@@ -161,6 +161,14 @@ public sealed partial class AssessmentService : IAssessmentService
             .Select(x => x.StudentProfileId)
             .ToHashSet();
 
+        if (assessment.TargetType == AssessmentTargetType.Student)
+        {
+            if (assessment.TargetStudentProfileId.HasValue)
+                studentIds.RemoveWhere(x => x != assessment.TargetStudentProfileId.Value);
+            else
+                studentIds.Clear();
+        }
+
         var students = snapshot.StudentProfiles
             .Where(x => studentIds.Contains(x.Id) &&
                         x.Status == AcademicStructureStatus.Active)

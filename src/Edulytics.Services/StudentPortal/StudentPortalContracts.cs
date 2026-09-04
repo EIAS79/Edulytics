@@ -1,3 +1,5 @@
+using Edulytics.Core.Enums;
+
 namespace Edulytics.Services.StudentPortal;
 
 public enum StudentPortalErrorCode
@@ -56,7 +58,11 @@ public sealed record StudentAssessmentItem(
     string SubjectName,
     string ClassName,
     DateOnly AssessmentDate,
-    decimal MaxScore);
+    decimal MaxScore,
+    AssessmentDeliveryMode DeliveryMode = AssessmentDeliveryMode.Offline,
+    AssessmentDifficultyBand DifficultyBand = AssessmentDifficultyBand.AtClassLevel,
+    AssessmentTargetType TargetType = AssessmentTargetType.Class,
+    bool IsSubmitted = false);
 
 public sealed record StudentResultItem(
     Guid AssessmentId,

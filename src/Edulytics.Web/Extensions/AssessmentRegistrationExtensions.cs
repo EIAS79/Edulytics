@@ -14,6 +14,8 @@ public static class AssessmentRegistrationExtensions
         services.AddScoped<IAssessmentService, AssessmentService>();
         services.AddScoped<IAssessmentBuilderRepository, AssessmentBuilderRepository>();
         services.AddScoped<IAssessmentBuilderService, AssessmentBuilderService>();
+        services.AddScoped<IAssessmentDeliverySettingsService, AssessmentDeliverySettingsService>();
+        services.AddScoped<IStudentAssessmentDeliveryService, StudentAssessmentDeliveryService>();
 
         services.AddAuthorization(options =>
         {

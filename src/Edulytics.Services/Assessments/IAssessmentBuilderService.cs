@@ -72,7 +72,6 @@ public sealed record GenerateBuilderQuestionsRequest(
 public interface IAssessmentBuilderService
 {
     Task<AssessmentQueryResult<AssessmentBuilderWorkspace>> GetWorkspaceAsync(Guid actorUserId, Guid assessmentId, CancellationToken cancellationToken = default);
-    Task<AssessmentCommandResult> UpdateDeliverySettingsAsync(Guid actorUserId, UpdateAssessmentDeliverySettingsRequest request, CancellationToken cancellationToken = default);
     Task<AssessmentCommandResult> CreateManualQuestionAsync(Guid actorUserId, CreateManualBuilderQuestionRequest request, CancellationToken cancellationToken = default);
     Task<AssessmentCommandResult> EditQuestionAsync(Guid actorUserId, EditBuilderQuestionRequest request, CancellationToken cancellationToken = default);
     Task<AssessmentCommandResult> GenerateQuestionsAsync(Guid actorUserId, GenerateBuilderQuestionsRequest request, CancellationToken cancellationToken = default);
