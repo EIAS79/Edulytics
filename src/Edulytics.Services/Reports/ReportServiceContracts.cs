@@ -105,7 +105,12 @@ public static class ReportRequestPolicy
 
     public static bool UsesAcademicYear(
         ReportKind kind) =>
-        true;
+        kind is
+            ReportKind.School or
+            ReportKind.Class or
+            ReportKind.Subject or
+            ReportKind.Student or
+            ReportKind.LearningOutcome;
 
     public static bool UsesClass(
         ReportKind kind) =>
@@ -126,6 +131,20 @@ public static class ReportRequestPolicy
     public static bool UsesLearningOutcome(
         ReportKind kind) =>
         kind == ReportKind.LearningOutcome;
+
+    public static bool RequiresAcademicYear(
+        ReportKind kind) =>
+        kind is
+            ReportKind.Class or
+            ReportKind.Student or
+            ReportKind.LearningOutcome;
+
+    public static bool RequiresClass(
+        ReportKind kind) =>
+        kind is
+            ReportKind.Class or
+            ReportKind.Student or
+            ReportKind.LearningOutcome;
 }
 
 public sealed record ReportFilterItem(
@@ -175,7 +194,8 @@ public sealed record ReportCell(
         decimal value) =>
         new(
             ReportCellKind.Percentage,
-            NumberValue: value);
+            NumberValue: value)
+                ;
 
     public static ReportCell DateTime(
         System.DateTime value) =>
