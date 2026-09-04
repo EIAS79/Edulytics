@@ -51,7 +51,8 @@
     <form method="get"
           asp-controller="Reports"
           asp-action="Index"
-          class="analytics-filter-card report-no-print">
+          class="analytics-filter-card report-no-print"
+          data-report-filter-form>
 
         <h2>@R["ReportFilters"]</h2>
 
@@ -62,7 +63,8 @@
                 </label>
 
                 <select id="kind"
-                        name="kind">
+                        name="kind"
+                        data-report-kind-filter>
                     @foreach (var item in Model.Catalog.AllowedKinds)
                     {
                         <option value="@item"
@@ -73,110 +75,129 @@
                 </select>
             </div>
 
-            <div>
-                <label for="academicYearId">
-                    @R["AcademicYear"]
-                </label>
+            @if (ReportIndexViewModel.ShowAcademicYear(Model.Request.Kind))
+            {
+                <div>
+                    <label for="academicYearId">
+                        @R["AcademicYear"]
+                    </label>
 
-                <select id="academicYearId"
-                        name="academicYearId">
-                    <option value="">
-                        @R["All"]
-                    </option>
-
-                    @foreach (var item in Model.Catalog.AcademicYears)
-                    {
-                        <option value="@item.Id"
-                                selected="@(Model.Request.AcademicYearId == item.Id ? "selected" : null)">
-                            @item.Name
+                    <select id="academicYearId"
+                            name="academicYearId">
+                        <option value="">
+                            @(ReportIndexViewModel.RequireAcademicYear(Model.Request.Kind)
+                                ? R["Select"]
+                                : R["All"])
                         </option>
-                    }
-                </select>
-            </div>
 
-            <div>
-                <label for="classGroupId">
-                    @R["Class"]
-                </label>
+                        @foreach (var item in Model.Catalog.AcademicYears)
+                        {
+                            <option value="@item.Id"
+                                    selected="@(Model.Request.AcademicYearId == item.Id ? "selected" : null)">
+                                @item.Name
+                            </option>
+                        }
+                    </select>
+                </div>
+            }
 
-                <select id="classGroupId"
-                        name="classGroupId">
-                    <option value="">
-                        @R["Select"]
-                    </option>
+            @if (ReportIndexViewModel.ShowClass(Model.Request.Kind))
+            {
+                <div>
+                    <label for="classGroupId">
+                        @R["Class"]
+                    </label>
 
-                    @foreach (var item in Model.Catalog.ClassGroups)
-                    {
-                        <option value="@item.Id"
-                                selected="@(Model.Request.ClassGroupId == item.Id ? "selected" : null)">
-                            @item.Name
+                    <select id="classGroupId"
+                            name="classGroupId">
+                        <option value="">
+                            @(ReportIndexViewModel.RequireClass(Model.Request.Kind)
+                                ? R["Select"]
+                                : R["All"])
                         </option>
-                    }
-                </select>
-            </div>
 
-            <div>
-                <label for="subjectId">
-                    @R["Subject"]
-                </label>
+                        @foreach (var item in Model.Catalog.ClassGroups)
+                        {
+                            <option value="@item.Id"
+                                    selected="@(Model.Request.ClassGroupId == item.Id ? "selected" : null)">
+                                @item.Name
+                            </option>
+                        }
+                    </select>
+                </div>
+            }
 
-                <select id="subjectId"
-                        name="subjectId">
-                    <option value="">
-                        @R["Select"]
-                    </option>
+            @if (ReportIndexViewModel.ShowSubject(Model.Request.Kind))
+            {
+                <div>
+                    <label for="subjectId">
+                        @R["Subject"]
+                    </label>
 
-                    @foreach (var item in Model.Catalog.Subjects)
-                    {
-                        <option value="@item.Id"
-                                selected="@(Model.Request.SubjectId == item.Id ? "selected" : null)">
-                            @item.Name
+                    <select id="subjectId"
+                            name="subjectId">
+                        <option value="">
+                            @R["Select"]
                         </option>
-                    }
-                </select>
-            </div>
 
-            <div>
-                <label for="studentProfileId">
-                    @R["Student"]
-                </label>
+                        @foreach (var item in Model.Catalog.Subjects)
+                        {
+                            <option value="@item.Id"
+                                    selected="@(Model.Request.SubjectId == item.Id ? "selected" : null)">
+                                @item.Name
+                            </option>
+                        }
+                    </select>
+                </div>
+            }
 
-                <select id="studentProfileId"
-                        name="studentProfileId">
-                    <option value="">
-                        @R["Select"]
-                    </option>
+            @if (ReportIndexViewModel.ShowStudent(Model.Request.Kind))
+            {
+                <div>
+                    <label for="studentProfileId">
+                        @R["Student"]
+                    </label>
 
-                    @foreach (var item in Model.Catalog.Students)
-                    {
-                        <option value="@item.Id"
-                                selected="@(Model.Request.StudentProfileId == item.Id ? "selected" : null)">
-                            @item.Name
+                    <select id="studentProfileId"
+                            name="studentProfileId">
+                        <option value="">
+                            @R["Select"]
                         </option>
-                    }
-                </select>
-            </div>
 
-            <div>
-                <label for="learningOutcomeId">
-                    @R["LearningOutcome"]
-                </label>
+                        @foreach (var item in Model.Catalog.Students)
+                        {
+                            <option value="@item.Id"
+                                    selected="@(Model.Request.StudentProfileId == item.Id ? "selected" : null)">
+                                @item.Name
+                            </option>
+                        }
+                    </select>
+                </div>
+            }
 
-                <select id="learningOutcomeId"
-                        name="learningOutcomeId">
-                    <option value="">
-                        @R["Select"]
-                    </option>
+            @if (ReportIndexViewModel.ShowLearningOutcome(Model.Request.Kind))
+            {
+                <div>
+                    <label for="learningOutcomeId">
+                        @R["LearningOutcome"]
+                    </label>
 
-                    @foreach (var item in Model.Catalog.LearningOutcomes)
-                    {
-                        <option value="@item.Id"
-                                selected="@(Model.Request.LearningOutcomeId == item.Id ? "selected" : null)">
-                            @item.Name
+                    <select id="learningOutcomeId"
+                            name="learningOutcomeId">
+                        <option value="">
+                            @R["Select"]
                         </option>
-                    }
-                </select>
-            </div>
+
+                        @foreach (var item in Model.Catalog.LearningOutcomes)
+                        {
+                            <option value="@item.Id"
+                                    selected="@(Model.Request.LearningOutcomeId == item.Id ? "selected" : null)">
+                                @item.Name
+                            </option>
+                        }
+                    </select>
+                </div>
+            }
 
             <button type="submit"
                     class="school-button school-button-primary">
@@ -216,95 +237,95 @@
                     @if (canRequestReportExport)
                     {
                         <form asp-controller="Reports"
-                                                  asp-action="RequestExport"
-                                                  method="post"
-                                                  class="report-inline-form">
-                                                @Html.AntiForgeryToken()
+                              asp-action="RequestExport"
+                              method="post"
+                              class="report-inline-form">
+                            @Html.AntiForgeryToken()
 
-                                                <input type="hidden"
-                                                       name="_idempotencyKey"
-                                                       value="@Model.CsvIdempotencyKey" />
+                            <input type="hidden"
+                                   name="_idempotencyKey"
+                                   value="@Model.CsvIdempotencyKey" />
 
-                                                <input type="hidden"
-                                                       name="kind"
-                                                       value="@Model.Request.Kind" />
+                            <input type="hidden"
+                                   name="kind"
+                                   value="@Model.Request.Kind" />
 
-                                                <input type="hidden"
-                                                       name="format"
-                                                       value="@ReportExportFormat.Csv" />
+                            <input type="hidden"
+                                   name="format"
+                                   value="@ReportExportFormat.Csv" />
 
-                                                <input type="hidden"
-                                                       name="academicYearId"
-                                                       value="@Model.Request.AcademicYearId" />
+                            <input type="hidden"
+                                   name="academicYearId"
+                                   value="@Model.Request.AcademicYearId" />
 
-                                                <input type="hidden"
-                                                       name="classGroupId"
-                                                       value="@Model.Request.ClassGroupId" />
+                            <input type="hidden"
+                                   name="classGroupId"
+                                   value="@Model.Request.ClassGroupId" />
 
-                                                <input type="hidden"
-                                                       name="subjectId"
-                                                       value="@Model.Request.SubjectId" />
+                            <input type="hidden"
+                                   name="subjectId"
+                                   value="@Model.Request.SubjectId" />
 
-                                                <input type="hidden"
-                                                       name="studentProfileId"
-                                                       value="@Model.Request.StudentProfileId" />
+                            <input type="hidden"
+                                   name="studentProfileId"
+                                   value="@Model.Request.StudentProfileId" />
 
-                                                <input type="hidden"
-                                                       name="learningOutcomeId"
-                                                       value="@Model.Request.LearningOutcomeId" />
+                            <input type="hidden"
+                                   name="learningOutcomeId"
+                                   value="@Model.Request.LearningOutcomeId" />
 
-                                                <button type="submit"
-                                                        class="school-button school-button-primary">
-                                                    @R["ExportCsv"]
-                                                </button>
-                                            </form>
+                            <button type="submit"
+                                    class="school-button school-button-primary">
+                                @R["ExportCsv"]
+                            </button>
+                        </form>
                     }
 
                     @if (canRequestReportExport)
                     {
                         <form asp-controller="Reports"
-                                                  asp-action="RequestExport"
-                                                  method="post"
-                                                  class="report-inline-form">
-                                                @Html.AntiForgeryToken()
+                              asp-action="RequestExport"
+                              method="post"
+                              class="report-inline-form">
+                            @Html.AntiForgeryToken()
 
-                                                <input type="hidden"
-                                                       name="_idempotencyKey"
-                                                       value="@Model.XlsxIdempotencyKey" />
+                            <input type="hidden"
+                                   name="_idempotencyKey"
+                                   value="@Model.XlsxIdempotencyKey" />
 
-                                                <input type="hidden"
-                                                       name="kind"
-                                                       value="@Model.Request.Kind" />
+                            <input type="hidden"
+                                   name="kind"
+                                   value="@Model.Request.Kind" />
 
-                                                <input type="hidden"
-                                                       name="format"
-                                                       value="@ReportExportFormat.Xlsx" />
+                            <input type="hidden"
+                                   name="format"
+                                   value="@ReportExportFormat.Xlsx" />
 
-                                                <input type="hidden"
-                                                       name="academicYearId"
-                                                       value="@Model.Request.AcademicYearId" />
+                            <input type="hidden"
+                                   name="academicYearId"
+                                   value="@Model.Request.AcademicYearId" />
 
-                                                <input type="hidden"
-                                                       name="classGroupId"
-                                                       value="@Model.Request.ClassGroupId" />
+                            <input type="hidden"
+                                   name="classGroupId"
+                                   value="@Model.Request.ClassGroupId" />
 
-                                                <input type="hidden"
-                                                       name="subjectId"
-                                                       value="@Model.Request.SubjectId" />
+                            <input type="hidden"
+                                   name="subjectId"
+                                   value="@Model.Request.SubjectId" />
 
-                                                <input type="hidden"
-                                                       name="studentProfileId"
-                                                       value="@Model.Request.StudentProfileId" />
+                            <input type="hidden"
+                                   name="studentProfileId"
+                                   value="@Model.Request.StudentProfileId" />
 
-                                                <input type="hidden"
-                                                       name="learningOutcomeId"
-                                                       value="@Model.Request.LearningOutcomeId" />
+                            <input type="hidden"
+                                   name="learningOutcomeId"
+                                   value="@Model.Request.LearningOutcomeId" />
 
-                                                <button type="submit"
-                                                        class="school-button school-button-primary">
-                                                    @R["ExportXlsx"]
-                                                </button>
-                                            </form>
+                            <button type="submit"
+                                    class="school-button school-button-primary">
+                                @R["ExportXlsx"]
+                            </button>
+                        </form>
                     }
                 </div>
             </header>
