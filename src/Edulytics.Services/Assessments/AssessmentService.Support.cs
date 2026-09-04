@@ -177,7 +177,11 @@ public sealed partial class AssessmentService
             x.AssessmentDate,
             x.MaxScore,
             x.Status,
-            x.RowVersion);
+            x.RowVersion,
+            x.TargetType,
+            x.TargetStudentProfileId,
+            x.DeliveryMode,
+            x.DifficultyBand);
 
     private async Task<ScopeResult> ResolveScopeAsync(
         Guid actorUserId,
