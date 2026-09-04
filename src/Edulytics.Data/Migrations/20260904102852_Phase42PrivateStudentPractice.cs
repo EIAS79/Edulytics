@@ -1,10 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System.Diagnostics.CodeAnalysis;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace Edulytics.Data.Migrations
 {
     /// <inheritdoc />
+    /// <remarks>
+    /// EF-generated migration behavior is verified by the real PostgreSQL migration/model CI gate.
+    /// Excluding the generated partial type keeps line coverage focused on executable product logic.
+    /// </remarks>
+    [ExcludeFromCodeCoverage]
     public partial class Phase42PrivateStudentPractice : Migration
     {
         /// <inheritdoc />
