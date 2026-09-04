@@ -10,6 +10,11 @@ public interface IAssessmentBuilderRepository
         Guid assessmentId,
         CancellationToken cancellationToken = default);
 
+    Task<IReadOnlyList<StudentProfile>> ListTargetStudentsAsync(
+        Guid schoolId,
+        Guid assessmentId,
+        CancellationToken cancellationToken = default);
+
     void AddBundle(AssessmentBuilderQuestionBundle bundle);
 
     void RemoveQuestionBundle(
