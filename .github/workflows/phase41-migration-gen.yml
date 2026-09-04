@@ -16,6 +16,8 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      ConnectionStrings__DefaultConnection: "Host=127.0.0.1;Port=5432;Database=edulytics_design;Username=postgres;Password=postgres;SSL Mode=Disable"
     steps:
       - name: Checkout
         uses: actions/checkout@v7.0.1
