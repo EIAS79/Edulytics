@@ -42,6 +42,11 @@ public sealed class PracticeAttempt : ISchoolScoped
     public Guid StudentProfileId { get; set; }
     public Guid CurriculumAdoptionId { get; set; }
     public Guid? CurriculumPedagogicalLessonId { get; set; }
+
+    // Student-owned AI/self-test attempts are private by contract. Private attempts
+    // never participate in school/teacher official analytics or reports.
+    public bool IsPrivate { get; set; }
+
     public PracticeAttemptStatus Status { get; set; }
     public DateTime StartedAtUtc { get; set; }
     public DateTime? SubmittedAtUtc { get; set; }
