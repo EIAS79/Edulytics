@@ -1,4 +1,5 @@
 using Edulytics.Core.Entities;
+using Edulytics.Core.Enums;
 
 namespace Edulytics.Core.Practice;
 
