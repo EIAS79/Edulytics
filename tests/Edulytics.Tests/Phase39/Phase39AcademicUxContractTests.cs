@@ -116,6 +116,25 @@ public sealed class Phase39AcademicUxContractTests
             StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void LegacyImportHistory_IsReadOnlyInTheDetailsUx()
+    {
+        var root = FindRepositoryRoot();
+        var viewModel = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/ViewModels/Imports/ImportViewModels.cs"));
+        var view = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Imports/Details.cshtml"));
+
+        Assert.Contains("IsLegacyReadOnly", viewModel, StringComparison.Ordinal);
+        Assert.Contains("MathOnlyImportAdapter.IsSupported", viewModel, StringComparison.Ordinal);
+        Assert.Contains("public bool CanConfirm", viewModel, StringComparison.Ordinal);
+        Assert.Contains("Model.CanConfirm", view, StringComparison.Ordinal);
+        Assert.Contains("Model.IsLegacyReadOnly", view, StringComparison.Ordinal);
+        Assert.Contains("ImportReadOnlyNotice", view, StringComparison.Ordinal);
+    }
+
     private static string FindRepositoryRoot()
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);
