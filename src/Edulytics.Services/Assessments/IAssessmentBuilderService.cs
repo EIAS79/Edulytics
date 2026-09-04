@@ -15,6 +15,11 @@ public sealed record AssessmentBuilderQuestion(
     string Solution,
     IReadOnlyList<Guid> OutcomeIds);
 
+public sealed record AssessmentTargetStudentOption(
+    Guid Id,
+    string StudentNumber,
+    string DisplayName);
+
 public sealed record AssessmentBuilderWorkspace(
     AssessmentDetails Details,
     IReadOnlyList<AssessmentBuilderQuestion> Questions,
@@ -23,7 +28,16 @@ public sealed record AssessmentBuilderWorkspace(
     decimal? ClassMasteryPercentage,
     bool CanGenerateNatively,
     bool ReadyToPublish,
-    string ReadinessMessage);
+    string ReadinessMessage,
+    IReadOnlyList<AssessmentTargetStudentOption>? TargetStudents = null);
+
+public sealed record UpdateAssessmentDeliverySettingsRequest(
+    Guid AssessmentId,
+    AssessmentTargetType TargetType,
+    Guid? TargetStudentProfileId,
+    AssessmentDeliveryMode DeliveryMode,
+    AssessmentDifficultyBand DifficultyBand,
+    byte[] AssessmentRowVersion);
 
 public sealed record CreateManualBuilderQuestionRequest(
     Guid AssessmentId,
@@ -58,6 +72,7 @@ public sealed record GenerateBuilderQuestionsRequest(
 public interface IAssessmentBuilderService
 {
     Task<AssessmentQueryResult<AssessmentBuilderWorkspace>> GetWorkspaceAsync(Guid actorUserId, Guid assessmentId, CancellationToken cancellationToken = default);
+    Task<AssessmentCommandResult> UpdateDeliverySettingsAsync(Guid actorUserId, UpdateAssessmentDeliverySettingsRequest request, CancellationToken cancellationToken = default);
     Task<AssessmentCommandResult> CreateManualQuestionAsync(Guid actorUserId, CreateManualBuilderQuestionRequest request, CancellationToken cancellationToken = default);
     Task<AssessmentCommandResult> EditQuestionAsync(Guid actorUserId, EditBuilderQuestionRequest request, CancellationToken cancellationToken = default);
     Task<AssessmentCommandResult> GenerateQuestionsAsync(Guid actorUserId, GenerateBuilderQuestionsRequest request, CancellationToken cancellationToken = default);
