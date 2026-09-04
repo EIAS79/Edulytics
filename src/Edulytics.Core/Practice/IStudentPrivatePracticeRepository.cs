@@ -2,6 +2,13 @@ using Edulytics.Core.Entities;
 
 namespace Edulytics.Core.Practice;
 
+public sealed record PrivatePracticeCurriculumOption(
+    Guid CurriculumAdoptionId,
+    Guid ClassGroupId,
+    Guid AcademicYearId,
+    string CurriculumLevelLabel,
+    string ClassName);
+
 public sealed record StudentPrivatePracticeContext(
     StudentProfile Student,
     SchoolCurriculumAdoption Adoption,
@@ -26,6 +33,10 @@ public sealed record PrivatePracticeAttemptSummary(
 
 public interface IStudentPrivatePracticeRepository
 {
+    Task<IReadOnlyList<PrivatePracticeCurriculumOption>> ListCurriculaAsync(
+        Guid studentUserId,
+        CancellationToken cancellationToken = default);
+
     Task<StudentPrivatePracticeContext?> GetContextAsync(
         Guid studentUserId,
         Guid curriculumAdoptionId,
