@@ -194,8 +194,7 @@ public sealed record ReportCell(
         decimal value) =>
         new(
             ReportCellKind.Percentage,
-            NumberValue: value)
-                ;
+            NumberValue: value);
 
     public static ReportCell DateTime(
         System.DateTime value) =>
