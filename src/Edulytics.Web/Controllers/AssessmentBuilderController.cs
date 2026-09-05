@@ -3,6 +3,7 @@ using Edulytics.Core.Assessments;
 using Edulytics.Core.Constants;
 using Edulytics.Core.Enums;
 using Edulytics.Services.Assessments;
+using Edulytics.Web.Printing;
 using Edulytics.Web.Resilience;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.Timeouts;
@@ -30,6 +31,44 @@ public sealed class AssessmentBuilderController(
         if (delivery.Value is null) return Handle(delivery.Error);
 
         return View(result.Value with { TargetStudents = delivery.Value.TargetStudents });
+    }
+
+    [HttpGet("student-paper.pdf")]
+    public async Task<IActionResult> StudentPaperPdf(
+        Guid assessmentId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+        var result = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
+        if (result.Value is null) return Handle(result.Error);
+        if (result.Value.Details.Assessment.DeliveryMode != AssessmentDeliveryMode.Offline)
+            return BadRequest();
+
+        var paper = AssessmentPrintDocumentFactory.CreateStudentPaper(result.Value);
+        var bytes = AssessmentPdfRenderer.RenderStudentPaper(paper, PdfLabels());
+        return File(
+            bytes,
+            "application/pdf",
+            $"assessment-{assessmentId:N}-student-paper.pdf");
+    }
+
+    [HttpGet("answer-key.pdf")]
+    public async Task<IActionResult> AnswerKeyPdf(
+        Guid assessmentId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+        var result = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
+        if (result.Value is null) return Handle(result.Error);
+        if (result.Value.Details.Assessment.DeliveryMode != AssessmentDeliveryMode.Offline)
+            return BadRequest();
+
+        var answerKey = AssessmentPrintDocumentFactory.CreateTeacherAnswerKey(result.Value);
+        var bytes = AssessmentPdfRenderer.RenderTeacherAnswerKey(answerKey, PdfLabels());
+        return File(
+            bytes,
+            "application/pdf",
+            $"assessment-{assessmentId:N}-teacher-answer-key.pdf");
     }
 
     [HttpPost("settings"), ValidateAntiForgeryToken]
@@ -155,6 +194,16 @@ public sealed class AssessmentBuilderController(
             ? RedirectToAction("Details", "Assessments", new { id = assessmentId })
             : RedirectToAction(nameof(Index), new { assessmentId });
     }
+
+    private AssessmentPdfLabels PdfLabels() => new(
+        text["StudentPaperTitle"].Value,
+        text["TeacherAnswerKeyTitle"].Value,
+        text["AssessmentMaxScore"].Value,
+        text["StudentName"].Value,
+        text["Date"].Value,
+        text["QuestionMaxScore"].Value,
+        text["CorrectAnswer"].Value,
+        text["Solution"].Value);
 
     private bool TryActor(out Guid id) => Guid.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out id);
     private IActionResult Handle(AssessmentErrorCode? error) => error == AssessmentErrorCode.AccessDenied ? Forbid() : NotFound();

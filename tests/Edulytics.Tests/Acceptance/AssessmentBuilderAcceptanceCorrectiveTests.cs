@@ -1,3 +1,5 @@
+using Edulytics.Web.Printing;
+
 namespace Edulytics.Tests.Acceptance;
 
 public sealed class AssessmentBuilderAcceptanceCorrectiveTests
@@ -105,6 +107,62 @@ public sealed class AssessmentBuilderAcceptanceCorrectiveTests
         Assert.Contains("AI supported", english, StringComparison.Ordinal);
         Assert.Contains("opiekuna przedmiotu", polish, StringComparison.Ordinal);
         Assert.Contains("Obsługiwane przez AI", polish, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void OfflinePdf_StudentContractCannotCarryAnswersOrSolutions()
+    {
+        var studentProperties = typeof(StudentAssessmentPaperQuestion)
+            .GetProperties()
+            .Select(property => property.Name)
+            .ToArray();
+        var teacherProperties = typeof(TeacherAssessmentAnswerKeyQuestion)
+            .GetProperties()
+            .Select(property => property.Name)
+            .ToArray();
+
+        Assert.Contains(nameof(StudentAssessmentPaperQuestion.Prompt), studentProperties);
+        Assert.DoesNotContain(nameof(TeacherAssessmentAnswerKeyQuestion.CorrectAnswer), studentProperties);
+        Assert.DoesNotContain(nameof(TeacherAssessmentAnswerKeyQuestion.Solution), studentProperties);
+        Assert.Contains(nameof(TeacherAssessmentAnswerKeyQuestion.CorrectAnswer), teacherProperties);
+        Assert.Contains(nameof(TeacherAssessmentAnswerKeyQuestion.Solution), teacherProperties);
+    }
+
+    [Fact]
+    public void OfflinePdf_UsesTeacherWorkspaceAuthorization_AndLocalizedOfflineButtons()
+    {
+        var controller = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Controllers", "AssessmentBuilderController.cs");
+        var view = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Views", "AssessmentBuilder", "Index.cshtml");
+        var renderer = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Printing", "AssessmentPdfRenderer.cs");
+        var project = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Edulytics.Web.csproj");
+        var docker = ReadRepositoryFile("Dockerfile");
+        var english = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Resources", "AssessmentBuilderResource.resx");
+        var polish = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Resources", "AssessmentBuilderResource.pl.resx");
+
+        Assert.Contains("[HttpGet(\"student-paper.pdf\")]", controller, StringComparison.Ordinal);
+        Assert.Contains("[HttpGet(\"answer-key.pdf\")]", controller, StringComparison.Ordinal);
+        Assert.Equal(
+            3,
+            controller.Split(
+                "service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken)",
+                StringSplitOptions.None).Length - 1);
+        Assert.Contains("AssessmentPrintDocumentFactory.CreateStudentPaper", controller, StringComparison.Ordinal);
+        Assert.Contains("AssessmentPrintDocumentFactory.CreateTeacherAnswerKey", controller, StringComparison.Ordinal);
+        Assert.Contains("assessment.DeliveryMode == AssessmentDeliveryMode.Offline", view, StringComparison.Ordinal);
+        Assert.Contains("DownloadStudentPaper", view, StringComparison.Ordinal);
+        Assert.Contains("DownloadTeacherAnswerKey", view, StringComparison.Ordinal);
+        Assert.Contains("RenderStudentPaper(\n        StudentAssessmentPaper paper", renderer, StringComparison.Ordinal);
+        Assert.DoesNotContain("RenderStudentPaper(AssessmentBuilderWorkspace", renderer, StringComparison.Ordinal);
+        Assert.Contains("PDFsharp-MigraDoc\" Version=\"6.2.4\"", project, StringComparison.Ordinal);
+        Assert.Contains("fonts-dejavu-core", docker, StringComparison.Ordinal);
+        Assert.Contains("never contains correct answers", english, StringComparison.Ordinal);
+        Assert.Contains("nigdy nie zawiera poprawnych odpowiedzi", polish, StringComparison.Ordinal);
     }
 
     private static string ReadRepositoryFile(params string[] relativeSegments)

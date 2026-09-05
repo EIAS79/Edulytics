@@ -177,6 +177,22 @@
         </section>
     }
 
+    @if (assessment.DeliveryMode == AssessmentDeliveryMode.Offline)
+    {
+        <section class="assessment-card">
+            <h2>@A["OfflinePrint"]</h2>
+            <p>@A["OfflinePrintHelp"]</p>
+            <div class="assessment-actions">
+                <a class="school-button school-button-primary"
+                   asp-action="StudentPaperPdf"
+                   asp-route-assessmentId="@assessment.Id">@A["DownloadStudentPaper"]</a>
+                <a class="school-button"
+                   asp-action="AnswerKeyPdf"
+                   asp-route-assessmentId="@assessment.Id">@A["DownloadTeacherAnswerKey"]</a>
+            </div>
+        </section>
+    }
+
     <section class="assessment-question-list">
         <h2>@A["Questions"]</h2>
         @if (Model.Questions.Count == 0)
