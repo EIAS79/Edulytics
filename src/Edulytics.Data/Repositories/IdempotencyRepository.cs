@@ -42,53 +42,82 @@ public sealed class IdempotencyRepository
             ExpiresAtUtc = nowUtc.Add(Lifetime)
         };
 
-        _db.IdempotencyRecords.Add(record);
-
-        try
-        {
-            await _db.SaveChangesAsync(
+        // The unique actor/operation/key index is the concurrency boundary.
+        // PostgreSQL ON CONFLICT waits for a competing insert to resolve and
+        // returns without surfacing an expected unique-violation exception.
+        var inserted =
+            await _db.Database.ExecuteSqlInterpolatedAsync(
+                $"""
+                INSERT INTO "IdempotencyRecords"
+                    ("Id",
+                     "SchoolId",
+                     "ActorUserId",
+                     "Operation",
+                     "IdempotencyKey",
+                     "RequestHash",
+                     "Status",
+                     "CreatedAtUtc",
+                     "ExpiresAtUtc",
+                     "RowVersion")
+                VALUES
+                    ({record.Id},
+                     {record.SchoolId},
+                     {record.ActorUserId},
+                     {record.Operation},
+                     {record.IdempotencyKey},
+                     {record.RequestHash},
+                     {(int)record.Status},
+                     {record.CreatedAtUtc},
+                     {record.ExpiresAtUtc},
+                     {record.RowVersion})
+                ON CONFLICT
+                    ("ActorUserId",
+                     "Operation",
+                     "IdempotencyKey")
+                DO NOTHING;
+                """,
                 cancellationToken);
 
+        if (inserted == 1)
+        {
             return new IdempotencyReservation(
                 IdempotencyReservationOutcome.Acquired,
                 record.Id,
                 record.Status,
                 null);
         }
-        catch (DbUpdateException)
+
+        var existing =
+            await _db.IdempotencyRecords
+                .AsNoTracking()
+                .SingleOrDefaultAsync(
+                    x =>
+                        x.ActorUserId == actorUserId &&
+                        x.Operation == operation &&
+                        x.IdempotencyKey == key,
+                    cancellationToken);
+
+        if (existing is null)
         {
-            _db.Entry(record).State =
-                EntityState.Detached;
-
-            var existing =
-                await _db.IdempotencyRecords
-                    .AsNoTracking()
-                    .SingleOrDefaultAsync(
-                        x =>
-                            x.ActorUserId == actorUserId &&
-                            x.Operation == operation &&
-                            x.IdempotencyKey == key,
-                        cancellationToken);
-
-            if (existing is null)
-                throw;
-
-            var outcome =
-                string.Equals(
-                    existing.RequestHash,
-                    requestHash,
-                    StringComparison.Ordinal)
-                    ? IdempotencyReservationOutcome
-                        .DuplicateSameRequest
-                    : IdempotencyReservationOutcome
-                        .KeyReusedForDifferentRequest;
-
-            return new IdempotencyReservation(
-                outcome,
-                existing.Id,
-                existing.Status,
-                existing.ResultStatusCode);
+            throw new InvalidOperationException(
+                "The idempotency reservation conflicted but the durable record could not be loaded.");
         }
+
+        var outcome =
+            string.Equals(
+                existing.RequestHash,
+                requestHash,
+                StringComparison.Ordinal)
+                ? IdempotencyReservationOutcome
+                    .DuplicateSameRequest
+                : IdempotencyReservationOutcome
+                    .KeyReusedForDifferentRequest;
+
+        return new IdempotencyReservation(
+            outcome,
+            existing.Id,
+            existing.Status,
+            existing.ResultStatusCode);
     }
 
     public async Task MarkCompletedAsync(

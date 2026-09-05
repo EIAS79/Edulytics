@@ -50,7 +50,8 @@
         <form method="post"
               asp-controller="SchoolUsers"
               asp-action="Create"
-              class="user-form-card">
+              class="user-form-card"
+              data-prevent-double-submit="true">
 
             <input asp-for="SchoolId"
                    type="hidden" />
