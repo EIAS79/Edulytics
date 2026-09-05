@@ -73,6 +73,8 @@ public sealed class AssessmentBuilderController(
         var result = await service.CreateManualQuestionAsync(actorId,
             new CreateManualBuilderQuestionRequest(assessmentId, prompt, correctAnswer, solution, maxScore, order, difficulty, outcomeIds ?? [], version), cancellationToken);
         Feedback(result, "SuccessQuestionCreated");
+        if (result.Succeeded)
+            TempData["ManualQuestionSaved"] = true;
         return RedirectToAction(nameof(Index), new { assessmentId });
     }
 
