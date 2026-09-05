@@ -1,11 +1,10 @@
 @using Edulytics.Core.Constants
+@using Edulytics.Core.Enums
 @model Edulytics.Web.ViewModels.Assessments.AssessmentIndexViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentResource> A
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentBuilderResource> B
 @{
     var canManageAssessment = User.IsInRole(RoleNames.Teacher);
-}
-
-@{
     ViewData["Title"] = A["AssessmentTitle"];
 }
 
@@ -34,53 +33,53 @@
         @if (canManageAssessment)
         {
             <form asp-action="Create" method="post"
-                          class="assessment-form assessment-create-form">
-                        @Html.AntiForgeryToken()
+                  class="assessment-form assessment-create-form">
+                @Html.AntiForgeryToken()
 
-                        <label for="classGroupId">@A["ClassGroup"]</label>
-                        <select id="classGroupId" name="classGroupId" required>
-                            <option value="">@A["SelectClass"]</option>
-                            @foreach (var item in Model.Workspace.ClassGroups)
-                            {
-                                <option value="@item.Id">@item.Name</option>
-                            }
-                        </select>
+                <label for="classGroupId">@A["ClassGroup"]</label>
+                <select id="classGroupId" name="classGroupId" required>
+                    <option value="">@A["SelectClass"]</option>
+                    @foreach (var item in Model.Workspace.ClassGroups)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
 
-                        <label for="subjectId">@A["Subject"]</label>
-                        <select id="subjectId" name="subjectId" required>
-                            <option value="">@A["SelectSubject"]</option>
-                            @foreach (var item in Model.Workspace.Subjects)
-                            {
-                                <option value="@item.Id">@item.Name (@item.Code)</option>
-                            }
-                        </select>
+                <label for="subjectId">@A["Subject"]</label>
+                <select id="subjectId" name="subjectId" required>
+                    <option value="">@A["SelectSubject"]</option>
+                    @foreach (var item in Model.Workspace.Subjects)
+                    {
+                        <option value="@item.Id">@item.Name (@item.Code)</option>
+                    }
+                </select>
 
-                        <label for="termId">@A["Term"]</label>
-                        <select id="termId" name="termId" required>
-                            <option value="">@A["SelectTerm"]</option>
-                            @foreach (var item in Model.Workspace.Terms)
-                            {
-                                <option value="@item.Id">@item.Name</option>
-                            }
-                        </select>
+                <label for="termId">@A["Term"]</label>
+                <select id="termId" name="termId" required>
+                    <option value="">@A["SelectTerm"]</option>
+                    @foreach (var item in Model.Workspace.Terms)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
 
-                        <label for="title">@A["Title"]</label>
-                        <input id="title" name="title" maxlength="200" required />
+                <label for="title">@A["Title"]</label>
+                <input id="title" name="title" maxlength="200" required />
 
-                        <label for="assessmentDate">@A["AssessmentDate"]</label>
-                        <input id="assessmentDate" name="assessmentDate"
-                               type="date" required />
+                <label for="assessmentDate">@A["AssessmentDate"]</label>
+                <input id="assessmentDate" name="assessmentDate"
+                       type="date" required />
 
-                        <label for="maxScore">@A["MaxScore"]</label>
-                        <input id="maxScore" name="maxScore"
-                               type="number" min="1" max="10000"
-                               step="1" required />
+                <label for="maxScore">@A["MaxScore"]</label>
+                <input id="maxScore" name="maxScore"
+                       type="number" min="1" max="10000"
+                       step="1" required />
 
-                        <button type="submit"
-                                class="school-button school-button-primary">
-                            @A["Create"]
-                        </button>
-                    </form>
+                <button type="submit"
+                        class="school-button school-button-primary">
+                    @A["Create"]
+                </button>
+            </form>
         }
     </section>
 
@@ -97,10 +96,16 @@
             {
                 var statusKey = item.Status switch
                 {
-                    Edulytics.Core.Enums.AssessmentStatus.Draft => "StatusDraft",
-                    Edulytics.Core.Enums.AssessmentStatus.Open => "StatusOpen",
+                    AssessmentStatus.Draft => "StatusDraft",
+                    AssessmentStatus.Open => "StatusOpen",
                     _ => "StatusClosed"
                 };
+                var deliveryKey = item.DeliveryMode == AssessmentDeliveryMode.Online
+                    ? "DeliveryOnlineBadge"
+                    : "DeliveryOfflineBadge";
+                var deliveryClass = item.DeliveryMode == AssessmentDeliveryMode.Online
+                    ? "is-online"
+                    : "is-offline";
 
                 <article class="assessment-list-card">
                     <div>
@@ -114,13 +119,15 @@
                             @item.AssessmentDate.ToString("yyyy-MM-dd")
                             · @A["MaxScore"]: @item.MaxScore.ToString("0.##")
                             · @A[statusKey]
+                            · <strong>@B["CurrentDelivery"]:</strong>
+                            <span class="ed-delivery-badge @deliveryClass">@B[deliveryKey]</span>
                         </p>
                     </div>
                     <div class="assessment-actions">
                         <a class="school-button"
                            asp-action="Details"
                            asp-route-id="@item.Id">@A["Details"]</a>
-                        @if (item.Status != Edulytics.Core.Enums.AssessmentStatus.Draft)
+                        @if (item.Status != AssessmentStatus.Draft)
                         {
                             <a class="school-button school-button-primary"
                                asp-action="Results"
