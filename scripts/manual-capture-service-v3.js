@@ -39,9 +39,23 @@ async function login(page) {
   });
 
   const email = await page.$('input[type="email"],input[name="Email"],input[name$=".Email"]');
-  const password = await page.$('input[type="password"]');
+  const password = await page.$('input[type="password"],input[name="Password"],input[name$=".Password"]');
   const submit = await page.$('button[type="submit"],input[type="submit"]');
-  if (!email || !password || !submit) throw new Error('login controls missing');
+  if (!email || !password || !submit) {
+    const diagnostic = await page.evaluate(() => ({
+      url: location.href,
+      title: document.title,
+      h1: document.querySelector('h1')?.innerText?.trim() || null,
+      inputs: [...document.querySelectorAll('input')].map(x => ({
+        type: x.getAttribute('type'), name: x.getAttribute('name'), id: x.id || null
+      })),
+      buttons: [...document.querySelectorAll('button')].map(x => ({
+        type: x.getAttribute('type'), text: (x.innerText || '').trim()
+      }))
+    }));
+    event('login-controls-missing', { status: response?.status() || null, diagnostic });
+    throw new Error('login controls missing');
+  }
 
   await email.type(EMAIL);
   await password.type(PASSWORD);
@@ -51,7 +65,8 @@ async function login(page) {
   ]);
 
   if (page.url().toLowerCase().includes('/account/login')) {
-    throw new Error('login failed: still on login page');
+    const message = await page.$eval('.validation-summary, [role="alert"]', x => (x.innerText || '').trim()).catch(() => '');
+    throw new Error(`login failed: still on login page${message ? `: ${message}` : ''}`);
   }
 
   result.checks.push({ kind: 'login', status: response?.status() || null, url: page.url() });
