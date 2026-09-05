@@ -20,6 +20,9 @@
   <data name="DifficultyMedium" xml:space="preserve"><value>Medium</value></data>
   <data name="DifficultyChallenging" xml:space="preserve"><value>Challenging</value></data>
   <data name="LearningOutcomes" xml:space="preserve"><value>Learning outcomes</value></data>
+  <data name="LearningOutcomesSetupRequired" xml:space="preserve"><value>No learning outcomes are available for this assessment yet. Ask the Subject Supervisor to add official curriculum outcomes to the teaching plan, then refresh this page.</value></data>
+  <data name="AiSupported" xml:space="preserve"><value>AI supported</value></data>
+  <data name="ManualOnly" xml:space="preserve"><value>Manual only</value></data>
   <data name="GenerateQuestionsWithAI" xml:space="preserve"><value>Generate with Edulytics AI</value></data>
   <data name="NativeGenerationNotice" xml:space="preserve"><value>Uses Edulytics native deterministic Mathematics intelligence. No external paid AI API is required. Generated questions remain drafts until teacher approval.</value></data>
   <data name="PlannedQuestionCount" xml:space="preserve"><value>Number of questions</value></data>
@@ -55,7 +58,12 @@
   <data name="SuccessQuestionDeleted" xml:space="preserve"><value>Question deleted.</value></data>
   <data name="SuccessAssessmentOpened" xml:space="preserve"><value>Assessment published.</value></data>
   <data name="ErrorConcurrencyConflict" xml:space="preserve"><value>The assessment changed in another request. Reload and try again.</value></data>
-  <data name="BuilderOperationFailed" xml:space="preserve"><value>The operation could not be completed ({0}).</value></data>
+  <data name="ErrorOutcomeDoesNotMatchAssessment" xml:space="preserve"><value>Select a learning outcome that is available for this assessment. If no outcomes are listed, ask the Subject Supervisor to add official curriculum outcomes to the teaching plan and then refresh the page. AI generation accepts only outcomes marked AI supported.</value></data>
+  <data name="ErrorInvalidMarks" xml:space="preserve"><value>Marks must be a whole number greater than zero and within the allowed maximum.</value></data>
+  <data name="ErrorAssessmentScoreMismatch" xml:space="preserve"><value>The question marks would exceed the assessment maximum score.</value></data>
+  <data name="ErrorInvalidQuestionContent" xml:space="preserve"><value>Complete the required question and answer fields and keep them within the allowed length.</value></data>
+  <data name="ErrorDuplicateQuestionOrder" xml:space="preserve"><value>Another question already uses this order number. Choose a different order.</value></data>
+  <data name="BuilderOperationFailed" xml:space="preserve"><value>The operation could not be completed. Review the assessment and try again.</value></data>
   <data name="BuilderEntryNotice" xml:space="preserve"><value>Build, review and approve all questions in Assessment Builder before publishing.</value></data>
   <data name="DeliverySettings" xml:space="preserve"><value>Assessment delivery</value></data>
   <data name="DeliverySettingsHelp" xml:space="preserve"><value>Choose who receives this assessment, how it is delivered, and its intended difficulty before publishing.</value></data>
