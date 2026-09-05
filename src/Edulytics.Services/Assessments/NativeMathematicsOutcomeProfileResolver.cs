@@ -8,7 +8,22 @@ public static class NativeMathematicsOutcomeProfileResolver
     public static MathematicsOutcomeGenerationProfile? Resolve(LearningOutcome outcome)
     {
         ArgumentNullException.ThrowIfNull(outcome);
-        var text = $"{outcome.Code} {outcome.Description}".ToUpperInvariant();
+        var families = ResolveFamilies(outcome.Code, outcome.Description);
+
+        return families.Length == 0
+            ? null
+            : new MathematicsOutcomeGenerationProfile(
+                outcome.Id,
+                outcome.Code,
+                families);
+    }
+
+    public static bool Supports(string? code, string? description) =>
+        ResolveFamilies(code, description).Length > 0;
+
+    private static MathematicsGeneratorFamily[] ResolveFamilies(string? code, string? description)
+    {
+        var text = $"{code} {description}".ToUpperInvariant();
         var families = new HashSet<MathematicsGeneratorFamily>();
 
         if (ContainsAny(text, "FRACTION", ".NF", " NF "))
@@ -31,12 +46,7 @@ public static class NativeMathematicsOutcomeProfileResolver
             families.Add(MathematicsGeneratorFamily.IntegerComputation);
         }
 
-        return families.Count == 0
-            ? null
-            : new MathematicsOutcomeGenerationProfile(
-                outcome.Id,
-                outcome.Code,
-                families.OrderBy(x => x).ToArray());
+        return families.OrderBy(x => x).ToArray();
     }
 
     private static bool ContainsAny(string text, params string[] values) =>
