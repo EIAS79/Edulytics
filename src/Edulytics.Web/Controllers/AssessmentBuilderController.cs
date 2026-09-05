@@ -97,7 +97,10 @@ public sealed class AssessmentBuilderController(
                 version),
             cancellationToken);
 
-        Feedback(result, "DeliverySettingsSaved");
+        var successKey = deliveryMode == AssessmentDeliveryMode.Online
+            ? "DeliverySettingsSavedOnline"
+            : "DeliverySettingsSavedOffline";
+        Feedback(result, successKey);
         return RedirectToAction(nameof(Index), new { assessmentId });
     }
 
@@ -121,12 +124,23 @@ public sealed class AssessmentBuilderController(
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
     [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
     public async Task<IActionResult> Edit(Guid assessmentId, Guid questionId, string prompt, string correctAnswer, string solution,
-        decimal maxScore, AssessmentItemDifficulty difficulty, string rowVersion, CancellationToken cancellationToken)
+        decimal maxScore, int order, AssessmentItemDifficulty difficulty, Guid[]? outcomeIds, string rowVersion, CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
         if (!TryDecode(rowVersion, out var version)) return ConcurrencyRedirect(assessmentId);
         var result = await service.EditQuestionAsync(actorId,
-            new EditBuilderQuestionRequest(assessmentId, questionId, prompt, correctAnswer, solution, maxScore, difficulty, version), cancellationToken);
+            new EditBuilderQuestionRequest(
+                assessmentId,
+                questionId,
+                prompt,
+                correctAnswer,
+                solution,
+                maxScore,
+                order,
+                difficulty,
+                outcomeIds ?? [],
+                version),
+            cancellationToken);
         Feedback(result, "BuilderQuestionUpdated");
         return RedirectToAction(nameof(Index), new { assessmentId });
     }
@@ -222,6 +236,7 @@ public sealed class AssessmentBuilderController(
     {
         AssessmentErrorCode.OutcomeDoesNotMatchAssessment => text["ErrorOutcomeDoesNotMatchAssessment"].Value,
         AssessmentErrorCode.InvalidQuestionScore or AssessmentErrorCode.InvalidMaxScore => text["ErrorInvalidMarks"].Value,
+        AssessmentErrorCode.InvalidOrder => text["ErrorInvalidOrder"].Value,
         AssessmentErrorCode.AssessmentScoreMismatch => text["ErrorAssessmentScoreMismatch"].Value,
         AssessmentErrorCode.InvalidText or AssessmentErrorCode.Required => text["ErrorInvalidQuestionContent"].Value,
         AssessmentErrorCode.DuplicateQuestionOrder => text["ErrorDuplicateQuestionOrder"].Value,
