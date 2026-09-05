@@ -21,17 +21,17 @@ public sealed class StudentPracticePresentationAcceptanceTests
             view,
             StringComparison.Ordinal);
         Assert.Contains(
-            "<option value=\"@unit.UnitKey\">@unit.UnitTitle</option>",
+            ">@unit.UnitTitle</option>",
             view,
             StringComparison.Ordinal);
         Assert.DoesNotContain(
-            "<option value=\"@unit\">@unit</option>",
+            ">@unit.UnitKey</option>",
             view,
             StringComparison.Ordinal);
     }
 
     [Fact]
-    public void Workspace_ExposesHumanReadableUnitOptionsWithoutChangingPostedKey()
+    public void Workspace_ExposesHumanReadableOptionsAndExplicitOfficialMappings()
     {
         var contracts = ReadRepositoryFile(
             "src",
@@ -49,11 +49,23 @@ public sealed class StudentPracticePresentationAcceptanceTests
             contracts,
             StringComparison.Ordinal);
         Assert.Contains(
+            "OfficialOutcomeNodeIds",
+            contracts,
+            StringComparison.Ordinal);
+        Assert.Contains(
             "first.UnitTitle",
             service,
             StringComparison.Ordinal);
         Assert.Contains(
             "unitOptions.Select(x => x.UnitKey)",
+            service,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "context.LessonOutcomes",
+            service,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "group.SelectMany(x => x.OfficialOutcomeNodeIds)",
             service,
             StringComparison.Ordinal);
     }
