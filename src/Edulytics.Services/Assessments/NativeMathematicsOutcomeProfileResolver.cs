@@ -7,7 +7,8 @@ namespace Edulytics.Services.Assessments;
 /// <summary>
 /// Compatibility facade used by assessment, curriculum and private-practice
 /// flows. Capability is resolved through canonical skills and a provider,
-/// never by teaching the generator about curriculum-specific codes.
+/// never by teaching the generator about curriculum-specific codes. Any
+/// partially unsupported outcome fails closed.
 /// </summary>
 public static class NativeMathematicsOutcomeProfileResolver
 {

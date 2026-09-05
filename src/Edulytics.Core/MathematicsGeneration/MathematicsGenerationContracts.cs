@@ -19,11 +19,15 @@ public enum MathematicsGeneratorFamily
 /// </summary>
 public enum CanonicalMathematicsSkill
 {
-    WholeNumberComputation = 1,
-    OneStepLinearEquation = 2,
-    FractionOfQuantity = 3,
-    PercentageOfQuantity = 4,
-    UnitRateAndProportion = 5
+    WholeNumberAdditionAndSubtraction = 1,
+    WholeNumberAddition = 2,
+    WholeNumberSubtraction = 3,
+    WholeNumberMultiplication = 4,
+    WholeNumberDivision = 5,
+    OneStepLinearEquation = 6,
+    FractionOfQuantity = 7,
+    PercentageOfQuantity = 8,
+    UnitRateAndProportion = 9
 }
 
 public sealed record MathematicsOutcomeGenerationProfile(

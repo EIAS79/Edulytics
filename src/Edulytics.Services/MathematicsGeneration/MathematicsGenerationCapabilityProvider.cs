@@ -18,8 +18,8 @@ public interface IMathematicsGenerationCapabilityProvider
 
 /// <summary>
 /// Capability contract for Edulytics' deterministic native Mathematics engine.
-/// Additional providers can implement the same contract without changing
-/// curriculum adapters or UI capability rules.
+/// A mapped outcome is eligible only when every required canonical skill is
+/// supported. Partial coverage is deliberately rejected fail-closed.
 /// </summary>
 public sealed class NativeMathematicsGenerationCapabilityProvider
     : IMathematicsGenerationCapabilityProvider
@@ -27,7 +27,7 @@ public sealed class NativeMathematicsGenerationCapabilityProvider
     private static readonly IReadOnlyDictionary<CanonicalMathematicsSkill, MathematicsGeneratorFamily> Families =
         new Dictionary<CanonicalMathematicsSkill, MathematicsGeneratorFamily>
         {
-            [CanonicalMathematicsSkill.WholeNumberComputation] = MathematicsGeneratorFamily.IntegerComputation,
+            [CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction] = MathematicsGeneratorFamily.IntegerComputation,
             [CanonicalMathematicsSkill.OneStepLinearEquation] = MathematicsGeneratorFamily.OneStepEquation,
             [CanonicalMathematicsSkill.FractionOfQuantity] = MathematicsGeneratorFamily.FractionOfQuantity,
             [CanonicalMathematicsSkill.PercentageOfQuantity] = MathematicsGeneratorFamily.PercentageOfQuantity,
@@ -43,8 +43,10 @@ public sealed class NativeMathematicsGenerationCapabilityProvider
     {
         ArgumentNullException.ThrowIfNull(skills);
 
+        if (skills.Count == 0 || skills.Any(skill => !Supports(skill)))
+            return [];
+
         return skills
-            .Where(Supports)
             .Select(skill => Families[skill])
             .Distinct()
             .OrderBy(family => family)
