@@ -39,9 +39,25 @@ public sealed class CanonicalMathematicsCapabilityTests
     [Theory]
     [InlineData("Add whole numbers", CanonicalMathematicsSkill.WholeNumberAddition)]
     [InlineData("Subtract whole numbers", CanonicalMathematicsSkill.WholeNumberSubtraction)]
+    public void ExactAddSubtractOperation_HasReviewedNativeCoverage(
+        string description,
+        CanonicalMathematicsSkill expectedSkill)
+    {
+        var skills = CanonicalMathematicsSkillMapper.Resolve(null, description);
+        var provider = new NativeMathematicsGenerationCapabilityProvider();
+
+        Assert.Contains(expectedSkill, skills);
+        Assert.True(provider.Supports(expectedSkill));
+        Assert.Equal(
+            MathematicsGeneratorFamily.IntegerComputation,
+            Assert.Single(provider.ResolveFamilies(skills)));
+        Assert.True(NativeMathematicsOutcomeProfileResolver.Supports(null, description));
+    }
+
+    [Theory]
     [InlineData("Multiply whole numbers", CanonicalMathematicsSkill.WholeNumberMultiplication)]
     [InlineData("Divide whole numbers", CanonicalMathematicsSkill.WholeNumberDivision)]
-    public void ExactArithmeticOperation_WithoutExactNativeGenerator_FailsClosed(
+    public void UnsupportedWholeNumberOperation_FailsClosed(
         string description,
         CanonicalMathematicsSkill expectedSkill)
     {
@@ -65,6 +81,33 @@ public sealed class CanonicalMathematicsCapabilityTests
         Assert.Contains(CanonicalMathematicsSkill.WholeNumberDivision, skills);
         Assert.Empty(provider.ResolveFamilies(skills));
         Assert.False(NativeMathematicsOutcomeProfileResolver.Supports(null, description));
+    }
+
+    [Fact]
+    public void FractionMultiplicationVocabulary_DoesNotBecomeWholeNumberMultiplication()
+    {
+        var skills = CanonicalMathematicsSkillMapper.Resolve(
+            "CCSS:5.NF.B.4",
+            "Apply and extend understanding of multiplication to multiply a fraction.");
+
+        Assert.Contains(CanonicalMathematicsSkill.FractionOfQuantity, skills);
+        Assert.DoesNotContain(CanonicalMathematicsSkill.WholeNumberMultiplication, skills);
+        Assert.True(NativeMathematicsOutcomeProfileResolver.Supports(
+            "CCSS:5.NF.B.4",
+            "Apply and extend understanding of multiplication to multiply a fraction."));
+    }
+
+    [Fact]
+    public void RatioRateVocabulary_WithRpLocator_MapsToUnitRate()
+    {
+        var skills = CanonicalMathematicsSkillMapper.Resolve(
+            "CCSS:6.RP.A.3",
+            "Use ratio and rate reasoning.");
+
+        Assert.Contains(CanonicalMathematicsSkill.UnitRateAndProportion, skills);
+        Assert.True(NativeMathematicsOutcomeProfileResolver.Supports(
+            "CCSS:6.RP.A.3",
+            "Use ratio and rate reasoning."));
     }
 
     [Fact]
@@ -94,7 +137,10 @@ public sealed class CanonicalMathematicsCapabilityTests
 
         Assert.Equal("edulytics-native-mathematics", provider.ProviderKey);
         Assert.True(provider.Supports(CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction));
+        Assert.True(provider.Supports(CanonicalMathematicsSkill.WholeNumberAddition));
+        Assert.True(provider.Supports(CanonicalMathematicsSkill.WholeNumberSubtraction));
         Assert.False(provider.Supports(CanonicalMathematicsSkill.WholeNumberMultiplication));
+        Assert.False(provider.Supports(CanonicalMathematicsSkill.WholeNumberDivision));
         Assert.Equal(
             MathematicsGeneratorFamily.IntegerComputation,
             Assert.Single(provider.ResolveFamilies(

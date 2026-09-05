@@ -15,16 +15,27 @@ public static class CanonicalMathematicsSkillMapper
         string? outcomeCode,
         string? description)
     {
-        var text = $" {outcomeCode} {description} ".ToUpperInvariant();
+        var codeText = $" {outcomeCode} ".ToUpperInvariant();
+        var descriptionText = $" {description} ".ToUpperInvariant();
+        var text = codeText + descriptionText;
         var skills = new HashSet<CanonicalMathematicsSkill>();
 
-        if (ContainsAny(text, "FRACTION OF", "FRACTIONS OF"))
+        var isFractionOfQuantity =
+            ContainsAny(text, "FRACTION OF", "FRACTIONS OF") ||
+            (ContainsAny(codeText, ".NF.", ":NF.") &&
+             text.Contains("FRACTION", StringComparison.Ordinal) &&
+             text.Contains("MULTIP", StringComparison.Ordinal));
+        if (isFractionOfQuantity)
             skills.Add(CanonicalMathematicsSkill.FractionOfQuantity);
 
         if (ContainsAny(text, "PERCENT OF", "PERCENTAGE OF"))
             skills.Add(CanonicalMathematicsSkill.PercentageOfQuantity);
 
-        if (ContainsAny(text, "UNIT RATE", "UNIT-RATE"))
+        var isUnitRate =
+            ContainsAny(text, "UNIT RATE", "UNIT-RATE") ||
+            (ContainsAny(codeText, ".RP.", ":RP.") &&
+             ContainsAny(text, "RATIO", "RATE"));
+        if (isUnitRate)
             skills.Add(CanonicalMathematicsSkill.UnitRateAndProportion);
 
         if (ContainsAny(text, "ONE-STEP EQUATION", "ONE STEP EQUATION") ||
@@ -35,27 +46,34 @@ public static class CanonicalMathematicsSkillMapper
             skills.Add(CanonicalMathematicsSkill.OneStepLinearEquation);
         }
 
-        var hasAdd = text.Contains("ADD", StringComparison.Ordinal);
-        var hasSubtract = text.Contains("SUBTRACT", StringComparison.Ordinal);
-        var hasMultiply = text.Contains("MULTIP", StringComparison.Ordinal);
-        var hasDivide = text.Contains("DIVID", StringComparison.Ordinal);
+        var targetsWholeNumberArithmetic =
+            ContainsAny(text, "WHOLE NUMBER", "WHOLE NUMBERS", "INTEGER", "INTEGERS") ||
+            ContainsAny(codeText, ".OA.", ":OA.", ".NBT.", ":NBT.", ".NS.", ":NS.");
 
-        if (hasAdd && hasSubtract && !hasMultiply && !hasDivide)
+        if (targetsWholeNumberArithmetic)
         {
-            skills.Add(CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction);
-        }
-        else
-        {
-            if (hasAdd)
-                skills.Add(CanonicalMathematicsSkill.WholeNumberAddition);
-            if (hasSubtract)
-                skills.Add(CanonicalMathematicsSkill.WholeNumberSubtraction);
-        }
+            var hasAdd = text.Contains("ADD", StringComparison.Ordinal);
+            var hasSubtract = text.Contains("SUBTRACT", StringComparison.Ordinal);
+            var hasMultiply = text.Contains("MULTIP", StringComparison.Ordinal);
+            var hasDivide = ContainsAny(text, "DIVID", "DIVISION");
 
-        if (hasMultiply)
-            skills.Add(CanonicalMathematicsSkill.WholeNumberMultiplication);
-        if (hasDivide)
-            skills.Add(CanonicalMathematicsSkill.WholeNumberDivision);
+            if (hasAdd && hasSubtract && !hasMultiply && !hasDivide)
+            {
+                skills.Add(CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction);
+            }
+            else
+            {
+                if (hasAdd)
+                    skills.Add(CanonicalMathematicsSkill.WholeNumberAddition);
+                if (hasSubtract)
+                    skills.Add(CanonicalMathematicsSkill.WholeNumberSubtraction);
+            }
+
+            if (hasMultiply)
+                skills.Add(CanonicalMathematicsSkill.WholeNumberMultiplication);
+            if (hasDivide)
+                skills.Add(CanonicalMathematicsSkill.WholeNumberDivision);
+        }
 
         return skills.OrderBy(skill => skill).ToArray();
     }

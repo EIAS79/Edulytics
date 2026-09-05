@@ -28,6 +28,8 @@ public sealed class NativeMathematicsGenerationCapabilityProvider
         new Dictionary<CanonicalMathematicsSkill, MathematicsGeneratorFamily>
         {
             [CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction] = MathematicsGeneratorFamily.IntegerComputation,
+            [CanonicalMathematicsSkill.WholeNumberAddition] = MathematicsGeneratorFamily.IntegerComputation,
+            [CanonicalMathematicsSkill.WholeNumberSubtraction] = MathematicsGeneratorFamily.IntegerComputation,
             [CanonicalMathematicsSkill.OneStepLinearEquation] = MathematicsGeneratorFamily.OneStepEquation,
             [CanonicalMathematicsSkill.FractionOfQuantity] = MathematicsGeneratorFamily.FractionOfQuantity,
             [CanonicalMathematicsSkill.PercentageOfQuantity] = MathematicsGeneratorFamily.PercentageOfQuantity,
