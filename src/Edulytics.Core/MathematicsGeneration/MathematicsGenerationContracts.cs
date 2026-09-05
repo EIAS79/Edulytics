@@ -12,10 +12,27 @@ public enum MathematicsGeneratorFamily
     UnitRateWordProblem = 5
 }
 
+/// <summary>
+/// Curriculum-neutral Mathematics skills understood by generation providers.
+/// Official curriculum outcome codes map into these skills; generators never
+/// need to understand a framework-specific code directly.
+/// </summary>
+public enum CanonicalMathematicsSkill
+{
+    WholeNumberComputation = 1,
+    OneStepLinearEquation = 2,
+    FractionOfQuantity = 3,
+    PercentageOfQuantity = 4,
+    UnitRateAndProportion = 5
+}
+
 public sealed record MathematicsOutcomeGenerationProfile(
     Guid LearningOutcomeId,
     string OutcomeCode,
-    IReadOnlyList<MathematicsGeneratorFamily> AllowedFamilies);
+    IReadOnlyList<MathematicsGeneratorFamily> AllowedFamilies)
+{
+    public IReadOnlyList<CanonicalMathematicsSkill> CanonicalSkills { get; init; } = [];
+}
 
 public sealed record MathematicsGenerationRequest(
     AssessmentBlueprint Blueprint,
