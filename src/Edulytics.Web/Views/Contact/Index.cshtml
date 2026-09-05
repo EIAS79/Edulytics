@@ -1,0 +1,35 @@
+@using Edulytics.Core.Constants
+@using Edulytics.Web.Support
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SupportResource> Contact
+@{
+    Layout = User.Identity?.IsAuthenticated == true
+        ? (User.IsInRole(RoleNames.Student) ? "_StudentLayout" : "_AppLayout")
+        : "_AuthLayout";
+    ViewData["Title"] = Contact["ContactUs"].Value;
+}
+
+<section class="student-card support-contact-card">
+    <header class="student-page-header">
+        <h1>@Contact["ContactUs"]</h1>
+        <p>@Contact["ContactSubtitle"]</p>
+    </header>
+
+    <dl class="support-contact-list">
+        <div>
+            <dt>@Contact["Email"]</dt>
+            <dd><a href="mailto:@SupportContactOptions.Email">@SupportContactOptions.Email</a></dd>
+        </div>
+        <div>
+            <dt>@Contact["Phone"]</dt>
+            <dd><a href="@SupportContactOptions.PhoneUri">@SupportContactOptions.PhoneDisplay</a></dd>
+        </div>
+        <div>
+            <dt>@Contact["CompanyWebsite"]</dt>
+            <dd><a href="@SupportContactOptions.CompanyWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.CompanyWebsiteDisplay</a></dd>
+        </div>
+        <div>
+            <dt>@Contact["ProductWebsite"]</dt>
+            <dd><a href="@SupportContactOptions.ProductWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.ProductWebsiteDisplay</a></dd>
+        </div>
+    </dl>
+</section>
