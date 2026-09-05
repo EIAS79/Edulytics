@@ -253,7 +253,8 @@
                                     var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
                                     <option value="@outcome.SelectionKey"
                                             data-topic-id="@topic.Id"
-                                            data-code="@displayCode"
+                                            data-code="@outcome.Code"
+                                            data-display-code="@displayCode"
                                             data-description="@outcome.Description"
                                             data-ai-supported="@aiSupported.ToString().ToLowerInvariant()"
                                             title="@outcome.SelectionLabel"
@@ -433,7 +434,7 @@
     const placeholder = item.options[0];
     const refreshPreview = () => {
         const selected = item.options[item.selectedIndex];
-        code.value = selected?.dataset.code ?? '';
+        code.value = selected?.dataset.displayCode ?? '';
         description.value = selected?.dataset.description ?? '';
     };
 
