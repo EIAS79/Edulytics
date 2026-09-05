@@ -167,8 +167,18 @@ public sealed class AssessmentBuilderController(
     {
         TempData[result.Succeeded ? "Success" : "Error"] = result.Succeeded
             ? text[successKey].Value
-            : text["BuilderOperationFailed", result.Error?.ToString() ?? "Unknown"].Value;
+            : ErrorMessage(result.Error);
     }
+    private string ErrorMessage(AssessmentErrorCode? error) => error switch
+    {
+        AssessmentErrorCode.OutcomeDoesNotMatchAssessment => text["ErrorOutcomeDoesNotMatchAssessment"].Value,
+        AssessmentErrorCode.InvalidQuestionScore or AssessmentErrorCode.InvalidMaxScore => text["ErrorInvalidMarks"].Value,
+        AssessmentErrorCode.AssessmentScoreMismatch => text["ErrorAssessmentScoreMismatch"].Value,
+        AssessmentErrorCode.InvalidText or AssessmentErrorCode.Required => text["ErrorInvalidQuestionContent"].Value,
+        AssessmentErrorCode.DuplicateQuestionOrder => text["ErrorDuplicateQuestionOrder"].Value,
+        AssessmentErrorCode.ConcurrencyConflict => text["ErrorConcurrencyConflict"].Value,
+        _ => text["BuilderOperationFailed"].Value
+    };
     private static bool TryDecode(string? value, out byte[] bytes)
     {
         bytes = [];
