@@ -1,0 +1,56 @@
+@using Edulytics.Core.Enums
+@model Edulytics.Services.Assessments.AssessmentDeliverySettingsWorkspace
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentBuilderResource> A
+@{
+    ViewData["Title"] = A["DeliverySettings"];
+    var assessment = Model.Assessment;
+    var rowVersion = Convert.ToBase64String(assessment.RowVersion);
+}
+<section class="assessment-page round2-delivery-correction">
+    <header class="assessment-header">
+        <div>
+            <span class="assessment-context">@A["AssessmentBuilder"]</span>
+            <h1>@assessment.Title</h1>
+            <p>
+                <strong>@A["CurrentDelivery"]:</strong>
+                <span class="ed-delivery-badge is-offline">@A["DeliveryOfflineBadge"]</span>
+            </p>
+        </div>
+        <div class="assessment-actions">
+            <a class="school-button"
+               asp-controller="AssessmentBuilder"
+               asp-action="Index"
+               asp-route-assessmentId="@assessment.Id">@A["AssessmentBuilder"]</a>
+        </div>
+    </header>
+
+    @if (TempData["Error"] is string error)
+    {
+        <div class="school-alert school-alert-error" role="alert">@error</div>
+    }
+
+    <section class="assessment-card">
+        <h2>@A["DeliverySettings"]</h2>
+        <p>@A["DeliveryOnline"]</p>
+        <p class="assessment-info">
+            This correction is available only while the assessment has no recorded student results.
+            Targeting and difficulty remain unchanged.
+        </p>
+
+        <form asp-controller="AssessmentBuilder"
+              asp-action="UpdateDeliverySettings"
+              asp-route-assessmentId="@assessment.Id"
+              method="post"
+              class="assessment-form">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="rowVersion" value="@rowVersion" />
+            <input type="hidden" name="targetType" value="@assessment.TargetType" />
+            <input type="hidden" name="targetStudentProfileId" value="@assessment.TargetStudentProfileId" />
+            <input type="hidden" name="deliveryMode" value="@AssessmentDeliveryMode.Online" />
+            <input type="hidden" name="difficultyBand" value="@assessment.DifficultyBand" />
+            <button class="school-button school-button-primary" type="submit">
+                @A["SaveDeliverySettings"] — @A["DeliveryOnlineBadge"]
+            </button>
+        </form>
+    </section>
+</section>
