@@ -21,6 +21,7 @@ public sealed record StudentLearningViewModel(
 {
     public Guid? SelectedCurriculumAdoptionId { get; init; }
     public Guid? SelectedClassGroupId { get; init; }
+    public IReadOnlyList<Guid> SelectedLearningNodeIds { get; init; } = [];
 }
 
 public sealed record StudentAssessmentsViewModel(
