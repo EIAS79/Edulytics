@@ -128,7 +128,9 @@ public sealed class CurriculumController : Controller
         Guid curriculumAdoptionId,
         string name,
         int order,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        Guid? academicYearId = null,
+        Guid? academicProgramId = null)
     {
         var levels = ExplicitLevels;
         if (levels is null)
@@ -142,7 +144,11 @@ public sealed class CurriculumController : Controller
                     name,
                     order),
                 cancellationToken),
-            "SuccessTopicCreated");
+            "SuccessTopicCreated",
+            CurriculumContextRouteValues(
+                academicYearId,
+                academicProgramId,
+                curriculumAdoptionId));
     }
 
     [Authorize(Roles = RoleNames.SubjectSupervisor)]
@@ -152,17 +158,26 @@ public sealed class CurriculumController : Controller
         Guid topicId,
         string selectionKey,
         int order,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        Guid? academicYearId = null,
+        Guid? academicProgramId = null,
+        Guid? curriculumAdoptionId = null)
     {
         var levels = ExplicitLevels;
         if (levels is null)
             return Task.FromResult<IActionResult>(StatusCode(500));
 
+        var routeValues = CurriculumContextRouteValues(
+            academicYearId,
+            academicProgramId,
+            curriculumAdoptionId);
+
         var selection = ParseOfficialSelection(selectionKey);
         if (selection is null)
         {
             TempData["Error"] = _text["ErrorOfficialOutcomeNotFound"].Value;
-            return Task.FromResult<IActionResult>(RedirectToAction(nameof(Index)));
+            return Task.FromResult<IActionResult>(
+                RedirectToAction(nameof(Index), routeValues));
         }
 
         return ExecuteExplicitAsync(
@@ -174,7 +189,8 @@ public sealed class CurriculumController : Controller
                     selection.Value.LessonNodeId,
                     order),
                 cancellationToken),
-            "SuccessOfficialOutcomeAdded");
+            "SuccessOfficialOutcomeAdded",
+            routeValues);
     }
 
     // -------- Legacy compatibility API below. --------
@@ -360,7 +376,8 @@ public sealed class CurriculumController : Controller
 
     private async Task<IActionResult> ExecuteExplicitAsync(
         Func<Guid, Task<ExplicitCurriculumLevelCommandResult>> action,
-        string successKey)
+        string successKey,
+        object? routeValues = null)
     {
         if (!TryActor(out var actorId))
             return Forbid();
@@ -382,7 +399,27 @@ public sealed class CurriculumController : Controller
                 : localized.Value;
         }
 
-        return RedirectToAction(nameof(Index));
+        return RedirectToAction(nameof(Index), routeValues);
+    }
+
+    private static object? CurriculumContextRouteValues(
+        Guid? academicYearId,
+        Guid? academicProgramId,
+        Guid? curriculumAdoptionId)
+    {
+        if (!academicYearId.HasValue ||
+            !academicProgramId.HasValue ||
+            !curriculumAdoptionId.HasValue)
+        {
+            return null;
+        }
+
+        return new
+        {
+            academicYearId = academicYearId.Value,
+            academicProgramId = academicProgramId.Value,
+            curriculumAdoptionId = curriculumAdoptionId.Value
+        };
     }
 
     private IExplicitCurriculumLevelService? ExplicitLevels =>

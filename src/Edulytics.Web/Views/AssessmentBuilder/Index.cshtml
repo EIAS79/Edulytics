@@ -1,6 +1,7 @@
 @using Edulytics.Core.Assessments
 @using Edulytics.Core.Enums
 @using Edulytics.Services.Assessments
+@using Edulytics.Web.Presentation
 @model Edulytics.Services.Assessments.AssessmentBuilderWorkspace
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentBuilderResource> A
 @{
@@ -116,17 +117,27 @@
                     <option value="@AssessmentItemDifficulty.Medium" selected>@A["DifficultyMedium"]</option>
                     <option value="@AssessmentItemDifficulty.Challenging">@A["DifficultyChallenging"]</option>
                 </select>
-                <fieldset>
+                <fieldset class="ed-outcome-fieldset">
                     <legend>@A["LearningOutcomes"]</legend>
-                    @foreach (var outcome in Model.Details.EligibleOutcomes)
-                    {
-                        var aiSupported = nativeOutcomeIds.Contains(outcome.Id);
-                        <label>
-                            <input type="checkbox" name="outcomeIds" value="@outcome.Id" />
-                            <strong>@outcome.Code</strong> — @outcome.Description
-                            <small>(@A[aiSupported ? "AiSupported" : "ManualOnly"])</small>
-                        </label>
-                    }
+                    <div class="ed-outcome-choice-list">
+                        @foreach (var outcome in Model.Details.EligibleOutcomes)
+                        {
+                            var aiSupported = nativeOutcomeIds.Contains(outcome.Id);
+                            var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
+                            <label class="ed-outcome-option">
+                                <input type="checkbox" name="outcomeIds" value="@outcome.Id" />
+                                <span class="ed-outcome-copy">
+                                    <span class="ed-outcome-heading">
+                                        <strong class="ed-outcome-code">@displayCode</strong>
+                                        <span class="ed-ai-capability-badge @(aiSupported ? "is-supported" : "is-manual")">
+                                            @A[aiSupported ? "AiSupported" : "ManualOnly"]
+                                        </span>
+                                    </span>
+                                    <span class="ed-outcome-description" title="@outcome.Description">@outcome.Description</span>
+                                </span>
+                            </label>
+                        }
+                    </div>
                 </fieldset>
                 <button class="school-button school-button-primary" type="submit" disabled="@(!hasEligibleOutcomes)">@A["AddQuestionManually"]</button>
             </form>
@@ -135,6 +146,24 @@
         <section class="assessment-card">
             <h2>@A["GenerateQuestionsWithAI"]</h2>
             <p>@A["NativeGenerationNotice"]</p>
+
+            @if (hasEligibleOutcomes)
+            {
+                <div class="ed-ai-capability-summary" aria-label="@A["LearningOutcomes"]">
+                    @foreach (var outcome in Model.Details.EligibleOutcomes)
+                    {
+                        var aiSupported = nativeOutcomeIds.Contains(outcome.Id);
+                        var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
+                        <div class="ed-ai-capability-row">
+                            <strong class="ed-outcome-code">@displayCode</strong>
+                            <span class="ed-ai-capability-badge @(aiSupported ? "is-supported" : "is-manual")">
+                                @A[aiSupported ? "AiSupported" : "ManualOnly"]
+                            </span>
+                        </div>
+                    }
+                </div>
+            }
+
             @if (!hasEligibleOutcomes)
             {
                 <div class="assessment-empty">@A["LearningOutcomesSetupRequired"]</div>
@@ -155,17 +184,27 @@
                         <option value="@AssessmentBuilderDifficulty.Challenge">@A["Challenge"]</option>
                     </select>
                     <input type="hidden" name="seed" value="0" />
-                    <fieldset>
+                    <fieldset class="ed-outcome-fieldset">
                         <legend>@A["LearningOutcomes"]</legend>
-                        @foreach (var outcome in Model.Details.EligibleOutcomes)
-                        {
-                            var aiSupported = nativeOutcomeIds.Contains(outcome.Id);
-                            <label>
-                                <input type="checkbox" name="outcomeIds" value="@outcome.Id" disabled="@(!aiSupported)" />
-                                <strong>@outcome.Code</strong> — @outcome.Description
-                                <small>(@A[aiSupported ? "AiSupported" : "ManualOnly"])</small>
-                            </label>
-                        }
+                        <div class="ed-outcome-choice-list">
+                            @foreach (var outcome in Model.Details.EligibleOutcomes)
+                            {
+                                var aiSupported = nativeOutcomeIds.Contains(outcome.Id);
+                                var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
+                                <label class="ed-outcome-option @(aiSupported ? "" : "is-disabled")">
+                                    <input type="checkbox" name="outcomeIds" value="@outcome.Id" disabled="@(!aiSupported)" />
+                                    <span class="ed-outcome-copy">
+                                        <span class="ed-outcome-heading">
+                                            <strong class="ed-outcome-code">@displayCode</strong>
+                                            <span class="ed-ai-capability-badge @(aiSupported ? "is-supported" : "is-manual")">
+                                                @A[aiSupported ? "AiSupported" : "ManualOnly"]
+                                            </span>
+                                        </span>
+                                        <span class="ed-outcome-description" title="@outcome.Description">@outcome.Description</span>
+                                    </span>
+                                </label>
+                            }
+                        </div>
                     </fieldset>
                     <button class="school-button school-button-primary" type="submit">@A["GenerateQuestionsWithAI"]</button>
                 </form>
@@ -222,7 +261,8 @@
                         var outcome = Model.Details.EligibleOutcomes.FirstOrDefault(x => x.Id == outcomeId);
                         if (outcome is not null)
                         {
-                            <span class="assessment-mapping-tag"><strong>@outcome.Code</strong> — @outcome.Description</span>
+                            var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
+                            <span class="assessment-mapping-tag" title="@outcome.Description"><strong>@displayCode</strong></span>
                         }
                     }
                 </div>

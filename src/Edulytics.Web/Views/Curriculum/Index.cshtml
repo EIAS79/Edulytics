@@ -1,7 +1,10 @@
 @using Edulytics.Core.Constants
+@using Edulytics.Services.Assessments
 @using Edulytics.Services.Curriculum
+@using Edulytics.Web.Presentation
 @model Edulytics.Web.ViewModels.Curriculum.CurriculumIndexViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.CurriculumResource> C
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentBuilderResource> A
 
 @{
     ViewData["Title"] = C["CurriculumTitle"];
@@ -179,6 +182,12 @@
                         <input type="hidden"
                                name="curriculumAdoptionId"
                                value="@selectedAdoption.Id" />
+                        <input type="hidden"
+                               name="academicYearId"
+                               value="@selectedAdoption.AcademicYearId" />
+                        <input type="hidden"
+                               name="academicProgramId"
+                               value="@selectedAdoption.AcademicProgramId" />
 
                         <label for="topicName">@C["Name"]</label>
                         <input id="topicName"
@@ -209,6 +218,15 @@
                           class="curriculum-form"
                           id="officialOutcomeForm">
                         @Html.AntiForgeryToken()
+                        <input type="hidden"
+                               name="academicYearId"
+                               value="@selectedAdoption.AcademicYearId" />
+                        <input type="hidden"
+                               name="academicProgramId"
+                               value="@selectedAdoption.AcademicProgramId" />
+                        <input type="hidden"
+                               name="curriculumAdoptionId"
+                               value="@selectedAdoption.Id" />
 
                         <label for="officialTopicId">@C["SchoolTopic"]</label>
                         <select id="officialTopicId" name="topicId" required>
@@ -229,17 +247,20 @@
                             {
                                 @foreach (var outcome in topic.OfficialOutcomes)
                                 {
+                                    var aiSupported = NativeMathematicsOutcomeProfileResolver.Supports(
+                                        outcome.Code,
+                                        outcome.Description);
+                                    var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
                                     <option value="@outcome.SelectionKey"
                                             data-topic-id="@topic.Id"
                                             data-code="@outcome.Code"
+                                            data-display-code="@displayCode"
                                             data-description="@outcome.Description"
+                                            data-ai-supported="@aiSupported.ToString().ToLowerInvariant()"
+                                            title="@outcome.SelectionLabel"
                                             hidden
                                             disabled>
-                                        @if (!string.IsNullOrWhiteSpace(outcome.GroupLabel))
-                                        {
-                                            @($"{outcome.GroupLabel} — ")
-                                        }
-                                        @outcome.SelectionLabel
+                                        @displayCode — @A[aiSupported ? "AiSupported" : "ManualOnly"]
                                     </option>
                                 }
                             }
@@ -330,16 +351,26 @@
                                         <tbody>
                                         @foreach (var outcome in topic.Outcomes)
                                         {
+                                            var aiSupported = NativeMathematicsOutcomeProfileResolver.Supports(
+                                                outcome.Code,
+                                                outcome.Description);
+                                            var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
                                             <tr>
                                                 <td data-label="@C["Order"]">@outcome.Order</td>
                                                 <td data-label="@C["OutcomeCode"]">
-                                                    <strong>@outcome.Code</strong>
+                                                    <strong class="ed-outcome-code">@displayCode</strong>
+                                                    <span class="ed-ai-capability-badge @(aiSupported ? "is-supported" : "is-manual")">
+                                                        @A[aiSupported ? "AiSupported" : "ManualOnly"]
+                                                    </span>
                                                     @if (outcome.IsOfficial)
                                                     {
                                                         <span class="curriculum-official-badge">@C["Official"]</span>
                                                     }
                                                 </td>
-                                                <td data-label="@C["Description"]">@outcome.Description</td>
+                                                <td data-label="@C["Description"]">
+                                                    <span class="ed-outcome-description"
+                                                          title="@outcome.Description">@outcome.Description</span>
+                                                </td>
                                                 <td>
                                                     @if (!outcome.IsOfficial && canManageCurriculum)
                                                     {
@@ -403,7 +434,7 @@
     const placeholder = item.options[0];
     const refreshPreview = () => {
         const selected = item.options[item.selectedIndex];
-        code.value = selected?.dataset.code ?? '';
+        code.value = selected?.dataset.displayCode ?? '';
         description.value = selected?.dataset.description ?? '';
     };
 
