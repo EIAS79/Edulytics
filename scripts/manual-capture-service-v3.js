@@ -5,33 +5,17 @@ const PORT = process.env.PORT || 10000;
 const BASE = (process.env.BASE_URL || 'https://staging.edulytiks.com').replace(/\/$/, '');
 const EMAIL = process.env.TEACHER_EMAIL || '';
 const PASSWORD = process.env.TEACHER_PASSWORD || '';
+const ASSESSMENT_ID = 'c66f49e6-a1cf-483d-8443-eeffb45e6618';
+const TITLE = 'PDF Acceptance 20260905-X9Q2';
 
-const CLASS_ID = 'e11f4a89-ef25-496d-9271-1a7b36400b01';
-const SUBJECT_ID = '87acef8a-cfbc-4053-859f-92e98d323e47';
-const TERM_ID = '4a055ec2-a739-4db7-bee9-a0513f140e15';
-const OUTCOME_ID = 'df429c95-6a67-43c7-9aa1-dcd6db8febc2';
-const RUN_TAG = '20260905-X9Q2';
-const TITLE = `PDF Acceptance ${RUN_TAG}`;
-const PROMPT = `PDF_PROMPT_${RUN_TAG}`;
-const ANSWER = `PDF_CORRECT_ANSWER_${RUN_TAG}`;
-const SOLUTION = `PDF_SOLUTION_${RUN_TAG}`;
-
-let studentPdf = null;
-let answerKeyPdf = null;
-let result = {
-  status: 'RUNNING',
-  startedAt: new Date().toISOString(),
-  checks: [],
-  fixture: { title: TITLE, prompt: PROMPT, answerSentinel: ANSWER, solutionSentinel: SOLUTION }
-};
+let result = { status: 'RUNNING', assessmentId: ASSESSMENT_ID, checks: [] };
 
 function event(type, data = {}) {
-  console.log('PDF_ACCEPTANCE', JSON.stringify({ at: new Date().toISOString(), type, ...data }));
+  console.log('PDF_CLEANUP', JSON.stringify({ at: new Date().toISOString(), type, ...data }));
 }
-
-function addCheck(kind, data = {}) {
-  result.checks.push({ kind, ...data });
-  event(kind, data);
+function pass(kind, data = {}) {
+  result.checks.push({ kind, status: 'PASS', ...data });
+  event(kind, { status: 'PASS', ...data });
 }
 
 async function launch() {
@@ -48,242 +32,67 @@ async function launch() {
 async function login(page) {
   const url = new URL(BASE);
   await page.setCookie({
-    name: 'Edulytics.Culture',
-    value: 'c=en|uic=en',
-    domain: url.hostname,
-    path: '/',
-    secure: true,
-    sameSite: 'Strict'
+    name: 'Edulytics.Culture', value: 'c=en|uic=en', domain: url.hostname,
+    path: '/', secure: true, sameSite: 'Strict'
   });
-
   const response = await page.goto(`${BASE}/account/login`, { waitUntil: 'networkidle2', timeout: 60000 });
-  if (!response) throw new Error('login page returned no response');
-  const retryAfter = response.headers()['retry-after'] || null;
-  if (response.status() === 429) throw new Error(`login rate limited (retry-after=${retryAfter || 'unknown'})`);
-  if (response.status() >= 400) throw new Error(`login page failed with HTTP ${response.status()}`);
-
+  if (!response || response.status() >= 400) throw new Error(`login page HTTP ${response?.status()}`);
   const email = await page.$('input[type="email"],input[name="Email"],input[name$=".Email"]');
   const password = await page.$('input[type="password"],input[name="Password"],input[name$=".Password"]');
   const submit = await page.$('button[type="submit"],input[type="submit"]');
   if (!email || !password || !submit) throw new Error('login controls missing');
-
   await email.type(EMAIL);
   await password.type(PASSWORD);
   await Promise.all([
     page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 60000 }).catch(() => null),
     submit.click()
   ]);
+  if (page.url().toLowerCase().includes('/account/login')) throw new Error('teacher login failed');
+  pass('teacher-login', { url: page.url() });
+}
 
-  if (page.url().toLowerCase().includes('/account/login')) {
-    const message = await page.$eval('.validation-summary, [role="alert"]', x => (x.innerText || '').trim()).catch(() => '');
-    throw new Error(`login failed${message ? `: ${message}` : ''}`);
+async function cleanupAssessment(page) {
+  const detailsUrl = `${BASE}/school/assessments/${ASSESSMENT_ID}`;
+  const response = await page.goto(detailsUrl, { waitUntil: 'networkidle2', timeout: 60000 });
+  if (!response) throw new Error('assessment details returned no response');
+  if (response.status() === 404) {
+    pass('assessment-already-absent');
+    return;
   }
+  if (response.status() >= 400) throw new Error(`assessment details HTTP ${response.status()}`);
 
-  addCheck('teacher-login', { status: 'PASS', url: page.url() });
-}
+  const deleteForm = `form[action$="/${ASSESSMENT_ID}/delete"]`;
+  if (!await page.$(deleteForm)) throw new Error('assessment delete form missing');
 
-async function setNamedControl(page, formSelector, name, value) {
-  const ok = await page.evaluate(({ formSelector, name, value }) => {
-    const form = document.querySelector(formSelector);
-    if (!form) return false;
-    const control = [...form.elements].find(el => (el.name || '').toLowerCase() === name.toLowerCase());
-    if (!control) return false;
-    if (control.tagName === 'SELECT') {
-      const option = [...control.options].find(o => o.value === value);
-      if (!option) return false;
-      control.value = value;
-      control.dispatchEvent(new Event('change', { bubbles: true }));
-      return true;
-    }
-    control.value = value;
-    control.dispatchEvent(new Event('input', { bubbles: true }));
-    control.dispatchEvent(new Event('change', { bubbles: true }));
-    return true;
-  }, { formSelector, name, value });
-  if (!ok) throw new Error(`control ${name}=${value} not found in ${formSelector}`);
-}
-
-async function submitForm(page, formSelector) {
   await Promise.all([
     page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 60000 }).catch(() => null),
     page.evaluate(selector => {
       const form = document.querySelector(selector);
-      if (!form) throw new Error(`form missing: ${selector}`);
+      if (!form) throw new Error('delete form missing');
       if (typeof form.requestSubmit === 'function') form.requestSubmit();
       else form.submit();
-    }, formSelector)
+    }, deleteForm)
   ]);
-}
 
-async function findExistingAssessment(page) {
-  return page.evaluate(title => {
-    for (const article of document.querySelectorAll('article.assessment-list-card')) {
-      if (!(article.innerText || '').includes(title)) continue;
-      for (const a of article.querySelectorAll('a[href]')) {
-        const m = (a.getAttribute('href') || '').match(/\/school\/assessments\/([0-9a-f-]{36})/i);
-        if (m) return m[1];
-      }
-    }
-    return null;
-  }, TITLE);
-}
-
-async function createOrReuseAssessment(page) {
-  const response = await page.goto(`${BASE}/school/assessments`, { waitUntil: 'networkidle2', timeout: 60000 });
-  if (!response || response.status() >= 400) throw new Error(`assessments page failed: ${response?.status()}`);
-
-  let assessmentId = await findExistingAssessment(page);
-  if (assessmentId) {
-    result.assessmentId = assessmentId;
-    addCheck('reuse-assessment-fixture', { status: 'PASS', assessmentId });
-    return assessmentId;
-  }
-
-  const createForm = 'form.assessment-create-form';
-  if (!await page.$(createForm)) throw new Error('teacher create-assessment form missing');
-
-  await setNamedControl(page, createForm, 'classGroupId', CLASS_ID);
-  await new Promise(resolve => setTimeout(resolve, 300));
-  await setNamedControl(page, createForm, 'subjectId', SUBJECT_ID);
-  await setNamedControl(page, createForm, 'termId', TERM_ID);
-  await setNamedControl(page, createForm, 'title', TITLE);
-  await setNamedControl(page, createForm, 'assessmentDate', '2026-09-05');
-  await setNamedControl(page, createForm, 'maxScore', '5');
-  await submitForm(page, createForm);
-
-  const match = page.url().match(/\/school\/assessments\/([0-9a-f-]{36})(?:$|[/?#])/i);
-  if (match) assessmentId = match[1];
-
-  if (!assessmentId) {
-    await page.goto(`${BASE}/school/assessments`, { waitUntil: 'networkidle2', timeout: 60000 });
-    assessmentId = await findExistingAssessment(page);
-  }
-
-  if (!assessmentId) throw new Error(`assessment creation did not expose an id; current=${page.url()}`);
-  result.assessmentId = assessmentId;
-  addCheck('create-assessment-ui', { status: 'PASS', assessmentId });
-  return assessmentId;
-}
-
-async function configureOffline(page, assessmentId) {
-  const builderUrl = `${BASE}/school/assessments/${assessmentId}/builder`;
-  const response = await page.goto(builderUrl, { waitUntil: 'networkidle2', timeout: 60000 });
-  if (!response || response.status() >= 400) throw new Error(`builder failed: ${response?.status()}`);
-
-  const settingsForm = `form[action$="/${assessmentId}/builder/settings"]`;
-  if (!await page.$(settingsForm)) throw new Error('delivery settings form missing');
-  await setNamedControl(page, settingsForm, 'targetType', 'Class');
-  await setNamedControl(page, settingsForm, 'deliveryMode', 'Offline');
-  await setNamedControl(page, settingsForm, 'difficultyBand', 'AtClassLevel');
-  await submitForm(page, settingsForm);
-
-  const state = await page.evaluate(() => ({
-    deliveryValue: [...document.querySelectorAll('select')].find(x => (x.name || '').toLowerCase() === 'deliverymode')?.value || null,
-    studentHref: [...document.querySelectorAll('a[href]')].map(a => a.getAttribute('href')).find(h => h && h.endsWith('/student-paper.pdf')) || null,
-    keyHref: [...document.querySelectorAll('a[href]')].map(a => a.getAttribute('href')).find(h => h && h.endsWith('/answer-key.pdf')) || null
-  }));
-
-  if (state.deliveryValue !== 'Offline') throw new Error(`offline setting not persisted: ${state.deliveryValue}`);
-  if (!state.studentHref || !state.keyHref) throw new Error('offline PDF download links are not visible to Teacher');
-  addCheck('offline-settings-and-buttons', { status: 'PASS', studentHref: state.studentHref, answerKeyHref: state.keyHref });
-}
-
-async function addManualQuestion(page, assessmentId) {
-  const builderUrl = `${BASE}/school/assessments/${assessmentId}/builder`;
-  await page.goto(builderUrl, { waitUntil: 'networkidle2', timeout: 60000 });
-  const existing = await page.evaluate(prompt => (document.body.innerText || '').includes(prompt), PROMPT);
-  if (existing) {
-    addCheck('reuse-manual-question-fixture', { status: 'PASS' });
-    return;
-  }
-
-  const manualForm = '#manual-question-form';
-  if (!await page.$(manualForm)) throw new Error('manual question form missing');
-
-  await setNamedControl(page, manualForm, 'prompt', PROMPT);
-  await setNamedControl(page, manualForm, 'correctAnswer', ANSWER);
-  await setNamedControl(page, manualForm, 'solution', SOLUTION);
-  await setNamedControl(page, manualForm, 'maxScore', '5');
-  await setNamedControl(page, manualForm, 'order', '1');
-  await setNamedControl(page, manualForm, 'difficulty', 'Medium');
-
-  const outcomeSet = await page.evaluate(({ selector, outcomeId }) => {
-    const form = document.querySelector(selector);
-    if (!form) return false;
-    const input = [...form.querySelectorAll('input')].find(el =>
-      (el.name || '').toLowerCase() === 'outcomeids' && el.value.toLowerCase() === outcomeId.toLowerCase());
-    if (!input) return false;
-    input.checked = true;
-    input.dispatchEvent(new Event('change', { bubbles: true }));
-    return true;
-  }, { selector: manualForm, outcomeId: OUTCOME_ID });
-  if (!outcomeSet) throw new Error('mapped outcome checkbox missing from manual question form');
-
-  await submitForm(page, manualForm);
-  const body = await page.evaluate(() => document.body.innerText || '');
-  if (!body.includes(PROMPT)) throw new Error('manual question prompt not visible after save');
-  addCheck('manual-question-ui', { status: 'PASS', outcomeId: OUTCOME_ID });
-}
-
-function cookieHeader(cookies) {
-  return cookies.map(c => `${c.name}=${c.value}`).join('; ');
-}
-
-async function fetchPdfAuthenticated(page, url, label) {
-  const cookies = await page.cookies(BASE);
-  const response = await fetch(url, {
-    headers: { Cookie: cookieHeader(cookies), Accept: 'application/pdf' },
-    redirect: 'manual'
-  });
-  const contentType = response.headers.get('content-type') || '';
-  const bytes = Buffer.from(await response.arrayBuffer());
-  if (response.status !== 200) throw new Error(`${label} HTTP ${response.status}`);
-  if (!contentType.toLowerCase().includes('application/pdf')) throw new Error(`${label} content-type=${contentType}`);
-  if (bytes.length < 500 || bytes.subarray(0, 4).toString('ascii') !== '%PDF') throw new Error(`${label} is not a valid PDF envelope`);
-  addCheck(label, { status: 'PASS', httpStatus: response.status, contentType, bytes: bytes.length });
-  return bytes;
-}
-
-async function unauthenticatedGuard(assessmentId) {
-  const url = `${BASE}/school/assessments/${assessmentId}/builder/student-paper.pdf`;
-  const response = await fetch(url, { redirect: 'manual', headers: { Accept: 'application/pdf' } });
-  const contentType = response.headers.get('content-type') || '';
-  if (response.status === 200 && contentType.toLowerCase().includes('application/pdf')) {
-    throw new Error('unauthenticated request received Student PDF');
-  }
-  if (![302, 401, 403].includes(response.status)) throw new Error(`unexpected unauthenticated status ${response.status}`);
-  addCheck('unauthenticated-pdf-guard', { status: 'PASS', httpStatus: response.status, location: response.headers.get('location') || null });
+  await page.goto(`${BASE}/school/assessments`, { waitUntil: 'networkidle2', timeout: 60000 });
+  const stillVisible = await page.evaluate(title => (document.body.innerText || '').includes(title), TITLE);
+  if (stillVisible) throw new Error('assessment fixture still visible after delete');
+  pass('assessment-deleted-via-ui');
 }
 
 async function run() {
   let browser;
   try {
-    if (!EMAIL) throw new Error('TEACHER_EMAIL is empty');
-    if (!PASSWORD) throw new Error('TEACHER_PASSWORD is empty');
-
+    if (!EMAIL || !PASSWORD) throw new Error('temporary teacher credentials missing');
     browser = await launch();
     const page = await browser.newPage();
     await login(page);
-    const assessmentId = await createOrReuseAssessment(page);
-    await configureOffline(page, assessmentId);
-    await addManualQuestion(page, assessmentId);
-
-    const studentUrl = `${BASE}/school/assessments/${assessmentId}/builder/student-paper.pdf`;
-    const keyUrl = `${BASE}/school/assessments/${assessmentId}/builder/answer-key.pdf`;
-    studentPdf = await fetchPdfAuthenticated(page, studentUrl, 'student-paper-pdf');
-    answerKeyPdf = await fetchPdfAuthenticated(page, keyUrl, 'teacher-answer-key-pdf');
-    await unauthenticatedGuard(assessmentId);
-
+    await cleanupAssessment(page);
     result = { ...result, status: 'PASS', completedAt: new Date().toISOString() };
-    event('done', { status: result.status, assessmentId, checks: result.checks });
+    event('done', result);
   } catch (error) {
-    result = {
-      ...result,
-      status: 'FAIL',
-      error: error.stack || error.message,
-      completedAt: new Date().toISOString()
-    };
-    event('fatal', { status: result.status, assessmentId: result.assessmentId || null, error: result.error });
+    result = { ...result, status: 'FAIL', error: error.stack || error.message, completedAt: new Date().toISOString() };
+    event('fatal', result);
   } finally {
     if (browser) await browser.close().catch(() => {});
   }
@@ -291,15 +100,7 @@ async function run() {
 
 const app = express();
 app.get('/', (_req, res) => res.status(result.status === 'FAIL' ? 500 : 200).json(result));
-app.get('/student.pdf', (_req, res) => {
-  if (!studentPdf) return res.status(404).send('not ready');
-  res.type('application/pdf').send(studentPdf);
-});
-app.get('/answer-key.pdf', (_req, res) => {
-  if (!answerKeyPdf) return res.status(404).send('not ready');
-  res.type('application/pdf').send(answerKeyPdf);
-});
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Teacher PDF acceptance helper listening on ${PORT}`);
+  console.log(`Teacher PDF cleanup helper listening on ${PORT}`);
   void run();
 });
