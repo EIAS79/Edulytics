@@ -29,7 +29,6 @@
         document.querySelectorAll("form[data-confirm]").forEach(form => {
             form.addEventListener("submit", event => {
                 const message = form.dataset.confirm;
-
                 if (message && !globalThis.confirm(message)) {
                     event.preventDefault();
                 }
@@ -39,35 +38,24 @@
 
     function wirePrintButtons() {
         document.querySelectorAll("[data-print-report]").forEach(button => {
-            button.addEventListener("click", () => {
-                globalThis.print();
-            });
+            button.addEventListener("click", () => globalThis.print());
         });
     }
 
     function wireReportKindFilters() {
-        document.querySelectorAll("[data-report-kind-filter]")
-            .forEach(select => {
-                const form = select.closest("form[data-report-filter-form]");
-
-                if (!form) {
-                    return;
-                }
-
-                select.addEventListener("change", () => {
-                    form.requestSubmit();
-                });
-            });
+        document.querySelectorAll("[data-report-kind-filter]").forEach(select => {
+            const form = select.closest("form[data-report-filter-form]");
+            if (form) {
+                select.addEventListener("change", () => form.requestSubmit());
+            }
+        });
     }
 
     function wireSchoolCountryTimeZones() {
         document.querySelectorAll("[data-school-country]").forEach(country => {
             const form = country.closest("form");
             const timeZone = form?.querySelector("[data-school-time-zone]");
-
-            if (!timeZone) {
-                return;
-            }
+            if (!timeZone) return;
 
             const sync = () => {
                 const option = country.selectedOptions?.[0];
@@ -81,29 +69,18 @@
 
     function wireStudentWorkflowCleanup() {
         const students = document.getElementById("students");
-        if (!students) {
-            return;
-        }
+        if (!students) return;
 
         students.classList.add("round2-students-section");
         students.querySelectorAll("table").forEach(table => {
             table.classList.add("round2-readable-table");
-            const parent = table.parentElement;
-            if (parent) {
-                parent.classList.add("round2-table-scroll");
-            }
+            table.parentElement?.classList.add("round2-table-scroll");
         });
 
         const profileForm = Array.from(students.querySelectorAll("form"))
-            .find(form =>
-                (form.action || "")
-                    .toLowerCase()
-                    .includes("createstudentprofile"));
+            .find(form => (form.action || "").toLowerCase().includes("createstudentprofile"));
         const enrollmentForm = Array.from(students.querySelectorAll("form"))
-            .find(form =>
-                (form.action || "")
-                    .toLowerCase()
-                    .includes("createstudentenrollment"));
+            .find(form => (form.action || "").toLowerCase().includes("createstudentenrollment"));
 
         if (profileForm) {
             profileForm.hidden = true;
@@ -127,9 +104,7 @@
             const link = document.createElement("a");
             link.className = "school-button school-button-primary";
             link.href = "/School/Users/Create";
-            link.textContent = language.startsWith("pl")
-                ? "Utwórz ucznia"
-                : "Create student";
+            link.textContent = language.startsWith("pl") ? "Utwórz ucznia" : "Create student";
 
             panel.append(heading, description, link);
             profileForm.insertAdjacentElement("beforebegin", panel);
@@ -157,14 +132,8 @@
     }
 
     function classFirstLabel(label) {
-        const parts = String(label || "")
-            .split("·")
-            .map(part => part.trim())
-            .filter(Boolean);
-
-        if (parts.length < 2) {
-            return label;
-        }
+        const parts = String(label || "").split("·").map(part => part.trim()).filter(Boolean);
+        if (parts.length < 2) return label;
 
         const className = parts.at(-1);
         const context = parts.slice(0, -1).join(" · ");
@@ -174,10 +143,7 @@
     async function wireAcademicClassRelationships() {
         const teacherClass = document.getElementById("teacher-class");
         const enrollmentClass = document.getElementById("enroll-class");
-
-        if (!teacherClass && !enrollmentClass) {
-            return;
-        }
+        if (!teacherClass && !enrollmentClass) return;
 
         let response;
         try {
@@ -187,70 +153,54 @@
         } catch {
             return;
         }
-
-        if (!response.ok) {
-            return;
-        }
+        if (!response.ok) return;
 
         const classOptions = await response.json();
         const labels = new Map(
             classOptions.map(item => [String(item.id).toLowerCase(), item.label]));
 
-        [teacherClass, enrollmentClass]
-            .filter(Boolean)
-            .forEach(select => {
-                Array.from(select.options).forEach(option => {
-                    if (!option.value) {
-                        return;
-                    }
-
-                    const label = labels.get(option.value.toLowerCase());
-                    if (label) {
-                        option.textContent = classFirstLabel(label);
-                        option.title = option.textContent;
-                    } else {
-                        option.textContent = classFirstLabel(option.textContent);
-                        option.title = option.textContent;
-                    }
-                });
+        [teacherClass, enrollmentClass].filter(Boolean).forEach(select => {
+            Array.from(select.options).forEach(option => {
+                if (!option.value) return;
+                const label = labels.get(option.value.toLowerCase());
+                option.textContent = classFirstLabel(label || option.textContent);
+                option.title = option.textContent;
             });
+        });
 
         if (teacherClass) {
             const form = teacherClass.closest("form");
-            if (form) {
-                form.action = "/school/academic-structure/phase39/teacher-assignments";
-            }
+            if (form) form.action = "/school/academic-structure/phase39/teacher-assignments";
 
             teacherClass.multiple = true;
             teacherClass.name = "classGroupIds";
             teacherClass.size = Math.min(10, Math.max(4, teacherClass.options.length - 1));
             teacherClass.classList.add("round2-class-multiselect");
 
-            const placeholder = Array.from(teacherClass.options)
-                .find(option => !option.value);
+            const placeholder = Array.from(teacherClass.options).find(option => !option.value);
             if (placeholder) {
                 placeholder.selected = false;
                 placeholder.disabled = true;
                 placeholder.hidden = true;
             }
 
-            const help = document.createElement("p");
-            help.className = "academic-help";
-            help.id = "teacher-class-multi-help";
-            const language = (document.documentElement.lang || "en").toLowerCase();
-            help.textContent = language.startsWith("pl")
-                ? "Wybierz jedną lub więcej klas. Użyj Ctrl/Cmd, aby zaznaczyć kilka klas."
-                : "Select one or more classes. Use Ctrl/Cmd to select multiple classes.";
-            teacherClass.setAttribute("aria-describedby", "teacher-class-multi-help");
-            teacherClass.insertAdjacentElement("afterend", help);
+            if (!document.getElementById("teacher-class-multi-help")) {
+                const help = document.createElement("p");
+                help.className = "academic-help";
+                help.id = "teacher-class-multi-help";
+                const language = (document.documentElement.lang || "en").toLowerCase();
+                help.textContent = language.startsWith("pl")
+                    ? "Wybierz jedną lub więcej klas. Użyj Ctrl/Cmd, aby zaznaczyć kilka klas."
+                    : "Select one or more classes. Use Ctrl/Cmd to select multiple classes.";
+                teacherClass.setAttribute("aria-describedby", "teacher-class-multi-help");
+                teacherClass.insertAdjacentElement("afterend", help);
+            }
         }
 
         const teacherTable = document.querySelector("#teachers .academic-table");
         teacherTable?.querySelectorAll("tr").forEach(row => {
             const subjectCell = row.children.item(2);
-            if (subjectCell) {
-                subjectCell.hidden = true;
-            }
+            if (subjectCell) subjectCell.hidden = true;
         });
     }
 
@@ -258,14 +208,10 @@
         const levelKey = document.getElementById("level-key");
         const levelYear = document.getElementById("level-year");
         const levelProgram = document.getElementById("level-program");
-        if (!levelKey || !levelYear || !levelProgram) {
-            return;
-        }
+        if (!levelKey || !levelYear || !levelProgram) return;
 
         const form = levelKey.closest("form");
-        if (!form) {
-            return;
-        }
+        if (!form) return;
 
         levelKey.multiple = true;
         levelKey.name = "curriculumLevelKeys";
@@ -273,20 +219,21 @@
         levelKey.classList.add("round2-curriculum-level-multiselect");
         form.action = "/school/academic-structure/curriculum-levels/bulk";
 
-        const placeholder = Array.from(levelKey.options)
-            .find(option => !option.value);
-        placeholder?.remove();
+        Array.from(levelKey.options).find(option => !option.value)?.remove();
 
-        const language = (document.documentElement.lang || "en").toLowerCase();
-        const help = document.createElement("p");
-        help.className = "academic-help round2-multi-help";
-        help.textContent = language.startsWith("pl")
-            ? "Wybierz wszystkie poziomy, które chcesz dodać. Użyj Ctrl/Cmd, aby zaznaczyć kilka pozycji."
-            : "Select all Curriculum Levels you want to add. Use Ctrl/Cmd to select multiple items.";
-        levelKey.insertAdjacentElement("afterend", help);
+        if (!form.querySelector(".round2-multi-help")) {
+            const language = (document.documentElement.lang || "en").toLowerCase();
+            const help = document.createElement("p");
+            help.className = "academic-help round2-multi-help";
+            help.textContent = language.startsWith("pl")
+                ? "Wybierz wszystkie poziomy, które chcesz dodać. Użyj Ctrl/Cmd, aby zaznaczyć kilka pozycji."
+                : "Select all Curriculum Levels you want to add. Use Ctrl/Cmd to select multiple items.";
+            levelKey.insertAdjacentElement("afterend", help);
+        }
 
         const submit = form.querySelector("button[type='submit']");
         if (submit) {
+            const language = (document.documentElement.lang || "en").toLowerCase();
             submit.textContent = language.startsWith("pl")
                 ? "Dodaj wybrane poziomy"
                 : "Add selected Curriculum Levels";
@@ -295,16 +242,52 @@
 
     function simplifyStudentLearningCta() {
         const language = (document.documentElement.lang || "en").toLowerCase();
-        const english = "View this curriculum in My learning";
-        const polish = "Zobacz ten program w Mojej nauce";
+        const labels = new Set([
+            "View this curriculum in My learning",
+            "Zobacz ten program w Mojej nauce"
+        ]);
 
         document.querySelectorAll("a").forEach(anchor => {
-            const label = anchor.textContent?.trim();
-            if (label === english || label === polish) {
+            if (labels.has(anchor.textContent?.trim())) {
                 anchor.textContent = language.startsWith("pl")
                     ? "Otwórz Moją naukę"
                     : "Open My learning";
             }
+        });
+    }
+
+    function normalizeWholeMarkInputs() {
+        document.querySelectorAll("input[name='maxScore'], input[name='maxScorePerQuestion']")
+            .forEach(input => {
+                input.step = "1";
+                input.inputMode = "numeric";
+
+                if (!input.value) return;
+                const value = Number(input.value);
+                if (Number.isFinite(value) && Number.isInteger(value)) {
+                    input.value = String(value);
+                }
+            });
+    }
+
+    function clarifyLearningOutcomeUx() {
+        const language = (document.documentElement.lang || "en").toLowerCase();
+        const isPolish = language.startsWith("pl");
+
+        document.querySelectorAll(".ed-ai-capability-badge.is-manual").forEach(badge => {
+            badge.textContent = isPolish ? "Generator AI w przygotowaniu" : "AI generator pending";
+            badge.classList.add("is-pending");
+        });
+
+        document.querySelectorAll(".ed-outcome-fieldset").forEach(fieldset => {
+            if (fieldset.querySelector(".round2-outcome-help")) return;
+
+            const help = document.createElement("p");
+            help.className = "assessment-info round2-outcome-help";
+            help.textContent = isPolish
+                ? "Wybierz efekt uczenia się, który mierzy to pytanie. Krótki kod jest identyfikatorem w programie, a opis poniżej pokazuje dostępny kontekst Edulityks."
+                : "Choose the learning outcome this question measures. The short code is the curriculum locator; the text below shows the Edulytics context currently available for that outcome.";
+            fieldset.querySelector("legend")?.insertAdjacentElement("afterend", help);
         });
     }
 
@@ -318,15 +301,12 @@
         void wireAcademicClassRelationships();
         wireCurriculumLevelMultiSelect();
         simplifyStudentLearningCta();
+        normalizeWholeMarkInputs();
+        clarifyLearningOutcomeUx();
 
         document.querySelectorAll("form").forEach(form => {
-            if ((form.method || "get").toLowerCase() !== "post") {
-                return;
-            }
-
-            if (form.querySelector(`input[name="${keyName}"]`)) {
-                return;
-            }
+            if ((form.method || "get").toLowerCase() !== "post") return;
+            if (form.querySelector(`input[name="${keyName}"]`)) return;
 
             const input = document.createElement("input");
             input.type = "hidden";
