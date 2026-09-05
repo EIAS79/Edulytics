@@ -119,7 +119,7 @@ async function createAssessment(page) {
   const response = await page.goto(`${BASE}/school/assessments`, { waitUntil: 'networkidle2', timeout: 60000 });
   if (!response || response.status() >= 400) throw new Error(`assessments page failed: ${response?.status()}`);
 
-  const createForm = 'form[action="/school/assessments"],form[action$="/school/assessments"]';
+  const createForm = 'form.assessment-create-form';
   if (!await page.$(createForm)) throw new Error('teacher create-assessment form missing');
 
   await setNamedControl(page, createForm, 'classGroupId', CLASS_ID);
@@ -139,7 +139,7 @@ async function createAssessment(page) {
     await page.goto(`${BASE}/school/assessments`, { waitUntil: 'networkidle2', timeout: 60000 });
     assessmentId = await page.evaluate(title => {
       for (const a of document.querySelectorAll('a[href]')) {
-        const row = a.closest('tr,article,.card,li,div');
+        const row = a.closest('article,tr,li,.card,div');
         if (row && (row.innerText || '').includes(title)) {
           const m = (a.getAttribute('href') || '').match(/\/school\/assessments\/([0-9a-f-]{36})/i);
           if (m) return m[1];
