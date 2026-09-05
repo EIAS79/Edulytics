@@ -1,43 +1,35 @@
 using Edulytics.Core.Entities;
 using Edulytics.Core.MathematicsGeneration;
-using Edulytics.Services.MathematicsGeneration;
 
 namespace Edulytics.Services.Assessments;
 
 /// <summary>
 /// Compatibility facade used by assessment, curriculum and private-practice
-/// flows. Capability is resolved through canonical skills and a provider,
+/// flows. Capability is resolved through the canonical AI capability matrix,
 /// never by teaching the generator about curriculum-specific codes. Any
 /// partially unsupported outcome fails closed.
 /// </summary>
 public static class NativeMathematicsOutcomeProfileResolver
 {
-    private static readonly IMathematicsGenerationCapabilityProvider Provider =
-        new NativeMathematicsGenerationCapabilityProvider();
-
     public static MathematicsOutcomeGenerationProfile? Resolve(LearningOutcome outcome)
     {
         ArgumentNullException.ThrowIfNull(outcome);
 
-        var skills = CanonicalMathematicsSkillMapper.Resolve(
+        var capability = MathematicsAiCapabilityMatrix.Resolve(
             outcome.Code,
             outcome.Description);
-        var families = Provider.ResolveFamilies(skills);
 
-        return families.Count == 0
-            ? null
-            : new MathematicsOutcomeGenerationProfile(
+        return capability.CanGenerateVerified
+            ? new MathematicsOutcomeGenerationProfile(
                 outcome.Id,
                 outcome.Code,
-                families)
+                capability.VerifiedFamilies)
             {
-                CanonicalSkills = skills
-            };
+                CanonicalSkills = capability.CanonicalSkills
+            }
+            : null;
     }
 
-    public static bool Supports(string? code, string? description)
-    {
-        var skills = CanonicalMathematicsSkillMapper.Resolve(code, description);
-        return Provider.ResolveFamilies(skills).Count > 0;
-    }
+    public static bool Supports(string? code, string? description) =>
+        MathematicsAiCapabilityMatrix.Resolve(code, description).CanGenerateVerified;
 }
