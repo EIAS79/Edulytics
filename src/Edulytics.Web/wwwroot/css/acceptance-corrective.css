@@ -37,3 +37,147 @@
     overflow-wrap: anywhere;
     line-height: 1.4;
 }
+
+/* Manual-acceptance correction: learning outcomes must read like selectable
+   curriculum items, not full-width form controls. */
+.assessment-form input[type="checkbox"] {
+    width: 1.1rem;
+    min-width: 1.1rem;
+    height: 1.1rem;
+    margin: 0.2rem 0 0;
+    padding: 0;
+    flex: 0 0 auto;
+}
+
+.ed-outcome-fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.ed-outcome-fieldset > legend {
+    margin-bottom: 0.55rem;
+    font-weight: 700;
+}
+
+.ed-outcome-choice-list {
+    display: grid;
+    gap: 0.6rem;
+}
+
+.ed-outcome-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    min-width: 0;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid #dbe4ef;
+    border-radius: 0.75rem;
+    background: #fff;
+    cursor: pointer;
+}
+
+.ed-outcome-option:hover,
+.ed-outcome-option:focus-within {
+    border-color: #aebfe0;
+    background: #f8faff;
+}
+
+.ed-outcome-option.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.68;
+}
+
+.ed-outcome-copy {
+    display: grid;
+    min-width: 0;
+    gap: 0.3rem;
+    flex: 1 1 auto;
+}
+
+.ed-outcome-heading {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.ed-outcome-code {
+    overflow-wrap: anywhere;
+    font-size: 1rem;
+}
+
+.ed-outcome-description {
+    display: -webkit-box;
+    min-width: 0;
+    overflow: hidden;
+    color: #65758b;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.ed-ai-capability-badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    min-height: 1.7rem;
+    padding: 0.18rem 0.55rem;
+    border: 1px solid #d7deea;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.15;
+    white-space: nowrap;
+}
+
+.ed-ai-capability-badge.is-supported {
+    border-color: #a7d8b5;
+    background: #eefaf1;
+    color: #176b35;
+}
+
+.ed-ai-capability-badge.is-manual {
+    border-color: #e4d5a4;
+    background: #fff9e8;
+    color: #7a5a00;
+}
+
+.ed-ai-capability-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 0.55rem;
+    margin: 0.9rem 0 1rem;
+    padding: 0.8rem;
+    border: 1px solid #dbe4ef;
+    border-radius: 0.8rem;
+    background: #f8faff;
+}
+
+.ed-ai-capability-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    min-width: 0;
+    padding: 0.45rem 0.55rem;
+    border-radius: 0.55rem;
+    background: #fff;
+}
+
+.curriculum-table .ed-ai-capability-badge {
+    margin: 0.25rem 0.25rem 0 0;
+}
+
+@media (max-width: 640px) {
+    .ed-ai-capability-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .ed-outcome-option {
+        padding: 0.7rem;
+    }
+}
