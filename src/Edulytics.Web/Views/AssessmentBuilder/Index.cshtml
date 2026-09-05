@@ -184,9 +184,11 @@
                     <label>@A["PlannedQuestionCount"]</label>
                     <input name="questionCount" type="number" min="1" max="100" value="5" required />
                     <label>@A["QuestionMaxScore"]</label>
-                    <input name="maxScorePerQuestion" type="number" min="1" step="1" value="1" required />
+                    <input name="maxScorePerQuestion" type="number" min="1" step="1" placeholder="@A["Automatic"]" />
+                    <p class="assessment-info">@A["AiAutoMarksHelp"]</p>
                     <label>@A["AssessmentDifficulty"]</label>
                     <select name="difficulty">
+                        <option value="" selected>@A["AiAutoDifficulty"]</option>
                         <option value="@AssessmentBuilderDifficulty.AtClassLevel">@A["AtClassLevel"]</option>
                         <option value="@AssessmentBuilderDifficulty.Stretch">@A["Stretch"]</option>
                         <option value="@AssessmentBuilderDifficulty.Challenge">@A["Challenge"]</option>

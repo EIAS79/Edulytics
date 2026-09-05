@@ -148,13 +148,21 @@ public sealed class AssessmentBuilderController(
     [HttpPost("generate"), ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
     [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
-    public async Task<IActionResult> Generate(Guid assessmentId, int questionCount, decimal maxScorePerQuestion,
-        AssessmentBuilderDifficulty difficulty, Guid[]? outcomeIds, int seed, string rowVersion, CancellationToken cancellationToken)
+    public async Task<IActionResult> Generate(Guid assessmentId, int questionCount, decimal? maxScorePerQuestion,
+        AssessmentBuilderDifficulty? difficulty, Guid[]? outcomeIds, int seed, string rowVersion, CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
         if (!TryDecode(rowVersion, out var version)) return ConcurrencyRedirect(assessmentId);
         var result = await service.GenerateQuestionsAsync(actorId,
-            new GenerateBuilderQuestionsRequest(assessmentId, questionCount, maxScorePerQuestion, difficulty, outcomeIds ?? [], version, seed), cancellationToken);
+            new GenerateBuilderQuestionsRequest(
+                assessmentId,
+                questionCount,
+                maxScorePerQuestion ?? 0m,
+                difficulty ?? 0,
+                outcomeIds ?? [],
+                version,
+                seed),
+            cancellationToken);
         Feedback(result, "BuilderGenerated");
         return RedirectToAction(nameof(Index), new { assessmentId });
     }
