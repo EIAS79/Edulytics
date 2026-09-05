@@ -2,6 +2,7 @@
 @using Edulytics.Core.Constants
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SharedResource> Brand
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SharedResource> S
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SupportResource> Contact
 
 @{
     var localizedProductName = Brand["ProductName"].Value;
@@ -238,6 +239,15 @@
                             </a>
                         }
                     }
+
+                    <a class="ed-v3-nav-link @(currentController == "Contact" ? "is-active" : null)"
+                       asp-controller="Contact"
+                       asp-action="Index">
+                        <span class="ed-v3-nav-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 18h.01M9.1 9a3 3 0 1 1 5.4 1.8c-1.4 1-2.5 1.7-2.5 3.2"/><circle cx="12" cy="12" r="9"/></svg>
+                        </span>
+                        <span>@Contact["HelpAndContact"]</span>
+                    </a>
                 </nav>
             </div>
 
@@ -299,7 +309,8 @@
 
             <footer class="ed-v3-footer">
                 &copy; 2026 @localizedProductName · @S["V3Footer"] ·
-                <a href="/content-sources-licenses.html">Content sources &amp; licences</a>
+                <a href="/content-sources-licenses.html">Content sources &amp; licences</a> ·
+                <a asp-controller="Contact" asp-action="Index">@Contact["ContactUs"]</a>
             </footer>
         </div>
     </div>
