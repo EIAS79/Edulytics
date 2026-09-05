@@ -171,7 +171,14 @@ public sealed class StudentPortalService : IStudentPortalService
                 version.Name,
                 year.Name,
                 levelLabel,
-                nodes));
+                nodes)
+            {
+                CurriculumAdoptionId = adoption.Id,
+                ClassGroupId = classGroup.Id,
+                AcademicYearId = year.Id,
+                GradeLevelId = grade.Id,
+                ClassName = classGroup.Name
+            });
         }
 
         learning = learning
@@ -179,11 +186,14 @@ public sealed class StudentPortalService : IStudentPortalService
                 (
                     x.SubjectId,
                     x.FrameworkVersionId,
-                    x.AcademicYearName,
-                    x.GradeName))
+                    x.CurriculumAdoptionId,
+                    x.ClassGroupId,
+                    x.AcademicYearId,
+                    x.GradeLevelId))
             .Select(x => x.First())
             .OrderBy(x => x.SubjectName)
             .ThenByDescending(x => x.AcademicYearName)
+            .ThenBy(x => x.ClassName)
             .ToList();
 
         var enrollmentKeys = snapshot.Enrollments

@@ -5,6 +5,9 @@
     Layout = "_StudentLayout";
     ViewData["Title"] = S["PrivatePracticeTitle"].Value;
     var selected = Model.SelectedCurriculumAdoptionId;
+    var selectedCurriculum = selected.HasValue
+        ? Model.Curricula.FirstOrDefault(x => x.CurriculumAdoptionId == selected.Value)
+        : null;
 }
 <header class="student-page-header">
     <span class="student-eyebrow">@S["PrivatePractice"]</span>
@@ -31,8 +34,20 @@ else
                     <option value="@curriculum.CurriculumAdoptionId" selected="@(curriculum.CurriculumAdoptionId == selected)">@curriculum.CurriculumLevelLabel · @curriculum.ClassName</option>
                 }
             </select>
-            <button class="school-button" type="submit">@S["OpenLearning"]</button>
+            <button class="school-button" type="submit">@S["ShowPracticeOptions"]</button>
         </form>
+
+        @if (selectedCurriculum is not null)
+        {
+            <div class="student-practice-context-actions">
+                <a class="school-button"
+                   asp-controller="StudentPortal"
+                   asp-action="Learning"
+                   asp-route-curriculumAdoptionId="@selectedCurriculum.CurriculumAdoptionId"
+                   asp-route-classGroupId="@selectedCurriculum.ClassGroupId"
+                   asp-fragment="selected-curriculum-context">@S["OpenLearning"]</a>
+            </div>
+        }
     </section>
     @if (selected.HasValue)
     {

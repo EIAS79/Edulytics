@@ -20,14 +20,24 @@ else
     <div class="student-learning-stack">
         @foreach (var subject in Model.Workspace.Learning)
         {
-            <article class="student-learning-card">
+            var isSelectedContext =
+                Model.SelectedCurriculumAdoptionId == subject.CurriculumAdoptionId &&
+                Model.SelectedClassGroupId == subject.ClassGroupId;
+            <article id="@(isSelectedContext ? "selected-curriculum-context" : null)"
+                     class="student-learning-card @(isSelectedContext ? "is-selected-context" : null)"
+                     aria-current="@(isSelectedContext ? "true" : null)">
                 <header>
                     <div>
                         <span class="student-subject-code">@subject.SubjectCode</span>
                         <h2>@subject.SubjectName</h2>
+                        @if (isSelectedContext)
+                        {
+                            <span class="student-learning-context-badge">@S["PrivatePractice"]</span>
+                        }
                     </div>
                     <div class="student-learning-meta">
                         <span>@S["AcademicYear"]: <strong>@subject.AcademicYearName</strong></span>
+                        <span>@S["Class"]: <strong>@subject.ClassName</strong></span>
                         <span>@S["Grade"]: <strong>@subject.GradeName</strong></span>
                         <span>@S["Curriculum"]: <strong>@subject.FrameworkName</strong></span>
                     </div>

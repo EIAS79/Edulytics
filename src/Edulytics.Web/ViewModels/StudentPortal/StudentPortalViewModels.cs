@@ -17,7 +17,11 @@ public sealed record StudentDashboardViewModel(
 
 public sealed record StudentLearningViewModel(
     StudentPortalWorkspace Workspace,
-    IReadOnlyList<StudentLessonSummary> Lessons);
+    IReadOnlyList<StudentLessonSummary> Lessons)
+{
+    public Guid? SelectedCurriculumAdoptionId { get; init; }
+    public Guid? SelectedClassGroupId { get; init; }
+}
 
 public sealed record StudentAssessmentsViewModel(
     StudentPortalWorkspace Workspace);
