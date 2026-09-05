@@ -105,17 +105,57 @@ public sealed class AssessmentBuilderService(
         var answer = Clean(request.CorrectAnswer);
         var solution = Clean(request.Solution);
         if (!ValidContent(prompt, answer, solution)) return Failure(AssessmentErrorCode.InvalidText);
+        if (request.Order <= 0) return Failure(AssessmentErrorCode.InvalidOrder);
         if (!ValidScore(request.MaxScore)) return Failure(AssessmentErrorCode.InvalidQuestionScore);
+        if (context.Questions.Any(x => x.Id != question.Id && x.Order == request.Order))
+            return Failure(AssessmentErrorCode.DuplicateQuestionOrder);
         if (context.Questions.Where(x => x.Id != question.Id).Sum(x => x.MaxScore) + request.MaxScore > context.Assessment.MaxScore)
             return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
 
+        var outcomeIds = NormalizeOutcomes(request.OutcomeIds);
+        if (!ValidateOutcomes(resolved.Details!, outcomeIds))
+            return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+
         question.Prompt = prompt;
         question.MaxScore = Round(request.MaxScore);
+        question.Order = request.Order;
         item.Prompt = prompt;
         item.CorrectAnswer = answer;
         item.Solution = solution;
         item.Difficulty = request.Difficulty;
+        item.CurriculumTopicId = ResolveSingleTopic(context, outcomeIds);
         item.ValidationMetadataJson = SetStatus(item.ValidationMetadataJson, AssessmentBuilderQuestionStatus.Edited);
+
+        var currentQuestionMappings = context.QuestionOutcomeMappings
+            .Where(x => x.AssessmentQuestionId == question.Id)
+            .ToArray();
+        var currentItemMappings = context.ItemOutcomeMappings
+            .Where(x => x.AssessmentItemId == item.Id)
+            .ToArray();
+        var replacementQuestionMappings = outcomeIds
+            .Select(outcomeId => new QuestionLearningOutcome
+            {
+                Id = Guid.NewGuid(),
+                SchoolId = resolved.SchoolId,
+                AssessmentQuestionId = question.Id,
+                LearningOutcomeId = outcomeId
+            })
+            .ToArray();
+        var replacementItemMappings = outcomeIds
+            .Select(outcomeId => new AssessmentItemOutcome
+            {
+                Id = Guid.NewGuid(),
+                SchoolId = resolved.SchoolId,
+                AssessmentItemId = item.Id,
+                LearningOutcomeId = outcomeId
+            })
+            .ToArray();
+        repository.ReplaceOutcomeMappings(
+            currentQuestionMappings,
+            currentItemMappings,
+            replacementQuestionMappings,
+            replacementItemMappings);
+
         return await SaveAsync(context, request.AssessmentRowVersion, question.Id, cancellationToken);
     }
 
