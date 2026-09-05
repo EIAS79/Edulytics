@@ -325,7 +325,8 @@ public sealed partial class AssessmentService
         return null;
     }
 
-    private static bool ValidMax(decimal value) => value > 0m && value <= 10000m;
+    private static bool ValidMax(decimal value) =>
+        value > 0m && value <= 10000m && decimal.Truncate(value) == value;
     private static decimal Round(decimal value) =>
         decimal.Round(value, 2, MidpointRounding.AwayFromZero);
     private static string Clean(string? value) => value?.Trim() ?? string.Empty;
