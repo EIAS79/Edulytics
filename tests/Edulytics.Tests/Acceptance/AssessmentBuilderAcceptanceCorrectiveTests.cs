@@ -71,6 +71,42 @@ public sealed class AssessmentBuilderAcceptanceCorrectiveTests
         Assert.DoesNotContain("@item.Code", classSelector, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void OutcomeBuilder_GuardsMissingSetup_LabelsAiCapability_AndHidesEnumErrors()
+    {
+        var builderService = ReadRepositoryFile(
+            "src", "Edulytics.Services", "Assessments", "AssessmentBuilderService.cs");
+        var resolver = ReadRepositoryFile(
+            "src", "Edulytics.Services", "Assessments", "NativeMathematicsOutcomeProfileResolver.cs");
+        var controller = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Controllers", "AssessmentBuilderController.cs");
+        var view = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Views", "AssessmentBuilder", "Index.cshtml");
+        var english = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Resources", "AssessmentBuilderResource.resx");
+        var polish = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Resources", "AssessmentBuilderResource.pl.resx");
+
+        Assert.Contains("if (ids.Count == 0) return false;", builderService, StringComparison.Ordinal);
+        Assert.Contains("profiles.Any(x => x is null)", builderService, StringComparison.Ordinal);
+        Assert.Contains("public static bool Supports(string? code, string? description)", resolver, StringComparison.Ordinal);
+
+        Assert.Contains("LearningOutcomesSetupRequired", view, StringComparison.Ordinal);
+        Assert.Contains("disabled=\"@(!hasEligibleOutcomes)\"", view, StringComparison.Ordinal);
+        Assert.Contains("NativeMathematicsOutcomeProfileResolver.Supports", view, StringComparison.Ordinal);
+        Assert.Contains("disabled=\"@(!aiSupported)\"", view, StringComparison.Ordinal);
+        Assert.Contains("\"AiSupported\" : \"ManualOnly\"", view, StringComparison.Ordinal);
+
+        Assert.Contains("ErrorOutcomeDoesNotMatchAssessment", controller, StringComparison.Ordinal);
+        Assert.DoesNotContain("result.Error?.ToString()", controller, StringComparison.Ordinal);
+        Assert.DoesNotContain("BuilderOperationFailed\", result.Error", controller, StringComparison.Ordinal);
+
+        Assert.Contains("Subject Supervisor", english, StringComparison.Ordinal);
+        Assert.Contains("AI supported", english, StringComparison.Ordinal);
+        Assert.Contains("opiekuna przedmiotu", polish, StringComparison.Ordinal);
+        Assert.Contains("Obsługiwane przez AI", polish, StringComparison.Ordinal);
+    }
+
     private static string ReadRepositoryFile(params string[] relativeSegments)
     {
         var root = FindRoot();
