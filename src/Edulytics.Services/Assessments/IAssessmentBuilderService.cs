@@ -57,7 +57,9 @@ public sealed record EditBuilderQuestionRequest(
     string CorrectAnswer,
     string Solution,
     decimal MaxScore,
+    int Order,
     AssessmentItemDifficulty Difficulty,
+    IReadOnlyList<Guid> OutcomeIds,
     byte[] AssessmentRowVersion);
 
 public sealed record GenerateBuilderQuestionsRequest(
