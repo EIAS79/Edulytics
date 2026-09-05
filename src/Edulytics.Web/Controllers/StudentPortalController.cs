@@ -64,7 +64,7 @@ public sealed class StudentPortalController : Controller
             : null;
 
         var selectedNodeIds = selectedContext is null
-            ? []
+            ? Array.Empty<Guid>()
             : (focusNodeIds ?? [])
                 .Distinct()
                 .Where(id => selectedContext.Nodes.Any(node => node.Id == id))
