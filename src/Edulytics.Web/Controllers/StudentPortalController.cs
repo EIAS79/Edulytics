@@ -46,6 +46,7 @@ public sealed class StudentPortalController : Controller
     public async Task<IActionResult> Learning(
         Guid? curriculumAdoptionId = null,
         Guid? classGroupId = null,
+        Guid[]? focusNodeIds = null,
         CancellationToken cancellationToken = default)
     {
         var workspace = await WorkspaceAsync(cancellationToken);
@@ -62,18 +63,27 @@ public sealed class StudentPortalController : Controller
                 x.ClassGroupId == classGroupId.Value)
             : null;
 
+        var selectedNodeIds = selectedContext is null
+            ? Array.Empty<Guid>()
+            : (focusNodeIds ?? [])
+                .Distinct()
+                .Where(id => selectedContext.Nodes.Any(node => node.Id == id))
+                .Take(100)
+                .ToArray();
+
         return View(
             nameof(Learning),
             new StudentLearningViewModel(workspace.Workspace!, lessons.Value)
             {
                 SelectedCurriculumAdoptionId = selectedContext?.CurriculumAdoptionId,
-                SelectedClassGroupId = selectedContext?.ClassGroupId
+                SelectedClassGroupId = selectedContext?.ClassGroupId,
+                SelectedLearningNodeIds = selectedNodeIds
             });
     }
 
     [NonAction]
     public Task<IActionResult> Learning(CancellationToken cancellationToken) =>
-        Learning(null, null, cancellationToken);
+        Learning(null, null, null, cancellationToken);
 
     [HttpGet("learning/lesson/{id:guid}")]
     public async Task<IActionResult> Lesson(Guid id, CancellationToken cancellationToken)

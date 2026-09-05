@@ -30,10 +30,29 @@ public sealed class StudentPrivatePracticeService(
             var context = await repository.GetContextAsync(studentUserId, selected.Value, cancellationToken);
             if (context is not null)
             {
+                var officialNodeIdsByLesson = context.LessonOutcomes
+                    .GroupBy(x => x.PedagogicalLessonId)
+                    .ToDictionary(
+                        group => group.Key,
+                        group => (IReadOnlyList<Guid>)group
+                            .OrderBy(x => x.SortOrder)
+                            .Select(x => x.OutcomeNodeId)
+                            .Distinct()
+                            .ToArray());
+
                 lessons = context.Lessons
-                    .Select(x => new StudentPrivatePracticeLessonOption(x.Id, x.UnitKey, x.UnitTitle, x.Code, x.Title))
+                    .Select(x => new StudentPrivatePracticeLessonOption(
+                        x.Id,
+                        x.UnitKey,
+                        x.UnitTitle,
+                        x.Code,
+                        x.Title,
+                        officialNodeIdsByLesson.TryGetValue(x.Id, out var mappedNodeIds)
+                            ? mappedNodeIds
+                            : []))
                     .ToArray();
-                unitOptions = context.Lessons
+
+                unitOptions = lessons
                     .Where(x => !string.IsNullOrWhiteSpace(x.UnitKey))
                     .GroupBy(x => x.UnitKey, StringComparer.OrdinalIgnoreCase)
                     .Select(group =>
@@ -43,7 +62,10 @@ public sealed class StudentPrivatePracticeService(
                             first.UnitKey,
                             string.IsNullOrWhiteSpace(first.UnitTitle)
                                 ? "Unit"
-                                : first.UnitTitle);
+                                : first.UnitTitle,
+                            group.SelectMany(x => x.OfficialOutcomeNodeIds)
+                                .Distinct()
+                                .ToArray());
                     })
                     .ToArray();
                 units = unitOptions.Select(x => x.UnitKey).ToArray();

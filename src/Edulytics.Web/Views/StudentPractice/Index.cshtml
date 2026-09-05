@@ -41,7 +41,8 @@ else
         @if (selectedCurriculum is not null)
         {
             <div class="student-practice-context-actions">
-                <a class="school-button"
+                <a id="open-learning-context"
+                   class="school-button"
                    asp-controller="StudentPortal"
                    asp-action="Learning"
                    asp-route-curriculumAdoptionId="@selectedCurriculum.CurriculumAdoptionId"
@@ -58,26 +59,28 @@ else
                 @Html.AntiForgeryToken()
                 <input type="hidden" name="curriculumAdoptionId" value="@selected.Value" />
                 <label>@S["PracticeScope"]</label>
-                <select name="scope">
+                <select id="practice-scope" name="scope">
                     <option value="@StudentPrivatePracticeScope.WeakAreas">@S["PracticeWeakAreas"]</option>
                     <option value="@StudentPrivatePracticeScope.Lesson">@S["PracticeLesson"]</option>
                     <option value="@StudentPrivatePracticeScope.Unit">@S["PracticeUnit"]</option>
                     <option value="@StudentPrivatePracticeScope.WholeCurriculum">@S["PracticeWholeCurriculum"]</option>
                 </select>
                 <label>@S["Lesson"]</label>
-                <select name="lessonId">
+                <select id="practice-lesson" name="lessonId">
                     <option value="">@S["PracticeNotRequired"]</option>
                     @foreach (var lesson in Model.Lessons)
                     {
-                        <option value="@lesson.LessonId">@lesson.UnitTitle · @lesson.LessonTitle</option>
+                        <option value="@lesson.LessonId"
+                                data-learning-focus-node-ids="@string.Join(",", lesson.OfficialOutcomeNodeIds)">@lesson.UnitTitle · @lesson.LessonTitle</option>
                     }
                 </select>
                 <label>@S["Unit"]</label>
-                <select name="unitKey">
+                <select id="practice-unit" name="unitKey">
                     <option value="">@S["PracticeNotRequired"]</option>
                     @foreach (var unit in unitOptions)
                     {
-                        <option value="@unit.UnitKey">@unit.UnitTitle</option>
+                        <option value="@unit.UnitKey"
+                                data-learning-focus-node-ids="@string.Join(",", unit.OfficialOutcomeNodeIds)">@unit.UnitTitle</option>
                     }
                 </select>
                 <label>@S["AssessmentDifficulty"]</label>
@@ -117,3 +120,7 @@ else
         </div>
     }
 </section>
+
+@section Scripts {
+    <script src="~/js/student-practice-learning-link.js" asp-append-version="true"></script>
+}

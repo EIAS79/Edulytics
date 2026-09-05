@@ -1,3 +1,4 @@
+@using System.Collections.Generic
 @model Edulytics.Web.ViewModels.StudentPortal.StudentLearningViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonContentResource> L
@@ -23,9 +24,35 @@ else
             var isSelectedContext =
                 Model.SelectedCurriculumAdoptionId == subject.CurriculumAdoptionId &&
                 Model.SelectedClassGroupId == subject.ClassGroupId;
+            var exactFocusNodeIds = isSelectedContext
+                ? Model.SelectedLearningNodeIds
+                    .Where(id => subject.Nodes.Any(node => node.Id == id))
+                    .ToHashSet()
+                : new HashSet<Guid>();
+            var focusTreeNodeIds = new HashSet<Guid>(exactFocusNodeIds);
+            var nodesById = subject.Nodes.ToDictionary(node => node.Id);
+            foreach (var focusNodeId in exactFocusNodeIds)
+            {
+                var currentNodeId = focusNodeId;
+                var visitedNodeIds = new HashSet<Guid>();
+                while (visitedNodeIds.Add(currentNodeId) &&
+                       nodesById.TryGetValue(currentNodeId, out var currentNode) &&
+                       currentNode.ParentId.HasValue)
+                {
+                    var parentId = currentNode.ParentId.Value;
+                    focusTreeNodeIds.Add(parentId);
+                    currentNodeId = parentId;
+                }
+            }
+            var focusAnchorAssigned = false;
+
             <article id="@(isSelectedContext ? "selected-curriculum-context" : null)"
                      class="student-learning-card @(isSelectedContext ? "is-selected-context" : null)"
                      aria-current="@(isSelectedContext ? "true" : null)">
+                @if (isSelectedContext && exactFocusNodeIds.Count == 0)
+                {
+                    <span id="selected-learning-node" class="student-learning-focus-anchor" aria-hidden="true"></span>
+                }
                 <header>
                     <div>
                         <span class="student-subject-code">@subject.SubjectCode</span>
@@ -52,7 +79,19 @@ else
                     <div class="student-curriculum-tree">
                         @foreach (var node in subject.Nodes)
                         {
-                            <div class="student-node @(node.Kind == "Lesson" ? "is-lesson" : "is-unit")">
+                            var isExactFocus = exactFocusNodeIds.Contains(node.Id);
+                            var isFocusPath = focusTreeNodeIds.Contains(node.Id);
+                            var focusAnchorId = isExactFocus && !focusAnchorAssigned
+                                ? "selected-learning-node"
+                                : null;
+                            if (focusAnchorId is not null)
+                            {
+                                focusAnchorAssigned = true;
+                            }
+
+                            <div id="@focusAnchorId"
+                                 class="student-node @(node.Kind == "Lesson" ? "is-lesson" : "is-unit") @(isFocusPath ? "is-practice-focus" : null) @(isExactFocus ? "is-practice-focus-exact" : null)"
+                                 aria-current="@(isExactFocus ? "location" : null)">
                                 <span class="student-node-kind">
                                     @(node.Kind == "Lesson" ? S["Lesson"] : S["Unit"])
                                 </span>

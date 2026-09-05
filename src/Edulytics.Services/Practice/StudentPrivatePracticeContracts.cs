@@ -34,11 +34,13 @@ public sealed record StudentPrivatePracticeLessonOption(
     string UnitKey,
     string UnitTitle,
     string LessonCode,
-    string LessonTitle);
+    string LessonTitle,
+    IReadOnlyList<Guid> OfficialOutcomeNodeIds);
 
 public sealed record StudentPrivatePracticeUnitOption(
     string UnitKey,
-    string UnitTitle);
+    string UnitTitle,
+    IReadOnlyList<Guid> OfficialOutcomeNodeIds);
 
 public sealed record StudentPrivatePracticeWorkspace(
     IReadOnlyList<PrivatePracticeCurriculumOption> Curricula,
