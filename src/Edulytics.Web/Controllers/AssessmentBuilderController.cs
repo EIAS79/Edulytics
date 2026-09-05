@@ -3,6 +3,7 @@ using Edulytics.Core.Assessments;
 using Edulytics.Core.Constants;
 using Edulytics.Core.Enums;
 using Edulytics.Services.Assessments;
+using Edulytics.Web.Printing;
 using Edulytics.Web.Resilience;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.Timeouts;
@@ -30,6 +31,44 @@ public sealed class AssessmentBuilderController(
         if (delivery.Value is null) return Handle(delivery.Error);
 
         return View(result.Value with { TargetStudents = delivery.Value.TargetStudents });
+    }
+
+    [HttpGet("student-paper.pdf")]
+    public async Task<IActionResult> StudentPaperPdf(
+        Guid assessmentId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+        var result = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
+        if (result.Value is null) return Handle(result.Error);
+        if (result.Value.Details.Assessment.DeliveryMode != AssessmentDeliveryMode.Offline)
+            return BadRequest();
+
+        var paper = AssessmentPrintDocumentFactory.CreateStudentPaper(result.Value);
+        var bytes = AssessmentPdfRenderer.RenderStudentPaper(paper, PdfLabels());
+        return File(
+            bytes,
+            "application/pdf",
+            $"assessment-{assessmentId:N}-student-paper.pdf");
+    }
+
+    [HttpGet("answer-key.pdf")]
+    public async Task<IActionResult> AnswerKeyPdf(
+        Guid assessmentId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+        var result = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
+        if (result.Value is null) return Handle(result.Error);
+        if (result.Value.Details.Assessment.DeliveryMode != AssessmentDeliveryMode.Offline)
+            return BadRequest();
+
+        var answerKey = AssessmentPrintDocumentFactory.CreateTeacherAnswerKey(result.Value);
+        var bytes = AssessmentPdfRenderer.RenderTeacherAnswerKey(answerKey, PdfLabels());
+        return File(
+            bytes,
+            "application/pdf",
+            $"assessment-{assessmentId:N}-teacher-answer-key.pdf");
     }
 
     [HttpPost("settings"), ValidateAntiForgeryToken]
@@ -73,6 +112,8 @@ public sealed class AssessmentBuilderController(
         var result = await service.CreateManualQuestionAsync(actorId,
             new CreateManualBuilderQuestionRequest(assessmentId, prompt, correctAnswer, solution, maxScore, order, difficulty, outcomeIds ?? [], version), cancellationToken);
         Feedback(result, "SuccessQuestionCreated");
+        if (result.Succeeded)
+            TempData["ManualQuestionSaved"] = true;
         return RedirectToAction(nameof(Index), new { assessmentId });
     }
 
@@ -154,6 +195,16 @@ public sealed class AssessmentBuilderController(
             : RedirectToAction(nameof(Index), new { assessmentId });
     }
 
+    private AssessmentPdfLabels PdfLabels() => new(
+        text["StudentPaperTitle"].Value,
+        text["TeacherAnswerKeyTitle"].Value,
+        text["AssessmentMaxScore"].Value,
+        text["StudentName"].Value,
+        text["Date"].Value,
+        text["QuestionMaxScore"].Value,
+        text["CorrectAnswer"].Value,
+        text["Solution"].Value);
+
     private bool TryActor(out Guid id) => Guid.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out id);
     private IActionResult Handle(AssessmentErrorCode? error) => error == AssessmentErrorCode.AccessDenied ? Forbid() : NotFound();
     private IActionResult ConcurrencyRedirect(Guid assessmentId)
@@ -165,8 +216,18 @@ public sealed class AssessmentBuilderController(
     {
         TempData[result.Succeeded ? "Success" : "Error"] = result.Succeeded
             ? text[successKey].Value
-            : text["BuilderOperationFailed", result.Error?.ToString() ?? "Unknown"].Value;
+            : ErrorMessage(result.Error);
     }
+    private string ErrorMessage(AssessmentErrorCode? error) => error switch
+    {
+        AssessmentErrorCode.OutcomeDoesNotMatchAssessment => text["ErrorOutcomeDoesNotMatchAssessment"].Value,
+        AssessmentErrorCode.InvalidQuestionScore or AssessmentErrorCode.InvalidMaxScore => text["ErrorInvalidMarks"].Value,
+        AssessmentErrorCode.AssessmentScoreMismatch => text["ErrorAssessmentScoreMismatch"].Value,
+        AssessmentErrorCode.InvalidText or AssessmentErrorCode.Required => text["ErrorInvalidQuestionContent"].Value,
+        AssessmentErrorCode.DuplicateQuestionOrder => text["ErrorDuplicateQuestionOrder"].Value,
+        AssessmentErrorCode.ConcurrencyConflict => text["ErrorConcurrencyConflict"].Value,
+        _ => text["BuilderOperationFailed"].Value
+    };
     private static bool TryDecode(string? value, out byte[] bytes)
     {
         bytes = [];

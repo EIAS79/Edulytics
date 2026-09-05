@@ -1,5 +1,6 @@
 @using Edulytics.Core.Assessments
 @using Edulytics.Core.Enums
+@using Edulytics.Services.Assessments
 @model Edulytics.Services.Assessments.AssessmentBuilderWorkspace
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentBuilderResource> A
 @{
@@ -7,6 +8,13 @@
     var assessment = Model.Details.Assessment;
     var rowVersion = Convert.ToBase64String(assessment.RowVersion);
     var targetStudents = Model.TargetStudents ?? Array.Empty<Edulytics.Services.Assessments.AssessmentTargetStudentOption>();
+    var manualQuestionSaved = TempData["ManualQuestionSaved"] is bool saved && saved;
+    var hasEligibleOutcomes = Model.Details.EligibleOutcomes.Count > 0;
+    var nativeOutcomeIds = Model.Details.EligibleOutcomes
+        .Where(outcome => NativeMathematicsOutcomeProfileResolver.Supports(outcome.Code, outcome.Description))
+        .Select(outcome => outcome.Id)
+        .ToHashSet();
+    var hasNativeOutcomes = nativeOutcomeIds.Count > 0;
 }
 <section class="assessment-page">
     <header class="assessment-header">
@@ -37,6 +45,11 @@
     }
 
     <div class="assessment-info">@A[Model.ReadinessMessage]</div>
+
+    @if (assessment.Status == AssessmentStatus.Draft && !hasEligibleOutcomes)
+    {
+        <div class="school-alert school-alert-error" role="status">@A["LearningOutcomesSetupRequired"]</div>
+    }
 
     @if (assessment.Status == AssessmentStatus.Draft)
     {
@@ -81,7 +94,10 @@
 
         <section class="assessment-card">
             <h2>@A["AddQuestionManually"]</h2>
-            <form asp-action="CreateManual" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form">
+            <form id="manual-question-form"
+                  data-assessment-id="@assessment.Id"
+                  data-manual-saved="@manualQuestionSaved.ToString().ToLowerInvariant()"
+                  asp-action="CreateManual" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form">
                 @Html.AntiForgeryToken()
                 <input type="hidden" name="rowVersion" value="@rowVersion" />
                 <label>@A["QuestionPrompt"]</label>
@@ -89,9 +105,9 @@
                 <label>@A["CorrectAnswer"]</label>
                 <input name="correctAnswer" maxlength="1000" required />
                 <label>@A["Solution"]</label>
-                <textarea name="solution" maxlength="4000" rows="3" required></textarea>
+                <textarea name="solution" maxlength="4000" rows="3"></textarea>
                 <label>@A["QuestionMaxScore"]</label>
-                <input name="maxScore" type="number" min="0.01" max="10000" step="0.01" required />
+                <input name="maxScore" type="number" min="1" max="10000" step="1" required />
                 <label>@A["Order"]</label>
                 <input name="order" type="number" min="1" value="@(Model.Questions.Count + 1)" required />
                 <label>@A["Difficulty"]</label>
@@ -104,17 +120,26 @@
                     <legend>@A["LearningOutcomes"]</legend>
                     @foreach (var outcome in Model.Details.EligibleOutcomes)
                     {
-                        <label><input type="checkbox" name="outcomeIds" value="@outcome.Id" /> <strong>@outcome.Code</strong> — @outcome.Description</label>
+                        var aiSupported = nativeOutcomeIds.Contains(outcome.Id);
+                        <label>
+                            <input type="checkbox" name="outcomeIds" value="@outcome.Id" />
+                            <strong>@outcome.Code</strong> — @outcome.Description
+                            <small>(@A[aiSupported ? "AiSupported" : "ManualOnly"])</small>
+                        </label>
                     }
                 </fieldset>
-                <button class="school-button school-button-primary" type="submit">@A["AddQuestionManually"]</button>
+                <button class="school-button school-button-primary" type="submit" disabled="@(!hasEligibleOutcomes)">@A["AddQuestionManually"]</button>
             </form>
         </section>
 
         <section class="assessment-card">
             <h2>@A["GenerateQuestionsWithAI"]</h2>
             <p>@A["NativeGenerationNotice"]</p>
-            @if (Model.CanGenerateNatively)
+            @if (!hasEligibleOutcomes)
+            {
+                <div class="assessment-empty">@A["LearningOutcomesSetupRequired"]</div>
+            }
+            else if (Model.CanGenerateNatively && hasNativeOutcomes)
             {
                 <form asp-action="Generate" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form">
                     @Html.AntiForgeryToken()
@@ -122,7 +147,7 @@
                     <label>@A["PlannedQuestionCount"]</label>
                     <input name="questionCount" type="number" min="1" max="100" value="5" required />
                     <label>@A["QuestionMaxScore"]</label>
-                    <input name="maxScorePerQuestion" type="number" min="0.01" step="0.01" value="1" required />
+                    <input name="maxScorePerQuestion" type="number" min="1" step="1" value="1" required />
                     <label>@A["AssessmentDifficulty"]</label>
                     <select name="difficulty">
                         <option value="@AssessmentBuilderDifficulty.AtClassLevel">@A["AtClassLevel"]</option>
@@ -134,7 +159,12 @@
                         <legend>@A["LearningOutcomes"]</legend>
                         @foreach (var outcome in Model.Details.EligibleOutcomes)
                         {
-                            <label><input type="checkbox" name="outcomeIds" value="@outcome.Id" /> <strong>@outcome.Code</strong> — @outcome.Description</label>
+                            var aiSupported = nativeOutcomeIds.Contains(outcome.Id);
+                            <label>
+                                <input type="checkbox" name="outcomeIds" value="@outcome.Id" disabled="@(!aiSupported)" />
+                                <strong>@outcome.Code</strong> — @outcome.Description
+                                <small>(@A[aiSupported ? "AiSupported" : "ManualOnly"])</small>
+                            </label>
                         }
                     </fieldset>
                     <button class="school-button school-button-primary" type="submit">@A["GenerateQuestionsWithAI"]</button>
@@ -144,6 +174,22 @@
             {
                 <div class="assessment-empty">@A["NativeGenerationUnavailable"]</div>
             }
+        </section>
+    }
+
+    @if (assessment.DeliveryMode == AssessmentDeliveryMode.Offline)
+    {
+        <section class="assessment-card">
+            <h2>@A["OfflinePrint"]</h2>
+            <p>@A["OfflinePrintHelp"]</p>
+            <div class="assessment-actions">
+                <a class="school-button school-button-primary"
+                   asp-action="StudentPaperPdf"
+                   asp-route-assessmentId="@assessment.Id">@A["DownloadStudentPaper"]</a>
+                <a class="school-button"
+                   asp-action="AnswerKeyPdf"
+                   asp-route-assessmentId="@assessment.Id">@A["DownloadTeacherAnswerKey"]</a>
+            </div>
         </section>
     }
 
@@ -165,7 +211,10 @@
                 @if (!string.IsNullOrWhiteSpace(question.CorrectAnswer))
                 {
                     <p><strong>@A["CorrectAnswer"]:</strong> @question.CorrectAnswer</p>
-                    <p><strong>@A["Solution"]:</strong> @question.Solution</p>
+                    @if (!string.IsNullOrWhiteSpace(question.Solution))
+                    {
+                        <p><strong>@A["Solution"]:</strong> @question.Solution</p>
+                    }
                 }
                 <div class="assessment-mapping-tags">
                     @foreach (var outcomeId in question.OutcomeIds)
@@ -189,9 +238,9 @@
                             <label>@A["CorrectAnswer"]</label>
                             <input name="correctAnswer" maxlength="1000" value="@question.CorrectAnswer" required />
                             <label>@A["Solution"]</label>
-                            <textarea name="solution" maxlength="4000" rows="3" required>@question.Solution</textarea>
+                            <textarea name="solution" maxlength="4000" rows="3">@question.Solution</textarea>
                             <label>@A["QuestionMaxScore"]</label>
-                            <input name="maxScore" type="number" min="0.01" step="0.01" value="@question.MaxScore" required />
+                            <input name="maxScore" type="number" min="1" step="1" value="@question.MaxScore" required />
                             <label>@A["Difficulty"]</label>
                             <select name="difficulty">
                                 <option value="@AssessmentItemDifficulty.Easy">@A["DifficultyEasy"]</option>
@@ -243,3 +292,52 @@
         </section>
     }
 </section>
+
+@if (assessment.Status == AssessmentStatus.Draft)
+{
+    <script>
+        (() => {
+            const form = document.getElementById('manual-question-form');
+            if (!form || !window.sessionStorage) return;
+
+            const key = `edulytics:assessment-builder:manual:${form.dataset.assessmentId}`;
+            const wasSaved = form.dataset.manualSaved === 'true';
+
+            if (wasSaved) {
+                sessionStorage.removeItem(key);
+                return;
+            }
+
+            const persist = () => {
+                const data = {
+                    prompt: form.elements.prompt?.value ?? '',
+                    correctAnswer: form.elements.correctAnswer?.value ?? '',
+                    solution: form.elements.solution?.value ?? '',
+                    maxScore: form.elements.maxScore?.value ?? '',
+                    order: form.elements.order?.value ?? '',
+                    difficulty: form.elements.difficulty?.value ?? '',
+                    outcomeIds: Array.from(form.querySelectorAll('input[name="outcomeIds"]:checked')).map(x => x.value)
+                };
+                sessionStorage.setItem(key, JSON.stringify(data));
+            };
+
+            try {
+                const raw = sessionStorage.getItem(key);
+                if (raw) {
+                    const data = JSON.parse(raw);
+                    for (const name of ['prompt', 'correctAnswer', 'solution', 'maxScore', 'order', 'difficulty']) {
+                        if (data[name] !== undefined && form.elements[name]) form.elements[name].value = data[name];
+                    }
+                    const selected = new Set(Array.isArray(data.outcomeIds) ? data.outcomeIds : []);
+                    form.querySelectorAll('input[name="outcomeIds"]').forEach(x => x.checked = selected.has(x.value));
+                }
+            } catch {
+                sessionStorage.removeItem(key);
+            }
+
+            form.addEventListener('input', persist);
+            form.addEventListener('change', persist);
+            form.addEventListener('submit', persist);
+        })();
+    </script>
+}

@@ -43,9 +43,11 @@ FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
 
 # Npgsql / EF migration bundle can require the system Kerberos GSSAPI
 # library before ASP.NET binds its HTTP port. The base ASP.NET runtime
-# image does not guarantee this native dependency.
+# image does not guarantee this native dependency. DejaVu Sans is installed
+# explicitly for cross-platform assessment PDF generation.
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
+        fonts-dejavu-core \
         libgssapi-krb5-2 \
     && rm -rf /var/lib/apt/lists/*
 

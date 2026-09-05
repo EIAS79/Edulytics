@@ -348,8 +348,9 @@ public sealed class AssessmentBuilderService(
     }
 
     private static bool ValidContent(string prompt, string answer, string solution) =>
-        prompt.Length is >= 1 and <= 1000 && answer.Length is >= 1 and <= 1000 && solution.Length is >= 1 and <= 4000;
-    private static bool ValidScore(decimal value) => value > 0m && value <= 10000m;
+        prompt.Length is >= 1 and <= 1000 && answer.Length is >= 1 and <= 1000 && solution.Length <= 4000;
+    private static bool ValidScore(decimal value) =>
+        value > 0m && value <= 10000m && decimal.Truncate(value) == value;
     private static string Clean(string? value) => value?.Trim() ?? string.Empty;
     private static decimal Round(decimal value) => decimal.Round(value, 2, MidpointRounding.AwayFromZero);
     private static bool ValidateOutcomes(AssessmentDetails details, IReadOnlyCollection<Guid> ids)
