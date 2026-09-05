@@ -1,3 +1,4 @@
+@using System.Collections.Generic
 @model Edulytics.Web.ViewModels.StudentPortal.StudentLearningViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonContentResource> L
@@ -33,7 +34,9 @@ else
             foreach (var focusNodeId in exactFocusNodeIds)
             {
                 var currentNodeId = focusNodeId;
-                while (nodesById.TryGetValue(currentNodeId, out var currentNode) &&
+                var visitedNodeIds = new HashSet<Guid>();
+                while (visitedNodeIds.Add(currentNodeId) &&
+                       nodesById.TryGetValue(currentNodeId, out var currentNode) &&
                        currentNode.ParentId.HasValue)
                 {
                     var parentId = currentNode.ParentId.Value;
@@ -46,6 +49,10 @@ else
             <article id="@(isSelectedContext ? "selected-curriculum-context" : null)"
                      class="student-learning-card @(isSelectedContext ? "is-selected-context" : null)"
                      aria-current="@(isSelectedContext ? "true" : null)">
+                @if (isSelectedContext && exactFocusNodeIds.Count == 0)
+                {
+                    <span id="selected-learning-node" class="student-learning-focus-anchor" aria-hidden="true"></span>
+                }
                 <header>
                     <div>
                         <span class="student-subject-code">@subject.SubjectCode</span>
