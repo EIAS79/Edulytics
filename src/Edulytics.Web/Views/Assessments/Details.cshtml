@@ -1,5 +1,6 @@
 @using Edulytics.Core.Constants
 @using Edulytics.Core.Enums
+@using Edulytics.Web.Presentation
 @model Edulytics.Web.ViewModels.Assessments.AssessmentDetailsViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentResource> A
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentBuilderResource> B
@@ -8,11 +9,123 @@
     var assessment = Model.Details.Assessment;
     var rowVersion = Convert.ToBase64String(assessment.RowVersion);
     var canManage = User.IsInRole(RoleNames.Teacher);
+    var deliveryKey = assessment.DeliveryMode == AssessmentDeliveryMode.Online
+        ? "DeliveryOnlineBadge"
+        : "DeliveryOfflineBadge";
+    var deliveryClass = assessment.DeliveryMode == AssessmentDeliveryMode.Online
+        ? "is-online"
+        : "is-offline";
 }
 <section class="assessment-page @(canManage ? "" : "is-readonly")">
-<header class="assessment-header"><div><span class="assessment-context">@Model.SubjectName · @Model.ClassName · @Model.TermName</span><h1>@assessment.Title</h1><p>@assessment.AssessmentDate.ToString("yyyy-MM-dd") · @A["MaxScore"]: @assessment.MaxScore.ToString("0.##") · @A["Status"]: @A[Model.StatusKey]</p></div><div class="assessment-actions"><a class="school-button" asp-action="Index">@A["Assessments"]</a>@if(assessment.Status==AssessmentStatus.Draft && canManage){<a class="school-button" asp-action="Edit" asp-route-id="@assessment.Id">@A["EditAssessment"]</a><a class="school-button school-button-primary" asp-controller="AssessmentBuilder" asp-action="Index" asp-route-assessmentId="@assessment.Id">@B["AssessmentBuilder"]</a><form asp-action="DeleteAssessment" asp-route-id="@assessment.Id" method="post">@Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion"/><button type="submit" class="school-button">@A["DeleteAssessment"]</button></form>}@if(assessment.Status!=AssessmentStatus.Draft){<a class="school-button school-button-primary" asp-action="Results" asp-route-id="@assessment.Id">@A["Results"]</a>}</div></header>
-@if(TempData["Success"] is string success){<div class="school-alert school-alert-success" role="status">@success</div>}@if(TempData["Error"] is string error){<div class="school-alert school-alert-error" role="alert">@error</div>}
-@if(assessment.Status==AssessmentStatus.Draft){<div class="assessment-info">@(canManage ? B["BuilderEntryNotice"] : A["AssessmentMonitorNotice"])</div>}else if(assessment.Status==AssessmentStatus.Open){<div class="assessment-info">@A["OpenHelp"]</div>}
-<section class="assessment-question-list"><h2>@A["Questions"]</h2>@if(Model.Details.Questions.Count==0){<div class="assessment-empty">@A["NoQuestions"]</div>}else{@foreach(var question in Model.Details.Questions){<article class="assessment-question-card"><header><div><h3>@question.Order. @question.Prompt</h3><p>@A["QuestionMaxScore"]: @question.MaxScore.ToString("0.##")</p></div></header><div class="assessment-mappings"><h4>@A["OutcomeMappings"]</h4>@if(question.OutcomeIds.Count==0){<p>@A["NoMappings"]</p>}else{<div class="assessment-mapping-tags">@foreach(var id in question.OutcomeIds){var outcome=Model.Outcome(id);if(outcome is not null){<div class="assessment-mapping-tag"><strong>@outcome.Code</strong> — @outcome.Description</div>}}</div>}</div></article>}}</section>
-<section class="assessment-lifecycle">@if(assessment.Status==AssessmentStatus.Open && canManage){<form asp-action="Close" asp-route-id="@assessment.Id" method="post">@Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion"/><button type="submit" class="school-button">@A["CloseAssessment"]</button></form>}</section>
+    <header class="assessment-header">
+        <div>
+            <span class="assessment-context">@Model.SubjectName · @Model.ClassName · @Model.TermName</span>
+            <h1>@assessment.Title</h1>
+            <p>
+                @assessment.AssessmentDate.ToString("yyyy-MM-dd") ·
+                @A["MaxScore"]: @assessment.MaxScore.ToString("0.##") ·
+                @A["Status"]: @A[Model.StatusKey] ·
+                <strong>@B["CurrentDelivery"]:</strong>
+                <span class="ed-delivery-badge @deliveryClass">@B[deliveryKey]</span>
+            </p>
+        </div>
+        <div class="assessment-actions">
+            <a class="school-button" asp-action="Index">@A["Assessments"]</a>
+            @if (assessment.Status == AssessmentStatus.Draft && canManage)
+            {
+                <a class="school-button" asp-action="Edit" asp-route-id="@assessment.Id">@A["EditAssessment"]</a>
+                <a class="school-button school-button-primary"
+                   asp-controller="AssessmentBuilder"
+                   asp-action="Index"
+                   asp-route-assessmentId="@assessment.Id">@B["AssessmentBuilder"]</a>
+                <form asp-action="DeleteAssessment" asp-route-id="@assessment.Id" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="rowVersion" value="@rowVersion" />
+                    <button type="submit" class="school-button">@A["DeleteAssessment"]</button>
+                </form>
+            }
+            @if (assessment.Status != AssessmentStatus.Draft)
+            {
+                <a class="school-button school-button-primary"
+                   asp-action="Results"
+                   asp-route-id="@assessment.Id">@A["Results"]</a>
+            }
+        </div>
+    </header>
+
+    @if (TempData["Success"] is string success)
+    {
+        <div class="school-alert school-alert-success" role="status">@success</div>
+    }
+    @if (TempData["Error"] is string error)
+    {
+        <div class="school-alert school-alert-error" role="alert">@error</div>
+    }
+
+    @if (assessment.Status == AssessmentStatus.Draft)
+    {
+        <div class="assessment-info">@(canManage ? B["BuilderEntryNotice"] : A["AssessmentMonitorNotice"])</div>
+    }
+    else if (assessment.Status == AssessmentStatus.Open)
+    {
+        <div class="assessment-info">@A["OpenHelp"]</div>
+    }
+
+    <section class="assessment-question-list">
+        <h2>@A["Questions"]</h2>
+        @if (Model.Details.Questions.Count == 0)
+        {
+            <div class="assessment-empty">@A["NoQuestions"]</div>
+        }
+        else
+        {
+            @foreach (var question in Model.Details.Questions)
+            {
+                <article class="assessment-question-card">
+                    <header>
+                        <div>
+                            <h3>@question.Order. @question.Prompt</h3>
+                            <p>@A["QuestionMaxScore"]: @question.MaxScore.ToString("0.##")</p>
+                        </div>
+                    </header>
+                    <div class="assessment-mappings">
+                        <h4>@A["OutcomeMappings"]</h4>
+                        @if (question.OutcomeIds.Count == 0)
+                        {
+                            <p>@A["NoMappings"]</p>
+                        }
+                        else
+                        {
+                            <div class="assessment-mapping-tags">
+                                @foreach (var id in question.OutcomeIds)
+                                {
+                                    var outcome = Model.Outcome(id);
+                                    if (outcome is not null)
+                                    {
+                                        var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
+                                        <div class="assessment-mapping-tag"
+                                             data-code="@outcome.Code"
+                                             data-display-code="@displayCode">
+                                            <strong>@displayCode</strong> — @outcome.Description
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        }
+                    </div>
+                </article>
+            }
+        }
+    </section>
+
+    <section class="assessment-lifecycle">
+        @if (assessment.Status == AssessmentStatus.Open && canManage)
+        {
+            <form asp-action="Close" asp-route-id="@assessment.Id" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="rowVersion" value="@rowVersion" />
+                <button type="submit" class="school-button">@A["CloseAssessment"]</button>
+            </form>
+        }
+    </section>
 </section>
