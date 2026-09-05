@@ -30,7 +30,7 @@
   <data name="AtClassLevel" xml:space="preserve"><value>At class level</value></data>
   <data name="Stretch" xml:space="preserve"><value>Stretch</value></data>
   <data name="Challenge" xml:space="preserve"><value>Challenge</value></data>
-  <data name="NativeGenerationUnavailable" xml:space="preserve"><value>Native generation is not available for the selected curriculum outcomes. Manual question creation remains available.</value></data>
+  <data name="NativeGenerationUnavailable" xml:space="preserve"><value>Edulytics does not yet have a trusted native generator for the selected learning outcomes. The curriculum itself may still be complete; manual question creation remains available.</value></data>
   <data name="Source" xml:space="preserve"><value>Source</value></data>
   <data name="Legacy" xml:space="preserve"><value>Legacy</value></data>
   <data name="Status" xml:space="preserve"><value>Status</value></data>
@@ -40,6 +40,8 @@
   <data name="BuilderStatusEdited" xml:space="preserve"><value>Edited — review required</value></data>
   <data name="ApproveQuestion" xml:space="preserve"><value>Approve question</value></data>
   <data name="EditQuestion" xml:space="preserve"><value>Edit question</value></data>
+  <data name="SaveChanges" xml:space="preserve"><value>Save changes</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Cancel</value></data>
   <data name="RegenerateQuestion" xml:space="preserve"><value>Regenerate question</value></data>
   <data name="DeleteQuestion" xml:space="preserve"><value>Delete question</value></data>
   <data name="PublishAssessment" xml:space="preserve"><value>Publish assessment</value></data>
@@ -58,8 +60,9 @@
   <data name="SuccessQuestionDeleted" xml:space="preserve"><value>Question deleted.</value></data>
   <data name="SuccessAssessmentOpened" xml:space="preserve"><value>Assessment published.</value></data>
   <data name="ErrorConcurrencyConflict" xml:space="preserve"><value>The assessment changed in another request. Reload and try again.</value></data>
-  <data name="ErrorOutcomeDoesNotMatchAssessment" xml:space="preserve"><value>Select a learning outcome that is available for this assessment. If no outcomes are listed, ask the Subject Supervisor to add official curriculum outcomes to the teaching plan and then refresh the page. AI generation accepts only outcomes marked AI supported.</value></data>
+  <data name="ErrorOutcomeDoesNotMatchAssessment" xml:space="preserve"><value>Select at least one learning outcome that is available for this assessment. If no outcomes are listed, ask the Subject Supervisor to add official curriculum outcomes to the teaching plan and then refresh the page.</value></data>
   <data name="ErrorInvalidMarks" xml:space="preserve"><value>Marks must be a whole number greater than zero and within the allowed maximum.</value></data>
+  <data name="ErrorInvalidOrder" xml:space="preserve"><value>Question order must be a whole number greater than zero.</value></data>
   <data name="ErrorAssessmentScoreMismatch" xml:space="preserve"><value>The question marks would exceed the assessment maximum score.</value></data>
   <data name="ErrorInvalidQuestionContent" xml:space="preserve"><value>Complete the required question and answer fields and keep them within the allowed length.</value></data>
   <data name="ErrorDuplicateQuestionOrder" xml:space="preserve"><value>Another question already uses this order number. Choose a different order.</value></data>
@@ -75,8 +78,13 @@
   <data name="DeliveryMode" xml:space="preserve"><value>Delivery mode</value></data>
   <data name="DeliveryOnline" xml:space="preserve"><value>Online assessment — student answers and submits in Edulytics</value></data>
   <data name="DeliveryOffline" xml:space="preserve"><value>Offline / manual assessment — teacher records or imports results</value></data>
+  <data name="DeliveryOnlineBadge" xml:space="preserve"><value>Online</value></data>
+  <data name="DeliveryOfflineBadge" xml:space="preserve"><value>Offline / manual</value></data>
+  <data name="CurrentDelivery" xml:space="preserve"><value>Saved delivery mode</value></data>
   <data name="SaveDeliverySettings" xml:space="preserve"><value>Save delivery settings</value></data>
   <data name="DeliverySettingsSaved" xml:space="preserve"><value>Assessment delivery settings saved.</value></data>
+  <data name="DeliverySettingsSavedOnline" xml:space="preserve"><value>Delivery settings saved — Online assessment.</value></data>
+  <data name="DeliverySettingsSavedOffline" xml:space="preserve"><value>Delivery settings saved — Offline / manual assessment.</value></data>
   <data name="OfflinePrint" xml:space="preserve"><value>Offline paper &amp; answer key</value></data>
   <data name="OfflinePrintHelp" xml:space="preserve"><value>Download a student-safe paper for printing and a separate teacher answer key. The student paper never contains correct answers or worked solutions.</value></data>
   <data name="DownloadStudentPaper" xml:space="preserve"><value>Download student paper (PDF)</value></data>
