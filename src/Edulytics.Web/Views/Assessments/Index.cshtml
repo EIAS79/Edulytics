@@ -42,7 +42,7 @@
                             <option value="">@A["SelectClass"]</option>
                             @foreach (var item in Model.Workspace.ClassGroups)
                             {
-                                <option value="@item.Id">@item.Name (@item.Code)</option>
+                                <option value="@item.Id">@item.Name</option>
                             }
                         </select>
 
@@ -73,8 +73,8 @@
 
                         <label for="maxScore">@A["MaxScore"]</label>
                         <input id="maxScore" name="maxScore"
-                               type="number" min="0.01" max="10000"
-                               step="0.01" required />
+                               type="number" min="1" max="10000"
+                               step="1" required />
 
                         <button type="submit"
                                 class="school-button school-button-primary">
