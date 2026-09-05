@@ -17,6 +17,12 @@ public interface IAssessmentBuilderRepository
 
     void AddBundle(AssessmentBuilderQuestionBundle bundle);
 
+    void ReplaceOutcomeMappings(
+        IReadOnlyCollection<QuestionLearningOutcome> currentQuestionMappings,
+        IReadOnlyCollection<AssessmentItemOutcome> currentItemMappings,
+        IReadOnlyCollection<QuestionLearningOutcome> replacementQuestionMappings,
+        IReadOnlyCollection<AssessmentItemOutcome> replacementItemMappings);
+
     void RemoveQuestionBundle(
         AssessmentQuestion question,
         AssessmentItem? item,
