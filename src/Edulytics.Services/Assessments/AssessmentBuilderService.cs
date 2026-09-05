@@ -105,17 +105,57 @@ public sealed class AssessmentBuilderService(
         var answer = Clean(request.CorrectAnswer);
         var solution = Clean(request.Solution);
         if (!ValidContent(prompt, answer, solution)) return Failure(AssessmentErrorCode.InvalidText);
+        if (request.Order <= 0) return Failure(AssessmentErrorCode.InvalidOrder);
         if (!ValidScore(request.MaxScore)) return Failure(AssessmentErrorCode.InvalidQuestionScore);
+        if (context.Questions.Any(x => x.Id != question.Id && x.Order == request.Order))
+            return Failure(AssessmentErrorCode.DuplicateQuestionOrder);
         if (context.Questions.Where(x => x.Id != question.Id).Sum(x => x.MaxScore) + request.MaxScore > context.Assessment.MaxScore)
             return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
 
+        var outcomeIds = NormalizeOutcomes(request.OutcomeIds);
+        if (!ValidateOutcomes(resolved.Details!, outcomeIds))
+            return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+
         question.Prompt = prompt;
         question.MaxScore = Round(request.MaxScore);
+        question.Order = request.Order;
         item.Prompt = prompt;
         item.CorrectAnswer = answer;
         item.Solution = solution;
         item.Difficulty = request.Difficulty;
+        item.CurriculumTopicId = ResolveSingleTopic(context, outcomeIds);
         item.ValidationMetadataJson = SetStatus(item.ValidationMetadataJson, AssessmentBuilderQuestionStatus.Edited);
+
+        var currentQuestionMappings = context.QuestionOutcomeMappings
+            .Where(x => x.AssessmentQuestionId == question.Id)
+            .ToArray();
+        var currentItemMappings = context.ItemOutcomeMappings
+            .Where(x => x.AssessmentItemId == item.Id)
+            .ToArray();
+        var replacementQuestionMappings = outcomeIds
+            .Select(outcomeId => new QuestionLearningOutcome
+            {
+                Id = Guid.NewGuid(),
+                SchoolId = resolved.SchoolId,
+                AssessmentQuestionId = question.Id,
+                LearningOutcomeId = outcomeId
+            })
+            .ToArray();
+        var replacementItemMappings = outcomeIds
+            .Select(outcomeId => new AssessmentItemOutcome
+            {
+                Id = Guid.NewGuid(),
+                SchoolId = resolved.SchoolId,
+                AssessmentItemId = item.Id,
+                LearningOutcomeId = outcomeId
+            })
+            .ToArray();
+        repository.ReplaceOutcomeMappings(
+            currentQuestionMappings,
+            currentItemMappings,
+            replacementQuestionMappings,
+            replacementItemMappings);
+
         return await SaveAsync(context, request.AssessmentRowVersion, question.Id, cancellationToken);
     }
 
@@ -127,19 +167,41 @@ public sealed class AssessmentBuilderService(
         var context = resolved.Context!;
         if (context.CurriculumAdoption is null || string.IsNullOrWhiteSpace(context.CurriculumAdoption.CurriculumLevelKey))
             return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
-        if (request.QuestionCount is < 1 or > 100 || !ValidScore(request.MaxScorePerQuestion))
+        if (request.QuestionCount is < 1 or > 100 ||
+            request.MaxScorePerQuestion < 0m ||
+            (request.MaxScorePerQuestion > 0m && !ValidScore(request.MaxScorePerQuestion)))
             return Failure(AssessmentErrorCode.InvalidQuestionScore);
-        if (context.Questions.Sum(x => x.MaxScore) + request.QuestionCount * request.MaxScorePerQuestion > context.Assessment.MaxScore)
+
+        var effectiveDifficulty = AssessmentBuilderGenerationPlanner.ResolveDifficulty(
+            request.Difficulty,
+            context.Assessment.DifficultyBand);
+        if (!effectiveDifficulty.HasValue)
+            return Failure(AssessmentErrorCode.Required);
+
+        var currentMarks = context.Questions.Sum(x => x.MaxScore);
+        var remainingMarks = context.Assessment.MaxScore - currentMarks;
+        if (remainingMarks <= 0m || decimal.Truncate(remainingMarks) != remainingMarks || remainingMarks < request.QuestionCount)
+            return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
+        if (request.MaxScorePerQuestion > 0m && request.QuestionCount * request.MaxScorePerQuestion > remainingMarks)
             return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
 
         var outcomeIds = NormalizeOutcomes(request.OutcomeIds);
         if (!ValidateOutcomes(resolved.Details!, outcomeIds)) return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
-        var batch = TryGenerate(context, resolved.SchoolId, outcomeIds, request.QuestionCount, request.Difficulty, request.Seed);
+        var batch = TryGenerate(context, resolved.SchoolId, outcomeIds, request.QuestionCount, effectiveDifficulty.Value, request.Seed);
         if (batch is null) return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+        if (batch.Items.Count != request.QuestionCount) return Failure(AssessmentErrorCode.PersistenceError);
+
+        var marks = AssessmentBuilderGenerationPlanner.DistributeMarks(
+            remainingMarks,
+            batch.Items.Select(x => x.Item.Difficulty).ToArray(),
+            request.MaxScorePerQuestion);
+        if (marks is null || marks.Count != batch.Items.Count)
+            return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
 
         var order = context.Questions.Count == 0 ? 1 : context.Questions.Max(x => x.Order) + 1;
-        foreach (var generated in batch.Items)
+        for (var index = 0; index < batch.Items.Count; index++)
         {
+            var generated = batch.Items[index];
             generated.Item.CreatedByUserId = actorUserId;
             generated.Item.ValidationMetadataJson = SetStatus(generated.Item.ValidationMetadataJson, AssessmentBuilderQuestionStatus.Draft);
             var question = new AssessmentQuestion
@@ -148,7 +210,7 @@ public sealed class AssessmentBuilderService(
                 SchoolId = resolved.SchoolId,
                 AssessmentId = request.AssessmentId,
                 Prompt = generated.Item.Prompt,
-                MaxScore = Round(request.MaxScorePerQuestion),
+                MaxScore = Round(marks[index]),
                 Order = order++
             };
             repository.AddBundle(new AssessmentBuilderQuestionBundle(

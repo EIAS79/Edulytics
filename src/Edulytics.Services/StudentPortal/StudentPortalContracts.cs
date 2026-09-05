@@ -50,7 +50,14 @@ public sealed record StudentLearningSubjectItem(
     string FrameworkVersionName,
     string AcademicYearName,
     string GradeName,
-    IReadOnlyList<StudentLearningNodeItem> Nodes);
+    IReadOnlyList<StudentLearningNodeItem> Nodes)
+{
+    public Guid CurriculumAdoptionId { get; init; }
+    public Guid ClassGroupId { get; init; }
+    public Guid AcademicYearId { get; init; }
+    public Guid GradeLevelId { get; init; }
+    public string ClassName { get; init; } = string.Empty;
+}
 
 public sealed record StudentAssessmentItem(
     Guid AssessmentId,

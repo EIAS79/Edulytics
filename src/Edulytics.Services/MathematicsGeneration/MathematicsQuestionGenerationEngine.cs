@@ -278,7 +278,7 @@ public sealed class MathematicsQuestionGenerationEngine
         var raw = family switch
         {
             MathematicsGeneratorFamily.IntegerComputation =>
-                GenerateIntegerComputation(key, difficulty),
+                GenerateIntegerComputation(key, difficulty, profile.CanonicalSkills),
             MathematicsGeneratorFamily.OneStepEquation =>
                 GenerateOneStepEquation(key, difficulty),
             MathematicsGeneratorFamily.FractionOfQuantity =>
@@ -325,6 +325,7 @@ public sealed class MathematicsQuestionGenerationEngine
                 blueprintFormulaVersion = blueprint.FormulaVersion,
                 blueprintFamily = blueprintFamily.ToString(),
                 outcomeCode = profile.OutcomeCode,
+                canonicalSkills = profile.CanonicalSkills.Select(x => x.ToString()).ToArray(),
                 scopeValidated = true,
                 outcomeProfileValidated = true,
                 difficultyValidated = true,
@@ -351,7 +352,8 @@ public sealed class MathematicsQuestionGenerationEngine
 
     private static RawGeneratedItem GenerateIntegerComputation(
         string key,
-        AssessmentItemDifficulty difficulty)
+        AssessmentItemDifficulty difficulty,
+        IReadOnlyList<CanonicalMathematicsSkill> canonicalSkills)
     {
         var (min, max) = difficulty switch
         {
@@ -362,7 +364,7 @@ public sealed class MathematicsQuestionGenerationEngine
         };
         var a = StableRange($"{key}|a", min, max);
         var b = StableRange($"{key}|b", min, max);
-        var addition = StableInt($"{key}|operation", 2) == 0;
+        var addition = ResolveIntegerAddition(key, canonicalSkills);
         if (!addition && b > a)
         {
             (a, b) = (b, a);
@@ -378,6 +380,25 @@ public sealed class MathematicsQuestionGenerationEngine
                 ? $"Add {a} and {b} to get {answer}."
                 : $"Subtract {b} from {a} to get {answer}.",
             JsonSerializer.Serialize(parameters));
+    }
+
+    private static bool ResolveIntegerAddition(
+        string key,
+        IReadOnlyList<CanonicalMathematicsSkill> canonicalSkills)
+    {
+        var combined = canonicalSkills.Contains(
+            CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction);
+        var addition = canonicalSkills.Contains(
+            CanonicalMathematicsSkill.WholeNumberAddition);
+        var subtraction = canonicalSkills.Contains(
+            CanonicalMathematicsSkill.WholeNumberSubtraction);
+
+        if (!combined && addition && !subtraction)
+            return true;
+        if (!combined && subtraction && !addition)
+            return false;
+
+        return StableInt($"{key}|operation", 2) == 0;
     }
 
     private static RawGeneratedItem GenerateOneStepEquation(
@@ -593,6 +614,7 @@ public sealed class MathematicsQuestionGenerationEngine
                 "Generated Mathematics item failed solution validation.");
         }
 
+        ValidateCanonicalAlignment(family, profile, item.GenerationParametersJson);
         ValidateDifficulty(family, item.Difficulty, item.GenerationParametersJson);
 
         var expectedFingerprint = Fingerprint(
@@ -608,6 +630,46 @@ public sealed class MathematicsQuestionGenerationEngine
         {
             throw new InvalidOperationException(
                 "Generated Mathematics item failed exposure fingerprint validation.");
+        }
+    }
+
+    private static void ValidateCanonicalAlignment(
+        MathematicsGeneratorFamily family,
+        MathematicsOutcomeGenerationProfile profile,
+        string parametersJson)
+    {
+        if (profile.CanonicalSkills.Count == 0 ||
+            family != MathematicsGeneratorFamily.IntegerComputation)
+        {
+            return;
+        }
+
+        if (profile.CanonicalSkills.Contains(CanonicalMathematicsSkill.WholeNumberMultiplication) ||
+            profile.CanonicalSkills.Contains(CanonicalMathematicsSkill.WholeNumberDivision))
+        {
+            throw new InvalidOperationException(
+                "Integer computation generator cannot satisfy multiplication or division canonical skills.");
+        }
+
+        var parameters = JsonSerializer.Deserialize<IntegerParameters>(parametersJson)
+            ?? throw new InvalidOperationException("Invalid integer generation parameters.");
+        var combined = profile.CanonicalSkills.Contains(
+            CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction);
+        var addition = profile.CanonicalSkills.Contains(
+            CanonicalMathematicsSkill.WholeNumberAddition);
+        var subtraction = profile.CanonicalSkills.Contains(
+            CanonicalMathematicsSkill.WholeNumberSubtraction);
+
+        if (!combined && addition && !subtraction && parameters.Operation != "add")
+        {
+            throw new InvalidOperationException(
+                "Generated Mathematics item violates the addition-only canonical skill.");
+        }
+
+        if (!combined && subtraction && !addition && parameters.Operation != "subtract")
+        {
+            throw new InvalidOperationException(
+                "Generated Mathematics item violates the subtraction-only canonical skill.");
         }
     }
 

@@ -43,7 +43,11 @@ public sealed class StudentPortalController : Controller
     }
 
     [HttpGet("learning")]
-    public async Task<IActionResult> Learning(CancellationToken cancellationToken)
+    public async Task<IActionResult> Learning(
+        Guid? curriculumAdoptionId = null,
+        Guid? classGroupId = null,
+        Guid[]? focusNodeIds = null,
+        CancellationToken cancellationToken = default)
     {
         var workspace = await WorkspaceAsync(cancellationToken);
         if (workspace.Result is not null) return workspace.Result;
@@ -52,8 +56,34 @@ public sealed class StudentPortalController : Controller
             actorId, CultureInfo.CurrentUICulture.Name, cancellationToken);
         if (lessons.Value is null)
             return lessons.Error == LessonContentErrorCode.AccessDenied ? Forbid() : NotFound();
-        return View(nameof(Learning), new StudentLearningViewModel(workspace.Workspace!, lessons.Value));
+
+        var selectedContext = curriculumAdoptionId.HasValue && classGroupId.HasValue
+            ? workspace.Workspace!.Learning.FirstOrDefault(x =>
+                x.CurriculumAdoptionId == curriculumAdoptionId.Value &&
+                x.ClassGroupId == classGroupId.Value)
+            : null;
+
+        var selectedNodeIds = selectedContext is null
+            ? Array.Empty<Guid>()
+            : (focusNodeIds ?? [])
+                .Distinct()
+                .Where(id => selectedContext.Nodes.Any(node => node.Id == id))
+                .Take(100)
+                .ToArray();
+
+        return View(
+            nameof(Learning),
+            new StudentLearningViewModel(workspace.Workspace!, lessons.Value)
+            {
+                SelectedCurriculumAdoptionId = selectedContext?.CurriculumAdoptionId,
+                SelectedClassGroupId = selectedContext?.ClassGroupId,
+                SelectedLearningNodeIds = selectedNodeIds
+            });
     }
+
+    [NonAction]
+    public Task<IActionResult> Learning(CancellationToken cancellationToken) =>
+        Learning(null, null, null, cancellationToken);
 
     [HttpGet("learning/lesson/{id:guid}")]
     public async Task<IActionResult> Lesson(Guid id, CancellationToken cancellationToken)

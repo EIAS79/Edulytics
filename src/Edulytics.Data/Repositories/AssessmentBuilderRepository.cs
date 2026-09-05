@@ -132,6 +132,18 @@ public sealed class AssessmentBuilderRepository(EdulyticsDbContext db) : IAssess
         db.AssessmentItemOutcomes.AddRange(bundle.ItemOutcomeMappings);
     }
 
+    public void ReplaceOutcomeMappings(
+        IReadOnlyCollection<QuestionLearningOutcome> currentQuestionMappings,
+        IReadOnlyCollection<AssessmentItemOutcome> currentItemMappings,
+        IReadOnlyCollection<QuestionLearningOutcome> replacementQuestionMappings,
+        IReadOnlyCollection<AssessmentItemOutcome> replacementItemMappings)
+    {
+        db.QuestionLearningOutcomes.RemoveRange(currentQuestionMappings);
+        db.AssessmentItemOutcomes.RemoveRange(currentItemMappings);
+        db.QuestionLearningOutcomes.AddRange(replacementQuestionMappings);
+        db.AssessmentItemOutcomes.AddRange(replacementItemMappings);
+    }
+
     public void RemoveQuestionBundle(
         AssessmentQuestion question,
         AssessmentItem? item,

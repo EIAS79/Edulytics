@@ -199,6 +199,68 @@ public sealed class MathematicsQuestionGenerationEngineTests
         Assert.Contains(generated.Item.CorrectAnswer, generated.Item.Prompt, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void AdditionOnlyCanonicalSkill_NeverGeneratesSubtraction()
+    {
+        var outcome = Guid.NewGuid();
+        var blueprint = Blueprint(
+            [outcome],
+            questionCount: 8,
+            familyAllocations:
+            [new QuestionFamilyBlueprintAllocation(AssessmentQuestionFamily.DirectComputation, 8)],
+            typeAllocations:
+            [new ItemTypeBlueprintAllocation(AssessmentItemType.Numeric, 8)]);
+        var profile = new MathematicsOutcomeGenerationProfile(
+            outcome,
+            "ADD-ONLY",
+            [MathematicsGeneratorFamily.IntegerComputation])
+        {
+            CanonicalSkills = [CanonicalMathematicsSkill.WholeNumberAddition]
+        };
+
+        var batch = _engine.Generate(new MathematicsGenerationRequest(
+            blueprint,
+            [profile],
+            91));
+
+        Assert.All(batch.Items, generated =>
+            Assert.Contains(
+                "\"Operation\":\"add\"",
+                generated.Item.GenerationParametersJson,
+                StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public void SubtractionOnlyCanonicalSkill_NeverGeneratesAddition()
+    {
+        var outcome = Guid.NewGuid();
+        var blueprint = Blueprint(
+            [outcome],
+            questionCount: 8,
+            familyAllocations:
+            [new QuestionFamilyBlueprintAllocation(AssessmentQuestionFamily.DirectComputation, 8)],
+            typeAllocations:
+            [new ItemTypeBlueprintAllocation(AssessmentItemType.Numeric, 8)]);
+        var profile = new MathematicsOutcomeGenerationProfile(
+            outcome,
+            "SUBTRACT-ONLY",
+            [MathematicsGeneratorFamily.IntegerComputation])
+        {
+            CanonicalSkills = [CanonicalMathematicsSkill.WholeNumberSubtraction]
+        };
+
+        var batch = _engine.Generate(new MathematicsGenerationRequest(
+            blueprint,
+            [profile],
+            92));
+
+        Assert.All(batch.Items, generated =>
+            Assert.Contains(
+                "\"Operation\":\"subtract\"",
+                generated.Item.GenerationParametersJson,
+                StringComparison.Ordinal));
+    }
+
     private static MathematicsGenerationRequest Request(
         int questionCount,
         int seed = 3)

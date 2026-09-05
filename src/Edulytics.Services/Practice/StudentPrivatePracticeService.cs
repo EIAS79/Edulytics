@@ -23,22 +23,63 @@ public sealed class StudentPrivatePracticeService(
         var selected = curriculumAdoptionId ?? curricula.FirstOrDefault()?.CurriculumAdoptionId;
         IReadOnlyList<StudentPrivatePracticeLessonOption> lessons = [];
         IReadOnlyList<string> units = [];
+        IReadOnlyList<StudentPrivatePracticeUnitOption> unitOptions = [];
 
         if (selected.HasValue)
         {
             var context = await repository.GetContextAsync(studentUserId, selected.Value, cancellationToken);
             if (context is not null)
             {
+                var officialNodeIdsByLesson = context.LessonOutcomes
+                    .GroupBy(x => x.PedagogicalLessonId)
+                    .ToDictionary(
+                        group => group.Key,
+                        group => (IReadOnlyList<Guid>)group
+                            .OrderBy(x => x.SortOrder)
+                            .Select(x => x.OutcomeNodeId)
+                            .Distinct()
+                            .ToArray());
+
                 lessons = context.Lessons
-                    .Select(x => new StudentPrivatePracticeLessonOption(x.Id, x.UnitKey, x.UnitTitle, x.Code, x.Title))
+                    .Select(x => new StudentPrivatePracticeLessonOption(
+                        x.Id,
+                        x.UnitKey,
+                        x.UnitTitle,
+                        x.Code,
+                        x.Title,
+                        officialNodeIdsByLesson.TryGetValue(x.Id, out var mappedNodeIds)
+                            ? mappedNodeIds
+                            : []))
                     .ToArray();
-                units = context.Lessons.Select(x => x.UnitKey).Where(x => !string.IsNullOrWhiteSpace(x))
-                    .Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
+
+                unitOptions = lessons
+                    .Where(x => !string.IsNullOrWhiteSpace(x.UnitKey))
+                    .GroupBy(x => x.UnitKey, StringComparer.OrdinalIgnoreCase)
+                    .Select(group =>
+                    {
+                        var first = group.First();
+                        return new StudentPrivatePracticeUnitOption(
+                            first.UnitKey,
+                            string.IsNullOrWhiteSpace(first.UnitTitle)
+                                ? "Unit"
+                                : first.UnitTitle,
+                            group.SelectMany(x => x.OfficialOutcomeNodeIds)
+                                .Distinct()
+                                .ToArray());
+                    })
+                    .ToArray();
+                units = unitOptions.Select(x => x.UnitKey).ToArray();
             }
         }
 
         var attempts = await repository.ListPrivateAttemptsAsync(studentUserId, cancellationToken);
-        return new StudentPrivatePracticeWorkspace(curricula, selected, lessons, units, attempts);
+        return new StudentPrivatePracticeWorkspace(
+            curricula,
+            selected,
+            lessons,
+            units,
+            attempts,
+            unitOptions);
     }
 
     public async Task<StudentPrivatePracticeResult> GenerateAsync(

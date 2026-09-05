@@ -34,14 +34,21 @@ public sealed record StudentPrivatePracticeLessonOption(
     string UnitKey,
     string UnitTitle,
     string LessonCode,
-    string LessonTitle);
+    string LessonTitle,
+    IReadOnlyList<Guid> OfficialOutcomeNodeIds);
+
+public sealed record StudentPrivatePracticeUnitOption(
+    string UnitKey,
+    string UnitTitle,
+    IReadOnlyList<Guid> OfficialOutcomeNodeIds);
 
 public sealed record StudentPrivatePracticeWorkspace(
     IReadOnlyList<PrivatePracticeCurriculumOption> Curricula,
     Guid? SelectedCurriculumAdoptionId,
     IReadOnlyList<StudentPrivatePracticeLessonOption> Lessons,
     IReadOnlyList<string> UnitKeys,
-    IReadOnlyList<PrivatePracticeAttemptSummary> Attempts);
+    IReadOnlyList<PrivatePracticeAttemptSummary> Attempts,
+    IReadOnlyList<StudentPrivatePracticeUnitOption>? Units = null);
 
 public sealed record GenerateStudentPrivatePracticeRequest(
     Guid CurriculumAdoptionId,

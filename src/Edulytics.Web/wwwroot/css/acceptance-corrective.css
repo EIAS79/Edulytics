@@ -172,6 +172,74 @@
     margin: 0.25rem 0.25rem 0 0;
 }
 
+.ed-delivery-badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    min-height: 1.65rem;
+    padding: 0.16rem 0.52rem;
+    border: 1px solid #d7deea;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.15;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+.ed-delivery-badge.is-online {
+    border-color: #a7d8b5;
+    background: #eefaf1;
+    color: #176b35;
+}
+
+.ed-delivery-badge.is-offline {
+    border-color: #d7deea;
+    background: #f6f7f9;
+    color: #4b5563;
+}
+
+.student-practice-context-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 0.8rem;
+}
+
+.student-learning-card.is-selected-context {
+    border-color: #8aa8dc;
+    box-shadow: 0 0 0 3px rgba(70, 111, 178, 0.12);
+    scroll-margin-top: 1rem;
+}
+
+.student-learning-context-badge {
+    display: inline-flex;
+    width: fit-content;
+    margin-top: 0.4rem;
+    padding: 0.18rem 0.55rem;
+    border: 1px solid #b9c9e5;
+    border-radius: 999px;
+    background: #f2f6fd;
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.student-learning-focus-anchor {
+    display: block;
+    scroll-margin-top: 1rem;
+}
+
+.student-node.is-practice-focus {
+    border-color: #b9c9e5;
+    background: #f7f9fe;
+}
+
+.student-node.is-practice-focus-exact {
+    border-color: #5f83c2;
+    box-shadow: 0 0 0 3px rgba(70, 111, 178, 0.12);
+    scroll-margin-top: 1rem;
+}
+
 @media (max-width: 640px) {
     .ed-ai-capability-summary {
         grid-template-columns: 1fr;
