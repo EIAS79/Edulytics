@@ -30,7 +30,7 @@
   <data name="AtClassLevel" xml:space="preserve"><value>Na poziomie klasy</value></data>
   <data name="Stretch" xml:space="preserve"><value>Rozszerzony</value></data>
   <data name="Challenge" xml:space="preserve"><value>Wymagający</value></data>
-  <data name="NativeGenerationUnavailable" xml:space="preserve"><value>Natywne generowanie nie jest dostępne dla wybranych efektów programu. Nadal można tworzyć pytania ręcznie.</value></data>
+  <data name="NativeGenerationUnavailable" xml:space="preserve"><value>Edulityks nie ma jeszcze zaufanego natywnego generatora dla wybranych efektów uczenia się. Sam program nauczania może być kompletny; nadal można tworzyć pytania ręcznie.</value></data>
   <data name="Source" xml:space="preserve"><value>Źródło</value></data>
   <data name="Legacy" xml:space="preserve"><value>Starszy format</value></data>
   <data name="Status" xml:space="preserve"><value>Status</value></data>
@@ -40,6 +40,8 @@
   <data name="BuilderStatusEdited" xml:space="preserve"><value>Edytowane — wymaga ponownej weryfikacji</value></data>
   <data name="ApproveQuestion" xml:space="preserve"><value>Zatwierdź pytanie</value></data>
   <data name="EditQuestion" xml:space="preserve"><value>Edytuj pytanie</value></data>
+  <data name="SaveChanges" xml:space="preserve"><value>Zapisz zmiany</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Anuluj</value></data>
   <data name="RegenerateQuestion" xml:space="preserve"><value>Wygeneruj pytanie ponownie</value></data>
   <data name="DeleteQuestion" xml:space="preserve"><value>Usuń pytanie</value></data>
   <data name="PublishAssessment" xml:space="preserve"><value>Opublikuj sprawdzian</value></data>
@@ -58,8 +60,9 @@
   <data name="SuccessQuestionDeleted" xml:space="preserve"><value>Pytanie usunięto.</value></data>
   <data name="SuccessAssessmentOpened" xml:space="preserve"><value>Sprawdzian opublikowano.</value></data>
   <data name="ErrorConcurrencyConflict" xml:space="preserve"><value>Sprawdzian został zmieniony w innym żądaniu. Odśwież stronę i spróbuj ponownie.</value></data>
-  <data name="ErrorOutcomeDoesNotMatchAssessment" xml:space="preserve"><value>Wybierz efekt uczenia się dostępny dla tego sprawdzianu. Jeśli lista jest pusta, poproś opiekuna przedmiotu o dodanie oficjalnych efektów programu do planu nauczania i odśwież stronę. Generowanie AI akceptuje tylko efekty oznaczone jako obsługiwane przez AI.</value></data>
+  <data name="ErrorOutcomeDoesNotMatchAssessment" xml:space="preserve"><value>Wybierz co najmniej jeden efekt uczenia się dostępny dla tego sprawdzianu. Jeśli lista jest pusta, poproś opiekuna przedmiotu o dodanie oficjalnych efektów programu do planu nauczania i odśwież stronę.</value></data>
   <data name="ErrorInvalidMarks" xml:space="preserve"><value>Liczba punktów musi być dodatnią liczbą całkowitą mieszczącą się w dozwolonym maksimum.</value></data>
+  <data name="ErrorInvalidOrder" xml:space="preserve"><value>Kolejność pytania musi być dodatnią liczbą całkowitą.</value></data>
   <data name="ErrorAssessmentScoreMismatch" xml:space="preserve"><value>Punkty za pytania przekroczyłyby maksymalną liczbę punktów sprawdzianu.</value></data>
   <data name="ErrorInvalidQuestionContent" xml:space="preserve"><value>Uzupełnij wymagane pola pytania i odpowiedzi oraz zachowaj dozwoloną długość.</value></data>
   <data name="ErrorDuplicateQuestionOrder" xml:space="preserve"><value>Inne pytanie ma już ten numer kolejności. Wybierz inny numer.</value></data>
@@ -75,8 +78,13 @@
   <data name="DeliveryMode" xml:space="preserve"><value>Sposób przeprowadzenia</value></data>
   <data name="DeliveryOnline" xml:space="preserve"><value>Online — uczeń odpowiada i wysyła sprawdzian w Edulityks</value></data>
   <data name="DeliveryOffline" xml:space="preserve"><value>Offline / ręcznie — nauczyciel wprowadza lub importuje wyniki</value></data>
+  <data name="DeliveryOnlineBadge" xml:space="preserve"><value>Online</value></data>
+  <data name="DeliveryOfflineBadge" xml:space="preserve"><value>Offline / ręcznie</value></data>
+  <data name="CurrentDelivery" xml:space="preserve"><value>Zapisany sposób przeprowadzenia</value></data>
   <data name="SaveDeliverySettings" xml:space="preserve"><value>Zapisz ustawienia</value></data>
   <data name="DeliverySettingsSaved" xml:space="preserve"><value>Zapisano ustawienia sposobu przeprowadzenia sprawdzianu.</value></data>
+  <data name="DeliverySettingsSavedOnline" xml:space="preserve"><value>Zapisano ustawienia — sprawdzian Online.</value></data>
+  <data name="DeliverySettingsSavedOffline" xml:space="preserve"><value>Zapisano ustawienia — sprawdzian Offline / ręcznie.</value></data>
   <data name="OfflinePrint" xml:space="preserve"><value>Arkusz offline i klucz odpowiedzi</value></data>
   <data name="OfflinePrintHelp" xml:space="preserve"><value>Pobierz bezpieczny arkusz dla ucznia do wydruku oraz oddzielny klucz odpowiedzi dla nauczyciela. Arkusz ucznia nigdy nie zawiera poprawnych odpowiedzi ani rozwiązań.</value></data>
   <data name="DownloadStudentPaper" xml:space="preserve"><value>Pobierz arkusz ucznia (PDF)</value></data>
