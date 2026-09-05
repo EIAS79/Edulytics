@@ -13,6 +13,18 @@
         return Array.from(bytes, x => x.toString(16).padStart(2, "0")).join("");
     }
 
+    function ensureRound2Stylesheet() {
+        if (document.querySelector('link[data-round2-product-fixes]')) {
+            return;
+        }
+
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "/css/round2-product-fixes.css";
+        link.dataset.round2ProductFixes = "true";
+        document.head.appendChild(link);
+    }
+
     function wireConfirmationForms() {
         document.querySelectorAll("form[data-confirm]").forEach(form => {
             form.addEventListener("submit", event => {
@@ -51,8 +63,7 @@
     function wireSchoolCountryTimeZones() {
         document.querySelectorAll("[data-school-country]").forEach(country => {
             const form = country.closest("form");
-            const timeZone = form?.querySelector(
-                "[data-school-time-zone]");
+            const timeZone = form?.querySelector("[data-school-time-zone]");
 
             if (!timeZone) {
                 return;
@@ -74,6 +85,15 @@
             return;
         }
 
+        students.classList.add("round2-students-section");
+        students.querySelectorAll("table").forEach(table => {
+            table.classList.add("round2-readable-table");
+            const parent = table.parentElement;
+            if (parent) {
+                parent.classList.add("round2-table-scroll");
+            }
+        });
+
         const profileForm = Array.from(students.querySelectorAll("form"))
             .find(form =>
                 (form.action || "")
@@ -89,8 +109,7 @@
             profileForm.hidden = true;
             profileForm.setAttribute("aria-hidden", "true");
 
-            const language = (document.documentElement.lang || "en")
-                .toLowerCase();
+            const language = (document.documentElement.lang || "en").toLowerCase();
             const panel = document.createElement("div");
             panel.className = "academic-card";
 
@@ -117,8 +136,7 @@
         }
 
         if (enrollmentForm) {
-            const language = (document.documentElement.lang || "en")
-                .toLowerCase();
+            const language = (document.documentElement.lang || "en").toLowerCase();
             const heading = enrollmentForm.querySelector("h3");
             if (heading) {
                 heading.textContent = language.startsWith("pl")
@@ -126,8 +144,7 @@
                     : "Change student class enrollment";
             }
 
-            const studentSelect = enrollmentForm.querySelector(
-                "select[name='studentProfileId']");
+            const studentSelect = enrollmentForm.querySelector("select[name='studentProfileId']");
             if (studentSelect) {
                 const help = document.createElement("p");
                 help.className = "academic-help";
@@ -137,6 +154,21 @@
                 studentSelect.insertAdjacentElement("afterend", help);
             }
         }
+    }
+
+    function classFirstLabel(label) {
+        const parts = String(label || "")
+            .split("·")
+            .map(part => part.trim())
+            .filter(Boolean);
+
+        if (parts.length < 2) {
+            return label;
+        }
+
+        const className = parts.at(-1);
+        const context = parts.slice(0, -1).join(" · ");
+        return `${className} — ${context}`;
     }
 
     async function wireAcademicClassRelationships() {
@@ -162,10 +194,7 @@
 
         const classOptions = await response.json();
         const labels = new Map(
-            classOptions.map(item => [
-                String(item.id).toLowerCase(),
-                item.label
-            ]));
+            classOptions.map(item => [String(item.id).toLowerCase(), item.label]));
 
         [teacherClass, enrollmentClass]
             .filter(Boolean)
@@ -177,7 +206,11 @@
 
                     const label = labels.get(option.value.toLowerCase());
                     if (label) {
-                        option.textContent = label;
+                        option.textContent = classFirstLabel(label);
+                        option.title = option.textContent;
+                    } else {
+                        option.textContent = classFirstLabel(option.textContent);
+                        option.title = option.textContent;
                     }
                 });
             });
@@ -185,15 +218,13 @@
         if (teacherClass) {
             const form = teacherClass.closest("form");
             if (form) {
-                form.action =
-                    "/school/academic-structure/phase39/teacher-assignments";
+                form.action = "/school/academic-structure/phase39/teacher-assignments";
             }
 
             teacherClass.multiple = true;
             teacherClass.name = "classGroupIds";
-            teacherClass.size = Math.min(
-                10,
-                Math.max(4, teacherClass.options.length - 1));
+            teacherClass.size = Math.min(10, Math.max(4, teacherClass.options.length - 1));
+            teacherClass.classList.add("round2-class-multiselect");
 
             const placeholder = Array.from(teacherClass.options)
                 .find(option => !option.value);
@@ -206,19 +237,15 @@
             const help = document.createElement("p");
             help.className = "academic-help";
             help.id = "teacher-class-multi-help";
-            const language = (document.documentElement.lang || "en")
-                .toLowerCase();
+            const language = (document.documentElement.lang || "en").toLowerCase();
             help.textContent = language.startsWith("pl")
                 ? "Wybierz jedną lub więcej klas. Użyj Ctrl/Cmd, aby zaznaczyć kilka klas."
                 : "Select one or more classes. Use Ctrl/Cmd to select multiple classes.";
-            teacherClass.setAttribute(
-                "aria-describedby",
-                "teacher-class-multi-help");
+            teacherClass.setAttribute("aria-describedby", "teacher-class-multi-help");
             teacherClass.insertAdjacentElement("afterend", help);
         }
 
-        const teacherTable = document.querySelector(
-            "#teachers .academic-table");
+        const teacherTable = document.querySelector("#teachers .academic-table");
         teacherTable?.querySelectorAll("tr").forEach(row => {
             const subjectCell = row.children.item(2);
             if (subjectCell) {
@@ -227,18 +254,70 @@
         });
     }
 
+    function wireCurriculumLevelMultiSelect() {
+        const levelKey = document.getElementById("level-key");
+        const levelYear = document.getElementById("level-year");
+        const levelProgram = document.getElementById("level-program");
+        if (!levelKey || !levelYear || !levelProgram) {
+            return;
+        }
+
+        const form = levelKey.closest("form");
+        if (!form) {
+            return;
+        }
+
+        levelKey.multiple = true;
+        levelKey.name = "curriculumLevelKeys";
+        levelKey.size = 10;
+        levelKey.classList.add("round2-curriculum-level-multiselect");
+        form.action = "/school/academic-structure/curriculum-levels/bulk";
+
+        const placeholder = Array.from(levelKey.options)
+            .find(option => !option.value);
+        placeholder?.remove();
+
+        const language = (document.documentElement.lang || "en").toLowerCase();
+        const help = document.createElement("p");
+        help.className = "academic-help round2-multi-help";
+        help.textContent = language.startsWith("pl")
+            ? "Wybierz wszystkie poziomy, które chcesz dodać. Użyj Ctrl/Cmd, aby zaznaczyć kilka pozycji."
+            : "Select all Curriculum Levels you want to add. Use Ctrl/Cmd to select multiple items.";
+        levelKey.insertAdjacentElement("afterend", help);
+
+        const submit = form.querySelector("button[type='submit']");
+        if (submit) {
+            submit.textContent = language.startsWith("pl")
+                ? "Dodaj wybrane poziomy"
+                : "Add selected Curriculum Levels";
+        }
+    }
+
+    function simplifyStudentLearningCta() {
+        const language = (document.documentElement.lang || "en").toLowerCase();
+        const english = "View this curriculum in My learning";
+        const polish = "Zobacz ten program w Mojej nauce";
+
+        document.querySelectorAll("a").forEach(anchor => {
+            const label = anchor.textContent?.trim();
+            if (label === english || label === polish) {
+                anchor.textContent = language.startsWith("pl")
+                    ? "Otwórz Moją naukę"
+                    : "Open My learning";
+            }
+        });
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
+        ensureRound2Stylesheet();
         wirePrintButtons();
-
         wireReportKindFilters();
-
         wireConfirmationForms();
-
         wireSchoolCountryTimeZones();
-
         wireStudentWorkflowCleanup();
-
         void wireAcademicClassRelationships();
+        wireCurriculumLevelMultiSelect();
+        simplifyStudentLearningCta();
 
         document.querySelectorAll("form").forEach(form => {
             if ((form.method || "get").toLowerCase() !== "post") {

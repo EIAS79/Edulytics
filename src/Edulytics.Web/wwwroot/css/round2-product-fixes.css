@@ -44,8 +44,71 @@
 
 html[lang="en"] body,
 html[lang="en"] main,
-html[lang="en"] form {
+html[lang="en"] form,
+html[lang="en"] .academic-page,
+html[lang="en"] .student-page {
     direction: ltr;
+    text-align: left;
+}
+
+.round2-curriculum-level-multiselect,
+.round2-class-multiselect {
+    width: 100%;
+    min-height: 10rem;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.round2-curriculum-level-multiselect option,
+.round2-class-multiselect option {
+    padding: 0.45rem 0.6rem;
+    white-space: nowrap;
+}
+
+.round2-multi-help {
+    margin-top: 0.5rem;
+}
+
+.round2-students-section .academic-card {
+    min-width: 0;
+}
+
+.round2-students-section .round2-table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.round2-students-section .round2-readable-table {
+    width: 100%;
+    min-width: 760px;
+    table-layout: auto;
+}
+
+.round2-students-section .round2-readable-table th,
+.round2-students-section .round2-readable-table td {
+    min-width: 7rem;
+    word-break: normal;
+    overflow-wrap: normal;
+    white-space: normal;
+    vertical-align: top;
+}
+
+.round2-students-section .round2-readable-table th:first-child,
+.round2-students-section .round2-readable-table td:first-child {
+    min-width: 6rem;
+    white-space: nowrap;
+}
+
+.round2-students-section .round2-readable-table th:nth-child(3),
+.round2-students-section .round2-readable-table td:nth-child(3) {
+    min-width: 13rem;
+    overflow-wrap: anywhere;
+}
+
+.round2-students-section .round2-readable-table td:last-child {
+    min-width: 7rem;
+    white-space: nowrap;
 }
 
 @media (max-width: 720px) {
