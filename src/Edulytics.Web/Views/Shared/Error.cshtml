@@ -28,6 +28,16 @@
                 ? T["ServiceUnavailableMessage"].Value
                 : T["ErrorMessage"].Value;
 
+    var isSchoolWorkspace =
+        Context.Request.Path.Value?.StartsWith(
+            "/school",
+            StringComparison.OrdinalIgnoreCase) == true;
+
+    var fallbackUrl =
+        isSchoolWorkspace
+            ? "/school/dashboard"
+            : "/";
+
     ViewData["Title"] = title;
 }
 
@@ -60,8 +70,8 @@
         }
 
         <a class="production-error-link"
-           asp-controller="Home"
-           asp-action="Index">
+           href="@fallbackUrl"
+           data-ed-error-back>
             @T["ErrorReturnHome"]
         </a>
     </section>
