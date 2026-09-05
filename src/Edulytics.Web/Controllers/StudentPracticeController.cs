@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.Timeouts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
+using Microsoft.Extensions.Localization;
 
 namespace Edulytics.Web.Controllers;
 
@@ -12,7 +13,8 @@ namespace Edulytics.Web.Controllers;
 [Route("student/practice")]
 public sealed class StudentPracticeController(
     IStudentPrivatePracticeService privatePractice,
-    IPracticeService practice) : Controller
+    IPracticeService practice,
+    IStringLocalizer<StudentResource> text) : Controller
 {
     [HttpGet("")]
     public async Task<IActionResult> Index(Guid? curriculumAdoptionId, CancellationToken cancellationToken)
@@ -41,7 +43,7 @@ public sealed class StudentPracticeController(
             cancellationToken);
         if (!result.Succeeded)
         {
-            TempData["Error"] = $"PrivatePractice.{result.Error}";
+            TempData["Error"] = PrivatePracticeErrorMessage(result.Error);
             return RedirectToAction(nameof(Index), new { curriculumAdoptionId });
         }
         return RedirectToAction(nameof(Attempt), new { id = result.AttemptId });
@@ -70,7 +72,7 @@ public sealed class StudentPracticeController(
         var result = await practice.AnswerAsync(actorId, id, attemptItemId, answer, cancellationToken);
         if (result.Value is null)
         {
-            TempData["Error"] = $"Practice.{result.Error}";
+            TempData["Error"] = PracticeErrorMessage(result.Error);
         }
         else
         {
@@ -88,9 +90,28 @@ public sealed class StudentPracticeController(
         if (!TryActor(out var actorId)) return Forbid();
         var result = await practice.SubmitAsync(actorId, id, cancellationToken);
         if (result.Value is null)
-            TempData["Error"] = $"Practice.{result.Error}";
+            TempData["Error"] = PracticeErrorMessage(result.Error);
         return RedirectToAction(nameof(Attempt), new { id });
     }
+
+    private string PrivatePracticeErrorMessage(StudentPrivatePracticeError? error) => error switch
+    {
+        StudentPrivatePracticeError.NoSupportedOutcomes => text["PrivatePracticeNoSupportedOutcomes"].Value,
+        StudentPrivatePracticeError.CurriculumNotAvailable => text["PrivatePracticeCurriculumUnavailable"].Value,
+        StudentPrivatePracticeError.InvalidQuestionCount => text["PrivatePracticeInvalidQuestionCount"].Value,
+        StudentPrivatePracticeError.InvalidScope => text["PrivatePracticeInvalidScope"].Value,
+        StudentPrivatePracticeError.GenerationFailed => text["PrivatePracticeGenerationFailed"].Value,
+        StudentPrivatePracticeError.AccessDenied => text["PrivatePracticeAccessDenied"].Value,
+        _ => text["PrivatePracticeGenerationFailed"].Value
+    };
+
+    private string PracticeErrorMessage(PracticeErrorCode? error) => error switch
+    {
+        PracticeErrorCode.AttemptIncomplete => text["PracticeAnswerAll"].Value,
+        PracticeErrorCode.InvalidAnswer => text["PracticeInvalidAnswer"].Value,
+        PracticeErrorCode.AttemptNotInProgress => text["PracticeAttemptNotInProgress"].Value,
+        _ => text["PracticeOperationFailed"].Value
+    };
 
     private bool TryActor(out Guid actorUserId) =>
         Guid.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out actorUserId);
