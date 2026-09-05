@@ -1,5 +1,6 @@
 @using Edulytics.Core.Assessments
 @using Edulytics.Core.Enums
+@using Edulytics.Services.Assessments
 @model Edulytics.Services.Assessments.AssessmentBuilderWorkspace
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentBuilderResource> A
 @{
@@ -8,6 +9,12 @@
     var rowVersion = Convert.ToBase64String(assessment.RowVersion);
     var targetStudents = Model.TargetStudents ?? Array.Empty<Edulytics.Services.Assessments.AssessmentTargetStudentOption>();
     var manualQuestionSaved = TempData["ManualQuestionSaved"] is bool saved && saved;
+    var hasEligibleOutcomes = Model.Details.EligibleOutcomes.Count > 0;
+    var nativeOutcomeIds = Model.Details.EligibleOutcomes
+        .Where(outcome => NativeMathematicsOutcomeProfileResolver.Supports(outcome.Code, outcome.Description))
+        .Select(outcome => outcome.Id)
+        .ToHashSet();
+    var hasNativeOutcomes = nativeOutcomeIds.Count > 0;
 }
 <section class="assessment-page">
     <header class="assessment-header">
@@ -38,6 +45,11 @@
     }
 
     <div class="assessment-info">@A[Model.ReadinessMessage]</div>
+
+    @if (assessment.Status == AssessmentStatus.Draft && !hasEligibleOutcomes)
+    {
+        <div class="school-alert school-alert-error" role="status">@A["LearningOutcomesSetupRequired"]</div>
+    }
 
     @if (assessment.Status == AssessmentStatus.Draft)
     {
@@ -108,17 +120,26 @@
                     <legend>@A["LearningOutcomes"]</legend>
                     @foreach (var outcome in Model.Details.EligibleOutcomes)
                     {
-                        <label><input type="checkbox" name="outcomeIds" value="@outcome.Id" /> <strong>@outcome.Code</strong> — @outcome.Description</label>
+                        var aiSupported = nativeOutcomeIds.Contains(outcome.Id);
+                        <label>
+                            <input type="checkbox" name="outcomeIds" value="@outcome.Id" />
+                            <strong>@outcome.Code</strong> — @outcome.Description
+                            <small>(@A[aiSupported ? "AiSupported" : "ManualOnly"])</small>
+                        </label>
                     }
                 </fieldset>
-                <button class="school-button school-button-primary" type="submit">@A["AddQuestionManually"]</button>
+                <button class="school-button school-button-primary" type="submit" disabled="@(!hasEligibleOutcomes)">@A["AddQuestionManually"]</button>
             </form>
         </section>
 
         <section class="assessment-card">
             <h2>@A["GenerateQuestionsWithAI"]</h2>
             <p>@A["NativeGenerationNotice"]</p>
-            @if (Model.CanGenerateNatively)
+            @if (!hasEligibleOutcomes)
+            {
+                <div class="assessment-empty">@A["LearningOutcomesSetupRequired"]</div>
+            }
+            else if (Model.CanGenerateNatively && hasNativeOutcomes)
             {
                 <form asp-action="Generate" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form">
                     @Html.AntiForgeryToken()
@@ -138,7 +159,12 @@
                         <legend>@A["LearningOutcomes"]</legend>
                         @foreach (var outcome in Model.Details.EligibleOutcomes)
                         {
-                            <label><input type="checkbox" name="outcomeIds" value="@outcome.Id" /> <strong>@outcome.Code</strong> — @outcome.Description</label>
+                            var aiSupported = nativeOutcomeIds.Contains(outcome.Id);
+                            <label>
+                                <input type="checkbox" name="outcomeIds" value="@outcome.Id" disabled="@(!aiSupported)" />
+                                <strong>@outcome.Code</strong> — @outcome.Description
+                                <small>(@A[aiSupported ? "AiSupported" : "ManualOnly"])</small>
+                            </label>
                         }
                     </fieldset>
                     <button class="school-button school-button-primary" type="submit">@A["GenerateQuestionsWithAI"]</button>
