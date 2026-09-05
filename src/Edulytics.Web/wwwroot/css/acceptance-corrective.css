@@ -197,6 +197,17 @@
     font-weight: 800;
 }
 
+.student-node.is-practice-focus {
+    border-color: #b9c9e5;
+    background: #f7f9fe;
+}
+
+.student-node.is-practice-focus-exact {
+    border-color: #5f83c2;
+    box-shadow: 0 0 0 3px rgba(70, 111, 178, 0.12);
+    scroll-margin-top: 1rem;
+}
+
 @media (max-width: 640px) {
     .ed-ai-capability-summary {
         grid-template-columns: 1fr;
