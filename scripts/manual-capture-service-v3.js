@@ -4,7 +4,7 @@ const puppeteer = require('puppeteer-core');
 const PORT = process.env.PORT || 10000;
 const BASE = (process.env.BASE_URL || 'https://staging.edulytiks.com').replace(/\/$/, '');
 const EMAIL = process.env.TEACHER_EMAIL || process.env.SUPERVISOR_EMAIL || '';
-const PASSWORD = process.env.DEMO_PASSWORD || '';
+const PASSWORD = process.env.TEACHER_PASSWORD || process.env.DEMO_PASSWORD || '';
 
 let result = { status: 'RUNNING', checks: [] };
 
@@ -96,7 +96,7 @@ async function run() {
   let browser;
   try {
     if (!EMAIL) throw new Error('TEACHER_EMAIL/SUPERVISOR_EMAIL is empty');
-    if (!PASSWORD) throw new Error('DEMO_PASSWORD is empty');
+    if (!PASSWORD) throw new Error('TEACHER_PASSWORD/DEMO_PASSWORD is empty');
 
     browser = await launch();
     const page = await browser.newPage();
