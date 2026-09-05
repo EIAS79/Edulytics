@@ -61,8 +61,14 @@ public sealed class AssessmentBuilderAcceptanceCorrectiveTests
         var view = ReadRepositoryFile(
             "src", "Edulytics.Web", "Views", "Assessments", "Index.cshtml");
 
-        Assert.Contains("<option value=\"@item.Id\">@item.Name</option>", view, StringComparison.Ordinal);
-        Assert.DoesNotContain("@item.Name (@item.Code)", view, StringComparison.Ordinal);
+        var classSelectorStart = view.IndexOf("<select id=\"classGroupId\"", StringComparison.Ordinal);
+        Assert.True(classSelectorStart >= 0, "Class selector was not found.");
+        var classSelectorEnd = view.IndexOf("</select>", classSelectorStart, StringComparison.Ordinal);
+        Assert.True(classSelectorEnd > classSelectorStart, "Class selector closing tag was not found.");
+
+        var classSelector = view[classSelectorStart..(classSelectorEnd + "</select>".Length)];
+        Assert.Contains("<option value=\"@item.Id\">@item.Name</option>", classSelector, StringComparison.Ordinal);
+        Assert.DoesNotContain("@item.Code", classSelector, StringComparison.Ordinal);
     }
 
     private static string ReadRepositoryFile(params string[] relativeSegments)
