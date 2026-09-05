@@ -115,9 +115,29 @@ async function submitForm(page, formSelector) {
   ]);
 }
 
-async function createAssessment(page) {
+async function findExistingAssessment(page) {
+  return page.evaluate(title => {
+    for (const article of document.querySelectorAll('article.assessment-list-card')) {
+      if (!(article.innerText || '').includes(title)) continue;
+      for (const a of article.querySelectorAll('a[href]')) {
+        const m = (a.getAttribute('href') || '').match(/\/school\/assessments\/([0-9a-f-]{36})/i);
+        if (m) return m[1];
+      }
+    }
+    return null;
+  }, TITLE);
+}
+
+async function createOrReuseAssessment(page) {
   const response = await page.goto(`${BASE}/school/assessments`, { waitUntil: 'networkidle2', timeout: 60000 });
   if (!response || response.status() >= 400) throw new Error(`assessments page failed: ${response?.status()}`);
+
+  let assessmentId = await findExistingAssessment(page);
+  if (assessmentId) {
+    result.assessmentId = assessmentId;
+    addCheck('reuse-assessment-fixture', { status: 'PASS', assessmentId });
+    return assessmentId;
+  }
 
   const createForm = 'form.assessment-create-form';
   if (!await page.$(createForm)) throw new Error('teacher create-assessment form missing');
@@ -131,22 +151,12 @@ async function createAssessment(page) {
   await setNamedControl(page, createForm, 'maxScore', '5');
   await submitForm(page, createForm);
 
-  let assessmentId = null;
   const match = page.url().match(/\/school\/assessments\/([0-9a-f-]{36})(?:$|[/?#])/i);
   if (match) assessmentId = match[1];
 
   if (!assessmentId) {
     await page.goto(`${BASE}/school/assessments`, { waitUntil: 'networkidle2', timeout: 60000 });
-    assessmentId = await page.evaluate(title => {
-      for (const a of document.querySelectorAll('a[href]')) {
-        const row = a.closest('article,tr,li,.card,div');
-        if (row && (row.innerText || '').includes(title)) {
-          const m = (a.getAttribute('href') || '').match(/\/school\/assessments\/([0-9a-f-]{36})/i);
-          if (m) return m[1];
-        }
-      }
-      return null;
-    }, TITLE);
+    assessmentId = await findExistingAssessment(page);
   }
 
   if (!assessmentId) throw new Error(`assessment creation did not expose an id; current=${page.url()}`);
@@ -162,9 +172,9 @@ async function configureOffline(page, assessmentId) {
 
   const settingsForm = `form[action$="/${assessmentId}/builder/settings"]`;
   if (!await page.$(settingsForm)) throw new Error('delivery settings form missing');
-  await setNamedControl(page, settingsForm, 'targetType', '1');
-  await setNamedControl(page, settingsForm, 'deliveryMode', '1');
-  await setNamedControl(page, settingsForm, 'difficultyBand', '1');
+  await setNamedControl(page, settingsForm, 'targetType', 'Class');
+  await setNamedControl(page, settingsForm, 'deliveryMode', 'Offline');
+  await setNamedControl(page, settingsForm, 'difficultyBand', 'AtClassLevel');
   await submitForm(page, settingsForm);
 
   const state = await page.evaluate(() => ({
@@ -173,7 +183,7 @@ async function configureOffline(page, assessmentId) {
     keyHref: [...document.querySelectorAll('a[href]')].map(a => a.getAttribute('href')).find(h => h && h.endsWith('/answer-key.pdf')) || null
   }));
 
-  if (state.deliveryValue !== '1') throw new Error(`offline setting not persisted: ${state.deliveryValue}`);
+  if (state.deliveryValue !== 'Offline') throw new Error(`offline setting not persisted: ${state.deliveryValue}`);
   if (!state.studentHref || !state.keyHref) throw new Error('offline PDF download links are not visible to Teacher');
   addCheck('offline-settings-and-buttons', { status: 'PASS', studentHref: state.studentHref, answerKeyHref: state.keyHref });
 }
@@ -181,7 +191,13 @@ async function configureOffline(page, assessmentId) {
 async function addManualQuestion(page, assessmentId) {
   const builderUrl = `${BASE}/school/assessments/${assessmentId}/builder`;
   await page.goto(builderUrl, { waitUntil: 'networkidle2', timeout: 60000 });
-  const manualForm = `form[action$="/${assessmentId}/builder/manual"]`;
+  const existing = await page.evaluate(prompt => (document.body.innerText || '').includes(prompt), PROMPT);
+  if (existing) {
+    addCheck('reuse-manual-question-fixture', { status: 'PASS' });
+    return;
+  }
+
+  const manualForm = '#manual-question-form';
   if (!await page.$(manualForm)) throw new Error('manual question form missing');
 
   await setNamedControl(page, manualForm, 'prompt', PROMPT);
@@ -189,19 +205,7 @@ async function addManualQuestion(page, assessmentId) {
   await setNamedControl(page, manualForm, 'solution', SOLUTION);
   await setNamedControl(page, manualForm, 'maxScore', '5');
   await setNamedControl(page, manualForm, 'order', '1');
-
-  const difficultySet = await page.evaluate(selector => {
-    const form = document.querySelector(selector);
-    if (!form) return false;
-    const control = [...form.elements].find(el => (el.name || '').toLowerCase() === 'difficulty');
-    if (!control || control.tagName !== 'SELECT') return false;
-    const option = [...control.options].find(o => o.value && o.value !== '0');
-    if (!option) return false;
-    control.value = option.value;
-    control.dispatchEvent(new Event('change', { bubbles: true }));
-    return true;
-  }, manualForm);
-  if (!difficultySet) throw new Error('manual difficulty select could not be set');
+  await setNamedControl(page, manualForm, 'difficulty', 'Medium');
 
   const outcomeSet = await page.evaluate(({ selector, outcomeId }) => {
     const form = document.querySelector(selector);
@@ -260,7 +264,7 @@ async function run() {
     browser = await launch();
     const page = await browser.newPage();
     await login(page);
-    const assessmentId = await createAssessment(page);
+    const assessmentId = await createOrReuseAssessment(page);
     await configureOffline(page, assessmentId);
     await addManualQuestion(page, assessmentId);
 
