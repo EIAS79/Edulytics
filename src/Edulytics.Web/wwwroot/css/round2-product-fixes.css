@@ -1,0 +1,60 @@
+/* Round-2 acceptance fixes. Keep these overrides isolated from the historical site stylesheet. */
+
+.public-contact-card {
+    width: min(52rem, calc(100vw - 2rem));
+    margin: 1.25rem auto 0;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    border: 1px solid rgba(93, 111, 145, 0.2);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 0.8rem 2.4rem rgba(35, 52, 87, 0.08);
+    color: #15213d;
+    text-align: left;
+}
+
+.public-contact-card__hint {
+    display: block;
+    margin-top: 0.2rem;
+    color: #65718a;
+    font-size: 0.875rem;
+}
+
+.public-contact-card__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.55rem 1rem;
+}
+
+.public-contact-card__links a {
+    color: #315fce;
+    text-decoration: none;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.public-contact-card__links a:hover,
+.public-contact-card__links a:focus-visible {
+    text-decoration: underline;
+}
+
+html[lang="en"] body,
+html[lang="en"] main,
+html[lang="en"] form {
+    direction: ltr;
+}
+
+@media (max-width: 720px) {
+    .public-contact-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .public-contact-card__links {
+        justify-content: flex-start;
+    }
+}

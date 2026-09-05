@@ -1,10 +1,11 @@
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SharedResource> Brand
+@using System.Globalization
 @{
     var localizedProductName = Brand["ProductName"].Value;
+    var pageLanguage = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
 }
-@using System.Globalization
 <!DOCTYPE html>
-<html lang="@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName">
+<html lang="@pageLanguage" dir="ltr">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport"
@@ -14,6 +15,9 @@
           href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet"
           href="~/css/site.css"
+          asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/round2-product-fixes.css"
           asp-append-version="true" />
 </head>
 <body class="ed-public-body">
