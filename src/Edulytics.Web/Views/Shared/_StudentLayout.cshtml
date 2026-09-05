@@ -1,5 +1,6 @@
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SharedResource> Shared
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SupportResource> Contact
 @{
     var localizedProductName = Shared["ProductName"].Value;
     var action = ViewContext.RouteData.Values["action"]?.ToString() ?? string.Empty;
@@ -25,6 +26,7 @@
                 <a class="student-nav-link @(controller == "StudentPractice" ? "is-active" : "")" asp-controller="StudentPractice" asp-action="Index"><span aria-hidden="true">✦</span><span>@S["PrivatePractice"]</span></a>
                 <a class="student-nav-link @(controller == "StudentPortal" && action == "Results" ? "is-active" : "")" asp-controller="StudentPortal" asp-action="Results"><span aria-hidden="true">↗</span><span>@S["MyResults"]</span></a>
                 <a class="student-nav-link @(controller == "StudentPortal" && action == "Notifications" ? "is-active" : "")" asp-controller="StudentPortal" asp-action="Notifications"><span aria-hidden="true">◇</span><span>@S["Notifications"]</span></a>
+                <a class="student-nav-link @(controller == "Contact" ? "is-active" : "")" asp-controller="Contact" asp-action="Index"><span aria-hidden="true">?</span><span>@Contact["HelpAndContact"]</span></a>
             </nav>
             <div class="student-secure-card"><strong>@S["StudentPortal"]</strong><span>@User.Identity?.Name</span></div>
         </aside>
@@ -34,7 +36,10 @@
                 <form asp-controller="Account" asp-action="Logout" method="post"><button class="student-signout" type="submit">@S["SignOut"]</button></form>
             </header>
             <div class="student-page-frame">@RenderBody()</div>
-            <footer class="ed-v3-footer"><a href="/content-sources-licenses.html">Content sources &amp; licences</a></footer>
+            <footer class="ed-v3-footer">
+                <a href="/content-sources-licenses.html">Content sources &amp; licences</a> ·
+                <a asp-controller="Contact" asp-action="Index">@Contact["ContactUs"]</a>
+            </footer>
         </main>
     </div>
     @await RenderSectionAsync("Scripts", required: false)
