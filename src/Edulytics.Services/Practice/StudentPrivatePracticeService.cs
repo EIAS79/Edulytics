@@ -23,6 +23,7 @@ public sealed class StudentPrivatePracticeService(
         var selected = curriculumAdoptionId ?? curricula.FirstOrDefault()?.CurriculumAdoptionId;
         IReadOnlyList<StudentPrivatePracticeLessonOption> lessons = [];
         IReadOnlyList<string> units = [];
+        IReadOnlyList<StudentPrivatePracticeUnitOption> unitOptions = [];
 
         if (selected.HasValue)
         {
@@ -32,13 +33,31 @@ public sealed class StudentPrivatePracticeService(
                 lessons = context.Lessons
                     .Select(x => new StudentPrivatePracticeLessonOption(x.Id, x.UnitKey, x.UnitTitle, x.Code, x.Title))
                     .ToArray();
-                units = context.Lessons.Select(x => x.UnitKey).Where(x => !string.IsNullOrWhiteSpace(x))
-                    .Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
+                unitOptions = context.Lessons
+                    .Where(x => !string.IsNullOrWhiteSpace(x.UnitKey))
+                    .GroupBy(x => x.UnitKey, StringComparer.OrdinalIgnoreCase)
+                    .Select(group =>
+                    {
+                        var first = group.First();
+                        return new StudentPrivatePracticeUnitOption(
+                            first.UnitKey,
+                            string.IsNullOrWhiteSpace(first.UnitTitle)
+                                ? "Unit"
+                                : first.UnitTitle);
+                    })
+                    .ToArray();
+                units = unitOptions.Select(x => x.UnitKey).ToArray();
             }
         }
 
         var attempts = await repository.ListPrivateAttemptsAsync(studentUserId, cancellationToken);
-        return new StudentPrivatePracticeWorkspace(curricula, selected, lessons, units, attempts);
+        return new StudentPrivatePracticeWorkspace(
+            curricula,
+            selected,
+            lessons,
+            units,
+            attempts,
+            unitOptions);
     }
 
     public async Task<StudentPrivatePracticeResult> GenerateAsync(

@@ -8,6 +8,7 @@
     var selectedCurriculum = selected.HasValue
         ? Model.Curricula.FirstOrDefault(x => x.CurriculumAdoptionId == selected.Value)
         : null;
+    var unitOptions = Model.Units ?? Array.Empty<StudentPrivatePracticeUnitOption>();
 }
 <header class="student-page-header">
     <span class="student-eyebrow">@S["PrivatePractice"]</span>
@@ -68,15 +69,15 @@ else
                     <option value="">@S["PracticeNotRequired"]</option>
                     @foreach (var lesson in Model.Lessons)
                     {
-                        <option value="@lesson.LessonId">@lesson.UnitTitle · @lesson.LessonCode · @lesson.LessonTitle</option>
+                        <option value="@lesson.LessonId">@lesson.UnitTitle · @lesson.LessonTitle</option>
                     }
                 </select>
                 <label>@S["Unit"]</label>
                 <select name="unitKey">
                     <option value="">@S["PracticeNotRequired"]</option>
-                    @foreach (var unit in Model.UnitKeys)
+                    @foreach (var unit in unitOptions)
                     {
-                        <option value="@unit">@unit</option>
+                        <option value="@unit.UnitKey">@unit.UnitTitle</option>
                     }
                 </select>
                 <label>@S["AssessmentDifficulty"]</label>
