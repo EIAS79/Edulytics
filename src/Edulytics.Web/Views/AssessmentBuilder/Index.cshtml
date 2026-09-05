@@ -24,7 +24,11 @@
             <h1>@assessment.Title</h1>
             <p>
                 @A["Questions"]: @Model.Questions.Count ·
-                @A["CurrentMarks"]: @Model.CurrentMarks.ToString("0.##") / @assessment.MaxScore.ToString("0.##")
+                @A["CurrentMarks"]: @Model.CurrentMarks.ToString("0.##") / @assessment.MaxScore.ToString("0.##") ·
+                <strong>@A["CurrentDelivery"]:</strong>
+                <span class="ed-delivery-badge @(assessment.DeliveryMode == AssessmentDeliveryMode.Online ? "is-online" : "is-offline")">
+                    @A[assessment.DeliveryMode == AssessmentDeliveryMode.Online ? "DeliveryOnlineBadge" : "DeliveryOfflineBadge"]
+                </span>
                 @if (Model.ClassMasteryPercentage.HasValue)
                 {
                     <span> · @A["ClassMastery"]: @Model.ClassMasteryPercentage.Value.ToString("0.#")%</span>
@@ -57,7 +61,11 @@
         <section class="assessment-card">
             <h2>@A["DeliverySettings"]</h2>
             <p>@A["DeliverySettingsHelp"]</p>
-            <form asp-action="UpdateDeliverySettings" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form">
+            <p class="assessment-info">
+                <strong>@A["CurrentDelivery"]:</strong>
+                @A[assessment.DeliveryMode == AssessmentDeliveryMode.Online ? "DeliveryOnlineBadge" : "DeliveryOfflineBadge"]
+            </p>
+            <form id="delivery-settings-form" asp-action="UpdateDeliverySettings" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form">
                 @Html.AntiForgeryToken()
                 <input type="hidden" name="rowVersion" value="@rowVersion" />
 
@@ -268,7 +276,7 @@
                 </div>
                 @if (assessment.Status == AssessmentStatus.Draft && question.Status != AssessmentBuilderQuestionStatus.Legacy)
                 {
-                    <details>
+                    <details data-question-edit>
                         <summary>@A["EditQuestion"]</summary>
                         <form asp-action="Edit" asp-route-assessmentId="@assessment.Id" asp-route-questionId="@question.Id" method="post" class="assessment-form">
                             @Html.AntiForgeryToken()
@@ -280,14 +288,35 @@
                             <label>@A["Solution"]</label>
                             <textarea name="solution" maxlength="4000" rows="3">@question.Solution</textarea>
                             <label>@A["QuestionMaxScore"]</label>
-                            <input name="maxScore" type="number" min="1" step="1" value="@question.MaxScore" required />
+                            <input name="maxScore" type="number" min="1" max="10000" step="1" value="@question.MaxScore" required />
+                            <label>@A["Order"]</label>
+                            <input name="order" type="number" min="1" value="@question.Order" required />
                             <label>@A["Difficulty"]</label>
                             <select name="difficulty">
-                                <option value="@AssessmentItemDifficulty.Easy">@A["DifficultyEasy"]</option>
-                                <option value="@AssessmentItemDifficulty.Medium">@A["DifficultyMedium"]</option>
-                                <option value="@AssessmentItemDifficulty.Challenging">@A["DifficultyChallenging"]</option>
+                                <option value="@AssessmentItemDifficulty.Easy" selected="@(question.Difficulty == AssessmentItemDifficulty.Easy)">@A["DifficultyEasy"]</option>
+                                <option value="@AssessmentItemDifficulty.Medium" selected="@(question.Difficulty == AssessmentItemDifficulty.Medium)">@A["DifficultyMedium"]</option>
+                                <option value="@AssessmentItemDifficulty.Challenging" selected="@(question.Difficulty == AssessmentItemDifficulty.Challenging)">@A["DifficultyChallenging"]</option>
                             </select>
-                            <button class="school-button" type="submit">@A["EditQuestion"]</button>
+                            <fieldset class="ed-outcome-fieldset">
+                                <legend>@A["LearningOutcomes"]</legend>
+                                <div class="ed-outcome-choice-list">
+                                    @foreach (var outcome in Model.Details.EligibleOutcomes)
+                                    {
+                                        var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
+                                        <label class="ed-outcome-option">
+                                            <input type="checkbox" name="outcomeIds" value="@outcome.Id" checked="@(question.OutcomeIds.Contains(outcome.Id))" />
+                                            <span class="ed-outcome-copy">
+                                                <span class="ed-outcome-heading"><strong class="ed-outcome-code">@displayCode</strong></span>
+                                                <span class="ed-outcome-description" title="@outcome.Description">@outcome.Description</span>
+                                            </span>
+                                        </label>
+                                    }
+                                </div>
+                            </fieldset>
+                            <div class="assessment-actions">
+                                <button class="school-button school-button-primary" type="submit">@A["SaveChanges"]</button>
+                                <button class="school-button" type="reset" data-edit-cancel>@A["Cancel"]</button>
+                            </div>
                         </form>
                     </details>
                     <div class="assessment-actions">
@@ -337,6 +366,15 @@
 {
     <script>
         (() => {
+            document.querySelectorAll('[data-edit-cancel]').forEach(button => {
+                button.addEventListener('click', () => {
+                    const details = button.closest('[data-question-edit]');
+                    window.setTimeout(() => {
+                        if (details) details.open = false;
+                    }, 0);
+                });
+            });
+
             const form = document.getElementById('manual-question-form');
             if (!form || !window.sessionStorage) return;
 
