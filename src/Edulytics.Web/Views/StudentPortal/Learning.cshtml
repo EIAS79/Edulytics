@@ -25,9 +25,7 @@ else
                 Model.SelectedCurriculumAdoptionId == subject.CurriculumAdoptionId &&
                 Model.SelectedClassGroupId == subject.ClassGroupId;
             var exactFocusNodeIds = isSelectedContext
-                ? Model.SelectedLearningNodeIds
-                    .Where(id => subject.Nodes.Any(node => node.Id == id))
-                    .ToHashSet()
+                ? Model.SelectedLearningNodeIds.Where(id => subject.Nodes.Any(node => node.Id == id)).ToHashSet()
                 : new HashSet<Guid>();
             var focusTreeNodeIds = new HashSet<Guid>(exactFocusNodeIds);
             var nodesById = subject.Nodes.ToDictionary(node => node.Id);
@@ -55,7 +53,6 @@ else
                 }
                 <header>
                     <div>
-                        <span class="student-subject-code">@subject.SubjectCode</span>
                         <h2>@subject.SubjectName</h2>
                         @if (isSelectedContext)
                         {
@@ -63,10 +60,10 @@ else
                         }
                     </div>
                     <div class="student-learning-meta">
-                        <span>@S["AcademicYear"]: <strong>@subject.AcademicYearName</strong></span>
+                        <span><strong>@subject.GradeName · @subject.SubjectName</strong></span>
+                        <span>@subject.FrameworkName</span>
                         <span>@S["Class"]: <strong>@subject.ClassName</strong></span>
-                        <span>@S["Grade"]: <strong>@subject.GradeName</strong></span>
-                        <span>@S["Curriculum"]: <strong>@subject.FrameworkName</strong></span>
+                        <span>@S["AcademicYear"]: <strong>@subject.AcademicYearName</strong></span>
                     </div>
                 </header>
 
@@ -81,20 +78,13 @@ else
                         {
                             var isExactFocus = exactFocusNodeIds.Contains(node.Id);
                             var isFocusPath = focusTreeNodeIds.Contains(node.Id);
-                            var focusAnchorId = isExactFocus && !focusAnchorAssigned
-                                ? "selected-learning-node"
-                                : null;
-                            if (focusAnchorId is not null)
-                            {
-                                focusAnchorAssigned = true;
-                            }
+                            var focusAnchorId = isExactFocus && !focusAnchorAssigned ? "selected-learning-node" : null;
+                            if (focusAnchorId is not null) { focusAnchorAssigned = true; }
 
                             <div id="@focusAnchorId"
                                  class="student-node @(node.Kind == "Lesson" ? "is-lesson" : "is-unit") @(isFocusPath ? "is-practice-focus" : null) @(isExactFocus ? "is-practice-focus-exact" : null)"
                                  aria-current="@(isExactFocus ? "location" : null)">
-                                <span class="student-node-kind">
-                                    @(node.Kind == "Lesson" ? S["Lesson"] : S["Unit"])
-                                </span>
+                                <span class="student-node-kind">@(node.Kind == "Lesson" ? S["Lesson"] : S["Unit"])</span>
                                 <div>
                                     <strong>@node.Title</strong>
                                     @if (!string.IsNullOrWhiteSpace(node.Pathway))
@@ -129,7 +119,6 @@ else
             @foreach (var lesson in Model.Lessons)
             {
                 <article class="student-lesson-card">
-                    <span class="student-subject-code">@lesson.SubjectCode</span>
                     <h3>@lesson.Title</h3>
                     @if (lesson.IsSupporting)
                     {
@@ -137,8 +126,8 @@ else
                     }
                     <p>@lesson.TopicName</p>
                     <div class="student-learning-meta">
-                        <span>@L["Grade"]: <strong>@lesson.GradeName</strong></span>
-                        <span>@L["Framework"]: <strong>@lesson.FrameworkName</strong></span>
+                        <span class="student-lesson-primary-context">@lesson.GradeName · Mathematics</span>
+                        <span class="student-lesson-secondary-context">@lesson.FrameworkName</span>
                     </div>
                     <a class="student-primary-link"
                        asp-controller="StudentPortal"
