@@ -75,18 +75,80 @@ public sealed class CanonicalMathematicsCapabilityTests
         Assert.True(NativeMathematicsOutcomeProfileResolver.Supports(null, description));
     }
 
-    [Fact]
-    public void FractionMultiplicationVocabulary_DoesNotBecomeWholeNumberMultiplication()
+    [Theory]
+    [InlineData(
+        "CCSS:K.OA.A.1",
+        "Represent addition and subtraction with objects, fingers, mental images, drawings, sounds, acting out situations, verbal explanations, expressions, or equations.")]
+    [InlineData(
+        "CCSS:1.OA.D.7",
+        "Understand the meaning of the equal sign, and determine if equations involving addition and subtraction are true or false.")]
+    [InlineData(
+        "CCSS:1.NBT.C.4",
+        "Add within 100, including adding a two-digit number and a one-digit number, using concrete models or drawings and explain the reasoning used.")]
+    public void BroadOaNbtReasoningOutcomes_DoNotOverclaimIntegerComputation(
+        string code,
+        string description)
     {
-        var skills = CanonicalMathematicsSkillMapper.Resolve(
-            "CCSS:5.NF.B.4",
-            "Apply and extend understanding of multiplication to multiply a fraction.");
+        var skills = CanonicalMathematicsSkillMapper.Resolve(code, description);
 
-        Assert.Contains(CanonicalMathematicsSkill.FractionOfQuantity, skills);
+        Assert.DoesNotContain(CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction, skills);
+        Assert.DoesNotContain(CanonicalMathematicsSkill.WholeNumberAddition, skills);
+        Assert.DoesNotContain(CanonicalMathematicsSkill.WholeNumberSubtraction, skills);
+        Assert.False(NativeMathematicsOutcomeProfileResolver.Supports(code, description));
+    }
+
+    [Theory]
+    [InlineData(
+        "CCSS:K.OA.A.5",
+        "Fluently add and subtract within 5.",
+        CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction)]
+    [InlineData(
+        "CCSS:3.OA.C.7",
+        "Fluently multiply and divide within 100.",
+        CanonicalMathematicsSkill.WholeNumberMultiplication)]
+    public void ExplicitFluencyOutcomes_KeepReviewedIntegerCoverage(
+        string code,
+        string description,
+        CanonicalMathematicsSkill expectedSkill)
+    {
+        var skills = CanonicalMathematicsSkillMapper.Resolve(code, description);
+
+        Assert.Contains(expectedSkill, skills);
+        Assert.True(NativeMathematicsOutcomeProfileResolver.Supports(code, description));
+    }
+
+    [Theory]
+    [InlineData(
+        "CCSS:5.NF.B.7",
+        "Apply and extend previous understandings of division to divide unit fractions by whole numbers and whole numbers by unit fractions.")]
+    [InlineData(
+        "CCSS:6.NS.B.3",
+        "Fluently add, subtract, multiply, and divide multi-digit decimals using the standard algorithm for each operation.")]
+    public void FractionAndDecimalContexts_DoNotBecomeWholeNumberComputation(
+        string code,
+        string description)
+    {
+        var skills = CanonicalMathematicsSkillMapper.Resolve(code, description);
+
+        Assert.DoesNotContain(CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction, skills);
+        Assert.DoesNotContain(CanonicalMathematicsSkill.WholeNumberAddition, skills);
+        Assert.DoesNotContain(CanonicalMathematicsSkill.WholeNumberSubtraction, skills);
         Assert.DoesNotContain(CanonicalMathematicsSkill.WholeNumberMultiplication, skills);
-        Assert.True(NativeMathematicsOutcomeProfileResolver.Supports(
-            "CCSS:5.NF.B.4",
-            "Apply and extend understanding of multiplication to multiply a fraction."));
+        Assert.DoesNotContain(CanonicalMathematicsSkill.WholeNumberDivision, skills);
+    }
+
+    [Fact]
+    public void GeneralFractionMultiplication_DoesNotPretendToBeFractionOfQuantity()
+    {
+        const string code = "CCSS:5.NF.B.4";
+        const string description =
+            "Apply and extend understanding of multiplication to multiply a fraction.";
+
+        var skills = CanonicalMathematicsSkillMapper.Resolve(code, description);
+
+        Assert.DoesNotContain(CanonicalMathematicsSkill.FractionOfQuantity, skills);
+        Assert.DoesNotContain(CanonicalMathematicsSkill.WholeNumberMultiplication, skills);
+        Assert.False(NativeMathematicsOutcomeProfileResolver.Supports(code, description));
     }
 
     [Fact]
