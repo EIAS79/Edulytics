@@ -63,7 +63,8 @@ public sealed class CanonicalMathematicsCapabilityTests
         var skills = CanonicalMathematicsSkillMapper.Resolve(null, description);
         var provider = new NativeMathematicsGenerationCapabilityProvider();
 
-        Assert.Contains(CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction, skills);
+        Assert.Contains(CanonicalMathematicsSkill.WholeNumberAddition, skills);
+        Assert.Contains(CanonicalMathematicsSkill.WholeNumberSubtraction, skills);
         Assert.Contains(CanonicalMathematicsSkill.WholeNumberMultiplication, skills);
         Assert.Contains(CanonicalMathematicsSkill.WholeNumberDivision, skills);
         Assert.Equal(
