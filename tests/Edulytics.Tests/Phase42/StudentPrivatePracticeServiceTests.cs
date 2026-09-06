@@ -37,7 +37,7 @@ public sealed class StudentPrivatePracticeServiceTests
 
     [Theory]
     [InlineData(0)]
-    [InlineData(21)]
+    [InlineData(31)]
     public async Task Generate_rejects_invalid_question_count_before_repository_lookup(int count)
     {
         var repo = new FakeRepository();
