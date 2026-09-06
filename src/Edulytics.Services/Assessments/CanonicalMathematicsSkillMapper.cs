@@ -20,11 +20,11 @@ public static class CanonicalMathematicsSkillMapper
         var text = codeText + descriptionText;
         var skills = new HashSet<CanonicalMathematicsSkill>();
 
+        // The native family computes a fraction OF a whole quantity. It does not
+        // implement general fraction multiplication/division, so NF locators or
+        // incidental multiplication vocabulary are deliberately insufficient.
         var isFractionOfQuantity =
-            ContainsAny(text, "FRACTION OF", "FRACTIONS OF") ||
-            (ContainsAny(codeText, ".NF.", ":NF.") &&
-             text.Contains("FRACTION", StringComparison.Ordinal) &&
-             text.Contains("MULTIP", StringComparison.Ordinal));
+            ContainsAny(descriptionText, "FRACTION OF", "FRACTIONS OF");
         if (isFractionOfQuantity)
             skills.Add(CanonicalMathematicsSkill.FractionOfQuantity);
 
