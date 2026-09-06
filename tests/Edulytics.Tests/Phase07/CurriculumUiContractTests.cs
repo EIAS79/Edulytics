@@ -34,8 +34,7 @@ public sealed class CurriculumUiContractTests
             method =>
             {
                 Assert.True(
-                    method.GetCustomAttributes<
-                        ValidateAntiForgeryTokenAttribute>().Any(),
+                    method.GetCustomAttributes<ValidateAntiForgeryTokenAttribute>().Any(),
                     method.Name);
 
                 var authorization = method
@@ -57,9 +56,6 @@ public sealed class CurriculumUiContractTests
             "src/Edulytics.Web/Views/Curriculum/Index.cshtml"));
 
         Assert.Contains(
-            "asp-action=\"CreateCurriculumTopic\"",
-            view);
-        Assert.Contains(
             "name=\"curriculumAdoptionId\"",
             view);
         Assert.Contains(
@@ -69,6 +65,12 @@ public sealed class CurriculumUiContractTests
             "ExplicitCurriculumTopicUiItem",
             view);
 
+        Assert.DoesNotContain(
+            "asp-action=\"CreateCurriculumTopic\"",
+            view);
+        Assert.DoesNotContain(
+            "asp-action=\"CreateCurriculumOfficialOutcome\"",
+            view);
         Assert.DoesNotContain(
             "asp-action=\"SelectFramework\"",
             view);
@@ -103,28 +105,13 @@ public sealed class CurriculumUiContractTests
     }
 
     [Fact]
-    public void OfficialOutcome_IsSelectedFromExactCurriculumContext_AndFieldsAreReadOnly()
+    public void OfficialOutcome_IsDisplayedFromExactCurriculumContext_AsReadOnlyTeachingPlan()
     {
         var root = FindRepositoryRoot();
         var view = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/Views/Curriculum/Index.cshtml"));
 
-        Assert.Contains(
-            "asp-action=\"CreateCurriculumOfficialOutcome\"",
-            view);
-        Assert.Contains(
-            "name=\"selectionKey\"",
-            view);
-        Assert.Contains(
-            "data-code=\"@outcome.Code\"",
-            view);
-        Assert.Contains(
-            "id=\"officialCode\" readonly",
-            view);
-        Assert.Contains(
-            "id=\"officialDescription\"",
-            view);
         Assert.Contains(
             "@topic.FrameworkName",
             view);
@@ -133,6 +120,21 @@ public sealed class CurriculumUiContractTests
             view);
         Assert.Contains(
             "@topic.CurriculumPathway",
+            view);
+        Assert.Contains(
+            "LearningOutcomePresentation.DisplayCode(outcome.Code)",
+            view);
+        Assert.Contains(
+            "LearningOutcomePresentation.DisplayTitle(outcome.Code, outcome.Description)",
+            view);
+        Assert.DoesNotContain(
+            "name=\"selectionKey\"",
+            view);
+        Assert.DoesNotContain(
+            "id=\"officialCode\"",
+            view);
+        Assert.DoesNotContain(
+            "id=\"officialDescription\"",
             view);
         Assert.DoesNotContain(
             "AddCustomOutcome",

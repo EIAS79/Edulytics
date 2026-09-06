@@ -8,34 +8,55 @@
     ViewData["Title"] = A["AssessmentBuilder"];
     var assessment = Model.Details.Assessment;
     var rowVersion = Convert.ToBase64String(assessment.RowVersion);
-    var targetStudents = Model.TargetStudents ?? Array.Empty<Edulytics.Services.Assessments.AssessmentTargetStudentOption>();
+    var targetStudents = Model.TargetStudents ?? Array.Empty<AssessmentTargetStudentOption>();
     var manualQuestionSaved = TempData["ManualQuestionSaved"] is bool saved && saved;
     var hasEligibleOutcomes = Model.Details.EligibleOutcomes.Count > 0;
-    var nativeOutcomeIds = (Model.AiSupportedOutcomeIds ?? Array.Empty<Guid>()).ToHashSet();
-    var hasNativeOutcomes = nativeOutcomeIds.Count > 0;
+    var aiSupportedOutcomeIds = (Model.AiSupportedOutcomeIds ?? Array.Empty<Guid>()).ToHashSet();
+    var hasAiSupportedOutcomes = aiSupportedOutcomeIds.Count > 0;
+    var classItem = Model.Details.ClassGroups.FirstOrDefault(x => x.Id == assessment.ClassGroupId);
+    var subjectItem = Model.Details.Subjects.FirstOrDefault(x => x.Id == assessment.SubjectId);
 }
-<section class="assessment-page">
-    <header class="assessment-header">
+<link rel="stylesheet" href="~/css/assessment-builder.css" asp-append-version="true" />
+
+<section class="assessment-page ed-builder-page">
+    <header class="assessment-header ed-builder-header">
         <div>
             <span class="assessment-context">@A["AssessmentBuilder"]</span>
             <h1>@assessment.Title</h1>
-            <p>
-                @A["Questions"]: @Model.Questions.Count ·
-                @A["CurrentMarks"]: @Model.CurrentMarks.ToString("0.##") / @assessment.MaxScore.ToString("0.##") ·
-                <strong>@A["CurrentDelivery"]:</strong>
-                <span class="ed-delivery-badge @(assessment.DeliveryMode == AssessmentDeliveryMode.Online ? "is-online" : "is-offline")">
-                    @A[assessment.DeliveryMode == AssessmentDeliveryMode.Online ? "DeliveryOnlineBadge" : "DeliveryOfflineBadge"]
-                </span>
-                @if (Model.ClassMasteryPercentage.HasValue)
-                {
-                    <span> · @A["ClassMastery"]: @Model.ClassMasteryPercentage.Value.ToString("0.#")%</span>
-                }
-            </p>
         </div>
         <div class="assessment-actions">
             <a class="school-button" asp-controller="Assessments" asp-action="Details" asp-route-id="@assessment.Id">@A["Assessment"]</a>
         </div>
     </header>
+
+    <section class="ed-builder-summary" aria-label="@A["Assessment"]">
+        <div class="ed-builder-summary-item">
+            <span>@A["Class"]</span>
+            <strong>@(classItem?.Name ?? "—")</strong>
+        </div>
+        <div class="ed-builder-summary-item">
+            <span>@A["Subject"]</span>
+            <strong>@(subjectItem?.Name ?? "—")</strong>
+        </div>
+        <div class="ed-builder-summary-item">
+            <span>@A["Questions"]</span>
+            <strong>@Model.Questions.Count</strong>
+        </div>
+        <div class="ed-builder-summary-item">
+            <span>@A["CurrentMarks"]</span>
+            <strong>@Model.CurrentMarks.ToString("0.##") / @assessment.MaxScore.ToString("0.##")</strong>
+        </div>
+        <div class="ed-builder-summary-item">
+            <span>@A["CurrentDelivery"]</span>
+            <strong class="ed-delivery-badge @(assessment.DeliveryMode == AssessmentDeliveryMode.Online ? "is-online" : "is-offline")">
+                @A[assessment.DeliveryMode == AssessmentDeliveryMode.Online ? "DeliveryOnlineBadge" : "DeliveryOfflineBadge"]
+            </strong>
+        </div>
+        <div class="ed-builder-summary-item">
+            <span>@A["Status"]</span>
+            <strong>@A[$"BuilderStatus{assessment.Status}"]</strong>
+        </div>
+    </section>
 
     @if (TempData["Success"] is string success)
     {
@@ -55,55 +76,113 @@
 
     @if (assessment.Status == AssessmentStatus.Draft)
     {
-        <section class="assessment-card">
-            <h2>@A["DeliverySettings"]</h2>
-            <p>@A["DeliverySettingsHelp"]</p>
-            <p class="assessment-info">
-                <strong>@A["CurrentDelivery"]:</strong>
-                @A[assessment.DeliveryMode == AssessmentDeliveryMode.Online ? "DeliveryOnlineBadge" : "DeliveryOfflineBadge"]
-            </p>
-            <form id="delivery-settings-form" asp-action="UpdateDeliverySettings" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form">
-                @Html.AntiForgeryToken()
-                <input type="hidden" name="rowVersion" value="@rowVersion" />
+        <div class="ed-builder-workspace-grid">
+            <section class="assessment-card ed-builder-card">
+                <h2>@A["DeliverySettings"]</h2>
+                <p>@A["DeliverySettingsHelp"]</p>
+                <form id="delivery-settings-form" asp-action="UpdateDeliverySettings" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form ed-builder-form">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="rowVersion" value="@rowVersion" />
 
-                <label>@A["AssessmentTarget"]</label>
-                <select name="targetType">
-                    <option value="@AssessmentTargetType.Class" selected="@(assessment.TargetType == AssessmentTargetType.Class)">@A["TargetClass"]</option>
-                    <option value="@AssessmentTargetType.Student" selected="@(assessment.TargetType == AssessmentTargetType.Student)">@A["TargetIndividualStudent"]</option>
-                </select>
+                    <label>@A["AssessmentTarget"]</label>
+                    <select name="targetType">
+                        <option value="@AssessmentTargetType.Class" selected="@(assessment.TargetType == AssessmentTargetType.Class)">@A["TargetClass"]</option>
+                        <option value="@AssessmentTargetType.Student" selected="@(assessment.TargetType == AssessmentTargetType.Student)">@A["TargetIndividualStudent"]</option>
+                    </select>
 
-                <label>@A["TargetStudent"]</label>
-                <select name="targetStudentProfileId">
-                    <option value="">@A["SelectStudentWhenIndividual"]</option>
-                    @foreach (var student in targetStudents)
-                    {
-                        <option value="@student.Id" selected="@(assessment.TargetStudentProfileId == student.Id)">@student.DisplayName (@student.StudentNumber)</option>
-                    }
-                </select>
+                    <label>@A["TargetStudent"]</label>
+                    <select name="targetStudentProfileId">
+                        <option value="">@A["SelectStudentWhenIndividual"]</option>
+                        @foreach (var student in targetStudents)
+                        {
+                            <option value="@student.Id" selected="@(assessment.TargetStudentProfileId == student.Id)">@student.DisplayName (@student.StudentNumber)</option>
+                        }
+                    </select>
 
-                <label>@A["DeliveryMode"]</label>
-                <select name="deliveryMode">
-                    <option value="@AssessmentDeliveryMode.Online" selected="@(assessment.DeliveryMode == AssessmentDeliveryMode.Online)">@A["DeliveryOnline"]</option>
-                    <option value="@AssessmentDeliveryMode.Offline" selected="@(assessment.DeliveryMode == AssessmentDeliveryMode.Offline)">@A["DeliveryOffline"]</option>
-                </select>
+                    <label>@A["DeliveryMode"]</label>
+                    <select name="deliveryMode">
+                        <option value="@AssessmentDeliveryMode.Online" selected="@(assessment.DeliveryMode == AssessmentDeliveryMode.Online)">@A["DeliveryOnline"]</option>
+                        <option value="@AssessmentDeliveryMode.Offline" selected="@(assessment.DeliveryMode == AssessmentDeliveryMode.Offline)">@A["DeliveryOffline"]</option>
+                    </select>
 
-                <label>@A["AssessmentDifficulty"]</label>
-                <select name="difficultyBand">
-                    <option value="@AssessmentDifficultyBand.AtClassLevel" selected="@(assessment.DifficultyBand == AssessmentDifficultyBand.AtClassLevel)">@A["AtClassLevel"]</option>
-                    <option value="@AssessmentDifficultyBand.Stretch" selected="@(assessment.DifficultyBand == AssessmentDifficultyBand.Stretch)">@A["Stretch"]</option>
-                    <option value="@AssessmentDifficultyBand.Challenge" selected="@(assessment.DifficultyBand == AssessmentDifficultyBand.Challenge)">@A["Challenge"]</option>
-                </select>
+                    <label>@A["AssessmentDifficulty"]</label>
+                    <select name="difficultyBand">
+                        <option value="@AssessmentDifficultyBand.AtClassLevel" selected="@(assessment.DifficultyBand == AssessmentDifficultyBand.AtClassLevel)">@A["AtClassLevel"]</option>
+                        <option value="@AssessmentDifficultyBand.Stretch" selected="@(assessment.DifficultyBand == AssessmentDifficultyBand.Stretch)">@A["Stretch"]</option>
+                        <option value="@AssessmentDifficultyBand.Challenge" selected="@(assessment.DifficultyBand == AssessmentDifficultyBand.Challenge)">@A["Challenge"]</option>
+                    </select>
 
-                <button class="school-button school-button-primary" type="submit">@A["SaveDeliverySettings"]</button>
-            </form>
-        </section>
+                    <button class="school-button school-button-primary" type="submit">@A["SaveDeliverySettings"]</button>
+                </form>
+            </section>
 
-        <section class="assessment-card">
-            <h2>@A["AddQuestionManually"]</h2>
+            <section class="assessment-card ed-builder-card ed-ai-builder-card">
+                <div class="ed-builder-card-heading">
+                    <div>
+                        <h2>@A["GenerateQuestionsWithAI"]</h2>
+                        <p>@A["NativeGenerationNotice"]</p>
+                    </div>
+                </div>
+
+                @if (!hasEligibleOutcomes)
+                {
+                    <div class="assessment-empty">@A["LearningOutcomesSetupRequired"]</div>
+                }
+                else if (Model.CanGenerateNatively && hasAiSupportedOutcomes)
+                {
+                    <form asp-action="Generate" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form ed-builder-form" data-ai-generate-form>
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="rowVersion" value="@rowVersion" />
+
+                        <div class="ed-builder-two-column-fields">
+                            <div>
+                                <label for="ai-question-count">@A["PlannedQuestionCount"]</label>
+                                <input id="ai-question-count" name="questionCount" type="number" min="1" max="50" value="5" required inputmode="numeric" />
+                            </div>
+                            <div>
+                                <label for="ai-max-score">@A["QuestionMaxScore"]</label>
+                                <input id="ai-max-score" name="maxScorePerQuestion" type="number" min="1" step="1" placeholder="@A["Automatic"]" />
+                            </div>
+                        </div>
+                        <p class="assessment-info">@A["AiAutoMarksHelp"]</p>
+
+                        <label for="ai-difficulty">@A["AssessmentDifficulty"]</label>
+                        <select id="ai-difficulty" name="difficulty">
+                            <option value="" selected>@A["AiAutoDifficulty"]</option>
+                            <option value="@AssessmentBuilderDifficulty.AtClassLevel">@A["AtClassLevel"]</option>
+                            <option value="@AssessmentBuilderDifficulty.Stretch">@A["Stretch"]</option>
+                            <option value="@AssessmentBuilderDifficulty.Challenge">@A["Challenge"]</option>
+                        </select>
+                        <input type="hidden" name="seed" value="0" />
+
+                        <label for="ai-outcomes">@A["LearningOutcomes"]</label>
+                        <select id="ai-outcomes" class="ed-builder-outcome-select" name="outcomeIds" multiple size="8" required>
+                            @foreach (var outcome in Model.Details.EligibleOutcomes)
+                            {
+                                var aiSupported = aiSupportedOutcomeIds.Contains(outcome.Id);
+                                var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
+                                var displayTitle = LearningOutcomePresentation.DisplayTitle(outcome.Code, outcome.Description);
+                                <option value="@outcome.Id" disabled="@(!aiSupported)">@displayTitle · @displayCode@(aiSupported ? $" · {A["AiSupported"]}" : $" · {A["ManualOnly"]}")</option>
+                            }
+                        </select>
+                        <p class="assessment-info">@A["LearningOutcomes"]</p>
+
+                        <button class="school-button school-button-primary ed-ai-generate-button" type="submit">@A["GenerateQuestionsWithAI"]</button>
+                    </form>
+                }
+                else
+                {
+                    <div class="assessment-empty">@A["NativeGenerationUnavailable"]</div>
+                }
+            </section>
+        </div>
+
+        <details class="assessment-card ed-builder-card ed-manual-question-panel">
+            <summary><strong>@A["AddQuestionManually"]</strong></summary>
             <form id="manual-question-form"
                   data-assessment-id="@assessment.Id"
                   data-manual-saved="@manualQuestionSaved.ToString().ToLowerInvariant()"
-                  asp-action="CreateManual" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form">
+                  asp-action="CreateManual" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form ed-builder-form">
                 @Html.AntiForgeryToken()
                 <input type="hidden" name="rowVersion" value="@rowVersion" />
                 <label>@A["QuestionPrompt"]</label>
@@ -112,229 +191,177 @@
                 <input name="correctAnswer" maxlength="1000" required />
                 <label>@A["Solution"]</label>
                 <textarea name="solution" maxlength="4000" rows="3"></textarea>
-                <label>@A["QuestionMaxScore"]</label>
-                <input name="maxScore" type="number" min="1" max="10000" step="1" required />
-                <label>@A["Order"]</label>
-                <input name="order" type="number" min="1" value="@(Model.Questions.Count + 1)" required />
-                <label>@A["Difficulty"]</label>
-                <select name="difficulty">
-                    <option value="@AssessmentItemDifficulty.Easy">@A["DifficultyEasy"]</option>
-                    <option value="@AssessmentItemDifficulty.Medium" selected>@A["DifficultyMedium"]</option>
-                    <option value="@AssessmentItemDifficulty.Challenging">@A["DifficultyChallenging"]</option>
-                </select>
-                <fieldset class="ed-outcome-fieldset">
-                    <legend>@A["LearningOutcomes"]</legend>
-                    <div class="ed-outcome-choice-list">
-                        @foreach (var outcome in Model.Details.EligibleOutcomes)
-                        {
-                            var aiSupported = nativeOutcomeIds.Contains(outcome.Id);
-                            var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
-                            <label class="ed-outcome-option">
-                                <input type="checkbox" name="outcomeIds" value="@outcome.Id" />
-                                <span class="ed-outcome-copy">
-                                    <span class="ed-outcome-heading">
-                                        <strong class="ed-outcome-code">@displayCode</strong>
-                                        <span class="ed-ai-capability-badge @(aiSupported ? "is-supported" : "is-manual")">
-                                            @A[aiSupported ? "AiSupported" : "ManualOnly"]
-                                        </span>
-                                    </span>
-                                    <span class="ed-outcome-description" title="@outcome.Description">@outcome.Description</span>
-                                </span>
-                            </label>
-                        }
+
+                <div class="ed-builder-three-column-fields">
+                    <div>
+                        <label>@A["QuestionMaxScore"]</label>
+                        <input name="maxScore" type="number" min="1" max="10000" step="1" required />
                     </div>
-                </fieldset>
-                <button class="school-button school-button-primary" type="submit" disabled="@(!hasEligibleOutcomes)">@A["AddQuestionManually"]</button>
-            </form>
-        </section>
+                    <div>
+                        <label>@A["Order"]</label>
+                        <input name="order" type="number" min="1" value="@(Model.Questions.Count + 1)" required />
+                    </div>
+                    <div>
+                        <label>@A["Difficulty"]</label>
+                        <select name="difficulty">
+                            <option value="@AssessmentItemDifficulty.Easy">@A["DifficultyEasy"]</option>
+                            <option value="@AssessmentItemDifficulty.Medium" selected>@A["DifficultyMedium"]</option>
+                            <option value="@AssessmentItemDifficulty.Challenging">@A["DifficultyChallenging"]</option>
+                        </select>
+                    </div>
+                </div>
 
-        <section class="assessment-card">
-            <h2>@A["GenerateQuestionsWithAI"]</h2>
-            <p>@A["NativeGenerationNotice"]</p>
-
-            @if (hasEligibleOutcomes)
-            {
-                <div class="ed-ai-capability-summary" aria-label="@A["LearningOutcomes"]">
+                <label for="manual-outcomes">@A["LearningOutcomes"]</label>
+                <select id="manual-outcomes" class="ed-builder-outcome-select" name="outcomeIds" multiple size="8" required>
                     @foreach (var outcome in Model.Details.EligibleOutcomes)
                     {
-                        var aiSupported = nativeOutcomeIds.Contains(outcome.Id);
                         var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
-                        <div class="ed-ai-capability-row">
-                            <strong class="ed-outcome-code">@displayCode</strong>
-                            <span class="ed-ai-capability-badge @(aiSupported ? "is-supported" : "is-manual")">
-                                @A[aiSupported ? "AiSupported" : "ManualOnly"]
-                            </span>
-                        </div>
+                        var displayTitle = LearningOutcomePresentation.DisplayTitle(outcome.Code, outcome.Description);
+                        <option value="@outcome.Id">@displayTitle · @displayCode</option>
                     }
-                </div>
-            }
+                </select>
 
-            @if (!hasEligibleOutcomes)
-            {
-                <div class="assessment-empty">@A["LearningOutcomesSetupRequired"]</div>
-            }
-            else if (Model.CanGenerateNatively && hasNativeOutcomes)
-            {
-                <form asp-action="Generate" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form">
-                    @Html.AntiForgeryToken()
-                    <input type="hidden" name="rowVersion" value="@rowVersion" />
-                    <label>@A["PlannedQuestionCount"]</label>
-                    <input name="questionCount" type="number" min="1" max="100" value="5" required />
-                    <label>@A["QuestionMaxScore"]</label>
-                    <input name="maxScorePerQuestion" type="number" min="1" step="1" placeholder="@A["Automatic"]" />
-                    <p class="assessment-info">@A["AiAutoMarksHelp"]</p>
-                    <label>@A["AssessmentDifficulty"]</label>
-                    <select name="difficulty">
-                        <option value="" selected>@A["AiAutoDifficulty"]</option>
-                        <option value="@AssessmentBuilderDifficulty.AtClassLevel">@A["AtClassLevel"]</option>
-                        <option value="@AssessmentBuilderDifficulty.Stretch">@A["Stretch"]</option>
-                        <option value="@AssessmentBuilderDifficulty.Challenge">@A["Challenge"]</option>
-                    </select>
-                    <input type="hidden" name="seed" value="0" />
-                    <fieldset class="ed-outcome-fieldset">
-                        <legend>@A["LearningOutcomes"]</legend>
-                        <div class="ed-outcome-choice-list">
-                            @foreach (var outcome in Model.Details.EligibleOutcomes)
-                            {
-                                var aiSupported = nativeOutcomeIds.Contains(outcome.Id);
-                                var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
-                                <label class="ed-outcome-option @(aiSupported ? "" : "is-disabled")">
-                                    <input type="checkbox" name="outcomeIds" value="@outcome.Id" disabled="@(!aiSupported)" />
-                                    <span class="ed-outcome-copy">
-                                        <span class="ed-outcome-heading">
-                                            <strong class="ed-outcome-code">@displayCode</strong>
-                                            <span class="ed-ai-capability-badge @(aiSupported ? "is-supported" : "is-manual")">
-                                                @A[aiSupported ? "AiSupported" : "ManualOnly"]
-                                            </span>
-                                        </span>
-                                        <span class="ed-outcome-description" title="@outcome.Description">@outcome.Description</span>
-                                    </span>
-                                </label>
-                            }
-                        </div>
-                    </fieldset>
-                    <button class="school-button school-button-primary" type="submit">@A["GenerateQuestionsWithAI"]</button>
-                </form>
-            }
-            else
-            {
-                <div class="assessment-empty">@A["NativeGenerationUnavailable"]</div>
-            }
-        </section>
+                <button class="school-button school-button-primary" type="submit" disabled="@(!hasEligibleOutcomes)">@A["AddQuestionManually"]</button>
+            </form>
+        </details>
     }
 
     @if (assessment.DeliveryMode == AssessmentDeliveryMode.Offline)
     {
-        <section class="assessment-card">
+        <section class="assessment-card ed-builder-card">
             <h2>@A["OfflinePrint"]</h2>
             <p>@A["OfflinePrintHelp"]</p>
             <div class="assessment-actions">
-                <a class="school-button school-button-primary"
-                   asp-action="StudentPaperPdf"
-                   asp-route-assessmentId="@assessment.Id">@A["DownloadStudentPaper"]</a>
-                <a class="school-button"
-                   asp-action="AnswerKeyPdf"
-                   asp-route-assessmentId="@assessment.Id">@A["DownloadTeacherAnswerKey"]</a>
+                <a class="school-button school-button-primary" asp-action="StudentPaperPdf" asp-route-assessmentId="@assessment.Id">@A["DownloadStudentPaper"]</a>
+                <a class="school-button" asp-action="AnswerKeyPdf" asp-route-assessmentId="@assessment.Id">@A["DownloadTeacherAnswerKey"]</a>
             </div>
         </section>
     }
 
-    <section class="assessment-question-list">
-        <h2>@A["Questions"]</h2>
+    <section class="assessment-question-list ed-builder-question-list">
+        <div class="ed-builder-section-heading">
+            <h2>@A["Questions"]</h2>
+            <span>@Model.Questions.Count</span>
+        </div>
         @if (Model.Questions.Count == 0)
         {
             <div class="assessment-empty">@A["NoQuestions"]</div>
         }
         @foreach (var question in Model.Questions)
         {
-            <article class="assessment-question-card">
-                <header>
+            var isApproved = question.Status == AssessmentBuilderQuestionStatus.Approved;
+            <article class="assessment-question-card ed-builder-question-card @(isApproved ? "is-approved" : "")">
+                <header class="ed-builder-question-header">
                     <div>
-                        <h3>@question.Order. @question.Prompt</h3>
-                        <p>@A["QuestionMaxScore"]: @question.MaxScore.ToString("0.##") · @A["Source"]: @(question.Source?.ToString() ?? A["Legacy"].Value) · @A["Difficulty"]: @(question.Difficulty?.ToString() ?? A["Legacy"].Value) · @A["Status"]: @A[$"BuilderStatus{question.Status}"]</p>
+                        <span class="ed-builder-question-number">@question.Order</span>
+                        <h3>@question.Prompt</h3>
                     </div>
+                    <span class="ed-builder-question-status @(isApproved ? "is-approved" : "")">@A[$"BuilderStatus{question.Status}"]</span>
                 </header>
+
+                <div class="ed-builder-question-meta">
+                    <span>@A["QuestionMaxScore"]: <strong>@question.MaxScore.ToString("0.##")</strong></span>
+                    <span>@A["Difficulty"]: <strong>@(question.Difficulty?.ToString() ?? A["Legacy"].Value)</strong></span>
+                    <span>@A["Source"]: <strong>@(question.Source?.ToString() ?? A["Legacy"].Value)</strong></span>
+                </div>
+
                 @if (!string.IsNullOrWhiteSpace(question.CorrectAnswer))
                 {
-                    <p><strong>@A["CorrectAnswer"]:</strong> @question.CorrectAnswer</p>
-                    @if (!string.IsNullOrWhiteSpace(question.Solution))
-                    {
-                        <p><strong>@A["Solution"]:</strong> @question.Solution</p>
-                    }
+                    <details class="ed-builder-answer-details">
+                        <summary>@A["CorrectAnswer"] / @A["Solution"]</summary>
+                        <p><strong>@A["CorrectAnswer"]:</strong> @question.CorrectAnswer</p>
+                        @if (!string.IsNullOrWhiteSpace(question.Solution))
+                        {
+                            <p><strong>@A["Solution"]:</strong> @question.Solution</p>
+                        }
+                    </details>
                 }
-                <div class="assessment-mapping-tags">
+
+                <div class="assessment-mapping-tags ed-builder-outcome-tags">
                     @foreach (var outcomeId in question.OutcomeIds)
                     {
                         var outcome = Model.Details.EligibleOutcomes.FirstOrDefault(x => x.Id == outcomeId);
                         if (outcome is not null)
                         {
                             var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
-                            <span class="assessment-mapping-tag" title="@outcome.Description"><strong>@displayCode</strong></span>
+                            var displayTitle = LearningOutcomePresentation.DisplayTitle(outcome.Code, outcome.Description);
+                            <span class="assessment-mapping-tag" title="@displayTitle"><strong>@displayTitle</strong> <small>@displayCode</small></span>
                         }
                     }
                 </div>
+
                 @if (assessment.Status == AssessmentStatus.Draft && question.Status != AssessmentBuilderQuestionStatus.Legacy)
                 {
-                    <details data-question-edit>
-                        <summary>@A["EditQuestion"]</summary>
-                        <form asp-action="Edit" asp-route-assessmentId="@assessment.Id" asp-route-questionId="@question.Id" method="post" class="assessment-form">
-                            @Html.AntiForgeryToken()
-                            <input type="hidden" name="rowVersion" value="@rowVersion" />
-                            <label>@A["QuestionPrompt"]</label>
-                            <textarea name="prompt" maxlength="1000" rows="3" required>@question.Prompt</textarea>
-                            <label>@A["CorrectAnswer"]</label>
-                            <input name="correctAnswer" maxlength="1000" value="@question.CorrectAnswer" required />
-                            <label>@A["Solution"]</label>
-                            <textarea name="solution" maxlength="4000" rows="3">@question.Solution</textarea>
-                            <label>@A["QuestionMaxScore"]</label>
-                            <input name="maxScore" type="number" min="1" max="10000" step="1" value="@question.MaxScore" required />
-                            <label>@A["Order"]</label>
-                            <input name="order" type="number" min="1" value="@question.Order" required />
-                            <label>@A["Difficulty"]</label>
-                            <select name="difficulty">
-                                <option value="@AssessmentItemDifficulty.Easy" selected="@(question.Difficulty == AssessmentItemDifficulty.Easy)">@A["DifficultyEasy"]</option>
-                                <option value="@AssessmentItemDifficulty.Medium" selected="@(question.Difficulty == AssessmentItemDifficulty.Medium)">@A["DifficultyMedium"]</option>
-                                <option value="@AssessmentItemDifficulty.Challenging" selected="@(question.Difficulty == AssessmentItemDifficulty.Challenging)">@A["DifficultyChallenging"]</option>
-                            </select>
-                            <fieldset class="ed-outcome-fieldset">
-                                <legend>@A["LearningOutcomes"]</legend>
-                                <div class="ed-outcome-choice-list">
+                    @if (!isApproved)
+                    {
+                        <details data-question-edit class="ed-builder-edit-panel">
+                            <summary>@A["EditQuestion"]</summary>
+                            <form asp-action="Edit" asp-route-assessmentId="@assessment.Id" asp-route-questionId="@question.Id" method="post" class="assessment-form ed-builder-form">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="rowVersion" value="@rowVersion" />
+                                <label>@A["QuestionPrompt"]</label>
+                                <textarea name="prompt" maxlength="1000" rows="3" required>@question.Prompt</textarea>
+                                <label>@A["CorrectAnswer"]</label>
+                                <input name="correctAnswer" maxlength="1000" value="@question.CorrectAnswer" required />
+                                <label>@A["Solution"]</label>
+                                <textarea name="solution" maxlength="4000" rows="3">@question.Solution</textarea>
+                                <div class="ed-builder-three-column-fields">
+                                    <div>
+                                        <label>@A["QuestionMaxScore"]</label>
+                                        <input name="maxScore" type="number" min="1" max="10000" step="1" value="@question.MaxScore" required />
+                                    </div>
+                                    <div>
+                                        <label>@A["Order"]</label>
+                                        <input name="order" type="number" min="1" value="@question.Order" required />
+                                    </div>
+                                    <div>
+                                        <label>@A["Difficulty"]</label>
+                                        <select name="difficulty">
+                                            <option value="@AssessmentItemDifficulty.Easy" selected="@(question.Difficulty == AssessmentItemDifficulty.Easy)">@A["DifficultyEasy"]</option>
+                                            <option value="@AssessmentItemDifficulty.Medium" selected="@(question.Difficulty == AssessmentItemDifficulty.Medium)">@A["DifficultyMedium"]</option>
+                                            <option value="@AssessmentItemDifficulty.Challenging" selected="@(question.Difficulty == AssessmentItemDifficulty.Challenging)">@A["DifficultyChallenging"]</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <label>@A["LearningOutcomes"]</label>
+                                <select class="ed-builder-outcome-select" name="outcomeIds" multiple size="6" required>
                                     @foreach (var outcome in Model.Details.EligibleOutcomes)
                                     {
                                         var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
-                                        <label class="ed-outcome-option">
-                                            <input type="checkbox" name="outcomeIds" value="@outcome.Id" checked="@(question.OutcomeIds.Contains(outcome.Id))" />
-                                            <span class="ed-outcome-copy">
-                                                <span class="ed-outcome-heading"><strong class="ed-outcome-code">@displayCode</strong></span>
-                                                <span class="ed-outcome-description" title="@outcome.Description">@outcome.Description</span>
-                                            </span>
-                                        </label>
+                                        var displayTitle = LearningOutcomePresentation.DisplayTitle(outcome.Code, outcome.Description);
+                                        <option value="@outcome.Id" selected="@(question.OutcomeIds.Contains(outcome.Id))">@displayTitle · @displayCode</option>
                                     }
+                                </select>
+                                <div class="assessment-actions">
+                                    <button class="school-button school-button-primary" type="submit">@A["SaveChanges"]</button>
+                                    <button class="school-button" type="reset" data-edit-cancel>@A["Cancel"]</button>
                                 </div>
-                            </fieldset>
-                            <div class="assessment-actions">
-                                <button class="school-button school-button-primary" type="submit">@A["SaveChanges"]</button>
-                                <button class="school-button" type="reset" data-edit-cancel>@A["Cancel"]</button>
-                            </div>
-                        </form>
-                    </details>
-                    <div class="assessment-actions">
-                        @if (question.Status != AssessmentBuilderQuestionStatus.Approved)
+                            </form>
+                        </details>
+                    }
+
+                    <div class="assessment-actions ed-builder-question-actions">
+                        @if (!isApproved)
                         {
                             <form asp-action="Approve" asp-route-assessmentId="@assessment.Id" asp-route-questionId="@question.Id" method="post">
-                                @Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion" />
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="rowVersion" value="@rowVersion" />
                                 <button class="school-button school-button-primary" type="submit">@A["ApproveQuestion"]</button>
                             </form>
-                        }
-                        @if (question.Source == AssessmentItemSource.SystemGenerated)
-                        {
-                            <form asp-action="Regenerate" asp-route-assessmentId="@assessment.Id" asp-route-questionId="@question.Id" method="post">
-                                @Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion" /><input type="hidden" name="seed" value="@(question.Order + 1)" />
-                                <button class="school-button" type="submit">@A["RegenerateQuestion"]</button>
-                            </form>
+
+                            @if (question.Source == AssessmentItemSource.SystemGenerated)
+                            {
+                                <form asp-action="Regenerate" asp-route-assessmentId="@assessment.Id" asp-route-questionId="@question.Id" method="post">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="rowVersion" value="@rowVersion" />
+                                    <input type="hidden" name="seed" value="@(question.Order + 1)" />
+                                    <button class="school-button" type="submit">@A["RegenerateQuestion"]</button>
+                                </form>
+                            }
                         }
                         <form asp-action="Delete" asp-route-assessmentId="@assessment.Id" asp-route-questionId="@question.Id" method="post">
-                            @Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion" />
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="rowVersion" value="@rowVersion" />
                             <button class="school-button" type="submit">@A["DeleteQuestion"]</button>
                         </form>
                     </div>
@@ -345,11 +372,12 @@
 
     @if (assessment.Status == AssessmentStatus.Draft)
     {
-        <section class="assessment-lifecycle">
+        <section class="assessment-lifecycle ed-builder-publish-bar">
             @if (Model.ReadyToPublish)
             {
                 <form asp-action="Publish" asp-route-assessmentId="@assessment.Id" method="post">
-                    @Html.AntiForgeryToken()<input type="hidden" name="rowVersion" value="@rowVersion" />
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="rowVersion" value="@rowVersion" />
                     <button class="school-button school-button-primary" type="submit">@A["PublishAssessment"]</button>
                 </form>
             }
@@ -365,6 +393,15 @@
 {
     <script>
         (() => {
+            const questionCount = document.getElementById('ai-question-count');
+            if (questionCount) {
+                questionCount.addEventListener('input', () => {
+                    const value = Number(questionCount.value);
+                    if (Number.isFinite(value) && value > 50) questionCount.value = '50';
+                    if (Number.isFinite(value) && value < 1) questionCount.value = '1';
+                });
+            }
+
             document.querySelectorAll('[data-edit-cancel]').forEach(button => {
                 button.addEventListener('click', () => {
                     const details = button.closest('[data-question-edit]');
@@ -379,7 +416,6 @@
 
             const key = `edulytics:assessment-builder:manual:${form.dataset.assessmentId}`;
             const wasSaved = form.dataset.manualSaved === 'true';
-
             if (wasSaved) {
                 sessionStorage.removeItem(key);
                 return;
@@ -393,7 +429,7 @@
                     maxScore: form.elements.maxScore?.value ?? '',
                     order: form.elements.order?.value ?? '',
                     difficulty: form.elements.difficulty?.value ?? '',
-                    outcomeIds: Array.from(form.querySelectorAll('input[name="outcomeIds"]:checked')).map(x => x.value)
+                    outcomeIds: Array.from(form.querySelectorAll('[name="outcomeIds"] option:checked')).map(x => x.value)
                 };
                 sessionStorage.setItem(key, JSON.stringify(data));
             };
@@ -406,7 +442,7 @@
                         if (data[name] !== undefined && form.elements[name]) form.elements[name].value = data[name];
                     }
                     const selected = new Set(Array.isArray(data.outcomeIds) ? data.outcomeIds : []);
-                    form.querySelectorAll('input[name="outcomeIds"]').forEach(x => x.checked = selected.has(x.value));
+                    form.querySelectorAll('[name="outcomeIds"] option').forEach(x => x.selected = selected.has(x.value));
                 }
             } catch {
                 sessionStorage.removeItem(key);

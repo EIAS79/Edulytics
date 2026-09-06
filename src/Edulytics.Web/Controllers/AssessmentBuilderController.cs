@@ -20,6 +20,8 @@ public sealed class AssessmentBuilderController(
     IAssessmentDeliverySettingsService deliverySettings,
     IStringLocalizer<AssessmentBuilderResource> text) : Controller
 {
+    private const int MaximumGeneratedQuestionCount = 50;
+
     [HttpGet("")]
     public async Task<IActionResult> Index(Guid assessmentId, CancellationToken cancellationToken)
     {
@@ -152,6 +154,11 @@ public sealed class AssessmentBuilderController(
         AssessmentBuilderDifficulty? difficulty, Guid[]? outcomeIds, int seed, string rowVersion, CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
+        if (questionCount is < 1 or > MaximumGeneratedQuestionCount)
+        {
+            TempData["Error"] = text["BuilderOperationFailed"].Value;
+            return RedirectToAction(nameof(Index), new { assessmentId });
+        }
         if (!TryDecode(rowVersion, out var version)) return ConcurrencyRedirect(assessmentId);
         var result = await service.GenerateQuestionsAsync(actorId,
             new GenerateBuilderQuestionsRequest(

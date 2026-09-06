@@ -1,9 +1,25 @@
 @using Edulytics.Web.Support
+@using System.Globalization
 @{
     Layout = "_PublicLayout";
+    var isPolish = string.Equals(
+        CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
+        "pl",
+        StringComparison.OrdinalIgnoreCase);
+    var contactLabel = isPolish ? "Kontakt" : "Contact us";
 }
 
 <section class="language-shell" aria-labelledby="language-selection-title">
+    <details class="public-contact-menu">
+        <summary class="public-contact-trigger">@contactLabel</summary>
+        <div class="public-contact-popover" aria-label="@contactLabel">
+            <a href="mailto:@SupportContactOptions.Email">@SupportContactOptions.Email</a>
+            <a href="@SupportContactOptions.PhoneUri">@SupportContactOptions.PhoneDisplay</a>
+            <a href="@SupportContactOptions.CompanyWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.CompanyWebsiteDisplay</a>
+            <a href="@SupportContactOptions.ProductWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.ProductWebsiteDisplay</a>
+        </div>
+    </details>
+
     <div class="language-brand" aria-label="Edulytics">
         <partial name="_LocalizedBrand" />
     </div>
@@ -35,17 +51,4 @@
             </button>
         </form>
     </div>
-
-    <aside class="public-contact-card" aria-labelledby="public-contact-title">
-        <div>
-            <strong id="public-contact-title">Contact us / Kontakt</strong>
-            <span class="public-contact-card__hint">Edulytics support</span>
-        </div>
-        <div class="public-contact-card__links">
-            <a href="mailto:@SupportContactOptions.Email">@SupportContactOptions.Email</a>
-            <a href="@SupportContactOptions.PhoneUri">@SupportContactOptions.PhoneDisplay</a>
-            <a href="@SupportContactOptions.CompanyWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.CompanyWebsiteDisplay</a>
-            <a href="@SupportContactOptions.ProductWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.ProductWebsiteDisplay</a>
-        </div>
-    </aside>
 </section>

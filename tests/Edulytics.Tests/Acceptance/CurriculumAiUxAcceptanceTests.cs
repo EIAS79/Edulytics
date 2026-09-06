@@ -18,7 +18,7 @@ public sealed class CurriculumAiUxAcceptanceTests
     }
 
     [Fact]
-    public void CurriculumMutations_PreserveSelectedContext()
+    public void OfficialCurriculumUi_PreservesSelectedContextWithoutManualTopicMutation()
     {
         var controller = ReadRepositoryFile(
             "src",
@@ -39,16 +39,6 @@ public sealed class CurriculumAiUxAcceptanceTests
             StringComparison.Ordinal);
 
         Assert.Contains(
-            "RedirectToAction(nameof(Index), routeValues)",
-            controller,
-            StringComparison.Ordinal);
-
-        Assert.Contains(
-            "asp-action=\"CreateCurriculumTopic\"",
-            view,
-            StringComparison.Ordinal);
-
-        Assert.Contains(
             "name=\"academicYearId\"",
             view,
             StringComparison.Ordinal);
@@ -62,10 +52,25 @@ public sealed class CurriculumAiUxAcceptanceTests
             "name=\"curriculumAdoptionId\"",
             view,
             StringComparison.Ordinal);
+
+        Assert.DoesNotContain(
+            "asp-action=\"CreateCurriculumTopic\"",
+            view,
+            StringComparison.Ordinal);
+
+        Assert.DoesNotContain(
+            "asp-action=\"CreateCurriculumOfficialOutcome\"",
+            view,
+            StringComparison.Ordinal);
+
+        Assert.DoesNotContain(
+            "asp-action=\"EditTopic\"",
+            view,
+            StringComparison.Ordinal);
     }
 
     [Fact]
-    public void LearningOutcomeUi_ShowsCapabilityBeforeSelectionAndUsesCompactCards()
+    public void LearningOutcomeUi_ShowsCapabilityAndUsesReadableSelectors()
     {
         var curriculumView = ReadRepositoryFile(
             "src",
@@ -81,12 +86,12 @@ public sealed class CurriculumAiUxAcceptanceTests
             "AssessmentBuilder",
             "Index.cshtml");
 
-        var css = ReadRepositoryFile(
+        var builderCss = ReadRepositoryFile(
             "src",
             "Edulytics.Web",
             "wwwroot",
             "css",
-            "acceptance-corrective.css");
+            "assessment-builder.css");
 
         Assert.Contains(
             "NativeMathematicsOutcomeProfileResolver.Supports",
@@ -95,6 +100,11 @@ public sealed class CurriculumAiUxAcceptanceTests
 
         Assert.Contains(
             "LearningOutcomePresentation.DisplayCode",
+            curriculumView,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "LearningOutcomePresentation.DisplayTitle",
             curriculumView,
             StringComparison.Ordinal);
 
@@ -109,12 +119,7 @@ public sealed class CurriculumAiUxAcceptanceTests
             StringComparison.Ordinal);
 
         Assert.Contains(
-            "ed-ai-capability-summary",
-            builderView,
-            StringComparison.Ordinal);
-
-        Assert.Contains(
-            "ed-outcome-option",
+            "ed-builder-outcome-select",
             builderView,
             StringComparison.Ordinal);
 
@@ -124,13 +129,18 @@ public sealed class CurriculumAiUxAcceptanceTests
             StringComparison.Ordinal);
 
         Assert.Contains(
-            ".assessment-form input[type=\"checkbox\"]",
-            css,
+            "LearningOutcomePresentation.DisplayTitle",
+            builderView,
             StringComparison.Ordinal);
 
         Assert.Contains(
-            "width: 1.1rem",
-            css,
+            "disabled=\"@(!aiSupported)\"",
+            builderView,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            ".ed-builder-outcome-select",
+            builderCss,
             StringComparison.Ordinal);
     }
 

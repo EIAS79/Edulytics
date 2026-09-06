@@ -44,13 +44,8 @@
     <article class="student-panel student-learning-panel">
         <div class="student-panel-heading">
             <div>
-                <span class="student-eyebrow">@S["LearningSubjects"]</span>
                 <h2>@S["MyLearning"]</h2>
             </div>
-            <a class="student-primary-link"
-               asp-action="Learning">
-                @S["OpenLearning"]
-            </a>
         </div>
 
         @if (Model.Workspace.Learning.Count == 0)
@@ -59,13 +54,19 @@
         }
         else
         {
-            <div class="student-subject-chips">
+            <div class="student-subject-chips student-subject-tiles">
                 @foreach (var item in Model.Workspace.Learning.Take(6))
                 {
-                    <span>
+                    <a class="student-subject-tile"
+                       asp-action="Learning"
+                       asp-route-curriculumAdoptionId="@item.CurriculumAdoptionId"
+                       asp-route-classGroupId="@item.ClassGroupId"
+                       asp-fragment="selected-curriculum-context">
                         <strong>@item.SubjectName</strong>
                         <small>@item.FrameworkName</small>
-                    </span>
+                        <small>@item.GradeName · @item.ClassName</small>
+                        <span aria-hidden="true">→</span>
+                    </a>
                 }
             </div>
         }

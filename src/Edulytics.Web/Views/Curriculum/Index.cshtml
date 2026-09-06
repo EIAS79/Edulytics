@@ -1,5 +1,4 @@
 @using Edulytics.Core.Constants
-@using Edulytics.Services.Assessments
 @using Edulytics.Services.Curriculum
 @using Edulytics.Web.Presentation
 @model Edulytics.Web.ViewModels.Curriculum.CurriculumIndexViewModel
@@ -57,7 +56,6 @@
     {
         <div class="school-alert school-alert-success" role="status">@success</div>
     }
-
     @if (TempData["Error"] is string error)
     {
         <div class="school-alert school-alert-error" role="alert">@error</div>
@@ -129,183 +127,51 @@
     }
     else
     {
-        <section class="curriculum-create-grid">
-            <article class="curriculum-card curriculum-official-card">
-                <h2>@C["OfficialCurriculum"]</h2>
-                <p class="curriculum-help">@C["OfficialCurriculumHelp"]</p>
-
-                <div class="curriculum-table-wrap">
-                    <table class="curriculum-table">
-                        <thead>
-                        <tr>
-                            <th>@C["AcademicYear"]</th>
-                            <th>@C["AcademicProgram"]</th>
-                            <th>@C["Curriculum"]</th>
-                            <th>@C["CurriculumLevel"]</th>
-                            <th>@C["StagePathway"]</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td data-label="@C["AcademicYear"]">@selectedAdoption.AcademicYearName</td>
-                            <td data-label="@C["AcademicProgram"]">@selectedAdoption.AcademicProgramName</td>
-                            <td data-label="@C["Curriculum"]">@selectedAdoption.FrameworkCode</td>
-                            <td data-label="@C["CurriculumLevel"]">@selectedAdoption.Label</td>
-                            <td data-label="@C["StagePathway"]">
-                                @selectedAdoption.Stage
-                                @if (!string.IsNullOrWhiteSpace(selectedAdoption.Pathway))
-                                {
-                                    <span> — @selectedAdoption.Pathway</span>
-                                }
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </article>
-        </section>
+        <article class="curriculum-card curriculum-official-card">
+            <h2>@C["OfficialCurriculum"]</h2>
+            <p class="curriculum-help">@C["OfficialCurriculumHelp"]</p>
+            <div class="curriculum-table-wrap">
+                <table class="curriculum-table">
+                    <thead>
+                    <tr>
+                        <th>@C["AcademicYear"]</th>
+                        <th>@C["AcademicProgram"]</th>
+                        <th>@C["Curriculum"]</th>
+                        <th>@C["CurriculumLevel"]</th>
+                        <th>@C["StagePathway"]</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td data-label="@C["AcademicYear"]">@selectedAdoption.AcademicYearName</td>
+                        <td data-label="@C["AcademicProgram"]">@selectedAdoption.AcademicProgramName</td>
+                        <td data-label="@C["Curriculum"]">@selectedAdoption.FrameworkCode</td>
+                        <td data-label="@C["CurriculumLevel"]">@selectedAdoption.Label</td>
+                        <td data-label="@C["StagePathway"]">
+                            @selectedAdoption.Stage
+                            @if (!string.IsNullOrWhiteSpace(selectedAdoption.Pathway))
+                            {
+                                <span> — @selectedAdoption.Pathway</span>
+                            }
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
 
         <section class="curriculum-section-heading curriculum-plan-heading">
             <h2>@C["SchoolTeachingPlan"]</h2>
             <p>@C["SchoolTeachingPlanHelp"]</p>
         </section>
 
-        @if (canManageCurriculum)
+        @if (explicitTopics.Count == 0)
         {
-            <section class="curriculum-create-grid curriculum-operational-create">
-                <article class="curriculum-card">
-                    <h3>@C["CreateSchoolTopic"]</h3>
-                    <form asp-action="CreateCurriculumTopic"
-                          method="post"
-                          class="curriculum-form">
-                        @Html.AntiForgeryToken()
-                        <input type="hidden"
-                               name="curriculumAdoptionId"
-                               value="@selectedAdoption.Id" />
-                        <input type="hidden"
-                               name="academicYearId"
-                               value="@selectedAdoption.AcademicYearId" />
-                        <input type="hidden"
-                               name="academicProgramId"
-                               value="@selectedAdoption.AcademicProgramId" />
-
-                        <label for="topicName">@C["Name"]</label>
-                        <input id="topicName"
-                               name="name"
-                               maxlength="200"
-                               required />
-
-                        <label for="topicOrder">@C["Order"]</label>
-                        <input id="topicOrder"
-                               name="order"
-                               type="number"
-                               min="1"
-                               required />
-
-                        <button type="submit"
-                                class="school-button school-button-primary">
-                            @C["Create"]
-                        </button>
-                    </form>
-                </article>
-
-                <article class="curriculum-card">
-                    <h3>@C["AddOfficialOutcome"]</h3>
-                    <p class="curriculum-help">@C["OfficialOutcomeHelp"]</p>
-
-                    <form asp-action="CreateCurriculumOfficialOutcome"
-                          method="post"
-                          class="curriculum-form"
-                          id="officialOutcomeForm">
-                        @Html.AntiForgeryToken()
-                        <input type="hidden"
-                               name="academicYearId"
-                               value="@selectedAdoption.AcademicYearId" />
-                        <input type="hidden"
-                               name="academicProgramId"
-                               value="@selectedAdoption.AcademicProgramId" />
-                        <input type="hidden"
-                               name="curriculumAdoptionId"
-                               value="@selectedAdoption.Id" />
-
-                        <label for="officialTopicId">@C["SchoolTopic"]</label>
-                        <select id="officialTopicId" name="topicId" required>
-                            <option value="">@C["SelectTopic"]</option>
-                            @foreach (var topic in explicitTopics)
-                            {
-                                <option value="@topic.Id">@topic.Name</option>
-                            }
-                        </select>
-
-                        <label for="officialCurriculumItem">@C["OfficialCurriculumItem"]</label>
-                        <select id="officialCurriculumItem"
-                                name="selectionKey"
-                                required
-                                disabled>
-                            <option value="">@C["SelectOfficialItem"]</option>
-                            @foreach (var topic in explicitTopics)
-                            {
-                                @foreach (var outcome in topic.OfficialOutcomes)
-                                {
-                                    var aiSupported = NativeMathematicsOutcomeProfileResolver.Supports(
-                                        outcome.Code,
-                                        outcome.Description);
-                                    var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
-                                    <option value="@outcome.SelectionKey"
-                                            data-topic-id="@topic.Id"
-                                            data-code="@outcome.Code"
-                                            data-display-code="@displayCode"
-                                            data-description="@outcome.Description"
-                                            data-ai-supported="@aiSupported.ToString().ToLowerInvariant()"
-                                            title="@outcome.SelectionLabel"
-                                            hidden
-                                            disabled>
-                                        @displayCode — @A[aiSupported ? "AiSupported" : "ManualOnly"]
-                                    </option>
-                                }
-                            }
-                        </select>
-
-                        <p id="officialOutcomeEmpty"
-                           class="curriculum-help"
-                           hidden>@C["NoOfficialItemsForTopic"]</p>
-
-                        <label for="officialCode">@C["OfficialOutcomeCode"]</label>
-                        <input id="officialCode" readonly />
-
-                        <label for="officialDescription">@C["OfficialDescription"]</label>
-                        <textarea id="officialDescription"
-                                  maxlength="1000"
-                                  rows="4"
-                                  readonly></textarea>
-
-                        <label for="officialOutcomeOrder">@C["Order"]</label>
-                        <input id="officialOutcomeOrder"
-                               name="order"
-                               type="number"
-                               min="1"
-                               required />
-
-                        <button type="submit"
-                                class="school-button school-button-primary">
-                            @C["AddOfficialOutcome"]
-                        </button>
-                    </form>
-                </article>
-            </section>
+            <div class="curriculum-empty">@C["NoSchoolPlan"]</div>
         }
-
-        <section class="curriculum-list">
-            <div class="curriculum-section-heading">
-                <h3>@C["Topics"]</h3>
-            </div>
-
-            @if (explicitTopics.Count == 0)
-            {
-                <div class="curriculum-empty">@C["NoSchoolPlan"]</div>
-            }
-            else
-            {
+        else
+        {
+            <section class="curriculum-list">
                 @foreach (var topic in explicitTopics)
                 {
                     <article class="curriculum-topic-card">
@@ -319,19 +185,12 @@
                                         <span> · @topic.CurriculumPathway</span>
                                     }
                                 </span>
-                                <h3>@topic.Order. @topic.Name</h3>
+                                <h3>@topic.Name</h3>
                             </div>
-                            @if (canManageCurriculum)
-                            {
-                                <a class="school-button"
-                                   asp-action="EditTopic"
-                                   asp-route-id="@topic.Id">@C["EditTopic"]</a>
-                            }
                         </header>
 
                         <div class="curriculum-outcomes">
                             <h4>@C["LearningOutcomes"]</h4>
-
                             @if (topic.Outcomes.Count == 0)
                             {
                                 <p>@C["NoOutcomes"]</p>
@@ -342,42 +201,30 @@
                                     <table class="curriculum-table">
                                         <thead>
                                         <tr>
-                                            <th>@C["Order"]</th>
-                                            <th>@C["OutcomeCode"]</th>
                                             <th>@C["Description"]</th>
-                                            <th><span class="visually-hidden">@C["Edit"]</span></th>
+                                            <th>@C["OutcomeCode"]</th>
+                                            <th>AI</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @foreach (var outcome in topic.Outcomes)
                                         {
-                                            var aiSupported = NativeMathematicsOutcomeProfileResolver.Supports(
+                                            var aiSupported = Edulytics.Services.Assessments.NativeMathematicsOutcomeProfileResolver.Supports(
                                                 outcome.Code,
                                                 outcome.Description);
                                             var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
+                                            var displayTitle = LearningOutcomePresentation.DisplayTitle(outcome.Code, outcome.Description);
                                             <tr>
-                                                <td data-label="@C["Order"]">@outcome.Order</td>
+                                                <td data-label="@C["Description"]">
+                                                    <strong>@displayTitle</strong>
+                                                </td>
                                                 <td data-label="@C["OutcomeCode"]">
-                                                    <strong class="ed-outcome-code">@displayCode</strong>
+                                                    <span class="ed-outcome-code">@displayCode</span>
+                                                </td>
+                                                <td data-label="AI">
                                                     <span class="ed-ai-capability-badge @(aiSupported ? "is-supported" : "is-manual")">
                                                         @A[aiSupported ? "AiSupported" : "ManualOnly"]
                                                     </span>
-                                                    @if (outcome.IsOfficial)
-                                                    {
-                                                        <span class="curriculum-official-badge">@C["Official"]</span>
-                                                    }
-                                                </td>
-                                                <td data-label="@C["Description"]">
-                                                    <span class="ed-outcome-description"
-                                                          title="@outcome.Description">@outcome.Description</span>
-                                                </td>
-                                                <td>
-                                                    @if (!outcome.IsOfficial && canManageCurriculum)
-                                                    {
-                                                        <a class="school-button"
-                                                           asp-action="EditOutcome"
-                                                           asp-route-id="@outcome.Id">@C["Edit"]</a>
-                                                    }
                                                 </td>
                                             </tr>
                                         }
@@ -388,8 +235,8 @@
                         </div>
                     </article>
                 }
-            }
-        </section>
+            </section>
+        }
     }
 </section>
 
@@ -398,66 +245,31 @@
     const year = document.getElementById('academicYearId');
     const program = document.getElementById('academicProgramId');
     const adoption = document.getElementById('curriculumAdoptionId');
-    if (year && program && adoption) {
-        const filterContext = () => {
-            const yearValue = year.value;
-            for (const option of program.options) {
-                if (!option.value) continue;
-                option.disabled = !!yearValue && option.dataset.year !== yearValue;
-            }
-            if (program.selectedOptions.length && program.selectedOptions[0].disabled) {
-                program.value = '';
-            }
+    if (!year || !program || !adoption) return;
 
-            for (const option of adoption.options) {
-                if (!option.value) continue;
-                option.disabled =
-                    (!!yearValue && option.dataset.year !== yearValue) ||
-                    (!!program.value && option.dataset.program !== program.value);
-            }
-            if (adoption.selectedOptions.length && adoption.selectedOptions[0].disabled) {
-                adoption.value = '';
-            }
-        };
-        year.addEventListener('change', filterContext);
-        program.addEventListener('change', filterContext);
-        filterContext();
-    }
-
-    const topic = document.getElementById('officialTopicId');
-    const item = document.getElementById('officialCurriculumItem');
-    const code = document.getElementById('officialCode');
-    const description = document.getElementById('officialDescription');
-    const empty = document.getElementById('officialOutcomeEmpty');
-    if (!topic || !item || !code || !description || !empty) return;
-
-    const placeholder = item.options[0];
-    const refreshPreview = () => {
-        const selected = item.options[item.selectedIndex];
-        code.value = selected?.dataset.displayCode ?? '';
-        description.value = selected?.dataset.description ?? '';
-    };
-
-    const refreshItems = () => {
-        const topicId = topic.value;
-        let count = 0;
-        item.value = '';
-
-        for (const option of item.options) {
-            if (option === placeholder) continue;
-            const visible = topicId !== '' && option.dataset.topicId === topicId;
-            option.hidden = !visible;
-            option.disabled = !visible;
-            if (visible) count++;
+    const filterContext = () => {
+        const yearValue = year.value;
+        for (const option of program.options) {
+            if (!option.value) continue;
+            option.disabled = !!yearValue && option.dataset.year !== yearValue;
+        }
+        if (program.selectedOptions.length && program.selectedOptions[0].disabled) {
+            program.value = '';
         }
 
-        item.disabled = topicId === '' || count === 0;
-        empty.hidden = topicId === '' || count > 0;
-        refreshPreview();
+        for (const option of adoption.options) {
+            if (!option.value) continue;
+            option.disabled =
+                (!!yearValue && option.dataset.year !== yearValue) ||
+                (!!program.value && option.dataset.program !== program.value);
+        }
+        if (adoption.selectedOptions.length && adoption.selectedOptions[0].disabled) {
+            adoption.value = '';
+        }
     };
 
-    topic.addEventListener('change', refreshItems);
-    item.addEventListener('change', refreshPreview);
-    refreshItems();
+    year.addEventListener('change', filterContext);
+    program.addEventListener('change', filterContext);
+    filterContext();
 })();
 </script>

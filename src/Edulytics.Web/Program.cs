@@ -83,7 +83,7 @@ builder.Services
             options
                 .DefaultRequestCulture =
                 new RequestCulture(
-                    "en");
+                    "pl");
 
             options
                 .SupportedCultures =
