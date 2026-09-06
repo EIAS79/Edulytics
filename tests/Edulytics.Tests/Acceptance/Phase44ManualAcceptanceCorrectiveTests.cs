@@ -75,7 +75,8 @@ public sealed class Phase44ManualAcceptanceCorrectiveTests
         Assert.Contains("x.IsOfficial", materializer, StringComparison.Ordinal);
         Assert.Contains("x.NodeKind == \"Standard\" || x.NodeKind == \"Outcome\"", materializer, StringComparison.Ordinal);
         Assert.Contains("OfficialContentNodeId = node.Id", materializer, StringComparison.Ordinal);
-        Assert.DoesNotContain("synthetic", materializer, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("var code = DisplayCode(node.Code);", materializer, StringComparison.Ordinal);
+        Assert.Contains("Code = code", materializer, StringComparison.Ordinal);
     }
 
     [Fact]
