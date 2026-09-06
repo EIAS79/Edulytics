@@ -43,9 +43,7 @@
 <section class="student-dashboard-grid">
     <article class="student-panel student-learning-panel">
         <div class="student-panel-heading">
-            <div>
-                <h2>@S["MyLearning"]</h2>
-            </div>
+            <div><h2>@S["MyLearning"]</h2></div>
         </div>
 
         @if (Model.Workspace.Learning.Count == 0)
@@ -63,8 +61,8 @@
                        asp-route-classGroupId="@item.ClassGroupId"
                        asp-fragment="selected-curriculum-context">
                         <strong>@item.SubjectName</strong>
-                        <small>@item.FrameworkName</small>
-                        <small>@item.GradeName · @item.ClassName</small>
+                        <small>@item.GradeName</small>
+                        <small>@item.FrameworkName · @item.ClassName</small>
                         <span aria-hidden="true">→</span>
                     </a>
                 }
@@ -72,16 +70,13 @@
         }
     </article>
 
-    <article class="student-panel">
+    <article class="student-panel student-dashboard-list-panel">
         <div class="student-panel-heading">
             <div>
                 <span class="student-eyebrow">@S["ActiveAssessments"]</span>
                 <h2>@Model.Workspace.Assessments.Count</h2>
             </div>
-            <a class="student-secondary-link"
-               asp-action="Assessments">
-                @S["ViewAssessments"]
-            </a>
+            <a class="student-secondary-link" asp-action="Assessments">@S["ViewAssessments"]</a>
         </div>
 
         @if (Model.Workspace.Assessments.Count == 0)
@@ -91,27 +86,24 @@
         else
         {
             <div class="student-compact-list">
-                @foreach (var item in Model.Workspace.Assessments.Take(4))
+                @foreach (var item in Model.Workspace.Assessments)
                 {
                     <div>
                         <strong>@item.Title</strong>
-                        <span>@item.SubjectName · @item.AssessmentDate.ToString("yyyy-MM-dd")</span>
+                        <span>@item.AssessmentDate.ToString("yyyy-MM-dd")</span>
                     </div>
                 }
             </div>
         }
     </article>
 
-    <article class="student-panel">
+    <article class="student-panel student-dashboard-list-panel">
         <div class="student-panel-heading">
             <div>
                 <span class="student-eyebrow">@S["RecentResults"]</span>
                 <h2>@S["MyResults"]</h2>
             </div>
-            <a class="student-secondary-link"
-               asp-action="Results">
-                @S["ViewResults"]
-            </a>
+            <a class="student-secondary-link" asp-action="Results">@S["ViewResults"]</a>
         </div>
 
         @if (Model.RecentResults.Count == 0)

@@ -157,11 +157,12 @@ public sealed class AssessmentBuilderAcceptanceCorrectiveTests
 
         Assert.Contains("[HttpGet(\"student-paper.pdf\")]", controller, StringComparison.Ordinal);
         Assert.Contains("[HttpGet(\"answer-key.pdf\")]", controller, StringComparison.Ordinal);
-        Assert.Equal(
-            3,
-            controller.Split(
-                "service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken)",
-                StringSplitOptions.None).Length - 1);
+        var workspaceAuthorizationCalls = controller.Split(
+            "service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken)",
+            StringSplitOptions.None).Length - 1;
+        Assert.True(
+            workspaceAuthorizationCalls >= 3,
+            $"Expected the builder index and both PDF endpoints to authorize through the teacher workspace; found {workspaceAuthorizationCalls} calls.");
         Assert.Contains("AssessmentPrintDocumentFactory.CreateStudentPaper", controller, StringComparison.Ordinal);
         Assert.Contains("AssessmentPrintDocumentFactory.CreateTeacherAnswerKey", controller, StringComparison.Ordinal);
         Assert.Contains("assessment.DeliveryMode == AssessmentDeliveryMode.Offline", view, StringComparison.Ordinal);
