@@ -125,6 +125,8 @@ public sealed class StudentPrivatePracticeRepository(EdulyticsDbContext db)
             .OrderBy(x => x.SortOrder)
             .ToListAsync(cancellationToken);
 
+        MathematicsOutcomeSemanticHintLoader.Apply(outcomes, lessons, lessonOutcomes);
+
         var masteries = await db.StudentOutcomeMasteries.AsNoTracking()
             .Where(x =>
                 x.SchoolId == student.SchoolId &&
