@@ -142,9 +142,11 @@ public sealed class Phase29ExplicitCurriculumLevelIdentityTests
         Assert.DoesNotContain("asp-action=\"SelectFramework\"", curriculum);
         Assert.DoesNotContain("name=\"gradeLevelId\"", curriculum);
         Assert.DoesNotContain("name=\"subjectId\"", curriculum);
-        Assert.Contains("asp-action=\"CreateCurriculumTopic\"", curriculum);
-        Assert.Contains("asp-action=\"CreateCurriculumOfficialOutcome\"", curriculum);
+        Assert.DoesNotContain("asp-action=\"CreateCurriculumTopic\"", curriculum);
+        Assert.DoesNotContain("asp-action=\"CreateCurriculumOfficialOutcome\"", curriculum);
         Assert.Contains("name=\"curriculumAdoptionId\"", curriculum);
+        Assert.Contains("SchoolTeachingPlan", curriculum);
+        Assert.Contains("LearningOutcomePresentation.DisplayCode(outcome.Code)", curriculum);
     }
 
     private static CurriculumPackContentNode Node(
