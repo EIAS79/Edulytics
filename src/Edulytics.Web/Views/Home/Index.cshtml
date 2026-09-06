@@ -2,12 +2,8 @@
 @using System.Globalization
 @{
     Layout = "_PublicLayout";
-    var isPolish = string.Equals(
-        CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
-        "pl",
-        StringComparison.OrdinalIgnoreCase);
-
-    var contactLabel = isPolish ? "Kontakt" : "Contact us";
+    var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
+    var contactLabel = isPolish ? "Kontakt" : "Contact";
     var loginLabel = isPolish ? "Zaloguj się" : "Log in";
     var demoLabel = isPolish ? "Poproś o demo" : "Request a demo";
 }
@@ -15,270 +11,104 @@
 <div class="ed-home">
     <header class="ed-home-header">
         <div class="ed-home-container ed-home-nav">
-            <a class="ed-home-brand" href="/" aria-label="Edulytics">
-                <partial name="_LocalizedBrand" />
-            </a>
-
+            <a class="ed-home-brand" href="/" aria-label="Edulytics"><partial name="_LocalizedBrand" /></a>
             <nav class="ed-home-links" aria-label="@(isPolish ? "Nawigacja główna" : "Main navigation")">
-                <a href="#platform">@(isPolish ? "Platforma" : "Platform")</a>
-                <a href="#schools">@(isPolish ? "Dla szkół" : "Schools")</a>
-                <a href="#teachers">@(isPolish ? "Dla nauczycieli" : "Teachers")</a>
-                <a href="#students">@(isPolish ? "Dla uczniów" : "Students")</a>
+                <a href="#platform">@(isPolish ? "Produkt" : "Product")</a>
+                <a href="#teachers">@(isPolish ? "Nauczyciele" : "Teachers")</a>
+                <a href="#schools">@(isPolish ? "Szkoły" : "Schools")</a>
+                <a href="#students">@(isPolish ? "Uczniowie" : "Students")</a>
                 <a href="#curricula">@(isPolish ? "Programy" : "Curricula")</a>
             </nav>
-
             <div class="ed-home-actions">
                 <div class="ed-home-lang" aria-label="Language">
-                    <form asp-controller="Home" asp-action="SetCulture" method="post">
-                        @Html.AntiForgeryToken()
-                        <input type="hidden" name="culture" value="pl" />
-                        <input type="hidden" name="returnUrl" value="/" />
-                        <button type="submit" class="@(isPolish ? "is-active" : "")" aria-label="Polski">PL</button>
-                    </form>
-                    <form asp-controller="Home" asp-action="SetCulture" method="post">
-                        @Html.AntiForgeryToken()
-                        <input type="hidden" name="culture" value="en" />
-                        <input type="hidden" name="returnUrl" value="/" />
-                        <button type="submit" class="@(!isPolish ? "is-active" : "")" aria-label="English">EN</button>
-                    </form>
+                    <form asp-controller="Home" asp-action="SetCulture" method="post">@Html.AntiForgeryToken()<input type="hidden" name="culture" value="pl" /><input type="hidden" name="returnUrl" value="/" /><button type="submit" class="@(isPolish ? "is-active" : "")">PL</button></form>
+                    <form asp-controller="Home" asp-action="SetCulture" method="post">@Html.AntiForgeryToken()<input type="hidden" name="culture" value="en" /><input type="hidden" name="returnUrl" value="/" /><button type="submit" class="@(!isPolish ? "is-active" : "")">EN</button></form>
                 </div>
-
-                <details class="ed-home-contact">
-                    <summary>@contactLabel</summary>
-                    <div class="ed-home-contact-popover" aria-label="@contactLabel">
-                        <a href="mailto:@SupportContactOptions.Email">@SupportContactOptions.Email</a>
-                        <a href="@SupportContactOptions.PhoneUri">@SupportContactOptions.PhoneDisplay</a>
-                        <a href="@SupportContactOptions.CompanyWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.CompanyWebsiteDisplay</a>
-                        <a href="@SupportContactOptions.ProductWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.ProductWebsiteDisplay</a>
-                    </div>
-                </details>
-
-                <a class="ed-home-link-btn" asp-controller="Account" asp-action="Login">@loginLabel</a>
-                <a class="ed-home-btn" href="mailto:@SupportContactOptions.Email?subject=Edulytics%20demo">@demoLabel</a>
+                <details class="ed-home-contact"><summary>@contactLabel</summary><div class="ed-home-contact-popover"><a href="mailto:@SupportContactOptions.Email">@SupportContactOptions.Email</a><a href="@SupportContactOptions.PhoneUri">@SupportContactOptions.PhoneDisplay</a><a href="@SupportContactOptions.CompanyWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.CompanyWebsiteDisplay</a><a href="@SupportContactOptions.ProductWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.ProductWebsiteDisplay</a></div></details>
+                <a class="ed-home-login" asp-controller="Account" asp-action="Login">@loginLabel</a>
+                <a class="ed-home-cta" href="mailto:@SupportContactOptions.Email?subject=Edulytics%20demo">@demoLabel</a>
             </div>
         </div>
     </header>
 
-    <section class="ed-home-hero">
-        <div class="ed-home-container ed-home-hero-grid">
-            <div class="ed-home-hero-copy">
-                <span class="ed-home-eyebrow">@(isPolish ? "Matematyka • AI • Mastery" : "Mathematics • AI • Mastery")</span>
-                <h1>
-                    @(isPolish
-                        ? "Od programu nauczania do realnego opanowania matematyki."
-                        : "From curriculum to real mathematics mastery.")
-                </h1>
-                <p>
-                    @(isPolish
-                        ? "Edulytics łączy program nauczania, lekcje, ocenianie, generowanie pytań przez AI, prywatną praktykę ucznia i analizę mastery w jednym spójnym środowisku dla szkół."
-                        : "Edulytics brings curriculum, lessons, assessment, AI question generation, private student practice and mastery analytics into one coherent school platform.")
-                </p>
-                <div class="ed-home-hero-actions">
-                    <a class="ed-home-btn" href="mailto:@SupportContactOptions.Email?subject=Edulytics%20demo">@demoLabel</a>
-                    <a class="ed-home-link-btn" href="#platform">@(isPolish ? "Zobacz platformę" : "Explore the platform")</a>
+    <main>
+        <section class="ed-home-hero">
+            <div class="ed-home-container ed-home-hero-grid">
+                <div class="ed-home-hero-copy">
+                    <div class="ed-home-kicker">@(isPolish ? "MATEMATYKA • AI • MASTERY" : "MATHEMATICS • AI • MASTERY")</div>
+                    <h1>@(isPolish ? "Nauczanie matematyki połączone z ocenianiem i mastery." : "Mathematics teaching, assessment and mastery in one platform.")</h1>
+                    <p>@(isPolish ? "Edulytics łączy program nauczania, gotowe lekcje, generowanie ocen z AI, prywatną praktykę ucznia oraz analizę postępów w jednym środowisku dla szkół." : "Edulytics connects curriculum, ready lesson content, AI-assisted assessment generation, private student practice and mastery analytics in one school platform.")</p>
+                    <div class="ed-home-hero-actions"><a class="ed-home-cta ed-home-cta-large" href="mailto:@SupportContactOptions.Email?subject=Edulytics%20demo">@demoLabel</a><a class="ed-home-secondary ed-home-cta-large" href="#platform">@(isPolish ? "Poznaj platformę" : "Explore the platform")</a></div>
+                    <div class="ed-home-hero-notes"><span>@(isPolish ? "Program jako źródło kontekstu" : "Curriculum-aware by design")</span><span>@(isPolish ? "Kontrola nauczyciela" : "Teacher-controlled workflow")</span><span>@(isPolish ? "Prywatna praktyka ucznia" : "Private student practice")</span></div>
                 </div>
-                <div class="ed-home-trustline">
-                    <span>@(isPolish ? "Dla szkół i zespołów matematycznych" : "Built for schools and mathematics teams")</span>
-                    <span>@(isPolish ? "Nauczyciel + uczeń + nadzór" : "Teacher + student + academic oversight")</span>
-                    <span>@(isPolish ? "Bez zależności od klasycznego banku pytań" : "No conventional question-bank dependency")</span>
-                </div>
-            </div>
-
-            <div class="ed-home-visual" aria-label="Edulytics platform preview">
-                <span class="ed-home-orb one" aria-hidden="true"></span>
-                <span class="ed-home-orb two" aria-hidden="true"></span>
-                <div class="ed-home-product-card">
-                    <div class="ed-home-product-top">
-                        <span class="ed-home-product-title">@(isPolish ? "Przegląd klasy — Matematyka" : "Class overview — Mathematics")</span>
-                        <span class="ed-home-product-pill">@(isPolish ? "Na żywo" : "Live insight")</span>
-                    </div>
-                    <div class="ed-home-metric-grid">
-                        <div class="ed-home-metric"><strong>78%</strong><span>@(isPolish ? "Mastery klasy" : "Class mastery")</span></div>
-                        <div class="ed-home-metric"><strong>12</strong><span>@(isPolish ? "Wyników do obserwacji" : "Outcomes to watch")</span></div>
-                        <div class="ed-home-metric"><strong>AI</strong><span>@(isPolish ? "Praktyka adaptacyjna" : "Adaptive practice")</span></div>
-                    </div>
-                    <div class="ed-home-chart" aria-hidden="true">
-                        <i></i><i></i><i></i><i></i><i></i><i></i>
-                    </div>
-                    <div class="ed-home-question-card">
-                        <small>Generate with Edulytics AI</small>
-                        <strong>@(isPolish ? "Utwórz ocenę na podstawie programu i poziomu klasy" : "Build an assessment from curriculum and class level")</strong>
+                <div class="ed-home-hero-art" aria-label="Edulytics learning journey preview">
+                    <div class="ed-art-orb ed-art-orb-a"></div><div class="ed-art-orb ed-art-orb-b"></div>
+                    <div class="ed-art-board">
+                        <div class="ed-art-board-head"><strong>@(isPolish ? "Matematyka — Stage 7" : "Mathematics — Stage 7")</strong><span>Edulytics</span></div>
+                        <div class="ed-art-path"><div><b>1</b><span>@(isPolish ? "Lekcja" : "Lesson")</span></div><i></i><div><b>2</b><span>@(isPolish ? "Praktyka" : "Practice")</span></div><i></i><div><b>3</b><span>@(isPolish ? "Ocena" : "Assessment")</span></div><i></i><div><b>4</b><span>Mastery</span></div></div>
+                        <div class="ed-art-cards"><article><small>@(isPolish ? "DZIŚ" : "TODAY")</small><strong>@(isPolish ? "Algebraiczne wyrażenia" : "Algebraic expressions")</strong><span>@(isPolish ? "Otwórz lekcję" : "Open lesson")</span></article><article class="is-ai"><small>EDULYTICS AI</small><strong>Generate with Edulytics AI</strong><span>@(isPolish ? "Nauczyciel przegląda i zatwierdza" : "Teacher reviews and approves")</span></article></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="schools" class="ed-home-section">
-        <div class="ed-home-container">
-            <div class="ed-home-section-head">
-                <div class="ed-home-kicker">@(isPolish ? "Jedna platforma, trzy perspektywy" : "One platform, three perspectives")</div>
-                <h2>@(isPolish ? "Każda rola widzi dokładnie to, czego potrzebuje." : "Every role sees exactly what it needs.")</h2>
-            </div>
-
-            <div class="ed-home-audience-grid">
-                <article class="ed-home-audience-card">
-                    <div class="ed-home-card-icon" aria-hidden="true">S</div>
-                    <div>
-                        <h3>@(isPolish ? "Szkoły i nadzór akademicki" : "Schools & academic oversight")</h3>
-                        <p>@(isPolish ? "Struktura programu, klasy, przypisania, monitorowanie realizacji i wgląd w wyniki — bez wchodzenia w codzienną pracę nauczyciela." : "Curriculum structure, classes, assignments, delivery monitoring and results visibility without taking over the teacher's daily workflow.")</p>
-                        <a class="ed-home-card-link" href="#platform">@(isPolish ? "Zobacz możliwości →" : "Explore capabilities →")</a>
-                    </div>
-                </article>
-
-                <article id="teachers" class="ed-home-audience-card">
-                    <div class="ed-home-card-icon" aria-hidden="true">T</div>
-                    <div>
-                        <h3>@(isPolish ? "Nauczyciele" : "Teachers")</h3>
-                        <p>@(isPolish ? "Twórz oceny, generuj pytania z Edulytics AI, zatwierdzaj je przed publikacją i analizuj wyniki w kontekście konkretnych outcome'ów." : "Create assessments, generate questions with Edulytics AI, approve them before publishing and review results against specific learning outcomes.")</p>
-                        <a class="ed-home-card-link" href="#ai">Generate with Edulytics AI →</a>
-                    </div>
-                </article>
-
-                <article id="students" class="ed-home-audience-card">
-                    <div class="ed-home-card-icon" aria-hidden="true">U</div>
-                    <div>
-                        <h3>@(isPolish ? "Uczniowie" : "Students")</h3>
-                        <p>@(isPolish ? "Lekcje uporządkowane według programu, prywatna praktyka AI, testy online, wyniki i jasny obraz tego, co już opanowano i co wymaga dalszej pracy." : "Curriculum-organised lessons, private AI practice, online assessments, results and a clear view of what is mastered and what needs more work.")</p>
-                        <a class="ed-home-card-link" href="#experience">@(isPolish ? "Poznaj doświadczenie ucznia →" : "Explore student experience →")</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="curricula" class="ed-home-section alt">
-        <div class="ed-home-container">
-            <div class="ed-home-section-head">
-                <div class="ed-home-kicker">@(isPolish ? "Program przede wszystkim" : "Curriculum first")</div>
-                <h2>@(isPolish ? "Cztery ścieżki programowe. Jeden spójny model nauki." : "Four curriculum pathways. One coherent learning model.")</h2>
-                <p>@(isPolish ? "Edulytics zachowuje tożsamość programu, poziomu i outcome'ów, a następnie wykorzystuje ten kontekst w lekcjach, ocenianiu, praktyce i analizie mastery." : "Edulytics preserves curriculum, level and outcome identity, then carries that context into lessons, assessment, practice and mastery analytics.")</p>
-            </div>
-
-            <div class="ed-home-curriculum-grid">
-                <article class="ed-home-curriculum-card">
-                    <span class="ed-home-curriculum-code">Cambridge</span>
-                    <h3>Cambridge Mathematics</h3>
-                    <p>@(isPolish ? "Primary, Lower Secondary, IGCSE oraz AS/A Level z zachowaniem właściwego poziomu i pathway." : "Primary, Lower Secondary, IGCSE and AS/A Level with level and pathway identity preserved.")</p>
-                </article>
-                <article class="ed-home-curriculum-card">
-                    <span class="ed-home-curriculum-code">CCSS</span>
-                    <h3>Common Core Mathematics</h3>
-                    <p>@(isPolish ? "Standardy matematyczne uporządkowane według poziomów, domen i outcome'ów." : "Mathematics standards organised by levels, domains and outcomes.")</p>
-                </article>
-                <article class="ed-home-curriculum-card">
-                    <span class="ed-home-curriculum-code">PL</span>
-                    <h3>@(isPolish ? "Polski program" : "Polish curriculum")</h3>
-                    <p>@(isPolish ? "Ścieżka matematyczna przygotowana do pracy w polskim kontekście szkolnym." : "A mathematics pathway prepared for the Polish school context.")</p>
-                </article>
-                <article class="ed-home-curriculum-card">
-                    <span class="ed-home-curriculum-code">UAE</span>
-                    <h3>UAE Mathematics</h3>
-                    <p>@(isPolish ? "Program matematyczny z zachowaniem własnej struktury i poziomów." : "A mathematics curriculum with its own structure and level identity preserved.")</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="ai" class="ed-home-section">
-        <div class="ed-home-container ed-home-split">
-            <div class="ed-home-split-copy">
-                <div class="ed-home-kicker">Edulytics AI</div>
-                <h2>@(isPolish ? "AI osadzone w programie, a nie obok niego." : "AI grounded in the curriculum, not bolted onto it.")</h2>
-                <p>@(isPolish ? "Generator działa na kontekście klasy, programu i outcome'ów. Nauczyciel zachowuje kontrolę: pytanie można przejrzeć, edytować, wygenerować ponownie i zatwierdzić przed publikacją." : "Generation works from class, curriculum and outcome context. The teacher stays in control: review, edit, regenerate and approve before publishing.")</p>
-                <ul>
-                    <li>Generate with Edulytics AI</li>
-                    <li>@(isPolish ? "Do 50 pytań w jednym generowaniu nauczyciela" : "Up to 50 questions in one teacher generation")</li>
-                    <li>@(isPolish ? "Zatwierdzone pytania są blokowane przed przypadkową zmianą" : "Approved questions are protected from accidental change")</li>
-                    <li>@(isPolish ? "Kody programu pozostają referencją, a nie głównym językiem interfejsu" : "Curriculum codes remain references, not the primary UI language")</li>
-                </ul>
-            </div>
-
-            <div class="ed-home-ai-panel" aria-label="Generate with Edulytics AI preview">
-                <div class="ed-home-ai-panel-header">
-                    <strong>Generate with Edulytics AI</strong>
-                    <span class="ed-home-ai-badge">AI supported</span>
-                </div>
-                <div class="ed-home-ai-row"><small>@(isPolish ? "Zakres" : "Scope")</small><strong>@(isPolish ? "Lekcja • Jednostka • Program" : "Lesson • Unit • Curriculum")</strong></div>
-                <div class="ed-home-ai-row"><small>@(isPolish ? "Poziom trudności" : "Difficulty")</small><strong>@(isPolish ? "Dopasowany do klasy" : "Aligned to class level")</strong></div>
-                <div class="ed-home-ai-row"><small>@(isPolish ? "Outcome" : "Outcome")</small><strong>@(isPolish ? "Czytelna nazwa + kod referencyjny" : "Human-readable title + reference code")</strong></div>
-                <div class="ed-home-ai-row"><small>@(isPolish ? "Kontrola nauczyciela" : "Teacher control")</small><strong>@(isPolish ? "Przejrzyj → Edytuj → Zatwierdź → Opublikuj" : "Review → Edit → Approve → Publish")</strong></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="platform" class="ed-home-section soft">
-        <div class="ed-home-container">
-            <div class="ed-home-section-head">
-                <div class="ed-home-kicker">@(isPolish ? "Pełny przepływ" : "End-to-end workflow")</div>
-                <h2>@(isPolish ? "Nie tylko test. Cały cykl uczenia się matematyki." : "Not just a test. The full mathematics learning cycle.")</h2>
-            </div>
-
-            <div class="ed-home-feature-grid">
-                <article class="ed-home-feature-card"><span class="ed-home-feature-num">01</span><h3>@(isPolish ? "Program i lekcje" : "Curriculum & lessons")</h3><p>@(isPolish ? "Oficjalna struktura programu prowadzi ucznia przez poziomy, jednostki, lekcje i outcome'y." : "The curriculum structure guides students through levels, units, lessons and outcomes.")</p></article>
-                <article class="ed-home-feature-card"><span class="ed-home-feature-num">02</span><h3>@(isPolish ? "Oceny online" : "Online assessments")</h3><p>@(isPolish ? "Nauczyciel tworzy, zatwierdza, publikuje, a uczeń rozwiązuje ocenę w tym samym środowisku." : "Teachers create, approve and publish while students complete assessments in the same environment.")</p></article>
-                <article class="ed-home-feature-card"><span class="ed-home-feature-num">03</span><h3>@(isPolish ? "Prywatna praktyka AI" : "Private AI practice")</h3><p>@(isPolish ? "Uczeń ćwiczy prywatnie na poziomie lekcji, jednostki, słabych obszarów lub całego programu bez mieszania praktyki z oficjalną oceną." : "Students practise privately by lesson, unit, weak areas or whole curriculum without mixing practice into official grading.")</p></article>
-                <article class="ed-home-feature-card"><span class="ed-home-feature-num">04</span><h3>Mastery</h3><p>@(isPolish ? "Wyniki są wiązane z konkretnymi outcome'ami, dzięki czemu widać nie tylko wynik testu, ale także obszar wiedzy." : "Results connect to specific outcomes so teams see more than a test score: they see the underlying knowledge area.")</p></article>
-                <article class="ed-home-feature-card"><span class="ed-home-feature-num">05</span><h3>@(isPolish ? "Słabe obszary i następny krok" : "Weak areas & next step")</h3><p>@(isPolish ? "System pomaga wskazać obszary wymagające dalszej praktyki i kieruje ucznia do kolejnych działań." : "The system helps identify areas requiring more practice and directs the student toward the next action.")</p></article>
-                <article class="ed-home-feature-card"><span class="ed-home-feature-num">06</span><h3>@(isPolish ? "Raportowanie i nadzór" : "Reporting & oversight")</h3><p>@(isPolish ? "Nauczyciel, supervisor i administrator otrzymują widoki zgodne z własną odpowiedzialnością." : "Teachers, supervisors and administrators receive views aligned with their responsibilities.")</p></article>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="ed-home-section">
-        <div class="ed-home-container">
-            <div class="ed-home-proof">
-                <div>
-                    <div class="ed-home-kicker" style="color:#9eb8ff">@(isPolish ? "Projektowane dla realnej szkoły" : "Designed for real school workflows")</div>
-                    <h2>@(isPolish ? "Jedno źródło prawdy od programu do wyniku." : "One source of truth from curriculum to result.")</h2>
-                    <p>@(isPolish ? "Klasa, program, poziom, lekcja, outcome, pytanie, odpowiedź i mastery pozostają połączone. Dzięki temu Edulytics może wspierać decyzje nauczyciela bez utraty kontekstu akademickiego." : "Class, curriculum, level, lesson, outcome, question, answer and mastery stay connected. That lets Edulytics support teacher decisions without losing academic context.")</p>
-                </div>
-                <div class="ed-home-proof-list">
-                    <div><strong>@(isPolish ? "Nauczyciel" : "Teacher")</strong><span>@(isPolish ? "Buduje i publikuje oceny" : "Builds and publishes assessments")</span></div>
-                    <div><strong>@(isPolish ? "Uczeń" : "Student")</strong><span>@(isPolish ? "Uczy się, ćwiczy i rozwiązuje" : "Learns, practises and completes")</span></div>
-                    <div><strong>@(isPolish ? "Supervisor" : "Supervisor")</strong><span>@(isPolish ? "Prowadzi operacje akademickie" : "Runs academic operations")</span></div>
-                    <div><strong>@(isPolish ? "Administrator" : "Administrator")</strong><span>@(isPolish ? "Monitoruje i zarządza strukturą" : "Oversees and governs structure")</span></div>
+        <section id="schools" class="ed-home-audience-band">
+            <div class="ed-home-container">
+                <div class="ed-home-center-head"><h2>@(isPolish ? "Dla kogo jest Edulytics?" : "Who is Edulytics for?")</h2><p>@(isPolish ? "Jedna platforma, różne role i czytelne odpowiedzialności." : "One platform with focused experiences for every school role.")</p></div>
+                <div class="ed-home-audience-grid">
+                    <article><div class="ed-home-illus school">🏫</div><h3>@(isPolish ? "Szkoły" : "Schools")</h3><p>@(isPolish ? "Struktura akademicka, programy, klasy i widoczność wyników w jednym miejscu." : "Academic structure, curricula, classes and result visibility in one place.")</p><a href="#platform">@(isPolish ? "Dowiedz się więcej" : "Learn more") →</a></article>
+                    <article id="teachers"><div class="ed-home-illus teacher">✎</div><h3>@(isPolish ? "Nauczyciele" : "Teachers")</h3><p>@(isPolish ? "Lekcje, oceny, AI do generowania pytań i zatwierdzanie przed publikacją." : "Lessons, assessments, AI-assisted question generation and approval before publishing.")</p><a href="#ai">Generate with Edulytics AI →</a></article>
+                    <article id="students"><div class="ed-home-illus student">🎒</div><h3>@(isPolish ? "Uczniowie" : "Students")</h3><p>@(isPolish ? "Lekcje, testy online, wyniki i prywatna praktyka dopasowana do wybranego zakresu." : "Lessons, online assessments, results and private practice for the selected learning scope.")</p><a href="#experience">@(isPolish ? "Zobacz doświadczenie" : "Explore the experience") →</a></article>
+                    <article><div class="ed-home-illus leader">◎</div><h3>@(isPolish ? "Nadzór akademicki" : "Academic leaders")</h3><p>@(isPolish ? "Monitorowanie realizacji programu bez przejmowania codziennej pracy nauczyciela." : "Oversight of curriculum delivery without taking over the teacher's daily workflow.")</p><a href="#principles">@(isPolish ? "Zobacz model" : "See the model") →</a></article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="ed-home-cta">
-        <div class="ed-home-container">
-            <div class="ed-home-cta-box">
-                <h2>@(isPolish ? "Zobacz Edulytics na własnym programie i klasach." : "See Edulytics with your own curriculum and classes.")</h2>
-                <p>@(isPolish ? "Pokażemy przepływ od programu i struktury szkolnej przez Generate with Edulytics AI aż do wyników i mastery ucznia." : "We can walk through the flow from curriculum and school structure through Generate with Edulytics AI to student results and mastery.")</p>
-                <div class="ed-home-cta-actions">
-                    <a class="ed-home-link-btn" href="mailto:@SupportContactOptions.Email?subject=Edulytics%20demo">@demoLabel</a>
-                    <a class="ed-home-btn" asp-controller="Account" asp-action="Login">@loginLabel</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section class="ed-home-value-strip">
+            <div class="ed-home-container ed-home-value-grid"><div><strong>@(isPolish ? "Program" : "Curriculum")</strong><span>@(isPolish ? "spójny kontekst nauki" : "one coherent learning context")</span></div><div><strong>AI</strong><span>@(isPolish ? "generowanie pod kontrolą nauczyciela" : "generation under teacher control")</span></div><div><strong>Mastery</strong><span>@(isPolish ? "widoczność mocnych i słabych obszarów" : "visibility into strengths and weak areas")</span></div><div><strong>@(isPolish ? "Prywatność" : "Privacy")</strong><span>@(isPolish ? "praktyka ucznia oddzielona od oficjalnej oceny" : "student practice separated from official grading")</span></div></div>
+        </section>
 
-    <footer class="ed-home-footer">
-        <div class="ed-home-container ed-home-footer-grid">
-            <div class="ed-home-footer-brand">
-                <partial name="_LocalizedBrand" />
-                <p>@(isPolish ? "Platforma do nauki, oceniania i analizy mastery w matematyce." : "A mathematics learning, assessment and mastery platform.")</p>
-            </div>
-            <div>
-                <h4>@(isPolish ? "Produkt" : "Product")</h4>
-                <div class="ed-home-footer-links">
-                    <a href="#platform">@(isPolish ? "Platforma" : "Platform")</a>
-                    <a href="#ai">Edulytics AI</a>
-                    <a href="#curricula">@(isPolish ? "Programy" : "Curricula")</a>
-                    <a asp-controller="Home" asp-action="ContentSources">@(isPolish ? "Źródła treści" : "Content sources")</a>
+        <section id="curricula" class="ed-home-section ed-home-curricula">
+            <div class="ed-home-container">
+                <div class="ed-home-center-head"><span class="ed-home-kicker">@(isPolish ? "PROGRAM NAUCZANIA" : "CURRICULUM")</span><h2>@(isPolish ? "Od programu do lekcji, oceny i mastery." : "From curriculum to lessons, assessment and mastery.")</h2><p>@(isPolish ? "Edulytics zachowuje tożsamość programu i poziomu, a następnie wykorzystuje ten kontekst w całym przepływie nauki." : "Edulytics preserves curriculum and level identity, then carries that context across the full learning workflow.")</p></div>
+                <div class="ed-home-tabs" aria-label="Curriculum pathways"><span class="is-active">Cambridge</span><span>Common Core</span><span>@(isPolish ? "Polski" : "Polish")</span><span>UAE</span></div>
+                <div class="ed-home-grade-rail"><span>Primary</span><b>Stage 7</b><span>Stage 8</span><span>Stage 9</span><span>IGCSE</span><span>AS/A Level</span></div>
+                <div class="ed-home-lesson-showcase">
+                    <article><div class="ed-home-lesson-visual v1"><span>x + 4 = 9</span></div><h3>@(isPolish ? "Wyrażenia algebraiczne" : "Algebraic expressions")</h3><p>Algebra</p></article>
+                    <article><div class="ed-home-lesson-visual v2"><span>3 : 5</span></div><h3>@(isPolish ? "Stosunek i proporcja" : "Ratio and proportion")</h3><p>Number and Proportional Reasoning</p></article>
+                    <article><div class="ed-home-lesson-visual v3"><span>25%</span></div><h3>@(isPolish ? "Procenty" : "Percentages")</h3><p>Number and Proportional Reasoning</p></article>
+                    <article><div class="ed-home-lesson-visual v4"><span>√81</span></div><h3>@(isPolish ? "Potęgi i pierwiastki" : "Powers and roots")</h3><p>Number and Proportional Reasoning</p></article>
                 </div>
             </div>
-            <div>
-                <h4>@contactLabel</h4>
-                <div class="ed-home-footer-links">
-                    <a href="mailto:@SupportContactOptions.Email">@SupportContactOptions.Email</a>
-                    <a href="@SupportContactOptions.PhoneUri">@SupportContactOptions.PhoneDisplay</a>
-                    <a href="@SupportContactOptions.CompanyWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.CompanyWebsiteDisplay</a>
+        </section>
+
+        <section id="experience" class="ed-home-section ed-home-experience">
+            <div class="ed-home-container">
+                <div class="ed-home-experience-tabs"><span class="is-active">@(isPolish ? "Uczeń" : "Student experience")</span><span>@(isPolish ? "Nauczyciel" : "Teacher experience")</span><span>@(isPolish ? "Nadzór" : "Supervisor experience")</span><span>@(isPolish ? "Administrator" : "Administrator experience")</span></div>
+                <div class="ed-home-experience-grid">
+                    <div class="ed-home-experience-art"><div class="device-card"><span>@(isPolish ? "Moja nauka" : "My learning")</span><strong>@(isPolish ? "Stage 7 · Matematyka" : "Stage 7 · Mathematics")</strong><div class="device-progress"><i></i><i></i><i></i><i></i></div></div><div class="mini-card"><small>AI PRACTICE</small><strong>@(isPolish ? "Prywatna praktyka" : "Private practice")</strong></div></div>
+                    <div class="ed-home-experience-copy"><span class="ed-home-kicker">@(isPolish ? "DOŚWIADCZENIE UCZNIA" : "STUDENT EXPERIENCE")</span><h2>@(isPolish ? "Uczeń widzi naukę, nie wewnętrzne kody systemu." : "Students see learning, not internal system codes.")</h2><p>@(isPolish ? "Czytelne nazwy lekcji, odpowiedni poziom, wyniki, aktywne oceny i prywatna praktyka AI tworzą prostą ścieżkę od nauki do kolejnego kroku." : "Readable lesson names, the right level, results, active assessments and private AI practice create a clear path from learning to the next step.")</p><div class="ed-home-checks"><span>@(isPolish ? "Lekcje uporządkowane według programu" : "Curriculum-organised lessons")</span><span>@(isPolish ? "Oceny online i wyniki" : "Online assessments and results")</span><span>@(isPolish ? "Prywatna praktyka poza oficjalną oceną" : "Private practice outside official grading")</span></div></div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <section id="ai" class="ed-home-section ed-home-ai-section">
+            <div class="ed-home-container ed-home-ai-grid">
+                <div class="ed-home-ai-copy"><span class="ed-home-kicker">EDULYTICS AI</span><h2>@(isPolish ? "Generowanie pytań osadzone w rzeczywistym kontekście klasy." : "Question generation grounded in the real class context.")</h2><p>@(isPolish ? "Nauczyciel wybiera zakres, generuje pytania, przegląda je i zatwierdza. Edulytics zachowuje kontrolę człowieka w oficjalnym przepływie oceniania." : "The teacher selects scope, generates questions, reviews them and approves them. Edulytics keeps human control inside the official assessment workflow.")</p><a class="ed-home-cta ed-home-cta-large" asp-controller="Account" asp-action="Login">Generate with Edulytics AI</a></div>
+                <div class="ed-home-ai-workbench"><div class="ai-top"><strong>Generate with Edulytics AI</strong><span>AI supported</span></div><div class="ai-fields"><div><small>@(isPolish ? "Zakres" : "Scope")</small><b>@(isPolish ? "Lekcja / Jednostka / Program" : "Lesson / Unit / Curriculum")</b></div><div><small>@(isPolish ? "Liczba pytań" : "Questions")</small><b>1–50</b></div><div><small>@(isPolish ? "Poziom" : "Difficulty")</small><b>@(isPolish ? "Poziom klasy" : "At class level")</b></div></div><div class="ai-question"><span>01</span><div><small>Draft</small><strong>@(isPolish ? "Znajdź brakującą wartość: □ + 4 = 9" : "Find the missing value: □ + 4 = 9")</strong></div></div><div class="ai-flow"><span>@(isPolish ? "Przejrzyj" : "Review")</span><i>→</i><span>@(isPolish ? "Edytuj" : "Edit")</span><i>→</i><span>@(isPolish ? "Zatwierdź" : "Approve")</span><i>→</i><span>@(isPolish ? "Opublikuj" : "Publish")</span></div></div>
+            </div>
+        </section>
+
+        <section id="principles" class="ed-home-section ed-home-principles">
+            <div class="ed-home-container"><div class="ed-home-center-head"><h2>@(isPolish ? "Zasady projektowe Edulytics" : "Edulytics learning principles")</h2><p>@(isPolish ? "Platforma jest zbudowana wokół jasnego programu, odpowiedzialności nauczyciela i mierzalnego postępu." : "The platform is designed around curriculum clarity, teacher responsibility and measurable progress.")</p></div><div class="ed-home-principle-grid"><article><div>◎</div><h3>@(isPolish ? "Zgodność z programem" : "Curriculum alignment")</h3></article><article><div>✦</div><h3>@(isPolish ? "Wyjaśnij przed oceną" : "Explain before assess")</h3></article><article><div>↗</div><h3>@(isPolish ? "Postęp mastery" : "Mastery progression")</h3></article><article><div>⌁</div><h3>@(isPolish ? "Ukierunkowana praktyka" : "Targeted practice")</h3></article><article><div>✓</div><h3>@(isPolish ? "Kontrola nauczyciela" : "Teacher control")</h3></article></div></div>
+        </section>
+
+        <section id="platform" class="ed-home-section ed-home-platform">
+            <div class="ed-home-container"><div class="ed-home-center-head"><span class="ed-home-kicker">@(isPolish ? "JEDEN EKOSYSTEM" : "ONE ECOSYSTEM")</span><h2>@(isPolish ? "Cały przepływ matematyki w jednej platformie." : "The full mathematics workflow in one platform.")</h2></div><div class="ed-home-platform-grid"><article><span>01</span><h3>@(isPolish ? "Program i lekcje" : "Curriculum & lessons")</h3><p>@(isPolish ? "Program, poziom i treści lekcji tworzą wspólny kontekst." : "Curriculum, level and lesson content share one context.")</p></article><article><span>02</span><h3>@(isPolish ? "Oceny" : "Assessments")</h3><p>@(isPolish ? "Tworzenie, generowanie, zatwierdzanie i publikacja." : "Create, generate, approve and publish.")</p></article><article><span>03</span><h3>@(isPolish ? "Praktyka ucznia" : "Student practice")</h3><p>@(isPolish ? "Prywatne testy według lekcji, jednostki lub słabych obszarów." : "Private practice by lesson, unit or weak areas.")</p></article><article><span>04</span><h3>Mastery</h3><p>@(isPolish ? "Wyniki, słabe obszary i następny krok." : "Results, weak areas and the next step.")</p></article></div></div>
+        </section>
+
+        <section class="ed-home-final-cta"><div class="ed-home-container"><div><span class="ed-home-kicker">EDULYTICS</span><h2>@(isPolish ? "Zobacz, jak Edulytics może działać w Twojej szkole." : "See how Edulytics can work in your school.")</h2></div><div class="ed-home-final-actions"><a class="ed-home-cta ed-home-cta-large" href="mailto:@SupportContactOptions.Email?subject=Edulytics%20demo">@demoLabel</a><a class="ed-home-secondary ed-home-cta-large" asp-controller="Account" asp-action="Login">@loginLabel</a></div></div></section>
+    </main>
+
+    <footer class="ed-home-footer"><div class="ed-home-container ed-home-footer-grid"><div class="ed-home-footer-brand"><partial name="_LocalizedBrand" /><p>@(isPolish ? "Matematyka, ocenianie, AI i mastery dla szkół." : "Mathematics, assessment, AI and mastery for schools.")</p></div><div><h3>@(isPolish ? "Produkt" : "Product")</h3><a href="#platform">@(isPolish ? "Platforma" : "Platform")</a><a href="#ai">Edulytics AI</a><a href="#curricula">@(isPolish ? "Programy" : "Curricula")</a></div><div><h3>@(isPolish ? "Dla użytkowników" : "For users")</h3><a href="#schools">@(isPolish ? "Szkoły" : "Schools")</a><a href="#teachers">@(isPolish ? "Nauczyciele" : "Teachers")</a><a href="#students">@(isPolish ? "Uczniowie" : "Students")</a></div><div><h3>@(isPolish ? "Zasoby" : "Resources")</h3><a asp-controller="Home" asp-action="ContentSources">@(isPolish ? "Źródła i licencje" : "Content sources & licences")</a><a href="mailto:@SupportContactOptions.Email">@contactLabel</a><a href="@SupportContactOptions.CompanyWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.CompanyWebsiteDisplay</a></div></div><div class="ed-home-container ed-home-footer-bottom"><span>© @DateTime.UtcNow.Year Edulytics</span><span>@SupportContactOptions.Email · @SupportContactOptions.PhoneDisplay</span></div></footer>
 </div>
