@@ -55,15 +55,15 @@ else
     {
         <section class="student-card">
             <h2>@S["GeneratePrivatePractice"]</h2>
-            <form asp-action="Generate" method="post" class="assessment-form">
+            <form asp-action="Generate" method="post" class="assessment-form" id="student-private-practice-form">
                 @Html.AntiForgeryToken()
                 <input type="hidden" name="curriculumAdoptionId" value="@selected.Value" />
                 <label>@S["PracticeScope"]</label>
                 <select id="practice-scope" name="scope">
-                    <option value="@StudentPrivatePracticeScope.WeakAreas">@S["PracticeWeakAreas"]</option>
-                    <option value="@StudentPrivatePracticeScope.Lesson">@S["PracticeLesson"]</option>
-                    <option value="@StudentPrivatePracticeScope.Unit">@S["PracticeUnit"]</option>
-                    <option value="@StudentPrivatePracticeScope.WholeCurriculum">@S["PracticeWholeCurriculum"]</option>
+                    <option value="@StudentPrivatePracticeScope.WeakAreas" data-question-limit="15">@S["PracticeWeakAreas"]</option>
+                    <option value="@StudentPrivatePracticeScope.Lesson" data-question-limit="10">@S["PracticeLesson"]</option>
+                    <option value="@StudentPrivatePracticeScope.Unit" data-question-limit="15">@S["PracticeUnit"]</option>
+                    <option value="@StudentPrivatePracticeScope.WholeCurriculum" data-question-limit="30">@S["PracticeWholeCurriculum"]</option>
                 </select>
                 <label>@S["Lesson"]</label>
                 <select id="practice-lesson" name="lessonId">
@@ -90,8 +90,9 @@ else
                     <option value="@StudentPrivatePracticeDifficulty.Stretch">@S["AssessmentDifficultyStretch"]</option>
                     <option value="@StudentPrivatePracticeDifficulty.Challenge">@S["AssessmentDifficultyChallenge"]</option>
                 </select>
-                <label>@S["PracticeQuestionCount"]</label>
-                <input type="number" name="questionCount" min="1" max="20" value="10" required />
+                <label for="practice-question-count">@S["PracticeQuestionCount"]</label>
+                <input id="practice-question-count" type="number" name="questionCount" min="1" max="15" value="10" required inputmode="numeric" />
+                <small id="practice-question-limit" class="assessment-info" aria-live="polite"></small>
                 <button class="school-button school-button-primary" type="submit">@S["GeneratePrivatePractice"]</button>
             </form>
         </section>
@@ -123,4 +124,28 @@ else
 
 @section Scripts {
     <script src="~/js/student-practice-learning-link.js" asp-append-version="true"></script>
+    <script>
+        (() => {
+            const scope = document.getElementById('practice-scope');
+            const count = document.getElementById('practice-question-count');
+            const help = document.getElementById('practice-question-limit');
+            if (!scope || !count) return;
+
+            const applyLimit = () => {
+                const option = scope.options[scope.selectedIndex];
+                const limit = Number(option?.dataset.questionLimit || 10);
+                count.max = String(limit);
+                const current = Number(count.value || 1);
+                if (current > limit) count.value = String(limit);
+                if (help) help.textContent = `Maximum ${limit} questions for this scope.`;
+            };
+
+            scope.addEventListener('change', applyLimit);
+            count.addEventListener('input', () => {
+                const limit = Number(count.max || 1);
+                if (Number(count.value) > limit) count.value = String(limit);
+            });
+            applyLimit();
+        })();
+    </script>
 }
