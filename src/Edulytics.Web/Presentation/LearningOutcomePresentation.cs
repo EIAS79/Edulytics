@@ -89,10 +89,10 @@ public static class LearningOutcomePresentation
         var twmMatch = TwmCodePattern.Match(displayCode);
         if (twmMatch.Success)
         {
-            var item = twmMatch.Groups["item"].Value;
-            return item.Length == 0
+            var twmItem = twmMatch.Groups["item"].Value;
+            return twmItem.Length == 0
                 ? "Thinking and Working Mathematically"
-                : $"Thinking and Working Mathematically · {item}";
+                : $"Thinking and Working Mathematically · {twmItem}";
         }
 
         var match = ReferenceCodePattern.Match(displayCode);
