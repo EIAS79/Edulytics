@@ -167,7 +167,7 @@ public sealed class AssessmentBuilderService(
         var context = resolved.Context!;
         if (context.CurriculumAdoption is null || string.IsNullOrWhiteSpace(context.CurriculumAdoption.CurriculumLevelKey))
             return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
-        if (request.QuestionCount is < 1 or > 100 ||
+        if (request.QuestionCount is < 1 or > 50 ||
             request.MaxScorePerQuestion < 0m ||
             (request.MaxScorePerQuestion > 0m && !ValidScore(request.MaxScorePerQuestion)))
             return Failure(AssessmentErrorCode.InvalidQuestionScore);
