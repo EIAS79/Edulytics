@@ -1,3 +1,4 @@
+@using System.Globalization
 @using Edulytics.Core.Assessments
 @using Edulytics.Core.Enums
 @using Edulytics.Services.Assessments
@@ -15,6 +16,9 @@
     var hasAiSupportedOutcomes = aiSupportedOutcomeIds.Count > 0;
     var classItem = Model.Details.ClassGroups.FirstOrDefault(x => x.Id == assessment.ClassGroupId);
     var subjectItem = Model.Details.Subjects.FirstOrDefault(x => x.Id == assessment.SubjectId);
+    var draftQuestionCount = Model.Questions.Count(x => x.Status == AssessmentBuilderQuestionStatus.Draft);
+    var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
+    var approveAllLabel = isPolish ? "Zatwierdź wszystkie pytania robocze" : "Approve all draft questions";
 }
 <link rel="stylesheet" href="~/css/assessment-builder.css" asp-append-version="true" />
 
@@ -30,32 +34,17 @@
     </header>
 
     <section class="ed-builder-summary" aria-label="@A["Assessment"]">
-        <div class="ed-builder-summary-item">
-            <span>@A["Class"]</span>
-            <strong>@(classItem?.Name ?? "—")</strong>
-        </div>
-        <div class="ed-builder-summary-item">
-            <span>@A["Subject"]</span>
-            <strong>@(subjectItem?.Name ?? "—")</strong>
-        </div>
-        <div class="ed-builder-summary-item">
-            <span>@A["Questions"]</span>
-            <strong>@Model.Questions.Count</strong>
-        </div>
-        <div class="ed-builder-summary-item">
-            <span>@A["CurrentMarks"]</span>
-            <strong>@Model.CurrentMarks.ToString("0.##") / @assessment.MaxScore.ToString("0.##")</strong>
-        </div>
+        <div class="ed-builder-summary-item"><span>@A["Class"]</span><strong>@(classItem?.Name ?? "—")</strong></div>
+        <div class="ed-builder-summary-item"><span>@A["Subject"]</span><strong>@(subjectItem?.Name ?? "—")</strong></div>
+        <div class="ed-builder-summary-item"><span>@A["Questions"]</span><strong>@Model.Questions.Count</strong></div>
+        <div class="ed-builder-summary-item"><span>@A["CurrentMarks"]</span><strong>@Model.CurrentMarks.ToString("0.##") / @assessment.MaxScore.ToString("0.##")</strong></div>
         <div class="ed-builder-summary-item">
             <span>@A["CurrentDelivery"]</span>
             <strong class="ed-delivery-badge @(assessment.DeliveryMode == AssessmentDeliveryMode.Online ? "is-online" : "is-offline")">
                 @A[assessment.DeliveryMode == AssessmentDeliveryMode.Online ? "DeliveryOnlineBadge" : "DeliveryOfflineBadge"]
             </strong>
         </div>
-        <div class="ed-builder-summary-item">
-            <span>@A["Status"]</span>
-            <strong>@A[$"BuilderStatus{assessment.Status}"]</strong>
-        </div>
+        <div class="ed-builder-summary-item"><span>@A["Status"]</span><strong>@A[$"BuilderStatus{assessment.Status}"]</strong></div>
     </section>
 
     @if (TempData["Success"] is string success)
@@ -193,14 +182,8 @@
                 <textarea name="solution" maxlength="4000" rows="3"></textarea>
 
                 <div class="ed-builder-three-column-fields">
-                    <div>
-                        <label>@A["QuestionMaxScore"]</label>
-                        <input name="maxScore" type="number" min="1" max="10000" step="1" required />
-                    </div>
-                    <div>
-                        <label>@A["Order"]</label>
-                        <input name="order" type="number" min="1" value="@(Model.Questions.Count + 1)" required />
-                    </div>
+                    <div><label>@A["QuestionMaxScore"]</label><input name="maxScore" type="number" min="1" max="10000" step="1" required /></div>
+                    <div><label>@A["Order"]</label><input name="order" type="number" min="1" value="@(Model.Questions.Count + 1)" required /></div>
                     <div>
                         <label>@A["Difficulty"]</label>
                         <select name="difficulty">
@@ -240,8 +223,18 @@
 
     <section class="assessment-question-list ed-builder-question-list">
         <div class="ed-builder-section-heading">
-            <h2>@A["Questions"]</h2>
-            <span>@Model.Questions.Count</span>
+            <div>
+                <h2>@A["Questions"]</h2>
+                <span>@Model.Questions.Count</span>
+            </div>
+            @if (assessment.Status == AssessmentStatus.Draft && draftQuestionCount > 0)
+            {
+                <form asp-action="ApproveAll" asp-route-assessmentId="@assessment.Id" method="post" class="ed-builder-approve-all-form">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="rowVersion" value="@rowVersion" />
+                    <button class="school-button school-button-primary" type="submit">@approveAllLabel (@draftQuestionCount)</button>
+                </form>
+            }
         </div>
         @if (Model.Questions.Count == 0)
         {
@@ -306,14 +299,8 @@
                                 <label>@A["Solution"]</label>
                                 <textarea name="solution" maxlength="4000" rows="3">@question.Solution</textarea>
                                 <div class="ed-builder-three-column-fields">
-                                    <div>
-                                        <label>@A["QuestionMaxScore"]</label>
-                                        <input name="maxScore" type="number" min="1" max="10000" step="1" value="@question.MaxScore" required />
-                                    </div>
-                                    <div>
-                                        <label>@A["Order"]</label>
-                                        <input name="order" type="number" min="1" value="@question.Order" required />
-                                    </div>
+                                    <div><label>@A["QuestionMaxScore"]</label><input name="maxScore" type="number" min="1" max="10000" step="1" value="@question.MaxScore" required /></div>
+                                    <div><label>@A["Order"]</label><input name="order" type="number" min="1" value="@question.Order" required /></div>
                                     <div>
                                         <label>@A["Difficulty"]</label>
                                         <select name="difficulty">
@@ -405,9 +392,7 @@
             document.querySelectorAll('[data-edit-cancel]').forEach(button => {
                 button.addEventListener('click', () => {
                     const details = button.closest('[data-question-edit]');
-                    window.setTimeout(() => {
-                        if (details) details.open = false;
-                    }, 0);
+                    window.setTimeout(() => { if (details) details.open = false; }, 0);
                 });
             });
 
