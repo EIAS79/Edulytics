@@ -1,3 +1,4 @@
+@using System.Text.RegularExpressions
 @using Edulytics.Core.Enums
 @using Edulytics.Services.Practice
 @model PracticeAttemptDetails
@@ -6,6 +7,37 @@
     Layout = "_StudentLayout";
     ViewData["Title"] = S["PrivatePracticeAttemptTitle"].Value;
 }
+<style>
+    .practice-question-content { min-width: 0; }
+    .practice-choice-list { display: grid; gap: 10px; margin: 12px 0 14px; }
+    .practice-choice {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 14px;
+        border: 1px solid #d8e1ee;
+        border-radius: 12px;
+        background: #fff;
+        cursor: pointer;
+        transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .practice-choice:hover { border-color: #8eaef6; background: #f8faff; }
+    .practice-choice:has(input:checked) { border-color: #3568dc; box-shadow: 0 0 0 2px rgba(53,104,220,.12); background: #f5f8ff; }
+    .practice-choice input { width: 18px; height: 18px; margin: 0; flex: 0 0 18px; }
+    .practice-choice-letter {
+        display: inline-grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        background: #eef3ff;
+        color: #244da8;
+        font-weight: 700;
+        flex: 0 0 30px;
+    }
+    .practice-choice-text { font-weight: 600; line-height: 1.35; }
+    .practice-answer-actions { display: grid; gap: 10px; }
+</style>
 <header class="student-page-header">
     <span class="student-eyebrow">@S["PrivatePractice"]</span>
     <h1>@S["PrivatePracticeAttemptTitle"]</h1>
@@ -35,10 +67,35 @@
 <div class="student-card-list">
 @foreach (var question in Model.Questions.OrderBy(x => x.Order))
 {
+    var optionMatches = Regex.Matches(
+        question.Prompt ?? string.Empty,
+        @"(?<![A-Za-z0-9])([A-D])\)\s*",
+        RegexOptions.CultureInvariant);
+    var isMultipleChoice = optionMatches.Count >= 2 && optionMatches[0].Index > 0;
+    var stem = isMultipleChoice
+        ? question.Prompt[..optionMatches[0].Index].Trim()
+        : question.Prompt;
+    var choices = new List<(string Label, string Value)>();
+    if (isMultipleChoice)
+    {
+        for (var choiceIndex = 0; choiceIndex < optionMatches.Count; choiceIndex++)
+        {
+            var match = optionMatches[choiceIndex];
+            var start = match.Index + match.Length;
+            var end = choiceIndex + 1 < optionMatches.Count
+                ? optionMatches[choiceIndex + 1].Index
+                : question.Prompt.Length;
+            var value = question.Prompt[start..end].Trim();
+            if (value.Length > 0)
+                choices.Add((match.Groups[1].Value, value));
+        }
+        isMultipleChoice = choices.Count >= 2;
+    }
+
     <article class="student-assessment-card">
-        <div>
+        <div class="practice-question-content">
             <span class="student-subject-code">@S["Question"] @question.Order</span>
-            <h2>@question.Prompt</h2>
+            <h2>@stem</h2>
             <p>@S["AssessmentDifficulty"]: @question.Difficulty</p>
         </div>
         @if (question.Answered)
@@ -53,11 +110,27 @@
         }
         else if (Model.Status == PracticeAttemptStatus.InProgress)
         {
-            <form asp-action="Answer" asp-route-id="@Model.AttemptId" method="post" class="assessment-form">
+            <form asp-action="Answer" asp-route-id="@Model.AttemptId" method="post" class="assessment-form practice-answer-actions">
                 @Html.AntiForgeryToken()
                 <input type="hidden" name="attemptItemId" value="@question.AttemptItemId" />
-                <label>@S["YourAnswer"]</label>
-                <input name="answer" maxlength="2000" required autocomplete="off" />
+                @if (isMultipleChoice)
+                {
+                    <div class="practice-choice-list" role="radiogroup" aria-label="@S["YourAnswer"]">
+                        @foreach (var choice in choices)
+                        {
+                            <label class="practice-choice">
+                                <input type="radio" name="answer" value="@choice.Value" required />
+                                <span class="practice-choice-letter">@choice.Label</span>
+                                <span class="practice-choice-text">@choice.Value</span>
+                            </label>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <label>@S["YourAnswer"]</label>
+                    <input name="answer" maxlength="2000" required autocomplete="off" />
+                }
                 <button class="school-button school-button-primary" type="submit">@S["PracticeCheckAnswer"]</button>
             </form>
         }
