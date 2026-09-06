@@ -9,7 +9,6 @@ public sealed class NativeMathematicsOutcomeProfileResolverTests
     [Theory]
     [InlineData("MATH-UNIT-RATE", "Use a unit rate to find the total quantity", MathematicsGeneratorFamily.UnitRateWordProblem)]
     [InlineData("MATH-FRACTION-OF", "Find a fraction of a quantity", MathematicsGeneratorFamily.FractionOfQuantity)]
-    [InlineData("MATH-ONE-STEP", "Solve a one-step equation", MathematicsGeneratorFamily.OneStepEquation)]
     [InlineData("MATH-PERCENT", "Calculate a percentage of a quantity", MathematicsGeneratorFamily.PercentageOfQuantity)]
     [InlineData("CCSS:4.NBT.B.4", "Fluently add and subtract multi-digit whole numbers", MathematicsGeneratorFamily.IntegerComputation)]
     public void Resolve_MapsClearlySupportedOutcomeToTrustedFamily(
@@ -23,6 +22,19 @@ public sealed class NativeMathematicsOutcomeProfileResolverTests
 
         Assert.NotNull(profile);
         Assert.Contains(expected, profile!.AllowedFamilies);
+    }
+
+    [Fact]
+    public void Resolve_FailsClosedForOneStepEquationUntilNativeFamilyIsCorrected()
+    {
+        var outcome = new LearningOutcome
+        {
+            Id = Guid.NewGuid(),
+            Code = "MATH-ONE-STEP",
+            Description = "Solve a one-step equation"
+        };
+
+        Assert.Null(NativeMathematicsOutcomeProfileResolver.Resolve(outcome));
     }
 
     [Fact]
