@@ -39,7 +39,9 @@ public sealed class CanonicalMathematicsCapabilityTests
     [Theory]
     [InlineData("Add whole numbers", CanonicalMathematicsSkill.WholeNumberAddition)]
     [InlineData("Subtract whole numbers", CanonicalMathematicsSkill.WholeNumberSubtraction)]
-    public void ExactAddSubtractOperation_HasReviewedNativeCoverage(
+    [InlineData("Multiply whole numbers", CanonicalMathematicsSkill.WholeNumberMultiplication)]
+    [InlineData("Divide whole numbers", CanonicalMathematicsSkill.WholeNumberDivision)]
+    public void ExactWholeNumberOperation_HasReviewedNativeCoverage(
         string description,
         CanonicalMathematicsSkill expectedSkill)
     {
@@ -54,33 +56,20 @@ public sealed class CanonicalMathematicsCapabilityTests
         Assert.True(NativeMathematicsOutcomeProfileResolver.Supports(null, description));
     }
 
-    [Theory]
-    [InlineData("Multiply whole numbers", CanonicalMathematicsSkill.WholeNumberMultiplication)]
-    [InlineData("Divide whole numbers", CanonicalMathematicsSkill.WholeNumberDivision)]
-    public void UnsupportedWholeNumberOperation_FailsClosed(
-        string description,
-        CanonicalMathematicsSkill expectedSkill)
-    {
-        var skills = CanonicalMathematicsSkillMapper.Resolve(null, description);
-        var provider = new NativeMathematicsGenerationCapabilityProvider();
-
-        Assert.Contains(expectedSkill, skills);
-        Assert.False(provider.Supports(expectedSkill));
-        Assert.Empty(provider.ResolveFamilies(skills));
-        Assert.False(NativeMathematicsOutcomeProfileResolver.Supports(null, description));
-    }
-
     [Fact]
-    public void MixedSupportedAndUnsupportedOperations_DoNotReceivePartialAiCoverage()
+    public void MixedReviewedWholeNumberOperations_ResolveToOneVerifiedFamily()
     {
         const string description = "Add, subtract, multiply and divide whole numbers.";
         var skills = CanonicalMathematicsSkillMapper.Resolve(null, description);
         var provider = new NativeMathematicsGenerationCapabilityProvider();
 
+        Assert.Contains(CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction, skills);
         Assert.Contains(CanonicalMathematicsSkill.WholeNumberMultiplication, skills);
         Assert.Contains(CanonicalMathematicsSkill.WholeNumberDivision, skills);
-        Assert.Empty(provider.ResolveFamilies(skills));
-        Assert.False(NativeMathematicsOutcomeProfileResolver.Supports(null, description));
+        Assert.Equal(
+            MathematicsGeneratorFamily.IntegerComputation,
+            Assert.Single(provider.ResolveFamilies(skills)));
+        Assert.True(NativeMathematicsOutcomeProfileResolver.Supports(null, description));
     }
 
     [Fact]
@@ -130,7 +119,7 @@ public sealed class CanonicalMathematicsCapabilityTests
     }
 
     [Fact]
-    public void NativeProvider_AdvertisesOnlyReviewedCanonicalCapabilities()
+    public void NativeProvider_AdvertisesReviewedCanonicalCapabilities()
     {
         IMathematicsGenerationCapabilityProvider provider =
             new NativeMathematicsGenerationCapabilityProvider();
@@ -139,8 +128,8 @@ public sealed class CanonicalMathematicsCapabilityTests
         Assert.True(provider.Supports(CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction));
         Assert.True(provider.Supports(CanonicalMathematicsSkill.WholeNumberAddition));
         Assert.True(provider.Supports(CanonicalMathematicsSkill.WholeNumberSubtraction));
-        Assert.False(provider.Supports(CanonicalMathematicsSkill.WholeNumberMultiplication));
-        Assert.False(provider.Supports(CanonicalMathematicsSkill.WholeNumberDivision));
+        Assert.True(provider.Supports(CanonicalMathematicsSkill.WholeNumberMultiplication));
+        Assert.True(provider.Supports(CanonicalMathematicsSkill.WholeNumberDivision));
         Assert.Equal(
             MathematicsGeneratorFamily.IntegerComputation,
             Assert.Single(provider.ResolveFamilies(
