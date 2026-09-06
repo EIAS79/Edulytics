@@ -103,21 +103,53 @@ public sealed class CanonicalMathematicsCapabilityTests
     [Theory]
     [InlineData(
         "CCSS:K.OA.A.5",
-        "Fluently add and subtract within 5.",
-        CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction)]
+        "Fluently add and subtract within 5.")]
     [InlineData(
-        "CCSS:3.OA.C.7",
-        "Fluently multiply and divide within 100.",
-        CanonicalMathematicsSkill.WholeNumberMultiplication)]
-    public void ExplicitFluencyOutcomes_KeepReviewedIntegerCoverage(
+        "CCSS:2.NBT.B.5",
+        "Fluently add and subtract within 100 using strategies based on place value, properties of operations, and/or the relationship between addition and subtraction.")]
+    [InlineData(
+        "CCSS:2.OA.B.2",
+        "Fluently add and subtract within 20 using mental strategies.")]
+    [InlineData(
+        "CCSS:3.NBT.A.2",
+        "Fluently add and subtract within 1000 using strategies and algorithms based on place value, properties of operations, and/or the relationship between addition and subtraction.")]
+    public void ReviewedAddSubtractFluencyOutcomes_KeepIntegerCoverage(
         string code,
-        string description,
-        CanonicalMathematicsSkill expectedSkill)
+        string description)
     {
         var skills = CanonicalMathematicsSkillMapper.Resolve(code, description);
 
-        Assert.Contains(expectedSkill, skills);
+        Assert.Contains(CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction, skills);
         Assert.True(NativeMathematicsOutcomeProfileResolver.Supports(code, description));
+    }
+
+    [Theory]
+    [InlineData(
+        "CCSS:3.OA.C.7",
+        "Fluently multiply and divide within 100, using strategies such as the relationship between multiplication and division.")]
+    [InlineData(
+        "CCSS:4.NBT.B.4",
+        "Fluently add and subtract multi-digit whole numbers using the standard algorithm.")]
+    [InlineData(
+        "CCSS:4.NBT.B.5",
+        "Multiply a whole number of up to four digits by a one-digit whole number, and multiply two two-digit numbers.")]
+    [InlineData(
+        "CCSS:5.NBT.B.5",
+        "Fluently multiply multi-digit whole numbers using the standard algorithm.")]
+    [InlineData(
+        "CCSS:5.NBT.B.6",
+        "Find whole-number quotients of whole numbers with up to four-digit dividends and two-digit divisors.")]
+    [InlineData(
+        "CCSS:6.NS.B.2",
+        "Fluently divide multi-digit numbers using the standard algorithm.")]
+    public void OperandAndAlgorithmShapeStandards_RemainClosedUntilProfilesCarryThoseConstraints(
+        string code,
+        string description)
+    {
+        var skills = CanonicalMathematicsSkillMapper.Resolve(code, description);
+
+        Assert.Empty(skills);
+        Assert.False(NativeMathematicsOutcomeProfileResolver.Supports(code, description));
     }
 
     [Theory]
