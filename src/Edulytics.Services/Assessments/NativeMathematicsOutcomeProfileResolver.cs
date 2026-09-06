@@ -7,8 +7,9 @@ namespace Edulytics.Services.Assessments;
 /// <summary>
 /// Compatibility facade used by assessment, curriculum and private-practice
 /// flows. Capability is resolved through the canonical AI capability matrix,
-/// never by teaching the generator about curriculum-specific codes. Any
-/// partially unsupported outcome fails closed.
+/// never by teaching a generator about curriculum-specific codes. Native
+/// verified families and the local curriculum-contextual assisted family share
+/// this profile contract while retaining their distinct capability level.
 /// </summary>
 public static class NativeMathematicsOutcomeProfileResolver
 {
@@ -23,25 +24,39 @@ public static class NativeMathematicsOutcomeProfileResolver
             outcome.Code,
             semanticContext);
 
-        return capability.CanGenerateVerified
-            ? new MathematicsOutcomeGenerationProfile(
-                outcome.Id,
-                outcome.Code,
-                capability.VerifiedFamilies)
-            {
-                CanonicalSkills = capability.CanonicalSkills,
-                IntegerComputationMaximum = ResolveIntegerComputationMaximum(
+        if (!capability.CanGenerate)
+            return null;
+
+        return new MathematicsOutcomeGenerationProfile(
+            outcome.Id,
+            outcome.Code,
+            capability.GenerationFamilies)
+        {
+            CanonicalSkills = capability.CanonicalSkills,
+            IntegerComputationMaximum = capability.CanGenerateVerified
+                ? ResolveIntegerComputationMaximum(
                     semanticContext,
                     capability.CanonicalSkills)
-            }
-            : null;
+                : null,
+            GenerationContext = semanticContext,
+            IsContextualAssisted = capability.CanGenerateAssisted
+        };
     }
 
     public static bool Supports(LearningOutcome outcome) =>
         Resolve(outcome) is not null;
 
     public static bool Supports(string? code, string? description) =>
-        MathematicsAiCapabilityMatrix.Resolve(code, description).CanGenerateVerified;
+        MathematicsAiCapabilityMatrix.Resolve(code, description).CanGenerate;
+
+    public static MathematicsAiCapability ResolveCapability(LearningOutcome outcome)
+    {
+        ArgumentNullException.ThrowIfNull(outcome);
+        var semanticContext = string.IsNullOrWhiteSpace(outcome.GenerationSemanticHint)
+            ? outcome.Description
+            : $"{outcome.Description} {outcome.GenerationSemanticHint}";
+        return MathematicsAiCapabilityMatrix.Resolve(outcome.Code, semanticContext);
+    }
 
     private static int? ResolveIntegerComputationMaximum(
         string semanticContext,
