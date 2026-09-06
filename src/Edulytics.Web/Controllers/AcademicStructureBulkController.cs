@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Security.Claims;
 using Edulytics.Core.Constants;
+using Edulytics.Services.Academics;
 using Edulytics.Services.Curriculum;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,13 +15,16 @@ namespace Edulytics.Web.Controllers;
 public sealed class AcademicStructureBulkController : Controller
 {
     private readonly IExplicitCurriculumLevelService _levels;
+    private readonly IStudentPlacementService _placements;
     private readonly IStringLocalizer<AcademicResource> _text;
 
     public AcademicStructureBulkController(
         IExplicitCurriculumLevelService levels,
+        IStudentPlacementService placements,
         IStringLocalizer<AcademicResource> text)
     {
         _levels = levels;
+        _placements = placements;
         _text = text;
     }
 
@@ -32,12 +36,8 @@ public sealed class AcademicStructureBulkController : Controller
         string[]? curriculumLevelKeys,
         CancellationToken cancellationToken)
     {
-        if (!Guid.TryParse(
-                User.FindFirstValue(ClaimTypes.NameIdentifier),
-                out var actorUserId))
-        {
+        if (!TryGetActorId(out var actorUserId))
             return Forbid();
-        }
 
         var keys = (curriculumLevelKeys ?? [])
             .Select(x => x?.Trim() ?? string.Empty)
@@ -109,8 +109,7 @@ public sealed class AcademicStructureBulkController : Controller
             added++;
         }
 
-        var polish = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName
-            .Equals("pl", StringComparison.OrdinalIgnoreCase);
+        var polish = IsPolish();
         TempData["AcademicSuccess"] = added == 0
             ? (polish
                 ? "Wybrane poziomy programu nauczania są już dodane."
@@ -122,6 +121,68 @@ public sealed class AcademicStructureBulkController : Controller
         return BackToCurriculumLevels();
     }
 
+    [HttpPost("student-placements/bulk")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> PlaceStudents(
+        Guid classGroupId,
+        Guid[]? studentProfileIds,
+        CancellationToken cancellationToken)
+    {
+        if (!TryGetActorId(out var actorUserId))
+            return Forbid();
+
+        var ids = (studentProfileIds ?? [])
+            .Where(x => x != Guid.Empty)
+            .Distinct()
+            .ToArray();
+
+        if (classGroupId == Guid.Empty || ids.Length == 0)
+        {
+            TempData["AcademicError"] = IsPolish()
+                ? "Wybierz klasę i co najmniej jednego ucznia."
+                : "Select a class and at least one student.";
+            return BackToStudents();
+        }
+
+        var result = await _placements.PlaceStudentsAsync(
+            actorUserId,
+            classGroupId,
+            ids,
+            cancellationToken);
+
+        var polish = IsPolish();
+        var summary = polish
+            ? $"Dodano: {result.Enrolled}. Przeniesiono: {result.Moved}. Bez zmian: {result.Unchanged}."
+            : $"Enrolled: {result.Enrolled}. Moved: {result.Moved}. Unchanged: {result.Unchanged}.";
+
+        if (result.Failures.Count == 0)
+        {
+            TempData["AcademicSuccess"] = summary;
+            return BackToStudents();
+        }
+
+        var crossGrade = result.Failures.Count(x =>
+            string.Equals(x.Code, "CrossGradeMoveNotAllowed", StringComparison.Ordinal));
+        var otherFailures = result.Failures.Count - crossGrade;
+
+        var details = polish
+            ? $" Nie przeniesiono między poziomami: {crossGrade}. Inne pominięte: {otherFailures}."
+            : $" Cross-grade moves blocked: {crossGrade}. Other skipped: {otherFailures}.";
+
+        TempData["AcademicSuccess"] = summary;
+        TempData["AcademicError"] = details.Trim();
+        return BackToStudents();
+    }
+
+    private bool TryGetActorId(out Guid actorUserId) =>
+        Guid.TryParse(
+            User.FindFirstValue(ClaimTypes.NameIdentifier),
+            out actorUserId);
+
+    private bool IsPolish() =>
+        CultureInfo.CurrentUICulture.TwoLetterISOLanguageName
+            .Equals("pl", StringComparison.OrdinalIgnoreCase);
+
     private string LocalizeError(ExplicitCurriculumLevelErrorCode code)
     {
         var localized = _text[$"ExplicitError{code}"];
@@ -130,4 +191,7 @@ public sealed class AcademicStructureBulkController : Controller
 
     private RedirectResult BackToCurriculumLevels() =>
         Redirect("/school/academic-structure#grades");
+
+    private RedirectResult BackToStudents() =>
+        Redirect("/school/academic-structure#students");
 }
