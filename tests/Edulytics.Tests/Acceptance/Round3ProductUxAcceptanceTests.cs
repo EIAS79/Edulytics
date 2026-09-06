@@ -10,8 +10,8 @@ public sealed class Round3ProductUxAcceptanceTests
 
         Assert.Contains("new RequestCulture(\n                    \"pl\")", program, StringComparison.Ordinal);
         Assert.Contains("isPolish ? \"Kontakt\" : \"Contact us\"", home, StringComparison.Ordinal);
-        Assert.Contains("public-contact-menu", home, StringComparison.Ordinal);
-        Assert.Contains("public-contact-popover", home, StringComparison.Ordinal);
+        Assert.Contains("ed-home-contact", home, StringComparison.Ordinal);
+        Assert.Contains("ed-home-contact-popover", home, StringComparison.Ordinal);
         Assert.DoesNotContain("public-contact-card", home, StringComparison.Ordinal);
         Assert.Contains("SupportContactOptions.Email", home, StringComparison.Ordinal);
         Assert.Contains("SupportContactOptions.PhoneUri", home, StringComparison.Ordinal);
