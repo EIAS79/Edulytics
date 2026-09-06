@@ -57,6 +57,38 @@ public sealed class Round5ProductUxAcceptanceTests
     }
 
     [Fact]
+    public void Assessment_maximum_score_lock_is_enforced_server_side()
+    {
+        var filter = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Filters", "AssessmentMaxScoreLockFilter.cs");
+        var registration = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Extensions", "AssessmentRegistrationExtensions.cs");
+
+        Assert.Contains("details.Value.Questions.Count > 0", filter, StringComparison.Ordinal);
+        Assert.Contains("context.ActionArguments[\"maxScore\"]", filter, StringComparison.Ordinal);
+        Assert.Contains("details.Value.Assessment.MaxScore", filter, StringComparison.Ordinal);
+        Assert.Contains("AddService<AssessmentMaxScoreLockFilter>", registration, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void Bulk_student_placement_allows_same_grade_moves_and_blocks_cross_grade_moves()
+    {
+        var service = ReadRepositoryFile(
+            "src", "Edulytics.Services", "Academics", "StudentPlacementService.cs");
+        var ui = ReadRepositoryFile(
+            "src", "Edulytics.Web", "TagHelpers", "AcademicStructureNormalUiTagHelper.cs");
+        var controller = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Controllers", "AcademicStructureBulkController.cs");
+
+        Assert.Contains("sourceClass.GradeLevelId != targetClass.GradeLevelId", service, StringComparison.Ordinal);
+        Assert.Contains("CrossGradeMoveNotAllowed", service, StringComparison.Ordinal);
+        Assert.Contains("existing.ClassGroupId = targetClass.Id", service, StringComparison.Ordinal);
+        Assert.Contains("studentProfileIds", ui, StringComparison.Ordinal);
+        Assert.Contains("student-placements/bulk", ui, StringComparison.Ordinal);
+        Assert.Contains("PlaceStudentsAsync", controller, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void Approve_all_keeps_valid_partial_successes_and_returns_to_builder()
     {
         var controller = ReadRepositoryFile(
