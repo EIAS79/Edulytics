@@ -125,7 +125,7 @@ public sealed class CurriculumUiContractTests
             "LearningOutcomePresentation.DisplayCode(outcome.Code)",
             view);
         Assert.Contains(
-            "@outcome.Description",
+            "LearningOutcomePresentation.DisplayTitle(outcome.Code, outcome.Description)",
             view);
         Assert.DoesNotContain(
             "name=\"selectionKey\"",
