@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Edulytics.Core.Entities;
 using Edulytics.Core.MathematicsGeneration;
 
@@ -28,7 +29,10 @@ public static class NativeMathematicsOutcomeProfileResolver
                 outcome.Code,
                 capability.VerifiedFamilies)
             {
-                CanonicalSkills = capability.CanonicalSkills
+                CanonicalSkills = capability.CanonicalSkills,
+                IntegerComputationMaximum = ResolveIntegerComputationMaximum(
+                    semanticContext,
+                    capability.CanonicalSkills)
             }
             : null;
     }
@@ -38,4 +42,32 @@ public static class NativeMathematicsOutcomeProfileResolver
 
     public static bool Supports(string? code, string? description) =>
         MathematicsAiCapabilityMatrix.Resolve(code, description).CanGenerateVerified;
+
+    private static int? ResolveIntegerComputationMaximum(
+        string semanticContext,
+        IReadOnlyList<CanonicalMathematicsSkill> skills)
+    {
+        if (!skills.Any(IsWholeNumberSkill))
+            return null;
+
+        var match = Regex.Match(
+            semanticContext,
+            @"\bWITHIN\s+([0-9]{1,6})\b",
+            RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+        if (!match.Success ||
+            !int.TryParse(match.Groups[1].Value, out var maximum) ||
+            maximum < 1)
+        {
+            return null;
+        }
+
+        return maximum;
+    }
+
+    private static bool IsWholeNumberSkill(CanonicalMathematicsSkill skill) =>
+        skill is CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction or
+            CanonicalMathematicsSkill.WholeNumberAddition or
+            CanonicalMathematicsSkill.WholeNumberSubtraction or
+            CanonicalMathematicsSkill.WholeNumberMultiplication or
+            CanonicalMathematicsSkill.WholeNumberDivision;
 }
