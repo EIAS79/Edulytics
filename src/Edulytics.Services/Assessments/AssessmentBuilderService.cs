@@ -395,10 +395,32 @@ public sealed class AssessmentBuilderService(
             : !allMapped ? "BuilderQuestionsNeedOutcomes"
             : !marksMatch ? "BuilderMarksMustMatch"
             : "BuilderNotDraft";
+        var eligibleOutcomeIds = details.EligibleOutcomes
+            .Select(x => x.Id)
+            .ToHashSet();
+        var aiSupportedOutcomeIds = context.LearningOutcomes
+            .Where(x =>
+                eligibleOutcomeIds.Contains(x.Id) &&
+                NativeMathematicsOutcomeProfileResolver.Resolve(x) is not null)
+            .Select(x => x.Id)
+            .Distinct()
+            .OrderBy(x => x)
+            .ToArray();
         var canGenerate = context.CurriculumAdoption is not null &&
             !string.IsNullOrWhiteSpace(context.CurriculumAdoption.CurriculumLevelKey) &&
-            details.EligibleOutcomes.Any(o => context.LearningOutcomes.Any(x => x.Id == o.Id && NativeMathematicsOutcomeProfileResolver.Resolve(x) is not null));
-        return new AssessmentBuilderWorkspace(details, questions, current, Math.Max(0m, details.Assessment.MaxScore - current), mastery, canGenerate, ready, message);
+            aiSupportedOutcomeIds.Length > 0;
+        return new AssessmentBuilderWorkspace(
+            details,
+            questions,
+            current,
+            Math.Max(0m, details.Assessment.MaxScore - current),
+            mastery,
+            canGenerate,
+            ready,
+            message)
+        {
+            AiSupportedOutcomeIds = aiSupportedOutcomeIds
+        };
     }
 
     private async Task<AssessmentCommandResult> SaveAsync(
