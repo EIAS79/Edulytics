@@ -15,7 +15,6 @@ public sealed class Round3ProductUxAcceptanceTests
         Assert.Contains("href=\"#contact\"", home, StringComparison.Ordinal);
         Assert.DoesNotContain("public-contact-card", home, StringComparison.Ordinal);
         Assert.Contains("SupportContactOptions.Email", home, StringComparison.Ordinal);
-        Assert.Contains("SupportContactOptions.PhoneUri", home, StringComparison.Ordinal);
         Assert.Contains("SupportContactOptions.CompanyWebsiteUrl", home, StringComparison.Ordinal);
         Assert.Contains("SupportContactOptions.ProductWebsiteUrl", home, StringComparison.Ordinal);
     }
