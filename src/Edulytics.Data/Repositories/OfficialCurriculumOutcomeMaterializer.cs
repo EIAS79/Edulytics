@@ -12,6 +12,29 @@ namespace Edulytics.Data.Repositories;
 /// </summary>
 internal static class OfficialCurriculumOutcomeMaterializer
 {
+    public static async Task EnsureAllActiveAsync(
+        EdulyticsDbContext db,
+        Guid schoolId,
+        CancellationToken cancellationToken = default)
+    {
+        var adoptions = await db.SchoolCurriculumAdoptions
+            .AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                x.IsActive &&
+                x.IsPrimary &&
+                x.CurriculumLogicalLevel.HasValue &&
+                x.CurriculumLevelKey != null &&
+                x.CurriculumLevelKey != string.Empty)
+            .OrderBy(x => x.AcademicYearId)
+            .ThenBy(x => x.AcademicProgramId)
+            .ThenBy(x => x.CurriculumLogicalLevel)
+            .ToListAsync(cancellationToken);
+
+        foreach (var adoption in adoptions)
+            await EnsureAsync(db, adoption, cancellationToken);
+    }
+
     public static async Task EnsureAsync(
         EdulyticsDbContext db,
         SchoolCurriculumAdoption adoption,
