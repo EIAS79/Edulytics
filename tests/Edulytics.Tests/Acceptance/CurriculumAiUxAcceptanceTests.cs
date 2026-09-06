@@ -18,7 +18,7 @@ public sealed class CurriculumAiUxAcceptanceTests
     }
 
     [Fact]
-    public void CurriculumMutations_PreserveSelectedContext()
+    public void OfficialCurriculumUi_PreservesSelectedContextWithoutManualTopicMutation()
     {
         var controller = ReadRepositoryFile(
             "src",
@@ -39,16 +39,6 @@ public sealed class CurriculumAiUxAcceptanceTests
             StringComparison.Ordinal);
 
         Assert.Contains(
-            "RedirectToAction(nameof(Index), routeValues)",
-            controller,
-            StringComparison.Ordinal);
-
-        Assert.Contains(
-            "asp-action=\"CreateCurriculumTopic\"",
-            view,
-            StringComparison.Ordinal);
-
-        Assert.Contains(
             "name=\"academicYearId\"",
             view,
             StringComparison.Ordinal);
@@ -62,10 +52,25 @@ public sealed class CurriculumAiUxAcceptanceTests
             "name=\"curriculumAdoptionId\"",
             view,
             StringComparison.Ordinal);
+
+        Assert.DoesNotContain(
+            "asp-action=\"CreateCurriculumTopic\"",
+            view,
+            StringComparison.Ordinal);
+
+        Assert.DoesNotContain(
+            "asp-action=\"CreateCurriculumOfficialOutcome\"",
+            view,
+            StringComparison.Ordinal);
+
+        Assert.DoesNotContain(
+            "asp-action=\"EditTopic\"",
+            view,
+            StringComparison.Ordinal);
     }
 
     [Fact]
-    public void LearningOutcomeUi_ShowsCapabilityBeforeSelectionAndUsesReadableSelectors()
+    public void LearningOutcomeUi_ShowsCapabilityAndUsesReadableSelectors()
     {
         var curriculumView = ReadRepositoryFile(
             "src",
@@ -95,6 +100,11 @@ public sealed class CurriculumAiUxAcceptanceTests
 
         Assert.Contains(
             "LearningOutcomePresentation.DisplayCode",
+            curriculumView,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "LearningOutcomePresentation.DisplayTitle",
             curriculumView,
             StringComparison.Ordinal);
 
