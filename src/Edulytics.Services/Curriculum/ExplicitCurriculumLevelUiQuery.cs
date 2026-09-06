@@ -31,7 +31,7 @@ public sealed record ExplicitCurriculumClassItem(
                 ? CurriculumLevelLabel
                 : $"{CurriculumLevelLabel} — {CurriculumPathway}";
 
-            return $"{AcademicProgramName} · {level} · {Name}";
+            return $"{Name} · {level}";
         }
     }
 }
@@ -119,7 +119,9 @@ public sealed class ExplicitCurriculumLevelUiQuery : IExplicitCurriculumLevelUiQ
                 context.AcademicProgramCode,
                 context.CurriculumLevelKey!,
                 context.CurriculumLogicalLevel!.Value,
-                context.CurriculumLevelLabel ?? string.Empty,
+                BuildClassCurriculumLabel(
+                    context.CurriculumLogicalLevel.Value,
+                    context.CurriculumLevelLabel),
                 context.CurriculumStage ?? string.Empty,
                 context.CurriculumPathway,
                 classGroup.Name,
@@ -134,5 +136,15 @@ public sealed class ExplicitCurriculumLevelUiQuery : IExplicitCurriculumLevelUiQ
             .ThenBy(x => x.CurriculumPathway ?? string.Empty)
             .ThenBy(x => x.Name)
             .ToArray();
+    }
+
+    private static string BuildClassCurriculumLabel(
+        int logicalLevel,
+        string? curriculumLevelLabel)
+    {
+        var curriculum = (curriculumLevelLabel ?? string.Empty).Trim();
+        return curriculum.Length == 0
+            ? $"Grade {logicalLevel}"
+            : $"Grade {logicalLevel} · {curriculum}";
     }
 }
