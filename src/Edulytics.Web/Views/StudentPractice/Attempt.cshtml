@@ -67,14 +67,15 @@
 <div class="student-card-list">
 @foreach (var question in Model.Questions.OrderBy(x => x.Order))
 {
+    var prompt = question.Prompt ?? string.Empty;
     var optionMatches = Regex.Matches(
-        question.Prompt ?? string.Empty,
+        prompt,
         @"(?<![A-Za-z0-9])([A-D])\)\s*",
         RegexOptions.CultureInvariant);
     var isMultipleChoice = optionMatches.Count >= 2 && optionMatches[0].Index > 0;
     var stem = isMultipleChoice
-        ? question.Prompt[..optionMatches[0].Index].Trim()
-        : question.Prompt;
+        ? prompt[..optionMatches[0].Index].Trim()
+        : prompt;
     var choices = new List<(string Label, string Value)>();
     if (isMultipleChoice)
     {
@@ -84,8 +85,8 @@
             var start = match.Index + match.Length;
             var end = choiceIndex + 1 < optionMatches.Count
                 ? optionMatches[choiceIndex + 1].Index
-                : question.Prompt.Length;
-            var value = question.Prompt[start..end].Trim();
+                : prompt.Length;
+            var value = prompt[start..end].Trim();
             if (value.Length > 0)
                 choices.Add((match.Groups[1].Value, value));
         }
