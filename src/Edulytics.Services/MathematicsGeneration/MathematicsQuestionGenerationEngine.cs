@@ -355,6 +355,41 @@ public sealed class MathematicsQuestionGenerationEngine
         AssessmentItemDifficulty difficulty,
         IReadOnlyList<CanonicalMathematicsSkill> canonicalSkills)
     {
+        var operation = ResolveIntegerOperation(key, canonicalSkills);
+        if (operation is "multiply" or "divide")
+        {
+            var (factorMin, factorMax) = difficulty switch
+            {
+                AssessmentItemDifficulty.Easy => (2, 12),
+                AssessmentItemDifficulty.Medium => (5, 25),
+                AssessmentItemDifficulty.Challenging => (12, 60),
+                _ => throw new InvalidOperationException("Unsupported difficulty.")
+            };
+            var first = StableRange($"{key}|a", factorMin, factorMax);
+            var second = StableRange($"{key}|b", factorMin, factorMax);
+
+            if (operation == "multiply")
+            {
+                var answer = first * second;
+                var parameters = new IntegerParameters(first, second, operation);
+                return new RawGeneratedItem(
+                    $"Calculate {first} × {second}.",
+                    answer.ToString(),
+                    $"Multiply {first} by {second} to get {answer}.",
+                    JsonSerializer.Serialize(parameters));
+            }
+
+            var dividend = first * second;
+            var divisor = first;
+            var quotient = second;
+            var divisionParameters = new IntegerParameters(dividend, divisor, operation);
+            return new RawGeneratedItem(
+                $"Calculate {dividend} ÷ {divisor}.",
+                quotient.ToString(),
+                $"Divide {dividend} by {divisor} to get {quotient}.",
+                JsonSerializer.Serialize(divisionParameters));
+        }
+
         var (min, max) = difficulty switch
         {
             AssessmentItemDifficulty.Easy => (2, 20),
@@ -364,41 +399,61 @@ public sealed class MathematicsQuestionGenerationEngine
         };
         var a = StableRange($"{key}|a", min, max);
         var b = StableRange($"{key}|b", min, max);
-        var addition = ResolveIntegerAddition(key, canonicalSkills);
-        if (!addition && b > a)
+        if (operation == "subtract" && b > a)
         {
             (a, b) = (b, a);
         }
 
-        var answer = addition ? a + b : a - b;
-        var operation = addition ? "+" : "−";
-        var parameters = new IntegerParameters(a, b, addition ? "add" : "subtract");
+        var answer = operation == "add" ? a + b : a - b;
+        var symbol = operation == "add" ? "+" : "−";
+        var parameters = new IntegerParameters(a, b, operation);
         return new RawGeneratedItem(
-            $"Calculate {a} {operation} {b}.",
+            $"Calculate {a} {symbol} {b}.",
             answer.ToString(),
-            addition
+            operation == "add"
                 ? $"Add {a} and {b} to get {answer}."
                 : $"Subtract {b} from {a} to get {answer}.",
             JsonSerializer.Serialize(parameters));
     }
 
-    private static bool ResolveIntegerAddition(
+    private static string ResolveIntegerOperation(
         string key,
         IReadOnlyList<CanonicalMathematicsSkill> canonicalSkills)
     {
-        var combined = canonicalSkills.Contains(
-            CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction);
-        var addition = canonicalSkills.Contains(
-            CanonicalMathematicsSkill.WholeNumberAddition);
-        var subtraction = canonicalSkills.Contains(
-            CanonicalMathematicsSkill.WholeNumberSubtraction);
+        var operations = AllowedIntegerOperations(canonicalSkills);
+        if (operations.Count == 0)
+        {
+            throw new InvalidOperationException(
+                "Integer computation requires at least one reviewed whole-number operation.");
+        }
 
-        if (!combined && addition && !subtraction)
-            return true;
-        if (!combined && subtraction && !addition)
-            return false;
+        return operations[StableInt($"{key}|operation", operations.Count)];
+    }
 
-        return StableInt($"{key}|operation", 2) == 0;
+    private static IReadOnlyList<string> AllowedIntegerOperations(
+        IReadOnlyList<CanonicalMathematicsSkill> canonicalSkills)
+    {
+        if (canonicalSkills.Count == 0)
+            return ["add", "subtract"];
+
+        var operations = new List<string>();
+        if (canonicalSkills.Contains(CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction))
+        {
+            operations.Add("add");
+            operations.Add("subtract");
+        }
+        if (canonicalSkills.Contains(CanonicalMathematicsSkill.WholeNumberAddition))
+            operations.Add("add");
+        if (canonicalSkills.Contains(CanonicalMathematicsSkill.WholeNumberSubtraction))
+            operations.Add("subtract");
+        if (canonicalSkills.Contains(CanonicalMathematicsSkill.WholeNumberMultiplication))
+            operations.Add("multiply");
+        if (canonicalSkills.Contains(CanonicalMathematicsSkill.WholeNumberDivision))
+            operations.Add("divide");
+
+        return operations
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
     }
 
     private static RawGeneratedItem GenerateOneStepEquation(
@@ -644,32 +699,13 @@ public sealed class MathematicsQuestionGenerationEngine
             return;
         }
 
-        if (profile.CanonicalSkills.Contains(CanonicalMathematicsSkill.WholeNumberMultiplication) ||
-            profile.CanonicalSkills.Contains(CanonicalMathematicsSkill.WholeNumberDivision))
-        {
-            throw new InvalidOperationException(
-                "Integer computation generator cannot satisfy multiplication or division canonical skills.");
-        }
-
         var parameters = JsonSerializer.Deserialize<IntegerParameters>(parametersJson)
             ?? throw new InvalidOperationException("Invalid integer generation parameters.");
-        var combined = profile.CanonicalSkills.Contains(
-            CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction);
-        var addition = profile.CanonicalSkills.Contains(
-            CanonicalMathematicsSkill.WholeNumberAddition);
-        var subtraction = profile.CanonicalSkills.Contains(
-            CanonicalMathematicsSkill.WholeNumberSubtraction);
-
-        if (!combined && addition && !subtraction && parameters.Operation != "add")
+        var allowed = AllowedIntegerOperations(profile.CanonicalSkills);
+        if (!allowed.Contains(parameters.Operation, StringComparer.Ordinal))
         {
             throw new InvalidOperationException(
-                "Generated Mathematics item violates the addition-only canonical skill.");
-        }
-
-        if (!combined && subtraction && !addition && parameters.Operation != "subtract")
-        {
-            throw new InvalidOperationException(
-                "Generated Mathematics item violates the subtraction-only canonical skill.");
+                "Generated Mathematics item violates the reviewed canonical whole-number operations.");
         }
     }
 
@@ -693,9 +729,17 @@ public sealed class MathematicsQuestionGenerationEngine
 
     private static string Answer(IntegerParameters? p)
     {
-        if (p is null || (p.Operation != "add" && p.Operation != "subtract"))
+        if (p is null)
             throw new InvalidOperationException("Invalid integer generation parameters.");
-        return (p.Operation == "add" ? p.A + p.B : p.A - p.B).ToString();
+
+        return p.Operation switch
+        {
+            "add" => (p.A + p.B).ToString(),
+            "subtract" when p.A >= p.B => (p.A - p.B).ToString(),
+            "multiply" => (p.A * p.B).ToString(),
+            "divide" when p.B > 0 && p.A % p.B == 0 => (p.A / p.B).ToString(),
+            _ => throw new InvalidOperationException("Invalid integer generation parameters.")
+        };
     }
 
     private static string Answer(EquationParameters? p)
@@ -757,6 +801,31 @@ public sealed class MathematicsQuestionGenerationEngine
     private static bool ValidateIntegerDifficulty(IntegerParameters? p, AssessmentItemDifficulty difficulty)
     {
         if (p is null) return false;
+
+        if (p.Operation is "multiply" or "divide")
+        {
+            if (p.Operation == "divide" && (p.B <= 0 || p.A % p.B != 0))
+                return false;
+
+            var firstFactor = p.Operation == "multiply" ? p.A : p.B;
+            var secondFactor = p.Operation == "multiply" ? p.B : p.A / p.B;
+            return difficulty switch
+            {
+                AssessmentItemDifficulty.Easy =>
+                    firstFactor is >= 2 and <= 12 && secondFactor is >= 2 and <= 12,
+                AssessmentItemDifficulty.Medium =>
+                    firstFactor is >= 5 and <= 25 && secondFactor is >= 5 and <= 25,
+                AssessmentItemDifficulty.Challenging =>
+                    firstFactor is >= 12 and <= 60 && secondFactor is >= 12 and <= 60,
+                _ => false
+            };
+        }
+
+        if (p.Operation == "subtract" && p.A < p.B)
+            return false;
+        if (p.Operation is not ("add" or "subtract"))
+            return false;
+
         var max = Math.Max(p.A, p.B);
         return difficulty switch
         {
