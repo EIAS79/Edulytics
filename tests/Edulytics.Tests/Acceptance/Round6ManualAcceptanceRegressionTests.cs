@@ -68,6 +68,18 @@ public sealed class Round6ManualAcceptanceRegressionTests
         Assert.Contains("grid", view, StringComparison.OrdinalIgnoreCase);
     }
 
+    [Fact]
+    public void Finishing_private_AI_practice_does_not_write_official_mastery_evidence()
+    {
+        var service = ReadRepositoryFile(
+            "src", "Edulytics.Services", "Practice", "PracticeService.cs");
+
+        Assert.Contains("if (!attempt.IsPrivate)", service, StringComparison.Ordinal);
+        Assert.Contains("Student private AI practice is deliberately separated from official", service, StringComparison.Ordinal);
+        Assert.Contains("IReadOnlyList<LearningEvidence> evidence = [];", service, StringComparison.Ordinal);
+        Assert.Contains("CompleteAttemptAsync(attempt, evidence", service, StringComparison.Ordinal);
+    }
+
     private static string ReadRepositoryFile(params string[] relativeSegments)
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);
