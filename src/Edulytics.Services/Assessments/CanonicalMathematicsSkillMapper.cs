@@ -58,16 +58,35 @@ public static class CanonicalMathematicsSkillMapper
             skills.Add(CanonicalMathematicsSkill.OneStepLinearEquation);
         }
 
-        var targetsWholeNumberArithmetic =
-            ContainsAny(text, "WHOLE NUMBER", "WHOLE NUMBERS", "INTEGER", "INTEGERS") ||
+        // Whole-number generation must not be inferred from a broad framework
+        // locator alone. OA/NBT/NS standards include modelling, reasoning,
+        // fractions and decimals that the reviewed IntegerComputation family
+        // does not yet implement. Explicit whole-number/integer wording is safe;
+        // framework-code inference is limited to explicit fluency outcomes and
+        // fails closed for fraction/decimal contexts.
+        var hasExplicitWholeNumberScope =
+            ContainsAny(
+                descriptionText,
+                "WHOLE NUMBER",
+                "WHOLE NUMBERS",
+                "INTEGER",
+                "INTEGERS");
+        var hasWholeNumberFrameworkLocator =
             ContainsAny(codeText, ".OA.", ":OA.", ".NBT.", ":NBT.", ".NS.", ":NS.");
+        var isFluencyOutcome = descriptionText.Contains("FLUENTLY", StringComparison.Ordinal);
+        var hasNonWholeNumberContext =
+            ContainsAny(descriptionText, "FRACTION", "FRACTIONS", "DECIMAL", "DECIMALS");
+        var targetsWholeNumberArithmetic =
+            !hasNonWholeNumberContext &&
+            (hasExplicitWholeNumberScope ||
+             (hasWholeNumberFrameworkLocator && isFluencyOutcome));
 
         if (targetsWholeNumberArithmetic)
         {
-            var hasAdd = text.Contains("ADD", StringComparison.Ordinal);
-            var hasSubtract = text.Contains("SUBTRACT", StringComparison.Ordinal);
-            var hasMultiply = text.Contains("MULTIP", StringComparison.Ordinal);
-            var hasDivide = ContainsAny(text, "DIVID", "DIVISION");
+            var hasAdd = descriptionText.Contains("ADD", StringComparison.Ordinal);
+            var hasSubtract = descriptionText.Contains("SUBTRACT", StringComparison.Ordinal);
+            var hasMultiply = descriptionText.Contains("MULTIP", StringComparison.Ordinal);
+            var hasDivide = ContainsAny(descriptionText, "DIVID", "DIVISION");
 
             if (hasAdd && hasSubtract && !hasMultiply && !hasDivide)
             {
