@@ -97,6 +97,13 @@ public sealed class StudentPrivatePracticeRepository(EdulyticsDbContext db)
         }
         if (classGroup is null || enrollment is null) return null;
 
+        // Private practice and the teacher Builder must consume the same authoritative
+        // adopted curriculum outcomes. Existing adoptions are repaired idempotently here.
+        await OfficialCurriculumOutcomeMaterializer.EnsureAsync(
+            db,
+            adoption,
+            cancellationToken);
+
         var outcomes = await db.LearningOutcomes.AsNoTracking()
             .Where(x =>
                 x.SchoolId == student.SchoolId &&

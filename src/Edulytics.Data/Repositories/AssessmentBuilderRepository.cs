@@ -44,6 +44,14 @@ public sealed class AssessmentBuilderRepository(EdulyticsDbContext db) : IAssess
             .ThenByDescending(x => x.IsPrimary)
             .FirstOrDefaultAsync(cancellationToken);
 
+        if (adoption is not null)
+        {
+            await OfficialCurriculumOutcomeMaterializer.EnsureAsync(
+                db,
+                adoption,
+                cancellationToken);
+        }
+
         var questions = await db.AssessmentQuestions
             .Where(x => x.SchoolId == schoolId && x.AssessmentId == assessmentId)
             .OrderBy(x => x.Order)
