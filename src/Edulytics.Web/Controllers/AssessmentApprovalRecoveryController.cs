@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using Edulytics.Core.Assessments;
 using Edulytics.Core.Constants;
 using Edulytics.Services.Assessments;
 using Edulytics.Web.Resilience;
