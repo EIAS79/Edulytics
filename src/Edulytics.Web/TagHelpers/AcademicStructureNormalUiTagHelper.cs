@@ -1,7 +1,9 @@
+using System.Security.Claims;
 using System.Text;
 using System.Text.Encodings.Web;
 using Edulytics.Core.Enums;
 using Edulytics.Services.Academics;
+using Edulytics.Services.Curriculum;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
@@ -11,6 +13,14 @@ namespace Edulytics.Web.TagHelpers;
 [HtmlTargetElement("form", Attributes = "asp-action")]
 public sealed class AcademicStructureNormalUiTagHelper : TagHelper
 {
+    private readonly IExplicitCurriculumLevelUiQuery _explicitClasses;
+
+    public AcademicStructureNormalUiTagHelper(
+        IExplicitCurriculumLevelUiQuery explicitClasses)
+    {
+        _explicitClasses = explicitClasses;
+    }
+
     [HtmlAttributeName("asp-action")]
     public string? Action { get; set; }
 
@@ -18,7 +28,9 @@ public sealed class AcademicStructureNormalUiTagHelper : TagHelper
     [HtmlAttributeNotBound]
     public ViewContext ViewContext { get; set; } = null!;
 
-    public override void Process(TagHelperContext context, TagHelperOutput output)
+    public override async Task ProcessAsync(
+        TagHelperContext context,
+        TagHelperOutput output)
     {
         var controller = ViewContext.RouteData.Values["controller"]?.ToString();
         if (!string.Equals(controller, "AcademicStructure", StringComparison.OrdinalIgnoreCase))
@@ -42,6 +54,20 @@ public sealed class AcademicStructureNormalUiTagHelper : TagHelper
             "/school/academic-structure/student-placements/bulk");
         output.Attributes.SetAttribute("method", "post");
 
+        var actorId = Guid.TryParse(
+            ViewContext.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier),
+            out var parsedActorId)
+            ? parsedActorId
+            : Guid.Empty;
+
+        var explicitClassItems = actorId == Guid.Empty
+            ? Array.Empty<ExplicitCurriculumClassItem>()
+            : (await _explicitClasses.ListClassesAsync(
+                actorId,
+                ViewContext.HttpContext.RequestAborted)).ToArray();
+        var explicitByClassId = explicitClassItems
+            .ToDictionary(x => x.ClassGroupId);
+
         var html = new StringBuilder();
         html.Append("<h3>Enroll or move students</h3>");
         html.Append("<p class=\"academic-help\">Select one or more students. Existing students can move only between classes in the same Grade.</p>");
@@ -54,14 +80,18 @@ public sealed class AcademicStructureNormalUiTagHelper : TagHelper
                      .OrderBy(x => x.GradeLevelName)
                      .ThenBy(x => x.Name))
         {
-            var classLabel = string.Join(
-                " · ",
-                new[]
-                {
-                    classGroup.Name,
-                    classGroup.GradeLevelName,
-                    classGroup.AcademicProgramName
-                }.Where(x => !string.IsNullOrWhiteSpace(x)));
+            var classLabel = explicitByClassId.TryGetValue(
+                classGroup.Id,
+                out var explicitClass)
+                ? explicitClass.DisplayLabel
+                : string.Join(
+                    " · ",
+                    new[]
+                    {
+                        classGroup.Name,
+                        classGroup.GradeLevelName,
+                        classGroup.AcademicProgramName
+                    }.Where(x => !string.IsNullOrWhiteSpace(x)));
 
             html.Append("<option value=\"")
                 .Append(classGroup.Id.ToString("D"))
