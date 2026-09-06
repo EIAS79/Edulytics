@@ -104,12 +104,23 @@
 .ed-builder-question-list {
     display: grid;
     gap: .9rem;
+    max-height: min(72vh, 820px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: .4rem;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
 }
 
 .ed-builder-section-heading {
+    position: sticky;
+    top: 0;
+    z-index: 4;
     display: flex;
     align-items: center;
     gap: .65rem;
+    padding: .55rem .25rem;
+    background: var(--ed-page-bg, #f6f8fc);
 }
 
 .ed-builder-section-heading > h2 {
@@ -250,6 +261,11 @@
     .ed-builder-two-column-fields,
     .ed-builder-three-column-fields {
         grid-template-columns: 1fr;
+    }
+
+    .ed-builder-question-list {
+        max-height: 64vh;
+        padding-right: .2rem;
     }
 
     .ed-builder-question-header {

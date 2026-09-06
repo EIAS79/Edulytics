@@ -1,0 +1,25 @@
+.ed-scroll-list {
+    max-height: min(62vh, 680px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: .35rem;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+}
+
+.ed-scroll-list.student-card-list,
+.ed-scroll-list.assessment-list-items {
+    display: grid;
+    gap: 1rem;
+}
+
+.student-results-table-shell.ed-scroll-list {
+    overflow: auto;
+}
+
+@media (max-width: 700px) {
+    .ed-scroll-list {
+        max-height: 58vh;
+        padding-right: .2rem;
+    }
+}

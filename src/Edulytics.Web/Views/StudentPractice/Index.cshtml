@@ -9,7 +9,12 @@
         ? Model.Curricula.FirstOrDefault(x => x.CurriculumAdoptionId == selected.Value)
         : null;
     var unitOptions = Model.Units ?? Array.Empty<StudentPrivatePracticeUnitOption>();
+    var orderedAttempts = Model.Attempts
+        .OrderByDescending(x => x.StartedAtUtc)
+        .ThenByDescending(x => x.AttemptId)
+        .ToArray();
 }
+<link rel="stylesheet" href="~/css/round7-list-scroll.css" asp-append-version="true" />
 <header class="student-page-header">
     <span class="student-eyebrow">@S["PrivatePractice"]</span>
     <h1>@S["PrivatePracticeTitle"]</h1>
@@ -100,14 +105,14 @@ else
 }
 <section class="student-card">
     <h2>@S["PrivatePracticeHistory"]</h2>
-    @if (Model.Attempts.Count == 0)
+    @if (orderedAttempts.Length == 0)
     {
         <div class="student-empty-state">@S["PrivatePracticeNoHistory"]</div>
     }
     else
     {
-        <div class="student-card-list">
-            @foreach (var attempt in Model.Attempts)
+        <div class="student-card-list ed-scroll-list">
+            @foreach (var attempt in orderedAttempts)
             {
                 <article class="student-assessment-card">
                     <div>

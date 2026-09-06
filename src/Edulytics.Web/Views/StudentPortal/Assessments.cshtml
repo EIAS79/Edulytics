@@ -4,21 +4,26 @@
 @{
     Layout = "_StudentLayout";
     ViewData["Title"] = S["AssessmentsTitle"].Value;
+    var orderedAssessments = Model.Workspace.Assessments
+        .OrderByDescending(x => x.AssessmentDate)
+        .ThenByDescending(x => x.AssessmentId)
+        .ToArray();
 }
+<link rel="stylesheet" href="~/css/round7-list-scroll.css" asp-append-version="true" />
 <header class="student-page-header">
     <span class="student-eyebrow">@S["Assessments"]</span>
     <h1>@S["AssessmentsTitle"]</h1>
     <p>@S["AssessmentsSubtitle"]</p>
 </header>
 
-@if (Model.Workspace.Assessments.Count == 0)
+@if (orderedAssessments.Length == 0)
 {
     <div class="student-empty-state">@S["NoActiveAssessments"]</div>
 }
 else
 {
-    <div class="student-card-list">
-        @foreach (var item in Model.Workspace.Assessments)
+    <div class="student-card-list ed-scroll-list">
+        @foreach (var item in orderedAssessments)
         {
             <article class="student-assessment-card">
                 <div>

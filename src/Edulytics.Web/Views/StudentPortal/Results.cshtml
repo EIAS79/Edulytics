@@ -3,20 +3,24 @@
 @{
     Layout = "_StudentLayout";
     ViewData["Title"] = S["ResultsTitle"].Value;
+    var orderedResults = Model.Workspace.Results
+        .OrderByDescending(x => x.AssessmentDate)
+        .ToArray();
 }
+<link rel="stylesheet" href="~/css/round7-list-scroll.css" asp-append-version="true" />
 <header class="student-page-header">
     <span class="student-eyebrow">@S["MyResults"]</span>
     <h1>@S["ResultsTitle"]</h1>
     <p>@S["ResultsSubtitle"]</p>
 </header>
 
-@if (Model.Workspace.Results.Count == 0)
+@if (orderedResults.Length == 0)
 {
     <div class="student-empty-state">@S["NoResultsYet"]</div>
 }
 else
 {
-    <div class="student-results-table-shell">
+    <div class="student-results-table-shell ed-scroll-list">
         <table class="student-results-table">
             <thead>
                 <tr>
@@ -28,7 +32,7 @@ else
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model.Workspace.Results)
+                @foreach (var item in orderedResults)
                 {
                     <tr>
                         <td>@item.AssessmentTitle</td>
