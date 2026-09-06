@@ -13,6 +13,22 @@ public sealed class HomeController : Controller
     [HttpGet("/")]
     public IActionResult Index()
     {
+        if (!CultureCookie.TryRead(Request, out _))
+        {
+            Response.Cookies.Append(
+                CultureCookie.Name,
+                CultureCookie.CreateValue("pl"),
+                new CookieOptions
+                {
+                    Path = "/",
+                    Expires = DateTimeOffset.UtcNow.AddYears(1),
+                    IsEssential = true,
+                    HttpOnly = true,
+                    SameSite = SameSiteMode.Strict,
+                    Secure = Request.IsHttps
+                });
+        }
+
         return View();
     }
 
