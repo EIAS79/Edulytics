@@ -64,7 +64,8 @@ public sealed class Round3ProductUxAcceptanceTests
 
         Assert.Contains("@A[\"GenerateQuestionsWithAI\"]", view, StringComparison.Ordinal);
         Assert.Contains("name=\"questionCount\" type=\"number\" min=\"1\" max=\"50\"", view, StringComparison.Ordinal);
-        Assert.Contains("questionCount > 50", controller, StringComparison.Ordinal);
+        Assert.Contains("MaximumGeneratedQuestionCount = 50", controller, StringComparison.Ordinal);
+        Assert.Contains("questionCount is < 1 or > MaximumGeneratedQuestionCount", controller, StringComparison.Ordinal);
         Assert.Contains("if (!isApproved)", view, StringComparison.Ordinal);
         Assert.Contains("RegenerateQuestion", view, StringComparison.Ordinal);
     }
