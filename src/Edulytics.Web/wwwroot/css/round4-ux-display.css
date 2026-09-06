@@ -1,0 +1,148 @@
+/* Round 4 acceptance UX corrections */
+
+.student-dashboard-grid > .student-panel {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+.student-dashboard-list-panel .student-compact-list,
+.student-dashboard-list-panel .student-result-stack {
+  max-height: 246px;
+  overflow-y: auto;
+  padding-right: 6px;
+  scrollbar-gutter: stable;
+}
+
+.student-dashboard-list-panel .student-empty {
+  margin: auto 0;
+}
+
+.student-lesson-grid {
+  align-items: stretch;
+}
+
+.student-lesson-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 318px;
+}
+
+.student-lesson-card h3 {
+  min-height: 3.1em;
+  margin-bottom: 10px;
+}
+
+.student-lesson-card .student-learning-meta {
+  display: grid;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.student-lesson-primary-context {
+  font-weight: 800;
+  color: var(--ed-text);
+}
+
+.student-lesson-secondary-context {
+  color: var(--ed-muted);
+}
+
+.student-lesson-card .student-primary-link {
+  margin-top: auto;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.student-assessment-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, .8fr) minmax(230px, .7fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.student-assessment-card > dl {
+  display: grid;
+  grid-template-columns: minmax(135px, 1fr) minmax(135px, 1fr);
+  gap: 28px;
+  margin: 0;
+}
+
+.student-assessment-card > dl > div {
+  display: grid;
+  gap: 6px;
+  text-align: center;
+}
+
+.student-assessment-card > dl dt,
+.student-assessment-card > dl dd {
+  margin: 0;
+}
+
+.student-assessment-card > dl dd {
+  font-weight: 800;
+}
+
+.student-assessment-card .student-actions {
+  justify-self: end;
+  text-align: right;
+}
+
+/* The Polish labels are longer. Keep the desktop navigation on one line and
+   collapse earlier rather than wrapping individual buttons. */
+.ed-home-links a,
+.ed-home-actions a,
+.ed-home-actions summary,
+.ed-home-lang button {
+  white-space: nowrap;
+}
+
+@media (max-width: 1280px) {
+  .ed-home-container {
+    width: min(1180px, calc(100% - 36px));
+  }
+
+  .ed-home-nav {
+    gap: 14px;
+  }
+
+  .ed-home-links {
+    gap: 14px;
+  }
+
+  .ed-home-actions {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .ed-home-links {
+    display: none;
+  }
+
+  .ed-home-nav {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 900px) {
+  .student-assessment-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .student-assessment-card > dl {
+    max-width: 420px;
+  }
+
+  .student-assessment-card .student-actions {
+    justify-self: start;
+    text-align: left;
+  }
+}
