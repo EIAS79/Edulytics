@@ -67,37 +67,72 @@ public sealed class AssessmentDeliverySettingsService(
         if (details.Value is null)
             return AssessmentCommandResult.Failure(
                 string.Empty, details.Error ?? AssessmentErrorCode.AccessDenied);
-        if (details.Value.Assessment.Status != AssessmentStatus.Draft)
-            return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.AssessmentNotDraft);
 
         if (!Enum.IsDefined(request.TargetType) ||
             !Enum.IsDefined(request.DeliveryMode) ||
             !Enum.IsDefined(request.DifficultyBand))
             return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.Required);
 
+        var assessment = details.Value.Assessment;
+        var isDraft = assessment.Status == AssessmentStatus.Draft;
+        var isSafeOpenOfflineToOnlineCorrection =
+            assessment.Status == AssessmentStatus.Open &&
+            assessment.DeliveryMode == AssessmentDeliveryMode.Offline &&
+            request.DeliveryMode == AssessmentDeliveryMode.Online &&
+            request.TargetType == assessment.TargetType &&
+            request.TargetStudentProfileId == assessment.TargetStudentProfileId &&
+            request.DifficultyBand == assessment.DifficultyBand;
+
+        if (!isDraft && !isSafeOpenOfflineToOnlineCorrection)
+            return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.AssessmentNotDraft);
+
+        if (isSafeOpenOfflineToOnlineCorrection)
+        {
+            var results = await assessments.GetResultsAsync(
+                actorUserId,
+                request.AssessmentId,
+                cancellationToken);
+            if (results.Value is null)
+                return AssessmentCommandResult.Failure(
+                    string.Empty,
+                    results.Error ?? AssessmentErrorCode.AccessDenied);
+
+            if (results.Value.Students.Any(x => x.ResultId.HasValue))
+                return AssessmentCommandResult.Failure(
+                    string.Empty,
+                    AssessmentErrorCode.AssessmentNotDraft);
+        }
+
         var context = await repository.GetContextAsync(
             actor.SchoolId.Value, request.AssessmentId, cancellationToken);
         if (context is null)
             return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.AssessmentNotFound);
 
-        Guid? targetStudentId = null;
-        if (request.TargetType == AssessmentTargetType.Student)
+        if (isDraft)
         {
-            if (!request.TargetStudentProfileId.HasValue || request.TargetStudentProfileId.Value == Guid.Empty)
-                return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.StudentNotFound);
+            Guid? targetStudentId = null;
+            if (request.TargetType == AssessmentTargetType.Student)
+            {
+                if (!request.TargetStudentProfileId.HasValue || request.TargetStudentProfileId.Value == Guid.Empty)
+                    return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.StudentNotFound);
 
-            var eligible = await repository.ListTargetStudentsAsync(
-                actor.SchoolId.Value, request.AssessmentId, cancellationToken);
-            if (eligible.All(x => x.Id != request.TargetStudentProfileId.Value))
-                return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.StudentNotEnrolled);
+                var eligible = await repository.ListTargetStudentsAsync(
+                    actor.SchoolId.Value, request.AssessmentId, cancellationToken);
+                if (eligible.All(x => x.Id != request.TargetStudentProfileId.Value))
+                    return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.StudentNotEnrolled);
 
-            targetStudentId = request.TargetStudentProfileId.Value;
+                targetStudentId = request.TargetStudentProfileId.Value;
+            }
+
+            context.Assessment.TargetType = request.TargetType;
+            context.Assessment.TargetStudentProfileId = targetStudentId;
+            context.Assessment.DifficultyBand = request.DifficultyBand;
         }
 
-        context.Assessment.TargetType = request.TargetType;
-        context.Assessment.TargetStudentProfileId = targetStudentId;
+        // Once an assessment is Open, the only allowed correction is
+        // Offline -> Online before any result has been recorded. Targeting and
+        // difficulty remain immutable, and Online -> Offline is never allowed.
         context.Assessment.DeliveryMode = request.DeliveryMode;
-        context.Assessment.DifficultyBand = request.DifficultyBand;
         context.Assessment.UpdatedAtUtc = DateTime.UtcNow;
 
         var saved = await repository.SaveAsync(

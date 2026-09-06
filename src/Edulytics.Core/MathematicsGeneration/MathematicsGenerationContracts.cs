@@ -9,7 +9,8 @@ public enum MathematicsGeneratorFamily
     OneStepEquation = 2,
     FractionOfQuantity = 3,
     PercentageOfQuantity = 4,
-    UnitRateWordProblem = 5
+    UnitRateWordProblem = 5,
+    CurriculumContextCheck = 6
 }
 
 /// <summary>
@@ -36,6 +37,27 @@ public sealed record MathematicsOutcomeGenerationProfile(
     IReadOnlyList<MathematicsGeneratorFamily> AllowedFamilies)
 {
     public IReadOnlyList<CanonicalMathematicsSkill> CanonicalSkills { get; init; } = [];
+
+    /// <summary>
+    /// Optional curriculum-neutral ceiling for direct whole-number computation.
+    /// For wording such as "within 20" the generator must keep operands/results
+    /// inside this bound. Null means the Outcome itself did not state a numeric
+    /// ceiling; the registered curriculum-level policy may still apply.
+    /// </summary>
+    public int? IntegerComputationMaximum { get; init; }
+
+    /// <summary>
+    /// Sanitized curriculum/outcome context used only by the local contextual
+    /// Mathematics provider. It never upgrades contextual generation to native
+    /// verified status and it is never treated as an official curriculum code.
+    /// </summary>
+    public string? GenerationContext { get; init; }
+
+    /// <summary>
+    /// True only when the outcome is served by the deterministic curriculum-
+    /// contextual fallback rather than a reviewed native mathematical family.
+    /// </summary>
+    public bool IsContextualAssisted { get; init; }
 }
 
 public sealed record MathematicsGenerationRequest(

@@ -12,33 +12,50 @@ public enum MathematicsAiCapabilityLevel
 
 /// <summary>
 /// One curriculum-neutral capability decision for a Mathematics learning outcome.
-/// Verified AI means a reviewed provider can generate and validate the requested
-/// canonical skills. AI-assisted is intentionally reserved for a configured
-/// contextual draft provider; Edulytics must never emit that state merely because
-/// an LLM could theoretically answer the topic. Manual-only is fail-closed.
+/// Verified AI means a reviewed native provider can generate and validate the
+/// requested canonical skills. AI-assisted means Edulytics can generate a local,
+/// deterministic curriculum-contextual question while clearly preserving that it
+/// is not a native solver for the complete mathematical skill. Manual-only remains
+/// fail-closed for text that is not recognizably Mathematics curriculum context.
 /// </summary>
 public sealed record MathematicsAiCapability(
     MathematicsAiCapabilityLevel Level,
     IReadOnlyList<CanonicalMathematicsSkill> CanonicalSkills,
-    IReadOnlyList<MathematicsGeneratorFamily> VerifiedFamilies,
+    IReadOnlyList<MathematicsGeneratorFamily> GenerationFamilies,
     string? ProviderKey,
     string ReasonCode)
 {
+    public IReadOnlyList<MathematicsGeneratorFamily> VerifiedFamilies =>
+        Level == MathematicsAiCapabilityLevel.VerifiedAi
+            ? GenerationFamilies
+            : [];
+
     public bool CanGenerateVerified =>
         Level == MathematicsAiCapabilityLevel.VerifiedAi &&
-        VerifiedFamilies.Count > 0 &&
+        GenerationFamilies.Count > 0 &&
         !string.IsNullOrWhiteSpace(ProviderKey);
+
+    public bool CanGenerateAssisted =>
+        Level == MathematicsAiCapabilityLevel.AiAssisted &&
+        GenerationFamilies.Count > 0 &&
+        !string.IsNullOrWhiteSpace(ProviderKey);
+
+    public bool CanGenerate => CanGenerateVerified || CanGenerateAssisted;
 }
 
 /// <summary>
 /// Canonical source of truth for Mathematics AI capability classification.
-/// UI, assessment generation and student private practice must derive their
-/// availability from this matrix instead of maintaining separate curriculum-code
-/// allowlists. No AI-assisted provider is registered today, therefore this matrix
-/// only emits VerifiedAi or ManualOnly until a real reviewed provider is added.
+/// UI, assessment generation and student private practice derive availability
+/// from this matrix instead of maintaining separate curriculum-code allowlists.
+/// Native deterministic families remain VerifiedAi. Other recognizable
+/// Mathematics curriculum outcomes use the local curriculum-contextual provider
+/// and are explicitly classified AiAssisted rather than being falsely labelled
+/// native or left as ManualOnly.
 /// </summary>
 public static class MathematicsAiCapabilityMatrix
 {
+    private const string ContextualProviderKey = "edulytics-contextual-mathematics";
+
     private static readonly IMathematicsGenerationCapabilityProvider VerifiedProvider =
         new NativeMathematicsGenerationCapabilityProvider();
 
@@ -49,26 +66,27 @@ public static class MathematicsAiCapabilityMatrix
         var skills = CanonicalMathematicsSkillMapper.Resolve(
             outcomeCode,
             description);
-
-        if (skills.Count == 0)
-        {
-            return new MathematicsAiCapability(
-                MathematicsAiCapabilityLevel.ManualOnly,
-                skills,
-                [],
-                null,
-                "NoCanonicalSkillMapping");
-        }
-
-        var families = VerifiedProvider.ResolveFamilies(skills);
-        if (families.Count > 0)
+        var verifiedFamilies = VerifiedProvider.ResolveFamilies(skills);
+        if (verifiedFamilies.Count > 0)
         {
             return new MathematicsAiCapability(
                 MathematicsAiCapabilityLevel.VerifiedAi,
                 skills,
-                families,
+                verifiedFamilies,
                 VerifiedProvider.ProviderKey,
                 "ReviewedNativeProvider");
+        }
+
+        if (LooksLikeMathematicsCurriculum(description))
+        {
+            return new MathematicsAiCapability(
+                MathematicsAiCapabilityLevel.AiAssisted,
+                skills,
+                [MathematicsGeneratorFamily.CurriculumContextCheck],
+                ContextualProviderKey,
+                skills.Count == 0
+                    ? "CurriculumContextFallback"
+                    : "CanonicalSkillContextFallback");
         }
 
         return new MathematicsAiCapability(
@@ -76,6 +94,42 @@ public static class MathematicsAiCapabilityMatrix
             skills,
             [],
             null,
-            "NoConfiguredProviderForAllSkills");
+            skills.Count == 0
+                ? "NoCanonicalSkillMapping"
+                : "NoConfiguredProviderForAllSkills");
     }
+
+    private static bool LooksLikeMathematicsCurriculum(string? description)
+    {
+        if (string.IsNullOrWhiteSpace(description))
+            return false;
+
+        var text = description.Trim().ToUpperInvariant();
+        return ContainsAny(
+            text,
+            "MATHEMATICS", "MATHEMATICAL", "NUMBER", "NUMBERS", "INTEGER", "INTEGERS",
+            "ADD", "SUBTRACT", "MULTIP", "DIVID", "ARITHMET", "PLACE VALUE",
+            "FRACTION", "DECIMAL", "PERCENT", "RATIO", "RATE", "PROPORTION",
+            "EQUATION", "INEQUALITY", "ALGEBRA", "EXPRESSION", "VARIABLE",
+            "FUNCTION", "GRAPH", "COORDINATE", "SLOPE", "GRADIENT", "SEQUENCE",
+            "GEOMET", "AREA", "PERIMETER", "ANGLE", "TRIANGLE", "CIRCLE", "SHAPE",
+            "MEASURE", "LENGTH", "VOLUME", "MASS", "TIME", "UNIT",
+            "STATISTIC", "MEAN", "AVERAGE", "MEDIAN", "PROBABILITY", "DATA",
+            "EXPONENT", "POWER", "ROOT", "LOGARITH", "VECTOR", "MATRIX",
+            "DERIVATIVE", "DIFFERENTIAT", "INTEGRAL", "CALCULUS", "TRIGONOMET",
+            "LICZB", "DODAW", "ODEJM", "MNOŻ", "MNOZ", "DZIEL", "UŁAM", "ULAM",
+            "PROCENT", "PROPORCJ", "RÓWNAN", "ROWNAN", "NIERÓWN", "NIEROWN",
+            "FUNKCJ", "GEOMETR", "POLE", "OBWÓD", "OBWOD", "KĄT", "KAT",
+            "ŚREDNI", "SREDNI", "PRAWDOPODOB", "POTĘG", "POTEG", "PIERWIAST",
+            "CIĄG", "CIAG", "WEKTOR", "MACIERZ", "POCHODN", "CAŁK", "CALK",
+            "LOGARYTM", "DZIESIĘTN", "DZIESIETN",
+            "رياض", "عدد", "أعداد", "جمع", "طرح", "ضرب", "قسمة", "كسر", "كسور",
+            "عشري", "نسبة", "تناسب", "مئوية", "معادلة", "معادلات", "متباينة",
+            "جبر", "دالة", "هندسة", "مساحة", "محيط", "زاوية", "مثلث", "دائرة",
+            "قياس", "طول", "حجم", "متوسط", "احتمال", "بيانات", "أس", "جذر",
+            "متتالية", "متجه", "مصفوف", "مشتق", "تكامل", "لوغاريتم");
+    }
+
+    private static bool ContainsAny(string text, params string[] values) =>
+        values.Any(value => text.Contains(value, StringComparison.Ordinal));
 }

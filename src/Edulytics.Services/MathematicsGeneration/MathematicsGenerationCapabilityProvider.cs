@@ -30,6 +30,8 @@ public sealed class NativeMathematicsGenerationCapabilityProvider
             [CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction] = MathematicsGeneratorFamily.IntegerComputation,
             [CanonicalMathematicsSkill.WholeNumberAddition] = MathematicsGeneratorFamily.IntegerComputation,
             [CanonicalMathematicsSkill.WholeNumberSubtraction] = MathematicsGeneratorFamily.IntegerComputation,
+            [CanonicalMathematicsSkill.WholeNumberMultiplication] = MathematicsGeneratorFamily.IntegerComputation,
+            [CanonicalMathematicsSkill.WholeNumberDivision] = MathematicsGeneratorFamily.IntegerComputation,
             [CanonicalMathematicsSkill.OneStepLinearEquation] = MathematicsGeneratorFamily.OneStepEquation,
             [CanonicalMathematicsSkill.FractionOfQuantity] = MathematicsGeneratorFamily.FractionOfQuantity,
             [CanonicalMathematicsSkill.PercentageOfQuantity] = MathematicsGeneratorFamily.PercentageOfQuantity,

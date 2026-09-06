@@ -6,8 +6,7 @@ namespace Edulytics.Services.Assessments;
 /// Converts framework-specific outcome metadata into curriculum-neutral skills.
 /// Mapping is intentionally conservative: a capability is emitted only when the
 /// outcome wording matches the semantics of a reviewed native generator. Broader
-/// or unsupported operations remain visible as canonical skills and therefore
-/// fail closed at the provider boundary.
+/// or unsupported operations fail closed rather than being treated as covered.
 /// </summary>
 public static class CanonicalMathematicsSkillMapper
 {
@@ -17,46 +16,118 @@ public static class CanonicalMathematicsSkillMapper
     {
         var codeText = $" {outcomeCode} ".ToUpperInvariant();
         var descriptionText = $" {description} ".ToUpperInvariant();
-        var text = codeText + descriptionText;
         var skills = new HashSet<CanonicalMathematicsSkill>();
 
-        var isFractionOfQuantity =
-            ContainsAny(text, "FRACTION OF", "FRACTIONS OF") ||
-            (ContainsAny(codeText, ".NF.", ":NF.") &&
-             text.Contains("FRACTION", StringComparison.Ordinal) &&
-             text.Contains("MULTIP", StringComparison.Ordinal));
+        // The native fraction family answers a direct "fraction of a quantity"
+        // computation. Generic references such as "fraction of the whole",
+        // fraction multiplication, line plots, geometry and probability are not
+        // equivalent and must remain closed.
+        var isFractionOfQuantity = ContainsAny(
+            descriptionText,
+            "FRACTION OF A QUANTITY",
+            "FRACTIONS OF A QUANTITY",
+            "FRACTION OF QUANTITY",
+            "FRACTIONS OF QUANTITY");
         if (isFractionOfQuantity)
             skills.Add(CanonicalMathematicsSkill.FractionOfQuantity);
 
-        if (ContainsAny(text, "PERCENT OF", "PERCENTAGE OF"))
+        // The native percentage family performs a direct percentage-of-quantity
+        // computation. Broad ratio/proportion standards that merely contain a
+        // percentage example are not fully represented by this family.
+        var isPercentageOfQuantity =
+            ContainsAny(
+                descriptionText,
+                "PERCENT OF A QUANTITY",
+                "PERCENTAGE OF A QUANTITY",
+                "PERCENT OF QUANTITY",
+                "PERCENTAGE OF QUANTITY") &&
+            !ContainsAny(
+                descriptionText,
+                "RATIO AND RATE REASONING",
+                "PROPORTIONAL RELATIONSHIP",
+                "RATE PER 100",
+                "MULTISTEP",
+                "MULTI-STEP");
+        if (isPercentageOfQuantity)
             skills.Add(CanonicalMathematicsSkill.PercentageOfQuantity);
 
+        // Current UnitRateWordProblem consumes an already known unit rate and
+        // applies it to a count. Ratio theory, direct proportion and computing
+        // complex/fractional unit rates require different reviewed generators.
         var isUnitRate =
-            ContainsAny(text, "UNIT RATE", "UNIT-RATE") ||
-            (ContainsAny(codeText, ".RP.", ":RP.") &&
-             ContainsAny(text, "RATIO", "RATE"));
+            ContainsAny(
+                descriptionText,
+                "USE A UNIT RATE",
+                "USE THE UNIT RATE",
+                "APPLY A UNIT RATE") &&
+            !ContainsAny(
+                descriptionText,
+                "FRACTION",
+                "FRACTIONS",
+                "DECIMAL",
+                "DECIMALS",
+                "RATIO AND RATE REASONING",
+                "PROPORTIONAL RELATIONSHIP");
         if (isUnitRate)
             skills.Add(CanonicalMathematicsSkill.UnitRateAndProportion);
 
-        if (ContainsAny(text, "ONE-STEP EQUATION", "ONE STEP EQUATION") ||
-            (text.Contains("SOLVE", StringComparison.Ordinal) &&
-             text.Contains("EQUATION", StringComparison.Ordinal) &&
-             !ContainsAny(text, "QUADRATIC", "SIMULTANEOUS", "SYSTEM OF")))
-        {
-            skills.Add(CanonicalMathematicsSkill.OneStepLinearEquation);
-        }
+        // OneStepEquation is temporarily not emitted here. The existing native
+        // generator historically produced ax + b = c, which requires two inverse
+        // operations and therefore does not satisfy the canonical one-step skill.
+        // Re-enable only after the generator itself is corrected and regression
+        // tests prove one-step semantics end to end.
 
-        var targetsWholeNumberArithmetic =
-            ContainsAny(text, "WHOLE NUMBER", "WHOLE NUMBERS", "INTEGER", "INTEGERS") ||
+        var hasWholeNumberFrameworkLocator =
             ContainsAny(codeText, ".OA.", ":OA.", ".NBT.", ":NBT.", ".NS.", ":NS.");
+        var isFluencyOutcome = descriptionText.Contains("FLUENTLY", StringComparison.Ordinal);
+        var hasNonWholeNumberContext =
+            ContainsAny(descriptionText, "FRACTION", "FRACTIONS", "DECIMAL", "DECIMALS", "POLYNOMIAL");
+        var hasDisallowedWholeNumberIntent = ContainsAny(
+            descriptionText,
+            "WORD PROBLEM",
+            "WORD PROBLEMS",
+            "DETERMINE THE UNKNOWN",
+            "UNKNOWN WHOLE NUMBER",
+            "REPRESENT ",
+            "RECOGNIZE ",
+            "IDENTIFY ",
+            "FACTOR PAIR",
+            "GREATEST COMMON FACTOR",
+            "LEAST COMMON MULTIPLE",
+            "LENGTH UNIT",
+            "ARITHMETIC PATTERN",
+            "MULTI-DIGIT");
+
+        var hasAdd = descriptionText.Contains("ADD", StringComparison.Ordinal);
+        var hasSubtract = descriptionText.Contains("SUBTRACT", StringComparison.Ordinal);
+        var hasMultiply = descriptionText.Contains("MULTIP", StringComparison.Ordinal);
+        var hasDivide = ContainsAny(descriptionText, "DIVID", "DIVISION", "QUOTIENT");
+
+        // Generic, direct whole-number operation wording is safe for the current
+        // deterministic family. For official OA/NBT/NS text we currently admit
+        // only add/subtract fluency outcomes; multiplication/division standards
+        // often constrain factor/dividend shape that the generator does not yet
+        // carry in its profile contract.
+        var hasExplicitDirectWholeNumberIntent = ContainsAny(
+            descriptionText,
+            "ADD WHOLE NUMBERS",
+            "ADD AND SUBTRACT WHOLE NUMBERS",
+            "SUBTRACT WHOLE NUMBERS",
+            "MULTIPLY WHOLE NUMBERS",
+            "DIVIDE WHOLE NUMBERS");
+        var isReviewedLocatorFluency =
+            hasWholeNumberFrameworkLocator &&
+            isFluencyOutcome &&
+            (hasAdd || hasSubtract) &&
+            !hasMultiply &&
+            !hasDivide;
+        var targetsWholeNumberArithmetic =
+            !hasNonWholeNumberContext &&
+            !hasDisallowedWholeNumberIntent &&
+            (hasExplicitDirectWholeNumberIntent || isReviewedLocatorFluency);
 
         if (targetsWholeNumberArithmetic)
         {
-            var hasAdd = text.Contains("ADD", StringComparison.Ordinal);
-            var hasSubtract = text.Contains("SUBTRACT", StringComparison.Ordinal);
-            var hasMultiply = text.Contains("MULTIP", StringComparison.Ordinal);
-            var hasDivide = ContainsAny(text, "DIVID", "DIVISION");
-
             if (hasAdd && hasSubtract && !hasMultiply && !hasDivide)
             {
                 skills.Add(CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction);

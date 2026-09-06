@@ -76,10 +76,42 @@ public sealed class StudentPrivatePracticeServiceTests
     }
 
     [Fact]
-    public async Task Unsupported_outcomes_fail_closed_instead_of_generating_untrusted_questions()
+    public async Task Recognizable_mathematics_outcomes_use_contextual_generation_instead_of_failing_closed()
     {
         var ids = Ids.Create();
-        var repo = new FakeRepository { Context = BuildContext(ids, [Outcome(ids, "GEO.1", "Identify a shape", 1)], []) };
+        var repo = new FakeRepository
+        {
+            Context = BuildContext(
+                ids,
+                [Outcome(ids, "GEO.1", "Identify a geometric shape and reason about its area.", 1)],
+                [])
+        };
+        var result = await new StudentPrivatePracticeService(repo).GenerateAsync(
+            ids.User,
+            new GenerateStudentPrivatePracticeRequest(ids.Adoption, StudentPrivatePracticeScope.WholeCurriculum,
+                null, null, StudentPrivatePracticeDifficulty.AtClassLevel, 1, 7));
+
+        Assert.True(result.Succeeded);
+        Assert.Null(result.Error);
+        Assert.NotNull(repo.SavedAttempt);
+        Assert.Single(repo.SavedItems);
+        Assert.Equal("CurriculumContextCheck", repo.SavedItems[0].GenerationFamily);
+        Assert.Contains("student-private", repo.SavedItems[0].ValidationMetadataJson, StringComparison.Ordinal);
+        Assert.False(string.IsNullOrWhiteSpace(repo.SavedItems[0].CorrectAnswer));
+        Assert.False(string.IsNullOrWhiteSpace(repo.SavedItems[0].Solution));
+    }
+
+    [Fact]
+    public async Task Non_mathematics_outcomes_still_fail_closed()
+    {
+        var ids = Ids.Create();
+        var repo = new FakeRepository
+        {
+            Context = BuildContext(
+                ids,
+                [Outcome(ids, "HIST.1", "Describe the historical context of a source.", 1)],
+                [])
+        };
         var result = await new StudentPrivatePracticeService(repo).GenerateAsync(
             ids.User,
             new GenerateStudentPrivatePracticeRequest(ids.Adoption, StudentPrivatePracticeScope.WholeCurriculum,
@@ -87,6 +119,7 @@ public sealed class StudentPrivatePracticeServiceTests
 
         Assert.Equal(StudentPrivatePracticeError.NoSupportedOutcomes, result.Error);
         Assert.Null(repo.SavedAttempt);
+        Assert.Empty(repo.SavedItems);
     }
 
     [Fact]

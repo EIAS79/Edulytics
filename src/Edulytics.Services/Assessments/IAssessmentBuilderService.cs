@@ -29,7 +29,8 @@ public sealed record AssessmentBuilderWorkspace(
     bool CanGenerateNatively,
     bool ReadyToPublish,
     string ReadinessMessage,
-    IReadOnlyList<AssessmentTargetStudentOption>? TargetStudents = null);
+    IReadOnlyList<AssessmentTargetStudentOption>? TargetStudents = null,
+    IReadOnlyList<Guid>? AiSupportedOutcomeIds = null);
 
 public sealed record UpdateAssessmentDeliverySettingsRequest(
     Guid AssessmentId,

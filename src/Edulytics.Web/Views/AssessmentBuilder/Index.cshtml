@@ -11,10 +11,7 @@
     var targetStudents = Model.TargetStudents ?? Array.Empty<Edulytics.Services.Assessments.AssessmentTargetStudentOption>();
     var manualQuestionSaved = TempData["ManualQuestionSaved"] is bool saved && saved;
     var hasEligibleOutcomes = Model.Details.EligibleOutcomes.Count > 0;
-    var nativeOutcomeIds = Model.Details.EligibleOutcomes
-        .Where(outcome => NativeMathematicsOutcomeProfileResolver.Supports(outcome.Code, outcome.Description))
-        .Select(outcome => outcome.Id)
-        .ToHashSet();
+    var nativeOutcomeIds = (Model.AiSupportedOutcomeIds ?? Array.Empty<Guid>()).ToHashSet();
     var hasNativeOutcomes = nativeOutcomeIds.Count > 0;
 }
 <section class="assessment-page">
