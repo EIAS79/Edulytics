@@ -7,16 +7,19 @@ namespace Edulytics.Tests.Acceptance;
 public sealed class CrossCurriculumSemanticHintTests
 {
     [Fact]
-    public void PolishDirectProportion_RemainsClosedUntilProportionGeneratorExists()
+    public void PolishDirectProportion_UsesContextualAiWithoutClaimingNativeUnitRate()
     {
         var skills = CanonicalMathematicsSkillMapper.Resolve(
             "PL:REQ:TECHNICAL",
             "Proporcjonalność prosta");
+        var capability = MathematicsAiCapabilityMatrix.Resolve(
+            "PL:REQ:TECHNICAL",
+            "Proporcjonalność prosta");
 
         Assert.DoesNotContain(CanonicalMathematicsSkill.UnitRateAndProportion, skills);
-        Assert.False(NativeMathematicsOutcomeProfileResolver.Supports(
-            "PL:REQ:TECHNICAL",
-            "Proporcjonalność prosta"));
+        Assert.Equal(MathematicsAiCapabilityLevel.AiAssisted, capability.Level);
+        Assert.True(capability.CanGenerateAssisted);
+        Assert.False(capability.CanGenerateVerified);
     }
 
     [Fact]
@@ -35,7 +38,11 @@ public sealed class CrossCurriculumSemanticHintTests
 
         var profile = NativeMathematicsOutcomeProfileResolver.Resolve(outcome);
 
-        Assert.Null(profile);
+        Assert.NotNull(profile);
+        Assert.True(profile!.IsContextualAssisted);
+        Assert.Equal(
+            MathematicsGeneratorFamily.CurriculumContextCheck,
+            Assert.Single(profile.AllowedFamilies));
         Assert.Equal(officialDescription, outcome.Description);
         Assert.Equal(
             "Proporcjonalność prosta :: Proporcjonalność prosta — Lesson 01",
@@ -48,7 +55,7 @@ public sealed class CrossCurriculumSemanticHintTests
     [InlineData("Obliczenia procentowe")]
     [InlineData("Ułamki zwykłe i dziesiętne")]
     [InlineData("Proporcjonalność prosta")]
-    public void BroadPolishUnitTitles_RemainManualUntilMatchingGeneratorExists(
+    public void BroadPolishUnitTitles_AreContextualAiUntilMatchingNativeGeneratorExists(
         string semanticHint)
     {
         var outcome = new LearningOutcome
@@ -59,12 +66,17 @@ public sealed class CrossCurriculumSemanticHintTests
             GenerationSemanticHint = semanticHint
         };
 
-        Assert.Null(NativeMathematicsOutcomeProfileResolver.Resolve(outcome));
-        Assert.False(NativeMathematicsOutcomeProfileResolver.Supports(outcome));
+        var profile = NativeMathematicsOutcomeProfileResolver.Resolve(outcome);
+        var capability = NativeMathematicsOutcomeProfileResolver.ResolveCapability(outcome);
+
+        Assert.NotNull(profile);
+        Assert.True(profile!.IsContextualAssisted);
+        Assert.Equal(MathematicsAiCapabilityLevel.AiAssisted, capability.Level);
+        Assert.True(capability.CanGenerateAssisted);
     }
 
     [Fact]
-    public void MixedUaeEquationHint_RemainsClosedInsteadOfSelectingOneNarrowLesson()
+    public void MixedUaeEquationHint_UsesContextualAiInsteadOfSelectingOneNarrowNativeLesson()
     {
         var outcome = new LearningOutcome
         {
@@ -75,22 +87,32 @@ public sealed class CrossCurriculumSemanticHintTests
                 "حل معادلات الخطوة الواحدة | حل معادلات متعددة الخطوات | حل معادلات تتضمن متغيرًا في كل طرف"
         };
 
-        Assert.Null(NativeMathematicsOutcomeProfileResolver.Resolve(outcome));
-        Assert.False(NativeMathematicsOutcomeProfileResolver.Supports(outcome));
+        var profile = NativeMathematicsOutcomeProfileResolver.Resolve(outcome);
+        var capability = NativeMathematicsOutcomeProfileResolver.ResolveCapability(outcome);
+
+        Assert.NotNull(profile);
+        Assert.True(profile!.IsContextualAssisted);
+        Assert.Equal(MathematicsAiCapabilityLevel.AiAssisted, capability.Level);
+        Assert.False(capability.CanGenerateVerified);
     }
 
     [Fact]
-    public void CambridgeEarlyAdditionHint_RemainsClosedUntilExplicitSkillMappingIsReviewed()
+    public void CambridgeEarlyAdditionHint_UsesContextualAiUntilExplicitNativeSkillMappingIsReviewed()
     {
         var outcome = new LearningOutcome
         {
             Id = Guid.NewGuid(),
             Code = "CAM:OUT:0096:1Ni.02",
-            Description = "Cambridge reference objective 1Ni.02",
+            Description = "Cambridge Mathematics reference objective 1Ni.02",
             GenerationSemanticHint =
                 "Addition, Subtraction and Doubles :: Join Groups to Add"
         };
 
-        Assert.Null(NativeMathematicsOutcomeProfileResolver.Resolve(outcome));
+        var profile = NativeMathematicsOutcomeProfileResolver.Resolve(outcome);
+        var capability = NativeMathematicsOutcomeProfileResolver.ResolveCapability(outcome);
+
+        Assert.NotNull(profile);
+        Assert.True(profile!.IsContextualAssisted);
+        Assert.Equal(MathematicsAiCapabilityLevel.AiAssisted, capability.Level);
     }
 }
