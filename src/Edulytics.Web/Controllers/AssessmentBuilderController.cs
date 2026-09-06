@@ -245,7 +245,11 @@ public sealed class AssessmentBuilderController(
         if (!TryDecode(rowVersion, out var version)) return ConcurrencyRedirect(assessmentId);
 
         var initial = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
-        if (initial.Value is null) return Handle(initial.Error);
+        if (initial.Value is null)
+        {
+            TempData["Error"] = text["BuilderOperationFailed"].Value;
+            return RedirectToAction(nameof(Index), new { assessmentId });
+        }
         if (!initial.Value.Details.Assessment.RowVersion.SequenceEqual(version))
             return ConcurrencyRedirect(assessmentId);
 
@@ -254,10 +258,17 @@ public sealed class AssessmentBuilderController(
             .Select(x => x.Id)
             .ToArray();
 
+        var approvedCount = 0;
+        var reviewCount = 0;
+
         foreach (var questionId in draftQuestionIds)
         {
             var current = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
-            if (current.Value is null) return Handle(current.Error);
+            if (current.Value is null)
+            {
+                reviewCount += draftQuestionIds.Length - approvedCount - reviewCount;
+                break;
+            }
 
             var currentQuestion = current.Value.Questions.FirstOrDefault(x => x.Id == questionId);
             if (currentQuestion is null || currentQuestion.Status != AssessmentBuilderQuestionStatus.Draft)
@@ -269,14 +280,26 @@ public sealed class AssessmentBuilderController(
                 questionId,
                 current.Value.Details.Assessment.RowVersion,
                 cancellationToken);
-            if (!result.Succeeded)
+
+            if (result.Succeeded)
             {
-                Feedback(result, "BuilderQuestionApproved");
-                return RedirectToAction(nameof(Index), new { assessmentId });
+                approvedCount++;
+            }
+            else
+            {
+                reviewCount++;
             }
         }
 
-        TempData["Success"] = text["BuilderQuestionApproved"].Value;
+        if (reviewCount == 0)
+        {
+            TempData["Success"] = text["BuilderQuestionApproved"].Value;
+        }
+        else
+        {
+            TempData["Success"] = $"Approved {approvedCount} draft question(s). {reviewCount} remain for teacher review.";
+        }
+
         return RedirectToAction(nameof(Index), new { assessmentId });
     }
 

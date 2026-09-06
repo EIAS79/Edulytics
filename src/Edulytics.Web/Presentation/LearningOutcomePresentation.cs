@@ -18,6 +18,10 @@ public static class LearningOutcomePresentation
         @"^(?<stage>\d+)(?<family>[A-Za-z]+)(?:\.(?<item>\d+))?$",
         RegexOptions.Compiled | RegexOptions.CultureInvariant);
 
+    private static readonly Regex TwmCodePattern = new(
+        @"^TWM(?:\.(?<item>\d+))?$",
+        RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
+
     private static readonly Regex ReferenceFamilyTopicPattern = new(
         @"Stage\s+(?<stage>[^\s]+).*reference\s+family\s+(?<family>[A-Za-z]+)",
         RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
@@ -81,6 +85,16 @@ public static class LearningOutcomePresentation
     private static string ReferenceOnlyTitle(string? code)
     {
         var displayCode = DisplayCode(code);
+
+        var twmMatch = TwmCodePattern.Match(displayCode);
+        if (twmMatch.Success)
+        {
+            var twmItem = twmMatch.Groups["item"].Value;
+            return twmItem.Length == 0
+                ? "Thinking and Working Mathematically"
+                : $"Thinking and Working Mathematically · {twmItem}";
+        }
+
         var match = ReferenceCodePattern.Match(displayCode);
         if (!match.Success)
             return displayCode.Length == 0 ? "Mathematics" : displayCode;
@@ -99,6 +113,10 @@ public static class LearningOutcomePresentation
             return "Algebraic expressions";
         if (normalized.Equals("Np", StringComparison.OrdinalIgnoreCase))
             return "Number and proportional reasoning";
+        if (normalized.Equals("Ni", StringComparison.OrdinalIgnoreCase))
+            return "Whole numbers and place value";
+        if (normalized.Equals("Nf", StringComparison.OrdinalIgnoreCase))
+            return "Fractions";
         if (normalized.Equals("Gg", StringComparison.OrdinalIgnoreCase))
             return "Geometry";
 

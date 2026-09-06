@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = A["EditAssessment"];
     var assessment = Model.Details.Assessment;
+    var hasQuestions = Model.Details.Questions.Count > 0;
 }
 <section class="assessment-page assessment-edit-page">
     <header class="assessment-header">
@@ -38,10 +39,24 @@
                    required />
 
             <label for="maxScore">@A["MaxScore"]</label>
-            <input id="maxScore" name="maxScore"
-                   type="number" min="1" max="10000" step="1"
-                   value="@assessment.MaxScore.ToString(System.Globalization.CultureInfo.InvariantCulture)"
-                   required />
+            @if (hasQuestions)
+            {
+                <input type="hidden" name="maxScore"
+                       value="@assessment.MaxScore.ToString(System.Globalization.CultureInfo.InvariantCulture)" />
+                <input id="maxScore"
+                       type="number"
+                       value="@assessment.MaxScore.ToString(System.Globalization.CultureInfo.InvariantCulture)"
+                       readonly
+                       aria-readonly="true" />
+                <small class="assessment-info">Maximum score is locked once questions exist and is controlled by question marks.</small>
+            }
+            else
+            {
+                <input id="maxScore" name="maxScore"
+                       type="number" min="1" max="10000" step="1"
+                       value="@assessment.MaxScore.ToString(System.Globalization.CultureInfo.InvariantCulture)"
+                       required />
+            }
 
             <button type="submit"
                     class="school-button school-button-primary">@A["SaveChanges"]</button>

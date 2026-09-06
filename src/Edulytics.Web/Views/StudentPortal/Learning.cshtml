@@ -6,6 +6,7 @@
     Layout = "_StudentLayout";
     ViewData["Title"] = S["LearningTitle"].Value;
 }
+<link rel="stylesheet" href="~/css/round5-ux-fixes.css" asp-append-version="true" />
 <header class="student-page-header">
     <span class="student-eyebrow">@S["MyLearning"]</span>
     <h1>@S["LearningTitle"]</h1>
@@ -125,7 +126,7 @@ else
                         <span class="lesson-content-status lesson-content-status--supporting">@L["SupportingLesson"]</span>
                     }
                     <p>@lesson.TopicName</p>
-                    <div class="student-learning-meta">
+                    <div class="student-learning-meta student-lesson-context">
                         <span class="student-lesson-primary-context">@lesson.GradeName · Mathematics</span>
                         <span class="student-lesson-secondary-context">@lesson.FrameworkName</span>
                     </div>

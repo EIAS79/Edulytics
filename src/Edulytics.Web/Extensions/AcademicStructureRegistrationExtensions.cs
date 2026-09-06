@@ -16,6 +16,14 @@ public static class AcademicStructureRegistrationExtensions
             IAcademicStructureRepository,
             AcademicStructureRepository>();
 
+        services.AddScoped<
+            IStudentPlacementRepository,
+            StudentPlacementRepository>();
+
+        services.AddScoped<
+            IStudentPlacementService,
+            StudentPlacementService>();
+
         services.AddScoped<IAcademicStructureService>(
             provider =>
                 new AcademicStructureService(
