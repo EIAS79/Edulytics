@@ -36,6 +36,7 @@ public sealed class AcademicStructureNormalUiTagHelper : TagHelper
         if (ViewContext.ViewData.Model is not AcademicStructureDashboard dashboard)
             return;
 
+        output.Attributes.RemoveAll("asp-action");
         output.Attributes.SetAttribute(
             "action",
             "/school/academic-structure/student-placements/bulk");
