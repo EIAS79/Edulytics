@@ -392,8 +392,7 @@ public sealed class MathematicsQuestionGenerationEngine
                 var firstMax = Math.Min(
                     factorMax,
                     Math.Max(2, computationMaximum.Value / 2));
-                var firstMin = Math.Min(factorMin, firstMax);
-                first = StableRange($"{key}|a", firstMin, firstMax);
+                first = StableRange($"{key}|a", 2, firstMax);
 
                 var secondMax = Math.Min(
                     factorMax,
@@ -404,8 +403,7 @@ public sealed class MathematicsQuestionGenerationEngine
                         "Whole-number multiplication/division ceiling cannot satisfy the reviewed factor range.");
                 }
 
-                var secondMin = Math.Min(factorMin, secondMax);
-                second = StableRange($"{key}|b", secondMin, secondMax);
+                second = StableRange($"{key}|b", 2, secondMax);
             }
             else
             {
@@ -460,17 +458,14 @@ public sealed class MathematicsQuestionGenerationEngine
                 }
 
                 var aMax = maximum - 1;
-                var aMin = Math.Min(baseMin, aMax);
-                a = StableRange($"{key}|a", Math.Max(1, aMin), aMax);
+                a = StableRange($"{key}|a", 1, aMax);
                 var bMax = maximum - a;
-                var bMin = Math.Min(baseMin, bMax);
-                b = StableRange($"{key}|b", Math.Max(1, bMin), bMax);
+                b = StableRange($"{key}|b", 1, bMax);
             }
             else
             {
-                var operandMin = Math.Min(baseMin, maximum);
-                a = StableRange($"{key}|a", Math.Max(1, operandMin), maximum);
-                b = StableRange($"{key}|b", Math.Max(1, operandMin), maximum);
+                a = StableRange($"{key}|a", 1, maximum);
+                b = StableRange($"{key}|b", 1, maximum);
             }
         }
         else
