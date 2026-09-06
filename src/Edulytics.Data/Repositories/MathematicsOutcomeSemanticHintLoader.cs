@@ -80,12 +80,25 @@ internal static class MathematicsOutcomeSemanticHintLoader
         if (outcomes.Count == 0 || lessons.Count == 0 || mappings.Count == 0)
             return;
 
+        // Some existing repository paths already hold the lessons/mappings and
+        // call this in-memory overload directly. When an explicit eligibility set
+        // is absent, infer only the known OfficialSourceLinked pack identities.
+        // This keeps Teacher and Student paths consistent and prevents Common Core
+        // full official text from being contaminated by broad lesson titles.
+        var effectiveEligibleOutcomeNodeIds = semanticHintEligibleOutcomeNodeIds ??
+            outcomes
+                .Where(IsReferenceLinkedOutcome)
+                .Where(x => x.OfficialContentNodeId.HasValue)
+                .Select(x => x.OfficialContentNodeId!.Value)
+                .ToHashSet();
+        if (effectiveEligibleOutcomeNodeIds.Count == 0)
+            return;
+
         var lessonById = lessons.ToDictionary(x => x.Id);
         var hintsByOutcomeNodeId = mappings
             .Where(x =>
                 lessonById.ContainsKey(x.PedagogicalLessonId) &&
-                (semanticHintEligibleOutcomeNodeIds is null ||
-                 semanticHintEligibleOutcomeNodeIds.Contains(x.OutcomeNodeId)))
+                effectiveEligibleOutcomeNodeIds.Contains(x.OutcomeNodeId))
             .GroupBy(x => x.OutcomeNodeId)
             .ToDictionary(
                 group => group.Key,
@@ -99,8 +112,7 @@ internal static class MathematicsOutcomeSemanticHintLoader
         foreach (var outcome in outcomes)
         {
             if (!outcome.OfficialContentNodeId.HasValue ||
-                (semanticHintEligibleOutcomeNodeIds is not null &&
-                 !semanticHintEligibleOutcomeNodeIds.Contains(outcome.OfficialContentNodeId.Value)) ||
+                !effectiveEligibleOutcomeNodeIds.Contains(outcome.OfficialContentNodeId.Value) ||
                 !hintsByOutcomeNodeId.TryGetValue(
                     outcome.OfficialContentNodeId.Value,
                     out var hint) ||
@@ -121,5 +133,14 @@ internal static class MathematicsOutcomeSemanticHintLoader
         var definition = MathematicsCurriculumPackRegistry.All.SingleOrDefault(x =>
             string.Equals(x.Code, frameworkCode.Trim(), StringComparison.OrdinalIgnoreCase));
         return definition?.TextMode == CurriculumTextMode.OfficialSourceLinked;
+    }
+
+    private static bool IsReferenceLinkedOutcome(LearningOutcome outcome)
+    {
+        var code = outcome.Code?.Trim() ?? string.Empty;
+        return code.StartsWith("CAM:", StringComparison.OrdinalIgnoreCase) ||
+            code.StartsWith("PL:", StringComparison.OrdinalIgnoreCase) ||
+            code.StartsWith("UAE:", StringComparison.OrdinalIgnoreCase) ||
+            code.StartsWith("MAT.", StringComparison.OrdinalIgnoreCase);
     }
 }
