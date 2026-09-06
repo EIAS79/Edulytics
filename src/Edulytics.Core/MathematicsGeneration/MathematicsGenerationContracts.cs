@@ -36,6 +36,14 @@ public sealed record MathematicsOutcomeGenerationProfile(
     IReadOnlyList<MathematicsGeneratorFamily> AllowedFamilies)
 {
     public IReadOnlyList<CanonicalMathematicsSkill> CanonicalSkills { get; init; } = [];
+
+    /// <summary>
+    /// Optional curriculum-neutral ceiling for direct whole-number computation.
+    /// For wording such as "within 20" the generator must keep operands/results
+    /// inside this bound. Null means the Outcome itself did not state a numeric
+    /// ceiling; the registered curriculum-level policy may still apply.
+    /// </summary>
+    public int? IntegerComputationMaximum { get; init; }
 }
 
 public sealed record MathematicsGenerationRequest(
