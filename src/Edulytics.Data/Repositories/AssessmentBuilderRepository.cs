@@ -74,6 +74,12 @@ public sealed class AssessmentBuilderRepository(EdulyticsDbContext db) : IAssess
             .ThenBy(x => x.Code)
             .ToListAsync(cancellationToken);
 
+        await MathematicsOutcomeSemanticHintLoader.ApplyAsync(
+            db,
+            adoption,
+            outcomes,
+            cancellationToken);
+
         var summaries = await db.ClassOutcomeSummaries.AsNoTracking()
             .Where(x =>
                 x.SchoolId == schoolId &&
