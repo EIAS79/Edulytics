@@ -32,7 +32,12 @@ public static class CanonicalMathematicsSkillMapper
             skills.Add(CanonicalMathematicsSkill.PercentageOfQuantity);
 
         var isUnitRate =
-            ContainsAny(text, "UNIT RATE", "UNIT-RATE", "النسب والتناسب") ||
+            ContainsAny(
+                text,
+                "UNIT RATE",
+                "UNIT-RATE",
+                "النسب والتناسب",
+                "PROPORCJONALNOŚĆ PROSTA") ||
             (ContainsAny(codeText, ".RP.", ":RP.") &&
              ContainsAny(text, "RATIO", "RATE"));
         if (isUnitRate)
