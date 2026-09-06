@@ -177,7 +177,7 @@
 
 /* ---------- Student dashboard ---------- */
 .student-dashboard-grid {
-    grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr) !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     gap: 18px;
     align-items: start;
 }
@@ -230,6 +230,10 @@
         padding-bottom: 4px;
     }
 
+    .student-dashboard-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
     /* At tablet/compact desktop width, a card-row representation is clearer than
        forcing six management columns into a horizontal scroller. */
     #students .academic-list-grid .academic-table,
@@ -274,10 +278,6 @@
 }
 
 @media (max-width: 900px) {
-    .student-dashboard-grid {
-        grid-template-columns: minmax(0, 1fr) !important;
-    }
-
     #students .academic-grid {
         grid-template-columns: minmax(0, 1fr);
     }
