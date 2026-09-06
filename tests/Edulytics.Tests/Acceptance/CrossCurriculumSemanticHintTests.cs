@@ -1,24 +1,22 @@
 using Edulytics.Core.Entities;
 using Edulytics.Core.MathematicsGeneration;
 using Edulytics.Services.Assessments;
-using Edulytics.Services.MathematicsGeneration;
 
 namespace Edulytics.Tests.Acceptance;
 
 public sealed class CrossCurriculumSemanticHintTests
 {
     [Fact]
-    public void PolishDirectProportion_MapsToReviewedUnitRateFamily()
+    public void PolishDirectProportion_RemainsClosedUntilProportionGeneratorExists()
     {
         var skills = CanonicalMathematicsSkillMapper.Resolve(
             "PL:REQ:TECHNICAL",
             "Proporcjonalność prosta");
-        var provider = new NativeMathematicsGenerationCapabilityProvider();
 
-        Assert.Contains(CanonicalMathematicsSkill.UnitRateAndProportion, skills);
-        Assert.Equal(
-            MathematicsGeneratorFamily.UnitRateWordProblem,
-            Assert.Single(provider.ResolveFamilies(skills)));
+        Assert.DoesNotContain(CanonicalMathematicsSkill.UnitRateAndProportion, skills);
+        Assert.False(NativeMathematicsOutcomeProfileResolver.Supports(
+            "PL:REQ:TECHNICAL",
+            "Proporcjonalność prosta"));
     }
 
     [Fact]
@@ -37,10 +35,11 @@ public sealed class CrossCurriculumSemanticHintTests
 
         var profile = NativeMathematicsOutcomeProfileResolver.Resolve(outcome);
 
-        Assert.NotNull(profile);
+        Assert.Null(profile);
         Assert.Equal(officialDescription, outcome.Description);
-        Assert.Contains(CanonicalMathematicsSkill.UnitRateAndProportion, profile!.CanonicalSkills);
-        Assert.Contains(MathematicsGeneratorFamily.UnitRateWordProblem, profile.AllowedFamilies);
+        Assert.Equal(
+            "Proporcjonalność prosta :: Proporcjonalność prosta — Lesson 01",
+            outcome.GenerationSemanticHint);
     }
 
     [Theory]
@@ -48,6 +47,7 @@ public sealed class CrossCurriculumSemanticHintTests
     [InlineData("Równania i nierówności")]
     [InlineData("Obliczenia procentowe")]
     [InlineData("Ułamki zwykłe i dziesiętne")]
+    [InlineData("Proporcjonalność prosta")]
     public void BroadPolishUnitTitles_RemainManualUntilMatchingGeneratorExists(
         string semanticHint)
     {
@@ -64,7 +64,23 @@ public sealed class CrossCurriculumSemanticHintTests
     }
 
     [Fact]
-    public void CambridgeEarlyAdditionHint_RemainsClosedUntilLevelAwareGenerationIsEnabled()
+    public void MixedUaeEquationHint_RemainsClosedInsteadOfSelectingOneNarrowLesson()
+    {
+        var outcome = new LearningOutcome
+        {
+            Id = Guid.NewGuid(),
+            Code = "UAE:STD:MAT.2.02.04",
+            Description = "Reference-only UAE Mathematics standard",
+            GenerationSemanticHint =
+                "حل معادلات الخطوة الواحدة | حل معادلات متعددة الخطوات | حل معادلات تتضمن متغيرًا في كل طرف"
+        };
+
+        Assert.Null(NativeMathematicsOutcomeProfileResolver.Resolve(outcome));
+        Assert.False(NativeMathematicsOutcomeProfileResolver.Supports(outcome));
+    }
+
+    [Fact]
+    public void CambridgeEarlyAdditionHint_RemainsClosedUntilExplicitSkillMappingIsReviewed()
     {
         var outcome = new LearningOutcome
         {
