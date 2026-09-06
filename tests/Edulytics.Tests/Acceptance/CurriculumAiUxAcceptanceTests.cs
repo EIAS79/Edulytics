@@ -65,7 +65,7 @@ public sealed class CurriculumAiUxAcceptanceTests
     }
 
     [Fact]
-    public void LearningOutcomeUi_ShowsCapabilityBeforeSelectionAndUsesCompactCards()
+    public void LearningOutcomeUi_ShowsCapabilityBeforeSelectionAndUsesReadableSelectors()
     {
         var curriculumView = ReadRepositoryFile(
             "src",
@@ -81,12 +81,12 @@ public sealed class CurriculumAiUxAcceptanceTests
             "AssessmentBuilder",
             "Index.cshtml");
 
-        var css = ReadRepositoryFile(
+        var builderCss = ReadRepositoryFile(
             "src",
             "Edulytics.Web",
             "wwwroot",
             "css",
-            "acceptance-corrective.css");
+            "assessment-builder.css");
 
         Assert.Contains(
             "NativeMathematicsOutcomeProfileResolver.Supports",
@@ -109,12 +109,7 @@ public sealed class CurriculumAiUxAcceptanceTests
             StringComparison.Ordinal);
 
         Assert.Contains(
-            "ed-ai-capability-summary",
-            builderView,
-            StringComparison.Ordinal);
-
-        Assert.Contains(
-            "ed-outcome-option",
+            "ed-builder-outcome-select",
             builderView,
             StringComparison.Ordinal);
 
@@ -124,13 +119,18 @@ public sealed class CurriculumAiUxAcceptanceTests
             StringComparison.Ordinal);
 
         Assert.Contains(
-            ".assessment-form input[type=\"checkbox\"]",
-            css,
+            "LearningOutcomePresentation.DisplayTitle",
+            builderView,
             StringComparison.Ordinal);
 
         Assert.Contains(
-            "width: 1.1rem",
-            css,
+            "disabled=\"@(!aiSupported)\"",
+            builderView,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            ".ed-builder-outcome-select",
+            builderCss,
             StringComparison.Ordinal);
     }
 
