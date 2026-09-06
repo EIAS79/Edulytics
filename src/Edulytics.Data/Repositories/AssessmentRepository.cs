@@ -14,8 +14,17 @@ public sealed class AssessmentRepository : IAssessmentRepository
 
     public async Task<AssessmentSnapshot> GetSnapshotAsync(
         Guid schoolId,
-        CancellationToken cancellationToken = default) =>
-        new(
+        CancellationToken cancellationToken = default)
+    {
+        // Assessments consume the adopted verified curriculum directly. This idempotent
+        // compatibility projection repairs older adoptions that pre-date automatic outcome
+        // materialisation, so the first Builder request already sees official outcomes.
+        await OfficialCurriculumOutcomeMaterializer.EnsureAllActiveAsync(
+            _db,
+            schoolId,
+            cancellationToken);
+
+        return new AssessmentSnapshot(
             await _db.AcademicYears.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
             await _db.Terms.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
             await _db.GradeLevels.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
@@ -33,6 +42,7 @@ public sealed class AssessmentRepository : IAssessmentRepository
             await _db.QuestionLearningOutcomes.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
             await _db.AssessmentResults.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
             await _db.StudentAnswers.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken));
+    }
 
     public Task<Assessment?> GetAssessmentAsync(Guid schoolId, Guid id, CancellationToken cancellationToken = default) =>
         _db.Assessments.FirstOrDefaultAsync(x => x.SchoolId == schoolId && x.Id == id, cancellationToken);
