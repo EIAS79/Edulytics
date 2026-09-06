@@ -370,13 +370,13 @@ public sealed class MathematicsQuestionGenerationEngine
 
             if (operation == "multiply")
             {
-                var answer = first * second;
-                var parameters = new IntegerParameters(first, second, operation);
+                var product = first * second;
+                var multiplicationParameters = new IntegerParameters(first, second, operation);
                 return new RawGeneratedItem(
                     $"Calculate {first} × {second}.",
-                    answer.ToString(),
-                    $"Multiply {first} by {second} to get {answer}.",
-                    JsonSerializer.Serialize(parameters));
+                    product.ToString(),
+                    $"Multiply {first} by {second} to get {product}.",
+                    JsonSerializer.Serialize(multiplicationParameters));
             }
 
             var dividend = first * second;
