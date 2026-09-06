@@ -3,7 +3,7 @@
 @{
     Layout = "_PublicLayout";
     var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
-    var contactLabel = isPolish ? "Kontakt" : "Contact";
+    var contactLabel = isPolish ? "Kontakt" : "Contact us";
     var loginLabel = isPolish ? "Zaloguj się" : "Log in";
     var demoLabel = isPolish ? "Poproś o demo" : "Request a demo";
 }
@@ -21,8 +21,8 @@
             </nav>
             <div class="ed-home-actions">
                 <div class="ed-home-lang" aria-label="Language">
-                    <form asp-controller="Home" asp-action="SetCulture" method="post">@Html.AntiForgeryToken()<input type="hidden" name="culture" value="pl" /><input type="hidden" name="returnUrl" value="/" /><button type="submit" class="@(isPolish ? "is-active" : "")">PL</button></form>
-                    <form asp-controller="Home" asp-action="SetCulture" method="post">@Html.AntiForgeryToken()<input type="hidden" name="culture" value="en" /><input type="hidden" name="returnUrl" value="/" /><button type="submit" class="@(!isPolish ? "is-active" : "")">EN</button></form>
+                    <form asp-controller="Home" asp-action="SetCulture" method="post">@Html.AntiForgeryToken()<input type="hidden" name="culture" value="pl" /><input type="hidden" name="returnUrl" value="/" /><button type="submit" class="@(isPolish ? "is-active" : "")" aria-label="Polski">PL</button></form>
+                    <form asp-controller="Home" asp-action="SetCulture" method="post">@Html.AntiForgeryToken()<input type="hidden" name="culture" value="en" /><input type="hidden" name="returnUrl" value="/" /><button type="submit" class="@(!isPolish ? "is-active" : "")" aria-label="English">EN</button></form>
                 </div>
                 <details class="ed-home-contact"><summary>@contactLabel</summary><div class="ed-home-contact-popover"><a href="mailto:@SupportContactOptions.Email">@SupportContactOptions.Email</a><a href="@SupportContactOptions.PhoneUri">@SupportContactOptions.PhoneDisplay</a><a href="@SupportContactOptions.CompanyWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.CompanyWebsiteDisplay</a><a href="@SupportContactOptions.ProductWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.ProductWebsiteDisplay</a></div></details>
                 <a class="ed-home-login" asp-controller="Account" asp-action="Login">@loginLabel</a>
