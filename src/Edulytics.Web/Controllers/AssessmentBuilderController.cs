@@ -36,41 +36,29 @@ public sealed class AssessmentBuilderController(
     }
 
     [HttpGet("student-paper.pdf")]
-    public async Task<IActionResult> StudentPaperPdf(
-        Guid assessmentId,
-        CancellationToken cancellationToken)
+    public async Task<IActionResult> StudentPaperPdf(Guid assessmentId, CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
         var result = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
         if (result.Value is null) return Handle(result.Error);
-        if (result.Value.Details.Assessment.DeliveryMode != AssessmentDeliveryMode.Offline)
-            return BadRequest();
+        if (result.Value.Details.Assessment.DeliveryMode != AssessmentDeliveryMode.Offline) return BadRequest();
 
         var paper = AssessmentPrintDocumentFactory.CreateStudentPaper(result.Value);
         var bytes = AssessmentPdfRenderer.RenderStudentPaper(paper, PdfLabels());
-        return File(
-            bytes,
-            "application/pdf",
-            $"assessment-{assessmentId:N}-student-paper.pdf");
+        return File(bytes, "application/pdf", $"assessment-{assessmentId:N}-student-paper.pdf");
     }
 
     [HttpGet("answer-key.pdf")]
-    public async Task<IActionResult> AnswerKeyPdf(
-        Guid assessmentId,
-        CancellationToken cancellationToken)
+    public async Task<IActionResult> AnswerKeyPdf(Guid assessmentId, CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
         var result = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
         if (result.Value is null) return Handle(result.Error);
-        if (result.Value.Details.Assessment.DeliveryMode != AssessmentDeliveryMode.Offline)
-            return BadRequest();
+        if (result.Value.Details.Assessment.DeliveryMode != AssessmentDeliveryMode.Offline) return BadRequest();
 
         var answerKey = AssessmentPrintDocumentFactory.CreateTeacherAnswerKey(result.Value);
         var bytes = AssessmentPdfRenderer.RenderTeacherAnswerKey(answerKey, PdfLabels());
-        return File(
-            bytes,
-            "application/pdf",
-            $"assessment-{assessmentId:N}-teacher-answer-key.pdf");
+        return File(bytes, "application/pdf", $"assessment-{assessmentId:N}-teacher-answer-key.pdf");
     }
 
     [HttpPost("settings"), ValidateAntiForgeryToken]
@@ -109,28 +97,58 @@ public sealed class AssessmentBuilderController(
     [HttpPost("manual"), ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
     [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
-    public async Task<IActionResult> CreateManual(Guid assessmentId, string prompt, string correctAnswer, string solution,
-        decimal maxScore, int order, AssessmentItemDifficulty difficulty, Guid[]? outcomeIds, string rowVersion, CancellationToken cancellationToken)
+    public async Task<IActionResult> CreateManual(
+        Guid assessmentId,
+        string prompt,
+        string correctAnswer,
+        string solution,
+        decimal maxScore,
+        int order,
+        AssessmentItemDifficulty difficulty,
+        Guid[]? outcomeIds,
+        string rowVersion,
+        CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
         if (!TryDecode(rowVersion, out var version)) return ConcurrencyRedirect(assessmentId);
-        var result = await service.CreateManualQuestionAsync(actorId,
-            new CreateManualBuilderQuestionRequest(assessmentId, prompt, correctAnswer, solution, maxScore, order, difficulty, outcomeIds ?? [], version), cancellationToken);
+        var result = await service.CreateManualQuestionAsync(
+            actorId,
+            new CreateManualBuilderQuestionRequest(
+                assessmentId,
+                prompt,
+                correctAnswer,
+                solution,
+                maxScore,
+                order,
+                difficulty,
+                outcomeIds ?? [],
+                version),
+            cancellationToken);
         Feedback(result, "SuccessQuestionCreated");
-        if (result.Succeeded)
-            TempData["ManualQuestionSaved"] = true;
+        if (result.Succeeded) TempData["ManualQuestionSaved"] = true;
         return RedirectToAction(nameof(Index), new { assessmentId });
     }
 
     [HttpPost("questions/{questionId:guid}/edit"), ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
     [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
-    public async Task<IActionResult> Edit(Guid assessmentId, Guid questionId, string prompt, string correctAnswer, string solution,
-        decimal maxScore, int order, AssessmentItemDifficulty difficulty, Guid[]? outcomeIds, string rowVersion, CancellationToken cancellationToken)
+    public async Task<IActionResult> Edit(
+        Guid assessmentId,
+        Guid questionId,
+        string prompt,
+        string correctAnswer,
+        string solution,
+        decimal maxScore,
+        int order,
+        AssessmentItemDifficulty difficulty,
+        Guid[]? outcomeIds,
+        string rowVersion,
+        CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
         if (!TryDecode(rowVersion, out var version)) return ConcurrencyRedirect(assessmentId);
-        var result = await service.EditQuestionAsync(actorId,
+        var result = await service.EditQuestionAsync(
+            actorId,
             new EditBuilderQuestionRequest(
                 assessmentId,
                 questionId,
@@ -150,8 +168,15 @@ public sealed class AssessmentBuilderController(
     [HttpPost("generate"), ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
     [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
-    public async Task<IActionResult> Generate(Guid assessmentId, int questionCount, decimal? maxScorePerQuestion,
-        AssessmentBuilderDifficulty? difficulty, Guid[]? outcomeIds, int seed, string rowVersion, CancellationToken cancellationToken)
+    public async Task<IActionResult> Generate(
+        Guid assessmentId,
+        int questionCount,
+        decimal? maxScorePerQuestion,
+        AssessmentBuilderDifficulty? difficulty,
+        Guid[]? outcomeIds,
+        int seed,
+        string rowVersion,
+        CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
         if (questionCount is < 1 or > MaximumGeneratedQuestionCount)
@@ -160,7 +185,8 @@ public sealed class AssessmentBuilderController(
             return RedirectToAction(nameof(Index), new { assessmentId });
         }
         if (!TryDecode(rowVersion, out var version)) return ConcurrencyRedirect(assessmentId);
-        var result = await service.GenerateQuestionsAsync(actorId,
+        var result = await service.GenerateQuestionsAsync(
+            actorId,
             new GenerateBuilderQuestionsRequest(
                 assessmentId,
                 questionCount,
@@ -177,7 +203,12 @@ public sealed class AssessmentBuilderController(
     [HttpPost("questions/{questionId:guid}/regenerate"), ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
     [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
-    public async Task<IActionResult> Regenerate(Guid assessmentId, Guid questionId, int seed, string rowVersion, CancellationToken cancellationToken)
+    public async Task<IActionResult> Regenerate(
+        Guid assessmentId,
+        Guid questionId,
+        int seed,
+        string rowVersion,
+        CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
         if (!TryDecode(rowVersion, out var version)) return ConcurrencyRedirect(assessmentId);
@@ -189,7 +220,11 @@ public sealed class AssessmentBuilderController(
     [HttpPost("questions/{questionId:guid}/approve"), ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
     [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
-    public async Task<IActionResult> Approve(Guid assessmentId, Guid questionId, string rowVersion, CancellationToken cancellationToken)
+    public async Task<IActionResult> Approve(
+        Guid assessmentId,
+        Guid questionId,
+        string rowVersion,
+        CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
         if (!TryDecode(rowVersion, out var version)) return ConcurrencyRedirect(assessmentId);
@@ -198,10 +233,61 @@ public sealed class AssessmentBuilderController(
         return RedirectToAction(nameof(Index), new { assessmentId });
     }
 
+    [HttpPost("questions/approve-all"), ValidateAntiForgeryToken]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public async Task<IActionResult> ApproveAll(
+        Guid assessmentId,
+        string rowVersion,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+        if (!TryDecode(rowVersion, out var version)) return ConcurrencyRedirect(assessmentId);
+
+        var initial = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
+        if (initial.Value is null) return Handle(initial.Error);
+        if (!initial.Value.Details.Assessment.RowVersion.SequenceEqual(version))
+            return ConcurrencyRedirect(assessmentId);
+
+        var draftQuestionIds = initial.Value.Questions
+            .Where(x => x.Status == AssessmentBuilderQuestionStatus.Draft)
+            .Select(x => x.Id)
+            .ToArray();
+
+        foreach (var questionId in draftQuestionIds)
+        {
+            var current = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
+            if (current.Value is null) return Handle(current.Error);
+
+            var currentQuestion = current.Value.Questions.FirstOrDefault(x => x.Id == questionId);
+            if (currentQuestion is null || currentQuestion.Status != AssessmentBuilderQuestionStatus.Draft)
+                continue;
+
+            var result = await service.ApproveQuestionAsync(
+                actorId,
+                assessmentId,
+                questionId,
+                current.Value.Details.Assessment.RowVersion,
+                cancellationToken);
+            if (!result.Succeeded)
+            {
+                Feedback(result, "BuilderQuestionApproved");
+                return RedirectToAction(nameof(Index), new { assessmentId });
+            }
+        }
+
+        TempData["Success"] = text["BuilderQuestionApproved"].Value;
+        return RedirectToAction(nameof(Index), new { assessmentId });
+    }
+
     [HttpPost("questions/{questionId:guid}/delete"), ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
     [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
-    public async Task<IActionResult> Delete(Guid assessmentId, Guid questionId, string rowVersion, CancellationToken cancellationToken)
+    public async Task<IActionResult> Delete(
+        Guid assessmentId,
+        Guid questionId,
+        string rowVersion,
+        CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
         if (!TryDecode(rowVersion, out var version)) return ConcurrencyRedirect(assessmentId);
@@ -213,7 +299,10 @@ public sealed class AssessmentBuilderController(
     [HttpPost("publish"), ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
     [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
-    public async Task<IActionResult> Publish(Guid assessmentId, string rowVersion, CancellationToken cancellationToken)
+    public async Task<IActionResult> Publish(
+        Guid assessmentId,
+        string rowVersion,
+        CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
         if (!TryDecode(rowVersion, out var version)) return ConcurrencyRedirect(assessmentId);
@@ -236,17 +325,20 @@ public sealed class AssessmentBuilderController(
 
     private bool TryActor(out Guid id) => Guid.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out id);
     private IActionResult Handle(AssessmentErrorCode? error) => error == AssessmentErrorCode.AccessDenied ? Forbid() : NotFound();
+
     private IActionResult ConcurrencyRedirect(Guid assessmentId)
     {
         TempData["Error"] = text["ErrorConcurrencyConflict"].Value;
         return RedirectToAction(nameof(Index), new { assessmentId });
     }
+
     private void Feedback(AssessmentCommandResult result, string successKey)
     {
         TempData[result.Succeeded ? "Success" : "Error"] = result.Succeeded
             ? text[successKey].Value
             : ErrorMessage(result.Error);
     }
+
     private string ErrorMessage(AssessmentErrorCode? error) => error switch
     {
         AssessmentErrorCode.OutcomeDoesNotMatchAssessment => text["ErrorOutcomeDoesNotMatchAssessment"].Value,
@@ -258,11 +350,19 @@ public sealed class AssessmentBuilderController(
         AssessmentErrorCode.ConcurrencyConflict => text["ErrorConcurrencyConflict"].Value,
         _ => text["BuilderOperationFailed"].Value
     };
+
     private static bool TryDecode(string? value, out byte[] bytes)
     {
         bytes = [];
         if (string.IsNullOrWhiteSpace(value)) return false;
-        try { bytes = Convert.FromBase64String(value); return bytes.Length > 0; }
-        catch (FormatException) { return false; }
+        try
+        {
+            bytes = Convert.FromBase64String(value);
+            return bytes.Length > 0;
+        }
+        catch (FormatException)
+        {
+            return false;
+        }
     }
 }
