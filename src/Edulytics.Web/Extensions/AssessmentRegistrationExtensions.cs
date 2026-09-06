@@ -2,6 +2,8 @@ using Edulytics.Core.Constants;
 using Edulytics.Core.Interfaces;
 using Edulytics.Data.Repositories;
 using Edulytics.Services.Assessments;
+using Edulytics.Web.Filters;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Edulytics.Web.Extensions;
 
@@ -16,6 +18,10 @@ public static class AssessmentRegistrationExtensions
         services.AddScoped<IAssessmentBuilderService, AssessmentBuilderService>();
         services.AddScoped<IAssessmentDeliverySettingsService, AssessmentDeliverySettingsService>();
         services.AddScoped<IStudentAssessmentDeliveryService, StudentAssessmentDeliveryService>();
+        services.AddScoped<AssessmentMaxScoreLockFilter>();
+
+        services.Configure<MvcOptions>(
+            options => options.Filters.AddService<AssessmentMaxScoreLockFilter>());
 
         services.AddAuthorization(options =>
         {
