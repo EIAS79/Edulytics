@@ -87,7 +87,8 @@ public sealed class StudentPrivatePracticeService(
         GenerateStudentPrivatePracticeRequest request,
         CancellationToken cancellationToken = default)
     {
-        if (request.QuestionCount is < 1 or > 20)
+        var questionLimit = QuestionLimitForScope(request.Scope);
+        if (questionLimit == 0 || request.QuestionCount < 1 || request.QuestionCount > questionLimit)
             return StudentPrivatePracticeResult.Failure(StudentPrivatePracticeError.InvalidQuestionCount);
 
         var context = await repository.GetContextAsync(studentUserId, request.CurriculumAdoptionId, cancellationToken);
@@ -205,6 +206,15 @@ public sealed class StudentPrivatePracticeService(
             return StudentPrivatePracticeResult.Failure(StudentPrivatePracticeError.GenerationFailed);
         }
     }
+
+    private static int QuestionLimitForScope(StudentPrivatePracticeScope scope) => scope switch
+    {
+        StudentPrivatePracticeScope.Lesson => 10,
+        StudentPrivatePracticeScope.Unit => 15,
+        StudentPrivatePracticeScope.WeakAreas => 15,
+        StudentPrivatePracticeScope.WholeCurriculum => 30,
+        _ => 0
+    };
 
     private static (IReadOnlyList<LearningOutcome>? Outcomes, Guid? LessonId, StudentPrivatePracticeError? Error) ResolveScope(
         StudentPrivatePracticeContext context,
