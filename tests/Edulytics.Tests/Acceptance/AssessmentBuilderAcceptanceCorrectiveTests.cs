@@ -78,6 +78,8 @@ public sealed class AssessmentBuilderAcceptanceCorrectiveTests
     {
         var builderService = ReadRepositoryFile(
             "src", "Edulytics.Services", "Assessments", "AssessmentBuilderService.cs");
+        var workspaceContract = ReadRepositoryFile(
+            "src", "Edulytics.Services", "Assessments", "IAssessmentBuilderService.cs");
         var resolver = ReadRepositoryFile(
             "src", "Edulytics.Services", "Assessments", "NativeMathematicsOutcomeProfileResolver.cs");
         var controller = ReadRepositoryFile(
@@ -91,11 +93,16 @@ public sealed class AssessmentBuilderAcceptanceCorrectiveTests
 
         Assert.Contains("if (ids.Count == 0) return false;", builderService, StringComparison.Ordinal);
         Assert.Contains("profiles.Any(x => x is null)", builderService, StringComparison.Ordinal);
+        Assert.Contains("NativeMathematicsOutcomeProfileResolver.Resolve(x) is not null", builderService, StringComparison.Ordinal);
+        Assert.Contains("AiSupportedOutcomeIds = aiSupportedOutcomeIds", builderService, StringComparison.Ordinal);
+        Assert.Contains("IReadOnlyList<Guid>? AiSupportedOutcomeIds = null", workspaceContract, StringComparison.Ordinal);
+        Assert.Contains("public static bool Supports(LearningOutcome outcome)", resolver, StringComparison.Ordinal);
         Assert.Contains("public static bool Supports(string? code, string? description)", resolver, StringComparison.Ordinal);
 
         Assert.Contains("LearningOutcomesSetupRequired", view, StringComparison.Ordinal);
         Assert.Contains("disabled=\"@(!hasEligibleOutcomes)\"", view, StringComparison.Ordinal);
-        Assert.Contains("NativeMathematicsOutcomeProfileResolver.Supports", view, StringComparison.Ordinal);
+        Assert.Contains("Model.AiSupportedOutcomeIds", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("NativeMathematicsOutcomeProfileResolver.Supports", view, StringComparison.Ordinal);
         Assert.Contains("disabled=\"@(!aiSupported)\"", view, StringComparison.Ordinal);
         Assert.Contains("\"AiSupported\" : \"ManualOnly\"", view, StringComparison.Ordinal);
 
