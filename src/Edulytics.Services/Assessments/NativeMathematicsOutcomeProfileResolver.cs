@@ -15,9 +15,12 @@ public static class NativeMathematicsOutcomeProfileResolver
     {
         ArgumentNullException.ThrowIfNull(outcome);
 
+        var semanticContext = string.IsNullOrWhiteSpace(outcome.GenerationSemanticHint)
+            ? outcome.Description
+            : $"{outcome.Description} {outcome.GenerationSemanticHint}";
         var capability = MathematicsAiCapabilityMatrix.Resolve(
             outcome.Code,
-            outcome.Description);
+            semanticContext);
 
         return capability.CanGenerateVerified
             ? new MathematicsOutcomeGenerationProfile(
@@ -29,6 +32,9 @@ public static class NativeMathematicsOutcomeProfileResolver
             }
             : null;
     }
+
+    public static bool Supports(LearningOutcome outcome) =>
+        Resolve(outcome) is not null;
 
     public static bool Supports(string? code, string? description) =>
         MathematicsAiCapabilityMatrix.Resolve(code, description).CanGenerateVerified;
