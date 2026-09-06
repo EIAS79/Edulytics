@@ -13,6 +13,8 @@ public sealed class CanonicalMathematicsCapabilityTests
     [InlineData("", "Find a fraction of a quantity", CanonicalMathematicsSkill.FractionOfQuantity)]
     [InlineData("", "Calculate a percentage of a quantity", CanonicalMathematicsSkill.PercentageOfQuantity)]
     [InlineData("", "Use a unit rate to solve the problem", CanonicalMathematicsSkill.UnitRateAndProportion)]
+    [InlineData("MAT.2.02.04", "حل معادلات الخطوة الواحدة", CanonicalMathematicsSkill.OneStepLinearEquation)]
+    [InlineData("MAT.1.07.01", "النسب والتناسب", CanonicalMathematicsSkill.UnitRateAndProportion)]
     public void Mapper_TranslatesReviewedVocabularyToCanonicalSkill(
         string code,
         string description,
@@ -98,6 +100,48 @@ public sealed class CanonicalMathematicsCapabilityTests
         Assert.True(NativeMathematicsOutcomeProfileResolver.Supports(
             "CCSS:6.RP.A.3",
             "Use ratio and rate reasoning."));
+    }
+
+    [Theory]
+    [InlineData("MAT.2.02.04", "حل معادلات متعددة الخطوات")]
+    [InlineData("MAT.2.02.07", "حل معادلات تتضمن قيمة مطلقة")]
+    [InlineData("MAT.1.07.02", "النسبة المئوية للتغير")]
+    public void BroaderArabicTopics_DoNotOverclaimReviewedNativeCoverage(
+        string code,
+        string description)
+    {
+        var skills = CanonicalMathematicsSkillMapper.Resolve(code, description);
+
+        Assert.Empty(skills);
+        Assert.False(NativeMathematicsOutcomeProfileResolver.Supports(code, description));
+    }
+
+    [Fact]
+    public void ReviewedArabicOutcomeSemantics_AreAvailableThroughSharedResolver()
+    {
+        var equation = new LearningOutcome
+        {
+            Id = Guid.NewGuid(),
+            Code = "MAT.2.02.04",
+            Description = "حل معادلات الخطوة الواحدة"
+        };
+        var proportion = new LearningOutcome
+        {
+            Id = Guid.NewGuid(),
+            Code = "MAT.1.07.01",
+            Description = "النسب والتناسب"
+        };
+
+        var equationProfile = NativeMathematicsOutcomeProfileResolver.Resolve(equation);
+        var proportionProfile = NativeMathematicsOutcomeProfileResolver.Resolve(proportion);
+
+        Assert.NotNull(equationProfile);
+        Assert.Contains(CanonicalMathematicsSkill.OneStepLinearEquation, equationProfile!.CanonicalSkills);
+        Assert.Contains(MathematicsGeneratorFamily.OneStepEquation, equationProfile.AllowedFamilies);
+
+        Assert.NotNull(proportionProfile);
+        Assert.Contains(CanonicalMathematicsSkill.UnitRateAndProportion, proportionProfile!.CanonicalSkills);
+        Assert.Contains(MathematicsGeneratorFamily.UnitRateWordProblem, proportionProfile.AllowedFamilies);
     }
 
     [Fact]
