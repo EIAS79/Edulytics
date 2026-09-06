@@ -1,3 +1,4 @@
+using Edulytics.Core.Curriculum;
 using Edulytics.Core.Entities;
 using Edulytics.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
@@ -27,6 +28,23 @@ internal static class MathematicsOutcomeSemanticHintLoader
         if (outcomeNodeIds.Length == 0)
             return;
 
+        // Pedagogical lesson titles are a semantic bridge only for curriculum
+        // packs where the official wording is reference-linked and therefore not
+        // reproduced in LearningOutcome.Description. Full-official-text packs
+        // such as Common Core must be classified from their official text itself;
+        // appending lesson titles there can broaden or contaminate the meaning of
+        // an otherwise precise standard.
+        var outcomeNodeScopes = await db.CurriculumPackContentNodes.AsNoTracking()
+            .Where(x => outcomeNodeIds.Contains(x.Id))
+            .Select(x => new { x.Id, x.FrameworkCode })
+            .ToListAsync(cancellationToken);
+        var semanticHintEligibleNodeIds = outcomeNodeScopes
+            .Where(x => AllowsSemanticHints(x.FrameworkCode))
+            .Select(x => x.Id)
+            .ToHashSet();
+        if (semanticHintEligibleNodeIds.Count == 0)
+            return;
+
         var logicalLevel = adoption.CurriculumLogicalLevel.Value;
         var pathway = adoption.CurriculumPathway;
         var lessons = await db.CurriculumPedagogicalLessons.AsNoTracking()
@@ -46,24 +64,28 @@ internal static class MathematicsOutcomeSemanticHintLoader
             .Where(x =>
                 x.FrameworkVersionId == adoption.FrameworkVersionId &&
                 lessonIds.Contains(x.PedagogicalLessonId) &&
-                outcomeNodeIds.Contains(x.OutcomeNodeId))
+                semanticHintEligibleNodeIds.Contains(x.OutcomeNodeId))
             .OrderBy(x => x.SortOrder)
             .ToListAsync(cancellationToken);
 
-        Apply(outcomes, lessons, mappings);
+        Apply(outcomes, lessons, mappings, semanticHintEligibleNodeIds);
     }
 
     public static void Apply(
         IReadOnlyList<LearningOutcome> outcomes,
         IReadOnlyList<CurriculumPedagogicalLesson> lessons,
-        IReadOnlyList<CurriculumPedagogicalLessonOutcome> mappings)
+        IReadOnlyList<CurriculumPedagogicalLessonOutcome> mappings,
+        IReadOnlySet<Guid>? semanticHintEligibleOutcomeNodeIds = null)
     {
         if (outcomes.Count == 0 || lessons.Count == 0 || mappings.Count == 0)
             return;
 
         var lessonById = lessons.ToDictionary(x => x.Id);
         var hintsByOutcomeNodeId = mappings
-            .Where(x => lessonById.ContainsKey(x.PedagogicalLessonId))
+            .Where(x =>
+                lessonById.ContainsKey(x.PedagogicalLessonId) &&
+                (semanticHintEligibleOutcomeNodeIds is null ||
+                 semanticHintEligibleOutcomeNodeIds.Contains(x.OutcomeNodeId)))
             .GroupBy(x => x.OutcomeNodeId)
             .ToDictionary(
                 group => group.Key,
@@ -77,6 +99,8 @@ internal static class MathematicsOutcomeSemanticHintLoader
         foreach (var outcome in outcomes)
         {
             if (!outcome.OfficialContentNodeId.HasValue ||
+                (semanticHintEligibleOutcomeNodeIds is not null &&
+                 !semanticHintEligibleOutcomeNodeIds.Contains(outcome.OfficialContentNodeId.Value)) ||
                 !hintsByOutcomeNodeId.TryGetValue(
                     outcome.OfficialContentNodeId.Value,
                     out var hint) ||
@@ -87,5 +111,15 @@ internal static class MathematicsOutcomeSemanticHintLoader
 
             outcome.GenerationSemanticHint = hint;
         }
+    }
+
+    private static bool AllowsSemanticHints(string? frameworkCode)
+    {
+        if (string.IsNullOrWhiteSpace(frameworkCode))
+            return false;
+
+        var definition = MathematicsCurriculumPackRegistry.All.SingleOrDefault(x =>
+            string.Equals(x.Code, frameworkCode.Trim(), StringComparison.OrdinalIgnoreCase));
+        return definition?.TextMode == CurriculumTextMode.OfficialSourceLinked;
     }
 }
