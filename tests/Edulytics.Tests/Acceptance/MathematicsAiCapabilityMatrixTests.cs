@@ -9,8 +9,8 @@ public sealed class MathematicsAiCapabilityMatrixTests
     public void ReviewedNativeSkill_IsClassifiedAsVerifiedAi()
     {
         var capability = MathematicsAiCapabilityMatrix.Resolve(
-            "CCSS:4.NBT.B.4",
-            "Fluently add and subtract multi-digit whole numbers.");
+            "CCSS:K.OA.A.5",
+            "Fluently add and subtract within 5.");
 
         Assert.Equal(MathematicsAiCapabilityLevel.VerifiedAi, capability.Level);
         Assert.True(capability.CanGenerateVerified);
@@ -21,6 +21,18 @@ public sealed class MathematicsAiCapabilityMatrixTests
         Assert.Equal(
             MathematicsGeneratorFamily.IntegerComputation,
             Assert.Single(capability.VerifiedFamilies));
+    }
+
+    [Fact]
+    public void MultiDigitStandardAlgorithm_RemainsManualUntilOperandShapeIsImplemented()
+    {
+        var capability = MathematicsAiCapabilityMatrix.Resolve(
+            "CCSS:4.NBT.B.4",
+            "Fluently add and subtract multi-digit whole numbers using the standard algorithm.");
+
+        Assert.Equal(MathematicsAiCapabilityLevel.ManualOnly, capability.Level);
+        Assert.False(capability.CanGenerateVerified);
+        Assert.Empty(capability.VerifiedFamilies);
     }
 
     [Fact]
