@@ -45,7 +45,7 @@ public sealed class Round4ManualAcceptanceTests
     [Theory]
     [InlineData("7Ae.05", "Edulytics reference-only Cambridge Mathematics entry.", "Algebraic expressions · 05")]
     [InlineData("7Gg.04", "Edulytics reference-only Cambridge Mathematics entry.", "Geometry · 04")]
-    [InlineData("1Nc.01", "Edulytics reference-only Cambridge Mathematics entry.", "Number · 01")]
+    [InlineData("1Nc.01", "Edulytics reference-only Cambridge Mathematics entry.", "Number calculations · 01")]
     public void Reference_only_outcomes_use_readable_edulytics_titles(string code, string description, string expected)
     {
         Assert.Equal(expected, LearningOutcomePresentation.DisplayTitle(code, description));
@@ -55,7 +55,7 @@ public sealed class Round4ManualAcceptanceTests
     public void Reference_family_topic_heading_is_readable()
     {
         Assert.Equal(
-            "Stage 1 · Number",
+            "Stage 1 · Number calculations",
             LearningOutcomePresentation.DisplayTopicTitle("0096 Stage 1 reference family Nc"));
     }
 
