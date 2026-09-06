@@ -18,12 +18,14 @@ public sealed class AssessmentMaxScoreLockFilter : IAsyncActionFilter
         ActionExecutingContext context,
         ActionExecutionDelegate next)
     {
+        var hasActionName = context.ActionDescriptor.RouteValues.TryGetValue(
+            "action",
+            out var actionName);
+
         if (context.Controller is not AssessmentsController ||
             !HttpMethods.IsPost(context.HttpContext.Request.Method) ||
-            !string.Equals(
-                context.ActionDescriptor.RouteValues.GetValueOrDefault("action"),
-                "Edit",
-                StringComparison.Ordinal) ||
+            !hasActionName ||
+            !string.Equals(actionName, "Edit", StringComparison.Ordinal) ||
             !context.ActionArguments.TryGetValue("id", out var idValue) ||
             idValue is not Guid assessmentId ||
             !context.ActionArguments.ContainsKey("maxScore"))
