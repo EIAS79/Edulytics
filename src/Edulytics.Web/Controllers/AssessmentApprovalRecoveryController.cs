@@ -29,6 +29,18 @@ public sealed class AssessmentApprovalRecoveryController(
         if (!TryDecode(rowVersion, out var version))
             return Back(assessmentId, "The assessment changed. Reload and try again.");
 
+        var workspace = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
+        if (workspace.Value is null)
+            return Back(assessmentId, "The assessment builder could not be loaded.");
+        if (!workspace.Value.Details.Assessment.RowVersion.SequenceEqual(version))
+            return Back(assessmentId, "The assessment changed. Reload and try again.");
+
+        var question = workspace.Value.Questions.FirstOrDefault(x => x.Id == questionId);
+        if (question is null || question.Status != AssessmentBuilderQuestionStatus.Draft)
+            return Back(assessmentId, "This question is no longer a draft.");
+        if (!ReadyForApproval(question))
+            return Back(assessmentId, "This question still needs teacher review before it can be approved.");
+
         var result = await service.ApproveQuestionAsync(
             actorId,
             assessmentId,
@@ -63,19 +75,24 @@ public sealed class AssessmentApprovalRecoveryController(
         if (!workspace.Value.Details.Assessment.RowVersion.SequenceEqual(version))
             return Back(assessmentId, "The assessment changed. Reload and try again.");
 
-        var draftIds = workspace.Value.Questions
+        var drafts = workspace.Value.Questions
             .Where(x => x.Status == AssessmentBuilderQuestionStatus.Draft)
-            .Select(x => x.Id)
             .ToArray();
 
         var approved = 0;
         var review = 0;
-        foreach (var questionId in draftIds)
+        foreach (var question in drafts)
         {
+            if (!ReadyForApproval(question))
+            {
+                review++;
+                continue;
+            }
+
             var result = await service.ApproveQuestionAsync(
                 actorId,
                 assessmentId,
-                questionId,
+                question.Id,
                 version,
                 cancellationToken);
 
@@ -96,6 +113,12 @@ public sealed class AssessmentApprovalRecoveryController(
 
         return Back(assessmentId);
     }
+
+    private static bool ReadyForApproval(AssessmentBuilderQuestion question) =>
+        !string.IsNullOrWhiteSpace(question.Prompt) &&
+        !string.IsNullOrWhiteSpace(question.CorrectAnswer) &&
+        question.MaxScore > 0m &&
+        question.OutcomeIds.Count > 0;
 
     private RedirectResult Back(Guid assessmentId, string? error = null)
     {
