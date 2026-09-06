@@ -46,6 +46,15 @@ public sealed class HomeController : Controller
     {
         if (!CultureCookie.IsSupported(culture))
         {
+            Response.Cookies.Delete(
+                CultureCookie.Name,
+                new CookieOptions
+                {
+                    Path = "/",
+                    SameSite = SameSiteMode.Strict,
+                    Secure = Request.IsHttps
+                });
+
             return RedirectToAction(nameof(Index));
         }
 
