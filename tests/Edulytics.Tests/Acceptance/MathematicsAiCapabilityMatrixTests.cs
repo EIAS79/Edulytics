@@ -24,16 +24,18 @@ public sealed class MathematicsAiCapabilityMatrixTests
     }
 
     [Fact]
-    public void PartiallyUnsupportedSkillSet_IsManualOnlyFailClosed()
+    public void ReviewedWholeNumberOperationSet_IsClassifiedAsVerifiedAi()
     {
         var capability = MathematicsAiCapabilityMatrix.Resolve(
             "CURRICULUM-X:ARITHMETIC",
             "Add, subtract, multiply and divide whole numbers.");
 
-        Assert.Equal(MathematicsAiCapabilityLevel.ManualOnly, capability.Level);
-        Assert.False(capability.CanGenerateVerified);
-        Assert.Null(capability.ProviderKey);
-        Assert.Empty(capability.VerifiedFamilies);
+        Assert.Equal(MathematicsAiCapabilityLevel.VerifiedAi, capability.Level);
+        Assert.True(capability.CanGenerateVerified);
+        Assert.Equal("edulytics-native-mathematics", capability.ProviderKey);
+        Assert.Equal(
+            MathematicsGeneratorFamily.IntegerComputation,
+            Assert.Single(capability.VerifiedFamilies));
         Assert.Contains(
             CanonicalMathematicsSkill.WholeNumberMultiplication,
             capability.CanonicalSkills);
