@@ -117,6 +117,8 @@ public static class LearningOutcomePresentation
             return "Whole numbers and place value";
         if (normalized.Equals("Nf", StringComparison.OrdinalIgnoreCase))
             return "Fractions";
+        if (normalized.Equals("Nc", StringComparison.OrdinalIgnoreCase))
+            return "Number calculations";
         if (normalized.Equals("Gg", StringComparison.OrdinalIgnoreCase))
             return "Geometry";
 

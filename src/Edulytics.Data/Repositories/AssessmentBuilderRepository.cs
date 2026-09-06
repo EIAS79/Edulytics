@@ -176,7 +176,35 @@ public sealed class AssessmentBuilderRepository(EdulyticsDbContext db) : IAssess
         byte[] expectedRowVersion,
         CancellationToken cancellationToken = default)
     {
-        db.Entry(assessment).Property(x => x.RowVersion).OriginalValue = expectedRowVersion;
+        var assessmentEntry = db.Entry(assessment);
+        var itemEntries = db.ChangeTracker.Entries<AssessmentItem>()
+            .Where(x => x.State == EntityState.Modified)
+            .ToArray();
+        var approvalOnly = itemEntries.Length > 0 &&
+            itemEntries.All(entry =>
+                entry.Properties
+                    .Where(property => property.IsModified)
+                    .All(property => property.Metadata.Name == nameof(AssessmentItem.ValidationMetadataJson))) &&
+            db.ChangeTracker.Entries()
+                .Where(entry => entry.State is EntityState.Added or EntityState.Deleted or EntityState.Modified)
+                .Where(entry => entry.Entity is not AssessmentItem && !ReferenceEquals(entry.Entity, assessment))
+                .Any() == false &&
+            assessmentEntry.Properties
+                .Where(property => property.IsModified)
+                .All(property => property.Metadata.Name == nameof(Assessment.UpdatedAtUtc));
+
+        if (approvalOnly)
+        {
+            if (!assessment.RowVersion.SequenceEqual(expectedRowVersion))
+                return AssessmentPersistenceResult.Failure(AssessmentPersistenceError.Conflict);
+
+            assessmentEntry.Property(x => x.UpdatedAtUtc).IsModified = false;
+        }
+        else
+        {
+            assessmentEntry.Property(x => x.RowVersion).OriginalValue = expectedRowVersion;
+        }
+
         try
         {
             await db.SaveChangesAsync(cancellationToken);

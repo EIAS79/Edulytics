@@ -239,41 +239,59 @@ public sealed class PracticeService(IPracticeRepository repository) : IPracticeS
             return PracticeQueryResult<PracticeAttemptDetails>.Failure(PracticeErrorCode.AttemptIncomplete);
         }
 
-        var items = await repository.GetItemsAsync(
-            attempt.SchoolId,
-            attemptItems.Select(x => x.AssessmentItemId).ToArray(),
-            cancellationToken);
-        var itemById = items.ToDictionary(x => x.Id);
-        var mappings = await repository.GetOutcomeIdsAsync(
-            attempt.SchoolId,
-            items.Select(x => x.Id).ToArray(),
-            cancellationToken);
-        var responseByAttemptItemId = responses.ToDictionary(x => x.PracticeAttemptItemId);
-
         var now = DateTime.UtcNow;
-        var evidence = new List<LearningEvidence>();
-        foreach (var attemptItem in attemptItems)
+        IReadOnlyList<LearningEvidence> evidence = [];
+
+        // Student private AI practice is deliberately separated from official
+        // assessment/mastery evidence. It can be generated from official outcomes
+        // or pedagogical context, but finishing it must never alter official mastery.
+        if (!attempt.IsPrivate)
         {
-            var item = itemById[attemptItem.AssessmentItemId];
-            var response = responseByAttemptItemId[attemptItem.Id];
-            foreach (var outcomeId in mappings[item.Id])
+            var items = await repository.GetItemsAsync(
+                attempt.SchoolId,
+                attemptItems.Select(x => x.AssessmentItemId).ToArray(),
+                cancellationToken);
+            if (items.Count != attemptItems.Count)
+                return PracticeQueryResult<PracticeAttemptDetails>.Failure(PracticeErrorCode.ItemNotFound);
+
+            var itemById = items.ToDictionary(x => x.Id);
+            var mappings = await repository.GetOutcomeIdsAsync(
+                attempt.SchoolId,
+                items.Select(x => x.Id).ToArray(),
+                cancellationToken);
+            var responseByAttemptItemId = responses.ToDictionary(x => x.PracticeAttemptItemId);
+            var officialEvidence = new List<LearningEvidence>();
+
+            foreach (var attemptItem in attemptItems)
             {
-                evidence.Add(new LearningEvidence
+                if (!itemById.TryGetValue(attemptItem.AssessmentItemId, out var item))
+                    return PracticeQueryResult<PracticeAttemptDetails>.Failure(PracticeErrorCode.ItemNotFound);
+                if (!responseByAttemptItemId.TryGetValue(attemptItem.Id, out var response))
+                    return PracticeQueryResult<PracticeAttemptDetails>.Failure(PracticeErrorCode.AttemptIncomplete);
+                if (!mappings.TryGetValue(item.Id, out var outcomeIds) || outcomeIds.Count == 0)
+                    return PracticeQueryResult<PracticeAttemptDetails>.Failure(PracticeErrorCode.ItemMissingOutcome);
+
+                foreach (var outcomeId in outcomeIds)
                 {
-                    Id = Guid.NewGuid(),
-                    SchoolId = attempt.SchoolId,
-                    StudentProfileId = attempt.StudentProfileId,
-                    LearningOutcomeId = outcomeId,
-                    PracticeAttemptId = attempt.Id,
-                    AssessmentItemId = item.Id,
-                    EvidenceType = LearningEvidenceType.Practice,
-                    Difficulty = item.Difficulty,
-                    IsCorrect = response.IsCorrect,
-                    Score = response.Score,
-                    MaxScore = attemptItem.MaxScore,
-                    OccurredAtUtc = now
-                });
+                    officialEvidence.Add(new LearningEvidence
+                    {
+                        Id = Guid.NewGuid(),
+                        SchoolId = attempt.SchoolId,
+                        StudentProfileId = attempt.StudentProfileId,
+                        LearningOutcomeId = outcomeId,
+                        PracticeAttemptId = attempt.Id,
+                        AssessmentItemId = item.Id,
+                        EvidenceType = LearningEvidenceType.Practice,
+                        Difficulty = item.Difficulty,
+                        IsCorrect = response.IsCorrect,
+                        Score = response.Score,
+                        MaxScore = attemptItem.MaxScore,
+                        OccurredAtUtc = now
+                    });
+                }
             }
+
+            evidence = officialEvidence;
         }
 
         attempt.Score = responses.Sum(x => x.Score);
