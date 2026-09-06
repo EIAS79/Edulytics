@@ -32,16 +32,23 @@ public static class CanonicalMathematicsSkillMapper
             skills.Add(CanonicalMathematicsSkill.PercentageOfQuantity);
 
         var isUnitRate =
-            ContainsAny(text, "UNIT RATE", "UNIT-RATE") ||
+            ContainsAny(text, "UNIT RATE", "UNIT-RATE", "النسب والتناسب") ||
             (ContainsAny(codeText, ".RP.", ":RP.") &&
              ContainsAny(text, "RATIO", "RATE"));
         if (isUnitRate)
             skills.Add(CanonicalMathematicsSkill.UnitRateAndProportion);
 
-        if (ContainsAny(text, "ONE-STEP EQUATION", "ONE STEP EQUATION") ||
+        var isOneStepEquation =
+            ContainsAny(
+                text,
+                "ONE-STEP EQUATION",
+                "ONE STEP EQUATION",
+                "حل معادلات الخطوة الواحدة",
+                "حل معادلة الخطوة الواحدة") ||
             (text.Contains("SOLVE", StringComparison.Ordinal) &&
              text.Contains("EQUATION", StringComparison.Ordinal) &&
-             !ContainsAny(text, "QUADRATIC", "SIMULTANEOUS", "SYSTEM OF")))
+             !ContainsAny(text, "QUADRATIC", "SIMULTANEOUS", "SYSTEM OF"));
+        if (isOneStepEquation)
         {
             skills.Add(CanonicalMathematicsSkill.OneStepLinearEquation);
         }
