@@ -77,7 +77,7 @@ public static class MathematicsAiCapabilityMatrix
                 "ReviewedNativeProvider");
         }
 
-        if (LooksLikeMathematicsCurriculum(outcomeCode, description))
+        if (LooksLikeMathematicsCurriculum(description))
         {
             return new MathematicsAiCapability(
                 MathematicsAiCapabilityLevel.AiAssisted,
@@ -99,29 +99,13 @@ public static class MathematicsAiCapabilityMatrix
                 : "NoConfiguredProviderForAllSkills");
     }
 
-    private static bool LooksLikeMathematicsCurriculum(
-        string? outcomeCode,
-        string? description)
+    private static bool LooksLikeMathematicsCurriculum(string? description)
     {
         if (string.IsNullOrWhiteSpace(description))
             return false;
 
-        var code = outcomeCode?.Trim().ToUpperInvariant() ?? string.Empty;
         var text = description.Trim().ToUpperInvariant();
-
-        // Official mathematics-pack identities are useful scope evidence, but a
-        // synthetic/unknown code alone is never enough: the context must also
-        // carry mathematical or explicit Mathematics-pack semantics.
-        var knownMathPack =
-            code.StartsWith("CCSS:", StringComparison.Ordinal) ||
-            code.StartsWith("CAM:", StringComparison.Ordinal) ||
-            code.StartsWith("PL:", StringComparison.Ordinal) ||
-            code.StartsWith("UAE:", StringComparison.Ordinal) ||
-            code.StartsWith("MAT.", StringComparison.Ordinal) ||
-            code.StartsWith("MATH-", StringComparison.Ordinal) ||
-            code.StartsWith("CURRICULUM-X:", StringComparison.Ordinal);
-
-        var mathematicalVocabulary = ContainsAny(
+        return ContainsAny(
             text,
             "MATHEMATICS", "MATHEMATICAL", "NUMBER", "NUMBERS", "INTEGER", "INTEGERS",
             "ADD", "SUBTRACT", "MULTIP", "DIVID", "ARITHMET", "PLACE VALUE",
@@ -144,9 +128,6 @@ public static class MathematicsAiCapabilityMatrix
             "جبر", "دالة", "هندسة", "مساحة", "محيط", "زاوية", "مثلث", "دائرة",
             "قياس", "طول", "حجم", "متوسط", "احتمال", "بيانات", "أس", "جذر",
             "متتالية", "متجه", "مصفوف", "مشتق", "تكامل", "لوغاريتم");
-
-        return mathematicalVocabulary ||
-            (knownMathPack && ContainsAny(text, "CURRICULUM", "REQUIREMENT", "OBJECTIVE", "STANDARD"));
     }
 
     private static bool ContainsAny(string text, params string[] values) =>
