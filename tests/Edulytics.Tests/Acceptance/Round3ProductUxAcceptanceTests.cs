@@ -3,20 +3,18 @@ namespace Edulytics.Tests.Acceptance;
 public sealed class Round3ProductUxAcceptanceTests
 {
     [Fact]
-    public void Landing_uses_polish_default_and_localized_contact_popover()
+    public void Landing_uses_polish_default_and_localized_public_navigation()
     {
         var program = ReadRepositoryFile("src", "Edulytics.Web", "Program.cs");
         var home = ReadRepositoryFile("src", "Edulytics.Web", "Views", "Home", "Index.cshtml");
 
         Assert.Contains("new RequestCulture(\n                    \"pl\")", program, StringComparison.Ordinal);
-        Assert.Contains("isPolish ? \"Kontakt\" : \"Contact us\"", home, StringComparison.Ordinal);
-        Assert.Contains("ed-home-contact", home, StringComparison.Ordinal);
-        Assert.Contains("ed-home-contact-popover", home, StringComparison.Ordinal);
+        Assert.Contains("isPolish ? \"Kontakt\" : \"Contact\"", home, StringComparison.Ordinal);
+        Assert.Contains("ed-home-flag", home, StringComparison.Ordinal);
+        Assert.Contains("ed-home-mobile-menu", home, StringComparison.Ordinal);
+        Assert.Contains("href=\"#contact\"", home, StringComparison.Ordinal);
         Assert.DoesNotContain("public-contact-card", home, StringComparison.Ordinal);
         Assert.Contains("SupportContactOptions.Email", home, StringComparison.Ordinal);
-        Assert.Contains("SupportContactOptions.PhoneUri", home, StringComparison.Ordinal);
-        Assert.Contains("SupportContactOptions.CompanyWebsiteUrl", home, StringComparison.Ordinal);
-        Assert.Contains("SupportContactOptions.ProductWebsiteUrl", home, StringComparison.Ordinal);
     }
 
     [Fact]
