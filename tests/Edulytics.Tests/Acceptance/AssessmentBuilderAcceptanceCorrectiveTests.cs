@@ -104,7 +104,10 @@ public sealed class AssessmentBuilderAcceptanceCorrectiveTests
         Assert.Contains("Model.AiSupportedOutcomeIds", view, StringComparison.Ordinal);
         Assert.DoesNotContain("NativeMathematicsOutcomeProfileResolver.Supports", view, StringComparison.Ordinal);
         Assert.Contains("disabled=\"@(!aiSupported)\"", view, StringComparison.Ordinal);
-        Assert.Contains("\"AiSupported\" : \"ManualOnly\"", view, StringComparison.Ordinal);
+        Assert.Contains("LearningOutcomePresentation.DisplayTitle", view, StringComparison.Ordinal);
+        Assert.Contains("A[\"AiSupported\"]", view, StringComparison.Ordinal);
+        Assert.Contains("A[\"ManualOnly\"]", view, StringComparison.Ordinal);
+        Assert.Contains("class=\"ed-builder-outcome-select\"", view, StringComparison.Ordinal);
 
         Assert.Contains("ErrorOutcomeDoesNotMatchAssessment", controller, StringComparison.Ordinal);
         Assert.DoesNotContain("result.Error?.ToString()", controller, StringComparison.Ordinal);
