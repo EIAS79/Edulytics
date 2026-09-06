@@ -24,7 +24,7 @@
   <data name="AiSupported" xml:space="preserve"><value>Obsługiwane przez AI</value></data>
   <data name="ManualOnly" xml:space="preserve"><value>Tylko ręcznie</value></data>
   <data name="GenerateQuestionsWithAI" xml:space="preserve"><value>Generuj z Edulityks AI</value></data>
-  <data name="NativeGenerationNotice" xml:space="preserve"><value>Funkcja korzysta z natywnej, deterministycznej inteligencji matematycznej Edulityks. Nie wymaga płatnego zewnętrznego API AI. Wygenerowane pytania pozostają wersjami roboczymi do czasu zatwierdzenia przez nauczyciela.</value></data>
+  <data name="NativeGenerationNotice" xml:space="preserve"><value>Funkcja korzysta z deterministycznej inteligencji matematycznej Edulityks: ze zweryfikowanych generatorów natywnych, gdy są dostępne, oraz z kontekstowego AI programu nauczania w pozostałych przypadkach. Nie wymaga płatnego zewnętrznego API AI. Wygenerowane pytania pozostają wersjami roboczymi do zatwierdzenia przez nauczyciela.</value></data>
   <data name="PlannedQuestionCount" xml:space="preserve"><value>Liczba pytań</value></data>
   <data name="AssessmentDifficulty" xml:space="preserve"><value>Poziom trudności sprawdzianu</value></data>
   <data name="AtClassLevel" xml:space="preserve"><value>Na poziomie klasy</value></data>
@@ -33,7 +33,7 @@
   <data name="Automatic" xml:space="preserve"><value>Automatycznie</value></data>
   <data name="AiAutoMarksHelp" xml:space="preserve"><value>Pozostaw pole punktów puste, aby Edulityks automatycznie rozdzielił pozostałe punkty sprawdzianu między wygenerowane pytania, nadając większą wagę trudniejszym pytaniom. Wpisz liczbę całkowitą tylko wtedy, gdy chcesz nadać taką samą liczbę punktów każdemu wygenerowanemu pytaniu.</value></data>
   <data name="AiAutoDifficulty" xml:space="preserve"><value>Automatycznie — użyj zapisanego poziomu trudności sprawdzianu</value></data>
-  <data name="NativeGenerationUnavailable" xml:space="preserve"><value>Edulityks nie ma jeszcze zaufanego natywnego generatora dla wybranych efektów uczenia się. Sam program nauczania może być kompletny; nadal można tworzyć pytania ręcznie.</value></data>
+  <data name="NativeGenerationUnavailable" xml:space="preserve"><value>Generowanie AI jest niedostępne, ponieważ wybrany efekt nie zawiera rozpoznawalnego kontekstu programu matematyki. Nadal można utworzyć pytanie ręcznie.</value></data>
   <data name="Source" xml:space="preserve"><value>Źródło</value></data>
   <data name="Legacy" xml:space="preserve"><value>Starszy format</value></data>
   <data name="Status" xml:space="preserve"><value>Status</value></data>
