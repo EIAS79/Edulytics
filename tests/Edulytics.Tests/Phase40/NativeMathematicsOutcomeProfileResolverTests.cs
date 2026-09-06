@@ -10,7 +10,7 @@ public sealed class NativeMathematicsOutcomeProfileResolverTests
     [InlineData("MATH-UNIT-RATE", "Use a unit rate to find the total quantity", MathematicsGeneratorFamily.UnitRateWordProblem)]
     [InlineData("MATH-FRACTION-OF", "Find a fraction of a quantity", MathematicsGeneratorFamily.FractionOfQuantity)]
     [InlineData("MATH-PERCENT", "Calculate a percentage of a quantity", MathematicsGeneratorFamily.PercentageOfQuantity)]
-    [InlineData("CCSS:4.NBT.B.4", "Fluently add and subtract multi-digit whole numbers", MathematicsGeneratorFamily.IntegerComputation)]
+    [InlineData("CCSS:K.OA.A.5", "Fluently add and subtract within 5.", MathematicsGeneratorFamily.IntegerComputation)]
     public void Resolve_MapsClearlySupportedOutcomeToTrustedFamily(
         string code,
         string description,
@@ -22,6 +22,19 @@ public sealed class NativeMathematicsOutcomeProfileResolverTests
 
         Assert.NotNull(profile);
         Assert.Contains(expected, profile!.AllowedFamilies);
+    }
+
+    [Fact]
+    public void Resolve_FailsClosedForMultiDigitStandardAlgorithmUntilOperandShapeIsSupported()
+    {
+        var outcome = new LearningOutcome
+        {
+            Id = Guid.NewGuid(),
+            Code = "CCSS:4.NBT.B.4",
+            Description = "Fluently add and subtract multi-digit whole numbers using the standard algorithm."
+        };
+
+        Assert.Null(NativeMathematicsOutcomeProfileResolver.Resolve(outcome));
     }
 
     [Fact]
