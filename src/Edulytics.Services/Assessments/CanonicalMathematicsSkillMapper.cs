@@ -82,22 +82,6 @@ public static class CanonicalMathematicsSkillMapper
         var isFluencyOutcome = descriptionText.Contains("FLUENTLY", StringComparison.Ordinal);
         var hasNonWholeNumberContext =
             ContainsAny(descriptionText, "FRACTION", "FRACTIONS", "DECIMAL", "DECIMALS", "POLYNOMIAL");
-
-        // IntegerComputation is direct arithmetic. Explicit whole-number wording
-        // alone is not enough: curriculum standards can discuss measurement,
-        // unknowns, factors, patterns or modelling while mentioning operations.
-        var hasReviewedDirectWholeNumberIntent =
-            isFluencyOutcome ||
-            ContainsAny(
-                descriptionText,
-                "ADD WHOLE NUMBERS",
-                "ADD AND SUBTRACT WHOLE NUMBERS",
-                "SUBTRACT WHOLE NUMBERS",
-                "MULTIPLY WHOLE NUMBERS",
-                "DIVIDE WHOLE NUMBERS",
-                "MULTIPLY A WHOLE NUMBER",
-                "FIND WHOLE-NUMBER QUOTIENTS",
-                "FIND WHOLE NUMBER QUOTIENTS");
         var hasDisallowedWholeNumberIntent = ContainsAny(
             descriptionText,
             "WORD PROBLEM",
@@ -111,21 +95,39 @@ public static class CanonicalMathematicsSkillMapper
             "GREATEST COMMON FACTOR",
             "LEAST COMMON MULTIPLE",
             "LENGTH UNIT",
-            "ARITHMETIC PATTERN");
+            "ARITHMETIC PATTERN",
+            "MULTI-DIGIT");
+
+        var hasAdd = descriptionText.Contains("ADD", StringComparison.Ordinal);
+        var hasSubtract = descriptionText.Contains("SUBTRACT", StringComparison.Ordinal);
+        var hasMultiply = descriptionText.Contains("MULTIP", StringComparison.Ordinal);
+        var hasDivide = ContainsAny(descriptionText, "DIVID", "DIVISION", "QUOTIENT");
+
+        // Generic, direct whole-number operation wording is safe for the current
+        // deterministic family. For official OA/NBT/NS text we currently admit
+        // only add/subtract fluency outcomes; multiplication/division standards
+        // often constrain factor/dividend shape that the generator does not yet
+        // carry in its profile contract.
+        var hasExplicitDirectWholeNumberIntent = ContainsAny(
+            descriptionText,
+            "ADD WHOLE NUMBERS",
+            "ADD AND SUBTRACT WHOLE NUMBERS",
+            "SUBTRACT WHOLE NUMBERS",
+            "MULTIPLY WHOLE NUMBERS",
+            "DIVIDE WHOLE NUMBERS");
+        var isReviewedLocatorFluency =
+            hasWholeNumberFrameworkLocator &&
+            isFluencyOutcome &&
+            (hasAdd || hasSubtract) &&
+            !hasMultiply &&
+            !hasDivide;
         var targetsWholeNumberArithmetic =
             !hasNonWholeNumberContext &&
             !hasDisallowedWholeNumberIntent &&
-            hasReviewedDirectWholeNumberIntent &&
-            (descriptionText.Contains("WHOLE NUMBER", StringComparison.Ordinal) ||
-             (hasWholeNumberFrameworkLocator && isFluencyOutcome));
+            (hasExplicitDirectWholeNumberIntent || isReviewedLocatorFluency);
 
         if (targetsWholeNumberArithmetic)
         {
-            var hasAdd = descriptionText.Contains("ADD", StringComparison.Ordinal);
-            var hasSubtract = descriptionText.Contains("SUBTRACT", StringComparison.Ordinal);
-            var hasMultiply = descriptionText.Contains("MULTIP", StringComparison.Ordinal);
-            var hasDivide = ContainsAny(descriptionText, "DIVID", "DIVISION", "QUOTIENT");
-
             if (hasAdd && hasSubtract && !hasMultiply && !hasDivide)
             {
                 skills.Add(CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction);
