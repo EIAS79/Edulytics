@@ -1,0 +1,332 @@
+/* Phase 44 — Manual Acceptance Corrective
+   One final presentation layer for the surfaces exercised in manual acceptance.
+   It intentionally loads last so historical phase-specific rules cannot re-break these screens. */
+
+:root {
+    --p44-surface: #ffffff;
+    --p44-surface-soft: #f7f9fd;
+    --p44-border: #dce4f0;
+    --p44-text: #10213b;
+    --p44-muted: #66758d;
+    --p44-primary: #3264d8;
+    --p44-danger: #b42318;
+    --p44-radius: 16px;
+    --p44-shadow: 0 10px 30px rgba(30, 50, 86, .07);
+}
+
+/* ---------- Public language / contact entry ---------- */
+.ed-public-body {
+    background:
+        radial-gradient(circle at 20% 0%, rgba(60, 107, 216, .09), transparent 34rem),
+        #f5f7fb;
+}
+
+.ed-public-body .language-shell {
+    width: min(900px, calc(100% - 32px));
+    padding: 28px 0 36px;
+}
+
+.ed-public-body .language-brand {
+    margin: 0 0 22px;
+    gap: 8px;
+}
+
+.ed-public-body .language-brand .localized-brand-logo {
+    display: block;
+    width: min(360px, 72vw);
+    max-height: 150px;
+    object-fit: contain;
+}
+
+.ed-public-body .language-grid {
+    gap: 14px;
+}
+
+.ed-public-body .language-card {
+    min-height: 132px;
+    padding: 22px;
+    gap: 10px;
+    border-radius: var(--p44-radius);
+    border-color: var(--p44-border);
+    box-shadow: var(--p44-shadow);
+    font-size: 1.05rem;
+}
+
+.ed-public-body .language-code {
+    width: 54px;
+    height: 36px;
+    border-radius: 10px;
+}
+
+.ed-public-body .public-contact-card {
+    width: 100%;
+    margin: 14px 0 0;
+    padding: 16px 18px;
+    border-radius: var(--p44-radius);
+    border-color: var(--p44-border);
+    box-shadow: var(--p44-shadow);
+}
+
+.ed-public-body .public-contact-card__links {
+    gap: 8px 18px;
+}
+
+.ed-public-body .public-contact-card__links a {
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+/* ---------- Assessment header / action toolbar ---------- */
+.assessment-header {
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.assessment-actions {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.assessment-actions > a,
+.assessment-actions > form,
+.assessment-actions > form > button {
+    flex: 0 0 auto;
+}
+
+.assessment-actions > form {
+    display: inline-flex;
+    margin: 0;
+}
+
+.assessment-actions > form .school-button {
+    border-color: #efb4b0;
+    background: #fff6f5;
+    color: var(--p44-danger);
+}
+
+.assessment-actions > form .school-button:hover,
+.assessment-actions > form .school-button:focus-visible {
+    border-color: #df8f89;
+    background: #ffeceb;
+}
+
+/* ---------- Shared school surface rhythm ---------- */
+.ed-v3-main .academic-card,
+.ed-v3-main .assessment-info,
+.ed-v3-main .assessment-question-card,
+.student-main .student-panel,
+.student-main .student-summary-card,
+.student-main .practice-card {
+    border-color: var(--p44-border);
+    box-shadow: 0 7px 24px rgba(30, 50, 86, .045);
+}
+
+.ed-v3-main .academic-section,
+.student-main .student-page-frame > section {
+    min-width: 0;
+}
+
+/* ---------- Academic Structure / Students ---------- */
+#students .academic-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+#students .academic-list-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px;
+    align-items: stretch;
+}
+
+#students .academic-list-grid > .academic-card {
+    min-width: 0;
+    width: 100%;
+}
+
+#students .academic-list-grid .academic-table {
+    width: 100%;
+    table-layout: auto;
+}
+
+#students .academic-list-grid .academic-table th,
+#students .academic-list-grid .academic-table td {
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+#students .academic-list-grid .academic-table th:first-child,
+#students .academic-list-grid .academic-table td:first-child,
+#students .academic-list-grid .academic-table th:nth-child(4),
+#students .academic-list-grid .academic-table td:nth-child(4) {
+    white-space: nowrap;
+}
+
+#students .academic-list-grid .academic-table th:nth-child(3),
+#students .academic-list-grid .academic-table td:nth-child(3) {
+    min-width: 12rem;
+}
+
+#students .academic-list-grid .academic-table td:last-child {
+    white-space: nowrap;
+}
+
+/* ---------- Student dashboard ---------- */
+.student-dashboard-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr) !important;
+    gap: 18px;
+    align-items: start;
+}
+
+.student-learning-panel {
+    grid-row: auto !important;
+}
+
+.student-panel {
+    height: auto;
+    min-height: 0;
+}
+
+.student-subject-chips {
+    align-content: start;
+}
+
+.student-subject-chips > span {
+    min-height: 0;
+}
+
+.student-summary-grid {
+    align-items: stretch;
+}
+
+.student-summary-card {
+    min-height: 104px;
+}
+
+/* ---------- Practice and Builder messages ---------- */
+.student-main .practice-alert,
+.ed-v3-main .builder-alert,
+.ed-v3-main .academic-alert,
+.ed-v3-main .school-alert {
+    border-radius: 14px;
+}
+
+/* ---------- Responsive acceptance widths ---------- */
+@media (max-width: 1180px) {
+    .assessment-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .assessment-actions {
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 4px;
+    }
+
+    /* At tablet/compact desktop width, a card-row representation is clearer than
+       forcing six management columns into a horizontal scroller. */
+    #students .academic-list-grid .academic-table,
+    #students .academic-list-grid .academic-table tbody,
+    #students .academic-list-grid .academic-table tr,
+    #students .academic-list-grid .academic-table td {
+        display: block;
+        width: 100%;
+    }
+
+    #students .academic-list-grid .academic-table thead {
+        display: none;
+    }
+
+    #students .academic-list-grid .academic-table tr {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 20px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--p44-border);
+    }
+
+    #students .academic-list-grid .academic-table td {
+        display: grid;
+        grid-template-columns: minmax(8rem, .7fr) minmax(0, 1.3fr);
+        gap: 10px;
+        padding: 3px 0;
+        border: 0;
+        white-space: normal !important;
+        min-width: 0 !important;
+    }
+
+    #students .academic-list-grid .academic-table td::before {
+        content: attr(data-label);
+        color: var(--p44-muted);
+        font-weight: 700;
+    }
+
+    #students .academic-list-grid .academic-table td:not([data-label]) {
+        display: block;
+    }
+}
+
+@media (max-width: 900px) {
+    .student-dashboard-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    #students .academic-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .ed-public-body .language-shell {
+        width: min(100% - 24px, 560px);
+        padding-top: 22px;
+    }
+
+    .ed-public-body .language-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ed-public-body .language-card {
+        min-height: 104px;
+    }
+
+    .ed-public-body .public-contact-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ed-public-body .public-contact-card__links {
+        justify-content: flex-start;
+    }
+
+    .assessment-actions {
+        flex-wrap: wrap;
+        overflow: visible;
+    }
+
+    #students .academic-list-grid .academic-table tr {
+        grid-template-columns: 1fr;
+    }
+
+    #students .academic-list-grid .academic-table td {
+        grid-template-columns: minmax(7rem, .8fr) minmax(0, 1.2fr);
+    }
+}
+
+@media (max-width: 430px) {
+    .ed-public-body .language-brand .localized-brand-logo {
+        width: min(290px, 78vw);
+    }
+
+    #students .academic-list-grid .academic-table td {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+}
