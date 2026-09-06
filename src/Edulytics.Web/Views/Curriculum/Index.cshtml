@@ -47,9 +47,7 @@
             <h1>@C["CurriculumTitle"]</h1>
             <p>@(canManageCurriculum ? C["CurriculumSubtitle"] : C["CurriculumViewSubtitle"])</p>
         </div>
-        <a class="school-button"
-           asp-controller="SchoolHome"
-           asp-action="Dashboard">@C["BackToDashboard"]</a>
+        <a class="school-button" asp-controller="SchoolHome" asp-action="Dashboard">@C["BackToDashboard"]</a>
     </header>
 
     @if (TempData["Success"] is string success)
@@ -67,21 +65,14 @@
     }
     else
     {
-        <form method="get"
-              asp-controller="Curriculum"
-              asp-action="Index"
-              class="curriculum-card curriculum-context-filter"
-              id="curriculumContextFilter">
+        <form method="get" asp-controller="Curriculum" asp-action="Index" class="curriculum-card curriculum-context-filter" id="curriculumContextFilter">
             <div class="curriculum-form">
                 <label for="academicYearId">@C["AcademicYear"]</label>
                 <select id="academicYearId" name="academicYearId" required>
                     <option value="">@C["SelectAcademicYear"]</option>
                     @foreach (var year in years)
                     {
-                        <option value="@year.AcademicYearId"
-                                selected="@(selectedAcademicYearId == year.AcademicYearId ? "selected" : null)">
-                            @year.AcademicYearName
-                        </option>
+                        <option value="@year.AcademicYearId" selected="@(selectedAcademicYearId == year.AcademicYearId ? "selected" : null)">@year.AcademicYearName</option>
                     }
                 </select>
 
@@ -112,18 +103,14 @@
                     }
                 </select>
 
-                <button type="submit" class="school-button school-button-primary">
-                    @C["ShowCurriculum"]
-                </button>
+                <button type="submit" class="school-button school-button-primary">@C["ShowCurriculum"]</button>
             </div>
         </form>
     }
 
     @if (selectedAdoption is null)
     {
-        <div class="curriculum-empty curriculum-context-prompt">
-            @C["ChooseCurriculumContext"]
-        </div>
+        <div class="curriculum-empty curriculum-context-prompt">@C["ChooseCurriculumContext"]</div>
     }
     else
     {
@@ -174,6 +161,7 @@
             <section class="curriculum-list">
                 @foreach (var topic in explicitTopics)
                 {
+                    var topicDisplayTitle = LearningOutcomePresentation.DisplayTopicTitle(topic.Name);
                     <article class="curriculum-topic-card">
                         <header>
                             <div>
@@ -185,7 +173,7 @@
                                         <span> · @topic.CurriculumPathway</span>
                                     }
                                 </span>
-                                <h3>@topic.Name</h3>
+                                <h3>@topicDisplayTitle</h3>
                             </div>
                         </header>
 
@@ -209,18 +197,12 @@
                                         <tbody>
                                         @foreach (var outcome in topic.Outcomes)
                                         {
-                                            var aiSupported = Edulytics.Services.Assessments.NativeMathematicsOutcomeProfileResolver.Supports(
-                                                outcome.Code,
-                                                outcome.Description);
+                                            var aiSupported = Edulytics.Services.Assessments.NativeMathematicsOutcomeProfileResolver.Supports(outcome.Code, outcome.Description);
                                             var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
                                             var displayTitle = LearningOutcomePresentation.DisplayTitle(outcome.Code, outcome.Description);
                                             <tr>
-                                                <td data-label="@C["Description"]">
-                                                    <strong>@displayTitle</strong>
-                                                </td>
-                                                <td data-label="@C["OutcomeCode"]">
-                                                    <span class="ed-outcome-code">@displayCode</span>
-                                                </td>
+                                                <td data-label="@C["Description"]"><strong>@displayTitle</strong></td>
+                                                <td data-label="@C["OutcomeCode"]"><span class="ed-outcome-code">@displayCode</span></td>
                                                 <td data-label="AI">
                                                     <span class="ed-ai-capability-badge @(aiSupported ? "is-supported" : "is-manual")">
                                                         @A[aiSupported ? "AiSupported" : "ManualOnly"]
