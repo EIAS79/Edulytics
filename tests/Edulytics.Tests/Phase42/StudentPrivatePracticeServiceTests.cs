@@ -96,7 +96,7 @@ public sealed class StudentPrivatePracticeServiceTests
         Assert.NotNull(repo.SavedAttempt);
         Assert.Single(repo.SavedItems);
         Assert.Equal("CurriculumContextCheck", repo.SavedItems[0].GenerationFamily);
-        Assert.Contains("AiAssisted", repo.SavedItems[0].ValidationMetadataJson, StringComparison.Ordinal);
+        Assert.Contains("student-private", repo.SavedItems[0].ValidationMetadataJson, StringComparison.Ordinal);
         Assert.False(string.IsNullOrWhiteSpace(repo.SavedItems[0].CorrectAnswer));
         Assert.False(string.IsNullOrWhiteSpace(repo.SavedItems[0].Solution));
     }
