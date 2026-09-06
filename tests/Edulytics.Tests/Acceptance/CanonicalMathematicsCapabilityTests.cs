@@ -9,12 +9,9 @@ public sealed class CanonicalMathematicsCapabilityTests
 {
     [Theory]
     [InlineData("", "Add and subtract whole numbers", CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction)]
-    [InlineData("", "Solve a one-step equation", CanonicalMathematicsSkill.OneStepLinearEquation)]
     [InlineData("", "Find a fraction of a quantity", CanonicalMathematicsSkill.FractionOfQuantity)]
     [InlineData("", "Calculate a percentage of a quantity", CanonicalMathematicsSkill.PercentageOfQuantity)]
     [InlineData("", "Use a unit rate to solve the problem", CanonicalMathematicsSkill.UnitRateAndProportion)]
-    [InlineData("MAT.2.02.04", "حل معادلات الخطوة الواحدة", CanonicalMathematicsSkill.OneStepLinearEquation)]
-    [InlineData("MAT.1.07.01", "النسب والتناسب", CanonicalMathematicsSkill.UnitRateAndProportion)]
     public void Mapper_TranslatesReviewedVocabularyToCanonicalSkill(
         string code,
         string description,
@@ -85,6 +82,12 @@ public sealed class CanonicalMathematicsCapabilityTests
     [InlineData(
         "CCSS:1.NBT.C.4",
         "Add within 100, including adding a two-digit number and a one-digit number, using concrete models or drawings and explain the reasoning used.")]
+    [InlineData(
+        "CCSS:1.OA.A.2",
+        "Solve word problems that call for addition of three whole numbers whose sum is less than or equal to 20.")]
+    [InlineData(
+        "CCSS:1.OA.D.8",
+        "Determine the unknown whole number in an addition or subtraction equation relating three whole numbers.")]
     public void BroadOaNbtReasoningOutcomes_DoNotOverclaimIntegerComputation(
         string code,
         string description)
@@ -137,31 +140,59 @@ public sealed class CanonicalMathematicsCapabilityTests
         Assert.DoesNotContain(CanonicalMathematicsSkill.WholeNumberDivision, skills);
     }
 
-    [Fact]
-    public void GeneralFractionMultiplication_DoesNotPretendToBeFractionOfQuantity()
+    [Theory]
+    [InlineData(
+        "CCSS:5.NF.B.4",
+        "Apply and extend understanding of multiplication to multiply a fraction.")]
+    [InlineData(
+        "CCSS:3.G.A.2",
+        "Express the area of each part as a unit fraction of the whole.")]
+    [InlineData(
+        "CCSS:7.SP.C.8",
+        "The probability of a compound event is the fraction of outcomes in the sample space for which the event occurs.")]
+    public void IncidentalFractionOfVocabulary_DoesNotPretendToBeFractionOfQuantity(
+        string code,
+        string description)
     {
-        const string code = "CCSS:5.NF.B.4";
-        const string description =
-            "Apply and extend understanding of multiplication to multiply a fraction.";
-
         var skills = CanonicalMathematicsSkillMapper.Resolve(code, description);
 
         Assert.DoesNotContain(CanonicalMathematicsSkill.FractionOfQuantity, skills);
-        Assert.DoesNotContain(CanonicalMathematicsSkill.WholeNumberMultiplication, skills);
         Assert.False(NativeMathematicsOutcomeProfileResolver.Supports(code, description));
     }
 
-    [Fact]
-    public void RatioRateVocabulary_WithRpLocator_MapsToUnitRate()
+    [Theory]
+    [InlineData(
+        "CCSS:6.RP.A.3",
+        "Use ratio and rate reasoning to solve real-world and mathematical problems, including unit rate and percent of a quantity as a rate per 100.")]
+    [InlineData(
+        "CCSS:7.RP.A.1",
+        "Compute unit rates associated with ratios of fractions.")]
+    [InlineData(
+        "PL:REQ:TECHNICAL",
+        "Proporcjonalność prosta")]
+    [InlineData(
+        "MAT.1.07.01",
+        "النسب والتناسب")]
+    public void BroaderRatioAndProportionSemantics_RemainClosedUntilMatchingGeneratorExists(
+        string code,
+        string description)
     {
-        var skills = CanonicalMathematicsSkillMapper.Resolve(
-            "CCSS:6.RP.A.3",
-            "Use ratio and rate reasoning.");
+        var skills = CanonicalMathematicsSkillMapper.Resolve(code, description);
 
-        Assert.Contains(CanonicalMathematicsSkill.UnitRateAndProportion, skills);
-        Assert.True(NativeMathematicsOutcomeProfileResolver.Supports(
-            "CCSS:6.RP.A.3",
-            "Use ratio and rate reasoning."));
+        Assert.DoesNotContain(CanonicalMathematicsSkill.UnitRateAndProportion, skills);
+        Assert.False(NativeMathematicsOutcomeProfileResolver.Supports(code, description));
+    }
+
+    [Theory]
+    [InlineData("Solve a one-step equation")]
+    [InlineData("حل معادلات الخطوة الواحدة")]
+    [InlineData("Solve linear equations in one variable")]
+    public void EquationSemantics_RemainClosedUntilOneStepGeneratorIsCorrected(string description)
+    {
+        var skills = CanonicalMathematicsSkillMapper.Resolve(null, description);
+
+        Assert.DoesNotContain(CanonicalMathematicsSkill.OneStepLinearEquation, skills);
+        Assert.False(NativeMathematicsOutcomeProfileResolver.Supports(null, description));
     }
 
     [Theory]
@@ -176,34 +207,6 @@ public sealed class CanonicalMathematicsCapabilityTests
 
         Assert.Empty(skills);
         Assert.False(NativeMathematicsOutcomeProfileResolver.Supports(code, description));
-    }
-
-    [Fact]
-    public void ReviewedArabicOutcomeSemantics_AreAvailableThroughSharedResolver()
-    {
-        var equation = new LearningOutcome
-        {
-            Id = Guid.NewGuid(),
-            Code = "MAT.2.02.04",
-            Description = "حل معادلات الخطوة الواحدة"
-        };
-        var proportion = new LearningOutcome
-        {
-            Id = Guid.NewGuid(),
-            Code = "MAT.1.07.01",
-            Description = "النسب والتناسب"
-        };
-
-        var equationProfile = NativeMathematicsOutcomeProfileResolver.Resolve(equation);
-        var proportionProfile = NativeMathematicsOutcomeProfileResolver.Resolve(proportion);
-
-        Assert.NotNull(equationProfile);
-        Assert.Contains(CanonicalMathematicsSkill.OneStepLinearEquation, equationProfile!.CanonicalSkills);
-        Assert.Contains(MathematicsGeneratorFamily.OneStepEquation, equationProfile.AllowedFamilies);
-
-        Assert.NotNull(proportionProfile);
-        Assert.Contains(CanonicalMathematicsSkill.UnitRateAndProportion, proportionProfile!.CanonicalSkills);
-        Assert.Contains(MathematicsGeneratorFamily.UnitRateWordProblem, proportionProfile.AllowedFamilies);
     }
 
     [Fact]
