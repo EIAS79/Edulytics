@@ -14,6 +14,7 @@ public sealed class MathematicsAiCapabilityMatrixTests
 
         Assert.Equal(MathematicsAiCapabilityLevel.VerifiedAi, capability.Level);
         Assert.True(capability.CanGenerateVerified);
+        Assert.True(capability.CanGenerate);
         Assert.Equal("edulytics-native-mathematics", capability.ProviderKey);
         Assert.Contains(
             CanonicalMathematicsSkill.WholeNumberAdditionAndSubtraction,
@@ -24,15 +25,21 @@ public sealed class MathematicsAiCapabilityMatrixTests
     }
 
     [Fact]
-    public void MultiDigitStandardAlgorithm_RemainsManualUntilOperandShapeIsImplemented()
+    public void MultiDigitStandardAlgorithm_UsesContextualAiWithoutClaimingNativeVerification()
     {
         var capability = MathematicsAiCapabilityMatrix.Resolve(
             "CCSS:4.NBT.B.4",
             "Fluently add and subtract multi-digit whole numbers using the standard algorithm.");
 
-        Assert.Equal(MathematicsAiCapabilityLevel.ManualOnly, capability.Level);
+        Assert.Equal(MathematicsAiCapabilityLevel.AiAssisted, capability.Level);
         Assert.False(capability.CanGenerateVerified);
+        Assert.True(capability.CanGenerateAssisted);
+        Assert.True(capability.CanGenerate);
         Assert.Empty(capability.VerifiedFamilies);
+        Assert.Equal(
+            MathematicsGeneratorFamily.CurriculumContextCheck,
+            Assert.Single(capability.GenerationFamilies));
+        Assert.Equal("edulytics-contextual-mathematics", capability.ProviderKey);
     }
 
     [Fact]
@@ -57,29 +64,48 @@ public sealed class MathematicsAiCapabilityMatrixTests
     }
 
     [Fact]
-    public void UnknownOutcome_IsManualOnlyWithoutInventingASkill()
+    public void RecognizableCurriculumMathematicsOutcome_IsAiAssistedWhenNoNativeFamilyMatches()
+    {
+        var capability = MathematicsAiCapabilityMatrix.Resolve(
+            "CAM:OUT:0096:1Ni.02",
+            "Cambridge Mathematics reference objective. Addition, subtraction and doubles.");
+
+        Assert.Equal(MathematicsAiCapabilityLevel.AiAssisted, capability.Level);
+        Assert.True(capability.CanGenerateAssisted);
+        Assert.True(capability.CanGenerate);
+        Assert.Equal("edulytics-contextual-mathematics", capability.ProviderKey);
+        Assert.Equal(
+            MathematicsGeneratorFamily.CurriculumContextCheck,
+            Assert.Single(capability.GenerationFamilies));
+    }
+
+    [Fact]
+    public void UnknownNonMathematicsOutcome_RemainsManualOnly()
     {
         var capability = MathematicsAiCapabilityMatrix.Resolve(
             "CAM:OUT:UNKNOWN",
-            "Reference-only curriculum outcome.");
+            "Describe the historical context of a source.");
 
         Assert.Equal(MathematicsAiCapabilityLevel.ManualOnly, capability.Level);
+        Assert.False(capability.CanGenerate);
         Assert.Empty(capability.CanonicalSkills);
         Assert.Equal("NoCanonicalSkillMapping", capability.ReasonCode);
     }
 
     [Fact]
-    public void AiAssisted_IsAReservedState_NotEmittedWithoutAConfiguredProvider()
+    public void CapabilityLevelsRemainMutuallyExclusive()
     {
-        var samples = new[]
-        {
-            MathematicsAiCapabilityMatrix.Resolve(null, "Add whole numbers."),
-            MathematicsAiCapabilityMatrix.Resolve(null, "Multiply whole numbers."),
-            MathematicsAiCapabilityMatrix.Resolve("CAM:OUT:UNKNOWN", "Reference-only curriculum outcome.")
-        };
+        var native = MathematicsAiCapabilityMatrix.Resolve(null, "Add whole numbers.");
+        var assisted = MathematicsAiCapabilityMatrix.Resolve(null, "Solve a geometry problem involving area.");
+        var manual = MathematicsAiCapabilityMatrix.Resolve("X", "Describe a historical source.");
 
-        Assert.DoesNotContain(
-            samples,
-            x => x.Level == MathematicsAiCapabilityLevel.AiAssisted);
+        Assert.Equal(MathematicsAiCapabilityLevel.VerifiedAi, native.Level);
+        Assert.Equal(MathematicsAiCapabilityLevel.AiAssisted, assisted.Level);
+        Assert.Equal(MathematicsAiCapabilityLevel.ManualOnly, manual.Level);
+        Assert.True(native.CanGenerateVerified);
+        Assert.False(native.CanGenerateAssisted);
+        Assert.False(assisted.CanGenerateVerified);
+        Assert.True(assisted.CanGenerateAssisted);
+        Assert.False(manual.CanGenerate);
     }
 }
