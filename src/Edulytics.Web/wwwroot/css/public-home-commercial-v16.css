@@ -19,7 +19,7 @@
   min-width:0;
 }
 
-/* Wider/shorter visual footprint. */
+/* Wider/shorter visual footprint for the photo slide. */
 .ed-home .ed-home-v12-visual{
   width:100%;
   max-width:720px;
@@ -28,24 +28,23 @@
   justify-self:end;
 }
 
+/* Mascot slide needs a slightly taller stage so the full square artwork can remain visible. */
 .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual{
-  aspect-ratio:3 / 2;
+  aspect-ratio:4 / 3;
   min-height:0!important;
   overflow:visible!important;
 }
 
-/* Use the supplied transparent mascot directly; no canvas cleanup, crop or image processing. */
+/* Use the supplied transparent mascot directly and contain the complete artwork on both axes. */
 .ed-home .ed-home-v16-mascot-canvas{
   position:absolute;
-  left:50%;
-  top:50%;
-  width:min(640px,96%);
+  inset:0;
+  width:auto;
   height:auto;
-  max-width:none;
-  max-height:none;
+  max-width:96%;
+  max-height:96%;
+  margin:auto;
   display:block;
-  transform:translate(-50%,-50%);
-  transform-origin:center;
   object-fit:contain;
   filter:drop-shadow(0 18px 28px rgba(35,73,111,.12));
 }
@@ -87,7 +86,7 @@
   margin-inline-start:0;
   margin-inline-end:0;
   letter-spacing:0!important;
-  line-height:1.27!important;
+  line-height:1.36!important;
   text-align:right;
   text-wrap:balance;
 }
@@ -160,7 +159,7 @@
     padding:24px 0 36px;
   }
   .ed-home .ed-home-v12-visual{max-width:650px}
-  .ed-home .ed-home-v16-mascot-canvas{width:min(590px,96%)}
+  .ed-home .ed-home-v16-mascot-canvas{max-width:96%;max-height:96%}
   .ed-home .ed-home-v12-prev{left:18px!important}
   .ed-home .ed-home-v12-next{right:18px!important}
 }
@@ -197,10 +196,11 @@
     aspect-ratio:16 / 10;
   }
   .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual{
-    aspect-ratio:16 / 10;
+    aspect-ratio:4 / 3;
   }
   .ed-home .ed-home-v16-mascot-canvas{
-    width:min(620px,88vw);
+    max-width:94%;
+    max-height:94%;
   }
   .ed-home .ed-home-v12-arrow{
     top:auto!important;
@@ -234,11 +234,12 @@
     aspect-ratio:4 / 3;
   }
   .ed-home .ed-home-v16-mascot-canvas{
-    width:96%;
+    max-width:94%;
+    max-height:94%;
   }
   .ed-home.is-site-ar .ed-home-v12-copy h1,
   .ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-copy h1{
-    line-height:1.3!important;
+    line-height:1.4!important;
   }
 }
 
