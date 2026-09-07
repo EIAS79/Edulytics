@@ -1,0 +1,105 @@
+/* Home v15 — remove mascot white field, refine Contact navigation, and support the single teacher CTA. */
+
+/* The mascot should float on the hero, not sit inside a large white card. */
+.ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual{
+  background:transparent!important;
+  border-color:transparent!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+}
+
+.ed-home .ed-home-v15-mascot-canvas{
+  position:absolute;
+  inset:0;
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:100%;
+  margin:auto;
+  display:block;
+  filter:drop-shadow(0 18px 28px rgba(35,73,111,.12));
+}
+
+/* Contact belongs to the same navigation system. Use one restrained warm cue, not a large orange block. */
+.ed-home .ed-home-v11-contact-link{
+  position:relative;
+  min-height:48px!important;
+  margin:0!important;
+  padding:0 13px!important;
+  border:0!important;
+  border-radius:10px!important;
+  background:transparent!important;
+  color:#162943!important;
+  box-shadow:none!important;
+  overflow:hidden;
+}
+
+.ed-home .ed-home-v11-contact-link::before{
+  content:"";
+  width:6px;
+  height:6px;
+  flex:0 0 6px;
+  margin-inline-end:7px;
+  border-radius:50%;
+  background:#f36d21;
+  opacity:.9;
+}
+
+.ed-home .ed-home-v11-contact-link::after{
+  content:"";
+  position:absolute;
+  inset-inline:13px;
+  bottom:5px;
+  height:2px;
+  border-radius:999px;
+  background:#f36d21;
+  transform:scaleX(0);
+  transform-origin:center;
+  transition:transform .18s ease;
+}
+
+.ed-home .ed-home-v11-contact-link:hover{
+  background:#fff8f2!important;
+  color:#b84b0b!important;
+}
+
+.ed-home .ed-home-v11-contact-link:hover::after,
+.ed-home .ed-home-v11-contact-link:focus-visible::after{
+  transform:scaleX(1);
+}
+
+.ed-home .ed-home-v11-contact-link:focus-visible{
+  background:#fff8f2!important;
+  color:#b84b0b!important;
+  outline:2px solid #ffc79f!important;
+  outline-offset:2px;
+}
+
+/* After the parent CTA is removed, keep the teacher action balanced rather than leaving a two-button gap. */
+.ed-home .ed-home-v12-slide:nth-child(2) .ed-home-v12-actions.is-v15-single{
+  gap:0;
+}
+
+.ed-home .ed-home-v12-slide:nth-child(2) .ed-home-v12-actions.is-v15-single .ed-home-v12-secondary{
+  min-width:250px;
+}
+
+@media(max-width:1040px){
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual{
+    min-height:410px;
+  }
+}
+
+@media(max-width:680px){
+  .ed-home .ed-home-v15-mascot-canvas{
+    max-width:96%;
+    max-height:96%;
+  }
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual{
+    min-height:310px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .ed-home .ed-home-v11-contact-link::after{transition:none!important}
+}
