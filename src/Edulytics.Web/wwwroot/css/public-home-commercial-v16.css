@@ -245,3 +245,33 @@
 @media(max-width:390px){
   .ed-home .ed-home-v12-slide-grid{width:calc(100% - 20px)}
 }
+
+/* v16 hotfix: the carousel mechanics must stay LTR in every locale.
+   Only the Arabic slide content is RTL. This preserves the existing
+   translate3d(-100%) motion and keeps slide 2 visible in Arabic. */
+.ed-home.is-site-ar .ed-home-v12-hero,
+.ed-home .ed-home-v12-hero.is-rtl,
+.ed-home.is-site-ar .ed-home-v12-viewport,
+.ed-home.is-site-ar .ed-home-v12-track,
+.ed-home.is-site-ar .ed-home-v12-slide,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-viewport,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-track,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-slide{
+  direction:ltr!important;
+}
+
+.ed-home.is-site-ar .ed-home-v12-slide-grid,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-slide-grid{
+  direction:rtl!important;
+}
+
+/* Prevent bidirectional text rules from mirroring the ‹ / › glyphs. */
+.ed-home .ed-home-v12-arrow,
+.ed-home .ed-home-v12-arrow span,
+.ed-home.is-site-ar .ed-home-v12-arrow,
+.ed-home.is-site-ar .ed-home-v12-arrow span,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-arrow,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-arrow span{
+  direction:ltr!important;
+  unicode-bidi:isolate!important;
+}
