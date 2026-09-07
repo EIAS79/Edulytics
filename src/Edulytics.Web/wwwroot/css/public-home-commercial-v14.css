@@ -1,0 +1,213 @@
+/* Home v14 — hero balance, verified mascot, bright classroom, warm contact accents, and visual mega-menu hierarchy. */
+
+/* Desktop hero: give copy more room and stop the visual from dominating. */
+.ed-home .ed-home-v12-slide-grid{
+  width:min(1600px,calc(100% - 80px));
+  grid-template-columns:minmax(0,1.18fr) minmax(500px,.82fr);
+  gap:48px;
+  padding-top:44px;
+}
+
+.ed-home .ed-home-v12-copy{
+  max-width:860px;
+}
+
+.ed-home .ed-home-v12-copy h1{
+  max-width:840px;
+  font-size:clamp(2.75rem,3.55vw,4.35rem);
+  line-height:1.02;
+  letter-spacing:-.038em;
+  text-wrap:balance;
+}
+
+.ed-home .ed-home-v12-body,
+.ed-home .ed-home-v12-note{
+  max-width:760px;
+  font-size:clamp(1rem,1.04vw,1.16rem);
+  line-height:1.66;
+}
+
+.ed-home .ed-home-v12-visual{
+  width:100%;
+  max-width:680px;
+  min-height:500px;
+  justify-self:end;
+  border-width:12px;
+  border-radius:30px;
+}
+
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-copy h1{
+  font-size:clamp(2.7rem,3.35vw,4.05rem);
+  line-height:1.16;
+  letter-spacing:0;
+}
+
+/* Exact user-supplied mascot, stored as a normal image asset. */
+.ed-home .ed-home-v14-mascot-image{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:contain;
+  object-position:center;
+  padding:12px;
+  background:#fff;
+}
+
+/* Bright, explicitly classroom-focused second slide. The existing CSP already allows images.unsplash.com. */
+.ed-home .ed-home-v12-photo-image{
+  background-image:url('https://images.unsplash.com/photo-1780844824566-2fb198a6b93c?auto=format&fit=crop&fm=jpg&q=84&w=1800')!important;
+  background-size:cover!important;
+  background-position:center 46%!important;
+  filter:brightness(1.07) contrast(.95) saturate(1.05)!important;
+  transform:scale(1.015)!important;
+}
+
+.ed-home .ed-home-v12-photo-wash{
+  background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,250,245,.03) 54%,rgba(255,255,255,.08))!important;
+}
+
+/* Warm contact accent. Keep the primary product CTA blue, but stop every action looking the same. */
+.ed-home .ed-home-v11-contact-link{
+  min-height:42px;
+  margin-block:auto;
+  border:1px solid #ffd0ad!important;
+  background:#fff4e9!important;
+  color:#c6530c!important;
+  padding-inline:16px!important;
+}
+
+.ed-home .ed-home-v11-contact-link:hover,
+.ed-home .ed-home-v11-contact-link:focus-visible{
+  border-color:#ff7a1a!important;
+  background:#ff7a1a!important;
+  color:#fff!important;
+}
+
+.ed-home .ed-home-v12-secondary{
+  border-color:#f36d21!important;
+  background:#fffaf6!important;
+  color:#d95b12!important;
+  box-shadow:none!important;
+}
+
+.ed-home .ed-home-v12-secondary:hover,
+.ed-home .ed-home-v12-secondary:focus-visible{
+  border-color:#f36d21!important;
+  background:#f36d21!important;
+  color:#fff!important;
+}
+
+/* Mega menu: restrained text palette, visual hierarchy through icons and dots instead. */
+.ed-home .ed-home-v11-mega{
+  padding:20px 24px 24px;
+}
+
+.ed-home .ed-home-v11-mega-grid{
+  gap:18px;
+}
+
+.ed-home .ed-home-v11-mega-lead{
+  background:linear-gradient(145deg,#f4f9ff,#fff8f2);
+}
+
+.ed-home .ed-home-v11-mega-group h3{
+  color:#52657e;
+  letter-spacing:.045em;
+}
+
+.ed-home .ed-home-v14-menu-link{
+  display:flex!important;
+  align-items:center;
+  gap:11px;
+  min-height:44px;
+  padding:6px 8px!important;
+  margin:1px -8px;
+  border-radius:11px;
+  color:#20344f!important;
+  transition:background-color .16s ease,color .16s ease,transform .16s ease;
+}
+
+.ed-home .ed-home-v14-menu-link:hover,
+.ed-home .ed-home-v14-menu-link:focus-visible{
+  background:#f7f9fc!important;
+  color:#162943!important;
+  transform:translateX(2px);
+}
+
+.ed-home.is-site-ar .ed-home-v14-menu-link:hover,
+.ed-home.is-site-ar .ed-home-v14-menu-link:focus-visible{
+  transform:translateX(-2px);
+}
+
+.ed-home .ed-home-v14-menu-icon{
+  flex:0 0 34px;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:1rem;
+  font-weight:900;
+  line-height:1;
+  color:#fff;
+  box-shadow:0 6px 16px rgba(31,58,91,.10);
+}
+
+.ed-home .ed-home-v14-menu-dot{
+  flex:0 0 9px;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  margin-inline:5px 9px;
+}
+
+.ed-home .ed-home-v14-tone-blue .ed-home-v14-menu-icon,
+.ed-home .ed-home-v14-tone-blue .ed-home-v14-menu-dot{background:#3f8ee8}
+.ed-home .ed-home-v14-tone-teal .ed-home-v14-menu-icon,
+.ed-home .ed-home-v14-tone-teal .ed-home-v14-menu-dot{background:#27b89a}
+.ed-home .ed-home-v14-tone-purple .ed-home-v14-menu-icon,
+.ed-home .ed-home-v14-tone-purple .ed-home-v14-menu-dot{background:#8b5cf6}
+.ed-home .ed-home-v14-tone-coral .ed-home-v14-menu-icon,
+.ed-home .ed-home-v14-tone-coral .ed-home-v14-menu-dot{background:#ef6f4d}
+
+/* Retain the already-approved dropdown usability fixes and make chevrons easier to see. */
+.ed-home .ed-home-v11-chevron{
+  width:20px!important;
+  min-width:20px!important;
+  height:20px!important;
+  font-size:1.08rem!important;
+}
+
+@media(max-width:1450px){
+  .ed-home .ed-home-v12-slide-grid{
+    width:min(1320px,calc(100% - 60px));
+    grid-template-columns:minmax(0,1.08fr) minmax(500px,.92fr);
+    gap:36px;
+  }
+  .ed-home .ed-home-v12-copy h1{font-size:clamp(2.7rem,3.75vw,3.95rem)}
+  .ed-home .ed-home-v12-visual{max-width:620px;min-height:460px}
+}
+
+@media(max-width:1180px){
+  .ed-home .ed-home-v11-contact-link{margin:0}
+}
+
+@media(max-width:1040px){
+  .ed-home .ed-home-v12-slide-grid{
+    width:min(900px,calc(100% - 42px));
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+  .ed-home .ed-home-v12-copy{max-width:800px}
+  .ed-home .ed-home-v12-copy h1{max-width:760px;font-size:clamp(2.55rem,6.5vw,3.7rem)}
+  .ed-home .ed-home-v12-visual{justify-self:center;max-width:760px;min-height:430px}
+}
+
+@media(max-width:680px){
+  .ed-home .ed-home-v12-copy h1{font-size:clamp(2.15rem,9.3vw,2.7rem)}
+  .ed-home .ed-home-v12-body,.ed-home .ed-home-v12-note{font-size:.98rem}
+  .ed-home .ed-home-v12-visual{min-height:320px;border-width:9px}
+  .ed-home .ed-home-v14-mascot-image{padding:4px}
+}
