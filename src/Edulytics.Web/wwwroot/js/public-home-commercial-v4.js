@@ -2,6 +2,29 @@
     const root = document.querySelector('.ed-home');
     const hero = document.querySelector('.ed-home-hero');
     const copy = document.querySelector('.ed-home-hero-copy');
+
+    document.querySelectorAll('.ed-home-links a[href="#contact"], .ed-home-mobile-panel a[href="#contact"]').forEach(link => {
+        link.setAttribute('href', '/contact');
+    });
+
+    document.querySelectorAll('.ed-home-mobile-panel a').forEach(link => {
+        link.addEventListener('click', () => {
+            const details = link.closest('details');
+            if (details) details.open = false;
+        });
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key !== 'Escape') return;
+        document.querySelectorAll('.ed-home-mobile-menu[open]').forEach(details => details.removeAttribute('open'));
+    });
+
+    document.addEventListener('click', event => {
+        document.querySelectorAll('.ed-home-mobile-menu[open]').forEach(details => {
+            if (!details.contains(event.target)) details.removeAttribute('open');
+        });
+    });
+
     if (!root || !hero || !copy) return;
 
     const h1 = copy.querySelector('h1');
@@ -143,24 +166,6 @@
         ribbon.innerHTML = items.map(([title, description]) => `<div><strong>${title}</strong><span>${description}</span></div>`).join('');
         audience.insertAdjacentElement('afterend', ribbon);
     }
-
-    document.querySelectorAll('.ed-home-mobile-panel a').forEach(link => {
-        link.addEventListener('click', () => {
-            const details = link.closest('details');
-            if (details) details.open = false;
-        });
-    });
-
-    document.addEventListener('keydown', event => {
-        if (event.key !== 'Escape') return;
-        document.querySelectorAll('.ed-home-mobile-menu[open]').forEach(details => details.removeAttribute('open'));
-    });
-
-    document.addEventListener('click', event => {
-        document.querySelectorAll('.ed-home-mobile-menu[open]').forEach(details => {
-            if (!details.contains(event.target)) details.removeAttribute('open');
-        });
-    });
 
     go(0);
     restart();
