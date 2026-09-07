@@ -1,0 +1,124 @@
+/* Home v16 — final hero balance: no mascot crop, fuller composition, wider/shorter visual frame. */
+
+/* Desktop hero: reduce empty vertical space and use a wider visual proportion. */
+.ed-home .ed-home-v12-hero{
+  min-height:620px;
+}
+
+.ed-home .ed-home-v12-slide-grid{
+  width:min(1560px,calc(100% - 64px));
+  min-height:620px;
+  padding:28px 0 42px;
+  grid-template-columns:minmax(0,1.08fr) minmax(580px,.92fr);
+  gap:34px;
+  align-items:center;
+}
+
+.ed-home .ed-home-v12-copy{
+  max-width:850px;
+}
+
+/* Make the visual landscape-oriented rather than overly tall. */
+.ed-home .ed-home-v12-visual{
+  width:100%;
+  max-width:720px;
+  min-height:0!important;
+  aspect-ratio:3 / 2;
+  justify-self:end;
+}
+
+/* Slide 1 remains borderless/transparent, but keeps the same balanced visual footprint. */
+.ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual{
+  aspect-ratio:3 / 2;
+  min-height:0!important;
+  overflow:visible!important;
+}
+
+/* Full original canvas: transparency only, never crop the supplied composition. */
+.ed-home .ed-home-v16-mascot-canvas{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:min(590px,92%);
+  height:auto;
+  max-width:none;
+  max-height:none;
+  display:block;
+  transform:translate(-50%,-50%) scale(1.06);
+  transform-origin:center;
+  filter:drop-shadow(0 18px 28px rgba(35,73,111,.12));
+}
+
+/* Slide 2 fills a wider, shorter frame. */
+.ed-home .ed-home-v12-photo,
+.ed-home .ed-home-v12-photo-image,
+.ed-home .ed-home-v12-photo-wash{
+  border-radius:inherit;
+}
+
+@media(max-width:1450px){
+  .ed-home .ed-home-v12-hero{min-height:570px}
+  .ed-home .ed-home-v12-slide-grid{
+    width:min(1320px,calc(100% - 56px));
+    min-height:570px;
+    grid-template-columns:minmax(0,1.04fr) minmax(540px,.96fr);
+    gap:30px;
+    padding:24px 0 36px;
+  }
+  .ed-home .ed-home-v12-visual{max-width:660px}
+  .ed-home .ed-home-v16-mascot-canvas{width:min(550px,94%)}
+}
+
+@media(max-width:1180px){
+  .ed-home .ed-home-v12-slide-grid{
+    width:min(1080px,calc(100% - 42px));
+    grid-template-columns:minmax(0,1fr) minmax(500px,1fr);
+    gap:24px;
+  }
+  .ed-home .ed-home-v12-visual{max-width:620px}
+}
+
+@media(max-width:1040px){
+  .ed-home .ed-home-v12-hero{min-height:auto}
+  .ed-home .ed-home-v12-slide-grid{
+    width:min(900px,calc(100% - 42px));
+    min-height:auto;
+    grid-template-columns:1fr;
+    gap:26px;
+    padding:34px 0 82px;
+  }
+  .ed-home .ed-home-v12-visual{
+    justify-self:center;
+    width:min(100%,760px);
+    max-width:760px;
+    aspect-ratio:16 / 10;
+  }
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual{
+    aspect-ratio:16 / 10;
+  }
+  .ed-home .ed-home-v16-mascot-canvas{
+    width:min(610px,86vw);
+    transform:translate(-50%,-50%) scale(1.02);
+  }
+}
+
+@media(max-width:680px){
+  .ed-home .ed-home-v12-slide-grid{
+    width:calc(100% - 28px);
+    gap:20px;
+    padding:26px 0 72px;
+  }
+  .ed-home .ed-home-v12-visual,
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual{
+    width:100%;
+    aspect-ratio:4 / 3;
+  }
+  .ed-home .ed-home-v16-mascot-canvas{
+    width:94%;
+    transform:translate(-50%,-50%);
+  }
+}
+
+@media(max-width:390px){
+  .ed-home .ed-home-v12-slide-grid{width:calc(100% - 20px)}
+}
