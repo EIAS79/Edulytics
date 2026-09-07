@@ -5,14 +5,14 @@
   const mascotHost = root.querySelector('.ed-home-v12-slide:first-child .ed-home-v12-mascot');
   if (!mascotHost) return;
 
-  /* Use the user-supplied transparent mascot asset directly.
-     No canvas processing, white-background removal, crop, bounding box or recompression. */
+  /* Use the supplied transparent mascot as a real PNG asset.
+     No canvas processing, white-background removal, crop or runtime recompression. */
   const image = document.createElement('img');
   image.className = 'ed-home-v16-mascot-canvas';
   image.alt = 'Edulytics mathematics mascot';
   image.decoding = 'async';
   image.loading = 'eager';
-  image.src = '/images/brand/edulytics-mascot-clean.png';
+  image.src = '/images/brand/edulytics-mascot-clean-v2.png?v=2';
 
   mascotHost.replaceChildren(image);
   mascotHost.dataset.v16Applied = 'true';
