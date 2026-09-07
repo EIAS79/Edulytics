@@ -82,7 +82,7 @@ public sealed class SecurityHeadersMiddleware
                 $"script-src 'self' 'nonce-{nonce}';",
                 "script-src-attr 'none';",
                 "style-src 'self' 'unsafe-inline';",
-                "img-src 'self' data:;",
+                "img-src 'self' data: https://images.unsplash.com;",
                 "font-src 'self' data:;",
                 $"connect-src 'self' {websocketSchemes};",
                 "worker-src 'self';",
