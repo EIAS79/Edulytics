@@ -1,0 +1,53 @@
+/* Home v17 — visual acceptance: full mascot containment and cleaner hero title rhythm. */
+
+/* EN / PL hero headings need slightly more vertical breathing room without changing size. */
+.ed-home .ed-home-v12-copy h1{
+  line-height:1.13!important;
+}
+
+/* Arabic needs a little more room for diacritics and the heavier display face. */
+.ed-home.is-site-ar .ed-home-v12-copy h1,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-copy h1{
+  line-height:1.46!important;
+}
+
+/* Stop using absolute image sizing for the mascot. The host becomes the stage and the
+   supplied transparent PNG is contained as a normal image, so every edge stays visible. */
+.ed-home .ed-home-v12-slide:first-child .ed-home-v12-mascot{
+  position:absolute!important;
+  inset:0!important;
+  display:grid!important;
+  place-items:center!important;
+  overflow:visible!important;
+}
+
+.ed-home .ed-home-v17-mascot-image{
+  position:static!important;
+  inset:auto!important;
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:96%!important;
+  max-height:520px!important;
+  margin:auto!important;
+  padding:0!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:transparent!important;
+  filter:drop-shadow(0 18px 28px rgba(35,73,111,.12));
+}
+
+@media(max-width:1450px){
+  .ed-home .ed-home-v17-mascot-image{max-height:460px!important}
+}
+
+@media(max-width:1040px){
+  .ed-home .ed-home-v17-mascot-image{max-height:410px!important}
+}
+
+@media(max-width:680px){
+  .ed-home .ed-home-v12-copy h1{line-height:1.17!important}
+  .ed-home.is-site-ar .ed-home-v12-copy h1,
+  .ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-copy h1{line-height:1.48!important}
+  .ed-home .ed-home-v17-mascot-image{max-height:300px!important}
+}
