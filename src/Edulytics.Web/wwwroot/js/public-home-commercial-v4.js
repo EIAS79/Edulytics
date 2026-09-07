@@ -94,6 +94,7 @@
         [...dots.children].forEach((dot, i) => {
             dot.classList.toggle('is-active', i === current);
             dot.setAttribute('aria-selected', i === current ? 'true' : 'false');
+            dot.tabIndex = i === current ? 0 : -1;
         });
         if (secondary) {
             secondary.textContent = current === 1
@@ -106,20 +107,58 @@
         if (manual) restart();
     }
 
-    function restart() {
+    function stop() {
         if (timer) window.clearInterval(timer);
+        timer = null;
+    }
+
+    function restart() {
+        stop();
         if (!reduceMotion) timer = window.setInterval(() => go(current + 1), 7000);
     }
 
     controls.querySelector('.ed-home-slide-prev').addEventListener('click', () => go(current - 1, true));
     controls.querySelector('.ed-home-slide-next').addEventListener('click', () => go(current + 1, true));
-    hero.addEventListener('mouseenter', () => timer && window.clearInterval(timer));
+    hero.addEventListener('mouseenter', stop);
     hero.addEventListener('mouseleave', restart);
+    hero.addEventListener('focusin', stop);
+    hero.addEventListener('focusout', restart);
+
+    const audience = document.querySelector('.ed-home-audience-band');
+    if (audience && !document.querySelector('.ed-home-commercial-ribbon')) {
+        const ribbon = document.createElement('section');
+        ribbon.className = 'ed-home-commercial-ribbon';
+        ribbon.setAttribute('aria-label', pl ? 'Najważniejsze możliwości Edulytics' : 'Edulytics key capabilities');
+        const items = pl ? [
+            ['Program nauczania', 'Treści i oceny osadzone w kontekście programu'],
+            ['AI nauczyciela', 'Generate with Edulytics AI z zatwierdzaniem pytań'],
+            ['Praktyka ucznia', 'Prywatne ćwiczenia AI oddzielone od ocen oficjalnych'],
+            ['Analityka szkoły', 'Wyniki, mastery i obszary wymagające uwagi']
+        ] : [
+            ['Curriculum aligned', 'Content and assessment connected to curriculum context'],
+            ['Teacher AI', 'Generate with Edulytics AI with teacher approval'],
+            ['Student practice', 'Private AI practice separated from official grading'],
+            ['School analytics', 'Results, mastery and areas that need attention']
+        ];
+        ribbon.innerHTML = items.map(([title, description]) => `<div><strong>${title}</strong><span>${description}</span></div>`).join('');
+        audience.insertAdjacentElement('afterend', ribbon);
+    }
 
     document.querySelectorAll('.ed-home-mobile-panel a').forEach(link => {
         link.addEventListener('click', () => {
             const details = link.closest('details');
             if (details) details.open = false;
+        });
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key !== 'Escape') return;
+        document.querySelectorAll('.ed-home-mobile-menu[open]').forEach(details => details.removeAttribute('open'));
+    });
+
+    document.addEventListener('click', event => {
+        document.querySelectorAll('.ed-home-mobile-menu[open]').forEach(details => {
+            if (!details.contains(event.target)) details.removeAttribute('open');
         });
     });
 
