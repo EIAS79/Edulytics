@@ -1,0 +1,19 @@
+@keyframes edHomeV10VisualIn {
+  from { opacity: 0; transform: translateX(22px) scale(.985); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+.ed-home-v6-visual > * {
+  animation: edHomeV10VisualIn .48s cubic-bezier(.2,.7,.2,1) both;
+}
+
+.ed-home-v6-copy h1,
+.ed-home-v6-copy .ed-home-v6-body,
+.ed-home-v6-copy .ed-home-v6-note,
+.ed-home-v6-copy .ed-home-v6-actions {
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ed-home-v6-visual > * { animation: none; }
+}
