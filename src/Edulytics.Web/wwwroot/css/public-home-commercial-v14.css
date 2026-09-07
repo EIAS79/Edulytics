@@ -55,9 +55,9 @@
   background:#fff;
 }
 
-/* Bright, explicitly classroom-focused second slide. */
+/* Bright, explicitly classroom-focused second slide. The existing CSP already allows images.unsplash.com. */
 .ed-home .ed-home-v12-photo-image{
-  background-image:url('https://images.pexels.com/photos/8617771/pexels-photo-8617771.jpeg?auto=compress&dpr=1&h=900&w=1600')!important;
+  background-image:url('https://images.unsplash.com/photo-1780844824566-2fb198a6b93c?auto=format&fit=crop&fm=jpg&q=84&w=1800')!important;
   background-size:cover!important;
   background-position:center 46%!important;
   filter:brightness(1.07) contrast(.95) saturate(1.05)!important;
