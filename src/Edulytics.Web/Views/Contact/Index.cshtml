@@ -1,35 +1,132 @@
 @using Edulytics.Core.Constants
 @using Edulytics.Web.Support
+@using System.Globalization
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SupportResource> Contact
 @{
-    Layout = User.Identity?.IsAuthenticated == true
+    var isAuthenticated = User.Identity?.IsAuthenticated == true;
+    var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl) => isPolish ? pl : en;
+    Layout = isAuthenticated
         ? (User.IsInRole(RoleNames.Student) ? "_StudentLayout" : "_AppLayout")
-        : "_AuthLayout";
-    ViewData["Title"] = Contact["ContactUs"].Value;
+        : "_PublicLayout";
+    ViewData["Title"] = L("Contact", "Kontakt");
 }
 
-<section class="student-card support-contact-card">
-    <header class="student-page-header">
-        <h1>@Contact["ContactUs"]</h1>
-        <p>@Contact["ContactSubtitle"]</p>
-    </header>
+@if (isAuthenticated)
+{
+    <section class="student-card support-contact-card">
+        <header class="student-page-header">
+            <h1>@Contact["ContactUs"]</h1>
+            <p>@Contact["ContactSubtitle"]</p>
+        </header>
 
-    <dl class="support-contact-list">
-        <div>
-            <dt>@Contact["Email"]</dt>
-            <dd><a href="mailto:@SupportContactOptions.Email">@SupportContactOptions.Email</a></dd>
-        </div>
-        <div>
-            <dt>@Contact["Phone"]</dt>
-            <dd><a href="@SupportContactOptions.PhoneUri">@SupportContactOptions.PhoneDisplay</a></dd>
-        </div>
-        <div>
-            <dt>@Contact["CompanyWebsite"]</dt>
-            <dd><a href="@SupportContactOptions.CompanyWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.CompanyWebsiteDisplay</a></dd>
-        </div>
-        <div>
-            <dt>@Contact["ProductWebsite"]</dt>
-            <dd><a href="@SupportContactOptions.ProductWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.ProductWebsiteDisplay</a></dd>
-        </div>
-    </dl>
-</section>
+        <dl class="support-contact-list">
+            <div>
+                <dt>@Contact["Email"]</dt>
+                <dd><a href="mailto:@SupportContactOptions.Email">@SupportContactOptions.Email</a></dd>
+            </div>
+            <div>
+                <dt>@Contact["Phone"]</dt>
+                <dd><a href="@SupportContactOptions.PhoneUri">@SupportContactOptions.PhoneDisplay</a></dd>
+            </div>
+            <div>
+                <dt>@Contact["CompanyWebsite"]</dt>
+                <dd><a href="@SupportContactOptions.CompanyWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.CompanyWebsiteDisplay</a></dd>
+            </div>
+            <div>
+                <dt>@Contact["ProductWebsite"]</dt>
+                <dd><a href="@SupportContactOptions.ProductWebsiteUrl" target="_blank" rel="noopener noreferrer">@SupportContactOptions.ProductWebsiteDisplay</a></dd>
+            </div>
+        </dl>
+    </section>
+}
+else
+{
+    <div class="ed-home ed-contact-v28" data-contact-page="hub">
+        <partial name="_PublicSiteHeader" />
+
+        <section class="ed-contact-hero">
+            <div class="ed-contact-container ed-contact-hero-inner">
+                <div class="ed-contact-hero-copy">
+                    <span class="ed-contact-eyebrow" data-contact-key="contactEyebrow">@L("CONTACT EDULYTICS", "KONTAKT Z EDULYTICS")</span>
+                    <h1 data-contact-key="contactTitle">@L("How can we help?", "Jak możemy pomóc?")</h1>
+                    <p data-contact-key="contactLead">@L(
+                        "Whether you are exploring Edulytics for a school or classroom, or you need support, choose the route that best matches what you need.",
+                        "Niezależnie od tego, czy poznajesz Edulytics dla szkoły lub klasy, czy potrzebujesz wsparcia, wybierz ścieżkę najlepiej dopasowaną do swojej potrzeby.")</p>
+                    <div class="ed-contact-audience-pills">
+                        <span data-contact-key="audienceTeachers">@L("Teachers", "Nauczyciele")</span>
+                        <span data-contact-key="audienceLeaders">@L("Schools & education leaders", "Szkoły i liderzy edukacji")</span>
+                        <span data-contact-key="audienceParents">@L("Parents & students", "Rodzice i uczniowie")</span>
+                    </div>
+                </div>
+
+                <div class="ed-contact-hero-visual" aria-hidden="true">
+                    <div class="ed-contact-orbit"></div>
+                    <div class="ed-contact-visual-card">
+                        <strong data-contact-key="visualTitle">@L("Choose a starting point", "Wybierz punkt startowy")</strong>
+                        <div class="ed-contact-visual-row"><span class="ed-contact-visual-icon">?</span><span data-contact-key="visualSales">@L("Questions about the product, plans and school use", "Pytania o produkt, plany i wykorzystanie w szkole")</span></div>
+                        <div class="ed-contact-visual-row"><span class="ed-contact-visual-icon">▶</span><span data-contact-key="visualDemo">@L("See the platform in your education context", "Zobacz platformę w swoim kontekście edukacyjnym")</span></div>
+                        <div class="ed-contact-visual-row"><span class="ed-contact-visual-icon">✓</span><span data-contact-key="visualHelp">@L("Help with access, use and technical support", "Pomoc z dostępem, obsługą i wsparciem technicznym")</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ed-contact-section">
+            <div class="ed-contact-container">
+                <header class="ed-contact-section-head">
+                    <h2 data-contact-key="waysTitle">@L("Choose what you need", "Wybierz, czego potrzebujesz")</h2>
+                    <p data-contact-key="waysLead">@L(
+                        "We separated contact into clear routes so you can reach the right next step without sending the same request more than once.",
+                        "Podzieliliśmy kontakt na jasne ścieżki, aby od razu przejść do właściwego kolejnego kroku.")</p>
+                </header>
+
+                <div class="ed-contact-card-grid">
+                    <article class="ed-contact-card">
+                        <span class="ed-contact-card-icon" aria-hidden="true">?</span>
+                        <h3 data-contact-key="salesTitle">@L("Sales enquiry", "Zapytanie sprzedażowe")</h3>
+                        <p data-contact-key="salesBody">@L(
+                            "Ask about Edulytics, your school's requirements, or how to start using the platform.",
+                            "Zapytaj o Edulytics, potrzeby swojej szkoły lub sposób rozpoczęcia pracy z platformą.")</p>
+                        <a href="/contact/sales-enquiry" data-contact-key="salesAction">@L("Send an enquiry", "Wyślij zapytanie")</a>
+                    </article>
+
+                    <article class="ed-contact-card">
+                        <span class="ed-contact-card-icon" aria-hidden="true">▶</span>
+                        <h3 data-contact-key="demoTitle">@L("Request a demo", "Poproś o demo")</h3>
+                        <p data-contact-key="demoBody">@L(
+                            "Request a walkthrough of how Edulytics connects curriculum, assessment, practice and measurable progress.",
+                            "Poproś o prezentację pokazującą, jak Edulytics łączy program, ocenianie, ćwiczenia i mierzalne postępy.")</p>
+                        <a href="/contact/request-demo" data-contact-key="demoAction">@L("Request the demo", "Poproś o prezentację")</a>
+                    </article>
+
+                    <article class="ed-contact-card">
+                        <span class="ed-contact-card-icon" aria-hidden="true">⌕</span>
+                        <h3 data-contact-key="helpTitle">@L("Help center", "Centrum pomocy")</h3>
+                        <p data-contact-key="helpBody">@L(
+                            "Find guidance for accounts, access, curricula, assessment, student practice and technical support.",
+                            "Znajdź wskazówki dotyczące kont, dostępu, programów, oceniania, ćwiczeń ucznia i wsparcia technicznego.")</p>
+                        <a href="/help" data-contact-key="helpAction">@L("Explore help", "Przejdź do pomocy")</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="ed-contact-direct">
+            <div class="ed-contact-container">
+                <div class="ed-contact-direct-panel">
+                    <div>
+                        <h2 data-contact-key="directTitle">@L("Prefer to contact us directly?", "Wolisz skontaktować się bezpośrednio?")</h2>
+                        <p data-contact-key="directBody">@L("Use the official Edulytics contact details below.", "Skorzystaj z oficjalnych danych kontaktowych Edulytics.")</p>
+                    </div>
+                    <div class="ed-contact-direct-links">
+                        <a href="mailto:@SupportContactOptions.Email" data-contact-key="emailAction">@L("Email us", "Napisz e-mail")</a>
+                        <a href="@SupportContactOptions.PhoneUri" data-contact-key="callAction">@L("Call us", "Zadzwoń")</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <partial name="_PublicSiteFooter" />
+    </div>
+}
