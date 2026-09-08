@@ -1,4 +1,5 @@
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SharedResource> Brand
+@using System.Globalization
 @{
     var localizedProductName = Brand["ProductName"].Value;
 }
@@ -9,80 +10,122 @@
     Layout = "_AuthLayout";
     ViewData["Title"] = Text["SignInTitle"];
     var returnUrl = ViewData["ReturnUrl"] as string;
+    var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl) => isPolish ? pl : en;
 }
 
-<section class="auth-shell">
-    <div class="auth-card">
-        <a asp-controller="Home"
-           asp-action="Index"
-           class="auth-brand"
-           aria-label="@localizedProductName">
-            <partial name="_LocalizedBrand" />
-        </a>
+<section class="ed-login-v28">
+    <header class="ed-login-v28-topbar">
+        <div class="ed-login-v28-brand">
+            <a asp-controller="Home" asp-action="Index" aria-label="@localizedProductName">
+                <partial name="_LocalizedBrand" />
+            </a>
+            <span class="ed-login-v28-language" aria-label="@L("Current language", "Bieżący język")">
+                @if (isPolish)
+                {
+                    <span class="ed-login-v28-flag" aria-hidden="true"><span></span><span></span></span>
+                }
+                <span>@(isPolish ? "PL" : "EN")</span>
+            </span>
+        </div>
+        <div class="ed-login-v28-top-help">
+            @L("Need help signing in?", "Potrzebujesz pomocy z logowaniem?")
+            <a asp-controller="Contact" asp-action="Index">@L("Contact us", "Skontaktuj się")</a>
+        </div>
+    </header>
 
-        <div class="auth-heading">
-            <h1>@Text["SignInTitle"]</h1>
-            <p>@Text["SignInSubtitle"]</p>
+    <div class="ed-login-v28-grid">
+        <aside class="ed-login-v28-audiences" aria-label="@L("Explore Edulytics by audience", "Poznaj Edulytics według roli")">
+            <a class="ed-login-v28-audience" href="/parents/overview">
+                <span class="ed-login-v28-audience-icon" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" width="34" height="34" fill="none"><path d="M8 22 24 9l16 13v17H29V28H19v11H8V22Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M18 16v-5h7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </span>
+                <strong>@L("Parents", "Rodzice")</strong>
+                <span class="ed-login-v28-audience-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="ed-login-v28-audience" href="/teachers/overview">
+                <span class="ed-login-v28-audience-icon" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" width="34" height="34" fill="none"><circle cx="16" cy="14" r="6" stroke="currentColor" stroke-width="2.5"/><path d="M7 35c1-7 4-11 9-11s8 4 9 11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><rect x="27" y="10" width="14" height="18" rx="2" stroke="currentColor" stroke-width="2.5"/><path d="m31 19 3 3 5-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <strong>@L("Teachers", "Nauczyciele")</strong>
+                <span class="ed-login-v28-audience-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="ed-login-v28-audience" href="/schools/overview">
+                <span class="ed-login-v28-audience-icon" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" width="34" height="34" fill="none"><path d="M8 40V19l16-10 16 10v21H8Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M15 26h5m8 0h5M15 33h5m8 0h5M22 40V29h4v11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </span>
+                <strong>@L("Education leaders", "Liderzy edukacji")</strong>
+                <span class="ed-login-v28-audience-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="ed-login-v28-audience" href="/students/overview">
+                <span class="ed-login-v28-audience-icon" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" width="34" height="34" fill="none"><path d="m6 17 18-9 18 9-18 9-18-9Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M13 22v9c7 6 15 6 22 0v-9M42 17v12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </span>
+                <strong>@L("Students", "Uczniowie")</strong>
+                <span class="ed-login-v28-audience-arrow" aria-hidden="true">→</span>
+            </a>
+        </aside>
+
+        <div class="ed-login-v28-card">
+            <div class="auth-heading">
+                <h1>@Text["SignInTitle"]</h1>
+                <p>@Text["SignInSubtitle"]</p>
+            </div>
+
+            <form asp-controller="Account"
+                  asp-action="Login"
+                  asp-route-returnUrl="@returnUrl"
+                  method="post"
+                  class="auth-form">
+                @Html.AntiForgeryToken()
+
+                <div asp-validation-summary="ModelOnly"
+                     class="validation-summary"
+                     role="alert"></div>
+
+                <div class="field-group">
+                    <label asp-for="Email" class="form-label">@Text["EmailLabel"]</label>
+                    <input asp-for="Email"
+                           type="email"
+                           class="form-control ed-input"
+                           autocomplete="username"
+                           placeholder="@Text["EmailPlaceholder"]"
+                           aria-label="@Text["EmailLabel"]" />
+                    <span asp-validation-for="Email" class="field-validation" role="alert"></span>
+                </div>
+
+                <div class="field-group">
+                    <label asp-for="Password" class="form-label">@Text["PasswordLabel"]</label>
+                    <input asp-for="Password"
+                           class="form-control ed-input"
+                           autocomplete="current-password"
+                           placeholder="@Text["PasswordPlaceholder"]"
+                           aria-label="@Text["PasswordLabel"]" />
+                    <span asp-validation-for="Password" class="field-validation" role="alert"></span>
+                </div>
+
+                <button type="submit" class="btn ed-primary-button" aria-label="@Text["SignInButton"]">
+                    @Text["SignInButton"]
+                </button>
+            </form>
+
+            <p class="ed-login-v28-access-note">
+                @L("Access is provided by your school or Edulytics administrator.", "Dostęp jest nadawany przez szkołę lub administratora Edulytics.")
+                <a asp-controller="Home" asp-action="Index">@Text["ChangeLanguage"]</a>
+            </p>
         </div>
 
-        <form asp-controller="Account"
-              asp-action="Login"
-              asp-route-returnUrl="@returnUrl"
-              method="post"
-              class="auth-form">
-            @Html.AntiForgeryToken()
-
-            <div asp-validation-summary="ModelOnly"
-                 class="validation-summary"
-                 role="alert"></div>
-
-            <div class="field-group">
-                <label asp-for="Email"
-                       class="form-label">
-                    @Text["EmailLabel"]
-                </label>
-
-                <input asp-for="Email"
-                       type="email"
-                       class="form-control ed-input"
-                       autocomplete="username"
-                       placeholder="@Text["EmailPlaceholder"]"
-                       aria-label="@Text["EmailLabel"]" />
-
-                <span asp-validation-for="Email"
-                      class="field-validation"
-                      role="alert"></span>
+        <aside class="ed-login-v28-proof" aria-label="@L("Why Edulytics", "Dlaczego Edulytics")">
+            <div>
+                <h2>@L("Built for connected learning", "Stworzone dla spójnego uczenia się")</h2>
+                <p class="ed-login-v28-proof-footer">@L("Curriculum, teaching, assessment and progress stay connected in one mathematics platform.", "Program, nauczanie, ocenianie i postępy pozostają połączone w jednej platformie matematycznej.")</p>
             </div>
-
-            <div class="field-group">
-                <label asp-for="Password"
-                       class="form-label">
-                    @Text["PasswordLabel"]
-                </label>
-
-                <input asp-for="Password"
-                       class="form-control ed-input"
-                       autocomplete="current-password"
-                       placeholder="@Text["PasswordPlaceholder"]"
-                       aria-label="@Text["PasswordLabel"]" />
-
-                <span asp-validation-for="Password"
-                      class="field-validation"
-                      role="alert"></span>
+            <div class="ed-login-v28-proof-list">
+                <div class="ed-login-v28-proof-item"><span class="ed-login-v28-proof-icon" aria-hidden="true">◎</span><span>@L("Curriculum-aligned learning", "Nauka zgodna z programem")</span></div>
+                <div class="ed-login-v28-proof-item"><span class="ed-login-v28-proof-icon" aria-hidden="true">✓</span><span>@L("Teachers control formal assessment", "Nauczyciel kontroluje formalne ocenianie")</span></div>
+                <div class="ed-login-v28-proof-item"><span class="ed-login-v28-proof-icon" aria-hidden="true">↻</span><span>@L("Practice supports learning", "Ćwiczenia wspierają naukę")</span></div>
+                <div class="ed-login-v28-proof-item"><span class="ed-login-v28-proof-icon" aria-hidden="true">→</span><span>@L("Results guide the next step", "Wyniki prowadzą do kolejnego kroku")</span></div>
             </div>
-
-            <button type="submit"
-                    class="btn ed-primary-button"
-                    aria-label="@Text["SignInButton"]">
-                @Text["SignInButton"]
-            </button>
-        </form>
-
-        <a asp-controller="Home"
-           asp-action="Index"
-           class="change-language-link"
-           aria-label="@Text["ChangeLanguage"]">
-            @Text["ChangeLanguage"]
-        </a>
+        </aside>
     </div>
 </section>
