@@ -1,0 +1,44 @@
+/* Public home v25 — keep the approved navbar visible while the page scrolls. */
+
+/*
+   The home wrapper historically used overflow:hidden to crop decorative artwork.
+   That turns it into the containing block that prevents position:sticky from
+   behaving as a viewport-level sticky header. Keep horizontal artwork clipped
+   at the document level instead, while allowing the header to stick normally.
+*/
+html,
+body.ed-public-body{
+  overflow-x:clip;
+}
+
+.ed-home{
+  overflow:visible!important;
+}
+
+.ed-home .ed-home-header{
+  position:sticky!important;
+  top:0!important;
+  z-index:2000!important;
+  width:100%;
+  background:rgba(255,255,255,.96)!important;
+  -webkit-backdrop-filter:blur(16px);
+  backdrop-filter:blur(16px);
+  box-shadow:0 8px 28px rgba(16,37,64,.07)!important;
+}
+
+/* Anchor navigation should not hide section headings behind the sticky bar. */
+html{
+  scroll-padding-top:96px;
+}
+
+@media(max-width:1040px){
+  html{
+    scroll-padding-top:84px;
+  }
+}
+
+@media(max-width:760px){
+  html{
+    scroll-padding-top:78px;
+  }
+}
