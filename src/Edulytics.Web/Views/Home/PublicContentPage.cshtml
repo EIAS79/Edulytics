@@ -1,0 +1,174 @@
+@using Edulytics.Web.Support
+@using System.Globalization
+@{
+    Layout = "_PublicLayout";
+    var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl) => isPolish ? pl : en;
+    var pageKey = (ViewData["MarketingPageKey"] as string) ?? string.Empty;
+    var pageUrl = (ViewData["MarketingPageUrl"] as string) ?? "/";
+    var pageTitleEn = (ViewData["MarketingPageTitle"] as string) ?? "Edulytics";
+    var pageTitlePl = (ViewData["MarketingPageTitlePl"] as string) ?? "Edulytics";
+    var pageTitle = isPolish ? pageTitlePl : pageTitleEn;
+    var contactLabel = L("Contact", "Kontakt");
+    var loginLabel = L("Log in", "Zaloguj się");
+    var demoLabel = L("Request a demo", "Poproś o demo");
+}
+
+<div class="ed-home ed-content-page" data-marketing-page="@pageKey">
+    <header class="ed-home-header">
+        <div class="ed-home-nav-shell">
+            <div class="ed-home-brand-row">
+                <a class="ed-home-brand" href="/" aria-label="Edulytics"><partial name="_LocalizedBrand" /></a>
+                <span class="ed-home-flag" aria-label="Polska"><span class="flag-top"></span><span class="flag-bottom"></span></span>
+                <span class="ed-home-lang-label">@(isPolish ? "PL" : "EN")</span>
+            </div>
+
+            <nav class="ed-home-links" aria-label="@L("Main navigation", "Nawigacja główna")">
+                <a href="/#platform">@L("Platform", "Platforma")</a>
+                <a href="/#schools">@L("For schools", "Dla szkół")</a>
+                <a href="/#teachers">@L("For teachers", "Dla nauczycieli")</a>
+                <a href="/#students">@L("For students", "Dla uczniów")</a>
+                <a href="/#curricula">@L("Curricula", "Programy")</a>
+                <a href="/contact">@contactLabel</a>
+            </nav>
+
+            <div class="ed-home-actions">
+                <div class="ed-home-lang">
+                    <form asp-controller="Home" asp-action="SetCulture" method="post">@Html.AntiForgeryToken()<input type="hidden" name="culture" value="pl" /><input type="hidden" name="returnUrl" value="@pageUrl" /><button type="submit" class="@(isPolish ? "is-active" : "")">PL</button></form>
+                    <form asp-controller="Home" asp-action="SetCulture" method="post">@Html.AntiForgeryToken()<input type="hidden" name="culture" value="en" /><input type="hidden" name="returnUrl" value="@pageUrl" /><button type="submit" class="@(!isPolish ? "is-active" : "")">EN</button></form>
+                </div>
+                <a class="ed-home-login" asp-controller="Account" asp-action="Login">@loginLabel</a>
+                <a class="ed-home-cta" href="mailto:@SupportContactOptions.Email?subject=Edulytics%20demo">@demoLabel</a>
+                <details class="ed-home-mobile-menu">
+                    <summary aria-label="Menu">☰</summary>
+                    <div class="ed-home-mobile-panel">
+                        <a href="/#platform">@L("Platform", "Platforma")</a>
+                        <a href="/#schools">@L("For schools", "Dla szkół")</a>
+                        <a href="/#teachers">@L("For teachers", "Dla nauczycieli")</a>
+                        <a href="/#students">@L("For students", "Dla uczniów")</a>
+                        <a href="/#curricula">@L("Curricula", "Programy")</a>
+                        <a href="/contact">@contactLabel</a>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </header>
+
+    <main class="ed-content-main">
+        <section class="ed-content-hero">
+            <div class="ed-content-container">
+                <div class="ed-content-breadcrumb">
+                    <a href="/" data-page-key="breadcrumbHome">@L("Home", "Strona główna")</a>
+                    <span>›</span>
+                    <span data-page-key="breadcrumbSection">@L("Explore", "Poznaj")</span>
+                    <span>›</span>
+                    <strong data-page-key="breadcrumbCurrent">@pageTitle</strong>
+                </div>
+
+                <div class="ed-content-hero-grid">
+                    <div class="ed-content-hero-copy">
+                        <span class="ed-content-kicker" data-page-key="heroKicker">EDULYTICS</span>
+                        <h1 data-page-key="heroTitle">@pageTitle</h1>
+                        <p data-page-key="heroBody">@L("Explore how this part of Edulytics connects learning, assessment and progress.", "Zobacz, jak ten obszar Edulytics łączy naukę, ocenianie i postępy.")</p>
+                        <div class="ed-content-hero-actions">
+                            <a class="ed-content-primary" href="#page-story" data-page-key="heroPrimary">@L("Explore the page", "Poznaj stronę")</a>
+                            <a class="ed-content-secondary" href="/contact" data-page-key="heroSecondary">@contactLabel</a>
+                        </div>
+                    </div>
+
+                    <div class="ed-content-hero-visual" aria-hidden="true">
+                        <div class="ed-content-visual-orbit"></div>
+                        <div class="ed-content-visual-hub"><small>EDULYTICS</small><strong data-page-key="visualHub">CONNECTED</strong></div>
+                        <span class="ed-content-visual-node node-a" data-page-key="visualA">Curriculum</span>
+                        <span class="ed-content-visual-node node-b" data-page-key="visualB">Learning</span>
+                        <span class="ed-content-visual-node node-c" data-page-key="visualC">Evidence</span>
+                        <span class="ed-content-visual-node node-d" data-page-key="visualD">Progress</span>
+                        <div class="ed-content-mascot" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-story" class="ed-content-story">
+            <div class="ed-content-container">
+                <div class="ed-content-section-head">
+                    <span class="ed-content-kicker" data-page-key="storyKicker">HOW IT WORKS</span>
+                    <h2 data-page-key="storyTitle">A connected part of the learning journey.</h2>
+                    <p data-page-key="storyBody">Edulytics keeps the learning context visible from curriculum to the next action.</p>
+                </div>
+                <div class="ed-content-card-grid" data-page-render="cards"></div>
+            </div>
+        </section>
+
+        <section class="ed-content-band is-soft">
+            <div class="ed-content-container ed-content-split">
+                <div class="ed-content-copy">
+                    <span class="ed-content-kicker" data-page-key="focusKicker">THE CORE IDEA</span>
+                    <h2 data-page-key="focusTitle">Built around the work that matters.</h2>
+                    <p data-page-key="focusBody">The platform keeps information useful, explainable and tied to the selected learning scope.</p>
+                    <div class="ed-content-points" data-page-render="focusPoints"></div>
+                </div>
+                <div class="ed-content-evidence-panel" data-page-render="evidence"></div>
+            </div>
+        </section>
+
+        <section class="ed-content-flow-section">
+            <div class="ed-content-container">
+                <div class="ed-content-section-head is-left">
+                    <span class="ed-content-kicker" data-page-key="flowKicker">CONNECTED FLOW</span>
+                    <h2 data-page-key="flowTitle">Each signal should lead somewhere useful.</h2>
+                    <p data-page-key="flowBody">The platform turns learning evidence into a clear next action rather than leaving it as an isolated result.</p>
+                </div>
+                <div class="ed-content-flow" data-page-render="flow"></div>
+            </div>
+        </section>
+
+        <section class="ed-content-band is-deep">
+            <div class="ed-content-container ed-content-split is-reverse">
+                <div class="ed-content-copy">
+                    <span class="ed-content-kicker" data-page-key="deepKicker">WHY IT MATTERS</span>
+                    <h2 data-page-key="deepTitle">Designed to stay useful beyond one screen.</h2>
+                    <p data-page-key="deepBody">This capability connects to the wider Edulytics learning and oversight model.</p>
+                    <div class="ed-content-points" data-page-render="deepPoints"></div>
+                </div>
+                <div class="ed-content-context-board" data-page-render="context"></div>
+            </div>
+        </section>
+
+        <section class="ed-content-role-section">
+            <div class="ed-content-container">
+                <div class="ed-content-section-head">
+                    <span class="ed-content-kicker" data-page-key="roleKicker">WHO IT HELPS</span>
+                    <h2 data-page-key="roleTitle">One system, clear responsibilities.</h2>
+                    <p data-page-key="roleBody">Different users see the information and actions that belong to their role.</p>
+                </div>
+                <div class="ed-content-role-grid" data-page-render="roles"></div>
+            </div>
+        </section>
+
+        <section class="ed-content-final">
+            <div class="ed-content-container ed-content-final-grid">
+                <div>
+                    <span class="ed-content-kicker">EDULYTICS</span>
+                    <h2 data-page-key="finalTitle">See how the platform connects the pieces.</h2>
+                    <p data-page-key="finalBody">Explore Edulytics in the context of your school, classroom or learning journey.</p>
+                </div>
+                <div class="ed-content-final-actions">
+                    <a class="ed-content-primary" href="mailto:@SupportContactOptions.Email?subject=Edulytics%20demo" data-page-key="finalPrimary">@demoLabel</a>
+                    <a class="ed-content-secondary" href="/" data-page-key="finalSecondary">@L("Back to home", "Wróć na stronę główną")</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="ed-home-footer">
+        <div class="ed-home-container ed-home-footer-grid">
+            <div class="ed-home-footer-brand"><partial name="_LocalizedBrand" /><p>@L("Mathematics. Learning. Progress.", "Matematyka. Nauka. Postęp.")</p><div class="footer-contact"><a href="mailto:@SupportContactOptions.Email">@SupportContactOptions.Email</a><span>@SupportContactOptions.PhoneDisplay</span></div></div>
+            <div><h3>@L("Platform", "Platforma")</h3><a href="/#platform">@L("Principles", "Zasady")</a><a href="/product/curricula">@L("Curricula", "Programy nauczania")</a><a href="/product/edulytics-ai">Edulytics AI</a></div>
+            <div><h3>@L("For schools", "Dla szkół")</h3><a href="/schools/overview">@L("Overview", "Przegląd")</a><a href="/product/student-portal">@L("Student experience", "Doświadczenie ucznia")</a><a href="mailto:@SupportContactOptions.Email?subject=Edulytics%20demo">@demoLabel</a></div>
+            <div><h3>@L("For users", "Dla użytkowników")</h3><a href="/teachers/overview">@L("Teachers", "Nauczyciele")</a><a href="/students/overview">@L("Students", "Uczniowie")</a><a asp-controller="Account" asp-action="Login">@loginLabel</a></div>
+            <div><h3>@L("Company", "Firma")</h3><a href="/company/about">@L("About", "O nas")</a><a href="/contact">@contactLabel</a><a asp-controller="Home" asp-action="ContentSources">@L("Content sources & licences", "Źródła i licencje")</a></div>
+        </div>
+        <div class="ed-home-container ed-home-footer-bottom"><span>© @DateTime.UtcNow.Year Edulytics</span><span>@L("Privacy · Terms · Content licences", "Prywatność · Regulamin · Licencje treści")</span></div>
+    </footer>
+</div>
