@@ -18,5 +18,6 @@
   image.alt = 'Edulytics mathematics mascot';
   image.loading = 'eager';
   image.decoding = 'async';
+  image.style.width = '430px';
   firstSlideVisual.appendChild(image);
 })();
