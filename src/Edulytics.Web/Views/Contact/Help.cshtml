@@ -1,0 +1,97 @@
+@using Edulytics.Web.Support
+@using System.Globalization
+@{
+    Layout = "_PublicLayout";
+    var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl) => isPolish ? pl : en;
+    ViewData["Title"] = L("Help center", "Centrum pomocy");
+}
+
+<div class="ed-home ed-contact-v28" data-contact-page="help">
+    <partial name="_PublicSiteHeader" />
+
+    <main class="ed-help-v28">
+        <section class="ed-help-hero">
+            <div class="ed-contact-container">
+                <span class="ed-contact-eyebrow" data-contact-key="helpEyebrow">@L("EDULYTICS HELP CENTER", "CENTRUM POMOCY EDULYTICS")</span>
+                <h1 data-contact-key="helpPageTitle">@L("What do you need help with?", "W czym możemy pomóc?")</h1>
+                <p class="ed-help-lead" data-contact-key="helpLead">@L(
+                    "Start with search or choose a category. The center focuses on real Edulytics workflows and support topics.",
+                    "Zacznij od wyszukiwarki lub wybierz kategorię. Centrum skupia się na rzeczywistych procesach i tematach wsparcia Edulytics.")</p>
+                <div class="ed-help-search">
+                    <input type="search"
+                           data-help-search
+                           data-contact-placeholder="helpSearch"
+                           placeholder="@L("Search help topics…", "Szukaj tematów pomocy…")"
+                           aria-label="@L("Search help topics", "Szukaj tematów pomocy")" />
+                </div>
+            </div>
+        </section>
+
+        <section class="ed-help-content">
+            <div class="ed-contact-container">
+                <div class="ed-help-grid">
+                    <article class="ed-help-category">
+                        <span class="ed-help-category-icon" aria-hidden="true">→</span>
+                        <h2 data-contact-key="helpGettingTitle">@L("Getting started & sign-in", "Pierwsze kroki i logowanie")</h2>
+                        <p data-contact-key="helpGettingBody">@L(
+                            "Signing in, setting a password, accessing your account and understanding the right starting point.",
+                            "Logowanie, ustawianie hasła, dostęp do konta i wybór właściwego punktu startowego.")</p>
+                        <a href="/account/login">@L("Go to login", "Przejdź do logowania")</a>
+                    </article>
+
+                    <article class="ed-help-category">
+                        <span class="ed-help-category-icon" aria-hidden="true">◎</span>
+                        <h2 data-contact-key="helpAccountsTitle">@L("Accounts & roles", "Konta i role")</h2>
+                        <p data-contact-key="helpAccountsBody">@L(
+                            "Administrator, supervisor, teacher and student: who sees what and who owns each action.",
+                            "Administrator, opiekun, nauczyciel i uczeń: kto co widzi i za jakie działania odpowiada.")</p>
+                        <a href="/schools/overview">@L("Explore school roles", "Poznaj role szkolne")</a>
+                    </article>
+
+                    <article class="ed-help-category">
+                        <span class="ed-help-category-icon" aria-hidden="true">▦</span>
+                        <h2 data-contact-key="helpCurriculumTitle">@L("Curricula & lessons", "Programy i lekcje")</h2>
+                        <p data-contact-key="helpCurriculumBody">@L(
+                            "Curriculum and level selection, learning outcomes and the lesson structure used by the platform.",
+                            "Wybór programu i poziomu, efekty uczenia się oraz struktura lekcji używana w platformie.")</p>
+                        <a href="/product/curricula">@L("Explore curricula", "Poznaj programy")</a>
+                    </article>
+
+                    <article class="ed-help-category">
+                        <span class="ed-help-category-icon" aria-hidden="true">✓</span>
+                        <h2 data-contact-key="helpAssessmentTitle">@L("Assessments & teacher controls", "Ocenianie i kontrola nauczyciela")</h2>
+                        <p data-contact-key="helpAssessmentBody">@L(
+                            "Creating assessments, reviewing questions, approval and publication of formal assessment.",
+                            "Tworzenie ocen, przegląd pytań, zatwierdzanie i publikowanie formalnych sprawdzianów.")</p>
+                        <a href="/product/assessment-and-practice">@L("Explore assessment", "Poznaj ocenianie")</a>
+                    </article>
+
+                    <article class="ed-help-category">
+                        <span class="ed-help-category-icon" aria-hidden="true">↻</span>
+                        <h2 data-contact-key="helpPracticeTitle">@L("Student practice & mastery", "Ćwiczenia ucznia i opanowanie")</h2>
+                        <p data-contact-key="helpPracticeBody">@L(
+                            "Personal practice, weak areas, mastery and the next step after a result.",
+                            "Ćwiczenia indywidualne, słabsze obszary, opanowanie materiału i kolejny krok po wyniku.")</p>
+                        <a href="/product/mastery-and-next-step">@L("Explore mastery", "Poznaj opanowanie")</a>
+                    </article>
+
+                    <article class="ed-help-category">
+                        <span class="ed-help-category-icon" aria-hidden="true">?</span>
+                        <h2 data-contact-key="helpTechnicalTitle">@L("Technical support", "Wsparcie techniczne")</h2>
+                        <p data-contact-key="helpTechnicalBody">@L(
+                            "Browser, access and technical issues, plus the direct support route when you cannot find the answer.",
+                            "Problemy z przeglądarką, dostępem i techniczne oraz bezpośredni kontakt, gdy nie znajdujesz odpowiedzi.")</p>
+                        <a href="mailto:@SupportContactOptions.Email" data-contact-key="contactSupport">@L("Contact support", "Skontaktuj się z pomocą")</a>
+                    </article>
+                </div>
+
+                <div class="ed-help-empty" data-contact-key="noHelpResults">
+                    @L("No matching category found. Try different words or contact us directly.", "Nie znaleziono pasującej kategorii. Spróbuj innych słów lub skontaktuj się z nami bezpośrednio.")
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <partial name="_PublicSiteFooter" />
+</div>
