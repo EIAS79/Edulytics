@@ -81,7 +81,7 @@
     style.id = 'ed-ai-v22-style';
     style.textContent = `
       .ed-home .ed-home-ai-spotlight-v22{
-        background:#fff;
+        background:#fafcff;
         padding:78px 28px 84px;
         overflow:hidden;
       }
@@ -168,7 +168,7 @@
         display:flex;
         align-items:center;
         justify-content:center;
-        background:#fff;
+        background:transparent;
       }
       .ed-home .ed-ai-v22-visual img{
         display:block;
@@ -177,7 +177,7 @@
         max-height:650px;
         object-fit:contain;
         object-position:center;
-        background:#fff;
+        background:transparent;
       }
       .ed-home .ed-home-ai-spotlight-v22.is-ar .ed-ai-v22-copy{
         text-align:right;
