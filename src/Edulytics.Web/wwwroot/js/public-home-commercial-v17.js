@@ -12,7 +12,7 @@
   image.alt = 'Edulytics mathematics mascot';
   image.decoding = 'async';
   image.loading = 'eager';
-  image.src = '/images/brand/edulytics-mascot-transparent.avif?v=17-final';
+  image.src = '/images/brand/edulytics-mascot-full.png?v=18-final';
 
   host.replaceChildren(image);
   host.dataset.v17Applied = 'true';
