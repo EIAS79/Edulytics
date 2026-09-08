@@ -1,1 +1,361 @@
-placeholder
+.ed-home-philosophy {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(78px, 8vw, 118px) 0;
+    background:
+        radial-gradient(circle at 50% 46%, rgba(91, 69, 232, .10), transparent 24%),
+        radial-gradient(circle at 15% 18%, rgba(66, 103, 245, .08), transparent 20%),
+        linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%);
+}
+
+.ed-home-philosophy::before,
+.ed-home-philosophy::after {
+    content: "";
+    position: absolute;
+    border-radius: 999px;
+    pointer-events: none;
+}
+
+.ed-home-philosophy::before {
+    width: 240px;
+    height: 240px;
+    top: -86px;
+    right: -62px;
+    background: rgba(91, 69, 232, .06);
+}
+
+.ed-home-philosophy::after {
+    width: 170px;
+    height: 170px;
+    bottom: -62px;
+    left: -52px;
+    background: rgba(39, 182, 103, .06);
+}
+
+.ed-home-philosophy .ed-home-container {
+    position: relative;
+    z-index: 1;
+}
+
+.ed-philosophy-head {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ed-philosophy-head h2 {
+    margin: 0;
+    color: #111a44;
+    font-size: clamp(2.15rem, 4.4vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -.045em;
+}
+
+.ed-philosophy-head p {
+    max-width: 760px;
+    margin: 20px auto 0;
+    color: #5f6b85;
+    font-size: clamp(1rem, 1.4vw, 1.16rem);
+    line-height: 1.72;
+}
+
+.ed-philosophy-map {
+    position: relative;
+    min-height: 700px;
+    max-width: 1160px;
+    margin: 62px auto 0;
+}
+
+.ed-philosophy-orbit {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(47vw, 520px);
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    border: 1px dashed rgba(91, 69, 232, .23);
+    border-radius: 50%;
+}
+
+.ed-philosophy-orbit::before,
+.ed-philosophy-orbit::after {
+    content: "";
+    position: absolute;
+    inset: 48px;
+    border: 1px solid rgba(66, 103, 245, .09);
+    border-radius: 50%;
+}
+
+.ed-philosophy-orbit::after {
+    inset: 104px;
+    border-color: rgba(39, 182, 103, .10);
+}
+
+.ed-philosophy-hub {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    width: 246px;
+    height: 246px;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 28px;
+    border: 10px solid rgba(255, 255, 255, .82);
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    background:
+        radial-gradient(circle at 30% 22%, rgba(255, 255, 255, .18), transparent 28%),
+        linear-gradient(145deg, #1d2459 0%, #5b45e8 100%);
+    box-shadow:
+        0 30px 70px rgba(45, 40, 121, .24),
+        0 0 0 1px rgba(91, 69, 232, .08);
+}
+
+.ed-philosophy-hub span {
+    font-size: .76rem;
+    font-weight: 900;
+    letter-spacing: .17em;
+}
+
+.ed-philosophy-hub strong {
+    max-width: 170px;
+    font-size: 1.7rem;
+    line-height: 1.08;
+    letter-spacing: -.035em;
+}
+
+.ed-philosophy-card {
+    position: absolute;
+    width: min(305px, 28vw);
+    min-height: 190px;
+    padding: 22px 22px 21px;
+    border: 1px solid #e4e8f5;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 18px 44px rgba(28, 42, 78, .08);
+}
+
+.ed-philosophy-card::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--philosophy-accent, #5b45e8);
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--philosophy-accent, #5b45e8) 12%, transparent);
+}
+
+.ed-philosophy-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.ed-philosophy-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    color: var(--philosophy-accent, #5b45e8);
+    background: color-mix(in srgb, var(--philosophy-accent, #5b45e8) 11%, white);
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.ed-philosophy-number {
+    color: #99a3b8;
+    font-size: .76rem;
+    font-weight: 900;
+    letter-spacing: .12em;
+}
+
+.ed-philosophy-card h3 {
+    margin: 0 0 9px;
+    color: #17213f;
+    font-size: 1.08rem;
+    line-height: 1.25;
+    letter-spacing: -.02em;
+}
+
+.ed-philosophy-card p {
+    margin: 0;
+    color: #667188;
+    font-size: .92rem;
+    line-height: 1.62;
+}
+
+.ed-philosophy-card--curriculum {
+    --philosophy-accent: #4267f5;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ed-philosophy-card--curriculum::after {
+    left: 50%;
+    bottom: -45px;
+    transform: translateX(-50%);
+}
+
+.ed-philosophy-card--understanding {
+    --philosophy-accent: #5b45e8;
+    top: 205px;
+    left: 0;
+}
+
+.ed-philosophy-card--understanding::after {
+    right: -45px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ed-philosophy-card--teacher {
+    --philosophy-accent: #27b667;
+    top: 205px;
+    right: 0;
+}
+
+.ed-philosophy-card--teacher::after {
+    left: -45px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ed-philosophy-card--practice {
+    --philosophy-accent: #ff9518;
+    bottom: 0;
+    left: 82px;
+}
+
+.ed-philosophy-card--practice::after {
+    right: -36px;
+    top: 4px;
+}
+
+.ed-philosophy-card--next {
+    --philosophy-accent: #ef4d87;
+    right: 82px;
+    bottom: 0;
+}
+
+.ed-philosophy-card--next::after {
+    left: -36px;
+    top: 4px;
+}
+
+@media (max-width: 1040px) {
+    .ed-philosophy-map {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        min-height: 0;
+        max-width: 820px;
+    }
+
+    .ed-philosophy-orbit {
+        display: none;
+    }
+
+    .ed-philosophy-hub,
+    .ed-philosophy-card {
+        position: static;
+        width: auto;
+        height: auto;
+        transform: none;
+    }
+
+    .ed-philosophy-hub {
+        grid-column: 1 / -1;
+        width: min(100%, 410px);
+        min-height: 176px;
+        margin: 0 auto 6px;
+        border-width: 8px;
+        border-radius: 34px;
+    }
+
+    .ed-philosophy-card {
+        min-height: 0;
+    }
+
+    .ed-philosophy-card::after {
+        display: none;
+    }
+
+    .ed-philosophy-card--next {
+        grid-column: 1 / -1;
+        width: min(100%, 401px);
+        justify-self: center;
+    }
+}
+
+@media (max-width: 680px) {
+    .ed-home-philosophy {
+        padding: 64px 0 70px;
+    }
+
+    .ed-philosophy-head {
+        text-align: left;
+    }
+
+    .ed-philosophy-head h2 {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .ed-philosophy-head p {
+        margin-top: 16px;
+        font-size: .98rem;
+    }
+
+    .ed-philosophy-map {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 36px;
+    }
+
+    .ed-philosophy-hub,
+    .ed-philosophy-card,
+    .ed-philosophy-card--next {
+        grid-column: 1;
+        width: 100%;
+    }
+
+    .ed-philosophy-hub {
+        min-height: 150px;
+        margin-bottom: 2px;
+        padding: 24px;
+        border-radius: 28px;
+    }
+
+    .ed-philosophy-hub strong {
+        font-size: 1.45rem;
+    }
+
+    .ed-philosophy-card {
+        padding: 20px;
+        border-radius: 18px;
+    }
+}
+
+@media (max-width: 380px) {
+    .ed-home-philosophy .ed-home-container {
+        width: calc(100% - 20px);
+    }
+
+    .ed-philosophy-card__top {
+        margin-bottom: 13px;
+    }
+
+    .ed-philosophy-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+    }
+}
