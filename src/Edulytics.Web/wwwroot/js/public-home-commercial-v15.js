@@ -13,7 +13,42 @@
   const selectedLanguage = (root.dataset.siteLanguage || document.documentElement.lang || 'en').toLowerCase();
   const language = selectedLanguage.startsWith('ar') ? 'ar' : selectedLanguage.startsWith('pl') ? 'pl' : 'en';
 
-  /* Measurable progress section — placed between the product-strength signals and the next platform section. */
+  /* Keep the impact cards visually compact and close to the approved reference proportions. */
+  if (!document.getElementById('ed-home-v18-compact-style')) {
+    const compactStyle = document.createElement('style');
+    compactStyle.id = 'ed-home-v18-compact-style';
+    compactStyle.textContent = `
+      .ed-home .ed-home-v18-impact{padding:48px 30px 58px}
+      .ed-home .ed-home-v18-impact-intro,
+      .ed-home .ed-home-v18-impact-card{min-height:0}
+      .ed-home .ed-home-v18-impact-intro{padding:28px 32px 26px}
+      .ed-home .ed-home-v18-impact-intro h2{max-width:none;margin:0 0 10px;font-size:clamp(28px,1.75vw,34px);line-height:1.18}
+      .ed-home .ed-home-v18-impact-intro p{max-width:none;font-size:clamp(17px,1vw,20px);line-height:1.48}
+      .ed-home .ed-home-v18-intro-icon{width:56px;height:56px;margin-top:18px}
+      .ed-home .ed-home-v18-impact-card{padding:28px 32px 26px}
+      .ed-home .ed-home-v18-impact-card h3{min-height:58px;font-size:clamp(23px,1.4vw,28px);line-height:1.2}
+      .ed-home .ed-home-v18-impact-metric{margin:8px 0 18px;font-size:clamp(50px,3.5vw,66px)}
+      .ed-home .ed-home-v18-impact-card p{font-size:clamp(16px,.95vw,19px);line-height:1.48}
+      @media(max-width:1280px){
+        .ed-home .ed-home-v18-impact{padding:44px 28px 54px}
+        .ed-home .ed-home-v18-impact-intro,
+        .ed-home .ed-home-v18-impact-card{min-height:0}
+      }
+      @media(max-width:720px){
+        .ed-home .ed-home-v18-impact{padding:36px 18px 44px}
+        .ed-home .ed-home-v18-impact-intro,
+        .ed-home .ed-home-v18-impact-card{padding:26px 24px}
+        .ed-home .ed-home-v18-impact-intro h2{font-size:29px}
+        .ed-home .ed-home-v18-impact-intro p{font-size:17px}
+        .ed-home .ed-home-v18-intro-icon{width:50px;height:50px;margin-top:16px}
+        .ed-home .ed-home-v18-impact-card h3{min-height:0;font-size:24px}
+        .ed-home .ed-home-v18-impact-metric{margin:10px 0 16px;font-size:54px}
+        .ed-home .ed-home-v18-impact-card p{font-size:16px}
+      }
+    `;
+    document.head.appendChild(compactStyle);
+  }
+
   const impactCopy = {
     en: {
       title: 'Measurable progress. Meaningful impact.',
@@ -44,7 +79,8 @@
     }
   };
 
-  const impactAnchor = root.querySelector('.ed-home-v6-signals');
+  /* The impact section belongs directly below the complete mathematics teaching environment band. */
+  const impactAnchor = root.querySelector('.ed-home-value-band');
   if (impactAnchor && !root.querySelector('.ed-home-v18-impact')) {
     const copy = impactCopy[language];
     const section = document.createElement('section');
