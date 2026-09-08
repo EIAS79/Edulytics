@@ -2,18 +2,7 @@
   const root = document.querySelector('.ed-home');
   if (!root) return;
 
-  /* Replace the broken v13 base64 injection with the verified, normal image asset. */
-  const mascotHost = root.querySelector('.ed-home-v12-slide:first-child .ed-home-v12-mascot');
-  if (mascotHost) {
-    const image = document.createElement('img');
-    image.className = 'ed-home-v14-mascot-image';
-    image.src = '/images/brand/edulytics-mascot-v14.webp';
-    image.alt = 'Edulytics mathematics mascot';
-    image.decoding = 'async';
-    image.loading = 'eager';
-    mascotHost.replaceChildren(image);
-    mascotHost.dataset.v14Applied = 'true';
-  }
+  /* Mascot rendering is intentionally owned only by v17. */
 
   /* Add hierarchy to mega-menu items without changing any approved copy. */
   const tones = ['blue', 'teal', 'purple', 'coral'];
