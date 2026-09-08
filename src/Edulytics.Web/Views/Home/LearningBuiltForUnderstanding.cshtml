@@ -1,0 +1,270 @@
+@using Edulytics.Web.Support
+@using System.Globalization
+@{
+    Layout = "_PublicLayout";
+    var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl) => isPolish ? pl : en;
+    var contactLabel = L("Contact", "Kontakt");
+    var loginLabel = L("Log in", "Zaloguj się");
+    var demoLabel = L("Request a demo", "Poproś o demo");
+    const string pageUrl = "/product/learning-built-for-understanding";
+}
+
+<div class="ed-home ed-understanding">
+    <header class="ed-home-header">
+        <div class="ed-home-nav-shell">
+            <div class="ed-home-brand-row">
+                <a class="ed-home-brand" href="/" aria-label="Edulytics"><partial name="_LocalizedBrand" /></a>
+                <span class="ed-home-flag" aria-label="Polska"><span class="flag-top"></span><span class="flag-bottom"></span></span>
+                <span class="ed-home-lang-label">@(isPolish ? "PL" : "EN")</span>
+            </div>
+
+            <nav class="ed-home-links" aria-label="@L("Main navigation", "Nawigacja główna")">
+                <a href="/#platform">@L("Platform", "Platforma")</a>
+                <a href="/#schools">@L("For schools", "Dla szkół")</a>
+                <a href="/#teachers">@L("For teachers", "Dla nauczycieli")</a>
+                <a href="/#students">@L("For students", "Dla uczniów")</a>
+                <a href="/#curricula">@L("Curricula", "Programy")</a>
+                <a href="/contact">@contactLabel</a>
+            </nav>
+
+            <div class="ed-home-actions">
+                <div class="ed-home-lang">
+                    <form asp-controller="Home" asp-action="SetCulture" method="post">@Html.AntiForgeryToken()<input type="hidden" name="culture" value="pl" /><input type="hidden" name="returnUrl" value="@pageUrl" /><button type="submit" class="@(isPolish ? "is-active" : "")">PL</button></form>
+                    <form asp-controller="Home" asp-action="SetCulture" method="post">@Html.AntiForgeryToken()<input type="hidden" name="culture" value="en" /><input type="hidden" name="returnUrl" value="@pageUrl" /><button type="submit" class="@(!isPolish ? "is-active" : "")">EN</button></form>
+                </div>
+                <a class="ed-home-login" asp-controller="Account" asp-action="Login">@loginLabel</a>
+                <a class="ed-home-cta" href="mailto:@SupportContactOptions.Email?subject=Edulytics%20demo">@demoLabel</a>
+                <details class="ed-home-mobile-menu">
+                    <summary aria-label="Menu">☰</summary>
+                    <div class="ed-home-mobile-panel">
+                        <a href="/#platform">@L("Platform", "Platforma")</a>
+                        <a href="/#schools">@L("For schools", "Dla szkół")</a>
+                        <a href="/#teachers">@L("For teachers", "Dla nauczycieli")</a>
+                        <a href="/#students">@L("For students", "Dla uczniów")</a>
+                        <a href="/#curricula">@L("Curricula", "Programy")</a>
+                        <a href="/contact">@contactLabel</a>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="understanding-hero">
+            <div class="understanding-container">
+                <div class="understanding-breadcrumb">
+                    <a href="/" data-understanding-key="breadcrumbHome">@L("Home", "Strona główna")</a><span>›</span><span data-understanding-key="breadcrumbProduct">@L("Product", "Produkt")</span><span>›</span><strong data-understanding-key="breadcrumbCurrent">@L("Learning Built for Understanding", "Nauka oparta na zrozumieniu")</strong>
+                </div>
+                <div class="understanding-hero-grid">
+                    <div class="understanding-hero-copy">
+                        <span class="understanding-kicker" data-understanding-key="heroKicker">@L("LEARNING BUILT FOR UNDERSTANDING", "NAUKA OPARTA NA ZROZUMIENIU")</span>
+                        <h1 data-understanding-key="heroTitle">@L("Understanding comes before a score.", "Zrozumienie jest ważniejsze niż sam wynik.")</h1>
+                        <p data-understanding-key="heroBody">@L("Edulytics connects curriculum, lessons, practice, assessment and mastery so students can understand what they are learning, see where they need more work and know what comes next.", "Edulytics łączy program nauczania, lekcje, ćwiczenia, ocenianie i poziom opanowania materiału, aby uczniowie rozumieli, czego się uczą, widzieli obszary wymagające pracy i wiedzieli, jaki jest kolejny krok.")</p>
+                        <div class="understanding-hero-actions">
+                            <a class="understanding-primary" href="#learning-flow" data-understanding-key="heroPrimary">@L("See the learning flow", "Zobacz ścieżkę nauki")</a>
+                            <a class="understanding-secondary" href="/#platform" data-understanding-key="heroSecondary">@L("Explore the platform", "Poznaj platformę")</a>
+                        </div>
+                    </div>
+
+                    <div class="understanding-system" aria-label="Edulytics learning system">
+                        <div class="understanding-system-hub"><small>EDULYTICS</small><strong data-understanding-key="systemHub">@L("Connected learning", "Połączony proces nauki")</strong></div>
+                        <div class="understanding-node understanding-node--curriculum"><b>▤</b><span data-understanding-key="nodeCurriculum">@L("Curriculum", "Program")</span></div>
+                        <div class="understanding-node understanding-node--lesson"><b>▣</b><span data-understanding-key="nodeLesson">@L("Lesson", "Lekcja")</span></div>
+                        <div class="understanding-node understanding-node--practice"><b>↻</b><span data-understanding-key="nodePractice">@L("Practice", "Ćwiczenia")</span></div>
+                        <div class="understanding-node understanding-node--assessment"><b>✓</b><span data-understanding-key="nodeAssessment">@L("Assessment", "Ocena")</span></div>
+                        <div class="understanding-node understanding-node--mastery"><b>◎</b><span data-understanding-key="nodeMastery">@L("Mastery", "Opanowanie")</span></div>
+                        <div class="understanding-node understanding-node--next"><b>→</b><span data-understanding-key="nodeNext">@L("Next step", "Kolejny krok")</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="understanding-meaning">
+            <div class="understanding-container">
+                <div class="understanding-section-head">
+                    <span class="understanding-kicker" data-understanding-key="meaningKicker">@L("WHAT UNDERSTANDING MEANS", "CO OZNACZA ZROZUMIENIE")</span>
+                    <h2 data-understanding-key="meaningTitle">@L("More than getting the answer right.", "Więcej niż poprawna odpowiedź.")</h2>
+                    <p data-understanding-key="meaningBody">@L("In Edulytics, understanding is not treated as a single score. It is supported by clear curriculum context, structured learning content and evidence that helps students and teachers decide what to do next.", "W Edulytics zrozumienie nie jest sprowadzane do jednej oceny. Wspierają je jasny kontekst programu, uporządkowane treści edukacyjne oraz dane pomagające uczniom i nauczycielom zdecydować, co zrobić dalej.")</p>
+                </div>
+                <div class="understanding-meaning-grid">
+                    <article class="understanding-meaning-card" data-index="01">
+                        <div class="understanding-meaning-icon">▤</div>
+                        <h3 data-understanding-key="meaningCard1Title">@L("Know what is being learned", "Wiedzieć, czego się uczysz")</h3>
+                        <p data-understanding-key="meaningCard1Body">@L("Learning stays connected to the selected curriculum, level and learning outcomes rather than becoming a collection of disconnected questions.", "Nauka pozostaje powiązana z wybranym programem, poziomem i efektami uczenia się, zamiast stawać się zbiorem niepowiązanych pytań.")</p>
+                    </article>
+                    <article class="understanding-meaning-card" data-index="02">
+                        <div class="understanding-meaning-icon">◎</div>
+                        <h3 data-understanding-key="meaningCard2Title">@L("Build before measuring", "Budować wiedzę przed pomiarem")</h3>
+                        <p data-understanding-key="meaningCard2Body">@L("Students can learn from structured explanations, examples, common mistakes and summaries before assessment evidence is used to measure progress.", "Uczniowie mogą korzystać z uporządkowanych wyjaśnień, przykładów, typowych błędów i podsumowań, zanim dane z oceniania posłużą do pomiaru postępów.")</p>
+                    </article>
+                    <article class="understanding-meaning-card" data-index="03">
+                        <div class="understanding-meaning-icon">→</div>
+                        <h3 data-understanding-key="meaningCard3Title">@L("Turn evidence into action", "Przekuwać dane w działanie")</h3>
+                        <p data-understanding-key="meaningCard3Body">@L("Results help reveal mastery and weaker areas, then guide review, targeted practice and a new opportunity to demonstrate progress.", "Wyniki pomagają pokazać poziom opanowania materiału i słabsze obszary, a następnie kierują do powtórki, ukierunkowanych ćwiczeń i kolejnej szansy na pokazanie postępu.")</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="understanding-band is-soft">
+            <div class="understanding-container understanding-split">
+                <div class="understanding-copy">
+                    <span class="understanding-kicker" data-understanding-key="curriculumKicker">@L("CURRICULUM AT THE CORE", "PROGRAM NAUCZANIA W CENTRUM")</span>
+                    <h2 data-understanding-key="curriculumTitle">@L("Understanding starts with a clear learning destination.", "Zrozumienie zaczyna się od jasnego celu nauki.")</h2>
+                    <p data-understanding-key="curriculumBody">@L("Edulytics keeps lessons, assessments and learning insights grounded in the selected curriculum and its learning outcomes. That gives every learning activity a clear academic context.", "Edulytics utrzymuje lekcje, oceny i informacje o postępach w kontekście wybranego programu nauczania i jego efektów uczenia się. Dzięki temu każda aktywność ma jasny kontekst akademicki.")</p>
+                    <div class="understanding-points">
+                        <div class="understanding-point" data-understanding-key="curriculumPoint1">@L("Curriculum and level remain visible throughout the learning journey.", "Program i poziom pozostają widoczne w całym procesie nauki.")</div>
+                        <div class="understanding-point" data-understanding-key="curriculumPoint2">@L("Lessons and assessments stay connected to the intended learning scope.", "Lekcje i oceny pozostają powiązane z zakresem, który ma być opanowany.")</div>
+                        <div class="understanding-point" data-understanding-key="curriculumPoint3">@L("Progress can be interpreted in the same academic context in which learning took place.", "Postępy można interpretować w tym samym kontekście akademickim, w którym odbywała się nauka.")</div>
+                    </div>
+                </div>
+                <div class="understanding-visual curriculum-map">
+                    <div class="curriculum-map-title"><strong data-understanding-key="curriculumVisualTitle">@L("Learning context", "Kontekst nauki")</strong><span data-understanding-key="curriculumVisualBadge">@L("Curriculum aligned", "Zgodne z programem")</span></div>
+                    <div class="curriculum-stack">
+                        <div class="curriculum-stack-item"><b>01</b><div><strong data-understanding-key="curriculumVisual1Title">@L("Curriculum & level", "Program i poziom")</strong><small data-understanding-key="curriculumVisual1Body">@L("Defines the academic context", "Określa kontekst akademicki")</small></div><span>↓</span></div>
+                        <div class="curriculum-stack-item"><b>02</b><div><strong data-understanding-key="curriculumVisual2Title">@L("Learning outcomes", "Efekty uczenia się")</strong><small data-understanding-key="curriculumVisual2Body">@L("Clarify what should be learned", "Wyjaśniają, co należy opanować")</small></div><span>↓</span></div>
+                        <div class="curriculum-stack-item"><b>03</b><div><strong data-understanding-key="curriculumVisual3Title">@L("Lessons & assessment", "Lekcje i ocenianie")</strong><small data-understanding-key="curriculumVisual3Body">@L("Use the same learning scope", "Korzystają z tego samego zakresu")</small></div><span>✓</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="understanding-band">
+            <div class="understanding-container understanding-split is-reverse">
+                <div class="understanding-copy">
+                    <span class="understanding-kicker" data-understanding-key="lessonKicker">@L("LESSONS BUILD THE FOUNDATION", "LEKCJE BUDUJĄ PODSTAWY")</span>
+                    <h2 data-understanding-key="lessonTitle">@L("Students need something to understand before they are asked to prove it.", "Uczeń potrzebuje treści do zrozumienia, zanim zostanie poproszony o pokazanie wyniku.")</h2>
+                    <p data-understanding-key="lessonBody">@L("Edulytics provides structured lesson content for the selected learning scope. Explanations, examples, common mistakes and summaries give students a stable reference point before and after assessment.", "Edulytics udostępnia uporządkowane treści lekcji dla wybranego zakresu. Wyjaśnienia, przykłady, typowe błędy i podsumowania dają uczniom stały punkt odniesienia przed oceną i po niej.")</p>
+                    <div class="understanding-points">
+                        <div class="understanding-point" data-understanding-key="lessonPoint1">@L("Reviewed lesson content provides a consistent foundation.", "Sprawdzone treści lekcji zapewniają spójną podstawę.")</div>
+                        <div class="understanding-point" data-understanding-key="lessonPoint2">@L("Students can return to the relevant lesson when a weak area is identified.", "Uczeń może wrócić do odpowiedniej lekcji, gdy zostanie wykryty słabszy obszar.")</div>
+                        <div class="understanding-point" data-understanding-key="lessonPoint3">@L("Examples and common mistakes help connect explanation with application.", "Przykłady i typowe błędy pomagają połączyć wyjaśnienie z zastosowaniem.")</div>
+                    </div>
+                </div>
+                <div class="understanding-visual lesson-panel">
+                    <div class="lesson-window">
+                        <div class="lesson-window-top"><i></i><i></i><i></i></div>
+                        <div class="lesson-window-body">
+                            <span class="lesson-stage">Stage 7 · Algebra</span>
+                            <h3 data-understanding-key="lessonVisualTitle">@L("Solving linear equations", "Rozwiązywanie równań liniowych")</h3>
+                            <p data-understanding-key="lessonVisualBody">@L("A structured lesson that students can revisit whenever they need to strengthen understanding.", "Uporządkowana lekcja, do której uczeń może wrócić, gdy potrzebuje wzmocnić zrozumienie.")</p>
+                            <div class="lesson-blocks">
+                                <div class="lesson-block"><b data-understanding-key="lessonBlock1Title">@L("Explanation", "Wyjaśnienie")</b><span data-understanding-key="lessonBlock1Body">@L("Clear concept and method", "Jasne pojęcie i metoda")</span></div>
+                                <div class="lesson-block"><b data-understanding-key="lessonBlock2Title">@L("Examples", "Przykłady")</b><span data-understanding-key="lessonBlock2Body">@L("Worked mathematical examples", "Rozwiązane przykłady matematyczne")</span></div>
+                                <div class="lesson-block"><b data-understanding-key="lessonBlock3Title">@L("Common mistakes", "Typowe błędy")</b><span data-understanding-key="lessonBlock3Body">@L("What to watch for", "Na co zwrócić uwagę")</span></div>
+                                <div class="lesson-block"><b data-understanding-key="lessonBlock4Title">@L("Summary", "Podsumowanie")</b><span data-understanding-key="lessonBlock4Body">@L("Key ideas to remember", "Najważniejsze idee do zapamiętania")</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="understanding-band is-soft">
+            <div class="understanding-container understanding-split">
+                <div class="understanding-copy">
+                    <span class="understanding-kicker" data-understanding-key="practiceKicker">@L("PRACTICE IS FOR LEARNING", "ĆWICZENIE SŁUŻY NAUCE")</span>
+                    <h2 data-understanding-key="practiceTitle">@L("Mistakes can become part of the learning process.", "Błędy mogą stać się częścią procesu nauki.")</h2>
+                    <p data-understanding-key="practiceBody">@L("Private student practice is deliberately kept separate from official school grading. Students can try, review and strengthen weaker areas without turning every attempt into a formal result.", "Prywatne ćwiczenia ucznia są celowo oddzielone od oficjalnego oceniania szkolnego. Uczeń może próbować, powtarzać i wzmacniać słabsze obszary bez zamieniania każdej próby w formalną ocenę.")</p>
+                    <div class="understanding-points">
+                        <div class="understanding-point" data-understanding-key="practicePoint1">@L("Practice supports improvement rather than automatic official grading.", "Ćwiczenia wspierają poprawę, a nie automatyczne wystawianie oficjalnych ocen.")</div>
+                        <div class="understanding-point" data-understanding-key="practicePoint2">@L("Students can focus practice on a lesson, unit or identified weak area.", "Uczeń może skupić ćwiczenia na lekcji, dziale lub wykrytym słabszym obszarze.")</div>
+                        <div class="understanding-point" data-understanding-key="practicePoint3">@L("A new attempt can use new questions rather than simply repeating what was already seen.", "Kolejna próba może korzystać z nowych pytań zamiast jedynie powtarzać wcześniej widziane zadania.")</div>
+                    </div>
+                </div>
+                <div class="understanding-visual practice-panel">
+                    <div class="practice-card">
+                        <div class="practice-card-top"><span data-understanding-key="practiceVisualBadge">@L("Private practice", "Ćwiczenie prywatne")</span><small data-understanding-key="practiceVisualScope">@L("Algebra · Stage 7", "Algebra · Stage 7")</small></div>
+                        <div class="practice-question">3x + 5 = 20</div>
+                        <div class="practice-actions"><span data-understanding-key="practiceVisualAction1">@L("Review lesson", "Wróć do lekcji")</span><span data-understanding-key="practiceVisualAction2">@L("Try a new question", "Spróbuj nowego pytania")</span></div>
+                        <div class="practice-note"><b>↻</b><span data-understanding-key="practiceVisualNote">@L("This practice does not become an official school grade.", "To ćwiczenie nie staje się oficjalną oceną szkolną.")</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="understanding-band">
+            <div class="understanding-container understanding-split is-reverse">
+                <div class="understanding-copy">
+                    <span class="understanding-kicker" data-understanding-key="evidenceKicker">@L("ASSESSMENT BECOMES EVIDENCE", "OCENIANIE STAJE SIĘ DANYMI")</span>
+                    <h2 data-understanding-key="evidenceTitle">@L("A score is useful. Knowing what it means is more useful.", "Wynik jest przydatny. Jeszcze ważniejsze jest wiedzieć, co oznacza.")</h2>
+                    <p data-understanding-key="evidenceBody">@L("Edulytics uses assessment evidence to identify mastery, weaker outcomes and progress. Instead of stopping at a total score, the platform helps connect the result to the learning that should happen next.", "Edulytics wykorzystuje dane z oceniania do identyfikowania opanowania materiału, słabszych efektów i postępu. Zamiast kończyć na wyniku łącznym, platforma pomaga połączyć rezultat z nauką, która powinna nastąpić dalej.")</p>
+                    <div class="understanding-points">
+                        <div class="understanding-point" data-understanding-key="evidencePoint1">@L("Mastery is interpreted from learning evidence, not from a label alone.", "Poziom opanowania jest interpretowany na podstawie danych o nauce, a nie samej etykiety.")</div>
+                        <div class="understanding-point" data-understanding-key="evidencePoint2">@L("Weak areas can be linked back to the relevant learning scope.", "Słabsze obszary można powiązać z odpowiednim zakresem nauki.")</div>
+                        <div class="understanding-point" data-understanding-key="evidencePoint3">@L("Reassessment can provide fresh evidence after review and targeted practice.", "Ponowna ocena może dostarczyć nowych danych po powtórce i ukierunkowanych ćwiczeniach.")</div>
+                    </div>
+                </div>
+                <div class="understanding-visual mastery-panel">
+                    <div class="mastery-card">
+                        <div class="mastery-card-head"><strong data-understanding-key="masteryVisualTitle">@L("Learning evidence", "Dane o nauce")</strong><span data-understanding-key="masteryVisualBadge">@L("Outcome view", "Widok efektów")</span></div>
+                        <div class="mastery-row"><div class="mastery-row-top"><span data-understanding-key="masteryRow1">@L("Algebraic expressions", "Wyrażenia algebraiczne")</span><em data-understanding-key="masteryRow1State">@L("Strong", "Mocny obszar")</em></div><div class="mastery-track"><i style="width:86%"></i></div></div>
+                        <div class="mastery-row needs-work"><div class="mastery-row-top"><span data-understanding-key="masteryRow2">@L("Linear equations", "Równania liniowe")</span><em data-understanding-key="masteryRow2State">@L("Needs work", "Wymaga pracy")</em></div><div class="mastery-track"><i style="width:54%"></i></div></div>
+                        <div class="mastery-row"><div class="mastery-row-top"><span data-understanding-key="masteryRow3">@L("Number operations", "Działania na liczbach")</span><em data-understanding-key="masteryRow3State">@L("Progressing", "Postęp")</em></div><div class="mastery-track"><i style="width:71%"></i></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="learning-flow" class="understanding-loop-section">
+            <div class="understanding-container">
+                <div class="understanding-section-head">
+                    <span class="understanding-kicker" data-understanding-key="loopKicker">@L("FROM RESULT TO NEXT STEP", "OD WYNIKU DO KOLEJNEGO KROKU")</span>
+                    <h2 data-understanding-key="loopTitle">@L("Understanding becomes a continuous learning loop.", "Zrozumienie staje się ciągłym procesem nauki.")</h2>
+                    <p data-understanding-key="loopBody">@L("When evidence shows that more work is needed, Edulytics can connect the result back to learning rather than leaving the student with a score and no direction.", "Gdy dane pokazują, że potrzebna jest dalsza praca, Edulytics może połączyć wynik z nauką zamiast pozostawiać ucznia z samą oceną i bez kierunku.")</p>
+                </div>
+                <div class="understanding-loop">
+                    <article class="understanding-loop-step"><span>01</span><strong data-understanding-key="loop1Title">@L("Result", "Wynik")</strong><p data-understanding-key="loop1Body">@L("Assessment creates learning evidence.", "Ocena tworzy dane o nauce.")</p></article>
+                    <article class="understanding-loop-step"><span>02</span><strong data-understanding-key="loop2Title">@L("Weak area", "Słabszy obszar")</strong><p data-understanding-key="loop2Body">@L("Evidence highlights where more work is needed.", "Dane pokazują, gdzie potrzebna jest dalsza praca.")</p></article>
+                    <article class="understanding-loop-step"><span>03</span><strong data-understanding-key="loop3Title">@L("Relevant lesson", "Odpowiednia lekcja")</strong><p data-understanding-key="loop3Body">@L("The student returns to the right learning content.", "Uczeń wraca do właściwych treści.")</p></article>
+                    <article class="understanding-loop-step"><span>04</span><strong data-understanding-key="loop4Title">@L("Targeted practice", "Ukierunkowane ćwiczenia")</strong><p data-understanding-key="loop4Body">@L("Practice focuses on the area that needs improvement.", "Ćwiczenia skupiają się na obszarze wymagającym poprawy.")</p></article>
+                    <article class="understanding-loop-step"><span>05</span><strong data-understanding-key="loop5Title">@L("New reassessment", "Nowa ponowna ocena")</strong><p data-understanding-key="loop5Body">@L("New questions provide a fresh opportunity to demonstrate progress.", "Nowe pytania dają kolejną możliwość pokazania postępu.")</p></article>
+                    <article class="understanding-loop-step"><span>06</span><strong data-understanding-key="loop6Title">@L("Updated mastery", "Zaktualizowane opanowanie")</strong><p data-understanding-key="loop6Body">@L("New evidence updates the picture of learning.", "Nowe dane aktualizują obraz nauki.")</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="understanding-teacher">
+            <div class="understanding-container">
+                <div class="teacher-control-card">
+                    <div class="understanding-copy">
+                        <span class="understanding-kicker" data-understanding-key="teacherKicker">@L("TEACHERS STAY IN CONTROL", "NAUCZYCIEL ZACHOWUJE KONTROLĘ")</span>
+                        <h2 data-understanding-key="teacherTitle">@L("Technology supports academic judgment. It does not replace it.", "Technologia wspiera decyzje akademickie. Nie zastępuje ich.")</h2>
+                        <p data-understanding-key="teacherBody">@L("Edulytics can help generate assessment questions and surface learning evidence, but formal school assessments remain teacher-controlled. Teachers review, edit, approve and publish before they become part of official assessment.", "Edulytics może pomagać generować pytania i prezentować dane o nauce, ale formalne oceny szkolne pozostają pod kontrolą nauczyciela. Nauczyciel sprawdza, edytuje, zatwierdza i publikuje je przed użyciem w oficjalnym ocenianiu.")</p>
+                    </div>
+                    <div class="teacher-control-visual">
+                        <div class="teacher-control-row"><b>✦</b><div><strong data-understanding-key="teacherVisual1Title">@L("Generate", "Generowanie")</strong><small data-understanding-key="teacherVisual1Body">@L("AI-assisted assessment questions", "Pytania do oceny wspierane przez AI")</small></div><span data-understanding-key="teacherVisual1State">@L("Support", "Wsparcie")</span></div>
+                        <div class="teacher-control-row"><b>✎</b><div><strong data-understanding-key="teacherVisual2Title">@L("Review & edit", "Sprawdzenie i edycja")</strong><small data-understanding-key="teacherVisual2Body">@L("Teacher checks the assessment", "Nauczyciel sprawdza ocenę")</small></div><span data-understanding-key="teacherVisual2State">@L("Teacher", "Nauczyciel")</span></div>
+                        <div class="teacher-control-row"><b>✓</b><div><strong data-understanding-key="teacherVisual3Title">@L("Approve & publish", "Zatwierdzenie i publikacja")</strong><small data-understanding-key="teacherVisual3Body">@L("Formal use starts only after approval", "Formalne użycie zaczyna się po zatwierdzeniu")</small></div><span data-understanding-key="teacherVisual3State">@L("Controlled", "Kontrola")</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="understanding-final">
+            <div class="understanding-container understanding-final-grid">
+                <div>
+                    <span class="understanding-kicker" data-understanding-key="finalKicker">EDULYTICS</span>
+                    <h2 data-understanding-key="finalTitle">@L("Build learning around understanding, evidence and the next step.", "Buduj naukę wokół zrozumienia, danych i kolejnego kroku.")</h2>
+                    <p data-understanding-key="finalBody">@L("See how curriculum, lessons, practice, assessment and mastery work together in one mathematics platform.", "Zobacz, jak program, lekcje, ćwiczenia, ocenianie i poziom opanowania współpracują w jednej platformie matematycznej.")</p>
+                </div>
+                <div class="understanding-final-actions">
+                    <a class="understanding-primary" href="mailto:@SupportContactOptions.Email?subject=Edulytics%20demo" data-understanding-key="finalPrimary">@demoLabel</a>
+                    <a class="understanding-secondary" href="/contact" data-understanding-key="finalSecondary">@contactLabel</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="ed-home-footer">
+        <div class="ed-home-container ed-home-footer-grid">
+            <div class="ed-home-footer-brand"><partial name="_LocalizedBrand" /><p data-understanding-key="footerTagline">@L("Mathematics. Learning. Progress.", "Matematyka. Nauka. Postęp.")</p><div class="footer-contact"><a href="mailto:@SupportContactOptions.Email">@SupportContactOptions.Email</a><span>@SupportContactOptions.PhoneDisplay</span></div></div>
+            <div><h3 data-understanding-key="footerPlatform">@L("Platform", "Platforma")</h3><a href="/product/learning-built-for-understanding" data-understanding-key="footerUnderstanding">@L("Learning Built for Understanding", "Nauka oparta na zrozumieniu")</a><a href="/#curricula" data-understanding-key="footerCurricula">@L("Curricula", "Programy nauczania")</a><a href="/#ai">Edulytics AI</a></div>
+            <div><h3 data-understanding-key="footerSchools">@L("For schools", "Dla szkół")</h3><a href="/#schools" data-understanding-key="footerOverview">@L("Overview", "Przegląd")</a><a href="/#experience" data-understanding-key="footerExperience">@L("Experience", "Doświadczenie")</a><a href="mailto:@SupportContactOptions.Email?subject=Edulytics%20demo" data-understanding-key="footerDemo">@demoLabel</a></div>
+            <div><h3 data-understanding-key="footerUsers">@L("For users", "Dla użytkowników")</h3><a href="/#teachers" data-understanding-key="footerTeachers">@L("Teachers", "Nauczyciele")</a><a href="/#students" data-understanding-key="footerStudents">@L("Students", "Uczniowie")</a><a asp-controller="Account" asp-action="Login" data-understanding-key="footerLogin">@loginLabel</a></div>
+            <div><h3 data-understanding-key="footerCompany">@L("Company", "Firma")</h3><a href="@SupportContactOptions.CompanyWebsiteUrl" target="_blank" rel="noopener noreferrer" data-understanding-key="footerAbout">@L("About", "O nas")</a><a href="/contact" data-understanding-key="footerContact">@contactLabel</a><a asp-controller="Home" asp-action="ContentSources" data-understanding-key="footerSources">@L("Content sources & licences", "Źródła i licencje")</a></div>
+        </div>
+        <div class="ed-home-container ed-home-footer-bottom"><span>© @DateTime.UtcNow.Year Edulytics</span><span data-understanding-key="footerLegal">@L("Privacy · Terms · Content licences", "Prywatność · Regulamin · Licencje treści")</span></div>
+    </footer>
+</div>
