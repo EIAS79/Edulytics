@@ -140,13 +140,6 @@ public sealed class HomeController : Controller
     }
 
     [AllowAnonymous]
-    [HttpGet("/contact")]
-    public IActionResult Contact()
-    {
-        return View();
-    }
-
-    [AllowAnonymous]
     [HttpGet("/legal/content-sources")]
     public IActionResult ContentSources()
     {
