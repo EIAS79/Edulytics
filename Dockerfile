@@ -23,6 +23,14 @@ RUN dotnet tool restore
 
 COPY src/ src/
 
+# Reconstruct the user-supplied transparent mascot as a normal PNG static asset.
+# The checksum makes the container build fail rather than publish a partial/corrupt image.
+RUN cat src/Edulytics.Web/AssetSources/Mascot/part-*.b64 \
+    | base64 -d \
+    > src/Edulytics.Web/wwwroot/images/brand/edulytics-mascot-full.png \
+    && echo "12af7b49667e3a3df17cdebeaac25eb0fc6102da656e72dae2d86de55a8b23d7  src/Edulytics.Web/wwwroot/images/brand/edulytics-mascot-full.png" \
+       | sha256sum -c -
+
 RUN dotnet publish \
     src/Edulytics.Web/Edulytics.Web.csproj \
     -c Release \
