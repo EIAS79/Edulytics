@@ -13,6 +13,126 @@
   const selectedLanguage = (root.dataset.siteLanguage || document.documentElement.lang || 'en').toLowerCase();
   const language = selectedLanguage.startsWith('ar') ? 'ar' : selectedLanguage.startsWith('pl') ? 'pl' : 'en';
 
+  /* Recast the complete teaching environment row as compact Edulytics stat cards.
+     4,400+ reflects the 4,453 curriculum lesson-content records currently available in staging. */
+  const featureCopy = {
+    en: [
+      ['4', 'Curricula', 'Cambridge • Common Core • Polish • UAE'],
+      ['4,400+', 'Ready Lessons', 'Across supported curricula'],
+      ['Millions', 'AI Question Variations', 'Generated dynamically'],
+      ['50', 'Questions per Assessment', 'AI-assisted generation'],
+      ['3', 'Learning Modes', 'Learn • Practice • Assessment'],
+      ['3', 'Oversight Roles', 'Admin • Supervisor • Teacher']
+    ],
+    ar: [
+      ['4', 'مناهج تعليمية', 'كامبردج • Common Core • المنهج البولندي • UAE'],
+      ['4,400+', 'دروس جاهزة', 'عبر المناهج التعليمية المدعومة'],
+      ['ملايين', 'تنويعات أسئلة بالذكاء الاصطناعي', 'يتم توليدها ديناميكيًا'],
+      ['50', 'سؤالًا في التقييم الواحد', 'إنشاء بمساعدة الذكاء الاصطناعي'],
+      ['3', 'أوضاع للتعلّم', 'تعلّم • تدريب • تقييم'],
+      ['3', 'أدوار للإشراف', 'مدير المدرسة • مشرف المادة • المعلّم']
+    ],
+    pl: [
+      ['4', 'Programy nauczania', 'Cambridge • Common Core • Polski • UAE'],
+      ['4 400+', 'Gotowe lekcje', 'W obsługiwanych programach'],
+      ['Miliony', 'Wariantów pytań AI', 'Generowane dynamicznie'],
+      ['50', 'Pytań na ocenę', 'Generowanie wspierane przez AI'],
+      ['3', 'Tryby nauki', 'Nauka • Ćwiczenia • Ocena'],
+      ['3', 'Role nadzoru', 'Administrator • Supervisor • Nauczyciel']
+    ]
+  };
+
+  const featureIllustrations = [
+    `<svg viewBox="0 0 112 86" aria-hidden="true"><path d="M24 20h52l12 10v38H24z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M36 12h50l10 9v39" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".45"/><path d="M34 34h36M34 45h28M34 56h32" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>`,
+    `<svg viewBox="0 0 112 86" aria-hidden="true"><rect x="22" y="12" width="68" height="62" rx="8" fill="none" stroke="currentColor" stroke-width="4"/><path d="M34 27h28M34 39h44M34 52h18" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M64 55l7 7 13-15" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    `<svg viewBox="0 0 112 86" aria-hidden="true"><path d="M56 10l5 15 15 5-15 5-5 15-5-15-15-5 15-5z" fill="currentColor" opacity=".9"/><path d="M27 56h24M27 67h15M67 54h18M76 45v18" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="86" cy="67" r="5" fill="currentColor" opacity=".45"/></svg>`,
+    `<svg viewBox="0 0 112 86" aria-hidden="true"><rect x="24" y="10" width="64" height="66" rx="8" fill="none" stroke="currentColor" stroke-width="4"/><path d="M35 28l5 5 9-10M35 46l5 5 9-10M57 28h20M57 46h20M35 64h42" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    `<svg viewBox="0 0 112 86" aria-hidden="true"><circle cx="29" cy="43" r="14" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="56" cy="43" r="14" fill="none" stroke="currentColor" stroke-width="4" opacity=".7"/><circle cx="83" cy="43" r="14" fill="none" stroke="currentColor" stroke-width="4" opacity=".45"/><path d="M26 43h6M53 43h6M80 43h6" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>`,
+    `<svg viewBox="0 0 112 86" aria-hidden="true"><rect x="40" y="10" width="32" height="23" rx="5" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="24" cy="65" r="9" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="56" cy="65" r="9" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="88" cy="65" r="9" fill="none" stroke="currentColor" stroke-width="4"/><path d="M56 33v15M24 48h64M24 48v8M56 48v8M88 48v8" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>`
+  ];
+
+  const valueBand = root.querySelector('.ed-home-value-band');
+  const valueGrid = valueBand?.querySelector('.ed-home-value-icons');
+  if (valueGrid && !valueGrid.classList.contains('ed-home-v19-feature-grid')) {
+    const cards = featureCopy[language];
+    valueGrid.className = `ed-home-v19-feature-grid${language === 'ar' ? ' is-ar' : ''}`;
+    if (language === 'ar') valueGrid.setAttribute('dir', 'rtl');
+    valueGrid.innerHTML = cards.map((card, index) => `
+      <article class="ed-home-v19-feature-card feature-${index + 1}">
+        <div class="ed-home-v19-card-top">
+          <span class="ed-home-v19-metric${card[0].length > 4 ? ' is-wide' : ''}">${card[0]}</span>
+          <span class="ed-home-v19-card-index">0${index + 1}</span>
+        </div>
+        <div class="ed-home-v19-illustration">${featureIllustrations[index]}</div>
+        <div class="ed-home-v19-card-copy">
+          <h3>${card[1]}</h3>
+          <p>${card[2]}</p>
+        </div>
+      </article>`).join('');
+  }
+
+  if (!document.getElementById('ed-home-v19-feature-style')) {
+    const featureStyle = document.createElement('style');
+    featureStyle.id = 'ed-home-v19-feature-style';
+    featureStyle.textContent = `
+      .ed-home .ed-home-value-band{padding-bottom:72px}
+      .ed-home .ed-home-v19-feature-grid{
+        width:min(1740px,100%);margin:42px auto 0;display:grid;
+        grid-template-columns:repeat(6,minmax(0,1fr));gap:18px;align-items:stretch
+      }
+      .ed-home .ed-home-v19-feature-card{
+        --accent:#2468f2;--soft:#edf4ff;position:relative;isolation:isolate;
+        min-height:304px;padding:22px 20px 31px;box-sizing:border-box;overflow:hidden;
+        background:linear-gradient(155deg,#fff 0%,#fff 52%,var(--soft) 100%);
+        clip-path:polygon(13% 0,87% 0,100% 8%,100% 86%,50% 100%,0 86%,0 8%);
+        color:#0d2a59;filter:drop-shadow(0 12px 18px rgba(20,45,88,.12));
+        transition:transform .22s ease,filter .22s ease
+      }
+      .ed-home .ed-home-v19-feature-card::before{
+        content:"";position:absolute;inset:0 0 auto;height:7px;background:var(--accent);opacity:.95
+      }
+      .ed-home .ed-home-v19-feature-card::after{
+        content:"";position:absolute;width:128px;height:128px;border-radius:50%;right:-55px;top:56px;
+        background:var(--accent);opacity:.055;z-index:-1
+      }
+      .ed-home .ed-home-v19-feature-card:hover{transform:translateY(-5px);filter:drop-shadow(0 17px 24px rgba(20,45,88,.17))}
+      .ed-home .ed-home-v19-feature-card.feature-1{--accent:#286df0;--soft:#eef5ff}
+      .ed-home .ed-home-v19-feature-card.feature-2{--accent:#00a9c7;--soft:#eafafd}
+      .ed-home .ed-home-v19-feature-card.feature-3{--accent:#7651f5;--soft:#f2efff}
+      .ed-home .ed-home-v19-feature-card.feature-4{--accent:#1769d8;--soft:#eef5ff}
+      .ed-home .ed-home-v19-feature-card.feature-5{--accent:#9a50f8;--soft:#f8efff}
+      .ed-home .ed-home-v19-feature-card.feature-6{--accent:#e7a91c;--soft:#fff8e5}
+      .ed-home .ed-home-v19-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;min-height:58px}
+      .ed-home .ed-home-v19-metric{font-size:clamp(42px,3vw,58px);line-height:.95;font-weight:900;letter-spacing:-2.5px;color:var(--accent)}
+      .ed-home .ed-home-v19-metric.is-wide{font-size:clamp(29px,2vw,38px);letter-spacing:-1.2px;line-height:1.05}
+      .ed-home .ed-home-v19-card-index{font-size:12px;line-height:1;font-weight:800;letter-spacing:.13em;color:#91a0b7;padding-top:3px}
+      .ed-home .ed-home-v19-illustration{height:105px;display:flex;align-items:center;justify-content:center;color:var(--accent);margin:3px 0 5px}
+      .ed-home .ed-home-v19-illustration svg{width:104px;height:80px;display:block;filter:drop-shadow(0 7px 12px rgba(36,104,242,.08))}
+      .ed-home .ed-home-v19-card-copy{text-align:center;padding:0 5px}
+      .ed-home .ed-home-v19-card-copy h3{margin:0;color:#0d2a59;font-size:18px;line-height:1.2;font-weight:850;min-height:43px;display:flex;align-items:center;justify-content:center}
+      .ed-home .ed-home-v19-card-copy p{margin:5px auto 0;color:#68778f;font-size:12.5px;line-height:1.35;font-weight:650;max-width:210px}
+      .ed-home .ed-home-v19-feature-grid.is-ar .ed-home-v19-card-copy{direction:rtl}
+      .ed-home .ed-home-v19-feature-grid.is-ar .ed-home-v19-card-top{direction:ltr}
+      .ed-home .ed-home-v19-feature-grid.is-ar .ed-home-v19-card-copy h3{font-size:19px}
+      .ed-home .ed-home-v19-feature-grid.is-ar .ed-home-v19-card-copy p{font-size:13.5px}
+      @media(max-width:1500px){
+        .ed-home .ed-home-v19-feature-grid{grid-template-columns:repeat(3,minmax(0,1fr));max-width:1020px;gap:24px}
+        .ed-home .ed-home-v19-feature-card{min-height:300px;padding-left:28px;padding-right:28px}
+      }
+      @media(max-width:820px){
+        .ed-home .ed-home-value-band{padding-bottom:56px}
+        .ed-home .ed-home-v19-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:30px}
+        .ed-home .ed-home-v19-feature-card{min-height:282px;padding:20px 18px 29px}
+      }
+      @media(max-width:560px){
+        .ed-home .ed-home-v19-feature-grid{grid-template-columns:1fr;max-width:330px;gap:18px}
+        .ed-home .ed-home-v19-feature-card{min-height:286px;padding:22px 24px 31px}
+        .ed-home .ed-home-v19-card-copy h3{min-height:0}
+      }
+    `;
+    document.head.appendChild(featureStyle);
+  }
+
   /* Keep the impact cards visually compact and close to the approved reference proportions. */
   if (!document.getElementById('ed-home-v18-compact-style')) {
     const compactStyle = document.createElement('style');
