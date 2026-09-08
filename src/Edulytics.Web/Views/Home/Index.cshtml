@@ -111,8 +111,51 @@
             </div>
         </section>
 
-        <section id="platform" class="ed-home-section ed-home-why">
-            <div class="ed-home-container"><div class="ed-home-center-head"><h2>@(isPolish ? "Dlaczego Edulytics?" : "Why Edulytics?")</h2><p>@(isPolish ? "Nie potrzebujesz sztucznych statystyk. Wartość produktu wynika z tego, jak łączy nauczanie, ocenianie i analizę postępów." : "The value comes from how the platform connects teaching, assessment and progress analysis.")</p></div><div class="ed-home-why-grid"><article><div>01</div><h3>@(isPolish ? "Program jako punkt wyjścia" : "Curriculum first")</h3><p>@(isPolish ? "Lekcje, oceny i analiza pozostają osadzone w wybranym programie i poziomie." : "Lessons, assessments and analytics remain grounded in the selected curriculum and level.")</p></article><article><div>02</div><h3>@(isPolish ? "AI pod kontrolą nauczyciela" : "Teacher-controlled AI")</h3><p>@(isPolish ? "AI generuje, ale nauczyciel przegląda i zatwierdza przed publikacją." : "AI generates, but the teacher reviews and approves before publishing.")</p></article><article><div>03</div><h3>@(isPolish ? "Prywatna praktyka ucznia" : "Private student practice")</h3><p>@(isPolish ? "Praktyka ucznia pozostaje oddzielona od oficjalnej oceny szkolnej." : "Student practice stays separate from official school grading.")</p></article><article><div>04</div><h3>Mastery &amp; next step</h3><p>@(isPolish ? "Wyniki pomagają wskazać obszary wymagające dalszej pracy." : "Results help identify areas that need further work.")</p></article></div></div>
+        <section id="platform" class="ed-home-section ed-home-philosophy">
+            <div class="ed-home-container">
+                <div class="ed-philosophy-head">
+                    <h2>@(isPolish ? "Zasady Edulytics" : "The Edulytics Principles")</h2>
+                    <p>@(isPolish ? "Pięć zasad, które określają, w jaki sposób Edulytics łączy program nauczania, pracę nauczyciela, proces uczenia się i mierzalne postępy." : "Five principles that guide how Edulytics connects curriculum, teaching, learning and measurable progress.")</p>
+                </div>
+
+                <div class="ed-philosophy-map">
+                    <div class="ed-philosophy-orbit" aria-hidden="true"></div>
+                    <div class="ed-philosophy-hub">
+                        <span>EDULYTICS</span>
+                        <strong>@(isPolish ? "Filozofia nauczania" : "Learning Philosophy")</strong>
+                    </div>
+
+                    <article class="ed-philosophy-card ed-philosophy-card--curriculum">
+                        <div class="ed-philosophy-card__top"><span class="ed-philosophy-icon" aria-hidden="true">▤</span><span class="ed-philosophy-number">01</span></div>
+                        <h3>@(isPolish ? "Program nauczania w centrum" : "Curriculum at the Core")</h3>
+                        <p>@(isPolish ? "Każda lekcja, ocena i informacja o postępach w nauce wynika z programu nauczania i powiązanych z nim efektów uczenia się." : "Every lesson, assessment and learning insight starts from the curriculum and its learning outcomes.")</p>
+                    </article>
+
+                    <article class="ed-philosophy-card ed-philosophy-card--understanding">
+                        <div class="ed-philosophy-card__top"><span class="ed-philosophy-icon" aria-hidden="true">◎</span><span class="ed-philosophy-number">02</span></div>
+                        <h3>@(isPolish ? "Zrozumienie przed oceną" : "Understanding Before Scores")</h3>
+                        <p>@(isPolish ? "Uczenie się to coś więcej niż udzielenie poprawnej odpowiedzi. Edulytics stawia zrozumienie w centrum sposobu mierzenia postępów." : "Learning is not just about getting the right answer. Edulytics puts understanding at the center of how progress is measured.")</p>
+                    </article>
+
+                    <article class="ed-philosophy-card ed-philosophy-card--teacher">
+                        <div class="ed-philosophy-card__top"><span class="ed-philosophy-icon" aria-hidden="true">✓</span><span class="ed-philosophy-number">03</span></div>
+                        <h3>@(isPolish ? "Nauczyciel zachowuje kontrolę" : "Teachers Stay in Control")</h3>
+                        <p>@(isPolish ? "Technologia wspiera decyzje nauczyciela. Formalne sprawdziany są przez niego przeglądane, zatwierdzane i publikowane." : "Technology supports the teacher’s judgment. Formal assessments are reviewed, approved and published by the teacher.")</p>
+                    </article>
+
+                    <article class="ed-philosophy-card ed-philosophy-card--practice">
+                        <div class="ed-philosophy-card__top"><span class="ed-philosophy-icon" aria-hidden="true">↻</span><span class="ed-philosophy-number">04</span></div>
+                        <h3>@(isPolish ? "Ćwiczenie służy nauce" : "Practice Is for Learning")</h3>
+                        <p>@(isPolish ? "Uczniowie mogą ćwiczyć, popełniać błędy i wzmacniać słabsze obszary bez mylenia ćwiczeń z oficjalnymi ocenami szkolnymi." : "Students can practise, make mistakes and strengthen weak areas without confusing practice with official school grades.")</p>
+                    </article>
+
+                    <article class="ed-philosophy-card ed-philosophy-card--next">
+                        <div class="ed-philosophy-card__top"><span class="ed-philosophy-icon" aria-hidden="true">→</span><span class="ed-philosophy-number">05</span></div>
+                        <h3>@(isPolish ? "Każdy wynik prowadzi do kolejnego kroku" : "Every Result Leads to a Next Step")</h3>
+                        <p>@(isPolish ? "Dane z oceniania pokazują poziom opanowania materiału, słabsze obszary i postępy, a następnie kierują ucznia do najbardziej odpowiedniego kolejnego działania." : "Assessment evidence identifies mastery, weakness and progress, then guides the student toward the most relevant next action.")</p>
+                    </article>
+                </div>
+            </div>
         </section>
 
         <section class="ed-home-start ed-geo-scene">
@@ -128,7 +171,7 @@
     <footer class="ed-home-footer">
         <div class="ed-home-container ed-home-footer-grid">
             <div class="ed-home-footer-brand"><partial name="_LocalizedBrand" /><p>@(isPolish ? "Matematyka. Nauka. Postęp." : "Mathematics. Learning. Progress.")</p><div class="footer-contact"><a href="mailto:@SupportContactOptions.Email">@SupportContactOptions.Email</a><span>@SupportContactOptions.PhoneDisplay</span></div></div>
-            <div><h3>@(isPolish ? "Platforma" : "Platform")</h3><a href="#platform">@(isPolish ? "Funkcje" : "Features")</a><a href="#curricula">@(isPolish ? "Programy nauczania" : "Curricula")</a><a href="#ai">Edulytics AI</a></div>
+            <div><h3>@(isPolish ? "Platforma" : "Platform")</h3><a href="#platform">@(isPolish ? "Zasady" : "Principles")</a><a href="#curricula">@(isPolish ? "Programy nauczania" : "Curricula")</a><a href="#ai">Edulytics AI</a></div>
             <div><h3>@(isPolish ? "Dla szkół" : "For schools")</h3><a href="#schools">@(isPolish ? "Przegląd" : "Overview")</a><a href="#experience">@(isPolish ? "Doświadczenie" : "Experience")</a><a href="mailto:@SupportContactOptions.Email?subject=Edulytics%20demo">@demoLabel</a></div>
             <div><h3>@(isPolish ? "Dla użytkowników" : "For users")</h3><a href="#teachers">@(isPolish ? "Nauczyciele" : "Teachers")</a><a href="#students">@(isPolish ? "Uczniowie" : "Students")</a><a asp-controller="Account" asp-action="Login">@loginLabel</a></div>
             <div><h3>@(isPolish ? "Firma" : "Company")</h3><a href="@SupportContactOptions.CompanyWebsiteUrl" target="_blank" rel="noopener noreferrer">@(isPolish ? "O nas" : "About")</a><a href="mailto:@SupportContactOptions.Email">@contactLabel</a><a asp-controller="Home" asp-action="ContentSources">@(isPolish ? "Źródła i licencje" : "Content sources & licences")</a></div>
