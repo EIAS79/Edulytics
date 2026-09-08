@@ -11,7 +11,7 @@
   }
 
   /* Arabic localisation for the audience cards and the five product-strength signals. */
-  const ar = (document.documentElement.lang || '').toLowerCase().startsWith('ar');
+  const ar = (root.dataset.siteLanguage || document.documentElement.lang || '').toLowerCase().startsWith('ar');
   if (!ar) return;
 
   const cardCopy = [
