@@ -4,6 +4,7 @@
     var localizedProductName = Brand["ProductName"].Value;
     var pageLanguage = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
     var isMarketingContentPage = ViewData["MarketingPageKey"] is string;
+    var pageTitle = ViewData["Title"] as string;
 }
 <!DOCTYPE html>
 <html lang="@pageLanguage" dir="ltr">
@@ -11,7 +12,7 @@
     <meta charset="utf-8" />
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0" />
-    <title>@localizedProductName</title>
+    <title>@(string.IsNullOrWhiteSpace(pageTitle) ? localizedProductName : $"{pageTitle} | {localizedProductName}")</title>
     <meta name="description" content="Edulytics is a curriculum-aligned mathematics learning, assessment and mastery platform for schools, teachers and students." />
     <link rel="stylesheet"
           href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -65,6 +66,9 @@
           asp-append-version="true" />
     <link rel="stylesheet"
           href="~/css/public-contact-v4.css"
+          asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/public-contact-system-v28.css"
           asp-append-version="true" />
     <link rel="stylesheet"
           href="~/css/public-home-footer-v24.css"
@@ -134,6 +138,7 @@
     <script src="~/js/public-home-ai-spotlight-v22.js" asp-append-version="true"></script>
     <script src="~/js/public-site-routing-v27.js" asp-append-version="true"></script>
     <script src="~/js/public-understanding-v1.js" asp-append-version="true"></script>
+    <script src="~/js/public-contact-system-v28.js" asp-append-version="true"></script>
     @if (isMarketingContentPage)
     {
         <script src="~/js/public-content-pages-v27-en.js" asp-append-version="true"></script>
