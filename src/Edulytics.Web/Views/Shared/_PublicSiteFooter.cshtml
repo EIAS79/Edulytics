@@ -1,0 +1,47 @@
+@using Edulytics.Web.Support
+@using System.Globalization
+@{
+    var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl) => isPolish ? pl : en;
+}
+<footer class="ed-home-footer">
+    <div class="ed-home-container ed-home-footer-grid">
+        <div class="ed-home-footer-brand">
+            <partial name="_LocalizedBrand" />
+            <p>@L("Mathematics. Learning. Progress.", "Matematyka. Nauka. Postęp.")</p>
+            <div class="footer-contact">
+                <a href="mailto:@SupportContactOptions.Email">@SupportContactOptions.Email</a>
+                <a href="@SupportContactOptions.PhoneUri">@SupportContactOptions.PhoneDisplay</a>
+            </div>
+        </div>
+        <div>
+            <h3>@L("Platform", "Platforma")</h3>
+            <a href="/#platform">@L("Principles", "Zasady")</a>
+            <a href="/product/curricula">@L("Curricula", "Programy nauczania")</a>
+            <a href="/product/edulytics-ai">Edulytics AI</a>
+        </div>
+        <div>
+            <h3>@L("For schools", "Dla szkół")</h3>
+            <a href="/schools/overview">@L("Overview", "Przegląd")</a>
+            <a href="/product/student-portal">@L("Student experience", "Doświadczenie ucznia")</a>
+            <a href="/contact/request-demo">@L("Request a demo", "Poproś o demo")</a>
+        </div>
+        <div>
+            <h3>@L("For users", "Dla użytkowników")</h3>
+            <a href="/teachers/overview">@L("Teachers", "Nauczyciele")</a>
+            <a href="/students/overview">@L("Students", "Uczniowie")</a>
+            <a asp-controller="Account" asp-action="Login">@L("Log in", "Zaloguj się")</a>
+        </div>
+        <div>
+            <h3>@L("Company", "Firma")</h3>
+            <a href="/company/about">@L("About", "O nas")</a>
+            <a href="/contact">@L("Contact", "Kontakt")</a>
+            <a href="/help">@L("Help center", "Centrum pomocy")</a>
+            <a asp-controller="Home" asp-action="ContentSources">@L("Content sources & licences", "Źródła i licencje")</a>
+        </div>
+    </div>
+    <div class="ed-home-container ed-home-footer-bottom">
+        <span>© @DateTime.UtcNow.Year Edulytics</span>
+        <span>@L("Privacy · Terms · Content licences", "Prywatność · Regulamin · Licencje treści")</span>
+    </div>
+</footer>
