@@ -1,4 +1,4 @@
-/* Public home v24 — restore official brand logo and lighten the closing CTA/footer. */
+/* Public home v24 — official brand logo with a soft blue-gray closing footer. */
 
 .ed-home .ed-home-final-cta{
   position:relative;
@@ -10,7 +10,7 @@
     linear-gradient(135deg,#eef6ff 0%,#f8fbff 56%,#f5f1ff 100%)!important;
   color:#102540!important;
   border-top:1px solid #dce7f5;
-  border-bottom:1px solid #dce7f5;
+  border-bottom:1px solid #d4e0ed;
 }
 
 .ed-home .ed-home-final-cta .ed-home-container{
@@ -40,11 +40,13 @@
   color:#1768f2!important;
 }
 
+/* Footer: no pure white. The cool blue-gray tone keeps the official logo intact while
+   giving the page a clear visual ending. */
 .ed-home .ed-home-footer{
   padding:46px 0 18px!important;
-  background:#fff!important;
+  background:linear-gradient(180deg,#EEF4FA 0%,#EAF1F8 100%)!important;
   color:#102540!important;
-  border-top:1px solid #e3ebf4;
+  border-top:1px solid #D5E0EC;
 }
 
 .ed-home .ed-home-footer-grid{
@@ -64,16 +66,16 @@
 
 .ed-home .ed-home-footer-brand p{
   margin:14px 0 16px!important;
-  color:#5f728a!important;
+  color:#526A83!important;
 }
 
 .ed-home .footer-contact{
   gap:7px!important;
-  color:#667b93!important;
+  color:#5D748C!important;
 }
 
 .ed-home .footer-contact a{
-  color:#274665!important;
+  color:#234563!important;
 }
 
 .ed-home .ed-home-footer h3{
@@ -82,7 +84,7 @@
 }
 
 .ed-home .ed-home-footer a{
-  color:#566d87!important;
+  color:#4F6680!important;
 }
 
 .ed-home .ed-home-footer a:hover,
@@ -92,9 +94,12 @@
 
 .ed-home .ed-home-footer-bottom{
   margin-top:30px!important;
-  padding-top:18px!important;
-  border-top:1px solid #e3ebf4!important;
-  color:#71839a!important;
+  padding:15px 18px!important;
+  border-top:0!important;
+  border:1px solid #D5E0EC!important;
+  border-radius:14px;
+  background:#E5EDF6!important;
+  color:#627991!important;
 }
 
 /* Keep the closing area balanced on medium screens. */
@@ -128,6 +133,7 @@
 
   .ed-home .ed-home-footer-bottom{
     margin-top:24px!important;
+    padding:14px 15px!important;
   }
 }
 
