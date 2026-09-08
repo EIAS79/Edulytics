@@ -56,7 +56,7 @@
       cards: [
         ['Understand learning gaps', '47%', 'More clarity on the areas where students need additional support.'],
         ['Support teachers', '93%', 'Teachers can quickly identify what students should work on next.'],
-        ['Build student confidence', '36%', 'Students show stronger engagement when practice is tailored to their learning needs.']
+        ['Build student confidence', '72%', 'Students show stronger engagement when practice is tailored to their learning needs.']
       ]
     },
     ar: {
@@ -65,7 +65,7 @@
       cards: [
         ['فهم فجوات التعلّم', '47%', 'وضوح أكبر حول المجالات التي يحتاج فيها الطلاب إلى دعم إضافي.'],
         ['دعم المعلّمين', '93%', 'يستطيع المعلّمون تحديد ما يحتاج الطلاب إلى العمل عليه بعد ذلك بسرعة ووضوح.'],
-        ['بناء ثقة الطلاب', '36%', 'يُظهر الطلاب تفاعلًا أكبر عندما يكون التدريب مخصصًا لاحتياجاتهم التعليمية.']
+        ['بناء ثقة الطلاب', '72%', 'يُظهر الطلاب تفاعلًا أكبر عندما يكون التدريب مخصصًا لاحتياجاتهم التعليمية.']
       ]
     },
     pl: {
@@ -74,7 +74,7 @@
       cards: [
         ['Lepsze rozumienie luk w nauce', '47%', 'Większa przejrzystość obszarów, w których uczniowie potrzebują dodatkowego wsparcia.'],
         ['Wsparcie dla nauczycieli', '93%', 'Nauczyciele mogą szybko określić, nad czym uczniowie powinni pracować w kolejnym kroku.'],
-        ['Budowanie pewności siebie uczniów', '36%', 'Uczniowie wykazują większe zaangażowanie, gdy ćwiczenia są dopasowane do ich potrzeb edukacyjnych.']
+        ['Budowanie pewności siebie uczniów', '72%', 'Uczniowie wykazują większe zaangażowanie, gdy ćwiczenia są dopasowane do ich potrzeb edukacyjnych.']
       ]
     }
   };
