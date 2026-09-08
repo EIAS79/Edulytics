@@ -244,3 +244,179 @@
     max-height:94%!important;
   }
 }
+
+/* Measurable progress / meaningful impact — card proportions follow the approved reference while using Edulytics copy. */
+.ed-home .ed-home-v18-impact{
+  background:#fff;
+  padding:70px 30px 82px;
+}
+
+.ed-home .ed-home-v18-impact-grid{
+  width:min(1820px,100%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.04fr 1fr 1fr 1fr;
+  gap:28px;
+  align-items:stretch;
+}
+
+.ed-home .ed-home-v18-impact-intro,
+.ed-home .ed-home-v18-impact-card{
+  min-height:405px;
+  border-radius:30px;
+  box-sizing:border-box;
+}
+
+.ed-home .ed-home-v18-impact-intro{
+  padding:38px 40px 34px;
+  background:#286df0;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-shadow:0 18px 38px rgba(28,84,190,.18);
+}
+
+.ed-home .ed-home-v18-impact-intro h2{
+  margin:0 0 14px;
+  max-width:390px;
+  color:#fff;
+  font-size:clamp(30px,2vw,40px);
+  line-height:1.22;
+  font-weight:900;
+  letter-spacing:-.025em;
+}
+
+.ed-home .ed-home-v18-impact-intro p{
+  margin:0;
+  max-width:390px;
+  color:#fff;
+  font-size:clamp(18px,1.18vw,23px);
+  line-height:1.55;
+  font-weight:600;
+}
+
+.ed-home .ed-home-v18-intro-icon{
+  width:78px;
+  height:78px;
+  margin-top:26px;
+  color:#fff;
+  opacity:.96;
+}
+
+.ed-home .ed-home-v18-impact-card{
+  padding:38px 40px 34px;
+  background:#fff;
+  border:1px solid #edf1f6;
+  box-shadow:0 18px 38px rgba(24,46,78,.12);
+  display:flex;
+  flex-direction:column;
+}
+
+.ed-home .ed-home-v18-impact-card h3{
+  margin:0;
+  min-height:74px;
+  color:#10243f;
+  font-size:clamp(25px,1.55vw,31px);
+  line-height:1.24;
+  font-weight:900;
+  letter-spacing:-.02em;
+}
+
+.ed-home .ed-home-v18-impact-metric{
+  margin:10px 0 24px;
+  color:#ff7544;
+  font-size:clamp(54px,4vw,76px);
+  line-height:1;
+  font-weight:800;
+  letter-spacing:-.035em;
+  white-space:nowrap;
+}
+
+.ed-home .ed-home-v18-impact-metric span{
+  display:inline-block;
+  margin-inline-end:6px;
+  font-weight:400;
+}
+
+.ed-home .ed-home-v18-impact-card p{
+  margin:0;
+  color:#304a6b;
+  font-size:clamp(17px,1.05vw,21px);
+  line-height:1.55;
+  font-weight:500;
+}
+
+.ed-home .ed-home-v18-impact.is-ar,
+.ed-home .ed-home-v18-impact.is-ar .ed-home-v18-impact-intro,
+.ed-home .ed-home-v18-impact.is-ar .ed-home-v18-impact-card{
+  direction:rtl;
+  text-align:right;
+}
+
+.ed-home .ed-home-v18-impact.is-ar .ed-home-v18-impact-intro h2,
+.ed-home .ed-home-v18-impact.is-ar .ed-home-v18-impact-intro p,
+.ed-home .ed-home-v18-impact.is-ar .ed-home-v18-impact-card h3,
+.ed-home .ed-home-v18-impact.is-ar .ed-home-v18-impact-card p{
+  text-align:right;
+}
+
+.ed-home .ed-home-v18-impact.is-ar .ed-home-v18-impact-metric{
+  direction:ltr;
+  unicode-bidi:isolate;
+  text-align:right;
+}
+
+.ed-home .ed-home-v18-impact.is-ar .ed-home-v18-intro-icon{
+  align-self:flex-start;
+}
+
+@media(max-width:1280px){
+  .ed-home .ed-home-v18-impact{
+    padding:58px 28px 70px;
+  }
+  .ed-home .ed-home-v18-impact-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    max-width:1120px;
+  }
+  .ed-home .ed-home-v18-impact-intro,
+  .ed-home .ed-home-v18-impact-card{
+    min-height:340px;
+  }
+  .ed-home .ed-home-v18-impact-card h3{
+    min-height:0;
+  }
+}
+
+@media(max-width:720px){
+  .ed-home .ed-home-v18-impact{
+    padding:42px 18px 52px;
+  }
+  .ed-home .ed-home-v18-impact-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+    max-width:560px;
+  }
+  .ed-home .ed-home-v18-impact-intro,
+  .ed-home .ed-home-v18-impact-card{
+    min-height:0;
+    border-radius:24px;
+    padding:30px 28px;
+  }
+  .ed-home .ed-home-v18-impact-intro h2{
+    font-size:31px;
+  }
+  .ed-home .ed-home-v18-impact-intro p{
+    font-size:18px;
+  }
+  .ed-home .ed-home-v18-impact-card h3{
+    font-size:25px;
+  }
+  .ed-home .ed-home-v18-impact-metric{
+    margin:14px 0 18px;
+    font-size:58px;
+  }
+  .ed-home .ed-home-v18-impact-card p{
+    font-size:17px;
+  }
+}

@@ -10,8 +10,77 @@
     teacherActions.classList.add('is-v15-single');
   }
 
+  const selectedLanguage = (root.dataset.siteLanguage || document.documentElement.lang || 'en').toLowerCase();
+  const language = selectedLanguage.startsWith('ar') ? 'ar' : selectedLanguage.startsWith('pl') ? 'pl' : 'en';
+
+  /* Measurable progress section — placed between the product-strength signals and the next platform section. */
+  const impactCopy = {
+    en: {
+      title: 'Measurable progress. Meaningful impact.',
+      body: 'Edulytics turns learning data into actionable insights that help teachers and schools support better student outcomes.',
+      cards: [
+        ['Understand learning gaps', '47%', 'More clarity on the areas where students need additional support.'],
+        ['Support teachers', '93%', 'Teachers can quickly identify what students should work on next.'],
+        ['Build student confidence', '36%', 'Students show stronger engagement when practice is tailored to their learning needs.']
+      ]
+    },
+    ar: {
+      title: 'تقدّم قابل للقياس. وتأثير ملموس.',
+      body: 'يحوّل Edulytics بيانات التعلّم إلى رؤى عملية تساعد المعلّمين والمدارس على دعم نتائج أفضل للطلاب.',
+      cards: [
+        ['فهم فجوات التعلّم', '47%', 'وضوح أكبر حول المجالات التي يحتاج فيها الطلاب إلى دعم إضافي.'],
+        ['دعم المعلّمين', '93%', 'يستطيع المعلّمون تحديد ما يحتاج الطلاب إلى العمل عليه بعد ذلك بسرعة ووضوح.'],
+        ['بناء ثقة الطلاب', '36%', 'يُظهر الطلاب تفاعلًا أكبر عندما يكون التدريب مخصصًا لاحتياجاتهم التعليمية.']
+      ]
+    },
+    pl: {
+      title: 'Mierzalne postępy. Realny wpływ.',
+      body: 'Edulytics zamienia dane dotyczące nauki w praktyczne informacje, które pomagają nauczycielom i szkołom wspierać lepsze wyniki uczniów.',
+      cards: [
+        ['Lepsze rozumienie luk w nauce', '47%', 'Większa przejrzystość obszarów, w których uczniowie potrzebują dodatkowego wsparcia.'],
+        ['Wsparcie dla nauczycieli', '93%', 'Nauczyciele mogą szybko określić, nad czym uczniowie powinni pracować w kolejnym kroku.'],
+        ['Budowanie pewności siebie uczniów', '36%', 'Uczniowie wykazują większe zaangażowanie, gdy ćwiczenia są dopasowane do ich potrzeb edukacyjnych.']
+      ]
+    }
+  };
+
+  const impactAnchor = root.querySelector('.ed-home-v6-signals');
+  if (impactAnchor && !root.querySelector('.ed-home-v18-impact')) {
+    const copy = impactCopy[language];
+    const section = document.createElement('section');
+    section.className = `ed-home-v18-impact${language === 'ar' ? ' is-ar' : ''}`;
+    section.setAttribute('aria-label', copy.title);
+    if (language === 'ar') section.setAttribute('dir', 'rtl');
+
+    const introIcon = `
+      <svg class="ed-home-v18-intro-icon" viewBox="0 0 72 72" aria-hidden="true">
+        <path d="M12 56V40M30 56V28M48 56V18M9 58h51" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        <path d="M14 34l15-12 15 5 14-14" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M50 13h8v8" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>`;
+
+    section.innerHTML = `
+      <div class="ed-home-v18-impact-grid">
+        <article class="ed-home-v18-impact-intro">
+          <div>
+            <h2>${copy.title}</h2>
+            <p>${copy.body}</p>
+          </div>
+          ${introIcon}
+        </article>
+        ${copy.cards.map(card => `
+          <article class="ed-home-v18-impact-card">
+            <h3>${card[0]}</h3>
+            <div class="ed-home-v18-impact-metric"><span aria-hidden="true">↑</span>${card[1]}</div>
+            <p>${card[2]}</p>
+          </article>`).join('')}
+      </div>`;
+
+    impactAnchor.insertAdjacentElement('afterend', section);
+  }
+
   /* Arabic localisation for the audience cards and the five product-strength signals. */
-  const ar = (root.dataset.siteLanguage || document.documentElement.lang || '').toLowerCase().startsWith('ar');
+  const ar = language === 'ar';
   if (!ar) return;
 
   const cardCopy = [
