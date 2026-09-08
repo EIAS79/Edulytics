@@ -2,7 +2,21 @@
   const root = document.querySelector('.ed-home');
   if (!root) return;
 
-  /* Remove only assistant-created public-home cartoon mascot artwork.
-     Do not touch classroom photography or product/application visuals. */
-  root.querySelectorAll('.ed-home-v12-mascot').forEach(node => node.remove());
+  const firstSlideVisual = root.querySelector(
+    '.ed-home-v12-slide:first-child .ed-home-v12-visual'
+  );
+  if (!firstSlideVisual) return;
+
+  // Replace only the previous assistant-generated first-slide artwork.
+  firstSlideVisual.querySelectorAll('.ed-home-v12-mascot').forEach(node => node.remove());
+
+  if (firstSlideVisual.querySelector('.ed-home-v16-mascot-canvas')) return;
+
+  const image = document.createElement('img');
+  image.className = 'ed-home-v16-mascot-canvas';
+  image.src = '/images/public/edulytics-math-mascot.png';
+  image.alt = 'Edulytics mathematics mascot';
+  image.loading = 'eager';
+  image.decoding = 'async';
+  firstSlideVisual.appendChild(image);
 })();
