@@ -3,6 +3,7 @@
 @{
     var localizedProductName = Brand["ProductName"].Value;
     var pageLanguage = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var isMarketingContentPage = ViewData["MarketingPageKey"] is string;
 }
 <!DOCTYPE html>
 <html lang="@pageLanguage" dir="ltr">
@@ -74,6 +75,12 @@
     <link rel="stylesheet"
           href="~/css/public-understanding-v1.css"
           asp-append-version="true" />
+    @if (isMarketingContentPage)
+    {
+        <link rel="stylesheet"
+              href="~/css/public-content-pages-v27.css"
+              asp-append-version="true" />
+    }
     <style>
         .ed-home .student-avatar .head,
         .ed-home .student-avatar .body,
@@ -125,7 +132,14 @@
     <script src="~/js/public-home-experience-v20.js" asp-append-version="true"></script>
     <script src="~/js/public-home-curricula-v21.js" asp-append-version="true"></script>
     <script src="~/js/public-home-ai-spotlight-v22.js" asp-append-version="true"></script>
-    <script src="~/js/public-site-routing-v26.js" asp-append-version="true"></script>
+    <script src="~/js/public-site-routing-v27.js" asp-append-version="true"></script>
     <script src="~/js/public-understanding-v1.js" asp-append-version="true"></script>
+    @if (isMarketingContentPage)
+    {
+        <script src="~/js/public-content-pages-v27-en.js" asp-append-version="true"></script>
+        <script src="~/js/public-content-pages-v27-pl.js" asp-append-version="true"></script>
+        <script src="~/js/public-content-pages-v27-ar.js" asp-append-version="true"></script>
+        <script src="~/js/public-content-pages-v27.js" asp-append-version="true"></script>
+    }
 </body>
 </html>
