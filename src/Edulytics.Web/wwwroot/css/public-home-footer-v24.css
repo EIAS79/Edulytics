@@ -1,0 +1,145 @@
+/* Public home v24 — restore official brand logo and lighten the closing CTA/footer. */
+
+.ed-home .ed-home-final-cta{
+  position:relative;
+  overflow:hidden;
+  padding:64px 0;
+  background:
+    radial-gradient(circle at 12% 18%,rgba(84,166,255,.18),transparent 26%),
+    radial-gradient(circle at 88% 82%,rgba(109,71,239,.11),transparent 24%),
+    linear-gradient(135deg,#eef6ff 0%,#f8fbff 56%,#f5f1ff 100%)!important;
+  color:#102540!important;
+  border-top:1px solid #dce7f5;
+  border-bottom:1px solid #dce7f5;
+}
+
+.ed-home .ed-home-final-cta .ed-home-container{
+  align-items:center;
+  gap:56px;
+}
+
+.ed-home .ed-home-final-cta .ed-home-kicker{
+  color:#1768f2!important;
+}
+
+.ed-home .ed-home-final-cta h2{
+  max-width:800px;
+  color:#102540!important;
+}
+
+.ed-home .ed-home-final-cta .ed-home-secondary{
+  border-color:#bfd0e4!important;
+  background:#fff!important;
+  color:#17395f!important;
+  box-shadow:0 8px 22px rgba(22,57,95,.06);
+}
+
+.ed-home .ed-home-final-cta .ed-home-secondary:hover,
+.ed-home .ed-home-final-cta .ed-home-secondary:focus-visible{
+  border-color:#1768f2!important;
+  color:#1768f2!important;
+}
+
+.ed-home .ed-home-footer{
+  padding:46px 0 18px!important;
+  background:#fff!important;
+  color:#102540!important;
+  border-top:1px solid #e3ebf4;
+}
+
+.ed-home .ed-home-footer-grid{
+  gap:34px!important;
+  align-items:start;
+}
+
+.ed-home .ed-home-footer-brand .localized-brand-logo{
+  display:block;
+  width:auto!important;
+  height:44px!important;
+  max-width:190px!important;
+  object-fit:contain;
+  filter:none!important;
+  opacity:1!important;
+}
+
+.ed-home .ed-home-footer-brand p{
+  margin:14px 0 16px!important;
+  color:#5f728a!important;
+}
+
+.ed-home .footer-contact{
+  gap:7px!important;
+  color:#667b93!important;
+}
+
+.ed-home .footer-contact a{
+  color:#274665!important;
+}
+
+.ed-home .ed-home-footer h3{
+  color:#102540!important;
+  font-weight:900;
+}
+
+.ed-home .ed-home-footer a{
+  color:#566d87!important;
+}
+
+.ed-home .ed-home-footer a:hover,
+.ed-home .ed-home-footer a:focus-visible{
+  color:#1768f2!important;
+}
+
+.ed-home .ed-home-footer-bottom{
+  margin-top:30px!important;
+  padding-top:18px!important;
+  border-top:1px solid #e3ebf4!important;
+  color:#71839a!important;
+}
+
+/* Keep the closing area balanced on medium screens. */
+@media(max-width:1040px){
+  .ed-home .ed-home-final-cta{
+    padding:56px 0;
+  }
+
+  .ed-home .ed-home-final-cta .ed-home-container{
+    gap:28px;
+  }
+}
+
+@media(max-width:760px){
+  .ed-home .ed-home-final-cta{
+    padding:48px 0;
+  }
+
+  .ed-home .ed-home-footer{
+    padding:38px 0 16px!important;
+  }
+
+  .ed-home .ed-home-footer-grid{
+    gap:24px!important;
+  }
+
+  .ed-home .ed-home-footer-brand .localized-brand-logo{
+    height:40px!important;
+    max-width:176px!important;
+  }
+
+  .ed-home .ed-home-footer-bottom{
+    margin-top:24px!important;
+  }
+}
+
+/* True RTL alignment for the Arabic public site. */
+.ed-home.is-site-ar .ed-home-final-cta .ed-home-container,
+.ed-home.is-site-ar .ed-home-footer-grid,
+.ed-home.is-site-ar .ed-home-footer-bottom{
+  direction:rtl;
+  text-align:right;
+}
+
+.ed-home.is-site-ar .ed-home-footer-brand .localized-brand-logo{
+  margin-left:auto;
+  margin-right:0;
+}
