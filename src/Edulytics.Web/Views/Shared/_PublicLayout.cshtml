@@ -62,6 +62,37 @@
     <link rel="stylesheet"
           href="~/css/public-contact-v4.css"
           asp-append-version="true" />
+    <style>
+        .ed-home .student-avatar .head,
+        .ed-home .student-avatar .body,
+        .ed-home .student-avatar .screen {
+            display: none !important;
+        }
+
+        .ed-home .student-avatar {
+            width: 210px !important;
+            height: 245px !important;
+            bottom: 34px !important;
+            transform: translateX(-55%) !important;
+            z-index: 3;
+        }
+
+        .ed-home .student-avatar::before {
+            content: "";
+            position: absolute;
+            inset: -8px -20px -6px;
+            background: url('/images/public/edulytics-math-mascot-1.png') center bottom / contain no-repeat;
+            filter: drop-shadow(0 12px 18px rgba(32, 64, 104, .14));
+        }
+
+        @media (max-width: 720px) {
+            .ed-home .student-avatar {
+                width: 180px !important;
+                height: 215px !important;
+                bottom: 38px !important;
+            }
+        }
+    </style>
 </head>
 <body class="ed-public-body">
     <div class="visually-hidden">Polski English العربية</div>
