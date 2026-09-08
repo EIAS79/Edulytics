@@ -1,0 +1,634 @@
+/* Edulytics public internal page — Learning Built for Understanding. */
+
+.ed-understanding{
+  --u-ink:#102540;
+  --u-muted:#5f728a;
+  --u-blue:#1768f2;
+  --u-cyan:#11a7c7;
+  --u-purple:#7651f5;
+  --u-gold:#e3a820;
+  --u-line:#dce7f3;
+  --u-soft:#f5f9fd;
+  overflow-x:hidden;
+  background:#fff;
+  color:var(--u-ink);
+}
+
+.ed-understanding main{display:block}
+
+.ed-understanding .understanding-container{
+  width:min(1180px,calc(100% - 48px));
+  margin-inline:auto;
+}
+
+.ed-understanding .understanding-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  margin:0 0 16px;
+  color:var(--u-blue);
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+.ed-understanding .understanding-kicker::before{
+  content:"";
+  width:24px;
+  height:3px;
+  border-radius:99px;
+  background:linear-gradient(90deg,var(--u-blue),var(--u-purple));
+}
+
+.ed-understanding .understanding-section-head{
+  max-width:790px;
+  margin:0 auto 44px;
+  text-align:center;
+}
+
+.ed-understanding .understanding-section-head h2,
+.ed-understanding .understanding-copy h2{
+  margin:0;
+  color:var(--u-ink);
+  font-size:clamp(34px,4vw,54px);
+  line-height:1.04;
+  font-weight:900;
+  letter-spacing:-.035em;
+}
+
+.ed-understanding .understanding-section-head p,
+.ed-understanding .understanding-copy>p{
+  margin:18px 0 0;
+  color:var(--u-muted);
+  font-size:clamp(17px,1.55vw,21px);
+  line-height:1.65;
+}
+
+/* Hero */
+.ed-understanding .understanding-hero{
+  position:relative;
+  isolation:isolate;
+  padding:106px 0 96px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 8% 18%,rgba(23,104,242,.13),transparent 25%),
+    radial-gradient(circle at 92% 78%,rgba(118,81,245,.13),transparent 27%),
+    linear-gradient(180deg,#f7fbff 0%,#fff 78%);
+  border-bottom:1px solid #e5eef7;
+}
+
+.ed-understanding .understanding-hero::before,
+.ed-understanding .understanding-hero::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  border:1px solid rgba(23,104,242,.12);
+  transform:rotate(18deg);
+}
+
+.ed-understanding .understanding-hero::before{
+  width:190px;height:190px;left:-70px;top:74px;border-radius:46px;
+}
+
+.ed-understanding .understanding-hero::after{
+  width:142px;height:142px;right:-35px;bottom:55px;border-radius:50%;
+}
+
+.ed-understanding .understanding-breadcrumb{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0 0 26px;
+  color:#71839a;
+  font-size:14px;
+  font-weight:750;
+}
+
+.ed-understanding .understanding-breadcrumb a{color:#55718e;text-decoration:none}
+.ed-understanding .understanding-breadcrumb a:hover{color:var(--u-blue)}
+
+.ed-understanding .understanding-hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.02fr) minmax(420px,.98fr);
+  align-items:center;
+  gap:72px;
+}
+
+.ed-understanding .understanding-hero-copy h1{
+  max-width:720px;
+  margin:0;
+  color:var(--u-ink);
+  font-size:clamp(48px,5vw,76px);
+  line-height:.98;
+  font-weight:950;
+  letter-spacing:-.052em;
+}
+
+.ed-understanding .understanding-hero-copy>p{
+  max-width:700px;
+  margin:26px 0 0;
+  color:#536b84;
+  font-size:clamp(18px,1.55vw,22px);
+  line-height:1.65;
+}
+
+.ed-understanding .understanding-hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:34px;
+}
+
+.ed-understanding .understanding-primary,
+.ed-understanding .understanding-secondary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:0 22px;
+  border-radius:13px;
+  font-weight:850;
+  text-decoration:none;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+
+.ed-understanding .understanding-primary{
+  background:linear-gradient(135deg,#1768f2,#6552ea);
+  color:#fff;
+  box-shadow:0 13px 30px rgba(23,104,242,.22);
+}
+
+.ed-understanding .understanding-secondary{
+  background:#fff;
+  color:#17395f;
+  border:1px solid #cbd9e8;
+}
+
+.ed-understanding .understanding-primary:hover,
+.ed-understanding .understanding-secondary:hover{transform:translateY(-2px)}
+
+.ed-understanding .understanding-primary:hover{color:#fff;box-shadow:0 17px 36px rgba(23,104,242,.27)}
+.ed-understanding .understanding-secondary:hover{color:var(--u-blue);border-color:#9dbfe8}
+
+/* Hero learning system visual */
+.ed-understanding .understanding-system{
+  position:relative;
+  min-height:530px;
+  border:1px solid #d8e5f2;
+  border-radius:34px;
+  background:rgba(255,255,255,.82);
+  box-shadow:0 30px 70px rgba(34,74,126,.13);
+  backdrop-filter:blur(12px);
+  overflow:hidden;
+}
+
+.ed-understanding .understanding-system::before{
+  content:"";
+  position:absolute;
+  width:410px;height:410px;
+  left:50%;top:50%;transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:1px dashed rgba(23,104,242,.22);
+  box-shadow:0 0 0 62px rgba(23,104,242,.025),0 0 0 124px rgba(118,81,245,.02);
+}
+
+.ed-understanding .understanding-system-hub{
+  position:absolute;
+  left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  width:188px;height:188px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  border-radius:50%;
+  background:linear-gradient(145deg,#102b5d,#1768f2);
+  color:#fff;
+  box-shadow:0 20px 42px rgba(23,104,242,.26);
+}
+
+.ed-understanding .understanding-system-hub small{
+  font-size:11px;font-weight:900;letter-spacing:.16em;opacity:.78;
+}
+
+.ed-understanding .understanding-system-hub strong{
+  max-width:130px;
+  margin-top:7px;
+  font-size:21px;
+  line-height:1.12;
+  font-weight:900;
+}
+
+.ed-understanding .understanding-node{
+  position:absolute;
+  display:flex;
+  align-items:center;
+  gap:11px;
+  min-width:150px;
+  padding:13px 15px;
+  border:1px solid #dce8f4;
+  border-radius:16px;
+  background:#fff;
+  color:#17395f;
+  font-size:13px;
+  font-weight:850;
+  box-shadow:0 10px 24px rgba(25,57,96,.09);
+}
+
+.ed-understanding .understanding-node b{
+  display:grid;place-items:center;
+  width:31px;height:31px;border-radius:10px;
+  color:#fff;font-size:14px;
+}
+
+.ed-understanding .understanding-node--curriculum{left:28px;top:48px}
+.ed-understanding .understanding-node--lesson{right:26px;top:66px}
+.ed-understanding .understanding-node--practice{left:16px;top:226px}
+.ed-understanding .understanding-node--assessment{right:14px;top:237px}
+.ed-understanding .understanding-node--mastery{left:58px;bottom:43px}
+.ed-understanding .understanding-node--next{right:44px;bottom:40px}
+.ed-understanding .understanding-node--curriculum b{background:var(--u-blue)}
+.ed-understanding .understanding-node--lesson b{background:var(--u-cyan)}
+.ed-understanding .understanding-node--practice b{background:var(--u-purple)}
+.ed-understanding .understanding-node--assessment b{background:#2968d9}
+.ed-understanding .understanding-node--mastery b{background:#8a58ee}
+.ed-understanding .understanding-node--next b{background:var(--u-gold)}
+
+/* Meaning cards */
+.ed-understanding .understanding-meaning{
+  padding:96px 0;
+}
+
+.ed-understanding .understanding-meaning-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+}
+
+.ed-understanding .understanding-meaning-card{
+  position:relative;
+  min-height:278px;
+  padding:30px 30px 32px;
+  border:1px solid #dce8f4;
+  border-radius:24px;
+  background:linear-gradient(155deg,#fff 0%,#fff 64%,#f5f9fd 100%);
+  box-shadow:0 16px 36px rgba(30,64,109,.07);
+}
+
+.ed-understanding .understanding-meaning-card::after{
+  content:attr(data-index);
+  position:absolute;
+  right:22px;top:20px;
+  color:#d2deea;
+  font-size:34px;
+  line-height:1;
+  font-weight:950;
+}
+
+.ed-understanding .understanding-meaning-icon{
+  display:grid;place-items:center;
+  width:54px;height:54px;
+  margin-bottom:26px;
+  border-radius:17px;
+  background:#edf4ff;
+  color:var(--u-blue);
+  font-size:24px;
+  font-weight:900;
+}
+
+.ed-understanding .understanding-meaning-card:nth-child(2) .understanding-meaning-icon{background:#f0edff;color:var(--u-purple)}
+.ed-understanding .understanding-meaning-card:nth-child(3) .understanding-meaning-icon{background:#fff7df;color:#bc8610}
+
+.ed-understanding .understanding-meaning-card h3{
+  margin:0;
+  font-size:24px;
+  line-height:1.16;
+  font-weight:900;
+  color:var(--u-ink);
+}
+
+.ed-understanding .understanding-meaning-card p{
+  margin:14px 0 0;
+  color:#64788f;
+  font-size:16px;
+  line-height:1.58;
+}
+
+/* Alternating content bands */
+.ed-understanding .understanding-band{
+  padding:98px 0;
+}
+
+.ed-understanding .understanding-band.is-soft{
+  background:linear-gradient(180deg,#f6faff 0%,#f9fbfe 100%);
+  border-top:1px solid #e3edf6;
+  border-bottom:1px solid #e3edf6;
+}
+
+.ed-understanding .understanding-split{
+  display:grid;
+  grid-template-columns:minmax(0,.92fr) minmax(430px,1.08fr);
+  align-items:center;
+  gap:76px;
+}
+
+.ed-understanding .understanding-split.is-reverse .understanding-copy{order:2}
+.ed-understanding .understanding-split.is-reverse .understanding-visual{order:1}
+
+.ed-understanding .understanding-points{
+  display:grid;
+  gap:14px;
+  margin-top:27px;
+}
+
+.ed-understanding .understanding-point{
+  display:flex;
+  align-items:flex-start;
+  gap:13px;
+  color:#405b76;
+  font-size:16px;
+  line-height:1.5;
+  font-weight:700;
+}
+
+.ed-understanding .understanding-point::before{
+  content:"✓";
+  flex:0 0 auto;
+  display:grid;place-items:center;
+  width:25px;height:25px;
+  margin-top:1px;
+  border-radius:50%;
+  background:#e9f2ff;
+  color:var(--u-blue);
+  font-size:13px;
+  font-weight:950;
+}
+
+.ed-understanding .understanding-visual{
+  position:relative;
+  min-height:440px;
+  border:1px solid #dce8f4;
+  border-radius:28px;
+  background:#fff;
+  box-shadow:0 22px 52px rgba(31,65,108,.10);
+  overflow:hidden;
+}
+
+/* Curriculum visual */
+.ed-understanding .curriculum-map{
+  padding:36px;
+  background:
+    radial-gradient(circle at 82% 15%,rgba(23,104,242,.10),transparent 26%),
+    #fff;
+}
+
+.ed-understanding .curriculum-map-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding-bottom:24px;
+  border-bottom:1px solid #e4edf5;
+}
+
+.ed-understanding .curriculum-map-title strong{font-size:19px;font-weight:900;color:#17395f}
+.ed-understanding .curriculum-map-title span{padding:7px 11px;border-radius:999px;background:#eef5ff;color:var(--u-blue);font-size:12px;font-weight:850}
+
+.ed-understanding .curriculum-stack{display:grid;gap:15px;margin-top:28px}
+.ed-understanding .curriculum-stack-item{
+  display:grid;
+  grid-template-columns:42px 1fr auto;
+  align-items:center;
+  gap:13px;
+  padding:15px 16px;
+  border:1px solid #dce8f4;
+  border-radius:15px;
+  background:#fff;
+}
+.ed-understanding .curriculum-stack-item b{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#eef5ff;color:var(--u-blue)}
+.ed-understanding .curriculum-stack-item strong{display:block;font-size:15px;color:#183a60}
+.ed-understanding .curriculum-stack-item small{display:block;margin-top:3px;color:#8190a1;font-size:12px}
+.ed-understanding .curriculum-stack-item>span{color:#9badbf;font-size:20px}
+
+/* Lesson visual */
+.ed-understanding .lesson-panel{padding:28px;background:linear-gradient(155deg,#fff,#f7fbff)}
+.ed-understanding .lesson-window{
+  height:100%;
+  min-height:382px;
+  border:1px solid #dce8f4;
+  border-radius:20px;
+  background:#fff;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(27,61,103,.07);
+}
+.ed-understanding .lesson-window-top{display:flex;align-items:center;gap:8px;padding:14px 18px;background:#f4f8fc;border-bottom:1px solid #e4edf5}
+.ed-understanding .lesson-window-top i{width:9px;height:9px;border-radius:50%;background:#c4d2e0}
+.ed-understanding .lesson-window-body{padding:26px 28px}
+.ed-understanding .lesson-stage{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef5ff;color:var(--u-blue);font-size:11px;font-weight:850}
+.ed-understanding .lesson-window-body h3{margin:14px 0 7px;font-size:23px;font-weight:900;color:#17395f}
+.ed-understanding .lesson-window-body>p{margin:0;color:#73859a;font-size:14px;line-height:1.5}
+.ed-understanding .lesson-blocks{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:23px}
+.ed-understanding .lesson-block{min-height:88px;padding:14px;border:1px solid #dce8f4;border-radius:13px;background:#fbfdff}
+.ed-understanding .lesson-block b{display:block;color:#254d76;font-size:13px}
+.ed-understanding .lesson-block span{display:block;margin-top:7px;color:#8797a8;font-size:11px;line-height:1.35}
+
+/* Practice visual */
+.ed-understanding .practice-panel{padding:30px;background:linear-gradient(145deg,#f5f2ff,#fff 55%,#f0f7ff)}
+.ed-understanding .practice-card{max-width:430px;margin:24px auto 0;padding:24px;border:1px solid #d8e3f0;border-radius:20px;background:#fff;box-shadow:0 16px 34px rgba(64,53,136,.10)}
+.ed-understanding .practice-card-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ed-understanding .practice-card-top span{padding:6px 10px;border-radius:999px;background:#f0edff;color:var(--u-purple);font-size:11px;font-weight:850}
+.ed-understanding .practice-card-top small{color:#9aa8b7;font-weight:700}
+.ed-understanding .practice-question{margin:22px 0;padding:22px;border-radius:15px;background:#f8fbfe;color:#183a60;font-size:25px;font-weight:900;text-align:center}
+.ed-understanding .practice-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ed-understanding .practice-actions span{display:grid;place-items:center;min-height:44px;border-radius:11px;background:#eef5ff;color:var(--u-blue);font-size:12px;font-weight:850}
+.ed-understanding .practice-actions span:last-child{background:#f4f1ff;color:var(--u-purple)}
+.ed-understanding .practice-note{display:flex;align-items:center;gap:10px;margin-top:18px;padding:13px 15px;border-radius:13px;background:#fff8e6;color:#806018;font-size:12px;font-weight:750}
+
+/* Evidence visual */
+.ed-understanding .mastery-panel{padding:30px;background:linear-gradient(150deg,#fff,#f7fbff)}
+.ed-understanding .mastery-card{padding:24px;border:1px solid #dbe7f3;border-radius:20px;background:#fff;box-shadow:0 14px 34px rgba(25,59,103,.08)}
+.ed-understanding .mastery-card-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:18px;border-bottom:1px solid #e6edf5}
+.ed-understanding .mastery-card-head strong{font-size:18px;color:#17395f;font-weight:900}
+.ed-understanding .mastery-card-head span{padding:7px 11px;border-radius:999px;background:#eef5ff;color:var(--u-blue);font-size:11px;font-weight:850}
+.ed-understanding .mastery-row{margin-top:20px}
+.ed-understanding .mastery-row-top{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#45607a;font-size:13px;font-weight:800}
+.ed-understanding .mastery-row-top em{font-style:normal;color:#6f8194;font-weight:750}
+.ed-understanding .mastery-track{height:9px;margin-top:9px;border-radius:999px;background:#edf2f7;overflow:hidden}
+.ed-understanding .mastery-track i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#1768f2,#2ba8d0)}
+.ed-understanding .mastery-row.needs-work .mastery-track i{background:linear-gradient(90deg,#7651f5,#a05bec)}
+.ed-understanding .mastery-row.needs-work .mastery-row-top em{color:#7651f5}
+
+/* Signature learning loop */
+.ed-understanding .understanding-loop-section{
+  padding:106px 0;
+  background:#102b50;
+  color:#fff;
+  overflow:hidden;
+}
+
+.ed-understanding .understanding-loop-section .understanding-kicker{color:#8ec1ff}
+.ed-understanding .understanding-loop-section .understanding-section-head h2{color:#fff}
+.ed-understanding .understanding-loop-section .understanding-section-head p{color:#b8c9dc}
+
+.ed-understanding .understanding-loop{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:12px;
+  align-items:stretch;
+  position:relative;
+}
+
+.ed-understanding .understanding-loop-step{
+  position:relative;
+  min-height:176px;
+  padding:24px 18px 22px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:20px;
+  background:rgba(255,255,255,.075);
+  backdrop-filter:blur(6px);
+}
+
+.ed-understanding .understanding-loop-step:not(:last-child)::after{
+  content:"→";
+  position:absolute;
+  right:-12px;top:50%;
+  z-index:2;
+  display:grid;place-items:center;
+  width:24px;height:24px;
+  transform:translateY(-50%);
+  border-radius:50%;
+  background:#2b5682;
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+}
+
+.ed-understanding .understanding-loop-step span{display:block;color:#79b8ff;font-size:11px;font-weight:900;letter-spacing:.13em}
+.ed-understanding .understanding-loop-step strong{display:block;margin-top:16px;color:#fff;font-size:18px;line-height:1.2;font-weight:900}
+.ed-understanding .understanding-loop-step p{margin:10px 0 0;color:#b6c7d9;font-size:12px;line-height:1.5}
+
+/* Teacher control */
+.ed-understanding .understanding-teacher{
+  padding:100px 0;
+  background:
+    radial-gradient(circle at 12% 20%,rgba(118,81,245,.10),transparent 28%),
+    linear-gradient(180deg,#fff,#f8fbff);
+}
+
+.ed-understanding .teacher-control-card{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(430px,.88fr);
+  gap:60px;
+  align-items:center;
+  padding:54px;
+  border:1px solid #dce8f4;
+  border-radius:30px;
+  background:#fff;
+  box-shadow:0 24px 56px rgba(28,61,103,.09);
+}
+
+.ed-understanding .teacher-control-visual{display:grid;gap:14px}
+.ed-understanding .teacher-control-row{display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:13px;padding:15px 16px;border:1px solid #e0e9f3;border-radius:14px;background:#fbfdff}
+.ed-understanding .teacher-control-row b{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#eef5ff;color:var(--u-blue)}
+.ed-understanding .teacher-control-row strong{display:block;color:#21466e;font-size:14px;font-weight:850}
+.ed-understanding .teacher-control-row small{display:block;margin-top:3px;color:#8797a8;font-size:11px}
+.ed-understanding .teacher-control-row>span{padding:6px 9px;border-radius:999px;background:#edf8f2;color:#27875a;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+
+/* Closing CTA */
+.ed-understanding .understanding-final{
+  padding:78px 0;
+  background:
+    radial-gradient(circle at 10% 15%,rgba(23,104,242,.15),transparent 28%),
+    radial-gradient(circle at 88% 82%,rgba(118,81,245,.12),transparent 26%),
+    linear-gradient(135deg,#eef6ff 0%,#f8fbff 56%,#f5f1ff 100%);
+  border-top:1px solid #dce7f5;
+  border-bottom:1px solid #dce7f5;
+}
+
+.ed-understanding .understanding-final-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:50px}
+.ed-understanding .understanding-final h2{max-width:780px;margin:0;color:var(--u-ink);font-size:clamp(34px,3.8vw,52px);line-height:1.06;font-weight:900;letter-spacing:-.035em}
+.ed-understanding .understanding-final p{max-width:720px;margin:16px 0 0;color:#60758d;font-size:17px;line-height:1.55}
+.ed-understanding .understanding-final-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}
+
+/* Internal footer tuning. */
+.ed-understanding .ed-home-footer{background:linear-gradient(180deg,#eef4fa 0%,#eaf1f8 100%)!important}
+.ed-understanding .ed-home-footer-bottom{background:#e5edf6;margin-inline:calc((100vw - 100%)/-2);padding-inline:max(24px,calc((100vw - min(1180px,calc(100% - 48px)))/2))!important}
+
+/* RTL */
+.ed-understanding.is-site-ar,
+.ed-understanding[dir="rtl"]{direction:rtl;text-align:right}
+.ed-understanding.is-site-ar .understanding-kicker::before,
+.ed-understanding[dir="rtl"] .understanding-kicker::before{order:2}
+.ed-understanding.is-site-ar .understanding-breadcrumb,
+.ed-understanding[dir="rtl"] .understanding-breadcrumb{direction:rtl}
+.ed-understanding.is-site-ar .understanding-loop-step:not(:last-child)::after,
+.ed-understanding[dir="rtl"] .understanding-loop-step:not(:last-child)::after{content:"←";right:auto;left:-12px}
+.ed-understanding.is-site-ar .understanding-point,
+.ed-understanding[dir="rtl"] .understanding-point{flex-direction:row}
+.ed-understanding.is-site-ar .understanding-final-actions,
+.ed-understanding[dir="rtl"] .understanding-final-actions{justify-content:flex-start}
+
+@media(max-width:1080px){
+  .ed-understanding .understanding-hero{padding:82px 0 78px}
+  .ed-understanding .understanding-hero-grid,
+  .ed-understanding .understanding-split,
+  .ed-understanding .teacher-control-card{grid-template-columns:1fr;gap:48px}
+  .ed-understanding .understanding-split.is-reverse .understanding-copy,
+  .ed-understanding .understanding-split.is-reverse .understanding-visual{order:initial}
+  .ed-understanding .understanding-system{min-height:500px;max-width:680px;width:100%;margin-inline:auto}
+  .ed-understanding .understanding-copy{max-width:760px}
+  .ed-understanding .understanding-visual{width:100%;max-width:720px;margin-inline:auto}
+  .ed-understanding .understanding-loop{grid-template-columns:repeat(3,1fr);gap:16px}
+  .ed-understanding .understanding-loop-step:not(:last-child)::after{display:none}
+  .ed-understanding .understanding-final-grid{grid-template-columns:1fr}
+  .ed-understanding .understanding-final-actions{justify-content:flex-start}
+}
+
+@media(max-width:780px){
+  .ed-understanding .understanding-container{width:min(100% - 32px,1180px)}
+  .ed-understanding .understanding-hero{padding:66px 0 64px}
+  .ed-understanding .understanding-hero-copy h1{font-size:clamp(42px,11vw,58px)}
+  .ed-understanding .understanding-meaning,
+  .ed-understanding .understanding-band,
+  .ed-understanding .understanding-teacher{padding:72px 0}
+  .ed-understanding .understanding-meaning-grid{grid-template-columns:1fr}
+  .ed-understanding .understanding-meaning-card{min-height:0}
+  .ed-understanding .understanding-loop-section{padding:78px 0}
+  .ed-understanding .understanding-loop{grid-template-columns:1fr 1fr}
+  .ed-understanding .teacher-control-card{padding:32px 24px;border-radius:24px}
+  .ed-understanding .understanding-final{padding:64px 0}
+}
+
+@media(max-width:560px){
+  .ed-understanding .understanding-container{width:min(100% - 24px,1180px)}
+  .ed-understanding .understanding-hero-actions,
+  .ed-understanding .understanding-final-actions{display:grid;grid-template-columns:1fr;width:100%}
+  .ed-understanding .understanding-primary,
+  .ed-understanding .understanding-secondary{width:100%}
+  .ed-understanding .understanding-system{min-height:570px;border-radius:25px}
+  .ed-understanding .understanding-system::before{width:300px;height:300px}
+  .ed-understanding .understanding-system-hub{width:154px;height:154px}
+  .ed-understanding .understanding-system-hub strong{font-size:18px}
+  .ed-understanding .understanding-node{min-width:136px;padding:11px 12px;font-size:12px}
+  .ed-understanding .understanding-node--curriculum{left:14px;top:28px}
+  .ed-understanding .understanding-node--lesson{right:12px;top:118px}
+  .ed-understanding .understanding-node--practice{left:10px;top:230px}
+  .ed-understanding .understanding-node--assessment{right:10px;top:324px}
+  .ed-understanding .understanding-node--mastery{left:18px;bottom:72px}
+  .ed-understanding .understanding-node--next{right:14px;bottom:16px}
+  .ed-understanding .understanding-visual{min-height:390px}
+  .ed-understanding .curriculum-map{padding:22px 17px}
+  .ed-understanding .lesson-panel,
+  .ed-understanding .practice-panel,
+  .ed-understanding .mastery-panel{padding:18px}
+  .ed-understanding .lesson-window-body{padding:20px}
+  .ed-understanding .lesson-blocks{grid-template-columns:1fr}
+  .ed-understanding .practice-card{padding:18px}
+  .ed-understanding .understanding-loop{grid-template-columns:1fr}
+  .ed-understanding .understanding-loop-step{min-height:0}
+  .ed-understanding .teacher-control-card{padding:26px 18px}
+  .ed-understanding .teacher-control-row{grid-template-columns:38px 1fr}
+  .ed-understanding .teacher-control-row>span{grid-column:2;justify-self:start}
+}
