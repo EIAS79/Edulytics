@@ -1,0 +1,52 @@
+@using System.Globalization
+@{
+    var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl) => isPolish ? pl : en;
+    var currentUrl = $"{Context.Request.Path}{Context.Request.QueryString}";
+}
+<header class="ed-home-header">
+    <div class="ed-home-nav-shell">
+        <div class="ed-home-brand-row">
+            <a class="ed-home-brand" href="/" aria-label="Edulytics"><partial name="_LocalizedBrand" /></a>
+            <span class="ed-home-flag" aria-label="Polska"><span class="flag-top"></span><span class="flag-bottom"></span></span>
+            <span class="ed-home-lang-label">@(isPolish ? "PL" : "EN")</span>
+        </div>
+
+        <nav class="ed-home-links" aria-label="@L("Main navigation", "Nawigacja główna")">
+            <a href="/product/features">@L("Product", "Produkt")</a>
+            <a href="/teachers/overview">@L("Teachers", "Nauczyciele")</a>
+            <a href="/parents/overview">@L("Parents", "Rodzice")</a>
+            <a href="/schools/overview">@L("Schools & Education Leaders", "Szkoły i liderzy edukacji")</a>
+            <a href="/contact">@L("Contact", "Kontakt")</a>
+        </nav>
+
+        <div class="ed-home-actions">
+            <div class="ed-home-lang" aria-label="@L("Website language", "Język strony")">
+                <form asp-controller="Home" asp-action="SetCulture" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="culture" value="pl" />
+                    <input type="hidden" name="returnUrl" value="@currentUrl" />
+                    <button type="submit" class="@(isPolish ? "is-active" : "")">PL</button>
+                </form>
+                <form asp-controller="Home" asp-action="SetCulture" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="culture" value="en" />
+                    <input type="hidden" name="returnUrl" value="@currentUrl" />
+                    <button type="submit" class="@(!isPolish ? "is-active" : "")">EN</button>
+                </form>
+            </div>
+            <a class="ed-home-login" asp-controller="Account" asp-action="Login">@L("Log in", "Zaloguj się")</a>
+            <a class="ed-home-cta" href="/contact/request-demo">@L("Try Edulytics", "Wypróbuj Edulytics")</a>
+            <details class="ed-home-mobile-menu">
+                <summary aria-label="Menu">☰</summary>
+                <div class="ed-home-mobile-panel">
+                    <a href="/product/features">@L("Product", "Produkt")</a>
+                    <a href="/teachers/overview">@L("Teachers", "Nauczyciele")</a>
+                    <a href="/parents/overview">@L("Parents", "Rodzice")</a>
+                    <a href="/schools/overview">@L("Schools & Education Leaders", "Szkoły i liderzy edukacji")</a>
+                    <a href="/contact">@L("Contact", "Kontakt")</a>
+                </div>
+            </details>
+        </div>
+    </div>
+</header>
