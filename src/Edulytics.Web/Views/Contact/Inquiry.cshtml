@@ -1,0 +1,128 @@
+@using Edulytics.Web.Support
+@using System.Globalization
+@model string
+@{
+    Layout = "_PublicLayout";
+    var isDemo = string.Equals(Model, "demo", StringComparison.OrdinalIgnoreCase);
+    var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl) => isPolish ? pl : en;
+    ViewData["Title"] = isDemo ? L("Request a demo", "Poproś o demo") : L("Sales enquiry", "Zapytanie sprzedażowe");
+    var subjectEn = isDemo ? "Edulytics demo request" : "Edulytics sales enquiry";
+    var subjectPl = isDemo ? "Prośba o demo Edulytics" : "Zapytanie sprzedażowe Edulytics";
+    var subjectAr = isDemo ? "طلب عرض توضيحي لـ Edulytics" : "استفسار مبيعات Edulytics";
+}
+
+<div class="ed-home ed-contact-v28" data-contact-page="@(isDemo ? "demo" : "sales")">
+    <partial name="_PublicSiteHeader" />
+
+    <main class="ed-inquiry-v28">
+        <div class="ed-contact-container ed-inquiry-grid">
+            <section class="ed-inquiry-copy">
+                <a class="ed-inquiry-back" href="/contact" data-contact-key="backContact">@L("Back to contact", "Wróć do kontaktu")</a>
+                <span class="ed-contact-eyebrow" data-contact-key="@(isDemo ? "demoEyebrow" : "salesEyebrow")">
+                    @(isDemo ? L("EDULYTICS DEMO", "DEMO EDULYTICS") : L("SALES ENQUIRY", "ZAPYTANIE SPRZEDAŻOWE"))
+                </span>
+                <h1 data-contact-key="@(isDemo ? "demoPageTitle" : "salesPageTitle")">
+                    @(isDemo
+                        ? L("See Edulytics in your school's context.", "Zobacz Edulytics w kontekście swojej szkoły.")
+                        : L("Talk to us about Edulytics.", "Porozmawiaj z nami o Edulytics."))
+                </h1>
+                <p data-contact-key="@(isDemo ? "demoPageLead" : "salesPageLead")">
+                    @(isDemo
+                        ? L("Share a little about your role and school so the walkthrough can focus on what you want to evaluate.", "Opowiedz krótko o swojej roli i szkole, aby prezentacja mogła skupić się na tym, co chcesz ocenić.")
+                        : L("Tell us about your school or requirement and we will help you determine whether Edulytics fits and how to get started.", "Opowiedz nam o swojej szkole lub potrzebie, a pomożemy ocenić dopasowanie Edulytics i sposób rozpoczęcia pracy."))
+                </p>
+
+                <div class="ed-inquiry-trust">
+                    <div class="ed-inquiry-trust-item"><span>◎</span><div data-contact-key="trustCurriculum">@L("Built around curriculum and learning outcomes", "Oparte na programie i efektach uczenia się")</div></div>
+                    <div class="ed-inquiry-trust-item"><span>✓</span><div data-contact-key="trustTeacher">@L("Teachers remain in control of formal assessment", "Nauczyciel zachowuje kontrolę nad formalnym ocenianiem")</div></div>
+                    <div class="ed-inquiry-trust-item"><span>↻</span><div data-contact-key="trustPractice">@L("Practice stays separate from official school grades", "Ćwiczenia pozostają oddzielone od oficjalnych ocen szkolnych")</div></div>
+                    <div class="ed-inquiry-trust-item"><span>→</span><div data-contact-key="trustNext">@L("Results lead to a clear next learning step", "Wyniki prowadzą do jasnego kolejnego kroku w nauce")</div></div>
+                </div>
+            </section>
+
+            <section class="ed-inquiry-form-card">
+                <h2 data-contact-key="@(isDemo ? "formDemoTitle" : "formSalesTitle")">
+                    @(isDemo ? L("Request your demo", "Poproś o demo") : L("Tell us what you need", "Powiedz nam, czego potrzebujesz"))
+                </h2>
+                <p data-contact-key="@(isDemo ? "formDemoLead" : "formSalesLead")">
+                    @(isDemo
+                        ? L("Complete the details below and we will prepare your request as a ready-to-send email.", "Uzupełnij dane poniżej, a przygotujemy gotową wiadomość z prośbą o demo.")
+                        : L("Complete the details below to open a structured email to the Edulytics team.", "Uzupełnij dane poniżej, aby otworzyć uporządkowaną wiadomość do zespołu Edulytics."))
+                </p>
+
+                <form class="ed-inquiry-form"
+                      data-contact-mail-form
+                      data-recipient="@SupportContactOptions.Email"
+                      data-subject="@subjectEn"
+                      data-subject-pl="@subjectPl"
+                      data-subject-ar="@subjectAr">
+                    <div class="ed-inquiry-row">
+                        <div class="ed-inquiry-field">
+                            <label for="first-name" data-contact-key="firstName">@L("First name", "Imię")</label>
+                            <input id="first-name" name="firstName" autocomplete="given-name" required />
+                        </div>
+                        <div class="ed-inquiry-field">
+                            <label for="last-name" data-contact-key="lastName">@L("Last name", "Nazwisko")</label>
+                            <input id="last-name" name="lastName" autocomplete="family-name" required />
+                        </div>
+                    </div>
+
+                    <div class="ed-inquiry-field">
+                        <label for="work-email" data-contact-key="email">@L("Work email", "E-mail służbowy")</label>
+                        <input id="work-email" name="email" type="email" autocomplete="email" required />
+                    </div>
+
+                    <div class="ed-inquiry-field">
+                        <label for="organisation" data-contact-key="organisation">@L("School or organisation", "Szkoła lub organizacja")</label>
+                        <input id="organisation" name="organisation" autocomplete="organization" required />
+                    </div>
+
+                    <div class="ed-inquiry-row">
+                        <div class="ed-inquiry-field">
+                            <label for="role" data-contact-key="role">@L("Role", "Rola")</label>
+                            <select id="role" name="role" required>
+                                <option value="" data-contact-key="rolePlaceholder">@L("Choose your role", "Wybierz rolę")</option>
+                                <option value="Teacher" data-contact-key="roleTeacher">@L("Teacher", "Nauczyciel")</option>
+                                <option value="Education leader / school administration" data-contact-key="roleLeader">@L("Education leader / school administration", "Lider edukacji / administracja szkoły")</option>
+                                <option value="Subject supervisor" data-contact-key="roleSupervisor">@L("Subject supervisor", "Opiekun przedmiotu")</option>
+                                <option value="Parent" data-contact-key="roleParent">@L("Parent", "Rodzic")</option>
+                                <option value="Other" data-contact-key="roleOther">@L("Other", "Inna")</option>
+                            </select>
+                        </div>
+                        <div class="ed-inquiry-field">
+                            <label for="country" data-contact-key="country">@L("Country", "Kraj")</label>
+                            <input id="country" name="country" autocomplete="country-name" />
+                        </div>
+                    </div>
+
+                    @if (isDemo)
+                    {
+                        <div class="ed-inquiry-field">
+                            <label for="students" data-contact-key="students">@L("Approximate number of students", "Przybliżona liczba uczniów")</label>
+                            <input id="students" name="students" inputmode="numeric" />
+                        </div>
+                    }
+
+                    <div class="ed-inquiry-field">
+                        <label for="message" data-contact-key="@(isDemo ? "messageDemo" : "message")">
+                            @(isDemo ? L("What would you like to see in the demo?", "Co chcesz zobaczyć podczas demo?") : L("What would you like to discuss?", "Co chcesz omówić?"))
+                        </label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button class="ed-inquiry-submit" type="submit" data-contact-key="@(isDemo ? "submitDemo" : "submitSales")">
+                        @(isDemo ? L("Prepare demo request", "Przygotuj prośbę o demo") : L("Prepare sales enquiry", "Przygotuj zapytanie sprzedażowe"))
+                    </button>
+                    <p class="ed-inquiry-note" data-contact-key="mailNote">
+                        @L(
+                            "Continuing opens your email app with a pre-filled message. Nothing is sent without your approval.",
+                            "Kontynuacja otworzy aplikację pocztową z wypełnioną wiadomością. Nic nie zostanie wysłane bez Twojej zgody.")
+                    </p>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <partial name="_PublicSiteFooter" />
+</div>
