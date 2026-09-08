@@ -23,13 +23,29 @@
   root.querySelectorAll('.ed-home-v6-audience-card').forEach((card, index) => {
     const copy = cardCopy[index];
     if (!copy) return;
+    const content = card.querySelector('.ed-home-v6-audience-photo')?.nextElementSibling;
     const title = card.querySelector('h3');
     const body = card.querySelector('p');
     const link = card.querySelector('a');
     const photo = card.querySelector('.ed-home-v6-audience-photo');
-    if (title) title.textContent = copy[0];
-    if (body) body.textContent = copy[1];
-    if (link) link.textContent = 'اعرف المزيد ←';
+
+    card.style.direction = 'rtl';
+    if (content) {
+      content.style.direction = 'rtl';
+      content.style.textAlign = 'right';
+    }
+    if (title) {
+      title.textContent = copy[0];
+      title.style.textAlign = 'right';
+    }
+    if (body) {
+      body.textContent = copy[1];
+      body.style.textAlign = 'right';
+    }
+    if (link) {
+      link.textContent = 'اعرف المزيد ←';
+      link.style.textAlign = 'right';
+    }
     if (photo) photo.setAttribute('aria-label', copy[0]);
   });
 
@@ -46,6 +62,7 @@
     if (!copy) return;
     const title = signal.querySelector('strong');
     const body = signal.querySelector('span');
+    signal.style.direction = 'rtl';
     if (title) title.textContent = copy[0];
     if (body) body.textContent = copy[1];
   });
