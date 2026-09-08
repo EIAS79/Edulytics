@@ -33,6 +33,13 @@ public sealed class HomeController : Controller
     }
 
     [AllowAnonymous]
+    [HttpGet("/product/learning-built-for-understanding")]
+    public IActionResult LearningBuiltForUnderstanding()
+    {
+        return View();
+    }
+
+    [AllowAnonymous]
     [HttpGet("/contact")]
     public IActionResult Contact()
     {
