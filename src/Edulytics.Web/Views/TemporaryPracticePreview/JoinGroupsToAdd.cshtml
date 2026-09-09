@@ -1,0 +1,180 @@
+@model Edulytics.Web.ViewModels.Platform.TemporaryPracticePreviewViewModel
+@using Edulytics.Web.Presentation
+@{
+    Layout = null;
+    var sections = new[]
+    {
+        new LessonReaderSection("01", "Explanation", "explanation", LessonPresentationParser.Parse(Model.Explanation, sectionKind: "explanation")),
+        new LessonReaderSection("02", "Key Concepts & Rules", "concepts", LessonPresentationParser.Parse(Model.KeyConceptsAndRules, sectionKind: "concepts")),
+        new LessonReaderSection("03", "Worked Examples", "examples", LessonPresentationParser.Parse(Model.WorkedExamples, sectionKind: "examples")),
+        new LessonReaderSection("04", "Step-by-Step Solutions", "steps", LessonPresentationParser.Parse(Model.StepByStepSolutions, orderedSteps: true, sectionKind: "steps")),
+        new LessonReaderSection("05", "Common Mistakes", "mistakes", LessonPresentationParser.Parse(Model.CommonMistakes, sectionKind: "mistakes")),
+        new LessonReaderSection("06", "Quick Summary", "summary", LessonPresentationParser.Parse(Model.QuickSummary, sectionKind: "summary"))
+    };
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>@Model.Title - Temporary Practice Preview</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/acceptance-corrective.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/round4-ux-display.css" asp-append-version="true" />
+    <style>
+        body { margin: 0; background: #f4f7fa; color: #17364a; }
+        .preview-wrap { width: min(1180px, calc(100% - 32px)); margin: 28px auto 56px; }
+        .preview-notice { display: flex; justify-content: space-between; gap: 16px; align-items: center; margin-bottom: 18px; padding: 12px 16px; border: 1px solid #cfdce7; border-radius: 14px; background: #fff; font-size: .9rem; }
+        .preview-notice strong { color: #0b7285; }
+        .preview-tabs { display: inline-flex; gap: 6px; margin: 0 0 20px; padding: 5px; border: 1px solid #dbe5ef; border-radius: 999px; background: #fff; }
+        .preview-tab { min-height: 42px; padding: 9px 22px; border: 0; border-radius: 999px; background: transparent; color: #335168; font: inherit; font-weight: 900; cursor: pointer; }
+        .preview-tab.is-active { color: #fff; background: #0b7285; box-shadow: 0 5px 14px rgba(11,114,133,.2); }
+        [data-preview-panel][hidden] { display: none !important; }
+        .preview-lesson-card { padding: 24px; border: 1px solid #dce6ee; border-radius: 24px; background: #fff; box-shadow: 0 18px 45px rgba(30,61,80,.08); }
+        .preview-lesson-meta { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 26px; }
+        .preview-chip { padding: 7px 11px; border-radius: 999px; background: #edf5f7; color: #245161; font-size: .85rem; font-weight: 800; }
+        .preview-lesson-card h1 { margin: 8px 0; font-size: clamp(2rem, 4vw, 3.6rem); letter-spacing: -.04em; color: #123a48; }
+        .preview-unit { margin: 0; color: #567183; font-size: 1.08rem; }
+        .preview-lesson-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 24px; margin-top: 24px; }
+        .preview-outcomes { padding: 20px; border: 1px solid #dce6ee; border-radius: 18px; background: #f8fbfc; align-self: start; }
+        .preview-outcomes h2 { margin-top: 0; font-size: 1rem; }
+        .preview-outcome { padding: 12px 0; border-top: 1px solid #dde7ed; }
+        .preview-outcome:first-of-type { border-top: 0; }
+        .preview-outcome strong { display: block; color: #0b7285; }
+        .preview-outcome p { margin: 5px 0 0; font-size: .9rem; line-height: 1.45; }
+        .preview-empty { color: #6d8290; font-size: .9rem; line-height: 1.5; }
+
+        .preview-game-shell { position: relative; overflow: hidden; min-height: 610px; border: 1px solid #9bdde5; border-radius: 28px; background: radial-gradient(circle at 11% 18%, rgba(255,255,255,.58) 0 6%, transparent 7%), radial-gradient(circle at 82% 82%, rgba(255,255,255,.28) 0 9%, transparent 10%), linear-gradient(145deg, #c9f6f6 0%, #8be4ed 48%, #63d2df 100%); box-shadow: 0 22px 60px rgba(18,96,112,.17); color: #123a48; }
+        .preview-game-shell::before, .preview-game-shell::after { content: ""; position: absolute; border-radius: 999px; background: rgba(255,255,255,.18); pointer-events: none; }
+        .preview-game-shell::before { width: 330px; height: 330px; left: -120px; bottom: -170px; }
+        .preview-game-shell::after { width: 250px; height: 250px; right: -80px; top: 110px; }
+        .preview-game-topbar { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 22px 26px 14px; }
+        .preview-game-kicker { margin: 0; font-size: .84rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; color: #0c6677; }
+        .preview-game-counter { font-weight: 900; color: #174a59; white-space: nowrap; }
+        .preview-game-progress { position: relative; z-index: 1; height: 13px; margin: 0 26px; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,.58); box-shadow: inset 0 1px 3px rgba(15,82,96,.12); }
+        .preview-game-progress > span { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #0b7285, #20a87f); transition: width .25s ease; }
+        .preview-game-feedback { position: relative; z-index: 2; margin: 18px 26px 0; padding: 12px 16px; border-radius: 14px; font-weight: 900; text-align: center; }
+        .preview-game-feedback.is-correct { background: rgba(224,250,238,.92); color: #12633f; border: 1px solid #8fd8b0; }
+        .preview-game-feedback.is-incorrect { background: rgba(255,239,238,.92); color: #953c38; border: 1px solid #eab1ad; }
+        .preview-game-stage { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0,1fr) 280px; gap: 28px; align-items: stretch; padding: 30px 32px 34px; }
+        .preview-game-question { min-height: 430px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 34px; border: 1px solid rgba(255,255,255,.55); border-radius: 24px; background: rgba(255,255,255,.42); backdrop-filter: blur(3px); }
+        .preview-game-question-number { font-weight: 900; color: #0c6677; margin-bottom: 18px; }
+        .preview-game-question h2 { max-width: 760px; margin: 0 0 28px; font-size: clamp(2.4rem,6vw,5rem); line-height: 1.05; letter-spacing: -.04em; color: #103b49; }
+        .preview-game-answer { width: min(260px,100%); min-height: 72px; padding: 12px 20px; border: 3px solid #0b7285; border-radius: 16px; background: #fffbd0; color: #173f4d; text-align: center; font-size: 2rem; font-weight: 900; outline: none; box-shadow: 0 8px 20px rgba(14,89,104,.12); }
+        .preview-game-answer:focus { box-shadow: 0 0 0 5px rgba(11,114,133,.16), 0 8px 20px rgba(14,89,104,.12); }
+        .preview-game-side { display: flex; flex-direction: column; justify-content: center; padding: 18px; border: 1px solid rgba(11,114,133,.24); border-radius: 24px; background: rgba(23,159,178,.20); }
+        .preview-game-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+        .preview-game-tool { min-height: 44px; border: 1px solid rgba(7,93,108,.28); border-radius: 12px; background: rgba(255,255,255,.62); color: #075d6c; font-weight: 900; cursor: pointer; }
+        .preview-game-keypad { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+        .preview-game-key { aspect-ratio: 1; min-height: 58px; border: 0; border-radius: 50%; background: #075d6c; color: #fff; font-size: 1.45rem; font-weight: 900; cursor: pointer; box-shadow: 0 7px 16px rgba(3,64,75,.18); }
+        .preview-game-submit { width: 100%; min-height: 54px; margin-top: 16px; border: 0; border-radius: 15px; background: #0b7285; color: #fff; font-weight: 900; font-size: 1rem; cursor: pointer; box-shadow: 0 9px 18px rgba(5,92,108,.2); }
+        .preview-game-submit:disabled { opacity: .55; cursor: wait; }
+        .preview-game-finish { position: relative; z-index: 1; max-width: 680px; margin: 70px auto; padding: 40px; text-align: center; border-radius: 24px; background: rgba(255,255,255,.72); box-shadow: 0 18px 42px rgba(18,96,112,.14); }
+        .preview-game-finish h2 { margin: 0 0 12px; font-size: 2rem; color: #103b49; }
+        .preview-game-score { margin: 0; font-size: 2.5rem; font-weight: 950; color: #0b7285; }
+        .preview-restart { margin-top: 20px; min-height: 48px; padding: 0 22px; border: 0; border-radius: 14px; background: #0b7285; color: #fff; font-weight: 900; cursor: pointer; }
+        @@media (max-width: 860px) { .preview-lesson-layout { grid-template-columns: 1fr; } .preview-game-stage { grid-template-columns: 1fr; padding: 22px; } .preview-game-question { min-height: 330px; } .preview-game-side { width: min(380px,100%); margin: 0 auto; } }
+        @@media (max-width: 520px) { .preview-wrap { width: min(100% - 20px, 1180px); margin-top: 10px; } .preview-notice { align-items: flex-start; flex-direction: column; } .preview-tabs { display: flex; width: 100%; } .preview-tab { flex: 1; padding-inline: 12px; } .preview-lesson-card { padding: 16px; border-radius: 18px; } .preview-game-shell { border-radius: 20px; } .preview-game-topbar { padding: 18px 18px 12px; } .preview-game-progress { margin-inline: 18px; } .preview-game-feedback { margin-inline: 18px; } .preview-game-stage { padding: 18px; gap: 16px; } .preview-game-question { padding: 22px 14px; } .preview-game-question h2 { font-size: 2.5rem; } .preview-game-key { min-height: 52px; } }
+    </style>
+</head>
+<body>
+<div class="preview-wrap" data-temporary-practice-preview>
+    <div class="preview-notice">
+        <div><strong>Temporary review link</strong> · This page is not part of the SuperAdmin product UI.</div>
+        <div>No student account, score, mastery, or attempt data is created.</div>
+    </div>
+
+    <div class="preview-tabs" role="tablist" aria-label="Lesson preview modes">
+        <button class="preview-tab is-active" type="button" role="tab" aria-selected="true" data-preview-tab="lesson">Lesson</button>
+        <button class="preview-tab" type="button" role="tab" aria-selected="false" data-preview-tab="practice">Practice</button>
+    </div>
+
+    <section data-preview-panel="lesson">
+        <div class="preview-lesson-card">
+            <span class="student-subject-code">@Model.SubjectCode</span>
+            <h1>@Model.Title</h1>
+            <p class="preview-unit">@Model.UnitTitle</p>
+            <div class="preview-lesson-meta">
+                <span class="preview-chip">@Model.FrameworkName</span>
+                <span class="preview-chip">@Model.GradeLabel</span>
+                <span class="preview-chip">@Model.SubjectName</span>
+                <span class="preview-chip">@Model.LessonCode</span>
+            </div>
+
+            <div class="preview-lesson-layout">
+                <main>
+                    @foreach (var section in sections)
+                    {
+                        <partial name="_LessonReaderSection" model="section" />
+                    }
+                </main>
+                <aside class="preview-outcomes">
+                    <h2>Learning outcomes / reference</h2>
+                    @if (Model.Outcomes.Count == 0)
+                    {
+                        <div class="preview-empty">This Cambridge lesson is presented as pedagogical lesson content without manufacturing an official outcome mapping.</div>
+                    }
+                    else
+                    {
+                        @foreach (var outcome in Model.Outcomes.OrderBy(x => x.Order))
+                        {
+                            <div class="preview-outcome">
+                                <strong>@outcome.Code</strong>
+                                <p>@outcome.Description</p>
+                            </div>
+                        }
+                    }
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section data-preview-panel="practice" hidden>
+        <div class="preview-game-shell">
+            <div class="preview-game-topbar">
+                <div>
+                    <p class="preview-game-kicker">Practice</p>
+                    <strong>@Model.Title</strong>
+                </div>
+                <div class="preview-game-counter" data-preview-counter>Question 1 / 10</div>
+            </div>
+            <div class="preview-game-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <span data-preview-progress></span>
+            </div>
+            <div class="preview-game-feedback" data-preview-feedback hidden></div>
+            <div class="preview-game-stage" data-preview-game-stage>
+                <div class="preview-game-question">
+                    <div class="preview-game-question-number" data-preview-question-number>Question 1</div>
+                    <h2 data-preview-question>7 + 5 = ?</h2>
+                    <input class="preview-game-answer" data-preview-answer inputmode="numeric" maxlength="3" autocomplete="off" aria-label="Your answer" />
+                </div>
+                <aside class="preview-game-side">
+                    <div class="preview-game-tools">
+                        <button class="preview-game-tool" type="button" data-practice-key="clear">C</button>
+                        <button class="preview-game-tool" type="button" data-practice-key="backspace">⌫</button>
+                    </div>
+                    <div class="preview-game-keypad" aria-label="Numeric keypad">
+                        @for (var digit = 1; digit <= 9; digit++)
+                        {
+                            <button class="preview-game-key" type="button" data-practice-key="@digit">@digit</button>
+                        }
+                        <span aria-hidden="true"></span>
+                        <button class="preview-game-key" type="button" data-practice-key="0">0</button>
+                        <span aria-hidden="true"></span>
+                    </div>
+                    <button class="preview-game-submit" type="button" data-preview-check>Check answer</button>
+                </aside>
+            </div>
+            <div class="preview-game-finish" data-preview-finish hidden>
+                <h2>Practice complete</h2>
+                <p class="preview-game-score" data-preview-final-score>0%</p>
+                <p data-preview-final-detail></p>
+                <button class="preview-restart" type="button" data-preview-restart>Try another set</button>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="~/js/temporary-practice-preview.js" asp-append-version="true"></script>
+</body>
+</html>
