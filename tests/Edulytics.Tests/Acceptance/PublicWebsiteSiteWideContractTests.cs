@@ -1,0 +1,200 @@
+using System.Text.RegularExpressions;
+
+namespace Edulytics.Tests.Acceptance;
+
+public sealed class PublicWebsiteSiteWideContractTests
+{
+    [Fact]
+    public void EveryRegisteredMarketingPage_HasEnglishPolishAndArabicContent()
+    {
+        var root = FindRoot();
+        var controller = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Controllers/HomeController.cs"));
+
+        var keys = Regex.Matches(
+                controller,
+                "\\[\\\"(?<key>(?:product|teachers|parents|schools|students|company)/[^\\\"]+)\\\"\\]")
+            .Select(match => match.Groups["key"].Value)
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+
+        Assert.NotEmpty(keys);
+
+        foreach (var language in new[] { "en", "pl", "ar" })
+        {
+            var catalog = File.ReadAllText(Path.Combine(
+                root,
+                $"src/Edulytics.Web/wwwroot/js/public-content-pages-v27-{language}.js"));
+
+            foreach (var key in keys)
+            {
+                Assert.Contains(
+                    $"\"{key}\"",
+                    catalog,
+                    StringComparison.Ordinal);
+            }
+        }
+    }
+
+    [Fact]
+    public void PublicLayout_LoadsArabicRtlAndGlobalUiGuardsLast()
+    {
+        var root = FindRoot();
+        var layout = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Shared/_PublicLayout.cshtml"));
+
+        var rtlCss = layout.IndexOf(
+            "public-arabic-rtl-v29.css",
+            StringComparison.Ordinal);
+        var contentRuntime = layout.IndexOf(
+            "public-content-pages-v27.js",
+            StringComparison.Ordinal);
+        var globalUi = layout.IndexOf(
+            "public-site-global-ui-v30.js",
+            StringComparison.Ordinal);
+
+        Assert.True(rtlCss >= 0);
+        Assert.True(globalUi >= 0);
+        Assert.True(globalUi > contentRuntime);
+        Assert.Contains(
+            "edulytics.public.siteLanguage",
+            layout,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "document.documentElement.dir = 'rtl'",
+            layout,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void GlobalPublicUi_ProtectsEveryPublicShellFromMailClientAndStuckArabicState()
+    {
+        var root = FindRoot();
+        var script = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/public-site-global-ui-v30.js"));
+
+        Assert.Contains(
+            "a[href^=\"mailto:\"]",
+            script,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "'/contact/request-demo'",
+            script,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "'/contact/support'",
+            script,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "'/contact/sales-enquiry'",
+            script,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "'/contact/message'",
+            script,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "window.localStorage.removeItem(storageKey)",
+            script,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "data-public-arabic-switch",
+            script,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void PublicContactAndLegalPages_UseThePublicShell()
+    {
+        var root = FindRoot();
+
+        foreach (var relativePath in new[]
+        {
+            "src/Edulytics.Web/Views/Contact/Index.cshtml",
+            "src/Edulytics.Web/Views/Contact/Help.cshtml",
+            "src/Edulytics.Web/Views/Contact/Inquiry.cshtml",
+            "src/Edulytics.Web/Views/Home/Index.cshtml",
+            "src/Edulytics.Web/Views/Home/LearningBuiltForUnderstanding.cshtml",
+            "src/Edulytics.Web/Views/Home/PublicContentPage.cshtml",
+            "src/Edulytics.Web/Views/Home/ContentSources.cshtml"
+        })
+        {
+            var view = File.ReadAllText(Path.Combine(root, relativePath));
+            Assert.Contains(
+                "_PublicLayout",
+                view,
+                StringComparison.Ordinal);
+        }
+
+        var sources = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Home/ContentSources.cshtml"));
+
+        Assert.Contains("_PublicSiteHeader", sources, StringComparison.Ordinal);
+        Assert.Contains("_PublicSiteFooter", sources, StringComparison.Ordinal);
+        Assert.Contains("data-public-ar=\"contentSourcesTitle\"", sources, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void LegacyDemoRoute_IsRetiredIntoProtectedContactFlow()
+    {
+        var root = FindRoot();
+        var controller = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Controllers/OnboardingController.cs"));
+
+        Assert.Contains(
+            "Redirect(\"/contact/request-demo\")",
+            controller,
+            StringComparison.Ordinal);
+        Assert.Contains("[HttpPost(\"\")]", controller, StringComparison.Ordinal);
+        Assert.Contains("[ValidateAntiForgeryToken]", controller, StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "SubmitDemoRequestAsync",
+            controller,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void LoginStillPresentsExactlyTheFourSchoolAccountRoles()
+    {
+        var root = FindRoot();
+        var login = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Account/Login.cshtml"));
+
+        foreach (var role in new[]
+        {
+            "RoleNames.SchoolAdmin",
+            "RoleNames.SubjectSupervisor",
+            "RoleNames.Teacher",
+            "RoleNames.Student"
+        })
+        {
+            Assert.Contains(role, login, StringComparison.Ordinal);
+        }
+
+        Assert.DoesNotContain("Parents</strong>", login, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("Education leaders</strong>", login, StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static string FindRoot()
+    {
+        var directory = new DirectoryInfo(AppContext.BaseDirectory);
+
+        while (directory is not null)
+        {
+            if (File.Exists(Path.Combine(directory.FullName, "Edulytics.sln")))
+            {
+                return directory.FullName;
+            }
+
+            directory = directory.Parent;
+        }
+
+        throw new DirectoryNotFoundException("Edulytics solution root not found.");
+    }
+}
