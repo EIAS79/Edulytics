@@ -139,6 +139,26 @@ public sealed class PublicWebsiteSiteWideContractTests
     }
 
     [Fact]
+    public void LegacyDemoRoute_IsRetiredIntoProtectedContactFlow()
+    {
+        var root = FindRoot();
+        var controller = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Controllers/OnboardingController.cs"));
+
+        Assert.Contains(
+            "Redirect(\"/contact/request-demo\")",
+            controller,
+            StringComparison.Ordinal);
+        Assert.Contains("[HttpPost(\"\")]", controller, StringComparison.Ordinal);
+        Assert.Contains("[ValidateAntiForgeryToken]", controller, StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "SubmitDemoRequestAsync",
+            controller,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void LoginStillPresentsExactlyTheFourSchoolAccountRoles()
     {
         var root = FindRoot();
