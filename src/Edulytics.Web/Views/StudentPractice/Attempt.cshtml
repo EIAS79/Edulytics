@@ -3,6 +3,7 @@
 @using Edulytics.Services.Practice
 @model PracticeAttemptDetails
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonPracticeResource> P
 @{
     Layout = "_StudentLayout";
     ViewData["Title"] = S["PrivatePracticeAttemptTitle"].Value;
@@ -227,9 +228,10 @@
 {
     var currentQuestion = orderedQuestions.FirstOrDefault(x => !x.Answered);
     var prompt = currentQuestion?.Prompt ?? string.Empty;
-    var optionMatches = currentQuestion is null
-        ? MatchCollection.Empty
-        : Regex.Matches(prompt, @"(?<![A-Za-z0-9])([A-D])\)\s*", RegexOptions.CultureInvariant);
+    var optionMatches = Regex.Matches(
+        prompt,
+        @"(?<![A-Za-z0-9])([A-D])\)\s*",
+        RegexOptions.CultureInvariant);
     var isMultipleChoice = currentQuestion is not null && optionMatches.Count >= 2 && optionMatches[0].Index > 0;
     var stem = isMultipleChoice ? prompt[..optionMatches[0].Index].Trim() : prompt;
     var choices = new List<(string Label, string Value)>();
@@ -249,7 +251,7 @@
     <section class="lesson-game-shell" aria-label="@S["PrivatePracticeAttemptTitle"]">
         <div class="lesson-game-topbar">
             <div>
-                <p class="lesson-game-kicker">@S["PracticeTab"]</p>
+                <p class="lesson-game-kicker">@P["Practice"]</p>
                 <strong>@S["PrivatePracticeAttemptTitle"]</strong>
             </div>
             <div class="lesson-game-counter">@S["Question"] @Math.Min(answeredCount + 1, totalQuestions) / @totalQuestions</div>
@@ -316,8 +318,8 @@
                     @if (!isMultipleChoice)
                     {
                         <div class="lesson-game-tools">
-                            <button class="lesson-game-tool" type="button" data-practice-key="clear" aria-label="@S["PracticeClear"]">C</button>
-                            <button class="lesson-game-tool" type="button" data-practice-key="backspace" aria-label="@S["PracticeBackspace"]">⌫</button>
+                            <button class="lesson-game-tool" type="button" data-practice-key="clear" aria-label="@P["Clear"]">C</button>
+                            <button class="lesson-game-tool" type="button" data-practice-key="backspace" aria-label="@P["Backspace"]">⌫</button>
                         </div>
                         <div class="lesson-game-keypad" aria-label="@S["YourAnswer"]">
                             @for (var digit = 1; digit <= 9; digit++)
