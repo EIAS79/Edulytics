@@ -3,20 +3,23 @@ using Edulytics.Core.Enums;
 using Edulytics.Web.Controllers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.RateLimiting;
 
 namespace Edulytics.Tests.Phase25B;
 
 public sealed class Phase25BSecurityAndUiContractTests
 {
     [Fact]
-    public void PublicDemoPost_HasAntiForgeryAndRequestDemoRateLimit()
+    public void LegacyPublicDemoPost_IsRetiredAndAntiForged()
     {
         var method = typeof(OnboardingController).GetMethods()
-            .Single(x => x.Name == "Index" && x.GetCustomAttributes<HttpPostAttribute>().Any());
+            .Single(x => x.Name == "SubmitLegacyDemo" && x.GetCustomAttributes<HttpPostAttribute>().Any());
+
         Assert.True(method.GetCustomAttributes<AllowAnonymousAttribute>().Any());
         Assert.True(method.GetCustomAttributes<ValidateAntiForgeryTokenAttribute>().Any());
-        Assert.Contains(method.GetCustomAttributes<EnableRateLimitingAttribute>(), x => x.PolicyName == "RequestDemo");
+
+        var controller = new OnboardingController();
+        var redirect = Assert.IsType<RedirectResult>(controller.SubmitLegacyDemo());
+        Assert.Equal("/contact/request-demo", redirect.Url);
     }
 
     [Fact]
