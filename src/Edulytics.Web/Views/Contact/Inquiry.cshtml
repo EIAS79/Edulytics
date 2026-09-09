@@ -7,7 +7,7 @@
     var isSupport = string.Equals(formType, "support", StringComparison.OrdinalIgnoreCase);
     var isGeneral = string.Equals(formType, "general", StringComparison.OrdinalIgnoreCase);
     var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
-    var humanVerificationToken = ViewData["HumanVerificationToken"] as string ?? string.Empty;
+    var turnstileSiteKey = ViewData["TurnstileSiteKey"] as string ?? string.Empty;
     string L(string en, string pl) => isPolish ? pl : en;
 
     string PageTitle() => formType switch
@@ -187,7 +187,6 @@
                       novalidate>
                     @Html.AntiForgeryToken()
                     <input type="hidden" name="formType" value="@formType" />
-                    <input type="hidden" name="humanVerificationToken" value="@humanVerificationToken" />
 
                     <div aria-hidden="true"
                          style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">
@@ -295,22 +294,34 @@
                                   required></textarea>
                     </div>
 
-                    <label class="ed-human-check" for="human-confirmed">
-                        <input id="human-confirmed"
-                               name="humanConfirmed"
-                               type="checkbox"
-                               value="true"
-                               required />
-                        <span data-contact-key="humanCheck">@L("I'm not a robot", "Nie jestem robotem")</span>
-                    </label>
-                    <p class="ed-inquiry-note" data-contact-key="humanCheckNote">
-                        @L(
-                            "This confirmation is validated on the server together with anti-forgery, bot detection and rate limiting.",
-                            "Potwierdzenie jest sprawdzane na serwerze razem z ochroną przed fałszowaniem żądań, wykrywaniem botów i limitami żądań.")
-                    </p>
+                    @if (!string.IsNullOrWhiteSpace(turnstileSiteKey))
+                    {
+                        <div class="ed-turnstile-wrap" aria-label="@L("Security verification", "Weryfikacja bezpieczeństwa")">
+                            <div class="cf-turnstile"
+                                 data-sitekey="@turnstileSiteKey"
+                                 data-action="public_contact"
+                                 data-theme="light"
+                                 data-size="flexible"
+                                 data-language="auto"></div>
+                        </div>
+                        <p class="ed-inquiry-note" data-contact-key="turnstileNote">
+                            @L(
+                                "Protected by Cloudflare Turnstile. Verification is checked again on the server before any email is sent.",
+                                "Formularz jest chroniony przez Cloudflare Turnstile. Weryfikacja jest ponownie sprawdzana na serwerze przed wysłaniem wiadomości.")
+                        </p>
+                    }
+                    else
+                    {
+                        <p class="ed-inquiry-note" role="alert">
+                            @L(
+                                "Security verification is temporarily unavailable. Please try again later.",
+                                "Weryfikacja bezpieczeństwa jest tymczasowo niedostępna. Spróbuj ponownie później.")
+                        </p>
+                    }
 
                     <button class="ed-inquiry-submit"
                             type="submit"
+                            @(string.IsNullOrWhiteSpace(turnstileSiteKey) ? "disabled" : null)
                             data-contact-key="@SubmitKey()">
                         @switch (formType)
                         {
@@ -348,3 +359,8 @@
 
     <partial name="_PublicSiteFooter" />
 </div>
+
+@if (!string.IsNullOrWhiteSpace(turnstileSiteKey))
+{
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+}
