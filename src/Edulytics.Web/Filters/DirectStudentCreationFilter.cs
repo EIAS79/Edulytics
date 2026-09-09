@@ -50,7 +50,7 @@ public sealed class DirectStudentCreationFilter
         }
 
         if (context.Controller is not Controller controller ||
-            !controller.User.IsInRole(RoleNames.SubjectSupervisor) ||
+            !CanDirectlyCreateStudent(controller) ||
             !Guid.TryParse(
                 controller.User.FindFirstValue(
                     ClaimTypes.NameIdentifier),
@@ -61,10 +61,21 @@ public sealed class DirectStudentCreationFilter
         }
 
         model.RoleOptions =
-        [
-            new(RoleNames.Teacher, "RoleTeacher"),
-            new(RoleNames.Student, "RoleStudent")
-        ];
+            controller.User.IsInRole(RoleNames.SuperAdmin)
+                ?
+                [
+                    new(RoleNames.SchoolAdmin, "RoleSchoolAdmin"),
+                    new(
+                        RoleNames.SubjectSupervisor,
+                        "RoleSubjectSupervisor"),
+                    new(RoleNames.Teacher, "RoleTeacher"),
+                    new(RoleNames.Student, "RoleStudent")
+                ]
+                :
+                [
+                    new(RoleNames.Teacher, "RoleTeacher"),
+                    new(RoleNames.Student, "RoleStudent")
+                ];
 
         model.StudentClasses =
             await _classes.ListAsync(
@@ -269,6 +280,11 @@ public sealed class DirectStudentCreationFilter
                     schoolId = model.SchoolId
                 });
     }
+
+    private static bool CanDirectlyCreateStudent(
+        Controller controller) =>
+        controller.User.IsInRole(RoleNames.SubjectSupervisor) ||
+        controller.User.IsInRole(RoleNames.SuperAdmin);
 
     private static bool IsDirectStudentCreate(
         ActionExecutingContext context,
