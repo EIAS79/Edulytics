@@ -109,6 +109,20 @@ html[dir="rtl"] .ed-help-search::before {
   right: 18px !important;
 }
 
+/* Give Arabic enquiry headlines enough desktop measure to avoid heavy wrapping. */
+@media (min-width: 981px) {
+  html[dir="rtl"] .ed-contact-v28 .ed-inquiry-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(460px, .92fr);
+    gap: 52px;
+  }
+
+  html[dir="rtl"] .ed-contact-v28 .ed-inquiry-copy h1 {
+    max-width: 620px;
+    font-size: clamp(2.8rem, 4vw, 3.9rem);
+    line-height: 1.12;
+  }
+}
+
 /* Marketing/content pages use logical alignment in Arabic. */
 html[dir="rtl"] .ed-content-section-head.is-left {
   margin-left: auto;

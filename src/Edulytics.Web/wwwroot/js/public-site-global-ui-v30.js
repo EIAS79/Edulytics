@@ -59,7 +59,21 @@
     languageHost.appendChild(button);
   };
 
-  root.querySelectorAll('.ed-home-lang').forEach(installArabicSwitch);
+  const removeDuplicateArabicSwitches = languageHost => {
+    if (!languageHost) return;
+    const canonical = languageHost.querySelector('[data-public-arabic-switch]');
+    if (!canonical) return;
+
+    Array.from(languageHost.children).forEach(child => {
+      if (child === canonical || child.contains(canonical)) return;
+      if ((child.textContent || '').trim().toUpperCase() === 'AR') child.remove();
+    });
+  };
+
+  root.querySelectorAll('.ed-home-lang').forEach(languageHost => {
+    installArabicSwitch(languageHost);
+    removeDuplicateArabicSwitches(languageHost);
+  });
 
   if (language !== 'ar') return;
 
@@ -73,6 +87,7 @@
     button.classList.toggle('is-active', button.hasAttribute('data-public-arabic-switch'));
   });
 
+  // The compact AR label beside the logo is intentionally preserved.
   root.querySelectorAll('.ed-home-lang-label').forEach(label => { label.textContent = 'AR'; });
   root.querySelectorAll('.ed-home-flag').forEach(flag => {
     flag.hidden = true;
