@@ -33,6 +33,7 @@ public interface IStudentRoleProvisioningOperations
 
     Task<StudentRoleProvisioningOperationResult> CreateProfileAsync(
         Guid actorUserId,
+        Guid schoolId,
         Guid targetUserId,
         string studentNumber,
         string firstName,
@@ -41,18 +42,21 @@ public interface IStudentRoleProvisioningOperations
 
     Task<StudentRoleProvisioningOperationResult> ArchiveProfileAsync(
         Guid actorUserId,
+        Guid schoolId,
         Guid studentProfileId,
         byte[] expectedRowVersion,
         CancellationToken cancellationToken = default);
 
     Task<StudentRoleProvisioningOperationResult> RestoreProfileAsync(
         Guid actorUserId,
+        Guid schoolId,
         Guid studentProfileId,
         byte[] expectedRowVersion,
         CancellationToken cancellationToken = default);
 
     Task<StudentRoleProvisioningOperationResult> CreateEnrollmentAsync(
         Guid actorUserId,
+        Guid schoolId,
         Guid studentProfileId,
         Guid classGroupId,
         CancellationToken cancellationToken = default);
