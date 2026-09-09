@@ -1,6 +1,7 @@
 @model Edulytics.Services.LessonContent.StudentLessonDetail
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonContentResource> L
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonPracticeResource> P
 @using Edulytics.Web.Presentation
 @{
     Layout = "_StudentLayout";
@@ -69,13 +70,13 @@
 
     @if (practiceAdoptionId.HasValue)
     {
-        <nav class="lesson-mode-tabs" aria-label="@S["Lesson"] / @S["PracticeTab"]">
+        <nav class="lesson-mode-tabs" aria-label="@S["Lesson"] / @P["Practice"]">
             <span class="lesson-mode-tab lesson-mode-tab--active" aria-current="page">@S["Lesson"]</span>
             <form asp-controller="StudentPractice" asp-action="StartLessonPilot" method="post">
                 @Html.AntiForgeryToken()
                 <input type="hidden" name="curriculumAdoptionId" value="@practiceAdoptionId.Value" />
                 <input type="hidden" name="lessonId" value="@Model.Id" />
-                <button class="lesson-mode-tab lesson-mode-tab--practice" type="submit">@S["PracticeTab"]</button>
+                <button class="lesson-mode-tab lesson-mode-tab--practice" type="submit">@P["Practice"]</button>
             </form>
         </nav>
     }
