@@ -6,7 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Edulytics.Web.Controllers;
 
-[Authorize(Roles = RoleNames.SubjectSupervisor)]
+[Authorize(
+    Roles =
+        RoleNames.SubjectSupervisor + "," +
+        RoleNames.SuperAdmin)]
 public sealed class StudentCreationOptionsController : Controller
 {
     private readonly IStudentCreationClassCatalog _classes;
