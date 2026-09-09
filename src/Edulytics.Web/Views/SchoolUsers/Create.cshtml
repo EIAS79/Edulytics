@@ -98,7 +98,7 @@
                 </span>
             </div>
 
-            @if (isSubjectSupervisor)
+            @if (isSubjectSupervisor || isPlatformActor)
             {
                 <section id="direct-student-setup"
                          class="student-role-setup-fields"
@@ -187,7 +187,7 @@
     }
 </section>
 
-@if (isSubjectSupervisor)
+@if (isSubjectSupervisor || isPlatformActor)
 {
     <script>
         (() => {

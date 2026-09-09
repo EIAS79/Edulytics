@@ -107,6 +107,74 @@ public sealed class Phase05DirectStudentCreationContractTests
             StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void PlatformAdministrator_CanUseTheDirectStudentCreationFlow()
+    {
+        var root = FindRepositoryRoot();
+
+        var filter = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Web/Filters/DirectStudentCreationFilter.cs"));
+
+        Assert.Contains(
+            "RoleNames.SuperAdmin",
+            filter,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "CanDirectlyCreateStudent",
+            filter,
+            StringComparison.Ordinal);
+
+        var createView = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Web/Views/SchoolUsers/Create.cshtml"));
+
+        Assert.Contains(
+            "isSubjectSupervisor || isPlatformActor",
+            createView,
+            StringComparison.Ordinal);
+
+        var optionsController = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Web/Controllers/StudentCreationOptionsController.cs"));
+
+        Assert.Contains(
+            "RoleNames.SuperAdmin",
+            optionsController,
+            StringComparison.Ordinal);
+
+        var classCatalog = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Services/StudentSetup/StudentCreationClassCatalog.cs"));
+
+        Assert.Contains(
+            "IsPlatformActor",
+            classCatalog,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "IAcademicStructureRepository",
+            classCatalog,
+            StringComparison.Ordinal);
+
+        var operations = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Services/StudentSetup/StudentRoleProvisioningOperations.cs"));
+
+        Assert.Contains(
+            "IsPlatformActorForActiveSchoolAsync",
+            operations,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "RoleNames.SuperAdmin",
+            operations,
+            StringComparison.Ordinal);
+    }
+
     private static string FindRepositoryRoot()
     {
         var directory =

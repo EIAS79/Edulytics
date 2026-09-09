@@ -150,6 +150,7 @@ public sealed class StudentRoleProvisioningService
             var create =
                 await _operations.CreateProfileAsync(
                     actorUserId,
+                    schoolId,
                     targetUserId,
                     studentNumber,
                     firstName,
@@ -219,6 +220,7 @@ public sealed class StudentRoleProvisioningService
             var restore =
                 await _operations.RestoreProfileAsync(
                     actorUserId,
+                    schoolId,
                     context.StudentProfileId!.Value,
                     context.ProfileRowVersion,
                     cancellationToken);
@@ -329,6 +331,7 @@ public sealed class StudentRoleProvisioningService
         var enrollment =
             await _operations.CreateEnrollmentAsync(
                 actorUserId,
+                schoolId,
                 context.StudentProfileId.Value,
                 selectedClass.Id,
                 cancellationToken);
@@ -409,6 +412,7 @@ public sealed class StudentRoleProvisioningService
                 var archive =
                     await _operations.ArchiveProfileAsync(
                         actorUserId,
+                        schoolId,
                         current.StudentProfileId.Value,
                         current.ProfileRowVersion,
                         cancellationToken);
