@@ -47,9 +47,9 @@
     trustPractice: 'التدريب منفصل عن الدرجات المدرسية الرسمية',
     trustNext: 'النتائج تقود إلى خطوة تعليمية تالية واضحة',
     formSalesTitle: 'أخبرنا بما تحتاج إليه',
-    formSalesLead: 'املأ البيانات التالية لفتح رسالة بريد منظّمة إلى فريق Edulytics.',
+    formSalesLead: 'املأ البيانات التالية وأرسل استفسارك مباشرة من الموقع.',
     formDemoTitle: 'اطلب عرضًا توضيحيًا',
-    formDemoLead: 'املأ البيانات التالية وسنجهّز طلبك في رسالة بريد جاهزة للإرسال.',
+    formDemoLead: 'املأ البيانات التالية وأرسل طلب العرض مباشرة إلى فريق Edulytics.',
     firstName: 'الاسم',
     lastName: 'اسم العائلة',
     email: 'البريد الإلكتروني للعمل',
@@ -65,9 +65,9 @@
     students: 'عدد الطلاب التقريبي',
     message: 'ما الذي تريد مناقشته؟',
     messageDemo: 'ما الذي تريد رؤيته في العرض؟',
-    submitSales: 'جهّز استفسار المبيعات',
-    submitDemo: 'جهّز طلب العرض',
-    mailNote: 'عند المتابعة سيتم فتح تطبيق البريد لديك برسالة مُعبأة مسبقًا. لن يتم إرسال أي شيء دون موافقتك.',
+    submitSales: 'إرسال استفسار المبيعات',
+    submitDemo: 'إرسال طلب العرض',
+    mailNote: 'يتم إرسال رسالتك بأمان من داخل الموقع ولن يتم فتح أي تطبيق بريد.',
 
     helpEyebrow: 'مركز مساعدة Edulytics',
     helpPageTitle: 'ما الذي تحتاج إلى مساعدة فيه؟',
@@ -89,6 +89,30 @@
     noHelpResults: 'لم نجد قسمًا مطابقًا. جرّب كلمات أخرى أو تواصل معنا مباشرة.'
   };
 
+  const formMessages = {
+    en: {
+      sending: 'Sending your message…',
+      sent: 'Your message has been sent successfully. We will get back to you soon.',
+      validation: 'Please check the form fields and try again.',
+      rateLimited: 'Too many requests were sent from this connection. Please wait and try again later.',
+      failed: 'We could not send your message right now. Please try again later.'
+    },
+    pl: {
+      sending: 'Wysyłanie wiadomości…',
+      sent: 'Wiadomość została wysłana. Skontaktujemy się z Tobą wkrótce.',
+      validation: 'Sprawdź pola formularza i spróbuj ponownie.',
+      rateLimited: 'Z tego połączenia wysłano zbyt wiele żądań. Odczekaj chwilę i spróbuj ponownie później.',
+      failed: 'Nie udało się teraz wysłać wiadomości. Spróbuj ponownie później.'
+    },
+    ar: {
+      sending: 'جارٍ إرسال رسالتك…',
+      sent: 'تم إرسال رسالتك بنجاح. سنتواصل معك في أقرب وقت.',
+      validation: 'راجع بيانات النموذج وحاول مرة أخرى.',
+      rateLimited: 'تم إرسال عدد كبير من الطلبات من هذا الاتصال. انتظر قليلًا ثم حاول لاحقًا.',
+      failed: 'تعذّر إرسال رسالتك الآن. حاول مرة أخرى لاحقًا.'
+    }
+  };
+
   if (language === 'ar') {
     document.documentElement.dir = 'rtl';
     root.querySelectorAll('[data-contact-key]').forEach(node => {
@@ -101,34 +125,78 @@
     });
   }
 
-  root.querySelectorAll('[data-contact-mail-form]').forEach(form => {
-    form.addEventListener('submit', event => {
+  root.querySelectorAll('[data-contact-server-form]').forEach(form => {
+    const button = form.querySelector('button[type="submit"]');
+    const status = form.querySelector('[data-contact-form-status]');
+    if (!button || !status) return;
+
+    const idleButtonText = button.textContent.trim();
+    const messages = formMessages[language] || formMessages.en;
+
+    const setStatus = (message, state) => {
+      status.textContent = message || '';
+      status.dataset.state = state || '';
+      status.style.fontWeight = message ? '700' : '';
+      status.style.color = state === 'success'
+        ? '#176b55'
+        : state === 'error'
+          ? '#a63737'
+          : '#526b86';
+    };
+
+    form.addEventListener('submit', async event => {
       event.preventDefault();
-      if (!form.reportValidity()) return;
 
-      const recipient = form.dataset.recipient || '';
-      const subject = language === 'ar'
-        ? (form.dataset.subjectAr || form.dataset.subject || 'Edulytics')
-        : language === 'pl'
-          ? (form.dataset.subjectPl || form.dataset.subject || 'Edulytics')
-          : (form.dataset.subject || 'Edulytics');
-
-      const data = new FormData(form);
-      const lines = [];
-      for (const [key, value] of data.entries()) {
-        const field = form.elements.namedItem(key);
-        if (!field || !String(value).trim()) continue;
-        let label = key;
-        const id = field.id;
-        if (id) {
-          const labelNode = form.querySelector(`label[for="${CSS.escape(id)}"]`);
-          if (labelNode) label = labelNode.textContent.trim();
-        }
-        lines.push(`${label}: ${String(value).trim()}`);
+      if (!form.reportValidity()) {
+        setStatus(messages.validation, 'error');
+        return;
       }
 
-      const body = lines.join('\n');
-      window.location.href = `mailto:${encodeURIComponent(recipient)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      button.disabled = true;
+      button.setAttribute('aria-busy', 'true');
+      button.textContent = messages.sending;
+      setStatus(messages.sending, 'busy');
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          credentials: 'same-origin',
+          headers: {
+            Accept: 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+          }
+        });
+
+        let payload = null;
+        try {
+          payload = await response.json();
+        } catch { }
+
+        if (response.status === 429) {
+          setStatus(messages.rateLimited, 'error');
+          return;
+        }
+
+        if (response.status === 400) {
+          setStatus(messages.validation, 'error');
+          return;
+        }
+
+        if (!response.ok || payload?.success === false) {
+          setStatus(messages.failed, 'error');
+          return;
+        }
+
+        form.reset();
+        setStatus(messages.sent, 'success');
+      } catch {
+        setStatus(messages.failed, 'error');
+      } finally {
+        button.disabled = false;
+        button.removeAttribute('aria-busy');
+        button.textContent = idleButtonText;
+      }
     });
   });
 
