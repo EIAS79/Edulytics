@@ -31,8 +31,8 @@
     helpBody: 'اعثر على إرشادات حول الحسابات والوصول والمناهج والتقييم والتدريب والدعم الفني.',
     helpAction: 'استكشف المساعدة',
     directTitle: 'تفضّل التواصل مباشرة؟',
-    directBody: 'يمكنك مراسلتنا أو الاتصال بنا باستخدام بيانات التواصل الرسمية لـ Edulytics.',
-    emailAction: 'راسلنا بالبريد',
+    directBody: 'استخدم طرق التواصل الرسمية مع Edulytics أدناه.',
+    emailAction: 'أرسل رسالة',
     callAction: 'اتصل بنا',
 
     salesEyebrow: 'استفسار المبيعات',
@@ -41,6 +41,12 @@
     demoEyebrow: 'عرض Edulytics',
     demoPageTitle: 'شاهد Edulytics في سياق مدرستك.',
     demoPageLead: 'شاركنا معلومات أساسية عن دورك ومدرستك حتى نتمكن من جعل العرض أكثر ارتباطًا بما تريد تقييمه.',
+    supportEyebrow: 'طلب دعم',
+    supportPageTitle: 'كيف يمكننا مساعدتك؟',
+    supportPageLead: 'صف مشكلة الوصول أو الحساب أو المشكلة التقنية، وأرسلها مباشرة إلى فريق Edulytics.',
+    generalEyebrow: 'تواصل مع Edulytics',
+    generalPageTitle: 'أرسل لنا رسالة.',
+    generalPageLead: 'استخدم هذا النموذج للأسئلة العامة التي لا تندرج تحت المبيعات أو العرض التوضيحي أو الدعم الفني.',
     backContact: 'العودة إلى التواصل',
     trustCurriculum: 'مبني حول المنهج ونتائج التعلّم',
     trustTeacher: 'المعلم يظل صاحب القرار في التقييمات الرسمية',
@@ -50,6 +56,10 @@
     formSalesLead: 'املأ البيانات التالية وأرسل استفسارك مباشرة من الموقع.',
     formDemoTitle: 'اطلب عرضًا توضيحيًا',
     formDemoLead: 'املأ البيانات التالية وأرسل طلب العرض مباشرة إلى فريق Edulytics.',
+    formSupportTitle: 'أخبرنا بما تحتاج إلى مساعدة فيه',
+    formSupportLead: 'املأ النموذج وسيتم إرسال طلب الدعم بأمان من داخل الموقع.',
+    formGeneralTitle: 'أرسل رسالتك',
+    formGeneralLead: 'املأ النموذج وأرسل رسالتك مباشرة من داخل الموقع.',
     firstName: 'الاسم',
     lastName: 'اسم العائلة',
     email: 'البريد الإلكتروني للعمل',
@@ -65,8 +75,14 @@
     students: 'عدد الطلاب التقريبي',
     message: 'ما الذي تريد مناقشته؟',
     messageDemo: 'ما الذي تريد رؤيته في العرض؟',
+    messageSupport: 'ما الذي تحتاج إلى مساعدة فيه؟',
+    messageGeneral: 'كيف يمكننا مساعدتك؟',
+    humanCheck: 'أنا لست روبوتًا',
+    humanCheckNote: 'يتم التحقق من هذا التأكيد على الخادم مع حماية الطلبات واكتشاف الروبوتات وتحديد معدل الإرسال.',
     submitSales: 'إرسال استفسار المبيعات',
     submitDemo: 'إرسال طلب العرض',
+    submitSupport: 'إرسال طلب الدعم',
+    submitGeneral: 'إرسال الرسالة',
     mailNote: 'يتم إرسال رسالتك بأمان من داخل الموقع ولن يتم فتح أي تطبيق بريد.',
 
     helpEyebrow: 'مركز مساعدة Edulytics',
@@ -93,28 +109,31 @@
     en: {
       sending: 'Sending your message…',
       sent: 'Your message has been sent successfully. We will get back to you soon.',
-      validation: 'Please check the form fields and try again.',
+      validation: 'Please check the form fields and complete the human verification.',
       rateLimited: 'Too many requests were sent from this connection. Please wait and try again later.',
       failed: 'We could not send your message right now. Please try again later.'
     },
     pl: {
       sending: 'Wysyłanie wiadomości…',
       sent: 'Wiadomość została wysłana. Skontaktujemy się z Tobą wkrótce.',
-      validation: 'Sprawdź pola formularza i spróbuj ponownie.',
+      validation: 'Sprawdź pola formularza i potwierdź weryfikację użytkownika.',
       rateLimited: 'Z tego połączenia wysłano zbyt wiele żądań. Odczekaj chwilę i spróbuj ponownie później.',
       failed: 'Nie udało się teraz wysłać wiadomości. Spróbuj ponownie później.'
     },
     ar: {
       sending: 'جارٍ إرسال رسالتك…',
       sent: 'تم إرسال رسالتك بنجاح. سنتواصل معك في أقرب وقت.',
-      validation: 'راجع بيانات النموذج وحاول مرة أخرى.',
+      validation: 'راجع بيانات النموذج وأكمل التحقق بأنك لست روبوتًا.',
       rateLimited: 'تم إرسال عدد كبير من الطلبات من هذا الاتصال. انتظر قليلًا ثم حاول لاحقًا.',
       failed: 'تعذّر إرسال رسالتك الآن. حاول مرة أخرى لاحقًا.'
     }
   };
 
   if (language === 'ar') {
+    document.documentElement.lang = 'ar';
     document.documentElement.dir = 'rtl';
+    document.documentElement.classList.add('ed-site-ar');
+    root.classList.add('is-site-ar');
     root.querySelectorAll('[data-contact-key]').forEach(node => {
       const value = ar[node.dataset.contactKey];
       if (value) node.textContent = value;
