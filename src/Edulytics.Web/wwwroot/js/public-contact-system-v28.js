@@ -77,8 +77,7 @@
     messageDemo: 'ما الذي تريد رؤيته في العرض؟',
     messageSupport: 'ما الذي تحتاج إلى مساعدة فيه؟',
     messageGeneral: 'كيف يمكننا مساعدتك؟',
-    humanCheck: 'أنا لست روبوتًا',
-    humanCheckNote: 'يتم التحقق من هذا التأكيد على الخادم مع حماية الطلبات واكتشاف الروبوتات وتحديد معدل الإرسال.',
+    turnstileNote: 'هذا النموذج محمي بواسطة Cloudflare Turnstile. يتم التحقق مرة أخرى على الخادم قبل إرسال أي رسالة بريد.',
     submitSales: 'إرسال استفسار المبيعات',
     submitDemo: 'إرسال طلب العرض',
     submitSupport: 'إرسال طلب الدعم',
@@ -109,21 +108,24 @@
     en: {
       sending: 'Sending your message…',
       sent: 'Your message has been sent successfully. We will get back to you soon.',
-      validation: 'Please check the form fields and complete the human verification.',
+      validation: 'Please check the form fields and complete the security verification.',
+      security: 'Please complete the Cloudflare security verification and try again.',
       rateLimited: 'Too many requests were sent from this connection. Please wait and try again later.',
       failed: 'We could not send your message right now. Please try again later.'
     },
     pl: {
       sending: 'Wysyłanie wiadomości…',
       sent: 'Wiadomość została wysłana. Skontaktujemy się z Tobą wkrótce.',
-      validation: 'Sprawdź pola formularza i potwierdź weryfikację użytkownika.',
+      validation: 'Sprawdź pola formularza i ukończ weryfikację bezpieczeństwa.',
+      security: 'Ukończ weryfikację Cloudflare i spróbuj ponownie.',
       rateLimited: 'Z tego połączenia wysłano zbyt wiele żądań. Odczekaj chwilę i spróbuj ponownie później.',
       failed: 'Nie udało się teraz wysłać wiadomości. Spróbuj ponownie później.'
     },
     ar: {
       sending: 'جارٍ إرسال رسالتك…',
       sent: 'تم إرسال رسالتك بنجاح. سنتواصل معك في أقرب وقت.',
-      validation: 'راجع بيانات النموذج وأكمل التحقق بأنك لست روبوتًا.',
+      validation: 'راجع بيانات النموذج وأكمل التحقق الأمني.',
+      security: 'أكمل تحقق Cloudflare الأمني ثم حاول مرة أخرى.',
       rateLimited: 'تم إرسال عدد كبير من الطلبات من هذا الاتصال. انتظر قليلًا ثم حاول لاحقًا.',
       failed: 'تعذّر إرسال رسالتك الآن. حاول مرة أخرى لاحقًا.'
     }
@@ -163,11 +165,24 @@
           : '#526b86';
     };
 
+    const resetTurnstile = () => {
+      try {
+        if (window.turnstile) window.turnstile.reset();
+      } catch { }
+    };
+
     form.addEventListener('submit', async event => {
       event.preventDefault();
 
       if (!form.reportValidity()) {
         setStatus(messages.validation, 'error');
+        return;
+      }
+
+      const formData = new FormData(form);
+      const turnstileToken = String(formData.get('cf-turnstile-response') || '').trim();
+      if (!turnstileToken) {
+        setStatus(messages.security, 'error');
         return;
       }
 
@@ -179,7 +194,7 @@
       try {
         const response = await fetch(form.action, {
           method: 'POST',
-          body: new FormData(form),
+          body: formData,
           credentials: 'same-origin',
           headers: {
             Accept: 'application/json',
@@ -193,23 +208,30 @@
         } catch { }
 
         if (response.status === 429) {
+          resetTurnstile();
           setStatus(messages.rateLimited, 'error');
           return;
         }
 
         if (response.status === 400) {
-          setStatus(messages.validation, 'error');
+          resetTurnstile();
+          const securityFailure = payload?.code === 'turnstile_required'
+            || payload?.code === 'turnstile_failed';
+          setStatus(securityFailure ? messages.security : messages.validation, 'error');
           return;
         }
 
         if (!response.ok || payload?.success === false) {
+          resetTurnstile();
           setStatus(messages.failed, 'error');
           return;
         }
 
         form.reset();
+        resetTurnstile();
         setStatus(messages.sent, 'success');
       } catch {
+        resetTurnstile();
         setStatus(messages.failed, 'error');
       } finally {
         button.disabled = false;
