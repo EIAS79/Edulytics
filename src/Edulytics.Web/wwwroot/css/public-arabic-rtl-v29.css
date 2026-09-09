@@ -1,0 +1,197 @@
+/* Public Arabic RTL corrections v29.
+   Loaded last so Arabic typography and logical alignment override the Latin-first
+   marketing styles without changing EN/PL rendering. */
+
+html[dir="rtl"] body.ed-public-body,
+html[dir="rtl"] .ed-home,
+html[dir="rtl"] .ed-content-page {
+  direction: rtl;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+/* Latin-oriented tracking breaks connected Arabic glyphs. */
+html[dir="rtl"] .ed-home :where(h1,h2,h3,h4,h5,h6,p,a,button,label,li,strong,small,span,input,textarea,select,option),
+html[dir="rtl"] .ed-content-page :where(h1,h2,h3,h4,h5,h6,p,a,button,label,li,strong,small,span,input,textarea,select,option) {
+  letter-spacing: 0 !important;
+}
+
+html[dir="rtl"] .ed-home :where(h1,h2,h3,h4,h5,h6,p,label),
+html[dir="rtl"] .ed-content-page :where(h1,h2,h3,h4,h5,h6,p,label) {
+  text-align: start;
+}
+
+html[dir="rtl"] .ed-home :where(p,li),
+html[dir="rtl"] .ed-content-page :where(p,li) {
+  line-height: 1.8;
+}
+
+/* Keep deliberately centred headings centred. */
+html[dir="rtl"] .ed-contact-section-head,
+html[dir="rtl"] .ed-help-hero,
+html[dir="rtl"] .ed-content-section-head:not(.is-left),
+html[dir="rtl"] .ed-login-v28-card .auth-heading,
+html[dir="rtl"] .ed-login-v28-proof h2,
+html[dir="rtl"] .ed-login-v28-proof-footer {
+  text-align: center !important;
+}
+
+/* Navbar and mobile navigation. */
+html[dir="rtl"] .ed-home-header,
+html[dir="rtl"] .ed-home-nav-shell,
+html[dir="rtl"] .ed-home-links,
+html[dir="rtl"] .ed-home-actions,
+html[dir="rtl"] .ed-home-mobile-panel {
+  direction: rtl;
+}
+
+html[dir="rtl"] .ed-home-mobile-panel a,
+html[dir="rtl"] .ed-home-links a {
+  text-align: right;
+}
+
+/* Contact hub, enquiry forms and help centre. */
+html[dir="rtl"] .ed-contact-v28,
+html[dir="rtl"] .ed-inquiry-v28,
+html[dir="rtl"] .ed-help-v28,
+.ed-home.is-site-ar.ed-contact-v28,
+.ed-home.is-site-ar .ed-inquiry-v28,
+.ed-home.is-site-ar .ed-help-v28 {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .ed-contact-eyebrow::before {
+  order: 2;
+}
+
+html[dir="rtl"] .ed-contact-card a::after {
+  content: "←";
+}
+
+html[dir="rtl"] .ed-inquiry-back::before {
+  content: "→";
+}
+
+html[dir="rtl"] .ed-contact-direct-links {
+  justify-content: flex-start;
+}
+
+html[dir="rtl"] .ed-inquiry-field,
+html[dir="rtl"] .ed-inquiry-form-card,
+html[dir="rtl"] .ed-inquiry-copy,
+html[dir="rtl"] .ed-help-category,
+html[dir="rtl"] .ed-contact-card,
+html[dir="rtl"] .ed-contact-visual-card {
+  text-align: right;
+}
+
+html[dir="rtl"] .ed-inquiry-field input:not([type="email"]):not([inputmode="numeric"]),
+html[dir="rtl"] .ed-inquiry-field textarea,
+html[dir="rtl"] .ed-inquiry-field select,
+html[dir="rtl"] .ed-help-search input {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .ed-inquiry-field input[type="email"],
+html[dir="rtl"] .ed-inquiry-field input[inputmode="numeric"] {
+  direction: ltr;
+  text-align: left;
+}
+
+html[dir="rtl"] .ed-help-search input {
+  padding-left: 14px !important;
+  padding-right: 52px !important;
+}
+
+html[dir="rtl"] .ed-help-search::before {
+  left: auto !important;
+  right: 18px !important;
+}
+
+/* Marketing/content pages use logical alignment in Arabic. */
+html[dir="rtl"] .ed-content-section-head.is-left {
+  margin-left: auto;
+  margin-right: 0;
+  text-align: right;
+}
+
+html[dir="rtl"] .ed-content-breadcrumb,
+html[dir="rtl"] .ed-content-hero-actions,
+html[dir="rtl"] .ed-content-points,
+html[dir="rtl"] .ed-content-role-card,
+html[dir="rtl"] .ed-content-card,
+html[dir="rtl"] .ed-content-copy,
+html[dir="rtl"] .ed-content-final {
+  text-align: right;
+}
+
+html[dir="rtl"] .ed-content-point {
+  padding: 14px 45px 14px 16px;
+}
+
+html[dir="rtl"] .ed-content-point::before {
+  left: auto;
+  right: 15px;
+}
+
+html[dir="rtl"] .ed-content-card::after {
+  right: auto;
+  left: 20px;
+}
+
+html[dir="rtl"] .ed-content-flow-step:first-child {
+  border-radius: 0 21px 21px 0;
+}
+
+html[dir="rtl"] .ed-content-flow-step:last-child {
+  border-radius: 21px 0 0 21px;
+}
+
+html[dir="rtl"] .ed-content-flow-step:not(:last-child)::after {
+  content: "←";
+  right: auto;
+  left: -13px;
+}
+
+/* Footer stays readable in RTL, including mixed Arabic/Latin values. */
+html[dir="rtl"] .ed-home-footer,
+html[dir="rtl"] .ed-home-footer-grid,
+html[dir="rtl"] .ed-home-footer-brand,
+html[dir="rtl"] .ed-home-footer-grid > div {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .footer-contact a[href^="tel:"] {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+/* Human verification block follows the active writing direction. */
+.ed-human-check {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 52px;
+  padding: 12px 14px;
+  border: 1px solid #cbd9e7;
+  border-radius: 10px;
+  background: #f9fbfe;
+  color: #314c6d;
+  font-size: .9rem;
+  font-weight: 800;
+}
+
+.ed-human-check input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  flex: 0 0 auto;
+  accent-color: #3764e8;
+}
+
+html[dir="rtl"] .ed-human-check {
+  direction: rtl;
+  text-align: right;
+}
