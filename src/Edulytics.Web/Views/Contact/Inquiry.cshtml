@@ -2,31 +2,138 @@
 @model string
 @{
     Layout = "_PublicLayout";
-    var isDemo = string.Equals(Model, "demo", StringComparison.OrdinalIgnoreCase);
+    var formType = (Model ?? "sales").Trim().ToLowerInvariant();
+    var isDemo = string.Equals(formType, "demo", StringComparison.OrdinalIgnoreCase);
+    var isSupport = string.Equals(formType, "support", StringComparison.OrdinalIgnoreCase);
+    var isGeneral = string.Equals(formType, "general", StringComparison.OrdinalIgnoreCase);
     var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
+    var humanVerificationToken = ViewData["HumanVerificationToken"] as string ?? string.Empty;
     string L(string en, string pl) => isPolish ? pl : en;
-    ViewData["Title"] = isDemo ? L("Request a demo", "Poproś o demo") : L("Sales enquiry", "Zapytanie sprzedażowe");
+
+    string PageTitle() => formType switch
+    {
+        "demo" => L("Request a demo", "Poproś o demo"),
+        "support" => L("Contact support", "Skontaktuj się z pomocą"),
+        "general" => L("Contact Edulytics", "Kontakt z Edulytics"),
+        _ => L("Sales enquiry", "Zapytanie sprzedażowe")
+    };
+
+    string EyebrowKey() => formType switch
+    {
+        "demo" => "demoEyebrow",
+        "support" => "supportEyebrow",
+        "general" => "generalEyebrow",
+        _ => "salesEyebrow"
+    };
+
+    string PageTitleKey() => formType switch
+    {
+        "demo" => "demoPageTitle",
+        "support" => "supportPageTitle",
+        "general" => "generalPageTitle",
+        _ => "salesPageTitle"
+    };
+
+    string PageLeadKey() => formType switch
+    {
+        "demo" => "demoPageLead",
+        "support" => "supportPageLead",
+        "general" => "generalPageLead",
+        _ => "salesPageLead"
+    };
+
+    string FormTitleKey() => formType switch
+    {
+        "demo" => "formDemoTitle",
+        "support" => "formSupportTitle",
+        "general" => "formGeneralTitle",
+        _ => "formSalesTitle"
+    };
+
+    string FormLeadKey() => formType switch
+    {
+        "demo" => "formDemoLead",
+        "support" => "formSupportLead",
+        "general" => "formGeneralLead",
+        _ => "formSalesLead"
+    };
+
+    string MessageKey() => formType switch
+    {
+        "demo" => "messageDemo",
+        "support" => "messageSupport",
+        "general" => "messageGeneral",
+        _ => "message"
+    };
+
+    string SubmitKey() => formType switch
+    {
+        "demo" => "submitDemo",
+        "support" => "submitSupport",
+        "general" => "submitGeneral",
+        _ => "submitSales"
+    };
+
+    ViewData["Title"] = PageTitle();
 }
 
-<div class="ed-home ed-contact-v28" data-contact-page="@(isDemo ? "demo" : "sales")">
+<div class="ed-home ed-contact-v28" data-contact-page="@formType">
     <partial name="_PublicSiteHeader" />
 
     <main class="ed-inquiry-v28">
         <div class="ed-contact-container ed-inquiry-grid">
             <section class="ed-inquiry-copy">
                 <a class="ed-inquiry-back" href="/contact" data-contact-key="backContact">@L("Back to contact", "Wróć do kontaktu")</a>
-                <span class="ed-contact-eyebrow" data-contact-key="@(isDemo ? "demoEyebrow" : "salesEyebrow")">
-                    @(isDemo ? L("EDULYTICS DEMO", "DEMO EDULYTICS") : L("SALES ENQUIRY", "ZAPYTANIE SPRZEDAŻOWE"))
+                <span class="ed-contact-eyebrow" data-contact-key="@EyebrowKey()">
+                    @switch (formType)
+                    {
+                        case "demo":
+                            @L("EDULYTICS DEMO", "DEMO EDULYTICS")
+                            break;
+                        case "support":
+                            @L("SUPPORT REQUEST", "PROŚBA O WSPARCIE")
+                            break;
+                        case "general":
+                            @L("CONTACT EDULYTICS", "KONTAKT Z EDULYTICS")
+                            break;
+                        default:
+                            @L("SALES ENQUIRY", "ZAPYTANIE SPRZEDAŻOWE")
+                            break;
+                    }
                 </span>
-                <h1 data-contact-key="@(isDemo ? "demoPageTitle" : "salesPageTitle")">
-                    @(isDemo
-                        ? L("See Edulytics in your school's context.", "Zobacz Edulytics w kontekście swojej szkoły.")
-                        : L("Talk to us about Edulytics.", "Porozmawiaj z nami o Edulytics."))
+                <h1 data-contact-key="@PageTitleKey()">
+                    @switch (formType)
+                    {
+                        case "demo":
+                            @L("See Edulytics in your school's context.", "Zobacz Edulytics w kontekście swojej szkoły.")
+                            break;
+                        case "support":
+                            @L("How can we help you?", "Jak możemy Ci pomóc?")
+                            break;
+                        case "general":
+                            @L("Send us a message.", "Napisz do nas.")
+                            break;
+                        default:
+                            @L("Talk to us about Edulytics.", "Porozmawiaj z nami o Edulytics.")
+                            break;
+                    }
                 </h1>
-                <p data-contact-key="@(isDemo ? "demoPageLead" : "salesPageLead")">
-                    @(isDemo
-                        ? L("Share a little about your role and school so the walkthrough can focus on what you want to evaluate.", "Opowiedz krótko o swojej roli i szkole, aby prezentacja mogła skupić się na tym, co chcesz ocenić.")
-                        : L("Tell us about your school or requirement and we will help you determine whether Edulytics fits and how to get started.", "Opowiedz nam o swojej szkole lub potrzebie, a pomożemy ocenić dopasowanie Edulytics i sposób rozpoczęcia pracy."))
+                <p data-contact-key="@PageLeadKey()">
+                    @switch (formType)
+                    {
+                        case "demo":
+                            @L("Share a little about your role and school so the walkthrough can focus on what you want to evaluate.", "Opowiedz krótko o swojej roli i szkole, aby prezentacja mogła skupić się na tym, co chcesz ocenić.")
+                            break;
+                        case "support":
+                            @L("Describe the access, account or technical issue and send it directly to the Edulytics team.", "Opisz problem z dostępem, kontem lub kwestią techniczną i wyślij go bezpośrednio do zespołu Edulytics.")
+                            break;
+                        case "general":
+                            @L("Use this form for a general question that does not fit sales, demo or technical support.", "Użyj tego formularza w przypadku ogólnego pytania, które nie dotyczy sprzedaży, demo ani wsparcia technicznego.")
+                            break;
+                        default:
+                            @L("Tell us about your school or requirement and we will help you determine whether Edulytics fits and how to get started.", "Opowiedz nam o swojej szkole lub potrzebie, a pomożemy ocenić dopasowanie Edulytics i sposób rozpoczęcia pracy.")
+                            break;
+                    }
                 </p>
 
                 <div class="ed-inquiry-trust">
@@ -38,13 +145,39 @@
             </section>
 
             <section class="ed-inquiry-form-card">
-                <h2 data-contact-key="@(isDemo ? "formDemoTitle" : "formSalesTitle")">
-                    @(isDemo ? L("Request your demo", "Poproś o demo") : L("Tell us what you need", "Powiedz nam, czego potrzebujesz"))
+                <h2 data-contact-key="@FormTitleKey()">
+                    @switch (formType)
+                    {
+                        case "demo":
+                            @L("Request your demo", "Poproś o demo")
+                            break;
+                        case "support":
+                            @L("Tell us what you need help with", "Opisz, w czym potrzebujesz pomocy")
+                            break;
+                        case "general":
+                            @L("Send your message", "Wyślij wiadomość")
+                            break;
+                        default:
+                            @L("Tell us what you need", "Powiedz nam, czego potrzebujesz")
+                            break;
+                    }
                 </h2>
-                <p data-contact-key="@(isDemo ? "formDemoLead" : "formSalesLead")">
-                    @(isDemo
-                        ? L("Complete the details below and send your request directly to the Edulytics team.", "Uzupełnij dane poniżej i wyślij prośbę bezpośrednio do zespołu Edulytics.")
-                        : L("Complete the details below and send your enquiry directly from this website.", "Uzupełnij dane poniżej i wyślij zapytanie bezpośrednio z tej strony."))
+                <p data-contact-key="@FormLeadKey()">
+                    @switch (formType)
+                    {
+                        case "demo":
+                            @L("Complete the details below and send your request directly to the Edulytics team.", "Uzupełnij dane poniżej i wyślij prośbę bezpośrednio do zespołu Edulytics.")
+                            break;
+                        case "support":
+                            @L("Complete the form and your support request will be sent securely from this website.", "Wypełnij formularz, a zgłoszenie do pomocy zostanie bezpiecznie wysłane z tej strony.")
+                            break;
+                        case "general":
+                            @L("Complete the form and send your message directly from this website.", "Wypełnij formularz i wyślij wiadomość bezpośrednio z tej strony.")
+                            break;
+                        default:
+                            @L("Complete the details below and send your enquiry directly from this website.", "Uzupełnij dane poniżej i wyślij zapytanie bezpośrednio z tej strony.")
+                            break;
+                    }
                 </p>
 
                 <form class="ed-inquiry-form"
@@ -53,7 +186,8 @@
                       data-contact-server-form
                       novalidate>
                     @Html.AntiForgeryToken()
-                    <input type="hidden" name="formType" value="@(isDemo ? "demo" : "sales")" />
+                    <input type="hidden" name="formType" value="@formType" />
+                    <input type="hidden" name="humanVerificationToken" value="@humanVerificationToken" />
 
                     <div aria-hidden="true"
                          style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">
@@ -137,8 +271,22 @@
                     }
 
                     <div class="ed-inquiry-field">
-                        <label for="message" data-contact-key="@(isDemo ? "messageDemo" : "message")">
-                            @(isDemo ? L("What would you like to see in the demo?", "Co chcesz zobaczyć podczas demo?") : L("What would you like to discuss?", "Co chcesz omówić?"))
+                        <label for="message" data-contact-key="@MessageKey()">
+                            @switch (formType)
+                            {
+                                case "demo":
+                                    @L("What would you like to see in the demo?", "Co chcesz zobaczyć podczas demo?")
+                                    break;
+                                case "support":
+                                    @L("What do you need help with?", "W czym potrzebujesz pomocy?")
+                                    break;
+                                case "general":
+                                    @L("How can we help?", "Jak możemy pomóc?")
+                                    break;
+                                default:
+                                    @L("What would you like to discuss?", "Co chcesz omówić?")
+                                    break;
+                            }
                         </label>
                         <textarea id="message"
                                   name="message"
@@ -147,10 +295,38 @@
                                   required></textarea>
                     </div>
 
+                    <label class="ed-human-check" for="human-confirmed">
+                        <input id="human-confirmed"
+                               name="humanConfirmed"
+                               type="checkbox"
+                               value="true"
+                               required />
+                        <span data-contact-key="humanCheck">@L("I'm not a robot", "Nie jestem robotem")</span>
+                    </label>
+                    <p class="ed-inquiry-note" data-contact-key="humanCheckNote">
+                        @L(
+                            "This confirmation is validated on the server together with anti-forgery, bot detection and rate limiting.",
+                            "Potwierdzenie jest sprawdzane na serwerze razem z ochroną przed fałszowaniem żądań, wykrywaniem botów i limitami żądań.")
+                    </p>
+
                     <button class="ed-inquiry-submit"
                             type="submit"
-                            data-contact-key="@(isDemo ? "submitDemo" : "submitSales")">
-                        @(isDemo ? L("Send demo request", "Wyślij prośbę o demo") : L("Send sales enquiry", "Wyślij zapytanie sprzedażowe"))
+                            data-contact-key="@SubmitKey()">
+                        @switch (formType)
+                        {
+                            case "demo":
+                                @L("Send demo request", "Wyślij prośbę o demo")
+                                break;
+                            case "support":
+                                @L("Send support request", "Wyślij zgłoszenie do pomocy")
+                                break;
+                            case "general":
+                                @L("Send message", "Wyślij wiadomość")
+                                break;
+                            default:
+                                @L("Send sales enquiry", "Wyślij zapytanie sprzedażowe")
+                                break;
+                        }
                     </button>
 
                     <p class="ed-inquiry-note"
