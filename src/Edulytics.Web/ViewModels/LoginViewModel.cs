@@ -4,6 +4,8 @@ namespace Edulytics.Web.ViewModels;
 
 public sealed class LoginViewModel
 {
+    public string? AccountType { get; set; }
+
     [Required(ErrorMessage = "EmailRequired")]
     [EmailAddress(ErrorMessage = "EmailInvalid")]
     public string? Email { get; set; }

@@ -22,6 +22,17 @@ public sealed class AccountController : Controller
             ["en", "pl"],
             StringComparer.Ordinal);
 
+    private static readonly HashSet<string>
+        PublicAccountTypes =
+        new(
+            [
+                RoleNames.SchoolAdmin,
+                RoleNames.SubjectSupervisor,
+                RoleNames.Teacher,
+                RoleNames.Student
+            ],
+            StringComparer.Ordinal);
+
     private readonly SignInManager<ApplicationUser>
         _signInManager;
 
@@ -89,6 +100,12 @@ public sealed class AccountController : Controller
         ViewData["ReturnUrl"] =
             returnUrl;
 
+        if (!string.IsNullOrWhiteSpace(model.AccountType) &&
+            !IsSupportedAccountType(model.AccountType))
+        {
+            AddAccountTypeRequired();
+        }
+
         if (!ModelState.IsValid)
         {
             return View(model);
@@ -104,6 +121,23 @@ public sealed class AccountController : Controller
             return View(model);
         }
 
+        // Check the credential first without creating an authentication cookie.
+        // The selected account type is validated only after the password is
+        // known to be correct, preventing role information from being exposed
+        // for accounts an attacker cannot authenticate.
+        var credentialResult =
+            await _signInManager
+                .CheckPasswordSignInAsync(
+                    user,
+                    model.Password!,
+                    lockoutOnFailure: true);
+
+        if (!credentialResult.Succeeded)
+        {
+            AddInvalidCredentials();
+            return View(model);
+        }
+
         var access =
             await _schoolUsers
                 .EvaluateSignInAsync(user.Id);
@@ -114,19 +148,31 @@ public sealed class AccountController : Controller
             return View(model);
         }
 
-        var result =
-            await _signInManager
-                .PasswordSignInAsync(
-                    user,
-                    model.Password!,
-                    isPersistent: false,
-                    lockoutOnFailure: true);
-
-        if (!result.Succeeded)
+        // Platform administrators remain an internal exception: they are not
+        // exposed as a fifth public account type. School users must explicitly
+        // select one of the four public account types and it must match the
+        // role registered for the authenticated account.
+        if (!access.IsPlatformAdministrator)
         {
-            AddInvalidCredentials();
-            return View(model);
+            if (!IsSupportedAccountType(model.AccountType))
+            {
+                AddAccountTypeRequired();
+                return View(model);
+            }
+
+            if (!string.Equals(
+                    access.Role,
+                    model.AccountType,
+                    StringComparison.Ordinal))
+            {
+                AddAccountTypeMismatch(model.AccountType!);
+                return View(model);
+            }
         }
+
+        await _signInManager.SignInAsync(
+            user,
+            isPersistent: false);
 
         if (Url.IsLocalUrl(returnUrl))
         {
@@ -262,6 +308,63 @@ public sealed class AccountController : Controller
             string.Empty,
             _text["InvalidCredentials"].Value);
     }
+
+    private void AddAccountTypeRequired()
+    {
+        ModelState.AddModelError(
+            nameof(LoginViewModel.AccountType),
+            IsPolishUi()
+                ? "Najpierw wybierz typ konta."
+                : "Choose your account type first.");
+    }
+
+    private void AddAccountTypeMismatch(
+        string accountType)
+    {
+        var label = GetAccountTypeLabel(accountType);
+
+        ModelState.AddModelError(
+            nameof(LoginViewModel.AccountType),
+            IsPolishUi()
+                ? $"To konto nie jest zarejestrowane jako {label}. Wybierz właściwy typ konta."
+                : $"This account is not registered as {label}. Please choose the correct account type.");
+    }
+
+    private bool IsPolishUi() =>
+        string.Equals(
+            CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
+            "pl",
+            StringComparison.OrdinalIgnoreCase);
+
+    private string GetAccountTypeLabel(
+        string accountType)
+    {
+        if (IsPolishUi())
+        {
+            return accountType switch
+            {
+                RoleNames.SchoolAdmin => "Administrator szkoły",
+                RoleNames.SubjectSupervisor => "Opiekun przedmiotu",
+                RoleNames.Teacher => "Nauczyciel",
+                RoleNames.Student => "Uczeń",
+                _ => "wybrany typ konta"
+            };
+        }
+
+        return accountType switch
+        {
+            RoleNames.SchoolAdmin => "a School Administrator",
+            RoleNames.SubjectSupervisor => "a Subject Supervisor",
+            RoleNames.Teacher => "a Teacher",
+            RoleNames.Student => "a Student",
+            _ => "the selected account type"
+        };
+    }
+
+    private static bool IsSupportedAccountType(
+        string? accountType) =>
+        !string.IsNullOrWhiteSpace(accountType) &&
+        PublicAccountTypes.Contains(accountType);
 
     private string ApplySetupCulture(
         string? culture)
