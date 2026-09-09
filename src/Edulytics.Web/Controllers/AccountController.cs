@@ -100,7 +100,8 @@ public sealed class AccountController : Controller
         ViewData["ReturnUrl"] =
             returnUrl;
 
-        if (!IsSupportedAccountType(model.AccountType))
+        if (!string.IsNullOrWhiteSpace(model.AccountType) &&
+            !IsSupportedAccountType(model.AccountType))
         {
             AddAccountTypeRequired();
         }
@@ -148,16 +149,25 @@ public sealed class AccountController : Controller
         }
 
         // Platform administrators remain an internal exception: they are not
-        // exposed as a fifth public account type. School users, however, must
-        // match the account type selected before signing in.
-        if (!access.IsPlatformAdministrator &&
-            !string.Equals(
-                access.Role,
-                model.AccountType,
-                StringComparison.Ordinal))
+        // exposed as a fifth public account type. School users must explicitly
+        // select one of the four public account types and it must match the
+        // role registered for the authenticated account.
+        if (!access.IsPlatformAdministrator)
         {
-            AddAccountTypeMismatch(model.AccountType!);
-            return View(model);
+            if (!IsSupportedAccountType(model.AccountType))
+            {
+                AddAccountTypeRequired();
+                return View(model);
+            }
+
+            if (!string.Equals(
+                    access.Role,
+                    model.AccountType,
+                    StringComparison.Ordinal))
+            {
+                AddAccountTypeMismatch(model.AccountType!);
+                return View(model);
+            }
         }
 
         await _signInManager.SignInAsync(
