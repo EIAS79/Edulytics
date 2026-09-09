@@ -12,6 +12,18 @@
     <meta charset="utf-8" />
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0" />
+    <script>
+        (() => {
+            try {
+                const language = window.localStorage.getItem('edulytics.public.siteLanguage');
+                if (language === 'ar') {
+                    document.documentElement.lang = 'ar';
+                    document.documentElement.dir = 'rtl';
+                    document.documentElement.classList.add('ed-site-ar');
+                }
+            } catch { }
+        })();
+    </script>
     <title>@localizedProductName@(string.IsNullOrWhiteSpace(pageTitle) ? "" : $" | {pageTitle}")</title>
     <meta name="description" content="Edulytics is a curriculum-aligned mathematics learning, assessment and mastery platform for schools, teachers and students." />
     <link rel="stylesheet"
@@ -85,6 +97,9 @@
               href="~/css/public-content-pages-v27.css"
               asp-append-version="true" />
     }
+    <link rel="stylesheet"
+          href="~/css/public-arabic-rtl-v29.css"
+          asp-append-version="true" />
     <style>
         .ed-home .student-avatar .head,
         .ed-home .student-avatar .body,

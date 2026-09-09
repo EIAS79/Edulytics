@@ -26,6 +26,15 @@
     ['Help center', '/help'],
     ['Centrum pomocy', '/help'],
     ['مركز المساعدة', '/help'],
+    ['Contact support', '/contact/support'],
+    ['Skontaktuj się z pomocą', '/contact/support'],
+    ['تواصل مع الدعم', '/contact/support'],
+    ['Email us', '/contact/message'],
+    ['Send a message', '/contact/message'],
+    ['Napisz e-mail', '/contact/message'],
+    ['Wyślij wiadomość', '/contact/message'],
+    ['راسلنا بالبريد', '/contact/message'],
+    ['أرسل رسالة', '/contact/message'],
     ['Contact', '/contact'],
     ['Kontakt', '/contact'],
     ['تواصل معنا', '/contact']
@@ -37,9 +46,18 @@
     if (route) anchor.setAttribute('href', route);
 
     const href = anchor.getAttribute('href') || '';
-    if (/^mailto:.*(?:demo|prezent|عرض)/i.test(href)) {
-      anchor.setAttribute('href', '/contact/request-demo');
+    if (/^mailto:/i.test(href)) {
+      if (/demo|prezent|عرض/i.test(`${href} ${label}`)) {
+        anchor.setAttribute('href', '/contact/request-demo');
+      } else if (/support|help|pomoc|دعم|مساعدة/i.test(`${href} ${label}`)) {
+        anchor.setAttribute('href', '/contact/support');
+      } else if (/sales|sprzeda|مبيعات/i.test(`${href} ${label}`)) {
+        anchor.setAttribute('href', '/contact/sales-enquiry');
+      } else {
+        anchor.setAttribute('href', '/contact/message');
+      }
     }
+
     if (href === '#contact') anchor.setAttribute('href', '/contact');
 
     if (label === 'Global Partnerships') {

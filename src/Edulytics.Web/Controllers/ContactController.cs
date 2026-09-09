@@ -1,9 +1,12 @@
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
+using System.Security.Cryptography;
 using Edulytics.Web.Email;
 using Edulytics.Web.Support;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.Options;
@@ -25,25 +28,41 @@ public sealed class ContactController : Controller
             "partnership"
         };
 
+    private static readonly TimeSpan MinimumHumanVerificationAge =
+        TimeSpan.FromSeconds(1);
+
+    private static readonly TimeSpan MaximumHumanVerificationAge =
+        TimeSpan.FromHours(1);
+
     private readonly SmtpEmailOptions _smtp;
     private readonly ILogger<ContactController> _logger;
+    private readonly IDataProtector _humanVerificationProtector;
 
     public ContactController(
         IOptions<SmtpEmailOptions> smtp,
-        ILogger<ContactController> logger)
+        ILogger<ContactController> logger,
+        IDataProtectionProvider dataProtectionProvider)
     {
         _smtp = smtp.Value;
         _logger = logger;
+        _humanVerificationProtector = dataProtectionProvider.CreateProtector(
+            "Edulytics.PublicContact.HumanVerification.v1");
     }
 
     [HttpGet("")]
     public IActionResult Index() => View();
 
     [HttpGet("sales-enquiry")]
-    public IActionResult SalesEnquiry() => View("Inquiry", "sales");
+    public IActionResult SalesEnquiry() => OpenInquiry("sales");
 
     [HttpGet("request-demo")]
-    public IActionResult RequestDemo() => View("Inquiry", "demo");
+    public IActionResult RequestDemo() => OpenInquiry("demo");
+
+    [HttpGet("support")]
+    public IActionResult Support() => OpenInquiry("support");
+
+    [HttpGet("message")]
+    public IActionResult Message() => OpenInquiry("general");
 
     [HttpGet("help")]
     public IActionResult HelpAlias() => Redirect("/help");
@@ -72,6 +91,14 @@ public sealed class ContactController : Controller
             ModelState.AddModelError(
                 nameof(input.FormType),
                 "Unsupported contact form type.");
+        }
+
+        if (!input.HumanConfirmed
+            || !IsHumanVerificationTokenValid(input.HumanVerificationToken))
+        {
+            ModelState.AddModelError(
+                nameof(input.HumanConfirmed),
+                "Human verification is required.");
         }
 
         if (!ModelState.IsValid || HasUnsafeSingleLineInput(input))
@@ -233,6 +260,59 @@ public sealed class ContactController : Controller
         }
     }
 
+    private IActionResult OpenInquiry(string formType)
+    {
+        ViewData["HumanVerificationToken"] = CreateHumanVerificationToken();
+        return View("Inquiry", formType);
+    }
+
+    private string CreateHumanVerificationToken()
+    {
+        var payload = string.Join(
+            '|',
+            DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString(CultureInfo.InvariantCulture),
+            Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture));
+
+        return _humanVerificationProtector.Protect(payload);
+    }
+
+    private bool IsHumanVerificationTokenValid(string? token)
+    {
+        if (string.IsNullOrWhiteSpace(token) || token.Length > 1024)
+        {
+            return false;
+        }
+
+        try
+        {
+            var payload = _humanVerificationProtector.Unprotect(token);
+            var parts = payload.Split('|', StringSplitOptions.None);
+            if (parts.Length != 2
+                || !long.TryParse(
+                    parts[0],
+                    NumberStyles.None,
+                    CultureInfo.InvariantCulture,
+                    out var issuedAtSeconds)
+                || !Guid.TryParseExact(parts[1], "N", out _))
+            {
+                return false;
+            }
+
+            var issuedAt = DateTimeOffset.FromUnixTimeSeconds(issuedAtSeconds);
+            var age = DateTimeOffset.UtcNow - issuedAt;
+            return age >= MinimumHumanVerificationAge
+                && age <= MaximumHumanVerificationAge;
+        }
+        catch (CryptographicException)
+        {
+            return false;
+        }
+        catch (ArgumentOutOfRangeException)
+        {
+            return false;
+        }
+    }
+
     private bool IsSmtpConfigurationValid()
     {
         if (!_smtp.Enabled
@@ -319,7 +399,8 @@ public sealed class ContactController : Controller
             input.Organisation,
             input.Role,
             input.Country,
-            input.Students
+            input.Students,
+            input.HumanVerificationToken
         };
 
         return singleLineValues.Any(
@@ -370,6 +451,12 @@ public sealed class ContactController : Controller
         [Required]
         [StringLength(3000, MinimumLength = 5)]
         public string Message { get; set; } = string.Empty;
+
+        [Required]
+        [StringLength(1024)]
+        public string HumanVerificationToken { get; set; } = string.Empty;
+
+        public bool HumanConfirmed { get; set; }
 
         // Honeypot. It is visually hidden in the public form and must stay
         // empty. Automated form fillers commonly populate it.
