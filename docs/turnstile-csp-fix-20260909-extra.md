@@ -1,1 +1,0 @@
-CSP allows the Cloudflare Turnstile client origin while preserving the existing nonce-based policy.
