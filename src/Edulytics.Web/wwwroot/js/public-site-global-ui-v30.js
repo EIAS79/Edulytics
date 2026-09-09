@@ -56,10 +56,7 @@
       window.location.reload();
     });
 
-    const wrapper = document.createElement('span');
-    wrapper.className = 'ed-home-lang-ar';
-    wrapper.appendChild(button);
-    languageHost.appendChild(wrapper);
+    languageHost.appendChild(button);
   };
 
   root.querySelectorAll('.ed-home-lang').forEach(installArabicSwitch);
@@ -111,6 +108,19 @@
     const text = (link.textContent || '').trim();
     link.textContent = /try|wypróbuj/i.test(text) ? 'جرّب Edulytics' : 'اطلب عرضًا تجريبيًا';
     link.setAttribute('href', '/contact/request-demo');
+  });
+
+  const staticArabic = {
+    contentSourcesTitle: 'مصادر المحتوى والتراخيص',
+    contentSourcesLead: 'توثق هذه الصفحة مركزيًا مصادر المناهج، ومعلومات الحقوق المطلوبة، ولغة المحتوى الأكاديمي لكل منهج. لا يتم تكرار هذه البيانات الوصفية في صفحات الدروس الفردية.',
+    academicLanguage: 'اللغة الأكاديمية',
+    rightsAttribution: 'الحقوق / الإسناد المطلوب',
+    reuseBasis: 'أساس إعادة الاستخدام'
+  };
+
+  root.querySelectorAll('[data-public-ar]').forEach(node => {
+    const translated = staticArabic[node.dataset.publicAr];
+    if (translated) node.textContent = translated;
   });
 
   const footer = root.querySelector('.ed-home-footer');
