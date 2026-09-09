@@ -23,13 +23,28 @@
     <link rel="stylesheet" href="~/css/acceptance-corrective.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/round4-ux-display.css" asp-append-version="true" />
     <style>
+        :root {
+            --game-ink: #17344f;
+            --game-teal: #0d7d8c;
+            --game-teal-dark: #075c69;
+            --game-blue: #5ec7f3;
+            --game-sky: #bfeeff;
+            --game-grass: #83d46d;
+            --game-grass-dark: #4da858;
+            --game-yellow: #ffd95d;
+            --game-orange: #ff9b55;
+            --game-pink: #ff8cba;
+            --game-purple: #8b7bf6;
+        }
+        * { box-sizing: border-box; }
         body { margin: 0; background: #f4f7fa; color: #17364a; }
-        .preview-wrap { width: min(1180px, calc(100% - 32px)); margin: 28px auto 56px; }
+        button, input { font: inherit; }
+        .preview-wrap { width: min(1240px, calc(100% - 32px)); margin: 28px auto 56px; }
         .preview-notice { display: flex; justify-content: space-between; gap: 16px; align-items: center; margin-bottom: 18px; padding: 12px 16px; border: 1px solid #cfdce7; border-radius: 14px; background: #fff; font-size: .9rem; }
         .preview-notice strong { color: #0b7285; }
-        .preview-tabs { display: inline-flex; gap: 6px; margin: 0 0 20px; padding: 5px; border: 1px solid #dbe5ef; border-radius: 999px; background: #fff; }
-        .preview-tab { min-height: 42px; padding: 9px 22px; border: 0; border-radius: 999px; background: transparent; color: #335168; font: inherit; font-weight: 900; cursor: pointer; }
-        .preview-tab.is-active { color: #fff; background: #0b7285; box-shadow: 0 5px 14px rgba(11,114,133,.2); }
+        .preview-tabs { display: inline-flex; gap: 6px; margin: 0 0 20px; padding: 5px; border: 1px solid #dbe5ef; border-radius: 999px; background: #fff; box-shadow: 0 8px 24px rgba(35,67,91,.08); }
+        .preview-tab { min-height: 44px; padding: 9px 24px; border: 0; border-radius: 999px; background: transparent; color: #335168; font-weight: 900; cursor: pointer; }
+        .preview-tab.is-active { color: #fff; background: #0b7285; box-shadow: 0 6px 16px rgba(11,114,133,.22); }
         [data-preview-panel][hidden] { display: none !important; }
         .preview-lesson-card { padding: 24px; border: 1px solid #dce6ee; border-radius: 24px; background: #fff; box-shadow: 0 18px 45px rgba(30,61,80,.08); }
         .preview-lesson-meta { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 26px; }
@@ -45,37 +60,176 @@
         .preview-outcome p { margin: 5px 0 0; font-size: .9rem; line-height: 1.45; }
         .preview-empty { color: #6d8290; font-size: .9rem; line-height: 1.5; }
 
-        .preview-game-shell { position: relative; overflow: hidden; min-height: 610px; border: 1px solid #9bdde5; border-radius: 28px; background: radial-gradient(circle at 11% 18%, rgba(255,255,255,.58) 0 6%, transparent 7%), radial-gradient(circle at 82% 82%, rgba(255,255,255,.28) 0 9%, transparent 10%), linear-gradient(145deg, #c9f6f6 0%, #8be4ed 48%, #63d2df 100%); box-shadow: 0 22px 60px rgba(18,96,112,.17); color: #123a48; }
-        .preview-game-shell::before, .preview-game-shell::after { content: ""; position: absolute; border-radius: 999px; background: rgba(255,255,255,.18); pointer-events: none; }
-        .preview-game-shell::before { width: 330px; height: 330px; left: -120px; bottom: -170px; }
-        .preview-game-shell::after { width: 250px; height: 250px; right: -80px; top: 110px; }
-        .preview-game-topbar { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 22px 26px 14px; }
-        .preview-game-kicker { margin: 0; font-size: .84rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; color: #0c6677; }
-        .preview-game-counter { font-weight: 900; color: #174a59; white-space: nowrap; }
-        .preview-game-progress { position: relative; z-index: 1; height: 13px; margin: 0 26px; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,.58); box-shadow: inset 0 1px 3px rgba(15,82,96,.12); }
-        .preview-game-progress > span { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #0b7285, #20a87f); transition: width .25s ease; }
-        .preview-game-feedback { position: relative; z-index: 2; margin: 18px 26px 0; padding: 12px 16px; border-radius: 14px; font-weight: 900; text-align: center; }
-        .preview-game-feedback.is-correct { background: rgba(224,250,238,.92); color: #12633f; border: 1px solid #8fd8b0; }
-        .preview-game-feedback.is-incorrect { background: rgba(255,239,238,.92); color: #953c38; border: 1px solid #eab1ad; }
-        .preview-game-stage { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0,1fr) 280px; gap: 28px; align-items: stretch; padding: 30px 32px 34px; }
-        .preview-game-question { min-height: 430px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 34px; border: 1px solid rgba(255,255,255,.55); border-radius: 24px; background: rgba(255,255,255,.42); backdrop-filter: blur(3px); }
-        .preview-game-question-number { font-weight: 900; color: #0c6677; margin-bottom: 18px; }
-        .preview-game-question h2 { max-width: 760px; margin: 0 0 28px; font-size: clamp(2.4rem,6vw,5rem); line-height: 1.05; letter-spacing: -.04em; color: #103b49; }
-        .preview-game-answer { width: min(260px,100%); min-height: 72px; padding: 12px 20px; border: 3px solid #0b7285; border-radius: 16px; background: #fffbd0; color: #173f4d; text-align: center; font-size: 2rem; font-weight: 900; outline: none; box-shadow: 0 8px 20px rgba(14,89,104,.12); }
-        .preview-game-answer:focus { box-shadow: 0 0 0 5px rgba(11,114,133,.16), 0 8px 20px rgba(14,89,104,.12); }
-        .preview-game-side { display: flex; flex-direction: column; justify-content: center; padding: 18px; border: 1px solid rgba(11,114,133,.24); border-radius: 24px; background: rgba(23,159,178,.20); }
-        .preview-game-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
-        .preview-game-tool { min-height: 44px; border: 1px solid rgba(7,93,108,.28); border-radius: 12px; background: rgba(255,255,255,.62); color: #075d6c; font-weight: 900; cursor: pointer; }
-        .preview-game-keypad { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
-        .preview-game-key { aspect-ratio: 1; min-height: 58px; border: 0; border-radius: 50%; background: #075d6c; color: #fff; font-size: 1.45rem; font-weight: 900; cursor: pointer; box-shadow: 0 7px 16px rgba(3,64,75,.18); }
-        .preview-game-submit { width: 100%; min-height: 54px; margin-top: 16px; border: 0; border-radius: 15px; background: #0b7285; color: #fff; font-weight: 900; font-size: 1rem; cursor: pointer; box-shadow: 0 9px 18px rgba(5,92,108,.2); }
-        .preview-game-submit:disabled { opacity: .55; cursor: wait; }
-        .preview-game-finish { position: relative; z-index: 1; max-width: 680px; margin: 70px auto; padding: 40px; text-align: center; border-radius: 24px; background: rgba(255,255,255,.72); box-shadow: 0 18px 42px rgba(18,96,112,.14); }
-        .preview-game-finish h2 { margin: 0 0 12px; font-size: 2rem; color: #103b49; }
-        .preview-game-score { margin: 0; font-size: 2.5rem; font-weight: 950; color: #0b7285; }
-        .preview-restart { margin-top: 20px; min-height: 48px; padding: 0 22px; border: 0; border-radius: 14px; background: #0b7285; color: #fff; font-weight: 900; cursor: pointer; }
-        @@media (max-width: 860px) { .preview-lesson-layout { grid-template-columns: 1fr; } .preview-game-stage { grid-template-columns: 1fr; padding: 22px; } .preview-game-question { min-height: 330px; } .preview-game-side { width: min(380px,100%); margin: 0 auto; } }
-        @@media (max-width: 520px) { .preview-wrap { width: min(100% - 20px, 1180px); margin-top: 10px; } .preview-notice { align-items: flex-start; flex-direction: column; } .preview-tabs { display: flex; width: 100%; } .preview-tab { flex: 1; padding-inline: 12px; } .preview-lesson-card { padding: 16px; border-radius: 18px; } .preview-game-shell { border-radius: 20px; } .preview-game-topbar { padding: 18px 18px 12px; } .preview-game-progress { margin-inline: 18px; } .preview-game-feedback { margin-inline: 18px; } .preview-game-stage { padding: 18px; gap: 16px; } .preview-game-question { padding: 22px 14px; } .preview-game-question h2 { font-size: 2.5rem; } .preview-game-key { min-height: 52px; } }
+        .kid-game-shell {
+            position: relative;
+            overflow: hidden;
+            min-height: 720px;
+            border: 6px solid #fff;
+            border-radius: 34px;
+            background: linear-gradient(180deg, #bfeeff 0%, #d9f6ff 52%, #9de17f 53%, #72cb67 100%);
+            box-shadow: 0 24px 70px rgba(38,95,116,.2), 0 0 0 1px rgba(88,166,191,.2);
+            color: var(--game-ink);
+            isolation: isolate;
+        }
+        .kid-game-shell::before,
+        .kid-game-shell::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 520px;
+            height: 160px;
+            border-radius: 50%;
+            background: rgba(75,160,102,.42);
+            bottom: 72px;
+            filter: blur(.2px);
+        }
+        .kid-game-shell::before { left: -80px; transform: rotate(-7deg); }
+        .kid-game-shell::after { right: -100px; transform: rotate(8deg); }
+        .kid-cloud { position: absolute; z-index: -1; width: 150px; height: 52px; border-radius: 999px; background: rgba(255,255,255,.86); box-shadow: 42px -18px 0 4px rgba(255,255,255,.86), 78px 0 0 rgba(255,255,255,.86); opacity: .92; }
+        .kid-cloud-one { top: 95px; left: 8%; }
+        .kid-cloud-two { top: 155px; right: 12%; transform: scale(.78); }
+        .kid-sun { position: absolute; z-index: -1; width: 92px; height: 92px; right: 6%; top: 62px; border-radius: 50%; background: #ffe66d; box-shadow: 0 0 0 14px rgba(255,230,109,.22); }
+        .kid-game-topbar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center; padding: 22px 26px 12px; }
+        .kid-brand-line { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .kid-game-kicker { display: inline-flex; align-items: center; gap: 7px; margin: 0; padding: 6px 11px; border-radius: 999px; background: rgba(255,255,255,.74); color: #116777; font-size: .78rem; font-weight: 950; letter-spacing: .08em; text-transform: uppercase; }
+        .kid-game-title { font-size: 1.15rem; font-weight: 950; color: #173d56; }
+        .kid-top-actions { display: flex; align-items: center; gap: 10px; }
+        .kid-counter { min-width: 112px; padding: 10px 14px; border: 2px solid rgba(255,255,255,.68); border-radius: 999px; background: rgba(255,255,255,.72); color: #174c60; text-align: center; font-weight: 950; box-shadow: 0 6px 18px rgba(54,113,135,.1); }
+        .kid-sound-toggle { min-height: 44px; padding: 0 14px; border: 2px solid rgba(255,255,255,.78); border-radius: 999px; background: rgba(255,255,255,.8); color: #174c60; font-weight: 900; cursor: pointer; box-shadow: 0 6px 18px rgba(54,113,135,.1); }
+        .kid-sound-toggle:hover { transform: translateY(-1px); }
+        .kid-progress-wrap { padding: 0 26px; }
+        .kid-progress-track { height: 16px; overflow: hidden; border: 3px solid rgba(255,255,255,.78); border-radius: 999px; background: rgba(255,255,255,.55); box-shadow: inset 0 2px 4px rgba(34,91,105,.11); }
+        .kid-progress-fill { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #ffb74d 0%, #ffd95d 42%, #48c78e 100%); transition: width .4s ease; }
+        .kid-stage { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 22px; min-height: 585px; padding: 22px 26px 28px; }
+        .kid-play-board { position: relative; align-self: stretch; min-height: 545px; padding: 22px; border: 4px solid rgba(255,255,255,.82); border-radius: 30px; background: rgba(255,255,255,.74); box-shadow: 0 18px 38px rgba(38,95,116,.15); backdrop-filter: blur(3px); }
+        .kid-instruction { margin: 0 auto 14px; max-width: 720px; text-align: center; }
+        .kid-instruction-eyebrow { margin: 0 0 5px; color: #168398; font-size: .82rem; font-weight: 950; letter-spacing: .08em; text-transform: uppercase; }
+        .kid-instruction h2 { margin: 0; color: #163d57; font-size: clamp(1.7rem, 3vw, 2.45rem); line-height: 1.08; letter-spacing: -.025em; }
+        .kid-instruction p { margin: 7px 0 0; color: #56758a; font-weight: 700; }
+        .kid-groups-row { display: grid; grid-template-columns: minmax(0,1fr) 58px minmax(0,1fr); gap: 14px; align-items: center; margin-top: 14px; }
+        .kid-group-card { position: relative; min-height: 190px; padding: 18px 16px 16px; border-radius: 25px; text-align: center; box-shadow: inset 0 -4px 0 rgba(40,68,91,.07), 0 10px 22px rgba(45,86,104,.09); transition: transform .35s ease, opacity .35s ease; }
+        .kid-group-card.is-left { background: linear-gradient(180deg,#fff7d0,#ffe899); border: 3px solid #ffd15a; }
+        .kid-group-card.is-right { background: linear-gradient(180deg,#e9dcff,#d3c0ff); border: 3px solid #9b87f5; }
+        .kid-group-card.is-joined { display: none; grid-column: 1 / -1; min-height: 205px; background: linear-gradient(180deg,#dff9ee,#b8efd5); border: 3px solid #55c994; animation: pop-in .45s ease both; }
+        .kid-group-label { display: inline-flex; align-items: center; justify-content: center; min-width: 42px; height: 42px; padding: 0 12px; border-radius: 999px; background: #fff; font-size: 1.05rem; font-weight: 950; box-shadow: 0 5px 10px rgba(47,72,91,.08); }
+        .kid-token-field { display: flex; flex-wrap: wrap; justify-content: center; align-content: center; gap: 9px; min-height: 112px; padding-top: 14px; }
+        .kid-token { width: 42px; height: 42px; border-radius: 50% 50% 48% 52%; border: 4px solid rgba(255,255,255,.84); box-shadow: 0 5px 0 rgba(69,74,95,.12), 0 8px 14px rgba(50,79,96,.08); animation: token-bob 2.6s ease-in-out infinite; }
+        .kid-token:nth-child(2n) { animation-delay: -.35s; }
+        .kid-token:nth-child(3n) { animation-delay: -.75s; }
+        .kid-token-left { background: linear-gradient(145deg,#ffbd59,#ff8e4f); }
+        .kid-token-right { background: linear-gradient(145deg,#a795ff,#745fe7); }
+        .kid-token-joined:nth-child(odd) { background: linear-gradient(145deg,#ffbd59,#ff8e4f); }
+        .kid-token-joined:nth-child(even) { background: linear-gradient(145deg,#a795ff,#745fe7); }
+        .kid-plus { display: grid; place-items: center; width: 58px; height: 58px; margin: 0 auto; border-radius: 20px; background: #fff; color: #ff7a59; font-size: 2.4rem; font-weight: 950; box-shadow: 0 9px 18px rgba(57,87,105,.11); }
+        .kid-join-row { display: flex; justify-content: center; margin: 15px 0 12px; }
+        .kid-join-button { min-height: 52px; padding: 0 24px; border: 0; border-radius: 18px; background: linear-gradient(180deg,#ffad5c,#ff844b); color: #fff; font-size: 1.05rem; font-weight: 950; cursor: pointer; box-shadow: 0 8px 0 #d96037, 0 14px 22px rgba(180,88,45,.2); transition: transform .15s ease, box-shadow .15s ease; }
+        .kid-join-button:hover { transform: translateY(-2px); box-shadow: 0 10px 0 #d96037, 0 16px 24px rgba(180,88,45,.2); }
+        .kid-join-button:active { transform: translateY(4px); box-shadow: 0 4px 0 #d96037; }
+        .kid-equation-strip { display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+        .kid-equation { padding: 8px 18px; border-radius: 18px; background: rgba(255,255,255,.88); color: #173d56; font-size: clamp(2rem,4vw,3.3rem); font-weight: 950; letter-spacing: -.035em; box-shadow: 0 8px 18px rgba(50,85,104,.09); }
+        .kid-answer-box { width: 126px; min-height: 66px; padding: 8px 12px; border: 4px solid #28a6ba; border-radius: 18px; background: #fff8c7; color: #173d56; text-align: center; font-size: 2rem; font-weight: 950; outline: 0; box-shadow: 0 7px 0 #168091, 0 10px 20px rgba(39,102,119,.12); }
+        .kid-answer-box:focus { box-shadow: 0 7px 0 #168091, 0 0 0 6px rgba(40,166,186,.18); }
+        .kid-answer-box:disabled { opacity: .58; cursor: not-allowed; }
+        .kid-feedback { margin: 16px auto 0; max-width: 650px; padding: 12px 16px; border-radius: 18px; text-align: center; font-size: 1.05rem; font-weight: 950; box-shadow: 0 7px 15px rgba(56,91,109,.08); }
+        .kid-feedback.is-correct { border: 3px solid #58c98a; background: #e2f9eb; color: #187246; }
+        .kid-feedback.is-incorrect { border: 3px solid #f29c89; background: #fff0ec; color: #a74b3e; }
+        .kid-mascot-column { position: relative; align-self: stretch; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; min-height: 545px; }
+        .kid-speech { position: relative; width: 100%; margin: 4px 0 8px; padding: 14px 15px; border: 4px solid #fff; border-radius: 22px 22px 22px 6px; background: rgba(255,255,255,.9); color: #21475f; font-weight: 900; line-height: 1.3; box-shadow: 0 10px 24px rgba(40,90,112,.12); }
+        .kid-speech::after { content: ""; position: absolute; left: 18px; bottom: -14px; border-width: 12px 12px 0 0; border-style: solid; border-color: #fff transparent transparent transparent; transform: rotate(12deg); }
+        .kid-mascot-wrap { position: relative; width: min(255px,100%); height: 385px; display: flex; align-items: flex-end; justify-content: center; }
+        .kid-mascot-wrap::after { content: ""; position: absolute; bottom: 7px; width: 82%; height: 28px; border-radius: 50%; background: rgba(45,93,62,.22); filter: blur(4px); }
+        .kid-mascot { position: relative; z-index: 1; display: block; width: 100%; max-height: 380px; object-fit: contain; object-position: center bottom; filter: drop-shadow(0 12px 10px rgba(42,75,88,.14)); transform-origin: 50% 100%; }
+        .kid-mascot.is-celebrating { animation: mascot-celebrate .7s ease both; }
+        .kid-answer-dock { position: relative; display: grid; grid-template-columns: minmax(0,1fr) 350px; gap: 18px; padding: 18px 24px 22px; border-top: 4px solid rgba(255,255,255,.68); background: rgba(255,255,255,.2); backdrop-filter: blur(2px); }
+        .kid-dock-message { display: flex; align-items: center; gap: 14px; min-height: 92px; padding: 14px 18px; border: 3px solid rgba(255,255,255,.8); border-radius: 24px; background: rgba(255,255,255,.75); box-shadow: 0 10px 22px rgba(42,94,112,.1); }
+        .kid-dock-icon { flex: 0 0 56px; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 18px; background: #ffd95d; font-size: 1.7rem; box-shadow: inset 0 -4px 0 rgba(196,140,34,.14); }
+        .kid-dock-message strong { display: block; color: #173d56; font-size: 1.08rem; }
+        .kid-dock-message span { display: block; margin-top: 3px; color: #597489; font-size: .9rem; font-weight: 700; }
+        .kid-keypad-panel { padding: 12px; border: 3px solid rgba(255,255,255,.76); border-radius: 24px; background: rgba(255,255,255,.7); box-shadow: 0 10px 22px rgba(42,94,112,.1); }
+        .kid-keypad { display: grid; grid-template-columns: repeat(6,1fr); gap: 8px; }
+        .kid-key { min-height: 50px; border: 0; border-radius: 16px; background: #187f91; color: #fff; font-size: 1.1rem; font-weight: 950; cursor: pointer; box-shadow: inset 0 -4px 0 rgba(4,78,90,.28), 0 5px 9px rgba(36,78,94,.1); transition: transform .12s ease; }
+        .kid-key:hover { transform: translateY(-1px); }
+        .kid-key.is-tool { background: #61788b; }
+        .kid-key:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+        .kid-check-button { width: 100%; min-height: 54px; margin-top: 9px; border: 0; border-radius: 17px; background: linear-gradient(180deg,#39c57d,#20a766); color: #fff; font-size: 1rem; font-weight: 950; cursor: pointer; box-shadow: inset 0 -5px 0 rgba(18,117,70,.28), 0 7px 14px rgba(29,116,75,.18); }
+        .kid-check-button:disabled { opacity: .48; cursor: not-allowed; }
+        .kid-finish { position: relative; min-height: 590px; display: grid; place-items: center; padding: 36px; text-align: center; }
+        .kid-finish-card { position: relative; z-index: 2; width: min(680px,100%); padding: 32px 30px 30px; border: 5px solid #fff; border-radius: 30px; background: rgba(255,255,255,.9); box-shadow: 0 22px 50px rgba(35,89,110,.18); }
+        .kid-finish-mascot { width: min(230px,55vw); max-height: 255px; object-fit: contain; margin: -6px auto 4px; display: block; }
+        .kid-finish h2 { margin: 4px 0 8px; color: #173d56; font-size: clamp(2rem,5vw,3.2rem); }
+        .kid-final-score { margin: 0; color: #159761; font-size: clamp(2.5rem,7vw,4.5rem); font-weight: 950; }
+        .kid-final-detail { margin: 7px 0 0; color: #58768a; font-weight: 850; }
+        .kid-restart { min-height: 52px; margin-top: 20px; padding: 0 24px; border: 0; border-radius: 18px; background: linear-gradient(180deg,#ffad5c,#ff844b); color: #fff; font-weight: 950; cursor: pointer; box-shadow: 0 7px 0 #d96037; }
+        .kid-confetti { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+        .kid-confetti span { position: absolute; top: -24px; width: 12px; height: 24px; border-radius: 5px; animation: confetti-fall 3.1s linear infinite; }
+        .kid-confetti span:nth-child(4n+1) { background: #ff8f6b; }
+        .kid-confetti span:nth-child(4n+2) { background: #ffd95d; }
+        .kid-confetti span:nth-child(4n+3) { background: #7f72ef; }
+        .kid-confetti span:nth-child(4n) { background: #47c891; }
+        .kid-confetti span:nth-child(1) { left: 7%; animation-delay: -.3s; }
+        .kid-confetti span:nth-child(2) { left: 18%; animation-delay: -1.4s; }
+        .kid-confetti span:nth-child(3) { left: 31%; animation-delay: -.8s; }
+        .kid-confetti span:nth-child(4) { left: 44%; animation-delay: -2s; }
+        .kid-confetti span:nth-child(5) { left: 57%; animation-delay: -.5s; }
+        .kid-confetti span:nth-child(6) { left: 70%; animation-delay: -1.8s; }
+        .kid-confetti span:nth-child(7) { left: 82%; animation-delay: -1.1s; }
+        .kid-confetti span:nth-child(8) { left: 92%; animation-delay: -2.4s; }
+        @@keyframes token-bob { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-5px) rotate(2deg); } }
+        @@keyframes pop-in { 0% { opacity: 0; transform: scale(.92); } 75% { transform: scale(1.025); } 100% { opacity: 1; transform: scale(1); } }
+        @@keyframes mascot-celebrate { 0% { transform: rotate(0) translateY(0); } 28% { transform: rotate(-4deg) translateY(-12px); } 58% { transform: rotate(4deg) translateY(-5px); } 100% { transform: rotate(0) translateY(0); } }
+        @@keyframes confetti-fall { 0% { transform: translateY(-20px) rotate(0); opacity: 0; } 12% { opacity: 1; } 100% { transform: translateY(650px) rotate(560deg); opacity: .9; } }
+        @@media (max-width: 980px) {
+            .kid-stage { grid-template-columns: minmax(0,1fr) 220px; }
+            .kid-mascot-wrap { height: 320px; }
+            .kid-answer-dock { grid-template-columns: 1fr; }
+            .kid-keypad { grid-template-columns: repeat(6,1fr); }
+        }
+        @@media (max-width: 760px) {
+            .preview-wrap { width: min(100% - 18px, 1240px); margin-top: 10px; }
+            .preview-notice { align-items: flex-start; flex-direction: column; }
+            .preview-tabs { display: flex; width: 100%; }
+            .preview-tab { flex: 1; padding-inline: 12px; }
+            .preview-lesson-layout { grid-template-columns: 1fr; }
+            .preview-lesson-card { padding: 16px; border-radius: 18px; }
+            .kid-game-shell { border-width: 4px; border-radius: 24px; }
+            .kid-game-topbar { grid-template-columns: 1fr; padding: 16px 16px 10px; }
+            .kid-top-actions { justify-content: space-between; }
+            .kid-progress-wrap { padding-inline: 16px; }
+            .kid-stage { grid-template-columns: 1fr; padding: 16px; min-height: 0; }
+            .kid-play-board { min-height: 0; padding: 16px 12px 20px; }
+            .kid-groups-row { grid-template-columns: 1fr 42px 1fr; gap: 8px; }
+            .kid-group-card { min-height: 165px; padding-inline: 8px; }
+            .kid-token { width: 34px; height: 34px; border-width: 3px; }
+            .kid-plus { width: 42px; height: 42px; border-radius: 14px; font-size: 1.8rem; }
+            .kid-mascot-column { min-height: 0; display: grid; grid-template-columns: minmax(0,1fr) 170px; gap: 10px; align-items: end; }
+            .kid-mascot-wrap { width: 170px; height: 210px; }
+            .kid-speech { align-self: center; }
+            .kid-answer-dock { padding: 14px; }
+        }
+        @@media (max-width: 520px) {
+            .kid-game-title { width: 100%; }
+            .kid-counter { min-width: 0; flex: 1; }
+            .kid-sound-toggle { padding-inline: 12px; }
+            .kid-groups-row { grid-template-columns: 1fr; }
+            .kid-plus { margin: -3px auto; }
+            .kid-group-card { min-height: 140px; }
+            .kid-token-field { min-height: 84px; gap: 6px; }
+            .kid-token { width: 30px; height: 30px; }
+            .kid-join-button { width: 100%; }
+            .kid-equation-strip { gap: 8px; }
+            .kid-equation { font-size: 2rem; padding-inline: 12px; }
+            .kid-answer-box { width: 108px; min-height: 60px; font-size: 1.7rem; }
+            .kid-mascot-column { grid-template-columns: 1fr 130px; }
+            .kid-mascot-wrap { width: 130px; height: 170px; }
+            .kid-speech { padding: 12px; font-size: .9rem; }
+            .kid-keypad { grid-template-columns: repeat(4,1fr); }
+            .kid-key { min-height: 48px; }
+            .kid-dock-message { min-height: 82px; padding: 12px; }
+            .kid-dock-icon { flex-basis: 48px; width: 48px; height: 48px; }
+        }
+        @@media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+        }
     </style>
 </head>
 <body>
@@ -131,46 +285,111 @@
     </section>
 
     <section data-preview-panel="practice" hidden>
-        <div class="preview-game-shell">
-            <div class="preview-game-topbar">
-                <div>
-                    <p class="preview-game-kicker">Practice</p>
-                    <strong>@Model.Title</strong>
+        <div class="kid-game-shell">
+            <div class="kid-cloud kid-cloud-one" aria-hidden="true"></div>
+            <div class="kid-cloud kid-cloud-two" aria-hidden="true"></div>
+            <div class="kid-sun" aria-hidden="true"></div>
+
+            <header class="kid-game-topbar">
+                <div class="kid-brand-line">
+                    <p class="kid-game-kicker">✦ Edulytics Math Adventure</p>
+                    <span class="kid-game-title">@Model.Title</span>
                 </div>
-                <div class="preview-game-counter" data-preview-counter>Question 1 / 10</div>
-            </div>
-            <div class="preview-game-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                <span data-preview-progress></span>
-            </div>
-            <div class="preview-game-feedback" data-preview-feedback hidden></div>
-            <div class="preview-game-stage" data-preview-game-stage>
-                <div class="preview-game-question">
-                    <div class="preview-game-question-number" data-preview-question-number>Question 1</div>
-                    <h2 data-preview-question>7 + 5 = ?</h2>
-                    <input class="preview-game-answer" data-preview-answer inputmode="numeric" maxlength="3" autocomplete="off" aria-label="Your answer" />
+                <div class="kid-top-actions">
+                    <div class="kid-counter" data-preview-counter>1 of 10</div>
+                    <button class="kid-sound-toggle" type="button" data-preview-sound aria-pressed="true" aria-label="Turn game sounds off">🔊 Sound on</button>
                 </div>
-                <aside class="preview-game-side">
-                    <div class="preview-game-tools">
-                        <button class="preview-game-tool" type="button" data-practice-key="clear">C</button>
-                        <button class="preview-game-tool" type="button" data-practice-key="backspace">⌫</button>
+            </header>
+
+            <div class="kid-progress-wrap">
+                <div class="kid-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <span class="kid-progress-fill" data-preview-progress></span>
+                </div>
+            </div>
+
+            <div class="kid-stage" data-preview-game-stage>
+                <main class="kid-play-board">
+                    <div class="kid-instruction">
+                        <p class="kid-instruction-eyebrow" data-preview-question-number>Question 1</p>
+                        <h2>Bring the two groups together!</h2>
+                        <p>Count both groups, join them, then tell us how many there are altogether.</p>
                     </div>
-                    <div class="preview-game-keypad" aria-label="Numeric keypad">
-                        @for (var digit = 1; digit <= 9; digit++)
-                        {
-                            <button class="preview-game-key" type="button" data-practice-key="@digit">@digit</button>
-                        }
-                        <span aria-hidden="true"></span>
-                        <button class="preview-game-key" type="button" data-practice-key="0">0</button>
-                        <span aria-hidden="true"></span>
+
+                    <div class="kid-groups-row" data-preview-groups-row>
+                        <section class="kid-group-card is-left" data-preview-left-card aria-label="First group">
+                            <span class="kid-group-label" data-preview-left-label>3</span>
+                            <div class="kid-token-field" data-preview-left-group></div>
+                        </section>
+                        <div class="kid-plus" aria-hidden="true">+</div>
+                        <section class="kid-group-card is-right" data-preview-right-card aria-label="Second group">
+                            <span class="kid-group-label" data-preview-right-label>2</span>
+                            <div class="kid-token-field" data-preview-right-group></div>
+                        </section>
+                        <section class="kid-group-card is-joined" data-preview-joined-card aria-label="Joined group">
+                            <span class="kid-group-label">Together</span>
+                            <div class="kid-token-field" data-preview-joined-group></div>
+                        </section>
                     </div>
-                    <button class="preview-game-submit" type="button" data-preview-check>Check answer</button>
+
+                    <div class="kid-join-row">
+                        <button class="kid-join-button" type="button" data-preview-join>Join the groups!</button>
+                    </div>
+
+                    <div class="kid-equation-strip">
+                        <div class="kid-equation" data-preview-question>3 + 2 =</div>
+                        <input class="kid-answer-box" data-preview-answer inputmode="numeric" maxlength="2" autocomplete="off" aria-label="Your answer" disabled />
+                    </div>
+
+                    <div class="kid-feedback" data-preview-feedback aria-live="polite" hidden></div>
+                </main>
+
+                <aside class="kid-mascot-column" aria-label="Edulytics helper">
+                    <div class="kid-speech" data-preview-speech aria-live="polite">Hi! I’ll help you join the groups. Tap the orange button when you’re ready.</div>
+                    <div class="kid-mascot-wrap">
+                        <img class="kid-mascot"
+                             data-preview-mascot
+                             data-mascot-idle="/images/public/edulytics-math-mascot.png"
+                             data-mascot-correct="/images/public/edulytics-math-mascot-1.png"
+                             data-mascot-try="/images/public/edulytics-math-mascot-2.png"
+                             src="/images/public/edulytics-math-mascot.png"
+                             alt="Edulytics cartoon character" />
+                    </div>
                 </aside>
             </div>
-            <div class="preview-game-finish" data-preview-finish hidden>
-                <h2>Practice complete</h2>
-                <p class="preview-game-score" data-preview-final-score>0%</p>
-                <p data-preview-final-detail></p>
-                <button class="preview-restart" type="button" data-preview-restart>Try another set</button>
+
+            <div class="kid-answer-dock" data-preview-answer-dock>
+                <div class="kid-dock-message">
+                    <div class="kid-dock-icon" aria-hidden="true">⭐</div>
+                    <div>
+                        <strong data-preview-dock-title>First, join the groups</strong>
+                        <span data-preview-dock-copy>Then use the number buttons to enter your answer.</span>
+                    </div>
+                </div>
+                <div class="kid-keypad-panel">
+                    <div class="kid-keypad" aria-label="Numeric keypad">
+                        @for (var digit = 1; digit <= 9; digit++)
+                        {
+                            <button class="kid-key" type="button" data-practice-key="@digit" disabled>@digit</button>
+                        }
+                        <button class="kid-key is-tool" type="button" data-practice-key="clear" disabled>C</button>
+                        <button class="kid-key" type="button" data-practice-key="0" disabled>0</button>
+                        <button class="kid-key is-tool" type="button" data-practice-key="backspace" disabled>⌫</button>
+                    </div>
+                    <button class="kid-check-button" type="button" data-preview-check disabled>Check my answer</button>
+                </div>
+            </div>
+
+            <div class="kid-finish" data-preview-finish hidden>
+                <div class="kid-confetti" aria-hidden="true">
+                    @for (var i = 0; i < 8; i++) { <span></span> }
+                </div>
+                <div class="kid-finish-card">
+                    <img class="kid-finish-mascot" src="/images/public/edulytics-math-mascot-1.png" alt="Edulytics cartoon character celebrating" />
+                    <h2>Math adventure complete!</h2>
+                    <p class="kid-final-score" data-preview-final-score>0%</p>
+                    <p class="kid-final-detail" data-preview-final-detail></p>
+                    <button class="kid-restart" type="button" data-preview-restart>Play another round</button>
+                </div>
             </div>
         </div>
     </section>
