@@ -1,0 +1,164 @@
+.ed-login-v28-role-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-bottom: 4px;
+}
+
+.ed-login-v28-role-heading h2 {
+  margin: 0;
+  color: #172b47;
+  font-size: 1rem;
+  font-weight: 850;
+  line-height: 1.3;
+}
+
+.ed-login-v28-role-heading p {
+  margin: 4px 0 0;
+  color: #6b7e98;
+  font-size: .8rem;
+  line-height: 1.45;
+}
+
+.ed-login-v28-step {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #315de3;
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 900;
+  box-shadow: 0 6px 14px rgba(49, 93, 227, .18);
+}
+
+.ed-login-v28-step-inline {
+  margin: 0 auto 9px;
+}
+
+.ed-login-v28-role-list {
+  display: grid;
+  gap: 15px;
+}
+
+.ed-login-v28-role-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.ed-login-v28-audience {
+  cursor: pointer;
+  user-select: none;
+}
+
+.ed-login-v28-audience:first-of-type {
+  border-color: #cbd9e8;
+  background: rgba(255,255,255,.90);
+}
+
+.ed-login-v28-role-input:focus-visible + .ed-login-v28-audience {
+  outline: 3px solid rgba(49, 93, 227, .22);
+  outline-offset: 3px;
+}
+
+.ed-login-v28-role-input:checked + .ed-login-v28-audience,
+.ed-login-v28-audience.is-selected {
+  transform: translateY(-1px);
+  border-color: #f18b54;
+  background: #fff7f1;
+  box-shadow: 0 14px 32px rgba(35, 71, 111, .11);
+}
+
+.ed-login-v28-audience-check {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #eef3fa;
+  color: transparent;
+  font-size: .9rem;
+  font-weight: 900;
+  transition: background .18s ease, color .18s ease;
+}
+
+.ed-login-v28-role-input:checked + .ed-login-v28-audience .ed-login-v28-audience-check,
+.ed-login-v28-audience.is-selected .ed-login-v28-audience-check {
+  background: #315de3;
+  color: #fff;
+}
+
+.ed-login-v28-role-error {
+  display: block;
+  min-height: 1.25rem;
+  margin: -2px 0 2px;
+  color: #a63737;
+  font-size: .79rem;
+  font-weight: 800;
+}
+
+.ed-login-v28-card [data-role-gated-control]:disabled {
+  background: #f3f6fa;
+  color: #8b9aae;
+  cursor: not-allowed;
+  opacity: .78;
+}
+
+.ed-login-v28-card [data-role-gated-submit]:disabled {
+  cursor: not-allowed;
+  opacity: .48;
+  box-shadow: none;
+  transform: none;
+  filter: grayscale(.12);
+}
+
+.ed-login-v28-card [data-role-gated-submit]:disabled:hover {
+  transform: none;
+  filter: grayscale(.12);
+}
+
+@media (max-width: 780px) {
+  .ed-login-v28-audiences {
+    order: 1;
+  }
+
+  .ed-login-v28-card {
+    order: 2;
+  }
+
+  .ed-login-v28-proof {
+    order: 3;
+  }
+
+  .ed-login-v28-role-list {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+
+  .ed-login-v28-role-heading {
+    padding: 0 4px;
+  }
+
+  .ed-login-v28-audience {
+    min-height: 90px;
+    grid-template-columns: 48px 1fr 28px;
+  }
+}
+
+@media (max-width: 520px) {
+  .ed-login-v28-role-list {
+    grid-template-columns: 1fr;
+  }
+
+  .ed-login-v28-audience {
+    min-height: 86px;
+  }
+}
