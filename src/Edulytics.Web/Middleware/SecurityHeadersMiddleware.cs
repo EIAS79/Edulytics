@@ -7,6 +7,9 @@ public sealed class SecurityHeadersMiddleware
     public const string CspNonceItemKey =
         "__EdulyticsCspNonce";
 
+    private const string TurnstileOrigin =
+        "https://challenges.cloudflare.com";
+
     private readonly RequestDelegate _next;
 
     public SecurityHeadersMiddleware(
@@ -79,12 +82,13 @@ public sealed class SecurityHeadersMiddleware
                 "object-src 'none';",
                 "frame-ancestors 'none';",
                 "form-action 'self';",
-                $"script-src 'self' 'nonce-{nonce}';",
+                $"script-src 'self' 'nonce-{nonce}' {TurnstileOrigin};",
                 "script-src-attr 'none';",
                 "style-src 'self' 'unsafe-inline';",
                 "img-src 'self' data: https://images.unsplash.com;",
                 "font-src 'self' data:;",
-                $"connect-src 'self' {websocketSchemes};",
+                $"connect-src 'self' {websocketSchemes} {TurnstileOrigin};",
+                $"frame-src {TurnstileOrigin};",
                 "worker-src 'self';",
                 "manifest-src 'self';");
 
