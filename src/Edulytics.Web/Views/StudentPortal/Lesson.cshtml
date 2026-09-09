@@ -1,9 +1,14 @@
 @model Edulytics.Services.LessonContent.StudentLessonDetail
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonContentResource> L
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonPracticeResource> P
 @using Edulytics.Web.Presentation
 @{
     Layout = "_StudentLayout";
     ViewData["Title"] = Model.Title;
+    var practiceAdoptionId = ViewData["LessonPracticePilotAdoptionId"] is Guid adoptionId
+        ? adoptionId
+        : (Guid?)null;
     var sections = new[]
     {
         new LessonReaderSection("01", L["Explanation"], "explanation", LessonPresentationParser.Parse(Model.Explanation, sectionKind: "explanation")),
@@ -14,8 +19,73 @@
         new LessonReaderSection("06", L["QuickSummary"], "summary", LessonPresentationParser.Parse(Model.QuickSummary, sectionKind: "summary"))
     };
 }
+<style>
+    .lesson-mode-tabs {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin: 14px 0 20px;
+        padding: 5px;
+        border: 1px solid #dbe5ef;
+        border-radius: 999px;
+        background: #f5f8fb;
+    }
+    .lesson-mode-tab {
+        min-height: 42px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 9px 20px;
+        border: 0;
+        border-radius: 999px;
+        font: inherit;
+        font-weight: 800;
+        color: #335168;
+        background: transparent;
+        text-decoration: none;
+    }
+    .lesson-mode-tab--active {
+        color: #fff;
+        background: #0b7285;
+        box-shadow: 0 5px 14px rgba(11,114,133,.2);
+    }
+    .lesson-mode-tab--practice {
+        cursor: pointer;
+        color: #075d6c;
+        transition: transform .15s ease, background .15s ease;
+    }
+    .lesson-mode-tab--practice:hover {
+        background: #dff6f8;
+        transform: translateY(-1px);
+    }
+    .lesson-mode-tabs form { margin: 0; }
+    @@media (max-width: 520px) {
+        .lesson-mode-tabs { display: flex; width: 100%; }
+        .lesson-mode-tab, .lesson-mode-tabs form { flex: 1 1 0; }
+        .lesson-mode-tab { width: 100%; padding-inline: 12px; }
+    }
+</style>
 <div class="lesson-reader lesson-reader--student">
     <a class="lesson-reader-back" asp-action="Learning"><span aria-hidden="true">←</span> @L["BackToLessons"]</a>
+
+    @if (practiceAdoptionId.HasValue)
+    {
+        <nav class="lesson-mode-tabs" aria-label="@S["Lesson"] / @P["Practice"]">
+            <span class="lesson-mode-tab lesson-mode-tab--active" aria-current="page">@S["Lesson"]</span>
+            <form asp-controller="StudentPractice" asp-action="StartLessonPilot" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="curriculumAdoptionId" value="@practiceAdoptionId.Value" />
+                <input type="hidden" name="lessonId" value="@Model.Id" />
+                <button class="lesson-mode-tab lesson-mode-tab--practice" type="submit">@P["Practice"]</button>
+            </form>
+        </nav>
+    }
+
+    @if (TempData["Error"] is string error)
+    {
+        <div class="school-alert school-alert-error" role="alert">@error</div>
+    }
+
     <header class="lesson-reader-hero"><div class="lesson-reader-hero__main"><div class="lesson-reader-hero__topline"><span class="student-subject-code">@Model.SubjectCode</span>@if (Model.IsSupporting) { <span class="lesson-content-status lesson-content-status--supporting">@L["SupportingLesson"]</span> }</div><p class="lesson-library-eyebrow">@L["LearningContent"]</p><h1>@Model.Title</h1><p class="lesson-reader-hero__unit">@Model.TopicName</p><div class="lesson-reader-meta"><span><small>@L["Grade"]</small><strong>@Model.GradeName</strong></span><span><small>@L["Framework"]</small><strong>@Model.FrameworkName</strong></span><span><small>@L["PublishedOn"]</small><strong>@Model.PublishedAtUtc.ToString("yyyy-MM-dd")</strong></span></div></div></header>
     <div class="lesson-reader-layout"><main class="lesson-reader-main">
         @if (Model.IsSupporting) { <section class="lesson-supporting-message"><span class="lesson-supporting-message__icon" aria-hidden="true">i</span><div><h2>@L["SupportingLesson"]</h2><p>@L["SupportingLessonHelp"]</p></div></section> }

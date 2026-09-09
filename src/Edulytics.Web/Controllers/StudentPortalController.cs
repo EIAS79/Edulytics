@@ -3,6 +3,7 @@ using System.Globalization;
 using Edulytics.Services.Assessments;
 using Edulytics.Services.Notifications;
 using Edulytics.Services.LessonContent;
+using Edulytics.Services.Practice;
 using Edulytics.Services.StudentPortal;
 using Edulytics.Web.ViewModels.StudentPortal;
 using Microsoft.AspNetCore.Authorization;
@@ -14,21 +15,26 @@ namespace Edulytics.Web.Controllers;
 [Route("student")]
 public sealed class StudentPortalController : Controller
 {
+    private const string LessonPracticePilotCode = "PED:CAMBRIDGE-INTL-MATH:S1:L10";
+
     private readonly IStudentPortalService _portal;
     private readonly INotificationService _notifications;
     private readonly ILessonContentService _lessonContent;
     private readonly IStudentAssessmentDeliveryService _assessmentDelivery;
+    private readonly IStudentPrivatePracticeService _privatePractice;
 
     public StudentPortalController(
         IStudentPortalService portal,
         INotificationService notifications,
         ILessonContentService lessonContent,
-        IStudentAssessmentDeliveryService assessmentDelivery)
+        IStudentAssessmentDeliveryService assessmentDelivery,
+        IStudentPrivatePracticeService privatePractice)
     {
         _portal = portal;
         _notifications = notifications;
         _lessonContent = lessonContent;
         _assessmentDelivery = assessmentDelivery;
+        _privatePractice = privatePractice;
     }
 
     [HttpGet("")]
@@ -95,6 +101,9 @@ public sealed class StudentPortalController : Controller
             actorId, id, CultureInfo.CurrentUICulture.Name, cancellationToken);
         if (lesson.Value is null)
             return lesson.Error == LessonContentErrorCode.AccessDenied ? Forbid() : NotFound();
+
+        ViewData["LessonPracticePilotAdoptionId"] = await FindLessonPracticePilotAdoptionAsync(
+            actorId, id, cancellationToken);
         return View(nameof(Lesson), lesson.Value);
     }
 
@@ -181,6 +190,36 @@ public sealed class StudentPortalController : Controller
         if (result.Value is null) return Forbid();
         return RedirectToAction(nameof(Notifications));
     }
+
+    private async Task<Guid?> FindLessonPracticePilotAdoptionAsync(
+        Guid actorId,
+        Guid lessonId,
+        CancellationToken cancellationToken)
+    {
+        var initial = await _privatePractice.GetWorkspaceAsync(actorId, null, cancellationToken);
+        if (MatchesLessonPracticePilot(initial, lessonId))
+            return initial.SelectedCurriculumAdoptionId;
+
+        foreach (var curriculum in initial.Curricula)
+        {
+            if (curriculum.CurriculumAdoptionId == initial.SelectedCurriculumAdoptionId)
+                continue;
+
+            var workspace = await _privatePractice.GetWorkspaceAsync(
+                actorId, curriculum.CurriculumAdoptionId, cancellationToken);
+            if (MatchesLessonPracticePilot(workspace, lessonId))
+                return curriculum.CurriculumAdoptionId;
+        }
+
+        return null;
+    }
+
+    private static bool MatchesLessonPracticePilot(
+        StudentPrivatePracticeWorkspace workspace,
+        Guid lessonId) =>
+        workspace.Lessons.Any(x =>
+            x.LessonId == lessonId &&
+            string.Equals(x.LessonCode, LessonPracticePilotCode, StringComparison.Ordinal));
 
     private async Task<(StudentPortalWorkspace? Workspace, IActionResult? Result)> WorkspaceAsync(
         CancellationToken cancellationToken)
