@@ -5,7 +5,9 @@
 @{
     Layout = "_StudentLayout";
     ViewData["Title"] = Model.Title;
-    var practiceAdoptionId = ViewData["LessonPracticePilotAdoptionId"] as Guid?;
+    var practiceAdoptionId = ViewData["LessonPracticePilotAdoptionId"] is Guid adoptionId
+        ? adoptionId
+        : (Guid?)null;
     var sections = new[]
     {
         new LessonReaderSection("01", L["Explanation"], "explanation", LessonPresentationParser.Parse(Model.Explanation, sectionKind: "explanation")),
@@ -56,7 +58,7 @@
         transform: translateY(-1px);
     }
     .lesson-mode-tabs form { margin: 0; }
-    @media (max-width: 520px) {
+    @@media (max-width: 520px) {
         .lesson-mode-tabs { display: flex; width: 100%; }
         .lesson-mode-tab, .lesson-mode-tabs form { flex: 1 1 0; }
         .lesson-mode-tab { width: 100%; padding-inline: 12px; }
