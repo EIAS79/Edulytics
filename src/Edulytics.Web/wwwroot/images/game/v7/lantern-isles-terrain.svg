@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+<defs>
+  <linearGradient id="grass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b6ef7c"/><stop offset=".48" stop-color="#68ca65"/><stop offset="1" stop-color="#2f8b55"/></linearGradient>
+  <linearGradient id="cliff" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4f9970"/><stop offset="1" stop-color="#1f5c57"/></linearGradient>
+  <linearGradient id="path" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff08a"/><stop offset=".45" stop-color="#ffd85d"/><stop offset="1" stop-color="#f0a943"/></linearGradient>
+  <linearGradient id="rock" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8db1a0"/><stop offset="1" stop-color="#476c67"/></linearGradient>
+  <linearGradient id="lava" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffda59"/><stop offset=".5" stop-color="#ff7c3f"/><stop offset="1" stop-color="#b9392e"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="24" stdDeviation="18" flood-color="#073d58" flood-opacity=".4"/></filter>
+  <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+</defs>
+<g filter="url(#shadow)">
+  <path d="M128 540c10-118 111-211 247-207 75-90 229-117 348-48 105-63 264-57 361 29 130-34 290 38 321 154 27 104-80 192-213 175-74 95-247 130-372 54-125 82-300 76-392-12-133 43-288-38-300-145z" fill="url(#cliff)"/>
+  <path d="M143 506c21-104 111-174 231-162 81-74 213-96 319-32 108-55 250-45 335 29 118-27 245 36 267 128 21 83-70 145-177 127-78 77-222 104-329 42-117 70-274 63-356-14-120 37-255-37-290-118z" fill="url(#grass)"/>
+</g>
+<g opacity=".7" fill="#82dd6d"><ellipse cx="385" cy="370" rx="124" ry="42"/><ellipse cx="702" cy="340" rx="154" ry="45"/><ellipse cx="1010" cy="394" rx="132" ry="45"/><ellipse cx="1180" cy="510" rx="105" ry="39"/><ellipse cx="806" cy="620" rx="165" ry="48"/><ellipse cx="410" cy="592" rx="128" ry="43"/></g>
+<g fill="none" stroke="url(#path)" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M247 555C322 506 405 495 484 526c73 29 129 45 196 6 71-42 114-88 192-76 78 12 121 70 198 76 78 7 120-19 190-70" stroke-width="38"/>
+  <path d="M485 525c7-74 46-122 119-150 74-29 142-25 214 10" stroke-width="33"/>
+  <path d="M678 533c15 70 22 111 88 147 57 31 122 28 186-16" stroke-width="33"/>
+</g>
+<g opacity=".28" fill="#fff1a0" filter="url(#glow)"><circle cx="252" cy="552" r="42"/><circle cx="486" cy="524" r="43"/><circle cx="680" cy="532" r="43"/><circle cx="873" cy="458" r="43"/><circle cx="1071" cy="530" r="43"/><circle cx="1255" cy="462" r="43"/><circle cx="603" cy="374" r="42"/><circle cx="820" cy="385" r="42"/><circle cx="768" cy="680" r="42"/><circle cx="950" cy="665" r="42"/></g>
+<!-- Glow Falls -->
+<g transform="translate(560 232)"><path d="M0 89c22-56 87-79 140-48 35 20 51 51 45 88H-10C-13 116-10 101 0 89z" fill="#73d8df"/><path d="M70 127c-2 60-11 106-24 156h71c-15-55-25-101-25-156z" fill="#55d8e9"/><path d="M82 130c0 55-5 102-13 148" stroke="#d5fcff" stroke-width="10" opacity=".78"/></g>
+<!-- crystal grove -->
+<g transform="translate(930 274)"><ellipse cx="0" cy="104" rx="104" ry="45" fill="#3c875b"/><g fill="#8fe5ff" stroke="#dffbff" stroke-width="5"><path d="M-62 85l25-66 30 66z"/><path d="M-15 84l33-90 38 90z"/><path d="M44 86l24-61 31 61z"/></g><g fill="#b9a0ff" opacity=".8"><circle cx="-35" cy="70" r="9"/><circle cx="33" cy="53" r="10"/><circle cx="77" cy="74" r="8"/></g></g>
+<!-- Beacon volcano -->
+<g transform="translate(1180 335)"><ellipse cx="0" cy="141" rx="121" ry="52" fill="#3f8054"/><path d="M-78 135L-10 7 83 135z" fill="#72513f"/><path d="M-23 44L-10 7 11 45 30 77-5 70-40 80z" fill="url(#lava)"/><ellipse cx="-10" cy="11" rx="32" ry="12" fill="#4c332e"/><ellipse cx="-10" cy="10" rx="19" ry="7" fill="#ffbc49"/></g>
+<!-- lantern grove tower -->
+<g transform="translate(745 414)"><ellipse cx="0" cy="117" rx="86" ry="36" fill="#378255"/><rect x="-30" y="16" width="60" height="95" rx="18" fill="#815d43" stroke="#5a3c2d" stroke-width="7"/><rect x="-20" y="30" width="40" height="56" rx="12" fill="#ffe279"/><path d="M-23 17c0-36 46-48 58-7" fill="none" stroke="#5a3c2d" stroke-width="8" stroke-linecap="round"/></g>
+<!-- tiny dock / boat -->
+<g transform="translate(1290 615)"><path d="M0 45h130" stroke="#855f3e" stroke-width="18" stroke-linecap="round"/><path d="M14 42l18-42M52 42L69 0M91 42l15-42" stroke="#9a764d" stroke-width="9"/><path d="M150 33c43-10 74 4 91 25-38 16-72 17-101 1z" fill="#81543f"/><path d="M183 36V0l37 24" fill="#f2d06f" stroke="#6c4b3b" stroke-width="5"/></g>
+<!-- small house -->
+<g transform="translate(280 500)"><rect width="100" height="76" rx="18" fill="#ffd75e" stroke="#845a39" stroke-width="8"/><path d="M12 8L50-38 90 8" fill="#e85a45" stroke="#845a39" stroke-width="8"/><circle cx="50" cy="39" r="14" fill="#55cee4" stroke="#fff1aa" stroke-width="5"/></g>
+</svg>
