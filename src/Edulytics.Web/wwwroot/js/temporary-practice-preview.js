@@ -18,11 +18,7 @@
             tab.classList.toggle('is-active', active);
             tab.setAttribute('aria-selected', active ? 'true' : 'false');
         });
-
-        panels.forEach(panel => {
-            panel.hidden = panel.dataset.previewPanel !== name;
-        });
-
+        panels.forEach(panel => { panel.hidden = panel.dataset.previewPanel !== name; });
         if (name === 'practice') ensureGame();
     }
 
@@ -34,15 +30,11 @@
                 else existing.addEventListener('load', resolve, { once: true });
                 return;
             }
-
             const script = document.createElement('script');
             script.src = src;
             script.async = false;
             script.dataset.edulyticsGameSrc = src;
-            script.addEventListener('load', () => {
-                script.dataset.loaded = 'true';
-                resolve();
-            }, { once: true });
+            script.addEventListener('load', () => { script.dataset.loaded = 'true'; resolve(); }, { once: true });
             script.addEventListener('error', reject, { once: true });
             document.head.appendChild(script);
         });
@@ -68,17 +60,18 @@
     async function ensureGame() {
         if (runtime || loading) return loading;
         loading = (async () => {
-            loadStyle('/css/edulytics-game-experience-v2.css?v=0.2.0');
-            await loadScript('/js/game/edulytics-game-engine-v2.js?v=0.2.0');
-            await loadScript('/js/game/activities/join-groups-to-add.v2.activity.js?v=0.2.0');
+            loadStyle('/css/edulytics-game-experience-v3.css?v=0.3.0');
+            await loadScript('/js/game/edulytics-game-engine-v3.js?v=0.3.0');
+            await loadScript('/js/game/activities/join-groups-to-add.v3.activity.js?v=0.3.0');
 
-            const engine = window.EdulyticsGameEngineV2;
-            const activity = window.EdulyticsGameActivities?.['join-groups-to-add-v2'];
-            if (!engine || !activity) throw new Error('Edulytics game experience v2 failed to load.');
+            const engine = window.EdulyticsGameEngineV3;
+            const activity = window.EdulyticsGameActivities?.['join-groups-to-add-v3'];
+            if (!engine || !activity) throw new Error('Edulytics game experience v3 failed to load.');
 
             runtime = engine.mount(gameShell, activity, {
                 preview: true,
                 studentFirstName: studentFirstName(),
+                lessonLanguage: activity.lessonLanguage,
                 onEvent(event) {
                     gameShell.dispatchEvent(new CustomEvent('edulytics:game-event', { detail: event }));
                 }
@@ -91,10 +84,7 @@
         return loading;
     }
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => activateTab(tab.dataset.previewTab));
-    });
-
+    tabs.forEach(tab => tab.addEventListener('click', () => activateTab(tab.dataset.previewTab)));
     const initial = tabs.find(tab => tab.classList.contains('is-active'))?.dataset.previewTab || 'lesson';
     activateTab(initial);
 })();
