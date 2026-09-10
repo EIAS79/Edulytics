@@ -55,15 +55,19 @@
         return value.split(/\s+/u)[0].slice(0, 40);
     }
 
-    async function mountV8() {
-        loadStyle('/css/edulytics-game-experience-v8.css?v=0.8.0');
-        await loadScript('/js/game/activities/join-groups-to-add.v8.activity.js?v=0.8.0');
-        const activity = window.EdulyticsGameActivities?.['join-groups-to-add-v8'];
-        if (!activity) throw new Error('Lumen Trail V8 activity configuration is unavailable.');
-        await loadScript('/js/game/edulytics-game-v8.js?v=0.8.0');
-        const engine = window.EdulyticsGameEngineV8;
-        if (!engine) throw new Error('Lumen Trail V8 runtime failed to load.');
-        return engine.mount(gameShell, activity, { preview: true, studentFirstName: studentFirstName(), lessonLanguage: activity.lessonLanguage });
+    async function mountV9() {
+        loadStyle('/css/edulytics-game-experience-v9.css?v=0.9.0');
+        await loadScript('/js/game/activities/join-groups-to-add.v9.activity.js?v=0.9.0');
+        const activity = window.EdulyticsGameActivities?.['join-groups-to-add-v9'];
+        if (!activity) throw new Error('Lantern Isles V9 activity configuration is unavailable.');
+        await loadScript('/js/game/edulytics-game-v9.js?v=0.9.0');
+        const engine = window.EdulyticsGameEngineV9;
+        if (!engine) throw new Error('Lantern Isles V9 runtime failed to load.');
+        return engine.mount(gameShell, activity, {
+            preview: true,
+            studentFirstName: studentFirstName(),
+            lessonLanguage: activity.lessonLanguage
+        });
     }
 
     async function mountV7Fallback() {
@@ -73,21 +77,31 @@
         if (!activity) throw new Error('V7 fallback unavailable.');
         await loadScript('/js/game/edulytics-game-v7-renderer.js?v=0.7.0');
         await loadScript('/js/game/edulytics-game-engine-v4.js?v=0.4.0');
-        return window.EdulyticsGameEngineV4.mount(gameShell, activity, { preview: true, studentFirstName: studentFirstName(), lessonLanguage: activity.lessonLanguage });
+        const engine = window.EdulyticsGameEngineV4;
+        if (!engine) throw new Error('V7 fallback runtime unavailable.');
+        return engine.mount(gameShell, activity, {
+            preview: true,
+            studentFirstName: studentFirstName(),
+            lessonLanguage: activity.lessonLanguage
+        });
     }
 
     async function ensureGame() {
         if (runtime || loading) return loading;
-        loading = mountV8().then(instance => { runtime = instance; return instance; }).catch(async error => {
-            console.error('V8 preview failed, falling back to V7.', error);
-            try { runtime = await mountV7Fallback(); return runtime; }
-            catch (fallbackError) {
-                console.error(fallbackError);
-                gameShell.innerHTML = '<div style="padding:32px;background:#fff;border-radius:20px"><strong>Game preview could not start.</strong><p>Please refresh and try again.</p></div>';
-                loading = null;
-                return null;
-            }
-        });
+        loading = mountV9()
+            .then(instance => { runtime = instance; return instance; })
+            .catch(async error => {
+                console.error('V9 preview failed, falling back to V7.', error);
+                try {
+                    runtime = await mountV7Fallback();
+                    return runtime;
+                } catch (fallbackError) {
+                    console.error(fallbackError);
+                    gameShell.innerHTML = '<div style="padding:32px;background:#fff;border-radius:20px"><strong>Game preview could not start.</strong><p>Please refresh and try again.</p></div>';
+                    loading = null;
+                    return null;
+                }
+            });
         return loading;
     }
 
