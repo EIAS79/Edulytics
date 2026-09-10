@@ -32,7 +32,10 @@
             script.src = src;
             script.async = false;
             script.dataset.edulyticsGameSrc = src;
-            script.addEventListener('load', () => { script.dataset.loaded = 'true'; resolve(); }, { once: true });
+            script.addEventListener('load', () => {
+                script.dataset.loaded = 'true';
+                resolve();
+            }, { once: true });
             script.addEventListener('error', reject, { once: true });
             document.head.appendChild(script);
         });
@@ -56,13 +59,15 @@
     }
 
     async function mountV9() {
-        loadStyle('/css/edulytics-game-experience-v9.css?v=0.9.0');
-        await loadScript('/js/game/activities/join-groups-to-add.v9.activity.js?v=0.9.0');
+        loadStyle('/css/edulytics-game-experience-v9.css?v=0.9.2');
+        await loadScript('/js/game/activities/join-groups-to-add.v9.activity.js?v=0.9.2');
         const activity = window.EdulyticsGameActivities?.['join-groups-to-add-v9'];
         if (!activity) throw new Error('Lantern Isles V9 activity configuration is unavailable.');
-        await loadScript('/js/game/edulytics-game-v9.js?v=0.9.0');
+
+        await loadScript('/js/game/edulytics-game-v9.js?v=0.9.2');
         const engine = window.EdulyticsGameEngineV9;
         if (!engine) throw new Error('Lantern Isles V9 runtime failed to load.');
+
         return engine.mount(gameShell, activity, {
             preview: true,
             studentFirstName: studentFirstName(),
@@ -75,10 +80,12 @@
         await loadScript('/js/game/activities/join-groups-to-add.v7.activity.js?v=0.7.0');
         const activity = window.EdulyticsGameActivities?.['join-groups-to-add-v7'];
         if (!activity) throw new Error('V7 fallback unavailable.');
+
         await loadScript('/js/game/edulytics-game-v7-renderer.js?v=0.7.0');
         await loadScript('/js/game/edulytics-game-engine-v4.js?v=0.4.0');
         const engine = window.EdulyticsGameEngineV4;
         if (!engine) throw new Error('V7 fallback runtime unavailable.');
+
         return engine.mount(gameShell, activity, {
             preview: true,
             studentFirstName: studentFirstName(),
@@ -89,7 +96,10 @@
     async function ensureGame() {
         if (runtime || loading) return loading;
         loading = mountV9()
-            .then(instance => { runtime = instance; return instance; })
+            .then(instance => {
+                runtime = instance;
+                return instance;
+            })
             .catch(async error => {
                 console.error('V9 preview failed, falling back to V7.', error);
                 try {
