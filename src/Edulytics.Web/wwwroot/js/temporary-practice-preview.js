@@ -4,115 +4,92 @@
 
     const tabs = Array.from(root.querySelectorAll('[data-preview-tab]'));
     const panels = Array.from(root.querySelectorAll('[data-preview-panel]'));
-    const gameShell = root.querySelector('.kid-game-shell');
-    if (!gameShell) return;
+    const shell = root.querySelector('.kid-game-shell');
+    if (!shell) return;
 
     const mascotAsset = '/images/public/edulytics-math-mascot-animation.png';
     const totalRounds = 10;
-
     let rounds = [];
     let roundIndex = 0;
-    let movedCount = 0;
-    let phase = 'collect';
+    let collected = 0;
+    let phase = 'intro';
     let locked = false;
     let soundOn = true;
-    let audioContext = null;
-    let currentSpeech = '';
+    let speechLanguage = inferLanguage();
     let preferredVoice = null;
-    let speechLanguage = inferSpeechLanguage();
-    let dragTokenId = null;
+    let currentSpeech = '';
+    let audioContext = null;
     let started = false;
+    let dragId = null;
 
-    const strings = {
+    const copy = {
         en: {
-            adventure: 'Edulytics Math Adventure',
-            mission: 'Firefly Lantern Mission',
-            counter: i => `${i + 1} of ${totalRounds}`,
+            title: 'Join Groups Adventure',
+            introTitle: 'The Lantern Path',
+            introCopy: 'Two groups of fireflies are waiting in the meadow. Bring them together, then choose the right stepping stone to help Eddy cross the stream.',
+            start: 'Start adventure',
+            mission: i => `Mission ${i + 1}`,
+            counter: i => `${i + 1} / ${totalRounds}`,
             soundOn: '🔊 Sound on',
             soundOff: '🔇 Sound off',
-            soundOnLabel: 'Turn game sounds off',
-            soundOffLabel: 'Turn game sounds on',
-            eyebrow: i => `Mission ${i + 1}`,
-            heading: 'Help me light the lantern!',
-            instruction: 'Move every firefly from both bushes into the lantern.',
-            tip: 'Tap a firefly or drag it into the lantern.',
-            left: 'Sunset bush',
-            right: 'Moonlight bush',
-            lantern: 'Lantern',
-            joined: (moved, total) => `${moved} of ${total} joined`,
-            firstSpeech: q => `Mission ${roundIndex + 1}. There are ${q.left} fireflies in one bush and ${q.right} in the other. Bring all of them into the lantern.`,
-            collectSpeech: remaining => remaining === 1 ? 'One firefly left. Bring it to the lantern.' : `${remaining} fireflies are still waiting.`,
-            ask: q => `${q.left} plus ${q.right}. How many fireflies are glowing together?`,
-            question: q => `${q.left} + ${q.right} = ?`,
-            answerTitle: 'How many are glowing together?',
-            answerCopy: 'Count the fireflies inside the lantern, then choose your answer.',
-            correct: q => `Brilliant! ${q.left} plus ${q.right} equals ${q.sum}. The lantern is shining!`,
-            wrong: 'Good try. Count the glowing fireflies in the lantern once more.',
-            check: 'Check my answer',
-            clear: 'Clear',
-            replay: 'Tap me to hear the mission again',
-            completeTitle: 'Lantern adventure complete!',
-            completeScore: '10 missions completed',
-            completeCopy: 'You joined the groups and solved every addition mission.',
-            playAgain: 'Play another round',
-            close: 'Close'
+            soundOnLabel: 'Turn sound off',
+            soundOffLabel: 'Turn sound on',
+            collectTitle: 'Bring the fireflies together',
+            collectHint: 'Tap a firefly or drag it into the lantern.',
+            groupA: 'Sunset group',
+            groupB: 'Moonlight group',
+            joined: (n, total) => `${n} of ${total} inside`,
+            collectSpeech: q => `I found ${q.left} fireflies here and ${q.right} over there. Help me bring both groups into the lantern.`,
+            remaining: n => n === 1 ? 'One firefly is still waiting.' : `${n} fireflies are still waiting.`,
+            chooseTitle: 'Which stone opens the path?',
+            chooseSpeech: q => `${q.left} plus ${q.right}. How many fireflies are together now? Choose the correct stepping stone.`,
+            correct: q => `Yes! ${q.left} plus ${q.right} equals ${q.sum}. The path is open!`,
+            wrong: 'That stone did not light up. Count the fireflies in the lantern and try again.',
+            next: 'Next mission',
+            complete: 'Adventure complete!',
+            completeCopy: 'You brought every group together and helped Eddy cross the whole lantern path.',
+            again: 'Play again',
+            replay: 'Hear Eddy again'
         },
         pl: {
-            adventure: 'Edulytics Matematyczna Przygoda',
-            mission: 'Misja ze świetlikami',
-            counter: i => `${i + 1} z ${totalRounds}`,
+            title: 'Przygoda z dodawaniem',
+            introTitle: 'Ścieżka lampionów',
+            introCopy: 'Dwie grupy świetlików czekają na łące. Połącz je, a potem wybierz właściwy kamień, aby pomóc Eddy’emu przejść przez strumień.',
+            start: 'Rozpocznij przygodę',
+            mission: i => `Misja ${i + 1}`,
+            counter: i => `${i + 1} / ${totalRounds}`,
             soundOn: '🔊 Dźwięk włączony',
             soundOff: '🔇 Dźwięk wyłączony',
-            soundOnLabel: 'Wyłącz dźwięk gry',
-            soundOffLabel: 'Włącz dźwięk gry',
-            eyebrow: i => `Misja ${i + 1}`,
-            heading: 'Pomóż mi rozświetlić lampion!',
-            instruction: 'Przenieś wszystkie świetliki z obu krzaków do lampionu.',
-            tip: 'Dotknij świetlika albo przeciągnij go do lampionu.',
-            left: 'Krzak zachodu słońca',
-            right: 'Krzak księżycowy',
-            lantern: 'Lampion',
-            joined: (moved, total) => `${moved} z ${total} połączonych`,
-            firstSpeech: q => `Misja ${roundIndex + 1}. W jednym krzaku są ${q.left} świetliki, a w drugim ${q.right}. Przenieś wszystkie do lampionu.`,
-            collectSpeech: remaining => remaining === 1 ? 'Został jeden świetlik. Przenieś go do lampionu.' : `Zostało ${remaining} świetlików.`,
-            ask: q => `${q.left} plus ${q.right}. Ile świetlików świeci teraz razem?`,
-            question: q => `${q.left} + ${q.right} = ?`,
-            answerTitle: 'Ile świetlików świeci razem?',
-            answerCopy: 'Policz świetliki w lampionie i wybierz odpowiedź.',
-            correct: q => `Świetnie! ${q.left} plus ${q.right} równa się ${q.sum}. Lampion świeci!`,
-            wrong: 'Dobra próba. Policz jeszcze raz świetliki w lampionie.',
-            check: 'Sprawdź odpowiedź',
-            clear: 'Wyczyść',
-            replay: 'Dotknij mnie, aby usłyszeć misję ponownie',
-            completeTitle: 'Przygoda z lampionem zakończona!',
-            completeScore: '10 misji ukończonych',
-            completeCopy: 'Połączyłeś grupy i rozwiązałeś wszystkie zadania z dodawania.',
-            playAgain: 'Zagraj ponownie',
-            close: 'Zamknij'
+            soundOnLabel: 'Wyłącz dźwięk',
+            soundOffLabel: 'Włącz dźwięk',
+            collectTitle: 'Połącz świetliki',
+            collectHint: 'Dotknij świetlika albo przeciągnij go do lampionu.',
+            groupA: 'Grupa zachodu słońca',
+            groupB: 'Grupa księżycowa',
+            joined: (n, total) => `${n} z ${total} w środku`,
+            collectSpeech: q => `Znalazłem tutaj ${q.left} świetliki, a tam ${q.right}. Pomóż mi przenieść obie grupy do lampionu.`,
+            remaining: n => n === 1 ? 'Został jeszcze jeden świetlik.' : `Zostały jeszcze ${n} świetliki.`,
+            chooseTitle: 'Który kamień otworzy drogę?',
+            chooseSpeech: q => `${q.left} plus ${q.right}. Ile świetlików jest teraz razem? Wybierz właściwy kamień.`,
+            correct: q => `Tak! ${q.left} plus ${q.right} równa się ${q.sum}. Droga jest otwarta!`,
+            wrong: 'Ten kamień się nie zaświecił. Policz świetliki w lampionie i spróbuj jeszcze raz.',
+            next: 'Następna misja',
+            complete: 'Przygoda zakończona!',
+            completeCopy: 'Połączyłeś wszystkie grupy i pomogłeś Eddy’emu przejść całą ścieżkę lampionów.',
+            again: 'Zagraj ponownie',
+            replay: 'Posłuchaj Eddy’ego ponownie'
         }
     };
 
-    function inferSpeechLanguage() {
-        const htmlLanguage = (document.documentElement.lang || '').toLowerCase();
-        if (htmlLanguage.startsWith('pl')) return 'pl-PL';
-        const pageText = (root.textContent || '').toLowerCase();
-        return /polish|polska|polski|podstawa/.test(pageText) ? 'pl-PL' : 'en-GB';
+    function inferLanguage() {
+        const lang = (document.documentElement.lang || '').toLowerCase();
+        if (lang.startsWith('pl')) return 'pl-PL';
+        const text = (root.textContent || '').toLowerCase();
+        return /polish|polski|polska|podstawa/.test(text) ? 'pl-PL' : 'en-GB';
     }
 
-    function locale() {
-        return speechLanguage.toLowerCase().startsWith('pl') ? strings.pl : strings.en;
-    }
-
-    function createRounds() {
-        const pairs = [];
-        for (let left = 1; left <= 6; left++) {
-            for (let right = 1; right <= 6; right++) {
-                const sum = left + right;
-                if (sum >= 3 && sum <= 10) pairs.push({ left, right, sum });
-            }
-        }
-        shuffle(pairs);
-        return pairs.slice(0, totalRounds);
+    function t() {
+        return speechLanguage.toLowerCase().startsWith('pl') ? copy.pl : copy.en;
     }
 
     function shuffle(items) {
@@ -123,227 +100,385 @@
         return items;
     }
 
+    function createRounds() {
+        const pairs = [];
+        for (let a = 1; a <= 6; a++) {
+            for (let b = 1; b <= 6; b++) {
+                const sum = a + b;
+                if (sum >= 3 && sum <= 10) pairs.push({ left: a, right: b, sum });
+            }
+        }
+        return shuffle(pairs).slice(0, totalRounds);
+    }
+
     function installStyles() {
-        if (document.getElementById('scenario-game-styles-v2')) return;
+        if (document.getElementById('immersive-mini-game-v1')) return;
         const style = document.createElement('style');
-        style.id = 'scenario-game-styles-v2';
+        style.id = 'immersive-mini-game-v1';
         style.textContent = `
-            .kid-game-shell.scenario-shell{position:relative;overflow:hidden;min-height:760px;border:6px solid #fff;border-radius:34px;background:#85d8f4;box-shadow:0 26px 72px rgba(24,76,99,.23);color:#17344f;isolation:isolate}
-            .scenario-world{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;background:linear-gradient(180deg,#65c8f2 0%,#a9e9f9 42%,#ffe7a5 43%,#8ed171 59%,#4ba95e 100%)}
-            .scenario-sky-glow{position:absolute;width:44vw;height:44vw;min-width:420px;min-height:420px;right:-12%;top:-22%;border-radius:50%;background:radial-gradient(circle,rgba(255,247,185,.95) 0 10%,rgba(255,218,112,.28) 29%,transparent 65%);animation:scenario-sun-pulse 7s ease-in-out infinite}
-            .scenario-cloud{position:absolute;width:180px;height:56px;border-radius:999px;background:rgba(255,255,255,.88);filter:drop-shadow(0 10px 14px rgba(40,111,141,.11))}.scenario-cloud:before,.scenario-cloud:after{content:"";position:absolute;border-radius:50%;background:inherit}.scenario-cloud:before{width:74px;height:74px;left:35px;top:-34px}.scenario-cloud:after{width:92px;height:92px;right:24px;top:-46px}.scenario-cloud-a{top:15%;left:-210px;animation:scenario-cloud-a 22s linear infinite}.scenario-cloud-b{top:28%;right:-230px;transform:scale(.72);animation:scenario-cloud-b 27s linear infinite}
-            .scenario-hill{position:absolute;bottom:8%;width:60%;height:220px;border-radius:50% 50% 0 0;background:rgba(49,139,77,.48)}.scenario-hill-a{left:-16%;animation:scenario-hill-a 8s ease-in-out infinite alternate}.scenario-hill-b{right:-18%;height:185px;background:rgba(35,126,73,.4);animation:scenario-hill-b 10s ease-in-out infinite alternate}
-            .scenario-stars{position:absolute;inset:0;background-image:radial-gradient(circle,#fff8b0 0 2px,transparent 2.4px),radial-gradient(circle,#fff 0 1.4px,transparent 1.9px);background-size:94px 94px,143px 143px;background-position:0 0,38px 26px;opacity:.72;animation:scenario-stars-drift 16s linear infinite}
-            .scenario-grass{position:absolute;left:-2%;right:-2%;bottom:-7px;height:90px;background:repeating-linear-gradient(86deg,transparent 0 13px,rgba(21,111,60,.32) 13px 17px,transparent 17px 28px);transform-origin:50% 100%;animation:scenario-grass-sway 3.6s ease-in-out infinite alternate}
-            .scenario-topbar{position:relative;z-index:4;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;padding:22px 26px 10px}.scenario-brand{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.scenario-kicker{margin:0;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.8);font-size:.78rem;font-weight:950;letter-spacing:.06em;text-transform:uppercase;color:#0e6c7b}.scenario-title{font-size:1.15rem;font-weight:950;color:#173d56}
-            .scenario-actions{display:flex;gap:10px;align-items:center}.scenario-counter,.scenario-sound{min-height:44px;border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(255,255,255,.82);color:#174c60;font-weight:950;box-shadow:0 7px 20px rgba(41,102,124,.12)}.scenario-counter{padding:10px 15px;min-width:102px;text-align:center}.scenario-sound{padding:0 14px;cursor:pointer}
-            .scenario-progress-wrap{position:relative;z-index:4;padding:0 26px 14px}.scenario-progress-track{height:15px;overflow:hidden;border:3px solid rgba(255,255,255,.86);border-radius:999px;background:rgba(255,255,255,.5)}.scenario-progress-fill{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,#ffd15b,#ff9c55,#56ca8f);transition:width .5s ease;position:relative;overflow:hidden}.scenario-progress-fill:after{content:"";position:absolute;top:-3px;bottom:-3px;width:46px;left:-60px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.92),transparent);transform:skewX(-18deg);animation:scenario-progress-shine 2.4s ease-in-out infinite}
-            .scenario-stage{position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,1fr) 265px;gap:20px;padding:10px 26px 28px;min-height:640px}.scenario-board{position:relative;overflow:hidden;min-height:610px;padding:20px;border:4px solid rgba(255,255,255,.86);border-radius:30px;background:rgba(255,255,255,.74);box-shadow:0 22px 48px rgba(30,83,105,.17);backdrop-filter:blur(3px)}.scenario-board:before{content:"";position:absolute;inset:auto 0 0;height:34%;background:linear-gradient(180deg,transparent,rgba(98,178,88,.15));pointer-events:none}
-            .scenario-instruction{text-align:center;position:relative;z-index:3}.scenario-eyebrow{margin:0 0 5px;color:#168398;font-size:.82rem;font-weight:950;letter-spacing:.08em;text-transform:uppercase}.scenario-instruction h2{margin:0;color:#153f57;font-size:clamp(1.7rem,3vw,2.45rem);line-height:1.07}.scenario-instruction p{margin:7px 0 0;color:#58788c;font-weight:750}.scenario-tip{font-size:.88rem!important;color:#2e7f87!important}
-            .scenario-playfield{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 190px minmax(0,1fr);gap:16px;align-items:end;min-height:350px;margin-top:16px}.scenario-bush{position:relative;min-height:270px;border:0;border-radius:46% 46% 22px 22px;padding:45px 15px 16px;background:radial-gradient(circle at 50% 24%,#9be078 0 24%,#55b967 58%,#3a9857 100%);box-shadow:inset 0 -12px 0 rgba(26,107,61,.16),0 14px 26px rgba(31,91,66,.18);overflow:visible}.scenario-bush:before,.scenario-bush:after{content:"";position:absolute;border-radius:50%;background:#6bca6b;z-index:0}.scenario-bush:before{width:110px;height:96px;left:-13px;top:54px}.scenario-bush:after{width:118px;height:106px;right:-12px;top:45px}.scenario-bush-label{position:absolute;z-index:4;left:50%;top:10px;transform:translateX(-50%);white-space:nowrap;padding:7px 11px;border-radius:999px;background:#fff;color:#245a66;font-size:.78rem;font-weight:950;box-shadow:0 6px 14px rgba(35,82,94,.12)}.scenario-token-zone{position:relative;z-index:3;min-height:190px}
-            .scenario-firefly{position:absolute;width:42px;height:42px;border:0;border-radius:50%;cursor:grab;background:radial-gradient(circle at 42% 38%,#fffbd0 0 13%,#ffe65d 15% 34%,#ffab4e 60%,#e66a42 100%);box-shadow:0 0 0 5px rgba(255,249,168,.23),0 0 26px rgba(255,223,81,.78);transition:opacity .18s ease,transform .16s ease;animation:scenario-firefly-float 2.1s ease-in-out infinite;touch-action:none}.scenario-firefly.is-right{background:radial-gradient(circle at 42% 38%,#fffbdc 0 13%,#d8c7ff 15% 34%,#9a82f4 60%,#6f54d9 100%);box-shadow:0 0 0 5px rgba(226,217,255,.23),0 0 26px rgba(163,142,255,.72)}.scenario-firefly:before,.scenario-firefly:after{content:"";position:absolute;width:18px;height:10px;border-radius:50%;background:rgba(255,255,255,.72);top:14px}.scenario-firefly:before{left:-11px;transform:rotate(-24deg)}.scenario-firefly:after{right:-11px;transform:rotate(24deg)}.scenario-firefly:hover{transform:scale(1.12)}.scenario-firefly.is-moving{opacity:.2;pointer-events:none}
-            .scenario-lantern-zone{align-self:center;display:flex;flex-direction:column;align-items:center;gap:8px;min-height:250px;justify-content:center}.scenario-join-count{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.88);color:#4d6675;font-size:.76rem;font-weight:950}.scenario-lantern{position:relative;width:150px;height:196px;border:8px solid #71522e;border-radius:28px 28px 40px 40px;background:linear-gradient(180deg,rgba(255,245,178,.45),rgba(255,185,73,.2));box-shadow:inset 0 0 0 5px rgba(255,255,255,.28),0 16px 28px rgba(77,74,43,.18);transition:filter .3s ease,box-shadow .3s ease}.scenario-lantern:before{content:"";position:absolute;left:50%;top:-41px;width:72px;height:48px;border:8px solid #71522e;border-bottom:0;border-radius:40px 40px 0 0;transform:translateX(-50%)}.scenario-lantern.is-lit{background:radial-gradient(circle at 50% 48%,#fffbd0 0 18%,#ffe268 28%,#f6a941 68%,rgba(255,167,52,.42) 100%);box-shadow:0 0 54px rgba(255,218,84,.95),inset 0 0 18px rgba(255,255,255,.62);animation:scenario-lantern-glow 1.4s ease-in-out infinite}.scenario-lantern-label{position:absolute;left:50%;bottom:-34px;transform:translateX(-50%);font-size:.8rem;font-weight:950;color:#4f4c31}.scenario-lantern-fireflies{position:absolute;inset:18px 13px 24px}.scenario-lantern-dot{position:absolute;width:18px;height:18px;border-radius:50%;background:#fff7a8;box-shadow:0 0 20px #ffd54f;animation:scenario-lantern-dot 1.4s ease-in-out infinite}
-            .scenario-answer-panel{position:relative;z-index:4;margin-top:18px;padding:14px 16px;border:3px solid rgba(255,255,255,.92);border-radius:22px;background:rgba(255,255,255,.9);opacity:.35;transform:translateY(8px);pointer-events:none;transition:.3s ease}.scenario-answer-panel.is-ready{opacity:1;transform:none;pointer-events:auto}.scenario-answer-title{text-align:center}.scenario-answer-title strong{display:block;color:#18495f;font-size:1.05rem}.scenario-answer-title span{display:block;margin-top:3px;color:#628092;font-size:.88rem}.scenario-equation{display:flex;align-items:center;justify-content:center;gap:12px;margin:12px 0}.scenario-equation-text{font-size:clamp(2rem,4vw,3.2rem);font-weight:950;color:#173d56}.scenario-answer-input{width:108px;min-height:64px;border:4px solid #79c7d2;border-radius:18px;background:#fff;text-align:center;font-size:2rem;font-weight:950;color:#173d56}.scenario-keypad{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.scenario-key{min-height:48px;border:0;border-radius:14px;background:linear-gradient(180deg,#fff,#edf8fb);color:#1d556a;font-weight:950;box-shadow:0 5px 0 #c7e4ea;cursor:pointer}.scenario-key:active{transform:translateY(3px);box-shadow:0 2px 0 #c7e4ea}.scenario-key.is-tool{background:linear-gradient(180deg,#fff3d8,#ffe5ae);color:#875b1e}.scenario-check{width:100%;min-height:52px;margin-top:10px;border:0;border-radius:16px;background:linear-gradient(180deg,#36c58b,#1fa76f);color:#fff;font-weight:950;cursor:pointer;box-shadow:0 7px 0 #16815a}.scenario-check:disabled{opacity:.5;cursor:not-allowed;box-shadow:none}.scenario-feedback{min-height:46px;margin-top:10px;padding:11px 13px;border-radius:14px;font-weight:900;text-align:center}.scenario-feedback:empty{display:none}.scenario-feedback.is-correct{background:#dff9e9;color:#1b7c51}.scenario-feedback.is-wrong{background:#fff0d6;color:#9b621d}
-            .scenario-mascot-column{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;min-width:0}.scenario-speech{position:relative;width:100%;padding:16px;border:3px solid rgba(255,255,255,.92);border-radius:22px;background:rgba(255,255,255,.92);box-shadow:0 12px 25px rgba(29,78,97,.14);color:#234d60;font-weight:800;line-height:1.45}.scenario-speech:after{content:"";position:absolute;right:44px;bottom:-17px;width:28px;height:28px;background:#fff;transform:rotate(45deg)}.scenario-mascot-wrap{position:relative;width:min(285px,100%);height:390px;cursor:pointer}.scenario-mascot{position:relative;z-index:2;width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 18px 17px rgba(23,72,88,.18));user-select:none;-webkit-user-drag:none}.scenario-mouth{position:absolute;z-index:5;left:51%;top:40.5%;width:18px;height:7px;border-radius:50%;background:#4d2c35;opacity:0;transform:translate(-50%,-50%);pointer-events:none}.scenario-mascot-wrap.is-speaking .scenario-mouth{opacity:.9;animation:scenario-mouth-talk .18s ease-in-out infinite alternate}.scenario-talk-ring{position:absolute;z-index:1;left:50%;top:45%;width:175px;height:175px;border:4px solid rgba(27,155,180,.28);border-radius:50%;transform:translate(-50%,-50%) scale(.55);opacity:0}.scenario-mascot-wrap.is-speaking .scenario-talk-ring{animation:scenario-talk-ring 1.2s ease-out infinite}.scenario-mascot-wrap.is-speaking .scenario-mascot{animation:scenario-head-talk 1.1s ease-in-out infinite}.scenario-replay{font-size:.78rem;color:#2c6e7a;text-align:center;font-weight:800}
-            .scenario-fly-clone{position:fixed;z-index:9999;width:42px;height:42px;border-radius:50%;pointer-events:none;box-shadow:0 0 28px rgba(255,224,83,.9);transition:transform .48s cubic-bezier(.2,.8,.2,1),opacity .48s ease}.scenario-burst{position:absolute;z-index:10;width:12px;height:12px;border-radius:50%;background:#fff4a2;box-shadow:0 0 16px #ffd44f;pointer-events:none;animation:scenario-burst .8s ease-out forwards}
-            .scenario-finish{position:absolute;z-index:50;inset:0;display:none;place-items:center;padding:24px;background:rgba(21,77,94,.28);backdrop-filter:blur(5px)}.scenario-finish.is-visible{display:grid}.scenario-finish[hidden]{display:none!important}.scenario-finish-card{position:relative;width:min(500px,100%);padding:26px;border:5px solid #fff;border-radius:30px;background:linear-gradient(180deg,#fff9dd,#fff);text-align:center;box-shadow:0 26px 60px rgba(24,70,89,.25);animation:scenario-finish-pop .65s cubic-bezier(.17,.89,.32,1.28)}.scenario-finish-card img{width:180px;height:180px;object-fit:contain}.scenario-finish-card h2{margin:8px 0;color:#173d56}.scenario-finish-score{font-size:1.4rem;font-weight:950;color:#0c8a72}.scenario-restart{min-height:50px;padding:0 22px;border:0;border-radius:16px;background:#0b8193;color:#fff;font-weight:950;cursor:pointer}.scenario-finish-close{position:absolute;right:14px;top:12px;width:38px;height:38px;border:0;border-radius:50%;background:#fff;color:#315b69;font-size:1.25rem;font-weight:900;cursor:pointer;box-shadow:0 4px 14px rgba(40,78,90,.16)}
-            @keyframes scenario-cloud-a{to{transform:translateX(calc(100vw + 470px))}}@keyframes scenario-cloud-b{to{transform:translateX(calc(-100vw - 470px)) scale(.72)}}@keyframes scenario-sun-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08) translateY(10px)}}@keyframes scenario-stars-drift{to{background-position:94px 46px,181px 82px}}@keyframes scenario-hill-a{from{transform:translateX(-18px) scale(1)}to{transform:translateX(32px) scale(1.05)}}@keyframes scenario-hill-b{from{transform:translateX(20px) scale(1)}to{transform:translateX(-30px) scale(1.06)}}@keyframes scenario-grass-sway{from{transform:skewX(-1.4deg)}to{transform:skewX(1.4deg)}}@keyframes scenario-progress-shine{0%,35%{left:-60px}75%,100%{left:110%}}@keyframes scenario-firefly-float{0%,100%{translate:0 0;rotate:-3deg}50%{translate:0 -9px;rotate:5deg}}@keyframes scenario-lantern-glow{0%,100%{transform:scale(1);filter:brightness(1)}50%{transform:scale(1.025);filter:brightness(1.08)}}@keyframes scenario-lantern-dot{0%,100%{transform:scale(.7);opacity:.65}50%{transform:scale(1.2);opacity:1}}@keyframes scenario-mouth-talk{from{height:5px;width:17px}to{height:12px;width:14px}}@keyframes scenario-talk-ring{0%{opacity:.8;transform:translate(-50%,-50%) scale(.55)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.35)}}@keyframes scenario-head-talk{0%,100%{transform:rotate(0deg)}35%{transform:rotate(-1.2deg)}70%{transform:rotate(1deg)}}@keyframes scenario-burst{from{opacity:1;transform:translate(0,0) scale(1)}to{opacity:0;transform:translate(var(--bx),var(--by)) scale(.2)}}@keyframes scenario-finish-pop{from{opacity:0;transform:translateY(30px) scale(.92)}to{opacity:1;transform:none}}
-            @media(max-width:900px){.scenario-stage{grid-template-columns:minmax(0,1fr) 210px}.scenario-mascot-wrap{height:310px}.scenario-playfield{grid-template-columns:minmax(0,1fr) 150px minmax(0,1fr)}.scenario-lantern{width:128px;height:170px}}
-            @media(max-width:720px){.kid-game-shell.scenario-shell{border-width:4px;border-radius:24px}.scenario-topbar{grid-template-columns:1fr;padding:16px 16px 9px}.scenario-actions{justify-content:space-between}.scenario-progress-wrap{padding:0 16px 12px}.scenario-stage{grid-template-columns:1fr;padding:8px 14px 18px}.scenario-board{min-height:0;padding:16px 10px}.scenario-mascot-column{display:grid;grid-template-columns:1fr 150px;gap:10px}.scenario-mascot-wrap{width:150px;height:190px}.scenario-playfield{grid-template-columns:1fr 120px 1fr;gap:8px;min-height:315px}.scenario-bush{min-height:230px;padding-inline:8px}.scenario-firefly{width:36px;height:36px}.scenario-lantern{width:112px;height:150px}.scenario-keypad{grid-template-columns:repeat(4,1fr)}}
-            @media(max-width:510px){.scenario-title{width:100%}.scenario-playfield{grid-template-columns:1fr 92px 1fr;gap:5px}.scenario-bush{min-height:210px}.scenario-bush-label{font-size:.68rem;white-space:normal;text-align:center;width:92%}.scenario-firefly{width:31px;height:31px}.scenario-firefly:before,.scenario-firefly:after{width:13px;height:8px;top:10px}.scenario-firefly:before{left:-8px}.scenario-firefly:after{right:-8px}.scenario-lantern{width:84px;height:126px;border-width:5px}.scenario-lantern-label{font-size:.65rem}.scenario-join-count{font-size:.62rem}.scenario-mascot-column{grid-template-columns:1fr 120px}.scenario-mascot-wrap{width:120px;height:155px}.scenario-speech{font-size:.86rem;padding:12px}.scenario-answer-input{width:92px;min-height:56px;font-size:1.7rem}.scenario-key{min-height:45px}}
-            @media(prefers-reduced-motion:reduce){.scenario-world *,.scenario-progress-fill:after,.scenario-firefly,.scenario-lantern.is-lit,.scenario-mascot-wrap.is-speaking .scenario-mouth,.scenario-mascot-wrap.is-speaking .scenario-talk-ring,.scenario-mascot-wrap.is-speaking .scenario-mascot{animation:none!important}}
+            .kid-game-shell.imm-shell{position:relative;overflow:hidden;min-height:760px;border:0;border-radius:28px;background:#78cef2;color:#153a51;box-shadow:0 26px 70px rgba(28,74,96,.22);isolation:isolate}
+            .imm-world{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;background:linear-gradient(180deg,#69c9f2 0%,#a7e9fb 48%,#8bd36f 49%,#4ca461 100%)}
+            .imm-world:after{content:"";position:absolute;left:0;right:0;bottom:0;height:28%;background:linear-gradient(180deg,transparent,rgba(18,106,59,.12))}
+            .imm-sun{position:absolute;right:7%;top:7%;width:92px;height:92px;border-radius:50%;background:#ffe875;box-shadow:0 0 0 18px rgba(255,232,117,.2),0 0 50px rgba(255,220,84,.5);animation:imm-sun 5s ease-in-out infinite}
+            .imm-cloud{position:absolute;width:180px;height:55px;border-radius:999px;background:rgba(255,255,255,.9);filter:drop-shadow(0 8px 12px rgba(46,105,128,.12))}.imm-cloud:before,.imm-cloud:after{content:"";position:absolute;border-radius:50%;background:inherit}.imm-cloud:before{width:80px;height:80px;left:34px;top:-36px}.imm-cloud:after{width:96px;height:96px;right:20px;top:-49px}.imm-cloud.one{top:16%;left:-220px;animation:imm-cloud-right 20s linear infinite}.imm-cloud.two{top:26%;right:-250px;transform:scale(.72);animation:imm-cloud-left 26s linear infinite}
+            .imm-hill{position:absolute;bottom:18%;width:56%;height:190px;border-radius:50% 50% 0 0;background:#6fc477}.imm-hill.one{left:-15%;animation:imm-hill-a 7s ease-in-out infinite alternate}.imm-hill.two{right:-17%;height:165px;background:#5bb66d;animation:imm-hill-b 9s ease-in-out infinite alternate}
+            .imm-stream{position:absolute;left:49%;top:46%;bottom:-8%;width:24%;transform:translateX(-50%) rotate(2deg);background:linear-gradient(90deg,#78d6ee,#b9f4ff 50%,#6bc8e5);border-radius:48% 46% 0 0;box-shadow:inset 14px 0 0 rgba(255,255,255,.18),inset -10px 0 0 rgba(35,145,183,.12);animation:imm-water 4s ease-in-out infinite alternate}
+            .imm-stream:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(170deg,transparent 0 22px,rgba(255,255,255,.24) 22px 26px,transparent 26px 48px);animation:imm-water-lines 5s linear infinite}
+            .imm-grass{position:absolute;left:0;right:0;bottom:0;height:90px;background:repeating-linear-gradient(86deg,transparent 0 12px,rgba(17,110,54,.26) 12px 16px,transparent 16px 27px);transform-origin:bottom;animation:imm-grass 2.8s ease-in-out infinite alternate}
+            .imm-specks{position:absolute;inset:0;background-image:radial-gradient(circle,#fff8a8 0 2px,transparent 2.6px),radial-gradient(circle,#fff 0 1.5px,transparent 2px);background-size:105px 105px,151px 151px;background-position:0 0,33px 17px;opacity:.7;animation:imm-specks 13s linear infinite}
+            .imm-hud{position:relative;z-index:7;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px}.imm-brand{display:flex;align-items:center;gap:10px;min-width:0}.imm-badge{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.86);font-size:.76rem;font-weight:950;text-transform:uppercase;letter-spacing:.07em;color:#0b7183}.imm-title{font-weight:950;color:#153a51}.imm-actions{display:flex;gap:8px}.imm-counter,.imm-sound{border:2px solid rgba(255,255,255,.8);border-radius:999px;background:rgba(255,255,255,.86);min-height:42px;padding:0 13px;font-weight:950;color:#174c60}.imm-sound{cursor:pointer}.imm-progress{position:relative;z-index:7;margin:0 20px;height:12px;border:3px solid rgba(255,255,255,.85);border-radius:999px;background:rgba(255,255,255,.48);overflow:hidden}.imm-progress>span{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,#ffd159,#ff9357,#36c88d);transition:width .55s ease}
+            .imm-stage{position:relative;z-index:4;min-height:675px;padding:18px 20px 24px}.imm-scene{position:relative;min-height:620px;border:4px solid rgba(255,255,255,.76);border-radius:30px;background:rgba(255,255,255,.08);overflow:hidden}
+            .imm-intro,.imm-finish{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,38%);align-items:center;gap:20px;padding:42px;transition:opacity .45s ease,transform .45s ease}.imm-intro.is-hidden,.imm-finish{opacity:0;pointer-events:none;transform:scale(1.03)}.imm-finish.is-visible{opacity:1;pointer-events:auto;transform:none}.imm-intro-copy,.imm-finish-copy{position:relative;z-index:2;max-width:620px;padding:26px;border-radius:28px;background:rgba(255,255,255,.88);box-shadow:0 18px 45px rgba(35,83,103,.18);backdrop-filter:blur(5px)}.imm-eyebrow{margin:0 0 8px;font-size:.78rem;font-weight:950;letter-spacing:.08em;text-transform:uppercase;color:#0d8191}.imm-intro h2,.imm-finish h2{margin:0;color:#123d56;font-size:clamp(2.2rem,5vw,4.3rem);line-height:.98;letter-spacing:-.04em}.imm-intro p,.imm-finish p{font-size:1.05rem;line-height:1.55;color:#53748a}.imm-primary{min-height:56px;padding:0 24px;border:0;border-radius:18px;background:linear-gradient(180deg,#ffae5a,#ff8147);color:#fff;font-weight:950;font-size:1.03rem;cursor:pointer;box-shadow:0 8px 0 #d65f36,0 14px 26px rgba(163,77,43,.2)}.imm-primary:active{transform:translateY(4px);box-shadow:0 4px 0 #d65f36}.imm-intro-mascot,.imm-finish-mascot{position:relative;z-index:2;width:min(380px,100%);justify-self:center;filter:drop-shadow(0 25px 24px rgba(22,64,78,.2));animation:imm-mascot-idle 3.6s ease-in-out infinite}
+            .imm-mission{position:absolute;inset:0;opacity:0;pointer-events:none;transform:translateY(25px);transition:opacity .45s ease,transform .45s ease}.imm-mission.is-visible{opacity:1;pointer-events:auto;transform:none}.imm-mission-head{position:absolute;left:22px;top:18px;z-index:6;max-width:550px;padding:15px 18px;border-radius:22px;background:rgba(255,255,255,.88);box-shadow:0 10px 26px rgba(30,77,98,.14);backdrop-filter:blur(4px)}.imm-mission-head small{display:block;font-weight:950;text-transform:uppercase;letter-spacing:.08em;color:#0d8191}.imm-mission-head strong{display:block;margin-top:2px;font-size:1.35rem;color:#153d55}.imm-mission-head span{display:block;margin-top:4px;color:#57788b;font-weight:750;font-size:.9rem}
+            .imm-actor{position:absolute;z-index:8;right:3%;bottom:8%;width:230px;height:320px;transition:transform .75s cubic-bezier(.22,.88,.28,1),right .75s ease,bottom .75s ease}.imm-actor img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 18px 16px rgba(25,70,84,.22));user-select:none;-webkit-user-drag:none}.imm-actor.is-entering{animation:imm-enter .8s cubic-bezier(.17,.86,.29,1.2)}.imm-actor.is-celebrating{animation:imm-celebrate .75s ease}.imm-actor.is-running{transform:translateX(-46vw) scale(.9)}
+            .imm-mouth{position:absolute;z-index:9;left:49.5%;top:38%;width:17px;height:6px;border-radius:50%;background:#412934;opacity:0;transform:translate(-50%,-50%);pointer-events:none}.imm-actor.is-speaking .imm-mouth{opacity:.88;animation:imm-mouth .16s ease-in-out infinite alternate}.imm-voice-wave{position:absolute;z-index:7;left:18%;top:28%;width:90px;height:90px;border:4px solid rgba(18,149,174,.3);border-radius:50%;opacity:0}.imm-actor.is-speaking .imm-voice-wave{animation:imm-wave 1.1s ease-out infinite}
+            .imm-speech{position:absolute;z-index:9;right:18%;bottom:42%;width:min(360px,36%);padding:16px 18px;border:3px solid rgba(255,255,255,.9);border-radius:22px;background:rgba(255,255,255,.94);box-shadow:0 12px 28px rgba(25,72,91,.17);font-weight:850;line-height:1.45;color:#244f62}.imm-speech:after{content:"";position:absolute;right:25px;bottom:-14px;width:25px;height:25px;background:#fff;transform:rotate(45deg)}.imm-replay{position:absolute;right:5%;bottom:5%;z-index:10;border:0;border-radius:999px;padding:8px 12px;background:rgba(255,255,255,.84);color:#17687a;font-size:.76rem;font-weight:900;cursor:pointer}
+            .imm-playfield{position:absolute;left:3%;right:29%;top:22%;bottom:9%;z-index:5}.imm-patch{position:absolute;width:34%;height:43%;border-radius:48% 46% 28% 30%;background:radial-gradient(circle at 50% 35%,#9ce37f,#55b966 65%,#369457);box-shadow:inset 0 -12px 0 rgba(28,108,58,.13),0 13px 25px rgba(32,91,63,.18)}.imm-patch.left{left:0;top:10%}.imm-patch.right{right:0;top:10%;background:radial-gradient(circle at 50% 35%,#8fda82,#49ab67 65%,#337f59)}.imm-patch-label{position:absolute;top:8px;left:50%;transform:translateX(-50%);padding:6px 9px;border-radius:999px;background:#fff;color:#30606e;font-size:.72rem;font-weight:950;white-space:nowrap}.imm-token-zone{position:absolute;inset:42px 12px 12px}.imm-firefly{position:absolute;width:42px;height:42px;border:0;border-radius:50%;cursor:grab;touch-action:none;background:radial-gradient(circle at 40% 35%,#fffbd5 0 13%,#ffe661 15% 35%,#ffa74b 62%,#df6d3f 100%);box-shadow:0 0 0 5px rgba(255,248,165,.23),0 0 25px rgba(255,223,81,.78);animation:imm-firefly 1.8s ease-in-out infinite}.imm-firefly.right{background:radial-gradient(circle at 40% 35%,#fff 0 12%,#dccfff 15% 34%,#9d83f4 60%,#6f54d8 100%);box-shadow:0 0 0 5px rgba(225,215,255,.25),0 0 25px rgba(158,139,255,.68)}.imm-firefly:before,.imm-firefly:after{content:"";position:absolute;top:14px;width:17px;height:9px;border-radius:50%;background:rgba(255,255,255,.72)}.imm-firefly:before{left:-10px;transform:rotate(-25deg)}.imm-firefly:after{right:-10px;transform:rotate(25deg)}.imm-firefly:hover{scale:1.12}.imm-firefly.is-moving{opacity:.15;pointer-events:none}
+            .imm-lantern-wrap{position:absolute;left:50%;top:35%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:8px}.imm-lantern-count{padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.88);font-size:.72rem;font-weight:950;color:#4b6775}.imm-lantern{position:relative;width:128px;height:170px;border:7px solid #74512e;border-radius:28px 28px 38px 38px;background:linear-gradient(180deg,rgba(255,248,187,.45),rgba(255,181,67,.18));box-shadow:inset 0 0 0 5px rgba(255,255,255,.26),0 15px 26px rgba(72,70,40,.18)}.imm-lantern:before{content:"";position:absolute;left:50%;top:-35px;width:66px;height:43px;border:7px solid #74512e;border-bottom:0;border-radius:38px 38px 0 0;transform:translateX(-50%)}.imm-lantern.is-lit{background:radial-gradient(circle at 50% 48%,#fffbd2 0 18%,#ffe36c 29%,#f2a943 70%);box-shadow:0 0 60px rgba(255,219,84,.95),inset 0 0 18px rgba(255,255,255,.7);animation:imm-lantern 1.2s ease-in-out infinite}.imm-lantern-dots{position:absolute;inset:18px 12px 20px}.imm-dot{position:absolute;width:17px;height:17px;border-radius:50%;background:#fff6a0;box-shadow:0 0 18px #ffd54d;animation:imm-dot 1.2s ease-in-out infinite}
+            .imm-answer-zone{position:absolute;left:4%;right:32%;bottom:7%;z-index:9;display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;pointer-events:none;transform:translateY(16px);transition:.35s ease}.imm-answer-zone.is-visible{opacity:1;pointer-events:auto;transform:none}.imm-answer-title{padding:9px 14px;border-radius:18px;background:rgba(255,255,255,.9);font-weight:950;color:#17465d;box-shadow:0 8px 18px rgba(32,76,94,.12)}.imm-equation{font-size:clamp(2rem,4vw,3.3rem);font-weight:950;color:#173d56;text-shadow:0 2px 0 rgba(255,255,255,.8)}.imm-stones{display:flex;gap:14px;justify-content:center}.imm-stone{position:relative;width:92px;height:62px;border:0;border-radius:48% 52% 45% 55%;background:linear-gradient(180deg,#fff7dc,#d8c9a3);box-shadow:0 8px 0 #9d8a62,0 12px 20px rgba(58,72,65,.2);font-size:1.55rem;font-weight:950;color:#385063;cursor:pointer;transition:transform .2s ease,filter .2s ease}.imm-stone:hover{transform:translateY(-4px) scale(1.04)}.imm-stone.is-wrong{animation:imm-wrong .45s ease}.imm-stone.is-correct{background:linear-gradient(180deg,#fff8a3,#ffd95c);box-shadow:0 8px 0 #cf9d31,0 0 32px rgba(255,221,82,.8);animation:imm-correct .65s ease}
+            .imm-burst{position:absolute;z-index:30;width:11px;height:11px;border-radius:50%;background:#fff39b;box-shadow:0 0 14px #ffd34c;pointer-events:none;animation:imm-burst .8s ease-out forwards}.imm-fly-clone{position:fixed;z-index:9999;width:42px;height:42px;border-radius:50%;pointer-events:none;box-shadow:0 0 28px rgba(255,225,88,.9);transition:transform .48s cubic-bezier(.2,.8,.2,1),opacity .48s ease}
+            @keyframes imm-sun{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(10px) scale(1.06)}}@keyframes imm-cloud-right{to{transform:translateX(calc(100vw + 520px))}}@keyframes imm-cloud-left{to{transform:translateX(calc(-100vw - 520px)) scale(.72)}}@keyframes imm-hill-a{from{transform:translateX(-18px)}to{transform:translateX(32px) scale(1.04)}}@keyframes imm-hill-b{from{transform:translateX(18px)}to{transform:translateX(-28px) scale(1.05)}}@keyframes imm-water{from{transform:translateX(-50%) rotate(1deg) scaleX(.96)}to{transform:translateX(-50%) rotate(3deg) scaleX(1.04)}}@keyframes imm-water-lines{to{background-position:0 80px}}@keyframes imm-grass{from{transform:skewX(-1.4deg)}to{transform:skewX(1.4deg)}}@keyframes imm-specks{to{background-position:105px 56px,184px 92px}}@keyframes imm-mascot-idle{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}@keyframes imm-enter{from{transform:translateX(140px);opacity:0}to{transform:none;opacity:1}}@keyframes imm-celebrate{0%,100%{transform:translateY(0) rotate(0)}35%{transform:translateY(-22px) rotate(-3deg)}70%{transform:translateY(-8px) rotate(3deg)}}@keyframes imm-mouth{from{height:5px;width:17px}to{height:12px;width:14px}}@keyframes imm-wave{0%{opacity:.75;transform:scale(.55)}100%{opacity:0;transform:scale(1.4)}}@keyframes imm-firefly{0%,100%{translate:0 0;rotate:-3deg}50%{translate:0 -10px;rotate:5deg}}@keyframes imm-lantern{0%,100%{filter:brightness(1)}50%{filter:brightness(1.12)}}@keyframes imm-dot{0%,100%{transform:scale(.72);opacity:.65}50%{transform:scale(1.2);opacity:1}}@keyframes imm-wrong{0%,100%{transform:translateX(0)}25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}@keyframes imm-correct{0%{transform:scale(1)}50%{transform:scale(1.15)}100%{transform:scale(1)}}@keyframes imm-burst{from{opacity:1;transform:translate(0,0) scale(1)}to{opacity:0;transform:translate(var(--x),var(--y)) scale(.2)}}
+            @media(max-width:900px){.imm-intro,.imm-finish{grid-template-columns:1fr 270px;padding:28px}.imm-actor{width:190px;height:270px}.imm-speech{right:17%;width:35%}.imm-playfield{right:26%}}
+            @media(max-width:720px){.kid-game-shell.imm-shell{border-radius:22px}.imm-hud{align-items:flex-start;flex-direction:column;padding:14px}.imm-actions{width:100%;justify-content:space-between}.imm-progress{margin:0 14px}.imm-stage{padding:12px}.imm-scene{min-height:700px}.imm-intro,.imm-finish{grid-template-columns:1fr;padding:24px 16px}.imm-intro-mascot,.imm-finish-mascot{width:220px}.imm-mission-head{left:12px;right:12px;top:12px;max-width:none}.imm-playfield{left:3%;right:3%;top:25%;bottom:30%}.imm-patch{width:31%;height:44%}.imm-lantern{width:100px;height:140px}.imm-actor{width:150px;height:210px;right:2%;bottom:3%}.imm-speech{left:3%;right:auto;bottom:11%;width:58%}.imm-replay{right:3%;bottom:1.5%}.imm-answer-zone{left:3%;right:3%;bottom:26%}.imm-stone{width:76px;height:54px}.imm-title{font-size:.92rem}}
+            @media(max-width:500px){.imm-scene{min-height:650px}.imm-patch{width:34%;height:41%}.imm-firefly{width:34px;height:34px}.imm-firefly:before,.imm-firefly:after{width:13px;height:8px;top:11px}.imm-firefly:before{left:-8px}.imm-firefly:after{right:-8px}.imm-lantern-wrap{top:40%}.imm-lantern{width:78px;height:115px;border-width:5px}.imm-lantern:before{width:48px;height:34px;top:-27px;border-width:5px}.imm-answer-zone{bottom:28%}.imm-equation{font-size:2rem}.imm-stone{width:68px;height:48px;font-size:1.25rem}.imm-speech{font-size:.83rem;padding:11px}.imm-actor{width:125px;height:180px}.imm-intro h2,.imm-finish h2{font-size:2.35rem}}
+            @media(prefers-reduced-motion:reduce){.imm-world *, .imm-intro-mascot,.imm-finish-mascot,.imm-firefly,.imm-lantern.is-lit,.imm-dot,.imm-actor.is-speaking .imm-mouth,.imm-actor.is-speaking .imm-voice-wave{animation:none!important}}
         `;
         document.head.appendChild(style);
     }
 
     function buildGame() {
-        const t = locale();
-        gameShell.className = 'kid-game-shell scenario-shell';
-        gameShell.innerHTML = `
-            <div class="scenario-world" aria-hidden="true"><div class="scenario-stars"></div><div class="scenario-sky-glow"></div><div class="scenario-cloud scenario-cloud-a"></div><div class="scenario-cloud scenario-cloud-b"></div><div class="scenario-hill scenario-hill-a"></div><div class="scenario-hill scenario-hill-b"></div><div class="scenario-grass"></div></div>
-            <header class="scenario-topbar"><div class="scenario-brand"><p class="scenario-kicker">✦ ${t.adventure}</p><span class="scenario-title">${t.mission}</span></div><div class="scenario-actions"><div class="scenario-counter" data-scenario-counter>${t.counter(0)}</div><button class="scenario-sound" type="button" data-scenario-sound aria-pressed="true" aria-label="${t.soundOnLabel}">${t.soundOn}</button></div></header>
-            <div class="scenario-progress-wrap"><div class="scenario-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-scenario-progress-track><span class="scenario-progress-fill" data-scenario-progress></span></div></div>
-            <div class="scenario-stage"><main class="scenario-board"><div class="scenario-instruction"><p class="scenario-eyebrow" data-scenario-eyebrow>${t.eyebrow(0)}</p><h2>${t.heading}</h2><p>${t.instruction}</p><p class="scenario-tip">${t.tip}</p></div><div class="scenario-playfield"><section class="scenario-bush" aria-label="${t.left}"><span class="scenario-bush-label" data-scenario-left-label>${t.left}</span><div class="scenario-token-zone" data-scenario-left></div></section><div class="scenario-lantern-zone" data-scenario-dropzone><div class="scenario-join-count" data-scenario-join-count></div><div class="scenario-lantern" data-scenario-lantern><div class="scenario-lantern-fireflies" data-scenario-lantern-fireflies></div><span class="scenario-lantern-label">${t.lantern}</span></div></div><section class="scenario-bush" aria-label="${t.right}"><span class="scenario-bush-label" data-scenario-right-label>${t.right}</span><div class="scenario-token-zone" data-scenario-right></div></section></div><section class="scenario-answer-panel" data-scenario-answer-panel aria-live="polite"><div class="scenario-answer-title"><strong>${t.answerTitle}</strong><span>${t.answerCopy}</span></div><div class="scenario-equation"><span class="scenario-equation-text" data-scenario-equation></span><input class="scenario-answer-input" data-scenario-answer inputmode="numeric" maxlength="2" autocomplete="off" aria-label="${t.answerTitle}" /></div><div class="scenario-keypad" data-scenario-keypad></div><button class="scenario-check" type="button" data-scenario-check disabled>${t.check}</button><div class="scenario-feedback" data-scenario-feedback aria-live="polite"></div></section></main><aside class="scenario-mascot-column" aria-label="Edulytics helper"><div class="scenario-speech" data-scenario-speech aria-live="polite"></div><div class="scenario-mascot-wrap" data-scenario-mascot-wrap role="button" tabindex="0" aria-label="${t.replay}"><div class="scenario-talk-ring" aria-hidden="true"></div><img class="scenario-mascot" src="${mascotAsset}" alt="Edulytics cartoon character" draggable="false" /><span class="scenario-mouth" aria-hidden="true"></span></div><div class="scenario-replay">${t.replay}</div></aside></div>
-            <div class="scenario-finish" data-scenario-finish hidden aria-hidden="true"><div class="scenario-finish-card"><button class="scenario-finish-close" type="button" data-scenario-finish-close aria-label="${t.close}">×</button><img src="${mascotAsset}" alt="Edulytics cartoon character celebrating" /><h2>${t.completeTitle}</h2><div class="scenario-finish-score">${t.completeScore}</div><p>${t.completeCopy}</p><button class="scenario-restart" type="button" data-scenario-restart>${t.playAgain}</button></div></div>`;
-
-        const keypad = gameShell.querySelector('[data-scenario-keypad]');
-        for (let digit = 1; digit <= 9; digit++) keypad.insertAdjacentHTML('beforeend', `<button class="scenario-key" type="button" data-scenario-key="${digit}">${digit}</button>`);
-        keypad.insertAdjacentHTML('beforeend', `<button class="scenario-key is-tool" type="button" data-scenario-key="clear">${t.clear}</button>`);
-        keypad.insertAdjacentHTML('beforeend', '<button class="scenario-key" type="button" data-scenario-key="0">0</button>');
-        keypad.insertAdjacentHTML('beforeend', '<button class="scenario-key is-tool" type="button" data-scenario-key="backspace">⌫</button>');
-        setFinishVisible(false);
-        bindGameEvents();
+        const x = t();
+        shell.className = 'kid-game-shell imm-shell';
+        shell.innerHTML = `
+            <div class="imm-world" aria-hidden="true"><div class="imm-specks"></div><div class="imm-sun"></div><div class="imm-cloud one"></div><div class="imm-cloud two"></div><div class="imm-hill one"></div><div class="imm-hill two"></div><div class="imm-stream"></div><div class="imm-grass"></div></div>
+            <header class="imm-hud"><div class="imm-brand"><span class="imm-badge">Edulytics</span><span class="imm-title">${x.title}</span></div><div class="imm-actions"><span class="imm-counter" data-imm-counter>${x.counter(0)}</span><button class="imm-sound" type="button" data-imm-sound aria-pressed="true">${x.soundOn}</button></div></header>
+            <div class="imm-progress"><span data-imm-progress></span></div>
+            <div class="imm-stage"><div class="imm-scene">
+                <section class="imm-intro" data-imm-intro><div class="imm-intro-copy"><p class="imm-eyebrow">Edulytics Math Adventure</p><h2>${x.introTitle}</h2><p>${x.introCopy}</p><button class="imm-primary" type="button" data-imm-start>${x.start}</button></div><img class="imm-intro-mascot" src="${mascotAsset}" alt="Edulytics cartoon character" /></section>
+                <section class="imm-mission" data-imm-mission>
+                    <div class="imm-mission-head"><small data-imm-mission-label></small><strong>${x.collectTitle}</strong><span>${x.collectHint}</span></div>
+                    <div class="imm-playfield"><div class="imm-patch left"><span class="imm-patch-label" data-imm-left-label></span><div class="imm-token-zone" data-imm-left></div></div><div class="imm-lantern-wrap" data-imm-drop><span class="imm-lantern-count" data-imm-count></span><div class="imm-lantern" data-imm-lantern><div class="imm-lantern-dots" data-imm-dots></div></div></div><div class="imm-patch right"><span class="imm-patch-label" data-imm-right-label></span><div class="imm-token-zone" data-imm-right></div></div></div>
+                    <div class="imm-answer-zone" data-imm-answer><div class="imm-answer-title">${x.chooseTitle}</div><div class="imm-equation" data-imm-equation></div><div class="imm-stones" data-imm-stones></div></div>
+                    <div class="imm-speech" data-imm-speech></div><div class="imm-actor" data-imm-actor><div class="imm-voice-wave"></div><img src="${mascotAsset}" alt="Edulytics cartoon character" draggable="false" /><span class="imm-mouth"></span></div><button class="imm-replay" type="button" data-imm-replay>${x.replay}</button>
+                </section>
+                <section class="imm-finish" data-imm-finish><div class="imm-finish-copy"><p class="imm-eyebrow">Edulytics</p><h2>${x.complete}</h2><p>${x.completeCopy}</p><button class="imm-primary" type="button" data-imm-again>${x.again}</button></div><img class="imm-finish-mascot" src="${mascotAsset}" alt="Edulytics cartoon character celebrating" /></section>
+            </div></div>`;
+        bindEvents();
     }
 
-    function bindGameEvents() {
-        const soundButton = gameShell.querySelector('[data-scenario-sound]');
-        const mascotWrap = gameShell.querySelector('[data-scenario-mascot-wrap]');
-        const dropzone = gameShell.querySelector('[data-scenario-dropzone]');
-        const answer = gameShell.querySelector('[data-scenario-answer]');
-        const check = gameShell.querySelector('[data-scenario-check]');
-        const restart = gameShell.querySelector('[data-scenario-restart]');
-        const close = gameShell.querySelector('[data-scenario-finish-close]');
-
-        soundButton.addEventListener('click', toggleSound);
-        mascotWrap.addEventListener('click', () => speak(currentSpeech));
-        mascotWrap.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); speak(currentSpeech); } });
-        gameShell.querySelectorAll('[data-scenario-key]').forEach(button => { button.addEventListener('click', () => { if (phase !== 'answer' || locked) return; const key = button.dataset.scenarioKey; if (key === 'clear') answer.value = ''; else if (key === 'backspace') answer.value = answer.value.slice(0, -1); else if (answer.value.length < 2) answer.value += key; check.disabled = answer.value.length === 0; tone('tap'); answer.focus(); }); });
-        answer.addEventListener('input', () => { answer.value = answer.value.replace(/\D/g, '').slice(0, 2); check.disabled = answer.value.length === 0; });
-        answer.addEventListener('keydown', event => { if (event.key === 'Enter' && !check.disabled) checkAnswer(); });
-        check.addEventListener('click', checkAnswer);
-
-        const restartGame = () => { setFinishVisible(false); rounds = createRounds(); roundIndex = 0; movedCount = 0; phase = 'collect'; locked = false; renderRound(); };
-        restart.addEventListener('click', restartGame);
-        close.addEventListener('click', restartGame);
-
-        dropzone.addEventListener('dragover', event => { if (!dragTokenId || phase !== 'collect') return; event.preventDefault(); dropzone.classList.add('is-drag-over'); });
-        dropzone.addEventListener('dragleave', () => dropzone.classList.remove('is-drag-over'));
-        dropzone.addEventListener('drop', event => { event.preventDefault(); dropzone.classList.remove('is-drag-over'); if (dragTokenId) moveFireflyById(dragTokenId); dragTokenId = null; });
+    function bindEvents() {
+        shell.querySelector('[data-imm-start]').addEventListener('click', startAdventure);
+        shell.querySelector('[data-imm-again]').addEventListener('click', resetAdventure);
+        shell.querySelector('[data-imm-sound]').addEventListener('click', toggleSound);
+        shell.querySelector('[data-imm-replay]').addEventListener('click', () => speak(currentSpeech));
+        const drop = shell.querySelector('[data-imm-drop]');
+        drop.addEventListener('dragover', event => { if (dragId && phase === 'collect') event.preventDefault(); });
+        drop.addEventListener('drop', event => { event.preventDefault(); if (dragId) moveById(dragId); dragId = null; });
     }
 
-    function setFinishVisible(visible) {
-        const finish = gameShell.querySelector('[data-scenario-finish]');
-        if (!finish) return;
-        finish.hidden = !visible;
-        finish.classList.toggle('is-visible', visible);
-        finish.setAttribute('aria-hidden', String(!visible));
+    function startAdventure() {
+        ensureAudio();
+        refreshVoices();
+        rounds = createRounds();
+        roundIndex = 0;
+        shell.querySelector('[data-imm-intro]').classList.add('is-hidden');
+        shell.querySelector('[data-imm-mission]').classList.add('is-visible');
+        window.setTimeout(renderRound, 250);
     }
 
-    function fireflyPositions(count, side) {
-        const left = [[12,18],[50,8],[72,30],[28,48],[61,58],[8,68],[43,78],[75,76],[20,88],[57,91]];
-        const right = [[65,16],[26,8],[8,34],[48,43],[22,61],[70,61],[42,76],[7,81],[62,87],[31,92]];
-        return (side === 'right' ? right : left).slice(0, count);
+    function resetAdventure() {
+        rounds = createRounds();
+        roundIndex = 0;
+        shell.querySelector('[data-imm-finish]').classList.remove('is-visible');
+        shell.querySelector('[data-imm-mission]').classList.add('is-visible');
+        renderRound();
     }
 
     function renderRound() {
         const q = rounds[roundIndex];
-        if (!q) { finishGame(); return; }
-        const t = locale();
-        movedCount = 0; phase = 'collect'; locked = false; setFinishVisible(false);
-        const leftZone = gameShell.querySelector('[data-scenario-left]');
-        const rightZone = gameShell.querySelector('[data-scenario-right]');
-        const lanternDots = gameShell.querySelector('[data-scenario-lantern-fireflies]');
-        const lantern = gameShell.querySelector('[data-scenario-lantern]');
-        const answerPanel = gameShell.querySelector('[data-scenario-answer-panel]');
-        const answer = gameShell.querySelector('[data-scenario-answer]');
-        const check = gameShell.querySelector('[data-scenario-check]');
-        const feedback = gameShell.querySelector('[data-scenario-feedback]');
-        leftZone.innerHTML = ''; rightZone.innerHTML = ''; lanternDots.innerHTML = ''; lantern.classList.remove('is-lit'); answerPanel.classList.remove('is-ready'); answer.value = ''; check.disabled = true; feedback.textContent = ''; feedback.className = 'scenario-feedback';
-        gameShell.querySelector('[data-scenario-counter]').textContent = t.counter(roundIndex);
-        gameShell.querySelector('[data-scenario-eyebrow]').textContent = t.eyebrow(roundIndex);
-        gameShell.querySelector('[data-scenario-left-label]').textContent = `${t.left} · ${q.left}`;
-        gameShell.querySelector('[data-scenario-right-label]').textContent = `${t.right} · ${q.right}`;
-        gameShell.querySelector('[data-scenario-equation]').textContent = t.question(q);
-        updateProgress(); updateJoinCount(); renderFireflies(leftZone, q.left, 'left'); renderFireflies(rightZone, q.right, 'right'); setSpeech(t.firstSpeech(q), true);
+        if (!q) return finishAdventure();
+        phase = 'collect';
+        locked = false;
+        collected = 0;
+        const x = t();
+        const left = shell.querySelector('[data-imm-left]');
+        const right = shell.querySelector('[data-imm-right]');
+        left.innerHTML = '';
+        right.innerHTML = '';
+        shell.querySelector('[data-imm-dots]').innerHTML = '';
+        shell.querySelector('[data-imm-lantern]').classList.remove('is-lit');
+        shell.querySelector('[data-imm-answer]').classList.remove('is-visible');
+        shell.querySelector('[data-imm-stones]').innerHTML = '';
+        shell.querySelector('[data-imm-counter]').textContent = x.counter(roundIndex);
+        shell.querySelector('[data-imm-mission-label]').textContent = x.mission(roundIndex);
+        shell.querySelector('[data-imm-left-label]').textContent = `${x.groupA} · ${q.left}`;
+        shell.querySelector('[data-imm-right-label]').textContent = `${x.groupB} · ${q.right}`;
+        shell.querySelector('[data-imm-equation]').textContent = `${q.left} + ${q.right} = ?`;
+        updateCount();
+        updateProgress();
+        renderFireflies(left, q.left, 'left');
+        renderFireflies(right, q.right, 'right');
+        const actor = shell.querySelector('[data-imm-actor]');
+        actor.className = 'imm-actor is-entering';
+        setSpeech(x.collectSpeech(q), true);
+        window.setTimeout(() => actor.classList.remove('is-entering'), 850);
+    }
+
+    function positions(count, side) {
+        const a = [[12,12],[54,9],[73,33],[29,43],[59,57],[10,68],[40,78],[76,78],[22,88],[57,90]];
+        const b = [[62,11],[24,8],[10,34],[48,42],[22,59],[71,60],[42,76],[8,82],[63,87],[31,91]];
+        return (side === 'right' ? b : a).slice(0, count);
     }
 
     function renderFireflies(zone, count, side) {
-        const positions = fireflyPositions(count, side);
-        positions.forEach((position, i) => {
+        positions(count, side).forEach((p, i) => {
             const button = document.createElement('button');
-            button.type = 'button'; button.className = `scenario-firefly${side === 'right' ? ' is-right' : ''}`; button.style.left = `${position[0]}%`; button.style.top = `${position[1]}%`; button.style.animationDelay = `${-(i * 0.23)}s`; button.dataset.fireflyId = `${side}-${i}`; button.draggable = true; button.setAttribute('aria-label', locale().tip);
+            button.type = 'button';
+            button.className = `imm-firefly ${side}`;
+            button.style.left = `${p[0]}%`;
+            button.style.top = `${p[1]}%`;
+            button.style.animationDelay = `${-(i * .21)}s`;
+            button.dataset.immId = `${side}-${i}`;
+            button.draggable = true;
+            button.setAttribute('aria-label', t().collectHint);
             button.addEventListener('click', () => moveFirefly(button));
-            button.addEventListener('dragstart', event => { dragTokenId = button.dataset.fireflyId; event.dataTransfer.effectAllowed = 'move'; event.dataTransfer.setData('text/plain', dragTokenId); });
-            button.addEventListener('dragend', () => { dragTokenId = null; gameShell.querySelector('[data-scenario-dropzone]').classList.remove('is-drag-over'); });
+            button.addEventListener('dragstart', event => { dragId = button.dataset.immId; event.dataTransfer.setData('text/plain', dragId); });
+            button.addEventListener('dragend', () => { dragId = null; });
             zone.appendChild(button);
         });
     }
 
-    function moveFireflyById(id) {
-        const safeId = window.CSS && CSS.escape ? CSS.escape(id) : id.replace(/[^a-zA-Z0-9_-]/g, '');
-        const token = gameShell.querySelector(`[data-firefly-id="${safeId}"]`);
+    function moveById(id) {
+        const safe = window.CSS && CSS.escape ? CSS.escape(id) : id.replace(/[^a-zA-Z0-9_-]/g, '');
+        const token = shell.querySelector(`[data-imm-id="${safe}"]`);
         if (token) moveFirefly(token);
     }
 
     function moveFirefly(token) {
         if (phase !== 'collect' || locked || token.classList.contains('is-moving')) return;
-        token.classList.add('is-moving'); animateToLantern(token);
+        token.classList.add('is-moving');
+        flyToLantern(token);
         window.setTimeout(() => {
-            token.remove(); addLanternDot(); movedCount++; updateJoinCount(); tone('fly');
+            token.remove();
+            addDot();
+            collected++;
+            updateCount();
+            tone('fly');
             const q = rounds[roundIndex];
-            if (movedCount >= q.sum) {
-                phase = 'answer'; const lantern = gameShell.querySelector('[data-scenario-lantern]'); lantern.classList.add('is-lit'); burst(lantern, 16); const answerPanel = gameShell.querySelector('[data-scenario-answer-panel]'); answerPanel.classList.add('is-ready'); window.setTimeout(() => gameShell.querySelector('[data-scenario-answer]').focus(), 350); setSpeech(locale().ask(q), true); tone('join');
-            } else if (movedCount === Math.ceil(q.sum / 2)) setSpeech(locale().collectSpeech(q.sum - movedCount), false);
+            if (collected >= q.sum) revealAnswers();
+            else if (collected === Math.ceil(q.sum / 2)) setSpeech(t().remaining(q.sum - collected), false);
         }, 430);
     }
 
-    function animateToLantern(token) {
-        const start = token.getBoundingClientRect(); const lantern = gameShell.querySelector('[data-scenario-lantern]').getBoundingClientRect(); const clone = document.createElement('div'); clone.className = 'scenario-fly-clone'; clone.style.left = `${start.left}px`; clone.style.top = `${start.top}px`; clone.style.background = token.classList.contains('is-right') ? 'radial-gradient(circle,#fffbdc 0 13%,#d8c7ff 15% 34%,#9a82f4 60%,#6f54d9 100%)' : 'radial-gradient(circle,#fffbd0 0 13%,#ffe65d 15% 34%,#ffab4e 60%,#e66a42 100%)'; document.body.appendChild(clone); const dx = lantern.left + lantern.width / 2 - (start.left + start.width / 2); const dy = lantern.top + lantern.height / 2 - (start.top + start.height / 2); requestAnimationFrame(() => { clone.style.transform = `translate(${dx}px,${dy}px) scale(.45) rotate(240deg)`; clone.style.opacity = '.15'; }); window.setTimeout(() => clone.remove(), 520);
+    function flyToLantern(token) {
+        const from = token.getBoundingClientRect();
+        const to = shell.querySelector('[data-imm-lantern]').getBoundingClientRect();
+        const clone = document.createElement('div');
+        clone.className = 'imm-fly-clone';
+        clone.style.left = `${from.left}px`;
+        clone.style.top = `${from.top}px`;
+        clone.style.background = token.classList.contains('right') ? 'radial-gradient(circle,#fff 0 12%,#dccfff 15% 34%,#9d83f4 60%,#6f54d8 100%)' : 'radial-gradient(circle,#fffbd5 0 13%,#ffe661 15% 35%,#ffa74b 62%,#df6d3f 100%)';
+        document.body.appendChild(clone);
+        const dx = to.left + to.width / 2 - (from.left + from.width / 2);
+        const dy = to.top + to.height / 2 - (from.top + from.height / 2);
+        requestAnimationFrame(() => { clone.style.transform = `translate(${dx}px,${dy}px) scale(.35) rotate(240deg)`; clone.style.opacity = '.12'; });
+        window.setTimeout(() => clone.remove(), 520);
     }
 
-    function addLanternDot() {
-        const field = gameShell.querySelector('[data-scenario-lantern-fireflies]'); const dot = document.createElement('span'); dot.className = 'scenario-lantern-dot'; const i = field.children.length; const positions = [[16,20],[51,13],[72,28],[30,43],[62,50],[12,61],[44,69],[75,68],[25,82],[59,85]]; const p = positions[i % positions.length]; dot.style.left = `${p[0]}%`; dot.style.top = `${p[1]}%`; dot.style.animationDelay = `${-(i * .17)}s`; field.appendChild(dot);
+    function addDot() {
+        const field = shell.querySelector('[data-imm-dots]');
+        const dot = document.createElement('span');
+        dot.className = 'imm-dot';
+        const spots = [[16,18],[51,12],[72,29],[29,43],[61,50],[12,61],[43,69],[75,68],[25,82],[59,84]];
+        const p = spots[field.children.length % spots.length];
+        dot.style.left = `${p[0]}%`;
+        dot.style.top = `${p[1]}%`;
+        field.appendChild(dot);
     }
 
-    function updateJoinCount() { const q = rounds[roundIndex]; if (!q) return; gameShell.querySelector('[data-scenario-join-count]').textContent = locale().joined(movedCount, q.sum); }
-    function updateProgress() { setProgress(Math.round((roundIndex / totalRounds) * 100)); }
-    function updateProgressAfterCorrect() { setProgress(Math.round(((roundIndex + 1) / totalRounds) * 100)); }
-    function setProgress(percent) { const fill = gameShell.querySelector('[data-scenario-progress]'); const track = gameShell.querySelector('[data-scenario-progress-track]'); fill.style.width = `${percent}%`; track.setAttribute('aria-valuenow', String(percent)); }
+    function updateCount() {
+        const q = rounds[roundIndex];
+        if (!q) return;
+        shell.querySelector('[data-imm-count]').textContent = t().joined(collected, q.sum);
+    }
 
-    function checkAnswer() {
+    function revealAnswers() {
+        phase = 'answer';
+        const q = rounds[roundIndex];
+        shell.querySelector('[data-imm-lantern]').classList.add('is-lit');
+        burst(shell.querySelector('[data-imm-lantern]'), 16);
+        const choices = shuffle([...new Set([q.sum, Math.max(1, q.sum - 1), Math.min(12, q.sum + 1), Math.max(1, q.sum - 2), Math.min(12, q.sum + 2)])]).slice(0, 3);
+        if (!choices.includes(q.sum)) choices[0] = q.sum;
+        shuffle(choices);
+        const stones = shell.querySelector('[data-imm-stones]');
+        choices.forEach(value => {
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'imm-stone';
+            b.textContent = String(value);
+            b.addEventListener('click', () => chooseStone(b, value));
+            stones.appendChild(b);
+        });
+        shell.querySelector('[data-imm-answer]').classList.add('is-visible');
+        setSpeech(t().chooseSpeech(q), true);
+        tone('join');
+    }
+
+    function chooseStone(button, value) {
         if (phase !== 'answer' || locked) return;
-        const q = rounds[roundIndex]; const answer = gameShell.querySelector('[data-scenario-answer]'); const feedback = gameShell.querySelector('[data-scenario-feedback]'); const value = Number.parseInt(answer.value, 10); if (!Number.isFinite(value)) return;
-        if (value === q.sum) {
-            locked = true; phase = 'celebrate'; feedback.textContent = `✓ ${locale().correct(q)}`; feedback.className = 'scenario-feedback is-correct'; setSpeech(locale().correct(q), true); tone('correct'); const lantern = gameShell.querySelector('[data-scenario-lantern]'); burst(lantern, 28); updateProgressAfterCorrect(); window.setTimeout(() => { roundIndex++; if (roundIndex >= totalRounds) finishGame(); else renderRound(); }, 1450);
-        } else {
-            feedback.textContent = locale().wrong; feedback.className = 'scenario-feedback is-wrong'; answer.value = ''; gameShell.querySelector('[data-scenario-check]').disabled = true; setSpeech(locale().wrong, true); tone('wrong'); window.setTimeout(() => answer.focus(), 120);
+        const q = rounds[roundIndex];
+        if (value !== q.sum) {
+            button.classList.remove('is-wrong');
+            void button.offsetWidth;
+            button.classList.add('is-wrong');
+            setSpeech(t().wrong, true);
+            tone('wrong');
+            return;
         }
+        locked = true;
+        phase = 'celebrate';
+        button.classList.add('is-correct');
+        const actor = shell.querySelector('[data-imm-actor]');
+        actor.classList.add('is-celebrating');
+        burst(button, 28);
+        setSpeech(t().correct(q), true);
+        tone('correct');
+        updateProgress(true);
+        window.setTimeout(() => actor.classList.add('is-running'), 450);
+        window.setTimeout(() => {
+            roundIndex++;
+            actor.className = 'imm-actor';
+            if (roundIndex >= totalRounds) finishAdventure();
+            else renderRound();
+        }, 1650);
+    }
+
+    function updateProgress(afterCorrect = false) {
+        const completed = afterCorrect ? roundIndex + 1 : roundIndex;
+        shell.querySelector('[data-imm-progress]').style.width = `${Math.round((completed / totalRounds) * 100)}%`;
+    }
+
+    function finishAdventure() {
+        phase = 'finish';
+        locked = true;
+        if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+        shell.querySelector('[data-imm-mission]').classList.remove('is-visible');
+        shell.querySelector('[data-imm-finish]').classList.add('is-visible');
+        shell.querySelector('[data-imm-progress]').style.width = '100%';
+        currentSpeech = t().completeCopy;
+        window.setTimeout(() => speak(currentSpeech), 250);
+        tone('finish');
     }
 
     function burst(target, count) {
-        const board = gameShell.querySelector('.scenario-board'); if (!board || !target) return; const boardRect = board.getBoundingClientRect(); const rect = target.getBoundingClientRect(); const x = rect.left - boardRect.left + rect.width / 2; const y = rect.top - boardRect.top + rect.height / 2;
-        for (let i = 0; i < count; i++) { const particle = document.createElement('span'); particle.className = 'scenario-burst'; particle.style.left = `${x}px`; particle.style.top = `${y}px`; const angle = (Math.PI * 2 * i) / count + Math.random() * .25; const distance = 45 + Math.random() * 105; particle.style.setProperty('--bx', `${Math.cos(angle) * distance}px`); particle.style.setProperty('--by', `${Math.sin(angle) * distance}px`); board.appendChild(particle); window.setTimeout(() => particle.remove(), 900); }
+        const scene = shell.querySelector('.imm-scene');
+        if (!scene || !target) return;
+        const sr = scene.getBoundingClientRect();
+        const tr = target.getBoundingClientRect();
+        const cx = tr.left - sr.left + tr.width / 2;
+        const cy = tr.top - sr.top + tr.height / 2;
+        for (let i = 0; i < count; i++) {
+            const p = document.createElement('span');
+            p.className = 'imm-burst';
+            p.style.left = `${cx}px`;
+            p.style.top = `${cy}px`;
+            const angle = (Math.PI * 2 * i) / count + Math.random() * .25;
+            const distance = 45 + Math.random() * 110;
+            p.style.setProperty('--x', `${Math.cos(angle) * distance}px`);
+            p.style.setProperty('--y', `${Math.sin(angle) * distance}px`);
+            scene.appendChild(p);
+            window.setTimeout(() => p.remove(), 900);
+        }
     }
 
-    function finishGame() { phase = 'finish'; locked = true; setProgress(100); setFinishVisible(true); setSpeech(locale().completeCopy, true); tone('finish'); }
-    function setSpeech(text, readAloud) { currentSpeech = text; const bubble = gameShell.querySelector('[data-scenario-speech]'); if (bubble) bubble.textContent = text; if (readAloud) speak(text); }
+    function setSpeech(text, aloud) {
+        currentSpeech = text;
+        const bubble = shell.querySelector('[data-imm-speech]');
+        if (bubble) bubble.textContent = text;
+        if (aloud) speak(text);
+    }
 
     function refreshVoices() {
         if (!('speechSynthesis' in window)) return;
         const voices = window.speechSynthesis.getVoices();
-        if (!voices.length) return;
-        const isPolish = speechLanguage.toLowerCase().startsWith('pl');
-        const languagePrefix = isPolish ? 'pl' : 'en';
-        const candidates = voices.filter(v => (v.lang || '').toLowerCase().startsWith(languagePrefix));
-        const pool = candidates.length ? candidates : voices;
-        const scoreVoice = voice => {
-            const name = (voice.name || '').toLowerCase(); const lang = (voice.lang || '').toLowerCase(); let score = 0;
-            if (/child|kid|young/.test(name)) score += 120;
-            if (!isPolish && /\bana\b|ana neural|ana online/.test(name)) score += 110;
-            if (/natural|neural|online/.test(name)) score += 35;
-            if (isPolish && /zofia|zosia|agnieszka|paulina|ewa/.test(name)) score += 50;
-            if (!isPolish && /maisie|jenny|aria|sonia|samantha|libby|hazel|zira|serena/.test(name)) score += 45;
-            if (!isPolish && lang.startsWith('en-gb')) score += 18;
-            if (isPolish && lang.startsWith('pl')) score += 25;
-            if (/daniel|david|george|mark|male/.test(name)) score -= 40;
-            return score;
-        };
-        preferredVoice = [...pool].sort((a, b) => scoreVoice(b) - scoreVoice(a))[0] || null;
+        const lang = speechLanguage.toLowerCase();
+        const prefix = lang.slice(0, 2);
+        const candidates = voices.filter(v => (v.lang || '').toLowerCase().startsWith(prefix));
+        const childPatterns = /child|kid|young|ana|junior|youth/i;
+        const friendlyPatterns = /aria|jenny|zira|sonia|samantha|ava|emma|libby|mia|zosia|paulina|ewa|google/i;
+        preferredVoice = candidates
+            .map(v => ({ v, score: ((v.lang || '').toLowerCase() === lang ? 30 : 0) + (childPatterns.test(v.name) ? 120 : 0) + (friendlyPatterns.test(v.name) ? 55 : 0) + (/microsoft|google/i.test(v.name) ? 20 : 0) + (v.localService ? 5 : 0) }))
+            .sort((a, b) => b.score - a.score)[0]?.v || candidates[0] || null;
     }
 
     function speak(text) {
         if (!soundOn || !text || !('speechSynthesis' in window)) return;
-        refreshVoices(); window.speechSynthesis.cancel(); const utterance = new SpeechSynthesisUtterance(text); const isPolish = speechLanguage.toLowerCase().startsWith('pl'); utterance.lang = preferredVoice?.lang || speechLanguage; utterance.rate = isPolish ? .94 : .98; utterance.pitch = isPolish ? 1.38 : 1.48; utterance.volume = 1; if (preferredVoice) utterance.voice = preferredVoice; const mascotWrap = gameShell.querySelector('[data-scenario-mascot-wrap]'); utterance.onstart = () => mascotWrap?.classList.add('is-speaking'); utterance.onend = () => mascotWrap?.classList.remove('is-speaking'); utterance.onerror = () => mascotWrap?.classList.remove('is-speaking'); window.speechSynthesis.speak(utterance);
+        window.speechSynthesis.cancel();
+        refreshVoices();
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = speechLanguage;
+        u.rate = speechLanguage.startsWith('pl') ? .9 : .94;
+        u.pitch = 1.34;
+        u.volume = 1;
+        if (preferredVoice) u.voice = preferredVoice;
+        const actor = shell.querySelector('[data-imm-actor]');
+        u.onstart = () => actor?.classList.add('is-speaking');
+        u.onend = () => actor?.classList.remove('is-speaking');
+        u.onerror = () => actor?.classList.remove('is-speaking');
+        window.speechSynthesis.speak(u);
     }
 
-    function toggleSound() { soundOn = !soundOn; const t = locale(); const button = gameShell.querySelector('[data-scenario-sound]'); button.textContent = soundOn ? t.soundOn : t.soundOff; button.setAttribute('aria-pressed', String(soundOn)); button.setAttribute('aria-label', soundOn ? t.soundOnLabel : t.soundOffLabel); if (!soundOn && 'speechSynthesis' in window) window.speechSynthesis.cancel(); if (soundOn) { tone('tap'); speak(currentSpeech); } }
-    function ensureAudio() { if (!soundOn) return null; if (!audioContext) { const AudioCtor = window.AudioContext || window.webkitAudioContext; if (!AudioCtor) return null; audioContext = new AudioCtor(); } if (audioContext.state === 'suspended') audioContext.resume(); return audioContext; }
+    function toggleSound() {
+        soundOn = !soundOn;
+        const x = t();
+        const b = shell.querySelector('[data-imm-sound]');
+        b.textContent = soundOn ? x.soundOn : x.soundOff;
+        b.setAttribute('aria-pressed', String(soundOn));
+        b.setAttribute('aria-label', soundOn ? x.soundOnLabel : x.soundOffLabel);
+        if (!soundOn && 'speechSynthesis' in window) window.speechSynthesis.cancel();
+        if (soundOn) { tone('tap'); speak(currentSpeech); }
+    }
+
+    function ensureAudio() {
+        if (!soundOn) return null;
+        if (!audioContext) {
+            const Ctx = window.AudioContext || window.webkitAudioContext;
+            if (!Ctx) return null;
+            audioContext = new Ctx();
+        }
+        if (audioContext.state === 'suspended') audioContext.resume();
+        return audioContext;
+    }
 
     function tone(kind) {
-        if (!soundOn) return;
-        const ctx = ensureAudio(); if (!ctx) return; const now = ctx.currentTime;
-        const patterns = { tap: [[420,.04,.05]], fly: [[620,.05,.06],[840,.06,.04]], join: [[460,.08,.07],[620,.09,.06],[820,.12,.05]], correct: [[520,.08,.08],[660,.09,.07],[820,.14,.06]], wrong: [[260,.09,.05],[215,.11,.04]], finish: [[440,.08,.07],[554,.08,.07],[659,.09,.07],[880,.18,.06]] };
-        (patterns[kind] || patterns.tap).forEach((part, i) => { const osc = ctx.createOscillator(); const gain = ctx.createGain(); osc.type = kind === 'wrong' ? 'triangle' : 'sine'; osc.frequency.value = part[0]; gain.gain.setValueAtTime(0.0001, now + i * .07); gain.gain.exponentialRampToValueAtTime(part[2], now + i * .07 + .01); gain.gain.exponentialRampToValueAtTime(0.0001, now + i * .07 + part[1]); osc.connect(gain); gain.connect(ctx.destination); osc.start(now + i * .07); osc.stop(now + i * .07 + part[1] + .03); });
+        const ctx = ensureAudio();
+        if (!ctx) return;
+        const patterns = { tap:[[430,.05,.04]], fly:[[620,.05,.05],[850,.06,.04]], join:[[470,.07,.06],[650,.08,.05],[850,.1,.04]], correct:[[520,.07,.07],[660,.08,.06],[830,.14,.05]], wrong:[[260,.08,.04],[215,.1,.03]], finish:[[440,.08,.06],[554,.08,.06],[659,.09,.06],[880,.17,.05]] };
+        const now = ctx.currentTime;
+        (patterns[kind] || patterns.tap).forEach((part, i) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = kind === 'wrong' ? 'triangle' : 'sine';
+            osc.frequency.value = part[0];
+            const at = now + i * .07;
+            gain.gain.setValueAtTime(.0001, at);
+            gain.gain.exponentialRampToValueAtTime(part[2], at + .01);
+            gain.gain.exponentialRampToValueAtTime(.0001, at + part[1]);
+            osc.connect(gain); gain.connect(ctx.destination); osc.start(at); osc.stop(at + part[1] + .03);
+        });
     }
 
     function activateTab(name) {
         tabs.forEach(tab => { const active = tab.dataset.previewTab === name; tab.classList.toggle('is-active', active); tab.setAttribute('aria-selected', String(active)); });
         panels.forEach(panel => { panel.hidden = panel.dataset.previewPanel !== name; });
-        if (name === 'practice' && !started) { started = true; rounds = createRounds(); installStyles(); buildGame(); refreshVoices(); renderRound(); }
+        if (name === 'practice' && !started) {
+            started = true;
+            installStyles();
+            buildGame();
+            refreshVoices();
+        }
     }
 
     tabs.forEach(tab => tab.addEventListener('click', () => activateTab(tab.dataset.previewTab)));
-    if ('speechSynthesis' in window) { window.speechSynthesis.addEventListener?.('voiceschanged', refreshVoices); window.setTimeout(refreshVoices, 200); }
-    const initiallyActive = tabs.find(tab => tab.classList.contains('is-active'))?.dataset.previewTab;
-    if (initiallyActive === 'practice') activateTab('practice');
+    if ('speechSynthesis' in window) window.speechSynthesis.addEventListener?.('voiceschanged', refreshVoices);
 })();
