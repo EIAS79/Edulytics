@@ -57,19 +57,28 @@
         document.head.appendChild(link);
     }
 
+    function studentFirstName() {
+        const meta = document.querySelector('meta[name="edulytics-student-first-name"]')?.content || '';
+        const raw = gameShell.dataset.studentFirstName || root.dataset.studentFirstName || meta;
+        const value = (raw || '').trim();
+        if (!value || value.includes('@')) return '';
+        return value.split(/\s+/u)[0].slice(0, 40);
+    }
+
     async function ensureGame() {
         if (runtime || loading) return loading;
         loading = (async () => {
-            loadStyle('/css/edulytics-game-engine.css?v=0.1.0');
-            await loadScript('/js/game/edulytics-game-engine.js?v=0.1.0');
-            await loadScript('/js/game/activities/join-groups-to-add.activity.js?v=0.1.0');
+            loadStyle('/css/edulytics-game-experience-v2.css?v=0.2.0');
+            await loadScript('/js/game/edulytics-game-engine-v2.js?v=0.2.0');
+            await loadScript('/js/game/activities/join-groups-to-add.v2.activity.js?v=0.2.0');
 
-            const engine = window.EdulyticsGameEngine;
-            const activity = window.EdulyticsGameActivities?.['join-groups-to-add'];
-            if (!engine || !activity) throw new Error('Edulytics game engine failed to load.');
+            const engine = window.EdulyticsGameEngineV2;
+            const activity = window.EdulyticsGameActivities?.['join-groups-to-add-v2'];
+            if (!engine || !activity) throw new Error('Edulytics game experience v2 failed to load.');
 
             runtime = engine.mount(gameShell, activity, {
                 preview: true,
+                studentFirstName: studentFirstName(),
                 onEvent(event) {
                     gameShell.dispatchEvent(new CustomEvent('edulytics:game-event', { detail: event }));
                 }
