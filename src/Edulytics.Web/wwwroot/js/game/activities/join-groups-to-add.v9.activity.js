@@ -31,9 +31,9 @@
         title: 'Join Groups to Add',
         worldTitle: 'Lantern Isles',
         assets: {
-            world: '/images/game/v9/lumen-trail-world.webp',
-            student: '/images/game/v9/student-explorer.webp',
-            guide: '/images/game/v9/eddy-guide.webp'
+            world: '/images/game/v9/lumen-trail-world.webp?v=0.9.2',
+            student: '/images/game/v9/student-explorer.webp?v=0.9.2',
+            guide: '/images/game/v9/eddy-guide.webp?v=0.9.2'
         },
         zones: [
             { name: 'Discovery Peak', focusX: 520, focusY: 330, zoom: 1.22, taskX: 610, taskY: 560 },
