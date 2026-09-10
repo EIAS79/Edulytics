@@ -4,8 +4,8 @@
     global.EdulyticsGameActivities ||= {};
 
     global.EdulyticsGameActivities['join-groups-to-add-v4'] = {
-        schemaVersion: 4,
-        activityId: 'EDU-GAME-CAM-S1-JOIN-GROUPS-V4',
+        schemaVersion: 5,
+        activityId: 'EDU-GAME-CAM-S1-JOIN-GROUPS-V5',
         title: 'Lantern Isles',
         lessonLanguage: 'en',
         direction: 'ltr',
@@ -23,7 +23,11 @@
             difficulty: 'Foundational'
         },
         assets: {
-            guide: '/images/public/edulytics-math-mascot-animation.png'
+            guide: '/images/public/edulytics-math-mascot-animation.png',
+            student: '/images/game/lantern-isles-v5-student.svg',
+            arrival: '/images/game/lantern-isles-v5-arrival.svg',
+            map: '/images/game/lantern-isles-v5-map.svg',
+            mission: '/images/game/lantern-isles-v5-mission.svg'
         },
         generator: {
             pairs: [[2,1],[1,4],[3,2],[2,5],[4,3],[4,4],[5,2],[3,5],[5,4],[6,4]],
@@ -64,7 +68,7 @@
             correct: q => `${q.left} plus ${q.right} equals ${q.sum}. The path is open!`,
             wrong: 'That stone flickered. Try another one.',
             hints: [
-                q => `Count every light inside the lantern once.`,
+                q => 'Count every light inside the lantern once.',
                 q => `Start at ${q.left}, then count on ${q.right} more.`,
                 q => `The two groups are ${q.left} and ${q.right}. Put them together and count the total.`
             ],
