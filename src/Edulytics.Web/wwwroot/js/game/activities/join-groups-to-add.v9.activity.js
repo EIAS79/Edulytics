@@ -22,6 +22,12 @@
         };
     });
 
+    const storyByZone = [
+        round => `The trail at Discovery Peak is growing dim. Eddy spots ${round.a} glowing lights near the bridge and ${round.b} more by the lantern. Bring both groups together to relight the path.`,
+        round => `The crystals inside Curiosity Caves are losing their glow. Eddy finds ${round.a} lights in one group and ${round.b} more nearby. Join both groups to wake the cave lantern.`,
+        round => `You have reached Practice Point. The last lanterns need power. Eddy sees ${round.a} lights and ${round.b} more. Bring them together to finish the trail.`
+    ];
+
     global.EdulyticsGameActivities = global.EdulyticsGameActivities || {};
     global.EdulyticsGameActivities['join-groups-to-add-v9'] = {
         id: 'join-groups-to-add-v9',
@@ -43,11 +49,12 @@
         rounds,
         copy: {
             intro: name => `Welcome${name ? `, ${name}` : ''}. Eddy needs your help to relight the Lantern Isles. Join two groups, move every light into the lantern, then choose the total.`,
-            collect: round => `Bring the group of ${round.a} and the group of ${round.b} together.`,
+            collect: round => storyByZone[round.zone]?.(round) || `Bring the group of ${round.a} and the group of ${round.b} together.`,
             choose: round => `${round.a} + ${round.b} = ?`,
+            question: round => `Great! You joined all the lights. ${round.a} plus ${round.b} equals what? Choose the total.`,
             hint1: 'Count every light in the joined group.',
             hint2: round => `Start with ${round.a}, then count on ${round.b} more.`,
-            correct: 'Yes! The trail is brighter.',
+            correct: 'Yes! The lantern glows brighter and the trail opens ahead.',
             complete: 'You restored the Lantern Isles. Brilliant work!'
         }
     };
