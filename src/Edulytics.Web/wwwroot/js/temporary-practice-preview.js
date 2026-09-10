@@ -60,11 +60,13 @@
 
     async function mountV9() {
         loadStyle('/css/edulytics-game-experience-v9.css?v=0.9.2');
-        await loadScript('/js/game/activities/join-groups-to-add.v9.activity.js?v=0.9.2');
+        loadStyle('/css/edulytics-game-v9-story-voice.css?v=0.9.3');
+        await loadScript('/js/game/activities/join-groups-to-add.v9.activity.js?v=0.9.3');
         const activity = window.EdulyticsGameActivities?.['join-groups-to-add-v9'];
         if (!activity) throw new Error('Lantern Isles V9 activity configuration is unavailable.');
 
         await loadScript('/js/game/edulytics-game-v9.js?v=0.9.2');
+        await loadScript('/js/game/edulytics-game-v9-story-voice.js?v=0.9.3');
         const engine = window.EdulyticsGameEngineV9;
         if (!engine) throw new Error('Lantern Isles V9 runtime failed to load.');
 
