@@ -3,12 +3,10 @@
 
     const root = document.querySelector('[data-temporary-practice-preview]');
     if (!root) return;
-
     const tabs = Array.from(root.querySelectorAll('[data-preview-tab]'));
     const panels = Array.from(root.querySelectorAll('[data-preview-panel]'));
     const gameShell = root.querySelector('.kid-game-shell');
     if (!gameShell) return;
-
     let runtime = null;
     let loading = null;
 
@@ -60,14 +58,13 @@
     async function ensureGame() {
         if (runtime || loading) return loading;
         loading = (async () => {
-            loadStyle('/css/edulytics-game-experience-v3.css?v=0.3.0');
-            await loadScript('/js/game/edulytics-game-engine-v3.js?v=0.3.0');
-            await loadScript('/js/game/activities/join-groups-to-add.v3.activity.js?v=0.3.0');
-
-            const engine = window.EdulyticsGameEngineV3;
-            const activity = window.EdulyticsGameActivities?.['join-groups-to-add-v3'];
-            if (!engine || !activity) throw new Error('Edulytics game experience v3 failed to load.');
-
+            loadStyle('/css/edulytics-game-experience-v4.css?v=0.4.0');
+            await loadScript('/js/game/edulytics-game-v4-renderer.js?v=0.4.0');
+            await loadScript('/js/game/edulytics-game-engine-v4.js?v=0.4.0');
+            await loadScript('/js/game/activities/join-groups-to-add.v4.activity.js?v=0.4.0');
+            const engine = window.EdulyticsGameEngineV4;
+            const activity = window.EdulyticsGameActivities?.['join-groups-to-add-v4'];
+            if (!engine || !activity) throw new Error('Edulytics game experience v4 failed to load.');
             runtime = engine.mount(gameShell, activity, {
                 preview: true,
                 studentFirstName: studentFirstName(),
@@ -76,10 +73,28 @@
                     gameShell.dispatchEvent(new CustomEvent('edulytics:game-event', { detail: event }));
                 }
             });
-        })().catch(error => {
-            console.error(error);
-            gameShell.innerHTML = '<div style="padding:32px;background:#fff;border-radius:20px"><strong>Game preview could not start.</strong><p>Please refresh and try again.</p></div>';
-            loading = null;
+        })().catch(async error => {
+            console.error('V4 preview failed, falling back to V3.', error);
+            try {
+                loadStyle('/css/edulytics-game-experience-v3.css?v=0.3.0');
+                await loadScript('/js/game/edulytics-game-engine-v3.js?v=0.3.0');
+                await loadScript('/js/game/activities/join-groups-to-add.v3.activity.js?v=0.3.0');
+                const fallbackEngine = window.EdulyticsGameEngineV3;
+                const fallbackActivity = window.EdulyticsGameActivities?.['join-groups-to-add-v3'];
+                if (!fallbackEngine || !fallbackActivity) throw new Error('V3 fallback unavailable.');
+                runtime = fallbackEngine.mount(gameShell, fallbackActivity, {
+                    preview: true,
+                    studentFirstName: studentFirstName(),
+                    lessonLanguage: fallbackActivity.lessonLanguage,
+                    onEvent(event) {
+                        gameShell.dispatchEvent(new CustomEvent('edulytics:game-event', { detail: event }));
+                    }
+                });
+            } catch (fallbackError) {
+                console.error(fallbackError);
+                gameShell.innerHTML = '<div style="padding:32px;background:#fff;border-radius:20px"><strong>Game preview could not start.</strong><p>Please refresh and try again.</p></div>';
+                loading = null;
+            }
         });
         return loading;
     }
