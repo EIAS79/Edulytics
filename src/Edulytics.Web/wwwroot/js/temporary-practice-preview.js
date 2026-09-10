@@ -4,695 +4,698 @@
 
     const tabs = Array.from(root.querySelectorAll('[data-preview-tab]'));
     const panels = Array.from(root.querySelectorAll('[data-preview-panel]'));
-    const questionText = root.querySelector('[data-preview-question]');
-    const questionNumber = root.querySelector('[data-preview-question-number]');
-    const counter = root.querySelector('[data-preview-counter]');
-    const progress = root.querySelector('[data-preview-progress]');
-    const answer = root.querySelector('[data-preview-answer]');
-    const feedback = root.querySelector('[data-preview-feedback]');
-    const check = root.querySelector('[data-preview-check]');
-    const joinButton = root.querySelector('[data-preview-join]');
-    const gameStage = root.querySelector('[data-preview-game-stage]');
-    const answerDock = root.querySelector('[data-preview-answer-dock]');
-    const finish = root.querySelector('[data-preview-finish]');
-    const finalScore = root.querySelector('[data-preview-final-score]');
-    const finalDetail = root.querySelector('[data-preview-final-detail]');
-    const restart = root.querySelector('[data-preview-restart]');
-    const soundToggle = root.querySelector('[data-preview-sound]');
-    const speech = root.querySelector('[data-preview-speech]');
-    const mascot = root.querySelector('[data-preview-mascot]');
-    const dockTitle = root.querySelector('[data-preview-dock-title]');
-    const dockCopy = root.querySelector('[data-preview-dock-copy]');
-    const leftLabel = root.querySelector('[data-preview-left-label]');
-    const rightLabel = root.querySelector('[data-preview-right-label]');
-    const leftGroup = root.querySelector('[data-preview-left-group]');
-    const rightGroup = root.querySelector('[data-preview-right-group]');
-    const joinedGroup = root.querySelector('[data-preview-joined-group]');
-    const leftCard = root.querySelector('[data-preview-left-card]');
-    const rightCard = root.querySelector('[data-preview-right-card]');
-    const joinedCard = root.querySelector('[data-preview-joined-card]');
-    const keyButtons = Array.from(root.querySelectorAll('[data-practice-key]'));
     const gameShell = root.querySelector('.kid-game-shell');
-    const playBoard = root.querySelector('.kid-play-board');
-    const mascotWrap = root.querySelector('.kid-mascot-wrap');
-    const finishMascot = root.querySelector('.kid-finish-mascot');
-
-    if (!questionText || !answer || !check || !joinButton || !gameShell) return;
+    if (!gameShell) return;
 
     const mascotAsset = '/images/public/edulytics-math-mascot-animation.png';
-    let questions = [];
-    let index = 0;
-    let correct = 0;
+    const totalRounds = 10;
+    let rounds = [];
+    let roundIndex = 0;
+    let movedCount = 0;
+    let phase = 'collect';
     let locked = false;
-    let joined = false;
     let soundOn = true;
     let audioContext = null;
-    let speechLanguage = inferSpeechLanguage();
-    let currentSpeechText = '';
+    let currentSpeech = '';
     let preferredVoice = null;
+    let speechLanguage = inferSpeechLanguage();
+    let dragTokenId = null;
+    let started = false;
 
-    const copy = {
+    const strings = {
         en: {
-            countJoin: current => `Question ${index + 1}. Bring the two groups together. Count ${current.left} plus ${current.right}, then tap Join the groups.`,
-            afterJoin: current => `${current.left} plus ${current.right}. How many are there altogether?`,
-            correct: current => `Brilliant! ${current.left} plus ${current.right} equals ${current.sum}.`,
-            incorrect: current => `Good try. Count the joined group once more. There are ${current.sum} altogether.`,
-            finish: percent => `Math adventure complete. You scored ${percent} percent. Great work!`
+            adventure: 'Edulytics Math Adventure',
+            mission: 'Firefly Lantern Mission',
+            counter: (i) => `${i + 1} of ${totalRounds}`,
+            soundOn: '🔊 Sound on',
+            soundOff: '🔇 Sound off',
+            soundOnLabel: 'Turn game sounds off',
+            soundOffLabel: 'Turn game sounds on',
+            eyebrow: (i) => `Mission ${i + 1}`,
+            heading: 'Help me light the lantern!',
+            instruction: 'Move every firefly from both bushes into the lantern.',
+            tip: 'Tap a firefly or drag it into the lantern.',
+            left: 'Sunset bush',
+            right: 'Moonlight bush',
+            lantern: 'Lantern',
+            joined: (moved, total) => `${moved} of ${total} joined`,
+            firstSpeech: (q) => `Mission ${roundIndex + 1}. There are ${q.left} fireflies in one bush and ${q.right} in the other. Bring all of them into the lantern.`,
+            collectSpeech: (remaining) => remaining === 1 ? 'One firefly left. Bring it to the lantern.' : `${remaining} fireflies are still waiting.`,
+            ask: (q) => `${q.left} plus ${q.right}. How many fireflies are glowing together?`,
+            question: (q) => `${q.left} + ${q.right} = ?`,
+            answerTitle: 'How many are glowing together?',
+            answerCopy: 'Count the fireflies inside the lantern, then choose your answer.',
+            correct: (q) => `Brilliant! ${q.left} plus ${q.right} equals ${q.sum}. The lantern is shining!`,
+            wrong: 'Good try. Count the glowing fireflies in the lantern once more.',
+            check: 'Check my answer',
+            clear: 'Clear',
+            replay: 'Tap me to hear the mission again',
+            completeTitle: 'Lantern adventure complete!',
+            completeScore: '10 missions completed',
+            completeCopy: 'You joined the groups and solved every addition mission.',
+            playAgain: 'Play another round'
         },
         pl: {
-            countJoin: current => `Pytanie ${index + 1}. Połącz dwie grupy. Policz ${current.left} plus ${current.right}, a potem naciśnij przycisk połącz grupy.`,
-            afterJoin: current => `${current.left} plus ${current.right}. Ile jest razem?`,
-            correct: current => `Świetnie! ${current.left} plus ${current.right} równa się ${current.sum}.`,
-            incorrect: current => `Dobra próba. Policz połączoną grupę jeszcze raz. Razem jest ${current.sum}.`,
-            finish: percent => `Przygoda matematyczna zakończona. Twój wynik to ${percent} procent. Świetna robota!`
+            adventure: 'Edulytics Matematyczna Przygoda',
+            mission: 'Misja ze świetlikami',
+            counter: (i) => `${i + 1} z ${totalRounds}`,
+            soundOn: '🔊 Dźwięk włączony',
+            soundOff: '🔇 Dźwięk wyłączony',
+            soundOnLabel: 'Wyłącz dźwięk gry',
+            soundOffLabel: 'Włącz dźwięk gry',
+            eyebrow: (i) => `Misja ${i + 1}`,
+            heading: 'Pomóż mi rozświetlić lampion!',
+            instruction: 'Przenieś wszystkie świetliki z obu krzaków do lampionu.',
+            tip: 'Dotknij świetlika albo przeciągnij go do lampionu.',
+            left: 'Krzak zachodu słońca',
+            right: 'Krzak księżycowy',
+            lantern: 'Lampion',
+            joined: (moved, total) => `${moved} z ${total} połączonych`,
+            firstSpeech: (q) => `Misja ${roundIndex + 1}. W jednym krzaku są ${q.left} świetliki, a w drugim ${q.right}. Przenieś wszystkie do lampionu.`,
+            collectSpeech: (remaining) => remaining === 1 ? 'Został jeden świetlik. Przenieś go do lampionu.' : `Zostało ${remaining} świetlików.`,
+            ask: (q) => `${q.left} plus ${q.right}. Ile świetlików świeci teraz razem?`,
+            question: (q) => `${q.left} + ${q.right} = ?`,
+            answerTitle: 'Ile świetlików świeci razem?',
+            answerCopy: 'Policz świetliki w lampionie i wybierz odpowiedź.',
+            correct: (q) => `Świetnie! ${q.left} plus ${q.right} równa się ${q.sum}. Lampion świeci!`,
+            wrong: 'Dobra próba. Policz jeszcze raz świetliki w lampionie.',
+            check: 'Sprawdź odpowiedź',
+            clear: 'Wyczyść',
+            replay: 'Dotknij mnie, aby usłyszeć misję ponownie',
+            completeTitle: 'Przygoda z lampionem zakończona!',
+            completeScore: '10 misji ukończonych',
+            completeCopy: 'Połączyłeś grupy i rozwiązałeś wszystkie zadania z dodawania.',
+            playAgain: 'Zagraj ponownie'
         }
     };
 
-    installScene();
-    installMotionStyles();
-    prepareMascot();
-    refreshVoices();
+    function locale() {
+        return speechLanguage.toLowerCase().startsWith('pl') ? strings.pl : strings.en;
+    }
 
     function inferSpeechLanguage() {
         const htmlLanguage = (document.documentElement.lang || '').toLowerCase();
         if (htmlLanguage.startsWith('pl')) return 'pl-PL';
-        const chips = Array.from(root.querySelectorAll('.preview-chip'))
-            .map(chip => (chip.textContent || '').toLowerCase())
-            .join(' ');
-        return /polish|polska|polski|podstawa/.test(chips) ? 'pl-PL' : 'en-GB';
+        const pageText = (root.textContent || '').toLowerCase();
+        return /polish|polska|polski|podstawa/.test(pageText) ? 'pl-PL' : 'en-GB';
     }
 
-    function activeCopy() {
-        return speechLanguage.toLowerCase().startsWith('pl') ? copy.pl : copy.en;
-    }
-
-    function installScene() {
-        if (!gameShell.querySelector('.kid-motion-world')) {
-            const world = document.createElement('div');
-            world.className = 'kid-motion-world';
-            world.setAttribute('aria-hidden', 'true');
-            world.innerHTML = `
-                <div class="kid-aurora kid-aurora-a"></div>
-                <div class="kid-aurora kid-aurora-b"></div>
-                <div class="kid-orbit kid-orbit-a"></div>
-                <div class="kid-orbit kid-orbit-b"></div>
-                <div class="kid-float-symbol kid-float-1">+</div>
-                <div class="kid-float-symbol kid-float-2">2</div>
-                <div class="kid-float-symbol kid-float-3">=</div>
-                <div class="kid-float-symbol kid-float-4">5</div>
-                <div class="kid-float-symbol kid-float-5">+</div>
-                <div class="kid-float-symbol kid-float-6">3</div>
-                <div class="kid-sparkle kid-sparkle-1">✦</div>
-                <div class="kid-sparkle kid-sparkle-2">✦</div>
-                <div class="kid-sparkle kid-sparkle-3">✦</div>
-                <div class="kid-sparkle kid-sparkle-4">✦</div>
-                <div class="kid-ground-track"><span></span><span></span><span></span><span></span></div>`;
-            gameShell.prepend(world);
+    function createRounds() {
+        const pairs = [];
+        for (let left = 1; left <= 6; left++) {
+            for (let right = 1; right <= 6; right++) {
+                const sum = left + right;
+                if (sum >= 3 && sum <= 10) pairs.push({ left, right, sum });
+            }
         }
-
-        if (mascotWrap && !mascotWrap.querySelector('.kid-voice-halo')) {
-            const halo = document.createElement('div');
-            halo.className = 'kid-voice-halo';
-            halo.setAttribute('aria-hidden', 'true');
-            halo.innerHTML = '<span></span><span></span><span></span>';
-            mascotWrap.prepend(halo);
-        }
-
-        gameShell.addEventListener('pointermove', event => {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth < 760) return;
-            const bounds = gameShell.getBoundingClientRect();
-            const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
-            const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
-            gameShell.style.setProperty('--scene-x', x.toFixed(3));
-            gameShell.style.setProperty('--scene-y', y.toFixed(3));
-        });
-        gameShell.addEventListener('pointerleave', () => {
-            gameShell.style.setProperty('--scene-x', '0');
-            gameShell.style.setProperty('--scene-y', '0');
-        });
+        shuffle(pairs);
+        return pairs.slice(0, totalRounds);
     }
 
-    function installMotionStyles() {
-        if (document.getElementById('temporary-practice-motion-styles-v2')) return;
+    function shuffle(items) {
+        for (let i = items.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [items[i], items[j]] = [items[j], items[i]];
+        }
+        return items;
+    }
+
+    function installStyles() {
+        if (document.getElementById('scenario-game-styles-v1')) return;
         const style = document.createElement('style');
-        style.id = 'temporary-practice-motion-styles-v2';
+        style.id = 'scenario-game-styles-v1';
         style.textContent = `
-            .kid-game-shell {
-                --scene-x: 0;
-                --scene-y: 0;
-                isolation: isolate;
-                background:
-                    radial-gradient(circle at 18% 12%, rgba(255,255,255,.9) 0 2.5%, transparent 2.8%),
-                    radial-gradient(circle at 84% 22%, rgba(255,246,172,.85) 0 2%, transparent 2.3%),
-                    linear-gradient(180deg,#6ed3ff 0%,#a9eaff 46%,#e8fbff 52%,#83d46d 53%,#57b85e 100%);
-                background-size: 120% 120%;
-                animation: preview-world-breathe 8s ease-in-out infinite alternate;
+            .kid-game-shell.scenario-shell {
+                --scene-x:0;
+                --scene-y:0;
+                position:relative;
+                overflow:hidden;
+                min-height:760px;
+                border:6px solid #fff;
+                border-radius:34px;
+                background:#85d8f4;
+                box-shadow:0 26px 72px rgba(24,76,99,.23);
+                color:#17344f;
+                isolation:isolate;
             }
-            .kid-motion-world { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:-1; }
-            .kid-aurora { position:absolute; width:58%; height:45%; border-radius:50%; filter:blur(3px); opacity:.34; mix-blend-mode:screen; }
-            .kid-aurora-a { left:-12%; top:12%; background:radial-gradient(circle,rgba(255,255,255,.95),rgba(140,235,255,.18) 55%,transparent 72%); animation:aurora-a 10s ease-in-out infinite alternate; }
-            .kid-aurora-b { right:-18%; top:28%; background:radial-gradient(circle,rgba(255,242,155,.72),rgba(255,181,115,.12) 56%,transparent 72%); animation:aurora-b 12s ease-in-out infinite alternate; }
-            .kid-orbit { position:absolute; border:2px dashed rgba(255,255,255,.28); border-radius:50%; }
-            .kid-orbit-a { width:470px; height:470px; left:-220px; top:180px; animation:orbit-spin 28s linear infinite; }
-            .kid-orbit-b { width:390px; height:390px; right:-190px; top:40px; animation:orbit-spin-reverse 24s linear infinite; }
-            .kid-float-symbol { position:absolute; display:grid; place-items:center; width:58px; height:58px; border:3px solid rgba(255,255,255,.84); border-radius:18px; background:rgba(255,255,255,.72); color:#156b7a; font-size:1.55rem; font-weight:950; box-shadow:0 12px 28px rgba(35,91,112,.12); backdrop-filter:blur(4px); }
-            .kid-float-1 { left:4%; top:31%; animation:float-one 8.8s ease-in-out infinite; }
-            .kid-float-2 { left:15%; top:64%; width:48px; height:48px; border-radius:50%; animation:float-two 10.2s ease-in-out infinite -2.1s; }
-            .kid-float-3 { right:5%; top:38%; animation:float-three 9.6s ease-in-out infinite -.8s; }
-            .kid-float-4 { right:18%; top:69%; width:50px; height:50px; border-radius:50%; animation:float-four 11s ease-in-out infinite -3s; }
-            .kid-float-5 { left:43%; top:9%; width:44px; height:44px; border-radius:50%; animation:float-two 8s ease-in-out infinite -1s; }
-            .kid-float-6 { right:34%; top:17%; width:42px; height:42px; border-radius:14px; animation:float-one 9.4s ease-in-out infinite -4s; }
-            .kid-sparkle { position:absolute; color:#fff9b0; font-size:1.45rem; text-shadow:0 0 14px rgba(255,240,107,.9); animation:sparkle-pulse 2.4s ease-in-out infinite; }
-            .kid-sparkle-1 { left:24%; top:20%; }
-            .kid-sparkle-2 { right:24%; top:31%; animation-delay:-.7s; }
-            .kid-sparkle-3 { left:9%; top:78%; animation-delay:-1.2s; }
-            .kid-sparkle-4 { right:7%; top:78%; animation-delay:-1.8s; }
-            .kid-ground-track { position:absolute; left:-5%; right:-5%; bottom:10px; height:88px; transform:translate3d(calc(var(--scene-x) * -8px),calc(var(--scene-y) * -2px),0); transition:transform .2s ease-out; }
-            .kid-ground-track span { position:absolute; bottom:10px; width:64px; height:26px; border-radius:50%; background:rgba(255,255,255,.19); animation:ground-drift 7s linear infinite; }
-            .kid-ground-track span:nth-child(1){left:8%;animation-delay:-1s}.kid-ground-track span:nth-child(2){left:31%;animation-delay:-4s}.kid-ground-track span:nth-child(3){left:61%;animation-delay:-2.2s}.kid-ground-track span:nth-child(4){left:83%;animation-delay:-5.3s}
-            .kid-cloud-one { animation:cloud-drift-a 15s ease-in-out infinite alternate; filter:drop-shadow(0 10px 12px rgba(74,134,159,.09)); }
-            .kid-cloud-two { animation:cloud-drift-b 18s ease-in-out infinite alternate; filter:drop-shadow(0 10px 12px rgba(74,134,159,.08)); }
-            .kid-sun { box-shadow:0 0 0 14px rgba(255,230,109,.22),0 0 48px rgba(255,220,91,.42); animation:sun-orbit 7s ease-in-out infinite; }
-            .kid-game-shell::before { animation:hill-a 10s ease-in-out infinite alternate; }
-            .kid-game-shell::after { animation:hill-b 12s ease-in-out infinite alternate; }
-            .kid-game-topbar,.kid-progress-wrap,.kid-stage,.kid-answer-dock,.kid-finish { position:relative; z-index:2; }
-            .kid-game-topbar { animation:ui-drop .6s cubic-bezier(.2,.8,.2,1) both; }
-            .kid-progress-wrap { animation:ui-drop .65s .08s cubic-bezier(.2,.8,.2,1) both; }
-            .kid-progress-fill { position:relative; overflow:hidden; }
-            .kid-progress-fill::after { content:""; position:absolute; inset:-3px auto -3px -42px; width:42px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),transparent); transform:skewX(-18deg); animation:progress-shine 2.8s ease-in-out infinite; }
-            .kid-play-board { transform:perspective(900px) rotateX(calc(var(--scene-y) * -0.5deg)) rotateY(calc(var(--scene-x) * 0.7deg)); transition:transform .22s ease-out,box-shadow .22s ease-out; animation:board-enter .7s .12s cubic-bezier(.2,.85,.2,1) both; box-shadow:0 24px 48px rgba(38,95,116,.17),inset 0 1px 0 rgba(255,255,255,.55); }
-            .kid-instruction h2 { text-shadow:0 2px 0 rgba(255,255,255,.75); }
-            .kid-group-card { animation:group-float 3.8s ease-in-out infinite; }
-            .kid-group-card.is-right { animation-delay:-1.8s; }
-            .kid-group-card.is-joined { animation:joined-pop .52s cubic-bezier(.17,.89,.32,1.28) both !important; }
-            .kid-token { animation:token-live 2.1s ease-in-out infinite; will-change:transform; }
-            .kid-token:nth-child(2n){animation-delay:-.36s}.kid-token:nth-child(3n){animation-delay:-.72s}.kid-token:nth-child(5n){animation-delay:-1.08s}
-            .kid-plus { animation:plus-pulse 2.2s ease-in-out infinite; }
-            .kid-join-button { position:relative; overflow:hidden; animation:join-breathe 2.4s ease-in-out infinite; }
-            .kid-join-button::after { content:""; position:absolute; top:-35%; bottom:-35%; left:-34%; width:24%; background:rgba(255,255,255,.48); transform:rotate(18deg); animation:button-shine 2.6s ease-in-out infinite; }
-            .kid-equation { animation:equation-float 3s ease-in-out infinite; }
-            .kid-answer-box:not(:disabled) { animation:answer-ready 1.8s ease-in-out infinite; }
-            .kid-mascot-column { z-index:3; }
-            .kid-mascot-wrap { width:min(285px,100%); height:405px; }
-            .kid-mascot { width:100%; max-height:400px; object-fit:contain; object-position:center bottom; clip-path:none !important; filter:drop-shadow(0 18px 17px rgba(23,72,88,.18)); transform:none !important; animation:none !important; transition:filter .25s ease,opacity .25s ease; }
-            .kid-mascot.is-celebrating { filter:drop-shadow(0 18px 17px rgba(23,72,88,.18)) drop-shadow(0 0 24px rgba(255,220,77,.72)); }
-            .kid-voice-halo { position:absolute; z-index:0; left:50%; top:47%; width:190px; height:190px; transform:translate(-50%,-50%); pointer-events:none; opacity:0; transition:opacity .2s ease; }
-            .kid-voice-halo span { position:absolute; inset:50%; border:3px solid rgba(28,154,177,.35); border-radius:50%; transform:translate(-50%,-50%) scale(.3); opacity:0; }
-            .kid-mascot-wrap.is-speaking .kid-voice-halo { opacity:1; }
-            .kid-mascot-wrap.is-speaking .kid-voice-halo span { animation:voice-ring 1.65s ease-out infinite; }
-            .kid-mascot-wrap.is-speaking .kid-voice-halo span:nth-child(2){animation-delay:.45s}.kid-mascot-wrap.is-speaking .kid-voice-halo span:nth-child(3){animation-delay:.9s}
-            .kid-speech { transform-origin:85% 100%; transition:transform .2s ease,box-shadow .2s ease; }
-            .kid-speech.is-speaking { animation:speech-talk .62s ease-in-out infinite alternate; box-shadow:0 13px 30px rgba(40,90,112,.2),0 0 0 5px rgba(255,255,255,.28); }
-            .kid-key { transition:transform .12s ease,filter .12s ease,box-shadow .12s ease; }
-            .kid-key:not(:disabled):hover { transform:translateY(-3px) scale(1.03); filter:brightness(1.08); }
-            .kid-check-button:not(:disabled) { animation:check-ready 2.1s ease-in-out infinite; }
-            .kid-scene-burst { position:absolute; z-index:5; pointer-events:none; width:14px; height:14px; border-radius:50%; animation:burst-pop .72s ease-out forwards; }
-            .kid-question-enter { animation:question-enter .48s cubic-bezier(.2,.8,.2,1) both; }
-            .kid-finish-card { animation:finish-pop .7s cubic-bezier(.17,.89,.32,1.28) both; }
-            .kid-finish-mascot { content:url('${mascotAsset}'); filter:drop-shadow(0 14px 15px rgba(27,75,89,.18)); animation:finish-float 3s ease-in-out infinite; }
-            @keyframes preview-world-breathe { 0%{background-position:50% 0%}100%{background-position:48% 12%} }
-            @keyframes aurora-a { from{transform:translate3d(-3%,0,0) scale(1)}to{transform:translate3d(18%,8%,0) scale(1.16)} }
-            @keyframes aurora-b { from{transform:translate3d(6%,-4%,0) scale(.94)}to{transform:translate3d(-13%,12%,0) scale(1.14)} }
-            @keyframes orbit-spin { to{transform:rotate(360deg)} }
-            @keyframes orbit-spin-reverse { to{transform:rotate(-360deg)} }
-            @keyframes float-one { 0%,100%{transform:translate3d(0,0,0) rotate(-7deg)}50%{transform:translate3d(34px,-25px,0) rotate(8deg)} }
-            @keyframes float-two { 0%,100%{transform:translate3d(0,0,0) rotate(5deg)}50%{transform:translate3d(-28px,-34px,0) rotate(-8deg)} }
-            @keyframes float-three { 0%,100%{transform:translate3d(0,0,0) rotate(8deg)}50%{transform:translate3d(-38px,24px,0) rotate(-6deg)} }
-            @keyframes float-four { 0%,100%{transform:translate3d(0,0,0) rotate(-4deg)}50%{transform:translate3d(22px,-30px,0) rotate(9deg)} }
-            @keyframes sparkle-pulse { 0%,100%{transform:scale(.6) rotate(0);opacity:.35}50%{transform:scale(1.35) rotate(28deg);opacity:1} }
-            @keyframes ground-drift { 0%{transform:translateX(-20px) scale(.8);opacity:.15}50%{opacity:.4}100%{transform:translateX(85px) scale(1.25);opacity:.05} }
-            @keyframes cloud-drift-a { from{transform:translate3d(-40px,0,0) scale(.92)}to{transform:translate3d(150px,-12px,0) scale(1.06)} }
-            @keyframes cloud-drift-b { from{transform:translate3d(48px,0,0) scale(.72)}to{transform:translate3d(-140px,14px,0) scale(.86)} }
-            @keyframes sun-orbit { 0%,100%{transform:translateY(0) rotate(0) scale(1)}50%{transform:translateY(-13px) rotate(8deg) scale(1.08)} }
-            @keyframes hill-a { from{transform:translateX(-18px) rotate(-7deg) scale(1)}to{transform:translateX(28px) rotate(-4deg) scale(1.06)} }
-            @keyframes hill-b { from{transform:translateX(18px) rotate(8deg) scale(1)}to{transform:translateX(-26px) rotate(5deg) scale(1.055)} }
-            @keyframes ui-drop { from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none} }
-            @keyframes board-enter { from{opacity:0;transform:perspective(900px) translateY(28px) scale(.975)}to{opacity:1;transform:perspective(900px) translateY(0) scale(1)} }
-            @keyframes progress-shine { 0%,40%{left:-48px}75%,100%{left:110%} }
-            @keyframes group-float { 0%,100%{transform:translateY(0) rotate(-.35deg)}50%{transform:translateY(-7px) rotate(.35deg)} }
-            @keyframes token-live { 0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-7px) scale(1.05)} }
-            @keyframes plus-pulse { 0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.08) rotate(3deg)} }
-            @keyframes join-breathe { 0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-2px) scale(1.025)} }
-            @keyframes button-shine { 0%,30%{left:-38%}65%,100%{left:128%} }
-            @keyframes joined-pop { 0%{opacity:0;transform:scale(.78) rotate(-2deg)}65%{transform:scale(1.05) rotate(1deg)}100%{opacity:1;transform:scale(1)} }
-            @keyframes equation-float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)} }
-            @keyframes answer-ready { 0%,100%{box-shadow:0 7px 0 #168091,0 0 0 0 rgba(40,166,186,.08)}50%{box-shadow:0 7px 0 #168091,0 0 0 8px rgba(40,166,186,.13)} }
-            @keyframes voice-ring { 0%{transform:translate(-50%,-50%) scale(.25);opacity:.65}100%{transform:translate(-50%,-50%) scale(1.15);opacity:0} }
-            @keyframes speech-talk { from{transform:translateY(0) scale(1)}to{transform:translateY(-3px) scale(1.012)} }
-            @keyframes check-ready { 0%,100%{filter:brightness(1);transform:translateY(0)}50%{filter:brightness(1.08);transform:translateY(-2px)} }
-            @keyframes burst-pop { from{transform:translate(0,0) scale(.2);opacity:1}to{transform:translate(var(--burst-x),var(--burst-y)) scale(1.1);opacity:0} }
-            @keyframes question-enter { from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none} }
-            @keyframes finish-pop { from{opacity:0;transform:scale(.82) translateY(28px)}to{opacity:1;transform:none} }
-            @keyframes finish-float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)} }
-            @media (max-width:760px) {
-                .kid-float-symbol{opacity:.55;transform:scale(.78)}
-                .kid-float-1,.kid-float-2{left:1%}.kid-float-3,.kid-float-4{right:1%}
-                .kid-mascot-wrap{width:190px;height:230px}.kid-voice-halo{width:135px;height:135px}
-            }
-            @media (max-width:520px) {
-                .kid-float-2,.kid-float-4,.kid-float-5,.kid-float-6,.kid-orbit{display:none}
-                .kid-float-symbol{width:38px;height:38px;border-radius:12px;font-size:1rem;opacity:.4}
-                .kid-mascot-wrap{width:145px;height:185px}.kid-voice-halo{width:110px;height:110px}
-            }
-            @media (prefers-reduced-motion:reduce) {
-                .kid-game-shell,.kid-motion-world *, .kid-cloud,.kid-sun,.kid-game-shell::before,.kid-game-shell::after,
-                .kid-game-topbar,.kid-progress-wrap,.kid-play-board,.kid-progress-fill::after,.kid-group-card,.kid-token,.kid-plus,
-                .kid-join-button,.kid-join-button::after,.kid-equation,.kid-answer-box,.kid-speech,.kid-voice-halo span,
-                .kid-check-button,.kid-finish-card,.kid-finish-mascot { animation:none !important; transition:none !important; }
-                .kid-play-board { transform:none !important; }
-            }
+            .scenario-world{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;background:linear-gradient(180deg,#65c8f2 0%,#a9e9f9 42%,#ffe7a5 43%,#8ed171 59%,#4ba95e 100%)}
+            .scenario-sky-glow{position:absolute;width:44vw;height:44vw;min-width:420px;min-height:420px;right:-12%;top:-22%;border-radius:50%;background:radial-gradient(circle,rgba(255,247,185,.95) 0 10%,rgba(255,218,112,.28) 29%,transparent 65%);animation:scenario-sun-pulse 7s ease-in-out infinite}
+            .scenario-cloud{position:absolute;width:180px;height:56px;border-radius:999px;background:rgba(255,255,255,.88);filter:drop-shadow(0 10px 14px rgba(40,111,141,.11));}
+            .scenario-cloud:before,.scenario-cloud:after{content:"";position:absolute;border-radius:50%;background:inherit}
+            .scenario-cloud:before{width:74px;height:74px;left:35px;top:-34px}.scenario-cloud:after{width:92px;height:92px;right:24px;top:-46px}
+            .scenario-cloud-a{top:15%;left:-210px;animation:scenario-cloud-a 22s linear infinite}
+            .scenario-cloud-b{top:28%;right:-230px;transform:scale(.72);animation:scenario-cloud-b 27s linear infinite}
+            .scenario-hill{position:absolute;bottom:8%;width:60%;height:220px;border-radius:50% 50% 0 0;background:rgba(49,139,77,.48);filter:blur(.1px)}
+            .scenario-hill-a{left:-16%;animation:scenario-hill-a 8s ease-in-out infinite alternate}
+            .scenario-hill-b{right:-18%;height:185px;background:rgba(35,126,73,.4);animation:scenario-hill-b 10s ease-in-out infinite alternate}
+            .scenario-stars{position:absolute;inset:0;background-image:radial-gradient(circle,#fff8b0 0 2px,transparent 2.4px),radial-gradient(circle,#fff 0 1.4px,transparent 1.9px);background-size:94px 94px,143px 143px;background-position:0 0,38px 26px;opacity:.72;animation:scenario-stars-drift 16s linear infinite}
+            .scenario-grass{position:absolute;left:-2%;right:-2%;bottom:-7px;height:90px;background:repeating-linear-gradient(86deg,transparent 0 13px,rgba(21,111,60,.32) 13px 17px,transparent 17px 28px);transform-origin:50% 100%;animation:scenario-grass-sway 3.6s ease-in-out infinite alternate}
+            .scenario-topbar{position:relative;z-index:4;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;padding:22px 26px 10px}
+            .scenario-brand{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.scenario-kicker{margin:0;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.8);font-size:.78rem;font-weight:950;letter-spacing:.06em;text-transform:uppercase;color:#0e6c7b}
+            .scenario-title{font-size:1.15rem;font-weight:950;color:#173d56}.scenario-actions{display:flex;gap:10px;align-items:center}.scenario-counter,.scenario-sound{min-height:44px;border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(255,255,255,.82);color:#174c60;font-weight:950;box-shadow:0 7px 20px rgba(41,102,124,.12)}
+            .scenario-counter{padding:10px 15px;min-width:102px;text-align:center}.scenario-sound{padding:0 14px;cursor:pointer}
+            .scenario-progress-wrap{position:relative;z-index:4;padding:0 26px 14px}.scenario-progress-track{height:15px;overflow:hidden;border:3px solid rgba(255,255,255,.86);border-radius:999px;background:rgba(255,255,255,.5)}
+            .scenario-progress-fill{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,#ffd15b,#ff9c55,#56ca8f);transition:width .5s ease;position:relative;overflow:hidden}.scenario-progress-fill:after{content:"";position:absolute;top:-3px;bottom:-3px;width:46px;left:-60px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.92),transparent);transform:skewX(-18deg);animation:scenario-progress-shine 2.4s ease-in-out infinite}
+            .scenario-stage{position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,1fr) 265px;gap:20px;padding:10px 26px 28px;min-height:640px}
+            .scenario-board{position:relative;overflow:hidden;min-height:610px;padding:20px;border:4px solid rgba(255,255,255,.86);border-radius:30px;background:rgba(255,255,255,.74);box-shadow:0 22px 48px rgba(30,83,105,.17);backdrop-filter:blur(3px)}
+            .scenario-board:before{content:"";position:absolute;inset:auto 0 0;height:34%;background:linear-gradient(180deg,transparent,rgba(98,178,88,.15));pointer-events:none}
+            .scenario-instruction{text-align:center;position:relative;z-index:3}.scenario-eyebrow{margin:0 0 5px;color:#168398;font-size:.82rem;font-weight:950;letter-spacing:.08em;text-transform:uppercase}.scenario-instruction h2{margin:0;color:#153f57;font-size:clamp(1.7rem,3vw,2.45rem);line-height:1.07}.scenario-instruction p{margin:7px 0 0;color:#58788c;font-weight:750}.scenario-tip{font-size:.88rem!important;color:#2e7f87!important}
+            .scenario-playfield{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 190px minmax(0,1fr);gap:16px;align-items:end;min-height:350px;margin-top:16px}
+            .scenario-bush{position:relative;min-height:270px;border:0;border-radius:46% 46% 22px 22px;padding:45px 15px 16px;background:radial-gradient(circle at 50% 24%,#9be078 0 24%,#55b967 58%,#3a9857 100%);box-shadow:inset 0 -12px 0 rgba(26,107,61,.16),0 14px 26px rgba(31,91,66,.18);overflow:visible}
+            .scenario-bush:before,.scenario-bush:after{content:"";position:absolute;border-radius:50%;background:#6bca6b;z-index:0}.scenario-bush:before{width:110px;height:96px;left:-13px;top:54px}.scenario-bush:after{width:118px;height:106px;right:-12px;top:45px}
+            .scenario-bush-label{position:absolute;z-index:4;left:50%;top:10px;transform:translateX(-50%);white-space:nowrap;padding:7px 11px;border-radius:999px;background:#fff;color:#245a66;font-size:.78rem;font-weight:950;box-shadow:0 6px 14px rgba(35,82,94,.12)}
+            .scenario-token-zone{position:relative;z-index:3;min-height:190px}
+            .scenario-firefly{position:absolute;width:42px;height:42px;border:0;border-radius:50%;cursor:grab;background:radial-gradient(circle at 42% 38%,#fffbd0 0 13%,#ffe65d 15% 34%,#ffab4e 60%,#e66a42 100%);box-shadow:0 0 0 5px rgba(255,249,168,.23),0 0 26px rgba(255,223,81,.78);transition:opacity .18s ease,transform .16s ease;animation:scenario-firefly-float 2.1s ease-in-out infinite;touch-action:none}
+            .scenario-firefly:before,.scenario-firefly:after{content:"";position:absolute;width:18px;height:10px;border-radius:50% 50% 45% 45%;background:rgba(255,255,255,.72);top:14px}.scenario-firefly:before{left:-11px;transform:rotate(-24deg)}.scenario-firefly:after{right:-11px;transform:rotate(24deg)}
+            .scenario-firefly.is-right{background:radial-gradient(circle at 42% 38%,#fffbdc 0 13%,#d8c7ff 15% 34%,#9a82f4 60%,#6f54d9 100%);box-shadow:0 0 0 5px rgba(215,203,255,.23),0 0 26px rgba(153,128,244,.68)}
+            .scenario-firefly:hover,.scenario-firefly:focus-visible{transform:scale(1.12);outline:3px solid rgba(255,255,255,.9);outline-offset:4px}.scenario-firefly.is-moving{opacity:0;pointer-events:none}
+            .scenario-lantern-zone{align-self:center;position:relative;display:grid;place-items:center;min-height:300px;border-radius:32px;transition:transform .25s ease}
+            .scenario-lantern-zone.is-drag-over{transform:scale(1.05)}.scenario-lantern{position:relative;width:150px;height:190px;border:7px solid #765133;border-radius:28px 28px 38px 38px;background:linear-gradient(180deg,rgba(255,248,198,.25),rgba(255,210,82,.2));box-shadow:inset 0 0 0 5px rgba(255,255,255,.4),0 18px 25px rgba(87,72,42,.2);overflow:hidden;transition:box-shadow .35s ease,background .35s ease,transform .35s ease}
+            .scenario-lantern:before{content:"";position:absolute;width:74px;height:34px;border:8px solid #765133;border-bottom:0;border-radius:42px 42px 0 0;left:50%;top:-32px;transform:translateX(-50%)}.scenario-lantern:after{content:"";position:absolute;left:17px;right:17px;top:20px;bottom:20px;border:3px solid rgba(123,82,44,.32);border-radius:18px}
+            .scenario-lantern.is-lit{background:radial-gradient(circle at 50% 56%,#fffad1 0 12%,#ffe16d 35%,rgba(255,165,54,.58) 72%,rgba(255,142,39,.28) 100%);box-shadow:inset 0 0 0 5px rgba(255,255,255,.5),0 0 42px rgba(255,215,69,.92),0 20px 28px rgba(87,72,42,.2);animation:scenario-lantern-glow 1.55s ease-in-out infinite}
+            .scenario-lantern-fireflies{position:absolute;inset:18px;z-index:3}.scenario-lantern-dot{position:absolute;width:15px;height:15px;border-radius:50%;background:#fff8a5;box-shadow:0 0 16px #ffd74b;animation:scenario-lantern-dot 1.8s ease-in-out infinite}
+            .scenario-lantern-label{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);z-index:4;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.9);color:#674b30;font-size:.75rem;font-weight:950;white-space:nowrap}
+            .scenario-join-count{position:absolute;top:8px;left:50%;transform:translateX(-50%);z-index:4;padding:7px 10px;border-radius:999px;background:#174c60;color:#fff;font-size:.74rem;font-weight:950;white-space:nowrap}
+            .scenario-answer-panel{position:relative;z-index:4;margin-top:12px;padding:15px;border-radius:24px;background:rgba(255,255,255,.91);box-shadow:0 12px 25px rgba(39,83,99,.12);opacity:0;transform:translateY(18px) scale(.98);pointer-events:none;transition:opacity .35s ease,transform .35s ease}
+            .scenario-answer-panel.is-ready{opacity:1;transform:none;pointer-events:auto}.scenario-answer-title{text-align:center}.scenario-answer-title strong{display:block;color:#18495f;font-size:1.05rem}.scenario-answer-title span{display:block;margin-top:3px;color:#628092;font-size:.88rem}
+            .scenario-equation{display:flex;align-items:center;justify-content:center;gap:12px;margin:12px 0}.scenario-equation-text{font-size:clamp(2rem,4vw,3.2rem);font-weight:950;color:#173d56}.scenario-answer-input{width:108px;min-height:64px;border:4px solid #79c7d2;border-radius:18px;background:#fff;text-align:center;font-size:2rem;font-weight:950;color:#173d56}
+            .scenario-keypad{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.scenario-key{min-height:48px;border:0;border-radius:14px;background:linear-gradient(180deg,#fff,#edf8fb);color:#1d556a;font-weight:950;box-shadow:0 5px 0 #c7e4ea;cursor:pointer}.scenario-key:active{transform:translateY(3px);box-shadow:0 2px 0 #c7e4ea}.scenario-key.is-tool{background:linear-gradient(180deg,#fff3d8,#ffe5ae);color:#875b1e}
+            .scenario-check{width:100%;min-height:52px;margin-top:10px;border:0;border-radius:16px;background:linear-gradient(180deg,#36c58b,#1fa76f);color:#fff;font-weight:950;cursor:pointer;box-shadow:0 7px 0 #16815a}.scenario-check:disabled{opacity:.5;cursor:not-allowed;box-shadow:none}
+            .scenario-feedback{min-height:46px;margin-top:10px;padding:11px 13px;border-radius:14px;font-weight:900;text-align:center}.scenario-feedback:empty{display:none}.scenario-feedback.is-correct{background:#dff9e9;color:#1b7c51}.scenario-feedback.is-wrong{background:#fff0d6;color:#9b621d}
+            .scenario-mascot-column{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;min-width:0}.scenario-speech{position:relative;width:100%;padding:16px;border:3px solid rgba(255,255,255,.92);border-radius:22px;background:rgba(255,255,255,.92);box-shadow:0 12px 25px rgba(29,78,97,.14);color:#234d60;font-weight:800;line-height:1.45}.scenario-speech:after{content:"";position:absolute;right:44px;bottom:-17px;width:28px;height:28px;background:#fff;transform:rotate(45deg);border-right:3px solid rgba(255,255,255,.92);border-bottom:3px solid rgba(255,255,255,.92)}
+            .scenario-mascot-wrap{position:relative;width:min(285px,100%);height:390px;cursor:pointer}.scenario-mascot{position:relative;z-index:2;width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 18px 17px rgba(23,72,88,.18));user-select:none;-webkit-user-drag:none}
+            .scenario-mouth{position:absolute;z-index:5;left:51%;top:40.5%;width:18px;height:7px;border-radius:50%;background:#4d2c35;opacity:0;transform:translate(-50%,-50%);pointer-events:none}.scenario-mascot-wrap.is-speaking .scenario-mouth{opacity:.9;animation:scenario-mouth-talk .18s ease-in-out infinite alternate}
+            .scenario-talk-ring{position:absolute;z-index:1;left:50%;top:45%;width:175px;height:175px;border:4px solid rgba(27,155,180,.28);border-radius:50%;transform:translate(-50%,-50%) scale(.55);opacity:0}.scenario-mascot-wrap.is-speaking .scenario-talk-ring{animation:scenario-talk-ring 1.2s ease-out infinite}.scenario-mascot-wrap.is-speaking .scenario-mascot{animation:scenario-head-talk 1.1s ease-in-out infinite}
+            .scenario-replay{font-size:.78rem;color:#2c6e7a;text-align:center;font-weight:800}
+            .scenario-fly-clone{position:fixed;z-index:9999;width:42px;height:42px;border-radius:50%;pointer-events:none;box-shadow:0 0 28px rgba(255,224,83,.9);transition:transform .48s cubic-bezier(.2,.8,.2,1),opacity .48s ease}
+            .scenario-burst{position:absolute;z-index:10;width:12px;height:12px;border-radius:50%;background:#fff4a2;box-shadow:0 0 16px #ffd44f;pointer-events:none;animation:scenario-burst .8s ease-out forwards}
+            .scenario-finish{position:absolute;z-index:8;inset:0;display:grid;place-items:center;padding:24px;background:rgba(21,77,94,.28);backdrop-filter:blur(5px)}.scenario-finish-card{width:min(500px,100%);padding:26px;border:5px solid #fff;border-radius:30px;background:linear-gradient(180deg,#fff9dd,#fff);text-align:center;box-shadow:0 26px 60px rgba(24,70,89,.25);animation:scenario-finish-pop .65s cubic-bezier(.17,.89,.32,1.28)}.scenario-finish-card img{width:180px;height:180px;object-fit:contain}.scenario-finish-card h2{margin:8px 0;color:#173d56}.scenario-finish-score{font-size:1.4rem;font-weight:950;color:#0c8a72}.scenario-restart{min-height:50px;padding:0 22px;border:0;border-radius:16px;background:#0b8193;color:#fff;font-weight:950;cursor:pointer}
+            @keyframes scenario-cloud-a{to{transform:translateX(calc(100vw + 470px))}}@keyframes scenario-cloud-b{to{transform:translateX(calc(-100vw - 470px)) scale(.72)}}@keyframes scenario-sun-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08) translateY(10px)}}@keyframes scenario-stars-drift{to{background-position:94px 46px,181px 82px}}@keyframes scenario-hill-a{from{transform:translateX(-18px) scale(1)}to{transform:translateX(32px) scale(1.05)}}@keyframes scenario-hill-b{from{transform:translateX(20px) scale(1)}to{transform:translateX(-30px) scale(1.06)}}@keyframes scenario-grass-sway{from{transform:skewX(-1.4deg)}to{transform:skewX(1.4deg)}}@keyframes scenario-progress-shine{0%,35%{left:-60px}75%,100%{left:110%}}@keyframes scenario-firefly-float{0%,100%{translate:0 0;rotate:-3deg}50%{translate:0 -9px;rotate:5deg}}@keyframes scenario-lantern-glow{0%,100%{transform:scale(1);filter:brightness(1)}50%{transform:scale(1.025);filter:brightness(1.08)}}@keyframes scenario-lantern-dot{0%,100%{transform:scale(.7);opacity:.65}50%{transform:scale(1.2);opacity:1}}@keyframes scenario-mouth-talk{from{height:5px;width:17px}to{height:12px;width:14px}}@keyframes scenario-talk-ring{0%{opacity:.8;transform:translate(-50%,-50%) scale(.55)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.35)}}@keyframes scenario-head-talk{0%,100%{transform:rotate(0deg)}35%{transform:rotate(-1.2deg)}70%{transform:rotate(1deg)}}@keyframes scenario-burst{from{opacity:1;transform:translate(0,0) scale(1)}to{opacity:0;transform:translate(var(--bx),var(--by)) scale(.2)}}@keyframes scenario-finish-pop{from{opacity:0;transform:translateY(30px) scale(.92)}to{opacity:1;transform:none}}
+            @media(max-width:900px){.scenario-stage{grid-template-columns:minmax(0,1fr) 210px}.scenario-mascot-wrap{height:310px}.scenario-playfield{grid-template-columns:minmax(0,1fr) 150px minmax(0,1fr)}.scenario-lantern{width:128px;height:170px}}
+            @media(max-width:720px){.kid-game-shell.scenario-shell{border-width:4px;border-radius:24px}.scenario-topbar{grid-template-columns:1fr;padding:16px 16px 9px}.scenario-actions{justify-content:space-between}.scenario-progress-wrap{padding:0 16px 12px}.scenario-stage{grid-template-columns:1fr;padding:8px 14px 18px}.scenario-board{min-height:0;padding:16px 10px}.scenario-mascot-column{display:grid;grid-template-columns:1fr 150px;gap:10px}.scenario-mascot-wrap{width:150px;height:190px}.scenario-playfield{grid-template-columns:1fr 120px 1fr;gap:8px;min-height:315px}.scenario-bush{min-height:230px;padding-inline:8px}.scenario-firefly{width:36px;height:36px}.scenario-lantern{width:112px;height:150px}.scenario-keypad{grid-template-columns:repeat(4,1fr)}}
+            @media(max-width:510px){.scenario-title{width:100%}.scenario-playfield{grid-template-columns:1fr 92px 1fr;gap:5px}.scenario-bush{min-height:210px}.scenario-bush-label{font-size:.68rem;white-space:normal;text-align:center;width:92%}.scenario-firefly{width:31px;height:31px}.scenario-firefly:before,.scenario-firefly:after{width:13px;height:8px;top:10px}.scenario-firefly:before{left:-8px}.scenario-firefly:after{right:-8px}.scenario-lantern{width:84px;height:126px;border-width:5px}.scenario-lantern-label{font-size:.65rem}.scenario-join-count{font-size:.62rem}.scenario-mascot-column{grid-template-columns:1fr 120px}.scenario-mascot-wrap{width:120px;height:155px}.scenario-speech{font-size:.86rem;padding:12px}.scenario-answer-input{width:92px;min-height:56px;font-size:1.7rem}.scenario-key{min-height:45px}}
+            @media(prefers-reduced-motion:reduce){.scenario-world *, .scenario-progress-fill:after, .scenario-firefly, .scenario-lantern.is-lit, .scenario-mascot-wrap.is-speaking .scenario-mouth, .scenario-mascot-wrap.is-speaking .scenario-talk-ring, .scenario-mascot-wrap.is-speaking .scenario-mascot{animation:none!important}}
         `;
         document.head.appendChild(style);
     }
 
-    function prepareMascot() {
-        if (mascot) {
-            mascot.src = mascotAsset;
-            mascot.dataset.mascotIdle = mascotAsset;
-            mascot.dataset.mascotCorrect = mascotAsset;
-            mascot.dataset.mascotTry = mascotAsset;
-            mascot.setAttribute('role', 'button');
-            mascot.setAttribute('tabindex', '0');
-            mascot.setAttribute('aria-label', 'Read the current question aloud');
-            mascot.title = 'Tap the character to hear the question again';
+    function buildGame() {
+        const t = locale();
+        gameShell.className = 'kid-game-shell scenario-shell';
+        gameShell.innerHTML = `
+            <div class="scenario-world" aria-hidden="true">
+                <div class="scenario-stars"></div>
+                <div class="scenario-sky-glow"></div>
+                <div class="scenario-cloud scenario-cloud-a"></div>
+                <div class="scenario-cloud scenario-cloud-b"></div>
+                <div class="scenario-hill scenario-hill-a"></div>
+                <div class="scenario-hill scenario-hill-b"></div>
+                <div class="scenario-grass"></div>
+            </div>
+            <header class="scenario-topbar">
+                <div class="scenario-brand">
+                    <p class="scenario-kicker">✦ ${t.adventure}</p>
+                    <span class="scenario-title">${t.mission}</span>
+                </div>
+                <div class="scenario-actions">
+                    <div class="scenario-counter" data-scenario-counter>${t.counter(0)}</div>
+                    <button class="scenario-sound" type="button" data-scenario-sound aria-pressed="true" aria-label="${t.soundOnLabel}">${t.soundOn}</button>
+                </div>
+            </header>
+            <div class="scenario-progress-wrap">
+                <div class="scenario-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-scenario-progress-track>
+                    <span class="scenario-progress-fill" data-scenario-progress></span>
+                </div>
+            </div>
+            <div class="scenario-stage">
+                <main class="scenario-board">
+                    <div class="scenario-instruction">
+                        <p class="scenario-eyebrow" data-scenario-eyebrow>${t.eyebrow(0)}</p>
+                        <h2>${t.heading}</h2>
+                        <p>${t.instruction}</p>
+                        <p class="scenario-tip">${t.tip}</p>
+                    </div>
+                    <div class="scenario-playfield">
+                        <section class="scenario-bush" aria-label="${t.left}">
+                            <span class="scenario-bush-label" data-scenario-left-label>${t.left}</span>
+                            <div class="scenario-token-zone" data-scenario-left></div>
+                        </section>
+                        <div class="scenario-lantern-zone" data-scenario-dropzone>
+                            <div class="scenario-join-count" data-scenario-join-count></div>
+                            <div class="scenario-lantern" data-scenario-lantern>
+                                <div class="scenario-lantern-fireflies" data-scenario-lantern-fireflies></div>
+                                <span class="scenario-lantern-label">${t.lantern}</span>
+                            </div>
+                        </div>
+                        <section class="scenario-bush" aria-label="${t.right}">
+                            <span class="scenario-bush-label" data-scenario-right-label>${t.right}</span>
+                            <div class="scenario-token-zone" data-scenario-right></div>
+                        </section>
+                    </div>
+                    <section class="scenario-answer-panel" data-scenario-answer-panel aria-live="polite">
+                        <div class="scenario-answer-title">
+                            <strong>${t.answerTitle}</strong>
+                            <span>${t.answerCopy}</span>
+                        </div>
+                        <div class="scenario-equation">
+                            <span class="scenario-equation-text" data-scenario-equation></span>
+                            <input class="scenario-answer-input" data-scenario-answer inputmode="numeric" maxlength="2" autocomplete="off" aria-label="${t.answerTitle}" />
+                        </div>
+                        <div class="scenario-keypad" data-scenario-keypad></div>
+                        <button class="scenario-check" type="button" data-scenario-check disabled>${t.check}</button>
+                        <div class="scenario-feedback" data-scenario-feedback aria-live="polite"></div>
+                    </section>
+                </main>
+                <aside class="scenario-mascot-column" aria-label="Edulytics helper">
+                    <div class="scenario-speech" data-scenario-speech aria-live="polite"></div>
+                    <div class="scenario-mascot-wrap" data-scenario-mascot-wrap role="button" tabindex="0" aria-label="${t.replay}">
+                        <div class="scenario-talk-ring" aria-hidden="true"></div>
+                        <img class="scenario-mascot" src="${mascotAsset}" alt="Edulytics cartoon character" draggable="false" />
+                        <span class="scenario-mouth" aria-hidden="true"></span>
+                    </div>
+                    <div class="scenario-replay">${t.replay}</div>
+                </aside>
+            </div>
+            <div class="scenario-finish" data-scenario-finish hidden>
+                <div class="scenario-finish-card">
+                    <img src="${mascotAsset}" alt="Edulytics cartoon character celebrating" />
+                    <h2>${t.completeTitle}</h2>
+                    <div class="scenario-finish-score">${t.completeScore}</div>
+                    <p>${t.completeCopy}</p>
+                    <button class="scenario-restart" type="button" data-scenario-restart>${t.playAgain}</button>
+                </div>
+            </div>
+        `;
+
+        const keypad = gameShell.querySelector('[data-scenario-keypad]');
+        for (let digit = 1; digit <= 9; digit++) {
+            keypad.insertAdjacentHTML('beforeend', `<button class="scenario-key" type="button" data-scenario-key="${digit}">${digit}</button>`);
         }
-        if (finishMascot) finishMascot.src = mascotAsset;
+        keypad.insertAdjacentHTML('beforeend', `<button class="scenario-key is-tool" type="button" data-scenario-key="clear">${t.clear}</button>`);
+        keypad.insertAdjacentHTML('beforeend', `<button class="scenario-key" type="button" data-scenario-key="0">0</button>`);
+        keypad.insertAdjacentHTML('beforeend', `<button class="scenario-key is-tool" type="button" data-scenario-key="backspace">⌫</button>`);
+
+        bindGameEvents();
     }
 
-    function setTab(name) {
-        tabs.forEach(tab => {
-            const active = tab.dataset.previewTab === name;
-            tab.classList.toggle('is-active', active);
-            tab.setAttribute('aria-selected', active ? 'true' : 'false');
+    function bindGameEvents() {
+        const soundButton = gameShell.querySelector('[data-scenario-sound]');
+        const mascotWrap = gameShell.querySelector('[data-scenario-mascot-wrap]');
+        const dropzone = gameShell.querySelector('[data-scenario-dropzone]');
+        const answer = gameShell.querySelector('[data-scenario-answer]');
+        const check = gameShell.querySelector('[data-scenario-check]');
+        const restart = gameShell.querySelector('[data-scenario-restart]');
+
+        soundButton.addEventListener('click', toggleSound);
+        mascotWrap.addEventListener('click', () => speak(currentSpeech));
+        mascotWrap.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                speak(currentSpeech);
+            }
         });
-        panels.forEach(panel => { panel.hidden = panel.dataset.previewPanel !== name; });
+
+        gameShell.querySelectorAll('[data-scenario-key]').forEach(button => {
+            button.addEventListener('click', () => {
+                if (phase !== 'answer' || locked) return;
+                const key = button.dataset.scenarioKey;
+                if (key === 'clear') answer.value = '';
+                else if (key === 'backspace') answer.value = answer.value.slice(0, -1);
+                else if (answer.value.length < 2) answer.value += key;
+                check.disabled = answer.value.length === 0;
+                tone('tap');
+                answer.focus();
+            });
+        });
+
+        answer.addEventListener('input', () => {
+            answer.value = answer.value.replace(/\D/g, '').slice(0, 2);
+            check.disabled = answer.value.length === 0;
+        });
+        answer.addEventListener('keydown', event => {
+            if (event.key === 'Enter' && !check.disabled) checkAnswer();
+        });
+        check.addEventListener('click', checkAnswer);
+        restart.addEventListener('click', () => {
+            rounds = createRounds();
+            roundIndex = 0;
+            gameShell.querySelector('[data-scenario-finish]').hidden = true;
+            renderRound();
+        });
+
+        dropzone.addEventListener('dragover', event => {
+            if (!dragTokenId || phase !== 'collect') return;
+            event.preventDefault();
+            dropzone.classList.add('is-drag-over');
+        });
+        dropzone.addEventListener('dragleave', () => dropzone.classList.remove('is-drag-over'));
+        dropzone.addEventListener('drop', event => {
+            event.preventDefault();
+            dropzone.classList.remove('is-drag-over');
+            if (dragTokenId) moveFireflyById(dragTokenId);
+            dragTokenId = null;
+        });
     }
 
-    function ensureAudioContext() {
-        if (!soundOn) return null;
-        const Context = window.AudioContext || window.webkitAudioContext;
-        if (!Context) return null;
-        if (!audioContext) audioContext = new Context();
-        if (audioContext.state === 'suspended') audioContext.resume().catch(() => {});
-        return audioContext;
+    function fireflyPositions(count, side) {
+        const left = [[12,18],[50,8],[72,30],[28,48],[61,58],[8,68],[43,78],[75,76],[20,88],[57,91]];
+        const right = [[65,16],[26,8],[8,34],[48,43],[22,61],[70,61],[42,76],[7,81],[62,87],[31,92]];
+        return (side === 'right' ? right : left).slice(0, count);
     }
 
-    function tone(frequency, duration = 0.08, delay = 0, volume = 0.045, type = 'sine') {
-        const context = ensureAudioContext();
-        if (!context) return;
-        const oscillator = context.createOscillator();
-        const gain = context.createGain();
-        const start = context.currentTime + delay;
-        const end = start + duration;
-        oscillator.type = type;
-        oscillator.frequency.setValueAtTime(frequency, start);
-        gain.gain.setValueAtTime(0.0001, start);
-        gain.gain.exponentialRampToValueAtTime(volume, start + 0.012);
-        gain.gain.exponentialRampToValueAtTime(0.0001, end);
-        oscillator.connect(gain);
-        gain.connect(context.destination);
-        oscillator.start(start);
-        oscillator.stop(end + 0.02);
+    function renderRound() {
+        const q = rounds[roundIndex];
+        if (!q) return finishGame();
+
+        const t = locale();
+        movedCount = 0;
+        phase = 'collect';
+        locked = false;
+
+        const leftZone = gameShell.querySelector('[data-scenario-left]');
+        const rightZone = gameShell.querySelector('[data-scenario-right]');
+        const lanternDots = gameShell.querySelector('[data-scenario-lantern-fireflies]');
+        const lantern = gameShell.querySelector('[data-scenario-lantern]');
+        const answerPanel = gameShell.querySelector('[data-scenario-answer-panel]');
+        const answer = gameShell.querySelector('[data-scenario-answer]');
+        const check = gameShell.querySelector('[data-scenario-check]');
+        const feedback = gameShell.querySelector('[data-scenario-feedback]');
+
+        leftZone.innerHTML = '';
+        rightZone.innerHTML = '';
+        lanternDots.innerHTML = '';
+        lantern.classList.remove('is-lit');
+        answerPanel.classList.remove('is-ready');
+        answer.value = '';
+        check.disabled = true;
+        feedback.textContent = '';
+        feedback.className = 'scenario-feedback';
+
+        gameShell.querySelector('[data-scenario-counter]').textContent = t.counter(roundIndex);
+        gameShell.querySelector('[data-scenario-eyebrow]').textContent = t.eyebrow(roundIndex);
+        gameShell.querySelector('[data-scenario-left-label]').textContent = `${t.left} · ${q.left}`;
+        gameShell.querySelector('[data-scenario-right-label]').textContent = `${t.right} · ${q.right}`;
+        gameShell.querySelector('[data-scenario-equation]').textContent = t.question(q);
+        updateProgress();
+        updateJoinCount();
+
+        renderFireflies(leftZone, q.left, 'left');
+        renderFireflies(rightZone, q.right, 'right');
+
+        setSpeech(t.firstSpeech(q), true);
     }
 
-    const playClick = () => tone(520, 0.045, 0, 0.025, 'triangle');
-    const playJoin = () => { tone(330, .08, 0, .035, 'triangle'); tone(440, .08, .07, .035, 'triangle'); tone(550, .1, .14, .04, 'triangle'); };
-    const playCorrect = () => { tone(523.25, .13, 0, .045, 'triangle'); tone(659.25, .13, .09, .045, 'triangle'); tone(783.99, .18, .18, .05, 'triangle'); };
-    const playIncorrect = () => { tone(330, .11, 0, .03, 'sine'); tone(277, .14, .12, .028, 'sine'); };
-    const playFinish = () => { tone(523.25,.14,0,.045,'triangle'); tone(659.25,.14,.11,.045,'triangle'); tone(783.99,.14,.22,.05,'triangle'); tone(1046.5,.25,.34,.055,'triangle'); };
+    function renderFireflies(zone, count, side) {
+        const positions = fireflyPositions(count, side);
+        positions.forEach((position, i) => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = `scenario-firefly${side === 'right' ? ' is-right' : ''}`;
+            button.style.left = `${position[0]}%`;
+            button.style.top = `${position[1]}%`;
+            button.style.animationDelay = `${-(i * 0.23)}s`;
+            button.dataset.fireflyId = `${side}-${i}`;
+            button.dataset.side = side;
+            button.draggable = true;
+            button.setAttribute('aria-label', locale().tip);
+            button.addEventListener('click', () => moveFirefly(button));
+            button.addEventListener('dragstart', event => {
+                dragTokenId = button.dataset.fireflyId;
+                event.dataTransfer.effectAllowed = 'move';
+                event.dataTransfer.setData('text/plain', dragTokenId);
+            });
+            button.addEventListener('dragend', () => {
+                dragTokenId = null;
+                gameShell.querySelector('[data-scenario-dropzone]').classList.remove('is-drag-over');
+            });
+            zone.appendChild(button);
+        });
+    }
 
-    function updateSoundToggle() {
-        if (!soundToggle) return;
-        soundToggle.textContent = soundOn ? '🔊 Sound on' : '🔇 Sound off';
-        soundToggle.setAttribute('aria-pressed', soundOn ? 'true' : 'false');
-        soundToggle.setAttribute('aria-label', soundOn ? 'Turn game sounds and voice off' : 'Turn game sounds and voice on');
+    function moveFireflyById(id) {
+        const escaped = window.CSS && CSS.escape ? CSS.escape(id) : id.replace(/[^a-zA-Z0-9_-]/g, '');
+        const token = gameShell.querySelector(`[data-firefly-id="${escaped}"]`);
+        if (token) moveFirefly(token);
+    }
+
+    function moveFirefly(token) {
+        if (phase !== 'collect' || locked || token.classList.contains('is-moving')) return;
+        token.classList.add('is-moving');
+        animateToLantern(token);
+
+        window.setTimeout(() => {
+            token.remove();
+            addLanternDot();
+            movedCount++;
+            updateJoinCount();
+            tone('fly');
+
+            const q = rounds[roundIndex];
+            if (movedCount >= q.sum) {
+                phase = 'answer';
+                const lantern = gameShell.querySelector('[data-scenario-lantern]');
+                lantern.classList.add('is-lit');
+                burst(lantern, 16);
+                const answerPanel = gameShell.querySelector('[data-scenario-answer-panel]');
+                answerPanel.classList.add('is-ready');
+                window.setTimeout(() => gameShell.querySelector('[data-scenario-answer]').focus(), 350);
+                setSpeech(locale().ask(q), true);
+                tone('join');
+            } else if (movedCount === Math.ceil(q.sum / 2)) {
+                setSpeech(locale().collectSpeech(q.sum - movedCount), false);
+            }
+        }, 430);
+    }
+
+    function animateToLantern(token) {
+        const start = token.getBoundingClientRect();
+        const lantern = gameShell.querySelector('[data-scenario-lantern]').getBoundingClientRect();
+        const clone = document.createElement('div');
+        clone.className = 'scenario-fly-clone';
+        clone.style.left = `${start.left}px`;
+        clone.style.top = `${start.top}px`;
+        clone.style.background = token.classList.contains('is-right')
+            ? 'radial-gradient(circle,#fffbdc 0 13%,#d8c7ff 15% 34%,#9a82f4 60%,#6f54d9 100%)'
+            : 'radial-gradient(circle,#fffbd0 0 13%,#ffe65d 15% 34%,#ffab4e 60%,#e66a42 100%)';
+        document.body.appendChild(clone);
+        const dx = lantern.left + lantern.width / 2 - (start.left + start.width / 2);
+        const dy = lantern.top + lantern.height / 2 - (start.top + start.height / 2);
+        requestAnimationFrame(() => {
+            clone.style.transform = `translate(${dx}px,${dy}px) scale(.45) rotate(240deg)`;
+            clone.style.opacity = '.15';
+        });
+        window.setTimeout(() => clone.remove(), 520);
+    }
+
+    function addLanternDot() {
+        const field = gameShell.querySelector('[data-scenario-lantern-fireflies]');
+        const dot = document.createElement('span');
+        dot.className = 'scenario-lantern-dot';
+        const i = field.children.length;
+        const positions = [[16,20],[51,13],[72,28],[30,43],[62,50],[12,61],[44,69],[75,68],[25,82],[59,85]];
+        const p = positions[i % positions.length];
+        dot.style.left = `${p[0]}%`;
+        dot.style.top = `${p[1]}%`;
+        dot.style.animationDelay = `${-(i * .17)}s`;
+        field.appendChild(dot);
+    }
+
+    function updateJoinCount() {
+        const q = rounds[roundIndex];
+        if (!q) return;
+        gameShell.querySelector('[data-scenario-join-count]').textContent = locale().joined(movedCount, q.sum);
+    }
+
+    function updateProgress() {
+        const percent = Math.round((roundIndex / totalRounds) * 100);
+        const fill = gameShell.querySelector('[data-scenario-progress]');
+        const track = gameShell.querySelector('[data-scenario-progress-track]');
+        fill.style.width = `${percent}%`;
+        track.setAttribute('aria-valuenow', String(percent));
+    }
+
+    function checkAnswer() {
+        if (phase !== 'answer' || locked) return;
+        const q = rounds[roundIndex];
+        const answer = gameShell.querySelector('[data-scenario-answer]');
+        const feedback = gameShell.querySelector('[data-scenario-feedback]');
+        const value = Number.parseInt(answer.value, 10);
+        if (!Number.isFinite(value)) return;
+
+        if (value === q.sum) {
+            locked = true;
+            phase = 'celebrate';
+            feedback.textContent = `✓ ${locale().correct(q)}`;
+            feedback.className = 'scenario-feedback is-correct';
+            setSpeech(locale().correct(q), true);
+            tone('correct');
+            const lantern = gameShell.querySelector('[data-scenario-lantern]');
+            burst(lantern, 28);
+            updateProgressAfterCorrect();
+            window.setTimeout(() => {
+                roundIndex++;
+                if (roundIndex >= totalRounds) finishGame();
+                else renderRound();
+            }, 1450);
+        } else {
+            feedback.textContent = locale().wrong;
+            feedback.className = 'scenario-feedback is-wrong';
+            answer.value = '';
+            gameShell.querySelector('[data-scenario-check]').disabled = true;
+            setSpeech(locale().wrong, true);
+            tone('wrong');
+            window.setTimeout(() => answer.focus(), 120);
+        }
+    }
+
+    function updateProgressAfterCorrect() {
+        const percent = Math.round(((roundIndex + 1) / totalRounds) * 100);
+        const fill = gameShell.querySelector('[data-scenario-progress]');
+        const track = gameShell.querySelector('[data-scenario-progress-track]');
+        fill.style.width = `${percent}%`;
+        track.setAttribute('aria-valuenow', String(percent));
+    }
+
+    function burst(target, count) {
+        const board = gameShell.querySelector('.scenario-board');
+        if (!board || !target) return;
+        const boardRect = board.getBoundingClientRect();
+        const rect = target.getBoundingClientRect();
+        const x = rect.left - boardRect.left + rect.width / 2;
+        const y = rect.top - boardRect.top + rect.height / 2;
+        for (let i = 0; i < count; i++) {
+            const particle = document.createElement('span');
+            particle.className = 'scenario-burst';
+            particle.style.left = `${x}px`;
+            particle.style.top = `${y}px`;
+            const angle = (Math.PI * 2 * i) / count + Math.random() * .25;
+            const distance = 45 + Math.random() * 105;
+            particle.style.setProperty('--bx', `${Math.cos(angle) * distance}px`);
+            particle.style.setProperty('--by', `${Math.sin(angle) * distance}px`);
+            board.appendChild(particle);
+            window.setTimeout(() => particle.remove(), 900);
+        }
+    }
+
+    function finishGame() {
+        phase = 'finish';
+        locked = true;
+        updateProgressAfterCorrect();
+        const finish = gameShell.querySelector('[data-scenario-finish]');
+        finish.hidden = false;
+        setSpeech(locale().completeCopy, true);
+        tone('finish');
+    }
+
+    function setSpeech(text, readAloud) {
+        currentSpeech = text;
+        const bubble = gameShell.querySelector('[data-scenario-speech]');
+        if (bubble) bubble.textContent = text;
+        if (readAloud) speak(text);
     }
 
     function refreshVoices() {
         if (!('speechSynthesis' in window)) return;
-        preferredVoice = chooseFriendlyVoice(window.speechSynthesis.getVoices(), speechLanguage);
-    }
-
-    function chooseFriendlyVoice(voices, language) {
-        if (!voices || voices.length === 0) return null;
-        const prefix = language.toLowerCase().slice(0, 2);
-        const matching = voices.filter(voice => (voice.lang || '').toLowerCase().startsWith(prefix));
-        const pool = matching.length ? matching : voices;
-        const preferredNames = prefix === 'pl'
-            ? ['zofia','paulina','agnieszka','ewa','marek','google polski','polish']
-            : ['sonia','libby','ava','jenny','samantha','hazel','google uk english female','google english'];
-        return pool
-            .map(voice => {
-                const name = (voice.name || '').toLowerCase();
-                let score = 0;
-                preferredNames.forEach((preferred, position) => { if (name.includes(preferred)) score += 40 - position; });
-                if (/natural|neural|enhanced|premium/.test(name)) score += 20;
-                if (/female/.test(name)) score += 6;
-                if ((voice.lang || '').toLowerCase() === language.toLowerCase()) score += 10;
-                if (voice.localService) score += 2;
-                return { voice, score };
-            })
-            .sort((a,b) => b.score - a.score)[0]?.voice || pool[0] || null;
-    }
-
-    function stopSpeaking() {
-        if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-        mascot?.classList.remove('is-talking');
-        mascotWrap?.classList.remove('is-speaking');
-        speech?.classList.remove('is-speaking');
+        const voices = window.speechSynthesis.getVoices();
+        const prefix = speechLanguage.slice(0, 2).toLowerCase();
+        const candidates = voices.filter(voice => (voice.lang || '').toLowerCase().startsWith(prefix));
+        const preferredNames = /pl/i.test(speechLanguage)
+            ? [/zosia/i,/paulina/i,/ewa/i,/google.*pol/i,/microsoft.*pol/i]
+            : [/samantha/i,/serena/i,/sonia/i,/google.*uk/i,/microsoft.*english.*united kingdom/i,/daniel/i];
+        preferredVoice = candidates.find(v => preferredNames.some(pattern => pattern.test(v.name))) || candidates[0] || null;
     }
 
     function speak(text) {
-        currentSpeechText = text || '';
-        if (!soundOn || !currentSpeechText || !('speechSynthesis' in window)) return;
-        stopSpeaking();
-        refreshVoices();
-        const utterance = new SpeechSynthesisUtterance(currentSpeechText);
+        if (!soundOn || !text || !('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = speechLanguage;
-        utterance.rate = speechLanguage.toLowerCase().startsWith('pl') ? .88 : .9;
-        utterance.pitch = 1.16;
-        utterance.volume = .96;
+        utterance.rate = speechLanguage.toLowerCase().startsWith('pl') ? .88 : .92;
+        utterance.pitch = 1.14;
+        utterance.volume = 1;
         if (preferredVoice) utterance.voice = preferredVoice;
-        utterance.onstart = () => {
-            mascot?.classList.add('is-talking');
-            mascotWrap?.classList.add('is-speaking');
-            speech?.classList.add('is-speaking');
-        };
-        const done = () => {
-            mascot?.classList.remove('is-talking');
-            mascotWrap?.classList.remove('is-speaking');
-            speech?.classList.remove('is-speaking');
-        };
-        utterance.onend = done;
-        utterance.onerror = done;
+        const mascotWrap = gameShell.querySelector('[data-scenario-mascot-wrap]');
+        utterance.onstart = () => mascotWrap?.classList.add('is-speaking');
+        utterance.onend = () => mascotWrap?.classList.remove('is-speaking');
+        utterance.onerror = () => mascotWrap?.classList.remove('is-speaking');
         window.speechSynthesis.speak(utterance);
     }
 
-    function repeatCurrentSpeech() {
-        if (soundOn && currentSpeechText) speak(currentSpeechText);
-    }
-
-    function buildQuestions() {
-        const result = [];
-        const seen = new Set();
-        let guard = 0;
-        while (result.length < 10 && guard < 700) {
-            guard += 1;
-            const difficulty = result.length < 3 ? 4 : result.length < 7 ? 6 : 8;
-            const left = Math.floor(Math.random() * difficulty) + 1;
-            const right = Math.floor(Math.random() * difficulty) + 1;
-            const sum = left + right;
-            if (sum > 15) continue;
-            const key = `${left}:${right}`;
-            if (seen.has(key)) continue;
-            seen.add(key);
-            result.push({ left, right, sum });
-        }
-        while (result.length < 10) {
-            const left = (result.length % 5) + 1;
-            const right = ((result.length + 2) % 5) + 1;
-            result.push({ left, right, sum: left + right });
-        }
-        return result;
-    }
-
-    function createTokens(container, count, className) {
-        container.replaceChildren();
-        for (let i = 0; i < count; i += 1) {
-            const token = document.createElement('span');
-            token.className = `kid-token ${className}`;
-            token.style.setProperty('--token-index', String(i));
-            token.setAttribute('aria-hidden', 'true');
-            container.appendChild(token);
-        }
-    }
-
-    function createJoinedTokens(current) {
-        joinedGroup.replaceChildren();
-        for (let i = 0; i < current.sum; i += 1) {
-            const token = document.createElement('span');
-            token.className = 'kid-token kid-token-joined';
-            token.setAttribute('aria-hidden', 'true');
-            token.style.background = i < current.left
-                ? 'linear-gradient(145deg,#ffbd59,#ff8e4f)'
-                : 'linear-gradient(145deg,#a795ff,#745fe7)';
-            joinedGroup.appendChild(token);
-        }
-    }
-
-    function burst(centerElement, count = 12) {
-        if (!centerElement || !gameShell) return;
-        const shellRect = gameShell.getBoundingClientRect();
-        const rect = centerElement.getBoundingClientRect();
-        const originX = rect.left - shellRect.left + rect.width / 2;
-        const originY = rect.top - shellRect.top + rect.height / 2;
-        const colors = ['#ffd95d','#ff8f6b','#7f72ef','#47c891','#ffffff'];
-        for (let i = 0; i < count; i += 1) {
-            const particle = document.createElement('span');
-            particle.className = 'kid-scene-burst';
-            const angle = (Math.PI * 2 * i) / count + Math.random() * .35;
-            const distance = 55 + Math.random() * 80;
-            particle.style.left = `${originX}px`;
-            particle.style.top = `${originY}px`;
-            particle.style.background = colors[i % colors.length];
-            particle.style.setProperty('--burst-x', `${Math.cos(angle) * distance}px`);
-            particle.style.setProperty('--burst-y', `${Math.sin(angle) * distance}px`);
-            gameShell.appendChild(particle);
-            window.setTimeout(() => particle.remove(), 800);
-        }
-    }
-
-    function setMascot(state) {
-        if (!mascot) return;
-        mascot.src = mascotAsset;
-        mascot.classList.remove('is-celebrating');
-        if (state === 'correct') {
-            void mascot.offsetWidth;
-            mascot.classList.add('is-celebrating');
-            burst(mascotWrap || mascot, 16);
-        }
-    }
-
-    function setInputEnabled(enabled) {
-        answer.disabled = !enabled;
-        check.disabled = !enabled;
-        keyButtons.forEach(button => { button.disabled = !enabled; });
-    }
-
-    function replayQuestionEntrance() {
-        if (!playBoard) return;
-        playBoard.classList.remove('kid-question-enter');
-        void playBoard.offsetWidth;
-        playBoard.classList.add('kid-question-enter');
-    }
-
-    function renderQuestion() {
-        const current = questions[index];
-        if (!current) {
-            showFinish();
-            return;
-        }
-
-        stopSpeaking();
-        locked = false;
-        joined = false;
-        answer.value = '';
-        feedback.hidden = true;
-        feedback.className = 'kid-feedback';
-        joinedCard.style.display = 'none';
-        leftCard.style.display = '';
-        rightCard.style.display = '';
-        leftCard.style.opacity = '1';
-        rightCard.style.opacity = '1';
-        leftCard.style.transform = '';
-        rightCard.style.transform = '';
-        joinButton.hidden = false;
-        joinButton.disabled = false;
-        setInputEnabled(false);
-        setMascot('idle');
-        replayQuestionEntrance();
-
-        leftLabel.textContent = String(current.left);
-        rightLabel.textContent = String(current.right);
-        createTokens(leftGroup, current.left, 'kid-token-left');
-        createTokens(rightGroup, current.right, 'kid-token-right');
-        joinedGroup.replaceChildren();
-        questionText.textContent = `${current.left} + ${current.right} =`;
-        questionNumber.textContent = `Question ${index + 1}`;
-        counter.textContent = `${index + 1} of ${questions.length}`;
-        speech.textContent = 'Count each group, then tap “Join the groups!” to bring them together.';
-        dockTitle.textContent = 'First, join the groups';
-        dockCopy.textContent = 'Then use the number buttons to enter your answer.';
-        currentSpeechText = activeCopy().countJoin(current);
-
-        const percent = Math.round(index * 100 / questions.length);
-        progress.style.width = `${percent}%`;
-        progress.parentElement.setAttribute('aria-valuenow', String(percent));
-
-        const practicePanel = panels.find(panel => panel.dataset.previewPanel === 'practice');
-        if (practicePanel && !practicePanel.hidden && soundOn) window.setTimeout(() => speak(currentSpeechText), 180);
-    }
-
-    function joinGroups() {
-        if (locked || joined || !questions[index]) return;
-        joined = true;
-        const current = questions[index];
-        stopSpeaking();
-        playJoin();
-        burst(joinButton, 14);
-        createJoinedTokens(current);
-        leftCard.style.opacity = '.18';
-        rightCard.style.opacity = '.18';
-        leftCard.style.transform = 'translateX(34px) scale(.9) rotate(2deg)';
-        rightCard.style.transform = 'translateX(-34px) scale(.9) rotate(-2deg)';
-        joinButton.disabled = true;
-
-        window.setTimeout(() => {
-            leftCard.style.display = 'none';
-            rightCard.style.display = 'none';
-            joinedCard.style.display = 'block';
-            burst(joinedCard, 18);
-            joinButton.hidden = true;
-            setInputEnabled(true);
-            speech.textContent = 'Nice! Now count how many are together and choose your answer.';
-            dockTitle.textContent = 'How many altogether?';
-            dockCopy.textContent = 'Use the number buttons, then check your answer.';
-            currentSpeechText = activeCopy().afterJoin(current);
-            answer.focus();
-            speak(currentSpeechText);
-        }, 360);
-    }
-
-    function showFinish() {
-        stopSpeaking();
-        gameStage.hidden = true;
-        answerDock.hidden = true;
-        finish.hidden = false;
-        progress.style.width = '100%';
-        progress.parentElement.setAttribute('aria-valuenow', '100');
-        counter.textContent = 'Complete!';
-        const percent = Math.round(correct * 100 / questions.length);
-        finalScore.textContent = `${percent}%`;
-        finalDetail.textContent = `${correct} correct out of ${questions.length}. Great work joining groups!`;
-        currentSpeechText = activeCopy().finish(percent);
-        burst(root.querySelector('.kid-finish-card'), 24);
-        playFinish();
-        window.setTimeout(() => speak(currentSpeechText), 420);
-    }
-
-    function submitAnswer() {
-        if (locked || !joined || !questions[index]) return;
-        const value = answer.value.trim();
-        if (value === '') {
-            answer.focus();
-            return;
-        }
-
-        stopSpeaking();
-        locked = true;
-        const current = questions[index];
-        const isCorrect = Number(value) === current.sum;
-        if (isCorrect) correct += 1;
-        setInputEnabled(false);
-        feedback.hidden = false;
-        feedback.className = `kid-feedback ${isCorrect ? 'is-correct' : 'is-incorrect'}`;
-
-        if (isCorrect) {
-            feedback.textContent = `Yes! ${current.left} + ${current.right} = ${current.sum}.`;
-            speech.textContent = 'Brilliant! You joined the groups and counted them correctly!';
-            currentSpeechText = activeCopy().correct(current);
-            setMascot('correct');
-            burst(feedback, 18);
-            playCorrect();
-        } else {
-            feedback.textContent = `Almost! Together there are ${current.sum}.`;
-            speech.textContent = `Good try! Count the joined group once more — there are ${current.sum} altogether.`;
-            currentSpeechText = activeCopy().incorrect(current);
-            setMascot('try');
-            playIncorrect();
-        }
-
-        window.setTimeout(() => speak(currentSpeechText), 140);
-        const completed = index + 1;
-        const percent = Math.round(completed * 100 / questions.length);
-        progress.style.width = `${percent}%`;
-        progress.parentElement.setAttribute('aria-valuenow', String(percent));
-        window.setTimeout(() => {
-            index += 1;
-            renderQuestion();
-        }, isCorrect ? 1900 : 2350);
-    }
-
-    function resetGame() {
-        stopSpeaking();
-        questions = buildQuestions();
-        index = 0;
-        correct = 0;
-        gameStage.hidden = false;
-        answerDock.hidden = false;
-        finish.hidden = true;
-        renderQuestion();
-    }
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            playClick();
-            const target = tab.dataset.previewTab;
-            setTab(target);
-            if (target === 'practice' && soundOn && questions[index]) {
-                currentSpeechText = joined ? activeCopy().afterJoin(questions[index]) : activeCopy().countJoin(questions[index]);
-                window.setTimeout(() => speak(currentSpeechText), 140);
-            } else if (target !== 'practice') {
-                stopSpeaking();
-            }
-        });
-    });
-
-    joinButton.addEventListener('click', joinGroups);
-    keyButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            if (locked || answer.disabled) return;
-            playClick();
-            const key = button.dataset.practiceKey;
-            if (key === 'clear') answer.value = '';
-            else if (key === 'backspace') answer.value = answer.value.slice(0, -1);
-            else if (/^\d$/.test(key) && answer.value.length < 2) answer.value += key;
-            answer.focus();
-        });
-    });
-
-    check.addEventListener('click', submitAnswer);
-    answer.addEventListener('keydown', event => {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            submitAnswer();
-        }
-    });
-    restart.addEventListener('click', () => { playClick(); resetGame(); });
-
-    soundToggle?.addEventListener('click', () => {
+    function toggleSound() {
         soundOn = !soundOn;
-        updateSoundToggle();
+        const t = locale();
+        const button = gameShell.querySelector('[data-scenario-sound]');
+        button.textContent = soundOn ? t.soundOn : t.soundOff;
+        button.setAttribute('aria-pressed', String(soundOn));
+        button.setAttribute('aria-label', soundOn ? t.soundOnLabel : t.soundOffLabel);
+        if (!soundOn && 'speechSynthesis' in window) window.speechSynthesis.cancel();
         if (soundOn) {
-            ensureAudioContext();
-            window.setTimeout(playClick, 15);
-            const practicePanel = panels.find(panel => panel.dataset.previewPanel === 'practice');
-            if (practicePanel && !practicePanel.hidden) window.setTimeout(repeatCurrentSpeech, 120);
-        } else {
-            stopSpeaking();
+            tone('tap');
+            speak(currentSpeech);
         }
-    });
+    }
 
-    if ('speechSynthesis' in window) window.speechSynthesis.addEventListener?.('voiceschanged', refreshVoices);
-    mascot?.addEventListener('click', repeatCurrentSpeech);
-    mascot?.addEventListener('keydown', event => {
-        if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            repeatCurrentSpeech();
+    function ensureAudio() {
+        if (!soundOn) return null;
+        if (!audioContext) {
+            const AudioCtor = window.AudioContext || window.webkitAudioContext;
+            if (!AudioCtor) return null;
+            audioContext = new AudioCtor();
         }
-    });
+        if (audioContext.state === 'suspended') audioContext.resume();
+        return audioContext;
+    }
 
-    updateSoundToggle();
-    resetGame();
-    setTab('lesson');
+    function tone(kind) {
+        if (!soundOn) return;
+        const ctx = ensureAudio();
+        if (!ctx) return;
+        const now = ctx.currentTime;
+        const patterns = {
+            tap: [[420,.04,.05]],
+            fly: [[620,.05,.06],[840,.06,.04]],
+            join: [[460,.08,.07],[620,.09,.06],[820,.12,.05]],
+            correct: [[520,.08,.08],[660,.09,.07],[820,.14,.06]],
+            wrong: [[260,.09,.05],[215,.11,.04]],
+            finish: [[440,.08,.07],[554,.08,.07],[659,.09,.07],[880,.18,.06]]
+        };
+        (patterns[kind] || patterns.tap).forEach((part, i) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = kind === 'wrong' ? 'triangle' : 'sine';
+            osc.frequency.value = part[0];
+            gain.gain.setValueAtTime(0.0001, now + i * .07);
+            gain.gain.exponentialRampToValueAtTime(part[2], now + i * .07 + .01);
+            gain.gain.exponentialRampToValueAtTime(0.0001, now + i * .07 + part[1]);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now + i * .07);
+            osc.stop(now + i * .07 + part[1] + .03);
+        });
+    }
+
+    function activateTab(name) {
+        tabs.forEach(tab => {
+            const active = tab.dataset.previewTab === name;
+            tab.classList.toggle('is-active', active);
+            tab.setAttribute('aria-selected', String(active));
+        });
+        panels.forEach(panel => {
+            panel.hidden = panel.dataset.previewPanel !== name;
+        });
+        if (name === 'practice' && !started) {
+            started = true;
+            rounds = createRounds();
+            installStyles();
+            buildGame();
+            renderRound();
+        }
+    }
+
+    tabs.forEach(tab => tab.addEventListener('click', () => activateTab(tab.dataset.previewTab)));
+
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.addEventListener?.('voiceschanged', refreshVoices);
+        window.setTimeout(refreshVoices, 250);
+    }
 })();
