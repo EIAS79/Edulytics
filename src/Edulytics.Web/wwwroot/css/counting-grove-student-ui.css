@@ -1,0 +1,35 @@
+.cg-counter-orb{display:none!important}
+
+.cg-number-dock:has(> .cg-number-stone:nth-child(2):last-child){
+    width:min(360px,calc(100% - 28px));
+    justify-content:center;
+    gap:12px;
+}
+
+.cg-number-dock:has(> .cg-number-stone:nth-child(2):last-child) .cg-number-stone{
+    width:clamp(124px,14vw,160px);
+    min-width:0;
+    height:56px;
+    padding:0 16px;
+    border-radius:22px;
+    font-size:clamp(1rem,2vw,1.25rem);
+    line-height:1;
+    white-space:nowrap;
+}
+
+@media(max-width:760px){
+    .cg-preview-head{padding:14px 16px 12px}
+    .cg-preview-head h1{font-size:clamp(1.65rem,7vw,2.15rem)}
+    .cg-preview-head p:not(.cg-preview-kicker){font-size:.9rem}
+    .cg-number-dock:has(> .cg-number-stone:nth-child(2):last-child){
+        width:min(92vw,340px);
+        gap:10px;
+        padding:9px 10px;
+    }
+    .cg-number-dock:has(> .cg-number-stone:nth-child(2):last-child) .cg-number-stone{
+        width:clamp(118px,38vw,148px);
+        height:54px;
+        padding:0 12px;
+        font-size:clamp(1rem,4.6vw,1.22rem);
+    }
+}
