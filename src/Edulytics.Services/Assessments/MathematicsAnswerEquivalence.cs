@@ -28,11 +28,25 @@ public static partial class MathematicsAnswerEquivalence
         var normalizedActual = Normalize(actual);
         var normalizedExpected = Normalize(expected);
 
-        if (TryParseScalar(normalizedActual, out var actualValue) &&
-            TryParseScalar(normalizedExpected, out var expectedValue))
-        {
+        var actualIsScalar = TryParseScalar(normalizedActual, out var actualValue);
+        var expectedIsScalar = TryParseScalar(normalizedExpected, out var expectedValue);
+
+        if (actualIsScalar && expectedIsScalar)
             return actualValue == expectedValue;
-        }
+
+        // A single separator followed by groups of three digits is ambiguous
+        // across supported locales (for example 1,000 or 1.000). Never treat
+        // that form as a decimal. It is accepted only when the other answer
+        // resolves to the same unambiguous grouped integer.
+        var actualIsGrouped = TryParseGroupedInteger(normalizedActual, out var actualGrouped);
+        var expectedIsGrouped = TryParseGroupedInteger(normalizedExpected, out var expectedGrouped);
+
+        if (actualIsGrouped && expectedIsScalar)
+            return actualGrouped == expectedValue;
+        if (actualIsScalar && expectedIsGrouped)
+            return actualValue == expectedGrouped;
+        if (actualIsGrouped && expectedIsGrouped)
+            return actualGrouped == expectedGrouped;
 
         return string.Equals(
             CollapseWhitespace(normalizedActual),
@@ -43,11 +57,7 @@ public static partial class MathematicsAnswerEquivalence
     private static bool TryParseScalar(string value, out Rational rational)
     {
         rational = default;
-        value = TrimOuterParentheses(value);
-
-        var assignment = AssignmentPattern().Match(value);
-        if (assignment.Success)
-            value = TrimOuterParentheses(assignment.Groups[1].Value.Trim());
+        value = PrepareScalarLexeme(value);
 
         if (value.EndsWith('%'))
         {
@@ -92,7 +102,7 @@ public static partial class MathematicsAnswerEquivalence
             return true;
         }
 
-        if (!DecimalPattern().IsMatch(value))
+        if (!DecimalPattern().IsMatch(value) || LooksLikeGroupedInteger(value))
             return false;
 
         var decimalSign = 1;
@@ -114,6 +124,66 @@ public static partial class MathematicsAnswerEquivalence
         var decimalDenominator = BigInteger.Pow(10, scale);
         rational = Rational.Create(decimalSign * decimalNumerator, decimalDenominator);
         return true;
+    }
+
+    private static bool TryParseGroupedInteger(string value, out Rational rational)
+    {
+        rational = default;
+        value = PrepareScalarLexeme(value);
+        if (!LooksLikeGroupedInteger(value))
+            return false;
+
+        var sign = 1;
+        if (value[0] is '+' or '-')
+        {
+            if (value[0] == '-') sign = -1;
+            value = value[1..];
+        }
+
+        var separator = value.Contains(',') ? ',' : '.';
+        var digits = value.Replace(separator.ToString(), string.Empty, StringComparison.Ordinal);
+        if (!BigInteger.TryParse(digits, out var integer))
+            return false;
+
+        rational = Rational.Create(sign * integer, BigInteger.One);
+        return true;
+    }
+
+    private static bool LooksLikeGroupedInteger(string value)
+    {
+        value = PrepareScalarLexeme(value);
+        if (value.Length == 0 || value.EndsWith('%'))
+            return false;
+
+        if (value[0] is '+' or '-')
+            value = value[1..];
+
+        var hasComma = value.Contains(',');
+        var hasDot = value.Contains('.');
+        if (hasComma == hasDot)
+            return false;
+
+        var separator = hasComma ? ',' : '.';
+        var groups = value.Split(separator);
+        if (groups.Length < 2 ||
+            groups[0].Length is < 1 or > 3 ||
+            groups[0][0] == '0' ||
+            groups[0].Any(ch => !char.IsDigit(ch)))
+        {
+            return false;
+        }
+
+        return groups.Skip(1).All(group =>
+            group.Length == 3 && group.All(char.IsDigit));
+    }
+
+    private static string PrepareScalarLexeme(string value)
+    {
+        value = TrimOuterParentheses(value);
+        var assignment = AssignmentPattern().Match(value);
+        if (assignment.Success)
+            value = TrimOuterParentheses(assignment.Groups[1].Value.Trim());
+        return value;
     }
 
     private static string Normalize(string? value) =>
