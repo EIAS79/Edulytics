@@ -1,5 +1,6 @@
 using System.Globalization;
 using Edulytics.Core.Interfaces;
+using Edulytics.Web.GameRouting;
 using Edulytics.Web.ViewModels.Platform;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,7 +12,6 @@ public sealed class TemporaryPracticePreviewController : Controller
 {
     private const string FrameworkCode = "CAMBRIDGE-INTL-MATH";
     private const string JoinGroupsLessonCode = "PED:CAMBRIDGE-INTL-MATH:S1:L10";
-    private const string CountTouchLessonCode = "PED:CAMBRIDGE-INTL-MATH:S1:L01";
 
     private readonly ICurriculumRepository _curriculum;
     private readonly ILessonContentRepository _lessonContent;
@@ -27,16 +27,27 @@ public sealed class TemporaryPracticePreviewController : Controller
     [HttpGet("/_preview/join-groups-to-add")]
     [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
     public Task<IActionResult> JoinGroupsToAdd(CancellationToken cancellationToken) =>
-        RenderLessonAsync(JoinGroupsLessonCode, "JoinGroupsToAdd", cancellationToken);
+        RenderLessonAsync(JoinGroupsLessonCode, "JoinGroupsToAdd", "Stage 1", cancellationToken);
 
     [HttpGet("/_preview/count-touch-and-check")]
     [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
     public Task<IActionResult> CountTouchAndCheck(CancellationToken cancellationToken) =>
-        RenderLessonAsync(CountTouchLessonCode, "CountTouchAndCheck", cancellationToken);
+        RenderLessonAsync(GameLessonRouter.CountTouchLessonCode, "CountTouchAndCheck", "Stage 1", cancellationToken);
+
+    [HttpGet("/_preview/angle-explorer")]
+    [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+    public Task<IActionResult> AngleExplorer(CancellationToken cancellationToken) =>
+        RenderLessonAsync(GameLessonRouter.AngleExplorerLessonCode, "AngleExplorer", "Stage 5", cancellationToken);
+
+    [HttpGet("/_preview/fraction-forge")]
+    [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+    public Task<IActionResult> FractionForge(CancellationToken cancellationToken) =>
+        RenderLessonAsync(GameLessonRouter.FractionForgeLessonCode, "FractionForge", "Stage 5", cancellationToken);
 
     private async Task<IActionResult> RenderLessonAsync(
         string lessonCode,
         string viewName,
+        string stageLabel,
         CancellationToken cancellationToken)
     {
         Response.Headers["X-Robots-Tag"] = "noindex, nofollow, noarchive";
@@ -87,7 +98,7 @@ public sealed class TemporaryPracticePreviewController : Controller
             translation.Title,
             lesson.UnitTitle,
             "Cambridge Primary Mathematics (0096)",
-            "Stage 1",
+            stageLabel,
             "Mathematics",
             "MATH",
             translation.Explanation,

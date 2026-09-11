@@ -1,0 +1,64 @@
+@model Edulytics.Web.GameRouting.StudentGameLaunchViewModel
+@{
+    Layout = null;
+    var renderer = Model.Route.RendererKey;
+    var isCountTouch = string.Equals(renderer, "count-touch", StringComparison.Ordinal);
+}
+<!DOCTYPE html>
+<html lang="@Model.Route.Locale" dir="@(Model.Route.Locale == "ar" ? "rtl" : "ltr")">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>@Model.Title - Edulytics Practice</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @if (isCountTouch)
+    {
+        <link rel="stylesheet" href="~/css/counting-grove-v1.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/counting-grove-student-ui.css" asp-append-version="true" />
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/css/game-workspace-v1.css" asp-append-version="true" />
+    }
+</head>
+<body class="@(isCountTouch ? "cg-preview-page" : "gw-page")">
+    <main class="@(isCountTouch ? "cg-preview-wrap" : "gw-wrap")">
+        <a class="gw-back" asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+        <header class="@(isCountTouch ? "cg-preview-head" : "gw-head")">
+            <div><p>Edulytics Practice</p><h1>@Model.Title</h1><p>@Model.UnitTitle</p></div>
+        </header>
+        <section aria-label="Practice game">
+            @if (renderer == "count-touch")
+            {
+                <div data-count-touch-game data-lesson-code="@Model.LessonCode" data-lesson-language="@Model.Route.Locale"></div>
+            }
+            else if (renderer == "angle-explorer")
+            {
+                <div data-angle-explorer-game data-lesson-code="@Model.LessonCode" data-lesson-language="@Model.Route.Locale"></div>
+            }
+            else if (renderer == "fraction-forge")
+            {
+                <div data-fraction-forge-game data-lesson-code="@Model.LessonCode" data-lesson-language="@Model.Route.Locale"></div>
+            }
+            else
+            {
+                <div class="gw-error">This game mechanic is not available yet.</div>
+            }
+        </section>
+    </main>
+
+    @if (renderer == "count-touch")
+    {
+        <script src="~/js/count-touch-preview.js" asp-append-version="true"></script>
+    }
+    else if (renderer == "angle-explorer")
+    {
+        <script src="~/js/angle-explorer-preview.js" asp-append-version="true"></script>
+    }
+    else if (renderer == "fraction-forge")
+    {
+        <script src="~/js/fraction-forge-preview.js" asp-append-version="true"></script>
+    }
+</body>
+</html>
