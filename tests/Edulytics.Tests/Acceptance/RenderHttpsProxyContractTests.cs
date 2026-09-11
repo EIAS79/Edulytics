@@ -3,7 +3,7 @@ namespace Edulytics.Tests.Acceptance;
 public sealed class RenderHttpsProxyContractTests
 {
     [Fact]
-    public void Program_SkipsAppHttpsRedirectBehindTrustedEdgeProxy()
+    public void Program_SkipsAppHttpsRedirectOnlyWhenEdgeEnforcesHttps()
     {
         var source = ReadRepositoryFile(
             "src",
@@ -11,22 +11,39 @@ public sealed class RenderHttpsProxyContractTests
             "Program.cs");
 
         Assert.Contains(
-            "var trustEdgeHttps =",
+            "var edgeEnforcesHttps =",
             source,
             StringComparison.Ordinal);
 
         Assert.Contains(
-            "\"Edulytics:Hosting:TrustForwardedHeaders\"",
+            "\"Edulytics:Hosting:EdgeEnforcesHttps\"",
             source,
             StringComparison.Ordinal);
 
         Assert.Contains(
-            "if (!trustEdgeHttps)",
+            "if (!edgeEnforcesHttps)",
             source,
             StringComparison.Ordinal);
 
         Assert.Contains(
             "app.UseHttpsRedirection();",
+            source,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void RenderBlueprint_DeclaresEdgeHttpsEnforcementSeparately()
+    {
+        var source = ReadRepositoryFile(
+            "render.yaml");
+
+        Assert.Contains(
+            "Edulytics__Hosting__TrustForwardedHeaders",
+            source,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "Edulytics__Hosting__EdgeEnforcesHttps",
             source,
             StringComparison.Ordinal);
     }
