@@ -7,6 +7,12 @@
     var isSolidGeometry = isUniversalWorkspace &&
         (string.Equals(Model.Route.Mechanic, "VOLUME_BUILD", StringComparison.Ordinal) ||
          string.Equals(Model.Route.Mechanic, "SURFACE_AREA_BUILD", StringComparison.Ordinal));
+    var isSpecializedUniversalPractice = isUniversalWorkspace &&
+        (string.Equals(Model.Route.Mechanic, "PERIMETER_TRACE", StringComparison.Ordinal) ||
+         string.Equals(Model.Route.Mechanic, "AREA_TILE", StringComparison.Ordinal) ||
+         string.Equals(Model.Route.Mechanic, "MONEY_VALUE", StringComparison.Ordinal) ||
+         string.Equals(Model.Route.Mechanic, "MAKE_AMOUNT", StringComparison.Ordinal) ||
+         string.Equals(Model.Route.Mechanic, "CHANGE_TRANSACTION", StringComparison.Ordinal));
     var backLabel = Model.Route.Locale switch
     {
         "pl" => "← Powrót do lekcji",
@@ -93,6 +99,10 @@
     else if (isSolidGeometry)
     {
         <script src="~/js/solid-geometry-runtime.js" asp-append-version="true"></script>
+    }
+    else if (isSpecializedUniversalPractice)
+    {
+        <script src="~/js/curriculum-specialized-practice-v3.js" asp-append-version="true"></script>
     }
     else if (isUniversalWorkspace)
     {
