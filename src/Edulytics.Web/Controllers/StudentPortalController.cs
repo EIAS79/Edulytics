@@ -5,6 +5,7 @@ using Edulytics.Services.Notifications;
 using Edulytics.Services.LessonContent;
 using Edulytics.Services.Practice;
 using Edulytics.Services.StudentPortal;
+using Edulytics.Web.GameRouting;
 using Edulytics.Web.ViewModels.StudentPortal;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -102,8 +103,8 @@ public sealed class StudentPortalController : Controller
         if (lesson.Value is null)
             return lesson.Error == LessonContentErrorCode.AccessDenied ? Forbid() : NotFound();
 
-        ViewData["LessonPracticePilotAdoptionId"] = await FindLessonPracticePilotAdoptionAsync(
-            actorId, id, cancellationToken);
+        ViewData["GameAdoptionId"] = await FindPlayableGameAdoptionAsync(actorId, id, cancellationToken);
+        ViewData["LessonPracticePilotAdoptionId"] = await FindLessonPracticePilotAdoptionAsync(actorId, id, cancellationToken);
         return View(nameof(Lesson), lesson.Value);
     }
 
@@ -189,6 +190,38 @@ public sealed class StudentPortalController : Controller
         var result = await _notifications.SetReadStateAsync(actorId, id, isRead, cancellationToken);
         if (result.Value is null) return Forbid();
         return RedirectToAction(nameof(Notifications));
+    }
+
+    private async Task<Guid?> FindPlayableGameAdoptionAsync(
+        Guid actorId,
+        Guid lessonId,
+        CancellationToken cancellationToken)
+    {
+        var initial = await _privatePractice.GetWorkspaceAsync(actorId, null, cancellationToken);
+        if (MatchesPlayableGame(initial, lessonId))
+            return initial.SelectedCurriculumAdoptionId;
+
+        foreach (var curriculum in initial.Curricula)
+        {
+            if (curriculum.CurriculumAdoptionId == initial.SelectedCurriculumAdoptionId)
+                continue;
+
+            var workspace = await _privatePractice.GetWorkspaceAsync(
+                actorId, curriculum.CurriculumAdoptionId, cancellationToken);
+            if (MatchesPlayableGame(workspace, lessonId))
+                return curriculum.CurriculumAdoptionId;
+        }
+
+        return null;
+    }
+
+    private static bool MatchesPlayableGame(
+        StudentPrivatePracticeWorkspace workspace,
+        Guid lessonId)
+    {
+        var lesson = workspace.Lessons.FirstOrDefault(x => x.LessonId == lessonId);
+        if (lesson is null) return false;
+        return GameLessonRouter.Resolve(lesson.LessonCode, lesson.UnitTitle, lesson.LessonTitle).IsPlayable;
     }
 
     private async Task<Guid?> FindLessonPracticePilotAdoptionAsync(
