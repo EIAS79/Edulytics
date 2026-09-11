@@ -124,7 +124,7 @@ public sealed class StudentPortalController : Controller
         if (attempt.Value is not null) return View(nameof(TakeAssessment), attempt.Value);
         return attempt.Error switch
         {
-            StudentAssessmentDeliveryErrorCode.AlreadySubmitted => RedirectToAction(nameof(Results)),
+            StudentAssessmentDeliveryErrorCode.AlreadySubmitted => RedirectToAction(nameof(Assessments)),
             StudentAssessmentDeliveryErrorCode.AccessDenied or
             StudentAssessmentDeliveryErrorCode.SchoolNotActive or
             StudentAssessmentDeliveryErrorCode.ProfileNotLinked or
@@ -152,7 +152,7 @@ public sealed class StudentPortalController : Controller
         if (submitted.Value is not null) return View("AssessmentSubmitted", submitted.Value);
         return submitted.Error switch
         {
-            StudentAssessmentDeliveryErrorCode.AlreadySubmitted => RedirectToAction(nameof(Results)),
+            StudentAssessmentDeliveryErrorCode.AlreadySubmitted => RedirectToAction(nameof(Assessments)),
             StudentAssessmentDeliveryErrorCode.InvalidSubmission => BadRequest(),
             StudentAssessmentDeliveryErrorCode.AccessDenied or
             StudentAssessmentDeliveryErrorCode.SchoolNotActive or
