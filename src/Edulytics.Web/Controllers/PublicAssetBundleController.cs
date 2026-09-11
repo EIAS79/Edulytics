@@ -89,13 +89,6 @@ public sealed class PublicAssetBundleController(IWebHostEnvironment environment)
         return Content(content, contentType, Encoding.UTF8);
     }
 
-    private IActionResult Bundle(string cacheKey, IReadOnlyList<string> files, string contentType)
-    {
-        var content = Cache.GetOrAdd(cacheKey, _ => ReadBundle(files));
-        Response.Headers.CacheControl = "public,max-age=86400";
-        return Content(content, contentType, Encoding.UTF8);
-    }
-
     private string ReadBundle(IReadOnlyList<string> files)
     {
         var webRoot = environment.WebRootPath;
