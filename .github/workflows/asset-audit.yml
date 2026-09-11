@@ -31,24 +31,33 @@ jobs:
         run: |
           set -euo pipefail
           base="https://edulytiks.com"
+
+          echo "Cold/wake-up probe:"
+          curl -sS --max-time 150 -o /tmp/cold-body \
+            -w 'status=%{http_code} ttfb=%{time_starttransfer}s total=%{time_total}s bytes=%{size_download}\n' \
+            "$base/"
+
           check_exact() {
             local path="$1" expected="$2"
-            local code
-            code=$(curl -sS --max-time 30 -o /tmp/body -w '%{http_code}' "$base$path")
+            local metrics code size
+            metrics=$(curl -sS --max-time 30 -o /tmp/body -w '%{http_code} %{time_starttransfer} %{time_total}' "$base$path")
+            read -r code ttfb total <<<"$metrics"
             size=$(wc -c </tmp/body)
-            printf '%-42s status=%s bytes=%s\n' "$path" "$code" "$size"
+            printf '%-42s status=%s ttfb=%ss total=%ss bytes=%s\n' "$path" "$code" "$ttfb" "$total" "$size"
             test "$code" = "$expected"
           }
           check_redirect() {
             local path="$1"
-            local headers code location
+            local headers metrics code ttfb total location
             headers=$(mktemp)
-            code=$(curl -sS --max-time 30 -D "$headers" -o /dev/null -w '%{http_code}' "$base$path")
+            metrics=$(curl -sS --max-time 30 -D "$headers" -o /dev/null -w '%{http_code} %{time_starttransfer} %{time_total}' "$base$path")
+            read -r code ttfb total <<<"$metrics"
             location=$(awk 'BEGIN{IGNORECASE=1} /^location:/{sub(/^[^:]*:[[:space:]]*/,""); sub(/\r$/,""); print; exit}' "$headers")
-            printf '%-42s status=%s location=%s\n' "$path" "$code" "$location"
+            printf '%-42s status=%s ttfb=%ss total=%ss location=%s\n' "$path" "$code" "$ttfb" "$total" "$location"
             test "$code" = "302" || test "$code" = "303"
             printf '%s' "$location" | grep -qi '/account/login'
           }
+
           check_exact / 200
           check_exact /account/login 200
           check_exact /contact 200
