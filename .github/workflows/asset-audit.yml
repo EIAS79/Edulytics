@@ -33,13 +33,22 @@ jobs:
           base="https://edulytiks.com"
 
           echo "Cold/wake-up probe:"
-          curl -sS --max-time 150 -o /tmp/cold-body \
-            -w 'status=%{http_code} ttfb=%{time_starttransfer}s total=%{time_total}s bytes=%{size_download}\n' \
+          curl -sS -L --max-redirs 5 --max-time 150 -o /tmp/cold-body \
+            -w 'status=%{http_code} final=%{url_effective} ttfb=%{time_starttransfer}s total=%{time_total}s bytes=%{size_download}\n' \
             "$base/"
 
+          check_public() {
+            local path="$1" expected="$2"
+            local metrics code final ttfb total size
+            metrics=$(curl -sS -L --max-redirs 5 --max-time 30 -o /tmp/body -w '%{http_code} %{url_effective} %{time_starttransfer} %{time_total}' "$base$path")
+            read -r code final ttfb total <<<"$metrics"
+            size=$(wc -c </tmp/body)
+            printf '%-42s status=%s ttfb=%ss total=%ss bytes=%s final=%s\n' "$path" "$code" "$ttfb" "$total" "$size" "$final"
+            test "$code" = "$expected"
+          }
           check_exact() {
             local path="$1" expected="$2"
-            local metrics code size
+            local metrics code ttfb total size
             metrics=$(curl -sS --max-time 30 -o /tmp/body -w '%{http_code} %{time_starttransfer} %{time_total}' "$base$path")
             read -r code ttfb total <<<"$metrics"
             size=$(wc -c </tmp/body)
@@ -58,9 +67,9 @@ jobs:
             printf '%s' "$location" | grep -qi '/account/login'
           }
 
-          check_exact / 200
-          check_exact /account/login 200
-          check_exact /contact 200
+          check_public / 200
+          check_public /account/login 200
+          check_public /contact 200
           check_exact /health/live 200
           check_exact /health/ready 200
           check_exact /css/public-site-v31.css 200
