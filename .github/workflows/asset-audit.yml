@@ -6,7 +6,7 @@ on:
       - chore/asset-audit-cleanup-20260911
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   audit:
@@ -22,6 +22,30 @@ jobs:
           name: asset-audit-report
           path: asset-audit-report.txt
           if-no-files-found: error
+
+  archive:
+    needs: audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: chore/asset-audit-cleanup-20260911
+      - name: Move confirmed unreachable assets out of wwwroot
+        run: python3 scripts/archive_unreachable_assets.py
+      - name: Commit archive move when needed
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet && git diff --cached --quiet && test -z "$(git ls-files --others --exclude-standard)"; then
+            echo "Archive already applied; no commit needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Archive unreachable legacy web assets"
+          git push origin HEAD:chore/asset-audit-cleanup-20260911
 
   live-smoke:
     runs-on: ubuntu-latest
