@@ -22,3 +22,42 @@ jobs:
           name: asset-audit-report
           path: asset-audit-report.txt
           if-no-files-found: error
+
+  live-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Public production smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://edulytiks.com"
+          check_exact() {
+            local path="$1" expected="$2"
+            local code
+            code=$(curl -sS --max-time 30 -o /tmp/body -w '%{http_code}' "$base$path")
+            size=$(wc -c </tmp/body)
+            printf '%-42s status=%s bytes=%s\n' "$path" "$code" "$size"
+            test "$code" = "$expected"
+          }
+          check_redirect() {
+            local path="$1"
+            local headers code location
+            headers=$(mktemp)
+            code=$(curl -sS --max-time 30 -D "$headers" -o /dev/null -w '%{http_code}' "$base$path")
+            location=$(awk 'BEGIN{IGNORECASE=1} /^location:/{sub(/^[^:]*:[[:space:]]*/,""); sub(/\r$/,""); print; exit}' "$headers")
+            printf '%-42s status=%s location=%s\n' "$path" "$code" "$location"
+            test "$code" = "302" || test "$code" = "303"
+            printf '%s' "$location" | grep -qi '/account/login'
+          }
+          check_exact / 200
+          check_exact /account/login 200
+          check_exact /contact 200
+          check_exact /health/live 200
+          check_exact /health/ready 200
+          check_exact /css/public-site-v31.css 200
+          check_exact /js/public-site-v31.js 200
+          check_exact /js/public-content-v31.js 200
+          check_exact /set-culture 404
+          check_redirect /student/learning
+          check_redirect /lesson-content
+          check_redirect /School/Users/Create
