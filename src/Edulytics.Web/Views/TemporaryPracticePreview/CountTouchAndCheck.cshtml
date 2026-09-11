@@ -1,0 +1,63 @@
+@model Edulytics.Web.ViewModels.Platform.TemporaryPracticePreviewViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>@Model.Title - Edulytics Game Preview</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/counting-grove-v1.css" asp-append-version="true" />
+</head>
+<body class="cg-preview-page">
+    <main class="cg-preview-wrap">
+        <header class="cg-preview-head">
+            <div>
+                <p class="cg-preview-kicker">Edulytics Game Pilot · Cambridge Primary Stage 1</p>
+                <h1>@Model.Title</h1>
+                <p>@Model.UnitTitle · @Model.LessonCode</p>
+            </div>
+            <div class="cg-preview-profile" aria-label="Game profile">
+                <span>OBJECT_COUNTING</span>
+                <span>COUNT_TOUCH</span>
+                <span>REARRANGE_RECOUNT</span>
+            </div>
+        </header>
+
+        <section class="cg-preview-card" aria-label="Practice game preview">
+            <div id="count-touch-game"
+                 data-count-touch-game
+                 data-lesson-code="@Model.LessonCode"
+                 data-lesson-language="en"></div>
+        </section>
+
+        <details class="cg-preview-details">
+            <summary>Lesson source context</summary>
+            <div class="cg-preview-context">
+                <div>
+                    <h2>Framework</h2>
+                    <p>@Model.FrameworkName · @Model.GradeLabel</p>
+                </div>
+                <div>
+                    <h2>Official references</h2>
+                    @if (Model.Outcomes.Count == 0)
+                    {
+                        <p>No official outcome reference is attached.</p>
+                    }
+                    else
+                    {
+                        <p>@string.Join(" · ", Model.Outcomes.Select(x => x.OutcomeCode))</p>
+                    }
+                </div>
+            </div>
+        </details>
+    </main>
+
+    <script src="~/js/game/activities/count-touch-and-check.v1.activity.js" asp-append-version="true"></script>
+    <script src="~/js/game/counting-grove-v1.js" asp-append-version="true"></script>
+    <script src="~/js/count-touch-preview.js" asp-append-version="true"></script>
+</body>
+</html>
