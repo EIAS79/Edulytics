@@ -89,20 +89,23 @@ public sealed class Phase03IntegrationTests
     }
 
     [Fact]
-    public async Task LoginWithoutCulture_RedirectsToSelector()
+    public async Task LoginWithoutCulture_UsesDefaultPolishAndRendersLogin()
     {
         using var client = CreateClient();
 
         var response =
             await client.GetAsync("/account/login");
 
-        Assert.Equal(
-            HttpStatusCode.Redirect,
-            response.StatusCode);
+        var html =
+            WebUtility.HtmlDecode(
+                await response.Content.ReadAsStringAsync());
 
         Assert.Equal(
-            "/",
-            response.Headers.Location?.OriginalString);
+            HttpStatusCode.OK,
+            response.StatusCode);
+
+        Assert.Contains("Zaloguj się", html);
+        Assert.DoesNotContain("Sign in", html);
     }
 
     [Fact]
@@ -138,13 +141,16 @@ public sealed class Phase03IntegrationTests
             await client.GetAsync(
                 "/account/login");
 
-        Assert.Equal(
-            HttpStatusCode.Redirect,
-            login.StatusCode);
+        var html =
+            WebUtility.HtmlDecode(
+                await login.Content.ReadAsStringAsync());
 
         Assert.Equal(
-            "/",
-            login.Headers.Location?.OriginalString);
+            HttpStatusCode.OK,
+            login.StatusCode);
+
+        Assert.Contains("Zaloguj się", html);
+        Assert.DoesNotContain("Sign in", html);
     }
 
     [Theory]
@@ -350,17 +356,41 @@ public sealed class Phase03IntegrationTests
             "/",
             logout.Headers.Location?.OriginalString);
 
+        var protectedResponse =
+            await client.GetAsync(
+                "/platform/dashboard");
+
+        Assert.Equal(
+            HttpStatusCode.Redirect,
+            protectedResponse.StatusCode);
+
+        Assert.NotNull(
+            protectedResponse.Headers.Location);
+
+        var loginPath =
+            protectedResponse.Headers.Location.IsAbsoluteUri
+                ? protectedResponse.Headers.Location.AbsolutePath
+                : protectedResponse.Headers.Location.OriginalString
+                    .Split('?', 2)[0];
+
+        Assert.Equal(
+            "/account/login",
+            loginPath);
+
         var login =
             await client.GetAsync(
                 "/account/login");
 
-        Assert.Equal(
-            HttpStatusCode.Redirect,
-            login.StatusCode);
+        var html =
+            WebUtility.HtmlDecode(
+                await login.Content.ReadAsStringAsync());
 
         Assert.Equal(
-            "/",
-            login.Headers.Location?.OriginalString);
+            HttpStatusCode.OK,
+            login.StatusCode);
+
+        Assert.Contains("Zaloguj się", html);
+        Assert.DoesNotContain("Sign in", html);
     }
 
     [Fact]
