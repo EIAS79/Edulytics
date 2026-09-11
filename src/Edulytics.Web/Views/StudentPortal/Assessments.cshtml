@@ -43,7 +43,11 @@ else
                     </div>
                 </dl>
                 <div class="student-actions">
-                    @if (item.IsSubmitted)
+                    @if (item.IsSubmitted && item.DeliveryMode == AssessmentDeliveryMode.Online)
+                    {
+                        <span class="student-muted">@S["AssessmentSubmittedTitle"]</span>
+                    }
+                    else if (item.IsSubmitted)
                     {
                         <a class="student-button" asp-action="Results">@S["ViewResults"]</a>
                     }
