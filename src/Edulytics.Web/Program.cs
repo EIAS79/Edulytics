@@ -335,17 +335,16 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-var trustEdgeHttps =
+var edgeEnforcesHttps =
     app.Configuration
         .GetValue<bool>(
-            "Edulytics:Hosting:TrustForwardedHeaders");
+            "Edulytics:Hosting:EdgeEnforcesHttps");
 
-// Trusted edge proxies such as Render terminate TLS and redirect public HTTP
-// before forwarding the request to the application over the private network.
-// Running ASP.NET Core HTTPS redirection again behind that edge is redundant
-// and causes internal health probes without X-Forwarded-Proto to emit a false
-// "Failed to determine the https port" warning.
-if (!trustEdgeHttps)
+// Some trusted edge proxies, including Render, terminate TLS and enforce the
+// public HTTP -> HTTPS redirect before forwarding traffic over the private
+// network. Keep this separate from forwarded-header trust because accepting
+// proxy metadata alone does not prove that the proxy enforces HTTPS.
+if (!edgeEnforcesHttps)
 {
     app.UseHttpsRedirection();
 }
