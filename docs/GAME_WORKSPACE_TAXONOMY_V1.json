@@ -1,0 +1,90 @@
+{
+  "version": "1.0-draft",
+  "scope": {
+    "frameworks": [
+      "US-CCSS-MATH",
+      "PL-NATIONAL-MATH",
+      "UAE-MOE-MATH",
+      "CAMBRIDGE-INTL-MATH"
+    ],
+    "levels": "1-6",
+    "lessonCount": 1624
+  },
+  "mappingStatuses": ["MAPPED", "NEEDS_REVIEW", "UNSUPPORTED"],
+  "workspaces": [
+    {
+      "id": "OBJECT_COUNTING",
+      "name": "Object & Counting World",
+      "mechanics": ["COUNT_TOUCH", "REARRANGE_RECOUNT", "SUBITIZE_PATTERN", "SORT_CLASSIFY", "ORDINAL_POSITION"]
+    },
+    {
+      "id": "NUMBER_SYSTEM",
+      "name": "Number & Place Value Lab",
+      "mechanics": ["NUMBER_LINE_SEQUENCE", "PLACE_VALUE_BUILD", "PLACE_VALUE_SCALE", "COMPARE_ORDER", "POWER_OF_TEN_SHIFT", "READ_SCALE_INTERVALS"]
+    },
+    {
+      "id": "OPERATIONS",
+      "name": "Operations & Relationships Workshop",
+      "mechanics": ["JOIN_COMBINE", "TAKE_AWAY", "DIFFERENCE_COMPARE", "EQUAL_GROUPS_ARRAY", "SHARE_DIVIDE", "FACT_FLUENCY", "WRITTEN_ALGORITHM", "RELATIONSHIP_BALANCE", "DISTRIBUTIVE_BUILD"]
+    },
+    {
+      "id": "FRACTION_DECIMAL_PERCENT",
+      "name": "Fraction, Decimal & Percent Studio",
+      "mechanics": ["FRACTION_PARTITION", "FRACTION_MODEL", "FRACTION_NUMBER_LINE", "FRACTION_EQUIVALENCE", "FRACTION_COMPARE", "FRACTION_DECIMAL_LINK", "PERCENT_MODEL"]
+    },
+    {
+      "id": "GEOMETRY",
+      "name": "Geometry & Spatial Lab",
+      "mechanics": ["SHAPE_IDENTIFY_COMPARE", "SHAPE_BUILDER", "ANGLE_LAB", "SYMMETRY_MIRROR", "COORDINATE_SHAPE", "PERIMETER_TRACE", "AREA_TILE", "VOLUME_BUILD"]
+    },
+    {
+      "id": "MEASUREMENT",
+      "name": "Measurement & Scale Lab",
+      "mechanics": ["MEASURE_COMPARE", "MEASURE_TOOL", "RULER_ALIGN", "SCALE_READ", "CAPACITY_FILL", "MASS_BALANCE", "UNIT_CONVERSION", "ESTIMATE_MEASURE_CHECK"]
+    },
+    {
+      "id": "TIME_MONEY",
+      "name": "Time & Money World",
+      "mechanics": ["CLOCK_FACE", "TIMELINE", "CALENDAR_ORDER", "MONEY_VALUE", "MAKE_AMOUNT", "CHANGE_TRANSACTION"]
+    },
+    {
+      "id": "DATA_STATISTICS",
+      "name": "Data & Statistics Lab",
+      "mechanics": ["DATA_SORT", "TABLE_BUILD", "PICTOGRAM_BUILD", "BAR_CHART_BUILD", "PLOT_READ", "DISTRIBUTION_COMPARE", "STATISTIC_CALCULATE"]
+    },
+    {
+      "id": "RATIO_ALGEBRA",
+      "name": "Ratio, Proportion & Algebra Lab",
+      "mechanics": ["RATIO_SCALE", "DOUBLE_NUMBER_LINE", "BALANCE_EQUATION", "EXPRESSION_BUILD", "UNKNOWN_MODEL", "FUNCTION_PATTERN"]
+    },
+    {
+      "id": "REASONING_MODELING",
+      "name": "Reasoning & Modelling Studio",
+      "mechanics": ["MODEL_SELECT", "EVIDENCE_ORDER", "CONSTRAINT_PUZZLE", "MULTI_STEP_SCENARIO", "ERROR_ANALYSIS"],
+      "fallback": false
+    }
+  ],
+  "globalRules": {
+    "fallbackQuizForbidden": true,
+    "curriculumControlsLanguage": true,
+    "randomizeRoundOrder": true,
+    "randomizeAnswerPosition": true,
+    "randomizeSpatialLayoutWhenValid": true,
+    "preserveOutcomeAlignment": true,
+    "sharedGameShell": ["story", "eddy", "studentAvatar", "voice", "hud", "progress", "feedback", "rewards", "responsive", "fullscreen", "accessibility", "analytics"]
+  },
+  "knownMappings": [
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S1:L01",
+      "workspace": "OBJECT_COUNTING",
+      "primaryMechanic": "COUNT_TOUCH",
+      "secondaryMechanics": ["REARRANGE_RECOUNT"]
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S1:L10",
+      "workspace": "OPERATIONS",
+      "primaryMechanic": "JOIN_COMBINE",
+      "implementation": "Lantern Isles V9"
+    }
+  ]
+}
