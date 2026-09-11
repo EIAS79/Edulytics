@@ -29,20 +29,30 @@ public static class CultureCookie
             new RequestCulture(culture));
     }
 
-    public static bool TryRead(HttpRequest request, out string culture)
+    public static bool TryParseValue(
+        string? cookieValue,
+        out string culture)
     {
         culture = string.Empty;
 
-        if (!request.Cookies.TryGetValue(Name, out var cookieValue) ||
-            string.IsNullOrWhiteSpace(cookieValue))
+        if (string.IsNullOrWhiteSpace(cookieValue))
         {
             return false;
+        }
+
+        var trimmed = cookieValue.Trim();
+        var legacyCulture = trimmed.ToLowerInvariant();
+
+        if (IsSupported(legacyCulture))
+        {
+            culture = legacyCulture;
+            return true;
         }
 
         foreach (var supportedCulture in SupportedCultures)
         {
             if (string.Equals(
-                cookieValue,
+                trimmed,
                 CreateValue(supportedCulture),
                 StringComparison.Ordinal))
             {
@@ -52,5 +62,13 @@ public static class CultureCookie
         }
 
         return false;
+    }
+
+    public static bool TryRead(HttpRequest request, out string culture)
+    {
+        culture = string.Empty;
+
+        return request.Cookies.TryGetValue(Name, out var cookieValue) &&
+               TryParseValue(cookieValue, out culture);
     }
 }

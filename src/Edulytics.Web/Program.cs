@@ -100,11 +100,24 @@ builder.Services
             options
                 .RequestCultureProviders
                 .Add(
-                    new CookieRequestCultureProvider
-                    {
-                        CookieName =
-                            CultureCookie.Name
-                    });
+                    new CustomRequestCultureProvider(
+                        context =>
+                        {
+                            if (CultureCookie.TryRead(
+                                    context.Request,
+                                    out var culture))
+                            {
+                                return Task.FromResult<
+                                    ProviderCultureResult?>(
+                                    new ProviderCultureResult(
+                                        culture,
+                                        culture));
+                            }
+
+                            return Task.FromResult<
+                                ProviderCultureResult?>(
+                                null);
+                        }));
         });
 
 builder.Services
