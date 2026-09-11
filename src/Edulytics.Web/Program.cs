@@ -335,7 +335,19 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+var edgeEnforcesHttps =
+    app.Configuration
+        .GetValue<bool>(
+            "Edulytics:Hosting:EdgeEnforcesHttps");
+
+// Some trusted edge proxies, including Render, terminate TLS and enforce the
+// public HTTP -> HTTPS redirect before forwarding traffic over the private
+// network. Keep this separate from forwarded-header trust because accepting
+// proxy metadata alone does not prove that the proxy enforces HTTPS.
+if (!edgeEnforcesHttps)
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseRequestLocalization();
 
