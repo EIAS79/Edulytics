@@ -54,12 +54,7 @@ public sealed class AccountController : Controller
     public IActionResult Login(
         string? returnUrl = null)
     {
-        if (!CultureCookie.TryRead(Request, out _))
-        {
-            return RedirectToAction(
-                "Index",
-                "Home");
-        }
+        EnsureLoginCulture();
 
         ViewData["ReturnUrl"] =
             returnUrl;
@@ -76,12 +71,7 @@ public sealed class AccountController : Controller
         LoginViewModel model,
         string? returnUrl = null)
     {
-        if (!CultureCookie.TryRead(Request, out _))
-        {
-            return RedirectToAction(
-                "Index",
-                "Home");
-        }
+        EnsureLoginCulture();
 
         ViewData["ReturnUrl"] =
             returnUrl;
@@ -352,6 +342,30 @@ public sealed class AccountController : Controller
         !string.IsNullOrWhiteSpace(accountType) &&
         PublicAccountTypes.Contains(accountType);
 
+    private void EnsureLoginCulture()
+    {
+        if (CultureCookie.TryRead(
+                Request,
+                out _))
+        {
+            return;
+        }
+
+        const string defaultCulture = "pl";
+        var cultureInfo =
+            CultureInfo.GetCultureInfo(
+                defaultCulture);
+
+        CultureInfo.CurrentCulture =
+            cultureInfo;
+
+        CultureInfo.CurrentUICulture =
+            cultureInfo;
+
+        AppendCultureCookie(
+            defaultCulture);
+    }
+
     private string ApplySetupCulture(
         string? culture)
     {
@@ -378,6 +392,14 @@ public sealed class AccountController : Controller
         CultureInfo.CurrentUICulture =
             cultureInfo;
 
+        AppendCultureCookie(culture);
+
+        return culture;
+    }
+
+    private void AppendCultureCookie(
+        string culture)
+    {
         Response.Cookies.Append(
             CultureCookie.Name,
             CultureCookie.CreateValue(culture),
@@ -394,7 +416,5 @@ public sealed class AccountController : Controller
                 Secure =
                     Request.IsHttps
             });
-
-        return culture;
     }
 }
