@@ -235,8 +235,11 @@ public sealed class StudentPortalService : IStudentPortalService
             .Where(x => x.StudentProfileId == snapshot.Profile.Id)
             .Select(result =>
             {
-                if (!assessmentMap.TryGetValue(result.AssessmentId, out var assessment))
+                if (!assessmentMap.TryGetValue(result.AssessmentId, out var assessment) ||
+                    !OfficialAssessmentResultReleasePolicy.CanStudentView(assessment.Status))
+                {
                     return null;
+                }
 
                 subjectMap.TryGetValue(assessment.SubjectId, out var subject);
 
