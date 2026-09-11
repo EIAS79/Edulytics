@@ -75,7 +75,7 @@ public static partial class MathematicsAnswerEquivalence
             BigInteger.TryParse(mixed.Groups[3].Value, out var denominator) &&
             denominator != BigInteger.Zero)
         {
-            var mixedSign = mixed.Groups[1].Value.StartsWith('-', StringComparison.Ordinal) ? -1 : 1;
+            var mixedSign = mixed.Groups[1].Value.StartsWith("-", StringComparison.Ordinal) ? -1 : 1;
             var absoluteWhole = BigInteger.Abs(whole);
             var combined = absoluteWhole * denominator + numerator;
             rational = Rational.Create(mixedSign * combined, denominator);
