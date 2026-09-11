@@ -1,4 +1,3 @@
-using System.Globalization;
 using System.Text.Json;
 using Edulytics.Core.Assessments;
 using Edulytics.Core.Constants;
@@ -98,7 +97,9 @@ public sealed class StudentAssessmentDeliveryService(
                 return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
                     StudentAssessmentDeliveryErrorCode.InvalidSubmission);
 
-            var earned = AnswersEquivalent(response, itemMap[question.Id].CorrectAnswer)
+            var earned = MathematicsAnswerEquivalence.AreEquivalent(
+                response,
+                itemMap[question.Id].CorrectAnswer)
                 ? question.MaxScore
                 : 0m;
             earned = Round(earned);
@@ -246,18 +247,6 @@ public sealed class StudentAssessmentDeliveryService(
             return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.NotTargeted);
 
         return ResolvedDelivery.Ok(school.Id, profile, snapshot);
-    }
-
-    private static bool AnswersEquivalent(string actual, string expected)
-    {
-        actual = actual.Trim();
-        expected = (expected ?? string.Empty).Trim();
-
-        if (decimal.TryParse(actual, NumberStyles.Number, CultureInfo.InvariantCulture, out var actualNumber) &&
-            decimal.TryParse(expected, NumberStyles.Number, CultureInfo.InvariantCulture, out var expectedNumber))
-            return actualNumber == expectedNumber;
-
-        return string.Equals(actual, expected, StringComparison.OrdinalIgnoreCase);
     }
 
     private static decimal Round(decimal value) =>
