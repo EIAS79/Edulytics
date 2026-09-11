@@ -69,7 +69,7 @@ public sealed class StudentPracticeController(
         if (lesson is null)
             return NotFound();
 
-        var route = GameLessonRouter.Resolve(lesson.LessonCode, lesson.UnitTitle, lesson.LessonTitle);
+        var route = GameLessonRouteResolver.Resolve(lesson.LessonCode, lesson.UnitTitle, lesson.LessonTitle);
         if (!route.IsPlayable || route.RendererKey is null)
             return NotFound();
 
@@ -92,7 +92,7 @@ public sealed class StudentPracticeController(
         if (lesson is null)
             return NotFound();
 
-        var route = GameLessonRouter.Resolve(lesson.LessonCode, lesson.UnitTitle, lesson.LessonTitle);
+        var route = GameLessonRouteResolver.Resolve(lesson.LessonCode, lesson.UnitTitle, lesson.LessonTitle);
         if (!route.IsPlayable || route.RendererKey is null)
             return NotFound();
 
