@@ -1,6 +1,6 @@
 # Edulytics Game Mechanic Coverage Architecture
 
-Status: Draft v0.1 — curriculum coverage audit foundation
+Status: Draft v0.2 — curriculum coverage audit foundation
 
 ## Purpose
 
@@ -14,7 +14,7 @@ The public game identity can stay consistent (Eddy, student avatar, story, narra
 
 ## Audited curriculum scope
 
-The first audit covers grades/stages 1–6 only for the four mathematics frameworks already present in Edulytics staging:
+The audit covers grades/stages 1–6 only for the four mathematics frameworks already present in Edulytics staging:
 
 | Framework | Levels | Lessons in scope |
 | --- | --- | ---: |
@@ -33,21 +33,49 @@ Important scope rules:
 
 ## Routing quality discovered by the audit
 
-A lesson cannot always be routed safely from `UnitTitle` alone.
+A lesson cannot always be routed safely from `UnitTitle` alone. The first coarse pass understated this problem, so the audit was tightened: broad units that mix mathematical domains are now deliberately sent to deep routing rather than being force-mapped.
 
 | Routing class | Lessons | Meaning |
 | --- | ---: | --- |
-| Direct-domain unit | 1,370 | Unit is sufficiently specific to establish the mathematical workspace before skill-level routing. |
-| Mixed/deep routing required | 254 | Unit mixes domains or the pedagogical lesson title/content is too generic; route from lesson title, learning outcomes, official source locator and lesson content instead. |
+| Direct workspace routing | 1,252 | Unit structure is sufficiently specific to establish the mathematical workspace before mechanic-level routing. |
+| Deep routing required | 372 | Unit mixes domains or its pedagogical title/content is too generic; route from lesson title, learning outcomes, official source locator and lesson content. |
+| **Total** | **1,624** | Every in-scope lesson remains accounted for. |
 
-Breakdown of the 254 lessons requiring deeper routing:
+Deep-routing count by framework:
 
-- Cambridge: 8 mixed-unit lessons (`Shape, Measure and Position`; `Fractions and Money`).
-- Polish: 60 lessons whose generated pedagogical titles/content are too generic to identify the mathematical interaction safely (`Obliczenia praktyczne`, early mathematical-text reading and real-life-application strands).
-- UAE: 25 mixed units (`Geometry and Data`, `Number and Calculation`, `Number and Operations`, `Advanced Reasoning`).
-- US: 161 mixed units (including `Putting It All Together`, `Adding, Subtracting, and Working with Data`, `Geometry and Time`, `Geometry, Time, and Money`, and mixed measurement units).
+- Cambridge: 17 lessons.
+- Polish: 81 lessons.
+- UAE: 69 lessons.
+- US Common Core: 205 lessons.
+
+Examples that correctly require deep routing include:
+
+- Cambridge: `Number Sense and Sequences`, `Shape, Measure and Position`, `Fractions and Money`.
+- Polish: `Obliczenia praktyczne`, early mathematical-text reading/application strands, and broad early number/spatial strands.
+- UAE: `Measurement`, `Number Sense`, `Number`, `Number and Calculation`, `Number and Operations`, `Geometry and Data`.
+- US: `Putting It All Together`, `Adding, Subtracting, and Working with Data`, `Geometry and Time`, `Geometry, Time, and Money`, mixed measurement units, and other cross-domain units.
 
 **Rule:** a mixed unit is never assigned a fallback quiz. The router must resolve the underlying skill; if the evidence is insufficient, the lesson becomes `NEEDS_REVIEW`.
+
+## Provisional direct-workspace distribution
+
+These counts are only the safe direct-routing set. The 372 deep-routing lessons will be added to these workspaces after lesson-level analysis.
+
+| Workspace | Direct lessons currently routed |
+| --- | ---: |
+| Operations & Relationships | 374 |
+| Fraction, Decimal & Percent | 257 |
+| Geometry & Spatial | 259 |
+| Number & Place Value | 147 |
+| Ratio, Proportion & Algebra | 102 |
+| Data & Statistics | 49 |
+| Measurement & Scale | 35 |
+| Reasoning & Modelling | 27 |
+| Time & Money | 2 |
+| Object & Counting | resolved at lesson/mechanic level inside broad early-number units |
+| **Deep routing pending** | **372** |
+
+The distribution is not a statement that there are only these lesson types. It identifies the top-level UI/workspace primitive; individual mechanics inside each workspace remain distinct.
 
 ## Workspace Templates v1
 
