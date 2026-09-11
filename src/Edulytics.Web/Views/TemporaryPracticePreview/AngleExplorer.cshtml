@@ -1,0 +1,24 @@
+@model Edulytics.Web.ViewModels.Platform.TemporaryPracticePreviewViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>@Model.Title - Edulytics Practice</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/game-workspace-v1.css" asp-append-version="true" />
+</head>
+<body class="gw-page">
+    <main class="gw-wrap">
+        <header class="gw-head"><p>Edulytics Practice · Geometry Canvas</p><h1>@Model.Title</h1><p>@Model.UnitTitle</p></header>
+        <section aria-label="Geometry practice game">
+            <div data-angle-explorer-game data-lesson-code="@Model.LessonCode" data-lesson-language="en"></div>
+        </section>
+    </main>
+    <script src="~/js/angle-explorer-preview.js" asp-append-version="true"></script>
+</body>
+</html>
