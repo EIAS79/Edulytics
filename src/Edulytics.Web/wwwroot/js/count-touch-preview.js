@@ -14,25 +14,26 @@
         roundCount: 10,
         countPool: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         variants: ['sunbug', 'leafbug', 'berrybug'],
-        conceptModes: ['number-change', 'what-changed', 'what-stayed'],
+        sameModes: ['number-change', 'what-changed', 'what-stayed'],
+        changedModes: ['number-change', 'current-total'],
         guide: '/images/game/v9/eddy-guide.webp'
     };
 
     var copy = {
-        intro: 'The Counting Grove is waking up. Count carefully, then watch what happens when the glowbugs move.',
+        intro: 'The Counting Grove is waking up. Count carefully, then watch what happens when the clearing changes.',
         start: 'Start counting',
         firstPrompt: 'Touch every glowbug once. Count as you go.',
         firstCheck: 'How many glowbugs did you count?',
         zeroPrompt: 'How many glowbugs are in the empty clearing?',
         countStory: 'The glowbugs are waking up. Give each one a count number.',
+        countCheckStory: 'You touched every glowbug. Now choose the total you counted.',
         zeroStory: 'This clearing looks quiet. Take a careful look.',
-        breeze: 'Whoosh! The glowbugs moved to new places.',
-        conceptStory: 'The breeze has settled. Look closely at the group.',
+        breeze: 'Whoosh! The clearing changed.',
         duplicate: 'That glowbug is already counted. Find one without a number.',
-        wrongCount: 'Not quite. Look at the numbered glowbugs and count them again.',
+        wrongCount: 'Not quite. Look at the glowbugs and count carefully again.',
         countHint: 'Try one glowbug at a time. Each glowbug should get exactly one number.',
         completeTitle: 'Counting Grove restored!',
-        completeBody: 'You counted carefully, used zero, and discovered what changes and what stays the same when objects move.'
+        completeBody: 'You counted carefully, used zero, and checked whether the number changed when the clearing changed.'
     };
 
     function shuffle(values) {
@@ -51,26 +52,57 @@
         return Math.max(min, Math.min(max, value));
     }
 
+    function changeTypeFor(value, desired) {
+        if (desired === 'join' && value >= 10) return 'leave';
+        if (desired === 'leave' && value <= 1) return 'join';
+        return desired;
+    }
+
     function makeRounds() {
         var nonZero = shuffle(config.countPool.filter(function (value) { return value !== 0; }))
             .slice(0, config.roundCount - 1);
         var values = shuffle([0].concat(nonZero));
         var variantOffset = Math.floor(Math.random() * config.variants.length);
-        var conceptOrder = shuffle(config.conceptModes);
-        var conceptIndex = 0;
+        var changePlan = shuffle(['same', 'join', 'leave', 'same', 'join', 'leave', 'same', 'join', 'leave']);
+        var sameModes = shuffle(config.sameModes);
+        var changedModes = shuffle(config.changedModes);
+        var sameIndex = 0;
+        var changedIndex = 0;
+        var changeIndex = 0;
 
         return values.map(function (value, index) {
-            var conceptMode = 'zero';
-            if (value !== 0) {
-                if (conceptIndex > 0 && conceptIndex % conceptOrder.length === 0) {
-                    conceptOrder = shuffle(config.conceptModes);
-                }
-                conceptMode = conceptOrder[conceptIndex % conceptOrder.length];
-                conceptIndex += 1;
+            if (value === 0) {
+                return {
+                    count: 0,
+                    afterCount: 0,
+                    changeType: 'zero',
+                    variant: config.variants[(index + variantOffset) % config.variants.length],
+                    conceptMode: 'zero'
+                };
+            }
+
+            var changeType = changeTypeFor(value, changePlan[changeIndex % changePlan.length]);
+            changeIndex += 1;
+            var afterCount = value;
+            var conceptMode;
+
+            if (changeType === 'join') afterCount = value + 1;
+            if (changeType === 'leave') afterCount = value - 1;
+
+            if (changeType === 'same') {
+                if (sameIndex > 0 && sameIndex % sameModes.length === 0) sameModes = shuffle(config.sameModes);
+                conceptMode = sameModes[sameIndex % sameModes.length];
+                sameIndex += 1;
+            } else {
+                if (changedIndex > 0 && changedIndex % changedModes.length === 0) changedModes = shuffle(config.changedModes);
+                conceptMode = changedModes[changedIndex % changedModes.length];
+                changedIndex += 1;
             }
 
             return {
                 count: value,
+                afterCount: afterCount,
+                changeType: changeType,
                 variant: config.variants[(index + variantOffset) % config.variants.length],
                 conceptMode: conceptMode
             };
@@ -129,7 +161,6 @@
                     '<small data-cg-subprompt>Touch each glowbug once and count as you go.</small>' +
                 '</div>' +
                 '<div class="cg-field" data-cg-field aria-label="Interactive counting area"></div>' +
-                '<div class="cg-counter-orb" data-cg-counter hidden><span>Counted</span><strong data-cg-count-value>0</strong></div>' +
                 '<div class="cg-number-dock" data-cg-number-dock hidden aria-label="Choose an answer"></div>' +
                 '<div class="cg-feedback" data-cg-feedback aria-live="polite" hidden></div>' +
             '</main>' +
@@ -154,8 +185,6 @@
     var field = root.querySelector('[data-cg-field]');
     var promptNode = root.querySelector('[data-cg-prompt]');
     var subpromptNode = root.querySelector('[data-cg-subprompt]');
-    var counter = root.querySelector('[data-cg-counter]');
-    var countValue = root.querySelector('[data-cg-count-value]');
     var numberDock = root.querySelector('[data-cg-number-dock]');
     var feedback = root.querySelector('[data-cg-feedback]');
     var eddyPanel = root.querySelector('[data-cg-eddy-panel]');
@@ -181,12 +210,6 @@
         }
     }
 
-    function setFeedback(message, kind) {
-        feedback.textContent = message;
-        feedback.setAttribute('data-kind', kind || 'info');
-        feedback.hidden = false;
-    }
-
     function setEddy(message) {
         eddyText.textContent = message;
     }
@@ -205,7 +228,14 @@
         }
     }
 
+    function eddySpeak(message) {
+        feedback.hidden = true;
+        setEddy(message);
+        narrate(message);
+    }
+
     function present(question, eddyMessage) {
+        feedback.hidden = true;
         setEddy(eddyMessage);
         narrate(question);
     }
@@ -242,8 +272,32 @@
         progressBar.setAttribute('aria-valuenow', String(progress));
     }
 
+    function resultSentence(round) {
+        if (round.changeType === 'join') {
+            return 'The number changed from ' + String(round.count) + ' to ' + String(round.afterCount) + '. One more glowbug is in the clearing.';
+        }
+        if (round.changeType === 'leave') {
+            return 'The number changed from ' + String(round.count) + ' to ' + String(round.afterCount) + '. One fewer glowbug is in the clearing.';
+        }
+        return 'The number stayed ' + String(round.count) + '. Only their places changed.';
+    }
+
     function conceptDefinition(round) {
-        var context = 'You counted ' + String(round.count) + ' glowbugs before. A breeze moved them to new places.';
+        var context = 'You counted ' + String(round.count) + ' glowbugs before. Look at the clearing now.';
+        var changed = round.afterCount !== round.count;
+        var neutralStory = 'The breeze has settled. Compare the clearing with what you counted before.';
+
+        if (round.conceptMode === 'current-total') {
+            return {
+                question: 'How many glowbugs are here now?',
+                context: context,
+                choices: answerChoices(round.afterCount),
+                correct: round.afterCount,
+                hint: 'Count the glowbugs you can see now, then compare that total with ' + String(round.count) + '.',
+                success: 'Correct. ' + resultSentence(round),
+                story: 'Something may have changed in the group. Take a fresh count.'
+            };
+        }
 
         if (round.conceptMode === 'what-changed') {
             return {
@@ -252,7 +306,8 @@
                 choices: ['Places', 'Number'],
                 correct: 'Places',
                 hint: 'Compare where the glowbugs are with how many glowbugs there are.',
-                success: 'Correct. Their places changed, but there are still ' + String(round.count) + ' glowbugs.'
+                success: 'Correct. ' + resultSentence(round),
+                story: neutralStory
             };
         }
 
@@ -262,8 +317,9 @@
                 context: context,
                 choices: ['Number', 'Places'],
                 correct: 'Number',
-                hint: 'Think about the total you counted before the breeze.',
-                success: 'Correct. The number stayed ' + String(round.count) + ' even though the glowbugs moved.'
+                hint: 'Think about the total you counted before the breeze, then look again.',
+                success: 'Correct. ' + resultSentence(round),
+                story: neutralStory
             };
         }
 
@@ -271,9 +327,10 @@
             question: 'Did the number of glowbugs change?',
             context: context,
             choices: ['Yes', 'No'],
-            correct: 'No',
-            hint: 'Did any glowbug leave or join the group?',
-            success: 'Correct. There are still ' + String(round.count) + ' glowbugs. Moving them did not change the total.'
+            correct: changed ? 'Yes' : 'No',
+            hint: 'Count what is here now. Is that total the same as ' + String(round.count) + '?',
+            success: 'Correct. ' + resultSentence(round),
+            story: neutralStory
         };
     }
 
@@ -289,15 +346,13 @@
                 }
                 if (remaining.length) {
                     remaining[Math.floor(Math.random() * remaining.length)].classList.add('is-hint');
-                    setFeedback(copy.countHint, 'info');
+                    eddySpeak(copy.countHint);
                 }
                 return;
             }
 
             if (state.phase === 'concept-confirm') {
-                var definition = conceptDefinition(currentRound());
-                setFeedback(definition.hint, 'info');
-                narrate(definition.hint);
+                eddySpeak(conceptDefinition(currentRound()).hint);
             }
         }, 9000);
     }
@@ -339,34 +394,32 @@
             numberDock.appendChild(button);
         });
         numberDock.hidden = false;
-        feedback.hidden = true;
-        present(promptNode.textContent, answer === 0 ? copy.zeroStory : copy.countStory);
+        present(promptNode.textContent, answer === 0 ? copy.zeroStory : copy.countCheckStory);
     }
 
     function showConceptCheck() {
         var definition = conceptDefinition(currentRound());
         state.phase = 'concept-confirm';
         state.locked = false;
-        counter.hidden = true;
         promptNode.textContent = definition.question;
         subpromptNode.textContent = definition.context;
         numberDock.innerHTML = '';
-        feedback.hidden = true;
 
-        shuffle(definition.choices).forEach(function (label) {
+        shuffle(definition.choices).forEach(function (value) {
             var button = document.createElement('button');
+            var label = String(value);
             button.type = 'button';
             button.className = 'cg-number-stone';
             button.textContent = label;
             button.setAttribute('aria-label', 'Choose ' + label);
             button.addEventListener('click', function () {
-                chooseConceptAnswer(label, button);
+                chooseConceptAnswer(value, button);
             });
             numberDock.appendChild(button);
         });
 
         numberDock.hidden = false;
-        present(definition.question, copy.conceptStory);
+        present(definition.question, definition.story);
         scheduleHint();
     }
 
@@ -377,8 +430,7 @@
             button.classList.remove('is-nudge');
             void button.offsetWidth;
             button.classList.add('is-nudge');
-            setFeedback(copy.duplicate, 'gentle');
-            narrate(copy.duplicate);
+            eddySpeak(copy.duplicate);
             return;
         }
 
@@ -388,7 +440,6 @@
         button.classList.remove('is-hint');
         button.querySelector('.cg-order').textContent = String(state.countedTotal);
         button.setAttribute('aria-label', 'Glowbug counted as ' + String(state.countedTotal));
-        countValue.textContent = String(state.countedTotal);
         chime(260 + state.countedTotal * 26, 0.05, 0);
         clearHint();
 
@@ -400,10 +451,10 @@
         }
     }
 
-    function renderObjects(count, variant, keepSameObjects) {
+    function renderObjects(count, variant, breeze) {
         var objects = field.querySelectorAll('.cg-glowbug');
         var i;
-        if (!keepSameObjects || objects.length !== count) {
+        if (!breeze || objects.length !== count) {
             field.innerHTML = '';
             for (i = 0; i < count; i += 1) {
                 var button = document.createElement('button');
@@ -428,10 +479,10 @@
             objects[i].style.setProperty('--x', String(points[i].x) + '%');
             objects[i].style.setProperty('--y', String(points[i].y) + '%');
             objects[i].style.setProperty('--delay', String((i % 5) * -0.17) + 's');
-            if (keepSameObjects) objects[i].classList.add('is-breeze');
+            if (breeze) objects[i].classList.add('is-breeze');
         }
 
-        if (keepSameObjects) {
+        if (breeze) {
             window.setTimeout(function () {
                 var moved = field.querySelectorAll('.cg-glowbug');
                 var j;
@@ -451,7 +502,6 @@
         renderObjects(currentRound().count, currentRound().variant, false);
 
         if (currentRound().count === 0) {
-            counter.hidden = true;
             promptNode.textContent = copy.zeroPrompt;
             subpromptNode.textContent = 'Look carefully at the clearing.';
             state.locked = true;
@@ -460,8 +510,6 @@
             return;
         }
 
-        counter.hidden = false;
-        countValue.textContent = '0';
         promptNode.textContent = copy.firstPrompt;
         subpromptNode.textContent = 'Tap each glowbug once.';
         setEddy(copy.countStory);
@@ -470,16 +518,16 @@
     }
 
     function beginBreeze() {
+        var round = currentRound();
         state.phase = 'breeze';
         clearHint();
         promptNode.textContent = copy.breeze;
-        subpromptNode.textContent = 'Watch where the glowbugs land.';
+        subpromptNode.textContent = 'Watch the clearing carefully.';
         numberDock.hidden = true;
-        counter.hidden = true;
         feedback.hidden = true;
         game.classList.add('is-breezy');
-        renderObjects(currentRound().count, currentRound().variant, true);
-        setEddy('Hold on — a breeze is sweeping through the grove!');
+        renderObjects(round.afterCount, round.variant, true);
+        setEddy('Keep your eyes on the clearing — the breeze may change more than the places.');
         narrate(copy.breeze);
 
         window.setTimeout(function () {
@@ -516,8 +564,7 @@
             button.classList.remove('is-wrong');
             void button.offsetWidth;
             button.classList.add('is-wrong');
-            setFeedback(copy.wrongCount, 'try');
-            narrate(copy.wrongCount);
+            eddySpeak(copy.wrongCount);
             return;
         }
 
@@ -529,34 +576,27 @@
         if (answer === 0) {
             state.score += 250;
             syncHud();
-            var zeroMessage = 'Correct. Zero means there are no glowbugs in the clearing.';
-            setFeedback(zeroMessage, 'success');
-            setEddy('Exactly — an empty group has a total of zero.');
-            narrate(zeroMessage);
+            eddySpeak('Correct. Zero means there are no glowbugs in the clearing.');
             window.setTimeout(finishRound, 1250);
             return;
         }
 
         state.score += 100;
         syncHud();
-        var firstMessage = 'Correct — you counted ' + String(answer) + ' glowbugs.';
-        setFeedback(firstMessage, 'success');
-        setEddy('Great counting. Now watch what the breeze does.');
-        narrate(firstMessage);
+        eddySpeak('Correct — you counted ' + String(answer) + ' glowbugs. Now watch the clearing.');
         window.setTimeout(beginBreeze, 1050);
     }
 
-    function chooseConceptAnswer(label, button) {
+    function chooseConceptAnswer(value, button) {
         if (state.locked || state.phase !== 'concept-confirm') return;
         var definition = conceptDefinition(currentRound());
 
-        if (label !== definition.correct) {
+        if (value !== definition.correct) {
             button.classList.remove('is-wrong');
             void button.offsetWidth;
             button.classList.add('is-wrong');
-            setFeedback(definition.hint, 'try');
-            narrate(definition.hint);
             clearHint();
+            eddySpeak(definition.hint);
             scheduleHint();
             return;
         }
@@ -568,10 +608,8 @@
         syncHud();
         chime(660, 0.11, 0);
         chime(880, 0.14, 0.09);
-        setFeedback(definition.success, 'success');
-        setEddy('Excellent thinking!');
-        narrate(definition.success);
-        window.setTimeout(finishRound, 1350);
+        eddySpeak(definition.success);
+        window.setTimeout(finishRound, 1500);
     }
 
     function startGame() {
@@ -611,13 +649,13 @@
         try {
             if (!document.fullscreenElement && game.requestFullscreen) {
                 var entering = game.requestFullscreen();
-                if (entering && entering.catch) entering.catch(function () { setFeedback('Fullscreen is not available in this browser.', 'info'); });
+                if (entering && entering.catch) entering.catch(function () { eddySpeak('Fullscreen is not available in this browser.'); });
             } else if (document.fullscreenElement && document.exitFullscreen) {
                 var leaving = document.exitFullscreen();
-                if (leaving && leaving.catch) leaving.catch(function () { setFeedback('Fullscreen is not available in this browser.', 'info'); });
+                if (leaving && leaving.catch) leaving.catch(function () { eddySpeak('Fullscreen is not available in this browser.'); });
             }
         } catch (ignore) {
-            setFeedback('Fullscreen is not available in this browser.', 'info');
+            eddySpeak('Fullscreen is not available in this browser.');
         }
     }
 
@@ -629,7 +667,7 @@
     syncHud();
 
     window.__countTouchPreviewRuntime = {
-        version: '1.3.0',
+        version: '1.4.0',
         destroy: function () {
             clearHint();
             document.removeEventListener('fullscreenchange', syncFullscreenLabel);
