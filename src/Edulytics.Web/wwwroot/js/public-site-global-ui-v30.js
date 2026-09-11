@@ -32,14 +32,56 @@
     anchor.setAttribute('href', contactRouteFor(anchor, anchor.getAttribute('href') || ''));
   });
 
-  // EN/PL are server cultures. Leaving Arabic must also clear the client-side
-  // public-site override or the next page would immediately switch back to RTL.
+  const clearArabicOverride = () => {
+    try { window.localStorage.removeItem(storageKey); } catch { /* no-op */ }
+  };
+
+  const currentReturnUrl = () =>
+    `${window.location.pathname}${window.location.search}${window.location.hash}` || '/';
+
+  // EN/PL are server cultures. Keep every public language form pinned to the
+  // POST endpoint even if an earlier navbar script or stale markup mutates it.
+  // This prevents the browser from navigating to GET /set-culture (404).
   root.querySelectorAll('form input[name="culture"]').forEach(input => {
     const form = input.closest('form');
     if (!form || !['en', 'pl'].includes(input.value)) return;
+
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', '/set-culture');
+
+    let returnUrl = form.querySelector('input[name="returnUrl"]');
+    if (!returnUrl) {
+      returnUrl = document.createElement('input');
+      returnUrl.type = 'hidden';
+      returnUrl.name = 'returnUrl';
+      form.appendChild(returnUrl);
+    }
+    returnUrl.value = currentReturnUrl();
+
     form.addEventListener('submit', () => {
-      try { window.localStorage.removeItem(storageKey); } catch { /* no-op */ }
+      clearArabicOverride();
+      form.setAttribute('method', 'post');
+      form.setAttribute('action', '/set-culture');
+      returnUrl.value = currentReturnUrl();
     });
+
+    const button = form.querySelector('button');
+    if (button) {
+      button.type = 'submit';
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        clearArabicOverride();
+        form.setAttribute('method', 'post');
+        form.setAttribute('action', '/set-culture');
+        returnUrl.value = currentReturnUrl();
+
+        if (typeof form.requestSubmit === 'function') {
+          form.requestSubmit();
+        } else {
+          HTMLFormElement.prototype.submit.call(form);
+        }
+      });
+    }
   });
 
   const installArabicSwitch = languageHost => {
