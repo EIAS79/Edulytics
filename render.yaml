@@ -28,6 +28,12 @@ services:
       - key: Edulytics__Hosting__TrustForwardedHeaders
         value: "true"
 
+      # Render terminates TLS and enforces public HTTP -> HTTPS at the edge.
+      # Keep this separate from forwarded-header trust because not every
+      # reverse proxy that forwards scheme metadata guarantees HTTPS.
+      - key: Edulytics__Hosting__EdgeEnforcesHttps
+        value: "true"
+
       - key: Edulytics__Hosting__DataProtectionApplicationName
         value: Edulytics-Staging
 
