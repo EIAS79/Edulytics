@@ -103,8 +103,9 @@ public sealed class StudentPortalController : Controller
         if (lesson.Value is null)
             return lesson.Error == LessonContentErrorCode.AccessDenied ? Forbid() : NotFound();
 
-        ViewData["GameAdoptionId"] = await FindPlayableGameAdoptionAsync(actorId, id, cancellationToken);
-        ViewData["LessonPracticePilotAdoptionId"] = await FindLessonPracticePilotAdoptionAsync(actorId, id, cancellationToken);
+        var availability = await FindLessonPracticeAvailabilityAsync(actorId, id, cancellationToken);
+        ViewData["GameAdoptionId"] = availability.GameAdoptionId;
+        ViewData["LessonPracticePilotAdoptionId"] = availability.PilotAdoptionId;
         return View(nameof(Lesson), lesson.Value);
     }
 
@@ -192,67 +193,57 @@ public sealed class StudentPortalController : Controller
         return RedirectToAction(nameof(Notifications));
     }
 
-    private async Task<Guid?> FindPlayableGameAdoptionAsync(
-        Guid actorId,
-        Guid lessonId,
-        CancellationToken cancellationToken)
+    private async Task<(Guid? GameAdoptionId, Guid? PilotAdoptionId)>
+        FindLessonPracticeAvailabilityAsync(
+            Guid actorId,
+            Guid lessonId,
+            CancellationToken cancellationToken)
     {
+        Guid? gameAdoptionId = null;
+        Guid? pilotAdoptionId = null;
+
         var initial = await _privatePractice.GetWorkspaceAsync(actorId, null, cancellationToken);
-        if (MatchesPlayableGame(initial, lessonId))
-            return initial.SelectedCurriculumAdoptionId;
+        InspectPracticeWorkspace(initial, lessonId, ref gameAdoptionId, ref pilotAdoptionId);
 
         foreach (var curriculum in initial.Curricula)
         {
+            if (gameAdoptionId.HasValue && pilotAdoptionId.HasValue)
+                break;
             if (curriculum.CurriculumAdoptionId == initial.SelectedCurriculumAdoptionId)
                 continue;
 
-            var workspace = await _privatePractice.GetWorkspaceAsync(
-                actorId, curriculum.CurriculumAdoptionId, cancellationToken);
-            if (MatchesPlayableGame(workspace, lessonId))
-                return curriculum.CurriculumAdoptionId;
+            var candidate = await _privatePractice.GetWorkspaceAsync(
+                actorId,
+                curriculum.CurriculumAdoptionId,
+                cancellationToken);
+            InspectPracticeWorkspace(candidate, lessonId, ref gameAdoptionId, ref pilotAdoptionId);
         }
 
-        return null;
+        return (gameAdoptionId, pilotAdoptionId);
     }
 
-    private static bool MatchesPlayableGame(
+    private static void InspectPracticeWorkspace(
         StudentPrivatePracticeWorkspace workspace,
-        Guid lessonId)
+        Guid lessonId,
+        ref Guid? gameAdoptionId,
+        ref Guid? pilotAdoptionId)
     {
         var lesson = workspace.Lessons.FirstOrDefault(x => x.LessonId == lessonId);
-        if (lesson is null) return false;
-        return GameLessonRouter.Resolve(lesson.LessonCode, lesson.UnitTitle, lesson.LessonTitle).IsPlayable;
-    }
+        if (lesson is null || !workspace.SelectedCurriculumAdoptionId.HasValue)
+            return;
 
-    private async Task<Guid?> FindLessonPracticePilotAdoptionAsync(
-        Guid actorId,
-        Guid lessonId,
-        CancellationToken cancellationToken)
-    {
-        var initial = await _privatePractice.GetWorkspaceAsync(actorId, null, cancellationToken);
-        if (MatchesLessonPracticePilot(initial, lessonId))
-            return initial.SelectedCurriculumAdoptionId;
-
-        foreach (var curriculum in initial.Curricula)
+        if (!gameAdoptionId.HasValue &&
+            GameLessonRouteResolver.Resolve(lesson.LessonCode, lesson.UnitTitle, lesson.LessonTitle).IsPlayable)
         {
-            if (curriculum.CurriculumAdoptionId == initial.SelectedCurriculumAdoptionId)
-                continue;
-
-            var workspace = await _privatePractice.GetWorkspaceAsync(
-                actorId, curriculum.CurriculumAdoptionId, cancellationToken);
-            if (MatchesLessonPracticePilot(workspace, lessonId))
-                return curriculum.CurriculumAdoptionId;
+            gameAdoptionId = workspace.SelectedCurriculumAdoptionId;
         }
 
-        return null;
+        if (!pilotAdoptionId.HasValue &&
+            string.Equals(lesson.LessonCode, LessonPracticePilotCode, StringComparison.Ordinal))
+        {
+            pilotAdoptionId = workspace.SelectedCurriculumAdoptionId;
+        }
     }
-
-    private static bool MatchesLessonPracticePilot(
-        StudentPrivatePracticeWorkspace workspace,
-        Guid lessonId) =>
-        workspace.Lessons.Any(x =>
-            x.LessonId == lessonId &&
-            string.Equals(x.LessonCode, LessonPracticePilotCode, StringComparison.Ordinal));
 
     private async Task<(StudentPortalWorkspace? Workspace, IActionResult? Result)> WorkspaceAsync(
         CancellationToken cancellationToken)

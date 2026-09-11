@@ -38,28 +38,40 @@ public sealed class PublicWebsiteSiteWideContractTests
     }
 
     [Fact]
-    public void PublicLayout_LoadsArabicRtlAndGlobalUiGuardsLast()
+    public void PublicLayout_LoadsBundledArabicRtlAndGlobalUiGuardsLast()
     {
         var root = FindRoot();
         var layout = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/Views/Shared/_PublicLayout.cshtml"));
 
-        var rtlCss = layout.IndexOf(
-            "public-arabic-rtl-v29.css",
+        var publicCss = layout.IndexOf(
+            "public-site-v31.css",
             StringComparison.Ordinal);
         var contentRuntime = layout.IndexOf(
-            "public-content-pages-v27.js",
+            "public-content-v31.js",
             StringComparison.Ordinal);
         var globalUi = layout.IndexOf(
             "public-site-global-ui-v30.js",
             StringComparison.Ordinal);
+        var languageCookie = layout.IndexOf(
+            "public-language-cookie-v31.js",
+            StringComparison.Ordinal);
 
-        Assert.True(rtlCss >= 0);
-        Assert.True(globalUi >= 0);
+        Assert.True(publicCss >= 0);
+        Assert.True(contentRuntime >= 0);
         Assert.True(globalUi > contentRuntime);
+        Assert.True(languageCookie > globalUi);
+        Assert.Contains(
+            "Edulytics.PublicLanguage",
+            layout,
+            StringComparison.Ordinal);
         Assert.Contains(
             "edulytics.public.siteLanguage",
+            layout,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "pageDirection = isArabic ? \"rtl\" : \"ltr\"",
             layout,
             StringComparison.Ordinal);
         Assert.Contains(

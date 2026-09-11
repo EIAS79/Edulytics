@@ -1,13 +1,17 @@
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SharedResource> Brand
 @using System.Globalization
 @{
+    const string publicLanguageCookie = "Edulytics.PublicLanguage";
     var localizedProductName = Brand["ProductName"].Value;
-    var pageLanguage = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var publicLanguage = Context.Request.Cookies[publicLanguageCookie];
+    var isArabic = string.Equals(publicLanguage, "ar", StringComparison.OrdinalIgnoreCase);
+    var pageLanguage = isArabic ? "ar" : CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var pageDirection = isArabic ? "rtl" : "ltr";
     var isMarketingContentPage = ViewData["MarketingPageKey"] is string;
     var pageTitle = ViewData["Title"] as string;
 }
 <!DOCTYPE html>
-<html lang="@pageLanguage" dir="ltr">
+<html lang="@pageLanguage" dir="@pageDirection" class="@(isArabic ? "ed-site-ar" : null)">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport"
@@ -31,75 +35,7 @@
     <link rel="stylesheet"
           href="~/css/site.css"
           asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/round2-product-fixes.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-home.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/round4-ux-display.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-home-commercial-v4.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-home-commercial-v5.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-home-commercial-v6.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-home-commercial-v10.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-home-commercial-v11.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-home-commercial-v12.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-home-commercial-v13.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-home-commercial-v14.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-home-commercial-v15.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-home-commercial-v16.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-home-commercial-v17.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-home-philosophy-v23.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-contact-v4.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-contact-system-v28.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-home-footer-v24.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-home-navbar-v25.css"
-          asp-append-version="true" />
-    <link rel="stylesheet"
-          href="~/css/public-understanding-v1.css"
-          asp-append-version="true" />
-    @if (isMarketingContentPage)
-    {
-        <link rel="stylesheet"
-              href="~/css/public-content-pages-v27.css"
-              asp-append-version="true" />
-    }
-    <link rel="stylesheet"
-          href="~/css/public-arabic-rtl-v29.css"
-          asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/public-site-v31.css" />
     <style>
         .ed-home .student-avatar .head,
         .ed-home .student-avatar .body,
@@ -137,31 +73,12 @@
     <main class="ed-public-main">
         @RenderBody()
     </main>
-    <script src="~/js/public-home-commercial-v4.js" asp-append-version="true"></script>
-    <script src="~/js/public-home-commercial-v5.js" asp-append-version="true"></script>
-    <script src="~/js/public-home-commercial-v6.js" asp-append-version="true"></script>
-    <script src="~/js/public-home-commercial-v9.js" asp-append-version="true"></script>
-    <script src="~/js/public-home-commercial-v10.js" asp-append-version="true"></script>
-    <script src="~/js/public-home-commercial-v11.js" asp-append-version="true"></script>
-    <script src="~/js/public-home-commercial-v12.js" asp-append-version="true"></script>
-    <script src="~/js/public-home-commercial-v13.js" asp-append-version="true"></script>
-    <script src="~/js/public-home-commercial-v14.js" asp-append-version="true"></script>
-    <script src="~/js/public-home-commercial-v15.js" asp-append-version="true"></script>
-    <script src="~/js/public-home-cartoon-cleanup.js" asp-append-version="true"></script>
-    <script src="~/js/public-home-experience-v20.js" asp-append-version="true"></script>
-    <script src="~/js/public-home-curricula-v21.js" asp-append-version="true"></script>
-    <script src="~/js/public-home-ai-spotlight-v22.js" asp-append-version="true"></script>
-    <script src="~/js/public-site-routing-v27.js" asp-append-version="true"></script>
-    <script src="~/js/public-site-routing-v28.js" asp-append-version="true"></script>
-    <script src="~/js/public-understanding-v1.js" asp-append-version="true"></script>
-    <script src="~/js/public-contact-system-v28.js" asp-append-version="true"></script>
+    <script src="~/js/public-site-v31.js"></script>
     @if (isMarketingContentPage)
     {
-        <script src="~/js/public-content-pages-v27-en.js" asp-append-version="true"></script>
-        <script src="~/js/public-content-pages-v27-pl.js" asp-append-version="true"></script>
-        <script src="~/js/public-content-pages-v27-ar.js" asp-append-version="true"></script>
-        <script src="~/js/public-content-pages-v27.js" asp-append-version="true"></script>
+        <script src="~/js/public-content-v31.js"></script>
     }
     <script src="~/js/public-site-global-ui-v30.js" asp-append-version="true"></script>
+    <script src="~/js/public-language-cookie-v31.js" asp-append-version="true"></script>
 </body>
 </html>
