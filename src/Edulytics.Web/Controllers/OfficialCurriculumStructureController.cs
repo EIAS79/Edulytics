@@ -1,6 +1,6 @@
 using System.Globalization;
 using System.Security.Claims;
-using Edulytics.Core.Users;
+using Edulytics.Core.Constants;
 using Edulytics.Services.Curriculum;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
