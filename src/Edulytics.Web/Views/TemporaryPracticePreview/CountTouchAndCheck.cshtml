@@ -49,7 +49,7 @@
                     }
                     else
                     {
-                        <p>@string.Join(" · ", Model.Outcomes.Select(x => x.OutcomeCode))</p>
+                        <p>@string.Join(" · ", Model.Outcomes.OrderBy(x => x.Order).Select(x => x.Code))</p>
                     }
                 </div>
             </div>
