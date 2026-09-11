@@ -10,7 +10,8 @@ namespace Edulytics.Web.Controllers;
 public sealed class TemporaryPracticePreviewController : Controller
 {
     private const string FrameworkCode = "CAMBRIDGE-INTL-MATH";
-    private const string LessonCode = "PED:CAMBRIDGE-INTL-MATH:S1:L10";
+    private const string JoinGroupsLessonCode = "PED:CAMBRIDGE-INTL-MATH:S1:L10";
+    private const string CountTouchLessonCode = "PED:CAMBRIDGE-INTL-MATH:S1:L01";
 
     private readonly ICurriculumRepository _curriculum;
     private readonly ILessonContentRepository _lessonContent;
@@ -25,7 +26,17 @@ public sealed class TemporaryPracticePreviewController : Controller
 
     [HttpGet("/_preview/join-groups-to-add")]
     [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
-    public async Task<IActionResult> JoinGroupsToAdd(
+    public Task<IActionResult> JoinGroupsToAdd(CancellationToken cancellationToken) =>
+        RenderLessonAsync(JoinGroupsLessonCode, "JoinGroupsToAdd", cancellationToken);
+
+    [HttpGet("/_preview/count-touch-and-check")]
+    [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+    public Task<IActionResult> CountTouchAndCheck(CancellationToken cancellationToken) =>
+        RenderLessonAsync(CountTouchLessonCode, "CountTouchAndCheck", cancellationToken);
+
+    private async Task<IActionResult> RenderLessonAsync(
+        string lessonCode,
+        string viewName,
         CancellationToken cancellationToken)
     {
         Response.Headers["X-Robots-Tag"] = "noindex, nofollow, noarchive";
@@ -44,7 +55,7 @@ public sealed class TemporaryPracticePreviewController : Controller
         var lesson = lessons.SingleOrDefault(x =>
             string.Equals(
                 x.Code,
-                LessonCode,
+                lessonCode,
                 StringComparison.Ordinal));
         if (lesson is null)
             return NotFound();
@@ -89,7 +100,7 @@ public sealed class TemporaryPracticePreviewController : Controller
             lesson.IsSupporting ?? lesson.OfficialOutcomeCount == 0,
             outcomes);
 
-        return View("JoinGroupsToAdd", model);
+        return View(viewName, model);
     }
 
     private static string NormalizeCulture(string cultureCode)
