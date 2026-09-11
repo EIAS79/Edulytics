@@ -14,25 +14,25 @@
         roundCount: 10,
         countPool: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         variants: ['sunbug', 'leafbug', 'berrybug'],
+        conceptModes: ['number-change', 'what-changed', 'what-stayed'],
         guide: '/images/game/v9/eddy-guide.webp'
     };
 
     var copy = {
-        intro: 'Touch each glowbug once and count as you go. Sometimes the breeze will move the same glowbugs, and you will decide whether the total changed.',
+        intro: 'The Counting Grove is waking up. Count carefully, then watch what happens when the glowbugs move.',
         start: 'Start counting',
         firstPrompt: 'Touch every glowbug once. Count as you go.',
-        firstCheck: 'How many glowbugs did you count? Choose the number stone.',
-        zeroPrompt: 'The clearing is empty. How many glowbugs are here?',
-        zeroCheck: 'Choose the number that means there are no glowbugs.',
-        breeze: 'Whoosh! The same glowbugs moved to new places. None flew away.',
-        changeCheck: 'Did the number of glowbugs change?',
-        changeHint: 'Only their places changed. The same glowbugs are still here.',
+        firstCheck: 'How many glowbugs did you count?',
+        zeroPrompt: 'How many glowbugs are in the empty clearing?',
+        countStory: 'The glowbugs are waking up. Give each one a count number.',
+        zeroStory: 'This clearing looks quiet. Take a careful look.',
+        breeze: 'Whoosh! The glowbugs moved to new places.',
+        conceptStory: 'The breeze has settled. Look closely at the group.',
         duplicate: 'That glowbug is already counted. Find one without a number.',
         wrongCount: 'Not quite. Look at the numbered glowbugs and count them again.',
-        wrongChange: 'Look carefully. No glowbug arrived or flew away. Only their places changed.',
-        hint: 'Try one glowbug at a time. Each glowbug should get exactly one number.',
+        countHint: 'Try one glowbug at a time. Each glowbug should get exactly one number.',
         completeTitle: 'Counting Grove restored!',
-        completeBody: 'You counted carefully, used zero, and checked that changing the arrangement does not change the total.'
+        completeBody: 'You counted carefully, used zero, and discovered what changes and what stays the same when objects move.'
     };
 
     function shuffle(values) {
@@ -52,12 +52,27 @@
     }
 
     function makeRounds() {
-        var values = shuffle(config.countPool).slice(0, config.roundCount);
+        var nonZero = shuffle(config.countPool.filter(function (value) { return value !== 0; }))
+            .slice(0, config.roundCount - 1);
+        var values = shuffle([0].concat(nonZero));
         var variantOffset = Math.floor(Math.random() * config.variants.length);
+        var conceptOrder = shuffle(config.conceptModes);
+        var conceptIndex = 0;
+
         return values.map(function (value, index) {
+            var conceptMode = 'zero';
+            if (value !== 0) {
+                if (conceptIndex > 0 && conceptIndex % conceptOrder.length === 0) {
+                    conceptOrder = shuffle(config.conceptModes);
+                }
+                conceptMode = conceptOrder[conceptIndex % conceptOrder.length];
+                conceptIndex += 1;
+            }
+
             return {
                 count: value,
-                variant: config.variants[(index + variantOffset) % config.variants.length]
+                variant: config.variants[(index + variantOffset) % config.variants.length],
+                conceptMode: conceptMode
             };
         });
     }
@@ -172,8 +187,11 @@
         feedback.hidden = false;
     }
 
-    function speak(message) {
+    function setEddy(message) {
         eddyText.textContent = message;
+    }
+
+    function narrate(message) {
         if (!state.soundOn || !window.speechSynthesis || !window.SpeechSynthesisUtterance) return;
         try {
             window.speechSynthesis.cancel();
@@ -185,6 +203,11 @@
         } catch (ignore) {
             // Voice is enhancement only.
         }
+    }
+
+    function present(question, eddyMessage) {
+        setEddy(eddyMessage);
+        narrate(question);
     }
 
     function chime(frequency, duration, delay) {
@@ -219,19 +242,62 @@
         progressBar.setAttribute('aria-valuenow', String(progress));
     }
 
+    function conceptDefinition(round) {
+        var context = 'You counted ' + String(round.count) + ' glowbugs before. A breeze moved them to new places.';
+
+        if (round.conceptMode === 'what-changed') {
+            return {
+                question: 'What changed after the breeze?',
+                context: context,
+                choices: ['Places', 'Number'],
+                correct: 'Places',
+                hint: 'Compare where the glowbugs are with how many glowbugs there are.',
+                success: 'Correct. Their places changed, but there are still ' + String(round.count) + ' glowbugs.'
+            };
+        }
+
+        if (round.conceptMode === 'what-stayed') {
+            return {
+                question: 'What stayed the same?',
+                context: context,
+                choices: ['Number', 'Places'],
+                correct: 'Number',
+                hint: 'Think about the total you counted before the breeze.',
+                success: 'Correct. The number stayed ' + String(round.count) + ' even though the glowbugs moved.'
+            };
+        }
+
+        return {
+            question: 'Did the number of glowbugs change?',
+            context: context,
+            choices: ['Yes', 'No'],
+            correct: 'No',
+            hint: 'Did any glowbug leave or join the group?',
+            success: 'Correct. There are still ' + String(round.count) + ' glowbugs. Moving them did not change the total.'
+        };
+    }
+
     function scheduleHint() {
         clearHint();
         state.hintTimer = window.setTimeout(function () {
-            if (state.phase !== 'count') return;
-            var objects = field.querySelectorAll('.cg-glowbug');
-            var remaining = [];
-            var i;
-            for (i = 0; i < objects.length; i += 1) {
-                if (!state.counted[objects[i].getAttribute('data-cg-object')]) remaining.push(objects[i]);
+            if (state.phase === 'count') {
+                var objects = field.querySelectorAll('.cg-glowbug');
+                var remaining = [];
+                var i;
+                for (i = 0; i < objects.length; i += 1) {
+                    if (!state.counted[objects[i].getAttribute('data-cg-object')]) remaining.push(objects[i]);
+                }
+                if (remaining.length) {
+                    remaining[Math.floor(Math.random() * remaining.length)].classList.add('is-hint');
+                    setFeedback(copy.countHint, 'info');
+                }
+                return;
             }
-            if (remaining.length) {
-                remaining[Math.floor(Math.random() * remaining.length)].classList.add('is-hint');
-                setFeedback(copy.hint, 'info');
+
+            if (state.phase === 'concept-confirm') {
+                var definition = conceptDefinition(currentRound());
+                setFeedback(definition.hint, 'info');
+                narrate(definition.hint);
             }
         }, 9000);
     }
@@ -259,7 +325,7 @@
         state.phase = 'count-confirm';
         state.locked = false;
         promptNode.textContent = answer === 0 ? copy.zeroPrompt : copy.firstCheck;
-        subpromptNode.textContent = answer === 0 ? copy.zeroCheck : 'The numbered glowbugs show the order you counted.';
+        subpromptNode.textContent = answer === 0 ? 'Look carefully at the clearing.' : 'Choose the matching number stone.';
         numberDock.innerHTML = '';
         answerChoices(answer).forEach(function (value) {
             var button = document.createElement('button');
@@ -273,32 +339,35 @@
             numberDock.appendChild(button);
         });
         numberDock.hidden = false;
-        setFeedback(answer === 0 ? 'Choose zero when there are no objects to count.' : 'Choose the total below.', 'info');
+        feedback.hidden = true;
+        present(promptNode.textContent, answer === 0 ? copy.zeroStory : copy.countStory);
     }
 
-    function showChangeCheck() {
-        state.phase = 'change-confirm';
+    function showConceptCheck() {
+        var definition = conceptDefinition(currentRound());
+        state.phase = 'concept-confirm';
         state.locked = false;
         counter.hidden = true;
-        promptNode.textContent = copy.changeCheck;
-        subpromptNode.textContent = 'You counted ' + String(currentRound().count) + ' before. ' + copy.changeHint;
+        promptNode.textContent = definition.question;
+        subpromptNode.textContent = definition.context;
         numberDock.innerHTML = '';
+        feedback.hidden = true;
 
-        shuffle(['Yes', 'No']).forEach(function (label) {
+        shuffle(definition.choices).forEach(function (label) {
             var button = document.createElement('button');
             button.type = 'button';
             button.className = 'cg-number-stone';
             button.textContent = label;
             button.setAttribute('aria-label', 'Choose ' + label);
             button.addEventListener('click', function () {
-                chooseChangeAnswer(label, button);
+                chooseConceptAnswer(label, button);
             });
             numberDock.appendChild(button);
         });
 
         numberDock.hidden = false;
-        setFeedback('Think about what changed: the places, or the number?', 'info');
-        speak(copy.changeCheck + ' ' + copy.changeHint);
+        present(definition.question, copy.conceptStory);
+        scheduleHint();
     }
 
     function touchObject(button) {
@@ -309,6 +378,7 @@
             void button.offsetWidth;
             button.classList.add('is-nudge');
             setFeedback(copy.duplicate, 'gentle');
+            narrate(copy.duplicate);
             return;
         }
 
@@ -383,35 +453,38 @@
         if (currentRound().count === 0) {
             counter.hidden = true;
             promptNode.textContent = copy.zeroPrompt;
-            subpromptNode.textContent = 'Zero means there are no objects to count.';
+            subpromptNode.textContent = 'Look carefully at the clearing.';
             state.locked = true;
+            setEddy(copy.zeroStory);
             window.setTimeout(showNumberStones, 500);
-            speak(copy.zeroPrompt + ' ' + copy.zeroCheck);
             return;
         }
 
         counter.hidden = false;
         countValue.textContent = '0';
         promptNode.textContent = copy.firstPrompt;
-        subpromptNode.textContent = 'Each glowbug should receive exactly one count number.';
+        subpromptNode.textContent = 'Tap each glowbug once.';
+        setEddy(copy.countStory);
+        narrate(copy.firstPrompt);
         scheduleHint();
-        speak(copy.firstPrompt);
     }
 
     function beginBreeze() {
         state.phase = 'breeze';
+        clearHint();
         promptNode.textContent = copy.breeze;
-        subpromptNode.textContent = 'Watch the same glowbugs change places.';
+        subpromptNode.textContent = 'Watch where the glowbugs land.';
         numberDock.hidden = true;
         counter.hidden = true;
         feedback.hidden = true;
         game.classList.add('is-breezy');
         renderObjects(currentRound().count, currentRound().variant, true);
-        speak(copy.breeze);
+        setEddy('Hold on — a breeze is sweeping through the grove!');
+        narrate(copy.breeze);
 
         window.setTimeout(function () {
             game.classList.remove('is-breezy');
-            showChangeCheck();
+            showConceptCheck();
         }, 950);
     }
 
@@ -422,7 +495,8 @@
         complete.hidden = false;
         progressNode.style.width = '100%';
         progressBar.setAttribute('aria-valuenow', '100');
-        speak(copy.completeBody);
+        setEddy('You restored the Counting Grove. Brilliant work!');
+        narrate(copy.completeBody);
     }
 
     function finishRound() {
@@ -443,7 +517,7 @@
             void button.offsetWidth;
             button.classList.add('is-wrong');
             setFeedback(copy.wrongCount, 'try');
-            speak(copy.wrongCount);
+            narrate(copy.wrongCount);
             return;
         }
 
@@ -455,42 +529,48 @@
         if (answer === 0) {
             state.score += 250;
             syncHud();
-            var zeroMessage = 'Exactly. Zero means there are no glowbugs in the clearing.';
+            var zeroMessage = 'Correct. Zero means there are no glowbugs in the clearing.';
             setFeedback(zeroMessage, 'success');
-            speak(zeroMessage);
+            setEddy('Exactly — an empty group has a total of zero.');
+            narrate(zeroMessage);
             window.setTimeout(finishRound, 1250);
             return;
         }
 
         state.score += 100;
         syncHud();
-        var firstMessage = 'Yes — ' + String(answer) + '. Now watch what happens when they move.';
+        var firstMessage = 'Correct — you counted ' + String(answer) + ' glowbugs.';
         setFeedback(firstMessage, 'success');
-        speak(firstMessage);
-        window.setTimeout(beginBreeze, 1150);
+        setEddy('Great counting. Now watch what the breeze does.');
+        narrate(firstMessage);
+        window.setTimeout(beginBreeze, 1050);
     }
 
-    function chooseChangeAnswer(label, button) {
-        if (state.locked || state.phase !== 'change-confirm') return;
-        if (label !== 'No') {
+    function chooseConceptAnswer(label, button) {
+        if (state.locked || state.phase !== 'concept-confirm') return;
+        var definition = conceptDefinition(currentRound());
+
+        if (label !== definition.correct) {
             button.classList.remove('is-wrong');
             void button.offsetWidth;
             button.classList.add('is-wrong');
-            setFeedback(copy.wrongChange, 'try');
-            speak(copy.wrongChange);
+            setFeedback(definition.hint, 'try');
+            narrate(definition.hint);
+            clearHint();
+            scheduleHint();
             return;
         }
 
         state.locked = true;
+        clearHint();
         button.classList.add('is-correct');
         state.score += 150;
         syncHud();
         chime(660, 0.11, 0);
         chime(880, 0.14, 0.09);
-        var answer = currentRound().count;
-        var message = 'Correct. There are still ' + String(answer) + '. Moving the glowbugs changed their places, not how many there are.';
-        setFeedback(message, 'success');
-        speak(message);
+        setFeedback(definition.success, 'success');
+        setEddy('Excellent thinking!');
+        narrate(definition.success);
         window.setTimeout(finishRound, 1350);
     }
 
@@ -549,7 +629,7 @@
     syncHud();
 
     window.__countTouchPreviewRuntime = {
-        version: '1.2.0',
+        version: '1.3.0',
         destroy: function () {
             clearHint();
             document.removeEventListener('fullscreenchange', syncFullscreenLabel);
