@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using Edulytics.Services.Practice;
+using Edulytics.Web.GameRouting;
 using Edulytics.Web.Resilience;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.Timeouts;
@@ -51,6 +52,57 @@ public sealed class StudentPracticeController(
             return RedirectToAction(nameof(Index), new { curriculumAdoptionId });
         }
         return RedirectToAction(nameof(Attempt), new { id = result.AttemptId });
+    }
+
+    [HttpPost("lesson-game/start"), ValidateAntiForgeryToken]
+    public async Task<IActionResult> StartLessonGame(
+        Guid curriculumAdoptionId,
+        Guid lessonId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+        var workspace = await privatePractice.GetWorkspaceAsync(actorId, curriculumAdoptionId, cancellationToken);
+        if (workspace.SelectedCurriculumAdoptionId != curriculumAdoptionId)
+            return NotFound();
+
+        var lesson = workspace.Lessons.SingleOrDefault(x => x.LessonId == lessonId);
+        if (lesson is null)
+            return NotFound();
+
+        var route = GameLessonRouter.Resolve(lesson.LessonCode, lesson.UnitTitle, lesson.LessonTitle);
+        if (!route.IsPlayable || route.RendererKey is null)
+            return NotFound();
+
+        return RedirectToAction(nameof(Game), new { curriculumAdoptionId, lessonId });
+    }
+
+    [HttpGet("game")]
+    [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+    public async Task<IActionResult> Game(
+        Guid curriculumAdoptionId,
+        Guid lessonId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+        var workspace = await privatePractice.GetWorkspaceAsync(actorId, curriculumAdoptionId, cancellationToken);
+        if (workspace.SelectedCurriculumAdoptionId != curriculumAdoptionId)
+            return NotFound();
+
+        var lesson = workspace.Lessons.SingleOrDefault(x => x.LessonId == lessonId);
+        if (lesson is null)
+            return NotFound();
+
+        var route = GameLessonRouter.Resolve(lesson.LessonCode, lesson.UnitTitle, lesson.LessonTitle);
+        if (!route.IsPlayable || route.RendererKey is null)
+            return NotFound();
+
+        Response.Headers["X-Robots-Tag"] = "noindex, nofollow, noarchive";
+        return View(new StudentGameLaunchViewModel(
+            lesson.LessonId,
+            lesson.LessonCode,
+            lesson.LessonTitle,
+            lesson.UnitTitle,
+            route));
     }
 
     [HttpPost("lesson-pilot/start"), ValidateAntiForgeryToken]
