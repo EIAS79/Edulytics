@@ -1,5 +1,5 @@
 {
-  "version": "1.0-draft",
+  "version": "1.1-draft",
   "scope": {
     "frameworks": [
       "US-CCSS-MATH",
@@ -11,6 +11,16 @@
     "lessonCount": 1624
   },
   "mappingStatuses": ["MAPPED", "NEEDS_REVIEW", "UNSUPPORTED"],
+  "profileTypes": [
+    {
+      "id": "SINGLE_MECHANIC",
+      "description": "One primary mechanic, optionally with closely related secondary mechanics, drives the lesson session."
+    },
+    {
+      "id": "COMPOSITE_SESSION",
+      "description": "A curriculum lesson intentionally contains multiple centers/tasks or crosses interaction domains. The session orchestrates two or more GameProfiles instead of forcing one mechanic."
+    }
+  ],
   "workspaces": [
     {
       "id": "OBJECT_COUNTING",
@@ -60,10 +70,18 @@
     {
       "id": "REASONING_MODELING",
       "name": "Reasoning & Modelling Studio",
-      "mechanics": ["MODEL_SELECT", "EVIDENCE_ORDER", "CONSTRAINT_PUZZLE", "MULTI_STEP_SCENARIO", "ERROR_ANALYSIS"],
+      "mechanics": ["MODEL_SELECT", "EVIDENCE_ORDER", "CONSTRAINT_PUZZLE", "MULTI_STEP_SCENARIO", "ERROR_ANALYSIS", "DESIGN_CONSTRAINT_TASK"],
       "fallback": false
     }
   ],
+  "orchestration": {
+    "compositeSession": {
+      "workspace": null,
+      "mechanics": "two-or-more child GameProfiles",
+      "selectionModes": ["SEQUENCE", "STUDENT_CHOICE", "ADAPTIVE_CHOICE"],
+      "example": "US Grade 1/2 Center Day lessons"
+    }
+  },
   "globalRules": {
     "fallbackQuizForbidden": true,
     "curriculumControlsLanguage": true,
@@ -76,12 +94,14 @@
   "knownMappings": [
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S1:L01",
+      "profileType": "SINGLE_MECHANIC",
       "workspace": "OBJECT_COUNTING",
       "primaryMechanic": "COUNT_TOUCH",
       "secondaryMechanics": ["REARRANGE_RECOUNT"]
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S1:L10",
+      "profileType": "SINGLE_MECHANIC",
       "workspace": "OPERATIONS",
       "primaryMechanic": "JOIN_COMBINE",
       "implementation": "Lantern Isles V9"
