@@ -13,7 +13,11 @@ public sealed class OfficialAssessmentScoringTests
     [InlineData("50%", "0.5")]
     [InlineData("x = 2", "2")]
     [InlineData("-1 1/2", "-1.5")]
+    [InlineData("-0 1/2", "-0.5")]
     [InlineData("(3/4)", "0.75")]
+    [InlineData("0,125", "1/8")]
+    [InlineData("1,000", "1000")]
+    [InlineData("1.000", "1000")]
     public void EquivalentScalarRepresentationsAreAccepted(string actual, string expected)
     {
         Assert.True(MathematicsAnswerEquivalence.AreEquivalent(actual, expected));
@@ -24,6 +28,8 @@ public sealed class OfficialAssessmentScoringTests
     [InlineData("2+2", "4")]
     [InlineData("1/0", "0")]
     [InlineData("x = 3", "2")]
+    [InlineData("1,000", "1")]
+    [InlineData("1.000", "1")]
     public void NonEquivalentOrUnsupportedExpressionsAreRejected(string actual, string expected)
     {
         Assert.False(MathematicsAnswerEquivalence.AreEquivalent(actual, expected));
