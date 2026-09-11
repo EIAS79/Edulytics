@@ -46,10 +46,13 @@ public sealed class PublicWebsiteSiteWideContractTests
             "src/Edulytics.Web/Views/Shared/_PublicLayout.cshtml"));
 
         var publicCss = layout.IndexOf(
-            "public-site-v31.css",
+            "public-site-v32.css",
+            StringComparison.Ordinal);
+        var publicRuntime = layout.IndexOf(
+            "public-site-v32.js",
             StringComparison.Ordinal);
         var contentRuntime = layout.IndexOf(
-            "public-content-v31.js",
+            "public-content-v32.js",
             StringComparison.Ordinal);
         var globalUi = layout.IndexOf(
             "public-site-global-ui-v30.js",
@@ -59,7 +62,9 @@ public sealed class PublicWebsiteSiteWideContractTests
             StringComparison.Ordinal);
 
         Assert.True(publicCss >= 0);
+        Assert.True(publicRuntime >= 0);
         Assert.True(contentRuntime >= 0);
+        Assert.True(globalUi > publicRuntime);
         Assert.True(globalUi > contentRuntime);
         Assert.True(languageCookie > globalUi);
         Assert.Contains(
@@ -77,6 +82,53 @@ public sealed class PublicWebsiteSiteWideContractTests
         Assert.Contains(
             "document.documentElement.dir = 'rtl'",
             layout,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void PublicHomeVisualContract_RestoresMascotCtaAndMegaMenuMarkers()
+    {
+        var root = FindRoot();
+        var css = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/css/public-home-visual-contract-v32.css"));
+        var bundleController = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Controllers/PublicAssetBundleController.cs"));
+
+        Assert.Contains(
+            "public-home-visual-contract-v32.css",
+            bundleController,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "[HttpGet(\"/css/public-site-v32.css\")]",
+            bundleController,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            ".ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual",
+            css,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "background: transparent !important;",
+            css,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            ".ed-home .ed-home-header .ed-home-cta",
+            css,
+            StringComparison.Ordinal);
+        Assert.Contains("#2f66e8", css, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("#ff7a1a", css, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains(
+            ".ed-home .ed-home-v14-menu-icon",
+            css,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            ".ed-home .ed-home-v14-menu-dot",
+            css,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "visibility: visible !important;",
+            css,
             StringComparison.Ordinal);
     }
 

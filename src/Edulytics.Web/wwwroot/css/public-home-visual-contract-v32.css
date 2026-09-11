@@ -1,0 +1,87 @@
+/* Public home v32 — restore the approved visual contract after asset bundling.
+   Keep these rules last in the public CSS bundle so cache/order changes cannot
+   regress the mascot, primary demo CTA, or mega-menu markers. */
+
+/* The mascot floats directly on the hero background; it must not sit in a white card. */
+.ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.ed-home .ed-home-v16-mascot-canvas,
+.ed-home .ed-home-v17-mascot-image {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+/* Approved demo CTA: blue at rest, orange on hover/focus. */
+.ed-home .ed-home-header .ed-home-cta {
+  border: 1px solid #2f66e8 !important;
+  background: linear-gradient(135deg, #2f66e8, #5a43ee) !important;
+  color: #fff !important;
+  box-shadow: 0 10px 24px rgba(47, 102, 232, .22) !important;
+}
+
+.ed-home .ed-home-header .ed-home-cta:hover,
+.ed-home .ed-home-header .ed-home-cta:focus-visible {
+  border-color: #ff7a1a !important;
+  background: #ff7a1a !important;
+  color: #fff !important;
+  box-shadow: 0 13px 28px rgba(255, 122, 26, .22) !important;
+}
+
+/* Preserve the visual markers that separate and identify mega-menu links. */
+.ed-home .ed-home-v14-menu-link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 11px !important;
+}
+
+.ed-home .ed-home-v14-menu-icon {
+  display: grid !important;
+  place-items: center !important;
+  flex: 0 0 34px !important;
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 50% !important;
+  color: #fff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.ed-home .ed-home-v14-menu-dot {
+  display: inline-block !important;
+  flex: 0 0 9px !important;
+  width: 9px !important;
+  height: 9px !important;
+  margin-inline: 5px 9px !important;
+  border-radius: 50% !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.ed-home .ed-home-v14-tone-blue .ed-home-v14-menu-icon,
+.ed-home .ed-home-v14-tone-blue .ed-home-v14-menu-dot {
+  background: #3f8ee8 !important;
+}
+
+.ed-home .ed-home-v14-tone-teal .ed-home-v14-menu-icon,
+.ed-home .ed-home-v14-tone-teal .ed-home-v14-menu-dot {
+  background: #27b89a !important;
+}
+
+.ed-home .ed-home-v14-tone-purple .ed-home-v14-menu-icon,
+.ed-home .ed-home-v14-tone-purple .ed-home-v14-menu-dot {
+  background: #8b5cf6 !important;
+}
+
+.ed-home .ed-home-v14-tone-coral .ed-home-v14-menu-icon,
+.ed-home .ed-home-v14-tone-coral .ed-home-v14-menu-dot {
+  background: #ef6f4d !important;
+}
