@@ -280,6 +280,9 @@ public sealed class AccountController : Controller
     {
         await _signInManager.SignOutAsync();
 
+        Response.Cookies.Delete(
+            CultureCookie.Name);
+
         return RedirectToAction(
             "Index",
             "Home");
