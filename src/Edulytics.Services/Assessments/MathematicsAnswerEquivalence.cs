@@ -75,10 +75,10 @@ public static partial class MathematicsAnswerEquivalence
             BigInteger.TryParse(mixed.Groups[3].Value, out var denominator) &&
             denominator != BigInteger.Zero)
         {
-            var sign = whole.Sign < 0 ? -1 : 1;
+            var mixedSign = mixed.Groups[1].Value.StartsWith('-', StringComparison.Ordinal) ? -1 : 1;
             var absoluteWhole = BigInteger.Abs(whole);
             var combined = absoluteWhole * denominator + numerator;
-            rational = Rational.Create(sign * combined, denominator);
+            rational = Rational.Create(mixedSign * combined, denominator);
             return true;
         }
 
@@ -95,10 +95,10 @@ public static partial class MathematicsAnswerEquivalence
         if (!DecimalPattern().IsMatch(value))
             return false;
 
-        var sign = 1;
+        var decimalSign = 1;
         if (value[0] is '+' or '-')
         {
-            if (value[0] == '-') sign = -1;
+            if (value[0] == '-') decimalSign = -1;
             value = value[1..];
         }
 
@@ -112,7 +112,7 @@ public static partial class MathematicsAnswerEquivalence
             return false;
 
         var decimalDenominator = BigInteger.Pow(10, scale);
-        rational = Rational.Create(sign * decimalNumerator, decimalDenominator);
+        rational = Rational.Create(decimalSign * decimalNumerator, decimalDenominator);
         return true;
     }
 
