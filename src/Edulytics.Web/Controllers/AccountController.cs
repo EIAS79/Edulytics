@@ -2,6 +2,7 @@ using Edulytics.Core.Constants;
 using System.Globalization;
 using Edulytics.Data.Identity;
 using Edulytics.Services.Users;
+using Edulytics.Web.Localization;
 using Edulytics.Web.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -13,15 +14,6 @@ namespace Edulytics.Web.Controllers;
 
 public sealed class AccountController : Controller
 {
-    private const string CultureCookieName =
-        "Edulytics.Culture";
-
-    private static readonly HashSet<string>
-        SupportedCultures =
-        new(
-            ["en", "pl"],
-            StringComparer.Ordinal);
-
     private static readonly HashSet<string>
         PublicAccountTypes =
         new(
@@ -62,10 +54,7 @@ public sealed class AccountController : Controller
     public IActionResult Login(
         string? returnUrl = null)
     {
-        var culture =
-            Request.Cookies[CultureCookieName];
-
-        if (string.IsNullOrEmpty(culture))
+        if (!CultureCookie.TryRead(Request, out _))
         {
             return RedirectToAction(
                 "Index",
@@ -87,10 +76,7 @@ public sealed class AccountController : Controller
         LoginViewModel model,
         string? returnUrl = null)
     {
-        var culture =
-            Request.Cookies[CultureCookieName];
-
-        if (string.IsNullOrEmpty(culture))
+        if (!CultureCookie.TryRead(Request, out _))
         {
             return RedirectToAction(
                 "Index",
@@ -295,7 +281,7 @@ public sealed class AccountController : Controller
         await _signInManager.SignOutAsync();
 
         Response.Cookies.Delete(
-            CultureCookieName);
+            CultureCookie.Name);
 
         return RedirectToAction(
             "Index",
@@ -373,19 +359,12 @@ public sealed class AccountController : Controller
             culture?.Trim().ToLowerInvariant()
             ?? string.Empty;
 
-        if (!SupportedCultures.Contains(culture))
+        if (!CultureCookie.IsSupported(culture))
         {
-            var cookieCulture =
-                Request.Cookies[
-                    CultureCookieName]
-                    ?.Trim()
-                    .ToLowerInvariant();
-
             culture =
-                !string.IsNullOrWhiteSpace(
-                    cookieCulture) &&
-                SupportedCultures.Contains(
-                    cookieCulture)
+                CultureCookie.TryRead(
+                    Request,
+                    out var cookieCulture)
                     ? cookieCulture
                     : "en";
         }
@@ -400,15 +379,16 @@ public sealed class AccountController : Controller
             cultureInfo;
 
         Response.Cookies.Append(
-            CultureCookieName,
-            culture,
+            CultureCookie.Name,
+            CultureCookie.CreateValue(culture),
             new CookieOptions
             {
+                Path = "/",
                 Expires =
                     DateTimeOffset.UtcNow
-                        .AddDays(365),
+                        .AddYears(1),
                 IsEssential = true,
-                HttpOnly = false,
+                HttpOnly = true,
                 SameSite =
                     SameSiteMode.Strict,
                 Secure =
