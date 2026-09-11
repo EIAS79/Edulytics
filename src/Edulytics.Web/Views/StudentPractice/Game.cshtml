@@ -3,6 +3,19 @@
     Layout = null;
     var renderer = Model.Route.RendererKey;
     var isCountTouch = string.Equals(renderer, "count-touch", StringComparison.Ordinal);
+    var isUniversalWorkspace = string.Equals(renderer, Edulytics.Web.GameRouting.GameLessonRouter.UniversalRendererKey, StringComparison.Ordinal);
+    var backLabel = Model.Route.Locale switch
+    {
+        "pl" => "← Powrót do lekcji",
+        "ar" => "العودة إلى الدرس →",
+        _ => "← Back to lesson"
+    };
+    var practiceLabel = Model.Route.Locale switch
+    {
+        "pl" => "Ćwiczenie Edulytics",
+        "ar" => "تدريب Edulytics",
+        _ => "Edulytics Practice"
+    };
 }
 <!DOCTYPE html>
 <html lang="@Model.Route.Locale" dir="@(Model.Route.Locale == "ar" ? "rtl" : "ltr")">
@@ -20,13 +33,17 @@
     else
     {
         <link rel="stylesheet" href="~/css/game-workspace-v1.css" asp-append-version="true" />
+        @if (isUniversalWorkspace)
+        {
+            <link rel="stylesheet" href="~/css/curriculum-workspace-runtime.css" asp-append-version="true" />
+        }
     }
 </head>
 <body class="@(isCountTouch ? "cg-preview-page" : "gw-page")">
     <main class="@(isCountTouch ? "cg-preview-wrap" : "gw-wrap")">
-        <a class="gw-back" asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+        <a class="gw-back" asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">@backLabel</a>
         <header class="@(isCountTouch ? "cg-preview-head" : "gw-head")">
-            <div><p>Edulytics Practice</p><h1>@Model.Title</h1><p>@Model.UnitTitle</p></div>
+            <div><p>@practiceLabel</p><h1>@Model.Title</h1><p>@Model.UnitTitle</p></div>
         </header>
         <section aria-label="Practice game">
             @if (renderer == "count-touch")
@@ -40,6 +57,16 @@
             else if (renderer == "fraction-forge")
             {
                 <div data-fraction-forge-game data-lesson-code="@Model.LessonCode" data-lesson-language="@Model.Route.Locale"></div>
+            }
+            else if (isUniversalWorkspace)
+            {
+                <div data-curriculum-workspace-game
+                     data-lesson-code="@Model.LessonCode"
+                     data-lesson-language="@Model.Route.Locale"
+                     data-lesson-title="@Model.Title"
+                     data-unit-title="@Model.UnitTitle"
+                     data-workspace="@Model.Route.Workspace"
+                     data-mechanic="@Model.Route.Mechanic"></div>
             }
             else
             {
@@ -59,6 +86,10 @@
     else if (renderer == "fraction-forge")
     {
         <script src="~/js/fraction-forge-preview.js" asp-append-version="true"></script>
+    }
+    else if (isUniversalWorkspace)
+    {
+        <script src="~/js/curriculum-workspace-runtime.js" asp-append-version="true"></script>
     }
 </body>
 </html>
