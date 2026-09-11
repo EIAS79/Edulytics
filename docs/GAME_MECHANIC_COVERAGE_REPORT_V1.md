@@ -1,10 +1,10 @@
 # Edulytics Game Mechanic Coverage Report v1
 
-Status: architecture audit complete; per-lesson runtime manifest not yet materialized.
+Status: workspace architecture audit complete; per-lesson mechanic manifest remains a separate implementation artifact.
 
 ## Scope
 
-The audit covers the four mathematics frameworks already present in Edulytics for the requested primary grades/stages 1–6.
+The audit covers the four mathematics frameworks already present in Edulytics for grades/stages 1–6.
 
 | Framework | Lessons |
 | --- | ---: |
@@ -16,19 +16,19 @@ The audit covers the four mathematics frameworks already present in Edulytics fo
 
 No lesson is excluded from the audit scope.
 
-## What the audit changed
+## Architecture decision
 
-The original assumption of one reusable visual game is rejected. Lantern Isles V9 `Join Groups to Add` is now classified as one mechanic (`OPERATIONS / JOIN_COMBINE`) inside a larger game system.
+Lantern Isles V9 `Join Groups to Add` is one mechanic (`OPERATIONS / JOIN_COMBINE`), not a universal game template.
 
 The required hierarchy is:
 
 `Lesson -> curriculum evidence -> Skill Profile -> GameProfile -> Workspace -> Mechanic -> Interaction Mode -> Scene -> Generated Rounds`
 
-The shared Edulytics shell remains reusable; the mathematical workspace is not fixed.
+The shared Edulytics shell can remain consistent while the mathematical workspace and interaction change with the learning objective.
 
-## Workspace layer
+## Workspace templates
 
-Ten workspace templates are defined in `GAME_WORKSPACE_TAXONOMY_V1.json`:
+Ten reusable workspace templates are defined in `GAME_WORKSPACE_TAXONOMY_V1.json`:
 
 1. Object & Counting World
 2. Number & Place Value Lab
@@ -41,17 +41,18 @@ Ten workspace templates are defined in `GAME_WORKSPACE_TAXONOMY_V1.json`:
 9. Ratio, Proportion & Algebra Lab
 10. Reasoning & Modelling Studio
 
-These are interaction/UI primitives, not ten lesson types. Each contains multiple mechanics and interaction modes.
+These are interaction/UI primitives, not ten lesson types. Each workspace owns multiple mechanics and modes.
 
-## Direct vs deep routing
+## Safe routing result
 
-A first safe pass found:
+The first pass intentionally split the curriculum into:
 
-- **1,252** lessons whose unit structure can establish the workspace directly.
-- **372** lessons that require lesson-level/deeper routing because their unit is mixed or broad.
-- **1,624 / 1,624** lessons remain accounted for.
+- **1,252** lessons whose unit structure safely establishes a workspace.
+- **372** lessons requiring deeper lesson-level routing because the unit is broad, mixed, or the pedagogical title is too generic.
 
-Deep-routing demand by framework:
+All **1,624 / 1,624** lessons remained in the audit.
+
+Deep-routing demand was:
 
 | Framework | Deep-routing lessons |
 | --- | ---: |
@@ -61,21 +62,21 @@ Deep-routing demand by framework:
 | US | 205 |
 | **Total** | **372** |
 
-Deep routing uses lesson title, linked outcomes/standards, source locator and lesson content. It does not use a generic quiz fallback.
+The deeper pass resolved Cambridge and UAE mixed lessons from lesson-level evidence. The US 205 mixed-unit lessons are deterministically routed by lesson title, standard evidence and exact overrides for misleading surface titles; the verification query returns **0 `NEEDS_REVIEW`** for that mixed set. Thirteen of those lessons are intentionally `COMPOSITE_SESSION` rather than one-mechanic lessons.
 
 ## Composite sessions
 
-The audit found that `one lesson = one mechanic` is also not always true.
+`One lesson = one mechanic` is not universally true.
 
-For example, US Grade 1/2 `Center Day` lessons intentionally offer several previously learned activities. At least 13 Center Day lessons occur inside the currently identified US mixed-unit set. These are routed as `COMPOSITE_SESSION`, which orchestrates multiple child GameProfiles rather than forcing one mechanic.
+US Grade 1/2 `Center Day` lessons intentionally combine previously learned activities. In the audited US mixed-unit set, **13** such lessons are represented as `COMPOSITE_SESSION` and orchestrate multiple child GameProfiles instead of forcing one mechanic.
 
-Composite sessions can use `SEQUENCE`, `STUDENT_CHOICE` or `ADAPTIVE_CHOICE` orchestration.
+Supported orchestration modes are `SEQUENCE`, `STUDENT_CHOICE` and `ADAPTIVE_CHOICE`.
 
 ## Polish curriculum source resolution
 
-All 372 Polish lesson titles in the current pedagogical dataset are generic (`... — Lesson NN`), so lesson title text alone is not a safe mechanic selector.
+All **372** Polish pedagogical lesson titles in the current dataset are generic (`... — Lesson NN`), so titles cannot safely determine a specific mechanic.
 
-The database does, however, preserve an official ELI source URL and a `SourceLocator` containing the curriculum strand plus its numbered requirement. The audit therefore maps Polish lessons from the official requirement key instead of the generated title.
+The database preserves the official Polish ELI source and a `SourceLocator` containing the curriculum strand and numbered requirement. The Polish mechanic map therefore routes from that exact source key instead of the generated lesson title.
 
 Verification result:
 
@@ -84,52 +85,56 @@ Verification result:
 - Source keys unmatched: **0**
 - Distinct requirement keys: **124**
 
-The mapping is recorded in `POLISH_PRIMARY_GAME_MECHANIC_SOURCE_MAP_V1.json`.
+The source-key mapping is in `POLISH_PRIMARY_GAME_MECHANIC_SOURCE_MAP_V1.json`; reproducible verification is in `scripts/polish-game-mechanic-source-audit.sql`.
 
-Examples of the resulting distinction include separate mechanics for number lines, written algorithms, divisibility/factors, fraction equivalence, angle measurement/drawing, triangle construction, perimeter, area, solid nets, time/calendar calculations, unit conversion, data interpretation and multi-step word problems.
+This resolves requirements into distinct interactions such as number lines, place value, operations, divisibility/factors, fraction models, angle measurement/drawing, triangle construction, perimeter, area, solid nets, time/calendar, money, measurement conversion, statistics and multi-step reasoning.
 
-## Mechanic taxonomy expansion
+## US mixed-unit verification
 
-The curriculum audit expanded the original mechanic list. Important additions demanded by the real curriculum include:
+The reproducible US mixed-unit audit is in `scripts/us-mixed-game-workspace-routing-audit.sql`.
 
-- `NUMERAL_SYSTEM_CONVERT`
-- `OPERATION_PROPERTY`
-- `FACTOR_MULTIPLE_ARRAY`
-- `PRIME_FACTOR_BUILD`
-- `EXPRESSION_ORDER`
-- `SHARE_REMAINDER`
-- `INTEGER_CONTEXT`
-- `DISTANCE_ON_NUMBER_LINE`
-- `FRACTION_CONVERT`
-- `FRACTION_OPERATIONS`
-- `DECIMAL_OPERATIONS`
-- `LINE_RELATIONS`
-- `SHAPE_NET_BUILD`
-- `CIRCLE_CONSTRUCT`
-- `AREA_CALCULATE`
-- `SURFACE_AREA_BUILD`
-- `TEMPERATURE_SCALE`
-- `SPEED_DISTANCE_TIME`
-- `STRATEGY_GAME`
+Expected current snapshot for the 205 mixed lessons:
 
-This list is curriculum-driven; it is not a claim that every mechanic must be implemented as a separate engine. Related mechanics should share workspace primitives.
+- `COMPOSITE_SESSION`: 13
+- `DATA_STATISTICS`: 19
+- `FRACTION_DECIMAL_PERCENT`: 34
+- `GEOMETRY`: 26
+- `MEASUREMENT`: 14
+- `NUMBER_SYSTEM`: 6
+- `OBJECT_COUNTING`: 2
+- `OPERATIONS`: 53
+- `RATIO_ALGEBRA`: 11
+- `REASONING_MODELING`: 7
+- `TIME_MONEY`: 20
+- `NEEDS_REVIEW`: **0**
+
+Exact overrides are used where a title is misleading. Examples include data lessons with `Shape` in the title, equal-partition lessons linked to geometry standards, and place-value lessons that also carry operations standards.
 
 ## Coverage integrity rules
 
-The router must enforce the following:
+The router must enforce all of the following:
 
-- Never turn `NEEDS_REVIEW` or `UNSUPPORTED` into a multiple-choice fallback.
-- A scene/background is presentation, not a mechanic.
-- The same mathematical skill can reuse a mechanic across curricula while preserving curriculum-specific language, outcome, difficulty and content.
-- Question/round order must not be fixed between attempts.
+- Never convert `NEEDS_REVIEW` or `UNSUPPORTED` into a generic multiple-choice fallback.
+- A scene/background is presentation, not the mechanic.
+- The same mathematical skill can reuse a mechanic across curricula while preserving curriculum-specific language, outcome, content and difficulty.
+- A curriculum lesson may be a `COMPOSITE_SESSION` when the source genuinely contains multiple activities or domains.
+- Round/question order must vary between attempts when valid variants exist.
 - Choice positions must not be predictable.
 - Spatial layouts should vary when mathematically valid.
-- Randomisation must never change the target learning outcome.
+- Randomisation must preserve the target learning outcome.
 - Curriculum language remains automatic; there is no in-game language selector.
+
+## Mechanic taxonomy
+
+The audit expanded the taxonomy from real curriculum demand rather than inventing one template per lesson. The current machine-readable list is in `GAME_WORKSPACE_TAXONOMY_V1.json` and includes, among others:
+
+`COUNT_TOUCH`, `REARRANGE_RECOUNT`, `NUMBER_LINE_SEQUENCE`, `PLACE_VALUE_BUILD`, `JOIN_COMBINE`, `TAKE_AWAY`, `EQUAL_GROUPS_ARRAY`, `SHARE_DIVIDE`, `WRITTEN_ALGORITHM`, `FACTOR_MULTIPLE_ARRAY`, `FRACTION_PARTITION`, `FRACTION_EQUIVALENCE`, `FRACTION_OPERATIONS`, `DECIMAL_OPERATIONS`, `ANGLE_LAB`, `PERIMETER_TRACE`, `AREA_TILE`, `VOLUME_BUILD`, `SHAPE_NET_BUILD`, `RULER_ALIGN`, `UNIT_CONVERSION`, `CLOCK_FACE`, `MONEY_VALUE`, `BAR_CHART_BUILD`, `RATIO_SCALE`, `BALANCE_EQUATION`, `MULTI_STEP_SCENARIO` and `DESIGN_CONSTRAINT_TASK`.
+
+Related mechanics are expected to share workspace primitives; this is not a proposal to create a separate engine for every mechanic.
 
 ## Current implementation state
 
-Implemented game mechanic:
+Already implemented:
 
 - Cambridge Stage 1 `Join Groups to Add` -> `OPERATIONS / JOIN_COMBINE` -> Lantern Isles V9.
 
@@ -137,10 +142,10 @@ Next concept-specific pilot:
 
 - Cambridge Stage 1 `Count, Touch, and Check` -> `OBJECT_COUNTING / COUNT_TOUCH` + `REARRANGE_RECOUNT`.
 
-The next pilot must reuse the shared game shell where appropriate, but must not reuse the yellow/blue Join Groups activity layout as the mathematical interaction.
+The new pilot may reuse the shared shell, Eddy, avatar, story, audio, progress, responsiveness and rewards, but it must not reuse the yellow/blue Join Groups mathematical layout.
 
-## Remaining audit work after v1
+## Metric distinction
 
-This report establishes the global workspace/orchestration architecture and resolves the Polish source-granularity problem. The next audit artifact will materialize the final per-lesson `GameProfile` manifest and mechanic-level coverage totals across all 1,624 lessons.
+`Workspace routing coverage`, `mechanic mapping coverage`, and `implemented game coverage` are separate metrics.
 
-Until that manifest exists, `workspace coverage` and `mechanic implementation coverage` must not be presented as the same metric.
+This v1 audit establishes the workspace/orchestration architecture and reproducible source routing. A generated per-lesson `GameProfile` manifest is the next machine artifact; implementation coverage will increase only as the corresponding reusable mechanics are actually built and tested.
