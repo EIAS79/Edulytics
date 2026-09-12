@@ -1,24 +1,4 @@
-/* Public home v32 — restore the approved visual contract after asset bundling.
-   Keep these rules last in the public CSS bundle so cache/order changes cannot
-   regress the mascot, primary demo CTA, or mega-menu markers. */
-
-/* The mascot floats directly on the hero background; it must not sit in a white card. */
-.ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual {
-  background: transparent !important;
-  border-color: transparent !important;
-  box-shadow: none !important;
-  overflow: visible !important;
-}
-
-.ed-home .ed-home-v16-mascot-canvas,
-.ed-home .ed-home-v17-mascot-image {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  object-fit: contain !important;
-  object-position: center !important;
-}
+/* Public home v32 — restore approved CTA and mega-menu marker contracts after asset bundling. */
 
 /* Approved demo CTA: blue at rest, orange on hover/focus. */
 .ed-home .ed-home-header .ed-home-cta {
