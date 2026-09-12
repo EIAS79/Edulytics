@@ -41,7 +41,10 @@ public sealed class Round6ManualAcceptanceRegressionTests
         Assert.Contains("/builder/approval/drafts", tagHelper, StringComparison.Ordinal);
         Assert.Contains("/builder/approval/question/", tagHelper, StringComparison.Ordinal);
         Assert.Contains("HttpPost(\"drafts\")", controller, StringComparison.Ordinal);
-        Assert.Contains("ReadyForApproval", controller, StringComparison.Ordinal);
+        Assert.Contains("HttpGet(\"drafts\")", controller, StringComparison.Ordinal);
+        Assert.Contains("var current = await service.GetWorkspaceAsync", controller, StringComparison.Ordinal);
+        Assert.Contains("current.Value.Details.Assessment.RowVersion", controller, StringComparison.Ordinal);
+        Assert.DoesNotContain("ReadyForApproval", controller, StringComparison.Ordinal);
         Assert.Contains("remain for teacher review", controller, StringComparison.Ordinal);
     }
 
