@@ -3,18 +3,25 @@ namespace Edulytics.Tests.Acceptance;
 public sealed class AssessmentBulkApprovalAndResultFilteringContractTests
 {
     [Fact]
-    public void LegacyBulkApprovalRoute_UsesCurrentWorkspaceForEveryDraft()
+    public void LegacyBulkApprovalRoute_UsesSingleAtomicBulkService()
     {
         var root = FindRoot();
         var controller = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/Controllers/AssessmentApprovalRecoveryController.cs"));
+        var bulkService = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Services/Assessments/AssessmentBuilderBulkApprovalService.cs"));
 
         Assert.Contains("[HttpGet(\"drafts\")]", controller, StringComparison.Ordinal);
-        Assert.Contains("foreach (var questionId in draftQuestionIds)", controller, StringComparison.Ordinal);
-        Assert.Contains("var current = await service.GetWorkspaceAsync", controller, StringComparison.Ordinal);
-        Assert.Contains("current.Value.Details.Assessment.RowVersion", controller, StringComparison.Ordinal);
+        Assert.Contains("bulkApproval.ApproveAllDraftQuestionsAsync", controller, StringComparison.Ordinal);
+        Assert.DoesNotContain("foreach (var questionId in draftQuestionIds)", controller, StringComparison.Ordinal);
         Assert.DoesNotContain("ReadyForApproval", controller, StringComparison.Ordinal);
+
+        Assert.Contains("draftItems", bulkService, StringComparison.Ordinal);
+        Assert.Contains("repository.SaveAsync", bulkService, StringComparison.Ordinal);
+        Assert.Contains("No partial bulk approval", controller, StringComparison.Ordinal);
+        Assert.Contains("AssessmentPersistenceError.Conflict", bulkService, StringComparison.Ordinal);
     }
 
     [Fact]
