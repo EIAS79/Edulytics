@@ -39,6 +39,9 @@ public sealed class PublicHomepageVisualContractTests
         var cleanupScript = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/wwwroot/js/public-home-cartoon-cleanup.js"));
+        var heroCss = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/css/public-home-commercial-v12.css"));
         var transparencyCss = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/wwwroot/css/public-home-mascot-transparency-v35.css"));
@@ -48,7 +51,7 @@ public sealed class PublicHomepageVisualContractTests
 
         Assert.True(File.Exists(mascotPath));
         Assert.Contains(
-            "/images/public/edulytics-math-mascot.png?v=40",
+            "/images/public/edulytics-math-mascot.png?v=41",
             cleanupScript,
             StringComparison.Ordinal);
         Assert.Contains(
@@ -58,9 +61,14 @@ public sealed class PublicHomepageVisualContractTests
         Assert.DoesNotContain("document.createElement('canvas')", cleanupScript, StringComparison.Ordinal);
         Assert.DoesNotContain("getImageData", cleanupScript, StringComparison.Ordinal);
         Assert.DoesNotContain("putImageData", cleanupScript, StringComparison.Ordinal);
-        Assert.Contains("background-color:transparent!important", transparencyCss, StringComparison.Ordinal);
-        Assert.Contains("box-shadow:none!important", transparencyCss, StringComparison.Ordinal);
-        Assert.Contains("border-radius:0!important", transparencyCss, StringComparison.Ordinal);
+
+        Assert.Contains(".ed-home-v12-visual{", heroCss, StringComparison.Ordinal);
+        Assert.Contains("overflow:visible;", heroCss, StringComparison.Ordinal);
+        Assert.Contains(".ed-home-v12-slide:nth-child(2) .ed-home-v12-visual{", heroCss, StringComparison.Ordinal);
+        Assert.Contains("background:#fff;", heroCss, StringComparison.Ordinal);
+        Assert.DoesNotContain("background-color:transparent!important", transparencyCss, StringComparison.Ordinal);
+        Assert.DoesNotContain("box-shadow:none!important", transparencyCss, StringComparison.Ordinal);
+        Assert.DoesNotContain("border-radius:0!important", transparencyCss, StringComparison.Ordinal);
     }
 
     private static string FindRoot()
