@@ -187,6 +187,86 @@ html[lang="en"] .student-page {
     white-space: nowrap;
 }
 
+.assessment-results-filter-bar {
+    display: grid;
+    grid-template-columns: minmax(14rem, 2fr) minmax(10rem, 1fr) auto;
+    gap: 0.75rem;
+    align-items: end;
+    margin: 0 0 1rem;
+    padding: 0.9rem;
+    border: 1px solid #dbe4ef;
+    border-radius: 0.9rem;
+    background: #fff;
+    box-shadow: 0 0.45rem 1.4rem rgba(35, 52, 87, 0.05);
+}
+
+.assessment-results-search,
+.assessment-results-status-filter,
+.assessment-results-page-size select {
+    min-height: 2.7rem;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid #cbd7e7;
+    border-radius: 0.65rem;
+    background: #fff;
+    color: #17233d;
+}
+
+.assessment-results-search {
+    width: 100%;
+}
+
+.assessment-results-page-size {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #5e6d82;
+    font-size: 0.88rem;
+    font-weight: 750;
+    white-space: nowrap;
+}
+
+.assessment-results-page-size select {
+    min-width: 4.5rem;
+}
+
+.assessment-results-filter-summary {
+    align-self: center;
+    color: #5e6d82;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.assessment-results-pager {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.55rem;
+    grid-column: 2 / -1;
+}
+
+.assessment-results-pager .school-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+.assessment-results-filter-empty {
+    margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+    .assessment-results-filter-bar {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .assessment-results-search,
+    .assessment-results-filter-summary {
+        grid-column: 1 / -1;
+    }
+
+    .assessment-results-pager {
+        grid-column: 1 / -1;
+    }
+}
+
 @media (max-width: 720px) {
     .public-contact-menu {
         top: 0.75rem;
@@ -195,5 +275,25 @@ html[lang="en"] .student-page {
 
     .student-subject-tiles {
         grid-template-columns: 1fr;
+    }
+
+    .assessment-results-filter-bar {
+        grid-template-columns: 1fr;
+    }
+
+    .assessment-results-search,
+    .assessment-results-status-filter,
+    .assessment-results-page-size,
+    .assessment-results-filter-summary,
+    .assessment-results-pager {
+        grid-column: 1;
+    }
+
+    .assessment-results-pager {
+        justify-content: stretch;
+    }
+
+    .assessment-results-pager .school-button {
+        flex: 1 1 0;
     }
 }
