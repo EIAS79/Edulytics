@@ -2,20 +2,12 @@ const express = require('express');
 const puppeteer = require('puppeteer-core');
 
 const PORT = process.env.PORT || 10000;
-const BASE = (process.env.BASE_URL || 'https://staging.edulytiks.com').replace(/\/$/, '');
-const EMAIL = process.env.TEACHER_EMAIL || '';
-const PASSWORD = process.env.TEACHER_PASSWORD || '';
-const ASSESSMENT_ID = 'c66f49e6-a1cf-483d-8443-eeffb45e6618';
-const TITLE = 'PDF Acceptance 20260905-X9Q2';
+const BASE = 'https://edulytiks.com';
 
-let result = { status: 'RUNNING', assessmentId: ASSESSMENT_ID, checks: [] };
+let result = { status: 'RUNNING', base: BASE, checks: [] };
 
 function event(type, data = {}) {
-  console.log('PDF_CLEANUP', JSON.stringify({ at: new Date().toISOString(), type, ...data }));
-}
-function pass(kind, data = {}) {
-  result.checks.push({ kind, status: 'PASS', ...data });
-  event(kind, { status: 'PASS', ...data });
+  console.log('PUBLIC_HOME_DIAG', JSON.stringify({ at: new Date().toISOString(), type, ...data }));
 }
 
 async function launch() {
@@ -24,75 +16,157 @@ async function launch() {
   return puppeteer.launch({
     executablePath: await chromium.executablePath(),
     args: [...chromium.args, '--disable-dev-shm-usage'],
-    headless: 'shell',
-    defaultViewport: { width: 1440, height: 900 }
+    headless: 'shell'
   });
 }
 
-async function login(page) {
+async function setLanguage(page, language) {
   const url = new URL(BASE);
   await page.setCookie({
-    name: 'Edulytics.Culture', value: 'c=en|uic=en', domain: url.hostname,
-    path: '/', secure: true, sameSite: 'Strict'
+    name: 'Edulytics.PublicLanguage',
+    value: language,
+    domain: url.hostname,
+    path: '/',
+    secure: true,
+    sameSite: 'Lax'
   });
-  const response = await page.goto(`${BASE}/account/login`, { waitUntil: 'networkidle2', timeout: 60000 });
-  if (!response || response.status() >= 400) throw new Error(`login page HTTP ${response?.status()}`);
-  const email = await page.$('input[type="email"],input[name="Email"],input[name$=".Email"]');
-  const password = await page.$('input[type="password"],input[name="Password"],input[name$=".Password"]');
-  const submit = await page.$('button[type="submit"],input[type="submit"]');
-  if (!email || !password || !submit) throw new Error('login controls missing');
-  await email.type(EMAIL);
-  await password.type(PASSWORD);
-  await Promise.all([
-    page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 60000 }).catch(() => null),
-    submit.click()
-  ]);
-  if (page.url().toLowerCase().includes('/account/login')) throw new Error('teacher login failed');
-  pass('teacher-login', { url: page.url() });
+  await page.evaluateOnNewDocument(lang => {
+    try { window.localStorage.setItem('edulytics.public.siteLanguage', lang); } catch {}
+  }, language);
 }
 
-async function cleanupAssessment(page) {
-  const detailsUrl = `${BASE}/school/assessments/${ASSESSMENT_ID}`;
-  const response = await page.goto(detailsUrl, { waitUntil: 'networkidle2', timeout: 60000 });
-  if (!response) throw new Error('assessment details returned no response');
-  if (response.status() === 404) {
-    pass('assessment-already-absent');
-    return;
-  }
-  if (response.status() >= 400) throw new Error(`assessment details HTTP ${response.status()}`);
+async function inspect(page, language, width) {
+  await page.setViewport({ width, height: 1000, deviceScaleFactor: 1, isMobile: true, hasTouch: true });
+  await setLanguage(page, language);
+  const response = await page.goto(BASE, { waitUntil: 'networkidle2', timeout: 90000 });
+  if (!response || response.status() >= 400) throw new Error(`${language}/${width}: HTTP ${response?.status()}`);
+  await new Promise(resolve => setTimeout(resolve, 1500));
 
-  const deleteForm = `form[action$="/${ASSESSMENT_ID}/delete"]`;
-  if (!await page.$(deleteForm)) throw new Error('assessment delete form missing');
+  const data = await page.evaluate(({ language, width }) => {
+    const pick = selector => {
+      const el = document.querySelector(selector);
+      if (!el) return null;
+      const r = el.getBoundingClientRect();
+      const s = getComputedStyle(el);
+      return {
+        selector,
+        tag: el.tagName,
+        left: Math.round(r.left * 10) / 10,
+        right: Math.round(r.right * 10) / 10,
+        top: Math.round(r.top * 10) / 10,
+        width: Math.round(r.width * 10) / 10,
+        height: Math.round(r.height * 10) / 10,
+        display: s.display,
+        position: s.position,
+        overflowX: s.overflowX,
+        direction: s.direction,
+        transform: s.transform,
+        backgroundColor: s.backgroundColor
+      };
+    };
 
-  await Promise.all([
-    page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 60000 }).catch(() => null),
-    page.evaluate(selector => {
-      const form = document.querySelector(selector);
-      if (!form) throw new Error('delete form missing');
-      if (typeof form.requestSubmit === 'function') form.requestSubmit();
-      else form.submit();
-    }, deleteForm)
-  ]);
+    const offenders = [];
+    for (const el of document.body.querySelectorAll('*')) {
+      const r = el.getBoundingClientRect();
+      if (r.width < 2 || r.height < 2) continue;
+      if (r.right > innerWidth + 2 || r.left < -2) {
+        const cls = typeof el.className === 'string' ? el.className.trim().replace(/\s+/g, '.') : '';
+        offenders.push({
+          tag: el.tagName,
+          id: el.id || '',
+          cls: cls.slice(0, 180),
+          left: Math.round(r.left),
+          right: Math.round(r.right),
+          width: Math.round(r.width),
+          top: Math.round(r.top),
+          visible: getComputedStyle(el).display !== 'none' && getComputedStyle(el).visibility !== 'hidden'
+        });
+      }
+    }
+    offenders.sort((a, b) => Math.abs(b.right - innerWidth) + Math.abs(Math.min(0, b.left)) - (Math.abs(a.right - innerWidth) + Math.abs(Math.min(0, a.left))));
 
-  await page.goto(`${BASE}/school/assessments`, { waitUntil: 'networkidle2', timeout: 60000 });
-  const stillVisible = await page.evaluate(title => (document.body.innerText || '').includes(title), TITLE);
-  if (stillVisible) throw new Error('assessment fixture still visible after delete');
-  pass('assessment-deleted-via-ui');
+    const mascot = document.querySelector('canvas[data-ed-mascot-background-cleaned="true"], .ed-home-v12-slide:first-child img.ed-home-v16-mascot-canvas');
+    let mascotInfo = null;
+    if (mascot) {
+      const r = mascot.getBoundingClientRect();
+      const s = getComputedStyle(mascot);
+      mascotInfo = {
+        tag: mascot.tagName,
+        cleaned: mascot instanceof HTMLCanvasElement && mascot.dataset.edMascotBackgroundCleaned === 'true',
+        left: Math.round(r.left),
+        right: Math.round(r.right),
+        width: Math.round(r.width),
+        height: Math.round(r.height),
+        backgroundColor: s.backgroundColor,
+        mixBlendMode: s.mixBlendMode,
+        parentBackground: mascot.parentElement ? getComputedStyle(mascot.parentElement).backgroundColor : null
+      };
+      if (mascot instanceof HTMLCanvasElement) {
+        try {
+          const ctx = mascot.getContext('2d');
+          const pts = [
+            [0, 0], [mascot.width - 1, 0], [0, mascot.height - 1], [mascot.width - 1, mascot.height - 1],
+            [Math.floor(mascot.width / 2), 0], [0, Math.floor(mascot.height / 2)],
+            [mascot.width - 1, Math.floor(mascot.height / 2)], [Math.floor(mascot.width / 2), mascot.height - 1]
+          ];
+          mascotInfo.edgeAlpha = pts.map(([x, y]) => ctx.getImageData(Math.max(0, x), Math.max(0, y), 1, 1).data[3]);
+        } catch (e) {
+          mascotInfo.edgeAlphaError = String(e);
+        }
+      }
+    }
+
+    return {
+      language,
+      requestedWidth: width,
+      innerWidth,
+      clientWidth: document.documentElement.clientWidth,
+      documentScrollWidth: document.documentElement.scrollWidth,
+      bodyScrollWidth: document.body.scrollWidth,
+      dir: document.documentElement.dir,
+      href: location.href,
+      elements: {
+        html: pick('html'),
+        body: pick('body'),
+        home: pick('.ed-home'),
+        header: pick('.ed-home-header'),
+        nav: pick('.ed-home-nav-shell'),
+        brand: pick('.ed-home-brand'),
+        logo: pick('.ed-home-brand img'),
+        hero: pick('.ed-home-v12-hero'),
+        viewport: pick('.ed-home-v12-viewport'),
+        track: pick('.ed-home-v12-track'),
+        firstSlide: pick('.ed-home-v12-slide:first-child'),
+        grid: pick('.ed-home-v12-slide:first-child .ed-home-v12-slide-grid'),
+        copy: pick('.ed-home-v12-slide:first-child .ed-home-v12-copy'),
+        visual: pick('.ed-home-v12-slide:first-child .ed-home-v12-visual')
+      },
+      mascot: mascotInfo,
+      offenders: offenders.slice(0, 25),
+      css: Array.from(document.querySelectorAll('link[rel="stylesheet"]')).map(x => x.getAttribute('href')),
+      js: Array.from(document.querySelectorAll('script[src]')).map(x => x.getAttribute('src'))
+    };
+  }, { language, width });
+
+  result.checks.push(data);
+  event('viewport', data);
 }
 
 async function run() {
   let browser;
   try {
-    if (!EMAIL || !PASSWORD) throw new Error('temporary teacher credentials missing');
     browser = await launch();
     const page = await browser.newPage();
-    await login(page);
-    await cleanupAssessment(page);
+    for (const language of ['en', 'ar']) {
+      for (const width of [360, 390, 412, 768]) {
+        await inspect(page, language, width);
+      }
+    }
     result = { ...result, status: 'PASS', completedAt: new Date().toISOString() };
-    event('done', result);
+    event('done', { status: result.status, count: result.checks.length });
   } catch (error) {
     result = { ...result, status: 'FAIL', error: error.stack || error.message, completedAt: new Date().toISOString() };
-    event('fatal', result);
+    event('fatal', { error: result.error });
   } finally {
     if (browser) await browser.close().catch(() => {});
   }
@@ -101,6 +175,6 @@ async function run() {
 const app = express();
 app.get('/', (_req, res) => res.status(result.status === 'FAIL' ? 500 : 200).json(result));
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Teacher PDF cleanup helper listening on ${PORT}`);
+  console.log(`Public homepage diagnostic helper listening on ${PORT}`);
   void run();
 });
