@@ -43,6 +43,26 @@ public sealed class AssessmentResultsBreakdownContractTests
         Assert.Contains("No expected answer recorded", view, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void ResultsPaper_IsStrictlyReadOnlyAndTeacherScoreWriteRouteIsRemoved()
+    {
+        var root = FindRoot();
+        var view = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Assessments/Results.cshtml"));
+        var controller = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Controllers/AssessmentsController.cs"));
+
+        Assert.DoesNotContain("asp-action=\"SaveResult\"", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("name=\"scores\"", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("assessment-score-editor", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("assessment-save-result-button", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("SaveResult(", controller, StringComparison.Ordinal);
+        Assert.DoesNotContain("SaveStudentResultAsync", controller, StringComparison.Ordinal);
+        Assert.DoesNotContain("{id:guid}/results/{studentProfileId:guid}", controller, StringComparison.Ordinal);
+    }
+
     private static string FindRoot()
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);
