@@ -37,12 +37,16 @@ public sealed class Round6ManualAcceptanceRegressionTests
             "src", "Edulytics.Web", "TagHelpers", "AssessmentBuilderApprovalFormTagHelper.cs");
         var controller = ReadRepositoryFile(
             "src", "Edulytics.Web", "Controllers", "AssessmentApprovalRecoveryController.cs");
+        var bulkService = ReadRepositoryFile(
+            "src", "Edulytics.Services", "Assessments", "AssessmentBuilderBulkApprovalService.cs");
 
         Assert.Contains("/builder/approval/drafts", tagHelper, StringComparison.Ordinal);
         Assert.Contains("/builder/approval/question/", tagHelper, StringComparison.Ordinal);
         Assert.Contains("HttpPost(\"drafts\")", controller, StringComparison.Ordinal);
-        Assert.Contains("ReadyForApproval", controller, StringComparison.Ordinal);
-        Assert.Contains("remain for teacher review", controller, StringComparison.Ordinal);
+        Assert.Contains("HttpGet(\"drafts\")", controller, StringComparison.Ordinal);
+        Assert.Contains("bulkApproval.ApproveAllDraftQuestionsAsync", controller, StringComparison.Ordinal);
+        Assert.DoesNotContain("ReadyForApproval", controller, StringComparison.Ordinal);
+        Assert.Contains("repository.SaveAsync", bulkService, StringComparison.Ordinal);
     }
 
     [Fact]

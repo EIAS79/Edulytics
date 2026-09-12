@@ -289,6 +289,175 @@
         headerActions.appendChild(link);
     }
 
+    function wireAssessmentResultFilters() {
+        const page = document.querySelector(".assessment-results-page");
+        const grid = page?.querySelector(".assessment-results-grid-v2");
+        if (!page || !grid || grid.dataset.studentFilterReady === "true") return;
+
+        const cards = Array.from(grid.querySelectorAll(".assessment-result-card-v2"));
+        if (cards.length <= 1) return;
+        grid.dataset.studentFilterReady = "true";
+
+        const language = (document.documentElement.lang || "en").toLowerCase();
+        const isPolish = language.startsWith("pl");
+        const isArabic = language.startsWith("ar");
+        const labels = isPolish
+            ? {
+                search: "Szukaj ucznia po imieniu, nazwisku lub numerze",
+                all: "Wszyscy uczniowie",
+                withResult: "Z wynikiem",
+                withoutResult: "Bez wyniku",
+                perPage: "Na stronę",
+                previous: "Poprzednia",
+                next: "Następna",
+                empty: "Brak uczniów pasujących do filtrów.",
+                showing: (start, end, total) => `Wyświetlanie ${start}–${end} z ${total} uczniów`
+            }
+            : isArabic
+                ? {
+                    search: "ابحث باسم الطالب أو رقمه",
+                    all: "كل الطلاب",
+                    withResult: "لديهم نتيجة",
+                    withoutResult: "بدون نتيجة",
+                    perPage: "في الصفحة",
+                    previous: "السابق",
+                    next: "التالي",
+                    empty: "لا يوجد طلاب مطابقون للفلاتر.",
+                    showing: (start, end, total) => `عرض ${start}–${end} من ${total} طالب`
+                }
+                : {
+                    search: "Search by student name or number",
+                    all: "All students",
+                    withResult: "With result",
+                    withoutResult: "No result yet",
+                    perPage: "Per page",
+                    previous: "Previous",
+                    next: "Next",
+                    empty: "No students match these filters.",
+                    showing: (start, end, total) => `Showing ${start}–${end} of ${total} students`
+                };
+
+        const toolbar = document.createElement("section");
+        toolbar.className = "assessment-results-filter-bar";
+        toolbar.setAttribute("aria-label", isPolish ? "Filtrowanie wyników uczniów" : isArabic ? "فلترة نتائج الطلاب" : "Student result filters");
+
+        const search = document.createElement("input");
+        search.type = "search";
+        search.className = "assessment-results-search";
+        search.placeholder = labels.search;
+        search.setAttribute("aria-label", labels.search);
+        search.autocomplete = "off";
+
+        const status = document.createElement("select");
+        status.className = "assessment-results-status-filter";
+        status.setAttribute("aria-label", labels.all);
+        [
+            ["all", labels.all],
+            ["with-result", labels.withResult],
+            ["without-result", labels.withoutResult]
+        ].forEach(([value, label]) => {
+            const option = document.createElement("option");
+            option.value = value;
+            option.textContent = label;
+            status.appendChild(option);
+        });
+
+        const pageSizeWrap = document.createElement("label");
+        pageSizeWrap.className = "assessment-results-page-size";
+        const pageSizeLabel = document.createElement("span");
+        pageSizeLabel.textContent = labels.perPage;
+        const pageSize = document.createElement("select");
+        [5, 10, 20].forEach(size => {
+            const option = document.createElement("option");
+            option.value = String(size);
+            option.textContent = String(size);
+            pageSize.appendChild(option);
+        });
+        pageSize.value = "5";
+        pageSizeWrap.append(pageSizeLabel, pageSize);
+
+        const summary = document.createElement("span");
+        summary.className = "assessment-results-filter-summary";
+        summary.setAttribute("aria-live", "polite");
+
+        const pager = document.createElement("div");
+        pager.className = "assessment-results-pager";
+        const previous = document.createElement("button");
+        previous.type = "button";
+        previous.className = "school-button";
+        previous.textContent = labels.previous;
+        const next = document.createElement("button");
+        next.type = "button";
+        next.className = "school-button";
+        next.textContent = labels.next;
+        pager.append(previous, next);
+
+        const empty = document.createElement("div");
+        empty.className = "assessment-empty assessment-results-filter-empty";
+        empty.textContent = labels.empty;
+        empty.hidden = true;
+
+        toolbar.append(search, status, pageSizeWrap, summary, pager);
+        grid.insertAdjacentElement("beforebegin", toolbar);
+        grid.insertAdjacentElement("afterend", empty);
+
+        const metadata = cards.map(card => {
+            const name = card.querySelector("h2")?.textContent?.trim() ?? "";
+            const number = card.querySelector(".assessment-result-student-header p")?.textContent?.trim() ?? "";
+            return {
+                card,
+                searchText: `${name} ${number}`.toLocaleLowerCase(),
+                hasResult: Boolean(card.querySelector(".assessment-result-total-v2"))
+            };
+        });
+
+        let pageIndex = 0;
+
+        const apply = () => {
+            const query = search.value.trim().toLocaleLowerCase();
+            const resultFilter = status.value;
+            const size = Number.parseInt(pageSize.value, 10) || 5;
+            const filtered = metadata.filter(item => {
+                const matchesSearch = !query || item.searchText.includes(query);
+                const matchesStatus = resultFilter === "all" ||
+                    (resultFilter === "with-result" && item.hasResult) ||
+                    (resultFilter === "without-result" && !item.hasResult);
+                return matchesSearch && matchesStatus;
+            });
+
+            const pageCount = Math.max(1, Math.ceil(filtered.length / size));
+            pageIndex = Math.min(pageIndex, pageCount - 1);
+            const startIndex = pageIndex * size;
+            const visible = new Set(filtered.slice(startIndex, startIndex + size).map(item => item.card));
+            metadata.forEach(item => { item.card.hidden = !visible.has(item.card); });
+
+            const start = filtered.length === 0 ? 0 : startIndex + 1;
+            const end = Math.min(startIndex + size, filtered.length);
+            summary.textContent = labels.showing(start, end, filtered.length);
+            previous.disabled = pageIndex === 0 || filtered.length === 0;
+            next.disabled = pageIndex >= pageCount - 1 || filtered.length === 0;
+            empty.hidden = filtered.length !== 0;
+        };
+
+        search.addEventListener("input", () => { pageIndex = 0; apply(); });
+        status.addEventListener("change", () => { pageIndex = 0; apply(); });
+        pageSize.addEventListener("change", () => { pageIndex = 0; apply(); });
+        previous.addEventListener("click", () => {
+            if (pageIndex > 0) {
+                pageIndex--;
+                apply();
+                toolbar.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        });
+        next.addEventListener("click", () => {
+            pageIndex++;
+            apply();
+            toolbar.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+
+        apply();
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
         ensureRound2Stylesheet();
         wirePrintButtons();
@@ -302,6 +471,7 @@
         normalizeWholeMarkInputs();
         clarifyLearningOutcomeUx();
         wireAssessmentDeliverySafety();
+        wireAssessmentResultFilters();
 
         document.querySelectorAll("form").forEach(form => {
             if ((form.method || "get").toLowerCase() !== "post") return;
