@@ -2,20 +2,18 @@
     "use strict";
 
     const page = document.querySelector(".assessment-results-page");
-    const grid = page?.querySelector(".assessment-results-grid-v2");
-    if (!page || !grid || page.querySelector(".assessment-results-filter-bar")) return;
+    const roster = page?.querySelector(".assessment-results-roster");
+    if (!page || !roster || page.querySelector(".assessment-results-filter-bar")) return;
 
-    const cards = Array.from(grid.querySelectorAll(".assessment-result-card-v2"));
-    if (cards.length === 0) return;
-
-    grid.dataset.studentFilterReady = "true";
+    const rows = Array.from(roster.querySelectorAll(".assessment-result-roster-row"));
+    if (rows.length === 0) return;
 
     const language = (document.documentElement.lang || "en").toLowerCase();
     const isPolish = language.startsWith("pl");
     const isArabic = language.startsWith("ar");
     const labels = isPolish
         ? {
-            search: "Szukaj ucznia po imieniu, nazwisku lub numerze",
+            search: "Szukaj ucznia po imieniu lub nazwisku",
             all: "Wszyscy uczniowie",
             withResult: "Z wynikiem",
             withoutResult: "Bez wyniku",
@@ -27,7 +25,7 @@
         }
         : isArabic
             ? {
-                search: "ابحث باسم الطالب أو رقمه",
+                search: "ابحث باسم الطالب",
                 all: "كل الطلاب",
                 withResult: "لديهم نتيجة",
                 withoutResult: "بدون نتيجة",
@@ -38,7 +36,7 @@
                 showing: (start, end, total) => `عرض ${start}–${end} من ${total} طالب`
             }
             : {
-                search: "Search by student name or number",
+                search: "Search by student name",
                 all: "All students",
                 withResult: "With result",
                 withoutResult: "No result yet",
@@ -60,11 +58,7 @@
 
     const resultStatus = document.createElement("select");
     resultStatus.className = "assessment-results-status-filter";
-    [
-        ["all", labels.all],
-        ["with-result", labels.withResult],
-        ["without-result", labels.withoutResult]
-    ].forEach(([value, text]) => {
+    [["all", labels.all], ["with-result", labels.withResult], ["without-result", labels.withoutResult]].forEach(([value, text]) => {
         const option = document.createElement("option");
         option.value = value;
         option.textContent = text;
@@ -105,21 +99,20 @@
     empty.textContent = labels.empty;
 
     toolbar.append(search, resultStatus, pageSizeLabel, summary, pager);
-    grid.insertAdjacentElement("beforebegin", toolbar);
-    grid.insertAdjacentElement("afterend", empty);
+    roster.closest(".assessment-results-roster-shell")?.insertAdjacentElement("beforebegin", toolbar);
+    roster.closest(".assessment-results-roster-shell")?.insertAdjacentElement("afterend", empty);
 
     let currentPage = 1;
-
-    const searchableText = card => (card.textContent || "").toLocaleLowerCase();
-    const hasResult = card => Boolean(card.querySelector(".assessment-result-total-v2"));
+    const searchableText = row => (row.textContent || "").toLocaleLowerCase();
+    const hasResult = row => row.dataset.hasResult === "true";
 
     const render = () => {
         const query = search.value.trim().toLocaleLowerCase();
         const status = resultStatus.value;
         const size = Number(pageSize.value) || 5;
-        const matching = cards.filter(card => {
-            if (query && !searchableText(card).includes(query)) return false;
-            const resultExists = hasResult(card);
+        const matching = rows.filter(row => {
+            if (query && !searchableText(row).includes(query)) return false;
+            const resultExists = hasResult(row);
             if (status === "with-result" && !resultExists) return false;
             if (status === "without-result" && resultExists) return false;
             return true;
@@ -130,43 +123,20 @@
         const startIndex = (currentPage - 1) * size;
         const visible = new Set(matching.slice(startIndex, startIndex + size));
 
-        cards.forEach(card => {
-            card.hidden = !visible.has(card);
-        });
-
+        rows.forEach(row => { row.hidden = !visible.has(row); });
         empty.hidden = matching.length !== 0;
-        if (matching.length === 0) {
-            summary.textContent = labels.showing(0, 0, 0);
-        } else {
-            const start = startIndex + 1;
-            const end = Math.min(startIndex + size, matching.length);
-            summary.textContent = labels.showing(start, end, matching.length);
-        }
-
+        summary.textContent = matching.length === 0
+            ? labels.showing(0, 0, 0)
+            : labels.showing(startIndex + 1, Math.min(startIndex + size, matching.length), matching.length);
         previous.disabled = currentPage <= 1;
         next.disabled = currentPage >= pageCount || matching.length === 0;
     };
 
-    search.addEventListener("input", () => {
-        currentPage = 1;
-        render();
-    });
-    resultStatus.addEventListener("change", () => {
-        currentPage = 1;
-        render();
-    });
-    pageSize.addEventListener("change", () => {
-        currentPage = 1;
-        render();
-    });
-    previous.addEventListener("click", () => {
-        currentPage -= 1;
-        render();
-    });
-    next.addEventListener("click", () => {
-        currentPage += 1;
-        render();
-    });
+    search.addEventListener("input", () => { currentPage = 1; render(); });
+    resultStatus.addEventListener("change", () => { currentPage = 1; render(); });
+    pageSize.addEventListener("change", () => { currentPage = 1; render(); });
+    previous.addEventListener("click", () => { currentPage -= 1; render(); });
+    next.addEventListener("click", () => { currentPage += 1; render(); });
 
     render();
 })();
