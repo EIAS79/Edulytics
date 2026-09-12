@@ -50,14 +50,19 @@ public sealed class Round6ManualAcceptanceRegressionTests
     }
 
     [Fact]
-    public void Approval_only_persistence_does_not_force_assessment_row_update()
+    public void Approval_only_persistence_keeps_assessment_row_as_concurrency_anchor()
     {
         var repository = ReadRepositoryFile(
             "src", "Edulytics.Data", "Repositories", "AssessmentBuilderRepository.cs");
 
         Assert.Contains("approvalOnly", repository, StringComparison.Ordinal);
         Assert.Contains("AssessmentItem.ValidationMetadataJson", repository, StringComparison.Ordinal);
-        Assert.Contains("UpdatedAtUtc).IsModified = false", repository, StringComparison.Ordinal);
+        Assert.Contains(
+            "assessmentEntry.Property(x => x.RowVersion).OriginalValue = expectedRowVersion",
+            repository,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain("UpdatedAtUtc).IsModified = false", repository, StringComparison.Ordinal);
+        Assert.Contains("await db.SaveChangesAsync(cancellationToken)", repository, StringComparison.Ordinal);
     }
 
     [Fact]
