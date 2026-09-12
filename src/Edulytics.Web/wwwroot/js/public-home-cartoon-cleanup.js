@@ -12,8 +12,8 @@
 
     if (!firstSlideVisual.querySelector('.ed-home-v16-mascot-canvas')) {
       const image = document.createElement('img');
-      image.className = 'ed-home-v16-mascot-canvas ed-home-v17-mascot-image';
-      image.src = '/images/brand/edulytics-mascot-final.png?v=33';
+      image.className = 'ed-home-v16-mascot-canvas';
+      image.src = '/images/public/edulytics-math-mascot.png?v=33';
       image.alt = 'Edulytics mathematics mascot';
       image.loading = 'eager';
       image.decoding = 'async';
