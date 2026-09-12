@@ -171,7 +171,7 @@ public sealed class EdulyticsDatabaseBootstrapper
                 var roleResult = await _userManager.AddToRoleAsync(existingUser, RoleNames.SuperAdmin);
                 if (!roleResult.Succeeded)
                 {
-                    throw new InvalidOperationException($"Failed to add existing SuperAdmin user to role '{RoleNames.SuperAdmin}': {string.Join("; ", result.Errors.Select(e => e.Description))}");
+                    throw new InvalidOperationException($"Failed to add existing SuperAdmin user to role '{RoleNames.SuperAdmin}': {string.Join("; ", roleResult.Errors.Select(e => e.Description))}");
                 }
             }
 
