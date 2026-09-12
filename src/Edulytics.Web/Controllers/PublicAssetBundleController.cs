@@ -69,18 +69,21 @@ public sealed class PublicAssetBundleController(IWebHostEnvironment environment)
 
     [HttpGet("/css/public-site-v31.css")]
     [HttpGet("/css/public-site-v32.css")]
+    [HttpGet("/css/public-site-v33.css")]
     [ResponseCache(Duration = 86400, Location = ResponseCacheLocation.Client)]
-    public IActionResult Css() => Bundle("public-css-v32", CssFiles, "text/css; charset=utf-8");
+    public IActionResult Css() => Bundle("public-css-v33", CssFiles, "text/css; charset=utf-8");
 
     [HttpGet("/js/public-site-v31.js")]
     [HttpGet("/js/public-site-v32.js")]
+    [HttpGet("/js/public-site-v33.js")]
     [ResponseCache(Duration = 86400, Location = ResponseCacheLocation.Client)]
-    public IActionResult JavaScript() => Bundle("public-js-v32", JsFiles, "application/javascript; charset=utf-8");
+    public IActionResult JavaScript() => Bundle("public-js-v33", JsFiles, "application/javascript; charset=utf-8");
 
     [HttpGet("/js/public-content-v31.js")]
     [HttpGet("/js/public-content-v32.js")]
+    [HttpGet("/js/public-content-v33.js")]
     [ResponseCache(Duration = 86400, Location = ResponseCacheLocation.Client)]
-    public IActionResult ContentJavaScript() => Bundle("public-content-js-v32", ContentJsFiles, "application/javascript; charset=utf-8");
+    public IActionResult ContentJavaScript() => Bundle("public-content-js-v33", ContentJsFiles, "application/javascript; charset=utf-8");
 
     private IActionResult Bundle(string cacheKey, IReadOnlyList<string> files, string contentType)
     {

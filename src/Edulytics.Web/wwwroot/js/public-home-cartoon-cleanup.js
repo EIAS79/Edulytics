@@ -13,11 +13,10 @@
     if (!firstSlideVisual.querySelector('.ed-home-v16-mascot-canvas')) {
       const image = document.createElement('img');
       image.className = 'ed-home-v16-mascot-canvas';
-      image.src = '/images/public/edulytics-math-mascot.png';
+      image.src = '/images/public/edulytics-math-mascot.png?v=33';
       image.alt = 'Edulytics mathematics mascot';
       image.loading = 'eager';
       image.decoding = 'async';
-      image.style.width = '430px';
       firstSlideVisual.appendChild(image);
     }
   }

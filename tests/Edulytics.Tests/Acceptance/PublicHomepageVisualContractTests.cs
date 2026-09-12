@@ -32,6 +32,43 @@ public sealed class PublicHomepageVisualContractTests
             StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void HomepageMascot_UsesExistingTransparentPublicAssetWithoutWhiteCard()
+    {
+        var root = FindRoot();
+        var cleanupScript = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/public-home-cartoon-cleanup.js"));
+        var visualCss = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/css/public-home-visual-contract-v32.css"));
+        var mascotPath = Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/images/public/edulytics-math-mascot.png");
+
+        Assert.True(File.Exists(mascotPath));
+        Assert.Contains(
+            "/images/public/edulytics-math-mascot.png?v=33",
+            cleanupScript,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "/images/brand/edulytics-mascot-final.png",
+            cleanupScript,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "ed-home-v16-mascot-canvas",
+            cleanupScript,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "background: transparent !important;",
+            visualCss,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "box-shadow: none !important;",
+            visualCss,
+            StringComparison.Ordinal);
+    }
+
     private static string FindRoot()
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);
