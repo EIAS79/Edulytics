@@ -34,7 +34,8 @@ public sealed class PublicAssetBundleController(IWebHostEnvironment environment)
         "css/public-understanding-v1.css",
         "css/public-content-pages-v27.css",
         "css/public-arabic-rtl-v29.css",
-        "css/public-home-visual-contract-v32.css"
+        "css/public-home-visual-contract-v32.css",
+        "css/public-home-mascot-transparency-v35.css"
     ];
 
     private static readonly string[] JsFiles =
@@ -70,8 +71,9 @@ public sealed class PublicAssetBundleController(IWebHostEnvironment environment)
     [HttpGet("/css/public-site-v31.css")]
     [HttpGet("/css/public-site-v32.css")]
     [HttpGet("/css/public-site-v33.css")]
+    [HttpGet("/css/public-site-v35.css")]
     [ResponseCache(Duration = 86400, Location = ResponseCacheLocation.Client)]
-    public IActionResult Css() => Bundle("public-css-v33", CssFiles, "text/css; charset=utf-8");
+    public IActionResult Css() => Bundle("public-css-v35", CssFiles, "text/css; charset=utf-8");
 
     [HttpGet("/js/public-site-v31.js")]
     [HttpGet("/js/public-site-v32.js")]
