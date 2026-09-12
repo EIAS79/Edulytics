@@ -51,7 +51,6 @@ public sealed class PublicAssetBundleController(IWebHostEnvironment environment)
         "js/public-home-commercial-v14.js",
         "js/public-home-commercial-v15.js",
         "js/public-home-cartoon-cleanup.js",
-        "js/public-home-mascot-background-v36.js",
         "js/public-home-experience-v20.js",
         "js/public-home-curricula-v21.js",
         "js/public-home-ai-spotlight-v22.js",
@@ -73,16 +72,18 @@ public sealed class PublicAssetBundleController(IWebHostEnvironment environment)
     [HttpGet("/css/public-site-v32.css")]
     [HttpGet("/css/public-site-v33.css")]
     [HttpGet("/css/public-site-v35.css")]
+    [HttpGet("/css/public-site-v38.css")]
     [ResponseCache(Duration = 86400, Location = ResponseCacheLocation.Client)]
-    public IActionResult Css() => Bundle("public-css-v35", CssFiles, "text/css; charset=utf-8");
+    public IActionResult Css() => Bundle("public-css-v38", CssFiles, "text/css; charset=utf-8");
 
     [HttpGet("/js/public-site-v31.js")]
     [HttpGet("/js/public-site-v32.js")]
     [HttpGet("/js/public-site-v33.js")]
     [HttpGet("/js/public-site-v36.js")]
     [HttpGet("/js/public-site-v37.js")]
+    [HttpGet("/js/public-site-v38.js")]
     [ResponseCache(Duration = 86400, Location = ResponseCacheLocation.Client)]
-    public IActionResult JavaScript() => Bundle("public-js-v37", JsFiles, "application/javascript; charset=utf-8");
+    public IActionResult JavaScript() => Bundle("public-js-v38", JsFiles, "application/javascript; charset=utf-8");
 
     [HttpGet("/js/public-content-v31.js")]
     [HttpGet("/js/public-content-v32.js")]

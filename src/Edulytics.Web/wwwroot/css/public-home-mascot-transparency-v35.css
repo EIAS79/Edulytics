@@ -1,6 +1,27 @@
-/* Home v35 — the supplied mascot artwork is transparent; keep its hero stage transparent too. */
+/* Home v38 — the supplied mascot PNG is already transparent.
+   Remove only presentation layers around the first hero mascot. */
 .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual{
   background:transparent!important;
   border:0!important;
+  border-radius:0!important;
   box-shadow:none!important;
+  overflow:visible!important;
+}
+
+.ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual::before,
+.ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual::after{
+  content:none!important;
+  display:none!important;
+  background:none!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+
+.ed-home .ed-home-v12-slide:first-child .ed-home-v16-mascot-canvas{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+  mix-blend-mode:normal!important;
 }
