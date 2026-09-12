@@ -4,6 +4,7 @@ using Edulytics.Core.Assessments;
 using Edulytics.Core.Constants;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Interfaces;
+using Edulytics.Core.Users;
 
 namespace Edulytics.Services.Assessments;
 
