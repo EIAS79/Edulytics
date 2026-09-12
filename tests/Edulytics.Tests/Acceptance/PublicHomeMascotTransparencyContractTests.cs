@@ -3,12 +3,15 @@ namespace Edulytics.Tests.Acceptance;
 public sealed class PublicHomeMascotTransparencyContractTests
 {
     [Fact]
-    public void MascotHeroStage_IsTransparentAndServedFromFreshCssBundle()
+    public void MascotHero_RemovesBothStageAndBakedImageBackgroundsFromFreshBundles()
     {
         var root = FindRoot();
         var css = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/wwwroot/css/public-home-mascot-transparency-v35.css"));
+        var cleanup = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/public-home-mascot-background-v36.js"));
         var bundle = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/Controllers/PublicAssetBundleController.cs"));
@@ -21,10 +24,19 @@ public sealed class PublicHomeMascotTransparencyContractTests
         Assert.Contains("border:0!important", css, StringComparison.Ordinal);
         Assert.Contains("box-shadow:none!important", css, StringComparison.Ordinal);
 
+        Assert.Contains("getImageData", cleanup, StringComparison.Ordinal);
+        Assert.Contains("pixels[index * 4 + 3] = 0", cleanup, StringComparison.Ordinal);
+        Assert.Contains("distanceSquared <= 12000", cleanup, StringComparison.Ordinal);
+        Assert.Contains("data-ed-mascot-background-cleaned", cleanup, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("mixBlendMode = 'multiply'", cleanup, StringComparison.Ordinal);
+
         Assert.Contains("public-home-mascot-transparency-v35.css", bundle, StringComparison.Ordinal);
+        Assert.Contains("public-home-mascot-background-v36.js", bundle, StringComparison.Ordinal);
         Assert.Contains("/css/public-site-v35.css", bundle, StringComparison.Ordinal);
-        Assert.Contains("public-css-v35", bundle, StringComparison.Ordinal);
+        Assert.Contains("/js/public-site-v36.js", bundle, StringComparison.Ordinal);
+        Assert.Contains("public-js-v36", bundle, StringComparison.Ordinal);
         Assert.Contains("~/css/public-site-v35.css", layout, StringComparison.Ordinal);
+        Assert.Contains("~/js/public-site-v36.js", layout, StringComparison.Ordinal);
     }
 
     private static string FindRoot()
