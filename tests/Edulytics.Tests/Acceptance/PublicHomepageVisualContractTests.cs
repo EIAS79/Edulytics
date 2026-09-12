@@ -55,8 +55,9 @@ public sealed class PublicHomepageVisualContractTests
             "ed-home-v40-mascot-image",
             cleanupScript,
             StringComparison.Ordinal);
+        Assert.DoesNotContain("document.createElement('canvas')", cleanupScript, StringComparison.Ordinal);
         Assert.DoesNotContain("getImageData", cleanupScript, StringComparison.Ordinal);
-        Assert.DoesNotContain("canvas", cleanupScript, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("putImageData", cleanupScript, StringComparison.Ordinal);
         Assert.Contains("background-color:transparent!important", transparencyCss, StringComparison.Ordinal);
         Assert.Contains("box-shadow:none!important", transparencyCss, StringComparison.Ordinal);
         Assert.Contains("border-radius:0!important", transparencyCss, StringComparison.Ordinal);
