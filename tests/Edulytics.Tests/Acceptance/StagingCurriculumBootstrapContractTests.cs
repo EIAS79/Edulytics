@@ -12,7 +12,9 @@ public sealed class StagingCurriculumBootstrapContractTests
 
         const string flag = "Edulytics:Deployment:SeedCurriculum";
         Assert.Contains(flag, source, StringComparison.Ordinal);
-        Assert.Contains("_environment.IsStaging()", source, StringComparison.Ordinal);
+        Assert.Contains("ASPNETCORE_ENVIRONMENT", source, StringComparison.Ordinal);
+        Assert.Contains("DOTNET_ENVIRONMENT", source, StringComparison.Ordinal);
+        Assert.Contains("\"Staging\"", source, StringComparison.Ordinal);
 
         var pack = source.IndexOf(
             "new MathematicsCurriculumPackSeeder(_db)",
