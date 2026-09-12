@@ -24,20 +24,17 @@ public sealed class EdulyticsDatabaseBootstrapper
     private readonly RoleManager<ApplicationRole> _roleManager;
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly IConfiguration _configuration;
-    private readonly IHostEnvironment _environment;
     private readonly EdulyticsDbContext _db;
 
     public EdulyticsDatabaseBootstrapper(
         RoleManager<ApplicationRole> roleManager,
         UserManager<ApplicationUser> userManager,
         IConfiguration configuration,
-        IHostEnvironment environment,
         EdulyticsDbContext db)
     {
         _roleManager = roleManager ?? throw new ArgumentNullException(nameof(roleManager));
         _userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
         _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
-        _environment = environment ?? throw new ArgumentNullException(nameof(environment));
         _db = db ?? throw new ArgumentNullException(nameof(db));
     }
 
@@ -92,7 +89,14 @@ public sealed class EdulyticsDatabaseBootstrapper
             return;
         }
 
-        if (!_environment.IsStaging())
+        var environmentName =
+            _configuration["ASPNETCORE_ENVIRONMENT"] ??
+            _configuration["DOTNET_ENVIRONMENT"];
+
+        if (!string.Equals(
+                environmentName,
+                "Staging",
+                StringComparison.OrdinalIgnoreCase))
         {
             throw new InvalidOperationException(
                 "Edulytics:Deployment:SeedCurriculum is staging-only and cannot run outside the Staging environment.");
@@ -167,7 +171,7 @@ public sealed class EdulyticsDatabaseBootstrapper
                 var roleResult = await _userManager.AddToRoleAsync(existingUser, RoleNames.SuperAdmin);
                 if (!roleResult.Succeeded)
                 {
-                    throw new InvalidOperationException($"Failed to add existing SuperAdmin user to role '{RoleNames.SuperAdmin}': {string.Join("; ", roleResult.Errors.Select(e => e.Description))}");
+                    throw new InvalidOperationException($"Failed to add existing SuperAdmin user to role '{RoleNames.SuperAdmin}': {string.Join("; ", result.Errors.Select(e => e.Description))}");
                 }
             }
 
