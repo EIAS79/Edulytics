@@ -12,7 +12,7 @@
     mascot.style.mixBlendMode = 'multiply';
   };
 
-  const removeConnectedLightBackground = () => {
+  const removeLargestLightComponent = () => {
     try {
       const naturalWidth = mascot.naturalWidth;
       const naturalHeight = mascot.naturalHeight;
@@ -25,6 +25,7 @@
       const scale = Math.min(1, maxDimension / Math.max(naturalWidth, naturalHeight));
       const width = Math.max(1, Math.round(naturalWidth * scale));
       const height = Math.max(1, Math.round(naturalHeight * scale));
+      const pixelCount = width * height;
 
       const canvas = document.createElement('canvas');
       canvas.width = width;
@@ -43,45 +44,16 @@
       context.drawImage(mascot, 0, 0, width, height);
       const imageData = context.getImageData(0, 0, width, height);
       const pixels = imageData.data;
-      const pixelCount = width * height;
-      const visited = new Uint8Array(pixelCount);
+      const labels = new Int32Array(pixelCount);
       const queue = new Int32Array(pixelCount);
-      let head = 0;
-      let tail = 0;
+      let componentId = 0;
+      let largestComponentId = 0;
+      let largestComponentSize = 0;
 
-      const cornerIndexes = [
-        0,
-        width - 1,
-        (height - 1) * width,
-        pixelCount - 1
-      ];
-
-      let refR = 0;
-      let refG = 0;
-      let refB = 0;
-      let refCount = 0;
-      for (const index of cornerIndexes) {
-        const offset = index * 4;
-        if (pixels[offset + 3] < 32) continue;
-        refR += pixels[offset];
-        refG += pixels[offset + 1];
-        refB += pixels[offset + 2];
-        refCount += 1;
-      }
-
-      if (refCount === 0) {
-        mascot.style.visibility = '';
-        return;
-      }
-
-      refR /= refCount;
-      refG /= refCount;
-      refB /= refCount;
-
-      const isBackground = index => {
+      const isLightBackground = index => {
         const offset = index * 4;
         const alpha = pixels[offset + 3];
-        if (alpha < 32) return true;
+        if (alpha < 24) return false;
 
         const red = pixels[offset];
         const green = pixels[offset + 1];
@@ -91,41 +63,56 @@
         const brightness = (red + green + blue) / 3;
         const chroma = maximum - minimum;
 
-        if (brightness < 205 || chroma > 70) return false;
-
-        const dr = red - refR;
-        const dg = green - refG;
-        const db = blue - refB;
-        const distanceSquared = dr * dr + dg * dg + db * db;
-
-        return brightness >= 242 || distanceSquared <= 12000;
+        return (brightness >= 178 && chroma <= 48) ||
+               (brightness >= 215 && chroma <= 92);
       };
 
-      const enqueue = index => {
-        if (visited[index] || !isBackground(index)) return;
-        visited[index] = 1;
-        queue[tail++] = index;
-      };
+      for (let start = 0; start < pixelCount; start += 1) {
+        if (labels[start] !== 0 || !isLightBackground(start)) continue;
 
-      for (let x = 0; x < width; x += 1) {
-        enqueue(x);
-        enqueue((height - 1) * width + x);
+        componentId += 1;
+        let head = 0;
+        let tail = 0;
+        let size = 0;
+        labels[start] = componentId;
+        queue[tail++] = start;
+
+        while (head < tail) {
+          const index = queue[head++];
+          size += 1;
+          const x = index % width;
+          const y = Math.floor(index / width);
+
+          const tryAdd = next => {
+            if (labels[next] !== 0 || !isLightBackground(next)) return;
+            labels[next] = componentId;
+            queue[tail++] = next;
+          };
+
+          if (x > 0) tryAdd(index - 1);
+          if (x + 1 < width) tryAdd(index + 1);
+          if (y > 0) tryAdd(index - width);
+          if (y + 1 < height) tryAdd(index + width);
+        }
+
+        if (size > largestComponentSize) {
+          largestComponentSize = size;
+          largestComponentId = componentId;
+        }
       }
-      for (let y = 1; y < height - 1; y += 1) {
-        enqueue(y * width);
-        enqueue(y * width + width - 1);
+
+      // The unwanted rounded white/light card occupies a large connected region.
+      // Small light components such as eyes, teeth and highlights must remain intact.
+      const minimumBackgroundSize = Math.max(1500, Math.round(pixelCount * 0.08));
+      if (!largestComponentId || largestComponentSize < minimumBackgroundSize) {
+        revealFallback();
+        return;
       }
 
-      while (head < tail) {
-        const index = queue[head++];
-        const x = index % width;
-        const y = Math.floor(index / width);
-        pixels[index * 4 + 3] = 0;
-
-        if (x > 0) enqueue(index - 1);
-        if (x + 1 < width) enqueue(index + 1);
-        if (y > 0) enqueue(index - width);
-        if (y + 1 < height) enqueue(index + width);
+      for (let index = 0; index < pixelCount; index += 1) {
+        if (labels[index] === largestComponentId) {
+          pixels[index * 4 + 3] = 0;
+        }
       }
 
       context.putImageData(imageData, 0, 0);
@@ -137,9 +124,9 @@
 
   mascot.style.visibility = 'hidden';
   if (mascot.complete) {
-    removeConnectedLightBackground();
+    removeLargestLightComponent();
   } else {
-    mascot.addEventListener('load', removeConnectedLightBackground, { once: true });
+    mascot.addEventListener('load', removeLargestLightComponent, { once: true });
     mascot.addEventListener('error', revealFallback, { once: true });
   }
 })();
