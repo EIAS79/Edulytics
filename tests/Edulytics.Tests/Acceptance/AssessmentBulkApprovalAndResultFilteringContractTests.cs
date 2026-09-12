@@ -43,15 +43,15 @@ public sealed class AssessmentBulkApprovalAndResultFilteringContractTests
     }
 
     [Fact]
-    public void ResultsPage_ClientFilterLimitsLargeClassesAndSupportsResultStatus()
+    public void ResultsPage_UsesStudentRosterFiltersAndPerStudentPaperLinks()
     {
         var root = FindRoot();
-        var script = File.ReadAllText(Path.Combine(
-            root,
-            "src/Edulytics.Web/wwwroot/js/site.js"));
         var fallback = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/wwwroot/js/assessment-results-filter-fallback-v35.js"));
+        var view = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Assessments/Results.cshtml"));
         var layout = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/Views/Shared/_Layout.cshtml"));
@@ -59,24 +59,19 @@ public sealed class AssessmentBulkApprovalAndResultFilteringContractTests
             root,
             "src/Edulytics.Web/wwwroot/css/round2-product-fixes.css"));
 
-        Assert.Contains("wireAssessmentResultFilters", script, StringComparison.Ordinal);
-        Assert.Contains(".assessment-results-grid-v2", script, StringComparison.Ordinal);
-        Assert.Contains("Search by student name or number", script, StringComparison.Ordinal);
-        Assert.Contains("with-result", script, StringComparison.Ordinal);
-        Assert.Contains("without-result", script, StringComparison.Ordinal);
-        Assert.Contains("pageSize.value = \"5\"", script, StringComparison.Ordinal);
-        Assert.Contains("assessment-results-filter-summary", script, StringComparison.Ordinal);
-
-        // PR #132 skipped the complete filter UI when exactly one student card existed.
-        // The post-site fallback must therefore accept every non-empty result grid.
         Assert.Contains("assessment-results-filter-fallback-v35.js", layout, StringComparison.Ordinal);
-        Assert.Contains("if (cards.length === 0) return;", fallback, StringComparison.Ordinal);
-        Assert.DoesNotContain("cards.length <= 1", fallback, StringComparison.Ordinal);
-        Assert.Contains("assessment-results-filter-bar", fallback, StringComparison.Ordinal);
+        Assert.Contains(".assessment-results-roster", fallback, StringComparison.Ordinal);
+        Assert.Contains(".assessment-result-roster-row", fallback, StringComparison.Ordinal);
+        Assert.Contains("Search by student name", fallback, StringComparison.Ordinal);
         Assert.Contains("with-result", fallback, StringComparison.Ordinal);
         Assert.Contains("without-result", fallback, StringComparison.Ordinal);
         Assert.Contains("pageSize.value = \"5\"", fallback, StringComparison.Ordinal);
-
+        Assert.Contains("assessment-results-filter-summary", fallback, StringComparison.Ordinal);
+        Assert.Contains("data-has-result", view, StringComparison.Ordinal);
+        Assert.Contains("asp-route-studentProfileId", view, StringComparison.Ordinal);
+        Assert.Contains("assessment-student-link", view, StringComparison.Ordinal);
+        Assert.Contains("assessment-selected-paper", view, StringComparison.Ordinal);
+        Assert.Contains("View paper", view, StringComparison.Ordinal);
         Assert.Contains("assessment-results-filter-bar", styles, StringComparison.Ordinal);
         Assert.Contains("assessment-results-pager", styles, StringComparison.Ordinal);
     }

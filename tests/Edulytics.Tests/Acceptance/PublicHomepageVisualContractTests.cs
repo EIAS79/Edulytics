@@ -33,44 +33,34 @@ public sealed class PublicHomepageVisualContractTests
     }
 
     [Fact]
-    public void HomepageMascot_UsesPublicAssetWithEdgeBackgroundRemoved()
+    public void HomepageMascot_UsesExistingTransparentPublicAssetDirectly()
     {
         var root = FindRoot();
         var cleanupScript = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/wwwroot/js/public-home-cartoon-cleanup.js"));
-        var visualCss = File.ReadAllText(Path.Combine(
+        var transparencyCss = File.ReadAllText(Path.Combine(
             root,
-            "src/Edulytics.Web/wwwroot/css/public-home-visual-contract-v32.css"));
+            "src/Edulytics.Web/wwwroot/css/public-home-mascot-transparency-v35.css"));
         var mascotPath = Path.Combine(
             root,
             "src/Edulytics.Web/wwwroot/images/public/edulytics-math-mascot.png");
 
         Assert.True(File.Exists(mascotPath));
         Assert.Contains(
-            "/images/public/edulytics-math-mascot.png?v=39",
-            cleanupScript,
-            StringComparison.Ordinal);
-        Assert.DoesNotContain(
-            "/images/brand/edulytics-mascot-final.png",
+            "/images/public/edulytics-math-mascot.png?v=40",
             cleanupScript,
             StringComparison.Ordinal);
         Assert.Contains(
-            "ed-home-v16-mascot-canvas",
+            "ed-home-v40-mascot-image",
             cleanupScript,
             StringComparison.Ordinal);
-        Assert.Contains(
-            "dataset.edMascotEdgeBackgroundRemoved",
-            cleanupScript,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "background: transparent !important;",
-            visualCss,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "box-shadow: none !important;",
-            visualCss,
-            StringComparison.Ordinal);
+        Assert.DoesNotContain("document.createElement('canvas')", cleanupScript, StringComparison.Ordinal);
+        Assert.DoesNotContain("getImageData", cleanupScript, StringComparison.Ordinal);
+        Assert.DoesNotContain("putImageData", cleanupScript, StringComparison.Ordinal);
+        Assert.Contains("background-color:transparent!important", transparencyCss, StringComparison.Ordinal);
+        Assert.Contains("box-shadow:none!important", transparencyCss, StringComparison.Ordinal);
+        Assert.Contains("border-radius:0!important", transparencyCss, StringComparison.Ordinal);
     }
 
     private static string FindRoot()

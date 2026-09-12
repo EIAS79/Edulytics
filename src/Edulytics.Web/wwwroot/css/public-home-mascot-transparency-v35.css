@@ -1,28 +1,56 @@
-/* Home v39 — the mascot is rendered on a transparent canvas after clearing only
-   the light background connected to the source image perimeter. */
-.ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual{
-  background:transparent!important;
+/* Home v40 — use the supplied transparent mascot PNG directly, exactly as other
+   transparent public mascot artwork is presented. The first hero visual remains
+   a layout stage only: no card, border, radius, shadow, wash, or pseudo layer. */
+.ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual,
+.ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual.ed-home-v40-mascot-stage{
+  background:none!important;
+  background-color:transparent!important;
+  background-image:none!important;
   border:0!important;
+  border-color:transparent!important;
   border-radius:0!important;
   box-shadow:none!important;
+  filter:none!important;
   overflow:visible!important;
 }
 
 .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual::before,
-.ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual::after{
+.ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual::after,
+.ed-home .ed-home-v12-slide:first-child .ed-home-v40-mascot-stage::before,
+.ed-home .ed-home-v12-slide:first-child .ed-home-v40-mascot-stage::after{
   content:none!important;
   display:none!important;
   background:none!important;
   border:0!important;
   box-shadow:none!important;
+  filter:none!important;
 }
 
-.ed-home .ed-home-v12-slide:first-child .ed-home-v16-mascot-canvas{
-  background:transparent!important;
+.ed-home .ed-home-v12-slide:first-child .ed-home-v40-mascot-image{
+  position:absolute;
+  inset:0;
+  width:auto;
+  height:auto;
+  max-width:96%;
+  max-height:96%;
+  margin:auto;
+  display:block;
+  object-fit:contain;
+  object-position:center;
+  background:none!important;
+  background-color:transparent!important;
   border:0!important;
   border-radius:0!important;
   box-shadow:none!important;
   padding:0!important;
+  filter:drop-shadow(0 18px 28px rgba(35,73,111,.12));
   mix-blend-mode:normal!important;
   pointer-events:none!important;
+}
+
+@media(max-width:1040px){
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v40-mascot-image{
+    max-width:94%;
+    max-height:94%;
+  }
 }
