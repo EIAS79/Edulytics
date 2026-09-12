@@ -171,9 +171,15 @@
   color:#2f66e8;
 }
 
+/* The visual wrapper is layout-only by default. The first slide contains a transparent PNG
+   and must not inherit the legacy white card. Card chrome belongs only to the classroom slide. */
 .ed-home-v12-visual{
   position:relative;
   min-height:555px;
+  overflow:visible;
+}
+
+.ed-home-v12-slide:nth-child(2) .ed-home-v12-visual{
   overflow:hidden;
   border:14px solid rgba(255,255,255,.98);
   border-radius:34px;
@@ -363,7 +369,8 @@
   .ed-home-v12-body,.ed-home-v12-note{font-size:.98rem;line-height:1.62}
   .ed-home-v12-actions{display:grid;gap:11px;margin-top:23px}
   .ed-home-v12-actions a{width:100%;min-width:0;min-height:52px}
-  .ed-home-v12-visual{min-height:330px;border-width:9px;border-radius:24px}
+  .ed-home-v12-visual{min-height:330px}
+  .ed-home-v12-slide:nth-child(2) .ed-home-v12-visual{border-width:9px;border-radius:24px}
   .ed-home-v12-arrow{
     top:auto;
     bottom:9px;
