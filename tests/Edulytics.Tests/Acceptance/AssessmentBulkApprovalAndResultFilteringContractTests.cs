@@ -25,6 +25,24 @@ public sealed class AssessmentBulkApprovalAndResultFilteringContractTests
     }
 
     [Fact]
+    public void ApprovalOnlyPersistence_KeepsAssessmentConcurrencyAnchorInAtomicSave()
+    {
+        var root = FindRoot();
+        var repository = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Data/Repositories/AssessmentBuilderRepository.cs"));
+        var dbContext = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Data/Contexts/EdulyticsDbContext.cs"));
+
+        Assert.Contains("assessmentEntry.Property(x => x.RowVersion).OriginalValue = expectedRowVersion", repository, StringComparison.Ordinal);
+        Assert.DoesNotContain("Property(x => x.UpdatedAtUtc).IsModified = false", repository, StringComparison.Ordinal);
+        Assert.Contains("await db.SaveChangesAsync(cancellationToken)", repository, StringComparison.Ordinal);
+        Assert.Contains("PrepareApplicationManagedConcurrencyTokens", dbContext, StringComparison.Ordinal);
+        Assert.Contains("RandomNumberGenerator.GetBytes", dbContext, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void ResultsPage_ClientFilterLimitsLargeClassesAndSupportsResultStatus()
     {
         var root = FindRoot();
