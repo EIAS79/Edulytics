@@ -46,10 +46,10 @@ public sealed class PublicWebsiteSiteWideContractTests
             "src/Edulytics.Web/Views/Shared/_PublicLayout.cshtml"));
 
         var publicCss = layout.IndexOf(
-            "public-site-v40.css",
+            "public-site-v41.css",
             StringComparison.Ordinal);
         var publicRuntime = layout.IndexOf(
-            "public-site-v40.js",
+            "public-site-v41.js",
             StringComparison.Ordinal);
         var contentRuntime = layout.IndexOf(
             "public-content-v33.js",
@@ -86,7 +86,7 @@ public sealed class PublicWebsiteSiteWideContractTests
     }
 
     [Fact]
-    public void PublicHomeVisualContract_RestoresMascotCtaAndMegaMenuMarkers()
+    public void PublicHomeVisualContract_RestoresCtaAndMegaMenuMarkers()
     {
         var root = FindRoot();
         var css = File.ReadAllText(Path.Combine(
@@ -121,6 +121,10 @@ public sealed class PublicWebsiteSiteWideContractTests
             bundleController,
             StringComparison.Ordinal);
         Assert.Contains(
+            "[HttpGet(\"/css/public-site-v41.css\")]",
+            bundleController,
+            StringComparison.Ordinal);
+        Assert.Contains(
             "[HttpGet(\"/js/public-site-v33.js\")]",
             bundleController,
             StringComparison.Ordinal);
@@ -145,11 +149,11 @@ public sealed class PublicWebsiteSiteWideContractTests
             bundleController,
             StringComparison.Ordinal);
         Assert.Contains(
-            ".ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual",
-            css,
+            "[HttpGet(\"/js/public-site-v41.js\")]",
+            bundleController,
             StringComparison.Ordinal);
-        Assert.Contains(
-            "background: transparent !important;",
+        Assert.DoesNotContain(
+            ".ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual",
             css,
             StringComparison.Ordinal);
         Assert.Contains(
