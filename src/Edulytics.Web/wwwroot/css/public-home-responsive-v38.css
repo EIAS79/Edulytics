@@ -1,0 +1,75 @@
+/* Public home v38 — restore viewport-safe mobile rendering and the transparent mascot stage. */
+
+/* The public shell must never become wider than the device viewport. */
+html,
+body.ed-public-body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip !important;
+}
+
+body.ed-public-body {
+  display: block !important;
+  min-width: 0 !important;
+}
+
+body.ed-public-body .ed-public-main,
+body.ed-public-body .ed-home {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* The mascot PNG already contains real alpha transparency. Do not put it back
+   inside the legacy white visual card and do not blend it against white. */
+body.ed-public-body .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+}
+
+body.ed-public-body .ed-home .ed-home-v12-slide:first-child .ed-home-v16-mascot-canvas,
+body.ed-public-body .ed-home .ed-home-v12-slide:first-child canvas[data-ed-mascot-background-cleaned="true"] {
+  background: transparent !important;
+  mix-blend-mode: normal !important;
+}
+
+/* Experience v20 renders a 660px browser mock-up and scales it visually on
+   phones. A CSS transform does not reduce layout width, so the 660px box was
+   still widening the document. Keep that artwork inside its own viewport. */
+@media (max-width: 720px) {
+  body.ed-public-body .ed-home .ed-exp-v20-shell,
+  body.ed-public-body .ed-home .ed-exp-v20-grid,
+  body.ed-public-body .ed-home .ed-exp-v20-visual,
+  body.ed-public-body .ed-home .ed-exp-v20-scene {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  body.ed-public-body .ed-home .ed-exp-v20-visual,
+  body.ed-public-body .ed-home .ed-exp-v20-scene {
+    width: 100% !important;
+    overflow: clip !important;
+  }
+
+  body.ed-public-body .ed-home .ed-exp-v20-browser {
+    max-width: none !important;
+    transform-origin: center center !important;
+  }
+}
+
+/* Keep the 660px mock-up fully inside the visible phone width instead of
+   clipping the page or allowing horizontal document scroll. */
+@media (max-width: 430px) {
+  body.ed-public-body .ed-home .ed-exp-v20-browser {
+    transform: scale(.54) !important;
+  }
+}
+
+@media (max-width: 390px) {
+  body.ed-public-body .ed-home .ed-exp-v20-browser {
+    transform: scale(.50) !important;
+  }
+}
