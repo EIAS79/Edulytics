@@ -13,7 +13,8 @@ namespace Edulytics.Web.Controllers;
 [Authorize(Roles = RoleNames.Teacher)]
 [Route("school/assessments/{assessmentId:guid}/builder/approval")]
 public sealed class AssessmentApprovalRecoveryController(
-    IAssessmentBuilderService service) : Controller
+    IAssessmentBuilderService service,
+    IAssessmentBuilderBulkApprovalService bulkApproval) : Controller
 {
     [HttpPost("question/{questionId:guid}"), ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
@@ -72,57 +73,22 @@ public sealed class AssessmentApprovalRecoveryController(
         if (!TryDecode(rowVersion, out var version))
             return Back(assessmentId, "The assessment changed. Reload and try again.");
 
-        var initial = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
-        if (initial.Value is null)
-            return Back(assessmentId, "The assessment builder could not be loaded.");
-        if (!initial.Value.Details.Assessment.RowVersion.SequenceEqual(version))
-            return Back(assessmentId, "The assessment changed. Reload and try again.");
+        var result = await bulkApproval.ApproveAllDraftQuestionsAsync(
+            actorId,
+            assessmentId,
+            version,
+            cancellationToken);
 
-        var draftQuestionIds = initial.Value.Questions
-            .Where(x => x.Status == AssessmentBuilderQuestionStatus.Draft)
-            .Select(x => x.Id)
-            .ToArray();
-
-        var approved = 0;
-        var review = 0;
-
-        foreach (var questionId in draftQuestionIds)
+        if (result.Succeeded)
         {
-            // Re-read the builder before every write. This keeps this legacy route
-            // equivalent to the canonical ApproveAll action and prevents a partial
-            // batch when another approval changes the current assessment version.
-            var current = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
-            if (current.Value is null)
-            {
-                review += draftQuestionIds.Length - approved - review;
-                break;
-            }
-
-            var currentQuestion = current.Value.Questions.FirstOrDefault(x => x.Id == questionId);
-            if (currentQuestion is null || currentQuestion.Status != AssessmentBuilderQuestionStatus.Draft)
-                continue;
-
-            var result = await service.ApproveQuestionAsync(
-                actorId,
-                assessmentId,
-                questionId,
-                current.Value.Details.Assessment.RowVersion,
-                cancellationToken);
-
-            if (result.Succeeded)
-                approved++;
-            else
-                review++;
+            TempData["Success"] = "All draft questions approved.";
         }
-
-        if (review == 0)
-            TempData["Success"] = approved == 1
-                ? "1 draft question approved."
-                : $"{approved} draft questions approved.";
-        else if (approved > 0)
-            TempData["Success"] = $"Approved {approved} draft question(s). {review} remain for teacher review.";
         else
-            TempData["Error"] = $"No draft questions were approved. {review} remain for teacher review.";
+        {
+            TempData["Error"] = result.Error == AssessmentErrorCode.ConcurrencyConflict
+                ? "The assessment changed. Reload and try again. No partial bulk approval was saved."
+                : "Draft questions could not be approved. No partial bulk approval was saved.";
+        }
 
         return Back(assessmentId);
     }
