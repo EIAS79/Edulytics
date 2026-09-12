@@ -1,6 +1,7 @@
 using Edulytics.Core.Constants;
 using Edulytics.Data.Contexts;
 using Edulytics.Data.Identity;
+using Edulytics.Data.Seeding;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,17 +24,20 @@ public sealed class EdulyticsDatabaseBootstrapper
     private readonly RoleManager<ApplicationRole> _roleManager;
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly IConfiguration _configuration;
+    private readonly IHostEnvironment _environment;
     private readonly EdulyticsDbContext _db;
 
     public EdulyticsDatabaseBootstrapper(
         RoleManager<ApplicationRole> roleManager,
         UserManager<ApplicationUser> userManager,
         IConfiguration configuration,
+        IHostEnvironment environment,
         EdulyticsDbContext db)
     {
         _roleManager = roleManager ?? throw new ArgumentNullException(nameof(roleManager));
         _userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
         _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+        _environment = environment ?? throw new ArgumentNullException(nameof(environment));
         _db = db ?? throw new ArgumentNullException(nameof(db));
     }
 
@@ -43,6 +47,7 @@ public sealed class EdulyticsDatabaseBootstrapper
         {
             await EnsureRolesExistAsync();
             await EnsureSuperAdminAsync();
+            await SeedCurriculumIfRequestedAsync();
             await PresentationDemoProvisioner.RunAsync(
                 _db,
                 _userManager,
@@ -61,6 +66,7 @@ public sealed class EdulyticsDatabaseBootstrapper
             {
                 await EnsureRolesExistAsync();
                 await EnsureSuperAdminAsync();
+                await SeedCurriculumIfRequestedAsync();
                 await PresentationDemoProvisioner.RunAsync(
                     _db,
                     _userManager,
@@ -76,6 +82,28 @@ public sealed class EdulyticsDatabaseBootstrapper
         {
             await _db.Database.CloseConnectionAsync();
         }
+    }
+
+    private async Task SeedCurriculumIfRequestedAsync()
+    {
+        if (!_configuration.GetValue<bool>(
+                "Edulytics:Deployment:SeedCurriculum"))
+        {
+            return;
+        }
+
+        if (!_environment.IsStaging())
+        {
+            throw new InvalidOperationException(
+                "Edulytics:Deployment:SeedCurriculum is staging-only and cannot run outside the Staging environment.");
+        }
+
+        await new MathematicsCurriculumPackSeeder(_db)
+            .SeedAsync();
+        await new MathematicsPedagogicalLessonSeeder(_db)
+            .SeedAsync();
+        await new MathematicsCanonicalLessonContentSeeder(_db)
+            .SeedAsync();
     }
 
     private async Task ExecuteAdvisoryLockAsync(
