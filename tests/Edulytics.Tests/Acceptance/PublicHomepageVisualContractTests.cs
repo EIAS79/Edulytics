@@ -48,7 +48,7 @@ public sealed class PublicHomepageVisualContractTests
 
         Assert.True(File.Exists(mascotPath));
         Assert.Contains(
-            "/images/public/edulytics-math-mascot.png?v=33",
+            "/images/public/edulytics-math-mascot.png?v=38",
             cleanupScript,
             StringComparison.Ordinal);
         Assert.DoesNotContain(
