@@ -1,16 +1,13 @@
 @using System.Globalization
-@using Edulytics.Core.Constants
 @model Edulytics.Web.ViewModels.Assessments.AssessmentResultsViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentResource> A
 @{
-    var canManageAssessment = User.IsInRole(RoleNames.Teacher);
     ViewData["Title"] = A["Results"];
     var assessment = Model.Workspace.Assessment;
-    var editable = canManageAssessment && assessment.Status == Edulytics.Core.Enums.AssessmentStatus.Open;
     var language = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
     var questionLabel = language switch { "pl" => "Pytanie", "ar" => "السؤال", _ => "Question" };
     var studentAnswerLabel = language switch { "pl" => "Odpowiedź ucznia", "ar" => "إجابة الطالب", _ => "Student answer" };
-    var expectedAnswerLabel = language switch { "pl" => "Poprawna / oczekiwana odpowiedź", "ar" => "الإجابة الصحيحة / المتوقعة", _ => "Correct / expected answer" };
+    var expectedAnswerLabel = language switch { "pl" => "Poprawna / oczekiwana odpowiedź", "ar" => "الإجابة الصحيحة / المتوقwana", _ => "Correct / expected answer" };
     var scoreLabel = language switch { "pl" => "Punkty", "ar" => "الدرجة", _ => "Score" };
     var statusLabel = language switch { "pl" => "Status", "ar" => "الحالة", _ => "Status" };
     var actionLabel = language switch { "pl" => "Akcja", "ar" => "الإجراء", _ => "Action" };
@@ -24,12 +21,6 @@
     var noResponseLabel = language switch { "pl" => "Brak zapisanej odpowiedzi", "ar" => "لا توجد إجابة مسجلة", _ => "No submitted answer recorded" };
     var blankResponseLabel = language switch { "pl" => "Brak odpowiedzi", "ar" => "لم تتم الإجابة", _ => "No answer submitted" };
     var noExpectedLabel = language switch { "pl" => "Brak zapisanej odpowiedzi wzorcowej", "ar" => "لا توجد إجابة نموذجية مسجلة", _ => "No expected answer recorded" };
-    var saveHelp = language switch
-    {
-        "pl" => "Wpisz lub popraw punkty w ostatniej kolumnie. Odpowiedź ucznia i odpowiedź oczekiwana są tylko do odczytu.",
-        "ar" => "أدخل أو عدّل الدرجة في العمود الأخير. إجابة الطالب والإجابة المتوقعة للعرض فقط.",
-        _ => "Enter or adjust the score in the last column. Student and expected answers are read-only."
-    };
 
     var selectedStudentId = Guid.TryParse(Context.Request.Query["studentProfileId"], out var parsedStudentId)
         ? parsedStudentId
@@ -55,13 +46,6 @@
     @if (TempData["Error"] is string error)
     {
         <div class="school-alert school-alert-error" role="alert">@error</div>
-    }
-
-    @if (!editable)
-    {
-        <div class="assessment-info">
-            @(assessment.Status == Edulytics.Core.Enums.AssessmentStatus.Open ? A["ResultsRoleReadOnly"] : A["ResultsReadOnly"])
-        </div>
     }
 
     @if (Model.Workspace.Students.Count == 0)
@@ -166,85 +150,6 @@
             @if (!selectedStudent.ResultId.HasValue)
             {
                 <div class="assessment-empty">@noSubmissionLabel</div>
-            }
-            else if (editable && canManageAssessment)
-            {
-                <form asp-action="SaveResult"
-                      asp-route-id="@assessment.Id"
-                      asp-route-studentProfileId="@selectedStudent.StudentProfileId"
-                      method="post"
-                      class="assessment-result-form assessment-result-form-v2">
-                    @Html.AntiForgeryToken()
-                    @if (selectedStudent.RowVersion is not null)
-                    {
-                        <input type="hidden" name="rowVersion" value="@Convert.ToBase64String(selectedStudent.RowVersion)" />
-                    }
-                    <p class="assessment-result-edit-help">@saveHelp</p>
-                    <div class="assessment-breakdown-scroll">
-                        <table class="assessment-breakdown-table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">@questionLabel</th>
-                                    <th scope="col">@studentAnswerLabel</th>
-                                    <th scope="col">@expectedAnswerLabel</th>
-                                    <th scope="col" class="assessment-score-column">@scoreLabel</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var question in Model.Workspace.Questions)
-                                {
-                                    var hasScore = selectedStudent.QuestionScores.TryGetValue(question.Id, out var currentScore);
-                                    var current = hasScore ? currentScore : 0m;
-                                    var hasResponse = selectedStudent.QuestionResponses.TryGetValue(question.Id, out var response);
-                                    var hasExpected = !string.IsNullOrWhiteSpace(question.CorrectAnswer);
-                                    <tr>
-                                        <td class="assessment-question-cell">
-                                            <span class="assessment-question-number">@question.Order</span>
-                                            <span>@question.Prompt</span>
-                                            <input type="hidden" name="questionIds" value="@question.Id" />
-                                        </td>
-                                        <td>
-                                            @if (hasResponse)
-                                            {
-                                                <span class="assessment-answer-value @(string.IsNullOrWhiteSpace(response) ? "is-empty" : null)">@(string.IsNullOrWhiteSpace(response) ? blankResponseLabel : response)</span>
-                                            }
-                                            else
-                                            {
-                                                <span class="assessment-answer-muted">@noResponseLabel</span>
-                                            }
-                                        </td>
-                                        <td>
-                                            @if (hasExpected)
-                                            {
-                                                <span class="assessment-answer-value is-expected">@question.CorrectAnswer</span>
-                                            }
-                                            else
-                                            {
-                                                <span class="assessment-answer-muted">@noExpectedLabel</span>
-                                            }
-                                        </td>
-                                        <td class="assessment-score-cell">
-                                            <label class="visually-hidden" for="score-@selectedStudent.StudentProfileId-@question.Id">@A["QuestionScoreLabel", question.Order]</label>
-                                            <div class="assessment-score-editor">
-                                                <input id="score-@selectedStudent.StudentProfileId-@question.Id"
-                                                       name="scores"
-                                                       type="number"
-                                                       min="0"
-                                                       max="@question.MaxScore.ToString(CultureInfo.InvariantCulture)"
-                                                       step="0.01"
-                                                       value="@current.ToString(CultureInfo.InvariantCulture)"
-                                                       aria-label="@A["QuestionScoreLabel", question.Order]"
-                                                       required />
-                                                <strong>/ @question.MaxScore.ToString("0.##")</strong>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                    <button type="submit" class="school-button school-button-primary assessment-save-result-button">@A["SaveResult"]</button>
-                </form>
             }
             else
             {
@@ -371,7 +276,6 @@
     .assessment-result-total-label { display: block; margin-bottom: .15rem; color: #68778c; font-size: .76rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
     .assessment-result-total-v2 strong { display: block; color: #14213d; font-size: 1.15rem; }
     .assessment-result-total-v2 > span:last-child { display: block; margin-top: .12rem; color: #466178; font-weight: 800; }
-    .assessment-result-edit-help { margin: 0; padding: .9rem 1.25rem; border-bottom: 1px solid #e8edf5; background: #f7f9fd; color: #54657d; font-size: .9rem; }
 
     .assessment-breakdown-table { width: 100%; min-width: 900px; margin: 0; border-collapse: collapse; table-layout: fixed; }
     .assessment-breakdown-table th { padding: .75rem .9rem; border-bottom: 1px solid #dce4ef; background: #f3f6fb; color: #52627a; font-size: .76rem; font-weight: 900; letter-spacing: .04em; text-align: left; text-transform: uppercase; }
@@ -392,10 +296,6 @@
     .assessment-score-badge.is-partial { background: #fff7df; color: #7b5a00; }
     .assessment-score-badge.is-zero { background: #fff0ef; color: #a03b34; }
     .assessment-score-badge.is-missing { background: #f1f3f6; color: #7b8798; }
-    .assessment-score-editor { display: inline-flex; align-items: center; justify-content: flex-end; gap: .45rem; white-space: nowrap; }
-    .assessment-score-editor input { width: 5.7rem; min-width: 5.7rem; padding: .48rem .55rem; border: 1px solid #b9c7da; border-radius: .55rem; text-align: right; font-weight: 850; }
-    .assessment-score-editor strong { color: #53627a; }
-    .assessment-save-result-button { width: calc(100% - 2.5rem); margin: 1rem 1.25rem 1.25rem; }
 
     @@media (max-width: 720px) {
         .assessment-result-student-header, .assessment-paper-header-actions { align-items: stretch; flex-direction: column; }
