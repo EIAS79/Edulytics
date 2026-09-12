@@ -82,7 +82,10 @@ public sealed record AssessmentQuestionItem(
     string Prompt,
     decimal MaxScore,
     int Order,
-    IReadOnlyList<Guid> OutcomeIds);
+    IReadOnlyList<Guid> OutcomeIds)
+{
+    public string? CorrectAnswer { get; init; }
+}
 
 public sealed record AssessmentWorkspace(
     IReadOnlyList<AssessmentListItem> Assessments,
@@ -106,7 +109,11 @@ public sealed record AssessmentStudentResultItem(
     decimal Score,
     decimal Percentage,
     byte[]? RowVersion,
-    IReadOnlyDictionary<Guid, decimal> QuestionScores);
+    IReadOnlyDictionary<Guid, decimal> QuestionScores)
+{
+    public IReadOnlyDictionary<Guid, string> QuestionResponses { get; init; } =
+        new Dictionary<Guid, string>();
+}
 
 public sealed record AssessmentResultsWorkspace(
     AssessmentListItem Assessment,
