@@ -1,6 +1,7 @@
 using Edulytics.Core.Constants;
 using Edulytics.Data.Contexts;
 using Edulytics.Data.Identity;
+using Edulytics.Data.Seeding;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -43,6 +44,7 @@ public sealed class EdulyticsDatabaseBootstrapper
         {
             await EnsureRolesExistAsync();
             await EnsureSuperAdminAsync();
+            await SeedCurriculumIfRequestedAsync();
             await PresentationDemoProvisioner.RunAsync(
                 _db,
                 _userManager,
@@ -61,6 +63,7 @@ public sealed class EdulyticsDatabaseBootstrapper
             {
                 await EnsureRolesExistAsync();
                 await EnsureSuperAdminAsync();
+                await SeedCurriculumIfRequestedAsync();
                 await PresentationDemoProvisioner.RunAsync(
                     _db,
                     _userManager,
@@ -76,6 +79,35 @@ public sealed class EdulyticsDatabaseBootstrapper
         {
             await _db.Database.CloseConnectionAsync();
         }
+    }
+
+    private async Task SeedCurriculumIfRequestedAsync()
+    {
+        if (!_configuration.GetValue<bool>(
+                "Edulytics:Deployment:SeedCurriculum"))
+        {
+            return;
+        }
+
+        var environmentName =
+            _configuration["ASPNETCORE_ENVIRONMENT"] ??
+            _configuration["DOTNET_ENVIRONMENT"];
+
+        if (!string.Equals(
+                environmentName,
+                "Staging",
+                StringComparison.OrdinalIgnoreCase))
+        {
+            throw new InvalidOperationException(
+                "Edulytics:Deployment:SeedCurriculum is staging-only and cannot run outside the Staging environment.");
+        }
+
+        await new MathematicsCurriculumPackSeeder(_db)
+            .SeedAsync();
+        await new MathematicsPedagogicalLessonSeeder(_db)
+            .SeedAsync();
+        await new MathematicsCanonicalLessonContentSeeder(_db)
+            .SeedAsync();
     }
 
     private async Task ExecuteAdvisoryLockAsync(
