@@ -1,5 +1,5 @@
-/* Home v38 — the supplied mascot PNG is already transparent.
-   Remove only presentation layers around the first hero mascot. */
+/* Home v39 — the mascot is rendered on a transparent canvas after clearing only
+   the light background connected to the source image perimeter. */
 .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual{
   background:transparent!important;
   border:0!important;
@@ -24,4 +24,5 @@
   box-shadow:none!important;
   padding:0!important;
   mix-blend-mode:normal!important;
+  pointer-events:none!important;
 }
