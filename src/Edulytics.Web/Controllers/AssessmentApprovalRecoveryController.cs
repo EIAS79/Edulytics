@@ -38,14 +38,12 @@ public sealed class AssessmentApprovalRecoveryController(
         var question = workspace.Value.Questions.FirstOrDefault(x => x.Id == questionId);
         if (question is null || question.Status != AssessmentBuilderQuestionStatus.Draft)
             return Back(assessmentId, "This question is no longer a draft.");
-        if (!ReadyForApproval(question))
-            return Back(assessmentId, "This question still needs teacher review before it can be approved.");
 
         var result = await service.ApproveQuestionAsync(
             actorId,
             assessmentId,
             questionId,
-            version,
+            workspace.Value.Details.Assessment.RowVersion,
             cancellationToken);
 
         if (result.Succeeded)
@@ -55,6 +53,11 @@ public sealed class AssessmentApprovalRecoveryController(
 
         return Back(assessmentId);
     }
+
+    // Compatibility endpoint for older builder pages that posted to /approval/drafts.
+    // GET never changes state; it only recovers stale browser navigation back to Builder.
+    [HttpGet("drafts")]
+    public IActionResult ApproveDraftsLegacyGet(Guid assessmentId) => Back(assessmentId);
 
     [HttpPost("drafts"), ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
@@ -69,31 +72,41 @@ public sealed class AssessmentApprovalRecoveryController(
         if (!TryDecode(rowVersion, out var version))
             return Back(assessmentId, "The assessment changed. Reload and try again.");
 
-        var workspace = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
-        if (workspace.Value is null)
+        var initial = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
+        if (initial.Value is null)
             return Back(assessmentId, "The assessment builder could not be loaded.");
-        if (!workspace.Value.Details.Assessment.RowVersion.SequenceEqual(version))
+        if (!initial.Value.Details.Assessment.RowVersion.SequenceEqual(version))
             return Back(assessmentId, "The assessment changed. Reload and try again.");
 
-        var drafts = workspace.Value.Questions
+        var draftQuestionIds = initial.Value.Questions
             .Where(x => x.Status == AssessmentBuilderQuestionStatus.Draft)
+            .Select(x => x.Id)
             .ToArray();
 
         var approved = 0;
         var review = 0;
-        foreach (var question in drafts)
+
+        foreach (var questionId in draftQuestionIds)
         {
-            if (!ReadyForApproval(question))
+            // Re-read the builder before every write. This keeps this legacy route
+            // equivalent to the canonical ApproveAll action and prevents a partial
+            // batch when another approval changes the current assessment version.
+            var current = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
+            if (current.Value is null)
             {
-                review++;
-                continue;
+                review += draftQuestionIds.Length - approved - review;
+                break;
             }
+
+            var currentQuestion = current.Value.Questions.FirstOrDefault(x => x.Id == questionId);
+            if (currentQuestion is null || currentQuestion.Status != AssessmentBuilderQuestionStatus.Draft)
+                continue;
 
             var result = await service.ApproveQuestionAsync(
                 actorId,
                 assessmentId,
-                question.Id,
-                version,
+                questionId,
+                current.Value.Details.Assessment.RowVersion,
                 cancellationToken);
 
             if (result.Succeeded)
@@ -113,12 +126,6 @@ public sealed class AssessmentApprovalRecoveryController(
 
         return Back(assessmentId);
     }
-
-    private static bool ReadyForApproval(AssessmentBuilderQuestion question) =>
-        !string.IsNullOrWhiteSpace(question.Prompt) &&
-        !string.IsNullOrWhiteSpace(question.CorrectAnswer) &&
-        question.MaxScore > 0m &&
-        question.OutcomeIds.Count > 0;
 
     private RedirectResult Back(Guid assessmentId, string? error = null)
     {
