@@ -33,7 +33,7 @@ public sealed class PublicHomepageVisualContractTests
     }
 
     [Fact]
-    public void HomepageMascot_UsesExistingTransparentPublicAssetWithoutWhiteCard()
+    public void HomepageMascot_UsesPublicAssetWithEdgeBackgroundRemoved()
     {
         var root = FindRoot();
         var cleanupScript = File.ReadAllText(Path.Combine(
@@ -48,7 +48,7 @@ public sealed class PublicHomepageVisualContractTests
 
         Assert.True(File.Exists(mascotPath));
         Assert.Contains(
-            "/images/public/edulytics-math-mascot.png?v=38",
+            "/images/public/edulytics-math-mascot.png?v=39",
             cleanupScript,
             StringComparison.Ordinal);
         Assert.DoesNotContain(
@@ -57,6 +57,10 @@ public sealed class PublicHomepageVisualContractTests
             StringComparison.Ordinal);
         Assert.Contains(
             "ed-home-v16-mascot-canvas",
+            cleanupScript,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "dataset.edMascotEdgeBackgroundRemoved",
             cleanupScript,
             StringComparison.Ordinal);
         Assert.Contains(
