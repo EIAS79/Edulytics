@@ -227,7 +227,6 @@ public sealed class AssessmentsController : Controller
             : RedirectToAction(nameof(EditQuestion), new { questionId, assessmentId });
     }
 
-
     [Authorize(Roles = RoleNames.Teacher)]
     [HttpPost("{id:guid}/delete")]
     [ValidateAntiForgeryToken]
@@ -243,30 +242,20 @@ public sealed class AssessmentsController : Controller
 
         if (!TryDecodeRowVersion(rowVersion, out var bytes))
         {
-            TempData["Error"] =
-                _text["ErrorConcurrencyConflict"].Value;
-
-            return RedirectToAction(
-                nameof(Details),
-                new { id });
+            TempData["Error"] = _text["ErrorConcurrencyConflict"].Value;
+            return RedirectToAction(nameof(Details), new { id });
         }
 
         var result = await _service.DeleteAssessmentAsync(
             actorId,
-            new DeleteAssessmentRequest(
-                id,
-                bytes),
+            new DeleteAssessmentRequest(id, bytes),
             cancellationToken);
 
-        SetFeedback(
-            result,
-            "SuccessAssessmentDeleted");
+        SetFeedback(result, "SuccessAssessmentDeleted");
 
         return result.Succeeded
             ? RedirectToAction(nameof(Index))
-            : RedirectToAction(
-                nameof(Details),
-                new { id });
+            : RedirectToAction(nameof(Details), new { id });
     }
 
     [Authorize(Roles = RoleNames.Teacher)]
@@ -285,28 +274,17 @@ public sealed class AssessmentsController : Controller
 
         if (!TryDecodeRowVersion(rowVersion, out var bytes))
         {
-            TempData["Error"] =
-                _text["ErrorConcurrencyConflict"].Value;
-
-            return RedirectToAction(
-                nameof(Details),
-                new { id = assessmentId });
+            TempData["Error"] = _text["ErrorConcurrencyConflict"].Value;
+            return RedirectToAction(nameof(Details), new { id = assessmentId });
         }
 
         var result = await _service.DeleteQuestionAsync(
             actorId,
-            new DeleteAssessmentQuestionRequest(
-                questionId,
-                bytes),
+            new DeleteAssessmentQuestionRequest(questionId, bytes),
             cancellationToken);
 
-        SetFeedback(
-            result,
-            "SuccessQuestionDeleted");
-
-        return RedirectToAction(
-            nameof(Details),
-            new { id = assessmentId });
+        SetFeedback(result, "SuccessQuestionDeleted");
+        return RedirectToAction(nameof(Details), new { id = assessmentId });
     }
 
     [Authorize(Roles = RoleNames.Teacher)]
@@ -432,44 +410,6 @@ public sealed class AssessmentsController : Controller
         }
 
         return View(new AssessmentResultsViewModel(result.Value));
-    }
-
-    [Authorize(Roles = RoleNames.Teacher)]
-    [HttpPost("{id:guid}/results/{studentProfileId:guid}")]
-    [ValidateAntiForgeryToken]
-    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
-    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
-    public async Task<IActionResult> SaveResult(
-        Guid id,
-        Guid studentProfileId,
-        Guid[] questionIds,
-        decimal[] scores,
-        string? rowVersion,
-        CancellationToken cancellationToken)
-    {
-        if (!TryActor(out var actorId)) return Forbid();
-
-        byte[]? bytes = null;
-
-        if (!string.IsNullOrWhiteSpace(rowVersion) &&
-            !TryDecodeRowVersion(rowVersion, out bytes))
-        {
-            TempData["Error"] = _text["ErrorConcurrencyConflict"].Value;
-            return RedirectToAction(nameof(Results), new { id });
-        }
-
-        var result = await _service.SaveStudentResultAsync(
-            actorId,
-            new SaveStudentAssessmentResultRequest(
-                id,
-                studentProfileId,
-                questionIds,
-                scores,
-                bytes),
-            cancellationToken);
-
-        SetFeedback(result, "SuccessResultSaved");
-        return RedirectToAction(nameof(Results), new { id });
     }
 
     private bool TryActor(out Guid id) =>
