@@ -193,17 +193,16 @@ public sealed class AssessmentBuilderRepository(EdulyticsDbContext db) : IAssess
                 .Where(property => property.IsModified)
                 .All(property => property.Metadata.Name == nameof(Assessment.UpdatedAtUtc));
 
-        if (approvalOnly)
-        {
-            if (!assessment.RowVersion.SequenceEqual(expectedRowVersion))
-                return AssessmentPersistenceResult.Failure(AssessmentPersistenceError.Conflict);
+        if (approvalOnly && !assessment.RowVersion.SequenceEqual(expectedRowVersion))
+            return AssessmentPersistenceResult.Failure(AssessmentPersistenceError.Conflict);
 
-            assessmentEntry.Property(x => x.UpdatedAtUtc).IsModified = false;
-        }
-        else
-        {
-            assessmentEntry.Property(x => x.RowVersion).OriginalValue = expectedRowVersion;
-        }
+        // Keep the Assessment row in the approval-only unit of work. UpdatedAtUtc is
+        // intentionally persisted so EF applies the submitted RowVersion in the UPDATE
+        // predicate and EdulyticsDbContext rotates the application-managed RowVersion.
+        // The Assessment update and every modified AssessmentItem are committed by the
+        // same SaveChanges transaction, preserving all-or-none bulk approval while also
+        // rejecting stale browser pages and concurrent assessment edits.
+        assessmentEntry.Property(x => x.RowVersion).OriginalValue = expectedRowVersion;
 
         try
         {
