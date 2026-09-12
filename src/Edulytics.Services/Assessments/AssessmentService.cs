@@ -16,17 +16,20 @@ public sealed partial class AssessmentService : IAssessmentService
     private readonly ISchoolRepository _schools;
     private readonly ISchoolUserRepository _users;
     private readonly IAuditService? _audit;
+    private readonly IAssessmentBuilderRepository? _builder;
 
     public AssessmentService(
         IAssessmentRepository repo,
         ISchoolRepository schools,
         ISchoolUserRepository users,
-        IAuditService? audit = null)
+        IAuditService? audit = null,
+        IAssessmentBuilderRepository? builder = null)
     {
         _repo = repo;
         _schools = schools;
         _users = users;
         _audit = audit;
+        _builder = builder;
     }
 
     public async Task<AssessmentQueryResult<AssessmentWorkspace>> GetWorkspaceAsync(
@@ -153,7 +156,29 @@ public sealed partial class AssessmentService : IAssessmentService
         if (assessment.Status == AssessmentStatus.Draft)
             return AssessmentQueryResult<AssessmentResultsWorkspace>.Failure(AssessmentErrorCode.AssessmentNotOpen);
 
-        var questions = BuildQuestions(snapshot, assessment.Id);
+        IReadOnlyList<AssessmentQuestionItem> questions = BuildQuestions(snapshot, assessment.Id);
+
+        if (_builder is not null)
+        {
+            var builderContext = await _builder.GetContextAsync(
+                scope.School.Id,
+                assessment.Id,
+                cancellationToken);
+
+            if (builderContext is not null)
+            {
+                var expectedAnswers = builderContext.Items
+                    .Where(x => !string.IsNullOrWhiteSpace(x.CorrectAnswer))
+                    .ToDictionary(x => x.Id, x => x.CorrectAnswer.Trim());
+
+                questions = questions
+                    .Select(question =>
+                        expectedAnswers.TryGetValue(question.Id, out var expected)
+                            ? question with { CorrectAnswer = expected }
+                            : question)
+                    .ToArray();
+            }
+        }
 
         var studentIds = snapshot.StudentEnrollments
             .Where(x => x.AcademicYearId == assessment.AcademicYearId &&
@@ -179,12 +204,20 @@ public sealed partial class AssessmentService : IAssessmentService
                     x => x.AssessmentId == assessment.Id &&
                          x.StudentProfileId == profile.Id);
 
-                IReadOnlyDictionary<Guid, decimal> scores =
-                    result is null
-                        ? new Dictionary<Guid, decimal>()
-                        : snapshot.StudentAnswers
-                            .Where(x => x.AssessmentResultId == result.Id)
-                            .ToDictionary(x => x.AssessmentQuestionId, x => x.Score);
+                var answerRows = result is null
+                    ? Array.Empty<StudentAnswer>()
+                    : snapshot.StudentAnswers
+                        .Where(x => x.AssessmentResultId == result.Id)
+                        .ToArray();
+
+                IReadOnlyDictionary<Guid, decimal> scores = answerRows
+                    .ToDictionary(x => x.AssessmentQuestionId, x => x.Score);
+
+                IReadOnlyDictionary<Guid, string> responses = answerRows
+                    .Where(x => x.ResponseText is not null)
+                    .ToDictionary(
+                        x => x.AssessmentQuestionId,
+                        x => x.ResponseText ?? string.Empty);
 
                 return new AssessmentStudentResultItem(
                     profile.Id,
@@ -194,7 +227,10 @@ public sealed partial class AssessmentService : IAssessmentService
                     result?.Score ?? 0m,
                     result?.Percentage ?? 0m,
                     result?.RowVersion,
-                    scores);
+                    scores)
+                {
+                    QuestionResponses = responses
+                };
             })
             .ToArray();
 

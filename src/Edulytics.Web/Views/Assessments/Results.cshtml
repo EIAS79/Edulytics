@@ -1,16 +1,30 @@
+@using System.Globalization
 @using Edulytics.Core.Constants
 @model Edulytics.Web.ViewModels.Assessments.AssessmentResultsViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentResource> A
 @{
     var canManageAssessment = User.IsInRole(RoleNames.Teacher);
-}
-
-@{
     ViewData["Title"] = A["Results"];
     var assessment = Model.Workspace.Assessment;
     var editable = canManageAssessment && assessment.Status == Edulytics.Core.Enums.AssessmentStatus.Open;
+    var language = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var questionLabel = language switch { "pl" => "Pytanie", "ar" => "السؤال", _ => "Question" };
+    var studentAnswerLabel = language switch { "pl" => "Odpowiedź ucznia", "ar" => "إجابة الطالب", _ => "Student answer" };
+    var expectedAnswerLabel = language switch { "pl" => "Poprawna / oczekiwana odpowiedź", "ar" => "الإجابة الصحيحة / المتوقعة", _ => "Correct / expected answer" };
+    var scoreLabel = language switch { "pl" => "Punkty", "ar" => "الدرجة", _ => "Score" };
+    var noSubmissionLabel = language switch { "pl" => "Brak wyniku", "ar" => "لا توجد نتيجة بعد", _ => "No result yet" };
+    var noResponseLabel = language switch { "pl" => "Brak zapisanej odpowiedzi", "ar" => "لا توجد إجابة مسجلة", _ => "No submitted answer recorded" };
+    var blankResponseLabel = language switch { "pl" => "Brak odpowiedzi", "ar" => "لم تتم الإجابة", _ => "No answer submitted" };
+    var noExpectedLabel = language switch { "pl" => "Brak zapisanej odpowiedzi wzorcowej", "ar" => "لا توجد إجابة نموذجية مسجلة", _ => "No expected answer recorded" };
+    var saveHelp = language switch
+    {
+        "pl" => "Wpisz lub popraw punkty w ostatniej kolumnie. Odpowiedź ucznia i odpowiedź oczekiwana są tylko do odczytu.",
+        "ar" => "أدخل أو عدّل الدرجة في العمود الأخير. إجابة الطالب والإجابة المتوقعة للعرض فقط.",
+        _ => "Enter or adjust the score in the last column. Student and expected answers are read-only."
+    };
 }
-<section class="assessment-page">
+
+<section class="assessment-page assessment-results-page">
     <header class="assessment-header">
         <div>
             <h1>@A["Results"] — @assessment.Title</h1>
@@ -48,19 +62,20 @@
     }
     else
     {
-        <section class="assessment-results-grid">
+        <section class="assessment-results-grid assessment-results-grid-v2">
             @foreach (var student in Model.Workspace.Students)
             {
-                <article class="assessment-result-card"
+                <article class="assessment-result-card assessment-result-card-v2"
                          data-student-id="@student.StudentProfileId">
-                    <header>
+                    <header class="assessment-result-student-header">
                         <div>
                             <h2>@student.DisplayName</h2>
                             <p>@A["StudentNumber"]: @student.StudentNumber</p>
                         </div>
                         @if (student.ResultId.HasValue)
                         {
-                            <div class="assessment-result-total">
+                            <div class="assessment-result-total assessment-result-total-v2">
+                                <span class="assessment-result-total-label">@scoreLabel</span>
                                 <strong>
                                     @student.Score.ToString("0.##")
                                     / @assessment.MaxScore.ToString("0.##")
@@ -68,73 +83,172 @@
                                 <span>@student.Percentage.ToString("0.##")%</span>
                             </div>
                         }
+                        else
+                        {
+                            <div class="assessment-result-not-submitted">@noSubmissionLabel</div>
+                        }
                     </header>
 
-                    @if (editable)
+                    @if (editable && canManageAssessment)
                     {
-                        @if (canManageAssessment)
-                        {
-                            <form asp-action="SaveResult"
-                                                          asp-route-id="@assessment.Id"
-                                                          asp-route-studentProfileId="@student.StudentProfileId"
-                                                          method="post"
-                                                          class="assessment-result-form">
-                                                        @Html.AntiForgeryToken()
+                        <form asp-action="SaveResult"
+                              asp-route-id="@assessment.Id"
+                              asp-route-studentProfileId="@student.StudentProfileId"
+                              method="post"
+                              class="assessment-result-form assessment-result-form-v2">
+                            @Html.AntiForgeryToken()
 
-                                                        @if (student.RowVersion is not null)
-                                                        {
-                                                            <input type="hidden"
-                                                                   name="rowVersion"
-                                                                   value="@Convert.ToBase64String(student.RowVersion)" />
-                                                        }
+                            @if (student.RowVersion is not null)
+                            {
+                                <input type="hidden"
+                                       name="rowVersion"
+                                       value="@Convert.ToBase64String(student.RowVersion)" />
+                            }
 
-                                                        @foreach (var question in Model.Workspace.Questions)
-                                                        {
-                                                            var current = student.QuestionScores.TryGetValue(
-                                                                question.Id,
-                                                                out var value) ? value : 0m;
+                            <p class="assessment-result-edit-help">@saveHelp</p>
+                            <div class="assessment-breakdown-scroll">
+                                <table class="assessment-breakdown-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">@questionLabel</th>
+                                            <th scope="col">@studentAnswerLabel</th>
+                                            <th scope="col">@expectedAnswerLabel</th>
+                                            <th scope="col" class="assessment-score-column">@scoreLabel</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var question in Model.Workspace.Questions)
+                                        {
+                                            var hasScore = student.QuestionScores.TryGetValue(question.Id, out var currentScore);
+                                            var current = hasScore ? currentScore : 0m;
+                                            var hasResponse = student.QuestionResponses.TryGetValue(question.Id, out var response);
+                                            var hasExpected = !string.IsNullOrWhiteSpace(question.CorrectAnswer);
 
-                                                            <div class="assessment-score-row">
-                                                                <input type="hidden"
-                                                                       name="questionIds"
-                                                                       value="@question.Id" />
-                                                                <label for="score-@student.StudentProfileId-@question.Id">
-                                                                    @question.Order. @question.Prompt
-                                                                    <span>/ @question.MaxScore.ToString("0.##")</span>
-                                                                </label>
-                                                                <input id="score-@student.StudentProfileId-@question.Id"
-                                                                       name="scores"
-                                                                       type="number"
-                                                                       min="0"
-                                                                       max="@question.MaxScore.ToString(System.Globalization.CultureInfo.InvariantCulture)"
-                                                                       step="0.01"
-                                                                       value="@current.ToString(System.Globalization.CultureInfo.InvariantCulture)"
-                                                                       aria-label="@A["QuestionScoreLabel", question.Order]"
-                                                                       required />
-                                                            </div>
-                                                        }
+                                            <tr>
+                                                <td class="assessment-question-cell">
+                                                    <span class="assessment-question-number">@question.Order</span>
+                                                    <span>@question.Prompt</span>
+                                                    <input type="hidden" name="questionIds" value="@question.Id" />
+                                                </td>
+                                                <td>
+                                                    @if (hasResponse)
+                                                    {
+                                                        <span class="assessment-answer-value @(string.IsNullOrWhiteSpace(response) ? "is-empty" : null)">
+                                                            @(string.IsNullOrWhiteSpace(response) ? blankResponseLabel : response)
+                                                        </span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="assessment-answer-muted">@noResponseLabel</span>
+                                                    }
+                                                </td>
+                                                <td>
+                                                    @if (hasExpected)
+                                                    {
+                                                        <span class="assessment-answer-value is-expected">@question.CorrectAnswer</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="assessment-answer-muted">@noExpectedLabel</span>
+                                                    }
+                                                </td>
+                                                <td class="assessment-score-cell">
+                                                    <label class="visually-hidden"
+                                                           for="score-@student.StudentProfileId-@question.Id">
+                                                        @A["QuestionScoreLabel", question.Order]
+                                                    </label>
+                                                    <div class="assessment-score-editor">
+                                                        <input id="score-@student.StudentProfileId-@question.Id"
+                                                               name="scores"
+                                                               type="number"
+                                                               min="0"
+                                                               max="@question.MaxScore.ToString(CultureInfo.InvariantCulture)"
+                                                               step="0.01"
+                                                               value="@current.ToString(CultureInfo.InvariantCulture)"
+                                                               aria-label="@A["QuestionScoreLabel", question.Order]"
+                                                               required />
+                                                        <strong>/ @question.MaxScore.ToString("0.##")</strong>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
 
-                                                        <button type="submit"
-                                                                class="school-button school-button-primary">@A["SaveResult"]</button>
-                                                    </form>
-                        }
+                            <button type="submit"
+                                    class="school-button school-button-primary assessment-save-result-button">
+                                @A["SaveResult"]
+                            </button>
+                        </form>
                     }
                     else
                     {
-                        <div class="assessment-readonly-scores">
-                            @foreach (var question in Model.Workspace.Questions)
-                            {
-                                var current = student.QuestionScores.TryGetValue(
-                                    question.Id,
-                                    out var value) ? value : 0m;
-                                <div>
-                                    <span>@question.Order. @question.Prompt</span>
-                                    <strong>
-                                        @current.ToString("0.##")
-                                        / @question.MaxScore.ToString("0.##")
-                                    </strong>
-                                </div>
-                            }
+                        <div class="assessment-breakdown-scroll">
+                            <table class="assessment-breakdown-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">@questionLabel</th>
+                                        <th scope="col">@studentAnswerLabel</th>
+                                        <th scope="col">@expectedAnswerLabel</th>
+                                        <th scope="col" class="assessment-score-column">@scoreLabel</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var question in Model.Workspace.Questions)
+                                    {
+                                        var hasScore = student.QuestionScores.TryGetValue(question.Id, out var current);
+                                        var hasResponse = student.QuestionResponses.TryGetValue(question.Id, out var response);
+                                        var hasExpected = !string.IsNullOrWhiteSpace(question.CorrectAnswer);
+                                        var scoreClass = hasScore && current >= question.MaxScore
+                                            ? "is-full"
+                                            : hasScore && current > 0m
+                                                ? "is-partial"
+                                                : "is-zero";
+
+                                        <tr>
+                                            <td class="assessment-question-cell">
+                                                <span class="assessment-question-number">@question.Order</span>
+                                                <span>@question.Prompt</span>
+                                            </td>
+                                            <td>
+                                                @if (hasResponse)
+                                                {
+                                                    <span class="assessment-answer-value @(string.IsNullOrWhiteSpace(response) ? "is-empty" : null)">
+                                                        @(string.IsNullOrWhiteSpace(response) ? blankResponseLabel : response)
+                                                    </span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="assessment-answer-muted">@noResponseLabel</span>
+                                                }
+                                            </td>
+                                            <td>
+                                                @if (hasExpected)
+                                                {
+                                                    <span class="assessment-answer-value is-expected">@question.CorrectAnswer</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="assessment-answer-muted">@noExpectedLabel</span>
+                                                }
+                                            </td>
+                                            <td class="assessment-score-cell">
+                                                @if (student.ResultId.HasValue && hasScore)
+                                                {
+                                                    <span class="assessment-score-badge @scoreClass">
+                                                        @current.ToString("0.##") / @question.MaxScore.ToString("0.##")
+                                                    </span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="assessment-score-badge is-missing">— / @question.MaxScore.ToString("0.##")</span>
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
                         </div>
                     }
                 </article>
@@ -142,3 +256,254 @@
         </section>
     }
 </section>
+
+<style>
+    .assessment-results-grid-v2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .assessment-result-card-v2 {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #dbe4ef;
+        border-radius: 1rem;
+        background: #fff;
+        box-shadow: 0 12px 32px rgba(31, 55, 92, 0.07);
+    }
+
+    .assessment-result-student-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1.15rem 1.25rem;
+        border-bottom: 1px solid #e8edf5;
+        background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+    }
+
+    .assessment-result-student-header h2 {
+        margin: 0;
+        font-size: 1.35rem;
+    }
+
+    .assessment-result-student-header p {
+        margin: 0.25rem 0 0;
+        color: #617089;
+    }
+
+    .assessment-result-total-v2 {
+        min-width: 8.5rem;
+        text-align: right;
+    }
+
+    .assessment-result-total-label {
+        display: block;
+        margin-bottom: 0.15rem;
+        color: #68778c;
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    .assessment-result-total-v2 strong {
+        display: block;
+        color: #14213d;
+        font-size: 1.25rem;
+    }
+
+    .assessment-result-total-v2 > span:last-child {
+        display: block;
+        margin-top: 0.12rem;
+        color: #466178;
+        font-weight: 800;
+    }
+
+    .assessment-result-not-submitted {
+        padding: 0.45rem 0.75rem;
+        border-radius: 999px;
+        background: #eef2f7;
+        color: #617089;
+        font-size: 0.85rem;
+        font-weight: 800;
+    }
+
+    .assessment-result-form-v2 {
+        padding: 0;
+    }
+
+    .assessment-result-edit-help {
+        margin: 0;
+        padding: 0.9rem 1.25rem;
+        border-bottom: 1px solid #e8edf5;
+        background: #f7f9fd;
+        color: #54657d;
+        font-size: 0.9rem;
+    }
+
+    .assessment-breakdown-scroll {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .assessment-breakdown-table {
+        width: 100%;
+        min-width: 900px;
+        margin: 0;
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+
+    .assessment-breakdown-table th {
+        padding: 0.75rem 0.9rem;
+        border-bottom: 1px solid #dce4ef;
+        background: #f3f6fb;
+        color: #52627a;
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0.04em;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    .assessment-breakdown-table th:first-child { width: 38%; }
+    .assessment-breakdown-table th:nth-child(2) { width: 21%; }
+    .assessment-breakdown-table th:nth-child(3) { width: 25%; }
+    .assessment-breakdown-table th:last-child { width: 16%; }
+
+    .assessment-breakdown-table td {
+        padding: 0.9rem;
+        border-bottom: 1px solid #edf1f6;
+        color: #17233d;
+        vertical-align: top;
+        overflow-wrap: anywhere;
+    }
+
+    .assessment-breakdown-table tbody tr:last-child td {
+        border-bottom: 0;
+    }
+
+    .assessment-question-cell {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.65rem;
+        line-height: 1.45;
+    }
+
+    .assessment-question-number {
+        display: inline-grid;
+        place-items: center;
+        flex: 0 0 1.75rem;
+        min-width: 1.75rem;
+        height: 1.75rem;
+        border-radius: 0.5rem;
+        background: #eef3ff;
+        color: #315fcb;
+        font-size: 0.85rem;
+        font-weight: 900;
+    }
+
+    .assessment-answer-value {
+        display: inline-block;
+        padding: 0.38rem 0.55rem;
+        border-radius: 0.5rem;
+        background: #f4f7fb;
+        color: #1f2d45;
+        font-weight: 750;
+        white-space: pre-wrap;
+    }
+
+    .assessment-answer-value.is-expected {
+        background: #eef9f2;
+        color: #17643a;
+    }
+
+    .assessment-answer-value.is-empty,
+    .assessment-answer-muted {
+        color: #7a8799;
+        font-style: italic;
+        font-weight: 600;
+    }
+
+    .assessment-score-column,
+    .assessment-score-cell {
+        text-align: right !important;
+    }
+
+    .assessment-score-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 5.5rem;
+        padding: 0.4rem 0.6rem;
+        border-radius: 0.55rem;
+        font-weight: 900;
+        white-space: nowrap;
+    }
+
+    .assessment-score-badge.is-full {
+        background: #eaf8ef;
+        color: #17643a;
+    }
+
+    .assessment-score-badge.is-partial {
+        background: #fff7df;
+        color: #7b5a00;
+    }
+
+    .assessment-score-badge.is-zero {
+        background: #fff0ef;
+        color: #a03b34;
+    }
+
+    .assessment-score-badge.is-missing {
+        background: #f1f3f6;
+        color: #7b8798;
+    }
+
+    .assessment-score-editor {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.45rem;
+        white-space: nowrap;
+    }
+
+    .assessment-score-editor input {
+        width: 5.7rem;
+        min-width: 5.7rem;
+        padding: 0.48rem 0.55rem;
+        border: 1px solid #b9c7da;
+        border-radius: 0.55rem;
+        text-align: right;
+        font-weight: 850;
+    }
+
+    .assessment-score-editor strong {
+        color: #53627a;
+    }
+
+    .assessment-save-result-button {
+        width: calc(100% - 2.5rem);
+        margin: 1rem 1.25rem 1.25rem;
+    }
+
+    @@media (max-width: 720px) {
+        .assessment-result-student-header {
+            align-items: stretch;
+            flex-direction: column;
+        }
+
+        .assessment-result-total-v2 {
+            text-align: left;
+        }
+
+        .assessment-breakdown-table {
+            min-width: 760px;
+        }
+    }
+</style>
