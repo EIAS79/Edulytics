@@ -113,7 +113,7 @@
         label.style.fontSize = 'clamp(14px, 1.4vw, 20px)';
         label.style.lineHeight = '1';
         label.style.pointerEvents = 'none';
-        label.style.zIndex = '3';
+        label.style.zIndex = '2';
         clock.appendChild(label);
       }
     });
