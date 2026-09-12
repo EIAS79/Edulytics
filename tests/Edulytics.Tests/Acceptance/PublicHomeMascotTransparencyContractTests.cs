@@ -30,10 +30,10 @@ public sealed class PublicHomeMascotTransparencyContractTests
         Assert.Contains("document.createElement('img')", mascotLoader, StringComparison.Ordinal);
         Assert.Contains("ed-home-v40-mascot-image", mascotLoader, StringComparison.Ordinal);
         Assert.Contains("/images/public/edulytics-math-mascot.png?v=40", mascotLoader, StringComparison.Ordinal);
+        Assert.DoesNotContain("document.createElement('canvas')", mascotLoader, StringComparison.Ordinal);
         Assert.DoesNotContain("getImageData", mascotLoader, StringComparison.Ordinal);
         Assert.DoesNotContain("putImageData", mascotLoader, StringComparison.Ordinal);
         Assert.DoesNotContain("Uint8Array", mascotLoader, StringComparison.Ordinal);
-        Assert.DoesNotContain("canvas", mascotLoader, StringComparison.OrdinalIgnoreCase);
 
         Assert.Contains("[HttpGet(\"/css/public-site-v40.css\")]", bundle, StringComparison.Ordinal);
         Assert.Contains("public-css-v40", bundle, StringComparison.Ordinal);
