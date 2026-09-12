@@ -49,7 +49,7 @@ public sealed class PublicWebsiteSiteWideContractTests
             "public-site-v35.css",
             StringComparison.Ordinal);
         var publicRuntime = layout.IndexOf(
-            "public-site-v36.js",
+            "public-site-v37.js",
             StringComparison.Ordinal);
         var contentRuntime = layout.IndexOf(
             "public-content-v33.js",
@@ -114,6 +114,10 @@ public sealed class PublicWebsiteSiteWideContractTests
             StringComparison.Ordinal);
         Assert.Contains(
             "[HttpGet(\"/js/public-site-v36.js\")]",
+            bundleController,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "[HttpGet(\"/js/public-site-v37.js\")]",
             bundleController,
             StringComparison.Ordinal);
         Assert.Contains(
