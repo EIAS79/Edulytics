@@ -52,7 +52,7 @@
   pointer-events:auto;
 }
 
-/* Use the user-supplied mascot as the first-slide visual. */
+/* Legacy mascot selector must never reintroduce a white image background. */
 .ed-home .ed-home-v13-mascot-image{
   position:absolute;
   inset:0;
@@ -61,7 +61,7 @@
   object-fit:contain;
   object-position:center;
   padding:14px;
-  background:#fff;
+  background:transparent;
 }
 
 /* Replace the dark classroom source with a lighter source image and a softer treatment. */
