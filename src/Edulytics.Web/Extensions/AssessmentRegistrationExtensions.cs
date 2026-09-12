@@ -16,6 +16,7 @@ public static class AssessmentRegistrationExtensions
         services.AddScoped<IAssessmentService, AssessmentService>();
         services.AddScoped<IAssessmentBuilderRepository, AssessmentBuilderRepository>();
         services.AddScoped<IAssessmentBuilderService, AssessmentBuilderService>();
+        services.AddScoped<IAssessmentBuilderBulkApprovalService, AssessmentBuilderBulkApprovalService>();
         services.AddScoped<IAssessmentDeliverySettingsService, AssessmentDeliverySettingsService>();
         services.AddScoped<IStudentAssessmentDeliveryService, StudentAssessmentDeliveryService>();
         services.AddScoped<AssessmentMaxScoreLockFilter>();
