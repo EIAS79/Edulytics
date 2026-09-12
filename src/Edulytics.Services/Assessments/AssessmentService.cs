@@ -205,7 +205,7 @@ public sealed partial class AssessmentService : IAssessmentService
                          x.StudentProfileId == profile.Id);
 
                 var answerRows = result is null
-                    ? []
+                    ? Array.Empty<StudentAnswer>()
                     : snapshot.StudentAnswers
                         .Where(x => x.AssessmentResultId == result.Id)
                         .ToArray();
