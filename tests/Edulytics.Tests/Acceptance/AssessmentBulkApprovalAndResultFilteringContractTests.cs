@@ -49,6 +49,12 @@ public sealed class AssessmentBulkApprovalAndResultFilteringContractTests
         var script = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/wwwroot/js/site.js"));
+        var fallback = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/assessment-results-filter-fallback-v35.js"));
+        var layout = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Shared/_Layout.cshtml"));
         var styles = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/wwwroot/css/round2-product-fixes.css"));
@@ -60,6 +66,17 @@ public sealed class AssessmentBulkApprovalAndResultFilteringContractTests
         Assert.Contains("without-result", script, StringComparison.Ordinal);
         Assert.Contains("pageSize.value = \"5\"", script, StringComparison.Ordinal);
         Assert.Contains("assessment-results-filter-summary", script, StringComparison.Ordinal);
+
+        // PR #132 skipped the complete filter UI when exactly one student card existed.
+        // The post-site fallback must therefore accept every non-empty result grid.
+        Assert.Contains("assessment-results-filter-fallback-v35.js", layout, StringComparison.Ordinal);
+        Assert.Contains("if (cards.length === 0) return;", fallback, StringComparison.Ordinal);
+        Assert.DoesNotContain("cards.length <= 1", fallback, StringComparison.Ordinal);
+        Assert.Contains("assessment-results-filter-bar", fallback, StringComparison.Ordinal);
+        Assert.Contains("with-result", fallback, StringComparison.Ordinal);
+        Assert.Contains("without-result", fallback, StringComparison.Ordinal);
+        Assert.Contains("pageSize.value = \"5\"", fallback, StringComparison.Ordinal);
+
         Assert.Contains("assessment-results-filter-bar", styles, StringComparison.Ordinal);
         Assert.Contains("assessment-results-pager", styles, StringComparison.Ordinal);
     }
