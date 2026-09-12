@@ -27,7 +27,7 @@ public sealed class PublicHomeMascotTransparencyContractTests
         Assert.Contains("getImageData", cleanup, StringComparison.Ordinal);
         Assert.Contains("pixels[index * 4 + 3] = 0", cleanup, StringComparison.Ordinal);
         Assert.Contains("distanceSquared <= 12000", cleanup, StringComparison.Ordinal);
-        Assert.Contains("data-ed-mascot-background-cleaned", cleanup, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("dataset.edMascotBackgroundCleaned", cleanup, StringComparison.Ordinal);
         Assert.Contains("mixBlendMode = 'multiply'", cleanup, StringComparison.Ordinal);
 
         Assert.Contains("public-home-mascot-transparency-v35.css", bundle, StringComparison.Ordinal);
