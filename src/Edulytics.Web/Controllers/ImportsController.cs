@@ -1,7 +1,9 @@
 using System.Security.Claims;
 using System.Text;
+using Edulytics.Core.Academics;
 using Edulytics.Core.Constants;
 using Edulytics.Core.Enums;
+using Edulytics.Core.Interfaces;
 using Edulytics.Services.Assessments;
 using Edulytics.Services.Imports;
 using Edulytics.Web.Email;
@@ -26,17 +28,23 @@ public sealed class ImportsController : Controller
 
     private readonly IDataImportService _imports;
     private readonly IAssessmentService _assessments;
+    private readonly IAcademicStructureRepository _academicStructure;
+    private readonly ISchoolUserRepository _schoolUsers;
     private readonly IUserInvitationDeliveryService _invitations;
     private readonly IStringLocalizer<ImportResource> _text;
 
     public ImportsController(
         IDataImportService imports,
         IAssessmentService assessments,
+        IAcademicStructureRepository academicStructure,
+        ISchoolUserRepository schoolUsers,
         IUserInvitationDeliveryService invitations,
         IStringLocalizer<ImportResource> text)
     {
         _imports = imports;
         _assessments = assessments;
+        _academicStructure = academicStructure;
+        _schoolUsers = schoolUsers;
         _invitations = invitations;
         _text = text;
     }
@@ -119,9 +127,9 @@ public sealed class ImportsController : Controller
         var rawBytes = stream.ToArray();
 
         AssessmentWorkspace? assessmentWorkspace = null;
-        if (importType is ImportType.Students or
-            ImportType.Teachers or
-            ImportType.AssessmentResults)
+        AcademicStructureSnapshot? academicSnapshot = null;
+
+        if (importType == ImportType.AssessmentResults)
         {
             var assessmentResult = await _assessments.GetWorkspaceAsync(
                 actorId,
@@ -133,11 +141,26 @@ public sealed class ImportsController : Controller
             assessmentWorkspace = assessmentResult.Value;
         }
 
+        if (importType is ImportType.Students or ImportType.Teachers)
+        {
+            var actor = await _schoolUsers.GetActorAsync(
+                actorId,
+                cancellationToken);
+
+            if (actor?.SchoolId is not Guid schoolId)
+                return Forbid();
+
+            academicSnapshot = await _academicStructure.GetSnapshotAsync(
+                schoolId,
+                cancellationToken);
+        }
+
         var upload = MathOnlyImportAdapter.NormalizeUpload(
             importType,
             file.FileName,
             rawBytes,
-            assessmentWorkspace);
+            assessmentWorkspace,
+            academicSnapshot);
 
         var result = await _imports.UploadAsync(
             actorId,
