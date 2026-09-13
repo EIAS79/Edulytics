@@ -277,6 +277,12 @@ public sealed class ImportValidationEngine
                     "GradeLevel")
                 .Trim();
 
+            var adoptionValue =
+                Value(
+                    row,
+                    "CurriculumAdoptionId")
+                .Trim();
+
             var code =
                 NormalizeCode(
                     Value(
@@ -371,11 +377,96 @@ public sealed class ImportValidationEngine
                     errors);
             }
 
+            SchoolCurriculumAdoption? adoption = null;
+
             if (year is not null &&
+                grade is not null)
+            {
+                var matches =
+                    snapshot.CurriculumAdoptions
+                        .Where(x =>
+                            x.IsActive &&
+                            x.AcademicYearId ==
+                                year.Id &&
+                            x.GradeLevelId ==
+                                grade.Id &&
+                            x.AcademicProgramId !=
+                                Guid.Empty)
+                        .ToArray();
+
+                if (adoptionValue.Length > 0)
+                {
+                    if (Guid.TryParse(
+                            adoptionValue,
+                            out var adoptionId))
+                    {
+                        adoption =
+                            matches.SingleOrDefault(x =>
+                                x.Id == adoptionId);
+
+                        if (adoption is null)
+                        {
+                            Add(
+                                row,
+                                "CurriculumAdoptionId",
+                                "UnknownReference",
+                                adoptionValue,
+                                errors);
+                        }
+                    }
+                    else if (matches.Length > 1)
+                    {
+                        Add(
+                            row,
+                            "GradeLevel",
+                            "AmbiguousReference",
+                            gradeName,
+                            errors);
+                    }
+                    else
+                    {
+                        Add(
+                            row,
+                            "CurriculumAdoptionId",
+                            "UnknownReference",
+                            adoptionValue,
+                            errors);
+                    }
+                }
+                else if (matches.Length == 1)
+                {
+                    // Compatibility path for a batch that was already validated
+                    // before Classes uploads began carrying adoption identity.
+                    adoption = matches[0];
+                }
+                else if (matches.Length == 0)
+                {
+                    Add(
+                        row,
+                        "GradeLevel",
+                        "UnknownReference",
+                        gradeName,
+                        errors);
+                }
+                else
+                {
+                    Add(
+                        row,
+                        "GradeLevel",
+                        "AmbiguousReference",
+                        gradeName,
+                        errors);
+                }
+            }
+
+            if (year is not null &&
+                adoption is not null &&
                 code.Length > 0)
             {
                 var logical =
-                    $"{year.Id:N}:{code}";
+                    $"{year.Id:N}:"
+                    + $"{adoption.AcademicProgramId:N}:"
+                    + code;
 
                 if (!seen.Add(logical))
                 {
@@ -391,6 +482,8 @@ public sealed class ImportValidationEngine
                     .Any(x =>
                         x.AcademicYearId ==
                             year.Id &&
+                        x.AcademicProgramId ==
+                            adoption.AcademicProgramId &&
                         x.NormalizedCode ==
                             code))
                 {
