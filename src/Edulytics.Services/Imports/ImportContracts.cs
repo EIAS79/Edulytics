@@ -61,6 +61,12 @@ public sealed record ImportValidationErrorItem(
     string Code,
     string? RawValue);
 
+public sealed record ImportInvitationCandidate(
+    Guid UserId,
+    string Email,
+    string PasswordSetupToken,
+    string SchoolName);
+
 public sealed record ImportBatchDetail(
     Guid Id,
     ImportType Type,
@@ -75,7 +81,10 @@ public sealed record ImportBatchDetail(
     IReadOnlyList<string> Headers,
     IReadOnlyList<ImportPreviewRow> PreviewRows,
     IReadOnlyList<ImportValidationErrorItem> Errors,
-    bool CanConfirm);
+    bool CanConfirm)
+{
+    public IReadOnlyList<ImportInvitationCandidate> Invitations { get; init; } = [];
+}
 
 public sealed record ImportWorkspace(
     IReadOnlyList<ImportTypeOption> AllowedTypes,
