@@ -43,6 +43,27 @@ public sealed class ImportBatchActionsController(
         return RedirectToAction("Details", "Imports", new { batchId });
     }
 
+    [HttpPost("/school/imports/{batchId:guid}/discard")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Discard(
+        Guid batchId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        var result = await editing.DiscardBatchAsync(
+            actorId,
+            batchId,
+            cancellationToken);
+
+        TempData[result.Succeeded ? "ImportSuccess" : "ImportError"] = result.Succeeded
+            ? "The unconfirmed import batch was discarded."
+            : "This import batch could not be discarded. Completed imports are retained as history.";
+
+        return RedirectToAction("Index", "Imports");
+    }
+
     [HttpPost("/school/imports/{batchId:guid}/resend-invitation")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> ResendInvitation(
