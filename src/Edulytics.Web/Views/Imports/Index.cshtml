@@ -84,6 +84,29 @@
                         }
                     </select>
                 </div>
+                @if (Model.Workspace.AllowedTypes.Any(x => x.Type == ImportType.Classes))
+                {
+                    <div class="import-field">
+                        <label for="academicYearId">@L("Academic Year (Classes only)", "Rok szkolny (tylko klasy)")</label>
+                        <select id="academicYearId" name="academicYearId" aria-describedby="academicYearHelp">
+                            @if (Model.AcademicYears.Count == 0)
+                            {
+                                <option value="">@L("No active academic years available", "Brak aktywnych lat szkolnych")</option>
+                            }
+                            else
+                            {
+                                <option value="">@L("Select the academic year for this Classes file", "Wybierz rok szkolny dla tego pliku klas")</option>
+                                @foreach (var year in Model.AcademicYears)
+                                {
+                                    <option value="@year.Id">@year.Name</option>
+                                }
+                            }
+                        </select>
+                        <small id="academicYearHelp">
+                            @L("Each Classes import belongs to one existing active Academic Year. The year is selected here once and is not repeated in the spreadsheet.", "Każdy import klas dotyczy jednego istniejącego aktywnego roku szkolnego. Rok wybiera się tutaj raz i nie powtarza się go w arkuszu.")
+                        </small>
+                    </div>
+                }
                 <div class="import-field">
                     <label for="importFile">@I["File"]</label>
                     <input id="importFile" name="file" type="file" accept=".csv,.xlsx,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required />
@@ -117,7 +140,7 @@
                         <p>@L("School administrators can create Subject Supervisor accounts in bulk. Validation sends nothing; Confirm creates each account and sends its password-setup invitation.", "Administratorzy szkoły mogą zbiorczo tworzyć konta opiekunów przedmiotu. Walidacja niczego nie wysyła; potwierdzenie tworzy konta i wysyła zaproszenia do ustawienia hasła.")</p>
                         break;
                     case ImportType.Classes:
-                        <p>@L("Use the recommended Classes XLSX template with AcademicYear + GradeLevel + Name on every row, so one file can contain more than one academic year. AcademicYear shows existing active years as suggestions but remains editable; if you type a new or planned year, create it first in Academic Structure with its dates and status before the batch can validate. GradeLevel is a dropdown populated from the levels configured in Edulytics. Name is free text. Edulytics generates the internal class Code automatically.", "Użyj zalecanego szablonu XLSX klas z kolumnami AcademicYear + GradeLevel + Name w każdym wierszu, dzięki czemu jeden plik może obejmować więcej niż jeden rok szkolny. AcademicYear podpowiada istniejące aktywne lata, ale pozostaje edytowalne; jeśli wpiszesz nowy lub planowany rok, najpierw utwórz go w Strukturze akademickiej wraz z datami i statusem, zanim pakiet będzie mógł przejść walidację. GradeLevel jest listą rozwijaną z poziomami skonfigurowanymi w Edulytics. Name jest polem tekstowym. Edulytics automatycznie generuje wewnętrzny kod klasy.")</p>
+                        <p>@L("Choose one existing active Academic Year in the upload form. The Classes XLSX template contains GradeLevel + Name only. GradeLevel is a dropdown populated from the levels already configured in Edulytics, Name is free text, and the internal class Code is generated automatically. The Classes import never creates an Academic Year.", "W formularzu przesyłania wybierz jeden istniejący aktywny rok szkolny. Szablon XLSX klas zawiera tylko GradeLevel + Name. GradeLevel jest listą rozwijaną z poziomami już skonfigurowanymi w Edulytics, Name jest polem tekstowym, a wewnętrzny kod klasy jest generowany automatycznie. Import klas nigdy nie tworzy roku szkolnego.")</p>
                         break;
                     case ImportType.AssessmentResults:
                         <p>@L("Teachers import offline/manual results using AssessmentTitle + AssessmentDate + ClassName. The signed-in teacher is the owner of the upload, so no Teacher name or internal GUID is required. StudentNumber identifies the student; StudentName is for review. Use one row per question. After Confirm, imported grades are read-only.", "Nauczyciele importują wyniki offline/ręczne za pomocą AssessmentTitle + AssessmentDate + ClassName. Zalogowany nauczyciel jest właścicielem importu, więc nie trzeba podawać nazwy nauczyciela ani wewnętrznego GUID. StudentNumber identyfikuje ucznia, a StudentName służy do sprawdzenia. Jeden wiersz odpowiada jednemu pytaniu. Po potwierdzeniu oceny są tylko do odczytu.")</p>
@@ -179,5 +202,5 @@
 </section>
 
 <style>
-.ed-import-workflow{margin-bottom:1rem}.ed-import-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.7rem}.ed-import-steps article{display:grid;grid-template-columns:auto 1fr;gap:.55rem;align-items:start;padding:.8rem;border:1px solid #dbe4ef;border-radius:.8rem;background:#f8faff}.ed-import-steps article>strong{display:grid;place-items:center;width:1.75rem;height:1.75rem;border-radius:50%;background:#2f66e8;color:#fff;font-size:.8rem}.ed-import-steps article>span{color:#425b76;line-height:1.4;font-size:.88rem}.import-history-actions{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}.import-history-actions form{margin:0}.import-link-button{border:0;background:transparent;padding:0;color:#b42318;text-decoration:underline;cursor:pointer;font:inherit}@@media(max-width:1100px){.ed-import-steps{grid-template-columns:1fr 1fr}}@@media(max-width:650px){.ed-import-steps{grid-template-columns:1fr}}
+.ed-import-workflow{margin-bottom:1rem}.ed-import-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.7rem}.ed-import-steps article{display:grid;grid-template-columns:auto 1fr;gap:.55rem;align-items:start;padding:.8rem;border:1px solid #dbe4ef;border-radius:.8rem;background:#f8faff}.ed-import-steps article>strong{display:grid;place-items:center;width:1.75rem;height:1.75rem;border-radius:50%;background:#2f66e8;color:#fff;font-size:.8rem}.ed-import-steps article>span{color:#425b76;line-height:1.4;font-size:.88rem}.import-field small{display:block;margin-top:.35rem;color:#5b6b7d;line-height:1.35}.import-history-actions{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}.import-history-actions form{margin:0}.import-link-button{border:0;background:transparent;padding:0;color:#b42318;text-decoration:underline;cursor:pointer;font:inherit}@@media(max-width:1100px){.ed-import-steps{grid-template-columns:1fr 1fr}}@@media(max-width:650px){.ed-import-steps{grid-template-columns:1fr}}
 </style>
