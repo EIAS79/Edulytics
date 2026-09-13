@@ -1,6 +1,7 @@
 @using System.Globalization
 @using Edulytics.Core.Constants
 @using Edulytics.Core.Enums
+@using Edulytics.Services.Imports
 @model Edulytics.Web.ViewModels.Imports.ImportDetailsViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.ImportResource> I
 
@@ -21,10 +22,48 @@
         ImportType.AssessmentResults => L("Assessment results", "Wyniki sprawdzianów"),
         _ => I[$"Type{type}"].Value
     };
+    string ValidationMessage(ImportValidationErrorItem item)
+    {
+        var raw = item.RawValue?.Trim() ?? string.Empty;
+        if (Model.Batch.Type == ImportType.Students)
+        {
+            if (item.Code == "ExistingConflict" && item.ColumnName.Equals("Email", StringComparison.OrdinalIgnoreCase))
+                return L("This email is already registered.", "Ten adres email jest już zarejestrowany.");
+            if (item.Code == "ExistingConflict" && item.ColumnName.Equals("StudentNumber", StringComparison.OrdinalIgnoreCase))
+                return L($"Student number {raw} is already registered.", $"Numer ucznia {raw} jest już zarejestrowany.");
+            if (item.Code == "DuplicateRow" && item.ColumnName.Equals("Email", StringComparison.OrdinalIgnoreCase))
+                return L("This email appears more than once in this file.", "Ten adres email występuje w pliku więcej niż raz.");
+            if (item.Code == "DuplicateRow" && item.ColumnName.Equals("StudentNumber", StringComparison.OrdinalIgnoreCase))
+                return L($"Student number {raw} appears more than once in this file.", $"Numer ucznia {raw} występuje w pliku więcej niż raz.");
+        }
+        if (Model.Batch.Type == ImportType.Teachers && item.ColumnName.Equals("Email", StringComparison.OrdinalIgnoreCase))
+        {
+            if (item.Code == "ExistingConflict")
+                return L("This teacher email is already registered or this teacher is already assigned to the selected class.", "Ten adres email nauczyciela jest już zarejestrowany albo nauczyciel jest już przypisany do wybranej klasy.");
+            if (item.Code == "DuplicateRow")
+                return L("This teacher and class assignment appears more than once in this file.", "To przypisanie nauczyciela do klasy występuje w pliku więcej niż raz.");
+        }
+        if (Model.Batch.Type == ImportType.SubjectSupervisors && item.ColumnName.Equals("Email", StringComparison.OrdinalIgnoreCase))
+        {
+            if (item.Code == "ExistingConflict")
+                return L("This email is already registered.", "Ten adres email jest już zarejestrowany.");
+            if (item.Code == "DuplicateRow")
+                return L("This email appears more than once in this file.", "Ten adres email występuje w pliku więcej niż raz.");
+        }
+        if (Model.Batch.Type == ImportType.Classes && item.ColumnName.Equals("Code", StringComparison.OrdinalIgnoreCase))
+        {
+            if (item.Code == "ExistingConflict")
+                return L("A class with this generated identifier already exists for the selected academic year.", "Klasa z tym wygenerowanym identyfikatorem już istnieje w wybranym roku szkolnym.");
+            if (item.Code == "DuplicateRow")
+                return L("This class appears more than once in the file.", "Ta klasa występuje w pliku więcej niż raz.");
+        }
+        return I[$"Validation{item.Code}"].Value;
+    }
     var internalHeaders = Model.Batch.Type switch
     {
         ImportType.Students => new[] { "ClassCode" },
         ImportType.Teachers => new[] { "ClassCode", "SubjectCode" },
+        ImportType.Classes => new[] { "Code" },
         ImportType.AssessmentResults => new[] { "ClassCode", "AssessmentId" },
         _ => Array.Empty<string>()
     };
@@ -102,29 +141,25 @@
         </div>
     }
 
-    <section class="import-panel">
-        <h2>@I["ValidationErrors"]</h2>
-        @if (Model.Batch.Errors.Count == 0)
-        {
-            <p>@I["NoValidationErrors"]</p>
-        }
-        else
-        {
+    @if (Model.Batch.Errors.Count > 0)
+    {
+        <section class="import-panel">
+            <h2>@I["ValidationErrors"]</h2>
             <div class="import-error-list">
                 @foreach (var item in Model.Batch.Errors)
                 {
                     var column = internalHeaders.Contains(item.ColumnName, StringComparer.OrdinalIgnoreCase)
-                        ? item.ColumnName == "ClassCode" ? "ClassName" : item.ColumnName
+                        ? item.ColumnName == "ClassCode" ? "ClassName" : item.ColumnName == "Code" && Model.Batch.Type == ImportType.Classes ? "Name" : item.ColumnName
                         : item.ColumnName;
                     <article class="import-error-item">
                         <strong>@I["Row"] @item.RowNumber · @column</strong>
-                        <span>@I[$"Validation{item.Code}"]</span>
-                        @if (!string.IsNullOrWhiteSpace(item.RawValue)) { <code>@item.RawValue</code> }
+                        <span>@ValidationMessage(item)</span>
+                        @if (!string.IsNullOrWhiteSpace(item.RawValue) && !(Model.Batch.Type == ImportType.Classes && item.ColumnName.Equals("Code", StringComparison.OrdinalIgnoreCase))) { <code>@item.RawValue</code> }
                     </article>
                 }
             </div>
-        }
-    </section>
+        </section>
+    }
 
     <section class="import-panel">
         <div class="import-preview-toolbar">
@@ -194,8 +229,12 @@
                                 <td data-label="@L("Invitation", "Zaproszenie")">
                                     @if (invitationState == "failed") { <span>@L("Failed", "Błąd")</span> }
                                     else if (invitationState == "sent") { <span>@L("Sent", "Wysłano")</span> }
+                                    else if (invitationState == "notrequired") { <span>@L("Not required", "Nie jest wymagane")</span> }
                                     else { <span>@L("Available", "Dostępne")</span> }
-                                    <button type="submit" class="school-button school-button-small" formaction="/school/imports/@Model.Batch.Id/resend-invitation" formmethod="post" name="rowNumber" value="@row.RowNumber">@L("Resend invitation", "Wyślij ponownie")</button>
+                                    @if (invitationState != "notrequired")
+                                    {
+                                        <button type="submit" class="school-button school-button-small" formaction="/school/imports/@Model.Batch.Id/resend-invitation" formmethod="post" name="rowNumber" value="@row.RowNumber">@L("Resend invitation", "Wyślij ponownie")</button>
+                                    }
                                 </td>
                             }
                         </tr>
