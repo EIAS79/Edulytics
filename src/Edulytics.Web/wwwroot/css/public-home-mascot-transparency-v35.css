@@ -1,13 +1,29 @@
-/* Home v42 — transparent mascot presentation and final public CTA correction. */
+/* Home v44 — transparent, bounded and responsive character presentation. */
+.ed-home{
+  max-width:100%;
+  overflow-x:clip;
+}
+
+.ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual.ed-home-v40-mascot-stage{
+  width:min(100%,620px)!important;
+  max-width:100%!important;
+  min-width:0!important;
+  aspect-ratio:4 / 3;
+  overflow:clip!important;
+  display:grid;
+  place-items:center;
+  justify-self:center;
+}
+
 .ed-home .ed-home-v12-slide:first-child .ed-home-v40-mascot-image{
-  position:absolute;
-  inset:0;
-  width:auto;
-  height:auto;
-  max-width:76%;
-  max-height:76%;
-  margin:auto;
+  position:relative;
+  inset:auto;
   display:block;
+  width:min(100%,560px);
+  height:auto;
+  max-width:100%;
+  max-height:540px;
+  margin:0 auto;
   object-fit:contain;
   object-position:center;
   padding:0;
@@ -31,16 +47,34 @@
   color:#fff!important;
 }
 
-@media(max-width:1040px){
+@media(max-width:1450px){
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual.ed-home-v40-mascot-stage{
+    width:min(100%,560px)!important;
+  }
   .ed-home .ed-home-v12-slide:first-child .ed-home-v40-mascot-image{
-    max-width:82%;
-    max-height:82%;
+    width:min(100%,510px);
+    max-height:500px;
+  }
+}
+
+@media(max-width:1040px){
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual.ed-home-v40-mascot-stage{
+    width:min(100%,600px)!important;
+    overflow:clip!important;
+  }
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v40-mascot-image{
+    width:min(92vw,520px);
+    max-height:500px;
   }
 }
 
 @media(max-width:680px){
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual.ed-home-v40-mascot-stage{
+    width:100%!important;
+    aspect-ratio:1 / 1;
+  }
   .ed-home .ed-home-v12-slide:first-child .ed-home-v40-mascot-image{
-    max-width:86%;
-    max-height:86%;
+    width:min(88vw,430px);
+    max-height:430px;
   }
 }
