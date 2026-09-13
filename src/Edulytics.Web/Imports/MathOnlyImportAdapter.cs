@@ -150,7 +150,7 @@ public static class MathOnlyImportAdapter
             })
             .ToArray();
 
-        return candidates
+        var contextual = candidates
             .Select(candidate =>
             {
                 var siblings = candidates
@@ -162,26 +162,57 @@ public static class MathOnlyImportAdapter
                             StringComparison.OrdinalIgnoreCase))
                     .ToArray();
 
-                var display = candidate.BaseLabel;
-                if (siblings.Length > 1)
+                return new LabeledClassLevelCandidate(
+                    candidate,
+                    siblings.Length > 1
+                        ? BuildDisambiguatedLevelLabel(candidate)
+                        : candidate.BaseLabel);
+            })
+            .ToArray();
+
+        var keyed = contextual
+            .Select(item =>
+            {
+                var collisions = contextual.Count(x =>
+                    x.Candidate.AcademicYearId == item.Candidate.AcademicYearId &&
+                    string.Equals(
+                        x.DisplayName,
+                        item.DisplayName,
+                        StringComparison.OrdinalIgnoreCase));
+
+                var display = item.DisplayName;
+                if (collisions > 1 &&
+                    item.Candidate.CurriculumLevelKey.Length > 0)
                 {
-                    display = BuildDisambiguatedLevelLabel(candidate);
-                    if (siblings.Count(x => string.Equals(
-                            BuildDisambiguatedLevelLabel(x),
-                            display,
-                            StringComparison.OrdinalIgnoreCase)) > 1)
-                    {
-                        var identity = candidate.CurriculumLevelKey.Length > 0
-                            ? candidate.CurriculumLevelKey
-                            : candidate.AdoptionId.ToString("N")[..8].ToUpperInvariant();
-                        display = $"{display} — {identity}";
-                    }
+                    display =
+                        $"{display} — {item.Candidate.CurriculumLevelKey}";
                 }
 
-                return new ClassImportLevelOption(
-                    display,
-                    candidate.GradeLevelName,
-                    candidate.AdoptionId);
+                return new LabeledClassLevelCandidate(
+                    item.Candidate,
+                    display);
+            })
+            .ToArray();
+
+        return keyed
+            .GroupBy(x => new
+            {
+                x.Candidate.AcademicYearId,
+                DisplayName = x.DisplayName.ToUpperInvariant()
+            })
+            .SelectMany(group =>
+            {
+                var ordered = group
+                    .OrderBy(x => x.Candidate.AdoptionId)
+                    .ToArray();
+
+                return ordered.Select((item, index) =>
+                    new ClassImportLevelOption(
+                        ordered.Length == 1
+                            ? item.DisplayName
+                            : $"{item.DisplayName} — option {index + 1}",
+                        item.Candidate.GradeLevelName,
+                        item.Candidate.AdoptionId));
             })
             .OrderBy(x => x.DisplayName, StringComparer.OrdinalIgnoreCase)
             .ToArray();
@@ -603,6 +634,10 @@ public static class MathOnlyImportAdapter
 
         return $"\"{value.Replace("\"", "\"\"")}\"";
     }
+
+    private sealed record LabeledClassLevelCandidate(
+        ClassLevelCandidate Candidate,
+        string DisplayName);
 
     private sealed record ClassLevelCandidate(
         Guid AdoptionId,
