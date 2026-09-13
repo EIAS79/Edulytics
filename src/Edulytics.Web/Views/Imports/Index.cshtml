@@ -163,7 +163,7 @@
                                     <a asp-action="Details" asp-route-batchId="@batch.Id">@I["Open"]</a>
                                     @if (canDiscardBatch)
                                     {
-                                        <form asp-controller="ImportBatchActions" asp-action="Discard" asp-route-batchId="@batch.Id" method="post" onsubmit="return confirm('@L("Discard this unconfirmed import batch?", "Odrzucić tę niepotwierdzoną partię importu?")');">
+                                        <form asp-controller="ImportBatchActions" asp-action="Discard" asp-route-batchId="@batch.Id" method="post">
                                             <button type="submit" class="import-link-button">@L("Discard", "Odrzuć")</button>
                                         </form>
                                     }
