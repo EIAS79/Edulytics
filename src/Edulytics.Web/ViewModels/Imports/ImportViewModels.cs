@@ -4,8 +4,13 @@ using Edulytics.Web.Imports;
 
 namespace Edulytics.Web.ViewModels.Imports;
 
+public sealed record ImportAcademicYearOption(
+    Guid Id,
+    string Name);
+
 public sealed record ImportIndexViewModel(
-    ImportWorkspace Workspace);
+    ImportWorkspace Workspace,
+    IReadOnlyList<ImportAcademicYearOption> AcademicYears);
 
 public sealed record ImportDetailsViewModel(
     ImportBatchDetail Batch)
