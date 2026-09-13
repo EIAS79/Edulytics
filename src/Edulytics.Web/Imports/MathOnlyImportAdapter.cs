@@ -45,7 +45,13 @@ public static class MathOnlyImportAdapter
         "Email"
     ];
 
-    private static readonly IReadOnlyList<string> ClassHeaders =
+    private static readonly IReadOnlyList<string> ClassTemplateHeaders =
+    [
+        "GradeLevel",
+        "Name"
+    ];
+
+    private static readonly IReadOnlyList<string> LegacyClassHeaders =
     [
         "AcademicYear",
         "GradeLevel",
@@ -80,7 +86,7 @@ public static class MathOnlyImportAdapter
                     ImportType.SubjectSupervisors =>
                         new ImportTypeOption(x.Type, SupervisorHeaders),
                     ImportType.Classes =>
-                        new ImportTypeOption(x.Type, ClassHeaders),
+                        new ImportTypeOption(x.Type, ClassTemplateHeaders),
                     ImportType.AssessmentResults =>
                         new ImportTypeOption(x.Type, FriendlyAssessmentResultHeaders),
                     _ => x
@@ -95,17 +101,34 @@ public static class MathOnlyImportAdapter
             ImportType.Students => StudentHeaders,
             ImportType.Teachers => TeacherHeaders,
             ImportType.SubjectSupervisors => SupervisorHeaders,
-            ImportType.Classes => ClassHeaders,
+            ImportType.Classes => ClassTemplateHeaders,
             ImportType.AssessmentResults => FriendlyAssessmentResultHeaders,
             _ => serviceHeaders
         };
+
+    public static bool LooksLikeClassesUpload(
+        string fileName,
+        byte[] bytes)
+    {
+        var parsed = new ImportFileParser().Parse(fileName, bytes);
+        if (!parsed.Succeeded || parsed.File is null)
+            return false;
+
+        var headers = parsed.File.Headers.ToHashSet(
+            StringComparer.OrdinalIgnoreCase);
+
+        return ClassTemplateHeaders.All(headers.Contains) &&
+               !headers.Contains("Email") &&
+               !headers.Contains("StudentNumber");
+    }
 
     public static AdaptedImportUpload NormalizeUpload(
         ImportType type,
         string fileName,
         byte[] bytes,
         AssessmentWorkspace? workspace = null,
-        AcademicStructureSnapshot? academicStructure = null)
+        AcademicStructureSnapshot? academicStructure = null,
+        string? selectedAcademicYear = null)
     {
         return type switch
         {
@@ -114,7 +137,7 @@ public static class MathOnlyImportAdapter
             ImportType.Teachers =>
                 NormalizeTeachers(fileName, bytes, workspace, academicStructure),
             ImportType.Classes =>
-                NormalizeClasses(fileName, bytes),
+                NormalizeClasses(fileName, bytes, selectedAcademicYear),
             ImportType.AssessmentResults when workspace is not null =>
                 NormalizeAssessmentResults(fileName, bytes, workspace),
             _ => new AdaptedImportUpload(fileName, bytes)
@@ -197,28 +220,41 @@ public static class MathOnlyImportAdapter
 
     private static AdaptedImportUpload NormalizeClasses(
         string fileName,
-        byte[] bytes)
+        byte[] bytes,
+        string? selectedAcademicYear)
     {
         var parsed = new ImportFileParser().Parse(fileName, bytes);
         if (!parsed.Succeeded || parsed.File is null)
             return new(fileName, bytes);
 
         var actualHeaders = parsed.File.Headers.ToHashSet(StringComparer.OrdinalIgnoreCase);
-        if (ClassHeaders.Any(x => !actualHeaders.Contains(x)))
+        if (ClassTemplateHeaders.Any(x => !actualHeaders.Contains(x)))
             return new(fileName, bytes);
 
-        var outputHeaders = ClassHeaders.Concat(["Code"]).ToArray();
+        var selectedYear = selectedAcademicYear?.Trim() ?? string.Empty;
+        var hasLegacyYear = actualHeaders.Contains("AcademicYear");
+        if (selectedYear.Length == 0 && !hasLegacyYear)
+            return new(fileName, bytes);
+
+        var outputHeaders = LegacyClassHeaders.Concat(["Code"]).ToArray();
         var builder = new StringBuilder();
         builder.AppendLine(string.Join(",", outputHeaders.Select(EscapeCsv)));
 
         foreach (var row in parsed.File.Rows)
         {
-            var academicYear = Value(row, "AcademicYear");
+            var academicYear = selectedYear.Length > 0
+                ? selectedYear
+                : Value(row, "AcademicYear").Trim();
+            var gradeLevel = Value(row, "GradeLevel");
             var name = Value(row, "Name");
             var code = GenerateClassCode(academicYear, name);
-            var values = ClassHeaders
-                .Select(header => Value(row, header))
-                .Concat([code]);
+            var values = new[]
+            {
+                academicYear,
+                gradeLevel,
+                name,
+                code
+            };
             builder.AppendLine(string.Join(",", values.Select(EscapeCsv)));
         }
 
