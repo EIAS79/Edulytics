@@ -21,6 +21,10 @@
         ImportType.AssessmentResults => L("Assessment results", "Wyniki sprawdzianów"),
         _ => I[$"Type{type}"].Value
     };
+    bool CanDiscard(ImportType type) =>
+        (User.IsInRole(RoleNames.SchoolAdmin) && type == ImportType.SubjectSupervisors) ||
+        (User.IsInRole(RoleNames.SubjectSupervisor) && type is ImportType.Students or ImportType.Teachers or ImportType.Classes) ||
+        (User.IsInRole(RoleNames.Teacher) && type == ImportType.AssessmentResults);
     ViewData["Title"] = L("Bulk data import", "Import danych zbiorczych");
 }
 
@@ -104,7 +108,7 @@
                 @switch (option.Type)
                 {
                     case ImportType.Students:
-                        <p>@L("Use the exact AcademicYear and ClassName shown in Edulytics. After Confirm, Edulytics creates the Student login, links the student profile to that class and sends the password-setup invitation.", "Użyj dokładnej nazwy AcademicYear i ClassName widocznej w Edulytics. Po potwierdzeniu Edulytics tworzy konto ucznia, łączy profil z klasą i wysyła zaproszenie do ustawienia hasła.")</p>
+                        <p>@L("Use StudentNumber + Email as the student's academic and login identifiers, plus the exact AcademicYear and ClassName shown in Edulytics. After Confirm, Edulytics creates the Student login, links the student profile to that class and sends the password-setup invitation.", "Użyj StudentNumber + Email jako identyfikatorów ucznia w szkole i do logowania oraz dokładnych nazw AcademicYear i ClassName widocznych w Edulytics. Po potwierdzeniu Edulytics tworzy konto ucznia, łączy profil z klasą i wysyła zaproszenie do ustawienia hasła.")</p>
                         break;
                     case ImportType.Teachers:
                         <p>@L("Use Email + AcademicYear + ClassName. If the email is new, Confirm creates the Teacher account and sends an invitation; if it is already an active Teacher account, Edulytics only adds the class assignment. Mathematics is assigned automatically.", "Użyj Email + AcademicYear + ClassName. Jeśli email jest nowy, po potwierdzeniu tworzone jest konto nauczyciela i wysyłane zaproszenie; jeśli aktywne konto nauczyciela już istnieje, Edulytics dodaje tylko przypisanie do klasy. Matematyka jest przypisywana automatycznie.")</p>
@@ -113,7 +117,7 @@
                         <p>@L("School administrators can create Subject Supervisor accounts in bulk. Validation sends nothing; Confirm creates each account and sends its password-setup invitation.", "Administratorzy szkoły mogą zbiorczo tworzyć konta opiekunów przedmiotu. Walidacja niczego nie wysyła; potwierdzenie tworzy konta i wysyła zaproszenia do ustawienia hasła.")</p>
                         break;
                     case ImportType.Classes:
-                        <p>@L("Create classes in bulk for an existing AcademicYear and GradeLevel. The class Code belongs to the class record itself; student, teacher and result templates now use the visible ClassName instead of ClassCode.", "Twórz klasy zbiorczo dla istniejącego AcademicYear i GradeLevel. Pole Code należy do rekordu klasy; szablony uczniów, nauczycieli i wyników używają teraz widocznej ClassName zamiast ClassCode.")</p>
+                        <p>@L("Create classes in bulk using AcademicYear + GradeLevel + Name. Edulytics generates the internal class Code automatically, so you do not need to create or manage technical class identifiers.", "Twórz klasy zbiorczo za pomocą AcademicYear + GradeLevel + Name. Edulytics automatycznie generuje wewnętrzny kod klasy, więc nie musisz tworzyć ani zarządzać technicznymi identyfikatorami klas.")</p>
                         break;
                     case ImportType.AssessmentResults:
                         <p>@L("Teachers import offline/manual results using AssessmentTitle + AssessmentDate + ClassName. The signed-in teacher is the owner of the upload, so no Teacher name or internal GUID is required. StudentNumber identifies the student; StudentName is for review. Use one row per question. After Confirm, imported grades are read-only.", "Nauczyciele importują wyniki offline/ręczne za pomocą AssessmentTitle + AssessmentDate + ClassName. Zalogowany nauczyciel jest właścicielem importu, więc nie trzeba podawać nazwy nauczyciela ani wewnętrznego GUID. StudentNumber identyfikuje ucznia, a StudentName służy do sprawdzenia. Jeden wiersz odpowiada jednemu pytaniu. Po potwierdzeniu oceny są tylko do odczytu.")</p>
@@ -125,7 +129,7 @@
 
     <section class="import-panel">
         <h2>@I["History"]</h2>
-        <p>@I["IdempotencyNote"]</p>
+        <p>@L("Completed imports are kept as history. Unconfirmed or failed batches can be discarded.", "Zakończone importy są zachowywane jako historia. Niepotwierdzone lub nieudane partie można odrzucić.")</p>
         @if (Model.Workspace.Batches.Count == 0)
         {
             <p>@I["NoHistory"]</p>
@@ -146,6 +150,7 @@
                             ImportBatchStatus.ValidationFailed => "StatusValidationFailed",
                             _ => "StatusCompleted"
                         };
+                        var canDiscardBatch = batch.Status != ImportBatchStatus.Completed && CanDiscard(batch.Type);
                         <tr>
                             <td data-label="@I["ImportType"]">@TypeLabel(batch.Type)</td>
                             <td data-label="@I["FileName"]">@batch.FileName</td>
@@ -153,7 +158,17 @@
                             <td data-label="@I["Rows"]">@batch.RowCount</td>
                             <td data-label="@I["Errors"]">@batch.ErrorCount</td>
                             <td data-label="@I["Created"]">@batch.CreatedAtUtc.ToString("u")</td>
-                            <td><a asp-action="Details" asp-route-batchId="@batch.Id">@I["Open"]</a></td>
+                            <td>
+                                <div class="import-history-actions">
+                                    <a asp-action="Details" asp-route-batchId="@batch.Id">@I["Open"]</a>
+                                    @if (canDiscardBatch)
+                                    {
+                                        <form asp-controller="ImportBatchActions" asp-action="Discard" asp-route-batchId="@batch.Id" method="post" onsubmit="return confirm('@L("Discard this unconfirmed import batch?", "Odrzucić tę niepotwierdzoną partię importu?")');">
+                                            <button type="submit" class="import-link-button">@L("Discard", "Odrzuć")</button>
+                                        </form>
+                                    }
+                                </div>
+                            </td>
                         </tr>
                     }
                     </tbody>
@@ -164,5 +179,5 @@
 </section>
 
 <style>
-.ed-import-workflow{margin-bottom:1rem}.ed-import-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.7rem}.ed-import-steps article{display:grid;grid-template-columns:auto 1fr;gap:.55rem;align-items:start;padding:.8rem;border:1px solid #dbe4ef;border-radius:.8rem;background:#f8faff}.ed-import-steps article>strong{display:grid;place-items:center;width:1.75rem;height:1.75rem;border-radius:50%;background:#2f66e8;color:#fff;font-size:.8rem}.ed-import-steps article>span{color:#425b76;line-height:1.4;font-size:.88rem}@@media(max-width:1100px){.ed-import-steps{grid-template-columns:1fr 1fr}}@@media(max-width:650px){.ed-import-steps{grid-template-columns:1fr}}
+.ed-import-workflow{margin-bottom:1rem}.ed-import-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.7rem}.ed-import-steps article{display:grid;grid-template-columns:auto 1fr;gap:.55rem;align-items:start;padding:.8rem;border:1px solid #dbe4ef;border-radius:.8rem;background:#f8faff}.ed-import-steps article>strong{display:grid;place-items:center;width:1.75rem;height:1.75rem;border-radius:50%;background:#2f66e8;color:#fff;font-size:.8rem}.ed-import-steps article>span{color:#425b76;line-height:1.4;font-size:.88rem}.import-history-actions{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}.import-history-actions form{margin:0}.import-link-button{border:0;background:transparent;padding:0;color:#b42318;text-decoration:underline;cursor:pointer;font:inherit}@@media(max-width:1100px){.ed-import-steps{grid-template-columns:1fr 1fr}}@@media(max-width:650px){.ed-import-steps{grid-template-columns:1fr}}
 </style>
