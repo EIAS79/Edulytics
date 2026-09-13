@@ -1,6 +1,7 @@
 using Edulytics.Core.Constants;
 using Edulytics.Core.Interfaces;
 using Edulytics.Data.Repositories;
+using Edulytics.Data.Transactions;
 using Edulytics.Services.Imports;
 using Edulytics.Web.Realtime;
 
@@ -14,6 +15,10 @@ public static class DataImportRegistrationExtensions
         services.AddScoped<
             IImportRepository,
             ImportRepository>();
+
+        services.AddScoped<
+            IApplicationTransactionManager,
+            EfApplicationTransactionManager>();
 
         services.AddScoped<
             IDataImportService,
