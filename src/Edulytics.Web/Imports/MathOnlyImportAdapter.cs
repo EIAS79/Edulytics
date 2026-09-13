@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Text;
+using Edulytics.Core.Academics;
 using Edulytics.Core.Enums;
 using Edulytics.Services.Assessments;
 using Edulytics.Services.Imports;
@@ -92,12 +93,15 @@ public static class MathOnlyImportAdapter
         ImportType type,
         string fileName,
         byte[] bytes,
-        AssessmentWorkspace? workspace = null)
+        AssessmentWorkspace? workspace = null,
+        AcademicStructureSnapshot? academicStructure = null)
     {
         return type switch
         {
-            ImportType.Students => NormalizeStudents(fileName, bytes, workspace),
-            ImportType.Teachers => NormalizeTeachers(fileName, bytes, workspace),
+            ImportType.Students =>
+                NormalizeStudents(fileName, bytes, workspace, academicStructure),
+            ImportType.Teachers =>
+                NormalizeTeachers(fileName, bytes, workspace, academicStructure),
             ImportType.AssessmentResults when workspace is not null =>
                 NormalizeAssessmentResults(fileName, bytes, workspace),
             _ => new AdaptedImportUpload(fileName, bytes)
@@ -107,11 +111,15 @@ public static class MathOnlyImportAdapter
     private static AdaptedImportUpload NormalizeStudents(
         string fileName,
         byte[] bytes,
-        AssessmentWorkspace? workspace)
+        AssessmentWorkspace? workspace,
+        AcademicStructureSnapshot? academicStructure)
     {
         var parsed = new ImportFileParser().Parse(fileName, bytes);
-        if (!parsed.Succeeded || parsed.File is null || workspace is null)
+        if (!parsed.Succeeded || parsed.File is null ||
+            (academicStructure is null && workspace is null))
+        {
             return new(fileName, bytes);
+        }
 
         var actualHeaders = parsed.File.Headers.ToHashSet(StringComparer.OrdinalIgnoreCase);
         if (StudentHeaders.Any(x => !actualHeaders.Contains(x)))
@@ -123,8 +131,11 @@ public static class MathOnlyImportAdapter
 
         foreach (var row in parsed.File.Rows)
         {
+            var academicYear = Value(row, "AcademicYear").Trim();
             var className = Value(row, "ClassName").Trim();
-            var classCode = ResolveClassCode(workspace, className);
+            var classCode = academicStructure is not null
+                ? ResolveClassCode(academicStructure, academicYear, className)
+                : ResolveClassCode(workspace!, className);
             var values = StudentHeaders
                 .Select(header => Value(row, header))
                 .Concat([classCode]);
@@ -137,11 +148,15 @@ public static class MathOnlyImportAdapter
     private static AdaptedImportUpload NormalizeTeachers(
         string fileName,
         byte[] bytes,
-        AssessmentWorkspace? workspace)
+        AssessmentWorkspace? workspace,
+        AcademicStructureSnapshot? academicStructure)
     {
         var parsed = new ImportFileParser().Parse(fileName, bytes);
-        if (!parsed.Succeeded || parsed.File is null || workspace is null)
+        if (!parsed.Succeeded || parsed.File is null ||
+            (academicStructure is null && workspace is null))
+        {
             return new(fileName, bytes);
+        }
 
         var actualHeaders = parsed.File.Headers.ToHashSet(StringComparer.OrdinalIgnoreCase);
         if (TeacherHeaders.Any(x => !actualHeaders.Contains(x)))
@@ -153,8 +168,11 @@ public static class MathOnlyImportAdapter
 
         foreach (var row in parsed.File.Rows)
         {
+            var academicYear = Value(row, "AcademicYear").Trim();
             var className = Value(row, "ClassName").Trim();
-            var classCode = ResolveClassCode(workspace, className);
+            var classCode = academicStructure is not null
+                ? ResolveClassCode(academicStructure, academicYear, className)
+                : ResolveClassCode(workspace!, className);
             var values = TeacherHeaders
                 .Select(header => Value(row, header))
                 .Concat([classCode, "MATH"]);
@@ -238,6 +256,48 @@ public static class MathOnlyImportAdapter
         }
 
         return CsvUpload(fileName, builder.ToString());
+    }
+
+    private static string ResolveClassCode(
+        AcademicStructureSnapshot academicStructure,
+        string academicYearName,
+        string className)
+    {
+        if (string.IsNullOrWhiteSpace(academicYearName) ||
+            string.IsNullOrWhiteSpace(className))
+        {
+            return string.Empty;
+        }
+
+        var yearIds = academicStructure.AcademicYears
+            .Where(x =>
+                x.Status == AcademicStructureStatus.Active &&
+                string.Equals(
+                    x.Name.Trim(),
+                    academicYearName.Trim(),
+                    StringComparison.OrdinalIgnoreCase))
+            .Select(x => x.Id)
+            .ToHashSet();
+
+        if (yearIds.Count != 1)
+            return $"UNRESOLVED:{academicYearName.Trim()}|{className.Trim()}";
+
+        var codes = academicStructure.ClassGroups
+            .Where(x =>
+                yearIds.Contains(x.AcademicYearId) &&
+                x.Status == AcademicStructureStatus.Active &&
+                string.Equals(
+                    x.Name.Trim(),
+                    className.Trim(),
+                    StringComparison.OrdinalIgnoreCase))
+            .Select(x => NormalizeCode(x.Code))
+            .Where(x => x.Length > 0)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+
+        return codes.Length == 1
+            ? codes[0]
+            : $"UNRESOLVED:{academicYearName.Trim()}|{className.Trim()}";
     }
 
     private static string ResolveClassCode(
