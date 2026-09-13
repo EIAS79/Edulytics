@@ -78,7 +78,8 @@ public sealed class PublicAssetBundleController(IWebHostEnvironment environment)
     [HttpGet("/css/public-site-v41.css")]
     [HttpGet("/css/public-site-v42.css")]
     [ResponseCache(Duration = 86400, Location = ResponseCacheLocation.Client)]
-    public IActionResult Css() => Bundle("public-css-v42", CssFiles, "text/css; charset=utf-8");
+    public IActionResult Css() =>
+        Bundle("public-css-v42", CssFiles, "text/css; charset=utf-8");
 
     [HttpGet("/js/public-site-v31.js")]
     [HttpGet("/js/public-site-v32.js")]
@@ -91,25 +92,27 @@ public sealed class PublicAssetBundleController(IWebHostEnvironment environment)
     [HttpGet("/js/public-site-v41.js")]
     [HttpGet("/js/public-site-v42.js")]
     [ResponseCache(Duration = 86400, Location = ResponseCacheLocation.Client)]
-    public IActionResult JavaScript() => Bundle("public-js-v42", JsFiles, "application/javascript; charset=utf-8");
+    public IActionResult JavaScript() =>
+        Bundle("public-js-v42", JsFiles, "application/javascript; charset=utf-8");
 
     [HttpGet("/js/public-content-v31.js")]
     [HttpGet("/js/public-content-v32.js")]
     [HttpGet("/js/public-content-v33.js")]
     [ResponseCache(Duration = 86400, Location = ResponseCacheLocation.Client)]
-    public IActionResult ContentJavaScript() => Bundle("public-content-js-v33", ContentJsFiles, "application/javascript; charset=utf-8");
+    public IActionResult ContentJavaScript() =>
+        Bundle("public-content-js-v33", ContentJsFiles, "application/javascript; charset=utf-8");
 
-    private IActionResult Bundle(string cacheKey, IReadOnlyList<string> files, string contentType)
+    private IActionResult Bundle(
+        string cacheKey,
+        IReadOnlyList<string> files,
+        string contentType)
     {
-        var content = Cache.GetOrAdd(cacheKey, _ => ReadBundle(files));
+        var content = Cache.GetOrAdd(
+            cacheKey,
+            _ => ReadBundle(files));
+
         Response.Headers.CacheControl = "public,max-age=86400";
         return Content(content, contentType, Encoding.UTF8);
-    }
-
-    private IActionResult Bundle(string cacheKey, IReadOnlyList<string> files, string contentType, int statusCode)
-    {
-        Response.StatusCode = statusCode;
-        return Bundle(cacheKey, files, contentType);
     }
 
     private string ReadBundle(IReadOnlyList<string> files)
@@ -121,7 +124,10 @@ public sealed class PublicAssetBundleController(IWebHostEnvironment environment)
         var builder = new StringBuilder();
         foreach (var relativePath in files)
         {
-            var fullPath = Path.Combine(webRoot, relativePath.Replace('/', Path.DirectorySeparatorChar));
+            var fullPath = Path.Combine(
+                webRoot,
+                relativePath.Replace('/', Path.DirectorySeparatorChar));
+
             if (!System.IO.File.Exists(fullPath))
                 throw new FileNotFoundException("A public bundle source file is missing.", relativePath);
 
