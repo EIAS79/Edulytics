@@ -82,7 +82,7 @@ public sealed class ClassesImportProductWorkflowTests
 
         var adapted = MathOnlyImportAdapter.NormalizeUpload(
             ImportType.Classes,
-            "classes.xlsx",
+            "classes.csv",
             source,
             selectedAcademicYear: "2026-2027");
 
