@@ -41,6 +41,8 @@ public sealed class ImportPlanBuilderTests
         AssertCompletionEvent(
             subjects);
 
+        var adoption = Assert.Single(
+            fixture.Snapshot.CurriculumAdoptions);
         var classes =
             builder.Build(
                 fixture.SchoolId,
@@ -51,21 +53,21 @@ public sealed class ImportPlanBuilderTests
                     [
                         "AcademicYear",
                         "GradeLevel",
-                        "Code",
-                        "Name"
+                        "Name",
+                        "CurriculumAdoptionId",
+                        "Code"
                     ],
                     ("AcademicYear", fixture.Year.Name),
                     ("GradeLevel", fixture.Grade.Name),
-                    ("Code", "6B"),
-                    ("Name", "Class 6B")),
+                    ("Name", "Class 6B"),
+                    ("CurriculumAdoptionId", adoption.Id.ToString("D")),
+                    ("Code", "6B")),
                 fixture.Snapshot,
                 fixture.Users,
                 now);
 
         var importedClass = Assert.Single(
             classes.Classes);
-        var adoption = Assert.Single(
-            fixture.Snapshot.CurriculumAdoptions);
 
         Assert.NotEqual(
             Guid.Empty,
