@@ -76,8 +76,9 @@ public sealed class PublicAssetBundleController(IWebHostEnvironment environment)
     [HttpGet("/css/public-site-v39.css")]
     [HttpGet("/css/public-site-v40.css")]
     [HttpGet("/css/public-site-v41.css")]
+    [HttpGet("/css/public-site-v42.css")]
     [ResponseCache(Duration = 86400, Location = ResponseCacheLocation.Client)]
-    public IActionResult Css() => Bundle("public-css-v41", CssFiles, "text/css; charset=utf-8");
+    public IActionResult Css() => Bundle("public-css-v42", CssFiles, "text/css; charset=utf-8");
 
     [HttpGet("/js/public-site-v31.js")]
     [HttpGet("/js/public-site-v32.js")]
@@ -88,8 +89,9 @@ public sealed class PublicAssetBundleController(IWebHostEnvironment environment)
     [HttpGet("/js/public-site-v39.js")]
     [HttpGet("/js/public-site-v40.js")]
     [HttpGet("/js/public-site-v41.js")]
+    [HttpGet("/js/public-site-v42.js")]
     [ResponseCache(Duration = 86400, Location = ResponseCacheLocation.Client)]
-    public IActionResult JavaScript() => Bundle("public-js-v41", JsFiles, "application/javascript; charset=utf-8");
+    public IActionResult JavaScript() => Bundle("public-js-v42", JsFiles, "application/javascript; charset=utf-8");
 
     [HttpGet("/js/public-content-v31.js")]
     [HttpGet("/js/public-content-v32.js")]
@@ -102,6 +104,12 @@ public sealed class PublicAssetBundleController(IWebHostEnvironment environment)
         var content = Cache.GetOrAdd(cacheKey, _ => ReadBundle(files));
         Response.Headers.CacheControl = "public,max-age=86400";
         return Content(content, contentType, Encoding.UTF8);
+    }
+
+    private IActionResult Bundle(string cacheKey, IReadOnlyList<string> files, string contentType, int statusCode)
+    {
+        Response.StatusCode = statusCode;
+        return Bundle(cacheKey, files, contentType);
     }
 
     private string ReadBundle(IReadOnlyList<string> files)
