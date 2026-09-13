@@ -33,8 +33,7 @@ public sealed class Phase43ReportQueryService
             ReportRequest request,
             CancellationToken cancellationToken = default)
     {
-        request =
-            ReportRequestPolicy.Normalize(request);
+        request = ReportRequestPolicy.Normalize(request);
 
         var catalogResult =
             await _inner.GetCatalogAsync(
@@ -53,8 +52,7 @@ public sealed class Phase43ReportQueryService
                 request,
                 cancellationToken);
 
-        return ReportQueryResult<ReportCatalog>
-            .Success(catalog);
+        return ReportQueryResult<ReportCatalog>.Success(catalog);
     }
 
     public async Task<ReportQueryResult<ReportCatalog>>
@@ -63,15 +61,12 @@ public sealed class Phase43ReportQueryService
             ReportRequest request,
             CancellationToken cancellationToken = default)
     {
-        request =
-            ReportRequestPolicy.Normalize(request);
+        request = ReportRequestPolicy.Normalize(request);
 
-        if (!ReportRequestPolicy
-            .HasRequiredSelection(request))
+        if (!ReportRequestPolicy.HasRequiredSelection(request))
         {
-            return ReportQueryResult<ReportCatalog>
-                .Failure(
-                    ReportErrorCode.InvalidFilter);
+            return ReportQueryResult<ReportCatalog>.Failure(
+                ReportErrorCode.InvalidFilter);
         }
 
         if (request.Kind == ReportKind.Student)
@@ -100,8 +95,8 @@ public sealed class Phase43ReportQueryService
                 cancellationToken);
 
         return hierarchyError.HasValue
-            ? ReportQueryResult<ReportCatalog>
-                .Failure(hierarchyError.Value)
+            ? ReportQueryResult<ReportCatalog>.Failure(
+                hierarchyError.Value)
             : validation;
     }
 
@@ -112,8 +107,7 @@ public sealed class Phase43ReportQueryService
             int maxRows,
             CancellationToken cancellationToken = default)
     {
-        request =
-            ReportRequestPolicy.Normalize(request);
+        request = ReportRequestPolicy.Normalize(request);
 
         var validation =
             await ValidateAsync(
@@ -123,34 +117,31 @@ public sealed class Phase43ReportQueryService
 
         if (validation.Value is null)
         {
-            return ReportQueryResult<ReportDocument>
-                .Failure(validation.Error!.Value);
+            return ReportQueryResult<ReportDocument>.Failure(
+                validation.Error!.Value);
         }
 
         if (request.Kind == ReportKind.Student)
         {
             var projection =
-                await _analytics
-                    .GetProjectionSnapshotAsync(
-                        validation.Value.SchoolId,
-                        cancellationToken);
+                await _analytics.GetProjectionSnapshotAsync(
+                    validation.Value.SchoolId,
+                    cancellationToken);
 
             var hasMasteryEvidence =
-                projection.StudentOutcomeMasteries
-                    .Any(
-                        x =>
-                            x.StudentProfileId ==
-                                request.StudentProfileId!.Value &&
-                            x.AcademicYearId ==
-                                request.AcademicYearId!.Value &&
-                            x.ClassGroupId ==
-                                request.ClassGroupId!.Value);
+                projection.StudentOutcomeMasteries.Any(
+                    x =>
+                        x.StudentProfileId ==
+                            request.StudentProfileId!.Value &&
+                        x.AcademicYearId ==
+                            request.AcademicYearId!.Value &&
+                        x.ClassGroupId ==
+                            request.ClassGroupId!.Value);
 
             if (!hasMasteryEvidence)
             {
-                return ReportQueryResult<ReportDocument>
-                    .Success(
-                        EmptyStudentDocument());
+                return ReportQueryResult<ReportDocument>.Success(
+                    EmptyStudentDocument());
             }
         }
 
@@ -179,26 +170,23 @@ public sealed class Phase43ReportQueryService
 
         var catalog = catalogResult.Value;
 
-        if (!catalog.AllowedKinds.Contains(
-                ReportKind.Student))
+        if (!catalog.AllowedKinds.Contains(ReportKind.Student))
         {
-            return ReportQueryResult<ReportCatalog>
-                .Failure(
-                    ReportErrorCode.AccessDenied);
+            return ReportQueryResult<ReportCatalog>.Failure(
+                ReportErrorCode.AccessDenied);
         }
 
+        var academicYearId = request.AcademicYearId!.Value;
+        var classGroupId = request.ClassGroupId!.Value;
+        var studentProfileId = request.StudentProfileId!.Value;
+
         if (!catalog.AcademicYears.Any(
-                x =>
-                    x.Id ==
-                    request.AcademicYearId!.Value) ||
+                x => x.Id == academicYearId) ||
             !catalog.ClassGroups.Any(
-                x =>
-                    x.Id ==
-                    request.ClassGroupId!.Value))
+                x => x.Id == classGroupId))
         {
-            return ReportQueryResult<ReportCatalog>
-                .Failure(
-                    ReportErrorCode.AccessDenied);
+            return ReportQueryResult<ReportCatalog>.Failure(
+                ReportErrorCode.AccessDenied);
         }
 
         var source =
@@ -207,31 +195,24 @@ public sealed class Phase43ReportQueryService
                 cancellationToken);
 
         var projection =
-            await _analytics
-                .GetProjectionSnapshotAsync(
-                    catalog.SchoolId,
-                    cancellationToken);
+            await _analytics.GetProjectionSnapshotAsync(
+                catalog.SchoolId,
+                cancellationToken);
 
         var selectedClass =
-            projection.ClassGroups
-                .SingleOrDefault(
-                    x =>
-                        x.Id ==
-                        request.ClassGroupId.Value);
+            projection.ClassGroups.SingleOrDefault(
+                x => x.Id == classGroupId);
 
         if (selectedClass is null)
         {
-            return ReportQueryResult<ReportCatalog>
-                .Failure(
-                    ReportErrorCode.AccessDenied);
+            return ReportQueryResult<ReportCatalog>.Failure(
+                ReportErrorCode.AccessDenied);
         }
 
-        if (selectedClass.AcademicYearId !=
-            request.AcademicYearId.Value)
+        if (selectedClass.AcademicYearId != academicYearId)
         {
-            return ReportQueryResult<ReportCatalog>
-                .Failure(
-                    ReportErrorCode.InvalidFilter);
+            return ReportQueryResult<ReportCatalog>.Failure(
+                ReportErrorCode.InvalidFilter);
         }
 
         var studentExists =
@@ -239,67 +220,50 @@ public sealed class Phase43ReportQueryService
                 .Concat(projection.StudentProfiles)
                 .Any(
                     x =>
-                        x.Id ==
-                            request.StudentProfileId!.Value &&
-                        x.Status ==
-                            AcademicStructureStatus.Active);
+                        x.Id == studentProfileId &&
+                        x.Status == AcademicStructureStatus.Active);
 
         if (!studentExists)
         {
-            return ReportQueryResult<ReportCatalog>
-                .Failure(
-                    ReportErrorCode.AccessDenied);
+            return ReportQueryResult<ReportCatalog>.Failure(
+                ReportErrorCode.AccessDenied);
         }
 
         var baseSubjectIds =
-            catalog.Subjects
-                .Select(x => x.Id)
-                .ToHashSet();
+            catalog.Subjects.Select(x => x.Id).ToHashSet();
 
         if (!PairVisible(
                 actorUserId,
                 catalog.Role,
                 projection,
                 baseSubjectIds,
-                request.AcademicYearId.Value,
-                request.ClassGroupId.Value))
+                academicYearId,
+                classGroupId))
         {
-            return ReportQueryResult<ReportCatalog>
-                .Failure(
-                    ReportErrorCode.AccessDenied);
+            return ReportQueryResult<ReportCatalog>.Failure(
+                ReportErrorCode.AccessDenied);
         }
 
         var enrolled =
-            source.StudentEnrollments
-                .Any(
-                    x =>
-                        x.StudentProfileId ==
-                            request.StudentProfileId.Value &&
-                        x.AcademicYearId ==
-                            request.AcademicYearId.Value &&
-                        x.ClassGroupId ==
-                            request.ClassGroupId.Value);
+            source.StudentEnrollments.Any(
+                x =>
+                    x.StudentProfileId == studentProfileId &&
+                    x.AcademicYearId == academicYearId &&
+                    x.ClassGroupId == classGroupId);
 
         var masteryFallback =
-            projection.StudentOutcomeMasteries
-                .Any(
-                    x =>
-                        x.StudentProfileId ==
-                            request.StudentProfileId.Value &&
-                        x.AcademicYearId ==
-                            request.AcademicYearId.Value &&
-                        x.ClassGroupId ==
-                            request.ClassGroupId.Value &&
-                        (catalog.Role !=
-                            RoleNames.SubjectSupervisor ||
-                         baseSubjectIds.Contains(
-                            x.SubjectId)));
+            projection.StudentOutcomeMasteries.Any(
+                x =>
+                    x.StudentProfileId == studentProfileId &&
+                    x.AcademicYearId == academicYearId &&
+                    x.ClassGroupId == classGroupId &&
+                    (catalog.Role != RoleNames.SubjectSupervisor ||
+                     baseSubjectIds.Contains(x.SubjectId)));
 
         if (!enrolled && !masteryFallback)
         {
-            return ReportQueryResult<ReportCatalog>
-                .Failure(
-                    ReportErrorCode.InvalidFilter);
+            return ReportQueryResult<ReportCatalog>.Failure(
+                ReportErrorCode.InvalidFilter);
         }
 
         var scopedCatalog =
@@ -309,8 +273,7 @@ public sealed class Phase43ReportQueryService
                 request,
                 cancellationToken);
 
-        return ReportQueryResult<ReportCatalog>
-            .Success(scopedCatalog);
+        return ReportQueryResult<ReportCatalog>.Success(scopedCatalog);
     }
 
     private async Task<ReportCatalog>
@@ -326,48 +289,35 @@ public sealed class Phase43ReportQueryService
                 cancellationToken);
 
         var projection =
-            await _analytics
-                .GetProjectionSnapshotAsync(
-                    catalog.SchoolId,
-                    cancellationToken);
+            await _analytics.GetProjectionSnapshotAsync(
+                catalog.SchoolId,
+                cancellationToken);
 
         var baseClassIds =
-            catalog.ClassGroups
-                .Select(x => x.Id)
-                .ToHashSet();
+            catalog.ClassGroups.Select(x => x.Id).ToHashSet();
 
         var baseSubjectIds =
-            catalog.Subjects
-                .Select(x => x.Id)
-                .ToHashSet();
+            catalog.Subjects.Select(x => x.Id).ToHashSet();
 
         var baseOutcomeIds =
-            catalog.LearningOutcomes
-                .Select(x => x.Id)
-                .ToHashSet();
+            catalog.LearningOutcomes.Select(x => x.Id).ToHashSet();
 
         var classes =
             projection.ClassGroups
                 .Where(
                     x =>
                         baseClassIds.Contains(x.Id) &&
-                        x.Status ==
-                            AcademicStructureStatus.Active)
+                        x.Status == AcademicStructureStatus.Active)
                 .Where(
                     x =>
                         !request.AcademicYearId.HasValue ||
-                        x.AcademicYearId ==
-                            request.AcademicYearId.Value)
+                        x.AcademicYearId == request.AcademicYearId.Value)
                 .OrderBy(x => x.Name)
                 .Select(
-                    x =>
-                        new ReportFilterItem(
-                            x.Id,
-                            x.Name))
+                    x => new ReportFilterItem(x.Id, x.Name))
                 .ToArray();
 
-        bool SubjectMatchesSelection(
-            Guid subjectId)
+        bool SubjectMatchesSelection(Guid subjectId)
         {
             if (!request.AcademicYearId.HasValue &&
                 !request.ClassGroupId.HasValue)
@@ -379,40 +329,33 @@ public sealed class Phase43ReportQueryService
                 Core.Entities.TeacherAssignment x) =>
                 x.SubjectId == subjectId &&
                 (!request.AcademicYearId.HasValue ||
-                 x.AcademicYearId ==
-                    request.AcademicYearId.Value) &&
+                 x.AcademicYearId == request.AcademicYearId.Value) &&
                 (!request.ClassGroupId.HasValue ||
-                 x.ClassGroupId ==
-                    request.ClassGroupId.Value);
+                 x.ClassGroupId == request.ClassGroupId.Value);
 
-            if (catalog.Role ==
-                RoleNames.SchoolAdmin)
+            if (catalog.Role == RoleNames.SchoolAdmin)
             {
                 return true;
             }
 
             if (catalog.Role == RoleNames.Teacher)
             {
-                return projection.TeacherAssignments
-                    .Any(
-                        x =>
-                            x.TeacherUserId ==
-                                actorUserId &&
-                            AssignmentMatches(x));
+                return projection.TeacherAssignments.Any(
+                    x =>
+                        x.TeacherUserId == actorUserId &&
+                        AssignmentMatches(x));
             }
 
-            return projection.TeacherAssignments
-                       .Any(AssignmentMatches) ||
-                   projection.ClassOutcomeSummaries
-                       .Any(
-                           x =>
-                               x.SubjectId == subjectId &&
-                               (!request.AcademicYearId.HasValue ||
-                                x.AcademicYearId ==
-                                    request.AcademicYearId.Value) &&
-                               (!request.ClassGroupId.HasValue ||
-                                x.ClassGroupId ==
-                                    request.ClassGroupId.Value));
+            return projection.TeacherAssignments.Any(AssignmentMatches) ||
+                   projection.ClassOutcomeSummaries.Any(
+                       x =>
+                           x.SubjectId == subjectId &&
+                           (!request.AcademicYearId.HasValue ||
+                            x.AcademicYearId ==
+                                request.AcademicYearId.Value) &&
+                           (!request.ClassGroupId.HasValue ||
+                            x.ClassGroupId ==
+                                request.ClassGroupId.Value));
         }
 
         var subjects =
@@ -420,15 +363,11 @@ public sealed class Phase43ReportQueryService
                 .Where(
                     x =>
                         baseSubjectIds.Contains(x.Id) &&
-                        x.Status ==
-                            AcademicStructureStatus.Active &&
+                        x.Status == AcademicStructureStatus.Active &&
                         SubjectMatchesSelection(x.Id))
                 .OrderBy(x => x.Name)
                 .Select(
-                    x =>
-                        new ReportFilterItem(
-                            x.Id,
-                            x.Name))
+                    x => new ReportFilterItem(x.Id, x.Name))
                 .ToArray();
 
         bool EnrollmentMatchesSelection(
@@ -449,10 +388,9 @@ public sealed class Phase43ReportQueryService
         var visibleStudentIds =
             source.StudentEnrollments
                 .Where(
-                    x =>
-                        EnrollmentMatchesSelection(
-                            x.AcademicYearId,
-                            x.ClassGroupId))
+                    x => EnrollmentMatchesSelection(
+                        x.AcademicYearId,
+                        x.ClassGroupId))
                 .Select(x => x.StudentProfileId)
                 .ToHashSet();
 
@@ -463,10 +401,8 @@ public sealed class Phase43ReportQueryService
                         EnrollmentMatchesSelection(
                             x.AcademicYearId,
                             x.ClassGroupId) &&
-                        (catalog.Role !=
-                            RoleNames.SubjectSupervisor ||
-                         baseSubjectIds.Contains(
-                            x.SubjectId)))
+                        (catalog.Role != RoleNames.SubjectSupervisor ||
+                         baseSubjectIds.Contains(x.SubjectId)))
                 .Select(x => x.StudentProfileId));
 
         var profiles =
@@ -482,30 +418,23 @@ public sealed class Phase43ReportQueryService
                 .Where(profiles.ContainsKey)
                 .Select(id => profiles[id])
                 .Where(
-                    x =>
-                        x.Status ==
-                            AcademicStructureStatus.Active)
+                    x => x.Status == AcademicStructureStatus.Active)
                 .OrderBy(x => x.DisplayName)
                 .Select(
-                    x =>
-                        new ReportFilterItem(
-                            x.Id,
-                            $"{x.DisplayName} " +
-                            $"({x.StudentNumber})"))
+                    x => new ReportFilterItem(
+                        x.Id,
+                        $"{x.DisplayName} ({x.StudentNumber})"))
                 .ToArray();
 
         var visibleOutcomeIds =
             projection.ClassOutcomeSummaries
                 .Where(
                     x =>
-                        baseOutcomeIds.Contains(
-                            x.LearningOutcomeId) &&
+                        baseOutcomeIds.Contains(x.LearningOutcomeId) &&
                         (!request.AcademicYearId.HasValue ||
-                         x.AcademicYearId ==
-                            request.AcademicYearId.Value) &&
+                         x.AcademicYearId == request.AcademicYearId.Value) &&
                         (!request.ClassGroupId.HasValue ||
-                         x.ClassGroupId ==
-                            request.ClassGroupId.Value))
+                         x.ClassGroupId == request.ClassGroupId.Value))
                 .Select(x => x.LearningOutcomeId)
                 .ToHashSet();
 
@@ -513,10 +442,7 @@ public sealed class Phase43ReportQueryService
             request.AcademicYearId.HasValue ||
             request.ClassGroupId.HasValue
                 ? catalog.LearningOutcomes
-                    .Where(
-                        x =>
-                            visibleOutcomeIds.Contains(
-                                x.Id))
+                    .Where(x => visibleOutcomeIds.Contains(x.Id))
                     .ToArray()
                 : catalog.LearningOutcomes;
 
@@ -544,38 +470,28 @@ public sealed class Phase43ReportQueryService
 
         if (role == RoleNames.Teacher)
         {
-            return projection.TeacherAssignments
-                .Any(
-                    x =>
-                        x.TeacherUserId == actorUserId &&
-                        x.AcademicYearId == academicYearId &&
-                        x.ClassGroupId == classGroupId);
+            return projection.TeacherAssignments.Any(
+                x =>
+                    x.TeacherUserId == actorUserId &&
+                    x.AcademicYearId == academicYearId &&
+                    x.ClassGroupId == classGroupId);
         }
 
-        return projection.TeacherAssignments
-                   .Any(
-                       x =>
-                           x.AcademicYearId ==
-                               academicYearId &&
-                           x.ClassGroupId == classGroupId &&
-                           visibleSubjectIds.Contains(
-                               x.SubjectId)) ||
-               projection.ClassOutcomeSummaries
-                   .Any(
-                       x =>
-                           x.AcademicYearId ==
-                               academicYearId &&
-                           x.ClassGroupId == classGroupId &&
-                           visibleSubjectIds.Contains(
-                               x.SubjectId)) ||
-               projection.StudentOutcomeMasteries
-                   .Any(
-                       x =>
-                           x.AcademicYearId ==
-                               academicYearId &&
-                           x.ClassGroupId == classGroupId &&
-                           visibleSubjectIds.Contains(
-                               x.SubjectId));
+        return projection.TeacherAssignments.Any(
+                   x =>
+                       x.AcademicYearId == academicYearId &&
+                       x.ClassGroupId == classGroupId &&
+                       visibleSubjectIds.Contains(x.SubjectId)) ||
+               projection.ClassOutcomeSummaries.Any(
+                   x =>
+                       x.AcademicYearId == academicYearId &&
+                       x.ClassGroupId == classGroupId &&
+                       visibleSubjectIds.Contains(x.SubjectId)) ||
+               projection.StudentOutcomeMasteries.Any(
+                   x =>
+                       x.AcademicYearId == academicYearId &&
+                       x.ClassGroupId == classGroupId &&
+                       visibleSubjectIds.Contains(x.SubjectId));
     }
 
     private async Task<ReportErrorCode?>
@@ -590,17 +506,13 @@ public sealed class Phase43ReportQueryService
         }
 
         var projection =
-            await _analytics
-                .GetProjectionSnapshotAsync(
-                    schoolId,
-                    cancellationToken);
+            await _analytics.GetProjectionSnapshotAsync(
+                schoolId,
+                cancellationToken);
 
         var selectedClass =
-            projection.ClassGroups
-                .SingleOrDefault(
-                    x =>
-                        x.Id ==
-                        request.ClassGroupId.Value);
+            projection.ClassGroups.SingleOrDefault(
+                x => x.Id == request.ClassGroupId.Value);
 
         if (selectedClass is null)
         {
@@ -608,25 +520,22 @@ public sealed class Phase43ReportQueryService
         }
 
         if (request.AcademicYearId.HasValue &&
-            selectedClass.AcademicYearId !=
-                request.AcademicYearId.Value)
+            selectedClass.AcademicYearId != request.AcademicYearId.Value)
         {
             return ReportErrorCode.InvalidFilter;
         }
 
-        if (request.Kind ==
-            ReportKind.LearningOutcome)
+        if (request.Kind == ReportKind.LearningOutcome)
         {
             var outcomeMatchesClass =
-                projection.ClassOutcomeSummaries
-                    .Any(
-                        x =>
-                            x.LearningOutcomeId ==
-                                request.LearningOutcomeId!.Value &&
-                            x.AcademicYearId ==
-                                request.AcademicYearId!.Value &&
-                            x.ClassGroupId ==
-                                request.ClassGroupId.Value);
+                projection.ClassOutcomeSummaries.Any(
+                    x =>
+                        x.LearningOutcomeId ==
+                            request.LearningOutcomeId!.Value &&
+                        x.AcademicYearId ==
+                            request.AcademicYearId!.Value &&
+                        x.ClassGroupId ==
+                            request.ClassGroupId.Value);
 
             if (!outcomeMatchesClass)
             {
@@ -637,46 +546,23 @@ public sealed class Phase43ReportQueryService
         return null;
     }
 
-    private static ReportDocument
-        EmptyStudentDocument() =>
+    private static ReportDocument EmptyStudentDocument() =>
         new(
             ReportKind.Student,
             "ReportTitleStudent",
             DateTime.UtcNow,
             [
-                new(
-                    "ColumnStudentNumber",
-                    ReportCellKind.Text),
-                new(
-                    "ColumnStudentName",
-                    ReportCellKind.Text),
-                new(
-                    "ColumnAcademicYear",
-                    ReportCellKind.Text),
-                new(
-                    "ColumnClass",
-                    ReportCellKind.Text),
-                new(
-                    "ColumnSubject",
-                    ReportCellKind.Text),
-                new(
-                    "ColumnOutcomeCode",
-                    ReportCellKind.Text),
-                new(
-                    "ColumnOutcomeDescription",
-                    ReportCellKind.Text),
-                new(
-                    "ColumnEarned",
-                    ReportCellKind.Decimal),
-                new(
-                    "ColumnPossible",
-                    ReportCellKind.Decimal),
-                new(
-                    "ColumnMastery",
-                    ReportCellKind.Percentage),
-                new(
-                    "ColumnEvidence",
-                    ReportCellKind.Integer)
+                new("ColumnStudentNumber", ReportCellKind.Text),
+                new("ColumnStudentName", ReportCellKind.Text),
+                new("ColumnAcademicYear", ReportCellKind.Text),
+                new("ColumnClass", ReportCellKind.Text),
+                new("ColumnSubject", ReportCellKind.Text),
+                new("ColumnOutcomeCode", ReportCellKind.Text),
+                new("ColumnOutcomeDescription", ReportCellKind.Text),
+                new("ColumnEarned", ReportCellKind.Decimal),
+                new("ColumnPossible", ReportCellKind.Decimal),
+                new("ColumnMastery", ReportCellKind.Percentage),
+                new("ColumnEvidence", ReportCellKind.Integer)
             ],
             [],
             0,
