@@ -56,6 +56,8 @@ public sealed class ImportBatchEditingService(
         var currentErrors = await imports.GetErrorsAsync(schoolId, batchId, cancellationToken);
         var remainingErrors = currentErrors
             .Where(x => x.RowNumber <= 1 || !remove.Contains(x.RowNumber))
+            .Where(x => !string.Equals(x.Code, "DuplicateRow", StringComparison.Ordinal) ||
+                        IsStillDuplicate(batch.ImportType, x, remainingRows))
             .Select(x => new ImportValidationError
             {
                 Id = Guid.NewGuid(),
@@ -84,16 +86,66 @@ public sealed class ImportBatchEditingService(
 
         return result.Succeeded
             ? ImportBatchEditResult.Success()
-            : ImportBatchEditResult.Failure(result.Error == Core.Imports.ImportPersistenceError.Concurrency
-                ? ImportErrorCode.ConcurrencyConflict
-                : ImportErrorCode.Persistence);
+            : ImportBatchEditResult.Failure(MapPersistenceError(result.Error));
     }
 
-    public async Task<ImportBatchEditResult> RecordInvitationOutcomesAsync(
+    public async Task<ImportBatchEditResult> DiscardBatchAsync(
+        Guid actorUserId,
+        Guid batchId,
+        CancellationToken cancellationToken = default)
+    {
+        var actor = await users.GetActorAsync(actorUserId, cancellationToken);
+        if (actor?.SchoolId is not Guid schoolId || actor.Roles.Count != 1)
+            return ImportBatchEditResult.Failure(ImportErrorCode.AccessDenied);
+
+        var batch = await imports.GetAsync(schoolId, batchId, cancellationToken);
+        if (batch is null)
+            return ImportBatchEditResult.Failure(ImportErrorCode.BatchNotFound);
+        if (!CanEdit(actor.Roles[0], actorUserId, batch))
+            return ImportBatchEditResult.Failure(ImportErrorCode.AccessDenied);
+        if (batch.Status == ImportBatchStatus.Completed)
+            return ImportBatchEditResult.Failure(ImportErrorCode.BatchStateChanged);
+
+        var result = await editing.DeleteStagedBatchAsync(
+            schoolId,
+            batchId,
+            cancellationToken);
+
+        return result.Succeeded
+            ? ImportBatchEditResult.Success()
+            : ImportBatchEditResult.Failure(MapPersistenceError(result.Error));
+    }
+
+    public Task<ImportBatchEditResult> RecordInvitationOutcomesAsync(
         Guid actorUserId,
         Guid batchId,
         IReadOnlyList<ImportInvitationOutcome> outcomes,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken = default) =>
+        RecordInvitationOutcomesCoreAsync(
+            actorUserId,
+            batchId,
+            outcomes,
+            initializeMissing: false,
+            cancellationToken);
+
+    public Task<ImportBatchEditResult> RecordInitialInvitationOutcomesAsync(
+        Guid actorUserId,
+        Guid batchId,
+        IReadOnlyList<ImportInvitationOutcome> outcomes,
+        CancellationToken cancellationToken = default) =>
+        RecordInvitationOutcomesCoreAsync(
+            actorUserId,
+            batchId,
+            outcomes,
+            initializeMissing: true,
+            cancellationToken);
+
+    private async Task<ImportBatchEditResult> RecordInvitationOutcomesCoreAsync(
+        Guid actorUserId,
+        Guid batchId,
+        IReadOnlyList<ImportInvitationOutcome> outcomes,
+        bool initializeMissing,
+        CancellationToken cancellationToken)
     {
         var actor = await users.GetActorAsync(actorUserId, cancellationToken);
         if (actor?.SchoolId is not Guid schoolId)
@@ -121,9 +173,15 @@ public sealed class ImportBatchEditingService(
             var email = Value(row, "Email");
             if (email.Length == 0)
                 continue;
-            row.Values["__InvitationStatus"] = map.TryGetValue(email, out var sent)
-                ? sent ? "Sent" : "Failed"
-                : "NotRequired";
+
+            if (map.TryGetValue(email, out var sent))
+            {
+                row.Values["__InvitationStatus"] = sent ? "Sent" : "Failed";
+            }
+            else if (initializeMissing && !row.Values.ContainsKey("__InvitationStatus"))
+            {
+                row.Values["__InvitationStatus"] = "NotRequired";
+            }
         }
 
         var result = await editing.UpdateCompletedRowsJsonAsync(
@@ -134,8 +192,73 @@ public sealed class ImportBatchEditingService(
 
         return result.Succeeded
             ? ImportBatchEditResult.Success()
-            : ImportBatchEditResult.Failure(ImportErrorCode.Persistence);
+            : ImportBatchEditResult.Failure(MapPersistenceError(result.Error));
     }
+
+    private static bool IsStillDuplicate(
+        ImportType type,
+        ImportValidationError error,
+        IReadOnlyList<ImportFileRow> rows)
+    {
+        var target = rows.FirstOrDefault(x => x.RowNumber == error.RowNumber);
+        if (target is null)
+            return false;
+
+        var key = DuplicateKey(type, error.ColumnName, target);
+        if (key is null)
+            return true;
+
+        return rows.Count(row => string.Equals(
+            DuplicateKey(type, error.ColumnName, row),
+            key,
+            StringComparison.OrdinalIgnoreCase)) > 1;
+    }
+
+    private static string? DuplicateKey(
+        ImportType type,
+        string columnName,
+        ImportFileRow row)
+    {
+        if (type == ImportType.Students &&
+            (columnName.Equals("StudentNumber", StringComparison.OrdinalIgnoreCase) ||
+             columnName.Equals("Email", StringComparison.OrdinalIgnoreCase)))
+        {
+            return Value(row, columnName).ToUpperInvariant();
+        }
+
+        if (type == ImportType.SubjectSupervisors &&
+            columnName.Equals("Email", StringComparison.OrdinalIgnoreCase))
+        {
+            return Value(row, "Email").ToUpperInvariant();
+        }
+
+        if (type == ImportType.Classes &&
+            columnName.Equals("Code", StringComparison.OrdinalIgnoreCase))
+        {
+            return $"{Value(row, "AcademicYear").ToUpperInvariant()}|{Value(row, "Code").ToUpperInvariant()}";
+        }
+
+        if (type == ImportType.Teachers &&
+            columnName.Equals("Email", StringComparison.OrdinalIgnoreCase))
+        {
+            return string.Join('|',
+                Value(row, "Email").ToUpperInvariant(),
+                Value(row, "AcademicYear").ToUpperInvariant(),
+                Value(row, "ClassCode").ToUpperInvariant(),
+                Value(row, "SubjectCode").ToUpperInvariant());
+        }
+
+        return null;
+    }
+
+    private static ImportErrorCode MapPersistenceError(Core.Imports.ImportPersistenceError? error) =>
+        error switch
+        {
+            Core.Imports.ImportPersistenceError.Concurrency => ImportErrorCode.ConcurrencyConflict,
+            Core.Imports.ImportPersistenceError.InvalidState => ImportErrorCode.BatchStateChanged,
+            Core.Imports.ImportPersistenceError.NotFound => ImportErrorCode.BatchNotFound,
+            _ => ImportErrorCode.Persistence
+        };
 
     private static string Value(ImportFileRow row, string key) =>
         row.Values.FirstOrDefault(x => string.Equals(x.Key, key, StringComparison.OrdinalIgnoreCase)).Value?.Trim()
