@@ -1,0 +1,28 @@
+.ed-home-trust {
+    padding: 2rem 0;
+    border-top: 1px solid rgba(25, 55, 90, .1);
+    border-bottom: 1px solid rgba(25, 55, 90, .1);
+    background: rgba(244, 248, 252, .9);
+}
+
+.ed-home-trust-inner {
+    display: grid;
+    gap: .45rem;
+}
+
+.ed-home-trust h2 {
+    margin: 0;
+    font-size: clamp(1.35rem, 2vw, 1.8rem);
+    line-height: 1.2;
+}
+
+.ed-home-trust p {
+    max-width: 72ch;
+    margin: 0;
+    opacity: .82;
+}
+
+.ed-site-ar .ed-home-trust-inner,
+.ed-home.is-site-ar .ed-home-trust-inner {
+    text-align: right;
+}

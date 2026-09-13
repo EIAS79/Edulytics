@@ -88,6 +88,23 @@ public sealed class ReportsController
                     studentProfileId,
                     learningOutcomeId));
 
+        if (_reports is
+            Phase43ReportQueryService phase43Reports)
+        {
+            var scopedCatalog =
+                await phase43Reports.GetCatalogAsync(
+                    actorUserId,
+                    request,
+                    cancellationToken);
+
+            if (scopedCatalog.Value is null)
+            {
+                return Forbid();
+            }
+
+            catalog = scopedCatalog;
+        }
+
         ReportDocument? document = null;
 
         if (ReportIndexViewModel
@@ -199,7 +216,7 @@ public sealed class ReportsController
                 _text[
                     ErrorKey(
                         result.Error)]
-                    .Value;
+                        .Value;
         }
         else
         {
