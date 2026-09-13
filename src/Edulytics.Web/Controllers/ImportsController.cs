@@ -27,6 +27,7 @@ public sealed class ImportsController : Controller
         RoleNames.Teacher;
 
     private readonly IDataImportService _imports;
+    private readonly ImportBatchEditingService _batchEditing;
     private readonly IAssessmentService _assessments;
     private readonly IAcademicStructureRepository _academicStructure;
     private readonly ISchoolUserRepository _schoolUsers;
@@ -35,6 +36,7 @@ public sealed class ImportsController : Controller
 
     public ImportsController(
         IDataImportService imports,
+        ImportBatchEditingService batchEditing,
         IAssessmentService assessments,
         IAcademicStructureRepository academicStructure,
         ISchoolUserRepository schoolUsers,
@@ -42,6 +44,7 @@ public sealed class ImportsController : Controller
         IStringLocalizer<ImportResource> text)
     {
         _imports = imports;
+        _batchEditing = batchEditing;
         _assessments = assessments;
         _academicStructure = academicStructure;
         _schoolUsers = schoolUsers;
@@ -243,13 +246,22 @@ public sealed class ImportsController : Controller
             result.Value!.Invitations,
             cancellationToken);
 
-        TempData["ImportSuccess"] = invitationResult switch
+        if (result.Value.Type is ImportType.Students or ImportType.Teachers or ImportType.SubjectSupervisors)
+        {
+            await _batchEditing.RecordInitialInvitationOutcomesAsync(
+                actorId,
+                result.Value.Id,
+                invitationResult.Outcomes,
+                cancellationToken);
+        }
+
+        TempData["ImportSuccess"] = (invitationResult.Sent, invitationResult.Failed) switch
         {
             (0, 0) => _text["SuccessCompleted"].Value,
             (_, 0) =>
                 $"{_text["SuccessCompleted"].Value} {invitationResult.Sent} account invitation(s) sent.",
             _ =>
-                $"{_text["SuccessCompleted"].Value} {invitationResult.Sent} invitation(s) sent; {invitationResult.Failed} could not be delivered and can be resent from School users."
+                $"{_text["SuccessCompleted"].Value} {invitationResult.Sent} invitation(s) sent; {invitationResult.Failed} could not be delivered and can be resent from the import details."
         };
 
         return RedirectToAction(
@@ -293,15 +305,13 @@ public sealed class ImportsController : Controller
             $"edulytics-{importType}.csv");
     }
 
-    private async Task<(int Sent, int Failed)> DeliverInvitationsAsync(
+    private async Task<InvitationDeliverySummary> DeliverInvitationsAsync(
         IReadOnlyList<ImportInvitationCandidate> invitations,
         CancellationToken cancellationToken)
     {
-        if (invitations.Count == 0)
-            return (0, 0);
-
         var sent = 0;
         var failed = 0;
+        var outcomes = new List<ImportInvitationOutcome>();
         var culture = GetInvitationCulture();
 
         foreach (var candidate in invitations)
@@ -314,6 +324,7 @@ public sealed class ImportsController : Controller
             if (link is null)
             {
                 failed++;
+                outcomes.Add(new ImportInvitationOutcome(candidate.Email, false));
                 continue;
             }
 
@@ -326,13 +337,14 @@ public sealed class ImportsController : Controller
                     "bulk-import"),
                 cancellationToken);
 
+            outcomes.Add(new ImportInvitationOutcome(candidate.Email, delivery.Succeeded));
             if (delivery.Succeeded)
                 sent++;
             else
                 failed++;
         }
 
-        return (sent, failed);
+        return new InvitationDeliverySummary(sent, failed, outcomes);
     }
 
     private static string GetInvitationCulture()
@@ -419,4 +431,9 @@ public sealed class ImportsController : Controller
             ImportErrorCode.SeatLimitReached => "ErrorSeatLimitReached",
             _ => "ErrorPersistence"
         };
+
+    private sealed record InvitationDeliverySummary(
+        int Sent,
+        int Failed,
+        IReadOnlyList<ImportInvitationOutcome> Outcomes);
 }
