@@ -1,3 +1,4 @@
+@using System.Globalization
 @using Edulytics.Core.Constants
 @using Edulytics.Core.Enums
 @model Edulytics.Web.ViewModels.Assessments.AssessmentIndexViewModel
@@ -10,6 +11,11 @@
         .OrderByDescending(x => x.AssessmentDate)
         .ThenByDescending(x => x.Id)
         .ToArray();
+    var isPolish = string.Equals(
+        CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
+        "pl",
+        StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl) => isPolish ? pl : en;
 }
 <link rel="stylesheet" href="~/css/round7-list-scroll.css" asp-append-version="true" />
 
@@ -88,8 +94,10 @@
         }
     </section>
 
-    <section class="assessment-list">
-        <h2>@A["Assessments"]</h2>
+    <section class="assessment-list" id="assessment-browser">
+        <div class="assessment-list-heading-row">
+            <h2>@A["Assessments"]</h2>
+        </div>
 
         @if (orderedAssessments.Length == 0)
         {
@@ -97,7 +105,47 @@
         }
         else
         {
-            <div class="assessment-list-items ed-scroll-list">
+            <div class="assessment-browser-controls" aria-label="@L("Assessment filters", "Filtry sprawdzianów")">
+                <label class="assessment-browser-search">
+                    <span>@L("Search", "Szukaj")</span>
+                    <input id="assessment-search" type="search" placeholder="@L("Search by assessment name", "Szukaj po nazwie sprawdzianu")" autocomplete="off" />
+                </label>
+                <label>
+                    <span>@L("Status", "Status")</span>
+                    <select id="assessment-status-filter">
+                        <option value="">@L("All statuses", "Wszystkie statusy")</option>
+                        <option value="Draft">@L("Draft", "Wersja robocza")</option>
+                        <option value="Open">@L("Open", "Otwarty")</option>
+                        <option value="Closed">@L("Closed", "Zamknięty")</option>
+                    </select>
+                </label>
+                <label>
+                    <span>@L("Delivery", "Tryb")</span>
+                    <select id="assessment-delivery-filter">
+                        <option value="">@L("All modes", "Wszystkie tryby")</option>
+                        <option value="Online">Online</option>
+                        <option value="Offline">Offline</option>
+                    </select>
+                </label>
+                <label>
+                    <span>@L("From", "Od")</span>
+                    <input id="assessment-date-from" type="date" />
+                </label>
+                <label>
+                    <span>@L("To", "Do")</span>
+                    <input id="assessment-date-to" type="date" />
+                </label>
+                <label>
+                    <span>@L("Per page", "Na stronę")</span>
+                    <select id="assessment-page-size">
+                        <option value="10" selected>10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="assessment-list-items" id="assessment-list-items">
             @foreach (var item in orderedAssessments)
             {
                 var statusKey = item.Status switch
@@ -112,8 +160,14 @@
                 var deliveryClass = item.DeliveryMode == AssessmentDeliveryMode.Online
                     ? "is-online"
                     : "is-offline";
+                var searchable = $"{item.Title} {Model.SubjectName(item.SubjectId)} {Model.ClassName(item.ClassGroupId)} {Model.TermName(item.TermId)}";
 
-                <article class="assessment-list-card">
+                <article class="assessment-list-card"
+                         data-assessment-card
+                         data-search="@searchable"
+                         data-status="@item.Status"
+                         data-delivery="@item.DeliveryMode"
+                         data-date="@item.AssessmentDate.ToString("yyyy-MM-dd")">
                     <div>
                         <span class="assessment-context">
                             @Model.SubjectName(item.SubjectId) ·
@@ -143,6 +197,82 @@
                 </article>
             }
             </div>
+
+            <div id="assessment-filter-empty" class="assessment-empty" hidden>
+                @L("No assessments match these filters.", "Brak sprawdzianów pasujących do filtrów.")
+            </div>
+
+            <div class="assessment-browser-pagination">
+                <span id="assessment-range" aria-live="polite"></span>
+                <div class="assessment-actions">
+                    <button id="assessment-prev" type="button" class="school-button">@L("Previous", "Poprzednia")</button>
+                    <button id="assessment-next" type="button" class="school-button">@L("Next", "Następna")</button>
+                </div>
+            </div>
         }
     </section>
 </section>
+
+<style>
+.assessment-browser-controls{display:grid;grid-template-columns:minmax(260px,2fr) repeat(5,minmax(130px,1fr));gap:.8rem;align-items:end;margin:0 0 1rem;padding:1rem;border:1px solid #dbe4ef;border-radius:1rem;background:#fff}.assessment-browser-controls label{display:grid;gap:.35rem;min-width:0}.assessment-browser-controls label>span{font-size:.78rem;font-weight:800;color:#5a6b82}.assessment-browser-controls input,.assessment-browser-controls select{width:100%;min-height:2.75rem;padding:.55rem .7rem;border:1px solid #cfd9e7;border-radius:.65rem;background:#fff;color:#102540}.assessment-list-items{display:grid;gap:1rem}.assessment-browser-pagination{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1rem;padding:.7rem 0}.assessment-browser-pagination>span{font-weight:750;color:#5a6b82}@media(max-width:1100px){.assessment-browser-controls{grid-template-columns:repeat(3,minmax(0,1fr))}.assessment-browser-search{grid-column:span 3}}@media(max-width:700px){.assessment-browser-controls{grid-template-columns:1fr 1fr}.assessment-browser-search{grid-column:span 2}.assessment-browser-pagination{align-items:flex-start;flex-direction:column}}
+</style>
+
+<script>
+(() => {
+    const root = document.getElementById('assessment-browser');
+    if (!root) return;
+    const cards = Array.from(root.querySelectorAll('[data-assessment-card]'));
+    if (!cards.length) return;
+
+    const search = document.getElementById('assessment-search');
+    const status = document.getElementById('assessment-status-filter');
+    const delivery = document.getElementById('assessment-delivery-filter');
+    const dateFrom = document.getElementById('assessment-date-from');
+    const dateTo = document.getElementById('assessment-date-to');
+    const pageSize = document.getElementById('assessment-page-size');
+    const prev = document.getElementById('assessment-prev');
+    const next = document.getElementById('assessment-next');
+    const range = document.getElementById('assessment-range');
+    const empty = document.getElementById('assessment-filter-empty');
+    let page = 1;
+
+    const normalized = value => String(value || '').trim().toLocaleLowerCase();
+    const filtered = () => cards.filter(card => {
+        const q = normalized(search?.value);
+        if (q && !normalized(card.dataset.search).includes(q)) return false;
+        if (status?.value && card.dataset.status !== status.value) return false;
+        if (delivery?.value && card.dataset.delivery !== delivery.value) return false;
+        if (dateFrom?.value && (card.dataset.date || '') < dateFrom.value) return false;
+        if (dateTo?.value && (card.dataset.date || '') > dateTo.value) return false;
+        return true;
+    });
+
+    const render = () => {
+        const matches = filtered();
+        const size = Number(pageSize?.value || 10);
+        const pages = Math.max(1, Math.ceil(matches.length / size));
+        page = Math.min(Math.max(page, 1), pages);
+        const start = (page - 1) * size;
+        const visible = new Set(matches.slice(start, start + size));
+        cards.forEach(card => card.hidden = !visible.has(card));
+        if (empty) empty.hidden = matches.length !== 0;
+        if (range) {
+            range.textContent = matches.length === 0
+                ? '@L("0 assessments", "0 sprawdzianów")'
+                : `@L("Showing", "Wyświetlanie") ${start + 1}–${Math.min(start + size, matches.length)} @L("of", "z") ${matches.length}`;
+        }
+        if (prev) prev.disabled = page <= 1 || matches.length === 0;
+        if (next) next.disabled = page >= pages || matches.length === 0;
+    };
+
+    [search, status, delivery, dateFrom, dateTo, pageSize].forEach(control => {
+        control?.addEventListener(control === search ? 'input' : 'change', () => {
+            page = 1;
+            render();
+        });
+    });
+    prev?.addEventListener('click', () => { page -= 1; render(); });
+    next?.addEventListener('click', () => { page += 1; render(); });
+    render();
+})();
+</script>
