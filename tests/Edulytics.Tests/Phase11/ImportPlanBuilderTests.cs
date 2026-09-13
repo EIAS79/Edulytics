@@ -41,6 +41,8 @@ public sealed class ImportPlanBuilderTests
         AssertCompletionEvent(
             subjects);
 
+        var adoption = Assert.Single(
+            fixture.Snapshot.CurriculumAdoptions);
         var classes =
             builder.Build(
                 fixture.SchoolId,
@@ -51,19 +53,34 @@ public sealed class ImportPlanBuilderTests
                     [
                         "AcademicYear",
                         "GradeLevel",
-                        "Code",
-                        "Name"
+                        "Name",
+                        "CurriculumAdoptionId",
+                        "Code"
                     ],
                     ("AcademicYear", fixture.Year.Name),
                     ("GradeLevel", fixture.Grade.Name),
-                    ("Code", "6B"),
-                    ("Name", "Class 6B")),
+                    ("Name", "Class 6B"),
+                    ("CurriculumAdoptionId", adoption.Id.ToString("D")),
+                    ("Code", "6B")),
                 fixture.Snapshot,
                 fixture.Users,
                 now);
 
-        Assert.Single(
+        var importedClass = Assert.Single(
             classes.Classes);
+
+        Assert.NotEqual(
+            Guid.Empty,
+            importedClass.AcademicProgramId);
+        Assert.Equal(
+            adoption.AcademicProgramId,
+            importedClass.AcademicProgramId);
+        Assert.Equal(
+            adoption.Id,
+            importedClass.CurriculumAdoptionId);
+        Assert.Equal(
+            "CLASS 6B",
+            importedClass.NormalizedName);
 
         Assert.Single(
             classes.AcademicYearGuards);
@@ -411,6 +428,27 @@ public sealed class ImportPlanBuilderTests
                 Order = 1
             };
 
+        var adoption =
+            new SchoolCurriculumAdoption
+            {
+                Id = Guid.NewGuid(),
+                SchoolId = schoolId,
+                AcademicYearId = year.Id,
+                AcademicProgramId = Guid.NewGuid(),
+                GradeLevelId = grade.Id,
+                SubjectId = subject.Id,
+                FrameworkVersionId = version.Id,
+                CurriculumLevelKey = "TEST:L06:SHARED",
+                CurriculumLevelLabel = grade.Name,
+                IsPrimary = true,
+                IsActive = true
+            };
+
+        classGroup.AcademicProgramId =
+            adoption.AcademicProgramId;
+        classGroup.CurriculumAdoptionId =
+            adoption.Id;
+
         var snapshot =
             new ImportDataSnapshot
             {
@@ -467,23 +505,7 @@ public sealed class ImportPlanBuilderTests
                     [version],
 
                 CurriculumAdoptions =
-                    [
-                        new SchoolCurriculumAdoption
-                        {
-                            Id = Guid.NewGuid(),
-                            SchoolId =
-                                schoolId,
-                            AcademicYearId =
-                                year.Id,
-                            GradeLevelId =
-                                grade.Id,
-                            SubjectId =
-                                subject.Id,
-                            FrameworkVersionId =
-                                version.Id,
-                            IsActive = true
-                        }
-                    ],
+                    [adoption],
 
                 LearningOutcomes =
                     [outcome],

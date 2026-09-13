@@ -368,22 +368,21 @@ public sealed class ImportsController : Controller
                 schoolId,
                 cancellationToken);
 
-            var gradeLevels = snapshot.GradeLevels
-                .OrderBy(x => x.Order)
-                .ThenBy(x => x.Name)
-                .Select(x => x.Name)
+            var classLevels = MathOnlyImportAdapter
+                .ClassLevelOptions(snapshot)
+                .Select(x => x.DisplayName)
                 .ToArray();
 
-            if (gradeLevels.Length == 0)
+            if (classLevels.Length == 0)
             {
                 TempData["ImportError"] = Local(
-                    "Configure at least one GradeLevel in Academic Structure before downloading the Classes template.",
-                    "Przed pobraniem szablonu klas skonfiguruj co najmniej jeden poziom w strukturze akademickiej.");
+                    "Adopt at least one active curriculum level in Academic Structure before downloading the Classes template.",
+                    "Przed pobraniem szablonu klas dodaj co najmniej jeden aktywny poziom programu nauczania w strukturze akademickiej.");
                 return RedirectToAction(nameof(Index));
             }
 
             return File(
-                ClassesImportWorkbook.Create(gradeLevels),
+                ClassesImportWorkbook.Create(classLevels),
                 "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                 "edulytics-Classes.xlsx");
         }

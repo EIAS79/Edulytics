@@ -175,6 +175,14 @@ public sealed class ImportPlanBuilder
                         StringComparison
                             .OrdinalIgnoreCase));
 
+            var adoption = ResolveClassAdoption(
+                snapshot,
+                year.Id,
+                grade.Id,
+                Text(
+                    row,
+                    "CurriculumAdoptionId"));
+
             plan.AcademicYearGuards.Add(
                 new ImportEntityGuard(
                     year.Id,
@@ -182,6 +190,10 @@ public sealed class ImportPlanBuilder
 
             var code =
                 Code(row, "Code");
+            var name =
+                Text(
+                    row,
+                    "Name");
 
             plan.Classes.Add(
                 new ClassGroup
@@ -190,12 +202,15 @@ public sealed class ImportPlanBuilder
                     SchoolId = schoolId,
                     AcademicYearId =
                         year.Id,
+                    AcademicProgramId =
+                        adoption.AcademicProgramId,
                     GradeLevelId =
                         grade.Id,
-                    Name =
-                        Text(
-                            row,
-                            "Name"),
+                    CurriculumAdoptionId =
+                        adoption.Id,
+                    Name = name,
+                    NormalizedName =
+                        NormalizeName(name),
                     Code = code,
                     NormalizedCode = code,
                     Status =
@@ -203,6 +218,46 @@ public sealed class ImportPlanBuilder
                             .Active
                 });
         }
+    }
+
+    private static SchoolCurriculumAdoption ResolveClassAdoption(
+        ImportDataSnapshot snapshot,
+        Guid academicYearId,
+        Guid gradeLevelId,
+        string adoptionValue)
+    {
+        var matches = snapshot.CurriculumAdoptions
+            .Where(x =>
+                x.IsActive &&
+                x.AcademicYearId == academicYearId &&
+                x.GradeLevelId == gradeLevelId &&
+                x.AcademicProgramId != Guid.Empty)
+            .ToArray();
+
+        if (!string.IsNullOrWhiteSpace(adoptionValue))
+        {
+            if (Guid.TryParse(
+                    adoptionValue,
+                    out var adoptionId))
+            {
+                var exact = matches.SingleOrDefault(x =>
+                    x.Id == adoptionId);
+
+                if (exact is not null)
+                    return exact;
+            }
+
+            throw new InvalidOperationException(
+                "Validated Classes import contains an invalid curriculum adoption identity.");
+        }
+
+        // Compatibility path for batches that were persisted before the
+        // curriculum-adoption identity was carried in normalized rows.
+        if (matches.Length == 1)
+            return matches[0];
+
+        throw new InvalidOperationException(
+            "Validated Classes import must resolve to exactly one active curriculum adoption.");
     }
 
     private static void BuildStudents(
@@ -670,4 +725,12 @@ public sealed class ImportPlanBuilder
                 Text(
                     row,
                     column));
+
+    private static string NormalizeName(string value) =>
+        string.Join(
+                " ",
+                value.Split(
+                    (char[]?)null,
+                    StringSplitOptions.RemoveEmptyEntries))
+            .ToUpperInvariant();
 }

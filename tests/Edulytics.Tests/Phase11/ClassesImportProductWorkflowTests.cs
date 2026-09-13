@@ -1,6 +1,8 @@
 using System.IO.Compression;
 using System.Text;
 using System.Xml.Linq;
+using Edulytics.Core.Academics;
+using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Services.Imports;
 using Edulytics.Web.Imports;
@@ -109,6 +111,107 @@ public sealed class ClassesImportProductWorkflowTests
         Assert.NotEqual(
             parsed.File.Rows[0].Values["Code"],
             parsed.File.Rows[1].Values["Code"]);
+    }
+
+    [Fact]
+    public void Adapter_CarriesExactAdoptionIdentityWhenOneGradeHasMultiplePathways()
+    {
+        var schoolId = Guid.NewGuid();
+        var year = new AcademicYear
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = schoolId,
+            Name = "2026-2027",
+            Status = AcademicStructureStatus.Active
+        };
+        var grade = new GradeLevel
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = schoolId,
+            Name = "Grade 12",
+            Order = 12
+        };
+        var program = new AcademicProgram
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = schoolId,
+            Name = "UAE Stream",
+            Code = "UAE",
+            NormalizedCode = "UAE",
+            Status = AcademicStructureStatus.Active
+        };
+        var general = new SchoolCurriculumAdoption
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = schoolId,
+            AcademicYearId = year.Id,
+            AcademicProgramId = program.Id,
+            GradeLevelId = grade.Id,
+            SubjectId = Guid.NewGuid(),
+            FrameworkVersionId = Guid.NewGuid(),
+            CurriculumLevelKey = "UAE:L12:GENERAL",
+            CurriculumLevelLabel = "Grade 12",
+            CurriculumPathway = "General",
+            IsPrimary = true,
+            IsActive = true
+        };
+        var advanced = new SchoolCurriculumAdoption
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = schoolId,
+            AcademicYearId = year.Id,
+            AcademicProgramId = program.Id,
+            GradeLevelId = grade.Id,
+            SubjectId = general.SubjectId,
+            FrameworkVersionId = general.FrameworkVersionId,
+            CurriculumLevelKey = "UAE:L12:ADVANCED",
+            CurriculumLevelLabel = "Grade 12",
+            CurriculumPathway = "Advanced",
+            IsPrimary = true,
+            IsActive = true
+        };
+        var snapshot = new AcademicStructureSnapshot(
+            [year],
+            [],
+            [grade],
+            [],
+            [],
+            [],
+            [],
+            [])
+        {
+            AcademicPrograms = [program],
+            CurriculumAdoptions = [general, advanced]
+        };
+
+        var options = MathOnlyImportAdapter.ClassLevelOptions(
+            snapshot,
+            year.Id);
+        Assert.Equal(2, options.Count);
+        Assert.Contains(options, x => x.DisplayName.Contains("General", StringComparison.Ordinal));
+        var advancedOption = Assert.Single(
+            options,
+            x => x.DisplayName.Contains("Advanced", StringComparison.Ordinal));
+
+        var source = Encoding.UTF8.GetBytes(
+            $"GradeLevel,Name\n{advancedOption.DisplayName},12A\n");
+        var adapted = MathOnlyImportAdapter.NormalizeUpload(
+            ImportType.Classes,
+            "classes.csv",
+            source,
+            academicStructure: snapshot,
+            selectedAcademicYear: year.Name);
+        var parsed = new ImportFileParser().Parse(
+            adapted.FileName,
+            adapted.Bytes);
+
+        Assert.True(parsed.Succeeded);
+        Assert.Contains("CurriculumAdoptionId", parsed.File!.Headers);
+        var row = Assert.Single(parsed.File.Rows);
+        Assert.Equal(grade.Name, row.Values["GradeLevel"]);
+        Assert.Equal(
+            advanced.Id.ToString("D"),
+            row.Values["CurriculumAdoptionId"]);
     }
 
     [Fact]
