@@ -33,7 +33,7 @@ public sealed class PublicHomepageVisualContractTests
     }
 
     [Fact]
-    public void HomepageMascot_UsesExistingTransparentPublicAssetDirectly()
+    public void HomepageMascot_UsesRequestedTransparentPublicAssetDirectly()
     {
         var root = FindRoot();
         var cleanupScript = File.ReadAllText(Path.Combine(
@@ -47,11 +47,11 @@ public sealed class PublicHomepageVisualContractTests
             "src/Edulytics.Web/wwwroot/css/public-home-mascot-transparency-v35.css"));
         var mascotPath = Path.Combine(
             root,
-            "src/Edulytics.Web/wwwroot/images/public/edulytics-math-mascot.png");
+            "src/Edulytics.Web/wwwroot/images/public/edulaytiks-character.png");
 
         Assert.True(File.Exists(mascotPath));
         Assert.Contains(
-            "/images/public/edulytics-math-mascot.png?v=41",
+            "/images/public/edulaytiks-character.png?v=43",
             cleanupScript,
             StringComparison.Ordinal);
         Assert.Contains(
