@@ -60,10 +60,18 @@
                 return L(
                     $"GradeLevel \"{raw}\" is not configured in Academic Structure. Use the Classes XLSX dropdown or add the curriculum level first.",
                     $"GradeLevel \"{raw}\" nie jest skonfigurowany w Strukturze akademickiej. Użyj listy rozwijanej w szablonie XLSX klas lub najpierw dodaj poziom programu nauczania.");
+            if (item.Code == "AmbiguousReference" && item.ColumnName.Equals("GradeLevel", StringComparison.OrdinalIgnoreCase))
+                return L(
+                    $"GradeLevel \"{raw}\" maps to more than one curriculum pathway. Download the current Classes XLSX template and select the exact level/pathway from the dropdown.",
+                    $"GradeLevel \"{raw}\" odpowiada więcej niż jednej ścieżce programu nauczania. Pobierz aktualny szablon XLSX klas i wybierz dokładny poziom/ścieżkę z listy rozwijanej.");
+            if (item.Code == "UnknownReference" && item.ColumnName.Equals("CurriculumAdoptionId", StringComparison.OrdinalIgnoreCase))
+                return L(
+                    "The curriculum level selected in this file is no longer active for this Academic Year. Download the current Classes XLSX template and start a new import.",
+                    "Poziom programu nauczania wybrany w tym pliku nie jest już aktywny dla tego roku szkolnego. Pobierz aktualny szablon XLSX klas i rozpocznij nowy import.");
             if (item.ColumnName.Equals("Code", StringComparison.OrdinalIgnoreCase))
             {
                 if (item.Code == "ExistingConflict")
-                    return L("A class with this generated identifier already exists for this academic year.", "Klasa z tym wygenerowanym identyfikatorem już istnieje w tym roku szkolnym.");
+                    return L("A class with this generated identifier already exists for this academic year and curriculum.", "Klasa z tym wygenerowanym identyfikatorem już istnieje w tym roku szkolnym i programie nauczania.");
                 if (item.Code == "DuplicateRow")
                     return L("This class appears more than once in the file.", "Ta klasa występuje w pliku więcej niż raz.");
             }
@@ -74,7 +82,7 @@
     {
         ImportType.Students => new[] { "ClassCode" },
         ImportType.Teachers => new[] { "ClassCode", "SubjectCode" },
-        ImportType.Classes => new[] { "AcademicYear", "Code" },
+        ImportType.Classes => new[] { "AcademicYear", "CurriculumAdoptionId", "Code" },
         ImportType.AssessmentResults => new[] { "ClassCode", "AssessmentId" },
         _ => Array.Empty<string>()
     };
@@ -167,12 +175,18 @@
                 @foreach (var item in Model.Batch.Errors)
                 {
                     var column = internalHeaders.Contains(item.ColumnName, StringComparer.OrdinalIgnoreCase)
-                        ? item.ColumnName == "ClassCode" ? "ClassName" : item.ColumnName == "Code" && Model.Batch.Type == ImportType.Classes ? "Name" : item.ColumnName
+                        ? item.ColumnName == "ClassCode"
+                            ? "ClassName"
+                            : item.ColumnName == "Code" && Model.Batch.Type == ImportType.Classes
+                                ? "Name"
+                                : item.ColumnName == "CurriculumAdoptionId" && Model.Batch.Type == ImportType.Classes
+                                    ? "GradeLevel"
+                                    : item.ColumnName
                         : item.ColumnName;
                     <article class="import-error-item">
                         <strong>@I["Row"] @item.RowNumber · @column</strong>
                         <span>@ValidationMessage(item)</span>
-                        @if (!string.IsNullOrWhiteSpace(item.RawValue) && !(Model.Batch.Type == ImportType.Classes && item.ColumnName.Equals("Code", StringComparison.OrdinalIgnoreCase))) { <code>@item.RawValue</code> }
+                        @if (!string.IsNullOrWhiteSpace(item.RawValue) && !(Model.Batch.Type == ImportType.Classes && (item.ColumnName.Equals("Code", StringComparison.OrdinalIgnoreCase) || item.ColumnName.Equals("CurriculumAdoptionId", StringComparison.OrdinalIgnoreCase)))) { <code>@item.RawValue</code> }
                     </article>
                 }
             </div>
