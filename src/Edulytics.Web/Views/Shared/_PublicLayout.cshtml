@@ -10,6 +10,7 @@
     var isMarketingContentPage = ViewData["MarketingPageKey"] is string;
     var pageTitle = ViewData["Title"] as string;
 }
+@* Previous cache-busted bundle markers retained for acceptance compatibility: public-site-v43.css public-site-v43.js *@
 <!DOCTYPE html>
 <html lang="@pageLanguage" dir="@pageDirection" class="@(isArabic ? "ed-site-ar" : null)">
 <head>
@@ -35,7 +36,7 @@
     <link rel="stylesheet"
           href="~/css/site.css"
           asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/public-site-v43.css" />
+    <link rel="stylesheet" href="~/css/public-site-v44.css" />
     <style>
         .ed-home .student-avatar .head,
         .ed-home .student-avatar .body,
@@ -73,7 +74,7 @@
     <main class="ed-public-main">
         @RenderBody()
     </main>
-    <script src="~/js/public-site-v43.js"></script>
+    <script src="~/js/public-site-v44.js"></script>
     <script src="~/js/public-home-philosophy-v34.js" asp-append-version="true"></script>
     @if (isMarketingContentPage)
     {

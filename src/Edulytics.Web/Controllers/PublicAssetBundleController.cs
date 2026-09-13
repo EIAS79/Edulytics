@@ -78,9 +78,10 @@ public sealed class PublicAssetBundleController(IWebHostEnvironment environment)
     [HttpGet("/css/public-site-v41.css")]
     [HttpGet("/css/public-site-v42.css")]
     [HttpGet("/css/public-site-v43.css")]
+    [HttpGet("/css/public-site-v44.css")]
     [ResponseCache(Duration = 86400, Location = ResponseCacheLocation.Client)]
     public IActionResult Css() =>
-        Bundle("public-css-v43", CssFiles, "text/css; charset=utf-8");
+        Bundle("public-css-v44", CssFiles, "text/css; charset=utf-8");
 
     [HttpGet("/js/public-site-v31.js")]
     [HttpGet("/js/public-site-v32.js")]
@@ -93,9 +94,10 @@ public sealed class PublicAssetBundleController(IWebHostEnvironment environment)
     [HttpGet("/js/public-site-v41.js")]
     [HttpGet("/js/public-site-v42.js")]
     [HttpGet("/js/public-site-v43.js")]
+    [HttpGet("/js/public-site-v44.js")]
     [ResponseCache(Duration = 86400, Location = ResponseCacheLocation.Client)]
     public IActionResult JavaScript() =>
-        Bundle("public-js-v43", JsFiles, "application/javascript; charset=utf-8");
+        Bundle("public-js-v44", JsFiles, "application/javascript; charset=utf-8");
 
     [HttpGet("/js/public-content-v31.js")]
     [HttpGet("/js/public-content-v32.js")]

@@ -17,6 +17,12 @@ public static class DataImportRegistrationExtensions
             ImportRepository>();
 
         services.AddScoped<
+            IImportBatchEditingRepository,
+            ImportBatchEditingRepository>();
+
+        services.AddScoped<ImportBatchEditingService>();
+
+        services.AddScoped<
             IApplicationTransactionManager,
             EfApplicationTransactionManager>();
 
