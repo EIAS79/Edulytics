@@ -40,12 +40,12 @@ public sealed class PublicHomeMascotTransparencyContractTests
         Assert.DoesNotContain("putImageData", mascotLoader, StringComparison.Ordinal);
         Assert.DoesNotContain("Uint8Array", mascotLoader, StringComparison.Ordinal);
 
-        Assert.Contains("[HttpGet(\"/css/public-site-v41.css\")]", bundle, StringComparison.Ordinal);
-        Assert.Contains("public-css-v41", bundle, StringComparison.Ordinal);
-        Assert.Contains("[HttpGet(\"/js/public-site-v41.js\")]", bundle, StringComparison.Ordinal);
-        Assert.Contains("public-js-v41", bundle, StringComparison.Ordinal);
-        Assert.Contains("~/css/public-site-v41.css", layout, StringComparison.Ordinal);
-        Assert.Contains("~/js/public-site-v41.js", layout, StringComparison.Ordinal);
+        Assert.Contains("[HttpGet(\"/css/public-site-v42.css\")]", bundle, StringComparison.Ordinal);
+        Assert.Contains("public-css-v42", bundle, StringComparison.Ordinal);
+        Assert.Contains("[HttpGet(\"/js/public-site-v42.js\")]", bundle, StringComparison.Ordinal);
+        Assert.Contains("public-js-v42", bundle, StringComparison.Ordinal);
+        Assert.Contains("~/css/public-site-v42.css", layout, StringComparison.Ordinal);
+        Assert.Contains("~/js/public-site-v42.js", layout, StringComparison.Ordinal);
     }
 
     private static string FindRoot()

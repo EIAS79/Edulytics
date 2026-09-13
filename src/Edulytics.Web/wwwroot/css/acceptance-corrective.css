@@ -242,6 +242,67 @@
     scroll-margin-top: 1rem;
 }
 
+/* 2026-09 corrective round: keep outcome identifiers readable as identifiers. */
+.curriculum-table th:nth-child(2),
+.curriculum-table td:nth-child(2) {
+    width: 8.5rem;
+    min-width: 8.5rem;
+    max-width: 8.5rem;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.curriculum-table th:nth-child(3),
+.curriculum-table td:nth-child(3) {
+    width: 9rem;
+    min-width: 9rem;
+}
+
+.curriculum-table .ed-outcome-code {
+    display: inline-block;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+/* Assessment Builder: target student exists only for an individual-student target.
+   The server already clears TargetStudentProfileId when the target is Class. */
+#delivery-settings-form:has(select[name="targetType"] option[value="Class"]:checked)
+    label:has(+ select[name="targetStudentProfileId"]),
+#delivery-settings-form:has(select[name="targetType"] option[value="Class"]:checked)
+    select[name="targetStudentProfileId"] {
+    display: none;
+}
+
+/* Student practice: show only the selector relevant to the selected scope. */
+#student-private-practice-form:has(#practice-scope option[value="WeakAreas"]:checked)
+    label:has(+ #practice-lesson),
+#student-private-practice-form:has(#practice-scope option[value="WeakAreas"]:checked)
+    #practice-lesson,
+#student-private-practice-form:has(#practice-scope option[value="WeakAreas"]:checked)
+    label:has(+ #practice-unit),
+#student-private-practice-form:has(#practice-scope option[value="WeakAreas"]:checked)
+    #practice-unit,
+#student-private-practice-form:has(#practice-scope option[value="WholeCurriculum"]:checked)
+    label:has(+ #practice-lesson),
+#student-private-practice-form:has(#practice-scope option[value="WholeCurriculum"]:checked)
+    #practice-lesson,
+#student-private-practice-form:has(#practice-scope option[value="WholeCurriculum"]:checked)
+    label:has(+ #practice-unit),
+#student-private-practice-form:has(#practice-scope option[value="WholeCurriculum"]:checked)
+    #practice-unit,
+#student-private-practice-form:has(#practice-scope option[value="Lesson"]:checked)
+    label:has(+ #practice-unit),
+#student-private-practice-form:has(#practice-scope option[value="Lesson"]:checked)
+    #practice-unit,
+#student-private-practice-form:has(#practice-scope option[value="Unit"]:checked)
+    label:has(+ #practice-lesson),
+#student-private-practice-form:has(#practice-scope option[value="Unit"]:checked)
+    #practice-lesson {
+    display: none;
+}
+
 @media (max-width: 640px) {
     .ed-ai-capability-summary {
         grid-template-columns: 1fr;
@@ -249,5 +310,12 @@
 
     .ed-outcome-option {
         padding: 0.7rem;
+    }
+
+    .curriculum-table th:nth-child(2),
+    .curriculum-table td:nth-child(2) {
+        width: auto;
+        min-width: 7rem;
+        max-width: none;
     }
 }

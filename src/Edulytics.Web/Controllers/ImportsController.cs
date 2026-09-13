@@ -2,31 +2,41 @@ using System.Security.Claims;
 using System.Text;
 using Edulytics.Core.Constants;
 using Edulytics.Core.Enums;
+using Edulytics.Services.Assessments;
 using Edulytics.Services.Imports;
+using Edulytics.Web.Email;
 using Edulytics.Web.Imports;
 using Edulytics.Web.ViewModels.Imports;
 using Edulytics.Web.Resilience;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http.Timeouts;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.Localization;
 
 namespace Edulytics.Web.Controllers;
 
 [Authorize(Policy = "DataImport")]
-public sealed class ImportsController
-    : Controller
+public sealed class ImportsController : Controller
 {
+    private const string ImportManagerRoles =
+        RoleNames.SubjectSupervisor + "," +
+        RoleNames.Teacher;
+
     private readonly IDataImportService _imports;
-    private readonly IStringLocalizer<
-        ImportResource> _text;
+    private readonly IAssessmentService _assessments;
+    private readonly IUserInvitationDeliveryService _invitations;
+    private readonly IStringLocalizer<ImportResource> _text;
 
     public ImportsController(
         IDataImportService imports,
+        IAssessmentService assessments,
+        IUserInvitationDeliveryService invitations,
         IStringLocalizer<ImportResource> text)
     {
         _imports = imports;
+        _assessments = assessments;
+        _invitations = invitations;
         _text = text;
     }
 
@@ -37,10 +47,9 @@ public sealed class ImportsController
         if (!TryActor(out var actorId))
             return Forbid();
 
-        var result =
-            await _imports.GetWorkspaceAsync(
-                actorId,
-                cancellationToken);
+        var result = await _imports.GetWorkspaceAsync(
+            actorId,
+            cancellationToken);
 
         if (!result.Succeeded)
             return Failure(result.Error);
@@ -50,9 +59,7 @@ public sealed class ImportsController
             MathOnlyImportAdapter.FilterOptions(workspace.AllowedTypes),
             workspace.Batches);
 
-        return View(
-            new ImportIndexViewModel(
-                productWorkspace));
+        return View(new ImportIndexViewModel(productWorkspace));
     }
 
     [HttpGet("/school/imports/{batchId:guid}")]
@@ -63,25 +70,21 @@ public sealed class ImportsController
         if (!TryActor(out var actorId))
             return Forbid();
 
-        var result =
-            await _imports.GetBatchAsync(
-                actorId,
-                batchId,
-                cancellationToken);
+        var result = await _imports.GetBatchAsync(
+            actorId,
+            batchId,
+            cancellationToken);
 
         if (!result.Succeeded)
             return Failure(result.Error);
 
-        return View(
-            new ImportDetailsViewModel(
-                result.Value!));
+        return View(new ImportDetailsViewModel(result.Value!));
     }
 
-    [Authorize(Roles = RoleNames.SubjectSupervisor)]
+    [Authorize(Roles = ImportManagerRoles)]
     [HttpPost("/school/imports/upload")]
     [ValidateAntiForgeryToken]
-    [RequestSizeLimit(
-        ImportFileParser.MaxBytes + 65536)]
+    [RequestSizeLimit(ImportFileParser.MaxBytes + 65536)]
     [RequestTimeout(BackendResiliencePolicyNames.Import)]
     [EnableRateLimiting(BackendResiliencePolicyNames.ImportConcurrency)]
     public async Task<IActionResult> Upload(
@@ -98,77 +101,70 @@ public sealed class ImportsController
             return BadRequest();
         }
 
-        if (file is null ||
-            file.Length <= 0)
+        if (file is null || file.Length <= 0)
         {
-            TempData["ImportError"] =
-                _text["ErrorEmptyFile"].Value;
-
-            return RedirectToAction(
-                nameof(Index));
+            TempData["ImportError"] = _text["ErrorEmptyFile"].Value;
+            return RedirectToAction(nameof(Index));
         }
 
-        if (file.Length >
-            ImportFileParser.MaxBytes)
+        if (file.Length > ImportFileParser.MaxBytes)
         {
-            TempData["ImportError"] =
-                _text["ErrorFileTooLarge"].Value;
-
-            return RedirectToAction(
-                nameof(Index));
+            TempData["ImportError"] = _text["ErrorFileTooLarge"].Value;
+            return RedirectToAction(nameof(Index));
         }
 
-        await using var stream =
-            new MemoryStream();
+        await using var stream = new MemoryStream();
+        await file.CopyToAsync(stream, cancellationToken);
+        var rawBytes = stream.ToArray();
 
-        await file.CopyToAsync(
-            stream,
-            cancellationToken);
-
-        var upload = MathOnlyImportAdapter.NormalizeUpload(
-            importType,
-            file.FileName,
-            stream.ToArray());
-
-        var result =
-            await _imports.UploadAsync(
+        AdaptedImportUpload upload;
+        if (importType == ImportType.AssessmentResults)
+        {
+            var assessmentWorkspace = await _assessments.GetWorkspaceAsync(
                 actorId,
-                importType,
-                upload.FileName,
-                upload.Bytes,
                 cancellationToken);
+
+            if (assessmentWorkspace.Value is null)
+                return Forbid();
+
+            upload = MathOnlyImportAdapter.NormalizeAssessmentResults(
+                file.FileName,
+                rawBytes,
+                assessmentWorkspace.Value);
+        }
+        else
+        {
+            upload = MathOnlyImportAdapter.NormalizeUpload(
+                importType,
+                file.FileName,
+                rawBytes);
+        }
+
+        var result = await _imports.UploadAsync(
+            actorId,
+            importType,
+            upload.FileName,
+            upload.Bytes,
+            cancellationToken);
 
         if (!result.Succeeded)
         {
-            if (result.Error ==
-                ImportErrorCode.AccessDenied)
-            {
+            if (result.Error == ImportErrorCode.AccessDenied)
                 return Forbid();
-            }
 
             TempData["ImportError"] =
-                _text[
-                    ErrorResourceKey(
-                        result.Error)]
-                    .Value;
+                _text[ErrorResourceKey(result.Error)].Value;
 
-            return RedirectToAction(
-                nameof(Index));
+            return RedirectToAction(nameof(Index));
         }
 
-        TempData["ImportSuccess"] =
-            _text["SuccessUploaded"].Value;
-
+        TempData["ImportSuccess"] = _text["SuccessUploaded"].Value;
         return RedirectToAction(
             nameof(Details),
-            new
-            {
-                batchId =
-                    result.Value!.Id
-            });
+            new { batchId = result.Value!.Id });
     }
 
-    [Authorize(Roles = RoleNames.SubjectSupervisor)]
+    [Authorize(Roles = ImportManagerRoles)]
     [HttpPost("/school/imports/{batchId:guid}/confirm")]
     [ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.Import)]
@@ -192,56 +188,51 @@ public sealed class ImportsController
         if (!MathOnlyImportAdapter.IsSupported(batch.Value!.Type))
             return BadRequest();
 
-        if (!TryRowVersion(
-                rowVersion,
-                out var bytes))
+        if (!TryRowVersion(rowVersion, out var bytes))
         {
             TempData["ImportError"] =
-                _text[
-                    "ErrorConcurrencyConflict"]
-                    .Value;
+                _text["ErrorConcurrencyConflict"].Value;
 
             return RedirectToAction(
                 nameof(Details),
                 new { batchId });
         }
 
-        var result =
-            await _imports.ConfirmAsync(
-                actorId,
-                batchId,
-                bytes,
-                cancellationToken);
+        var result = await _imports.ConfirmAsync(
+            actorId,
+            batchId,
+            bytes,
+            cancellationToken);
 
         if (!result.Succeeded)
         {
-            if (result.Error ==
-                ImportErrorCode.AccessDenied)
-            {
+            if (result.Error == ImportErrorCode.AccessDenied)
                 return Forbid();
-            }
 
             TempData["ImportError"] =
-                _text[
-                    ErrorResourceKey(
-                        result.Error)]
-                    .Value;
+                _text[ErrorResourceKey(result.Error)].Value;
 
             return RedirectToAction(
                 nameof(Details),
                 new { batchId });
         }
 
-        TempData["ImportSuccess"] =
-            _text["SuccessCompleted"].Value;
+        var invitationResult = await DeliverInvitationsAsync(
+            result.Value!.Invitations,
+            cancellationToken);
+
+        TempData["ImportSuccess"] = invitationResult switch
+        {
+            (0, 0) => _text["SuccessCompleted"].Value,
+            (_, 0) =>
+                $"{_text["SuccessCompleted"].Value} {invitationResult.Sent} account invitation(s) sent.",
+            _ =>
+                $"{_text["SuccessCompleted"].Value} {invitationResult.Sent} invitation(s) sent; {invitationResult.Failed} could not be delivered and can be resent from School users."
+        };
 
         return RedirectToAction(
             nameof(Details),
-            new
-            {
-                batchId =
-                    result.Value!.Id
-            });
+            new { batchId = result.Value.Id });
     }
 
     [HttpGet("/school/imports/template/{importType}")]
@@ -258,54 +249,114 @@ public sealed class ImportsController
             return NotFound();
         }
 
-        var workspace =
-            await _imports.GetWorkspaceAsync(
-                actorId,
-                cancellationToken);
+        var workspace = await _imports.GetWorkspaceAsync(
+            actorId,
+            cancellationToken);
 
         if (!workspace.Succeeded ||
-            !workspace.Value!.AllowedTypes
-                .Any(x =>
-                    x.Type == importType))
+            !workspace.Value!.AllowedTypes.Any(x => x.Type == importType))
         {
             return Forbid();
         }
 
-        var headers =
-            MathOnlyImportAdapter.TemplateHeaders(
-                importType,
-                _imports.GetTemplateHeaders(
-                    importType));
+        var headers = MathOnlyImportAdapter.TemplateHeaders(
+            importType,
+            _imports.GetTemplateHeaders(importType));
 
-        var content =
-            string.Join(
-                ",",
-                headers)
-            + Environment.NewLine;
+        var content = string.Join(",", headers) + Environment.NewLine;
 
         return File(
-            Encoding.UTF8.GetBytes(
-                content),
+            Encoding.UTF8.GetBytes(content),
             "text/csv",
             $"edulytics-{importType}.csv");
     }
 
-    private bool TryActor(
-        out Guid actorId) =>
+    private async Task<(int Sent, int Failed)> DeliverInvitationsAsync(
+        IReadOnlyList<ImportInvitationCandidate> invitations,
+        CancellationToken cancellationToken)
+    {
+        if (invitations.Count == 0)
+            return (0, 0);
+
+        var sent = 0;
+        var failed = 0;
+        var culture = GetInvitationCulture();
+
+        foreach (var candidate in invitations)
+        {
+            var link = BuildPasswordSetupLink(
+                candidate.UserId,
+                candidate.PasswordSetupToken,
+                culture);
+
+            if (link is null)
+            {
+                failed++;
+                continue;
+            }
+
+            var delivery = await _invitations.SendAsync(
+                new UserInvitationDeliveryRequest(
+                    candidate.Email,
+                    candidate.SchoolName,
+                    culture,
+                    link,
+                    "bulk-import"),
+                cancellationToken);
+
+            if (delivery.Succeeded)
+                sent++;
+            else
+                failed++;
+        }
+
+        return (sent, failed);
+    }
+
+    private static string GetInvitationCulture()
+    {
+        var culture = System.Globalization.CultureInfo
+            .CurrentUICulture
+            .TwoLetterISOLanguageName;
+
+        return string.Equals(
+            culture,
+            "pl",
+            StringComparison.OrdinalIgnoreCase)
+            ? "pl"
+            : "en";
+    }
+
+    private string? BuildPasswordSetupLink(
+        Guid userId,
+        string? token,
+        string culture)
+    {
+        if (userId == Guid.Empty || string.IsNullOrWhiteSpace(token))
+            return null;
+
+        return Url.Action(
+            "SetPassword",
+            "Account",
+            new
+            {
+                userId,
+                token,
+                culture
+            },
+            Request.Scheme);
+    }
+
+    private bool TryActor(out Guid actorId) =>
         Guid.TryParse(
-            User.FindFirstValue(
-                ClaimTypes.NameIdentifier),
+            User.FindFirstValue(ClaimTypes.NameIdentifier),
             out actorId);
 
-    private IActionResult Failure(
-        ImportErrorCode? error) =>
+    private IActionResult Failure(ImportErrorCode? error) =>
         error switch
         {
-            ImportErrorCode.BatchNotFound =>
-                NotFound(),
-
-            _ =>
-                Forbid()
+            ImportErrorCode.BatchNotFound => NotFound(),
+            _ => Forbid()
         };
 
     private static bool TryRowVersion(
@@ -313,19 +364,12 @@ public sealed class ImportsController
         out byte[] bytes)
     {
         bytes = [];
-
-        if (string.IsNullOrWhiteSpace(
-                value))
-        {
+        if (string.IsNullOrWhiteSpace(value))
             return false;
-        }
 
         try
         {
-            bytes =
-                Convert.FromBase64String(
-                    value);
-
+            bytes = Convert.FromBase64String(value);
             return bytes.Length > 0;
         }
         catch (FormatException)
@@ -334,53 +378,23 @@ public sealed class ImportsController
         }
     }
 
-    private static string ErrorResourceKey(
-        ImportErrorCode? error) =>
+    private static string ErrorResourceKey(ImportErrorCode? error) =>
         error switch
         {
-            ImportErrorCode.AccessDenied =>
-                "ErrorAccessDenied",
-
-            ImportErrorCode.SchoolNotActive =>
-                "ErrorSchoolNotActive",
-
-            ImportErrorCode.UnsupportedFile =>
-                "ErrorUnsupportedFile",
-
-            ImportErrorCode.InvalidFile =>
-                "ErrorInvalidFile",
-
-            ImportErrorCode.FileTooLarge =>
-                "ErrorFileTooLarge",
-
-            ImportErrorCode.TooManyRows =>
-                "ErrorTooManyRows",
-
-            ImportErrorCode.TooManyColumns =>
-                "ErrorTooManyColumns",
-
-            ImportErrorCode.DuplicateHeader =>
-                "ErrorDuplicateHeader",
-
-            ImportErrorCode.EmptyFile =>
-                "ErrorEmptyFile",
-
-            ImportErrorCode.BatchNotFound =>
-                "ErrorBatchNotFound",
-
-            ImportErrorCode.BatchHasErrors =>
-                "ErrorBatchHasErrors",
-
-            ImportErrorCode.BatchStateChanged =>
-                "ErrorBatchStateChanged",
-
-            ImportErrorCode.ConcurrencyConflict =>
-                "ErrorConcurrencyConflict",
-
-            ImportErrorCode.SeatLimitReached =>
-                "ErrorSeatLimitReached",
-
-            _ =>
-                "ErrorPersistence"
+            ImportErrorCode.AccessDenied => "ErrorAccessDenied",
+            ImportErrorCode.SchoolNotActive => "ErrorSchoolNotActive",
+            ImportErrorCode.UnsupportedFile => "ErrorUnsupportedFile",
+            ImportErrorCode.InvalidFile => "ErrorInvalidFile",
+            ImportErrorCode.FileTooLarge => "ErrorFileTooLarge",
+            ImportErrorCode.TooManyRows => "ErrorTooManyRows",
+            ImportErrorCode.TooManyColumns => "ErrorTooManyColumns",
+            ImportErrorCode.DuplicateHeader => "ErrorDuplicateHeader",
+            ImportErrorCode.EmptyFile => "ErrorEmptyFile",
+            ImportErrorCode.BatchNotFound => "ErrorBatchNotFound",
+            ImportErrorCode.BatchHasErrors => "ErrorBatchHasErrors",
+            ImportErrorCode.BatchStateChanged => "ErrorBatchStateChanged",
+            ImportErrorCode.ConcurrencyConflict => "ErrorConcurrencyConflict",
+            ImportErrorCode.SeatLimitReached => "ErrorSeatLimitReached",
+            _ => "ErrorPersistence"
         };
 }
