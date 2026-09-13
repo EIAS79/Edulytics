@@ -190,7 +190,8 @@ public sealed class ClassesImportProductWorkflowTests
         Assert.Equal(2, options.Count);
         Assert.Contains(options, x => x.DisplayName.Contains("General", StringComparison.Ordinal));
         var advancedOption = Assert.Single(
-            options.Where(x => x.DisplayName.Contains("Advanced", StringComparison.Ordinal)));
+            options,
+            x => x.DisplayName.Contains("Advanced", StringComparison.Ordinal));
 
         var source = Encoding.UTF8.GetBytes(
             $"GradeLevel,Name\n{advancedOption.DisplayName},12A\n");
