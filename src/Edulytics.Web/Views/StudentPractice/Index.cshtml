@@ -1,3 +1,4 @@
+@using System.Globalization
 @using Edulytics.Services.Practice
 @model StudentPrivatePracticeWorkspace
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
@@ -13,6 +14,16 @@
         .OrderByDescending(x => x.StartedAtUtc)
         .ThenByDescending(x => x.AttemptId)
         .ToArray();
+    var statusOptions = orderedAttempts
+        .Select(x => x.Status.ToString())
+        .Distinct(StringComparer.OrdinalIgnoreCase)
+        .OrderBy(x => x)
+        .ToArray();
+    var isPolish = string.Equals(
+        CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
+        "pl",
+        StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl) => isPolish ? pl : en;
 }
 <link rel="stylesheet" href="~/css/round7-list-scroll.css" asp-append-version="true" />
 <header class="student-page-header">
@@ -103,7 +114,7 @@ else
         </section>
     }
 }
-<section class="student-card">
+<section class="student-card" id="practice-history-browser">
     <h2>@S["PrivatePracticeHistory"]</h2>
     @if (orderedAttempts.Length == 0)
     {
@@ -111,10 +122,50 @@ else
     }
     else
     {
-        <div class="student-card-list ed-scroll-list">
+        <div class="practice-history-controls" aria-label="@L("Practice history filters", "Filtry historii ćwiczeń")">
+            <label class="practice-history-search">
+                <span>@L("Search", "Szukaj")</span>
+                <input id="practice-history-search" type="search" placeholder="@L("Search by date or status", "Szukaj po dacie lub statusie")" autocomplete="off" />
+            </label>
+            <label>
+                <span>@L("Status", "Status")</span>
+                <select id="practice-history-status">
+                    <option value="">@L("All statuses", "Wszystkie statusy")</option>
+                    @foreach (var status in statusOptions)
+                    {
+                        <option value="@status">@status</option>
+                    }
+                </select>
+            </label>
+            <label>
+                <span>@L("From", "Od")</span>
+                <input id="practice-history-from" type="date" />
+            </label>
+            <label>
+                <span>@L("To", "Do")</span>
+                <input id="practice-history-to" type="date" />
+            </label>
+            <label>
+                <span>@L("Per page", "Na stronę")</span>
+                <select id="practice-history-page-size">
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="student-card-list ed-scroll-list" id="practice-history-list">
             @foreach (var attempt in orderedAttempts)
             {
-                <article class="student-assessment-card">
+                var status = attempt.Status.ToString();
+                var startedDate = attempt.StartedAtUtc.ToString("yyyy-MM-dd");
+                var searchable = $"{startedDate} {attempt.StartedAtUtc:yyyy-MM-dd HH:mm} {status} {attempt.Score:0.##} {attempt.Percentage:0.##}";
+                <article class="student-assessment-card"
+                         data-practice-history-card
+                         data-search="@searchable"
+                         data-status="@status"
+                         data-date="@startedDate">
                     <div>
                         <h3>@S["PrivatePractice"]</h3>
                         <p>@attempt.StartedAtUtc.ToString("yyyy-MM-dd HH:mm") · @attempt.Status</p>
@@ -124,8 +175,24 @@ else
                 </article>
             }
         </div>
+
+        <div id="practice-history-empty" class="student-empty-state" hidden>
+            @L("No practice attempts match these filters.", "Brak prób ćwiczeń pasujących do filtrów.")
+        </div>
+
+        <div class="practice-history-pagination">
+            <span id="practice-history-range" aria-live="polite"></span>
+            <div>
+                <button id="practice-history-prev" type="button" class="school-button">@L("Previous", "Poprzednia")</button>
+                <button id="practice-history-next" type="button" class="school-button">@L("Next", "Następna")</button>
+            </div>
+        </div>
     }
 </section>
+
+<style>
+.practice-history-controls{display:grid;grid-template-columns:minmax(240px,2fr) repeat(4,minmax(130px,1fr));gap:.8rem;align-items:end;margin:1rem 0;padding:1rem;border:1px solid #dbe4ef;border-radius:1rem;background:#fff}.practice-history-controls label{display:grid;gap:.35rem;min-width:0}.practice-history-controls label>span{font-size:.78rem;font-weight:800;color:#5a6b82}.practice-history-controls input,.practice-history-controls select{width:100%;min-height:2.75rem;padding:.55rem .7rem;border:1px solid #cfd9e7;border-radius:.65rem;background:#fff;color:#102540}.practice-history-pagination{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1rem}.practice-history-pagination>span{font-weight:750;color:#5a6b82}.practice-history-pagination>div{display:flex;gap:.65rem}@media(max-width:1000px){.practice-history-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.practice-history-search{grid-column:span 2}}@media(max-width:620px){.practice-history-controls{grid-template-columns:1fr}.practice-history-search{grid-column:auto}.practice-history-pagination{align-items:flex-start;flex-direction:column}}
+</style>
 
 @section Scripts {
     <script src="~/js/student-practice-learning-link.js" asp-append-version="true"></script>
@@ -175,6 +242,62 @@ else
                 if (Number(count.value) > limit) count.value = String(limit);
             });
             apply();
+        })();
+
+        (() => {
+            const root = document.getElementById('practice-history-browser');
+            if (!root) return;
+            const cards = Array.from(root.querySelectorAll('[data-practice-history-card]'));
+            if (!cards.length) return;
+
+            const search = document.getElementById('practice-history-search');
+            const status = document.getElementById('practice-history-status');
+            const dateFrom = document.getElementById('practice-history-from');
+            const dateTo = document.getElementById('practice-history-to');
+            const pageSize = document.getElementById('practice-history-page-size');
+            const prev = document.getElementById('practice-history-prev');
+            const next = document.getElementById('practice-history-next');
+            const range = document.getElementById('practice-history-range');
+            const empty = document.getElementById('practice-history-empty');
+            let page = 1;
+
+            const normalized = value => String(value || '').trim().toLocaleLowerCase();
+            const filtered = () => cards.filter(card => {
+                const q = normalized(search?.value);
+                if (q && !normalized(card.dataset.search).includes(q)) return false;
+                if (status?.value && card.dataset.status !== status.value) return false;
+                if (dateFrom?.value && (card.dataset.date || '') < dateFrom.value) return false;
+                if (dateTo?.value && (card.dataset.date || '') > dateTo.value) return false;
+                return true;
+            });
+
+            const render = () => {
+                const matches = filtered();
+                const size = Number(pageSize?.value || 10);
+                const pages = Math.max(1, Math.ceil(matches.length / size));
+                page = Math.min(Math.max(page, 1), pages);
+                const start = (page - 1) * size;
+                const visible = new Set(matches.slice(start, start + size));
+                cards.forEach(card => card.hidden = !visible.has(card));
+                if (empty) empty.hidden = matches.length !== 0;
+                if (range) {
+                    range.textContent = matches.length === 0
+                        ? '@L("0 attempts", "0 prób")'
+                        : `@L("Showing", "Wyświetlanie") ${start + 1}–${Math.min(start + size, matches.length)} @L("of", "z") ${matches.length}`;
+                }
+                if (prev) prev.disabled = page <= 1 || matches.length === 0;
+                if (next) next.disabled = page >= pages || matches.length === 0;
+            };
+
+            [search, status, dateFrom, dateTo, pageSize].forEach(control => {
+                control?.addEventListener(control === search ? 'input' : 'change', () => {
+                    page = 1;
+                    render();
+                });
+            });
+            prev?.addEventListener('click', () => { page -= 1; render(); });
+            next?.addEventListener('click', () => { page += 1; render(); });
+            render();
         })();
     </script>
 }
