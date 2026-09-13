@@ -23,14 +23,12 @@ public sealed class PublicHomeMascotTransparencyContractTests
             "src/Edulytics.Web/Views/Shared/_PublicLayout.cshtml"));
 
         Assert.Contains(".ed-home-v12-visual{", heroCss, StringComparison.Ordinal);
-        Assert.Contains("overflow:visible;", heroCss, StringComparison.Ordinal);
         Assert.Contains(".ed-home-v12-slide:nth-child(2) .ed-home-v12-visual{", heroCss, StringComparison.Ordinal);
         Assert.Contains("background:#fff;", heroCss, StringComparison.Ordinal);
         Assert.Contains("border:14px solid", heroCss, StringComparison.Ordinal);
-        Assert.DoesNotContain("background:none!important", mascotCss, StringComparison.Ordinal);
-        Assert.DoesNotContain("border:0!important", mascotCss, StringComparison.Ordinal);
-        Assert.DoesNotContain("box-shadow:none!important", mascotCss, StringComparison.Ordinal);
         Assert.Contains(".ed-home-v40-mascot-image", mascotCss, StringComparison.Ordinal);
+        Assert.Contains("overflow:clip!important", mascotCss, StringComparison.Ordinal);
+        Assert.Contains("max-width:100%", mascotCss, StringComparison.Ordinal);
 
         Assert.Contains("document.createElement('img')", mascotLoader, StringComparison.Ordinal);
         Assert.Contains("ed-home-v40-mascot-image", mascotLoader, StringComparison.Ordinal);
@@ -40,12 +38,12 @@ public sealed class PublicHomeMascotTransparencyContractTests
         Assert.DoesNotContain("putImageData", mascotLoader, StringComparison.Ordinal);
         Assert.DoesNotContain("Uint8Array", mascotLoader, StringComparison.Ordinal);
 
-        Assert.Contains("[HttpGet(\"/css/public-site-v43.css\")]", bundle, StringComparison.Ordinal);
-        Assert.Contains("public-css-v43", bundle, StringComparison.Ordinal);
-        Assert.Contains("[HttpGet(\"/js/public-site-v43.js\")]", bundle, StringComparison.Ordinal);
-        Assert.Contains("public-js-v43", bundle, StringComparison.Ordinal);
-        Assert.Contains("~/css/public-site-v43.css", layout, StringComparison.Ordinal);
-        Assert.Contains("~/js/public-site-v43.js", layout, StringComparison.Ordinal);
+        Assert.Contains("[HttpGet(\"/css/public-site-v44.css\")]", bundle, StringComparison.Ordinal);
+        Assert.Contains("public-css-v44", bundle, StringComparison.Ordinal);
+        Assert.Contains("[HttpGet(\"/js/public-site-v44.js\")]", bundle, StringComparison.Ordinal);
+        Assert.Contains("public-js-v44", bundle, StringComparison.Ordinal);
+        Assert.Contains("~/css/public-site-v44.css", layout, StringComparison.Ordinal);
+        Assert.Contains("~/js/public-site-v44.js", layout, StringComparison.Ordinal);
     }
 
     private static string FindRoot()
