@@ -259,7 +259,10 @@ public sealed class ImportValidationEngine
         ImportDataSnapshot snapshot,
         List<ImportValidationIssue> errors)
     {
-        var seen =
+        var seenCodes =
+            new HashSet<string>(
+                StringComparer.Ordinal);
+        var seenNames =
             new HashSet<string>(
                 StringComparer.Ordinal);
 
@@ -460,39 +463,81 @@ public sealed class ImportValidationEngine
             }
 
             if (year is not null &&
-                adoption is not null &&
-                code.Length > 0)
+                adoption is not null)
             {
-                var logical =
-                    $"{year.Id:N}:"
-                    + $"{adoption.AcademicProgramId:N}:"
-                    + code;
-
-                if (!seen.Add(logical))
+                if (code.Length > 0)
                 {
-                    Add(
-                        row,
-                        "Code",
-                        "DuplicateRow",
-                        code,
-                        errors);
+                    var codeLogical =
+                        $"{year.Id:N}:"
+                        + $"{adoption.AcademicProgramId:N}:"
+                        + code;
+
+                    if (!seenCodes.Add(codeLogical))
+                    {
+                        Add(
+                            row,
+                            "Code",
+                            "DuplicateRow",
+                            code,
+                            errors);
+                    }
+
+                    if (snapshot.ClassGroups
+                        .Any(x =>
+                            x.AcademicYearId ==
+                                year.Id &&
+                            x.AcademicProgramId ==
+                                adoption.AcademicProgramId &&
+                            x.NormalizedCode ==
+                                code))
+                    {
+                        Add(
+                            row,
+                            "Code",
+                            "ExistingConflict",
+                            code,
+                            errors);
+                    }
                 }
 
-                if (snapshot.ClassGroups
-                    .Any(x =>
-                        x.AcademicYearId ==
-                            year.Id &&
-                        x.AcademicProgramId ==
-                            adoption.AcademicProgramId &&
-                        x.NormalizedCode ==
-                            code))
+                if (name.Length > 0)
                 {
-                    Add(
-                        row,
-                        "Code",
-                        "ExistingConflict",
-                        code,
-                        errors);
+                    var normalizedName =
+                        NormalizeName(name);
+                    var nameLogical =
+                        $"{year.Id:N}:"
+                        + $"{adoption.Id:N}:"
+                        + normalizedName;
+
+                    if (!seenNames.Add(nameLogical))
+                    {
+                        Add(
+                            row,
+                            "Name",
+                            "DuplicateRow",
+                            name,
+                            errors);
+                    }
+
+                    if (snapshot.ClassGroups
+                        .Any(x =>
+                            x.AcademicYearId ==
+                                year.Id &&
+                            x.CurriculumAdoptionId ==
+                                adoption.Id &&
+                            string.Equals(
+                                x.NormalizedName ??
+                                    NormalizeName(x.Name),
+                                normalizedName,
+                                StringComparison.Ordinal)))
+                    {
+                        Add(
+                            row,
+                            "Name",
+                            "ExistingConflict",
+                            name,
+                            errors);
+                    }
                 }
             }
         }
@@ -1447,6 +1492,15 @@ public sealed class ImportValidationEngine
         string? value) =>
         (value ?? string.Empty)
             .Trim()
+            .ToUpperInvariant();
+
+    private static string NormalizeName(
+        string? value) =>
+        string.Join(
+                " ",
+                (value ?? string.Empty).Split(
+                    (char[]?)null,
+                    StringSplitOptions.RemoveEmptyEntries))
             .ToUpperInvariant();
 
     private static void ValidateCode(
