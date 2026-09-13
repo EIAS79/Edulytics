@@ -20,9 +20,10 @@ public static class DataImportRegistrationExtensions
             IApplicationTransactionManager,
             EfApplicationTransactionManager>();
 
+        services.AddScoped<DataImportService>();
         services.AddScoped<
             IDataImportService,
-            DataImportService>();
+            ProductDataImportService>();
 
         services.AddSingleton<
             ImportFileParser>();
