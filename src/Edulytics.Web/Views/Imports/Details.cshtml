@@ -1,9 +1,15 @@
 @using Edulytics.Core.Constants
+@using Edulytics.Core.Enums
 @model Edulytics.Web.ViewModels.Imports.ImportDetailsViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.ImportResource> I
 
 @{
-    var canManageImports = User.IsInRole(RoleNames.SubjectSupervisor);
+    var canManageImports =
+        User.IsInRole(RoleNames.SubjectSupervisor) ||
+        User.IsInRole(RoleNames.Teacher);
+    var visibleHeaders = Model.Batch.Type == ImportType.AssessmentResults
+        ? Model.Batch.Headers.Where(x => !string.Equals(x, "AssessmentId", StringComparison.OrdinalIgnoreCase)).ToArray()
+        : Model.Batch.Headers.ToArray();
     ViewData["Title"] = I["Batch"].Value;
 }
 
@@ -65,6 +71,13 @@
         </article>
     </section>
 
+    @if (Model.Batch.Type == ImportType.AssessmentResults)
+    {
+        <div class="import-message import-message-info" role="status">
+            Imported assessment results become read-only after confirmation. Correct the spreadsheet and upload a new batch if the source data is wrong.
+        </div>
+    }
+
     <section class="import-panel">
         <h2>@I["ValidationErrors"]</h2>
 
@@ -107,7 +120,7 @@
                     <tr>
                         <th>@I["Row"]</th>
 
-                        @foreach (var header in Model.Batch.Headers)
+                        @foreach (var header in visibleHeaders)
                         {
                             <th>@header</th>
                         }
@@ -122,7 +135,7 @@
                             @row.RowNumber
                         </td>
 
-                        @foreach (var header in Model.Batch.Headers)
+                        @foreach (var header in visibleHeaders)
                         {
                             var value =
                                 row.Values.TryGetValue(
