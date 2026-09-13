@@ -16,6 +16,7 @@ public static class MathOnlyImportAdapter
     [
         ImportType.Students,
         ImportType.Teachers,
+        ImportType.SubjectSupervisors,
         ImportType.Classes,
         ImportType.AssessmentResults
     ];
@@ -27,21 +28,26 @@ public static class MathOnlyImportAdapter
         "LastName",
         "Email",
         "AcademicYear",
-        "ClassCode"
+        "ClassName"
     ];
 
-    private static readonly IReadOnlyList<string> TeacherAssignmentHeaders =
+    private static readonly IReadOnlyList<string> TeacherHeaders =
     [
         "Email",
         "AcademicYear",
-        "ClassCode"
+        "ClassName"
+    ];
+
+    private static readonly IReadOnlyList<string> SupervisorHeaders =
+    [
+        "Email"
     ];
 
     private static readonly IReadOnlyList<string> FriendlyAssessmentResultHeaders =
     [
         "AssessmentTitle",
         "AssessmentDate",
-        "ClassCode",
+        "ClassName",
         "StudentNumber",
         "StudentName",
         "QuestionOrder",
@@ -61,7 +67,9 @@ public static class MathOnlyImportAdapter
                     ImportType.Students =>
                         new ImportTypeOption(x.Type, StudentHeaders),
                     ImportType.Teachers =>
-                        new ImportTypeOption(x.Type, TeacherAssignmentHeaders),
+                        new ImportTypeOption(x.Type, TeacherHeaders),
+                    ImportType.SubjectSupervisors =>
+                        new ImportTypeOption(x.Type, SupervisorHeaders),
                     ImportType.AssessmentResults =>
                         new ImportTypeOption(x.Type, FriendlyAssessmentResultHeaders),
                     _ => x
@@ -74,7 +82,8 @@ public static class MathOnlyImportAdapter
         type switch
         {
             ImportType.Students => StudentHeaders,
-            ImportType.Teachers => TeacherAssignmentHeaders,
+            ImportType.Teachers => TeacherHeaders,
+            ImportType.SubjectSupervisors => SupervisorHeaders,
             ImportType.AssessmentResults => FriendlyAssessmentResultHeaders,
             _ => serviceHeaders
         };
@@ -82,43 +91,73 @@ public static class MathOnlyImportAdapter
     public static AdaptedImportUpload NormalizeUpload(
         ImportType type,
         string fileName,
-        byte[] bytes)
+        byte[] bytes,
+        AssessmentWorkspace? workspace = null)
     {
-        if (type != ImportType.Teachers)
-            return new(fileName, bytes);
+        return type switch
+        {
+            ImportType.Students => NormalizeStudents(fileName, bytes, workspace),
+            ImportType.Teachers => NormalizeTeachers(fileName, bytes, workspace),
+            ImportType.AssessmentResults when workspace is not null =>
+                NormalizeAssessmentResults(fileName, bytes, workspace),
+            _ => new AdaptedImportUpload(fileName, bytes)
+        };
+    }
 
+    private static AdaptedImportUpload NormalizeStudents(
+        string fileName,
+        byte[] bytes,
+        AssessmentWorkspace? workspace)
+    {
         var parsed = new ImportFileParser().Parse(fileName, bytes);
-        if (!parsed.Succeeded)
+        if (!parsed.Succeeded || parsed.File is null || workspace is null)
             return new(fileName, bytes);
 
-        var headers = parsed.File!.Headers
-            .Where(x =>
-                !string.Equals(
-                    x,
-                    "SubjectCode",
-                    StringComparison.OrdinalIgnoreCase))
-            .ToList();
+        var actualHeaders = parsed.File.Headers.ToHashSet(StringComparer.OrdinalIgnoreCase);
+        if (StudentHeaders.Any(x => !actualHeaders.Contains(x)))
+            return new(fileName, bytes);
 
-        headers.Add("SubjectCode");
-
+        var outputHeaders = StudentHeaders.Concat(["ClassCode"]).ToArray();
         var builder = new StringBuilder();
-        builder.AppendLine(string.Join(",", headers.Select(EscapeCsv)));
+        builder.AppendLine(string.Join(",", outputHeaders.Select(EscapeCsv)));
 
         foreach (var row in parsed.File.Rows)
         {
-            var values = headers.Select(header =>
-            {
-                if (string.Equals(
-                        header,
-                        "SubjectCode",
-                        StringComparison.OrdinalIgnoreCase))
-                {
-                    return "MATH";
-                }
+            var className = Value(row, "ClassName").Trim();
+            var classCode = ResolveClassCode(workspace, className);
+            var values = StudentHeaders
+                .Select(header => Value(row, header))
+                .Concat([classCode]);
+            builder.AppendLine(string.Join(",", values.Select(EscapeCsv)));
+        }
 
-                return Value(row, header);
-            });
+        return CsvUpload(fileName, builder.ToString());
+    }
 
+    private static AdaptedImportUpload NormalizeTeachers(
+        string fileName,
+        byte[] bytes,
+        AssessmentWorkspace? workspace)
+    {
+        var parsed = new ImportFileParser().Parse(fileName, bytes);
+        if (!parsed.Succeeded || parsed.File is null || workspace is null)
+            return new(fileName, bytes);
+
+        var actualHeaders = parsed.File.Headers.ToHashSet(StringComparer.OrdinalIgnoreCase);
+        if (TeacherHeaders.Any(x => !actualHeaders.Contains(x)))
+            return new(fileName, bytes);
+
+        var outputHeaders = TeacherHeaders.Concat(["ClassCode", "SubjectCode"]).ToArray();
+        var builder = new StringBuilder();
+        builder.AppendLine(string.Join(",", outputHeaders.Select(EscapeCsv)));
+
+        foreach (var row in parsed.File.Rows)
+        {
+            var className = Value(row, "ClassName").Trim();
+            var classCode = ResolveClassCode(workspace, className);
+            var values = TeacherHeaders
+                .Select(header => Value(row, header))
+                .Concat([classCode, "MATH"]);
             builder.AppendLine(string.Join(",", values.Select(EscapeCsv)));
         }
 
@@ -131,26 +170,18 @@ public static class MathOnlyImportAdapter
         AssessmentWorkspace workspace)
     {
         var parsed = new ImportFileParser().Parse(fileName, bytes);
-        if (!parsed.Succeeded)
+        if (!parsed.Succeeded || parsed.File is null)
             return new(fileName, bytes);
 
-        var actualHeaders = parsed.File!.Headers.ToHashSet(
+        var actualHeaders = parsed.File.Headers.ToHashSet(
             StringComparer.OrdinalIgnoreCase);
 
         if (FriendlyAssessmentResultHeaders.Any(x => !actualHeaders.Contains(x)))
             return new(fileName, bytes);
 
-        var outputHeaders = new[]
-        {
-            "AssessmentTitle",
-            "AssessmentDate",
-            "ClassCode",
-            "StudentNumber",
-            "StudentName",
-            "QuestionOrder",
-            "Score",
-            "AssessmentId"
-        };
+        var outputHeaders = FriendlyAssessmentResultHeaders
+            .Concat(["ClassCode", "AssessmentId"])
+            .ToArray();
 
         var builder = new StringBuilder();
         builder.AppendLine(string.Join(",", outputHeaders.Select(EscapeCsv)));
@@ -159,10 +190,13 @@ public static class MathOnlyImportAdapter
         {
             var title = Value(row, "AssessmentTitle").Trim();
             var dateText = Value(row, "AssessmentDate").Trim();
-            var classCode = NormalizeCode(Value(row, "ClassCode"));
+            var className = Value(row, "ClassName").Trim();
 
             var classIds = workspace.ClassGroups
-                .Where(x => NormalizeCode(x.Code) == classCode)
+                .Where(x => string.Equals(
+                    x.Name.Trim(),
+                    className,
+                    StringComparison.OrdinalIgnoreCase))
                 .Select(x => x.Id)
                 .ToHashSet();
 
@@ -187,24 +221,45 @@ public static class MathOnlyImportAdapter
 
             var assessmentId = matches.Length == 1
                 ? matches[0].Id.ToString("D")
-                : $"UNRESOLVED:{title}|{dateText}|{classCode}";
+                : $"UNRESOLVED:{title}|{dateText}|{className}";
 
-            var values = new[]
-            {
-                title,
-                dateText,
-                classCode,
-                Value(row, "StudentNumber"),
-                Value(row, "StudentName"),
-                Value(row, "QuestionOrder"),
-                Value(row, "Score"),
-                assessmentId
-            };
+            var matchedClass = matches.Length == 1
+                ? workspace.ClassGroups.SingleOrDefault(x => x.Id == matches[0].ClassGroupId)
+                : null;
+            var classCode = matchedClass is null
+                ? ResolveClassCode(workspace, className)
+                : NormalizeCode(matchedClass.Code);
+
+            var values = FriendlyAssessmentResultHeaders
+                .Select(header => Value(row, header))
+                .Concat([classCode, assessmentId]);
 
             builder.AppendLine(string.Join(",", values.Select(EscapeCsv)));
         }
 
         return CsvUpload(fileName, builder.ToString());
+    }
+
+    private static string ResolveClassCode(
+        AssessmentWorkspace workspace,
+        string className)
+    {
+        if (string.IsNullOrWhiteSpace(className))
+            return string.Empty;
+
+        var codes = workspace.ClassGroups
+            .Where(x => string.Equals(
+                x.Name.Trim(),
+                className.Trim(),
+                StringComparison.OrdinalIgnoreCase))
+            .Select(x => NormalizeCode(x.Code))
+            .Where(x => x.Length > 0)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+
+        return codes.Length == 1
+            ? codes[0]
+            : $"UNRESOLVED:{className.Trim()}";
     }
 
     private static AdaptedImportUpload CsvUpload(string fileName, string content) =>
