@@ -1,3 +1,4 @@
+@using System.Globalization
 @using Edulytics.Core.Constants
 @using Edulytics.Core.Enums
 @model Edulytics.Web.ViewModels.Imports.ImportDetailsViewModel
@@ -7,6 +8,11 @@
     var canManageImports =
         User.IsInRole(RoleNames.SubjectSupervisor) ||
         User.IsInRole(RoleNames.Teacher);
+    var isPolish = string.Equals(
+        CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
+        "pl",
+        StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl) => isPolish ? pl : en;
     var visibleHeaders = Model.Batch.Type == ImportType.AssessmentResults
         ? Model.Batch.Headers.Where(x => !string.Equals(x, "AssessmentId", StringComparison.OrdinalIgnoreCase)).ToArray()
         : Model.Batch.Headers.ToArray();
@@ -74,7 +80,9 @@
     @if (Model.Batch.Type == ImportType.AssessmentResults)
     {
         <div class="import-message import-message-info" role="status">
-            Imported assessment results become read-only after confirmation. Correct the spreadsheet and upload a new batch if the source data is wrong.
+            @L(
+                "Imported assessment results become read-only after confirmation. If the source data is wrong, correct the spreadsheet and upload a new batch.",
+                "Zaimportowane wyniki sprawdzianów są po potwierdzeniu tylko do odczytu. Jeśli dane źródłowe są błędne, popraw arkusz i prześlij nowy pakiet.")
         </div>
     }
 
