@@ -20,4 +20,9 @@ public interface IImportBatchEditingRepository
         Guid batchId,
         string rowsJson,
         CancellationToken cancellationToken = default);
+
+    Task<ImportPersistenceResult> DeleteStagedBatchAsync(
+        Guid schoolId,
+        Guid batchId,
+        CancellationToken cancellationToken = default);
 }
