@@ -97,4 +97,43 @@ public sealed class ImportBatchEditingRepository(EdulyticsDbContext db) : IImpor
             return ImportPersistenceResult.Failure(ImportPersistenceError.Constraint);
         }
     }
+
+    public async Task<ImportPersistenceResult> DeleteStagedBatchAsync(
+        Guid schoolId,
+        Guid batchId,
+        CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            var batch = await db.ImportBatches.FirstOrDefaultAsync(
+                x => x.SchoolId == schoolId && x.Id == batchId,
+                cancellationToken);
+
+            if (batch is null)
+                return ImportPersistenceResult.Failure(ImportPersistenceError.NotFound);
+            if (batch.Status == ImportBatchStatus.Completed)
+                return ImportPersistenceResult.Failure(ImportPersistenceError.InvalidState);
+
+            var errors = await db.ImportValidationErrors
+                .Where(x => x.SchoolId == schoolId && x.ImportBatchId == batchId)
+                .ToArrayAsync(cancellationToken);
+
+            if (errors.Length > 0)
+                db.ImportValidationErrors.RemoveRange(errors);
+
+            db.ImportBatches.Remove(batch);
+            await db.SaveChangesAsync(cancellationToken);
+            return ImportPersistenceResult.Success();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            db.ChangeTracker.Clear();
+            return ImportPersistenceResult.Failure(ImportPersistenceError.Concurrency);
+        }
+        catch (DbUpdateException)
+        {
+            db.ChangeTracker.Clear();
+            return ImportPersistenceResult.Failure(ImportPersistenceError.Constraint);
+        }
+    }
 }
