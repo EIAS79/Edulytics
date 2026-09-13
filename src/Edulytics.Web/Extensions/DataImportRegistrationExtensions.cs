@@ -39,7 +39,8 @@ public static class DataImportRegistrationExtensions
                 policy =>
                     policy.RequireRole(
                         RoleNames.SchoolAdmin,
-                        RoleNames.SubjectSupervisor));
+                        RoleNames.SubjectSupervisor,
+                        RoleNames.Teacher));
         });
 
         return services;
