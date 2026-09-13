@@ -12,6 +12,11 @@ public sealed record AdaptedImportUpload(
     string FileName,
     byte[] Bytes);
 
+public sealed record ClassImportLevelOption(
+    string DisplayName,
+    string GradeLevelName,
+    Guid CurriculumAdoptionId);
+
 public static class MathOnlyImportAdapter
 {
     private static readonly ImportType[] SupportedTypes =
@@ -106,6 +111,82 @@ public static class MathOnlyImportAdapter
             _ => serviceHeaders
         };
 
+    public static IReadOnlyList<ClassImportLevelOption> ClassLevelOptions(
+        AcademicStructureSnapshot academicStructure,
+        Guid? academicYearId = null)
+    {
+        var grades = academicStructure.GradeLevels
+            .ToDictionary(x => x.Id);
+        var programs = academicStructure.AcademicPrograms
+            .ToDictionary(x => x.Id);
+
+        var candidates = academicStructure.CurriculumAdoptions
+            .Where(x =>
+                x.IsActive &&
+                x.AcademicYearId.HasValue &&
+                (!academicYearId.HasValue ||
+                 x.AcademicYearId.Value == academicYearId.Value) &&
+                x.AcademicProgramId != Guid.Empty &&
+                grades.ContainsKey(x.GradeLevelId))
+            .Select(x =>
+            {
+                var grade = grades[x.GradeLevelId];
+                var baseLabel = string.IsNullOrWhiteSpace(x.CurriculumLevelLabel)
+                    ? grade.Name.Trim()
+                    : x.CurriculumLevelLabel.Trim();
+                var pathway = x.CurriculumPathway?.Trim() ?? string.Empty;
+                var programName = programs.GetValueOrDefault(x.AcademicProgramId)?.Name?.Trim()
+                    ?? string.Empty;
+
+                return new ClassLevelCandidate(
+                    x.Id,
+                    x.AcademicYearId!.Value,
+                    x.GradeLevelId,
+                    grade.Name.Trim(),
+                    baseLabel,
+                    pathway,
+                    programName,
+                    x.CurriculumLevelKey?.Trim() ?? string.Empty);
+            })
+            .ToArray();
+
+        return candidates
+            .Select(candidate =>
+            {
+                var siblings = candidates
+                    .Where(x =>
+                        x.AcademicYearId == candidate.AcademicYearId &&
+                        string.Equals(
+                            x.BaseLabel,
+                            candidate.BaseLabel,
+                            StringComparison.OrdinalIgnoreCase))
+                    .ToArray();
+
+                var display = candidate.BaseLabel;
+                if (siblings.Length > 1)
+                {
+                    display = BuildDisambiguatedLevelLabel(candidate);
+                    if (siblings.Count(x => string.Equals(
+                            BuildDisambiguatedLevelLabel(x),
+                            display,
+                            StringComparison.OrdinalIgnoreCase)) > 1)
+                    {
+                        var identity = candidate.CurriculumLevelKey.Length > 0
+                            ? candidate.CurriculumLevelKey
+                            : candidate.AdoptionId.ToString("N")[..8].ToUpperInvariant();
+                        display = $"{display} — {identity}";
+                    }
+                }
+
+                return new ClassImportLevelOption(
+                    display,
+                    candidate.GradeLevelName,
+                    candidate.AdoptionId);
+            })
+            .OrderBy(x => x.DisplayName, StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+    }
+
     public static bool LooksLikeClassesUpload(
         string fileName,
         byte[] bytes)
@@ -154,7 +235,11 @@ public static class MathOnlyImportAdapter
             ImportType.Teachers =>
                 NormalizeTeachers(fileName, bytes, workspace, academicStructure),
             ImportType.Classes =>
-                NormalizeClasses(fileName, bytes, selectedAcademicYear),
+                NormalizeClasses(
+                    fileName,
+                    bytes,
+                    academicStructure,
+                    selectedAcademicYear),
             ImportType.AssessmentResults when workspace is not null =>
                 NormalizeAssessmentResults(fileName, bytes, workspace),
             _ => new AdaptedImportUpload(fileName, bytes)
@@ -238,6 +323,7 @@ public static class MathOnlyImportAdapter
     private static AdaptedImportUpload NormalizeClasses(
         string fileName,
         byte[] bytes,
+        AcademicStructureSnapshot? academicStructure,
         string? selectedAcademicYear)
     {
         var parsed = new ImportFileParser().Parse(fileName, bytes);
@@ -252,22 +338,53 @@ public static class MathOnlyImportAdapter
         if (academicYear.Length == 0)
             return new(fileName, bytes);
 
-        var outputHeaders = InternalClassHeaders.Concat(["Code"]).ToArray();
+        var selectedYear = academicStructure?.AcademicYears
+            .SingleOrDefault(x =>
+                x.Status == AcademicStructureStatus.Active &&
+                string.Equals(
+                    x.Name.Trim(),
+                    academicYear,
+                    StringComparison.OrdinalIgnoreCase));
+
+        var levelOptions = selectedYear is null || academicStructure is null
+            ? []
+            : ClassLevelOptions(academicStructure, selectedYear.Id);
+        var carriesAdoptionIdentity = academicStructure is not null;
+
+        var outputHeaders = carriesAdoptionIdentity
+            ? InternalClassHeaders.Concat(["CurriculumAdoptionId", "Code"]).ToArray()
+            : InternalClassHeaders.Concat(["Code"]).ToArray();
         var builder = new StringBuilder();
         builder.AppendLine(string.Join(",", outputHeaders.Select(EscapeCsv)));
 
         foreach (var row in parsed.File.Rows)
         {
-            var gradeLevel = Value(row, "GradeLevel");
+            var submittedLevel = Value(row, "GradeLevel").Trim();
             var name = Value(row, "Name");
+            var option = ResolveClassLevelOption(levelOptions, submittedLevel);
+            var gradeLevel = option?.GradeLevelName ?? submittedLevel;
+            var adoptionIdentity = option is null
+                ? $"UNRESOLVED:{submittedLevel}"
+                : option.CurriculumAdoptionId.ToString("D");
             var code = GenerateClassCode(academicYear, name);
-            var values = new[]
-            {
-                academicYear,
-                gradeLevel,
-                name,
-                code
-            };
+
+            var values = carriesAdoptionIdentity
+                ? new[]
+                {
+                    academicYear,
+                    gradeLevel,
+                    name,
+                    adoptionIdentity,
+                    code
+                }
+                : new[]
+                {
+                    academicYear,
+                    gradeLevel,
+                    name,
+                    code
+                };
+
             builder.AppendLine(string.Join(",", values.Select(EscapeCsv)));
         }
 
@@ -348,6 +465,43 @@ public static class MathOnlyImportAdapter
         }
 
         return CsvUpload(fileName, builder.ToString());
+    }
+
+    private static ClassImportLevelOption? ResolveClassLevelOption(
+        IReadOnlyList<ClassImportLevelOption> options,
+        string submittedLevel)
+    {
+        var displayMatches = options
+            .Where(x => string.Equals(
+                x.DisplayName,
+                submittedLevel,
+                StringComparison.OrdinalIgnoreCase))
+            .ToArray();
+
+        if (displayMatches.Length == 1)
+            return displayMatches[0];
+
+        var legacyMatches = options
+            .Where(x => string.Equals(
+                x.GradeLevelName,
+                submittedLevel,
+                StringComparison.OrdinalIgnoreCase))
+            .ToArray();
+
+        return legacyMatches.Length == 1
+            ? legacyMatches[0]
+            : null;
+    }
+
+    private static string BuildDisambiguatedLevelLabel(
+        ClassLevelCandidate candidate)
+    {
+        var parts = new List<string> { candidate.BaseLabel };
+        if (candidate.Pathway.Length > 0)
+            parts.Add(candidate.Pathway);
+        if (candidate.ProgramName.Length > 0)
+            parts.Add(candidate.ProgramName);
+        return string.Join(" — ", parts);
     }
 
     private static string ResolveClassCode(
@@ -449,4 +603,14 @@ public static class MathOnlyImportAdapter
 
         return $"\"{value.Replace("\"", "\"\"")}\"";
     }
+
+    private sealed record ClassLevelCandidate(
+        Guid AdoptionId,
+        Guid AcademicYearId,
+        Guid GradeLevelId,
+        string GradeLevelName,
+        string BaseLabel,
+        string Pathway,
+        string ProgramName,
+        string CurriculumLevelKey);
 }
