@@ -1,142 +1,125 @@
+@using System.Globalization
 @using Edulytics.Core.Constants
+@using Edulytics.Core.Enums
 @model Edulytics.Web.ViewModels.Imports.ImportIndexViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.ImportResource> I
 
 @{
-    var canManageImports = User.IsInRole(RoleNames.SubjectSupervisor);
-}
-
-@{
-    ViewData["Title"] = I["ImportTitle"].Value;
+    var canManageImports =
+        User.IsInRole(RoleNames.SubjectSupervisor) ||
+        User.IsInRole(RoleNames.Teacher);
+    var isPolish = string.Equals(
+        CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
+        "pl",
+        StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl) => isPolish ? pl : en;
+    ViewData["Title"] = L("Bulk data import", "Import danych zbiorczych");
 }
 
 <section class="import-page import-index @(canManageImports ? "" : "is-readonly")">
     <header class="import-page-header">
         <div>
-            <div class="user-eyebrow">
-                @I["ImportTitle"]
-            </div>
-
-            <h1>@I["ImportTitle"]</h1>
-
+            <div class="user-eyebrow">@I["ImportTitle"]</div>
+            <h1>@L("Bulk data import", "Import danych zbiorczych")</h1>
             <p class="user-page-subtitle">
-                @(canManageImports ? I["ImportSubtitle"] : I["ImportViewSubtitle"])
+                @(canManageImports
+                    ? L("Use the Edulytics templates to add structured school data safely.", "Użyj szablonów Edulytics, aby bezpiecznie dodać uporządkowane dane szkoły.")
+                    : I["ImportViewSubtitle"].Value)
             </p>
         </div>
-
-        <a class="school-button"
-           asp-controller="SchoolHome"
-           asp-action="Dashboard">
-            @I["BackToDashboard"]
-        </a>
+        <a class="school-button" asp-controller="SchoolHome" asp-action="Dashboard">@I["BackToDashboard"]</a>
     </header>
 
     @if (TempData["ImportSuccess"] is string success)
     {
-        <div class="import-message import-message-success"
-             role="status">
-            @success
-        </div>
+        <div class="import-message import-message-success" role="status">@success</div>
     }
-
     @if (TempData["ImportError"] is string error)
     {
-        <div class="import-message import-message-error"
-             role="alert">
-            @error
-        </div>
+        <div class="import-message import-message-error" role="alert">@error</div>
     }
-
     @if (!canManageImports)
     {
-        <div class="import-message import-message-info"
-             role="status">
-            @I["ImportReadOnlyNotice"]
-        </div>
+        <div class="import-message import-message-info" role="status">@I["ImportReadOnlyNotice"]</div>
+    }
+
+    @if (canManageImports)
+    {
+        <section class="import-panel ed-import-workflow" aria-label="@L("Import workflow", "Przebieg importu")">
+            <h2>@L("How bulk import works", "Jak działa import zbiorczy")</h2>
+            <div class="ed-import-steps">
+                <article><strong>1</strong><span>@L("Choose the data type and download its template.", "Wybierz typ danych i pobierz szablon.")</span></article>
+                <article><strong>2</strong><span>@L("Complete it using the codes and names already used in Edulytics.", "Uzupełnij go kodami i nazwami już używanymi w Edulytics.")</span></article>
+                <article><strong>3</strong><span>@L("Upload and validate. Validation changes no school data and sends no invitations.", "Prześlij i zweryfikuj. Walidacja nie zmienia danych szkoły ani nie wysyła zaproszeń.")</span></article>
+                <article><strong>4</strong><span>@L("Review the preview and fix every validation error in the source file.", "Sprawdź podgląd i popraw wszystkie błędy w pliku źródłowym.")</span></article>
+                <article><strong>5</strong><span>@L("Confirm only when the preview is correct. Confirmation applies the whole batch.", "Potwierdź dopiero po sprawdzeniu podglądu. Potwierdzenie stosuje cały pakiet.")</span></article>
+            </div>
+        </section>
     }
 
     <section class="import-panel import-operational-panel">
         <h2>@I["UploadFile"]</h2>
-
         <p>@I["FileRules"]</p>
-
         @if (canManageImports)
         {
-            <form asp-action="Upload"
-                          method="post"
-                          enctype="multipart/form-data"
-                          class="import-upload-form">
-
-                        <div class="import-field">
-                            <label for="importType">
-                                @I["ImportType"]
-                            </label>
-
-                            <select id="importType"
-                                    name="importType"
-                                    required>
-                                @foreach (var option in Model.Workspace.AllowedTypes)
-                                {
-                                    <option value="@option.Type">
-                                        @I[$"Type{option.Type}"]
-                                    </option>
-                                }
-                            </select>
-                        </div>
-
-                        <div class="import-field">
-                            <label for="importFile">
-                                @I["File"]
-                            </label>
-
-                            <input id="importFile"
-                                   name="file"
-                                   type="file"
-                                   accept=".csv,.xlsx,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-                                   required />
-                        </div>
-
-                        <button type="submit"
-                                class="school-button school-button-primary">
-                            @I["UploadAndValidate"]
-                        </button>
-                    </form>
+            <form asp-action="Upload" method="post" enctype="multipart/form-data" class="import-upload-form">
+                <div class="import-field">
+                    <label for="importType">@I["ImportType"]</label>
+                    <select id="importType" name="importType" required>
+                        @foreach (var option in Model.Workspace.AllowedTypes)
+                        {
+                            <option value="@option.Type">
+                                @(option.Type == ImportType.Teachers
+                                    ? L("Teacher assignments", "Przydziały nauczycieli")
+                                    : option.Type == ImportType.AssessmentResults
+                                        ? L("Assessment results", "Wyniki sprawdzianów")
+                                        : I[$"Type{option.Type}"].Value)
+                            </option>
+                        }
+                    </select>
+                </div>
+                <div class="import-field">
+                    <label for="importFile">@I["File"]</label>
+                    <input id="importFile" name="file" type="file" accept=".csv,.xlsx,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required />
+                </div>
+                <button type="submit" class="school-button school-button-primary">@I["UploadAndValidate"]</button>
+            </form>
         }
     </section>
 
     <section class="import-schema-grid import-operational-schema">
         @foreach (var option in Model.Workspace.AllowedTypes)
         {
+            var title = option.Type switch
+            {
+                ImportType.Teachers => L("Teacher assignments", "Przydziały nauczycieli"),
+                ImportType.AssessmentResults => L("Assessment results", "Wyniki sprawdzianów"),
+                _ => I[$"Type{option.Type}"].Value
+            };
+
             <article class="import-panel import-schema-card">
-                <h2>@I[$"Type{option.Type}"]</h2>
-
+                <h2>@title</h2>
                 <strong>@I["RequiredColumns"]</strong>
-
-                <code>
-                    @string.Join(",", option.RequiredHeaders)
-                </code>
-
+                <code>@string.Join(",", option.RequiredHeaders)</code>
                 @if (canManageImports)
                 {
-                    <a asp-action="Template"
-                                       asp-route-importType="@option.Type">
-                                        @I["DownloadTemplate"]
-                                    </a>
+                    <a asp-action="Template" asp-route-importType="@option.Type">@I["DownloadTemplate"]</a>
                 }
 
-                @if (option.Type == Edulytics.Core.Enums.ImportType.Teachers)
+                @switch (option.Type)
                 {
-                    <p>@I["TeacherImportNote"]</p>
-                }
-
-                @if (option.Type == Edulytics.Core.Enums.ImportType.AssessmentResults)
-                {
-                    <p>@I["ResultImportNote"]</p>
-                }
-
-                @if (option.Type == Edulytics.Core.Enums.ImportType.CurriculumMappings)
-                {
-                    <p>@I["MappingImportNote"]</p>
+                    case ImportType.Students:
+                        <p>@L("Email creates the student's login account after Confirm. Edulytics then sends the password-setup invitation. ClassCode must exactly match the Code of an existing class in the same AcademicYear.", "Email tworzy konto logowania ucznia po potwierdzeniu. Następnie Edulytics wysyła zaproszenie do ustawienia hasła. ClassCode musi dokładnie odpowiadać polu Code istniejącej klasy w tym samym roku szkolnym.")</p>
+                        break;
+                    case ImportType.Teachers:
+                        <p>@L("This imports assignments, not teacher accounts. Email must belong to an existing active Teacher. ClassCode must match an existing class. Mathematics is assigned automatically.", "Ten import dotyczy przydziałów, a nie tworzenia kont nauczycieli. Email musi należeć do istniejącego aktywnego nauczyciela. ClassCode musi odpowiadać istniejącej klasie. Matematyka jest przypisywana automatycznie.")</p>
+                        break;
+                    case ImportType.Classes:
+                        <p>@L("Code is the stable class identifier, for example G1-A. Student and teacher-assignment files refer to that same value as ClassCode. AcademicYear and GradeLevel must already exist in Edulytics.", "Code to stały identyfikator klasy, np. G1-A. Pliki uczniów i przydziałów nauczycieli używają tej samej wartości jako ClassCode. AcademicYear i GradeLevel muszą już istnieć w Edulytics.")</p>
+                        break;
+                    case ImportType.AssessmentResults:
+                        <p>@L("Teachers import offline/manual results using AssessmentTitle + AssessmentDate + ClassCode — no internal GUID is required. StudentNumber identifies the student; StudentName is included for review. Use one row per question. After Confirm, imported grades are read-only.", "Nauczyciele importują wyniki offline/ręczne za pomocą AssessmentTitle + AssessmentDate + ClassCode — bez wewnętrznego GUID. StudentNumber identyfikuje ucznia, a StudentName służy do sprawdzenia. Jeden wiersz odpowiada jednemu pytaniu. Po potwierdzeniu oceny są tylko do odczytu.")</p>
+                        break;
                 }
             </article>
         }
@@ -144,9 +127,7 @@
 
     <section class="import-panel">
         <h2>@I["History"]</h2>
-
         <p>@I["IdempotencyNote"]</p>
-
         @if (Model.Workspace.Batches.Count == 0)
         {
             <p>@I["NoHistory"]</p>
@@ -156,57 +137,25 @@
             <div class="import-table-wrap">
                 <table class="import-table">
                     <thead>
-                        <tr>
-                            <th>@I["ImportType"]</th>
-                            <th>@I["FileName"]</th>
-                            <th>@I["Status"]</th>
-                            <th>@I["Rows"]</th>
-                            <th>@I["Errors"]</th>
-                            <th>@I["Created"]</th>
-                            <th></th>
-                        </tr>
+                        <tr><th>@I["ImportType"]</th><th>@I["FileName"]</th><th>@I["Status"]</th><th>@I["Rows"]</th><th>@I["Errors"]</th><th>@I["Created"]</th><th></th></tr>
                     </thead>
                     <tbody>
                     @foreach (var batch in Model.Workspace.Batches)
                     {
                         var statusKey = batch.Status switch
                         {
-                            Edulytics.Core.Enums.ImportBatchStatus.Validated => "StatusValidated",
-                            Edulytics.Core.Enums.ImportBatchStatus.ValidationFailed => "StatusValidationFailed",
+                            ImportBatchStatus.Validated => "StatusValidated",
+                            ImportBatchStatus.ValidationFailed => "StatusValidationFailed",
                             _ => "StatusCompleted"
                         };
-
                         <tr>
-                            <td data-label="@I["ImportType"]">
-                                @I[$"Type{batch.Type}"]
-                            </td>
-
-                            <td data-label="@I["FileName"]">
-                                @batch.FileName
-                            </td>
-
-                            <td data-label="@I["Status"]">
-                                @I[statusKey]
-                            </td>
-
-                            <td data-label="@I["Rows"]">
-                                @batch.RowCount
-                            </td>
-
-                            <td data-label="@I["Errors"]">
-                                @batch.ErrorCount
-                            </td>
-
-                            <td data-label="@I["Created"]">
-                                @batch.CreatedAtUtc.ToString("u")
-                            </td>
-
-                            <td>
-                                <a asp-action="Details"
-                                   asp-route-batchId="@batch.Id">
-                                    @I["Open"]
-                                </a>
-                            </td>
+                            <td data-label="@I["ImportType"]">@(batch.Type == ImportType.Teachers ? L("Teacher assignments", "Przydziały nauczycieli") : batch.Type == ImportType.AssessmentResults ? L("Assessment results", "Wyniki sprawdzianów") : I[$"Type{batch.Type}"].Value)</td>
+                            <td data-label="@I["FileName"]">@batch.FileName</td>
+                            <td data-label="@I["Status"]">@I[statusKey]</td>
+                            <td data-label="@I["Rows"]">@batch.RowCount</td>
+                            <td data-label="@I["Errors"]">@batch.ErrorCount</td>
+                            <td data-label="@I["Created"]">@batch.CreatedAtUtc.ToString("u")</td>
+                            <td><a asp-action="Details" asp-route-batchId="@batch.Id">@I["Open"]</a></td>
                         </tr>
                     }
                     </tbody>
@@ -215,3 +164,7 @@
         }
     </section>
 </section>
+
+<style>
+.ed-import-workflow{margin-bottom:1rem}.ed-import-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.7rem}.ed-import-steps article{display:grid;grid-template-columns:auto 1fr;gap:.55rem;align-items:start;padding:.8rem;border:1px solid #dbe4ef;border-radius:.8rem;background:#f8faff}.ed-import-steps article>strong{display:grid;place-items:center;width:1.75rem;height:1.75rem;border-radius:50%;background:#2f66e8;color:#fff;font-size:.8rem}.ed-import-steps article>span{color:#425b76;line-height:1.4;font-size:.88rem}@media(max-width:1100px){.ed-import-steps{grid-template-columns:1fr 1fr}}@media(max-width:650px){.ed-import-steps{grid-template-columns:1fr}}
+</style>
