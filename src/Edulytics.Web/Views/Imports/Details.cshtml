@@ -50,12 +50,23 @@
             if (item.Code == "DuplicateRow")
                 return L("This email appears more than once in this file.", "Ten adres email występuje w pliku więcej niż raz.");
         }
-        if (Model.Batch.Type == ImportType.Classes && item.ColumnName.Equals("Code", StringComparison.OrdinalIgnoreCase))
+        if (Model.Batch.Type == ImportType.Classes)
         {
-            if (item.Code == "ExistingConflict")
-                return L("A class with this generated identifier already exists for the selected academic year.", "Klasa z tym wygenerowanym identyfikatorem już istnieje w wybranym roku szkolnym.");
-            if (item.Code == "DuplicateRow")
-                return L("This class appears more than once in the file.", "Ta klasa występuje w pliku więcej niż raz.");
+            if (item.Code == "UnknownReference" && item.ColumnName.Equals("AcademicYear", StringComparison.OrdinalIgnoreCase))
+                return L(
+                    $"Academic year \"{raw}\" is not an active Academic Year in Edulytics. Create or activate it in Academic Structure, including its dates and status, then upload the file again.",
+                    $"Rok szkolny \"{raw}\" nie jest aktywnym rokiem szkolnym w Edulytics. Utwórz go lub aktywuj w Strukturze akademickiej, uzupełniając daty i status, a następnie prześlij plik ponownie.");
+            if (item.Code == "UnknownReference" && item.ColumnName.Equals("GradeLevel", StringComparison.OrdinalIgnoreCase))
+                return L(
+                    $"GradeLevel \"{raw}\" is not configured in Academic Structure. Use the Classes XLSX dropdown or add the curriculum level first.",
+                    $"GradeLevel \"{raw}\" nie jest skonfigurowany w Strukturze akademickiej. Użyj listy rozwijanej w szablonie XLSX klas lub najpierw dodaj poziom programu nauczania.");
+            if (item.ColumnName.Equals("Code", StringComparison.OrdinalIgnoreCase))
+            {
+                if (item.Code == "ExistingConflict")
+                    return L("A class with this generated identifier already exists for this academic year.", "Klasa z tym wygenerowanym identyfikatorem już istnieje w tym roku szkolnym.");
+                if (item.Code == "DuplicateRow")
+                    return L("This class appears more than once in the file.", "Ta klasa występuje w pliku więcej niż raz.");
+            }
         }
         return I[$"Validation{item.Code}"].Value;
     }
