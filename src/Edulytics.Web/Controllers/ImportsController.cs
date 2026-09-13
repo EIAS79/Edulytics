@@ -71,7 +71,29 @@ public sealed class ImportsController : Controller
             MathOnlyImportAdapter.FilterOptions(workspace.AllowedTypes),
             workspace.Batches);
 
-        return View(new ImportIndexViewModel(productWorkspace));
+        var academicYears = Array.Empty<ImportAcademicYearOption>();
+        if (productWorkspace.AllowedTypes.Any(x => x.Type == ImportType.Classes))
+        {
+            var actor = await _schoolUsers.GetActorAsync(
+                actorId,
+                cancellationToken);
+
+            if (actor?.SchoolId is Guid schoolId)
+            {
+                var snapshot = await _academicStructure.GetSnapshotAsync(
+                    schoolId,
+                    cancellationToken);
+
+                academicYears = snapshot.AcademicYears
+                    .Where(x => x.Status == AcademicStructureStatus.Active)
+                    .OrderByDescending(x => x.StartsOn)
+                    .ThenBy(x => x.Name)
+                    .Select(x => new ImportAcademicYearOption(x.Id, x.Name))
+                    .ToArray();
+            }
+        }
+
+        return View(new ImportIndexViewModel(productWorkspace, academicYears));
     }
 
     [HttpGet("/school/imports/{batchId:guid}")]
@@ -101,6 +123,7 @@ public sealed class ImportsController : Controller
     [EnableRateLimiting(BackendResiliencePolicyNames.ImportConcurrency)]
     public async Task<IActionResult> Upload(
         ImportType importType,
+        Guid? academicYearId,
         IFormFile? file,
         CancellationToken cancellationToken)
     {
@@ -129,8 +152,18 @@ public sealed class ImportsController : Controller
         await file.CopyToAsync(stream, cancellationToken);
         var rawBytes = stream.ToArray();
 
+        if (importType != ImportType.Classes &&
+            MathOnlyImportAdapter.LooksLikeClassesUpload(file.FileName, rawBytes))
+        {
+            TempData["ImportError"] = Local(
+                $"This file uses the Classes template, but {importType} is selected. Select Classes and upload it again.",
+                $"Ten plik używa szablonu klas, ale wybrano {importType}. Wybierz Klasy i prześlij plik ponownie.");
+            return RedirectToAction(nameof(Index));
+        }
+
         AssessmentWorkspace? assessmentWorkspace = null;
         AcademicStructureSnapshot? academicSnapshot = null;
+        string? selectedAcademicYear = null;
 
         if (importType == ImportType.AssessmentResults)
         {
@@ -144,7 +177,7 @@ public sealed class ImportsController : Controller
             assessmentWorkspace = assessmentResult.Value;
         }
 
-        if (importType is ImportType.Students or ImportType.Teachers)
+        if (importType is ImportType.Students or ImportType.Teachers or ImportType.Classes)
         {
             var actor = await _schoolUsers.GetActorAsync(
                 actorId,
@@ -156,6 +189,25 @@ public sealed class ImportsController : Controller
             academicSnapshot = await _academicStructure.GetSnapshotAsync(
                 schoolId,
                 cancellationToken);
+
+            if (importType == ImportType.Classes)
+            {
+                var year = academicYearId.HasValue
+                    ? academicSnapshot.AcademicYears.SingleOrDefault(x =>
+                        x.Id == academicYearId.Value &&
+                        x.Status == AcademicStructureStatus.Active)
+                    : null;
+
+                if (year is null)
+                {
+                    TempData["ImportError"] = Local(
+                        "Select an active academic year for the Classes import.",
+                        "Wybierz aktywny rok szkolny dla importu klas.");
+                    return RedirectToAction(nameof(Index));
+                }
+
+                selectedAcademicYear = year.Name;
+            }
         }
 
         var upload = MathOnlyImportAdapter.NormalizeUpload(
@@ -163,7 +215,8 @@ public sealed class ImportsController : Controller
             file.FileName,
             rawBytes,
             assessmentWorkspace,
-            academicSnapshot);
+            academicSnapshot,
+            selectedAcademicYear);
 
         var result = await _imports.UploadAsync(
             actorId,
@@ -293,6 +346,39 @@ public sealed class ImportsController : Controller
             return Forbid();
         }
 
+        if (importType == ImportType.Classes)
+        {
+            var actor = await _schoolUsers.GetActorAsync(
+                actorId,
+                cancellationToken);
+
+            if (actor?.SchoolId is not Guid schoolId)
+                return Forbid();
+
+            var snapshot = await _academicStructure.GetSnapshotAsync(
+                schoolId,
+                cancellationToken);
+
+            var gradeLevels = snapshot.GradeLevels
+                .OrderBy(x => x.Order)
+                .ThenBy(x => x.Name)
+                .Select(x => x.Name)
+                .ToArray();
+
+            if (gradeLevels.Length == 0)
+            {
+                TempData["ImportError"] = Local(
+                    "Configure at least one GradeLevel in Academic Structure before downloading the Classes template.",
+                    "Przed pobraniem szablonu klas skonfiguruj co najmniej jeden poziom w strukturze akademickiej.");
+                return RedirectToAction(nameof(Index));
+            }
+
+            return File(
+                ClassesImportWorkbook.Create(gradeLevels),
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "edulytics-Classes.xlsx");
+        }
+
         var headers = MathOnlyImportAdapter.TemplateHeaders(
             importType,
             _imports.GetTemplateHeaders(importType));
@@ -411,6 +497,14 @@ public sealed class ImportsController : Controller
             return false;
         }
     }
+
+    private static string Local(string english, string polish) =>
+        string.Equals(
+            System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
+            "pl",
+            StringComparison.OrdinalIgnoreCase)
+            ? polish
+            : english;
 
     private static string ErrorResourceKey(ImportErrorCode? error) =>
         error switch
