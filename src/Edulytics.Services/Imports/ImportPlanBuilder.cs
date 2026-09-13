@@ -178,7 +178,10 @@ public sealed class ImportPlanBuilder
             var adoption = ResolveClassAdoption(
                 snapshot,
                 year.Id,
-                grade.Id);
+                grade.Id,
+                Text(
+                    row,
+                    "CurriculumAdoptionId"));
 
             plan.AcademicYearGuards.Add(
                 new ImportEntityGuard(
@@ -220,7 +223,8 @@ public sealed class ImportPlanBuilder
     private static SchoolCurriculumAdoption ResolveClassAdoption(
         ImportDataSnapshot snapshot,
         Guid academicYearId,
-        Guid gradeLevelId)
+        Guid gradeLevelId,
+        string adoptionValue)
     {
         var matches = snapshot.CurriculumAdoptions
             .Where(x =>
@@ -230,18 +234,30 @@ public sealed class ImportPlanBuilder
                 x.AcademicProgramId != Guid.Empty)
             .ToArray();
 
+        if (!string.IsNullOrWhiteSpace(adoptionValue))
+        {
+            if (Guid.TryParse(
+                    adoptionValue,
+                    out var adoptionId))
+            {
+                var exact = matches.SingleOrDefault(x =>
+                    x.Id == adoptionId);
+
+                if (exact is not null)
+                    return exact;
+            }
+
+            throw new InvalidOperationException(
+                "Validated Classes import contains an invalid curriculum adoption identity.");
+        }
+
+        // Compatibility path for batches that were persisted before the
+        // curriculum-adoption identity was carried in normalized rows.
         if (matches.Length == 1)
             return matches[0];
 
-        var primary = matches
-            .Where(x => x.IsPrimary)
-            .ToArray();
-
-        if (primary.Length == 1)
-            return primary[0];
-
         throw new InvalidOperationException(
-            "A Classes import row must resolve to exactly one active curriculum adoption.");
+            "Validated Classes import must resolve to exactly one active curriculum adoption.");
     }
 
     private static void BuildStudents(
