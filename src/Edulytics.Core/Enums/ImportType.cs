@@ -7,5 +7,6 @@ public enum ImportType
     Classes = 3,
     Subjects = 4,
     AssessmentResults = 5,
-    CurriculumMappings = 6
+    CurriculumMappings = 6,
+    SubjectSupervisors = 7
 }

@@ -69,7 +69,7 @@
       </div>
       <div class="ed-ai-v22-visual">
         <img
-          src="/images/public/edulytics-math-mascot-2.png"
+          src="/images/public/edulaytiks-character-background.png?v=43"
           alt="${copy.imageAlt}"
           loading="lazy"
           decoding="async" />

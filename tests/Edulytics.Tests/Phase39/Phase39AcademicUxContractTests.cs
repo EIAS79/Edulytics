@@ -1,5 +1,6 @@
 using System.Text;
 using Edulytics.Core.Enums;
+using Edulytics.Services.Assessments;
 using Edulytics.Services.Imports;
 using Edulytics.Web.Imports;
 
@@ -77,6 +78,7 @@ public sealed class Phase39AcademicUxContractTests
     {
         Assert.True(MathOnlyImportAdapter.IsSupported(ImportType.Students));
         Assert.True(MathOnlyImportAdapter.IsSupported(ImportType.Teachers));
+        Assert.True(MathOnlyImportAdapter.IsSupported(ImportType.SubjectSupervisors));
         Assert.True(MathOnlyImportAdapter.IsSupported(ImportType.Classes));
         Assert.True(MathOnlyImportAdapter.IsSupported(ImportType.AssessmentResults));
         Assert.False(MathOnlyImportAdapter.IsSupported(ImportType.Subjects));
@@ -87,33 +89,43 @@ public sealed class Phase39AcademicUxContractTests
             ["Email", "AcademicYear", "ClassCode", "SubjectCode"]);
 
         Assert.Equal(
-            ["Email", "AcademicYear", "ClassCode"],
+            ["Email", "AcademicYear", "ClassName"],
             teacherHeaders);
     }
 
     [Fact]
-    public void TeacherAssignmentImport_ForcesMathematicsInternally()
+    public void TeacherImport_ResolvesVisibleClassNameAndForcesMathematicsInternally()
     {
         const string csv =
-            "Email,AcademicYear,ClassCode,SubjectCode\n" +
-            "teacher@example.com,2026-2027,B-1,SCIENCE\n";
+            "Email,AcademicYear,ClassName\n" +
+            "teacher@example.com,2026-2027,BG1\n";
+
+        var workspace = new AssessmentWorkspace(
+            [],
+            [],
+            [new AssessmentClassItem(
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                "BG1",
+                "B-1")],
+            []);
 
         var adapted = MathOnlyImportAdapter.NormalizeUpload(
             ImportType.Teachers,
             "teachers.csv",
-            Encoding.UTF8.GetBytes(csv));
+            Encoding.UTF8.GetBytes(csv),
+            workspace);
 
         var parsed = new ImportFileParser().Parse(
             adapted.FileName,
             adapted.Bytes);
 
         Assert.True(parsed.Succeeded);
-        Assert.Contains("SubjectCode", parsed.File!.Headers);
+        Assert.Contains("ClassCode", parsed.File!.Headers);
+        Assert.Contains("SubjectCode", parsed.File.Headers);
+        Assert.Equal("B-1", parsed.File.Rows[0].Values["ClassCode"]);
         Assert.Equal("MATH", parsed.File.Rows[0].Values["SubjectCode"]);
-        Assert.DoesNotContain(
-            "SCIENCE",
-            Encoding.UTF8.GetString(adapted.Bytes),
-            StringComparison.Ordinal);
     }
 
     [Fact]

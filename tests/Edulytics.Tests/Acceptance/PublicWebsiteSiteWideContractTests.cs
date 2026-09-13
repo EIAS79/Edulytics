@@ -46,10 +46,10 @@ public sealed class PublicWebsiteSiteWideContractTests
             "src/Edulytics.Web/Views/Shared/_PublicLayout.cshtml"));
 
         var publicCss = layout.IndexOf(
-            "public-site-v42.css",
+            "public-site-v43.css",
             StringComparison.Ordinal);
         var publicRuntime = layout.IndexOf(
-            "public-site-v42.js",
+            "public-site-v43.js",
             StringComparison.Ordinal);
         var contentRuntime = layout.IndexOf(
             "public-content-v33.js",
@@ -129,6 +129,10 @@ public sealed class PublicWebsiteSiteWideContractTests
             bundleController,
             StringComparison.Ordinal);
         Assert.Contains(
+            "[HttpGet(\"/css/public-site-v43.css\")]",
+            bundleController,
+            StringComparison.Ordinal);
+        Assert.Contains(
             "[HttpGet(\"/js/public-site-v33.js\")]",
             bundleController,
             StringComparison.Ordinal);
@@ -158,6 +162,10 @@ public sealed class PublicWebsiteSiteWideContractTests
             StringComparison.Ordinal);
         Assert.Contains(
             "[HttpGet(\"/js/public-site-v42.js\")]",
+            bundleController,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "[HttpGet(\"/js/public-site-v43.js\")]",
             bundleController,
             StringComparison.Ordinal);
         Assert.DoesNotContain(

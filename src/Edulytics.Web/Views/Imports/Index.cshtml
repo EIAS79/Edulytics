@@ -6,6 +6,7 @@
 
 @{
     var canManageImports =
+        User.IsInRole(RoleNames.SchoolAdmin) ||
         User.IsInRole(RoleNames.SubjectSupervisor) ||
         User.IsInRole(RoleNames.Teacher);
     var isPolish = string.Equals(
@@ -13,6 +14,13 @@
         "pl",
         StringComparison.OrdinalIgnoreCase);
     string L(string en, string pl) => isPolish ? pl : en;
+    string TypeLabel(ImportType type) => type switch
+    {
+        ImportType.Teachers => L("Teachers", "Nauczyciele"),
+        ImportType.SubjectSupervisors => L("Subject supervisors", "Opiekunowie przedmiotu"),
+        ImportType.AssessmentResults => L("Assessment results", "Wyniki sprawdzianów"),
+        _ => I[$"Type{type}"].Value
+    };
     ViewData["Title"] = L("Bulk data import", "Import danych zbiorczych");
 }
 
@@ -23,7 +31,7 @@
             <h1>@L("Bulk data import", "Import danych zbiorczych")</h1>
             <p class="user-page-subtitle">
                 @(canManageImports
-                    ? L("Use the Edulytics templates to add structured school data safely.", "Użyj szablonów Edulytics, aby bezpiecznie dodać uporządkowane dane szkoły.")
+                    ? L("Use the Edulytics templates to add school data and accounts in bulk.", "Użyj szablonów Edulytics, aby zbiorczo dodać dane szkoły i konta.")
                     : I["ImportViewSubtitle"].Value)
             </p>
         </div>
@@ -49,10 +57,10 @@
             <h2>@L("How bulk import works", "Jak działa import zbiorczy")</h2>
             <div class="ed-import-steps">
                 <article><strong>1</strong><span>@L("Choose the data type and download its template.", "Wybierz typ danych i pobierz szablon.")</span></article>
-                <article><strong>2</strong><span>@L("Complete it using the codes and names already used in Edulytics.", "Uzupełnij go kodami i nazwami już używanymi w Edulytics.")</span></article>
+                <article><strong>2</strong><span>@L("Fill it with the names and values shown in Edulytics. You do not need internal database IDs.", "Uzupełnij go nazwami i wartościami widocznymi w Edulytics. Nie potrzebujesz wewnętrznych identyfikatorów bazy.")</span></article>
                 <article><strong>3</strong><span>@L("Upload and validate. Validation changes no school data and sends no invitations.", "Prześlij i zweryfikuj. Walidacja nie zmienia danych szkoły ani nie wysyła zaproszeń.")</span></article>
-                <article><strong>4</strong><span>@L("Review the preview and fix every validation error in the source file.", "Sprawdź podgląd i popraw wszystkie błędy w pliku źródłowym.")</span></article>
-                <article><strong>5</strong><span>@L("Confirm only when the preview is correct. Confirmation applies the whole batch.", "Potwierdź dopiero po sprawdzeniu podglądu. Potwierdzenie stosuje cały pakiet.")</span></article>
+                <article><strong>4</strong><span>@L("Review the preview and correct every validation error in the source file.", "Sprawdź podgląd i popraw wszystkie błędy walidacji w pliku źródłowym.")</span></article>
+                <article><strong>5</strong><span>@L("Confirm only when the preview is correct. New student, teacher or supervisor accounts are then created and invitations are sent.", "Potwierdź dopiero po sprawdzeniu podglądu. Wtedy tworzone są nowe konta uczniów, nauczycieli lub opiekunów i wysyłane są zaproszenia.")</span></article>
             </div>
         </section>
     }
@@ -60,7 +68,7 @@
     <section class="import-panel import-operational-panel">
         <h2>@I["UploadFile"]</h2>
         <p>@I["FileRules"]</p>
-        @if (canManageImports)
+        @if (canManageImports && Model.Workspace.AllowedTypes.Count > 0)
         {
             <form asp-action="Upload" method="post" enctype="multipart/form-data" class="import-upload-form">
                 <div class="import-field">
@@ -68,13 +76,7 @@
                     <select id="importType" name="importType" required>
                         @foreach (var option in Model.Workspace.AllowedTypes)
                         {
-                            <option value="@option.Type">
-                                @(option.Type == ImportType.Teachers
-                                    ? L("Teacher assignments", "Przydziały nauczycieli")
-                                    : option.Type == ImportType.AssessmentResults
-                                        ? L("Assessment results", "Wyniki sprawdzianów")
-                                        : I[$"Type{option.Type}"].Value)
-                            </option>
+                            <option value="@option.Type">@TypeLabel(option.Type)</option>
                         }
                     </select>
                 </div>
@@ -90,15 +92,8 @@
     <section class="import-schema-grid import-operational-schema">
         @foreach (var option in Model.Workspace.AllowedTypes)
         {
-            var title = option.Type switch
-            {
-                ImportType.Teachers => L("Teacher assignments", "Przydziały nauczycieli"),
-                ImportType.AssessmentResults => L("Assessment results", "Wyniki sprawdzianów"),
-                _ => I[$"Type{option.Type}"].Value
-            };
-
             <article class="import-panel import-schema-card">
-                <h2>@title</h2>
+                <h2>@TypeLabel(option.Type)</h2>
                 <strong>@I["RequiredColumns"]</strong>
                 <code>@string.Join(",", option.RequiredHeaders)</code>
                 @if (canManageImports)
@@ -109,16 +104,19 @@
                 @switch (option.Type)
                 {
                     case ImportType.Students:
-                        <p>@L("Email creates the student's login account after Confirm. Edulytics then sends the password-setup invitation. ClassCode must exactly match the Code of an existing class in the same AcademicYear.", "Email tworzy konto logowania ucznia po potwierdzeniu. Następnie Edulytics wysyła zaproszenie do ustawienia hasła. ClassCode musi dokładnie odpowiadać polu Code istniejącej klasy w tym samym roku szkolnym.")</p>
+                        <p>@L("Use the exact AcademicYear and ClassName shown in Edulytics. After Confirm, Edulytics creates the Student login, links the student profile to that class and sends the password-setup invitation.", "Użyj dokładnej nazwy AcademicYear i ClassName widocznej w Edulytics. Po potwierdzeniu Edulytics tworzy konto ucznia, łączy profil z klasą i wysyła zaproszenie do ustawienia hasła.")</p>
                         break;
                     case ImportType.Teachers:
-                        <p>@L("This imports assignments, not teacher accounts. Email must belong to an existing active Teacher. ClassCode must match an existing class. Mathematics is assigned automatically.", "Ten import dotyczy przydziałów, a nie tworzenia kont nauczycieli. Email musi należeć do istniejącego aktywnego nauczyciela. ClassCode musi odpowiadać istniejącej klasie. Matematyka jest przypisywana automatycznie.")</p>
+                        <p>@L("Use Email + AcademicYear + ClassName. If the email is new, Confirm creates the Teacher account and sends an invitation; if it is already an active Teacher account, Edulytics only adds the class assignment. Mathematics is assigned automatically.", "Użyj Email + AcademicYear + ClassName. Jeśli email jest nowy, po potwierdzeniu tworzone jest konto nauczyciela i wysyłane zaproszenie; jeśli aktywne konto nauczyciela już istnieje, Edulytics dodaje tylko przypisanie do klasy. Matematyka jest przypisywana automatycznie.")</p>
+                        break;
+                    case ImportType.SubjectSupervisors:
+                        <p>@L("School administrators can create Subject Supervisor accounts in bulk. Validation sends nothing; Confirm creates each account and sends its password-setup invitation.", "Administratorzy szkoły mogą zbiorczo tworzyć konta opiekunów przedmiotu. Walidacja niczego nie wysyła; potwierdzenie tworzy konta i wysyła zaproszenia do ustawienia hasła.")</p>
                         break;
                     case ImportType.Classes:
-                        <p>@L("Code is the stable class identifier, for example G1-A. Student and teacher-assignment files refer to that same value as ClassCode. AcademicYear and GradeLevel must already exist in Edulytics.", "Code to stały identyfikator klasy, np. G1-A. Pliki uczniów i przydziałów nauczycieli używają tej samej wartości jako ClassCode. AcademicYear i GradeLevel muszą już istnieć w Edulytics.")</p>
+                        <p>@L("Create classes in bulk for an existing AcademicYear and GradeLevel. The class Code belongs to the class record itself; student, teacher and result templates now use the visible ClassName instead of ClassCode.", "Twórz klasy zbiorczo dla istniejącego AcademicYear i GradeLevel. Pole Code należy do rekordu klasy; szablony uczniów, nauczycieli i wyników używają teraz widocznej ClassName zamiast ClassCode.")</p>
                         break;
                     case ImportType.AssessmentResults:
-                        <p>@L("Teachers import offline/manual results using AssessmentTitle + AssessmentDate + ClassCode — no internal GUID is required. StudentNumber identifies the student; StudentName is included for review. Use one row per question. After Confirm, imported grades are read-only.", "Nauczyciele importują wyniki offline/ręczne za pomocą AssessmentTitle + AssessmentDate + ClassCode — bez wewnętrznego GUID. StudentNumber identyfikuje ucznia, a StudentName służy do sprawdzenia. Jeden wiersz odpowiada jednemu pytaniu. Po potwierdzeniu oceny są tylko do odczytu.")</p>
+                        <p>@L("Teachers import offline/manual results using AssessmentTitle + AssessmentDate + ClassName. The signed-in teacher is the owner of the upload, so no Teacher name or internal GUID is required. StudentNumber identifies the student; StudentName is for review. Use one row per question. After Confirm, imported grades are read-only.", "Nauczyciele importują wyniki offline/ręczne za pomocą AssessmentTitle + AssessmentDate + ClassName. Zalogowany nauczyciel jest właścicielem importu, więc nie trzeba podawać nazwy nauczyciela ani wewnętrznego GUID. StudentNumber identyfikuje ucznia, a StudentName służy do sprawdzenia. Jeden wiersz odpowiada jednemu pytaniu. Po potwierdzeniu oceny są tylko do odczytu.")</p>
                         break;
                 }
             </article>
@@ -149,7 +147,7 @@
                             _ => "StatusCompleted"
                         };
                         <tr>
-                            <td data-label="@I["ImportType"]">@(batch.Type == ImportType.Teachers ? L("Teacher assignments", "Przydziały nauczycieli") : batch.Type == ImportType.AssessmentResults ? L("Assessment results", "Wyniki sprawdzianów") : I[$"Type{batch.Type}"].Value)</td>
+                            <td data-label="@I["ImportType"]">@TypeLabel(batch.Type)</td>
                             <td data-label="@I["FileName"]">@batch.FileName</td>
                             <td data-label="@I["Status"]">@I[statusKey]</td>
                             <td data-label="@I["Rows"]">@batch.RowCount</td>

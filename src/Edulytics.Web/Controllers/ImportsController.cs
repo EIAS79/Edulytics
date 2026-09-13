@@ -1,7 +1,9 @@
 using System.Security.Claims;
 using System.Text;
+using Edulytics.Core.Academics;
 using Edulytics.Core.Constants;
 using Edulytics.Core.Enums;
+using Edulytics.Core.Interfaces;
 using Edulytics.Services.Assessments;
 using Edulytics.Services.Imports;
 using Edulytics.Web.Email;
@@ -20,22 +22,29 @@ namespace Edulytics.Web.Controllers;
 public sealed class ImportsController : Controller
 {
     private const string ImportManagerRoles =
+        RoleNames.SchoolAdmin + "," +
         RoleNames.SubjectSupervisor + "," +
         RoleNames.Teacher;
 
     private readonly IDataImportService _imports;
     private readonly IAssessmentService _assessments;
+    private readonly IAcademicStructureRepository _academicStructure;
+    private readonly ISchoolUserRepository _schoolUsers;
     private readonly IUserInvitationDeliveryService _invitations;
     private readonly IStringLocalizer<ImportResource> _text;
 
     public ImportsController(
         IDataImportService imports,
         IAssessmentService assessments,
+        IAcademicStructureRepository academicStructure,
+        ISchoolUserRepository schoolUsers,
         IUserInvitationDeliveryService invitations,
         IStringLocalizer<ImportResource> text)
     {
         _imports = imports;
         _assessments = assessments;
+        _academicStructure = academicStructure;
+        _schoolUsers = schoolUsers;
         _invitations = invitations;
         _text = text;
     }
@@ -117,28 +126,41 @@ public sealed class ImportsController : Controller
         await file.CopyToAsync(stream, cancellationToken);
         var rawBytes = stream.ToArray();
 
-        AdaptedImportUpload upload;
+        AssessmentWorkspace? assessmentWorkspace = null;
+        AcademicStructureSnapshot? academicSnapshot = null;
+
         if (importType == ImportType.AssessmentResults)
         {
-            var assessmentWorkspace = await _assessments.GetWorkspaceAsync(
+            var assessmentResult = await _assessments.GetWorkspaceAsync(
                 actorId,
                 cancellationToken);
 
-            if (assessmentWorkspace.Value is null)
+            if (assessmentResult.Value is null)
                 return Forbid();
 
-            upload = MathOnlyImportAdapter.NormalizeAssessmentResults(
-                file.FileName,
-                rawBytes,
-                assessmentWorkspace.Value);
+            assessmentWorkspace = assessmentResult.Value;
         }
-        else
+
+        if (importType is ImportType.Students or ImportType.Teachers)
         {
-            upload = MathOnlyImportAdapter.NormalizeUpload(
-                importType,
-                file.FileName,
-                rawBytes);
+            var actor = await _schoolUsers.GetActorAsync(
+                actorId,
+                cancellationToken);
+
+            if (actor?.SchoolId is not Guid schoolId)
+                return Forbid();
+
+            academicSnapshot = await _academicStructure.GetSnapshotAsync(
+                schoolId,
+                cancellationToken);
         }
+
+        var upload = MathOnlyImportAdapter.NormalizeUpload(
+            importType,
+            file.FileName,
+            rawBytes,
+            assessmentWorkspace,
+            academicSnapshot);
 
         var result = await _imports.UploadAsync(
             actorId,
