@@ -70,7 +70,7 @@ else
                     <option value="@StudentPrivatePracticeScope.Unit" data-question-limit="15">@S["PracticeUnit"]</option>
                     <option value="@StudentPrivatePracticeScope.WholeCurriculum" data-question-limit="30">@S["PracticeWholeCurriculum"]</option>
                 </select>
-                <label>@S["Lesson"]</label>
+                <label for="practice-lesson">@S["Lesson"]</label>
                 <select id="practice-lesson" name="lessonId">
                     <option value="">@S["PracticeNotRequired"]</option>
                     @foreach (var lesson in Model.Lessons)
@@ -79,7 +79,7 @@ else
                                 data-learning-focus-node-ids="@string.Join(",", lesson.OfficialOutcomeNodeIds)">@lesson.UnitTitle · @lesson.LessonTitle</option>
                     }
                 </select>
-                <label>@S["Unit"]</label>
+                <label for="practice-unit">@S["Unit"]</label>
                 <select id="practice-unit" name="unitKey">
                     <option value="">@S["PracticeNotRequired"]</option>
                     @foreach (var unit in unitOptions)
@@ -132,9 +132,28 @@ else
     <script>
         (() => {
             const scope = document.getElementById('practice-scope');
+            const lesson = document.getElementById('practice-lesson');
+            const unit = document.getElementById('practice-unit');
             const count = document.getElementById('practice-question-count');
             const help = document.getElementById('practice-question-limit');
             if (!scope || !count) return;
+
+            const applyScope = () => {
+                const isLesson = scope.value === '@StudentPrivatePracticeScope.Lesson';
+                const isUnit = scope.value === '@StudentPrivatePracticeScope.Unit';
+
+                if (lesson) {
+                    lesson.disabled = !isLesson;
+                    lesson.required = isLesson;
+                    if (!isLesson) lesson.value = '';
+                }
+
+                if (unit) {
+                    unit.disabled = !isUnit;
+                    unit.required = isUnit;
+                    if (!isUnit) unit.value = '';
+                }
+            };
 
             const applyLimit = () => {
                 const option = scope.options[scope.selectedIndex];
@@ -145,12 +164,17 @@ else
                 if (help) help.textContent = `Maximum ${limit} questions for this scope.`;
             };
 
-            scope.addEventListener('change', applyLimit);
+            const apply = () => {
+                applyScope();
+                applyLimit();
+            };
+
+            scope.addEventListener('change', apply);
             count.addEventListener('input', () => {
                 const limit = Number(count.max || 1);
                 if (Number(count.value) > limit) count.value = String(limit);
             });
-            applyLimit();
+            apply();
         })();
     </script>
 }
