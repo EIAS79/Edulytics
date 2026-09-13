@@ -17,8 +17,16 @@ public static class ClassesImportWorkbook
     private static readonly XNamespace ContentTypeNs =
         "http://schemas.openxmlformats.org/package/2006/content-types";
 
-    public static byte[] Create(IEnumerable<string> gradeLevels)
+    public static byte[] Create(
+        IEnumerable<string> academicYears,
+        IEnumerable<string> gradeLevels)
     {
+        var years = academicYears
+            .Select(x => x.Trim())
+            .Where(x => x.Length > 0)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+
         var levels = gradeLevels
             .Select(x => x.Trim())
             .Where(x => x.Length > 0)
@@ -33,10 +41,10 @@ public static class ClassesImportWorkbook
         {
             WriteXml(archive, "[Content_Types].xml", ContentTypes());
             WriteXml(archive, "_rels/.rels", RootRelationships());
-            WriteXml(archive, "xl/workbook.xml", Workbook(levels.Length));
+            WriteXml(archive, "xl/workbook.xml", Workbook(years.Length, levels.Length));
             WriteXml(archive, "xl/_rels/workbook.xml.rels", WorkbookRelationships());
-            WriteXml(archive, "xl/worksheets/sheet1.xml", ClassesSheet());
-            WriteXml(archive, "xl/worksheets/sheet2.xml", AvailableValuesSheet(levels));
+            WriteXml(archive, "xl/worksheets/sheet1.xml", ClassesSheet(years.Length > 0));
+            WriteXml(archive, "xl/worksheets/sheet2.xml", AvailableValuesSheet(years, levels));
         }
 
         return stream.ToArray();
@@ -77,9 +85,26 @@ public static class ClassesImportWorkbook
                     new XAttribute("Type", "http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument"),
                     new XAttribute("Target", "xl/workbook.xml"))));
 
-    private static XDocument Workbook(int levelCount)
+    private static XDocument Workbook(
+        int academicYearCount,
+        int levelCount)
     {
-        var lastRow = levelCount + 1;
+        var definedNames = new List<XElement>();
+
+        if (academicYearCount > 0)
+        {
+            definedNames.Add(
+                new XElement(
+                    SpreadsheetNs + "definedName",
+                    new XAttribute("name", "AcademicYears"),
+                    $"'Available values'!$A$2:$A${academicYearCount + 1}"));
+        }
+
+        definedNames.Add(
+            new XElement(
+                SpreadsheetNs + "definedName",
+                new XAttribute("name", "GradeLevels"),
+                $"'Available values'!$B$2:$B${levelCount + 1}"));
 
         return new XDocument(
             new XElement(
@@ -99,10 +124,7 @@ public static class ClassesImportWorkbook
                         new XAttribute(OfficeRelationshipNs + "id", "rId2"))),
                 new XElement(
                     SpreadsheetNs + "definedNames",
-                    new XElement(
-                        SpreadsheetNs + "definedName",
-                        new XAttribute("name", "GradeLevels"),
-                        $"'Available values'!$A$2:$A${lastRow}"))));
+                    definedNames)));
     }
 
     private static XDocument WorkbookRelationships() =>
@@ -120,8 +142,44 @@ public static class ClassesImportWorkbook
                     new XAttribute("Type", "http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet"),
                     new XAttribute("Target", "worksheets/sheet2.xml"))));
 
-    private static XDocument ClassesSheet() =>
-        new(
+    private static XDocument ClassesSheet(bool hasAcademicYearSuggestions)
+    {
+        var validations = new List<XElement>();
+
+        if (hasAcademicYearSuggestions)
+        {
+            validations.Add(
+                new XElement(
+                    SpreadsheetNs + "dataValidation",
+                    new XAttribute("type", "list"),
+                    new XAttribute("allowBlank", "0"),
+                    new XAttribute("showDropDown", "0"),
+                    new XAttribute("showInputMessage", "1"),
+                    new XAttribute("promptTitle", "AcademicYear"),
+                    new XAttribute(
+                        "prompt",
+                        "Choose an existing active year or type a planned year. Planned years must be created in Academic Structure with dates and status before this import can be confirmed."),
+                    new XAttribute("showErrorMessage", "0"),
+                    new XAttribute("sqref", "A2:A1001"),
+                    new XElement(SpreadsheetNs + "formula1", "AcademicYears")));
+        }
+
+        validations.Add(
+            new XElement(
+                SpreadsheetNs + "dataValidation",
+                new XAttribute("type", "list"),
+                new XAttribute("allowBlank", "0"),
+                new XAttribute("showDropDown", "0"),
+                new XAttribute("showInputMessage", "1"),
+                new XAttribute("promptTitle", "GradeLevel"),
+                new XAttribute("prompt", "Select a GradeLevel configured in Edulytics."),
+                new XAttribute("showErrorMessage", "1"),
+                new XAttribute("errorTitle", "Choose a GradeLevel"),
+                new XAttribute("error", "Select a GradeLevel from the dropdown."),
+                new XAttribute("sqref", "B2:B1001"),
+                new XElement(SpreadsheetNs + "formula1", "GradeLevels")));
+
+        return new XDocument(
             new XElement(
                 SpreadsheetNs + "worksheet",
                 new XElement(
@@ -129,39 +187,45 @@ public static class ClassesImportWorkbook
                     new XElement(
                         SpreadsheetNs + "row",
                         new XAttribute("r", "1"),
-                        InlineCell("A1", "GradeLevel"),
-                        InlineCell("B1", "Name"))),
+                        InlineCell("A1", "AcademicYear"),
+                        InlineCell("B1", "GradeLevel"),
+                        InlineCell("C1", "Name"))),
                 new XElement(
                     SpreadsheetNs + "dataValidations",
-                    new XAttribute("count", "1"),
-                    new XElement(
-                        SpreadsheetNs + "dataValidation",
-                        new XAttribute("type", "list"),
-                        new XAttribute("allowBlank", "0"),
-                        new XAttribute("showErrorMessage", "1"),
-                        new XAttribute("errorTitle", "Choose a GradeLevel"),
-                        new XAttribute("error", "Select a GradeLevel from the dropdown."),
-                        new XAttribute("sqref", "A2:A1001"),
-                        new XElement(SpreadsheetNs + "formula1", "GradeLevels")))));
+                    new XAttribute("count", validations.Count),
+                    validations)));
+    }
 
-    private static XDocument AvailableValuesSheet(IReadOnlyList<string> levels)
+    private static XDocument AvailableValuesSheet(
+        IReadOnlyList<string> academicYears,
+        IReadOnlyList<string> levels)
     {
         var rows = new List<XElement>
         {
             new(
                 SpreadsheetNs + "row",
                 new XAttribute("r", "1"),
-                InlineCell("A1", "GradeLevel"))
+                InlineCell("A1", "AcademicYear"),
+                InlineCell("B1", "GradeLevel"))
         };
 
-        for (var index = 0; index < levels.Count; index++)
+        var count = Math.Max(academicYears.Count, levels.Count);
+        for (var index = 0; index < count; index++)
         {
             var rowNumber = index + 2;
+            var cells = new List<XElement>();
+
+            if (index < academicYears.Count)
+                cells.Add(InlineCell($"A{rowNumber}", academicYears[index]));
+
+            if (index < levels.Count)
+                cells.Add(InlineCell($"B{rowNumber}", levels[index]));
+
             rows.Add(
                 new XElement(
                     SpreadsheetNs + "row",
                     new XAttribute("r", rowNumber),
-                    InlineCell($"A{rowNumber}", levels[index])));
+                    cells));
         }
 
         return new XDocument(
