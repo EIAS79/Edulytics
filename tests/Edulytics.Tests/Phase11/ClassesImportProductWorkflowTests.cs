@@ -13,10 +13,9 @@ public sealed class ClassesImportProductWorkflowTests
         "http://schemas.openxmlformats.org/spreadsheetml/2006/main";
 
     [Fact]
-    public void Workbook_KeepsAcademicYearOnEveryClassRow()
+    public void Workbook_ContainsOnlyGradeLevelAndName()
     {
         var bytes = ClassesImportWorkbook.Create(
-            ["2026-2027", "2027-2028"],
             ["Grade 1", "Year 2"]);
 
         var parsed = new ImportFileParser().Parse(
@@ -25,15 +24,14 @@ public sealed class ClassesImportProductWorkflowTests
 
         Assert.True(parsed.Succeeded);
         Assert.Equal(
-            ["AcademicYear", "GradeLevel", "Name"],
+            ["GradeLevel", "Name"],
             parsed.File!.Headers);
     }
 
     [Fact]
-    public void Workbook_UsesEditableYearSuggestionsAndStrictGradeLevelDropdown()
+    public void Workbook_UsesStrictGradeLevelDropdownFromSystemValues()
     {
         var bytes = ClassesImportWorkbook.Create(
-            ["2026-2027", "2027-2028"],
             ["Grade 1", "Grade 2"]);
 
         using var stream = new MemoryStream(bytes);
@@ -49,44 +47,44 @@ public sealed class ClassesImportProductWorkflowTests
                 x => (string)x.Attribute("name")!,
                 x => x.Value);
 
-        Assert.Contains("AcademicYears", definedNames.Keys);
+        Assert.DoesNotContain("AcademicYears", definedNames.Keys);
         Assert.Contains("GradeLevels", definedNames.Keys);
+
+        var availableValuesSheet = workbook
+            .Descendants(SpreadsheetNs + "sheet")
+            .Single(x => string.Equals(
+                (string?)x.Attribute("name"),
+                "Available values",
+                StringComparison.Ordinal));
+        Assert.Equal("hidden", (string?)availableValuesSheet.Attribute("state"));
 
         var classesSheet = LoadXml(
             archive,
             "xl/worksheets/sheet1.xml");
 
-        var validations = classesSheet
-            .Descendants(SpreadsheetNs + "dataValidation")
-            .ToDictionary(
-                x => (string)x.Attribute("sqref")!,
-                x => x);
+        var validation = Assert.Single(
+            classesSheet.Descendants(SpreadsheetNs + "dataValidation"));
 
-        var academicYear = validations["A2:A1001"];
-        Assert.Equal("0", (string?)academicYear.Attribute("showErrorMessage"));
-        Assert.Equal(
-            "AcademicYears",
-            academicYear.Element(SpreadsheetNs + "formula1")?.Value);
-
-        var gradeLevel = validations["B2:B1001"];
-        Assert.Equal("1", (string?)gradeLevel.Attribute("showErrorMessage"));
+        Assert.Equal("A2:A1001", (string?)validation.Attribute("sqref"));
+        Assert.Equal("1", (string?)validation.Attribute("showErrorMessage"));
         Assert.Equal(
             "GradeLevels",
-            gradeLevel.Element(SpreadsheetNs + "formula1")?.Value);
+            validation.Element(SpreadsheetNs + "formula1")?.Value);
     }
 
     [Fact]
-    public void Adapter_PreservesMultipleAcademicYearsAndGeneratesInternalCodes()
+    public void Adapter_InjectsOneSelectedAcademicYearAndGeneratesInternalCodes()
     {
         var source = Encoding.UTF8.GetBytes(
-            "AcademicYear,GradeLevel,Name\n"
-            + "2026-2027,Grade 1,AG1\n"
-            + "2027-2028,Grade 2,BG1\n");
+            "GradeLevel,Name\n"
+            + "Grade 1,AG1\n"
+            + "Grade 2,BG1\n");
 
         var adapted = MathOnlyImportAdapter.NormalizeUpload(
             ImportType.Classes,
-            "classes.csv",
-            source);
+            "classes.xlsx",
+            source,
+            selectedAcademicYear: "2026-2027");
 
         var parsed = new ImportFileParser().Parse(
             adapted.FileName,
@@ -97,12 +95,11 @@ public sealed class ClassesImportProductWorkflowTests
             ["AcademicYear", "GradeLevel", "Name", "Code"],
             parsed.File!.Headers);
         Assert.Equal(2, parsed.File.Rows.Count);
-        Assert.Equal(
-            "2026-2027",
-            parsed.File.Rows[0].Values["AcademicYear"]);
-        Assert.Equal(
-            "2027-2028",
-            parsed.File.Rows[1].Values["AcademicYear"]);
+        Assert.All(
+            parsed.File.Rows,
+            row => Assert.Equal(
+                "2026-2027",
+                row.Values["AcademicYear"]));
         Assert.StartsWith(
             "CLS-",
             parsed.File.Rows[0].Values["Code"]);
@@ -118,11 +115,24 @@ public sealed class ClassesImportProductWorkflowTests
     public void ClassesFile_IsRecognizedBeforeWrongTypeValidation()
     {
         var source = Encoding.UTF8.GetBytes(
+            "GradeLevel,Name\n"
+            + "Grade 1,AG1\n");
+
+        Assert.True(
+            MathOnlyImportAdapter.LooksLikeClassesUpload(
+                "classes.csv",
+                source));
+    }
+
+    [Fact]
+    public void LegacyClassesTemplate_IsRecognizedForActionableRejection()
+    {
+        var source = Encoding.UTF8.GetBytes(
             "AcademicYear,GradeLevel,Name\n"
             + "2026-2027,Grade 1,AG1\n");
 
         Assert.True(
-            MathOnlyImportAdapter.LooksLikeClassesUpload(
+            MathOnlyImportAdapter.UsesLegacyClassesTemplate(
                 "classes.csv",
                 source));
     }
