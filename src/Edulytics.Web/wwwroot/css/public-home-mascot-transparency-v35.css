@@ -1,25 +1,46 @@
-/* Home v41 — the white-card behavior is fixed at its source in public-home-commercial-v12.css.
-   This file now owns only transparent mascot image sizing/presentation; it must not override
-   the hero wrapper's background, border, radius, or shadow. */
+/* Home v42 — transparent mascot presentation and final public CTA correction. */
 .ed-home .ed-home-v12-slide:first-child .ed-home-v40-mascot-image{
   position:absolute;
   inset:0;
   width:auto;
   height:auto;
-  max-width:96%;
-  max-height:96%;
+  max-width:76%;
+  max-height:76%;
   margin:auto;
   display:block;
   object-fit:contain;
   object-position:center;
   padding:0;
+  background:transparent;
   filter:drop-shadow(0 18px 28px rgba(35,73,111,.12));
   pointer-events:none;
 }
 
+/* Keep the main navbar CTA consistent with the approved blue primary action. */
+.ed-home .ed-home-cta{
+  border-color:#2f66e8!important;
+  background:#2f66e8!important;
+  color:#fff!important;
+  box-shadow:0 9px 24px rgba(47,102,232,.22)!important;
+}
+
+.ed-home .ed-home-cta:hover,
+.ed-home .ed-home-cta:focus-visible{
+  border-color:#ff7418!important;
+  background:#ff7418!important;
+  color:#fff!important;
+}
+
 @media(max-width:1040px){
   .ed-home .ed-home-v12-slide:first-child .ed-home-v40-mascot-image{
-    max-width:94%;
-    max-height:94%;
+    max-width:82%;
+    max-height:82%;
+  }
+}
+
+@media(max-width:680px){
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v40-mascot-image{
+    max-width:86%;
+    max-height:86%;
   }
 }
