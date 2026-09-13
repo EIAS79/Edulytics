@@ -6,6 +6,7 @@
 
 @{
     var canManageImports =
+        User.IsInRole(RoleNames.SchoolAdmin) ||
         User.IsInRole(RoleNames.SubjectSupervisor) ||
         User.IsInRole(RoleNames.Teacher);
     var isPolish = string.Equals(
@@ -13,68 +14,52 @@
         "pl",
         StringComparison.OrdinalIgnoreCase);
     string L(string en, string pl) => isPolish ? pl : en;
-    var visibleHeaders = Model.Batch.Type == ImportType.AssessmentResults
-        ? Model.Batch.Headers.Where(x => !string.Equals(x, "AssessmentId", StringComparison.OrdinalIgnoreCase)).ToArray()
-        : Model.Batch.Headers.ToArray();
+    string TypeLabel(ImportType type) => type switch
+    {
+        ImportType.Teachers => L("Teachers", "Nauczyciele"),
+        ImportType.SubjectSupervisors => L("Subject supervisors", "Opiekunowie przedmiotu"),
+        ImportType.AssessmentResults => L("Assessment results", "Wyniki sprawdzianów"),
+        _ => I[$"Type{type}"].Value
+    };
+    var internalHeaders = Model.Batch.Type switch
+    {
+        ImportType.Students => new[] { "ClassCode" },
+        ImportType.Teachers => new[] { "ClassCode", "SubjectCode" },
+        ImportType.AssessmentResults => new[] { "ClassCode", "AssessmentId" },
+        _ => Array.Empty<string>()
+    };
+    var visibleHeaders = Model.Batch.Headers
+        .Where(x => !internalHeaders.Contains(x, StringComparer.OrdinalIgnoreCase))
+        .ToArray();
     ViewData["Title"] = I["Batch"].Value;
 }
 
 <section class="import-page">
     <header class="import-page-header">
         <div>
-            <div class="user-eyebrow">
-                @I[Model.TypeResourceKey]
-            </div>
-
+            <div class="user-eyebrow">@TypeLabel(Model.Batch.Type)</div>
             <h1>@I["Batch"]</h1>
-
-            <p class="user-page-subtitle">
-                @Model.Batch.FileName
-            </p>
+            <p class="user-page-subtitle">@Model.Batch.FileName</p>
         </div>
 
-        <a class="school-button"
-           asp-action="Index">
-            @I["ImportTitle"]
-        </a>
+        <a class="school-button" asp-action="Index">@I["ImportTitle"]</a>
     </header>
 
     @if (TempData["ImportSuccess"] is string success)
     {
-        <div class="import-message import-message-success"
-             role="status">
-            @success
-        </div>
+        <div class="import-message import-message-success" role="status">@success</div>
     }
 
     @if (TempData["ImportError"] is string error)
     {
-        <div class="import-message import-message-error"
-             role="alert">
-            @error
-        </div>
+        <div class="import-message import-message-error" role="alert">@error</div>
     }
 
     <section class="import-metrics">
-        <article>
-            <span>@I["Status"]</span>
-            <strong>@I[Model.StatusResourceKey]</strong>
-        </article>
-
-        <article>
-            <span>@I["Rows"]</span>
-            <strong>@Model.Batch.RowCount</strong>
-        </article>
-
-        <article>
-            <span>@I["ValidRows"]</span>
-            <strong>@Model.Batch.ValidRowCount</strong>
-        </article>
-
-        <article>
-            <span>@I["Errors"]</span>
-            <strong>@Model.Batch.ErrorCount</strong>
-        </article>
+        <article><span>@I["Status"]</span><strong>@I[Model.StatusResourceKey]</strong></article>
+        <article><span>@I["Rows"]</span><strong>@Model.Batch.RowCount</strong></article>
+        <article><span>@I["ValidRows"]</span><strong>@Model.Batch.ValidRowCount</strong></article>
+        <article><span>@I["Errors"]</span><strong>@Model.Batch.ErrorCount</strong></article>
     </section>
 
     @if (Model.Batch.Type == ImportType.AssessmentResults)
@@ -83,6 +68,14 @@
             @L(
                 "Imported assessment results become read-only after confirmation. If the source data is wrong, correct the spreadsheet and upload a new batch.",
                 "Zaimportowane wyniki sprawdzianów są po potwierdzeniu tylko do odczytu. Jeśli dane źródłowe są błędne, popraw arkusz i prześlij nowy pakiet.")
+        </div>
+    }
+    else if (Model.Batch.Type is ImportType.Students or ImportType.Teachers or ImportType.SubjectSupervisors)
+    {
+        <div class="import-message import-message-info" role="status">
+            @L(
+                "Validation does not create accounts or send email. New accounts and password-setup invitations are created only after you confirm a valid batch.",
+                "Walidacja nie tworzy kont ani nie wysyła wiadomości. Nowe konta i zaproszenia do ustawienia hasła są tworzone dopiero po potwierdzeniu poprawnego pakietu.")
         </div>
     }
 
@@ -98,16 +91,12 @@
             <div class="import-error-list">
                 @foreach (var item in Model.Batch.Errors)
                 {
+                    var column = internalHeaders.Contains(item.ColumnName, StringComparer.OrdinalIgnoreCase)
+                        ? item.ColumnName == "ClassCode" ? "ClassName" : item.ColumnName
+                        : item.ColumnName;
                     <article class="import-error-item">
-                        <strong>
-                            @I["Row"] @item.RowNumber
-                            · @item.ColumnName
-                        </strong>
-
-                        <span>
-                            @I[$"Validation{item.Code}"]
-                        </span>
-
+                        <strong>@I["Row"] @item.RowNumber · @column</strong>
+                        <span>@I[$"Validation{item.Code}"]</span>
                         @if (!string.IsNullOrWhiteSpace(item.RawValue))
                         {
                             <code>@item.RawValue</code>
@@ -127,7 +116,6 @@
                 <thead>
                     <tr>
                         <th>@I["Row"]</th>
-
                         @foreach (var header in visibleHeaders)
                         {
                             <th>@header</th>
@@ -139,22 +127,13 @@
                 @foreach (var row in Model.Batch.PreviewRows)
                 {
                     <tr>
-                        <td data-label="@I["Row"]">
-                            @row.RowNumber
-                        </td>
-
+                        <td data-label="@I["Row"]">@row.RowNumber</td>
                         @foreach (var header in visibleHeaders)
                         {
-                            var value =
-                                row.Values.TryGetValue(
-                                    header,
-                                    out var cell)
-                                    ? cell
-                                    : string.Empty;
-
-                            <td data-label="@header">
-                                @value
-                            </td>
+                            var value = row.Values.TryGetValue(header, out var cell)
+                                ? cell
+                                : string.Empty;
+                            <td data-label="@header">@value</td>
                         }
                     </tr>
                 }
@@ -171,18 +150,9 @@
 
             @if (canManageImports)
             {
-                <form asp-action="Confirm"
-                      asp-route-batchId="@Model.Batch.Id"
-                      method="post">
-
-                    <input type="hidden"
-                           name="rowVersion"
-                           value="@Model.RowVersionBase64" />
-
-                    <button type="submit"
-                            class="school-button school-button-primary">
-                        @I["ConfirmImport"]
-                    </button>
+                <form asp-action="Confirm" asp-route-batchId="@Model.Batch.Id" method="post">
+                    <input type="hidden" name="rowVersion" value="@Model.RowVersionBase64" />
+                    <button type="submit" class="school-button school-button-primary">@I["ConfirmImport"]</button>
                 </form>
             }
         }
