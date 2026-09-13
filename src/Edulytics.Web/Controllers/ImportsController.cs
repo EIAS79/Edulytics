@@ -20,6 +20,7 @@ namespace Edulytics.Web.Controllers;
 public sealed class ImportsController : Controller
 {
     private const string ImportManagerRoles =
+        RoleNames.SchoolAdmin + "," +
         RoleNames.SubjectSupervisor + "," +
         RoleNames.Teacher;
 
@@ -117,28 +118,26 @@ public sealed class ImportsController : Controller
         await file.CopyToAsync(stream, cancellationToken);
         var rawBytes = stream.ToArray();
 
-        AdaptedImportUpload upload;
-        if (importType == ImportType.AssessmentResults)
+        AssessmentWorkspace? assessmentWorkspace = null;
+        if (importType is ImportType.Students or
+            ImportType.Teachers or
+            ImportType.AssessmentResults)
         {
-            var assessmentWorkspace = await _assessments.GetWorkspaceAsync(
+            var assessmentResult = await _assessments.GetWorkspaceAsync(
                 actorId,
                 cancellationToken);
 
-            if (assessmentWorkspace.Value is null)
+            if (assessmentResult.Value is null)
                 return Forbid();
 
-            upload = MathOnlyImportAdapter.NormalizeAssessmentResults(
-                file.FileName,
-                rawBytes,
-                assessmentWorkspace.Value);
+            assessmentWorkspace = assessmentResult.Value;
         }
-        else
-        {
-            upload = MathOnlyImportAdapter.NormalizeUpload(
-                importType,
-                file.FileName,
-                rawBytes);
-        }
+
+        var upload = MathOnlyImportAdapter.NormalizeUpload(
+            importType,
+            file.FileName,
+            rawBytes,
+            assessmentWorkspace);
 
         var result = await _imports.UploadAsync(
             actorId,
