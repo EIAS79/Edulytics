@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Security.Cryptography;
 using System.Text;
 using Edulytics.Core.Academics;
 using Edulytics.Core.Enums;
@@ -44,6 +45,13 @@ public static class MathOnlyImportAdapter
         "Email"
     ];
 
+    private static readonly IReadOnlyList<string> ClassHeaders =
+    [
+        "AcademicYear",
+        "GradeLevel",
+        "Name"
+    ];
+
     private static readonly IReadOnlyList<string> FriendlyAssessmentResultHeaders =
     [
         "AssessmentTitle",
@@ -71,6 +79,8 @@ public static class MathOnlyImportAdapter
                         new ImportTypeOption(x.Type, TeacherHeaders),
                     ImportType.SubjectSupervisors =>
                         new ImportTypeOption(x.Type, SupervisorHeaders),
+                    ImportType.Classes =>
+                        new ImportTypeOption(x.Type, ClassHeaders),
                     ImportType.AssessmentResults =>
                         new ImportTypeOption(x.Type, FriendlyAssessmentResultHeaders),
                     _ => x
@@ -85,6 +95,7 @@ public static class MathOnlyImportAdapter
             ImportType.Students => StudentHeaders,
             ImportType.Teachers => TeacherHeaders,
             ImportType.SubjectSupervisors => SupervisorHeaders,
+            ImportType.Classes => ClassHeaders,
             ImportType.AssessmentResults => FriendlyAssessmentResultHeaders,
             _ => serviceHeaders
         };
@@ -102,6 +113,8 @@ public static class MathOnlyImportAdapter
                 NormalizeStudents(fileName, bytes, workspace, academicStructure),
             ImportType.Teachers =>
                 NormalizeTeachers(fileName, bytes, workspace, academicStructure),
+            ImportType.Classes =>
+                NormalizeClasses(fileName, bytes),
             ImportType.AssessmentResults when workspace is not null =>
                 NormalizeAssessmentResults(fileName, bytes, workspace),
             _ => new AdaptedImportUpload(fileName, bytes)
@@ -176,6 +189,36 @@ public static class MathOnlyImportAdapter
             var values = TeacherHeaders
                 .Select(header => Value(row, header))
                 .Concat([classCode, "MATH"]);
+            builder.AppendLine(string.Join(",", values.Select(EscapeCsv)));
+        }
+
+        return CsvUpload(fileName, builder.ToString());
+    }
+
+    private static AdaptedImportUpload NormalizeClasses(
+        string fileName,
+        byte[] bytes)
+    {
+        var parsed = new ImportFileParser().Parse(fileName, bytes);
+        if (!parsed.Succeeded || parsed.File is null)
+            return new(fileName, bytes);
+
+        var actualHeaders = parsed.File.Headers.ToHashSet(StringComparer.OrdinalIgnoreCase);
+        if (ClassHeaders.Any(x => !actualHeaders.Contains(x)))
+            return new(fileName, bytes);
+
+        var outputHeaders = ClassHeaders.Concat(["Code"]).ToArray();
+        var builder = new StringBuilder();
+        builder.AppendLine(string.Join(",", outputHeaders.Select(EscapeCsv)));
+
+        foreach (var row in parsed.File.Rows)
+        {
+            var academicYear = Value(row, "AcademicYear");
+            var name = Value(row, "Name");
+            var code = GenerateClassCode(academicYear, name);
+            var values = ClassHeaders
+                .Select(header => Value(row, header))
+                .Concat([code]);
             builder.AppendLine(string.Join(",", values.Select(EscapeCsv)));
         }
 
@@ -320,6 +363,13 @@ public static class MathOnlyImportAdapter
         return codes.Length == 1
             ? codes[0]
             : $"UNRESOLVED:{className.Trim()}";
+    }
+
+    private static string GenerateClassCode(string academicYear, string className)
+    {
+        var key = $"{academicYear.Trim().ToUpperInvariant()}\n{className.Trim().ToUpperInvariant()}";
+        var hash = SHA256.HashData(Encoding.UTF8.GetBytes(key));
+        return $"CLS-{Convert.ToHexString(hash.AsSpan(0, 6))}";
     }
 
     private static AdaptedImportUpload CsvUpload(string fileName, string content) =>
