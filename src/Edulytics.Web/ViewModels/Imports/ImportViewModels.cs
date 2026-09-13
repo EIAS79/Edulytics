@@ -4,8 +4,13 @@ using Edulytics.Web.Imports;
 
 namespace Edulytics.Web.ViewModels.Imports;
 
+public sealed record ImportAcademicYearOption(
+    Guid Id,
+    string Name);
+
 public sealed record ImportIndexViewModel(
-    ImportWorkspace Workspace);
+    ImportWorkspace Workspace,
+    IReadOnlyList<ImportAcademicYearOption> AcademicYears);
 
 public sealed record ImportDetailsViewModel(
     ImportBatchDetail Batch)
@@ -33,6 +38,13 @@ public sealed record ImportDetailsViewModel(
     public bool CanConfirm =>
         !IsLegacyReadOnly &&
         Batch.CanConfirm;
+
+    public string? ClassesAcademicYear =>
+        Batch.Type == ImportType.Classes &&
+        Batch.PreviewRows.FirstOrDefault() is { } row &&
+        row.Values.TryGetValue("AcademicYear", out var year)
+            ? year
+            : null;
 
     public string RowVersionBase64 =>
         Convert.ToBase64String(
