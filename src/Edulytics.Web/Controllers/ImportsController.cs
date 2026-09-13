@@ -71,29 +71,7 @@ public sealed class ImportsController : Controller
             MathOnlyImportAdapter.FilterOptions(workspace.AllowedTypes),
             workspace.Batches);
 
-        var academicYears = Array.Empty<ImportAcademicYearOption>();
-        if (productWorkspace.AllowedTypes.Any(x => x.Type == ImportType.Classes))
-        {
-            var actor = await _schoolUsers.GetActorAsync(
-                actorId,
-                cancellationToken);
-
-            if (actor?.SchoolId is Guid schoolId)
-            {
-                var snapshot = await _academicStructure.GetSnapshotAsync(
-                    schoolId,
-                    cancellationToken);
-
-                academicYears = snapshot.AcademicYears
-                    .Where(x => x.Status == AcademicStructureStatus.Active)
-                    .OrderByDescending(x => x.StartsOn)
-                    .ThenBy(x => x.Name)
-                    .Select(x => new ImportAcademicYearOption(x.Id, x.Name))
-                    .ToArray();
-            }
-        }
-
-        return View(new ImportIndexViewModel(productWorkspace, academicYears));
+        return View(new ImportIndexViewModel(productWorkspace));
     }
 
     [HttpGet("/school/imports/{batchId:guid}")]
@@ -123,7 +101,6 @@ public sealed class ImportsController : Controller
     [EnableRateLimiting(BackendResiliencePolicyNames.ImportConcurrency)]
     public async Task<IActionResult> Upload(
         ImportType importType,
-        Guid? academicYearId,
         IFormFile? file,
         CancellationToken cancellationToken)
     {
@@ -163,7 +140,6 @@ public sealed class ImportsController : Controller
 
         AssessmentWorkspace? assessmentWorkspace = null;
         AcademicStructureSnapshot? academicSnapshot = null;
-        string? selectedAcademicYear = null;
 
         if (importType == ImportType.AssessmentResults)
         {
@@ -177,7 +153,7 @@ public sealed class ImportsController : Controller
             assessmentWorkspace = assessmentResult.Value;
         }
 
-        if (importType is ImportType.Students or ImportType.Teachers or ImportType.Classes)
+        if (importType is ImportType.Students or ImportType.Teachers)
         {
             var actor = await _schoolUsers.GetActorAsync(
                 actorId,
@@ -189,25 +165,6 @@ public sealed class ImportsController : Controller
             academicSnapshot = await _academicStructure.GetSnapshotAsync(
                 schoolId,
                 cancellationToken);
-
-            if (importType == ImportType.Classes)
-            {
-                var year = academicYearId.HasValue
-                    ? academicSnapshot.AcademicYears.SingleOrDefault(x =>
-                        x.Id == academicYearId.Value &&
-                        x.Status == AcademicStructureStatus.Active)
-                    : null;
-
-                if (year is null)
-                {
-                    TempData["ImportError"] = Local(
-                        "Select an active academic year for the Classes import.",
-                        "Wybierz aktywny rok szkolny dla importu klas.");
-                    return RedirectToAction(nameof(Index));
-                }
-
-                selectedAcademicYear = year.Name;
-            }
         }
 
         var upload = MathOnlyImportAdapter.NormalizeUpload(
@@ -215,8 +172,7 @@ public sealed class ImportsController : Controller
             file.FileName,
             rawBytes,
             assessmentWorkspace,
-            academicSnapshot,
-            selectedAcademicYear);
+            academicSnapshot);
 
         var result = await _imports.UploadAsync(
             actorId,
@@ -359,6 +315,13 @@ public sealed class ImportsController : Controller
                 schoolId,
                 cancellationToken);
 
+            var academicYears = snapshot.AcademicYears
+                .Where(x => x.Status == AcademicStructureStatus.Active)
+                .OrderByDescending(x => x.StartsOn)
+                .ThenBy(x => x.Name)
+                .Select(x => x.Name)
+                .ToArray();
+
             var gradeLevels = snapshot.GradeLevels
                 .OrderBy(x => x.Order)
                 .ThenBy(x => x.Name)
@@ -374,7 +337,7 @@ public sealed class ImportsController : Controller
             }
 
             return File(
-                ClassesImportWorkbook.Create(gradeLevels),
+                ClassesImportWorkbook.Create(academicYears, gradeLevels),
                 "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                 "edulytics-Classes.xlsx");
         }
