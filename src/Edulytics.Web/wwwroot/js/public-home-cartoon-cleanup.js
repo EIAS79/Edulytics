@@ -15,7 +15,7 @@
 
     const image = document.createElement('img');
     image.className = 'ed-home-v40-mascot-image';
-    image.src = '/images/public/edulytics-math-mascot.png?v=41';
+    image.src = '/images/public/edulaytiks-character.png?v=43';
     image.alt = 'Edulytics mathematics mascot';
     image.loading = 'eager';
     image.decoding = 'async';
