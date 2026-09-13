@@ -25,9 +25,17 @@
             <h1>@A["AssessmentTitle"]</h1>
             <p>@(canManageAssessment ? A["AssessmentSubtitle"] : A["AssessmentViewSubtitle"])</p>
         </div>
-        <a class="school-button"
-           asp-controller="SchoolHome"
-           asp-action="Dashboard">@A["BackToDashboard"]</a>
+        <div class="assessment-actions">
+            @if (canManageAssessment)
+            {
+                <a class="school-button school-button-primary"
+                   asp-controller="Imports"
+                   asp-action="Index">@L("Import assessment results", "Importuj wyniki sprawdzianów")</a>
+            }
+            <a class="school-button"
+               asp-controller="SchoolHome"
+               asp-action="Dashboard">@A["BackToDashboard"]</a>
+        </div>
     </header>
 
     @if (TempData["Success"] is string success)
