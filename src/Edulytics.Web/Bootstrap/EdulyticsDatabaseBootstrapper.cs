@@ -21,6 +21,15 @@ public sealed class EdulyticsDatabaseBootstrapper
     private const long BootstrapAdvisoryLockKey =
         25000025L;
 
+    private static readonly TimeSpan DatabaseOpenTimeout =
+        TimeSpan.FromSeconds(30);
+
+    private static readonly TimeSpan AdvisoryLockTimeout =
+        TimeSpan.FromSeconds(30);
+
+    private static readonly TimeSpan AdvisoryLockRetryDelay =
+        TimeSpan.FromMilliseconds(250);
+
     private readonly RoleManager<ApplicationRole> _roleManager;
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly IConfiguration _configuration;
@@ -52,31 +61,50 @@ public sealed class EdulyticsDatabaseBootstrapper
             return;
         }
 
-        await _db.Database.OpenConnectionAsync();
+        using var openConnectionTimeout =
+            new CancellationTokenSource(DatabaseOpenTimeout);
 
         try
         {
-            await ExecuteAdvisoryLockAsync(
-                acquire: true);
+            await _db.Database.OpenConnectionAsync(
+                openConnectionTimeout.Token);
+        }
+        catch (OperationCanceledException exception)
+            when (openConnectionTimeout.IsCancellationRequested)
+        {
+            throw new TimeoutException(
+                $"Database bootstrap could not open a PostgreSQL connection within {DatabaseOpenTimeout.TotalSeconds:0} seconds.",
+                exception);
+        }
 
-            try
+        var advisoryLockAcquired = false;
+
+        try
+        {
+            advisoryLockAcquired =
+                await TryAcquireAdvisoryLockAsync();
+
+            if (!advisoryLockAcquired)
             {
-                await EnsureRolesExistAsync();
-                await EnsureSuperAdminAsync();
-                await SeedCurriculumIfRequestedAsync();
-                await PresentationDemoProvisioner.RunAsync(
-                    _db,
-                    _userManager,
-                    _configuration);
+                throw new TimeoutException(
+                    $"Database bootstrap could not acquire its PostgreSQL advisory lock within {AdvisoryLockTimeout.TotalSeconds:0} seconds.");
             }
-            finally
-            {
-                await ExecuteAdvisoryLockAsync(
-                    acquire: false);
-            }
+
+            await EnsureRolesExistAsync();
+            await EnsureSuperAdminAsync();
+            await SeedCurriculumIfRequestedAsync();
+            await PresentationDemoProvisioner.RunAsync(
+                _db,
+                _userManager,
+                _configuration);
         }
         finally
         {
+            if (advisoryLockAcquired)
+            {
+                await ReleaseAdvisoryLockAsync();
+            }
+
             await _db.Database.CloseConnectionAsync();
         }
     }
@@ -110,8 +138,38 @@ public sealed class EdulyticsDatabaseBootstrapper
             .SeedAsync();
     }
 
-    private async Task ExecuteAdvisoryLockAsync(
-        bool acquire)
+    private async Task<bool> TryAcquireAdvisoryLockAsync()
+    {
+        var deadlineUtc =
+            DateTime.UtcNow + AdvisoryLockTimeout;
+
+        do
+        {
+            await using var command =
+                _db.Database
+                    .GetDbConnection()
+                    .CreateCommand();
+
+            command.CommandText =
+                $"SELECT pg_try_advisory_lock({BootstrapAdvisoryLockKey});";
+            command.CommandTimeout = 5;
+
+            var result =
+                await command.ExecuteScalarAsync();
+
+            if (result is bool acquired && acquired)
+            {
+                return true;
+            }
+
+            await Task.Delay(AdvisoryLockRetryDelay);
+        }
+        while (DateTime.UtcNow < deadlineUtc);
+
+        return false;
+    }
+
+    private async Task ReleaseAdvisoryLockAsync()
     {
         await using var command =
             _db.Database
@@ -119,9 +177,8 @@ public sealed class EdulyticsDatabaseBootstrapper
                 .CreateCommand();
 
         command.CommandText =
-            acquire
-                ? $"SELECT pg_advisory_lock({BootstrapAdvisoryLockKey});"
-                : $"SELECT pg_advisory_unlock({BootstrapAdvisoryLockKey});";
+            $"SELECT pg_advisory_unlock({BootstrapAdvisoryLockKey});";
+        command.CommandTimeout = 5;
 
         _ = await command.ExecuteScalarAsync();
     }

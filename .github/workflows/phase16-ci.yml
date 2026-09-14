@@ -216,7 +216,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7.0.1
 
-      - name: Build immutable SHA image
+      - name: Build immutable SHA image from production Dockerfile
         shell: bash
         run: |
           set -euo pipefail
@@ -224,17 +224,18 @@ jobs:
           IMAGE="ghcr.io/${GITHUB_REPOSITORY,,}:${GITHUB_SHA}"
           echo "IMAGE=$IMAGE" >> "$GITHUB_ENV"
           docker build \
-            -f .ci/Dockerfile \
+            -f Dockerfile \
             -t "$IMAGE" \
             .
           {
+            echo "dockerfile=Dockerfile"
             echo "image=$IMAGE"
             docker image inspect \
               --format='image_id={{.Id}}' \
               "$IMAGE"
           } > artifacts/container/image-metadata.txt
 
-      - name: Trivy image vulnerability gate
+      - name: Trivy production-image vulnerability gate
         shell: bash
         run: |
           set -euo pipefail
@@ -294,9 +295,6 @@ jobs:
         with:
           dotnet-version: "10.0.200"
 
-      # Run CodeQL itself directly instead of codeql-action/init.
-      # This keeps the required SAST gate independent from the
-      # GitHub feature-enablement API that returned repeated HTTP 503.
       - name: Install pinned CodeQL CLI bundle
         shell: bash
         run: |
@@ -304,7 +302,6 @@ jobs:
 
           ARCHIVE="$RUNNER_TEMP/codeql-bundle-linux64.tar.gz"
           EXTRACT_ROOT="$RUNNER_TEMP/codeql-distribution"
-
           URL="https://github.com/github/codeql-action/releases/download/codeql-bundle-v${CODEQL_BUNDLE_VERSION}/codeql-bundle-linux64.tar.gz"
 
           rm -rf "$EXTRACT_ROOT" "$ARCHIVE"
@@ -331,7 +328,6 @@ jobs:
             -C "$EXTRACT_ROOT"
 
           rm -f "$ARCHIVE"
-
           CODEQL_BIN="$EXTRACT_ROOT/codeql/codeql"
 
           if [[ ! -x "$CODEQL_BIN" ]]; then
@@ -347,9 +343,7 @@ jobs:
 
           echo "CODEQL_BIN=$CODEQL_BIN" >> "$GITHUB_ENV"
           echo "CODEQL_DB=$RUNNER_TEMP/edulytics-codeql-db" >> "$GITHUB_ENV"
-
           "$CODEQL_BIN" version --format=terse
-
           echo "PASS: pinned CodeQL bundle installed and checksum verified."
 
       - name: Restore
@@ -359,7 +353,6 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-
           rm -rf "$CODEQL_DB"
           mkdir -p artifacts/codeql
 
@@ -392,27 +385,24 @@ jobs:
           document = json.loads(path.read_text(encoding="utf-8"))
 
           if document.get("version") != "2.1.0":
-              raise SystemExit(
-                  "FAIL: unexpected SARIF version."
-              )
+              raise SystemExit("FAIL: unexpected SARIF version.")
 
           runs = document.get("runs")
-
           if not isinstance(runs, list) or not runs:
-              raise SystemExit(
-                  "FAIL: CodeQL SARIF contains no runs."
-              )
+              raise SystemExit("FAIL: CodeQL SARIF contains no runs.")
 
-          results = sum(
-              len(run.get("results", []))
-              for run in runs
-          )
-
+          results = sum(len(run.get("results", [])) for run in runs)
           print(
               "PASS: CodeQL security-extended analysis completed; "
               f"SARIF runs={len(runs)} results={results}"
           )
           PY
+
+      - name: Block new CodeQL HIGH/CRITICAL findings
+        run: |
+          python3 scripts/ci-codeql-severity-gate.py \
+            artifacts/codeql/results.sarif \
+            .ci/codeql-high-critical-baseline.json
 
       - name: Preserve CodeQL SARIF
         if: always()

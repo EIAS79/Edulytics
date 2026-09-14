@@ -3,7 +3,7 @@ namespace Edulytics.Tests.Phase25;
 public sealed class Phase25BootstrapConcurrencyTests
 {
     [Fact]
-    public void PostgreSqlBootstrap_IsSerializedAcrossProcesses()
+    public void PostgreSqlBootstrap_IsSerializedAcrossProcesses_WithBoundedWaits()
     {
         var source =
             ReadSource(
@@ -16,7 +16,12 @@ public sealed class Phase25BootstrapConcurrencyTests
             StringComparison.Ordinal);
 
         Assert.Contains(
-            "pg_advisory_lock",
+            "pg_try_advisory_lock",
+            source,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "AdvisoryLockTimeout",
             source,
             StringComparison.Ordinal);
 
