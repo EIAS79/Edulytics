@@ -29,7 +29,7 @@
     const copy = {
         en: {
             title: "Technical assurance by OUR-CS Software",
-            body: "Edulytics has undergone a structured technical review and testing process by OUR-CS Software, covering security, performance, reliability, and operational stability.",
+            body: "Edulytics has undergone structured testing and technical review by OUR-CS Software, covering security, performance, reliability, and operational stability.",
             meta: "Security · Performance · Reliability"
         },
         pl: {
