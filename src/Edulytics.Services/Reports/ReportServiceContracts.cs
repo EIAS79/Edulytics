@@ -68,6 +68,7 @@ public static class ReportRequestPolicy
                     request.Kind,
                     AcademicYearId: request.AcademicYearId,
                     ClassGroupId: request.ClassGroupId,
+                    SubjectId: request.SubjectId,
                     LearningOutcomeId: request.LearningOutcomeId),
 
             _ => request
@@ -87,6 +88,8 @@ public static class ReportRequestPolicy
                 request.ClassGroupId.HasValue,
 
             ReportKind.Subject =>
+                request.AcademicYearId.HasValue &&
+                request.ClassGroupId.HasValue &&
                 request.SubjectId.HasValue,
 
             ReportKind.Student =>
@@ -97,6 +100,7 @@ public static class ReportRequestPolicy
             ReportKind.LearningOutcome =>
                 request.AcademicYearId.HasValue &&
                 request.ClassGroupId.HasValue &&
+                request.SubjectId.HasValue &&
                 request.LearningOutcomeId.HasValue,
 
             _ => false
@@ -122,7 +126,9 @@ public static class ReportRequestPolicy
 
     public static bool UsesSubject(
         ReportKind kind) =>
-        kind == ReportKind.Subject;
+        kind is
+            ReportKind.Subject or
+            ReportKind.LearningOutcome;
 
     public static bool UsesStudent(
         ReportKind kind) =>
@@ -136,6 +142,7 @@ public static class ReportRequestPolicy
         ReportKind kind) =>
         kind is
             ReportKind.Class or
+            ReportKind.Subject or
             ReportKind.Student or
             ReportKind.LearningOutcome;
 
@@ -143,6 +150,7 @@ public static class ReportRequestPolicy
         ReportKind kind) =>
         kind is
             ReportKind.Class or
+            ReportKind.Subject or
             ReportKind.Student or
             ReportKind.LearningOutcome;
 }
