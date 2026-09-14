@@ -8,7 +8,7 @@ namespace Edulytics.Tests.Phase09;
 public sealed class AnalyticsProjectionBuilderTests
 {
     [Fact]
-    public void FormalAnswers_DoNotCreateMastery_ButStillCreateAssessmentTrend()
+    public void FormalAnswers_CreateMastery_AndAssessmentTrend()
     {
         var source = BuildFormalAssessmentSource(
             AssessmentStatus.Open,
@@ -18,9 +18,13 @@ public sealed class AnalyticsProjectionBuilderTests
             source,
             new DateTime(2026, 8, 15, 12, 0, 0, DateTimeKind.Utc));
 
-        Assert.Empty(result.StudentOutcomeMasteries);
-        Assert.Empty(result.ClassOutcomeSummaries);
-        Assert.Empty(result.ClassTopicSummaries);
+        var mastery = Assert.Single(result.StudentOutcomeMasteries);
+        Assert.Equal(70m, mastery.MasteryPercentage);
+        Assert.Equal(1, mastery.EvidenceCount);
+
+        var classOutcome = Assert.Single(result.ClassOutcomeSummaries);
+        Assert.Equal(70m, classOutcome.AverageMasteryPercentage);
+        Assert.Single(result.ClassTopicSummaries);
 
         var trend = Assert.Single(result.ClassAssessmentTrends);
         Assert.Equal(70m, trend.AveragePercentage);
@@ -44,7 +48,7 @@ public sealed class AnalyticsProjectionBuilderTests
     }
 
     [Fact]
-    public void FormalMultiOutcomeMapping_DoesNotManufactureLearningEvidence()
+    public void FormalMultiOutcomeMapping_SplitsWeightWithoutDoubleCounting()
     {
         var source = BuildFormalAssessmentSource(
             AssessmentStatus.Open,
@@ -53,9 +57,18 @@ public sealed class AnalyticsProjectionBuilderTests
 
         var result = new AnalyticsProjectionBuilder().Build(
             source,
-            DateTime.UtcNow);
+            new DateTime(2026, 8, 15, 12, 0, 0, DateTimeKind.Utc));
 
-        Assert.Empty(result.StudentOutcomeMasteries);
+        var masteries = result.StudentOutcomeMasteries
+            .OrderBy(x => x.LearningOutcomeId)
+            .ToArray();
+
+        Assert.Equal(2, masteries.Length);
+        Assert.All(masteries, x => Assert.Equal(80m, x.MasteryPercentage));
+        Assert.All(masteries, x => Assert.Equal(1, x.EvidenceCount));
+        Assert.Equal(1m, masteries.Sum(x => x.PossibleScore));
+        Assert.Equal(0.8m, masteries.Sum(x => x.EarnedScore));
+        Assert.Equal(2, result.ClassOutcomeSummaries.Count);
         Assert.Single(result.ClassAssessmentTrends);
     }
 
@@ -97,6 +110,7 @@ public sealed class AnalyticsProjectionBuilderTests
         var assessment = Guid.NewGuid();
         var question = Guid.NewGuid();
         var result = Guid.NewGuid();
+        var evidenceAt = new DateTime(2026, 8, 15, 11, 0, 0, DateTimeKind.Utc);
 
         var outcomes = new List<LearningOutcome>
         {
@@ -187,7 +201,15 @@ public sealed class AnalyticsProjectionBuilderTests
                 NormalizedStudentNumber = "S1",
                 DisplayName = "A Student"
             }],
-            [],
+            [new StudentEnrollment
+            {
+                Id = Guid.NewGuid(),
+                SchoolId = school,
+                AcademicYearId = year,
+                ClassGroupId = cls,
+                StudentProfileId = student,
+                EnrolledAtUtc = new DateTime(2026, 8, 1, 0, 0, 0, DateTimeKind.Utc)
+            }],
             [],
             [new CurriculumTopic
             {
@@ -233,7 +255,7 @@ public sealed class AnalyticsProjectionBuilderTests
                 Score = percentage / 10m,
                 Percentage = percentage,
                 EnteredByUserId = Guid.NewGuid(),
-                UpdatedAtUtc = DateTime.UtcNow
+                UpdatedAtUtc = evidenceAt
             }],
             [new StudentAnswer
             {
@@ -242,7 +264,7 @@ public sealed class AnalyticsProjectionBuilderTests
                 AssessmentResultId = result,
                 AssessmentQuestionId = question,
                 Score = percentage / 10m,
-                UpdatedAtUtc = DateTime.UtcNow
+                UpdatedAtUtc = evidenceAt
             }]);
     }
 }
