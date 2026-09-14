@@ -68,29 +68,36 @@ html[lang^="pl"] #classes .academic-table th:nth-child(3)::after {
     white-space: nowrap;
 }
 
-#classes .academic-table td:nth-child(3),
-#classes .academic-table td:nth-child(4) {
-    grid-column: 3;
-    grid-row: 1;
+#classes .academic-table tbody tr {
+    grid-template-rows: auto auto;
+    row-gap: .2rem;
+    min-height: 5.25rem;
+    border-bottom: 1px solid #e1e7f0;
 }
 
-#classes .academic-table td:nth-child(4) {
-    align-self: start;
-    padding-bottom: 2.4rem;
+#classes .academic-table tbody td:nth-child(1),
+#classes .academic-table tbody td:nth-child(2),
+#classes .academic-table tbody td:nth-child(5) {
+    grid-row: 1 / span 2;
+    align-self: center;
+}
+
+#classes .academic-table tbody td:nth-child(4) {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: end;
+    padding-bottom: .15rem;
     font-weight: 700;
     color: #172b4d;
 }
 
-#classes .academic-table td:nth-child(3) {
-    align-self: end;
-    padding-top: 2.45rem;
+#classes .academic-table tbody td:nth-child(3) {
+    grid-column: 3;
+    grid-row: 2;
+    align-self: start;
+    padding-top: .15rem;
     color: #66758d;
     font-size: .9rem;
-}
-
-#classes .academic-table tbody tr {
-    min-height: 5.5rem;
-    border-bottom: 1px solid #e1e7f0;
 }
 
 #classes .academic-table tbody tr:last-child {
@@ -112,23 +119,22 @@ html[lang^="pl"] #classes .academic-table th:nth-child(3)::after {
     }
 
     #classes .academic-table td,
-    #classes .academic-table td:nth-child(3),
-    #classes .academic-table td:nth-child(4) {
+    #classes .academic-table tbody td:nth-child(1),
+    #classes .academic-table tbody td:nth-child(2),
+    #classes .academic-table tbody td:nth-child(3),
+    #classes .academic-table tbody td:nth-child(4),
+    #classes .academic-table tbody td:nth-child(5) {
         display: grid;
         grid-template-columns: minmax(7rem, .8fr) minmax(0, 1.2fr);
+        grid-column: auto;
+        grid-row: auto;
         gap: .75rem;
+        align-self: auto;
         padding: .3rem 0;
         color: inherit;
         font-size: inherit;
         font-weight: inherit;
         white-space: normal;
-    }
-
-    #classes .academic-table td:nth-child(3),
-    #classes .academic-table td:nth-child(4) {
-        grid-column: auto;
-        grid-row: auto;
-        align-self: auto;
     }
 
     #classes .academic-table td::before {
