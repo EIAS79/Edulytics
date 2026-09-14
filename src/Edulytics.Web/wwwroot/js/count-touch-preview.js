@@ -16,7 +16,7 @@
         variants: ['sunbug', 'leafbug', 'berrybug'],
         sameModes: ['number-change', 'what-changed', 'what-stayed'],
         changedModes: ['number-change', 'current-total'],
-        guide: '/images/game/v9/eddy-guide.webp'
+        guide: '/images/game/v9/eddy-hint.webp'
     };
 
     var copy = {

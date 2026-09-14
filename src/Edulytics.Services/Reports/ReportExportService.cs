@@ -285,7 +285,10 @@ public sealed class ReportExportService
                 ToRequest(job),
                 cancellationToken);
 
-        if (access.Value is null)
+        if (access.Value is null &&
+            !IsAuthorizedLegacySubjectExport(
+                job,
+                catalog.Value))
         {
             return ReportQueryResult<ReportDownload>
                 .Failure(
@@ -325,6 +328,27 @@ public sealed class ReportExportService
                     job.FileName,
                     job.ContentType,
                     job.FileContent));
+    }
+
+    private static bool IsAuthorizedLegacySubjectExport(
+        ReportExportJob job,
+        ReportCatalog catalog)
+    {
+        if (job.ReportKind != ReportKind.Subject ||
+            job.ClassGroupId.HasValue ||
+            !job.AcademicYearId.HasValue ||
+            !job.SubjectId.HasValue ||
+            job.StudentProfileId.HasValue ||
+            job.LearningOutcomeId.HasValue ||
+            !catalog.AllowedKinds.Contains(ReportKind.Subject))
+        {
+            return false;
+        }
+
+        return catalog.AcademicYears.Any(
+                   x => x.Id == job.AcademicYearId.Value) &&
+               catalog.Subjects.Any(
+                   x => x.Id == job.SubjectId.Value);
     }
 
     public static ReportRequest ToRequest(
