@@ -44,13 +44,19 @@ public sealed class MasteryEngine2Tests
     }
 
     [Fact]
-    public void FormalAssessment_DoesNotContaminateMastery_ButStillBuildsTrend()
+    public void FormalAssessment_ContributesToMastery_AndStillBuildsTrend()
     {
         var source = BuildSource([], includeFormalAssessment: true);
         var result = new AnalyticsProjectionBuilder().Build(source, Now);
 
-        Assert.Empty(result.StudentOutcomeMasteries);
-        Assert.Empty(result.ClassOutcomeSummaries);
+        var mastery = Assert.Single(result.StudentOutcomeMasteries);
+        Assert.Equal(100m, mastery.MasteryPercentage);
+        Assert.Equal(1, mastery.EvidenceCount);
+
+        var classOutcome = Assert.Single(result.ClassOutcomeSummaries);
+        Assert.Equal(100m, classOutcome.AverageMasteryPercentage);
+        Assert.Equal(1, classOutcome.EvidenceCount);
+
         var trend = Assert.Single(result.ClassAssessmentTrends);
         Assert.Equal(100m, trend.AveragePercentage);
     }
@@ -76,7 +82,7 @@ public sealed class MasteryEngine2Tests
         Assert.Equal(100m, profile.OverallMasteryPercentage);
         Assert.Equal(2, profile.EvidenceCount);
         Assert.Equal(40m, profile.ConfidencePercentage);
-        Assert.Equal("phase31-v1", profile.FormulaVersion);
+        Assert.Equal("phase31-v2", profile.FormulaVersion);
         var row = Assert.Single(profile.Outcomes);
         Assert.Equal(1, row.EasyEvidenceCount);
         Assert.Equal(1, row.MediumEvidenceCount);
