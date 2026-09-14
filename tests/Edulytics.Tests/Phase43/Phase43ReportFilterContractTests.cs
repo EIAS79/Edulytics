@@ -172,7 +172,7 @@ public sealed class Phase43ReportFilterContractTests
     }
 
     [Fact]
-    public void Phase43_ReportView_UsesDynamicFilterContract()
+    public void Phase43_ReportView_UsesDynamicCascadingFilterContract()
     {
         var root = FindRoot();
         var view = File.ReadAllText(Path.Combine(
@@ -189,6 +189,14 @@ public sealed class Phase43ReportFilterContractTests
         Assert.Contains("ShowStudent(Model.Request.Kind)", view);
         Assert.Contains("ShowLearningOutcome(Model.Request.Kind)", view);
         Assert.Contains("data-report-kind-filter", view);
+        Assert.Contains("data-report-cascade=\"year\"", view);
+        Assert.Contains("data-report-cascade=\"class\"", view);
+        Assert.Contains("data-report-cascade=\"subject\"", view);
+        Assert.Contains("clear(classGroup)", view);
+        Assert.Contains("clear(subject)", view);
+        Assert.Contains("clear(student)", view);
+        Assert.Contains("clear(outcome)", view);
+        Assert.Contains("form.requestSubmit()", view);
 
         var siteJs = File.ReadAllText(Path.Combine(
             root,
@@ -199,7 +207,66 @@ public sealed class Phase43ReportFilterContractTests
             "site.js"));
 
         Assert.Contains("wireReportKindFilters", siteJs);
-        Assert.Contains("form.requestSubmit()", siteJs);
+    }
+
+    [Fact]
+    public void Phase43_StudentMasteryView_UsesCompactOutcomeScorePresentation()
+    {
+        var root = FindRoot();
+        var view = File.ReadAllText(Path.Combine(
+            root,
+            "src",
+            "Edulytics.Web",
+            "Views",
+            "Reports",
+            "Index.cshtml"));
+
+        Assert.Contains("report-student-mastery-table", view);
+        Assert.Contains("selectedStudentName", view);
+        Assert.Contains("fullCode.LastIndexOf(':')", view);
+        Assert.Contains("row.Cells[3]", view);
+        Assert.Contains("row.Cells[4]", view);
+        Assert.Contains("row.Cells[5]", view);
+        Assert.Contains("Learning-outcome codes are shown only as curriculum references", view);
+    }
+
+    [Fact]
+    public void Phase43_PendingExports_ShowGeneratingStateAndRefresh()
+    {
+        var root = FindRoot();
+        var view = File.ReadAllText(Path.Combine(
+            root,
+            "src",
+            "Edulytics.Web",
+            "Views",
+            "Reports",
+            "Index.cshtml"));
+
+        Assert.Contains("hasPendingExports", view);
+        Assert.Contains("ReportExportJobStatus.Pending", view);
+        Assert.Contains("Generating…", view);
+        Assert.Contains("window.location.reload()", view);
+    }
+
+    [Fact]
+    public void Phase43_LegacySubjectExportCompatibility_RemainsScopeBound()
+    {
+        var root = FindRoot();
+        var service = File.ReadAllText(Path.Combine(
+            root,
+            "src",
+            "Edulytics.Services",
+            "Reports",
+            "ReportExportService.cs"));
+
+        Assert.Contains("IsAuthorizedLegacySubjectExport", service);
+        Assert.Contains("job.ReportKind != ReportKind.Subject", service);
+        Assert.Contains("job.ClassGroupId.HasValue", service);
+        Assert.Contains("job.AcademicYearId.HasValue", service);
+        Assert.Contains("job.SubjectId.HasValue", service);
+        Assert.Contains("catalog.AllowedKinds.Contains(ReportKind.Subject)", service);
+        Assert.Contains("catalog.AcademicYears.Any", service);
+        Assert.Contains("catalog.Subjects.Any", service);
     }
 
     [Fact]
@@ -223,16 +290,16 @@ public sealed class Phase43ReportFilterContractTests
     }
 
     [Fact]
-    public void Phase43_CountingGrove_UsesDedicatedEddyHintArtwork()
+    public void Phase43_CountingGrove_UsesDedicatedEddyHintArtworkDirectly()
     {
         var root = FindRoot();
-        var hintJs = File.ReadAllText(Path.Combine(
+        var runtime = File.ReadAllText(Path.Combine(
             root,
             "src",
             "Edulytics.Web",
             "wwwroot",
             "js",
-            "count-touch-eddy-hint-v1.js"));
+            "count-touch-preview.js"));
         var gameView = File.ReadAllText(Path.Combine(
             root,
             "src",
@@ -240,9 +307,17 @@ public sealed class Phase43ReportFilterContractTests
             "Views",
             "StudentPractice",
             "Game.cshtml"));
+        var obsoleteOverride = Path.Combine(
+            root,
+            "src",
+            "Edulytics.Web",
+            "wwwroot",
+            "js",
+            "count-touch-eddy-hint-v1.js");
 
-        Assert.Contains("/images/game/v9/eddy-hint.webp", hintJs);
-        Assert.Contains("count-touch-eddy-hint-v1.js", gameView);
+        Assert.Contains("guide: '/images/game/v9/eddy-hint.webp'", runtime);
+        Assert.DoesNotContain("count-touch-eddy-hint-v1.js", gameView);
+        Assert.False(File.Exists(obsoleteOverride));
     }
 
     private static string FindRoot()
