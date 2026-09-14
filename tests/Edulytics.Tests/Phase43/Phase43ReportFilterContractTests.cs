@@ -164,11 +164,11 @@ public sealed class Phase43ReportFilterContractTests
             "Reports",
             "Phase43ReportQueryService.cs"));
 
-        Assert.Contains("BuildSchoolDocument", service);
-        Assert.Contains("BuildClassDocument", service);
-        Assert.Contains("BuildSubjectDocument", service);
-        Assert.Contains("BuildStudentDocument", service);
-        Assert.Contains("BuildLearningOutcomeDocument", service);
+        Assert.Contains("BuildPerformanceOverview", service);
+        Assert.Contains("BuildClassReport", service);
+        Assert.Contains("BuildSubjectReport", service);
+        Assert.Contains("BuildStudentReport", service);
+        Assert.Contains("BuildLearningOutcomeReport", service);
     }
 
     [Fact]
