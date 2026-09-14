@@ -1,27 +1,22 @@
 @using Edulytics.Core.Constants
-@model Edulytics.Web.ViewModels.Reports.ReportIndexViewModel
-@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.ReportResource> R
 @using Edulytics.Core.Reports
 @using Edulytics.Web.ViewModels.Reports
+@model Edulytics.Web.ViewModels.Reports.ReportIndexViewModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.ReportResource> R
 
 @{
-    var canRequestReportExport = User.IsInRole(RoleNames.SubjectSupervisor) || User.IsInRole(RoleNames.Teacher);
-}
+    var canRequestReportExport =
+        User.IsInRole(RoleNames.SubjectSupervisor) ||
+        User.IsInRole(RoleNames.Teacher);
 
-@{
-    ViewData["Title"] =
-        R["ReportsTitle"].Value;
+    ViewData["Title"] = R["ReportsTitle"].Value;
 }
 
 <section class="analytics-page report-page">
     <header class="analytics-header report-no-print">
         <div>
-            <div class="user-eyebrow">
-                @R["ReportsTitle"]
-            </div>
-
+            <div class="user-eyebrow">@R["ReportsTitle"]</div>
             <h1>@R["ReportsTitle"]</h1>
-
             <p>@(canRequestReportExport ? R["ReportsSubtitle"] : R["ReportsViewSubtitle"])</p>
         </div>
 
@@ -34,16 +29,14 @@
 
     @if (TempData["ReportSuccess"] is string success)
     {
-        <div class="school-alert school-alert-success report-no-print"
-             role="status">
+        <div class="school-alert school-alert-success report-no-print" role="status">
             @success
         </div>
     }
 
     @if (TempData["ReportError"] is string error)
     {
-        <div class="school-alert school-alert-error report-no-print"
-             role="alert">
+        <div class="school-alert school-alert-error report-no-print" role="alert">
             @error
         </div>
     }
@@ -58,13 +51,8 @@
 
         <div class="analytics-filter-grid">
             <div>
-                <label for="kind">
-                    @R["ReportType"]
-                </label>
-
-                <select id="kind"
-                        name="kind"
-                        data-report-kind-filter>
+                <label for="kind">@R["ReportType"]</label>
+                <select id="kind" name="kind" data-report-kind-filter>
                     @foreach (var item in Model.Catalog.AllowedKinds)
                     {
                         <option value="@item"
@@ -78,18 +66,13 @@
             @if (ReportIndexViewModel.ShowAcademicYear(Model.Request.Kind))
             {
                 <div>
-                    <label for="academicYearId">
-                        @R["AcademicYear"]
-                    </label>
-
-                    <select id="academicYearId"
-                            name="academicYearId">
+                    <label for="academicYearId">@R["AcademicYear"]</label>
+                    <select id="academicYearId" name="academicYearId">
                         <option value="">
                             @(ReportIndexViewModel.RequireAcademicYear(Model.Request.Kind)
                                 ? R["Select"]
                                 : R["All"])
                         </option>
-
                         @foreach (var item in Model.Catalog.AcademicYears)
                         {
                             <option value="@item.Id"
@@ -104,18 +87,13 @@
             @if (ReportIndexViewModel.ShowClass(Model.Request.Kind))
             {
                 <div>
-                    <label for="classGroupId">
-                        @R["Class"]
-                    </label>
-
-                    <select id="classGroupId"
-                            name="classGroupId">
+                    <label for="classGroupId">@R["Class"]</label>
+                    <select id="classGroupId" name="classGroupId">
                         <option value="">
                             @(ReportIndexViewModel.RequireClass(Model.Request.Kind)
                                 ? R["Select"]
                                 : R["All"])
                         </option>
-
                         @foreach (var item in Model.Catalog.ClassGroups)
                         {
                             <option value="@item.Id"
@@ -130,16 +108,9 @@
             @if (ReportIndexViewModel.ShowSubject(Model.Request.Kind))
             {
                 <div>
-                    <label for="subjectId">
-                        @R["Subject"]
-                    </label>
-
-                    <select id="subjectId"
-                            name="subjectId">
-                        <option value="">
-                            @R["Select"]
-                        </option>
-
+                    <label for="subjectId">@R["Subject"]</label>
+                    <select id="subjectId" name="subjectId">
+                        <option value="">@R["Select"]</option>
                         @foreach (var item in Model.Catalog.Subjects)
                         {
                             <option value="@item.Id"
@@ -154,16 +125,9 @@
             @if (ReportIndexViewModel.ShowStudent(Model.Request.Kind))
             {
                 <div>
-                    <label for="studentProfileId">
-                        @R["Student"]
-                    </label>
-
-                    <select id="studentProfileId"
-                            name="studentProfileId">
-                        <option value="">
-                            @R["Select"]
-                        </option>
-
+                    <label for="studentProfileId">@R["Student"]</label>
+                    <select id="studentProfileId" name="studentProfileId">
+                        <option value="">@R["Select"]</option>
                         @foreach (var item in Model.Catalog.Students)
                         {
                             <option value="@item.Id"
@@ -178,16 +142,9 @@
             @if (ReportIndexViewModel.ShowLearningOutcome(Model.Request.Kind))
             {
                 <div>
-                    <label for="learningOutcomeId">
-                        @R["LearningOutcome"]
-                    </label>
-
-                    <select id="learningOutcomeId"
-                            name="learningOutcomeId">
-                        <option value="">
-                            @R["Select"]
-                        </option>
-
+                    <label for="learningOutcomeId">@R["LearningOutcome"]</label>
+                    <select id="learningOutcomeId" name="learningOutcomeId">
+                        <option value="">@R["Select"]</option>
                         @foreach (var item in Model.Catalog.LearningOutcomes)
                         {
                             <option value="@item.Id"
@@ -199,14 +156,21 @@
                 </div>
             }
 
-            <button type="submit"
-                    class="school-button school-button-primary">
+            <button type="submit" class="school-button school-button-primary">
                 @R["GenerateReport"]
             </button>
         </div>
     </form>
 
-    @if (!ReportIndexViewModel.HasRequiredSelection(Model.Request))
+    @if (ReportIndexViewModel.ShowClass(Model.Request.Kind) &&
+         Model.Request.AcademicYearId.HasValue &&
+         Model.Catalog.ClassGroups.Count == 0)
+    {
+        <section class="analytics-empty report-no-print">
+            <h2>@R["NoAuthorizedClasses"]</h2>
+        </section>
+    }
+    else if (!ReportIndexViewModel.HasRequiredSelection(Model.Request))
     {
         <section class="analytics-empty report-no-print">
             <h2>@R["SelectRequiredFilter"]</h2>
@@ -220,9 +184,7 @@
                 <div>
                     <h2>@R[Model.Document.TitleKey]</h2>
                     <p>
-                        @Model.Catalog.SchoolName
-                        ·
-                        @R["GeneratedAt"]:
+                        @Model.Catalog.SchoolName · @R["GeneratedAt"]:
                         @Model.Document.GeneratedAtUtc.ToString("yyyy-MM-dd HH:mm 'UTC'")
                     </p>
                 </div>
@@ -236,95 +198,30 @@
 
                     @if (canRequestReportExport)
                     {
-                        <form asp-controller="Reports"
-                              asp-action="RequestExport"
-                              method="post"
-                              class="report-inline-form">
+                        <form asp-controller="Reports" asp-action="RequestExport" method="post" class="report-inline-form">
                             @Html.AntiForgeryToken()
-
-                            <input type="hidden"
-                                   name="_idempotencyKey"
-                                   value="@Model.CsvIdempotencyKey" />
-
-                            <input type="hidden"
-                                   name="kind"
-                                   value="@Model.Request.Kind" />
-
-                            <input type="hidden"
-                                   name="format"
-                                   value="@ReportExportFormat.Csv" />
-
-                            <input type="hidden"
-                                   name="academicYearId"
-                                   value="@Model.Request.AcademicYearId" />
-
-                            <input type="hidden"
-                                   name="classGroupId"
-                                   value="@Model.Request.ClassGroupId" />
-
-                            <input type="hidden"
-                                   name="subjectId"
-                                   value="@Model.Request.SubjectId" />
-
-                            <input type="hidden"
-                                   name="studentProfileId"
-                                   value="@Model.Request.StudentProfileId" />
-
-                            <input type="hidden"
-                                   name="learningOutcomeId"
-                                   value="@Model.Request.LearningOutcomeId" />
-
-                            <button type="submit"
-                                    class="school-button school-button-primary">
-                                @R["ExportCsv"]
-                            </button>
+                            <input type="hidden" name="_idempotencyKey" value="@Model.CsvIdempotencyKey" />
+                            <input type="hidden" name="kind" value="@Model.Request.Kind" />
+                            <input type="hidden" name="format" value="@ReportExportFormat.Csv" />
+                            <input type="hidden" name="academicYearId" value="@Model.Request.AcademicYearId" />
+                            <input type="hidden" name="classGroupId" value="@Model.Request.ClassGroupId" />
+                            <input type="hidden" name="subjectId" value="@Model.Request.SubjectId" />
+                            <input type="hidden" name="studentProfileId" value="@Model.Request.StudentProfileId" />
+                            <input type="hidden" name="learningOutcomeId" value="@Model.Request.LearningOutcomeId" />
+                            <button type="submit" class="school-button school-button-primary">@R["ExportCsv"]</button>
                         </form>
-                    }
 
-                    @if (canRequestReportExport)
-                    {
-                        <form asp-controller="Reports"
-                              asp-action="RequestExport"
-                              method="post"
-                              class="report-inline-form">
+                        <form asp-controller="Reports" asp-action="RequestExport" method="post" class="report-inline-form">
                             @Html.AntiForgeryToken()
-
-                            <input type="hidden"
-                                   name="_idempotencyKey"
-                                   value="@Model.XlsxIdempotencyKey" />
-
-                            <input type="hidden"
-                                   name="kind"
-                                   value="@Model.Request.Kind" />
-
-                            <input type="hidden"
-                                   name="format"
-                                   value="@ReportExportFormat.Xlsx" />
-
-                            <input type="hidden"
-                                   name="academicYearId"
-                                   value="@Model.Request.AcademicYearId" />
-
-                            <input type="hidden"
-                                   name="classGroupId"
-                                   value="@Model.Request.ClassGroupId" />
-
-                            <input type="hidden"
-                                   name="subjectId"
-                                   value="@Model.Request.SubjectId" />
-
-                            <input type="hidden"
-                                   name="studentProfileId"
-                                   value="@Model.Request.StudentProfileId" />
-
-                            <input type="hidden"
-                                   name="learningOutcomeId"
-                                   value="@Model.Request.LearningOutcomeId" />
-
-                            <button type="submit"
-                                    class="school-button school-button-primary">
-                                @R["ExportXlsx"]
-                            </button>
+                            <input type="hidden" name="_idempotencyKey" value="@Model.XlsxIdempotencyKey" />
+                            <input type="hidden" name="kind" value="@Model.Request.Kind" />
+                            <input type="hidden" name="format" value="@ReportExportFormat.Xlsx" />
+                            <input type="hidden" name="academicYearId" value="@Model.Request.AcademicYearId" />
+                            <input type="hidden" name="classGroupId" value="@Model.Request.ClassGroupId" />
+                            <input type="hidden" name="subjectId" value="@Model.Request.SubjectId" />
+                            <input type="hidden" name="studentProfileId" value="@Model.Request.StudentProfileId" />
+                            <input type="hidden" name="learningOutcomeId" value="@Model.Request.LearningOutcomeId" />
+                            <button type="submit" class="school-button school-button-primary">@R["ExportXlsx"]</button>
                         </form>
                     }
                 </div>
@@ -340,7 +237,7 @@
             @if (Model.Document.Rows.Count == 0)
             {
                 <p class="analytics-empty-inline">
-                    @R["NoReportData"]
+                    @R[ReportIndexViewModel.EmptyStateKey(Model.Request.Kind)]
                 </p>
             }
             else
@@ -355,7 +252,6 @@
                                 }
                             </tr>
                         </thead>
-
                         <tbody>
                             @foreach (var row in Model.Document.Rows)
                             {
@@ -383,9 +279,7 @@
 
         @if (Model.Jobs.Count == 0)
         {
-            <p class="analytics-empty-inline">
-                @R["NoExports"]
-            </p>
+            <p class="analytics-empty-inline">@R["NoExports"]</p>
         }
         else
         {
@@ -402,38 +296,18 @@
                             <th>@R["Actions"]</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         @foreach (var job in Model.Jobs)
                         {
                             <tr>
-                                <td data-label="@R["ReportType"]">
-                                    @R[ReportIndexViewModel.KindKey(job.ReportKind)]
-                                </td>
-
-                                <td data-label="@R["Format"]">
-                                    @R[ReportIndexViewModel.FormatKey(job.ExportFormat)]
-                                </td>
-
-                                <td data-label="@R["Status"]">
-                                    @R[ReportIndexViewModel.StatusKey(job.Status)]
-                                </td>
-
-                                <td data-label="@R["Rows"]">
-                                    @(job.RowCount?.ToString() ?? "—")
-                                </td>
-
-                                <td data-label="@R["CreatedAt"]">
-                                    @job.CreatedAtUtc.ToString("yyyy-MM-dd HH:mm 'UTC'")
-                                </td>
-
-                                <td data-label="@R["ExpiresAt"]">
-                                    @job.ExpiresAtUtc.ToString("yyyy-MM-dd HH:mm 'UTC'")
-                                </td>
-
+                                <td data-label="@R["ReportType"]">@R[ReportIndexViewModel.KindKey(job.ReportKind)]</td>
+                                <td data-label="@R["Format"]">@R[ReportIndexViewModel.FormatKey(job.ExportFormat)]</td>
+                                <td data-label="@R["Status"]">@R[ReportIndexViewModel.StatusKey(job.Status)]</td>
+                                <td data-label="@R["Rows"]">@(job.RowCount?.ToString() ?? "—")</td>
+                                <td data-label="@R["CreatedAt"]">@job.CreatedAtUtc.ToString("yyyy-MM-dd HH:mm 'UTC'")</td>
+                                <td data-label="@R["ExpiresAt"]">@job.ExpiresAtUtc.ToString("yyyy-MM-dd HH:mm 'UTC'")</td>
                                 <td data-label="@R["Actions"]">
-                                    @if (job.Status == ReportExportJobStatus.Completed &&
-                                         job.ExpiresAtUtc > DateTime.UtcNow)
+                                    @if (job.Status == ReportExportJobStatus.Completed && job.ExpiresAtUtc > DateTime.UtcNow)
                                     {
                                         <a class="school-button school-button-secondary school-button-small"
                                            asp-controller="Reports"
