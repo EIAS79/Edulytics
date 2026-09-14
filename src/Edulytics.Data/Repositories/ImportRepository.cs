@@ -31,7 +31,15 @@ public sealed class ImportRepository : IImportRepository
             StudentEnrollments = await _db.StudentEnrollments.AsNoTracking().Where(x => x.SchoolId == schoolId).ToArrayAsync(cancellationToken),
             TeacherAssignments = await _db.TeacherAssignments.AsNoTracking().Where(x => x.SchoolId == schoolId).ToArrayAsync(cancellationToken),
             LearningOutcomes = await _db.LearningOutcomes.AsNoTracking().Where(x => x.SchoolId == schoolId).ToArrayAsync(cancellationToken),
-            CurriculumAdoptions = await _db.SchoolCurriculumAdoptions.AsNoTracking().Where(x => x.SchoolId == schoolId).ToArrayAsync(cancellationToken),
+            CurriculumAdoptions = await _db.SchoolCurriculumAdoptions
+                .AsNoTracking()
+                .Where(x =>
+                    x.SchoolId == schoolId &&
+                    _db.AcademicPrograms.Any(program =>
+                        program.SchoolId == schoolId &&
+                        program.Id == x.AcademicProgramId &&
+                        program.Status == AcademicStructureStatus.Active))
+                .ToArrayAsync(cancellationToken),
             FrameworkVersions = await _db.CurriculumFrameworkVersions.AsNoTracking().ToArrayAsync(cancellationToken),
             Assessments = await _db.Assessments.AsNoTracking().Where(x => x.SchoolId == schoolId).ToArrayAsync(cancellationToken),
             AssessmentQuestions = await _db.AssessmentQuestions.AsNoTracking().Where(x => x.SchoolId == schoolId).ToArrayAsync(cancellationToken),
