@@ -57,7 +57,7 @@ public sealed class AnalyticsProjectionBuilderTests
 
         var result = new AnalyticsProjectionBuilder().Build(
             source,
-            DateTime.UtcNow);
+            new DateTime(2026, 8, 15, 12, 0, 0, DateTimeKind.Utc));
 
         var masteries = result.StudentOutcomeMasteries
             .OrderBy(x => x.LearningOutcomeId)
