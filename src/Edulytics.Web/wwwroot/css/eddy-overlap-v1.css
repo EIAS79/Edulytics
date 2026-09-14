@@ -1,0 +1,66 @@
+.gw-universal .gw-eddy {
+    min-height: 92px;
+    overflow: visible;
+    padding: 16px 20px 16px 132px;
+}
+
+.gw-universal .gw-eddy img {
+    position: absolute;
+    left: 12px;
+    bottom: 8px;
+    width: 112px;
+    height: 154px;
+    object-fit: contain;
+    object-position: bottom center;
+    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, .2));
+}
+
+.gw-universal[dir="rtl"] .gw-eddy {
+    padding: 16px 132px 16px 20px;
+}
+
+.gw-universal[dir="rtl"] .gw-eddy img {
+    left: auto;
+    right: 12px;
+}
+
+@media (max-width: 850px) {
+    .gw-universal .gw-eddy {
+        min-height: 86px;
+        padding-left: 112px;
+    }
+
+    .gw-universal .gw-eddy img {
+        width: 94px;
+        height: 132px;
+    }
+
+    .gw-universal[dir="rtl"] .gw-eddy {
+        padding-left: 20px;
+        padding-right: 112px;
+    }
+}
+
+@media (max-width: 520px) {
+    .gw-universal .gw-eddy {
+        min-height: 78px;
+        padding-left: 96px;
+    }
+
+    .gw-universal .gw-eddy img {
+        left: 8px;
+        bottom: 6px;
+        width: 82px;
+        height: 116px;
+    }
+
+    .gw-universal[dir="rtl"] .gw-eddy {
+        padding-left: 16px;
+        padding-right: 96px;
+    }
+
+    .gw-universal[dir="rtl"] .gw-eddy img {
+        left: auto;
+        right: 8px;
+    }
+}
