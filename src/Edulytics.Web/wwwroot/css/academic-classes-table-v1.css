@@ -14,21 +14,41 @@
     width: 100%;
 }
 
-#classes .academic-table tr {
+#classes .academic-table thead tr,
+#classes .academic-table tbody tr {
     display: grid;
-    grid-template-columns: minmax(7rem, .8fr) minmax(20rem, 2.5fr) minmax(7.5rem, .8fr) minmax(6rem, .55fr);
-    column-gap: 1rem;
-    align-items: center;
+    grid-template-columns: minmax(6.5rem, .8fr) minmax(18rem, 2.35fr) minmax(8rem, .85fr) minmax(6rem, .6fr);
     width: 100%;
+}
+
+#classes .academic-table thead tr {
+    align-items: center;
+    background: #f6f8fc;
+    border-radius: 10px;
 }
 
 #classes .academic-table th,
 #classes .academic-table td {
     display: block;
     min-width: 0;
-    padding: .85rem .6rem;
+    margin: 0;
+    padding: .85rem .9rem;
+    border: 0 !important;
     overflow-wrap: normal;
     word-break: normal;
+}
+
+#classes .academic-table thead th {
+    grid-row: 1;
+    align-self: center;
+    background: transparent !important;
+    color: #50617b;
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .04em;
+    line-height: 1.25;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 #classes .academic-table th:nth-child(1),
@@ -39,7 +59,6 @@
 #classes .academic-table th:nth-child(2),
 #classes .academic-table td:nth-child(2) {
     grid-column: 3;
-    white-space: nowrap;
 }
 
 #classes .academic-table th:nth-child(3) {
@@ -65,14 +84,17 @@ html[lang^="pl"] #classes .academic-table th:nth-child(3)::after {
 #classes .academic-table th:nth-child(5),
 #classes .academic-table td:nth-child(5) {
     grid-column: 4;
-    white-space: nowrap;
 }
 
 #classes .academic-table tbody tr {
     grid-template-rows: auto auto;
-    row-gap: .2rem;
-    min-height: 5.25rem;
-    border-bottom: 1px solid #e1e7f0;
+    align-items: stretch;
+    min-height: 4.75rem;
+    border-bottom: 1px solid #e2e8f1;
+}
+
+#classes .academic-table tbody tr:last-child {
+    border-bottom: 0;
 }
 
 #classes .academic-table tbody td:nth-child(1),
@@ -82,29 +104,42 @@ html[lang^="pl"] #classes .academic-table th:nth-child(3)::after {
     align-self: center;
 }
 
+#classes .academic-table tbody td:nth-child(1) {
+    font-weight: 600;
+    color: #172b4d;
+}
+
+#classes .academic-table tbody td:nth-child(2),
+#classes .academic-table tbody td:nth-child(5) {
+    text-align: center;
+    white-space: nowrap;
+}
+
 #classes .academic-table tbody td:nth-child(4) {
     grid-column: 2;
     grid-row: 1;
     align-self: end;
-    padding-bottom: .15rem;
-    font-weight: 700;
+    padding-bottom: .2rem;
     color: #172b4d;
+    font-weight: 700;
+    line-height: 1.4;
 }
 
 #classes .academic-table tbody td:nth-child(3) {
     grid-column: 2;
     grid-row: 2;
     align-self: start;
-    padding-top: .15rem;
-    color: #66758d;
+    padding-top: .2rem;
+    color: #6a7890;
     font-size: .9rem;
-}
-
-#classes .academic-table tbody tr:last-child {
-    border-bottom: 0;
+    line-height: 1.35;
 }
 
 @media (max-width: 760px) {
+    #classes .academic-card:has(.academic-table) {
+        overflow-x: visible;
+    }
+
     #classes .academic-table {
         min-width: 0;
     }
@@ -113,33 +148,42 @@ html[lang^="pl"] #classes .academic-table th:nth-child(3)::after {
         display: none;
     }
 
-    #classes .academic-table tr {
-        display: block;
-        padding: .8rem 0;
-    }
-
-    #classes .academic-table td,
+    #classes .academic-table,
+    #classes .academic-table tbody,
+    #classes .academic-table tbody tr,
+    #classes .academic-table tbody td,
     #classes .academic-table tbody td:nth-child(1),
     #classes .academic-table tbody td:nth-child(2),
     #classes .academic-table tbody td:nth-child(3),
     #classes .academic-table tbody td:nth-child(4),
     #classes .academic-table tbody td:nth-child(5) {
-        display: grid;
-        grid-template-columns: minmax(7rem, .8fr) minmax(0, 1.2fr);
+        display: block;
+        width: 100%;
         grid-column: auto;
         grid-row: auto;
-        gap: .75rem;
-        align-self: auto;
-        padding: .3rem 0;
-        color: inherit;
-        font-size: inherit;
-        font-weight: inherit;
+        min-height: 0;
+        text-align: left;
         white-space: normal;
     }
 
-    #classes .academic-table td::before {
+    #classes .academic-table tbody tr {
+        padding: .8rem 0;
+    }
+
+    #classes .academic-table tbody td {
+        display: grid !important;
+        grid-template-columns: minmax(8rem, .8fr) minmax(0, 1.2fr);
+        gap: .75rem;
+        padding: .35rem 0;
+        color: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: 1.4;
+    }
+
+    #classes .academic-table tbody td::before {
         content: attr(data-label);
-        color: #66758d;
+        color: #6a7890;
         font-weight: 700;
     }
 }
