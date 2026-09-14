@@ -1,0 +1,139 @@
+#classes .academic-card:has(.academic-table) {
+    overflow-x: auto;
+}
+
+#classes .academic-table {
+    display: block;
+    width: 100%;
+    min-width: 720px;
+}
+
+#classes .academic-table thead,
+#classes .academic-table tbody {
+    display: block;
+    width: 100%;
+}
+
+#classes .academic-table tr {
+    display: grid;
+    grid-template-columns: minmax(7rem, .8fr) minmax(7.5rem, .8fr) minmax(20rem, 2.5fr) minmax(6rem, .55fr);
+    column-gap: 1rem;
+    align-items: center;
+    width: 100%;
+}
+
+#classes .academic-table th,
+#classes .academic-table td {
+    display: block;
+    min-width: 0;
+    padding: .85rem .6rem;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+#classes .academic-table th:nth-child(1),
+#classes .academic-table td:nth-child(1) {
+    grid-column: 1;
+}
+
+#classes .academic-table th:nth-child(2),
+#classes .academic-table td:nth-child(2) {
+    grid-column: 2;
+    white-space: nowrap;
+}
+
+#classes .academic-table th:nth-child(3) {
+    grid-column: 3;
+    font-size: 0;
+}
+
+#classes .academic-table th:nth-child(3)::after {
+    content: "Curriculum / Program";
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .04em;
+}
+
+html[lang^="pl"] #classes .academic-table th:nth-child(3)::after {
+    content: "Program / poziom programu";
+}
+
+#classes .academic-table th:nth-child(4) {
+    display: none;
+}
+
+#classes .academic-table th:nth-child(5),
+#classes .academic-table td:nth-child(5) {
+    grid-column: 4;
+    white-space: nowrap;
+}
+
+#classes .academic-table td:nth-child(3),
+#classes .academic-table td:nth-child(4) {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+#classes .academic-table td:nth-child(4) {
+    align-self: start;
+    padding-bottom: 2.4rem;
+    font-weight: 700;
+    color: #172b4d;
+}
+
+#classes .academic-table td:nth-child(3) {
+    align-self: end;
+    padding-top: 2.45rem;
+    color: #66758d;
+    font-size: .9rem;
+}
+
+#classes .academic-table tbody tr {
+    min-height: 5.5rem;
+    border-bottom: 1px solid #e1e7f0;
+}
+
+#classes .academic-table tbody tr:last-child {
+    border-bottom: 0;
+}
+
+@media (max-width: 760px) {
+    #classes .academic-table {
+        min-width: 0;
+    }
+
+    #classes .academic-table thead {
+        display: none;
+    }
+
+    #classes .academic-table tr {
+        display: block;
+        padding: .8rem 0;
+    }
+
+    #classes .academic-table td,
+    #classes .academic-table td:nth-child(3),
+    #classes .academic-table td:nth-child(4) {
+        display: grid;
+        grid-template-columns: minmax(7rem, .8fr) minmax(0, 1.2fr);
+        gap: .75rem;
+        padding: .3rem 0;
+        color: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        white-space: normal;
+    }
+
+    #classes .academic-table td:nth-child(3),
+    #classes .academic-table td:nth-child(4) {
+        grid-column: auto;
+        grid-row: auto;
+        align-self: auto;
+    }
+
+    #classes .academic-table td::before {
+        content: attr(data-label);
+        color: #66758d;
+        font-weight: 700;
+    }
+}
