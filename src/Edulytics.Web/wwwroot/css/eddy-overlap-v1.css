@@ -15,11 +15,11 @@
     filter: drop-shadow(0 8px 10px rgba(0, 0, 0, .2));
 }
 
-.gw-universal[dir="rtl"] .gw-eddy {
+html[dir="rtl"] .gw-universal .gw-eddy {
     padding: 16px 132px 16px 20px;
 }
 
-.gw-universal[dir="rtl"] .gw-eddy img {
+html[dir="rtl"] .gw-universal .gw-eddy img {
     left: auto;
     right: 12px;
 }
@@ -35,7 +35,7 @@
         height: 132px;
     }
 
-    .gw-universal[dir="rtl"] .gw-eddy {
+    html[dir="rtl"] .gw-universal .gw-eddy {
         padding-left: 20px;
         padding-right: 112px;
     }
@@ -54,12 +54,12 @@
         height: 116px;
     }
 
-    .gw-universal[dir="rtl"] .gw-eddy {
+    html[dir="rtl"] .gw-universal .gw-eddy {
         padding-left: 16px;
         padding-right: 96px;
     }
 
-    .gw-universal[dir="rtl"] .gw-eddy img {
+    html[dir="rtl"] .gw-universal .gw-eddy img {
         left: auto;
         right: 8px;
     }
