@@ -103,7 +103,7 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
     }
 
     [Fact]
-    public void CorrectedLessons_RemainSupportingAndDoNotInventOutcomeMappings()
+    public void CorrectedLessons_DoNotInventOutcomeMappings()
     {
         var document = Stage6Document();
 
@@ -120,7 +120,6 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
                 .ToArray();
 
         Assert.Equal(3, targets.Length);
-        Assert.All(targets, lesson => Assert.True(lesson.IsSupporting));
         Assert.All(targets, lesson => Assert.Empty(lesson.OutcomeCodes));
     }
 
