@@ -1,4 +1,6 @@
+using System.Globalization;
 using System.Security.Claims;
+using Edulytics.Services.LessonContent;
 using Edulytics.Services.Practice;
 using Edulytics.Web.GameRouting;
 using Edulytics.Web.Resilience;
@@ -15,6 +17,7 @@ namespace Edulytics.Web.Controllers;
 public sealed class StudentPracticeController(
     IStudentPrivatePracticeService privatePractice,
     IPracticeService practice,
+    ILessonContentService lessonContent,
     IStringLocalizer<StudentResource> text) : Controller
 {
     private const string LessonPracticePilotCode = "PED:CAMBRIDGE-INTL-MATH:S1:L10";
@@ -69,7 +72,15 @@ public sealed class StudentPracticeController(
         if (lesson is null)
             return NotFound();
 
-        var route = GameLessonRouteResolver.Resolve(lesson.LessonCode, lesson.UnitTitle, lesson.LessonTitle);
+        var detailResult = await lessonContent.GetPublishedForStudentAsync(
+            actorId,
+            lessonId,
+            CultureInfo.CurrentUICulture.Name,
+            cancellationToken);
+        if (detailResult.Value is null)
+            return detailResult.Error == LessonContentErrorCode.AccessDenied ? Forbid() : NotFound();
+
+        var route = ResolveLessonRoute(lesson, detailResult.Value);
         if (!route.IsPlayable || route.RendererKey is null)
             return NotFound();
 
@@ -92,7 +103,16 @@ public sealed class StudentPracticeController(
         if (lesson is null)
             return NotFound();
 
-        var route = GameLessonRouteResolver.Resolve(lesson.LessonCode, lesson.UnitTitle, lesson.LessonTitle);
+        var detailResult = await lessonContent.GetPublishedForStudentAsync(
+            actorId,
+            lessonId,
+            CultureInfo.CurrentUICulture.Name,
+            cancellationToken);
+        if (detailResult.Value is null)
+            return detailResult.Error == LessonContentErrorCode.AccessDenied ? Forbid() : NotFound();
+
+        var detail = detailResult.Value;
+        var route = ResolveLessonRoute(lesson, detail);
         if (!route.IsPlayable || route.RendererKey is null)
             return NotFound();
 
@@ -100,7 +120,7 @@ public sealed class StudentPracticeController(
         return View(new StudentGameLaunchViewModel(
             lesson.LessonId,
             lesson.LessonCode,
-            lesson.LessonTitle,
+            detail.Title,
             lesson.UnitTitle,
             route));
     }
@@ -202,6 +222,39 @@ public sealed class StudentPracticeController(
             mode = NormalizeMode(mode)
         });
     }
+
+    private static GameLessonRoute ResolveLessonRoute(
+        StudentPrivatePracticeLessonOption lesson,
+        StudentLessonDetail detail)
+    {
+        if (!detail.IsSupporting)
+            return GameLessonRouteResolver.Resolve(
+                lesson.LessonCode,
+                lesson.UnitTitle,
+                detail.Title);
+
+        return GameLessonRouteResolver.Resolve(
+            lesson.LessonCode,
+            lesson.UnitTitle,
+            detail.Title,
+            BuildLessonPracticeContext(detail),
+            requireLessonGrounding: true);
+    }
+
+    private static string BuildLessonPracticeContext(StudentLessonDetail lesson) =>
+        string.Join(
+            ". ",
+            new[]
+            {
+                lesson.Title,
+                lesson.TopicName,
+                lesson.Explanation,
+                lesson.KeyConceptsAndRules,
+                lesson.WorkedExamples,
+                lesson.StepByStepSolutions,
+                lesson.CommonMistakes,
+                lesson.QuickSummary
+            }.Where(x => !string.IsNullOrWhiteSpace(x)));
 
     private static string? NormalizeMode(string? mode) =>
         string.Equals(mode, LessonGameMode, StringComparison.OrdinalIgnoreCase)
