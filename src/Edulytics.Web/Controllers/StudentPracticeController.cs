@@ -122,11 +122,7 @@ public sealed class StudentPracticeController(
             lesson.LessonCode,
             detail.Title,
             lesson.UnitTitle,
-            route)
-        {
-            GradeName = detail.GradeName,
-            IsSupporting = detail.IsSupporting
-        });
+            route));
     }
 
     [HttpPost("lesson-pilot/start"), ValidateAntiForgeryToken]
