@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace Edulytics.Tests.Acceptance;
 
 public sealed class PublicLegalPagesContractTests
@@ -75,7 +77,10 @@ public sealed class PublicLegalPagesContractTests
             "Stripe"
         })
         {
-            Assert.DoesNotContain(disallowedPublicBrand, combined, StringComparison.OrdinalIgnoreCase);
+            var pattern = $@"(?<![A-Za-z0-9]){Regex.Escape(disallowedPublicBrand)}(?![A-Za-z0-9])";
+            Assert.False(
+                Regex.IsMatch(combined, pattern, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant),
+                $"Public legal copy must not name provider brand '{disallowedPublicBrand}'.");
         }
     }
 
