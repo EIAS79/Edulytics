@@ -36,9 +36,14 @@
     <link rel="stylesheet"
           href="~/css/site.css"
           asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/public-site-v44.css" />
     <link rel="stylesheet" href="~/css/public-home-mascot-v45.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/public-trust-v1.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/public-contact-system-v28.css" asp-append-version="true" />
+    @if (isMarketingContentPage)
+    {
+        <link rel="stylesheet" href="~/css/public-content-pages-v27.css" asp-append-version="true" />
+    }
+    <link rel="stylesheet" href="~/css/public-arabic-rtl-v29.css" asp-append-version="true" />
     <style>
         .ed-home .student-avatar .head,
         .ed-home .student-avatar .body,
@@ -76,14 +81,18 @@
     <main class="ed-public-main">
         @RenderBody()
     </main>
-    <script src="~/js/public-site-v44.js"></script>
     <script src="~/js/public-home-philosophy-v34.js" asp-append-version="true"></script>
     @if (isMarketingContentPage)
     {
-        <script src="~/js/public-content-v33.js"></script>
+        <script src="~/js/public-content-pages-v27-en.js" asp-append-version="true"></script>
+        <script src="~/js/public-content-pages-v27-pl.js" asp-append-version="true"></script>
+        <script src="~/js/public-content-pages-v27-ar.js" asp-append-version="true"></script>
+        <script src="~/js/public-content-pages-v27.js" asp-append-version="true"></script>
     }
+    <script src="~/js/public-contact-system-v28.js" asp-append-version="true"></script>
     <script src="~/js/public-site-global-ui-v30.js" asp-append-version="true"></script>
     <script src="~/js/public-language-cookie-v31.js" asp-append-version="true"></script>
+    <script src="~/js/public-home-arabic-v46.js" asp-append-version="true"></script>
     <script src="~/js/public-home-visual-contract-v32.js" asp-append-version="true"></script>
     <script src="~/js/public-trust-v1.js" asp-append-version="true"></script>
 </body>
