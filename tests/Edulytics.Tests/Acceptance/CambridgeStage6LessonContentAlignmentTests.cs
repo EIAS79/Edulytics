@@ -7,14 +7,7 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
     [Fact]
     public void EmbeddedStage6Pack_AppliesExactSkillCorrections()
     {
-        var document =
-            MathematicsCanonicalLessonContentSeeder
-                .LoadEmbeddedDocuments()
-                .Single(
-                    x => string.Equals(
-                        x.PackCode,
-                        CambridgePrimaryStage6LessonContentCorrections.PackCode,
-                        StringComparison.Ordinal));
+        var document = Stage6Document();
 
         var twoUnknowns = document.Lessons.Single(
             x => string.Equals(
@@ -56,14 +49,7 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
     [Fact]
     public void CorrectionVersion_IsRestrictedToThreeExactLessonCodes()
     {
-        var document =
-            MathematicsCanonicalLessonContentSeeder
-                .LoadEmbeddedDocuments()
-                .Single(
-                    x => string.Equals(
-                        x.PackCode,
-                        CambridgePrimaryStage6LessonContentCorrections.PackCode,
-                        StringComparison.Ordinal));
+        var document = Stage6Document();
 
         var targetCodes = new HashSet<string>(StringComparer.Ordinal)
         {
@@ -119,14 +105,7 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
     [Fact]
     public void CorrectedLessons_RemainSupportingAndDoNotInventOutcomeMappings()
     {
-        var document =
-            MathematicsCanonicalLessonContentSeeder
-                .LoadEmbeddedDocuments()
-                .Single(
-                    x => string.Equals(
-                        x.PackCode,
-                        CambridgePrimaryStage6LessonContentCorrections.PackCode,
-                        StringComparison.Ordinal));
+        var document = Stage6Document();
 
         var targetCodes = new HashSet<string>(StringComparer.Ordinal)
         {
@@ -144,6 +123,20 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
         Assert.All(targets, lesson => Assert.True(lesson.IsSupporting));
         Assert.All(targets, lesson => Assert.Empty(lesson.OutcomeCodes));
     }
+
+    private static Edulytics.Core.Curriculum.CanonicalLessonContentPackDocument Stage6Document() =>
+        MathematicsCanonicalLessonContentSeeder
+            .LoadEmbeddedDocuments()
+            .Single(
+                x =>
+                    string.Equals(
+                        x.PackCode,
+                        CambridgePrimaryStage6LessonContentCorrections.PackCode,
+                        StringComparison.Ordinal) &&
+                    string.Equals(
+                        x.ContentVersion,
+                        CambridgePrimaryStage6LessonContentCorrections.BaseContentVersion,
+                        StringComparison.Ordinal));
 
     private static Edulytics.Core.Curriculum.CanonicalLessonContentPackTranslation English(
         Edulytics.Core.Curriculum.CanonicalLessonContentPackLesson lesson) =>
