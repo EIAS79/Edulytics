@@ -103,7 +103,11 @@ public sealed class StudentPortalController : Controller
         if (lesson.Value is null)
             return lesson.Error == LessonContentErrorCode.AccessDenied ? Forbid() : NotFound();
 
-        var availability = await FindLessonPracticeAvailabilityAsync(actorId, id, cancellationToken);
+        var availability = await FindLessonPracticeAvailabilityAsync(
+            actorId,
+            id,
+            lesson.Value,
+            cancellationToken);
         ViewData["GameAdoptionId"] = availability.GameAdoptionId;
         ViewData["LessonPracticePilotAdoptionId"] = availability.PilotAdoptionId;
         return View(nameof(Lesson), lesson.Value);
@@ -197,13 +201,19 @@ public sealed class StudentPortalController : Controller
         FindLessonPracticeAvailabilityAsync(
             Guid actorId,
             Guid lessonId,
+            StudentLessonDetail lessonDetail,
             CancellationToken cancellationToken)
     {
         Guid? gameAdoptionId = null;
         Guid? pilotAdoptionId = null;
 
         var initial = await _privatePractice.GetWorkspaceAsync(actorId, null, cancellationToken);
-        InspectPracticeWorkspace(initial, lessonId, ref gameAdoptionId, ref pilotAdoptionId);
+        InspectPracticeWorkspace(
+            initial,
+            lessonId,
+            lessonDetail,
+            ref gameAdoptionId,
+            ref pilotAdoptionId);
 
         foreach (var curriculum in initial.Curricula)
         {
@@ -216,7 +226,12 @@ public sealed class StudentPortalController : Controller
                 actorId,
                 curriculum.CurriculumAdoptionId,
                 cancellationToken);
-            InspectPracticeWorkspace(candidate, lessonId, ref gameAdoptionId, ref pilotAdoptionId);
+            InspectPracticeWorkspace(
+                candidate,
+                lessonId,
+                lessonDetail,
+                ref gameAdoptionId,
+                ref pilotAdoptionId);
         }
 
         return (gameAdoptionId, pilotAdoptionId);
@@ -225,6 +240,7 @@ public sealed class StudentPortalController : Controller
     private static void InspectPracticeWorkspace(
         StudentPrivatePracticeWorkspace workspace,
         Guid lessonId,
+        StudentLessonDetail lessonDetail,
         ref Guid? gameAdoptionId,
         ref Guid? pilotAdoptionId)
     {
@@ -232,11 +248,20 @@ public sealed class StudentPortalController : Controller
         if (lesson is null || !workspace.SelectedCurriculumAdoptionId.HasValue)
             return;
 
-        if (!gameAdoptionId.HasValue &&
-            GameLessonRouteResolver.Resolve(lesson.LessonCode, lesson.UnitTitle, lesson.LessonTitle).IsPlayable)
-        {
+        var route = lessonDetail.IsSupporting
+            ? GameLessonRouteResolver.Resolve(
+                lesson.LessonCode,
+                lesson.UnitTitle,
+                lessonDetail.Title,
+                BuildLessonPracticeContext(lessonDetail),
+                requireLessonGrounding: true)
+            : GameLessonRouteResolver.Resolve(
+                lesson.LessonCode,
+                lesson.UnitTitle,
+                lessonDetail.Title);
+
+        if (!gameAdoptionId.HasValue && route.IsPlayable && route.RendererKey is not null)
             gameAdoptionId = workspace.SelectedCurriculumAdoptionId;
-        }
 
         if (!pilotAdoptionId.HasValue &&
             string.Equals(lesson.LessonCode, LessonPracticePilotCode, StringComparison.Ordinal))
@@ -244,6 +269,21 @@ public sealed class StudentPortalController : Controller
             pilotAdoptionId = workspace.SelectedCurriculumAdoptionId;
         }
     }
+
+    private static string BuildLessonPracticeContext(StudentLessonDetail lesson) =>
+        string.Join(
+            ". ",
+            new[]
+            {
+                lesson.Title,
+                lesson.TopicName,
+                lesson.Explanation,
+                lesson.KeyConceptsAndRules,
+                lesson.WorkedExamples,
+                lesson.StepByStepSolutions,
+                lesson.CommonMistakes,
+                lesson.QuickSummary
+            }.Where(x => !string.IsNullOrWhiteSpace(x)));
 
     private async Task<(StudentPortalWorkspace? Workspace, IActionResult? Result)> WorkspaceAsync(
         CancellationToken cancellationToken)
