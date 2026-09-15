@@ -94,12 +94,58 @@ public static class GameLessonRouteResolver
         string lessonContext)
     {
         var framework = FrameworkFromLessonCode(lessonCode);
+        var title = Normalize(lessonTitle);
         var semantic = Normalize(string.Join(
             " ",
             unitTitle,
             lessonTitle,
             lessonContext));
 
+        // Exact lesson skills must win before any broad topic classification.
+        // These routes are deliberately title/skill specific: incidental words
+        // such as "addition", "ratio" or "fraction" in a lesson body are not
+        // sufficient to choose a question mechanic.
+        if (ContainsAny(title, "solve problems with 2 unknowns", "solve problems with two unknowns"))
+        {
+            return LessonSkillRoute(
+                framework,
+                "REASONING_MODELING",
+                "TWO_UNKNOWNS");
+        }
+
+        if (title.Contains("reading scales", StringComparison.Ordinal) &&
+            ContainsAny(semantic, "interval", "intervals", "scale", "scales"))
+        {
+            return LessonSkillRoute(
+                framework,
+                "MEASUREMENT",
+                "SCALE_READING");
+        }
+
+        if (title.Contains("compare fractions", StringComparison.Ordinal) &&
+            ContainsAny(semantic, "different denominators", "unlike denominators"))
+        {
+            return LessonSkillRoute(
+                framework,
+                "FRACTIONS",
+                "FRACTION_COMPARE_UNLIKE");
+        }
+
+        // Existing lesson-grounded relationship models remain available, but
+        // only when the lesson title itself expresses the intended relationship.
+        // A mention in worked examples or checking guidance cannot promote an
+        // unrelated lesson into one of these broad mechanics.
+        var titleHasRatio = ContainsAny(
+            title,
+            "ratio relationship",
+            "ratio relationships",
+            "ratio and proportion");
+        var titleHasAdditiveRelationships = ContainsAny(
+            title,
+            "additive structure",
+            "additive structures",
+            "additive relationship",
+            "additive relationships");
         var hasRatio = ContainsAny(
             semantic,
             "ratio relationship",
@@ -128,7 +174,7 @@ public static class GameLessonRouteResolver
             "verify",
             "check");
 
-        if (hasRatio && hasAdditiveRelationships && hasRepresentation && hasChecking)
+        if (titleHasRatio && hasRatio && hasAdditiveRelationships && hasRepresentation && hasChecking)
         {
             return new GameLessonRoute(
                 framework,
@@ -140,7 +186,7 @@ public static class GameLessonRouteResolver
                 "lesson-content-grounding");
         }
 
-        if (hasRatio && hasRepresentation)
+        if (titleHasRatio && hasRatio && hasRepresentation)
         {
             return new GameLessonRoute(
                 framework,
@@ -152,7 +198,7 @@ public static class GameLessonRouteResolver
                 "lesson-content-grounding");
         }
 
-        if (hasAdditiveRelationships && hasRepresentation)
+        if (titleHasAdditiveRelationships && hasAdditiveRelationships && hasRepresentation)
         {
             return new GameLessonRoute(
                 framework,
@@ -166,6 +212,19 @@ public static class GameLessonRouteResolver
 
         return null;
     }
+
+    private static GameLessonRoute LessonSkillRoute(
+        string framework,
+        string workspace,
+        string mechanic) =>
+        new(
+            framework,
+            workspace,
+            mechanic,
+            LessonGroundedRendererKey,
+            LocaleForFramework(framework),
+            true,
+            "exact-lesson-skill-v2");
 
     private static bool IsUaeGeometryAndData(string lessonCode, string unitTitle) =>
         lessonCode.Contains(":UAE-MOE-MATH:", StringComparison.OrdinalIgnoreCase) &&

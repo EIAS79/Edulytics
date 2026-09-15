@@ -5,6 +5,10 @@
     var isCountTouch = string.Equals(renderer, "count-touch", StringComparison.Ordinal);
     var isUniversalWorkspace = string.Equals(renderer, Edulytics.Web.GameRouting.GameLessonRouter.UniversalRendererKey, StringComparison.Ordinal);
     var isLessonGrounded = string.Equals(renderer, Edulytics.Web.GameRouting.GameLessonRouteResolver.LessonGroundedRendererKey, StringComparison.Ordinal);
+    var isExactLessonGrounded = isLessonGrounded &&
+        (string.Equals(Model.Route.Mechanic, "TWO_UNKNOWNS", StringComparison.Ordinal) ||
+         string.Equals(Model.Route.Mechanic, "SCALE_READING", StringComparison.Ordinal) ||
+         string.Equals(Model.Route.Mechanic, "FRACTION_COMPARE_UNLIKE", StringComparison.Ordinal));
     var usesWorkspaceStyles = isUniversalWorkspace || isLessonGrounded;
     var isSolidGeometry = isUniversalWorkspace &&
         (string.Equals(Model.Route.Mechanic, "VOLUME_BUILD", StringComparison.Ordinal) ||
@@ -108,6 +112,10 @@
     else if (renderer == "fraction-forge")
     {
         <script src="~/js/fraction-forge-preview.js" asp-append-version="true"></script>
+    }
+    else if (isExactLessonGrounded)
+    {
+        <script src="~/js/lesson-grounded-practice-v2.js" asp-append-version="true"></script>
     }
     else if (isLessonGrounded)
     {
