@@ -203,7 +203,10 @@
     ['/company/about', 'عن Edulytics'],
     ['/contact', 'تواصل معنا'],
     ['/help', 'مركز المساعدة'],
-    ['/legal/content-sources', 'مصادر المحتوى والتراخيص']
+    ['/legal/privacy', 'الخصوصية'],
+    ['/legal/terms', 'الشروط'],
+    ['/legal/content-sources', 'مصادر المحتوى والتراخيص'],
+    ['/legal/data-processing-agreement', 'اتفاقية معالجة البيانات']
   ]);
 
   footer.querySelectorAll('a').forEach(anchor => {
@@ -212,6 +215,6 @@
     if (translated) anchor.textContent = translated;
   });
 
-  const bottom = footer.querySelectorAll('.ed-home-footer-bottom > span');
-  if (bottom.length > 1) bottom[1].textContent = 'الخصوصية · الشروط · تراخيص المحتوى';
+  const legalNav = footer.querySelector('.ed-home-footer-legal');
+  if (legalNav) legalNav.setAttribute('aria-label', 'معلومات قانونية');
 })();
