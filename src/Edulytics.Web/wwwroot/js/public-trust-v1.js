@@ -33,45 +33,45 @@
         en: {
             eyebrow: "QUALITY & TECHNICAL ASSURANCE",
             title: "Tested for quality, security & reliability.",
-            body: "Edulytics is validated through automated regression testing, security analysis, PostgreSQL verification, container scanning, recovery checks and production-readiness review.",
+            body: "Edulytics is validated through automated testing, security checks, data-integrity validation, recovery testing and production-readiness reviews.",
             assurance: "Technical assurance by OUR-CS Software",
             imageAlt: "Eddy presenting the Edulytics quality and testing checks",
             cards: [
-                ["1,200+", "Automated tests passed", "Regression coverage across the current platform"],
-                ["CodeQL", "Security analysis", "HIGH / CRITICAL findings are gated in CI"],
-                ["PostgreSQL", "Database validation", "Database behaviour and integration checks"],
-                ["Trivy", "Container security", "Production container image scanning"],
-                ["Verified", "Backup & recovery", "Restore procedure tested and documented"],
+                ["1,200+", "Automated tests", "Regression coverage across the current platform"],
+                ["Security", "Automated security checks", "Security findings are gated before release"],
+                ["Reliability", "Data integrity validation", "Data behaviour and integration checks"],
+                ["Protected", "Infrastructure security", "Continuous checks for known vulnerabilities"],
+                ["Resilience", "Backup & recovery verified", "Restore procedure tested and documented"],
                 ["Ready", "Production readiness", "Load, reliability and operational checks"]
             ]
         },
         pl: {
             eyebrow: "JAKOŚĆ I WERYFIKACJA TECHNICZNA",
             title: "Przetestowane pod kątem jakości, bezpieczeństwa i niezawodności.",
-            body: "Edulytics jest weryfikowany poprzez automatyczne testy regresyjne, analizę bezpieczeństwa, walidację PostgreSQL, skanowanie kontenerów, testy odtwarzania oraz przeglądy gotowości produkcyjnej.",
+            body: "Edulytics jest weryfikowany poprzez automatyczne testy, kontrole bezpieczeństwa, walidację integralności danych, testy odtwarzania oraz przeglądy gotowości produkcyjnej.",
             assurance: "Weryfikacja techniczna przez OUR-CS Software",
             imageAlt: "Eddy prezentujący kontrole jakości i testów Edulytics",
             cards: [
-                ["1 200+", "Zaliczone testy automatyczne", "Bieżący zestaw regresyjny platformy"],
-                ["CodeQL", "Analiza bezpieczeństwa", "Wyniki HIGH / CRITICAL są blokowane w CI"],
-                ["PostgreSQL", "Walidacja bazy danych", "Kontrole zachowania bazy i integracji"],
-                ["Trivy", "Bezpieczeństwo kontenera", "Skanowanie produkcyjnego obrazu kontenera"],
-                ["Zweryfikowano", "Kopie zapasowe i odtwarzanie", "Procedura odtwarzania została przetestowana i udokumentowana"],
+                ["1 200+", "Testy automatyczne", "Bieżący zestaw regresyjny platformy"],
+                ["Bezpieczeństwo", "Automatyczne kontrole bezpieczeństwa", "Problemy bezpieczeństwa są blokowane przed wydaniem"],
+                ["Niezawodność", "Walidacja integralności danych", "Kontrole zachowania danych i integracji"],
+                ["Ochrona", "Bezpieczeństwo infrastruktury", "Ciągłe kontrole znanych podatności"],
+                ["Odporność", "Zweryfikowane kopie zapasowe i odtwarzanie", "Procedura odtwarzania została przetestowana i udokumentowana"],
                 ["Gotowość", "Gotowość produkcyjna", "Testy obciążenia, niezawodności i operacyjne"]
             ]
         },
         ar: {
             eyebrow: "الجودة والتحقق التقني",
             title: "مختبَر للجودة والأمان والموثوقية.",
-            body: "يخضع Edulytics للتحقق من خلال اختبارات الانحدار الآلية، وتحليل الأمان، والتحقق من PostgreSQL، وفحص الحاويات، واختبارات الاستعادة، ومراجعات الجاهزية للإنتاج.",
+            body: "يخضع Edulytics للتحقق من خلال الاختبارات الآلية، وفحوص الأمان، والتحقق من سلامة البيانات، واختبارات الاستعادة، ومراجعات الجاهزية للإنتاج.",
             assurance: "التحقق التقني بواسطة OUR-CS Software",
             imageAlt: "إيدي يعرض فحوص الجودة والاختبارات في Edulytics",
             cards: [
-                ["1,200+", "اختبار آلي ناجح", "تغطية انحدارية للمنصة الحالية"],
-                ["CodeQL", "تحليل الأمان", "يتم منع نتائج HIGH / CRITICAL عبر بوابات CI"],
-                ["PostgreSQL", "التحقق من قاعدة البيانات", "فحوص سلوك قاعدة البيانات والتكامل"],
-                ["Trivy", "أمان الحاويات", "فحص صورة حاوية الإنتاج"],
-                ["تم التحقق", "النسخ الاحتياطي والاستعادة", "تم اختبار إجراء الاستعادة وتوثيقه"],
+                ["1,200+", "اختبارات آلية", "تغطية انحدارية للمنصة الحالية"],
+                ["الأمان", "فحوص أمان آلية", "يتم منع مشكلات الأمان قبل الإصدار"],
+                ["الموثوقية", "التحقق من سلامة البيانات", "فحوص سلوك البيانات والتكامل"],
+                ["الحماية", "أمان البنية التشغيلية", "فحوص مستمرة للثغرات المعروفة"],
+                ["المرونة", "تم التحقق من النسخ الاحتياطي والاستعادة", "تم اختبار إجراء الاستعادة وتوثيقه"],
                 ["جاهز", "الجاهزية للإنتاج", "فحوص الحمل والموثوقية والاستقرار التشغيلي"]
             ]
         }
@@ -133,7 +133,7 @@
     const grid = document.createElement("div");
     grid.className = "ed-quality-card-grid";
 
-    const icons = ["✓", "◇", "DB", "⬡", "↻", "●"];
+    const icons = ["✓", "◇", "◎", "⬡", "↻", "●"];
     copy.cards.forEach((card, index) => {
         const item = document.createElement("article");
         item.className = `ed-quality-card ed-quality-card-${index + 1}`;

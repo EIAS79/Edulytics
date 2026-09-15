@@ -3,7 +3,7 @@ namespace Edulytics.Tests.Acceptance;
 public sealed class PublicQualityAssuranceSectionContractTests
 {
     [Fact]
-    public void PublicQualitySection_UsesApprovedEddyAssetAndVerifiedQualitySignals()
+    public void PublicQualitySection_UsesApprovedEddyAssetAndOutcomeFocusedQualitySignals()
     {
         var root = FindRoot();
         var script = File.ReadAllText(Path.Combine(
@@ -22,15 +22,23 @@ public sealed class PublicQualityAssuranceSectionContractTests
         Assert.True(File.Exists(eddy));
         Assert.Contains("/images/public/eddy-certificate.png", script, StringComparison.Ordinal);
         Assert.Contains("1,200+", script, StringComparison.Ordinal);
-        Assert.Contains("CodeQL", script, StringComparison.Ordinal);
-        Assert.Contains("PostgreSQL", script, StringComparison.Ordinal);
-        Assert.Contains("Trivy", script, StringComparison.Ordinal);
-        Assert.Contains("Backup & recovery", script, StringComparison.Ordinal);
+        Assert.Contains("Automated security checks", script, StringComparison.Ordinal);
+        Assert.Contains("Data integrity validation", script, StringComparison.Ordinal);
+        Assert.Contains("Infrastructure security", script, StringComparison.Ordinal);
+        Assert.Contains("Backup & recovery verified", script, StringComparison.Ordinal);
         Assert.Contains("Production readiness", script, StringComparison.Ordinal);
         Assert.Contains("الجودة والتحقق التقني", script, StringComparison.Ordinal);
         Assert.Contains("JAKOŚĆ I WERYFIKACJA TECHNICZNA", script, StringComparison.Ordinal);
         Assert.Contains("document.querySelector(\".ed-home-footer\")", script, StringComparison.Ordinal);
         Assert.Contains("beforebegin", script, StringComparison.Ordinal);
+
+        foreach (var implementationName in new[] { "CodeQL", "PostgreSQL", "Trivy" })
+        {
+            Assert.DoesNotContain(
+                implementationName,
+                script,
+                StringComparison.OrdinalIgnoreCase);
+        }
 
         Assert.Contains(".ed-quality-section", css, StringComparison.Ordinal);
         Assert.Contains(".ed-quality-card-grid", css, StringComparison.Ordinal);
