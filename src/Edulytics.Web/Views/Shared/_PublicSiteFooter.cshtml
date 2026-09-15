@@ -37,11 +37,16 @@
             <a href="/company/about">@L("About", "O nas")</a>
             <a href="/contact">@L("Contact", "Kontakt")</a>
             <a href="/help">@L("Help center", "Centrum pomocy")</a>
-            <a asp-controller="Home" asp-action="ContentSources">@L("Content sources & licences", "Źródła i licencje")</a>
+            <a href="/legal/content-sources">@L("Content sources & licences", "Źródła i licencje")</a>
         </div>
     </div>
     <div class="ed-home-container ed-home-footer-bottom">
         <span>© @DateTime.UtcNow.Year Edulytics</span>
-        <span>@L("Privacy · Terms · Content licences", "Prywatność · Regulamin · Licencje treści")</span>
+        <nav class="ed-home-footer-legal" aria-label="@L("Legal", "Informacje prawne")">
+            <a href="/legal/privacy">@L("Privacy", "Prywatność")</a>
+            <a href="/legal/terms">@L("Terms", "Regulamin")</a>
+            <a href="/legal/content-sources">@L("Content licences", "Licencje treści")</a>
+            <a href="/legal/data-processing-agreement">@L("Data Processing Agreement", "Powierzenie danych")</a>
+        </nav>
     </div>
 </footer>

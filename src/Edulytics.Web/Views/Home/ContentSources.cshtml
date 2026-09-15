@@ -3,45 +3,72 @@
 @{
     Layout = "_PublicLayout";
     var polish = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "pl";
-    ViewData["Title"] = polish ? "Źródła treści i licencje" : "Content sources and licences";
+    ViewData["Title"] = polish ? "Źródła treści i licencje" : "Content Sources & Licences";
+    string L(string en, string pl) => polish ? pl : en;
 }
 
-<div class="ed-home ed-content-sources-v30">
+<div class="ed-home ed-legal-page ed-content-sources-v30">
     <partial name="_PublicSiteHeader" />
 
-    <main class="container py-5">
-        <h1 data-public-ar="contentSourcesTitle">@ViewData["Title"]</h1>
-        <p data-public-ar="contentSourcesLead">
-            @(polish
-                ? "Ta strona centralnie dokumentuje źródła programów nauczania, wymagane informacje o prawach oraz język treści akademickich. Metadane nie są powtarzane na stronach poszczególnych lekcji."
-                : "This page centrally records curriculum sources, required rights notices, and each curriculum's academic language. This metadata is not repeated on individual lesson pages.")
-        </p>
+    <main class="ed-legal-shell">
+        <header class="ed-legal-hero">
+            <span class="ed-legal-eyebrow">@L("Legal", "Informacje prawne")</span>
+            <h1 data-public-ar="contentSourcesTitle">@ViewData["Title"]</h1>
+            <p data-public-ar="contentSourcesLead">
+                @L("This page explains how Edulytics identifies original, official, third-party and openly licensed educational content, and records the source and reuse basis of curriculum material used in the platform.", "Ta strona wyjaśnia, w jaki sposób Edulytics identyfikuje treści oryginalne, oficjalne, zewnętrzne i objęte otwartymi licencjami oraz dokumentuje źródło i podstawę ponownego wykorzystania materiałów programowych używanych na platformie.")
+            </p>
+        </header>
 
-        @foreach (var pack in Model)
-        {
-            <section class="card my-4">
-                <div class="card-body">
-                    <h2 class="h4">@pack.DisplayName</h2>
-                    <dl>
-                        <dt data-public-ar="academicLanguage">@(polish ? "Język akademicki" : "Academic language")</dt>
-                        <dd><code>@pack.AcademicLanguage</code></dd>
-                        <dt data-public-ar="rightsAttribution">@(polish ? "Prawa / wymagane oznaczenie" : "Rights / required attribution")</dt>
-                        <dd>@pack.RequiredAttribution</dd>
-                        <dt data-public-ar="reuseBasis">@(polish ? "Podstawa ponownego użycia" : "Reuse basis")</dt>
-                        <dd>@pack.EvidenceNote</dd>
-                    </dl>
-                    <ul>
-                        @foreach (var source in pack.Sources)
-                        {
-                            <li>
-                                <a href="@source.Url" rel="external noreferrer">@source.Purpose</a>
-                                — @source.Authority, @source.VersionLabel
-                            </li>
-                        }
-                    </ul>
-                </div>
-            </section>
-        }
+        <article class="ed-legal-document ed-legal-default">
+            <section><h2>@L("1. Edulytics original content", "1. Oryginalne treści Edulytics")</h2><p>@L("Content independently created by OUR-CS Sp. z o.o. for Edulytics may include platform explanations, interface text, instructional examples, original questions, learning activities, software-generated structures and original visual material. Unless otherwise stated, this content is owned by or licensed to OUR-CS Sp. z o.o.", "Treści tworzone niezależnie przez OUR-CS Sp. z o.o. dla Edulytics mogą obejmować objaśnienia platformy, tekst interfejsu, przykłady dydaktyczne, oryginalne pytania, aktywności edukacyjne, struktury generowane przez oprogramowanie i oryginalne materiały wizualne. O ile nie wskazano inaczej, treści te stanowią własność OUR-CS Sp. z o.o. lub są przez nią licencjonowane.")</p></section>
+            <section><h2>@L("2. Official curriculum information", "2. Oficjalne informacje programowe")</h2><p>@L("Edulytics may represent or reference official curriculum structures, learning objectives or educational standards published by ministries, government bodies, examination authorities, curriculum organisations or other official educational institutions. Ownership of source material remains with the relevant rights holder, and Edulytics follows applicable attribution and reuse conditions.", "Edulytics może odwzorowywać lub przywoływać oficjalne struktury programowe, cele nauczania lub standardy edukacyjne publikowane przez ministerstwa, organy publiczne, instytucje egzaminacyjne, organizacje programowe lub inne oficjalne instytucje edukacyjne. Prawa do materiału źródłowego pozostają przy właściwym podmiocie uprawnionym, a Edulytics przestrzega mających zastosowanie warunków oznaczenia i ponownego wykorzystania.")</p></section>
+            <section><h2>@L("3. Openly licensed content", "3. Treści na otwartych licencjach")</h2><p>@L("Some material may be used under licences that permit reuse. Where applicable, Edulytics records the source, rights holder or authority, licence or reuse basis, required attribution and relevant version information.", "Niektóre materiały mogą być wykorzystywane na podstawie licencji zezwalających na ponowne użycie. W stosownych przypadkach Edulytics dokumentuje źródło, podmiot uprawniony lub właściwy organ, licencję lub podstawę ponownego użycia, wymagane oznaczenie oraz odpowiednie informacje o wersji.")</p></section>
+            <section><h2>@L("4. School-provided content", "4. Treści dostarczane przez szkołę")</h2><p>@L("Schools and authorised users may add their own educational content to Edulytics. Such content remains the responsibility of the school or relevant rights holder. The school must ensure that it has the right to upload and use that material.", "Szkoły i upoważnieni użytkownicy mogą dodawać własne treści edukacyjne do Edulytics. Za takie treści odpowiada szkoła lub właściwy podmiot praw. Szkoła musi zapewnić, że posiada prawo do przesłania i korzystania z danego materiału.")</p></section>
+            <section><h2>@L("5. No ownership claim over third-party content", "5. Brak roszczeń do własności treści zewnętrznych")</h2><p>@L("The inclusion of third-party curriculum information or educational material in Edulytics does not mean that OUR-CS Sp. z o.o. claims ownership of that source material. Applicable third-party rights remain with their respective holders.", "Umieszczenie w Edulytics informacji programowych lub materiałów edukacyjnych pochodzących od podmiotów trzecich nie oznacza, że OUR-CS Sp. z o.o. rości sobie prawa własności do tych materiałów źródłowych. Prawa podmiotów trzecich pozostają przy ich właściwych właścicielach.")</p></section>
+            <section><h2>@L("6. Reporting a rights issue", "6. Zgłaszanie problemów dotyczących praw")</h2><p>@L("If you believe content available through Edulytics infringes intellectual-property rights or has been attributed incorrectly, contact us and identify the material, original source, rights claimed and the reason for the request. We will review the report and take appropriate action where necessary.", "Jeżeli uważasz, że treść dostępna w Edulytics narusza prawa własności intelektualnej lub została nieprawidłowo oznaczona, skontaktuj się z nami i wskaż materiał, źródło pierwotne, zgłaszane prawa oraz przyczynę żądania. Zweryfikujemy zgłoszenie i w razie potrzeby podejmiemy odpowiednie działania.")</p><p><a href="/contact/message">info@our-cs.com</a></p></section>
+        </article>
+
+        <article class="ed-legal-document ed-legal-ar" lang="ar" dir="rtl">
+            <section><h2>1. المحتوى الأصلي لـ Edulytics</h2><p>قد يشمل المحتوى الذي تنشئه OUR-CS Sp. z o.o. بشكل مستقل لمنصة Edulytics شروحات المنصة ونصوص الواجهة والأمثلة التعليمية والأسئلة الأصلية والأنشطة التعليمية والهياكل التي ينشئها البرنامج والمواد البصرية الأصلية. وما لم يُذكر خلاف ذلك، يكون هذا المحتوى مملوكًا لـ OUR-CS Sp. z o.o. أو مرخصًا لها.</p></section>
+            <section><h2>2. معلومات المناهج الرسمية</h2><p>قد تعرض Edulytics أو تشير إلى هياكل مناهج رسمية أو أهداف تعلّم أو معايير تعليمية منشورة من جهات حكومية أو امتحانية أو مؤسسات مناهج أو جهات تعليمية رسمية أخرى. وتظل ملكية المواد المصدرية لأصحاب الحقوق المعنيين، وتلتزم Edulytics بشروط الإسناد وإعادة الاستخدام المطبقة.</p></section>
+            <section><h2>3. المحتوى المرخص بإعادة الاستخدام</h2><p>قد تُستخدم بعض المواد بموجب تراخيص تسمح بإعادة الاستخدام. وعند انطباق ذلك، توثق Edulytics المصدر وصاحب الحق أو الجهة المختصة وأساس الترخيص أو إعادة الاستخدام والإسناد المطلوب ومعلومات الإصدار ذات الصلة.</p></section>
+            <section><h2>4. المحتوى المقدم من المدارس</h2><p>يمكن للمدارس والمستخدمين المصرح لهم إضافة محتواهم التعليمي إلى Edulytics. وتظل المدرسة أو صاحب الحق المختص مسؤولًا عن هذا المحتوى، ويجب على المدرسة التأكد من امتلاكها الحق في رفعه واستخدامه.</p></section>
+            <section><h2>5. عدم الادعاء بملكية محتوى الأطراف الأخرى</h2><p>وجود معلومات مناهج أو مواد تعليمية تابعة لجهات أخرى داخل Edulytics لا يعني أن OUR-CS Sp. z o.o. تدعي ملكية هذه المواد. وتظل حقوق الأطراف الأخرى لأصحابها.</p></section>
+            <section><h2>6. الإبلاغ عن مشكلة في الحقوق</h2><p>إذا كنت تعتقد أن محتوى متاحًا عبر Edulytics ينتهك حقوق ملكية فكرية أو نُسب إلى مصدر غير صحيح، فتواصل معنا وحدد المادة والمصدر الأصلي والحقوق محل المطالبة وسبب الطلب. سنراجع البلاغ ونتخذ الإجراء المناسب عند الحاجة.</p><p><a href="/contact/message">info@our-cs.com</a></p></section>
+        </article>
+
+        <section class="ed-legal-source-register">
+            <div class="ed-legal-source-lead">
+                <h2 data-public-ar="contentSourcesTitle">@L("Curriculum source register", "Rejestr źródeł programowych")</h2>
+                <p>@L("The entries below record the academic language, rights notice, reuse basis and source references configured for each supported curriculum pack.", "Poniższe wpisy dokumentują język akademicki, informacje o prawach, podstawę ponownego użycia i źródła skonfigurowane dla każdego obsługiwanego pakietu programowego.")</p>
+            </div>
+
+            @foreach (var pack in Model)
+            {
+                <section class="card my-4">
+                    <div class="card-body">
+                        <h2 class="h4">@pack.DisplayName</h2>
+                        <dl>
+                            <dt data-public-ar="academicLanguage">@L("Academic language", "Język akademicki")</dt>
+                            <dd><code>@pack.AcademicLanguage</code></dd>
+                            <dt data-public-ar="rightsAttribution">@L("Rights / required attribution", "Prawa / wymagane oznaczenie")</dt>
+                            <dd>@pack.RequiredAttribution</dd>
+                            <dt data-public-ar="reuseBasis">@L("Reuse basis", "Podstawa ponownego użycia")</dt>
+                            <dd>@pack.EvidenceNote</dd>
+                        </dl>
+                        <ul>
+                            @foreach (var source in pack.Sources)
+                            {
+                                <li>
+                                    <a href="@source.Url" rel="external noreferrer">@source.Purpose</a>
+                                    — @source.Authority, @source.VersionLabel
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </section>
+            }
+        </section>
     </main>
 
     <partial name="_PublicSiteFooter" />
