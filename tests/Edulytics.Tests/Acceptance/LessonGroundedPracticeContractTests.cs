@@ -85,6 +85,21 @@ public sealed class LessonGroundedPracticeContractTests
     }
 
     [Fact]
+    public void StudentLessonPage_OnlyOffersSupportingPracticeWhenGroundedRouteIsPlayable()
+    {
+        var root = FindRoot();
+        var controller = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Controllers/StudentPortalController.cs"));
+
+        Assert.Contains("StudentLessonDetail lessonDetail", controller, StringComparison.Ordinal);
+        Assert.Contains("lessonDetail.IsSupporting", controller, StringComparison.Ordinal);
+        Assert.Contains("BuildLessonPracticeContext(lessonDetail)", controller, StringComparison.Ordinal);
+        Assert.Contains("requireLessonGrounding: true", controller, StringComparison.Ordinal);
+        Assert.Contains("route.IsPlayable && route.RendererKey is not null", controller, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void GroundedRuntime_ContainsExactlyEightLessonRelationshipRounds_AndNoGenericOperationFallback()
     {
         var root = FindRoot();
