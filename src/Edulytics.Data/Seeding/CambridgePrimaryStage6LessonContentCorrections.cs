@@ -11,7 +11,7 @@ namespace Edulytics.Data.Seeding;
 public static class CambridgePrimaryStage6LessonContentCorrections
 {
     public const string PackCode =
-        "phase29-cambridge-primary-stage6-dfe-ogl-v1";
+        "CAMBRIDGE-INTL-MATH";
 
     public const string BaseContentVersion =
         "phase29-cambridge-primary-stage6-dfe-ogl-v1";
