@@ -4,6 +4,8 @@
     var renderer = Model.Route.RendererKey;
     var isCountTouch = string.Equals(renderer, "count-touch", StringComparison.Ordinal);
     var isUniversalWorkspace = string.Equals(renderer, Edulytics.Web.GameRouting.GameLessonRouter.UniversalRendererKey, StringComparison.Ordinal);
+    var isLessonGrounded = string.Equals(renderer, Edulytics.Web.GameRouting.GameLessonRouteResolver.LessonGroundedRendererKey, StringComparison.Ordinal);
+    var usesWorkspaceStyles = isUniversalWorkspace || isLessonGrounded;
     var isSolidGeometry = isUniversalWorkspace &&
         (string.Equals(Model.Route.Mechanic, "VOLUME_BUILD", StringComparison.Ordinal) ||
          string.Equals(Model.Route.Mechanic, "SURFACE_AREA_BUILD", StringComparison.Ordinal));
@@ -42,7 +44,7 @@
     else
     {
         <link rel="stylesheet" href="~/css/game-workspace-v1.css" asp-append-version="true" />
-        @if (isUniversalWorkspace)
+        @if (usesWorkspaceStyles)
         {
             <link rel="stylesheet" href="~/css/curriculum-workspace-runtime.css" asp-append-version="true" />
             <link rel="stylesheet" href="~/css/eddy-overlap-v1.css" asp-append-version="true" />
@@ -67,6 +69,16 @@
             else if (renderer == "fraction-forge")
             {
                 <div data-fraction-forge-game data-lesson-code="@Model.LessonCode" data-lesson-language="@Model.Route.Locale"></div>
+            }
+            else if (isLessonGrounded)
+            {
+                <div data-lesson-grounded-game
+                     data-lesson-code="@Model.LessonCode"
+                     data-lesson-language="@Model.Route.Locale"
+                     data-lesson-title="@Model.Title"
+                     data-unit-title="@Model.UnitTitle"
+                     data-workspace="@Model.Route.Workspace"
+                     data-mechanic="@Model.Route.Mechanic"></div>
             }
             else if (isUniversalWorkspace)
             {
@@ -96,6 +108,10 @@
     else if (renderer == "fraction-forge")
     {
         <script src="~/js/fraction-forge-preview.js" asp-append-version="true"></script>
+    }
+    else if (isLessonGrounded)
+    {
+        <script src="~/js/lesson-grounded-practice-v1.js" asp-append-version="true"></script>
     }
     else if (isSolidGeometry)
     {
