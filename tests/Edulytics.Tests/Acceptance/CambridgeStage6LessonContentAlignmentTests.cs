@@ -84,7 +84,7 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
                 .Select(x => x.LessonCode)
                 .ToHashSet(StringComparer.Ordinal);
 
-        Assert.Equal(targetCodes, corrected);
+        Assert.True(targetCodes.SetEquals(corrected));
 
         foreach (var lesson in document.Lessons.Where(x => targetCodes.Contains(x.LessonCode)))
         {
