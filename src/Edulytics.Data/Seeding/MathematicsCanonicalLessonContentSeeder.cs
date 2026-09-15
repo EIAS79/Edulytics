@@ -83,6 +83,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                 ?? throw new InvalidOperationException(
                     $"Invalid canonical lesson content resource {name}.");
 
+            CambridgePrimaryStage6LessonContentCorrections
+                .ApplyApprovedCorrections(document);
             CanonicalLessonContentPackContract.Validate(document);
             result.Add(document);
         }
@@ -98,7 +100,11 @@ public sealed class MathematicsCanonicalLessonContentSeeder
             return;
 
         foreach (var document in documents)
+        {
+            CambridgePrimaryStage6LessonContentCorrections
+                .ApplyApprovedCorrections(document);
             CanonicalLessonContentPackContract.Validate(document);
+        }
 
         ValidateDistinctTargets(documents);
 
@@ -186,11 +192,6 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         /*
          * Bulk-load the complete document state before per-lesson validation.
          *
-         * The previous implementation performed several database round-trips
-         * and SaveChangesAsync for every canonical lesson. With the complete
-         * Common Core rollout that meant thousands of Neon round-trips before
-         * ASP.NET could bind its HTTP port.
-         *
          * The validation semantics remain fail-closed:
          * - exact official OutcomeCode equality;
          * - exact pedagogical lesson identity;
@@ -200,8 +201,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
          * - no unexpected translation cultures.
          *
          * PostgreSQL transaction/advisory-lock behaviour remains owned by
-         * SeedDocumentsAsync. This method simply batches persistence per
-         * canonical content-pack document.
+         * SeedDocumentsAsync. This method batches persistence per canonical
+         * content-pack document.
          */
 
         var mappingRows =
@@ -317,6 +318,12 @@ public sealed class MathematicsCanonicalLessonContentSeeder
             var lesson =
                 lessonByCode[sourceLesson.LessonCode];
 
+            var expectedContentVersion =
+                CambridgePrimaryStage6LessonContentCorrections
+                    .GetExpectedContentVersion(
+                        document,
+                        sourceLesson);
+
             var actualOutcomeCodes =
                 outcomesByLessonId.TryGetValue(
                     lesson.Id,
@@ -344,6 +351,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
             var expectedContentId =
                 expectedContentIdByLessonId[lesson.Id];
 
+            var didUpgradeStage6Correction = false;
+
             if (!contentByLessonId.TryGetValue(
                     lesson.Id,
                     out var content))
@@ -357,7 +366,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                         PedagogicalLessonId = lesson.Id,
                         Status = document.Status,
                         ContentVersion =
-                            document.ContentVersion,
+                            expectedContentVersion,
                         CreatedAtUtc = now,
                         UpdatedAtUtc = now,
                         RowVersion = []
@@ -388,20 +397,31 @@ public sealed class MathematicsCanonicalLessonContentSeeder
 
                 if (!string.Equals(
                         content.ContentVersion,
-                        document.ContentVersion,
+                        expectedContentVersion,
                         StringComparison.Ordinal))
                 {
-                    if (!isApprovedCommonCoreReplacement)
+                    var canUpgradeStage6Correction =
+                        CambridgePrimaryStage6LessonContentCorrections
+                            .CanUpgradeExisting(
+                                document,
+                                sourceLesson,
+                                content.ContentVersion);
+
+                    if (!isApprovedCommonCoreReplacement &&
+                        !canUpgradeStage6Correction)
                     {
                         throw new InvalidOperationException(
                             $"Refusing silent canonical content-version replacement for " +
                             $"{sourceLesson.LessonCode}. " +
                             $"Existing={content.ContentVersion}, " +
-                            $"incoming={document.ContentVersion}.");
+                            $"incoming={expectedContentVersion}.");
                     }
 
-                    content.ContentVersion = document.ContentVersion;
+                    content.ContentVersion =
+                        expectedContentVersion;
                     content.UpdatedAtUtc = now;
+                    didUpgradeStage6Correction =
+                        canUpgradeStage6Correction;
                 }
 
                 if ((int)content.Status >
@@ -464,7 +484,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                 }
 
                 _db.CurriculumLessonContentTranslations.RemoveRange(
-                    currentTranslations.Where(x => unexpected.Contains(x.CultureCode)));
+                    currentTranslations.Where(
+                        x => unexpected.Contains(x.CultureCode)));
             }
 
             var existingByCulture =
@@ -479,7 +500,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                         incoming.CultureCode,
                         out var current))
                 {
-                    if (isApprovedCommonCoreReplacement)
+                    if (isApprovedCommonCoreReplacement ||
+                        didUpgradeStage6Correction)
                     {
                         current.Title = incoming.Title;
                         current.Explanation = incoming.Explanation;
