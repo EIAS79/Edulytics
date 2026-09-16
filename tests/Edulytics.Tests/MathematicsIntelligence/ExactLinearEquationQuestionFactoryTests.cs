@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Edulytics.Core.Mathematics.Solving;
 using Edulytics.Services.Mathematics.Generation;
 using Edulytics.Services.Mathematics.Solving;
@@ -25,8 +26,12 @@ public sealed class ExactLinearEquationQuestionFactoryTests
         Assert.Equal("algebra.linear.solve", first.Skill.Value);
         Assert.Equal(MathematicsSolveStatus.Solved, first.SolveResult.Status);
         Assert.True(first.Verification.IsVerified);
-        Assert.Equal(first.Problem, second.Problem);
-        Assert.Equal(first.ExpectedAnswer, second.ExpectedAnswer);
+        Assert.Equal(
+            JsonSerializer.Serialize(first.Problem),
+            JsonSerializer.Serialize(second.Problem));
+        Assert.Equal(
+            JsonSerializer.Serialize(first.ExpectedAnswer),
+            JsonSerializer.Serialize(second.ExpectedAnswer));
         Assert.Equal(
             first.Parameters.OrderBy(x => x.Key).ToArray(),
             second.Parameters.OrderBy(x => x.Key).ToArray());
