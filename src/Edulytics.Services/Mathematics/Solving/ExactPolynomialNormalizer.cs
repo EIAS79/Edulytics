@@ -120,7 +120,7 @@ internal sealed class ExactPolynomial
                     throw new PolynomialDegreeLimitException(maxDegree);
                 }
 
-                result.TryGetValue(degree, out var existing);
+                var existing = result.TryGetValue(degree, out var current) ? current : Zero;
                 result[degree] = existing + left.Value * right.Value;
             }
         }
