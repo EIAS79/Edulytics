@@ -1,0 +1,57 @@
+name: Mathematics Intelligence Foundation
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'tools/math_intelligence/**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
+      - '.github/workflows/math-intelligence-foundation.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'tools/math_intelligence/**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
+      - '.github/workflows/math-intelligence-foundation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  catalogue-skill-audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Run catalogue and SkillContract baseline audit
+        run: |
+          set -euo pipefail
+          python3 tools/math_intelligence/catalogue_skill_baseline.py --strict --write-report
+      - name: Upload baseline audit
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: math-intelligence-catalogue-baseline-${{ github.sha }}
+          path: artifacts/math-intelligence/catalogue-skill-baseline.json
+          retention-days: 14
+
+  math-foundation-tests:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-dotnet@v5.2.0
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restore
+        run: dotnet restore Edulytics.sln
+      - name: Run Mathematics Intelligence foundation tests
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
+            --configuration Release \
+            --no-restore \
+            --filter "FullyQualifiedName~MathematicsIntelligence"
