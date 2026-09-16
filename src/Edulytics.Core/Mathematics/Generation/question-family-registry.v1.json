@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "registryVersion": "math-question-families-v1",
+  "status": "Shadow",
+  "families": [
+    {
+      "id": "algebra.linear.ax_plus_b_equals_c",
+      "version": 1,
+      "skillId": "algebra.linear.solve",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "algebra.linear.solve.exact_rational",
+        "algebra.linear.verify.substitution"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "exact-substitution-original-equation",
+      "representations": ["symbolic"],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    }
+  ]
+}
