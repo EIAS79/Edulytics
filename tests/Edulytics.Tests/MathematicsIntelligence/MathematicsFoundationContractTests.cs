@@ -128,6 +128,51 @@ public sealed class MathematicsFoundationContractTests
     }
 
     [Fact]
+    public void GenerationReadinessPolicy_AllowsVerifiedOnlyAfterAllGatesPass()
+    {
+        var result = LessonGenerationReadinessPolicy.Evaluate(new LessonGenerationReadinessInput(
+            LessonSkillResolutionStatus.ExistingVerifiedMapping,
+            LessonContentSemanticStatus.PassTargeted,
+            HasApprovedLessonSkillProfile: true,
+            HasQuestionFamily: true,
+            HasVerifiedSolverCapability: true,
+            HasContextualGenerationCapability: true));
+
+        Assert.True(result.IsGenerationReady);
+        Assert.Equal(MathematicsGenerationReadiness.ReadyVerified, result.Readiness);
+    }
+
+    [Fact]
+    public void GenerationReadinessPolicy_DoesNotPromoteHighConfidenceCandidate()
+    {
+        var result = LessonGenerationReadinessPolicy.Evaluate(new LessonGenerationReadinessInput(
+            LessonSkillResolutionStatus.HighConfidenceCandidate,
+            LessonContentSemanticStatus.PassTargeted,
+            HasApprovedLessonSkillProfile: false,
+            HasQuestionFamily: true,
+            HasVerifiedSolverCapability: true,
+            HasContextualGenerationCapability: true));
+
+        Assert.False(result.IsGenerationReady);
+        Assert.Equal(MathematicsGenerationReadiness.RequiresAcademicReview, result.Readiness);
+    }
+
+    [Fact]
+    public void GenerationReadinessPolicy_ContentWeakOverridesCapability()
+    {
+        var result = LessonGenerationReadinessPolicy.Evaluate(new LessonGenerationReadinessInput(
+            LessonSkillResolutionStatus.ExistingVerifiedMapping,
+            LessonContentSemanticStatus.ContentWeak,
+            HasApprovedLessonSkillProfile: true,
+            HasQuestionFamily: true,
+            HasVerifiedSolverCapability: true,
+            HasContextualGenerationCapability: true));
+
+        Assert.False(result.IsGenerationReady);
+        Assert.Equal(MathematicsGenerationReadiness.ContentWeak, result.Readiness);
+    }
+
+    [Fact]
     public void SkillContract_RejectsSelfPrerequisite()
     {
         var skill = new SkillId("algebra.linear.solve");
