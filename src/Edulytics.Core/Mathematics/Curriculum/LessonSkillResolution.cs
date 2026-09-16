@@ -85,6 +85,15 @@ public sealed record LessonSkillCandidate
     public int Score { get; }
     public IReadOnlyList<LessonSkillEvidence> Evidence { get; }
     public IReadOnlyList<string> Conflicts { get; }
+
+    private static IReadOnlyList<string> CleanStrings(IReadOnlyList<string>? values) =>
+        values is null
+            ? []
+            : values
+                .Where(x => !string.IsNullOrWhiteSpace(x))
+                .Select(x => x.Trim())
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
 }
 
 /// <summary>
