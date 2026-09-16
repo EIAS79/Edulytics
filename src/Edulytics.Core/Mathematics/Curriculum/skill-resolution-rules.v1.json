@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "rulesVersion": "lesson-skill-resolution-v1",
+  "rulesVersion": "lesson-skill-resolution-v2",
   "purpose": "Deterministic candidate generation only. These rules do not create production LessonSkillProfile mappings.",
   "scoring": {
     "titlePattern": 8,
@@ -133,6 +133,31 @@
         "\\bsimultaneous",
         "\\bsystem of equations",
         "\\bdifferential equation"
+      ]
+    },
+    {
+      "id": "linear-inequality-solve",
+      "skillId": "algebra.linear.inequality.solve",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\bsolving inequalities\\b",
+        "\\befficiently solving inequalities\\b",
+        "\\bsolve linear inequalities\\b",
+        "\\blinear inequalities in one variable\\b",
+        "\\bwriting and solving inequalities in one variable\\b"
+      ],
+      "contentPatterns": [
+        "\\bsolve(?:s|d|ing)? (?:the )?inequalit(?:y|ies)\\b",
+        "\\breverse (?:the )?(?:inequality )?(?:sign|symbol|relation)\\b",
+        "\\bnumber line\\b.*\\binequalit(?:y|ies)\\b"
+      ],
+      "negativePatterns": [
+        "\\babsolute[- ]value\\b",
+        "\\bsystems? of (?:linear )?inequalities\\b",
+        "\\btwo variables\\b",
+        "\\b2 variables\\b",
+        "\\bgraphing linear inequalities in two variables\\b",
+        "\\bquadratic inequalit"
       ]
     },
     {
