@@ -1,5 +1,7 @@
 using System.Globalization;
 using System.Numerics;
+using System.Text.Json.Serialization;
+using Edulytics.Core.Mathematics.Serialization;
 
 namespace Edulytics.Core.Mathematics.Domains;
 
@@ -27,7 +29,10 @@ public readonly record struct ExactRational
         Denominator = denominator / gcd;
     }
 
+    [JsonConverter(typeof(BigIntegerJsonConverter))]
     public BigInteger Numerator { get; }
+
+    [JsonConverter(typeof(BigIntegerJsonConverter))]
     public BigInteger Denominator { get; }
 
     public static ExactRational FromInteger(BigInteger value) => new(value, BigInteger.One);
@@ -65,7 +70,5 @@ public readonly record struct ExactRational
     public override string ToString() =>
         Denominator == BigInteger.One
             ? Numerator.ToString(CultureInfo.InvariantCulture)
-            : string.Create(
-                CultureInfo.InvariantCulture,
-                $"{Numerator}/{Denominator}");
+            : FormattableString.Invariant($"{Numerator}/{Denominator}");
 }
