@@ -184,13 +184,33 @@ internal readonly record struct QuadraticSurdValue(
 
     public bool EqualsExact(QuadraticSurdValue other)
     {
-        if (RadicalCoefficient == Zero && other.RadicalCoefficient == Zero)
+        var left = CanonicalizePerfectSquareRadical();
+        var right = other.CanonicalizePerfectSquareRadical();
+
+        if (left.RadicalCoefficient == Zero || right.RadicalCoefficient == Zero)
         {
-            return RationalPart == other.RationalPart;
+            return left.RadicalCoefficient == Zero
+                && right.RadicalCoefficient == Zero
+                && left.RationalPart == right.RationalPart;
         }
-        return RationalPart == other.RationalPart
-            && RadicalCoefficient == other.RadicalCoefficient
-            && Radicand == other.Radicand;
+
+        if (left.RationalPart != right.RationalPart)
+        {
+            return false;
+        }
+
+        // For non-negative radicands, q1*sqrt(r1) == q2*sqrt(r2) iff the
+        // coefficients have the same sign and q1^2*r1 == q2^2*r2. This catches
+        // equivalent non-canonical forms such as sqrt(8) and 2*sqrt(2) without
+        // requiring unbounded integer factorisation.
+        if (left.RadicalCoefficient.CompareTo(Zero) != right.RadicalCoefficient.CompareTo(Zero))
+        {
+            return false;
+        }
+
+        var leftSquared = left.RadicalCoefficient * left.RadicalCoefficient * left.Radicand;
+        var rightSquared = right.RadicalCoefficient * right.RadicalCoefficient * right.Radicand;
+        return leftSquared == rightSquared;
     }
 
     public static bool TryParse(MathNode node, out QuadraticSurdValue value, out string? error) =>
@@ -214,7 +234,7 @@ internal readonly record struct QuadraticSurdValue(
                     value = default;
                     return false;
                 }
-                value = operand.Negate();
+                value = operand.Negate().CanonicalizePerfectSquareRadical();
                 error = null;
                 return true;
             case AddNode add:
@@ -228,7 +248,7 @@ internal readonly record struct QuadraticSurdValue(
                         return false;
                     }
                 }
-                value = sum;
+                value = sum.CanonicalizePerfectSquareRadical();
                 error = null;
                 return true;
             case MultiplyNode multiply:
@@ -242,7 +262,7 @@ internal readonly record struct QuadraticSurdValue(
                         return false;
                     }
                 }
-                value = product;
+                value = product.CanonicalizePerfectSquareRadical();
                 error = null;
                 return true;
             case DivideNode divide:
@@ -261,7 +281,7 @@ internal readonly record struct QuadraticSurdValue(
                 value = new QuadraticSurdValue(
                     numerator.RationalPart / denominator.RationalPart,
                     numerator.RadicalCoefficient / denominator.RationalPart,
-                    numerator.Radicand);
+                    numerator.Radicand).CanonicalizePerfectSquareRadical();
                 error = null;
                 return true;
             case RootNode root when root.Degree == 2:
@@ -271,7 +291,7 @@ internal readonly record struct QuadraticSurdValue(
                     error = "Quadratic surd radicand must be a non-negative exact rational.";
                     return false;
                 }
-                value = new QuadraticSurdValue(Zero, One, radicand);
+                value = new QuadraticSurdValue(Zero, One, radicand).CanonicalizePerfectSquareRadical();
                 error = null;
                 return true;
             default:
@@ -296,6 +316,8 @@ internal readonly record struct QuadraticSurdValue(
         out QuadraticSurdValue value,
         out string? error)
     {
+        left = left.CanonicalizePerfectSquareRadical();
+        right = right.CanonicalizePerfectSquareRadical();
         if (!TryResolveRadicand(left, right, out var radicand, out error))
         {
             value = default;
@@ -304,7 +326,7 @@ internal readonly record struct QuadraticSurdValue(
         value = new QuadraticSurdValue(
             left.RationalPart + right.RationalPart,
             left.RadicalCoefficient + right.RadicalCoefficient,
-            radicand);
+            radicand).CanonicalizePerfectSquareRadical();
         error = null;
         return true;
     }
@@ -315,6 +337,8 @@ internal readonly record struct QuadraticSurdValue(
         out QuadraticSurdValue value,
         out string? error)
     {
+        left = left.CanonicalizePerfectSquareRadical();
+        right = right.CanonicalizePerfectSquareRadical();
         if (!TryResolveRadicand(left, right, out var radicand, out error))
         {
             value = default;
@@ -325,9 +349,24 @@ internal readonly record struct QuadraticSurdValue(
             + left.RadicalCoefficient * right.RadicalCoefficient * radicand;
         var radical = left.RationalPart * right.RadicalCoefficient
             + left.RadicalCoefficient * right.RationalPart;
-        value = new QuadraticSurdValue(rational, radical, radicand);
+        value = new QuadraticSurdValue(rational, radical, radicand).CanonicalizePerfectSquareRadical();
         error = null;
         return true;
+    }
+
+    private QuadraticSurdValue CanonicalizePerfectSquareRadical()
+    {
+        if (RadicalCoefficient == Zero || Radicand == Zero)
+        {
+            return Rational(RationalPart);
+        }
+
+        if (ExactQuadraticEquationSolver.TryPerfectSquare(Radicand, out var squareRoot))
+        {
+            return Rational(RationalPart + RadicalCoefficient * squareRoot);
+        }
+
+        return this;
     }
 
     private static bool TryResolveRadicand(
@@ -456,10 +495,10 @@ internal static class ExactQuadraticSurdEvaluator
             case PowerNode power:
                 if (power.Exponent is not IntegerNode exponentNode
                     || exponentNode.Value < BigInteger.Zero
-                    || exponentNode.Value > new BigInteger(8))
+                    || exponentNode.Value > new BigInteger(32))
                 {
                     value = default;
-                    error = "Exact verifier supports bounded non-negative integer powers only.";
+                    error = "Exact verifier supports bounded non-negative integer powers through 32 only.";
                     return false;
                 }
                 if (!TryEvaluate(power.Base, variable, variableValue, out var baseValue, out error))
