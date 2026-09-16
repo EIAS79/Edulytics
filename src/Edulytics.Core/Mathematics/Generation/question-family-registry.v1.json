@@ -7,11 +7,7 @@
       "id": "algebra.linear.ax_plus_b_equals_c",
       "version": 1,
       "skillId": "algebra.linear.solve",
-      "requiredCapabilities": [
-        "rational.exact_arithmetic",
-        "algebra.linear.solve.exact_rational",
-        "algebra.linear.verify.substitution"
-      ],
+      "requiredCapabilities": ["rational.exact_arithmetic","algebra.linear.solve.exact_rational","algebra.linear.verify.substitution"],
       "answerType": "exact_scalar",
       "verificationPolicy": "exact-substitution-original-equation",
       "representations": ["symbolic"],
@@ -22,15 +18,21 @@
       "id": "algebra.linear.inequality.ax_plus_b_relation_c",
       "version": 1,
       "skillId": "algebra.linear.inequality.solve",
-      "requiredCapabilities": [
-        "rational.exact_arithmetic",
-        "algebra.linear.affine_extract",
-        "algebra.linear.inequality.solve.exact_rational",
-        "algebra.linear.inequality.verify.interval"
-      ],
+      "requiredCapabilities": ["rational.exact_arithmetic","algebra.linear.affine_extract","algebra.linear.inequality.solve.exact_rational","algebra.linear.inequality.verify.interval"],
       "answerType": "exact_interval_or_union",
       "verificationPolicy": "exact-boundary-orientation-and-interval",
-      "representations": ["symbolic", "interval"],
+      "representations": ["symbolic","interval"],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "algebra.linear.systems.two_by_two.integer_coefficients",
+      "version": 1,
+      "skillId": "algebra.linear.systems.two_by_two.solve",
+      "requiredCapabilities": ["rational.exact_arithmetic","algebra.linear.systems.two_by_two.affine_extract","algebra.linear.systems.two_by_two.solve.exact_rational","algebra.linear.systems.two_by_two.verify.substitution"],
+      "answerType": "exact_ordered_pair",
+      "verificationPolicy": "exact-substitution-both-original-equations",
+      "representations": ["symbolic"],
       "status": "ShadowVerified",
       "productionRouting": false
     }
