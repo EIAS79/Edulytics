@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "mappingVersion": "lesson-skill-foundation-v1",
+  "mappingVersion": "lesson-skill-foundation-v2",
   "status": "Foundation",
   "mappings": [
     {
@@ -41,6 +41,22 @@
       "mappingConfidence": "High",
       "evidence": [
         "Exact lesson title and corrected worked examples compare unlike-denominator fractions using equivalent fractions and common denominators."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U04:L05",
+      "primarySkills": [
+        "algebra.linear.solve"
+      ],
+      "sourceType": "OfficialMappedPedagogicalLesson",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:8.EE.C.7"
+      ],
+      "mappingConfidence": "High",
+      "evidence": [
+        "The canonical lesson title is 'Solving Any Linear Equation' and its worked examples solve single-variable affine equations with integer coefficients, which is inside the exact-rational affine V2 solver scope.",
+        "The canonical lesson is linked to CCSS:8.EE.C.7. This Edulytics SkillContract mapping narrows generation scope without replacing, copying or inventing the official OutcomeCode."
       ]
     }
   ]
