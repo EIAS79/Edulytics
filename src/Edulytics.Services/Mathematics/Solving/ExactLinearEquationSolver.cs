@@ -25,10 +25,14 @@ public sealed class ExactLinearEquationSolver : IMathematicsSolver
             return Unsupported("ExactLinearEquationSolver only supports EquationNode problems.");
         }
 
-        if (!ExactLinearForm.TryCreate(equation.Left, out var left, out var leftError)
-            || !ExactLinearForm.TryCreate(equation.Right, out var right, out var rightError))
+        if (!ExactLinearForm.TryCreate(equation.Left, out var left, out var leftError))
         {
-            return Unsupported(leftError ?? rightError ?? "Equation is outside the affine expression subset.");
+            return Unsupported(leftError ?? "Left side is outside the affine expression subset.");
+        }
+
+        if (!ExactLinearForm.TryCreate(equation.Right, out var right, out var rightError))
+        {
+            return Unsupported(rightError ?? "Right side is outside the affine expression subset.");
         }
 
         if (!ExactLinearForm.TryMergeVariable(left.Variable, right.Variable, out var variable))
@@ -179,6 +183,7 @@ internal readonly record struct ExactLinearForm(
                     operand.Variable,
                     Negate(operand.Coefficient),
                     Negate(operand.Constant));
+                error = null;
                 return true;
 
             case AddNode add:
@@ -233,11 +238,17 @@ internal readonly record struct ExactLinearForm(
                 }
 
                 form = product;
+                error = null;
                 return true;
 
             case DivideNode divide:
-                if (!TryCreate(divide.Numerator, out var numerator, out error)
-                    || !TryCreate(divide.Denominator, out var denominator, out error))
+                if (!TryCreate(divide.Numerator, out var numerator, out error))
+                {
+                    form = default;
+                    return false;
+                }
+
+                if (!TryCreate(divide.Denominator, out var denominator, out error))
                 {
                     form = default;
                     return false;
