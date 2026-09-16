@@ -188,7 +188,7 @@ internal static class VerifierExactPower
         }
         if (!IsWithinLimit(value))
         {
-            error = "Independent exact exponent verification exceeds the scalar bit-length budget.";
+            error = "Independent exact exponent verification exceeds the scalar bit-length budget or received a malformed rational.";
             return false;
         }
         if (exponent == 0)
@@ -243,7 +243,8 @@ internal static class VerifierExactPower
     }
 
     private static bool IsWithinLimit(ExactRational value) =>
-        BitLength(value.Numerator) <= MaxScalarBitLength
+        !value.Denominator.IsZero
+        && BitLength(value.Numerator) <= MaxScalarBitLength
         && BitLength(value.Denominator) <= MaxScalarBitLength;
 
     private static long BitLength(BigInteger value) =>
@@ -284,7 +285,7 @@ internal static class VerifierSpecialAngleTable
         45 or 135 => SqrtOver(2, 2),
         60 or 120 => SqrtOver(3, 2),
         90 => I(1),
-        210 or 330 => Neg(Half()),
+        210 or 330 => Half(-1),
         225 or 315 => Neg(SqrtOver(2, 2)),
         240 or 300 => Neg(SqrtOver(3, 2)),
         270 => I(-1),
@@ -298,7 +299,7 @@ internal static class VerifierSpecialAngleTable
         45 or 315 => SqrtOver(2, 2),
         60 or 300 => Half(),
         90 or 270 => I(0),
-        120 or 240 => Neg(Half()),
+        120 or 240 => Half(-1),
         135 or 225 => Neg(SqrtOver(2, 2)),
         150 or 210 => Neg(SqrtOver(3, 2)),
         180 => I(-1),
@@ -319,7 +320,8 @@ internal static class VerifierSpecialAngleTable
     };
 
     private static IntegerNode I(int value) => new(new BigInteger(value));
-    private static MathNode Half() => new RationalNode(new ExactRational(BigInteger.One, new BigInteger(2)));
+    private static MathNode Half(int sign = 1) =>
+        new RationalNode(new ExactRational(new BigInteger(sign), new BigInteger(2)));
     private static MathNode Sqrt(int radicand) => new RootNode(I(radicand), 2);
     private static MathNode SqrtOver(int radicand, int denominator) => new DivideNode(Sqrt(radicand), I(denominator));
     private static MathNode Neg(MathNode value) => new NegateNode(value);
@@ -397,6 +399,11 @@ internal static class VerifierIndicesExponentialsLogTrigV2
 
     public static bool ValidateExponentialDomain(ExactRational @base, ExactRational target, out string error)
     {
+        if (@base.Denominator.IsZero || target.Denominator.IsZero)
+        {
+            error = "Independent verification rejects malformed exact rationals with a zero denominator.";
+            return false;
+        }
         if (@base.CompareTo(Zero) <= 0 || @base == One)
         {
             error = "Independent verification requires a positive exponential/logarithm base other than 1.";
@@ -457,7 +464,7 @@ internal static class VerifierIndicesExponentialsLogTrigV2
             case IntegerNode integer:
                 value = new ExactRational(integer.Value, BigInteger.One);
                 return true;
-            case RationalNode rational:
+            case RationalNode rational when !rational.Value.Denominator.IsZero:
                 value = rational.Value;
                 return true;
             default:
