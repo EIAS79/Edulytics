@@ -1,6 +1,7 @@
 using System.Numerics;
 using System.Text.Json.Serialization;
 using Edulytics.Core.Mathematics.Domains;
+using Edulytics.Core.Mathematics.Serialization;
 
 namespace Edulytics.Core.Mathematics.Ast;
 
@@ -23,7 +24,16 @@ namespace Edulytics.Core.Mathematics.Ast;
 [JsonDerivedType(typeof(IntegralNode), "integral")]
 public abstract record MathNode;
 
-public sealed record IntegerNode(BigInteger Value) : MathNode;
+public sealed record IntegerNode : MathNode
+{
+    public IntegerNode(BigInteger value)
+    {
+        Value = value;
+    }
+
+    [JsonConverter(typeof(BigIntegerJsonConverter))]
+    public BigInteger Value { get; }
+}
 
 public sealed record RationalNode(ExactRational Value) : MathNode;
 
