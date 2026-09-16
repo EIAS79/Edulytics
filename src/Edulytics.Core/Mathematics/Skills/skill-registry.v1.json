@@ -50,6 +50,21 @@
       ]
     },
     {
+      "id": "algebra.linear.inequality.solve",
+      "domain": "algebra",
+      "canonicalName": "Solve single-variable linear inequalities",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "algebra.linear.affine_extract",
+        "algebra.linear.inequality.solve.exact_rational",
+        "algebra.linear.inequality.verify.interval"
+      ],
+      "v2QuestionFamilies": [
+        "algebra.linear.inequality.ax_plus_b_relation_c"
+      ]
+    },
+    {
       "id": "number.lcm",
       "domain": "number",
       "canonicalName": "Find and use least common multiples"

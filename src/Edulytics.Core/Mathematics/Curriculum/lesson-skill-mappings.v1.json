@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "mappingVersion": "lesson-skill-foundation-v2",
+  "mappingVersion": "lesson-skill-foundation-v3",
   "status": "Foundation",
   "mappings": [
     {
@@ -57,6 +57,19 @@
       "evidence": [
         "The canonical lesson title is 'Solving Any Linear Equation' and its worked examples solve single-variable affine equations with integer coefficients, which is inside the exact-rational affine V2 solver scope.",
         "The canonical lesson is linked to CCSS:8.EE.C.7. This Edulytics SkillContract mapping narrows generation scope without replacing, copying or inventing the official OutcomeCode."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U06:L15",
+      "primarySkills": [
+        "algebra.linear.inequality.solve"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "The canonical lesson title is 'Efficiently Solving Inequalities' and its worked examples solve and graph single-variable affine inequalities, including a negative variable coefficient where order reversal is required.",
+        "The lesson has no independent official OutcomeCode mapping in the canonical content pack, so the Edulytics SkillContract is pedagogical metadata only and does not invent an official curriculum outcome."
       ]
     }
   ]

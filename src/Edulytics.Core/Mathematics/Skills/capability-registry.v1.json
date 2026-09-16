@@ -30,6 +30,22 @@
       "provider": "edulytics-native-linear",
       "providerVersion": "linear-exact-v1",
       "status": "ShadowVerified"
+    },
+    {
+      "id": "algebra.linear.inequality.solve.exact_rational",
+      "domain": "algebra",
+      "canonicalName": "Solve single-variable affine inequalities over exact rationals",
+      "provider": "edulytics-native-linear-inequality",
+      "providerVersion": "linear-inequality-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "algebra.linear.inequality.verify.interval",
+      "domain": "algebra",
+      "canonicalName": "Verify affine-inequality boundaries, orientation and interval solution sets",
+      "provider": "edulytics-native-linear-inequality",
+      "providerVersion": "linear-inequality-exact-v1",
+      "status": "ShadowVerified"
     }
   ]
 }
