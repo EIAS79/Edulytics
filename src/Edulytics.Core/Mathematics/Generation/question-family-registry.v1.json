@@ -35,6 +35,17 @@
       "representations": ["symbolic"],
       "status": "ShadowVerified",
       "productionRouting": false
+    },
+    {
+      "id": "algebra.quadratic.solve.integer_coefficients.real_roots",
+      "version": 1,
+      "skillId": "algebra.quadratic.solve.real_roots",
+      "requiredCapabilities": ["rational.exact_arithmetic","algebra.polynomial.normalize.exact_rational","algebra.quadratic.solve.real.exact","algebra.quadratic.verify.exact_substitution"],
+      "answerType": "exact_finite_real_root_set",
+      "verificationPolicy": "exact-discriminant-and-original-equation-substitution",
+      "representations": ["symbolic"],
+      "status": "ShadowVerified",
+      "productionRouting": false
     }
   ]
 }
