@@ -69,7 +69,30 @@ public sealed class ExactLinearSystem2x2SolverTests
 
         Assert.Equal(MathematicsSolveStatus.Indeterminate, result.Status);
         Assert.Null(result.ExactResult);
+        Assert.Null(result.SolutionSet);
         Assert.True(verifier.Verify(Request(system), result).IsVerified);
+    }
+
+    [Fact]
+    public void Verify_DependentSystemWithContradictoryEmptySolutionSet_IsRejected()
+    {
+        var system = System(
+            Equation(1, 1, 1),
+            Equation(2, 2, 2));
+        var contradictory = new MathematicsSolveResult(
+            MathematicsSolveStatus.Indeterminate,
+            null,
+            new EmptySolutionSet(),
+            [],
+            "tampered-dependent",
+            null,
+            "test",
+            "1",
+            []);
+
+        Assert.Equal(
+            MathematicsVerificationStatus.Rejected,
+            verifier.Verify(Request(system), contradictory).Status);
     }
 
     [Fact]
