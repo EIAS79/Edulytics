@@ -308,6 +308,7 @@ internal static class VerifierExactFunctionEvaluator
 internal static class VerifierResourceBudget
 {
     private const int MaxScalarBitLength = 4096;
+    private const long MaxIntermediateBitLength = (MaxScalarBitLength * 2L) + 1L;
     public static readonly ExactRational Zero = new(BigInteger.Zero, BigInteger.One);
     public static readonly ExactRational One = new(BigInteger.One, BigInteger.One);
 
@@ -322,7 +323,7 @@ internal static class VerifierResourceBudget
             SaturatingAdd(BitLength(left.Numerator), BitLength(right.Denominator)),
             SaturatingAdd(BitLength(right.Numerator), BitLength(left.Denominator))) + 1;
         var denominatorBits = SaturatingAdd(BitLength(left.Denominator), BitLength(right.Denominator));
-        if (numeratorBits > MaxScalarBitLength || denominatorBits > MaxScalarBitLength)
+        if (numeratorBits > MaxIntermediateBitLength || denominatorBits > MaxIntermediateBitLength)
         {
             return false;
         }
@@ -335,7 +336,7 @@ internal static class VerifierResourceBudget
         value = default;
         var numeratorBits = SaturatingAdd(BitLength(left.Numerator), BitLength(right.Numerator));
         var denominatorBits = SaturatingAdd(BitLength(left.Denominator), BitLength(right.Denominator));
-        if (numeratorBits > MaxScalarBitLength || denominatorBits > MaxScalarBitLength)
+        if (numeratorBits > MaxIntermediateBitLength || denominatorBits > MaxIntermediateBitLength)
         {
             return false;
         }
@@ -352,7 +353,7 @@ internal static class VerifierResourceBudget
         }
         var numeratorBits = SaturatingAdd(BitLength(numerator.Numerator), BitLength(denominator.Denominator));
         var denominatorBits = SaturatingAdd(BitLength(numerator.Denominator), BitLength(denominator.Numerator));
-        if (numeratorBits > MaxScalarBitLength || denominatorBits > MaxScalarBitLength)
+        if (numeratorBits > MaxIntermediateBitLength || denominatorBits > MaxIntermediateBitLength)
         {
             return false;
         }
@@ -374,7 +375,7 @@ internal static class VerifierResourceBudget
         }
         var numeratorBits = SaturatingMultiply(BitLength(value.Numerator), exponent);
         var denominatorBits = SaturatingMultiply(BitLength(value.Denominator), exponent);
-        if (numeratorBits > MaxScalarBitLength || denominatorBits > MaxScalarBitLength)
+        if (numeratorBits > MaxIntermediateBitLength || denominatorBits > MaxIntermediateBitLength)
         {
             return false;
         }
