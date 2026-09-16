@@ -1,3 +1,4 @@
+using System.Numerics;
 using Edulytics.Core.Mathematics.Ast;
 using Edulytics.Core.Mathematics.Domains;
 using Edulytics.Core.Mathematics.Solving;
@@ -26,7 +27,7 @@ public sealed class ExactLinearEquationSolverTests
 
         Assert.Equal(MathematicsSolveStatus.Solved, result.Status);
         var exact = Assert.IsType<IntegerNode>(result.ExactResult);
-        Assert.Equal(4, exact.Value);
+        Assert.Equal(new BigInteger(4), exact.Value);
         Assert.NotNull(result.Trace);
         Assert.Equal(2, result.Trace!.Steps.Count);
         Assert.True(verifier.Verify(Request(equation), result).IsVerified);
@@ -48,7 +49,7 @@ public sealed class ExactLinearEquationSolverTests
         var result = solver.Solve(Request(equation));
 
         Assert.Equal(MathematicsSolveStatus.Solved, result.Status);
-        Assert.Equal(3, Assert.IsType<IntegerNode>(result.ExactResult).Value);
+        Assert.Equal(new BigInteger(3), Assert.IsType<IntegerNode>(result.ExactResult).Value);
         Assert.True(verifier.Verify(Request(equation), result).IsVerified);
     }
 
@@ -78,7 +79,7 @@ public sealed class ExactLinearEquationSolverTests
 
         var result = solver.Solve(Request(equation));
 
-        Assert.Equal(4, Assert.IsType<IntegerNode>(result.ExactResult).Value);
+        Assert.Equal(new BigInteger(4), Assert.IsType<IntegerNode>(result.ExactResult).Value);
         Assert.True(verifier.Verify(Request(equation), result).IsVerified);
     }
 
