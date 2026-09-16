@@ -16,9 +16,11 @@ public sealed class ExactFunctionEvaluationSolver : IMathematicsSolver
             return ExactFunctionsV2.Unsupported(request, "edulytics-native-functions", "functions-exact-v1", error);
         }
 
-        if (!ExactFunctionSolverEvaluator.TryEvaluate(expression!, variable!, input, out var value, out error))
+        if (!ExactFunctionSolverEvaluator.TryEvaluate(expression!, variable!, input, out var value, out error, out var failureKind))
         {
-            return ExactFunctionsV2.Unsupported(request, "edulytics-native-functions", "functions-exact-v1", error);
+            return failureKind == ExactEvaluationFailureKind.ResourceLimit
+                ? ExactFunctionsV2.ResourceLimit(request, "edulytics-native-functions", "functions-exact-v1", error)
+                : ExactFunctionsV2.Unsupported(request, "edulytics-native-functions", "functions-exact-v1", error);
         }
 
         var result = ExactFunctionsV2.ToNode(value);
@@ -39,9 +41,11 @@ public sealed class ExactGraphSamplingSolver : IMathematicsSolver
         var points = new List<MathNode>(inputs!.Count);
         foreach (var input in inputs)
         {
-            if (!ExactFunctionSolverEvaluator.TryEvaluate(expression!, variable!, input, out var output, out error))
+            if (!ExactFunctionSolverEvaluator.TryEvaluate(expression!, variable!, input, out var output, out error, out var failureKind))
             {
-                return ExactFunctionsV2.Unsupported(request, "edulytics-native-functions", "functions-exact-v1", error);
+                return failureKind == ExactEvaluationFailureKind.ResourceLimit
+                    ? ExactFunctionsV2.ResourceLimit(request, "edulytics-native-functions", "functions-exact-v1", error)
+                    : ExactFunctionsV2.Unsupported(request, "edulytics-native-functions", "functions-exact-v1", error);
             }
 
             points.Add(new VectorNode([ExactFunctionsV2.ToNode(input), ExactFunctionsV2.ToNode(output)]));
@@ -54,14 +58,16 @@ public sealed class ExactGraphSamplingSolver : IMathematicsSolver
 
 public sealed class ExactSequenceTermSolver : IMathematicsSolver
 {
-    private static readonly ExactRational One = new(BigInteger.One, BigInteger.One);
-
     public MathematicsSolveResult Solve(MathematicsSolveRequest request)
     {
         ArgumentNullException.ThrowIfNull(request);
         if (!ExactFunctionsV2.TryParseSequenceRequest(request.Problem, out var kind, out var first, out var stepOrRatio, out var n, out var error))
         {
             return ExactFunctionsV2.Unsupported(request, "edulytics-native-sequences", "sequences-exact-v1", error);
+        }
+        if (!ExactResourceBudget.IsScalarWithinLimit(first) || !ExactResourceBudget.IsScalarWithinLimit(stepOrRatio))
+        {
+            return ExactFunctionsV2.ResourceLimit(request, "edulytics-native-sequences", "sequences-exact-v1", "Sequence parameters exceed the supported exact scalar bit-length budget.");
         }
 
         ExactRational value;
@@ -73,7 +79,12 @@ public sealed class ExactSequenceTermSolver : IMathematicsSolver
                 return ExactFunctionsV2.ResourceLimit(request, "edulytics-native-sequences", "sequences-exact-v1", "Arithmetic sequence index exceeds the supported bound of 10000.");
             }
 
-            value = first + new ExactRational(n - BigInteger.One, BigInteger.One) * stepOrRatio;
+            var indexFactor = new ExactRational(n - BigInteger.One, BigInteger.One);
+            if (!ExactResourceBudget.TryMultiply(stepOrRatio, indexFactor, out var delta)
+                || !ExactResourceBudget.TryAdd(first, delta, out value))
+            {
+                return ExactFunctionsV2.ResourceLimit(request, "edulytics-native-sequences", "sequences-exact-v1", "Arithmetic nth-term evaluation exceeds the supported exact result bit-length budget.");
+            }
             strategy = "arithmetic-sequence-closed-form";
         }
         else
@@ -82,8 +93,11 @@ public sealed class ExactSequenceTermSolver : IMathematicsSolver
             {
                 return ExactFunctionsV2.ResourceLimit(request, "edulytics-native-sequences", "sequences-exact-v1", "Geometric sequence index exceeds the supported exact-power bound of 64.");
             }
-
-            value = first * ExactFunctionsV2.Pow(stepOrRatio, (int)(n - BigInteger.One));
+            if (!ExactResourceBudget.TryPow(stepOrRatio, (int)(n - BigInteger.One), out var ratioPower)
+                || !ExactResourceBudget.TryMultiply(first, ratioPower, out value))
+            {
+                return ExactFunctionsV2.ResourceLimit(request, "edulytics-native-sequences", "sequences-exact-v1", "Geometric nth-term evaluation exceeds the supported exact result bit-length budget.");
+            }
             strategy = "geometric-sequence-closed-form";
         }
 
@@ -92,83 +106,147 @@ public sealed class ExactSequenceTermSolver : IMathematicsSolver
     }
 }
 
+internal enum ExactEvaluationFailureKind
+{
+    None = 0,
+    Unsupported = 1,
+    ResourceLimit = 2
+}
+
 internal static class ExactFunctionSolverEvaluator
 {
     private const int MaxExponent = 12;
-    private static readonly ExactRational Zero = new(BigInteger.Zero, BigInteger.One);
-    private static readonly ExactRational One = new(BigInteger.One, BigInteger.One);
+    private const int MaxNodeCount = 128;
+    private const int MaxDepth = 24;
 
-    public static bool TryEvaluate(MathNode node, string variable, ExactRational input, out ExactRational value, out string error)
+    public static bool TryEvaluate(
+        MathNode node,
+        string variable,
+        ExactRational input,
+        out ExactRational value,
+        out string error,
+        out ExactEvaluationFailureKind failureKind)
     {
+        if (!ExactResourceBudget.IsScalarWithinLimit(input))
+        {
+            value = default;
+            error = "Function input exceeds the supported exact scalar bit-length budget.";
+            failureKind = ExactEvaluationFailureKind.ResourceLimit;
+            return false;
+        }
+
+        var remainingNodes = MaxNodeCount;
+        return TryEvaluateCore(node, variable, input, depth: 0, ref remainingNodes, out value, out error, out failureKind);
+    }
+
+    private static bool TryEvaluateCore(
+        MathNode node,
+        string variable,
+        ExactRational input,
+        int depth,
+        ref int remainingNodes,
+        out ExactRational value,
+        out string error,
+        out ExactEvaluationFailureKind failureKind)
+    {
+        if (depth > MaxDepth || --remainingNodes < 0)
+        {
+            value = default;
+            error = "Exact function evaluation exceeds the supported expression depth/node budget.";
+            failureKind = ExactEvaluationFailureKind.ResourceLimit;
+            return false;
+        }
+
         switch (node)
         {
             case IntegerNode integer:
                 value = new ExactRational(integer.Value, BigInteger.One);
-                error = string.Empty;
-                return true;
+                return FinishScalar(value, out error, out failureKind);
             case RationalNode rational:
                 value = rational.Value;
-                error = string.Empty;
-                return true;
+                return FinishScalar(value, out error, out failureKind);
             case SymbolNode symbol when string.Equals(symbol.Name, variable, StringComparison.Ordinal):
                 value = input;
                 error = string.Empty;
+                failureKind = ExactEvaluationFailureKind.None;
                 return true;
             case SymbolNode symbol:
                 value = default;
                 error = $"Unexpected symbol {symbol.Name}; exact evaluation supports one declared variable.";
+                failureKind = ExactEvaluationFailureKind.Unsupported;
                 return false;
             case NegateNode negate:
-                if (!TryEvaluate(negate.Operand, variable, input, out var operand, out error))
+                if (!TryEvaluateCore(negate.Operand, variable, input, depth + 1, ref remainingNodes, out var operand, out error, out failureKind))
                 {
                     value = default;
                     return false;
                 }
                 value = new ExactRational(-operand.Numerator, operand.Denominator);
-                return true;
+                return FinishScalar(value, out error, out failureKind);
             case AddNode add:
-                var sum = Zero;
+                var sum = ExactResourceBudget.Zero;
                 foreach (var term in add.Terms)
                 {
-                    if (!TryEvaluate(term, variable, input, out var termValue, out error))
+                    if (!TryEvaluateCore(term, variable, input, depth + 1, ref remainingNodes, out var termValue, out error, out failureKind))
                     {
                         value = default;
                         return false;
                     }
-                    sum += termValue;
+                    if (!ExactResourceBudget.TryAdd(sum, termValue, out sum))
+                    {
+                        value = default;
+                        error = "Exact addition exceeds the supported result bit-length budget.";
+                        failureKind = ExactEvaluationFailureKind.ResourceLimit;
+                        return false;
+                    }
                 }
                 value = sum;
                 error = string.Empty;
+                failureKind = ExactEvaluationFailureKind.None;
                 return true;
             case MultiplyNode multiply:
-                var product = One;
+                var product = ExactResourceBudget.One;
                 foreach (var factor in multiply.Factors)
                 {
-                    if (!TryEvaluate(factor, variable, input, out var factorValue, out error))
+                    if (!TryEvaluateCore(factor, variable, input, depth + 1, ref remainingNodes, out var factorValue, out error, out failureKind))
                     {
                         value = default;
                         return false;
                     }
-                    product *= factorValue;
+                    if (!ExactResourceBudget.TryMultiply(product, factorValue, out product))
+                    {
+                        value = default;
+                        error = "Exact multiplication exceeds the supported result bit-length budget.";
+                        failureKind = ExactEvaluationFailureKind.ResourceLimit;
+                        return false;
+                    }
                 }
                 value = product;
                 error = string.Empty;
+                failureKind = ExactEvaluationFailureKind.None;
                 return true;
             case DivideNode divide:
-                if (!TryEvaluate(divide.Numerator, variable, input, out var numerator, out error)
-                    || !TryEvaluate(divide.Denominator, variable, input, out var denominator, out error))
+                if (!TryEvaluateCore(divide.Numerator, variable, input, depth + 1, ref remainingNodes, out var numerator, out error, out failureKind)
+                    || !TryEvaluateCore(divide.Denominator, variable, input, depth + 1, ref remainingNodes, out var denominator, out error, out failureKind))
                 {
                     value = default;
                     return false;
                 }
-                if (denominator == Zero)
+                if (denominator == ExactResourceBudget.Zero)
                 {
                     value = default;
                     error = "Exact function evaluation encountered division by zero.";
+                    failureKind = ExactEvaluationFailureKind.Unsupported;
                     return false;
                 }
-                value = numerator / denominator;
+                if (!ExactResourceBudget.TryDivide(numerator, denominator, out value))
+                {
+                    error = "Exact division exceeds the supported result bit-length budget.";
+                    failureKind = ExactEvaluationFailureKind.ResourceLimit;
+                    return false;
+                }
                 error = string.Empty;
+                failureKind = ExactEvaluationFailureKind.None;
                 return true;
             case PowerNode power:
                 if (power.Exponent is not IntegerNode exponentNode
@@ -177,22 +255,147 @@ internal static class ExactFunctionSolverEvaluator
                 {
                     value = default;
                     error = $"Exact function evaluation supports integer exponents from 0 through {MaxExponent}.";
+                    failureKind = ExactEvaluationFailureKind.Unsupported;
                     return false;
                 }
-                if (!TryEvaluate(power.Base, variable, input, out var baseValue, out error))
+                if (!TryEvaluateCore(power.Base, variable, input, depth + 1, ref remainingNodes, out var baseValue, out error, out failureKind))
                 {
                     value = default;
                     return false;
                 }
-                value = ExactFunctionsV2.Pow(baseValue, (int)exponentNode.Value);
+                if (!ExactResourceBudget.TryPow(baseValue, (int)exponentNode.Value, out value))
+                {
+                    error = "Exact power exceeds the supported result bit-length budget.";
+                    failureKind = ExactEvaluationFailureKind.ResourceLimit;
+                    return false;
+                }
                 error = string.Empty;
+                failureKind = ExactEvaluationFailureKind.None;
                 return true;
             default:
                 value = default;
                 error = $"Node type {node.GetType().Name} is outside the exact rational function-evaluation subset.";
+                failureKind = ExactEvaluationFailureKind.Unsupported;
                 return false;
         }
     }
+
+    private static bool FinishScalar(
+        ExactRational value,
+        out string error,
+        out ExactEvaluationFailureKind failureKind)
+    {
+        if (!ExactResourceBudget.IsScalarWithinLimit(value))
+        {
+            error = "Exact scalar exceeds the supported bit-length budget.";
+            failureKind = ExactEvaluationFailureKind.ResourceLimit;
+            return false;
+        }
+
+        error = string.Empty;
+        failureKind = ExactEvaluationFailureKind.None;
+        return true;
+    }
+}
+
+internal static class ExactResourceBudget
+{
+    public const int MaxScalarBitLength = 4096;
+    public static readonly ExactRational Zero = new(BigInteger.Zero, BigInteger.One);
+    public static readonly ExactRational One = new(BigInteger.One, BigInteger.One);
+
+    public static bool IsScalarWithinLimit(ExactRational value) =>
+        BitLength(value.Numerator) <= MaxScalarBitLength
+        && BitLength(value.Denominator) <= MaxScalarBitLength;
+
+    public static bool TryAdd(ExactRational left, ExactRational right, out ExactRational value)
+    {
+        value = default;
+        var numeratorBits = Math.Max(
+            SaturatingAdd(BitLength(left.Numerator), BitLength(right.Denominator)),
+            SaturatingAdd(BitLength(right.Numerator), BitLength(left.Denominator))) + 1;
+        var denominatorBits = SaturatingAdd(BitLength(left.Denominator), BitLength(right.Denominator));
+        if (numeratorBits > MaxScalarBitLength || denominatorBits > MaxScalarBitLength)
+        {
+            return false;
+        }
+
+        value = left + right;
+        return IsScalarWithinLimit(value);
+    }
+
+    public static bool TryMultiply(ExactRational left, ExactRational right, out ExactRational value)
+    {
+        value = default;
+        var numeratorBits = SaturatingAdd(BitLength(left.Numerator), BitLength(right.Numerator));
+        var denominatorBits = SaturatingAdd(BitLength(left.Denominator), BitLength(right.Denominator));
+        if (numeratorBits > MaxScalarBitLength || denominatorBits > MaxScalarBitLength)
+        {
+            return false;
+        }
+
+        value = left * right;
+        return IsScalarWithinLimit(value);
+    }
+
+    public static bool TryDivide(ExactRational numerator, ExactRational denominator, out ExactRational value)
+    {
+        value = default;
+        if (denominator == Zero)
+        {
+            return false;
+        }
+        var numeratorBits = SaturatingAdd(BitLength(numerator.Numerator), BitLength(denominator.Denominator));
+        var denominatorBits = SaturatingAdd(BitLength(numerator.Denominator), BitLength(denominator.Numerator));
+        if (numeratorBits > MaxScalarBitLength || denominatorBits > MaxScalarBitLength)
+        {
+            return false;
+        }
+
+        value = numerator / denominator;
+        return IsScalarWithinLimit(value);
+    }
+
+    public static bool TryPow(ExactRational value, int exponent, out ExactRational result)
+    {
+        result = default;
+        if (exponent < 0)
+        {
+            return false;
+        }
+        if (exponent == 0)
+        {
+            result = One;
+            return true;
+        }
+
+        var numeratorBits = SaturatingMultiply(BitLength(value.Numerator), exponent);
+        var denominatorBits = SaturatingMultiply(BitLength(value.Denominator), exponent);
+        if (numeratorBits > MaxScalarBitLength || denominatorBits > MaxScalarBitLength)
+        {
+            return false;
+        }
+
+        var current = One;
+        for (var i = 0; i < exponent; i++)
+        {
+            if (!TryMultiply(current, value, out current))
+            {
+                return false;
+            }
+        }
+        result = current;
+        return true;
+    }
+
+    private static long BitLength(BigInteger value) =>
+        value.IsZero ? 0 : BigInteger.Abs(value).GetBitLength();
+
+    private static long SaturatingAdd(long left, long right) =>
+        left > long.MaxValue - right ? long.MaxValue : left + right;
+
+    private static long SaturatingMultiply(long value, int factor) =>
+        factor == 0 ? 0 : value > long.MaxValue / factor ? long.MaxValue : value * factor;
 }
 
 internal static class ExactFunctionsV2
@@ -299,16 +502,6 @@ internal static class ExactFunctionsV2
 
     public static MathNode ToNode(ExactRational value) =>
         value.Denominator == BigInteger.One ? new IntegerNode(value.Numerator) : new RationalNode(value);
-
-    public static ExactRational Pow(ExactRational value, int exponent)
-    {
-        var result = new ExactRational(BigInteger.One, BigInteger.One);
-        for (var i = 0; i < exponent; i++)
-        {
-            result *= value;
-        }
-        return result;
-    }
 
     public static MathematicsSolveResult Solved(MathematicsSolveRequest request, MathNode exactResult, SolutionSet solutionSet, string strategy, string provider, string version) =>
         new(MathematicsSolveStatus.Solved, exactResult, solutionSet, request.Assumptions, strategy, new MathematicsSolutionTrace([]), provider, version, []);

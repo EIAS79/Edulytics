@@ -67,6 +67,27 @@ public sealed class ExactFunctionsGraphsSequencesSolverTests
     }
 
     [Fact]
+    public void FunctionEvaluation_RejectsNestedPowerExplosionBeforeBigIntegerGrowth()
+    {
+        MathNode expression = I(2);
+        for (var level = 0; level < 6; level++)
+        {
+            expression = new PowerNode(expression, I(12));
+        }
+
+        var request = new MathematicsSolveRequest(
+            new FunctionCallNode("evaluate_exact", [expression, new SymbolNode("x"), I(0)]),
+            [],
+            []);
+        var solver = new ExactFunctionEvaluationSolver();
+
+        var result = solver.Solve(request);
+
+        Assert.Equal(MathematicsSolveStatus.ResourceLimit, result.Status);
+        Assert.Contains(result.Diagnostics, diagnostic => diagnostic.Contains("bit-length budget", StringComparison.OrdinalIgnoreCase));
+    }
+
+    [Fact]
     public void GraphSampling_ProducesExactOrderedPairs_AndRejectsDuplicateInputs()
     {
         var expression = new AddNode([

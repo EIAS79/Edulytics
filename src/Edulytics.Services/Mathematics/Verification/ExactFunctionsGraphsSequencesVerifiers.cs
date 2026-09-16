@@ -91,8 +91,6 @@ public sealed class ExactGraphSamplingVerifier : IMathematicsVerifier
 
 public sealed class ExactSequenceTermVerifier : IMathematicsVerifier
 {
-    private static readonly ExactRational One = new(BigInteger.One, BigInteger.One);
-
     public MathematicsVerificationResult Verify(MathematicsSolveRequest request, MathematicsSolveResult result)
     {
         ArgumentNullException.ThrowIfNull(request);
@@ -101,6 +99,10 @@ public sealed class ExactSequenceTermVerifier : IMathematicsVerifier
         if (!VerifierFunctionsV2.TryParseSequenceRequest(request.Problem, out var kind, out var first, out var stepOrRatio, out var n, out var error))
         {
             return VerifierFunctionsV2.Unsupported(error);
+        }
+        if (!VerifierResourceBudget.IsScalarWithinLimit(first) || !VerifierResourceBudget.IsScalarWithinLimit(stepOrRatio))
+        {
+            return VerifierFunctionsV2.Unsupported("Sequence parameters exceed the independent verifier exact scalar bit-length budget.");
         }
 
         ExactRational expected;
@@ -111,7 +113,12 @@ public sealed class ExactSequenceTermVerifier : IMathematicsVerifier
             {
                 return VerifierFunctionsV2.Unsupported("Arithmetic sequence index exceeds the verified bound of 10000.");
             }
-            expected = first + new ExactRational(n - BigInteger.One, BigInteger.One) * stepOrRatio;
+            var indexFactor = new ExactRational(n - BigInteger.One, BigInteger.One);
+            if (!VerifierResourceBudget.TryMultiply(stepOrRatio, indexFactor, out var delta)
+                || !VerifierResourceBudget.TryAdd(first, delta, out expected))
+            {
+                return VerifierFunctionsV2.Unsupported("Arithmetic nth-term verification exceeds the exact result bit-length budget.");
+            }
             method = "independent-arithmetic-closed-form";
         }
         else
@@ -120,7 +127,11 @@ public sealed class ExactSequenceTermVerifier : IMathematicsVerifier
             {
                 return VerifierFunctionsV2.Unsupported("Geometric sequence index exceeds the verified exact-power bound of 64.");
             }
-            expected = first * Pow(stepOrRatio, (int)(n - BigInteger.One));
+            if (!VerifierResourceBudget.TryPow(stepOrRatio, (int)(n - BigInteger.One), out var ratioPower)
+                || !VerifierResourceBudget.TryMultiply(first, ratioPower, out expected))
+            {
+                return VerifierFunctionsV2.Unsupported("Geometric nth-term verification exceeds the exact result bit-length budget.");
+            }
             method = "independent-geometric-closed-form";
         }
 
@@ -135,36 +146,51 @@ public sealed class ExactSequenceTermVerifier : IMathematicsVerifier
 
         return VerifierFunctionsV2.Verified(method, "The reported sequence term matches an independent exact closed-form calculation from the original parameters.");
     }
-
-    private static ExactRational Pow(ExactRational value, int exponent)
-    {
-        var result = One;
-        for (var i = 0; i < exponent; i++)
-        {
-            result *= value;
-        }
-        return result;
-    }
 }
 
 internal static class VerifierExactFunctionEvaluator
 {
     private const int MaxExponent = 12;
-    private static readonly ExactRational Zero = new(BigInteger.Zero, BigInteger.One);
-    private static readonly ExactRational One = new(BigInteger.One, BigInteger.One);
+    private const int MaxNodeCount = 128;
+    private const int MaxDepth = 24;
 
     public static bool TryEvaluate(MathNode node, string variable, ExactRational input, out ExactRational value, out string error)
     {
+        if (!VerifierResourceBudget.IsScalarWithinLimit(input))
+        {
+            value = default;
+            error = "Independent verification input exceeds the exact scalar bit-length budget.";
+            return false;
+        }
+
+        var remainingNodes = MaxNodeCount;
+        return TryEvaluateCore(node, variable, input, depth: 0, ref remainingNodes, out value, out error);
+    }
+
+    private static bool TryEvaluateCore(
+        MathNode node,
+        string variable,
+        ExactRational input,
+        int depth,
+        ref int remainingNodes,
+        out ExactRational value,
+        out string error)
+    {
+        if (depth > MaxDepth || --remainingNodes < 0)
+        {
+            value = default;
+            error = "Independent exact verification exceeds the expression depth/node budget.";
+            return false;
+        }
+
         switch (node)
         {
             case IntegerNode integer:
                 value = new ExactRational(integer.Value, BigInteger.One);
-                error = string.Empty;
-                return true;
+                return FinishScalar(value, out error);
             case RationalNode rational:
                 value = rational.Value;
-                error = string.Empty;
-                return true;
+                return FinishScalar(value, out error);
             case SymbolNode symbol when string.Equals(symbol.Name, variable, StringComparison.Ordinal):
                 value = input;
                 error = string.Empty;
@@ -174,55 +200,69 @@ internal static class VerifierExactFunctionEvaluator
                 error = $"Unexpected symbol {symbol.Name} in exact verification.";
                 return false;
             case NegateNode negate:
-                if (!TryEvaluate(negate.Operand, variable, input, out var operand, out error))
+                if (!TryEvaluateCore(negate.Operand, variable, input, depth + 1, ref remainingNodes, out var operand, out error))
                 {
                     value = default;
                     return false;
                 }
                 value = new ExactRational(-operand.Numerator, operand.Denominator);
-                return true;
+                return FinishScalar(value, out error);
             case AddNode add:
-                var sum = Zero;
+                var sum = VerifierResourceBudget.Zero;
                 foreach (var term in add.Terms)
                 {
-                    if (!TryEvaluate(term, variable, input, out var termValue, out error))
+                    if (!TryEvaluateCore(term, variable, input, depth + 1, ref remainingNodes, out var termValue, out error))
                     {
                         value = default;
                         return false;
                     }
-                    sum += termValue;
+                    if (!VerifierResourceBudget.TryAdd(sum, termValue, out sum))
+                    {
+                        value = default;
+                        error = "Independent exact addition exceeds the result bit-length budget.";
+                        return false;
+                    }
                 }
                 value = sum;
                 error = string.Empty;
                 return true;
             case MultiplyNode multiply:
-                var product = One;
+                var product = VerifierResourceBudget.One;
                 foreach (var factor in multiply.Factors)
                 {
-                    if (!TryEvaluate(factor, variable, input, out var factorValue, out error))
+                    if (!TryEvaluateCore(factor, variable, input, depth + 1, ref remainingNodes, out var factorValue, out error))
                     {
                         value = default;
                         return false;
                     }
-                    product *= factorValue;
+                    if (!VerifierResourceBudget.TryMultiply(product, factorValue, out product))
+                    {
+                        value = default;
+                        error = "Independent exact multiplication exceeds the result bit-length budget.";
+                        return false;
+                    }
                 }
                 value = product;
                 error = string.Empty;
                 return true;
             case DivideNode divide:
-                if (!TryEvaluate(divide.Numerator, variable, input, out var numerator, out error)
-                    || !TryEvaluate(divide.Denominator, variable, input, out var denominator, out error))
+                if (!TryEvaluateCore(divide.Numerator, variable, input, depth + 1, ref remainingNodes, out var numerator, out error)
+                    || !TryEvaluateCore(divide.Denominator, variable, input, depth + 1, ref remainingNodes, out var denominator, out error))
                 {
                     value = default;
                     return false;
                 }
-                if (denominator == Zero)
+                if (denominator == VerifierResourceBudget.Zero)
                 {
                     value = default;
                     error = "Independent exact verification encountered division by zero.";
                     return false;
                 }
-                value = numerator / denominator;
+                if (!VerifierResourceBudget.TryDivide(numerator, denominator, out value))
+                {
+                    error = "Independent exact division exceeds the result bit-length budget.";
+                    return false;
+                }
                 error = string.Empty;
                 return true;
             case PowerNode power:
@@ -234,12 +274,16 @@ internal static class VerifierExactFunctionEvaluator
                     error = $"Independent exact verification supports integer exponents from 0 through {MaxExponent}.";
                     return false;
                 }
-                if (!TryEvaluate(power.Base, variable, input, out var baseValue, out error))
+                if (!TryEvaluateCore(power.Base, variable, input, depth + 1, ref remainingNodes, out var baseValue, out error))
                 {
                     value = default;
                     return false;
                 }
-                value = Pow(baseValue, (int)exponentNode.Value);
+                if (!VerifierResourceBudget.TryPow(baseValue, (int)exponentNode.Value, out value))
+                {
+                    error = "Independent exact power exceeds the result bit-length budget.";
+                    return false;
+                }
                 error = string.Empty;
                 return true;
             default:
@@ -249,15 +293,112 @@ internal static class VerifierExactFunctionEvaluator
         }
     }
 
-    private static ExactRational Pow(ExactRational value, int exponent)
+    private static bool FinishScalar(ExactRational value, out string error)
     {
-        var result = One;
+        if (!VerifierResourceBudget.IsScalarWithinLimit(value))
+        {
+            error = "Independent exact scalar exceeds the supported bit-length budget.";
+            return false;
+        }
+        error = string.Empty;
+        return true;
+    }
+}
+
+internal static class VerifierResourceBudget
+{
+    private const int MaxScalarBitLength = 4096;
+    public static readonly ExactRational Zero = new(BigInteger.Zero, BigInteger.One);
+    public static readonly ExactRational One = new(BigInteger.One, BigInteger.One);
+
+    public static bool IsScalarWithinLimit(ExactRational value) =>
+        BitLength(value.Numerator) <= MaxScalarBitLength
+        && BitLength(value.Denominator) <= MaxScalarBitLength;
+
+    public static bool TryAdd(ExactRational left, ExactRational right, out ExactRational value)
+    {
+        value = default;
+        var numeratorBits = Math.Max(
+            SaturatingAdd(BitLength(left.Numerator), BitLength(right.Denominator)),
+            SaturatingAdd(BitLength(right.Numerator), BitLength(left.Denominator))) + 1;
+        var denominatorBits = SaturatingAdd(BitLength(left.Denominator), BitLength(right.Denominator));
+        if (numeratorBits > MaxScalarBitLength || denominatorBits > MaxScalarBitLength)
+        {
+            return false;
+        }
+        value = left + right;
+        return IsScalarWithinLimit(value);
+    }
+
+    public static bool TryMultiply(ExactRational left, ExactRational right, out ExactRational value)
+    {
+        value = default;
+        var numeratorBits = SaturatingAdd(BitLength(left.Numerator), BitLength(right.Numerator));
+        var denominatorBits = SaturatingAdd(BitLength(left.Denominator), BitLength(right.Denominator));
+        if (numeratorBits > MaxScalarBitLength || denominatorBits > MaxScalarBitLength)
+        {
+            return false;
+        }
+        value = left * right;
+        return IsScalarWithinLimit(value);
+    }
+
+    public static bool TryDivide(ExactRational numerator, ExactRational denominator, out ExactRational value)
+    {
+        value = default;
+        if (denominator == Zero)
+        {
+            return false;
+        }
+        var numeratorBits = SaturatingAdd(BitLength(numerator.Numerator), BitLength(denominator.Denominator));
+        var denominatorBits = SaturatingAdd(BitLength(numerator.Denominator), BitLength(denominator.Numerator));
+        if (numeratorBits > MaxScalarBitLength || denominatorBits > MaxScalarBitLength)
+        {
+            return false;
+        }
+        value = numerator / denominator;
+        return IsScalarWithinLimit(value);
+    }
+
+    public static bool TryPow(ExactRational value, int exponent, out ExactRational result)
+    {
+        result = default;
+        if (exponent < 0)
+        {
+            return false;
+        }
+        if (exponent == 0)
+        {
+            result = One;
+            return true;
+        }
+        var numeratorBits = SaturatingMultiply(BitLength(value.Numerator), exponent);
+        var denominatorBits = SaturatingMultiply(BitLength(value.Denominator), exponent);
+        if (numeratorBits > MaxScalarBitLength || denominatorBits > MaxScalarBitLength)
+        {
+            return false;
+        }
+
+        var current = One;
         for (var i = 0; i < exponent; i++)
         {
-            result *= value;
+            if (!TryMultiply(current, value, out current))
+            {
+                return false;
+            }
         }
-        return result;
+        result = current;
+        return true;
     }
+
+    private static long BitLength(BigInteger value) =>
+        value.IsZero ? 0 : BigInteger.Abs(value).GetBitLength();
+
+    private static long SaturatingAdd(long left, long right) =>
+        left > long.MaxValue - right ? long.MaxValue : left + right;
+
+    private static long SaturatingMultiply(long value, int factor) =>
+        factor == 0 ? 0 : value > long.MaxValue / factor ? long.MaxValue : value * factor;
 }
 
 internal static class VerifierFunctionsV2
@@ -349,12 +490,13 @@ internal static class VerifierFunctionsV2
         if (result.Status != MathematicsSolveStatus.Solved
             || result.ExactResult is null
             || !TryReadScalar(result.ExactResult, out value)
+            || !VerifierResourceBudget.IsScalarWithinLimit(value)
             || result.SolutionSet is not FiniteSolutionSet finite
             || finite.Values.Count != 1
             || !TryReadScalar(finite.Values[0], out var setValue)
             || setValue != value)
         {
-            error = "Solved scalar result must contain one exact value consistently in ExactResult and FiniteSolutionSet.";
+            error = "Solved scalar result must contain one bounded exact value consistently in ExactResult and FiniteSolutionSet.";
             return false;
         }
         error = string.Empty;
