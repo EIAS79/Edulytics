@@ -110,10 +110,24 @@ public sealed class ExactLinearInequalityVerifier : IMathematicsVerifier
         var below = boundary - One;
         var above = boundary + One;
 
-        if (!TryEvaluateTruth(inequality, variable, below, out var originalBelow, out var belowError)
-            || !TryEvaluateTruth(inequality, variable, above, out var originalAbove, out var aboveError))
+        if (!TryEvaluateTruth(
+                inequality,
+                variable,
+                below,
+                out var originalBelow,
+                out var belowError))
         {
-            return Unsupported(belowError ?? aboveError ?? "Could not evaluate points around the claimed boundary.");
+            return Unsupported(belowError ?? "Could not evaluate the point below the claimed boundary.");
+        }
+
+        if (!TryEvaluateTruth(
+                inequality,
+                variable,
+                above,
+                out var originalAbove,
+                out var aboveError))
+        {
+            return Unsupported(aboveError ?? "Could not evaluate the point above the claimed boundary.");
         }
 
         var normalizedBelow = ExactLinearInequalitySolver.EvaluateRelation(below, solved.Relation, boundary);
