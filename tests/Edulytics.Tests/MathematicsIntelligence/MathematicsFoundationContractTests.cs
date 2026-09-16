@@ -80,6 +80,37 @@ public sealed class MathematicsFoundationContractTests
     }
 
     [Fact]
+    public void LessonSkillResolution_OrdersCandidatesByScoreWithoutPromotingThem()
+    {
+        var lower = new LessonSkillCandidate(
+            new SkillId("fractions.equivalent"),
+            6,
+            [new LessonSkillEvidence(LessonSkillEvidenceType.Explanation, "Equivalent fractions are used.", 3)]);
+        var higher = new LessonSkillCandidate(
+            new SkillId("fractions.compare.unlike_denominators"),
+            14,
+            [new LessonSkillEvidence(LessonSkillEvidenceType.LessonTitle, "Compare fractions with different denominators", 8)]);
+
+        var resolution = new LessonSkillResolution(
+            "PED:TEST:FRACTIONS",
+            MathematicsLessonSourceType.SupportingLesson,
+            LessonSkillResolutionStatus.HighConfidenceCandidate,
+            [lower, higher]);
+
+        Assert.Equal("fractions.compare.unlike_denominators", resolution.Candidates[0].SkillId.Value);
+        Assert.Equal(LessonSkillResolutionStatus.HighConfidenceCandidate, resolution.Status);
+    }
+
+    [Fact]
+    public void LessonSkillResolution_HighConfidenceRequiresCandidateEvidence()
+    {
+        Assert.Throws<ArgumentException>(() => new LessonSkillResolution(
+            "PED:TEST:EMPTY",
+            MathematicsLessonSourceType.SupportingLesson,
+            LessonSkillResolutionStatus.HighConfidenceCandidate));
+    }
+
+    [Fact]
     public void SkillContract_RejectsSelfPrerequisite()
     {
         var skill = new SkillId("algebra.linear.solve");
