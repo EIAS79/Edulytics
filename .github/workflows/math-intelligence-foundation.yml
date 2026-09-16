@@ -33,11 +33,17 @@ jobs:
         run: |
           set -euo pipefail
           python3 tools/math_intelligence/catalogue_skill_baseline.py --strict --write-report
-      - name: Upload baseline audit
+      - name: Run deterministic lesson-skill candidate resolution audit
+        run: |
+          set -euo pipefail
+          python3 tools/math_intelligence/lesson_skill_resolution_audit.py --strict --write-report
+      - name: Upload Mathematics Intelligence audits
         uses: actions/upload-artifact@v7.0.1
         with:
           name: math-intelligence-catalogue-baseline-${{ github.sha }}
-          path: artifacts/math-intelligence/catalogue-skill-baseline.json
+          path: |
+            artifacts/math-intelligence/catalogue-skill-baseline.json
+            artifacts/math-intelligence/lesson-skill-resolution-audit.json
           retention-days: 14
 
   math-foundation-tests:
