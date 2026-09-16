@@ -75,11 +75,13 @@ public sealed class ExactPythagoreanSolver : IMathematicsSolver
             return ExactGeometryV2.Unsupported(request, "geometry-pythagorean-exact-v1", "Exact Pythagorean evaluation requires a supported two-argument geometry function.");
         }
 
-        if (!ExactGeometryV2.TryReadPositiveScalar(call.Arguments[0], out var first, out var firstError, out var firstResource)
-            || !ExactGeometryV2.TryReadPositiveScalar(call.Arguments[1], out var second, out var secondError, out var secondResource))
+        if (!ExactGeometryV2.TryReadPositiveScalar(call.Arguments[0], out var first, out var firstError, out var firstResource))
         {
-            var diagnostic = !string.IsNullOrEmpty(firstError) ? firstError : secondError;
-            return ExactGeometryV2.Failed(request, "geometry-pythagorean-exact-v1", diagnostic, firstResource || secondResource);
+            return ExactGeometryV2.Failed(request, "geometry-pythagorean-exact-v1", firstError, firstResource);
+        }
+        if (!ExactGeometryV2.TryReadPositiveScalar(call.Arguments[1], out var second, out var secondError, out var secondResource))
+        {
+            return ExactGeometryV2.Failed(request, "geometry-pythagorean-exact-v1", secondError, secondResource);
         }
 
         return call.FunctionName switch
