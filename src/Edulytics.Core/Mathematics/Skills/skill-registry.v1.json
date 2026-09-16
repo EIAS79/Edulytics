@@ -37,7 +37,17 @@
       "id": "algebra.linear.solve",
       "domain": "algebra",
       "canonicalName": "Solve linear equations",
-      "legacyCanonicalSkill": "OneStepLinearEquation"
+      "legacyCanonicalSkill": "OneStepLinearEquation",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "algebra.linear.affine_extract",
+        "algebra.linear.solve.exact_rational",
+        "algebra.linear.verify.substitution"
+      ],
+      "v2QuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c"
+      ]
     },
     {
       "id": "number.lcm",
