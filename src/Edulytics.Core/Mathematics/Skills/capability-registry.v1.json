@@ -3,49 +3,14 @@
   "registryVersion": "math-capabilities-v1",
   "status": "Shadow",
   "capabilities": [
-    {
-      "id": "rational.exact_arithmetic",
-      "domain": "number",
-      "canonicalName": "Exact rational arithmetic",
-      "verification": "deterministic"
-    },
-    {
-      "id": "algebra.linear.affine_extract",
-      "domain": "algebra",
-      "canonicalName": "Reduce supported expressions to affine form a*x+b",
-      "verification": "shape-and-exact-arithmetic"
-    },
-    {
-      "id": "algebra.linear.solve.exact_rational",
-      "domain": "algebra",
-      "canonicalName": "Solve single-variable affine equations over exact rationals",
-      "provider": "edulytics-native-linear",
-      "providerVersion": "linear-exact-v1",
-      "status": "ShadowVerified"
-    },
-    {
-      "id": "algebra.linear.verify.substitution",
-      "domain": "algebra",
-      "canonicalName": "Verify linear-equation roots by exact substitution into the original equation",
-      "provider": "edulytics-native-linear",
-      "providerVersion": "linear-exact-v1",
-      "status": "ShadowVerified"
-    },
-    {
-      "id": "algebra.linear.inequality.solve.exact_rational",
-      "domain": "algebra",
-      "canonicalName": "Solve single-variable affine inequalities over exact rationals",
-      "provider": "edulytics-native-linear-inequality",
-      "providerVersion": "linear-inequality-exact-v1",
-      "status": "ShadowVerified"
-    },
-    {
-      "id": "algebra.linear.inequality.verify.interval",
-      "domain": "algebra",
-      "canonicalName": "Verify affine-inequality boundaries, orientation and interval solution sets",
-      "provider": "edulytics-native-linear-inequality",
-      "providerVersion": "linear-inequality-exact-v1",
-      "status": "ShadowVerified"
-    }
+    {"id":"rational.exact_arithmetic","domain":"number","canonicalName":"Exact rational arithmetic","verification":"deterministic"},
+    {"id":"algebra.linear.affine_extract","domain":"algebra","canonicalName":"Reduce supported expressions to affine form a*x+b","verification":"shape-and-exact-arithmetic"},
+    {"id":"algebra.linear.solve.exact_rational","domain":"algebra","canonicalName":"Solve single-variable affine equations over exact rationals","provider":"edulytics-native-linear","providerVersion":"linear-exact-v1","status":"ShadowVerified"},
+    {"id":"algebra.linear.verify.substitution","domain":"algebra","canonicalName":"Verify linear-equation roots by exact substitution into the original equation","provider":"edulytics-native-linear","providerVersion":"linear-exact-v1","status":"ShadowVerified"},
+    {"id":"algebra.linear.inequality.solve.exact_rational","domain":"algebra","canonicalName":"Solve single-variable affine inequalities over exact rationals","provider":"edulytics-native-linear-inequality","providerVersion":"linear-inequality-exact-v1","status":"ShadowVerified"},
+    {"id":"algebra.linear.inequality.verify.interval","domain":"algebra","canonicalName":"Verify affine-inequality boundaries, orientation and interval solution sets","provider":"edulytics-native-linear-inequality","providerVersion":"linear-inequality-exact-v1","status":"ShadowVerified"},
+    {"id":"algebra.linear.systems.two_by_two.affine_extract","domain":"algebra","canonicalName":"Reduce two equations to an exact 2x2 affine coefficient system","verification":"shape-and-exact-arithmetic","status":"ShadowVerified"},
+    {"id":"algebra.linear.systems.two_by_two.solve.exact_rational","domain":"algebra","canonicalName":"Solve a 2x2 affine system over exact rationals","provider":"edulytics-native-linear-system-2x2","providerVersion":"linear-system-2x2-exact-v1","status":"ShadowVerified"},
+    {"id":"algebra.linear.systems.two_by_two.verify.substitution","domain":"algebra","canonicalName":"Verify an exact 2x2 ordered pair in both original equations","provider":"edulytics-native-linear-system-2x2","providerVersion":"linear-system-2x2-exact-v1","status":"ShadowVerified"}
   ]
 }

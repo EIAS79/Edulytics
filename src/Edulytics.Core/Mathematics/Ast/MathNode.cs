@@ -16,6 +16,7 @@ namespace Edulytics.Core.Mathematics.Ast;
 [JsonDerivedType(typeof(PowerNode), "power")]
 [JsonDerivedType(typeof(RootNode), "root")]
 [JsonDerivedType(typeof(EquationNode), "equation")]
+[JsonDerivedType(typeof(EquationSystemNode), "equationSystem")]
 [JsonDerivedType(typeof(InequalityNode), "inequality")]
 [JsonDerivedType(typeof(FunctionCallNode), "function")]
 [JsonDerivedType(typeof(VectorNode), "vector")]
@@ -61,6 +62,28 @@ public sealed record PowerNode(MathNode Base, MathNode Exponent) : MathNode;
 public sealed record RootNode(MathNode Radicand, int Degree = 2) : MathNode;
 
 public sealed record EquationNode(MathNode Left, MathNode Right) : MathNode;
+
+/// <summary>
+/// A typed conjunction of equations that must be satisfied by the same variable
+/// assignment. The current V2 systems slice supports exactly two affine equations
+/// in exactly two distinct variables, while the AST itself can carry larger systems
+/// for future solver providers.
+/// </summary>
+public sealed record EquationSystemNode : MathNode
+{
+    public EquationSystemNode(IReadOnlyList<EquationNode> equations)
+    {
+        ArgumentNullException.ThrowIfNull(equations);
+        if (equations.Count == 0)
+        {
+            throw new ArgumentException("An equation system must contain at least one equation.", nameof(equations));
+        }
+
+        Equations = equations.ToArray();
+    }
+
+    public IReadOnlyList<EquationNode> Equations { get; }
+}
 
 public enum InequalityRelation
 {

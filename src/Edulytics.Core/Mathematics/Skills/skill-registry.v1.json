@@ -3,112 +3,21 @@
   "registryVersion": "math-skills-v1-foundation",
   "status": "Foundation",
   "skills": [
-    {
-      "id": "number.whole.add_subtract",
-      "domain": "number",
-      "canonicalName": "Whole-number addition and subtraction",
-      "legacyCanonicalSkill": "WholeNumberAdditionAndSubtraction"
-    },
-    {
-      "id": "number.whole.add",
-      "domain": "number",
-      "canonicalName": "Whole-number addition",
-      "legacyCanonicalSkill": "WholeNumberAddition"
-    },
-    {
-      "id": "number.whole.subtract",
-      "domain": "number",
-      "canonicalName": "Whole-number subtraction",
-      "legacyCanonicalSkill": "WholeNumberSubtraction"
-    },
-    {
-      "id": "number.whole.multiply",
-      "domain": "number",
-      "canonicalName": "Whole-number multiplication",
-      "legacyCanonicalSkill": "WholeNumberMultiplication"
-    },
-    {
-      "id": "number.whole.divide",
-      "domain": "number",
-      "canonicalName": "Whole-number division",
-      "legacyCanonicalSkill": "WholeNumberDivision"
-    },
-    {
-      "id": "algebra.linear.solve",
-      "domain": "algebra",
-      "canonicalName": "Solve linear equations",
-      "legacyCanonicalSkill": "OneStepLinearEquation",
-      "v2Status": "ShadowVerified",
-      "v2Capabilities": [
-        "rational.exact_arithmetic",
-        "algebra.linear.affine_extract",
-        "algebra.linear.solve.exact_rational",
-        "algebra.linear.verify.substitution"
-      ],
-      "v2QuestionFamilies": [
-        "algebra.linear.ax_plus_b_equals_c"
-      ]
-    },
-    {
-      "id": "algebra.linear.inequality.solve",
-      "domain": "algebra",
-      "canonicalName": "Solve single-variable linear inequalities",
-      "v2Status": "ShadowVerified",
-      "v2Capabilities": [
-        "rational.exact_arithmetic",
-        "algebra.linear.affine_extract",
-        "algebra.linear.inequality.solve.exact_rational",
-        "algebra.linear.inequality.verify.interval"
-      ],
-      "v2QuestionFamilies": [
-        "algebra.linear.inequality.ax_plus_b_relation_c"
-      ]
-    },
-    {
-      "id": "number.lcm",
-      "domain": "number",
-      "canonicalName": "Find and use least common multiples"
-    },
-    {
-      "id": "fractions.equivalent",
-      "domain": "fractions",
-      "canonicalName": "Generate and recognize equivalent fractions"
-    },
-    {
-      "id": "fractions.of_quantity",
-      "domain": "fractions",
-      "canonicalName": "Find a fraction of a quantity",
-      "legacyCanonicalSkill": "FractionOfQuantity"
-    },
-    {
-      "id": "percentages.of_quantity",
-      "domain": "percentages",
-      "canonicalName": "Find a percentage of a quantity",
-      "legacyCanonicalSkill": "PercentageOfQuantity"
-    },
-    {
-      "id": "ratio.unit_rate",
-      "domain": "ratio",
-      "canonicalName": "Use unit rate and proportion",
-      "legacyCanonicalSkill": "UnitRateAndProportion"
-    },
-    {
-      "id": "algebra.relationships.two_unknowns",
-      "domain": "algebra",
-      "canonicalName": "Solve linked relationships with two unknowns",
-      "legacyGameMechanic": "TWO_UNKNOWNS"
-    },
-    {
-      "id": "measurement.scale.read_equal_intervals",
-      "domain": "measurement",
-      "canonicalName": "Read scales divided into equal intervals",
-      "legacyGameMechanic": "SCALE_READING"
-    },
-    {
-      "id": "fractions.compare.unlike_denominators",
-      "domain": "fractions",
-      "canonicalName": "Compare fractions with different denominators",
-      "legacyGameMechanic": "FRACTION_COMPARE_UNLIKE"
-    }
+    {"id":"number.whole.add_subtract","domain":"number","canonicalName":"Whole-number addition and subtraction","legacyCanonicalSkill":"WholeNumberAdditionAndSubtraction"},
+    {"id":"number.whole.add","domain":"number","canonicalName":"Whole-number addition","legacyCanonicalSkill":"WholeNumberAddition"},
+    {"id":"number.whole.subtract","domain":"number","canonicalName":"Whole-number subtraction","legacyCanonicalSkill":"WholeNumberSubtraction"},
+    {"id":"number.whole.multiply","domain":"number","canonicalName":"Whole-number multiplication","legacyCanonicalSkill":"WholeNumberMultiplication"},
+    {"id":"number.whole.divide","domain":"number","canonicalName":"Whole-number division","legacyCanonicalSkill":"WholeNumberDivision"},
+    {"id":"algebra.linear.solve","domain":"algebra","canonicalName":"Solve linear equations","legacyCanonicalSkill":"OneStepLinearEquation","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","algebra.linear.affine_extract","algebra.linear.solve.exact_rational","algebra.linear.verify.substitution"],"v2QuestionFamilies":["algebra.linear.ax_plus_b_equals_c"]},
+    {"id":"algebra.linear.inequality.solve","domain":"algebra","canonicalName":"Solve single-variable linear inequalities","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","algebra.linear.affine_extract","algebra.linear.inequality.solve.exact_rational","algebra.linear.inequality.verify.interval"],"v2QuestionFamilies":["algebra.linear.inequality.ax_plus_b_relation_c"]},
+    {"id":"algebra.linear.systems.two_by_two.solve","domain":"algebra","canonicalName":"Solve a 2x2 linear system","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","algebra.linear.systems.two_by_two.affine_extract","algebra.linear.systems.two_by_two.solve.exact_rational","algebra.linear.systems.two_by_two.verify.substitution"],"v2QuestionFamilies":["algebra.linear.systems.two_by_two.integer_coefficients"]},
+    {"id":"number.lcm","domain":"number","canonicalName":"Find and use least common multiples"},
+    {"id":"fractions.equivalent","domain":"fractions","canonicalName":"Generate and recognize equivalent fractions"},
+    {"id":"fractions.of_quantity","domain":"fractions","canonicalName":"Find a fraction of a quantity","legacyCanonicalSkill":"FractionOfQuantity"},
+    {"id":"percentages.of_quantity","domain":"percentages","canonicalName":"Find a percentage of a quantity","legacyCanonicalSkill":"PercentageOfQuantity"},
+    {"id":"ratio.unit_rate","domain":"ratio","canonicalName":"Use unit rate and proportion","legacyCanonicalSkill":"UnitRateAndProportion"},
+    {"id":"algebra.relationships.two_unknowns","domain":"algebra","canonicalName":"Solve linked relationships with two unknowns","legacyGameMechanic":"TWO_UNKNOWNS"},
+    {"id":"measurement.scale.read_equal_intervals","domain":"measurement","canonicalName":"Read scales divided into equal intervals","legacyGameMechanic":"SCALE_READING"},
+    {"id":"fractions.compare.unlike_denominators","domain":"fractions","canonicalName":"Compare fractions with different denominators","legacyGameMechanic":"FRACTION_COMPARE_UNLIKE"}
   ]
 }
