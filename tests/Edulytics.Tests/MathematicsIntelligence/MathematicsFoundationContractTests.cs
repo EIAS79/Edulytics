@@ -111,6 +111,23 @@ public sealed class MathematicsFoundationContractTests
     }
 
     [Fact]
+    public void LessonContentSemanticAuditResult_PreservesReviewEvidence()
+    {
+        var finding = new LessonContentSemanticFinding(
+            LessonContentSemanticFindingType.WorkedExampleTargetEvidenceMissing,
+            "Worked examples do not demonstrate decimal rounding.",
+            "decimals-rounding");
+        var result = new LessonContentSemanticAuditResult(
+            "PED:TEST:DECIMALS",
+            LessonContentSemanticStatus.ContentWeak,
+            [finding]);
+
+        Assert.Equal(LessonContentSemanticStatus.ContentWeak, result.Status);
+        Assert.Single(result.Findings);
+        Assert.Equal("decimals-rounding", result.Findings[0].RuleId);
+    }
+
+    [Fact]
     public void SkillContract_RejectsSelfPrerequisite()
     {
         var skill = new SkillId("algebra.linear.solve");
