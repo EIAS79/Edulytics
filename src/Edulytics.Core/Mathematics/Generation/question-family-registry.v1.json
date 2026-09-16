@@ -17,6 +17,22 @@
       "representations": ["symbolic"],
       "status": "ShadowVerified",
       "productionRouting": false
+    },
+    {
+      "id": "algebra.linear.inequality.ax_plus_b_relation_c",
+      "version": 1,
+      "skillId": "algebra.linear.inequality.solve",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "algebra.linear.affine_extract",
+        "algebra.linear.inequality.solve.exact_rational",
+        "algebra.linear.inequality.verify.interval"
+      ],
+      "answerType": "exact_interval_or_union",
+      "verificationPolicy": "exact-boundary-orientation-and-interval",
+      "representations": ["symbolic", "interval"],
+      "status": "ShadowVerified",
+      "productionRouting": false
     }
   ]
 }
