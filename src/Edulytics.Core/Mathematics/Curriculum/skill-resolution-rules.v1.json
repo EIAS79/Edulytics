@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "rulesVersion": "lesson-skill-resolution-v1",
+  "purpose": "Deterministic candidate generation only. These rules do not create production LessonSkillProfile mappings.",
+  "scoring": {
+    "titlePattern": 8,
+    "keyConceptPattern": 4,
+    "explanationPattern": 3,
+    "workedExamplePattern": 3,
+    "solutionPattern": 2,
+    "summaryPattern": 2,
+    "negativePattern": -8,
+    "highConfidenceMinimum": 10,
+    "reviewMinimum": 6,
+    "minimumWinnerGap": 3
+  },
+  "rules": [
+    {
+      "id": "whole-add-subtract",
+      "skillId": "number.whole.add_subtract",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\baddition and subtraction\\b",
+        "\\badd and subtract\\b",
+        "\\badditive and subtractive\\b"
+      ],
+      "contentPatterns": [
+        "\\baddition and subtraction\\b",
+        "\\badd and subtract\\b"
+      ],
+      "negativePatterns": [
+        "\\bfraction",
+        "\\bdecimal",
+        "\\bpercentage",
+        "\\balgebraic"
+      ]
+    },
+    {
+      "id": "whole-add",
+      "skillId": "number.whole.add",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\badd(?:ing)? whole numbers\\b",
+        "\\bwhole[- ]number addition\\b",
+        "\\badd integers?\\b"
+      ],
+      "contentPatterns": [
+        "\\badd whole numbers\\b",
+        "\\bwhole[- ]number addition\\b"
+      ],
+      "negativePatterns": [
+        "\\bfraction",
+        "\\bdecimal",
+        "\\bpercentage",
+        "\\bvector"
+      ]
+    },
+    {
+      "id": "whole-subtract",
+      "skillId": "number.whole.subtract",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\bsubtract(?:ing)? whole numbers\\b",
+        "\\bwhole[- ]number subtraction\\b",
+        "\\bsubtract integers?\\b"
+      ],
+      "contentPatterns": [
+        "\\bsubtract whole numbers\\b",
+        "\\bwhole[- ]number subtraction\\b"
+      ],
+      "negativePatterns": [
+        "\\bfraction",
+        "\\bdecimal",
+        "\\bpercentage",
+        "\\bvector"
+      ]
+    },
+    {
+      "id": "whole-multiply",
+      "skillId": "number.whole.multiply",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\bmultiply(?:ing)? whole numbers\\b",
+        "\\bwhole[- ]number multiplication\\b",
+        "\\bmultiply integers?\\b"
+      ],
+      "contentPatterns": [
+        "\\bmultiply whole numbers\\b",
+        "\\bwhole[- ]number multiplication\\b"
+      ],
+      "negativePatterns": [
+        "\\bfraction",
+        "\\bdecimal",
+        "\\bmatrix",
+        "\\bvector"
+      ]
+    },
+    {
+      "id": "whole-divide",
+      "skillId": "number.whole.divide",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\bdivide(?:ing)? whole numbers\\b",
+        "\\bwhole[- ]number division\\b",
+        "\\bdivide integers?\\b"
+      ],
+      "contentPatterns": [
+        "\\bdivide whole numbers\\b",
+        "\\bwhole[- ]number division\\b"
+      ],
+      "negativePatterns": [
+        "\\bfraction",
+        "\\bdecimal",
+        "\\bpolynomial",
+        "\\bmatrix"
+      ]
+    },
+    {
+      "id": "linear-equation-solve",
+      "skillId": "algebra.linear.solve",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\bsolve (?:a |the )?linear equations?\\b",
+        "\\bsolving linear equations?\\b",
+        "\\blinear equations?: solve\\b"
+      ],
+      "contentPatterns": [
+        "\\bisolate the (?:unknown|variable)\\b",
+        "\\blinear equation\\b"
+      ],
+      "negativePatterns": [
+        "\\bquadratic",
+        "\\bsimultaneous",
+        "\\bsystem of equations",
+        "\\bdifferential equation"
+      ]
+    },
+    {
+      "id": "least-common-multiple",
+      "skillId": "number.lcm",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\bleast common multiples?\\b",
+        "\\blcm\\b"
+      ],
+      "contentPatterns": [
+        "\\bleast common multiples?\\b",
+        "\\bsmallest common multiple\\b"
+      ],
+      "negativePatterns": []
+    },
+    {
+      "id": "equivalent-fractions",
+      "skillId": "fractions.equivalent",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\bequivalent fractions?\\b",
+        "\\bgenerate equivalent fractions?\\b",
+        "\\brecognise equivalent fractions?\\b",
+        "\\brecognize equivalent fractions?\\b"
+      ],
+      "contentPatterns": [
+        "\\bequivalent fractions?\\b",
+        "\\bmultiply (?:the )?numerator and denominator by the same\\b"
+      ],
+      "negativePatterns": [
+        "\\bcompare fractions with different denominators\\b"
+      ]
+    },
+    {
+      "id": "fraction-of-quantity",
+      "skillId": "fractions.of_quantity",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\bfraction of (?:a )?(?:quantity|amount|number)\\b",
+        "\\bfind (?:a |the )?fraction of\\b"
+      ],
+      "contentPatterns": [
+        "\\bfraction of (?:a )?(?:quantity|amount|number)\\b",
+        "\\bdivide by the denominator.*multiply by the numerator\\b"
+      ],
+      "negativePatterns": [
+        "\\bcompare fractions\\b",
+        "\\bequivalent fractions\\b"
+      ]
+    },
+    {
+      "id": "percentage-of-quantity",
+      "skillId": "percentages.of_quantity",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\bpercentage of (?:a )?(?:quantity|amount|number)\\b",
+        "\\bfind (?:a |the )?percentage of\\b"
+      ],
+      "contentPatterns": [
+        "\\bpercentage of (?:a )?(?:quantity|amount|number)\\b",
+        "\\bdivide by 100.*multiply\\b"
+      ],
+      "negativePatterns": [
+        "\\bpercentage change\\b",
+        "\\bpercentage increase\\b",
+        "\\bpercentage decrease\\b"
+      ]
+    },
+    {
+      "id": "unit-rate-proportion",
+      "skillId": "ratio.unit_rate",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\bunit rates?\\b",
+        "\\bunitary method\\b",
+        "\\bfind the rate per\\b"
+      ],
+      "contentPatterns": [
+        "\\bunit rates?\\b",
+        "\\brate per one\\b",
+        "\\bper unit\\b"
+      ],
+      "negativePatterns": [
+        "\\bgradient",
+        "\\bderivative"
+      ]
+    },
+    {
+      "id": "two-unknown-relationships",
+      "skillId": "algebra.relationships.two_unknowns",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\b2 unknowns?\\b",
+        "\\btwo unknowns?\\b",
+        "\\bproblems? with 2 unknowns?\\b",
+        "\\bproblems? with two unknowns?\\b"
+      ],
+      "contentPatterns": [
+        "\\btwo unknown quantities\\b",
+        "\\btwo independent relationships\\b",
+        "\\blinked unknowns?\\b"
+      ],
+      "negativePatterns": [
+        "\\bquadratic"
+      ]
+    },
+    {
+      "id": "read-equal-interval-scale",
+      "skillId": "measurement.scale.read_equal_intervals",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\bread(?:ing)? scales?.*\\bintervals?\\b",
+        "\\bscales? with (?:2|4|5|10|equal) intervals?\\b",
+        "\\bread a scale divided into equal intervals?\\b"
+      ],
+      "contentPatterns": [
+        "\\bequal intervals?\\b",
+        "\\bscale interval\\b",
+        "\\bpointer position\\b"
+      ],
+      "negativePatterns": [
+        "\\bscale factor\\b",
+        "\\bmap scale\\b"
+      ]
+    },
+    {
+      "id": "compare-unlike-fractions",
+      "skillId": "fractions.compare.unlike_denominators",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\bcompare fractions? with different denominators?\\b",
+        "\\bcompare fractions? with unlike denominators?\\b",
+        "\\bcomparing unlike fractions?\\b"
+      ],
+      "contentPatterns": [
+        "\\bcommon denominator\\b",
+        "\\bequivalent fractions?.*compare\\b",
+        "\\bcompare.*equivalent fractions?\\b"
+      ],
+      "negativePatterns": [
+        "\\bfraction of (?:a )?(?:quantity|amount|number)\\b"
+      ]
+    }
+  ]
+}
