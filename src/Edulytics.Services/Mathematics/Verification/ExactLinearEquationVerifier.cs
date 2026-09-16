@@ -66,6 +66,16 @@ public sealed class ExactLinearEquationVerifier : IMathematicsVerifier
             return Unsupported($"Verification for solve status {result.Status} is not implemented by this verifier.");
         }
 
+        // A solved scalar result is only valid when the normalized equation has a
+        // non-zero variable coefficient. Degenerate equations must be represented
+        // as either NoSolution or Indeterminate; substitution alone is insufficient
+        // to distinguish an identity from a genuine singleton solution.
+        if (coefficient == zero)
+        {
+            return Rejected(
+                "Solver reported a singleton solution for a degenerate equation; normalized variable coefficient is zero.");
+        }
+
         if (string.IsNullOrWhiteSpace(variable))
         {
             return Rejected("Solved result was returned for an equation with no variable.");
