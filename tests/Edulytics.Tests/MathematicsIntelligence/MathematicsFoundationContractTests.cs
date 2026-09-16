@@ -54,11 +54,11 @@ public sealed class MathematicsFoundationContractTests
     }
 
     [Fact]
-    public void MathAst_RoundTripsUsingPolymorphicSerialization()
+    public void MathAst_RoundTripsExactIntegerAndRationalValues()
     {
         MathNode problem = new EquationNode(
-            new SymbolNode("x"),
-            new IntegerNode(25));
+            new IntegerNode(25),
+            new RationalNode(new ExactRational(1, 2)));
 
         var json = JsonSerializer.Serialize(problem);
         var roundTrip = JsonSerializer.Deserialize<MathNode>(json);
