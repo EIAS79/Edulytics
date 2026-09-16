@@ -120,6 +120,26 @@ public sealed class ExactLinearEquationSolverTests
     }
 
     [Fact]
+    public void Verify_TamperedSolvedIdentity_IsRejected()
+    {
+        var equation = new EquationNode(new SymbolNode("x"), new SymbolNode("x"));
+        var tampered = new MathematicsSolveResult(
+            MathematicsSolveStatus.Solved,
+            new IntegerNode(5),
+            new FiniteSolutionSet([new IntegerNode(5)]),
+            [],
+            "tampered",
+            null,
+            "test",
+            "1",
+            []);
+
+        var verification = verifier.Verify(Request(equation), tampered);
+
+        Assert.Equal(MathematicsVerificationStatus.Rejected, verification.Status);
+    }
+
+    [Fact]
     public void Solve_NonlinearProduct_FailsClosedAsUnsupported()
     {
         var equation = new EquationNode(
