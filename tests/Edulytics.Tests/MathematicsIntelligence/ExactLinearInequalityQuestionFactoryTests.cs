@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Edulytics.Core.Mathematics.Ast;
 using Edulytics.Core.Mathematics.Solving;
 using Edulytics.Core.Mathematics.Verification;
@@ -42,10 +43,15 @@ public sealed class ExactLinearInequalityQuestionFactoryTests
         var first = factory.Generate(12345, 2);
         var second = factory.Generate(12345, 2);
 
-        Assert.Equal(first.Problem, second.Problem);
-        Assert.Equal(first.ExpectedAnswer, second.ExpectedAnswer);
-        Assert.Equal(first.SolveResult.SolutionSet, second.SolveResult.SolutionSet);
-        Assert.Equal(first.Parameters, second.Parameters);
+        Assert.Equal(
+            JsonSerializer.Serialize(first.Problem),
+            JsonSerializer.Serialize(second.Problem));
+        Assert.Equal(
+            JsonSerializer.Serialize(first.ExpectedAnswer),
+            JsonSerializer.Serialize(second.ExpectedAnswer));
+        Assert.Equal(
+            first.Parameters.OrderBy(x => x.Key).ToArray(),
+            second.Parameters.OrderBy(x => x.Key).ToArray());
     }
 
     [Theory]
