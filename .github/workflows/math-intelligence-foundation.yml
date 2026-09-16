@@ -29,6 +29,10 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7.0.1
+      - name: Run Mathematics V2 registry integrity audit
+        run: |
+          set -euo pipefail
+          python3 tools/math_intelligence/math_registry_integrity.py --strict --write-report
       - name: Run catalogue and SkillContract baseline audit
         run: |
           set -euo pipefail
@@ -50,6 +54,7 @@ jobs:
         with:
           name: math-intelligence-catalogue-baseline-${{ github.sha }}
           path: |
+            artifacts/math-intelligence/math-registry-integrity.json
             artifacts/math-intelligence/catalogue-skill-baseline.json
             artifacts/math-intelligence/lesson-skill-resolution-audit.json
             artifacts/math-intelligence/lesson-semantic-content-audit.json
