@@ -53,6 +53,25 @@ public sealed class ExactIndicesExponentialsLogTrigSolverTests
     }
 
     [Fact]
+    public void IndexPower_FailsClosedOnMalformedZeroDenominatorRational()
+    {
+        var solver = new ExactIndexPowerSolver();
+        var verifier = new ExactIndexPowerVerifier();
+        var malformed = new RationalNode(default);
+
+        foreach (var exponent in new[] { 0, 2 })
+        {
+            var request = Request(new FunctionCallNode("index_power_exact", [malformed, I(exponent)]));
+            var exception = Record.Exception(() => solver.Solve(request));
+            Assert.Null(exception);
+
+            var result = solver.Solve(request);
+            Assert.Equal(MathematicsSolveStatus.Unsupported, result.Status);
+            Assert.False(verifier.Verify(request, result).IsVerified);
+        }
+    }
+
+    [Fact]
     public void ExponentialSameBase_SolvesExactIntegerExponent_AndRejectsNonPower()
     {
         var solver = new ExactExponentialSameBaseSolver();
@@ -124,6 +143,28 @@ public sealed class ExactIndicesExponentialsLogTrigSolverTests
         var normalizedResult = solver.Solve(sinNegative45);
         Assert.Equal(Neg(SqrtOver(2, 2)), normalizedResult.ExactResult);
         Assert.True(verifier.Verify(sinNegative45, normalizedResult).IsVerified);
+    }
+
+    [Fact]
+    public void SpecialAngleTrig_EmitsCanonicalNegativeHalfRationals()
+    {
+        var solver = new ExactSpecialAngleTrigonometrySolver();
+        var verifier = new ExactSpecialAngleTrigonometryVerifier();
+
+        foreach (var request in new[]
+        {
+            Request(new FunctionCallNode("sin_degrees_exact", [I(210)])),
+            Request(new FunctionCallNode("sin_degrees_exact", [I(330)])),
+            Request(new FunctionCallNode("cos_degrees_exact", [I(120)])),
+            Request(new FunctionCallNode("cos_degrees_exact", [I(240)]))
+        })
+        {
+            var result = solver.Solve(request);
+            Assert.Equal(MathematicsSolveStatus.Solved, result.Status);
+            var rational = Assert.IsType<RationalNode>(result.ExactResult);
+            Assert.Equal(new ExactRational(BigInteger.MinusOne, new BigInteger(2)), rational.Value);
+            Assert.True(verifier.Verify(request, result).IsVerified);
+        }
     }
 
     [Fact]
