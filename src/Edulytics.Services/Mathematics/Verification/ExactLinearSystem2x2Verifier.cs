@@ -61,19 +61,21 @@ public sealed class ExactLinearSystem2x2Verifier : IMathematicsVerifier
             if (inconsistent)
             {
                 return result.Status == MathematicsSolveStatus.NoSolution
+                       && result.ExactResult is null
                        && result.SolutionSet is EmptySolutionSet
                     ? Verified(
                         "augmented-rank-inconsistency",
                         "Coefficient determinant is zero and an augmented minor is non-zero; the two lines have no common ordered pair.")
-                    : Rejected("Singular inconsistent system was not classified as no-solution.");
+                    : Rejected("Singular inconsistent system was not classified consistently as no-solution.");
             }
 
             return result.Status == MathematicsSolveStatus.Indeterminate
                    && result.ExactResult is null
+                   && result.SolutionSet is null
                 ? Verified(
                     "dependent-rank-classification",
                     "Coefficient and augmented minors are zero; the two affine equations are dependent and have infinitely many common points.")
-                : Rejected("Dependent system was not classified as indeterminate.");
+                : Rejected("Dependent system must be indeterminate with no contradictory finite/empty solution-set payload.");
         }
 
         if (result.Status != MathematicsSolveStatus.Solved)
