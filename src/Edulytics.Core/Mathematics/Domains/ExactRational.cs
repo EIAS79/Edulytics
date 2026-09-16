@@ -9,6 +9,7 @@ namespace Edulytics.Core.Mathematics.Domains;
 /// Normalized exact rational number. The denominator is always positive and the
 /// numerator/denominator are reduced by their greatest common divisor.
 /// </summary>
+[JsonConverter(typeof(ExactRationalJsonConverter))]
 public readonly record struct ExactRational
 {
     public ExactRational(BigInteger numerator, BigInteger denominator)
