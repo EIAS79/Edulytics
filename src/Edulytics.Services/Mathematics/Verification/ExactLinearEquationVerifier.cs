@@ -26,10 +26,14 @@ public sealed class ExactLinearEquationVerifier : IMathematicsVerifier
             return Unsupported("Verifier only supports EquationNode problems.");
         }
 
-        if (!ExactLinearForm.TryCreate(equation.Left, out var left, out var leftError)
-            || !ExactLinearForm.TryCreate(equation.Right, out var right, out var rightError))
+        if (!ExactLinearForm.TryCreate(equation.Left, out var left, out var leftError))
         {
-            return Unsupported(leftError ?? rightError ?? "Equation is outside the affine subset.");
+            return Unsupported(leftError ?? "Left side is outside the affine subset.");
+        }
+
+        if (!ExactLinearForm.TryCreate(equation.Right, out var right, out var rightError))
+        {
+            return Unsupported(rightError ?? "Right side is outside the affine subset.");
         }
 
         if (!ExactLinearForm.TryMergeVariable(left.Variable, right.Variable, out var variable))
@@ -72,10 +76,24 @@ public sealed class ExactLinearEquationVerifier : IMathematicsVerifier
             return Rejected("Solved result does not expose an exact integer or rational value.");
         }
 
-        if (!ExactExpressionEvaluator.TryEvaluate(equation.Left, variable, candidate, out var leftValue, out var leftEvalError)
-            || !ExactExpressionEvaluator.TryEvaluate(equation.Right, variable, candidate, out var rightValue, out var rightEvalError))
+        if (!ExactExpressionEvaluator.TryEvaluate(
+                equation.Left,
+                variable,
+                candidate,
+                out var leftValue,
+                out var leftEvalError))
         {
-            return Unsupported(leftEvalError ?? rightEvalError ?? "Original equation could not be evaluated exactly.");
+            return Unsupported(leftEvalError ?? "Left side could not be evaluated exactly.");
+        }
+
+        if (!ExactExpressionEvaluator.TryEvaluate(
+                equation.Right,
+                variable,
+                candidate,
+                out var rightValue,
+                out var rightEvalError))
+        {
+            return Unsupported(rightEvalError ?? "Right side could not be evaluated exactly.");
         }
 
         if (leftValue != rightValue)
@@ -170,6 +188,7 @@ internal static class ExactExpressionEvaluator
                 }
 
                 result = new ExactRational(-operand.Numerator, operand.Denominator);
+                error = null;
                 return true;
 
             case AddNode add:
@@ -207,8 +226,23 @@ internal static class ExactExpressionEvaluator
                 return true;
 
             case DivideNode divide:
-                if (!TryEvaluate(divide.Numerator, variableName, variableValue, out var numerator, out error)
-                    || !TryEvaluate(divide.Denominator, variableName, variableValue, out var denominator, out error))
+                if (!TryEvaluate(
+                        divide.Numerator,
+                        variableName,
+                        variableValue,
+                        out var numerator,
+                        out error))
+                {
+                    result = default;
+                    return false;
+                }
+
+                if (!TryEvaluate(
+                        divide.Denominator,
+                        variableName,
+                        variableValue,
+                        out var denominator,
+                        out error))
                 {
                     result = default;
                     return false;
