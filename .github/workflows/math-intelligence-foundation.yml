@@ -37,6 +37,10 @@ jobs:
         run: |
           set -euo pipefail
           python3 tools/math_intelligence/lesson_skill_resolution_audit.py --strict --write-report
+      - name: Run deterministic lesson semantic-content audit
+        run: |
+          set -euo pipefail
+          python3 tools/math_intelligence/lesson_semantic_content_audit.py --strict --write-report
       - name: Upload Mathematics Intelligence audits
         uses: actions/upload-artifact@v7.0.1
         with:
@@ -44,6 +48,7 @@ jobs:
           path: |
             artifacts/math-intelligence/catalogue-skill-baseline.json
             artifacts/math-intelligence/lesson-skill-resolution-audit.json
+            artifacts/math-intelligence/lesson-semantic-content-audit.json
           retention-days: 14
 
   math-foundation-tests:
