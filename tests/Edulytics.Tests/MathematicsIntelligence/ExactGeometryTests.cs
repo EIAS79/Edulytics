@@ -158,7 +158,7 @@ public sealed class ExactGeometryQuestionFactoryTests
 
     private static void AssertDeterministic<TFactory>(
         TFactory factory,
-        Func<TFactory, int, int, Edulytics.Services.Mathematics.Contracts.VerifiedGeneratedMathematicsProblem> generate,
+        Func<TFactory, int, int, VerifiedGeneratedMathematicsProblem> generate,
         int difficultyBand,
         string expectedFamily,
         string expectedSkill)
