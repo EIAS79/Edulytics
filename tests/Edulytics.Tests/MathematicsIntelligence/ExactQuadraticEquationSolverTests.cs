@@ -119,6 +119,64 @@ public sealed class ExactQuadraticEquationSolverTests
         Assert.False(verification.IsVerified);
     }
 
+    [Fact]
+    public void Verifier_RejectsPerfectSquareSurdDuplicateThatOmitsOtherRoot()
+    {
+        var request = Request(Quadratic(1, 0, -4));
+        var correct = solver.Solve(request);
+        var duplicateRoots = new MathNode[]
+        {
+            I(2),
+            new RootNode(I(4), 2)
+        };
+        var tampered = correct with
+        {
+            ExactResult = new VectorNode(duplicateRoots),
+            SolutionSet = new FiniteSolutionSet(duplicateRoots)
+        };
+
+        var verification = verifier.Verify(request, tampered);
+
+        Assert.False(verification.IsVerified);
+    }
+
+    [Fact]
+    public void Verifier_RejectsEquivalentSquareFactorSurdDuplicateThatOmitsOtherRoot()
+    {
+        var request = Request(Quadratic(1, 0, -8));
+        var correct = solver.Solve(request);
+        var duplicateRoots = new MathNode[]
+        {
+            new RootNode(I(8), 2),
+            new MultiplyNode([I(2), new RootNode(I(2), 2)])
+        };
+        var tampered = correct with
+        {
+            ExactResult = new VectorNode(duplicateRoots),
+            SolutionSet = new FiniteSolutionSet(duplicateRoots)
+        };
+
+        var verification = verifier.Verify(request, tampered);
+
+        Assert.False(verification.IsVerified);
+    }
+
+    [Fact]
+    public void Verifier_AcceptsConstantPowersThroughPolynomialNormalizerBound()
+    {
+        var x = new SymbolNode("x");
+        var equation = new EquationNode(
+            new PowerNode(x, I(2)),
+            new PowerNode(I(2), I(10)));
+        var request = Request(equation);
+
+        var result = solver.Solve(request);
+        var verification = verifier.Verify(request, result);
+
+        Assert.Equal(MathematicsSolveStatus.Solved, result.Status);
+        Assert.True(verification.IsVerified);
+    }
+
     private static MathematicsSolveRequest Request(EquationNode equation) =>
         new(equation, [], []);
 
