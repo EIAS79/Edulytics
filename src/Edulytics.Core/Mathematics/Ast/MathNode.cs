@@ -49,19 +49,103 @@ public sealed record SymbolNode : MathNode
     public string Name { get; }
 }
 
-public sealed record NegateNode(MathNode Operand) : MathNode;
+public sealed record NegateNode : MathNode
+{
+    public NegateNode(MathNode operand)
+    {
+        ArgumentNullException.ThrowIfNull(operand);
+        Operand = operand;
+    }
 
-public sealed record AddNode(IReadOnlyList<MathNode> Terms) : MathNode;
+    public MathNode Operand { get; }
+}
 
-public sealed record MultiplyNode(IReadOnlyList<MathNode> Factors) : MathNode;
+public sealed record AddNode : MathNode
+{
+    public AddNode(IReadOnlyList<MathNode> terms)
+    {
+        ArgumentNullException.ThrowIfNull(terms);
+        if (terms.Any(term => term is null))
+        {
+            throw new ArgumentException("Add terms cannot contain null nodes.", nameof(terms));
+        }
 
-public sealed record DivideNode(MathNode Numerator, MathNode Denominator) : MathNode;
+        Terms = terms.ToArray();
+    }
 
-public sealed record PowerNode(MathNode Base, MathNode Exponent) : MathNode;
+    public IReadOnlyList<MathNode> Terms { get; }
+}
 
-public sealed record RootNode(MathNode Radicand, int Degree = 2) : MathNode;
+public sealed record MultiplyNode : MathNode
+{
+    public MultiplyNode(IReadOnlyList<MathNode> factors)
+    {
+        ArgumentNullException.ThrowIfNull(factors);
+        if (factors.Any(factor => factor is null))
+        {
+            throw new ArgumentException("Multiply factors cannot contain null nodes.", nameof(factors));
+        }
 
-public sealed record EquationNode(MathNode Left, MathNode Right) : MathNode;
+        Factors = factors.ToArray();
+    }
+
+    public IReadOnlyList<MathNode> Factors { get; }
+}
+
+public sealed record DivideNode : MathNode
+{
+    public DivideNode(MathNode numerator, MathNode denominator)
+    {
+        ArgumentNullException.ThrowIfNull(numerator);
+        ArgumentNullException.ThrowIfNull(denominator);
+        Numerator = numerator;
+        Denominator = denominator;
+    }
+
+    public MathNode Numerator { get; }
+    public MathNode Denominator { get; }
+}
+
+public sealed record PowerNode : MathNode
+{
+    public PowerNode(MathNode @base, MathNode exponent)
+    {
+        ArgumentNullException.ThrowIfNull(@base);
+        ArgumentNullException.ThrowIfNull(exponent);
+        Base = @base;
+        Exponent = exponent;
+    }
+
+    public MathNode Base { get; }
+    public MathNode Exponent { get; }
+}
+
+public sealed record RootNode : MathNode
+{
+    public RootNode(MathNode radicand, int degree = 2)
+    {
+        ArgumentNullException.ThrowIfNull(radicand);
+        Radicand = radicand;
+        Degree = degree;
+    }
+
+    public MathNode Radicand { get; }
+    public int Degree { get; }
+}
+
+public sealed record EquationNode : MathNode
+{
+    public EquationNode(MathNode left, MathNode right)
+    {
+        ArgumentNullException.ThrowIfNull(left);
+        ArgumentNullException.ThrowIfNull(right);
+        Left = left;
+        Right = right;
+    }
+
+    public MathNode Left { get; }
+    public MathNode Right { get; }
+}
 
 /// <summary>
 /// A typed conjunction of equations that must be satisfied by the same variable
@@ -77,6 +161,10 @@ public sealed record EquationSystemNode : MathNode
         if (equations.Count == 0)
         {
             throw new ArgumentException("An equation system must contain at least one equation.", nameof(equations));
+        }
+        if (equations.Any(equation => equation is null))
+        {
+            throw new ArgumentException("An equation system cannot contain null equations.", nameof(equations));
         }
 
         Equations = equations.ToArray();
@@ -94,10 +182,21 @@ public enum InequalityRelation
     NotEqual = 5
 }
 
-public sealed record InequalityNode(
-    MathNode Left,
-    InequalityRelation Relation,
-    MathNode Right) : MathNode;
+public sealed record InequalityNode : MathNode
+{
+    public InequalityNode(MathNode left, InequalityRelation relation, MathNode right)
+    {
+        ArgumentNullException.ThrowIfNull(left);
+        ArgumentNullException.ThrowIfNull(right);
+        Left = left;
+        Relation = relation;
+        Right = right;
+    }
+
+    public MathNode Left { get; }
+    public InequalityRelation Relation { get; }
+    public MathNode Right { get; }
+}
 
 public sealed record FunctionCallNode : MathNode
 {
@@ -105,6 +204,11 @@ public sealed record FunctionCallNode : MathNode
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(functionName);
         ArgumentNullException.ThrowIfNull(arguments);
+        if (arguments.Any(argument => argument is null))
+        {
+            throw new ArgumentException("Function arguments cannot contain null nodes.", nameof(arguments));
+        }
+
         FunctionName = functionName.Trim().ToLowerInvariant();
         Arguments = arguments.ToArray();
     }
@@ -113,9 +217,41 @@ public sealed record FunctionCallNode : MathNode
     public IReadOnlyList<MathNode> Arguments { get; }
 }
 
-public sealed record VectorNode(IReadOnlyList<MathNode> Components) : MathNode;
+public sealed record VectorNode : MathNode
+{
+    public VectorNode(IReadOnlyList<MathNode> components)
+    {
+        ArgumentNullException.ThrowIfNull(components);
+        if (components.Any(component => component is null))
+        {
+            throw new ArgumentException("Vector components cannot contain null nodes.", nameof(components));
+        }
 
-public sealed record MatrixNode(IReadOnlyList<IReadOnlyList<MathNode>> Rows) : MathNode;
+        Components = components.ToArray();
+    }
+
+    public IReadOnlyList<MathNode> Components { get; }
+}
+
+public sealed record MatrixNode : MathNode
+{
+    public MatrixNode(IReadOnlyList<IReadOnlyList<MathNode>> rows)
+    {
+        ArgumentNullException.ThrowIfNull(rows);
+        if (rows.Any(row => row is null))
+        {
+            throw new ArgumentException("Matrix rows cannot be null.", nameof(rows));
+        }
+        if (rows.Any(row => row.Any(cell => cell is null)))
+        {
+            throw new ArgumentException("Matrix rows cannot contain null nodes.", nameof(rows));
+        }
+
+        Rows = rows.Select(row => (IReadOnlyList<MathNode>)row.ToArray()).ToArray();
+    }
+
+    public IReadOnlyList<IReadOnlyList<MathNode>> Rows { get; }
+}
 
 public sealed record DerivativeNode(
     MathNode Expression,
