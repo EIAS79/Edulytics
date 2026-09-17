@@ -114,6 +114,21 @@ public sealed class ExactNumericalMethodsSolverTests
     }
 
     [Fact]
+    public void NumericalMethods_RejectVariableDenominatorEvenWhenItsDerivativeIsZeroAtEvaluationPoint()
+    {
+        var x = new SymbolNode("x");
+        var denominator = new AddNode([new PowerNode(x, I(2)), I(1)]);
+        var rationalFunction = new DivideNode(x, denominator);
+
+        var newton = new ExactNewtonIterationSolver();
+        var request = Request(new FunctionCallNode("numerical_newton_fixed_exact", [rationalFunction, x, I(0), I(1)]));
+        var result = newton.Solve(request);
+
+        Assert.Equal(MathematicsSolveStatus.Unsupported, result.Status);
+        Assert.False(new ExactNewtonIterationVerifier().Verify(request, result).IsVerified);
+    }
+
+    [Fact]
     public void NumericalMethods_RespectResourceBudgetDuringPolynomialEvaluation()
     {
         var x = new SymbolNode("x");
