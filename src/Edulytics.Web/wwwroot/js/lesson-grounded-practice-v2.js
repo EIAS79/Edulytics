@@ -8,7 +8,7 @@
   var locale = root.dataset.lessonLanguage || 'en';
   var lessonTitle = root.dataset.lessonTitle || '';
   var unitTitle = root.dataset.unitTitle || '';
-  var supported = ['TWO_UNKNOWNS', 'SCALE_READING', 'FRACTION_COMPARE_UNLIKE'];
+  var supported = ['TWO_UNKNOWNS', 'SCALE_READING', 'FRACTION_COMPARE_UNLIKE', 'FRACTION_EQUIVALENT'];
   if (supported.indexOf(mechanic) < 0) {
     root.innerHTML = '<div class="gw-error">This lesson does not have an exact skill practice model.</div>';
     return;
@@ -330,12 +330,88 @@
       'Compare the values of the whole fractions, not isolated numerator or denominator digits.');
   }
 
+  // Every FRACTION_EQUIVALENT round preserves value by multiplying or
+  // dividing numerator and denominator by the same non-zero whole-number factor.
+  // Distractors are rejected by cross-product equivalence before rendering.
+  function fractionEquivalentQuestion() {
+    var baseD = rnd(3, 9);
+    var baseN = rnd(1, baseD - 1);
+    var factor = rnd(2, 4);
+    var eqN = baseN * factor;
+    var eqD = baseD * factor;
+    var base = baseN + '/' + baseD;
+    var equivalent = eqN + '/' + eqD;
+    var mode = state.round % 4;
+
+    function isEquivalent(n, d) {
+      return d !== 0 && baseN * d === n * baseD;
+    }
+
+    function fractionDistractors() {
+      var candidates = [
+        [eqN + 1, eqD],
+        [eqN, eqD + factor],
+        [baseN, eqD],
+        [baseN + factor, baseD * factor],
+        [Math.max(1, eqN - 1), eqD]
+      ];
+      var values = [];
+      candidates.forEach(function (pair) {
+        if (!isEquivalent(pair[0], pair[1])) values.push(pair[0] + '/' + pair[1]);
+      });
+      return unique(values);
+    }
+
+    if (mode === 1) {
+      mission(
+        'Complete the equivalent fraction: ' + base + ' = ?/' + eqD,
+        'The denominator was multiplied by ' + factor + '.',
+        'Multiply the numerator by the same factor.');
+      fractionBars(baseN, baseD, eqN, eqD);
+      choiceRow(
+        [eqN, eqN + 1, baseN, Math.max(1, eqN - factor)],
+        eqN,
+        'Both numerator and denominator are multiplied by ' + factor + ', so the value stays the same.',
+        'Whatever happens to the denominator must also happen to the numerator.');
+      return;
+    }
+
+    if (mode === 2) {
+      mission(
+        'Complete the equivalent fraction: ' + base + ' = ' + eqN + '/?',
+        'The numerator was multiplied by ' + factor + '.',
+        'Multiply the denominator by the same factor.');
+      fractionBars(baseN, baseD, eqN, eqD);
+      choiceRow(
+        [eqD, eqD + 1, baseD, Math.max(1, eqD - factor)],
+        eqD,
+        'Both parts are scaled by the same factor, giving ' + equivalent + '.',
+        'Use the same scale factor on numerator and denominator.');
+      return;
+    }
+
+    mission(
+      mode === 3
+        ? 'Which fraction has exactly the same value as ' + base + '?'
+        : 'Choose an equivalent fraction for ' + base + '.',
+      'Equivalent fractions name the same value.',
+      'Multiply numerator and denominator by the same whole-number factor.');
+    fractionBars(baseN, baseD, eqN, eqD);
+    var distractors = fractionDistractors();
+    choiceRow(
+      [equivalent].concat(distractors.slice(0, 3)),
+      equivalent,
+      base + ' × ' + factor + '/' + factor + ' = ' + equivalent + ', so the value is unchanged.',
+      'Check equivalence with cross-products or scale both numerator and denominator by the same factor.');
+  }
+
   function render() {
     state.locked = false;
     board.innerHTML = '';
     hud();
     if (mechanic === 'TWO_UNKNOWNS') twoUnknownsQuestion();
     else if (mechanic === 'SCALE_READING') scaleReadingQuestion();
+    else if (mechanic === 'FRACTION_EQUIVALENT') fractionEquivalentQuestion();
     else fractionCompareQuestion();
   }
 
