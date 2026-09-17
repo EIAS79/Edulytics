@@ -113,7 +113,16 @@ public sealed class ExactComplexMultiplyQuestionFactory
 
 internal static class ExactLinearAlgebraGeneration
 {
-    public static VectorNode Vector(ref uint state, int dimension, int difficultyBand) => new(Enumerable.Range(0, dimension).Select(_ => Scalar(ref state, difficultyBand)).ToArray());
+    public static VectorNode Vector(ref uint state, int dimension, int difficultyBand)
+    {
+        var components = new MathNode[dimension];
+        for (var i = 0; i < dimension; i++)
+        {
+            components[i] = Scalar(ref state, difficultyBand);
+        }
+        return new VectorNode(components);
+    }
+
     public static MatrixNode Matrix(ref uint state, int rows, int columns, int difficultyBand)
     {
         var data = new IReadOnlyList<MathNode>[rows];
