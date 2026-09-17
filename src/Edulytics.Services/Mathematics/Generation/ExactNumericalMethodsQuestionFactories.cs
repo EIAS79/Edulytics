@@ -10,8 +10,15 @@ public sealed class ExactBisectionIterationQuestionFactory
 {
     public const string FamilyId = "numerical.roots.bisection.fixed_iterations.exact_rational";
     public static readonly SkillId Skill = new("numerical.roots.bisection.iterate");
-    private readonly IMathematicsSolver solver; private readonly IMathematicsVerifier verifier;
-    public ExactBisectionIterationQuestionFactory(IMathematicsSolver solver, IMathematicsVerifier verifier) { this.solver = solver ?? throw new ArgumentNullException(nameof(solver)); this.verifier = verifier ?? throw new ArgumentNullException(nameof(verifier)); }
+    private readonly IMathematicsSolver solver;
+    private readonly IMathematicsVerifier verifier;
+
+    public ExactBisectionIterationQuestionFactory(IMathematicsSolver solver, IMathematicsVerifier verifier)
+    {
+        this.solver = solver ?? throw new ArgumentNullException(nameof(solver));
+        this.verifier = verifier ?? throw new ArgumentNullException(nameof(verifier));
+    }
+
     public VerifiedGeneratedMathematicsProblem Generate(int variantKey, int difficultyBand)
     {
         ExactFunctionsGraphsSequencesGeneration.ValidateDifficulty(difficultyBand);
@@ -24,18 +31,28 @@ public sealed class ExactBisectionIterationQuestionFactory
         var x = new SymbolNode("x");
         var polynomial = new AddNode([new PowerNode(x, I(2)), new NegateNode(I(target))]);
         var problem = new FunctionCallNode("numerical_bisection_fixed_exact", [polynomial, x, I(lower), I(upper), I(iterations)]);
-        return Build(FamilyId, Skill, problem, solver, verifier,
-            ["rational.exact_arithmetic", "numerical.roots.bisection.fixed_iterations.exact_rational", "numerical.verify.bisection.fixed_iterations"], variantKey, difficultyBand, "bisection-bracket");
+        return ExactNumericalMethodsGeneration.Build(
+            FamilyId, Skill, problem, solver, verifier,
+            ["rational.exact_arithmetic", "numerical.roots.bisection.fixed_iterations.exact_rational", "numerical.verify.bisection.fixed_iterations"],
+            variantKey, difficultyBand, "bisection-bracket");
     }
-    private static IntegerNode I(int v) => new(new BigInteger(v));
+
+    private static IntegerNode I(int value) => new(new BigInteger(value));
 }
 
 public sealed class ExactNewtonIterationQuestionFactory
 {
     public const string FamilyId = "numerical.roots.newton.fixed_iterations.exact_rational";
     public static readonly SkillId Skill = new("numerical.roots.newton.iterate");
-    private readonly IMathematicsSolver solver; private readonly IMathematicsVerifier verifier;
-    public ExactNewtonIterationQuestionFactory(IMathematicsSolver solver, IMathematicsVerifier verifier) { this.solver = solver ?? throw new ArgumentNullException(nameof(solver)); this.verifier = verifier ?? throw new ArgumentNullException(nameof(verifier)); }
+    private readonly IMathematicsSolver solver;
+    private readonly IMathematicsVerifier verifier;
+
+    public ExactNewtonIterationQuestionFactory(IMathematicsSolver solver, IMathematicsVerifier verifier)
+    {
+        this.solver = solver ?? throw new ArgumentNullException(nameof(solver));
+        this.verifier = verifier ?? throw new ArgumentNullException(nameof(verifier));
+    }
+
     public VerifiedGeneratedMathematicsProblem Generate(int variantKey, int difficultyBand)
     {
         ExactFunctionsGraphsSequencesGeneration.ValidateDifficulty(difficultyBand);
@@ -46,18 +63,28 @@ public sealed class ExactNewtonIterationQuestionFactory
         var x = new SymbolNode("x");
         var polynomial = new AddNode([new PowerNode(x, I(2)), new NegateNode(I(target))]);
         var problem = new FunctionCallNode("numerical_newton_fixed_exact", [polynomial, x, I(start), I(iterations)]);
-        return Build(FamilyId, Skill, problem, solver, verifier,
-            ["rational.exact_arithmetic", "numerical.roots.newton.fixed_iterations.exact_rational", "numerical.verify.newton.fixed_iterations"], variantKey, difficultyBand, "newton-iterate");
+        return ExactNumericalMethodsGeneration.Build(
+            FamilyId, Skill, problem, solver, verifier,
+            ["rational.exact_arithmetic", "numerical.roots.newton.fixed_iterations.exact_rational", "numerical.verify.newton.fixed_iterations"],
+            variantKey, difficultyBand, "newton-iterate");
     }
-    private static IntegerNode I(int v) => new(new BigInteger(v));
+
+    private static IntegerNode I(int value) => new(new BigInteger(value));
 }
 
 public sealed class ExactTrapezoidalRuleQuestionFactory
 {
     public const string FamilyId = "numerical.integration.trapezoidal.fixed_subdivisions.exact_rational";
     public static readonly SkillId Skill = new("numerical.integration.trapezoidal.estimate");
-    private readonly IMathematicsSolver solver; private readonly IMathematicsVerifier verifier;
-    public ExactTrapezoidalRuleQuestionFactory(IMathematicsSolver solver, IMathematicsVerifier verifier) { this.solver = solver ?? throw new ArgumentNullException(nameof(solver)); this.verifier = verifier ?? throw new ArgumentNullException(nameof(verifier)); }
+    private readonly IMathematicsSolver solver;
+    private readonly IMathematicsVerifier verifier;
+
+    public ExactTrapezoidalRuleQuestionFactory(IMathematicsSolver solver, IMathematicsVerifier verifier)
+    {
+        this.solver = solver ?? throw new ArgumentNullException(nameof(solver));
+        this.verifier = verifier ?? throw new ArgumentNullException(nameof(verifier));
+    }
+
     public VerifiedGeneratedMathematicsProblem Generate(int variantKey, int difficultyBand)
     {
         ExactFunctionsGraphsSequencesGeneration.ValidateDifficulty(difficultyBand);
@@ -72,40 +99,40 @@ public sealed class ExactTrapezoidalRuleQuestionFactory
         if (d != 0) terms.Add(I(d));
         var polynomial = terms.Count == 1 ? terms[0] : new AddNode(terms);
         var problem = new FunctionCallNode("numerical_trapezoidal_fixed_exact", [polynomial, x, I(0), I(upper), I(subdivisions)]);
-        return Build(FamilyId, Skill, problem, solver, verifier,
-            ["rational.exact_arithmetic", "numerical.integration.trapezoidal.fixed_subdivisions.exact_rational", "numerical.verify.trapezoidal.fixed_subdivisions"], variantKey, difficultyBand, "trapezoidal-estimate");
+        return ExactNumericalMethodsGeneration.Build(
+            FamilyId, Skill, problem, solver, verifier,
+            ["rational.exact_arithmetic", "numerical.integration.trapezoidal.fixed_subdivisions.exact_rational", "numerical.verify.trapezoidal.fixed_subdivisions"],
+            variantKey, difficultyBand, "trapezoidal-estimate");
     }
-    private static IntegerNode I(int v) => new(new BigInteger(v));
+
+    private static IntegerNode I(int value) => new(new BigInteger(value));
 }
 
 internal static class ExactNumericalMethodsGeneration
 {
     public static VerifiedGeneratedMathematicsProblem Build(
-        string familyId, SkillId skill, MathNode problem, IMathematicsSolver solver, IMathematicsVerifier verifier,
-        IReadOnlyList<string> capabilities, int variantKey, int difficultyBand, string operation) =>
+        string familyId,
+        SkillId skill,
+        MathNode problem,
+        IMathematicsSolver solver,
+        IMathematicsVerifier verifier,
+        IReadOnlyList<string> capabilities,
+        int variantKey,
+        int difficultyBand,
+        string operation) =>
         ExactFunctionsGraphsSequencesGeneration.SolveVerifyAndBuild(
-            familyId, skill, problem, solver, verifier,
-            capabilities.Select(id => new CapabilityId(id)).ToArray(), variantKey, difficultyBand,
+            familyId,
+            skill,
+            problem,
+            solver,
+            verifier,
+            capabilities.Select(id => new CapabilityId(id)).ToArray(),
+            variantKey,
+            difficultyBand,
             new Dictionary<string, string>(StringComparer.Ordinal)
             {
                 ["operation"] = operation,
                 ["difficultyBand"] = difficultyBand.ToString(CultureInfo.InvariantCulture),
                 ["resultSemantics"] = "exact-rational arithmetic applied to a fixed-step numerical method; method output remains an approximation unless the method lands on an exact root"
             });
-}
-
-file static class NumericalGenerationBridge
-{
-    public static VerifiedGeneratedMathematicsProblem Build(
-        string familyId, SkillId skill, MathNode problem, IMathematicsSolver solver, IMathematicsVerifier verifier,
-        IReadOnlyList<string> capabilities, int variantKey, int difficultyBand, string operation) =>
-        ExactNumericalMethodsGeneration.Build(familyId, skill, problem, solver, verifier, capabilities, variantKey, difficultyBand, operation);
-}
-
-file static class BuildAlias
-{
-    public static VerifiedGeneratedMathematicsProblem Invoke(
-        string familyId, SkillId skill, MathNode problem, IMathematicsSolver solver, IMathematicsVerifier verifier,
-        IReadOnlyList<string> capabilities, int variantKey, int difficultyBand, string operation) =>
-        ExactNumericalMethodsGeneration.Build(familyId, skill, problem, solver, verifier, capabilities, variantKey, difficultyBand, operation);
 }
