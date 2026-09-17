@@ -118,6 +118,22 @@ public sealed class ExactCalculusSolverTests
     }
 
     [Fact]
+    public void Calculus_FailsClosedWhenVariableIsMissing()
+    {
+        var derivativeRequest = Request(new DerivativeNode(I(1), null!, 1));
+        var derivativeSolver = new ExactPolynomialDerivativeSolver();
+        var derivativeResult = derivativeSolver.Solve(derivativeRequest);
+        Assert.Equal(MathematicsSolveStatus.Unsupported, derivativeResult.Status);
+        Assert.False(new ExactPolynomialDerivativeVerifier().Verify(derivativeRequest, derivativeResult).IsVerified);
+
+        var integralRequest = Request(new IntegralNode(I(1), null!, I(0), I(1)));
+        var integralSolver = new ExactPolynomialDefiniteIntegralSolver();
+        var integralResult = integralSolver.Solve(integralRequest);
+        Assert.Equal(MathematicsSolveStatus.Unsupported, integralResult.Status);
+        Assert.False(new ExactPolynomialDefiniteIntegralVerifier().Verify(integralRequest, integralResult).IsVerified);
+    }
+
+    [Fact]
     public void Calculus_FailsClosedBeforeNestedConstantPowersCanExplodeBigIntegers()
     {
         MathNode nestedPower = new IntegerNode(BigInteger.One << 4095);
