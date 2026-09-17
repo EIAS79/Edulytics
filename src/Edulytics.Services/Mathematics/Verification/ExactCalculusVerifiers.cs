@@ -176,6 +176,7 @@ internal static class VerifierPolynomial
 {
     private const int MaxNodes = 128;
     private const int MaxDepth = 24;
+    private const int MaxExponent = 32;
 
     public static bool TryParse(MathNode node, string variable, int maxDegree, out IReadOnlyDictionary<int, ExactRational> polynomial, out string error)
     {
@@ -255,10 +256,17 @@ internal static class VerifierPolynomial
                 return TryScale(numerator, reciprocal, out polynomial, out error);
             case PowerNode power when power.Exponent is IntegerNode exponentNode
                                       && exponentNode.Value >= BigInteger.Zero
-                                      && exponentNode.Value <= new BigInteger(maxDegree):
+                                      && exponentNode.Value <= new BigInteger(MaxExponent):
                 if (!TryParseCore(power.Base, variable, maxDegree, depth + 1, ref remaining, out var basePolynomial, out error)) return false;
+                var exponent = (int)exponentNode.Value;
+                var baseDegree = basePolynomial.Count == 0 ? 0 : basePolynomial.Keys.Max();
+                if (baseDegree > 0 && (long)baseDegree * exponent > maxDegree)
+                {
+                    error = $"Independent polynomial degree exceeds the supported limit of {maxDegree}.";
+                    return false;
+                }
                 var powered = new Dictionary<int, ExactRational> { [0] = VerifierCalcArithmetic.One };
-                for (var i = 0; i < (int)exponentNode.Value; i++)
+                for (var i = 0; i < exponent; i++)
                 {
                     if (!TryMultiply(powered, basePolynomial, maxDegree, out powered, out error)) return false;
                 }
@@ -266,7 +274,7 @@ internal static class VerifierPolynomial
                 error = string.Empty;
                 return true;
             case PowerNode:
-                error = "Independent polynomial verification supports only bounded non-negative integer powers.";
+                error = $"Independent polynomial verification supports only bounded non-negative integer powers through {MaxExponent}.";
                 return false;
             default:
                 error = $"Node type {node.GetType().Name} is outside the independent exact polynomial verifier subset.";
