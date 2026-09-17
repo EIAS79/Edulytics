@@ -284,9 +284,10 @@ internal static class ExactNumericalPolynomialEvaluator
                 }
                 error = string.Empty; resourceLimit = false; return true;
             case DivideNode divide:
+                if (ContainsVariable(divide.Denominator, variable))
+                { error = "Numerical polynomial division is supported only by an exact scalar constant denominator."; resourceLimit = false; return false; }
                 if (!TryEvaluateCore(divide.Numerator, variable, x, derivativeRequired, depth + 1, ref remaining, out var numValue, out var numDerivative, out error, out resourceLimit)
-                    || !TryEvaluateCore(divide.Denominator, variable, x, true, depth + 1, ref remaining, out var denValue, out var denDerivative, out error, out resourceLimit)) return false;
-                if (!denDerivative.Numerator.IsZero) { error = "Numerical polynomial division is supported only by an exact scalar constant denominator."; resourceLimit = false; return false; }
+                    || !TryEvaluateCore(divide.Denominator, variable, x, false, depth + 1, ref remaining, out var denValue, out _, out error, out resourceLimit)) return false;
                 if (denValue.Numerator.IsZero) { error = "Numerical polynomial division by zero is unsupported."; resourceLimit = false; return false; }
                 if (!ExactNumericalArithmetic.TryDivide(numValue, denValue, out value)
                     || (derivativeRequired && !ExactNumericalArithmetic.TryDivide(numDerivative, denValue, out derivative)))
@@ -313,6 +314,21 @@ internal static class ExactNumericalPolynomialEvaluator
             default:
                 error = $"Node type {node.GetType().Name} is outside the bounded numerical polynomial subset."; resourceLimit = false; return false;
         }
+    }
+
+    private static bool ContainsVariable(MathNode node, string variable)
+    {
+        if (node is null) return true;
+        return node switch
+        {
+            SymbolNode symbol => string.Equals(symbol.Name, variable, StringComparison.Ordinal),
+            NegateNode negate => ContainsVariable(negate.Operand, variable),
+            AddNode add => add.Terms.Any(term => ContainsVariable(term, variable)),
+            MultiplyNode multiply => multiply.Factors.Any(factor => ContainsVariable(factor, variable)),
+            DivideNode divide => ContainsVariable(divide.Numerator, variable) || ContainsVariable(divide.Denominator, variable),
+            PowerNode power => ContainsVariable(power.Base, variable) || ContainsVariable(power.Exponent, variable),
+            _ => false
+        };
     }
 }
 
