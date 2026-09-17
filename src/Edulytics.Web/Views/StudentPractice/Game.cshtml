@@ -4,7 +4,9 @@
     var renderer = Model.Route.RendererKey;
     var isCountTouch = string.Equals(renderer, "count-touch", StringComparison.Ordinal);
     var isUniversalWorkspace = string.Equals(renderer, Edulytics.Web.GameRouting.GameLessonRouter.UniversalRendererKey, StringComparison.Ordinal);
-    var isLessonGrounded = string.Equals(renderer, Edulytics.Web.GameRouting.GameLessonRouteResolver.LessonGroundedRendererKey, StringComparison.Ordinal);
+    var isLessonGrounded =
+        string.Equals(renderer, Edulytics.Web.GameRouting.GameLessonRouteResolver.LessonGroundedRendererKey, StringComparison.Ordinal) ||
+        string.Equals(renderer, Edulytics.Web.GameRouting.MathematicsV2ProductMigrationPolicy.RendererKey, StringComparison.Ordinal);
     var isExactLessonGrounded = isLessonGrounded &&
         (string.Equals(Model.Route.Mechanic, "TWO_UNKNOWNS", StringComparison.Ordinal) ||
          string.Equals(Model.Route.Mechanic, "SCALE_READING", StringComparison.Ordinal) ||
