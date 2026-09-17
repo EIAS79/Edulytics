@@ -16,13 +16,12 @@ public sealed class ExactVectorsMatricesComplexSolverTests
     {
         var left = new VectorNode([R(1, 2), I(2), I(-3)]);
         var right = new VectorNode([R(3, 2), I(-1), I(4)]);
-
         var addRequest = Request(new FunctionCallNode("vector_add_exact", [left, right]));
         var addSolver = new ExactVectorAddSolver();
         var addVerifier = new ExactVectorAddVerifier();
         var add = addSolver.Solve(addRequest);
         Assert.Equal(MathematicsSolveStatus.Solved, add.Status);
-        Assert.Equal(new VectorNode([I(2), I(1), I(1)]), add.ExactResult);
+        AssertSameIr(new VectorNode([I(2), I(1), I(1)]), add.ExactResult);
         Assert.True(addVerifier.Verify(addRequest, add).IsVerified);
 
         var dotRequest = Request(new FunctionCallNode("vector_dot_exact", [left, right]));
@@ -42,7 +41,7 @@ public sealed class ExactVectorsMatricesComplexSolverTests
         var multiplySolver = new ExactMatrixMultiplySolver();
         var multiplyVerifier = new ExactMatrixMultiplyVerifier();
         var product = multiplySolver.Solve(multiplyRequest);
-        Assert.Equal(M([I(4), I(4)], [I(10), I(8)]), product.ExactResult);
+        AssertSameIr(M([I(4), I(4)], [I(10), I(8)]), product.ExactResult);
         Assert.True(multiplyVerifier.Verify(multiplyRequest, product).IsVerified);
 
         var determinantRequest = Request(new FunctionCallNode("matrix_determinant_2x2_exact", [left]));
@@ -58,19 +57,18 @@ public sealed class ExactVectorsMatricesComplexSolverTests
     {
         var left = C(R(1, 2), I(2));
         var right = C(R(3, 2), I(-1));
-
         var addRequest = Request(new FunctionCallNode("complex_add_exact", [left, right]));
         var addSolver = new ExactComplexAddSolver();
         var addVerifier = new ExactComplexAddVerifier();
         var add = addSolver.Solve(addRequest);
-        Assert.Equal(C(I(2), I(1)), add.ExactResult);
+        AssertSameIr(C(I(2), I(1)), add.ExactResult);
         Assert.True(addVerifier.Verify(addRequest, add).IsVerified);
 
         var multiplyRequest = Request(new FunctionCallNode("complex_multiply_exact", [left, right]));
         var multiplySolver = new ExactComplexMultiplySolver();
         var multiplyVerifier = new ExactComplexMultiplyVerifier();
         var multiply = multiplySolver.Solve(multiplyRequest);
-        Assert.Equal(C(R(11, 4), R(5, 2)), multiply.ExactResult);
+        AssertSameIr(C(R(11, 4), R(5, 2)), multiply.ExactResult);
         Assert.True(multiplyVerifier.Verify(multiplyRequest, multiply).IsVerified);
     }
 
@@ -90,10 +88,8 @@ public sealed class ExactVectorsMatricesComplexSolverTests
     {
         var vectorMismatch = Request(new FunctionCallNode("vector_add_exact", [new VectorNode([I(1), I(2)]), new VectorNode([I(3)])]));
         Assert.Equal(MathematicsSolveStatus.Unsupported, new ExactVectorAddSolver().Solve(vectorMismatch).Status);
-
         var matrixMismatch = Request(new FunctionCallNode("matrix_multiply_exact", [M([I(1), I(2)]), M([I(1), I(2)])]));
         Assert.Equal(MathematicsSolveStatus.Unsupported, new ExactMatrixMultiplySolver().Solve(matrixMismatch).Status);
-
         var nonCanonicalComplex = Request(new FunctionCallNode("complex_add_exact", [new VectorNode([I(1), I(2)]), C(I(3), I(4))]));
         Assert.Equal(MathematicsSolveStatus.Unsupported, new ExactComplexAddSolver().Solve(nonCanonicalComplex).Status);
     }
@@ -103,12 +99,12 @@ public sealed class ExactVectorsMatricesComplexSolverTests
     {
         var malformed = Request(new FunctionCallNode("vector_dot_exact", [new VectorNode([new RationalNode(default(ExactRational))]), new VectorNode([I(1)])]));
         Assert.Equal(MathematicsSolveStatus.Unsupported, new ExactVectorDotProductSolver().Solve(malformed).Status);
-
         var huge = new IntegerNode(BigInteger.One << 4096);
         var oversized = Request(new FunctionCallNode("vector_add_exact", [new VectorNode([huge]), new VectorNode([I(1)])]));
         Assert.Equal(MathematicsSolveStatus.ResourceLimit, new ExactVectorAddSolver().Solve(oversized).Status);
     }
 
+    private static void AssertSameIr(MathNode expected, MathNode? actual) => Assert.Equal(JsonSerializer.Serialize<MathNode>(expected), JsonSerializer.Serialize(actual));
     private static MathematicsSolveRequest Request(MathNode problem) => new(problem, [], []);
     private static IntegerNode I(int value) => new(new BigInteger(value));
     private static RationalNode R(int numerator, int denominator) => new(new ExactRational(new BigInteger(numerator), new BigInteger(denominator)));
@@ -118,41 +114,18 @@ public sealed class ExactVectorsMatricesComplexSolverTests
 
 public sealed class ExactVectorsMatricesComplexQuestionFactoryTests
 {
-    [Theory]
-    [InlineData(1)] [InlineData(2)] [InlineData(3)]
-    public void VectorAddFactory_IsVerifiedAndDeterministic(int band) => AssertDeterministic(
-        new ExactVectorAddQuestionFactory(new ExactVectorAddSolver(), new ExactVectorAddVerifier()), (f, s, b) => f.Generate(s, b), band,
-        ExactVectorAddQuestionFactory.FamilyId, "vectors.add.exact");
-
-    [Theory]
-    [InlineData(1)] [InlineData(2)] [InlineData(3)]
-    public void VectorDotFactory_IsVerifiedAndDeterministic(int band) => AssertDeterministic(
-        new ExactVectorDotProductQuestionFactory(new ExactVectorDotProductSolver(), new ExactVectorDotProductVerifier()), (f, s, b) => f.Generate(s, b), band,
-        ExactVectorDotProductQuestionFactory.FamilyId, "vectors.dot.exact");
-
-    [Theory]
-    [InlineData(1)] [InlineData(2)] [InlineData(3)]
-    public void MatrixMultiplyFactory_IsVerifiedAndDeterministic(int band) => AssertDeterministic(
-        new ExactMatrixMultiplyQuestionFactory(new ExactMatrixMultiplySolver(), new ExactMatrixMultiplyVerifier()), (f, s, b) => f.Generate(s, b), band,
-        ExactMatrixMultiplyQuestionFactory.FamilyId, "matrices.multiply.exact");
-
-    [Theory]
-    [InlineData(1)] [InlineData(2)] [InlineData(3)]
-    public void MatrixDeterminantFactory_IsVerifiedAndDeterministic(int band) => AssertDeterministic(
-        new ExactMatrixDeterminant2x2QuestionFactory(new ExactMatrixDeterminant2x2Solver(), new ExactMatrixDeterminant2x2Verifier()), (f, s, b) => f.Generate(s, b), band,
-        ExactMatrixDeterminant2x2QuestionFactory.FamilyId, "matrices.determinant.2x2");
-
-    [Theory]
-    [InlineData(1)] [InlineData(2)] [InlineData(3)]
-    public void ComplexAddFactory_IsVerifiedAndDeterministic(int band) => AssertDeterministic(
-        new ExactComplexAddQuestionFactory(new ExactComplexAddSolver(), new ExactComplexAddVerifier()), (f, s, b) => f.Generate(s, b), band,
-        ExactComplexAddQuestionFactory.FamilyId, "complex.add.exact");
-
-    [Theory]
-    [InlineData(1)] [InlineData(2)] [InlineData(3)]
-    public void ComplexMultiplyFactory_IsVerifiedAndDeterministic(int band) => AssertDeterministic(
-        new ExactComplexMultiplyQuestionFactory(new ExactComplexMultiplySolver(), new ExactComplexMultiplyVerifier()), (f, s, b) => f.Generate(s, b), band,
-        ExactComplexMultiplyQuestionFactory.FamilyId, "complex.multiply.exact");
+    [Theory] [InlineData(1)] [InlineData(2)] [InlineData(3)]
+    public void VectorAddFactory_IsVerifiedAndDeterministic(int band) => AssertDeterministic(new ExactVectorAddQuestionFactory(new ExactVectorAddSolver(), new ExactVectorAddVerifier()), (f, s, b) => f.Generate(s, b), band, ExactVectorAddQuestionFactory.FamilyId, "vectors.add.exact");
+    [Theory] [InlineData(1)] [InlineData(2)] [InlineData(3)]
+    public void VectorDotFactory_IsVerifiedAndDeterministic(int band) => AssertDeterministic(new ExactVectorDotProductQuestionFactory(new ExactVectorDotProductSolver(), new ExactVectorDotProductVerifier()), (f, s, b) => f.Generate(s, b), band, ExactVectorDotProductQuestionFactory.FamilyId, "vectors.dot.exact");
+    [Theory] [InlineData(1)] [InlineData(2)] [InlineData(3)]
+    public void MatrixMultiplyFactory_IsVerifiedAndDeterministic(int band) => AssertDeterministic(new ExactMatrixMultiplyQuestionFactory(new ExactMatrixMultiplySolver(), new ExactMatrixMultiplyVerifier()), (f, s, b) => f.Generate(s, b), band, ExactMatrixMultiplyQuestionFactory.FamilyId, "matrices.multiply.exact");
+    [Theory] [InlineData(1)] [InlineData(2)] [InlineData(3)]
+    public void MatrixDeterminantFactory_IsVerifiedAndDeterministic(int band) => AssertDeterministic(new ExactMatrixDeterminant2x2QuestionFactory(new ExactMatrixDeterminant2x2Solver(), new ExactMatrixDeterminant2x2Verifier()), (f, s, b) => f.Generate(s, b), band, ExactMatrixDeterminant2x2QuestionFactory.FamilyId, "matrices.determinant.2x2");
+    [Theory] [InlineData(1)] [InlineData(2)] [InlineData(3)]
+    public void ComplexAddFactory_IsVerifiedAndDeterministic(int band) => AssertDeterministic(new ExactComplexAddQuestionFactory(new ExactComplexAddSolver(), new ExactComplexAddVerifier()), (f, s, b) => f.Generate(s, b), band, ExactComplexAddQuestionFactory.FamilyId, "complex.add.exact");
+    [Theory] [InlineData(1)] [InlineData(2)] [InlineData(3)]
+    public void ComplexMultiplyFactory_IsVerifiedAndDeterministic(int band) => AssertDeterministic(new ExactComplexMultiplyQuestionFactory(new ExactComplexMultiplySolver(), new ExactComplexMultiplyVerifier()), (f, s, b) => f.Generate(s, b), band, ExactComplexMultiplyQuestionFactory.FamilyId, "complex.multiply.exact");
 
     private static void AssertDeterministic<TFactory>(TFactory factory, Func<TFactory, int, int, VerifiedGeneratedMathematicsProblem> generate, int band, string family, string skill)
     {
