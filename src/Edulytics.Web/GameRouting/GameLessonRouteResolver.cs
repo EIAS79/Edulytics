@@ -21,7 +21,22 @@ public static class GameLessonRouteResolver
         string unitTitle,
         string lessonTitle,
         string? lessonContext,
-        bool requireLessonGrounding)
+        bool requireLessonGrounding) =>
+        Resolve(
+            lessonCode,
+            unitTitle,
+            lessonTitle,
+            lessonContext,
+            requireLessonGrounding,
+            MathematicsV2ProductMigrationPolicy.IsEnabledFromEnvironment());
+
+    public static GameLessonRoute Resolve(
+        string lessonCode,
+        string unitTitle,
+        string lessonTitle,
+        string? lessonContext,
+        bool requireLessonGrounding,
+        bool enableMathematicsV2Pilot)
     {
         if (!string.IsNullOrWhiteSpace(lessonContext))
         {
@@ -29,7 +44,8 @@ public static class GameLessonRouteResolver
                 lessonCode,
                 unitTitle,
                 lessonTitle,
-                lessonContext);
+                lessonContext,
+                enableMathematicsV2Pilot);
             if (grounded is not null)
                 return grounded;
         }
@@ -91,7 +107,8 @@ public static class GameLessonRouteResolver
         string lessonCode,
         string unitTitle,
         string lessonTitle,
-        string lessonContext)
+        string lessonContext,
+        bool enableMathematicsV2Pilot)
     {
         var framework = FrameworkFromLessonCode(lessonCode);
         var title = Normalize(lessonTitle);
@@ -108,27 +125,33 @@ public static class GameLessonRouteResolver
         if (ContainsAny(title, "solve problems with 2 unknowns", "solve problems with two unknowns"))
         {
             return LessonSkillRoute(
+                lessonCode,
                 framework,
                 "REASONING_MODELING",
-                "TWO_UNKNOWNS");
+                "TWO_UNKNOWNS",
+                enableMathematicsV2Pilot);
         }
 
         if (title.Contains("reading scales", StringComparison.Ordinal) &&
             ContainsAny(semantic, "interval", "intervals", "scale", "scales"))
         {
             return LessonSkillRoute(
+                lessonCode,
                 framework,
                 "MEASUREMENT",
-                "SCALE_READING");
+                "SCALE_READING",
+                enableMathematicsV2Pilot);
         }
 
         if (title.Contains("compare fractions", StringComparison.Ordinal) &&
             ContainsAny(semantic, "different denominators", "unlike denominators"))
         {
             return LessonSkillRoute(
+                lessonCode,
                 framework,
                 "FRACTIONS",
-                "FRACTION_COMPARE_UNLIKE");
+                "FRACTION_COMPARE_UNLIKE",
+                enableMathematicsV2Pilot);
         }
 
         // Existing lesson-grounded relationship models remain available, but
@@ -214,17 +237,30 @@ public static class GameLessonRouteResolver
     }
 
     private static GameLessonRoute LessonSkillRoute(
+        string lessonCode,
         string framework,
         string workspace,
-        string mechanic) =>
-        new(
+        string mechanic,
+        bool enableMathematicsV2Pilot)
+    {
+        var usePilot = MathematicsV2ProductMigrationPolicy.ShouldUsePilot(
+            lessonCode,
+            mechanic,
+            enableMathematicsV2Pilot);
+
+        return new GameLessonRoute(
             framework,
             workspace,
             mechanic,
-            LessonGroundedRendererKey,
+            usePilot
+                ? MathematicsV2ProductMigrationPolicy.RendererKey
+                : LessonGroundedRendererKey,
             LocaleForFramework(framework),
             true,
-            "exact-lesson-skill-v2");
+            usePilot
+                ? MathematicsV2ProductMigrationPolicy.ClassificationSource
+                : "exact-lesson-skill-v2");
+    }
 
     private static bool IsUaeGeometryAndData(string lessonCode, string unitTitle) =>
         lessonCode.Contains(":UAE-MOE-MATH:", StringComparison.OrdinalIgnoreCase) &&
