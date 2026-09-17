@@ -74,6 +74,28 @@ public sealed class ExactCalculusSolverTests
     }
 
     [Fact]
+    public void Calculus_VerifierAcceptsBoundedConstantPowersAbovePolynomialDegree()
+    {
+        var constantPower = new PowerNode(I(2), I(9));
+
+        var derivativeRequest = Request(new DerivativeNode(constantPower, new SymbolNode("x"), 1));
+        var derivativeSolver = new ExactPolynomialDerivativeSolver();
+        var derivativeVerifier = new ExactPolynomialDerivativeVerifier();
+        var derivative = derivativeSolver.Solve(derivativeRequest);
+        Assert.Equal(MathematicsSolveStatus.Solved, derivative.Status);
+        Assert.Equal(I(0), derivative.ExactResult);
+        Assert.True(derivativeVerifier.Verify(derivativeRequest, derivative).IsVerified);
+
+        var integralRequest = Request(new IntegralNode(constantPower, new SymbolNode("x"), I(0), I(1)));
+        var integralSolver = new ExactPolynomialDefiniteIntegralSolver();
+        var integralVerifier = new ExactPolynomialDefiniteIntegralVerifier();
+        var integral = integralSolver.Solve(integralRequest);
+        Assert.Equal(MathematicsSolveStatus.Solved, integral.Status);
+        Assert.Equal(I(512), integral.ExactResult);
+        Assert.True(integralVerifier.Verify(integralRequest, integral).IsVerified);
+    }
+
+    [Fact]
     public void Calculus_FailsClosedOnUnsupportedMalformedAndOversizedInputs()
     {
         var derivativeSolver = new ExactPolynomialDerivativeSolver();
