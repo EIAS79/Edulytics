@@ -38,6 +38,7 @@ public sealed class ExactMechanicsModelVerifier : IMathematicsVerifier
             || !MechanicsVerification.TryRead(call.Arguments[0], VerifyDimensions.Velocity, out var u)
             || !MechanicsVerification.TryRead(call.Arguments[1], VerifyDimensions.Acceleration, out var a)
             || !MechanicsVerification.TryRead(call.Arguments[2], VerifyDimensions.Time, out var t)
+            || t.Numerator.Sign < 0
             || !VerifyArithmetic.TryMultiply(a, t, out var delta)
             || !VerifyArithmetic.TryAdd(u, delta, out var expected))
         {
@@ -52,6 +53,7 @@ public sealed class ExactMechanicsModelVerifier : IMathematicsVerifier
             || !MechanicsVerification.TryRead(call.Arguments[0], VerifyDimensions.Velocity, out var u)
             || !MechanicsVerification.TryRead(call.Arguments[1], VerifyDimensions.Acceleration, out var a)
             || !MechanicsVerification.TryRead(call.Arguments[2], VerifyDimensions.Time, out var t)
+            || t.Numerator.Sign < 0
             || !VerifyArithmetic.TryMultiply(u, t, out var ut)
             || !VerifyArithmetic.TryMultiply(t, t, out var tt)
             || !VerifyArithmetic.TryMultiply(a, tt, out var att)
@@ -120,8 +122,10 @@ public sealed class ExactMechanicsModelVerifier : IMathematicsVerifier
     {
         if (call.Arguments.Count != 2
             || !MechanicsVerification.TryRead(call.Arguments[0], VerifyDimensions.Energy, out var initial)
+            || initial.Numerator.Sign < 0
             || !MechanicsVerification.TryRead(call.Arguments[1], VerifyDimensions.Energy, out var work)
-            || !VerifyArithmetic.TryAdd(initial, work, out var expected))
+            || !VerifyArithmetic.TryAdd(initial, work, out var expected)
+            || expected.Numerator.Sign < 0)
         {
             return MechanicsVerification.Unsupported("Independent work-energy recomputation failed closed.");
         }
@@ -133,7 +137,7 @@ public sealed class ExactMechanicsModelVerifier : IMathematicsVerifier
         if (call.Arguments.Count != 2
             || !MechanicsVerification.TryRead(call.Arguments[0], VerifyDimensions.Energy, out var work)
             || !MechanicsVerification.TryRead(call.Arguments[1], VerifyDimensions.Time, out var time)
-            || time.Numerator.IsZero
+            || time.Numerator.Sign <= 0
             || !VerifyArithmetic.TryDivide(work, time, out var expected))
         {
             return MechanicsVerification.Unsupported("Independent power recomputation failed closed.");
