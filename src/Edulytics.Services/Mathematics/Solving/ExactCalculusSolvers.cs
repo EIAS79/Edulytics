@@ -11,9 +11,12 @@ public sealed class ExactPolynomialDerivativeSolver : IMathematicsSolver
     public MathematicsSolveResult Solve(MathematicsSolveRequest request)
     {
         ArgumentNullException.ThrowIfNull(request);
-        if (request.Problem is not DerivativeNode derivative || derivative.Order != 1)
+        if (request.Problem is not DerivativeNode derivative
+            || derivative.Order != 1
+            || derivative.Expression is null
+            || derivative.Variable is null)
         {
-            return ExactCalculusV2.Unsupported(request, "Polynomial differentiation requires a first-order DerivativeNode.");
+            return ExactCalculusV2.Unsupported(request, "Polynomial differentiation requires a well-formed first-order DerivativeNode.");
         }
 
         if (!ExactCalculusPolynomial.TryParse(
@@ -65,10 +68,12 @@ public sealed class ExactPolynomialDefiniteIntegralSolver : IMathematicsSolver
     {
         ArgumentNullException.ThrowIfNull(request);
         if (request.Problem is not IntegralNode integral
+            || integral.Integrand is null
+            || integral.Variable is null
             || integral.LowerBound is null
             || integral.UpperBound is null)
         {
-            return ExactCalculusV2.Unsupported(request, "Polynomial integration in this shadow slice requires both definite bounds.");
+            return ExactCalculusV2.Unsupported(request, "Polynomial integration in this shadow slice requires a well-formed definite IntegralNode with both bounds.");
         }
 
         if (!ExactCalculusV2.TryPreflight(integral.LowerBound, out var preflightError, out var resourceLimit)
