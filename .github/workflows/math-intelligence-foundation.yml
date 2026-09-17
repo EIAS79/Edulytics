@@ -49,6 +49,10 @@ jobs:
         run: |
           set -euo pipefail
           python3 tools/math_intelligence/lesson_generation_readiness_audit.py --strict --write-report
+      - name: Run Stage 17 Grade 1-6 closure audit
+        run: |
+          set -euo pipefail
+          python3 tools/math_intelligence/stage17_grade1_6_closure_audit.py --strict --write-report
       - name: Upload Mathematics Intelligence audits
         uses: actions/upload-artifact@v7.0.1
         with:
@@ -59,6 +63,7 @@ jobs:
             artifacts/math-intelligence/lesson-skill-resolution-audit.json
             artifacts/math-intelligence/lesson-semantic-content-audit.json
             artifacts/math-intelligence/lesson-generation-readiness-audit.json
+            artifacts/math-intelligence/stage17-grade1-6-closure-audit.json
           retention-days: 14
 
   math-foundation-tests:
