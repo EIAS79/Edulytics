@@ -32,12 +32,19 @@ public sealed class ExactMechanicsModelSolver : IMathematicsSolver
 
     private static MathematicsSolveResult SolveVelocity(MathematicsSolveRequest request, FunctionCallNode call)
     {
-        if (call.Arguments.Count != 3
-            || !MechanicsModel.TryReadQuantity(call.Arguments[0], MechanicsDimensions.Velocity, out var u, out var error, out var resourceLimit)
+        if (call.Arguments.Count != 3)
+        {
+            return MechanicsModel.Unsupported(request, "Constant-acceleration velocity requires initial velocity, acceleration and elapsed time.");
+        }
+        if (!MechanicsModel.TryReadQuantity(call.Arguments[0], MechanicsDimensions.Velocity, out var u, out var error, out var resourceLimit)
             || !MechanicsModel.TryReadQuantity(call.Arguments[1], MechanicsDimensions.Acceleration, out var a, out error, out resourceLimit)
             || !MechanicsModel.TryReadQuantity(call.Arguments[2], MechanicsDimensions.Time, out var t, out error, out resourceLimit))
         {
             return MechanicsModel.Failed(request, error, resourceLimit);
+        }
+        if (t.Numerator.Sign < 0)
+        {
+            return MechanicsModel.Unsupported(request, "Elapsed time cannot be negative.");
         }
         if (!MechanicsArithmetic.TryMultiply(a, t, out var deltaV)
             || !MechanicsArithmetic.TryAdd(u, deltaV, out var v))
@@ -49,12 +56,19 @@ public sealed class ExactMechanicsModelSolver : IMathematicsSolver
 
     private static MathematicsSolveResult SolveDisplacement(MathematicsSolveRequest request, FunctionCallNode call)
     {
-        if (call.Arguments.Count != 3
-            || !MechanicsModel.TryReadQuantity(call.Arguments[0], MechanicsDimensions.Velocity, out var u, out var error, out var resourceLimit)
+        if (call.Arguments.Count != 3)
+        {
+            return MechanicsModel.Unsupported(request, "Constant-acceleration displacement requires initial velocity, acceleration and elapsed time.");
+        }
+        if (!MechanicsModel.TryReadQuantity(call.Arguments[0], MechanicsDimensions.Velocity, out var u, out var error, out var resourceLimit)
             || !MechanicsModel.TryReadQuantity(call.Arguments[1], MechanicsDimensions.Acceleration, out var a, out error, out resourceLimit)
             || !MechanicsModel.TryReadQuantity(call.Arguments[2], MechanicsDimensions.Time, out var t, out error, out resourceLimit))
         {
             return MechanicsModel.Failed(request, error, resourceLimit);
+        }
+        if (t.Numerator.Sign < 0)
+        {
+            return MechanicsModel.Unsupported(request, "Elapsed time cannot be negative.");
         }
         if (!MechanicsArithmetic.TryMultiply(u, t, out var ut)
             || !MechanicsArithmetic.TryMultiply(t, t, out var tSquared)
@@ -69,8 +83,11 @@ public sealed class ExactMechanicsModelSolver : IMathematicsSolver
 
     private static MathematicsSolveResult SolveNewtonSecondLaw(MathematicsSolveRequest request, FunctionCallNode call)
     {
-        if (call.Arguments.Count != 2
-            || !MechanicsModel.TryReadQuantity(call.Arguments[0], MechanicsDimensions.Mass, out var mass, out var error, out var resourceLimit)
+        if (call.Arguments.Count != 2)
+        {
+            return MechanicsModel.Unsupported(request, "Newton's second law requires mass and acceleration.");
+        }
+        if (!MechanicsModel.TryReadQuantity(call.Arguments[0], MechanicsDimensions.Mass, out var mass, out var error, out var resourceLimit)
             || !MechanicsModel.TryReadQuantity(call.Arguments[1], MechanicsDimensions.Acceleration, out var acceleration, out error, out resourceLimit))
         {
             return MechanicsModel.Failed(request, error, resourceLimit);
@@ -88,8 +105,11 @@ public sealed class ExactMechanicsModelSolver : IMathematicsSolver
 
     private static MathematicsSolveResult SolveNewtonThirdLaw(MathematicsSolveRequest request, FunctionCallNode call)
     {
-        if (call.Arguments.Count != 1
-            || !MechanicsModel.TryReadQuantity(call.Arguments[0], MechanicsDimensions.Force, out var force, out var error, out var resourceLimit))
+        if (call.Arguments.Count != 1)
+        {
+            return MechanicsModel.Unsupported(request, "Newton's third law requires one declared action force.");
+        }
+        if (!MechanicsModel.TryReadQuantity(call.Arguments[0], MechanicsDimensions.Force, out var force, out var error, out var resourceLimit))
         {
             return MechanicsModel.Failed(request, error, resourceLimit);
         }
@@ -119,8 +139,11 @@ public sealed class ExactMechanicsModelSolver : IMathematicsSolver
 
     private static MathematicsSolveResult SolveImpulseMomentum(MathematicsSolveRequest request, FunctionCallNode call)
     {
-        if (call.Arguments.Count != 2
-            || !MechanicsModel.TryReadQuantity(call.Arguments[0], MechanicsDimensions.Momentum, out var initialMomentum, out var error, out var resourceLimit)
+        if (call.Arguments.Count != 2)
+        {
+            return MechanicsModel.Unsupported(request, "Impulse-momentum requires initial momentum and impulse.");
+        }
+        if (!MechanicsModel.TryReadQuantity(call.Arguments[0], MechanicsDimensions.Momentum, out var initialMomentum, out var error, out var resourceLimit)
             || !MechanicsModel.TryReadQuantity(call.Arguments[1], MechanicsDimensions.Momentum, out var impulse, out error, out resourceLimit))
         {
             return MechanicsModel.Failed(request, error, resourceLimit);
@@ -134,30 +157,44 @@ public sealed class ExactMechanicsModelSolver : IMathematicsSolver
 
     private static MathematicsSolveResult SolveWorkEnergy(MathematicsSolveRequest request, FunctionCallNode call)
     {
-        if (call.Arguments.Count != 2
-            || !MechanicsModel.TryReadQuantity(call.Arguments[0], MechanicsDimensions.Energy, out var initialEnergy, out var error, out var resourceLimit)
+        if (call.Arguments.Count != 2)
+        {
+            return MechanicsModel.Unsupported(request, "Work-energy requires initial kinetic energy and net work.");
+        }
+        if (!MechanicsModel.TryReadQuantity(call.Arguments[0], MechanicsDimensions.Energy, out var initialEnergy, out var error, out var resourceLimit)
             || !MechanicsModel.TryReadQuantity(call.Arguments[1], MechanicsDimensions.Energy, out var work, out error, out resourceLimit))
         {
             return MechanicsModel.Failed(request, error, resourceLimit);
         }
+        if (initialEnergy.Numerator.Sign < 0)
+        {
+            return MechanicsModel.Unsupported(request, "Initial kinetic energy cannot be negative.");
+        }
         if (!MechanicsArithmetic.TryAdd(initialEnergy, work, out var finalEnergy))
         {
             return MechanicsModel.ResourceLimit(request, "Work-energy computation exceeds the exact arithmetic budget.");
+        }
+        if (finalEnergy.Numerator.Sign < 0)
+        {
+            return MechanicsModel.Unsupported(request, "The declared work-energy model would produce negative kinetic energy.");
         }
         return MechanicsModel.Solved(request, finalEnergy, "J", "work-energy-delta-k-equals-work", "mechanics-energy-exact-v1");
     }
 
     private static MathematicsSolveResult SolvePower(MathematicsSolveRequest request, FunctionCallNode call)
     {
-        if (call.Arguments.Count != 2
-            || !MechanicsModel.TryReadQuantity(call.Arguments[0], MechanicsDimensions.Energy, out var work, out var error, out var resourceLimit)
+        if (call.Arguments.Count != 2)
+        {
+            return MechanicsModel.Unsupported(request, "Average power requires work and positive elapsed time.");
+        }
+        if (!MechanicsModel.TryReadQuantity(call.Arguments[0], MechanicsDimensions.Energy, out var work, out var error, out var resourceLimit)
             || !MechanicsModel.TryReadQuantity(call.Arguments[1], MechanicsDimensions.Time, out var time, out error, out resourceLimit))
         {
             return MechanicsModel.Failed(request, error, resourceLimit);
         }
-        if (time.Numerator.IsZero)
+        if (time.Numerator.Sign <= 0)
         {
-            return MechanicsModel.Unsupported(request, "Power model requires non-zero elapsed time.");
+            return MechanicsModel.Unsupported(request, "Power model requires positive elapsed time.");
         }
         if (!MechanicsArithmetic.TryDivide(work, time, out var power))
         {
@@ -171,7 +208,6 @@ internal readonly record struct MechanicsDimension(int Mass, int Length, int Tim
 
 internal static class MechanicsDimensions
 {
-    public static readonly MechanicsDimension Dimensionless = new(0, 0, 0);
     public static readonly MechanicsDimension Mass = new(1, 0, 0);
     public static readonly MechanicsDimension Length = new(0, 1, 0);
     public static readonly MechanicsDimension Time = new(0, 0, 1);
