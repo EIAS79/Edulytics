@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "mappingVersion": "lesson-skill-foundation-v4",
+  "mappingVersion": "lesson-skill-stage17-complete-v1",
   "status": "Foundation",
   "mappings": [
     {
@@ -98,6 +98,154 @@
         "The canonical lesson title is 'Find equivalent fractions: Reason and Apply' and the worked examples explicitly use fraction equivalence without changing value.",
         "The deterministic skill-resolution audit identifies fractions.equivalent as the high-confidence exact target and the semantic-content audit passes target evidence.",
         "This supporting lesson has no independent official OutcomeCode; the Edulytics SkillContract is pedagogical metadata only and does not invent an official curriculum outcome."
+      ]
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:APPLY",
+      "primarySkills": [
+        "fractions.compare.unlike_denominators"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent",
+        "number.lcm"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "The canonical lesson title is 'Compare fractions with different denominators: Reason and Apply' and the semantic-content audit contains target evidence for unlike-denominator comparison.",
+        "The deterministic skill-resolution audit identifies fractions.compare.unlike_denominators as the high-confidence exact target.",
+        "This supporting lesson has no independent official OutcomeCode; the Edulytics SkillContract does not invent one."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U05:L10",
+      "primarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "OfficialMappedPedagogicalLesson",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:3.NF.A.3"
+      ],
+      "mappingConfidence": "High",
+      "evidence": [
+        "The canonical lesson title is 'Equivalent Fractions' and the worked examples explicitly reason about fractions with the same value.",
+        "The lesson remains linked to CCSS:3.NF.A.3; this SkillContract narrows generation scope without replacing the official outcome."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U05:L11",
+      "primarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "OfficialMappedPedagogicalLesson",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:3.NF.A.3",
+        "CCSS:3.OA.B.5"
+      ],
+      "mappingConfidence": "High",
+      "evidence": [
+        "The canonical lesson title is 'Generate Equivalent Fractions' and the semantic-content audit passes the equivalent-fraction target.",
+        "Official CCSS outcome links are preserved; the SkillContract controls exact practice generation only."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U05:L12",
+      "primarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "OfficialMappedPedagogicalLesson",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:3.NF.A.3"
+      ],
+      "mappingConfidence": "High",
+      "evidence": [
+        "The lesson explicitly targets equivalent fractions on a number line and passes deterministic semantic review.",
+        "The exact learner mechanic includes a number-line representation mode while preserving the official CCSS mapping."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L07",
+      "primarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "OfficialMappedPedagogicalLesson",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NF.A.1"
+      ],
+      "mappingConfidence": "High",
+      "evidence": [
+        "The canonical lesson title is 'Equivalent Fractions' and the worked examples demonstrate equivalent-value reasoning.",
+        "The exact practice mechanic generates and recognizes equivalent fractions while preserving CCSS:4.NF.A.1."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L08",
+      "primarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "OfficialMappedPedagogicalLesson",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NF.A.1"
+      ],
+      "mappingConfidence": "High",
+      "evidence": [
+        "The lesson explicitly targets equivalent fractions on the number line and passes semantic target review.",
+        "The learner mechanic uses an exact number-line equivalence mode; the official outcome remains CCSS:4.NF.A.1."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L10",
+      "primarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "OfficialMappedPedagogicalLesson",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NF.A.1"
+      ],
+      "mappingConfidence": "High",
+      "evidence": [
+        "The lesson target is using multiples to find equivalent fractions and the semantic audit passes.",
+        "The exact mechanic scales numerator and denominator by the same whole-number factor."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L11",
+      "primarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "OfficialMappedPedagogicalLesson",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NF.A.1"
+      ],
+      "mappingConfidence": "High",
+      "evidence": [
+        "The lesson target is using factors to find equivalent fractions and the semantic audit passes.",
+        "The exact mechanic includes a factor-reduction mode that divides numerator and denominator by the same factor."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U03:L07",
+      "primarySkills": [
+        "ratio.unit_rate"
+      ],
+      "sourceType": "OfficialMappedPedagogicalLesson",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:6.RP.A.2",
+        "CCSS:6.RP.A.3"
+      ],
+      "mappingConfidence": "High",
+      "evidence": [
+        "The canonical lesson title is 'Equivalent Ratios Have the Same Unit Rates' and worked examples explicitly compare rates per unit.",
+        "The exact UNIT_RATE mechanic computes unit rates and verifies equivalent ratios while preserving the official CCSS outcome links."
       ]
     }
   ]
