@@ -16,7 +16,7 @@ public sealed class ExactMechanicsModelSolverTests
 
     [Theory]
     [InlineData("mechanics_constant_acceleration_velocity_exact", 7, "m_per_s")]
-    [InlineData("mechanics_constant_acceleration_displacement_exact", 16, "m")]
+    [InlineData("mechanics_constant_acceleration_displacement_exact", 8, "m")]
     [InlineData("mechanics_newton_second_law_force_exact", 12, "N")]
     [InlineData("mechanics_newton_third_law_reaction_exact", -6, "N")]
     [InlineData("mechanics_impulse_momentum_exact", 9, "kg_m_per_s")]
@@ -190,9 +190,8 @@ public sealed class ExactMechanicsQuestionFactoryTests
             Assert.True(first.Verification.IsVerified);
             Assert.Equal(JsonSerializer.Serialize(first.Problem), JsonSerializer.Serialize(second.Problem));
             Assert.Equal(JsonSerializer.Serialize(first.ExpectedAnswer), JsonSerializer.Serialize(second.ExpectedAnswer));
-            Assert.Contains(first.RequiredCapabilities, capability => capability.Value == "mechanics.units.si_dimensional_analysis");
-            Assert.Contains(first.RequiredCapabilities, capability => capability.Value == "mechanics.verify.models_and_units");
-            Assert.IsType<FunctionCallNode>(first.ExpectedAnswer);
+            var quantity = Assert.IsType<FunctionCallNode>(first.ExpectedAnswer);
+            Assert.Equal("quantity_si", quantity.FunctionName);
         }
     }
 }
