@@ -23,10 +23,19 @@ def read_json(path: Path) -> Any:
 
 
 def grade_from_code(code: str) -> int | None:
-    # Stage 1-6, Grade 1-6 and Level 1-6 are the canonical primary encodings
-    # currently used by Cambridge, Common Core, UAE and Polish curriculum packs.
-    match = re.search(r":(?:S|G|L)([1-6]):", code, re.IGNORECASE)
-    return int(match.group(1)) if match else None
+    # Parse the level segment by framework so a later lesson segment such as
+    # Common Core ":L05" can never be mistaken for Grade/Level 5.
+    patterns = (
+        r":CAMBRIDGE-INTL-MATH:S([1-6]):",
+        r":US-CCSS-MATH:G([1-6]):",
+        r":PL-NATIONAL-MATH:L([1-6]):",
+        r":UAE-MOE-MATH:L([1-6]):",
+    )
+    for pattern in patterns:
+        match = re.search(pattern, code, re.IGNORECASE)
+        if match:
+            return int(match.group(1))
+    return None
 
 
 def audit() -> dict[str, Any]:
