@@ -109,13 +109,13 @@ public sealed class ExactNewtonIterationSolver : IMathematicsSolver
             {
                 return ExactNumericalMethodsV2.Failed(request, error, resourceLimit);
             }
-            if (value.Numerator.IsZero)
-            {
-                break;
-            }
             if (derivative.Numerator.IsZero)
             {
                 return ExactNumericalMethodsV2.Unsupported(request, "Newton iteration encountered a zero derivative and fails closed.");
+            }
+            if (value.Numerator.IsZero)
+            {
+                break;
             }
             if (!ExactNumericalArithmetic.TryDivide(value, derivative, out var correction)
                 || !ExactNumericalArithmetic.TrySubtract(current, correction, out current))
@@ -152,14 +152,18 @@ public sealed class ExactTrapezoidalRuleSolver : IMathematicsSolver
             return ExactNumericalMethodsV2.Unsupported(request, "Trapezoidal estimation requires lower < upper.");
         }
 
-        if (!ExactNumericalArithmetic.TrySubtract(upper, lower, out var width)
-            || !ExactNumericalArithmetic.TryDivide(width, new ExactRational(new BigInteger(subdivisions), BigInteger.One), out var h)
-            || !ExactNumericalPolynomialEvaluator.TryEvaluate(call.Arguments[0], variable.Name, lower, false, out var first, out _, out error, out resourceLimit)
+        if (!ExactNumericalArithmetic.TrySubtract(upper, lower, out var width))
+        {
+            return ExactNumericalMethodsV2.ResourceLimit(request, "Trapezoidal interval width exceeds the exact arithmetic budget.");
+        }
+        if (!ExactNumericalArithmetic.TryDivide(width, new ExactRational(new BigInteger(subdivisions), BigInteger.One), out var h))
+        {
+            return ExactNumericalMethodsV2.ResourceLimit(request, "Trapezoidal step width exceeds the exact arithmetic budget.");
+        }
+        if (!ExactNumericalPolynomialEvaluator.TryEvaluate(call.Arguments[0], variable.Name, lower, false, out var first, out _, out error, out resourceLimit)
             || !ExactNumericalPolynomialEvaluator.TryEvaluate(call.Arguments[0], variable.Name, upper, false, out var last, out _, out error, out resourceLimit))
         {
-            return resourceLimit
-                ? ExactNumericalMethodsV2.ResourceLimit(request, error.Length == 0 ? "Trapezoidal setup exceeds the exact arithmetic budget." : error)
-                : ExactNumericalMethodsV2.Unsupported(request, error.Length == 0 ? "Trapezoidal setup is outside the supported exact-rational subset." : error);
+            return ExactNumericalMethodsV2.Failed(request, error, resourceLimit);
         }
 
         if (!ExactNumericalArithmetic.TryAdd(first, last, out var weightedSum))
@@ -169,10 +173,13 @@ public sealed class ExactTrapezoidalRuleSolver : IMathematicsSolver
         var x = lower;
         for (var i = 1; i < subdivisions; i++)
         {
-            if (!ExactNumericalArithmetic.TryAdd(x, h, out x)
-                || !ExactNumericalPolynomialEvaluator.TryEvaluate(call.Arguments[0], variable.Name, x, false, out var value, out _, out error, out resourceLimit))
+            if (!ExactNumericalArithmetic.TryAdd(x, h, out x))
             {
-                return ExactNumericalMethodsV2.Failed(request, error.Length == 0 ? "Trapezoidal sampling exceeds the exact arithmetic budget." : error, true);
+                return ExactNumericalMethodsV2.ResourceLimit(request, "Trapezoidal sample position exceeds the exact arithmetic budget.");
+            }
+            if (!ExactNumericalPolynomialEvaluator.TryEvaluate(call.Arguments[0], variable.Name, x, false, out var value, out _, out error, out resourceLimit))
+            {
+                return ExactNumericalMethodsV2.Failed(request, error, resourceLimit);
             }
             if (!ExactNumericalArithmetic.TryMultiply(ExactNumericalMethodsV2.Two, value, out var doubled)
                 || !ExactNumericalArithmetic.TryAdd(weightedSum, doubled, out weightedSum))
