@@ -13,9 +13,12 @@ public sealed class ExactPolynomialDerivativeVerifier : IMathematicsVerifier
     {
         ArgumentNullException.ThrowIfNull(request);
         ArgumentNullException.ThrowIfNull(result);
-        if (request.Problem is not DerivativeNode derivative || derivative.Order != 1)
+        if (request.Problem is not DerivativeNode derivative
+            || derivative.Order != 1
+            || derivative.Expression is null
+            || derivative.Variable is null)
         {
-            return VerifierCalculusV2.Unsupported("Independent calculus verification requires a first-order DerivativeNode.");
+            return VerifierCalculusV2.Unsupported("Independent calculus verification requires a well-formed first-order DerivativeNode.");
         }
         if (!VerifierPolynomial.TryParse(derivative.Expression, derivative.Variable.Name, 8, out var original, out var error))
         {
@@ -55,9 +58,13 @@ public sealed class ExactPolynomialDefiniteIntegralVerifier : IMathematicsVerifi
     {
         ArgumentNullException.ThrowIfNull(request);
         ArgumentNullException.ThrowIfNull(result);
-        if (request.Problem is not IntegralNode integral || integral.LowerBound is null || integral.UpperBound is null)
+        if (request.Problem is not IntegralNode integral
+            || integral.Integrand is null
+            || integral.Variable is null
+            || integral.LowerBound is null
+            || integral.UpperBound is null)
         {
-            return VerifierCalculusV2.Unsupported("Independent calculus verification requires a definite IntegralNode with both bounds.");
+            return VerifierCalculusV2.Unsupported("Independent calculus verification requires a well-formed definite IntegralNode with both bounds.");
         }
         if (!VerifierPolynomial.TryParse(integral.Integrand, integral.Variable.Name, 8, out var polynomial, out var error)
             || !VerifierCalculusV2.TryReadScalar(integral.LowerBound, out var lower)
