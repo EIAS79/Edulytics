@@ -287,6 +287,15 @@ public static class GameLessonRouteResolver
                 : "exact-lesson-skill-v2");
     }
 
+    private static string WorkspaceForStage17Domain(string domain) => domain switch
+    {
+        "algebra-reasoning" => "REASONING_MODELING",
+        "measurement" => "MEASUREMENT",
+        "fractions" => "FRACTIONS",
+        "ratio" => "RATIO_ALGEBRA",
+        _ => "MATHEMATICS"
+    };
+
     private static bool IsUaeGeometryAndData(string lessonCode, string unitTitle) =>
         lessonCode.Contains(":UAE-MOE-MATH:", StringComparison.OrdinalIgnoreCase) &&
         Normalize(unitTitle).Contains("geometry and data", StringComparison.Ordinal);
