@@ -23,6 +23,18 @@ public sealed class MathematicsV2ProductMigrationPilotTests
         "Compare fractions with different denominators: Build the Idea",
         "Compare unlike denominators using equivalent fractions and common denominators.",
         "FRACTION_COMPARE_UNLIKE")]
+    [InlineData(
+        MathematicsV2ProductMigrationPolicy.EquivalentFractionsBuildLessonCode,
+        "Fractions",
+        "Find equivalent fractions: Build the Idea",
+        "Use equivalent fractions without changing the represented value.",
+        "FRACTION_EQUIVALENT")]
+    [InlineData(
+        MathematicsV2ProductMigrationPolicy.EquivalentFractionsApplyLessonCode,
+        "Fractions",
+        "Find equivalent fractions: Reason and Apply",
+        "Use equivalence to generate and recognize fractions with the same value.",
+        "FRACTION_EQUIVALENT")]
     public void EnabledPilot_RoutesOnlyApprovedExactLessons(
         string lessonCode,
         string unitTitle,
@@ -49,7 +61,7 @@ public sealed class MathematicsV2ProductMigrationPilotTests
     {
         var entries = MathematicsV2ProductMigrationPolicy.ApprovedGrade16Entries;
 
-        Assert.Equal(3, entries.Count);
+        Assert.Equal(5, entries.Count);
         Assert.All(entries, entry =>
         {
             Assert.InRange(entry.Grade, 1, 6);
@@ -61,8 +73,8 @@ public sealed class MathematicsV2ProductMigrationPilotTests
             Assert.False(entry.UsesV2ShadowSolver);
         });
 
-        Assert.Equal(3, entries.Select(entry => entry.LessonCode).Distinct(StringComparer.Ordinal).Count());
-        Assert.Equal(3, entries.Select(entry => entry.SkillId).Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(5, entries.Select(entry => entry.LessonCode).Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(4, entries.Select(entry => entry.SkillId).Distinct(StringComparer.Ordinal).Count());
     }
 
     [Theory]
@@ -117,6 +129,28 @@ public sealed class MathematicsV2ProductMigrationPilotTests
             MathematicsV2ProductMigrationPolicy.TwoUnknownsLessonCode,
             "SCALE_READING",
             enabled: true));
+    }
+
+    [Fact]
+    public void EquivalentFractions_WrongMechanicFailsClosed()
+    {
+        Assert.False(MathematicsV2ProductMigrationPolicy.ShouldUseGrade16Rollout(
+            MathematicsV2ProductMigrationPolicy.EquivalentFractionsBuildLessonCode,
+            "FRACTION_COMPARE_UNLIKE",
+            enabled: true));
+    }
+
+    [Fact]
+    public void EquivalentFractionsRuntime_IsExplicitlySupportedAndCrossProductGuarded()
+    {
+        var root = FindRoot();
+        var script = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/lesson-grounded-practice-v2.js"));
+
+        Assert.Contains("'FRACTION_EQUIVALENT'", script, StringComparison.Ordinal);
+        Assert.Contains("baseN * d === n * baseD", script, StringComparison.Ordinal);
+        Assert.Contains("fractionEquivalentQuestion()", script, StringComparison.Ordinal);
     }
 
     [Theory]

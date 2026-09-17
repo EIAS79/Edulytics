@@ -19,7 +19,7 @@ This document is the repository pointer to the active mathematics/curriculum exe
 Aligned to `main` after PR #188 / commit `95cc2adb902743e926f3ae0e0f672604e99e3083`.
 
 - **Current stage:** Programme Stage 17 — Grade 1–6 migration.
-- **Current completed tranche:** Stage 17 tranche 1 readiness-driven fail-closed rollout gate for the three already-approved Grade 1–6 exact lesson/skill mappings.
+- **Current completed tranche:** Stage 17 tranche 1 established the readiness-driven fail-closed rollout gate. Stage 17 tranche 2 promotes the two reviewed Cambridge Primary Stage 5 `Find equivalent fractions` lessons with an exact `FRACTION_EQUIVALENT` mechanic after SkillContract and semantic-readiness evidence.
 - **Stage 17 status:** IN PROGRESS. The master plan requires Grade 1–6 migration domain by domain; tranche 1 is not the full Stage 17 exit.
 - **Next stage after Stage 17 exit:** Programme Stage 18 — Practice migration.
 

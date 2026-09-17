@@ -48,7 +48,7 @@
     {"id":"mechanics.energy.work_energy","domain":"mechanics","canonicalName":"Apply the work-energy relationship","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.energy.work_energy.exact","mechanics.verify.models_and_units"],"v2QuestionFamilies":["mechanics.energy.work_energy.exact"]},
     {"id":"mechanics.power.work_over_time","domain":"mechanics","canonicalName":"Find average power from work and elapsed time","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.power.work_over_time.exact","mechanics.verify.models_and_units"],"v2QuestionFamilies":["mechanics.power.work_over_time.exact"]},
     {"id":"number.lcm","domain":"number","canonicalName":"Find and use least common multiples"},
-    {"id":"fractions.equivalent","domain":"fractions","canonicalName":"Generate and recognize equivalent fractions"},
+    {"id":"fractions.equivalent","domain":"fractions","canonicalName":"Generate and recognize equivalent fractions","legacyGameMechanic":"FRACTION_EQUIVALENT"},
     {"id":"fractions.of_quantity","domain":"fractions","canonicalName":"Find a fraction of a quantity","legacyCanonicalSkill":"FractionOfQuantity"},
     {"id":"percentages.of_quantity","domain":"percentages","canonicalName":"Find a percentage of a quantity","legacyCanonicalSkill":"PercentageOfQuantity"},
     {"id":"ratio.unit_rate","domain":"ratio","canonicalName":"Use unit rate and proportion","legacyCanonicalSkill":"UnitRateAndProportion"},

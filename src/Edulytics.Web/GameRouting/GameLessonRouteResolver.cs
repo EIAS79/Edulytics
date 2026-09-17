@@ -143,6 +143,17 @@ public static class GameLessonRouteResolver
                 enableMathematicsV2Pilot);
         }
 
+        if (title.Contains("find equivalent fractions", StringComparison.Ordinal) &&
+            ContainsAny(semantic, "equivalent fraction", "equivalent fractions", "equivalence"))
+        {
+            return LessonSkillRoute(
+                lessonCode,
+                framework,
+                "FRACTIONS",
+                "FRACTION_EQUIVALENT",
+                enableMathematicsV2Pilot);
+        }
+
         if (title.Contains("compare fractions", StringComparison.Ordinal) &&
             ContainsAny(semantic, "different denominators", "unlike denominators"))
         {

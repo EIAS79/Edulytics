@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "mappingVersion": "lesson-skill-foundation-v3",
+  "mappingVersion": "lesson-skill-foundation-v4",
   "status": "Foundation",
   "mappings": [
     {
@@ -70,6 +70,34 @@
       "evidence": [
         "The canonical lesson title is 'Efficiently Solving Inequalities' and its worked examples solve and graph single-variable affine inequalities, including a negative variable coefficient where order reversal is required.",
         "The lesson has no independent official OutcomeCode mapping in the canonical content pack, so the Edulytics SkillContract is pedagogical metadata only and does not invent an official curriculum outcome."
+      ]
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5F-2:BUILD",
+      "primarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "The canonical lesson title is 'Find equivalent fractions: Build the Idea' and the worked examples explicitly use fraction equivalence without changing value.",
+        "The deterministic skill-resolution audit identifies fractions.equivalent as the high-confidence exact target and the semantic-content audit passes target evidence.",
+        "This supporting lesson has no independent official OutcomeCode; the Edulytics SkillContract is pedagogical metadata only and does not invent an official curriculum outcome."
+      ]
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5F-2:APPLY",
+      "primarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "The canonical lesson title is 'Find equivalent fractions: Reason and Apply' and the worked examples explicitly use fraction equivalence without changing value.",
+        "The deterministic skill-resolution audit identifies fractions.equivalent as the high-confidence exact target and the semantic-content audit passes target evidence.",
+        "This supporting lesson has no independent official OutcomeCode; the Edulytics SkillContract is pedagogical metadata only and does not invent an official curriculum outcome."
       ]
     }
   ]

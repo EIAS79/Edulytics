@@ -30,6 +30,8 @@ public static class MathematicsV2ProductMigrationPolicy
     public const string TwoUnknownsLessonCode = "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:APPLY";
     public const string ScaleReadingLessonCode = "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:APPLY";
     public const string FractionCompareLessonCode = "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:BUILD";
+    public const string EquivalentFractionsBuildLessonCode = "PED:CAMBRIDGE-INTL-MATH:S5:5F-2:BUILD";
+    public const string EquivalentFractionsApplyLessonCode = "PED:CAMBRIDGE-INTL-MATH:S5:5F-2:APPLY";
 
     public sealed record Grade16RolloutEntry(
         string LessonCode,
@@ -65,6 +67,22 @@ public static class MathematicsV2ProductMigrationPolicy
             6,
             "FRACTION_COMPARE_UNLIKE",
             "READY_VERIFIED",
+            false),
+        new(
+            EquivalentFractionsBuildLessonCode,
+            "fractions.equivalent",
+            "fractions",
+            5,
+            "FRACTION_EQUIVALENT",
+            "READY_VERIFIED",
+            false),
+        new(
+            EquivalentFractionsApplyLessonCode,
+            "fractions.equivalent",
+            "fractions",
+            5,
+            "FRACTION_EQUIVALENT",
+            "READY_VERIFIED",
             false)
     ];
 
@@ -73,8 +91,8 @@ public static class MathematicsV2ProductMigrationPolicy
 
     /// <summary>
     /// The currently approved Grade 1-6 production tranche. This is intentionally
-    /// small: the source lesson-skill registry currently approves only these three
-    /// Grade 1-6 lessons. Future tranches must add evidence to the registry first.
+    /// small and evidence-driven: only explicitly approved Grade 1-6 lesson mappings
+    /// with reviewed exact learner-facing mechanics are listed here. Future tranches must add evidence to the registry first.
     /// </summary>
     public static IReadOnlyList<Grade16RolloutEntry> ApprovedGrade16Entries => Grade16Rollout;
 

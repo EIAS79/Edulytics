@@ -4,13 +4,15 @@
 
 Stage 17 is a fail-closed, domain-by-domain production-routing migration for Grade 1–6 Mathematics. It is not a global enablement switch and it does not treat `ShadowVerified` solver families as production-ready by itself.
 
-The current approved lesson-skill registry contains five mappings in total. Only three are Grade 1–6 mappings, and all three are Cambridge Primary Stage 6 supporting lessons already accepted in the product pilot. Therefore tranche 1 contains exactly those three entries and no inferred or title-only additions.
+The approved lesson-skill registry now contains seven mappings in total. Five are Grade 1–6 mappings. Tranche 1 introduced the three previously accepted Cambridge Primary Stage 6 exact lessons. Tranche 2 adds only the two Cambridge Primary Stage 5 `Find equivalent fractions` lessons after deterministic high-confidence skill resolution, `PASS_TARGETED` semantic evidence, and review of a dedicated exact learner-facing mechanic. No title-only or shadow-only promotion is permitted.
 
 | Domain | Lesson code | SkillContract | Mechanic | Readiness | V2 shadow solver used for product routing |
 | --- | --- | --- | --- | --- | --- |
 | algebra-reasoning | `PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:APPLY` | `algebra.relationships.two_unknowns` | `TWO_UNKNOWNS` | `READY_VERIFIED` | no |
 | measurement | `PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:APPLY` | `measurement.scale.read_equal_intervals` | `SCALE_READING` | `READY_VERIFIED` | no |
 | fractions | `PED:CAMBRIDGE-INTL-MATH:S6:6F-3:BUILD` | `fractions.compare.unlike_denominators` | `FRACTION_COMPARE_UNLIKE` | `READY_VERIFIED` | no |
+| fractions | `PED:CAMBRIDGE-INTL-MATH:S5:5F-2:BUILD` | `fractions.equivalent` | `FRACTION_EQUIVALENT` | `READY_VERIFIED` | no |
+| fractions | `PED:CAMBRIDGE-INTL-MATH:S5:5F-2:APPLY` | `fractions.equivalent` | `FRACTION_EQUIVALENT` | `READY_VERIFIED` | no |
 
 `READY_VERIFIED` here is the generation-readiness audit status from the accepted exact legacy/native mechanic. It does **not** mean that a `ShadowVerified` Mathematics V2 solver family has been promoted to learner-facing production routing.
 
@@ -31,7 +33,7 @@ A lesson may be added only after its exact lesson-skill mapping is approved in `
 ## Acceptance invariants
 
 - Grade boundary is 1–6 for this stage.
-- Tranche 1 contains exactly the three currently approved Grade 1–6 entries.
+- Tranche 1 contains the original three accepted Grade 1–6 entries; tranche 2 adds exactly the two reviewed Stage 5 equivalent-fraction entries.
 - Exact lesson code and exact mechanic must both match.
 - No `UsesV2ShadowSolver=true` entry can route through Stage 17.
 - New Stage 17 flag is explicit and fail-closed.
