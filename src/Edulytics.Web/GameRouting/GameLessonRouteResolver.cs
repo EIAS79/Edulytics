@@ -38,6 +38,20 @@ public static class GameLessonRouteResolver
         bool requireLessonGrounding,
         bool enableMathematicsV2Pilot)
     {
+        if (MathematicsV2ProductMigrationPolicy.TryGetApprovedGrade16Entry(
+                lessonCode,
+                out var approvedStage17)
+            && approvedStage17 is not null)
+        {
+            var framework = FrameworkFromLessonCode(lessonCode);
+            return LessonSkillRoute(
+                lessonCode,
+                framework,
+                WorkspaceForStage17Domain(approvedStage17.Domain),
+                approvedStage17.Mechanic,
+                enableMathematicsV2Pilot);
+        }
+
         if (!string.IsNullOrWhiteSpace(lessonContext))
         {
             var grounded = ResolveFromLessonContent(
@@ -272,6 +286,15 @@ public static class GameLessonRouteResolver
                 ? MathematicsV2ProductMigrationPolicy.ClassificationSource
                 : "exact-lesson-skill-v2");
     }
+
+    private static string WorkspaceForStage17Domain(string domain) => domain switch
+    {
+        "algebra-reasoning" => "REASONING_MODELING",
+        "measurement" => "MEASUREMENT",
+        "fractions" => "FRACTIONS",
+        "ratio" => "RATIO_ALGEBRA",
+        _ => "MATHEMATICS"
+    };
 
     private static bool IsUaeGeometryAndData(string lessonCode, string unitTitle) =>
         lessonCode.Contains(":UAE-MOE-MATH:", StringComparison.OrdinalIgnoreCase) &&

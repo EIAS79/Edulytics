@@ -8,7 +8,8 @@
   var locale = root.dataset.lessonLanguage || 'en';
   var lessonTitle = root.dataset.lessonTitle || '';
   var unitTitle = root.dataset.unitTitle || '';
-  var supported = ['TWO_UNKNOWNS', 'SCALE_READING', 'FRACTION_COMPARE_UNLIKE', 'FRACTION_EQUIVALENT'];
+  var normalizedLessonTitle = lessonTitle.toLowerCase();
+  var supported = ['TWO_UNKNOWNS', 'SCALE_READING', 'FRACTION_COMPARE_UNLIKE', 'FRACTION_EQUIVALENT', 'UNIT_RATE'];
   if (supported.indexOf(mechanic) < 0) {
     root.innerHTML = '<div class="gw-error">This lesson does not have an exact skill practice model.</div>';
     return;
@@ -330,10 +331,82 @@
       'Compare the values of the whole fractions, not isolated numerator or denominator digits.');
   }
 
+  function fractionNumberLineModel(numerator, denominator) {
+    var card = document.createElement('div');
+    card.className = 'gw-operation-model';
+    var line = document.createElement('div');
+    line.style.display = 'grid';
+    line.style.gridTemplateColumns = 'repeat(' + (denominator + 1) + ', 1fr)';
+    line.style.alignItems = 'end';
+    line.style.borderBottom = '3px solid currentColor';
+    for (var i = 0; i <= denominator; i += 1) {
+      var tick = document.createElement('div');
+      tick.style.textAlign = 'center';
+      tick.innerHTML =
+        '<div style="font-size:1.1rem;min-height:1.4rem">' + (i === numerator ? '▼' : '') + '</div>' +
+        '<div style="border-left:2px solid currentColor;height:14px;margin:0 auto;width:0"></div>' +
+        '<small>' + (i === 0 ? '0' : (i === denominator ? '1' : '')) + '</small>';
+      line.appendChild(tick);
+    }
+    card.appendChild(line);
+    board.appendChild(card);
+  }
+
+  function fractionEquivalentNumberLineQuestion() {
+    var baseD = rnd(3, 6);
+    var baseN = rnd(1, baseD - 1);
+    var factor = rnd(2, 3);
+    var eqN = baseN * factor;
+    var eqD = baseD * factor;
+    var correct = eqN + '/' + eqD;
+
+    mission(
+      'The marked point is ' + baseN + '/' + baseD + '. Which fraction names the same point on a finer number line?',
+      'Equivalent fractions occupy the same position from 0 to 1.',
+      'Scale numerator and denominator by the same factor.');
+    fractionNumberLineModel(eqN, eqD);
+    choiceRow(
+      [correct, (eqN + 1) + '/' + eqD, eqN + '/' + (eqD + factor), baseN + '/' + eqD],
+      correct,
+      baseN + '/' + baseD + ' and ' + correct + ' represent the same point because both parts were multiplied by ' + factor + '.',
+      'The point must stay fixed; scale numerator and denominator together.');
+  }
+
+  function fractionEquivalentFactorQuestion() {
+    var simpleD = rnd(3, 7);
+    var simpleN = rnd(1, simpleD - 1);
+    var factor = rnd(2, 4);
+    var largeN = simpleN * factor;
+    var largeD = simpleD * factor;
+    var correct = simpleN + '/' + simpleD;
+
+    mission(
+      'Use a common factor to write ' + largeN + '/' + largeD + ' as an equivalent fraction.',
+      'Both numerator and denominator share the factor ' + factor + '.',
+      'Divide numerator and denominator by the same factor.');
+    fractionBars(largeN, largeD, simpleN, simpleD);
+    choiceRow(
+      [correct, (simpleN + 1) + '/' + simpleD, simpleN + '/' + (simpleD + 1), largeN + '/' + simpleD],
+      correct,
+      'Dividing both numerator and denominator by ' + factor + ' gives ' + correct + ' without changing the value.',
+      'A common factor must divide both parts of the fraction.');
+  }
+
   // Every FRACTION_EQUIVALENT round preserves value by multiplying or
   // dividing numerator and denominator by the same non-zero whole-number factor.
-  // Distractors are rejected by cross-product equivalence before rendering.
+  // Number-line lessons use a dedicated representation mode and factor lessons
+  // explicitly practise reduction by a common factor.
   function fractionEquivalentQuestion() {
+    if (normalizedLessonTitle.indexOf('number line') >= 0) {
+      fractionEquivalentNumberLineQuestion();
+      return;
+    }
+
+    if (normalizedLessonTitle.indexOf('use factors') >= 0) {
+      fractionEquivalentFactorQuestion();
+      return;
+    }
+
     var baseD = rnd(3, 9);
     var baseN = rnd(1, baseD - 1);
     var factor = rnd(2, 4);
@@ -405,6 +478,47 @@
       'Check equivalence with cross-products or scale both numerator and denominator by the same factor.');
   }
 
+  function unitRateQuestion() {
+    var unit = rnd(2, 9);
+    var quantity = rnd(2, 7);
+    var total = unit * quantity;
+    var mode = state.round % 4;
+
+    if (mode === 0 || mode === 2) {
+      mission(
+        total + ' items are produced in ' + quantity + ' minutes. What is the unit rate?',
+        'Find the amount for 1 minute.',
+        'Divide both quantities by ' + quantity + '.');
+      modelCard('<div class="gw-equation">' + total + ' ÷ ' + quantity + ' = ? items/min</div>');
+      choiceRow(
+        [unit, unit + quantity, total, Math.max(1, unit - 1)],
+        unit,
+        'The unit rate is ' + total + ' ÷ ' + quantity + ' = ' + unit + ' items per minute.',
+        'A unit rate always gives the amount for exactly 1 unit.');
+      return;
+    }
+
+    var factor = rnd(2, 5);
+    var eqTotal = total * factor;
+    var eqQuantity = quantity * factor;
+    var correct = eqTotal + ' items in ' + eqQuantity + ' minutes';
+    mission(
+      'Which ratio has the same unit rate as ' + total + ' items in ' + quantity + ' minutes?',
+      'Equivalent ratios have the same rate per 1 minute.',
+      'Scale both quantities by the same factor, or compare each unit rate.');
+    modelCard('<div class="gw-equation">' + total + ':' + quantity + ' = ' + unit + ':1</div>');
+    choiceRow(
+      [
+        correct,
+        (eqTotal + 1) + ' items in ' + eqQuantity + ' minutes',
+        eqTotal + ' items in ' + (eqQuantity + 1) + ' minutes',
+        total + ' items in ' + eqQuantity + ' minutes'
+      ],
+      correct,
+      'Both quantities were multiplied by ' + factor + ', so the unit rate stays ' + unit + ' items per minute.',
+      'Equivalent ratios must preserve the same quotient: amount ÷ time.');
+  }
+
   function render() {
     state.locked = false;
     board.innerHTML = '';
@@ -412,6 +526,7 @@
     if (mechanic === 'TWO_UNKNOWNS') twoUnknownsQuestion();
     else if (mechanic === 'SCALE_READING') scaleReadingQuestion();
     else if (mechanic === 'FRACTION_EQUIVALENT') fractionEquivalentQuestion();
+    else if (mechanic === 'UNIT_RATE') unitRateQuestion();
     else fractionCompareQuestion();
   }
 

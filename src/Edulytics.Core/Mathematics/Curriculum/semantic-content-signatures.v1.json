@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "semantic-content-signatures-v1",
+  "version": "semantic-content-signatures-v2",
   "purpose": "Deterministic audit signatures for checking whether worked examples contain evidence of the lesson target. Audit-only; never rewrites content.",
   "rules": [
     {
@@ -177,6 +177,16 @@
       "id": "mechanics",
       "titlePatterns": ["\\bprojectiles?\\b", "\\bacceleration\\b", "\\bmomentum\\b", "\\bimpulse\\b", "\\benergy\\b", "\\bequilibrium\\b", "\\bfriction\\b", "\\bmechanics\\b"],
       "workedExamplePatterns": ["m/s", "m/s²", "\\bvelocity\\b", "\\bacceleration\\b", "\\bforce\\b", "\\bmomentum\\b", "\\bimpulse\\b", "\\benergy\\b", "\\bfriction\\b", "\\bequilibrium\\b"]
+    },
+    {
+      "id": "two-unknown-relationships",
+      "titlePatterns": ["\\b(?:2|two) unknowns?\\b"],
+      "workedExamplePatterns": ["\\bx\\s*\\+\\s*y\\s*=", "\\by\\s*[-−]\\s*x\\s*=", "\\btwo (?:independent )?relationships\\b", "\\bsubstitut(?:e|ion)\\b"]
+    },
+    {
+      "id": "equal-interval-scale-reading",
+      "titlePatterns": ["\\breading scales?\\b.*\\bintervals?\\b", "\\bscales? with (?:2|4|5|10) intervals?\\b"],
+      "workedExamplePatterns": ["\\bequal intervals?\\b", "\\bscale runs from\\b", "\\bpointer\\b", "\\binterval(?: value)?\\b"]
     }
   ]
 }

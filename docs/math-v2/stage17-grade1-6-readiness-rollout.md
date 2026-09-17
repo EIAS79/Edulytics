@@ -1,41 +1,80 @@
-# Stage 17 — Grade 1–6 readiness-driven rollout
+# Stage 17 — Grade 1–6 readiness-driven migration
 
-## Scope
+## Status
 
-Stage 17 is a fail-closed, domain-by-domain production-routing migration for Grade 1–6 Mathematics. It is not a global enablement switch and it does not treat `ShadowVerified` solver families as production-ready by itself.
+**COMPLETE**
 
-The approved lesson-skill registry now contains seven mappings in total. Five are Grade 1–6 mappings. Tranche 1 introduced the three previously accepted Cambridge Primary Stage 6 exact lessons. Tranche 2 adds only the two Cambridge Primary Stage 5 `Find equivalent fractions` lessons after deterministic high-confidence skill resolution, `PASS_TARGETED` semantic evidence, and review of a dedicated exact learner-facing mechanic. No title-only or shadow-only promotion is permitted.
+Stage 17 is treated as one Grade 1–6 migration stage. Completion does not mean that every primary lesson is forced into learner-facing Mathematics V2 routing. Completion means every Grade 1–6 lesson is accounted for by the deterministic readiness system:
 
-| Domain | Lesson code | SkillContract | Mechanic | Readiness | V2 shadow solver used for product routing |
-| --- | --- | --- | --- | --- | --- |
-| algebra-reasoning | `PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:APPLY` | `algebra.relationships.two_unknowns` | `TWO_UNKNOWNS` | `READY_VERIFIED` | no |
-| measurement | `PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:APPLY` | `measurement.scale.read_equal_intervals` | `SCALE_READING` | `READY_VERIFIED` | no |
-| fractions | `PED:CAMBRIDGE-INTL-MATH:S6:6F-3:BUILD` | `fractions.compare.unlike_denominators` | `FRACTION_COMPARE_UNLIKE` | `READY_VERIFIED` | no |
-| fractions | `PED:CAMBRIDGE-INTL-MATH:S5:5F-2:BUILD` | `fractions.equivalent` | `FRACTION_EQUIVALENT` | `READY_VERIFIED` | no |
-| fractions | `PED:CAMBRIDGE-INTL-MATH:S5:5F-2:APPLY` | `fractions.equivalent` | `FRACTION_EQUIVALENT` | `READY_VERIFIED` | no |
+- **READY_VERIFIED** lessons with an approved exact SkillContract and reviewed exact mechanic are production-routed.
+- Every other Grade 1–6 lesson remains fail-closed with an explicit readiness reason.
+- **ShadowVerified** solver families never become learner-facing production routes merely because they pass shadow verification.
+- Title similarity cannot promote a lesson.
 
-`READY_VERIFIED` here is the generation-readiness audit status from the accepted exact legacy/native mechanic. It does **not** mean that a `ShadowVerified` Mathematics V2 solver family has been promoted to learner-facing production routing.
+The machine-readable source of truth is:
+
+src/Edulytics.Core/Mathematics/Curriculum/stage17-grade1-6-production-manifest.v1.json
+
+The CI closure gate is:
+
+tools/math_intelligence/stage17_grade1_6_closure_audit.py
+
+## Production-routed Grade 1–6 lessons
+
+| Domain | Lesson code | SkillContract | Mechanic |
+| --- | --- | --- | --- |
+| algebra-reasoning | PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:APPLY | algebra.relationships.two_unknowns | TWO_UNKNOWNS |
+| measurement | PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:APPLY | measurement.scale.read_equal_intervals | SCALE_READING |
+| fractions | PED:CAMBRIDGE-INTL-MATH:S6:6F-3:BUILD | fractions.compare.unlike_denominators | FRACTION_COMPARE_UNLIKE |
+| fractions | PED:CAMBRIDGE-INTL-MATH:S6:6F-3:APPLY | fractions.compare.unlike_denominators | FRACTION_COMPARE_UNLIKE |
+| fractions | PED:CAMBRIDGE-INTL-MATH:S5:5F-2:BUILD | fractions.equivalent | FRACTION_EQUIVALENT |
+| fractions | PED:CAMBRIDGE-INTL-MATH:S5:5F-2:APPLY | fractions.equivalent | FRACTION_EQUIVALENT |
+| fractions | PED:US-CCSS-MATH:G3:U05:L10 | fractions.equivalent | FRACTION_EQUIVALENT |
+| fractions | PED:US-CCSS-MATH:G3:U05:L11 | fractions.equivalent | FRACTION_EQUIVALENT |
+| fractions | PED:US-CCSS-MATH:G3:U05:L12 | fractions.equivalent | FRACTION_EQUIVALENT |
+| fractions | PED:US-CCSS-MATH:G4:U02:L07 | fractions.equivalent | FRACTION_EQUIVALENT |
+| fractions | PED:US-CCSS-MATH:G4:U02:L08 | fractions.equivalent | FRACTION_EQUIVALENT |
+| fractions | PED:US-CCSS-MATH:G4:U02:L10 | fractions.equivalent | FRACTION_EQUIVALENT |
+| fractions | PED:US-CCSS-MATH:G4:U02:L11 | fractions.equivalent | FRACTION_EQUIVALENT |
+| ratio | PED:US-CCSS-MATH:G6:U03:L07 | ratio.unit_rate | UNIT_RATE |
+
+All entries above are required to be **READY_VERIFIED**, Grade 1–6, exact-code matched, and UsesV2ShadowSolver=false.
+
+## Exact runtime coverage
+
+The accepted learner-facing runtime supports exactly the Stage 17 mechanics needed by the production manifest:
+
+- TWO_UNKNOWNS
+- SCALE_READING
+- FRACTION_COMPARE_UNLIKE
+- FRACTION_EQUIVALENT
+- UNIT_RATE
+
+Equivalent-fraction lessons use representation-specific variants when the exact lesson target requires a number line or factor reduction. Unit-rate practice verifies both the rate per one unit and equivalent ratios preserving that rate.
 
 ## Runtime gate
 
-New Stage 17 environment variable:
+Environment variable:
 
-`EDULYTICS_MATH_V2_GRADE1_6_ROLLOUT`
+EDULYTICS_MATH_V2_GRADE1_6_ROLLOUT
 
-Values `true` or `1` enable the approved tranche. Any other explicit value disables it. If this variable is unset, the existing `EDULYTICS_MATH_V2_PRODUCT_MIGRATION_PILOT` value is used for backward compatibility. An explicit Stage 17 `false`/`0` always overrides the legacy pilot flag.
+Values true or 1 enable the approved Stage 17 production list. Any other explicit value disables the Stage 17 production classification. If unset, EDULYTICS_MATH_V2_PRODUCT_MIGRATION_PILOT remains the backward-compatible fallback. An explicit Stage 17 false or 0 overrides the legacy flag.
 
-The accepted `lesson-grounded-practice-v2.js` runtime and existing renderer/telemetry keys remain unchanged in tranche 1. Unsupported lessons, wrong mechanics, missing values, Grade 7/8 mappings, title-only matches, and shadow-only solver families fail closed to the existing route.
+## Closure invariants
 
-## Promotion rule for later tranches
+Stage 17 CI fails if any of the following occurs:
 
-A lesson may be added only after its exact lesson-skill mapping is approved in `lesson-skill-mappings.v1.json`, its semantic audit is acceptable, its question family/generation capability satisfies the readiness gate, and its exact learner-facing mechanic is explicitly reviewed. Supporting lessons must remain pedagogical mappings and must not receive invented official outcome codes.
+- a Grade 1–6 lesson is **READY_VERIFIED** but is absent from the production manifest;
+- a lesson appears in the production manifest but is not **READY_VERIFIED**;
+- a manifest entry has no approved exact lesson-skill mapping;
+- the manifest SkillId does not match the approved primary SkillContract;
+- the manifest mechanic does not match the reviewed exact legacyGameMechanic;
+- any production entry uses a shadow-only solver;
+- any approved Grade 1–6 mapping is missing from the manifest;
+- a fail-closed Grade 1–6 lesson has no readiness reason.
 
-## Acceptance invariants
+This makes the Stage 17 exit fail-closed and auditable without forcing unresolved, semantically weak, ambiguous, or unsupported lessons into production.
 
-- Grade boundary is 1–6 for this stage.
-- Tranche 1 contains the original three accepted Grade 1–6 entries; tranche 2 adds exactly the two reviewed Stage 5 equivalent-fraction entries.
-- Exact lesson code and exact mechanic must both match.
-- No `UsesV2ShadowSolver=true` entry can route through Stage 17.
-- New Stage 17 flag is explicit and fail-closed.
-- Legacy pilot flag remains compatible only when the new flag is unset.
-- Existing legacy/lesson-grounded fallback remains available as the kill-switch path.
+## Next programme stage
+
+With the Stage 17 closure gate green on main and the same commit live on Render, execution proceeds to **Programme Stage 18 — Practice migration**.
