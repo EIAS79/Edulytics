@@ -75,6 +75,32 @@ public sealed class ExactNumericalMethodsSolverTests
     }
 
     [Fact]
+    public void Newton_ExactRootWithZeroDerivative_FailsClosedAndVerifierRejectsForgedSolvedResult()
+    {
+        var solver = new ExactNewtonIterationSolver();
+        var verifier = new ExactNewtonIterationVerifier();
+        var x = new SymbolNode("x");
+        var polynomial = new PowerNode(x, I(2));
+        var request = Request(new FunctionCallNode("numerical_newton_fixed_exact", [polynomial, x, I(0), I(1)]));
+
+        var result = solver.Solve(request);
+        Assert.Equal(MathematicsSolveStatus.Unsupported, result.Status);
+
+        var zero = I(0);
+        var forged = new MathematicsSolveResult(
+            MathematicsSolveStatus.Solved,
+            zero,
+            new FiniteSolutionSet([zero]),
+            request.Assumptions,
+            "forged-newton",
+            new MathematicsSolutionTrace([]),
+            "test",
+            "test-v1",
+            []);
+        Assert.False(verifier.Verify(request, forged).IsVerified);
+    }
+
+    [Fact]
     public void TrapezoidalRule_ReturnsExactArithmeticEstimate_AndVerifierRejectsMutation()
     {
         var solver = new ExactTrapezoidalRuleSolver();
@@ -88,6 +114,19 @@ public sealed class ExactNumericalMethodsSolverTests
         Assert.True(verifier.Verify(request, result).IsVerified);
         var wrong = result with { ExactResult = R(8, 3), SolutionSet = new FiniteSolutionSet([R(8, 3)]) };
         Assert.False(verifier.Verify(request, wrong).IsVerified);
+    }
+
+    [Fact]
+    public void TrapezoidalRule_PreservesResourceLimitWhenIntervalWidthExceedsResultBudget()
+    {
+        var denominatorBase = BigInteger.One << 4095;
+        var lower = new RationalNode(new ExactRational(BigInteger.One, denominatorBase - BigInteger.One));
+        var upper = new RationalNode(new ExactRational(BigInteger.One, denominatorBase - new BigInteger(3)));
+        var x = new SymbolNode("x");
+        var request = Request(new FunctionCallNode("numerical_trapezoidal_fixed_exact", [x, x, lower, upper, I(1)]));
+
+        var result = new ExactTrapezoidalRuleSolver().Solve(request);
+        Assert.Equal(MathematicsSolveStatus.ResourceLimit, result.Status);
     }
 
     [Fact]
