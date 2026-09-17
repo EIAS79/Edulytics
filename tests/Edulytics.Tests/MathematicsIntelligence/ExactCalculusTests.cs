@@ -96,6 +96,24 @@ public sealed class ExactCalculusSolverTests
     }
 
     [Fact]
+    public void Calculus_FailsClosedBeforeNestedConstantPowersCanExplodeBigIntegers()
+    {
+        MathNode nestedPower = new IntegerNode(BigInteger.One << 4095);
+        for (var i = 0; i < 4; i++)
+        {
+            nestedPower = new PowerNode(nestedPower, I(32));
+        }
+
+        var derivativeRequest = Request(new DerivativeNode(nestedPower, new SymbolNode("x"), 1));
+        var derivative = new ExactPolynomialDerivativeSolver().Solve(derivativeRequest);
+        Assert.Equal(MathematicsSolveStatus.ResourceLimit, derivative.Status);
+
+        var integralRequest = Request(new IntegralNode(nestedPower, new SymbolNode("x"), I(0), I(1)));
+        var integral = new ExactPolynomialDefiniteIntegralSolver().Solve(integralRequest);
+        Assert.Equal(MathematicsSolveStatus.ResourceLimit, integral.Status);
+    }
+
+    [Fact]
     public void DefiniteIntegralVerifier_RejectsMutatedAnswer()
     {
         var request = Request(new IntegralNode(new SymbolNode("x"), new SymbolNode("x"), I(0), I(2)));
