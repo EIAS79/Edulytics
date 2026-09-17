@@ -35,6 +35,24 @@ public sealed class MathematicsV2ProductMigrationPilotTests
         "Find equivalent fractions: Reason and Apply",
         "Use equivalence to generate and recognize fractions with the same value.",
         "FRACTION_EQUIVALENT")]
+    [InlineData(
+        MathematicsV2ProductMigrationPolicy.FractionCompareApplyLessonCode,
+        "Fractions",
+        "Compare fractions with different denominators: Reason and Apply",
+        "Use a common denominator to compare unlike fractions.",
+        "FRACTION_COMPARE_UNLIKE")]
+    [InlineData(
+        "PED:US-CCSS-MATH:G3:U05:L12",
+        "Fractions",
+        "Equivalent Fractions on a Number Line PLC Activity",
+        "Equivalent fractions occupy the same position on a number line.",
+        "FRACTION_EQUIVALENT")]
+    [InlineData(
+        MathematicsV2ProductMigrationPolicy.UnitRateLessonCode,
+        "Ratios and Rates",
+        "Equivalent Ratios Have the Same Unit Rates",
+        "Equivalent ratios preserve the same amount per one unit.",
+        "UNIT_RATE")]
     public void EnabledPilot_RoutesOnlyApprovedExactLessons(
         string lessonCode,
         string unitTitle,
@@ -61,7 +79,7 @@ public sealed class MathematicsV2ProductMigrationPilotTests
     {
         var entries = MathematicsV2ProductMigrationPolicy.ApprovedGrade16Entries;
 
-        Assert.Equal(5, entries.Count);
+        Assert.Equal(14, entries.Count);
         Assert.All(entries, entry =>
         {
             Assert.InRange(entry.Grade, 1, 6);
@@ -73,13 +91,14 @@ public sealed class MathematicsV2ProductMigrationPilotTests
             Assert.False(entry.UsesV2ShadowSolver);
         });
 
-        Assert.Equal(5, entries.Select(entry => entry.LessonCode).Distinct(StringComparer.Ordinal).Count());
-        Assert.Equal(4, entries.Select(entry => entry.SkillId).Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(14, entries.Select(entry => entry.LessonCode).Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(5, entries.Select(entry => entry.SkillId).Distinct(StringComparer.Ordinal).Count());
     }
 
     [Theory]
     [InlineData("PED:US-CCSS-MATH:G7:U06:L15", "INEQUALITY_SOLVE")]
     [InlineData("PED:US-CCSS-MATH:G8:U04:L05", "LINEAR_EQUATION_SOLVE")]
+    [InlineData("PED:US-CCSS-MATH:G4:U02:L13", "FRACTION_EQUIVALENT")]
     [InlineData("PED:CAMBRIDGE-INTL-MATH:S5:NOT-APPROVED", "FRACTION_COMPARE_UNLIKE")]
     [InlineData("PED:CAMBRIDGE-INTL-MATH:S1:NOT-APPROVED", "SCALE_READING")]
     public void Stage17Gate_FailsClosedForNonApprovedLessons(string lessonCode, string mechanic)
@@ -149,8 +168,12 @@ public sealed class MathematicsV2ProductMigrationPilotTests
             "src/Edulytics.Web/wwwroot/js/lesson-grounded-practice-v2.js"));
 
         Assert.Contains("'FRACTION_EQUIVALENT'", script, StringComparison.Ordinal);
+        Assert.Contains("'UNIT_RATE'", script, StringComparison.Ordinal);
         Assert.Contains("baseN * d === n * baseD", script, StringComparison.Ordinal);
         Assert.Contains("fractionEquivalentQuestion()", script, StringComparison.Ordinal);
+        Assert.Contains("fractionEquivalentNumberLineQuestion()", script, StringComparison.Ordinal);
+        Assert.Contains("fractionEquivalentFactorQuestion()", script, StringComparison.Ordinal);
+        Assert.Contains("unitRateQuestion()", script, StringComparison.Ordinal);
     }
 
     [Theory]
