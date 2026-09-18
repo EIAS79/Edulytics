@@ -123,7 +123,7 @@ public sealed class Stage23IgcseExtendedGateTests
                 Assert.Equal(MathematicsPlanningStatus.Planned, plan.Status);
 
                 var calibrated = difficulty.Assess(plan);
-                Assert.InRange(calibrated.Score, 0, 200);
+                Assert.InRange(calibrated.ComplexityScore, 0, 200);
                 Assert.NotEmpty(calibrated.Reasons);
             }
         }
