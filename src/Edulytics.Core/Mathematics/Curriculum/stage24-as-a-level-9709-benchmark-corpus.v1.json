@@ -1,0 +1,514 @@
+{
+  "schemaVersion": 1,
+  "corpus": "Edulytics AS/A-Level 9709 Stage 24 engine benchmark corpus",
+  "coverageGranularity": "domain-and-paper-route",
+  "globalClaimAllowed": false,
+  "benchmarkCount": 25,
+  "domains": [
+    "Pure Mathematics",
+    "Mechanics",
+    "Probability & Statistics"
+  ],
+  "benchmarks": [
+    {
+      "benchmarkId": "9709-quadratic",
+      "domain": "Pure Mathematics",
+      "skillId": "algebra.quadratic.solve.real_roots",
+      "questionFamilyId": "algebra.quadratic.solve.integer_coefficients.real_roots",
+      "factory": "ExactQuadraticQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-function-eval",
+      "domain": "Pure Mathematics",
+      "skillId": "functions.evaluate.exact",
+      "questionFamilyId": "functions.evaluate.exact_rational",
+      "factory": "ExactFunctionEvaluationQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-arithmetic-sequence",
+      "domain": "Pure Mathematics",
+      "skillId": "sequences.arithmetic.nth_term",
+      "questionFamilyId": "sequences.arithmetic.nth_term.exact",
+      "factory": "ExactArithmeticSequenceQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-geometric-sequence",
+      "domain": "Pure Mathematics",
+      "skillId": "sequences.geometric.nth_term",
+      "questionFamilyId": "sequences.geometric.nth_term.exact",
+      "factory": "ExactGeometricSequenceQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-exponential-same-base",
+      "domain": "Pure Mathematics",
+      "skillId": "algebra.exponential.same_base.solve",
+      "questionFamilyId": "algebra.exponential.same_base.solve.exact",
+      "factory": "ExactExponentialSameBaseQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-logarithm",
+      "domain": "Pure Mathematics",
+      "skillId": "algebra.logarithm.evaluate",
+      "questionFamilyId": "algebra.logarithm.evaluate.exact",
+      "factory": "ExactLogarithmQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-special-angle-trig",
+      "domain": "Pure Mathematics",
+      "skillId": "trigonometry.special_angles.evaluate",
+      "questionFamilyId": "trigonometry.special_angle.exact_degrees",
+      "factory": "ExactSpecialAngleTrigonometryQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-polynomial-derivative",
+      "domain": "Pure Mathematics",
+      "skillId": "calculus.polynomial.differentiate",
+      "questionFamilyId": "calculus.polynomial.derivative.exact",
+      "factory": "ExactPolynomialDerivativeQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-polynomial-definite-integral",
+      "domain": "Pure Mathematics",
+      "skillId": "calculus.polynomial.integrate.definite",
+      "questionFamilyId": "calculus.polynomial.definite_integral.exact",
+      "factory": "ExactPolynomialDefiniteIntegralQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-bisection",
+      "domain": "Pure Mathematics",
+      "skillId": "numerical.roots.bisection.iterate",
+      "questionFamilyId": "numerical.roots.bisection.fixed_iterations.exact_rational",
+      "factory": "ExactBisectionIterationQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-newton",
+      "domain": "Pure Mathematics",
+      "skillId": "numerical.roots.newton.iterate",
+      "questionFamilyId": "numerical.roots.newton.fixed_iterations.exact_rational",
+      "factory": "ExactNewtonIterationQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-vector-add",
+      "domain": "Pure Mathematics",
+      "skillId": "vectors.add.exact",
+      "questionFamilyId": "vectors.add.exact_rational",
+      "factory": "ExactVectorAddQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-vector-dot",
+      "domain": "Pure Mathematics",
+      "skillId": "vectors.dot.exact",
+      "questionFamilyId": "vectors.dot.exact_rational",
+      "factory": "ExactVectorDotProductQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-simple-probability",
+      "domain": "Probability & Statistics",
+      "skillId": "probability.simple.evaluate.exact",
+      "questionFamilyId": "probability.simple.favourable_over_total.exact",
+      "factory": "ExactSimpleProbabilityQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-probability-complement",
+      "domain": "Probability & Statistics",
+      "skillId": "probability.complement.evaluate.exact",
+      "questionFamilyId": "probability.complement.exact",
+      "factory": "ExactProbabilityComplementQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-arithmetic-mean",
+      "domain": "Probability & Statistics",
+      "skillId": "statistics.mean.arithmetic.exact",
+      "questionFamilyId": "statistics.mean.arithmetic.exact",
+      "factory": "ExactArithmeticMeanQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-frequency-mean",
+      "domain": "Probability & Statistics",
+      "skillId": "statistics.mean.frequency_table.exact",
+      "questionFamilyId": "statistics.mean.frequency_table.exact",
+      "factory": "ExactFrequencyMeanQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-mech-velocity",
+      "domain": "Mechanics",
+      "skillId": "mechanics.kinematics.constant_acceleration.velocity",
+      "questionFamilyId": "mechanics.kinematics.constant_acceleration.velocity.exact",
+      "factory": "ExactMechanicsQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-mech-displacement",
+      "domain": "Mechanics",
+      "skillId": "mechanics.kinematics.constant_acceleration.displacement",
+      "questionFamilyId": "mechanics.kinematics.constant_acceleration.displacement.exact",
+      "factory": "ExactMechanicsQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-mech-newton2",
+      "domain": "Mechanics",
+      "skillId": "mechanics.newton.second_law.force",
+      "questionFamilyId": "mechanics.newton.second_law.force.exact",
+      "factory": "ExactMechanicsQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-mech-newton3",
+      "domain": "Mechanics",
+      "skillId": "mechanics.newton.third_law.reaction",
+      "questionFamilyId": "mechanics.newton.third_law.reaction.exact",
+      "factory": "ExactMechanicsQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-mech-equilibrium",
+      "domain": "Mechanics",
+      "skillId": "mechanics.equilibrium.balancing_force_1d",
+      "questionFamilyId": "mechanics.equilibrium.balancing_force_1d.exact",
+      "factory": "ExactMechanicsQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-mech-momentum",
+      "domain": "Mechanics",
+      "skillId": "mechanics.momentum.impulse",
+      "questionFamilyId": "mechanics.momentum.impulse.exact",
+      "factory": "ExactMechanicsQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-mech-work-energy",
+      "domain": "Mechanics",
+      "skillId": "mechanics.energy.work_energy",
+      "questionFamilyId": "mechanics.energy.work_energy.exact",
+      "factory": "ExactMechanicsQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "9709-mech-power",
+      "domain": "Mechanics",
+      "skillId": "mechanics.power.work_over_time",
+      "questionFamilyId": "mechanics.power.work_over_time.exact",
+      "factory": "ExactMechanicsQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    }
+  ]
+}
