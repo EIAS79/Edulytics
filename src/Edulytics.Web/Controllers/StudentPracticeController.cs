@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Security.Claims;
+using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.LessonContent;
 using Edulytics.Services.Practice;
 using Edulytics.Web.GameRouting;
@@ -18,6 +19,7 @@ public sealed class StudentPracticeController(
     IStudentPrivatePracticeService privatePractice,
     IPracticeService practice,
     ILessonContentService lessonContent,
+    Stage22ExactGameRuntime gameRuntime,
     IStringLocalizer<StudentResource> text) : Controller
 {
     private const string LessonPracticePilotCode = "PED:CAMBRIDGE-INTL-MATH:S1:L10";
@@ -118,11 +120,92 @@ public sealed class StudentPracticeController(
 
         Response.Headers["X-Robots-Tag"] = "noindex, nofollow, noarchive";
         return View(new StudentGameLaunchViewModel(
+            curriculumAdoptionId,
             lesson.LessonId,
             lesson.LessonCode,
             detail.Title,
             lesson.UnitTitle,
             route));
+    }
+
+    [HttpPost("game/runtime/start"), ValidateAntiForgeryToken]
+    [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public async Task<IActionResult> StartGameRuntime(
+        [FromBody] Stage22GameRoundRequest request,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        var workspace = await privatePractice.GetWorkspaceAsync(
+            actorId,
+            request.CurriculumAdoptionId,
+            cancellationToken);
+        if (workspace.SelectedCurriculumAdoptionId != request.CurriculumAdoptionId)
+            return NotFound();
+
+        var lesson = workspace.Lessons.SingleOrDefault(x => x.LessonId == request.LessonId);
+        if (lesson is null)
+            return NotFound();
+
+        var detailResult = await lessonContent.GetPublishedForStudentAsync(
+            actorId,
+            request.LessonId,
+            CultureInfo.CurrentUICulture.Name,
+            cancellationToken);
+        if (detailResult.Value is null)
+            return detailResult.Error == LessonContentErrorCode.AccessDenied ? Forbid() : NotFound();
+
+        var route = ResolveLessonRoute(lesson, detailResult.Value);
+        if (!route.IsPlayable ||
+            !string.Equals(
+                route.RendererKey,
+                MathematicsV2ProductMigrationPolicy.RendererKey,
+                StringComparison.Ordinal) ||
+            !Stage18PracticeSkillContracts.TryResolve(lesson.LessonCode, out var contract) ||
+            contract is null ||
+            !string.Equals(contract.Mechanic, route.Mechanic, StringComparison.Ordinal))
+        {
+            return NotFound();
+        }
+
+        try
+        {
+            var round = gameRuntime.CreateRound(
+                actorId,
+                request.CurriculumAdoptionId,
+                request.LessonId,
+                lesson.LessonCode,
+                route.Mechanic,
+                request.RoundIndex);
+            return Json(round);
+        }
+        catch (InvalidOperationException)
+        {
+            return BadRequest(new { error = "game_runtime_round_rejected" });
+        }
+    }
+
+    [HttpPost("game/runtime/answer"), ValidateAntiForgeryToken]
+    [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public IActionResult AnswerGameRuntime(
+        [FromBody] Stage22GameAnswerRequest request)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        try
+        {
+            return Json(gameRuntime.EvaluateAnswer(actorId, request));
+        }
+        catch (InvalidOperationException)
+        {
+            return BadRequest(new { error = "game_runtime_answer_rejected" });
+        }
     }
 
     [HttpPost("lesson-pilot/start"), ValidateAntiForgeryToken]

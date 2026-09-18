@@ -13,6 +13,12 @@
          string.Equals(Model.Route.Mechanic, "FRACTION_COMPARE_UNLIKE", StringComparison.Ordinal) ||
          string.Equals(Model.Route.Mechanic, "FRACTION_EQUIVALENT", StringComparison.Ordinal) ||
          string.Equals(Model.Route.Mechanic, "UNIT_RATE", StringComparison.Ordinal));
+    var isStage22ServerAuthoritative =
+        isExactLessonGrounded &&
+        string.Equals(
+            renderer,
+            Edulytics.Web.GameRouting.MathematicsV2ProductMigrationPolicy.RendererKey,
+            StringComparison.Ordinal);
     var usesWorkspaceStyles = isUniversalWorkspace || isLessonGrounded;
     var isSolidGeometry = isUniversalWorkspace &&
         (string.Equals(Model.Route.Mechanic, "VOLUME_BUILD", StringComparison.Ordinal) ||
@@ -86,7 +92,16 @@
                      data-lesson-title="@Model.Title"
                      data-unit-title="@Model.UnitTitle"
                      data-workspace="@Model.Route.Workspace"
-                     data-mechanic="@Model.Route.Mechanic"></div>
+                     data-mechanic="@Model.Route.Mechanic"
+                     data-curriculum-adoption-id="@Model.CurriculumAdoptionId"
+                     data-lesson-id="@Model.LessonId"
+                     data-stage22-server-authoritative="@(isStage22ServerAuthoritative ? "true" : "false")"></div>
+                @if (isStage22ServerAuthoritative)
+                {
+                    <form data-stage22-antiforgery hidden>
+                        @Html.AntiForgeryToken()
+                    </form>
+                }
             }
             else if (isUniversalWorkspace)
             {
@@ -116,6 +131,10 @@
     else if (renderer == "fraction-forge")
     {
         <script src="~/js/fraction-forge-preview.js" asp-append-version="true"></script>
+    }
+    else if (isStage22ServerAuthoritative)
+    {
+        <script src="~/js/lesson-grounded-practice-stage22.js" asp-append-version="true"></script>
     }
     else if (isExactLessonGrounded)
     {

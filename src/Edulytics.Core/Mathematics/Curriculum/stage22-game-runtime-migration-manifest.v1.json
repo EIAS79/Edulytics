@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "stage": "22",
+  "status": "COMPLETE",
+  "runtimeVersion": "stage22-server-authoritative-game-v1",
+  "scope": "All Stage 18 READY_VERIFIED exact lesson SkillContracts routed through the Mathematics V2 production renderer.",
+  "policy": "For migrated exact games the server owns problem generation, solver verification and answer correctness. The browser owns rendering and interaction only and never receives the authoritative answer.",
+  "authoritativeComponents": {
+    "generation": "ExactSkillContractQuestionEngine",
+    "verification": "ExactSkillContractQuestionEngine.Verify",
+    "protectedRoundState": "ASP.NET Core Data Protection",
+    "browserAuthority": false
+  },
+  "exactLessonCount": 14,
+  "exactMechanics": [
+    "TWO_UNKNOWNS",
+    "SCALE_READING",
+    "FRACTION_COMPARE_UNLIKE",
+    "FRACTION_EQUIVALENT",
+    "UNIT_RATE"
+  ],
+  "clientContract": {
+    "receives": [
+      "opaqueRoundToken",
+      "prompt",
+      "hint",
+      "choices",
+      "skillId",
+      "questionFamily",
+      "mechanic"
+    ],
+    "neverReceives": [
+      "correctAnswer",
+      "solverAnswer",
+      "verificationPredicate"
+    ],
+    "submits": [
+      "opaqueRoundToken",
+      "studentAnswer",
+      "curriculumAdoptionId",
+      "lessonId"
+    ],
+    "decidesCorrectness": false
+  },
+  "security": [
+    "authenticatedStudentOnly",
+    "antiForgeryRequired",
+    "roundTokenBoundToStudent",
+    "roundTokenBoundToCurriculumAdoption",
+    "roundTokenBoundToLesson",
+    "roundTokenExpiresAfter30Minutes",
+    "tamperedTokenFailsClosed",
+    "questionFamilyMustRemainAllowedBySkillContract",
+    "mechanicMustMatchSkillContract"
+  ],
+  "legacyCompatibility": {
+    "scope": "Non-migrated or rollout-disabled game routes may retain legacy browser interaction, but they are not Stage 22 server-verified mathematics and do not become authoritative mastery evidence.",
+    "exactRolloutFallback": "An enabled Mathematics V2 exact route must never silently fall back to browser grading when server verification is unavailable."
+  },
+  "nextStage": "23"
+}

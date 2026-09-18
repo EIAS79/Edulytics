@@ -175,6 +175,9 @@ builder.Services
     .AddPracticePhase30();
 
 builder.Services
+    .AddSingleton<Edulytics.Web.GameRouting.Stage22ExactGameRuntime>();
+
+builder.Services
     .AddAssessmentIntelligencePhase32();
 
 builder.Services
