@@ -166,7 +166,15 @@ public sealed class ExactSkillContractQuestionEngine
         if (!int.TryParse(answer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value))
             return false;
 
-        if (family.StartsWith("number.whole.add_subtract.", StringComparison.Ordinal))
+        if (family is
+            "number.whole.add_subtract.within_10.build" or
+            "number.whole.add_subtract.within_10.apply" or
+            "number.whole.add_subtract.across_ten.build" or
+            "number.whole.add_subtract.across_ten.apply" or
+            "number.whole.add_subtract.within_100.build" or
+            "number.whole.add_subtract.within_100.apply" or
+            "number.whole.add_subtract.columnar.build" or
+            "number.whole.add_subtract.columnar.apply")
         {
             var operation = parameters["operation"];
             var left = parameters["left"];
