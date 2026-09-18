@@ -10,6 +10,7 @@ public sealed record GameLessonRoute(
     string ClassificationSource);
 
 public sealed record StudentGameLaunchViewModel(
+    Guid CurriculumAdoptionId,
     Guid LessonId,
     string LessonCode,
     string Title,
