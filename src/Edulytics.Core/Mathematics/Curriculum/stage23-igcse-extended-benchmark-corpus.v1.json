@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "corpus": "Edulytics IGCSE Extended Stage 23 engine benchmark corpus",
+  "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY",
+  "benchmarkCount": 16,
+  "benchmarks": [
+    {
+      "benchmarkId": "igcse-bench-linear",
+      "skillId": "algebra.linear.solve",
+      "questionFamilyId": "algebra.linear.ax_plus_b_equals_c",
+      "factory": "ExactLinearEquationQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "igcse-bench-systems",
+      "skillId": "algebra.linear.systems.two_by_two.solve",
+      "questionFamilyId": "algebra.linear.systems.two_by_two.integer_coefficients",
+      "factory": "ExactLinearSystem2x2QuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "igcse-bench-inequality",
+      "skillId": "algebra.linear.inequality.solve",
+      "questionFamilyId": "algebra.linear.inequality.ax_plus_b_relation_c",
+      "factory": "ExactLinearInequalityQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "igcse-bench-quadratic",
+      "skillId": "algebra.quadratic.solve.real_roots",
+      "questionFamilyId": "algebra.quadratic.solve.integer_coefficients.real_roots",
+      "factory": "ExactQuadraticQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "igcse-bench-function-eval",
+      "skillId": "functions.evaluate.exact",
+      "questionFamilyId": "functions.evaluate.exact_rational",
+      "factory": "ExactFunctionEvaluationQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "igcse-bench-arithmetic-sequence",
+      "skillId": "sequences.arithmetic.nth_term",
+      "questionFamilyId": "sequences.arithmetic.nth_term.exact",
+      "factory": "ExactArithmeticSequenceQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "igcse-bench-geometric-sequence",
+      "skillId": "sequences.geometric.nth_term",
+      "questionFamilyId": "sequences.geometric.nth_term.exact",
+      "factory": "ExactGeometricSequenceQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "igcse-bench-rectangle-area",
+      "skillId": "geometry.rectangle.area",
+      "questionFamilyId": "geometry.rectangle.area.exact",
+      "factory": "ExactRectangleAreaQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "igcse-bench-rectangle-perimeter",
+      "skillId": "geometry.rectangle.perimeter",
+      "questionFamilyId": "geometry.rectangle.perimeter.exact",
+      "factory": "ExactRectanglePerimeterQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "igcse-bench-triangle-area",
+      "skillId": "geometry.triangle.area.base_height",
+      "questionFamilyId": "geometry.triangle.area.base_height.exact",
+      "factory": "ExactTriangleBaseHeightAreaQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "igcse-bench-pythagoras",
+      "skillId": "geometry.right_triangle.pythagorean",
+      "questionFamilyId": "geometry.right_triangle.pythagorean.exact",
+      "factory": "ExactPythagoreanQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "igcse-bench-special-angle-trig",
+      "skillId": "trigonometry.special_angles.evaluate",
+      "questionFamilyId": "trigonometry.special_angle.exact_degrees",
+      "factory": "ExactSpecialAngleTrigonometryQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "igcse-bench-vector-add",
+      "skillId": "vectors.add.exact",
+      "questionFamilyId": "vectors.add.exact_rational",
+      "factory": "ExactVectorAddQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "igcse-bench-simple-probability",
+      "skillId": "probability.simple.evaluate.exact",
+      "questionFamilyId": "probability.simple.favourable_over_total.exact",
+      "factory": "ExactSimpleProbabilityQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "igcse-bench-arithmetic-mean",
+      "skillId": "statistics.mean.arithmetic.exact",
+      "questionFamilyId": "statistics.mean.arithmetic.exact",
+      "factory": "ExactArithmeticMeanQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    },
+    {
+      "benchmarkId": "igcse-bench-frequency-mean",
+      "skillId": "statistics.mean.frequency_table.exact",
+      "questionFamilyId": "statistics.mean.frequency_table.exact",
+      "factory": "ExactFrequencyMeanQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "difficulty-calibrate"
+      ],
+      "curriculumClaimStatus": "ENGINE_EVIDENCE_ONLY"
+    }
+  ]
+}
