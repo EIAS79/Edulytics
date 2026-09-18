@@ -649,13 +649,15 @@
       "legacyCanonicalSkill": "FractionOfQuantity",
       "v2Status": "ShadowVerified",
       "v2Capabilities": [
-        "fractions.of_quantity.exact",
-        "fractions.verify.of_quantity"
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
       ],
       "v2QuestionFamilies": [
         "fractions.of_quantity.build",
-        "fractions.of_quantity.apply"
-      ]
+        "fractions.of_quantity.apply",
+        "fractions.of_quantity.exact"
+      ],
+      "productionRouting": true
     },
     {
       "id": "percentages.of_quantity",
@@ -705,8 +707,8 @@
       ],
       "v2Status": "ShadowVerified",
       "v2Capabilities": [
-        "fractions.add_subtract.exact",
-        "fractions.verify.add_subtract"
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
       ],
       "v2QuestionFamilies": [
         "fractions.add_subtract.within_one.build",
@@ -716,8 +718,10 @@
         "fractions.add_subtract.related.build",
         "fractions.add_subtract.related.apply",
         "fractions.add_subtract.unlike_denominators.build",
-        "fractions.add_subtract.unlike_denominators.apply"
-      ]
+        "fractions.add_subtract.unlike_denominators.apply",
+        "fractions.add_subtract.exact"
+      ],
+      "productionRouting": true
     },
     {
       "id": "number.place_value",
@@ -752,22 +756,58 @@
     {
       "id": "fractions.notation",
       "domain": "fractions",
-      "canonicalName": "Understand and represent fraction notation"
+      "canonicalName": "Understand and represent fraction notation",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.notation.identify_part"
+      ],
+      "productionRouting": true
     },
     {
       "id": "fractions.mixed_improper.convert",
       "domain": "fractions",
-      "canonicalName": "Convert mixed numbers and improper fractions"
+      "canonicalName": "Convert mixed numbers and improper fractions",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.mixed_improper.convert_to_improper_numerator"
+      ],
+      "productionRouting": true
     },
     {
       "id": "fractions.simplify",
       "domain": "fractions",
-      "canonicalName": "Simplify fractions to lowest terms"
+      "canonicalName": "Simplify fractions to lowest terms",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.simplify.lowest_terms"
+      ],
+      "productionRouting": true
     },
     {
       "id": "fractions.multiply",
       "domain": "fractions",
-      "canonicalName": "Multiply fractions and fractions by whole numbers"
+      "canonicalName": "Multiply fractions and fractions by whole numbers",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.multiply.exact"
+      ],
+      "productionRouting": true
     },
     {
       "id": "fractions.divide",
@@ -920,7 +960,15 @@
       "domain": "fractions",
       "canonicalName": "Express fractions with a common denominator",
       "remediationStatus": "ReviewedTarget",
-      "productionRouting": false
+      "productionRouting": true,
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.common_denominator.missing_numerator"
+      ]
     },
     {
       "id": "fractions.decimal.equivalence",
@@ -941,7 +989,15 @@
       "domain": "fractions",
       "canonicalName": "Divide a fraction by a whole number",
       "remediationStatus": "ReviewedTarget",
-      "productionRouting": false
+      "productionRouting": true,
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.divide_by_whole.exact"
+      ]
     },
     {
       "id": "fractions.mixed_numbers",
@@ -955,21 +1011,45 @@
       "domain": "fractions",
       "canonicalName": "Represent mixed numbers on a number line",
       "remediationStatus": "ReviewedTarget",
-      "productionRouting": false
+      "productionRouting": true,
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.mixed_numbers.number_line.improper_numerator"
+      ]
     },
     {
       "id": "fractions.multiply_by_whole",
       "domain": "fractions",
       "canonicalName": "Multiply fractions by whole numbers",
       "remediationStatus": "ReviewedTarget",
-      "productionRouting": false
+      "productionRouting": true,
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.multiply_by_whole.exact"
+      ]
     },
     {
       "id": "fractions.number_line",
       "domain": "fractions",
       "canonicalName": "Represent fractions on a number line",
       "remediationStatus": "ReviewedTarget",
-      "productionRouting": false
+      "productionRouting": true,
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.number_line.read"
+      ]
     },
     {
       "id": "indices.fractional.exponents",
@@ -1046,7 +1126,15 @@
       "domain": "fractions",
       "canonicalName": "Compare fractions",
       "remediationStatus": "ReviewedTarget",
-      "productionRouting": false
+      "productionRouting": true,
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.compare.general"
+      ]
     },
     {
       "id": "fractions.representations",
@@ -1060,7 +1148,15 @@
       "domain": "fractions",
       "canonicalName": "Compare fractions with benchmark values",
       "remediationStatus": "ReviewedTarget",
-      "productionRouting": false
+      "productionRouting": true,
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.compare.benchmark_half"
+      ]
     },
     {
       "id": "geometry.congruence_similarity",
