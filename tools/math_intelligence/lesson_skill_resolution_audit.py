@@ -9,12 +9,17 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable
 
+from supporting_catalogue_ontology import read_json as read_catalogue_json
+from supporting_catalogue_ontology import resolve_catalogue_target
+
 ROOT = Path(__file__).resolve().parents[2]
 CONTENT_DIR = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs"
 SKILL_REGISTRY = ROOT / "src/Edulytics.Core/Mathematics/Skills/skill-registry.v1.json"
 LESSON_MAPPINGS = ROOT / "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json"
 RULES_FILE = ROOT / "src/Edulytics.Core/Mathematics/Curriculum/skill-resolution-rules.v1.json"
 REPORT = ROOT / "artifacts/math-intelligence/lesson-skill-resolution-audit.json"
+SUPPORTING_TARGET_RULES = ROOT / "src/Edulytics.Core/Mathematics/Curriculum/supporting-target-domain-rules.v1.json"
+R3_REVIEW_DECISIONS = ROOT / "src/Edulytics.Core/Mathematics/Curriculum/supporting-review-decisions.r3.v1.json"
 
 STOPWORDS = {
     "a", "an", "and", "apply", "build", "by", "for", "from", "idea", "in",
@@ -95,6 +100,19 @@ def load_existing_mappings() -> dict[str, dict[str, Any]]:
         if code:
             result[code] = row
     return result
+
+def load_r3_deferred_codes() -> set[str]:
+    if not R3_REVIEW_DECISIONS.exists():
+        return set()
+    doc = read_json(R3_REVIEW_DECISIONS)
+    return {
+        str(row.get("lessonCode") or "").strip()
+        for row in doc.get("decisions") or []
+        if isinstance(row, dict)
+        and str(row.get("decision") or "") == "DEFER_TO_R5_ONTOLOGY"
+        and str(row.get("lessonCode") or "").strip()
+    }
+
 
 
 def compile_patterns(values: Any, context: str, errors: list[str]) -> tuple[re.Pattern[str], ...]:
@@ -309,6 +327,8 @@ def audit() -> dict[str, Any]:
     skill_ids = load_skill_ids()
     mappings = load_existing_mappings()
     rules, scores, rule_errors = load_rules(skill_ids)
+    supporting_target_rules = read_catalogue_json(SUPPORTING_TARGET_RULES)
+    r3_deferred_codes = load_r3_deferred_codes()
 
     summary = Counter()
     by_pack: dict[str, Counter] = defaultdict(Counter)
@@ -362,6 +382,45 @@ def audit() -> dict[str, Any]:
                 candidates.sort(key=lambda row: (-int(row["score"]), str(row["skillId"])))
                 status, diagnostics = classify_candidates(candidates, scores)
 
+                # R5 closes ontology gaps without authorizing Practice. For
+                # Supporting lessons that have no explicit mapping, an exact
+                # canonical target identity is derived from the source-backed
+                # lesson title using deterministic normalization. This is not a
+                # fuzzy title match and it never creates an official outcome.
+                if (
+                    source_type == "PedagogicalUnmapped"
+                    and (
+                        status == "ONTOLOGY_GAP"
+                        or (status == "REVIEW_REQUIRED" and code in r3_deferred_codes)
+                    )
+                ):
+                    catalogue = resolve_catalogue_target(
+                        code,
+                        fields["title"],
+                        supporting_target_rules,
+                    )
+                    if catalogue["status"] == "CATALOGUE_TARGET_CLASSIFIED":
+                        status = "CATALOGUE_TARGET_CLASSIFIED"
+                        diagnostics = [
+                            "Canonical Supporting target classified by exact source-backed title normalization.",
+                            "This ontology identity is not learner-facing Practice authorization."
+                        ]
+                        candidates = [{
+                            "catalogueTargetId": catalogue["targetId"],
+                            "catalogueDomain": catalogue["domain"],
+                            "normalizedTarget": catalogue["normalizedTarget"],
+                            "score": None,
+                            "titleMatched": True,
+                            "evidence": [{
+                                "type": "CanonicalLessonTitle",
+                                "signal": fields["title"],
+                            }],
+                        }]
+                    else:
+                        diagnostics = [
+                            "Supporting lesson target could not be classified because canonical title evidence is empty."
+                        ]
+
             summary[status] += 1
             by_pack[pack_code][status] += 1
 
@@ -408,8 +467,9 @@ def audit() -> dict[str, Any]:
         "schemaVersion": 1,
         "audit": "Edulytics deterministic lesson-skill candidate resolution audit",
         "authority": (
-            "Candidate-only. HIGH_CONFIDENCE_CANDIDATE is not a production mapping and does not "
-            "upgrade generation capability without LessonSkillProfile promotion and capability validation."
+            "Candidate and ontology classification only. HIGH_CONFIDENCE_CANDIDATE and "
+            "CATALOGUE_TARGET_CLASSIFIED never authorize production generation without an explicit "
+            "Practice contract, allowed family, solver, verifier and alignment gate."
         ),
         "scoring": scores,
         "summary": dict(summary),
