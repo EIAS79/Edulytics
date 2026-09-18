@@ -49,6 +49,10 @@ jobs:
         run: |
           set -euo pipefail
           python3 tools/math_intelligence/lesson_semantic_content_audit.py --strict --write-report
+      - name: Run Supporting content quality terminal gate
+        run: |
+          set -euo pipefail
+          python3 tools/math_intelligence/supporting_content_quality_gate.py --strict --write-report
       - name: Run fail-closed V2 generation readiness audit
         run: |
           set -euo pipefail
@@ -103,6 +107,7 @@ jobs:
             artifacts/math-intelligence/supporting-catalogue-ontology.json
             artifacts/math-intelligence/lesson-skill-resolution-audit.json
             artifacts/math-intelligence/lesson-semantic-content-audit.json
+            artifacts/math-intelligence/supporting-content-quality-gate.json
             artifacts/math-intelligence/lesson-generation-readiness-audit.json
             artifacts/math-intelligence/stage17-grade1-6-closure-audit.json
             artifacts/math-intelligence/stage18-practice-closure-audit.json
