@@ -218,6 +218,34 @@ public sealed class ExactSkillContractQuestionEngine
                 StringComparison.Ordinal);
         }
 
+        if (family is "fractions.simplify.lowest_terms" or
+            "fractions.multiply_by_whole.exact" or
+            "fractions.multiply.exact" or
+            "fractions.divide_by_whole.exact" or
+            "fractions.add_subtract.exact")
+        {
+            return string.Equals(
+                NormalizeExactFractionAnswer(answer),
+                NormalizeExactFractionAnswer(ExpectedFractionAnswer(family, parameters)),
+                StringComparison.Ordinal);
+        }
+
+        if (family == "fractions.compare.general")
+        {
+            return string.Equals(
+                answer.Trim(),
+                Compare(parameters["n1"] * parameters["d2"], parameters["n2"] * parameters["d1"]),
+                StringComparison.Ordinal);
+        }
+
+        if (family == "fractions.compare.benchmark_half")
+        {
+            return string.Equals(
+                answer.Trim(),
+                Compare(parameters["n"] * 2, parameters["d"]),
+                StringComparison.Ordinal);
+        }
+
         if (!int.TryParse(answer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value))
             return false;
 
@@ -325,6 +353,32 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters["quantity"] % parameters["denominator"] == 0 &&
                 value == (parameters["quantity"] / parameters["denominator"]) * parameters["numerator"],
 
+            "fractions.notation.identify_part" =>
+                parameters["d"] > 0 &&
+                value == (parameters["part"] == 0 ? parameters["n"] : parameters["d"]),
+
+            "fractions.of_quantity.exact" =>
+                parameters["d"] > 0 &&
+                parameters["quantity"] % parameters["d"] == 0 &&
+                value == (parameters["quantity"] / parameters["d"]) * parameters["n"],
+
+            "fractions.number_line.read" =>
+                parameters["d"] > 0 &&
+                parameters["position"] is >= 0 &&
+                parameters["position"] <= parameters["d"] &&
+                value == parameters["position"],
+
+            "fractions.mixed_numbers.number_line.improper_numerator" or
+            "fractions.mixed_improper.convert_to_improper_numerator" =>
+                parameters["d"] > 0 &&
+                value == parameters["whole"] * parameters["d"] + parameters["n"],
+
+            "fractions.common_denominator.missing_numerator" =>
+                parameters["baseD"] > 0 &&
+                parameters["targetD"] > 0 &&
+                parameters["targetD"] % parameters["baseD"] == 0 &&
+                value == parameters["baseN"] * (parameters["targetD"] / parameters["baseD"]),
+
             ExactLinearEquationQuestionFactory.FamilyId =>
                 parameters["coefficient"] != 0 &&
                 (parameters["right"] - parameters["offset"]) % parameters["coefficient"] == 0 &&
@@ -406,6 +460,32 @@ public sealed class ExactSkillContractQuestionEngine
             "fractions.add_subtract.unlike_denominators.build" or
             "fractions.add_subtract.unlike_denominators.apply" =>
                 BuildFractionAddSubtract(family, random, scale),
+            "fractions.notation.identify_part" =>
+                BuildFractionNotation(random, scale),
+            "fractions.of_quantity.exact" =>
+                BuildFractionOfQuantityExact(random, scale),
+            "fractions.number_line.read" =>
+                BuildFractionNumberLine(random, scale),
+            "fractions.mixed_numbers.number_line.improper_numerator" =>
+                BuildMixedNumberImproperNumerator(random, scale, family, numberLine: true),
+            "fractions.mixed_improper.convert_to_improper_numerator" =>
+                BuildMixedNumberImproperNumerator(random, scale, family, numberLine: false),
+            "fractions.simplify.lowest_terms" =>
+                BuildSimplifyFraction(random, scale),
+            "fractions.common_denominator.missing_numerator" =>
+                BuildCommonDenominator(random, scale),
+            "fractions.multiply_by_whole.exact" =>
+                BuildMultiplyFractionByWhole(random, scale),
+            "fractions.multiply.exact" =>
+                BuildMultiplyFractions(random, scale),
+            "fractions.divide_by_whole.exact" =>
+                BuildDivideFractionByWhole(random, scale),
+            "fractions.add_subtract.exact" =>
+                BuildAddSubtractFractionsExact(random, scale),
+            "fractions.compare.general" =>
+                BuildCompareFractions(random, scale),
+            "fractions.compare.benchmark_half" =>
+                BuildCompareFractionToHalf(random, scale),
             ExactLinearEquationQuestionFactory.FamilyId =>
                 BuildLinearEquation(random, scale),
             ExactLinearInequalityQuestionFactory.FamilyId =>
@@ -849,6 +929,191 @@ public sealed class ExactSkillContractQuestionEngine
             ("operation", operation));
     }
 
+    private static ExactProblem BuildFractionNotation(Random random, int scale)
+    {
+        var d = random.Next(3, 9 + scale);
+        var n = random.Next(1, d);
+        var part = random.Next(0, 2);
+        return Problem(
+            "fractions.notation.identify_part",
+            part == 0
+                ? $"In the fraction {n}/{d}, what is the numerator?"
+                : $"In the fraction {n}/{d}, what is the denominator?",
+            part == 0
+                ? $"The numerator is the number above the fraction bar, so it is {n}."
+                : $"The denominator is the number below the fraction bar, so it is {d}.",
+            AssessmentItemType.Numeric,
+            ("n", n), ("d", d), ("part", part));
+    }
+
+    private static ExactProblem BuildFractionOfQuantityExact(Random random, int scale)
+    {
+        var d = random.Next(2, 7 + scale);
+        var n = random.Next(1, d);
+        var groups = random.Next(2, 9 + scale * 2);
+        var quantity = d * groups;
+        return Problem(
+            "fractions.of_quantity.exact",
+            $"Find {n}/{d} of {quantity}.",
+            $"Divide {quantity} into {d} equal parts, then take {n} part(s).",
+            AssessmentItemType.Numeric,
+            ("n", n), ("d", d), ("quantity", quantity));
+    }
+
+    private static ExactProblem BuildFractionNumberLine(Random random, int scale)
+    {
+        var d = random.Next(3, 8 + scale);
+        var position = random.Next(1, d);
+        return Problem(
+            "fractions.number_line.read",
+            $"A number line from 0 to 1 is split into {d} equal parts. A point is {position} part(s) after 0. What numerator gives its fraction with denominator {d}?",
+            $"Each interval is 1/{d}. Moving {position} equal interval(s) gives {position}/{d}.",
+            AssessmentItemType.Numeric,
+            ("d", d), ("position", position));
+    }
+
+    private static ExactProblem BuildMixedNumberImproperNumerator(
+        Random random,
+        int scale,
+        string family,
+        bool numberLine)
+    {
+        var whole = random.Next(1, 4 + scale);
+        var d = random.Next(2, 7 + scale);
+        var n = random.Next(1, d);
+        var prompt = numberLine
+            ? $"The point {whole} {n}/{d} is marked on a number line. Write it as an improper fraction with denominator {d}. Enter only the numerator."
+            : $"Convert {whole} {n}/{d} to an improper fraction with denominator {d}. Enter only the numerator.";
+        return Problem(
+            family,
+            prompt,
+            $"Multiply the whole number by {d}, then add {n}: {whole} × {d} + {n}.",
+            AssessmentItemType.Numeric,
+            ("whole", whole), ("n", n), ("d", d));
+    }
+
+    private static ExactProblem BuildSimplifyFraction(Random random, int scale)
+    {
+        var baseD = random.Next(3, 9 + scale);
+        var baseN = random.Next(1, baseD);
+        var common = GreatestCommonDivisor(baseN, baseD);
+        baseN /= common;
+        baseD /= common;
+        var factor = random.Next(2, 5 + scale);
+        var n = baseN * factor;
+        var d = baseD * factor;
+        return Problem(
+            "fractions.simplify.lowest_terms",
+            $"Simplify {n}/{d} to lowest terms.",
+            $"Divide numerator and denominator by their greatest common factor. The lowest-terms fraction is {baseN}/{baseD}.",
+            AssessmentItemType.ShortAnswer,
+            ("n", n), ("d", d));
+    }
+
+    private static ExactProblem BuildCommonDenominator(Random random, int scale)
+    {
+        var baseD = random.Next(2, 7 + scale);
+        var baseN = random.Next(1, baseD);
+        var factor = random.Next(2, 5 + scale);
+        var targetD = baseD * factor;
+        return Problem(
+            "fractions.common_denominator.missing_numerator",
+            $"Express {baseN}/{baseD} with denominator {targetD}. Enter the numerator.",
+            $"Multiply numerator and denominator by {factor}.",
+            AssessmentItemType.Numeric,
+            ("baseN", baseN), ("baseD", baseD), ("targetD", targetD));
+    }
+
+    private static ExactProblem BuildMultiplyFractionByWhole(Random random, int scale)
+    {
+        var d = random.Next(2, 8 + scale);
+        var n = random.Next(1, d);
+        var whole = random.Next(2, 5 + scale);
+        return Problem(
+            "fractions.multiply_by_whole.exact",
+            $"Calculate {whole} × {n}/{d}. Give the answer as a simplified fraction.",
+            $"Multiply the numerator by {whole}, keep denominator {d}, then simplify.",
+            AssessmentItemType.ShortAnswer,
+            ("n", n), ("d", d), ("whole", whole));
+    }
+
+    private static ExactProblem BuildMultiplyFractions(Random random, int scale)
+    {
+        var d1 = random.Next(2, 7 + scale);
+        var d2 = random.Next(2, 7 + scale);
+        var n1 = random.Next(1, d1);
+        var n2 = random.Next(1, d2);
+        return Problem(
+            "fractions.multiply.exact",
+            $"Calculate {n1}/{d1} × {n2}/{d2}. Give the answer as a simplified fraction.",
+            "Multiply numerators, multiply denominators, then simplify by the greatest common divisor.",
+            AssessmentItemType.ShortAnswer,
+            ("n1", n1), ("d1", d1), ("n2", n2), ("d2", d2));
+    }
+
+    private static ExactProblem BuildDivideFractionByWhole(Random random, int scale)
+    {
+        var d = random.Next(2, 7 + scale);
+        var n = random.Next(1, d);
+        var whole = random.Next(2, 5 + scale);
+        return Problem(
+            "fractions.divide_by_whole.exact",
+            $"Calculate {n}/{d} ÷ {whole}. Give the answer as a simplified fraction.",
+            $"Dividing by {whole} is multiplying by 1/{whole}; then simplify.",
+            AssessmentItemType.ShortAnswer,
+            ("n", n), ("d", d), ("whole", whole));
+    }
+
+    private static ExactProblem BuildAddSubtractFractionsExact(Random random, int scale)
+    {
+        for (var retry = 0; retry < 64; retry++)
+        {
+            var d1 = random.Next(2, 8 + scale);
+            var d2 = random.Next(2, 8 + scale);
+            var n1 = random.Next(1, d1);
+            var n2 = random.Next(1, d2);
+            var operation = random.Next(0, 2);
+            var numerator = operation == 0
+                ? n1 * d2 + n2 * d1
+                : n1 * d2 - n2 * d1;
+            if (numerator <= 0)
+                continue;
+            return Problem(
+                "fractions.add_subtract.exact",
+                $"Calculate {n1}/{d1} {(operation == 0 ? "+" : "−")} {n2}/{d2}. Give the answer as a simplified fraction.",
+                "Use a common denominator, combine the numerators, then simplify.",
+                AssessmentItemType.ShortAnswer,
+                ("n1", n1), ("d1", d1), ("n2", n2), ("d2", d2), ("operation", operation));
+        }
+        throw new InvalidOperationException("Unable to construct a positive fraction add/subtract item.");
+    }
+
+    private static ExactProblem BuildCompareFractions(Random random, int scale)
+    {
+        var d1 = random.Next(2, 9 + scale);
+        var d2 = random.Next(2, 9 + scale);
+        var n1 = random.Next(1, d1);
+        var n2 = random.Next(1, d2);
+        return Problem(
+            "fractions.compare.general",
+            $"Compare {n1}/{d1} and {n2}/{d2}. Enter <, >, or =.",
+            "Compare exact cross-products or express the fractions with a common denominator.",
+            AssessmentItemType.ShortAnswer,
+            ("n1", n1), ("d1", d1), ("n2", n2), ("d2", d2));
+    }
+
+    private static ExactProblem BuildCompareFractionToHalf(Random random, int scale)
+    {
+        var d = random.Next(3, 10 + scale);
+        var n = random.Next(1, d);
+        return Problem(
+            "fractions.compare.benchmark_half",
+            $"Compare {n}/{d} with 1/2. Enter <, >, or =.",
+            $"Compare 2 × {n} with {d}; this compares {n}/{d} directly with the benchmark 1/2.",
+            AssessmentItemType.ShortAnswer,
+            ("n", n), ("d", d));
+    }
+
     private static ExactProblem BuildFractionOfQuantity(
         string family,
         Random random,
@@ -1050,6 +1315,35 @@ public sealed class ExactSkillContractQuestionEngine
             "fractions.add_subtract.unlike_denominators.apply" =>
                 SolveFractionAddSubtract(p),
 
+            "fractions.notation.identify_part" =>
+                (p["part"] == 0 ? p["n"] : p["d"]).ToString(CultureInfo.InvariantCulture),
+
+            "fractions.of_quantity.exact" =>
+                ((p["quantity"] / p["d"]) * p["n"]).ToString(CultureInfo.InvariantCulture),
+
+            "fractions.number_line.read" =>
+                p["position"].ToString(CultureInfo.InvariantCulture),
+
+            "fractions.mixed_numbers.number_line.improper_numerator" or
+            "fractions.mixed_improper.convert_to_improper_numerator" =>
+                (p["whole"] * p["d"] + p["n"]).ToString(CultureInfo.InvariantCulture),
+
+            "fractions.simplify.lowest_terms" or
+            "fractions.multiply_by_whole.exact" or
+            "fractions.multiply.exact" or
+            "fractions.divide_by_whole.exact" or
+            "fractions.add_subtract.exact" =>
+                ExpectedFractionAnswer(problem.Family, p),
+
+            "fractions.common_denominator.missing_numerator" =>
+                (p["baseN"] * (p["targetD"] / p["baseD"])).ToString(CultureInfo.InvariantCulture),
+
+            "fractions.compare.general" =>
+                Compare(p["n1"] * p["d2"], p["n2"] * p["d1"]),
+
+            "fractions.compare.benchmark_half" =>
+                Compare(p["n"] * 2, p["d"]),
+
             ExactLinearEquationQuestionFactory.FamilyId =>
                 ((p["right"] - p["offset"]) / p["coefficient"])
                     .ToString(CultureInfo.InvariantCulture),
@@ -1168,6 +1462,38 @@ public sealed class ExactSkillContractQuestionEngine
         }
     }
 
+
+    private static string ExpectedFractionAnswer(
+        string family,
+        IReadOnlyDictionary<string, int> p)
+    {
+        return family switch
+        {
+            "fractions.simplify.lowest_terms" =>
+                FormatReducedFraction(p["n"], p["d"]),
+            "fractions.multiply_by_whole.exact" =>
+                FormatReducedFraction(p["whole"] * p["n"], p["d"]),
+            "fractions.multiply.exact" =>
+                FormatReducedFraction(p["n1"] * p["n2"], p["d1"] * p["d2"]),
+            "fractions.divide_by_whole.exact" =>
+                FormatReducedFraction(p["n"], p["d"] * p["whole"]),
+            "fractions.add_subtract.exact" =>
+                FormatReducedFraction(
+                    p["operation"] == 0
+                        ? p["n1"] * p["d2"] + p["n2"] * p["d1"]
+                        : p["n1"] * p["d2"] - p["n2"] * p["d1"],
+                    p["d1"] * p["d2"]),
+            _ => throw new InvalidOperationException($"Unsupported fraction family: {family}")
+        };
+    }
+
+    private static string NormalizeExactFractionAnswer(string answer)
+    {
+        if (TryParseFractionAnswer(answer, out var numerator, out var denominator))
+            return FormatReducedFraction(numerator, denominator);
+
+        return answer.Trim().Replace(" ", string.Empty, StringComparison.Ordinal);
+    }
 
     private static string SolveLinearInequality(IReadOnlyDictionary<string, int> parameters)
     {
