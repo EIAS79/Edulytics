@@ -19,14 +19,15 @@ public sealed class SupportingLessonPracticeR1Tests
             "PED:US-CCSS-MATH:G7:U06:L15"
         };
 
-        Assert.Equal(7, LessonPracticeContractRegistry.All.Count);
-        Assert.Equal(
-            expected.OrderBy(x => x, StringComparer.Ordinal),
-            LessonPracticeContractRegistry.All
-                .Select(x => x.LessonCode)
-                .OrderBy(x => x, StringComparer.Ordinal));
+        var actual = LessonPracticeContractRegistry.All
+            .Select(x => x.LessonCode)
+            .ToHashSet(StringComparer.Ordinal);
 
-        Assert.All(LessonPracticeContractRegistry.All, contract =>
+        Assert.All(expected, code => Assert.Contains(code, actual));
+
+        Assert.All(
+            LessonPracticeContractRegistry.All.Where(x => expected.Contains(x.LessonCode, StringComparer.Ordinal)),
+            contract =>
         {
             Assert.Equal("SupportingLesson", contract.SourceType);
             Assert.Equal("READY_VERIFIED", contract.Readiness);

@@ -17,12 +17,93 @@ public sealed class Stage18SkillContractPracticeEngine
         Guid schoolId,
         Guid curriculumAdoptionId,
         Guid lessonId,
+        LessonPracticeContract contract,
+        StudentPrivatePracticeDifficulty requestedDifficulty,
+        int questionCount,
+        int seed,
+        IReadOnlyCollection<string> excludedExposureFingerprints,
+        Guid createdByUserId,
+        int? curriculumLogicalLevel = null)
+    {
+        ArgumentNullException.ThrowIfNull(contract);
+        var legacy = contract.ToLegacyStage18Contract();
+        var items = Generate(
+            schoolId,
+            curriculumAdoptionId,
+            lessonId,
+            legacy,
+            requestedDifficulty,
+            questionCount,
+            seed,
+            excludedExposureFingerprints,
+            createdByUserId,
+            contract.CurriculumLogicalLevel);
+
+        foreach (var item in items)
+        {
+            var alignment = LessonPracticeAlignmentValidator.Validate(
+                contract,
+                contract.SkillId,
+                item.GenerationFamily);
+            if (!alignment.IsAligned ||
+                !VerifyPersistedItem(legacy, item))
+            {
+                throw new InvalidOperationException(
+                    "Generated lesson Practice item failed alignment or mathematical verification.");
+            }
+
+            item.ValidationMetadataJson = JsonSerializer.Serialize(new
+            {
+                schemaVersion = 1,
+                stage = 18,
+                contractVersion = contract.ContractVersion,
+                alignment = "lesson-practice-contract-verified",
+                readiness = contract.Readiness,
+                primarySkills = contract.PrimarySkillIds,
+                secondarySkills = contract.SecondarySkillIds,
+                prerequisites = contract.PrerequisiteSkillIds,
+                allowedFamily = item.GenerationFamily,
+                solver = Stage18PracticeSkillContracts.SolverIdentifier,
+                verifier = Stage18PracticeSkillContracts.VerifierIdentifier,
+                alignmentVerified = true,
+                solverVerified = true,
+                broadFallbackUsed = false,
+                officialMasteryEvidence = false
+            });
+        }
+
+        return items;
+    }
+
+    public static bool VerifyPersistedItem(
+        LessonPracticeContract contract,
+        AssessmentItem item)
+    {
+        ArgumentNullException.ThrowIfNull(contract);
+        ArgumentNullException.ThrowIfNull(item);
+
+        if (!LessonPracticeAlignmentValidator.Validate(
+                contract,
+                contract.SkillId,
+                item.GenerationFamily).IsAligned)
+        {
+            return false;
+        }
+
+        return VerifyPersistedItem(contract.ToLegacyStage18Contract(), item);
+    }
+
+    public IReadOnlyList<AssessmentItem> Generate(
+        Guid schoolId,
+        Guid curriculumAdoptionId,
+        Guid lessonId,
         Stage18PracticeSkillContract contract,
         StudentPrivatePracticeDifficulty requestedDifficulty,
         int questionCount,
         int seed,
         IReadOnlyCollection<string> excludedExposureFingerprints,
-        Guid createdByUserId)
+        Guid createdByUserId,
+        int? curriculumLogicalLevel = null)
     {
         ArgumentNullException.ThrowIfNull(contract);
         ArgumentNullException.ThrowIfNull(excludedExposureFingerprints);
@@ -45,7 +126,8 @@ public sealed class Stage18SkillContractPracticeEngine
             ResolveDifficulty(requestedDifficulty),
             questionCount,
             seed,
-            excludedExposureFingerprints);
+            excludedExposureFingerprints,
+            curriculumLogicalLevel);
 
         return exact.Select(question => new AssessmentItem
         {
@@ -64,9 +146,11 @@ public sealed class Stage18SkillContractPracticeEngine
             GenerationFamily = question.Family,
             GenerationParametersJson = JsonSerializer.Serialize(new
             {
+                schemaVersion = 1,
                 skillId = contract.SkillId,
                 questionFamily = question.Family,
-                parameters = question.Parameters
+                parameters = question.Parameters,
+                representation = question.Representation
             }),
             ExposureFingerprint = question.ExposureFingerprint,
             ValidationMetadataJson = JsonSerializer.Serialize(new

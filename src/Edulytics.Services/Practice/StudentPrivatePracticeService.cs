@@ -147,6 +147,12 @@ public sealed class StudentPrivatePracticeService(
                     compatibleContract,
                     cancellationToken);
             }
+
+            // Supporting/pedagogical lesson scope must fail closed when neither
+            // an exact LessonPracticeContract nor a verified Stage 18 contract
+            // exists. Do not silently substitute a broad contextual question.
+            if ((scoped.Outcomes ?? []).Count == 0)
+                return StudentPrivatePracticeResult.Failure(StudentPrivatePracticeError.NoSupportedOutcomes);
         }
 
         var masteryByOutcome = context.OfficialMasteries
@@ -308,7 +314,6 @@ public sealed class StudentPrivatePracticeService(
         LessonPracticeContract practiceContract,
         CancellationToken cancellationToken)
     {
-        var skillContract = practiceContract.ToLegacyStage18Contract();
         var excluded = context.Exposures
             .Select(x => x.ExposureFingerprint)
             .Where(x => !string.IsNullOrWhiteSpace(x))
@@ -326,7 +331,7 @@ public sealed class StudentPrivatePracticeService(
                 context.Student.SchoolId,
                 context.Adoption.Id,
                 lessonId,
-                skillContract,
+                practiceContract,
                 request.Difficulty,
                 request.QuestionCount,
                 seed,
@@ -346,7 +351,7 @@ public sealed class StudentPrivatePracticeService(
                     item.GenerationMethod,
                     Stage18PracticeSkillContracts.GenerationMethod,
                     StringComparison.Ordinal) ||
-                !Stage18SkillContractPracticeEngine.VerifyPersistedItem(skillContract, item)))
+                !Stage18SkillContractPracticeEngine.VerifyPersistedItem(practiceContract, item)))
         {
             return StudentPrivatePracticeResult.Failure(StudentPrivatePracticeError.GenerationFailed);
         }
