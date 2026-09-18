@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Edulytics.Core.AssessmentIntelligence;
+using Edulytics.Core.Assessments;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Mathematics.Assessment;
