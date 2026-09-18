@@ -177,6 +177,26 @@ public sealed class ExactSkillContractQuestionEngine
                 StringComparison.Ordinal);
         }
 
+        if (family == "geometry.congruence.identify_criterion")
+        {
+            var expected = parameters["criterion"] switch
+            {
+                0 => "SSS",
+                1 => "SAS",
+                2 => "ASA",
+                _ => string.Empty
+            };
+            return string.Equals(answer.Trim().ToUpperInvariant(), expected, StringComparison.Ordinal);
+        }
+
+        if (family == "trigonometry.right_triangle.sin_cos_tan.ratio")
+        {
+            return string.Equals(
+                NormalizeFractionAnswer(answer),
+                NormalizeFractionAnswer(ExpectedTrigRatio(parameters)),
+                StringComparison.Ordinal);
+        }
+
         if (!int.TryParse(answer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value))
             return false;
 
@@ -257,6 +277,58 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters["a"] != 0 &&
                 value == parameters["x"] &&
                 parameters["a"] * value + parameters["b"] == parameters["c"],
+
+            "geometry.coordinate.straight_line.gradient" =>
+                parameters["x2"] != parameters["x1"] &&
+                (parameters["y2"] - parameters["y1"]) ==
+                    value * (parameters["x2"] - parameters["x1"]) &&
+                value == parameters["gradient"],
+
+            "geometry.angles.relationships.missing_angle" =>
+                parameters["total"] > parameters["known"] &&
+                value == parameters["total"] - parameters["known"],
+
+            "geometry.similarity.missing_length" =>
+                parameters["scale"] > 0 &&
+                value == parameters["base"] * parameters["scale"],
+
+            "geometry.perimeter_area.rectangle" =>
+                parameters["length"] > 0 &&
+                parameters["width"] > 0 &&
+                value == (parameters["mode"] == 0
+                    ? parameters["length"] * parameters["width"]
+                    : 2 * (parameters["length"] + parameters["width"])),
+
+            "geometry.surface_area_volume.cuboid" =>
+                parameters["length"] > 0 &&
+                parameters["width"] > 0 &&
+                parameters["height"] > 0 &&
+                value == (parameters["mode"] == 0
+                    ? parameters["length"] * parameters["width"] * parameters["height"]
+                    : 2 * (
+                        parameters["length"] * parameters["width"] +
+                        parameters["length"] * parameters["height"] +
+                        parameters["width"] * parameters["height"])),
+
+            "geometry.right_triangle.pythagorean.exact" =>
+                parameters["a"] > 0 &&
+                parameters["b"] > 0 &&
+                value == parameters["c"] &&
+                parameters["a"] * parameters["a"] + parameters["b"] * parameters["b"] ==
+                    value * value,
+
+            "trigonometry.right_triangle.solve_side.special" =>
+                value == parameters["answer"] &&
+                parameters["answer"] > 0,
+
+            "trigonometry.right_triangle.solve_angle.special" =>
+                value == parameters["angle"] &&
+                value is 30 or 45 or 60,
+
+            "trigonometry.modelling.right_triangle" =>
+                value == parameters["height"] &&
+                parameters["height"] > 0 &&
+                parameters["distance"] > 0,
 
             _ => false
         };
@@ -345,6 +417,28 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildCompareFractionToHalf(random, effectiveScale),
             "algebra.linear.ax_plus_b_equals_c" =>
                 BuildLinearEquation(random, effectiveScale),
+            "geometry.coordinate.straight_line.gradient" =>
+                BuildCoordinateGradient(random, effectiveScale),
+            "geometry.angles.relationships.missing_angle" =>
+                BuildAngleRelationship(random, effectiveScale),
+            "geometry.congruence.identify_criterion" =>
+                BuildCongruenceCriterion(random),
+            "geometry.similarity.missing_length" =>
+                BuildSimilarityMissingLength(random, effectiveScale),
+            "geometry.perimeter_area.rectangle" =>
+                BuildRectangleMeasure(random, effectiveScale),
+            "geometry.surface_area_volume.cuboid" =>
+                BuildCuboidMeasure(random, effectiveScale),
+            "geometry.right_triangle.pythagorean.exact" =>
+                BuildPythagorean(random, effectiveScale),
+            "trigonometry.right_triangle.sin_cos_tan.ratio" =>
+                BuildTrigRatio(random, effectiveScale),
+            "trigonometry.right_triangle.solve_side.special" =>
+                BuildTrigSolveSide(random, effectiveScale),
+            "trigonometry.right_triangle.solve_angle.special" =>
+                BuildTrigSolveAngle(random, effectiveScale),
+            "trigonometry.modelling.right_triangle" =>
+                BuildTrigModelling(random, effectiveScale),
             ExactLinearInequalityQuestionFactory.FamilyId =>
                 BuildLinearInequality(random, Math.Min(3, effectiveScale)),
             _ => UnsupportedFamily(family)
@@ -820,6 +914,301 @@ public sealed class ExactSkillContractQuestionEngine
         return true;
     }
 
+    private static ExactProblem BuildCoordinateGradient(Random random, int scale)
+    {
+        var x1 = random.Next(-4 * scale, 4 * scale + 1);
+        var run = random.Next(1, 3 + scale);
+        var gradient = NonZeroSigned(random, 2 + scale);
+        var x2 = x1 + run;
+        var y1 = random.Next(-5 * scale, 5 * scale + 1);
+        var y2 = y1 + gradient * run;
+        return ProblemWithRepresentation(
+            "geometry.coordinate.straight_line.gradient",
+            $"Find the gradient of the line through ({x1}, {y1}) and ({x2}, {y2}).",
+            $"Gradient = change in y ÷ change in x = ({y2} − {y1}) ÷ ({x2} − {x1}) = {gradient}.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string, string>(StringComparer.Ordinal)
+            {
+                ["type"] = "coordinate_line",
+                ["pointA"] = $"{x1},{y1}",
+                ["pointB"] = $"{x2},{y2}",
+                ["renderHint"] = "cartesian-grid"
+            },
+            ("x1", x1), ("y1", y1), ("x2", x2), ("y2", y2), ("gradient", gradient));
+    }
+
+    private static ExactProblem BuildAngleRelationship(Random random, int scale)
+    {
+        var mode = random.Next(0, 3);
+        var total = mode switch { 0 => 90, 1 => 180, _ => 180 };
+        var known = mode == 2
+            ? random.Next(25, 75)
+            : random.Next(15, total - 15);
+        var answer = total - known;
+        var prompt = mode switch
+        {
+            0 => $"Two angles form a right angle. One is {known}°. Find the other angle.",
+            1 => $"Two adjacent angles form a straight line. One is {known}°. Find the other angle.",
+            _ => $"A triangle has two equal angles of {known / 2}° each and a third angle x. Find x."
+        };
+        if (mode == 2)
+        {
+            var equal = random.Next(25, 70);
+            known = 2 * equal;
+            answer = 180 - known;
+            prompt = $"A triangle has two equal angles of {equal}° each. Find the third angle.";
+        }
+        return ProblemWithRepresentation(
+            "geometry.angles.relationships.missing_angle",
+            prompt,
+            $"Use the relevant angle total {total}° and subtract the known angle contribution {known}°.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string, string>(StringComparer.Ordinal)
+            {
+                ["type"] = mode == 2 ? "triangle_angles" : "adjacent_angles",
+                ["renderHint"] = "labelled-angle-diagram"
+            },
+            ("mode", mode), ("total", total), ("known", known), ("answer", answer));
+    }
+
+    private static ExactProblem BuildCongruenceCriterion(Random random)
+    {
+        var criterion = random.Next(0, 3);
+        var prompt = criterion switch
+        {
+            0 => "Two triangles have all three corresponding side lengths equal. Which congruence criterion proves they are congruent? Enter SSS, SAS, or ASA.",
+            1 => "Two triangles have two corresponding sides equal and the included angle equal. Which congruence criterion proves they are congruent? Enter SSS, SAS, or ASA.",
+            _ => "Two triangles have two corresponding angles equal and the included side equal. Which congruence criterion proves they are congruent? Enter SSS, SAS, or ASA."
+        };
+        return ProblemWithRepresentation(
+            "geometry.congruence.identify_criterion",
+            prompt,
+            criterion switch
+            {
+                0 => "Three corresponding side pairs are equal, so SSS applies.",
+                1 => "Two sides and their included angle are equal, so SAS applies.",
+                _ => "Two angles and the included side are equal, so ASA applies."
+            },
+            AssessmentItemType.ShortAnswer,
+            new Dictionary<string, string>(StringComparer.Ordinal)
+            {
+                ["type"] = "triangle_congruence",
+                ["renderHint"] = "paired-triangles"
+            },
+            ("criterion", criterion));
+    }
+
+    private static ExactProblem BuildSimilarityMissingLength(Random random, int scale)
+    {
+        var baseLength = random.Next(2, 7 + scale);
+        var scaleFactor = random.Next(2, 4 + scale);
+        var target = baseLength * scaleFactor;
+        return ProblemWithRepresentation(
+            "geometry.similarity.missing_length",
+            $"Two similar shapes have scale factor {scaleFactor} from the smaller to the larger. A corresponding side on the smaller shape is {baseLength}. Find the larger side.",
+            $"Multiply the corresponding length by the scale factor: {baseLength} × {scaleFactor} = {target}.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string, string>(StringComparer.Ordinal)
+            {
+                ["type"] = "similar_shapes",
+                ["scaleFactor"] = scaleFactor.ToString(CultureInfo.InvariantCulture),
+                ["renderHint"] = "paired-labelled-shapes"
+            },
+            ("base", baseLength), ("scale", scaleFactor), ("target", target));
+    }
+
+    private static ExactProblem BuildRectangleMeasure(Random random, int scale)
+    {
+        var length = random.Next(4, 9 + 2 * scale);
+        var width = random.Next(2, length);
+        var mode = random.Next(0, 2);
+        var answer = mode == 0 ? length * width : 2 * (length + width);
+        return ProblemWithRepresentation(
+            "geometry.perimeter_area.rectangle",
+            mode == 0
+                ? $"A rectangle is {length} cm by {width} cm. Find its area."
+                : $"A rectangle is {length} cm by {width} cm. Find its perimeter.",
+            mode == 0
+                ? $"Area = length × width = {length} × {width} = {answer} cm²."
+                : $"Perimeter = 2(length + width) = 2({length} + {width}) = {answer} cm.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string, string>(StringComparer.Ordinal)
+            {
+                ["type"] = "rectangle",
+                ["length"] = length.ToString(CultureInfo.InvariantCulture),
+                ["width"] = width.ToString(CultureInfo.InvariantCulture),
+                ["renderHint"] = "dimensioned-rectangle"
+            },
+            ("length", length), ("width", width), ("mode", mode));
+    }
+
+    private static ExactProblem BuildCuboidMeasure(Random random, int scale)
+    {
+        var length = random.Next(3, 7 + scale);
+        var width = random.Next(2, 6 + scale);
+        var height = random.Next(2, 5 + scale);
+        var mode = random.Next(0, 2);
+        var answer = mode == 0
+            ? length * width * height
+            : 2 * (length * width + length * height + width * height);
+        return ProblemWithRepresentation(
+            "geometry.surface_area_volume.cuboid",
+            mode == 0
+                ? $"A cuboid measures {length} cm by {width} cm by {height} cm. Find its volume."
+                : $"A cuboid measures {length} cm by {width} cm by {height} cm. Find its total surface area.",
+            mode == 0
+                ? $"Volume = {length} × {width} × {height} = {answer} cm³."
+                : $"Surface area = 2(lw + lh + wh) = {answer} cm².",
+            AssessmentItemType.Numeric,
+            new Dictionary<string, string>(StringComparer.Ordinal)
+            {
+                ["type"] = "cuboid",
+                ["length"] = length.ToString(CultureInfo.InvariantCulture),
+                ["width"] = width.ToString(CultureInfo.InvariantCulture),
+                ["height"] = height.ToString(CultureInfo.InvariantCulture),
+                ["renderHint"] = "dimensioned-cuboid"
+            },
+            ("length", length), ("width", width), ("height", height), ("mode", mode));
+    }
+
+    private static ExactProblem BuildPythagorean(Random random, int scale)
+    {
+        var factor = random.Next(1, 2 + scale);
+        var a = 3 * factor;
+        var b = 4 * factor;
+        var hyp = 5 * factor;
+        return ProblemWithRepresentation(
+            "geometry.right_triangle.pythagorean.exact",
+            $"A right triangle has perpendicular sides {a} cm and {b} cm. Find the hypotenuse.",
+            $"Use a² + b² = c²: {a * a} + {b * b} = {hyp * hyp}, so c = {hyp}.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string, string>(StringComparer.Ordinal)
+            {
+                ["type"] = "right_triangle",
+                ["legA"] = a.ToString(CultureInfo.InvariantCulture),
+                ["legB"] = b.ToString(CultureInfo.InvariantCulture),
+                ["unknown"] = "hypotenuse",
+                ["renderHint"] = "right-triangle"
+            },
+            ("a", a), ("b", b), ("c", hyp));
+    }
+
+    private static ExactProblem BuildTrigRatio(Random random, int scale)
+    {
+        var factor = random.Next(1, 2 + scale);
+        var opposite = 3 * factor;
+        var adjacent = 4 * factor;
+        var hypotenuse = 5 * factor;
+        var function = random.Next(0, 3);
+        var name = function switch { 0 => "sin", 1 => "cos", _ => "tan" };
+        return ProblemWithRepresentation(
+            "trigonometry.right_triangle.sin_cos_tan.ratio",
+            $"In a right triangle relative to angle θ, opposite = {opposite}, adjacent = {adjacent}, hypotenuse = {hypotenuse}. Find {name}(θ) as a simplified fraction.",
+            function switch
+            {
+                0 => "sin θ = opposite/hypotenuse.",
+                1 => "cos θ = adjacent/hypotenuse.",
+                _ => "tan θ = opposite/adjacent."
+            },
+            AssessmentItemType.ShortAnswer,
+            new Dictionary<string, string>(StringComparer.Ordinal)
+            {
+                ["type"] = "right_triangle",
+                ["opposite"] = opposite.ToString(CultureInfo.InvariantCulture),
+                ["adjacent"] = adjacent.ToString(CultureInfo.InvariantCulture),
+                ["hypotenuse"] = hypotenuse.ToString(CultureInfo.InvariantCulture),
+                ["angleLabel"] = "theta",
+                ["renderHint"] = "right-triangle-labelled"
+            },
+            ("function", function), ("opposite", opposite), ("adjacent", adjacent), ("hypotenuse", hypotenuse));
+    }
+
+    private static ExactProblem BuildTrigSolveSide(Random random, int scale)
+    {
+        var mode = random.Next(0, 3);
+        var factor = random.Next(2, 5 + scale);
+        int answer;
+        string prompt;
+        string solution;
+        if (mode == 0)
+        {
+            var hypotenuse = 2 * factor;
+            answer = factor;
+            prompt = $"A right triangle has hypotenuse {hypotenuse} cm and an acute angle of 30°. Find the side opposite 30°. Use sin 30° = 1/2.";
+            solution = $"opposite = {hypotenuse} × 1/2 = {answer} cm.";
+        }
+        else if (mode == 1)
+        {
+            var hypotenuse = 2 * factor;
+            answer = factor;
+            prompt = $"A right triangle has hypotenuse {hypotenuse} cm and an acute angle of 60°. Find the adjacent side. Use cos 60° = 1/2.";
+            solution = $"adjacent = {hypotenuse} × 1/2 = {answer} cm.";
+        }
+        else
+        {
+            var adjacent = factor;
+            answer = factor;
+            prompt = $"A right triangle has an acute angle of 45° and adjacent side {adjacent} cm. Find the opposite side. Use tan 45° = 1.";
+            solution = $"opposite = {adjacent} × 1 = {answer} cm.";
+        }
+        return ProblemWithRepresentation(
+            "trigonometry.right_triangle.solve_side.special",
+            prompt,
+            solution,
+            AssessmentItemType.Numeric,
+            new Dictionary<string, string>(StringComparer.Ordinal)
+            {
+                ["type"] = "right_triangle",
+                ["specialAngleMode"] = mode.ToString(CultureInfo.InvariantCulture),
+                ["renderHint"] = "right-triangle-labelled"
+            },
+            ("mode", mode), ("answer", answer));
+    }
+
+    private static ExactProblem BuildTrigSolveAngle(Random random, int scale)
+    {
+        var mode = random.Next(0, 3);
+        var angle = mode switch { 0 => 30, 1 => 45, _ => 60 };
+        var prompt = mode switch
+        {
+            0 => "In a right triangle, sin θ = 1/2 and θ is acute. Find θ in degrees.",
+            1 => "In a right triangle, tan θ = 1 and θ is acute. Find θ in degrees.",
+            _ => "In a right triangle, cos θ = 1/2 and θ is acute. Find θ in degrees."
+        };
+        return ProblemWithRepresentation(
+            "trigonometry.right_triangle.solve_angle.special",
+            prompt,
+            $"Use the exact special-angle ratio; θ = {angle}°.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string, string>(StringComparer.Ordinal)
+            {
+                ["type"] = "right_triangle",
+                ["unknown"] = "angle",
+                ["renderHint"] = "right-triangle-labelled"
+            },
+            ("mode", mode), ("angle", angle));
+    }
+
+    private static ExactProblem BuildTrigModelling(Random random, int scale)
+    {
+        var factor = random.Next(2, 5 + scale);
+        var height = 3 * factor;
+        var distance = 4 * factor;
+        return ProblemWithRepresentation(
+            "trigonometry.modelling.right_triangle",
+            $"From a point {distance} m from the base of a vertical object, the line of sight forms a right-triangle model with tan θ = 3/4. Find the object's height.",
+            $"tan θ = height/distance = 3/4, so height = {distance} × 3/4 = {height} m.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string, string>(StringComparer.Ordinal)
+            {
+                ["type"] = "right_triangle_model",
+                ["horizontalDistance"] = distance.ToString(CultureInfo.InvariantCulture),
+                ["unknown"] = "verticalHeight",
+                ["renderHint"] = "right-triangle-context"
+            },
+            ("height", height), ("distance", distance));
+    }
+
     private static ExactProblem BuildLinearInequality(Random random, int scale)
     {
         var factory = new ExactLinearInequalityQuestionFactory(
@@ -936,12 +1325,59 @@ public sealed class ExactSkillContractQuestionEngine
             "algebra.linear.ax_plus_b_equals_c" =>
                 p["x"].ToString(CultureInfo.InvariantCulture),
 
+            "geometry.coordinate.straight_line.gradient" =>
+                p["gradient"].ToString(CultureInfo.InvariantCulture),
+
+            "geometry.angles.relationships.missing_angle" =>
+                (p["total"] - p["known"]).ToString(CultureInfo.InvariantCulture),
+
+            "geometry.congruence.identify_criterion" =>
+                p["criterion"] switch { 0 => "SSS", 1 => "SAS", 2 => "ASA", _ => throw new InvalidOperationException("Invalid congruence criterion.") },
+
+            "geometry.similarity.missing_length" =>
+                (p["base"] * p["scale"]).ToString(CultureInfo.InvariantCulture),
+
+            "geometry.perimeter_area.rectangle" =>
+                (p["mode"] == 0
+                    ? p["length"] * p["width"]
+                    : 2 * (p["length"] + p["width"])).ToString(CultureInfo.InvariantCulture),
+
+            "geometry.surface_area_volume.cuboid" =>
+                (p["mode"] == 0
+                    ? p["length"] * p["width"] * p["height"]
+                    : 2 * (p["length"] * p["width"] + p["length"] * p["height"] + p["width"] * p["height"]))
+                    .ToString(CultureInfo.InvariantCulture),
+
+            "geometry.right_triangle.pythagorean.exact" =>
+                p["c"].ToString(CultureInfo.InvariantCulture),
+
+            "trigonometry.right_triangle.sin_cos_tan.ratio" =>
+                ExpectedTrigRatio(p),
+
+            "trigonometry.right_triangle.solve_side.special" =>
+                p["answer"].ToString(CultureInfo.InvariantCulture),
+
+            "trigonometry.right_triangle.solve_angle.special" =>
+                p["angle"].ToString(CultureInfo.InvariantCulture),
+
+            "trigonometry.modelling.right_triangle" =>
+                p["height"].ToString(CultureInfo.InvariantCulture),
+
             ExactLinearInequalityQuestionFactory.FamilyId =>
                 SolveLinearInequality(p),
 
             _ => throw new InvalidOperationException($"Unsupported exact Mathematics solver family: {problem.Family}")
         };
     }
+
+    private static string ExpectedTrigRatio(IReadOnlyDictionary<string, int> p) =>
+        p["function"] switch
+        {
+            0 => ReduceFraction(p["opposite"], p["hypotenuse"]),
+            1 => ReduceFraction(p["adjacent"], p["hypotenuse"]),
+            2 => ReduceFraction(p["opposite"], p["adjacent"]),
+            _ => throw new InvalidOperationException("Unsupported trigonometric ratio selector.")
+        };
 
     private static string ExpectedFractionAnswer(
         string family,
