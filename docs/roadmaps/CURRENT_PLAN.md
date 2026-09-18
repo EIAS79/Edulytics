@@ -19,11 +19,12 @@ This document is the repository pointer to the active mathematics/curriculum exe
 - **Programme Stage 17 — Grade 1–6 migration:** COMPLETE.
 - **Programme Stage 18 — Practice migration:** COMPLETE.
 - **Programme Stage 19 — Assessment Builder migration:** COMPLETE.
-- **Assessment Builder workflow:** Select → Generate → Review → Approve → Publish remains unchanged.
-- **Stage 19 exact generation:** official outcomes backed by READY_VERIFIED SkillContracts use the shared exact Mathematics kernel; mixed exact/non-exact generation fails closed.
-- **Stage 19 source of truth:** src/Edulytics.Core/Mathematics/Curriculum/stage19-assessment-builder-migration-manifest.v1.json.
-- **Stage 19 CI exit gate:** tools/math_intelligence/stage19_assessment_builder_closure_audit.py.
-- **Next active stage after Stage 19 is live on Render:** Programme Stage 20 — Diagnostic/adaptive migration.
+- **Programme Stage 20 — Diagnostic / Adaptive migration:** COMPLETE.
+- **Stage 20 adaptive intelligence:** exact Stage 19 Outcome/SkillContracts now consume skill mastery, prerequisite mastery, mathematical complexity, misconception history and representation fluency.
+- **Internal adaptive output:** target complexity, representation and question family are retained independently from the Easy / Medium / Challenging UI projection.
+- **Stage 20 source of truth:** src/Edulytics.Core/Mathematics/Curriculum/stage20-diagnostic-adaptive-migration-manifest.v1.json.
+- **Stage 20 CI exit gate:** tools/math_intelligence/stage20_diagnostic_adaptive_closure_audit.py.
+- **Next active stage after Stage 20 is live on Render:** Programme Stage 21 — Reassessment migration.
 
 ## Update rule
 
