@@ -1,5 +1,6 @@
 using System.Reflection;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 namespace Edulytics.Core.Mathematics.Practice;
 
@@ -17,6 +18,18 @@ public sealed record LessonPracticeContract(
     string Readiness,
     string ContractVersion)
 {
+    public IReadOnlyList<string> PrimarySkillIds => [SkillId];
+    public IReadOnlyList<string> SecondarySkillIds { get; init; } = [];
+    public IReadOnlyList<string> PrerequisiteSkillIds { get; init; } = [];
+    public IReadOnlyList<string> ForbiddenQuestionFamilies { get; init; } = [];
+    public IReadOnlyDictionary<string, int> PrimaryCoverage { get; init; } =
+        new Dictionary<string, int>(StringComparer.Ordinal)
+        {
+            [SkillId] = 100
+        };
+    public int? CurriculumLogicalLevel { get; init; }
+    public string? SourceReference { get; init; }
+
     public Stage18PracticeSkillContract ToLegacyStage18Contract() =>
         new(LessonCode, SkillId, Mechanic, AllowedQuestionFamilies);
 }
@@ -106,6 +119,13 @@ public static class LessonPracticeContractRegistry
                 ? versionElement.GetString() ?? Version
                 : Version;
 
+            var secondarySkills = ReadStringArray(row, "secondarySkills");
+            var prerequisiteSkills = ReadStringArray(row, "prerequisiteSkills");
+            var forbiddenFamilies = ReadStringArray(row, "forbiddenQuestionFamilies");
+            var sourceReference = row.TryGetProperty("sourceReference", out var sourceReferenceElement)
+                ? sourceReferenceElement.GetString()
+                : null;
+
             entries.Add(new LessonPracticeContract(
                 lessonCode,
                 primarySkills[0],
@@ -114,11 +134,61 @@ public static class LessonPracticeContractRegistry
                 families,
                 sourceType,
                 "READY_VERIFIED",
-                contractVersion));
+                contractVersion)
+            {
+                SecondarySkillIds = secondarySkills,
+                PrerequisiteSkillIds = prerequisiteSkills,
+                ForbiddenQuestionFamilies = forbiddenFamilies,
+                CurriculumLogicalLevel = InferLogicalLevel(lessonCode),
+                SourceReference = sourceReference
+            });
         }
 
         return entries
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
+    }
+
+    private static IReadOnlyList<string> ReadStringArray(JsonElement row, string propertyName)
+    {
+        if (!row.TryGetProperty(propertyName, out var value) ||
+            value.ValueKind != JsonValueKind.Array)
+        {
+            return [];
+        }
+
+        return value.EnumerateArray()
+            .Select(x => x.GetString()?.Trim())
+            .Where(x => !string.IsNullOrWhiteSpace(x))
+            .Cast<string>()
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+    }
+
+    private static int? InferLogicalLevel(string lessonCode)
+    {
+        foreach (var pattern in new[]
+                 {
+                     @":CAMBRIDGE-INTL-MATH:S(?<level>\d+):",
+                     @":CAMBRIDGE-INTL-MATH:L(?<level>\d+):",
+                     @":UAE-MOE-MATH:L(?<level>\d+):",
+                     @":US-CCSS-MATH:G(?<level>\d+):"
+                 })
+        {
+            var match = Regex.Match(
+                lessonCode,
+                pattern,
+                RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+            if (match.Success &&
+                match.Groups["level"].Success &&
+                int.TryParse(match.Groups["level"].Value, out var level))
+            {
+                return level;
+            }
+        }
+
+        return lessonCode.Contains(":US-CCSS-MATH:HS", StringComparison.OrdinalIgnoreCase)
+            ? 10
+            : null;
     }
 }
