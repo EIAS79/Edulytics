@@ -2,7 +2,11 @@ using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
 using Edulytics.Core.Enums;
+using Edulytics.Core.Mathematics.Ast;
+using Edulytics.Services.Mathematics.Generation;
 using Edulytics.Services.Mathematics.Runtime;
+using Edulytics.Services.Mathematics.Solving;
+using Edulytics.Services.Mathematics.Verification;
 
 namespace Edulytics.Services.Mathematics;
 
@@ -122,6 +126,26 @@ public sealed class ExactSkillContractQuestionEngine
                 Compare(parameters["n1"] * parameters["d2"], parameters["n2"] * parameters["d1"]),
                 StringComparison.Ordinal);
 
+        if (family == ExactLinearInequalityQuestionFactory.FamilyId)
+        {
+            var coefficient = parameters["coefficient"];
+            var offset = parameters["offset"];
+            var right = parameters["right"];
+            if (coefficient == 0 || (right - offset) % coefficient != 0)
+                return false;
+
+            var boundary = (right - offset) / coefficient;
+            var originalRelation = (InequalityRelation)parameters["relation"];
+            var solvedRelation = coefficient < 0
+                ? Reverse(originalRelation)
+                : originalRelation;
+            var expected = $"x {RelationSymbol(solvedRelation)} {boundary.ToString(CultureInfo.InvariantCulture)}";
+            return string.Equals(
+                NormalizeInequalityAnswer(answer),
+                NormalizeInequalityAnswer(expected),
+                StringComparison.Ordinal);
+        }
+
         if (!int.TryParse(answer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value))
             return false;
 
@@ -203,6 +227,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUnitRate(random, scale),
             "ratio.unit_rate.equivalent_ratio" =>
                 BuildEquivalentRatio(random, scale),
+            ExactLinearInequalityQuestionFactory.FamilyId =>
+                BuildLinearInequality(random, scale),
             _ => UnsupportedFamily(family)
         };
     }
@@ -342,6 +368,60 @@ public sealed class ExactSkillContractQuestionEngine
             ("targetSecond", targetSecond));
     }
 
+    private static ExactProblem BuildLinearInequality(Random random, int scale)
+    {
+        var factory = new ExactLinearInequalityQuestionFactory(
+            new ExactLinearInequalitySolver(),
+            new ExactLinearInequalityVerifier());
+        var generated = factory.Generate(
+            random.Next(1, int.MaxValue),
+            Math.Clamp(scale, 1, 3));
+
+        if (generated.Problem is not InequalityNode original ||
+            generated.ExpectedAnswer is not InequalityNode solved ||
+            solved.Left is not SymbolNode symbol ||
+            !string.Equals(symbol.Name, "x", StringComparison.Ordinal) ||
+            solved.Right is not IntegerNode integerBoundary ||
+            integerBoundary.Value < int.MinValue ||
+            integerBoundary.Value > int.MaxValue)
+        {
+            throw new InvalidOperationException(
+                "Exact linear-inequality factory returned an unsupported learner-facing shape.");
+        }
+
+        var coefficient = int.Parse(
+            generated.Parameters["coefficient"],
+            NumberStyles.Integer,
+            CultureInfo.InvariantCulture);
+        var offset = int.Parse(
+            generated.Parameters["offset"],
+            NumberStyles.Integer,
+            CultureInfo.InvariantCulture);
+        var right = int.Parse(
+            generated.Parameters["right"],
+            NumberStyles.Integer,
+            CultureInfo.InvariantCulture);
+        var boundary = (int)integerBoundary.Value;
+
+        var prompt =
+            $"Solve {FormatLinearExpression(coefficient, offset)} {RelationSymbol(original.Relation)} {right.ToString(CultureInfo.InvariantCulture)}. " +
+            "Give your answer as an inequality in x.";
+
+        var solution = coefficient < 0
+            ? $"Collect terms, then divide by {coefficient.ToString(CultureInfo.InvariantCulture)}. Because the coefficient is negative, reverse the inequality sign. The exact boundary is {boundary.ToString(CultureInfo.InvariantCulture)}."
+            : $"Collect terms, then divide by {coefficient.ToString(CultureInfo.InvariantCulture)}. The inequality sign is preserved and the exact boundary is {boundary.ToString(CultureInfo.InvariantCulture)}.";
+
+        return Problem(
+            ExactLinearInequalityQuestionFactory.FamilyId,
+            prompt,
+            solution,
+            AssessmentItemType.ShortAnswer,
+            ("coefficient", coefficient),
+            ("offset", offset),
+            ("right", right),
+            ("relation", (int)original.Relation));
+    }
+
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
@@ -372,9 +452,70 @@ public sealed class ExactSkillContractQuestionEngine
             "ratio.unit_rate.equivalent_ratio" =>
                 (p["baseFirst"] * p["targetSecond"] / p["baseSecond"]).ToString(CultureInfo.InvariantCulture),
 
+            ExactLinearInequalityQuestionFactory.FamilyId =>
+                SolveLinearInequality(p),
+
             _ => throw new InvalidOperationException($"Unsupported exact Mathematics solver family: {problem.Family}")
         };
     }
+
+    private static string SolveLinearInequality(IReadOnlyDictionary<string, int> parameters)
+    {
+        var coefficient = parameters["coefficient"];
+        var offset = parameters["offset"];
+        var right = parameters["right"];
+        if (coefficient == 0 || (right - offset) % coefficient != 0)
+            throw new InvalidOperationException("Generated linear inequality has a non-integral or undefined boundary.");
+
+        var boundary = (right - offset) / coefficient;
+        var originalRelation = (InequalityRelation)parameters["relation"];
+        var solvedRelation = coefficient < 0
+            ? Reverse(originalRelation)
+            : originalRelation;
+        return $"x {RelationSymbol(solvedRelation)} {boundary.ToString(CultureInfo.InvariantCulture)}";
+    }
+
+    private static InequalityRelation Reverse(InequalityRelation relation) => relation switch
+    {
+        InequalityRelation.LessThan => InequalityRelation.GreaterThan,
+        InequalityRelation.LessThanOrEqual => InequalityRelation.GreaterThanOrEqual,
+        InequalityRelation.GreaterThan => InequalityRelation.LessThan,
+        InequalityRelation.GreaterThanOrEqual => InequalityRelation.LessThanOrEqual,
+        _ => throw new InvalidOperationException("Unsupported learner-facing inequality relation.")
+    };
+
+    private static string RelationSymbol(InequalityRelation relation) => relation switch
+    {
+        InequalityRelation.LessThan => "<",
+        InequalityRelation.LessThanOrEqual => "≤",
+        InequalityRelation.GreaterThan => ">",
+        InequalityRelation.GreaterThanOrEqual => "≥",
+        _ => throw new InvalidOperationException("Unsupported learner-facing inequality relation.")
+    };
+
+    private static string FormatLinearExpression(int coefficient, int offset)
+    {
+        var coefficientText = coefficient switch
+        {
+            1 => "x",
+            -1 => "-x",
+            _ => $"{coefficient.ToString(CultureInfo.InvariantCulture)}x"
+        };
+
+        if (offset == 0)
+            return coefficientText;
+
+        var sign = offset > 0 ? "+" : "−";
+        return $"{coefficientText} {sign} {Math.Abs(offset).ToString(CultureInfo.InvariantCulture)}";
+    }
+
+    private static string NormalizeInequalityAnswer(string answer) =>
+        answer
+            .Trim()
+            .Replace(" ", string.Empty, StringComparison.Ordinal)
+            .Replace("<=", "≤", StringComparison.Ordinal)
+            .Replace(">=", "≥", StringComparison.Ordinal)
+            .Replace("−", "-", StringComparison.Ordinal);
 
     private static ExactProblem Problem(
         string family,

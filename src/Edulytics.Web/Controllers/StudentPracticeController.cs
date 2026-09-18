@@ -24,7 +24,7 @@ public sealed class StudentPracticeController(
 {
     private const string LessonPracticePilotCode = "PED:CAMBRIDGE-INTL-MATH:S1:L10";
     private const string LessonGameMode = "lesson-game";
-    private const int LessonPracticePilotQuestionCount = 10;
+    private const int LessonPracticeQuestionCount = 10;
 
     [HttpGet("")]
     public async Task<IActionResult> Index(Guid? curriculumAdoptionId, CancellationToken cancellationToken)
@@ -57,6 +57,56 @@ public sealed class StudentPracticeController(
             return RedirectToAction(nameof(Index), new { curriculumAdoptionId });
         }
         return RedirectToAction(nameof(Attempt), new { id = result.AttemptId });
+    }
+
+    [HttpPost("lesson/start"), ValidateAntiForgeryToken]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public async Task<IActionResult> StartLessonPractice(
+        Guid curriculumAdoptionId,
+        Guid lessonId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+
+        var workspace = await privatePractice.GetWorkspaceAsync(
+            actorId,
+            curriculumAdoptionId,
+            cancellationToken);
+        if (workspace.SelectedCurriculumAdoptionId != curriculumAdoptionId)
+            return NotFound();
+
+        var lesson = workspace.Lessons.SingleOrDefault(x => x.LessonId == lessonId);
+        if (lesson is null ||
+            !LessonPracticeContractRegistry.TryResolve(lesson.LessonCode, out var contract) ||
+            contract is null ||
+            !string.Equals(contract.Readiness, "READY_VERIFIED", StringComparison.Ordinal))
+        {
+            return NotFound();
+        }
+
+        var result = await privatePractice.GenerateAsync(
+            actorId,
+            new GenerateStudentPrivatePracticeRequest(
+                curriculumAdoptionId,
+                StudentPrivatePracticeScope.Lesson,
+                lessonId,
+                null,
+                StudentPrivatePracticeDifficulty.MyLevel,
+                LessonPracticeQuestionCount),
+            cancellationToken);
+
+        if (!result.Succeeded)
+        {
+            TempData["Error"] = PrivatePracticeErrorMessage(result.Error);
+            return RedirectToAction("Lesson", "StudentPortal", new { id = lessonId });
+        }
+
+        return RedirectToAction(nameof(Attempt), new
+        {
+            id = result.AttemptId,
+            mode = LessonGameMode
+        });
     }
 
     [HttpPost("lesson-game/start"), ValidateAntiForgeryToken]
@@ -234,7 +284,7 @@ public sealed class StudentPracticeController(
                 lessonId,
                 null,
                 StudentPrivatePracticeDifficulty.MyLevel,
-                LessonPracticePilotQuestionCount),
+                LessonPracticeQuestionCount),
             cancellationToken);
 
         if (!result.Succeeded)

@@ -101,16 +101,16 @@ public sealed class StudentPrivatePracticeService(
         if (scoped.Error.HasValue)
             return StudentPrivatePracticeResult.Failure(scoped.Error.Value);
 
-        // Stage 18 is authoritative for READY_VERIFIED lesson-scoped Practice.
-        // Once a lesson has an approved SkillContract, it must use the exact
-        // server-side solver/verifier path and may never fall back to broad
-        // semantic/context generation.
+        // General lesson Practice contracts are authoritative for READY_VERIFIED
+        // lesson-scoped Practice. Supporting lessons do not need an official
+        // OutcomeCode to use the exact solver/verifier path. Once a contract
+        // exists, broad contextual fallback is forbidden.
         if (request.Scope == StudentPrivatePracticeScope.Lesson &&
             scoped.LessonId.HasValue)
         {
             var exactLesson = context.Lessons.Single(x => x.Id == scoped.LessonId.Value);
-            if (Stage18PracticeSkillContracts.TryResolve(exactLesson.Code, out var skillContract) &&
-                skillContract is not null)
+            if (LessonPracticeContractRegistry.TryResolve(exactLesson.Code, out var practiceContract) &&
+                practiceContract is not null)
             {
                 return await GenerateSkillContractLessonAsync(
                     studentUserId,
@@ -118,7 +118,33 @@ public sealed class StudentPrivatePracticeService(
                     request,
                     scoped.LessonId.Value,
                     scoped.Outcomes ?? [],
-                    skillContract,
+                    practiceContract,
+                    cancellationToken);
+            }
+
+            // Preserve the existing Stage 18 exact path for verified official
+            // Grade 1-6 lessons that are intentionally outside the Supporting
+            // registry. The generalized Supporting resolver takes precedence,
+            // while Stage 18 remains an exact fail-closed compatibility layer.
+            if (Stage18PracticeSkillContracts.TryResolve(exactLesson.Code, out var stage18Contract) &&
+                stage18Contract is not null)
+            {
+                var compatibleContract = new LessonPracticeContract(
+                    stage18Contract.LessonCode,
+                    stage18Contract.SkillId,
+                    stage18Contract.Mechanic,
+                    stage18Contract.AllowedQuestionFamilies,
+                    "Stage18VerifiedLesson",
+                    "READY_VERIFIED",
+                    "stage18-practice-v1");
+
+                return await GenerateSkillContractLessonAsync(
+                    studentUserId,
+                    context,
+                    request,
+                    scoped.LessonId.Value,
+                    scoped.Outcomes ?? [],
+                    compatibleContract,
                     cancellationToken);
             }
         }
@@ -279,9 +305,10 @@ public sealed class StudentPrivatePracticeService(
         GenerateStudentPrivatePracticeRequest request,
         Guid lessonId,
         IReadOnlyList<LearningOutcome> officialOutcomes,
-        Stage18PracticeSkillContract skillContract,
+        LessonPracticeContract practiceContract,
         CancellationToken cancellationToken)
     {
+        var skillContract = practiceContract.ToLegacyStage18Contract();
         var excluded = context.Exposures
             .Select(x => x.ExposureFingerprint)
             .Where(x => !string.IsNullOrWhiteSpace(x))
