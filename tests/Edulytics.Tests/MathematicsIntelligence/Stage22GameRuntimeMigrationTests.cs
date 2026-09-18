@@ -53,13 +53,11 @@ public sealed class Stage22GameRuntimeMigrationTests
                     choice)))
             .ToArray();
 
-        Assert.Single(outcomes.Where(x => x.IsCorrect));
+        var correctResult = Assert.Single(outcomes, x => x.IsCorrect);
         Assert.All(
             outcomes.Where(x => !x.IsCorrect),
             x => Assert.Equal(0, x.Points));
-        Assert.Equal(
-            200,
-            outcomes.Single(x => x.IsCorrect).Points);
+        Assert.Equal(200, correctResult.Points);
     }
 
     [Fact]
