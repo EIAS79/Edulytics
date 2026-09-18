@@ -637,6 +637,22 @@
       "provider": "edulytics-exact-skill-contract",
       "providerVersion": "fraction-add-subtract-exact-v1",
       "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.practice.exact_generation",
+      "domain": "fractions",
+      "canonicalName": "Generate structured exact fraction Practice problems",
+      "provider": "ExactSkillContractQuestionEngine",
+      "providerVersion": "supporting-remediation-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.practice.independent_verification",
+      "domain": "fractions",
+      "canonicalName": "Independently verify exact fraction Practice answers from original parameters",
+      "provider": "ExactSkillContractQuestionEngine",
+      "providerVersion": "supporting-remediation-v1",
+      "status": "ShadowVerified"
     }
   ]
 }
