@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "normalizationVersion": "supporting-target-normalization-v1",
+  "description": "Deterministic domain classification for canonical Supporting lesson targets. The exact normalized target text remains part of the target identity; domain rules never authorize Practice.",
+  "stripPatterns": [
+    "\\s*:\\s*(?:build the idea|reason and apply)\\s*$",
+    "\\s*[—-]\\s*advanced reasoning\\s*$",
+    "^consolidating\\s+"
+  ],
+  "domainRules": [
+    {
+      "domain": "trigonometry",
+      "patterns": [
+        "\\btrigon",
+        "\\bsine\\b",
+        "\\bcosine\\b",
+        "\\btangent\\b",
+        "\\bbearings?\\b"
+      ]
+    },
+    {
+      "domain": "geometry",
+      "patterns": [
+        "\\bgeometry\\b",
+        "\\bangles?\\b",
+        "\\bpolygons?\\b",
+        "\\bshapes?\\b",
+        "\\bcongru",
+        "\\bsimilar",
+        "\\btransform",
+        "\\bperimeter\\b",
+        "\\barea\\b",
+        "\\bvolume\\b",
+        "\\bpythag",
+        "\\bcircle\\b",
+        "\\bcoordinates?\\b",
+        "\\bgradient\\b",
+        "\\bmidpoint\\b",
+        "\\bdistance\\b",
+        "\\bloci\\b",
+        "\\bparallel\\b",
+        "\\bperpendicular\\b"
+      ]
+    },
+    {
+      "domain": "fractions",
+      "patterns": [
+        "\\bfractions?\\b",
+        "\\bmixed numbers?\\b",
+        "\\bnumerator\\b",
+        "\\bdenominator\\b"
+      ]
+    },
+    {
+      "domain": "percentages",
+      "patterns": [
+        "\\bpercent",
+        "\\bpercentage"
+      ]
+    },
+    {
+      "domain": "ratio",
+      "patterns": [
+        "\\bratio\\b",
+        "\\bproportion\\b",
+        "\\bunit rate\\b",
+        "\\bunitary\\b",
+        "\\brates?\\b"
+      ]
+    },
+    {
+      "domain": "probability",
+      "patterns": [
+        "\\bprobab",
+        "\\bsample spaces?\\b",
+        "\\bexpected frequency\\b",
+        "\\btree diagrams?\\b",
+        "\\bvenn\\b"
+      ]
+    },
+    {
+      "domain": "statistics",
+      "patterns": [
+        "\\bstatistics?\\b",
+        "\\bmean\\b",
+        "\\bmedian\\b",
+        "\\bmode\\b",
+        "\\brange\\b",
+        "\\bscatter\\b",
+        "\\bhistogram",
+        "\\bcumulative frequency\\b",
+        "\\bquartiles?\\b",
+        "\\bdata\\b",
+        "\\btables? and charts?\\b",
+        "\\bdistributions?\\b"
+      ]
+    },
+    {
+      "domain": "calculus",
+      "patterns": [
+        "\\bdifferentiat",
+        "\\bintegrat",
+        "\\bderivative",
+        "\\bcalculus\\b",
+        "\\bstationary point"
+      ]
+    },
+    {
+      "domain": "vectors",
+      "patterns": [
+        "\\bvectors?\\b"
+      ]
+    },
+    {
+      "domain": "matrices",
+      "patterns": [
+        "\\bmatri"
+      ]
+    },
+    {
+      "domain": "complex",
+      "patterns": [
+        "\\bcomplex numbers?\\b",
+        "\\bargand\\b"
+      ]
+    },
+    {
+      "domain": "numerical_methods",
+      "patterns": [
+        "\\bnumerical methods?\\b",
+        "\\bbisection\\b",
+        "\\bnewton",
+        "\\btrapezoid"
+      ]
+    },
+    {
+      "domain": "mechanics",
+      "patterns": [
+        "\\bkinematics?\\b",
+        "\\bforce\\b",
+        "\\bmomentum\\b",
+        "\\bimpulse\\b",
+        "\\bwork and energy\\b",
+        "\\bpower\\b",
+        "\\bequilibrium\\b"
+      ]
+    },
+    {
+      "domain": "functions",
+      "patterns": [
+        "\\bfunctions?\\b",
+        "\\bfunction notation\\b",
+        "\\bcomposite functions?\\b",
+        "\\binverse functions?\\b"
+      ]
+    },
+    {
+      "domain": "sequences",
+      "patterns": [
+        "\\bsequences?\\b",
+        "\\bseries\\b",
+        "\\bnth term\\b"
+      ]
+    },
+    {
+      "domain": "indices",
+      "patterns": [
+        "\\bindices\\b",
+        "\\bpowers? and roots?\\b",
+        "\\bfractional indices\\b",
+        "\\bsurds?\\b",
+        "\\bstandard form\\b"
+      ]
+    },
+    {
+      "domain": "algebra",
+      "patterns": [
+        "\\balgebra",
+        "\\bequations?\\b",
+        "\\binequalities?\\b",
+        "\\bexpressions?\\b",
+        "\\bfactoris",
+        "\\bexpanding brackets?\\b",
+        "\\bsubstitution\\b",
+        "\\bquadratic",
+        "\\bsimultaneous",
+        "\\blinear model",
+        "\\bproof\\b"
+      ]
+    },
+    {
+      "domain": "measurement",
+      "patterns": [
+        "\\bmeasurement\\b",
+        "\\bscales?\\b",
+        "\\bmeasures?\\b",
+        "\\bmoney\\b",
+        "\\btime\\b",
+        "\\blength\\b",
+        "\\bmass\\b",
+        "\\bcapacity\\b"
+      ]
+    },
+    {
+      "domain": "number",
+      "patterns": [
+        "\\bintegers?\\b",
+        "\\bwhole numbers?\\b",
+        "\\bplace value\\b",
+        "\\brounding\\b",
+        "\\bdecimals?\\b",
+        "\\baddition\\b",
+        "\\bsubtraction\\b",
+        "\\bmultiplication\\b",
+        "\\bdivision\\b",
+        "\\bnumber facts?\\b",
+        "\\border of operations\\b",
+        "\\bcomplements?\\b"
+      ]
+    },
+    {
+      "domain": "reasoning",
+      "patterns": [
+        "\\bproof and justification\\b",
+        "\\bnon-routine problem solving\\b",
+        "\\bmodelling\\b"
+      ]
+    }
+  ],
+  "fallbackDomain": "general_mathematics"
+}
