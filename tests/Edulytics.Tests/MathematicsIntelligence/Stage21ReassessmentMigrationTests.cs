@@ -75,8 +75,9 @@ public sealed class Stage21ReassessmentMigrationTests
                 generated.Item.ValidationMetadataJson,
                 StringComparison.Ordinal);
 
+            Assert.False(string.IsNullOrWhiteSpace(generated.Item.GenerationParametersJson));
             using var parametersJson = JsonDocument.Parse(
-                generated.Item.GenerationParametersJson);
+                generated.Item.GenerationParametersJson!);
             var values = parametersJson.RootElement
                 .GetProperty("parameters")
                 .EnumerateObject()
