@@ -168,6 +168,39 @@ public sealed class ExactSkillContractQuestionEngine
             return MathematicsAnswerEquivalence.AreEquivalent(answer, expected);
         }
 
+        if (family.StartsWith("fractions.add_subtract.", StringComparison.Ordinal))
+        {
+            if (!TryParseFractionAnswer(answer, out var answerNumerator, out var answerDenominator))
+                return false;
+
+            var leftNumerator = parameters["leftNumerator"];
+            var leftDenominator = parameters["leftDenominator"];
+            var rightNumerator = parameters["rightNumerator"];
+            var rightDenominator = parameters["rightDenominator"];
+            var operation = parameters["operation"];
+
+            if (leftDenominator <= 0 ||
+                rightDenominator <= 0 ||
+                operation is < 0 or > 1)
+            {
+                return false;
+            }
+
+            var expectedNumerator = operation == 0
+                ? leftNumerator * rightDenominator + rightNumerator * leftDenominator
+                : leftNumerator * rightDenominator - rightNumerator * leftDenominator;
+            var expectedDenominator = leftDenominator * rightDenominator;
+
+            if (expectedNumerator < 0)
+                return false;
+
+            ReduceFraction(ref expectedNumerator, ref expectedDenominator);
+            ReduceFraction(ref answerNumerator, ref answerDenominator);
+
+            return answerNumerator == expectedNumerator &&
+                   answerDenominator == expectedDenominator;
+        }
+
         if (family is "number.whole.divide.with_remainder.build" or
             "number.whole.divide.with_remainder.apply")
         {
@@ -359,6 +392,11 @@ public sealed class ExactSkillContractQuestionEngine
             "fractions.of_quantity.build" or
             "fractions.of_quantity.apply" =>
                 BuildFractionOfQuantity(family, random, scale),
+            "fractions.add_subtract.within_one" or
+            "fractions.add_subtract.related" or
+            "fractions.add_subtract.common_denominator_mixed" or
+            "fractions.add_subtract.unlike_denominators" =>
+                BuildFractionAddSubtract(family, random, scale),
             "fractions.add_subtract.within_one.build" or
             "fractions.add_subtract.within_one.apply" or
             "fractions.add_subtract.same_denominator_mixed.build" or
@@ -714,6 +752,103 @@ public sealed class ExactSkillContractQuestionEngine
             ("divisor", divisor));
     }
 
+    private static ExactProblem BuildFractionAddSubtract(
+        string family,
+        Random random,
+        int scale)
+    {
+        var operation = random.Next(0, 2);
+        int leftNumerator;
+        int leftDenominator;
+        int rightNumerator;
+        int rightDenominator;
+        string prompt;
+
+        if (family == "fractions.add_subtract.within_one")
+        {
+            var denominator = random.Next(3, 8 + scale);
+            leftDenominator = denominator;
+            rightDenominator = denominator;
+            leftNumerator = random.Next(1, denominator);
+            rightNumerator = operation == 0
+                ? random.Next(1, Math.Max(2, denominator - leftNumerator + 1))
+                : random.Next(1, leftNumerator + 1);
+
+            prompt = $"Calculate {leftNumerator}/{denominator} {(operation == 0 ? "+" : "−")} {rightNumerator}/{denominator}. Give the answer as a simplified fraction.";
+        }
+        else if (family == "fractions.add_subtract.related")
+        {
+            var baseDenominator = random.Next(2, 6 + scale);
+            var factor = random.Next(2, 4 + scale);
+            leftDenominator = baseDenominator;
+            rightDenominator = baseDenominator * factor;
+            leftNumerator = random.Next(1, leftDenominator);
+            rightNumerator = random.Next(1, rightDenominator);
+
+            if (operation == 1 &&
+                leftNumerator * rightDenominator < rightNumerator * leftDenominator)
+            {
+                (leftNumerator, rightNumerator) = (rightNumerator, leftNumerator);
+                (leftDenominator, rightDenominator) = (rightDenominator, leftDenominator);
+            }
+
+            prompt = $"Calculate {leftNumerator}/{leftDenominator} {(operation == 0 ? "+" : "−")} {rightNumerator}/{rightDenominator}. The denominators are related. Give the simplified fraction.";
+        }
+        else if (family == "fractions.add_subtract.common_denominator_mixed")
+        {
+            var denominator = random.Next(3, 8 + scale);
+            leftDenominator = denominator;
+            rightDenominator = denominator;
+            var leftWhole = random.Next(1, 4 + scale);
+            var rightWhole = random.Next(1, 3 + scale);
+            var leftPart = random.Next(1, denominator);
+            var rightPart = random.Next(1, denominator);
+            leftNumerator = leftWhole * denominator + leftPart;
+            rightNumerator = rightWhole * denominator + rightPart;
+
+            if (operation == 1 && leftNumerator < rightNumerator)
+            {
+                (leftNumerator, rightNumerator) = (rightNumerator, leftNumerator);
+                (leftWhole, rightWhole) = (rightWhole, leftWhole);
+                (leftPart, rightPart) = (rightPart, leftPart);
+            }
+
+            prompt = $"Calculate {leftWhole} {leftPart}/{denominator} {(operation == 0 ? "+" : "−")} {rightWhole} {rightPart}/{denominator}. Give an equivalent simplified fraction or mixed number.";
+        }
+        else
+        {
+            leftDenominator = random.Next(3, 8 + scale);
+            do
+            {
+                rightDenominator = random.Next(3, 9 + scale);
+            }
+            while (rightDenominator == leftDenominator);
+
+            leftNumerator = random.Next(1, leftDenominator);
+            rightNumerator = random.Next(1, rightDenominator);
+
+            if (operation == 1 &&
+                leftNumerator * rightDenominator < rightNumerator * leftDenominator)
+            {
+                (leftNumerator, rightNumerator) = (rightNumerator, leftNumerator);
+                (leftDenominator, rightDenominator) = (rightDenominator, leftDenominator);
+            }
+
+            prompt = $"Calculate {leftNumerator}/{leftDenominator} {(operation == 0 ? "+" : "−")} {rightNumerator}/{rightDenominator}. Use a common denominator and give the simplified fraction.";
+        }
+
+        return Problem(
+            family,
+            prompt,
+            "Use an exact common denominator, combine the numerators according to the operation, simplify by the greatest common divisor, and verify the result by exact cross-multiplication.",
+            AssessmentItemType.ShortAnswer,
+            ("leftNumerator", leftNumerator),
+            ("leftDenominator", leftDenominator),
+            ("rightNumerator", rightNumerator),
+            ("rightDenominator", rightDenominator),
+            ("operation", operation));
+    }
+
     private static ExactProblem BuildFractionOfQuantity(
         string family,
         Random random,
@@ -985,6 +1120,12 @@ public sealed class ExactSkillContractQuestionEngine
                 ((p["quantity"] / p["denominator"]) * p["numerator"])
                     .ToString(CultureInfo.InvariantCulture),
 
+            "fractions.add_subtract.within_one" or
+            "fractions.add_subtract.related" or
+            "fractions.add_subtract.common_denominator_mixed" or
+            "fractions.add_subtract.unlike_denominators" =>
+                SolveFractionAddSubtract(p),
+
             "fractions.add_subtract.within_one.build" or
             "fractions.add_subtract.within_one.apply" or
             "fractions.add_subtract.same_denominator_mixed.build" or
@@ -1044,6 +1185,96 @@ public sealed class ExactSkillContractQuestionEngine
         }
 
         return Math.Abs(left);
+    }
+
+    private static string SolveFractionAddSubtract(IReadOnlyDictionary<string, int> parameters)
+    {
+        var leftNumerator = parameters["leftNumerator"];
+        var leftDenominator = parameters["leftDenominator"];
+        var rightNumerator = parameters["rightNumerator"];
+        var rightDenominator = parameters["rightDenominator"];
+        var operation = parameters["operation"];
+
+        var numerator = operation == 0
+            ? leftNumerator * rightDenominator + rightNumerator * leftDenominator
+            : leftNumerator * rightDenominator - rightNumerator * leftDenominator;
+        var denominator = leftDenominator * rightDenominator;
+        ReduceFraction(ref numerator, ref denominator);
+
+        return denominator == 1
+            ? numerator.ToString(CultureInfo.InvariantCulture)
+            : $"{numerator.ToString(CultureInfo.InvariantCulture)}/{denominator.ToString(CultureInfo.InvariantCulture)}";
+    }
+
+    private static bool TryParseFractionAnswer(
+        string answer,
+        out int numerator,
+        out int denominator)
+    {
+        numerator = 0;
+        denominator = 1;
+        var normalized = answer.Trim().Replace("−", "-", StringComparison.Ordinal);
+
+        var mixedParts = normalized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        if (mixedParts.Length == 2 &&
+            int.TryParse(mixedParts[0], NumberStyles.Integer, CultureInfo.InvariantCulture, out var whole))
+        {
+            var fractionParts = mixedParts[1].Split('/');
+            if (fractionParts.Length == 2 &&
+                int.TryParse(fractionParts[0], NumberStyles.Integer, CultureInfo.InvariantCulture, out var mixedNumerator) &&
+                int.TryParse(fractionParts[1], NumberStyles.Integer, CultureInfo.InvariantCulture, out var mixedDenominator) &&
+                mixedDenominator != 0)
+            {
+                numerator = whole * mixedDenominator + Math.Sign(whole == 0 ? 1 : whole) * mixedNumerator;
+                denominator = mixedDenominator;
+                return true;
+            }
+        }
+
+        var parts = normalized.Split('/');
+        if (parts.Length == 2 &&
+            int.TryParse(parts[0], NumberStyles.Integer, CultureInfo.InvariantCulture, out numerator) &&
+            int.TryParse(parts[1], NumberStyles.Integer, CultureInfo.InvariantCulture, out denominator) &&
+            denominator != 0)
+        {
+            return true;
+        }
+
+        if (int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out numerator))
+        {
+            denominator = 1;
+            return true;
+        }
+
+        return false;
+    }
+
+    private static void ReduceFraction(ref int numerator, ref int denominator)
+    {
+        if (denominator < 0)
+        {
+            denominator = -denominator;
+            numerator = -numerator;
+        }
+
+        var gcd = GreatestCommonDivisor(Math.Abs(numerator), denominator);
+        if (gcd > 1)
+        {
+            numerator /= gcd;
+            denominator /= gcd;
+        }
+    }
+
+    private static int GreatestCommonDivisor(int left, int right)
+    {
+        while (right != 0)
+        {
+            var remainder = left % right;
+            left = right;
+            right = remainder;
+        }
+
+        return Math.Max(1, Math.Abs(left));
     }
 
     private static string SolveLinearInequality(IReadOnlyDictionary<string, int> parameters)
