@@ -301,6 +301,26 @@
       "negativePatterns": [
         "\\bfraction of (?:a )?(?:quantity|amount|number)\\b"
       ]
+    },
+    {
+      "id": "fraction-add-subtract",
+      "skillId": "fractions.add_subtract",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\badd and subtract fractions?\\b",
+        "\\badd and subtract related fractions?\\b",
+        "\\badd and subtract unlike fractions?\\b",
+        "\\badd and subtract improper and mixed fractions?\\b"
+      ],
+      "contentPatterns": [
+        "\\badd(?:ing)? and subtract(?:ing)? fractions?\\b",
+        "\\bcommon denominator\\b",
+        "\\bmixed numbers?\\b.*\\bfractions?\\b"
+      ],
+      "negativePatterns": [
+        "\\bwhole[- ]number addition\\b",
+        "\\bdecimal"
+      ]
     }
   ]
 }
