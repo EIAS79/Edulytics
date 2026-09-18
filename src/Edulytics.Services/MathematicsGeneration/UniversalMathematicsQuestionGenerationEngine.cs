@@ -5,6 +5,7 @@ using Edulytics.Core.AssessmentIntelligence;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Core.MathematicsGeneration;
+using Edulytics.Services.Mathematics;
 
 namespace Edulytics.Services.MathematicsGeneration;
 
@@ -95,8 +96,18 @@ public sealed class UniversalMathematicsQuestionGenerationEngine
             var blueprintFamily = questionFamilies[index];
             var itemType = itemTypes[index];
 
-            GeneratedMathematicsItem? candidate = null;
-            if (!profile.IsContextualAssisted &&
+            GeneratedMathematicsItem? candidate = TrySharedExact(
+                blueprint,
+                profile,
+                difficulty,
+                blueprintFamily,
+                itemType,
+                request.Seed,
+                index,
+                excluded.Concat(generated).ToArray());
+
+            if (candidate is null &&
+                !profile.IsContextualAssisted &&
                 profile.AllowedFamilies.Count > 0 &&
                 profile.AllowedFamilies.All(x => x != MathematicsGeneratorFamily.CurriculumContextCheck))
             {
@@ -136,6 +147,115 @@ public sealed class UniversalMathematicsQuestionGenerationEngine
             blueprint.CurriculumAdoptionId,
             blueprint.CurriculumLevelKey,
             items,
+            GeneratorVersion);
+    }
+
+    private static GeneratedMathematicsItem? TrySharedExact(
+        AssessmentBlueprint blueprint,
+        MathematicsOutcomeGenerationProfile profile,
+        AssessmentItemDifficulty difficulty,
+        AssessmentQuestionFamily blueprintFamily,
+        AssessmentItemType requestedItemType,
+        int seed,
+        int index,
+        IReadOnlyList<string> excluded)
+    {
+        var context = string.IsNullOrWhiteSpace(profile.GenerationContext)
+            ? profile.OutcomeCode
+            : profile.GenerationContext;
+
+        if (!SharedExactMathematicsCapabilityResolver.TryResolveCurriculumContext(
+                context,
+                out var capability) ||
+            capability is null)
+        {
+            return null;
+        }
+
+        var exactDifficulty = difficulty switch
+        {
+            AssessmentItemDifficulty.Challenging => ExactSkillQuestionDifficulty.Challenge,
+            AssessmentItemDifficulty.Medium => ExactSkillQuestionDifficulty.Stretch,
+            _ => ExactSkillQuestionDifficulty.Standard
+        };
+        var logicalLevel = SharedExactMathematicsCapabilityResolver.InferLogicalLevel(
+            blueprint.CurriculumLevelKey);
+
+        IReadOnlyList<ExactSkillGeneratedQuestion> generated;
+        try
+        {
+            generated = new ExactSkillContractQuestionEngine().Generate(
+                "universal-exact",
+                $"{profile.LearningOutcomeId:N}|{capability.SkillId}|{index}",
+                capability.AllowedQuestionFamilies,
+                exactDifficulty,
+                1,
+                StableInt($"shared-exact|{seed}|{index}", int.MaxValue - 1) + 1,
+                excluded,
+                logicalLevel);
+        }
+        catch (InvalidOperationException)
+        {
+            return null;
+        }
+
+        var question = generated.Single();
+        if (question.ItemType != requestedItemType)
+            return null;
+
+        var item = new AssessmentItem
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = blueprint.SchoolId,
+            CurriculumAdoptionId = blueprint.CurriculumAdoptionId,
+            CurriculumPedagogicalLessonId = blueprint.CurriculumPedagogicalLessonId,
+            CurriculumTopicId = blueprint.CurriculumTopicId,
+            Source = AssessmentItemSource.SystemGenerated,
+            ItemType = question.ItemType,
+            Difficulty = difficulty,
+            Prompt = question.Prompt,
+            CorrectAnswer = question.CorrectAnswer,
+            Solution = question.Solution,
+            GenerationMethod = "shared-exact-math-solver-verified-v1",
+            GenerationFamily = question.Family,
+            GenerationParametersJson = JsonSerializer.Serialize(new
+            {
+                skillId = capability.SkillId,
+                questionFamily = question.Family,
+                parameters = question.Parameters,
+                representation = question.Representation
+            }),
+            ExposureFingerprint = question.ExposureFingerprint,
+            ValidationMetadataJson = JsonSerializer.Serialize(new
+            {
+                generatorVersion = GeneratorVersion,
+                provider = "shared-exact-mathematics-capability",
+                capabilityLevel = "VerifiedAi",
+                capabilityReason = capability.ReasonCode,
+                skillId = capability.SkillId,
+                questionFamily = question.Family,
+                curriculumLogicalLevel = logicalLevel,
+                structuredRepresentation = question.Representation.Count > 0,
+                alignmentValidated = true,
+                solverVerified = true,
+                independentVerifierPassed = true,
+                broadFallbackUsed = false
+            }),
+            CreatedAtUtc = DateTime.UtcNow
+        };
+
+        var outcomeLink = new AssessmentItemOutcome
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = blueprint.SchoolId,
+            AssessmentItemId = item.Id,
+            LearningOutcomeId = profile.LearningOutcomeId
+        };
+
+        return new GeneratedMathematicsItem(
+            item,
+            outcomeLink,
+            blueprintFamily,
             GeneratorVersion);
     }
 
