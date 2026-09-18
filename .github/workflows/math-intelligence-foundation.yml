@@ -37,6 +37,10 @@ jobs:
         run: |
           set -euo pipefail
           python3 tools/math_intelligence/catalogue_skill_baseline.py --strict --write-report
+      - name: Run Supporting catalogue ontology audit
+        run: |
+          set -euo pipefail
+          python3 tools/math_intelligence/supporting_catalogue_ontology.py --strict --write-report
       - name: Run deterministic lesson-skill candidate resolution audit
         run: |
           set -euo pipefail
@@ -96,6 +100,7 @@ jobs:
           path: |
             artifacts/math-intelligence/math-registry-integrity.json
             artifacts/math-intelligence/catalogue-skill-baseline.json
+            artifacts/math-intelligence/supporting-catalogue-ontology.json
             artifacts/math-intelligence/lesson-skill-resolution-audit.json
             artifacts/math-intelligence/lesson-semantic-content-audit.json
             artifacts/math-intelligence/lesson-generation-readiness-audit.json
