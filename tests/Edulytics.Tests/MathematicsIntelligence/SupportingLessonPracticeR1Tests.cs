@@ -107,7 +107,7 @@ public sealed class SupportingLessonPracticeR1Tests
         Assert.Equal(
             "algebra.linear.inequality.ax_plus_b_relation_c",
             item.GenerationFamily);
-        Assert.True(item.CorrectAnswer.StartsWith("x", StringComparison.Ordinal));
+        Assert.StartsWith("x", item.CorrectAnswer);
         Assert.True(
             item.CorrectAnswer.Contains('<') ||
             item.CorrectAnswer.Contains('>') ||
