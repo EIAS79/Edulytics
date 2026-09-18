@@ -107,10 +107,10 @@ public sealed class SupportingLessonPracticeR1Tests
             item.GenerationFamily);
         Assert.StartsWith("x", item.CorrectAnswer, StringComparison.Ordinal);
         Assert.True(
-            item.CorrectAnswer.Contains('<', StringComparison.Ordinal) ||
-            item.CorrectAnswer.Contains('>', StringComparison.Ordinal) ||
-            item.CorrectAnswer.Contains('≤', StringComparison.Ordinal) ||
-            item.CorrectAnswer.Contains('≥', StringComparison.Ordinal));
+            item.CorrectAnswer.Contains('<') ||
+            item.CorrectAnswer.Contains('>') ||
+            item.CorrectAnswer.Contains('≤') ||
+            item.CorrectAnswer.Contains('≥'));
         Assert.True(
             Stage18SkillContractPracticeEngine.VerifyPersistedItem(
                 legacyContract,
