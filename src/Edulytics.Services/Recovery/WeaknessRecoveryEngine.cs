@@ -50,6 +50,13 @@ public sealed class WeaknessRecoveryEngine
             .OrderBy(x => x, StringComparer.Ordinal)
             .ToArray();
 
+        var mathematicalSignatures = (request.PreviousMathematicalSignatures ?? [])
+            .DistinctBy(x => x.ExposureFingerprint, StringComparer.Ordinal)
+            .OrderBy(x => x.ExposureFingerprint, StringComparer.Ordinal)
+            .ToArray();
+
+        ValidateMathematicalSignatures(mathematicalSignatures, excluded);
+
         var practiceRequest = new AssessmentBlueprintRequest(
             request.SchoolId,
             request.CurriculumAdoptionId,
@@ -90,7 +97,8 @@ public sealed class WeaknessRecoveryEngine
             excluded,
             promptShapes,
             ExcludePreviouslySeenQuestions: true,
-            FormulaVersion);
+            FormulaVersion,
+            mathematicalSignatures);
     }
 
     public void ValidateEquivalentReassessment(
@@ -232,6 +240,36 @@ public sealed class WeaknessRecoveryEngine
         }
 
         return builder.ToString().Trim();
+    }
+
+    private static void ValidateMathematicalSignatures(
+        IReadOnlyList<ReassessmentMathematicalSignature> signatures,
+        IReadOnlyList<string> excludedFingerprints)
+    {
+        var excluded = excludedFingerprints.ToHashSet(StringComparer.Ordinal);
+
+        foreach (var signature in signatures)
+        {
+            if (string.IsNullOrWhiteSpace(signature.ExposureFingerprint) ||
+                string.IsNullOrWhiteSpace(signature.QuestionFamily) ||
+                string.IsNullOrWhiteSpace(signature.CoefficientSignature) ||
+                string.IsNullOrWhiteSpace(signature.Representation) ||
+                string.IsNullOrWhiteSpace(signature.Strategy) ||
+                string.IsNullOrWhiteSpace(signature.Context) ||
+                string.IsNullOrWhiteSpace(signature.MisconceptionTrap) ||
+                !Enum.IsDefined(signature.CognitiveDemand))
+            {
+                throw new InvalidOperationException(
+                    "Previous reassessment mathematical signatures must be complete and reconstructable.");
+            }
+
+            if (excluded.Count > 0 &&
+                !excluded.Contains(signature.ExposureFingerprint))
+            {
+                throw new InvalidOperationException(
+                    "Previous reassessment mathematical signature is outside the declared exposure history.");
+            }
+        }
     }
 
     private static void ValidateRequest(WeaknessRecoveryRequest request)
