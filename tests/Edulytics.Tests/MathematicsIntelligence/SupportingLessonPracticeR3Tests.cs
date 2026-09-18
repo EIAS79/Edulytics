@@ -91,8 +91,8 @@ public sealed class SupportingLessonPracticeR3Tests
             Assert.All(items, item =>
             {
                 Assert.True(Stage18SkillContractPracticeEngine.VerifyPersistedItem(legacy, item));
-                Assert.Contains(""solverVerified":true", item.ValidationMetadataJson, StringComparison.Ordinal);
-                Assert.Contains(""broadFallbackUsed":false", item.ValidationMetadataJson, StringComparison.Ordinal);
+                Assert.Contains(@"""solverVerified"":true", item.ValidationMetadataJson, StringComparison.Ordinal);
+                Assert.Contains(@"""broadFallbackUsed"":false", item.ValidationMetadataJson, StringComparison.Ordinal);
             });
         }
     }
