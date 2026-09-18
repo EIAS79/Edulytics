@@ -621,6 +621,54 @@
       "provider": "edulytics-exact-skill-contract",
       "providerVersion": "fraction-of-quantity-exact-v1",
       "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.add_subtract.exact",
+      "domain": "fractions",
+      "canonicalName": "Generate and solve bounded fraction addition and subtraction exactly",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-add-subtract-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.verify.add_subtract",
+      "domain": "fractions",
+      "canonicalName": "Independently verify fraction sums and differences from original operands",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-add-subtract-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.representations.exact",
+      "domain": "fractions",
+      "canonicalName": "Generate exact equal-part and unit-interval fraction representations",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-representations-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.verify.representations",
+      "domain": "fractions",
+      "canonicalName": "Independently verify represented fraction values from structured equal-part data",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-representations-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.compare.benchmarks.exact",
+      "domain": "fractions",
+      "canonicalName": "Generate exact fraction-to-benchmark comparisons",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-benchmark-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.verify.compare.benchmarks",
+      "domain": "fractions",
+      "canonicalName": "Independently verify fraction benchmark comparisons by integer cross-products",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-benchmark-exact-v1",
+      "status": "ShadowVerified"
     }
   ]
 }
