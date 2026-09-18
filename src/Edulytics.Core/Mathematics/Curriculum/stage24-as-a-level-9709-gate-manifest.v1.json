@@ -1,0 +1,1206 @@
+{
+  "schemaVersion": 1,
+  "stage": "24",
+  "status": "COMPLETE",
+  "curriculum": "Cambridge International AS & A Level Mathematics (9709)",
+  "gatePolicy": {
+    "statuses": [
+      "VERIFIED",
+      "CONTEXTUAL",
+      "UNSUPPORTED"
+    ],
+    "coverageClaimGranularity": "domain-and-paper-route",
+    "global9709CapabilityClaimAllowed": false,
+    "productRoutingEnabled": false,
+    "titleSimilarityAloneNeverPromotes": true,
+    "verifiedRequires": [
+      "explicit formal curriculum mapping",
+      "paper/domain-specific benchmark pass",
+      "solver pass",
+      "independent verifier pass",
+      "answer grading pass",
+      "difficulty calibration pass",
+      "approved academic review"
+    ]
+  },
+  "academicReview": {
+    "currentState": "REQUIRED",
+    "approvedVerifiedLessonCount": 0,
+    "note": "The current AS/A-Level 9709 lesson packs are supporting pedagogical scaffolds with OutcomeCodes/FormalTargets empty. Engine overlap remains CONTEXTUAL until formal mapping and academic approval exist."
+  },
+  "summary": {
+    "totalLessons": 57,
+    "verified": 0,
+    "contextual": 25,
+    "unsupported": 32,
+    "formalOutcomeMapped": 0,
+    "paperRouteCount": 6
+  },
+  "coverageByPaper": [
+    {
+      "paperRoute": "A-MECHANICS",
+      "level": "A",
+      "domain": "Mechanics",
+      "totalLessons": 8,
+      "verified": 0,
+      "contextual": 2,
+      "unsupported": 6,
+      "formalOutcomeMapped": 0,
+      "productRoutingEnabled": false,
+      "capabilityClaim": "GATED"
+    },
+    {
+      "paperRoute": "A-PROBSTAT",
+      "level": "A",
+      "domain": "Probability & Statistics",
+      "totalLessons": 8,
+      "verified": 0,
+      "contextual": 0,
+      "unsupported": 8,
+      "formalOutcomeMapped": 0,
+      "productRoutingEnabled": false,
+      "capabilityClaim": "GATED"
+    },
+    {
+      "paperRoute": "A-PURE",
+      "level": "A",
+      "domain": "Pure Mathematics",
+      "totalLessons": 12,
+      "verified": 0,
+      "contextual": 6,
+      "unsupported": 6,
+      "formalOutcomeMapped": 0,
+      "productRoutingEnabled": false,
+      "capabilityClaim": "GATED"
+    },
+    {
+      "paperRoute": "AS-MECHANICS",
+      "level": "AS",
+      "domain": "Mechanics",
+      "totalLessons": 8,
+      "verified": 0,
+      "contextual": 6,
+      "unsupported": 2,
+      "formalOutcomeMapped": 0,
+      "productRoutingEnabled": false,
+      "capabilityClaim": "GATED"
+    },
+    {
+      "paperRoute": "AS-PROBSTAT",
+      "level": "AS",
+      "domain": "Probability & Statistics",
+      "totalLessons": 8,
+      "verified": 0,
+      "contextual": 2,
+      "unsupported": 6,
+      "formalOutcomeMapped": 0,
+      "productRoutingEnabled": false,
+      "capabilityClaim": "GATED"
+    },
+    {
+      "paperRoute": "AS-PURE",
+      "level": "AS",
+      "domain": "Pure Mathematics",
+      "totalLessons": 13,
+      "verified": 0,
+      "contextual": 9,
+      "unsupported": 4,
+      "formalOutcomeMapped": 0,
+      "productRoutingEnabled": false,
+      "capabilityClaim": "GATED"
+    }
+  ],
+  "lessons": [
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:01:ALGEBRAIC-MANIPULATION",
+      "level": "AS",
+      "domain": "Pure Mathematics",
+      "paperRoute": "AS-PURE",
+      "unitTitle": "Pure Mathematics",
+      "lessonTitle": "Algebraic manipulation",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:02:QUADRATIC-FUNCTIONS",
+      "level": "AS",
+      "domain": "Pure Mathematics",
+      "paperRoute": "AS-PURE",
+      "unitTitle": "Pure Mathematics",
+      "lessonTitle": "Quadratic functions",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "algebra.quadratic.solve.real_roots"
+      ],
+      "benchmarkIds": [
+        "9709-quadratic"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:03:FUNCTIONS-AND-GRAPHS",
+      "level": "AS",
+      "domain": "Pure Mathematics",
+      "paperRoute": "AS-PURE",
+      "unitTitle": "Pure Mathematics",
+      "lessonTitle": "Functions and graphs",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "functions.evaluate.exact"
+      ],
+      "benchmarkIds": [
+        "9709-function-eval"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:04:COORDINATE-GEOMETRY",
+      "level": "AS",
+      "domain": "Pure Mathematics",
+      "paperRoute": "AS-PURE",
+      "unitTitle": "Pure Mathematics",
+      "lessonTitle": "Coordinate geometry",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:05:CIRCULAR-MEASURE",
+      "level": "AS",
+      "domain": "Pure Mathematics",
+      "paperRoute": "AS-PURE",
+      "unitTitle": "Pure Mathematics",
+      "lessonTitle": "Circular measure",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:06:TRIGONOMETRIC-IDENTITIES",
+      "level": "AS",
+      "domain": "Pure Mathematics",
+      "paperRoute": "AS-PURE",
+      "unitTitle": "Pure Mathematics",
+      "lessonTitle": "Trigonometric identities",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "trigonometry.special_angles.evaluate"
+      ],
+      "benchmarkIds": [
+        "9709-special-angle-trig"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:07:TRIGONOMETRIC-EQUATIONS",
+      "level": "AS",
+      "domain": "Pure Mathematics",
+      "paperRoute": "AS-PURE",
+      "unitTitle": "Pure Mathematics",
+      "lessonTitle": "Trigonometric equations",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "trigonometry.special_angles.evaluate"
+      ],
+      "benchmarkIds": [
+        "9709-special-angle-trig"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:08:SEQUENCES-AND-SERIES",
+      "level": "AS",
+      "domain": "Pure Mathematics",
+      "paperRoute": "AS-PURE",
+      "unitTitle": "Pure Mathematics",
+      "lessonTitle": "Sequences and series",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "sequences.arithmetic.nth_term",
+        "sequences.geometric.nth_term"
+      ],
+      "benchmarkIds": [
+        "9709-arithmetic-sequence",
+        "9709-geometric-sequence"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:09:BINOMIAL-EXPANSION",
+      "level": "AS",
+      "domain": "Pure Mathematics",
+      "paperRoute": "AS-PURE",
+      "unitTitle": "Pure Mathematics",
+      "lessonTitle": "Binomial expansion",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:10:DIFFERENTIATION",
+      "level": "AS",
+      "domain": "Pure Mathematics",
+      "paperRoute": "AS-PURE",
+      "unitTitle": "Pure Mathematics",
+      "lessonTitle": "Differentiation",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "calculus.polynomial.differentiate"
+      ],
+      "benchmarkIds": [
+        "9709-polynomial-derivative"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:11:APPLICATIONS-OF-DIFFERENTIATION",
+      "level": "AS",
+      "domain": "Pure Mathematics",
+      "paperRoute": "AS-PURE",
+      "unitTitle": "Pure Mathematics",
+      "lessonTitle": "Applications of differentiation",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "calculus.polynomial.differentiate"
+      ],
+      "benchmarkIds": [
+        "9709-polynomial-derivative"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:12:INTEGRATION",
+      "level": "AS",
+      "domain": "Pure Mathematics",
+      "paperRoute": "AS-PURE",
+      "unitTitle": "Pure Mathematics",
+      "lessonTitle": "Integration",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "calculus.polynomial.integrate.definite"
+      ],
+      "benchmarkIds": [
+        "9709-polynomial-definite-integral"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:13:APPLICATIONS-OF-INTEGRATION",
+      "level": "AS",
+      "domain": "Pure Mathematics",
+      "paperRoute": "AS-PURE",
+      "unitTitle": "Pure Mathematics",
+      "lessonTitle": "Applications of integration",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "calculus.polynomial.integrate.definite"
+      ],
+      "benchmarkIds": [
+        "9709-polynomial-definite-integral"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:02:01:DATA-REPRESENTATION",
+      "level": "AS",
+      "domain": "Probability & Statistics",
+      "paperRoute": "AS-PROBSTAT",
+      "unitTitle": "Probability and Statistics",
+      "lessonTitle": "Data representation",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:02:02:MEASURES-OF-CENTRAL-TENDENCY",
+      "level": "AS",
+      "domain": "Probability & Statistics",
+      "paperRoute": "AS-PROBSTAT",
+      "unitTitle": "Probability and Statistics",
+      "lessonTitle": "Measures of central tendency",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "statistics.mean.arithmetic.exact",
+        "statistics.mean.frequency_table.exact"
+      ],
+      "benchmarkIds": [
+        "9709-arithmetic-mean",
+        "9709-frequency-mean"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:02:03:MEASURES-OF-SPREAD",
+      "level": "AS",
+      "domain": "Probability & Statistics",
+      "paperRoute": "AS-PROBSTAT",
+      "unitTitle": "Probability and Statistics",
+      "lessonTitle": "Measures of spread",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:02:04:PERMUTATIONS-AND-COMBINATIONS",
+      "level": "AS",
+      "domain": "Probability & Statistics",
+      "paperRoute": "AS-PROBSTAT",
+      "unitTitle": "Probability and Statistics",
+      "lessonTitle": "Permutations and combinations",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:02:05:PROBABILITY",
+      "level": "AS",
+      "domain": "Probability & Statistics",
+      "paperRoute": "AS-PROBSTAT",
+      "unitTitle": "Probability and Statistics",
+      "lessonTitle": "Probability",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "probability.simple.evaluate.exact",
+        "probability.complement.evaluate.exact"
+      ],
+      "benchmarkIds": [
+        "9709-simple-probability",
+        "9709-probability-complement"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:02:06:DISCRETE-RANDOM-VARIABLES",
+      "level": "AS",
+      "domain": "Probability & Statistics",
+      "paperRoute": "AS-PROBSTAT",
+      "unitTitle": "Probability and Statistics",
+      "lessonTitle": "Discrete random variables",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:02:07:BINOMIAL-DISTRIBUTION",
+      "level": "AS",
+      "domain": "Probability & Statistics",
+      "paperRoute": "AS-PROBSTAT",
+      "unitTitle": "Probability and Statistics",
+      "lessonTitle": "Binomial distribution",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:02:08:NORMAL-DISTRIBUTION",
+      "level": "AS",
+      "domain": "Probability & Statistics",
+      "paperRoute": "AS-PROBSTAT",
+      "unitTitle": "Probability and Statistics",
+      "lessonTitle": "Normal distribution",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:03:01:KINEMATICS-IN-ONE-DIMENSION",
+      "level": "AS",
+      "domain": "Mechanics",
+      "paperRoute": "AS-MECHANICS",
+      "unitTitle": "Mechanics",
+      "lessonTitle": "Kinematics in one dimension",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "mechanics.kinematics.constant_acceleration.velocity",
+        "mechanics.kinematics.constant_acceleration.displacement"
+      ],
+      "benchmarkIds": [
+        "9709-mech-velocity",
+        "9709-mech-displacement"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:03:02:VELOCITY-TIME-GRAPHS",
+      "level": "AS",
+      "domain": "Mechanics",
+      "paperRoute": "AS-MECHANICS",
+      "unitTitle": "Mechanics",
+      "lessonTitle": "Velocity-time graphs",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:03:03:CONSTANT-ACCELERATION",
+      "level": "AS",
+      "domain": "Mechanics",
+      "paperRoute": "AS-MECHANICS",
+      "unitTitle": "Mechanics",
+      "lessonTitle": "Constant acceleration",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "mechanics.kinematics.constant_acceleration.velocity",
+        "mechanics.kinematics.constant_acceleration.displacement"
+      ],
+      "benchmarkIds": [
+        "9709-mech-velocity",
+        "9709-mech-displacement"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:03:04:FORCES-AND-EQUILIBRIUM",
+      "level": "AS",
+      "domain": "Mechanics",
+      "paperRoute": "AS-MECHANICS",
+      "unitTitle": "Mechanics",
+      "lessonTitle": "Forces and equilibrium",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "mechanics.equilibrium.balancing_force_1d"
+      ],
+      "benchmarkIds": [
+        "9709-mech-equilibrium"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:03:05:NEWTON-S-LAWS",
+      "level": "AS",
+      "domain": "Mechanics",
+      "paperRoute": "AS-MECHANICS",
+      "unitTitle": "Mechanics",
+      "lessonTitle": "Newton's laws",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "mechanics.newton.second_law.force",
+        "mechanics.newton.third_law.reaction"
+      ],
+      "benchmarkIds": [
+        "9709-mech-newton2",
+        "9709-mech-newton3"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:03:06:CONNECTED-PARTICLES",
+      "level": "AS",
+      "domain": "Mechanics",
+      "paperRoute": "AS-MECHANICS",
+      "unitTitle": "Mechanics",
+      "lessonTitle": "Connected particles",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:03:07:MOMENTUM",
+      "level": "AS",
+      "domain": "Mechanics",
+      "paperRoute": "AS-MECHANICS",
+      "unitTitle": "Mechanics",
+      "lessonTitle": "Momentum",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "mechanics.momentum.impulse"
+      ],
+      "benchmarkIds": [
+        "9709-mech-momentum"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L12:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:03:08:WORK-ENERGY-AND-POWER",
+      "level": "AS",
+      "domain": "Mechanics",
+      "paperRoute": "AS-MECHANICS",
+      "unitTitle": "Mechanics",
+      "lessonTitle": "Work energy and power",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "mechanics.energy.work_energy",
+        "mechanics.power.work_over_time"
+      ],
+      "benchmarkIds": [
+        "9709-mech-work-energy",
+        "9709-mech-power"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:01:FURTHER-ALGEBRA",
+      "level": "A",
+      "domain": "Pure Mathematics",
+      "paperRoute": "A-PURE",
+      "unitTitle": "Advanced Pure Mathematics",
+      "lessonTitle": "Further algebra",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:02:LOGARITHMIC-AND-EXPONENTIAL-FUNCTIONS",
+      "level": "A",
+      "domain": "Pure Mathematics",
+      "paperRoute": "A-PURE",
+      "unitTitle": "Advanced Pure Mathematics",
+      "lessonTitle": "Logarithmic and exponential functions",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "algebra.exponential.same_base.solve",
+        "algebra.logarithm.evaluate"
+      ],
+      "benchmarkIds": [
+        "9709-exponential-same-base",
+        "9709-logarithm"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:03:ADVANCED-TRIGONOMETRY",
+      "level": "A",
+      "domain": "Pure Mathematics",
+      "paperRoute": "A-PURE",
+      "unitTitle": "Advanced Pure Mathematics",
+      "lessonTitle": "Advanced trigonometry",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "trigonometry.special_angles.evaluate"
+      ],
+      "benchmarkIds": [
+        "9709-special-angle-trig"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:04:DIFFERENTIATION-TECHNIQUES",
+      "level": "A",
+      "domain": "Pure Mathematics",
+      "paperRoute": "A-PURE",
+      "unitTitle": "Advanced Pure Mathematics",
+      "lessonTitle": "Differentiation techniques",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "calculus.polynomial.differentiate"
+      ],
+      "benchmarkIds": [
+        "9709-polynomial-derivative"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:05:IMPLICIT-DIFFERENTIATION",
+      "level": "A",
+      "domain": "Pure Mathematics",
+      "paperRoute": "A-PURE",
+      "unitTitle": "Advanced Pure Mathematics",
+      "lessonTitle": "Implicit differentiation",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:06:PARAMETRIC-DIFFERENTIATION",
+      "level": "A",
+      "domain": "Pure Mathematics",
+      "paperRoute": "A-PURE",
+      "unitTitle": "Advanced Pure Mathematics",
+      "lessonTitle": "Parametric differentiation",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:07:INTEGRATION-TECHNIQUES",
+      "level": "A",
+      "domain": "Pure Mathematics",
+      "paperRoute": "A-PURE",
+      "unitTitle": "Advanced Pure Mathematics",
+      "lessonTitle": "Integration techniques",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "calculus.polynomial.integrate.definite"
+      ],
+      "benchmarkIds": [
+        "9709-polynomial-definite-integral"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:08:DIFFERENTIAL-EQUATIONS",
+      "level": "A",
+      "domain": "Pure Mathematics",
+      "paperRoute": "A-PURE",
+      "unitTitle": "Advanced Pure Mathematics",
+      "lessonTitle": "Differential equations",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:09:NUMERICAL-SOLUTION-OF-EQUATIONS",
+      "level": "A",
+      "domain": "Pure Mathematics",
+      "paperRoute": "A-PURE",
+      "unitTitle": "Advanced Pure Mathematics",
+      "lessonTitle": "Numerical solution of equations",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "numerical.roots.bisection.iterate",
+        "numerical.roots.newton.iterate"
+      ],
+      "benchmarkIds": [
+        "9709-bisection",
+        "9709-newton"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:10:VECTORS-IN-THREE-DIMENSIONS",
+      "level": "A",
+      "domain": "Pure Mathematics",
+      "paperRoute": "A-PURE",
+      "unitTitle": "Advanced Pure Mathematics",
+      "lessonTitle": "Vectors in three dimensions",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "vectors.add.exact",
+        "vectors.dot.exact"
+      ],
+      "benchmarkIds": [
+        "9709-vector-add",
+        "9709-vector-dot"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:11:COMPLEX-MODELLING-WITH-FUNCTIONS",
+      "level": "A",
+      "domain": "Pure Mathematics",
+      "paperRoute": "A-PURE",
+      "unitTitle": "Advanced Pure Mathematics",
+      "lessonTitle": "Complex modelling with functions",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:12:SERIES-AND-APPROXIMATIONS",
+      "level": "A",
+      "domain": "Pure Mathematics",
+      "paperRoute": "A-PURE",
+      "unitTitle": "Advanced Pure Mathematics",
+      "lessonTitle": "Series and approximations",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:02:01:POISSON-DISTRIBUTION",
+      "level": "A",
+      "domain": "Probability & Statistics",
+      "paperRoute": "A-PROBSTAT",
+      "unitTitle": "Advanced Probability and Statistics",
+      "lessonTitle": "Poisson distribution",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:02:02:CONTINUOUS-RANDOM-VARIABLES",
+      "level": "A",
+      "domain": "Probability & Statistics",
+      "paperRoute": "A-PROBSTAT",
+      "unitTitle": "Advanced Probability and Statistics",
+      "lessonTitle": "Continuous random variables",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:02:03:SAMPLING",
+      "level": "A",
+      "domain": "Probability & Statistics",
+      "paperRoute": "A-PROBSTAT",
+      "unitTitle": "Advanced Probability and Statistics",
+      "lessonTitle": "Sampling",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:02:04:ESTIMATION",
+      "level": "A",
+      "domain": "Probability & Statistics",
+      "paperRoute": "A-PROBSTAT",
+      "unitTitle": "Advanced Probability and Statistics",
+      "lessonTitle": "Estimation",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:02:05:HYPOTHESIS-TESTING",
+      "level": "A",
+      "domain": "Probability & Statistics",
+      "paperRoute": "A-PROBSTAT",
+      "unitTitle": "Advanced Probability and Statistics",
+      "lessonTitle": "Hypothesis testing",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:02:06:NORMAL-APPROXIMATIONS",
+      "level": "A",
+      "domain": "Probability & Statistics",
+      "paperRoute": "A-PROBSTAT",
+      "unitTitle": "Advanced Probability and Statistics",
+      "lessonTitle": "Normal approximations",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:02:07:LINEAR-COMBINATIONS-OF-RANDOM-VARIABLES",
+      "level": "A",
+      "domain": "Probability & Statistics",
+      "paperRoute": "A-PROBSTAT",
+      "unitTitle": "Advanced Probability and Statistics",
+      "lessonTitle": "Linear combinations of random variables",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:02:08:CORRELATION-AND-REGRESSION-REASONING",
+      "level": "A",
+      "domain": "Probability & Statistics",
+      "paperRoute": "A-PROBSTAT",
+      "unitTitle": "Advanced Probability and Statistics",
+      "lessonTitle": "Correlation and regression reasoning",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:03:01:PROJECTILES",
+      "level": "A",
+      "domain": "Mechanics",
+      "paperRoute": "A-MECHANICS",
+      "unitTitle": "Advanced Mechanics",
+      "lessonTitle": "Projectiles",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:03:02:VARIABLE-ACCELERATION",
+      "level": "A",
+      "domain": "Mechanics",
+      "paperRoute": "A-MECHANICS",
+      "unitTitle": "Advanced Mechanics",
+      "lessonTitle": "Variable acceleration",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:03:03:MOMENTUM-AND-IMPULSE",
+      "level": "A",
+      "domain": "Mechanics",
+      "paperRoute": "A-MECHANICS",
+      "unitTitle": "Advanced Mechanics",
+      "lessonTitle": "Momentum and impulse",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "mechanics.momentum.impulse"
+      ],
+      "benchmarkIds": [
+        "9709-mech-momentum"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:03:04:ENERGY-METHODS",
+      "level": "A",
+      "domain": "Mechanics",
+      "paperRoute": "A-MECHANICS",
+      "unitTitle": "Advanced Mechanics",
+      "lessonTitle": "Energy methods",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "CONTEXTUAL",
+      "engineSkillIds": [
+        "mechanics.energy.work_energy",
+        "mechanics.power.work_over_time"
+      ],
+      "benchmarkIds": [
+        "9709-mech-work-energy",
+        "9709-mech-power"
+      ],
+      "academicReviewStatus": "REQUIRED",
+      "reason": "Exact engine capability overlaps this Edulytics 9709 supporting lesson, but the pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge 9709 capability claim."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:03:05:CIRCULAR-MOTION-FOUNDATIONS",
+      "level": "A",
+      "domain": "Mechanics",
+      "paperRoute": "A-MECHANICS",
+      "unitTitle": "Advanced Mechanics",
+      "lessonTitle": "Circular motion foundations",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:03:06:EQUILIBRIUM-OF-RIGID-BODIES",
+      "level": "A",
+      "domain": "Mechanics",
+      "paperRoute": "A-MECHANICS",
+      "unitTitle": "Advanced Mechanics",
+      "lessonTitle": "Equilibrium of rigid bodies",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:03:07:FRICTION",
+      "level": "A",
+      "domain": "Mechanics",
+      "paperRoute": "A-MECHANICS",
+      "unitTitle": "Advanced Mechanics",
+      "lessonTitle": "Friction",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:03:08:MIXED-MECHANICS-MODELLING",
+      "level": "A",
+      "domain": "Mechanics",
+      "paperRoute": "A-MECHANICS",
+      "unitTitle": "Advanced Mechanics",
+      "lessonTitle": "Mixed mechanics modelling",
+      "sourceAuthority": "Cambridge International Education",
+      "officialSourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+      "formalOutcomeMapped": false,
+      "formalOutcomeCodes": [],
+      "status": "UNSUPPORTED",
+      "engineSkillIds": [],
+      "benchmarkIds": [],
+      "academicReviewStatus": "NOT_READY",
+      "reason": "No reviewed exact Cambridge 9709 SkillContract mapping is approved for this supporting lesson; Stage 24 blocks capability claims instead of inferring them from the title."
+    }
+  ]
+}
