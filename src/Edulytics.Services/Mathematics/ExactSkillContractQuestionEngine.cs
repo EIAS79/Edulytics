@@ -43,7 +43,8 @@ public sealed class ExactSkillContractQuestionEngine
         ExactSkillQuestionDifficulty difficulty,
         int questionCount,
         int seed,
-        IReadOnlyCollection<string> excludedExposureFingerprints)
+        IReadOnlyCollection<string> excludedExposureFingerprints,
+        int? curriculumLogicalLevel = null)
     {
         if (string.IsNullOrWhiteSpace(fingerprintNamespace) ||
             string.IsNullOrWhiteSpace(scopeKey) ||
@@ -74,7 +75,7 @@ public sealed class ExactSkillContractQuestionEngine
             for (var retry = 0; retry < MaxRetriesPerItem && item is null; retry++)
             {
                 var family = allowedQuestionFamilies[(index + retry) % allowedQuestionFamilies.Count];
-                var problem = BuildProblem(family, random, difficulty);
+                var problem = BuildProblem(family, random, difficulty, curriculumLogicalLevel);
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -262,7 +263,8 @@ public sealed class ExactSkillContractQuestionEngine
     private static ExactProblem BuildProblem(
         string family,
         Random random,
-        ExactSkillQuestionDifficulty difficulty)
+        ExactSkillQuestionDifficulty difficulty,
+        int? curriculumLogicalLevel)
     {
         var scale = difficulty switch
         {
@@ -270,33 +272,41 @@ public sealed class ExactSkillContractQuestionEngine
             ExactSkillQuestionDifficulty.Challenge => 3,
             _ => 1
         };
+        var gradeScale = curriculumLogicalLevel switch
+        {
+            >= 12 => 4,
+            >= 10 => 3,
+            >= 7 => 2,
+            _ => 1
+        };
+        var effectiveScale = Math.Max(scale, gradeScale);
 
         return family switch
         {
             "algebra.relationships.two_unknowns.total_difference" =>
-                BuildTwoUnknowns(random, scale),
+                BuildTwoUnknowns(random, effectiveScale),
             "measurement.scale.equal_intervals.read_value" =>
-                BuildScaleReading(random, scale),
+                BuildScaleReading(random, effectiveScale),
             "fractions.compare.unlike.common_denominator" =>
-                BuildUnlikeFractionComparison(random, scale),
+                BuildUnlikeFractionComparison(random, effectiveScale),
             "fractions.equivalent.missing_value" =>
-                BuildEquivalentMissingValue(random, scale, family, "Complete the equivalent fraction"),
+                BuildEquivalentMissingValue(random, effectiveScale, family, "Complete the equivalent fraction"),
             "fractions.equivalent.recognize" =>
-                BuildEquivalentMissingValue(random, scale, family, "Find the missing numerator so both fractions have the same value"),
+                BuildEquivalentMissingValue(random, effectiveScale, family, "Find the missing numerator so both fractions have the same value"),
             "fractions.equivalent.generate_multiple" =>
-                BuildEquivalentMissingValue(random, scale + 1, family, "Generate the equivalent fraction by completing the numerator"),
+                BuildEquivalentMissingValue(random, effectiveScale + 1, family, "Generate the equivalent fraction by completing the numerator"),
             "fractions.equivalent.number_line" =>
-                BuildEquivalentMissingValue(random, scale, family, "The fractions mark the same point on a number line. Complete the numerator"),
+                BuildEquivalentMissingValue(random, effectiveScale, family, "The fractions mark the same point on a number line. Complete the numerator"),
             "fractions.equivalent.reduce_common_factor" =>
-                BuildEquivalentReduction(random, scale),
+                BuildEquivalentReduction(random, effectiveScale),
             "ratio.unit_rate.direct" =>
-                BuildUnitRate(random, scale),
+                BuildUnitRate(random, effectiveScale),
             "ratio.unit_rate.equivalent_ratio" =>
-                BuildEquivalentRatio(random, scale),
+                BuildEquivalentRatio(random, effectiveScale),
             "number.whole.add_subtract.within_10" =>
                 BuildWholeNumberAddSubtract(random, family, 10, requireRegrouping: false, contextual: false),
             "number.whole.add_subtract.across_10" =>
-                BuildWholeNumberAddSubtract(random, family, 40 + 20 * scale, requireRegrouping: true, contextual: false),
+                BuildWholeNumberAddSubtract(random, family, 40 + 20 * effectiveScale, requireRegrouping: true, contextual: false),
             "number.whole.add_subtract.within_100" =>
                 BuildWholeNumberAddSubtract(random, family, 100, requireRegrouping: false, contextual: false),
             "number.whole.add_subtract.columnar" =>
@@ -304,37 +314,37 @@ public sealed class ExactSkillContractQuestionEngine
             "number.whole.add_subtract.contextual_within_100" =>
                 BuildWholeNumberAddSubtract(random, family, 100, requireRegrouping: false, contextual: true),
             "number.whole.add_subtract.contextual_across_10" =>
-                BuildWholeNumberAddSubtract(random, family, 40 + 20 * scale, requireRegrouping: true, contextual: true),
+                BuildWholeNumberAddSubtract(random, family, 40 + 20 * effectiveScale, requireRegrouping: true, contextual: true),
             "fractions.notation.identify_part" =>
-                BuildFractionNotation(random, scale),
+                BuildFractionNotation(random, effectiveScale),
             "fractions.of_quantity.exact" =>
-                BuildFractionOfQuantity(random, scale),
+                BuildFractionOfQuantity(random, effectiveScale),
             "fractions.number_line.read" =>
-                BuildFractionNumberLine(random, scale),
+                BuildFractionNumberLine(random, effectiveScale),
             "fractions.mixed_numbers.number_line.improper_numerator" =>
-                BuildMixedNumberImproperNumerator(random, scale, family, numberLine: true),
+                BuildMixedNumberImproperNumerator(random, effectiveScale, family, numberLine: true),
             "fractions.mixed_improper.convert_to_improper_numerator" =>
-                BuildMixedNumberImproperNumerator(random, scale, family, numberLine: false),
+                BuildMixedNumberImproperNumerator(random, effectiveScale, family, numberLine: false),
             "fractions.simplify.lowest_terms" =>
-                BuildSimplifyFraction(random, scale),
+                BuildSimplifyFraction(random, effectiveScale),
             "fractions.common_denominator.missing_numerator" =>
-                BuildCommonDenominator(random, scale),
+                BuildCommonDenominator(random, effectiveScale),
             "fractions.multiply_by_whole.exact" =>
-                BuildMultiplyFractionByWhole(random, scale),
+                BuildMultiplyFractionByWhole(random, effectiveScale),
             "fractions.multiply.exact" =>
-                BuildMultiplyFractions(random, scale),
+                BuildMultiplyFractions(random, effectiveScale),
             "fractions.divide_by_whole.exact" =>
-                BuildDivideFractionByWhole(random, scale),
+                BuildDivideFractionByWhole(random, effectiveScale),
             "fractions.add_subtract.exact" =>
-                BuildAddSubtractFractions(random, scale),
+                BuildAddSubtractFractions(random, effectiveScale),
             "fractions.compare.general" =>
-                BuildCompareFractions(random, scale),
+                BuildCompareFractions(random, effectiveScale),
             "fractions.compare.benchmark_half" =>
-                BuildCompareFractionToHalf(random, scale),
+                BuildCompareFractionToHalf(random, effectiveScale),
             "algebra.linear.ax_plus_b_equals_c" =>
-                BuildLinearEquation(random, scale),
+                BuildLinearEquation(random, effectiveScale),
             ExactLinearInequalityQuestionFactory.FamilyId =>
-                BuildLinearInequality(random, scale),
+                BuildLinearInequality(random, Math.Min(3, effectiveScale)),
             _ => UnsupportedFamily(family)
         };
     }
