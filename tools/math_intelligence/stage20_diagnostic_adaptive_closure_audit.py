@@ -12,6 +12,7 @@ STAGE20 = ROOT / "src/Edulytics.Core/Mathematics/Curriculum/stage20-diagnostic-a
 CONTRACTS = ROOT / "src/Edulytics.Core/AdaptiveAssessment/AdaptiveAssessmentContracts.cs"
 ENGINE = ROOT / "src/Edulytics.Services/AdaptiveAssessment/AdaptiveDiagnosticAssessmentEngine.cs"
 DIFFICULTY = ROOT / "src/Edulytics.Services/Mathematics/Difficulty/MathematicsDifficultyEngine.cs"
+DIFFICULTY_CONTRACTS = ROOT / "src/Edulytics.Core/Mathematics/Difficulty/MathematicsDifficultyAssessment.cs"
 REGISTRATION = ROOT / "src/Edulytics.Web/Extensions/AdaptiveAssessmentRegistrationExtensions.cs"
 TESTS = ROOT / "tests/Edulytics.Tests/MathematicsIntelligence/Stage20DiagnosticAdaptiveMigrationTests.cs"
 REPORT = ROOT / "artifacts/math-intelligence/stage20-diagnostic-adaptive-closure-audit.json"
@@ -95,6 +96,7 @@ def audit() -> dict[str, Any]:
     contracts = CONTRACTS.read_text(encoding="utf-8")
     engine = ENGINE.read_text(encoding="utf-8")
     difficulty = DIFFICULTY.read_text(encoding="utf-8")
+    difficulty_contracts = DIFFICULTY_CONTRACTS.read_text(encoding="utf-8")
     registration = REGISTRATION.read_text(encoding="utf-8")
     tests = TESTS.read_text(encoding="utf-8")
 
@@ -138,19 +140,21 @@ def audit() -> dict[str, Any]:
     if engine.find("Stage19AssessmentSkillContracts.TryResolve") > engine.find("return DecideLegacy"):
         blockers.append("Stage 20 exact Outcome routing does not precede the legacy adaptive path.")
 
-    if "Recommend(new MathematicsAdaptiveLearnerState" not in engine:
+    if "mathematicsDifficultyEngine.Recommend(" not in engine or "new MathematicsAdaptiveLearnerState(" not in engine:
         blockers.append("Stage 20 engine does not consume the shared MathematicsDifficultyEngine adaptive recommendation.")
 
     difficulty_tokens = [
-        "SkillMastery",
-        "PrerequisiteMastery",
-        "RepresentationFluency",
-        "RecentMisconceptionCount",
-        "TargetComplexityScore",
+        "learner.SkillMastery",
+        "learner.PrerequisiteMastery",
+        "learner.RepresentationFluency",
+        "learner.RecentMisconceptionCount",
     ]
     for token in difficulty_tokens:
         if token not in difficulty:
-            blockers.append(f"Shared Mathematics difficulty engine is missing adaptive signal/output token: {token}")
+            blockers.append(f"Shared Mathematics difficulty engine is missing adaptive signal token: {token}")
+
+    if "TargetComplexityScore" not in difficulty_contracts:
+        blockers.append("Shared Mathematics adaptive recommendation does not retain TargetComplexityScore.")
 
     if "AddSingleton<MathematicsDifficultyEngine>()" not in registration:
         blockers.append("Stage 20 MathematicsDifficultyEngine is not registered for runtime DI.")
