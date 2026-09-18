@@ -687,6 +687,37 @@
       "domain": "fractions",
       "canonicalName": "Compare fractions with different denominators",
       "legacyGameMechanic": "FRACTION_COMPARE_UNLIKE"
+    },
+    {
+      "id": "fractions.add_subtract",
+      "domain": "fractions",
+      "canonicalName": "Add and subtract fractions with exact rational arithmetic",
+      "description": "Add and subtract proper, improper and mixed-number fractions using equivalent fractions/common denominators while preserving exact value.",
+      "aliases": [
+        "add and subtract fractions",
+        "add and subtract related fractions",
+        "add and subtract unlike fractions",
+        "add and subtract fractions within 1",
+        "add and subtract improper and mixed fractions"
+      ],
+      "prerequisiteSkillIds": [
+        "fractions.equivalent"
+      ],
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.add_subtract.within_one.build",
+        "fractions.add_subtract.within_one.apply",
+        "fractions.add_subtract.same_denominator_mixed.build",
+        "fractions.add_subtract.same_denominator_mixed.apply",
+        "fractions.add_subtract.related.build",
+        "fractions.add_subtract.related.apply",
+        "fractions.add_subtract.unlike_denominators.build",
+        "fractions.add_subtract.unlike_denominators.apply"
+      ]
     }
   ]
 }
