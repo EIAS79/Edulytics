@@ -11,6 +11,7 @@ STAGE17 = ROOT / "src/Edulytics.Core/Mathematics/Curriculum/stage17-grade1-6-pro
 STAGE18 = ROOT / "src/Edulytics.Core/Mathematics/Curriculum/stage18-practice-migration-manifest.v1.json"
 SERVICE = ROOT / "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs"
 ENGINE = ROOT / "src/Edulytics.Services/Practice/Stage18SkillContractPracticeEngine.cs"
+SHARED_ENGINE = ROOT / "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs"
 PRACTICE = ROOT / "src/Edulytics.Services/Practice/PracticeService.cs"
 REPORT = ROOT / "artifacts/math-intelligence/stage18-practice-closure-audit.json"
 
@@ -80,6 +81,7 @@ def audit() -> dict[str, Any]:
 
     service = SERVICE.read_text(encoding="utf-8")
     engine = ENGINE.read_text(encoding="utf-8")
+    shared_engine = SHARED_ENGINE.read_text(encoding="utf-8")
     practice = PRACTICE.read_text(encoding="utf-8")
 
     exact_gate = service.find("Stage18PracticeSkillContracts.TryResolve")
@@ -93,14 +95,33 @@ def audit() -> dict[str, Any]:
 
     required_engine_tokens = [
         "Stage18SkillContractPracticeEngine",
-        "Solve(problem)",
-        "Verify(problem, answer)",
+        "ExactSkillContractQuestionEngine().Generate",
+        "ExactSkillContractQuestionEngine.Verify",
         "broadFallbackUsed = false",
         "Stage18PracticeSkillContracts.GenerationMethod",
     ]
     for token in required_engine_tokens:
         if token not in engine:
             blockers.append(f"Stage 18 exact Practice engine is missing required contract token: {token}")
+
+    shared_required_tokens = [
+        "ExactSkillContractQuestionEngine",
+        "private static string Solve",
+        "public static bool Verify",
+        "Unsupported exact Mathematics question family",
+    ]
+    for token in shared_required_tokens:
+        if token not in shared_engine:
+            blockers.append(f"Shared exact Mathematics kernel is missing required token: {token}")
+
+    shared_forbidden_tokens = [
+        "CurriculumContextCheck",
+        "MathematicsAiCapabilityMatrix",
+        "UniversalMathematicsQuestionGenerationEngine",
+    ]
+    for token in shared_forbidden_tokens:
+        if token in shared_engine:
+            blockers.append(f"Shared exact Mathematics kernel references broad fallback capability: {token}")
 
     forbidden_engine_tokens = [
         "UniversalMathematicsQuestionGenerationEngine",
