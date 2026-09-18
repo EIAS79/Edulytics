@@ -24,6 +24,7 @@ public sealed record ExactSkillGeneratedQuestion(
     AssessmentItemType ItemType,
     string CorrectAnswer,
     IReadOnlyDictionary<string, int> Parameters,
+    IReadOnlyDictionary<string, string> Representation,
     string ExposureFingerprint);
 
 /// <summary>
@@ -103,6 +104,7 @@ public sealed class ExactSkillContractQuestionEngine
                     problem.ItemType,
                     answer,
                     problem.Parameters,
+                    problem.Representation,
                     fingerprint);
             }
 
@@ -1083,7 +1085,23 @@ public sealed class ExactSkillContractQuestionEngine
             prompt,
             solution,
             itemType,
-            parameters.ToDictionary(x => x.Name, x => x.Value, StringComparer.Ordinal));
+            parameters.ToDictionary(x => x.Name, x => x.Value, StringComparer.Ordinal),
+            new Dictionary<string, string>(StringComparer.Ordinal));
+
+    private static ExactProblem ProblemWithRepresentation(
+        string family,
+        string prompt,
+        string solution,
+        AssessmentItemType itemType,
+        IReadOnlyDictionary<string, string> representation,
+        params (string Name, int Value)[] parameters) =>
+        new(
+            family,
+            prompt,
+            solution,
+            itemType,
+            parameters.ToDictionary(x => x.Name, x => x.Value, StringComparer.Ordinal),
+            new Dictionary<string, string>(representation, StringComparer.Ordinal));
 
     private static string Compare(int left, int right) =>
         left < right ? "<" : left > right ? ">" : "=";
@@ -1111,5 +1129,6 @@ public sealed class ExactSkillContractQuestionEngine
         string Prompt,
         string Solution,
         AssessmentItemType ItemType,
-        IReadOnlyDictionary<string, int> Parameters);
+        IReadOnlyDictionary<string, int> Parameters,
+        IReadOnlyDictionary<string, string> Representation);
 }
