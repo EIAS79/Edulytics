@@ -14,6 +14,8 @@ RECOVERY = ROOT / "src/Edulytics.Services/Recovery/WeaknessRecoveryEngine.cs"
 ORCHESTRATOR = ROOT / "src/Edulytics.Services/Recovery/EquivalentReassessmentGenerator.cs"
 ENGINE = ROOT / "src/Edulytics.Services/Recovery/Stage21ExactReassessmentEngine.cs"
 SHARED_EXACT = ROOT / "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs"
+REGISTRATION = ROOT / "src/Edulytics.Web/Extensions/WeaknessRecoveryRegistrationExtensions.cs"
+PROGRAM = ROOT / "src/Edulytics.Web/Program.cs"
 TESTS = ROOT / "tests/Edulytics.Tests/MathematicsIntelligence/Stage21ReassessmentMigrationTests.cs"
 REPORT = ROOT / "artifacts/math-intelligence/stage21-reassessment-closure-audit.json"
 
@@ -120,6 +122,8 @@ def audit() -> dict[str, Any]:
     orchestrator = ORCHESTRATOR.read_text(encoding="utf-8")
     engine = ENGINE.read_text(encoding="utf-8")
     shared = SHARED_EXACT.read_text(encoding="utf-8")
+    registration = REGISTRATION.read_text(encoding="utf-8")
+    program = PROGRAM.read_text(encoding="utf-8")
     tests = TESTS.read_text(encoding="utf-8")
 
     for token in [
@@ -189,6 +193,17 @@ def audit() -> dict[str, Any]:
     ]:
         if token not in shared:
             blockers.append(f"Shared exact Mathematics kernel is missing required solver/verifier token: {token}")
+
+    for token in [
+        "AddSingleton<WeaknessRecoveryEngine>()",
+        "AddSingleton<Stage21ExactReassessmentEngine>()",
+        "AddSingleton<EquivalentReassessmentGenerator>()",
+    ]:
+        if token not in registration:
+            blockers.append(f"Stage 21 runtime registration is missing token: {token}")
+
+    if ".AddWeaknessRecoveryPhase36();" not in program:
+        blockers.append("Stage 21 weakness-recovery services are not enabled in the web runtime.")
 
     required_tests = [
         "EveryExactOutcomeGeneratesMathematicallyFreshVerifiedReassessment",
