@@ -11,6 +11,27 @@ public enum RecoveryOutcome
     Mastered = 3
 }
 
+public enum ReassessmentCognitiveDemand
+{
+    Standard = 1,
+    Stretch = 2,
+    Challenge = 3
+}
+
+/// <summary>
+/// Reconstructable mathematical exposure signature used by Stage 21 to prove
+/// that reassessment freshness is mathematical rather than wording-only.
+/// </summary>
+public sealed record ReassessmentMathematicalSignature(
+    string ExposureFingerprint,
+    string QuestionFamily,
+    string CoefficientSignature,
+    string Representation,
+    string Strategy,
+    string Context,
+    string MisconceptionTrap,
+    ReassessmentCognitiveDemand CognitiveDemand);
+
 public sealed record WeaknessRecoveryRequest(
     Guid SchoolId,
     Guid CurriculumAdoptionId,
@@ -23,7 +44,8 @@ public sealed record WeaknessRecoveryRequest(
     IReadOnlyCollection<string> PreviousPrompts,
     AssessmentDifficultyPolicy ComparableDifficultyPolicy,
     int PracticeQuestionCount,
-    int ReassessmentQuestionCount);
+    int ReassessmentQuestionCount,
+    IReadOnlyCollection<ReassessmentMathematicalSignature>? PreviousMathematicalSignatures = null);
 
 public sealed record WeaknessRecoveryPlan(
     Guid SchoolId,
@@ -39,7 +61,8 @@ public sealed record WeaknessRecoveryPlan(
     IReadOnlyList<string> ExcludedExposureFingerprints,
     IReadOnlyList<string> PreviousPromptShapes,
     bool ExcludePreviouslySeenQuestions,
-    string FormulaVersion);
+    string FormulaVersion,
+    IReadOnlyList<ReassessmentMathematicalSignature>? PreviousMathematicalSignatures = null);
 
 public sealed record RecoveryEvaluation(
     RecoveryOutcome Outcome,
