@@ -54,8 +54,8 @@ public sealed class SupportingLessonPracticeR2Tests
                         item.GenerationFamily,
                         StringComparison.Ordinal));
                 Assert.True(Stage18SkillContractPracticeEngine.VerifyPersistedItem(legacy, item));
-                Assert.Contains("\\\"solverVerified\\\":true", item.ValidationMetadataJson, StringComparison.Ordinal);
-                Assert.Contains("\\\"broadFallbackUsed\\\":false", item.ValidationMetadataJson, StringComparison.Ordinal);
+                Assert.Contains(@"""solverVerified"":true", item.ValidationMetadataJson, StringComparison.Ordinal);
+                Assert.Contains(@"""broadFallbackUsed"":false", item.ValidationMetadataJson, StringComparison.Ordinal);
             });
         }
     }
@@ -86,10 +86,7 @@ public sealed class SupportingLessonPracticeR2Tests
             "PED:UAE-MOE-MATH:L12:ADVANCED:01:06:RATES-AND-UNIT-RATES",
             mappingJson,
             StringComparison.Ordinal);
-        Assert.Contains(
-            ""officialOutcomeMapped": false",
-            mappingJson,
-            StringComparison.Ordinal);
+        Assert.Contains(@"""officialOutcomeMapped"": false", mappingJson, StringComparison.Ordinal);
     }
 
     private static string FindRoot()
