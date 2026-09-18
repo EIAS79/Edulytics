@@ -510,7 +510,7 @@ public sealed class Stage21ExactReassessmentEngine
         int variant)
     {
         _ = uiDifficulty; // UI comparability is preserved by the blueprint allocation.
-        return Math.Abs(variant) % 3 switch
+        return (Math.Abs(variant) % 3) switch
         {
             0 => ReassessmentCognitiveDemand.Standard,
             1 => ReassessmentCognitiveDemand.Stretch,
