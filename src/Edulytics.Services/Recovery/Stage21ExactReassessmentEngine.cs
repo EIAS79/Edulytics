@@ -63,6 +63,8 @@ public sealed class Stage21ExactReassessmentEngine
             .ToHashSet(StringComparer.Ordinal);
         var selectedFingerprints = new HashSet<string>(StringComparer.Ordinal);
         var selectedCoefficientSignatures = new HashSet<string>(StringComparer.Ordinal);
+        var selectedPromptShapes = new HashSet<string>(StringComparer.Ordinal);
+        var previousPromptShapes = plan.PreviousPromptShapes.ToHashSet(StringComparer.Ordinal);
         var selectedSignatures = new List<ReassessmentMathematicalSignature>();
         var generated = new List<GeneratedMathematicsItem>();
 
@@ -123,20 +125,24 @@ public sealed class Stage21ExactReassessmentEngine
                         descriptor.MisconceptionTrap,
                         demand);
 
+                    var prompt = BuildPrompt(
+                        question.Family,
+                        question.Parameters,
+                        descriptor,
+                        question.Prompt);
+                    var promptShape = WeaknessRecoveryEngine.NormalizePromptShape(prompt);
+
                     if (excludedFingerprints.Contains(exposureFingerprint) ||
                         selectedFingerprints.Contains(exposureFingerprint) ||
                         selectedCoefficientSignatures.Contains(coefficientSignature) ||
+                        previousPromptShapes.Contains(promptShape) ||
+                        selectedPromptShapes.Contains(promptShape) ||
                         !IsMathematicallyFresh(signature, previous))
                     {
                         continue;
                     }
 
                     var itemId = Guid.NewGuid();
-                    var prompt = BuildPrompt(
-                        question.Family,
-                        question.Parameters,
-                        descriptor,
-                        question.Prompt);
 
                     var item = new AssessmentItem
                     {
@@ -219,6 +225,9 @@ public sealed class Stage21ExactReassessmentEngine
                 selectedSignatures.Add(acceptedSignature);
                 selectedFingerprints.Add(acceptedSignature.ExposureFingerprint);
                 selectedCoefficientSignatures.Add(acceptedSignature.CoefficientSignature);
+                selectedPromptShapes.Add(
+                    WeaknessRecoveryEngine.NormalizePromptShape(
+                        accepted.Item.Prompt));
                 sequence++;
             }
         }
