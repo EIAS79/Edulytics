@@ -189,6 +189,13 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters["baseFirst"] * parameters["targetSecond"] ==
                     value * parameters["baseSecond"],
 
+            "number.whole.add_subtract.within_10" or
+            "number.whole.add_subtract.across_10" or
+            "number.whole.add_subtract.within_100" or
+            "number.whole.add_subtract.columnar" or
+            "number.whole.add_subtract.contextual_within_100" =>
+                VerifyWholeNumberAddSubtract(family, parameters, value),
+
             _ => false
         };
     }
@@ -227,6 +234,16 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUnitRate(random, scale),
             "ratio.unit_rate.equivalent_ratio" =>
                 BuildEquivalentRatio(random, scale),
+            "number.whole.add_subtract.within_10" =>
+                BuildWholeNumberAddSubtract(random, family, 10, requireRegrouping: false, contextual: false),
+            "number.whole.add_subtract.across_10" =>
+                BuildWholeNumberAddSubtract(random, family, 40 + 20 * scale, requireRegrouping: true, contextual: false),
+            "number.whole.add_subtract.within_100" =>
+                BuildWholeNumberAddSubtract(random, family, 100, requireRegrouping: false, contextual: false),
+            "number.whole.add_subtract.columnar" =>
+                BuildWholeNumberAddSubtract(random, family, 999, requireRegrouping: true, contextual: false),
+            "number.whole.add_subtract.contextual_within_100" =>
+                BuildWholeNumberAddSubtract(random, family, 100, requireRegrouping: false, contextual: true),
             ExactLinearInequalityQuestionFactory.FamilyId =>
                 BuildLinearInequality(random, scale),
             _ => UnsupportedFamily(family)
@@ -366,6 +383,134 @@ public sealed class ExactSkillContractQuestionEngine
             ("baseFirst", baseFirst),
             ("baseSecond", baseSecond),
             ("targetSecond", targetSecond));
+    }
+
+    private static ExactProblem BuildWholeNumberAddSubtract(
+        Random random,
+        string family,
+        int maximum,
+        bool requireRegrouping,
+        bool contextual)
+    {
+        for (var attempt = 0; attempt < 128; attempt++)
+        {
+            var operation = random.Next(0, 2); // 0 = addition, 1 = subtraction.
+            int left;
+            int right;
+            int answer;
+
+            if (operation == 0)
+            {
+                left = random.Next(1, maximum);
+                right = random.Next(1, maximum);
+                answer = left + right;
+                if (answer > maximum)
+                    continue;
+
+                if (requireRegrouping &&
+                    (left % 10) + (right % 10) < 10)
+                {
+                    continue;
+                }
+            }
+            else
+            {
+                answer = random.Next(0, maximum);
+                right = random.Next(1, Math.Max(2, maximum - answer + 1));
+                left = answer + right;
+                if (left > maximum)
+                    continue;
+
+                if (requireRegrouping &&
+                    left >= 10 &&
+                    (left % 10) >= (right % 10))
+                {
+                    continue;
+                }
+            }
+
+            if (family == "number.whole.add_subtract.within_10" &&
+                (left > 10 || right > 10 || answer > 10))
+            {
+                continue;
+            }
+
+            var symbol = operation == 0 ? "+" : "−";
+            var prompt = contextual
+                ? operation == 0
+                    ? $"A class has {left} counters and receives {right} more. How many counters are there altogether?"
+                    : $"A box has {left} counters and {right} are removed. How many counters remain?"
+                : $"Calculate {left} {symbol} {right}.";
+
+            var solution = operation == 0
+                ? $"Add {left} and {right}: {left} + {right} = {answer}. Check by subtracting one addend from the total."
+                : $"Subtract {right} from {left}: {left} − {right} = {answer}. Check by adding {answer} and {right}.";
+
+            return Problem(
+                family,
+                prompt,
+                solution,
+                AssessmentItemType.Numeric,
+                ("operation", operation),
+                ("left", left),
+                ("right", right),
+                ("maximum", maximum),
+                ("regrouping", requireRegrouping ? 1 : 0));
+        }
+
+        throw new InvalidOperationException(
+            $"Unable to construct a bounded whole-number add/subtract item for {family}.");
+    }
+
+    private static bool VerifyWholeNumberAddSubtract(
+        string family,
+        IReadOnlyDictionary<string, int> parameters,
+        int answer)
+    {
+        if (!parameters.TryGetValue("operation", out var operation) ||
+            !parameters.TryGetValue("left", out var left) ||
+            !parameters.TryGetValue("right", out var right) ||
+            !parameters.TryGetValue("maximum", out var maximum) ||
+            left < 0 ||
+            right < 0 ||
+            maximum < 1)
+        {
+            return false;
+        }
+
+        var expected = operation switch
+        {
+            0 => left + right,
+            1 when left >= right => left - right,
+            _ => int.MinValue
+        };
+        if (answer != expected || answer < 0 || answer > maximum)
+            return false;
+
+        if (family == "number.whole.add_subtract.within_10" &&
+            (left > 10 || right > 10 || answer > 10))
+        {
+            return false;
+        }
+
+        if (family is "number.whole.add_subtract.across_10" or
+            "number.whole.add_subtract.columnar")
+        {
+            var regrouping = operation == 0
+                ? (left % 10) + (right % 10) >= 10
+                : left >= 10 && (left % 10) < (right % 10);
+            if (!regrouping)
+                return false;
+        }
+
+        if (family is "number.whole.add_subtract.within_100" or
+            "number.whole.add_subtract.contextual_within_100")
+        {
+            if (left > 100 || right > 100 || answer > 100)
+                return false;
+        }
+
+        return true;
     }
 
     private static ExactProblem BuildLinearInequality(Random random, int scale)
