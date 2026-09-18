@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Mathematics.Ast;
+using Edulytics.Services.Assessments;
 using Edulytics.Services.Mathematics.Generation;
 using Edulytics.Services.Mathematics.Runtime;
 using Edulytics.Services.Mathematics.Solving;
@@ -144,6 +145,27 @@ public sealed class ExactSkillContractQuestionEngine
                 NormalizeInequalityAnswer(answer),
                 NormalizeInequalityAnswer(expected),
                 StringComparison.Ordinal);
+        }
+
+        if (family.StartsWith("fractions.add_subtract.", StringComparison.Ordinal))
+        {
+            var operation = parameters["operation"];
+            var n1 = parameters["n1"];
+            var d1 = parameters["d1"];
+            var n2 = parameters["n2"];
+            var d2 = parameters["d2"];
+            if (d1 <= 0 || d2 <= 0 || operation is < 0 or > 1)
+                return false;
+
+            var resultNumerator = operation == 0
+                ? n1 * d2 + n2 * d1
+                : n1 * d2 - n2 * d1;
+            var resultDenominator = d1 * d2;
+            if (resultNumerator < 0)
+                return false;
+
+            var expected = FormatReducedFraction(resultNumerator, resultDenominator);
+            return MathematicsAnswerEquivalence.AreEquivalent(answer, expected);
         }
 
         if (family is "number.whole.divide.with_remainder.build" or
@@ -337,6 +359,15 @@ public sealed class ExactSkillContractQuestionEngine
             "fractions.of_quantity.build" or
             "fractions.of_quantity.apply" =>
                 BuildFractionOfQuantity(family, random, scale),
+            "fractions.add_subtract.within_one.build" or
+            "fractions.add_subtract.within_one.apply" or
+            "fractions.add_subtract.same_denominator_mixed.build" or
+            "fractions.add_subtract.same_denominator_mixed.apply" or
+            "fractions.add_subtract.related.build" or
+            "fractions.add_subtract.related.apply" or
+            "fractions.add_subtract.unlike_denominators.build" or
+            "fractions.add_subtract.unlike_denominators.apply" =>
+                BuildFractionAddSubtract(family, random, scale),
             ExactLinearEquationQuestionFactory.FamilyId =>
                 BuildLinearEquation(random, scale),
             ExactLinearInequalityQuestionFactory.FamilyId =>
@@ -707,6 +738,93 @@ public sealed class ExactSkillContractQuestionEngine
             ("quantity", quantity));
     }
 
+    private static ExactProblem BuildFractionAddSubtract(
+        string family,
+        Random random,
+        int scale)
+    {
+        var isApply = family.EndsWith(".apply", StringComparison.Ordinal);
+        var operation = random.Next(0, 2);
+        int n1;
+        int d1;
+        int n2;
+        int d2;
+
+        if (family.Contains(".same_denominator_mixed.", StringComparison.Ordinal))
+        {
+            d1 = random.Next(3, 8 + scale);
+            d2 = d1;
+            n1 = random.Next(d1 + 1, d1 * (2 + scale));
+            n2 = operation == 0
+                ? random.Next(1, d1 + 1)
+                : random.Next(1, Math.Min(n1, d1 * 2));
+        }
+        else if (family.Contains(".related.", StringComparison.Ordinal))
+        {
+            var small = random.Next(2, 6 + scale);
+            var factor = random.Next(2, 4 + scale);
+            d1 = small;
+            d2 = small * factor;
+            n1 = random.Next(1, d1);
+            n2 = random.Next(1, d2);
+            if (operation == 1 && n1 * d2 < n2 * d1)
+                (n1, d1, n2, d2) = (n2, d2, n1, d1);
+        }
+        else
+        {
+            d1 = random.Next(3, 8 + scale);
+            d2 = random.Next(3, 9 + scale);
+            while (d2 == d1)
+                d2 = random.Next(3, 9 + scale);
+
+            n1 = random.Next(1, d1);
+            n2 = random.Next(1, d2);
+
+            if (family.Contains(".within_one.", StringComparison.Ordinal))
+            {
+                // Keep the result in [0, 1] while still requiring fraction arithmetic.
+                if (operation == 0)
+                {
+                    var attempts = 0;
+                    while (n1 * d2 + n2 * d1 > d1 * d2 && attempts++ < 64)
+                    {
+                        n1 = random.Next(1, d1);
+                        n2 = random.Next(1, d2);
+                    }
+                    if (n1 * d2 + n2 * d1 > d1 * d2)
+                    {
+                        n1 = 1;
+                        n2 = 1;
+                    }
+                }
+                else if (n1 * d2 < n2 * d1)
+                {
+                    (n1, d1, n2, d2) = (n2, d2, n1, d1);
+                }
+            }
+            else if (operation == 1 && n1 * d2 < n2 * d1)
+            {
+                (n1, d1, n2, d2) = (n2, d2, n1, d1);
+            }
+        }
+
+        var symbol = operation == 0 ? "+" : "−";
+        var prompt = isApply
+            ? $"A quantity is represented by {n1}/{d1} of a whole and changes by {(operation == 0 ? "adding" : "subtracting")} {n2}/{d2} of the same whole. What is the result?"
+            : $"Calculate {n1}/{d1} {symbol} {n2}/{d2}. Give the answer in simplest form.";
+
+        return Problem(
+            family,
+            prompt,
+            "Use equivalent fractions to express both terms with a common denominator, combine the numerators, simplify the result, and verify by exact rational arithmetic.",
+            AssessmentItemType.ShortAnswer,
+            ("n1", n1),
+            ("d1", d1),
+            ("n2", n2),
+            ("d2", d2),
+            ("operation", operation));
+    }
+
     private static ExactProblem BuildLinearEquation(Random random, int scale)
     {
         var factory = new ExactLinearEquationQuestionFactory(
@@ -867,6 +985,16 @@ public sealed class ExactSkillContractQuestionEngine
                 ((p["quantity"] / p["denominator"]) * p["numerator"])
                     .ToString(CultureInfo.InvariantCulture),
 
+            "fractions.add_subtract.within_one.build" or
+            "fractions.add_subtract.within_one.apply" or
+            "fractions.add_subtract.same_denominator_mixed.build" or
+            "fractions.add_subtract.same_denominator_mixed.apply" or
+            "fractions.add_subtract.related.build" or
+            "fractions.add_subtract.related.apply" or
+            "fractions.add_subtract.unlike_denominators.build" or
+            "fractions.add_subtract.unlike_denominators.apply" =>
+                SolveFractionAddSubtract(p),
+
             ExactLinearEquationQuestionFactory.FamilyId =>
                 ((p["right"] - p["offset"]) / p["coefficient"])
                     .ToString(CultureInfo.InvariantCulture),
@@ -876,6 +1004,46 @@ public sealed class ExactSkillContractQuestionEngine
 
             _ => throw new InvalidOperationException($"Unsupported exact Mathematics solver family: {problem.Family}")
         };
+    }
+
+    private static string SolveFractionAddSubtract(IReadOnlyDictionary<string, int> parameters)
+    {
+        var numerator = parameters["operation"] == 0
+            ? parameters["n1"] * parameters["d2"] + parameters["n2"] * parameters["d1"]
+            : parameters["n1"] * parameters["d2"] - parameters["n2"] * parameters["d1"];
+        var denominator = parameters["d1"] * parameters["d2"];
+        if (numerator < 0 || denominator <= 0)
+            throw new InvalidOperationException("Generated fraction operation left the supported non-negative rational domain.");
+
+        return FormatReducedFraction(numerator, denominator);
+    }
+
+    private static string FormatReducedFraction(int numerator, int denominator)
+    {
+        if (denominator <= 0)
+            throw new InvalidOperationException("Fraction denominator must be positive.");
+
+        if (numerator == 0)
+            return "0";
+
+        var divisor = GreatestCommonDivisor(Math.Abs(numerator), denominator);
+        numerator /= divisor;
+        denominator /= divisor;
+        return denominator == 1
+            ? numerator.ToString(CultureInfo.InvariantCulture)
+            : $"{numerator.ToString(CultureInfo.InvariantCulture)}/{denominator.ToString(CultureInfo.InvariantCulture)}";
+    }
+
+    private static int GreatestCommonDivisor(int left, int right)
+    {
+        while (right != 0)
+        {
+            var remainder = left % right;
+            left = right;
+            right = remainder;
+        }
+
+        return Math.Abs(left);
     }
 
     private static string SolveLinearInequality(IReadOnlyDictionary<string, int> parameters)
