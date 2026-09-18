@@ -621,6 +621,22 @@
       "provider": "edulytics-exact-skill-contract",
       "providerVersion": "fraction-of-quantity-exact-v1",
       "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.add_subtract.exact",
+      "domain": "fractions",
+      "canonicalName": "Generate and solve exact fraction addition and subtraction",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-add-subtract-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.verify.add_subtract",
+      "domain": "fractions",
+      "canonicalName": "Independently verify fraction addition and subtraction from original rational operands",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-add-subtract-exact-v1",
+      "status": "ShadowVerified"
     }
   ]
 }
