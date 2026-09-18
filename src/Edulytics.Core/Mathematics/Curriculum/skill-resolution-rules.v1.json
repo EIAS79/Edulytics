@@ -301,6 +301,58 @@
       "negativePatterns": [
         "\\bfraction of (?:a )?(?:quantity|amount|number)\\b"
       ]
+    },
+    {
+      "id": "fraction-add-subtract",
+      "skillId": "fractions.add_subtract",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\badd and subtract (?:related |unlike )?fractions?\\b",
+        "\\badd and subtract improper and mixed fractions?\\b",
+        "\\bfraction addition and subtraction\\b"
+      ],
+      "contentPatterns": [
+        "\\bcommon denominator\\b",
+        "\\badd(?:ing)? fractions?\\b",
+        "\\bsubtract(?:ing)? fractions?\\b",
+        "\\bimproper fractions?\\b",
+        "\\bmixed numbers?\\b"
+      ],
+      "negativePatterns": [
+        "\\bwhole-number addition\\b"
+      ]
+    },
+    {
+      "id": "fraction-representations",
+      "skillId": "fractions.representations.unit_interval",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\brepresentations? of fractions?\\b",
+        "\\bfractions? on (?:a |the )?number line\\b",
+        "\\brepresent fractions?\\b"
+      ],
+      "contentPatterns": [
+        "\\bequal parts?\\b",
+        "\\bnumber line\\b",
+        "\\bnumerator\\b.*\\bdenominator\\b"
+      ],
+      "negativePatterns": []
+    },
+    {
+      "id": "fraction-benchmarks",
+      "skillId": "fractions.compare.benchmarks",
+      "requiresTitleMatchForHighConfidence": true,
+      "titlePatterns": [
+        "\\brelate fractions? to benchmarks?\\b",
+        "\\bcompare fractions? (?:to|with) benchmarks?\\b",
+        "\\bfraction benchmarks?\\b"
+      ],
+      "contentPatterns": [
+        "\\bbenchmark\\b",
+        "\\bone half\\b",
+        "\\b1\\s*/\\s*2\\b"
+      ],
+      "negativePatterns": []
     }
   ]
 }
