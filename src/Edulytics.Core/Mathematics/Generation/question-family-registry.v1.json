@@ -3,44 +3,844 @@
   "registryVersion": "math-question-families-v1",
   "status": "Shadow",
   "families": [
-    {"id":"algebra.linear.ax_plus_b_equals_c","version":1,"skillId":"algebra.linear.solve","requiredCapabilities":["rational.exact_arithmetic","algebra.linear.solve.exact_rational","algebra.linear.verify.substitution"],"answerType":"exact_scalar","verificationPolicy":"exact-substitution-original-equation","representations":["symbolic"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"algebra.linear.inequality.ax_plus_b_relation_c","version":1,"skillId":"algebra.linear.inequality.solve","requiredCapabilities":["rational.exact_arithmetic","algebra.linear.affine_extract","algebra.linear.inequality.solve.exact_rational","algebra.linear.inequality.verify.interval"],"answerType":"exact_interval_or_union","verificationPolicy":"exact-boundary-orientation-and-interval","representations":["symbolic","interval"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"algebra.linear.systems.two_by_two.integer_coefficients","version":1,"skillId":"algebra.linear.systems.two_by_two.solve","requiredCapabilities":["rational.exact_arithmetic","algebra.linear.systems.two_by_two.affine_extract","algebra.linear.systems.two_by_two.solve.exact_rational","algebra.linear.systems.two_by_two.verify.substitution"],"answerType":"exact_ordered_pair","verificationPolicy":"exact-substitution-both-original-equations","representations":["symbolic"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"algebra.quadratic.solve.integer_coefficients.real_roots","version":1,"skillId":"algebra.quadratic.solve.real_roots","requiredCapabilities":["rational.exact_arithmetic","algebra.polynomial.normalize.exact_rational","algebra.quadratic.solve.real.exact","algebra.quadratic.verify.exact_substitution"],"answerType":"exact_finite_real_root_set","verificationPolicy":"exact-discriminant-and-original-equation-substitution","representations":["symbolic"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"functions.evaluate.exact_rational","version":1,"skillId":"functions.evaluate.exact","requiredCapabilities":["rational.exact_arithmetic","functions.evaluate.exact_rational","functions.verify.exact_evaluation"],"answerType":"exact_scalar","verificationPolicy":"independent-exact-original-expression-evaluation","representations":["symbolic"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"functions.graph.sample.exact_coordinates","version":1,"skillId":"functions.graph.sample.coordinates","requiredCapabilities":["rational.exact_arithmetic","functions.evaluate.exact_rational","functions.graph.sample.exact_rational","functions.graph.verify.exact_points"],"answerType":"exact_coordinate_vector","verificationPolicy":"independent-exact-evaluation-every-coordinate","representations":["symbolic","table","graph"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"sequences.arithmetic.nth_term.exact","version":1,"skillId":"sequences.arithmetic.nth_term","requiredCapabilities":["rational.exact_arithmetic","sequences.arithmetic.nth_term.exact","sequences.verify.exact_nth_term"],"answerType":"exact_scalar","verificationPolicy":"independent-arithmetic-closed-form-from-original-parameters","representations":["symbolic","sequence"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"sequences.geometric.nth_term.exact","version":1,"skillId":"sequences.geometric.nth_term","requiredCapabilities":["rational.exact_arithmetic","sequences.geometric.nth_term.exact","sequences.verify.exact_nth_term"],"answerType":"exact_scalar","verificationPolicy":"independent-geometric-closed-form-from-original-parameters","representations":["symbolic","sequence"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"indices.power.integer_exponent.exact","version":1,"skillId":"indices.integer_power.evaluate","requiredCapabilities":["rational.exact_arithmetic","indices.power.integer_exponent.exact","indices.verify.integer_power"],"answerType":"exact_scalar","verificationPolicy":"independent-exact-integer-power-from-original-base-and-exponent","representations":["symbolic"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"exponentials.solve.same_base.integer_exponent","version":1,"skillId":"exponentials.same_base.solve","requiredCapabilities":["rational.exact_arithmetic","exponentials.solve.same_base.integer_exponent","exponentials.verify.same_base.substitution"],"answerType":"exact_integer","verificationPolicy":"independent-exact-substitution-into-original-exponential","representations":["symbolic"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"logarithms.evaluate.exact_integer_power","version":1,"skillId":"logarithms.evaluate.exact","requiredCapabilities":["rational.exact_arithmetic","logarithms.evaluate.exact_integer_power","logarithms.verify.inverse_exponentiation"],"answerType":"exact_integer","verificationPolicy":"independent-inverse-exponentiation-from-original-base-and-argument","representations":["symbolic"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"trigonometry.special_angle.exact_degrees","version":1,"skillId":"trigonometry.special_angles.evaluate","requiredCapabilities":["trigonometry.special_angle.exact","trigonometry.verify.special_angle.exact"],"answerType":"exact_scalar_or_quadratic_surd","verificationPolicy":"independent-exact-special-angle-identity","representations":["symbolic","angle"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"geometry.rectangle.area.exact","version":1,"skillId":"geometry.rectangle.area","requiredCapabilities":["rational.exact_arithmetic","geometry.rectangle.area.exact","geometry.verify.rectangle.area"],"answerType":"exact_scalar","verificationPolicy":"independent-exact-area-from-original-positive-dimensions","representations":["symbolic"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"geometry.rectangle.perimeter.exact","version":1,"skillId":"geometry.rectangle.perimeter","requiredCapabilities":["rational.exact_arithmetic","geometry.rectangle.perimeter.exact","geometry.verify.rectangle.perimeter"],"answerType":"exact_scalar","verificationPolicy":"independent-exact-perimeter-from-original-positive-dimensions","representations":["symbolic"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"geometry.triangle.area.base_height.exact","version":1,"skillId":"geometry.triangle.area.base_height","requiredCapabilities":["rational.exact_arithmetic","geometry.triangle.area.base_height.exact","geometry.verify.triangle.area.base_height"],"answerType":"exact_scalar","verificationPolicy":"independent-exact-half-base-height-from-original-positive-dimensions","representations":["symbolic"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"geometry.right_triangle.pythagorean.exact","version":1,"skillId":"geometry.right_triangle.pythagorean","requiredCapabilities":["rational.exact_arithmetic","geometry.right_triangle.pythagorean.exact","geometry.verify.right_triangle.pythagorean"],"answerType":"exact_scalar","verificationPolicy":"independent-pythagorean-identity-from-original-positive-dimensions","representations":["symbolic"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"calculus.polynomial.derivative.exact","version":1,"skillId":"calculus.polynomial.differentiate","requiredCapabilities":["rational.exact_arithmetic","algebra.polynomial.normalize.exact_rational","calculus.polynomial.derivative.exact","calculus.verify.polynomial.derivative"],"answerType":"exact_polynomial_expression","verificationPolicy":"independent-exact-coefficient-rule-from-original-polynomial","representations":["symbolic"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"calculus.polynomial.definite_integral.exact","version":1,"skillId":"calculus.polynomial.integrate.definite","requiredCapabilities":["rational.exact_arithmetic","algebra.polynomial.normalize.exact_rational","calculus.polynomial.definite_integral.exact","calculus.verify.polynomial.definite_integral"],"answerType":"exact_scalar","verificationPolicy":"independent-exact-antiderivative-evaluation-from-original-integrand-and-bounds","representations":["symbolic"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"vectors.add.exact_rational","version":1,"skillId":"vectors.add.exact","requiredCapabilities":["rational.exact_arithmetic","vectors.add.exact_rational","vectors.verify.exact_operations"],"answerType":"exact_vector","verificationPolicy":"independent-componentwise-recomputation-from-original-vectors","representations":["symbolic","vector"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"vectors.dot.exact_rational","version":1,"skillId":"vectors.dot.exact","requiredCapabilities":["rational.exact_arithmetic","vectors.dot.exact_rational","vectors.verify.exact_operations"],"answerType":"exact_scalar","verificationPolicy":"independent-dot-product-recomputation-from-original-vectors","representations":["symbolic","vector"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"matrices.multiply.exact_rational","version":1,"skillId":"matrices.multiply.exact","requiredCapabilities":["rational.exact_arithmetic","matrices.multiply.exact_rational","matrices.verify.exact_operations"],"answerType":"exact_matrix","verificationPolicy":"independent-row-column-recomputation-from-original-matrices","representations":["symbolic","matrix"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"matrices.determinant.2x2.exact","version":1,"skillId":"matrices.determinant.2x2","requiredCapabilities":["rational.exact_arithmetic","matrices.determinant.2x2.exact","matrices.verify.exact_operations"],"answerType":"exact_scalar","verificationPolicy":"independent-ad-minus-bc-from-original-matrix","representations":["symbolic","matrix"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"complex.add.exact_rational","version":1,"skillId":"complex.add.exact","requiredCapabilities":["rational.exact_arithmetic","complex.add.exact_rational","complex.verify.exact_operations"],"answerType":"exact_complex_pair","verificationPolicy":"independent-real-imaginary-recomputation-from-original-values","representations":["symbolic","complex_pair"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"complex.multiply.exact_rational","version":1,"skillId":"complex.multiply.exact","requiredCapabilities":["rational.exact_arithmetic","complex.multiply.exact_rational","complex.verify.exact_operations"],"answerType":"exact_complex_pair","verificationPolicy":"independent-ac-bd-ad-plus-bc-from-original-values","representations":["symbolic","complex_pair"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"probability.simple.favourable_over_total.exact","version":1,"skillId":"probability.simple.evaluate.exact","requiredCapabilities":["rational.exact_arithmetic","probability.simple.exact_rational","probability.verify.exact_events"],"answerType":"exact_probability_scalar","verificationPolicy":"independent-favourable-over-total-recomputation-from-original-counts","representations":["symbolic","probability"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"probability.complement.exact","version":1,"skillId":"probability.complement.evaluate.exact","requiredCapabilities":["rational.exact_arithmetic","probability.complement.exact_rational","probability.verify.exact_events"],"answerType":"exact_probability_scalar","verificationPolicy":"independent-one-minus-original-probability-recomputation","representations":["symbolic","probability"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"statistics.mean.arithmetic.exact","version":1,"skillId":"statistics.mean.arithmetic.exact","requiredCapabilities":["rational.exact_arithmetic","statistics.mean.arithmetic.exact_rational","statistics.verify.exact_means"],"answerType":"exact_scalar","verificationPolicy":"independent-sum-divide-count-from-original-data","representations":["symbolic","table"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"statistics.mean.frequency_table.exact","version":1,"skillId":"statistics.mean.frequency_table.exact","requiredCapabilities":["rational.exact_arithmetic","statistics.mean.frequency_table.exact_rational","statistics.verify.exact_means"],"answerType":"exact_scalar","verificationPolicy":"independent-weighted-sum-divide-frequency-from-original-table","representations":["symbolic","table"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"numerical.roots.bisection.fixed_iterations.exact_rational","version":1,"skillId":"numerical.roots.bisection.iterate","requiredCapabilities":["rational.exact_arithmetic","numerical.roots.bisection.fixed_iterations.exact_rational","numerical.verify.bisection.fixed_iterations"],"answerType":"exact_rational_bracket_after_fixed_iterations","verificationPolicy":"independent-fixed-iteration-bisection-recomputation-from-original-polynomial-and-endpoints","representations":["symbolic","interval"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"numerical.roots.newton.fixed_iterations.exact_rational","version":1,"skillId":"numerical.roots.newton.iterate","requiredCapabilities":["rational.exact_arithmetic","numerical.roots.newton.fixed_iterations.exact_rational","numerical.verify.newton.fixed_iterations"],"answerType":"exact_rational_iterate","verificationPolicy":"independent-fixed-iteration-newton-recomputation-from-original-polynomial-and-start","representations":["symbolic"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"numerical.integration.trapezoidal.fixed_subdivisions.exact_rational","version":1,"skillId":"numerical.integration.trapezoidal.estimate","requiredCapabilities":["rational.exact_arithmetic","numerical.integration.trapezoidal.fixed_subdivisions.exact_rational","numerical.verify.trapezoidal.fixed_subdivisions"],"answerType":"exact_rational_numerical_estimate","verificationPolicy":"independent-fixed-subdivision-trapezoidal-recomputation-from-original-polynomial-and-bounds","representations":["symbolic","table"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"mechanics.kinematics.constant_acceleration.velocity.exact","version":1,"skillId":"mechanics.kinematics.constant_acceleration.velocity","requiredCapabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.kinematics.constant_acceleration.velocity.exact","mechanics.verify.models_and_units"],"answerType":"exact_si_quantity","verificationPolicy":"independent-v-equals-u-plus-at-and-dimension-recomputation","representations":["symbolic","physical_quantity"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"mechanics.kinematics.constant_acceleration.displacement.exact","version":1,"skillId":"mechanics.kinematics.constant_acceleration.displacement","requiredCapabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.kinematics.constant_acceleration.displacement.exact","mechanics.verify.models_and_units"],"answerType":"exact_si_quantity","verificationPolicy":"independent-s-equals-ut-plus-half-at-squared-and-dimension-recomputation","representations":["symbolic","physical_quantity"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"mechanics.newton.second_law.force.exact","version":1,"skillId":"mechanics.newton.second_law.force","requiredCapabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.newton.second_law.force.exact","mechanics.verify.models_and_units"],"answerType":"exact_si_quantity","verificationPolicy":"independent-f-equals-ma-and-dimension-recomputation","representations":["symbolic","physical_quantity"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"mechanics.newton.third_law.reaction.exact","version":1,"skillId":"mechanics.newton.third_law.reaction","requiredCapabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.newton.third_law.reaction.exact","mechanics.verify.models_and_units"],"answerType":"exact_si_quantity","verificationPolicy":"independent-equal-opposite-force-and-dimension-recomputation","representations":["symbolic","physical_quantity"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"mechanics.equilibrium.balancing_force_1d.exact","version":1,"skillId":"mechanics.equilibrium.balancing_force_1d","requiredCapabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.equilibrium.balancing_force_1d.exact","mechanics.verify.models_and_units"],"answerType":"exact_si_quantity","verificationPolicy":"independent-zero-resultant-balancing-force-and-dimension-recomputation","representations":["symbolic","physical_quantity","vector"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"mechanics.momentum.impulse.exact","version":1,"skillId":"mechanics.momentum.impulse","requiredCapabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.momentum.impulse.exact","mechanics.verify.models_and_units"],"answerType":"exact_si_quantity","verificationPolicy":"independent-impulse-momentum-and-dimension-recomputation","representations":["symbolic","physical_quantity"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"mechanics.energy.work_energy.exact","version":1,"skillId":"mechanics.energy.work_energy","requiredCapabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.energy.work_energy.exact","mechanics.verify.models_and_units"],"answerType":"exact_si_quantity","verificationPolicy":"independent-work-energy-and-physical-bound-recomputation","representations":["symbolic","physical_quantity"],"status":"ShadowVerified","productionRouting":false},
-    {"id":"mechanics.power.work_over_time.exact","version":1,"skillId":"mechanics.power.work_over_time","requiredCapabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.power.work_over_time.exact","mechanics.verify.models_and_units"],"answerType":"exact_si_quantity","verificationPolicy":"independent-work-over-positive-time-and-dimension-recomputation","representations":["symbolic","physical_quantity"],"status":"ShadowVerified","productionRouting":false}
+    {
+      "id": "algebra.linear.ax_plus_b_equals_c",
+      "version": 1,
+      "skillId": "algebra.linear.solve",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "algebra.linear.solve.exact_rational",
+        "algebra.linear.verify.substitution"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "exact-substitution-original-equation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "algebra.linear.inequality.ax_plus_b_relation_c",
+      "version": 1,
+      "skillId": "algebra.linear.inequality.solve",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "algebra.linear.affine_extract",
+        "algebra.linear.inequality.solve.exact_rational",
+        "algebra.linear.inequality.verify.interval"
+      ],
+      "answerType": "exact_interval_or_union",
+      "verificationPolicy": "exact-boundary-orientation-and-interval",
+      "representations": [
+        "symbolic",
+        "interval"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "algebra.linear.systems.two_by_two.integer_coefficients",
+      "version": 1,
+      "skillId": "algebra.linear.systems.two_by_two.solve",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "algebra.linear.systems.two_by_two.affine_extract",
+        "algebra.linear.systems.two_by_two.solve.exact_rational",
+        "algebra.linear.systems.two_by_two.verify.substitution"
+      ],
+      "answerType": "exact_ordered_pair",
+      "verificationPolicy": "exact-substitution-both-original-equations",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "algebra.quadratic.solve.integer_coefficients.real_roots",
+      "version": 1,
+      "skillId": "algebra.quadratic.solve.real_roots",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "algebra.polynomial.normalize.exact_rational",
+        "algebra.quadratic.solve.real.exact",
+        "algebra.quadratic.verify.exact_substitution"
+      ],
+      "answerType": "exact_finite_real_root_set",
+      "verificationPolicy": "exact-discriminant-and-original-equation-substitution",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "functions.evaluate.exact_rational",
+      "version": 1,
+      "skillId": "functions.evaluate.exact",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "functions.evaluate.exact_rational",
+        "functions.verify.exact_evaluation"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-exact-original-expression-evaluation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "functions.graph.sample.exact_coordinates",
+      "version": 1,
+      "skillId": "functions.graph.sample.coordinates",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "functions.evaluate.exact_rational",
+        "functions.graph.sample.exact_rational",
+        "functions.graph.verify.exact_points"
+      ],
+      "answerType": "exact_coordinate_vector",
+      "verificationPolicy": "independent-exact-evaluation-every-coordinate",
+      "representations": [
+        "symbolic",
+        "table",
+        "graph"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "sequences.arithmetic.nth_term.exact",
+      "version": 1,
+      "skillId": "sequences.arithmetic.nth_term",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "sequences.arithmetic.nth_term.exact",
+        "sequences.verify.exact_nth_term"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-arithmetic-closed-form-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "sequence"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "sequences.geometric.nth_term.exact",
+      "version": 1,
+      "skillId": "sequences.geometric.nth_term",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "sequences.geometric.nth_term.exact",
+        "sequences.verify.exact_nth_term"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-geometric-closed-form-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "sequence"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "indices.power.integer_exponent.exact",
+      "version": 1,
+      "skillId": "indices.integer_power.evaluate",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "indices.power.integer_exponent.exact",
+        "indices.verify.integer_power"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-exact-integer-power-from-original-base-and-exponent",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "exponentials.solve.same_base.integer_exponent",
+      "version": 1,
+      "skillId": "exponentials.same_base.solve",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "exponentials.solve.same_base.integer_exponent",
+        "exponentials.verify.same_base.substitution"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-exact-substitution-into-original-exponential",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "logarithms.evaluate.exact_integer_power",
+      "version": 1,
+      "skillId": "logarithms.evaluate.exact",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "logarithms.evaluate.exact_integer_power",
+        "logarithms.verify.inverse_exponentiation"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-inverse-exponentiation-from-original-base-and-argument",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "trigonometry.special_angle.exact_degrees",
+      "version": 1,
+      "skillId": "trigonometry.special_angles.evaluate",
+      "requiredCapabilities": [
+        "trigonometry.special_angle.exact",
+        "trigonometry.verify.special_angle.exact"
+      ],
+      "answerType": "exact_scalar_or_quadratic_surd",
+      "verificationPolicy": "independent-exact-special-angle-identity",
+      "representations": [
+        "symbolic",
+        "angle"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "geometry.rectangle.area.exact",
+      "version": 1,
+      "skillId": "geometry.rectangle.area",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "geometry.rectangle.area.exact",
+        "geometry.verify.rectangle.area"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-exact-area-from-original-positive-dimensions",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "geometry.rectangle.perimeter.exact",
+      "version": 1,
+      "skillId": "geometry.rectangle.perimeter",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "geometry.rectangle.perimeter.exact",
+        "geometry.verify.rectangle.perimeter"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-exact-perimeter-from-original-positive-dimensions",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "geometry.triangle.area.base_height.exact",
+      "version": 1,
+      "skillId": "geometry.triangle.area.base_height",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "geometry.triangle.area.base_height.exact",
+        "geometry.verify.triangle.area.base_height"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-exact-half-base-height-from-original-positive-dimensions",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "geometry.right_triangle.pythagorean.exact",
+      "version": 1,
+      "skillId": "geometry.right_triangle.pythagorean",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "geometry.right_triangle.pythagorean.exact",
+        "geometry.verify.right_triangle.pythagorean"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-pythagorean-identity-from-original-positive-dimensions",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "calculus.polynomial.derivative.exact",
+      "version": 1,
+      "skillId": "calculus.polynomial.differentiate",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "algebra.polynomial.normalize.exact_rational",
+        "calculus.polynomial.derivative.exact",
+        "calculus.verify.polynomial.derivative"
+      ],
+      "answerType": "exact_polynomial_expression",
+      "verificationPolicy": "independent-exact-coefficient-rule-from-original-polynomial",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "calculus.polynomial.definite_integral.exact",
+      "version": 1,
+      "skillId": "calculus.polynomial.integrate.definite",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "algebra.polynomial.normalize.exact_rational",
+        "calculus.polynomial.definite_integral.exact",
+        "calculus.verify.polynomial.definite_integral"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-exact-antiderivative-evaluation-from-original-integrand-and-bounds",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "vectors.add.exact_rational",
+      "version": 1,
+      "skillId": "vectors.add.exact",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "vectors.add.exact_rational",
+        "vectors.verify.exact_operations"
+      ],
+      "answerType": "exact_vector",
+      "verificationPolicy": "independent-componentwise-recomputation-from-original-vectors",
+      "representations": [
+        "symbolic",
+        "vector"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "vectors.dot.exact_rational",
+      "version": 1,
+      "skillId": "vectors.dot.exact",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "vectors.dot.exact_rational",
+        "vectors.verify.exact_operations"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-dot-product-recomputation-from-original-vectors",
+      "representations": [
+        "symbolic",
+        "vector"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "matrices.multiply.exact_rational",
+      "version": 1,
+      "skillId": "matrices.multiply.exact",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "matrices.multiply.exact_rational",
+        "matrices.verify.exact_operations"
+      ],
+      "answerType": "exact_matrix",
+      "verificationPolicy": "independent-row-column-recomputation-from-original-matrices",
+      "representations": [
+        "symbolic",
+        "matrix"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "matrices.determinant.2x2.exact",
+      "version": 1,
+      "skillId": "matrices.determinant.2x2",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "matrices.determinant.2x2.exact",
+        "matrices.verify.exact_operations"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-ad-minus-bc-from-original-matrix",
+      "representations": [
+        "symbolic",
+        "matrix"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "complex.add.exact_rational",
+      "version": 1,
+      "skillId": "complex.add.exact",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "complex.add.exact_rational",
+        "complex.verify.exact_operations"
+      ],
+      "answerType": "exact_complex_pair",
+      "verificationPolicy": "independent-real-imaginary-recomputation-from-original-values",
+      "representations": [
+        "symbolic",
+        "complex_pair"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "complex.multiply.exact_rational",
+      "version": 1,
+      "skillId": "complex.multiply.exact",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "complex.multiply.exact_rational",
+        "complex.verify.exact_operations"
+      ],
+      "answerType": "exact_complex_pair",
+      "verificationPolicy": "independent-ac-bd-ad-plus-bc-from-original-values",
+      "representations": [
+        "symbolic",
+        "complex_pair"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "probability.simple.favourable_over_total.exact",
+      "version": 1,
+      "skillId": "probability.simple.evaluate.exact",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "probability.simple.exact_rational",
+        "probability.verify.exact_events"
+      ],
+      "answerType": "exact_probability_scalar",
+      "verificationPolicy": "independent-favourable-over-total-recomputation-from-original-counts",
+      "representations": [
+        "symbolic",
+        "probability"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "probability.complement.exact",
+      "version": 1,
+      "skillId": "probability.complement.evaluate.exact",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "probability.complement.exact_rational",
+        "probability.verify.exact_events"
+      ],
+      "answerType": "exact_probability_scalar",
+      "verificationPolicy": "independent-one-minus-original-probability-recomputation",
+      "representations": [
+        "symbolic",
+        "probability"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "statistics.mean.arithmetic.exact",
+      "version": 1,
+      "skillId": "statistics.mean.arithmetic.exact",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "statistics.mean.arithmetic.exact_rational",
+        "statistics.verify.exact_means"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-sum-divide-count-from-original-data",
+      "representations": [
+        "symbolic",
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "statistics.mean.frequency_table.exact",
+      "version": 1,
+      "skillId": "statistics.mean.frequency_table.exact",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "statistics.mean.frequency_table.exact_rational",
+        "statistics.verify.exact_means"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-weighted-sum-divide-frequency-from-original-table",
+      "representations": [
+        "symbolic",
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "numerical.roots.bisection.fixed_iterations.exact_rational",
+      "version": 1,
+      "skillId": "numerical.roots.bisection.iterate",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "numerical.roots.bisection.fixed_iterations.exact_rational",
+        "numerical.verify.bisection.fixed_iterations"
+      ],
+      "answerType": "exact_rational_bracket_after_fixed_iterations",
+      "verificationPolicy": "independent-fixed-iteration-bisection-recomputation-from-original-polynomial-and-endpoints",
+      "representations": [
+        "symbolic",
+        "interval"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "numerical.roots.newton.fixed_iterations.exact_rational",
+      "version": 1,
+      "skillId": "numerical.roots.newton.iterate",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "numerical.roots.newton.fixed_iterations.exact_rational",
+        "numerical.verify.newton.fixed_iterations"
+      ],
+      "answerType": "exact_rational_iterate",
+      "verificationPolicy": "independent-fixed-iteration-newton-recomputation-from-original-polynomial-and-start",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "numerical.integration.trapezoidal.fixed_subdivisions.exact_rational",
+      "version": 1,
+      "skillId": "numerical.integration.trapezoidal.estimate",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "numerical.integration.trapezoidal.fixed_subdivisions.exact_rational",
+        "numerical.verify.trapezoidal.fixed_subdivisions"
+      ],
+      "answerType": "exact_rational_numerical_estimate",
+      "verificationPolicy": "independent-fixed-subdivision-trapezoidal-recomputation-from-original-polynomial-and-bounds",
+      "representations": [
+        "symbolic",
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "mechanics.kinematics.constant_acceleration.velocity.exact",
+      "version": 1,
+      "skillId": "mechanics.kinematics.constant_acceleration.velocity",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.kinematics.constant_acceleration.velocity.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "answerType": "exact_si_quantity",
+      "verificationPolicy": "independent-v-equals-u-plus-at-and-dimension-recomputation",
+      "representations": [
+        "symbolic",
+        "physical_quantity"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "mechanics.kinematics.constant_acceleration.displacement.exact",
+      "version": 1,
+      "skillId": "mechanics.kinematics.constant_acceleration.displacement",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.kinematics.constant_acceleration.displacement.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "answerType": "exact_si_quantity",
+      "verificationPolicy": "independent-s-equals-ut-plus-half-at-squared-and-dimension-recomputation",
+      "representations": [
+        "symbolic",
+        "physical_quantity"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "mechanics.newton.second_law.force.exact",
+      "version": 1,
+      "skillId": "mechanics.newton.second_law.force",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.newton.second_law.force.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "answerType": "exact_si_quantity",
+      "verificationPolicy": "independent-f-equals-ma-and-dimension-recomputation",
+      "representations": [
+        "symbolic",
+        "physical_quantity"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "mechanics.newton.third_law.reaction.exact",
+      "version": 1,
+      "skillId": "mechanics.newton.third_law.reaction",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.newton.third_law.reaction.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "answerType": "exact_si_quantity",
+      "verificationPolicy": "independent-equal-opposite-force-and-dimension-recomputation",
+      "representations": [
+        "symbolic",
+        "physical_quantity"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "mechanics.equilibrium.balancing_force_1d.exact",
+      "version": 1,
+      "skillId": "mechanics.equilibrium.balancing_force_1d",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.equilibrium.balancing_force_1d.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "answerType": "exact_si_quantity",
+      "verificationPolicy": "independent-zero-resultant-balancing-force-and-dimension-recomputation",
+      "representations": [
+        "symbolic",
+        "physical_quantity",
+        "vector"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "mechanics.momentum.impulse.exact",
+      "version": 1,
+      "skillId": "mechanics.momentum.impulse",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.momentum.impulse.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "answerType": "exact_si_quantity",
+      "verificationPolicy": "independent-impulse-momentum-and-dimension-recomputation",
+      "representations": [
+        "symbolic",
+        "physical_quantity"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "mechanics.energy.work_energy.exact",
+      "version": 1,
+      "skillId": "mechanics.energy.work_energy",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.energy.work_energy.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "answerType": "exact_si_quantity",
+      "verificationPolicy": "independent-work-energy-and-physical-bound-recomputation",
+      "representations": [
+        "symbolic",
+        "physical_quantity"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "mechanics.power.work_over_time.exact",
+      "version": 1,
+      "skillId": "mechanics.power.work_over_time",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.power.work_over_time.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "answerType": "exact_si_quantity",
+      "verificationPolicy": "independent-work-over-positive-time-and-dimension-recomputation",
+      "representations": [
+        "symbolic",
+        "physical_quantity"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "number.whole.add_subtract.within_10.build",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "number.whole.add_subtract.exact",
+        "number.verify.whole.add_subtract"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-original-operands-and-operation",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "number.whole.add_subtract.within_10.apply",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "number.whole.add_subtract.exact",
+        "number.verify.whole.add_subtract"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-original-operands-and-operation",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "number.whole.add_subtract.across_ten.build",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "number.whole.add_subtract.exact",
+        "number.verify.whole.add_subtract"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-original-operands-and-operation",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "number.whole.add_subtract.across_ten.apply",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "number.whole.add_subtract.exact",
+        "number.verify.whole.add_subtract"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-original-operands-and-operation",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "number.whole.add_subtract.within_100.build",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "number.whole.add_subtract.exact",
+        "number.verify.whole.add_subtract"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-original-operands-and-operation",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "number.whole.add_subtract.within_100.apply",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "number.whole.add_subtract.exact",
+        "number.verify.whole.add_subtract"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-original-operands-and-operation",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "number.whole.add_subtract.columnar.build",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "number.whole.add_subtract.exact",
+        "number.verify.whole.add_subtract"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-original-operands-and-operation",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "number.whole.add_subtract.columnar.apply",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "number.whole.add_subtract.exact",
+        "number.verify.whole.add_subtract"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-original-operands-and-operation",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    }
   ]
 }
