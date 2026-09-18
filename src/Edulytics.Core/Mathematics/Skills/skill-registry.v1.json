@@ -687,6 +687,48 @@
       "domain": "fractions",
       "canonicalName": "Compare fractions with different denominators",
       "legacyGameMechanic": "FRACTION_COMPARE_UNLIKE"
+    },
+    {
+      "id": "fractions.add_subtract",
+      "domain": "fractions",
+      "canonicalName": "Add and subtract fractions with lesson-scoped denominator and representation constraints",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.add_subtract.related_denominators",
+        "fractions.add_subtract.unlike_denominators",
+        "fractions.add_subtract.mixed_same_denominator"
+      ]
+    },
+    {
+      "id": "fractions.representations.unit_interval",
+      "domain": "fractions",
+      "canonicalName": "Interpret fraction representations on equal-part models and the unit interval",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.representations.exact",
+        "fractions.verify.representations"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.representations.equal_parts",
+        "fractions.representations.number_line"
+      ]
+    },
+    {
+      "id": "fractions.compare.benchmarks",
+      "domain": "fractions",
+      "canonicalName": "Compare fractions with benchmark values such as one half",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.compare.benchmarks.exact",
+        "fractions.verify.compare.benchmarks"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.compare.benchmark_half"
+      ]
     }
   ]
 }
