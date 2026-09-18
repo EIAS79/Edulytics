@@ -63,13 +63,17 @@ public sealed class Stage26To28ProductionClosureTests
         var limits = MathematicsResourceLimits.ProductionDefaults with
         {
             MaxConcurrentOperations = 1,
-            SolverTimeout = TimeSpan.FromMilliseconds(500)
+            SolverTimeout = TimeSpan.FromSeconds(5)
         };
         var budget = new MathematicsExecutionBudget(limits);
 
         var active = 0;
         var maximum = 0;
         var sync = new object();
+        var firstEntered = new TaskCompletionSource<bool>(
+            TaskCreationOptions.RunContinuationsAsynchronously);
+        var release = new TaskCompletionSource<bool>(
+            TaskCreationOptions.RunContinuationsAsynchronously);
 
         async Task<int> Work(CancellationToken token)
         {
@@ -77,9 +81,11 @@ public sealed class Stage26To28ProductionClosureTests
             lock (sync)
                 maximum = Math.Max(maximum, now);
 
+            firstEntered.TrySetResult(true);
+
             try
             {
-                await Task.Delay(40, token);
+                await release.Task.WaitAsync(token);
                 return 1;
             }
             finally
@@ -88,10 +94,17 @@ public sealed class Stage26To28ProductionClosureTests
             }
         }
 
-        await Task.WhenAll(
-            budget.RunAsync(Work),
-            budget.RunAsync(Work),
-            budget.RunAsync(Work));
+        var first = budget.RunAsync(Work);
+        await firstEntered.Task.WaitAsync(TimeSpan.FromSeconds(2));
+
+        var second = budget.RunAsync(Work);
+        var third = budget.RunAsync(Work);
+
+        await Task.Delay(50);
+        Assert.Equal(1, maximum);
+
+        release.TrySetResult(true);
+        await Task.WhenAll(first, second, third);
 
         Assert.Equal(1, maximum);
 
