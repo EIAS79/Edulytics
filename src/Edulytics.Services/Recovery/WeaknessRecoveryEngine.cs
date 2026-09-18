@@ -263,8 +263,7 @@ public sealed class WeaknessRecoveryEngine
                     "Previous reassessment mathematical signatures must be complete and reconstructable.");
             }
 
-            if (excluded.Count > 0 &&
-                !excluded.Contains(signature.ExposureFingerprint))
+            if (!excluded.Contains(signature.ExposureFingerprint))
             {
                 throw new InvalidOperationException(
                     "Previous reassessment mathematical signature is outside the declared exposure history.");
