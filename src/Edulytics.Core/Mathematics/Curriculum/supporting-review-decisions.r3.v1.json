@@ -1,0 +1,830 @@
+{
+  "schemaVersion": 1,
+  "reviewVersion": "supporting-review-r3-v1",
+  "baselineCommit": "2c761c2e231da741a117352f9f4de489a4fe3cbc",
+  "population": "Supporting/PedagogicalUnmapped lessons with baseline skill status REVIEW_REQUIRED",
+  "total": 95,
+  "approvedExistingSkill": 27,
+  "deferredToOntology": 68,
+  "policy": {
+    "approveOnlyWhen": "Canonical lesson target is exactly represented by an existing reusable skill and production-safe exact family.",
+    "deferWhen": "Candidate is only a broad textual match, misses the actual operation/representation, or requires a new canonical skill.",
+    "officialOutcomePolicy": "No official outcome is invented or inferred."
+  },
+  "decisions": [
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:CORE:01:02:FRACTIONS-AND-DECIMALS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:01:02:FRACTIONS-AND-DECIMALS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:10:02:FRACTIONAL-INDICES",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:10:03:ALGEBRAIC-FRACTIONS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:CORE:01:02:CONSOLIDATING-FRACTIONS-AND-DECIMALS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:01:02:CONSOLIDATING-FRACTIONS-AND-DECIMALS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:10:02:CONSOLIDATING-FRACTIONAL-INDICES",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:10:03:CONSOLIDATING-ALGEBRAIC-FRACTIONS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:01:02:FRACTIONS-AND-MIXED-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L8:SHARED:01:02:FRACTIONS-AND-MIXED-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L9:SHARED:01:02:FRACTIONS-AND-MIXED-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S2:2AS-2:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "number.whole.add_subtract"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S2:2AS-2:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "number.whole.add_subtract"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3AS-1:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "number.whole.add_subtract"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3AS-1:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "number.whole.add_subtract"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3AS-3:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3AS-3:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-1:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-1:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-2:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "fractions.of_quantity"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-2:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "fractions.of_quantity"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-3:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-3:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NF-2:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "number.whole.multiply"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NF-2:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "number.whole.multiply"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NF-3:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NF-3:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NPV-4:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "measurement.scale.read_equal_intervals"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NPV-4:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "measurement.scale.read_equal_intervals"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4F-1:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4F-1:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4F-2:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4F-2:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4NF-1:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "number.whole.multiply"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4NF-1:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "number.whole.multiply"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4NF-2:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "number.whole.divide"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4NF-2:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "number.whole.divide"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4NF-3:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4NF-3:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4NPV-4:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "measurement.scale.read_equal_intervals"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4NPV-4:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "measurement.scale.read_equal_intervals"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5F-1:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "fractions.of_quantity"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5F-1:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "fractions.of_quantity"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5F-3:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5F-3:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5NF-1:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5NF-1:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5NF-2:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5NF-2:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5NPV-4:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "measurement.scale.read_equal_intervals"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5NPV-4:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "measurement.scale.read_equal_intervals"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-1:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-1:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-2:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-2:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-3:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-3:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-1:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-1:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-2:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-2:APPLY",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:BUILD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "measurement.scale.read_equal_intervals"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L10:ADVANCED:01:02:FRACTIONS-AND-MIXED-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:02:FRACTIONS-AND-MIXED-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L11:ADVANCED:01:02:FRACTIONS-AND-MIXED-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L11:GENERAL:01:02:FRACTIONS-AND-MIXED-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:01:02:FRACTIONS-AND-MIXED-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L12:GENERAL:01:02:FRACTIONS-AND-MIXED-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L2:COMMON:03:02:FRACTIONS-OF-QUANTITIES",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "fractions.of_quantity"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L2:COMMON:03:03:EQUIVALENT-SIMPLE-FRACTIONS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "fractions.equivalent"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:01:FRACTIONS-ON-A-NUMBER-LINE",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L5:ADVANCED:02:03:MULTIPLY-FRACTIONS-BY-WHOLE-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L5:ADVANCED:02:06:FRACTION-DECIMAL-PERCENTAGE-EQUIVALENCE",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:02:03:MULTIPLY-FRACTIONS-BY-WHOLE-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:02:06:FRACTION-DECIMAL-PERCENTAGE-EQUIVALENCE",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:ADVANCED:02:01:SIMPLIFYING-FRACTIONS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:ADVANCED:02:03:MULTIPLY-FRACTIONS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:ADVANCED:02:04:DIVIDE-FRACTIONS-BY-WHOLE-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:ADVANCED:03:03:UNITARY-METHOD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "ratio.unit_rate"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:02:01:SIMPLIFYING-FRACTIONS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:02:03:MULTIPLY-FRACTIONS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:02:04:DIVIDE-FRACTIONS-BY-WHOLE-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:03:03:UNITARY-METHOD",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "ratio.unit_rate"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L7:ADVANCED:01:02:FRACTIONS-AND-MIXED-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:01:02:FRACTIONS-AND-MIXED-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:ADVANCED:01:02:FRACTIONS-AND-MIXED-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:02:FRACTIONS-AND-MIXED-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:ADVANCED:01:02:FRACTIONS-AND-MIXED-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:02:FRACTIONS-AND-MIXED-NUMBERS",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U03:L01",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L17",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L15",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U06:L13",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "algebra.linear.inequality.solve"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U03:L07",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "DEFER_TO_R5_ONTOLOGY",
+      "primarySkills": [],
+      "reviewEvidence": "The baseline candidate is broader, narrower, or semantically different from the canonical lesson target; approving it would risk generating mathematically correct but lesson-misaligned questions.",
+      "nextAction": "CREATE_OR_REUSE_EXACT_SKILL_IN_R5"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U03:L12",
+      "baselineStatus": "REVIEW_REQUIRED",
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "algebra.linear.solve"
+      ],
+      "reviewEvidence": "Canonical lesson target and target-bearing content were checked against the reusable SkillContract. The approved skill is narrower than the lesson title and has an exact solver/verifier-backed family.",
+      "nextAction": "READY_FOR_EXACT_PRACTICE"
+    }
+  ]
+}

@@ -21,7 +21,11 @@
         "number.whole.add_subtract.within_100.build",
         "number.whole.add_subtract.within_100.apply",
         "number.whole.add_subtract.columnar.build",
-        "number.whole.add_subtract.columnar.apply"
+        "number.whole.add_subtract.columnar.apply",
+        "number.whole.add_subtract.comparative.build",
+        "number.whole.add_subtract.comparative.apply",
+        "number.whole.add_subtract.complement_100.build",
+        "number.whole.add_subtract.complement_100.apply"
       ]
     },
     {
@@ -40,13 +44,31 @@
       "id": "number.whole.multiply",
       "domain": "number",
       "canonicalName": "Whole-number multiplication",
-      "legacyCanonicalSkill": "WholeNumberMultiplication"
+      "legacyCanonicalSkill": "WholeNumberMultiplication",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "number.whole.multiply.exact",
+        "number.verify.whole.multiply"
+      ],
+      "v2QuestionFamilies": [
+        "number.whole.multiply.fact_recall.build",
+        "number.whole.multiply.fact_recall.apply"
+      ]
     },
     {
       "id": "number.whole.divide",
       "domain": "number",
       "canonicalName": "Whole-number division",
-      "legacyCanonicalSkill": "WholeNumberDivision"
+      "legacyCanonicalSkill": "WholeNumberDivision",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "number.whole.divide.exact",
+        "number.verify.whole.divide"
+      ],
+      "v2QuestionFamilies": [
+        "number.whole.divide.with_remainder.build",
+        "number.whole.divide.with_remainder.apply"
+      ]
     },
     {
       "id": "algebra.linear.solve",
@@ -624,7 +646,16 @@
       "id": "fractions.of_quantity",
       "domain": "fractions",
       "canonicalName": "Find a fraction of a quantity",
-      "legacyCanonicalSkill": "FractionOfQuantity"
+      "legacyCanonicalSkill": "FractionOfQuantity",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.of_quantity.exact",
+        "fractions.verify.of_quantity"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.of_quantity.build",
+        "fractions.of_quantity.apply"
+      ]
     },
     {
       "id": "percentages.of_quantity",

@@ -146,10 +146,35 @@ public sealed class ExactSkillContractQuestionEngine
                 StringComparison.Ordinal);
         }
 
+        if (family is "number.whole.divide.with_remainder.build" or
+            "number.whole.divide.with_remainder.apply")
+        {
+            var dividend = parameters["dividend"];
+            var divisor = parameters["divisor"];
+            if (dividend < 0 || divisor <= 0)
+                return false;
+
+            var quotient = dividend / divisor;
+            var remainder = dividend % divisor;
+            var expected = $"{quotient.ToString(CultureInfo.InvariantCulture)} r {remainder.ToString(CultureInfo.InvariantCulture)}";
+            return string.Equals(
+                NormalizeRemainderAnswer(answer),
+                NormalizeRemainderAnswer(expected),
+                StringComparison.Ordinal);
+        }
+
         if (!int.TryParse(answer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value))
             return false;
 
-        if (family.StartsWith("number.whole.add_subtract.", StringComparison.Ordinal))
+        if (family is
+            "number.whole.add_subtract.within_10.build" or
+            "number.whole.add_subtract.within_10.apply" or
+            "number.whole.add_subtract.across_ten.build" or
+            "number.whole.add_subtract.across_ten.apply" or
+            "number.whole.add_subtract.within_100.build" or
+            "number.whole.add_subtract.within_100.apply" or
+            "number.whole.add_subtract.columnar.build" or
+            "number.whole.add_subtract.columnar.apply")
         {
             var operation = parameters["operation"];
             var left = parameters["left"];
@@ -228,6 +253,36 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters["baseFirst"] * parameters["targetSecond"] ==
                     value * parameters["baseSecond"],
 
+            "number.whole.add_subtract.comparative.build" or
+            "number.whole.add_subtract.comparative.apply" =>
+                parameters["base"] >= 0 &&
+                parameters["difference"] >= 0 &&
+                value == parameters["base"] + parameters["difference"],
+
+            "number.whole.add_subtract.complement_100.build" or
+            "number.whole.add_subtract.complement_100.apply" =>
+                parameters["known"] is >= 0 and <= 100 &&
+                value + parameters["known"] == 100,
+
+            "number.whole.multiply.fact_recall.build" or
+            "number.whole.multiply.fact_recall.apply" =>
+                parameters["left"] is >= 0 and <= 12 &&
+                parameters["right"] is >= 0 and <= 12 &&
+                value == parameters["left"] * parameters["right"],
+
+            "fractions.of_quantity.build" or
+            "fractions.of_quantity.apply" =>
+                parameters["denominator"] > 0 &&
+                parameters["numerator"] > 0 &&
+                parameters["numerator"] <= parameters["denominator"] &&
+                parameters["quantity"] % parameters["denominator"] == 0 &&
+                value == (parameters["quantity"] / parameters["denominator"]) * parameters["numerator"],
+
+            ExactLinearEquationQuestionFactory.FamilyId =>
+                parameters["coefficient"] != 0 &&
+                (parameters["right"] - parameters["offset"]) % parameters["coefficient"] == 0 &&
+                value == (parameters["right"] - parameters["offset"]) / parameters["coefficient"],
+
             _ => false
         };
     }
@@ -275,6 +330,23 @@ public sealed class ExactSkillContractQuestionEngine
             "number.whole.add_subtract.columnar.build" or
             "number.whole.add_subtract.columnar.apply" =>
                 BuildWholeAddSubtract(family, random, scale),
+            "number.whole.add_subtract.comparative.build" or
+            "number.whole.add_subtract.comparative.apply" =>
+                BuildComparativeDifference(family, random, scale),
+            "number.whole.add_subtract.complement_100.build" or
+            "number.whole.add_subtract.complement_100.apply" =>
+                BuildComplementTo100(family, random),
+            "number.whole.multiply.fact_recall.build" or
+            "number.whole.multiply.fact_recall.apply" =>
+                BuildMultiplicationFact(family, random),
+            "number.whole.divide.with_remainder.build" or
+            "number.whole.divide.with_remainder.apply" =>
+                BuildDivisionWithRemainder(family, random, scale),
+            "fractions.of_quantity.build" or
+            "fractions.of_quantity.apply" =>
+                BuildFractionOfQuantity(family, random, scale),
+            ExactLinearEquationQuestionFactory.FamilyId =>
+                BuildLinearEquation(random, scale),
             ExactLinearInequalityQuestionFactory.FamilyId =>
                 BuildLinearInequality(random, scale),
             _ => UnsupportedFamily(family)
@@ -534,6 +606,153 @@ public sealed class ExactSkillContractQuestionEngine
             ? (left % 10) + (right % 10) >= 10
             : left % 10 < right % 10;
 
+    private static ExactProblem BuildComparativeDifference(
+        string family,
+        Random random,
+        int scale)
+    {
+        var isApply = family.EndsWith(".apply", StringComparison.Ordinal);
+        var maximum = 30 + scale * 20;
+        var baseValue = random.Next(5, maximum);
+        var difference = random.Next(2, 10 + scale * 5);
+        var expected = baseValue + difference;
+
+        var prompt = isApply
+            ? $"Aisha has {baseValue} stickers. Omar has {difference} more stickers than Aisha. How many stickers does Omar have?"
+            : $"A number is {difference} greater than {baseValue}. What is the number?";
+
+        return Problem(
+            family,
+            prompt,
+            "Model the comparison as larger = smaller + difference, calculate the unknown quantity, then check the difference.",
+            AssessmentItemType.Numeric,
+            ("base", baseValue),
+            ("difference", difference));
+    }
+
+    private static ExactProblem BuildComplementTo100(
+        string family,
+        Random random)
+    {
+        var isApply = family.EndsWith(".apply", StringComparison.Ordinal);
+        var known = random.Next(1, 100);
+        var prompt = isApply
+            ? $"A target is 100 points. You already have {known} points. How many more points are needed to reach 100?"
+            : $"Complete the calculation: {known} + ? = 100.";
+
+        return Problem(
+            family,
+            prompt,
+            "Find the complement by subtracting the known amount from 100, then verify the two parts total 100.",
+            AssessmentItemType.Numeric,
+            ("known", known));
+    }
+
+    private static ExactProblem BuildMultiplicationFact(
+        string family,
+        Random random)
+    {
+        var isApply = family.EndsWith(".apply", StringComparison.Ordinal);
+        var left = random.Next(2, 13);
+        var right = random.Next(2, 13);
+        var prompt = isApply
+            ? $"There are {left} equal groups with {right} objects in each group. How many objects are there altogether?"
+            : $"Calculate {left} × {right}.";
+
+        return Problem(
+            family,
+            prompt,
+            "Use the multiplication fact and verify by repeated groups or the inverse division fact.",
+            AssessmentItemType.Numeric,
+            ("left", left),
+            ("right", right));
+    }
+
+    private static ExactProblem BuildDivisionWithRemainder(
+        string family,
+        Random random,
+        int scale)
+    {
+        var isApply = family.EndsWith(".apply", StringComparison.Ordinal);
+        var divisor = random.Next(2, 7 + scale);
+        var quotient = random.Next(2, 8 + scale * 3);
+        var remainder = random.Next(1, divisor);
+        var dividend = divisor * quotient + remainder;
+        var prompt = isApply
+            ? $"{dividend} counters are shared equally among {divisor} groups. How many counters are in each full group and how many are left over? Answer as 'q r r'."
+            : $"Calculate {dividend} ÷ {divisor}. Give the quotient and remainder as 'q r r'.";
+
+        return Problem(
+            family,
+            prompt,
+            "Divide to find the whole-number quotient and remainder. Verify dividend = divisor × quotient + remainder and remainder < divisor.",
+            AssessmentItemType.ShortAnswer,
+            ("dividend", dividend),
+            ("divisor", divisor));
+    }
+
+    private static ExactProblem BuildFractionOfQuantity(
+        string family,
+        Random random,
+        int scale)
+    {
+        var isApply = family.EndsWith(".apply", StringComparison.Ordinal);
+        var denominator = random.Next(2, 7 + scale);
+        var numerator = random.Next(1, denominator + 1);
+        var unit = random.Next(2, 8 + scale * 2);
+        var quantity = denominator * unit;
+        var prompt = isApply
+            ? $"A collection has {quantity} items. What is {numerator}/{denominator} of the collection?"
+            : $"Find {numerator}/{denominator} of {quantity}.";
+
+        return Problem(
+            family,
+            prompt,
+            "Divide the whole quantity by the denominator to find one equal part, multiply by the numerator, then verify the fraction relationship.",
+            AssessmentItemType.Numeric,
+            ("numerator", numerator),
+            ("denominator", denominator),
+            ("quantity", quantity));
+    }
+
+    private static ExactProblem BuildLinearEquation(Random random, int scale)
+    {
+        var factory = new ExactLinearEquationQuestionFactory(
+            new ExactLinearEquationSolver(),
+            new ExactLinearEquationVerifier());
+        var generated = factory.Generate(
+            random.Next(1, int.MaxValue),
+            Math.Clamp(scale, 1, 3));
+
+        if (generated.Problem is not EquationNode)
+        {
+            throw new InvalidOperationException(
+                "Exact linear-equation factory returned an unsupported learner-facing problem shape.");
+        }
+
+        var coefficient = int.Parse(
+            generated.Parameters["coefficient"],
+            NumberStyles.Integer,
+            CultureInfo.InvariantCulture);
+        var offset = int.Parse(
+            generated.Parameters["offset"],
+            NumberStyles.Integer,
+            CultureInfo.InvariantCulture);
+        var right = int.Parse(
+            generated.Parameters["right"],
+            NumberStyles.Integer,
+            CultureInfo.InvariantCulture);
+
+        return Problem(
+            ExactLinearEquationQuestionFactory.FamilyId,
+            $"Solve {FormatLinearExpression(coefficient, offset)} = {right.ToString(CultureInfo.InvariantCulture)}.",
+            "Collect constants, divide by the non-zero coefficient, then verify the exact solution in the original equation.",
+            AssessmentItemType.Numeric,
+            ("coefficient", coefficient),
+            ("offset", offset),
+            ("right", right));
+    }
+
     private static ExactProblem BuildLinearInequality(Random random, int scale)
     {
         var factory = new ExactLinearInequalityQuestionFactory(
@@ -629,6 +848,31 @@ public sealed class ExactSkillContractQuestionEngine
                 (p["operation"] == 0 ? p["left"] + p["right"] : p["left"] - p["right"])
                     .ToString(CultureInfo.InvariantCulture),
 
+            "number.whole.add_subtract.comparative.build" or
+            "number.whole.add_subtract.comparative.apply" =>
+                (p["base"] + p["difference"]).ToString(CultureInfo.InvariantCulture),
+
+            "number.whole.add_subtract.complement_100.build" or
+            "number.whole.add_subtract.complement_100.apply" =>
+                (100 - p["known"]).ToString(CultureInfo.InvariantCulture),
+
+            "number.whole.multiply.fact_recall.build" or
+            "number.whole.multiply.fact_recall.apply" =>
+                (p["left"] * p["right"]).ToString(CultureInfo.InvariantCulture),
+
+            "number.whole.divide.with_remainder.build" or
+            "number.whole.divide.with_remainder.apply" =>
+                $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
+
+            "fractions.of_quantity.build" or
+            "fractions.of_quantity.apply" =>
+                ((p["quantity"] / p["denominator"]) * p["numerator"])
+                    .ToString(CultureInfo.InvariantCulture),
+
+            ExactLinearEquationQuestionFactory.FamilyId =>
+                ((p["right"] - p["offset"]) / p["coefficient"])
+                    .ToString(CultureInfo.InvariantCulture),
+
             ExactLinearInequalityQuestionFactory.FamilyId =>
                 SolveLinearInequality(p),
 
@@ -685,6 +929,13 @@ public sealed class ExactSkillContractQuestionEngine
         var sign = offset > 0 ? "+" : "−";
         return $"{coefficientText} {sign} {Math.Abs(offset).ToString(CultureInfo.InvariantCulture)}";
     }
+
+    private static string NormalizeRemainderAnswer(string answer) =>
+        answer
+            .Trim()
+            .ToLowerInvariant()
+            .Replace("remainder", "r", StringComparison.Ordinal)
+            .Replace(" ", string.Empty, StringComparison.Ordinal);
 
     private static string NormalizeInequalityAnswer(string answer) =>
         answer
