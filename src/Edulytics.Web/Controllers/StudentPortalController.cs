@@ -239,6 +239,7 @@ public sealed class StudentPortalController : Controller
                 lessonId,
                 lessonDetail,
                 ref gameAdoptionId,
+                ref exactPracticeAdoptionId,
                 ref pilotAdoptionId);
         }
 
