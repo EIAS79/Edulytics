@@ -1011,6 +1011,108 @@
       ],
       "status": "ShadowVerified",
       "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.related_denominators",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-recomputation-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.unlike_denominators",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-recomputation-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.mixed_same_denominator",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-recomputation-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.representations.equal_parts",
+      "version": 1,
+      "skillId": "fractions.representations.unit_interval",
+      "requiredCapabilities": [
+        "fractions.representations.exact",
+        "fractions.verify.representations"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-recomputation-from-original-structured-parameters",
+      "representations": [
+        "equal_parts",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.representations.number_line",
+      "version": 1,
+      "skillId": "fractions.representations.unit_interval",
+      "requiredCapabilities": [
+        "fractions.representations.exact",
+        "fractions.verify.representations"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-recomputation-from-original-structured-parameters",
+      "representations": [
+        "number_line",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.compare.benchmark_half",
+      "version": 1,
+      "skillId": "fractions.compare.benchmarks",
+      "requiredCapabilities": [
+        "fractions.compare.benchmarks.exact",
+        "fractions.verify.compare.benchmarks"
+      ],
+      "answerType": "comparison_symbol",
+      "verificationPolicy": "independent-recomputation-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "number_line"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
     }
   ]
 }
