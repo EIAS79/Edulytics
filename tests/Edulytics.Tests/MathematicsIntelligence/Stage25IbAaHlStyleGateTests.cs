@@ -6,6 +6,7 @@ using Edulytics.Services.Mathematics.Difficulty;
 using Edulytics.Services.Mathematics.Generation;
 using Edulytics.Services.Mathematics.Planning;
 using Edulytics.Services.Mathematics.Solving;
+using Edulytics.Services.Mathematics.Verification;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
 
