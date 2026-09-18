@@ -573,6 +573,54 @@
       "provider": "edulytics-exact-skill-contract",
       "providerVersion": "whole-add-subtract-exact-v1",
       "status": "ShadowVerified"
+    },
+    {
+      "id": "number.whole.multiply.exact",
+      "domain": "number",
+      "canonicalName": "Generate and solve bounded multiplication facts exactly",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "whole-multiply-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "number.verify.whole.multiply",
+      "domain": "number",
+      "canonicalName": "Independently verify multiplication from original factors",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "whole-multiply-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "number.whole.divide.exact",
+      "domain": "number",
+      "canonicalName": "Generate and solve bounded whole-number division with remainder exactly",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "whole-divide-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "number.verify.whole.divide",
+      "domain": "number",
+      "canonicalName": "Independently verify quotient and remainder from original dividend and divisor",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "whole-divide-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.of_quantity.exact",
+      "domain": "fractions",
+      "canonicalName": "Find an exact fraction of a divisible whole-number quantity",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-of-quantity-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.verify.of_quantity",
+      "domain": "fractions",
+      "canonicalName": "Independently verify fraction-of-quantity results from numerator denominator and whole quantity",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-of-quantity-exact-v1",
+      "status": "ShadowVerified"
     }
   ]
 }
