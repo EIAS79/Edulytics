@@ -149,7 +149,8 @@ public sealed class Stage18SkillContractPracticeEngine
                 schemaVersion = 1,
                 skillId = contract.SkillId,
                 questionFamily = question.Family,
-                parameters = question.Parameters
+                parameters = question.Parameters,
+                representation = question.Representation
             }),
             ExposureFingerprint = question.ExposureFingerprint,
             ValidationMetadataJson = JsonSerializer.Serialize(new
