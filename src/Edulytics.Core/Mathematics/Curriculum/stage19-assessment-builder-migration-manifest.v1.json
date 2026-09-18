@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "stage": "19",
+  "status": "COMPLETE",
+  "workflow": [
+    "Select",
+    "Generate",
+    "Review",
+    "Approve",
+    "Publish"
+  ],
+  "generationMethod": "skill-contract-assessment-solver-verified-v1",
+  "policy": "Official outcomes backed by READY_VERIFIED SkillContracts use the shared exact Mathematics kernel. Mixed exact/non-exact generation fails closed. Supporting lessons without official outcomes are never assigned invented OutcomeCodes.",
+  "entries": [
+    {
+      "outcomeCode": "CCSS:3.NF.A.3",
+      "skillId": "fractions.equivalent",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.number_line"
+      ],
+      "evidenceLessonCodes": [
+        "PED:US-CCSS-MATH:G3:U05:L10",
+        "PED:US-CCSS-MATH:G3:U05:L11",
+        "PED:US-CCSS-MATH:G3:U05:L12"
+      ]
+    },
+    {
+      "outcomeCode": "CCSS:4.NF.A.1",
+      "skillId": "fractions.equivalent",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.number_line",
+        "fractions.equivalent.reduce_common_factor"
+      ],
+      "evidenceLessonCodes": [
+        "PED:US-CCSS-MATH:G4:U02:L07",
+        "PED:US-CCSS-MATH:G4:U02:L08",
+        "PED:US-CCSS-MATH:G4:U02:L10",
+        "PED:US-CCSS-MATH:G4:U02:L11"
+      ]
+    },
+    {
+      "outcomeCode": "CCSS:6.RP.A.2",
+      "skillId": "ratio.unit_rate",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "evidenceLessonCodes": [
+        "PED:US-CCSS-MATH:G6:U03:L07"
+      ]
+    },
+    {
+      "outcomeCode": "CCSS:6.RP.A.3",
+      "skillId": "ratio.unit_rate",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "evidenceLessonCodes": [
+        "PED:US-CCSS-MATH:G6:U03:L07"
+      ]
+    }
+  ],
+  "excludedVerifiedLessons": [
+    {
+      "reason": "SupportingLessonNoOfficialOutcomeCode",
+      "lessonCodes": [
+        "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:APPLY",
+        "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:APPLY",
+        "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:BUILD",
+        "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:APPLY",
+        "PED:CAMBRIDGE-INTL-MATH:S5:5F-2:BUILD",
+        "PED:CAMBRIDGE-INTL-MATH:S5:5F-2:APPLY"
+      ]
+    }
+  ],
+  "excludedOfficialOutcomeCodes": [
+    {
+      "outcomeCode": "CCSS:3.OA.B.5",
+      "reason": "Pedagogical lesson linkage is not sufficient evidence that the verified primary SkillContract fractions.equivalent exactly represents this separate operations outcome."
+    }
+  ]
+}
