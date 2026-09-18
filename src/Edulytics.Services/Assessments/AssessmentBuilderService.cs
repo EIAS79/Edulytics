@@ -8,6 +8,7 @@ using Edulytics.Core.Constants;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Interfaces;
+using Edulytics.Core.Mathematics.Assessment;
 using Edulytics.Core.MathematicsGeneration;
 using Edulytics.Core.Users;
 using Edulytics.Services.AssessmentIntelligence;
@@ -187,7 +188,7 @@ public sealed class AssessmentBuilderService(
 
         var outcomeIds = NormalizeOutcomes(request.OutcomeIds);
         if (!ValidateOutcomes(resolved.Details!, outcomeIds)) return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
-        var batch = TryGenerate(context, resolved.SchoolId, outcomeIds, request.QuestionCount, effectiveDifficulty.Value, request.Seed);
+        var batch = TryGenerate(context, resolved.SchoolId, outcomeIds, request.QuestionCount, effectiveDifficulty.Value, request.Seed, actorUserId);
         if (batch is null) return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
         if (batch.Items.Count != request.QuestionCount) return Failure(AssessmentErrorCode.PersistenceError);
 
@@ -245,7 +246,7 @@ public sealed class AssessmentBuilderService(
             AssessmentItemDifficulty.Medium => AssessmentBuilderDifficulty.Stretch,
             _ => AssessmentBuilderDifficulty.Challenge
         };
-        var batch = TryGenerate(context, resolved.SchoolId, outcomeIds, 1, difficulty, seed);
+        var batch = TryGenerate(context, resolved.SchoolId, outcomeIds, 1, difficulty, seed, actorUserId);
         var replacement = batch?.Items.SingleOrDefault();
         if (replacement is null) return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
 
@@ -326,13 +327,64 @@ public sealed class AssessmentBuilderService(
     }
 
     private MathematicsGenerationBatch? TryGenerate(
-        AssessmentBuilderPersistenceContext context, Guid schoolId, IReadOnlyList<Guid> outcomeIds,
-        int count, AssessmentBuilderDifficulty difficulty, int seed)
+        AssessmentBuilderPersistenceContext context,
+        Guid schoolId,
+        IReadOnlyList<Guid> outcomeIds,
+        int count,
+        AssessmentBuilderDifficulty difficulty,
+        int seed,
+        Guid createdByUserId)
     {
-        if (context.CurriculumAdoption is null || string.IsNullOrWhiteSpace(context.CurriculumAdoption.CurriculumLevelKey)) return null;
-        var selected = context.LearningOutcomes.Where(x => outcomeIds.Contains(x.Id)).ToArray();
-        var profiles = selected.Select(NativeMathematicsOutcomeProfileResolver.Resolve).ToArray();
-        if (profiles.Length != outcomeIds.Count || profiles.Any(x => x is null)) return null;
+        if (context.CurriculumAdoption is null ||
+            string.IsNullOrWhiteSpace(context.CurriculumAdoption.CurriculumLevelKey))
+        {
+            return null;
+        }
+
+        var selected = context.LearningOutcomes
+            .Where(x => outcomeIds.Contains(x.Id))
+            .OrderBy(x => x.Order)
+            .ThenBy(x => x.Code)
+            .ToArray();
+
+        if (selected.Length != outcomeIds.Count)
+            return null;
+
+        var exactContracts = selected
+            .Select(outcome =>
+                Stage19AssessmentSkillContracts.TryResolve(outcome.Code, out var contract)
+                    ? contract
+                    : null)
+            .ToArray();
+
+        // READY_VERIFIED official outcomes are authoritative once migrated.
+        // Never send an exact outcome through the legacy/native generator.
+        if (exactContracts.Any(contract => contract is not null))
+        {
+            if (exactContracts.Any(contract => contract is null))
+                return null;
+
+            if (count < selected.Length)
+                return null;
+
+            return TryGenerateExact(
+                context,
+                schoolId,
+                selected,
+                exactContracts.Select(contract => contract!).ToArray(),
+                count,
+                difficulty,
+                seed,
+                createdByUserId);
+        }
+
+        var profiles = selected
+            .Select(NativeMathematicsOutcomeProfileResolver.Resolve)
+            .ToArray();
+
+        if (profiles.Length != outcomeIds.Count || profiles.Any(x => x is null))
+            return null;
+
         var policy = difficulty switch
         {
             AssessmentBuilderDifficulty.AtClassLevel => AssessmentDifficultyPolicy.Balanced,
@@ -340,6 +392,7 @@ public sealed class AssessmentBuilderService(
             AssessmentBuilderDifficulty.Challenge => new AssessmentDifficultyPolicy(5, 30, 65),
             _ => AssessmentDifficultyPolicy.Balanced
         };
+
         try
         {
             var blueprint = new AssessmentBlueprintEngine().Build(new AssessmentBlueprintRequest(
@@ -353,13 +406,100 @@ public sealed class AssessmentBuilderService(
                 AssessmentPurpose.TeacherAssessment,
                 count,
                 policy,
-                context.Items.Select(x => x.ExposureFingerprint).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray()));
-            return new MathematicsQuestionGenerationEngine().Generate(new MathematicsGenerationRequest(blueprint, profiles.Select(x => x!).ToArray(), seed));
+                context.Items
+                    .Select(x => x.ExposureFingerprint)
+                    .Where(x => !string.IsNullOrWhiteSpace(x))
+                    .ToArray()));
+
+            return new MathematicsQuestionGenerationEngine().Generate(
+                new MathematicsGenerationRequest(
+                    blueprint,
+                    profiles.Select(x => x!).ToArray(),
+                    seed));
         }
         catch (InvalidOperationException)
         {
             return null;
         }
+    }
+
+    private static MathematicsGenerationBatch? TryGenerateExact(
+        AssessmentBuilderPersistenceContext context,
+        Guid schoolId,
+        IReadOnlyList<LearningOutcome> outcomes,
+        IReadOnlyList<Stage19AssessmentSkillContract> contracts,
+        int count,
+        AssessmentBuilderDifficulty difficulty,
+        int seed,
+        Guid createdByUserId)
+    {
+        if (context.CurriculumAdoption is null ||
+            outcomes.Count == 0 ||
+            outcomes.Count != contracts.Count)
+        {
+            return null;
+        }
+
+        var generated = new List<GeneratedMathematicsItem>(count);
+        var excluded = context.Items
+            .Select(x => x.ExposureFingerprint)
+            .Where(x => !string.IsNullOrWhiteSpace(x))
+            .ToHashSet(StringComparer.Ordinal);
+
+        var baseCount = count / outcomes.Count;
+        var remainder = count % outcomes.Count;
+        var engine = new Stage19AssessmentSkillContractEngine();
+
+        try
+        {
+            for (var index = 0; index < outcomes.Count; index++)
+            {
+                var allocation = baseCount + (index < remainder ? 1 : 0);
+                if (allocation <= 0)
+                    return null;
+
+                var batch = engine.Generate(
+                    schoolId,
+                    context.CurriculumAdoption.Id,
+                    context.CurriculumAdoption.CurriculumLevelKey!,
+                    outcomes[index],
+                    contracts[index],
+                    difficulty,
+                    allocation,
+                    unchecked(seed + ((index + 1) * 7919)),
+                    excluded,
+                    createdByUserId);
+
+                foreach (var item in batch.Items)
+                {
+                    if (!Stage19AssessmentSkillContractEngine.VerifyPersistedItem(
+                            contracts[index],
+                            item.Item))
+                    {
+                        return null;
+                    }
+
+                    if (!excluded.Add(item.Item.ExposureFingerprint))
+                        return null;
+
+                    generated.Add(item);
+                }
+            }
+        }
+        catch (InvalidOperationException)
+        {
+            return null;
+        }
+
+        if (generated.Count != count)
+            return null;
+
+        return new MathematicsGenerationBatch(
+            schoolId,
+            context.CurriculumAdoption.Id,
+            context.CurriculumAdoption.CurriculumLevelKey!,
+            generated,
+            Stage19AssessmentSkillContracts.GenerationMethod);
     }
 
     private static AssessmentBuilderWorkspace BuildWorkspace(AssessmentDetails details, AssessmentBuilderPersistenceContext context)
@@ -401,7 +541,8 @@ public sealed class AssessmentBuilderService(
         var aiSupportedOutcomeIds = context.LearningOutcomes
             .Where(x =>
                 eligibleOutcomeIds.Contains(x.Id) &&
-                NativeMathematicsOutcomeProfileResolver.Resolve(x) is not null)
+                (Stage19AssessmentSkillContracts.TryResolve(x.Code, out _) ||
+                 NativeMathematicsOutcomeProfileResolver.Resolve(x) is not null))
             .Select(x => x.Id)
             .Distinct()
             .OrderBy(x => x)
