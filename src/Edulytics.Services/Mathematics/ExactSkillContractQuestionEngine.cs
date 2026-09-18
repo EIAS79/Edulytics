@@ -193,7 +193,8 @@ public sealed class ExactSkillContractQuestionEngine
             "number.whole.add_subtract.across_10" or
             "number.whole.add_subtract.within_100" or
             "number.whole.add_subtract.columnar" or
-            "number.whole.add_subtract.contextual_within_100" =>
+            "number.whole.add_subtract.contextual_within_100" or
+            "number.whole.add_subtract.contextual_across_10" =>
                 VerifyWholeNumberAddSubtract(family, parameters, value),
 
             _ => false
@@ -244,6 +245,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildWholeNumberAddSubtract(random, family, 999, requireRegrouping: true, contextual: false),
             "number.whole.add_subtract.contextual_within_100" =>
                 BuildWholeNumberAddSubtract(random, family, 100, requireRegrouping: false, contextual: true),
+            "number.whole.add_subtract.contextual_across_10" =>
+                BuildWholeNumberAddSubtract(random, family, 40 + 20 * scale, requireRegrouping: true, contextual: true),
             ExactLinearInequalityQuestionFactory.FamilyId =>
                 BuildLinearInequality(random, scale),
             _ => UnsupportedFamily(family)
@@ -494,6 +497,7 @@ public sealed class ExactSkillContractQuestionEngine
         }
 
         if (family is "number.whole.add_subtract.across_10" or
+            "number.whole.add_subtract.contextual_across_10" or
             "number.whole.add_subtract.columnar")
         {
             var regrouping = operation == 0
