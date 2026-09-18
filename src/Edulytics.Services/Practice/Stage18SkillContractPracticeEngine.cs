@@ -22,7 +22,8 @@ public sealed class Stage18SkillContractPracticeEngine
         int questionCount,
         int seed,
         IReadOnlyCollection<string> excludedExposureFingerprints,
-        Guid createdByUserId)
+        Guid createdByUserId,
+        int? curriculumLogicalLevel = null)
     {
         ArgumentNullException.ThrowIfNull(contract);
         var legacy = contract.ToLegacyStage18Contract();
@@ -35,7 +36,8 @@ public sealed class Stage18SkillContractPracticeEngine
             questionCount,
             seed,
             excludedExposureFingerprints,
-            createdByUserId);
+            createdByUserId,
+            contract.CurriculumLogicalLevel);
 
         foreach (var item in items)
         {
@@ -100,7 +102,8 @@ public sealed class Stage18SkillContractPracticeEngine
         int questionCount,
         int seed,
         IReadOnlyCollection<string> excludedExposureFingerprints,
-        Guid createdByUserId)
+        Guid createdByUserId,
+        int? curriculumLogicalLevel = null)
     {
         ArgumentNullException.ThrowIfNull(contract);
         ArgumentNullException.ThrowIfNull(excludedExposureFingerprints);
@@ -123,7 +126,8 @@ public sealed class Stage18SkillContractPracticeEngine
             ResolveDifficulty(requestedDifficulty),
             questionCount,
             seed,
-            excludedExposureFingerprints);
+            excludedExposureFingerprints,
+            curriculumLogicalLevel);
 
         return exact.Select(question => new AssessmentItem
         {
