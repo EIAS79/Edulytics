@@ -210,6 +210,7 @@ public sealed class StudentPortalController : Controller
         Guid? exactPracticeAdoptionId = null;
         Guid? pilotAdoptionId = null;
 
+        // Resolve exact Practice independently from optional game presentation.
         var initial = await _privatePractice.GetWorkspaceAsync(actorId, null, cancellationToken);
         InspectPracticeWorkspace(
             initial,
