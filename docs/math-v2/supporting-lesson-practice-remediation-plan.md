@@ -4,8 +4,8 @@
 **Status:** Approved execution plan  
 **Baseline commit:** `2c761c2e231da741a117352f9f4de489a4fe3cbc`  
 **Baseline date:** 2026-09-18  
-**Scope:** Supporting / pedagogical mathematics lessons only  
-**Primary goal:** Make Practice lesson-aligned, mathematically correct, independently verifiable, and fail-closed without requiring an official curriculum outcome mapping.
+**Scope:** Supporting / pedagogical mathematics lessons, plus the shared Teacher Assessment Builder and Student Private Practice generation paths required to keep mathematical capability consistent across the product.  
+**Primary goal:** Make Practice and AI-generated mathematics lesson/outcome-aligned, mathematically correct, grade-appropriate, independently verifiable, and fail-closed without requiring an official curriculum outcome mapping for Supporting lessons.
 
 ---
 
@@ -657,7 +657,223 @@ For Supporting lesson-scoped Practice without an approved contract, do not silen
 
 ---
 
-## 15. Source-backed Supporting lessons
+## 15. Workstream R11 — Unify Supporting Practice, Teacher AI, and Student AI on one capability authority
+
+### Why this is required
+
+The current product has three related generation surfaces:
+
+- Supporting lesson Practice;
+- Teacher Assessment Builder AI generation;
+- Student Private Practice AI generation.
+
+Teacher Assessment Builder and Student Private Practice already share the `UniversalMathematicsQuestionGenerationEngine`, but the current universal engine can still route recognisable mathematics through broad contextual topic detection. Supporting Practice also has separate exact-contract/game-routing logic.
+
+That creates a consistency risk:
+
+```text
+same mathematical target
+→ Supporting Practice makes one capability decision
+→ Teacher AI makes another
+→ Student AI makes another
+```
+
+The target architecture is one shared capability decision:
+
+```text
+Lesson / Outcome
+        ↓
+Exact Skill / SkillContract
+        ↓
+Allowed Question Families
+        ↓
+Required Solver + Verifier + Representation
+        ↓
+Capability / Readiness decision
+        ├─ Supporting Practice
+        ├─ Teacher Assessment Builder
+        └─ Student Private Practice
+```
+
+### Required changes
+
+1. Introduce one authoritative mathematics capability resolver in Core/Services.
+2. Make Supporting Practice, Teacher Assessment Builder, and Student Private Practice consume the same exact skill/family/capability registry.
+3. Route exact supported mathematics through the shared structured generation kernel.
+4. Preserve official-outcome provenance for Teacher Assessment Builder where an official outcome exists.
+5. Preserve Supporting provenance without inventing an official outcome.
+6. Once an exact contract exists, forbid broad contextual fallback for all three surfaces.
+7. If no exact contract exists, any contextual path must remain explicitly `AiAssisted` and must not be presented as exact lesson/outcome alignment.
+8. Add cross-surface regression tests proving the same target resolves to the same SkillId, family constraints, solver, verifier, and readiness decision.
+
+### Exit criteria
+
+- one capability resolver is authoritative for all three surfaces;
+- no duplicate curriculum-specific allowlists contradict each other;
+- exact-contract mathematics never drops back to `CurriculumContextCheck`;
+- generation metadata states whether an item is `READY_VERIFIED` or contextual-assisted;
+- Teacher and Student generation cannot silently produce a broader nearby topic when an exact target was requested.
+
+---
+
+## 16. Workstream R12 — Complete grade-aware Geometry and high-school visual mathematics coverage
+
+### Current audited weakness
+
+Geometry generation exists today, but the contextual generator is much broader and shallower than the Grade 10–12 curriculum content.
+
+The current universal contextual path can recognise broad topics such as:
+
+- geometry;
+- angle;
+- Pythagorean/trigonometric text;
+- coordinate/slope;
+- measurement.
+
+However, current contextual generation can reduce several distinct high-school targets to generic items such as:
+
+- rectangle area/perimeter;
+- complementary/supplementary angles;
+- 3-4-5 Pythagorean triples.
+
+This is insufficient for Grade 10–12 lessons such as:
+
+- coordinates and straight-line graphs;
+- angle relationships;
+- congruence and similarity;
+- perimeter and area;
+- surface area and volume;
+- Pythagoras theorem;
+- trigonometric ratios;
+- extended trigonometric modelling.
+
+In particular, broad `TRIGONOMET...` context must not collapse into a Pythagorean question when the target is `sin/cos/tan`, and `surface area and volume` must not collapse into rectangle area.
+
+### Required exact skill expansion
+
+Create or complete reusable canonical skills for the high-school geometry domain, including at minimum the targets actually present in the catalogues:
+
+```text
+geometry.coordinate.straight_line
+geometry.angles.relationships
+geometry.congruence
+geometry.similarity
+geometry.perimeter_area
+geometry.surface_area
+geometry.volume
+geometry.right_triangle.pythagorean
+trigonometry.right_triangle.sin_cos_tan
+trigonometry.right_triangle.solve_side
+trigonometry.right_triangle.solve_angle
+trigonometry.modelling
+```
+
+The exact final SkillIds may differ if equivalent canonical skills already exist; duplicate semantics must not be introduced.
+
+### Required question-family coverage
+
+Each production-ready geometry skill must have explicit reusable families.
+
+Examples:
+
+```text
+geometry.similarity.find_missing_length
+geometry.similarity.scale_factor
+geometry.congruence.identify_criterion
+
+geometry.surface_area.prism
+geometry.volume.prism
+geometry.volume.composite
+
+geometry.angles.parallel_lines
+geometry.angles.polygon
+geometry.angles.reasoning
+
+geometry.coordinate.gradient_between_points
+geometry.coordinate.line_equation
+
+trigonometry.right_triangle.find_side
+trigonometry.right_triangle.find_angle
+trigonometry.modelling.contextual
+```
+
+### Grade-aware difficulty
+
+Difficulty must not be implemented merely by increasing integers.
+
+The capability contract must support grade/level-appropriate features such as:
+
+- number domain and precision;
+- one-step versus multi-step reasoning;
+- exact versus rounded answers;
+- compound/composite shapes;
+- missing-side versus missing-angle trigonometry;
+- representation complexity;
+- algebraic reasoning inside geometry;
+- modelling/context complexity.
+
+A Grade 10 or Grade 12 request must not receive a primary-level rectangle question solely because the word `geometry` matched.
+
+### Geometry representations and diagrams
+
+Where the target depends on a figure, the question family must define a structured geometry representation rather than relying only on prose.
+
+The representation contract should be capable of storing:
+
+```text
+points / coordinates
+segments
+angles
+parallel/perpendicular constraints
+shape type
+labelled dimensions
+unknown marker
+diagram metadata
+```
+
+The renderer may present this as SVG/canvas/other deterministic visual output, but the mathematical model must remain structured and solver-verifiable.
+
+A diagram is a representation of the underlying problem model, not the source of mathematical truth.
+
+### Solver and verifier requirements
+
+Every new production geometry family must have:
+
+- a deterministic structured problem model;
+- solver support;
+- an independent verifier;
+- domain/constraint validation;
+- answer-evaluator rules;
+- representation validation;
+- grade/difficulty feature validation.
+
+Current exact Geometry V2 capabilities that remain `ShadowVerified` may be promoted only after their production routing, curriculum/skill mapping, and acceptance gates are satisfied.
+
+### Cross-surface requirement
+
+When a geometry skill becomes production-ready, it must become available through the shared R11 capability authority to:
+
+```text
+Supporting Practice
+Teacher Assessment Builder
+Student Private Practice
+```
+
+There must not be a separate geometry implementation for each surface.
+
+### Exit criteria
+
+- Grade 10–12 geometry targets no longer collapse into generic rectangle/angle/Pythagorean fallbacks;
+- exact trigonometric-ratio questions are distinct from Pythagorean questions;
+- congruence, similarity, surface area, volume, coordinate geometry, angle relationships, Pythagoras, and required right-triangle trigonometry have explicit capability states;
+- every enabled family passes structured generation + alignment + solver + independent verifier;
+- grade-aware difficulty is enforced by capability features, not only larger numbers;
+- figure-dependent questions use validated structured representations;
+- Teacher AI and Student AI use the same production-ready geometry families as Supporting Practice.
+
+---
+
+## 17. Source-backed Supporting lessons
 
 For source-backed Supporting lessons, retain exact provenance.
 
@@ -689,7 +905,7 @@ Where multiple Edulytics lessons share one trusted source criterion (for example
 
 ---
 
-## 16. Versioning and provenance for generated items
+## 18. Versioning and provenance for generated items
 
 Every generated Practice item must preserve enough metadata to reconstruct why it was generated.
 
@@ -721,7 +937,7 @@ Historical items must remain explainable after registry changes.
 
 ---
 
-## 17. CI and automated safety gates
+## 19. CI and automated safety gates
 
 The remediation is incomplete without CI enforcement.
 
@@ -779,7 +995,7 @@ content hash changed
 
 ---
 
-## 18. Execution order
+## 20. Execution order
 
 Execute continuously in this order:
 
@@ -803,13 +1019,19 @@ R8  Enforce structured generation
 R9  Enforce independent alignment + math verification
 ↓
 R10 Make Practice readiness the single runtime/UI authority
+↓
+R11 Unify Supporting Practice + Teacher AI + Student AI capability authority
+↓
+R12 Complete grade-aware Geometry and high-school visual mathematics coverage
 ```
 
 R5 and R6 should overlap operationally: a lesson may require both a new/reused skill and content strengthening before admission.
 
+R11 should reuse the exact capability contracts created by R1–R10 rather than creating a parallel generation architecture. R12 then expands the shared engine once so the new geometry capabilities become available consistently across all three generation surfaces.
+
 ---
 
-## 19. Definition of Done
+## 21. Definition of Done
 
 Every Supporting lesson must end in exactly one of two terminal states.
 
@@ -852,7 +1074,7 @@ No lesson may remain silently unclassified.
 
 ---
 
-## 20. Success metrics
+## 22. Success metrics
 
 The programme is complete when:
 
@@ -865,11 +1087,15 @@ The programme is complete when:
 - all multi-skill lessons have explicit Primary/Secondary/Prerequisite semantics;
 - all `CONTENT_WEAK` lessons are repaired or explicitly blocked;
 - all `ONTOLOGY_GAP` lessons are resolved into reusable canonical skills or explicitly blocked for a non-ontology reason;
-- Practice UI capability and generation capability use the same authoritative resolver.
+- Practice UI capability and generation capability use the same authoritative resolver;
+- Supporting Practice, Teacher Assessment Builder, and Student Private Practice use one shared exact mathematics capability authority;
+- exact-contract items never silently fall back to `CurriculumContextCheck`;
+- Grade 10–12 geometry requests resolve to grade-appropriate exact families rather than generic rectangle/angle/Pythagorean substitutes;
+- all enabled high-school geometry families have solver, independent verifier, alignment checks, and validated representations.
 
 ---
 
-## 21. Non-goals
+## 23. Non-goals
 
 This plan does **not**:
 
@@ -880,11 +1106,14 @@ This plan does **not**:
 - allow title-only generation;
 - allow game availability to define mathematical capability;
 - automatically approve LLM-proposed mappings without evidence;
-- claim that a passing solver alone proves lesson alignment.
+- claim that a passing solver alone proves lesson alignment;
+- treat the current broad geometry keyword fallback as sufficient high-school geometry coverage;
+- use a Pythagorean item as a substitute for a trigonometric-ratio target;
+- treat larger numbers alone as evidence of Grade 10–12 difficulty.
 
 ---
 
-## 22. First implementation slice
+## 24. First implementation slice
 
 The first code slice after this plan is committed should:
 
@@ -900,7 +1129,7 @@ Only after this shared path is stable should the 33 high-confidence candidates b
 
 ---
 
-## 23. Authority of this document
+## 25. Authority of this document
 
 For Supporting Lesson Practice remediation:
 
