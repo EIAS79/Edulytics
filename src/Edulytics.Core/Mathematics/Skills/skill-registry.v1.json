@@ -297,7 +297,8 @@
       ],
       "v2QuestionFamilies": [
         "geometry.right_triangle.pythagorean.exact"
-      ]
+      ],
+      "supportingPracticeRouting": true
     },
     {
       "id": "calculus.polynomial.differentiate",
@@ -857,7 +858,16 @@
     {
       "id": "geometry.angles.relationships",
       "domain": "geometry",
-      "canonicalName": "Angle facts and relationships"
+      "canonicalName": "Angle facts and relationships",
+      "v2Status": "ShadowVerified",
+      "v2QuestionFamilies": [
+        "geometry.angles.relationships.missing_angle"
+      ],
+      "v2Capabilities": [
+        "geometry.practice.structured_exact_generation",
+        "geometry.practice.independent_verification"
+      ],
+      "supportingPracticeRouting": true
     },
     {
       "id": "geometry.polygons.properties",
@@ -867,17 +877,44 @@
     {
       "id": "geometry.congruence",
       "domain": "geometry",
-      "canonicalName": "Geometric congruence"
+      "canonicalName": "Geometric congruence",
+      "v2Status": "ShadowVerified",
+      "v2QuestionFamilies": [
+        "geometry.congruence.identify_criterion"
+      ],
+      "v2Capabilities": [
+        "geometry.practice.structured_exact_generation",
+        "geometry.practice.independent_verification"
+      ],
+      "supportingPracticeRouting": true
     },
     {
       "id": "geometry.similarity",
       "domain": "geometry",
-      "canonicalName": "Geometric similarity and scale factor"
+      "canonicalName": "Geometric similarity and scale factor",
+      "v2Status": "ShadowVerified",
+      "v2QuestionFamilies": [
+        "geometry.similarity.missing_length"
+      ],
+      "v2Capabilities": [
+        "geometry.practice.structured_exact_generation",
+        "geometry.practice.independent_verification"
+      ],
+      "supportingPracticeRouting": true
     },
     {
       "id": "geometry.coordinate.straight_line",
       "domain": "geometry",
-      "canonicalName": "Coordinate geometry and straight-line relationships"
+      "canonicalName": "Coordinate geometry and straight-line relationships",
+      "v2Status": "ShadowVerified",
+      "v2QuestionFamilies": [
+        "geometry.coordinate.straight_line.gradient"
+      ],
+      "v2Capabilities": [
+        "geometry.practice.structured_exact_generation",
+        "geometry.practice.independent_verification"
+      ],
+      "supportingPracticeRouting": true
     },
     {
       "id": "geometry.transformations",
@@ -907,12 +944,30 @@
     {
       "id": "trigonometry.right_triangle.sin_cos_tan",
       "domain": "trigonometry",
-      "canonicalName": "Right-triangle sine, cosine and tangent"
+      "canonicalName": "Right-triangle sine, cosine and tangent",
+      "v2Status": "ShadowVerified",
+      "v2QuestionFamilies": [
+        "trigonometry.right_triangle.sin_cos_tan.ratio"
+      ],
+      "v2Capabilities": [
+        "trigonometry.right_triangle.practice.exact_generation",
+        "trigonometry.right_triangle.practice.independent_verification"
+      ],
+      "supportingPracticeRouting": true
     },
     {
       "id": "trigonometry.modelling",
       "domain": "trigonometry",
-      "canonicalName": "Trigonometric modelling"
+      "canonicalName": "Trigonometric modelling",
+      "v2Status": "ShadowVerified",
+      "v2QuestionFamilies": [
+        "trigonometry.modelling.right_triangle"
+      ],
+      "v2Capabilities": [
+        "trigonometry.right_triangle.practice.exact_generation",
+        "trigonometry.right_triangle.practice.independent_verification"
+      ],
+      "supportingPracticeRouting": true
     },
     {
       "id": "statistics.median_range",
@@ -1170,28 +1225,64 @@
       "domain": "geometry",
       "canonicalName": "Reason with perimeter and area",
       "remediationStatus": "ReviewedTarget",
-      "productionRouting": false
+      "productionRouting": false,
+      "v2Status": "ShadowVerified",
+      "v2QuestionFamilies": [
+        "geometry.perimeter_area.rectangle"
+      ],
+      "v2Capabilities": [
+        "geometry.practice.structured_exact_generation",
+        "geometry.practice.independent_verification"
+      ],
+      "supportingPracticeRouting": true
     },
     {
       "id": "geometry.surface_area_volume",
       "domain": "geometry",
       "canonicalName": "Reason with surface area and volume",
       "remediationStatus": "ReviewedTarget",
-      "productionRouting": false
+      "productionRouting": false,
+      "v2Status": "ShadowVerified",
+      "v2QuestionFamilies": [
+        "geometry.surface_area_volume.cuboid"
+      ],
+      "v2Capabilities": [
+        "geometry.practice.structured_exact_generation",
+        "geometry.practice.independent_verification"
+      ],
+      "supportingPracticeRouting": true
     },
     {
       "id": "trigonometry.right_triangle.solve_side",
       "domain": "trigonometry",
       "canonicalName": "Solve a right triangle for a missing side",
       "remediationStatus": "ReviewedTarget",
-      "productionRouting": false
+      "productionRouting": false,
+      "v2Status": "ShadowVerified",
+      "v2QuestionFamilies": [
+        "trigonometry.right_triangle.solve_side.special"
+      ],
+      "v2Capabilities": [
+        "trigonometry.right_triangle.practice.exact_generation",
+        "trigonometry.right_triangle.practice.independent_verification"
+      ],
+      "supportingPracticeRouting": true
     },
     {
       "id": "trigonometry.right_triangle.solve_angle",
       "domain": "trigonometry",
       "canonicalName": "Solve a right triangle for a missing angle",
       "remediationStatus": "ReviewedTarget",
-      "productionRouting": false
+      "productionRouting": false,
+      "v2Status": "ShadowVerified",
+      "v2QuestionFamilies": [
+        "trigonometry.right_triangle.solve_angle.special"
+      ],
+      "v2Capabilities": [
+        "trigonometry.right_triangle.practice.exact_generation",
+        "trigonometry.right_triangle.practice.independent_verification"
+      ],
+      "supportingPracticeRouting": true
     }
   ]
 }
