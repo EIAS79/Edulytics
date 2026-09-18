@@ -3,7 +3,7 @@ using Edulytics.Core.Curriculum;
 namespace Edulytics.Data.Seeding;
 
 /// <summary>
-/// Narrow, versioned corrections for three Cambridge Primary Stage 6
+/// Narrow, versioned corrections for Cambridge Primary Stage 6
 /// supporting lessons whose original Phase 29 bodies were too generic for
 /// the exact lesson skill. The official curriculum graph and outcome mapping
 /// are intentionally untouched.
@@ -19,6 +19,9 @@ public static class CambridgePrimaryStage6LessonContentCorrections
     public const string CorrectionContentVersion =
         "phase29-cambridge-primary-stage6-alignment-v2";
 
+    public const string TwoUnknownsBuildLessonCode =
+        "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:BUILD";
+
     public const string TwoUnknownsLessonCode =
         "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:APPLY";
 
@@ -31,6 +34,7 @@ public static class CambridgePrimaryStage6LessonContentCorrections
     private static readonly HashSet<string> TargetLessonCodes =
         new(StringComparer.Ordinal)
         {
+            TwoUnknownsBuildLessonCode,
             TwoUnknownsLessonCode,
             ScaleReadingLessonCode,
             FractionComparisonLessonCode
@@ -107,6 +111,10 @@ public static class CambridgePrimaryStage6LessonContentCorrections
     {
         switch (lessonCode)
         {
+            case TwoUnknownsBuildLessonCode:
+                ApplyTwoUnknownsBuildCorrection(translation);
+                break;
+
             case TwoUnknownsLessonCode:
                 ApplyTwoUnknownsCorrection(translation);
                 break;
@@ -123,6 +131,28 @@ public static class CambridgePrimaryStage6LessonContentCorrections
                 throw new InvalidOperationException(
                     $"Unsupported Stage 6 correction target: {lessonCode}.");
         }
+    }
+
+    private static void ApplyTwoUnknownsBuildCorrection(
+        CanonicalLessonContentPackTranslation translation)
+    {
+        translation.Explanation =
+            "This Cambridge Primary Stage 6 supporting lesson develops the open DfE Year 6 ready-to-progress focus “Solve problems with 2 unknowns”. A two-unknown problem has two quantities whose values are not known and two independent facts that link them. Build the idea by representing both facts before solving. For a total-and-difference example, if x + y = 34 and y − x = 6, both equations must be true at the same time. The lesson is Edulytics-authored from OGL material; Cambridge remains the academic reference authority and no Cambridge objective wording is reproduced here.";
+
+        translation.KeyConceptsAndRules =
+            "Source focus: Solve problems with 2 unknowns. First name what each unknown represents. Translate each independent fact into a relationship such as x + y = total and y − x = difference, or y = kx. One relationship alone usually allows many pairs, so both relationships are needed. Use a bar model, table or equations to keep both unknowns visible. A valid pair must satisfy both original relationships.";
+
+        translation.WorkedExamples =
+            "Example A: Two bags contain 34 counters altogether. Bag B has 6 more counters than Bag A. Let x be Bag A and y be Bag B. The two facts are x + y = 34 and y − x = 6. Remove the difference from the total: 34 − 6 = 28. Split 28 equally, so x = 14 and y = 20. Check: 14 + 20 = 34 and 20 − 14 = 6. Example B: Two numbers total 36 and the larger is twice the smaller. Let x be the smaller and y the larger. Then x + y = 36 and y = 2x. Substitute to get x + 2x = 36, so x = 12 and y = 24. Check both facts.";
+
+        translation.StepByStepSolutions =
+            "Step 1: Define the two unknown quantities. Step 2: Write the first relationship from the first fact. Step 3: Write a second independent relationship from the second fact. Step 4: Use the two relationships together to find one unknown by structured reasoning, substitution or elimination. Step 5: Find the second unknown and state both values with their meanings. Step 6: Substitute the pair into both original relationships; if either check fails, the pair is not a solution.";
+
+        translation.CommonMistakes =
+            "Do not use only the total or only the difference: one relationship does not normally determine two unknowns. Do not assume the two unknowns are equal. Keep the meanings of x and y fixed. Do not accept a pair because it satisfies only one relationship. Check both original facts independently.";
+
+        translation.QuickSummary =
+            "Two unknowns require two independent relationships. Represent both facts, solve them together, state both values, and verify the pair in both original relationships.";
     }
 
     private static void ApplyTwoUnknownsCorrection(
