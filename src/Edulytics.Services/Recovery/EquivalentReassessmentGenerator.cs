@@ -3,6 +3,7 @@ using System.Text;
 using Edulytics.Core.AssessmentIntelligence;
 using Edulytics.Core.Entities;
 using Edulytics.Core.MathematicsGeneration;
+using Edulytics.Core.Mathematics.Assessment;
 using Edulytics.Core.Recovery;
 using Edulytics.Services.MathematicsGeneration;
 
@@ -54,6 +55,23 @@ public sealed class EquivalentReassessmentGenerator
     {
         ArgumentNullException.ThrowIfNull(plan);
         ArgumentNullException.ThrowIfNull(outcomeProfiles);
+
+        var exactProfile = outcomeProfiles
+            .SingleOrDefault(x => x.LearningOutcomeId == plan.LearningOutcomeId);
+
+        if (exactProfile is not null &&
+            Stage19AssessmentSkillContracts.TryResolve(
+                exactProfile.OutcomeCode,
+                out var exactContract) &&
+            exactContract is not null)
+        {
+            return new Stage21ExactReassessmentEngine(_recovery)
+                .Generate(
+                    plan,
+                    exactProfile,
+                    exactContract,
+                    seed);
+        }
 
         var previousFingerprints = plan.ExcludedExposureFingerprints
             .ToHashSet(StringComparer.Ordinal);
