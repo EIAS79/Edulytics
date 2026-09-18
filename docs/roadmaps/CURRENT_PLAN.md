@@ -22,11 +22,13 @@ This document is the repository pointer to the active mathematics/curriculum exe
 - **Programme Stage 20 — Diagnostic / Adaptive migration:** COMPLETE.
 - **Programme Stage 21 — Reassessment migration:** COMPLETE.
 - **Programme Stage 22 — Game runtime migration:** COMPLETE.
-- **Stage 22 authority rule:** for every currently migrated READY_VERIFIED exact game route, the server owns problem generation and answer correctness; the browser owns rendering and interaction only.
-- **Stage 22 exact scope:** all 14 Stage 18 exact lesson SkillContracts across 5 mechanics.
-- **Stage 22 source of truth:** src/Edulytics.Core/Mathematics/Curriculum/stage22-game-runtime-migration-manifest.v1.json.
-- **Stage 22 CI exit gate:** tools/math_intelligence/stage22_game_runtime_closure_audit.py.
-- **Next active stage after Stage 22 is live on Render:** Programme Stage 23 — IGCSE Extended gate.
+- **Programme Stage 23 — IGCSE Extended gate:** COMPLETE AS A CAPABILITY GATE.
+- **Stage 23 current truthful curriculum status:** 140 Extended supporting lessons inventoried; 0 VERIFIED, 28 CONTEXTUAL, 112 UNSUPPORTED, 0 formal OutcomeCode/FormalTarget mappings in the current Extended packs.
+- **Stage 23 claim rule:** global Cambridge IGCSE Extended capability claims and product routing remain blocked until formal mapping, benchmark evidence and approved academic review exist.
+- **Stage 23 source of truth:** src/Edulytics.Core/Mathematics/Curriculum/stage23-igcse-extended-gate-manifest.v1.json.
+- **Stage 23 benchmark corpus:** src/Edulytics.Core/Mathematics/Curriculum/stage23-igcse-extended-benchmark-corpus.v1.json.
+- **Stage 23 CI exit gate:** tools/math_intelligence/stage23_igcse_extended_gate_audit.py.
+- **Next active stage after Stage 23 is live on Render:** Programme Stage 24 — AS/A-Level 9709 gate.
 
 ## Update rule
 
