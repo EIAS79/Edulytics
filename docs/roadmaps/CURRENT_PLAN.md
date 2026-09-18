@@ -30,7 +30,15 @@ This document is the repository pointer to the active mathematics/curriculum exe
 - **Stage 25 source of truth:** src/Edulytics.Core/Mathematics/Curriculum/stage25-ib-aa-hl-style-gate-manifest.v1.json.
 - **Stage 25 benchmark corpus:** src/Edulytics.Core/Mathematics/Curriculum/stage25-ib-aa-hl-style-benchmark-corpus.v1.json.
 - **Stage 25 CI exit gate:** tools/math_intelligence/stage25_ib_aa_hl_style_gate_audit.py.
-- **Next active stage after Stage 25 is live on Render:** Programme Stage 26 — Security and resource controls.
+- **Programme Stage 26 — Security and resource controls: COMPLETE.**
+- **Programme Stage 27 — Observability: COMPLETE.**
+- **Programme Stage 28 — Production rollout: COMPLETE.**
+- **Final production boundary:** bounded input/AST/solver resources, dedicated Mathematics observability metrics, and scoped rollout modes `LegacyOnly / ShadowV2 / V2VerifiedOnly / V2Preferred / V2Only` are implemented. Explicit non-legacy rollout requires domain/skill/curriculum/grade scope, and unsupported targets fail closed.
+- **Backward compatibility:** the existing Grade 1–6 rollout gate remains accepted; when the new rollout mode is unset, enabled approved Grade 1–6 routes map to `V2VerifiedOnly` and disabled routes remain `LegacyOnly`.
+- **Capability truthfulness:** ShadowVerified advanced skills are not automatically promoted. Proof and unfamiliar-transfer capability remain UNSUPPORTED, and global IGCSE/9709/IB claims remain blocked pending their existing formal mapping and academic-review gates.
+- **Final source of truth:** src/Edulytics.Core/Mathematics/Curriculum/stage26-28-production-rollout-manifest.v1.json.
+- **Final CI exit gate:** tools/math_intelligence/stage26_28_production_closure_audit.py.
+- **Integrated Mathematics Intelligence Master Execution Plan: COMPLETE** as an execution programme. Future work is continuous curriculum onboarding, academic review of blocked capabilities, regression monitoring, and evidence-based promotion—not another numbered programme stage.
 
 ## Update rule
 
