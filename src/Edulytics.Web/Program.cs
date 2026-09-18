@@ -181,6 +181,9 @@ builder.Services
     .AddMathematicsGenerationPhase33();
 
 builder.Services
+    .AddWeaknessRecoveryPhase36();
+
+builder.Services
     .AddExamGenerationPhase34();
 
 builder.Services

@@ -8,6 +8,8 @@ public static class WeaknessRecoveryRegistrationExtensions
         this IServiceCollection services)
     {
         services.AddSingleton<WeaknessRecoveryEngine>();
+        services.AddSingleton<Stage21ExactReassessmentEngine>();
+        services.AddSingleton<EquivalentReassessmentGenerator>();
         return services;
     }
 }

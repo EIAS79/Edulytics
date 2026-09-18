@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "stage": "21",
+  "status": "COMPLETE",
+  "generationMethod": "skill-contract-reassessment-math-fresh-v1",
+  "policy": "Exact reassessment freshness is mathematical, not wording-only. Exact Stage 19 outcomes vary coefficients, representation, strategy, context, misconception trap, and cognitive demand while remaining inside the approved SkillContract and equivalent reassessment blueprint.",
+  "requiredFreshnessDimensions": [
+    "coefficients",
+    "representation",
+    "strategy",
+    "context",
+    "misconceptionTrap",
+    "cognitiveDemand"
+  ],
+  "exactOutcomes": [
+    {
+      "outcomeCode": "CCSS:3.NF.A.3",
+      "skillId": "fractions.equivalent"
+    },
+    {
+      "outcomeCode": "CCSS:4.NF.A.1",
+      "skillId": "fractions.equivalent"
+    },
+    {
+      "outcomeCode": "CCSS:6.RP.A.2",
+      "skillId": "ratio.unit_rate"
+    },
+    {
+      "outcomeCode": "CCSS:6.RP.A.3",
+      "skillId": "ratio.unit_rate"
+    }
+  ],
+  "historyPolicy": {
+    "exactPriorExposureRequiresMathematicalSignature": true,
+    "promptOnlyFreshnessAccepted": false,
+    "fingerprintOnlyFreshnessAccepted": false,
+    "signatureMustBelongToDeclaredExposureHistory": true
+  },
+  "exactItemPolicy": {
+    "solverVerified": true,
+    "independentVerifier": true,
+    "allowedFamiliesOnly": true,
+    "coefficientReuseAllowed": false,
+    "minimumChangedNonCoefficientDimensionsAgainstPrior": 2,
+    "batchVariationRequiredWhenQuestionCountGreaterThanOne": [
+      "representation",
+      "strategy",
+      "context",
+      "misconceptionTrap",
+      "cognitiveDemand"
+    ]
+  },
+  "legacyCompatibility": {
+    "generator": "MathematicsQuestionGenerationEngine",
+    "scope": "non-migrated outcomes only"
+  },
+  "failClosed": [
+    "exactPriorExposureMissingMathematicalSignature",
+    "mathematicalSignatureOutsideDeclaredExposureHistory",
+    "coefficientReuse",
+    "insufficientMathematicalDimensionChange",
+    "disallowedQuestionFamily",
+    "batchLacksRepresentationVariation",
+    "batchLacksStrategyVariation",
+    "batchLacksContextVariation",
+    "batchLacksMisconceptionTrapVariation",
+    "batchLacksCognitiveDemandVariation",
+    "solverVerificationFailure"
+  ]
+}

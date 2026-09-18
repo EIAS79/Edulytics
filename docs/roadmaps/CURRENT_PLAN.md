@@ -20,11 +20,12 @@ This document is the repository pointer to the active mathematics/curriculum exe
 - **Programme Stage 18 — Practice migration:** COMPLETE.
 - **Programme Stage 19 — Assessment Builder migration:** COMPLETE.
 - **Programme Stage 20 — Diagnostic / Adaptive migration:** COMPLETE.
-- **Stage 20 adaptive intelligence:** exact Stage 19 Outcome/SkillContracts now consume skill mastery, prerequisite mastery, mathematical complexity, misconception history and representation fluency.
-- **Internal adaptive output:** target complexity, representation and question family are retained independently from the Easy / Medium / Challenging UI projection.
-- **Stage 20 source of truth:** src/Edulytics.Core/Mathematics/Curriculum/stage20-diagnostic-adaptive-migration-manifest.v1.json.
-- **Stage 20 CI exit gate:** tools/math_intelligence/stage20_diagnostic_adaptive_closure_audit.py.
-- **Next active stage after Stage 20 is live on Render:** Programme Stage 21 — Reassessment migration.
+- **Programme Stage 21 — Reassessment migration:** COMPLETE.
+- **Stage 21 freshness contract:** exact reassessment freshness now varies coefficients, representation, strategy, context, misconception trap and cognitive demand; wording-only freshness is not sufficient.
+- **Stage 21 exact history rule:** prior exact exposure requires reconstructable mathematical signatures and fails closed when those signatures are unavailable.
+- **Stage 21 source of truth:** src/Edulytics.Core/Mathematics/Curriculum/stage21-reassessment-migration-manifest.v1.json.
+- **Stage 21 CI exit gate:** tools/math_intelligence/stage21_reassessment_closure_audit.py.
+- **Next active stage after Stage 21 is live on Render:** Programme Stage 22 — Game runtime migration.
 
 ## Update rule
 
