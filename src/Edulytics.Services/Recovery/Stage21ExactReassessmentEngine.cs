@@ -499,24 +499,12 @@ public sealed class Stage21ExactReassessmentEngine
         AssessmentItemDifficulty uiDifficulty,
         int variant)
     {
-        return uiDifficulty switch
+        _ = uiDifficulty; // UI comparability is preserved by the blueprint allocation.
+        return Math.Abs(variant) % 3 switch
         {
-            AssessmentItemDifficulty.Easy =>
-                variant % 2 == 0
-                    ? ReassessmentCognitiveDemand.Standard
-                    : ReassessmentCognitiveDemand.Stretch,
-
-            AssessmentItemDifficulty.Medium =>
-                variant % 2 == 0
-                    ? ReassessmentCognitiveDemand.Stretch
-                    : ReassessmentCognitiveDemand.Standard,
-
-            AssessmentItemDifficulty.Challenging =>
-                variant % 2 == 0
-                    ? ReassessmentCognitiveDemand.Challenge
-                    : ReassessmentCognitiveDemand.Stretch,
-
-            _ => ReassessmentCognitiveDemand.Standard
+            0 => ReassessmentCognitiveDemand.Standard,
+            1 => ReassessmentCognitiveDemand.Stretch,
+            _ => ReassessmentCognitiveDemand.Challenge
         };
     }
 
