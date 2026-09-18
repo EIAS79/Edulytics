@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "reviewVersion": "supporting-ambiguous-r4-v1",
+  "baselinePopulation": 14,
+  "policy": {
+    "primary": "The mathematical action the lesson intends to teach or measure.",
+    "secondary": "A mathematically meaningful method/idea used inside the lesson but not an independent Practice target.",
+    "prerequisite": "Prior knowledge needed to execute the target.",
+    "multiPrimary": "Only use multiple Primary skills when the lesson genuinely teaches multiple independent targets; mere mention is insufficient.",
+    "officialOutcomePolicy": "No official outcome is invented or inferred."
+  },
+  "summary": {
+    "resolved": 14,
+    "readyVerifiedPractice": 13,
+    "contentRepairRequired": 1
+  },
+  "decisions": [
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-4:BUILD",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "prerequisiteSkills": [],
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.related_denominators"
+      ],
+      "practiceDecision": "READY_VERIFIED",
+      "evidence": "The lesson target is adding and subtracting fractions within one whole; equivalent-fraction reasoning is supporting method, not a competing primary target."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-4:APPLY",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "prerequisiteSkills": [],
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.related_denominators"
+      ],
+      "practiceDecision": "READY_VERIFIED",
+      "evidence": "The lesson target is applying fraction addition/subtraction within one whole; equivalence is secondary method evidence."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4F-3:BUILD",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "prerequisiteSkills": [],
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.mixed_same_denominator"
+      ],
+      "practiceDecision": "READY_VERIFIED",
+      "evidence": "The title explicitly targets addition/subtraction of improper and mixed fractions with the same denominator; whole-number addition is not the lesson target."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4F-3:APPLY",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "prerequisiteSkills": [],
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.mixed_same_denominator"
+      ],
+      "practiceDecision": "READY_VERIFIED",
+      "evidence": "The application lesson keeps fraction addition/subtraction primary and uses equivalence only as supporting reasoning."
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:BUILD",
+      "primarySkills": [
+        "algebra.relationships.two_unknowns"
+      ],
+      "secondarySkills": [
+        "number.whole.add_subtract"
+      ],
+      "prerequisiteSkills": [],
+      "allowedQuestionFamilies": [
+        "algebra.relationships.two_unknowns.total_difference"
+      ],
+      "practiceDecision": "CONTENT_REPAIR_REQUIRED",
+      "evidence": "The canonical target is solving linked relationships with two unknowns; additive calculation is subordinate. Practice remains withheld until R6 repairs target-specific worked-example evidence."
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:03:COMPARE-FRACTIONS",
+      "primarySkills": [
+        "fractions.compare.unlike_denominators"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "prerequisiteSkills": [],
+      "allowedQuestionFamilies": [
+        "fractions.compare.unlike.common_denominator"
+      ],
+      "practiceDecision": "READY_VERIFIED",
+      "evidence": "Comparison is the explicit lesson action. Equivalent fractions are a comparison method, not a second primary target."
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:04:ADD-AND-SUBTRACT-RELATED-FRACTIONS",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "prerequisiteSkills": [],
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.related_denominators"
+      ],
+      "practiceDecision": "READY_VERIFIED",
+      "evidence": "The title identifies fraction addition/subtraction with related denominators; equivalence supplies the common-denominator method."
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:02:02:ADD-AND-SUBTRACT-FRACTIONS",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "prerequisiteSkills": [],
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.related_denominators"
+      ],
+      "practiceDecision": "READY_VERIFIED",
+      "evidence": "The source example uses related denominators (3/4 and 1/8), supporting fraction addition/subtraction as primary and equivalence as method."
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L5:ADVANCED:02:02:ADD-AND-SUBTRACT-FRACTIONS",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "prerequisiteSkills": [],
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.related_denominators",
+        "fractions.add_subtract.unlike_denominators"
+      ],
+      "practiceDecision": "READY_VERIFIED",
+      "evidence": "Advanced fraction addition/subtraction is primary; both related and genuinely unlike denominator families are valid, with equivalence secondary."
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:02:02:ADD-AND-SUBTRACT-FRACTIONS",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "prerequisiteSkills": [],
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.related_denominators"
+      ],
+      "practiceDecision": "READY_VERIFIED",
+      "evidence": "General Grade 5 fraction addition/subtraction remains primary and uses equivalent fractions as the denominator-alignment method."
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:ADVANCED:02:02:ADD-AND-SUBTRACT-UNLIKE-FRACTIONS",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "prerequisiteSkills": [
+        "number.lcm"
+      ],
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.unlike_denominators"
+      ],
+      "practiceDecision": "READY_VERIFIED",
+      "evidence": "The lesson explicitly targets unlike-denominator addition/subtraction. LCM/equivalence are method prerequisites rather than independent Practice targets."
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:02:02:ADD-AND-SUBTRACT-UNLIKE-FRACTIONS",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "prerequisiteSkills": [
+        "number.lcm"
+      ],
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.unlike_denominators"
+      ],
+      "practiceDecision": "READY_VERIFIED",
+      "evidence": "The lesson explicitly targets unlike-denominator addition/subtraction; denominator alignment is subordinate."
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L02",
+      "primarySkills": [
+        "fractions.representations.unit_interval"
+      ],
+      "secondarySkills": [],
+      "prerequisiteSkills": [],
+      "allowedQuestionFamilies": [
+        "fractions.representations.equal_parts",
+        "fractions.representations.number_line"
+      ],
+      "practiceDecision": "READY_VERIFIED",
+      "evidence": "The lesson is about representations of fractions; neither equivalence nor comparison should replace the representation target."
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L06",
+      "primarySkills": [
+        "fractions.compare.benchmarks"
+      ],
+      "secondarySkills": [],
+      "prerequisiteSkills": [],
+      "allowedQuestionFamilies": [
+        "fractions.compare.benchmark_half"
+      ],
+      "practiceDecision": "READY_VERIFIED",
+      "evidence": "The lesson explicitly relates fractions to benchmarks, so benchmark comparison is primary rather than general equivalence or unlike-denominator comparison."
+    }
+  ]
+}
