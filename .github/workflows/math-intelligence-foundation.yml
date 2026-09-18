@@ -81,6 +81,10 @@ jobs:
         run: |
           set -euo pipefail
           python3 tools/math_intelligence/stage24_as_a_level_9709_gate_audit.py --strict --write-report
+      - name: Run Stage 25 IB AA HL-style gate closure audit
+        run: |
+          set -euo pipefail
+          python3 tools/math_intelligence/stage25_ib_aa_hl_style_gate_audit.py --strict --write-report
       - name: Upload Mathematics Intelligence audits
         uses: actions/upload-artifact@v7.0.1
         with:
@@ -99,6 +103,7 @@ jobs:
             artifacts/math-intelligence/stage22-game-runtime-closure-audit.json
             artifacts/math-intelligence/stage23-igcse-extended-gate-audit.json
             artifacts/math-intelligence/stage24-as-a-level-9709-gate-audit.json
+            artifacts/math-intelligence/stage25-ib-aa-hl-style-gate-audit.json
           retention-days: 14
 
   math-foundation-tests:
