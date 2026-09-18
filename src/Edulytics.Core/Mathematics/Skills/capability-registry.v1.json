@@ -653,6 +653,38 @@
       "provider": "ExactSkillContractQuestionEngine",
       "providerVersion": "supporting-remediation-v1",
       "status": "ShadowVerified"
+    },
+    {
+      "id": "geometry.practice.structured_exact_generation",
+      "domain": "geometry",
+      "canonicalName": "Generate structured exact geometry Practice problems",
+      "provider": "ExactSkillContractQuestionEngine",
+      "providerVersion": "geometry-practice-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "geometry.practice.independent_verification",
+      "domain": "geometry",
+      "canonicalName": "Independently verify structured geometry Practice from original parameters",
+      "provider": "ExactSkillContractQuestionEngine",
+      "providerVersion": "geometry-practice-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "trigonometry.right_triangle.practice.exact_generation",
+      "domain": "trigonometry",
+      "canonicalName": "Generate exact right-triangle trigonometry Practice",
+      "provider": "ExactSkillContractQuestionEngine",
+      "providerVersion": "right-triangle-trig-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "trigonometry.right_triangle.practice.independent_verification",
+      "domain": "trigonometry",
+      "canonicalName": "Independently verify right-triangle trigonometry Practice",
+      "provider": "ExactSkillContractQuestionEngine",
+      "providerVersion": "right-triangle-trig-v1",
+      "status": "ShadowVerified"
     }
   ]
 }
