@@ -60,9 +60,11 @@ public sealed class SupportingLessonPracticeR1Tests
             Assert.All(items, item =>
             {
                 Assert.Contains(
-                    item.GenerationFamily!,
                     practiceContract.AllowedQuestionFamilies,
-                    StringComparer.Ordinal);
+                    family => string.Equals(
+                        family,
+                        item.GenerationFamily,
+                        StringComparison.Ordinal));
                 Assert.True(
                     Stage18SkillContractPracticeEngine.VerifyPersistedItem(
                         legacyContract,
@@ -105,7 +107,7 @@ public sealed class SupportingLessonPracticeR1Tests
         Assert.Equal(
             "algebra.linear.inequality.ax_plus_b_relation_c",
             item.GenerationFamily);
-        Assert.StartsWith("x", item.CorrectAnswer, StringComparison.Ordinal);
+        Assert.True(item.CorrectAnswer.StartsWith("x", StringComparison.Ordinal));
         Assert.True(
             item.CorrectAnswer.Contains('<') ||
             item.CorrectAnswer.Contains('>') ||
