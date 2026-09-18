@@ -5,6 +5,7 @@ using Edulytics.Core.AssessmentIntelligence;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Core.MathematicsGeneration;
+using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Core.Practice;
 using Edulytics.Services.Assessments;
 using Edulytics.Services.AssessmentIntelligence;
@@ -99,6 +100,28 @@ public sealed class StudentPrivatePracticeService(
         var scoped = ResolveScope(context, request);
         if (scoped.Error.HasValue)
             return StudentPrivatePracticeResult.Failure(scoped.Error.Value);
+
+        // Stage 18 is authoritative for READY_VERIFIED lesson-scoped Practice.
+        // Once a lesson has an approved SkillContract, it must use the exact
+        // server-side solver/verifier path and may never fall back to broad
+        // semantic/context generation.
+        if (request.Scope == StudentPrivatePracticeScope.Lesson &&
+            scoped.LessonId.HasValue)
+        {
+            var exactLesson = context.Lessons.Single(x => x.Id == scoped.LessonId.Value);
+            if (Stage18PracticeSkillContracts.TryResolve(exactLesson.Code, out var skillContract) &&
+                skillContract is not null)
+            {
+                return await GenerateSkillContractLessonAsync(
+                    studentUserId,
+                    context,
+                    request,
+                    scoped.LessonId.Value,
+                    scoped.Outcomes ?? [],
+                    skillContract,
+                    cancellationToken);
+            }
+        }
 
         var masteryByOutcome = context.OfficialMasteries
             .ToDictionary(x => x.LearningOutcomeId, x => x.MasteryPercentage);
@@ -248,6 +271,118 @@ public sealed class StudentPrivatePracticeService(
         {
             return StudentPrivatePracticeResult.Failure(StudentPrivatePracticeError.GenerationFailed);
         }
+    }
+
+    private async Task<StudentPrivatePracticeResult> GenerateSkillContractLessonAsync(
+        Guid studentUserId,
+        StudentPrivatePracticeContext context,
+        GenerateStudentPrivatePracticeRequest request,
+        Guid lessonId,
+        IReadOnlyList<LearningOutcome> officialOutcomes,
+        Stage18PracticeSkillContract skillContract,
+        CancellationToken cancellationToken)
+    {
+        var excluded = context.Exposures
+            .Select(x => x.ExposureFingerprint)
+            .Where(x => !string.IsNullOrWhiteSpace(x))
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+
+        var seed = request.Seed != 0
+            ? request.Seed
+            : RandomNumberGenerator.GetInt32(1, int.MaxValue);
+
+        IReadOnlyList<AssessmentItem> items;
+        try
+        {
+            items = new Stage18SkillContractPracticeEngine().Generate(
+                context.Student.SchoolId,
+                context.Adoption.Id,
+                lessonId,
+                skillContract,
+                request.Difficulty,
+                request.QuestionCount,
+                seed,
+                excluded,
+                studentUserId);
+        }
+        catch (InvalidOperationException)
+        {
+            // READY_VERIFIED Practice must fail closed. Never retry through the
+            // universal contextual provider after an exact generation failure.
+            return StudentPrivatePracticeResult.Failure(StudentPrivatePracticeError.GenerationFailed);
+        }
+
+        if (items.Count != request.QuestionCount ||
+            items.Any(item =>
+                !string.Equals(
+                    item.GenerationMethod,
+                    Stage18PracticeSkillContracts.GenerationMethod,
+                    StringComparison.Ordinal) ||
+                !Stage18SkillContractPracticeEngine.VerifyPersistedItem(skillContract, item)))
+        {
+            return StudentPrivatePracticeResult.Failure(StudentPrivatePracticeError.GenerationFailed);
+        }
+
+        var now = DateTime.UtcNow;
+        var attemptId = Guid.NewGuid();
+
+        // Preserve real official lesson mappings where they exist, but private
+        // Practice never writes official mastery evidence on submission.
+        var itemOutcomes = officialOutcomes
+            .SelectMany(outcome => items.Select(item => new AssessmentItemOutcome
+            {
+                Id = Guid.NewGuid(),
+                SchoolId = context.Student.SchoolId,
+                AssessmentItemId = item.Id,
+                LearningOutcomeId = outcome.Id
+            }))
+            .ToArray();
+
+        var attempt = new PracticeAttempt
+        {
+            Id = attemptId,
+            SchoolId = context.Student.SchoolId,
+            StudentProfileId = context.Student.Id,
+            CurriculumAdoptionId = context.Adoption.Id,
+            CurriculumPedagogicalLessonId = lessonId,
+            IsPrivate = true,
+            Status = PracticeAttemptStatus.InProgress,
+            StartedAtUtc = now,
+            Score = 0m,
+            MaxScore = request.QuestionCount,
+            Percentage = 0m
+        };
+
+        var attemptItems = items.Select((item, index) => new PracticeAttemptItem
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = context.Student.SchoolId,
+            PracticeAttemptId = attemptId,
+            AssessmentItemId = item.Id,
+            Order = index + 1,
+            MaxScore = 1m
+        }).ToArray();
+
+        var exposures = items.Select(item => new StudentItemExposure
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = context.Student.SchoolId,
+            StudentProfileId = context.Student.Id,
+            AssessmentItemId = item.Id,
+            ExposureFingerprint = item.ExposureFingerprint,
+            ExposedAtUtc = now
+        }).ToArray();
+
+        await repository.AddGeneratedAttemptAsync(
+            items,
+            itemOutcomes,
+            attempt,
+            attemptItems,
+            exposures,
+            cancellationToken);
+
+        return StudentPrivatePracticeResult.Success(attemptId);
     }
 
     private static int QuestionLimitForScope(StudentPrivatePracticeScope scope) => scope switch

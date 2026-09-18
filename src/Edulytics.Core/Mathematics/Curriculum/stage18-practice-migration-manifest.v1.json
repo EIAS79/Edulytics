@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "stage": "18",
+  "status": "COMPLETE",
+  "generationMethod": "skill-contract-solver-verified-v1",
+  "solver": "stage18-exact-practice-solver-v1",
+  "verifier": "stage18-independent-practice-verifier-v1",
+  "policy": "READY_VERIFIED lesson Practice must use exact SkillContract allowed families and may not fall back to broad contextual generation.",
+  "entries": [
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:APPLY",
+      "skillId": "algebra.relationships.two_unknowns",
+      "mechanic": "TWO_UNKNOWNS",
+      "allowedQuestionFamilies": [
+        "algebra.relationships.two_unknowns.total_difference"
+      ]
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:APPLY",
+      "skillId": "measurement.scale.read_equal_intervals",
+      "mechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
+      ]
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:BUILD",
+      "skillId": "fractions.compare.unlike_denominators",
+      "mechanic": "FRACTION_COMPARE_UNLIKE",
+      "allowedQuestionFamilies": [
+        "fractions.compare.unlike.common_denominator"
+      ]
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:APPLY",
+      "skillId": "fractions.compare.unlike_denominators",
+      "mechanic": "FRACTION_COMPARE_UNLIKE",
+      "allowedQuestionFamilies": [
+        "fractions.compare.unlike.common_denominator"
+      ]
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5F-2:BUILD",
+      "skillId": "fractions.equivalent",
+      "mechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize"
+      ]
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5F-2:APPLY",
+      "skillId": "fractions.equivalent",
+      "mechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U05:L10",
+      "skillId": "fractions.equivalent",
+      "mechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U05:L11",
+      "skillId": "fractions.equivalent",
+      "mechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.missing_value"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G3:U05:L12",
+      "skillId": "fractions.equivalent",
+      "mechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.number_line"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L07",
+      "skillId": "fractions.equivalent",
+      "mechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L08",
+      "skillId": "fractions.equivalent",
+      "mechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.number_line"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L10",
+      "skillId": "fractions.equivalent",
+      "mechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.generate_multiple"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L11",
+      "skillId": "fractions.equivalent",
+      "mechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.reduce_common_factor"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U03:L07",
+      "skillId": "ratio.unit_rate",
+      "mechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ]
+    }
+  ]
+}

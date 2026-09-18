@@ -3,6 +3,7 @@ using System.Globalization;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Practice;
+using Edulytics.Services.Assessments;
 
 namespace Edulytics.Services.Practice;
 
@@ -379,24 +380,7 @@ public sealed class PracticeService(IPracticeRepository repository) : IPracticeS
         return values.Length == 1 ? values[0] : null;
     }
 
-    public static bool AnswersMatch(string submitted, string expected)
-    {
-        var left = submitted.Trim();
-        var right = expected.Trim();
-        if (string.Equals(left, right, StringComparison.OrdinalIgnoreCase))
-        {
-            return true;
-        }
+    public static bool AnswersMatch(string submitted, string expected) =>
+        MathematicsAnswerEquivalence.AreEquivalent(submitted, expected);
 
-        static bool TryNumber(string value, out decimal number) =>
-            decimal.TryParse(
-                value.Replace(',', '.'),
-                NumberStyles.Number | NumberStyles.AllowLeadingSign,
-                CultureInfo.InvariantCulture,
-                out number);
-
-        return TryNumber(left, out var leftNumber) &&
-               TryNumber(right, out var rightNumber) &&
-               leftNumber == rightNumber;
-    }
 }
