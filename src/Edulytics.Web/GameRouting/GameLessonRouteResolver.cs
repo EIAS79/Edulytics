@@ -268,23 +268,41 @@ public static class GameLessonRouteResolver
         string mechanic,
         bool enableMathematicsV2Pilot)
     {
-        var usePilot = MathematicsV2ProductMigrationPolicy.ShouldUsePilot(
+        var decision = MathematicsV2ProductMigrationPolicy.ResolveProductionRollout(
             lessonCode,
+            framework,
             mechanic,
             enableMathematicsV2Pilot);
+
+        if (decision.Route == Edulytics.Services.Mathematics.Rollout.MathematicsRolloutRoute.Blocked)
+        {
+            return new GameLessonRoute(
+                framework,
+                "NEEDS_REVIEW",
+                "NEEDS_REVIEW",
+                null,
+                LocaleForFramework(framework),
+                false,
+                "math-v2-rollout-blocked");
+        }
+
+        var useV2 = decision.Route ==
+            Edulytics.Services.Mathematics.Rollout.MathematicsRolloutRoute.V2;
 
         return new GameLessonRoute(
             framework,
             workspace,
             mechanic,
-            usePilot
+            useV2
                 ? MathematicsV2ProductMigrationPolicy.RendererKey
                 : LessonGroundedRendererKey,
             LocaleForFramework(framework),
             true,
-            usePilot
+            useV2
                 ? MathematicsV2ProductMigrationPolicy.ClassificationSource
-                : "exact-lesson-skill-v2");
+                : decision.Route == Edulytics.Services.Mathematics.Rollout.MathematicsRolloutRoute.ShadowV2
+                    ? "exact-lesson-skill-v2-shadow"
+                    : "exact-lesson-skill-v2");
     }
 
     private static string WorkspaceForStage17Domain(string domain) => domain switch
