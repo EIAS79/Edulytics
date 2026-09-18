@@ -38,6 +38,8 @@ public sealed class Stage18SkillContractPracticeEngine
                 "Stage 18 Practice generation requires a valid exact lesson contract and request scope.");
         }
 
+        var fullContract = ResolveAlignmentContract(contract);
+
         var exact = new ExactSkillContractQuestionEngine().Generate(
             "stage18",
             contract.LessonCode,
@@ -45,7 +47,22 @@ public sealed class Stage18SkillContractPracticeEngine
             ResolveDifficulty(requestedDifficulty),
             questionCount,
             seed,
-            excludedExposureFingerprints);
+            excludedExposureFingerprints,
+            fullContract.CurriculumLogicalLevel);
+
+        foreach (var question in exact)
+        {
+            var alignment = LessonPracticeAlignmentValidator.Validate(
+                fullContract,
+                contract.SkillId,
+                question.Family);
+            if (!alignment.IsAligned)
+            {
+                throw new InvalidOperationException(
+                    $"Generated Practice item failed lesson alignment for {contract.LessonCode}: " +
+                    string.Join("; ", alignment.Reasons));
+            }
+        }
 
         return exact.Select(question => new AssessmentItem
         {
@@ -66,7 +83,8 @@ public sealed class Stage18SkillContractPracticeEngine
             {
                 skillId = contract.SkillId,
                 questionFamily = question.Family,
-                parameters = question.Parameters
+                parameters = question.Parameters,
+                representation = question.Representation
             }),
             ExposureFingerprint = question.ExposureFingerprint,
             ValidationMetadataJson = JsonSerializer.Serialize(new
@@ -78,7 +96,10 @@ public sealed class Stage18SkillContractPracticeEngine
                 allowedFamily = question.Family,
                 solver = Stage18PracticeSkillContracts.SolverIdentifier,
                 verifier = Stage18PracticeSkillContracts.VerifierIdentifier,
+                alignmentValidated = true,
                 solverVerified = true,
+                independentVerifierPassed = true,
+                structuredRepresentation = question.Representation.Count > 0,
                 broadFallbackUsed = false,
                 officialMasteryEvidence = false
             }),
@@ -134,6 +155,33 @@ public sealed class Stage18SkillContractPracticeEngine
         {
             return false;
         }
+    }
+
+    private static LessonPracticeContract ResolveAlignmentContract(
+        Stage18PracticeSkillContract contract)
+    {
+        if (LessonPracticeContractRegistry.TryResolve(contract.LessonCode, out var exact) &&
+            exact is not null)
+        {
+            if (!string.Equals(exact.SkillId, contract.SkillId, StringComparison.Ordinal) ||
+                contract.AllowedQuestionFamilies.Any(family =>
+                    !exact.AllowedQuestionFamilies.Contains(family, StringComparer.Ordinal)))
+            {
+                throw new InvalidOperationException(
+                    $"Legacy Practice adapter disagrees with authoritative lesson contract for {contract.LessonCode}.");
+            }
+
+            return exact;
+        }
+
+        return new LessonPracticeContract(
+            contract.LessonCode,
+            contract.SkillId,
+            contract.Mechanic,
+            contract.AllowedQuestionFamilies,
+            "OfficialMappedPedagogicalLesson",
+            "READY_VERIFIED",
+            "legacy-stage18-adapter");
     }
 
     private static ExactSkillQuestionDifficulty ResolveDifficulty(
