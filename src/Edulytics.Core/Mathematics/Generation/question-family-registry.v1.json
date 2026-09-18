@@ -1215,6 +1215,227 @@
       ],
       "status": "ShadowVerified",
       "productionRouting": false
+    },
+    {
+      "id": "fractions.notation.identify_part",
+      "version": 1,
+      "skillId": "fractions.notation",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.of_quantity.exact",
+      "version": 1,
+      "skillId": "fractions.of_quantity",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.number_line.read",
+      "version": 1,
+      "skillId": "fractions.number_line",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.mixed_numbers.number_line.improper_numerator",
+      "version": 1,
+      "skillId": "fractions.mixed_numbers.number_line",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.mixed_improper.convert_to_improper_numerator",
+      "version": 1,
+      "skillId": "fractions.mixed_improper.convert",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.simplify.lowest_terms",
+      "version": 1,
+      "skillId": "fractions.simplify",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.common_denominator.missing_numerator",
+      "version": 1,
+      "skillId": "fractions.common_denominator",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.multiply_by_whole.exact",
+      "version": 1,
+      "skillId": "fractions.multiply_by_whole",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.multiply.exact",
+      "version": 1,
+      "skillId": "fractions.multiply",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.divide_by_whole.exact",
+      "version": 1,
+      "skillId": "fractions.divide_by_whole",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.add_subtract.exact",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.compare.general",
+      "version": 1,
+      "skillId": "fractions.compare",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "comparison_symbol",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.compare.benchmark_half",
+      "version": 1,
+      "skillId": "fractions.compare.benchmark",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "comparison_symbol",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
     }
   ]
 }
