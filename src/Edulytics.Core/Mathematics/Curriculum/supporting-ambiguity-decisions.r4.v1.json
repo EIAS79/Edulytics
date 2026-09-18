@@ -1,189 +1,139 @@
 {
   "schemaVersion": 1,
   "reviewVersion": "supporting-ambiguity-r4-v1",
-  "population": "Current Supporting/PedagogicalUnmapped AMBIGUOUS population after R1-R3",
-  "total": 12,
   "policy": {
-    "mentionedSkillIsNotAutomaticallyPrimary": true,
-    "primary": "Skill the lesson is intended to teach or measure.",
-    "secondary": "Skill used meaningfully inside the lesson but not a substitute Practice target.",
-    "prerequisite": "Prior knowledge assumed by the target.",
-    "multiPrimary": "Allowed only when source/content proves multiple co-equal learning targets."
+    "primary": "Only the skill intentionally taught/assessed by the lesson is Primary.",
+    "secondary": "Skills materially used inside the target remain Secondary and are not sampled as standalone Practice.",
+    "prerequisite": "Prior arithmetic knowledge is tagged Prerequisite and is not substituted for the lesson target."
   },
   "decisions": [
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-4:BUILD",
-      "decision": "PRIMARY_SKILL_RESOLVED",
-      "primarySkills": [
-        "fractions.add_subtract"
-      ],
+      "primarySkill": "fractions.add_subtract",
       "secondarySkills": [
         "fractions.equivalent"
       ],
-      "allowedQuestionFamilies": [
-        "fractions.add_subtract.within_one.build"
+      "prerequisiteSkills": [
+        "number.whole.add_subtract"
       ],
-      "readiness": "READY_VERIFIED"
+      "decision": "RESOLVED"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-4:APPLY",
-      "decision": "PRIMARY_SKILL_RESOLVED",
-      "primarySkills": [
-        "fractions.add_subtract"
-      ],
+      "primarySkill": "fractions.add_subtract",
       "secondarySkills": [
         "fractions.equivalent"
       ],
-      "allowedQuestionFamilies": [
-        "fractions.add_subtract.within_one.apply"
+      "prerequisiteSkills": [
+        "number.whole.add_subtract"
       ],
-      "readiness": "READY_VERIFIED"
+      "decision": "RESOLVED"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4F-3:BUILD",
-      "decision": "PRIMARY_SKILL_RESOLVED",
-      "primarySkills": [
-        "fractions.add_subtract"
-      ],
+      "primarySkill": "fractions.add_subtract",
       "secondarySkills": [
         "fractions.equivalent"
       ],
-      "allowedQuestionFamilies": [
-        "fractions.add_subtract.same_denominator_mixed.build"
+      "prerequisiteSkills": [
+        "number.whole.add_subtract"
       ],
-      "readiness": "READY_VERIFIED"
+      "decision": "RESOLVED"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4F-3:APPLY",
-      "decision": "PRIMARY_SKILL_RESOLVED",
-      "primarySkills": [
-        "fractions.add_subtract"
-      ],
+      "primarySkill": "fractions.add_subtract",
       "secondarySkills": [
         "fractions.equivalent"
       ],
-      "allowedQuestionFamilies": [
-        "fractions.add_subtract.same_denominator_mixed.apply"
+      "prerequisiteSkills": [
+        "number.whole.add_subtract"
       ],
-      "readiness": "READY_VERIFIED"
+      "decision": "RESOLVED"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:BUILD",
-      "decision": "PRIMARY_SKILL_RESOLVED",
-      "primarySkills": [
-        "algebra.relationships.two_unknowns"
-      ],
+      "primarySkill": "algebra.relationships.two_unknowns",
       "secondarySkills": [
         "number.whole.add_subtract"
       ],
-      "allowedQuestionFamilies": [
-        "algebra.relationships.two_unknowns.total_difference"
-      ],
-      "readiness": "READY_VERIFIED"
+      "prerequisiteSkills": [],
+      "decision": "RESOLVED"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:03:COMPARE-FRACTIONS",
-      "decision": "PRIMARY_SKILL_RESOLVED",
-      "primarySkills": [
-        "fractions.compare.unlike_denominators"
-      ],
+      "primarySkill": "fractions.compare.unlike_denominators",
       "secondarySkills": [
         "fractions.equivalent"
       ],
-      "allowedQuestionFamilies": [
-        "fractions.compare.unlike.common_denominator"
-      ],
-      "readiness": "READY_VERIFIED"
+      "prerequisiteSkills": [],
+      "decision": "RESOLVED"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:04:ADD-AND-SUBTRACT-RELATED-FRACTIONS",
-      "decision": "PRIMARY_SKILL_RESOLVED",
-      "primarySkills": [
-        "fractions.add_subtract"
-      ],
+      "primarySkill": "fractions.add_subtract",
       "secondarySkills": [
         "fractions.equivalent"
       ],
-      "allowedQuestionFamilies": [
-        "fractions.add_subtract.related.build",
-        "fractions.add_subtract.related.apply"
+      "prerequisiteSkills": [
+        "number.whole.add_subtract"
       ],
-      "readiness": "READY_VERIFIED"
+      "decision": "RESOLVED"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:02:02:ADD-AND-SUBTRACT-FRACTIONS",
-      "decision": "PRIMARY_SKILL_RESOLVED",
-      "primarySkills": [
-        "fractions.add_subtract"
-      ],
+      "primarySkill": "fractions.add_subtract",
       "secondarySkills": [
         "fractions.equivalent"
       ],
-      "allowedQuestionFamilies": [
-        "fractions.add_subtract.unlike_denominators.build",
-        "fractions.add_subtract.unlike_denominators.apply"
+      "prerequisiteSkills": [
+        "number.whole.add_subtract"
       ],
-      "readiness": "READY_VERIFIED"
+      "decision": "RESOLVED"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L5:ADVANCED:02:02:ADD-AND-SUBTRACT-FRACTIONS",
-      "decision": "PRIMARY_SKILL_RESOLVED",
-      "primarySkills": [
-        "fractions.add_subtract"
-      ],
+      "primarySkill": "fractions.add_subtract",
       "secondarySkills": [
         "fractions.equivalent"
       ],
-      "allowedQuestionFamilies": [
-        "fractions.add_subtract.unlike_denominators.build",
-        "fractions.add_subtract.unlike_denominators.apply"
+      "prerequisiteSkills": [
+        "number.whole.add_subtract"
       ],
-      "readiness": "READY_VERIFIED"
+      "decision": "RESOLVED"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:02:02:ADD-AND-SUBTRACT-FRACTIONS",
-      "decision": "PRIMARY_SKILL_RESOLVED",
-      "primarySkills": [
-        "fractions.add_subtract"
-      ],
+      "primarySkill": "fractions.add_subtract",
       "secondarySkills": [
         "fractions.equivalent"
       ],
-      "allowedQuestionFamilies": [
-        "fractions.add_subtract.unlike_denominators.build",
-        "fractions.add_subtract.unlike_denominators.apply"
+      "prerequisiteSkills": [
+        "number.whole.add_subtract"
       ],
-      "readiness": "READY_VERIFIED"
+      "decision": "RESOLVED"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L6:ADVANCED:02:02:ADD-AND-SUBTRACT-UNLIKE-FRACTIONS",
-      "decision": "PRIMARY_SKILL_RESOLVED",
-      "primarySkills": [
-        "fractions.add_subtract"
-      ],
+      "primarySkill": "fractions.add_subtract",
       "secondarySkills": [
         "fractions.equivalent"
       ],
-      "allowedQuestionFamilies": [
-        "fractions.add_subtract.unlike_denominators.build",
-        "fractions.add_subtract.unlike_denominators.apply"
+      "prerequisiteSkills": [
+        "number.whole.add_subtract"
       ],
-      "readiness": "READY_VERIFIED"
+      "decision": "RESOLVED"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:02:02:ADD-AND-SUBTRACT-UNLIKE-FRACTIONS",
-      "decision": "PRIMARY_SKILL_RESOLVED",
-      "primarySkills": [
-        "fractions.add_subtract"
-      ],
+      "primarySkill": "fractions.add_subtract",
       "secondarySkills": [
         "fractions.equivalent"
       ],
-      "allowedQuestionFamilies": [
-        "fractions.add_subtract.unlike_denominators.build",
-        "fractions.add_subtract.unlike_denominators.apply"
+      "prerequisiteSkills": [
+        "number.whole.add_subtract"
       ],
-      "readiness": "READY_VERIFIED"
+      "decision": "RESOLVED"
     }
   ]
 }
