@@ -894,16 +894,10 @@ public sealed class ExactSkillContractQuestionEngine
             random.Next(1, int.MaxValue),
             Math.Clamp(scale, 1, 3));
 
-        if (generated.Problem is not EquationNode equation ||
-            generated.ExpectedAnswer is not EquationNode solved ||
-            solved.Left is not SymbolNode symbol ||
-            !string.Equals(symbol.Name, "x", StringComparison.Ordinal) ||
-            solved.Right is not IntegerNode integerAnswer ||
-            integerAnswer.Value < int.MinValue ||
-            integerAnswer.Value > int.MaxValue)
+        if (generated.Problem is not EquationNode)
         {
             throw new InvalidOperationException(
-                "Exact linear-equation factory returned an unsupported learner-facing shape.");
+                "Exact linear-equation factory returned an unsupported learner-facing problem shape.");
         }
 
         var coefficient = int.Parse(
