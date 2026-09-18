@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "stage": "20",
+  "status": "COMPLETE",
+  "engineVersion": "stage20-math-aware-v1",
+  "policy": "Exact Stage 19 outcomes use mathematics-aware diagnostic/adaptive decisions. The engine consumes five audited signals and fails closed on incomplete, mixed, or contract-inconsistent exact state. Legacy non-migrated outcomes retain the Phase 35 behavior until explicitly migrated.",
+  "requiredSignals": [
+    "skillMastery",
+    "prerequisiteMastery",
+    "mathematicalComplexity",
+    "misconceptionHistory",
+    "representationFluency"
+  ],
+  "decisionOutputs": [
+    "targetLearningOutcome",
+    "targetSkillId",
+    "targetComplexityScore",
+    "targetQuestionFamily",
+    "targetRepresentation",
+    "misconceptionFocus",
+    "uiDifficultyBand"
+  ],
+  "prerequisitePolicy": "Prerequisite mastery is supplied by an audited curriculum/learning-state source. Stage 20 does not invent prerequisite SkillIds or infer a prerequisite graph from lesson text.",
+  "representationPolicy": "Representation fluency entries must map only to question families already allowed by the exact Stage 19 Outcome/SkillContract.",
+  "misconceptionPolicy": "Misconception history may target only an allowed exact question family; an active incorrect-response misconception is prioritized deterministically.",
+  "complexityPolicy": {
+    "range": [
+      0,
+      200
+    ],
+    "maxStepPerDecision": 12,
+    "note": "Internal target complexity is retained independently from the Easy/Medium/Challenging UI projection."
+  },
+  "exactOutcomes": [
+    {
+      "outcomeCode": "CCSS:3.NF.A.3",
+      "skillId": "fractions.equivalent"
+    },
+    {
+      "outcomeCode": "CCSS:4.NF.A.1",
+      "skillId": "fractions.equivalent"
+    },
+    {
+      "outcomeCode": "CCSS:6.RP.A.2",
+      "skillId": "ratio.unit_rate"
+    },
+    {
+      "outcomeCode": "CCSS:6.RP.A.3",
+      "skillId": "ratio.unit_rate"
+    }
+  ],
+  "failClosed": [
+    "exactOutcomeMissingMathematicsState",
+    "mixedExactAndNonExactOutcomeScope",
+    "outcomeSkillContractMismatch",
+    "masteryProfileMismatch",
+    "invalidPrerequisiteMastery",
+    "disallowedRepresentationQuestionFamily",
+    "disallowedMisconceptionQuestionFamily",
+    "invalidComplexityScore"
+  ],
+  "legacyCompatibility": {
+    "engineVersion": "phase35-v1",
+    "scope": "non-migrated outcomes only"
+  }
+}
