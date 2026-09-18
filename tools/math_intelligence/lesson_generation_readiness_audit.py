@@ -183,6 +183,10 @@ def decide(
         return "REQUIRES_ACADEMIC_REVIEW", ["Skill evidence requires review before promotion."]
     if skill_status == "HIGH_CONFIDENCE_CANDIDATE":
         return "REQUIRES_ACADEMIC_REVIEW", ["High-confidence candidate is not an approved mapping."]
+    if skill_status == "CATALOGUE_TARGET_CLASSIFIED":
+        return "REQUIRES_ACADEMIC_REVIEW", [
+            "Canonical Supporting target is classified; an explicit SkillContract/question-family capability is still required before generation."
+        ]
     if skill_status in {"UNRESOLVED", "ONTOLOGY_GAP"}:
         return "SOLVER_CAPABILITY_MISSING", ["Current Skill/Capability ontology cannot represent the lesson precisely enough."]
     if not has_approved_mapping:
