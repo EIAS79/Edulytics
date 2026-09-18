@@ -109,6 +109,7 @@ public sealed class StudentPortalController : Controller
             lesson.Value,
             cancellationToken);
         ViewData["GameAdoptionId"] = availability.GameAdoptionId;
+        ViewData["ExactPracticeAdoptionId"] = availability.ExactPracticeAdoptionId;
         ViewData["LessonPracticePilotAdoptionId"] = availability.PilotAdoptionId;
         return View(nameof(Lesson), lesson.Value);
     }
@@ -197,7 +198,7 @@ public sealed class StudentPortalController : Controller
         return RedirectToAction(nameof(Notifications));
     }
 
-    private async Task<(Guid? GameAdoptionId, Guid? PilotAdoptionId)>
+    private async Task<(Guid? GameAdoptionId, Guid? ExactPracticeAdoptionId, Guid? PilotAdoptionId)>
         FindLessonPracticeAvailabilityAsync(
             Guid actorId,
             Guid lessonId,
@@ -205,6 +206,7 @@ public sealed class StudentPortalController : Controller
             CancellationToken cancellationToken)
     {
         Guid? gameAdoptionId = null;
+        Guid? exactPracticeAdoptionId = null;
         Guid? pilotAdoptionId = null;
 
         var initial = await _privatePractice.GetWorkspaceAsync(actorId, null, cancellationToken);
@@ -213,12 +215,17 @@ public sealed class StudentPortalController : Controller
             lessonId,
             lessonDetail,
             ref gameAdoptionId,
+            ref exactPracticeAdoptionId,
             ref pilotAdoptionId);
 
         foreach (var curriculum in initial.Curricula)
         {
-            if (gameAdoptionId.HasValue && pilotAdoptionId.HasValue)
+            if (gameAdoptionId.HasValue &&
+                exactPracticeAdoptionId.HasValue &&
+                pilotAdoptionId.HasValue)
+            {
                 break;
+            }
             if (curriculum.CurriculumAdoptionId == initial.SelectedCurriculumAdoptionId)
                 continue;
 
@@ -234,7 +241,7 @@ public sealed class StudentPortalController : Controller
                 ref pilotAdoptionId);
         }
 
-        return (gameAdoptionId, pilotAdoptionId);
+        return (gameAdoptionId, exactPracticeAdoptionId, pilotAdoptionId);
     }
 
     private static void InspectPracticeWorkspace(
@@ -242,6 +249,7 @@ public sealed class StudentPortalController : Controller
         Guid lessonId,
         StudentLessonDetail lessonDetail,
         ref Guid? gameAdoptionId,
+        ref Guid? exactPracticeAdoptionId,
         ref Guid? pilotAdoptionId)
     {
         var lesson = workspace.Lessons.FirstOrDefault(x => x.LessonId == lessonId);
@@ -262,6 +270,14 @@ public sealed class StudentPortalController : Controller
 
         if (!gameAdoptionId.HasValue && route.IsPlayable && route.RendererKey is not null)
             gameAdoptionId = workspace.SelectedCurriculumAdoptionId;
+
+        if (!exactPracticeAdoptionId.HasValue &&
+            LessonPracticeContractRegistry.TryResolve(lesson.LessonCode, out var practiceContract) &&
+            practiceContract is not null &&
+            string.Equals(practiceContract.Readiness, "READY_VERIFIED", StringComparison.Ordinal))
+        {
+            exactPracticeAdoptionId = workspace.SelectedCurriculumAdoptionId;
+        }
 
         if (!pilotAdoptionId.HasValue &&
             string.Equals(lesson.LessonCode, LessonPracticePilotCode, StringComparison.Ordinal))
