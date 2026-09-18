@@ -18,10 +18,12 @@ This document is the repository pointer to the active mathematics/curriculum exe
 
 - **Programme Stage 17 — Grade 1–6 migration:** COMPLETE.
 - **Programme Stage 18 — Practice migration:** COMPLETE.
-- **Practice execution:** READY_VERIFIED lesson-scoped Practice now follows Lesson → SkillContract → allowed family → generated problem → solver → independent verifier. Broad contextual fallback is prohibited for READY_VERIFIED lessons.
-- **Stage 18 source of truth:** src/Edulytics.Core/Mathematics/Curriculum/stage18-practice-migration-manifest.v1.json.
-- **Stage 18 CI exit gate:** tools/math_intelligence/stage18_practice_closure_audit.py.
-- **Next active stage after Stage 18 is live on Render:** Programme Stage 19 — Assessment Builder migration.
+- **Programme Stage 19 — Assessment Builder migration:** COMPLETE.
+- **Assessment Builder workflow:** Select → Generate → Review → Approve → Publish remains unchanged.
+- **Stage 19 exact generation:** official outcomes backed by READY_VERIFIED SkillContracts use the shared exact Mathematics kernel; mixed exact/non-exact generation fails closed.
+- **Stage 19 source of truth:** src/Edulytics.Core/Mathematics/Curriculum/stage19-assessment-builder-migration-manifest.v1.json.
+- **Stage 19 CI exit gate:** tools/math_intelligence/stage19_assessment_builder_closure_audit.py.
+- **Next active stage after Stage 19 is live on Render:** Programme Stage 20 — Diagnostic/adaptive migration.
 
 ## Update rule
 
