@@ -168,7 +168,7 @@ def audit() -> dict[str, Any]:
     if exact_pos < 0 or legacy_pos < 0 or exact_pos > legacy_pos:
         blockers.append("Exact Stage 19 routing does not precede legacy/native generation.")
 
-    if "MathematicsQuestionGenerationEngine" in ENGINE:
+    if "MathematicsQuestionGenerationEngine" in engine:
         blockers.append("Stage 19 exact Assessment engine must not call the legacy MathematicsQuestionGenerationEngine.")
     for token in [
         "ExactSkillContractQuestionEngine().Generate",
