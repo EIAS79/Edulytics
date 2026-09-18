@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace Edulytics.Core.Mathematics.Practice;
 
 /// <summary>
@@ -477,5 +479,33 @@ public static class LessonPracticeContractRegistry
             families,
             "SupportingLesson",
             "READY_VERIFIED",
-            Version);
+            Version)
+        {
+            CurriculumLogicalLevel = InferLogicalLevel(lessonCode)
+        };
+
+    private static int? InferLogicalLevel(string lessonCode)
+    {
+        foreach (var pattern in new[]
+                 {
+                     @":CAMBRIDGE-INTL-MATH:S(?<level>\d+):",
+                     @":CAMBRIDGE-INTL-MATH:L(?<level>\d+):",
+                     @":UAE-MOE-MATH:L(?<level>\d+):",
+                     @":US-CCSS-MATH:G(?<level>\d+):",
+                     @":US-CCSS-MATH:HS"
+                 })
+        {
+            var match = Regex.Match(lessonCode, pattern, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+            if (!match.Success)
+                continue;
+            if (match.Groups["level"].Success &&
+                int.TryParse(match.Groups["level"].Value, out var level))
+            {
+                return level;
+            }
+            if (pattern.EndsWith(":HS", StringComparison.Ordinal))
+                return 10;
+        }
+        return null;
+    }
 }
