@@ -670,6 +670,14 @@ public static class LessonPracticeContractRegistry
             "SupportingLesson",
             "READY_VERIFIED",
             Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:BUILD",
+            "algebra.relationships.two_unknowns",
+            "TWO_UNKNOWNS",
+            ["algebra.relationships.two_unknowns.total_difference"],
+            "SupportingLesson",
+            "READY_VERIFIED",
+            Version),
     ];
 
     private static readonly IReadOnlyDictionary<string, LessonPracticeContract> ByLessonCode =
