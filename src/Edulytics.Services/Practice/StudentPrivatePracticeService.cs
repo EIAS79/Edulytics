@@ -121,6 +121,32 @@ public sealed class StudentPrivatePracticeService(
                     practiceContract,
                     cancellationToken);
             }
+
+            // Preserve the existing Stage 18 exact path for verified official
+            // Grade 1-6 lessons that are intentionally outside the Supporting
+            // registry. The generalized Supporting resolver takes precedence,
+            // while Stage 18 remains an exact fail-closed compatibility layer.
+            if (Stage18PracticeSkillContracts.TryResolve(exactLesson.Code, out var stage18Contract) &&
+                stage18Contract is not null)
+            {
+                var compatibleContract = new LessonPracticeContract(
+                    stage18Contract.LessonCode,
+                    stage18Contract.SkillId,
+                    stage18Contract.Mechanic,
+                    stage18Contract.AllowedQuestionFamilies,
+                    "Stage18VerifiedLesson",
+                    "READY_VERIFIED",
+                    "stage18-practice-v1");
+
+                return await GenerateSkillContractLessonAsync(
+                    studentUserId,
+                    context,
+                    request,
+                    scoped.LessonId.Value,
+                    scoped.Outcomes ?? [],
+                    compatibleContract,
+                    cancellationToken);
+            }
         }
 
         var masteryByOutcome = context.OfficialMasteries
