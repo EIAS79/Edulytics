@@ -85,7 +85,7 @@ public static class LessonPracticeContractRegistry
             ["algebra.linear.inequality.ax_plus_b_relation_c"],
             "SupportingLesson",
             "READY_VERIFIED",
-            Version)
+            Version),
         new(
             "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:01:06:RATES-AND-UNIT-RATES",
             "ratio.unit_rate",
