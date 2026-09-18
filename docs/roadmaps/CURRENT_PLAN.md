@@ -24,12 +24,13 @@ This document is the repository pointer to the active mathematics/curriculum exe
 - **Programme Stage 22 — Game runtime migration:** COMPLETE.
 - **Programme Stage 23 — IGCSE Extended gate:** COMPLETE AS A CAPABILITY GATE.
 - **Programme Stage 24 — AS/A-Level 9709 gate:** COMPLETE AS A CAPABILITY GATE.
-- **Stage 24 truthful status:** 57 supporting lessons across 6 AS/A domain-paper routes; 0 VERIFIED, 25 CONTEXTUAL, 32 UNSUPPORTED, 0 formal OutcomeCode/FormalTarget mappings.
-- **Stage 24 claim rule:** coverage is reported per domain/paper route; global 9709 claims and product routing remain blocked until formal mapping, benchmark evidence, and approved academic review exist.
-- **Stage 24 source of truth:** src/Edulytics.Core/Mathematics/Curriculum/stage24-as-a-level-9709-gate-manifest.v1.json.
-- **Stage 24 benchmark corpus:** src/Edulytics.Core/Mathematics/Curriculum/stage24-as-a-level-9709-benchmark-corpus.v1.json.
-- **Stage 24 CI exit gate:** tools/math_intelligence/stage24_as_a_level_9709_gate_audit.py.
-- **Next active stage after Stage 24 is live on Render:** Programme Stage 25 — IB AA HL-style gate.
+- **Programme Stage 25 — IB AA HL-style gate:** COMPLETE AS A CAPABILITY GATE.
+- **Stage 25 truthful status:** 6 advanced-demand classes tracked; Routine, Multi-step, Modelling and narrow Reasoning slices are EVIDENCED through 15 executable benchmarks; Proof and Unfamiliar transfer remain UNSUPPORTED.
+- **Stage 25 claim rule:** engine-style evidence does not equal official IB curriculum alignment; global IB AA HL claims and product routing remain blocked, with 0 formal IB mappings and academic review still REQUIRED.
+- **Stage 25 source of truth:** src/Edulytics.Core/Mathematics/Curriculum/stage25-ib-aa-hl-style-gate-manifest.v1.json.
+- **Stage 25 benchmark corpus:** src/Edulytics.Core/Mathematics/Curriculum/stage25-ib-aa-hl-style-benchmark-corpus.v1.json.
+- **Stage 25 CI exit gate:** tools/math_intelligence/stage25_ib_aa_hl_style_gate_audit.py.
+- **Next active stage after Stage 25 is live on Render:** Programme Stage 26 — Security and resource controls.
 
 ## Update rule
 
