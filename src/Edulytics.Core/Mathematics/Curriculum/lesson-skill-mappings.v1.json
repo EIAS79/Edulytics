@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "mappingVersion": "lesson-skill-supporting-r3-v3",
+  "mappingVersion": "lesson-skill-supporting-r6-v6",
   "status": "Foundation",
   "mappings": [
     {
@@ -13,7 +13,13 @@
       "mappingConfidence": "High",
       "evidence": [
         "Exact lesson title and corrected worked examples require two linked unknown quantities and two independent relationships."
-      ]
+      ],
+      "practiceMechanic": "TWO_UNKNOWNS",
+      "allowedQuestionFamilies": [
+        "algebra.relationships.two_unknowns.total_difference"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:APPLY",
@@ -25,7 +31,13 @@
       "mappingConfidence": "High",
       "evidence": [
         "Exact lesson title and corrected worked examples require reading equal scale intervals and pointer positions."
-      ]
+      ],
+      "practiceMechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:BUILD",
@@ -41,7 +53,13 @@
       "mappingConfidence": "High",
       "evidence": [
         "Exact lesson title and corrected worked examples compare unlike-denominator fractions using equivalent fractions and common denominators."
-      ]
+      ],
+      "practiceMechanic": "FRACTION_COMPARE_UNLIKE",
+      "allowedQuestionFamilies": [
+        "fractions.compare.unlike.common_denominator"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U04:L05",
@@ -70,7 +88,13 @@
       "evidence": [
         "The canonical lesson title is 'Efficiently Solving Inequalities' and its worked examples solve and graph single-variable affine inequalities, including a negative variable coefficient where order reversal is required.",
         "The lesson has no independent official OutcomeCode mapping in the canonical content pack, so the Edulytics SkillContract is pedagogical metadata only and does not invent an official curriculum outcome."
-      ]
+      ],
+      "practiceMechanic": "LINEAR_INEQUALITY",
+      "allowedQuestionFamilies": [
+        "algebra.linear.inequality.ax_plus_b_relation_c"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5F-2:BUILD",
@@ -84,7 +108,14 @@
         "The canonical lesson title is 'Find equivalent fractions: Build the Idea' and the worked examples explicitly use fraction equivalence without changing value.",
         "The deterministic skill-resolution audit identifies fractions.equivalent as the high-confidence exact target and the semantic-content audit passes target evidence.",
         "This supporting lesson has no independent official OutcomeCode; the Edulytics SkillContract is pedagogical metadata only and does not invent an official curriculum outcome."
-      ]
+      ],
+      "practiceMechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5F-2:APPLY",
@@ -98,7 +129,14 @@
         "The canonical lesson title is 'Find equivalent fractions: Reason and Apply' and the worked examples explicitly use fraction equivalence without changing value.",
         "The deterministic skill-resolution audit identifies fractions.equivalent as the high-confidence exact target and the semantic-content audit passes target evidence.",
         "This supporting lesson has no independent official OutcomeCode; the Edulytics SkillContract is pedagogical metadata only and does not invent an official curriculum outcome."
-      ]
+      ],
+      "practiceMechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:APPLY",
@@ -116,7 +154,13 @@
         "The canonical lesson title is 'Compare fractions with different denominators: Reason and Apply' and the semantic-content audit contains target evidence for unlike-denominator comparison.",
         "The deterministic skill-resolution audit identifies fractions.compare.unlike_denominators as the high-confidence exact target.",
         "This supporting lesson has no independent official OutcomeCode; the Edulytics SkillContract does not invent one."
-      ]
+      ],
+      "practiceMechanic": "FRACTION_COMPARE_UNLIKE",
+      "allowedQuestionFamilies": [
+        "fractions.compare.unlike.common_denominator"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G3:U05:L10",
@@ -260,7 +304,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L8:SHARED:01:06:RATES-AND-UNIT-RATES",
@@ -274,7 +325,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L9:SHARED:01:06:RATES-AND-UNIT-RATES",
@@ -288,7 +346,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S2:2AS-1:BUILD",
@@ -302,7 +367,13 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Add and subtract across 10: Build the Idea' and restricted Practice to approved exact question families: number.whole.add_subtract.across_ten.build.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.across_ten.build"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S2:2AS-1:APPLY",
@@ -316,7 +387,13 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Add and subtract across 10: Reason and Apply' and restricted Practice to approved exact question families: number.whole.add_subtract.across_ten.apply.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.across_ten.apply"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S2:2AS-3:BUILD",
@@ -330,7 +407,13 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Add and subtract within 100 - part 1: Build the Idea' and restricted Practice to approved exact question families: number.whole.add_subtract.within_100.build.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.within_100.build"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S2:2AS-3:APPLY",
@@ -344,7 +427,13 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Add and subtract within 100 - part 1: Reason and Apply' and restricted Practice to approved exact question families: number.whole.add_subtract.within_100.apply.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.within_100.apply"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S2:2AS-4:BUILD",
@@ -358,7 +447,13 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Add and subtract within 100 - part 2: Build the Idea' and restricted Practice to approved exact question families: number.whole.add_subtract.within_100.build.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.within_100.build"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S2:2AS-4:APPLY",
@@ -372,7 +467,13 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Add and subtract within 100 - part 2: Reason and Apply' and restricted Practice to approved exact question families: number.whole.add_subtract.within_100.apply.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.within_100.apply"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S2:2NF-1:BUILD",
@@ -386,7 +487,13 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Fluently add and subtract within 10: Build the Idea' and restricted Practice to approved exact question families: number.whole.add_subtract.within_10.build.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.within_10.build"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S2:2NF-1:APPLY",
@@ -400,7 +507,13 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Fluently add and subtract within 10: Reason and Apply' and restricted Practice to approved exact question families: number.whole.add_subtract.within_10.apply.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.within_10.apply"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3AS-2:BUILD",
@@ -414,7 +527,13 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Columnar addition and subtraction: Build the Idea' and restricted Practice to approved exact question families: number.whole.add_subtract.columnar.build.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.columnar.build"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3AS-2:APPLY",
@@ -428,7 +547,13 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Columnar addition and subtraction: Reason and Apply' and restricted Practice to approved exact question families: number.whole.add_subtract.columnar.apply.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.columnar.apply"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NF-1:BUILD",
@@ -442,7 +567,13 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Fluently add and subtract within and across 10: Build the Idea' and restricted Practice to approved exact question families: number.whole.add_subtract.across_ten.build.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.across_ten.build"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NF-1:APPLY",
@@ -456,7 +587,13 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Fluently add and subtract within and across 10: Reason and Apply' and restricted Practice to approved exact question families: number.whole.add_subtract.across_ten.apply.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.across_ten.apply"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L10:ADVANCED:01:06:RATES-AND-UNIT-RATES",
@@ -470,7 +607,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates — advanced reasoning' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L10:GENERAL:01:06:RATES-AND-UNIT-RATES",
@@ -484,7 +628,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L11:ADVANCED:01:06:RATES-AND-UNIT-RATES",
@@ -498,7 +649,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates — advanced reasoning' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L11:GENERAL:01:06:RATES-AND-UNIT-RATES",
@@ -512,7 +670,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:01:06:RATES-AND-UNIT-RATES",
@@ -526,7 +691,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates — advanced reasoning' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L12:GENERAL:01:06:RATES-AND-UNIT-RATES",
@@ -540,7 +712,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:02:EQUIVALENT-FRACTIONS",
@@ -554,7 +733,16 @@
         "Deterministic skill-resolution audit identified fractions.equivalent as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Equivalent fractions' and restricted Practice to approved exact question families: fractions.equivalent.missing_value, fractions.equivalent.recognize, fractions.equivalent.generate_multiple, fractions.equivalent.reduce_common_factor.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:02:01:EQUIVALENT-FRACTIONS",
@@ -568,7 +756,16 @@
         "Deterministic skill-resolution audit identified fractions.equivalent as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Equivalent fractions' and restricted Practice to approved exact question families: fractions.equivalent.missing_value, fractions.equivalent.recognize, fractions.equivalent.generate_multiple, fractions.equivalent.reduce_common_factor.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L5:ADVANCED:02:01:EQUIVALENT-FRACTIONS",
@@ -582,7 +779,16 @@
         "Deterministic skill-resolution audit identified fractions.equivalent as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Equivalent fractions — advanced reasoning' and restricted Practice to approved exact question families: fractions.equivalent.missing_value, fractions.equivalent.recognize, fractions.equivalent.generate_multiple, fractions.equivalent.reduce_common_factor.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L5:ADVANCED:03:03:UNIT-RATE",
@@ -596,7 +802,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Unit rate — advanced reasoning' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:02:01:EQUIVALENT-FRACTIONS",
@@ -610,7 +823,16 @@
         "Deterministic skill-resolution audit identified fractions.equivalent as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Equivalent fractions' and restricted Practice to approved exact question families: fractions.equivalent.missing_value, fractions.equivalent.recognize, fractions.equivalent.generate_multiple, fractions.equivalent.reduce_common_factor.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:03:03:UNIT-RATE",
@@ -624,7 +846,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Unit rate' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L7:ADVANCED:01:06:RATES-AND-UNIT-RATES",
@@ -638,7 +867,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates — advanced reasoning' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:01:06:RATES-AND-UNIT-RATES",
@@ -652,7 +888,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L8:ADVANCED:01:06:RATES-AND-UNIT-RATES",
@@ -666,7 +909,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates — advanced reasoning' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:06:RATES-AND-UNIT-RATES",
@@ -680,7 +930,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L9:ADVANCED:01:06:RATES-AND-UNIT-RATES",
@@ -694,7 +951,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates — advanced reasoning' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L9:GENERAL:01:06:RATES-AND-UNIT-RATES",
@@ -708,7 +972,14 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S2:2AS-2:BUILD",
@@ -722,7 +993,13 @@
         "R3 academic evidence review confirmed number.whole.add_subtract as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.add_subtract.comparative.build.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.comparative.build"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S2:2AS-2:APPLY",
@@ -736,7 +1013,13 @@
         "R3 academic evidence review confirmed number.whole.add_subtract as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.add_subtract.comparative.apply.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.comparative.apply"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3AS-1:BUILD",
@@ -750,7 +1033,13 @@
         "R3 academic evidence review confirmed number.whole.add_subtract as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.add_subtract.complement_100.build.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.complement_100.build"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3AS-1:APPLY",
@@ -764,7 +1053,13 @@
         "R3 academic evidence review confirmed number.whole.add_subtract as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.add_subtract.complement_100.apply.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.complement_100.apply"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-2:BUILD",
@@ -778,7 +1073,13 @@
         "R3 academic evidence review confirmed fractions.of_quantity as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: fractions.of_quantity.build.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "FRACTION_OF_QUANTITY",
+      "allowedQuestionFamilies": [
+        "fractions.of_quantity.build"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-2:APPLY",
@@ -792,7 +1093,13 @@
         "R3 academic evidence review confirmed fractions.of_quantity as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: fractions.of_quantity.apply.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "FRACTION_OF_QUANTITY",
+      "allowedQuestionFamilies": [
+        "fractions.of_quantity.apply"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NF-2:BUILD",
@@ -806,7 +1113,13 @@
         "R3 academic evidence review confirmed number.whole.multiply as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.multiply.fact_recall.build.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "MULTIPLICATION_FACTS",
+      "allowedQuestionFamilies": [
+        "number.whole.multiply.fact_recall.build"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NF-2:APPLY",
@@ -820,7 +1133,13 @@
         "R3 academic evidence review confirmed number.whole.multiply as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.multiply.fact_recall.apply.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "MULTIPLICATION_FACTS",
+      "allowedQuestionFamilies": [
+        "number.whole.multiply.fact_recall.apply"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NPV-4:BUILD",
@@ -834,7 +1153,13 @@
         "R3 academic evidence review confirmed measurement.scale.read_equal_intervals as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: measurement.scale.equal_intervals.read_value.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3NPV-4:APPLY",
@@ -848,7 +1173,13 @@
         "R3 academic evidence review confirmed measurement.scale.read_equal_intervals as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: measurement.scale.equal_intervals.read_value.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4NF-1:BUILD",
@@ -862,7 +1193,13 @@
         "R3 academic evidence review confirmed number.whole.multiply as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.multiply.fact_recall.build.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "MULTIPLICATION_FACTS",
+      "allowedQuestionFamilies": [
+        "number.whole.multiply.fact_recall.build"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4NF-1:APPLY",
@@ -876,7 +1213,13 @@
         "R3 academic evidence review confirmed number.whole.multiply as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.multiply.fact_recall.apply.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "MULTIPLICATION_FACTS",
+      "allowedQuestionFamilies": [
+        "number.whole.multiply.fact_recall.apply"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4NF-2:BUILD",
@@ -890,7 +1233,13 @@
         "R3 academic evidence review confirmed number.whole.divide as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.divide.with_remainder.build.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "DIVISION_REMAINDER",
+      "allowedQuestionFamilies": [
+        "number.whole.divide.with_remainder.build"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4NF-2:APPLY",
@@ -904,7 +1253,13 @@
         "R3 academic evidence review confirmed number.whole.divide as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.divide.with_remainder.apply.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "DIVISION_REMAINDER",
+      "allowedQuestionFamilies": [
+        "number.whole.divide.with_remainder.apply"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4NPV-4:BUILD",
@@ -918,7 +1273,13 @@
         "R3 academic evidence review confirmed measurement.scale.read_equal_intervals as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: measurement.scale.equal_intervals.read_value.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4NPV-4:APPLY",
@@ -932,7 +1293,13 @@
         "R3 academic evidence review confirmed measurement.scale.read_equal_intervals as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: measurement.scale.equal_intervals.read_value.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5F-1:BUILD",
@@ -946,7 +1313,13 @@
         "R3 academic evidence review confirmed fractions.of_quantity as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: fractions.of_quantity.build.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "FRACTION_OF_QUANTITY",
+      "allowedQuestionFamilies": [
+        "fractions.of_quantity.build"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5F-1:APPLY",
@@ -960,7 +1333,13 @@
         "R3 academic evidence review confirmed fractions.of_quantity as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: fractions.of_quantity.apply.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "FRACTION_OF_QUANTITY",
+      "allowedQuestionFamilies": [
+        "fractions.of_quantity.apply"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5NPV-4:BUILD",
@@ -974,7 +1353,13 @@
         "R3 academic evidence review confirmed measurement.scale.read_equal_intervals as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: measurement.scale.equal_intervals.read_value.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S5:5NPV-4:APPLY",
@@ -988,7 +1373,13 @@
         "R3 academic evidence review confirmed measurement.scale.read_equal_intervals as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: measurement.scale.equal_intervals.read_value.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:BUILD",
@@ -1002,7 +1393,13 @@
         "R3 academic evidence review confirmed measurement.scale.read_equal_intervals as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: measurement.scale.equal_intervals.read_value.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L2:COMMON:03:02:FRACTIONS-OF-QUANTITIES",
@@ -1016,7 +1413,14 @@
         "R3 academic evidence review confirmed fractions.of_quantity as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: fractions.of_quantity.build, fractions.of_quantity.apply.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "FRACTION_OF_QUANTITY",
+      "allowedQuestionFamilies": [
+        "fractions.of_quantity.build",
+        "fractions.of_quantity.apply"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L2:COMMON:03:03:EQUIVALENT-SIMPLE-FRACTIONS",
@@ -1030,7 +1434,14 @@
         "R3 academic evidence review confirmed fractions.equivalent as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: fractions.equivalent.missing_value, fractions.equivalent.recognize.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L6:ADVANCED:03:03:UNITARY-METHOD",
@@ -1044,7 +1455,14 @@
         "R3 academic evidence review confirmed ratio.unit_rate as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:03:03:UNITARY-METHOD",
@@ -1058,7 +1476,14 @@
         "R3 academic evidence review confirmed ratio.unit_rate as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L13",
@@ -1072,7 +1497,13 @@
         "R3 academic evidence review confirmed algebra.linear.inequality.solve as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: algebra.linear.inequality.ax_plus_b_relation_c.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "LINEAR_INEQUALITY",
+      "allowedQuestionFamilies": [
+        "algebra.linear.inequality.ax_plus_b_relation_c"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U03:L12",
@@ -1086,7 +1517,744 @@
         "R3 academic evidence review confirmed algebra.linear.solve as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: algebra.linear.ax_plus_b_equals_c.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
-      ]
+      ],
+      "practiceMechanic": "LINEAR_EQUATION",
+      "allowedQuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-4:BUILD",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "R4 ambiguity review classified fractions.add_subtract as the Primary learning target.",
+        "Secondary/prerequisite mathematics is recorded separately (fractions.equivalent) and is not authorized as a substitute Practice target.",
+        "Practice is restricted to exact families: fractions.add_subtract.within_one.build.",
+        "No official curriculum outcome is invented."
+      ],
+      "practiceMechanic": "FRACTION_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.within_one"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-4:APPLY",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "R4 ambiguity review classified fractions.add_subtract as the Primary learning target.",
+        "Secondary/prerequisite mathematics is recorded separately (fractions.equivalent) and is not authorized as a substitute Practice target.",
+        "Practice is restricted to exact families: fractions.add_subtract.within_one.apply.",
+        "No official curriculum outcome is invented."
+      ],
+      "practiceMechanic": "FRACTION_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.within_one"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4F-3:BUILD",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "R4 ambiguity review classified fractions.add_subtract as the Primary learning target.",
+        "Secondary/prerequisite mathematics is recorded separately (fractions.equivalent) and is not authorized as a substitute Practice target.",
+        "Practice is restricted to exact families: fractions.add_subtract.same_denominator_mixed.build.",
+        "No official curriculum outcome is invented."
+      ],
+      "practiceMechanic": "FRACTION_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.common_denominator_mixed"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4F-3:APPLY",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "R4 ambiguity review classified fractions.add_subtract as the Primary learning target.",
+        "Secondary/prerequisite mathematics is recorded separately (fractions.equivalent) and is not authorized as a substitute Practice target.",
+        "Practice is restricted to exact families: fractions.add_subtract.same_denominator_mixed.apply.",
+        "No official curriculum outcome is invented."
+      ],
+      "practiceMechanic": "FRACTION_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.common_denominator_mixed"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:BUILD",
+      "primarySkills": [
+        "algebra.relationships.two_unknowns"
+      ],
+      "secondarySkills": [
+        "number.whole.add_subtract"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "R4 ambiguity review classified algebra.relationships.two_unknowns as the Primary learning target.",
+        "Secondary/prerequisite mathematics is recorded separately (number.whole.add_subtract) and is not authorized as a substitute Practice target.",
+        "Practice is restricted to exact families: algebra.relationships.two_unknowns.total_difference.",
+        "No official curriculum outcome is invented."
+      ],
+      "practiceMechanic": "TWO_UNKNOWNS",
+      "allowedQuestionFamilies": [
+        "algebra.relationships.two_unknowns.total_difference"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:03:COMPARE-FRACTIONS",
+      "primarySkills": [
+        "fractions.compare.unlike_denominators"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "R4 ambiguity review classified fractions.compare.unlike_denominators as the Primary learning target.",
+        "Secondary/prerequisite mathematics is recorded separately (fractions.equivalent) and is not authorized as a substitute Practice target.",
+        "Practice is restricted to exact families: fractions.compare.unlike.common_denominator.",
+        "No official curriculum outcome is invented."
+      ],
+      "practiceMechanic": "FRACTION_COMPARE_UNLIKE",
+      "allowedQuestionFamilies": [
+        "fractions.compare.unlike.common_denominator"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:04:ADD-AND-SUBTRACT-RELATED-FRACTIONS",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "R4 ambiguity review classified fractions.add_subtract as the Primary learning target.",
+        "Secondary/prerequisite mathematics is recorded separately (fractions.equivalent) and is not authorized as a substitute Practice target.",
+        "Practice is restricted to exact families: fractions.add_subtract.related.build, fractions.add_subtract.related.apply.",
+        "No official curriculum outcome is invented."
+      ],
+      "practiceMechanic": "FRACTION_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.related"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:02:02:ADD-AND-SUBTRACT-FRACTIONS",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "R4 ambiguity review classified fractions.add_subtract as the Primary learning target.",
+        "Secondary/prerequisite mathematics is recorded separately (fractions.equivalent) and is not authorized as a substitute Practice target.",
+        "Practice is restricted to exact families: fractions.add_subtract.unlike_denominators.build, fractions.add_subtract.unlike_denominators.apply.",
+        "No official curriculum outcome is invented."
+      ],
+      "practiceMechanic": "FRACTION_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.related",
+        "fractions.add_subtract.unlike_denominators"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L5:ADVANCED:02:02:ADD-AND-SUBTRACT-FRACTIONS",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "R4 ambiguity review classified fractions.add_subtract as the Primary learning target.",
+        "Secondary/prerequisite mathematics is recorded separately (fractions.equivalent) and is not authorized as a substitute Practice target.",
+        "Practice is restricted to exact families: fractions.add_subtract.unlike_denominators.build, fractions.add_subtract.unlike_denominators.apply.",
+        "No official curriculum outcome is invented."
+      ],
+      "practiceMechanic": "FRACTION_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.related",
+        "fractions.add_subtract.unlike_denominators"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:02:02:ADD-AND-SUBTRACT-FRACTIONS",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "R4 ambiguity review classified fractions.add_subtract as the Primary learning target.",
+        "Secondary/prerequisite mathematics is recorded separately (fractions.equivalent) and is not authorized as a substitute Practice target.",
+        "Practice is restricted to exact families: fractions.add_subtract.unlike_denominators.build, fractions.add_subtract.unlike_denominators.apply.",
+        "No official curriculum outcome is invented."
+      ],
+      "practiceMechanic": "FRACTION_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.related",
+        "fractions.add_subtract.unlike_denominators"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:ADVANCED:02:02:ADD-AND-SUBTRACT-UNLIKE-FRACTIONS",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "R4 ambiguity review classified fractions.add_subtract as the Primary learning target.",
+        "Secondary/prerequisite mathematics is recorded separately (fractions.equivalent) and is not authorized as a substitute Practice target.",
+        "Practice is restricted to exact families: fractions.add_subtract.unlike_denominators.build, fractions.add_subtract.unlike_denominators.apply.",
+        "No official curriculum outcome is invented."
+      ],
+      "practiceMechanic": "FRACTION_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.unlike_denominators"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:02:02:ADD-AND-SUBTRACT-UNLIKE-FRACTIONS",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "R4 ambiguity review classified fractions.add_subtract as the Primary learning target.",
+        "Secondary/prerequisite mathematics is recorded separately (fractions.equivalent) and is not authorized as a substitute Practice target.",
+        "Practice is restricted to exact families: fractions.add_subtract.unlike_denominators.build, fractions.add_subtract.unlike_denominators.apply.",
+        "No official curriculum outcome is invented."
+      ],
+      "practiceMechanic": "FRACTION_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.unlike_denominators"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v5"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-1:BUILD",
+      "primarySkills": [
+        "fractions.notation"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.notation.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.notation.identify_part.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.notation.identify_part"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-1:APPLY",
+      "primarySkills": [
+        "fractions.notation"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.notation.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.notation.identify_part.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.notation.identify_part"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-3:BUILD",
+      "primarySkills": [
+        "fractions.number_line"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.number_line.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.number_line.read.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.number_line.read"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S3:3F-3:APPLY",
+      "primarySkills": [
+        "fractions.number_line"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.number_line.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.number_line.read.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.number_line.read"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:01:FRACTIONS-ON-A-NUMBER-LINE",
+      "primarySkills": [
+        "fractions.number_line"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.number_line.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.number_line.read.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.number_line.read"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4F-1:BUILD",
+      "primarySkills": [
+        "fractions.mixed_numbers.number_line"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.mixed_numbers.number_line.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.mixed_numbers.number_line.improper_numerator.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.mixed_numbers.number_line.improper_numerator"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4F-1:APPLY",
+      "primarySkills": [
+        "fractions.mixed_numbers.number_line"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.mixed_numbers.number_line.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.mixed_numbers.number_line.improper_numerator.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.mixed_numbers.number_line.improper_numerator"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4F-2:BUILD",
+      "primarySkills": [
+        "fractions.mixed_improper.convert"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.mixed_improper.convert.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.mixed_improper.convert_to_improper_numerator.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.mixed_improper.convert_to_improper_numerator"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S4:4F-2:APPLY",
+      "primarySkills": [
+        "fractions.mixed_improper.convert"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.mixed_improper.convert.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.mixed_improper.convert_to_improper_numerator.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.mixed_improper.convert_to_improper_numerator"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-1:BUILD",
+      "primarySkills": [
+        "fractions.simplify"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.simplify.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.simplify.lowest_terms.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.simplify.lowest_terms"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-1:APPLY",
+      "primarySkills": [
+        "fractions.simplify"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.simplify.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.simplify.lowest_terms.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.simplify.lowest_terms"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:ADVANCED:02:01:SIMPLIFYING-FRACTIONS",
+      "primarySkills": [
+        "fractions.simplify"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.simplify.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.simplify.lowest_terms.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.simplify.lowest_terms"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:02:01:SIMPLIFYING-FRACTIONS",
+      "primarySkills": [
+        "fractions.simplify"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.simplify.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.simplify.lowest_terms.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.simplify.lowest_terms"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-2:BUILD",
+      "primarySkills": [
+        "fractions.common_denominator"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.common_denominator.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.common_denominator.missing_numerator.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.common_denominator.missing_numerator"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-2:APPLY",
+      "primarySkills": [
+        "fractions.common_denominator"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.common_denominator.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.common_denominator.missing_numerator.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.common_denominator.missing_numerator"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L5:ADVANCED:02:03:MULTIPLY-FRACTIONS-BY-WHOLE-NUMBERS",
+      "primarySkills": [
+        "fractions.multiply_by_whole"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.multiply_by_whole.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.multiply_by_whole.exact.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.multiply_by_whole.exact"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:02:03:MULTIPLY-FRACTIONS-BY-WHOLE-NUMBERS",
+      "primarySkills": [
+        "fractions.multiply_by_whole"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.multiply_by_whole.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.multiply_by_whole.exact.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.multiply_by_whole.exact"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:ADVANCED:02:03:MULTIPLY-FRACTIONS",
+      "primarySkills": [
+        "fractions.multiply"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.multiply.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.multiply.exact.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.multiply.exact"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:02:03:MULTIPLY-FRACTIONS",
+      "primarySkills": [
+        "fractions.multiply"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.multiply.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.multiply.exact.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.multiply.exact"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:ADVANCED:02:04:DIVIDE-FRACTIONS-BY-WHOLE-NUMBERS",
+      "primarySkills": [
+        "fractions.divide_by_whole"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.divide_by_whole.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.divide_by_whole.exact.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.divide_by_whole.exact"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:02:04:DIVIDE-FRACTIONS-BY-WHOLE-NUMBERS",
+      "primarySkills": [
+        "fractions.divide_by_whole"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.divide_by_whole.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.divide_by_whole.exact.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.divide_by_whole.exact"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L06",
+      "primarySkills": [
+        "fractions.compare.benchmark"
+      ],
+      "sourceType": "SupportingLesson",
+      "officialOutcomeMapped": false,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Supporting remediation reviewed the canonical lesson target as fractions.compare.benchmark.",
+        "Exact Practice is restricted to solver/verifier-backed family/families: fractions.compare.benchmark_half.",
+        "No official curriculum OutcomeCode is synthesized."
+      ],
+      "practiceMechanic": "STANDARD_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.compare.benchmark_half"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceContractVersion": "supporting-lesson-practice-v6"
     }
   ]
 }

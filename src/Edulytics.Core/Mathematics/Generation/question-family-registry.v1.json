@@ -282,7 +282,9 @@
         "symbolic"
       ],
       "status": "ShadowVerified",
-      "productionRouting": false
+      "productionRouting": false,
+      "supportingPracticeRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
     },
     {
       "id": "calculus.polynomial.derivative.exact",
@@ -1011,6 +1013,621 @@
       ],
       "status": "ShadowVerified",
       "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.within_one.build",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-exact-rational-recomputation-from-original-operands",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.within_one.apply",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-exact-rational-recomputation-from-original-operands",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.same_denominator_mixed.build",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-exact-rational-recomputation-from-original-operands",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.same_denominator_mixed.apply",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-exact-rational-recomputation-from-original-operands",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.related.build",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-exact-rational-recomputation-from-original-operands",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.related.apply",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-exact-rational-recomputation-from-original-operands",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.unlike_denominators.build",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-exact-rational-recomputation-from-original-operands",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.unlike_denominators.apply",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-exact-rational-recomputation-from-original-operands",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.within_one",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-exact-rational-recompute",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.related",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-exact-rational-recompute",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.common_denominator_mixed",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-exact-rational-recompute",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.unlike_denominators",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-exact-rational-recompute",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.notation.identify_part",
+      "version": 1,
+      "skillId": "fractions.notation",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.of_quantity.exact",
+      "version": 1,
+      "skillId": "fractions.of_quantity",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.number_line.read",
+      "version": 1,
+      "skillId": "fractions.number_line",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.mixed_numbers.number_line.improper_numerator",
+      "version": 1,
+      "skillId": "fractions.mixed_numbers.number_line",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.mixed_improper.convert_to_improper_numerator",
+      "version": 1,
+      "skillId": "fractions.mixed_improper.convert",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.simplify.lowest_terms",
+      "version": 1,
+      "skillId": "fractions.simplify",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.common_denominator.missing_numerator",
+      "version": 1,
+      "skillId": "fractions.common_denominator",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.multiply_by_whole.exact",
+      "version": 1,
+      "skillId": "fractions.multiply_by_whole",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.multiply.exact",
+      "version": 1,
+      "skillId": "fractions.multiply",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.divide_by_whole.exact",
+      "version": 1,
+      "skillId": "fractions.divide_by_whole",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.add_subtract.exact",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.compare.general",
+      "version": 1,
+      "skillId": "fractions.compare",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "comparison_symbol",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "fractions.compare.benchmark_half",
+      "version": 1,
+      "skillId": "fractions.compare.benchmark",
+      "requiredCapabilities": [
+        "fractions.practice.exact_generation",
+        "fractions.practice.independent_verification"
+      ],
+      "answerType": "comparison_symbol",
+      "verificationPolicy": "lesson-practice-independent-reconstruction",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ProductionVerified",
+      "productionRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "geometry.coordinate.straight_line.gradient",
+      "version": 1,
+      "skillId": "geometry.coordinate.straight_line",
+      "requiredCapabilities": [
+        "geometry.practice.structured_exact_generation",
+        "geometry.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "coordinate_line"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "supportingPracticeRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "geometry.angles.relationships.missing_angle",
+      "version": 1,
+      "skillId": "geometry.angles.relationships",
+      "requiredCapabilities": [
+        "geometry.practice.structured_exact_generation",
+        "geometry.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "angle_diagram"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "supportingPracticeRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "geometry.congruence.identify_criterion",
+      "version": 1,
+      "skillId": "geometry.congruence",
+      "requiredCapabilities": [
+        "geometry.practice.structured_exact_generation",
+        "geometry.practice.independent_verification"
+      ],
+      "answerType": "short_symbolic",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "paired_triangles"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "supportingPracticeRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "geometry.similarity.missing_length",
+      "version": 1,
+      "skillId": "geometry.similarity",
+      "requiredCapabilities": [
+        "geometry.practice.structured_exact_generation",
+        "geometry.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "similar_shapes"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "supportingPracticeRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "geometry.perimeter_area.rectangle",
+      "version": 1,
+      "skillId": "geometry.perimeter_area",
+      "requiredCapabilities": [
+        "geometry.practice.structured_exact_generation",
+        "geometry.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "dimensioned_rectangle"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "supportingPracticeRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "geometry.surface_area_volume.cuboid",
+      "version": 1,
+      "skillId": "geometry.surface_area_volume",
+      "requiredCapabilities": [
+        "geometry.practice.structured_exact_generation",
+        "geometry.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "dimensioned_cuboid"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "supportingPracticeRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "trigonometry.right_triangle.sin_cos_tan.ratio",
+      "version": 1,
+      "skillId": "trigonometry.right_triangle.sin_cos_tan",
+      "requiredCapabilities": [
+        "trigonometry.right_triangle.practice.exact_generation",
+        "trigonometry.right_triangle.practice.independent_verification"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "right_triangle"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "supportingPracticeRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "trigonometry.right_triangle.solve_side.special",
+      "version": 1,
+      "skillId": "trigonometry.right_triangle.solve_side",
+      "requiredCapabilities": [
+        "trigonometry.right_triangle.practice.exact_generation",
+        "trigonometry.right_triangle.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "right_triangle"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "supportingPracticeRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "trigonometry.right_triangle.solve_angle.special",
+      "version": 1,
+      "skillId": "trigonometry.right_triangle.solve_angle",
+      "requiredCapabilities": [
+        "trigonometry.right_triangle.practice.exact_generation",
+        "trigonometry.right_triangle.practice.independent_verification"
+      ],
+      "answerType": "exact_integer_degrees",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "right_triangle"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "supportingPracticeRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
+    },
+    {
+      "id": "trigonometry.modelling.right_triangle",
+      "version": 1,
+      "skillId": "trigonometry.modelling",
+      "requiredCapabilities": [
+        "trigonometry.right_triangle.practice.exact_generation",
+        "trigonometry.right_triangle.practice.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "right_triangle_model"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "supportingPracticeRouting": true,
+      "runtimeKernel": "ExactSkillContractQuestionEngine"
     }
   ]
 }
