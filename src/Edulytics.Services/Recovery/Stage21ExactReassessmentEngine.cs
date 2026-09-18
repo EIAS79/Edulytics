@@ -112,6 +112,7 @@ public sealed class Stage21ExactReassessmentEngine
                     var coefficientSignature = CoefficientSignature(question.Parameters);
                     var exposureFingerprint = Fingerprint(
                         contract,
+                        question.Family,
                         descriptor,
                         coefficientSignature);
 
@@ -536,6 +537,7 @@ public sealed class Stage21ExactReassessmentEngine
 
     private static string Fingerprint(
         Stage19AssessmentSkillContract contract,
+        string questionFamily,
         VariantDescriptor descriptor,
         string coefficientSignature)
     {
@@ -544,6 +546,7 @@ public sealed class Stage21ExactReassessmentEngine
             GenerationMethod,
             contract.OutcomeCode,
             contract.SkillId,
+            questionFamily,
             coefficientSignature,
             descriptor.Representation,
             descriptor.Strategy,
