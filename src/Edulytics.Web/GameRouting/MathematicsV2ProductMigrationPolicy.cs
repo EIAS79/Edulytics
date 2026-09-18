@@ -1,3 +1,5 @@
+using Edulytics.Services.Mathematics.Rollout;
+
 namespace Edulytics.Web.GameRouting;
 
 /// <summary>
@@ -109,6 +111,49 @@ public static class MathematicsV2ProductMigrationPolicy
             && string.Equals(entry.GenerationReadiness, "READY_VERIFIED", StringComparison.Ordinal)
             && string.Equals(entry.Mechanic, mechanic.Trim(), StringComparison.Ordinal);
     }
+
+    public static MathematicsRolloutDecision ResolveProductionRollout(
+        string lessonCode,
+        string curriculum,
+        string mechanic,
+        bool legacyGrade16Enabled)
+    {
+        if (!TryGetApprovedGrade16Entry(lessonCode, out var entry) ||
+            entry is null ||
+            string.IsNullOrWhiteSpace(mechanic) ||
+            !string.Equals(entry.Mechanic, mechanic.Trim(), StringComparison.Ordinal) ||
+            entry.Grade is < 1 or > 6 ||
+            entry.UsesV2ShadowSolver ||
+            !string.Equals(entry.GenerationReadiness, "READY_VERIFIED", StringComparison.Ordinal))
+        {
+            return new MathematicsRolloutDecision(
+                MathematicsRolloutRoute.Legacy,
+                MathematicsRolloutMode.LegacyOnly,
+                "Lesson is outside the approved Grade 1-6 production allow-list.");
+        }
+
+        var configuration = MathematicsProductionRolloutPolicy.FromEnvironment(legacyGrade16Enabled);
+        return MathematicsProductionRolloutPolicy.Evaluate(
+            new MathematicsRolloutScope(
+                entry.Domain,
+                entry.SkillId,
+                string.IsNullOrWhiteSpace(curriculum) ? "UNKNOWN" : curriculum,
+                entry.Grade),
+            configuration,
+            isReadyVerified: true,
+            hasProductionCapability: true);
+    }
+
+    public static bool ShouldUseProductionRollout(
+        string lessonCode,
+        string curriculum,
+        string mechanic,
+        bool legacyGrade16Enabled) =>
+        ResolveProductionRollout(
+            lessonCode,
+            curriculum,
+            mechanic,
+            legacyGrade16Enabled).Route == MathematicsRolloutRoute.V2;
 
     public static bool ShouldUsePilot(
         string lessonCode,

@@ -2,6 +2,7 @@ using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
 using Edulytics.Core.Enums;
+using Edulytics.Services.Mathematics.Runtime;
 
 namespace Edulytics.Services.Mathematics;
 
@@ -48,6 +49,13 @@ public sealed class ExactSkillContractQuestionEngine
             throw new InvalidOperationException("Exact SkillContract generation requires a valid scope, family registry and question count.");
         }
 
+        MathematicsResourceGuard.ValidateGenerationRequest(
+            fingerprintNamespace,
+            scopeKey,
+            allowedQuestionFamilies,
+            questionCount,
+            excludedExposureFingerprints);
+
         var random = new Random(seed == 0 ? 1 : seed);
         var excluded = excludedExposureFingerprints
             .Where(x => !string.IsNullOrWhiteSpace(x))
@@ -66,7 +74,12 @@ public sealed class ExactSkillContractQuestionEngine
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
+                {
+                    MathematicsObservability.Record(MathematicsMetricKind.VerificationFailure);
                     throw new InvalidOperationException($"Exact Mathematics verifier rejected solver output for {family}.");
+                }
+
+                MathematicsObservability.Record(MathematicsMetricKind.SolverSuccess);
 
                 var fingerprint = Fingerprint(
                     fingerprintNamespace,
@@ -94,6 +107,7 @@ public sealed class ExactSkillContractQuestionEngine
             items.Add(item);
         }
 
+        MathematicsObservability.Record(MathematicsMetricKind.GenerationSuccess, items.Count);
         return items;
     }
 
@@ -189,8 +203,14 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUnitRate(random, scale),
             "ratio.unit_rate.equivalent_ratio" =>
                 BuildEquivalentRatio(random, scale),
-            _ => throw new InvalidOperationException($"Unsupported exact Mathematics question family: {family}")
+            _ => UnsupportedFamily(family)
         };
+    }
+
+    private static ExactProblem UnsupportedFamily(string family)
+    {
+        MathematicsObservability.Record(MathematicsMetricKind.Unsupported);
+        throw new InvalidOperationException($"Unsupported exact Mathematics question family: {family}");
     }
 
     private static ExactProblem BuildTwoUnknowns(Random random, int scale)
