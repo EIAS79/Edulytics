@@ -54,8 +54,8 @@ public sealed class SupportingLessonPracticeR2Tests
                         item.GenerationFamily,
                         StringComparison.Ordinal));
                 Assert.True(Stage18SkillContractPracticeEngine.VerifyPersistedItem(legacy, item));
-                Assert.Contains(""solverVerified":true", item.ValidationMetadataJson, StringComparison.Ordinal);
-                Assert.Contains(""broadFallbackUsed":false", item.ValidationMetadataJson, StringComparison.Ordinal);
+                Assert.Contains("\\\"solverVerified\\\":true", item.ValidationMetadataJson, StringComparison.Ordinal);
+                Assert.Contains("\\\"broadFallbackUsed\\\":false", item.ValidationMetadataJson, StringComparison.Ordinal);
             });
         }
     }
