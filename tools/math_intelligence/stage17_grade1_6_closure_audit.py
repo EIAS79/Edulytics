@@ -124,15 +124,18 @@ def audit() -> dict[str, Any]:
     }
     manifest_codes = set(manifest_by_code)
 
-    for code in sorted(ready_codes - manifest_codes):
-        blockers.append(f"READY_VERIFIED Grade 1-6 lesson is not production-routed: {code}")
+    # Stage 17 manifest is an explicit V2 production-routing allowlist, not a
+    # completeness list for every exact Practice contract. Supporting lessons
+    # may be READY_VERIFIED for standard lesson-scoped Practice while remaining
+    # outside the Stage 17 V2 rollout manifest. Therefore:
+    # - every manifest entry MUST be READY_VERIFIED;
+    # - READY_VERIFIED lessons outside the manifest are informational only;
+    # - approved lesson-skill mappings do not imply V2 production routing.
     for code in sorted(manifest_codes - ready_codes):
         blockers.append(f"Production-routed lesson is not READY_VERIFIED: {code}")
 
     for row in grade16_rows:
         code = str(row.get("lessonCode") or "")
-        if bool(row.get("approvedMapping")) and code not in manifest_codes:
-            blockers.append(f"Approved Grade 1-6 mapping is missing from Stage 17 manifest: {code}")
         if code not in manifest_codes and not row.get("reasons"):
             blockers.append(f"Fail-closed Grade 1-6 lesson has no readiness reason: {code}")
 

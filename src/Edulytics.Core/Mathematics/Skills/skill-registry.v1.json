@@ -3,57 +3,659 @@
   "registryVersion": "math-skills-v1-foundation",
   "status": "Foundation",
   "skills": [
-    {"id":"number.whole.add_subtract","domain":"number","canonicalName":"Whole-number addition and subtraction","legacyCanonicalSkill":"WholeNumberAdditionAndSubtraction"},
-    {"id":"number.whole.add","domain":"number","canonicalName":"Whole-number addition","legacyCanonicalSkill":"WholeNumberAddition"},
-    {"id":"number.whole.subtract","domain":"number","canonicalName":"Whole-number subtraction","legacyCanonicalSkill":"WholeNumberSubtraction"},
-    {"id":"number.whole.multiply","domain":"number","canonicalName":"Whole-number multiplication","legacyCanonicalSkill":"WholeNumberMultiplication"},
-    {"id":"number.whole.divide","domain":"number","canonicalName":"Whole-number division","legacyCanonicalSkill":"WholeNumberDivision"},
-    {"id":"algebra.linear.solve","domain":"algebra","canonicalName":"Solve linear equations","legacyCanonicalSkill":"OneStepLinearEquation","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","algebra.linear.affine_extract","algebra.linear.solve.exact_rational","algebra.linear.verify.substitution"],"v2QuestionFamilies":["algebra.linear.ax_plus_b_equals_c"]},
-    {"id":"algebra.linear.inequality.solve","domain":"algebra","canonicalName":"Solve single-variable linear inequalities","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","algebra.linear.affine_extract","algebra.linear.inequality.solve.exact_rational","algebra.linear.inequality.verify.interval"],"v2QuestionFamilies":["algebra.linear.inequality.ax_plus_b_relation_c"]},
-    {"id":"algebra.linear.systems.two_by_two.solve","domain":"algebra","canonicalName":"Solve a 2x2 linear system","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","algebra.linear.systems.two_by_two.affine_extract","algebra.linear.systems.two_by_two.solve.exact_rational","algebra.linear.systems.two_by_two.verify.substitution"],"v2QuestionFamilies":["algebra.linear.systems.two_by_two.integer_coefficients"]},
-    {"id":"algebra.quadratic.solve.real_roots","domain":"algebra","canonicalName":"Solve quadratic equations over the real numbers","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","algebra.polynomial.normalize.exact_rational","algebra.quadratic.solve.real.exact","algebra.quadratic.verify.exact_substitution"],"v2QuestionFamilies":["algebra.quadratic.solve.integer_coefficients.real_roots"]},
-    {"id":"functions.evaluate.exact","domain":"functions","canonicalName":"Evaluate a supported single-variable function at an exact input","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","functions.evaluate.exact_rational","functions.verify.exact_evaluation"],"v2QuestionFamilies":["functions.evaluate.exact_rational"]},
-    {"id":"functions.graph.sample.coordinates","domain":"functions","canonicalName":"Generate exact coordinate samples from a supported function","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","functions.evaluate.exact_rational","functions.graph.sample.exact_rational","functions.graph.verify.exact_points"],"v2QuestionFamilies":["functions.graph.sample.exact_coordinates"]},
-    {"id":"sequences.arithmetic.nth_term","domain":"sequences","canonicalName":"Find the nth term of an arithmetic sequence","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","sequences.arithmetic.nth_term.exact","sequences.verify.exact_nth_term"],"v2QuestionFamilies":["sequences.arithmetic.nth_term.exact"]},
-    {"id":"sequences.geometric.nth_term","domain":"sequences","canonicalName":"Find the nth term of a geometric sequence","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","sequences.geometric.nth_term.exact","sequences.verify.exact_nth_term"],"v2QuestionFamilies":["sequences.geometric.nth_term.exact"]},
-    {"id":"indices.integer_power.evaluate","domain":"indices","canonicalName":"Evaluate integer powers of exact rational bases","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","indices.power.integer_exponent.exact","indices.verify.integer_power"],"v2QuestionFamilies":["indices.power.integer_exponent.exact"]},
-    {"id":"exponentials.same_base.solve","domain":"exponentials","canonicalName":"Solve exact same-base exponential equations for an integer exponent","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","exponentials.solve.same_base.integer_exponent","exponentials.verify.same_base.substitution"],"v2QuestionFamilies":["exponentials.solve.same_base.integer_exponent"]},
-    {"id":"logarithms.evaluate.exact","domain":"logarithms","canonicalName":"Evaluate exact logarithms that correspond to integer powers","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","logarithms.evaluate.exact_integer_power","logarithms.verify.inverse_exponentiation"],"v2QuestionFamilies":["logarithms.evaluate.exact_integer_power"]},
-    {"id":"trigonometry.special_angles.evaluate","domain":"trigonometry","canonicalName":"Evaluate exact sine cosine and tangent values at supported special angles","v2Status":"ShadowVerified","v2Capabilities":["trigonometry.special_angle.exact","trigonometry.verify.special_angle.exact"],"v2QuestionFamilies":["trigonometry.special_angle.exact_degrees"]},
-    {"id":"geometry.rectangle.area","domain":"geometry","canonicalName":"Find the area of a rectangle from exact positive dimensions","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","geometry.rectangle.area.exact","geometry.verify.rectangle.area"],"v2QuestionFamilies":["geometry.rectangle.area.exact"]},
-    {"id":"geometry.rectangle.perimeter","domain":"geometry","canonicalName":"Find the perimeter of a rectangle from exact positive dimensions","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","geometry.rectangle.perimeter.exact","geometry.verify.rectangle.perimeter"],"v2QuestionFamilies":["geometry.rectangle.perimeter.exact"]},
-    {"id":"geometry.triangle.area.base_height","domain":"geometry","canonicalName":"Find triangle area from exact base and perpendicular height","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","geometry.triangle.area.base_height.exact","geometry.verify.triangle.area.base_height"],"v2QuestionFamilies":["geometry.triangle.area.base_height.exact"]},
-    {"id":"geometry.right_triangle.pythagorean","domain":"geometry","canonicalName":"Find an exact rational side length in a right triangle using Pythagoras","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","geometry.right_triangle.pythagorean.exact","geometry.verify.right_triangle.pythagorean"],"v2QuestionFamilies":["geometry.right_triangle.pythagorean.exact"]},
-    {"id":"calculus.polynomial.differentiate","domain":"calculus","canonicalName":"Differentiate a supported exact-rational polynomial","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","algebra.polynomial.normalize.exact_rational","calculus.polynomial.derivative.exact","calculus.verify.polynomial.derivative"],"v2QuestionFamilies":["calculus.polynomial.derivative.exact"]},
-    {"id":"calculus.polynomial.integrate.definite","domain":"calculus","canonicalName":"Evaluate a definite integral of a supported exact-rational polynomial","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","algebra.polynomial.normalize.exact_rational","calculus.polynomial.definite_integral.exact","calculus.verify.polynomial.definite_integral"],"v2QuestionFamilies":["calculus.polynomial.definite_integral.exact"]},
-    {"id":"vectors.add.exact","domain":"vectors","canonicalName":"Add exact rational vectors componentwise","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","vectors.add.exact_rational","vectors.verify.exact_operations"],"v2QuestionFamilies":["vectors.add.exact_rational"]},
-    {"id":"vectors.dot.exact","domain":"vectors","canonicalName":"Evaluate exact rational vector dot products","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","vectors.dot.exact_rational","vectors.verify.exact_operations"],"v2QuestionFamilies":["vectors.dot.exact_rational"]},
-    {"id":"matrices.multiply.exact","domain":"matrices","canonicalName":"Multiply bounded exact rational matrices","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","matrices.multiply.exact_rational","matrices.verify.exact_operations"],"v2QuestionFamilies":["matrices.multiply.exact_rational"]},
-    {"id":"matrices.determinant.2x2","domain":"matrices","canonicalName":"Evaluate the determinant of a 2x2 exact rational matrix","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","matrices.determinant.2x2.exact","matrices.verify.exact_operations"],"v2QuestionFamilies":["matrices.determinant.2x2.exact"]},
-    {"id":"complex.add.exact","domain":"complex","canonicalName":"Add complex values with exact rational real and imaginary parts","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","complex.add.exact_rational","complex.verify.exact_operations"],"v2QuestionFamilies":["complex.add.exact_rational"]},
-    {"id":"complex.multiply.exact","domain":"complex","canonicalName":"Multiply complex values with exact rational real and imaginary parts","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","complex.multiply.exact_rational","complex.verify.exact_operations"],"v2QuestionFamilies":["complex.multiply.exact_rational"]},
-    {"id":"probability.simple.evaluate.exact","domain":"probability","canonicalName":"Evaluate simple favourable-over-total probability exactly","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","probability.simple.exact_rational","probability.verify.exact_events"],"v2QuestionFamilies":["probability.simple.favourable_over_total.exact"]},
-    {"id":"probability.complement.evaluate.exact","domain":"probability","canonicalName":"Evaluate the exact complement of a probability","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","probability.complement.exact_rational","probability.verify.exact_events"],"v2QuestionFamilies":["probability.complement.exact"]},
-    {"id":"statistics.mean.arithmetic.exact","domain":"statistics","canonicalName":"Evaluate an arithmetic mean over bounded exact data","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","statistics.mean.arithmetic.exact_rational","statistics.verify.exact_means"],"v2QuestionFamilies":["statistics.mean.arithmetic.exact"]},
-    {"id":"statistics.mean.frequency_table.exact","domain":"statistics","canonicalName":"Evaluate an exact mean from a bounded frequency table","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","statistics.mean.frequency_table.exact_rational","statistics.verify.exact_means"],"v2QuestionFamilies":["statistics.mean.frequency_table.exact"]},
-    {"id":"numerical.roots.bisection.iterate","domain":"numerical_methods","canonicalName":"Apply a fixed number of bisection iterations using exact-rational arithmetic","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","numerical.roots.bisection.fixed_iterations.exact_rational","numerical.verify.bisection.fixed_iterations"],"v2QuestionFamilies":["numerical.roots.bisection.fixed_iterations.exact_rational"]},
-    {"id":"numerical.roots.newton.iterate","domain":"numerical_methods","canonicalName":"Apply a fixed number of Newton iterations using exact-rational arithmetic","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","numerical.roots.newton.fixed_iterations.exact_rational","numerical.verify.newton.fixed_iterations"],"v2QuestionFamilies":["numerical.roots.newton.fixed_iterations.exact_rational"]},
-    {"id":"numerical.integration.trapezoidal.estimate","domain":"numerical_methods","canonicalName":"Evaluate a fixed-subdivision trapezoidal-rule estimate using exact-rational arithmetic","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","numerical.integration.trapezoidal.fixed_subdivisions.exact_rational","numerical.verify.trapezoidal.fixed_subdivisions"],"v2QuestionFamilies":["numerical.integration.trapezoidal.fixed_subdivisions.exact_rational"]},
-    {"id":"mechanics.kinematics.constant_acceleration.velocity","domain":"mechanics","canonicalName":"Find final velocity under constant acceleration","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.kinematics.constant_acceleration.velocity.exact","mechanics.verify.models_and_units"],"v2QuestionFamilies":["mechanics.kinematics.constant_acceleration.velocity.exact"]},
-    {"id":"mechanics.kinematics.constant_acceleration.displacement","domain":"mechanics","canonicalName":"Find displacement under constant acceleration","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.kinematics.constant_acceleration.displacement.exact","mechanics.verify.models_and_units"],"v2QuestionFamilies":["mechanics.kinematics.constant_acceleration.displacement.exact"]},
-    {"id":"mechanics.newton.second_law.force","domain":"mechanics","canonicalName":"Find resultant force using Newton's second law","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.newton.second_law.force.exact","mechanics.verify.models_and_units"],"v2QuestionFamilies":["mechanics.newton.second_law.force.exact"]},
-    {"id":"mechanics.newton.third_law.reaction","domain":"mechanics","canonicalName":"Find the equal and opposite reaction force","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.newton.third_law.reaction.exact","mechanics.verify.models_and_units"],"v2QuestionFamilies":["mechanics.newton.third_law.reaction.exact"]},
-    {"id":"mechanics.equilibrium.balancing_force_1d","domain":"mechanics","canonicalName":"Find a balancing force for one-dimensional equilibrium","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.equilibrium.balancing_force_1d.exact","mechanics.verify.models_and_units"],"v2QuestionFamilies":["mechanics.equilibrium.balancing_force_1d.exact"]},
-    {"id":"mechanics.momentum.impulse","domain":"mechanics","canonicalName":"Apply impulse equals change in momentum","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.momentum.impulse.exact","mechanics.verify.models_and_units"],"v2QuestionFamilies":["mechanics.momentum.impulse.exact"]},
-    {"id":"mechanics.energy.work_energy","domain":"mechanics","canonicalName":"Apply the work-energy relationship","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.energy.work_energy.exact","mechanics.verify.models_and_units"],"v2QuestionFamilies":["mechanics.energy.work_energy.exact"]},
-    {"id":"mechanics.power.work_over_time","domain":"mechanics","canonicalName":"Find average power from work and elapsed time","v2Status":"ShadowVerified","v2Capabilities":["rational.exact_arithmetic","mechanics.units.si_dimensional_analysis","mechanics.power.work_over_time.exact","mechanics.verify.models_and_units"],"v2QuestionFamilies":["mechanics.power.work_over_time.exact"]},
-    {"id":"number.lcm","domain":"number","canonicalName":"Find and use least common multiples"},
-    {"id":"fractions.equivalent","domain":"fractions","canonicalName":"Generate and recognize equivalent fractions","legacyGameMechanic":"FRACTION_EQUIVALENT"},
-    {"id":"fractions.of_quantity","domain":"fractions","canonicalName":"Find a fraction of a quantity","legacyCanonicalSkill":"FractionOfQuantity"},
-    {"id":"percentages.of_quantity","domain":"percentages","canonicalName":"Find a percentage of a quantity","legacyCanonicalSkill":"PercentageOfQuantity"},
-    {"id":"ratio.unit_rate","domain":"ratio","canonicalName":"Use unit rate and proportion","legacyCanonicalSkill":"UnitRateAndProportion","legacyGameMechanic":"UNIT_RATE"},
-    {"id":"algebra.relationships.two_unknowns","domain":"algebra","canonicalName":"Solve linked relationships with two unknowns","legacyGameMechanic":"TWO_UNKNOWNS"},
-    {"id":"measurement.scale.read_equal_intervals","domain":"measurement","canonicalName":"Read scales divided into equal intervals","legacyGameMechanic":"SCALE_READING"},
-    {"id":"fractions.compare.unlike_denominators","domain":"fractions","canonicalName":"Compare fractions with different denominators","legacyGameMechanic":"FRACTION_COMPARE_UNLIKE"}
+    {
+      "id": "number.whole.add_subtract",
+      "domain": "number",
+      "canonicalName": "Whole-number addition and subtraction",
+      "legacyCanonicalSkill": "WholeNumberAdditionAndSubtraction",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "number.whole.add_subtract.exact",
+        "number.verify.whole.add_subtract"
+      ],
+      "v2QuestionFamilies": [
+        "number.whole.add_subtract.within_10.build",
+        "number.whole.add_subtract.within_10.apply",
+        "number.whole.add_subtract.across_ten.build",
+        "number.whole.add_subtract.across_ten.apply",
+        "number.whole.add_subtract.within_100.build",
+        "number.whole.add_subtract.within_100.apply",
+        "number.whole.add_subtract.columnar.build",
+        "number.whole.add_subtract.columnar.apply"
+      ]
+    },
+    {
+      "id": "number.whole.add",
+      "domain": "number",
+      "canonicalName": "Whole-number addition",
+      "legacyCanonicalSkill": "WholeNumberAddition"
+    },
+    {
+      "id": "number.whole.subtract",
+      "domain": "number",
+      "canonicalName": "Whole-number subtraction",
+      "legacyCanonicalSkill": "WholeNumberSubtraction"
+    },
+    {
+      "id": "number.whole.multiply",
+      "domain": "number",
+      "canonicalName": "Whole-number multiplication",
+      "legacyCanonicalSkill": "WholeNumberMultiplication"
+    },
+    {
+      "id": "number.whole.divide",
+      "domain": "number",
+      "canonicalName": "Whole-number division",
+      "legacyCanonicalSkill": "WholeNumberDivision"
+    },
+    {
+      "id": "algebra.linear.solve",
+      "domain": "algebra",
+      "canonicalName": "Solve linear equations",
+      "legacyCanonicalSkill": "OneStepLinearEquation",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "algebra.linear.affine_extract",
+        "algebra.linear.solve.exact_rational",
+        "algebra.linear.verify.substitution"
+      ],
+      "v2QuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c"
+      ]
+    },
+    {
+      "id": "algebra.linear.inequality.solve",
+      "domain": "algebra",
+      "canonicalName": "Solve single-variable linear inequalities",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "algebra.linear.affine_extract",
+        "algebra.linear.inequality.solve.exact_rational",
+        "algebra.linear.inequality.verify.interval"
+      ],
+      "v2QuestionFamilies": [
+        "algebra.linear.inequality.ax_plus_b_relation_c"
+      ]
+    },
+    {
+      "id": "algebra.linear.systems.two_by_two.solve",
+      "domain": "algebra",
+      "canonicalName": "Solve a 2x2 linear system",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "algebra.linear.systems.two_by_two.affine_extract",
+        "algebra.linear.systems.two_by_two.solve.exact_rational",
+        "algebra.linear.systems.two_by_two.verify.substitution"
+      ],
+      "v2QuestionFamilies": [
+        "algebra.linear.systems.two_by_two.integer_coefficients"
+      ]
+    },
+    {
+      "id": "algebra.quadratic.solve.real_roots",
+      "domain": "algebra",
+      "canonicalName": "Solve quadratic equations over the real numbers",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "algebra.polynomial.normalize.exact_rational",
+        "algebra.quadratic.solve.real.exact",
+        "algebra.quadratic.verify.exact_substitution"
+      ],
+      "v2QuestionFamilies": [
+        "algebra.quadratic.solve.integer_coefficients.real_roots"
+      ]
+    },
+    {
+      "id": "functions.evaluate.exact",
+      "domain": "functions",
+      "canonicalName": "Evaluate a supported single-variable function at an exact input",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "functions.evaluate.exact_rational",
+        "functions.verify.exact_evaluation"
+      ],
+      "v2QuestionFamilies": [
+        "functions.evaluate.exact_rational"
+      ]
+    },
+    {
+      "id": "functions.graph.sample.coordinates",
+      "domain": "functions",
+      "canonicalName": "Generate exact coordinate samples from a supported function",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "functions.evaluate.exact_rational",
+        "functions.graph.sample.exact_rational",
+        "functions.graph.verify.exact_points"
+      ],
+      "v2QuestionFamilies": [
+        "functions.graph.sample.exact_coordinates"
+      ]
+    },
+    {
+      "id": "sequences.arithmetic.nth_term",
+      "domain": "sequences",
+      "canonicalName": "Find the nth term of an arithmetic sequence",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "sequences.arithmetic.nth_term.exact",
+        "sequences.verify.exact_nth_term"
+      ],
+      "v2QuestionFamilies": [
+        "sequences.arithmetic.nth_term.exact"
+      ]
+    },
+    {
+      "id": "sequences.geometric.nth_term",
+      "domain": "sequences",
+      "canonicalName": "Find the nth term of a geometric sequence",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "sequences.geometric.nth_term.exact",
+        "sequences.verify.exact_nth_term"
+      ],
+      "v2QuestionFamilies": [
+        "sequences.geometric.nth_term.exact"
+      ]
+    },
+    {
+      "id": "indices.integer_power.evaluate",
+      "domain": "indices",
+      "canonicalName": "Evaluate integer powers of exact rational bases",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "indices.power.integer_exponent.exact",
+        "indices.verify.integer_power"
+      ],
+      "v2QuestionFamilies": [
+        "indices.power.integer_exponent.exact"
+      ]
+    },
+    {
+      "id": "exponentials.same_base.solve",
+      "domain": "exponentials",
+      "canonicalName": "Solve exact same-base exponential equations for an integer exponent",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "exponentials.solve.same_base.integer_exponent",
+        "exponentials.verify.same_base.substitution"
+      ],
+      "v2QuestionFamilies": [
+        "exponentials.solve.same_base.integer_exponent"
+      ]
+    },
+    {
+      "id": "logarithms.evaluate.exact",
+      "domain": "logarithms",
+      "canonicalName": "Evaluate exact logarithms that correspond to integer powers",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "logarithms.evaluate.exact_integer_power",
+        "logarithms.verify.inverse_exponentiation"
+      ],
+      "v2QuestionFamilies": [
+        "logarithms.evaluate.exact_integer_power"
+      ]
+    },
+    {
+      "id": "trigonometry.special_angles.evaluate",
+      "domain": "trigonometry",
+      "canonicalName": "Evaluate exact sine cosine and tangent values at supported special angles",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "trigonometry.special_angle.exact",
+        "trigonometry.verify.special_angle.exact"
+      ],
+      "v2QuestionFamilies": [
+        "trigonometry.special_angle.exact_degrees"
+      ]
+    },
+    {
+      "id": "geometry.rectangle.area",
+      "domain": "geometry",
+      "canonicalName": "Find the area of a rectangle from exact positive dimensions",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "geometry.rectangle.area.exact",
+        "geometry.verify.rectangle.area"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.rectangle.area.exact"
+      ]
+    },
+    {
+      "id": "geometry.rectangle.perimeter",
+      "domain": "geometry",
+      "canonicalName": "Find the perimeter of a rectangle from exact positive dimensions",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "geometry.rectangle.perimeter.exact",
+        "geometry.verify.rectangle.perimeter"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.rectangle.perimeter.exact"
+      ]
+    },
+    {
+      "id": "geometry.triangle.area.base_height",
+      "domain": "geometry",
+      "canonicalName": "Find triangle area from exact base and perpendicular height",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "geometry.triangle.area.base_height.exact",
+        "geometry.verify.triangle.area.base_height"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.triangle.area.base_height.exact"
+      ]
+    },
+    {
+      "id": "geometry.right_triangle.pythagorean",
+      "domain": "geometry",
+      "canonicalName": "Find an exact rational side length in a right triangle using Pythagoras",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "geometry.right_triangle.pythagorean.exact",
+        "geometry.verify.right_triangle.pythagorean"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.right_triangle.pythagorean.exact"
+      ]
+    },
+    {
+      "id": "calculus.polynomial.differentiate",
+      "domain": "calculus",
+      "canonicalName": "Differentiate a supported exact-rational polynomial",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "algebra.polynomial.normalize.exact_rational",
+        "calculus.polynomial.derivative.exact",
+        "calculus.verify.polynomial.derivative"
+      ],
+      "v2QuestionFamilies": [
+        "calculus.polynomial.derivative.exact"
+      ]
+    },
+    {
+      "id": "calculus.polynomial.integrate.definite",
+      "domain": "calculus",
+      "canonicalName": "Evaluate a definite integral of a supported exact-rational polynomial",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "algebra.polynomial.normalize.exact_rational",
+        "calculus.polynomial.definite_integral.exact",
+        "calculus.verify.polynomial.definite_integral"
+      ],
+      "v2QuestionFamilies": [
+        "calculus.polynomial.definite_integral.exact"
+      ]
+    },
+    {
+      "id": "vectors.add.exact",
+      "domain": "vectors",
+      "canonicalName": "Add exact rational vectors componentwise",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "vectors.add.exact_rational",
+        "vectors.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "vectors.add.exact_rational"
+      ]
+    },
+    {
+      "id": "vectors.dot.exact",
+      "domain": "vectors",
+      "canonicalName": "Evaluate exact rational vector dot products",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "vectors.dot.exact_rational",
+        "vectors.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "vectors.dot.exact_rational"
+      ]
+    },
+    {
+      "id": "matrices.multiply.exact",
+      "domain": "matrices",
+      "canonicalName": "Multiply bounded exact rational matrices",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "matrices.multiply.exact_rational",
+        "matrices.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "matrices.multiply.exact_rational"
+      ]
+    },
+    {
+      "id": "matrices.determinant.2x2",
+      "domain": "matrices",
+      "canonicalName": "Evaluate the determinant of a 2x2 exact rational matrix",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "matrices.determinant.2x2.exact",
+        "matrices.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "matrices.determinant.2x2.exact"
+      ]
+    },
+    {
+      "id": "complex.add.exact",
+      "domain": "complex",
+      "canonicalName": "Add complex values with exact rational real and imaginary parts",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "complex.add.exact_rational",
+        "complex.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "complex.add.exact_rational"
+      ]
+    },
+    {
+      "id": "complex.multiply.exact",
+      "domain": "complex",
+      "canonicalName": "Multiply complex values with exact rational real and imaginary parts",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "complex.multiply.exact_rational",
+        "complex.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "complex.multiply.exact_rational"
+      ]
+    },
+    {
+      "id": "probability.simple.evaluate.exact",
+      "domain": "probability",
+      "canonicalName": "Evaluate simple favourable-over-total probability exactly",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "probability.simple.exact_rational",
+        "probability.verify.exact_events"
+      ],
+      "v2QuestionFamilies": [
+        "probability.simple.favourable_over_total.exact"
+      ]
+    },
+    {
+      "id": "probability.complement.evaluate.exact",
+      "domain": "probability",
+      "canonicalName": "Evaluate the exact complement of a probability",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "probability.complement.exact_rational",
+        "probability.verify.exact_events"
+      ],
+      "v2QuestionFamilies": [
+        "probability.complement.exact"
+      ]
+    },
+    {
+      "id": "statistics.mean.arithmetic.exact",
+      "domain": "statistics",
+      "canonicalName": "Evaluate an arithmetic mean over bounded exact data",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "statistics.mean.arithmetic.exact_rational",
+        "statistics.verify.exact_means"
+      ],
+      "v2QuestionFamilies": [
+        "statistics.mean.arithmetic.exact"
+      ]
+    },
+    {
+      "id": "statistics.mean.frequency_table.exact",
+      "domain": "statistics",
+      "canonicalName": "Evaluate an exact mean from a bounded frequency table",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "statistics.mean.frequency_table.exact_rational",
+        "statistics.verify.exact_means"
+      ],
+      "v2QuestionFamilies": [
+        "statistics.mean.frequency_table.exact"
+      ]
+    },
+    {
+      "id": "numerical.roots.bisection.iterate",
+      "domain": "numerical_methods",
+      "canonicalName": "Apply a fixed number of bisection iterations using exact-rational arithmetic",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "numerical.roots.bisection.fixed_iterations.exact_rational",
+        "numerical.verify.bisection.fixed_iterations"
+      ],
+      "v2QuestionFamilies": [
+        "numerical.roots.bisection.fixed_iterations.exact_rational"
+      ]
+    },
+    {
+      "id": "numerical.roots.newton.iterate",
+      "domain": "numerical_methods",
+      "canonicalName": "Apply a fixed number of Newton iterations using exact-rational arithmetic",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "numerical.roots.newton.fixed_iterations.exact_rational",
+        "numerical.verify.newton.fixed_iterations"
+      ],
+      "v2QuestionFamilies": [
+        "numerical.roots.newton.fixed_iterations.exact_rational"
+      ]
+    },
+    {
+      "id": "numerical.integration.trapezoidal.estimate",
+      "domain": "numerical_methods",
+      "canonicalName": "Evaluate a fixed-subdivision trapezoidal-rule estimate using exact-rational arithmetic",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "numerical.integration.trapezoidal.fixed_subdivisions.exact_rational",
+        "numerical.verify.trapezoidal.fixed_subdivisions"
+      ],
+      "v2QuestionFamilies": [
+        "numerical.integration.trapezoidal.fixed_subdivisions.exact_rational"
+      ]
+    },
+    {
+      "id": "mechanics.kinematics.constant_acceleration.velocity",
+      "domain": "mechanics",
+      "canonicalName": "Find final velocity under constant acceleration",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.kinematics.constant_acceleration.velocity.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "v2QuestionFamilies": [
+        "mechanics.kinematics.constant_acceleration.velocity.exact"
+      ]
+    },
+    {
+      "id": "mechanics.kinematics.constant_acceleration.displacement",
+      "domain": "mechanics",
+      "canonicalName": "Find displacement under constant acceleration",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.kinematics.constant_acceleration.displacement.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "v2QuestionFamilies": [
+        "mechanics.kinematics.constant_acceleration.displacement.exact"
+      ]
+    },
+    {
+      "id": "mechanics.newton.second_law.force",
+      "domain": "mechanics",
+      "canonicalName": "Find resultant force using Newton's second law",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.newton.second_law.force.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "v2QuestionFamilies": [
+        "mechanics.newton.second_law.force.exact"
+      ]
+    },
+    {
+      "id": "mechanics.newton.third_law.reaction",
+      "domain": "mechanics",
+      "canonicalName": "Find the equal and opposite reaction force",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.newton.third_law.reaction.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "v2QuestionFamilies": [
+        "mechanics.newton.third_law.reaction.exact"
+      ]
+    },
+    {
+      "id": "mechanics.equilibrium.balancing_force_1d",
+      "domain": "mechanics",
+      "canonicalName": "Find a balancing force for one-dimensional equilibrium",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.equilibrium.balancing_force_1d.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "v2QuestionFamilies": [
+        "mechanics.equilibrium.balancing_force_1d.exact"
+      ]
+    },
+    {
+      "id": "mechanics.momentum.impulse",
+      "domain": "mechanics",
+      "canonicalName": "Apply impulse equals change in momentum",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.momentum.impulse.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "v2QuestionFamilies": [
+        "mechanics.momentum.impulse.exact"
+      ]
+    },
+    {
+      "id": "mechanics.energy.work_energy",
+      "domain": "mechanics",
+      "canonicalName": "Apply the work-energy relationship",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.energy.work_energy.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "v2QuestionFamilies": [
+        "mechanics.energy.work_energy.exact"
+      ]
+    },
+    {
+      "id": "mechanics.power.work_over_time",
+      "domain": "mechanics",
+      "canonicalName": "Find average power from work and elapsed time",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.power.work_over_time.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "v2QuestionFamilies": [
+        "mechanics.power.work_over_time.exact"
+      ]
+    },
+    {
+      "id": "number.lcm",
+      "domain": "number",
+      "canonicalName": "Find and use least common multiples"
+    },
+    {
+      "id": "fractions.equivalent",
+      "domain": "fractions",
+      "canonicalName": "Generate and recognize equivalent fractions",
+      "legacyGameMechanic": "FRACTION_EQUIVALENT"
+    },
+    {
+      "id": "fractions.of_quantity",
+      "domain": "fractions",
+      "canonicalName": "Find a fraction of a quantity",
+      "legacyCanonicalSkill": "FractionOfQuantity"
+    },
+    {
+      "id": "percentages.of_quantity",
+      "domain": "percentages",
+      "canonicalName": "Find a percentage of a quantity",
+      "legacyCanonicalSkill": "PercentageOfQuantity"
+    },
+    {
+      "id": "ratio.unit_rate",
+      "domain": "ratio",
+      "canonicalName": "Use unit rate and proportion",
+      "legacyCanonicalSkill": "UnitRateAndProportion",
+      "legacyGameMechanic": "UNIT_RATE"
+    },
+    {
+      "id": "algebra.relationships.two_unknowns",
+      "domain": "algebra",
+      "canonicalName": "Solve linked relationships with two unknowns",
+      "legacyGameMechanic": "TWO_UNKNOWNS"
+    },
+    {
+      "id": "measurement.scale.read_equal_intervals",
+      "domain": "measurement",
+      "canonicalName": "Read scales divided into equal intervals",
+      "legacyGameMechanic": "SCALE_READING"
+    },
+    {
+      "id": "fractions.compare.unlike_denominators",
+      "domain": "fractions",
+      "canonicalName": "Compare fractions with different denominators",
+      "legacyGameMechanic": "FRACTION_COMPARE_UNLIKE"
+    }
   ]
 }

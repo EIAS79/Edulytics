@@ -3,75 +3,576 @@
   "registryVersion": "math-capabilities-v1",
   "status": "Shadow",
   "capabilities": [
-    {"id":"rational.exact_arithmetic","domain":"number","canonicalName":"Exact rational arithmetic","verification":"deterministic"},
-    {"id":"algebra.linear.affine_extract","domain":"algebra","canonicalName":"Reduce supported expressions to affine form a*x+b","verification":"shape-and-exact-arithmetic"},
-    {"id":"algebra.linear.solve.exact_rational","domain":"algebra","canonicalName":"Solve single-variable affine equations over exact rationals","provider":"edulytics-native-linear","providerVersion":"linear-exact-v1","status":"ShadowVerified"},
-    {"id":"algebra.linear.verify.substitution","domain":"algebra","canonicalName":"Verify linear-equation roots by exact substitution into the original equation","provider":"edulytics-native-linear","providerVersion":"linear-exact-v1","status":"ShadowVerified"},
-    {"id":"algebra.linear.inequality.solve.exact_rational","domain":"algebra","canonicalName":"Solve single-variable affine inequalities over exact rationals","provider":"edulytics-native-linear-inequality","providerVersion":"linear-inequality-exact-v1","status":"ShadowVerified"},
-    {"id":"algebra.linear.inequality.verify.interval","domain":"algebra","canonicalName":"Verify affine-inequality boundaries, orientation and interval solution sets","provider":"edulytics-native-linear-inequality","providerVersion":"linear-inequality-exact-v1","status":"ShadowVerified"},
-    {"id":"algebra.linear.systems.two_by_two.affine_extract","domain":"algebra","canonicalName":"Reduce two equations to an exact 2x2 affine coefficient system","verification":"shape-and-exact-arithmetic","status":"ShadowVerified"},
-    {"id":"algebra.linear.systems.two_by_two.solve.exact_rational","domain":"algebra","canonicalName":"Solve a 2x2 affine system over exact rationals","provider":"edulytics-native-linear-system-2x2","providerVersion":"linear-system-2x2-exact-v1","status":"ShadowVerified"},
-    {"id":"algebra.linear.systems.two_by_two.verify.substitution","domain":"algebra","canonicalName":"Verify an exact 2x2 ordered pair in both original equations","provider":"edulytics-native-linear-system-2x2","providerVersion":"linear-system-2x2-exact-v1","status":"ShadowVerified"},
-    {"id":"algebra.polynomial.normalize.exact_rational","domain":"algebra","canonicalName":"Normalize one-variable polynomial expressions with exact rational coefficients","provider":"edulytics-native-polynomial","providerVersion":"polynomial-normalize-exact-v1","status":"ShadowVerified"},
-    {"id":"algebra.quadratic.solve.real.exact","domain":"algebra","canonicalName":"Solve one-variable quadratic equations exactly over the real numbers","provider":"edulytics-native-quadratic","providerVersion":"quadratic-real-exact-v1","status":"ShadowVerified"},
-    {"id":"algebra.quadratic.verify.exact_substitution","domain":"algebra","canonicalName":"Verify rational and quadratic-surd roots by exact substitution into the original equation","provider":"edulytics-native-quadratic","providerVersion":"quadratic-real-exact-v1","status":"ShadowVerified"},
-    {"id":"functions.evaluate.exact_rational","domain":"functions","canonicalName":"Evaluate supported single-variable functions over exact rationals","provider":"edulytics-native-functions","providerVersion":"functions-exact-v1","status":"ShadowVerified"},
-    {"id":"functions.verify.exact_evaluation","domain":"functions","canonicalName":"Independently verify exact function evaluation from the original expression and input","provider":"edulytics-native-functions","providerVersion":"functions-exact-v1","status":"ShadowVerified"},
-    {"id":"functions.graph.sample.exact_rational","domain":"functions","canonicalName":"Sample exact graph coordinates at declared rational x-values","provider":"edulytics-native-functions","providerVersion":"functions-exact-v1","status":"ShadowVerified"},
-    {"id":"functions.graph.verify.exact_points","domain":"functions","canonicalName":"Independently verify every sampled graph coordinate against the original function","provider":"edulytics-native-functions","providerVersion":"functions-exact-v1","status":"ShadowVerified"},
-    {"id":"sequences.arithmetic.nth_term.exact","domain":"sequences","canonicalName":"Evaluate arithmetic sequence nth terms exactly","provider":"edulytics-native-sequences","providerVersion":"sequences-exact-v1","status":"ShadowVerified"},
-    {"id":"sequences.geometric.nth_term.exact","domain":"sequences","canonicalName":"Evaluate geometric sequence nth terms with bounded exact powers","provider":"edulytics-native-sequences","providerVersion":"sequences-exact-v1","status":"ShadowVerified"},
-    {"id":"sequences.verify.exact_nth_term","domain":"sequences","canonicalName":"Independently verify arithmetic and geometric nth terms from original sequence parameters","provider":"edulytics-native-sequences","providerVersion":"sequences-exact-v1","status":"ShadowVerified"},
-    {"id":"indices.power.integer_exponent.exact","domain":"indices","canonicalName":"Evaluate exact rational bases raised to bounded integer exponents","provider":"edulytics-native-indices","providerVersion":"indices-exact-v1","status":"ShadowVerified"},
-    {"id":"indices.verify.integer_power","domain":"indices","canonicalName":"Independently verify exact bounded integer powers from original base and exponent","provider":"edulytics-native-indices","providerVersion":"indices-exact-v1","status":"ShadowVerified"},
-    {"id":"exponentials.solve.same_base.integer_exponent","domain":"exponentials","canonicalName":"Solve exact same-base exponential equations for bounded integer exponents","provider":"edulytics-native-exponentials","providerVersion":"exponentials-exact-v1","status":"ShadowVerified"},
-    {"id":"exponentials.verify.same_base.substitution","domain":"exponentials","canonicalName":"Independently verify same-base exponential solutions by exact substitution","provider":"edulytics-native-exponentials","providerVersion":"exponentials-exact-v1","status":"ShadowVerified"},
-    {"id":"logarithms.evaluate.exact_integer_power","domain":"logarithms","canonicalName":"Evaluate exact logarithms whose arguments are bounded integer powers of the base","provider":"edulytics-native-logarithms","providerVersion":"logarithms-exact-v1","status":"ShadowVerified"},
-    {"id":"logarithms.verify.inverse_exponentiation","domain":"logarithms","canonicalName":"Independently verify exact logarithms by inverse exponentiation","provider":"edulytics-native-logarithms","providerVersion":"logarithms-exact-v1","status":"ShadowVerified"},
-    {"id":"trigonometry.special_angle.exact","domain":"trigonometry","canonicalName":"Evaluate sine cosine and tangent exactly for supported special angles in degrees","provider":"edulytics-native-trigonometry","providerVersion":"trig-special-angle-exact-v1","status":"ShadowVerified"},
-    {"id":"trigonometry.verify.special_angle.exact","domain":"trigonometry","canonicalName":"Independently verify exact special-angle trigonometric values","provider":"edulytics-native-trigonometry","providerVersion":"trig-special-angle-exact-v1","status":"ShadowVerified"},
-    {"id":"geometry.rectangle.area.exact","domain":"geometry","canonicalName":"Evaluate rectangle area from positive exact rational dimensions","provider":"edulytics-native-geometry","providerVersion":"geometry-rectangle-exact-v1","status":"ShadowVerified"},
-    {"id":"geometry.verify.rectangle.area","domain":"geometry","canonicalName":"Independently verify exact rectangle area from the original dimensions","provider":"edulytics-native-geometry","providerVersion":"geometry-rectangle-exact-v1","status":"ShadowVerified"},
-    {"id":"geometry.rectangle.perimeter.exact","domain":"geometry","canonicalName":"Evaluate rectangle perimeter from positive exact rational dimensions","provider":"edulytics-native-geometry","providerVersion":"geometry-rectangle-exact-v1","status":"ShadowVerified"},
-    {"id":"geometry.verify.rectangle.perimeter","domain":"geometry","canonicalName":"Independently verify exact rectangle perimeter from the original dimensions","provider":"edulytics-native-geometry","providerVersion":"geometry-rectangle-exact-v1","status":"ShadowVerified"},
-    {"id":"geometry.triangle.area.base_height.exact","domain":"geometry","canonicalName":"Evaluate triangle area exactly from positive base and height","provider":"edulytics-native-geometry","providerVersion":"geometry-triangle-exact-v1","status":"ShadowVerified"},
-    {"id":"geometry.verify.triangle.area.base_height","domain":"geometry","canonicalName":"Independently verify exact triangle base-height area from the original dimensions","provider":"edulytics-native-geometry","providerVersion":"geometry-triangle-exact-v1","status":"ShadowVerified"},
-    {"id":"geometry.right_triangle.pythagorean.exact","domain":"geometry","canonicalName":"Evaluate exact rational right-triangle lengths using the Pythagorean identity","provider":"edulytics-native-geometry","providerVersion":"geometry-pythagorean-exact-v1","status":"ShadowVerified"},
-    {"id":"geometry.verify.right_triangle.pythagorean","domain":"geometry","canonicalName":"Independently verify exact rational right-triangle lengths from the original dimensions","provider":"edulytics-native-geometry","providerVersion":"geometry-pythagorean-exact-v1","status":"ShadowVerified"},
-    {"id":"calculus.polynomial.derivative.exact","domain":"calculus","canonicalName":"Differentiate supported exact-rational polynomials exactly","provider":"edulytics-native-calculus","providerVersion":"calculus-polynomial-derivative-exact-v1","status":"ShadowVerified"},
-    {"id":"calculus.verify.polynomial.derivative","domain":"calculus","canonicalName":"Independently verify exact polynomial derivatives from the original expression","provider":"edulytics-native-calculus","providerVersion":"calculus-polynomial-derivative-exact-v1","status":"ShadowVerified"},
-    {"id":"calculus.polynomial.definite_integral.exact","domain":"calculus","canonicalName":"Evaluate supported definite polynomial integrals over exact rational bounds","provider":"edulytics-native-calculus","providerVersion":"calculus-polynomial-integral-exact-v1","status":"ShadowVerified"},
-    {"id":"calculus.verify.polynomial.definite_integral","domain":"calculus","canonicalName":"Independently verify definite polynomial integrals from the original integrand and bounds","provider":"edulytics-native-calculus","providerVersion":"calculus-polynomial-integral-exact-v1","status":"ShadowVerified"},
-    {"id":"vectors.add.exact_rational","domain":"vectors","canonicalName":"Add bounded vectors componentwise over exact rationals","provider":"edulytics-native-linear-algebra-complex","providerVersion":"vectors-exact-v1","status":"ShadowVerified"},
-    {"id":"vectors.dot.exact_rational","domain":"vectors","canonicalName":"Evaluate bounded vector dot products over exact rationals","provider":"edulytics-native-linear-algebra-complex","providerVersion":"vectors-exact-v1","status":"ShadowVerified"},
-    {"id":"vectors.verify.exact_operations","domain":"vectors","canonicalName":"Independently verify exact vector operations from original components","provider":"edulytics-native-linear-algebra-complex","providerVersion":"vectors-exact-v1","status":"ShadowVerified"},
-    {"id":"matrices.multiply.exact_rational","domain":"matrices","canonicalName":"Multiply bounded matrices over exact rationals","provider":"edulytics-native-linear-algebra-complex","providerVersion":"matrices-exact-v1","status":"ShadowVerified"},
-    {"id":"matrices.determinant.2x2.exact","domain":"matrices","canonicalName":"Evaluate exact 2x2 determinants","provider":"edulytics-native-linear-algebra-complex","providerVersion":"matrices-exact-v1","status":"ShadowVerified"},
-    {"id":"matrices.verify.exact_operations","domain":"matrices","canonicalName":"Independently verify exact matrix operations from original cells","provider":"edulytics-native-linear-algebra-complex","providerVersion":"matrices-exact-v1","status":"ShadowVerified"},
-    {"id":"complex.add.exact_rational","domain":"complex","canonicalName":"Add complex values with exact rational parts","provider":"edulytics-native-linear-algebra-complex","providerVersion":"complex-exact-v1","status":"ShadowVerified"},
-    {"id":"complex.multiply.exact_rational","domain":"complex","canonicalName":"Multiply complex values with exact rational parts","provider":"edulytics-native-linear-algebra-complex","providerVersion":"complex-exact-v1","status":"ShadowVerified"},
-    {"id":"complex.verify.exact_operations","domain":"complex","canonicalName":"Independently verify exact complex operations from original real and imaginary parts","provider":"edulytics-native-linear-algebra-complex","providerVersion":"complex-exact-v1","status":"ShadowVerified"},
-    {"id":"probability.simple.exact_rational","domain":"probability","canonicalName":"Evaluate bounded favourable-over-total probabilities exactly","provider":"edulytics-native-probability-statistics","providerVersion":"probability-statistics-exact-v1","status":"ShadowVerified"},
-    {"id":"probability.complement.exact_rational","domain":"probability","canonicalName":"Evaluate exact complements for probabilities in [0,1]","provider":"edulytics-native-probability-statistics","providerVersion":"probability-statistics-exact-v1","status":"ShadowVerified"},
-    {"id":"probability.verify.exact_events","domain":"probability","canonicalName":"Independently verify exact simple and complement probabilities from original inputs","provider":"edulytics-native-probability-statistics","providerVersion":"probability-statistics-exact-v1","status":"ShadowVerified"},
-    {"id":"statistics.mean.arithmetic.exact_rational","domain":"statistics","canonicalName":"Evaluate bounded arithmetic means exactly","provider":"edulytics-native-probability-statistics","providerVersion":"probability-statistics-exact-v1","status":"ShadowVerified"},
-    {"id":"statistics.mean.frequency_table.exact_rational","domain":"statistics","canonicalName":"Evaluate bounded frequency-table means exactly","provider":"edulytics-native-probability-statistics","providerVersion":"probability-statistics-exact-v1","status":"ShadowVerified"},
-    {"id":"statistics.verify.exact_means","domain":"statistics","canonicalName":"Independently verify exact arithmetic and frequency-table means from original data","provider":"edulytics-native-probability-statistics","providerVersion":"probability-statistics-exact-v1","status":"ShadowVerified"},
-    {"id":"numerical.roots.bisection.fixed_iterations.exact_rational","domain":"numerical_methods","canonicalName":"Apply fixed bisection iterations using bounded exact-rational arithmetic","provider":"edulytics-native-numerical-methods","providerVersion":"numerical-bisection-exact-arithmetic-v1","status":"ShadowVerified"},
-    {"id":"numerical.verify.bisection.fixed_iterations","domain":"numerical_methods","canonicalName":"Independently recompute the fixed-iteration bisection bracket from the original polynomial and endpoints","provider":"edulytics-native-numerical-methods","providerVersion":"numerical-bisection-exact-arithmetic-v1","status":"ShadowVerified"},
-    {"id":"numerical.roots.newton.fixed_iterations.exact_rational","domain":"numerical_methods","canonicalName":"Apply fixed Newton iterations using bounded exact-rational arithmetic","provider":"edulytics-native-numerical-methods","providerVersion":"numerical-newton-exact-arithmetic-v1","status":"ShadowVerified"},
-    {"id":"numerical.verify.newton.fixed_iterations","domain":"numerical_methods","canonicalName":"Independently recompute the fixed Newton iterate from the original polynomial and starting value","provider":"edulytics-native-numerical-methods","providerVersion":"numerical-newton-exact-arithmetic-v1","status":"ShadowVerified"},
-    {"id":"numerical.integration.trapezoidal.fixed_subdivisions.exact_rational","domain":"numerical_methods","canonicalName":"Evaluate a fixed-subdivision trapezoidal-rule estimate using bounded exact-rational arithmetic","provider":"edulytics-native-numerical-methods","providerVersion":"numerical-trapezoidal-exact-arithmetic-v1","status":"ShadowVerified"},
-    {"id":"numerical.verify.trapezoidal.fixed_subdivisions","domain":"numerical_methods","canonicalName":"Independently recompute the fixed-subdivision trapezoidal estimate from the original polynomial and bounds","provider":"edulytics-native-numerical-methods","providerVersion":"numerical-trapezoidal-exact-arithmetic-v1","status":"ShadowVerified"},
-    {"id":"mechanics.units.si_dimensional_analysis","domain":"mechanics","canonicalName":"Validate canonical SI mechanics dimensions before solving","provider":"edulytics-native-mechanics","providerVersion":"mechanics-models-exact-v1","status":"ShadowVerified"},
-    {"id":"mechanics.kinematics.constant_acceleration.velocity.exact","domain":"mechanics","canonicalName":"Evaluate constant-acceleration final velocity exactly","provider":"edulytics-native-mechanics","providerVersion":"mechanics-kinematics-exact-v1","status":"ShadowVerified"},
-    {"id":"mechanics.kinematics.constant_acceleration.displacement.exact","domain":"mechanics","canonicalName":"Evaluate constant-acceleration displacement exactly","provider":"edulytics-native-mechanics","providerVersion":"mechanics-kinematics-exact-v1","status":"ShadowVerified"},
-    {"id":"mechanics.newton.second_law.force.exact","domain":"mechanics","canonicalName":"Evaluate resultant force from positive mass and acceleration exactly","provider":"edulytics-native-mechanics","providerVersion":"mechanics-newton-exact-v1","status":"ShadowVerified"},
-    {"id":"mechanics.newton.third_law.reaction.exact","domain":"mechanics","canonicalName":"Evaluate equal and opposite reaction force exactly","provider":"edulytics-native-mechanics","providerVersion":"mechanics-newton-exact-v1","status":"ShadowVerified"},
-    {"id":"mechanics.equilibrium.balancing_force_1d.exact","domain":"mechanics","canonicalName":"Evaluate the balancing force for bounded one-dimensional equilibrium","provider":"edulytics-native-mechanics","providerVersion":"mechanics-equilibrium-exact-v1","status":"ShadowVerified"},
-    {"id":"mechanics.momentum.impulse.exact","domain":"mechanics","canonicalName":"Apply the impulse-momentum relationship exactly","provider":"edulytics-native-mechanics","providerVersion":"mechanics-momentum-exact-v1","status":"ShadowVerified"},
-    {"id":"mechanics.energy.work_energy.exact","domain":"mechanics","canonicalName":"Apply the work-energy relationship exactly within physical bounds","provider":"edulytics-native-mechanics","providerVersion":"mechanics-energy-exact-v1","status":"ShadowVerified"},
-    {"id":"mechanics.power.work_over_time.exact","domain":"mechanics","canonicalName":"Evaluate average power from work and positive elapsed time exactly","provider":"edulytics-native-mechanics","providerVersion":"mechanics-power-exact-v1","status":"ShadowVerified"},
-    {"id":"mechanics.verify.models_and_units","domain":"mechanics","canonicalName":"Independently verify mechanics models and canonical SI dimensions from original inputs","provider":"edulytics-native-mechanics","providerVersion":"mechanics-models-exact-v1","status":"ShadowVerified"}
+    {
+      "id": "rational.exact_arithmetic",
+      "domain": "number",
+      "canonicalName": "Exact rational arithmetic",
+      "verification": "deterministic"
+    },
+    {
+      "id": "algebra.linear.affine_extract",
+      "domain": "algebra",
+      "canonicalName": "Reduce supported expressions to affine form a*x+b",
+      "verification": "shape-and-exact-arithmetic"
+    },
+    {
+      "id": "algebra.linear.solve.exact_rational",
+      "domain": "algebra",
+      "canonicalName": "Solve single-variable affine equations over exact rationals",
+      "provider": "edulytics-native-linear",
+      "providerVersion": "linear-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "algebra.linear.verify.substitution",
+      "domain": "algebra",
+      "canonicalName": "Verify linear-equation roots by exact substitution into the original equation",
+      "provider": "edulytics-native-linear",
+      "providerVersion": "linear-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "algebra.linear.inequality.solve.exact_rational",
+      "domain": "algebra",
+      "canonicalName": "Solve single-variable affine inequalities over exact rationals",
+      "provider": "edulytics-native-linear-inequality",
+      "providerVersion": "linear-inequality-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "algebra.linear.inequality.verify.interval",
+      "domain": "algebra",
+      "canonicalName": "Verify affine-inequality boundaries, orientation and interval solution sets",
+      "provider": "edulytics-native-linear-inequality",
+      "providerVersion": "linear-inequality-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "algebra.linear.systems.two_by_two.affine_extract",
+      "domain": "algebra",
+      "canonicalName": "Reduce two equations to an exact 2x2 affine coefficient system",
+      "verification": "shape-and-exact-arithmetic",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "algebra.linear.systems.two_by_two.solve.exact_rational",
+      "domain": "algebra",
+      "canonicalName": "Solve a 2x2 affine system over exact rationals",
+      "provider": "edulytics-native-linear-system-2x2",
+      "providerVersion": "linear-system-2x2-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "algebra.linear.systems.two_by_two.verify.substitution",
+      "domain": "algebra",
+      "canonicalName": "Verify an exact 2x2 ordered pair in both original equations",
+      "provider": "edulytics-native-linear-system-2x2",
+      "providerVersion": "linear-system-2x2-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "algebra.polynomial.normalize.exact_rational",
+      "domain": "algebra",
+      "canonicalName": "Normalize one-variable polynomial expressions with exact rational coefficients",
+      "provider": "edulytics-native-polynomial",
+      "providerVersion": "polynomial-normalize-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "algebra.quadratic.solve.real.exact",
+      "domain": "algebra",
+      "canonicalName": "Solve one-variable quadratic equations exactly over the real numbers",
+      "provider": "edulytics-native-quadratic",
+      "providerVersion": "quadratic-real-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "algebra.quadratic.verify.exact_substitution",
+      "domain": "algebra",
+      "canonicalName": "Verify rational and quadratic-surd roots by exact substitution into the original equation",
+      "provider": "edulytics-native-quadratic",
+      "providerVersion": "quadratic-real-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "functions.evaluate.exact_rational",
+      "domain": "functions",
+      "canonicalName": "Evaluate supported single-variable functions over exact rationals",
+      "provider": "edulytics-native-functions",
+      "providerVersion": "functions-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "functions.verify.exact_evaluation",
+      "domain": "functions",
+      "canonicalName": "Independently verify exact function evaluation from the original expression and input",
+      "provider": "edulytics-native-functions",
+      "providerVersion": "functions-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "functions.graph.sample.exact_rational",
+      "domain": "functions",
+      "canonicalName": "Sample exact graph coordinates at declared rational x-values",
+      "provider": "edulytics-native-functions",
+      "providerVersion": "functions-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "functions.graph.verify.exact_points",
+      "domain": "functions",
+      "canonicalName": "Independently verify every sampled graph coordinate against the original function",
+      "provider": "edulytics-native-functions",
+      "providerVersion": "functions-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "sequences.arithmetic.nth_term.exact",
+      "domain": "sequences",
+      "canonicalName": "Evaluate arithmetic sequence nth terms exactly",
+      "provider": "edulytics-native-sequences",
+      "providerVersion": "sequences-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "sequences.geometric.nth_term.exact",
+      "domain": "sequences",
+      "canonicalName": "Evaluate geometric sequence nth terms with bounded exact powers",
+      "provider": "edulytics-native-sequences",
+      "providerVersion": "sequences-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "sequences.verify.exact_nth_term",
+      "domain": "sequences",
+      "canonicalName": "Independently verify arithmetic and geometric nth terms from original sequence parameters",
+      "provider": "edulytics-native-sequences",
+      "providerVersion": "sequences-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "indices.power.integer_exponent.exact",
+      "domain": "indices",
+      "canonicalName": "Evaluate exact rational bases raised to bounded integer exponents",
+      "provider": "edulytics-native-indices",
+      "providerVersion": "indices-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "indices.verify.integer_power",
+      "domain": "indices",
+      "canonicalName": "Independently verify exact bounded integer powers from original base and exponent",
+      "provider": "edulytics-native-indices",
+      "providerVersion": "indices-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "exponentials.solve.same_base.integer_exponent",
+      "domain": "exponentials",
+      "canonicalName": "Solve exact same-base exponential equations for bounded integer exponents",
+      "provider": "edulytics-native-exponentials",
+      "providerVersion": "exponentials-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "exponentials.verify.same_base.substitution",
+      "domain": "exponentials",
+      "canonicalName": "Independently verify same-base exponential solutions by exact substitution",
+      "provider": "edulytics-native-exponentials",
+      "providerVersion": "exponentials-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "logarithms.evaluate.exact_integer_power",
+      "domain": "logarithms",
+      "canonicalName": "Evaluate exact logarithms whose arguments are bounded integer powers of the base",
+      "provider": "edulytics-native-logarithms",
+      "providerVersion": "logarithms-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "logarithms.verify.inverse_exponentiation",
+      "domain": "logarithms",
+      "canonicalName": "Independently verify exact logarithms by inverse exponentiation",
+      "provider": "edulytics-native-logarithms",
+      "providerVersion": "logarithms-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "trigonometry.special_angle.exact",
+      "domain": "trigonometry",
+      "canonicalName": "Evaluate sine cosine and tangent exactly for supported special angles in degrees",
+      "provider": "edulytics-native-trigonometry",
+      "providerVersion": "trig-special-angle-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "trigonometry.verify.special_angle.exact",
+      "domain": "trigonometry",
+      "canonicalName": "Independently verify exact special-angle trigonometric values",
+      "provider": "edulytics-native-trigonometry",
+      "providerVersion": "trig-special-angle-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "geometry.rectangle.area.exact",
+      "domain": "geometry",
+      "canonicalName": "Evaluate rectangle area from positive exact rational dimensions",
+      "provider": "edulytics-native-geometry",
+      "providerVersion": "geometry-rectangle-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "geometry.verify.rectangle.area",
+      "domain": "geometry",
+      "canonicalName": "Independently verify exact rectangle area from the original dimensions",
+      "provider": "edulytics-native-geometry",
+      "providerVersion": "geometry-rectangle-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "geometry.rectangle.perimeter.exact",
+      "domain": "geometry",
+      "canonicalName": "Evaluate rectangle perimeter from positive exact rational dimensions",
+      "provider": "edulytics-native-geometry",
+      "providerVersion": "geometry-rectangle-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "geometry.verify.rectangle.perimeter",
+      "domain": "geometry",
+      "canonicalName": "Independently verify exact rectangle perimeter from the original dimensions",
+      "provider": "edulytics-native-geometry",
+      "providerVersion": "geometry-rectangle-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "geometry.triangle.area.base_height.exact",
+      "domain": "geometry",
+      "canonicalName": "Evaluate triangle area exactly from positive base and height",
+      "provider": "edulytics-native-geometry",
+      "providerVersion": "geometry-triangle-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "geometry.verify.triangle.area.base_height",
+      "domain": "geometry",
+      "canonicalName": "Independently verify exact triangle base-height area from the original dimensions",
+      "provider": "edulytics-native-geometry",
+      "providerVersion": "geometry-triangle-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "geometry.right_triangle.pythagorean.exact",
+      "domain": "geometry",
+      "canonicalName": "Evaluate exact rational right-triangle lengths using the Pythagorean identity",
+      "provider": "edulytics-native-geometry",
+      "providerVersion": "geometry-pythagorean-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "geometry.verify.right_triangle.pythagorean",
+      "domain": "geometry",
+      "canonicalName": "Independently verify exact rational right-triangle lengths from the original dimensions",
+      "provider": "edulytics-native-geometry",
+      "providerVersion": "geometry-pythagorean-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "calculus.polynomial.derivative.exact",
+      "domain": "calculus",
+      "canonicalName": "Differentiate supported exact-rational polynomials exactly",
+      "provider": "edulytics-native-calculus",
+      "providerVersion": "calculus-polynomial-derivative-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "calculus.verify.polynomial.derivative",
+      "domain": "calculus",
+      "canonicalName": "Independently verify exact polynomial derivatives from the original expression",
+      "provider": "edulytics-native-calculus",
+      "providerVersion": "calculus-polynomial-derivative-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "calculus.polynomial.definite_integral.exact",
+      "domain": "calculus",
+      "canonicalName": "Evaluate supported definite polynomial integrals over exact rational bounds",
+      "provider": "edulytics-native-calculus",
+      "providerVersion": "calculus-polynomial-integral-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "calculus.verify.polynomial.definite_integral",
+      "domain": "calculus",
+      "canonicalName": "Independently verify definite polynomial integrals from the original integrand and bounds",
+      "provider": "edulytics-native-calculus",
+      "providerVersion": "calculus-polynomial-integral-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "vectors.add.exact_rational",
+      "domain": "vectors",
+      "canonicalName": "Add bounded vectors componentwise over exact rationals",
+      "provider": "edulytics-native-linear-algebra-complex",
+      "providerVersion": "vectors-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "vectors.dot.exact_rational",
+      "domain": "vectors",
+      "canonicalName": "Evaluate bounded vector dot products over exact rationals",
+      "provider": "edulytics-native-linear-algebra-complex",
+      "providerVersion": "vectors-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "vectors.verify.exact_operations",
+      "domain": "vectors",
+      "canonicalName": "Independently verify exact vector operations from original components",
+      "provider": "edulytics-native-linear-algebra-complex",
+      "providerVersion": "vectors-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "matrices.multiply.exact_rational",
+      "domain": "matrices",
+      "canonicalName": "Multiply bounded matrices over exact rationals",
+      "provider": "edulytics-native-linear-algebra-complex",
+      "providerVersion": "matrices-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "matrices.determinant.2x2.exact",
+      "domain": "matrices",
+      "canonicalName": "Evaluate exact 2x2 determinants",
+      "provider": "edulytics-native-linear-algebra-complex",
+      "providerVersion": "matrices-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "matrices.verify.exact_operations",
+      "domain": "matrices",
+      "canonicalName": "Independently verify exact matrix operations from original cells",
+      "provider": "edulytics-native-linear-algebra-complex",
+      "providerVersion": "matrices-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "complex.add.exact_rational",
+      "domain": "complex",
+      "canonicalName": "Add complex values with exact rational parts",
+      "provider": "edulytics-native-linear-algebra-complex",
+      "providerVersion": "complex-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "complex.multiply.exact_rational",
+      "domain": "complex",
+      "canonicalName": "Multiply complex values with exact rational parts",
+      "provider": "edulytics-native-linear-algebra-complex",
+      "providerVersion": "complex-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "complex.verify.exact_operations",
+      "domain": "complex",
+      "canonicalName": "Independently verify exact complex operations from original real and imaginary parts",
+      "provider": "edulytics-native-linear-algebra-complex",
+      "providerVersion": "complex-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "probability.simple.exact_rational",
+      "domain": "probability",
+      "canonicalName": "Evaluate bounded favourable-over-total probabilities exactly",
+      "provider": "edulytics-native-probability-statistics",
+      "providerVersion": "probability-statistics-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "probability.complement.exact_rational",
+      "domain": "probability",
+      "canonicalName": "Evaluate exact complements for probabilities in [0,1]",
+      "provider": "edulytics-native-probability-statistics",
+      "providerVersion": "probability-statistics-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "probability.verify.exact_events",
+      "domain": "probability",
+      "canonicalName": "Independently verify exact simple and complement probabilities from original inputs",
+      "provider": "edulytics-native-probability-statistics",
+      "providerVersion": "probability-statistics-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "statistics.mean.arithmetic.exact_rational",
+      "domain": "statistics",
+      "canonicalName": "Evaluate bounded arithmetic means exactly",
+      "provider": "edulytics-native-probability-statistics",
+      "providerVersion": "probability-statistics-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "statistics.mean.frequency_table.exact_rational",
+      "domain": "statistics",
+      "canonicalName": "Evaluate bounded frequency-table means exactly",
+      "provider": "edulytics-native-probability-statistics",
+      "providerVersion": "probability-statistics-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "statistics.verify.exact_means",
+      "domain": "statistics",
+      "canonicalName": "Independently verify exact arithmetic and frequency-table means from original data",
+      "provider": "edulytics-native-probability-statistics",
+      "providerVersion": "probability-statistics-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "numerical.roots.bisection.fixed_iterations.exact_rational",
+      "domain": "numerical_methods",
+      "canonicalName": "Apply fixed bisection iterations using bounded exact-rational arithmetic",
+      "provider": "edulytics-native-numerical-methods",
+      "providerVersion": "numerical-bisection-exact-arithmetic-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "numerical.verify.bisection.fixed_iterations",
+      "domain": "numerical_methods",
+      "canonicalName": "Independently recompute the fixed-iteration bisection bracket from the original polynomial and endpoints",
+      "provider": "edulytics-native-numerical-methods",
+      "providerVersion": "numerical-bisection-exact-arithmetic-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "numerical.roots.newton.fixed_iterations.exact_rational",
+      "domain": "numerical_methods",
+      "canonicalName": "Apply fixed Newton iterations using bounded exact-rational arithmetic",
+      "provider": "edulytics-native-numerical-methods",
+      "providerVersion": "numerical-newton-exact-arithmetic-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "numerical.verify.newton.fixed_iterations",
+      "domain": "numerical_methods",
+      "canonicalName": "Independently recompute the fixed Newton iterate from the original polynomial and starting value",
+      "provider": "edulytics-native-numerical-methods",
+      "providerVersion": "numerical-newton-exact-arithmetic-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "numerical.integration.trapezoidal.fixed_subdivisions.exact_rational",
+      "domain": "numerical_methods",
+      "canonicalName": "Evaluate a fixed-subdivision trapezoidal-rule estimate using bounded exact-rational arithmetic",
+      "provider": "edulytics-native-numerical-methods",
+      "providerVersion": "numerical-trapezoidal-exact-arithmetic-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "numerical.verify.trapezoidal.fixed_subdivisions",
+      "domain": "numerical_methods",
+      "canonicalName": "Independently recompute the fixed-subdivision trapezoidal estimate from the original polynomial and bounds",
+      "provider": "edulytics-native-numerical-methods",
+      "providerVersion": "numerical-trapezoidal-exact-arithmetic-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "mechanics.units.si_dimensional_analysis",
+      "domain": "mechanics",
+      "canonicalName": "Validate canonical SI mechanics dimensions before solving",
+      "provider": "edulytics-native-mechanics",
+      "providerVersion": "mechanics-models-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "mechanics.kinematics.constant_acceleration.velocity.exact",
+      "domain": "mechanics",
+      "canonicalName": "Evaluate constant-acceleration final velocity exactly",
+      "provider": "edulytics-native-mechanics",
+      "providerVersion": "mechanics-kinematics-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "mechanics.kinematics.constant_acceleration.displacement.exact",
+      "domain": "mechanics",
+      "canonicalName": "Evaluate constant-acceleration displacement exactly",
+      "provider": "edulytics-native-mechanics",
+      "providerVersion": "mechanics-kinematics-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "mechanics.newton.second_law.force.exact",
+      "domain": "mechanics",
+      "canonicalName": "Evaluate resultant force from positive mass and acceleration exactly",
+      "provider": "edulytics-native-mechanics",
+      "providerVersion": "mechanics-newton-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "mechanics.newton.third_law.reaction.exact",
+      "domain": "mechanics",
+      "canonicalName": "Evaluate equal and opposite reaction force exactly",
+      "provider": "edulytics-native-mechanics",
+      "providerVersion": "mechanics-newton-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "mechanics.equilibrium.balancing_force_1d.exact",
+      "domain": "mechanics",
+      "canonicalName": "Evaluate the balancing force for bounded one-dimensional equilibrium",
+      "provider": "edulytics-native-mechanics",
+      "providerVersion": "mechanics-equilibrium-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "mechanics.momentum.impulse.exact",
+      "domain": "mechanics",
+      "canonicalName": "Apply the impulse-momentum relationship exactly",
+      "provider": "edulytics-native-mechanics",
+      "providerVersion": "mechanics-momentum-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "mechanics.energy.work_energy.exact",
+      "domain": "mechanics",
+      "canonicalName": "Apply the work-energy relationship exactly within physical bounds",
+      "provider": "edulytics-native-mechanics",
+      "providerVersion": "mechanics-energy-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "mechanics.power.work_over_time.exact",
+      "domain": "mechanics",
+      "canonicalName": "Evaluate average power from work and positive elapsed time exactly",
+      "provider": "edulytics-native-mechanics",
+      "providerVersion": "mechanics-power-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "mechanics.verify.models_and_units",
+      "domain": "mechanics",
+      "canonicalName": "Independently verify mechanics models and canonical SI dimensions from original inputs",
+      "provider": "edulytics-native-mechanics",
+      "providerVersion": "mechanics-models-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "number.whole.add_subtract.exact",
+      "domain": "number",
+      "canonicalName": "Generate and solve bounded whole-number addition and subtraction exactly",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "whole-add-subtract-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "number.verify.whole.add_subtract",
+      "domain": "number",
+      "canonicalName": "Independently verify whole-number addition and subtraction from original operands",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "whole-add-subtract-exact-v1",
+      "status": "ShadowVerified"
+    }
   ]
 }
