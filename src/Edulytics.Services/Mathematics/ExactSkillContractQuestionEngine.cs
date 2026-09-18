@@ -149,6 +149,45 @@ public sealed class ExactSkillContractQuestionEngine
         if (!int.TryParse(answer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value))
             return false;
 
+        if (family.StartsWith("number.whole.add_subtract.", StringComparison.Ordinal))
+        {
+            var operation = parameters["operation"];
+            var left = parameters["left"];
+            var right = parameters["right"];
+            if (left < 0 || right < 0 || operation is < 0 or > 1)
+                return false;
+
+            var expected = operation == 0
+                ? left + right
+                : left - right;
+            if (expected < 0 || value != expected)
+                return false;
+
+            return family switch
+            {
+                "number.whole.add_subtract.within_10.build" or
+                "number.whole.add_subtract.within_10.apply" =>
+                    left <= 10 && right <= 10 && expected <= 10,
+
+                "number.whole.add_subtract.across_ten.build" or
+                "number.whole.add_subtract.across_ten.apply" =>
+                    CrossesTen(left, right, operation, expected),
+
+                "number.whole.add_subtract.within_100.build" or
+                "number.whole.add_subtract.within_100.apply" =>
+                    left <= 100 && right <= 100 && expected <= 100,
+
+                "number.whole.add_subtract.columnar.build" or
+                "number.whole.add_subtract.columnar.apply" =>
+                    left is >= 10 and <= 99 &&
+                    right is >= 10 and <= 99 &&
+                    expected <= 198 &&
+                    RequiresRegrouping(left, right, operation),
+
+                _ => false
+            };
+        }
+
         return family switch
         {
             "algebra.relationships.two_unknowns.total_difference" =>
@@ -227,6 +266,15 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUnitRate(random, scale),
             "ratio.unit_rate.equivalent_ratio" =>
                 BuildEquivalentRatio(random, scale),
+            "number.whole.add_subtract.within_10.build" or
+            "number.whole.add_subtract.within_10.apply" or
+            "number.whole.add_subtract.across_ten.build" or
+            "number.whole.add_subtract.across_ten.apply" or
+            "number.whole.add_subtract.within_100.build" or
+            "number.whole.add_subtract.within_100.apply" or
+            "number.whole.add_subtract.columnar.build" or
+            "number.whole.add_subtract.columnar.apply" =>
+                BuildWholeAddSubtract(family, random, scale),
             ExactLinearInequalityQuestionFactory.FamilyId =>
                 BuildLinearInequality(random, scale),
             _ => UnsupportedFamily(family)
@@ -368,6 +416,124 @@ public sealed class ExactSkillContractQuestionEngine
             ("targetSecond", targetSecond));
     }
 
+    private static ExactProblem BuildWholeAddSubtract(
+        string family,
+        Random random,
+        int scale)
+    {
+        var isApply = family.EndsWith(".apply", StringComparison.Ordinal);
+        var operation = random.Next(0, 2);
+        int left;
+        int right;
+
+        if (family.Contains(".within_10.", StringComparison.Ordinal))
+        {
+            if (operation == 0)
+            {
+                left = random.Next(0, 10);
+                right = random.Next(0, 11 - left);
+            }
+            else
+            {
+                left = random.Next(1, 11);
+                right = random.Next(0, left + 1);
+            }
+        }
+        else if (family.Contains(".across_ten.", StringComparison.Ordinal))
+        {
+            if (operation == 0)
+            {
+                left = random.Next(6, 10);
+                right = random.Next(10 - left, 10);
+            }
+            else
+            {
+                left = random.Next(11, 19);
+                var minimum = Math.Max(2, left - 9);
+                var maximum = Math.Min(9, left - 1);
+                right = random.Next(minimum, maximum + 1);
+            }
+        }
+        else if (family.Contains(".within_100.", StringComparison.Ordinal))
+        {
+            if (operation == 0)
+            {
+                left = random.Next(10, 90);
+                right = random.Next(1, 101 - left);
+            }
+            else
+            {
+                left = random.Next(10, 101);
+                right = random.Next(1, left + 1);
+            }
+        }
+        else if (family.Contains(".columnar.", StringComparison.Ordinal))
+        {
+            if (operation == 0)
+            {
+                do
+                {
+                    left = random.Next(11, 90);
+                    right = random.Next(10, 100 - left);
+                }
+                while ((left % 10) + (right % 10) < 10);
+            }
+            else
+            {
+                do
+                {
+                    left = random.Next(21, 100);
+                    right = random.Next(10, left);
+                }
+                while (left % 10 >= right % 10);
+            }
+        }
+        else
+        {
+            throw new InvalidOperationException($"Unknown whole-number family: {family}");
+        }
+
+        var symbol = operation == 0 ? "+" : "−";
+        var answer = operation == 0 ? left + right : left - right;
+        var prompt = isApply
+            ? operation == 0
+                ? $"A class has {left} counters and receives {right} more. How many counters are there altogether?"
+                : $"A class has {left} counters and uses {right}. How many counters remain?"
+            : family.Contains(".columnar.", StringComparison.Ordinal)
+                ? $"Use a columnar method to calculate {left} {symbol} {right}."
+                : $"Calculate {left} {symbol} {right}.";
+
+        var solution = family.Contains(".columnar.", StringComparison.Ordinal)
+            ? "Align place values, regroup when required, perform the operation, then check with the inverse operation."
+            : operation == 0
+                ? "Add the two quantities and check the result by subtraction."
+                : "Subtract the second quantity from the first and check the result by addition.";
+
+        return Problem(
+            family,
+            prompt,
+            solution,
+            AssessmentItemType.Numeric,
+            ("left", left),
+            ("right", right),
+            ("operation", operation),
+            ("expected", answer),
+            ("scale", scale));
+    }
+
+    private static bool CrossesTen(int left, int right, int operation, int expected)
+    {
+        if (operation == 0)
+            return left < 10 && right < 10 && expected >= 10 && expected <= 20;
+
+        return left > 10 && right > 0 && expected < 10 && expected >= 0;
+    }
+
+    private static bool RequiresRegrouping(int left, int right, int operation) =>
+        operation == 0
+            ? (left % 10) + (right % 10) >= 10
+            : left % 10 < right % 10;
+
     private static ExactProblem BuildLinearInequality(Random random, int scale)
     {
         var factory = new ExactLinearInequalityQuestionFactory(
@@ -451,6 +617,17 @@ public sealed class ExactSkillContractQuestionEngine
 
             "ratio.unit_rate.equivalent_ratio" =>
                 (p["baseFirst"] * p["targetSecond"] / p["baseSecond"]).ToString(CultureInfo.InvariantCulture),
+
+            "number.whole.add_subtract.within_10.build" or
+            "number.whole.add_subtract.within_10.apply" or
+            "number.whole.add_subtract.across_ten.build" or
+            "number.whole.add_subtract.across_ten.apply" or
+            "number.whole.add_subtract.within_100.build" or
+            "number.whole.add_subtract.within_100.apply" or
+            "number.whole.add_subtract.columnar.build" or
+            "number.whole.add_subtract.columnar.apply" =>
+                (p["operation"] == 0 ? p["left"] + p["right"] : p["left"] - p["right"])
+                    .ToString(CultureInfo.InvariantCulture),
 
             ExactLinearInequalityQuestionFactory.FamilyId =>
                 SolveLinearInequality(p),
