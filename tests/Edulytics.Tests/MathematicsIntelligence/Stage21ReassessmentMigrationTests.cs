@@ -256,7 +256,13 @@ public sealed class Stage21ReassessmentMigrationTests
                 new MathematicsOutcomeGenerationProfile(
                     scope.OutcomeId,
                     "MATH.RECOVERY.1",
-                    [MathematicsGeneratorFamily.IntegerComputation])
+                    [
+                        MathematicsGeneratorFamily.IntegerComputation,
+                        MathematicsGeneratorFamily.OneStepEquation,
+                        MathematicsGeneratorFamily.FractionOfQuantity,
+                        MathematicsGeneratorFamily.PercentageOfQuantity,
+                        MathematicsGeneratorFamily.UnitRateWordProblem
+                    ])
             ],
             seed: 97);
 
