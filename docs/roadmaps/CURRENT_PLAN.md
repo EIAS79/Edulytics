@@ -21,11 +21,12 @@ This document is the repository pointer to the active mathematics/curriculum exe
 - **Programme Stage 19 — Assessment Builder migration:** COMPLETE.
 - **Programme Stage 20 — Diagnostic / Adaptive migration:** COMPLETE.
 - **Programme Stage 21 — Reassessment migration:** COMPLETE.
-- **Stage 21 freshness contract:** exact reassessment freshness now varies coefficients, representation, strategy, context, misconception trap and cognitive demand; wording-only freshness is not sufficient.
-- **Stage 21 exact history rule:** prior exact exposure requires reconstructable mathematical signatures and fails closed when those signatures are unavailable.
-- **Stage 21 source of truth:** src/Edulytics.Core/Mathematics/Curriculum/stage21-reassessment-migration-manifest.v1.json.
-- **Stage 21 CI exit gate:** tools/math_intelligence/stage21_reassessment_closure_audit.py.
-- **Next active stage after Stage 21 is live on Render:** Programme Stage 22 — Game runtime migration.
+- **Programme Stage 22 — Game runtime migration:** COMPLETE.
+- **Stage 22 authority rule:** for every currently migrated READY_VERIFIED exact game route, the server owns problem generation and answer correctness; the browser owns rendering and interaction only.
+- **Stage 22 exact scope:** all 14 Stage 18 exact lesson SkillContracts across 5 mechanics.
+- **Stage 22 source of truth:** src/Edulytics.Core/Mathematics/Curriculum/stage22-game-runtime-migration-manifest.v1.json.
+- **Stage 22 CI exit gate:** tools/math_intelligence/stage22_game_runtime_closure_audit.py.
+- **Next active stage after Stage 22 is live on Render:** Programme Stage 23 — IGCSE Extended gate.
 
 ## Update rule
 
