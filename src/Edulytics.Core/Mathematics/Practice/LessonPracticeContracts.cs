@@ -1,10 +1,12 @@
+using System.Reflection;
+using System.Text.Json;
+
 namespace Edulytics.Core.Mathematics.Practice;
 
 /// <summary>
 /// General lesson-scoped Practice contract used by the runtime capability layer.
-/// It is curriculum-neutral: official outcome mappings remain separate and are
-/// never synthesized here. A Supporting lesson may therefore be READY_VERIFIED
-/// for Practice without an official OutcomeCode.
+/// Official curriculum mappings remain separate; a Supporting lesson may be
+/// READY_VERIFIED for Practice without an official OutcomeCode.
 /// </summary>
 public sealed record LessonPracticeContract(
     string LessonCode,
@@ -20,750 +22,22 @@ public sealed record LessonPracticeContract(
 }
 
 /// <summary>
-/// First generalized production registry for Supporting lessons that are already
-/// mathematically READY_VERIFIED. This registry is authoritative for lesson-scoped
-/// exact Practice availability; game routing is presentation-only.
+/// Data-driven runtime projection of approved lesson-skill mappings into exact
+/// Practice contracts. The mapping JSON is the academic authority; this loader
+/// only exposes rows that explicitly declare READY_VERIFIED Practice metadata.
 /// </summary>
 public static class LessonPracticeContractRegistry
 {
-    public const string Version = "supporting-lesson-practice-v4";
+    public const string Version = "supporting-lesson-practice-v5";
 
-    private static readonly LessonPracticeContract[] Entries =
-    [
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:APPLY",
-            "algebra.relationships.two_unknowns",
-            "TWO_UNKNOWNS",
-            ["algebra.relationships.two_unknowns.total_difference"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:APPLY",
-            "measurement.scale.read_equal_intervals",
-            "SCALE_READING",
-            ["measurement.scale.equal_intervals.read_value"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:BUILD",
-            "fractions.compare.unlike_denominators",
-            "FRACTION_COMPARE_UNLIKE",
-            ["fractions.compare.unlike.common_denominator"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:APPLY",
-            "fractions.compare.unlike_denominators",
-            "FRACTION_COMPARE_UNLIKE",
-            ["fractions.compare.unlike.common_denominator"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S5:5F-2:BUILD",
-            "fractions.equivalent",
-            "FRACTION_EQUIVALENT",
-            ["fractions.equivalent.missing_value", "fractions.equivalent.recognize"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S5:5F-2:APPLY",
-            "fractions.equivalent",
-            "FRACTION_EQUIVALENT",
-            ["fractions.equivalent.missing_value", "fractions.equivalent.recognize"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:US-CCSS-MATH:G7:U06:L15",
-            "algebra.linear.inequality.solve",
-            "LINEAR_INEQUALITY",
-            ["algebra.linear.inequality.ax_plus_b_relation_c"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:L8:SHARED:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:L9:SHARED:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S2:2AS-1:BUILD",
-            "number.whole.add_subtract",
-            "WHOLE_ADD_SUBTRACT",
-            ["number.whole.add_subtract.across_ten.build"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S2:2AS-1:APPLY",
-            "number.whole.add_subtract",
-            "WHOLE_ADD_SUBTRACT",
-            ["number.whole.add_subtract.across_ten.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S2:2AS-3:BUILD",
-            "number.whole.add_subtract",
-            "WHOLE_ADD_SUBTRACT",
-            ["number.whole.add_subtract.within_100.build"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S2:2AS-3:APPLY",
-            "number.whole.add_subtract",
-            "WHOLE_ADD_SUBTRACT",
-            ["number.whole.add_subtract.within_100.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S2:2AS-4:BUILD",
-            "number.whole.add_subtract",
-            "WHOLE_ADD_SUBTRACT",
-            ["number.whole.add_subtract.within_100.build"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S2:2AS-4:APPLY",
-            "number.whole.add_subtract",
-            "WHOLE_ADD_SUBTRACT",
-            ["number.whole.add_subtract.within_100.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S2:2NF-1:BUILD",
-            "number.whole.add_subtract",
-            "WHOLE_ADD_SUBTRACT",
-            ["number.whole.add_subtract.within_10.build"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S2:2NF-1:APPLY",
-            "number.whole.add_subtract",
-            "WHOLE_ADD_SUBTRACT",
-            ["number.whole.add_subtract.within_10.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S3:3AS-2:BUILD",
-            "number.whole.add_subtract",
-            "WHOLE_ADD_SUBTRACT",
-            ["number.whole.add_subtract.columnar.build"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S3:3AS-2:APPLY",
-            "number.whole.add_subtract",
-            "WHOLE_ADD_SUBTRACT",
-            ["number.whole.add_subtract.columnar.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S3:3NF-1:BUILD",
-            "number.whole.add_subtract",
-            "WHOLE_ADD_SUBTRACT",
-            ["number.whole.add_subtract.across_ten.build"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S3:3NF-1:APPLY",
-            "number.whole.add_subtract",
-            "WHOLE_ADD_SUBTRACT",
-            ["number.whole.add_subtract.across_ten.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L10:ADVANCED:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L10:GENERAL:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L11:ADVANCED:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L11:GENERAL:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L12:ADVANCED:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L12:GENERAL:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L3:COMMON:02:02:EQUIVALENT-FRACTIONS",
-            "fractions.equivalent",
-            "FRACTION_EQUIVALENT",
-            ["fractions.equivalent.missing_value", "fractions.equivalent.recognize", "fractions.equivalent.generate_multiple", "fractions.equivalent.reduce_common_factor"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L4:COMMON:02:01:EQUIVALENT-FRACTIONS",
-            "fractions.equivalent",
-            "FRACTION_EQUIVALENT",
-            ["fractions.equivalent.missing_value", "fractions.equivalent.recognize", "fractions.equivalent.generate_multiple", "fractions.equivalent.reduce_common_factor"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L5:ADVANCED:02:01:EQUIVALENT-FRACTIONS",
-            "fractions.equivalent",
-            "FRACTION_EQUIVALENT",
-            ["fractions.equivalent.missing_value", "fractions.equivalent.recognize", "fractions.equivalent.generate_multiple", "fractions.equivalent.reduce_common_factor"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L5:ADVANCED:03:03:UNIT-RATE",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L5:GENERAL:02:01:EQUIVALENT-FRACTIONS",
-            "fractions.equivalent",
-            "FRACTION_EQUIVALENT",
-            ["fractions.equivalent.missing_value", "fractions.equivalent.recognize", "fractions.equivalent.generate_multiple", "fractions.equivalent.reduce_common_factor"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L5:GENERAL:03:03:UNIT-RATE",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L7:ADVANCED:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L7:GENERAL:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L8:ADVANCED:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L8:GENERAL:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L9:ADVANCED:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L9:GENERAL:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S2:2AS-2:BUILD",
-            "number.whole.add_subtract",
-            "WHOLE_ADD_SUBTRACT",
-            ["number.whole.add_subtract.comparative.build"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S2:2AS-2:APPLY",
-            "number.whole.add_subtract",
-            "WHOLE_ADD_SUBTRACT",
-            ["number.whole.add_subtract.comparative.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S3:3AS-1:BUILD",
-            "number.whole.add_subtract",
-            "WHOLE_ADD_SUBTRACT",
-            ["number.whole.add_subtract.complement_100.build"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S3:3AS-1:APPLY",
-            "number.whole.add_subtract",
-            "WHOLE_ADD_SUBTRACT",
-            ["number.whole.add_subtract.complement_100.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S3:3F-2:BUILD",
-            "fractions.of_quantity",
-            "FRACTION_OF_QUANTITY",
-            ["fractions.of_quantity.build"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S3:3F-2:APPLY",
-            "fractions.of_quantity",
-            "FRACTION_OF_QUANTITY",
-            ["fractions.of_quantity.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S3:3NF-2:BUILD",
-            "number.whole.multiply",
-            "MULTIPLICATION_FACTS",
-            ["number.whole.multiply.fact_recall.build"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S3:3NF-2:APPLY",
-            "number.whole.multiply",
-            "MULTIPLICATION_FACTS",
-            ["number.whole.multiply.fact_recall.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S3:3NPV-4:BUILD",
-            "measurement.scale.read_equal_intervals",
-            "SCALE_READING",
-            ["measurement.scale.equal_intervals.read_value"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S3:3NPV-4:APPLY",
-            "measurement.scale.read_equal_intervals",
-            "SCALE_READING",
-            ["measurement.scale.equal_intervals.read_value"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S4:4NF-1:BUILD",
-            "number.whole.multiply",
-            "MULTIPLICATION_FACTS",
-            ["number.whole.multiply.fact_recall.build"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S4:4NF-1:APPLY",
-            "number.whole.multiply",
-            "MULTIPLICATION_FACTS",
-            ["number.whole.multiply.fact_recall.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S4:4NF-2:BUILD",
-            "number.whole.divide",
-            "DIVISION_REMAINDER",
-            ["number.whole.divide.with_remainder.build"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S4:4NF-2:APPLY",
-            "number.whole.divide",
-            "DIVISION_REMAINDER",
-            ["number.whole.divide.with_remainder.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S4:4NPV-4:BUILD",
-            "measurement.scale.read_equal_intervals",
-            "SCALE_READING",
-            ["measurement.scale.equal_intervals.read_value"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S4:4NPV-4:APPLY",
-            "measurement.scale.read_equal_intervals",
-            "SCALE_READING",
-            ["measurement.scale.equal_intervals.read_value"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S5:5F-1:BUILD",
-            "fractions.of_quantity",
-            "FRACTION_OF_QUANTITY",
-            ["fractions.of_quantity.build"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S5:5F-1:APPLY",
-            "fractions.of_quantity",
-            "FRACTION_OF_QUANTITY",
-            ["fractions.of_quantity.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S5:5NPV-4:BUILD",
-            "measurement.scale.read_equal_intervals",
-            "SCALE_READING",
-            ["measurement.scale.equal_intervals.read_value"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S5:5NPV-4:APPLY",
-            "measurement.scale.read_equal_intervals",
-            "SCALE_READING",
-            ["measurement.scale.equal_intervals.read_value"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:BUILD",
-            "measurement.scale.read_equal_intervals",
-            "SCALE_READING",
-            ["measurement.scale.equal_intervals.read_value"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L2:COMMON:03:02:FRACTIONS-OF-QUANTITIES",
-            "fractions.of_quantity",
-            "FRACTION_OF_QUANTITY",
-            ["fractions.of_quantity.build", "fractions.of_quantity.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L2:COMMON:03:03:EQUIVALENT-SIMPLE-FRACTIONS",
-            "fractions.equivalent",
-            "FRACTION_EQUIVALENT",
-            ["fractions.equivalent.missing_value", "fractions.equivalent.recognize"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L6:ADVANCED:03:03:UNITARY-METHOD",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L6:GENERAL:03:03:UNITARY-METHOD",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:US-CCSS-MATH:G7:U06:L13",
-            "algebra.linear.inequality.solve",
-            "LINEAR_INEQUALITY",
-            ["algebra.linear.inequality.ax_plus_b_relation_c"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:US-CCSS-MATH:G8:U03:L12",
-            "algebra.linear.solve",
-            "LINEAR_EQUATION",
-            ["algebra.linear.ax_plus_b_equals_c"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S3:3F-4:BUILD",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.within_one.build"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S3:3F-4:APPLY",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.within_one.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S4:4F-3:BUILD",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.same_denominator_mixed.build"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S4:4F-3:APPLY",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.same_denominator_mixed.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:BUILD",
-            "algebra.relationships.two_unknowns",
-            "TWO_UNKNOWNS",
-            ["algebra.relationships.two_unknowns.total_difference"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L3:COMMON:02:03:COMPARE-FRACTIONS",
-            "fractions.compare.unlike_denominators",
-            "FRACTION_COMPARE_UNLIKE",
-            ["fractions.compare.unlike.common_denominator"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L3:COMMON:02:04:ADD-AND-SUBTRACT-RELATED-FRACTIONS",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.related.build", "fractions.add_subtract.related.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L4:COMMON:02:02:ADD-AND-SUBTRACT-FRACTIONS",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.unlike_denominators.build", "fractions.add_subtract.unlike_denominators.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L5:ADVANCED:02:02:ADD-AND-SUBTRACT-FRACTIONS",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.unlike_denominators.build", "fractions.add_subtract.unlike_denominators.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L5:GENERAL:02:02:ADD-AND-SUBTRACT-FRACTIONS",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.unlike_denominators.build", "fractions.add_subtract.unlike_denominators.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L6:ADVANCED:02:02:ADD-AND-SUBTRACT-UNLIKE-FRACTIONS",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.unlike_denominators.build", "fractions.add_subtract.unlike_denominators.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L6:GENERAL:02:02:ADD-AND-SUBTRACT-UNLIKE-FRACTIONS",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.unlike_denominators.build", "fractions.add_subtract.unlike_denominators.apply"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S3:3F-4:BUILD",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.within_one"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S3:3F-4:APPLY",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.within_one"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S4:4F-3:BUILD",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.common_denominator_mixed"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S4:4F-3:APPLY",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.common_denominator_mixed"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:BUILD",
-            "algebra.relationships.two_unknowns",
-            "TWO_UNKNOWNS",
-            ["algebra.relationships.two_unknowns.total_difference"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L3:COMMON:02:03:COMPARE-FRACTIONS",
-            "fractions.compare.unlike_denominators",
-            "FRACTION_COMPARE_UNLIKE",
-            ["fractions.compare.unlike.common_denominator"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L3:COMMON:02:04:ADD-AND-SUBTRACT-RELATED-FRACTIONS",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.related"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L4:COMMON:02:02:ADD-AND-SUBTRACT-FRACTIONS",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.related", "fractions.add_subtract.unlike_denominators"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L5:ADVANCED:02:02:ADD-AND-SUBTRACT-FRACTIONS",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.related", "fractions.add_subtract.unlike_denominators"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L5:GENERAL:02:02:ADD-AND-SUBTRACT-FRACTIONS",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.related", "fractions.add_subtract.unlike_denominators"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L6:ADVANCED:02:02:ADD-AND-SUBTRACT-UNLIKE-FRACTIONS",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.unlike_denominators"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
-            "PED:UAE-MOE-MATH:L6:GENERAL:02:02:ADD-AND-SUBTRACT-UNLIKE-FRACTIONS",
-            "fractions.add_subtract",
-            "FRACTION_ADD_SUBTRACT",
-            ["fractions.add_subtract.unlike_denominators"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-    ];
+    private static readonly Lazy<IReadOnlyList<LessonPracticeContract>> LazyEntries =
+        new(Load, LazyThreadSafetyMode.ExecutionAndPublication);
 
-    private static readonly IReadOnlyDictionary<string, LessonPracticeContract> ByLessonCode =
-        Entries.ToDictionary(x => x.LessonCode, StringComparer.Ordinal);
+    private static readonly Lazy<IReadOnlyDictionary<string, LessonPracticeContract>> LazyByLessonCode =
+        new(() => LazyEntries.Value.ToDictionary(x => x.LessonCode, StringComparer.Ordinal),
+            LazyThreadSafetyMode.ExecutionAndPublication);
 
-    public static IReadOnlyList<LessonPracticeContract> All => Entries;
+    public static IReadOnlyList<LessonPracticeContract> All => LazyEntries.Value;
 
     public static bool TryResolve(string? lessonCode, out LessonPracticeContract? contract)
     {
@@ -773,6 +47,78 @@ public static class LessonPracticeContractRegistry
             return false;
         }
 
-        return ByLessonCode.TryGetValue(lessonCode.Trim(), out contract);
+        return LazyByLessonCode.Value.TryGetValue(lessonCode.Trim(), out contract);
+    }
+
+    private static IReadOnlyList<LessonPracticeContract> Load()
+    {
+        var assembly = typeof(LessonPracticeContractRegistry).Assembly;
+        var resourceName = assembly.GetManifestResourceNames()
+            .Single(name => name.EndsWith(
+                "Mathematics.Curriculum.lesson-skill-mappings.v1.json",
+                StringComparison.Ordinal));
+
+        using var stream = assembly.GetManifestResourceStream(resourceName)
+            ?? throw new InvalidOperationException("Lesson-skill mapping resource is unavailable.");
+        using var document = JsonDocument.Parse(stream);
+
+        var entries = new List<LessonPracticeContract>();
+        var seen = new HashSet<string>(StringComparer.Ordinal);
+
+        foreach (var row in document.RootElement.GetProperty("mappings").EnumerateArray())
+        {
+            if (!row.TryGetProperty("practiceReadiness", out var readinessElement) ||
+                !string.Equals(readinessElement.GetString(), "READY_VERIFIED", StringComparison.Ordinal) ||
+                !row.TryGetProperty("practiceMechanic", out var mechanicElement) ||
+                !row.TryGetProperty("allowedQuestionFamilies", out var familiesElement))
+            {
+                continue;
+            }
+
+            var lessonCode = row.GetProperty("lessonCode").GetString()?.Trim();
+            var primarySkills = row.GetProperty("primarySkills")
+                .EnumerateArray()
+                .Select(x => x.GetString()?.Trim())
+                .Where(x => !string.IsNullOrWhiteSpace(x))
+                .Cast<string>()
+                .ToArray();
+            var families = familiesElement
+                .EnumerateArray()
+                .Select(x => x.GetString()?.Trim())
+                .Where(x => !string.IsNullOrWhiteSpace(x))
+                .Cast<string>()
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            if (string.IsNullOrWhiteSpace(lessonCode) ||
+                primarySkills.Length != 1 ||
+                families.Length == 0 ||
+                !seen.Add(lessonCode))
+            {
+                throw new InvalidOperationException(
+                    $"Invalid or duplicate READY_VERIFIED lesson Practice mapping: {lessonCode ?? "<missing>"}.");
+            }
+
+            var sourceType = row.TryGetProperty("sourceType", out var sourceElement)
+                ? sourceElement.GetString() ?? "SupportingLesson"
+                : "SupportingLesson";
+            var contractVersion = row.TryGetProperty("practiceContractVersion", out var versionElement)
+                ? versionElement.GetString() ?? Version
+                : Version;
+
+            entries.Add(new LessonPracticeContract(
+                lessonCode,
+                primarySkills[0],
+                mechanicElement.GetString() ?? throw new InvalidOperationException(
+                    $"Practice mechanic missing for {lessonCode}."),
+                families,
+                sourceType,
+                "READY_VERIFIED",
+                contractVersion));
+        }
+
+        return entries
+            .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
+            .ToArray();
     }
 }
