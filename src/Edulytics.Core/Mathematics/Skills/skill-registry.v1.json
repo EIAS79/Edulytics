@@ -884,6 +884,62 @@
       "v2QuestionFamilies": [
         "trigonometry.modelling.contextual"
       ]
+    },
+    {
+      "id": "vectors.subtract.exact",
+      "domain": "vectors",
+      "canonicalName": "Subtract exact rational vectors componentwise",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "vectors.subtract.exact_rational",
+        "vectors.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "vectors.subtract.exact_rational"
+      ]
+    },
+    {
+      "id": "vectors.scalar_multiply",
+      "domain": "vectors",
+      "canonicalName": "Multiply a vector by an exact scalar",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "vectors.scalar_multiply.exact_rational",
+        "vectors.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "vectors.scalar_multiply.exact_rational"
+      ]
+    },
+    {
+      "id": "vectors.magnitude",
+      "domain": "vectors",
+      "canonicalName": "Find the exact magnitude of a two-dimensional vector",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "vectors.magnitude.exact",
+        "vectors.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "vectors.magnitude.exact"
+      ]
+    },
+    {
+      "id": "vectors.between_points",
+      "domain": "vectors",
+      "canonicalName": "Find the displacement vector between two coordinate points",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "vectors.between_points.exact",
+        "vectors.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "vectors.between_points.exact"
+      ]
     }
   ]
 }
