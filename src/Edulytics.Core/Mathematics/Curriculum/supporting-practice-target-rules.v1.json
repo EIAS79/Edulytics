@@ -1,0 +1,1730 @@
+{
+  "schemaVersion": 1,
+  "registry": "Supporting Practice target rules",
+  "rules": [
+    {
+      "id": "place-value",
+      "titlePatterns": [
+        "place value",
+        "place value.*powers? of ten",
+        "large integers and decimals",
+        "liczby rzeczywiste"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.place_value_rounding",
+      "mechanic": "PLACE_VALUE",
+      "families": [
+        "supporting.number.place_value"
+      ],
+      "content": {
+        "concept": "Place value assigns each digit a value from its position in powers of ten.",
+        "workedExample": "In 53,482 the digit 4 is in the hundreds place, so its value is 400.",
+        "solution": "Identify the position from the right, convert it to a power of ten, then multiply the digit by that place value.",
+        "commonMistake": "Do not report only the digit when the question asks for its value.",
+        "summary": "Read each digit by its place and connect places to powers of ten."
+      }
+    },
+    {
+      "id": "rounding-estimation",
+      "titlePatterns": [
+        "rounding",
+        "estimating",
+        "estimation",
+        "zaokr.glan|zaokrągl",
+        "przybli"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.place_value_rounding",
+      "mechanic": "ROUNDING",
+      "families": [
+        "supporting.number.rounding"
+      ],
+      "content": {
+        "concept": "Rounding replaces a number with the nearest multiple of a chosen place value.",
+        "workedExample": "3,476 rounded to the nearest hundred is 3,500 because 3,476 is above the halfway point 3,450.",
+        "solution": "Find the two adjacent multiples of the rounding place, compare with the midpoint, and choose the nearer value.",
+        "commonMistake": "Do not round using the wrong digit position.",
+        "summary": "Use place value and the halfway point to round accurately."
+      }
+    },
+    {
+      "id": "whole-addition",
+      "titlePatterns": [
+        "addition(?!.*fraction)",
+        "formal addition",
+        "written addition",
+        "dodaw"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.add",
+      "mechanic": "WHOLE_ADD",
+      "families": [
+        "number.whole.add.direct"
+      ],
+      "content": {
+        "concept": "Whole-number addition combines quantities while preserving place value.",
+        "workedExample": "347 + 285 = 632.",
+        "solution": "Align place values, add from right to left, regroup where needed, then check by subtraction.",
+        "commonMistake": "Do not misalign tens, hundreds and units.",
+        "summary": "Add by place value and verify with the inverse operation."
+      }
+    },
+    {
+      "id": "whole-subtraction",
+      "titlePatterns": [
+        "subtraction(?!.*fraction)",
+        "formal subtraction",
+        "written subtraction",
+        "odejm"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.subtract",
+      "mechanic": "WHOLE_SUBTRACT",
+      "families": [
+        "number.whole.subtract.direct"
+      ],
+      "content": {
+        "concept": "Whole-number subtraction finds a difference while preserving place value.",
+        "workedExample": "632 − 285 = 347.",
+        "solution": "Align place values, subtract from right to left, regroup where needed, then check by addition.",
+        "commonMistake": "Do not subtract the smaller digit from the larger digit independently when regrouping is required.",
+        "summary": "Subtract by place value and verify with addition."
+      }
+    },
+    {
+      "id": "whole-multiplication",
+      "titlePatterns": [
+        "multiplication facts",
+        "written multiplication",
+        "formal multiplication",
+        "long multiplication",
+        "multiplication by",
+        "mnoż"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.directed_operations",
+      "mechanic": "WHOLE_MULTIPLY",
+      "families": [
+        "supporting.number.multiply"
+      ],
+      "content": {
+        "concept": "Whole-number multiplication scales one quantity by another.",
+        "workedExample": "36 × 7 = 252.",
+        "solution": "Use place-value partitioning or a formal algorithm and verify by dividing the product by one factor.",
+        "commonMistake": "Do not lose a place-value zero in multi-digit multiplication.",
+        "summary": "Multiply using place value and check with division."
+      }
+    },
+    {
+      "id": "whole-division",
+      "titlePatterns": [
+        "division facts",
+        "written division",
+        "formal division",
+        "long division",
+        "division with remainder",
+        "dziel"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.directed_operations",
+      "mechanic": "WHOLE_DIVIDE",
+      "families": [
+        "supporting.number.divide"
+      ],
+      "content": {
+        "concept": "Whole-number division partitions a quantity into equal groups.",
+        "workedExample": "252 ÷ 7 = 36.",
+        "solution": "Use known multiplication facts or a formal division algorithm and verify divisor × quotient gives the dividend.",
+        "commonMistake": "Do not confuse the divisor with the quotient.",
+        "summary": "Divide into equal groups and check with multiplication."
+      }
+    },
+    {
+      "id": "order-operations",
+      "titlePatterns": [
+        "order of operations",
+        "kolejność.*działa"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.directed_operations",
+      "mechanic": "ORDER_OF_OPERATIONS",
+      "families": [
+        "supporting.number.order_operations"
+      ],
+      "content": {
+        "concept": "Order of operations determines which arithmetic operations are evaluated first.",
+        "workedExample": "3 + 4 × 5 = 23 because multiplication is completed before addition.",
+        "solution": "Evaluate brackets and powers first, then multiplication/division, then addition/subtraction.",
+        "commonMistake": "Do not automatically work left to right across different operation priorities.",
+        "summary": "Use the agreed operation order before calculating."
+      }
+    },
+    {
+      "id": "directed-number",
+      "titlePatterns": [
+        "negative numbers",
+        "integers and directed number",
+        "directed number",
+        "liczby całkowite"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.directed_operations",
+      "mechanic": "DIRECTED_NUMBER",
+      "families": [
+        "supporting.number.negative_operation"
+      ],
+      "content": {
+        "concept": "Directed numbers use positive and negative values to represent position or change around zero.",
+        "workedExample": "−7 + 12 = 5.",
+        "solution": "Track direction on a number line or combine signed values, then check by reversing the operation.",
+        "commonMistake": "Do not drop a negative sign when combining terms.",
+        "summary": "Treat signs as part of each directed number."
+      }
+    },
+    {
+      "id": "factors-primes",
+      "titlePatterns": [
+        "prime numbers",
+        "factors and multiples",
+        "factors, multiples and primes",
+        "common factors",
+        "common multiples",
+        "multiples and divisibility",
+        "czynniki",
+        "wielokrot"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.factors_primes",
+      "mechanic": "FACTORS_PRIMES",
+      "families": [
+        "supporting.number.gcf",
+        "supporting.number.prime_factor",
+        "supporting.number.lcm"
+      ],
+      "content": {
+        "concept": "Factors divide exactly, multiples are repeated products, and primes have exactly two positive factors.",
+        "workedExample": "The greatest common factor of 18 and 24 is 6; the least common multiple is 72.",
+        "solution": "Use factor lists or prime factorisation, then verify divisibility.",
+        "commonMistake": "Do not confuse greatest common factor with least common multiple.",
+        "summary": "Use divisibility and prime structure to reason about factors and multiples."
+      }
+    },
+    {
+      "id": "fraction-number-line",
+      "titlePatterns": [
+        "fractions? on a number line"
+      ],
+      "codePatterns": [],
+      "skillId": "fractions.equivalent",
+      "mechanic": "FRACTION_NUMBER_LINE",
+      "families": [
+        "fractions.equivalent.number_line"
+      ],
+      "content": {
+        "concept": "Fractions mark exact positions between whole numbers on a number line.",
+        "workedExample": "1/2 and 2/4 identify the same point.",
+        "solution": "Divide the unit interval into equal parts and preserve equivalent values.",
+        "commonMistake": "Do not use unequal interval spacing.",
+        "summary": "A fraction's position is determined by its value, not its written denominator alone."
+      }
+    },
+    {
+      "id": "equivalent-fractions",
+      "titlePatterns": [
+        "equivalent .*fractions",
+        "równoważ.*ułam"
+      ],
+      "codePatterns": [],
+      "skillId": "fractions.equivalent",
+      "mechanic": "FRACTION_EQUIVALENT",
+      "families": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.reduce_common_factor"
+      ],
+      "content": {
+        "concept": "Equivalent fractions name the same value using different numerator-denominator pairs.",
+        "workedExample": "2/3 = 8/12 because numerator and denominator are both multiplied by 4.",
+        "solution": "Multiply or divide numerator and denominator by the same non-zero factor.",
+        "commonMistake": "Do not change only one part of the fraction.",
+        "summary": "Equivalent fractions preserve value."
+      }
+    },
+    {
+      "id": "fraction-compare",
+      "titlePatterns": [
+        "compare fractions",
+        "porówn.*ułam"
+      ],
+      "codePatterns": [],
+      "skillId": "fractions.compare.unlike_denominators",
+      "mechanic": "FRACTION_COMPARE",
+      "families": [
+        "fractions.compare.unlike.common_denominator"
+      ],
+      "content": {
+        "concept": "Fractions with unlike denominators can be compared using equivalent forms or cross-products.",
+        "workedExample": "3/5 < 5/8 because 3×8=24 and 5×5=25.",
+        "solution": "Use a common denominator or compare cross-products.",
+        "commonMistake": "Do not compare denominators alone.",
+        "summary": "Compare fraction values using a common basis."
+      }
+    },
+    {
+      "id": "fraction-add-subtract",
+      "titlePatterns": [
+        "add and subtract.*fractions",
+        "adding and subtracting.*fractions",
+        "ułam.*dodaw|ułam.*odejm"
+      ],
+      "codePatterns": [],
+      "skillId": "fractions.add_subtract",
+      "mechanic": "FRACTION_ADD_SUBTRACT",
+      "families": [
+        "fractions.add_subtract.common_denominator.build",
+        "fractions.add_subtract.common_denominator.apply"
+      ],
+      "content": {
+        "concept": "Fraction addition and subtraction require common-sized parts.",
+        "workedExample": "2/3 + 1/4 = 8/12 + 3/12 = 11/12.",
+        "solution": "Find a common denominator, rewrite equivalent fractions, combine numerators, and simplify.",
+        "commonMistake": "Do not add denominators.",
+        "summary": "Create common-sized parts before adding or subtracting fractions."
+      }
+    },
+    {
+      "id": "fraction-simplify",
+      "titlePatterns": [
+        "simplifying fractions",
+        "reduce fractions",
+        "skrac.*ułam"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.fractions.multiply_divide",
+      "mechanic": "FRACTION_SIMPLIFY",
+      "families": [
+        "supporting.fractions.simplify"
+      ],
+      "content": {
+        "concept": "Simplifying a fraction divides numerator and denominator by a common factor without changing value.",
+        "workedExample": "18/24 simplifies to 3/4 by dividing both by 6.",
+        "solution": "Find the greatest common factor and divide both parts by it.",
+        "commonMistake": "Do not divide numerator and denominator by different factors.",
+        "summary": "Simplify by a common factor while preserving value."
+      }
+    },
+    {
+      "id": "fraction-multiply-divide",
+      "titlePatterns": [
+        "multiply fractions",
+        "multiply fractions by whole",
+        "divide fractions",
+        "fractions and mixed numbers",
+        "ułam.*mnoż|ułam.*dziel"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.fractions.multiply_divide",
+      "mechanic": "FRACTION_MULTIPLY_DIVIDE",
+      "families": [
+        "supporting.fractions.multiply",
+        "supporting.fractions.divide_whole",
+        "supporting.fractions.simplify"
+      ],
+      "content": {
+        "concept": "Fraction multiplication multiplies parts of parts; division can be represented by multiplying by a reciprocal.",
+        "workedExample": "2/3 × 3/5 = 2/5 after simplifying.",
+        "solution": "Multiply numerators and denominators, or multiply by the reciprocal when dividing, then simplify.",
+        "commonMistake": "Do not add denominators during multiplication.",
+        "summary": "Use exact fraction operations and simplify the result."
+      }
+    },
+    {
+      "id": "decimal-place",
+      "titlePatterns": [
+        "decimals and place value",
+        "tenths and hundredths",
+        "decimal place value"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.decimals.core",
+      "mechanic": "DECIMAL_PLACE_VALUE",
+      "families": [
+        "supporting.decimals.place_value"
+      ],
+      "content": {
+        "concept": "Decimal places extend place value to tenths, hundredths and smaller powers of ten.",
+        "workedExample": "In 4.37, 3 is the tenths digit and 7 is the hundredths digit.",
+        "solution": "Read decimal positions from left to right after the decimal point.",
+        "commonMistake": "Do not treat 0.4 as smaller than 0.37 because it has fewer digits.",
+        "summary": "Use decimal place value consistently."
+      }
+    },
+    {
+      "id": "decimal-compare-round",
+      "titlePatterns": [
+        "compare decimals",
+        "decimal rounding",
+        "decimals and rounding"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.decimals.core",
+      "mechanic": "DECIMAL_COMPARE_ROUND",
+      "families": [
+        "supporting.decimals.compare",
+        "supporting.decimals.round"
+      ],
+      "content": {
+        "concept": "Decimals can be compared by aligned place values and rounded using the next smaller place.",
+        "workedExample": "4.50 > 4.37, and 4.57 rounds to 5 to the nearest whole number.",
+        "solution": "Write equal decimal places when comparing; use the next digit when rounding.",
+        "commonMistake": "Do not compare decimal digit strings as whole numbers.",
+        "summary": "Align place values before comparing or rounding."
+      }
+    },
+    {
+      "id": "decimal-operations",
+      "titlePatterns": [
+        "decimal operations",
+        "operations with decimals"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.decimals.core",
+      "mechanic": "DECIMAL_OPERATIONS",
+      "families": [
+        "supporting.decimals.operation"
+      ],
+      "content": {
+        "concept": "Decimal operations follow whole-number place value while keeping the decimal point aligned.",
+        "workedExample": "3.45 + 1.20 = 4.65.",
+        "solution": "Align decimal points, operate by place value, then check the magnitude.",
+        "commonMistake": "Do not align numbers by their final digit.",
+        "summary": "Align decimal places before operating."
+      }
+    },
+    {
+      "id": "fdp-equivalence",
+      "titlePatterns": [
+        "fraction-decimal-percentage equivalence",
+        "percentages as hundredths",
+        "percentage.*hundredths"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.fdp.equivalence",
+      "mechanic": "FDP_EQUIVALENCE",
+      "families": [
+        "supporting.fdp.percent_equivalent"
+      ],
+      "content": {
+        "concept": "Fractions, decimals and percentages are different representations of the same proportion.",
+        "workedExample": "3/4 = 0.75 = 75%.",
+        "solution": "Convert fractions to a denominator of 100 or to decimals, then convert decimals to percentages by multiplying by 100.",
+        "commonMistake": "Do not attach % without scaling by 100.",
+        "summary": "Move accurately among fraction, decimal and percentage forms."
+      }
+    },
+    {
+      "id": "percentage",
+      "titlePatterns": [
+        "percentage of an amount",
+        "percentage change",
+        "percentages",
+        "procent"
+      ],
+      "codePatterns": [],
+      "skillId": "percentages.core",
+      "mechanic": "PERCENTAGE",
+      "families": [
+        "percentages.core.of_quantity",
+        "percentages.core.increase_decrease"
+      ],
+      "content": {
+        "concept": "A percentage is a rate per hundred and can describe a part of a quantity or a proportional change.",
+        "workedExample": "25% of 80 is 20; increasing 80 by 25% gives 100.",
+        "solution": "Convert the percent to a multiplier or fraction over 100, apply it to the original quantity, then check against the original scale.",
+        "commonMistake": "Do not calculate percentage change from the final quantity unless the problem defines that base.",
+        "summary": "Use per-hundred reasoning for percentage amounts and changes."
+      }
+    },
+    {
+      "id": "ratio-scaling",
+      "titlePatterns": [
+        "ratio notation",
+        "equivalent ratios",
+        "simple ratio",
+        "scaling quantities",
+        "unitary method",
+        "ratio and proportion",
+        "rates?($| )"
+      ],
+      "codePatterns": [],
+      "skillId": "ratio.unit_rate",
+      "mechanic": "RATIO_RATE",
+      "families": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio",
+        "ratio.unit_rate.divide_total"
+      ],
+      "content": {
+        "concept": "Ratios compare quantities multiplicatively and equivalent ratios preserve the same scale factor.",
+        "workedExample": "12:8 simplifies to 3:2; dividing 50 in the ratio 3:2 gives 30 and 20.",
+        "solution": "Find the unit scale or total ratio parts, then scale corresponding quantities consistently.",
+        "commonMistake": "Do not add the same amount to both parts when making an equivalent ratio.",
+        "summary": "Preserve multiplicative relationships in ratio and rate problems."
+      }
+    },
+    {
+      "id": "time",
+      "titlePatterns": [
+        "time and timetables",
+        "time problems",
+        "elapsed time",
+        "czas"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "TIME",
+      "families": [
+        "supporting.measurement.time_elapsed"
+      ],
+      "content": {
+        "concept": "Elapsed time is the difference between start and finish times on a consistent time scale.",
+        "workedExample": "From 09:35 to 10:20 is 45 minutes.",
+        "solution": "Convert to minutes or bridge through the hour, then subtract start from end.",
+        "commonMistake": "Do not subtract clock digits as ordinary base-10 numbers.",
+        "summary": "Use 60 minutes per hour when solving time problems."
+      }
+    },
+    {
+      "id": "money",
+      "titlePatterns": [
+        "money and change",
+        "money problems",
+        "pienią"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "MONEY",
+      "families": [
+        "supporting.measurement.money_change"
+      ],
+      "content": {
+        "concept": "Money calculations use exact decimal or minor-unit arithmetic.",
+        "workedExample": "Paying 500 cents for an item costing 365 cents gives 135 cents change.",
+        "solution": "Use one currency unit consistently and subtract cost from amount paid.",
+        "commonMistake": "Do not mix major and minor units without conversion.",
+        "summary": "Keep currency units consistent and verify paid = cost + change."
+      }
+    },
+    {
+      "id": "unit-conversion",
+      "titlePatterns": [
+        "unit conversion",
+        "converting units",
+        "jednost"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "UNIT_CONVERSION",
+      "families": [
+        "supporting.measurement.unit_conversion"
+      ],
+      "content": {
+        "concept": "Unit conversion multiplies or divides by a known scale factor between units.",
+        "workedExample": "3 metres equals 300 centimetres because each metre contains 100 centimetres.",
+        "solution": "Identify the conversion factor and direction, then multiply or divide accordingly.",
+        "commonMistake": "Do not use the conversion factor in the wrong direction.",
+        "summary": "Convert units using a consistent multiplicative factor."
+      }
+    },
+    {
+      "id": "substitution",
+      "titlePatterns": [
+        "^substitution$",
+        "podstawian"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.algebra.expressions",
+      "mechanic": "ALGEBRA_SUBSTITUTE",
+      "families": [
+        "supporting.algebra.substitute"
+      ],
+      "content": {
+        "concept": "Substitution replaces a variable with a given value before evaluating the expression.",
+        "workedExample": "If 3x+2 and x=4, the value is 14.",
+        "solution": "Replace the variable, use brackets for negative values, then apply the order of operations.",
+        "commonMistake": "Do not concatenate a coefficient and substituted value.",
+        "summary": "Substitute first, then simplify."
+      }
+    },
+    {
+      "id": "expanding",
+      "titlePatterns": [
+        "expanding brackets",
+        "expand.*bracket",
+        "rozwij.*nawias"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.algebra.expressions",
+      "mechanic": "ALGEBRA_EXPAND",
+      "families": [
+        "supporting.algebra.expand"
+      ],
+      "content": {
+        "concept": "Expanding brackets distributes an outside factor to every term inside.",
+        "workedExample": "3(x+4)=3x+12.",
+        "solution": "Multiply each term inside the bracket by the outside factor and check by factoring back.",
+        "commonMistake": "Do not multiply only the first term.",
+        "summary": "Distribute the outside factor to every bracket term."
+      }
+    },
+    {
+      "id": "factorising",
+      "titlePatterns": [
+        "factorising expressions",
+        "factorizing expressions",
+        "factor.*expression",
+        "wyłącz.*wspóln"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.algebra.expressions",
+      "mechanic": "ALGEBRA_FACTOR",
+      "families": [
+        "supporting.algebra.factor"
+      ],
+      "content": {
+        "concept": "Factorising rewrites an expression as a product by extracting common factors.",
+        "workedExample": "6x+18=6(x+3).",
+        "solution": "Find the greatest common factor of all terms, divide each term by it, then check by expanding.",
+        "commonMistake": "Do not leave a term outside the common factor.",
+        "summary": "Factor out common structure and verify by expansion."
+      }
+    },
+    {
+      "id": "algebra-expressions",
+      "titlePatterns": [
+        "algebraic expressions",
+        "wyrażenia algebraiczne",
+        "wyrazenia algebraiczne",
+        "polynomial expressions",
+        "polynomials"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.algebra.expressions",
+      "mechanic": "ALGEBRA_EXPRESSIONS",
+      "families": [
+        "supporting.algebra.simplify",
+        "supporting.algebra.substitute",
+        "supporting.algebra.expressions.mixed"
+      ],
+      "content": {
+        "concept": "Algebraic expressions represent quantities using variables, coefficients and operations.",
+        "workedExample": "2x+3x−4 simplifies to 5x−4.",
+        "solution": "Collect like terms, preserve unlike terms, and use substitution to check a simplified form.",
+        "commonMistake": "Do not combine unlike terms such as x and x².",
+        "summary": "Use algebraic structure to simplify and evaluate expressions."
+      }
+    },
+    {
+      "id": "one-step-formula-equation",
+      "titlePatterns": [
+        "one-step equations",
+        "formulas?",
+        "linear equations?",
+        "równania liniowe",
+        "rownania liniowe"
+      ],
+      "codePatterns": [],
+      "skillId": "algebra.linear.solve",
+      "mechanic": "LINEAR_EQUATION",
+      "families": [
+        "algebra.linear.ax_plus_b_equals_c",
+        "algebra.linear.variables_both_sides"
+      ],
+      "content": {
+        "concept": "A linear equation is solved by applying inverse operations while preserving equality.",
+        "workedExample": "3x+5=20 gives x=5.",
+        "solution": "Undo addition/subtraction and multiplication/division in reverse order, then substitute the result back.",
+        "commonMistake": "Do not apply an operation to only one side.",
+        "summary": "Preserve equality while isolating the variable."
+      }
+    },
+    {
+      "id": "inequalities",
+      "titlePatterns": [
+        "inequalities",
+        "nierówno",
+        "nierowno",
+        "systems and inequalities"
+      ],
+      "codePatterns": [],
+      "skillId": "algebra.linear.inequality.solve",
+      "mechanic": "LINEAR_INEQUALITY",
+      "families": [
+        "algebra.linear.inequality.ax_plus_b_relation_c",
+        "algebra.linear.inequality.variables_both_sides"
+      ],
+      "content": {
+        "concept": "A linear inequality is solved like an equation, except dividing or multiplying by a negative reverses the inequality sign.",
+        "workedExample": "−2x<6 gives x>−3.",
+        "solution": "Collect variable terms, isolate the variable, reverse the relation only when multiplying or dividing by a negative.",
+        "commonMistake": "Do not forget the sign reversal for a negative divisor.",
+        "summary": "Isolate the variable while preserving the inequality relation."
+      }
+    },
+    {
+      "id": "simultaneous",
+      "titlePatterns": [
+        "simultaneous equations",
+        "systems of equations",
+        "układy równań",
+        "uklady rownan"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.algebra.equations",
+      "mechanic": "SIMULTANEOUS",
+      "families": [
+        "supporting.algebra.simultaneous"
+      ],
+      "content": {
+        "concept": "Simultaneous equations require one pair of values that satisfies both equations.",
+        "workedExample": "x+y=9 and x−y=3 gives x=6, y=3.",
+        "solution": "Eliminate or substitute one variable, solve, find the second variable, and check both equations.",
+        "commonMistake": "Do not accept a pair that satisfies only one equation.",
+        "summary": "A simultaneous solution must satisfy every equation in the system."
+      }
+    },
+    {
+      "id": "quadratic",
+      "titlePatterns": [
+        "quadratic",
+        "kwadratow"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.algebra.equations",
+      "mechanic": "QUADRATIC",
+      "families": [
+        "supporting.algebra.quadratic_larger_root"
+      ],
+      "content": {
+        "concept": "A quadratic equation can have two real roots that make the quadratic expression equal zero.",
+        "workedExample": "x²−5x+6=0 factors to (x−2)(x−3), so the roots are 2 and 3.",
+        "solution": "Factor when possible, use the zero-product property, and substitute roots to verify.",
+        "commonMistake": "Do not report only a factor without converting it to a root.",
+        "summary": "Find and verify the roots of a quadratic equation."
+      }
+    },
+    {
+      "id": "functions",
+      "titlePatterns": [
+        "^functions?$",
+        "advanced functions",
+        "funkcje",
+        "function notation",
+        "composite functions"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.functions.core",
+      "mechanic": "FUNCTIONS",
+      "families": [
+        "supporting.functions.evaluate",
+        "supporting.functions.composite",
+        "supporting.functions.core.mixed"
+      ],
+      "content": {
+        "concept": "A function maps each allowed input to an output according to a rule.",
+        "workedExample": "If f(x)=2x+3, then f(4)=11.",
+        "solution": "Substitute the input into the rule; for compositions, evaluate the inner function before the outer one.",
+        "commonMistake": "Do not reverse the order in a composite function.",
+        "summary": "Treat a function as a precise input-output rule."
+      }
+    },
+    {
+      "id": "linear-modelling",
+      "titlePatterns": [
+        "linear modelling",
+        "multi-step algebraic modelling",
+        "model.*linear"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.reasoning.core",
+      "mechanic": "ALGEBRA_MODELLING",
+      "families": [
+        "supporting.reasoning.multistep"
+      ],
+      "content": {
+        "concept": "Algebraic modelling translates a multi-step situation into equations that preserve the stated relationships.",
+        "workedExample": "If 3x+4=25, undo 4 then divide by 3 to obtain x=7.",
+        "solution": "Define the variable, translate each operation in order, solve the equation, and check in the original situation.",
+        "commonMistake": "Do not guess values without checking the model.",
+        "summary": "Translate relationships into equations and verify the solution."
+      }
+    },
+    {
+      "id": "proof-justification",
+      "titlePatterns": [
+        "proof and justification",
+        "algebraic proof",
+        "justify",
+        "dowód",
+        "uzasad"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.reasoning.core",
+      "mechanic": "PROOF_JUSTIFICATION",
+      "families": [
+        "supporting.reasoning.verify_identity"
+      ],
+      "content": {
+        "concept": "A mathematical justification must show why a statement follows from definitions, identities or valid transformations.",
+        "workedExample": "3(x+4)=3x+12 is an identity because expansion gives the same expression for every x.",
+        "solution": "Transform one side using valid algebraic steps and compare it with the other side.",
+        "commonMistake": "Checking one numerical example does not prove an identity for every value.",
+        "summary": "Use general reasoning, not isolated examples, to justify a claim."
+      }
+    },
+    {
+      "id": "non-routine",
+      "titlePatterns": [
+        "non-routine problem solving",
+        "problem solving",
+        "reasoning challenge"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.reasoning.core",
+      "mechanic": "NON_ROUTINE",
+      "families": [
+        "supporting.reasoning.multistep",
+        "supporting.reasoning.verify_identity"
+      ],
+      "content": {
+        "concept": "Non-routine problems require selecting and connecting more than one mathematical step.",
+        "workedExample": "A quantity is doubled and 5 is added to make 23; solving 2x+5=23 gives x=9.",
+        "solution": "Represent the relationships, choose a valid strategy, calculate in a logical sequence, and check the result against all conditions.",
+        "commonMistake": "Do not start calculating before identifying what the quantities represent.",
+        "summary": "Model the conditions, solve systematically, and verify."
+      }
+    },
+    {
+      "id": "powers-roots",
+      "titlePatterns": [
+        "powers and roots",
+        "indices",
+        "potęgi",
+        "potegi",
+        "pierwiast"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.indices.roots_standard_form",
+      "mechanic": "POWERS_ROOTS",
+      "families": [
+        "supporting.indices.power_or_root"
+      ],
+      "content": {
+        "concept": "Powers represent repeated multiplication and roots reverse powers.",
+        "workedExample": "3^4=81 and √81=9.",
+        "solution": "Use repeated multiplication for integer powers and identify the positive principal root for square roots.",
+        "commonMistake": "Do not multiply the base by the exponent.",
+        "summary": "Connect powers and roots as inverse operations."
+      }
+    },
+    {
+      "id": "standard-form",
+      "titlePatterns": [
+        "standard form",
+        "scientific notation",
+        "notacja wykładnicza",
+        "notacja wykladnicza"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.indices.roots_standard_form",
+      "mechanic": "STANDARD_FORM",
+      "families": [
+        "supporting.standard_form.power10_exponent"
+      ],
+      "content": {
+        "concept": "Standard form represents scale using a coefficient and an integer power of ten.",
+        "workedExample": "4,000,000 = 4 × 10^6.",
+        "solution": "Move the decimal point to form a coefficient between 1 and 10 and count places to determine the power of ten.",
+        "commonMistake": "Do not use the wrong sign on the exponent for large versus small numbers.",
+        "summary": "Use powers of ten to represent numerical scale."
+      }
+    },
+    {
+      "id": "surds",
+      "titlePatterns": [
+        "surds",
+        "exact values",
+        "niewymier",
+        "pierwiastki.*dokład"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.surds.core",
+      "mechanic": "SURDS",
+      "families": [
+        "supporting.surds.coefficient"
+      ],
+      "content": {
+        "concept": "Surds keep irrational square roots in exact form and can often be simplified by extracting square factors.",
+        "workedExample": "√72=√(36×2)=6√2.",
+        "solution": "Factor the radicand into a perfect square times a square-free factor.",
+        "commonMistake": "Do not replace an exact surd with a rounded decimal when exact form is required.",
+        "summary": "Extract perfect-square factors while keeping irrational parts exact."
+      }
+    },
+    {
+      "id": "exponential-log",
+      "titlePatterns": [
+        "exponential",
+        "logarith",
+        "wykładnicz",
+        "wykladnicz",
+        "logarytm"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.exponentials_logs",
+      "mechanic": "EXP_LOG",
+      "families": [
+        "supporting.exponentials.solve_exponent",
+        "supporting.logarithms.evaluate"
+      ],
+      "content": {
+        "concept": "Exponential and logarithmic statements are inverse descriptions of the same power relationship.",
+        "workedExample": "2^5=32, so log base 2 of 32 is 5.",
+        "solution": "Rewrite both forms using the same base and identify the exponent.",
+        "commonMistake": "Do not confuse the logarithm base with the argument.",
+        "summary": "Use the inverse relationship between powers and logarithms."
+      }
+    },
+    {
+      "id": "perimeter-area",
+      "titlePatterns": [
+        "^perimeter$",
+        "perimeter of",
+        "area of rectangles",
+        "perimeter and area"
+      ],
+      "codePatterns": [],
+      "skillId": "geometry.perimeter_area",
+      "mechanic": "PERIMETER_AREA",
+      "families": [
+        "geometry.perimeter_area.rectangle_area",
+        "geometry.perimeter_area.rectangle_perimeter",
+        "geometry.perimeter_area.rectangle_missing_side"
+      ],
+      "content": {
+        "concept": "Perimeter measures boundary length while area measures enclosed surface.",
+        "workedExample": "A rectangle 8 by 5 has perimeter 26 and area 40.",
+        "solution": "Use P=2(l+w) for rectangle perimeter and A=lw for rectangle area, keeping units distinct.",
+        "commonMistake": "Do not use an area formula when the question asks for perimeter.",
+        "summary": "Choose the measure and formula that match the geometric quantity."
+      }
+    },
+    {
+      "id": "triangle-parallelogram-area",
+      "titlePatterns": [
+        "area of triangles",
+        "area of parallelograms",
+        "area of triangles and parallelograms"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.area_volume",
+      "mechanic": "PLANE_AREA",
+      "families": [
+        "geometry.perimeter_area.triangle_area",
+        "supporting.geometry.parallelogram_area"
+      ],
+      "content": {
+        "concept": "Triangle and parallelogram area depend on a base and its perpendicular height.",
+        "workedExample": "A triangle with base 10 and height 6 has area 30; a parallelogram with the same base and height has area 60.",
+        "solution": "Use 1/2 bh for a triangle and bh for a parallelogram.",
+        "commonMistake": "Do not use a sloping side as the perpendicular height.",
+        "summary": "Match base with its perpendicular height."
+      }
+    },
+    {
+      "id": "compound-area",
+      "titlePatterns": [
+        "compound shapes",
+        "area of compound",
+        "composite area"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.area_volume",
+      "mechanic": "COMPOUND_AREA",
+      "families": [
+        "supporting.geometry.compound_area"
+      ],
+      "content": {
+        "concept": "Compound area can be found by splitting a shape into non-overlapping familiar shapes.",
+        "workedExample": "Two rectangles with areas 24 and 15 have total area 39.",
+        "solution": "Partition the shape, calculate each component area, and add without double-counting overlap.",
+        "commonMistake": "Do not count shared or overlapping regions twice.",
+        "summary": "Decompose complex shapes into familiar areas."
+      }
+    },
+    {
+      "id": "volume",
+      "titlePatterns": [
+        "volume by cubes",
+        "volume of cuboids",
+        "surface area and volume",
+        "stereometria",
+        "solid geometry"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.solid",
+      "mechanic": "SOLID_GEOMETRY",
+      "families": [
+        "supporting.geometry.cuboid_volume",
+        "supporting.geometry.solid.mixed"
+      ],
+      "content": {
+        "concept": "Volume measures three-dimensional space and is expressed in cubic units.",
+        "workedExample": "A cuboid 5×4×3 has volume 60 cubic units.",
+        "solution": "Multiply the three perpendicular dimensions for a cuboid and distinguish volume from surface area.",
+        "commonMistake": "Do not use square units for volume.",
+        "summary": "Use three-dimensional dimensions and cubic units."
+      }
+    },
+    {
+      "id": "angle-basic",
+      "titlePatterns": [
+        "angles as turns",
+        "angle classification",
+        "angles around a point"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.angles",
+      "mechanic": "ANGLES",
+      "families": [
+        "supporting.geometry.angle_classify",
+        "supporting.geometry.angle_around_point"
+      ],
+      "content": {
+        "concept": "Angles measure turn; standard angle sums and classifications give exact constraints.",
+        "workedExample": "Angles around a point sum to 360°, and a 120° angle is obtuse.",
+        "solution": "Compare with 90°/180° for classification or subtract known angles from the required full sum.",
+        "commonMistake": "Do not confuse a straight-line total of 180° with a full-turn total of 360°.",
+        "summary": "Use standard angle benchmarks and sums."
+      }
+    },
+    {
+      "id": "angles-polygons",
+      "titlePatterns": [
+        "angles in polygons",
+        "polygons",
+        "wielokąt",
+        "wielokat"
+      ],
+      "codePatterns": [],
+      "skillId": "geometry.polygons.angle_sum",
+      "mechanic": "POLYGON_ANGLES",
+      "families": [
+        "geometry.polygons.interior_angle_sum",
+        "geometry.polygons.missing_interior_angle",
+        "geometry.polygons.regular_interior_angle"
+      ],
+      "content": {
+        "concept": "Polygon interior-angle sums follow from dividing an n-sided polygon into n−2 triangles.",
+        "workedExample": "A quadrilateral has interior-angle sum 360°.",
+        "solution": "Use (n−2)×180° and subtract known angles when one is missing.",
+        "commonMistake": "Do not use 360° as the interior sum for every polygon.",
+        "summary": "Connect polygon sides to interior-angle sums."
+      }
+    },
+    {
+      "id": "parallel-perpendicular",
+      "titlePatterns": [
+        "parallel and perpendicular",
+        "parallel lines",
+        "prostopad",
+        "równoleg",
+        "rownoleg"
+      ],
+      "codePatterns": [],
+      "skillId": "geometry.angles.relationships",
+      "mechanic": "PARALLEL_PERPENDICULAR",
+      "families": [
+        "geometry.angles.parallel_lines",
+        "geometry.angles.supplementary"
+      ],
+      "content": {
+        "concept": "Parallel and perpendicular line relationships impose exact angle constraints.",
+        "workedExample": "Corresponding angles on parallel lines are equal; adjacent angles on a straight line sum to 180°.",
+        "solution": "Identify the geometric relationship first, then apply the appropriate equality or supplementary rule.",
+        "commonMistake": "Do not assume angle equality without a justified line relationship.",
+        "summary": "Use line relationships to justify angle facts."
+      }
+    },
+    {
+      "id": "congruence-similarity",
+      "titlePatterns": [
+        "congruence and similarity",
+        "congruen",
+        "similarity",
+        "przystaw",
+        "podobień",
+        "podobien"
+      ],
+      "codePatterns": [],
+      "skillId": "geometry.similarity",
+      "mechanic": "CONGRUENCE_SIMILARITY",
+      "families": [
+        "geometry.similarity.find_missing_length",
+        "geometry.similarity.scale_factor"
+      ],
+      "content": {
+        "concept": "Similar shapes preserve angles and scale corresponding lengths by a common factor; congruent shapes have equal corresponding measures.",
+        "workedExample": "If a corresponding length changes from 4 to 10, the scale factor is 2.5.",
+        "solution": "Match corresponding parts and use one consistent scale factor.",
+        "commonMistake": "Do not pair non-corresponding sides.",
+        "summary": "Use correspondence and scale consistently."
+      }
+    },
+    {
+      "id": "transformations",
+      "titlePatterns": [
+        "transformations",
+        "translation",
+        "reflection",
+        "rotation",
+        "symmetry",
+        "line symmetry",
+        "przekształcen",
+        "przeksztalcen",
+        "symetr"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.transformations",
+      "mechanic": "TRANSFORMATIONS",
+      "families": [
+        "supporting.geometry.translate_point",
+        "supporting.geometry.reflect_axis",
+        "supporting.geometry.rotate90",
+        "supporting.transformations.mixed"
+      ],
+      "content": {
+        "concept": "Transformations move points according to exact coordinate rules while preserving specified geometric properties.",
+        "workedExample": "Translating (2,−1) by <3,4> gives (5,3).",
+        "solution": "Apply the transformation rule to each coordinate and check the stated centre, axis or vector.",
+        "commonMistake": "Do not change both coordinate signs for every reflection.",
+        "summary": "Apply coordinate transformation rules exactly."
+      }
+    },
+    {
+      "id": "coordinates",
+      "titlePatterns": [
+        "coordinates in",
+        "coordinates and translation",
+        "coordinate geometry",
+        "geometria analityczna",
+        "midpoint",
+        "distance formula"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.analytic",
+      "mechanic": "COORDINATE_GEOMETRY",
+      "families": [
+        "supporting.geometry.midpoint",
+        "supporting.geometry.axis_distance",
+        "supporting.geometry.analytic.mixed"
+      ],
+      "content": {
+        "concept": "Coordinate geometry represents position and geometric relationships numerically.",
+        "workedExample": "The midpoint of (2,4) and (8,10) is (5,7).",
+        "solution": "Operate on corresponding coordinates and use differences or averages as required.",
+        "commonMistake": "Do not mix x- and y-coordinates.",
+        "summary": "Use ordered pairs consistently in coordinate calculations."
+      }
+    },
+    {
+      "id": "straight-line-graphs",
+      "titlePatterns": [
+        "straight-line graphs",
+        "straight line graphs",
+        "linear graphs",
+        "gradient",
+        "slope"
+      ],
+      "codePatterns": [],
+      "skillId": "geometry.coordinate.straight_line",
+      "mechanic": "STRAIGHT_LINE",
+      "families": [
+        "geometry.coordinate.gradient_between_points",
+        "geometry.coordinate.evaluate_linear_rule",
+        "geometry.coordinate.y_intercept_from_rule"
+      ],
+      "content": {
+        "concept": "A straight line can be described by its gradient and intercept and tested by coordinate substitution.",
+        "workedExample": "For y=2x+3, x=4 gives y=11 and the y-intercept is 3.",
+        "solution": "Use change in y over change in x for gradient and substitute coordinates into y=mx+c.",
+        "commonMistake": "Do not confuse the x-intercept with the y-intercept.",
+        "summary": "Connect equation, gradient, intercept and coordinates."
+      }
+    },
+    {
+      "id": "circles",
+      "titlePatterns": [
+        "circles",
+        "circle geometry",
+        "okręg",
+        "okrag",
+        "koło",
+        "kolo"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.circles_loci",
+      "mechanic": "CIRCLES",
+      "families": [
+        "supporting.geometry.circle_circumference_pi_coefficient",
+        "supporting.geometry.circle_area_pi_coefficient"
+      ],
+      "content": {
+        "concept": "Circle measures use radius with exact multiples of π.",
+        "workedExample": "For radius 5, circumference is 10π and area is 25π.",
+        "solution": "Use C=2πr and A=πr², keeping π exact unless approximation is requested.",
+        "commonMistake": "Do not use diameter in place of radius without converting.",
+        "summary": "Use radius correctly in exact circle formulas."
+      }
+    },
+    {
+      "id": "loci-construction",
+      "titlePatterns": [
+        "constructions and loci",
+        "loci",
+        "construction",
+        "konstrukcj"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.circles_loci",
+      "mechanic": "LOCI",
+      "families": [
+        "supporting.geometry.locus_equidistant"
+      ],
+      "content": {
+        "concept": "A locus is the set of all points satisfying a geometric condition.",
+        "workedExample": "Points equidistant from two fixed points lie on the perpendicular bisector of the segment joining them.",
+        "solution": "Translate the condition into a standard locus and verify every point on it satisfies the condition.",
+        "commonMistake": "Do not identify a single point when the condition defines a whole set.",
+        "summary": "Describe loci as complete sets satisfying a condition."
+      }
+    },
+    {
+      "id": "trigonometry",
+      "titlePatterns": [
+        "trigonometric ratios",
+        "trigonometry",
+        "trygonometr",
+        "extended trigonometric"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.trigonometry.core",
+      "mechanic": "TRIGONOMETRY",
+      "families": [
+        "supporting.trigonometry.core.mixed"
+      ],
+      "content": {
+        "concept": "Right-triangle trigonometry relates an acute angle to ratios of side lengths.",
+        "workedExample": "If opposite=3 and hypotenuse=5, sin θ=3/5.",
+        "solution": "Identify opposite, adjacent and hypotenuse relative to the angle, then choose sine, cosine or tangent.",
+        "commonMistake": "Do not label sides without reference to the chosen angle.",
+        "summary": "Choose the trigonometric ratio from the relevant side pair."
+      }
+    },
+    {
+      "id": "mean-median-range",
+      "titlePatterns": [
+        "mean, median",
+        "mean median",
+        "averages from small data",
+        "średnia",
+        "srednia",
+        "mediana",
+        "range"
+      ],
+      "codePatterns": [],
+      "skillId": "statistics.center_spread.core",
+      "mechanic": "CENTER_SPREAD",
+      "families": [
+        "statistics.center_spread.mean",
+        "statistics.center_spread.median",
+        "statistics.center_spread.range"
+      ],
+      "content": {
+        "concept": "Mean, median and range describe centre and spread in different ways.",
+        "workedExample": "For 2,4,4,7,8 the median is 4 and the range is 6.",
+        "solution": "Order data for median/range; add and divide by count for mean.",
+        "commonMistake": "Do not calculate median before ordering the data.",
+        "summary": "Choose the correct statistic and calculate it from the original data."
+      }
+    },
+    {
+      "id": "charts-tables",
+      "titlePatterns": [
+        "bar charts",
+        "line graphs",
+        "tables and charts",
+        "tables and scales",
+        "interpreting tables",
+        "interpreting data",
+        "chart",
+        "wykres",
+        "tabela"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.charts",
+      "mechanic": "CHARTS_TABLES",
+      "families": [
+        "supporting.statistics.table_total",
+        "supporting.statistics.charts.mixed"
+      ],
+      "content": {
+        "concept": "Tables and charts encode numerical data using labels, scales and frequencies.",
+        "workedExample": "If category frequencies are 4,7,5,4, the total frequency is 20.",
+        "solution": "Read the scale and labels first, then extract or combine the required values.",
+        "commonMistake": "Do not infer values from bar height without checking the axis scale.",
+        "summary": "Read data displays using their labels and scales."
+      }
+    },
+    {
+      "id": "pie-chart",
+      "titlePatterns": [
+        "pie charts",
+        "pie chart",
+        "diagram koł",
+        "diagram kol"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.charts",
+      "mechanic": "PIE_CHART",
+      "families": [
+        "supporting.statistics.pie_sector_angle"
+      ],
+      "content": {
+        "concept": "A pie-chart sector represents the same fraction of 360° as its category represents of the total.",
+        "workedExample": "If 15 of 60 items belong to a category, its sector is 90°.",
+        "solution": "Compute category/total × 360° and check all sectors sum to 360°.",
+        "commonMistake": "Do not use percentages as degrees without multiplying by 360.",
+        "summary": "Convert category proportions to sector angles."
+      }
+    },
+    {
+      "id": "scatter",
+      "titlePatterns": [
+        "scatter graphs",
+        "scatter plot",
+        "correlation",
+        "korelac"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.scatter",
+      "mechanic": "SCATTER",
+      "families": [
+        "supporting.statistics.scatter_correlation"
+      ],
+      "content": {
+        "concept": "Scatter graphs show association between two numerical variables.",
+        "workedExample": "If y tends to increase as x increases, the association is positive.",
+        "solution": "Judge the overall direction of the point cloud, not individual exceptions.",
+        "commonMistake": "Do not claim causation from correlation alone.",
+        "summary": "Describe the overall association shown by the scatter."
+      }
+    },
+    {
+      "id": "collecting-data",
+      "titlePatterns": [
+        "collecting data",
+        "data collection",
+        "sampling",
+        "próba",
+        "proba badawcza"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.data_collection",
+      "mechanic": "DATA_COLLECTION",
+      "families": [
+        "supporting.statistics.collection_method"
+      ],
+      "content": {
+        "concept": "Data collection distinguishes a whole-population census from a sample and requires a method suited to the question.",
+        "workedExample": "Surveying all 800 students is a census; surveying 80 selected students is a sample.",
+        "solution": "Identify the target population and determine whether all or only part is observed.",
+        "commonMistake": "Do not call a convenience subset a census.",
+        "summary": "Match the collection method to the population and purpose."
+      }
+    },
+    {
+      "id": "experimental-probability",
+      "titlePatterns": [
+        "experimental probability",
+        "relative frequency",
+        "częstość względ",
+        "czestosc wzgled"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.experimental_probability",
+      "mechanic": "EXPERIMENTAL_PROBABILITY",
+      "families": [
+        "supporting.statistics.experimental_probability"
+      ],
+      "content": {
+        "concept": "Experimental probability estimates chance from observed relative frequency.",
+        "workedExample": "If an event occurs 18 times in 60 trials, the experimental probability is 18/60=3/10.",
+        "solution": "Divide observed successes by total trials and simplify.",
+        "commonMistake": "Do not use theoretical equally-likely counts when the question gives experimental results.",
+        "summary": "Estimate probability from observed relative frequency."
+      }
+    },
+    {
+      "id": "sample-spaces",
+      "titlePatterns": [
+        "sample spaces",
+        "sample space",
+        "przestrzeń zdarzeń",
+        "przestrzen zdarzen"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.probability.sample_space",
+      "mechanic": "SAMPLE_SPACE",
+      "families": [
+        "supporting.probability.sample_space_count"
+      ],
+      "content": {
+        "concept": "A sample space lists every possible outcome of an experiment.",
+        "workedExample": "If one experiment has 3 outcomes and another has 4, the combined ordered sample space has 12 outcomes.",
+        "solution": "Use systematic listing or the product rule so no outcome is omitted or repeated.",
+        "commonMistake": "Do not add independent outcome counts when ordered pairs are required.",
+        "summary": "Count all possible outcomes systematically."
+      }
+    },
+    {
+      "id": "distribution-compare",
+      "titlePatterns": [
+        "comparing distributions",
+        "compare distributions",
+        "distribution spread",
+        "porównywanie rozkład",
+        "porownywanie rozklad"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.distributions",
+      "mechanic": "DISTRIBUTIONS",
+      "families": [
+        "supporting.statistics.compare_range"
+      ],
+      "content": {
+        "concept": "Distributions can be compared using measures of centre and spread.",
+        "workedExample": "A distribution with range 12 is more spread by range than one with range 7.",
+        "solution": "Calculate the same statistic for each distribution before comparing.",
+        "commonMistake": "Do not compare different measures as if they were interchangeable.",
+        "summary": "Compare like-for-like measures of centre or spread."
+      }
+    },
+    {
+      "id": "theoretical-probability",
+      "titlePatterns": [
+        "theoretical probability",
+        "single-event probability",
+        "probability of an event",
+        "prawdopodobieństwo",
+        "prawdopodobienstwo"
+      ],
+      "codePatterns": [],
+      "skillId": "probability.theoretical.core",
+      "mechanic": "THEORETICAL_PROBABILITY",
+      "families": [
+        "probability.theoretical.simple_event",
+        "probability.theoretical.complement",
+        "probability.theoretical.two_coins_exactly_one"
+      ],
+      "content": {
+        "concept": "Theoretical probability uses a defined sample space and favourable outcomes.",
+        "workedExample": "With 3 red counters among 8 equally likely counters, P(red)=3/8.",
+        "solution": "Count favourable and total equally likely outcomes and form an exact fraction.",
+        "commonMistake": "Do not assume outcomes are equally likely unless the model supports it.",
+        "summary": "Build probability from the sample space and favourable outcomes."
+      }
+    },
+    {
+      "id": "conditional-probability",
+      "titlePatterns": [
+        "conditional probability",
+        "given that"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.probability.conditional",
+      "mechanic": "CONDITIONAL_PROBABILITY",
+      "families": [
+        "supporting.probability.conditional_simple"
+      ],
+      "content": {
+        "concept": "Conditional probability restricts the sample space to outcomes satisfying the given condition.",
+        "workedExample": "If 4 of 10 B-outcomes also satisfy A, then P(A|B)=4/10=2/5.",
+        "solution": "Use the B subset as the new denominator and A∩B as the numerator.",
+        "commonMistake": "Do not divide by the original total after conditioning.",
+        "summary": "Restrict the sample space before calculating conditional probability."
+      }
+    },
+    {
+      "id": "combinatorics",
+      "titlePatterns": [
+        "combinatorics",
+        "combinations",
+        "permutations",
+        "kombinatory"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.combinatorics.core",
+      "mechanic": "COMBINATORICS",
+      "families": [
+        "supporting.combinatorics.choose_two"
+      ],
+      "content": {
+        "concept": "Combinatorics counts selections systematically without listing every case.",
+        "workedExample": "The number of unordered pairs from 6 objects is 6×5/2=15.",
+        "solution": "Use a counting principle that matches whether order matters.",
+        "commonMistake": "Do not count the same unordered selection in both orders.",
+        "summary": "Count selections systematically and account for order."
+      }
+    },
+    {
+      "id": "calculus",
+      "titlePatterns": [
+        "calculus",
+        "differentiation",
+        "derivative",
+        "integration",
+        "integral",
+        "rachunek różniczkowy",
+        "rachunek rozniczkowy",
+        "optymalizacja"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.calculus.core",
+      "mechanic": "CALCULUS",
+      "families": [
+        "supporting.calculus.derivative_value",
+        "supporting.calculus.definite_integral_linear",
+        "supporting.calculus.optimization"
+      ],
+      "content": {
+        "concept": "Calculus describes rates of change, accumulated change and optimization.",
+        "workedExample": "For f(x)=3x²+2x, f'(x)=6x+2.",
+        "solution": "Apply exact differentiation or integration rules, or use vertex structure for an elementary optimization model.",
+        "commonMistake": "Do not mix derivative and original-function values.",
+        "summary": "Use exact calculus rules and verify against the original function."
+      }
+    },
+    {
+      "id": "vectors",
+      "titlePatterns": [
+        "vectors?",
+        "wektor"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.analytic",
+      "mechanic": "VECTORS",
+      "families": [
+        "supporting.geometry.translate_point",
+        "supporting.geometry.midpoint"
+      ],
+      "content": {
+        "concept": "Vectors represent directed displacement using components.",
+        "workedExample": "Adding <3,−1> to point (2,4) gives (5,3).",
+        "solution": "Operate componentwise and keep horizontal and vertical components in order.",
+        "commonMistake": "Do not swap vector components.",
+        "summary": "Treat vectors as ordered components with direction."
+      }
+    },
+    {
+      "id": "matrices",
+      "titlePatterns": [
+        "matrices",
+        "matrix",
+        "macierz"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.matrices.core",
+      "mechanic": "MATRICES",
+      "families": [
+        "supporting.matrices.determinant2"
+      ],
+      "content": {
+        "concept": "A matrix is an ordered rectangular array; a 2×2 determinant is ad−bc.",
+        "workedExample": "For [[2,3],[1,5]], determinant=10−3=7.",
+        "solution": "Multiply diagonal pairs in the determinant formula and subtract in the correct order.",
+        "commonMistake": "Do not add the diagonal products.",
+        "summary": "Preserve row-column order in matrix calculations."
+      }
+    },
+    {
+      "id": "complex",
+      "titlePatterns": [
+        "complex numbers",
+        "complex",
+        "liczby zespol"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.complex.core",
+      "mechanic": "COMPLEX",
+      "families": [
+        "supporting.complex.add_real_part",
+        "supporting.complex.multiply_real_part"
+      ],
+      "content": {
+        "concept": "Complex numbers combine real and imaginary parts with i²=−1.",
+        "workedExample": "(2+3i)+(4−i)=6+2i.",
+        "solution": "Combine like real/imaginary parts; when multiplying, replace i² by −1.",
+        "commonMistake": "Do not treat i² as +1.",
+        "summary": "Use real-imaginary structure and i²=−1."
+      }
+    },
+    {
+      "id": "mechanics",
+      "titlePatterns": [
+        "kinematics",
+        "mechanics",
+        "acceleration",
+        "newton",
+        "momentum",
+        "impulse",
+        "work energy",
+        "power in mechanics",
+        "ruch",
+        "dynamik"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.mechanics.core",
+      "mechanic": "MECHANICS",
+      "families": [
+        "supporting.mechanics.constant_acceleration_velocity"
+      ],
+      "content": {
+        "concept": "Mechanics models motion using quantities with units and signed relationships.",
+        "workedExample": "If u=5 m/s, a=2 m/s² and t=4 s, then v=u+at=13 m/s.",
+        "solution": "Identify the known physical quantities, choose a dimensionally valid equation, substitute and keep units.",
+        "commonMistake": "Do not ignore the sign of acceleration.",
+        "summary": "Model motion with equations and consistent units."
+      }
+    },
+    {
+      "id": "polish-planimetry",
+      "titlePatterns": [
+        "^planimetria$",
+        "plane geometry"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.plane",
+      "mechanic": "PLANE_GEOMETRY",
+      "families": [
+        "supporting.geometry.plane.mixed"
+      ],
+      "content": {
+        "concept": "Plane geometry studies exact relationships among two-dimensional lengths, angles and areas.",
+        "workedExample": "A triangle with base 8 and height 5 has area 20.",
+        "solution": "Choose an appropriate plane-geometry relationship, calculate exactly and verify units or angle sums.",
+        "commonMistake": "Do not apply a formula without matching its geometric conditions.",
+        "summary": "Use exact angle and area relationships in the plane."
+      }
+    },
+    {
+      "id": "polish-stereometry",
+      "titlePatterns": [
+        "^stereometria$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.solid",
+      "mechanic": "SOLID_GEOMETRY",
+      "families": [
+        "supporting.geometry.solid.mixed"
+      ],
+      "content": {
+        "concept": "Solid geometry studies three-dimensional lengths, areas and volumes.",
+        "workedExample": "A rectangular prism 4×3×5 has volume 60.",
+        "solution": "Identify perpendicular dimensions and choose the correct surface or volume relationship.",
+        "commonMistake": "Do not confuse square and cubic units.",
+        "summary": "Reason about three-dimensional measures with correct units."
+      }
+    },
+    {
+      "id": "polish-analytic-geometry",
+      "titlePatterns": [
+        "geometria analityczna"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.analytic",
+      "mechanic": "ANALYTIC_GEOMETRY",
+      "families": [
+        "supporting.geometry.analytic.mixed"
+      ],
+      "content": {
+        "concept": "Analytic geometry uses coordinates to express geometric relationships exactly.",
+        "workedExample": "The midpoint of (0,2) and (6,8) is (3,5).",
+        "solution": "Translate geometry into coordinate operations and check the resulting point or distance.",
+        "commonMistake": "Do not mix coordinate positions.",
+        "summary": "Use coordinates to calculate geometric relationships."
+      }
+    },
+    {
+      "id": "polish-real-numbers",
+      "titlePatterns": [
+        "^liczby rzeczywiste$",
+        "real numbers"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "REAL_NUMBERS",
+      "families": [
+        "supporting.number.real.mixed"
+      ],
+      "content": {
+        "concept": "Real-number work combines exact arithmetic, factors, rounding and numerical structure.",
+        "workedExample": "The greatest common factor of 18 and 30 is 6.",
+        "solution": "Identify the numerical structure required and use an exact arithmetic method before approximating.",
+        "commonMistake": "Do not approximate when an exact result is available.",
+        "summary": "Use exact real-number structure before rounding."
+      }
+    },
+    {
+      "id": "polish-sequences",
+      "titlePatterns": [
+        "^ciągi$",
+        "^ciagi$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.sequences.core",
+      "mechanic": "SEQUENCES",
+      "families": [
+        "supporting.sequences.core.mixed"
+      ],
+      "content": {
+        "concept": "A sequence is an ordered list generated by a rule.",
+        "workedExample": "For 3,7,11,... the nth term is 3+(n−1)4.",
+        "solution": "Identify the common difference or ratio and use the corresponding term rule.",
+        "commonMistake": "Do not infer a rule from only one step.",
+        "summary": "Use the sequence rule to calculate exact terms."
+      }
+    },
+    {
+      "id": "mixed-probability-statistics",
+      "titlePatterns": [
+        "probability and statistics",
+        "prawdopodobieństwo i statystyka",
+        "prawdopodobienstwo i statystyka"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.probability_statistics.core",
+      "mechanic": "PROBABILITY_STATISTICS",
+      "families": [
+        "supporting.probability_statistics.mixed"
+      ],
+      "content": {
+        "concept": "Probability and statistics quantify uncertainty and summarize data.",
+        "workedExample": "A probability can be favourable/total, while a mean is total data divided by count.",
+        "solution": "Identify whether the task concerns a chance model or observed data, then apply the matching exact calculation.",
+        "commonMistake": "Do not mix probability denominators with data-set counts.",
+        "summary": "Distinguish chance calculations from statistical summaries."
+      }
+    }
+  ]
+}
