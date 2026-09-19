@@ -97,7 +97,19 @@ public sealed class UniversalMathematicsQuestionGenerationEngine
             var itemType = itemTypes[index];
 
             GeneratedMathematicsItem? candidate = null;
-            if (!profile.IsContextualAssisted &&
+            if (profile.HasExactSkillContract)
+            {
+                candidate = GenerateExactSkillContract(
+                    blueprint,
+                    profile,
+                    difficulty,
+                    blueprintFamily,
+                    itemType,
+                    request.Seed,
+                    index,
+                    excluded.Concat(generated).ToArray());
+            }
+            else if (!profile.IsContextualAssisted &&
                 profile.AllowedFamilies.Count > 0 &&
                 profile.AllowedFamilies.All(x => x != MathematicsGeneratorFamily.CurriculumContextCheck))
             {
@@ -111,6 +123,9 @@ public sealed class UniversalMathematicsQuestionGenerationEngine
                     index,
                     excluded.Concat(generated).ToArray());
             }
+
+            if (candidate is null && profile.HasExactSkillContract)
+                throw new InvalidOperationException("Exact Mathematics capability could not produce a verified item.");
 
             candidate ??= GenerateContextualUnique(
                 blueprint,
