@@ -64,6 +64,61 @@ public static class ExactMathematicsCapabilityResolver
                 "ExactFractionRepresentation");
         }
 
+        if (ContainsAny(text, "RATIO AND PROPORTION", "RATIO & PROPORTION"))
+        {
+            return Exact(
+                "ratio.unit_rate",
+                [
+                    "ratio.unit_rate.direct",
+                    "ratio.unit_rate.equivalent_ratio",
+                    "ratio.unit_rate.divide_total"
+                ],
+                "ExactRatioAndProportion");
+        }
+
+        if (ContainsAny(text, "RATES", "UNIT RATE", "UNIT RATES"))
+        {
+            return Exact(
+                "ratio.unit_rate",
+                ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
+                "ExactRates");
+        }
+
+        if (ContainsAny(text, "MEAN, MEDIAN AND RANGE", "MEAN MEDIAN AND RANGE"))
+        {
+            return Exact(
+                "statistics.center_spread.core",
+                [
+                    "statistics.center_spread.mean",
+                    "statistics.center_spread.median",
+                    "statistics.center_spread.range"
+                ],
+                "ExactCenterAndSpread");
+        }
+
+        if (ContainsAny(text, "THEORETICAL PROBABILITY"))
+        {
+            return Exact(
+                "probability.theoretical.core",
+                [
+                    "probability.theoretical.simple_event",
+                    "probability.theoretical.complement",
+                    "probability.theoretical.two_coins_exactly_one"
+                ],
+                "ExactTheoreticalProbability");
+        }
+
+        if (ContainsAny(text, "SINGLE-EVENT PROBABILITY", "SINGLE EVENT PROBABILITY"))
+        {
+            return Exact(
+                "probability.theoretical.core",
+                [
+                    "probability.theoretical.simple_event",
+                    "probability.theoretical.complement"
+                ],
+                "ExactSingleEventProbability");
+        }
+
         // Exact algebra
         if (ContainsAny(text, "LINEAR INEQUALITY", "LINEAR INEQUALITIES") ||
             (text.Contains("INEQUALIT", StringComparison.Ordinal) &&
@@ -219,7 +274,11 @@ public static class ExactMathematicsCapabilityResolver
         {
             return Exact(
                 "geometry.coordinate.straight_line",
-                ["geometry.coordinate.gradient_between_points"],
+                [
+                    "geometry.coordinate.gradient_between_points",
+                    "geometry.coordinate.evaluate_linear_rule",
+                    "geometry.coordinate.y_intercept_from_rule"
+                ],
                 "ExactCoordinateGeometry");
         }
 
