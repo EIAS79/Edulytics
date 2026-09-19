@@ -748,6 +748,142 @@
       "v2Status": "Blocked",
       "v2Capabilities": [],
       "v2QuestionFamilies": []
+    },
+    {
+      "id": "geometry.coordinate.straight_line",
+      "domain": "geometry",
+      "canonicalName": "Reason with coordinates and straight-line gradients",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.coordinate.gradient_between_points"
+      ]
+    },
+    {
+      "id": "geometry.angles.relationships",
+      "domain": "geometry",
+      "canonicalName": "Use angle relationships in lines and parallel-line configurations",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.angles.parallel_lines",
+        "geometry.angles.supplementary"
+      ]
+    },
+    {
+      "id": "geometry.similarity",
+      "domain": "geometry",
+      "canonicalName": "Use similarity and scale factors for corresponding lengths",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.similarity.find_missing_length",
+        "geometry.similarity.scale_factor"
+      ]
+    },
+    {
+      "id": "geometry.congruence",
+      "domain": "geometry",
+      "canonicalName": "Identify valid triangle congruence criteria",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.congruence.identify_criterion"
+      ]
+    },
+    {
+      "id": "geometry.surface_area",
+      "domain": "geometry",
+      "canonicalName": "Calculate surface area of three-dimensional solids",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.surface_area.rectangular_prism"
+      ]
+    },
+    {
+      "id": "geometry.volume",
+      "domain": "geometry",
+      "canonicalName": "Calculate volume of three-dimensional solids",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.volume.rectangular_prism"
+      ]
+    },
+    {
+      "id": "geometry.surface_area_volume",
+      "domain": "geometry",
+      "canonicalName": "Reason about surface area and volume",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.surface_area.rectangular_prism",
+        "geometry.volume.rectangular_prism"
+      ]
+    },
+    {
+      "id": "geometry.perimeter_area",
+      "domain": "geometry",
+      "canonicalName": "Calculate perimeter and area of plane figures",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.rectangle.area.exact",
+        "geometry.rectangle.perimeter.exact"
+      ]
+    },
+    {
+      "id": "trigonometry.right_triangle.sin_cos_tan",
+      "domain": "trigonometry",
+      "canonicalName": "Use sine cosine and tangent in right triangles",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "trigonometry.right_triangle.ratio_exact",
+        "trigonometry.right_triangle.find_side_exact",
+        "trigonometry.right_triangle.find_angle_exact"
+      ]
+    },
+    {
+      "id": "trigonometry.modelling",
+      "domain": "trigonometry",
+      "canonicalName": "Model contextual right-triangle problems with trigonometry",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "trigonometry.modelling.contextual"
+      ]
     }
   ]
 }
