@@ -11,6 +11,12 @@
     <EmbeddedResource Include="Curriculum/Packs/*.integrity-manifest.json" />
     <EmbeddedResource Include="Curriculum/LessonContent/Packs/*.lesson-content-pack.json" />
     <EmbeddedResource Include="Curriculum/LessonBlueprints/Packs/*.lesson-blueprint.json" />
+    <EmbeddedResource Include="Mathematics/Curriculum/lesson-skill-mappings.v1.json"
+                      LogicalName="Edulytics.Core.Mathematics.Curriculum.lesson-skill-mappings.v1.json" />
+    <EmbeddedResource Include="Mathematics/Skills/skill-registry.v1.json"
+                      LogicalName="Edulytics.Core.Mathematics.Skills.skill-registry.v1.json" />
+    <EmbeddedResource Include="Mathematics/Generation/question-family-registry.v1.json"
+                      LogicalName="Edulytics.Core.Mathematics.Generation.question-family-registry.v1.json" />
   </ItemGroup>
 
 </Project>
