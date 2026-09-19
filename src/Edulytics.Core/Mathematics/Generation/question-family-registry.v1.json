@@ -1011,6 +1011,159 @@
       ],
       "status": "ShadowVerified",
       "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.within_one.build",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.within_one.apply",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.same_denominator.mixed.build",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.same_denominator.mixed.apply",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.related.build",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.related.apply",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.common_denominator.build",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.add_subtract.common_denominator.apply",
+      "version": 1,
+      "skillId": "fractions.add_subtract",
+      "requiredCapabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.compare.benchmark",
+      "version": 1,
+      "skillId": "fractions.compare.benchmark",
+      "requiredCapabilities": [
+        "fractions.compare.benchmark.exact",
+        "fractions.verify.compare.benchmark"
+      ],
+      "answerType": "relation",
+      "verificationPolicy": "independent-recompute-from-original-structured-parameters",
+      "representations": [
+        "symbolic",
+        "number_line_context"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
     }
   ]
 }
