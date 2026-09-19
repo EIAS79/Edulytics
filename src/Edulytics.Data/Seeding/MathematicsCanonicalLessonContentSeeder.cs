@@ -85,6 +85,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
 
             CambridgePrimaryStage6LessonContentCorrections
                 .ApplyApprovedCorrections(document);
+            SupportingLessonContentCorrections.Apply(document);
             CanonicalLessonContentPackContract.Validate(document);
             result.Add(document);
         }
@@ -103,6 +104,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         {
             CambridgePrimaryStage6LessonContentCorrections
                 .ApplyApprovedCorrections(document);
+            SupportingLessonContentCorrections.Apply(document);
             CanonicalLessonContentPackContract.Validate(document);
         }
 
