@@ -3884,6 +3884,25 @@
         "commonMistake": "Do not treat range as a measure of center.",
         "summary": "Center locates a distribution; variation describes spread."
       }
+    },
+    {
+      "id": "measurement-unit-iteration",
+      "titlePatterns": [
+        "^Measure length with equal units$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "UNIT_ITERATION",
+      "families": [
+        "supporting.measurement.unit_iteration"
+      ],
+      "content": {
+        "concept": "Length measurement counts equal-size units laid end-to-end with no gaps or overlaps.",
+        "workedExample": "If 8 equal unit tiles cover an object exactly, its length is 8 unit tiles.",
+        "solution": "Use identical units, place them end-to-end, and count how many span the object.",
+        "commonMistake": "Gaps, overlaps or unequal units invalidate the measurement.",
+        "summary": "Length in a chosen unit equals the number of equal units spanning the object."
+      }
     }
   ]
 }
