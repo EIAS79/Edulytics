@@ -197,13 +197,6 @@ def load_reviewed_official_rule_mappings(
                 outcome_resolutions.get(code)
                 for code in outcomes
             ]
-            if all(resolution is not None for resolution in resolved_outcomes):
-                mappings[lesson_code] = mapping_from_outcomes(
-                    lesson_code,
-                    outcomes,
-                    [resolution for resolution in resolved_outcomes if resolution is not None],
-                )
-                continue
 
             translation = choose_translation(lesson, academic_language)
             title = normalize_space(
@@ -267,8 +260,21 @@ def load_reviewed_official_rule_mappings(
                         candidates.append(rule)
 
                     if len(candidates) != 1:
-                        # Canonical evidence must yield one and only one reviewed
-                        # target. Ambiguity remains fail-closed.
+                        if all(
+                            resolution is not None
+                            for resolution in resolved_outcomes
+                        ):
+                            mappings[lesson_code] = mapping_from_outcomes(
+                                lesson_code,
+                                outcomes,
+                                [
+                                    resolution
+                                    for resolution in resolved_outcomes
+                                    if resolution is not None
+                                ],
+                            )
+                        # Canonical ambiguity/unclassified evidence never chooses
+                        # between targets. OutcomeCode mapping is the only fallback.
                         continue
                     match_mode = "UNIQUE_REVIEWED_CANONICAL_EVIDENCE"
 
