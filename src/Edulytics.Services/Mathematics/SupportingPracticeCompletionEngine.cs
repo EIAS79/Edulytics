@@ -20,6 +20,10 @@ internal static class SupportingPracticeCompletionEngine
             "supporting.number.order_operations",
             "supporting.number.gcf",
             "supporting.number.prime_factor",
+            "supporting.number.multiply",
+            "supporting.number.divide",
+            "supporting.number.lcm",
+            "supporting.decimals.place_value",
             "supporting.decimals.operation",
             "supporting.decimals.compare",
             "supporting.decimals.round",
@@ -108,6 +112,10 @@ internal static class SupportingPracticeCompletionEngine
             "supporting.number.order_operations" => OrderOperations(random, scale),
             "supporting.number.gcf" => GreatestCommonFactor(random, scale),
             "supporting.number.prime_factor" => LargestPrimeFactor(random, scale),
+            "supporting.number.multiply" => WholeMultiply(random, scale),
+            "supporting.number.divide" => WholeDivide(random, scale),
+            "supporting.number.lcm" => LeastCommonMultipleProblem(random, scale),
+            "supporting.decimals.place_value" => DecimalPlaceValue(random, scale),
             "supporting.decimals.operation" => DecimalOperation(random, scale),
             "supporting.decimals.compare" => DecimalCompare(random, scale),
             "supporting.decimals.round" => DecimalRound(random, scale),
@@ -192,6 +200,14 @@ internal static class SupportingPracticeCompletionEngine
                 Gcd(p["left"], p["right"]).ToString(CultureInfo.InvariantCulture),
             "supporting.number.prime_factor" =>
                 Math.Max(p["p"], p["q"]).ToString(CultureInfo.InvariantCulture),
+            "supporting.number.multiply" =>
+                (p["left"] * p["right"]).ToString(CultureInfo.InvariantCulture),
+            "supporting.number.divide" =>
+                (p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture),
+            "supporting.number.lcm" =>
+                Lcm(p["left"], p["right"]).ToString(CultureInfo.InvariantCulture),
+            "supporting.decimals.place_value" =>
+                p["digit"].ToString(CultureInfo.InvariantCulture),
             "supporting.decimals.operation" =>
                 FormatHundredths(p["leftHundredths"] + p["rightHundredths"]),
             "supporting.decimals.compare" =>
@@ -456,6 +472,48 @@ internal static class SupportingPracticeCompletionEngine
             $"The number {n} is a product of two prime factors. What is its largest prime factor?",
             "Factor the number into primes and select the larger prime factor; multiply the factors to verify the original number.",
             ("p", p), ("q", q), ("number", n));
+    }
+
+    private static Problem WholeMultiply(Random r, int s)
+    {
+        var left = r.Next(2, 20 + s * 30);
+        var right = r.Next(2, 10 + s * 8);
+        return P("supporting.number.multiply",
+            $"Calculate {left} × {right}.",
+            "Use place-value partitioning or a formal multiplication algorithm, then verify with division.",
+            ("left", left), ("right", right));
+    }
+
+    private static Problem WholeDivide(Random r, int s)
+    {
+        var divisor = r.Next(2, 10 + s * 4);
+        var quotient = r.Next(2, 20 + s * 20);
+        var dividend = divisor * quotient;
+        return P("supporting.number.divide",
+            $"Calculate {dividend} ÷ {divisor}.",
+            "Use a formal division method or known multiplication facts, then verify divisor × quotient = dividend.",
+            ("dividend", dividend), ("divisor", divisor));
+    }
+
+    private static Problem LeastCommonMultipleProblem(Random r, int s)
+    {
+        var a = r.Next(2, 7 + s);
+        var b = r.Next(2, 7 + s);
+        return P("supporting.number.lcm",
+            $"Find the least common multiple of {a} and {b}.",
+            "List multiples or use prime factors. The answer must be divisible by both numbers and be the smallest positive such number.",
+            ("left", a), ("right", b));
+    }
+
+    private static Problem DecimalPlaceValue(Random r, int s)
+    {
+        var whole = r.Next(0, 50 + s * 10);
+        var tenths = r.Next(0, 10);
+        var hundredths = r.Next(1, 10);
+        return P("supporting.decimals.place_value",
+            $"In {whole}.{tenths}{hundredths}, what digit is in the hundredths place?",
+            "The first digit after the decimal point is tenths and the second is hundredths.",
+            ("whole", whole), ("tenths", tenths), ("digit", hundredths));
     }
 
     private static Problem DecimalOperation(Random r, int s)
@@ -1312,6 +1370,9 @@ internal static class SupportingPracticeCompletionEngine
         var lower = value - remainder;
         return remainder * 2 < place ? lower : lower + place;
     }
+
+    private static int Lcm(int a, int b) =>
+        checked(Math.Abs(a / Gcd(a, b) * b));
 
     private static int Gcd(int a, int b)
     {
