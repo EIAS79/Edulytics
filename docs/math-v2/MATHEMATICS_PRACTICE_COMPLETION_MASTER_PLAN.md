@@ -1185,20 +1185,20 @@ Update this table in every material remediation PR.
 
 | Workstream | Status | Baseline | Target | Last verified |
 |---|---|---|---|---|
-| P1 Full Practice Matrix | ⬜ Not complete | Existing partial audits | 4,453 complete rows | 2026-09-19 |
+| P1 Full Practice Matrix | ✅ Complete | 4,453-row completion matrix generated; internal blockers 0 | 4,453 complete rows | 2026-09-19 PR #213 audit run #217 |
 | P2 Content Repair | ⬜ Not complete | 329 Supporting `CONTENT_WEAK`; broader catalogue weaknesses exist | 0 Practice-eligible `CONTENT_WEAK` | 2026-09-19 |
 | P3 Academic Mapping | ⬜ Not complete | 453 Supporting academic-review blockers | 0 unresolved Practice-eligible mappings | 2026-09-19 |
-| P4 Skill Ontology | 🟨 Partial | 65 skills | Full reusable target coverage | 2026-09-19 |
-| P5 Question Families | 🟨 Partial | 89 families; 48 skills have one family; 6 have zero | Approved coverage manifests complete | 2026-09-19 |
+| P4 Skill Ontology | 🟨 Partial | 69 skills; current registered skills have family metadata | Full reusable target coverage | 2026-09-19 PR #213 |
+| P5 Question Families | 🟨 Partial | 100 families; zero registered skills without family metadata | Approved coverage manifests complete | 2026-09-19 PR #213 |
 | P6 Geometry/Trig | 🟨 Partial | Initial exact families implemented | Curriculum-complete exact/visual coverage | 2026-09-19 |
-| P7 Vectors | 🟨 Partial | Addition + dot product foundation | Curriculum-complete vector coverage | 2026-09-19 |
+| P7 Vectors | 🟨 Partial | Add, subtract, scalar multiply, dot, magnitude, between-points + deterministic vector SVG | Curriculum-complete vector coverage | 2026-09-19 PR #213 |
 | P8 Other upper-grade domains | ⬜ Not complete | Narrow exact coverage | Curriculum-driven complete coverage | 2026-09-19 |
-| P9 Diagram/Visual Engine | ⬜ Not complete | Metadata exists; learner-facing rendering incomplete | Required visuals deterministic + validated | 2026-09-19 |
+| P9 Diagram/Visual Engine | 🟨 Partial | Deterministic SVG runtime wired to Practice for current geometry/trig/vector/fraction families | Required visuals deterministic + validated | 2026-09-19 PR #213 |
 | P10 Solver/Verifier/Equivalence | 🟨 Partial | Shared kernel exists | 100% enabled-family coverage | 2026-09-19 |
 | P11 Grade-aware Difficulty | 🟨 Partial | Difficulty bands exist | Structural grade-aware calibration | 2026-09-19 |
-| P12 Supporting blockers → zero | ⬜ Not complete | 69 ready / 1,280 blocked | 1,349 ready / 0 blocked | 2026-09-19 |
-| P13 Full catalogue completion | ⬜ Not complete | 78 ready / 4,375 not ready | 100% Practice-eligible ready | 2026-09-19 |
-| P14 CI + Dashboard | ⬜ Not complete | Existing audits/CI foundation | Permanent completion gates | 2026-09-19 |
+| P12 Supporting blockers → zero | 🟨 Partial | 81 ready / 1,268 blocked | 1,349 ready / 0 blocked | 2026-09-19 PR #213 audit run #217 |
+| P13 Full catalogue completion | 🟨 Partial | 90 ready / 4,363 not ready | 100% Practice-eligible ready | 2026-09-19 PR #213 audit run #217 |
+| P14 CI + Dashboard | 🟨 Partial | Full completion matrix + Supporting artifact generated in Mathematics Intelligence CI | Permanent completion gates | 2026-09-19 PR #213 |
 
 Legend:
 
@@ -1312,6 +1312,51 @@ A PR may improve the system without completing a workstream. In that case mark i
 ---
 
 # 29. Changelog
+
+## 2026-09-19 — PR #213 execution checkpoint
+
+Verified on Mathematics Intelligence Foundation run #217 at commit `7347359c380dbdb3d94cf99b334bc37cc994878b`; subsequent commit only closes the remaining three Skill-registry family-metadata gaps and must pass the same CI before merge.
+
+```text
+Full catalogue:
+  4,453 lessons
+  90 READY_VERIFIED
+  4,363 blocked/not READY_VERIFIED
+  completion 2.02%
+
+Supporting:
+  1,349 lessons
+  81 READY_VERIFIED
+  1,268 EXPLICITLY_BLOCKED
+
+Supporting blockers:
+  328 CONTENT_WEAK
+  443 ACADEMIC_REVIEW_REQUIRED
+  497 SOLVER_CAPABILITY_MISSING
+  0 REPRESENTATION_MISSING
+
+Registry:
+  69 skills
+  100 question families
+  104 capabilities
+  90 approved mappings
+  90 valid projected exact Practice contracts
+  0 internal completion-matrix blockers
+```
+
+Implemented in this checkpoint:
+
+- deterministic parameter-driven SVG Practice visuals without a database migration;
+- exact visual rendering for current geometry/trigonometry/vector/fraction families;
+- vector subtraction, scalar multiplication, magnitude and point-to-point vector families;
+- whole-number add/subtract, LCM, percentage-of-quantity and fraction-representation capabilities;
+- fail-closed projection from approved mapping manifests into learner-facing LessonPracticeContracts;
+- explicit family-level `lessonPracticeRouting` authorization;
+- full 4,453-row Practice completion matrix and Supporting completion artifact in CI.
+
+The programme is **not complete**: the remaining Supporting blockers continue to be treated as temporary protection, never as successful completion.
+
+---
 
 ## 2026-09-19 — Plan created
 
