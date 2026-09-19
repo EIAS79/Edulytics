@@ -57,12 +57,20 @@ def mapping_from_rule(
     source_type = (
         "OfficialReviewedExactTitleRule"
         if match_mode == "EXACT_TITLE"
-        else "OfficialReviewedUniqueTitleRule"
+        else (
+            "OfficialReviewedUniqueTitleRule"
+            if match_mode == "UNIQUE_REVIEWED_TITLE"
+            else "OfficialReviewedCanonicalEvidence"
+        )
     )
     confidence = (
         "ReviewedExactTitle"
         if match_mode == "EXACT_TITLE"
-        else "ReviewedUniqueTitle"
+        else (
+            "ReviewedUniqueTitle"
+            if match_mode == "UNIQUE_REVIEWED_TITLE"
+            else "ReviewedCanonicalEvidence"
+        )
     )
     return {
         "lessonCode": lesson_code,
@@ -178,13 +186,35 @@ def load_reviewed_official_rule_mappings(
                     ):
                         continue
                     candidates.append(rule)
-                if not candidates:
-                    continue
-                if len(candidates) != 1:
-                    # Ambiguous rule resolution is fail-closed and deliberately
-                    # not an audit blocker: the lesson simply remains unmapped.
-                    continue
-                match_mode = "UNIQUE_REVIEWED_TITLE"
+
+                if len(candidates) == 1:
+                    match_mode = "UNIQUE_REVIEWED_TITLE"
+                else:
+                    evidence = normalize_space(" ".join([
+                        normalized,
+                        str(get_case(translation, "Explanation", "explanation", default="") or ""),
+                        str(get_case(translation, "KeyConceptsAndRules", "keyConceptsAndRules", default="") or ""),
+                        str(get_case(translation, "WorkedExamples", "workedExamples", default="") or ""),
+                    ]))
+                    candidates = []
+                    for rule in rules:
+                        if rule.title_patterns and not any(
+                            pattern.search(evidence)
+                            for pattern in rule.title_patterns
+                        ):
+                            continue
+                        if rule.code_patterns and not any(
+                            pattern.search(lesson_code)
+                            for pattern in rule.code_patterns
+                        ):
+                            continue
+                        candidates.append(rule)
+
+                    if len(candidates) != 1:
+                        # Canonical evidence must yield one and only one reviewed
+                        # target. Ambiguity remains fail-closed.
+                        continue
+                    match_mode = "UNIQUE_REVIEWED_CANONICAL_EVIDENCE"
 
             mappings[lesson_code] = mapping_from_rule(
                 lesson_code,
