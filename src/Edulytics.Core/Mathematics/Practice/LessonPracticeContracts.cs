@@ -689,6 +689,14 @@ public static class LessonPracticeContractRegistry
             byLesson.TryAdd(projected.LessonCode, projected);
         }
 
+        foreach (var generated in SupportingPracticeTargetContractProjection.Load())
+        {
+            // Explicit hand-authored and approved-mapping contracts remain
+            // authoritative. Generated target contracts only fill unresolved
+            // Supporting lessons from the reviewed target manifest.
+            byLesson.TryAdd(generated.LessonCode, generated);
+        }
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
