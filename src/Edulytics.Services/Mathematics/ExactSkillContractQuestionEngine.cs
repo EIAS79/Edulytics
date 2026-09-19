@@ -394,7 +394,19 @@ public sealed class ExactSkillContractQuestionEngine
 
             "trigonometry.right_triangle.find_angle_exact" =>
                 value == parameters["expectedAngle"] &&
-                value is 30 or 45 or 60,
+                value is 30 or 45 or 60 &&
+                parameters["ratioNumerator"] > 0 &&
+                parameters["ratioDenominator"] > 0 &&
+                parameters["ratioType"] switch
+                {
+                    0 => value == 30 &&
+                        parameters["ratioNumerator"] * 2 == parameters["ratioDenominator"],
+                    1 => value == 60 &&
+                        parameters["ratioNumerator"] * 2 == parameters["ratioDenominator"],
+                    2 => value == 45 &&
+                        parameters["ratioNumerator"] == parameters["ratioDenominator"],
+                    _ => false
+                },
 
             _ => false
         };
@@ -1070,19 +1082,26 @@ public sealed class ExactSkillContractQuestionEngine
     private static ExactProblem BuildCongruenceCriterion(Random random)
     {
         var criterion = random.Next(0, 4);
+        var variant = random.Next(1, 8);
+        var sideA = 3 + variant;
+        var sideB = 5 + variant;
+        var sideC = 6 + variant;
+        var angleA = 25 + 5 * variant;
+        var angleB = 35 + 3 * variant;
+
         var (prompt, solution) = criterion switch
         {
             0 => (
-                "Two triangles have all three corresponding side lengths equal. Which congruence criterion proves they are congruent? Answer SSS, SAS, ASA, or RHS.",
+                $"Two triangles each have corresponding side lengths {sideA}, {sideB}, and {sideC}. Which congruence criterion proves they are congruent? Answer SSS, SAS, ASA, or RHS.",
                 "Three equal corresponding sides establish SSS congruence."),
             1 => (
-                "Two triangles have two corresponding sides equal and the included angle equal. Which congruence criterion applies? Answer SSS, SAS, ASA, or RHS.",
+                $"Two triangles each have corresponding sides {sideA} and {sideB} with the included angle {angleA}°. Which congruence criterion applies? Answer SSS, SAS, ASA, or RHS.",
                 "Two sides and the included angle establish SAS congruence."),
             2 => (
-                "Two triangles have two corresponding angles equal and the included side equal. Which congruence criterion applies? Answer SSS, SAS, ASA, or RHS.",
+                $"Two triangles each have corresponding angles {angleA}° and {angleB}° with the included side {sideA}. Which congruence criterion applies? Answer SSS, SAS, ASA, or RHS.",
                 "Two angles and the included side establish ASA congruence."),
             _ => (
-                "Two right triangles have equal hypotenuse lengths and one equal corresponding side. Which congruence criterion applies? Answer SSS, SAS, ASA, or RHS.",
+                $"Two right triangles each have hypotenuse {sideC} and one corresponding leg {sideA}. Which congruence criterion applies? Answer SSS, SAS, ASA, or RHS.",
                 "Right angle, hypotenuse and one corresponding side establish RHS congruence.")
         };
 
@@ -1091,7 +1110,13 @@ public sealed class ExactSkillContractQuestionEngine
             prompt,
             solution,
             AssessmentItemType.ShortAnswer,
-            ("criterion", criterion));
+            ("criterion", criterion),
+            ("variant", variant),
+            ("sideA", sideA),
+            ("sideB", sideB),
+            ("sideC", sideC),
+            ("angleA", angleA),
+            ("angleB", angleB));
     }
 
     private static ExactProblem BuildRectangularPrismSurfaceArea(Random random, int scale)
@@ -1240,19 +1265,30 @@ public sealed class ExactSkillContractQuestionEngine
         {
             (30, 0, 1, 2), // sin 30
             (60, 1, 1, 2), // cos 60
-            (45, 2, 1, 1) // tan 45
+            (45, 2, 1, 1)  // tan 45
         };
         var item = options[random.Next(options.Length)];
+        var multiplier = random.Next(1, 7);
+        var numerator = item.Numerator * multiplier;
+        var denominator = item.Denominator * multiplier;
         var name = item.RatioType switch { 0 => "sin", 1 => "cos", _ => "tan" };
+        var ratioDescription = item.RatioType switch
+        {
+            0 => $"opposite side {numerator} and hypotenuse {denominator}",
+            1 => $"adjacent side {numerator} and hypotenuse {denominator}",
+            _ => $"opposite side {numerator} and adjacent side {denominator}"
+        };
+
         return Problem(
             "trigonometry.right_triangle.find_angle_exact",
-            $"For an acute angle θ, {name}(θ) = {item.Numerator}/{item.Denominator}. Find θ in degrees.",
-            "Use the exact special-angle trigonometric values.",
+            $"For an acute angle θ in a right triangle, the {ratioDescription}, so {name}(θ) = {numerator}/{denominator}. Find θ in degrees.",
+            "Reduce the exact side ratio, match it to the standard special-angle trigonometric values, and verify the angle is acute.",
             AssessmentItemType.Numeric,
             ("ratioType", item.RatioType),
-            ("ratioNumerator", item.Numerator),
-            ("ratioDenominator", item.Denominator),
-            ("expectedAngle", item.Angle));
+            ("ratioNumerator", numerator),
+            ("ratioDenominator", denominator),
+            ("expectedAngle", item.Angle),
+            ("multiplier", multiplier));
     }
 
     private static ExactProblem BuildLinearEquation(Random random, int scale)
