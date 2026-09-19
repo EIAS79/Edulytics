@@ -2741,6 +2741,586 @@
         "commonMistake": "Do not assign unrelated accelerations to a taut connection.",
         "summary": "Use one consistent connection constraint."
       }
+    },
+    {
+      "id": "statistical-diagrams",
+      "titlePatterns": [
+        "^Statistical diagrams$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.charts",
+      "mechanic": "STATISTICAL_DIAGRAMS",
+      "families": [
+        "supporting.statistics.charts.mixed"
+      ],
+      "content": {
+        "concept": "Statistical diagrams represent data so totals and comparisons can be read accurately.",
+        "workedExample": "A table or chart can be checked by adding all displayed category counts.",
+        "solution": "Read the labels and scale, extract the required values, and verify against the displayed total.",
+        "commonMistake": "Do not ignore the chart scale or category labels.",
+        "summary": "Read statistical displays using their labels and scale."
+      }
+    },
+    {
+      "id": "cuboid-volume",
+      "titlePatterns": [
+        "^Volume$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.area_volume",
+      "mechanic": "CUBOID_VOLUME",
+      "families": [
+        "supporting.geometry.cuboid_volume"
+      ],
+      "content": {
+        "concept": "Volume measures three-dimensional space.",
+        "workedExample": "A cuboid of length 4, width 3 and height 2 has volume 24.",
+        "solution": "Multiply the three perpendicular dimensions and verify the cubic units.",
+        "commonMistake": "Do not use a surface-area sum for volume.",
+        "summary": "Cuboid volume is length × width × height."
+      }
+    },
+    {
+      "id": "advanced-probability-models",
+      "titlePatterns": [
+        "^Advanced probability models$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.probability_statistics.core",
+      "mechanic": "ADVANCED_PROBABILITY",
+      "families": [
+        "supporting.probability_statistics.mixed"
+      ],
+      "content": {
+        "concept": "Advanced probability combines exact event and distribution reasoning.",
+        "workedExample": "Model an event with exact probabilities before calculating the requested quantity.",
+        "solution": "Identify the model, write the exact probability relationship, calculate, then check bounds and assumptions.",
+        "commonMistake": "Do not mix incompatible probability models.",
+        "summary": "Choose the probability model before calculating."
+      }
+    },
+    {
+      "id": "derived-calculations",
+      "titlePatterns": [
+        "^Derive related calculations$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.reasoning.core",
+      "mechanic": "DERIVED_CALCULATIONS",
+      "families": [
+        "supporting.reasoning.multistep"
+      ],
+      "content": {
+        "concept": "Related calculations use known number relationships to derive new exact results.",
+        "workedExample": "If a known product is scaled by 10, the related product scales by the same factor.",
+        "solution": "Identify the invariant relationship, apply the required scale or inverse operation, then verify.",
+        "commonMistake": "Do not recompute with an unrelated rule.",
+        "summary": "Use known relationships to derive related facts."
+      }
+    },
+    {
+      "id": "graphical-equation-solution",
+      "titlePatterns": [
+        "^Graphical solution of equations$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.analytic",
+      "mechanic": "GRAPHICAL_EQUATION_SOLUTION",
+      "families": [
+        "supporting.coordinate.line_intersection"
+      ],
+      "content": {
+        "concept": "A graphical solution of two equations occurs where their graphs have the same coordinates.",
+        "workedExample": "At an intersection, both line equations give the same y-value for the same x.",
+        "solution": "Set the line expressions equal, solve the exact intersection coordinate, and substitute back.",
+        "commonMistake": "Do not read unrelated points from the graphs.",
+        "summary": "Graphical solutions are intersection points."
+      }
+    },
+    {
+      "id": "additive-relationship",
+      "titlePatterns": [
+        "^Manipulate the additive relationship$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.reasoning.core",
+      "mechanic": "ADDITIVE_RELATIONSHIP",
+      "families": [
+        "supporting.reasoning.multistep"
+      ],
+      "content": {
+        "concept": "Additive relationships connect totals, parts and differences through inverse operations.",
+        "workedExample": "If a total and one part are known, subtraction finds the missing part.",
+        "solution": "Represent the relationship, use the inverse operation, and check by recombining the parts.",
+        "commonMistake": "Do not change the relationship when moving between addition and subtraction.",
+        "summary": "Use inverse additive relationships."
+      }
+    },
+    {
+      "id": "multiplicative-relationship",
+      "titlePatterns": [
+        "^Manipulating the multiplicative relationship$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.directed_operations",
+      "mechanic": "MULTIPLICATIVE_RELATIONSHIP",
+      "families": [
+        "supporting.number.multiply",
+        "supporting.number.divide"
+      ],
+      "content": {
+        "concept": "Multiplicative relationships connect factors, products and quotients.",
+        "workedExample": "If 7 groups of 6 make 42, then 42÷7=6.",
+        "solution": "Represent the equal groups, use multiplication or its inverse division, and verify.",
+        "commonMistake": "Do not treat repeated addition and equal grouping as unrelated.",
+        "summary": "Multiplication and division are inverse multiplicative relationships."
+      }
+    },
+    {
+      "id": "quantified-relationships",
+      "titlePatterns": [
+        "^Quantify additive and multiplicative relationships$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.reasoning.core",
+      "mechanic": "QUANTIFIED_RELATIONSHIPS",
+      "families": [
+        "supporting.reasoning.multistep"
+      ],
+      "content": {
+        "concept": "Quantifying a relationship means expressing how quantities are connected by exact operations.",
+        "workedExample": "A comparison can be additive, multiplicative, or require both in sequence.",
+        "solution": "Identify each relationship in order, calculate exactly, and verify against the original quantities.",
+        "commonMistake": "Do not confuse 'more than' with 'times as many'.",
+        "summary": "Translate relationship language into exact operations."
+      }
+    },
+    {
+      "id": "distributive-property",
+      "titlePatterns": [
+        "^The distributive property of multiplication$",
+        "^The Distributive Property, Part 1$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.algebra.expressions",
+      "mechanic": "DISTRIBUTIVE_PROPERTY",
+      "families": [
+        "supporting.algebra.expand"
+      ],
+      "content": {
+        "concept": "The distributive property multiplies a factor across every term in a sum or difference.",
+        "workedExample": "3(x+4)=3x+12.",
+        "solution": "Multiply the outside factor by each inside term, then simplify and verify by substitution.",
+        "commonMistake": "Do not distribute to only one term.",
+        "summary": "Distribute the factor to every term."
+      }
+    },
+    {
+      "id": "fraction-assortment",
+      "titlePatterns": [
+        "^An Assortment of Fractions PLC Activity$"
+      ],
+      "codePatterns": [],
+      "skillId": "fractions.add_subtract",
+      "mechanic": "FRACTION_EQUIVALENCE_ADD_SUBTRACT",
+      "families": [
+        "fractions.add_subtract.common_denominator.build",
+        "fractions.add_subtract.common_denominator.apply"
+      ],
+      "content": {
+        "concept": "Equivalent fractions allow fractional quantities with different denominators to be combined or compared.",
+        "workedExample": "1/2+1/4=2/4+1/4=3/4.",
+        "solution": "Rewrite with a suitable common denominator, combine the numerators, and verify equivalence.",
+        "commonMistake": "Do not add unlike denominators directly.",
+        "summary": "Use equivalence before combining unlike fractions."
+      }
+    },
+    {
+      "id": "circular-measure",
+      "titlePatterns": [
+        "^Circular measure$",
+        "^Part to Whole$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.circles_loci",
+      "mechanic": "CIRCULAR_MEASURE",
+      "families": [
+        "supporting.circle.arc_angle_degrees"
+      ],
+      "content": {
+        "concept": "Arc length and central angle are proportional parts of a full circle.",
+        "workedExample": "An arc that is 1/4 of the circumference subtends 90°.",
+        "solution": "Express the arc as a fraction of the whole circumference and multiply that fraction by 360°.",
+        "commonMistake": "Do not compare an arc length with 360 without relating it to the full circumference.",
+        "summary": "Central angle matches the arc's fraction of the full turn."
+      }
+    },
+    {
+      "id": "carnival-modelling",
+      "titlePatterns": [
+        "^Design a Carnival Game \\(optional\\)$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.reasoning.core",
+      "mechanic": "MODELLING_MULTI_SKILL",
+      "families": [
+        "supporting.reasoning.multistep"
+      ],
+      "content": {
+        "concept": "Mathematical modelling combines measurement and operations to satisfy real constraints.",
+        "workedExample": "A game can require a measured distance and an exact score calculation.",
+        "solution": "Identify the quantities and constraints, perform the required operations in order, and check the result against the rules.",
+        "commonMistake": "Do not ignore units or constraints in a modelling problem.",
+        "summary": "Model constraints with exact quantities and operations."
+      }
+    },
+    {
+      "id": "discrete-random-variable",
+      "titlePatterns": [
+        "^Discrete random variables$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.probability.distributions",
+      "mechanic": "DISCRETE_RANDOM_VARIABLE",
+      "families": [
+        "supporting.probability.discrete_expected_value"
+      ],
+      "content": {
+        "concept": "A discrete random variable assigns numerical values to countable outcomes with probabilities.",
+        "workedExample": "If X is 2 or 6 with probability 1/2 each, E(X)=4.",
+        "solution": "Multiply each value by its probability, add the products, and verify probabilities total 1.",
+        "commonMistake": "Do not average outcomes without their probabilities.",
+        "summary": "Expected value is a probability-weighted mean."
+      }
+    },
+    {
+      "id": "fermi-estimation",
+      "titlePatterns": [
+        "^Fermi Problems$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.reasoning.core",
+      "mechanic": "FERMI_ESTIMATION",
+      "families": [
+        "supporting.reasoning.multistep"
+      ],
+      "content": {
+        "concept": "Fermi problems estimate complex quantities by decomposing them into simpler reasonable factors.",
+        "workedExample": "Estimate a large count by multiplying a typical rate by an estimated number of groups.",
+        "solution": "Choose defensible assumptions, calculate with them, then check the order of magnitude.",
+        "commonMistake": "Do not present an estimate as an exact measured value.",
+        "summary": "Break estimates into justified component assumptions."
+      }
+    },
+    {
+      "id": "pythagorean-side-lengths",
+      "titlePatterns": [
+        "^Finding Side Lengths of Triangles$"
+      ],
+      "codePatterns": [],
+      "skillId": "geometry.right_triangle.pythagorean",
+      "mechanic": "PYTHAGOREAN_SIDE_LENGTH",
+      "families": [
+        "geometry.right_triangle.pythagorean.exact",
+        "geometry.right_triangle.pythagorean.find_leg_exact"
+      ],
+      "content": {
+        "concept": "The Pythagorean theorem relates the three side lengths of a right triangle.",
+        "workedExample": "For legs 3 and 4, the hypotenuse is 5.",
+        "solution": "Identify the hypotenuse, apply a²+b²=c², solve the missing positive length, and verify.",
+        "commonMistake": "Do not use the theorem on a triangle not known to be right.",
+        "summary": "Use the Pythagorean theorem for right-triangle side lengths."
+      }
+    },
+    {
+      "id": "gone-in-30-seconds",
+      "titlePatterns": [
+        "^Gone In 30 Seconds$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.scatter",
+      "mechanic": "BIVARIATE_ASSOCIATION",
+      "families": [
+        "supporting.statistics.scatter_correlation"
+      ],
+      "content": {
+        "concept": "Bivariate data can be represented and analysed for association between two variables.",
+        "workedExample": "A scatter plot may show positive, negative or no association.",
+        "solution": "Read paired data, identify the direction of association, and verify the conclusion against the overall pattern.",
+        "commonMistake": "Do not infer association from one isolated point.",
+        "summary": "Use the overall bivariate pattern to describe association."
+      }
+    },
+    {
+      "id": "lots-of-flags",
+      "titlePatterns": [
+        "^Lots of Flags$"
+      ],
+      "codePatterns": [],
+      "skillId": "ratio.unit_rate",
+      "mechanic": "PROPORTIONAL_SCALING",
+      "families": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "content": {
+        "concept": "Scaled figures preserve proportional relationships between corresponding lengths.",
+        "workedExample": "If width and height have ratio 3:1, a width of 6 corresponds to height 2.",
+        "solution": "Use an equivalent ratio or scale factor and verify corresponding quotients agree.",
+        "commonMistake": "Do not add a scale factor to dimensions.",
+        "summary": "Scale corresponding dimensions multiplicatively."
+      }
+    },
+    {
+      "id": "indirect-distance",
+      "titlePatterns": [
+        "^Measuring Long Distances Over Uneven Terrain$"
+      ],
+      "codePatterns": [],
+      "skillId": "geometry.similarity",
+      "mechanic": "INDIRECT_MEASUREMENT",
+      "families": [
+        "geometry.similarity.find_missing_length",
+        "geometry.similarity.scale_factor"
+      ],
+      "content": {
+        "concept": "Similar figures allow inaccessible lengths to be found from proportional corresponding lengths.",
+        "workedExample": "If two similar triangles have scale factor 3, every corresponding length is multiplied by 3.",
+        "solution": "Identify corresponding sides, form the scale factor, find the unknown, and verify the ratios.",
+        "commonMistake": "Do not match non-corresponding sides.",
+        "summary": "Use similarity for indirect measurement."
+      }
+    },
+    {
+      "id": "mental-strategies",
+      "titlePatterns": [
+        "^Mental calculation strategies$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.reasoning.core",
+      "mechanic": "MENTAL_CALCULATION",
+      "families": [
+        "supporting.reasoning.multistep"
+      ],
+      "content": {
+        "concept": "Mental calculation strategies use place value, compensation and known facts to calculate efficiently.",
+        "workedExample": "To find 198+37, compute 200+37−2.",
+        "solution": "Choose a valid restructuring, calculate exactly, and verify with the original operation.",
+        "commonMistake": "Do not change the value while compensating.",
+        "summary": "Use equivalent calculations to simplify mental arithmetic."
+      }
+    },
+    {
+      "id": "spreadsheet-mystery",
+      "titlePatterns": [
+        "^Mystery Computations$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.reasoning.core",
+      "mechanic": "COMPUTATION_RELATIONSHIP",
+      "families": [
+        "supporting.reasoning.verify_identity"
+      ],
+      "content": {
+        "concept": "Changing spreadsheet inputs can reveal the exact operation connecting values.",
+        "workedExample": "If an output always doubles an input, test the relationship with several values.",
+        "solution": "Infer the operation from input-output pairs, then verify it on an additional exact value.",
+        "commonMistake": "Do not infer a rule from a single accidental match.",
+        "summary": "Verify a computational relationship with multiple values."
+      }
+    },
+    {
+      "id": "equal-groups-notice",
+      "titlePatterns": [
+        "^Notice and Wonder$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.directed_operations",
+      "mechanic": "EQUAL_GROUPS",
+      "families": [
+        "supporting.number.multiply"
+      ],
+      "content": {
+        "concept": "Equal groups model multiplication as repeated equal quantities.",
+        "workedExample": "Four groups of 3 contain 12 objects.",
+        "solution": "Identify the number of groups and the size of each group, multiply, and verify by grouping.",
+        "commonMistake": "Do not count unequal groups as a multiplication model.",
+        "summary": "Equal groups represent multiplication."
+      }
+    },
+    {
+      "id": "number-bonds",
+      "titlePatterns": [
+        "^Number bonds$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.add_subtract",
+      "mechanic": "NUMBER_BONDS",
+      "families": [
+        "number.whole.add_subtract.within_10.build",
+        "number.whole.add_subtract.within_10.apply"
+      ],
+      "content": {
+        "concept": "A number bond decomposes a whole into two additive parts.",
+        "workedExample": "7 can be split into 5 and 2 because 5+2=7.",
+        "solution": "Use the whole and one part to find the missing part, then verify by addition.",
+        "commonMistake": "Do not confuse the whole with one of its parts.",
+        "summary": "Number bonds connect a whole and two parts."
+      }
+    },
+    {
+      "id": "paper-clip-fractions",
+      "titlePatterns": [
+        "^Paper Clip Games \\(optional\\)$"
+      ],
+      "codePatterns": [],
+      "skillId": "fractions.compare.benchmark",
+      "mechanic": "FRACTION_NUMBER_LINE_COMPARE",
+      "families": [
+        "fractions.compare.benchmark"
+      ],
+      "content": {
+        "concept": "Fractions on a number line can be located and compared using benchmark values.",
+        "workedExample": "3/4 is greater than 1/2 because it lies farther to the right.",
+        "solution": "Compare each fraction with a benchmark or equivalent location and verify its order on the line.",
+        "commonMistake": "Do not compare only denominators.",
+        "summary": "Use number-line position and benchmarks to compare fractions."
+      }
+    },
+    {
+      "id": "repeating-patterns",
+      "titlePatterns": [
+        "^Repeating patterns$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.sequences.core",
+      "mechanic": "REPEATING_PATTERN",
+      "families": [
+        "supporting.sequences.core.mixed"
+      ],
+      "content": {
+        "concept": "A repeating pattern follows a fixed cycle that can be extended predictably.",
+        "workedExample": "In ABCA BCA..., positions repeat every 3 terms.",
+        "solution": "Identify the cycle length and use position within the cycle to determine later terms.",
+        "commonMistake": "Do not assume a pattern from too few terms.",
+        "summary": "Use the repeating cycle to predict terms."
+      }
+    },
+    {
+      "id": "spreadsheet-calculations",
+      "titlePatterns": [
+        "^Spreadsheet Computations$",
+        "^Spreadsheet Shortcuts$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.reasoning.core",
+      "mechanic": "SPREADSHEET_COMPUTATION",
+      "families": [
+        "supporting.reasoning.multistep"
+      ],
+      "content": {
+        "concept": "Spreadsheet formulas encode exact arithmetic relationships between values.",
+        "workedExample": "A formula can add, subtract, multiply, divide or average referenced values.",
+        "solution": "Translate the formula into operations, evaluate in the correct order, and verify the numerical result.",
+        "commonMistake": "Do not treat cell references as text labels during calculation.",
+        "summary": "Spreadsheet formulas represent exact operations."
+      }
+    },
+    {
+      "id": "balance-equations",
+      "titlePatterns": [
+        "^Staying in Balance$"
+      ],
+      "codePatterns": [],
+      "skillId": "algebra.linear.solve",
+      "mechanic": "BALANCED_EQUATION",
+      "families": [
+        "algebra.linear.ax_plus_b_equals_c",
+        "algebra.linear.variables_both_sides"
+      ],
+      "content": {
+        "concept": "An equation stays equivalent when the same valid operation is applied to both sides.",
+        "workedExample": "From 3x+5=20, subtract 5 then divide by 3.",
+        "solution": "Preserve equality while isolating the variable and verify by substitution.",
+        "commonMistake": "Do not perform an operation on only one side.",
+        "summary": "Maintain balance while solving equations."
+      }
+    },
+    {
+      "id": "tiling-plane",
+      "titlePatterns": [
+        "^Tiling the Plane$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.plane",
+      "mechanic": "TESSELLATION",
+      "families": [
+        "supporting.geometry.plane.mixed"
+      ],
+      "content": {
+        "concept": "A tessellation covers a plane with shapes without gaps or overlaps.",
+        "workedExample": "Repeated congruent tiles can meet around a point when their angles fit a full turn.",
+        "solution": "Use shape and angle properties to reason about a valid tiling and verify the plane is covered.",
+        "commonMistake": "Do not allow gaps or overlaps in a tessellation.",
+        "summary": "Tessellations cover the plane exactly."
+      }
+    },
+    {
+      "id": "trig-equations",
+      "titlePatterns": [
+        "^Trigonometric equations$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.trigonometry.core",
+      "mechanic": "TRIG_EQUATION",
+      "families": [
+        "supporting.trigonometry.equation_smallest_angle"
+      ],
+      "content": {
+        "concept": "A trigonometric equation asks for angles whose trigonometric values satisfy an exact condition.",
+        "workedExample": "sin θ=1/2 has smallest solution 30° on 0°≤θ≤180°.",
+        "solution": "Isolate the trig function, match an exact special-angle value, then apply the interval restriction.",
+        "commonMistake": "Do not return an angle outside the stated interval.",
+        "summary": "Solve exact trig equations using special-angle values and the interval."
+      }
+    },
+    {
+      "id": "trig-identities",
+      "titlePatterns": [
+        "^Trigonometric identities$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.trigonometry.core",
+      "mechanic": "TRIG_IDENTITY",
+      "families": [
+        "supporting.trigonometry.identity_missing_component"
+      ],
+      "content": {
+        "concept": "A trigonometric identity is true for all permitted angles and can connect exact sine and cosine values.",
+        "workedExample": "sin²θ+cos²θ=1.",
+        "solution": "Substitute the known component into the identity, solve the missing positive component when the angle is acute, and verify.",
+        "commonMistake": "Do not treat an identity as an equation true only for one angle.",
+        "summary": "Use identities to connect exact trig components."
+      }
+    },
+    {
+      "id": "world-record-division",
+      "titlePatterns": [
+        "^World’s Record Folk Dance$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.directed_operations",
+      "mechanic": "PARTIAL_QUOTIENT_DIVISION",
+      "families": [
+        "supporting.number.divide"
+      ],
+      "content": {
+        "concept": "Partial quotients divide a total by subtracting convenient multiples of the divisor.",
+        "workedExample": "For 156÷12, subtract 120=10×12, then 36=3×12, giving quotient 13.",
+        "solution": "Use convenient divisor multiples, add the partial quotients, and verify by multiplication.",
+        "commonMistake": "Do not lose a remainder or a partial quotient.",
+        "summary": "Partial quotients decompose division into manageable multiples."
+      }
     }
   ]
 }
