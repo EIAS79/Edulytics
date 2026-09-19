@@ -219,11 +219,10 @@
     {
       "id": "geometry.rectangle.area.exact",
       "version": 1,
-      "skillId": "geometry.rectangle.area",
+      "skillId": "geometry.perimeter_area",
       "requiredCapabilities": [
-        "rational.exact_arithmetic",
-        "geometry.rectangle.area.exact",
-        "geometry.verify.rectangle.area"
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
       ],
       "answerType": "exact_scalar",
       "verificationPolicy": "independent-exact-area-from-original-positive-dimensions",
@@ -236,11 +235,10 @@
     {
       "id": "geometry.rectangle.perimeter.exact",
       "version": 1,
-      "skillId": "geometry.rectangle.perimeter",
+      "skillId": "geometry.perimeter_area",
       "requiredCapabilities": [
-        "rational.exact_arithmetic",
-        "geometry.rectangle.perimeter.exact",
-        "geometry.verify.rectangle.perimeter"
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
       ],
       "answerType": "exact_scalar",
       "verificationPolicy": "independent-exact-perimeter-from-original-positive-dimensions",
@@ -1161,6 +1159,211 @@
       "representations": [
         "symbolic",
         "number_line_context"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "geometry.coordinate.gradient_between_points",
+      "version": 1,
+      "skillId": "geometry.coordinate.straight_line",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "reconstruct-from-structured-parameters-and-independent-formula-check",
+      "representations": [
+        "symbolic",
+        "coordinate_pair"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "geometry.angles.parallel_lines",
+      "version": 1,
+      "skillId": "geometry.angles.relationships",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "reconstruct-from-structured-parameters-and-independent-formula-check",
+      "representations": [
+        "diagram_metadata",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "geometry.angles.supplementary",
+      "version": 1,
+      "skillId": "geometry.angles.relationships",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "reconstruct-from-structured-parameters-and-independent-formula-check",
+      "representations": [
+        "diagram_metadata",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "geometry.similarity.find_missing_length",
+      "version": 1,
+      "skillId": "geometry.similarity",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "reconstruct-from-structured-parameters-and-independent-formula-check",
+      "representations": [
+        "diagram_metadata",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "geometry.similarity.scale_factor",
+      "version": 1,
+      "skillId": "geometry.similarity",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "reconstruct-from-structured-parameters-and-independent-formula-check",
+      "representations": [
+        "diagram_metadata",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "geometry.congruence.identify_criterion",
+      "version": 1,
+      "skillId": "geometry.congruence",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "enum_text",
+      "verificationPolicy": "reconstruct-from-structured-parameters-and-independent-formula-check",
+      "representations": [
+        "diagram_metadata",
+        "textual_constraint"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "geometry.surface_area.rectangular_prism",
+      "version": 1,
+      "skillId": "geometry.surface_area",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "reconstruct-from-structured-parameters-and-independent-formula-check",
+      "representations": [
+        "solid_dimensions",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "geometry.volume.rectangular_prism",
+      "version": 1,
+      "skillId": "geometry.volume",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "reconstruct-from-structured-parameters-and-independent-formula-check",
+      "representations": [
+        "solid_dimensions",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "trigonometry.right_triangle.ratio_exact",
+      "version": 1,
+      "skillId": "trigonometry.right_triangle.sin_cos_tan",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "reconstruct-from-structured-parameters-and-independent-formula-check",
+      "representations": [
+        "right_triangle",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "trigonometry.right_triangle.find_side_exact",
+      "version": 1,
+      "skillId": "trigonometry.right_triangle.sin_cos_tan",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "reconstruct-from-structured-parameters-and-independent-formula-check",
+      "representations": [
+        "right_triangle",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "trigonometry.right_triangle.find_angle_exact",
+      "version": 1,
+      "skillId": "trigonometry.right_triangle.sin_cos_tan",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "reconstruct-from-structured-parameters-and-independent-formula-check",
+      "representations": [
+        "right_triangle",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "trigonometry.modelling.contextual",
+      "version": 1,
+      "skillId": "trigonometry.modelling",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "reconstruct-from-structured-parameters-and-independent-formula-check",
+      "representations": [
+        "right_triangle",
+        "contextual_model",
+        "diagram_metadata"
       ],
       "status": "ShadowVerified",
       "productionRouting": false
