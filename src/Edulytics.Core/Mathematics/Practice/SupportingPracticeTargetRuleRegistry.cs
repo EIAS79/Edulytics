@@ -35,6 +35,26 @@ public static class SupportingPracticeTargetRuleRegistry
     public static IReadOnlyList<SupportingPracticeTargetRule> All =>
         Rules.Value.Select(x => x.Rule).ToArray();
 
+    public static bool TryGetById(
+        string? ruleId,
+        out SupportingPracticeTargetRule? rule)
+    {
+        if (string.IsNullOrWhiteSpace(ruleId))
+        {
+            rule = null;
+            return false;
+        }
+
+        rule = Rules.Value
+            .Select(candidate => candidate.Rule)
+            .SingleOrDefault(candidate =>
+                string.Equals(
+                    candidate.Id,
+                    ruleId.Trim(),
+                    StringComparison.Ordinal));
+        return rule is not null;
+    }
+
     public static bool TryResolve(
         string? lessonCode,
         string? title,
