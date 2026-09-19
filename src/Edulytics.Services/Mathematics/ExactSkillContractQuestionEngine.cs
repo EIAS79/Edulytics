@@ -219,6 +219,33 @@ public sealed class ExactSkillContractQuestionEngine
                 StringComparison.Ordinal);
         }
 
+        if (family is
+            "vectors.add.exact_rational" or
+            "vectors.subtract.exact_rational" or
+            "vectors.scalar_multiply.exact_rational" or
+            "vectors.between_points.exact")
+        {
+            if (!TryParseVector2(answer, out var x, out var y))
+                return false;
+
+            return family switch
+            {
+                "vectors.add.exact_rational" =>
+                    x == parameters["ax"] + parameters["bx"] &&
+                    y == parameters["ay"] + parameters["by"],
+                "vectors.subtract.exact_rational" =>
+                    x == parameters["ax"] - parameters["bx"] &&
+                    y == parameters["ay"] - parameters["by"],
+                "vectors.scalar_multiply.exact_rational" =>
+                    x == parameters["scalar"] * parameters["ax"] &&
+                    y == parameters["scalar"] * parameters["ay"],
+                "vectors.between_points.exact" =>
+                    x == parameters["x2"] - parameters["x1"] &&
+                    y == parameters["y2"] - parameters["y1"],
+                _ => false
+            };
+        }
+
         if (!int.TryParse(answer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value))
             return false;
 
@@ -408,6 +435,16 @@ public sealed class ExactSkillContractQuestionEngine
                     _ => false
                 }),
 
+            "vectors.dot.exact_rational" =>
+                value == parameters["ax"] * parameters["bx"] +
+                    parameters["ay"] * parameters["by"],
+
+            "vectors.magnitude.exact" =>
+                value > 0 &&
+                value * value ==
+                    parameters["ax"] * parameters["ax"] +
+                    parameters["ay"] * parameters["ay"],
+
             _ => false
         };
     }
@@ -515,6 +552,18 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildTrigonometricFindAngle(random),
             "trigonometry.modelling.contextual" =>
                 BuildTrigonometricFindSide(random, scale, true),
+            "vectors.add.exact_rational" =>
+                BuildVectorBinary(random, scale, "vectors.add.exact_rational", false),
+            "vectors.subtract.exact_rational" =>
+                BuildVectorBinary(random, scale, "vectors.subtract.exact_rational", true),
+            "vectors.scalar_multiply.exact_rational" =>
+                BuildVectorScalarMultiply(random, scale),
+            "vectors.dot.exact_rational" =>
+                BuildVectorDot(random, scale),
+            "vectors.magnitude.exact" =>
+                BuildVectorMagnitude(random, scale),
+            "vectors.between_points.exact" =>
+                BuildVectorBetweenPoints(random, scale),
             ExactLinearEquationQuestionFactory.FamilyId =>
                 BuildLinearEquation(random, scale),
             ExactLinearInequalityQuestionFactory.FamilyId =>
@@ -1291,6 +1340,115 @@ public sealed class ExactSkillContractQuestionEngine
             ("multiplier", multiplier));
     }
 
+    private static ExactProblem BuildVectorBinary(
+        Random random,
+        int scale,
+        string family,
+        bool subtract)
+    {
+        var bound = 4 + scale * 3;
+        var ax = NonZero(random, -bound, bound + 1);
+        var ay = NonZero(random, -bound, bound + 1);
+        var bx = NonZero(random, -bound, bound + 1);
+        var by = NonZero(random, -bound, bound + 1);
+        var symbol = subtract ? "−" : "+";
+        var operation = subtract ? "subtract" : "add";
+
+        return Problem(
+            family,
+            $"Let a = <{ax}, {ay}> and b = <{bx}, {by}>. Find a {symbol} b.",
+            $"{operation} corresponding vector components independently, then check both coordinates.",
+            AssessmentItemType.ShortAnswer,
+            ("ax", ax),
+            ("ay", ay),
+            ("bx", bx),
+            ("by", by));
+    }
+
+    private static ExactProblem BuildVectorScalarMultiply(Random random, int scale)
+    {
+        var bound = 4 + scale * 2;
+        var ax = NonZero(random, -bound, bound + 1);
+        var ay = NonZero(random, -bound, bound + 1);
+        var scalar = NonZero(random, -2 - scale, 3 + scale);
+
+        return Problem(
+            "vectors.scalar_multiply.exact_rational",
+            $"Let a = <{ax}, {ay}>. Find {scalar}a.",
+            "Multiply every component by the same scalar and verify the direction/scale change componentwise.",
+            AssessmentItemType.ShortAnswer,
+            ("ax", ax),
+            ("ay", ay),
+            ("scalar", scalar));
+    }
+
+    private static ExactProblem BuildVectorDot(Random random, int scale)
+    {
+        var bound = 4 + scale * 2;
+        var ax = NonZero(random, -bound, bound + 1);
+        var ay = NonZero(random, -bound, bound + 1);
+        var bx = NonZero(random, -bound, bound + 1);
+        var by = NonZero(random, -bound, bound + 1);
+
+        return Problem(
+            "vectors.dot.exact_rational",
+            $"Let a = <{ax}, {ay}> and b = <{bx}, {by}>. Find a · b.",
+            "Multiply corresponding components and add the products: ax·bx + ay·by.",
+            AssessmentItemType.Numeric,
+            ("ax", ax),
+            ("ay", ay),
+            ("bx", bx),
+            ("by", by));
+    }
+
+    private static ExactProblem BuildVectorMagnitude(Random random, int scale)
+    {
+        var triples = new (int A, int B, int C)[] { (3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25) };
+        var triple = triples[random.Next(triples.Length)];
+        var multiplier = random.Next(1, Math.Max(2, scale + 1));
+        var ax = triple.A * multiplier * (random.Next(0, 2) == 0 ? 1 : -1);
+        var ay = triple.B * multiplier * (random.Next(0, 2) == 0 ? 1 : -1);
+        var magnitude = triple.C * multiplier;
+
+        return Problem(
+            "vectors.magnitude.exact",
+            $"Find the magnitude of v = <{ax}, {ay}>.",
+            "Use |v| = √(x² + y²). Magnitude is non-negative; verify by squaring the result.",
+            AssessmentItemType.Numeric,
+            ("ax", ax),
+            ("ay", ay),
+            ("magnitude", magnitude));
+    }
+
+    private static ExactProblem BuildVectorBetweenPoints(Random random, int scale)
+    {
+        var bound = 4 + scale * 3;
+        var x1 = random.Next(-bound, bound + 1);
+        var y1 = random.Next(-bound, bound + 1);
+        var dx = NonZero(random, -bound, bound + 1);
+        var dy = NonZero(random, -bound, bound + 1);
+        var x2 = x1 + dx;
+        var y2 = y1 + dy;
+
+        return Problem(
+            "vectors.between_points.exact",
+            $"A = ({x1}, {y1}) and B = ({x2}, {y2}). Find vector AB.",
+            "For vector AB, subtract A from B componentwise: <x₂ − x₁, y₂ − y₁>.",
+            AssessmentItemType.ShortAnswer,
+            ("x1", x1),
+            ("y1", y1),
+            ("x2", x2),
+            ("y2", y2));
+    }
+
+    private static int NonZero(Random random, int minInclusive, int maxExclusive)
+    {
+        var value = 0;
+        while (value == 0)
+            value = random.Next(minInclusive, maxExclusive);
+        return value;
+    }
+
     private static ExactProblem BuildLinearEquation(Random random, int scale)
     {
         var factory = new ExactLinearEquationQuestionFactory(
@@ -1516,6 +1674,24 @@ public sealed class ExactSkillContractQuestionEngine
             "trigonometry.right_triangle.find_angle_exact" =>
                 p["expectedAngle"].ToString(CultureInfo.InvariantCulture),
 
+            "vectors.add.exact_rational" =>
+                FormatVector2(p["ax"] + p["bx"], p["ay"] + p["by"]),
+
+            "vectors.subtract.exact_rational" =>
+                FormatVector2(p["ax"] - p["bx"], p["ay"] - p["by"]),
+
+            "vectors.scalar_multiply.exact_rational" =>
+                FormatVector2(p["scalar"] * p["ax"], p["scalar"] * p["ay"]),
+
+            "vectors.dot.exact_rational" =>
+                (p["ax"] * p["bx"] + p["ay"] * p["by"]).ToString(CultureInfo.InvariantCulture),
+
+            "vectors.magnitude.exact" =>
+                p["magnitude"].ToString(CultureInfo.InvariantCulture),
+
+            "vectors.between_points.exact" =>
+                FormatVector2(p["x2"] - p["x1"], p["y2"] - p["y1"]),
+
             ExactLinearEquationQuestionFactory.FamilyId =>
                 ((p["right"] - p["offset"]) / p["coefficient"])
                     .ToString(CultureInfo.InvariantCulture),
@@ -1548,6 +1724,28 @@ public sealed class ExactSkillContractQuestionEngine
         return denominator == 1
             ? numerator.ToString(CultureInfo.InvariantCulture)
             : $"{numerator.ToString(CultureInfo.InvariantCulture)}/{denominator.ToString(CultureInfo.InvariantCulture)}";
+    }
+
+    private static string FormatVector2(int x, int y) =>
+        $"<{x.ToString(CultureInfo.InvariantCulture)}, {y.ToString(CultureInfo.InvariantCulture)}>";
+
+    private static bool TryParseVector2(string answer, out int x, out int y)
+    {
+        x = 0;
+        y = 0;
+        var text = answer.Trim();
+        if (text.Length >= 2 &&
+            ((text[0] == '<' && text[^1] == '>') ||
+             (text[0] == '(' && text[^1] == ')') ||
+             (text[0] == '[' && text[^1] == ']')))
+        {
+            text = text[1..^1].Trim();
+        }
+
+        var parts = text.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+        return parts.Length == 2 &&
+            int.TryParse(parts[0], NumberStyles.Integer, CultureInfo.InvariantCulture, out x) &&
+            int.TryParse(parts[1], NumberStyles.Integer, CultureInfo.InvariantCulture, out y);
     }
 
     private static bool TryParseFraction(string answer, out int numerator, out int denominator)
