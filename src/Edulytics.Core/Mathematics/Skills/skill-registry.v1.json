@@ -1178,7 +1178,8 @@
       "v2QuestionFamilies": [
         "supporting.fractions.multiply",
         "supporting.fractions.divide_whole",
-        "supporting.fractions.simplify"
+        "supporting.fractions.simplify",
+        "supporting.fractions.mixed_to_improper"
       ]
     },
     {
@@ -1206,7 +1207,8 @@
       "v2QuestionFamilies": [
         "supporting.measurement.unit_conversion",
         "supporting.measurement.time_elapsed",
-        "supporting.measurement.money_change"
+        "supporting.measurement.money_change",
+        "supporting.measurement.compare"
       ]
     },
     {
@@ -1223,7 +1225,9 @@
         "supporting.algebra.expand",
         "supporting.algebra.factor",
         "supporting.algebra.simplify",
-        "supporting.algebra.expressions.mixed"
+        "supporting.algebra.expressions.mixed",
+        "supporting.algebra.algebraic_fraction",
+        "supporting.algebra.binomial_coefficient"
       ]
     },
     {
@@ -1238,7 +1242,9 @@
       "v2QuestionFamilies": [
         "supporting.algebra.simultaneous",
         "supporting.algebra.quadratic_larger_root",
-        "supporting.algebra.equations.mixed"
+        "supporting.algebra.equations.mixed",
+        "supporting.algebra.complete_square_vertex",
+        "supporting.algebra.inverse_proportion"
       ]
     },
     {
@@ -1253,7 +1259,9 @@
       "v2QuestionFamilies": [
         "supporting.functions.evaluate",
         "supporting.functions.composite",
-        "supporting.functions.core.mixed"
+        "supporting.functions.core.mixed",
+        "supporting.functions.inverse_linear",
+        "supporting.functions.polynomial_value"
       ]
     },
     {
@@ -1309,7 +1317,9 @@
       "v2QuestionFamilies": [
         "supporting.geometry.parallelogram_area",
         "supporting.geometry.compound_area",
-        "supporting.geometry.cuboid_volume"
+        "supporting.geometry.cuboid_volume",
+        "supporting.geometry.triangle_area",
+        "supporting.geometry.surface_area_cuboid"
       ]
     },
     {
@@ -1340,7 +1350,8 @@
       "v2QuestionFamilies": [
         "supporting.geometry.midpoint",
         "supporting.geometry.axis_distance",
-        "supporting.geometry.analytic.mixed"
+        "supporting.geometry.analytic.mixed",
+        "supporting.coordinate.line_intersection"
       ]
     },
     {
@@ -1355,7 +1366,8 @@
       "v2QuestionFamilies": [
         "supporting.geometry.circle_circumference_pi_coefficient",
         "supporting.geometry.circle_area_pi_coefficient",
-        "supporting.geometry.locus_equidistant"
+        "supporting.geometry.locus_equidistant",
+        "supporting.circle.angle_semicircle"
       ]
     },
     {
@@ -1370,7 +1382,9 @@
       "v2QuestionFamilies": [
         "supporting.statistics.table_total",
         "supporting.statistics.pie_sector_angle",
-        "supporting.statistics.charts.mixed"
+        "supporting.statistics.charts.mixed",
+        "supporting.statistics.cumulative_total",
+        "supporting.statistics.histogram_density"
       ]
     },
     {
@@ -1422,7 +1436,9 @@
         "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
-        "supporting.statistics.compare_range"
+        "supporting.statistics.compare_range",
+        "supporting.statistics.quartile",
+        "supporting.statistics.grouped_mean"
       ]
     },
     {
@@ -1464,7 +1480,8 @@
       "v2QuestionFamilies": [
         "supporting.calculus.derivative_value",
         "supporting.calculus.definite_integral_linear",
-        "supporting.calculus.optimization"
+        "supporting.calculus.optimization",
+        "supporting.calculus.differential_equation_value"
       ]
     },
     {
@@ -1504,7 +1521,13 @@
         "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
-        "supporting.mechanics.constant_acceleration_velocity"
+        "supporting.mechanics.constant_acceleration_velocity",
+        "supporting.mechanics.projectile_velocity",
+        "supporting.mechanics.energy",
+        "supporting.mechanics.circular_motion",
+        "supporting.mechanics.equilibrium",
+        "supporting.mechanics.friction",
+        "supporting.mechanics.connected_particles"
       ]
     },
     {
@@ -1596,7 +1619,8 @@
         "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
-        "supporting.sequences.core.mixed"
+        "supporting.sequences.core.mixed",
+        "supporting.series.geometric_sum"
       ]
     },
     {
@@ -1609,7 +1633,12 @@
         "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
-        "supporting.trigonometry.core.mixed"
+        "supporting.trigonometry.core.mixed",
+        "supporting.trigonometry.bearing",
+        "supporting.trigonometry.sine_rule_exact",
+        "supporting.trigonometry.cosine_rule_square",
+        "supporting.trigonometry.area_sine_double",
+        "supporting.trigonometry.graph_special"
       ]
     },
     {
@@ -1622,7 +1651,96 @@
         "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
-        "supporting.number.real.mixed"
+        "supporting.number.real.mixed",
+        "supporting.number.compare_order",
+        "supporting.number.parity",
+        "supporting.number.bounds_upper",
+        "supporting.number.scale_power10"
+      ]
+    },
+    {
+      "id": "supporting.geometry.properties",
+      "domain": "geometry",
+      "canonicalName": "Classify elementary 2D/3D shape properties and turns",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.shape_dimension",
+        "supporting.geometry.turn_degrees"
+      ]
+    },
+    {
+      "id": "supporting.sets.core",
+      "domain": "probability",
+      "canonicalName": "Exact finite set and Venn-diagram counting",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.sets.union_count"
+      ]
+    },
+    {
+      "id": "supporting.probability.distributions",
+      "domain": "probability",
+      "canonicalName": "Exact foundational discrete/continuous distribution and inference reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.probability.binomial_half",
+        "supporting.probability.normal_symmetry",
+        "supporting.probability.poisson_mean",
+        "supporting.probability.uniform_interval",
+        "supporting.statistics.hypothesis_decision"
+      ]
+    },
+    {
+      "id": "supporting.probability.events",
+      "domain": "probability",
+      "canonicalName": "Exact combined-event, tree-diagram and expected-frequency reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.probability.independent_product",
+        "supporting.probability.expected_frequency"
+      ]
+    },
+    {
+      "id": "supporting.numerical.core",
+      "domain": "numerical_methods",
+      "canonicalName": "Exact foundational numerical solution and approximation reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.numerical.bisection_midpoint"
+      ]
+    },
+    {
+      "id": "supporting.vectors.core",
+      "domain": "vectors",
+      "canonicalName": "Exact foundational vector component and magnitude reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.vectors.add",
+        "supporting.vectors.magnitude"
       ]
     }
   ]
