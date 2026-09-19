@@ -64,6 +64,7 @@ def blocker_codes(
     semantic: str,
     skill_status: str,
     approved_mapping: bool,
+    reviewed_exact_title_mapping: bool,
     has_family: bool,
     solver_ready: bool,
 ) -> list[str]:
@@ -72,7 +73,7 @@ def blocker_codes(
         result.append("CONTENT_WEAK")
     elif semantic == "REVIEW_REQUIRED":
         result.append("CONTENT_REVIEW_REQUIRED")
-    elif semantic == "UNCLASSIFIED":
+    elif semantic == "UNCLASSIFIED" and not reviewed_exact_title_mapping:
         result.append("CONTENT_TARGET_UNCLASSIFIED")
 
     if skill_status == "AMBIGUOUS":
@@ -177,6 +178,7 @@ def audit() -> dict[str, Any]:
         semantic_status = str(row.get("semanticContentStatus") or "UNCLASSIFIED")
         skill_status = str(row.get("skillResolutionStatus") or "UNRESOLVED")
         approved_mapping = bool(row.get("approvedMapping"))
+        reviewed_exact_title_mapping = bool(row.get("reviewedExactTitleMapping"))
         has_family = bool(row.get("hasQuestionFamily"))
         solver_ready = bool(row.get("hasVerifiedSolverCapability"))
         visual_required = bool(representations & VISUAL_REPRESENTATIONS)
@@ -188,6 +190,7 @@ def audit() -> dict[str, Any]:
             semantic_status,
             skill_status,
             approved_mapping,
+            reviewed_exact_title_mapping,
             has_family,
             solver_ready,
         )
