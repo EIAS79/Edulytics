@@ -160,7 +160,7 @@ public sealed class SupportingLessonPracticeR11R12Tests
         Assert.Equal("fractions.equivalent", contract!.SkillId);
         Assert.Equal("READY_VERIFIED", contract.Readiness);
         Assert.Equal(
-            Edulytics.Core.Mathematics.Practice.LessonPracticeContractProjection.ContractVersion,
+            "lesson-practice-projection-v1",
             contract.ContractVersion);
         Assert.All(
             contract.AllowedQuestionFamilies,
