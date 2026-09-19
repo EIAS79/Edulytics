@@ -29,7 +29,11 @@
         "\\bnumerator\\b",
         "\\bdenominator\\b",
         "\\bmixed number\\b",
-        "\\bfraction\\b"
+        "\\bfraction\\b",
+        "\\\\\\\\frac\\\\s*\\\\{?\\\\d+",
+        "\\\\bfractions?\\\\b",
+        "\\\\frac\\s*\\{?\\d+",
+        "\\bfractions?\\b"
       ]
     },
     {
@@ -72,6 +76,10 @@
         "\\bproportion\\b",
         "\\brate\\b",
         "\\bper\\s+(?:one|unit|hour|minute|second|km|kg|m)\\b"
+      ],
+      "negativeTitlePatterns": [
+        "\\brates? of change\\b",
+        "\\brate of change\\b"
       ]
     },
     {
@@ -91,7 +99,14 @@
         "\\bcube root\\b",
         "\\bpower\\b",
         "\\bindex\\b",
-        "\\bexponent\\b"
+        "\\bexponent\\b",
+        "\\\\\\\\sqrt",
+        "10\\\\s*(?:×|x|\\\\\\\\times)",
+        "\\\\sqrt",
+        "10\\s*(?:×|x|\\\\times)"
+      ],
+      "negativeTitlePatterns": [
+        "\\bbattery power\\b"
       ]
     },
     {
@@ -185,7 +200,13 @@
         "\\bsimultaneous\\b",
         "\\belimination\\b",
         "\\bsubstitution\\b",
-        "[xy].*=.*[\n;].*[xy].*="
+        "[xy].*=.*[\n;].*[xy].*=",
+        "\\\\bsystems? of equations?\\\\b",
+        "\\\\\\\\begin\\\\s*\\\\{cases\\\\}",
+        "\\\\by\\\\s*=.*\\\\by\\\\s*=",
+        "\\bsystems? of equations?\\b",
+        "\\\\begin\\s*\\{cases\\}",
+        "\\by\\s*=.*\\by\\s*="
       ]
     },
     {
@@ -213,7 +234,11 @@
         "\\bnth\\b",
         "\\bcommon difference\\b",
         "\\bcommon ratio\\b",
-        "\\bsum of.*terms\\b"
+        "\\bsum of.*terms\\b",
+        "f\\\\s*\\\\(n\\\\)",
+        "\\\\bn\\\\s*[-−]\\\\s*1\\\\b",
+        "f\\s*\\(n\\)",
+        "\\bn\\s*[-−]\\s*1\\b"
       ]
     },
     {
@@ -228,7 +253,16 @@
         "\\bdomain\\b",
         "\\brange\\b",
         "\\binverse\\b",
-        "\\bcomposite\\b"
+        "\\bcomposite\\b",
+        "\\\\by\\\\s*=",
+        "\\\\binputs?\\\\b.*\\\\boutputs?\\\\b",
+        "\\by\\s*=",
+        "\\binputs?\\b.*\\boutputs?\\b"
+      ],
+      "negativeTitlePatterns": [
+        "\\blogarithmic functions?\\b",
+        "\\bfunctions involving percent change\\b",
+        "\\busing functions to model\\b"
       ]
     },
     {
@@ -248,6 +282,9 @@
         "\\bmidpoint\\b",
         "\\bcoordinate\\b",
         "\\bline\\b"
+      ],
+      "negativeTitlePatterns": [
+        "\\bdistance around shapes\\b"
       ]
     },
     {
@@ -371,7 +408,11 @@
         "\\btan\\b",
         "\\btrigonom",
         "\\bsine rule\\b",
-        "\\bcosine rule\\b"
+        "\\bcosine rule\\b",
+        "\\\\bright triangles?\\\\b",
+        "\\\\btrigonometric\\\\b",
+        "\\bright triangles?\\b",
+        "\\btrigonometric\\b"
       ]
     },
     {
@@ -402,7 +443,9 @@
         "\\breflect",
         "\\benlarg",
         "\\btransformation\\b",
-        "\\bscale factor\\b"
+        "\\bscale factor\\b",
+        "\\brigid motions?\\b",
+        "\\bdilat(?:e|ion|ions)\\b"
       ]
     },
     {
@@ -424,7 +467,20 @@
         "\\bdata\\b",
         "\\bfrequency\\b",
         "\\btable\\b",
-        "\\bchart\\b"
+        "\\bchart\\b",
+        "\\\\bgraphs?\\\\b",
+        "\\\\bline plots?\\\\b",
+        "\\\\bpicture graphs?\\\\b",
+        "\\\\bbar graphs?\\\\b",
+        "\\\\bcategor(?:y|ies)\\\\b",
+        "\\bgraphs?\\b",
+        "\\bline plots?\\b",
+        "\\bpicture graphs?\\b",
+        "\\bbar graphs?\\b",
+        "\\bcategor(?:y|ies)\\b"
+      ],
+      "negativeTitlePatterns": [
+        "\\baverage rate of change\\b"
       ]
     },
     {
@@ -455,7 +511,13 @@
         "\\btree diagram\\b",
         "\\bexpected frequency\\b",
         "P\\s*\\(",
-        "\\d+\\s*/\\s*\\d+"
+        "\\d+\\s*/\\s*\\d+",
+        "\\\\btheoretical distribution\\\\b",
+        "\\\\bempirical\\\\b",
+        "\\\\brelative frequency\\\\b",
+        "\\btheoretical distribution\\b",
+        "\\bempirical\\b",
+        "\\brelative frequency\\b"
       ]
     },
     {
@@ -473,6 +535,44 @@
       ]
     },
     {
+      "id": "average-rate-of-change-functions",
+      "titlePatterns": [
+        "\\baverage rate of change\\b",
+        "\\blooking at rates? of change\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\baverage rate of change\\b",
+        "\\bslope\\b",
+        "\\bper (?:hour|year|unit)\\b",
+        "f\\s*\\(b\\).*f\\s*\\(a\\)"
+      ]
+    },
+    {
+      "id": "function-percent-change",
+      "titlePatterns": [
+        "\\bfunctions involving percent change\\b"
+      ],
+      "workedExamplePatterns": [
+        "%",
+        "\\bpercent(?:age)?\\b",
+        "\\bdiscount\\b",
+        "\\bpercent change\\b"
+      ]
+    },
+    {
+      "id": "function-context-modeling",
+      "titlePatterns": [
+        "\\busing functions to model\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bfunction\\b",
+        "\\bmodel\\b",
+        "[a-z]\\s*\\(",
+        "%",
+        "\\bpercent(?:age)?\\b"
+      ]
+    },
+    {
       "id": "differentiation",
       "titlePatterns": [
         "\\bdifferentiat",
@@ -485,6 +585,10 @@
         "\\bdifferentiat",
         "\\bderivative\\b",
         "\\bstationary point\\b"
+      ],
+      "negativeTitlePatterns": [
+        "\\baverage rate of change\\b",
+        "\\blooking at rates? of change\\b"
       ]
     },
     {
@@ -587,7 +691,11 @@
         "\\d+\\s*[-−]\\s*\\d+\\s*=\\s*\\d+",
         "\\binverse operation\\b",
         "\\bregroup",
-        "\\bcomplement"
+        "\\bcomplement",
+        "\\\\d+\\\\s*\\\\+\\\\s*\\\\d+",
+        "\\\\d+\\\\s*[-−]\\\\s*\\\\d+",
+        "\\d+\\s*\\+\\s*\\d+",
+        "\\d+\\s*[-−]\\s*\\d+"
       ],
       "negativeTitlePatterns": [
         "\\bfractions?\\b",
@@ -604,7 +712,11 @@
         "×",
         "\\bmultiplication fact\\b",
         "\\binverse division\\b",
-        "\\d+\\s*\\*\\s*\\d+"
+        "\\d+\\s*\\*\\s*\\d+",
+        "\\\\bmultiplication table\\\\b",
+        "\\\\bproducts?\\\\b",
+        "\\bmultiplication table\\b",
+        "\\bproducts?\\b"
       ]
     },
     {

@@ -87,6 +87,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                 .ApplyApprovedCorrections(document);
             SupportingLessonPracticeContentCorrections
                 .ApplyApprovedCorrections(document);
+            OfficialLessonPracticeContentCorrections
+                .ApplyApprovedCorrections(document);
             CanonicalLessonContentPackContract.Validate(document);
             result.Add(document);
         }
@@ -106,6 +108,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
             CambridgePrimaryStage6LessonContentCorrections
                 .ApplyApprovedCorrections(document);
             SupportingLessonPracticeContentCorrections
+                .ApplyApprovedCorrections(document);
+            OfficialLessonPracticeContentCorrections
                 .ApplyApprovedCorrections(document);
             CanonicalLessonContentPackContract.Validate(document);
         }
@@ -328,12 +332,19 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                         document,
                         sourceLesson);
 
-            var expectedContentVersion =
+            var supportingExpectedContentVersion =
                 SupportingLessonPracticeContentCorrections
                     .GetExpectedContentVersion(
                         document,
                         sourceLesson,
                         stage6ExpectedContentVersion);
+
+            var expectedContentVersion =
+                OfficialLessonPracticeContentCorrections
+                    .GetExpectedContentVersion(
+                        document,
+                        sourceLesson,
+                        supportingExpectedContentVersion);
 
             var actualOutcomeCodes =
                 outcomesByLessonId.TryGetValue(
@@ -364,6 +375,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
 
             var didUpgradeStage6Correction = false;
             var didUpgradeSupportingCorrection = false;
+            var didUpgradeOfficialPracticeCorrection = false;
 
             if (!contentByLessonId.TryGetValue(
                     lesson.Id,
@@ -424,10 +436,17 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                                 document,
                                 sourceLesson,
                                 content.ContentVersion);
+                    var canUpgradeOfficialPracticeCorrection =
+                        OfficialLessonPracticeContentCorrections
+                            .CanUpgradeExisting(
+                                document,
+                                sourceLesson,
+                                content.ContentVersion);
 
                     if (!isApprovedCommonCoreReplacement &&
                         !canUpgradeStage6Correction &&
-                        !canUpgradeSupportingCorrection)
+                        !canUpgradeSupportingCorrection &&
+                        !canUpgradeOfficialPracticeCorrection)
                     {
                         throw new InvalidOperationException(
                             $"Refusing silent canonical content-version replacement for " +
@@ -443,6 +462,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                         canUpgradeStage6Correction;
                     didUpgradeSupportingCorrection =
                         canUpgradeSupportingCorrection;
+                    didUpgradeOfficialPracticeCorrection =
+                        canUpgradeOfficialPracticeCorrection;
                 }
 
                 if ((int)content.Status >
@@ -523,7 +544,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                 {
                     if (isApprovedCommonCoreReplacement ||
                         didUpgradeStage6Correction ||
-                        didUpgradeSupportingCorrection)
+                        didUpgradeSupportingCorrection ||
+                        didUpgradeOfficialPracticeCorrection)
                     {
                         current.Title = incoming.Title;
                         current.Explanation = incoming.Explanation;

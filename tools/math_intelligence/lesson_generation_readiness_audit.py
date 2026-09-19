@@ -10,6 +10,9 @@ from typing import Any
 from lesson_semantic_content_audit import audit as semantic_audit
 from lesson_skill_resolution_audit import audit as skill_resolution_audit
 from supporting_practice_rules import load_rule_mappings as load_supporting_rule_mappings
+from official_practice_rules import (
+    load_reviewed_official_rule_mappings,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 SKILL_REGISTRY = ROOT / "src/Edulytics.Core/Mathematics/Skills/skill-registry.v1.json"
@@ -56,6 +59,11 @@ def load_approved_mappings() -> tuple[dict[str, dict[str, Any]], list[str]]:
     content_dir = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs"
     supporting, unmatched, errors = load_supporting_rule_mappings(content_dir)
     for code, row in supporting.items():
+        result.setdefault(code, row)
+
+    official, official_errors = load_reviewed_official_rule_mappings(content_dir)
+    errors.extend(official_errors)
+    for code, row in official.items():
         result.setdefault(code, row)
 
     explicit_codes = {
@@ -182,6 +190,7 @@ def decide(
     skill_status: str,
     semantic_status: str,
     has_approved_mapping: bool,
+    has_reviewed_official_mapping: bool,
     has_question_family: bool,
     has_verified: bool,
     has_contextual: bool,
@@ -192,7 +201,9 @@ def decide(
         return "MAPPING_CONFLICT", ["Mapping evidence contains a conflict."]
     if semantic_status == "CONTENT_WEAK":
         return "CONTENT_WEAK", ["Worked examples do not demonstrate the recognized mathematical target strongly enough."]
-    if semantic_status in {"REVIEW_REQUIRED", "UNCLASSIFIED"}:
+    if semantic_status == "REVIEW_REQUIRED":
+        return "REQUIRES_ACADEMIC_REVIEW", ["Semantic content evidence requires explicit academic review."]
+    if semantic_status == "UNCLASSIFIED" and not has_reviewed_official_mapping:
         return "REQUIRES_ACADEMIC_REVIEW", ["Semantic content evidence is not strong enough for generation readiness."]
     if skill_status == "AMBIGUOUS":
         return "SKILL_AMBIGUOUS", ["Multiple SkillIds remain plausible."]
@@ -254,10 +265,20 @@ def audit() -> dict[str, Any]:
             capabilities,
             families,
         )
+        reviewed_official_mapping = bool(
+            mapping
+            and str(mapping.get("sourceType") or "") in {
+                "OfficialReviewedExactTitleRule",
+                "OfficialReviewedUniqueTitleRule",
+                "OfficialReviewedCanonicalEvidence",
+                "OfficialOutcomeRule",
+            }
+        )
         readiness, reasons = decide(
             skill_status,
             semantic_status,
             mapping is not None,
+            reviewed_official_mapping,
             has_family,
             has_verified,
             has_contextual,
@@ -286,6 +307,7 @@ def audit() -> dict[str, Any]:
             "skillResolutionStatus": skill_status,
             "semanticContentStatus": semantic_status,
             "approvedMapping": mapping is not None,
+            "reviewedOfficialMapping": reviewed_official_mapping,
             "approvedPrimarySkills": [] if mapping is None else clean_list(mapping.get("primarySkills")),
             "hasQuestionFamily": has_family,
             "hasVerifiedSolverCapability": has_verified,

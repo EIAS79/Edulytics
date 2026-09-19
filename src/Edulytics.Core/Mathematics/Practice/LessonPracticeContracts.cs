@@ -15,8 +15,13 @@ public sealed record LessonPracticeContract(
     string Readiness,
     string ContractVersion)
 {
+    public IReadOnlyList<string> SkillIds { get; init; } = [SkillId];
+
     public Stage18PracticeSkillContract ToLegacyStage18Contract() =>
-        new(LessonCode, SkillId, Mechanic, AllowedQuestionFamilies);
+        new(LessonCode, SkillId, Mechanic, AllowedQuestionFamilies)
+        {
+            SkillIds = SkillIds
+        };
 }
 
 /// <summary>
@@ -686,6 +691,13 @@ public static class LessonPracticeContractRegistry
         {
             // Hand-authored contracts remain authoritative where they already exist.
             // The explicit mapping projection supplements the registry first.
+            byLesson.TryAdd(projected.LessonCode, projected);
+        }
+
+        foreach (var projected in OfficialLessonPracticeRuleProjection.Load())
+        {
+            // Official lessons may be promoted only by reviewed anchored
+            // exact-title rules. Broad keyword matching is never authoritative.
             byLesson.TryAdd(projected.LessonCode, projected);
         }
 

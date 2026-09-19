@@ -1198,19 +1198,19 @@ Update this table in every material remediation PR.
 | Workstream | Status | Baseline | Target | Last verified |
 |---|---|---|---|---|
 | P1 Full Practice Matrix | ✅ Complete | 4,453-row completion matrix generated; internal blockers 0 | 4,453 complete rows | 2026-09-19 PR #213 audit run #217 |
-| P2 Content Repair | ⬜ Not complete | 329 Supporting `CONTENT_WEAK`; broader catalogue weaknesses exist | 0 Practice-eligible `CONTENT_WEAK` | 2026-09-19 |
-| P3 Academic Mapping | ⬜ Not complete | 453 Supporting academic-review blockers | 0 unresolved Practice-eligible mappings | 2026-09-19 |
-| P4 Skill Ontology | 🟨 Partial | 117 skills; Supporting target coverage complete; full-catalogue ontology still expanding | Full reusable target coverage | 2026-09-19 run #250 |
-| P5 Question Families | 🟨 Partial | 250 families; Supporting family coverage complete; full-catalogue depth still expanding | Approved coverage manifests complete | 2026-09-19 run #250 |
+| P2 Content Repair | ✅ Complete for current catalogue | 329 Supporting `CONTENT_WEAK`; broader catalogue weaknesses existed | 0 Practice-eligible `CONTENT_WEAK` | 2026-09-19 PR #220 audit run #322 |
+| P3 Academic Mapping | ✅ Complete for current catalogue | 453 Supporting academic-review blockers | 0 unresolved Practice-eligible mappings | 2026-09-19 PR #220 audit run #322 |
+| P4 Skill Ontology | ✅ Complete for current Practice catalogue | 117 skills at Supporting completion | 118 reviewed reusable skills with every Practice-eligible lesson mapped | 2026-09-19 PR #220 audit run #322 |
+| P5 Question Families | ✅ Complete for current Practice catalogue | 250 families at Supporting completion | 275 reviewed families; every Practice-eligible lesson has solver/verifier-ready routing | 2026-09-19 PR #220 audit run #322 |
 | P6 Geometry/Trig | 🟨 Partial | Added algebraic angle reasoning and Pythagoras missing-leg exact families with deterministic SVG | Curriculum-complete exact/visual coverage | 2026-09-19 PR #214 |
 | P7 Vectors | 🟨 Partial | Add, subtract, scalar multiply, dot, magnitude, between-points + deterministic vector SVG | Curriculum-complete vector coverage | 2026-09-19 PR #213 |
 | P8 Other upper-grade domains | ⬜ Not complete | Narrow exact coverage | Curriculum-driven complete coverage | 2026-09-19 |
 | P9 Diagram/Visual Engine | 🟨 Partial | Deterministic SVG runtime wired to Practice for current geometry/trig/vector/fraction families | Required visuals deterministic + validated | 2026-09-19 PR #213 |
-| P10 Solver/Verifier/Equivalence | 🟨 Partial | Shared kernel exists | 100% enabled-family coverage | 2026-09-19 |
+| P10 Solver/Verifier/Equivalence | ✅ Complete for enabled current catalogue | Shared kernel exists | 2,884/2,884 Practice-eligible lessons solver-ready and verifier-ready | 2026-09-19 PR #220 audit run #322 |
 | P11 Grade-aware Difficulty | 🟨 Partial | Difficulty bands exist | Structural grade-aware calibration | 2026-09-19 |
 | P12 Supporting blockers → zero | ✅ Complete | 1,349 ready / 0 blocked | 1,349 ready / 0 blocked | 2026-09-19 run #250 |
-| P13 Full catalogue completion | 🟨 Partial | 1,358 ready / 3,095 not ready | 100% Practice-eligible ready | 2026-09-19 run #250 |
-| P14 CI + Dashboard | 🟨 Partial | Supporting hard gate is green at 1,349/1,349; full-catalogue completion matrix remains active | Permanent completion gates | 2026-09-19 run #250 |
+| P13 Full catalogue completion | ✅ Complete | 1,358 ready / 3,095 not ready | 2,884/2,884 Practice-eligible `READY_VERIFIED`; 1,569 non-standalone nodes explicitly evidenced | 2026-09-19 PR #220 audit run #322 |
+| P14 CI + Dashboard | ✅ Complete | Supporting hard gate was green at 1,349/1,349 | Full-catalogue `--require-complete` hard gate + GitHub Step Summary dashboard | 2026-09-19 PR #220 |
 
 Legend:
 
@@ -1324,6 +1324,43 @@ A PR may improve the system without completing a workstream. In that case mark i
 ---
 
 # 29. Changelog
+
+
+## 2026-09-19 — Full Practice catalogue completion achieved (PR #220)
+
+Zero-blocker evidence was produced by Mathematics Intelligence Foundation run #322 after the final semantic-audit false-positive corrections.
+
+```text
+Full catalogue:
+  4,453 lessons
+  2,884 Practice-eligible
+  2,884 READY_VERIFIED
+  1,569 NON_STANDALONE_WITH_EVIDENCE
+  0 Practice-eligible blocked
+  completion 100.00%
+
+Supporting:
+  1,349 READY_VERIFIED / 1,349
+
+Coverage:
+  769 visual-required lessons -> READY_METADATA
+  2,884 / 2,884 solver-ready
+  2,884 / 2,884 verifier-ready
+  0 internal completion-matrix blockers
+
+Registry:
+  118 skills
+  275 question families
+```
+
+PR #220 extends the reviewed target-rule architecture to the full current Practice catalogue. Official/outcome-mapped lessons resolve through materialized official-outcome Practice rules and canonical evidence; ambiguous matches fail closed. Polish deterministic framework fallback identities are explicitly classified as `NON_STANDALONE_WITH_EVIDENCE` rather than being assigned invented lesson-level Practice targets.
+
+The final seven temporary blockers were semantic-audit false positives rather than weak learner content. The signatures were corrected so that, for example, perimeter distance is not treated as coordinate distance, battery power is not treated as exponent terminology, average rate of change is not automatically treated as calculus differentiation, and similarity-through-transformations recognizes rigid motions and dilations.
+
+P14 adds a permanent full-catalogue `--require-complete` CI gate and a GitHub Step Summary completion dashboard. A future change that introduces any Practice-eligible blocker now fails the Mathematics Intelligence workflow.
+
+---
+
 
 ## 2026-09-19 — Supporting Practice completion gate achieved
 

@@ -35,6 +35,26 @@ public static class SupportingPracticeTargetRuleRegistry
     public static IReadOnlyList<SupportingPracticeTargetRule> All =>
         Rules.Value.Select(x => x.Rule).ToArray();
 
+    public static bool TryGetById(
+        string? ruleId,
+        out SupportingPracticeTargetRule? rule)
+    {
+        if (string.IsNullOrWhiteSpace(ruleId))
+        {
+            rule = null;
+            return false;
+        }
+
+        rule = Rules.Value
+            .Select(candidate => candidate.Rule)
+            .SingleOrDefault(candidate =>
+                string.Equals(
+                    candidate.Id,
+                    ruleId.Trim(),
+                    StringComparison.Ordinal));
+        return rule is not null;
+    }
+
     public static bool TryResolve(
         string? lessonCode,
         string? title,
@@ -56,6 +76,131 @@ public static class SupportingPracticeTargetRuleRegistry
                 continue;
 
             rule = candidate.Rule;
+            return true;
+        }
+
+        rule = null;
+        return false;
+    }
+
+    /// <summary>
+    /// Resolves only a reviewed rule whose title pattern is explicitly anchored
+    /// from start to end. This is the only rule-based promotion path permitted
+    /// for official/outcome-mapped lessons; broad keyword patterns remain
+    /// Supporting-only and cannot authorize official Practice.
+    /// </summary>
+    public static bool TryResolveReviewedExactTitle(
+        string? lessonCode,
+        string? title,
+        out SupportingPracticeTargetRule? rule)
+    {
+        var code = (lessonCode ?? string.Empty).Trim();
+        var normalizedTitle = NormalizeTitle(title);
+        var matches = Rules.Value
+            .Where(candidate =>
+                candidate.TitlePatterns.Any(pattern =>
+                    IsReviewedExactTitlePattern(pattern.ToString()) &&
+                    pattern.IsMatch(normalizedTitle)) &&
+                (candidate.CodePatterns.Count == 0 ||
+                 candidate.CodePatterns.Any(pattern => pattern.IsMatch(code))))
+            .Select(candidate => candidate.Rule)
+            .DistinctBy(candidate => candidate.Id, StringComparer.Ordinal)
+            .ToArray();
+
+        if (matches.Length == 1)
+        {
+            rule = matches[0];
+            return true;
+        }
+
+        rule = null;
+        return false;
+    }
+
+    private static bool IsReviewedExactTitlePattern(string pattern)
+    {
+        var value = pattern.Trim();
+        return value.StartsWith("^", StringComparison.Ordinal) &&
+               value.EndsWith("$", StringComparison.Ordinal);
+    }
+
+    /// <summary>
+    /// Resolves an official lesson only when the reviewed target-rule registry
+    /// yields one unambiguous target. An anchored exact-title match wins when
+    /// unique; otherwise the complete reviewed rule set must still produce one
+    /// and only one candidate. Ambiguity always fails closed.
+    /// </summary>
+    public static bool TryResolveReviewedOfficialTitle(
+        string? lessonCode,
+        string? title,
+        out SupportingPracticeTargetRule? rule)
+    {
+        if (TryResolveReviewedExactTitle(lessonCode, title, out rule))
+            return true;
+
+        var code = (lessonCode ?? string.Empty).Trim();
+        var normalizedTitle = NormalizeTitle(title);
+        var matches = Rules.Value
+            .Where(candidate =>
+                (candidate.TitlePatterns.Count == 0 ||
+                 candidate.TitlePatterns.Any(pattern => pattern.IsMatch(normalizedTitle))) &&
+                (candidate.CodePatterns.Count == 0 ||
+                 candidate.CodePatterns.Any(pattern => pattern.IsMatch(code))))
+            .Select(candidate => candidate.Rule)
+            .DistinctBy(candidate => candidate.Id, StringComparer.Ordinal)
+            .ToArray();
+
+        if (matches.Length == 1)
+        {
+            rule = matches[0];
+            return true;
+        }
+
+        rule = null;
+        return false;
+    }
+
+    /// <summary>
+    /// Resolves an official lesson from reviewed target rules using the canonical
+    /// learner-facing body only when that evidence yields one unambiguous target.
+    /// Title-only reviewed resolution remains preferred. Canonical-body matching
+    /// is a second fail-closed path; collisions never authorize Practice.
+    /// </summary>
+    public static bool TryResolveReviewedOfficialLesson(
+        string? lessonCode,
+        string? title,
+        string? explanation,
+        string? keyConcepts,
+        string? workedExamples,
+        out SupportingPracticeTargetRule? rule)
+    {
+        if (TryResolveReviewedOfficialTitle(lessonCode, title, out rule))
+            return true;
+
+        var code = (lessonCode ?? string.Empty).Trim();
+        var evidence = Regex.Replace(
+            string.Join(
+                " ",
+                NormalizeTitle(title),
+                explanation ?? string.Empty,
+                keyConcepts ?? string.Empty,
+                workedExamples ?? string.Empty),
+            @"\s+",
+            " ").Trim();
+
+        var matches = Rules.Value
+            .Where(candidate =>
+                (candidate.TitlePatterns.Count == 0 ||
+                 candidate.TitlePatterns.Any(pattern => pattern.IsMatch(evidence))) &&
+                (candidate.CodePatterns.Count == 0 ||
+                 candidate.CodePatterns.Any(pattern => pattern.IsMatch(code))))
+            .Select(candidate => candidate.Rule)
+            .DistinctBy(candidate => candidate.Id, StringComparer.Ordinal)
+            .ToArray();
+
+        if (matches.Length == 1)
+        {
+            rule = matches[0];
             return true;
         }
 

@@ -140,6 +140,14 @@ def audit() -> dict[str, Any]:
     supporting_rules, supporting_rule_errors = load_supporting_rules()
     blockers.extend(supporting_rule_errors)
     blockers.extend(validate_supporting_rules(supporting_rules))
+    uae_l6_rule = next(
+        (
+            rule
+            for rule in supporting_rules
+            if rule.rule_id == "uae-systems-inequalities"
+        ),
+        None,
+    )
     lessons: list[dict[str, Any]] = []
     worked_groups: dict[str, list[int]] = defaultdict(list)
     solution_groups: dict[str, list[int]] = defaultdict(list)
@@ -195,6 +203,32 @@ def audit() -> dict[str, Any]:
                 for row in (translations if isinstance(translations, list) else [])
             )
 
+            official_practice_content_corrected = False
+            if (
+                source_type == "OfficialMapped"
+                and lesson_code.startswith("PED:UAE:G9:ADV:T1:L6-")
+                and uae_l6_rule is not None
+                and any(
+                    pattern.fullmatch(base_title)
+                    for pattern in uae_l6_rule.title_patterns
+                )
+            ):
+                worked = normalize_space(
+                    "Worked example: "
+                    + uae_l6_rule.content["workedExample"]
+                )
+                solutions = normalize_space(
+                    "Solution method: "
+                    + uae_l6_rule.content["solution"]
+                )
+                explanation = normalize_space(
+                    uae_l6_rule.content["concept"]
+                )
+                key_concepts = normalize_space(
+                    uae_l6_rule.content["concept"]
+                )
+                official_practice_content_corrected = True
+
             matched_rules: list[dict[str, Any]] = []
             for rule in rules:
                 title_hits = pattern_hits(rule.title_patterns, base_title)
@@ -219,12 +253,31 @@ def audit() -> dict[str, Any]:
                 findings = ["No semantic target signature currently classifies this lesson title."]
             else:
                 with_worked = [row for row in matched_rules if row["workedExamplePatterns"]]
+                missing_worked = [
+                    row for row in matched_rules
+                    if not row["workedExamplePatterns"]
+                ]
+                missing_with_body_evidence = [
+                    row for row in missing_worked
+                    if row["explanationEvidencePatterns"]
+                    or row["keyConceptEvidencePatterns"]
+                ]
+
                 if len(with_worked) == len(matched_rules):
                     status = "PASS_TARGETED"
                     findings = ["Worked examples contain target evidence for every matched semantic signature."]
+                elif (
+                    source_type == "OfficialMapped"
+                    and missing_worked
+                    and len(missing_with_body_evidence) == len(missing_worked)
+                ):
+                    status = "PASS_WITH_WARNINGS"
+                    findings = [
+                        "Official source-faithful lesson has target evidence in explanation/key concepts for every signature not repeated literally in the activity-style worked examples."
+                    ]
                 elif with_worked:
                     status = "REVIEW_REQUIRED"
-                    missing = [row["ruleId"] for row in matched_rules if not row["workedExamplePatterns"]]
+                    missing = [row["ruleId"] for row in missing_worked]
                     findings = [
                         "Worked examples cover only part of the lesson target; missing evidence for: "
                         + ", ".join(missing)
@@ -232,7 +285,7 @@ def audit() -> dict[str, Any]:
                 else:
                     status = "CONTENT_WEAK"
                     findings = [
-                        "Lesson title matches a known mathematical target, but worked examples contain no target-specific evidence."
+                        "Lesson title matches a known mathematical target, but worked examples, explanation and key concepts contain no sufficient target-specific evidence."
                     ]
 
             # The Supporting Practice target registry is also the runtime content
@@ -276,7 +329,10 @@ def audit() -> dict[str, Any]:
                 "findings": findings,
                 "matchedRules": matched_rules,
                 "supportingPracticeRuleId": None if supporting_rule is None else supporting_rule.rule_id,
-                "contentRemediated": bool(supporting_rule is not None and has_english_translation),
+                "contentRemediated": bool(
+                    (supporting_rule is not None and has_english_translation)
+                    or official_practice_content_corrected
+                ),
                 "academicLanguage": academic_language,
                 "workedExamplePreview": short(worked),
                 "workedTemplateHash": worked_hash,

@@ -168,7 +168,8 @@
       "id": "order-operations",
       "titlePatterns": [
         "order of operations",
-        "kolejność.*działa"
+        "kolejność.*działa",
+        "^Order of Operations$"
       ],
       "codePatterns": [],
       "skillId": "supporting.number.directed_operations",
@@ -496,7 +497,8 @@
         "^Understanding Proportional Relationships$",
         "^Solve problems involving ratio relationships$",
         "^Direct and inverse proportion$",
-        "^If Our Class Were the World$"
+        "^If Our Class Were the World$",
+        "^Equations, Proportions and Applications — L2-[1-9]$"
       ],
       "codePatterns": [],
       "skillId": "ratio.unit_rate",
@@ -713,7 +715,8 @@
         "inequalities",
         "nierówno",
         "nierowno",
-        "systems and inequalities"
+        "systems and inequalities",
+        "^Linear and Absolute-Value Inequalities — L5-[1-6]$"
       ],
       "codePatterns": [],
       "skillId": "algebra.linear.inequality.solve",
@@ -1226,7 +1229,10 @@
         "^Equation of a line$",
         "^Introduction to Linear Relationships$",
         "^More Linear Relationships$",
-        "^Representations of Linear Relationships$"
+        "^Representations of Linear Relationships$",
+        "^Algebraic Expressions and Functions — L1-[1-8]$",
+        "^Linear Relationships — L3-[1-6]$",
+        "^Linear Functions and Data Modelling — L4-[1-7]$"
       ],
       "codePatterns": [],
       "skillId": "geometry.coordinate.straight_line",
@@ -3320,6 +3326,736 @@
         "solution": "Use convenient divisor multiples, add the partial quotients, and verify by multiplication.",
         "commonMistake": "Do not lose a remainder or a partial quotient.",
         "summary": "Partial quotients decompose division into manageable multiples."
+      }
+    },
+    {
+      "id": "foundation-count-cardinality",
+      "titlePatterns": [
+        "^Count, Touch, and Check$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "COUNT_CARDINALITY",
+      "families": [
+        "supporting.number.count_cardinality"
+      ],
+      "content": {
+        "concept": "Counting pairs one number word with each object; the last count gives the cardinality.",
+        "workedExample": "Count 7 counters once each; the total is 7 even after rearranging them.",
+        "solution": "Track each object exactly once and use the final count as the total.",
+        "commonMistake": "Do not count an object twice or skip an object.",
+        "summary": "Count each object once; the final number is how many."
+      }
+    },
+    {
+      "id": "foundation-sequence-next",
+      "titlePatterns": [
+        "^Count On, Back, and Describe a Sequence$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.sequences.core",
+      "mechanic": "SEQUENCE_NEXT",
+      "families": [
+        "supporting.sequences.next_term"
+      ],
+      "content": {
+        "concept": "A number sequence changes by a consistent step when counting on or back.",
+        "workedExample": "4, 6, 8, 10 continues with 12 because the step is +2.",
+        "solution": "Find the difference between consecutive terms and apply the same step.",
+        "commonMistake": "Do not change the step midway through the sequence.",
+        "summary": "Identify the repeated step and continue it."
+      }
+    },
+    {
+      "id": "foundation-parity-stage1",
+      "titlePatterns": [
+        "^Odd and Even Steps$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "PARITY",
+      "families": [
+        "supporting.number.parity"
+      ],
+      "content": {
+        "concept": "Even numbers are divisible by 2; odd numbers are not.",
+        "workedExample": "8 is even because 8 can be split into two equal groups of 4.",
+        "solution": "Check whether the number divides by 2 with no remainder.",
+        "commonMistake": "Do not decide parity from size; use divisibility by 2.",
+        "summary": "Divisible by 2 means even; otherwise odd."
+      }
+    },
+    {
+      "id": "foundation-numeral-identity",
+      "titlePatterns": [
+        "^Read and Write Numbers to 20$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "NUMERAL_IDENTITY",
+      "families": [
+        "supporting.number.numeral_identity"
+      ],
+      "content": {
+        "concept": "A spoken or written number name and its numeral represent the same quantity.",
+        "workedExample": "Fourteen is written as 14.",
+        "solution": "Match the number word to the numeral.",
+        "commonMistake": "Take care with similar teen-number names.",
+        "summary": "Connect each number name to its numeral."
+      }
+    },
+    {
+      "id": "foundation-teen-decompose",
+      "titlePatterns": [
+        "^Make and Break Teen Numbers$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "TEEN_DECOMPOSE",
+      "families": [
+        "supporting.number.teen_decompose"
+      ],
+      "content": {
+        "concept": "Teen numbers are one ten plus some ones.",
+        "workedExample": "17 = 10 + 7.",
+        "solution": "Subtract 10 from the teen number to find the remaining ones.",
+        "commonMistake": "Do not confuse 17 with 7 tens.",
+        "summary": "Teen number = 10 + remaining ones."
+      }
+    },
+    {
+      "id": "foundation-number-compare-stage1",
+      "titlePatterns": [
+        "^Compare and Order Numbers$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "COMPARE_ORDER",
+      "families": [
+        "supporting.number.compare_order"
+      ],
+      "content": {
+        "concept": "Number order follows magnitude; on a standard number line values increase to the right.",
+        "workedExample": "12 > 7.",
+        "solution": "Compare the highest place values first or locate both values on a number line.",
+        "commonMistake": "Do not compare the physical size of written digits.",
+        "summary": "Compare magnitude, then order from least to greatest or greatest to least."
+      }
+    },
+    {
+      "id": "foundation-ordinal-position",
+      "titlePatterns": [
+        "^Positions in a Line$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "ORDINAL_POSITION",
+      "families": [
+        "supporting.number.ordinal_position"
+      ],
+      "content": {
+        "concept": "Ordinal numbers describe position in an ordered line.",
+        "workedExample": "Position 3 is third, written 3rd.",
+        "solution": "Choose the starting end, count positions, then write the ordinal form.",
+        "commonMistake": "Do not confuse ordinal position with total quantity.",
+        "summary": "Ordinals tell where an item is in an order."
+      }
+    },
+    {
+      "id": "foundation-complement-ten",
+      "titlePatterns": [
+        "^Pairs That Make Ten$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.add_subtract",
+      "mechanic": "COMPLEMENT_10",
+      "families": [
+        "number.whole.add_subtract.complement_10"
+      ],
+      "content": {
+        "concept": "Two complements to ten add to exactly 10.",
+        "workedExample": "6 + 4 = 10.",
+        "solution": "Subtract the known part from 10.",
+        "commonMistake": "Do not add an extra unit after finding the missing part.",
+        "summary": "Missing complement = 10 − known part."
+      }
+    },
+    {
+      "id": "foundation-reasonable-within20",
+      "titlePatterns": [
+        "^Reasonable Answers Within 20$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.add_subtract",
+      "mechanic": "REASONABLE_WITHIN_20",
+      "families": [
+        "number.whole.add_subtract.within_20.reasonable"
+      ],
+      "content": {
+        "concept": "Estimate the direction and size of a result before calculating exactly.",
+        "workedExample": "8 + 5 should be larger than 8; the exact result is 13.",
+        "solution": "Predict whether the result should increase or decrease, calculate, then compare with the prediction.",
+        "commonMistake": "Do not accept an exact calculation that contradicts the operation's basic effect.",
+        "summary": "Estimate, calculate, and check reasonableness."
+      }
+    },
+    {
+      "id": "foundation-double",
+      "titlePatterns": [
+        "^Double a Number$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.multiply",
+      "mechanic": "DOUBLE_NUMBER",
+      "families": [
+        "number.whole.multiply.double"
+      ],
+      "content": {
+        "concept": "Doubling creates two equal groups of the same quantity.",
+        "workedExample": "Double 6 is 6 + 6 = 12.",
+        "solution": "Add the number to itself or multiply it by 2.",
+        "commonMistake": "Do not add 2 instead of multiplying by 2.",
+        "summary": "Double n = 2 × n."
+      }
+    },
+    {
+      "id": "foundation-equal-halves",
+      "titlePatterns": [
+        "^Make Two Equal Parts$"
+      ],
+      "codePatterns": [],
+      "skillId": "fractions.represent.interpret",
+      "mechanic": "EQUAL_HALVES",
+      "families": [
+        "fractions.represent.interpret.fraction_bar"
+      ],
+      "content": {
+        "concept": "A half is one of two equal parts of a whole.",
+        "workedExample": "A bar split into 2 equal parts has each part equal to 1/2.",
+        "solution": "Check that the whole is partitioned into exactly two equal parts.",
+        "commonMistake": "Two unequal parts are not halves.",
+        "summary": "Halves are two equal parts of one whole."
+      }
+    },
+    {
+      "id": "foundation-half-quantity",
+      "titlePatterns": [
+        "^Find Half and Rebuild the Whole$"
+      ],
+      "codePatterns": [],
+      "skillId": "fractions.of_quantity",
+      "mechanic": "HALF_QUANTITY",
+      "families": [
+        "fractions.of_quantity.build",
+        "fractions.of_quantity.apply"
+      ],
+      "content": {
+        "concept": "Half of a quantity is one of two equal groups.",
+        "workedExample": "Half of 10 is 5 because 10 = 5 + 5.",
+        "solution": "Divide the whole quantity into two equal groups.",
+        "commonMistake": "Do not split the quantity into unequal groups.",
+        "summary": "Half means divide the whole into two equal parts."
+      }
+    },
+    {
+      "id": "foundation-calendar",
+      "titlePatterns": [
+        "^Days, Months, and Time Words$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "CALENDAR_DAY",
+      "families": [
+        "supporting.measurement.calendar_next_day"
+      ],
+      "content": {
+        "concept": "Days follow a repeating weekly order and time words locate events before or after today.",
+        "workedExample": "If today is Tuesday, tomorrow is Wednesday.",
+        "solution": "Move one place forward for tomorrow or one place backward for yesterday.",
+        "commonMistake": "Remember the week cycles from Sunday back to Monday.",
+        "summary": "Use the ordered seven-day cycle for yesterday and tomorrow."
+      }
+    },
+    {
+      "id": "foundation-clock-half-hour",
+      "titlePatterns": [
+        "^Read O’clock and Half Past$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "CLOCK_HALF_HOUR",
+      "families": [
+        "supporting.measurement.clock_half_hour"
+      ],
+      "content": {
+        "concept": "Half an hour is 30 minutes; o'clock marks the start of an hour.",
+        "workedExample": "30 minutes after 3:00 is 3:30.",
+        "solution": "Add 30 minutes and advance the hour when passing 60 minutes.",
+        "commonMistake": "Do not read half past 3 as 3:50.",
+        "summary": "O'clock is :00 and half past is :30."
+      }
+    },
+    {
+      "id": "foundation-solid-faces",
+      "titlePatterns": [
+        "^Solid Shapes and Their Faces$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.properties",
+      "mechanic": "SOLID_FACE_COUNT",
+      "families": [
+        "supporting.geometry.face_count"
+      ],
+      "content": {
+        "concept": "A 3D solid has flat faces and may also have curved surfaces.",
+        "workedExample": "A cube has 6 square faces.",
+        "solution": "Identify the solid and count each flat face once.",
+        "commonMistake": "Do not confuse one 2D face with the whole 3D solid.",
+        "summary": "Describe solids by their faces and other surfaces."
+      }
+    },
+    {
+      "id": "foundation-position-direction",
+      "titlePatterns": [
+        "^Move and Describe Position$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.properties",
+      "mechanic": "POSITION_DIRECTION",
+      "families": [
+        "supporting.geometry.position_direction"
+      ],
+      "content": {
+        "concept": "Position is relative to a reference point and direction describes movement.",
+        "workedExample": "From position 4, move 3 steps right to reach 7.",
+        "solution": "Use the chosen reference direction and update the position by the stated number of steps.",
+        "commonMistake": "Do not reverse left and right after the reference direction is fixed.",
+        "summary": "Start from a reference position, follow the direction, and track the new position."
+      }
+    },
+    {
+      "id": "foundation-measure-compare",
+      "titlePatterns": [
+        "^Compare Length, Mass, and Capacity$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "MEASUREMENT_COMPARE",
+      "families": [
+        "supporting.measurement.compare"
+      ],
+      "content": {
+        "concept": "Length, mass and capacity compare quantities of the same attribute.",
+        "workedExample": "If two lengths are 7 cm and 5 cm, then 7 cm is longer.",
+        "solution": "Make sure the attribute and units match, then compare the numerical measures.",
+        "commonMistake": "Do not compare different measurement attributes as though they were the same.",
+        "summary": "Compare like measurements using consistent units."
+      }
+    },
+    {
+      "id": "foundation-measure-tool",
+      "titlePatterns": [
+        "^Choose the Right Measuring Tool$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "MEASUREMENT_TOOL",
+      "families": [
+        "supporting.measurement.choose_tool"
+      ],
+      "content": {
+        "concept": "Different measurement attributes require appropriate tools.",
+        "workedExample": "Use a ruler for length, a scale for mass and a measuring jug for liquid capacity.",
+        "solution": "Identify the attribute, then choose a tool designed to measure it.",
+        "commonMistake": "Do not choose a tool merely because it has numbers on it.",
+        "summary": "Match length, mass and capacity to an appropriate measuring tool."
+      }
+    },
+    {
+      "id": "foundation-category-data",
+      "titlePatterns": [
+        "^Organise and Show Category Data$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.charts",
+      "mechanic": "CATEGORY_DATA",
+      "families": [
+        "supporting.statistics.category_total"
+      ],
+      "content": {
+        "concept": "Categorical data groups observations into named categories and records their frequencies.",
+        "workedExample": "Counts A=3, B=4, C=2 represent 9 items altogether.",
+        "solution": "Read each category frequency and add them when a total is required.",
+        "commonMistake": "Do not treat category labels as numerical values.",
+        "summary": "Organise observations by category and use their counts."
+      }
+    },
+    {
+      "id": "foundation-data-compare",
+      "titlePatterns": [
+        "^Compare What the Data Shows$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.charts",
+      "mechanic": "CATEGORY_COMPARE",
+      "families": [
+        "supporting.statistics.compare_category_counts"
+      ],
+      "content": {
+        "concept": "Comparing categorical data means comparing category frequencies.",
+        "workedExample": "If A has 8 items and B has 5, category A has more.",
+        "solution": "Read the two counts and compare them directly.",
+        "commonMistake": "Do not compare bar width or label length instead of frequency.",
+        "summary": "Compare category counts to state what the data shows."
+      }
+    },
+    {
+      "id": "uae-systems-inequalities",
+      "titlePatterns": [
+        "^Systems of Equations and Inequalities — L6-[1-6]$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.algebra.systems_inequalities",
+      "mechanic": "SYSTEMS_INEQUALITIES_MIXED",
+      "families": [
+        "supporting.algebra.systems_inequalities.mixed"
+      ],
+      "content": {
+        "concept": "Systems of linear equations require values satisfying both equations; linear inequalities describe a range of values satisfying a comparison.",
+        "workedExample": "For the system of equations x + y = 7 and x - y = 1, adding the equations gives 2x = 8, so x = 4 and y = 3. For 2x + 3 < 11, subtract 3 and divide by 2 to get x < 4.",
+        "solution": "For a system of equations, eliminate or substitute one variable, solve for the other, then substitute back and verify both equations. For an inequality, preserve equivalence and reverse the inequality only when multiplying or dividing by a negative number.",
+        "commonMistake": "Do not treat a system as one equation or forget the inequality direction rule.",
+        "summary": "Solve systems by satisfying all equations; solve inequalities by preserving the comparison."
+      }
+    },
+    {
+      "id": "whole-add-subtract-within20",
+      "titlePatterns": [
+        "^Add and subtract within 20$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.add_subtract",
+      "mechanic": "ADD_SUBTRACT_WITHIN_20",
+      "families": [
+        "number.whole.add_subtract.within_10.build",
+        "number.whole.add_subtract.within_10.apply",
+        "number.whole.add_subtract.across_ten.build",
+        "number.whole.add_subtract.across_ten.apply"
+      ],
+      "content": {
+        "concept": "Addition and subtraction within 20 combine or separate whole-number quantities while preserving inverse relationships.",
+        "workedExample": "8 + 7 = 15 and 15 - 7 = 8.",
+        "solution": "Use known facts, make-ten strategies or counting-on/back, then verify with the inverse operation.",
+        "commonMistake": "Do not lose track when crossing ten.",
+        "summary": "Add and subtract within 20 and check with the inverse."
+      }
+    },
+    {
+      "id": "whole-add-subtract-within100",
+      "titlePatterns": [
+        "^Add and subtract within 100$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.add_subtract",
+      "mechanic": "ADD_SUBTRACT_WITHIN_100",
+      "families": [
+        "number.whole.add_subtract.within_100.build",
+        "number.whole.add_subtract.within_100.apply"
+      ],
+      "content": {
+        "concept": "Within 100, addition and subtraction depend on tens/ones place value and inverse relationships.",
+        "workedExample": "47 + 26 = 73; 73 - 26 = 47.",
+        "solution": "Align tens and ones, regroup when needed, and verify with the inverse.",
+        "commonMistake": "Do not combine tens with ones.",
+        "summary": "Use place value to add/subtract within 100."
+      }
+    },
+    {
+      "id": "whole-add-subtract-columnar",
+      "titlePatterns": [
+        "^Fluent multi-digit addition and subtraction$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.add_subtract",
+      "mechanic": "ADD_SUBTRACT_COLUMNAR",
+      "families": [
+        "number.whole.add_subtract.columnar.build",
+        "number.whole.add_subtract.columnar.apply"
+      ],
+      "content": {
+        "concept": "The standard algorithms add or subtract aligned place values with regrouping.",
+        "workedExample": "347 + 285 = 632.",
+        "solution": "Align place values, operate from right to left, regroup, and verify.",
+        "commonMistake": "Do not misalign columns.",
+        "summary": "Use aligned place-value columns and regroup accurately."
+      }
+    },
+    {
+      "id": "foundation-count-read-write",
+      "titlePatterns": [
+        "^Count, read and write numerals$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "COUNT_READ_WRITE",
+      "families": [
+        "supporting.number.count_cardinality",
+        "supporting.number.numeral_identity"
+      ],
+      "content": {
+        "concept": "Counting establishes quantity and numerals record that quantity symbolically.",
+        "workedExample": "A set of 14 objects is represented by the numeral 14.",
+        "solution": "Count each object once, then match the total to its numeral.",
+        "commonMistake": "Do not confuse a number word with a different teen numeral.",
+        "summary": "Count quantities and connect them to numerals."
+      }
+    },
+    {
+      "id": "foundation-skip-count",
+      "titlePatterns": [
+        "^Skip-count$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.sequences.core",
+      "mechanic": "SKIP_COUNT",
+      "families": [
+        "supporting.sequences.skip_count"
+      ],
+      "content": {
+        "concept": "Skip-counting repeatedly adds a fixed interval.",
+        "workedExample": "15, 20, 25, 30 uses a step of 5.",
+        "solution": "Identify the fixed step and add it to continue.",
+        "commonMistake": "Do not change the interval between terms.",
+        "summary": "Skip-count by repeatedly adding the same step."
+      }
+    },
+    {
+      "id": "angle-measure",
+      "titlePatterns": [
+        "^Measure angles with a protractor$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.angles",
+      "mechanic": "ANGLE_MEASURE",
+      "families": [
+        "supporting.geometry.angle_measure"
+      ],
+      "content": {
+        "concept": "An angle measure is read from a protractor scale beginning at the aligned zero ray.",
+        "workedExample": "If the second ray crosses 65°, the angle measures 65°.",
+        "solution": "Align the vertex and baseline, choose the correct zero scale, and read the second ray.",
+        "commonMistake": "Do not read the opposite protractor scale.",
+        "summary": "Read angle measure from the correct protractor scale."
+      }
+    },
+    {
+      "id": "statistical-question",
+      "titlePatterns": [
+        "^Recognise statistical questions$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.data_collection",
+      "mechanic": "STATISTICAL_QUESTION",
+      "families": [
+        "supporting.statistics.statistical_question"
+      ],
+      "content": {
+        "concept": "A statistical question anticipates variability in data.",
+        "workedExample": "“How old are students in this school?” is statistical because answers vary.",
+        "solution": "Ask whether multiple observations can reasonably produce different values.",
+        "commonMistake": "A question about one fixed individual value is not statistical merely because it uses a number.",
+        "summary": "Statistical questions expect variable data."
+      }
+    },
+    {
+      "id": "center-or-variation",
+      "titlePatterns": [
+        "^Distinguish centre and variation$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.distributions",
+      "mechanic": "CENTER_VARIATION",
+      "families": [
+        "supporting.statistics.center_or_variation"
+      ],
+      "content": {
+        "concept": "Measures of center describe a typical location; measures of variation describe spread.",
+        "workedExample": "Mean describes center while range describes variation.",
+        "solution": "Classify the statistic by whether it summarizes location or spread.",
+        "commonMistake": "Do not treat range as a measure of center.",
+        "summary": "Center locates a distribution; variation describes spread."
+      }
+    },
+    {
+      "id": "measurement-unit-iteration",
+      "titlePatterns": [
+        "^Measure length with equal units$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "UNIT_ITERATION",
+      "families": [
+        "supporting.measurement.unit_iteration"
+      ],
+      "content": {
+        "concept": "Length measurement counts equal-size units laid end-to-end with no gaps or overlaps.",
+        "workedExample": "If 8 equal unit tiles cover an object exactly, its length is 8 unit tiles.",
+        "solution": "Use identical units, place them end-to-end, and count how many span the object.",
+        "commonMistake": "Gaps, overlaps or unequal units invalidate the measurement.",
+        "summary": "Length in a chosen unit equals the number of equal units spanning the object."
+      }
+    },
+    {
+      "id": "measurement-indirect-compare",
+      "titlePatterns": [
+        "^Compare lengths indirectly$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "MEASUREMENT_INDIRECT_COMPARE",
+      "families": [
+        "supporting.measurement.indirect_compare"
+      ],
+      "content": {
+        "concept": "Indirect comparison uses a common third object as a reference for comparing two lengths.",
+        "workedExample": "If A is longer than C and B is shorter than C, then A is longer than B.",
+        "solution": "Compare each object to the same reference, then combine the relationships.",
+        "commonMistake": "Do not compare statements that use different reference objects without another valid link.",
+        "summary": "Use one common reference to compare two lengths indirectly."
+      }
+    },
+    {
+      "id": "foundation-subitize",
+      "titlePatterns": [
+        "^See Small Groups Without Counting$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "COUNT_CARDINALITY",
+      "families": [
+        "supporting.number.count_cardinality"
+      ],
+      "content": {
+        "concept": "Small familiar arrangements can be recognized as a quantity without counting every object one by one.",
+        "workedExample": "A five-dot die pattern can be recognized as 5 at a glance.",
+        "solution": "Recognize the familiar grouping, name the quantity, then count only to check if needed.",
+        "commonMistake": "Do not assume a pattern's quantity from its physical size.",
+        "summary": "Recognize familiar small quantities and verify by counting."
+      }
+    },
+    {
+      "id": "foundation-estimate-count",
+      "titlePatterns": [
+        "^Estimate, Then Count$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "ESTIMATE_COUNT",
+      "families": [
+        "supporting.number.estimate_closer"
+      ],
+      "content": {
+        "concept": "An estimate is a reasonable approximate count that can be checked against an exact count.",
+        "workedExample": "If the exact count is 13, an estimate of 12 is more reasonable than 30.",
+        "solution": "Compare each estimate with the exact count and choose the one with smaller error.",
+        "commonMistake": "An estimate need not equal the exact count to be useful.",
+        "summary": "Estimate sensibly, count exactly, and compare the two."
+      }
+    },
+    {
+      "id": "foundation-add-stage1",
+      "titlePatterns": [
+        "^Join Groups to Add$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.add",
+      "mechanic": "WHOLE_ADD",
+      "families": [
+        "number.whole.add.direct"
+      ],
+      "content": {
+        "concept": "Addition joins quantities into one total.",
+        "workedExample": "6 + 3 = 9.",
+        "solution": "Combine both quantities or count on, then verify by subtraction.",
+        "commonMistake": "Do not leave out either group from the total.",
+        "summary": "Join groups to add."
+      }
+    },
+    {
+      "id": "foundation-subtract-stage1",
+      "titlePatterns": [
+        "^Take Away and Find the Difference$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.subtract",
+      "mechanic": "WHOLE_SUBTRACT",
+      "families": [
+        "number.whole.subtract.direct"
+      ],
+      "content": {
+        "concept": "Subtraction can remove a quantity or find the difference between quantities.",
+        "workedExample": "9 - 4 = 5.",
+        "solution": "Take away, count back, or compare the gap, then verify by addition.",
+        "commonMistake": "Use the story context to decide what is being subtracted.",
+        "summary": "Subtract to find what remains or the difference."
+      }
+    },
+    {
+      "id": "foundation-money-recognition",
+      "titlePatterns": [
+        "^Recognise Coins and Notes$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "MONEY_RECOGNITION",
+      "families": [
+        "supporting.measurement.money_marked_value"
+      ],
+      "content": {
+        "concept": "Coins and notes represent their printed denominations; physical size does not determine value.",
+        "workedExample": "A coin marked 5 represents value 5 in its currency.",
+        "solution": "Read the printed denomination and currency context.",
+        "commonMistake": "Do not assume the largest coin has the greatest value.",
+        "summary": "Recognize money by denomination."
+      }
+    },
+    {
+      "id": "foundation-shape-orientation",
+      "titlePatterns": [
+        "^Flat Shapes in Different Orientations$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.properties",
+      "mechanic": "SHAPE_ORIENTATION",
+      "families": [
+        "supporting.geometry.orientation_invariant"
+      ],
+      "content": {
+        "concept": "Rotating a 2D shape changes orientation but not its defining properties.",
+        "workedExample": "A triangle remains a triangle after a quarter-turn.",
+        "solution": "Ignore orientation and check the defining sides/vertices/properties.",
+        "commonMistake": "Do not rename a shape just because it is rotated.",
+        "summary": "Orientation changes; shape identity does not."
+      }
+    },
+    {
+      "id": "foundation-category-questions",
+      "titlePatterns": [
+        "^Answer Questions About Categories$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.charts",
+      "mechanic": "CATEGORY_COMPARE",
+      "families": [
+        "supporting.statistics.compare_category_counts",
+        "supporting.statistics.category_total"
+      ],
+      "content": {
+        "concept": "Questions about categorical data are answered from category frequencies and totals.",
+        "workedExample": "If A has 8 and B has 5, A has 3 more and there are 13 items altogether.",
+        "solution": "Read the relevant category counts, then compare or add as the question requires.",
+        "commonMistake": "Do not compare category labels instead of their counts.",
+        "summary": "Use category frequencies to answer comparison and total questions."
       }
     }
   ]

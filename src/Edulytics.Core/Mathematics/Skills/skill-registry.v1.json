@@ -25,7 +25,9 @@
         "number.whole.add_subtract.comparative.build",
         "number.whole.add_subtract.comparative.apply",
         "number.whole.add_subtract.complement_100.build",
-        "number.whole.add_subtract.complement_100.apply"
+        "number.whole.add_subtract.complement_100.apply",
+        "number.whole.add_subtract.complement_10",
+        "number.whole.add_subtract.within_20.reasonable"
       ]
     },
     {
@@ -68,7 +70,8 @@
       ],
       "v2QuestionFamilies": [
         "number.whole.multiply.fact_recall.build",
-        "number.whole.multiply.fact_recall.apply"
+        "number.whole.multiply.fact_recall.apply",
+        "number.whole.multiply.double"
       ]
     },
     {
@@ -1208,7 +1211,13 @@
         "supporting.measurement.unit_conversion",
         "supporting.measurement.time_elapsed",
         "supporting.measurement.money_change",
-        "supporting.measurement.compare"
+        "supporting.measurement.compare",
+        "supporting.measurement.calendar_next_day",
+        "supporting.measurement.clock_half_hour",
+        "supporting.measurement.choose_tool",
+        "supporting.measurement.unit_iteration",
+        "supporting.measurement.indirect_compare",
+        "supporting.measurement.money_marked_value"
       ]
     },
     {
@@ -1302,7 +1311,8 @@
       ],
       "v2QuestionFamilies": [
         "supporting.geometry.angle_around_point",
-        "supporting.geometry.angle_classify"
+        "supporting.geometry.angle_classify",
+        "supporting.geometry.angle_measure"
       ]
     },
     {
@@ -1385,7 +1395,9 @@
         "supporting.statistics.pie_sector_angle",
         "supporting.statistics.charts.mixed",
         "supporting.statistics.cumulative_total",
-        "supporting.statistics.histogram_density"
+        "supporting.statistics.histogram_density",
+        "supporting.statistics.category_total",
+        "supporting.statistics.compare_category_counts"
       ]
     },
     {
@@ -1439,7 +1451,8 @@
       "v2QuestionFamilies": [
         "supporting.statistics.compare_range",
         "supporting.statistics.quartile",
-        "supporting.statistics.grouped_mean"
+        "supporting.statistics.grouped_mean",
+        "supporting.statistics.center_or_variation"
       ]
     },
     {
@@ -1452,7 +1465,8 @@
         "lesson.practice.exact.verify"
       ],
       "v2QuestionFamilies": [
-        "supporting.statistics.collection_method"
+        "supporting.statistics.collection_method",
+        "supporting.statistics.statistical_question"
       ]
     },
     {
@@ -1621,7 +1635,9 @@
       ],
       "v2QuestionFamilies": [
         "supporting.sequences.core.mixed",
-        "supporting.series.geometric_sum"
+        "supporting.series.geometric_sum",
+        "supporting.sequences.next_term",
+        "supporting.sequences.skip_count"
       ]
     },
     {
@@ -1658,7 +1674,12 @@
         "supporting.number.compare_order",
         "supporting.number.parity",
         "supporting.number.bounds_upper",
-        "supporting.number.scale_power10"
+        "supporting.number.scale_power10",
+        "supporting.number.count_cardinality",
+        "supporting.number.numeral_identity",
+        "supporting.number.teen_decompose",
+        "supporting.number.ordinal_position",
+        "supporting.number.estimate_closer"
       ]
     },
     {
@@ -1672,7 +1693,10 @@
       ],
       "v2QuestionFamilies": [
         "supporting.geometry.shape_dimension",
-        "supporting.geometry.turn_degrees"
+        "supporting.geometry.turn_degrees",
+        "supporting.geometry.face_count",
+        "supporting.geometry.position_direction",
+        "supporting.geometry.orientation_invariant"
       ]
     },
     {
@@ -1745,6 +1769,19 @@
       "v2QuestionFamilies": [
         "supporting.vectors.add",
         "supporting.vectors.magnitude"
+      ]
+    },
+    {
+      "id": "supporting.algebra.systems_inequalities",
+      "domain": "algebra",
+      "canonicalName": "Solve systems of linear equations and linear inequalities",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.algebra.systems_inequalities.mixed"
       ]
     }
   ]

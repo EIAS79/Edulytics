@@ -12,6 +12,9 @@ from typing import Any, Iterable
 from supporting_practice_rules import (
     load_rule_mappings as load_supporting_rule_mappings,
 )
+from official_practice_rules import (
+    load_reviewed_official_rule_mappings,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 CONTENT_DIR = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs"
@@ -315,6 +318,9 @@ def audit() -> dict[str, Any]:
     supporting_mappings, unmatched_supporting, supporting_rule_errors = (
         load_supporting_rule_mappings(CONTENT_DIR)
     )
+    official_mappings, official_rule_errors = (
+        load_reviewed_official_rule_mappings(CONTENT_DIR)
+    )
     rules, scores, rule_errors = load_rules(skill_ids)
 
     summary = Counter()
@@ -322,7 +328,11 @@ def audit() -> dict[str, Any]:
     unresolved_term_counter: Counter[str] = Counter()
     rows: list[dict[str, Any]] = []
     seen_lessons: set[str] = set()
-    blockers: list[str] = list(rule_errors) + list(supporting_rule_errors)
+    blockers: list[str] = (
+        list(rule_errors)
+        + list(supporting_rule_errors)
+        + list(official_rule_errors)
+    )
 
     for path in sorted(CONTENT_DIR.glob("*.lesson-content-pack.json")):
         doc = read_json(path)
@@ -346,6 +356,7 @@ def audit() -> dict[str, Any]:
             fields = evidence_text(lesson)
             existing = mappings.get(code)
             supporting_mapping = supporting_mappings.get(code)
+            official_mapping = official_mappings.get(code)
 
             summary["lessonCount"] += 1
             summary[source_type] += 1
@@ -376,6 +387,44 @@ def audit() -> dict[str, Any]:
                 diagnostics = [
                     "Reviewed Supporting Practice target rule supplies an approved exact lesson-skill mapping."
                 ]
+            elif official_mapping:
+                status = "EXISTING_VERIFIED_MAPPING"
+                official_source = str(
+                    official_mapping.get("sourceType")
+                    or "OfficialReviewedRule"
+                )
+                official_rule_ids = clean_list(
+                    official_mapping.get("officialPracticeRuleIds")
+                )
+                if not official_rule_ids:
+                    single_rule = str(
+                        official_mapping.get("officialPracticeRuleId")
+                        or ""
+                    ).strip()
+                    official_rule_ids = [single_rule] if single_rule else []
+                candidates = [{
+                    "skillId": skill,
+                    "score": None,
+                    "titleMatched": (
+                        official_source != "OfficialOutcomeRule"
+                    ),
+                    "evidence": [{
+                        "type": official_source,
+                        "ruleIds": official_rule_ids,
+                        "signal": (
+                            outcomes
+                            if official_source == "OfficialOutcomeRule"
+                            else fields["title"]
+                        ),
+                    }],
+                } for skill in clean_list(official_mapping.get("primarySkills"))]
+                diagnostics = [
+                    (
+                        "Every official OutcomeCode resolves through the reviewed official Practice rule registry."
+                        if official_source == "OfficialOutcomeRule"
+                        else "Reviewed official lesson evidence supplies an approved exact Practice mapping."
+                    )
+                ]
             else:
                 candidates = [
                     candidate
@@ -398,8 +447,9 @@ def audit() -> dict[str, Any]:
                 "outcomeCodes": outcomes,
                 "title": fields["title"],
                 "status": status,
-                "approvedMapping": bool(existing or supporting_mapping),
+                "approvedMapping": bool(existing or supporting_mapping or official_mapping),
                 "supportingPracticeRuleId": None if not supporting_mapping else supporting_mapping.get("supportingPracticeRuleId"),
+                "officialPracticeRuleId": None if not official_mapping else official_mapping.get("officialPracticeRuleId"),
                 "diagnostics": diagnostics,
                 "candidates": candidates[:5],
             })

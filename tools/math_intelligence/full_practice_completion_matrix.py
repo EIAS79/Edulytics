@@ -12,8 +12,10 @@ from typing import Any
 import lesson_generation_readiness_audit
 import lesson_semantic_content_audit
 import lesson_skill_resolution_audit
+import practice_eligibility
 
 ROOT = Path(__file__).resolve().parents[2]
+CONTENT_DIR = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs"
 SKILL_REGISTRY = ROOT / "src/Edulytics.Core/Mathematics/Skills/skill-registry.v1.json"
 FAMILY_REGISTRY = ROOT / "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json"
 FULL_REPORT = ROOT / "artifacts/math-intelligence/full-practice-completion-matrix.json"
@@ -62,6 +64,7 @@ def blocker_codes(
     semantic: str,
     skill_status: str,
     approved_mapping: bool,
+    reviewed_official_mapping: bool,
     has_family: bool,
     solver_ready: bool,
 ) -> list[str]:
@@ -70,7 +73,7 @@ def blocker_codes(
         result.append("CONTENT_WEAK")
     elif semantic == "REVIEW_REQUIRED":
         result.append("CONTENT_REVIEW_REQUIRED")
-    elif semantic == "UNCLASSIFIED":
+    elif semantic == "UNCLASSIFIED" and not reviewed_official_mapping:
         result.append("CONTENT_TARGET_UNCLASSIFIED")
 
     if skill_status == "AMBIGUOUS":
@@ -103,10 +106,28 @@ def blocker_codes(
     return sorted(set(result))
 
 
+def load_practice_eligibility() -> dict[str, practice_eligibility.PracticeEligibility]:
+    result: dict[str, practice_eligibility.PracticeEligibility] = {}
+    for path in sorted(CONTENT_DIR.glob("*.lesson-content-pack.json")):
+        pack = read_json(path)
+        lessons = pack.get("Lessons") or pack.get("lessons") or []
+        if not isinstance(lessons, list):
+            continue
+        for lesson in lessons:
+            if not isinstance(lesson, dict):
+                continue
+            code = str(lesson.get("LessonCode") or lesson.get("lessonCode") or "").strip()
+            if not code or code in result:
+                continue
+            result[code] = practice_eligibility.classify_lesson(pack, lesson)
+    return result
+
+
 def audit() -> dict[str, Any]:
     readiness = lesson_generation_readiness_audit.audit()
     semantic = lesson_semantic_content_audit.audit()
     skill = lesson_skill_resolution_audit.audit()
+    eligibility_by_code = load_practice_eligibility()
 
     skills_doc = read_json(SKILL_REGISTRY)
     families_doc = read_json(FAMILY_REGISTRY)
@@ -157,27 +178,61 @@ def audit() -> dict[str, Any]:
         semantic_status = str(row.get("semanticContentStatus") or "UNCLASSIFIED")
         skill_status = str(row.get("skillResolutionStatus") or "UNRESOLVED")
         approved_mapping = bool(row.get("approvedMapping"))
+        reviewed_official_mapping = bool(row.get("reviewedOfficialMapping"))
         has_family = bool(row.get("hasQuestionFamily"))
         solver_ready = bool(row.get("hasVerifiedSolverCapability"))
         visual_required = bool(representations & VISUAL_REPRESENTATIONS)
         visual_status = "READY_METADATA" if visual_required and representations else (
             "NOT_REQUIRED" if not visual_required else "MISSING"
         )
-        blockers = blocker_codes(
+        diagnostic_blockers = blocker_codes(
             readiness_state,
             semantic_status,
             skill_status,
             approved_mapping,
+            reviewed_official_mapping,
             has_family,
             solver_ready,
         )
-        terminal = "READY_VERIFIED" if readiness_state == "READY_VERIFIED" and not blockers else "BLOCKED_TEMPORARY"
+        eligibility = eligibility_by_code.get(code)
+        if eligibility is None:
+            internal_blockers.append(f"{code}: missing Practice eligibility classification")
+            eligibility_status = "UNCLASSIFIED"
+            eligibility_reason_code = "MISSING"
+            eligibility_evidence: list[str] = []
+        else:
+            eligibility_status = eligibility.status
+            eligibility_reason_code = eligibility.reason_code
+            eligibility_evidence = list(eligibility.evidence)
+
+        if eligibility_status == "NON_STANDALONE_WITH_EVIDENCE":
+            if not eligibility_evidence:
+                internal_blockers.append(
+                    f"{code}: NON_STANDALONE_WITH_EVIDENCE has no evidence"
+                )
+            blockers: list[str] = []
+            terminal = "NON_STANDALONE_WITH_EVIDENCE"
+        else:
+            blockers = diagnostic_blockers
+            terminal = (
+                "READY_VERIFIED"
+                if readiness_state == "READY_VERIFIED" and not blockers
+                else "BLOCKED_TEMPORARY"
+            )
         source_type = str(row.get("sourceType") or "Unknown")
         pack_code = str(row.get("packCode") or "")
         domain = ",".join(sorted(domains)) if domains else "unresolved"
 
         summary["lessonCount"] += 1
         summary[terminal] += 1
+        if eligibility_status == "PRACTICE_ELIGIBLE":
+            summary["practiceEligibleLessonCount"] += 1
+            if terminal == "BLOCKED_TEMPORARY":
+                summary["practiceEligibleBlockedCount"] += 1
+        elif eligibility_status == "NON_STANDALONE_WITH_EVIDENCE":
+            summary["nonStandaloneLessonCount"] += 1
+        else:
+            summary["eligibilityUnclassifiedCount"] += 1
         if source_type == "PedagogicalUnmapped":
             summary["supportingLessonCount"] += 1
             summary[f"supporting:{terminal}"] += 1
@@ -196,7 +251,9 @@ def audit() -> dict[str, Any]:
             "packCode": pack_code,
             "sourceType": source_type,
             "title": title,
-            "practiceEligibility": "PRACTICE_ELIGIBLE",
+            "practiceEligibility": eligibility_status,
+            "practiceEligibilityReasonCode": eligibility_reason_code,
+            "practiceEligibilityEvidence": eligibility_evidence,
             "canonicalTarget": normalize_target(title),
             "remediationCluster": cluster_id(title),
             "skillResolutionStatus": skill_status,
@@ -213,6 +270,7 @@ def audit() -> dict[str, Any]:
             "generationReadiness": readiness_state,
             "terminalPracticeStatus": terminal,
             "blockerCodes": blockers,
+            "diagnosticBlockerCodes": diagnostic_blockers,
             "reasons": row.get("reasons") or [],
         })
 
@@ -228,7 +286,7 @@ def audit() -> dict[str, Any]:
     summary["questionFamilyRegistryCount"] = len(families)
     summary["internalBlockerCount"] = len(internal_blockers)
     summary["completionPercent"] = round(
-        100 * summary["READY_VERIFIED"] / max(1, summary["lessonCount"]),
+        100 * summary["READY_VERIFIED"] / max(1, summary["practiceEligibleLessonCount"]),
         2,
     )
 
@@ -272,9 +330,12 @@ def main() -> int:
 
     print(json.dumps(report["summary"], ensure_ascii=False, indent=2))
 
-    if args.strict and report["summary"]["internalBlockerCount"]:
+    if args.strict and (
+        report["summary"]["internalBlockerCount"]
+        or report["summary"].get("eligibilityUnclassifiedCount", 0)
+    ):
         return 2
-    if args.require_complete and report["summary"]["BLOCKED_TEMPORARY"]:
+    if args.require_complete and report["summary"].get("practiceEligibleBlockedCount", 0):
         return 3
     return 0
 

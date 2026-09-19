@@ -102,10 +102,22 @@ internal static class SupportingPracticeCompletionEngine
     public static bool Supports(string? family) =>
         !string.IsNullOrWhiteSpace(family) &&
         (Families.Contains(family.Trim()) ||
+         FoundationPracticeEngine.Supports(family.Trim()) ||
          SupportingPracticeAdvancedEngine.Supports(family.Trim()));
 
     public static Problem Build(string family, Random random, int scale)
     {
+        if (FoundationPracticeEngine.Supports(family))
+        {
+            var foundation = FoundationPracticeEngine.Build(family, random, scale);
+            return new Problem(
+                foundation.Family,
+                foundation.Prompt,
+                foundation.Solution,
+                foundation.ItemType,
+                foundation.Parameters);
+        }
+
         if (SupportingPracticeAdvancedEngine.Supports(family))
         {
             var advanced = SupportingPracticeAdvancedEngine.Build(family, random, scale);
@@ -201,6 +213,9 @@ internal static class SupportingPracticeCompletionEngine
 
     public static string Solve(string family, IReadOnlyDictionary<string, int> p)
     {
+        if (FoundationPracticeEngine.Supports(family))
+            return FoundationPracticeEngine.Solve(family, p);
+
         if (SupportingPracticeAdvancedEngine.Supports(family))
             return SupportingPracticeAdvancedEngine.Solve(family, p);
 
@@ -372,6 +387,9 @@ internal static class SupportingPracticeCompletionEngine
 
     public static bool Verify(string family, IReadOnlyDictionary<string, int> p, string answer)
     {
+        if (FoundationPracticeEngine.Supports(family))
+            return FoundationPracticeEngine.Verify(family, p, answer);
+
         if (SupportingPracticeAdvancedEngine.Supports(family))
             return SupportingPracticeAdvancedEngine.Verify(family, p, answer);
 
