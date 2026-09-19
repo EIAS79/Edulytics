@@ -5,6 +5,7 @@ import re
 from pathlib import Path
 from typing import Any
 
+from official_outcome_practice_rules import load_resolutions as load_outcome_resolutions
 from supporting_practice_rules import (
     SupportingRule,
     choose_translation,
@@ -96,11 +97,54 @@ def mapping_from_rule(
     }
 
 
+def mapping_from_outcomes(
+    lesson_code: str,
+    outcome_codes: list[str],
+    resolutions: list[Any],
+) -> dict[str, Any]:
+    target_rules = {
+        resolution.target_rule.rule_id: resolution.target_rule
+        for resolution in resolutions
+    }
+    ordered = [target_rules[key] for key in sorted(target_rules)]
+    skills = sorted({rule.skill_id for rule in ordered})
+    families = sorted({
+        family
+        for rule in ordered
+        for family in rule.families
+    })
+    mechanics = sorted({rule.mechanic for rule in ordered})
+    return {
+        "lessonCode": lesson_code,
+        "primarySkills": skills,
+        "sourceType": "OfficialOutcomeRule",
+        "officialOutcomeMapped": True,
+        "officialOutcomeCodes": outcome_codes,
+        "mappingConfidence": "ReviewedOfficialOutcome",
+        "officialPracticeMatchMode": "OFFICIAL_OUTCOME_RULE",
+        "practiceReadiness": "READY_VERIFIED",
+        "practiceMechanic": (
+            mechanics[0] if len(mechanics) == 1 else "OFFICIAL_MULTI_OUTCOME"
+        ),
+        "allowedQuestionFamilies": families,
+        "officialPracticeRuleIds": sorted({
+            resolution.rule_id for resolution in resolutions
+        }),
+        "evidence": [
+            "Every canonical lesson OutcomeCode resolves through the reviewed official outcome Practice registry.",
+            "Each official outcome rule delegates to an existing reviewed Skill/Question-Family target rule.",
+            "Multi-outcome lessons retain all resolved exact skills and solver/verifier-backed families.",
+        ],
+    }
+
+
 def load_reviewed_official_rule_mappings(
     content_dir: Path,
 ) -> tuple[dict[str, dict[str, Any]], list[str]]:
     rules, errors = load_rules()
     errors.extend(validate_rules(rules))
+    outcome_resolutions, outcome_errors = load_outcome_resolutions()
+    errors.extend(outcome_errors)
 
     mappings: dict[str, dict[str, Any]] = {}
     seen: set[str] = set()
@@ -147,6 +191,18 @@ def load_reviewed_official_rule_mappings(
                 get_case(lesson, "OutcomeCodes", "outcomeCodes", default=[])
             )
             if not outcomes:
+                continue
+
+            resolved_outcomes = [
+                outcome_resolutions.get(code)
+                for code in outcomes
+            ]
+            if all(resolution is not None for resolution in resolved_outcomes):
+                mappings[lesson_code] = mapping_from_outcomes(
+                    lesson_code,
+                    outcomes,
+                    [resolution for resolution in resolved_outcomes if resolution is not None],
+                )
                 continue
 
             translation = choose_translation(lesson, academic_language)
