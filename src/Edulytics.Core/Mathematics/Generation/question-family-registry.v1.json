@@ -4374,6 +4374,76 @@
       "status": "PracticeVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.circle.arc_angle_degrees",
+      "version": 1,
+      "skillId": "supporting.geometry.circles_loci",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-full-turn-fraction-times-360-check",
+      "representations": [
+        "symbolic",
+        "diagram_metadata",
+        "circle_arc"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.probability.discrete_expected_value",
+      "version": 1,
+      "skillId": "supporting.probability.distributions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-probability-weighted-mean-check",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.trigonometry.identity_missing_component",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-pythagorean-trigonometric-identity-check",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.trigonometry.equation_smallest_angle",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-special-angle-equation-check",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ]
 }
