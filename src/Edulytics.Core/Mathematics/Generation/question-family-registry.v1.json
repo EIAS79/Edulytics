@@ -4716,6 +4716,74 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.sequences.skip_count",
+      "version": 1,
+      "skillId": "supporting.sequences.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "foundation-practice-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.angle_measure",
+      "version": 1,
+      "skillId": "supporting.geometry.angles",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "foundation-practice-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.statistics.statistical_question",
+      "version": 1,
+      "skillId": "supporting.statistics.data_collection",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "foundation-practice-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.statistics.center_or_variation",
+      "version": 1,
+      "skillId": "supporting.statistics.distributions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "foundation-practice-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ]
 }
