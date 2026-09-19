@@ -1893,6 +1893,341 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "sequences.core.arithmetic_nth_term",
+      "version": 1,
+      "skillId": "sequences.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-arithmetic-sequence-formula-check",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "sequences.core.arithmetic_rule_offset",
+      "version": 1,
+      "skillId": "sequences.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-arithmetic-rule-offset-check",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "sequences.core.geometric_nth_term",
+      "version": 1,
+      "skillId": "sequences.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-geometric-sequence-power-check",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "percentages.core.of_quantity",
+      "version": 1,
+      "skillId": "percentages.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-percent-times-quantity-recompute",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "percentages.core.change",
+      "version": 1,
+      "skillId": "percentages.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-percentage-change-multiplier-check",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "ratio.proportion.divide_total",
+      "version": 1,
+      "skillId": "ratio.proportion.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-ratio-partition-recompute",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "ratio.proportion.unit_rate",
+      "version": 1,
+      "skillId": "ratio.proportion.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-unit-rate-recompute",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "ratio.proportion.equivalent_ratio",
+      "version": 1,
+      "skillId": "ratio.proportion.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-equivalent-ratio-cross-product-check",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "geometry.polygons.triangle_missing_angle",
+      "version": 1,
+      "skillId": "geometry.polygons.angles",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-triangle-angle-sum-check",
+      "representations": [
+        "diagram_metadata",
+        "angle"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "geometry.polygons.quadrilateral_missing_angle",
+      "version": 1,
+      "skillId": "geometry.polygons.angles",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-quadrilateral-angle-sum-check",
+      "representations": [
+        "diagram_metadata",
+        "angle"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "geometry.perimeter_area.triangle_area",
+      "version": 1,
+      "skillId": "geometry.perimeter_area",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-half-base-height-check",
+      "representations": [
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "geometry.coordinate.linear_graphs.gradient",
+      "version": 1,
+      "skillId": "geometry.coordinate.linear_graphs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-gradient-from-two-points-check",
+      "representations": [
+        "coordinate_pair",
+        "graph"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "geometry.coordinate.linear_graphs.evaluate",
+      "version": 1,
+      "skillId": "geometry.coordinate.linear_graphs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-linear-rule-substitution-check",
+      "representations": [
+        "coordinate_pair",
+        "graph"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "geometry.coordinate.linear_graphs.intercept",
+      "version": 1,
+      "skillId": "geometry.coordinate.linear_graphs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-y-equals-mx-plus-b-rearrangement-check",
+      "representations": [
+        "coordinate_pair",
+        "graph"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "statistics.mean_median_range.mean",
+      "version": 1,
+      "skillId": "statistics.mean_median_range",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-sum-divide-count-check",
+      "representations": [
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "statistics.mean_median_range.median",
+      "version": 1,
+      "skillId": "statistics.mean_median_range",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-order-and-middle-value-check",
+      "representations": [
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "statistics.mean_median_range.range",
+      "version": 1,
+      "skillId": "statistics.mean_median_range",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-max-minus-min-check",
+      "representations": [
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "probability.theoretical.single_event",
+      "version": 1,
+      "skillId": "probability.theoretical.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-favourable-over-total-check",
+      "representations": [
+        "symbolic",
+        "probability"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "probability.theoretical.two_independent_events",
+      "version": 1,
+      "skillId": "probability.theoretical.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-product-of-independent-probabilities-check",
+      "representations": [
+        "symbolic",
+        "probability"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ]
 }
