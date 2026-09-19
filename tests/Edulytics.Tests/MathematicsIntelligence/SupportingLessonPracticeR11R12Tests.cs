@@ -15,6 +15,10 @@ public sealed class SupportingLessonPracticeR11R12Tests
     [InlineData("Surface area and volume", "geometry.surface_area_volume")]
     [InlineData("Coordinates and straight-line graphs", "geometry.coordinate.straight_line")]
     [InlineData("Angle relationships in parallel lines", "geometry.angles.relationships")]
+    [InlineData("Magnitude of a vector", "vectors.magnitude")]
+    [InlineData("Vector subtraction", "vectors.subtract")]
+    [InlineData("Scalar multiplication of vectors", "vectors.scalar_multiply")]
+    [InlineData("Vector between two points", "vectors.between_points")]
     public void ExactCapabilityResolverSeparatesHighSchoolGeometryTargets(
         string context,
         string expectedSkill)
@@ -79,6 +83,37 @@ public sealed class SupportingLessonPracticeR11R12Tests
                 q.Parameters,
                 q.CorrectAnswer));
             Assert.False(string.IsNullOrWhiteSpace(q.Solution));
+        });
+    }
+
+    [Theory]
+    [InlineData("vectors.add.exact_rational")]
+    [InlineData("vectors.subtract.exact_rational")]
+    [InlineData("vectors.scalar_multiply.exact_rational")]
+    [InlineData("vectors.dot.exact_rational")]
+    [InlineData("vectors.magnitude.exact")]
+    [InlineData("vectors.between_points.exact")]
+    public void VectorFamiliesGenerateAndIndependentlyVerify(string family)
+    {
+        var engine = new ExactSkillContractQuestionEngine();
+        var questions = engine.Generate(
+            "vector-test",
+            family,
+            [family],
+            ExactSkillQuestionDifficulty.Challenge,
+            10,
+            78231,
+            []);
+
+        Assert.Equal(10, questions.Count);
+        Assert.All(questions, question =>
+        {
+            Assert.Equal(family, question.Family);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                question.Family,
+                question.Parameters,
+                question.CorrectAnswer));
+            Assert.False(string.IsNullOrWhiteSpace(question.Solution));
         });
     }
 
