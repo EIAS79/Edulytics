@@ -116,7 +116,8 @@ public sealed class ExactSkillContractQuestionEngine
 
     public static bool SupportsFamily(string? family) =>
         !string.IsNullOrWhiteSpace(family) &&
-        SupportedFamilies.Contains(family.Trim());
+        (SupportedFamilies.Contains(family.Trim()) ||
+         CorePracticeExpansionEngine.Supports(family));
 
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
         string fingerprintNamespace,
@@ -206,6 +207,9 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (CorePracticeExpansionEngine.Supports(family))
+            return CorePracticeExpansionEngine.Verify(family, parameters, answer);
+
         if (family == "fractions.compare.unlike.common_denominator")
             return string.Equals(
                 answer,
@@ -753,8 +757,21 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildLinearInequality(random, scale),
             "algebra.linear.inequality.variables_both_sides" =>
                 BuildLinearInequalityBothSides(random, scale),
+            _ when CorePracticeExpansionEngine.Supports(family) =>
+                BuildExpandedProblem(family, random, scale),
             _ => UnsupportedFamily(family)
         };
+    }
+
+    private static ExactProblem BuildExpandedProblem(string family, Random random, int scale)
+    {
+        var problem = CorePracticeExpansionEngine.Build(family, random, scale);
+        return new ExactProblem(
+            problem.Family,
+            problem.Prompt,
+            problem.Solution,
+            problem.ItemType,
+            problem.Parameters);
     }
 
     private static ExactProblem UnsupportedFamily(string family)
@@ -2085,6 +2102,9 @@ public sealed class ExactSkillContractQuestionEngine
 
             "algebra.linear.inequality.variables_both_sides" =>
                 SolveLinearInequalityBothSides(p),
+
+            _ when CorePracticeExpansionEngine.Supports(problem.Family) =>
+                CorePracticeExpansionEngine.Solve(problem.Family, p),
 
             _ => throw new InvalidOperationException($"Unsupported exact Mathematics solver family: {problem.Family}")
         };
