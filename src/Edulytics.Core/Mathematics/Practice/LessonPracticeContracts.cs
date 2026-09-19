@@ -685,7 +685,14 @@ public static class LessonPracticeContractRegistry
         foreach (var projected in LessonPracticeContractProjection.Load())
         {
             // Hand-authored contracts remain authoritative where they already exist.
-            // The projection supplements the registry only for newly approved lessons.
+            // The explicit mapping projection supplements the registry first.
+            byLesson.TryAdd(projected.LessonCode, projected);
+        }
+
+        foreach (var projected in SupportingLessonPracticeRuleProjection.Load())
+        {
+            // Reviewed Supporting target rules fill only lessons that still do not
+            // have an explicit hand-authored or approved-mapping contract.
             byLesson.TryAdd(projected.LessonCode, projected);
         }
 
