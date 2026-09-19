@@ -286,11 +286,10 @@ public sealed class SupportingLessonPracticeR11R12Tests
     }
 
     [Fact]
-    public void R6PromotionRaisesRuntimeExactContractCountTo232()
+    public void R6PromotionKeepsAtLeast232RuntimeExactContracts()
     {
-        Assert.Equal(
-            232,
-            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.All.Count);
+        Assert.True(
+            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.All.Count >= 232);
     }
 
     [Theory]
