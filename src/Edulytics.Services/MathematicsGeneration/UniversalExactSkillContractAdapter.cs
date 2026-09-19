@@ -25,12 +25,10 @@ internal static class UniversalExactSkillContractAdapter
             throw new InvalidOperationException(
                 "Exact Mathematics generation requires exact SkillContract metadata.");
 
-        var exactDifficulty = difficulty switch
-        {
-            AssessmentItemDifficulty.Challenging => ExactSkillQuestionDifficulty.Challenge,
-            AssessmentItemDifficulty.Medium => ExactSkillQuestionDifficulty.Stretch,
-            _ => ExactSkillQuestionDifficulty.Standard
-        };
+        var difficultyDecision = GradeAwareExactDifficultyPolicy.Resolve(
+            blueprint.CurriculumLevelKey,
+            difficulty);
+        var exactDifficulty = difficultyDecision.EffectiveDifficulty;
 
         var scopeKey = string.Join(
             "|",
@@ -87,6 +85,10 @@ internal static class UniversalExactSkillContractAdapter
                 alignmentValidated = true,
                 broadFallbackUsed = false,
                 gradeAware = true,
+                gradeDifficultyStage = difficultyDecision.Stage.ToString(),
+                gradeNumericLevel = difficultyDecision.NumericLevel,
+                requestedDifficulty = difficulty.ToString(),
+                effectiveExactDifficulty = difficultyDecision.EffectiveDifficulty.ToString(),
                 reconstructable = true
             }),
             CreatedAtUtc = DateTime.UtcNow
