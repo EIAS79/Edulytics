@@ -140,6 +140,54 @@ public static class SupportingPracticeTargetRuleRegistry
         return false;
     }
 
+    /// <summary>
+    /// Resolves an official lesson from reviewed target rules using the canonical
+    /// learner-facing body only when that evidence yields one unambiguous target.
+    /// Title-only reviewed resolution remains preferred. Canonical-body matching
+    /// is a second fail-closed path; collisions never authorize Practice.
+    /// </summary>
+    public static bool TryResolveReviewedOfficialLesson(
+        string? lessonCode,
+        string? title,
+        string? explanation,
+        string? keyConcepts,
+        string? workedExamples,
+        out SupportingPracticeTargetRule? rule)
+    {
+        if (TryResolveReviewedOfficialTitle(lessonCode, title, out rule))
+            return true;
+
+        var code = (lessonCode ?? string.Empty).Trim();
+        var evidence = Regex.Replace(
+            string.Join(
+                " ",
+                NormalizeTitle(title),
+                explanation ?? string.Empty,
+                keyConcepts ?? string.Empty,
+                workedExamples ?? string.Empty),
+            @"\s+",
+            " ").Trim();
+
+        var matches = Rules.Value
+            .Where(candidate =>
+                (candidate.TitlePatterns.Count == 0 ||
+                 candidate.TitlePatterns.Any(pattern => pattern.IsMatch(evidence))) &&
+                (candidate.CodePatterns.Count == 0 ||
+                 candidate.CodePatterns.Any(pattern => pattern.IsMatch(code))))
+            .Select(candidate => candidate.Rule)
+            .DistinctBy(candidate => candidate.Id, StringComparer.Ordinal)
+            .ToArray();
+
+        if (matches.Length == 1)
+        {
+            rule = matches[0];
+            return true;
+        }
+
+        rule = null;
+        return false;
+    }
+
     public static string NormalizeTitle(string? title)
     {
         var value = Regex.Replace(
