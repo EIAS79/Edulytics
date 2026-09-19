@@ -27,7 +27,8 @@ internal static class FoundationPracticeEngine
             "supporting.sequences.skip_count",
             "supporting.geometry.angle_measure",
             "supporting.statistics.statistical_question",
-            "supporting.statistics.center_or_variation"
+            "supporting.statistics.center_or_variation",
+            "supporting.measurement.unit_iteration"
         };
 
     internal sealed record Problem(
@@ -63,6 +64,7 @@ internal static class FoundationPracticeEngine
             "supporting.geometry.angle_measure" => AngleMeasure(random),
             "supporting.statistics.statistical_question" => StatisticalQuestion(random),
             "supporting.statistics.center_or_variation" => CenterOrVariation(random, scale),
+            "supporting.measurement.unit_iteration" => UnitIteration(random, scale),
             _ => throw new InvalidOperationException(
                 $"Unsupported Foundation Practice family: {family}")
         };
@@ -119,6 +121,8 @@ internal static class FoundationPracticeEngine
                 p["statistical"] == 1 ? "statistical" : "not statistical",
             "supporting.statistics.center_or_variation" =>
                 p["kind"] == 0 ? "center" : "variation",
+            "supporting.measurement.unit_iteration" =>
+                p["units"].ToString(CultureInfo.InvariantCulture),
             _ => throw new InvalidOperationException(
                 $"Unsupported Foundation Practice solver family: {family}")
         };
@@ -354,6 +358,16 @@ internal static class FoundationPracticeEngine
             "Compare the two category frequencies directly.",
             AssessmentItemType.ShortAnswer,
             ("a", a), ("b", b));
+    }
+
+    private static Problem UnitIteration(Random r, int scale)
+    {
+        var units = r.Next(2, 9 + scale * 3);
+        return P(
+            "supporting.measurement.unit_iteration",
+            $"An object is covered end-to-end by {units} equal unit tiles with no gaps or overlaps. What is its length in unit tiles?",
+            "When equal units cover an object end-to-end with no gaps or overlaps, the measurement is the number of units used.",
+            ("units", units));
     }
 
     private static Problem SkipCount(Random r, int scale)
