@@ -22,7 +22,8 @@ internal static class FoundationPracticeEngine
             "supporting.geometry.position_direction",
             "supporting.measurement.choose_tool",
             "supporting.statistics.category_total",
-            "supporting.statistics.compare_category_counts"
+            "supporting.statistics.compare_category_counts",
+            "supporting.algebra.systems_inequalities.mixed"
         };
 
     internal sealed record Problem(
@@ -53,6 +54,7 @@ internal static class FoundationPracticeEngine
             "supporting.measurement.choose_tool" => ChooseTool(random),
             "supporting.statistics.category_total" => CategoryTotal(random, scale),
             "supporting.statistics.compare_category_counts" => CompareCategoryCounts(random, scale),
+            "supporting.algebra.systems_inequalities.mixed" => SystemsInequalities(random, scale),
             _ => throw new InvalidOperationException(
                 $"Unsupported Foundation Practice family: {family}")
         };
@@ -97,6 +99,10 @@ internal static class FoundationPracticeEngine
                 (p["a"] + p["b"] + p["c"]).ToString(CultureInfo.InvariantCulture),
             "supporting.statistics.compare_category_counts" =>
                 p["a"] > p["b"] ? "A" : p["b"] > p["a"] ? "B" : "equal",
+            "supporting.algebra.systems_inequalities.mixed" =>
+                p["mode"] == 0
+                    ? $"x={p["x"]}, y={p["y"]}"
+                    : $"x<{p["k"]}",
             _ => throw new InvalidOperationException(
                 $"Unsupported Foundation Practice solver family: {family}")
         };
@@ -332,6 +338,35 @@ internal static class FoundationPracticeEngine
             "Compare the two category frequencies directly.",
             AssessmentItemType.ShortAnswer,
             ("a", a), ("b", b));
+    }
+
+    private static Problem SystemsInequalities(Random r, int scale)
+    {
+        var mode = r.Next(0, 2);
+        if (mode == 0)
+        {
+            var x = r.Next(-5 - scale, 6 + scale);
+            var y = r.Next(-5 - scale, 6 + scale);
+            var sum = x + y;
+            var difference = x - y;
+            return P(
+                "supporting.algebra.systems_inequalities.mixed",
+                $"Solve the system x + y = {sum} and x - y = {difference}. Give x and y.",
+                "Add the equations to eliminate y, solve for x, then substitute to find y and check both equations.",
+                AssessmentItemType.ShortAnswer,
+                ("mode", 0), ("x", x), ("y", y), ("k", 0));
+        }
+
+        var a = r.Next(1, 5 + scale);
+        var k = r.Next(-5 - scale, 6 + scale);
+        var b = r.Next(-6 - scale, 7 + scale);
+        var right = a * k + b;
+        return P(
+            "supporting.algebra.systems_inequalities.mixed",
+            $"Solve the inequality {a}x + {b} < {right}.",
+            "Subtract the constant and divide by the positive coefficient; because the coefficient is positive, the inequality direction stays the same.",
+            AssessmentItemType.ShortAnswer,
+            ("mode", 1), ("x", 0), ("y", 0), ("k", k));
     }
 
     private static string ClockAnswer(int hour, int startHalf)
