@@ -144,8 +144,8 @@ public static class ExactMathematicsCapabilityResolver
             return Exact(
                 "geometry.perimeter_area",
                 [
-                    "geometry.rectangle.area.exact",
-                    "geometry.rectangle.perimeter.exact"
+                    "geometry.perimeter_area.rectangle_area",
+                    "geometry.perimeter_area.rectangle_perimeter"
                 ],
                 "ExactPerimeterArea");
         }
