@@ -452,6 +452,7 @@ def audit() -> dict[str, Any]:
         "scoring": scores,
         "summary": dict(summary),
         "blockers": blockers,
+        "supportingRuleUnmatched": unmatched_after_explicit,
         "topUnresolvedTerms": [
             {"term": term, "count": count}
             for term, count in unresolved_term_counter.most_common(100)
@@ -479,6 +480,11 @@ def main() -> int:
         )
 
     print(json.dumps(report["summary"], ensure_ascii=False, indent=2))
+    if report["blockers"]:
+        print(json.dumps({
+            "blockers": report["blockers"],
+            "supportingRuleUnmatched": report["supportingRuleUnmatched"],
+        }, ensure_ascii=False, indent=2))
     if args.strict and report["summary"]["blockerCount"]:
         return 2
     return 0
