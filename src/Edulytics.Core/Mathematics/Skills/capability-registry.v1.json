@@ -621,6 +621,38 @@
       "provider": "edulytics-exact-skill-contract",
       "providerVersion": "fraction-of-quantity-exact-v1",
       "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.add_subtract.exact",
+      "domain": "fractions",
+      "canonicalName": "Generate and solve exact fraction addition/subtraction",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-add-subtract-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.verify.add_subtract",
+      "domain": "fractions",
+      "canonicalName": "Independently verify exact fraction addition/subtraction from original operands",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-add-subtract-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.compare.benchmark.exact",
+      "domain": "fractions",
+      "canonicalName": "Generate and solve exact benchmark fraction comparisons",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-benchmark-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.verify.compare.benchmark",
+      "domain": "fractions",
+      "canonicalName": "Independently verify benchmark fraction comparisons",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-benchmark-v1",
+      "status": "ShadowVerified"
     }
   ]
 }
