@@ -1416,6 +1416,62 @@ public sealed class ExactSkillContractQuestionEngine
             "fractions.compare.benchmark" =>
                 Compare(p["n"] * p["benchmarkD"], p["benchmarkN"] * p["d"]),
 
+            "geometry.coordinate.gradient_between_points" =>
+                ((p["y2"] - p["y1"]) / (p["x2"] - p["x1"]))
+                    .ToString(CultureInfo.InvariantCulture),
+
+            "geometry.angles.parallel_lines" =>
+                p["expectedAngle"].ToString(CultureInfo.InvariantCulture),
+
+            "geometry.angles.supplementary" =>
+                (180 - p["knownAngle"]).ToString(CultureInfo.InvariantCulture),
+
+            "geometry.similarity.find_missing_length" =>
+                (p["sourceLength"] * p["scaleFactor"]).ToString(CultureInfo.InvariantCulture),
+
+            "geometry.similarity.scale_factor" =>
+                (p["targetLength"] / p["sourceLength"]).ToString(CultureInfo.InvariantCulture),
+
+            "geometry.congruence.identify_criterion" =>
+                p["criterion"] switch
+                {
+                    0 => "SSS",
+                    1 => "SAS",
+                    2 => "ASA",
+                    3 => "RHS",
+                    _ => throw new InvalidOperationException("Invalid congruence criterion.")
+                },
+
+            "geometry.surface_area.rectangular_prism" =>
+                (2 * (
+                    p["length"] * p["width"] +
+                    p["length"] * p["height"] +
+                    p["width"] * p["height"]))
+                    .ToString(CultureInfo.InvariantCulture),
+
+            "geometry.volume.rectangular_prism" =>
+                (p["length"] * p["width"] * p["height"])
+                    .ToString(CultureInfo.InvariantCulture),
+
+            "geometry.rectangle.area.exact" =>
+                (p["length"] * p["width"]).ToString(CultureInfo.InvariantCulture),
+
+            "geometry.rectangle.perimeter.exact" =>
+                (2 * (p["length"] + p["width"])).ToString(CultureInfo.InvariantCulture),
+
+            "geometry.right_triangle.pythagorean.exact" =>
+                p["hypotenuse"].ToString(CultureInfo.InvariantCulture),
+
+            "trigonometry.right_triangle.ratio_exact" =>
+                SimplifyFraction(p["ratioNumerator"], p["ratioDenominator"]),
+
+            "trigonometry.right_triangle.find_side_exact" or
+            "trigonometry.modelling.contextual" =>
+                p["expectedSide"].ToString(CultureInfo.InvariantCulture),
+
+            "trigonometry.right_triangle.find_angle_exact" =>
+                p["expectedAngle"].ToString(CultureInfo.InvariantCulture),
+
             ExactLinearEquationQuestionFactory.FamilyId =>
                 ((p["right"] - p["offset"]) / p["coefficient"])
                     .ToString(CultureInfo.InvariantCulture),
@@ -1492,6 +1548,24 @@ public sealed class ExactSkillContractQuestionEngine
         return remainder == 0
             ? whole.ToString(CultureInfo.InvariantCulture)
             : $"{whole} {remainder}/{denominator}";
+    }
+
+    private static string SimplifyFraction(int numerator, int denominator)
+    {
+        if (denominator == 0)
+            throw new InvalidOperationException("Fraction denominator cannot be zero.");
+        if (denominator < 0)
+        {
+            numerator = -numerator;
+            denominator = -denominator;
+        }
+
+        var gcd = GreatestCommonDivisor(Math.Abs(numerator), denominator);
+        numerator /= gcd;
+        denominator /= gcd;
+        return denominator == 1
+            ? numerator.ToString(CultureInfo.InvariantCulture)
+            : $"{numerator.ToString(CultureInfo.InvariantCulture)}/{denominator.ToString(CultureInfo.InvariantCulture)}";
     }
 
     private static string SolveLinearInequality(IReadOnlyDictionary<string, int> parameters)
