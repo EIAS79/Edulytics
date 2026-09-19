@@ -68,6 +68,34 @@ internal static class OfficialLessonPracticeRuleProjection
                     if (lesson.OutcomeCodes.Count == 0)
                         continue;
 
+                    var translation = ChooseTranslation(pack, lesson);
+                    if (translation is not null &&
+                        SupportingPracticeTargetRuleRegistry.TryResolveReviewedOfficialLesson(
+                            lesson.LessonCode,
+                            translation.Title,
+                            translation.Explanation,
+                            translation.KeyConceptsAndRules,
+                            translation.WorkedExamples,
+                            out var canonicalRule) &&
+                        canonicalRule is not null &&
+                        IsRuntimeReadyRule(canonicalRule, skillIds, familyById))
+                    {
+                        projected.Add(new LessonPracticeContract(
+                            lesson.LessonCode,
+                            canonicalRule.SkillId,
+                            canonicalRule.Mechanic,
+                            canonicalRule.Families
+                                .Distinct(StringComparer.Ordinal)
+                                .ToArray(),
+                            "OfficialReviewedCanonicalEvidence",
+                            "READY_VERIFIED",
+                            ContractVersion)
+                        {
+                            SkillIds = [canonicalRule.SkillId]
+                        });
+                        continue;
+                    }
+
                     var resolvedOutcomes = lesson.OutcomeCodes
                         .Select(code =>
                             OfficialOutcomePracticeRuleRegistry.TryResolve(
@@ -77,75 +105,49 @@ internal static class OfficialLessonPracticeRuleProjection
                                 : null)
                         .ToArray();
 
-                    if (resolvedOutcomes.All(x => x is not null))
-                    {
-                        var targetRules = resolvedOutcomes
-                            .Cast<OfficialOutcomePracticeResolution>()
-                            .Select(x => x.TargetRule)
-                            .DistinctBy(x => x.Id, StringComparer.Ordinal)
-                            .ToArray();
+                    if (!resolvedOutcomes.All(x => x is not null))
+                        continue;
 
-                        if (targetRules.Length > 0 &&
-                            targetRules.All(rule =>
-                                IsRuntimeReadyRule(
-                                    rule,
-                                    skillIds,
-                                    familyById)))
-                        {
-                            var skillsForLesson = targetRules
-                                .Select(rule => rule.SkillId)
-                                .Distinct(StringComparer.Ordinal)
-                                .OrderBy(value => value, StringComparer.Ordinal)
-                                .ToArray();
-                            var familiesForLesson = targetRules
-                                .SelectMany(rule => rule.Families)
-                                .Distinct(StringComparer.Ordinal)
-                                .OrderBy(value => value, StringComparer.Ordinal)
-                                .ToArray();
-                            var mechanic = targetRules.Length == 1
-                                ? targetRules[0].Mechanic
-                                : "OFFICIAL_MULTI_OUTCOME";
+                    var targetRules = resolvedOutcomes
+                        .Cast<OfficialOutcomePracticeResolution>()
+                        .Select(x => x.TargetRule)
+                        .DistinctBy(x => x.Id, StringComparer.Ordinal)
+                        .ToArray();
 
-                            projected.Add(new LessonPracticeContract(
-                                lesson.LessonCode,
-                                skillsForLesson[0],
-                                mechanic,
-                                familiesForLesson,
-                                "OfficialOutcomeRule",
-                                "READY_VERIFIED",
-                                ContractVersion)
-                            {
-                                SkillIds = skillsForLesson
-                            });
-                            continue;
-                        }
-                    }
-
-                    var translation = ChooseTranslation(pack, lesson);
-                    if (translation is null ||
-                        !SupportingPracticeTargetRuleRegistry.TryResolveReviewedOfficialLesson(
-                            lesson.LessonCode,
-                            translation.Title,
-                            translation.Explanation,
-                            translation.KeyConceptsAndRules,
-                            translation.WorkedExamples,
-                            out var rule) ||
-                        rule is null ||
-                        !IsRuntimeReadyRule(rule, skillIds, familyById))
+                    if (targetRules.Length == 0 ||
+                        !targetRules.All(rule =>
+                            IsRuntimeReadyRule(
+                                rule,
+                                skillIds,
+                                familyById)))
                     {
                         continue;
                     }
 
+                    var skillsForLesson = targetRules
+                        .Select(rule => rule.SkillId)
+                        .Distinct(StringComparer.Ordinal)
+                        .OrderBy(value => value, StringComparer.Ordinal)
+                        .ToArray();
+                    var familiesForLesson = targetRules
+                        .SelectMany(rule => rule.Families)
+                        .Distinct(StringComparer.Ordinal)
+                        .OrderBy(value => value, StringComparer.Ordinal)
+                        .ToArray();
+                    var mechanic = targetRules.Length == 1
+                        ? targetRules[0].Mechanic
+                        : "OFFICIAL_MULTI_OUTCOME";
+
                     projected.Add(new LessonPracticeContract(
                         lesson.LessonCode,
-                        rule.SkillId,
-                        rule.Mechanic,
-                        rule.Families.Distinct(StringComparer.Ordinal).ToArray(),
-                        "OfficialReviewedCanonicalEvidence",
+                        skillsForLesson[0],
+                        mechanic,
+                        familiesForLesson,
+                        "OfficialOutcomeRule",
                         "READY_VERIFIED",
                         ContractVersion)
                     {
-                        SkillIds = [rule.SkillId]
+                        SkillIds = skillsForLesson
                     });
                 }
             }
