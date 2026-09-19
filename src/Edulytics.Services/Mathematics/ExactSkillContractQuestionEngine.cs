@@ -373,10 +373,12 @@ public sealed class ExactSkillContractQuestionEngine
                     parameters["width"] *
                     parameters["height"],
 
-            "geometry.rectangle.area.exact" =>
+            "geometry.rectangle.area.exact" or
+            "geometry.perimeter_area.rectangle_area" =>
                 value == parameters["length"] * parameters["width"],
 
-            "geometry.rectangle.perimeter.exact" =>
+            "geometry.rectangle.perimeter.exact" or
+            "geometry.perimeter_area.rectangle_perimeter" =>
                 value == 2 * (parameters["length"] + parameters["width"]),
 
             "geometry.right_triangle.pythagorean.exact" =>
@@ -484,9 +486,13 @@ public sealed class ExactSkillContractQuestionEngine
             "geometry.volume.rectangular_prism" =>
                 BuildRectangularPrismVolume(random, scale),
             "geometry.rectangle.area.exact" =>
-                BuildRectangleArea(random, scale),
+                BuildRectangleArea(random, scale, "geometry.rectangle.area.exact"),
+            "geometry.perimeter_area.rectangle_area" =>
+                BuildRectangleArea(random, scale, "geometry.perimeter_area.rectangle_area"),
             "geometry.rectangle.perimeter.exact" =>
-                BuildRectanglePerimeter(random, scale),
+                BuildRectanglePerimeter(random, scale, "geometry.rectangle.perimeter.exact"),
+            "geometry.perimeter_area.rectangle_perimeter" =>
+                BuildRectanglePerimeter(random, scale, "geometry.perimeter_area.rectangle_perimeter"),
             "geometry.right_triangle.pythagorean.exact" =>
                 BuildPythagorean(random, scale),
             "trigonometry.right_triangle.ratio_exact" =>
@@ -1120,12 +1126,12 @@ public sealed class ExactSkillContractQuestionEngine
             ("height", height));
     }
 
-    private static ExactProblem BuildRectangleArea(Random random, int scale)
+    private static ExactProblem BuildRectangleArea(Random random, int scale, string family)
     {
         var length = random.Next(3, 10 + scale * 3);
         var width = random.Next(2, 8 + scale * 2);
         return Problem(
-            "geometry.rectangle.area.exact",
+            family,
             $"A rectangle has length {length} and width {width}. Find its area.",
             "Area = length × width.",
             AssessmentItemType.Numeric,
@@ -1133,12 +1139,12 @@ public sealed class ExactSkillContractQuestionEngine
             ("width", width));
     }
 
-    private static ExactProblem BuildRectanglePerimeter(Random random, int scale)
+    private static ExactProblem BuildRectanglePerimeter(Random random, int scale, string family)
     {
         var length = random.Next(3, 10 + scale * 3);
         var width = random.Next(2, 8 + scale * 2);
         return Problem(
-            "geometry.rectangle.perimeter.exact",
+            family,
             $"A rectangle has length {length} and width {width}. Find its perimeter.",
             "Perimeter = 2(length + width).",
             AssessmentItemType.Numeric,
@@ -1453,10 +1459,12 @@ public sealed class ExactSkillContractQuestionEngine
                 (p["length"] * p["width"] * p["height"])
                     .ToString(CultureInfo.InvariantCulture),
 
-            "geometry.rectangle.area.exact" =>
+            "geometry.rectangle.area.exact" or
+            "geometry.perimeter_area.rectangle_area" =>
                 (p["length"] * p["width"]).ToString(CultureInfo.InvariantCulture),
 
-            "geometry.rectangle.perimeter.exact" =>
+            "geometry.rectangle.perimeter.exact" or
+            "geometry.perimeter_area.rectangle_perimeter" =>
                 (2 * (p["length"] + p["width"])).ToString(CultureInfo.InvariantCulture),
 
             "geometry.right_triangle.pythagorean.exact" =>
