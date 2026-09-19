@@ -1716,7 +1716,7 @@ public sealed class ExactSkillContractQuestionEngine
 
     private static ExactProblem BuildRegularPolygonInteriorAngle(Random random, int scale)
     {
-        int[] sideChoices = [3, 4, 5, 6, 8, 9, 10, 12];
+        int[] sideChoices = [3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20];
         var maxIndex = Math.Min(sideChoices.Length, 4 + scale * 2);
         var sides = sideChoices[random.Next(0, maxIndex)];
         return Problem(
