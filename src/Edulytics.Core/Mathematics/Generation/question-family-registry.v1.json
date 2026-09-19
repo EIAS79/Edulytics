@@ -1403,6 +1403,159 @@
       ],
       "status": "ShadowVerified",
       "productionRouting": false
+    },
+    {
+      "id": "algebra.relationships.two_unknowns.total_difference",
+      "version": 1,
+      "skillId": "algebra.relationships.two_unknowns",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "exact-skill-contract-independent-recompute",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "measurement.scale.equal_intervals.read_value",
+      "version": 1,
+      "skillId": "measurement.scale.read_equal_intervals",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "exact-skill-contract-independent-recompute",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.compare.unlike.common_denominator",
+      "version": 1,
+      "skillId": "fractions.compare.unlike_denominators",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "exact-skill-contract-independent-recompute",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.equivalent.missing_value",
+      "version": 1,
+      "skillId": "fractions.equivalent",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "exact-skill-contract-independent-recompute",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.equivalent.recognize",
+      "version": 1,
+      "skillId": "fractions.equivalent",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "exact-skill-contract-independent-recompute",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "ratio.unit_rate.direct",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "exact-skill-contract-independent-recompute",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "ratio.unit_rate.equivalent_ratio",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "exact-skill-contract-independent-recompute",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.equivalent.generate_multiple",
+      "version": 1,
+      "skillId": "fractions.equivalent",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "exact-skill-contract-independent-recompute",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.equivalent.reduce_common_factor",
+      "version": 1,
+      "skillId": "fractions.equivalent",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "exact-skill-contract-independent-recompute",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false
     }
   ]
 }
