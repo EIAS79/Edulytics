@@ -53,7 +53,11 @@ internal static class SupportingPracticeAdvancedEngine
             "supporting.mechanics.friction",
             "supporting.mechanics.connected_particles",
             "supporting.vectors.add",
-            "supporting.vectors.magnitude"
+            "supporting.vectors.magnitude",
+            "supporting.circle.arc_angle_degrees",
+            "supporting.probability.discrete_expected_value",
+            "supporting.trigonometry.identity_missing_component",
+            "supporting.trigonometry.equation_smallest_angle"
         };
 
     internal sealed record Problem(
@@ -115,6 +119,10 @@ internal static class SupportingPracticeAdvancedEngine
             "supporting.mechanics.connected_particles" => ConnectedParticles(r, scale),
             "supporting.vectors.add" => VectorAdd(r, scale),
             "supporting.vectors.magnitude" => VectorMagnitude(r, scale),
+            "supporting.circle.arc_angle_degrees" => CircleArcAngle(r),
+            "supporting.probability.discrete_expected_value" => DiscreteExpectedValue(r, scale),
+            "supporting.trigonometry.identity_missing_component" => TrigIdentityMissingComponent(r, scale),
+            "supporting.trigonometry.equation_smallest_angle" => TrigEquationSmallestAngle(r, scale),
             _ => throw new InvalidOperationException($"Unsupported advanced Supporting family: {family}")
         };
 
@@ -167,6 +175,10 @@ internal static class SupportingPracticeAdvancedEngine
             "supporting.mechanics.connected_particles" => (p["force"] / (p["m1"] + p["m2"])).ToString(CultureInfo.InvariantCulture),
             "supporting.vectors.add" => $"<{p["ax"] + p["bx"]}, {p["ay"] + p["by"]}>",
             "supporting.vectors.magnitude" => p["magnitude"].ToString(CultureInfo.InvariantCulture),
+            "supporting.circle.arc_angle_degrees" => (360 * p["numerator"] / p["denominator"]).ToString(CultureInfo.InvariantCulture),
+            "supporting.probability.discrete_expected_value" => ((p["x1"] + p["x2"]) / 2).ToString(CultureInfo.InvariantCulture),
+            "supporting.trigonometry.identity_missing_component" => p["missing"].ToString(CultureInfo.InvariantCulture),
+            "supporting.trigonometry.equation_smallest_angle" => p["angle"].ToString(CultureInfo.InvariantCulture),
             _ => throw new InvalidOperationException($"Unsupported advanced Supporting solver family: {family}")
         };
 
@@ -185,6 +197,75 @@ internal static class SupportingPracticeAdvancedEngine
             return NormalizePair(answer) == NormalizePair(expected);
 
         return Normalize(answer) == Normalize(expected);
+    }
+
+    private static Problem CircleArcAngle(Random r)
+    {
+        int[] denominators = [4, 6, 8, 9, 10, 12];
+        var denominator = denominators[r.Next(denominators.Length)];
+        var numerator = r.Next(1, denominator);
+        while ((360 * numerator) % denominator != 0)
+            numerator = r.Next(1, denominator);
+
+        return P(
+            "supporting.circle.arc_angle_degrees",
+            $"An arc is {numerator}/{denominator} of a full circle. Find its central angle in degrees.",
+            "A full circle is 360°. Multiply 360° by the arc's fraction of the whole circle.",
+            ("numerator", numerator),
+            ("denominator", denominator));
+    }
+
+    private static Problem DiscreteExpectedValue(Random r,int s)
+    {
+        var x1 = r.Next(0, 8 + s * 3);
+        var offset = 2 * r.Next(1, 6 + s * 2);
+        var x2 = x1 + offset;
+        return P(
+            "supporting.probability.discrete_expected_value",
+            $"A discrete random variable X takes values {x1} and {x2}, each with probability 1/2. Find E(X).",
+            "Expected value is the probability-weighted average: E(X)=x₁(1/2)+x₂(1/2).",
+            ("x1", x1),
+            ("x2", x2));
+    }
+
+    private static Problem TrigIdentityMissingComponent(Random r,int s)
+    {
+        var triples = new (int A,int B,int C)[] { (3,4,5), (5,12,13), (8,15,17), (7,24,25), (20,21,29) };
+        var triple = triples[r.Next(triples.Length)];
+        var multiplier = r.Next(1, 3 + s);
+        var a = triple.A * multiplier;
+        var b = triple.B * multiplier;
+        var cc = triple.C * multiplier;
+        return P(
+            "supporting.trigonometry.identity_missing_component",
+            $"For an acute angle θ, sin θ={a}/{cc}. Using sin²θ+cos²θ=1, find the positive integer x if cos θ=x/{cc}.",
+            "Use the Pythagorean identity: x²=c²−a², then take the positive square root because θ is acute.",
+            ("sinNumerator", a),
+            ("denominator", cc),
+            ("missing", b));
+    }
+
+    private static Problem TrigEquationSmallestAngle(Random r,int s)
+    {
+        var variant = r.Next(0, 4);
+        var coefficient = r.Next(1, 10 + s * 4);
+        var angle = variant switch { 0 => 30, 1 => 60, 2 => 45, _ => 90 };
+        var function = variant switch { 0 => "sin", 1 => "cos", 2 => "tan", _ => "sin" };
+        var rhs = variant switch
+        {
+            0 => $"{coefficient}/2",
+            1 => $"{coefficient}/2",
+            2 => coefficient.ToString(CultureInfo.InvariantCulture),
+            _ => coefficient.ToString(CultureInfo.InvariantCulture)
+        };
+
+        return P(
+            "supporting.trigonometry.equation_smallest_angle",
+            $"Find the smallest θ in 0°≤θ≤180° satisfying {coefficient}{function} θ={rhs}.",
+            "Divide by the coefficient, identify the exact special-angle value, and choose the smallest solution in the stated interval.",
+            ("variant", variant),
+            ("coefficient", coefficient),
+            ("angle", angle));
     }
 
     private static Problem CompareOrder(Random r,int s){var a=r.Next(0,500+s*500);var b=r.Next(0,500+s*500);return P("supporting.number.compare_order",$"Compare {a} and {b}. Enter <, >, or =.","Compare digits from the greatest place value to the least.",AssessmentItemType.ShortAnswer,("left",a),("right",b));}
