@@ -467,6 +467,36 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildFractionAddSubtract(family, random, scale),
             "fractions.compare.benchmark" =>
                 BuildFractionBenchmark(random, scale),
+            "geometry.coordinate.gradient_between_points" =>
+                BuildCoordinateGradient(random, scale),
+            "geometry.angles.parallel_lines" =>
+                BuildParallelLineAngle(random, scale),
+            "geometry.angles.supplementary" =>
+                BuildSupplementaryAngle(random),
+            "geometry.similarity.find_missing_length" =>
+                BuildSimilarityMissingLength(random, scale),
+            "geometry.similarity.scale_factor" =>
+                BuildSimilarityScaleFactor(random, scale),
+            "geometry.congruence.identify_criterion" =>
+                BuildCongruenceCriterion(random),
+            "geometry.surface_area.rectangular_prism" =>
+                BuildRectangularPrismSurfaceArea(random, scale),
+            "geometry.volume.rectangular_prism" =>
+                BuildRectangularPrismVolume(random, scale),
+            "geometry.rectangle.area.exact" =>
+                BuildRectangleArea(random, scale),
+            "geometry.rectangle.perimeter.exact" =>
+                BuildRectanglePerimeter(random, scale),
+            "geometry.right_triangle.pythagorean.exact" =>
+                BuildPythagorean(random, scale),
+            "trigonometry.right_triangle.ratio_exact" =>
+                BuildTrigonometricRatio(random, scale),
+            "trigonometry.right_triangle.find_side_exact" =>
+                BuildTrigonometricFindSide(random, scale, false),
+            "trigonometry.right_triangle.find_angle_exact" =>
+                BuildTrigonometricFindAngle(random),
+            "trigonometry.modelling.contextual" =>
+                BuildTrigonometricFindSide(random, scale, true),
             ExactLinearEquationQuestionFactory.FamilyId =>
                 BuildLinearEquation(random, scale),
             ExactLinearInequalityQuestionFactory.FamilyId =>
@@ -943,6 +973,280 @@ public sealed class ExactSkillContractQuestionEngine
             ("d", d),
             ("benchmarkN", benchmarkN),
             ("benchmarkD", benchmarkD));
+    }
+
+    private static ExactProblem BuildCoordinateGradient(Random random, int scale)
+    {
+        var x1 = random.Next(-5 * scale, 5 * scale + 1);
+        var run = random.Next(1, 4 + scale);
+        var gradient = random.Next(-3 - scale, 4 + scale);
+        if (gradient == 0) gradient = 1;
+        var y1 = random.Next(-6 * scale, 6 * scale + 1);
+        var x2 = x1 + run;
+        var y2 = y1 + gradient * run;
+
+        return Problem(
+            "geometry.coordinate.gradient_between_points",
+            $"Find the gradient of the line through ({x1}, {y1}) and ({x2}, {y2}).",
+            "Use gradient = change in y ÷ change in x, then verify with both coordinates.",
+            AssessmentItemType.Numeric,
+            ("x1", x1),
+            ("y1", y1),
+            ("x2", x2),
+            ("y2", y2));
+    }
+
+    private static ExactProblem BuildParallelLineAngle(Random random, int scale)
+    {
+        var known = random.Next(25, 155);
+        var supplementary = random.Next(0, 2) == 1;
+        var expected = supplementary ? 180 - known : known;
+        var relationship = supplementary ? 1 : 0;
+        var prompt = supplementary
+            ? $"Two parallel lines are cut by a transversal. One interior angle is {known}°. Find the adjacent interior angle on the straight line."
+            : $"Two parallel lines are cut by a transversal. One corresponding angle is {known}°. Find the corresponding angle.";
+
+        return Problem(
+            "geometry.angles.parallel_lines",
+            prompt,
+            supplementary
+                ? "Adjacent angles on a straight line sum to 180°. Use the parallel-line relationship to confirm the position."
+                : "Corresponding angles formed by a transversal across parallel lines are equal.",
+            AssessmentItemType.Numeric,
+            ("knownAngle", known),
+            ("relationship", relationship),
+            ("expectedAngle", expected),
+            ("scale", scale));
+    }
+
+    private static ExactProblem BuildSupplementaryAngle(Random random)
+    {
+        var known = random.Next(20, 160);
+        return Problem(
+            "geometry.angles.supplementary",
+            $"Two angles form a straight line. One angle is {known}°. Find the other angle.",
+            "Angles on a straight line total 180°, so subtract the known angle from 180°.",
+            AssessmentItemType.Numeric,
+            ("knownAngle", known));
+    }
+
+    private static ExactProblem BuildSimilarityMissingLength(Random random, int scale)
+    {
+        var source = random.Next(2, 8 + scale);
+        var factor = random.Next(2, 5 + scale);
+        var target = source * factor;
+
+        return Problem(
+            "geometry.similarity.find_missing_length",
+            $"Two similar shapes have scale factor {factor} from the smaller to the larger. A corresponding side on the smaller shape is {source}. Find the matching side on the larger shape.",
+            "Corresponding lengths in similar shapes are multiplied by the same scale factor.",
+            AssessmentItemType.Numeric,
+            ("sourceLength", source),
+            ("scaleFactor", factor),
+            ("targetLength", target));
+    }
+
+    private static ExactProblem BuildSimilarityScaleFactor(Random random, int scale)
+    {
+        var source = random.Next(2, 8 + scale);
+        var factor = random.Next(2, 5 + scale);
+        var target = source * factor;
+
+        return Problem(
+            "geometry.similarity.scale_factor",
+            $"A side of length {source} corresponds to a side of length {target} in a similar shape. Find the scale factor from the first shape to the second.",
+            "Divide a corresponding target length by the source length.",
+            AssessmentItemType.Numeric,
+            ("sourceLength", source),
+            ("targetLength", target));
+    }
+
+    private static ExactProblem BuildCongruenceCriterion(Random random)
+    {
+        var criterion = random.Next(0, 4);
+        var (prompt, solution) = criterion switch
+        {
+            0 => (
+                "Two triangles have all three corresponding side lengths equal. Which congruence criterion proves they are congruent? Answer SSS, SAS, ASA, or RHS.",
+                "Three equal corresponding sides establish SSS congruence."),
+            1 => (
+                "Two triangles have two corresponding sides equal and the included angle equal. Which congruence criterion applies? Answer SSS, SAS, ASA, or RHS.",
+                "Two sides and the included angle establish SAS congruence."),
+            2 => (
+                "Two triangles have two corresponding angles equal and the included side equal. Which congruence criterion applies? Answer SSS, SAS, ASA, or RHS.",
+                "Two angles and the included side establish ASA congruence."),
+            _ => (
+                "Two right triangles have equal hypotenuse lengths and one equal corresponding side. Which congruence criterion applies? Answer SSS, SAS, ASA, or RHS.",
+                "Right angle, hypotenuse and one corresponding side establish RHS congruence.")
+        };
+
+        return Problem(
+            "geometry.congruence.identify_criterion",
+            prompt,
+            solution,
+            AssessmentItemType.ShortAnswer,
+            ("criterion", criterion));
+    }
+
+    private static ExactProblem BuildRectangularPrismSurfaceArea(Random random, int scale)
+    {
+        var length = random.Next(2, 7 + scale * 2);
+        var width = random.Next(2, 6 + scale);
+        var height = random.Next(2, 5 + scale);
+
+        return Problem(
+            "geometry.surface_area.rectangular_prism",
+            $"A rectangular prism has length {length}, width {width}, and height {height}. Find its total surface area.",
+            "Use 2(lw + lh + wh), then verify all six faces are counted.",
+            AssessmentItemType.Numeric,
+            ("length", length),
+            ("width", width),
+            ("height", height));
+    }
+
+    private static ExactProblem BuildRectangularPrismVolume(Random random, int scale)
+    {
+        var length = random.Next(2, 7 + scale * 2);
+        var width = random.Next(2, 6 + scale);
+        var height = random.Next(2, 5 + scale);
+
+        return Problem(
+            "geometry.volume.rectangular_prism",
+            $"A rectangular prism has length {length}, width {width}, and height {height}. Find its volume.",
+            "Volume of a rectangular prism is length × width × height.",
+            AssessmentItemType.Numeric,
+            ("length", length),
+            ("width", width),
+            ("height", height));
+    }
+
+    private static ExactProblem BuildRectangleArea(Random random, int scale)
+    {
+        var length = random.Next(3, 10 + scale * 3);
+        var width = random.Next(2, 8 + scale * 2);
+        return Problem(
+            "geometry.rectangle.area.exact",
+            $"A rectangle has length {length} and width {width}. Find its area.",
+            "Area = length × width.",
+            AssessmentItemType.Numeric,
+            ("length", length),
+            ("width", width));
+    }
+
+    private static ExactProblem BuildRectanglePerimeter(Random random, int scale)
+    {
+        var length = random.Next(3, 10 + scale * 3);
+        var width = random.Next(2, 8 + scale * 2);
+        return Problem(
+            "geometry.rectangle.perimeter.exact",
+            $"A rectangle has length {length} and width {width}. Find its perimeter.",
+            "Perimeter = 2(length + width).",
+            AssessmentItemType.Numeric,
+            ("length", length),
+            ("width", width));
+    }
+
+    private static ExactProblem BuildPythagorean(Random random, int scale)
+    {
+        var triples = new (int A, int B, int C)[] { (3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25) };
+        var triple = triples[random.Next(triples.Length)];
+        var multiplier = random.Next(1, Math.Max(2, scale + 1));
+        var a = triple.A * multiplier;
+        var b = triple.B * multiplier;
+        var hypotenuse = triple.C * multiplier;
+
+        return Problem(
+            "geometry.right_triangle.pythagorean.exact",
+            $"A right triangle has perpendicular sides {a} and {b}. Find the hypotenuse.",
+            "Use a² + b² = c² and take the positive square root.",
+            AssessmentItemType.Numeric,
+            ("legA", a),
+            ("legB", b),
+            ("hypotenuse", hypotenuse));
+    }
+
+    private static ExactProblem BuildTrigonometricRatio(Random random, int scale)
+    {
+        var triples = new (int Opposite, int Adjacent, int Hypotenuse)[] { (3, 4, 5), (5, 12, 13), (8, 15, 17) };
+        var triple = triples[random.Next(triples.Length)];
+        var ratioType = random.Next(0, 3);
+        var numerator = ratioType switch
+        {
+            0 => triple.Opposite,
+            1 => triple.Adjacent,
+            _ => triple.Opposite
+        };
+        var denominator = ratioType switch
+        {
+            0 => triple.Hypotenuse,
+            1 => triple.Hypotenuse,
+            _ => triple.Adjacent
+        };
+        var name = ratioType switch { 0 => "sin", 1 => "cos", _ => "tan" };
+
+        return Problem(
+            "trigonometry.right_triangle.ratio_exact",
+            $"Relative to angle θ in a right triangle, opposite = {triple.Opposite}, adjacent = {triple.Adjacent}, hypotenuse = {triple.Hypotenuse}. Find {name}(θ) as a fraction.",
+            "Use SOH-CAH-TOA and simplify the exact ratio.",
+            AssessmentItemType.ShortAnswer,
+            ("opposite", triple.Opposite),
+            ("adjacent", triple.Adjacent),
+            ("hypotenuse", triple.Hypotenuse),
+            ("ratioType", ratioType),
+            ("ratioNumerator", numerator),
+            ("ratioDenominator", denominator),
+            ("scale", scale));
+    }
+
+    private static ExactProblem BuildTrigonometricFindSide(Random random, int scale, bool modelling)
+    {
+        var triples = new (int Opposite, int Adjacent, int Hypotenuse)[] { (3, 4, 5), (5, 12, 13), (8, 15, 17) };
+        var triple = triples[random.Next(triples.Length)];
+        var multiplier = random.Next(1, Math.Max(2, scale + 1));
+        var opposite = triple.Opposite * multiplier;
+        var adjacent = triple.Adjacent * multiplier;
+        var hypotenuse = triple.Hypotenuse * multiplier;
+        var ask = random.Next(0, 2);
+        var expected = ask == 0 ? opposite : adjacent;
+        var prompt = modelling
+            ? ask == 0
+                ? $"A support cable forms a right triangle with ground distance {adjacent} and cable length {hypotenuse}. Find the vertical height."
+                : $"A ramp forms a right triangle with height {opposite} and ramp length {hypotenuse}. Find the horizontal run."
+            : ask == 0
+                ? $"In a right triangle, the adjacent side is {adjacent} and the hypotenuse is {hypotenuse}. Using the matching exact trigonometric ratio, find the opposite side."
+                : $"In a right triangle, the opposite side is {opposite} and the hypotenuse is {hypotenuse}. Using the matching exact trigonometric ratio, find the adjacent side.";
+
+        return Problem(
+            modelling ? "trigonometry.modelling.contextual" : "trigonometry.right_triangle.find_side_exact",
+            prompt,
+            "Identify the correct right-triangle ratio, substitute the exact known values, solve the missing side, and verify with Pythagoras.",
+            AssessmentItemType.Numeric,
+            ("opposite", opposite),
+            ("adjacent", adjacent),
+            ("hypotenuse", hypotenuse),
+            ("expectedSide", expected),
+            ("ask", ask));
+    }
+
+    private static ExactProblem BuildTrigonometricFindAngle(Random random)
+    {
+        var options = new (int Angle, int RatioType, int Numerator, int Denominator)[]
+        {
+            (30, 0, 1, 2), // sin 30
+            (60, 1, 1, 2), // cos 60
+            (45, 2, 1, 1) // tan 45
+        };
+        var item = options[random.Next(options.Length)];
+        var name = item.RatioType switch { 0 => "sin", 1 => "cos", _ => "tan" };
+        return Problem(
+            "trigonometry.right_triangle.find_angle_exact",
+            $"For an acute angle θ, {name}(θ) = {item.Numerator}/{item.Denominator}. Find θ in degrees.",
+            "Use the exact special-angle trigonometric values.",
+            AssessmentItemType.Numeric,
+            ("ratioType", item.RatioType),
+            ("ratioNumerator", item.Numerator),
+            ("ratioDenominator", item.Denominator),
+            ("expectedAngle", item.Angle));
     }
 
     private static ExactProblem BuildLinearEquation(Random random, int scale)
