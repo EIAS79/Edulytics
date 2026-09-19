@@ -30,6 +30,7 @@ public static class PracticeMathVisualRenderer
                 "geometry.coordinate.gradient_between_points" => CoordinateGradient(parameters),
                 "geometry.angles.parallel_lines" => ParallelLines(parameters),
                 "geometry.angles.supplementary" => Supplementary(parameters),
+                "geometry.angles.algebraic_supplementary" => AlgebraicSupplementary(parameters),
                 "geometry.similarity.find_missing_length" or
                 "geometry.similarity.scale_factor" => Similarity(parameters),
                 "geometry.congruence.identify_criterion" => Congruence(parameters),
@@ -42,6 +43,7 @@ public static class PracticeMathVisualRenderer
                 "geometry.perimeter_area.rectangle_area" or
                 "geometry.perimeter_area.rectangle_perimeter" => Rectangle(parameters),
                 "geometry.right_triangle.pythagorean.exact" or
+                "geometry.right_triangle.pythagorean.find_leg_exact" or
                 "trigonometry.right_triangle.ratio_exact" or
                 "trigonometry.right_triangle.find_side_exact" or
                 "trigonometry.right_triangle.find_angle_exact" or
@@ -145,6 +147,23 @@ public static class PracticeMathVisualRenderer
         return SvgEnd(sb);
     }
 
+    private static string AlgebraicSupplementary(JsonElement p)
+    {
+        var coefficientA = GetInt(p, "coefficientA");
+        var offsetA = GetInt(p, "offsetA");
+        var coefficientB = GetInt(p, "coefficientB");
+        var offsetB = GetInt(p, "offsetB");
+
+        var sb = SvgStart("A straight line split into two adjacent algebraic angles.");
+        sb.Append("<line x1=\"45\" y1=\"185\" x2=\"375\" y2=\"185\" class=\"shape\"/>");
+        sb.Append("<line x1=\"210\" y1=\"185\" x2=\"295\" y2=\"55\" class=\"shape\"/>");
+        sb.Append("<path d=\"M260 185 A50 50 0 0 0 237 143\" class=\"arc\"/>");
+        sb.Append("<path d=\"M205 135 A50 50 0 0 0 160 185\" class=\"arc\"/>");
+        Text(sb, 270, 155, $"({coefficientA}x + {offsetA})°", "label");
+        Text(sb, 125, 155, $"({coefficientB}x + {offsetB})°", "label");
+        return SvgEnd(sb);
+    }
+
     private static string Similarity(JsonElement p)
     {
         var source = GetInt(p, "sourceLength");
@@ -226,9 +245,34 @@ public static class PracticeMathVisualRenderer
         var adjacent = TryGetInt(p, "adjacent");
         var hypotenuse = TryGetInt(p, "hypotenuse");
         var expectedAngle = TryGetInt(p, "expectedAngle");
+        var knownLeg = TryGetInt(p, "knownLeg");
+        var askLeg = TryGetInt(p, "askLeg");
 
-        var vertical = opposite ?? legA;
-        var horizontal = adjacent ?? legB;
+        int? vertical;
+        int? horizontal;
+        string? verticalLabel = null;
+        string? horizontalLabel = null;
+
+        if (knownLeg.HasValue && askLeg.HasValue)
+        {
+            if (askLeg.Value == 0)
+            {
+                vertical = null;
+                horizontal = knownLeg.Value;
+                verticalLabel = "x";
+            }
+            else
+            {
+                vertical = knownLeg.Value;
+                horizontal = null;
+                horizontalLabel = "x";
+            }
+        }
+        else
+        {
+            vertical = opposite ?? legA;
+            horizontal = adjacent ?? legB;
+        }
 
         var sb = SvgStart("Right triangle with side and angle labels tied to the question values.");
         sb.Append("<polygon points='85,215 335,215 85,55' class='shape fill'/>");
