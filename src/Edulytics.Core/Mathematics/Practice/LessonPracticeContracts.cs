@@ -26,7 +26,7 @@ public sealed record LessonPracticeContract(
 /// </summary>
 public static class LessonPracticeContractRegistry
 {
-    public const string Version = "supporting-lesson-practice-v3";
+    public const string Version = "supporting-lesson-practice-v4";
 
     private static readonly LessonPracticeContract[] Entries =
     [
@@ -563,6 +563,102 @@ public static class LessonPracticeContractRegistry
             "algebra.linear.solve",
             "LINEAR_EQUATION",
             ["algebra.linear.ax_plus_b_equals_c"],
+            "SupportingLesson",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:S3:3F-4:BUILD",
+            "fractions.add_subtract",
+            "SUPPORTING_EXACT",
+            ["fractions.add_subtract.within_one.build"],
+            "SupportingLesson",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:S3:3F-4:APPLY",
+            "fractions.add_subtract",
+            "SUPPORTING_EXACT",
+            ["fractions.add_subtract.within_one.apply"],
+            "SupportingLesson",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:S4:4F-3:BUILD",
+            "fractions.add_subtract",
+            "SUPPORTING_EXACT",
+            ["fractions.add_subtract.same_denominator.mixed.build"],
+            "SupportingLesson",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:S4:4F-3:APPLY",
+            "fractions.add_subtract",
+            "SUPPORTING_EXACT",
+            ["fractions.add_subtract.same_denominator.mixed.apply"],
+            "SupportingLesson",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:UAE-MOE-MATH:L3:COMMON:02:03:COMPARE-FRACTIONS",
+            "fractions.compare.unlike_denominators",
+            "SUPPORTING_EXACT",
+            ["fractions.compare.unlike.common_denominator"],
+            "SupportingLesson",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:UAE-MOE-MATH:L3:COMMON:02:04:ADD-AND-SUBTRACT-RELATED-FRACTIONS",
+            "fractions.add_subtract",
+            "SUPPORTING_EXACT",
+            ["fractions.add_subtract.related.build", "fractions.add_subtract.related.apply"],
+            "SupportingLesson",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:UAE-MOE-MATH:L4:COMMON:02:02:ADD-AND-SUBTRACT-FRACTIONS",
+            "fractions.add_subtract",
+            "SUPPORTING_EXACT",
+            ["fractions.add_subtract.common_denominator.build", "fractions.add_subtract.common_denominator.apply"],
+            "SupportingLesson",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:UAE-MOE-MATH:L5:ADVANCED:02:02:ADD-AND-SUBTRACT-FRACTIONS",
+            "fractions.add_subtract",
+            "SUPPORTING_EXACT",
+            ["fractions.add_subtract.common_denominator.build", "fractions.add_subtract.common_denominator.apply"],
+            "SupportingLesson",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:UAE-MOE-MATH:L5:GENERAL:02:02:ADD-AND-SUBTRACT-FRACTIONS",
+            "fractions.add_subtract",
+            "SUPPORTING_EXACT",
+            ["fractions.add_subtract.common_denominator.build", "fractions.add_subtract.common_denominator.apply"],
+            "SupportingLesson",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:UAE-MOE-MATH:L6:ADVANCED:02:02:ADD-AND-SUBTRACT-UNLIKE-FRACTIONS",
+            "fractions.add_subtract",
+            "SUPPORTING_EXACT",
+            ["fractions.add_subtract.common_denominator.build", "fractions.add_subtract.common_denominator.apply"],
+            "SupportingLesson",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:02:ADD-AND-SUBTRACT-UNLIKE-FRACTIONS",
+            "fractions.add_subtract",
+            "SUPPORTING_EXACT",
+            ["fractions.add_subtract.common_denominator.build", "fractions.add_subtract.common_denominator.apply"],
+            "SupportingLesson",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:US-CCSS-MATH:G4:U02:L06",
+            "fractions.compare.benchmark",
+            "SUPPORTING_EXACT",
+            ["fractions.compare.benchmark"],
             "SupportingLesson",
             "READY_VERIFIED",
             Version),
