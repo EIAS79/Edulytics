@@ -29,7 +29,10 @@ internal static class FoundationPracticeEngine
             "supporting.statistics.statistical_question",
             "supporting.statistics.center_or_variation",
             "supporting.measurement.unit_iteration",
-            "supporting.measurement.indirect_compare"
+            "supporting.measurement.indirect_compare",
+            "supporting.number.estimate_closer",
+            "supporting.measurement.money_marked_value",
+            "supporting.geometry.orientation_invariant"
         };
 
     internal sealed record Problem(
@@ -67,6 +70,9 @@ internal static class FoundationPracticeEngine
             "supporting.statistics.center_or_variation" => CenterOrVariation(random, scale),
             "supporting.measurement.unit_iteration" => UnitIteration(random, scale),
             "supporting.measurement.indirect_compare" => IndirectCompare(random, scale),
+            "supporting.number.estimate_closer" => EstimateCloser(random, scale),
+            "supporting.measurement.money_marked_value" => MoneyMarkedValue(random),
+            "supporting.geometry.orientation_invariant" => OrientationInvariant(random),
             _ => throw new InvalidOperationException(
                 $"Unsupported Foundation Practice family: {family}")
         };
@@ -127,6 +133,12 @@ internal static class FoundationPracticeEngine
                 p["units"].ToString(CultureInfo.InvariantCulture),
             "supporting.measurement.indirect_compare" =>
                 p["aOffset"] > p["bOffset"] ? "A" : "B",
+            "supporting.number.estimate_closer" =>
+                p["firstError"] <= p["secondError"] ? "first" : "second",
+            "supporting.measurement.money_marked_value" =>
+                p["value"].ToString(CultureInfo.InvariantCulture),
+            "supporting.geometry.orientation_invariant" =>
+                ShapeName(p["shape"]),
             _ => throw new InvalidOperationException(
                 $"Unsupported Foundation Practice solver family: {family}")
         };
@@ -364,6 +376,52 @@ internal static class FoundationPracticeEngine
             ("a", a), ("b", b));
     }
 
+    private static Problem EstimateCloser(Random r, int scale)
+    {
+        var exact = r.Next(5, 20 + scale * 5);
+        var nearError = r.Next(1, 3 + scale);
+        var farError = nearError + r.Next(4, 10 + scale * 3);
+        var near = Math.Max(0, exact + (r.Next(0, 2) == 0 ? -nearError : nearError));
+        var far = Math.Max(0, exact + (r.Next(0, 2) == 0 ? -farError : farError));
+        var firstIsNear = r.Next(0, 2) == 0;
+        var first = firstIsNear ? near : far;
+        var second = firstIsNear ? far : near;
+        return P(
+            "supporting.number.estimate_closer",
+            $"A collection is counted exactly as {exact}. Which earlier estimate was more reasonable, the first estimate {first} or the second estimate {second}? Enter first or second.",
+            "A reasonable estimate should be close to the exact count. Compare the absolute errors.",
+            AssessmentItemType.ShortAnswer,
+            ("firstError", Math.Abs(first - exact)),
+            ("secondError", Math.Abs(second - exact)),
+            ("exact", exact));
+    }
+
+    private static Problem MoneyMarkedValue(Random r)
+    {
+        int[] values = [1, 2, 5, 10, 20, 50];
+        var value = values[r.Next(values.Length)];
+        return P(
+            "supporting.measurement.money_marked_value",
+            $"A coin or note is clearly marked with the value {value}. What value does it represent?",
+            "Read the printed denomination; physical size does not determine monetary value.",
+            AssessmentItemType.ShortAnswer,
+            ("value", value));
+    }
+
+    private static Problem OrientationInvariant(Random r)
+    {
+        var shape = r.Next(0, 3);
+        var name = ShapeName(shape);
+        var turns = r.Next(1, 4);
+        return P(
+            "supporting.geometry.orientation_invariant",
+            $"A {name} is rotated by {turns} quarter-turn(s). What shape is it after the rotation?",
+            "Rotation changes orientation but does not change defining shape properties.",
+            AssessmentItemType.ShortAnswer,
+            ("shape", shape),
+            ("turns", turns));
+    }
+
     private static Problem IndirectCompare(Random r, int scale)
     {
         var aOffset = r.Next(1, 4 + scale);
@@ -490,6 +548,15 @@ internal static class FoundationPracticeEngine
             1 => 6,
             2 => 5,
             _ => throw new InvalidOperationException("Unknown foundation solid shape.")
+        };
+
+    private static string ShapeName(int shape) =>
+        shape switch
+        {
+            0 => "triangle",
+            1 => "rectangle",
+            2 => "square",
+            _ => throw new InvalidOperationException("Unknown foundation 2D shape.")
         };
 
     private static string ToolName(int context) =>
