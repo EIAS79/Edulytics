@@ -135,7 +135,8 @@ public sealed class ExactSkillContractQuestionEngine
 
     public static bool SupportsFamily(string? family) =>
         !string.IsNullOrWhiteSpace(family) &&
-        SupportedFamilies.Contains(family.Trim());
+        (SupportedFamilies.Contains(family.Trim()) ||
+         SupportingPracticeCompletionEngine.Supports(family.Trim()));
 
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
         string fingerprintNamespace,
@@ -225,6 +226,9 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (SupportingPracticeCompletionEngine.Supports(family))
+            return SupportingPracticeCompletionEngine.Verify(family, parameters, answer);
+
         if (family == "fractions.compare.unlike.common_denominator")
             return string.Equals(
                 answer,
@@ -750,6 +754,17 @@ public sealed class ExactSkillContractQuestionEngine
             ExactSkillQuestionDifficulty.Challenge => 3,
             _ => 1
         };
+
+        if (SupportingPracticeCompletionEngine.Supports(family))
+        {
+            var supporting = SupportingPracticeCompletionEngine.Build(family, random, scale);
+            return new ExactProblem(
+                supporting.Family,
+                supporting.Prompt,
+                supporting.Solution,
+                supporting.ItemType,
+                supporting.Parameters);
+        }
 
         return family switch
         {
@@ -2348,6 +2363,9 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (SupportingPracticeCompletionEngine.Supports(problem.Family))
+            return SupportingPracticeCompletionEngine.Solve(problem.Family, p);
+
         return problem.Family switch
         {
             "number.whole.add.direct" =>
