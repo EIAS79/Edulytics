@@ -58,6 +58,24 @@ public sealed record MathematicsOutcomeGenerationProfile(
     /// contextual fallback rather than a reviewed native mathematical family.
     /// </summary>
     public bool IsContextualAssisted { get; init; }
+
+    /// <summary>
+    /// Optional exact curriculum-neutral SkillId resolved from reviewed semantic
+    /// evidence. When present, Teacher Assessment Builder and Student Private
+    /// Practice must use the shared exact SkillContract kernel and must not
+    /// silently fall back to CurriculumContextCheck.
+    /// </summary>
+    public string? ExactSkillId { get; init; }
+
+    /// <summary>
+    /// Exact question families authorized for this outcome/lesson target.
+    /// Empty means no exact SkillContract route is established.
+    /// </summary>
+    public IReadOnlyList<string> ExactQuestionFamilies { get; init; } = [];
+
+    public bool HasExactSkillContract =>
+        !string.IsNullOrWhiteSpace(ExactSkillId) &&
+        ExactQuestionFamilies.Count > 0;
 }
 
 public sealed record MathematicsGenerationRequest(
