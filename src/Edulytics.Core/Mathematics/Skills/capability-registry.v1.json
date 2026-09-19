@@ -685,6 +685,38 @@
       "provider": "edulytics-exact-skill-contract",
       "providerVersion": "lesson-practice-v1",
       "status": "ProductionVerified"
+    },
+    {
+      "id": "vectors.subtract.exact_rational",
+      "domain": "vectors",
+      "canonicalName": "Subtract bounded vectors componentwise over exact rationals",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "vectors-practice-exact-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "vectors.scalar_multiply.exact_rational",
+      "domain": "vectors",
+      "canonicalName": "Multiply bounded vectors by exact scalars",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "vectors-practice-exact-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "vectors.magnitude.exact",
+      "domain": "vectors",
+      "canonicalName": "Evaluate exact two-dimensional vector magnitudes for verified square lengths",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "vectors-practice-exact-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "vectors.between_points.exact",
+      "domain": "vectors",
+      "canonicalName": "Compute exact displacement vectors from coordinate endpoints",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "vectors-practice-exact-v2",
+      "status": "ShadowVerified"
     }
   ]
 }
