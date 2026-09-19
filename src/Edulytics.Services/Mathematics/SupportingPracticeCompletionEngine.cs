@@ -101,10 +101,23 @@ internal static class SupportingPracticeCompletionEngine
 
     public static bool Supports(string? family) =>
         !string.IsNullOrWhiteSpace(family) &&
-        Families.Contains(family.Trim());
+        (Families.Contains(family.Trim()) ||
+         SupportingPracticeAdvancedEngine.Supports(family.Trim()));
 
-    public static Problem Build(string family, Random random, int scale) =>
-        family switch
+    public static Problem Build(string family, Random random, int scale)
+    {
+        if (SupportingPracticeAdvancedEngine.Supports(family))
+        {
+            var advanced = SupportingPracticeAdvancedEngine.Build(family, random, scale);
+            return new Problem(
+                advanced.Family,
+                advanced.Prompt,
+                advanced.Solution,
+                advanced.ItemType,
+                advanced.Parameters);
+        }
+
+        return family switch
         {
             "supporting.number.place_value" => PlaceValue(random, scale),
             "supporting.number.rounding" => Rounding(random, scale),
@@ -184,9 +197,14 @@ internal static class SupportingPracticeCompletionEngine
             "supporting.statistics.charts.mixed" => ChartsMixed(random, scale),
             _ => throw new InvalidOperationException($"Unsupported Supporting completion family: {family}")
         };
+    }
 
-    public static string Solve(string family, IReadOnlyDictionary<string, int> p) =>
-        family switch
+    public static string Solve(string family, IReadOnlyDictionary<string, int> p)
+    {
+        if (SupportingPracticeAdvancedEngine.Supports(family))
+            return SupportingPracticeAdvancedEngine.Solve(family, p);
+
+        return family switch
         {
             "supporting.number.place_value" =>
                 (p["digit"] * Pow10(p["power"])).ToString(CultureInfo.InvariantCulture),
@@ -350,9 +368,13 @@ internal static class SupportingPracticeCompletionEngine
                 (p["f1"] + p["f2"] + p["f3"] + p["f4"]).ToString(CultureInfo.InvariantCulture),
             _ => throw new InvalidOperationException($"Unsupported Supporting completion solver family: {family}")
         };
+    }
 
     public static bool Verify(string family, IReadOnlyDictionary<string, int> p, string answer)
     {
+        if (SupportingPracticeAdvancedEngine.Supports(family))
+            return SupportingPracticeAdvancedEngine.Verify(family, p, answer);
+
         if (!Supports(family))
             return false;
 
