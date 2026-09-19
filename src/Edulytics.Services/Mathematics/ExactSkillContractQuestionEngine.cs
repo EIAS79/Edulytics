@@ -36,6 +36,84 @@ public sealed class ExactSkillContractQuestionEngine
 {
     private const int MaxRetriesPerItem = 128;
 
+    private static readonly IReadOnlySet<string> SupportedFamilies =
+        new HashSet<string>(StringComparer.Ordinal)
+        {
+            "number.whole.add.direct",
+            "number.whole.subtract.direct",
+            "number.lcm.two_numbers",
+            "percentages.of_quantity.direct",
+            "fractions.represent.interpret.fraction_bar",
+            "algebra.relationships.two_unknowns.total_difference",
+            "measurement.scale.equal_intervals.read_value",
+            "fractions.compare.unlike.common_denominator",
+            "fractions.equivalent.missing_value",
+            "fractions.equivalent.recognize",
+            "fractions.equivalent.generate_multiple",
+            "fractions.equivalent.number_line",
+            "fractions.equivalent.reduce_common_factor",
+            "ratio.unit_rate.direct",
+            "ratio.unit_rate.equivalent_ratio",
+            "number.whole.add_subtract.within_10.build",
+            "number.whole.add_subtract.within_10.apply",
+            "number.whole.add_subtract.across_ten.build",
+            "number.whole.add_subtract.across_ten.apply",
+            "number.whole.add_subtract.within_100.build",
+            "number.whole.add_subtract.within_100.apply",
+            "number.whole.add_subtract.columnar.build",
+            "number.whole.add_subtract.columnar.apply",
+            "number.whole.add_subtract.comparative.build",
+            "number.whole.add_subtract.comparative.apply",
+            "number.whole.add_subtract.complement_100.build",
+            "number.whole.add_subtract.complement_100.apply",
+            "number.whole.multiply.fact_recall.build",
+            "number.whole.multiply.fact_recall.apply",
+            "number.whole.divide.with_remainder.build",
+            "number.whole.divide.with_remainder.apply",
+            "fractions.of_quantity.build",
+            "fractions.of_quantity.apply",
+            "fractions.add_subtract.within_one.build",
+            "fractions.add_subtract.within_one.apply",
+            "fractions.add_subtract.same_denominator.mixed.build",
+            "fractions.add_subtract.same_denominator.mixed.apply",
+            "fractions.add_subtract.related.build",
+            "fractions.add_subtract.related.apply",
+            "fractions.add_subtract.common_denominator.build",
+            "fractions.add_subtract.common_denominator.apply",
+            "fractions.compare.benchmark",
+            "geometry.coordinate.gradient_between_points",
+            "geometry.angles.parallel_lines",
+            "geometry.angles.supplementary",
+            "geometry.similarity.find_missing_length",
+            "geometry.similarity.scale_factor",
+            "geometry.congruence.identify_criterion",
+            "geometry.surface_area.rectangular_prism",
+            "geometry.surface_area_volume.rectangular_prism_surface_area",
+            "geometry.volume.rectangular_prism",
+            "geometry.surface_area_volume.rectangular_prism_volume",
+            "geometry.rectangle.area.exact",
+            "geometry.perimeter_area.rectangle_area",
+            "geometry.rectangle.perimeter.exact",
+            "geometry.perimeter_area.rectangle_perimeter",
+            "geometry.right_triangle.pythagorean.exact",
+            "trigonometry.right_triangle.ratio_exact",
+            "trigonometry.right_triangle.find_side_exact",
+            "trigonometry.right_triangle.find_angle_exact",
+            "trigonometry.modelling.contextual",
+            "vectors.add.exact_rational",
+            "vectors.subtract.exact_rational",
+            "vectors.scalar_multiply.exact_rational",
+            "vectors.dot.exact_rational",
+            "vectors.magnitude.exact",
+            "vectors.between_points.exact",
+            ExactLinearEquationQuestionFactory.FamilyId,
+            ExactLinearInequalityQuestionFactory.FamilyId
+        };
+
+    public static bool SupportsFamily(string? family) =>
+        !string.IsNullOrWhiteSpace(family) &&
+        SupportedFamilies.Contains(family.Trim());
+
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
         string fingerprintNamespace,
         string scopeKey,
@@ -52,6 +130,10 @@ public sealed class ExactSkillContractQuestionEngine
         {
             throw new InvalidOperationException("Exact SkillContract generation requires a valid scope, family registry and question count.");
         }
+
+        if (allowedQuestionFamilies.Any(family => !SupportsFamily(family)))
+            throw new InvalidOperationException(
+                "Exact SkillContract generation contains a family unsupported by the Practice exact engine.");
 
         MathematicsResourceGuard.ValidateGenerationRequest(
             fingerprintNamespace,
