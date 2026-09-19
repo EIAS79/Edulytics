@@ -195,3 +195,59 @@ def mapping_from_rule(lesson_code: str, rule: SupportingRule) -> dict[str, Any]:
         "allowedQuestionFamilies": list(rule.families),
         "supportingPracticeRuleId": rule.rule_id,
     }
+
+
+def load_rule_mappings(content_dir: Path) -> tuple[dict[str, dict[str, Any]], list[dict[str, str]], list[str]]:
+    rules, errors = load_rules()
+    errors.extend(validate_rules(rules))
+    mappings: dict[str, dict[str, Any]] = {}
+    unmatched: list[dict[str, str]] = []
+    seen: set[str] = set()
+
+    for path in sorted(content_dir.glob("*.lesson-content-pack.json")):
+        try:
+            doc = read_json(path)
+        except (json.JSONDecodeError, OSError) as ex:
+            errors.append(f"Unable to read Supporting Practice content pack {path.name}: {ex}")
+            continue
+
+        academic_language = str(
+            get_case(doc, "AcademicLanguage", "academicLanguage", default="") or ""
+        ).strip()
+        lessons = get_case(doc, "Lessons", "lessons", default=[])
+        if not isinstance(lessons, list):
+            continue
+
+        for lesson in lessons:
+            if not isinstance(lesson, dict):
+                continue
+            lesson_code = str(
+                get_case(lesson, "LessonCode", "lessonCode", default="") or ""
+            ).strip()
+            if not lesson_code or lesson_code in seen:
+                continue
+            seen.add(lesson_code)
+
+            outcomes = clean_list(
+                get_case(lesson, "OutcomeCodes", "outcomeCodes", default=[])
+            )
+            if outcomes:
+                continue
+
+            translation = choose_translation(lesson, academic_language)
+            title = normalize_space(
+                get_case(translation, "Title", "title", default="")
+                or get_case(lesson, "Title", "title", default="")
+            )
+            rule = match_rule(lesson_code, title, rules)
+            if rule is None:
+                unmatched.append({
+                    "lessonCode": lesson_code,
+                    "title": title,
+                    "pack": path.name,
+                })
+                continue
+
+            mappings[lesson_code] = mapping_from_rule(lesson_code, rule)
+
+    return mappings, unmatched, errors
