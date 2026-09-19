@@ -1818,6 +1818,81 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "algebra.linear.variables_both_sides",
+      "version": 1,
+      "skillId": "algebra.linear.solve",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "algebra.linear.solve.exact_rational",
+        "algebra.linear.verify.substitution"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-both-sides-affine-reduction-and-substitution",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "algebra.linear.inequality.variables_both_sides",
+      "version": 1,
+      "skillId": "algebra.linear.inequality.solve",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "algebra.linear.affine_extract",
+        "algebra.linear.inequality.solve.exact_rational",
+        "algebra.linear.inequality.verify.interval"
+      ],
+      "answerType": "exact_interval_or_union",
+      "verificationPolicy": "independent-both-sides-boundary-orientation-and-interval",
+      "representations": [
+        "symbolic",
+        "interval"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "geometry.right_triangle.pythagorean.find_leg_exact",
+      "version": 1,
+      "skillId": "geometry.right_triangle.pythagorean",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "geometry.right_triangle.pythagorean.exact",
+        "geometry.verify.right_triangle.pythagorean"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-pythagorean-leg-from-original-hypotenuse-and-known-leg",
+      "representations": [
+        "right_triangle",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "geometry.angles.algebraic_supplementary",
+      "version": 1,
+      "skillId": "geometry.angles.relationships",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-straight-line-angle-sum-and-linear-equation-check",
+      "representations": [
+        "diagram_metadata",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ]
 }

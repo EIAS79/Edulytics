@@ -84,6 +84,7 @@ public sealed class ExactSkillContractQuestionEngine
             "geometry.coordinate.gradient_between_points",
             "geometry.angles.parallel_lines",
             "geometry.angles.supplementary",
+            "geometry.angles.algebraic_supplementary",
             "geometry.similarity.find_missing_length",
             "geometry.similarity.scale_factor",
             "geometry.congruence.identify_criterion",
@@ -96,6 +97,7 @@ public sealed class ExactSkillContractQuestionEngine
             "geometry.rectangle.perimeter.exact",
             "geometry.perimeter_area.rectangle_perimeter",
             "geometry.right_triangle.pythagorean.exact",
+            "geometry.right_triangle.pythagorean.find_leg_exact",
             "trigonometry.right_triangle.ratio_exact",
             "trigonometry.right_triangle.find_side_exact",
             "trigonometry.right_triangle.find_angle_exact",
@@ -107,7 +109,9 @@ public sealed class ExactSkillContractQuestionEngine
             "vectors.magnitude.exact",
             "vectors.between_points.exact",
             ExactLinearEquationQuestionFactory.FamilyId,
-            ExactLinearInequalityQuestionFactory.FamilyId
+            "algebra.linear.variables_both_sides",
+            ExactLinearInequalityQuestionFactory.FamilyId,
+            "algebra.linear.inequality.variables_both_sides"
         };
 
     public static bool SupportsFamily(string? family) =>
@@ -217,6 +221,28 @@ public sealed class ExactSkillContractQuestionEngine
                 return false;
 
             var boundary = (right - offset) / coefficient;
+            var originalRelation = (InequalityRelation)parameters["relation"];
+            var solvedRelation = coefficient < 0
+                ? Reverse(originalRelation)
+                : originalRelation;
+            var expected = $"x {RelationSymbol(solvedRelation)} {boundary.ToString(CultureInfo.InvariantCulture)}";
+            return string.Equals(
+                NormalizeInequalityAnswer(answer),
+                NormalizeInequalityAnswer(expected),
+                StringComparison.Ordinal);
+        }
+
+        if (family == "algebra.linear.inequality.variables_both_sides")
+        {
+            var leftCoefficient = parameters["leftCoefficient"];
+            var rightCoefficient = parameters["rightCoefficient"];
+            var coefficient = leftCoefficient - rightCoefficient;
+            var leftOffset = parameters["leftOffset"];
+            var rightOffset = parameters["rightOffset"];
+            if (coefficient == 0 || (rightOffset - leftOffset) % coefficient != 0)
+                return false;
+
+            var boundary = (rightOffset - leftOffset) / coefficient;
             var originalRelation = (InequalityRelation)parameters["relation"];
             var solvedRelation = coefficient < 0
                 ? Reverse(originalRelation)
@@ -481,6 +507,13 @@ public sealed class ExactSkillContractQuestionEngine
                 (parameters["right"] - parameters["offset"]) % parameters["coefficient"] == 0 &&
                 value == (parameters["right"] - parameters["offset"]) / parameters["coefficient"],
 
+            "algebra.linear.variables_both_sides" =>
+                parameters["leftCoefficient"] != parameters["rightCoefficient"] &&
+                (parameters["rightOffset"] - parameters["leftOffset"]) %
+                    (parameters["leftCoefficient"] - parameters["rightCoefficient"]) == 0 &&
+                value == (parameters["rightOffset"] - parameters["leftOffset"]) /
+                    (parameters["leftCoefficient"] - parameters["rightCoefficient"]),
+
             "geometry.coordinate.gradient_between_points" =>
                 parameters["x2"] != parameters["x1"] &&
                 (parameters["y2"] - parameters["y1"]) % (parameters["x2"] - parameters["x1"]) == 0 &&
@@ -494,6 +527,13 @@ public sealed class ExactSkillContractQuestionEngine
             "geometry.angles.supplementary" =>
                 value == 180 - parameters["knownAngle"] &&
                 parameters["knownAngle"] is > 0 and < 180,
+
+            "geometry.angles.algebraic_supplementary" =>
+                parameters["coefficientA"] > 0 &&
+                parameters["coefficientB"] > 0 &&
+                value == parameters["expectedX"] &&
+                (parameters["coefficientA"] + parameters["coefficientB"]) * value +
+                    parameters["offsetA"] + parameters["offsetB"] == 180,
 
             "geometry.similarity.find_missing_length" =>
                 parameters["scaleFactor"] > 0 &&
@@ -530,6 +570,12 @@ public sealed class ExactSkillContractQuestionEngine
                 value * value ==
                     parameters["legA"] * parameters["legA"] +
                     parameters["legB"] * parameters["legB"],
+
+            "geometry.right_triangle.pythagorean.find_leg_exact" =>
+                value > 0 &&
+                value == parameters["expectedLeg"] &&
+                value * value + parameters["knownLeg"] * parameters["knownLeg"] ==
+                    parameters["hypotenuse"] * parameters["hypotenuse"],
 
             "trigonometry.right_triangle.find_side_exact" or
             "trigonometry.modelling.contextual" =>
@@ -651,6 +697,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildParallelLineAngle(random, scale),
             "geometry.angles.supplementary" =>
                 BuildSupplementaryAngle(random),
+            "geometry.angles.algebraic_supplementary" =>
+                BuildAlgebraicSupplementaryAngle(random, scale),
             "geometry.similarity.find_missing_length" =>
                 BuildSimilarityMissingLength(random, scale),
             "geometry.similarity.scale_factor" =>
@@ -675,6 +723,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildRectanglePerimeter(random, scale, "geometry.perimeter_area.rectangle_perimeter"),
             "geometry.right_triangle.pythagorean.exact" =>
                 BuildPythagorean(random, scale),
+            "geometry.right_triangle.pythagorean.find_leg_exact" =>
+                BuildPythagoreanFindLeg(random, scale),
             "trigonometry.right_triangle.ratio_exact" =>
                 BuildTrigonometricRatio(random, scale),
             "trigonometry.right_triangle.find_side_exact" =>
@@ -697,8 +747,12 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildVectorBetweenPoints(random, scale),
             ExactLinearEquationQuestionFactory.FamilyId =>
                 BuildLinearEquation(random, scale),
+            "algebra.linear.variables_both_sides" =>
+                BuildLinearEquationBothSides(random, scale),
             ExactLinearInequalityQuestionFactory.FamilyId =>
                 BuildLinearInequality(random, scale),
+            "algebra.linear.inequality.variables_both_sides" =>
+                BuildLinearInequalityBothSides(random, scale),
             _ => UnsupportedFamily(family)
         };
     }
@@ -1301,6 +1355,33 @@ public sealed class ExactSkillContractQuestionEngine
             ("knownAngle", known));
     }
 
+    private static ExactProblem BuildAlgebraicSupplementaryAngle(Random random, int scale)
+    {
+        var coefficientA = random.Next(1, 2 + scale);
+        var coefficientB = random.Next(1, 2 + scale);
+        var maxX = Math.Max(3, (150 / (coefficientA + coefficientB)));
+        var expectedX = random.Next(2, Math.Min(maxX, 8 + scale * 4));
+        var remaining = 180 - (coefficientA + coefficientB) * expectedX;
+        var offsetA = random.Next(5, Math.Max(6, remaining - 4));
+        var offsetB = remaining - offsetA;
+        if (offsetB <= 0)
+        {
+            offsetA = Math.Max(1, remaining / 2);
+            offsetB = remaining - offsetA;
+        }
+
+        return Problem(
+            "geometry.angles.algebraic_supplementary",
+            $"Two adjacent angles on a straight line are ({coefficientA}x + {offsetA})° and ({coefficientB}x + {offsetB})°. Find x.",
+            "Angles on a straight line sum to 180°. Form one linear equation, solve for x, then substitute back to verify the two angle measures total 180°.",
+            AssessmentItemType.Numeric,
+            ("coefficientA", coefficientA),
+            ("offsetA", offsetA),
+            ("coefficientB", coefficientB),
+            ("offsetB", offsetB),
+            ("expectedX", expectedX));
+    }
+
     private static ExactProblem BuildSimilarityMissingLength(Random random, int scale)
     {
         var source = random.Next(2, 8 + scale);
@@ -1447,6 +1528,29 @@ public sealed class ExactSkillContractQuestionEngine
             ("legA", a),
             ("legB", b),
             ("hypotenuse", hypotenuse));
+    }
+
+    private static ExactProblem BuildPythagoreanFindLeg(Random random, int scale)
+    {
+        var triples = new (int A, int B, int C)[] { (3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25) };
+        var triple = triples[random.Next(triples.Length)];
+        var multiplier = random.Next(1, Math.Max(2, scale + 1));
+        var legA = triple.A * multiplier;
+        var legB = triple.B * multiplier;
+        var hypotenuse = triple.C * multiplier;
+        var askLeg = random.Next(0, 2);
+        var expectedLeg = askLeg == 0 ? legA : legB;
+        var knownLeg = askLeg == 0 ? legB : legA;
+
+        return Problem(
+            "geometry.right_triangle.pythagorean.find_leg_exact",
+            $"A right triangle has hypotenuse {hypotenuse} and one perpendicular side {knownLeg}. Find the other perpendicular side.",
+            "Use a² + b² = c², subtract the known leg squared from the hypotenuse squared, then take the positive square root.",
+            AssessmentItemType.Numeric,
+            ("knownLeg", knownLeg),
+            ("hypotenuse", hypotenuse),
+            ("expectedLeg", expectedLeg),
+            ("askLeg", askLeg));
     }
 
     private static ExactProblem BuildTrigonometricRatio(Random random, int scale)
@@ -1691,6 +1795,54 @@ public sealed class ExactSkillContractQuestionEngine
             ("right", right));
     }
 
+    private static ExactProblem BuildLinearEquationBothSides(Random random, int scale)
+    {
+        var solution = NonZero(random, -6 - scale * 4, 7 + scale * 4);
+        var leftCoefficient = NonZero(random, -3 - scale * 2, 4 + scale * 2);
+        var rightCoefficient = NonZero(random, -3 - scale * 2, 4 + scale * 2);
+        while (rightCoefficient == leftCoefficient)
+            rightCoefficient = NonZero(random, -3 - scale * 2, 4 + scale * 2);
+
+        var leftOffset = random.Next(-10 * scale, 10 * scale + 1);
+        var rightOffset = checked((leftCoefficient - rightCoefficient) * solution + leftOffset);
+
+        return Problem(
+            "algebra.linear.variables_both_sides",
+            $"Solve {FormatLinearExpression(leftCoefficient, leftOffset)} = {FormatLinearExpression(rightCoefficient, rightOffset)}.",
+            "Collect x-terms on one side and constants on the other, divide by the non-zero resulting coefficient, then substitute into both original sides.",
+            AssessmentItemType.Numeric,
+            ("leftCoefficient", leftCoefficient),
+            ("leftOffset", leftOffset),
+            ("rightCoefficient", rightCoefficient),
+            ("rightOffset", rightOffset));
+    }
+
+    private static ExactProblem BuildLinearInequalityBothSides(Random random, int scale)
+    {
+        var boundary = random.Next(-6 - scale * 4, 7 + scale * 4);
+        var leftCoefficient = NonZero(random, -3 - scale * 2, 4 + scale * 2);
+        var rightCoefficient = NonZero(random, -3 - scale * 2, 4 + scale * 2);
+        while (rightCoefficient == leftCoefficient)
+            rightCoefficient = NonZero(random, -3 - scale * 2, 4 + scale * 2);
+
+        var leftOffset = random.Next(-10 * scale, 10 * scale + 1);
+        var rightOffset = checked((leftCoefficient - rightCoefficient) * boundary + leftOffset);
+        var relation = (InequalityRelation)random.Next(
+            (int)InequalityRelation.LessThan,
+            (int)InequalityRelation.GreaterThanOrEqual + 1);
+
+        return Problem(
+            "algebra.linear.inequality.variables_both_sides",
+            $"Solve {FormatLinearExpression(leftCoefficient, leftOffset)} {RelationSymbol(relation)} {FormatLinearExpression(rightCoefficient, rightOffset)}. Give your answer as an inequality in x.",
+            "Collect x-terms on one side. If the resulting coefficient is negative, reverse the inequality when dividing. Verify the boundary in the original inequality.",
+            AssessmentItemType.ShortAnswer,
+            ("leftCoefficient", leftCoefficient),
+            ("leftOffset", leftOffset),
+            ("rightCoefficient", rightCoefficient),
+            ("rightOffset", rightOffset),
+            ("relation", (int)relation));
+    }
+
     private static ExactProblem BuildLinearInequality(Random random, int scale)
     {
         var factory = new ExactLinearInequalityQuestionFactory(
@@ -1845,6 +1997,9 @@ public sealed class ExactSkillContractQuestionEngine
             "geometry.angles.supplementary" =>
                 (180 - p["knownAngle"]).ToString(CultureInfo.InvariantCulture),
 
+            "geometry.angles.algebraic_supplementary" =>
+                p["expectedX"].ToString(CultureInfo.InvariantCulture),
+
             "geometry.similarity.find_missing_length" =>
                 (p["sourceLength"] * p["scaleFactor"]).ToString(CultureInfo.InvariantCulture),
 
@@ -1885,6 +2040,9 @@ public sealed class ExactSkillContractQuestionEngine
             "geometry.right_triangle.pythagorean.exact" =>
                 p["hypotenuse"].ToString(CultureInfo.InvariantCulture),
 
+            "geometry.right_triangle.pythagorean.find_leg_exact" =>
+                p["expectedLeg"].ToString(CultureInfo.InvariantCulture),
+
             "trigonometry.right_triangle.ratio_exact" =>
                 SimplifyFraction(p["ratioNumerator"], p["ratioDenominator"]),
 
@@ -1917,8 +2075,16 @@ public sealed class ExactSkillContractQuestionEngine
                 ((p["right"] - p["offset"]) / p["coefficient"])
                     .ToString(CultureInfo.InvariantCulture),
 
+            "algebra.linear.variables_both_sides" =>
+                ((p["rightOffset"] - p["leftOffset"]) /
+                    (p["leftCoefficient"] - p["rightCoefficient"]))
+                    .ToString(CultureInfo.InvariantCulture),
+
             ExactLinearInequalityQuestionFactory.FamilyId =>
                 SolveLinearInequality(p),
+
+            "algebra.linear.inequality.variables_both_sides" =>
+                SolveLinearInequalityBothSides(p),
 
             _ => throw new InvalidOperationException($"Unsupported exact Mathematics solver family: {problem.Family}")
         };
@@ -2036,6 +2202,22 @@ public sealed class ExactSkillContractQuestionEngine
         return denominator == 1
             ? numerator.ToString(CultureInfo.InvariantCulture)
             : $"{numerator.ToString(CultureInfo.InvariantCulture)}/{denominator.ToString(CultureInfo.InvariantCulture)}";
+    }
+
+    private static string SolveLinearInequalityBothSides(IReadOnlyDictionary<string, int> parameters)
+    {
+        var coefficient = parameters["leftCoefficient"] - parameters["rightCoefficient"];
+        if (coefficient == 0)
+            throw new InvalidOperationException("Generated inequality has zero combined coefficient.");
+
+        var numerator = parameters["rightOffset"] - parameters["leftOffset"];
+        if (numerator % coefficient != 0)
+            throw new InvalidOperationException("Generated inequality has a non-integral exact boundary.");
+
+        var boundary = numerator / coefficient;
+        var relation = (InequalityRelation)parameters["relation"];
+        var solvedRelation = coefficient < 0 ? Reverse(relation) : relation;
+        return $"x {RelationSymbol(solvedRelation)} {boundary.ToString(CultureInfo.InvariantCulture)}";
     }
 
     private static string SolveLinearInequality(IReadOnlyDictionary<string, int> parameters)

@@ -1189,15 +1189,15 @@ Update this table in every material remediation PR.
 | P2 Content Repair | ⬜ Not complete | 329 Supporting `CONTENT_WEAK`; broader catalogue weaknesses exist | 0 Practice-eligible `CONTENT_WEAK` | 2026-09-19 |
 | P3 Academic Mapping | ⬜ Not complete | 453 Supporting academic-review blockers | 0 unresolved Practice-eligible mappings | 2026-09-19 |
 | P4 Skill Ontology | 🟨 Partial | 69 skills; current registered skills have family metadata | Full reusable target coverage | 2026-09-19 PR #213 |
-| P5 Question Families | 🟨 Partial | 100 families; zero registered skills without family metadata | Approved coverage manifests complete | 2026-09-19 PR #213 |
-| P6 Geometry/Trig | 🟨 Partial | Initial exact families implemented | Curriculum-complete exact/visual coverage | 2026-09-19 |
+| P5 Question Families | 🟨 Partial | 104 families; zero registered skills without family metadata | Approved coverage manifests complete | 2026-09-19 PR #214 |
+| P6 Geometry/Trig | 🟨 Partial | Added algebraic angle reasoning and Pythagoras missing-leg exact families with deterministic SVG | Curriculum-complete exact/visual coverage | 2026-09-19 PR #214 |
 | P7 Vectors | 🟨 Partial | Add, subtract, scalar multiply, dot, magnitude, between-points + deterministic vector SVG | Curriculum-complete vector coverage | 2026-09-19 PR #213 |
 | P8 Other upper-grade domains | ⬜ Not complete | Narrow exact coverage | Curriculum-driven complete coverage | 2026-09-19 |
 | P9 Diagram/Visual Engine | 🟨 Partial | Deterministic SVG runtime wired to Practice for current geometry/trig/vector/fraction families | Required visuals deterministic + validated | 2026-09-19 PR #213 |
 | P10 Solver/Verifier/Equivalence | 🟨 Partial | Shared kernel exists | 100% enabled-family coverage | 2026-09-19 |
 | P11 Grade-aware Difficulty | 🟨 Partial | Difficulty bands exist | Structural grade-aware calibration | 2026-09-19 |
-| P12 Supporting blockers → zero | 🟨 Partial | 81 ready / 1,268 blocked | 1,349 ready / 0 blocked | 2026-09-19 PR #213 audit run #217 |
-| P13 Full catalogue completion | 🟨 Partial | 90 ready / 4,363 not ready | 100% Practice-eligible ready | 2026-09-19 PR #213 audit run #217 |
+| P12 Supporting blockers → zero | 🟨 Partial | 153 ready / 1,196 blocked | 1,349 ready / 0 blocked | 2026-09-19 PR #214 audit run #223 |
+| P13 Full catalogue completion | 🟨 Partial | 162 ready / 4,291 not ready | 100% Practice-eligible ready | 2026-09-19 PR #214 audit run #223 |
 | P14 CI + Dashboard | 🟨 Partial | Full completion matrix + Supporting artifact generated in Mathematics Intelligence CI | Permanent completion gates | 2026-09-19 PR #213 |
 
 Legend:
@@ -1312,6 +1312,42 @@ A PR may improve the system without completing a workstream. In that case mark i
 ---
 
 # 29. Changelog
+
+## 2026-09-19 — PR #214 exact algebra/geometry unblock checkpoint
+
+Verified by Mathematics Intelligence Foundation run #223.
+
+```text
+Full catalogue:
+  4,453 lessons
+  162 READY_VERIFIED
+  4,291 blocked/not READY_VERIFIED
+  completion 3.64%
+
+Supporting:
+  1,349 lessons
+  153 READY_VERIFIED
+  1,196 EXPLICITLY_BLOCKED
+
+Supporting primary blocker breakdown:
+  328 CONTENT_WEAK
+  443 ACADEMIC_REVIEW_REQUIRED
+  425 SOLVER_CAPABILITY_MISSING
+  0 REPRESENTATION_MISSING
+
+Registry:
+  69 skills
+  104 question families
+  104 capabilities
+  162 approved mappings
+  0 internal completion-matrix blockers
+```
+
+This checkpoint promoted 72 Supporting lessons covering exact Linear equations, Inequalities, Pythagoras theorem and Angle relationships. It also added deeper reusable families for variables on both sides, Pythagoras missing-leg problems and algebraic supplementary-angle reasoning so advanced lessons are not restricted to the simplest direct template.
+
+The programme remains incomplete until all Practice-eligible lessons reach `READY_VERIFIED`.
+
+---
 
 ## 2026-09-19 — PR #213 execution checkpoint
 
