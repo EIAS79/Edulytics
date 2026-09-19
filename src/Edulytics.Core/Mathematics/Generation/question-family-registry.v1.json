@@ -1369,6 +1369,40 @@
       ],
       "status": "ShadowVerified",
       "productionRouting": false
+    },
+    {
+      "id": "geometry.perimeter_area.rectangle_area",
+      "version": 1,
+      "skillId": "geometry.perimeter_area",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-rectangle-dimensions",
+      "representations": [
+        "rectangle_dimensions",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "geometry.perimeter_area.rectangle_perimeter",
+      "version": 1,
+      "skillId": "geometry.perimeter_area",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-recompute-from-rectangle-dimensions",
+      "representations": [
+        "rectangle_dimensions",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
     }
   ]
 }
