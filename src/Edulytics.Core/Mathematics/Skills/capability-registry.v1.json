@@ -669,6 +669,22 @@
       "provider": "edulytics-exact-skill-contract",
       "providerVersion": "geometry-trig-exact-v1",
       "status": "ShadowVerified"
+    },
+    {
+      "id": "lesson.practice.exact.generate",
+      "domain": "cross-domain",
+      "canonicalName": "Generate structured exact lesson Practice from an approved LessonPracticeContract",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "lesson-practice-v1",
+      "status": "ProductionVerified"
+    },
+    {
+      "id": "lesson.practice.exact.verify",
+      "domain": "cross-domain",
+      "canonicalName": "Independently verify structured exact lesson Practice against its approved question family",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "lesson-practice-v1",
+      "status": "ProductionVerified"
     }
   ]
 }
