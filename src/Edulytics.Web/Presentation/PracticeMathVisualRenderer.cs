@@ -60,8 +60,38 @@ public static class PracticeMathVisualRenderer
                 "vectors.add.exact_rational" or
                 "vectors.subtract.exact_rational" or
                 "vectors.scalar_multiply.exact_rational" or
+                "vectors.dot.exact_rational" or
                 "vectors.magnitude.exact" or
-                "vectors.between_points.exact" => VectorPlane(parameters),
+                "vectors.between_points.exact" or
+                "supporting.vectors.add" or
+                "supporting.vectors.magnitude" => VectorPlane(parameters),
+                "fractions.equivalent.number_line" => NumberLineParameters(parameters),
+                "supporting.geometry.analytic.mixed" or
+                "supporting.geometry.axis_distance" or
+                "supporting.geometry.midpoint" or
+                "supporting.geometry.reflect_axis" or
+                "supporting.geometry.rotate90" or
+                "supporting.geometry.translate_point" or
+                "supporting.transformations.mixed" => CoordinateParameterVisual(parameters),
+                "supporting.geometry.angle_around_point" or
+                "supporting.geometry.angle_classify" or
+                "supporting.geometry.turn_degrees" => AngleParameterVisual(parameters),
+                "supporting.geometry.circle_area_pi_coefficient" or
+                "supporting.geometry.circle_circumference_pi_coefficient" or
+                "supporting.geometry.locus_equidistant" => CircleParameterVisual(parameters),
+                "supporting.geometry.cuboid_volume" or
+                "supporting.geometry.solid.mixed" or
+                "supporting.geometry.surface_area_cuboid" => SolidParameterVisual(parameters),
+                "supporting.geometry.compound_area" or
+                "supporting.geometry.parallelogram_area" or
+                "supporting.geometry.plane.mixed" or
+                "supporting.geometry.shape_dimension" or
+                "supporting.geometry.triangle_area" => PlaneGeometryParameterVisual(parameters),
+                "supporting.trigonometry.graph_special" => TrigonometryGraphVisual(parameters),
+                "supporting.trigonometry.area_sine_double" or
+                "supporting.trigonometry.bearing" or
+                "supporting.trigonometry.cosine_rule_square" or
+                "supporting.trigonometry.sine_rule_exact" => TrigonometryTriangleVisual(parameters),
                 _ => null
             };
         }
@@ -430,6 +460,195 @@ public static class PracticeMathVisualRenderer
         Text(sb, X(ax) + 10, Y(ay) - 8, "a", "label");
         Text(sb, X(bx) + 10, Y(by) - 8, "b", "label");
         return SvgEnd(sb);
+    }
+
+    private static string NumberLineParameters(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var numerator = ValueOr(values, "numerator", "n", "leftNumerator", "sourceNumerator");
+        var denominator = Math.Max(1, ValueOr(values, "denominator", "d", "leftDenominator", "sourceDenominator", fallback: 4));
+        numerator = Math.Clamp(numerator == 0 ? 1 : numerator, 0, denominator);
+
+        var sb = SvgStart("Number line showing an exact fraction position.");
+        const double x0 = 55;
+        const double x1 = 365;
+        const double y = 132;
+        sb.Append($"<line x1='{F(x0)}' y1='{F(y)}' x2='{F(x1)}' y2='{F(y)}' class='axis'/>");
+        for (var i = 0; i <= denominator; i++)
+        {
+            var x = x0 + (x1 - x0) * i / denominator;
+            sb.Append($"<line x1='{F(x)}' y1='124' x2='{F(x)}' y2='140' class='tick'/>");
+        }
+        var px = x0 + (x1 - x0) * numerator / denominator;
+        Point(sb, px, y, $"{numerator}/{denominator}");
+        Text(sb, x0, 162, "0", "label");
+        Text(sb, x1 - 5, 162, "1", "label");
+        AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static string CoordinateParameterVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var x1 = ValueOr(values, "x", "x1", "sourceX", "startX", fallback: values.Values.ElementAtOrDefault(0));
+        var y1 = ValueOr(values, "y", "y1", "sourceY", "startY", fallback: values.Values.ElementAtOrDefault(1));
+        var x2 = ValueOr(values, "x2", "targetX", "endX", fallback: values.Values.ElementAtOrDefault(2));
+        var y2 = ValueOr(values, "y2", "targetY", "endY", fallback: values.Values.ElementAtOrDefault(3));
+        var max = Math.Max(4, new[] { x1, y1, x2, y2 }.Max(v => Math.Abs(v)) + 2);
+        double X(int value) => 210 + value * (155d / max);
+        double Y(int value) => 130 - value * (95d / max);
+
+        var sb = SvgStart("Coordinate plane showing the values used by the transformation or analytic-geometry question.");
+        sb.Append("<line x1='40' y1='130' x2='380' y2='130' class='axis'/>");
+        sb.Append("<line x1='210' y1='25' x2='210' y2='235' class='axis'/>");
+        Point(sb, X(x1), Y(y1), $"A({x1}, {y1})");
+        if (values.Count >= 4 || x2 != 0 || y2 != 0)
+            Point(sb, X(x2), Y(y2), $"B({x2}, {y2})");
+        AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static string AngleParameterVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var angle = Math.Clamp(
+            Math.Abs(ValueOr(values, "angle", "knownAngle", "degrees", "turn", fallback: values.Values.FirstOrDefault())),
+            0,
+            360);
+        var radians = -angle * Math.PI / 180d;
+        const double cx = 150;
+        const double cy = 175;
+        const double radius = 100;
+        var ex = cx + radius * Math.Cos(radians);
+        var ey = cy + radius * Math.Sin(radians);
+
+        var sb = SvgStart("Angle diagram tied to the generated question values.");
+        sb.Append($"<line x1='{F(cx)}' y1='{F(cy)}' x2='{F(cx + radius)}' y2='{F(cy)}' class='shape'/>");
+        sb.Append($"<line x1='{F(cx)}' y1='{F(cy)}' x2='{F(ex)}' y2='{F(ey)}' class='shape'/>");
+        sb.Append($"<path d='M {F(cx + 48)} {F(cy)} A 48 48 0 0 0 {F(cx + 48 * Math.Cos(radians))} {F(cy + 48 * Math.Sin(radians))}' class='arc'/>");
+        Text(sb, 185, 145, angle > 0 ? $"{angle}°" : "θ", "label");
+        AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static string CircleParameterVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var radius = Math.Max(1, Math.Abs(ValueOr(values, "radius", "r", "distance", fallback: values.Values.FirstOrDefault())));
+        var sb = SvgStart("Circle or locus diagram tied to the generated question values.");
+        sb.Append("<circle cx='190' cy='125' r='82' class='shape fill'/>");
+        sb.Append("<line x1='190' y1='125' x2='272' y2='125' class='shape'/>");
+        Text(sb, 222, 116, $"r = {radius}", "label");
+        AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static string SolidParameterVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var length = Math.Abs(ValueOr(values, "length", "l", "a", fallback: values.Values.ElementAtOrDefault(0)));
+        var width = Math.Abs(ValueOr(values, "width", "w", "b", fallback: values.Values.ElementAtOrDefault(1)));
+        var height = Math.Abs(ValueOr(values, "height", "h", "c", fallback: values.Values.ElementAtOrDefault(2)));
+        length = length == 0 ? 1 : length;
+        width = width == 0 ? 1 : width;
+        height = height == 0 ? 1 : height;
+
+        var sb = SvgStart("Solid-geometry diagram tied to the generated dimensions.");
+        sb.Append("<polygon points='90,85 285,85 345,45 150,45' class='shape fill'/>");
+        sb.Append("<polygon points='90,85 285,85 285,205 90,205' class='shape fill'/>");
+        sb.Append("<polygon points='285,85 345,45 345,165 285,205' class='shape fill'/>");
+        sb.Append("<line x1='90' y1='85' x2='150' y2='45' class='shape'/>");
+        Text(sb, 175, 228, $"l={length}", "label");
+        Text(sb, 315, 193, $"w={width}", "label");
+        Text(sb, 62, 150, $"h={height}", "label");
+        AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static string PlaneGeometryParameterVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var a = Math.Abs(ValueOr(values, "base", "length", "a", "width", fallback: values.Values.ElementAtOrDefault(0)));
+        var b = Math.Abs(ValueOr(values, "height", "b", fallback: values.Values.ElementAtOrDefault(1)));
+        a = a == 0 ? 1 : a;
+        b = b == 0 ? 1 : b;
+
+        var sb = SvgStart("Plane-geometry diagram tied to the generated dimensions.");
+        sb.Append("<polygon points='70,205 330,205 280,70 120,70' class='shape fill'/>");
+        sb.Append("<line x1='120' y1='70' x2='120' y2='205' class='dash shape'/>");
+        Text(sb, 185, 230, $"base = {a}", "label");
+        Text(sb, 130, 145, $"h = {b}", "label");
+        AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static string TrigonometryTriangleVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var sb = SvgStart("Triangle diagram tied to the generated trigonometry values.");
+        sb.Append("<polygon points='75,210 345,210 125,55' class='shape fill'/>");
+        sb.Append("<path d='M125 190 A35 35 0 0 1 153 174' class='arc'/>");
+        Text(sb, 145, 176, "θ", "unknown");
+        AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static string TrigonometryGraphVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var sb = SvgStart("Trigonometric graph with deterministic axes and generated parameters.");
+        sb.Append("<line x1='35' y1='130' x2='385' y2='130' class='axis'/>");
+        sb.Append("<line x1='55' y1='25' x2='55' y2='235' class='axis'/>");
+        var points = new List<string>();
+        for (var i = 0; i <= 32; i++)
+        {
+            var x = 55 + i * 10;
+            var y = 130 - 70 * Math.Sin(i * Math.PI / 8);
+            points.Add($"{F(x)},{F(y)}");
+        }
+        sb.Append($"<polyline points='{string.Join(" ", points)}' class='shape'/>");
+        AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static SortedDictionary<string, int> IntegerParameters(JsonElement p)
+    {
+        var result = new SortedDictionary<string, int>(StringComparer.Ordinal);
+        if (p.ValueKind != JsonValueKind.Object)
+            return result;
+        foreach (var property in p.EnumerateObject())
+        {
+            if (property.Value.TryGetInt32(out var value))
+                result[property.Name] = value;
+        }
+        return result;
+    }
+
+    private static int ValueOr(
+        IReadOnlyDictionary<string, int> values,
+        string first,
+        string? second = null,
+        string? third = null,
+        string? fourth = null,
+        int fallback = 0)
+    {
+        foreach (var key in new[] { first, second, third, fourth })
+        {
+            if (key is not null && values.TryGetValue(key, out var value))
+                return value;
+        }
+        return fallback;
+    }
+
+    private static void AppendParameterSummary(
+        StringBuilder sb,
+        IReadOnlyDictionary<string, int> values)
+    {
+        var summary = string.Join(
+            "   ",
+            values.Take(4).Select(pair => $"{pair.Key}={pair.Value}"));
+        if (!string.IsNullOrWhiteSpace(summary))
+            Text(sb, 210, 250, summary, "hint");
     }
 
     private static StringBuilder SvgStart(string label)
