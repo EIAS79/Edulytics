@@ -397,7 +397,7 @@ public sealed class ExactSkillContractQuestionEngine
                 value is 30 or 45 or 60 &&
                 parameters["ratioNumerator"] > 0 &&
                 parameters["ratioDenominator"] > 0 &&
-                parameters["ratioType"] switch
+                (parameters["ratioType"] switch
                 {
                     0 => value == 30 &&
                         parameters["ratioNumerator"] * 2 == parameters["ratioDenominator"],
@@ -406,7 +406,7 @@ public sealed class ExactSkillContractQuestionEngine
                     2 => value == 45 &&
                         parameters["ratioNumerator"] == parameters["ratioDenominator"],
                     _ => false
-                },
+                }),
 
             _ => false
         };
