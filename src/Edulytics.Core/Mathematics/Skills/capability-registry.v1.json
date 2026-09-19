@@ -797,6 +797,38 @@
       "provider": "edulytics-exact-skill-contract",
       "providerVersion": "fraction-representation-v1",
       "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.equivalent.exact",
+      "domain": "fractions",
+      "canonicalName": "Generate and evaluate exact equivalent-fraction relationships",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-equivalence-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.verify.equivalent",
+      "domain": "fractions",
+      "canonicalName": "Independently verify equivalent fractions by exact cross-products",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-equivalence-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "ratio.unit_rate.exact",
+      "domain": "ratio",
+      "canonicalName": "Evaluate exact unit rates and equivalent ratios",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "unit-rate-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "ratio.verify.unit_rate",
+      "domain": "ratio",
+      "canonicalName": "Independently verify unit-rate and equivalent-ratio relationships",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "unit-rate-v2",
+      "status": "ShadowVerified"
     }
   ]
 }
