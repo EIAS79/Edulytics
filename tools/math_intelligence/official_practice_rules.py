@@ -52,22 +52,37 @@ def mapping_from_rule(
     lesson_code: str,
     outcome_codes: list[str],
     rule: SupportingRule,
+    match_mode: str,
 ) -> dict[str, Any]:
+    source_type = (
+        "OfficialReviewedExactTitleRule"
+        if match_mode == "EXACT_TITLE"
+        else "OfficialReviewedUniqueTitleRule"
+    )
+    confidence = (
+        "ReviewedExactTitle"
+        if match_mode == "EXACT_TITLE"
+        else "ReviewedUniqueTitle"
+    )
     return {
         "lessonCode": lesson_code,
         "primarySkills": [rule.skill_id],
-        "sourceType": "OfficialReviewedExactTitleRule",
+        "sourceType": source_type,
         "officialOutcomeMapped": True,
         "officialOutcomeCodes": outcome_codes,
-        "mappingConfidence": "ReviewedExactTitle",
+        "mappingConfidence": confidence,
+        "officialPracticeMatchMode": match_mode,
         "practiceReadiness": "READY_VERIFIED",
         "practiceMechanic": rule.mechanic,
         "allowedQuestionFamilies": list(rule.families),
         "officialPracticeRuleId": rule.rule_id,
         "evidence": [
             "The canonical lesson has official OutcomeCode provenance.",
-            "The lesson title full-matches a reviewed anchored Practice target rule.",
-            "Broad keyword-only matching is not eligible for this promotion path.",
+            (
+                "The lesson title full-matches a reviewed anchored Practice target rule."
+                if match_mode == "EXACT_TITLE"
+                else "Exactly one reviewed Practice target rule matches the canonical lesson title."
+            ),
             "Semantic content, family, solver and verifier gates remain independently enforced.",
         ],
     }
@@ -132,25 +147,50 @@ def load_reviewed_official_rule_mappings(
                 or get_case(lesson, "Title", "title", default="")
             )
 
-            candidates = [
+            exact_candidates = [
                 rule
                 for rule in rules
                 if _matches_reviewed_exact_title(lesson_code, title, rule)
             ]
-            if not candidates:
-                continue
-            if len(candidates) != 1:
+            if len(exact_candidates) > 1:
                 errors.append(
                     "Official exact-title Practice rule collision for "
                     f"{lesson_code}: {title!r} -> "
-                    + ", ".join(rule.rule_id for rule in candidates)
+                    + ", ".join(rule.rule_id for rule in exact_candidates)
                 )
                 continue
+
+            if len(exact_candidates) == 1:
+                candidates = exact_candidates
+                match_mode = "EXACT_TITLE"
+            else:
+                normalized = normalize_title(title)
+                candidates = []
+                for rule in rules:
+                    if rule.title_patterns and not any(
+                        pattern.search(normalized)
+                        for pattern in rule.title_patterns
+                    ):
+                        continue
+                    if rule.code_patterns and not any(
+                        pattern.search(lesson_code)
+                        for pattern in rule.code_patterns
+                    ):
+                        continue
+                    candidates.append(rule)
+                if not candidates:
+                    continue
+                if len(candidates) != 1:
+                    # Ambiguous rule resolution is fail-closed and deliberately
+                    # not an audit blocker: the lesson simply remains unmapped.
+                    continue
+                match_mode = "UNIQUE_REVIEWED_TITLE"
 
             mappings[lesson_code] = mapping_from_rule(
                 lesson_code,
                 outcomes,
                 candidates[0],
+                match_mode,
             )
 
     return mappings, errors
