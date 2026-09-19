@@ -186,6 +186,89 @@ public sealed class SupportingLessonPracticeR11R12Tests
             Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.All.Count);
     }
 
+    [Theory]
+    [InlineData("sequences.core.arithmetic_nth_term")]
+    [InlineData("sequences.core.arithmetic_rule_offset")]
+    [InlineData("sequences.core.geometric_nth_term")]
+    [InlineData("percentages.core.of_quantity")]
+    [InlineData("percentages.core.change")]
+    [InlineData("ratio.proportion.divide_total")]
+    [InlineData("ratio.proportion.unit_rate")]
+    [InlineData("ratio.proportion.equivalent_ratio")]
+    [InlineData("geometry.polygons.triangle_missing_angle")]
+    [InlineData("geometry.polygons.quadrilateral_missing_angle")]
+    [InlineData("geometry.perimeter_area.triangle_area")]
+    [InlineData("geometry.coordinate.linear_graphs.gradient")]
+    [InlineData("geometry.coordinate.linear_graphs.evaluate")]
+    [InlineData("geometry.coordinate.linear_graphs.intercept")]
+    [InlineData("statistics.mean_median_range.mean")]
+    [InlineData("statistics.mean_median_range.median")]
+    [InlineData("statistics.mean_median_range.range")]
+    [InlineData("probability.theoretical.single_event")]
+    [InlineData("probability.theoretical.two_independent_events")]
+    public void R6CoreExpansionFamiliesGenerateAndIndependentlyVerify(string family)
+    {
+        var engine = new ExactSkillContractQuestionEngine();
+        var questions = engine.Generate(
+            "r6-core-expansion",
+            family,
+            [family],
+            ExactSkillQuestionDifficulty.Challenge,
+            8,
+            61337,
+            []);
+
+        Assert.Equal(8, questions.Count);
+        Assert.All(questions, question =>
+        {
+            Assert.Equal(family, question.Family);
+            Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                question.Family,
+                question.Parameters,
+                question.CorrectAnswer));
+            Assert.False(string.IsNullOrWhiteSpace(question.Solution));
+        });
+    }
+
+    [Theory]
+    [InlineData("PED:CAMBRIDGE-INTL-MATH:L7:SHARED:02:07:SEQUENCES", "sequences.core", "sequences.core.arithmetic_rule_offset")]
+    [InlineData("PED:UAE-MOE-MATH:L12:ADVANCED:01:04:PERCENTAGES", "percentages.core", "percentages.core.change")]
+    [InlineData("PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:01:04:RATIO-AND-PROPORTION", "ratio.proportion.core", "ratio.proportion.divide_total")]
+    [InlineData("PED:UAE-MOE-MATH:L9:ADVANCED:03:02:POLYGONS", "geometry.polygons.angles", "geometry.polygons.quadrilateral_missing_angle")]
+    [InlineData("PED:CAMBRIDGE-INTL-MATH:L7:SHARED:03:05:PERIMETER-AND-AREA", "geometry.perimeter_area", "geometry.perimeter_area.triangle_area")]
+    [InlineData("PED:UAE-MOE-MATH:L10:ADVANCED:02:08:COORDINATES-AND-STRAIGHT-LINE-GRAPHS", "geometry.coordinate.linear_graphs", "geometry.coordinate.linear_graphs.intercept")]
+    [InlineData("PED:CAMBRIDGE-INTL-MATH:L8:SHARED:04:03:MEAN-MEDIAN-AND-RANGE", "statistics.mean_median_range", "statistics.mean_median_range.median")]
+    [InlineData("PED:UAE-MOE-MATH:L11:GENERAL:04:06:THEORETICAL-PROBABILITY", "probability.theoretical.core", "probability.theoretical.two_independent_events")]
+    public void R6PromotedMappingsProjectIntoExactRuntimeContracts(
+        string lessonCode,
+        string expectedSkill,
+        string expectedFamily)
+    {
+        Assert.True(
+            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.TryResolve(
+                lessonCode,
+                out var contract));
+
+        Assert.NotNull(contract);
+        Assert.Equal(expectedSkill, contract!.SkillId);
+        Assert.Equal("READY_VERIFIED", contract.Readiness);
+        Assert.Contains(expectedFamily, contract.AllowedQuestionFamilies);
+        Assert.All(
+            contract.AllowedQuestionFamilies,
+            family => Assert.True(
+                ExactSkillContractQuestionEngine.SupportsFamily(family),
+                $"R6 contract {lessonCode} routes unsupported family {family}."));
+    }
+
+    [Fact]
+    public void R6PromotionRaisesRuntimeExactContractCountTo304()
+    {
+        Assert.Equal(
+            304,
+            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.All.Count);
+    }
+
     [Fact]
     public void ApprovedOfficialMappingProjectsIntoRuntimePracticeRegistry()
     {
