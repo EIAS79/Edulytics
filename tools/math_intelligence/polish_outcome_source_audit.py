@@ -285,14 +285,49 @@ def extract_upper(
             raise RuntimeError(f"Missing basic section for {domain['Title']}")
 
         basic_end = extended_pos if extended_pos >= 0 else len(segment)
-        basic_items = numbered_items(segment, basic_pos + 1, basic_end, len(basic_rows))
-        if len(basic_items) != len(basic_rows):
-            raise RuntimeError(
-                f"Upper basic extraction mismatch for {domain['Title']}: "
-                f"expected {len(basic_rows)}, got {len(basic_items)}"
+        basic_inline = [
+            x for x in basic_rows
+            if outcome_parts(str(x["Code"]))[1] == "inline"
+        ]
+        basic_numbered = [
+            x for x in basic_rows
+            if outcome_parts(str(x["Code"]))[1] != "inline"
+        ]
+        if basic_inline:
+            if len(basic_inline) != 1 or basic_numbered:
+                raise RuntimeError(
+                    f"Unsupported mixed inline/numbered basic section: {domain['Title']}"
+                )
+            inline_text = clean(" ".join(segment[basic_pos:basic_end]))
+            inline_text = re.sub(
+                r"^Zakres podstawowy\.?\s*Uczeń\s*",
+                "",
+                inline_text,
+                flags=re.I,
             )
-        for outcome, text in zip(basic_rows, basic_items):
-            result[str(outcome["Code"])] = text
+            inline_text = re.sub(
+                r"^Zakres podstawowy\.?\s*",
+                "",
+                inline_text,
+                flags=re.I,
+            )
+            if not inline_text:
+                raise RuntimeError(f"Blank inline basic requirement for {domain['Title']}")
+            result[str(basic_inline[0]["Code"])] = inline_text
+        else:
+            basic_items = numbered_items(
+                segment,
+                basic_pos + 1,
+                basic_end,
+                len(basic_numbered),
+            )
+            if len(basic_items) != len(basic_numbered):
+                raise RuntimeError(
+                    f"Upper basic extraction mismatch for {domain['Title']}: "
+                    f"expected {len(basic_numbered)}, got {len(basic_items)}"
+                )
+            for outcome, text in zip(basic_numbered, basic_items):
+                result[str(outcome["Code"])] = text
 
         if not extended_rows:
             continue
