@@ -177,6 +177,31 @@ public sealed class ExactSkillContractQuestionEngine
             return string.Equals(answer.Trim(), Compare(left, right), StringComparison.Ordinal);
         }
 
+        if (family == "trigonometry.right_triangle.ratio_exact")
+        {
+            if (!TryParseFraction(answer, out var answerNumerator, out var answerDenominator))
+                return false;
+
+            var numerator = parameters["ratioNumerator"];
+            var denominator = parameters["ratioDenominator"];
+            return denominator > 0 &&
+                answerNumerator * denominator == numerator * answerDenominator;
+        }
+
+        if (family == "geometry.congruence.identify_criterion")
+        {
+            var expected = parameters["criterion"] switch
+            {
+                0 => "SSS",
+                1 => "SAS",
+                2 => "ASA",
+                3 => "RHS",
+                _ => string.Empty
+            };
+            return expected.Length > 0 &&
+                string.Equals(answer.Trim(), expected, StringComparison.OrdinalIgnoreCase);
+        }
+
         if (family is "number.whole.divide.with_remainder.build" or
             "number.whole.divide.with_remainder.apply")
         {
@@ -313,6 +338,61 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters["coefficient"] != 0 &&
                 (parameters["right"] - parameters["offset"]) % parameters["coefficient"] == 0 &&
                 value == (parameters["right"] - parameters["offset"]) / parameters["coefficient"],
+
+            "geometry.coordinate.gradient_between_points" =>
+                parameters["x2"] != parameters["x1"] &&
+                (parameters["y2"] - parameters["y1"]) % (parameters["x2"] - parameters["x1"]) == 0 &&
+                value == (parameters["y2"] - parameters["y1"]) /
+                    (parameters["x2"] - parameters["x1"]),
+
+            "geometry.angles.parallel_lines" =>
+                value == parameters["expectedAngle"] &&
+                value is > 0 and < 180,
+
+            "geometry.angles.supplementary" =>
+                value == 180 - parameters["knownAngle"] &&
+                parameters["knownAngle"] is > 0 and < 180,
+
+            "geometry.similarity.find_missing_length" =>
+                parameters["scaleFactor"] > 0 &&
+                value == parameters["sourceLength"] * parameters["scaleFactor"],
+
+            "geometry.similarity.scale_factor" =>
+                parameters["sourceLength"] > 0 &&
+                parameters["targetLength"] % parameters["sourceLength"] == 0 &&
+                value == parameters["targetLength"] / parameters["sourceLength"],
+
+            "geometry.surface_area.rectangular_prism" =>
+                value == 2 * (
+                    parameters["length"] * parameters["width"] +
+                    parameters["length"] * parameters["height"] +
+                    parameters["width"] * parameters["height"]),
+
+            "geometry.volume.rectangular_prism" =>
+                value == parameters["length"] *
+                    parameters["width"] *
+                    parameters["height"],
+
+            "geometry.rectangle.area.exact" =>
+                value == parameters["length"] * parameters["width"],
+
+            "geometry.rectangle.perimeter.exact" =>
+                value == 2 * (parameters["length"] + parameters["width"]),
+
+            "geometry.right_triangle.pythagorean.exact" =>
+                value > 0 &&
+                value * value ==
+                    parameters["legA"] * parameters["legA"] +
+                    parameters["legB"] * parameters["legB"],
+
+            "trigonometry.right_triangle.find_side_exact" or
+            "trigonometry.modelling.contextual" =>
+                value == parameters["expectedSide"] &&
+                value > 0,
+
+            "trigonometry.right_triangle.find_angle_exact" =>
+                value == parameters["expectedAngle"] &&
+                value is 30 or 45 or 60,
 
             _ => false
         };
