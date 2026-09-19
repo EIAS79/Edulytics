@@ -28,6 +28,8 @@ ADVANCED_DOMAINS = {
 }
 
 OUTPUTS = {
+    "content": ARTIFACT_DIR / "content-repair-audit.json",
+    "mapping": ARTIFACT_DIR / "lesson-skill-mapping-audit.json",
     "family": ARTIFACT_DIR / "question-family-coverage-audit.json",
     "visual": ARTIFACT_DIR / "visual-representation-coverage-audit.json",
     "solver": ARTIFACT_DIR / "solver-verifier-coverage-audit.json",
@@ -89,6 +91,19 @@ def audit() -> dict[str, Any]:
         for row in family_doc.get("families", [])
         if isinstance(row, dict) and str(row.get("id") or "").strip()
     }
+
+    content_blockers: list[str] = []
+    mapping_blockers: list[str] = []
+    for row in eligible:
+        code = str(row.get("lessonCode") or "")
+        if row.get("semanticContentStatus") not in {"PASS_TARGETED", "PASS_GENERAL"}:
+            content_blockers.append(
+                f"{code}: semanticContentStatus={row.get('semanticContentStatus')}"
+            )
+        if not bool(row.get("approvedMapping")):
+            mapping_blockers.append(f"{code}: approved mapping missing")
+        if not list(row.get("primarySkills") or []):
+            mapping_blockers.append(f"{code}: primary skill mapping missing")
 
     family_blockers: list[str] = []
     used_families: set[str] = set()
@@ -224,6 +239,23 @@ def audit() -> dict[str, Any]:
             "visualRequiredCount": sum(bool(row.get("visualRequired")) for row in level_group),
         }
 
+    content_report = {
+        "schemaVersion": 1,
+        "commitSha": commit_sha(),
+        "practiceEligibleLessonCount": len(eligible),
+        "contentPassCount": len(eligible) - len({
+            blocker.split(":", 1)[0] for blocker in content_blockers
+        }),
+        "blockers": content_blockers,
+    }
+    mapping_report = {
+        "schemaVersion": 1,
+        "commitSha": commit_sha(),
+        "practiceEligibleLessonCount": len(eligible),
+        "approvedMappingCount": sum(bool(row.get("approvedMapping")) for row in eligible),
+        "primarySkillMappedCount": sum(bool(row.get("primarySkills")) for row in eligible),
+        "blockers": mapping_blockers,
+    }
     family_report = {
         "schemaVersion": 1,
         "commitSha": commit_sha(),
@@ -280,7 +312,9 @@ def audit() -> dict[str, Any]:
     }
 
     blockers = sorted(set(
-        family_blockers
+        content_blockers
+        + mapping_blockers
+        + family_blockers
         + visual_blockers
         + solver_blockers
         + level_blockers
@@ -314,6 +348,8 @@ def audit() -> dict[str, Any]:
     }
 
     return {
+        "content": content_report,
+        "mapping": mapping_report,
         "family": family_report,
         "visual": visual_report,
         "solver": solver_report,
