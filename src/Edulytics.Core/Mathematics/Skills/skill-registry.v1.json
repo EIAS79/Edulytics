@@ -32,13 +32,29 @@
       "id": "number.whole.add",
       "domain": "number",
       "canonicalName": "Whole-number addition",
-      "legacyCanonicalSkill": "WholeNumberAddition"
+      "legacyCanonicalSkill": "WholeNumberAddition",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "number.whole.add.exact",
+        "number.verify.whole.add"
+      ],
+      "v2QuestionFamilies": [
+        "number.whole.add.direct"
+      ]
     },
     {
       "id": "number.whole.subtract",
       "domain": "number",
       "canonicalName": "Whole-number subtraction",
-      "legacyCanonicalSkill": "WholeNumberSubtraction"
+      "legacyCanonicalSkill": "WholeNumberSubtraction",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "number.whole.subtract.exact",
+        "number.verify.whole.subtract"
+      ],
+      "v2QuestionFamilies": [
+        "number.whole.subtract.direct"
+      ]
     },
     {
       "id": "number.whole.multiply",
@@ -634,7 +650,15 @@
     {
       "id": "number.lcm",
       "domain": "number",
-      "canonicalName": "Find and use least common multiples"
+      "canonicalName": "Find and use least common multiples",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "number.lcm.exact",
+        "number.verify.lcm"
+      ],
+      "v2QuestionFamilies": [
+        "number.lcm.two_numbers"
+      ]
     },
     {
       "id": "fractions.equivalent",
@@ -661,7 +685,15 @@
       "id": "percentages.of_quantity",
       "domain": "percentages",
       "canonicalName": "Find a percentage of a quantity",
-      "legacyCanonicalSkill": "PercentageOfQuantity"
+      "legacyCanonicalSkill": "PercentageOfQuantity",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "percentages.of_quantity.exact",
+        "percentages.verify.of_quantity"
+      ],
+      "v2QuestionFamilies": [
+        "percentages.of_quantity.direct"
+      ]
     },
     {
       "id": "ratio.unit_rate",
@@ -745,9 +777,14 @@
         "representation",
         "exact_rational"
       ],
-      "v2Status": "Blocked",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.represent.interpret.exact",
+        "fractions.verify.representation"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.represent.interpret.fraction_bar"
+      ]
     },
     {
       "id": "geometry.coordinate.straight_line",
@@ -839,8 +876,8 @@
         "geometry.trigonometry.independent_verification"
       ],
       "v2QuestionFamilies": [
-        "geometry.surface_area.rectangular_prism",
-        "geometry.volume.rectangular_prism"
+        "geometry.surface_area_volume.rectangular_prism_surface_area",
+        "geometry.surface_area_volume.rectangular_prism_volume"
       ]
     },
     {
