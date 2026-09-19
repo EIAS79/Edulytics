@@ -34,7 +34,9 @@ public static class PracticeMathVisualRenderer
                 "geometry.similarity.scale_factor" => Similarity(parameters),
                 "geometry.congruence.identify_criterion" => Congruence(parameters),
                 "geometry.surface_area.rectangular_prism" or
-                "geometry.volume.rectangular_prism" => RectangularPrism(parameters),
+                "geometry.volume.rectangular_prism" or
+                "geometry.surface_area_volume.rectangular_prism_surface_area" or
+                "geometry.surface_area_volume.rectangular_prism_volume" => RectangularPrism(parameters),
                 "geometry.rectangle.area.exact" or
                 "geometry.rectangle.perimeter.exact" or
                 "geometry.perimeter_area.rectangle_area" or
@@ -44,6 +46,7 @@ public static class PracticeMathVisualRenderer
                 "trigonometry.right_triangle.find_side_exact" or
                 "trigonometry.right_triangle.find_angle_exact" or
                 "trigonometry.modelling.contextual" => RightTriangle(parameters),
+                "fractions.represent.interpret.fraction_bar" => FractionBar(parameters),
                 "vectors.add.exact_rational" or
                 "vectors.subtract.exact_rational" or
                 "vectors.scalar_multiply.exact_rational" or
@@ -56,6 +59,29 @@ public static class PracticeMathVisualRenderer
         {
             return null;
         }
+    }
+
+    private static string FractionBar(JsonElement p)
+    {
+        var numerator = GetInt(p, "numerator");
+        var denominator = GetInt(p, "denominator");
+        if (denominator <= 0 || numerator < 0 || numerator > denominator)
+            throw new JsonException("Invalid fraction-bar parameters.");
+
+        var sb = SvgStart("Fraction bar divided into equal parts with the required number shaded.");
+        const double x = 45;
+        const double y = 92;
+        const double width = 330;
+        const double height = 82;
+        var cell = width / denominator;
+        for (var i = 0; i < denominator; i++)
+        {
+            var cx = x + i * cell;
+            var fillClass = i < numerator ? "fraction-shaded" : "fraction-empty";
+            sb.Append($"<rect x=\"{F(cx)}\" y=\"{F(y)}\" width=\"{F(cell)}\" height=\"{F(height)}\" class=\"fraction-cell {fillClass}\"/>");
+        }
+        Text(sb, 210, 208, $"{numerator} shaded out of {denominator} equal parts", "hint");
+        return SvgEnd(sb);
     }
 
     private static string CoordinateGradient(JsonElement p)
@@ -238,7 +264,7 @@ public static class PracticeMathVisualRenderer
         var safeLabel = WebUtility.HtmlEncode(label);
         var sb = new StringBuilder();
         sb.Append($"<svg class="practice-math-visual" viewBox="0 0 420 260" role="img" aria-label="{safeLabel}" xmlns="http://www.w3.org/2000/svg">");
-        sb.Append("<style>.shape{stroke:currentColor;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}.fill{fill:rgba(255,255,255,.28)}.axis{stroke:currentColor;stroke-width:1.5;opacity:.55}.tick{stroke:currentColor;stroke-width:1;opacity:.45}.mark,.arc{stroke:currentColor;stroke-width:2;fill:none}.dash{stroke-dasharray:7 6;opacity:.7}.label{font:700 16px system-ui,sans-serif;fill:currentColor}.unknown{font:800 18px system-ui,sans-serif;fill:currentColor}.hint{font:600 12px system-ui,sans-serif;fill:currentColor;opacity:.75}.point-label{font:700 13px system-ui,sans-serif;fill:currentColor}.point{fill:currentColor}.vector{stroke:currentColor;stroke-width:3}.secondary{stroke-dasharray:4 3}.arrow-head{fill:currentColor}</style>");
+        sb.Append("<style>.fraction-cell{stroke:currentColor;stroke-width:2}.fraction-shaded{fill:rgba(18,114,133,.38)}.fraction-empty{fill:rgba(255,255,255,.35)}.shape{stroke:currentColor;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}.fill{fill:rgba(255,255,255,.28)}.axis{stroke:currentColor;stroke-width:1.5;opacity:.55}.tick{stroke:currentColor;stroke-width:1;opacity:.45}.mark,.arc{stroke:currentColor;stroke-width:2;fill:none}.dash{stroke-dasharray:7 6;opacity:.7}.label{font:700 16px system-ui,sans-serif;fill:currentColor}.unknown{font:800 18px system-ui,sans-serif;fill:currentColor}.hint{font:600 12px system-ui,sans-serif;fill:currentColor;opacity:.75}.point-label{font:700 13px system-ui,sans-serif;fill:currentColor}.point{fill:currentColor}.vector{stroke:currentColor;stroke-width:3}.secondary{stroke-dasharray:4 3}.arrow-head{fill:currentColor}</style>");
         return sb;
     }
 
