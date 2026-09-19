@@ -1188,16 +1188,16 @@ Update this table in every material remediation PR.
 | P1 Full Practice Matrix | ✅ Complete | 4,453-row completion matrix generated; internal blockers 0 | 4,453 complete rows | 2026-09-19 PR #213 audit run #217 |
 | P2 Content Repair | ⬜ Not complete | 329 Supporting `CONTENT_WEAK`; broader catalogue weaknesses exist | 0 Practice-eligible `CONTENT_WEAK` | 2026-09-19 |
 | P3 Academic Mapping | ⬜ Not complete | 453 Supporting academic-review blockers | 0 unresolved Practice-eligible mappings | 2026-09-19 |
-| P4 Skill Ontology | 🟨 Partial | 72 skills; current registered skills have family metadata | Full reusable target coverage | 2026-09-19 PR #216 |
-| P5 Question Families | 🟨 Partial | 114 families; zero registered skills without family metadata | Approved coverage manifests complete | 2026-09-19 PR #216 |
+| P4 Skill Ontology | 🟨 Partial | 74 skills; current registered skills have family metadata | Full reusable target coverage | 2026-09-19 PR #217 |
+| P5 Question Families | 🟨 Partial | 123 families; zero registered skills without family metadata | Approved coverage manifests complete | 2026-09-19 PR #217 |
 | P6 Geometry/Trig | 🟨 Partial | Added algebraic angle reasoning and Pythagoras missing-leg exact families with deterministic SVG | Curriculum-complete exact/visual coverage | 2026-09-19 PR #214 |
 | P7 Vectors | 🟨 Partial | Add, subtract, scalar multiply, dot, magnitude, between-points + deterministic vector SVG | Curriculum-complete vector coverage | 2026-09-19 PR #213 |
 | P8 Other upper-grade domains | ⬜ Not complete | Narrow exact coverage | Curriculum-driven complete coverage | 2026-09-19 |
 | P9 Diagram/Visual Engine | 🟨 Partial | Deterministic SVG runtime wired to Practice for current geometry/trig/vector/fraction families | Required visuals deterministic + validated | 2026-09-19 PR #213 |
 | P10 Solver/Verifier/Equivalence | 🟨 Partial | Shared kernel exists | 100% enabled-family coverage | 2026-09-19 |
 | P11 Grade-aware Difficulty | 🟨 Partial | Difficulty bands exist | Structural grade-aware calibration | 2026-09-19 |
-| P12 Supporting blockers → zero | 🟨 Partial | 223 ready / 1,126 blocked | 1,349 ready / 0 blocked | 2026-09-19 PR #216 audit run #229 |
-| P13 Full catalogue completion | 🟨 Partial | 232 ready / 4,221 not ready | 100% Practice-eligible ready | 2026-09-19 PR #216 audit run #229 |
+| P12 Supporting blockers → zero | 🟨 Partial | 295 ready / 1,054 blocked | 1,349 ready / 0 blocked | 2026-09-19 PR #217 audit run #234 |
+| P13 Full catalogue completion | 🟨 Partial | 304 ready / 4,149 not ready | 100% Practice-eligible ready | 2026-09-19 PR #217 audit run #234 |
 | P14 CI + Dashboard | 🟨 Partial | Full completion matrix + Supporting artifact generated in Mathematics Intelligence CI | Permanent completion gates | 2026-09-19 PR #213 |
 
 Legend:
@@ -1312,6 +1312,44 @@ A PR may improve the system without completing a workstream. In that case mark i
 ---
 
 # 29. Changelog
+
+## 2026-09-19 — PR #217 ratio/statistics/probability/coordinate unblock checkpoint
+
+Verified on Mathematics Intelligence Foundation run #234 at commit `42f1c5f4dd64ed2986a3df5f8949ccd49b76be94`.
+
+```text
+Full catalogue:
+  4,453 lessons
+  304 READY_VERIFIED
+  4,149 not READY_VERIFIED
+  completion 6.83%
+
+Supporting:
+  1,349 lessons
+  295 READY_VERIFIED
+  1,054 EXPLICITLY_BLOCKED
+
+Supporting blockers:
+  328 CONTENT_WEAK
+  443 ACADEMIC_REVIEW_REQUIRED
+  283 SOLVER_CAPABILITY_MISSING
+  0   REPRESENTATION_MISSING
+
+Registry:
+  74 skills
+  123 question families
+  114 capabilities
+  304 approved mappings
+  0 internal completion-matrix blockers
+```
+
+This checkpoint promotes 72 evidence-backed Supporting lessons covering ratio and proportion, rates, coordinates and straight-line graphs, mean/median/range, theoretical probability, and single-event probability. It adds exact generation/verification for division in ratio, centre/spread statistics, theoretical probability, and additional straight-line reasoning with deterministic SVG rendering.
+
+The shared semantic resolver remains deliberately fail-closed for broad curriculum descriptions: explicit Supporting mappings authorize these Practice contracts, while broad CCSS ratio/rate wording remains contextual unless an exact target is reviewed.
+
+Experimental probability and Powers and roots remain blocked pending content/coverage repair rather than being promoted by keyword.
+
+---
 
 ## 2026-09-19 — PR #216 core number/geometry unblock checkpoint
 
