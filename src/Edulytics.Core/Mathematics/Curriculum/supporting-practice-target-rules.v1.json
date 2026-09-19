@@ -3726,6 +3726,164 @@
         "commonMistake": "Do not treat a system as one equation or forget the inequality direction rule.",
         "summary": "Solve systems by satisfying all equations; solve inequalities by preserving the comparison."
       }
+    },
+    {
+      "id": "whole-add-subtract-within20",
+      "titlePatterns": [
+        "^Add and subtract within 20$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.add_subtract",
+      "mechanic": "ADD_SUBTRACT_WITHIN_20",
+      "families": [
+        "number.whole.add_subtract.within_10.build",
+        "number.whole.add_subtract.within_10.apply",
+        "number.whole.add_subtract.across_ten.build",
+        "number.whole.add_subtract.across_ten.apply"
+      ],
+      "content": {
+        "concept": "Addition and subtraction within 20 combine or separate whole-number quantities while preserving inverse relationships.",
+        "workedExample": "8 + 7 = 15 and 15 - 7 = 8.",
+        "solution": "Use known facts, make-ten strategies or counting-on/back, then verify with the inverse operation.",
+        "commonMistake": "Do not lose track when crossing ten.",
+        "summary": "Add and subtract within 20 and check with the inverse."
+      }
+    },
+    {
+      "id": "whole-add-subtract-within100",
+      "titlePatterns": [
+        "^Add and subtract within 100$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.add_subtract",
+      "mechanic": "ADD_SUBTRACT_WITHIN_100",
+      "families": [
+        "number.whole.add_subtract.within_100.build",
+        "number.whole.add_subtract.within_100.apply"
+      ],
+      "content": {
+        "concept": "Within 100, addition and subtraction depend on tens/ones place value and inverse relationships.",
+        "workedExample": "47 + 26 = 73; 73 - 26 = 47.",
+        "solution": "Align tens and ones, regroup when needed, and verify with the inverse.",
+        "commonMistake": "Do not combine tens with ones.",
+        "summary": "Use place value to add/subtract within 100."
+      }
+    },
+    {
+      "id": "whole-add-subtract-columnar",
+      "titlePatterns": [
+        "^Fluent multi-digit addition and subtraction$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.add_subtract",
+      "mechanic": "ADD_SUBTRACT_COLUMNAR",
+      "families": [
+        "number.whole.add_subtract.columnar.build",
+        "number.whole.add_subtract.columnar.apply"
+      ],
+      "content": {
+        "concept": "The standard algorithms add or subtract aligned place values with regrouping.",
+        "workedExample": "347 + 285 = 632.",
+        "solution": "Align place values, operate from right to left, regroup, and verify.",
+        "commonMistake": "Do not misalign columns.",
+        "summary": "Use aligned place-value columns and regroup accurately."
+      }
+    },
+    {
+      "id": "foundation-count-read-write",
+      "titlePatterns": [
+        "^Count, read and write numerals$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "COUNT_READ_WRITE",
+      "families": [
+        "supporting.number.count_cardinality",
+        "supporting.number.numeral_identity"
+      ],
+      "content": {
+        "concept": "Counting establishes quantity and numerals record that quantity symbolically.",
+        "workedExample": "A set of 14 objects is represented by the numeral 14.",
+        "solution": "Count each object once, then match the total to its numeral.",
+        "commonMistake": "Do not confuse a number word with a different teen numeral.",
+        "summary": "Count quantities and connect them to numerals."
+      }
+    },
+    {
+      "id": "foundation-skip-count",
+      "titlePatterns": [
+        "^Skip-count$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.sequences.core",
+      "mechanic": "SKIP_COUNT",
+      "families": [
+        "supporting.sequences.skip_count"
+      ],
+      "content": {
+        "concept": "Skip-counting repeatedly adds a fixed interval.",
+        "workedExample": "15, 20, 25, 30 uses a step of 5.",
+        "solution": "Identify the fixed step and add it to continue.",
+        "commonMistake": "Do not change the interval between terms.",
+        "summary": "Skip-count by repeatedly adding the same step."
+      }
+    },
+    {
+      "id": "angle-measure",
+      "titlePatterns": [
+        "^Measure angles with a protractor$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.angles",
+      "mechanic": "ANGLE_MEASURE",
+      "families": [
+        "supporting.geometry.angle_measure"
+      ],
+      "content": {
+        "concept": "An angle measure is read from a protractor scale beginning at the aligned zero ray.",
+        "workedExample": "If the second ray crosses 65°, the angle measures 65°.",
+        "solution": "Align the vertex and baseline, choose the correct zero scale, and read the second ray.",
+        "commonMistake": "Do not read the opposite protractor scale.",
+        "summary": "Read angle measure from the correct protractor scale."
+      }
+    },
+    {
+      "id": "statistical-question",
+      "titlePatterns": [
+        "^Recognise statistical questions$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.data_collection",
+      "mechanic": "STATISTICAL_QUESTION",
+      "families": [
+        "supporting.statistics.statistical_question"
+      ],
+      "content": {
+        "concept": "A statistical question anticipates variability in data.",
+        "workedExample": "“How old are students in this school?” is statistical because answers vary.",
+        "solution": "Ask whether multiple observations can reasonably produce different values.",
+        "commonMistake": "A question about one fixed individual value is not statistical merely because it uses a number.",
+        "summary": "Statistical questions expect variable data."
+      }
+    },
+    {
+      "id": "center-or-variation",
+      "titlePatterns": [
+        "^Distinguish centre and variation$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.distributions",
+      "mechanic": "CENTER_VARIATION",
+      "families": [
+        "supporting.statistics.center_or_variation"
+      ],
+      "content": {
+        "concept": "Measures of center describe a typical location; measures of variation describe spread.",
+        "workedExample": "Mean describes center while range describes variation.",
+        "solution": "Classify the statistic by whether it summarizes location or spread.",
+        "commonMistake": "Do not treat range as a measure of center.",
+        "summary": "Center locates a distribution; variation describes spread."
+      }
     }
   ]
 }
