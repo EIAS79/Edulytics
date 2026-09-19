@@ -726,19 +726,43 @@
       "id": "algebra.relationships.two_unknowns",
       "domain": "algebra",
       "canonicalName": "Solve linked relationships with two unknowns",
-      "legacyGameMechanic": "TWO_UNKNOWNS"
+      "legacyGameMechanic": "TWO_UNKNOWNS",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "algebra.relationships.two_unknowns.total_difference"
+      ]
     },
     {
       "id": "measurement.scale.read_equal_intervals",
       "domain": "measurement",
       "canonicalName": "Read scales divided into equal intervals",
-      "legacyGameMechanic": "SCALE_READING"
+      "legacyGameMechanic": "SCALE_READING",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
+      ]
     },
     {
       "id": "fractions.compare.unlike_denominators",
       "domain": "fractions",
       "canonicalName": "Compare fractions with different denominators",
-      "legacyGameMechanic": "FRACTION_COMPARE_UNLIKE"
+      "legacyGameMechanic": "FRACTION_COMPARE_UNLIKE",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.compare.unlike.common_denominator"
+      ]
     },
     {
       "id": "fractions.add_subtract",
