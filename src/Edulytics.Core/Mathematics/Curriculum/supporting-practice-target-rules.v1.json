@@ -3321,6 +3321,387 @@
         "commonMistake": "Do not lose a remainder or a partial quotient.",
         "summary": "Partial quotients decompose division into manageable multiples."
       }
+    },
+    {
+      "id": "foundation-count-cardinality",
+      "titlePatterns": [
+        "^Count, Touch, and Check$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "COUNT_CARDINALITY",
+      "families": [
+        "supporting.number.count_cardinality"
+      ],
+      "content": {
+        "concept": "Counting pairs one number word with each object; the last count gives the cardinality.",
+        "workedExample": "Count 7 counters once each; the total is 7 even after rearranging them.",
+        "solution": "Track each object exactly once and use the final count as the total.",
+        "commonMistake": "Do not count an object twice or skip an object.",
+        "summary": "Count each object once; the final number is how many."
+      }
+    },
+    {
+      "id": "foundation-sequence-next",
+      "titlePatterns": [
+        "^Count On, Back, and Describe a Sequence$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.sequences.core",
+      "mechanic": "SEQUENCE_NEXT",
+      "families": [
+        "supporting.sequences.next_term"
+      ],
+      "content": {
+        "concept": "A number sequence changes by a consistent step when counting on or back.",
+        "workedExample": "4, 6, 8, 10 continues with 12 because the step is +2.",
+        "solution": "Find the difference between consecutive terms and apply the same step.",
+        "commonMistake": "Do not change the step midway through the sequence.",
+        "summary": "Identify the repeated step and continue it."
+      }
+    },
+    {
+      "id": "foundation-parity-stage1",
+      "titlePatterns": [
+        "^Odd and Even Steps$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "PARITY",
+      "families": [
+        "supporting.number.parity"
+      ],
+      "content": {
+        "concept": "Even numbers are divisible by 2; odd numbers are not.",
+        "workedExample": "8 is even because 8 can be split into two equal groups of 4.",
+        "solution": "Check whether the number divides by 2 with no remainder.",
+        "commonMistake": "Do not decide parity from size; use divisibility by 2.",
+        "summary": "Divisible by 2 means even; otherwise odd."
+      }
+    },
+    {
+      "id": "foundation-numeral-identity",
+      "titlePatterns": [
+        "^Read and Write Numbers to 20$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "NUMERAL_IDENTITY",
+      "families": [
+        "supporting.number.numeral_identity"
+      ],
+      "content": {
+        "concept": "A spoken or written number name and its numeral represent the same quantity.",
+        "workedExample": "Fourteen is written as 14.",
+        "solution": "Match the number word to the numeral.",
+        "commonMistake": "Take care with similar teen-number names.",
+        "summary": "Connect each number name to its numeral."
+      }
+    },
+    {
+      "id": "foundation-teen-decompose",
+      "titlePatterns": [
+        "^Make and Break Teen Numbers$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "TEEN_DECOMPOSE",
+      "families": [
+        "supporting.number.teen_decompose"
+      ],
+      "content": {
+        "concept": "Teen numbers are one ten plus some ones.",
+        "workedExample": "17 = 10 + 7.",
+        "solution": "Subtract 10 from the teen number to find the remaining ones.",
+        "commonMistake": "Do not confuse 17 with 7 tens.",
+        "summary": "Teen number = 10 + remaining ones."
+      }
+    },
+    {
+      "id": "foundation-number-compare-stage1",
+      "titlePatterns": [
+        "^Compare and Order Numbers$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "COMPARE_ORDER",
+      "families": [
+        "supporting.number.compare_order"
+      ],
+      "content": {
+        "concept": "Number order follows magnitude; on a standard number line values increase to the right.",
+        "workedExample": "12 > 7.",
+        "solution": "Compare the highest place values first or locate both values on a number line.",
+        "commonMistake": "Do not compare the physical size of written digits.",
+        "summary": "Compare magnitude, then order from least to greatest or greatest to least."
+      }
+    },
+    {
+      "id": "foundation-ordinal-position",
+      "titlePatterns": [
+        "^Positions in a Line$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "ORDINAL_POSITION",
+      "families": [
+        "supporting.number.ordinal_position"
+      ],
+      "content": {
+        "concept": "Ordinal numbers describe position in an ordered line.",
+        "workedExample": "Position 3 is third, written 3rd.",
+        "solution": "Choose the starting end, count positions, then write the ordinal form.",
+        "commonMistake": "Do not confuse ordinal position with total quantity.",
+        "summary": "Ordinals tell where an item is in an order."
+      }
+    },
+    {
+      "id": "foundation-complement-ten",
+      "titlePatterns": [
+        "^Pairs That Make Ten$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.add_subtract",
+      "mechanic": "COMPLEMENT_10",
+      "families": [
+        "number.whole.add_subtract.complement_10"
+      ],
+      "content": {
+        "concept": "Two complements to ten add to exactly 10.",
+        "workedExample": "6 + 4 = 10.",
+        "solution": "Subtract the known part from 10.",
+        "commonMistake": "Do not add an extra unit after finding the missing part.",
+        "summary": "Missing complement = 10 − known part."
+      }
+    },
+    {
+      "id": "foundation-reasonable-within20",
+      "titlePatterns": [
+        "^Reasonable Answers Within 20$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.add_subtract",
+      "mechanic": "REASONABLE_WITHIN_20",
+      "families": [
+        "number.whole.add_subtract.within_20.reasonable"
+      ],
+      "content": {
+        "concept": "Estimate the direction and size of a result before calculating exactly.",
+        "workedExample": "8 + 5 should be larger than 8; the exact result is 13.",
+        "solution": "Predict whether the result should increase or decrease, calculate, then compare with the prediction.",
+        "commonMistake": "Do not accept an exact calculation that contradicts the operation's basic effect.",
+        "summary": "Estimate, calculate, and check reasonableness."
+      }
+    },
+    {
+      "id": "foundation-double",
+      "titlePatterns": [
+        "^Double a Number$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.multiply",
+      "mechanic": "DOUBLE_NUMBER",
+      "families": [
+        "number.whole.multiply.double"
+      ],
+      "content": {
+        "concept": "Doubling creates two equal groups of the same quantity.",
+        "workedExample": "Double 6 is 6 + 6 = 12.",
+        "solution": "Add the number to itself or multiply it by 2.",
+        "commonMistake": "Do not add 2 instead of multiplying by 2.",
+        "summary": "Double n = 2 × n."
+      }
+    },
+    {
+      "id": "foundation-equal-halves",
+      "titlePatterns": [
+        "^Make Two Equal Parts$"
+      ],
+      "codePatterns": [],
+      "skillId": "fractions.represent.interpret",
+      "mechanic": "EQUAL_HALVES",
+      "families": [
+        "fractions.represent.interpret.fraction_bar"
+      ],
+      "content": {
+        "concept": "A half is one of two equal parts of a whole.",
+        "workedExample": "A bar split into 2 equal parts has each part equal to 1/2.",
+        "solution": "Check that the whole is partitioned into exactly two equal parts.",
+        "commonMistake": "Two unequal parts are not halves.",
+        "summary": "Halves are two equal parts of one whole."
+      }
+    },
+    {
+      "id": "foundation-half-quantity",
+      "titlePatterns": [
+        "^Find Half and Rebuild the Whole$"
+      ],
+      "codePatterns": [],
+      "skillId": "fractions.of_quantity",
+      "mechanic": "HALF_QUANTITY",
+      "families": [
+        "fractions.of_quantity.build",
+        "fractions.of_quantity.apply"
+      ],
+      "content": {
+        "concept": "Half of a quantity is one of two equal groups.",
+        "workedExample": "Half of 10 is 5 because 10 = 5 + 5.",
+        "solution": "Divide the whole quantity into two equal groups.",
+        "commonMistake": "Do not split the quantity into unequal groups.",
+        "summary": "Half means divide the whole into two equal parts."
+      }
+    },
+    {
+      "id": "foundation-calendar",
+      "titlePatterns": [
+        "^Days, Months, and Time Words$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "CALENDAR_DAY",
+      "families": [
+        "supporting.measurement.calendar_next_day"
+      ],
+      "content": {
+        "concept": "Days follow a repeating weekly order and time words locate events before or after today.",
+        "workedExample": "If today is Tuesday, tomorrow is Wednesday.",
+        "solution": "Move one place forward for tomorrow or one place backward for yesterday.",
+        "commonMistake": "Remember the week cycles from Sunday back to Monday.",
+        "summary": "Use the ordered seven-day cycle for yesterday and tomorrow."
+      }
+    },
+    {
+      "id": "foundation-clock-half-hour",
+      "titlePatterns": [
+        "^Read O’clock and Half Past$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "CLOCK_HALF_HOUR",
+      "families": [
+        "supporting.measurement.clock_half_hour"
+      ],
+      "content": {
+        "concept": "Half an hour is 30 minutes; o'clock marks the start of an hour.",
+        "workedExample": "30 minutes after 3:00 is 3:30.",
+        "solution": "Add 30 minutes and advance the hour when passing 60 minutes.",
+        "commonMistake": "Do not read half past 3 as 3:50.",
+        "summary": "O'clock is :00 and half past is :30."
+      }
+    },
+    {
+      "id": "foundation-solid-faces",
+      "titlePatterns": [
+        "^Solid Shapes and Their Faces$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.properties",
+      "mechanic": "SOLID_FACE_COUNT",
+      "families": [
+        "supporting.geometry.face_count"
+      ],
+      "content": {
+        "concept": "A 3D solid has flat faces and may also have curved surfaces.",
+        "workedExample": "A cube has 6 square faces.",
+        "solution": "Identify the solid and count each flat face once.",
+        "commonMistake": "Do not confuse one 2D face with the whole 3D solid.",
+        "summary": "Describe solids by their faces and other surfaces."
+      }
+    },
+    {
+      "id": "foundation-position-direction",
+      "titlePatterns": [
+        "^Move and Describe Position$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.properties",
+      "mechanic": "POSITION_DIRECTION",
+      "families": [
+        "supporting.geometry.position_direction"
+      ],
+      "content": {
+        "concept": "Position is relative to a reference point and direction describes movement.",
+        "workedExample": "From position 4, move 3 steps right to reach 7.",
+        "solution": "Use the chosen reference direction and update the position by the stated number of steps.",
+        "commonMistake": "Do not reverse left and right after the reference direction is fixed.",
+        "summary": "Start from a reference position, follow the direction, and track the new position."
+      }
+    },
+    {
+      "id": "foundation-measure-compare",
+      "titlePatterns": [
+        "^Compare Length, Mass, and Capacity$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "MEASUREMENT_COMPARE",
+      "families": [
+        "supporting.measurement.compare"
+      ],
+      "content": {
+        "concept": "Length, mass and capacity compare quantities of the same attribute.",
+        "workedExample": "If two lengths are 7 cm and 5 cm, then 7 cm is longer.",
+        "solution": "Make sure the attribute and units match, then compare the numerical measures.",
+        "commonMistake": "Do not compare different measurement attributes as though they were the same.",
+        "summary": "Compare like measurements using consistent units."
+      }
+    },
+    {
+      "id": "foundation-measure-tool",
+      "titlePatterns": [
+        "^Choose the Right Measuring Tool$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "MEASUREMENT_TOOL",
+      "families": [
+        "supporting.measurement.choose_tool"
+      ],
+      "content": {
+        "concept": "Different measurement attributes require appropriate tools.",
+        "workedExample": "Use a ruler for length, a scale for mass and a measuring jug for liquid capacity.",
+        "solution": "Identify the attribute, then choose a tool designed to measure it.",
+        "commonMistake": "Do not choose a tool merely because it has numbers on it.",
+        "summary": "Match length, mass and capacity to an appropriate measuring tool."
+      }
+    },
+    {
+      "id": "foundation-category-data",
+      "titlePatterns": [
+        "^Organise and Show Category Data$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.charts",
+      "mechanic": "CATEGORY_DATA",
+      "families": [
+        "supporting.statistics.category_total"
+      ],
+      "content": {
+        "concept": "Categorical data groups observations into named categories and records their frequencies.",
+        "workedExample": "Counts A=3, B=4, C=2 represent 9 items altogether.",
+        "solution": "Read each category frequency and add them when a total is required.",
+        "commonMistake": "Do not treat category labels as numerical values.",
+        "summary": "Organise observations by category and use their counts."
+      }
+    },
+    {
+      "id": "foundation-data-compare",
+      "titlePatterns": [
+        "^Compare What the Data Shows$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.charts",
+      "mechanic": "CATEGORY_COMPARE",
+      "families": [
+        "supporting.statistics.compare_category_counts"
+      ],
+      "content": {
+        "concept": "Comparing categorical data means comparing category frequencies.",
+        "workedExample": "If A has 8 items and B has 5, category A has more.",
+        "solution": "Read the two counts and compare them directly.",
+        "commonMistake": "Do not compare bar width or label length instead of frequency.",
+        "summary": "Compare category counts to state what the data shows."
+      }
     }
   ]
 }
