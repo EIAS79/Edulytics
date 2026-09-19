@@ -309,6 +309,7 @@ def audit() -> dict[str, Any]:
             "approvedMapping": mapping is not None,
             "reviewedOfficialMapping": reviewed_official_mapping,
             "approvedPrimarySkills": [] if mapping is None else clean_list(mapping.get("primarySkills")),
+            "approvedQuestionFamilies": [] if mapping is None else clean_list(mapping.get("allowedQuestionFamilies")),
             "hasQuestionFamily": has_family,
             "hasVerifiedSolverCapability": has_verified,
             "hasContextualGenerationCapability": has_contextual,
