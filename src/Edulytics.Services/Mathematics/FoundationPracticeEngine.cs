@@ -23,7 +23,11 @@ internal static class FoundationPracticeEngine
             "supporting.measurement.choose_tool",
             "supporting.statistics.category_total",
             "supporting.statistics.compare_category_counts",
-            "supporting.algebra.systems_inequalities.mixed"
+            "supporting.algebra.systems_inequalities.mixed",
+            "supporting.sequences.skip_count",
+            "supporting.geometry.angle_measure",
+            "supporting.statistics.statistical_question",
+            "supporting.statistics.center_or_variation"
         };
 
     internal sealed record Problem(
@@ -55,6 +59,10 @@ internal static class FoundationPracticeEngine
             "supporting.statistics.category_total" => CategoryTotal(random, scale),
             "supporting.statistics.compare_category_counts" => CompareCategoryCounts(random, scale),
             "supporting.algebra.systems_inequalities.mixed" => SystemsInequalities(random, scale),
+            "supporting.sequences.skip_count" => SkipCount(random, scale),
+            "supporting.geometry.angle_measure" => AngleMeasure(random),
+            "supporting.statistics.statistical_question" => StatisticalQuestion(random),
+            "supporting.statistics.center_or_variation" => CenterOrVariation(random, scale),
             _ => throw new InvalidOperationException(
                 $"Unsupported Foundation Practice family: {family}")
         };
@@ -103,6 +111,14 @@ internal static class FoundationPracticeEngine
                 p["mode"] == 0
                     ? $"x={p["x"]}, y={p["y"]}"
                     : $"x<{p["k"]}",
+            "supporting.sequences.skip_count" =>
+                (p["current"] + p["step"]).ToString(CultureInfo.InvariantCulture),
+            "supporting.geometry.angle_measure" =>
+                p["angle"].ToString(CultureInfo.InvariantCulture),
+            "supporting.statistics.statistical_question" =>
+                p["statistical"] == 1 ? "statistical" : "not statistical",
+            "supporting.statistics.center_or_variation" =>
+                p["kind"] == 0 ? "center" : "variation",
             _ => throw new InvalidOperationException(
                 $"Unsupported Foundation Practice solver family: {family}")
         };
@@ -338,6 +354,55 @@ internal static class FoundationPracticeEngine
             "Compare the two category frequencies directly.",
             AssessmentItemType.ShortAnswer,
             ("a", a), ("b", b));
+    }
+
+    private static Problem SkipCount(Random r, int scale)
+    {
+        int[] steps = [2, 5, 10, 100];
+        var step = steps[r.Next(Math.Min(steps.Length, 2 + scale))];
+        var current = step * r.Next(1, 8 + scale * 2);
+        return P(
+            "supporting.sequences.skip_count",
+            $"Continue the skip-counting sequence: {current - 2 * step}, {current - step}, {current}, __.",
+            "Find the constant skip-counting interval and add it once more.",
+            ("current", current), ("step", step));
+    }
+
+    private static Problem AngleMeasure(Random r)
+    {
+        var angle = r.Next(10, 171);
+        return P(
+            "supporting.geometry.angle_measure",
+            $"A protractor has its baseline at 0° and the other ray passes through {angle}°. What is the angle measure?",
+            "Read the scale that starts at the aligned 0° baseline and ends at the second ray.",
+            ("angle", angle));
+    }
+
+    private static Problem StatisticalQuestion(Random r)
+    {
+        var statistical = r.Next(0, 2);
+        var prompt = statistical == 1
+            ? "How many minutes do students in this class spend reading each day?"
+            : "How many minutes did Alex spend reading today?";
+        return P(
+            "supporting.statistics.statistical_question",
+            $"Classify the question as statistical or not statistical: “{prompt}”",
+            "A statistical question anticipates variability across a group or repeated observations.",
+            AssessmentItemType.ShortAnswer,
+            ("statistical", statistical));
+    }
+
+    private static Problem CenterOrVariation(Random r, int scale)
+    {
+        var kind = r.Next(0, 2);
+        var value = r.Next(1, 10 + scale * 3);
+        var term = kind == 0 ? "mean" : "range";
+        return P(
+            "supporting.statistics.center_or_variation",
+            $"A data summary reports a {term} of {value}. Does the {term} describe center or variation?",
+            "Measures such as mean/median describe center; measures such as range/IQR describe variation.",
+            AssessmentItemType.ShortAnswer,
+            ("kind", kind), ("value", value));
     }
 
     private static Problem SystemsInequalities(Random r, int scale)
