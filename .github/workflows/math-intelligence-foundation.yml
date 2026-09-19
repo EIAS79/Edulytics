@@ -16,6 +16,7 @@ on:
       - 'tools/math_intelligence/**'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
       - '.github/workflows/math-intelligence-foundation.yml'
+      - 'docs/math-v2/MATHEMATICS_PRACTICE_COMPLETION_MASTER_PLAN.md'
   push:
     branches:
       - main
@@ -31,6 +32,7 @@ on:
       - 'tools/math_intelligence/**'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
       - '.github/workflows/math-intelligence-foundation.yml'
+      - 'docs/math-v2/MATHEMATICS_PRACTICE_COMPLETION_MASTER_PLAN.md'
   workflow_dispatch:
 
 permissions:
