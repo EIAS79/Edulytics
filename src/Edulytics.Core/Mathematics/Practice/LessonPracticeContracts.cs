@@ -15,8 +15,13 @@ public sealed record LessonPracticeContract(
     string Readiness,
     string ContractVersion)
 {
+    public IReadOnlyList<string> SkillIds { get; init; } = [SkillId];
+
     public Stage18PracticeSkillContract ToLegacyStage18Contract() =>
-        new(LessonCode, SkillId, Mechanic, AllowedQuestionFamilies);
+        new(LessonCode, SkillId, Mechanic, AllowedQuestionFamilies)
+        {
+            SkillIds = SkillIds
+        };
 }
 
 /// <summary>
