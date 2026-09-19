@@ -104,6 +104,9 @@
         "10\\\\s*(?:×|x|\\\\\\\\times)",
         "\\\\sqrt",
         "10\\s*(?:×|x|\\\\times)"
+      ],
+      "negativeTitlePatterns": [
+        "\\bbattery power\\b"
       ]
     },
     {
@@ -255,6 +258,11 @@
         "\\\\binputs?\\\\b.*\\\\boutputs?\\\\b",
         "\\by\\s*=",
         "\\binputs?\\b.*\\boutputs?\\b"
+      ],
+      "negativeTitlePatterns": [
+        "\\blogarithmic functions?\\b",
+        "\\bfunctions involving percent change\\b",
+        "\\busing functions to model\\b"
       ]
     },
     {
@@ -274,6 +282,9 @@
         "\\bmidpoint\\b",
         "\\bcoordinate\\b",
         "\\bline\\b"
+      ],
+      "negativeTitlePatterns": [
+        "\\bdistance around shapes\\b"
       ]
     },
     {
@@ -432,7 +443,9 @@
         "\\breflect",
         "\\benlarg",
         "\\btransformation\\b",
-        "\\bscale factor\\b"
+        "\\bscale factor\\b",
+        "\\brigid motions?\\b",
+        "\\bdilat(?:e|ion|ions)\\b"
       ]
     },
     {
@@ -522,6 +535,44 @@
       ]
     },
     {
+      "id": "average-rate-of-change-functions",
+      "titlePatterns": [
+        "\\baverage rate of change\\b",
+        "\\blooking at rates? of change\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\baverage rate of change\\b",
+        "\\bslope\\b",
+        "\\bper (?:hour|year|unit)\\b",
+        "f\\s*\\(b\\).*f\\s*\\(a\\)"
+      ]
+    },
+    {
+      "id": "function-percent-change",
+      "titlePatterns": [
+        "\\bfunctions involving percent change\\b"
+      ],
+      "workedExamplePatterns": [
+        "%",
+        "\\bpercent(?:age)?\\b",
+        "\\bdiscount\\b",
+        "\\bpercent change\\b"
+      ]
+    },
+    {
+      "id": "function-context-modeling",
+      "titlePatterns": [
+        "\\busing functions to model\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bfunction\\b",
+        "\\bmodel\\b",
+        "[a-z]\\s*\\(",
+        "%",
+        "\\bpercent(?:age)?\\b"
+      ]
+    },
+    {
       "id": "differentiation",
       "titlePatterns": [
         "\\bdifferentiat",
@@ -534,6 +585,10 @@
         "\\bdifferentiat",
         "\\bderivative\\b",
         "\\bstationary point\\b"
+      ],
+      "negativeTitlePatterns": [
+        "\\baverage rate of change\\b",
+        "\\blooking at rates? of change\\b"
       ]
     },
     {
