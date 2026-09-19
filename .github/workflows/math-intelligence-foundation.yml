@@ -87,7 +87,7 @@ jobs:
               f"- Practice-eligible: **{s['practiceEligibleLessonCount']:,}**",
               f"- READY_VERIFIED: **{s['READY_VERIFIED']:,}**",
               f"- Non-standalone with evidence: **{s['NON_STANDALONE_WITH_EVIDENCE']:,}**",
-              f"- Practice-eligible blocked: **{s['practiceEligibleBlockedCount']:,}**",
+              f"- Practice-eligible blocked: **{s.get('practiceEligibleBlockedCount', 0):,}**",
               f"- Completion: **{s['completionPercent']:.2f}%**",
               f"- Internal matrix blockers: **{s['internalBlockerCount']:,}**",
           ]
