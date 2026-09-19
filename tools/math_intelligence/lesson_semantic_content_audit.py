@@ -20,6 +20,7 @@ REPORT = ROOT / "artifacts/math-intelligence/lesson-semantic-content-audit.json"
 class SemanticRule:
     rule_id: str
     title_patterns: tuple[re.Pattern[str], ...]
+    negative_title_patterns: tuple[re.Pattern[str], ...]
     worked_patterns: tuple[re.Pattern[str], ...]
 
 
@@ -92,12 +93,17 @@ def load_rules() -> tuple[list[SemanticRule], list[str]]:
             continue
         seen.add(rule_id)
         title_patterns = compile_patterns(row.get("titlePatterns"), f"{rule_id}.titlePatterns", errors)
+        negative_title_patterns = compile_patterns(
+            row.get("negativeTitlePatterns"),
+            f"{rule_id}.negativeTitlePatterns",
+            errors,
+        )
         worked_patterns = compile_patterns(row.get("workedExamplePatterns"), f"{rule_id}.workedExamplePatterns", errors)
         if not title_patterns:
             errors.append(f"Semantic-content signature {rule_id} has no title patterns.")
         if not worked_patterns:
             errors.append(f"Semantic-content signature {rule_id} has no worked-example patterns.")
-        rules.append(SemanticRule(rule_id, title_patterns, worked_patterns))
+        rules.append(SemanticRule(rule_id, title_patterns, negative_title_patterns, worked_patterns))
     return rules, errors
 
 
@@ -170,6 +176,9 @@ def audit() -> dict[str, Any]:
             for rule in rules:
                 title_hits = pattern_hits(rule.title_patterns, base_title)
                 if not title_hits:
+                    continue
+                negative_title_hits = pattern_hits(rule.negative_title_patterns, base_title)
+                if negative_title_hits:
                     continue
                 worked_hits = pattern_hits(rule.worked_patterns, worked)
                 explanation_hits = pattern_hits(rule.worked_patterns, explanation)
