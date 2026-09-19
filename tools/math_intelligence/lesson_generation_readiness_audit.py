@@ -267,9 +267,11 @@ def audit() -> dict[str, Any]:
         )
         reviewed_official_mapping = bool(
             mapping
-            and mapping.get("sourceType") in {
+            and str(mapping.get("sourceType") or "") in {
                 "OfficialReviewedExactTitleRule",
                 "OfficialReviewedUniqueTitleRule",
+                "OfficialReviewedCanonicalEvidence",
+                "OfficialOutcomeRule",
             }
         )
         readiness, reasons = decide(
