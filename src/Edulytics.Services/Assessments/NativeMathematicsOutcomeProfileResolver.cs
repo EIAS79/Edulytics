@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
 using Edulytics.Core.Entities;
 using Edulytics.Core.MathematicsGeneration;
+using Edulytics.Services.MathematicsGeneration;
 
 namespace Edulytics.Services.Assessments;
 
