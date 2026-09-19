@@ -99,7 +99,7 @@ public sealed class UniversalMathematicsQuestionGenerationEngine
             GeneratedMathematicsItem? candidate = null;
             if (profile.HasExactSkillContract)
             {
-                candidate = GenerateExactSkillContract(
+                candidate = UniversalExactSkillContractAdapter.Generate(
                     blueprint,
                     profile,
                     difficulty,
