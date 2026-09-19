@@ -277,8 +277,8 @@ public static class PracticeMathVisualRenderer
         var sb = SvgStart("Right triangle with side and angle labels tied to the question values.");
         sb.Append("<polygon points='85,215 335,215 85,55' class='shape fill'/>");
         sb.Append("<path d='M85 195 L105 195 L105 215' class='mark'/>");
-        Text(sb, 45, 140, vertical?.ToString(CultureInfo.InvariantCulture) ?? "opposite", "label");
-        Text(sb, 205, 238, horizontal?.ToString(CultureInfo.InvariantCulture) ?? "adjacent", "label");
+        Text(sb, 45, 140, verticalLabel ?? vertical?.ToString(CultureInfo.InvariantCulture) ?? "opposite", "label");
+        Text(sb, 205, 238, horizontalLabel ?? horizontal?.ToString(CultureInfo.InvariantCulture) ?? "adjacent", "label");
         Text(sb, 225, 122, hypotenuse?.ToString(CultureInfo.InvariantCulture) ?? "hypotenuse", hypotenuse.HasValue ? "label" : "hint");
         Text(sb, 306, 198, expectedAngle.HasValue ? $"{expectedAngle.Value}°" : "θ", "unknown");
         return SvgEnd(sb);
