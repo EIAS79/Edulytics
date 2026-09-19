@@ -389,18 +389,41 @@ def audit() -> dict[str, Any]:
                 ]
             elif official_mapping:
                 status = "EXISTING_VERIFIED_MAPPING"
+                official_source = str(
+                    official_mapping.get("sourceType")
+                    or "OfficialReviewedRule"
+                )
+                official_rule_ids = clean_list(
+                    official_mapping.get("officialPracticeRuleIds")
+                )
+                if not official_rule_ids:
+                    single_rule = str(
+                        official_mapping.get("officialPracticeRuleId")
+                        or ""
+                    ).strip()
+                    official_rule_ids = [single_rule] if single_rule else []
                 candidates = [{
                     "skillId": skill,
                     "score": None,
-                    "titleMatched": True,
+                    "titleMatched": (
+                        official_source != "OfficialOutcomeRule"
+                    ),
                     "evidence": [{
-                        "type": "ReviewedOfficialExactTitleRule",
-                        "ruleId": official_mapping.get("officialPracticeRuleId"),
-                        "signal": fields["title"],
+                        "type": official_source,
+                        "ruleIds": official_rule_ids,
+                        "signal": (
+                            outcomes
+                            if official_source == "OfficialOutcomeRule"
+                            else fields["title"]
+                        ),
                     }],
                 } for skill in clean_list(official_mapping.get("primarySkills"))]
                 diagnostics = [
-                    "Official lesson full-matches a reviewed anchored exact-title Practice rule; broad keyword promotion is forbidden."
+                    (
+                        "Every official OutcomeCode resolves through the reviewed official Practice rule registry."
+                        if official_source == "OfficialOutcomeRule"
+                        else "Reviewed official lesson evidence supplies an approved exact Practice mapping."
+                    )
                 ]
             else:
                 candidates = [
