@@ -19,6 +19,31 @@ public static class ExactMathematicsCapabilityResolver
 
         var text = semanticContext.Trim().ToUpperInvariant();
 
+        // Core exact arithmetic / representation targets.
+        if (ContainsAny(text, "LEAST COMMON MULTIPLE", "LEAST COMMON MULTIPLES", "LCM"))
+        {
+            return Exact(
+                "number.lcm",
+                ["number.lcm.two_numbers"],
+                "ExactLeastCommonMultiple");
+        }
+
+        if (ContainsAny(text, "PERCENTAGE OF A QUANTITY", "PERCENTAGES OF QUANTITIES", "FIND A PERCENTAGE"))
+        {
+            return Exact(
+                "percentages.of_quantity",
+                ["percentages.of_quantity.direct"],
+                "ExactPercentageOfQuantity");
+        }
+
+        if (ContainsAny(text, "FRACTION REPRESENTATION", "FRACTION BAR", "REPRESENT FRACTIONS"))
+        {
+            return Exact(
+                "fractions.represent.interpret",
+                ["fractions.represent.interpret.fraction_bar"],
+                "ExactFractionRepresentation");
+        }
+
         // Exact algebra
         if (ContainsAny(text, "LINEAR INEQUALITY", "LINEAR INEQUALITIES") ||
             (text.Contains("INEQUALIT", StringComparison.Ordinal) &&
