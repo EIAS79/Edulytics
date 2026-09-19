@@ -5,6 +5,7 @@ using Edulytics.Core.AssessmentIntelligence;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Core.MathematicsGeneration;
+using Edulytics.Services.Mathematics;
 
 namespace Edulytics.Services.MathematicsGeneration;
 
