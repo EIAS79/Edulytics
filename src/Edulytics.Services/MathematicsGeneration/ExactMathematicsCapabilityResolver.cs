@@ -28,12 +28,32 @@ public static class ExactMathematicsCapabilityResolver
                 "ExactLeastCommonMultiple");
         }
 
+        if (ContainsAny(text, "PERCENTAGES", "PERCENTAGE — ADVANCED REASONING", "PERCENTAGES — ADVANCED REASONING"))
+        {
+            return Exact(
+                "percentages.core",
+                ["percentages.core.of_quantity", "percentages.core.increase_decrease"],
+                "ExactPercentagesCore");
+        }
+
         if (ContainsAny(text, "PERCENTAGE OF A QUANTITY", "PERCENTAGES OF QUANTITIES", "FIND A PERCENTAGE"))
         {
             return Exact(
                 "percentages.of_quantity",
                 ["percentages.of_quantity.direct"],
                 "ExactPercentageOfQuantity");
+        }
+
+        if (ContainsAny(text, "SEQUENCES", "SEQUENCE — ADVANCED REASONING", "SEQUENCES — ADVANCED REASONING"))
+        {
+            return Exact(
+                "sequences.core",
+                [
+                    "sequences.core.arithmetic_nth_term",
+                    "sequences.core.geometric_nth_term",
+                    "sequences.core.find_position_arithmetic"
+                ],
+                "ExactSequencesCore");
         }
 
         if (ContainsAny(text, "FRACTION REPRESENTATION", "FRACTION BAR", "REPRESENT FRACTIONS"))
@@ -214,13 +234,27 @@ public static class ExactMathematicsCapabilityResolver
                 "ExactAngleRelationships");
         }
 
+        if (ContainsAny(text, "POLYGONS", "POLYGON ANGLES"))
+        {
+            return Exact(
+                "geometry.polygons.angle_sum",
+                [
+                    "geometry.polygons.interior_angle_sum",
+                    "geometry.polygons.missing_interior_angle",
+                    "geometry.polygons.regular_interior_angle"
+                ],
+                "ExactPolygonAngles");
+        }
+
         if (ContainsAny(text, "PERIMETER AND AREA", "RECTANGLE AREA", "RECTANGLE PERIMETER"))
         {
             return Exact(
                 "geometry.perimeter_area",
                 [
                     "geometry.perimeter_area.rectangle_area",
-                    "geometry.perimeter_area.rectangle_perimeter"
+                    "geometry.perimeter_area.rectangle_perimeter",
+                    "geometry.perimeter_area.triangle_area",
+                    "geometry.perimeter_area.rectangle_missing_side"
                 ],
                 "ExactPerimeterArea");
         }
