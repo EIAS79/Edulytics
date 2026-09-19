@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "registry": "Official outcome to reviewed Practice target rules",
+  "resolutionPolicy": "Highest-priority unique match only. Ties fail closed. Code scope is mandatory for every rule.",
+  "rules": [
+    {"id":"ccss-fraction-add-subtract","priority":300,"codePatterns":["^CCSS:(?:[3-8]\\.(?:NF|NS)|5\\.MD)\\."],"textPatterns":["add(?:ition)? and subtract(?:ion)?[^.]{0,80}fraction|add and subtract fractions|sum or difference of fractions|addition and subtraction of fractions"],"targetRuleId":"fraction-add-subtract"},
+    {"id":"ccss-fraction-multiply-divide","priority":300,"codePatterns":["^CCSS:(?:[4-8]\\.(?:NF|NS))\\."],"textPatterns":["multiply[^.]{0,100}fraction|division[^.]{0,100}fraction|divide[^.]{0,100}fraction|fraction as division|division of whole numbers leading to answers in the form of fractions"],"targetRuleId":"fraction-multiply-divide"},
+    {"id":"ccss-fraction-equivalent","priority":300,"codePatterns":["^CCSS:[3-8]\\.(?:NF|NS)\\."],"textPatterns":["equivalent fractions|equivalence of fractions|generate simple equivalent fractions"],"targetRuleId":"equivalent-fractions"},
+    {"id":"ccss-fraction-compare","priority":300,"codePatterns":["^CCSS:[3-8]\\.(?:NF|NS)\\."],"textPatterns":["compare two fractions|compare fractions|comparison of fractions"],"targetRuleId":"fraction-compare"},
+    {"id":"ccss-fraction-number-line","priority":295,"codePatterns":["^CCSS:[3-8]\\.(?:NF|NS)\\."],"textPatterns":["fraction as a number on the number line|fractions on a number line|number line diagram"],"targetRuleId":"fraction-number-line"},
+    {"id":"ccss-fraction-representation","priority":260,"codePatterns":["^CCSS:(?:[1-5]\\.G|[3-8]\\.NF)\\."],"textPatterns":["partition[^.]{0,120}equal shares|unit fraction|fraction 1/b|fraction a/b|equal parts"],"targetRuleId":"fraction-representation"},
+
+    {"id":"ccss-decimal-operations","priority":290,"codePatterns":["^CCSS:[4-8]\\.(?:NBT|NS)\\."],"textPatterns":["add, subtract, multiply, and divide decimals|operations with decimals|decimal[^.]{0,120}(?:add|subtract|multiply|divide)"],"targetRuleId":"decimal-operations"},
+    {"id":"ccss-decimal-round-compare","priority":285,"codePatterns":["^CCSS:[4-8]\\.(?:NBT|NS)\\."],"textPatterns":["round decimals|compare two decimals|compare decimals"],"targetRuleId":"decimal-compare-round"},
+    {"id":"ccss-decimal-place","priority":250,"codePatterns":["^CCSS:[4-8]\\.(?:NBT|NS)\\."],"textPatterns":["decimal|base-ten decimal"],"targetRuleId":"decimal-place"},
+
+    {"id":"ccss-rounding","priority":280,"codePatterns":["^CCSS:[1-8]\\.(?:NBT|NS|OA)\\."],"textPatterns":["round whole numbers|round multi-digit|rounding|estimate[^.]{0,120}round"],"targetRuleId":"rounding-estimation"},
+    {"id":"ccss-place-value","priority":240,"codePatterns":["^CCSS:[1-5]\\.NBT\\."],"textPatterns":["place value|digits?[^.]{0,80}(?:tens|ones|hundreds|thousands)|base-ten numerals|expanded form|10 times"],"targetRuleId":"place-value"},
+    {"id":"ccss-number-compare","priority":250,"codePatterns":["^CCSS:[1-8]\\.(?:NBT|NS)\\."],"textPatterns":["compare two[^.]{0,80}numbers|using >, =, and <|order[^.]{0,80}numbers"],"targetRuleId":"number-compare-order"},
+    {"id":"ccss-parity","priority":280,"codePatterns":["^CCSS:[1-8]\\.(?:OA|NS)\\."],"textPatterns":["odd or even|even number|odd number"],"targetRuleId":"number-parity"},
+    {"id":"ccss-factors-primes","priority":285,"codePatterns":["^CCSS:[3-8]\\.(?:OA|NS)\\."],"textPatterns":["factor pairs|multiple of each of its factors|prime or composite|greatest common factor|least common multiple"],"targetRuleId":"factors-primes"},
+    {"id":"ccss-powers-ten","priority":285,"codePatterns":["^CCSS:[4-8]\\.(?:NBT|NS)\\."],"textPatterns":["powers? of 10|power of 10|multiply(?:ing)?[^.]{0,80}by 10|divide[^.]{0,80}by 10"],"targetRuleId":"number-scale-power10"},
+
+    {"id":"ccss-add-subtract","priority":220,"codePatterns":["^CCSS:[1-8]\\.(?:OA|NBT|MD|NS|EE)\\."],"textPatterns":["addition and subtraction|add and subtract|add[^.]{0,80}subtract|sums and differences|unknown-addend|sum is|difference"],"targetRuleId":"whole-addition"},
+    {"id":"ccss-subtraction-only","priority":225,"codePatterns":["^CCSS:[1-8]\\.(?:OA|NBT|MD|NS|EE)\\."],"textPatterns":["subtract multiples|subtraction equation|subtract within|difference between"],"targetRuleId":"whole-subtraction"},
+    {"id":"ccss-multiply-divide","priority":225,"codePatterns":["^CCSS:[2-8]\\.(?:OA|NBT|MD|NS|EE)\\."],"textPatterns":["multiplication and division|multiply and divide|products?[^.]{0,100}quotients?|equal groups|rectangular arrays|whole-number quotients|division as an unknown-factor"],"targetRuleId":"arithmetic-structures"},
+    {"id":"ccss-multiplication-only","priority":224,"codePatterns":["^CCSS:[2-8]\\.(?:OA|NBT|MD|NS|EE)\\."],"textPatterns":["multiply[^.]{0,120}whole number|products of whole numbers|multiplication equation|multiply one-digit|fluently multiply"],"targetRuleId":"whole-multiplication"},
+    {"id":"ccss-division-only","priority":224,"codePatterns":["^CCSS:[2-8]\\.(?:OA|NBT|MD|NS|EE)\\."],"textPatterns":["whole-number quotients|division equation|divide whole numbers|fluently divide"],"targetRuleId":"whole-division"},
+    {"id":"ccss-order-operations","priority":285,"codePatterns":["^CCSS:[3-8]\\.(?:OA|EE)\\."],"textPatterns":["order of operations|parentheses, brackets, or braces|numerical expressions"],"targetRuleId":"order-operations"},
+    {"id":"ccss-number-patterns","priority":260,"codePatterns":["^CCSS:[1-8]\\.(?:OA|NBT|EE)\\."],"textPatterns":["arithmetic patterns|numerical patterns|generate two numerical patterns|pattern that follows a given rule"],"targetRuleId":"repeating-patterns"},
+
+    {"id":"ccss-time","priority":280,"codePatterns":["^CCSS:[1-8]\\.MD\\."],"textPatterns":["tell and write time|time intervals|analog and digital clocks|nearest five minutes|nearest minute"],"targetRuleId":"time"},
+    {"id":"ccss-money","priority":280,"codePatterns":["^CCSS:[1-8]\\.MD\\."],"textPatterns":["dollar bills|quarters, dimes|money|cents"],"targetRuleId":"money"},
+    {"id":"ccss-unit-conversion","priority":275,"codePatterns":["^CCSS:[1-8]\\.MD\\."],"textPatterns":["convert among|express measurements in a larger unit|measurement equivalents|relative sizes of measurement units"],"targetRuleId":"unit-conversion"},
+    {"id":"ccss-measurement-compare","priority":230,"codePatterns":["^CCSS:[1-8]\\.MD\\."],"textPatterns":["measure the length|estimate lengths|how much longer|liquid volumes|masses of objects|measurement data"],"targetRuleId":"measurement-compare"},
+    {"id":"ccss-data-charts","priority":270,"codePatterns":["^CCSS:[1-8]\\.(?:MD|SP)\\."],"textPatterns":["picture graph|bar graph|line plot|represent, and interpret data|display a data set|frequency table|statistical diagrams"],"targetRuleId":"charts-tables"},
+    {"id":"ccss-data-collection","priority":272,"codePatterns":["^CCSS:(?:[6-8]\\.SP|HSS-(?:IC|ID))\\."],"textPatterns":["collect data|random sample|survey|sampling|data collection"],"targetRuleId":"collecting-data"},
+    {"id":"ccss-scatter","priority":290,"codePatterns":["^CCSS:(?:8\\.SP|HSS-ID)\\."],"textPatterns":["scatter plot|bivariate|association between two variables|line of best fit"],"targetRuleId":"scatter"},
+    {"id":"ccss-distributions","priority":265,"codePatterns":["^CCSS:(?:[6-8]\\.SP|HSS-ID)\\."],"textPatterns":["distribution|center, spread|center and variability|mean absolute deviation|interquartile range|quartile|histogram"],"targetRuleId":"distribution-compare"},
+
+    {"id":"ccss-perimeter-area","priority":280,"codePatterns":["^CCSS:(?:[3-8]\\.(?:MD|G)|HSG-(?:GMD|MG))\\."],"textPatterns":["area and perimeter|area of a rectangle|perimeters? of polygons|area formula|perimeter formula"],"targetRuleId":"perimeter-area"},
+    {"id":"ccss-plane-area","priority":275,"codePatterns":["^CCSS:(?:[3-8]\\.(?:MD|G)|HSG-(?:GMD|MG))\\."],"textPatterns":["area of triangles|area of quadrilaterals|area of polygons|area of plane figures|unit squares"],"targetRuleId":"triangle-parallelogram-area"},
+    {"id":"ccss-volume","priority":280,"codePatterns":["^CCSS:(?:[5-8]\\.(?:MD|G)|HSG-(?:GMD|MG))\\."],"textPatterns":["volume|unit cubes|cubic units|right rectangular prism"],"targetRuleId":"volume"},
+    {"id":"ccss-surface-area","priority":285,"codePatterns":["^CCSS:(?:[6-8]\\.G|HSG-GMD)\\."],"textPatterns":["surface area|nets? of three-dimensional"],"targetRuleId":"surface-area"},
+    {"id":"ccss-angles","priority":280,"codePatterns":["^CCSS:(?:[4-8]\\.(?:MD|G)|HSG-CO)\\."],"textPatterns":["angles?|parallel lines|perpendicular lines|rays share a common endpoint|angle measure"],"targetRuleId":"angle-basic"},
+    {"id":"ccss-transformations","priority":295,"codePatterns":["^CCSS:(?:[4-8]\\.G|HSG-CO)\\."],"textPatterns":["translation|reflection|rotation|symmetry|transformations?|rigid motion"],"targetRuleId":"transformations"},
+    {"id":"ccss-coordinate","priority":285,"codePatterns":["^CCSS:(?:5\\.G|[6-8]\\.G|HSG-GPE)\\."],"textPatterns":["coordinate plane|coordinate system|ordered pairs|coordinates|distance between points|midpoint"],"targetRuleId":"coordinates"},
+    {"id":"ccss-straight-line","priority":292,"codePatterns":["^CCSS:(?:8\\.(?:EE|F)|HSA-REI|HSF-IF|HSG-GPE)\\."],"textPatterns":["slope|gradient|equation of a line|linear function|linear relationship|straight line"],"targetRuleId":"straight-line-graphs"},
+    {"id":"ccss-congruence-similarity","priority":292,"codePatterns":["^CCSS:(?:8\\.G|HSG-(?:CO|SRT))\\."],"textPatterns":["congruen|similarity|similar figures|dilation|similar triangles"],"targetRuleId":"congruence-similarity"},
+    {"id":"ccss-circles","priority":295,"codePatterns":["^CCSS:HSG-C\\."],"textPatterns":["circle|arc|chord|tangent"],"targetRuleId":"circles"},
+    {"id":"ccss-shape-properties","priority":180,"codePatterns":["^CCSS:[1-8]\\.G\\."],"textPatterns":[],"targetRuleId":"shape-properties"},
+
+    {"id":"ccss-ratio","priority":290,"codePatterns":["^CCSS:[6-7]\\.RP\\."],"textPatterns":[],"targetRuleId":"ratio-scaling"},
+    {"id":"ccss-proportional","priority":292,"codePatterns":["^CCSS:(?:7\\.RP|8\\.EE)\\."],"textPatterns":["proportional relationship|unit rate|constant of proportionality|proportion"],"targetRuleId":"ratio-scaling"},
+
+    {"id":"ccss-linear-inequality","priority":310,"codePatterns":["^CCSS:(?:[6-8]\\.EE|HSA-REI)\\."],"textPatterns":["inequalit"],"targetRuleId":"inequalities"},
+    {"id":"ccss-systems","priority":310,"codePatterns":["^CCSS:(?:8\\.EE|HSA-REI)\\."],"textPatterns":["system of equations|systems of equations|simultaneous"],"targetRuleId":"simultaneous"},
+    {"id":"ccss-quadratic","priority":310,"codePatterns":["^CCSS:(?:HSA-(?:REI|SSE|APR)|HSF-IF)\\."],"textPatterns":["quadratic|second-degree"],"targetRuleId":"quadratic"},
+    {"id":"ccss-linear-equation","priority":300,"codePatterns":["^CCSS:(?:[6-8]\\.EE|HSA-(?:CED|REI))\\."],"textPatterns":["equation|solve[^.]{0,100}variable|unknown quantity"],"targetRuleId":"one-step-formula-equation"},
+    {"id":"ccss-algebra-expressions","priority":220,"codePatterns":["^CCSS:(?:[6-8]\\.EE|HSA-(?:SSE|APR|CED))\\."],"textPatterns":[],"targetRuleId":"algebra-expressions"},
+    {"id":"ccss-functions","priority":230,"codePatterns":["^CCSS:(?:8\\.F|HSF-(?:IF|BF))\\."],"textPatterns":[],"targetRuleId":"functions"},
+    {"id":"ccss-exponentials","priority":300,"codePatterns":["^CCSS:(?:8\\.EE|HSF-(?:IF|BF|LE)|HSA-SSE)\\."],"textPatterns":["exponential|exponent|powers? of"],"targetRuleId":"exponential-log"},
+    {"id":"ccss-trigonometry","priority":310,"codePatterns":["^CCSS:HSF-TF\\."],"textPatterns":[],"targetRuleId":"trigonometry"},
+
+    {"id":"ccss-number-real","priority":160,"codePatterns":["^CCSS:(?:[6-8]\\.NS|HSN-(?:RN|Q))\\."],"textPatterns":[],"targetRuleId":"polish-real-numbers"},
+    {"id":"ccss-complex","priority":300,"codePatterns":["^CCSS:HSN-CN\\."],"textPatterns":[],"targetRuleId":"complex"},
+    {"id":"ccss-vectors","priority":300,"codePatterns":["^CCSS:HSN-VM\\."],"textPatterns":["vector"],"targetRuleId":"vectors"},
+    {"id":"ccss-matrices","priority":305,"codePatterns":["^CCSS:HSN-VM\\."],"textPatterns":["matrix|matrices"],"targetRuleId":"matrices"},
+
+    {"id":"ccss-hs-plane-geometry","priority":150,"codePatterns":["^CCSS:HSG-(?:CO|SRT|C)\\."],"textPatterns":[],"targetRuleId":"polish-planimetry"},
+    {"id":"ccss-hs-analytic-geometry","priority":150,"codePatterns":["^CCSS:HSG-GPE\\."],"textPatterns":[],"targetRuleId":"coordinates"},
+    {"id":"ccss-hs-solid-geometry","priority":150,"codePatterns":["^CCSS:HSG-(?:GMD|MG)\\."],"textPatterns":[],"targetRuleId":"solid-geometry"},
+
+    {"id":"ccss-probability-conditional","priority":310,"codePatterns":["^CCSS:HSS-CP\\."],"textPatterns":["conditional probability|independent events"],"targetRuleId":"conditional-probability"},
+    {"id":"ccss-probability-events","priority":290,"codePatterns":["^CCSS:(?:[7-8]\\.SP|HSS-(?:CP|MD))\\."],"textPatterns":["probability|event|sample space|compound event"],"targetRuleId":"theoretical-probability"},
+    {"id":"ccss-statistics-hs","priority":150,"codePatterns":["^CCSS:HSS-(?:ID|IC)\\."],"textPatterns":[],"targetRuleId":"mixed-probability-statistics"},
+    {"id":"ccss-probability-hs","priority":150,"codePatterns":["^CCSS:HSS-(?:CP|MD)\\."],"textPatterns":[],"targetRuleId":"advanced-probability-models"},
+
+    {"id":"ccss-oa-fallback","priority":80,"codePatterns":["^CCSS:[1-5]\\.OA\\."],"textPatterns":[],"targetRuleId":"non-routine"},
+    {"id":"ccss-nbt-fallback","priority":80,"codePatterns":["^CCSS:[1-5]\\.NBT\\."],"textPatterns":[],"targetRuleId":"place-value"},
+    {"id":"ccss-nf-fallback","priority":80,"codePatterns":["^CCSS:[3-5]\\.NF\\."],"textPatterns":[],"targetRuleId":"fraction-representation"},
+    {"id":"ccss-md-fallback","priority":70,"codePatterns":["^CCSS:[1-5]\\.MD\\."],"textPatterns":[],"targetRuleId":"measurement-compare"},
+    {"id":"ccss-ns-fallback","priority":70,"codePatterns":["^CCSS:[6-8]\\.NS\\."],"textPatterns":[],"targetRuleId":"polish-real-numbers"},
+    {"id":"ccss-ee-fallback","priority":70,"codePatterns":["^CCSS:[6-8]\\.EE\\."],"textPatterns":[],"targetRuleId":"algebra-expressions"},
+    {"id":"ccss-sp-fallback","priority":70,"codePatterns":["^CCSS:[6-8]\\.SP\\."],"textPatterns":[],"targetRuleId":"distribution-compare"},
+    {"id":"ccss-f-fallback","priority":70,"codePatterns":["^CCSS:8\\.F\\."],"textPatterns":[],"targetRuleId":"functions"}
+  ]
+}
