@@ -17,6 +17,7 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
       - '.github/workflows/math-intelligence-foundation.yml'
       - 'docs/math-v2/MATHEMATICS_PRACTICE_COMPLETION_MASTER_PLAN.md'
+      - 'docs/math-v2/POLISH_1569_PRACTICE_REMEDIATION_MASTER_PLAN.md'
   push:
     branches:
       - main
@@ -33,6 +34,7 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
       - '.github/workflows/math-intelligence-foundation.yml'
       - 'docs/math-v2/MATHEMATICS_PRACTICE_COMPLETION_MASTER_PLAN.md'
+      - 'docs/math-v2/POLISH_1569_PRACTICE_REMEDIATION_MASTER_PLAN.md'
   workflow_dispatch:
 
 permissions:
@@ -43,6 +45,13 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7.0.1
+      - name: Install Polish official-source audit dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check --quiet beautifulsoup4 pypdf
+      - name: Reconstruct Polish official Outcome evidence
+        run: |
+          set -euo pipefail
+          python3 tools/math_intelligence/polish_outcome_source_audit.py --write-report
       - name: Run Mathematics V2 registry integrity audit
         run: |
           set -euo pipefail
@@ -145,6 +154,7 @@ jobs:
         with:
           name: math-intelligence-catalogue-baseline-${{ github.sha }}
           path: |
+            artifacts/math-intelligence/pl-outcome-source-evidence.json
             artifacts/math-intelligence/math-registry-integrity.json
             artifacts/math-intelligence/catalogue-skill-baseline.json
             artifacts/math-intelligence/lesson-skill-resolution-audit.json
