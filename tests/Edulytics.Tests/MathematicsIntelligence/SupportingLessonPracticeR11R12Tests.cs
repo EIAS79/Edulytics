@@ -50,6 +50,7 @@ public sealed class SupportingLessonPracticeR11R12Tests
     [InlineData("geometry.coordinate.gradient_between_points")]
     [InlineData("geometry.angles.parallel_lines")]
     [InlineData("geometry.angles.supplementary")]
+    [InlineData("geometry.angles.algebraic_supplementary")]
     [InlineData("geometry.similarity.find_missing_length")]
     [InlineData("geometry.similarity.scale_factor")]
     [InlineData("geometry.congruence.identify_criterion")]
@@ -58,6 +59,7 @@ public sealed class SupportingLessonPracticeR11R12Tests
     [InlineData("geometry.rectangle.area.exact")]
     [InlineData("geometry.rectangle.perimeter.exact")]
     [InlineData("geometry.right_triangle.pythagorean.exact")]
+    [InlineData("geometry.right_triangle.pythagorean.find_leg_exact")]
     [InlineData("trigonometry.right_triangle.ratio_exact")]
     [InlineData("trigonometry.right_triangle.find_side_exact")]
     [InlineData("trigonometry.right_triangle.find_angle_exact")]
@@ -93,6 +95,8 @@ public sealed class SupportingLessonPracticeR11R12Tests
     [InlineData("vectors.dot.exact_rational")]
     [InlineData("vectors.magnitude.exact")]
     [InlineData("vectors.between_points.exact")]
+    [InlineData("algebra.linear.variables_both_sides")]
+    [InlineData("algebra.linear.inequality.variables_both_sides")]
     public void VectorFamiliesGenerateAndIndependentlyVerify(string family)
     {
         var engine = new ExactSkillContractQuestionEngine();
@@ -146,6 +150,40 @@ public sealed class SupportingLessonPracticeR11R12Tests
                 question.Parameters,
                 question.CorrectAnswer));
         });
+    }
+
+    [Theory]
+    [InlineData("PED:CAMBRIDGE-INTL-MATH:L10:CORE:02:02:LINEAR-EQUATIONS", "algebra.linear.solve", "algebra.linear.variables_both_sides")]
+    [InlineData("PED:UAE-MOE-MATH:L12:ADVANCED:02:06:INEQUALITIES", "algebra.linear.inequality.solve", "algebra.linear.inequality.variables_both_sides")]
+    [InlineData("PED:UAE-MOE-MATH:L10:ADVANCED:03:07:PYTHAGORAS-THEOREM", "geometry.right_triangle.pythagorean", "geometry.right_triangle.pythagorean.find_leg_exact")]
+    [InlineData("PED:UAE-MOE-MATH:L9:ADVANCED:03:01:ANGLE-RELATIONSHIPS", "geometry.angles.relationships", "geometry.angles.algebraic_supplementary")]
+    public void R5PromotedSupportingMappingsProjectIntoExactRuntimeContracts(
+        string lessonCode,
+        string expectedSkill,
+        string expectedDeepFamily)
+    {
+        Assert.True(
+            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.TryResolve(
+                lessonCode,
+                out var contract));
+
+        Assert.NotNull(contract);
+        Assert.Equal(expectedSkill, contract!.SkillId);
+        Assert.Equal("READY_VERIFIED", contract.Readiness);
+        Assert.Contains(expectedDeepFamily, contract.AllowedQuestionFamilies);
+        Assert.All(
+            contract.AllowedQuestionFamilies,
+            family => Assert.True(
+                ExactSkillContractQuestionEngine.SupportsFamily(family),
+                $"R5 contract {lessonCode} routes unsupported family {family}."));
+    }
+
+    [Fact]
+    public void R5PromotionRaisesRuntimeExactContractCountTo162()
+    {
+        Assert.Equal(
+            162,
+            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.All.Count);
     }
 
     [Fact]
