@@ -190,7 +190,7 @@ def decide(
     skill_status: str,
     semantic_status: str,
     has_approved_mapping: bool,
-    has_reviewed_exact_title_mapping: bool,
+    has_reviewed_official_mapping: bool,
     has_question_family: bool,
     has_verified: bool,
     has_contextual: bool,
@@ -203,7 +203,7 @@ def decide(
         return "CONTENT_WEAK", ["Worked examples do not demonstrate the recognized mathematical target strongly enough."]
     if semantic_status == "REVIEW_REQUIRED":
         return "REQUIRES_ACADEMIC_REVIEW", ["Semantic content evidence requires explicit academic review."]
-    if semantic_status == "UNCLASSIFIED" and not has_reviewed_exact_title_mapping:
+    if semantic_status == "UNCLASSIFIED" and not has_reviewed_official_mapping:
         return "REQUIRES_ACADEMIC_REVIEW", ["Semantic content evidence is not strong enough for generation readiness."]
     if skill_status == "AMBIGUOUS":
         return "SKILL_AMBIGUOUS", ["Multiple SkillIds remain plausible."]
@@ -265,7 +265,7 @@ def audit() -> dict[str, Any]:
             capabilities,
             families,
         )
-        reviewed_exact_title_mapping = bool(
+        reviewed_official_mapping = bool(
             mapping
             and mapping.get("sourceType") in {
                 "OfficialReviewedExactTitleRule",
@@ -276,7 +276,7 @@ def audit() -> dict[str, Any]:
             skill_status,
             semantic_status,
             mapping is not None,
-            reviewed_exact_title_mapping,
+            reviewed_official_mapping,
             has_family,
             has_verified,
             has_contextual,
@@ -305,7 +305,7 @@ def audit() -> dict[str, Any]:
             "skillResolutionStatus": skill_status,
             "semanticContentStatus": semantic_status,
             "approvedMapping": mapping is not None,
-            "reviewedExactTitleMapping": reviewed_exact_title_mapping,
+            "reviewedOfficialMapping": reviewed_official_mapping,
             "approvedPrimarySkills": [] if mapping is None else clean_list(mapping.get("primarySkills")),
             "hasQuestionFamily": has_family,
             "hasVerifiedSolverCapability": has_verified,
