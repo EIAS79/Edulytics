@@ -183,8 +183,7 @@ public sealed class CanonicalMathematicsCapabilityTests
     [Theory]
     [InlineData("Solve a one-step equation")]
     [InlineData("حل معادلات الخطوة الواحدة")]
-    [InlineData("Solve linear equations in one variable")]
-    public void EquationSemantics_AreContextualUntilNativeEquationFamilyIsCorrected(string description)
+    public void BroadEquationSemanticsRemainContextualUntilExactSemanticResolverMatches(string description)
     {
         var skills = CanonicalMathematicsSkillMapper.Resolve(null, description);
         var capability = MathematicsAiCapabilityMatrix.Resolve(null, description);
@@ -192,6 +191,21 @@ public sealed class CanonicalMathematicsCapabilityTests
         Assert.DoesNotContain(CanonicalMathematicsSkill.OneStepLinearEquation, skills);
         Assert.Equal(MathematicsAiCapabilityLevel.AiAssisted, capability.Level);
         Assert.True(capability.CanGenerateAssisted);
+    }
+
+    [Fact]
+    public void ReviewedLinearEquationSemanticTargetUsesExactSkillContract()
+    {
+        const string description = "Solve linear equations in one variable";
+        var capability = MathematicsAiCapabilityMatrix.Resolve(null, description);
+        var exact = ExactMathematicsCapabilityResolver.Resolve(description);
+
+        Assert.Equal(MathematicsAiCapabilityLevel.VerifiedAi, capability.Level);
+        Assert.True(capability.CanGenerateVerified);
+        Assert.Equal("edulytics-exact-skill-contract", capability.ProviderKey);
+        Assert.NotNull(exact);
+        Assert.Equal("algebra.linear.solve", exact!.SkillId);
+        Assert.Contains("algebra.linear.ax_plus_b_equals_c", exact.QuestionFamilies);
     }
 
     [Theory]
