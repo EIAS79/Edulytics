@@ -219,12 +219,31 @@ def audit() -> dict[str, Any]:
                 findings = ["No semantic target signature currently classifies this lesson title."]
             else:
                 with_worked = [row for row in matched_rules if row["workedExamplePatterns"]]
+                missing_worked = [
+                    row for row in matched_rules
+                    if not row["workedExamplePatterns"]
+                ]
+                missing_with_body_evidence = [
+                    row for row in missing_worked
+                    if row["explanationEvidencePatterns"]
+                    or row["keyConceptEvidencePatterns"]
+                ]
+
                 if len(with_worked) == len(matched_rules):
                     status = "PASS_TARGETED"
                     findings = ["Worked examples contain target evidence for every matched semantic signature."]
+                elif (
+                    source_type == "OfficialMapped"
+                    and missing_worked
+                    and len(missing_with_body_evidence) == len(missing_worked)
+                ):
+                    status = "PASS_WITH_WARNINGS"
+                    findings = [
+                        "Official source-faithful lesson has target evidence in explanation/key concepts for every signature not repeated literally in the activity-style worked examples."
+                    ]
                 elif with_worked:
                     status = "REVIEW_REQUIRED"
-                    missing = [row["ruleId"] for row in matched_rules if not row["workedExamplePatterns"]]
+                    missing = [row["ruleId"] for row in missing_worked]
                     findings = [
                         "Worked examples cover only part of the lesson target; missing evidence for: "
                         + ", ".join(missing)
@@ -232,7 +251,7 @@ def audit() -> dict[str, Any]:
                 else:
                     status = "CONTENT_WEAK"
                     findings = [
-                        "Lesson title matches a known mathematical target, but worked examples contain no target-specific evidence."
+                        "Lesson title matches a known mathematical target, but worked examples, explanation and key concepts contain no sufficient target-specific evidence."
                     ]
 
             # The Supporting Practice target registry is also the runtime content
