@@ -687,6 +687,203 @@
       "domain": "fractions",
       "canonicalName": "Compare fractions with different denominators",
       "legacyGameMechanic": "FRACTION_COMPARE_UNLIKE"
+    },
+    {
+      "id": "fractions.add_subtract",
+      "domain": "fractions",
+      "canonicalName": "Add and subtract fractions with exact denominator alignment",
+      "semantics": "Add or subtract fraction quantities using same, related or unlike denominators; equivalence is a supporting transformation, not the primary target.",
+      "prerequisites": [
+        "fractions.equivalent"
+      ],
+      "supportedAnswerTypes": [
+        "exact_rational"
+      ],
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.add_subtract.within_one.build",
+        "fractions.add_subtract.within_one.apply",
+        "fractions.add_subtract.same_denominator.mixed.build",
+        "fractions.add_subtract.same_denominator.mixed.apply",
+        "fractions.add_subtract.related.build",
+        "fractions.add_subtract.related.apply",
+        "fractions.add_subtract.common_denominator.build",
+        "fractions.add_subtract.common_denominator.apply"
+      ]
+    },
+    {
+      "id": "fractions.compare.benchmark",
+      "domain": "fractions",
+      "canonicalName": "Compare fractions with benchmark values",
+      "semantics": "Compare a fraction with benchmark values such as one half or one using exact equivalence or cross-products.",
+      "prerequisites": [
+        "fractions.equivalent"
+      ],
+      "supportedAnswerTypes": [
+        "relation"
+      ],
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.compare.benchmark.exact",
+        "fractions.verify.compare.benchmark"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.compare.benchmark"
+      ]
+    },
+    {
+      "id": "fractions.represent.interpret",
+      "domain": "fractions",
+      "canonicalName": "Interpret and construct fraction representations",
+      "semantics": "Interpret or construct visual/number-line representations of fractions, including fractions greater than one.",
+      "prerequisites": [],
+      "supportedAnswerTypes": [
+        "representation",
+        "exact_rational"
+      ],
+      "v2Status": "Blocked",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
+    },
+    {
+      "id": "geometry.coordinate.straight_line",
+      "domain": "geometry",
+      "canonicalName": "Reason with coordinates and straight-line gradients",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.coordinate.gradient_between_points"
+      ]
+    },
+    {
+      "id": "geometry.angles.relationships",
+      "domain": "geometry",
+      "canonicalName": "Use angle relationships in lines and parallel-line configurations",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.angles.parallel_lines",
+        "geometry.angles.supplementary"
+      ]
+    },
+    {
+      "id": "geometry.similarity",
+      "domain": "geometry",
+      "canonicalName": "Use similarity and scale factors for corresponding lengths",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.similarity.find_missing_length",
+        "geometry.similarity.scale_factor"
+      ]
+    },
+    {
+      "id": "geometry.congruence",
+      "domain": "geometry",
+      "canonicalName": "Identify valid triangle congruence criteria",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.congruence.identify_criterion"
+      ]
+    },
+    {
+      "id": "geometry.surface_area",
+      "domain": "geometry",
+      "canonicalName": "Calculate surface area of three-dimensional solids",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.surface_area.rectangular_prism"
+      ]
+    },
+    {
+      "id": "geometry.volume",
+      "domain": "geometry",
+      "canonicalName": "Calculate volume of three-dimensional solids",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.volume.rectangular_prism"
+      ]
+    },
+    {
+      "id": "geometry.surface_area_volume",
+      "domain": "geometry",
+      "canonicalName": "Reason about surface area and volume",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.surface_area.rectangular_prism",
+        "geometry.volume.rectangular_prism"
+      ]
+    },
+    {
+      "id": "geometry.perimeter_area",
+      "domain": "geometry",
+      "canonicalName": "Calculate perimeter and area of plane figures",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.perimeter_area.rectangle_area",
+        "geometry.perimeter_area.rectangle_perimeter"
+      ]
+    },
+    {
+      "id": "trigonometry.right_triangle.sin_cos_tan",
+      "domain": "trigonometry",
+      "canonicalName": "Use sine cosine and tangent in right triangles",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "trigonometry.right_triangle.ratio_exact",
+        "trigonometry.right_triangle.find_side_exact",
+        "trigonometry.right_triangle.find_angle_exact"
+      ]
+    },
+    {
+      "id": "trigonometry.modelling",
+      "domain": "trigonometry",
+      "canonicalName": "Model contextual right-triangle problems with trigonometry",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "trigonometry.modelling.contextual"
+      ]
     }
   ]
 }

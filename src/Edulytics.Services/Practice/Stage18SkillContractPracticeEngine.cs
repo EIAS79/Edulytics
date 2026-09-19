@@ -47,8 +47,17 @@ public sealed class Stage18SkillContractPracticeEngine
             seed,
             excludedExposureFingerprints);
 
-        return exact.Select(question => new AssessmentItem
+        return exact.Select(question =>
         {
+            var alignment = LessonPracticeAlignmentValidator.Validate(contract, question);
+            if (!alignment.IsAligned)
+            {
+                throw new InvalidOperationException(
+                    $"Exact Practice alignment validator rejected {question.Family}: {alignment.ReasonCode}.");
+            }
+
+            return new AssessmentItem
+            {
             Id = Guid.NewGuid(),
             SchoolId = schoolId,
             CurriculumAdoptionId = curriculumAdoptionId,
@@ -73,6 +82,7 @@ public sealed class Stage18SkillContractPracticeEngine
             {
                 stage = 18,
                 alignment = "skill-contract-verified",
+                alignmentReason = alignment.ReasonCode,
                 readiness = "READY_VERIFIED",
                 skillContract = contract.SkillId,
                 allowedFamily = question.Family,
@@ -83,7 +93,8 @@ public sealed class Stage18SkillContractPracticeEngine
                 officialMasteryEvidence = false
             }),
             CreatedAtUtc = DateTime.UtcNow,
-            RowVersion = []
+                RowVersion = []
+            };
         }).ToArray();
     }
 
@@ -121,10 +132,19 @@ public sealed class Stage18SkillContractPracticeEngine
             foreach (var property in parameters.EnumerateObject())
                 values[property.Name] = property.Value.GetInt32();
 
-            return ExactSkillContractQuestionEngine.Verify(
+            if (!ExactSkillContractQuestionEngine.Verify(
+                    item.GenerationFamily,
+                    values,
+                    item.CorrectAnswer))
+            {
+                return false;
+            }
+
+            return LessonPracticeAlignmentValidator.ValidatePersisted(
+                contract,
                 item.GenerationFamily,
                 values,
-                item.CorrectAnswer);
+                item.CorrectAnswer).IsAligned;
         }
         catch (Exception exception) when (
             exception is JsonException or

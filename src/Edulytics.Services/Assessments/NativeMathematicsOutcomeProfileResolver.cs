@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
 using Edulytics.Core.Entities;
 using Edulytics.Core.MathematicsGeneration;
+using Edulytics.Services.MathematicsGeneration;
 
 namespace Edulytics.Services.Assessments;
 
@@ -24,13 +25,18 @@ public static class NativeMathematicsOutcomeProfileResolver
             outcome.Code,
             semanticContext);
 
-        if (!capability.CanGenerate)
+        var exact = ExactMathematicsCapabilityResolver.Resolve(semanticContext);
+        if (!capability.CanGenerate && exact is null)
             return null;
+
+        var families = capability.GenerationFamilies.Count > 0
+            ? capability.GenerationFamilies
+            : [MathematicsGeneratorFamily.CurriculumContextCheck];
 
         return new MathematicsOutcomeGenerationProfile(
             outcome.Id,
             outcome.Code,
-            capability.GenerationFamilies)
+            families)
         {
             CanonicalSkills = capability.CanonicalSkills,
             IntegerComputationMaximum = capability.CanGenerateVerified
@@ -39,7 +45,9 @@ public static class NativeMathematicsOutcomeProfileResolver
                     capability.CanonicalSkills)
                 : null,
             GenerationContext = semanticContext,
-            IsContextualAssisted = capability.CanGenerateAssisted
+            IsContextualAssisted = exact is null && capability.CanGenerateAssisted,
+            ExactSkillId = exact?.SkillId,
+            ExactQuestionFamilies = exact?.QuestionFamilies ?? []
         };
     }
 

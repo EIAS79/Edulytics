@@ -77,6 +77,17 @@ public static class MathematicsAiCapabilityMatrix
                 "ReviewedNativeProvider");
         }
 
+        var exact = ExactMathematicsCapabilityResolver.Resolve(description);
+        if (exact is not null)
+        {
+            return new MathematicsAiCapability(
+                MathematicsAiCapabilityLevel.VerifiedAi,
+                skills,
+                [MathematicsGeneratorFamily.CurriculumContextCheck],
+                "edulytics-exact-skill-contract",
+                exact.ReasonCode);
+        }
+
         if (LooksLikeMathematicsCurriculum(description))
         {
             return new MathematicsAiCapability(

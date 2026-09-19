@@ -1,192 +1,633 @@
 {
   "schemaVersion": 1,
-  "version": "semantic-content-signatures-v2",
+  "version": "semantic-content-signatures-v3",
   "purpose": "Deterministic audit signatures for checking whether worked examples contain evidence of the lesson target. Audit-only; never rewrites content.",
   "rules": [
     {
       "id": "integers-directed-number",
-      "titlePatterns": ["\\bintegers?\\b", "\\bdirected number\\b", "\\bnegative numbers?\\b"],
-      "workedExamplePatterns": ["(?:^|[^0-9])-\\d", "\\bnegative\\b", "\\binteger\\b", "\\bdirected number\\b"]
+      "titlePatterns": [
+        "\\bintegers?\\b",
+        "\\bdirected number\\b",
+        "\\bnegative numbers?\\b"
+      ],
+      "workedExamplePatterns": [
+        "(?:^|[^0-9])-\\d",
+        "\\bnegative\\b",
+        "\\binteger\\b",
+        "\\bdirected number\\b"
+      ]
     },
     {
       "id": "fractions",
-      "titlePatterns": ["\\bfractions?\\b", "\\bmixed numbers?\\b", "\\bimproper fractions?\\b"],
-      "workedExamplePatterns": ["\\d+\\s*/\\s*\\d+", "\\bnumerator\\b", "\\bdenominator\\b", "\\bmixed number\\b", "\\bfraction\\b"]
+      "titlePatterns": [
+        "\\bfractions?\\b",
+        "\\bmixed numbers?\\b",
+        "\\bimproper fractions?\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\d+\\s*/\\s*\\d+",
+        "\\bnumerator\\b",
+        "\\bdenominator\\b",
+        "\\bmixed number\\b",
+        "\\bfraction\\b"
+      ]
     },
     {
       "id": "decimals-rounding",
-      "titlePatterns": ["\\bdecimals?\\b", "\\brounding\\b", "\\bdecimal place\\b"],
-      "workedExamplePatterns": ["\\d+\\.\\d+", "\\bdecimal\\b", "\\bround(?:ed|ing)?\\b", "\\bd\\.p\\.\\b"]
+      "titlePatterns": [
+        "\\bdecimals?\\b",
+        "\\brounding\\b",
+        "\\bdecimal place\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\d+\\.\\d+",
+        "\\bdecimal\\b",
+        "\\bround(?:ed|ing)?\\b",
+        "\\bd\\.p\\.\\b"
+      ]
     },
     {
       "id": "percentages",
-      "titlePatterns": ["\\bpercentages?\\b", "\\bpercentage\\b"],
-      "workedExamplePatterns": ["%", "\\bpercent(?:age)?\\b", "\\b100\\b"]
+      "titlePatterns": [
+        "\\bpercentages?\\b",
+        "\\bpercentage\\b"
+      ],
+      "workedExamplePatterns": [
+        "%",
+        "\\bpercent(?:age)?\\b",
+        "\\b100\\b"
+      ]
     },
     {
       "id": "ratio-proportion-rate",
-      "titlePatterns": ["\\bratio\\b", "\\bproportion\\b", "\\bunit rates?\\b", "\\brates?\\b"],
-      "workedExamplePatterns": ["\\d+\\s*:\\s*\\d+", "\\bratio\\b", "\\bproportion\\b", "\\brate\\b", "\\bper\\s+(?:one|unit|hour|minute|second|km|kg|m)\\b"]
+      "titlePatterns": [
+        "\\bratio\\b",
+        "\\bproportion\\b",
+        "\\bunit rates?\\b",
+        "\\brates?\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\d+\\s*:\\s*\\d+",
+        "\\bratio\\b",
+        "\\bproportion\\b",
+        "\\brate\\b",
+        "\\bper\\s+(?:one|unit|hour|minute|second|km|kg|m)\\b"
+      ]
     },
     {
       "id": "powers-roots-indices",
-      "titlePatterns": ["\\bpowers?\\b", "\\broots?\\b", "\\bindices\\b", "\\bexponents?\\b"],
-      "workedExamplePatterns": ["\\^", "²", "³", "√", "\\bsquare root\\b", "\\bcube root\\b", "\\bpower\\b", "\\bindex\\b", "\\bexponent\\b"]
+      "titlePatterns": [
+        "\\bpowers?\\b",
+        "\\broots?\\b",
+        "\\bindices\\b",
+        "\\bexponents?\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\^",
+        "²",
+        "³",
+        "√",
+        "\\bsquare root\\b",
+        "\\bcube root\\b",
+        "\\bpower\\b",
+        "\\bindex\\b",
+        "\\bexponent\\b"
+      ]
     },
     {
       "id": "standard-form",
-      "titlePatterns": ["\\bstandard form\\b", "\\bscientific notation\\b"],
-      "workedExamplePatterns": ["10\\s*\\^", "10[⁰¹²³⁴⁵⁶⁷⁸⁹]", "×\\s*10", "x\\s*10", "\\bstandard form\\b", "\\bscientific notation\\b"]
+      "titlePatterns": [
+        "\\bstandard form\\b",
+        "\\bscientific notation\\b"
+      ],
+      "workedExamplePatterns": [
+        "10\\s*\\^",
+        "10[⁰¹²³⁴⁵⁶⁷⁸⁹]",
+        "×\\s*10",
+        "x\\s*10",
+        "\\bstandard form\\b",
+        "\\bscientific notation\\b"
+      ]
     },
     {
       "id": "algebraic-expressions",
-      "titlePatterns": ["\\balgebraic (?:expressions?|manipulation)\\b", "\\bsimplif(?:y|ying) expressions?\\b"],
-      "workedExamplePatterns": ["\\b[axy]\\b", "\\d+[a-z]", "\\balgebraic\\b", "\\bexpression\\b", "\\bcollect like terms\\b", "\\bsimplif"]
+      "titlePatterns": [
+        "\\balgebraic (?:expressions?|manipulation)\\b",
+        "\\bsimplif(?:y|ying) expressions?\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\b[axy]\\b",
+        "\\d+[a-z]",
+        "\\balgebraic\\b",
+        "\\bexpression\\b",
+        "\\bcollect like terms\\b",
+        "\\bsimplif"
+      ]
     },
     {
       "id": "substitution",
-      "titlePatterns": ["\\bsubstitution\\b", "\\bsubstitute\\b"],
-      "workedExamplePatterns": ["\\bsubstitut", "\\b[a-z]\\s*=\\s*-?\\d", "\\bwhen\\s+[a-z]\\s*=", "\\bvalue of [a-z]\\b"]
+      "titlePatterns": [
+        "\\bsubstitution\\b",
+        "\\bsubstitute\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bsubstitut",
+        "\\b[a-z]\\s*=\\s*-?\\d",
+        "\\bwhen\\s+[a-z]\\s*=",
+        "\\bvalue of [a-z]\\b"
+      ]
     },
     {
       "id": "expanding-brackets",
-      "titlePatterns": ["\\bexpand(?:ing)? brackets?\\b", "\\bexpanding expressions?\\b"],
-      "workedExamplePatterns": ["\\d*\\s*[a-z]?\\s*\\([^)]*[a-z][^)]*\\)", "\\bexpand", "\\bdistributive"]
+      "titlePatterns": [
+        "\\bexpand(?:ing)? brackets?\\b",
+        "\\bexpanding expressions?\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\d*\\s*[a-z]?\\s*\\([^)]*[a-z][^)]*\\)",
+        "\\bexpand",
+        "\\bdistributive"
+      ]
     },
     {
       "id": "factorising",
-      "titlePatterns": ["\\bfactoris(?:e|ing)\\b", "\\bfactoriz(?:e|ing)\\b", "\\bfactorising expressions?\\b"],
-      "workedExamplePatterns": ["\\bfactoris", "\\bfactoriz", "\\bcommon factor\\b", "\\([^)]*[a-z][^)]*\\)"]
+      "titlePatterns": [
+        "\\bfactoris(?:e|ing)\\b",
+        "\\bfactoriz(?:e|ing)\\b",
+        "\\bfactorising expressions?\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bfactoris",
+        "\\bfactoriz",
+        "\\bcommon factor\\b",
+        "\\([^)]*[a-z][^)]*\\)"
+      ]
     },
     {
       "id": "linear-equations",
-      "titlePatterns": ["\\blinear equations?\\b"],
-      "workedExamplePatterns": ["\\b[a-z]\\b[^=]{0,30}=", "=[^=]{0,30}\\b[a-z]\\b", "\\bsolve\\b", "\\bequation\\b"]
+      "titlePatterns": [
+        "\\blinear equations?\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\b[a-z]\\b[^=]{0,30}=",
+        "=[^=]{0,30}\\b[a-z]\\b",
+        "\\bsolve\\b",
+        "\\bequation\\b"
+      ]
     },
     {
       "id": "simultaneous-equations",
-      "titlePatterns": ["\\bsimultaneous equations?\\b", "\\bsystems? of equations?\\b"],
-      "workedExamplePatterns": ["\\bsimultaneous\\b", "\\belimination\\b", "\\bsubstitution\\b", "[xy].*=.*[\n;].*[xy].*="]
+      "titlePatterns": [
+        "\\bsimultaneous equations?\\b",
+        "\\bsystems? of equations?\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bsimultaneous\\b",
+        "\\belimination\\b",
+        "\\bsubstitution\\b",
+        "[xy].*=.*[\n;].*[xy].*="
+      ]
     },
     {
       "id": "inequalities",
-      "titlePatterns": ["\\binequalit(?:y|ies)\\b"],
-      "workedExamplePatterns": ["≤", "≥", "<", ">", "\\binequalit"]
+      "titlePatterns": [
+        "\\binequalit(?:y|ies)\\b"
+      ],
+      "workedExamplePatterns": [
+        "≤",
+        "≥",
+        "<",
+        ">",
+        "\\binequalit"
+      ]
     },
     {
       "id": "sequences-series",
-      "titlePatterns": ["\\bsequences?\\b", "\\bseries\\b"],
-      "workedExamplePatterns": ["\\bsequence\\b", "\\bterm\\b", "\\bnth\\b", "\\bcommon difference\\b", "\\bcommon ratio\\b", "\\bsum of.*terms\\b"]
+      "titlePatterns": [
+        "\\bsequences?\\b",
+        "\\bseries\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bsequence\\b",
+        "\\bterm\\b",
+        "\\bnth\\b",
+        "\\bcommon difference\\b",
+        "\\bcommon ratio\\b",
+        "\\bsum of.*terms\\b"
+      ]
     },
     {
       "id": "functions",
-      "titlePatterns": ["\\bfunctions?\\b"],
-      "workedExamplePatterns": ["f\\s*\\(", "g\\s*\\(", "\\bfunction\\b", "\\bdomain\\b", "\\brange\\b", "\\binverse\\b", "\\bcomposite\\b"]
+      "titlePatterns": [
+        "\\bfunctions?\\b"
+      ],
+      "workedExamplePatterns": [
+        "f\\s*\\(",
+        "g\\s*\\(",
+        "\\bfunction\\b",
+        "\\bdomain\\b",
+        "\\brange\\b",
+        "\\binverse\\b",
+        "\\bcomposite\\b"
+      ]
     },
     {
       "id": "coordinate-line-graphs",
-      "titlePatterns": ["\\bcoordinates?\\b", "\\bstraight[- ]line graphs?\\b", "\\bgradient\\b", "\\bequation of a line\\b", "\\bmidpoint\\b", "\\bdistance\\b"],
-      "workedExamplePatterns": ["\\(-?\\d+(?:\\.\\d+)?,\\s*-?\\d+(?:\\.\\d+)?\\)", "y\\s*=\\s*m?x", "\\bgradient\\b", "\\bmidpoint\\b", "\\bcoordinate\\b", "\\bline\\b"]
+      "titlePatterns": [
+        "\\bcoordinates?\\b",
+        "\\bstraight[- ]line graphs?\\b",
+        "\\bgradient\\b",
+        "\\bequation of a line\\b",
+        "\\bmidpoint\\b",
+        "\\bdistance\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\(-?\\d+(?:\\.\\d+)?,\\s*-?\\d+(?:\\.\\d+)?\\)",
+        "y\\s*=\\s*m?x",
+        "\\bgradient\\b",
+        "\\bmidpoint\\b",
+        "\\bcoordinate\\b",
+        "\\bline\\b"
+      ]
     },
     {
       "id": "quadratics",
-      "titlePatterns": ["\\bquadratic"],
-      "workedExamplePatterns": ["x²", "x\\s*\\^\\s*2", "\\bquadratic\\b", "\\bdiscriminant\\b", "\\bfactoris", "\\bcomplet(?:e|ing) the square\\b"]
+      "titlePatterns": [
+        "\\bquadratic"
+      ],
+      "workedExamplePatterns": [
+        "x²",
+        "x\\s*\\^\\s*2",
+        "\\bquadratic\\b",
+        "\\bdiscriminant\\b",
+        "\\bfactoris",
+        "\\bcomplet(?:e|ing) the square\\b"
+      ]
     },
     {
       "id": "angles",
-      "titlePatterns": ["\\bangles?\\b", "\\bbearings?\\b", "\\bcircular measure\\b"],
-      "workedExamplePatterns": ["°", "\\bdegrees?\\b", "\\bradians?\\b", "\\bangle\\b", "\\bbearing\\b"]
+      "titlePatterns": [
+        "\\bangles?\\b",
+        "\\bbearings?\\b",
+        "\\bcircular measure\\b"
+      ],
+      "workedExamplePatterns": [
+        "°",
+        "\\bdegrees?\\b",
+        "\\bradians?\\b",
+        "\\bangle\\b",
+        "\\bbearing\\b"
+      ]
     },
     {
       "id": "polygons-shapes",
-      "titlePatterns": ["\\bpolygons?\\b", "\\b2d\\b", "\\b3d shapes?\\b", "\\bshapes?\\b"],
-      "workedExamplePatterns": ["\\btriangle\\b", "\\bquadrilateral\\b", "\\bpolygon\\b", "\\brectangle\\b", "\\bsquare\\b", "\\bshape\\b", "\\bvertices\\b", "\\bsides\\b"]
+      "titlePatterns": [
+        "\\bpolygons?\\b",
+        "\\b2d\\b",
+        "\\b3d shapes?\\b",
+        "\\bshapes?\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\btriangle\\b",
+        "\\bquadrilateral\\b",
+        "\\bpolygon\\b",
+        "\\brectangle\\b",
+        "\\bsquare\\b",
+        "\\bshape\\b",
+        "\\bvertices\\b",
+        "\\bsides\\b"
+      ]
     },
     {
       "id": "similarity-congruence",
-      "titlePatterns": ["\\bsimilar(?:ity)?\\b", "\\bcongruen(?:ce|t)\\b"],
-      "workedExamplePatterns": ["\\bsimilar\\b", "\\bcongruen", "\\bscale factor\\b", "\\bcorresponding sides\\b"]
+      "titlePatterns": [
+        "\\bsimilar(?:ity)?\\b",
+        "\\bcongruen(?:ce|t)\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bsimilar\\b",
+        "\\bcongruen",
+        "\\bscale factor\\b",
+        "\\bcorresponding sides\\b"
+      ]
     },
     {
       "id": "perimeter-area",
-      "titlePatterns": ["\\bperimeter\\b", "\\barea\\b", "\\bcompound shapes?\\b"],
-      "workedExamplePatterns": ["\\bperimeter\\b", "\\barea\\b", "cm²", "m²", "\\bbase\\b.*\\bheight\\b", "\\blength\\b.*\\bwidth\\b"]
+      "titlePatterns": [
+        "\\bperimeter\\b",
+        "\\barea\\b",
+        "\\bcompound shapes?\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bperimeter\\b",
+        "\\barea\\b",
+        "cm²",
+        "m²",
+        "\\bbase\\b.*\\bheight\\b",
+        "\\blength\\b.*\\bwidth\\b"
+      ]
     },
     {
       "id": "surface-area-volume",
-      "titlePatterns": ["\\bsurface area\\b", "\\bvolume\\b", "\\bcapacity\\b"],
-      "workedExamplePatterns": ["\\bsurface area\\b", "\\bvolume\\b", "cm³", "m³", "\\bcubic\\b", "\\bcapacity\\b"]
+      "titlePatterns": [
+        "\\bsurface area\\b",
+        "\\bvolume\\b",
+        "\\bcapacity\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bsurface area\\b",
+        "\\bvolume\\b",
+        "cm³",
+        "m³",
+        "\\bcubic\\b",
+        "\\bcapacity\\b"
+      ]
     },
     {
       "id": "pythagoras",
-      "titlePatterns": ["\\bpythagoras"],
-      "workedExamplePatterns": ["a²", "b²", "c²", "\\^2", "\\bpythagoras", "\\bhypotenuse\\b"]
+      "titlePatterns": [
+        "\\bpythagoras"
+      ],
+      "workedExamplePatterns": [
+        "a²",
+        "b²",
+        "c²",
+        "\\^2",
+        "\\bpythagoras",
+        "\\bhypotenuse\\b"
+      ]
     },
     {
       "id": "trigonometry",
-      "titlePatterns": ["\\btrigonom", "\\bsine rule\\b", "\\bcosine rule\\b", "\\bsine cosine and tangent\\b"],
-      "workedExamplePatterns": ["\\bsin\\b", "\\bcos\\b", "\\btan\\b", "\\btrigonom", "\\bsine rule\\b", "\\bcosine rule\\b"]
+      "titlePatterns": [
+        "\\btrigonom",
+        "\\bsine rule\\b",
+        "\\bcosine rule\\b",
+        "\\bsine cosine and tangent\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bsin\\b",
+        "\\bcos\\b",
+        "\\btan\\b",
+        "\\btrigonom",
+        "\\bsine rule\\b",
+        "\\bcosine rule\\b"
+      ]
     },
     {
       "id": "vectors",
-      "titlePatterns": ["\\bvectors?\\b"],
-      "workedExamplePatterns": ["\\bvector\\b", "\\bcomponents?\\b", "\\bmagnitude\\b", "\\bdot product\\b", "\\bi\\s*[+-].*\\bj\\b"]
+      "titlePatterns": [
+        "\\bvectors?\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bvector\\b",
+        "\\bcomponents?\\b",
+        "\\bmagnitude\\b",
+        "\\bdot product\\b",
+        "\\bi\\s*[+-].*\\bj\\b"
+      ]
     },
     {
       "id": "transformations",
-      "titlePatterns": ["\\btransformations?\\b", "\\btranslations?\\b", "\\brotations?\\b", "\\breflections?\\b", "\\benlargements?\\b"],
-      "workedExamplePatterns": ["\\btranslat", "\\brotat", "\\breflect", "\\benlarg", "\\btransformation\\b", "\\bscale factor\\b"]
+      "titlePatterns": [
+        "\\btransformations?\\b",
+        "\\btranslations?\\b",
+        "\\brotations?\\b",
+        "\\breflections?\\b",
+        "\\benlargements?\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\btranslat",
+        "\\brotat",
+        "\\breflect",
+        "\\benlarg",
+        "\\btransformation\\b",
+        "\\bscale factor\\b"
+      ]
     },
     {
       "id": "statistics-averages-data",
-      "titlePatterns": ["\\bmean\\b", "\\bmedian\\b", "\\brange\\b", "\\baverages?\\b", "\\bdata\\b", "\\btables? and charts?\\b", "\\bgrouped data\\b", "\\bcumulative frequency\\b"],
-      "workedExamplePatterns": ["\\bmean\\b", "\\bmedian\\b", "\\brange\\b", "\\bdata\\b", "\\bfrequency\\b", "\\btable\\b", "\\bchart\\b"]
+      "titlePatterns": [
+        "\\bmean\\b",
+        "\\bmedian\\b",
+        "\\brange\\b",
+        "\\baverages?\\b",
+        "\\bdata\\b",
+        "\\btables? and charts?\\b",
+        "\\bgrouped data\\b",
+        "\\bcumulative frequency\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bmean\\b",
+        "\\bmedian\\b",
+        "\\brange\\b",
+        "\\bdata\\b",
+        "\\bfrequency\\b",
+        "\\btable\\b",
+        "\\bchart\\b"
+      ]
     },
     {
       "id": "scatter-correlation-regression",
-      "titlePatterns": ["\\bscatter\\b", "\\bcorrelation\\b", "\\bregression\\b"],
-      "workedExamplePatterns": ["\\bscatter\\b", "\\bcorrelation\\b", "\\bregression\\b", "\\bline of best fit\\b"]
+      "titlePatterns": [
+        "\\bscatter\\b",
+        "\\bcorrelation\\b",
+        "\\bregression\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bscatter\\b",
+        "\\bcorrelation\\b",
+        "\\bregression\\b",
+        "\\bline of best fit\\b"
+      ]
     },
     {
       "id": "probability",
-      "titlePatterns": ["\\bprobability\\b", "\\bsample spaces?\\b", "\\btree diagrams?\\b", "\\bexpected frequency\\b"],
-      "workedExamplePatterns": ["\\bprobability\\b", "\\bsample space\\b", "\\btree diagram\\b", "\\bexpected frequency\\b", "P\\s*\\(", "\\d+\\s*/\\s*\\d+"]
+      "titlePatterns": [
+        "\\bprobability\\b",
+        "\\bsample spaces?\\b",
+        "\\btree diagrams?\\b",
+        "\\bexpected frequency\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bprobability\\b",
+        "\\bsample space\\b",
+        "\\btree diagram\\b",
+        "\\bexpected frequency\\b",
+        "P\\s*\\(",
+        "\\d+\\s*/\\s*\\d+"
+      ]
     },
     {
       "id": "logarithms-exponentials",
-      "titlePatterns": ["\\blogarith", "\\bexponential"],
-      "workedExamplePatterns": ["\\blog\\b", "ln\\s*\\(", "e\\s*\\^", "\\bexponential\\b", "\\blogarith"]
+      "titlePatterns": [
+        "\\blogarith",
+        "\\bexponential"
+      ],
+      "workedExamplePatterns": [
+        "\\blog\\b",
+        "ln\\s*\\(",
+        "e\\s*\\^",
+        "\\bexponential\\b",
+        "\\blogarith"
+      ]
     },
     {
       "id": "differentiation",
-      "titlePatterns": ["\\bdifferentiat", "\\brates? of change\\b", "\\bstationary points?\\b"],
-      "workedExamplePatterns": ["f['′]\\s*\\(", "dy\\s*/\\s*dx", "\\bdifferentiat", "\\bderivative\\b", "\\bstationary point\\b"]
+      "titlePatterns": [
+        "\\bdifferentiat",
+        "\\brates? of change\\b",
+        "\\bstationary points?\\b"
+      ],
+      "workedExamplePatterns": [
+        "f['′]\\s*\\(",
+        "dy\\s*/\\s*dx",
+        "\\bdifferentiat",
+        "\\bderivative\\b",
+        "\\bstationary point\\b"
+      ]
     },
     {
       "id": "integration",
-      "titlePatterns": ["\\bintegrat", "\\barea under.*curve\\b"],
-      "workedExamplePatterns": ["∫", "\\bintegrat", "\\bantiderivative\\b", "\\barea under.*curve\\b"]
+      "titlePatterns": [
+        "\\bintegrat",
+        "\\barea under.*curve\\b"
+      ],
+      "workedExamplePatterns": [
+        "∫",
+        "\\bintegrat",
+        "\\bantiderivative\\b",
+        "\\barea under.*curve\\b"
+      ]
     },
     {
       "id": "distributions-inference",
-      "titlePatterns": ["\\bdistribution\\b", "\\bpoisson\\b", "\\bnormal approxim", "\\bhypothesis testing\\b", "\\bsampling\\b", "\\bestimation\\b", "\\brandom variables?\\b"],
-      "workedExamplePatterns": ["\\bdistribution\\b", "\\bpoisson\\b", "\\bnormal\\b", "\\bhypothesis\\b", "\\bsample\\b", "\\bestimat", "\\brandom variable\\b", "P\\s*\\("]
+      "titlePatterns": [
+        "\\bdistribution\\b",
+        "\\bpoisson\\b",
+        "\\bnormal approxim",
+        "\\bhypothesis testing\\b",
+        "\\bsampling\\b",
+        "\\bestimation\\b",
+        "\\brandom variables?\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bdistribution\\b",
+        "\\bpoisson\\b",
+        "\\bnormal\\b",
+        "\\bhypothesis\\b",
+        "\\bsample\\b",
+        "\\bestimat",
+        "\\brandom variable\\b",
+        "P\\s*\\("
+      ]
     },
     {
       "id": "mechanics",
-      "titlePatterns": ["\\bprojectiles?\\b", "\\bacceleration\\b", "\\bmomentum\\b", "\\bimpulse\\b", "\\benergy\\b", "\\bequilibrium\\b", "\\bfriction\\b", "\\bmechanics\\b"],
-      "workedExamplePatterns": ["m/s", "m/s²", "\\bvelocity\\b", "\\bacceleration\\b", "\\bforce\\b", "\\bmomentum\\b", "\\bimpulse\\b", "\\benergy\\b", "\\bfriction\\b", "\\bequilibrium\\b"]
+      "titlePatterns": [
+        "\\bprojectiles?\\b",
+        "\\bacceleration\\b",
+        "\\bmomentum\\b",
+        "\\bimpulse\\b",
+        "\\benergy\\b",
+        "\\bequilibrium\\b",
+        "\\bfriction\\b",
+        "\\bmechanics\\b"
+      ],
+      "workedExamplePatterns": [
+        "m/s",
+        "m/s²",
+        "\\bvelocity\\b",
+        "\\bacceleration\\b",
+        "\\bforce\\b",
+        "\\bmomentum\\b",
+        "\\bimpulse\\b",
+        "\\benergy\\b",
+        "\\bfriction\\b",
+        "\\bequilibrium\\b"
+      ]
     },
     {
       "id": "two-unknown-relationships",
-      "titlePatterns": ["\\b(?:2|two) unknowns?\\b"],
-      "workedExamplePatterns": ["\\bx\\s*\\+\\s*y\\s*=", "\\by\\s*[-−]\\s*x\\s*=", "\\btwo (?:independent )?relationships\\b", "\\bsubstitut(?:e|ion)\\b"]
+      "titlePatterns": [
+        "\\b(?:2|two) unknowns?\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bx\\s*\\+\\s*y\\s*=",
+        "\\by\\s*[-−]\\s*x\\s*=",
+        "\\btwo (?:independent )?relationships\\b",
+        "\\bsubstitut(?:e|ion)\\b"
+      ]
     },
     {
       "id": "equal-interval-scale-reading",
-      "titlePatterns": ["\\breading scales?\\b.*\\bintervals?\\b", "\\bscales? with (?:2|4|5|10) intervals?\\b"],
-      "workedExamplePatterns": ["\\bequal intervals?\\b", "\\bscale runs from\\b", "\\bpointer\\b", "\\binterval(?: value)?\\b"]
+      "titlePatterns": [
+        "\\breading scales?\\b.*\\bintervals?\\b",
+        "\\bscales? with (?:2|4|5|10) intervals?\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bequal intervals?\\b",
+        "\\bscale runs from\\b",
+        "\\bpointer\\b",
+        "\\binterval(?: value)?\\b"
+      ]
+    },
+    {
+      "id": "whole-number-add-subtract",
+      "titlePatterns": [
+        "\\badd and subtract\\b",
+        "\\baddition and subtraction\\b",
+        "\\bcomparative addition\\b",
+        "\\bcomplements? to 100\\b",
+        "\\bcolumnar addition\\b",
+        "\\bfluently add and subtract\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\d+\\s*\\+\\s*\\d+\\s*=\\s*\\d+",
+        "\\d+\\s*[-−]\\s*\\d+\\s*=\\s*\\d+",
+        "\\binverse operation\\b",
+        "\\bregroup",
+        "\\bcomplement"
+      ]
+    },
+    {
+      "id": "multiplication-fact-recall",
+      "titlePatterns": [
+        "\\brecall of multiplication tables\\b",
+        "\\bmultiplication tables?\\b"
+      ],
+      "workedExamplePatterns": [
+        "×",
+        "\\bmultiplication fact\\b",
+        "\\binverse division\\b",
+        "\\d+\\s*\\*\\s*\\d+"
+      ]
+    },
+    {
+      "id": "division-with-remainder",
+      "titlePatterns": [
+        "\\bdivision problems? with remainders?\\b",
+        "\\bremainders?\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bremainder\\b",
+        "÷",
+        "\\bdividend\\b",
+        "\\bdivisor\\b",
+        "\\bquotient\\b"
+      ]
+    },
+    {
+      "id": "unitary-method",
+      "titlePatterns": [
+        "\\bunitary method\\b"
+      ],
+      "workedExamplePatterns": [
+        "\\bunit rate\\b",
+        "\\bper\\s+(?:one|unit|notebook|item)\\b",
+        "\\bdivide\\b.*\\bmultiply\\b",
+        "\\b20\\s*÷\\s*5\\b"
+      ]
     }
   ]
 }
