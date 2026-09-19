@@ -218,71 +218,26 @@ def load_reviewed_official_rule_mappings(
                 continue
 
             if len(exact_candidates) == 1:
-                candidates = exact_candidates
-                match_mode = "EXACT_TITLE"
-            else:
-                normalized = normalize_title(title)
-                candidates = []
-                for rule in rules:
-                    if rule.title_patterns and not any(
-                        pattern.search(normalized)
-                        for pattern in rule.title_patterns
-                    ):
-                        continue
-                    if rule.code_patterns and not any(
-                        pattern.search(lesson_code)
-                        for pattern in rule.code_patterns
-                    ):
-                        continue
-                    candidates.append(rule)
+                mappings[lesson_code] = mapping_from_rule(
+                    lesson_code,
+                    outcomes,
+                    exact_candidates[0],
+                    "EXACT_TITLE",
+                )
+                continue
 
-                if len(candidates) == 1:
-                    match_mode = "UNIQUE_REVIEWED_TITLE"
-                else:
-                    evidence = normalize_space(" ".join([
-                        normalized,
-                        str(get_case(translation, "Explanation", "explanation", default="") or ""),
-                        str(get_case(translation, "KeyConceptsAndRules", "keyConceptsAndRules", default="") or ""),
-                        str(get_case(translation, "WorkedExamples", "workedExamples", default="") or ""),
-                    ]))
-                    candidates = []
-                    for rule in rules:
-                        if rule.title_patterns and not any(
-                            pattern.search(evidence)
-                            for pattern in rule.title_patterns
-                        ):
-                            continue
-                        if rule.code_patterns and not any(
-                            pattern.search(lesson_code)
-                            for pattern in rule.code_patterns
-                        ):
-                            continue
-                        candidates.append(rule)
-
-                    if len(candidates) != 1:
-                        if all(
-                            resolution is not None
-                            for resolution in resolved_outcomes
-                        ):
-                            mappings[lesson_code] = mapping_from_outcomes(
-                                lesson_code,
-                                outcomes,
-                                [
-                                    resolution
-                                    for resolution in resolved_outcomes
-                                    if resolution is not None
-                                ],
-                            )
-                        # Canonical ambiguity/unclassified evidence never chooses
-                        # between targets. OutcomeCode mapping is the only fallback.
-                        continue
-                    match_mode = "UNIQUE_REVIEWED_CANONICAL_EVIDENCE"
-
-            mappings[lesson_code] = mapping_from_rule(
-                lesson_code,
-                outcomes,
-                candidates[0],
-                match_mode,
-            )
+            if all(
+                resolution is not None
+                for resolution in resolved_outcomes
+            ):
+                mappings[lesson_code] = mapping_from_outcomes(
+                    lesson_code,
+                    outcomes,
+                    [
+                        resolution
+                        for resolution in resolved_outcomes
+                        if resolution is not None
+                    ],
+                )
 
     return mappings, errors
