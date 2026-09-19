@@ -77,11 +77,18 @@ def outcome_parts(code: str) -> tuple[str, str]:
     return mode, ordinal
 
 
+def _search_key(value: str) -> str:
+    return re.sub(r"[^0-9a-ząćęłńóśźż]+", "", clean(value).casefold())
+
+
 def find_line(lines: list[str], needle: str, start: int = 0) -> int:
-    wanted = clean(needle).casefold()
+    wanted = _search_key(needle)
     for i in range(start, len(lines)):
-        line = clean(lines[i]).casefold()
-        if wanted == line or wanted in line:
+        # Official HTML/PDF extraction can split headings across adjacent
+        # physical lines. Match a compact normalized two-line window.
+        window = " ".join(lines[i:min(len(lines), i + 2)])
+        key = _search_key(window)
+        if wanted and wanted in key:
             return i
     return -1
 
@@ -95,32 +102,36 @@ def numbered_items(
     result: list[str] = []
     current: list[str] = []
     expected_no = 1
+    active = False
 
     for raw in lines[start:end]:
         line = clean(raw)
-        match = re.match(r"^(\d+)\)\s*(.*)$", line)
+        match = re.match(r"^(?:#+\s*)?(\d+)\)\s*(.*)$", line)
         if match:
             number = int(match.group(1))
             if number == expected_no:
-                if current:
+                if active:
                     result.append(clean(" ".join(current)))
                 current = []
+                active = True
                 tail = clean(match.group(2))
                 if tail:
                     current.append(tail)
                 expected_no += 1
-                if expected_no > expected + 1:
-                    break
                 continue
-            # A restarted numbering sequence belongs to a nested or following
-            # section. Once all expected top-level rows were collected, stop.
-            if expected_no == expected + 1:
+            # After the expected sequence is complete, a restarted 1) marks
+            # the next scope (for example the extended section).
+            if active and expected_no == expected + 1 and number == 1:
                 break
 
-        if current:
+        if active:
+            # Ignore standalone markdown-style structural headings that may
+            # appear between a number marker and its textual payload.
+            if re.fullmatch(r"#+\s*", line):
+                continue
             current.append(line)
 
-    if current and len(result) < expected:
+    if active and len(result) < expected:
         result.append(clean(" ".join(current)))
 
     return result[:expected]
