@@ -140,6 +140,14 @@ def audit() -> dict[str, Any]:
     supporting_rules, supporting_rule_errors = load_supporting_rules()
     blockers.extend(supporting_rule_errors)
     blockers.extend(validate_supporting_rules(supporting_rules))
+    uae_l6_rule = next(
+        (
+            rule
+            for rule in supporting_rules
+            if rule.rule_id == "uae-systems-inequalities"
+        ),
+        None,
+    )
     lessons: list[dict[str, Any]] = []
     worked_groups: dict[str, list[int]] = defaultdict(list)
     solution_groups: dict[str, list[int]] = defaultdict(list)
@@ -194,6 +202,32 @@ def audit() -> dict[str, Any]:
                 str(get_case(row, "CultureCode", "cultureCode", default="") or "").lower().startswith("en")
                 for row in (translations if isinstance(translations, list) else [])
             )
+
+            official_practice_content_corrected = False
+            if (
+                source_type == "OfficialMapped"
+                and lesson_code.startswith("PED:UAE:G9:ADV:T1:L6-")
+                and uae_l6_rule is not None
+                and any(
+                    pattern.fullmatch(base_title)
+                    for pattern in uae_l6_rule.title_patterns
+                )
+            ):
+                worked = normalize_space(
+                    "Worked example: "
+                    + uae_l6_rule.content["workedExample"]
+                )
+                solutions = normalize_space(
+                    "Solution method: "
+                    + uae_l6_rule.content["solution"]
+                )
+                explanation = normalize_space(
+                    uae_l6_rule.content["concept"]
+                )
+                key_concepts = normalize_space(
+                    uae_l6_rule.content["concept"]
+                )
+                official_practice_content_corrected = True
 
             matched_rules: list[dict[str, Any]] = []
             for rule in rules:
@@ -295,7 +329,10 @@ def audit() -> dict[str, Any]:
                 "findings": findings,
                 "matchedRules": matched_rules,
                 "supportingPracticeRuleId": None if supporting_rule is None else supporting_rule.rule_id,
-                "contentRemediated": bool(supporting_rule is not None and has_english_translation),
+                "contentRemediated": bool(
+                    (supporting_rule is not None and has_english_translation)
+                    or official_practice_content_corrected
+                ),
                 "academicLanguage": academic_language,
                 "workedExamplePreview": short(worked),
                 "workedTemplateHash": worked_hash,
