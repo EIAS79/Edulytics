@@ -1,0 +1,461 @@
+{
+  "schemaVersion": 1,
+  "authority": "Approved target-classification rules for generated exact Supporting Practice contracts. First matching rule wins. Existing explicit READY_VERIFIED mappings remain authoritative.",
+  "rules": [
+    {
+      "id": "mechanics.constant_acceleration",
+      "profile": "mechanics",
+      "titlePatterns": [
+        "constant acceleration|kinematics in one dimension|velocity-time graphs"
+      ]
+    },
+    {
+      "id": "mechanics.force",
+      "profile": "mechanics",
+      "titlePatterns": [
+        "newton's laws|forces and equilibrium|equilibrium of rigid bodies|connected particles|\\bfriction\\b"
+      ]
+    },
+    {
+      "id": "mechanics.momentum",
+      "profile": "mechanics",
+      "titlePatterns": [
+        "momentum|impulse"
+      ]
+    },
+    {
+      "id": "mechanics.energy",
+      "profile": "mechanics",
+      "titlePatterns": [
+        "work energy|work, energy|energy methods|work energy and power|\\bpower\\b"
+      ]
+    },
+    {
+      "id": "mechanics.projectile",
+      "profile": "mechanics",
+      "titlePatterns": [
+        "projectiles|variable acceleration|mixed mechanics modelling|moving in circles|circular motion foundations"
+      ]
+    },
+    {
+      "id": "calculus.derivative",
+      "profile": "calculus",
+      "titlePatterns": [
+        "differentiation|derivative|applications of differentiation|implicit differentiation|parametric differentiation|introductory differentiation|rates of change"
+      ]
+    },
+    {
+      "id": "calculus.integral",
+      "profile": "calculus",
+      "titlePatterns": [
+        "integration|integral|applications of integration|integration techniques|differential equations"
+      ]
+    },
+    {
+      "id": "numerical.methods",
+      "profile": "calculus",
+      "titlePatterns": [
+        "numerical solution of equations|series and approximations"
+      ]
+    },
+    {
+      "id": "probability.normal",
+      "profile": "probability",
+      "titlePatterns": [
+        "normal distribution|normal approximations|hypothesis testing"
+      ]
+    },
+    {
+      "id": "probability.poisson_binomial",
+      "profile": "probability",
+      "titlePatterns": [
+        "poisson distribution|binomial distribution"
+      ]
+    },
+    {
+      "id": "probability.random_variable",
+      "profile": "probability",
+      "titlePatterns": [
+        "random variables|linear combinations of random variables|continuous random variables|discrete random variables"
+      ]
+    },
+    {
+      "id": "probability.tree",
+      "profile": "probability",
+      "titlePatterns": [
+        "tree diagrams"
+      ]
+    },
+    {
+      "id": "probability.experimental",
+      "profile": "probability",
+      "titlePatterns": [
+        "experimental probability|up to chance|carnival game"
+      ]
+    },
+    {
+      "id": "probability.combined",
+      "profile": "probability",
+      "titlePatterns": [
+        "combined events|conditional probability|advanced probability models"
+      ]
+    },
+    {
+      "id": "probability.simple",
+      "profile": "probability",
+      "titlePatterns": [
+        "sample spaces|expected frequency|^probability$|theoretical probability|single-event probability"
+      ]
+    },
+    {
+      "id": "sets.combinatorics",
+      "profile": "probability",
+      "titlePatterns": [
+        "set notation|venn|permutations|combinations"
+      ]
+    },
+    {
+      "id": "statistics.scatter",
+      "profile": "statistics",
+      "titlePatterns": [
+        "scatter graphs|scatter diagrams|correlation and regression"
+      ]
+    },
+    {
+      "id": "statistics.cumulative",
+      "profile": "statistics",
+      "titlePatterns": [
+        "cumulative frequency|quartiles"
+      ]
+    },
+    {
+      "id": "statistics.grouped",
+      "profile": "statistics",
+      "titlePatterns": [
+        "grouped data|histograms"
+      ]
+    },
+    {
+      "id": "statistics.representation",
+      "profile": "statistics",
+      "titlePatterns": [
+        "collecting data|collect and represent data|data representation|represent data and solve problems|tables and charts|statistical diagrams|pie charts|bar charts|pictograms|line graphs|interpreting tables|tables and scales|plotting the weather|survey the class|spreadsheet computations|spreadsheet shortcuts|got data|make sense of data"
+      ]
+    },
+    {
+      "id": "statistics.center_spread",
+      "profile": "statistics",
+      "titlePatterns": [
+        "mean|median|range|averages|spread|measures of central tendency|measures of spread|center and variability|comparing distributions|interpreting data|sorting data|sampling"
+      ]
+    },
+    {
+      "id": "vectors",
+      "profile": "vectors",
+      "titlePatterns": [
+        "vector geometry|vectors in three dimensions|vector notation|vector arithmetic|\\bvectors\\b|moving in the plane"
+      ]
+    },
+    {
+      "id": "matrices_complex",
+      "profile": "vectors",
+      "titlePatterns": [
+        "matrix|matrices|complex"
+      ]
+    },
+    {
+      "id": "trig.sine_rule",
+      "profile": "trigonometry",
+      "titlePatterns": [
+        "sine rule"
+      ]
+    },
+    {
+      "id": "trig.cosine_rule",
+      "profile": "trigonometry",
+      "titlePatterns": [
+        "cosine rule"
+      ]
+    },
+    {
+      "id": "trig.area_sine",
+      "profile": "trigonometry",
+      "titlePatterns": [
+        "area using sine"
+      ]
+    },
+    {
+      "id": "trig.bearings",
+      "profile": "trigonometry",
+      "titlePatterns": [
+        "bearings"
+      ]
+    },
+    {
+      "id": "trig.circular_measure",
+      "profile": "trigonometry",
+      "titlePatterns": [
+        "circular measure"
+      ]
+    },
+    {
+      "id": "trig.graphs_equations",
+      "profile": "trigonometry",
+      "titlePatterns": [
+        "trigonometric graphs|trigonometric equations|trigonometric identities|advanced trigonometry"
+      ]
+    },
+    {
+      "id": "trig.modelling",
+      "profile": "trigonometry",
+      "titlePatterns": [
+        "extended trigonometric modelling"
+      ]
+    },
+    {
+      "id": "trig.right",
+      "profile": "trigonometry",
+      "titlePatterns": [
+        "trigonometric ratios|trigonometry|sine cosine and tangent|right-triangle|right triangles|finding side lengths of triangles|revisiting right triangles"
+      ]
+    },
+    {
+      "id": "geometry.transform",
+      "profile": "geometry",
+      "titlePatterns": [
+        "transformations|translations|^translation$|rotations|rotation|reflections|^reflection$|dilations|enlargements|advanced transformations|position and direction|turns and direction|projecting and scaling"
+      ]
+    },
+    {
+      "id": "geometry.symmetry",
+      "profile": "geometry",
+      "titlePatterns": [
+        "symmetry|tessell|tiling the plane|lots of flags"
+      ]
+    },
+    {
+      "id": "geometry.similarity",
+      "profile": "geometry",
+      "titlePatterns": [
+        "similarity|congruence|congruent|scale factors|other conditions for triangle similarity|side-side-angle"
+      ]
+    },
+    {
+      "id": "geometry.coordinate",
+      "profile": "geometry",
+      "titlePatterns": [
+        "coordinate geometry|coordinates|gradient|slope|equation of a line|straight-line|parallel and perpendicular lines|midpoint and distance|unknown coordinates on a circle|linear relationships|representations of linear relationships"
+      ]
+    },
+    {
+      "id": "geometry.circle",
+      "profile": "geometry",
+      "titlePatterns": [
+        "circle geometry|circle measures|circle theorems|circular grid"
+      ]
+    },
+    {
+      "id": "geometry.construction",
+      "profile": "geometry",
+      "titlePatterns": [
+        "constructions and loci"
+      ]
+    },
+    {
+      "id": "geometry.volume",
+      "profile": "geometry",
+      "titlePatterns": [
+        "surface area|volume|three-dimensional|prisms and pyramids|how much will fit|volume by cubes|volume of cuboids"
+      ]
+    },
+    {
+      "id": "geometry.area_perimeter",
+      "profile": "geometry",
+      "titlePatterns": [
+        "compound shapes|area|perimeter|rectangle madness|painting a room|compare and calculate areas|area by counting squares|length and perimeter"
+      ]
+    },
+    {
+      "id": "measurement.units",
+      "profile": "measurement",
+      "titlePatterns": [
+        "mass and capacity|anchoring units|units of measure|unit conversion|standard units|comparing length|long distances|time and timetables|time intervals|time problems|time to the hour|money and compound measures|money and change|money calculations|coins and simple money"
+      ]
+    },
+    {
+      "id": "geometry.angles_shapes",
+      "profile": "geometry",
+      "titlePatterns": [
+        "angle|polygon|triangles|quadrilaterals|quadrilateral|2d|3d|shapes|properties of|shapes that are|what attributes|draw polygons|line symmetry"
+      ]
+    },
+    {
+      "id": "functions.exponential",
+      "profile": "functions",
+      "titlePatterns": [
+        "exponential models|logarithmic and exponential functions"
+      ]
+    },
+    {
+      "id": "functions.transform",
+      "profile": "functions",
+      "titlePatterns": [
+        "function transformations|composite functions|inverse functions|advanced functions"
+      ]
+    },
+    {
+      "id": "functions.graphs",
+      "profile": "functions",
+      "titlePatterns": [
+        "polynomial graphs|quadratic functions|quadratic and cubic graphs|end behavior|functions and graphs|functions and notation|^functions$|complex modelling with functions"
+      ]
+    },
+    {
+      "id": "quadratic.solve",
+      "profile": "algebra",
+      "titlePatterns": [
+        "quadratic equations|quadratic formula|completing the square|quadratic expressions and equations"
+      ]
+    },
+    {
+      "id": "quadratic.expression",
+      "profile": "algebra",
+      "titlePatterns": [
+        "quadratic expressions"
+      ]
+    },
+    {
+      "id": "algebra.systems",
+      "profile": "algebra",
+      "titlePatterns": [
+        "simultaneous|systems and inequalities"
+      ]
+    },
+    {
+      "id": "algebra.expand_factor",
+      "profile": "algebra",
+      "titlePatterns": [
+        "expanding brackets|factorising|factorizing|binomial expansion|polynomial division"
+      ]
+    },
+    {
+      "id": "algebra.surds",
+      "profile": "algebra",
+      "titlePatterns": [
+        "surds|surds and exact values|fractional indices|square roots and cube roots|powers and roots|properties of exponents|exponent review|powers of 10|logarithms|standard form"
+      ]
+    },
+    {
+      "id": "algebra.expression",
+      "profile": "algebra",
+      "titlePatterns": [
+        "algebraic expressions|algebraic manipulation|substitution|formulas|formulae|expressions|algebraic fractions|further algebra|applications of expressions|distributive property|multi-step algebraic modelling"
+      ]
+    },
+    {
+      "id": "algebra.linear",
+      "profile": "algebra",
+      "titlePatterns": [
+        "linear modelling|one-step equations|equation balanced|keeping the equation balanced|staying in balance|tape diagrams and equations|equality and balance|missing-number statements|graphical solution of equations"
+      ]
+    },
+    {
+      "id": "sequences",
+      "profile": "sequences",
+      "titlePatterns": [
+        "sequences|repeating patterns|towering sequence"
+      ]
+    },
+    {
+      "id": "percentages",
+      "profile": "percentages",
+      "titlePatterns": [
+        "percent|recalling percent change"
+      ]
+    },
+    {
+      "id": "ratio",
+      "profile": "ratio",
+      "titlePatterns": [
+        "ratio|proportion|times as many|relationships between quantities|scaled picture|scaling quantities"
+      ]
+    },
+    {
+      "id": "fractions.multiply_divide",
+      "profile": "fractions",
+      "titlePatterns": [
+        "multiply fractions|divide fractions|multiply fractions by whole numbers"
+      ]
+    },
+    {
+      "id": "fractions.mixed",
+      "profile": "fractions",
+      "titlePatterns": [
+        "mixed numbers|improper fractions|fractions and mixed numbers"
+      ]
+    },
+    {
+      "id": "fractions.equivalence",
+      "profile": "fractions",
+      "titlePatterns": [
+        "equivalent ratios|equivalent.*fraction|simplify fractions|simplifying fractions|common denomination|fraction-decimal-percentage equivalence|recall decimal equivalents|same denominator or numerator"
+      ]
+    },
+    {
+      "id": "fractions.represent",
+      "profile": "fractions",
+      "titlePatterns": [
+        "fraction notation|fractions on a number line|fractions within 1|representations of fractions|halves, thirds and quarters|part to whole|can you share|fraction"
+      ]
+    },
+    {
+      "id": "decimals",
+      "profile": "number",
+      "titlePatterns": [
+        "decimal|tenths|hundredths|scaling number facts by 0\\.1|0\\.01"
+      ]
+    },
+    {
+      "id": "place_value",
+      "profile": "number",
+      "titlePatterns": [
+        "place value|integers|negative numbers|numbers up to|two-digit|three-digit|four-digit|large integers|odd and even|counting and representing|represent numbers|number bonds|equivalence of 10 hundreds|tens and ones|number system|comparing and ordering numbers"
+      ]
+    },
+    {
+      "id": "multiplication_division",
+      "profile": "number",
+      "titlePatterns": [
+        "multiplication|division|factors|multiples|prime|arrays|equal groups|grouping|formal multiplication|formal division|long multiplication|long division|partial products|size of divisor|facts by 10|facts by 100|twos, fives and tens|written multiplication|written division|derive related calculations|manipulating the multiplicative|multiply using a formal written method|divide using a formal written method|partial quotients"
+      ]
+    },
+    {
+      "id": "scale_by_powers10",
+      "profile": "number",
+      "titlePatterns": [
+        "multiplying and dividing by 10 and 100"
+      ]
+    },
+    {
+      "id": "addition_subtraction",
+      "profile": "number",
+      "titlePatterns": [
+        "addition|subtraction|additive|mental calculation|formal addition|formal subtraction|column addition|column subtraction"
+      ]
+    },
+    {
+      "id": "rounding_estimation",
+      "profile": "number",
+      "titlePatterns": [
+        "rounding|estimate|estimation|approximation|bounds|order of operations|mystery computations"
+      ]
+    },
+    {
+      "id": "reasoning",
+      "profile": "reasoning",
+      "titlePatterns": [
+        "proof|justification|non-routine|notice and wonder|getting to know you|number puzzles|world’s record folk dance|world's record folk dance|if our class were the world|gone in 30 seconds|paper clip games|fermi problems|using and interpreting a mathematical model"
+      ]
+    }
+  ]
+}
