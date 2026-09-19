@@ -231,10 +231,12 @@
         "fractions.equivalent"
       ],
       "prerequisiteSkills": [],
-      "allowedQuestionFamilies": [],
-      "terminalState": "EXPLICITLY_BLOCKED",
-      "blocker": "REPRESENTATION_MISSING",
-      "rationale": "Mentioned skills were classified by instructional role. Only Primary skills authorize Practice; Secondary and Prerequisite skills may support the reasoning but cannot replace the lesson target."
+      "allowedQuestionFamilies": [
+        "fractions.represent.interpret.fraction_bar"
+      ],
+      "terminalState": "READY_VERIFIED",
+      "blocker": null,
+      "rationale": "Primary target is fraction representation/interpretation. The deterministic fraction-bar family and SVG representation are now implemented, solved and independently verified; equivalent fractions remain secondary and do not authorize unrelated Practice."
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G4:U02:L06",
