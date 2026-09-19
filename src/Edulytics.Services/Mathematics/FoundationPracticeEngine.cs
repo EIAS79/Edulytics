@@ -28,7 +28,8 @@ internal static class FoundationPracticeEngine
             "supporting.geometry.angle_measure",
             "supporting.statistics.statistical_question",
             "supporting.statistics.center_or_variation",
-            "supporting.measurement.unit_iteration"
+            "supporting.measurement.unit_iteration",
+            "supporting.measurement.indirect_compare"
         };
 
     internal sealed record Problem(
@@ -65,6 +66,7 @@ internal static class FoundationPracticeEngine
             "supporting.statistics.statistical_question" => StatisticalQuestion(random),
             "supporting.statistics.center_or_variation" => CenterOrVariation(random, scale),
             "supporting.measurement.unit_iteration" => UnitIteration(random, scale),
+            "supporting.measurement.indirect_compare" => IndirectCompare(random, scale),
             _ => throw new InvalidOperationException(
                 $"Unsupported Foundation Practice family: {family}")
         };
@@ -123,6 +125,8 @@ internal static class FoundationPracticeEngine
                 p["kind"] == 0 ? "center" : "variation",
             "supporting.measurement.unit_iteration" =>
                 p["units"].ToString(CultureInfo.InvariantCulture),
+            "supporting.measurement.indirect_compare" =>
+                p["aOffset"] > p["bOffset"] ? "A" : "B",
             _ => throw new InvalidOperationException(
                 $"Unsupported Foundation Practice solver family: {family}")
         };
@@ -358,6 +362,29 @@ internal static class FoundationPracticeEngine
             "Compare the two category frequencies directly.",
             AssessmentItemType.ShortAnswer,
             ("a", a), ("b", b));
+    }
+
+    private static Problem IndirectCompare(Random r, int scale)
+    {
+        var aOffset = r.Next(1, 4 + scale);
+        var bOffset = -r.Next(1, 4 + scale);
+        if (r.Next(0, 2) == 0)
+            (aOffset, bOffset) = (bOffset, aOffset);
+
+        var aPhrase = aOffset > 0
+            ? $"{Math.Abs(aOffset)} unit(s) longer than C"
+            : $"{Math.Abs(aOffset)} unit(s) shorter than C";
+        var bPhrase = bOffset > 0
+            ? $"{Math.Abs(bOffset)} unit(s) longer than C"
+            : $"{Math.Abs(bOffset)} unit(s) shorter than C";
+
+        return P(
+            "supporting.measurement.indirect_compare",
+            $"Object A is {aPhrase}. Object B is {bPhrase}. Which object is longer, A or B?",
+            "Use object C as the common reference. The object farther above C, or less far below C, is longer.",
+            AssessmentItemType.ShortAnswer,
+            ("aOffset", aOffset),
+            ("bOffset", bOffset));
     }
 
     private static Problem UnitIteration(Random r, int scale)
