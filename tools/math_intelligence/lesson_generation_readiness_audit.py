@@ -10,6 +10,9 @@ from typing import Any
 from lesson_semantic_content_audit import audit as semantic_audit
 from lesson_skill_resolution_audit import audit as skill_resolution_audit
 from supporting_practice_rules import load_rule_mappings as load_supporting_rule_mappings
+from official_practice_rules import (
+    load_reviewed_official_rule_mappings,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 SKILL_REGISTRY = ROOT / "src/Edulytics.Core/Mathematics/Skills/skill-registry.v1.json"
@@ -56,6 +59,11 @@ def load_approved_mappings() -> tuple[dict[str, dict[str, Any]], list[str]]:
     content_dir = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs"
     supporting, unmatched, errors = load_supporting_rule_mappings(content_dir)
     for code, row in supporting.items():
+        result.setdefault(code, row)
+
+    official, official_errors = load_reviewed_official_rule_mappings(content_dir)
+    errors.extend(official_errors)
+    for code, row in official.items():
         result.setdefault(code, row)
 
     explicit_codes = {
