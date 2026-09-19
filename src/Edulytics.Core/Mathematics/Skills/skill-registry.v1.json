@@ -664,7 +664,18 @@
       "id": "fractions.equivalent",
       "domain": "fractions",
       "canonicalName": "Generate and recognize equivalent fractions",
-      "legacyGameMechanic": "FRACTION_EQUIVALENT"
+      "legacyGameMechanic": "FRACTION_EQUIVALENT",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.equivalent.exact",
+        "fractions.verify.equivalent"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
+      ]
     },
     {
       "id": "fractions.of_quantity",
@@ -700,7 +711,16 @@
       "domain": "ratio",
       "canonicalName": "Use unit rate and proportion",
       "legacyCanonicalSkill": "UnitRateAndProportion",
-      "legacyGameMechanic": "UNIT_RATE"
+      "legacyGameMechanic": "UNIT_RATE",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "ratio.unit_rate.exact",
+        "ratio.verify.unit_rate"
+      ],
+      "v2QuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ]
     },
     {
       "id": "algebra.relationships.two_unknowns",
