@@ -1556,6 +1556,84 @@
       ],
       "status": "PracticeVerified",
       "productionRouting": false
+    },
+    {
+      "id": "vectors.subtract.exact_rational",
+      "version": 1,
+      "skillId": "vectors.subtract.exact",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "vectors.subtract.exact_rational",
+        "vectors.verify.exact_operations"
+      ],
+      "answerType": "exact_vector",
+      "verificationPolicy": "independent-componentwise-subtraction-from-original-vectors",
+      "representations": [
+        "symbolic",
+        "vector",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "vectors.scalar_multiply.exact_rational",
+      "version": 1,
+      "skillId": "vectors.scalar_multiply",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "vectors.scalar_multiply.exact_rational",
+        "vectors.verify.exact_operations"
+      ],
+      "answerType": "exact_vector",
+      "verificationPolicy": "independent-componentwise-scalar-multiplication",
+      "representations": [
+        "symbolic",
+        "vector",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "vectors.magnitude.exact",
+      "version": 1,
+      "skillId": "vectors.magnitude",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "vectors.magnitude.exact",
+        "vectors.verify.exact_operations"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-pythagorean-magnitude-from-original-components",
+      "representations": [
+        "symbolic",
+        "vector",
+        "coordinate_pair",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "vectors.between_points.exact",
+      "version": 1,
+      "skillId": "vectors.between_points",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "vectors.between_points.exact",
+        "vectors.verify.exact_operations"
+      ],
+      "answerType": "exact_vector",
+      "verificationPolicy": "independent-endpoint-subtraction",
+      "representations": [
+        "symbolic",
+        "vector",
+        "coordinate_pair",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
     }
   ]
 }
