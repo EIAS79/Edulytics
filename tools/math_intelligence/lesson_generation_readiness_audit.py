@@ -9,6 +9,7 @@ from typing import Any
 
 from lesson_semantic_content_audit import audit as semantic_audit
 from lesson_skill_resolution_audit import audit as skill_resolution_audit
+from supporting_practice_rules import load_rule_mappings as load_supporting_rule_mappings
 
 ROOT = Path(__file__).resolve().parents[2]
 SKILL_REGISTRY = ROOT / "src/Edulytics.Core/Mathematics/Skills/skill-registry.v1.json"
@@ -42,7 +43,7 @@ def load_index(path: Path, collection: str, key: str = "id") -> dict[str, dict[s
     return result
 
 
-def load_approved_mappings() -> dict[str, dict[str, Any]]:
+def load_approved_mappings() -> tuple[dict[str, dict[str, Any]], list[str]]:
     doc = read_json(LESSON_MAPPINGS)
     result: dict[str, dict[str, Any]] = {}
     for row in doc.get("mappings") or []:
@@ -51,7 +52,23 @@ def load_approved_mappings() -> dict[str, dict[str, Any]]:
         code = str(row.get("lessonCode") or "").strip()
         if code:
             result[code] = row
-    return result
+
+    content_dir = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs"
+    supporting, unmatched, errors = load_supporting_rule_mappings(content_dir)
+    for code, row in supporting.items():
+        result.setdefault(code, row)
+
+    explicit_codes = {
+        str(row.get("lessonCode") or "").strip()
+        for row in doc.get("mappings") or []
+        if isinstance(row, dict)
+    }
+    errors.extend(
+        f"Supporting Practice target rule missing for {row['lessonCode']}: {row['title']}"
+        for row in unmatched
+        if row["lessonCode"] not in explicit_codes
+    )
+    return result, errors
 
 
 def has_shadow_verified_v2_family(
@@ -202,13 +219,13 @@ def audit() -> dict[str, Any]:
     skills = load_index(SKILL_REGISTRY, "skills")
     capabilities = load_index(CAPABILITY_REGISTRY, "capabilities")
     families = load_index(QUESTION_FAMILY_REGISTRY, "families")
-    mappings = load_approved_mappings()
+    mappings, mapping_blockers = load_approved_mappings()
 
     skill_by_code = {row["lessonCode"]: row for row in skill_report["lessons"]}
     semantic_by_code = {row["lessonCode"]: row for row in semantic_report["lessons"]}
 
     all_codes = sorted(set(skill_by_code) | set(semantic_by_code))
-    blockers: list[str] = []
+    blockers: list[str] = list(mapping_blockers)
     if set(skill_by_code) != set(semantic_by_code):
         missing_skill = sorted(set(semantic_by_code) - set(skill_by_code))
         missing_semantic = sorted(set(skill_by_code) - set(semantic_by_code))

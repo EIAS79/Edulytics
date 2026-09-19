@@ -27,6 +27,7 @@ public static class PracticeMathVisualRenderer
 
             return family switch
             {
+                "supporting.circle.arc_angle_degrees" => CircleArc(parameters),
                 "geometry.coordinate.gradient_between_points" => CoordinateGradient(parameters),
                 "geometry.coordinate.evaluate_linear_rule" or
                 "geometry.coordinate.y_intercept_from_rule" => StraightLine(parameters),
@@ -92,6 +93,33 @@ public static class PracticeMathVisualRenderer
         }
 
         Text(sb, 210, 208, $"{numerator} shaded out of {denominator} equal parts", "hint");
+        return SvgEnd(sb);
+    }
+
+    private static string CircleArc(JsonElement p)
+    {
+        var numerator = GetInt(p, "numerator");
+        var denominator = GetInt(p, "denominator");
+        if (denominator <= 0 || numerator <= 0 || numerator >= denominator)
+            throw new JsonException("Invalid circle-arc fraction.");
+
+        var angle = 360d * numerator / denominator;
+        var endRadians = (-90d + angle) * Math.PI / 180d;
+        const double cx = 210;
+        const double cy = 130;
+        const double radius = 88;
+        var sx = cx;
+        var sy = cy - radius;
+        var ex = cx + radius * Math.Cos(endRadians);
+        var ey = cy + radius * Math.Sin(endRadians);
+        var largeArc = angle > 180 ? 1 : 0;
+
+        var sb = SvgStart("Circle showing the stated arc as a fraction of a full turn.");
+        sb.Append("<circle cx='210' cy='130' r='88' class='shape fill'/>");
+        sb.Append($"<path d='M {F(sx)} {F(sy)} A {F(radius)} {F(radius)} 0 {largeArc} 1 {F(ex)} {F(ey)}' class='arc-highlight'/>");
+        sb.Append($"<line x1='210' y1='130' x2='{F(sx)}' y2='{F(sy)}' class='shape'/>");
+        sb.Append($"<line x1='210' y1='130' x2='{F(ex)}' y2='{F(ey)}' class='shape'/>");
+        Text(sb, 210, 135, $"{numerator}/{denominator} turn", "label");
         return SvgEnd(sb);
     }
 
@@ -409,7 +437,7 @@ public static class PracticeMathVisualRenderer
         var safeLabel = WebUtility.HtmlEncode(label);
         var sb = new StringBuilder();
         sb.Append($"<svg class='practice-math-visual' viewBox='0 0 420 260' role='img' aria-label='{safeLabel}'>");
-        sb.Append("<style>.fraction-cell{stroke:currentColor;stroke-width:2}.fraction-shaded{fill:rgba(18,114,133,.38)}.fraction-empty{fill:rgba(255,255,255,.35)}.shape{stroke:currentColor;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}.fill{fill:rgba(255,255,255,.28)}.axis{stroke:currentColor;stroke-width:1.5;opacity:.55}.tick{stroke:currentColor;stroke-width:1;opacity:.45}.mark,.arc{stroke:currentColor;stroke-width:2;fill:none}.dash{stroke-dasharray:7 6;opacity:.7}.label{font:700 16px system-ui,sans-serif;fill:currentColor}.unknown{font:800 18px system-ui,sans-serif;fill:currentColor}.hint{font:600 12px system-ui,sans-serif;fill:currentColor;opacity:.75}.point-label{font:700 13px system-ui,sans-serif;fill:currentColor}.point{fill:currentColor}.vector{stroke:currentColor;stroke-width:3}.secondary{stroke-dasharray:4 3}.arrow-head{fill:currentColor}</style>");
+        sb.Append("<style>.fraction-cell{stroke:currentColor;stroke-width:2}.fraction-shaded{fill:rgba(18,114,133,.38)}.fraction-empty{fill:rgba(255,255,255,.35)}.shape{stroke:currentColor;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}.fill{fill:rgba(255,255,255,.28)}.axis{stroke:currentColor;stroke-width:1.5;opacity:.55}.tick{stroke:currentColor;stroke-width:1;opacity:.45}.mark,.arc{stroke:currentColor;stroke-width:2;fill:none}.arc-highlight{stroke:currentColor;stroke-width:8;fill:none;stroke-linecap:round}.dash{stroke-dasharray:7 6;opacity:.7}.label{font:700 16px system-ui,sans-serif;fill:currentColor}.unknown{font:800 18px system-ui,sans-serif;fill:currentColor}.hint{font:600 12px system-ui,sans-serif;fill:currentColor;opacity:.75}.point-label{font:700 13px system-ui,sans-serif;fill:currentColor}.point{fill:currentColor}.vector{stroke:currentColor;stroke-width:3}.secondary{stroke-dasharray:4 3}.arrow-head{fill:currentColor}</style>");
         return sb;
     }
 

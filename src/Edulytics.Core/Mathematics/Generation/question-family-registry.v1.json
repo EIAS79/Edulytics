@@ -2243,6 +2243,2207 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.number.place_value",
+      "version": 1,
+      "skillId": "supporting.number.place_value_rounding",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.number.rounding",
+      "version": 1,
+      "skillId": "supporting.number.place_value_rounding",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.number.negative_operation",
+      "version": 1,
+      "skillId": "supporting.number.directed_operations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.number.order_operations",
+      "version": 1,
+      "skillId": "supporting.number.directed_operations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.number.gcf",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.number.prime_factor",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.decimals.operation",
+      "version": 1,
+      "skillId": "supporting.decimals.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.decimals.compare",
+      "version": 1,
+      "skillId": "supporting.decimals.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.decimals.round",
+      "version": 1,
+      "skillId": "supporting.decimals.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.fractions.multiply",
+      "version": 1,
+      "skillId": "supporting.fractions.multiply_divide",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.fractions.divide_whole",
+      "version": 1,
+      "skillId": "supporting.fractions.multiply_divide",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.fractions.simplify",
+      "version": 1,
+      "skillId": "supporting.fractions.multiply_divide",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.fdp.percent_equivalent",
+      "version": 1,
+      "skillId": "supporting.fdp.equivalence",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.measurement.unit_conversion",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.measurement.time_elapsed",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.measurement.money_change",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.algebra.substitute",
+      "version": 1,
+      "skillId": "supporting.algebra.expressions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.algebra.expand",
+      "version": 1,
+      "skillId": "supporting.algebra.expressions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.algebra.factor",
+      "version": 1,
+      "skillId": "supporting.algebra.expressions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.algebra.simplify",
+      "version": 1,
+      "skillId": "supporting.algebra.expressions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.algebra.expressions.mixed",
+      "version": 1,
+      "skillId": "supporting.algebra.expressions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.algebra.simultaneous",
+      "version": 1,
+      "skillId": "supporting.algebra.equations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.algebra.quadratic_larger_root",
+      "version": 1,
+      "skillId": "supporting.algebra.equations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.algebra.equations.mixed",
+      "version": 1,
+      "skillId": "supporting.algebra.equations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.functions.evaluate",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.functions.composite",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.functions.core.mixed",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.indices.power_or_root",
+      "version": 1,
+      "skillId": "supporting.indices.roots_standard_form",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.standard_form.power10_exponent",
+      "version": 1,
+      "skillId": "supporting.indices.roots_standard_form",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.surds.coefficient",
+      "version": 1,
+      "skillId": "supporting.surds.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.angle_around_point",
+      "version": 1,
+      "skillId": "supporting.geometry.angles",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.angle_classify",
+      "version": 1,
+      "skillId": "supporting.geometry.angles",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.parallelogram_area",
+      "version": 1,
+      "skillId": "supporting.geometry.area_volume",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.compound_area",
+      "version": 1,
+      "skillId": "supporting.geometry.area_volume",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.cuboid_volume",
+      "version": 1,
+      "skillId": "supporting.geometry.area_volume",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.translate_point",
+      "version": 1,
+      "skillId": "supporting.geometry.transformations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.reflect_axis",
+      "version": 1,
+      "skillId": "supporting.geometry.transformations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.rotate90",
+      "version": 1,
+      "skillId": "supporting.geometry.transformations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.transformations.mixed",
+      "version": 1,
+      "skillId": "supporting.geometry.transformations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.midpoint",
+      "version": 1,
+      "skillId": "supporting.geometry.analytic",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.axis_distance",
+      "version": 1,
+      "skillId": "supporting.geometry.analytic",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.analytic.mixed",
+      "version": 1,
+      "skillId": "supporting.geometry.analytic",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.circle_circumference_pi_coefficient",
+      "version": 1,
+      "skillId": "supporting.geometry.circles_loci",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.circle_area_pi_coefficient",
+      "version": 1,
+      "skillId": "supporting.geometry.circles_loci",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.locus_equidistant",
+      "version": 1,
+      "skillId": "supporting.geometry.circles_loci",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.statistics.table_total",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.statistics.pie_sector_angle",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.statistics.charts.mixed",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.statistics.scatter_correlation",
+      "version": 1,
+      "skillId": "supporting.statistics.scatter",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.statistics.experimental_probability",
+      "version": 1,
+      "skillId": "supporting.statistics.experimental_probability",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.probability.sample_space_count",
+      "version": 1,
+      "skillId": "supporting.probability.sample_space",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.statistics.compare_range",
+      "version": 1,
+      "skillId": "supporting.statistics.distributions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.statistics.collection_method",
+      "version": 1,
+      "skillId": "supporting.statistics.data_collection",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.reasoning.multistep",
+      "version": 1,
+      "skillId": "supporting.reasoning.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.reasoning.verify_identity",
+      "version": 1,
+      "skillId": "supporting.reasoning.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.calculus.derivative_value",
+      "version": 1,
+      "skillId": "supporting.calculus.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.calculus.definite_integral_linear",
+      "version": 1,
+      "skillId": "supporting.calculus.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.calculus.optimization",
+      "version": 1,
+      "skillId": "supporting.calculus.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.matrices.determinant2",
+      "version": 1,
+      "skillId": "supporting.matrices.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.complex.add_real_part",
+      "version": 1,
+      "skillId": "supporting.complex.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.complex.multiply_real_part",
+      "version": 1,
+      "skillId": "supporting.complex.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.mechanics.constant_acceleration_velocity",
+      "version": 1,
+      "skillId": "supporting.mechanics.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.probability.conditional_simple",
+      "version": 1,
+      "skillId": "supporting.probability.conditional",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.exponentials.solve_exponent",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.logarithms.evaluate",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.combinatorics.choose_two",
+      "version": 1,
+      "skillId": "supporting.combinatorics.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.probability_statistics.mixed",
+      "version": 1,
+      "skillId": "supporting.probability_statistics.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.plane.mixed",
+      "version": 1,
+      "skillId": "supporting.geometry.plane",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.solid.mixed",
+      "version": 1,
+      "skillId": "supporting.geometry.solid",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.sequences.core.mixed",
+      "version": 1,
+      "skillId": "supporting.sequences.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.trigonometry.core.mixed",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.number.real.mixed",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.number.multiply",
+      "version": 1,
+      "skillId": "supporting.number.directed_operations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.number.divide",
+      "version": 1,
+      "skillId": "supporting.number.directed_operations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.number.lcm",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.decimals.place_value",
+      "version": 1,
+      "skillId": "supporting.decimals.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-completion-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.number.compare_order",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.number.parity",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.number.bounds_upper",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.number.scale_power10",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.fractions.mixed_to_improper",
+      "version": 1,
+      "skillId": "supporting.fractions.multiply_divide",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.measurement.compare",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.shape_dimension",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.turn_degrees",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.triangle_area",
+      "version": 1,
+      "skillId": "supporting.geometry.area_volume",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.geometry.surface_area_cuboid",
+      "version": 1,
+      "skillId": "supporting.geometry.area_volume",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.algebra.algebraic_fraction",
+      "version": 1,
+      "skillId": "supporting.algebra.expressions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.algebra.complete_square_vertex",
+      "version": 1,
+      "skillId": "supporting.algebra.equations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.algebra.inverse_proportion",
+      "version": 1,
+      "skillId": "supporting.algebra.equations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.functions.inverse_linear",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.functions.polynomial_value",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.coordinate.line_intersection",
+      "version": 1,
+      "skillId": "supporting.geometry.analytic",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.circle.angle_semicircle",
+      "version": 1,
+      "skillId": "supporting.geometry.circles_loci",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.trigonometry.bearing",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.trigonometry.sine_rule_exact",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.trigonometry.cosine_rule_square",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.trigonometry.area_sine_double",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.trigonometry.graph_special",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.sets.union_count",
+      "version": 1,
+      "skillId": "supporting.sets.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.statistics.grouped_mean",
+      "version": 1,
+      "skillId": "supporting.statistics.distributions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.statistics.cumulative_total",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.statistics.histogram_density",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.statistics.quartile",
+      "version": 1,
+      "skillId": "supporting.statistics.distributions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.probability.independent_product",
+      "version": 1,
+      "skillId": "supporting.probability.events",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.probability.expected_frequency",
+      "version": 1,
+      "skillId": "supporting.probability.events",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.probability.binomial_half",
+      "version": 1,
+      "skillId": "supporting.probability.distributions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.probability.normal_symmetry",
+      "version": 1,
+      "skillId": "supporting.probability.distributions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.probability.poisson_mean",
+      "version": 1,
+      "skillId": "supporting.probability.distributions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.probability.uniform_interval",
+      "version": 1,
+      "skillId": "supporting.probability.distributions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.statistics.hypothesis_decision",
+      "version": 1,
+      "skillId": "supporting.probability.distributions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.calculus.differential_equation_value",
+      "version": 1,
+      "skillId": "supporting.calculus.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.numerical.bisection_midpoint",
+      "version": 1,
+      "skillId": "supporting.numerical.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.series.geometric_sum",
+      "version": 1,
+      "skillId": "supporting.sequences.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.algebra.binomial_coefficient",
+      "version": 1,
+      "skillId": "supporting.algebra.expressions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.mechanics.projectile_velocity",
+      "version": 1,
+      "skillId": "supporting.mechanics.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.mechanics.energy",
+      "version": 1,
+      "skillId": "supporting.mechanics.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.mechanics.circular_motion",
+      "version": 1,
+      "skillId": "supporting.mechanics.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.mechanics.equilibrium",
+      "version": 1,
+      "skillId": "supporting.mechanics.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.mechanics.friction",
+      "version": 1,
+      "skillId": "supporting.mechanics.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.mechanics.connected_particles",
+      "version": 1,
+      "skillId": "supporting.mechanics.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.vectors.add",
+      "version": 1,
+      "skillId": "supporting.vectors.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.vectors.magnitude",
+      "version": 1,
+      "skillId": "supporting.vectors.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "supporting-advanced-independent-recompute-from-original-parameters",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "fractions.equivalent.number_line",
+      "version": 1,
+      "skillId": "fractions.equivalent",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "fractions.verify.equivalent"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-equivalent-fraction-number-line-value-check",
+      "representations": [
+        "symbolic",
+        "number_line",
+        "diagram_metadata"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.circle.arc_angle_degrees",
+      "version": 1,
+      "skillId": "supporting.geometry.circles_loci",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-full-turn-fraction-times-360-check",
+      "representations": [
+        "symbolic",
+        "diagram_metadata",
+        "circle_arc"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.probability.discrete_expected_value",
+      "version": 1,
+      "skillId": "supporting.probability.distributions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-probability-weighted-mean-check",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.trigonometry.identity_missing_component",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-pythagorean-trigonometric-identity-check",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "supporting.trigonometry.equation_smallest_angle",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-special-angle-equation-check",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ]
 }

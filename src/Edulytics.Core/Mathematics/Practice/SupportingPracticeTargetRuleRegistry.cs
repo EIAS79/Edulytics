@@ -1,0 +1,180 @@
+using System.Reflection;
+using System.Text.Json;
+using System.Text.RegularExpressions;
+
+namespace Edulytics.Core.Mathematics.Practice;
+
+public sealed record SupportingPracticeContentRecipe(
+    string Concept,
+    string WorkedExample,
+    string Solution,
+    string CommonMistake,
+    string Summary);
+
+public sealed record SupportingPracticeTargetRule(
+    string Id,
+    IReadOnlyList<string> TitlePatterns,
+    IReadOnlyList<string> CodePatterns,
+    string SkillId,
+    string Mechanic,
+    IReadOnlyList<string> Families,
+    SupportingPracticeContentRecipe Content);
+
+/// <summary>
+/// Reviewed, ordered Supporting-lesson target rules. This registry is shared by
+/// runtime Practice projection, canonical content remediation and deterministic
+/// audits so those three surfaces cannot silently disagree.
+/// </summary>
+public static class SupportingPracticeTargetRuleRegistry
+{
+    private const string ResourceName =
+        "Edulytics.Core.Mathematics.Curriculum.supporting-practice-target-rules.v1.json";
+
+    private static readonly Lazy<IReadOnlyList<CompiledRule>> Rules = new(Load);
+
+    public static IReadOnlyList<SupportingPracticeTargetRule> All =>
+        Rules.Value.Select(x => x.Rule).ToArray();
+
+    public static bool TryResolve(
+        string? lessonCode,
+        string? title,
+        out SupportingPracticeTargetRule? rule)
+    {
+        var code = (lessonCode ?? string.Empty).Trim();
+        var normalizedTitle = NormalizeTitle(title);
+
+        foreach (var candidate in Rules.Value)
+        {
+            var titleMatch = candidate.TitlePatterns.Count == 0 ||
+                candidate.TitlePatterns.Any(pattern => pattern.IsMatch(normalizedTitle));
+            if (!titleMatch)
+                continue;
+
+            var codeMatch = candidate.CodePatterns.Count == 0 ||
+                candidate.CodePatterns.Any(pattern => pattern.IsMatch(code));
+            if (!codeMatch)
+                continue;
+
+            rule = candidate.Rule;
+            return true;
+        }
+
+        rule = null;
+        return false;
+    }
+
+    public static string NormalizeTitle(string? title)
+    {
+        var value = Regex.Replace(
+            title ?? string.Empty,
+            @"\s*[—-]\s*advanced reasoning\s*$",
+            string.Empty,
+            RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+        value = Regex.Replace(
+            value,
+            @":\s*(?:build the idea|reason and apply)\s*$",
+            string.Empty,
+            RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+        value = Regex.Replace(
+            value,
+            @"^\s*consolidating\s+",
+            string.Empty,
+            RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+        return Regex.Replace(value, @"\s+", " ").Trim();
+    }
+
+    private static IReadOnlyList<CompiledRule> Load()
+    {
+        var assembly = typeof(SupportingPracticeTargetRuleRegistry).Assembly;
+        using var stream = assembly.GetManifestResourceStream(ResourceName)
+            ?? throw new InvalidOperationException(
+                $"Missing embedded Supporting Practice target rule registry: {ResourceName}.");
+
+        using var document = JsonDocument.Parse(stream);
+        var seen = new HashSet<string>(StringComparer.Ordinal);
+        var result = new List<CompiledRule>();
+
+        foreach (var row in document.RootElement.GetProperty("rules").EnumerateArray())
+        {
+            var id = Required(row, "id");
+            if (!seen.Add(id))
+                throw new InvalidOperationException($"Duplicate Supporting Practice rule id: {id}.");
+
+            var titlePatterns = ReadList(row, "titlePatterns");
+            var codePatterns = ReadList(row, "codePatterns");
+            if (titlePatterns.Count == 0 && codePatterns.Count == 0)
+                throw new InvalidOperationException($"Supporting Practice rule {id} has no target pattern.");
+
+            var contentNode = row.GetProperty("content");
+            var rule = new SupportingPracticeTargetRule(
+                id,
+                titlePatterns,
+                codePatterns,
+                Required(row, "skillId"),
+                Required(row, "mechanic"),
+                ReadList(row, "families"),
+                new SupportingPracticeContentRecipe(
+                    Required(contentNode, "concept"),
+                    Required(contentNode, "workedExample"),
+                    Required(contentNode, "solution"),
+                    Required(contentNode, "commonMistake"),
+                    Required(contentNode, "summary")));
+
+            if (rule.Families.Count == 0)
+                throw new InvalidOperationException($"Supporting Practice rule {id} has no question family.");
+
+            result.Add(new CompiledRule(
+                rule,
+                Compile(titlePatterns, id, "titlePatterns"),
+                Compile(codePatterns, id, "codePatterns")));
+        }
+
+        return result;
+    }
+
+    private static IReadOnlyList<Regex> Compile(
+        IReadOnlyList<string> patterns,
+        string ruleId,
+        string field) =>
+        patterns.Select(pattern =>
+        {
+            try
+            {
+                return new Regex(
+                    pattern,
+                    RegexOptions.IgnoreCase |
+                    RegexOptions.CultureInvariant |
+                    RegexOptions.Compiled);
+            }
+            catch (ArgumentException ex)
+            {
+                throw new InvalidOperationException(
+                    $"Invalid regex in Supporting Practice rule {ruleId}.{field}: {pattern}",
+                    ex);
+            }
+        }).ToArray();
+
+    private static IReadOnlyList<string> ReadList(JsonElement row, string name) =>
+        row.TryGetProperty(name, out var node) && node.ValueKind == JsonValueKind.Array
+            ? node.EnumerateArray()
+                .Select(value => value.GetString()?.Trim())
+                .Where(value => !string.IsNullOrWhiteSpace(value))
+                .Cast<string>()
+                .ToArray()
+            : [];
+
+    private static string Required(JsonElement row, string name)
+    {
+        if (!row.TryGetProperty(name, out var node))
+            throw new InvalidOperationException($"Supporting Practice rule field is missing: {name}.");
+        var value = node.GetString()?.Trim();
+        if (string.IsNullOrWhiteSpace(value))
+            throw new InvalidOperationException($"Supporting Practice rule field is blank: {name}.");
+        return value;
+    }
+
+    private sealed record CompiledRule(
+        SupportingPracticeTargetRule Rule,
+        IReadOnlyList<Regex> TitlePatterns,
+        IReadOnlyList<Regex> CodePatterns);
+}

@@ -1104,6 +1104,648 @@
         "probability.theoretical.complement",
         "probability.theoretical.two_coins_exactly_one"
       ]
+    },
+    {
+      "id": "supporting.number.place_value_rounding",
+      "domain": "number",
+      "canonicalName": "Place value and rounding for whole numbers",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.number.place_value",
+        "supporting.number.rounding"
+      ]
+    },
+    {
+      "id": "supporting.number.directed_operations",
+      "domain": "number",
+      "canonicalName": "Directed-number and order-of-operations reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.number.negative_operation",
+        "supporting.number.order_operations",
+        "supporting.number.multiply",
+        "supporting.number.divide"
+      ]
+    },
+    {
+      "id": "supporting.number.factors_primes",
+      "domain": "number",
+      "canonicalName": "Factors, greatest common factors and prime factors",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.number.gcf",
+        "supporting.number.prime_factor",
+        "supporting.number.lcm"
+      ]
+    },
+    {
+      "id": "supporting.decimals.core",
+      "domain": "number",
+      "canonicalName": "Decimal comparison, rounding and exact operations",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.decimals.place_value",
+        "supporting.decimals.operation",
+        "supporting.decimals.compare",
+        "supporting.decimals.round"
+      ]
+    },
+    {
+      "id": "supporting.fractions.multiply_divide",
+      "domain": "fractions",
+      "canonicalName": "Fraction multiplication, division and simplification",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.fractions.multiply",
+        "supporting.fractions.divide_whole",
+        "supporting.fractions.simplify",
+        "supporting.fractions.mixed_to_improper"
+      ]
+    },
+    {
+      "id": "supporting.fdp.equivalence",
+      "domain": "fractions",
+      "canonicalName": "Fraction-decimal-percentage equivalence",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.fdp.percent_equivalent"
+      ]
+    },
+    {
+      "id": "supporting.measurement.practical",
+      "domain": "measurement",
+      "canonicalName": "Practical unit conversion, elapsed time and money change",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.measurement.unit_conversion",
+        "supporting.measurement.time_elapsed",
+        "supporting.measurement.money_change",
+        "supporting.measurement.compare"
+      ]
+    },
+    {
+      "id": "supporting.algebra.expressions",
+      "domain": "algebra",
+      "canonicalName": "Substitution and manipulation of algebraic expressions",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.algebra.substitute",
+        "supporting.algebra.expand",
+        "supporting.algebra.factor",
+        "supporting.algebra.simplify",
+        "supporting.algebra.expressions.mixed",
+        "supporting.algebra.algebraic_fraction",
+        "supporting.algebra.binomial_coefficient"
+      ]
+    },
+    {
+      "id": "supporting.algebra.equations",
+      "domain": "algebra",
+      "canonicalName": "Exact equation, simultaneous-equation and quadratic-root reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.algebra.simultaneous",
+        "supporting.algebra.quadratic_larger_root",
+        "supporting.algebra.equations.mixed",
+        "supporting.algebra.complete_square_vertex",
+        "supporting.algebra.inverse_proportion"
+      ]
+    },
+    {
+      "id": "supporting.functions.core",
+      "domain": "functions",
+      "canonicalName": "Exact evaluation and composition of functions",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.functions.evaluate",
+        "supporting.functions.composite",
+        "supporting.functions.core.mixed",
+        "supporting.functions.inverse_linear",
+        "supporting.functions.polynomial_value"
+      ]
+    },
+    {
+      "id": "supporting.indices.roots_standard_form",
+      "domain": "indices",
+      "canonicalName": "Powers, roots and powers-of-ten standard form",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.indices.power_or_root",
+        "supporting.standard_form.power10_exponent"
+      ]
+    },
+    {
+      "id": "supporting.surds.core",
+      "domain": "indices",
+      "canonicalName": "Simplifying exact square-root surds",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.surds.coefficient"
+      ]
+    },
+    {
+      "id": "supporting.geometry.angles",
+      "domain": "geometry",
+      "canonicalName": "Angle classification and angle sums around a point",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.angle_around_point",
+        "supporting.geometry.angle_classify"
+      ]
+    },
+    {
+      "id": "supporting.geometry.area_volume",
+      "domain": "geometry",
+      "canonicalName": "Areas of plane shapes and volumes of cuboids",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.parallelogram_area",
+        "supporting.geometry.compound_area",
+        "supporting.geometry.cuboid_volume",
+        "supporting.geometry.triangle_area",
+        "supporting.geometry.surface_area_cuboid"
+      ]
+    },
+    {
+      "id": "supporting.geometry.transformations",
+      "domain": "geometry",
+      "canonicalName": "Coordinate translations, reflections and rotations",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.translate_point",
+        "supporting.geometry.reflect_axis",
+        "supporting.geometry.rotate90",
+        "supporting.transformations.mixed"
+      ]
+    },
+    {
+      "id": "supporting.geometry.analytic",
+      "domain": "geometry",
+      "canonicalName": "Coordinate midpoint and distance reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.midpoint",
+        "supporting.geometry.axis_distance",
+        "supporting.geometry.analytic.mixed",
+        "supporting.coordinate.line_intersection"
+      ]
+    },
+    {
+      "id": "supporting.geometry.circles_loci",
+      "domain": "geometry",
+      "canonicalName": "Exact circle measures and elementary loci",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.circle_circumference_pi_coefficient",
+        "supporting.geometry.circle_area_pi_coefficient",
+        "supporting.geometry.locus_equidistant",
+        "supporting.circle.angle_semicircle",
+        "supporting.circle.arc_angle_degrees"
+      ]
+    },
+    {
+      "id": "supporting.statistics.charts",
+      "domain": "statistics",
+      "canonicalName": "Reading tables, pie charts and exact chart totals",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.statistics.table_total",
+        "supporting.statistics.pie_sector_angle",
+        "supporting.statistics.charts.mixed",
+        "supporting.statistics.cumulative_total",
+        "supporting.statistics.histogram_density"
+      ]
+    },
+    {
+      "id": "supporting.statistics.scatter",
+      "domain": "statistics",
+      "canonicalName": "Interpreting scatter-graph correlation",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.statistics.scatter_correlation"
+      ]
+    },
+    {
+      "id": "supporting.statistics.experimental_probability",
+      "domain": "statistics",
+      "canonicalName": "Experimental probability from relative frequency",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.statistics.experimental_probability"
+      ]
+    },
+    {
+      "id": "supporting.probability.sample_space",
+      "domain": "probability",
+      "canonicalName": "Counting finite sample spaces",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.probability.sample_space_count"
+      ]
+    },
+    {
+      "id": "supporting.statistics.distributions",
+      "domain": "statistics",
+      "canonicalName": "Comparing distribution spread",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.statistics.compare_range",
+        "supporting.statistics.quartile",
+        "supporting.statistics.grouped_mean"
+      ]
+    },
+    {
+      "id": "supporting.statistics.data_collection",
+      "domain": "statistics",
+      "canonicalName": "Census and sample data-collection decisions",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.statistics.collection_method"
+      ]
+    },
+    {
+      "id": "supporting.reasoning.core",
+      "domain": "algebra",
+      "canonicalName": "Multi-step algebraic reasoning and justification",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.reasoning.multistep",
+        "supporting.reasoning.verify_identity"
+      ]
+    },
+    {
+      "id": "supporting.calculus.core",
+      "domain": "calculus",
+      "canonicalName": "Polynomial differentiation, definite integration and elementary optimization",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.calculus.derivative_value",
+        "supporting.calculus.definite_integral_linear",
+        "supporting.calculus.optimization",
+        "supporting.calculus.differential_equation_value"
+      ]
+    },
+    {
+      "id": "supporting.matrices.core",
+      "domain": "matrices",
+      "canonicalName": "Exact 2 by 2 determinant reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.matrices.determinant2"
+      ]
+    },
+    {
+      "id": "supporting.complex.core",
+      "domain": "complex",
+      "canonicalName": "Exact real-part reasoning with complex addition and multiplication",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.complex.add_real_part",
+        "supporting.complex.multiply_real_part"
+      ]
+    },
+    {
+      "id": "supporting.mechanics.core",
+      "domain": "mechanics",
+      "canonicalName": "Constant-acceleration velocity modelling",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.mechanics.constant_acceleration_velocity",
+        "supporting.mechanics.projectile_velocity",
+        "supporting.mechanics.energy",
+        "supporting.mechanics.circular_motion",
+        "supporting.mechanics.equilibrium",
+        "supporting.mechanics.friction",
+        "supporting.mechanics.connected_particles"
+      ]
+    },
+    {
+      "id": "supporting.probability.conditional",
+      "domain": "probability",
+      "canonicalName": "Elementary conditional probability",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.probability.conditional_simple"
+      ]
+    },
+    {
+      "id": "supporting.exponentials_logs",
+      "domain": "algebra",
+      "canonicalName": "Exact exponential and logarithmic inverse reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.exponentials.solve_exponent",
+        "supporting.logarithms.evaluate"
+      ]
+    },
+    {
+      "id": "supporting.combinatorics.core",
+      "domain": "probability",
+      "canonicalName": "Elementary exact combinatorial counting",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.combinatorics.choose_two"
+      ]
+    },
+    {
+      "id": "supporting.probability_statistics.core",
+      "domain": "probability",
+      "canonicalName": "Mixed exact probability and statistics reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.probability_statistics.mixed"
+      ]
+    },
+    {
+      "id": "supporting.geometry.plane",
+      "domain": "geometry",
+      "canonicalName": "Mixed exact plane-geometry reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.plane.mixed"
+      ]
+    },
+    {
+      "id": "supporting.geometry.solid",
+      "domain": "geometry",
+      "canonicalName": "Mixed exact solid-geometry reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.solid.mixed"
+      ]
+    },
+    {
+      "id": "supporting.sequences.core",
+      "domain": "sequences",
+      "canonicalName": "Mixed exact arithmetic-sequence reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.sequences.core.mixed",
+        "supporting.series.geometric_sum"
+      ]
+    },
+    {
+      "id": "supporting.trigonometry.core",
+      "domain": "trigonometry",
+      "canonicalName": "Exact right-triangle trigonometric-ratio reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.trigonometry.core.mixed",
+        "supporting.trigonometry.bearing",
+        "supporting.trigonometry.sine_rule_exact",
+        "supporting.trigonometry.cosine_rule_square",
+        "supporting.trigonometry.area_sine_double",
+        "supporting.trigonometry.graph_special",
+        "supporting.trigonometry.identity_missing_component",
+        "supporting.trigonometry.equation_smallest_angle"
+      ]
+    },
+    {
+      "id": "supporting.number.real",
+      "domain": "number",
+      "canonicalName": "Mixed exact real-number reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.number.real.mixed",
+        "supporting.number.compare_order",
+        "supporting.number.parity",
+        "supporting.number.bounds_upper",
+        "supporting.number.scale_power10"
+      ]
+    },
+    {
+      "id": "supporting.geometry.properties",
+      "domain": "geometry",
+      "canonicalName": "Classify elementary 2D/3D shape properties and turns",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.shape_dimension",
+        "supporting.geometry.turn_degrees"
+      ]
+    },
+    {
+      "id": "supporting.sets.core",
+      "domain": "probability",
+      "canonicalName": "Exact finite set and Venn-diagram counting",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.sets.union_count"
+      ]
+    },
+    {
+      "id": "supporting.probability.distributions",
+      "domain": "probability",
+      "canonicalName": "Exact foundational discrete/continuous distribution and inference reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.probability.binomial_half",
+        "supporting.probability.normal_symmetry",
+        "supporting.probability.poisson_mean",
+        "supporting.probability.uniform_interval",
+        "supporting.statistics.hypothesis_decision",
+        "supporting.probability.discrete_expected_value"
+      ]
+    },
+    {
+      "id": "supporting.probability.events",
+      "domain": "probability",
+      "canonicalName": "Exact combined-event, tree-diagram and expected-frequency reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.probability.independent_product",
+        "supporting.probability.expected_frequency"
+      ]
+    },
+    {
+      "id": "supporting.numerical.core",
+      "domain": "numerical_methods",
+      "canonicalName": "Exact foundational numerical solution and approximation reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.numerical.bisection_midpoint"
+      ]
+    },
+    {
+      "id": "supporting.vectors.core",
+      "domain": "vectors",
+      "canonicalName": "Exact foundational vector component and magnitude reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.vectors.add",
+        "supporting.vectors.magnitude"
+      ]
     }
   ]
 }
