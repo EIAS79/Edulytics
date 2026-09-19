@@ -91,8 +91,8 @@ public static class ExactMathematicsCapabilityResolver
             return Exact(
                 "geometry.surface_area_volume",
                 [
-                    "geometry.surface_area.rectangular_prism",
-                    "geometry.volume.rectangular_prism"
+                    "geometry.surface_area_volume.rectangular_prism_surface_area",
+                    "geometry.surface_area_volume.rectangular_prism_volume"
                 ],
                 "ExactSurfaceAreaVolume");
         }
