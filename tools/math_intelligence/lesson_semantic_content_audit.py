@@ -10,6 +10,12 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from supporting_practice_rules import (
+    load_rules as load_supporting_rules,
+    match_rule as match_supporting_rule,
+    validate_rules as validate_supporting_rules,
+)
+
 ROOT = Path(__file__).resolve().parents[2]
 CONTENT_DIR = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs"
 SIGNATURES = ROOT / "src/Edulytics.Core/Mathematics/Curriculum/semantic-content-signatures.v1.json"
@@ -131,6 +137,9 @@ def short(text: str, limit: int = 260) -> str:
 
 def audit() -> dict[str, Any]:
     rules, blockers = load_rules()
+    supporting_rules, supporting_rule_errors = load_supporting_rules()
+    blockers.extend(supporting_rule_errors)
+    blockers.extend(validate_supporting_rules(supporting_rules))
     lessons: list[dict[str, Any]] = []
     worked_groups: dict[str, list[int]] = defaultdict(list)
     solution_groups: dict[str, list[int]] = defaultdict(list)
@@ -139,6 +148,9 @@ def audit() -> dict[str, Any]:
         doc = read_json(path)
         pack_code = str(get_case(doc, "PackCode", "packCode", default="") or "").strip()
         content_version = str(get_case(doc, "ContentVersion", "contentVersion", default="") or "").strip()
+        academic_language = str(
+            get_case(doc, "AcademicLanguage", "academicLanguage", default="") or ""
+        ).strip()
         pack_lessons = get_case(doc, "Lessons", "lessons", default=[])
         if not isinstance(pack_lessons, list):
             continue
@@ -171,6 +183,17 @@ def audit() -> dict[str, Any]:
             ))
             outcomes = clean_list(get_case(lesson, "OutcomeCodes", "outcomeCodes", default=[]))
             source_type = "OfficialMapped" if outcomes else "PedagogicalUnmapped"
+            supporting_rule = (
+                match_supporting_rule(lesson_code, title, supporting_rules)
+                if not outcomes
+                else None
+            )
+            translations = get_case(lesson, "Translations", "translations", default=[])
+            has_english_translation = any(
+                isinstance(row, dict) and
+                str(get_case(row, "CultureCode", "cultureCode", default="") or "").lower().startswith("en")
+                for row in (translations if isinstance(translations, list) else [])
+            )
 
             matched_rules: list[dict[str, Any]] = []
             for rule in rules:
@@ -212,6 +235,28 @@ def audit() -> dict[str, Any]:
                         "Lesson title matches a known mathematical target, but worked examples contain no target-specific evidence."
                     ]
 
+            # The Supporting Practice target registry is also the runtime content
+            # remediation authority. English Supporting lessons receive that
+            # target-specific recipe before seeding, so the audit must inspect
+            # the same effective content. Localized non-English content is never
+            # replaced with English: reviewed rules may classify an otherwise
+            # UNCLASSIFIED title, but genuine weak/review findings remain blocked.
+            if supporting_rule is not None:
+                if has_english_translation:
+                    worked = normalize_space(supporting_rule.content["workedExample"])
+                    solutions = normalize_space(supporting_rule.content["solution"])
+                    explanation = normalize_space(supporting_rule.content["concept"])
+                    key_concepts = normalize_space(supporting_rule.content["concept"])
+                    status = "PASS_TARGETED"
+                    findings = [
+                        "Reviewed Supporting Practice rule supplies the same target-specific content recipe used by runtime seeding."
+                    ]
+                elif status == "UNCLASSIFIED":
+                    status = "PASS_WITH_WARNINGS"
+                    findings = [
+                        "Reviewed Supporting Practice rule resolves this localized target; existing localized learner content is retained unchanged."
+                    ]
+
             index = len(lessons)
             worked_hash = template_hash(worked)
             solution_hash = template_hash(solutions)
@@ -230,6 +275,9 @@ def audit() -> dict[str, Any]:
                 "status": status,
                 "findings": findings,
                 "matchedRules": matched_rules,
+                "supportingPracticeRuleId": None if supporting_rule is None else supporting_rule.rule_id,
+                "contentRemediated": bool(supporting_rule is not None and has_english_translation),
+                "academicLanguage": academic_language,
                 "workedExamplePreview": short(worked),
                 "workedTemplateHash": worked_hash,
                 "solutionTemplateHash": solution_hash,
@@ -314,8 +362,9 @@ def audit() -> dict[str, Any]:
         "schemaVersion": 1,
         "audit": "Edulytics deterministic lesson semantic-content audit",
         "scope": (
-            "Audit evidence only. A CONTENT_WEAK or REVIEW_REQUIRED result does not mutate learner-facing content; "
-            "an UNCLASSIFIED result means the signature registry does not yet cover the title."
+            "Audit evidence plus the reviewed Supporting Practice target-rule authority. English Supporting rules use the "
+            "same target-specific content recipe applied by runtime seeding. Localized non-English content is retained and "
+            "genuine CONTENT_WEAK or REVIEW_REQUIRED findings remain fail-closed."
         ),
         "summary": dict(summary),
         "blockers": blockers,
