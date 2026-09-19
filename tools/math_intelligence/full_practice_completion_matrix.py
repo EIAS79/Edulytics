@@ -158,7 +158,7 @@ def audit() -> dict[str, Any]:
         title = str(row.get("title") or semantic_row.get("title") or skill_row.get("title") or "")
         primary_skills = clean_list(row.get("approvedPrimarySkills"))
 
-        question_families: list[str] = []
+        question_families = clean_list(row.get("approvedQuestionFamilies"))
         representations: set[str] = set()
         domains: set[str] = set()
         for skill_id in primary_skills:
@@ -167,12 +167,17 @@ def audit() -> dict[str, Any]:
                 internal_blockers.append(f"{code}: approved SkillId {skill_id} missing from registry")
                 continue
             domains.add(str(skill_doc.get("domain") or "unknown"))
-            for family_id in clean_list(skill_doc.get("v2QuestionFamilies")):
-                if family_id not in question_families:
-                    question_families.append(family_id)
-                family = families.get(family_id)
-                if family is not None:
-                    representations.update(clean_list(family.get("representations")))
+
+        for family_id in question_families:
+            family = families.get(family_id)
+            if family is None:
+                internal_blockers.append(f"{code}: approved family {family_id} missing from registry")
+                continue
+            if str(family.get("skillId") or "") not in primary_skills:
+                internal_blockers.append(
+                    f"{code}: approved family {family_id} is not bound to an approved primary SkillId"
+                )
+            representations.update(clean_list(family.get("representations")))
 
         readiness_state = str(row.get("generationReadiness") or "UNRESOLVED")
         semantic_status = str(row.get("semanticContentStatus") or "UNCLASSIFIED")

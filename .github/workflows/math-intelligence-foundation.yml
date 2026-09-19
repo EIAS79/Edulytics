@@ -16,6 +16,7 @@ on:
       - 'tools/math_intelligence/**'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
       - '.github/workflows/math-intelligence-foundation.yml'
+      - 'docs/math-v2/MATHEMATICS_PRACTICE_COMPLETION_MASTER_PLAN.md'
   push:
     branches:
       - main
@@ -31,6 +32,7 @@ on:
       - 'tools/math_intelligence/**'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
       - '.github/workflows/math-intelligence-foundation.yml'
+      - 'docs/math-v2/MATHEMATICS_PRACTICE_COMPLETION_MASTER_PLAN.md'
   workflow_dispatch:
 
 permissions:
@@ -94,6 +96,10 @@ jobs:
           with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as handle:
               handle.write("\n".join(lines) + "\n")
           PY
+      - name: Run final Practice programme closure audit
+        run: |
+          set -euo pipefail
+          python3 tools/math_intelligence/practice_programme_final_closure_audit.py --strict --write-report
       - name: Run Stage 17 Grade 1-6 closure audit
         run: |
           set -euo pipefail
@@ -147,6 +153,16 @@ jobs:
             artifacts/math-intelligence/supporting-practice-remediation-closure-audit.json
             artifacts/math-intelligence/full-practice-completion-matrix.json
             artifacts/math-intelligence/supporting-practice-completion.json
+            artifacts/math-intelligence/content-repair-audit.json
+            artifacts/math-intelligence/lesson-skill-mapping-audit.json
+            artifacts/math-intelligence/question-family-coverage-audit.json
+            artifacts/math-intelligence/visual-representation-coverage-audit.json
+            artifacts/math-intelligence/solver-verifier-coverage-audit.json
+            artifacts/math-intelligence/difficulty-grade-coverage-audit.json
+            artifacts/math-intelligence/practice-readiness-by-curriculum.json
+            artifacts/math-intelligence/practice-readiness-by-domain.json
+            artifacts/math-intelligence/practice-readiness-by-level.json
+            artifacts/math-intelligence/practice-programme-final-closure-audit.json
             artifacts/math-intelligence/stage17-grade1-6-closure-audit.json
             artifacts/math-intelligence/stage18-practice-closure-audit.json
             artifacts/math-intelligence/stage19-assessment-builder-closure-audit.json
