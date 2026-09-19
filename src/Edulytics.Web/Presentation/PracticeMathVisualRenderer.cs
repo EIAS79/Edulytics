@@ -27,7 +27,13 @@ public static class PracticeMathVisualRenderer
 
             return family switch
             {
-                "geometry.coordinate.gradient_between_points" => CoordinateGradient(parameters),
+                "geometry.coordinate.gradient_between_points" or
+                "geometry.coordinate.linear_graphs.gradient" => CoordinateGradient(parameters),
+                "geometry.coordinate.linear_graphs.evaluate" or
+                "geometry.coordinate.linear_graphs.intercept" => LinearGraph(parameters),
+                "geometry.polygons.triangle_missing_angle" or
+                "geometry.polygons.quadrilateral_missing_angle" => PolygonAngles(family, parameters),
+                "geometry.perimeter_area.triangle_area" => TriangleArea(parameters),
                 "geometry.angles.parallel_lines" => ParallelLines(parameters),
                 "geometry.angles.supplementary" => Supplementary(parameters),
                 "geometry.angles.algebraic_supplementary" => AlgebraicSupplementary(parameters),
@@ -115,6 +121,70 @@ public static class PracticeMathVisualRenderer
         sb.Append($"<line x1='{F(X(x1))}' y1='{F(Y(y1))}' x2='{F(X(x2))}' y2='{F(Y(y2))}' class='shape'/>");
         Point(sb, X(x1), Y(y1), $"({x1}, {y1})");
         Point(sb, X(x2), Y(y2), $"({x2}, {y2})");
+        return SvgEnd(sb);
+    }
+
+    private static string LinearGraph(JsonElement p)
+    {
+        var gradient = GetInt(p, "gradient");
+        var x = GetInt(p, "x");
+        var y = GetInt(p, "y");
+        var intercept = TryGetInt(p, "intercept") ?? TryGetInt(p, "expected") ?? (y - gradient * x);
+        var values = new[] { x, y, intercept, -1, 1 };
+        var max = Math.Max(5, values.Max(v => Math.Abs(v)) + 2);
+        double X(int value) => 210 + value * (165d / max);
+        double Y(int value) => 130 - value * (100d / max);
+
+        var leftX = -max;
+        var rightX = max;
+        var leftY = gradient * leftX + intercept;
+        var rightY = gradient * rightX + intercept;
+
+        var sb = SvgStart("Coordinate graph of a straight line with a highlighted point.");
+        sb.Append("<line x1='35' y1='130' x2='385' y2='130' class='axis'/>");
+        sb.Append("<line x1='210' y1='20' x2='210' y2='240' class='axis'/>");
+        sb.Append($"<line x1='{F(X(leftX))}' y1='{F(Y(leftY))}' x2='{F(X(rightX))}' y2='{F(Y(rightY))}' class='shape'/>");
+        Point(sb, X(x), Y(y), $"({x}, {y})");
+        Text(sb, 286, 35, $"y = {gradient}x + {intercept}", "hint");
+        return SvgEnd(sb);
+    }
+
+    private static string PolygonAngles(string family, JsonElement p)
+    {
+        var sb = SvgStart("Polygon with labelled known interior angles and one unknown angle.");
+        if (family == "geometry.polygons.triangle_missing_angle")
+        {
+            var a = GetInt(p, "angleA");
+            var b = GetInt(p, "angleB");
+            sb.Append("<polygon points='70,210 350,210 205,55' class='shape fill'/>");
+            Text(sb, 84, 196, $"{a}°", "label");
+            Text(sb, 306, 196, $"{b}°", "label");
+            Text(sb, 195, 88, "x°", "unknown");
+        }
+        else
+        {
+            var a = GetInt(p, "angleA");
+            var b = GetInt(p, "angleB");
+            var d = GetInt(p, "angleC");
+            sb.Append("<polygon points='70,190 125,55 330,75 355,205' class='shape fill'/>");
+            Text(sb, 86, 178, $"{a}°", "label");
+            Text(sb, 132, 82, $"{b}°", "label");
+            Text(sb, 292, 98, $"{d}°", "label");
+            Text(sb, 310, 188, "x°", "unknown");
+        }
+        return SvgEnd(sb);
+    }
+
+    private static string TriangleArea(JsonElement p)
+    {
+        var baseLength = GetInt(p, "base");
+        var height = GetInt(p, "height");
+        var sb = SvgStart("Triangle with labelled base and perpendicular height.");
+        sb.Append("<polygon points='65,210 355,210 225,55' class='shape fill'/>");
+        sb.Append("<line x1='225' y1='55' x2='225' y2='210' class='dash shape'/>");
+        sb.Append("<path d='M225 192 L243 192 L243 210' class='mark'/>");
+        Text(sb, 196, 235, $"base = {baseLength}", "label");
+        Text(sb, 235, 140, $"h = {height}", "label");
         return SvgEnd(sb);
     }
 
