@@ -25,7 +25,7 @@ public static class NativeMathematicsOutcomeProfileResolver
             outcome.Code,
             semanticContext);
 
-        var exact = MathematicsGeneration.ExactMathematicsCapabilityResolver.Resolve(semanticContext);
+        var exact = ExactMathematicsCapabilityResolver.Resolve(semanticContext);
         if (!capability.CanGenerate && exact is null)
             return null;
 
