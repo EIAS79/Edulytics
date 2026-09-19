@@ -28,6 +28,8 @@ public static class PracticeMathVisualRenderer
             return family switch
             {
                 "geometry.coordinate.gradient_between_points" => CoordinateGradient(parameters),
+                "geometry.coordinate.evaluate_linear_rule" or
+                "geometry.coordinate.y_intercept_from_rule" => StraightLine(parameters),
                 "geometry.angles.parallel_lines" => ParallelLines(parameters),
                 "geometry.angles.supplementary" => Supplementary(parameters),
                 "geometry.angles.algebraic_supplementary" => AlgebraicSupplementary(parameters),
@@ -120,6 +122,44 @@ public static class PracticeMathVisualRenderer
         sb.Append($"<line x1='{F(X(x1))}' y1='{F(Y(y1))}' x2='{F(X(x2))}' y2='{F(Y(y2))}' class='shape'/>");
         Point(sb, X(x1), Y(y1), $"({x1}, {y1})");
         Point(sb, X(x2), Y(y2), $"({x2}, {y2})");
+        return SvgEnd(sb);
+    }
+
+    private static string StraightLine(JsonElement p)
+    {
+        var gradient = GetInt(p, "gradient");
+        var intercept = GetInt(p, "intercept");
+        var xValue = TryGetInt(p, "x");
+        var yValue = xValue.HasValue ? gradient * xValue.Value + intercept : (int?)null;
+
+        var max = Math.Max(
+            6,
+            new[] {
+                Math.Abs(intercept),
+                Math.Abs(xValue ?? 0),
+                Math.Abs(yValue ?? 0),
+                Math.Abs(gradient * 4 + intercept),
+                Math.Abs(-gradient * 4 + intercept)
+            }.Max() + 1);
+
+        double X(int value) => 210 + value * (160d / max);
+        double Y(int value) => 130 - value * (100d / max);
+
+        var sb = SvgStart("Coordinate grid showing the straight-line rule from the question.");
+        sb.Append("<line x1='35' y1='130' x2='385' y2='130' class='axis'/>");
+        sb.Append("<line x1='210' y1='20' x2='210' y2='240' class='axis'/>");
+
+        var leftX = -max;
+        var rightX = max;
+        var leftY = gradient * leftX + intercept;
+        var rightY = gradient * rightX + intercept;
+        sb.Append($"<line x1='{F(X(leftX))}' y1='{F(Y(leftY))}' x2='{F(X(rightX))}' y2='{F(Y(rightY))}' class='shape'/>");
+
+        Point(sb, X(0), Y(intercept), $"(0, {intercept})");
+        if (xValue.HasValue && yValue.HasValue)
+            Point(sb, X(xValue.Value), Y(yValue.Value), $"({xValue.Value}, {yValue.Value})");
+
+        Text(sb, 210, 246, $"y = {gradient}x {(intercept >= 0 ? "+" : "−")} {Math.Abs(intercept)}", "hint");
         return SvgEnd(sb);
     }
 

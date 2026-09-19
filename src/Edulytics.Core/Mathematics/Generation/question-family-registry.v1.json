@@ -2078,6 +2078,171 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "ratio.unit_rate.divide_total",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "ratio.unit_rate.exact",
+        "ratio.verify.unit_rate"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-total-parts-unit-and-requested-share-check",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "statistics.center_spread.mean",
+      "version": 1,
+      "skillId": "statistics.center_spread.core",
+      "requiredCapabilities": [
+        "statistics.center_spread.exact",
+        "statistics.verify.center_spread"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-sum-divide-count-check",
+      "representations": [
+        "symbolic",
+        "data_list"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "statistics.center_spread.median",
+      "version": 1,
+      "skillId": "statistics.center_spread.core",
+      "requiredCapabilities": [
+        "statistics.center_spread.exact",
+        "statistics.verify.center_spread"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-ordered-middle-value-check",
+      "representations": [
+        "symbolic",
+        "data_list"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "statistics.center_spread.range",
+      "version": 1,
+      "skillId": "statistics.center_spread.core",
+      "requiredCapabilities": [
+        "statistics.center_spread.exact",
+        "statistics.verify.center_spread"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-maximum-minus-minimum-check",
+      "representations": [
+        "symbolic",
+        "data_list"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "probability.theoretical.simple_event",
+      "version": 1,
+      "skillId": "probability.theoretical.core",
+      "requiredCapabilities": [
+        "probability.theoretical.exact",
+        "probability.verify.theoretical"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-favourable-over-total-check",
+      "representations": [
+        "symbolic",
+        "probability"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "probability.theoretical.complement",
+      "version": 1,
+      "skillId": "probability.theoretical.core",
+      "requiredCapabilities": [
+        "probability.theoretical.exact",
+        "probability.verify.theoretical"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-complement-count-and-one-minus-p-check",
+      "representations": [
+        "symbolic",
+        "probability"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "probability.theoretical.two_coins_exactly_one",
+      "version": 1,
+      "skillId": "probability.theoretical.core",
+      "requiredCapabilities": [
+        "probability.theoretical.exact",
+        "probability.verify.theoretical"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-four-outcome-sample-space-check",
+      "representations": [
+        "symbolic",
+        "sample_space"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "geometry.coordinate.evaluate_linear_rule",
+      "version": 1,
+      "skillId": "geometry.coordinate.straight_line",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-substitution-into-original-linear-rule",
+      "representations": [
+        "symbolic",
+        "coordinate_pair",
+        "graph",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "geometry.coordinate.y_intercept_from_rule",
+      "version": 1,
+      "skillId": "geometry.coordinate.straight_line",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-x-equals-zero-intercept-check",
+      "representations": [
+        "symbolic",
+        "graph",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ]
 }

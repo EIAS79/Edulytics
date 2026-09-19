@@ -64,6 +64,15 @@ public sealed class ExactSkillContractQuestionEngine
             "fractions.equivalent.reduce_common_factor",
             "ratio.unit_rate.direct",
             "ratio.unit_rate.equivalent_ratio",
+            "ratio.unit_rate.divide_total",
+            "statistics.center_spread.mean",
+            "statistics.center_spread.median",
+            "statistics.center_spread.range",
+            "probability.theoretical.simple_event",
+            "probability.theoretical.complement",
+            "probability.theoretical.two_coins_exactly_one",
+            "geometry.coordinate.evaluate_linear_rule",
+            "geometry.coordinate.y_intercept_from_rule",
             "number.whole.add_subtract.within_10.build",
             "number.whole.add_subtract.within_10.apply",
             "number.whole.add_subtract.across_ten.build",
@@ -350,6 +359,32 @@ public sealed class ExactSkillContractQuestionEngine
         }
 
         if (family is
+            "probability.theoretical.simple_event" or
+            "probability.theoretical.complement" or
+            "probability.theoretical.two_coins_exactly_one")
+        {
+            if (!TryParseFraction(answer, out var answerNumerator, out var answerDenominator))
+                return false;
+
+            var expectedNumerator = family switch
+            {
+                "probability.theoretical.simple_event" => parameters["favourable"],
+                "probability.theoretical.complement" => parameters["total"] - parameters["favourable"],
+                "probability.theoretical.two_coins_exactly_one" => 2,
+                _ => 0
+            };
+            var expectedDenominator = family == "probability.theoretical.two_coins_exactly_one"
+                ? 4
+                : parameters["total"];
+
+            return expectedDenominator > 0 &&
+                expectedNumerator >= 0 &&
+                expectedNumerator <= expectedDenominator &&
+                answerNumerator * expectedDenominator ==
+                    expectedNumerator * answerDenominator;
+        }
+
+        if (family is
             "vectors.add.exact_rational" or
             "vectors.subtract.exact_rational" or
             "vectors.scalar_multiply.exact_rational" or
@@ -472,6 +507,37 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters["target"] == parameters["first"] +
                     (parameters["expectedN"] - 1) * parameters["difference"] &&
                 value == parameters["expectedN"],
+
+            "ratio.unit_rate.divide_total" =>
+                parameters["firstPart"] > 0 &&
+                parameters["secondPart"] > 0 &&
+                parameters["total"] > 0 &&
+                parameters["total"] % (parameters["firstPart"] + parameters["secondPart"]) == 0 &&
+                value == parameters["total"] / (parameters["firstPart"] + parameters["secondPart"]) *
+                    parameters["askedPart"],
+
+            "statistics.center_spread.mean" =>
+                parameters["count"] == 5 &&
+                value * 5 ==
+                    parameters["v1"] + parameters["v2"] + parameters["v3"] +
+                    parameters["v4"] + parameters["v5"],
+
+            "statistics.center_spread.median" =>
+                parameters["v1"] <= parameters["v2"] &&
+                parameters["v2"] <= parameters["v3"] &&
+                parameters["v3"] <= parameters["v4"] &&
+                parameters["v4"] <= parameters["v5"] &&
+                value == parameters["v3"],
+
+            "statistics.center_spread.range" =>
+                parameters["max"] >= parameters["min"] &&
+                value == parameters["max"] - parameters["min"],
+
+            "geometry.coordinate.evaluate_linear_rule" =>
+                value == parameters["gradient"] * parameters["x"] + parameters["intercept"],
+
+            "geometry.coordinate.y_intercept_from_rule" =>
+                value == parameters["intercept"],
 
             "algebra.relationships.two_unknowns.total_difference" =>
                 value > 0 &&
@@ -727,6 +793,20 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUnitRate(random, scale),
             "ratio.unit_rate.equivalent_ratio" =>
                 BuildEquivalentRatio(random, scale),
+            "ratio.unit_rate.divide_total" =>
+                BuildRatioDivideTotal(random, scale),
+            "statistics.center_spread.mean" =>
+                BuildStatisticsMean(random, scale),
+            "statistics.center_spread.median" =>
+                BuildStatisticsMedian(random, scale),
+            "statistics.center_spread.range" =>
+                BuildStatisticsRange(random, scale),
+            "probability.theoretical.simple_event" =>
+                BuildTheoreticalProbabilitySimple(random, scale),
+            "probability.theoretical.complement" =>
+                BuildTheoreticalProbabilityComplement(random, scale),
+            "probability.theoretical.two_coins_exactly_one" =>
+                BuildTwoCoinProbability(random),
             "number.whole.add_subtract.within_10.build" or
             "number.whole.add_subtract.within_10.apply" or
             "number.whole.add_subtract.across_ten.build" or
@@ -764,6 +844,10 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildFractionBenchmark(random, scale),
             "geometry.coordinate.gradient_between_points" =>
                 BuildCoordinateGradient(random, scale),
+            "geometry.coordinate.evaluate_linear_rule" =>
+                BuildCoordinateLinearRule(random, scale),
+            "geometry.coordinate.y_intercept_from_rule" =>
+                BuildCoordinateIntercept(random, scale),
             "geometry.angles.parallel_lines" =>
                 BuildParallelLineAngle(random, scale),
             "geometry.angles.supplementary" =>
@@ -1109,6 +1193,122 @@ public sealed class ExactSkillContractQuestionEngine
             ("baseFirst", baseFirst),
             ("baseSecond", baseSecond),
             ("targetSecond", targetSecond));
+    }
+
+    private static ExactProblem BuildRatioDivideTotal(Random random, int scale)
+    {
+        var firstPart = random.Next(1, 5 + scale);
+        var secondPart = random.Next(1, 5 + scale);
+        while (secondPart == firstPart)
+            secondPart = random.Next(1, 5 + scale);
+
+        var unit = random.Next(2, 8 + scale * 2);
+        var total = (firstPart + secondPart) * unit;
+        var askedPart = random.Next(0, 2) == 0 ? firstPart : secondPart;
+
+        return Problem(
+            "ratio.unit_rate.divide_total",
+            $"A total of {total} is divided in the ratio {firstPart}:{secondPart}. Find the share corresponding to {askedPart} ratio part(s).",
+            "Add the ratio parts to find the total number of equal parts, divide the total by that number, then multiply by the requested number of parts. Check both shares add to the original total.",
+            AssessmentItemType.Numeric,
+            ("firstPart", firstPart),
+            ("secondPart", secondPart),
+            ("total", total),
+            ("askedPart", askedPart));
+    }
+
+    private static ExactProblem BuildStatisticsMean(Random random, int scale)
+    {
+        var mean = random.Next(3, 12 + scale * 4);
+        var d1 = random.Next(0, 4 + scale);
+        var d2 = random.Next(0, 4 + scale);
+        int[] values = [mean - d1, mean - d2, mean, mean + d2, mean + d1];
+        Array.Sort(values);
+
+        return Problem(
+            "statistics.center_spread.mean",
+            $"Find the mean of {string.Join(", ", values)}.",
+            "Add all five values and divide by 5. Verify that five times the mean equals the original total.",
+            AssessmentItemType.Numeric,
+            ("count", 5),
+            ("v1", values[0]),
+            ("v2", values[1]),
+            ("v3", values[2]),
+            ("v4", values[3]),
+            ("v5", values[4]));
+    }
+
+    private static ExactProblem BuildStatisticsMedian(Random random, int scale)
+    {
+        var values = Enumerable.Range(0, 5)
+            .Select(_ => random.Next(1, 15 + scale * 5))
+            .OrderBy(x => x)
+            .ToArray();
+
+        return Problem(
+            "statistics.center_spread.median",
+            $"Find the median of {string.Join(", ", values)}.",
+            "Order the five values from least to greatest. With five observations, the median is the third value. Verify there are two observations on each side.",
+            AssessmentItemType.Numeric,
+            ("v1", values[0]),
+            ("v2", values[1]),
+            ("v3", values[2]),
+            ("v4", values[3]),
+            ("v5", values[4]));
+    }
+
+    private static ExactProblem BuildStatisticsRange(Random random, int scale)
+    {
+        var min = random.Next(0, 10 + scale * 2);
+        var range = random.Next(2, 10 + scale * 4);
+        var max = min + range;
+
+        return Problem(
+            "statistics.center_spread.range",
+            $"A data set has minimum {min} and maximum {max}. Find its range.",
+            "Range is maximum minus minimum. Add the range back to the minimum to verify the maximum.",
+            AssessmentItemType.Numeric,
+            ("min", min),
+            ("max", max));
+    }
+
+    private static ExactProblem BuildTheoreticalProbabilitySimple(Random random, int scale)
+    {
+        var total = random.Next(4, 9 + scale * 3);
+        var favourable = random.Next(1, total);
+
+        return Problem(
+            "probability.theoretical.simple_event",
+            $"A bag contains {total} equally likely counters, of which {favourable} are red. Find P(red). Give an exact fraction.",
+            "For equally likely outcomes, theoretical probability is favourable outcomes divided by total outcomes. Verify the fraction lies between 0 and 1.",
+            AssessmentItemType.ShortAnswer,
+            ("favourable", favourable),
+            ("total", total));
+    }
+
+    private static ExactProblem BuildTheoreticalProbabilityComplement(Random random, int scale)
+    {
+        var total = random.Next(4, 9 + scale * 3);
+        var favourable = random.Next(1, total);
+
+        return Problem(
+            "probability.theoretical.complement",
+            $"A bag contains {total} equally likely counters and {favourable} are red. Find P(not red). Give an exact fraction.",
+            "The complement contains total minus favourable outcomes. Equivalently use 1 − P(red), then verify the two probabilities sum to 1.",
+            AssessmentItemType.ShortAnswer,
+            ("favourable", favourable),
+            ("total", total));
+    }
+
+    private static ExactProblem BuildTwoCoinProbability(Random random)
+    {
+        var variant = random.Next(1, 20);
+        return Problem(
+            "probability.theoretical.two_coins_exactly_one",
+            "Two independent fair coins are tossed. Find the probability of getting exactly one head. Give an exact fraction.",
+            "List HH, HT, TH, TT. Exactly one head occurs in HT and TH, so 2 of 4 equally likely outcomes are favourable.",
+            AssessmentItemType.ShortAnswer,
+            ("variant", variant));
     }
 
     private static ExactProblem BuildWholeAddSubtract(
@@ -1465,6 +1665,38 @@ public sealed class ExactSkillContractQuestionEngine
             ("y1", y1),
             ("x2", x2),
             ("y2", y2));
+    }
+
+    private static ExactProblem BuildCoordinateLinearRule(Random random, int scale)
+    {
+        var gradient = NonZero(random, -4 - scale, 5 + scale);
+        var intercept = random.Next(-8 - scale * 2, 9 + scale * 2);
+        var x = random.Next(-5 - scale, 6 + scale);
+        var y = gradient * x + intercept;
+
+        return Problem(
+            "geometry.coordinate.evaluate_linear_rule",
+            $"For the straight line y = {FormatLinearRule(gradient, intercept)}, find y when x = {x}.",
+            "Substitute the given x-value into y = mx + c. Verify the coordinate satisfies the original line equation.",
+            AssessmentItemType.Numeric,
+            ("gradient", gradient),
+            ("intercept", intercept),
+            ("x", x),
+            ("y", y));
+    }
+
+    private static ExactProblem BuildCoordinateIntercept(Random random, int scale)
+    {
+        var gradient = NonZero(random, -4 - scale, 5 + scale);
+        var intercept = random.Next(-10 - scale * 2, 11 + scale * 2);
+
+        return Problem(
+            "geometry.coordinate.y_intercept_from_rule",
+            $"For the straight line y = {FormatLinearRule(gradient, intercept)}, find the y-intercept.",
+            "In y = mx + c, the y-intercept is c because x = 0 on the y-axis. Substitute x = 0 to verify.",
+            AssessmentItemType.Numeric,
+            ("gradient", gradient),
+            ("intercept", intercept));
     }
 
     private static ExactProblem BuildParallelLineAngle(Random random, int scale)
@@ -2172,6 +2404,29 @@ public sealed class ExactSkillContractQuestionEngine
             "ratio.unit_rate.equivalent_ratio" =>
                 (p["baseFirst"] * p["targetSecond"] / p["baseSecond"]).ToString(CultureInfo.InvariantCulture),
 
+            "ratio.unit_rate.divide_total" =>
+                (p["total"] / (p["firstPart"] + p["secondPart"]) * p["askedPart"])
+                    .ToString(CultureInfo.InvariantCulture),
+
+            "statistics.center_spread.mean" =>
+                ((p["v1"] + p["v2"] + p["v3"] + p["v4"] + p["v5"]) / 5)
+                    .ToString(CultureInfo.InvariantCulture),
+
+            "statistics.center_spread.median" =>
+                p["v3"].ToString(CultureInfo.InvariantCulture),
+
+            "statistics.center_spread.range" =>
+                (p["max"] - p["min"]).ToString(CultureInfo.InvariantCulture),
+
+            "probability.theoretical.simple_event" =>
+                SimplifyFraction(p["favourable"], p["total"]),
+
+            "probability.theoretical.complement" =>
+                SimplifyFraction(p["total"] - p["favourable"], p["total"]),
+
+            "probability.theoretical.two_coins_exactly_one" =>
+                "1/2",
+
             "number.whole.add_subtract.within_10.build" or
             "number.whole.add_subtract.within_10.apply" or
             "number.whole.add_subtract.across_ten.build" or
@@ -2220,6 +2475,12 @@ public sealed class ExactSkillContractQuestionEngine
             "geometry.coordinate.gradient_between_points" =>
                 ((p["y2"] - p["y1"]) / (p["x2"] - p["x1"]))
                     .ToString(CultureInfo.InvariantCulture),
+
+            "geometry.coordinate.evaluate_linear_rule" =>
+                (p["gradient"] * p["x"] + p["intercept"]).ToString(CultureInfo.InvariantCulture),
+
+            "geometry.coordinate.y_intercept_from_rule" =>
+                p["intercept"].ToString(CultureInfo.InvariantCulture),
 
             "geometry.angles.parallel_lines" =>
                 p["expectedAngle"].ToString(CultureInfo.InvariantCulture),
@@ -2509,6 +2770,22 @@ public sealed class ExactSkillContractQuestionEngine
         InequalityRelation.GreaterThanOrEqual => "≥",
         _ => throw new InvalidOperationException("Unsupported learner-facing inequality relation.")
     };
+
+    private static string FormatLinearRule(int gradient, int intercept)
+    {
+        var mx = gradient switch
+        {
+            1 => "x",
+            -1 => "-x",
+            _ => $"{gradient.ToString(CultureInfo.InvariantCulture)}x"
+        };
+
+        if (intercept == 0)
+            return mx;
+
+        var sign = intercept > 0 ? "+" : "−";
+        return $"{mx} {sign} {Math.Abs(intercept).ToString(CultureInfo.InvariantCulture)}";
+    }
 
     private static string FormatLinearExpression(int coefficient, int offset)
     {

@@ -877,6 +877,38 @@
       "provider": "edulytics-exact-skill-contract",
       "providerVersion": "geometry-polygons-v1",
       "status": "ShadowVerified"
+    },
+    {
+      "id": "statistics.center_spread.exact",
+      "domain": "statistics",
+      "canonicalName": "Generate and solve exact mean median and range problems",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "statistics-center-spread-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "statistics.verify.center_spread",
+      "domain": "statistics",
+      "canonicalName": "Independently verify exact mean median and range results from original data",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "statistics-center-spread-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "probability.theoretical.exact",
+      "domain": "probability",
+      "canonicalName": "Generate and solve exact theoretical simple-event and complement probabilities",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "probability-theoretical-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "probability.verify.theoretical",
+      "domain": "probability",
+      "canonicalName": "Independently verify theoretical probabilities from original sample-space counts",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "probability-theoretical-v1",
+      "status": "ShadowVerified"
     }
   ]
 }

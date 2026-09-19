@@ -712,7 +712,7 @@
     {
       "id": "ratio.unit_rate",
       "domain": "ratio",
-      "canonicalName": "Use unit rate and proportion",
+      "canonicalName": "Use ratios, proportions, unit rates and division in a given ratio",
       "legacyCanonicalSkill": "UnitRateAndProportion",
       "legacyGameMechanic": "UNIT_RATE",
       "v2Status": "ShadowVerified",
@@ -722,7 +722,8 @@
       ],
       "v2QuestionFamilies": [
         "ratio.unit_rate.direct",
-        "ratio.unit_rate.equivalent_ratio"
+        "ratio.unit_rate.equivalent_ratio",
+        "ratio.unit_rate.divide_total"
       ]
     },
     {
@@ -843,7 +844,9 @@
         "geometry.trigonometry.independent_verification"
       ],
       "v2QuestionFamilies": [
-        "geometry.coordinate.gradient_between_points"
+        "geometry.coordinate.gradient_between_points",
+        "geometry.coordinate.evaluate_linear_rule",
+        "geometry.coordinate.y_intercept_from_rule"
       ]
     },
     {
@@ -1070,6 +1073,36 @@
         "geometry.polygons.interior_angle_sum",
         "geometry.polygons.missing_interior_angle",
         "geometry.polygons.regular_interior_angle"
+      ]
+    },
+    {
+      "id": "statistics.center_spread.core",
+      "domain": "statistics",
+      "canonicalName": "Calculate and interpret mean, median and range for bounded exact data",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "statistics.center_spread.exact",
+        "statistics.verify.center_spread"
+      ],
+      "v2QuestionFamilies": [
+        "statistics.center_spread.mean",
+        "statistics.center_spread.median",
+        "statistics.center_spread.range"
+      ]
+    },
+    {
+      "id": "probability.theoretical.core",
+      "domain": "probability",
+      "canonicalName": "Evaluate exact theoretical probabilities for simple events, complements and two independent fair coin tosses",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "probability.theoretical.exact",
+        "probability.verify.theoretical"
+      ],
+      "v2QuestionFamilies": [
+        "probability.theoretical.simple_event",
+        "probability.theoretical.complement",
+        "probability.theoretical.two_coins_exactly_one"
       ]
     }
   ]

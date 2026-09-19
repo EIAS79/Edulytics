@@ -213,14 +213,24 @@ public static class ExactMathematicsCapabilityResolver
                 text,
                 "COORDINATES AND STRAIGHT-LINE GRAPHS",
                 "STRAIGHT-LINE GRAPHS",
-                "STRAIGHT LINE GRAPHS",
-                "GRADIENT",
-                "SLOPE"))
+                "STRAIGHT LINE GRAPHS"))
+        {
+            return Exact(
+                "geometry.coordinate.straight_line",
+                [
+                    "geometry.coordinate.gradient_between_points",
+                    "geometry.coordinate.evaluate_linear_rule",
+                    "geometry.coordinate.y_intercept_from_rule"
+                ],
+                "ExactCoordinateGeometry");
+        }
+
+        if (ContainsAny(text, "GRADIENT", "SLOPE"))
         {
             return Exact(
                 "geometry.coordinate.straight_line",
                 ["geometry.coordinate.gradient_between_points"],
-                "ExactCoordinateGeometry");
+                "ExactCoordinateGradient");
         }
 
         if (ContainsAny(text, "ANGLE RELATIONSHIPS", "ANGLE FACTS"))
