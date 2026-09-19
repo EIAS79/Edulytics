@@ -267,7 +267,10 @@ def audit() -> dict[str, Any]:
         )
         reviewed_exact_title_mapping = bool(
             mapping
-            and mapping.get("sourceType") == "OfficialReviewedExactTitleRule"
+            and mapping.get("sourceType") in {
+                "OfficialReviewedExactTitleRule",
+                "OfficialReviewedUniqueTitleRule",
+            }
         )
         readiness, reasons = decide(
             skill_status,
