@@ -117,6 +117,85 @@ public sealed class SupportingLessonPracticeR11R12Tests
         });
     }
 
+    [Theory]
+    [InlineData("number.whole.add.direct")]
+    [InlineData("number.whole.subtract.direct")]
+    [InlineData("number.lcm.two_numbers")]
+    [InlineData("percentages.of_quantity.direct")]
+    [InlineData("fractions.represent.interpret.fraction_bar")]
+    [InlineData("geometry.surface_area_volume.rectangular_prism_surface_area")]
+    [InlineData("geometry.surface_area_volume.rectangular_prism_volume")]
+    public void NewlyClosedCoreFamiliesGenerateAndVerify(string family)
+    {
+        var engine = new ExactSkillContractQuestionEngine();
+        var questions = engine.Generate(
+            "core-gap-test",
+            family,
+            [family],
+            ExactSkillQuestionDifficulty.Stretch,
+            6,
+            94413,
+            []);
+
+        Assert.Equal(6, questions.Count);
+        Assert.All(questions, question =>
+        {
+            Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(question.Family));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                question.Family,
+                question.Parameters,
+                question.CorrectAnswer));
+        });
+    }
+
+    [Fact]
+    public void ApprovedOfficialMappingProjectsIntoRuntimePracticeRegistry()
+    {
+        Assert.True(
+            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.TryResolve(
+                "PED:US-CCSS-MATH:G3:U05:L10",
+                out var contract));
+
+        Assert.NotNull(contract);
+        Assert.Equal("fractions.equivalent", contract!.SkillId);
+        Assert.Equal("READY_VERIFIED", contract.Readiness);
+        Assert.Equal(
+            Edulytics.Core.Mathematics.Practice.LessonPracticeContractProjection.ContractVersion,
+            contract.ContractVersion);
+        Assert.All(
+            contract.AllowedQuestionFamilies,
+            family => Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family)));
+    }
+
+    [Fact]
+    public void FractionRepresentationMappingProjectsWithRequiredExactFamily()
+    {
+        Assert.True(
+            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.TryResolve(
+                "PED:US-CCSS-MATH:G4:U02:L02",
+                out var contract));
+
+        Assert.NotNull(contract);
+        Assert.Contains(
+            "fractions.represent.interpret.fraction_bar",
+            contract!.AllowedQuestionFamilies);
+        Assert.All(
+            contract.AllowedQuestionFamilies,
+            family => Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family)));
+    }
+
+    [Fact]
+    public void EveryRuntimePracticeFamilyIsSupportedByExactEngine()
+    {
+        Assert.All(
+            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.All,
+            contract => Assert.All(
+                contract.AllowedQuestionFamilies,
+                family => Assert.True(
+                    ExactSkillContractQuestionEngine.SupportsFamily(family),
+                    $"Runtime contract {contract.LessonCode} routes unsupported family {family}.")));
+    }
+
     [Fact]
     public void UniversalEngineUsesExactSkillContractWithoutContextualFallback()
     {
