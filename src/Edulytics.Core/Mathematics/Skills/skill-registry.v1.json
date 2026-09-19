@@ -939,7 +939,9 @@
       ],
       "v2QuestionFamilies": [
         "geometry.perimeter_area.rectangle_area",
-        "geometry.perimeter_area.rectangle_perimeter"
+        "geometry.perimeter_area.rectangle_perimeter",
+        "geometry.perimeter_area.triangle_area",
+        "geometry.perimeter_area.rectangle_missing_side"
       ]
     },
     {
@@ -1024,6 +1026,50 @@
       ],
       "v2QuestionFamilies": [
         "vectors.between_points.exact"
+      ]
+    },
+    {
+      "id": "percentages.core",
+      "domain": "percentages",
+      "canonicalName": "Solve core percentage problems including percentage of quantity and percentage increase or decrease",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "percentages.core.exact",
+        "percentages.verify.core"
+      ],
+      "v2QuestionFamilies": [
+        "percentages.core.of_quantity",
+        "percentages.core.increase_decrease"
+      ]
+    },
+    {
+      "id": "sequences.core",
+      "domain": "sequences",
+      "canonicalName": "Reason with arithmetic and geometric sequences and exact term positions",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "sequences.core.exact",
+        "sequences.verify.core"
+      ],
+      "v2QuestionFamilies": [
+        "sequences.core.arithmetic_nth_term",
+        "sequences.core.geometric_nth_term",
+        "sequences.core.find_position_arithmetic"
+      ]
+    },
+    {
+      "id": "geometry.polygons.angle_sum",
+      "domain": "geometry",
+      "canonicalName": "Use polygon interior-angle sums to find sums and missing or regular interior angles",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.polygons.exact",
+        "geometry.verify.polygons"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.polygons.interior_angle_sum",
+        "geometry.polygons.missing_interior_angle",
+        "geometry.polygons.regular_interior_angle"
       ]
     }
   ]
