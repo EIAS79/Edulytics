@@ -83,12 +83,21 @@ def _search_key(value: str) -> str:
 
 def find_line(lines: list[str], needle: str, start: int = 0) -> int:
     wanted = _search_key(needle)
+    # Prefer an exact physical line first. This is important for section
+    # boundaries: returning the preceding line would truncate the final
+    # numbered requirement in the previous section.
     for i in range(start, len(lines)):
-        # Official HTML/PDF extraction can split headings across adjacent
-        # physical lines. Match a compact normalized two-line window.
-        window = " ".join(lines[i:min(len(lines), i + 2)])
-        key = _search_key(window)
-        if wanted and wanted in key:
+        if wanted and wanted in _search_key(lines[i]):
+            return i
+    # Only then allow a heading that was genuinely split across two lines.
+    for i in range(start, max(start, len(lines) - 1)):
+        left = _search_key(lines[i])
+        right = _search_key(lines[i + 1])
+        if wanted and wanted in (left + right):
+            # If the complete heading begins on the next line, preserve that
+            # line as the boundary; otherwise the split begins on the current.
+            if wanted in right:
+                return i + 1
             return i
     return -1
 
