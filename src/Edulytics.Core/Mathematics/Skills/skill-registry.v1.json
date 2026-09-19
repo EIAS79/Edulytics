@@ -687,6 +687,67 @@
       "domain": "fractions",
       "canonicalName": "Compare fractions with different denominators",
       "legacyGameMechanic": "FRACTION_COMPARE_UNLIKE"
+    },
+    {
+      "id": "fractions.add_subtract",
+      "domain": "fractions",
+      "canonicalName": "Add and subtract fractions with exact denominator alignment",
+      "semantics": "Add or subtract fraction quantities using same, related or unlike denominators; equivalence is a supporting transformation, not the primary target.",
+      "prerequisites": [
+        "fractions.equivalent"
+      ],
+      "supportedAnswerTypes": [
+        "exact_rational"
+      ],
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.add_subtract.within_one.build",
+        "fractions.add_subtract.within_one.apply",
+        "fractions.add_subtract.same_denominator.mixed.build",
+        "fractions.add_subtract.same_denominator.mixed.apply",
+        "fractions.add_subtract.related.build",
+        "fractions.add_subtract.related.apply",
+        "fractions.add_subtract.common_denominator.build",
+        "fractions.add_subtract.common_denominator.apply"
+      ]
+    },
+    {
+      "id": "fractions.compare.benchmark",
+      "domain": "fractions",
+      "canonicalName": "Compare fractions with benchmark values",
+      "semantics": "Compare a fraction with benchmark values such as one half or one using exact equivalence or cross-products.",
+      "prerequisites": [
+        "fractions.equivalent"
+      ],
+      "supportedAnswerTypes": [
+        "relation"
+      ],
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.compare.benchmark.exact",
+        "fractions.verify.compare.benchmark"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.compare.benchmark"
+      ]
+    },
+    {
+      "id": "fractions.represent.interpret",
+      "domain": "fractions",
+      "canonicalName": "Interpret and construct fraction representations",
+      "semantics": "Interpret or construct visual/number-line representations of fractions, including fractions greater than one.",
+      "prerequisites": [],
+      "supportedAnswerTypes": [
+        "representation",
+        "exact_rational"
+      ],
+      "v2Status": "Blocked",
+      "v2Capabilities": [],
+      "v2QuestionFamilies": []
     }
   ]
 }
