@@ -3903,6 +3903,25 @@
         "commonMistake": "Gaps, overlaps or unequal units invalidate the measurement.",
         "summary": "Length in a chosen unit equals the number of equal units spanning the object."
       }
+    },
+    {
+      "id": "measurement-indirect-compare",
+      "titlePatterns": [
+        "^Compare lengths indirectly$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "MEASUREMENT_INDIRECT_COMPARE",
+      "families": [
+        "supporting.measurement.indirect_compare"
+      ],
+      "content": {
+        "concept": "Indirect comparison uses a common third object as a reference for comparing two lengths.",
+        "workedExample": "If A is longer than C and B is shorter than C, then A is longer than B.",
+        "solution": "Compare each object to the same reference, then combine the relationships.",
+        "commonMistake": "Do not compare statements that use different reference objects without another valid link.",
+        "summary": "Use one common reference to compare two lengths indirectly."
+      }
     }
   ]
 }
