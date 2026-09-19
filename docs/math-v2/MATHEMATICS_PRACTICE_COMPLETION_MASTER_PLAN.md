@@ -1,7 +1,7 @@
 # Edulytics Mathematics Practice Completion Master Plan
 
 **Repository:** `EIAS79/Edulytics`  
-**Status:** ACTIVE — canonical completion tracker  
+**Status:** ACTIVE — Supporting completion achieved; full-catalogue completion ongoing  
 **Baseline commit:** `c4a4592d1873af56da790235224195c48e3f92cc`  
 **Baseline date:** 2026-09-19  
 **Scope:** Full mathematics lesson catalogue, with an immediate hard-completion target for all 1,349 Supporting lessons and systematic Practice-readiness review for all 4,453 mathematics lessons.  
@@ -126,7 +126,7 @@ The following foundation is already present and must be preserved:
 - [x] Initial high-school Geometry/Trigonometry capability families exist.
 - [x] 69 Supporting lessons are genuinely learner-facing `READY_VERIFIED`.
 - [x] The 1,349 Supporting lessons have machine-readable terminal-state classification.
-- [ ] The 1,280 blocked Supporting lessons are remediated.
+- [x] The original 1,280 blocked Supporting lessons are remediated; all 1,349 Supporting lessons are `READY_VERIFIED`.
 - [ ] Full-catalogue Practice readiness is complete.
 - [ ] Visual mathematics rendering is complete.
 - [ ] Question-family depth is sufficient across all grade bands.
@@ -922,11 +922,13 @@ Challenge:
 
 # 16. Workstream P12 — Remediate current Supporting blockers to zero
 
-**Status:** [ ] NOT COMPLETE
+**Status:** [x] COMPLETE
 
 This workstream consumes P2–P11 and is the hard Supporting completion gate.
 
-## Current queue
+Verified by Mathematics Intelligence Foundation run #250 at commit `0d083d81cce97192eacaaffc40fe23a7bdea168e`.
+
+## Starting queue (historical baseline)
 
 ```text
 329 CONTENT_WEAK
@@ -935,6 +937,16 @@ This workstream consumes P2–P11 and is the hard Supporting completion gate.
 1   REPRESENTATION_MISSING
 ----------------------------
 1280 EXPLICITLY_BLOCKED
+```
+
+## Current verified state
+
+```text
+1349 Supporting lessons
+1349 READY_VERIFIED
+0    BLOCKED
+0    UNRESOLVED
+0    BROAD_FALLBACK
 ```
 
 ## Processing model
@@ -977,7 +989,7 @@ supportingUnresolvedCount == 0
 supportingBroadFallbackCount == 0
 ```
 
-Until all five conditions are true, Supporting Practice completion is **not complete**.
+All five conditions are true as of Mathematics Intelligence Foundation run #250; Supporting Practice completion is **complete**. Any future regression must fail the completion gate and reopen this workstream.
 
 ---
 
@@ -1188,17 +1200,17 @@ Update this table in every material remediation PR.
 | P1 Full Practice Matrix | ✅ Complete | 4,453-row completion matrix generated; internal blockers 0 | 4,453 complete rows | 2026-09-19 PR #213 audit run #217 |
 | P2 Content Repair | ⬜ Not complete | 329 Supporting `CONTENT_WEAK`; broader catalogue weaknesses exist | 0 Practice-eligible `CONTENT_WEAK` | 2026-09-19 |
 | P3 Academic Mapping | ⬜ Not complete | 453 Supporting academic-review blockers | 0 unresolved Practice-eligible mappings | 2026-09-19 |
-| P4 Skill Ontology | 🟨 Partial | 74 skills; current registered skills have family metadata | Full reusable target coverage | 2026-09-19 PR #217 |
-| P5 Question Families | 🟨 Partial | 123 families; zero registered skills without family metadata | Approved coverage manifests complete | 2026-09-19 PR #217 |
+| P4 Skill Ontology | 🟨 Partial | 117 skills; Supporting target coverage complete; full-catalogue ontology still expanding | Full reusable target coverage | 2026-09-19 run #250 |
+| P5 Question Families | 🟨 Partial | 250 families; Supporting family coverage complete; full-catalogue depth still expanding | Approved coverage manifests complete | 2026-09-19 run #250 |
 | P6 Geometry/Trig | 🟨 Partial | Added algebraic angle reasoning and Pythagoras missing-leg exact families with deterministic SVG | Curriculum-complete exact/visual coverage | 2026-09-19 PR #214 |
 | P7 Vectors | 🟨 Partial | Add, subtract, scalar multiply, dot, magnitude, between-points + deterministic vector SVG | Curriculum-complete vector coverage | 2026-09-19 PR #213 |
 | P8 Other upper-grade domains | ⬜ Not complete | Narrow exact coverage | Curriculum-driven complete coverage | 2026-09-19 |
 | P9 Diagram/Visual Engine | 🟨 Partial | Deterministic SVG runtime wired to Practice for current geometry/trig/vector/fraction families | Required visuals deterministic + validated | 2026-09-19 PR #213 |
 | P10 Solver/Verifier/Equivalence | 🟨 Partial | Shared kernel exists | 100% enabled-family coverage | 2026-09-19 |
 | P11 Grade-aware Difficulty | 🟨 Partial | Difficulty bands exist | Structural grade-aware calibration | 2026-09-19 |
-| P12 Supporting blockers → zero | 🟨 Partial | 295 ready / 1,054 blocked | 1,349 ready / 0 blocked | 2026-09-19 PR #217 audit run #234 |
-| P13 Full catalogue completion | 🟨 Partial | 304 ready / 4,149 not ready | 100% Practice-eligible ready | 2026-09-19 PR #217 audit run #234 |
-| P14 CI + Dashboard | 🟨 Partial | Full completion matrix + Supporting artifact generated in Mathematics Intelligence CI | Permanent completion gates | 2026-09-19 PR #213 |
+| P12 Supporting blockers → zero | ✅ Complete | 1,349 ready / 0 blocked | 1,349 ready / 0 blocked | 2026-09-19 run #250 |
+| P13 Full catalogue completion | 🟨 Partial | 1,358 ready / 3,095 not ready | 100% Practice-eligible ready | 2026-09-19 run #250 |
+| P14 CI + Dashboard | 🟨 Partial | Supporting hard gate is green at 1,349/1,349; full-catalogue completion matrix remains active | Permanent completion gates | 2026-09-19 run #250 |
 
 Legend:
 
@@ -1312,6 +1324,38 @@ A PR may improve the system without completing a workstream. In that case mark i
 ---
 
 # 29. Changelog
+
+## 2026-09-19 — Supporting Practice completion gate achieved
+
+Verified by Mathematics Intelligence Foundation run #250 and Phase16 CI #1124 at commit `0d083d81cce97192eacaaffc40fe23a7bdea168e`.
+
+```text
+Supporting:
+  1,349 lessons
+  1,349 READY_VERIFIED
+  0 BLOCKED
+  0 UNRESOLVED
+  0 BROAD_FALLBACK
+
+Full catalogue:
+  4,453 lessons
+  1,358 READY_VERIFIED
+  3,095 not READY_VERIFIED
+  completion 30.50%
+
+Registry:
+  117 skills
+  250 question families
+  114 capabilities
+  1,358 approved mappings
+  0 internal completion-matrix blockers
+```
+
+The final Supporting remediation replaces lesson-by-lesson manual promotion with a reviewed, versioned target-rule system shared by runtime Practice projection, deterministic audits, content remediation and CI. It also adds the remaining exact Supporting generation families across foundational and advanced mathematics, applies versioned learner-content corrections before seeding, and keeps the exact path fail-closed.
+
+This completes the hard Supporting target defined by P12. P13 remains active for the broader 4,453-lesson catalogue; Supporting completion does not imply that every official/full-catalogue lesson is already Practice-ready.
+
+---
 
 ## 2026-09-19 — PR #217 ratio/statistics/probability/coordinate unblock checkpoint
 
