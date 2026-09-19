@@ -70,7 +70,7 @@ internal static class OfficialLessonPracticeRuleProjection
 
                     var translation = ChooseTranslation(pack, lesson);
                     if (translation is null ||
-                        !SupportingPracticeTargetRuleRegistry.TryResolveReviewedExactTitle(
+                        !SupportingPracticeTargetRuleRegistry.TryResolveReviewedOfficialTitle(
                             lesson.LessonCode,
                             translation.Title,
                             out var rule) ||
@@ -98,7 +98,7 @@ internal static class OfficialLessonPracticeRuleProjection
                         rule.SkillId,
                         rule.Mechanic,
                         rule.Families.Distinct(StringComparer.Ordinal).ToArray(),
-                        "OfficialReviewedExactTitleRule",
+                        "OfficialReviewedTitleRule",
                         "READY_VERIFIED",
                         ContractVersion));
                 }
