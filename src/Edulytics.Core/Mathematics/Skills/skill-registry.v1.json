@@ -939,7 +939,8 @@
       ],
       "v2QuestionFamilies": [
         "geometry.perimeter_area.rectangle_area",
-        "geometry.perimeter_area.rectangle_perimeter"
+        "geometry.perimeter_area.rectangle_perimeter",
+        "geometry.perimeter_area.triangle_area"
       ]
     },
     {
@@ -1024,6 +1025,108 @@
       ],
       "v2QuestionFamilies": [
         "vectors.between_points.exact"
+      ]
+    },
+    {
+      "id": "sequences.core",
+      "domain": "sequences",
+      "canonicalName": "Recognize and apply arithmetic and geometric sequence structure",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "sequences.core.arithmetic_nth_term",
+        "sequences.core.arithmetic_rule_offset",
+        "sequences.core.geometric_nth_term"
+      ]
+    },
+    {
+      "id": "percentages.core",
+      "domain": "percentages",
+      "canonicalName": "Calculate percentages of quantities and percentage change",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "percentages.core.of_quantity",
+        "percentages.core.change"
+      ]
+    },
+    {
+      "id": "ratio.proportion.core",
+      "domain": "ratio",
+      "canonicalName": "Use ratio, unit rate and equivalent proportion",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "ratio.proportion.divide_total",
+        "ratio.proportion.unit_rate",
+        "ratio.proportion.equivalent_ratio"
+      ]
+    },
+    {
+      "id": "geometry.polygons.angles",
+      "domain": "geometry",
+      "canonicalName": "Use polygon interior-angle relationships",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.polygons.triangle_missing_angle",
+        "geometry.polygons.quadrilateral_missing_angle"
+      ]
+    },
+    {
+      "id": "geometry.coordinate.linear_graphs",
+      "domain": "geometry",
+      "canonicalName": "Reason with coordinates, gradients and straight-line rules",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.coordinate.linear_graphs.gradient",
+        "geometry.coordinate.linear_graphs.evaluate",
+        "geometry.coordinate.linear_graphs.intercept"
+      ]
+    },
+    {
+      "id": "statistics.mean_median_range",
+      "domain": "statistics",
+      "canonicalName": "Calculate mean, median and range of exact data",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "statistics.mean_median_range.mean",
+        "statistics.mean_median_range.median",
+        "statistics.mean_median_range.range"
+      ]
+    },
+    {
+      "id": "probability.theoretical.core",
+      "domain": "probability",
+      "canonicalName": "Calculate exact theoretical probabilities including independent events",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "probability.theoretical.single_event",
+        "probability.theoretical.two_independent_events"
       ]
     }
   ]
