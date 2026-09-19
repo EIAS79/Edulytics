@@ -1634,6 +1634,122 @@
       ],
       "status": "ShadowVerified",
       "productionRouting": false
+    },
+    {
+      "id": "number.whole.add.direct",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "number.whole.add.exact",
+        "number.verify.whole.add"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-integer-addition-from-original-operands",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "number.whole.subtract.direct",
+      "version": 1,
+      "skillId": "number.whole.subtract",
+      "requiredCapabilities": [
+        "number.whole.subtract.exact",
+        "number.verify.whole.subtract"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-integer-subtraction-from-original-operands",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "number.lcm.two_numbers",
+      "version": 1,
+      "skillId": "number.lcm",
+      "requiredCapabilities": [
+        "number.lcm.exact",
+        "number.verify.lcm"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-divisibility-and-minimum-common-multiple-check",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "percentages.of_quantity.direct",
+      "version": 1,
+      "skillId": "percentages.of_quantity",
+      "requiredCapabilities": [
+        "percentages.of_quantity.exact",
+        "percentages.verify.of_quantity"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-percent-times-quantity-recomputation",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "fractions.represent.interpret.fraction_bar",
+      "version": 1,
+      "skillId": "fractions.represent.interpret",
+      "requiredCapabilities": [
+        "fractions.represent.interpret.exact",
+        "fractions.verify.representation"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-shaded-parts-over-equal-parts-check",
+      "representations": [
+        "diagram_metadata",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "geometry.surface_area_volume.rectangular_prism_surface_area",
+      "version": 1,
+      "skillId": "geometry.surface_area_volume",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-rectangular-prism-surface-area",
+      "representations": [
+        "solid_dimensions",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
+    },
+    {
+      "id": "geometry.surface_area_volume.rectangular_prism_volume",
+      "version": 1,
+      "skillId": "geometry.surface_area_volume",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-rectangular-prism-volume",
+      "representations": [
+        "solid_dimensions",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false
     }
   ]
 }
