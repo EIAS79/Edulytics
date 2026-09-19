@@ -219,10 +219,11 @@
     {
       "id": "geometry.rectangle.area.exact",
       "version": 1,
-      "skillId": "geometry.perimeter_area",
+      "skillId": "geometry.rectangle.area",
       "requiredCapabilities": [
-        "geometry.trigonometry.exact_generation",
-        "geometry.trigonometry.independent_verification"
+        "rational.exact_arithmetic",
+        "geometry.rectangle.area.exact",
+        "geometry.verify.rectangle.area"
       ],
       "answerType": "exact_scalar",
       "verificationPolicy": "independent-exact-area-from-original-positive-dimensions",
@@ -235,10 +236,11 @@
     {
       "id": "geometry.rectangle.perimeter.exact",
       "version": 1,
-      "skillId": "geometry.perimeter_area",
+      "skillId": "geometry.rectangle.perimeter",
       "requiredCapabilities": [
-        "geometry.trigonometry.exact_generation",
-        "geometry.trigonometry.independent_verification"
+        "rational.exact_arithmetic",
+        "geometry.rectangle.perimeter.exact",
+        "geometry.verify.rectangle.perimeter"
       ],
       "answerType": "exact_scalar",
       "verificationPolicy": "independent-exact-perimeter-from-original-positive-dimensions",
