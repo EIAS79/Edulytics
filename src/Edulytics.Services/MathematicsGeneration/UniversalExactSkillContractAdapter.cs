@@ -145,6 +145,13 @@ internal static class UniversalExactSkillContractAdapter
             if (numerator != 0)
                 choices.Add($"{denominator}/{numerator}");
         }
+        else if (TryVector2(correct, out var vectorX, out var vectorY))
+        {
+            choices.Add($"<{vectorX + 1}, {vectorY}>");
+            choices.Add($"<{vectorX}, {vectorY + 1}>");
+            choices.Add($"<{vectorY}, {vectorX}>");
+            choices.Add($"<{-vectorX}, {-vectorY}>");
+        }
         else if (correct is "<" or ">" or "=")
         {
             choices.UnionWith(["<", ">", "=", "cannot determine"]);
@@ -162,6 +169,25 @@ internal static class UniversalExactSkillContractAdapter
             choices.Add($"option-{choices.Count + 1}");
 
         return choices.ToArray();
+    }
+
+    private static bool TryVector2(string value, out int x, out int y)
+    {
+        x = 0;
+        y = 0;
+        var text = value.Trim();
+        if (text.Length >= 2 &&
+            ((text[0] == '<' && text[^1] == '>') ||
+             (text[0] == '(' && text[^1] == ')') ||
+             (text[0] == '[' && text[^1] == ']')))
+        {
+            text = text[1..^1];
+        }
+
+        var parts = text.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+        return parts.Length == 2 &&
+            int.TryParse(parts[0], out x) &&
+            int.TryParse(parts[1], out y);
     }
 
     private static bool TryFraction(
