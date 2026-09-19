@@ -1,12 +1,16 @@
 # Edulytics Mathematics Practice Completion Master Plan
 
 **Repository:** `EIAS79/Edulytics`  
-**Status:** COMPLETE — current mathematics Practice programme closure verified; CI prevents silent regression  
+**Status:** REOPENED — 2,884 exact-Practice lessons remain verified; remediation reopened for 1,569 Polish outcome-backed published lessons  
 **Baseline commit:** `c4a4592d1873af56da790235224195c48e3f92cc`  
 **Baseline date:** 2026-09-19  
 **Scope:** Full mathematics lesson catalogue, with an immediate hard-completion target for all 1,349 Supporting lessons and systematic Practice-readiness review for all 4,453 mathematics lessons.  
 **Supersedes:** the old interpretation that a lesson reaching `EXPLICITLY_BLOCKED` is a successful terminal completion state.  
 **Preserves:** the existing fail-closed architecture, exact SkillContract approach, shared mathematics kernel, solver/verifier separation, source provenance, and prohibition on invented official outcome mappings.
+
+**Corrective continuation:** `docs/math-v2/POLISH_1569_PRACTICE_REMEDIATION_MASTER_PLAN.md`
+
+> **2026-09-20 correction:** The 1,569 `PL-NATIONAL-MATH` rows previously closed as `NON_STANDALONE_WITH_EVIDENCE` are published outcome-backed pedagogical lessons with canonical learner content. Their exclusion from exact Practice is therefore reopened for remediation. The product-level target is now to repair their outcome-specific lesson bodies and exact Practice contracts, with a target of `4,453 / 4,453` learner-facing mathematics lessons Practice-ready. The prior 2,884 `READY_VERIFIED` lessons remain valid and must not regress.
 
 ---
 
@@ -1209,8 +1213,8 @@ Update this table in every material remediation PR.
 | P10 Solver/Verifier/Equivalence | ✅ Complete for enabled current catalogue | Shared kernel exists | 2,884/2,884 Practice-eligible lessons solver-ready and verifier-ready | 2026-09-19 PR #220 audit run #322 |
 | P11 Grade-aware Difficulty | ✅ Complete for current Practice catalogue | Difficulty bands existed without curriculum-level scaling | 2,884/2,884 Practice-eligible lessons level-classified; runtime GradeAwareExactDifficultyPolicy calibrates exact complexity by stage | 2026-09-19 PR #221 run #329 |
 | P12 Supporting blockers → zero | ✅ Complete | 1,349 ready / 0 blocked | 1,349 ready / 0 blocked | 2026-09-19 run #250 |
-| P13 Full catalogue completion | ✅ Complete | 1,358 ready / 3,095 not ready | 2,884/2,884 Practice-eligible `READY_VERIFIED`; 1,569 non-standalone nodes explicitly evidenced | 2026-09-19 PR #220 audit run #322 |
-| P14 CI + Dashboard | ✅ Complete | Supporting hard gate was green at 1,349/1,349 | Full-catalogue `--require-complete` hard gate + GitHub Step Summary dashboard | 2026-09-19 PR #220 |
+| P13 Full catalogue completion | 🟨 Reopened for Polish remediation | 2,884 ready / 1,569 Polish outcome-backed lessons excluded | 4,453/4,453 learner-facing lessons `READY_VERIFIED` | 2026-09-20 corrective plan P15–P22 |
+| P14 CI + Dashboard | 🟨 Existing gates preserved; extension required | Existing 2,884 readiness gates remain green | Extend CI to forbid learner-facing Polish exclusions and gate P15–P22 closure | 2026-09-20 corrective plan |
 
 Legend:
 
