@@ -31,7 +31,9 @@
         "\\bmixed number\\b",
         "\\bfraction\\b",
         "\\\\\\\\frac\\\\s*\\\\{?\\\\d+",
-        "\\\\bfractions?\\\\b"
+        "\\\\bfractions?\\\\b",
+        "\\\\frac\\s*\\{?\\d+",
+        "\\bfractions?\\b"
       ]
     },
     {
@@ -74,6 +76,10 @@
         "\\bproportion\\b",
         "\\brate\\b",
         "\\bper\\s+(?:one|unit|hour|minute|second|km|kg|m)\\b"
+      ],
+      "negativeTitlePatterns": [
+        "\\brates? of change\\b",
+        "\\brate of change\\b"
       ]
     },
     {
@@ -95,7 +101,9 @@
         "\\bindex\\b",
         "\\bexponent\\b",
         "\\\\\\\\sqrt",
-        "10\\\\s*(?:×|x|\\\\\\\\times)"
+        "10\\\\s*(?:×|x|\\\\\\\\times)",
+        "\\\\sqrt",
+        "10\\s*(?:×|x|\\\\times)"
       ]
     },
     {
@@ -192,7 +200,10 @@
         "[xy].*=.*[\n;].*[xy].*=",
         "\\\\bsystems? of equations?\\\\b",
         "\\\\\\\\begin\\\\s*\\\\{cases\\\\}",
-        "\\\\by\\\\s*=.*\\\\by\\\\s*="
+        "\\\\by\\\\s*=.*\\\\by\\\\s*=",
+        "\\bsystems? of equations?\\b",
+        "\\\\begin\\s*\\{cases\\}",
+        "\\by\\s*=.*\\by\\s*="
       ]
     },
     {
@@ -222,7 +233,9 @@
         "\\bcommon ratio\\b",
         "\\bsum of.*terms\\b",
         "f\\\\s*\\\\(n\\\\)",
-        "\\\\bn\\\\s*[-−]\\\\s*1\\\\b"
+        "\\\\bn\\\\s*[-−]\\\\s*1\\\\b",
+        "f\\s*\\(n\\)",
+        "\\bn\\s*[-−]\\s*1\\b"
       ]
     },
     {
@@ -239,7 +252,9 @@
         "\\binverse\\b",
         "\\bcomposite\\b",
         "\\\\by\\\\s*=",
-        "\\\\binputs?\\\\b.*\\\\boutputs?\\\\b"
+        "\\\\binputs?\\\\b.*\\\\boutputs?\\\\b",
+        "\\by\\s*=",
+        "\\binputs?\\b.*\\boutputs?\\b"
       ]
     },
     {
@@ -384,7 +399,9 @@
         "\\bsine rule\\b",
         "\\bcosine rule\\b",
         "\\\\bright triangles?\\\\b",
-        "\\\\btrigonometric\\\\b"
+        "\\\\btrigonometric\\\\b",
+        "\\bright triangles?\\b",
+        "\\btrigonometric\\b"
       ]
     },
     {
@@ -442,7 +459,15 @@
         "\\\\bline plots?\\\\b",
         "\\\\bpicture graphs?\\\\b",
         "\\\\bbar graphs?\\\\b",
-        "\\\\bcategor(?:y|ies)\\\\b"
+        "\\\\bcategor(?:y|ies)\\\\b",
+        "\\bgraphs?\\b",
+        "\\bline plots?\\b",
+        "\\bpicture graphs?\\b",
+        "\\bbar graphs?\\b",
+        "\\bcategor(?:y|ies)\\b"
+      ],
+      "negativeTitlePatterns": [
+        "\\baverage rate of change\\b"
       ]
     },
     {
@@ -476,7 +501,10 @@
         "\\d+\\s*/\\s*\\d+",
         "\\\\btheoretical distribution\\\\b",
         "\\\\bempirical\\\\b",
-        "\\\\brelative frequency\\\\b"
+        "\\\\brelative frequency\\\\b",
+        "\\btheoretical distribution\\b",
+        "\\bempirical\\b",
+        "\\brelative frequency\\b"
       ]
     },
     {
@@ -610,7 +638,9 @@
         "\\bregroup",
         "\\bcomplement",
         "\\\\d+\\\\s*\\\\+\\\\s*\\\\d+",
-        "\\\\d+\\\\s*[-−]\\\\s*\\\\d+"
+        "\\\\d+\\\\s*[-−]\\\\s*\\\\d+",
+        "\\d+\\s*\\+\\s*\\d+",
+        "\\d+\\s*[-−]\\s*\\d+"
       ],
       "negativeTitlePatterns": [
         "\\bfractions?\\b",
@@ -629,7 +659,9 @@
         "\\binverse division\\b",
         "\\d+\\s*\\*\\s*\\d+",
         "\\\\bmultiplication table\\\\b",
-        "\\\\bproducts?\\\\b"
+        "\\\\bproducts?\\\\b",
+        "\\bmultiplication table\\b",
+        "\\bproducts?\\b"
       ]
     },
     {
