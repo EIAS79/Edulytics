@@ -81,7 +81,8 @@ public sealed class Stage18SkillContractPracticeEngine
             ValidationMetadataJson = JsonSerializer.Serialize(new
             {
                 stage = 18,
-                alignment = alignment.ReasonCode,
+                alignment = "skill-contract-verified",
+                alignmentReason = alignment.ReasonCode,
                 readiness = "READY_VERIFIED",
                 skillContract = contract.SkillId,
                 allowedFamily = question.Family,
@@ -130,6 +131,14 @@ public sealed class Stage18SkillContractPracticeEngine
             var values = new Dictionary<string, int>(StringComparer.Ordinal);
             foreach (var property in parameters.EnumerateObject())
                 values[property.Name] = property.Value.GetInt32();
+
+            if (!ExactSkillContractQuestionEngine.Verify(
+                    item.GenerationFamily,
+                    values,
+                    item.CorrectAnswer))
+            {
+                return false;
+            }
 
             return LessonPracticeAlignmentValidator.ValidatePersisted(
                 contract,
