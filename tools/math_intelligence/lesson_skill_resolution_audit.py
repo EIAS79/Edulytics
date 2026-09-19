@@ -9,6 +9,10 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable
 
+from supporting_practice_rules import (
+    load_rule_mappings as load_supporting_rule_mappings,
+)
+
 ROOT = Path(__file__).resolve().parents[2]
 CONTENT_DIR = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs"
 SKILL_REGISTRY = ROOT / "src/Edulytics.Core/Mathematics/Skills/skill-registry.v1.json"
@@ -308,6 +312,9 @@ def unresolved_terms(title: str) -> list[str]:
 def audit() -> dict[str, Any]:
     skill_ids = load_skill_ids()
     mappings = load_existing_mappings()
+    supporting_mappings, unmatched_supporting, supporting_rule_errors = (
+        load_supporting_rule_mappings(CONTENT_DIR)
+    )
     rules, scores, rule_errors = load_rules(skill_ids)
 
     summary = Counter()
@@ -315,7 +322,7 @@ def audit() -> dict[str, Any]:
     unresolved_term_counter: Counter[str] = Counter()
     rows: list[dict[str, Any]] = []
     seen_lessons: set[str] = set()
-    blockers: list[str] = list(rule_errors)
+    blockers: list[str] = list(rule_errors) + list(supporting_rule_errors)
 
     for path in sorted(CONTENT_DIR.glob("*.lesson-content-pack.json")):
         doc = read_json(path)
@@ -338,6 +345,7 @@ def audit() -> dict[str, Any]:
             source_type = "OfficialMapped" if outcomes else "PedagogicalUnmapped"
             fields = evidence_text(lesson)
             existing = mappings.get(code)
+            supporting_mapping = supporting_mappings.get(code)
 
             summary["lessonCount"] += 1
             summary[source_type] += 1
@@ -353,6 +361,21 @@ def audit() -> dict[str, Any]:
                     "evidence": existing.get("evidence") or [],
                 } for skill in clean_list(existing.get("primarySkills"))]
                 diagnostics = ["Existing explicit lesson-skill mapping takes precedence over candidate resolution."]
+            elif supporting_mapping:
+                status = "EXISTING_VERIFIED_MAPPING"
+                candidates = [{
+                    "skillId": skill,
+                    "score": None,
+                    "titleMatched": True,
+                    "evidence": [{
+                        "type": "ReviewedSupportingRule",
+                        "ruleId": supporting_mapping.get("supportingPracticeRuleId"),
+                        "signal": fields["title"],
+                    }],
+                } for skill in clean_list(supporting_mapping.get("primarySkills"))]
+                diagnostics = [
+                    "Reviewed Supporting Practice target rule supplies an approved exact lesson-skill mapping."
+                ]
             else:
                 candidates = [
                     candidate
@@ -375,9 +398,24 @@ def audit() -> dict[str, Any]:
                 "outcomeCodes": outcomes,
                 "title": fields["title"],
                 "status": status,
+                "approvedMapping": bool(existing or supporting_mapping),
+                "supportingPracticeRuleId": None if not supporting_mapping else supporting_mapping.get("supportingPracticeRuleId"),
                 "diagnostics": diagnostics,
                 "candidates": candidates[:5],
             })
+
+    # A complete Supporting rollout is intentionally fail-closed: every
+    # outcome-unmapped canonical lesson must be covered by either an explicit
+    # mapping or a reviewed Supporting target rule.
+    explicitly_mapped = set(mappings)
+    unmatched_after_explicit = [
+        row for row in unmatched_supporting
+        if row["lessonCode"] not in explicitly_mapped
+    ]
+    blockers.extend(
+        f"Supporting Practice target rule missing for {row['lessonCode']}: {row['title']}"
+        for row in unmatched_after_explicit
+    )
 
     mapped_targets_missing = sorted(set(mappings) - seen_lessons)
     blockers.extend(
