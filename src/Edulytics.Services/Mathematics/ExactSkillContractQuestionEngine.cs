@@ -219,6 +219,18 @@ public sealed class ExactSkillContractQuestionEngine
                 StringComparison.Ordinal);
         }
 
+        if (family == "fractions.represent.interpret.fraction_bar")
+        {
+            if (!TryParseFraction(answer, out var answerNumerator, out var answerDenominator))
+                return false;
+
+            return parameters["denominator"] > 0 &&
+                parameters["numerator"] >= 0 &&
+                parameters["numerator"] <= parameters["denominator"] &&
+                answerNumerator * parameters["denominator"] ==
+                    parameters["numerator"] * answerDenominator;
+        }
+
         if (family is
             "vectors.add.exact_rational" or
             "vectors.subtract.exact_rational" or
@@ -298,6 +310,27 @@ public sealed class ExactSkillContractQuestionEngine
 
         return family switch
         {
+            "number.whole.add.direct" =>
+                parameters["left"] >= 0 &&
+                parameters["right"] >= 0 &&
+                value == parameters["left"] + parameters["right"],
+
+            "number.whole.subtract.direct" =>
+                parameters["left"] >= parameters["right"] &&
+                parameters["right"] >= 0 &&
+                value == parameters["left"] - parameters["right"],
+
+            "number.lcm.two_numbers" =>
+                parameters["left"] > 0 &&
+                parameters["right"] > 0 &&
+                value == LeastCommonMultiple(parameters["left"], parameters["right"]),
+
+            "percentages.of_quantity.direct" =>
+                parameters["percent"] is >= 0 and <= 100 &&
+                parameters["quantity"] >= 0 &&
+                parameters["percent"] * parameters["quantity"] % 100 == 0 &&
+                value * 100 == parameters["percent"] * parameters["quantity"],
+
             "algebra.relationships.two_unknowns.total_difference" =>
                 value > 0 &&
                 parameters["total"] - value > 0 &&
@@ -389,13 +422,15 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters["targetLength"] % parameters["sourceLength"] == 0 &&
                 value == parameters["targetLength"] / parameters["sourceLength"],
 
-            "geometry.surface_area.rectangular_prism" =>
+            "geometry.surface_area.rectangular_prism" or
+            "geometry.surface_area_volume.rectangular_prism_surface_area" =>
                 value == 2 * (
                     parameters["length"] * parameters["width"] +
                     parameters["length"] * parameters["height"] +
                     parameters["width"] * parameters["height"]),
 
-            "geometry.volume.rectangular_prism" =>
+            "geometry.volume.rectangular_prism" or
+            "geometry.surface_area_volume.rectangular_prism_volume" =>
                 value == parameters["length"] *
                     parameters["width"] *
                     parameters["height"],
@@ -463,6 +498,16 @@ public sealed class ExactSkillContractQuestionEngine
 
         return family switch
         {
+            "number.whole.add.direct" =>
+                BuildWholeAdd(random, scale),
+            "number.whole.subtract.direct" =>
+                BuildWholeSubtract(random, scale),
+            "number.lcm.two_numbers" =>
+                BuildLcm(random, scale),
+            "percentages.of_quantity.direct" =>
+                BuildPercentageOfQuantity(random, scale),
+            "fractions.represent.interpret.fraction_bar" =>
+                BuildFractionRepresentation(random, scale),
             "algebra.relationships.two_unknowns.total_difference" =>
                 BuildTwoUnknowns(random, scale),
             "measurement.scale.equal_intervals.read_value" =>
@@ -531,9 +576,13 @@ public sealed class ExactSkillContractQuestionEngine
             "geometry.congruence.identify_criterion" =>
                 BuildCongruenceCriterion(random),
             "geometry.surface_area.rectangular_prism" =>
-                BuildRectangularPrismSurfaceArea(random, scale),
+                BuildRectangularPrismSurfaceArea(random, scale, "geometry.surface_area.rectangular_prism"),
+            "geometry.surface_area_volume.rectangular_prism_surface_area" =>
+                BuildRectangularPrismSurfaceArea(random, scale, "geometry.surface_area_volume.rectangular_prism_surface_area"),
             "geometry.volume.rectangular_prism" =>
-                BuildRectangularPrismVolume(random, scale),
+                BuildRectangularPrismVolume(random, scale, "geometry.volume.rectangular_prism"),
+            "geometry.surface_area_volume.rectangular_prism_volume" =>
+                BuildRectangularPrismVolume(random, scale, "geometry.surface_area_volume.rectangular_prism_volume"),
             "geometry.rectangle.area.exact" =>
                 BuildRectangleArea(random, scale, "geometry.rectangle.area.exact"),
             "geometry.perimeter_area.rectangle_area" =>
@@ -576,6 +625,79 @@ public sealed class ExactSkillContractQuestionEngine
     {
         MathematicsObservability.Record(MathematicsMetricKind.Unsupported);
         throw new InvalidOperationException($"Unsupported exact Mathematics question family: {family}");
+    }
+
+    private static ExactProblem BuildWholeAdd(Random random, int scale)
+    {
+        var max = 20 * scale + 20;
+        var left = random.Next(0, max + 1);
+        var right = random.Next(0, max + 1);
+        return Problem(
+            "number.whole.add.direct",
+            $"Calculate {left} + {right}.",
+            "Add the two whole numbers and check by subtracting either addend from the total.",
+            AssessmentItemType.Numeric,
+            ("left", left),
+            ("right", right));
+    }
+
+    private static ExactProblem BuildWholeSubtract(Random random, int scale)
+    {
+        var max = 20 * scale + 20;
+        var right = random.Next(0, max + 1);
+        var difference = random.Next(0, max + 1);
+        var left = right + difference;
+        return Problem(
+            "number.whole.subtract.direct",
+            $"Calculate {left} − {right}.",
+            "Subtract the second whole number and check by adding the difference back.",
+            AssessmentItemType.Numeric,
+            ("left", left),
+            ("right", right));
+    }
+
+    private static ExactProblem BuildLcm(Random random, int scale)
+    {
+        var common = random.Next(2, 4 + scale);
+        var leftFactor = random.Next(2, 5 + scale);
+        var rightFactor = random.Next(2, 5 + scale);
+        var left = common * leftFactor;
+        var right = common * rightFactor;
+        return Problem(
+            "number.lcm.two_numbers",
+            $"Find the least common multiple of {left} and {right}.",
+            "List prime factors or successive multiples, then verify the result is divisible by both numbers and no smaller positive common multiple exists.",
+            AssessmentItemType.Numeric,
+            ("left", left),
+            ("right", right));
+    }
+
+    private static ExactProblem BuildPercentageOfQuantity(Random random, int scale)
+    {
+        int[] percentages = [10, 20, 25, 40, 50, 60, 75, 80];
+        var percent = percentages[random.Next(percentages.Length)];
+        var unit = 20;
+        var quantity = unit * random.Next(2, 6 + scale * 2);
+        return Problem(
+            "percentages.of_quantity.direct",
+            $"Find {percent}% of {quantity}.",
+            "Convert the percentage to a fraction over 100, multiply by the quantity, and simplify. Check by reversing the percentage relationship.",
+            AssessmentItemType.Numeric,
+            ("percent", percent),
+            ("quantity", quantity));
+    }
+
+    private static ExactProblem BuildFractionRepresentation(Random random, int scale)
+    {
+        var denominator = random.Next(3, 7 + scale);
+        var numerator = random.Next(1, denominator + 1);
+        return Problem(
+            "fractions.represent.interpret.fraction_bar",
+            $"A fraction bar is divided into {denominator} equal parts and {numerator} part(s) are shaded. Write the shaded fraction.",
+            "The denominator is the number of equal parts; the numerator is the number shaded. Simplify only if the fraction has a common factor.",
+            AssessmentItemType.ShortAnswer,
+            ("numerator", numerator),
+            ("denominator", denominator));
     }
 
     private static ExactProblem BuildTwoUnknowns(Random random, int scale)
@@ -1168,14 +1290,14 @@ public sealed class ExactSkillContractQuestionEngine
             ("angleB", angleB));
     }
 
-    private static ExactProblem BuildRectangularPrismSurfaceArea(Random random, int scale)
+    private static ExactProblem BuildRectangularPrismSurfaceArea(Random random, int scale, string family)
     {
         var length = random.Next(2, 7 + scale * 2);
         var width = random.Next(2, 6 + scale);
         var height = random.Next(2, 5 + scale);
 
         return Problem(
-            "geometry.surface_area.rectangular_prism",
+            family,
             $"A rectangular prism has length {length}, width {width}, and height {height}. Find its total surface area.",
             "Use 2(lw + lh + wh), then verify all six faces are counted.",
             AssessmentItemType.Numeric,
@@ -1184,14 +1306,14 @@ public sealed class ExactSkillContractQuestionEngine
             ("height", height));
     }
 
-    private static ExactProblem BuildRectangularPrismVolume(Random random, int scale)
+    private static ExactProblem BuildRectangularPrismVolume(Random random, int scale, string family)
     {
         var length = random.Next(2, 7 + scale * 2);
         var width = random.Next(2, 6 + scale);
         var height = random.Next(2, 5 + scale);
 
         return Problem(
-            "geometry.volume.rectangular_prism",
+            family,
             $"A rectangular prism has length {length}, width {width}, and height {height}. Find its volume.",
             "Volume of a rectangular prism is length × width × height.",
             AssessmentItemType.Numeric,
@@ -1546,6 +1668,21 @@ public sealed class ExactSkillContractQuestionEngine
         var p = problem.Parameters;
         return problem.Family switch
         {
+            "number.whole.add.direct" =>
+                (p["left"] + p["right"]).ToString(CultureInfo.InvariantCulture),
+
+            "number.whole.subtract.direct" =>
+                (p["left"] - p["right"]).ToString(CultureInfo.InvariantCulture),
+
+            "number.lcm.two_numbers" =>
+                LeastCommonMultiple(p["left"], p["right"]).ToString(CultureInfo.InvariantCulture),
+
+            "percentages.of_quantity.direct" =>
+                (p["percent"] * p["quantity"] / 100).ToString(CultureInfo.InvariantCulture),
+
+            "fractions.represent.interpret.fraction_bar" =>
+                SimplifyFraction(p["numerator"], p["denominator"]),
+
             "algebra.relationships.two_unknowns.total_difference" =>
                 ((p["total"] - p["difference"]) / 2).ToString(CultureInfo.InvariantCulture),
 
@@ -1642,14 +1779,16 @@ public sealed class ExactSkillContractQuestionEngine
                     _ => throw new InvalidOperationException("Invalid congruence criterion.")
                 },
 
-            "geometry.surface_area.rectangular_prism" =>
+            "geometry.surface_area.rectangular_prism" or
+            "geometry.surface_area_volume.rectangular_prism_surface_area" =>
                 (2 * (
                     p["length"] * p["width"] +
                     p["length"] * p["height"] +
                     p["width"] * p["height"]))
                     .ToString(CultureInfo.InvariantCulture),
 
-            "geometry.volume.rectangular_prism" =>
+            "geometry.volume.rectangular_prism" or
+            "geometry.surface_area_volume.rectangular_prism_volume" =>
                 (p["length"] * p["width"] * p["height"])
                     .ToString(CultureInfo.InvariantCulture),
 
@@ -1770,6 +1909,13 @@ public sealed class ExactSkillContractQuestionEngine
             denominator = -denominator;
         }
         return true;
+    }
+
+    private static int LeastCommonMultiple(int a, int b)
+    {
+        if (a <= 0 || b <= 0)
+            throw new InvalidOperationException("LCM inputs must be positive.");
+        return checked(a / GreatestCommonDivisor(a, b) * b);
     }
 
     private static int GreatestCommonDivisor(int a, int b)
