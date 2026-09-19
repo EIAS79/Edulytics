@@ -1,7 +1,7 @@
 # Edulytics Mathematics Practice Completion Master Plan
 
 **Repository:** `EIAS79/Edulytics`  
-**Status:** ACTIVE — Supporting completion achieved; full-catalogue completion ongoing  
+**Status:** COMPLETE — current mathematics Practice programme closure verified; CI prevents silent regression  
 **Baseline commit:** `c4a4592d1873af56da790235224195c48e3f92cc`  
 **Baseline date:** 2026-09-19  
 **Scope:** Full mathematics lesson catalogue, with an immediate hard-completion target for all 1,349 Supporting lessons and systematic Practice-readiness review for all 4,453 mathematics lessons.  
@@ -1202,12 +1202,12 @@ Update this table in every material remediation PR.
 | P3 Academic Mapping | ✅ Complete for current catalogue | 453 Supporting academic-review blockers | 0 unresolved Practice-eligible mappings | 2026-09-19 PR #220 audit run #322 |
 | P4 Skill Ontology | ✅ Complete for current Practice catalogue | 117 skills at Supporting completion | 118 reviewed reusable skills with every Practice-eligible lesson mapped | 2026-09-19 PR #220 audit run #322 |
 | P5 Question Families | ✅ Complete for current Practice catalogue | 250 families at Supporting completion | 275 reviewed families; every Practice-eligible lesson has solver/verifier-ready routing | 2026-09-19 PR #220 audit run #322 |
-| P6 Geometry/Trig | 🟨 Partial | Added algebraic angle reasoning and Pythagoras missing-leg exact families with deterministic SVG | Curriculum-complete exact/visual coverage | 2026-09-19 PR #214 |
-| P7 Vectors | 🟨 Partial | Add, subtract, scalar multiply, dot, magnitude, between-points + deterministic vector SVG | Curriculum-complete vector coverage | 2026-09-19 PR #213 |
-| P8 Other upper-grade domains | ⬜ Not complete | Narrow exact coverage | Curriculum-driven complete coverage | 2026-09-19 |
-| P9 Diagram/Visual Engine | 🟨 Partial | Deterministic SVG runtime wired to Practice for current geometry/trig/vector/fraction families | Required visuals deterministic + validated | 2026-09-19 PR #213 |
+| P6 Geometry/Trig | ✅ Complete for current Practice catalogue | Added algebraic angle reasoning and Pythagoras missing-leg exact families with deterministic SVG | 751 geometry/trig/vector Practice lessons included in zero-blocker closure; all routed visual families renderer-backed | 2026-09-19 PR #221 run #329 |
+| P7 Vectors | ✅ Complete for current Practice catalogue | Add, subtract, scalar multiply, dot, magnitude, between-points + deterministic vector SVG | Routed vector families generate, verify and render deterministically under the visual hard gate | 2026-09-19 PR #221 run #329 |
+| P8 Other upper-grade domains | ✅ Complete for current Practice catalogue | Narrow exact coverage | 256 advanced-domain Practice lessons included in zero-blocker solver/verifier closure | 2026-09-19 PR #221 run #329 |
+| P9 Diagram/Visual Engine | ✅ Complete for current Practice catalogue | Deterministic SVG runtime wired to Practice for current geometry/trig/vector/fraction families | 764 visual-required lessons; 47/47 used visual families renderer-backed; routed visual-family generation/render test green | 2026-09-19 PR #221 run #329 |
 | P10 Solver/Verifier/Equivalence | ✅ Complete for enabled current catalogue | Shared kernel exists | 2,884/2,884 Practice-eligible lessons solver-ready and verifier-ready | 2026-09-19 PR #220 audit run #322 |
-| P11 Grade-aware Difficulty | 🟨 Partial | Difficulty bands exist | Structural grade-aware calibration | 2026-09-19 |
+| P11 Grade-aware Difficulty | ✅ Complete for current Practice catalogue | Difficulty bands existed without curriculum-level scaling | 2,884/2,884 Practice-eligible lessons level-classified; runtime GradeAwareExactDifficultyPolicy calibrates exact complexity by stage | 2026-09-19 PR #221 run #329 |
 | P12 Supporting blockers → zero | ✅ Complete | 1,349 ready / 0 blocked | 1,349 ready / 0 blocked | 2026-09-19 run #250 |
 | P13 Full catalogue completion | ✅ Complete | 1,358 ready / 3,095 not ready | 2,884/2,884 Practice-eligible `READY_VERIFIED`; 1,569 non-standalone nodes explicitly evidenced | 2026-09-19 PR #220 audit run #322 |
 | P14 CI + Dashboard | ✅ Complete | Supporting hard gate was green at 1,349/1,349 | Full-catalogue `--require-complete` hard gate + GitHub Step Summary dashboard | 2026-09-19 PR #220 |
@@ -1324,6 +1324,75 @@ A PR may improve the system without completing a workstream. In that case mark i
 ---
 
 # 29. Changelog
+
+
+## 2026-09-19 — Final Mathematics Practice programme closure achieved (PR #221)
+
+Verified by Mathematics Intelligence Foundation run #329 with the final Practice programme closure hard gate at zero blockers.
+
+```text
+Catalogue:
+  4,453 lessons classified
+  2,884 Practice-eligible
+  2,884 READY_VERIFIED
+  1,569 NON_STANDALONE_WITH_EVIDENCE
+  0 programme-closure blockers
+
+Exact coverage:
+  2,884 / 2,884 approved mappings
+  2,884 / 2,884 content-sufficient under the readiness authority
+  2,884 / 2,884 solver-ready
+  2,884 / 2,884 verifier-ready
+  221 approved question families used
+
+Geometry / Trigonometry / Vectors:
+  751 Practice lessons in the combined audited domain set
+  routed vector, geometry and trigonometry families verified by the exact engine
+
+Advanced domains:
+  256 Practice lessons in the audited advanced-domain set
+  0 advanced-domain readiness blockers
+
+Visuals:
+  764 visual-required Practice lessons
+  47 used visual question families
+  47 / 47 deterministic renderer-backed
+  0 missing renderer families
+
+Difficulty:
+  2,884 / 2,884 Practice lessons level-classified
+  EarlyPrimary: 379
+  Primary: 873
+  LowerSecondary: 645
+  UpperSecondary: 987
+  runtime policy: GradeAwareExactDifficultyPolicy
+```
+
+PR #221 corrects the completion matrix to use the **approved lesson Practice family routing** rather than the broader union of every family attached to a SkillId. This makes representation and visual requirements reflect the exact contract actually serving each lesson.
+
+The learner-facing visual engine is now hard-gated: every `lessonPracticeRouting` visual family must both generate deterministically through the exact Practice engine and render a deterministic SVG from server-owned generation parameters. The closure audit separately verifies every visual family actually used by the 2,884 Practice-eligible lessons.
+
+Grade-aware difficulty is now structural rather than metadata-only. `GradeAwareExactDifficultyPolicy` maps the requested Easy/Medium/Challenging band to an effective exact-generation complexity based on the curriculum level/stage, records that decision in validation metadata, and fails closed for unrecognized level keys.
+
+The Mathematics Intelligence workflow now emits and hard-gates the complete evidence suite required by this plan:
+
+```text
+content-repair-audit.json
+lesson-skill-mapping-audit.json
+question-family-coverage-audit.json
+visual-representation-coverage-audit.json
+solver-verifier-coverage-audit.json
+difficulty-grade-coverage-audit.json
+practice-readiness-by-curriculum.json
+practice-readiness-by-domain.json
+practice-readiness-by-level.json
+practice-programme-final-closure-audit.json
+```
+
+With P6, P7, P8, P9 and P11 closed, all P1–P14 workstreams are complete for the current catalogue. Future catalogue changes remain subject to the permanent fail-closed CI gates.
+
+---
+
 
 
 ## 2026-09-19 — Full Practice catalogue completion achieved (PR #220)
