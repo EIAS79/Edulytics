@@ -689,6 +689,13 @@ public static class LessonPracticeContractRegistry
             byLesson.TryAdd(projected.LessonCode, projected);
         }
 
+        foreach (var projected in OfficialLessonPracticeRuleProjection.Load())
+        {
+            // Official lessons may be promoted only by reviewed anchored
+            // exact-title rules. Broad keyword matching is never authoritative.
+            byLesson.TryAdd(projected.LessonCode, projected);
+        }
+
         foreach (var projected in SupportingLessonPracticeRuleProjection.Load())
         {
             // Reviewed Supporting target rules fill only lessons that still do not
