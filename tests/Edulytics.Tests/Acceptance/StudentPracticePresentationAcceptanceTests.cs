@@ -70,6 +70,46 @@ public sealed class StudentPracticePresentationAcceptanceTests
             StringComparison.Ordinal);
     }
 
+
+    [Fact]
+    public void Practice_PresentsDeterministicMathVisualsFromExactGenerationMetadata()
+    {
+        var contracts = ReadRepositoryFile(
+            "src",
+            "Edulytics.Services",
+            "Practice",
+            "PracticeContracts.cs");
+        var service = ReadRepositoryFile(
+            "src",
+            "Edulytics.Services",
+            "Practice",
+            "PracticeService.cs");
+        var view = ReadRepositoryFile(
+            "src",
+            "Edulytics.Web",
+            "Views",
+            "StudentPractice",
+            "Attempt.cshtml");
+        var renderer = ReadRepositoryFile(
+            "src",
+            "Edulytics.Web",
+            "Presentation",
+            "PracticeMathVisualRenderer.cs");
+
+        Assert.Contains("GenerationFamily", contracts, StringComparison.Ordinal);
+        Assert.Contains("GenerationParametersJson", contracts, StringComparison.Ordinal);
+        Assert.Contains("item.GenerationFamily", service, StringComparison.Ordinal);
+        Assert.Contains("item.GenerationParametersJson", service, StringComparison.Ordinal);
+        Assert.Contains("PracticeMathVisualRenderer.RenderSvg", view, StringComparison.Ordinal);
+        Assert.Contains("practice-math-visual-wrap", view, StringComparison.Ordinal);
+        Assert.Contains("geometry.right_triangle.pythagorean.exact", renderer, StringComparison.Ordinal);
+        Assert.Contains("trigonometry.right_triangle.find_side_exact", renderer, StringComparison.Ordinal);
+        Assert.Contains("geometry.coordinate.gradient_between_points", renderer, StringComparison.Ordinal);
+        Assert.Contains("vectors.magnitude.exact", renderer, StringComparison.Ordinal);
+        Assert.DoesNotContain("http://", renderer, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("https://", renderer, StringComparison.OrdinalIgnoreCase);
+    }
+
     private static string ReadRepositoryFile(params string[] relativeSegments)
     {
         var root = FindRoot();

@@ -32,13 +32,29 @@
       "id": "number.whole.add",
       "domain": "number",
       "canonicalName": "Whole-number addition",
-      "legacyCanonicalSkill": "WholeNumberAddition"
+      "legacyCanonicalSkill": "WholeNumberAddition",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "number.whole.add.exact",
+        "number.verify.whole.add"
+      ],
+      "v2QuestionFamilies": [
+        "number.whole.add.direct"
+      ]
     },
     {
       "id": "number.whole.subtract",
       "domain": "number",
       "canonicalName": "Whole-number subtraction",
-      "legacyCanonicalSkill": "WholeNumberSubtraction"
+      "legacyCanonicalSkill": "WholeNumberSubtraction",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "number.whole.subtract.exact",
+        "number.verify.whole.subtract"
+      ],
+      "v2QuestionFamilies": [
+        "number.whole.subtract.direct"
+      ]
     },
     {
       "id": "number.whole.multiply",
@@ -634,13 +650,32 @@
     {
       "id": "number.lcm",
       "domain": "number",
-      "canonicalName": "Find and use least common multiples"
+      "canonicalName": "Find and use least common multiples",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "number.lcm.exact",
+        "number.verify.lcm"
+      ],
+      "v2QuestionFamilies": [
+        "number.lcm.two_numbers"
+      ]
     },
     {
       "id": "fractions.equivalent",
       "domain": "fractions",
       "canonicalName": "Generate and recognize equivalent fractions",
-      "legacyGameMechanic": "FRACTION_EQUIVALENT"
+      "legacyGameMechanic": "FRACTION_EQUIVALENT",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.equivalent.exact",
+        "fractions.verify.equivalent"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
+      ]
     },
     {
       "id": "fractions.of_quantity",
@@ -661,32 +696,73 @@
       "id": "percentages.of_quantity",
       "domain": "percentages",
       "canonicalName": "Find a percentage of a quantity",
-      "legacyCanonicalSkill": "PercentageOfQuantity"
+      "legacyCanonicalSkill": "PercentageOfQuantity",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "percentages.of_quantity.exact",
+        "percentages.verify.of_quantity"
+      ],
+      "v2QuestionFamilies": [
+        "percentages.of_quantity.direct"
+      ]
     },
     {
       "id": "ratio.unit_rate",
       "domain": "ratio",
       "canonicalName": "Use unit rate and proportion",
       "legacyCanonicalSkill": "UnitRateAndProportion",
-      "legacyGameMechanic": "UNIT_RATE"
+      "legacyGameMechanic": "UNIT_RATE",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "ratio.unit_rate.exact",
+        "ratio.verify.unit_rate"
+      ],
+      "v2QuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ]
     },
     {
       "id": "algebra.relationships.two_unknowns",
       "domain": "algebra",
       "canonicalName": "Solve linked relationships with two unknowns",
-      "legacyGameMechanic": "TWO_UNKNOWNS"
+      "legacyGameMechanic": "TWO_UNKNOWNS",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "algebra.relationships.two_unknowns.total_difference"
+      ]
     },
     {
       "id": "measurement.scale.read_equal_intervals",
       "domain": "measurement",
       "canonicalName": "Read scales divided into equal intervals",
-      "legacyGameMechanic": "SCALE_READING"
+      "legacyGameMechanic": "SCALE_READING",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
+      ]
     },
     {
       "id": "fractions.compare.unlike_denominators",
       "domain": "fractions",
       "canonicalName": "Compare fractions with different denominators",
-      "legacyGameMechanic": "FRACTION_COMPARE_UNLIKE"
+      "legacyGameMechanic": "FRACTION_COMPARE_UNLIKE",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.compare.unlike.common_denominator"
+      ]
     },
     {
       "id": "fractions.add_subtract",
@@ -745,9 +821,14 @@
         "representation",
         "exact_rational"
       ],
-      "v2Status": "Blocked",
-      "v2Capabilities": [],
-      "v2QuestionFamilies": []
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.represent.interpret.exact",
+        "fractions.verify.representation"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.represent.interpret.fraction_bar"
+      ]
     },
     {
       "id": "geometry.coordinate.straight_line",
@@ -839,8 +920,8 @@
         "geometry.trigonometry.independent_verification"
       ],
       "v2QuestionFamilies": [
-        "geometry.surface_area.rectangular_prism",
-        "geometry.volume.rectangular_prism"
+        "geometry.surface_area_volume.rectangular_prism_surface_area",
+        "geometry.surface_area_volume.rectangular_prism_volume"
       ]
     },
     {
@@ -883,6 +964,62 @@
       ],
       "v2QuestionFamilies": [
         "trigonometry.modelling.contextual"
+      ]
+    },
+    {
+      "id": "vectors.subtract.exact",
+      "domain": "vectors",
+      "canonicalName": "Subtract exact rational vectors componentwise",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "vectors.subtract.exact_rational",
+        "vectors.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "vectors.subtract.exact_rational"
+      ]
+    },
+    {
+      "id": "vectors.scalar_multiply",
+      "domain": "vectors",
+      "canonicalName": "Multiply a vector by an exact scalar",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "vectors.scalar_multiply.exact_rational",
+        "vectors.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "vectors.scalar_multiply.exact_rational"
+      ]
+    },
+    {
+      "id": "vectors.magnitude",
+      "domain": "vectors",
+      "canonicalName": "Find the exact magnitude of a two-dimensional vector",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "vectors.magnitude.exact",
+        "vectors.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "vectors.magnitude.exact"
+      ]
+    },
+    {
+      "id": "vectors.between_points",
+      "domain": "vectors",
+      "canonicalName": "Find the displacement vector between two coordinate points",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "vectors.between_points.exact",
+        "vectors.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "vectors.between_points.exact"
       ]
     }
   ]

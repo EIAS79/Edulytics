@@ -588,6 +588,10 @@
         "\\binverse operation\\b",
         "\\bregroup",
         "\\bcomplement"
+      ],
+      "negativeTitlePatterns": [
+        "\\bfractions?\\b",
+        "\\bdecimals?\\b"
       ]
     },
     {
@@ -614,7 +618,8 @@
         "÷",
         "\\bdividend\\b",
         "\\bdivisor\\b",
-        "\\bquotient\\b"
+        "\\bquotient\\b",
+        "\\d+\\s*=\\s*\\d+\\s*[×*]\\s*\\d+\\s*\\+\\s*\\d+"
       ]
     },
     {

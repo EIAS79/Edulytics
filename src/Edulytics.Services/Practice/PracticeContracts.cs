@@ -47,6 +47,8 @@ public sealed record PracticeAttemptQuestion(
     AssessmentItemType ItemType,
     AssessmentItemDifficulty Difficulty,
     string Prompt,
+    string? GenerationFamily,
+    string? GenerationParametersJson,
     bool Answered,
     bool? IsCorrect,
     string? Feedback);

@@ -19,6 +19,31 @@ public static class ExactMathematicsCapabilityResolver
 
         var text = semanticContext.Trim().ToUpperInvariant();
 
+        // Core exact arithmetic / representation targets.
+        if (ContainsAny(text, "LEAST COMMON MULTIPLE", "LEAST COMMON MULTIPLES", "LCM"))
+        {
+            return Exact(
+                "number.lcm",
+                ["number.lcm.two_numbers"],
+                "ExactLeastCommonMultiple");
+        }
+
+        if (ContainsAny(text, "PERCENTAGE OF A QUANTITY", "PERCENTAGES OF QUANTITIES", "FIND A PERCENTAGE"))
+        {
+            return Exact(
+                "percentages.of_quantity",
+                ["percentages.of_quantity.direct"],
+                "ExactPercentageOfQuantity");
+        }
+
+        if (ContainsAny(text, "FRACTION REPRESENTATION", "FRACTION BAR", "REPRESENT FRACTIONS"))
+        {
+            return Exact(
+                "fractions.represent.interpret",
+                ["fractions.represent.interpret.fraction_bar"],
+                "ExactFractionRepresentation");
+        }
+
         // Exact algebra
         if (ContainsAny(text, "LINEAR INEQUALITY", "LINEAR INEQUALITIES") ||
             (text.Contains("INEQUALIT", StringComparison.Ordinal) &&
@@ -37,6 +62,56 @@ public static class ExactMathematicsCapabilityResolver
                 "algebra.linear.solve",
                 ["algebra.linear.ax_plus_b_equals_c"],
                 "ExactLinearEquation");
+        }
+
+        // Exact vector targets. Keep these specific so a broad lesson that merely
+        // mentions vectors does not authorize the wrong operation.
+        if (ContainsAny(text, "MAGNITUDE OF A VECTOR", "VECTOR MAGNITUDE", "MAGNITUDE OF VECTOR"))
+        {
+            return Exact(
+                "vectors.magnitude",
+                ["vectors.magnitude.exact"],
+                "ExactVectorMagnitude");
+        }
+
+        if (ContainsAny(text, "VECTOR BETWEEN TWO POINTS", "VECTOR FROM A TO B", "POSITION VECTOR BETWEEN"))
+        {
+            return Exact(
+                "vectors.between_points",
+                ["vectors.between_points.exact"],
+                "ExactVectorBetweenPoints");
+        }
+
+        if (ContainsAny(text, "SCALAR MULTIPLICATION OF VECTORS", "MULTIPLY A VECTOR BY A SCALAR", "SCALAR MULTIPLICATION"))
+        {
+            return Exact(
+                "vectors.scalar_multiply",
+                ["vectors.scalar_multiply.exact_rational"],
+                "ExactVectorScalarMultiply");
+        }
+
+        if (ContainsAny(text, "VECTOR SUBTRACTION", "SUBTRACT VECTORS", "DIFFERENCE OF VECTORS"))
+        {
+            return Exact(
+                "vectors.subtract",
+                ["vectors.subtract.exact_rational"],
+                "ExactVectorSubtract");
+        }
+
+        if (ContainsAny(text, "DOT PRODUCT", "SCALAR PRODUCT OF VECTORS"))
+        {
+            return Exact(
+                "vectors.dot.exact",
+                ["vectors.dot.exact_rational"],
+                "ExactVectorDotProduct");
+        }
+
+        if (ContainsAny(text, "VECTOR ADDITION", "ADD VECTORS", "SUM OF VECTORS"))
+        {
+            return Exact(
+                "vectors.add.exact",
+                ["vectors.add.exact_rational"],
+                "ExactVectorAdd");
         }
 
         // High-school geometry / trigonometry. These are intentionally checked

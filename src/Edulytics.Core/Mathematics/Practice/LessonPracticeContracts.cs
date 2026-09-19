@@ -672,10 +672,27 @@ public static class LessonPracticeContractRegistry
             Version),
     ];
 
-    private static readonly IReadOnlyDictionary<string, LessonPracticeContract> ByLessonCode =
-        Entries.ToDictionary(x => x.LessonCode, StringComparer.Ordinal);
+    private static readonly LessonPracticeContract[] AllEntries = BuildAllEntries();
 
-    public static IReadOnlyList<LessonPracticeContract> All => Entries;
+    private static readonly IReadOnlyDictionary<string, LessonPracticeContract> ByLessonCode =
+        AllEntries.ToDictionary(x => x.LessonCode, StringComparer.Ordinal);
+
+    public static IReadOnlyList<LessonPracticeContract> All => AllEntries;
+
+    private static LessonPracticeContract[] BuildAllEntries()
+    {
+        var byLesson = Entries.ToDictionary(x => x.LessonCode, StringComparer.Ordinal);
+        foreach (var projected in LessonPracticeContractProjection.Load())
+        {
+            // Hand-authored contracts remain authoritative where they already exist.
+            // The projection supplements the registry only for newly approved lessons.
+            byLesson.TryAdd(projected.LessonCode, projected);
+        }
+
+        return byLesson.Values
+            .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
+            .ToArray();
+    }
 
     public static bool TryResolve(string? lessonCode, out LessonPracticeContract? contract)
     {

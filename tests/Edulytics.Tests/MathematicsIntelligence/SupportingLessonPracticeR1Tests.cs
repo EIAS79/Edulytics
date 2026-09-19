@@ -25,11 +25,23 @@ public sealed class SupportingLessonPracticeR1Tests
             .ToHashSet(StringComparer.Ordinal);
         Assert.All(expected, code => Assert.Contains(code, actual));
 
-        Assert.All(LessonPracticeContractRegistry.All, contract =>
+        var supportingContracts = LessonPracticeContractRegistry.All
+            .Where(contract => string.Equals(
+                contract.SourceType,
+                "SupportingLesson",
+                StringComparison.Ordinal))
+            .ToArray();
+
+        Assert.All(supportingContracts, contract =>
         {
-            Assert.Equal("SupportingLesson", contract.SourceType);
             Assert.Equal("READY_VERIFIED", contract.Readiness);
-            Assert.Equal(LessonPracticeContractRegistry.Version, contract.ContractVersion);
+            Assert.Contains(
+                contract.ContractVersion,
+                new[]
+                {
+                    LessonPracticeContractRegistry.Version,
+                    "lesson-practice-projection-v1"
+                });
             Assert.False(string.IsNullOrWhiteSpace(contract.SkillId));
             Assert.NotEmpty(contract.AllowedQuestionFamilies);
         });

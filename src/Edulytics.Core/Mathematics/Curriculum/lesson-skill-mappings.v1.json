@@ -13,6 +13,11 @@
       "mappingConfidence": "High",
       "evidence": [
         "Exact lesson title and corrected worked examples require two linked unknown quantities and two independent relationships."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "TWO_UNKNOWNS",
+      "allowedQuestionFamilies": [
+        "algebra.relationships.two_unknowns.total_difference"
       ]
     },
     {
@@ -25,6 +30,11 @@
       "mappingConfidence": "High",
       "evidence": [
         "Exact lesson title and corrected worked examples require reading equal scale intervals and pointer positions."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
       ]
     },
     {
@@ -41,6 +51,11 @@
       "mappingConfidence": "High",
       "evidence": [
         "Exact lesson title and corrected worked examples compare unlike-denominator fractions using equivalent fractions and common denominators."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "FRACTION_COMPARE_UNLIKE",
+      "allowedQuestionFamilies": [
+        "fractions.compare.unlike.common_denominator"
       ]
     },
     {
@@ -57,6 +72,11 @@
       "evidence": [
         "The canonical lesson title is 'Solving Any Linear Equation' and its worked examples solve single-variable affine equations with integer coefficients, which is inside the exact-rational affine V2 solver scope.",
         "The canonical lesson is linked to CCSS:8.EE.C.7. This Edulytics SkillContract mapping narrows generation scope without replacing, copying or inventing the official OutcomeCode."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "APPROVED_EXACT",
+      "allowedQuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c"
       ]
     },
     {
@@ -70,6 +90,11 @@
       "evidence": [
         "The canonical lesson title is 'Efficiently Solving Inequalities' and its worked examples solve and graph single-variable affine inequalities, including a negative variable coefficient where order reversal is required.",
         "The lesson has no independent official OutcomeCode mapping in the canonical content pack, so the Edulytics SkillContract is pedagogical metadata only and does not invent an official curriculum outcome."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "LINEAR_INEQUALITY",
+      "allowedQuestionFamilies": [
+        "algebra.linear.inequality.ax_plus_b_relation_c"
       ]
     },
     {
@@ -84,6 +109,12 @@
         "The canonical lesson title is 'Find equivalent fractions: Build the Idea' and the worked examples explicitly use fraction equivalence without changing value.",
         "The deterministic skill-resolution audit identifies fractions.equivalent as the high-confidence exact target and the semantic-content audit passes target evidence.",
         "This supporting lesson has no independent official OutcomeCode; the Edulytics SkillContract is pedagogical metadata only and does not invent an official curriculum outcome."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize"
       ]
     },
     {
@@ -98,6 +129,12 @@
         "The canonical lesson title is 'Find equivalent fractions: Reason and Apply' and the worked examples explicitly use fraction equivalence without changing value.",
         "The deterministic skill-resolution audit identifies fractions.equivalent as the high-confidence exact target and the semantic-content audit passes target evidence.",
         "This supporting lesson has no independent official OutcomeCode; the Edulytics SkillContract is pedagogical metadata only and does not invent an official curriculum outcome."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize"
       ]
     },
     {
@@ -116,6 +153,11 @@
         "The canonical lesson title is 'Compare fractions with different denominators: Reason and Apply' and the semantic-content audit contains target evidence for unlike-denominator comparison.",
         "The deterministic skill-resolution audit identifies fractions.compare.unlike_denominators as the high-confidence exact target.",
         "This supporting lesson has no independent official OutcomeCode; the Edulytics SkillContract does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "FRACTION_COMPARE_UNLIKE",
+      "allowedQuestionFamilies": [
+        "fractions.compare.unlike.common_denominator"
       ]
     },
     {
@@ -132,6 +174,14 @@
       "evidence": [
         "The canonical lesson title is 'Equivalent Fractions' and the worked examples explicitly reason about fractions with the same value.",
         "The lesson remains linked to CCSS:3.NF.A.3; this SkillContract narrows generation scope without replacing the official outcome."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "OFFICIAL_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
       ]
     },
     {
@@ -149,6 +199,14 @@
       "evidence": [
         "The canonical lesson title is 'Generate Equivalent Fractions' and the semantic-content audit passes the equivalent-fraction target.",
         "Official CCSS outcome links are preserved; the SkillContract controls exact practice generation only."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "OFFICIAL_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
       ]
     },
     {
@@ -165,6 +223,14 @@
       "evidence": [
         "The lesson explicitly targets equivalent fractions on a number line and passes deterministic semantic review.",
         "The exact learner mechanic includes a number-line representation mode while preserving the official CCSS mapping."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "OFFICIAL_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
       ]
     },
     {
@@ -181,6 +247,14 @@
       "evidence": [
         "The canonical lesson title is 'Equivalent Fractions' and the worked examples demonstrate equivalent-value reasoning.",
         "The exact practice mechanic generates and recognizes equivalent fractions while preserving CCSS:4.NF.A.1."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "OFFICIAL_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
       ]
     },
     {
@@ -197,6 +271,14 @@
       "evidence": [
         "The lesson explicitly targets equivalent fractions on the number line and passes semantic target review.",
         "The learner mechanic uses an exact number-line equivalence mode; the official outcome remains CCSS:4.NF.A.1."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "OFFICIAL_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
       ]
     },
     {
@@ -213,6 +295,14 @@
       "evidence": [
         "The lesson target is using multiples to find equivalent fractions and the semantic audit passes.",
         "The exact mechanic scales numerator and denominator by the same whole-number factor."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "OFFICIAL_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
       ]
     },
     {
@@ -229,6 +319,14 @@
       "evidence": [
         "The lesson target is using factors to find equivalent fractions and the semantic audit passes.",
         "The exact mechanic includes a factor-reduction mode that divides numerator and denominator by the same factor."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "OFFICIAL_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
       ]
     },
     {
@@ -246,6 +344,12 @@
       "evidence": [
         "The canonical lesson title is 'Equivalent Ratios Have the Same Unit Rates' and worked examples explicitly compare rates per unit.",
         "The exact UNIT_RATE mechanic computes unit rates and verifies equivalent ratios while preserving the official CCSS outcome links."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "OFFICIAL_EXACT",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -260,6 +364,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -274,6 +384,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -288,6 +404,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -302,6 +424,11 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Add and subtract across 10: Build the Idea' and restricted Practice to approved exact question families: number.whole.add_subtract.across_ten.build.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.across_ten.build"
       ]
     },
     {
@@ -316,6 +443,11 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Add and subtract across 10: Reason and Apply' and restricted Practice to approved exact question families: number.whole.add_subtract.across_ten.apply.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.across_ten.apply"
       ]
     },
     {
@@ -330,6 +462,11 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Add and subtract within 100 - part 1: Build the Idea' and restricted Practice to approved exact question families: number.whole.add_subtract.within_100.build.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.within_100.build"
       ]
     },
     {
@@ -344,6 +481,11 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Add and subtract within 100 - part 1: Reason and Apply' and restricted Practice to approved exact question families: number.whole.add_subtract.within_100.apply.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.within_100.apply"
       ]
     },
     {
@@ -358,6 +500,11 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Add and subtract within 100 - part 2: Build the Idea' and restricted Practice to approved exact question families: number.whole.add_subtract.within_100.build.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.within_100.build"
       ]
     },
     {
@@ -372,6 +519,11 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Add and subtract within 100 - part 2: Reason and Apply' and restricted Practice to approved exact question families: number.whole.add_subtract.within_100.apply.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.within_100.apply"
       ]
     },
     {
@@ -386,6 +538,11 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Fluently add and subtract within 10: Build the Idea' and restricted Practice to approved exact question families: number.whole.add_subtract.within_10.build.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.within_10.build"
       ]
     },
     {
@@ -400,6 +557,11 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Fluently add and subtract within 10: Reason and Apply' and restricted Practice to approved exact question families: number.whole.add_subtract.within_10.apply.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.within_10.apply"
       ]
     },
     {
@@ -414,6 +576,11 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Columnar addition and subtraction: Build the Idea' and restricted Practice to approved exact question families: number.whole.add_subtract.columnar.build.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.columnar.build"
       ]
     },
     {
@@ -428,6 +595,11 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Columnar addition and subtraction: Reason and Apply' and restricted Practice to approved exact question families: number.whole.add_subtract.columnar.apply.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.columnar.apply"
       ]
     },
     {
@@ -442,6 +614,11 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Fluently add and subtract within and across 10: Build the Idea' and restricted Practice to approved exact question families: number.whole.add_subtract.across_ten.build.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.across_ten.build"
       ]
     },
     {
@@ -456,6 +633,11 @@
         "Deterministic skill-resolution audit identified number.whole.add_subtract as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Fluently add and subtract within and across 10: Reason and Apply' and restricted Practice to approved exact question families: number.whole.add_subtract.across_ten.apply.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.across_ten.apply"
       ]
     },
     {
@@ -470,6 +652,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates — advanced reasoning' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -484,6 +672,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -498,6 +692,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates — advanced reasoning' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -512,6 +712,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -526,6 +732,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates — advanced reasoning' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -540,6 +752,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -554,6 +772,14 @@
         "Deterministic skill-resolution audit identified fractions.equivalent as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Equivalent fractions' and restricted Practice to approved exact question families: fractions.equivalent.missing_value, fractions.equivalent.recognize, fractions.equivalent.generate_multiple, fractions.equivalent.reduce_common_factor.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
       ]
     },
     {
@@ -568,6 +794,14 @@
         "Deterministic skill-resolution audit identified fractions.equivalent as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Equivalent fractions' and restricted Practice to approved exact question families: fractions.equivalent.missing_value, fractions.equivalent.recognize, fractions.equivalent.generate_multiple, fractions.equivalent.reduce_common_factor.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
       ]
     },
     {
@@ -582,6 +816,14 @@
         "Deterministic skill-resolution audit identified fractions.equivalent as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Equivalent fractions — advanced reasoning' and restricted Practice to approved exact question families: fractions.equivalent.missing_value, fractions.equivalent.recognize, fractions.equivalent.generate_multiple, fractions.equivalent.reduce_common_factor.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
       ]
     },
     {
@@ -596,6 +838,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Unit rate — advanced reasoning' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -610,6 +858,14 @@
         "Deterministic skill-resolution audit identified fractions.equivalent as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Equivalent fractions' and restricted Practice to approved exact question families: fractions.equivalent.missing_value, fractions.equivalent.recognize, fractions.equivalent.generate_multiple, fractions.equivalent.reduce_common_factor.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
       ]
     },
     {
@@ -624,6 +880,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Unit rate' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -638,6 +900,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates — advanced reasoning' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -652,6 +920,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -666,6 +940,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates — advanced reasoning' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -680,6 +960,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -694,6 +980,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates — advanced reasoning' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -708,6 +1000,12 @@
         "Deterministic skill-resolution audit identified ratio.unit_rate as a high-confidence exact target from the canonical lesson title and target-bearing content.",
         "Academic promotion for R2 confirmed the lesson target 'Rates and unit rates' and restricted Practice to approved exact question families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "This Supporting lesson has no independent official OutcomeCode; the Edulytics mapping controls Practice only and does not invent one."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -722,6 +1020,11 @@
         "R3 academic evidence review confirmed number.whole.add_subtract as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.add_subtract.comparative.build.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.comparative.build"
       ]
     },
     {
@@ -736,6 +1039,11 @@
         "R3 academic evidence review confirmed number.whole.add_subtract as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.add_subtract.comparative.apply.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.comparative.apply"
       ]
     },
     {
@@ -750,6 +1058,11 @@
         "R3 academic evidence review confirmed number.whole.add_subtract as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.add_subtract.complement_100.build.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.complement_100.build"
       ]
     },
     {
@@ -764,6 +1077,11 @@
         "R3 academic evidence review confirmed number.whole.add_subtract as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.add_subtract.complement_100.apply.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "WHOLE_ADD_SUBTRACT",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.complement_100.apply"
       ]
     },
     {
@@ -778,6 +1096,11 @@
         "R3 academic evidence review confirmed fractions.of_quantity as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: fractions.of_quantity.build.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "FRACTION_OF_QUANTITY",
+      "allowedQuestionFamilies": [
+        "fractions.of_quantity.build"
       ]
     },
     {
@@ -792,6 +1115,11 @@
         "R3 academic evidence review confirmed fractions.of_quantity as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: fractions.of_quantity.apply.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "FRACTION_OF_QUANTITY",
+      "allowedQuestionFamilies": [
+        "fractions.of_quantity.apply"
       ]
     },
     {
@@ -806,6 +1134,11 @@
         "R3 academic evidence review confirmed number.whole.multiply as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.multiply.fact_recall.build.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "MULTIPLICATION_FACTS",
+      "allowedQuestionFamilies": [
+        "number.whole.multiply.fact_recall.build"
       ]
     },
     {
@@ -820,6 +1153,11 @@
         "R3 academic evidence review confirmed number.whole.multiply as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.multiply.fact_recall.apply.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "MULTIPLICATION_FACTS",
+      "allowedQuestionFamilies": [
+        "number.whole.multiply.fact_recall.apply"
       ]
     },
     {
@@ -834,6 +1172,11 @@
         "R3 academic evidence review confirmed measurement.scale.read_equal_intervals as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: measurement.scale.equal_intervals.read_value.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
       ]
     },
     {
@@ -848,6 +1191,11 @@
         "R3 academic evidence review confirmed measurement.scale.read_equal_intervals as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: measurement.scale.equal_intervals.read_value.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
       ]
     },
     {
@@ -862,6 +1210,11 @@
         "R3 academic evidence review confirmed number.whole.multiply as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.multiply.fact_recall.build.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "MULTIPLICATION_FACTS",
+      "allowedQuestionFamilies": [
+        "number.whole.multiply.fact_recall.build"
       ]
     },
     {
@@ -876,6 +1229,11 @@
         "R3 academic evidence review confirmed number.whole.multiply as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.multiply.fact_recall.apply.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "MULTIPLICATION_FACTS",
+      "allowedQuestionFamilies": [
+        "number.whole.multiply.fact_recall.apply"
       ]
     },
     {
@@ -890,6 +1248,11 @@
         "R3 academic evidence review confirmed number.whole.divide as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.divide.with_remainder.build.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "DIVISION_REMAINDER",
+      "allowedQuestionFamilies": [
+        "number.whole.divide.with_remainder.build"
       ]
     },
     {
@@ -904,6 +1267,11 @@
         "R3 academic evidence review confirmed number.whole.divide as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: number.whole.divide.with_remainder.apply.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "DIVISION_REMAINDER",
+      "allowedQuestionFamilies": [
+        "number.whole.divide.with_remainder.apply"
       ]
     },
     {
@@ -918,6 +1286,11 @@
         "R3 academic evidence review confirmed measurement.scale.read_equal_intervals as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: measurement.scale.equal_intervals.read_value.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
       ]
     },
     {
@@ -932,6 +1305,11 @@
         "R3 academic evidence review confirmed measurement.scale.read_equal_intervals as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: measurement.scale.equal_intervals.read_value.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
       ]
     },
     {
@@ -946,6 +1324,11 @@
         "R3 academic evidence review confirmed fractions.of_quantity as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: fractions.of_quantity.build.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "FRACTION_OF_QUANTITY",
+      "allowedQuestionFamilies": [
+        "fractions.of_quantity.build"
       ]
     },
     {
@@ -960,6 +1343,11 @@
         "R3 academic evidence review confirmed fractions.of_quantity as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: fractions.of_quantity.apply.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "FRACTION_OF_QUANTITY",
+      "allowedQuestionFamilies": [
+        "fractions.of_quantity.apply"
       ]
     },
     {
@@ -974,6 +1362,11 @@
         "R3 academic evidence review confirmed measurement.scale.read_equal_intervals as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: measurement.scale.equal_intervals.read_value.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
       ]
     },
     {
@@ -988,6 +1381,11 @@
         "R3 academic evidence review confirmed measurement.scale.read_equal_intervals as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: measurement.scale.equal_intervals.read_value.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
       ]
     },
     {
@@ -1002,6 +1400,11 @@
         "R3 academic evidence review confirmed measurement.scale.read_equal_intervals as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: measurement.scale.equal_intervals.read_value.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SCALE_READING",
+      "allowedQuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
       ]
     },
     {
@@ -1016,6 +1419,12 @@
         "R3 academic evidence review confirmed fractions.of_quantity as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: fractions.of_quantity.build, fractions.of_quantity.apply.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "FRACTION_OF_QUANTITY",
+      "allowedQuestionFamilies": [
+        "fractions.of_quantity.build",
+        "fractions.of_quantity.apply"
       ]
     },
     {
@@ -1030,6 +1439,12 @@
         "R3 academic evidence review confirmed fractions.equivalent as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: fractions.equivalent.missing_value, fractions.equivalent.recognize.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "FRACTION_EQUIVALENT",
+      "allowedQuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize"
       ]
     },
     {
@@ -1044,6 +1459,12 @@
         "R3 academic evidence review confirmed ratio.unit_rate as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -1058,6 +1479,12 @@
         "R3 academic evidence review confirmed ratio.unit_rate as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: ratio.unit_rate.direct, ratio.unit_rate.equivalent_ratio.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "UNIT_RATE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
       ]
     },
     {
@@ -1072,6 +1499,11 @@
         "R3 academic evidence review confirmed algebra.linear.inequality.solve as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: algebra.linear.inequality.ax_plus_b_relation_c.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "LINEAR_INEQUALITY",
+      "allowedQuestionFamilies": [
+        "algebra.linear.inequality.ax_plus_b_relation_c"
       ]
     },
     {
@@ -1086,6 +1518,11 @@
         "R3 academic evidence review confirmed algebra.linear.solve as the exact primary mathematical target for this lesson.",
         "Practice is restricted to approved exact families: algebra.linear.ax_plus_b_equals_c.",
         "The lesson remains Supporting/pedagogical metadata only; no official curriculum outcome is synthesized."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "LINEAR_EQUATION",
+      "allowedQuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c"
       ]
     },
     {
@@ -1108,6 +1545,11 @@
         "Secondary skills: fractions.equivalent.",
         "Prerequisites: number.whole.add_subtract.",
         "No official curriculum outcome was invented."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SUPPORTING_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.within_one.build"
       ]
     },
     {
@@ -1130,6 +1572,11 @@
         "Secondary skills: fractions.equivalent.",
         "Prerequisites: number.whole.add_subtract.",
         "No official curriculum outcome was invented."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SUPPORTING_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.within_one.apply"
       ]
     },
     {
@@ -1152,6 +1599,11 @@
         "Secondary skills: fractions.equivalent.",
         "Prerequisites: number.whole.add_subtract.",
         "No official curriculum outcome was invented."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SUPPORTING_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.same_denominator.mixed.build"
       ]
     },
     {
@@ -1174,6 +1626,11 @@
         "Secondary skills: fractions.equivalent.",
         "Prerequisites: number.whole.add_subtract.",
         "No official curriculum outcome was invented."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SUPPORTING_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.same_denominator.mixed.apply"
       ]
     },
     {
@@ -1194,6 +1651,11 @@
         "No secondary Practice target is authorized.",
         "Prerequisites: number.whole.add_subtract.",
         "No official curriculum outcome was invented."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "TWO_UNKNOWNS",
+      "allowedQuestionFamilies": [
+        "algebra.relationships.two_unknowns.total_difference"
       ]
     },
     {
@@ -1214,6 +1676,11 @@
         "Secondary skills: fractions.equivalent.",
         "No prerequisite skill is promoted to a Practice target.",
         "No official curriculum outcome was invented."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SUPPORTING_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.compare.unlike.common_denominator"
       ]
     },
     {
@@ -1236,6 +1703,12 @@
         "Secondary skills: fractions.equivalent.",
         "Prerequisites: number.whole.add_subtract.",
         "No official curriculum outcome was invented."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SUPPORTING_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.related.build",
+        "fractions.add_subtract.related.apply"
       ]
     },
     {
@@ -1258,6 +1731,12 @@
         "Secondary skills: fractions.equivalent.",
         "Prerequisites: number.whole.add_subtract.",
         "No official curriculum outcome was invented."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SUPPORTING_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.common_denominator.build",
+        "fractions.add_subtract.common_denominator.apply"
       ]
     },
     {
@@ -1280,6 +1759,12 @@
         "Secondary skills: fractions.equivalent.",
         "Prerequisites: number.whole.add_subtract.",
         "No official curriculum outcome was invented."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SUPPORTING_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.common_denominator.build",
+        "fractions.add_subtract.common_denominator.apply"
       ]
     },
     {
@@ -1302,6 +1787,12 @@
         "Secondary skills: fractions.equivalent.",
         "Prerequisites: number.whole.add_subtract.",
         "No official curriculum outcome was invented."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SUPPORTING_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.common_denominator.build",
+        "fractions.add_subtract.common_denominator.apply"
       ]
     },
     {
@@ -1324,6 +1815,12 @@
         "Secondary skills: fractions.equivalent.",
         "Prerequisites: number.whole.add_subtract.",
         "No official curriculum outcome was invented."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SUPPORTING_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.common_denominator.build",
+        "fractions.add_subtract.common_denominator.apply"
       ]
     },
     {
@@ -1346,6 +1843,12 @@
         "Secondary skills: fractions.equivalent.",
         "Prerequisites: number.whole.add_subtract.",
         "No official curriculum outcome was invented."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SUPPORTING_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.common_denominator.build",
+        "fractions.add_subtract.common_denominator.apply"
       ]
     },
     {
@@ -1366,6 +1869,11 @@
         "Secondary skills: fractions.equivalent.",
         "No prerequisite skill is promoted to a Practice target.",
         "No official curriculum outcome was invented."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "APPROVED_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.represent.interpret.fraction_bar"
       ]
     },
     {
@@ -1386,6 +1894,11 @@
         "Secondary skills: fractions.equivalent.",
         "No prerequisite skill is promoted to a Practice target.",
         "No official curriculum outcome was invented."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "SUPPORTING_EXACT",
+      "allowedQuestionFamilies": [
+        "fractions.compare.benchmark"
       ]
     }
   ]

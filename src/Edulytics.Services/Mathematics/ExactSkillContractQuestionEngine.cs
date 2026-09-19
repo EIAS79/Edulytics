@@ -36,6 +36,84 @@ public sealed class ExactSkillContractQuestionEngine
 {
     private const int MaxRetriesPerItem = 128;
 
+    private static readonly IReadOnlySet<string> SupportedFamilies =
+        new HashSet<string>(StringComparer.Ordinal)
+        {
+            "number.whole.add.direct",
+            "number.whole.subtract.direct",
+            "number.lcm.two_numbers",
+            "percentages.of_quantity.direct",
+            "fractions.represent.interpret.fraction_bar",
+            "algebra.relationships.two_unknowns.total_difference",
+            "measurement.scale.equal_intervals.read_value",
+            "fractions.compare.unlike.common_denominator",
+            "fractions.equivalent.missing_value",
+            "fractions.equivalent.recognize",
+            "fractions.equivalent.generate_multiple",
+            "fractions.equivalent.number_line",
+            "fractions.equivalent.reduce_common_factor",
+            "ratio.unit_rate.direct",
+            "ratio.unit_rate.equivalent_ratio",
+            "number.whole.add_subtract.within_10.build",
+            "number.whole.add_subtract.within_10.apply",
+            "number.whole.add_subtract.across_ten.build",
+            "number.whole.add_subtract.across_ten.apply",
+            "number.whole.add_subtract.within_100.build",
+            "number.whole.add_subtract.within_100.apply",
+            "number.whole.add_subtract.columnar.build",
+            "number.whole.add_subtract.columnar.apply",
+            "number.whole.add_subtract.comparative.build",
+            "number.whole.add_subtract.comparative.apply",
+            "number.whole.add_subtract.complement_100.build",
+            "number.whole.add_subtract.complement_100.apply",
+            "number.whole.multiply.fact_recall.build",
+            "number.whole.multiply.fact_recall.apply",
+            "number.whole.divide.with_remainder.build",
+            "number.whole.divide.with_remainder.apply",
+            "fractions.of_quantity.build",
+            "fractions.of_quantity.apply",
+            "fractions.add_subtract.within_one.build",
+            "fractions.add_subtract.within_one.apply",
+            "fractions.add_subtract.same_denominator.mixed.build",
+            "fractions.add_subtract.same_denominator.mixed.apply",
+            "fractions.add_subtract.related.build",
+            "fractions.add_subtract.related.apply",
+            "fractions.add_subtract.common_denominator.build",
+            "fractions.add_subtract.common_denominator.apply",
+            "fractions.compare.benchmark",
+            "geometry.coordinate.gradient_between_points",
+            "geometry.angles.parallel_lines",
+            "geometry.angles.supplementary",
+            "geometry.similarity.find_missing_length",
+            "geometry.similarity.scale_factor",
+            "geometry.congruence.identify_criterion",
+            "geometry.surface_area.rectangular_prism",
+            "geometry.surface_area_volume.rectangular_prism_surface_area",
+            "geometry.volume.rectangular_prism",
+            "geometry.surface_area_volume.rectangular_prism_volume",
+            "geometry.rectangle.area.exact",
+            "geometry.perimeter_area.rectangle_area",
+            "geometry.rectangle.perimeter.exact",
+            "geometry.perimeter_area.rectangle_perimeter",
+            "geometry.right_triangle.pythagorean.exact",
+            "trigonometry.right_triangle.ratio_exact",
+            "trigonometry.right_triangle.find_side_exact",
+            "trigonometry.right_triangle.find_angle_exact",
+            "trigonometry.modelling.contextual",
+            "vectors.add.exact_rational",
+            "vectors.subtract.exact_rational",
+            "vectors.scalar_multiply.exact_rational",
+            "vectors.dot.exact_rational",
+            "vectors.magnitude.exact",
+            "vectors.between_points.exact",
+            ExactLinearEquationQuestionFactory.FamilyId,
+            ExactLinearInequalityQuestionFactory.FamilyId
+        };
+
+    public static bool SupportsFamily(string? family) =>
+        !string.IsNullOrWhiteSpace(family) &&
+        SupportedFamilies.Contains(family.Trim());
+
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
         string fingerprintNamespace,
         string scopeKey,
@@ -52,6 +130,10 @@ public sealed class ExactSkillContractQuestionEngine
         {
             throw new InvalidOperationException("Exact SkillContract generation requires a valid scope, family registry and question count.");
         }
+
+        if (allowedQuestionFamilies.Any(family => !SupportsFamily(family)))
+            throw new InvalidOperationException(
+                "Exact SkillContract generation contains a family unsupported by the Practice exact engine.");
 
         MathematicsResourceGuard.ValidateGenerationRequest(
             fingerprintNamespace,
@@ -219,6 +301,45 @@ public sealed class ExactSkillContractQuestionEngine
                 StringComparison.Ordinal);
         }
 
+        if (family == "fractions.represent.interpret.fraction_bar")
+        {
+            if (!TryParseFraction(answer, out var answerNumerator, out var answerDenominator))
+                return false;
+
+            return parameters["denominator"] > 0 &&
+                parameters["numerator"] >= 0 &&
+                parameters["numerator"] <= parameters["denominator"] &&
+                answerNumerator * parameters["denominator"] ==
+                    parameters["numerator"] * answerDenominator;
+        }
+
+        if (family is
+            "vectors.add.exact_rational" or
+            "vectors.subtract.exact_rational" or
+            "vectors.scalar_multiply.exact_rational" or
+            "vectors.between_points.exact")
+        {
+            if (!TryParseVector2(answer, out var x, out var y))
+                return false;
+
+            return family switch
+            {
+                "vectors.add.exact_rational" =>
+                    x == parameters["ax"] + parameters["bx"] &&
+                    y == parameters["ay"] + parameters["by"],
+                "vectors.subtract.exact_rational" =>
+                    x == parameters["ax"] - parameters["bx"] &&
+                    y == parameters["ay"] - parameters["by"],
+                "vectors.scalar_multiply.exact_rational" =>
+                    x == parameters["scalar"] * parameters["ax"] &&
+                    y == parameters["scalar"] * parameters["ay"],
+                "vectors.between_points.exact" =>
+                    x == parameters["x2"] - parameters["x1"] &&
+                    y == parameters["y2"] - parameters["y1"],
+                _ => false
+            };
+        }
+
         if (!int.TryParse(answer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value))
             return false;
 
@@ -271,6 +392,27 @@ public sealed class ExactSkillContractQuestionEngine
 
         return family switch
         {
+            "number.whole.add.direct" =>
+                parameters["left"] >= 0 &&
+                parameters["right"] >= 0 &&
+                value == parameters["left"] + parameters["right"],
+
+            "number.whole.subtract.direct" =>
+                parameters["left"] >= parameters["right"] &&
+                parameters["right"] >= 0 &&
+                value == parameters["left"] - parameters["right"],
+
+            "number.lcm.two_numbers" =>
+                parameters["left"] > 0 &&
+                parameters["right"] > 0 &&
+                value == LeastCommonMultiple(parameters["left"], parameters["right"]),
+
+            "percentages.of_quantity.direct" =>
+                parameters["percent"] is >= 0 and <= 100 &&
+                parameters["quantity"] >= 0 &&
+                parameters["percent"] * parameters["quantity"] % 100 == 0 &&
+                value * 100 == parameters["percent"] * parameters["quantity"],
+
             "algebra.relationships.two_unknowns.total_difference" =>
                 value > 0 &&
                 parameters["total"] - value > 0 &&
@@ -362,13 +504,15 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters["targetLength"] % parameters["sourceLength"] == 0 &&
                 value == parameters["targetLength"] / parameters["sourceLength"],
 
-            "geometry.surface_area.rectangular_prism" =>
+            "geometry.surface_area.rectangular_prism" or
+            "geometry.surface_area_volume.rectangular_prism_surface_area" =>
                 value == 2 * (
                     parameters["length"] * parameters["width"] +
                     parameters["length"] * parameters["height"] +
                     parameters["width"] * parameters["height"]),
 
-            "geometry.volume.rectangular_prism" =>
+            "geometry.volume.rectangular_prism" or
+            "geometry.surface_area_volume.rectangular_prism_volume" =>
                 value == parameters["length"] *
                     parameters["width"] *
                     parameters["height"],
@@ -408,6 +552,16 @@ public sealed class ExactSkillContractQuestionEngine
                     _ => false
                 }),
 
+            "vectors.dot.exact_rational" =>
+                value == parameters["ax"] * parameters["bx"] +
+                    parameters["ay"] * parameters["by"],
+
+            "vectors.magnitude.exact" =>
+                value > 0 &&
+                value * value ==
+                    parameters["ax"] * parameters["ax"] +
+                    parameters["ay"] * parameters["ay"],
+
             _ => false
         };
     }
@@ -426,6 +580,16 @@ public sealed class ExactSkillContractQuestionEngine
 
         return family switch
         {
+            "number.whole.add.direct" =>
+                BuildWholeAdd(random, scale),
+            "number.whole.subtract.direct" =>
+                BuildWholeSubtract(random, scale),
+            "number.lcm.two_numbers" =>
+                BuildLcm(random, scale),
+            "percentages.of_quantity.direct" =>
+                BuildPercentageOfQuantity(random, scale),
+            "fractions.represent.interpret.fraction_bar" =>
+                BuildFractionRepresentation(random, scale),
             "algebra.relationships.two_unknowns.total_difference" =>
                 BuildTwoUnknowns(random, scale),
             "measurement.scale.equal_intervals.read_value" =>
@@ -494,9 +658,13 @@ public sealed class ExactSkillContractQuestionEngine
             "geometry.congruence.identify_criterion" =>
                 BuildCongruenceCriterion(random),
             "geometry.surface_area.rectangular_prism" =>
-                BuildRectangularPrismSurfaceArea(random, scale),
+                BuildRectangularPrismSurfaceArea(random, scale, "geometry.surface_area.rectangular_prism"),
+            "geometry.surface_area_volume.rectangular_prism_surface_area" =>
+                BuildRectangularPrismSurfaceArea(random, scale, "geometry.surface_area_volume.rectangular_prism_surface_area"),
             "geometry.volume.rectangular_prism" =>
-                BuildRectangularPrismVolume(random, scale),
+                BuildRectangularPrismVolume(random, scale, "geometry.volume.rectangular_prism"),
+            "geometry.surface_area_volume.rectangular_prism_volume" =>
+                BuildRectangularPrismVolume(random, scale, "geometry.surface_area_volume.rectangular_prism_volume"),
             "geometry.rectangle.area.exact" =>
                 BuildRectangleArea(random, scale, "geometry.rectangle.area.exact"),
             "geometry.perimeter_area.rectangle_area" =>
@@ -515,6 +683,18 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildTrigonometricFindAngle(random),
             "trigonometry.modelling.contextual" =>
                 BuildTrigonometricFindSide(random, scale, true),
+            "vectors.add.exact_rational" =>
+                BuildVectorBinary(random, scale, "vectors.add.exact_rational", false),
+            "vectors.subtract.exact_rational" =>
+                BuildVectorBinary(random, scale, "vectors.subtract.exact_rational", true),
+            "vectors.scalar_multiply.exact_rational" =>
+                BuildVectorScalarMultiply(random, scale),
+            "vectors.dot.exact_rational" =>
+                BuildVectorDot(random, scale),
+            "vectors.magnitude.exact" =>
+                BuildVectorMagnitude(random, scale),
+            "vectors.between_points.exact" =>
+                BuildVectorBetweenPoints(random, scale),
             ExactLinearEquationQuestionFactory.FamilyId =>
                 BuildLinearEquation(random, scale),
             ExactLinearInequalityQuestionFactory.FamilyId =>
@@ -527,6 +707,79 @@ public sealed class ExactSkillContractQuestionEngine
     {
         MathematicsObservability.Record(MathematicsMetricKind.Unsupported);
         throw new InvalidOperationException($"Unsupported exact Mathematics question family: {family}");
+    }
+
+    private static ExactProblem BuildWholeAdd(Random random, int scale)
+    {
+        var max = 20 * scale + 20;
+        var left = random.Next(0, max + 1);
+        var right = random.Next(0, max + 1);
+        return Problem(
+            "number.whole.add.direct",
+            $"Calculate {left} + {right}.",
+            "Add the two whole numbers and check by subtracting either addend from the total.",
+            AssessmentItemType.Numeric,
+            ("left", left),
+            ("right", right));
+    }
+
+    private static ExactProblem BuildWholeSubtract(Random random, int scale)
+    {
+        var max = 20 * scale + 20;
+        var right = random.Next(0, max + 1);
+        var difference = random.Next(0, max + 1);
+        var left = right + difference;
+        return Problem(
+            "number.whole.subtract.direct",
+            $"Calculate {left} − {right}.",
+            "Subtract the second whole number and check by adding the difference back.",
+            AssessmentItemType.Numeric,
+            ("left", left),
+            ("right", right));
+    }
+
+    private static ExactProblem BuildLcm(Random random, int scale)
+    {
+        var common = random.Next(2, 4 + scale);
+        var leftFactor = random.Next(2, 5 + scale);
+        var rightFactor = random.Next(2, 5 + scale);
+        var left = common * leftFactor;
+        var right = common * rightFactor;
+        return Problem(
+            "number.lcm.two_numbers",
+            $"Find the least common multiple of {left} and {right}.",
+            "List prime factors or successive multiples, then verify the result is divisible by both numbers and no smaller positive common multiple exists.",
+            AssessmentItemType.Numeric,
+            ("left", left),
+            ("right", right));
+    }
+
+    private static ExactProblem BuildPercentageOfQuantity(Random random, int scale)
+    {
+        int[] percentages = [10, 20, 25, 40, 50, 60, 75, 80];
+        var percent = percentages[random.Next(percentages.Length)];
+        var unit = 20;
+        var quantity = unit * random.Next(2, 6 + scale * 2);
+        return Problem(
+            "percentages.of_quantity.direct",
+            $"Find {percent}% of {quantity}.",
+            "Convert the percentage to a fraction over 100, multiply by the quantity, and simplify. Check by reversing the percentage relationship.",
+            AssessmentItemType.Numeric,
+            ("percent", percent),
+            ("quantity", quantity));
+    }
+
+    private static ExactProblem BuildFractionRepresentation(Random random, int scale)
+    {
+        var denominator = random.Next(3, 7 + scale);
+        var numerator = random.Next(1, denominator + 1);
+        return Problem(
+            "fractions.represent.interpret.fraction_bar",
+            $"A fraction bar is divided into {denominator} equal parts and {numerator} part(s) are shaded. Write the shaded fraction.",
+            "The denominator is the number of equal parts; the numerator is the number shaded. Simplify only if the fraction has a common factor.",
+            AssessmentItemType.ShortAnswer,
+            ("numerator", numerator),
+            ("denominator", denominator));
     }
 
     private static ExactProblem BuildTwoUnknowns(Random random, int scale)
@@ -1119,14 +1372,14 @@ public sealed class ExactSkillContractQuestionEngine
             ("angleB", angleB));
     }
 
-    private static ExactProblem BuildRectangularPrismSurfaceArea(Random random, int scale)
+    private static ExactProblem BuildRectangularPrismSurfaceArea(Random random, int scale, string family)
     {
         var length = random.Next(2, 7 + scale * 2);
         var width = random.Next(2, 6 + scale);
         var height = random.Next(2, 5 + scale);
 
         return Problem(
-            "geometry.surface_area.rectangular_prism",
+            family,
             $"A rectangular prism has length {length}, width {width}, and height {height}. Find its total surface area.",
             "Use 2(lw + lh + wh), then verify all six faces are counted.",
             AssessmentItemType.Numeric,
@@ -1135,14 +1388,14 @@ public sealed class ExactSkillContractQuestionEngine
             ("height", height));
     }
 
-    private static ExactProblem BuildRectangularPrismVolume(Random random, int scale)
+    private static ExactProblem BuildRectangularPrismVolume(Random random, int scale, string family)
     {
         var length = random.Next(2, 7 + scale * 2);
         var width = random.Next(2, 6 + scale);
         var height = random.Next(2, 5 + scale);
 
         return Problem(
-            "geometry.volume.rectangular_prism",
+            family,
             $"A rectangular prism has length {length}, width {width}, and height {height}. Find its volume.",
             "Volume of a rectangular prism is length × width × height.",
             AssessmentItemType.Numeric,
@@ -1291,6 +1544,115 @@ public sealed class ExactSkillContractQuestionEngine
             ("multiplier", multiplier));
     }
 
+    private static ExactProblem BuildVectorBinary(
+        Random random,
+        int scale,
+        string family,
+        bool subtract)
+    {
+        var bound = 4 + scale * 3;
+        var ax = NonZero(random, -bound, bound + 1);
+        var ay = NonZero(random, -bound, bound + 1);
+        var bx = NonZero(random, -bound, bound + 1);
+        var by = NonZero(random, -bound, bound + 1);
+        var symbol = subtract ? "−" : "+";
+        var operation = subtract ? "subtract" : "add";
+
+        return Problem(
+            family,
+            $"Let a = <{ax}, {ay}> and b = <{bx}, {by}>. Find a {symbol} b.",
+            $"{operation} corresponding vector components independently, then check both coordinates.",
+            AssessmentItemType.ShortAnswer,
+            ("ax", ax),
+            ("ay", ay),
+            ("bx", bx),
+            ("by", by));
+    }
+
+    private static ExactProblem BuildVectorScalarMultiply(Random random, int scale)
+    {
+        var bound = 4 + scale * 2;
+        var ax = NonZero(random, -bound, bound + 1);
+        var ay = NonZero(random, -bound, bound + 1);
+        var scalar = NonZero(random, -2 - scale, 3 + scale);
+
+        return Problem(
+            "vectors.scalar_multiply.exact_rational",
+            $"Let a = <{ax}, {ay}>. Find {scalar}a.",
+            "Multiply every component by the same scalar and verify the direction/scale change componentwise.",
+            AssessmentItemType.ShortAnswer,
+            ("ax", ax),
+            ("ay", ay),
+            ("scalar", scalar));
+    }
+
+    private static ExactProblem BuildVectorDot(Random random, int scale)
+    {
+        var bound = 4 + scale * 2;
+        var ax = NonZero(random, -bound, bound + 1);
+        var ay = NonZero(random, -bound, bound + 1);
+        var bx = NonZero(random, -bound, bound + 1);
+        var by = NonZero(random, -bound, bound + 1);
+
+        return Problem(
+            "vectors.dot.exact_rational",
+            $"Let a = <{ax}, {ay}> and b = <{bx}, {by}>. Find a · b.",
+            "Multiply corresponding components and add the products: ax·bx + ay·by.",
+            AssessmentItemType.Numeric,
+            ("ax", ax),
+            ("ay", ay),
+            ("bx", bx),
+            ("by", by));
+    }
+
+    private static ExactProblem BuildVectorMagnitude(Random random, int scale)
+    {
+        var triples = new (int A, int B, int C)[] { (3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25) };
+        var triple = triples[random.Next(triples.Length)];
+        var multiplier = random.Next(1, Math.Max(2, scale + 1));
+        var ax = triple.A * multiplier * (random.Next(0, 2) == 0 ? 1 : -1);
+        var ay = triple.B * multiplier * (random.Next(0, 2) == 0 ? 1 : -1);
+        var magnitude = triple.C * multiplier;
+
+        return Problem(
+            "vectors.magnitude.exact",
+            $"Find the magnitude of v = <{ax}, {ay}>.",
+            "Use |v| = √(x² + y²). Magnitude is non-negative; verify by squaring the result.",
+            AssessmentItemType.Numeric,
+            ("ax", ax),
+            ("ay", ay),
+            ("magnitude", magnitude));
+    }
+
+    private static ExactProblem BuildVectorBetweenPoints(Random random, int scale)
+    {
+        var bound = 4 + scale * 3;
+        var x1 = random.Next(-bound, bound + 1);
+        var y1 = random.Next(-bound, bound + 1);
+        var dx = NonZero(random, -bound, bound + 1);
+        var dy = NonZero(random, -bound, bound + 1);
+        var x2 = x1 + dx;
+        var y2 = y1 + dy;
+
+        return Problem(
+            "vectors.between_points.exact",
+            $"A = ({x1}, {y1}) and B = ({x2}, {y2}). Find vector AB.",
+            "For vector AB, subtract A from B componentwise: <x₂ − x₁, y₂ − y₁>.",
+            AssessmentItemType.ShortAnswer,
+            ("x1", x1),
+            ("y1", y1),
+            ("x2", x2),
+            ("y2", y2));
+    }
+
+    private static int NonZero(Random random, int minInclusive, int maxExclusive)
+    {
+        var value = 0;
+        while (value == 0)
+            value = random.Next(minInclusive, maxExclusive);
+        return value;
+    }
+
     private static ExactProblem BuildLinearEquation(Random random, int scale)
     {
         var factory = new ExactLinearEquationQuestionFactory(
@@ -1388,6 +1750,21 @@ public sealed class ExactSkillContractQuestionEngine
         var p = problem.Parameters;
         return problem.Family switch
         {
+            "number.whole.add.direct" =>
+                (p["left"] + p["right"]).ToString(CultureInfo.InvariantCulture),
+
+            "number.whole.subtract.direct" =>
+                (p["left"] - p["right"]).ToString(CultureInfo.InvariantCulture),
+
+            "number.lcm.two_numbers" =>
+                LeastCommonMultiple(p["left"], p["right"]).ToString(CultureInfo.InvariantCulture),
+
+            "percentages.of_quantity.direct" =>
+                (p["percent"] * p["quantity"] / 100).ToString(CultureInfo.InvariantCulture),
+
+            "fractions.represent.interpret.fraction_bar" =>
+                SimplifyFraction(p["numerator"], p["denominator"]),
+
             "algebra.relationships.two_unknowns.total_difference" =>
                 ((p["total"] - p["difference"]) / 2).ToString(CultureInfo.InvariantCulture),
 
@@ -1484,14 +1861,16 @@ public sealed class ExactSkillContractQuestionEngine
                     _ => throw new InvalidOperationException("Invalid congruence criterion.")
                 },
 
-            "geometry.surface_area.rectangular_prism" =>
+            "geometry.surface_area.rectangular_prism" or
+            "geometry.surface_area_volume.rectangular_prism_surface_area" =>
                 (2 * (
                     p["length"] * p["width"] +
                     p["length"] * p["height"] +
                     p["width"] * p["height"]))
                     .ToString(CultureInfo.InvariantCulture),
 
-            "geometry.volume.rectangular_prism" =>
+            "geometry.volume.rectangular_prism" or
+            "geometry.surface_area_volume.rectangular_prism_volume" =>
                 (p["length"] * p["width"] * p["height"])
                     .ToString(CultureInfo.InvariantCulture),
 
@@ -1515,6 +1894,24 @@ public sealed class ExactSkillContractQuestionEngine
 
             "trigonometry.right_triangle.find_angle_exact" =>
                 p["expectedAngle"].ToString(CultureInfo.InvariantCulture),
+
+            "vectors.add.exact_rational" =>
+                FormatVector2(p["ax"] + p["bx"], p["ay"] + p["by"]),
+
+            "vectors.subtract.exact_rational" =>
+                FormatVector2(p["ax"] - p["bx"], p["ay"] - p["by"]),
+
+            "vectors.scalar_multiply.exact_rational" =>
+                FormatVector2(p["scalar"] * p["ax"], p["scalar"] * p["ay"]),
+
+            "vectors.dot.exact_rational" =>
+                (p["ax"] * p["bx"] + p["ay"] * p["by"]).ToString(CultureInfo.InvariantCulture),
+
+            "vectors.magnitude.exact" =>
+                p["magnitude"].ToString(CultureInfo.InvariantCulture),
+
+            "vectors.between_points.exact" =>
+                FormatVector2(p["x2"] - p["x1"], p["y2"] - p["y1"]),
 
             ExactLinearEquationQuestionFactory.FamilyId =>
                 ((p["right"] - p["offset"]) / p["coefficient"])
@@ -1550,6 +1947,28 @@ public sealed class ExactSkillContractQuestionEngine
             : $"{numerator.ToString(CultureInfo.InvariantCulture)}/{denominator.ToString(CultureInfo.InvariantCulture)}";
     }
 
+    private static string FormatVector2(int x, int y) =>
+        $"<{x.ToString(CultureInfo.InvariantCulture)}, {y.ToString(CultureInfo.InvariantCulture)}>";
+
+    private static bool TryParseVector2(string answer, out int x, out int y)
+    {
+        x = 0;
+        y = 0;
+        var text = answer.Trim();
+        if (text.Length >= 2 &&
+            ((text[0] == '<' && text[^1] == '>') ||
+             (text[0] == '(' && text[^1] == ')') ||
+             (text[0] == '[' && text[^1] == ']')))
+        {
+            text = text[1..^1].Trim();
+        }
+
+        var parts = text.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+        return parts.Length == 2 &&
+            int.TryParse(parts[0], NumberStyles.Integer, CultureInfo.InvariantCulture, out x) &&
+            int.TryParse(parts[1], NumberStyles.Integer, CultureInfo.InvariantCulture, out y);
+    }
+
     private static bool TryParseFraction(string answer, out int numerator, out int denominator)
     {
         numerator = 0;
@@ -1572,6 +1991,13 @@ public sealed class ExactSkillContractQuestionEngine
             denominator = -denominator;
         }
         return true;
+    }
+
+    private static int LeastCommonMultiple(int a, int b)
+    {
+        if (a <= 0 || b <= 0)
+            throw new InvalidOperationException("LCM inputs must be positive.");
+        return checked(a / GreatestCommonDivisor(a, b) * b);
     }
 
     private static int GreatestCommonDivisor(int a, int b)

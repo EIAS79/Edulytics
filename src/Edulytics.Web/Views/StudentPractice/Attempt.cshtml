@@ -1,6 +1,7 @@
 @using System.Text.RegularExpressions
 @using Edulytics.Core.Enums
 @using Edulytics.Services.Practice
+@using Edulytics.Web.Presentation
 @model PracticeAttemptDetails
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonPracticeResource> P
@@ -45,6 +46,16 @@
     }
     .practice-choice-text { font-weight: 600; line-height: 1.35; }
     .practice-answer-actions { display: grid; gap: 10px; }
+    .practice-math-visual-wrap {
+        width: min(520px, 100%);
+        margin: 4px auto 22px;
+        padding: 12px;
+        border: 1px solid rgba(11,114,133,.18);
+        border-radius: 18px;
+        background: rgba(255,255,255,.72);
+        color: #123a48;
+    }
+    .practice-math-visual { display: block; width: 100%; height: auto; max-height: 320px; }
 
     .lesson-game-shell {
         position: relative;
@@ -228,6 +239,11 @@
 {
     var currentQuestion = orderedQuestions.FirstOrDefault(x => !x.Answered);
     var prompt = currentQuestion?.Prompt ?? string.Empty;
+    var visualSvg = currentQuestion is null
+        ? null
+        : PracticeMathVisualRenderer.RenderSvg(
+            currentQuestion.GenerationFamily,
+            currentQuestion.GenerationParametersJson);
     var optionMatches = Regex.Matches(
         prompt,
         @"(?<![A-Za-z0-9])([A-D])\)\s*",
@@ -296,6 +312,10 @@
                 <div class="lesson-game-question">
                     <div class="lesson-game-question-number">@S["Question"] @currentQuestion.Order</div>
                     <h1>@stem</h1>
+                    @if (!string.IsNullOrWhiteSpace(visualSvg))
+                    {
+                        <div class="practice-math-visual-wrap">@Html.Raw(visualSvg)</div>
+                    }
                     @if (isMultipleChoice)
                     {
                         <div class="practice-choice-list lesson-game-choices" role="radiogroup" aria-label="@S["YourAnswer"]">
@@ -381,6 +401,9 @@ else
     @foreach (var question in orderedQuestions)
     {
         var prompt = question.Prompt ?? string.Empty;
+        var visualSvg = PracticeMathVisualRenderer.RenderSvg(
+            question.GenerationFamily,
+            question.GenerationParametersJson);
         var optionMatches = Regex.Matches(
             prompt,
             @"(?<![A-Za-z0-9])([A-D])\)\s*",
@@ -410,6 +433,10 @@ else
             <div class="practice-question-content">
                 <span class="student-subject-code">@S["Question"] @question.Order</span>
                 <h2>@stem</h2>
+                @if (!string.IsNullOrWhiteSpace(visualSvg))
+                {
+                    <div class="practice-math-visual-wrap">@Html.Raw(visualSvg)</div>
+                }
                 <p>@S["AssessmentDifficulty"]: @question.Difficulty</p>
             </div>
             @if (question.Answered)

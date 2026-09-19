@@ -685,6 +685,150 @@
       "provider": "edulytics-exact-skill-contract",
       "providerVersion": "lesson-practice-v1",
       "status": "ProductionVerified"
+    },
+    {
+      "id": "vectors.subtract.exact_rational",
+      "domain": "vectors",
+      "canonicalName": "Subtract bounded vectors componentwise over exact rationals",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "vectors-practice-exact-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "vectors.scalar_multiply.exact_rational",
+      "domain": "vectors",
+      "canonicalName": "Multiply bounded vectors by exact scalars",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "vectors-practice-exact-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "vectors.magnitude.exact",
+      "domain": "vectors",
+      "canonicalName": "Evaluate exact two-dimensional vector magnitudes for verified square lengths",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "vectors-practice-exact-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "vectors.between_points.exact",
+      "domain": "vectors",
+      "canonicalName": "Compute exact displacement vectors from coordinate endpoints",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "vectors-practice-exact-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "number.whole.add.exact",
+      "domain": "number",
+      "canonicalName": "Add bounded whole numbers exactly",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "core-arithmetic-exact-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "number.verify.whole.add",
+      "domain": "number",
+      "canonicalName": "Independently verify whole-number addition",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "core-arithmetic-exact-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "number.whole.subtract.exact",
+      "domain": "number",
+      "canonicalName": "Subtract bounded whole numbers exactly",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "core-arithmetic-exact-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "number.verify.whole.subtract",
+      "domain": "number",
+      "canonicalName": "Independently verify whole-number subtraction",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "core-arithmetic-exact-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "number.lcm.exact",
+      "domain": "number",
+      "canonicalName": "Find least common multiples of bounded positive integers",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "core-arithmetic-exact-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "number.verify.lcm",
+      "domain": "number",
+      "canonicalName": "Independently verify least common multiples by divisibility and minimality",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "core-arithmetic-exact-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "percentages.of_quantity.exact",
+      "domain": "percentages",
+      "canonicalName": "Find exact percentages of bounded quantities",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "percentage-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "percentages.verify.of_quantity",
+      "domain": "percentages",
+      "canonicalName": "Independently verify percentage-of-quantity results",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "percentage-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.represent.interpret.exact",
+      "domain": "fractions",
+      "canonicalName": "Interpret deterministic equal-part fraction representations",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-representation-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.verify.representation",
+      "domain": "fractions",
+      "canonicalName": "Independently verify fraction representations against equal-part counts",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-representation-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.equivalent.exact",
+      "domain": "fractions",
+      "canonicalName": "Generate and evaluate exact equivalent-fraction relationships",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-equivalence-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "fractions.verify.equivalent",
+      "domain": "fractions",
+      "canonicalName": "Independently verify equivalent fractions by exact cross-products",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "fraction-equivalence-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "ratio.unit_rate.exact",
+      "domain": "ratio",
+      "canonicalName": "Evaluate exact unit rates and equivalent ratios",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "unit-rate-v2",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "ratio.verify.unit_rate",
+      "domain": "ratio",
+      "canonicalName": "Independently verify unit-rate and equivalent-ratio relationships",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "unit-rate-v2",
+      "status": "ShadowVerified"
     }
   ]
 }

@@ -333,6 +333,8 @@ public sealed class PracticeService(IPracticeRepository repository) : IPracticeS
                 item.ItemType,
                 item.Difficulty,
                 item.Prompt,
+                item.GenerationFamily,
+                item.GenerationParametersJson,
                 response is not null,
                 response?.IsCorrect,
                 response?.Feedback);
