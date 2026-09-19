@@ -42,6 +42,11 @@ public static class PracticeMathVisualRenderer
                 "geometry.rectangle.perimeter.exact" or
                 "geometry.perimeter_area.rectangle_area" or
                 "geometry.perimeter_area.rectangle_perimeter" => Rectangle(parameters),
+                "geometry.perimeter_area.rectangle_missing_side" => RectangleMissingSide(parameters),
+                "geometry.perimeter_area.triangle_area" => TriangleArea(parameters),
+                "geometry.polygons.interior_angle_sum" or
+                "geometry.polygons.missing_interior_angle" or
+                "geometry.polygons.regular_interior_angle" => Polygon(parameters),
                 "geometry.right_triangle.pythagorean.exact" or
                 "geometry.right_triangle.pythagorean.find_leg_exact" or
                 "trigonometry.right_triangle.ratio_exact" or
@@ -215,6 +220,60 @@ public static class PracticeMathVisualRenderer
         sb.Append("<rect x='75' y='60' width='270' height='145' class='shape fill'/>");
         Text(sb, 202, 230, length.ToString(CultureInfo.InvariantCulture), "label");
         Text(sb, 48, 137, width.ToString(CultureInfo.InvariantCulture), "label");
+        return SvgEnd(sb);
+    }
+
+    private static string RectangleMissingSide(JsonElement p)
+    {
+        var knownSide = GetInt(p, "knownSide");
+        var area = GetInt(p, "area");
+        var sb = SvgStart("Rectangle with one known side and its area; the other side is unknown.");
+        sb.Append("<rect x='75' y='60' width='270' height='145' class='shape fill'/>");
+        Text(sb, 202, 230, knownSide.ToString(CultureInfo.InvariantCulture), "label");
+        Text(sb, 48, 137, "x", "unknown");
+        Text(sb, 210, 135, $"area = {area}", "hint");
+        return SvgEnd(sb);
+    }
+
+    private static string TriangleArea(JsonElement p)
+    {
+        var @base = GetInt(p, "base");
+        var height = GetInt(p, "height");
+        var sb = SvgStart("Triangle with labelled base and perpendicular height.");
+        sb.Append("<polygon points='70,205 350,205 240,55' class='shape fill'/>");
+        sb.Append("<line x1='240' y1='55' x2='240' y2='205' class='dash shape'/>");
+        sb.Append("<path d='M240 185 L260 185 L260 205' class='mark'/>");
+        Text(sb, 202, 232, $"base = {@base}", "label");
+        Text(sb, 252, 135, $"h = {height}", "label");
+        return SvgEnd(sb);
+    }
+
+    private static string Polygon(JsonElement p)
+    {
+        var sides = GetInt(p, "sides");
+        if (sides < 3 || sides > 20)
+            throw new JsonException("Unsupported polygon side count.");
+
+        var sb = SvgStart($"A {sides}-sided polygon for an interior-angle question.");
+        var points = new List<string>(sides);
+        const double cx = 210;
+        const double cy = 132;
+        const double radius = 95;
+        for (var i = 0; i < sides; i++)
+        {
+            var angle = -Math.PI / 2 + 2 * Math.PI * i / sides;
+            var x = cx + radius * Math.Cos(angle);
+            var y = cy + radius * Math.Sin(angle);
+            points.Add($"{F(x)},{F(y)}");
+        }
+        sb.Append($"<polygon points='{string.Join(" ", points)}' class='shape fill'/>");
+        Text(sb, 210, 244, $"{sides} sides", "hint");
+
+        if (p.TryGetProperty("knownSum", out var known) && known.TryGetInt32(out var knownSum))
+            Text(sb, 210, 132, $"known angles total {knownSum}°", "label");
+        else
+            Text(sb, 210, 132, "interior angles", "label");
+
         return SvgEnd(sb);
     }
 

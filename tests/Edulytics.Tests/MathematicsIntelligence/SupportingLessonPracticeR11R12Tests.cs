@@ -153,6 +153,76 @@ public sealed class SupportingLessonPracticeR11R12Tests
     }
 
     [Theory]
+    [InlineData("percentages.core.of_quantity")]
+    [InlineData("percentages.core.increase_decrease")]
+    [InlineData("sequences.core.arithmetic_nth_term")]
+    [InlineData("sequences.core.geometric_nth_term")]
+    [InlineData("sequences.core.find_position_arithmetic")]
+    [InlineData("geometry.polygons.interior_angle_sum")]
+    [InlineData("geometry.polygons.missing_interior_angle")]
+    [InlineData("geometry.polygons.regular_interior_angle")]
+    [InlineData("geometry.perimeter_area.triangle_area")]
+    [InlineData("geometry.perimeter_area.rectangle_missing_side")]
+    public void R6CoreNumberGeometryFamiliesGenerateAndVerify(string family)
+    {
+        var engine = new ExactSkillContractQuestionEngine();
+        var questions = engine.Generate(
+            "r6-core-test",
+            family,
+            [family],
+            ExactSkillQuestionDifficulty.Challenge,
+            10,
+            66031,
+            []);
+
+        Assert.Equal(10, questions.Count);
+        Assert.All(questions, question =>
+        {
+            Assert.Equal(family, question.Family);
+            Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(question.Family));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                question.Family,
+                question.Parameters,
+                question.CorrectAnswer));
+            Assert.False(string.IsNullOrWhiteSpace(question.Solution));
+        });
+    }
+
+    [Theory]
+    [InlineData("PED:CAMBRIDGE-INTL-MATH:L10:CORE:01:03:PERCENTAGES", "percentages.core", "percentages.core.increase_decrease")]
+    [InlineData("PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:02:05:SEQUENCES", "sequences.core", "sequences.core.geometric_nth_term")]
+    [InlineData("PED:UAE-MOE-MATH:L12:ADVANCED:03:02:POLYGONS", "geometry.polygons.angle_sum", "geometry.polygons.regular_interior_angle")]
+    [InlineData("PED:UAE-MOE-MATH:L11:GENERAL:03:05:PERIMETER-AND-AREA", "geometry.perimeter_area", "geometry.perimeter_area.triangle_area")]
+    public void R6PromotedMappingsProjectIntoExactRuntimeContracts(
+        string lessonCode,
+        string expectedSkill,
+        string expectedFamily)
+    {
+        Assert.True(
+            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.TryResolve(
+                lessonCode,
+                out var contract));
+
+        Assert.NotNull(contract);
+        Assert.Equal(expectedSkill, contract!.SkillId);
+        Assert.Equal("READY_VERIFIED", contract.Readiness);
+        Assert.Contains(expectedFamily, contract.AllowedQuestionFamilies);
+        Assert.All(
+            contract.AllowedQuestionFamilies,
+            family => Assert.True(
+                ExactSkillContractQuestionEngine.SupportsFamily(family),
+                $"R6 contract {lessonCode} routes unsupported family {family}."));
+    }
+
+    [Fact]
+    public void R6PromotionRaisesRuntimeExactContractCountTo232()
+    {
+        Assert.Equal(
+            232,
+            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.All.Count);
+    }
+
+    [Theory]
     [InlineData("PED:CAMBRIDGE-INTL-MATH:L10:CORE:02:02:LINEAR-EQUATIONS", "algebra.linear.solve", "algebra.linear.variables_both_sides")]
     [InlineData("PED:UAE-MOE-MATH:L12:ADVANCED:02:06:INEQUALITIES", "algebra.linear.inequality.solve", "algebra.linear.inequality.variables_both_sides")]
     [InlineData("PED:UAE-MOE-MATH:L10:ADVANCED:03:07:PYTHAGORAS-THEOREM", "geometry.right_triangle.pythagorean", "geometry.right_triangle.pythagorean.find_leg_exact")]
@@ -179,11 +249,10 @@ public sealed class SupportingLessonPracticeR11R12Tests
     }
 
     [Fact]
-    public void R5PromotionRaisesRuntimeExactContractCountTo162()
+    public void R5PromotionKeepsAtLeast162RuntimeExactContracts()
     {
-        Assert.Equal(
-            162,
-            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.All.Count);
+        Assert.True(
+            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.All.Count >= 162);
     }
 
     [Fact]

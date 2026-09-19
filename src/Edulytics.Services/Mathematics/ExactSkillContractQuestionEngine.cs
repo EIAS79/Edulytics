@@ -43,6 +43,16 @@ public sealed class ExactSkillContractQuestionEngine
             "number.whole.subtract.direct",
             "number.lcm.two_numbers",
             "percentages.of_quantity.direct",
+            "percentages.core.of_quantity",
+            "percentages.core.increase_decrease",
+            "sequences.core.arithmetic_nth_term",
+            "sequences.core.geometric_nth_term",
+            "sequences.core.find_position_arithmetic",
+            "geometry.polygons.interior_angle_sum",
+            "geometry.polygons.missing_interior_angle",
+            "geometry.polygons.regular_interior_angle",
+            "geometry.perimeter_area.triangle_area",
+            "geometry.perimeter_area.rectangle_missing_side",
             "fractions.represent.interpret.fraction_bar",
             "algebra.relationships.two_unknowns.total_difference",
             "measurement.scale.equal_intervals.read_value",
@@ -433,11 +443,35 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters["right"] > 0 &&
                 value == LeastCommonMultiple(parameters["left"], parameters["right"]),
 
-            "percentages.of_quantity.direct" =>
+            "percentages.of_quantity.direct" or
+            "percentages.core.of_quantity" =>
                 parameters["percent"] is >= 0 and <= 100 &&
                 parameters["quantity"] >= 0 &&
                 parameters["percent"] * parameters["quantity"] % 100 == 0 &&
                 value * 100 == parameters["percent"] * parameters["quantity"],
+
+            "percentages.core.increase_decrease" =>
+                parameters["percent"] is > 0 and <= 100 &&
+                parameters["quantity"] >= 0 &&
+                parameters["direction"] is 1 or -1 &&
+                parameters["quantity"] * (100 + parameters["direction"] * parameters["percent"]) % 100 == 0 &&
+                value * 100 ==
+                    parameters["quantity"] * (100 + parameters["direction"] * parameters["percent"]),
+
+            "sequences.core.arithmetic_nth_term" =>
+                parameters["n"] > 0 &&
+                value == parameters["first"] + (parameters["n"] - 1) * parameters["difference"],
+
+            "sequences.core.geometric_nth_term" =>
+                parameters["n"] > 0 &&
+                parameters["ratio"] != 0 &&
+                value == parameters["first"] * IntegerPower(parameters["ratio"], parameters["n"] - 1),
+
+            "sequences.core.find_position_arithmetic" =>
+                parameters["difference"] != 0 &&
+                parameters["target"] == parameters["first"] +
+                    (parameters["expectedN"] - 1) * parameters["difference"] &&
+                value == parameters["expectedN"],
 
             "algebra.relationships.two_unknowns.total_difference" =>
                 value > 0 &&
@@ -565,6 +599,33 @@ public sealed class ExactSkillContractQuestionEngine
             "geometry.perimeter_area.rectangle_perimeter" =>
                 value == 2 * (parameters["length"] + parameters["width"]),
 
+            "geometry.perimeter_area.triangle_area" =>
+                parameters["base"] > 0 &&
+                parameters["height"] > 0 &&
+                parameters["base"] * parameters["height"] % 2 == 0 &&
+                value * 2 == parameters["base"] * parameters["height"],
+
+            "geometry.perimeter_area.rectangle_missing_side" =>
+                parameters["knownSide"] > 0 &&
+                parameters["area"] > 0 &&
+                parameters["area"] % parameters["knownSide"] == 0 &&
+                value == parameters["area"] / parameters["knownSide"],
+
+            "geometry.polygons.interior_angle_sum" =>
+                parameters["sides"] >= 3 &&
+                value == (parameters["sides"] - 2) * 180,
+
+            "geometry.polygons.missing_interior_angle" =>
+                parameters["sides"] is 3 or 4 &&
+                parameters["knownSum"] > 0 &&
+                value == (parameters["sides"] - 2) * 180 - parameters["knownSum"] &&
+                value > 0,
+
+            "geometry.polygons.regular_interior_angle" =>
+                parameters["sides"] >= 3 &&
+                360 % parameters["sides"] == 0 &&
+                value == 180 - 360 / parameters["sides"],
+
             "geometry.right_triangle.pythagorean.exact" =>
                 value > 0 &&
                 value * value ==
@@ -633,7 +694,17 @@ public sealed class ExactSkillContractQuestionEngine
             "number.lcm.two_numbers" =>
                 BuildLcm(random, scale),
             "percentages.of_quantity.direct" =>
-                BuildPercentageOfQuantity(random, scale),
+                BuildPercentageOfQuantity(random, scale, "percentages.of_quantity.direct"),
+            "percentages.core.of_quantity" =>
+                BuildPercentageOfQuantity(random, scale, "percentages.core.of_quantity"),
+            "percentages.core.increase_decrease" =>
+                BuildPercentageIncreaseDecrease(random, scale),
+            "sequences.core.arithmetic_nth_term" =>
+                BuildArithmeticSequenceNthTerm(random, scale),
+            "sequences.core.geometric_nth_term" =>
+                BuildGeometricSequenceNthTerm(random, scale),
+            "sequences.core.find_position_arithmetic" =>
+                BuildArithmeticSequenceFindPosition(random, scale),
             "fractions.represent.interpret.fraction_bar" =>
                 BuildFractionRepresentation(random, scale),
             "algebra.relationships.two_unknowns.total_difference" =>
@@ -721,6 +792,16 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildRectanglePerimeter(random, scale, "geometry.rectangle.perimeter.exact"),
             "geometry.perimeter_area.rectangle_perimeter" =>
                 BuildRectanglePerimeter(random, scale, "geometry.perimeter_area.rectangle_perimeter"),
+            "geometry.perimeter_area.triangle_area" =>
+                BuildTriangleArea(random, scale),
+            "geometry.perimeter_area.rectangle_missing_side" =>
+                BuildRectangleMissingSide(random, scale),
+            "geometry.polygons.interior_angle_sum" =>
+                BuildPolygonInteriorAngleSum(random, scale),
+            "geometry.polygons.missing_interior_angle" =>
+                BuildPolygonMissingInteriorAngle(random, scale),
+            "geometry.polygons.regular_interior_angle" =>
+                BuildRegularPolygonInteriorAngle(random, scale),
             "geometry.right_triangle.pythagorean.exact" =>
                 BuildPythagorean(random, scale),
             "geometry.right_triangle.pythagorean.find_leg_exact" =>
@@ -808,19 +889,84 @@ public sealed class ExactSkillContractQuestionEngine
             ("right", right));
     }
 
-    private static ExactProblem BuildPercentageOfQuantity(Random random, int scale)
+    private static ExactProblem BuildPercentageOfQuantity(Random random, int scale, string family)
     {
         int[] percentages = [10, 20, 25, 40, 50, 60, 75, 80];
         var percent = percentages[random.Next(percentages.Length)];
         var unit = 20;
         var quantity = unit * random.Next(2, 6 + scale * 2);
         return Problem(
-            "percentages.of_quantity.direct",
+            family,
             $"Find {percent}% of {quantity}.",
             "Convert the percentage to a fraction over 100, multiply by the quantity, and simplify. Check by reversing the percentage relationship.",
             AssessmentItemType.Numeric,
             ("percent", percent),
             ("quantity", quantity));
+    }
+
+    private static ExactProblem BuildPercentageIncreaseDecrease(Random random, int scale)
+    {
+        int[] percentages = [10, 20, 25, 40, 50];
+        var percent = percentages[random.Next(percentages.Length)];
+        var quantity = 20 * random.Next(2, 7 + scale * 2);
+        var direction = random.Next(0, 2) == 0 ? 1 : -1;
+        var verb = direction > 0 ? "Increase" : "Decrease";
+
+        return Problem(
+            "percentages.core.increase_decrease",
+            $"{verb} {quantity} by {percent}%.",
+            "Find the stated percentage of the original quantity, then add it for an increase or subtract it for a decrease. Verify with the multiplier method.",
+            AssessmentItemType.Numeric,
+            ("percent", percent),
+            ("quantity", quantity),
+            ("direction", direction));
+    }
+
+    private static ExactProblem BuildArithmeticSequenceNthTerm(Random random, int scale)
+    {
+        var first = random.Next(-5 * scale, 10 * scale + 1);
+        var difference = NonZero(random, -5 - scale * 2, 6 + scale * 2);
+        var n = random.Next(5, 10 + scale * 6);
+        return Problem(
+            "sequences.core.arithmetic_nth_term",
+            $"An arithmetic sequence starts {first}, {first + difference}, {first + 2 * difference}, ... Find term {n}.",
+            "Identify the constant difference and use aₙ = a₁ + (n − 1)d. Substitute the original first term, difference and position to verify.",
+            AssessmentItemType.Numeric,
+            ("first", first),
+            ("difference", difference),
+            ("n", n));
+    }
+
+    private static ExactProblem BuildGeometricSequenceNthTerm(Random random, int scale)
+    {
+        var first = NonZero(random, -5 - scale, 6 + scale);
+        var ratio = random.Next(2, Math.Min(5, 3 + scale) + 1);
+        var n = random.Next(3, Math.Min(7, 4 + scale) + 1);
+        return Problem(
+            "sequences.core.geometric_nth_term",
+            $"A geometric sequence starts {first}, {first * ratio}, {first * ratio * ratio}, ... Find term {n}.",
+            "Identify the constant ratio and use aₙ = a₁r^(n−1). Rebuild the term by repeated multiplication to verify.",
+            AssessmentItemType.Numeric,
+            ("first", first),
+            ("ratio", ratio),
+            ("n", n));
+    }
+
+    private static ExactProblem BuildArithmeticSequenceFindPosition(Random random, int scale)
+    {
+        var first = random.Next(-5 * scale, 10 * scale + 1);
+        var difference = NonZero(random, 1, 5 + scale * 2);
+        var expectedN = random.Next(5, 10 + scale * 6);
+        var target = first + (expectedN - 1) * difference;
+        return Problem(
+            "sequences.core.find_position_arithmetic",
+            $"The arithmetic sequence starts {first}, {first + difference}, {first + 2 * difference}, ... Which term is {target}?",
+            "Set aₙ = a₁ + (n − 1)d equal to the target, solve for n, then substitute the position back into the sequence rule.",
+            AssessmentItemType.Numeric,
+            ("first", first),
+            ("difference", difference),
+            ("target", target),
+            ("expectedN", expectedN));
     }
 
     private static ExactProblem BuildFractionRepresentation(Random random, int scale)
@@ -1511,6 +1657,76 @@ public sealed class ExactSkillContractQuestionEngine
             ("width", width));
     }
 
+    private static ExactProblem BuildTriangleArea(Random random, int scale)
+    {
+        var @base = 2 * random.Next(2, 7 + scale * 2);
+        var height = random.Next(2, 8 + scale * 2);
+        return Problem(
+            "geometry.perimeter_area.triangle_area",
+            $"A triangle has base {@base} and perpendicular height {height}. Find its area.",
+            "Use area = 1/2 × base × perpendicular height. Verify by doubling the area and comparing with base × height.",
+            AssessmentItemType.Numeric,
+            ("base", @base),
+            ("height", height));
+    }
+
+    private static ExactProblem BuildRectangleMissingSide(Random random, int scale)
+    {
+        var knownSide = random.Next(2, 8 + scale * 2);
+        var missingSide = random.Next(3, 10 + scale * 3);
+        var area = knownSide * missingSide;
+        return Problem(
+            "geometry.perimeter_area.rectangle_missing_side",
+            $"A rectangle has area {area} and one side length {knownSide}. Find the other side length.",
+            "Use area = length × width and divide the area by the known side. Multiply the two sides to verify the original area.",
+            AssessmentItemType.Numeric,
+            ("knownSide", knownSide),
+            ("area", area),
+            ("expectedSide", missingSide));
+    }
+
+    private static ExactProblem BuildPolygonInteriorAngleSum(Random random, int scale)
+    {
+        var sides = random.Next(3, 8 + scale * 2);
+        return Problem(
+            "geometry.polygons.interior_angle_sum",
+            $"Find the sum of the interior angles of a {sides}-sided polygon.",
+            "Split the polygon into n − 2 triangles, so the interior-angle sum is (n − 2) × 180°.",
+            AssessmentItemType.Numeric,
+            ("sides", sides));
+    }
+
+    private static ExactProblem BuildPolygonMissingInteriorAngle(Random random, int scale)
+    {
+        var sides = random.Next(0, 2) == 0 ? 3 : 4;
+        var total = (sides - 2) * 180;
+        var missing = sides == 3
+            ? random.Next(30, 121)
+            : random.Next(40, 151);
+        var knownSum = total - missing;
+        return Problem(
+            "geometry.polygons.missing_interior_angle",
+            $"A {sides}-sided polygon has known interior angles totalling {knownSum}°. Find the missing interior angle.",
+            "Use the polygon interior-angle sum, subtract the sum of the known angles, and verify all interior angles total (n − 2) × 180°.",
+            AssessmentItemType.Numeric,
+            ("sides", sides),
+            ("knownSum", knownSum),
+            ("missingAngle", missing));
+    }
+
+    private static ExactProblem BuildRegularPolygonInteriorAngle(Random random, int scale)
+    {
+        int[] sideChoices = [3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20];
+        var maxIndex = Math.Min(sideChoices.Length, 4 + scale * 2);
+        var sides = sideChoices[random.Next(0, maxIndex)];
+        return Problem(
+            "geometry.polygons.regular_interior_angle",
+            $"Find one interior angle of a regular {sides}-sided polygon.",
+            "For a regular polygon, each exterior angle is 360°/n, so each interior angle is 180° − 360°/n.",
+            AssessmentItemType.Numeric,
+            ("sides", sides));
+    }
+
     private static ExactProblem BuildPythagorean(Random random, int scale)
     {
         var triples = new (int A, int B, int C)[] { (3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25) };
@@ -1911,8 +2127,22 @@ public sealed class ExactSkillContractQuestionEngine
             "number.lcm.two_numbers" =>
                 LeastCommonMultiple(p["left"], p["right"]).ToString(CultureInfo.InvariantCulture),
 
-            "percentages.of_quantity.direct" =>
+            "percentages.of_quantity.direct" or
+            "percentages.core.of_quantity" =>
                 (p["percent"] * p["quantity"] / 100).ToString(CultureInfo.InvariantCulture),
+
+            "percentages.core.increase_decrease" =>
+                (p["quantity"] * (100 + p["direction"] * p["percent"]) / 100)
+                    .ToString(CultureInfo.InvariantCulture),
+
+            "sequences.core.arithmetic_nth_term" =>
+                (p["first"] + (p["n"] - 1) * p["difference"]).ToString(CultureInfo.InvariantCulture),
+
+            "sequences.core.geometric_nth_term" =>
+                (p["first"] * IntegerPower(p["ratio"], p["n"] - 1)).ToString(CultureInfo.InvariantCulture),
+
+            "sequences.core.find_position_arithmetic" =>
+                p["expectedN"].ToString(CultureInfo.InvariantCulture),
 
             "fractions.represent.interpret.fraction_bar" =>
                 SimplifyFraction(p["numerator"], p["denominator"]),
@@ -2037,6 +2267,21 @@ public sealed class ExactSkillContractQuestionEngine
             "geometry.perimeter_area.rectangle_perimeter" =>
                 (2 * (p["length"] + p["width"])).ToString(CultureInfo.InvariantCulture),
 
+            "geometry.perimeter_area.triangle_area" =>
+                (p["base"] * p["height"] / 2).ToString(CultureInfo.InvariantCulture),
+
+            "geometry.perimeter_area.rectangle_missing_side" =>
+                (p["area"] / p["knownSide"]).ToString(CultureInfo.InvariantCulture),
+
+            "geometry.polygons.interior_angle_sum" =>
+                ((p["sides"] - 2) * 180).ToString(CultureInfo.InvariantCulture),
+
+            "geometry.polygons.missing_interior_angle" =>
+                (((p["sides"] - 2) * 180) - p["knownSum"]).ToString(CultureInfo.InvariantCulture),
+
+            "geometry.polygons.regular_interior_angle" =>
+                (180 - 360 / p["sides"]).ToString(CultureInfo.InvariantCulture),
+
             "geometry.right_triangle.pythagorean.exact" =>
                 p["hypotenuse"].ToString(CultureInfo.InvariantCulture),
 
@@ -2157,6 +2402,17 @@ public sealed class ExactSkillContractQuestionEngine
             denominator = -denominator;
         }
         return true;
+    }
+
+    private static int IntegerPower(int value, int exponent)
+    {
+        if (exponent < 0)
+            throw new InvalidOperationException("Exact integer sequence exponent must be non-negative.");
+
+        var result = 1;
+        for (var i = 0; i < exponent; i++)
+            result = checked(result * value);
+        return result;
     }
 
     private static int LeastCommonMultiple(int a, int b)
