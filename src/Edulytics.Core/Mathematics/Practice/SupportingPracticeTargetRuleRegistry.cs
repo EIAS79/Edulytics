@@ -104,6 +104,42 @@ public static class SupportingPracticeTargetRuleRegistry
                value.EndsWith("$", StringComparison.Ordinal);
     }
 
+    /// <summary>
+    /// Resolves an official lesson only when the reviewed target-rule registry
+    /// yields one unambiguous target. An anchored exact-title match wins when
+    /// unique; otherwise the complete reviewed rule set must still produce one
+    /// and only one candidate. Ambiguity always fails closed.
+    /// </summary>
+    public static bool TryResolveReviewedOfficialTitle(
+        string? lessonCode,
+        string? title,
+        out SupportingPracticeTargetRule? rule)
+    {
+        if (TryResolveReviewedExactTitle(lessonCode, title, out rule))
+            return true;
+
+        var code = (lessonCode ?? string.Empty).Trim();
+        var normalizedTitle = NormalizeTitle(title);
+        var matches = Rules.Value
+            .Where(candidate =>
+                (candidate.TitlePatterns.Count == 0 ||
+                 candidate.TitlePatterns.Any(pattern => pattern.IsMatch(normalizedTitle))) &&
+                (candidate.CodePatterns.Count == 0 ||
+                 candidate.CodePatterns.Any(pattern => pattern.IsMatch(code))))
+            .Select(candidate => candidate.Rule)
+            .DistinctBy(candidate => candidate.Id, StringComparer.Ordinal)
+            .ToArray();
+
+        if (matches.Length == 1)
+        {
+            rule = matches[0];
+            return true;
+        }
+
+        rule = null;
+        return false;
+    }
+
     public static string NormalizeTitle(string? title)
     {
         var value = Regex.Replace(
