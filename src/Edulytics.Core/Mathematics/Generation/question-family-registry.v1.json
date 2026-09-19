@@ -1893,6 +1893,191 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "percentages.core.of_quantity",
+      "version": 1,
+      "skillId": "percentages.core",
+      "requiredCapabilities": [
+        "percentages.core.exact",
+        "percentages.verify.core"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-percent-times-quantity-recomputation",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "percentages.core.increase_decrease",
+      "version": 1,
+      "skillId": "percentages.core",
+      "requiredCapabilities": [
+        "percentages.core.exact",
+        "percentages.verify.core"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-original-plus-or-minus-percent-recomputation",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "sequences.core.arithmetic_nth_term",
+      "version": 1,
+      "skillId": "sequences.core",
+      "requiredCapabilities": [
+        "sequences.core.exact",
+        "sequences.verify.core"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-arithmetic-sequence-closed-form-check",
+      "representations": [
+        "symbolic",
+        "sequence"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "sequences.core.geometric_nth_term",
+      "version": 1,
+      "skillId": "sequences.core",
+      "requiredCapabilities": [
+        "sequences.core.exact",
+        "sequences.verify.core"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-geometric-sequence-repeated-power-check",
+      "representations": [
+        "symbolic",
+        "sequence"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "sequences.core.find_position_arithmetic",
+      "version": 1,
+      "skillId": "sequences.core",
+      "requiredCapabilities": [
+        "sequences.core.exact",
+        "sequences.verify.core"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-arithmetic-target-position-substitution",
+      "representations": [
+        "symbolic",
+        "sequence"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "geometry.polygons.interior_angle_sum",
+      "version": 1,
+      "skillId": "geometry.polygons.angle_sum",
+      "requiredCapabilities": [
+        "geometry.polygons.exact",
+        "geometry.verify.polygons"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-n-minus-two-times-180-check",
+      "representations": [
+        "polygon",
+        "diagram_metadata",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "geometry.polygons.missing_interior_angle",
+      "version": 1,
+      "skillId": "geometry.polygons.angle_sum",
+      "requiredCapabilities": [
+        "geometry.polygons.exact",
+        "geometry.verify.polygons"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-polygon-angle-sum-minus-known-sum-check",
+      "representations": [
+        "polygon",
+        "diagram_metadata",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "geometry.polygons.regular_interior_angle",
+      "version": 1,
+      "skillId": "geometry.polygons.angle_sum",
+      "requiredCapabilities": [
+        "geometry.polygons.exact",
+        "geometry.verify.polygons"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-regular-exterior-and-interior-angle-check",
+      "representations": [
+        "polygon",
+        "diagram_metadata",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "geometry.perimeter_area.triangle_area",
+      "version": 1,
+      "skillId": "geometry.perimeter_area",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-half-base-times-height-check",
+      "representations": [
+        "triangle",
+        "diagram_metadata",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "geometry.perimeter_area.rectangle_missing_side",
+      "version": 1,
+      "skillId": "geometry.perimeter_area",
+      "requiredCapabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-area-divided-by-known-side-check",
+      "representations": [
+        "rectangle_dimensions",
+        "diagram_metadata",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ]
 }
