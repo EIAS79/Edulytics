@@ -39,6 +39,56 @@ public static class ExactMathematicsCapabilityResolver
                 "ExactLinearEquation");
         }
 
+        // Exact vector targets. Keep these specific so a broad lesson that merely
+        // mentions vectors does not authorize the wrong operation.
+        if (ContainsAny(text, "MAGNITUDE OF A VECTOR", "VECTOR MAGNITUDE", "MAGNITUDE OF VECTOR"))
+        {
+            return Exact(
+                "vectors.magnitude",
+                ["vectors.magnitude.exact"],
+                "ExactVectorMagnitude");
+        }
+
+        if (ContainsAny(text, "VECTOR BETWEEN TWO POINTS", "VECTOR FROM A TO B", "POSITION VECTOR BETWEEN"))
+        {
+            return Exact(
+                "vectors.between_points",
+                ["vectors.between_points.exact"],
+                "ExactVectorBetweenPoints");
+        }
+
+        if (ContainsAny(text, "SCALAR MULTIPLICATION OF VECTORS", "MULTIPLY A VECTOR BY A SCALAR", "SCALAR MULTIPLICATION"))
+        {
+            return Exact(
+                "vectors.scalar_multiply",
+                ["vectors.scalar_multiply.exact_rational"],
+                "ExactVectorScalarMultiply");
+        }
+
+        if (ContainsAny(text, "VECTOR SUBTRACTION", "SUBTRACT VECTORS", "DIFFERENCE OF VECTORS"))
+        {
+            return Exact(
+                "vectors.subtract",
+                ["vectors.subtract.exact_rational"],
+                "ExactVectorSubtract");
+        }
+
+        if (ContainsAny(text, "DOT PRODUCT", "SCALAR PRODUCT OF VECTORS"))
+        {
+            return Exact(
+                "vectors.dot.exact",
+                ["vectors.dot.exact_rational"],
+                "ExactVectorDotProduct");
+        }
+
+        if (ContainsAny(text, "VECTOR ADDITION", "ADD VECTORS", "SUM OF VECTORS"))
+        {
+            return Exact(
+                "vectors.add.exact",
+                ["vectors.add.exact_rational"],
+                "ExactVectorAdd");
+        }
+
         // High-school geometry / trigonometry. These are intentionally checked
         // before generic geometry wording so a trig target never collapses to
         // Pythagoras or rectangle arithmetic.
