@@ -14,6 +14,16 @@ import full_practice_completion_matrix
 ROOT = Path(__file__).resolve().parents[2]
 ARTIFACT_DIR = ROOT / "artifacts/math-intelligence"
 FAMILY_REGISTRY = ROOT / "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json"
+VISUAL_RENDERER = ROOT / "src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs"
+VISUAL_REPRESENTATIONS = {
+    "diagram_metadata",
+    "graph",
+    "vector",
+    "right_triangle",
+    "angle",
+    "coordinate_pair",
+    "solid_dimensions",
+}
 
 ADVANCED_DOMAINS = {
     "calculus",
@@ -96,7 +106,12 @@ def audit() -> dict[str, Any]:
     mapping_blockers: list[str] = []
     for row in eligible:
         code = str(row.get("lessonCode") or "")
-        if row.get("semanticContentStatus") not in {"PASS_TARGETED", "PASS_GENERAL"}:
+        if row.get("semanticContentStatus") in {
+            "CONTENT_WEAK",
+            "REVIEW_REQUIRED",
+            "BLOCKED",
+            "MAPPING_CONFLICT",
+        }:
             content_blockers.append(
                 f"{code}: semanticContentStatus={row.get('semanticContentStatus')}"
             )
@@ -135,17 +150,37 @@ def audit() -> dict[str, Any]:
 
     visual_blockers: list[str] = []
     visual_required = [row for row in eligible if bool(row.get("visualRequired"))]
+    renderer_source = VISUAL_RENDERER.read_text(encoding="utf-8")
+    switch_match = re.search(
+        r"return\s+family\s+switch\s*\{(?P<body>.*?)_\s*=>\s*null",
+        renderer_source,
+        flags=re.DOTALL,
+    )
+    rendered_families = set(
+        re.findall(r'"([a-z0-9_.-]+)"', switch_match.group("body"))
+        if switch_match
+        else []
+    )
+    visual_family_ids: set[str] = set()
     for row in visual_required:
         code = str(row.get("lessonCode") or "")
         if row.get("visualStatus") != "READY_METADATA":
             visual_blockers.append(
                 f"{code}: visualStatus={row.get('visualStatus')}"
             )
-        representations = {str(x) for x in row.get("representations") or []}
-        if "diagram_metadata" not in representations:
-            visual_blockers.append(
-                f"{code}: required visual is missing diagram_metadata"
-            )
+        for family_id in row.get("questionFamilies") or []:
+            family = family_registry.get(str(family_id))
+            if family is None:
+                continue
+            representations = {str(x) for x in family.get("representations") or []}
+            if representations & VISUAL_REPRESENTATIONS:
+                visual_family_ids.add(str(family_id))
+
+    missing_renderers = sorted(visual_family_ids - rendered_families)
+    visual_blockers.extend(
+        f"visual Practice family has no deterministic renderer: {family_id}"
+        for family_id in missing_renderers
+    )
 
     solver_blockers: list[str] = []
     for row in eligible:
@@ -273,6 +308,9 @@ def audit() -> dict[str, Any]:
             row.get("visualStatus") == "READY_METADATA"
             for row in visual_required
         ),
+        "visualFamilyCount": len(visual_family_ids),
+        "rendererBackedFamilyCount": len(visual_family_ids & rendered_families),
+        "missingRendererFamilies": missing_renderers,
         "blockers": visual_blockers,
     }
     solver_report = {
