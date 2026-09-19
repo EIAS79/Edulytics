@@ -168,7 +168,8 @@
       "id": "order-operations",
       "titlePatterns": [
         "order of operations",
-        "kolejność.*działa"
+        "kolejność.*działa",
+        "^Order of Operations$"
       ],
       "codePatterns": [],
       "skillId": "supporting.number.directed_operations",
@@ -3921,6 +3922,140 @@
         "solution": "Compare each object to the same reference, then combine the relationships.",
         "commonMistake": "Do not compare statements that use different reference objects without another valid link.",
         "summary": "Use one common reference to compare two lengths indirectly."
+      }
+    },
+    {
+      "id": "foundation-subitize",
+      "titlePatterns": [
+        "^See Small Groups Without Counting$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "COUNT_CARDINALITY",
+      "families": [
+        "supporting.number.count_cardinality"
+      ],
+      "content": {
+        "concept": "Small familiar arrangements can be recognized as a quantity without counting every object one by one.",
+        "workedExample": "A five-dot die pattern can be recognized as 5 at a glance.",
+        "solution": "Recognize the familiar grouping, name the quantity, then count only to check if needed.",
+        "commonMistake": "Do not assume a pattern's quantity from its physical size.",
+        "summary": "Recognize familiar small quantities and verify by counting."
+      }
+    },
+    {
+      "id": "foundation-estimate-count",
+      "titlePatterns": [
+        "^Estimate, Then Count$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.number.real",
+      "mechanic": "ESTIMATE_COUNT",
+      "families": [
+        "supporting.number.estimate_closer"
+      ],
+      "content": {
+        "concept": "An estimate is a reasonable approximate count that can be checked against an exact count.",
+        "workedExample": "If the exact count is 13, an estimate of 12 is more reasonable than 30.",
+        "solution": "Compare each estimate with the exact count and choose the one with smaller error.",
+        "commonMistake": "An estimate need not equal the exact count to be useful.",
+        "summary": "Estimate sensibly, count exactly, and compare the two."
+      }
+    },
+    {
+      "id": "foundation-add-stage1",
+      "titlePatterns": [
+        "^Join Groups to Add$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.add",
+      "mechanic": "WHOLE_ADD",
+      "families": [
+        "number.whole.add.direct"
+      ],
+      "content": {
+        "concept": "Addition joins quantities into one total.",
+        "workedExample": "6 + 3 = 9.",
+        "solution": "Combine both quantities or count on, then verify by subtraction.",
+        "commonMistake": "Do not leave out either group from the total.",
+        "summary": "Join groups to add."
+      }
+    },
+    {
+      "id": "foundation-subtract-stage1",
+      "titlePatterns": [
+        "^Take Away and Find the Difference$"
+      ],
+      "codePatterns": [],
+      "skillId": "number.whole.subtract",
+      "mechanic": "WHOLE_SUBTRACT",
+      "families": [
+        "number.whole.subtract.direct"
+      ],
+      "content": {
+        "concept": "Subtraction can remove a quantity or find the difference between quantities.",
+        "workedExample": "9 - 4 = 5.",
+        "solution": "Take away, count back, or compare the gap, then verify by addition.",
+        "commonMistake": "Use the story context to decide what is being subtracted.",
+        "summary": "Subtract to find what remains or the difference."
+      }
+    },
+    {
+      "id": "foundation-money-recognition",
+      "titlePatterns": [
+        "^Recognise Coins and Notes$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "MONEY_RECOGNITION",
+      "families": [
+        "supporting.measurement.money_marked_value"
+      ],
+      "content": {
+        "concept": "Coins and notes represent their printed denominations; physical size does not determine value.",
+        "workedExample": "A coin marked 5 represents value 5 in its currency.",
+        "solution": "Read the printed denomination and currency context.",
+        "commonMistake": "Do not assume the largest coin has the greatest value.",
+        "summary": "Recognize money by denomination."
+      }
+    },
+    {
+      "id": "foundation-shape-orientation",
+      "titlePatterns": [
+        "^Flat Shapes in Different Orientations$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.geometry.properties",
+      "mechanic": "SHAPE_ORIENTATION",
+      "families": [
+        "supporting.geometry.orientation_invariant"
+      ],
+      "content": {
+        "concept": "Rotating a 2D shape changes orientation but not its defining properties.",
+        "workedExample": "A triangle remains a triangle after a quarter-turn.",
+        "solution": "Ignore orientation and check the defining sides/vertices/properties.",
+        "commonMistake": "Do not rename a shape just because it is rotated.",
+        "summary": "Orientation changes; shape identity does not."
+      }
+    },
+    {
+      "id": "foundation-category-questions",
+      "titlePatterns": [
+        "^Answer Questions About Categories$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.statistics.charts",
+      "mechanic": "CATEGORY_COMPARE",
+      "families": [
+        "supporting.statistics.compare_category_counts",
+        "supporting.statistics.category_total"
+      ],
+      "content": {
+        "concept": "Questions about categorical data are answered from category frequencies and totals.",
+        "workedExample": "If A has 8 and B has 5, A has 3 more and there are 13 items altogether.",
+        "solution": "Read the relevant category counts, then compare or add as the question requires.",
+        "commonMistake": "Do not compare category labels instead of their counts.",
+        "summary": "Use category frequencies to answer comparison and total questions."
       }
     }
   ]
