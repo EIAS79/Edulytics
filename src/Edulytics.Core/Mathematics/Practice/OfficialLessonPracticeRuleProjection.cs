@@ -16,7 +16,7 @@ internal static class OfficialLessonPracticeRuleProjection
     private const string FamilyResource =
         "Edulytics.Core.Mathematics.Generation.question-family-registry.v1.json";
 
-    public const string ContractVersion = "official-outcome-rules-v1";
+    public const string ContractVersion = "official-outcome-rules-v2";
 
     public static IReadOnlyList<LessonPracticeContract> Load()
     {
@@ -70,12 +70,9 @@ internal static class OfficialLessonPracticeRuleProjection
 
                     var translation = ChooseTranslation(pack, lesson);
                     if (translation is not null &&
-                        SupportingPracticeTargetRuleRegistry.TryResolveReviewedOfficialLesson(
+                        SupportingPracticeTargetRuleRegistry.TryResolveReviewedExactTitle(
                             lesson.LessonCode,
                             translation.Title,
-                            translation.Explanation,
-                            translation.KeyConceptsAndRules,
-                            translation.WorkedExamples,
                             out var canonicalRule) &&
                         canonicalRule is not null &&
                         IsRuntimeReadyRule(canonicalRule, skillIds, familyById))
@@ -87,7 +84,7 @@ internal static class OfficialLessonPracticeRuleProjection
                             canonicalRule.Families
                                 .Distinct(StringComparer.Ordinal)
                                 .ToArray(),
-                            "OfficialReviewedCanonicalEvidence",
+                            "OfficialReviewedExactTitleRule",
                             "READY_VERIFIED",
                             ContractVersion)
                         {
