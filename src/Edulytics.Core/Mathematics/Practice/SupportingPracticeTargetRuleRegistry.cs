@@ -63,6 +63,47 @@ public static class SupportingPracticeTargetRuleRegistry
         return false;
     }
 
+    /// <summary>
+    /// Resolves only a reviewed rule whose title pattern is explicitly anchored
+    /// from start to end. This is the only rule-based promotion path permitted
+    /// for official/outcome-mapped lessons; broad keyword patterns remain
+    /// Supporting-only and cannot authorize official Practice.
+    /// </summary>
+    public static bool TryResolveReviewedExactTitle(
+        string? lessonCode,
+        string? title,
+        out SupportingPracticeTargetRule? rule)
+    {
+        var code = (lessonCode ?? string.Empty).Trim();
+        var normalizedTitle = NormalizeTitle(title);
+        var matches = Rules.Value
+            .Where(candidate =>
+                candidate.TitlePatterns.Any(pattern =>
+                    IsReviewedExactTitlePattern(pattern.ToString()) &&
+                    pattern.IsMatch(normalizedTitle)) &&
+                (candidate.CodePatterns.Count == 0 ||
+                 candidate.CodePatterns.Any(pattern => pattern.IsMatch(code))))
+            .Select(candidate => candidate.Rule)
+            .DistinctBy(candidate => candidate.Id, StringComparer.Ordinal)
+            .ToArray();
+
+        if (matches.Length == 1)
+        {
+            rule = matches[0];
+            return true;
+        }
+
+        rule = null;
+        return false;
+    }
+
+    private static bool IsReviewedExactTitlePattern(string pattern)
+    {
+        var value = pattern.Trim();
+        return value.StartsWith("^", StringComparison.Ordinal) &&
+               value.EndsWith("$", StringComparison.Ordinal);
+    }
+
     public static string NormalizeTitle(string? title)
     {
         var value = Regex.Replace(
