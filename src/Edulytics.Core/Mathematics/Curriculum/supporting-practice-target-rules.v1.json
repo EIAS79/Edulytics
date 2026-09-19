@@ -496,7 +496,8 @@
         "^Understanding Proportional Relationships$",
         "^Solve problems involving ratio relationships$",
         "^Direct and inverse proportion$",
-        "^If Our Class Were the World$"
+        "^If Our Class Were the World$",
+        "^Equations, Proportions and Applications — L2-[1-9]$"
       ],
       "codePatterns": [],
       "skillId": "ratio.unit_rate",
@@ -713,7 +714,8 @@
         "inequalities",
         "nierówno",
         "nierowno",
-        "systems and inequalities"
+        "systems and inequalities",
+        "^Linear and Absolute-Value Inequalities — L5-[1-6]$"
       ],
       "codePatterns": [],
       "skillId": "algebra.linear.inequality.solve",
@@ -1226,7 +1228,10 @@
         "^Equation of a line$",
         "^Introduction to Linear Relationships$",
         "^More Linear Relationships$",
-        "^Representations of Linear Relationships$"
+        "^Representations of Linear Relationships$",
+        "^Algebraic Expressions and Functions — L1-[1-8]$",
+        "^Linear Relationships — L3-[1-6]$",
+        "^Linear Functions and Data Modelling — L4-[1-7]$"
       ],
       "codePatterns": [],
       "skillId": "geometry.coordinate.straight_line",
@@ -3701,6 +3706,25 @@
         "solution": "Read the two counts and compare them directly.",
         "commonMistake": "Do not compare bar width or label length instead of frequency.",
         "summary": "Compare category counts to state what the data shows."
+      }
+    },
+    {
+      "id": "uae-systems-inequalities",
+      "titlePatterns": [
+        "^Systems of Equations and Inequalities — L6-[1-6]$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.algebra.systems_inequalities",
+      "mechanic": "SYSTEMS_INEQUALITIES_MIXED",
+      "families": [
+        "supporting.algebra.systems_inequalities.mixed"
+      ],
+      "content": {
+        "concept": "Systems of linear equations require values satisfying both equations; linear inequalities describe a range of values satisfying a comparison.",
+        "workedExample": "Solve x+y=7 and x-y=1 to get x=4,y=3. Solve 2x+3<11 to get x<4.",
+        "solution": "For a system, eliminate or substitute and verify both equations. For an inequality, preserve equivalence and reverse the inequality only when multiplying or dividing by a negative number.",
+        "commonMistake": "Do not treat a system as one equation or forget the inequality direction rule.",
+        "summary": "Solve systems by satisfying all equations; solve inequalities by preserving the comparison."
       }
     }
   ]
