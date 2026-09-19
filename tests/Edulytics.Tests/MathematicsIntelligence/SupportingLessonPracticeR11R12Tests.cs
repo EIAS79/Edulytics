@@ -153,6 +153,77 @@ public sealed class SupportingLessonPracticeR11R12Tests
     }
 
     [Theory]
+    [InlineData("ratio.unit_rate.divide_total")]
+    [InlineData("statistics.center_spread.mean")]
+    [InlineData("statistics.center_spread.median")]
+    [InlineData("statistics.center_spread.range")]
+    [InlineData("probability.theoretical.simple_event")]
+    [InlineData("probability.theoretical.complement")]
+    [InlineData("probability.theoretical.two_coins_exactly_one")]
+    [InlineData("geometry.coordinate.evaluate_linear_rule")]
+    [InlineData("geometry.coordinate.y_intercept_from_rule")]
+    public void R7RatioStatisticsProbabilityCoordinateFamiliesGenerateAndVerify(string family)
+    {
+        var engine = new ExactSkillContractQuestionEngine();
+        var questions = engine.Generate(
+            "r7-core-test",
+            family,
+            [family],
+            ExactSkillQuestionDifficulty.Challenge,
+            10,
+            77119,
+            []);
+
+        Assert.Equal(10, questions.Count);
+        Assert.All(questions, question =>
+        {
+            Assert.Equal(family, question.Family);
+            Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(question.Family));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                question.Family,
+                question.Parameters,
+                question.CorrectAnswer));
+            Assert.False(string.IsNullOrWhiteSpace(question.Solution));
+        });
+    }
+
+    [Theory]
+    [InlineData("PED:CAMBRIDGE-INTL-MATH:L7:SHARED:01:05:RATIO-AND-PROPORTION", "ratio.unit_rate", "ratio.unit_rate.divide_total")]
+    [InlineData("PED:CAMBRIDGE-INTL-MATH:L10:CORE:01:07:RATES", "ratio.unit_rate", "ratio.unit_rate.direct")]
+    [InlineData("PED:UAE-MOE-MATH:L12:ADVANCED:02:08:COORDINATES-AND-STRAIGHT-LINE-GRAPHS", "geometry.coordinate.straight_line", "geometry.coordinate.evaluate_linear_rule")]
+    [InlineData("PED:UAE-MOE-MATH:L11:GENERAL:04:03:MEAN-MEDIAN-AND-RANGE", "statistics.center_spread.core", "statistics.center_spread.median")]
+    [InlineData("PED:UAE-MOE-MATH:L10:ADVANCED:04:06:THEORETICAL-PROBABILITY", "probability.theoretical.core", "probability.theoretical.two_coins_exactly_one")]
+    [InlineData("PED:CAMBRIDGE-INTL-MATH:L10:CORE:08:01:SINGLE-EVENT-PROBABILITY", "probability.theoretical.core", "probability.theoretical.complement")]
+    public void R7PromotedMappingsProjectIntoExactRuntimeContracts(
+        string lessonCode,
+        string expectedSkill,
+        string expectedFamily)
+    {
+        Assert.True(
+            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.TryResolve(
+                lessonCode,
+                out var contract));
+
+        Assert.NotNull(contract);
+        Assert.Equal(expectedSkill, contract!.SkillId);
+        Assert.Equal("READY_VERIFIED", contract.Readiness);
+        Assert.Contains(expectedFamily, contract.AllowedQuestionFamilies);
+        Assert.All(
+            contract.AllowedQuestionFamilies,
+            family => Assert.True(
+                ExactSkillContractQuestionEngine.SupportsFamily(family),
+                $"R7 contract {lessonCode} routes unsupported family {family}."));
+    }
+
+    [Fact]
+    public void R7PromotionRaisesRuntimeExactContractCountTo304()
+    {
+        Assert.Equal(
+            304,
+            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.All.Count);
+    }
+
+    [Theory]
     [InlineData("percentages.core.of_quantity")]
     [InlineData("percentages.core.increase_decrease")]
     [InlineData("sequences.core.arithmetic_nth_term")]
