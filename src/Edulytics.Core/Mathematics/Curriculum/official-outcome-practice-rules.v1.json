@@ -736,6 +736,150 @@
       ],
       "textPatterns": [],
       "targetRuleId": "functions"
+    },
+    {
+      "id": "ccss-g1-oa-add-subtract",
+      "priority": 420,
+      "codePatterns": [
+        "^CCSS:1\\.OA\\."
+      ],
+      "textPatterns": [],
+      "targetRuleId": "whole-add-subtract-within20"
+    },
+    {
+      "id": "ccss-g2-oa-add-subtract",
+      "priority": 420,
+      "codePatterns": [
+        "^CCSS:2\\.OA\\.(?:A\\.1|B\\.2)$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "whole-add-subtract-within20"
+    },
+    {
+      "id": "ccss-g1-nbt-ten-more-less",
+      "priority": 420,
+      "codePatterns": [
+        "^CCSS:1\\.NBT\\.C\\.5$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "whole-add-subtract-within100"
+    },
+    {
+      "id": "ccss-g2-md-add-subtract",
+      "priority": 420,
+      "codePatterns": [
+        "^CCSS:2\\.MD\\.B\\.[56]$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "whole-add-subtract-within100"
+    },
+    {
+      "id": "ccss-g2-nbt-ten-hundred",
+      "priority": 420,
+      "codePatterns": [
+        "^CCSS:2\\.NBT\\.B\\.8$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "whole-add-subtract-within100"
+    },
+    {
+      "id": "ccss-g3-nbt-add-subtract",
+      "priority": 420,
+      "codePatterns": [
+        "^CCSS:3\\.NBT\\.A\\.2$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "whole-add-subtract-columnar"
+    },
+    {
+      "id": "ccss-g4-nbt-add-subtract",
+      "priority": 420,
+      "codePatterns": [
+        "^CCSS:4\\.NBT\\.B\\.4$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "whole-add-subtract-columnar"
+    },
+    {
+      "id": "ccss-g1-count-read-write",
+      "priority": 430,
+      "codePatterns": [
+        "^CCSS:1\\.NBT\\.A\\.1$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "foundation-count-read-write"
+    },
+    {
+      "id": "ccss-g2-skip-count",
+      "priority": 430,
+      "codePatterns": [
+        "^CCSS:2\\.NBT\\.A\\.2$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "foundation-skip-count"
+    },
+    {
+      "id": "ccss-g1-length-unit-iteration",
+      "priority": 430,
+      "codePatterns": [
+        "^CCSS:1\\.MD\\.A\\.2$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "measurement-unit-iteration"
+    },
+    {
+      "id": "ccss-g4-angle-measure",
+      "priority": 430,
+      "codePatterns": [
+        "^CCSS:4\\.MD\\.C\\.6$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "angle-measure"
+    },
+    {
+      "id": "ccss-g4-fraction-tenths-hundredths",
+      "priority": 430,
+      "codePatterns": [
+        "^CCSS:4\\.NF\\.C\\.5$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "equivalent-fractions"
+    },
+    {
+      "id": "ccss-g4-multiplicative-comparison",
+      "priority": 430,
+      "codePatterns": [
+        "^CCSS:4\\.OA\\.A\\.2$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "arithmetic-structures"
+    },
+    {
+      "id": "ccss-g5-fraction-multiplication-problems",
+      "priority": 430,
+      "codePatterns": [
+        "^CCSS:5\\.NF\\.B\\.6$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "fraction-multiply-divide"
+    },
+    {
+      "id": "ccss-g6-statistical-question",
+      "priority": 430,
+      "codePatterns": [
+        "^CCSS:6\\.SP\\.A\\.1$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "statistical-question"
+    },
+    {
+      "id": "ccss-g6-center-variation",
+      "priority": 430,
+      "codePatterns": [
+        "^CCSS:6\\.SP\\.A\\.3$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "center-or-variation"
     }
   ]
 }
