@@ -16,7 +16,7 @@ internal static class OfficialLessonPracticeRuleProjection
     private const string FamilyResource =
         "Edulytics.Core.Mathematics.Generation.question-family-registry.v1.json";
 
-    public const string ContractVersion = "official-reviewed-canonical-evidence-v1";
+    public const string ContractVersion = "official-outcome-rules-v1";
 
     public static IReadOnlyList<LessonPracticeContract> Load()
     {
@@ -68,6 +68,59 @@ internal static class OfficialLessonPracticeRuleProjection
                     if (lesson.OutcomeCodes.Count == 0)
                         continue;
 
+                    var resolvedOutcomes = lesson.OutcomeCodes
+                        .Select(code =>
+                            OfficialOutcomePracticeRuleRegistry.TryResolve(
+                                code,
+                                out var resolution)
+                                ? resolution
+                                : null)
+                        .ToArray();
+
+                    if (resolvedOutcomes.All(x => x is not null))
+                    {
+                        var targetRules = resolvedOutcomes
+                            .Cast<OfficialOutcomePracticeResolution>()
+                            .Select(x => x.TargetRule)
+                            .DistinctBy(x => x.Id, StringComparer.Ordinal)
+                            .ToArray();
+
+                        if (targetRules.Length > 0 &&
+                            targetRules.All(rule =>
+                                IsRuntimeReadyRule(
+                                    rule,
+                                    skillIds,
+                                    familyById)))
+                        {
+                            var skillsForLesson = targetRules
+                                .Select(rule => rule.SkillId)
+                                .Distinct(StringComparer.Ordinal)
+                                .OrderBy(value => value, StringComparer.Ordinal)
+                                .ToArray();
+                            var familiesForLesson = targetRules
+                                .SelectMany(rule => rule.Families)
+                                .Distinct(StringComparer.Ordinal)
+                                .OrderBy(value => value, StringComparer.Ordinal)
+                                .ToArray();
+                            var mechanic = targetRules.Length == 1
+                                ? targetRules[0].Mechanic
+                                : "OFFICIAL_MULTI_OUTCOME";
+
+                            projected.Add(new LessonPracticeContract(
+                                lesson.LessonCode,
+                                skillsForLesson[0],
+                                mechanic,
+                                familiesForLesson,
+                                "OfficialOutcomeRule",
+                                "READY_VERIFIED",
+                                ContractVersion)
+                            {
+                                SkillIds = skillsForLesson
+                            });
+                            continue;
+                        }
+                    }
+
                     var translation = ChooseTranslation(pack, lesson);
                     if (translation is null ||
                         !SupportingPracticeTargetRuleRegistry.TryResolveReviewedOfficialLesson(
@@ -77,21 +130,8 @@ internal static class OfficialLessonPracticeRuleProjection
                             translation.KeyConceptsAndRules,
                             translation.WorkedExamples,
                             out var rule) ||
-                        rule is null)
-                    {
-                        continue;
-                    }
-
-                    if (!skillIds.Contains(rule.SkillId) ||
-                        rule.Families.Count == 0 ||
-                        rule.Families.Any(familyId =>
-                            !familyById.TryGetValue(familyId, out var family) ||
-                            !family.LessonPracticeRouting ||
-                            !family.HasVerificationPolicy ||
-                            !string.Equals(
-                                family.SkillId,
-                                rule.SkillId,
-                                StringComparison.Ordinal)))
+                        rule is null ||
+                        !IsRuntimeReadyRule(rule, skillIds, familyById))
                     {
                         continue;
                     }
@@ -103,7 +143,10 @@ internal static class OfficialLessonPracticeRuleProjection
                         rule.Families.Distinct(StringComparer.Ordinal).ToArray(),
                         "OfficialReviewedCanonicalEvidence",
                         "READY_VERIFIED",
-                        ContractVersion));
+                        ContractVersion)
+                    {
+                        SkillIds = [rule.SkillId]
+                    });
                 }
             }
 
@@ -122,6 +165,21 @@ internal static class OfficialLessonPracticeRuleProjection
             return [];
         }
     }
+
+    private static bool IsRuntimeReadyRule(
+        SupportingPracticeTargetRule rule,
+        IReadOnlySet<string> skillIds,
+        IReadOnlyDictionary<string, FamilyRouting> familyById) =>
+        skillIds.Contains(rule.SkillId) &&
+        rule.Families.Count > 0 &&
+        rule.Families.All(familyId =>
+            familyById.TryGetValue(familyId, out var family) &&
+            family.LessonPracticeRouting &&
+            family.HasVerificationPolicy &&
+            string.Equals(
+                family.SkillId,
+                rule.SkillId,
+                StringComparison.Ordinal));
 
     private static IEnumerable<CanonicalLessonContentPackDocument> LoadContentPacks()
     {
