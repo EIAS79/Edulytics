@@ -829,6 +829,54 @@
       "provider": "edulytics-exact-skill-contract",
       "providerVersion": "unit-rate-v2",
       "status": "ShadowVerified"
+    },
+    {
+      "id": "percentages.core.exact",
+      "domain": "percentages",
+      "canonicalName": "Generate and solve exact core percentage problems",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "percentage-core-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "percentages.verify.core",
+      "domain": "percentages",
+      "canonicalName": "Independently verify percentage of quantity and increase/decrease problems",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "percentage-core-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "sequences.core.exact",
+      "domain": "sequences",
+      "canonicalName": "Generate and solve exact arithmetic and geometric sequence problems",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "sequences-core-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "sequences.verify.core",
+      "domain": "sequences",
+      "canonicalName": "Independently verify sequence terms and arithmetic positions",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "sequences-core-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "geometry.polygons.exact",
+      "domain": "geometry",
+      "canonicalName": "Generate and solve exact polygon interior-angle problems",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "geometry-polygons-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "geometry.verify.polygons",
+      "domain": "geometry",
+      "canonicalName": "Independently verify polygon interior-angle sums and regular angles",
+      "provider": "edulytics-exact-skill-contract",
+      "providerVersion": "geometry-polygons-v1",
+      "status": "ShadowVerified"
     }
   ]
 }
