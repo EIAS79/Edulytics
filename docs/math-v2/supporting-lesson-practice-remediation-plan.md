@@ -1,5 +1,7 @@
 # Supporting Lesson Practice Remediation Plan
 
+> **Completion authority (2026-09-19):** This remediation plan remains the historical/foundation plan. The canonical completion tracker is [`MATHEMATICS_PRACTICE_COMPLETION_MASTER_PLAN.md`](./MATHEMATICS_PRACTICE_COMPLETION_MASTER_PLAN.md). Under the new completion rule, `EXPLICITLY_BLOCKED` is a temporary protective state, not programme completion; Practice-eligible lessons must reach `READY_VERIFIED`.
+
 **Repository:** `EIAS79/Edulytics`  
 **Status:** Approved execution plan  
 **Baseline commit:** `2c761c2e231da741a117352f9f4de489a4fe3cbc`  
