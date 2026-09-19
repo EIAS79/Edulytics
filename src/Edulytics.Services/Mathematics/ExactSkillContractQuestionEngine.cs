@@ -135,7 +135,8 @@ public sealed class ExactSkillContractQuestionEngine
 
     public static bool SupportsFamily(string? family) =>
         !string.IsNullOrWhiteSpace(family) &&
-        SupportedFamilies.Contains(family.Trim());
+        (SupportedFamilies.Contains(family.Trim()) ||
+         SupportingPracticeTargetEngine.Supports(family.Trim()));
 
     public IReadOnlyList<ExactSkillGeneratedQuestion> Generate(
         string fingerprintNamespace,
@@ -179,6 +180,50 @@ public sealed class ExactSkillContractQuestionEngine
             for (var retry = 0; retry < MaxRetriesPerItem && item is null; retry++)
             {
                 var family = allowedQuestionFamilies[(index + retry) % allowedQuestionFamilies.Count];
+
+                if (SupportingPracticeTargetEngine.Supports(family))
+                {
+                    var targetProblem = SupportingPracticeTargetEngine.Build(
+                        family,
+                        random,
+                        difficulty);
+                    var targetAnswer = targetProblem.CorrectAnswer;
+
+                    if (!SupportingPracticeTargetEngine.Verify(
+                            targetProblem.Family,
+                            targetProblem.Parameters,
+                            targetAnswer))
+                    {
+                        MathematicsObservability.Record(MathematicsMetricKind.VerificationFailure);
+                        throw new InvalidOperationException(
+                            $"Supporting target verifier rejected solver output for {family}.");
+                    }
+
+                    MathematicsObservability.Record(MathematicsMetricKind.SolverSuccess);
+                    var targetFingerprint = Fingerprint(
+                        fingerprintNamespace,
+                        scopeKey,
+                        family,
+                        targetProblem.Parameters);
+
+                    if (excluded.Contains(targetFingerprint) ||
+                        generated.Contains(targetFingerprint))
+                    {
+                        continue;
+                    }
+
+                    generated.Add(targetFingerprint);
+                    item = new ExactSkillGeneratedQuestion(
+                        targetProblem.Family,
+                        targetProblem.Prompt,
+                        targetProblem.Solution,
+                        targetProblem.ItemType,
+                        targetAnswer,
+                        targetProblem.Parameters,
+                        targetFingerprint);
+                    continue;
+                }
+
                 var problem = BuildProblem(family, random, difficulty);
                 var answer = Solve(problem);
 
@@ -225,6 +270,9 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (SupportingPracticeTargetEngine.Supports(family))
+            return SupportingPracticeTargetEngine.Verify(family, parameters, answer);
+
         if (family == "fractions.compare.unlike.common_denominator")
             return string.Equals(
                 answer,
