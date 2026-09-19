@@ -9,7 +9,10 @@ public sealed record Stage18PracticeSkillContract(
     string LessonCode,
     string SkillId,
     string Mechanic,
-    IReadOnlyList<string> AllowedQuestionFamilies);
+    IReadOnlyList<string> AllowedQuestionFamilies)
+{
+    public IReadOnlyList<string> SkillIds { get; init; } = [SkillId];
+}
 
 public static class Stage18PracticeSkillContracts
 {
