@@ -24,8 +24,104 @@ public static class CanonicalLessonContentMaterializer
         PolishLessonPracticeContentCorrections
             .ApplyApprovedCorrections(document);
 
+        ValidateUnicode(document);
         CanonicalLessonContentPackContract.Validate(document);
     }
+
+    private static void ValidateUnicode(
+        CanonicalLessonContentPackDocument document)
+    {
+        foreach (var lesson in document.Lessons)
+        {
+            foreach (var translation in lesson.Translations)
+            {
+                ValidateField(
+                    lesson.LessonCode,
+                    translation.CultureCode,
+                    "Title",
+                    translation.Title);
+                ValidateField(
+                    lesson.LessonCode,
+                    translation.CultureCode,
+                    "Explanation",
+                    translation.Explanation);
+                ValidateField(
+                    lesson.LessonCode,
+                    translation.CultureCode,
+                    "KeyConceptsAndRules",
+                    translation.KeyConceptsAndRules);
+                ValidateField(
+                    lesson.LessonCode,
+                    translation.CultureCode,
+                    "WorkedExamples",
+                    translation.WorkedExamples);
+                ValidateField(
+                    lesson.LessonCode,
+                    translation.CultureCode,
+                    "StepByStepSolutions",
+                    translation.StepByStepSolutions);
+                ValidateField(
+                    lesson.LessonCode,
+                    translation.CultureCode,
+                    "CommonMistakes",
+                    translation.CommonMistakes);
+                ValidateField(
+                    lesson.LessonCode,
+                    translation.CultureCode,
+                    "QuickSummary",
+                    translation.QuickSummary);
+            }
+        }
+    }
+
+    private static void ValidateField(
+        string lessonCode,
+        string cultureCode,
+        string field,
+        string value)
+    {
+        for (var index = 0; index < value.Length; index++)
+        {
+            var current = value[index];
+
+            if (char.IsHighSurrogate(current))
+            {
+                if (index + 1 < value.Length &&
+                    char.IsLowSurrogate(value[index + 1]))
+                {
+                    index++;
+                    continue;
+                }
+
+                throw InvalidUnicode(
+                    lessonCode,
+                    cultureCode,
+                    field,
+                    index,
+                    current);
+            }
+
+            if (char.IsLowSurrogate(current))
+            {
+                throw InvalidUnicode(
+                    lessonCode,
+                    cultureCode,
+                    field,
+                    index,
+                    current);
+            }
+        }
+    }
+
+    private static InvalidOperationException InvalidUnicode(
+        string lessonCode,
+        string cultureCode,
+        string field,
+        int index,
+        char value) =>
+        new(
+            $"Invalid UTF-16 learner content: {lessonCode}/{cultureCode}/" +
+            $"{field}@{index}:U+{(int)value:X4}.");
 
     public static string GetEffectiveContentVersion(
         CanonicalLessonContentPackDocument document,
