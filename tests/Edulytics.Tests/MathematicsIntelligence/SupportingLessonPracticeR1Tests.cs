@@ -145,7 +145,7 @@ public sealed class SupportingLessonPracticeR1Tests
             "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"));
 
         Assert.Contains(
-            "LessonPracticeContractRegistry.TryResolve",
+            "LessonPracticeCapabilityResolver.TryResolve",
             portal,
             StringComparison.Ordinal);
         Assert.Contains(
