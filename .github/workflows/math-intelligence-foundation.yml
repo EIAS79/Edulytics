@@ -70,10 +70,21 @@ jobs:
         run: |
           set -euo pipefail
           python3 tools/math_intelligence/lesson_skill_resolution_audit.py --strict --write-report
-      - name: Run raw-source lesson semantic-content diagnostic
+      - uses: actions/setup-dotnet@v5.2.0
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restore effective learner-content snapshot dependencies
+        run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - name: Materialize effective learner-content snapshot
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
+            --configuration Release \
+            --no-restore \
+            --filter "FullyQualifiedName~EffectiveLessonContentSnapshotTests"
+      - name: Run effective learner semantic-content audit
         run: |
           set -euo pipefail
-          python3 tools/math_intelligence/lesson_semantic_content_audit.py --write-report
+          python3 tools/math_intelligence/lesson_semantic_content_audit.py --strict --write-report
       - name: Run fail-closed V2 generation readiness audit
         run: |
           set -euo pipefail
@@ -168,6 +179,7 @@ jobs:
             artifacts/math-intelligence/math-registry-integrity.json
             artifacts/math-intelligence/catalogue-skill-baseline.json
             artifacts/math-intelligence/lesson-skill-resolution-audit.json
+            artifacts/math-intelligence/effective-lesson-content-snapshot.json
             artifacts/math-intelligence/lesson-semantic-content-audit.json
             artifacts/math-intelligence/lesson-generation-readiness-audit.json
             artifacts/math-intelligence/supporting-practice-remediation-closure-audit.json
