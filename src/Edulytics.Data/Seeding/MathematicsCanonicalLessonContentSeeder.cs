@@ -64,16 +64,18 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         var documents = LoadEmbeddedDocuments()
             .Where(document =>
                 document.Lessons.Any(lesson =>
-                    CambridgePrimaryStage6LessonContentCorrections
-                        .IsTarget(document, lesson)))
+                    IsApprovedProductionCorrectionTarget(
+                        document,
+                        lesson)))
             .ToArray();
 
         foreach (var document in documents)
         {
             document.Lessons = document.Lessons
                 .Where(lesson =>
-                    CambridgePrimaryStage6LessonContentCorrections
-                        .IsTarget(document, lesson))
+                    IsApprovedProductionCorrectionTarget(
+                        document,
+                        lesson))
                 .ToList();
         }
 
@@ -86,6 +88,14 @@ public sealed class MathematicsCanonicalLessonContentSeeder
 
         await SeedDocumentsAsync(targeted, ct);
     }
+
+    private static bool IsApprovedProductionCorrectionTarget(
+        CanonicalLessonContentPackDocument document,
+        CanonicalLessonContentPackLesson lesson) =>
+        CambridgePrimaryStage6LessonContentCorrections
+            .IsTarget(document, lesson) ||
+        StudentFacingLessonContentCorrections
+            .IsTarget(document, lesson);
 
     public static IReadOnlyList<CanonicalLessonContentPackDocument>
         LoadEmbeddedDocuments()

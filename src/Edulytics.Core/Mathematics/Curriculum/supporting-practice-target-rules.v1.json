@@ -22,6 +22,82 @@
       }
     },
     {
+      "id": "stage3-unit-fraction-quantity-build",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:CAMBRIDGE-INTL-MATH:S3:3F-2:BUILD$"
+      ],
+      "skillId": "fractions.of_quantity",
+      "mechanic": "FRACTION_OF_QUANTITY",
+      "families": [
+        "fractions.of_quantity.build"
+      ],
+      "content": {
+        "concept": "A unit fraction has numerator 1. To find 1/n of a quantity, split the whole quantity into n equal groups. The size of one group is the unit fraction of the quantity.",
+        "workedExample": "Find 1/4 of 20 counters. Split 20 into 4 equal groups: 20 ÷ 4 = 5. One group has 5 counters, so 1/4 of 20 = 5.",
+        "solution": "Read the denominator to find how many equal groups are needed. Divide the whole quantity by that denominator. The result is one equal group, so it is the required unit fraction. Check by multiplying the answer by the denominator to rebuild the whole quantity.",
+        "commonMistake": "Do not treat the denominator as the answer. The denominator tells you how many equal groups to make; divide the whole quantity by it.",
+        "summary": "For a unit fraction 1/n of a quantity, divide the quantity by n."
+      }
+    },
+    {
+      "id": "stage3-unit-fraction-quantity-apply",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:CAMBRIDGE-INTL-MATH:S3:3F-2:APPLY$"
+      ],
+      "skillId": "fractions.of_quantity",
+      "mechanic": "FRACTION_OF_QUANTITY",
+      "families": [
+        "fractions.of_quantity.apply"
+      ],
+      "content": {
+        "concept": "Use unit fractions to solve quantity problems by identifying the whole, reading the denominator, and sharing the whole into that many equal groups.",
+        "workedExample": "A class has 24 pencils and 1/6 are blue. Find the blue pencils: 24 ÷ 6 = 4, so 1/6 of 24 is 4. Check: 6 groups of 4 make 24.",
+        "solution": "Identify the whole quantity in the problem. Use the denominator as the number of equal groups. Divide the whole by the denominator, state the result in the context, and check that repeating the equal group gives the original whole.",
+        "commonMistake": "Do not divide the wrong quantity when a problem contains more than one number. First identify which number is the whole.",
+        "summary": "In a context, find the whole, divide it into the denominator's number of equal groups, and interpret one group."
+      }
+    },
+    {
+      "id": "stage5-nonunit-fraction-quantity-build",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:CAMBRIDGE-INTL-MATH:S5:5F-1:BUILD$"
+      ],
+      "skillId": "fractions.of_quantity",
+      "mechanic": "FRACTION_OF_QUANTITY",
+      "families": [
+        "fractions.of_quantity.build"
+      ],
+      "content": {
+        "concept": "To find a non-unit fraction a/b of a quantity, first find one equal part by dividing the quantity by b, then take a of those equal parts by multiplying by a.",
+        "workedExample": "Find 3/5 of 40. First find 1/5: 40 ÷ 5 = 8. Then take 3 fifths: 8 × 3 = 24. Therefore 3/5 of 40 = 24.",
+        "solution": "Use the denominator to divide the whole quantity into equal parts. Find the value of one part, then multiply that value by the numerator. Check that the result is sensible compared with the whole and the size of the fraction.",
+        "commonMistake": "Do not multiply by the numerator before finding the size of one equal part unless you are using an equivalent correct calculation. Keep the denominator as the number of equal parts in the whole.",
+        "summary": "For a/b of a quantity: divide by b, then multiply by a."
+      }
+    },
+    {
+      "id": "stage5-nonunit-fraction-quantity-apply",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:CAMBRIDGE-INTL-MATH:S5:5F-1:APPLY$"
+      ],
+      "skillId": "fractions.of_quantity",
+      "mechanic": "FRACTION_OF_QUANTITY",
+      "families": [
+        "fractions.of_quantity.apply"
+      ],
+      "content": {
+        "concept": "Apply non-unit fractions to contextual and reasoning problems by identifying the whole quantity, finding one denominator-sized part, and then taking the required number of parts.",
+        "workedExample": "A library display has 56 books and 3/8 are science books. One eighth is 56 ÷ 8 = 7 books. Three eighths are 7 × 3 = 21 books. The remaining books are 56 − 21 = 35.",
+        "solution": "Identify the whole quantity and the requested fraction. Divide by the denominator to find one equal part, multiply by the numerator, then use the result in the context. If the problem asks for what remains, subtract the fractional amount from the whole. Check the fraction result is between 0 and the whole.",
+        "commonMistake": "Do not confuse the fractional amount with the amount left over. Calculate the requested fraction first, then perform any additional step the context asks for.",
+        "summary": "Find a/b of the whole with divide-by-b then multiply-by-a, and use that result to complete the context."
+      }
+    },
+    {
       "id": "place-value",
       "titlePatterns": [
         "place value",

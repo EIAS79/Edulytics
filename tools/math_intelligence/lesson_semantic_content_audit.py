@@ -32,6 +32,30 @@ class SemanticRule:
     worked_patterns: tuple[re.Pattern[str], ...]
 
 
+STUDENT_FACING_DEFECT_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
+    (
+        "TEACHER_AUTHORING_LANGUAGE",
+        re.compile(
+            r"\b(?:always state what each number, unit, operation or geometric property represents before calculating|"
+            r"explain each step and name the mathematical relationship being used|"
+            r"compare two possible approaches and choose the clearer one)\b",
+            re.IGNORECASE | re.DOTALL,
+        ),
+    ),
+    (
+        "GENERIC_TEMPLATE",
+        re.compile(
+            r"\b(?:read the problem and identify the quantities or properties|"
+            r"represent the situation with numbers, a diagram, a number line, an equation or a labelled shape|"
+            r"apply the relevant rule while preserving place value, units and relationships|"
+            r"calculate carefully and write the result with its meaning|"
+            r"check using an inverse operation, estimation, an alternative representation or the stated geometric properties)\b",
+            re.IGNORECASE | re.DOTALL,
+        ),
+    ),
+)
+
+
 def read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8-sig"))
 
@@ -330,6 +354,27 @@ def audit() -> dict[str, Any]:
                         "Reviewed Supporting Practice rule resolves this localized target; existing localized learner content is retained unchanged."
                     ]
 
+            effective_body = normalize_space(
+                " ".join(
+                    [
+                        explanation,
+                        key_concepts,
+                        worked,
+                        solutions,
+                    ]
+                )
+            )
+            student_facing_defects = [
+                defect_code
+                for defect_code, pattern in STUDENT_FACING_DEFECT_PATTERNS
+                if pattern.search(effective_body)
+            ]
+            if student_facing_defects:
+                findings.append(
+                    "Student-facing content contains blocked authoring/generic-template language: "
+                    + ", ".join(student_facing_defects)
+                )
+
             index = len(lessons)
             worked_hash = template_hash(worked)
             solution_hash = template_hash(solutions)
@@ -347,6 +392,7 @@ def audit() -> dict[str, Any]:
                 "baseTitle": base_title,
                 "status": status,
                 "findings": findings,
+                "studentFacingDefects": student_facing_defects,
                 "matchedRules": matched_rules,
                 "supportingPracticeRuleId": None if supporting_rule is None else supporting_rule.rule_id,
                 "contentRemediated": bool(
@@ -427,6 +473,19 @@ def audit() -> dict[str, Any]:
         if lesson["sourceType"] == "PedagogicalUnmapped"
         and lesson["status"] in {"CONTENT_WEAK", "REVIEW_REQUIRED"}
     )
+    summary["studentFacingBlockerCount"] = sum(
+        1 for lesson in lessons if lesson["studentFacingDefects"]
+    )
+    summary["teacherAuthoringLanguageCount"] = sum(
+        1
+        for lesson in lessons
+        if "TEACHER_AUTHORING_LANGUAGE" in lesson["studentFacingDefects"]
+    )
+    summary["genericTemplateCount"] = sum(
+        1
+        for lesson in lessons
+        if "GENERIC_TEMPLATE" in lesson["studentFacingDefects"]
+    )
 
     duplicate_worked_clusters.sort(
         key=lambda row: (-int(row["distinctTargetCount"]), -int(row["lessonCount"]), str(row["hash"]))
@@ -451,6 +510,17 @@ def audit() -> dict[str, Any]:
             {"target": target, "count": count}
             for target, count in weak_targets.most_common(100)
         ],
+        "studentFacingBlockers": [
+            {
+                "lessonCode": lesson["lessonCode"],
+                "packCode": lesson["packCode"],
+                "title": lesson["title"],
+                "defects": lesson["studentFacingDefects"],
+                "findings": lesson["findings"],
+            }
+            for lesson in lessons
+            if lesson["studentFacingDefects"]
+        ][:500],
         "duplicateWorkedExampleClusters": duplicate_worked_clusters[:100],
         "duplicateSolutionTemplateClusters": duplicate_solution_clusters[:100],
         "lessons": lessons,
@@ -472,7 +542,22 @@ def main() -> int:
         )
 
     print(json.dumps(report["summary"], ensure_ascii=False, indent=2))
-    if args.strict and report["summary"]["blockerCount"]:
+    if report["summary"].get("studentFacingBlockerCount", 0):
+        print(
+            json.dumps(
+                {
+                    "studentFacingBlockers":
+                        report["studentFacingBlockers"][:50]
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
+    if args.strict and (
+        report["summary"]["blockerCount"]
+        or report["summary"]["studentFacingBlockerCount"]
+        or report["summary"]["pedagogicalWeakOrReviewCount"]
+    ):
         return 2
     return 0
 
