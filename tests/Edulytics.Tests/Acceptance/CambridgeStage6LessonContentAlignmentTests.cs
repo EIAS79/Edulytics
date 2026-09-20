@@ -137,6 +137,49 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
         Assert.All(targets, lesson => Assert.Empty(lesson.OutcomeCodes));
     }
 
+
+    [Fact]
+    public void ProductionStartupCorrectionPath_IsNarrowAndIndependentOfBroadMaintenance()
+    {
+        var root = FindRoot();
+
+        var seeder = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs"));
+
+        var program = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Program.cs"));
+
+        Assert.Contains(
+            "SeedApprovedProductionCorrectionsAsync",
+            seeder,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "CambridgePrimaryStage6LessonContentCorrections",
+            seeder,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            ".IsTarget(document, lesson)",
+            seeder,
+            StringComparison.Ordinal);
+
+        var correctionCall = program.IndexOf(
+            ".SeedApprovedProductionCorrectionsAsync()",
+            StringComparison.Ordinal);
+        var broadMaintenanceGate = program.IndexOf(
+            "if (runStartupDataMaintenance)",
+            StringComparison.Ordinal);
+
+        Assert.True(correctionCall >= 0);
+        Assert.True(broadMaintenanceGate >= 0);
+        Assert.True(correctionCall < broadMaintenanceGate);
+        Assert.Contains(
+            "STARTUP_APPROVED_CONTENT_CORRECTIONS_COMPLETED",
+            program,
+            StringComparison.Ordinal);
+    }
+
     private static Edulytics.Core.Curriculum.CanonicalLessonContentPackDocument Stage6Document() =>
         MathematicsCanonicalLessonContentSeeder
             .LoadEmbeddedDocuments()
@@ -158,4 +201,19 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
                 x.CultureCode,
                 "en",
                 StringComparison.Ordinal));
+
+    private static string FindRoot()
+    {
+        var directory = new DirectoryInfo(AppContext.BaseDirectory);
+        while (directory is not null)
+        {
+            if (File.Exists(Path.Combine(directory.FullName, "Edulytics.sln")))
+                return directory.FullName;
+
+            directory = directory.Parent;
+        }
+
+        throw new DirectoryNotFoundException("Edulytics solution root not found.");
+    }
+
 }

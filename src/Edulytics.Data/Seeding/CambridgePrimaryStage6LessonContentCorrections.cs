@@ -3,7 +3,7 @@ using Edulytics.Core.Curriculum;
 namespace Edulytics.Data.Seeding;
 
 /// <summary>
-/// Narrow, versioned corrections for three Cambridge Primary Stage 6
+/// Narrow, versioned corrections for four Cambridge Primary Stage 6
 /// supporting lessons whose original Phase 29 bodies were too generic for
 /// the exact lesson skill. The official curriculum graph and outcome mapping
 /// are intentionally untouched.

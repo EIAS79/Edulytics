@@ -50,6 +50,43 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         await SeedDocumentsAsync(documents, ct);
     }
 
+    public async Task SeedApprovedProductionCorrectionsAsync(
+        CancellationToken ct = default)
+    {
+        var hasAcceptedCurriculum =
+            await _db.CurriculumPackImportStates
+                .AsNoTracking()
+                .AnyAsync(state => state.IsComplete, ct);
+
+        if (!hasAcceptedCurriculum)
+            return;
+
+        var documents = LoadEmbeddedDocuments()
+            .Where(document =>
+                document.Lessons.Any(lesson =>
+                    CambridgePrimaryStage6LessonContentCorrections
+                        .IsTarget(document, lesson)))
+            .ToArray();
+
+        foreach (var document in documents)
+        {
+            document.Lessons = document.Lessons
+                .Where(lesson =>
+                    CambridgePrimaryStage6LessonContentCorrections
+                        .IsTarget(document, lesson))
+                .ToList();
+        }
+
+        var targeted = documents
+            .Where(document => document.Lessons.Count != 0)
+            .ToArray();
+
+        if (targeted.Length == 0)
+            return;
+
+        await SeedDocumentsAsync(targeted, ct);
+    }
+
     public static IReadOnlyList<CanonicalLessonContentPackDocument>
         LoadEmbeddedDocuments()
     {
