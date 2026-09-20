@@ -112,6 +112,72 @@ public sealed class CanonicalLessonContentMaterializerTests
     }
 
     [Fact]
+    public void MaterializedCatalogue_ContainsOnlyWellFormedUnicode()
+    {
+        var failures = new List<string>();
+
+        foreach (var document in MathematicsCanonicalLessonContentSeeder
+                     .LoadEmbeddedDocuments())
+        {
+            CanonicalLessonContentMaterializer.Materialize(document);
+
+            foreach (var lesson in document.Lessons)
+            {
+                foreach (var translation in lesson.Translations)
+                {
+                    CheckWellFormed(
+                        lesson.LessonCode,
+                        translation.CultureCode,
+                        "Title",
+                        translation.Title,
+                        failures);
+                    CheckWellFormed(
+                        lesson.LessonCode,
+                        translation.CultureCode,
+                        "Explanation",
+                        translation.Explanation,
+                        failures);
+                    CheckWellFormed(
+                        lesson.LessonCode,
+                        translation.CultureCode,
+                        "KeyConceptsAndRules",
+                        translation.KeyConceptsAndRules,
+                        failures);
+                    CheckWellFormed(
+                        lesson.LessonCode,
+                        translation.CultureCode,
+                        "WorkedExamples",
+                        translation.WorkedExamples,
+                        failures);
+                    CheckWellFormed(
+                        lesson.LessonCode,
+                        translation.CultureCode,
+                        "StepByStepSolutions",
+                        translation.StepByStepSolutions,
+                        failures);
+                    CheckWellFormed(
+                        lesson.LessonCode,
+                        translation.CultureCode,
+                        "CommonMistakes",
+                        translation.CommonMistakes,
+                        failures);
+                    CheckWellFormed(
+                        lesson.LessonCode,
+                        translation.CultureCode,
+                        "QuickSummary",
+                        translation.QuickSummary,
+                        failures);
+                }
+            }
+        }
+
+        Assert.True(
+            failures.Count == 0,
+            "Malformed Unicode in materialized learner content: " +
+            string.Join(" | ", failures.Take(100)));
+    }
+
+    [Fact]
     public void ReviewedCorrectionTargetSet_IsResolvedByOneAuthority()
     {
         var targets = MathematicsCanonicalLessonContentSeeder
@@ -135,4 +201,37 @@ public sealed class CanonicalLessonContentMaterializerTests
             "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:BUILD",
             targets);
     }
+    private static void CheckWellFormed(
+        string lessonCode,
+        string culture,
+        string field,
+        string value,
+        ICollection<string> failures)
+    {
+        for (var i = 0; i < value.Length; i++)
+        {
+            var current = value[i];
+
+            if (char.IsHighSurrogate(current))
+            {
+                if (i + 1 < value.Length &&
+                    char.IsLowSurrogate(value[i + 1]))
+                {
+                    i++;
+                    continue;
+                }
+
+                failures.Add(
+                    $"{lessonCode}:{culture}:{field}:index={i}:U+{(int)current:X4}");
+                continue;
+            }
+
+            if (char.IsLowSurrogate(current))
+            {
+                failures.Add(
+                    $"{lessonCode}:{culture}:{field}:index={i}:U+{(int)current:X4}");
+            }
+        }
+    }
+
 }
