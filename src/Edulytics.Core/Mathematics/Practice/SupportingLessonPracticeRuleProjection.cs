@@ -1,5 +1,6 @@
 using System.Reflection;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Edulytics.Core.Curriculum;
 
 namespace Edulytics.Core.Mathematics.Practice;
@@ -124,7 +125,14 @@ internal static class SupportingLessonPracticeRuleProjection
     private static IEnumerable<CanonicalLessonContentPackDocument> LoadContentPacks()
     {
         var assembly = typeof(SupportingLessonPracticeRuleProjection).Assembly;
-        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+        var options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            Converters =
+            {
+                new JsonStringEnumConverter()
+            }
+        };
         foreach (var resource in assembly.GetManifestResourceNames()
                      .Where(name => name.EndsWith(".lesson-content-pack.json", StringComparison.Ordinal))
                      .OrderBy(name => name, StringComparer.Ordinal))
