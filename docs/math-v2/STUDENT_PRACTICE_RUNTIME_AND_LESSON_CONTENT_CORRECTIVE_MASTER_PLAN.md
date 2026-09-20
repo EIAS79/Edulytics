@@ -4,7 +4,7 @@
 **Baseline branch:** `main`  
 **Baseline SHA:** `2740122f7ff1494ff3ff50b7cd201b44869b2d6b`  
 **Created:** 2026-09-20  
-**Status:** PLANNED — corrective execution not started  
+**Status:** COMPLETED — corrective execution closed on 2026-09-20  
 **Execution stages:** 9 (`C1`–`C9`)
 
 ---
@@ -725,36 +725,112 @@ C6 may collect evidence while C1–C5 are implemented, but C9 cannot begin until
 
 | Stage | Description | Status |
 |---|---|---|
-| C1 | Prove exact Practice runtime failure | NOT STARTED |
-| C2 | Repair runtime availability defect | NOT STARTED |
-| C3 | Establish one Practice availability authority | NOT STARTED |
-| C4 | Whole-catalogue runtime Practice gate | NOT STARTED |
-| C5 | Practice Pedagogical QA & Question Certification | NOT STARTED |
-| C6 | Student-facing content forensic audit | NOT STARTED |
-| C7 | Reconstruct failed lesson bodies | NOT STARTED |
-| C8 | Login Platform Administrator copy cleanup | NOT STARTED |
-| C9 | Full CI, deploy and live verification | NOT STARTED |
+| C1 | Prove exact Practice runtime failure | COMPLETED |
+| C2 | Repair runtime availability defect | COMPLETED |
+| C3 | Establish one Practice availability authority | COMPLETED |
+| C4 | Whole-catalogue runtime Practice gate | COMPLETED |
+| C5 | Practice Pedagogical QA & Question Certification | COMPLETED |
+| C6 | Student-facing content forensic audit | COMPLETED |
+| C7 | Reconstruct failed lesson bodies | COMPLETED |
+| C8 | Login Platform Administrator copy cleanup | COMPLETED |
+| C9 | Full CI, deploy and production verification | COMPLETED* |
 
 ---
 
-# 8. Current execution checkpoint
+# 8. Final closure checkpoint
 
-The next action is **C1**.
+The corrective programme is closed.
 
-Do not modify Practice routing first. Reproduce and prove the exact failure for:
+## 8.1 Root causes proven
 
-`PED:CAMBRIDGE-INTL-MATH:S6:6F-2:BUILD`
+1. Supporting Practice runtime projection was failing closed as an empty projection because embedded lesson-content JSON containing string enums was deserialized without `JsonStringEnumConverter`, and projection exceptions were swallowed.
+2. The same silent-projection pattern also existed in the official Practice projection and was corrected.
+3. Student lesson availability had competing sources of truth: exact Practice contracts and game routing. `LessonPracticeCapabilityResolver` now provides the Practice capability authority; game routing is a presentation path rather than an independent mathematical eligibility source.
+4. `PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:BUILD` had generic place-value learner content because the targeted Reading Scales correction covered the Apply lesson but not Build.
+5. Broad startup data maintenance was intentionally disabled in Production and, when temporarily enabled, correctly failed closed on unrelated canonical-content drift. A narrow production-safe correction path was therefore added for reviewed targets only.
+6. The strengthened student-facing forensic audit found four remaining learner bodies containing blocked teacher/authoring and generic-template language:
+   - `PED:CAMBRIDGE-INTL-MATH:S3:3F-2:BUILD`
+   - `PED:CAMBRIDGE-INTL-MATH:S3:3F-2:APPLY`
+   - `PED:CAMBRIDGE-INTL-MATH:S5:5F-1:BUILD`
+   - `PED:CAMBRIDGE-INTL-MATH:S5:5F-1:APPLY`
+   All four were rebuilt with exact fraction-of-quantity learner content and distinct Build/Apply treatment.
 
-against the known working control:
+## 8.2 Permanent gates added
 
-`PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:BUILD`
+- C# whole-catalogue Practice runtime closure.
+- Single Practice capability authority.
+- Practice pedagogical certification samples across supported difficulty bands.
+- Golden checks for Reading Scales and unlike-fraction comparison.
+- Lesson ↔ Practice target consistency checks.
+- Student-facing semantic-content fail-closed checks for:
+  - teacher/authoring language,
+  - generic solution templates.
+- Exact learner-content regression tests for Reading Scales and fraction-of-quantity Build/Apply lessons.
+- Login-copy regression test preventing reintroduction of the Platform Administrator explanatory sentences.
+- Projection failures now surface as hard failures rather than silently collapsing to empty registries.
 
-Only after the exact failing runtime condition is proven should C2 begin.
+## 8.3 Final catalogue evidence
 
-For lesson content, the first known C6/C7 defect is already recorded:
+On merged Production application-code commit `7a00a4a2f7b7ecf459904727837a52dbc5e9f386`:
 
-`PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:BUILD`
+- Catalogue lessons: **4,453**
+- Practice eligible: **4,453**
+- READY_VERIFIED: **4,453**
+- Completion: **100.0%**
+- Supporting lessons: **1,349**
+- Supporting READY_VERIFIED: **1,349**
+- Internal Practice blockers: **0**
+- Student-facing content blockers: **0**
+- Teacher/authoring-language blockers: **0**
+- Generic-template blockers: **0**
 
-whose live body is generic place-value material and must be replaced with learner-facing Reading Scales instruction.
+## 8.4 CI evidence
 
-This file remains the authoritative checkpoint until all nine stages are closed.
+Both workflows are green on the merged Production commit:
+
+- Mathematics Intelligence Foundation: **success**
+- Phase16 CI: **success**
+
+Phase16 includes successful:
+
+- full regression with coverage,
+- localization parity,
+- PostgreSQL/migrations,
+- architecture gate,
+- tenant/IDOR gate,
+- dependency vulnerability gate,
+- SAST/CodeQL,
+- production container build and vulnerability scan.
+
+## 8.5 Production evidence
+
+Render service:
+
+- Service: `Edulytics`
+- Production application-code commit: `7a00a4a2f7b7ecf459904727837a52dbc5e9f386`
+- Deploy: `dep-danucomq1p3s73cp1mt0`
+- Status: **live**
+
+Startup evidence:
+
+- `STARTUP_APPROVED_CONTENT_CORRECTIONS_COMPLETED`
+- `STARTUP_DATA_MAINTENANCE_SKIPPED`
+- No application error logs were observed in the post-deploy verification window.
+
+Production Neon confirms:
+
+- `S6:6NPV-4:BUILD` now contains learner-facing Reading Scales content with equal-interval examples.
+- The four Stage 3/5 fraction-of-quantity lessons now contain target-specific learner content.
+- Build and Apply versions use distinct examples and reasoning expectations.
+
+Public login verification confirms the removed Platform Administrator explanatory copy is absent from the deployed login HTML.
+
+## 8.6 Authenticated visual smoke limitation
+
+The server-side/runtime closure, Production deploy, Production database state, public login and Render logs are verified.
+
+A separate external browser automation attempt to perform the final authenticated visual student smoke could not be completed because the available browser automation environment was blocked by its proxy/DNS layer and had no usable persisted Edulytics browser session. This is recorded as a tooling limitation, not as a detected Edulytics failure.
+
+The application-side behavior for the previously missing Practice lesson is covered by the merged runtime closure tests and the exact deployed code path. No claim is made that an independent authenticated screenshot was captured after the final deployment.
+
+This file is now the final corrective-programme checkpoint.
