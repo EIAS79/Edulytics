@@ -16,7 +16,7 @@ internal static class OfficialLessonPracticeRuleProjection
     private const string FamilyResource =
         "Edulytics.Core.Mathematics.Generation.question-family-registry.v1.json";
 
-    public const string ContractVersion = "official-outcome-rules-v2";
+    public const string ContractVersion = "official-outcome-rules-v3";
 
     public static IReadOnlyList<LessonPracticeContract> Load()
     {
@@ -51,20 +51,72 @@ internal static class OfficialLessonPracticeRuleProjection
             var projected = new List<LessonPracticeContract>();
             foreach (var pack in LoadContentPacks())
             {
-                // Current Polish Phase-29 lesson nodes are documented
-                // OfficialFrameworkOnly fallback identities with broad repeated
-                // domain content. They require explicit eligibility evidence or
-                // later exact source remediation; title rules may not promote them.
-                if (string.Equals(
-                        pack.PackCode,
-                        "PL-NATIONAL-MATH",
-                        StringComparison.Ordinal))
-                {
-                    continue;
-                }
-
                 foreach (var lesson in pack.Lessons)
                 {
+                    if (string.Equals(
+                            pack.PackCode,
+                            "PL-NATIONAL-MATH",
+                            StringComparison.Ordinal))
+                    {
+                        if (lesson.OutcomeCodes.Count == 0)
+                            continue;
+
+                        var polishMappings = lesson.OutcomeCodes
+                            .Select(code =>
+                                PolishOutcomePracticeMapRegistry.TryResolve(
+                                    code,
+                                    out var mapping)
+                                    ? mapping
+                                    : null)
+                            .ToArray();
+
+                        if (!polishMappings.All(x => x is not null))
+                            continue;
+
+                        var polishRules = polishMappings
+                            .Cast<PolishOutcomePracticeMapping>()
+                            .SelectMany(x => x.TargetRules)
+                            .DistinctBy(x => x.Id, StringComparer.Ordinal)
+                            .ToArray();
+
+                        if (polishRules.Length == 0 ||
+                            !polishRules.All(rule =>
+                                IsRuntimeReadyRule(
+                                    rule,
+                                    skillIds,
+                                    familyById)))
+                        {
+                            continue;
+                        }
+
+                        var polishSkills = polishRules
+                            .Select(rule => rule.SkillId)
+                            .Distinct(StringComparer.Ordinal)
+                            .OrderBy(value => value, StringComparer.Ordinal)
+                            .ToArray();
+                        var polishFamilies = polishRules
+                            .SelectMany(rule => rule.Families)
+                            .Distinct(StringComparer.Ordinal)
+                            .OrderBy(value => value, StringComparer.Ordinal)
+                            .ToArray();
+                        var polishMechanic = polishRules.Length == 1
+                            ? polishRules[0].Mechanic
+                            : "POLISH_OFFICIAL_MULTI_TARGET";
+
+                        projected.Add(new LessonPracticeContract(
+                            lesson.LessonCode,
+                            polishSkills[0],
+                            polishMechanic,
+                            polishFamilies,
+                            "PolishOfficialOutcomeMap",
+                            "READY_VERIFIED",
+                            ContractVersion)
+                        {
+                            SkillIds = polishSkills
+                        });
+                        continue;
+                    }
+
                     if (lesson.OutcomeCodes.Count == 0)
                         continue;
 
