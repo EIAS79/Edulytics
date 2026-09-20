@@ -69,7 +69,7 @@ public sealed class LessonPracticeRuntimeClosureTests
                         "catalogue-runtime-closure",
                         lesson.LessonCode,
                         contract.AllowedQuestionFamilies,
-                        ExactSkillQuestionDifficulty.MyLevel,
+                        ExactSkillQuestionDifficulty.Standard,
                         1,
                         seed++,
                         []));
