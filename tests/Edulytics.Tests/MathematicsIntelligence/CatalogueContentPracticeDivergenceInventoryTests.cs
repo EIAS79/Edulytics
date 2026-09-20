@@ -37,7 +37,7 @@ public sealed class CatalogueContentPracticeDivergenceInventoryTests
 
                 var route = GameLessonRouteResolver.Resolve(
                     lesson.LessonCode,
-                    lesson.UnitTitle,
+                    string.Empty,
                     title,
                     context,
                     supporting,
