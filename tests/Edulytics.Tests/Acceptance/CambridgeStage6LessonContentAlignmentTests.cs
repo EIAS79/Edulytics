@@ -156,15 +156,15 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
             seeder,
             StringComparison.Ordinal);
         Assert.Contains(
-            "CambridgePrimaryStage6LessonContentCorrections",
-            seeder,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "StudentFacingLessonContentCorrections",
+            "CanonicalLessonContentMaterializer",
             seeder,
             StringComparison.Ordinal);
         Assert.Contains(
             "IsApprovedProductionCorrectionTarget",
+            seeder,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            ".IsReviewedCorrectionTarget(document, lesson)",
             seeder,
             StringComparison.Ordinal);
 
