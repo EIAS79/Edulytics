@@ -78,9 +78,9 @@ public sealed class StudentPracticeController(
 
         var lesson = workspace.Lessons.SingleOrDefault(x => x.LessonId == lessonId);
         if (lesson is null ||
-            !LessonPracticeContractRegistry.TryResolve(lesson.LessonCode, out var contract) ||
-            contract is null ||
-            !string.Equals(contract.Readiness, "READY_VERIFIED", StringComparison.Ordinal))
+            !LessonPracticeCapabilityResolver.TryResolve(
+                lesson.LessonCode,
+                out _))
         {
             return NotFound();
         }
@@ -121,8 +121,13 @@ public sealed class StudentPracticeController(
             return NotFound();
 
         var lesson = workspace.Lessons.SingleOrDefault(x => x.LessonId == lessonId);
-        if (lesson is null)
+        if (lesson is null ||
+            !LessonPracticeCapabilityResolver.TryResolve(
+                lesson.LessonCode,
+                out _))
+        {
             return NotFound();
+        }
 
         var detailResult = await lessonContent.GetPublishedForStudentAsync(
             actorId,
@@ -152,8 +157,13 @@ public sealed class StudentPracticeController(
             return NotFound();
 
         var lesson = workspace.Lessons.SingleOrDefault(x => x.LessonId == lessonId);
-        if (lesson is null)
+        if (lesson is null ||
+            !LessonPracticeCapabilityResolver.TryResolve(
+                lesson.LessonCode,
+                out _))
+        {
             return NotFound();
+        }
 
         var detailResult = await lessonContent.GetPublishedForStudentAsync(
             actorId,
@@ -207,6 +217,13 @@ public sealed class StudentPracticeController(
             cancellationToken);
         if (detailResult.Value is null)
             return detailResult.Error == LessonContentErrorCode.AccessDenied ? Forbid() : NotFound();
+
+        if (!LessonPracticeCapabilityResolver.TryResolve(
+                lesson.LessonCode,
+                out _))
+        {
+            return NotFound();
+        }
 
         var route = ResolveLessonRoute(lesson, detailResult.Value);
         if (!route.IsPlayable ||
