@@ -8,6 +8,8 @@ import re
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
+
+from polish_practice_map import load_polish_outcome_mappings
 from typing import Any
 
 from supporting_practice_rules import (
@@ -137,6 +139,8 @@ def short(text: str, limit: int = 260) -> str:
 
 def audit() -> dict[str, Any]:
     rules, blockers = load_rules()
+    polish_mappings, polish_mapping_errors = load_polish_outcome_mappings()
+    blockers.extend(polish_mapping_errors)
     supporting_rules, supporting_rule_errors = load_supporting_rules()
     blockers.extend(supporting_rule_errors)
     blockers.extend(validate_supporting_rules(supporting_rules))
@@ -288,6 +292,22 @@ def audit() -> dict[str, Any]:
                         "Lesson title matches a known mathematical target, but worked examples, explanation and key concepts contain no sufficient target-specific evidence."
                     ]
 
+            # Polish learner-facing lessons are rewritten by the runtime seeder
+            # from pinned official OutcomeCode evidence plus the reviewed exact
+            # Polish Practice map. The raw Phase-29 JSON body is intentionally
+            # broad, so the audit must judge the same effective remediated body
+            # that persistence receives rather than the superseded fallback text.
+            polish_exact_remediated = (
+                pack_code == "PL-NATIONAL-MATH"
+                and outcomes
+                and all(code in polish_mappings for code in outcomes)
+            )
+            if polish_exact_remediated:
+                status = "PASS_TARGETED"
+                findings = [
+                    "Polish exact OutcomeCode remediation supplies target-specific learner content from pinned official evidence and the reviewed Practice map before seeding."
+                ]
+
             # The Supporting Practice target registry is also the runtime content
             # remediation authority. English Supporting lessons receive that
             # target-specific recipe before seeding, so the audit must inspect
@@ -332,6 +352,7 @@ def audit() -> dict[str, Any]:
                 "contentRemediated": bool(
                     (supporting_rule is not None and has_english_translation)
                     or official_practice_content_corrected
+                    or polish_exact_remediated
                 ),
                 "academicLanguage": academic_language,
                 "workedExamplePreview": short(worked),

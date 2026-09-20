@@ -17,6 +17,7 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
       - '.github/workflows/math-intelligence-foundation.yml'
       - 'docs/math-v2/MATHEMATICS_PRACTICE_COMPLETION_MASTER_PLAN.md'
+      - 'docs/math-v2/POLISH_1569_PRACTICE_REMEDIATION_MASTER_PLAN.md'
   push:
     branches:
       - main
@@ -33,6 +34,7 @@ on:
       - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
       - '.github/workflows/math-intelligence-foundation.yml'
       - 'docs/math-v2/MATHEMATICS_PRACTICE_COMPLETION_MASTER_PLAN.md'
+      - 'docs/math-v2/POLISH_1569_PRACTICE_REMEDIATION_MASTER_PLAN.md'
   workflow_dispatch:
 
 permissions:
@@ -43,6 +45,19 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7.0.1
+      - name: Install Polish official-source audit dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check --quiet beautifulsoup4 pypdf
+      - name: Reconstruct Polish official Outcome evidence
+        run: |
+          set -euo pipefail
+          python3 tools/math_intelligence/polish_outcome_source_audit.py --strict --write-report
+      - name: Upload Polish official Outcome evidence
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: polish-outcome-source-evidence-${{ github.sha }}
+          path: artifacts/math-intelligence/pl-outcome-source-evidence.json
+          retention-days: 14
       - name: Run Mathematics V2 registry integrity audit
         run: |
           set -euo pipefail
@@ -88,7 +103,7 @@ jobs:
               f"- Catalogue lessons: **{s['lessonCount']:,}**",
               f"- Practice-eligible: **{s['practiceEligibleLessonCount']:,}**",
               f"- READY_VERIFIED: **{s['READY_VERIFIED']:,}**",
-              f"- Non-standalone with evidence: **{s['NON_STANDALONE_WITH_EVIDENCE']:,}**",
+              f"- Non-standalone with evidence: **{s.get('NON_STANDALONE_WITH_EVIDENCE', 0):,}**",
               f"- Practice-eligible blocked: **{s.get('practiceEligibleBlockedCount', 0):,}**",
               f"- Completion: **{s['completionPercent']:.2f}%**",
               f"- Internal matrix blockers: **{s['internalBlockerCount']:,}**",
@@ -96,6 +111,10 @@ jobs:
           with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as handle:
               handle.write("\n".join(lines) + "\n")
           PY
+      - name: Run Polish 1,569 final Practice closure audit
+        run: |
+          set -euo pipefail
+          python3 tools/math_intelligence/polish_practice_final_closure_audit.py --strict --write-report
       - name: Run final Practice programme closure audit
         run: |
           set -euo pipefail
@@ -145,6 +164,7 @@ jobs:
         with:
           name: math-intelligence-catalogue-baseline-${{ github.sha }}
           path: |
+            artifacts/math-intelligence/pl-outcome-source-evidence.json
             artifacts/math-intelligence/math-registry-integrity.json
             artifacts/math-intelligence/catalogue-skill-baseline.json
             artifacts/math-intelligence/lesson-skill-resolution-audit.json
@@ -162,6 +182,7 @@ jobs:
             artifacts/math-intelligence/practice-readiness-by-curriculum.json
             artifacts/math-intelligence/practice-readiness-by-domain.json
             artifacts/math-intelligence/practice-readiness-by-level.json
+            artifacts/math-intelligence/pl-1569-final-closure-audit.json
             artifacts/math-intelligence/practice-programme-final-closure-audit.json
             artifacts/math-intelligence/stage17-grade1-6-closure-audit.json
             artifacts/math-intelligence/stage18-practice-closure-audit.json

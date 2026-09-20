@@ -272,6 +272,7 @@ def audit() -> dict[str, Any]:
                 "OfficialReviewedUniqueTitleRule",
                 "OfficialReviewedCanonicalEvidence",
                 "OfficialOutcomeRule",
+                "PolishOfficialOutcomeMap",
             }
         )
         readiness, reasons = decide(

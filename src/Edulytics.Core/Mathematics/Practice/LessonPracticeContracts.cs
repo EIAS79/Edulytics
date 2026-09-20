@@ -694,6 +694,13 @@ public static class LessonPracticeContractRegistry
             byLesson.TryAdd(projected.LessonCode, projected);
         }
 
+        foreach (var projected in PolishLessonPracticeContractProjection.Load())
+        {
+            // Polish learner-facing lessons are authorized only by the reviewed
+            // exact OutcomeCode map. Generated Phase-29 titles are never used.
+            byLesson.TryAdd(projected.LessonCode, projected);
+        }
+
         foreach (var projected in OfficialLessonPracticeRuleProjection.Load())
         {
             // Official lessons may be promoted only by reviewed anchored

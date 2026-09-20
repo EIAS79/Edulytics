@@ -216,11 +216,22 @@ public sealed class SupportingLessonPracticeR11R12Tests
     }
 
     [Fact]
-    public void R7PromotionRaisesRuntimeExactContractCountTo304()
+    public void R7BaselineContractsRemainAvailableAlongsidePolishPromotion()
     {
+        var contracts =
+            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.All;
+
+        Assert.True(
+            contracts.Count >= 304,
+            $"Expected the historical R7 baseline of at least 304 exact contracts; actual={contracts.Count}.");
+
         Assert.Equal(
-            304,
-            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.All.Count);
+            1569,
+            contracts.Count(x =>
+                string.Equals(
+                    x.SourceType,
+                    "PolishOfficialOutcomeMap",
+                    StringComparison.Ordinal)));
     }
 
     [Theory]
