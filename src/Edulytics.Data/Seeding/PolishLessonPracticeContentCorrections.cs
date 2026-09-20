@@ -172,12 +172,35 @@ public static partial class PolishLessonPracticeContentCorrections
             .TrimEnd('.', ';');
 
         if (value.Length > 180)
-            value = value[..177].TrimEnd() + "…";
+            value = TruncateWithoutSplittingSurrogatePair(
+                    value,
+                    177)
+                .TrimEnd() + "…";
 
         if (value.Length == 0)
             return "Cel matematyczny zgodny z wymaganiem programu";
 
         return char.ToUpperInvariant(value[0]) + value[1..];
+    }
+
+    private static string TruncateWithoutSplittingSurrogatePair(
+        string value,
+        int maxCodeUnits)
+    {
+        if (value.Length <= maxCodeUnits)
+            return value;
+
+        var length = maxCodeUnits;
+
+        if (length > 0 &&
+            length < value.Length &&
+            char.IsHighSurrogate(value[length - 1]) &&
+            char.IsLowSurrogate(value[length]))
+        {
+            length--;
+        }
+
+        return value[..length];
     }
 
     private static string Humanize(string ruleId) =>
