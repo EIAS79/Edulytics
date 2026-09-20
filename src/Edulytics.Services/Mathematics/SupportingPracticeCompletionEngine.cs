@@ -1036,14 +1036,57 @@ internal static class SupportingPracticeCompletionEngine
 
     private static Problem MultiStep(Random r, int s)
     {
-        var x = r.Next(2, 10 + s * 3);
+        var mode = r.Next(0, 4);
         var a = r.Next(2, 5 + s);
         var b = r.Next(1, 8 + s * 2);
-        var total = a * x + b;
-        return P("supporting.reasoning.multistep",
-            $"A quantity x is multiplied by {a} and then {b} is added to give {total}. Find x.",
-            "Translate the steps into ax+b=total, undo addition, then undo multiplication and substitute back to check.",
-            ("x", x), ("a", a), ("b", b), ("total", total));
+        var x = r.Next(2, 10 + s * 3);
+
+        return mode switch
+        {
+            0 =>
+                P(
+                    "supporting.reasoning.multistep",
+                    $"A quantity x is multiplied by {a} and then {b} is added to give {a * x + b}. Find x.",
+                    "Model the relationship as ax+b=total. Undo the addition first, then undo the multiplication, and substitute back to check.",
+                    ("mode", mode),
+                    ("x", x),
+                    ("a", a),
+                    ("b", b),
+                    ("total", a * x + b)),
+
+            1 =>
+                P(
+                    "supporting.reasoning.multistep",
+                    $"A quantity x is increased by {b}. The result is then multiplied by {a} to give {a * (x + b)}. Find x.",
+                    "Model the relationship as a(x+b)=total. Undo the multiplication first, then undo the addition, and substitute back to check.",
+                    ("mode", mode),
+                    ("x", x),
+                    ("a", a),
+                    ("b", b),
+                    ("total", a * (x + b))),
+
+            2 =>
+                P(
+                    "supporting.reasoning.multistep",
+                    $"{a} times a quantity x is {b} greater than {a * x - b}. Find x.",
+                    "Translate 'b greater than' carefully: ax = stated value + b. Reconstruct the multiplicative relationship, then divide by the multiplier and check both quantities.",
+                    ("mode", mode),
+                    ("x", x),
+                    ("a", a),
+                    ("b", b),
+                    ("total", a * x - b)),
+
+            _ =>
+                P(
+                    "supporting.reasoning.multistep",
+                    $"A quantity x is shared equally into {a} parts. One part plus {b} equals {x / a + b}. Find x.",
+                    "Let one equal part be x/a. Undo the addition, then multiply by the number of equal parts to rebuild the whole quantity.",
+                    ("mode", mode),
+                    ("x", x - x % a),
+                    ("a", a),
+                    ("b", b),
+                    ("total", (x - x % a) / a + b))
+        };
     }
 
     private static Problem VerifyIdentity(Random r, int s)
