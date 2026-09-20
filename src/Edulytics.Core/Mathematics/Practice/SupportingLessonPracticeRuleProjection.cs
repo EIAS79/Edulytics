@@ -89,9 +89,21 @@ internal static class SupportingLessonPracticeRuleProjection
                 }
             }
 
-            return projected
+            var duplicateLessonCodes = projected
                 .GroupBy(x => x.LessonCode, StringComparer.Ordinal)
-                .Select(group => group.Single())
+                .Where(group => group.Count() > 1)
+                .Select(group => $"{group.Key} ({group.Count()})")
+                .OrderBy(value => value, StringComparer.Ordinal)
+                .ToArray();
+
+            if (duplicateLessonCodes.Length != 0)
+            {
+                throw new InvalidOperationException(
+                    "Duplicate Supporting Practice projection LessonCodes: " +
+                    string.Join(", ", duplicateLessonCodes));
+            }
+
+            return projected
                 .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
                 .ToArray();
         }
