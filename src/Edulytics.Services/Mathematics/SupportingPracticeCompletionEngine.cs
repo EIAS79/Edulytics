@@ -1038,8 +1038,14 @@ internal static class SupportingPracticeCompletionEngine
     {
         var mode = r.Next(0, 4);
         var a = r.Next(2, 5 + s);
-        var b = r.Next(1, 8 + s * 2);
         var x = r.Next(2, 10 + s * 3);
+        var b = r.Next(
+            1,
+            Math.Max(
+                2,
+                Math.Min(
+                    8 + s * 2,
+                    a * x)));
 
         return mode switch
         {
@@ -1077,16 +1083,30 @@ internal static class SupportingPracticeCompletionEngine
                     ("total", a * x - b)),
 
             _ =>
-                P(
-                    "supporting.reasoning.multistep",
-                    $"A quantity x is shared equally into {a} parts. One part plus {b} equals {x / a + b}. Find x.",
-                    "Let one equal part be x/a. Undo the addition, then multiply by the number of equal parts to rebuild the whole quantity.",
-                    ("mode", mode),
-                    ("x", x - x % a),
-                    ("a", a),
-                    ("b", b),
-                    ("total", (x - x % a) / a + b))
+                BuildSharedPartsRelationship(r, s, a, b, mode)
         };
+    }
+
+    private static Problem BuildSharedPartsRelationship(
+        Random r,
+        int s,
+        int parts,
+        int added,
+        int mode)
+    {
+        var onePart = r.Next(2, 8 + s * 2);
+        var whole = parts * onePart;
+        var total = onePart + added;
+
+        return P(
+            "supporting.reasoning.multistep",
+            $"A quantity x is shared equally into {parts} parts. One part plus {added} equals {total}. Find x.",
+            "Let one equal part be x divided by the number of parts. Undo the addition to recover one part, then multiply by the number of equal parts to rebuild the whole quantity.",
+            ("mode", mode),
+            ("x", whole),
+            ("a", parts),
+            ("b", added),
+            ("total", total));
     }
 
     private static Problem VerifyIdentity(Random r, int s)
