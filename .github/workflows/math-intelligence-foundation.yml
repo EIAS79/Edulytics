@@ -211,3 +211,11 @@ jobs:
             --configuration Release \
             --no-restore \
             --filter "FullyQualifiedName~MathematicsIntelligence"
+      - name: Upload catalogue content and Practice divergence inventory
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: catalogue-content-practice-divergence-${{ github.sha }}
+          path: artifacts/math-intelligence/catalogue-content-practice-divergence.json
+          if-no-files-found: ignore
+          retention-days: 14
