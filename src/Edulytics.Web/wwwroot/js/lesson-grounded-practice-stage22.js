@@ -31,7 +31,7 @@
     '<section class="gw-game gw-universal" data-stage22-exact-game>' +
       '<header class="gw-hud">' +
         '<div class="gw-brand"><span class="gw-brand-mark">◆</span><span><strong>' +
-          esc(t('SERVER-VERIFIED PRACTICE', 'ĆWICZENIE WERYFIKOWANE NA SERWERZE', 'تدريب متحقق منه على الخادم')) +
+          esc(t('EDULYTICS PRACTICE', 'ĆWICZENIA EDULYTICS', 'تدريب EDULYTICS')) +
         '</strong><small>' + esc(unitTitle) + '</small></span></div>' +
         '<div class="gw-hud-right"><div class="gw-pill">★ <span data-score>0</span></div><div class="gw-pill"><span data-round>1 / 8</span></div></div>' +
       '</header>' +
@@ -40,8 +40,8 @@
         '<div class="gw-mission"><span>' + esc(t('YOUR MISSION', 'TWOJE ZADANIE', 'مهمتك')) + '</span><strong data-question></strong><small data-family></small></div>' +
         '<div class="gw-runtime-board" data-board></div>' +
       '</main>' +
-      '<div class="gw-eddy"><img src="/images/game/v9/eddy-hint.webp" alt="Eddy"><div><span>EDDY</span><p data-eddy></p></div></div>' +
-      '<div class="gw-complete" data-complete hidden><div class="gw-complete-card"><img src="/images/game/v9/eddy-hint.webp" alt="Eddy"><p>' +
+      '<div class="gw-eddy"><img src="/images/public/edulaytiks-character.png?v=43" alt="Edulytics character"><div><span>EDULYTICS</span><p data-eddy></p></div></div>' +
+      '<div class="gw-complete" data-complete hidden><div class="gw-complete-card"><img src="/images/public/edulaytiks-character.png?v=43" alt="Edulytics character"><p>' +
         esc(lessonTitle) +
         '</p><h2>' + esc(t('Lesson practice complete!', 'Ćwiczenie ukończone!', 'اكتمل تدريب الدرس!')) +
         '</h2><strong data-final></strong><br><button class="gw-primary" type="button" data-replay>' +
@@ -126,7 +126,7 @@
 
       state.current = round;
       question.textContent = round.prompt;
-      family.textContent = round.skillId + ' · ' + round.questionFamily;
+      family.textContent = unitTitle;
       eddy.textContent = round.hint;
       state.locked = false;
       renderChoices(round);
