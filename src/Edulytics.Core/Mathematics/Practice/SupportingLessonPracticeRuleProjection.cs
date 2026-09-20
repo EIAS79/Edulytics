@@ -132,7 +132,21 @@ internal static class SupportingLessonPracticeRuleProjection
             using var stream = assembly.GetManifestResourceStream(resource);
             if (stream is null)
                 continue;
-            var document = JsonSerializer.Deserialize<CanonicalLessonContentPackDocument>(stream, options);
+
+            CanonicalLessonContentPackDocument? document;
+            try
+            {
+                document = JsonSerializer.Deserialize<CanonicalLessonContentPackDocument>(
+                    stream,
+                    options);
+            }
+            catch (JsonException ex)
+            {
+                throw new InvalidOperationException(
+                    $"Invalid embedded canonical lesson-content pack {resource}: {ex.Message}",
+                    ex);
+            }
+
             if (document is not null)
                 yield return document;
         }
