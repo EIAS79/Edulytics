@@ -104,10 +104,13 @@
     }
 
     LessonPracticeInteractionContract? interaction = null;
-    if (currentQuestion is not null)
+    var generationFamily =
+        currentQuestion?.GenerationFamily;
+
+    if (!string.IsNullOrWhiteSpace(generationFamily))
     {
         LessonPracticeInteractionRegistry.TryResolve(
-            currentQuestion.GenerationFamily,
+            generationFamily,
             out interaction);
     }
 
