@@ -7,7 +7,7 @@
     if (mechanic !== 'VOLUME_BUILD' && mechanic !== 'SURFACE_AREA_BUILD') return;
 
     var locale = root.getAttribute('data-lesson-language') || 'en';
-    var guide = '/images/game/v9/eddy-guide.webp';
+    var guide = '/images/public/edulaytiks-character.png?v=43';
     var isSurface = mechanic === 'SURFACE_AREA_BUILD';
     var state = { round: 0, rounds: 8, score: 0, soundOn: true, locked: false, timer: null };
 
@@ -17,11 +17,11 @@
     function narrate(text) { if(!state.soundOn||!window.speechSynthesis||!window.SpeechSynthesisUtterance)return; try{window.speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(text);u.lang=locale==='pl'?'pl-PL':(locale==='ar'?'ar-AE':'en-GB');u.rate=.92;u.pitch=1.1;window.speechSynthesis.speak(u);}catch(e){} }
 
     root.innerHTML = '<section class="gw-game gw-solid-game">' +
-        '<header class="gw-hud"><div class="gw-brand"><span class="gw-brand-mark">▱</span><span><strong>'+t('SOLID GEOMETRY LAB','LABORATORIUM BRYŁ','مختبر المجسمات')+'</strong><small>'+t('Build, inspect, calculate','Buduj, oglądaj, obliczaj','ابنِ وافحص واحسب')+'</small></span></div><div class="gw-hud-right"><div class="gw-pill">★ <span data-score>0</span></div><div class="gw-pill" data-round>1 / 8</div><button class="gw-icon" data-sound>🔊</button><button class="gw-icon" data-full>⛶</button></div></header>' +
+        '<header class="gw-hud"><div class="gw-brand"><span class="gw-brand-mark">▱</span><span><strong>'+t('EDULYTICS PRACTICE','ĆWICZENIA EDULYTICS','تدريب EDULYTICS')+'</strong><small>'+t('Build, inspect, calculate','Buduj, oglądaj, obliczaj','ابنِ وافحص واحسب')+'</small></span></div><div class="gw-hud-right"><div class="gw-pill">★ <span data-score>0</span></div><div class="gw-pill" data-round>1 / 8</div><button class="gw-icon" data-sound>🔊</button><button class="gw-icon" data-full>⛶</button></div></header>' +
         '<div class="gw-progress"><span data-progress></span></div>' +
         '<main class="gw-stage"><div class="gw-mission"><span>'+t('YOUR MISSION','TWOJE ZADANIE','مهمتك')+'</span><strong data-question></strong><small data-sub></small></div><div data-board></div></main>' +
-        '<div class="gw-eddy"><img src="'+guide+'" alt="Eddy"><div><span>EDDY</span><p data-eddy></p></div></div>' +
-        '<div class="gw-complete" data-complete hidden><div class="gw-complete-card"><img src="'+guide+'" alt="Eddy"><p>'+t('ADVENTURE COMPLETE','MISJA UKOŃCZONA','اكتملت المهمة')+'</p><h2>'+t('Solid geometry mastered!','Bryły opanowane!','أتقنت المجسمات!')+'</h2><p data-final></p><button class="gw-primary" data-replay>'+t('Play again','Zagraj ponownie','العب مرة أخرى')+'</button></div></div>' +
+        '<div class="gw-eddy"><img src="'+guide+'" alt="Edulytics character"><div><span>EDULYTICS</span><p data-eddy></p></div></div>' +
+        '<div class="gw-complete" data-complete hidden><div class="gw-complete-card"><img src="'+guide+'" alt="Edulytics character"><p>'+t('ADVENTURE COMPLETE','MISJA UKOŃCZONA','اكتملت المهمة')+'</p><h2>'+t('Solid geometry mastered!','Bryły opanowane!','أتقنت المجسمات!')+'</h2><p data-final></p><button class="gw-primary" data-replay>'+t('Play again','Zagraj ponownie','العب مرة أخرى')+'</button></div></div>' +
         '</section>';
 
     var game=root.querySelector('.gw-game'),board=root.querySelector('[data-board]'),q=root.querySelector('[data-question]'),sub=root.querySelector('[data-sub]'),eddy=root.querySelector('[data-eddy]'),score=root.querySelector('[data-score]'),round=root.querySelector('[data-round]'),progress=root.querySelector('[data-progress]'),complete=root.querySelector('[data-complete]');
