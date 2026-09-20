@@ -312,7 +312,7 @@ internal static class FoundationPracticeEngine
             1 => "cuboid",
             _ => "triangular prism"
         };
-        var prompt = variant % 3 switch
+        var prompt = (variant % 3) switch
         {
             0 => $"How many flat faces does a {name} have?",
             1 => $"A solid model is a {name}. Count all of its flat faces.",
@@ -349,21 +349,21 @@ internal static class FoundationPracticeEngine
         var variant = r.Next(0, 8);
         var objectName = context switch
         {
-            0 => variant % 4 switch
+            0 => (variant % 4) switch
             {
                 0 => "the length of a book",
                 1 => "the width of a desk",
                 2 => "the height of a plant",
                 _ => "the length of a pencil"
             },
-            1 => variant % 4 switch
+            1 => (variant % 4) switch
             {
                 0 => "the mass of a bag of apples",
                 1 => "the mass of a school bag",
                 2 => "the mass of a parcel",
                 _ => "the mass of a watermelon"
             },
-            _ => variant % 4 switch
+            _ => (variant % 4) switch
             {
                 0 => "the volume of water in a jug",
                 1 => "the amount of juice in a bottle",
@@ -429,7 +429,7 @@ internal static class FoundationPracticeEngine
         int[] values = [1, 2, 5, 10, 20, 50];
         var value = values[r.Next(values.Length)];
         var variant = r.Next(0, 8);
-        var prompt = variant % 3 switch
+        var prompt = (variant % 3) switch
         {
             0 => $"A coin or note is clearly marked with the value {value}. What value does it represent?",
             1 => $"A piece of money shows the denomination {value}. State its monetary value.",
