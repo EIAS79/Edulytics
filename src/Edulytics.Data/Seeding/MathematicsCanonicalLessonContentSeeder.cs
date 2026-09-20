@@ -89,6 +89,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                 .ApplyApprovedCorrections(document);
             OfficialLessonPracticeContentCorrections
                 .ApplyApprovedCorrections(document);
+            PolishLessonPracticeContentCorrections
+                .ApplyApprovedCorrections(document);
             CanonicalLessonContentPackContract.Validate(document);
             result.Add(document);
         }
@@ -110,6 +112,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
             SupportingLessonPracticeContentCorrections
                 .ApplyApprovedCorrections(document);
             OfficialLessonPracticeContentCorrections
+                .ApplyApprovedCorrections(document);
+            PolishLessonPracticeContentCorrections
                 .ApplyApprovedCorrections(document);
             CanonicalLessonContentPackContract.Validate(document);
         }
@@ -339,12 +343,19 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                         sourceLesson,
                         stage6ExpectedContentVersion);
 
-            var expectedContentVersion =
+            var officialExpectedContentVersion =
                 OfficialLessonPracticeContentCorrections
                     .GetExpectedContentVersion(
                         document,
                         sourceLesson,
                         supportingExpectedContentVersion);
+
+            var expectedContentVersion =
+                PolishLessonPracticeContentCorrections
+                    .GetExpectedContentVersion(
+                        document,
+                        sourceLesson,
+                        officialExpectedContentVersion);
 
             var actualOutcomeCodes =
                 outcomesByLessonId.TryGetValue(
@@ -376,6 +387,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
             var didUpgradeStage6Correction = false;
             var didUpgradeSupportingCorrection = false;
             var didUpgradeOfficialPracticeCorrection = false;
+            var didUpgradePolishPracticeCorrection = false;
 
             if (!contentByLessonId.TryGetValue(
                     lesson.Id,
@@ -442,11 +454,18 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                                 document,
                                 sourceLesson,
                                 content.ContentVersion);
+                    var canUpgradePolishPracticeCorrection =
+                        PolishLessonPracticeContentCorrections
+                            .CanUpgradeExisting(
+                                document,
+                                sourceLesson,
+                                content.ContentVersion);
 
                     if (!isApprovedCommonCoreReplacement &&
                         !canUpgradeStage6Correction &&
                         !canUpgradeSupportingCorrection &&
-                        !canUpgradeOfficialPracticeCorrection)
+                        !canUpgradeOfficialPracticeCorrection &&
+                        !canUpgradePolishPracticeCorrection)
                     {
                         throw new InvalidOperationException(
                             $"Refusing silent canonical content-version replacement for " +
@@ -464,6 +483,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                         canUpgradeSupportingCorrection;
                     didUpgradeOfficialPracticeCorrection =
                         canUpgradeOfficialPracticeCorrection;
+                    didUpgradePolishPracticeCorrection =
+                        canUpgradePolishPracticeCorrection;
                 }
 
                 if ((int)content.Status >
@@ -545,7 +566,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                     if (isApprovedCommonCoreReplacement ||
                         didUpgradeStage6Correction ||
                         didUpgradeSupportingCorrection ||
-                        didUpgradeOfficialPracticeCorrection)
+                        didUpgradeOfficialPracticeCorrection ||
+                        didUpgradePolishPracticeCorrection)
                     {
                         current.Title = incoming.Title;
                         current.Explanation = incoming.Explanation;
