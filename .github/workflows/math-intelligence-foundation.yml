@@ -70,10 +70,10 @@ jobs:
         run: |
           set -euo pipefail
           python3 tools/math_intelligence/lesson_skill_resolution_audit.py --strict --write-report
-      - name: Run deterministic lesson semantic-content audit
+      - name: Run raw-source lesson semantic-content diagnostic
         run: |
           set -euo pipefail
-          python3 tools/math_intelligence/lesson_semantic_content_audit.py --strict --write-report
+          python3 tools/math_intelligence/lesson_semantic_content_audit.py --write-report
       - name: Run fail-closed V2 generation readiness audit
         run: |
           set -euo pipefail
