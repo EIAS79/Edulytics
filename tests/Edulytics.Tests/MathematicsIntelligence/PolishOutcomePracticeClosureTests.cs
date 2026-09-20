@@ -69,6 +69,69 @@ public sealed class PolishOutcomePracticeClosureTests
             });
     }
 
+
+    [Fact]
+    public void Polish_lesson_bodies_are_rebuilt_from_exact_outcome_evidence()
+    {
+        var polishLessons = MathematicsCanonicalLessonContentSeeder
+            .LoadEmbeddedDocuments()
+            .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.PolandCode)
+            .SelectMany(x => x.Lessons)
+            .ToArray();
+
+        Assert.Equal(1569, polishLessons.Length);
+
+        Assert.All(
+            polishLessons,
+            lesson =>
+            {
+                var outcomeCode = Assert.Single(lesson.OutcomeCodes);
+                Assert.True(
+                    PolishOutcomeSourceEvidenceRegistry.TryResolve(
+                        outcomeCode,
+                        out var source),
+                    $"Missing pinned Polish official evidence: {outcomeCode}");
+                Assert.NotNull(source);
+
+                var polish = Assert.Single(
+                    lesson.Translations.Where(x =>
+                        x.CultureCode.StartsWith(
+                            "pl",
+                            StringComparison.OrdinalIgnoreCase)));
+
+                Assert.False(
+                    polish.Title.Contains(
+                        "ćwiczenie",
+                        StringComparison.OrdinalIgnoreCase),
+                    $"Fallback title survived Polish remediation: {lesson.LessonCode}");
+                Assert.True(
+                    polish.Explanation.Contains(
+                        outcomeCode,
+                        StringComparison.Ordinal),
+                    $"OutcomeCode is not traceable in learner explanation: {lesson.LessonCode}");
+
+                var prefixLength = Math.Min(48, source!.OfficialText.Length);
+                var officialPrefix = source.OfficialText[..prefixLength];
+                Assert.True(
+                    polish.Explanation.Contains(
+                        officialPrefix,
+                        StringComparison.Ordinal),
+                    $"Official target evidence is absent from remediated lesson body: {lesson.LessonCode}");
+
+                Assert.False(string.IsNullOrWhiteSpace(polish.KeyConceptsAndRules));
+                Assert.False(string.IsNullOrWhiteSpace(polish.WorkedExamples));
+                Assert.False(string.IsNullOrWhiteSpace(polish.StepByStepSolutions));
+                Assert.False(string.IsNullOrWhiteSpace(polish.CommonMistakes));
+                Assert.False(string.IsNullOrWhiteSpace(polish.QuickSummary));
+
+                Assert.True(
+                    (lesson.AdaptationStatus ?? string.Empty).Contains(
+                        "outcome-specific learner content",
+                        StringComparison.OrdinalIgnoreCase),
+                    $"Polish remediation provenance missing: {lesson.LessonCode}");
+            });
+    }
+
     [Fact]
     public void Polish_mapping_is_deterministic_and_title_independent()
     {
