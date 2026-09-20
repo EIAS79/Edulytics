@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "mappingVersion": "polish-outcome-practice-map-v1",
+  "mappingVersion": "polish-outcome-practice-map-v2",
   "packCode": "PL-NATIONAL-MATH",
   "versionCode": "PL-MATH-2025-2026",
   "authority": "Accepted Polish 2025/2026 ELI/ZPE OutcomeCode graph + reconstructed official source evidence + reviewed Edulytics exact Practice target mapping",
-  "policy": "Exact OutcomeCode mapping only. Generated lesson titles are never mapping authority. Unmapped or invalid target rules fail closed.",
+  "policy": "Exact OutcomeCode mapping only. Generated lesson titles are never mapping authority. Multi-target outcomes retain every reviewed solver/verifier-backed target needed by the official outcome; unmapped or invalid targets fail closed.",
   "outcomeCount": 306,
   "entries": [
     {
@@ -878,7 +878,8 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:U-AMKI-ZWYK-E-I-DZIESIETNE:core:4:055",
       "serial": 55,
       "targetRuleIds": [
-        "fraction-add-subtract"
+        "equivalent-fractions",
+        "fraction-compare"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Ułamki zwykłe i dziesiętne / PL:IV-VI:U-AMKI-ZWYK-E-I-DZIESIETNE:core:4:055",
@@ -1230,7 +1231,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:PROSTE-I-ODCINKI:core:2:077",
       "serial": 77,
       "targetRuleIds": [
-        "shape-properties"
+        "parallel-perpendicular"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Proste i odcinki / PL:IV-VI:PROSTE-I-ODCINKI:core:2:077",
@@ -1262,7 +1263,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:PROSTE-I-ODCINKI:core:4:079",
       "serial": 79,
       "targetRuleIds": [
-        "parallel-perpendicular"
+        "measurement-unit-iteration"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Proste i odcinki / PL:IV-VI:PROSTE-I-ODCINKI:core:4:079",
@@ -1310,7 +1311,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:KATY:core:2:082",
       "serial": 82,
       "targetRuleIds": [
-        "angle-basic"
+        "angle-measure"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Kąty / PL:IV-VI:KATY:core:2:082",
@@ -1342,7 +1343,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:KATY:core:4:084",
       "serial": 84,
       "targetRuleIds": [
-        "angle-measure"
+        "angle-basic"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Kąty / PL:IV-VI:KATY:core:4:084",
@@ -1358,7 +1359,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:KATY:core:5:085",
       "serial": 85,
       "targetRuleIds": [
-        "angle-measure"
+        "angle-basic"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Kąty / PL:IV-VI:KATY:core:5:085",
@@ -1374,7 +1375,8 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:KATY:core:6:086",
       "serial": 86,
       "targetRuleIds": [
-        "angle-measure"
+        "angle-basic",
+        "parallel-perpendicular"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Kąty / PL:IV-VI:KATY:core:6:086",
@@ -1406,7 +1408,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:WIELOKATY-KO-A-I-OKREGI:core:2:088",
       "serial": 88,
       "targetRuleIds": [
-        "angles-polygons"
+        "shape-properties"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Wielokąty, koła i okręgi / PL:IV-VI:WIELOKATY-KO-A-I-OKREGI:core:2:088",
@@ -1422,7 +1424,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:WIELOKATY-KO-A-I-OKREGI:core:3:089",
       "serial": 89,
       "targetRuleIds": [
-        "circles"
+        "angles-polygons"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Wielokąty, koła i okręgi / PL:IV-VI:WIELOKATY-KO-A-I-OKREGI:core:3:089",
@@ -1438,7 +1440,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:WIELOKATY-KO-A-I-OKREGI:core:4:090",
       "serial": 90,
       "targetRuleIds": [
-        "circles"
+        "shape-properties"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Wielokąty, koła i okręgi / PL:IV-VI:WIELOKATY-KO-A-I-OKREGI:core:4:090",
@@ -1454,7 +1456,8 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:WIELOKATY-KO-A-I-OKREGI:core:5:091",
       "serial": 91,
       "targetRuleIds": [
-        "shape-properties"
+        "shape-properties",
+        "transformations"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Wielokąty, koła i okręgi / PL:IV-VI:WIELOKATY-KO-A-I-OKREGI:core:5:091",
@@ -1470,7 +1473,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:WIELOKATY-KO-A-I-OKREGI:core:6:092",
       "serial": 92,
       "targetRuleIds": [
-        "shape-properties"
+        "circles"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Wielokąty, koła i okręgi / PL:IV-VI:WIELOKATY-KO-A-I-OKREGI:core:6:092",
@@ -1502,7 +1505,8 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:WIELOKATY-KO-A-I-OKREGI:core:8:094",
       "serial": 94,
       "targetRuleIds": [
-        "shape-properties"
+        "angle-basic",
+        "perimeter-area"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Wielokąty, koła i okręgi / PL:IV-VI:WIELOKATY-KO-A-I-OKREGI:core:8:094",
@@ -1534,7 +1538,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:BRY-Y:core:2:096",
       "serial": 96,
       "targetRuleIds": [
-        "shape-properties"
+        "solid-geometry"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Bryły / PL:IV-VI:BRY-Y:core:2:096",
@@ -1598,6 +1602,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:OBLICZENIA-W-GEOMETRII:core:1:100",
       "serial": 100,
       "targetRuleIds": [
+        "angle-basic",
         "angles-polygons"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
@@ -1678,7 +1683,8 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:OBLICZENIA-W-GEOMETRII:core:6:105",
       "serial": 105,
       "targetRuleIds": [
-        "volume"
+        "volume",
+        "surface-area"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Obliczenia w geometrii / PL:IV-VI:OBLICZENIA-W-GEOMETRII:core:6:105",
@@ -1694,7 +1700,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:OBLICZENIA-W-GEOMETRII:core:7:106",
       "serial": 106,
       "targetRuleIds": [
-        "volume"
+        "unit-conversion"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Obliczenia w geometrii / PL:IV-VI:OBLICZENIA-W-GEOMETRII:core:7:106",
@@ -1758,7 +1764,8 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:OBLICZENIA-PRAKTYCZNE:core:4:110",
       "serial": 110,
       "targetRuleIds": [
-        "foundation-calendar"
+        "foundation-calendar",
+        "time"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Obliczenia praktyczne / PL:IV-VI:OBLICZENIA-PRAKTYCZNE:core:4:110",
@@ -1774,7 +1781,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:OBLICZENIA-PRAKTYCZNE:core:5:111",
       "serial": 111,
       "targetRuleIds": [
-        "unit-conversion"
+        "directed-number"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Obliczenia praktyczne / PL:IV-VI:OBLICZENIA-PRAKTYCZNE:core:5:111",
@@ -1790,7 +1797,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:OBLICZENIA-PRAKTYCZNE:core:6:112",
       "serial": 112,
       "targetRuleIds": [
-        "ratio-scaling"
+        "unit-conversion"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Obliczenia praktyczne / PL:IV-VI:OBLICZENIA-PRAKTYCZNE:core:6:112",
@@ -1806,7 +1813,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:OBLICZENIA-PRAKTYCZNE:core:7:113",
       "serial": 113,
       "targetRuleIds": [
-        "ratio-scaling"
+        "unit-conversion"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Obliczenia praktyczne / PL:IV-VI:OBLICZENIA-PRAKTYCZNE:core:7:113",
@@ -1822,6 +1829,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:OBLICZENIA-PRAKTYCZNE:core:8:114",
       "serial": 114,
       "targetRuleIds": [
+        "ratio-scaling",
         "similarity-dilation"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
@@ -1838,7 +1846,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:OBLICZENIA-PRAKTYCZNE:core:9:115",
       "serial": 115,
       "targetRuleIds": [
-        "directed-number"
+        "ratio-scaling"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Obliczenia praktyczne / PL:IV-VI:OBLICZENIA-PRAKTYCZNE:core:9:115",
@@ -1854,6 +1862,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:ELEMENTY-STATYSTYKI-OPISOWEJ:core:1:116",
       "serial": 116,
       "targetRuleIds": [
+        "collecting-data",
         "charts-tables"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
@@ -1870,7 +1879,7 @@
       "outcomeCode": "PL:REQ:PL:IV-VI:ELEMENTY-STATYSTYKI-OPISOWEJ:core:2:117",
       "serial": 117,
       "targetRuleIds": [
-        "mean-median-range"
+        "charts-tables"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "IV-VI / Elementy statystyki opisowej / PL:IV-VI:ELEMENTY-STATYSTYKI-OPISOWEJ:core:2:117",
@@ -2415,7 +2424,8 @@
       "serial": 151,
       "targetRuleIds": [
         "linear-modelling",
-        "one-step-formula-equation"
+        "one-step-formula-equation",
+        "percentage"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "VII-VIII / Równania z jedną niewiadomą / PL:VII-VIII:ROWNANIA-Z-JEDNA-NIEWIADOMA:core:4:151",
@@ -2767,7 +2777,8 @@
       "outcomeCode": "PL:REQ:PL:VII-VIII:GEOMETRIA-PRZESTRZENNA:core:2:173",
       "serial": 173,
       "targetRuleIds": [
-        "volume"
+        "volume",
+        "surface-area"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "VII-VIII / Geometria przestrzenna / PL:VII-VIII:GEOMETRIA-PRZESTRZENNA:core:2:173",
@@ -2783,7 +2794,8 @@
       "outcomeCode": "PL:REQ:PL:VII-VIII:GEOMETRIA-PRZESTRZENNA:core:3:174",
       "serial": 174,
       "targetRuleIds": [
-        "volume"
+        "volume",
+        "surface-area"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
       "sourceLocator": "VII-VIII / Geometria przestrzenna / PL:VII-VIII:GEOMETRIA-PRZESTRZENNA:core:3:174",
@@ -3007,7 +3019,9 @@
       "outcomeCode": "PL:REQ:PL:UPPER:LICZBY-RZECZYWISTE:basic:1:188",
       "serial": 188,
       "targetRuleIds": [
-        "polish-real-numbers"
+        "polish-real-numbers",
+        "powers-roots",
+        "exponential-log"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
       "sourceLocator": "UPPER / Liczby rzeczywiste / PL:UPPER:LICZBY-RZECZYWISTE:basic:1:188",
@@ -3103,7 +3117,8 @@
       "outcomeCode": "PL:REQ:PL:UPPER:LICZBY-RZECZYWISTE:basic:7:194",
       "serial": 194,
       "targetRuleIds": [
-        "directed-number"
+        "directed-number",
+        "one-step-formula-equation"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
       "sourceLocator": "UPPER / Liczby rzeczywiste / PL:UPPER:LICZBY-RZECZYWISTE:basic:7:194",
@@ -3119,7 +3134,9 @@
       "outcomeCode": "PL:REQ:PL:UPPER:LICZBY-RZECZYWISTE:basic:8:195",
       "serial": 195,
       "targetRuleIds": [
-        "exponential-log"
+        "exponential-log",
+        "percentage",
+        "powers-roots"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
       "sourceLocator": "UPPER / Liczby rzeczywiste / PL:UPPER:LICZBY-RZECZYWISTE:basic:8:195",
@@ -3327,7 +3344,8 @@
       "outcomeCode": "PL:REQ:PL:UPPER:ROWNANIA-I-NIEROWNOSCI:basic:1:208",
       "serial": 208,
       "targetRuleIds": [
-        "balance-equations"
+        "balance-equations",
+        "inequalities"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
       "sourceLocator": "UPPER / Równania i nierówności / PL:UPPER:ROWNANIA-I-NIEROWNOSCI:basic:1:208",
@@ -3343,7 +3361,8 @@
       "outcomeCode": "PL:REQ:PL:UPPER:ROWNANIA-I-NIEROWNOSCI:basic:2:209",
       "serial": 209,
       "targetRuleIds": [
-        "balance-equations"
+        "balance-equations",
+        "inequalities"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
       "sourceLocator": "UPPER / Równania i nierówności / PL:UPPER:ROWNANIA-I-NIEROWNOSCI:basic:2:209",
@@ -3427,7 +3446,9 @@
       "serial": 214,
       "targetRuleIds": [
         "algebraic-fractions",
-        "inequalities"
+        "inequalities",
+        "quadratic",
+        "one-step-formula-equation"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
       "sourceLocator": "UPPER / Równania i nierówności / PL:UPPER:ROWNANIA-I-NIEROWNOSCI:extended:2:214",
@@ -3459,7 +3480,8 @@
       "outcomeCode": "PL:REQ:PL:UPPER:ROWNANIA-I-NIEROWNOSCI:extended:4:216",
       "serial": 216,
       "targetRuleIds": [
-        "inequalities"
+        "inequalities",
+        "directed-number"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
       "sourceLocator": "UPPER / Równania i nierówności / PL:UPPER:ROWNANIA-I-NIEROWNOSCI:extended:4:216",
@@ -3476,7 +3498,8 @@
       "serial": 217,
       "targetRuleIds": [
         "quadratic",
-        "inequalities"
+        "inequalities",
+        "one-step-formula-equation"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
       "sourceLocator": "UPPER / Równania i nierówności / PL:UPPER:ROWNANIA-I-NIEROWNOSCI:extended:5:217",
@@ -4225,6 +4248,7 @@
       "outcomeCode": "PL:REQ:PL:UPPER:PLANIMETRIA:basic:3:263",
       "serial": 263,
       "targetRuleIds": [
+        "angles-polygons",
         "shape-properties"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
@@ -4338,6 +4362,7 @@
       "outcomeCode": "PL:REQ:PL:UPPER:PLANIMETRIA:basic:10:270",
       "serial": 270,
       "targetRuleIds": [
+        "loci-construction",
         "shape-properties"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
@@ -4468,7 +4493,7 @@
       "outcomeCode": "PL:REQ:PL:UPPER:GEOMETRIA-ANALITYCZ-8C04A1BC87E0:basic:4:278",
       "serial": 278,
       "targetRuleIds": [
-        "coordinates",
+        "polish-analytic-geometry",
         "circles"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
@@ -4501,8 +4526,8 @@
       "outcomeCode": "PL:REQ:PL:UPPER:GEOMETRIA-ANALITYCZ-8C04A1BC87E0:extended:1:280",
       "serial": 280,
       "targetRuleIds": [
-        "graphical-equation-solution",
-        "circles"
+        "polish-analytic-geometry",
+        "graphical-equation-solution"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
       "sourceLocator": "UPPER / Geometria analityczna na płaszczyźnie kartezjańskiej / PL:UPPER:GEOMETRIA-ANALITYCZ-8C04A1BC87E0:extended:1:280",
@@ -4518,7 +4543,7 @@
       "outcomeCode": "PL:REQ:PL:UPPER:GEOMETRIA-ANALITYCZ-8C04A1BC87E0:extended:2:281",
       "serial": 281,
       "targetRuleIds": [
-        "coordinates",
+        "polish-analytic-geometry",
         "circles"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
@@ -4551,8 +4576,8 @@
       "outcomeCode": "PL:REQ:PL:UPPER:GEOMETRIA-ANALITYCZ-8C04A1BC87E0:extended:4:283",
       "serial": 283,
       "targetRuleIds": [
-        "straight-line-graphs",
-        "circles"
+        "polish-analytic-geometry",
+        "straight-line-graphs"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
       "sourceLocator": "UPPER / Geometria analityczna na płaszczyźnie kartezjańskiej / PL:UPPER:GEOMETRIA-ANALITYCZ-8C04A1BC87E0:extended:4:283",
@@ -4568,7 +4593,8 @@
       "outcomeCode": "PL:REQ:PL:UPPER:STEREOMETRIA:basic:1:284",
       "serial": 284,
       "targetRuleIds": [
-        "solid-geometry"
+        "polish-stereometry",
+        "parallel-perpendicular"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
       "sourceLocator": "UPPER / Stereometria / PL:UPPER:STEREOMETRIA:basic:1:284",
@@ -4584,7 +4610,7 @@
       "outcomeCode": "PL:REQ:PL:UPPER:STEREOMETRIA:basic:2:285",
       "serial": 285,
       "targetRuleIds": [
-        "solid-geometry"
+        "polish-stereometry"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
       "sourceLocator": "UPPER / Stereometria / PL:UPPER:STEREOMETRIA:basic:2:285",
@@ -4600,7 +4626,8 @@
       "outcomeCode": "PL:REQ:PL:UPPER:STEREOMETRIA:basic:3:286",
       "serial": 286,
       "targetRuleIds": [
-        "solid-geometry"
+        "polish-stereometry",
+        "angle-basic"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
       "sourceLocator": "UPPER / Stereometria / PL:UPPER:STEREOMETRIA:basic:3:286",
@@ -4616,7 +4643,8 @@
       "outcomeCode": "PL:REQ:PL:UPPER:STEREOMETRIA:basic:4:287",
       "serial": 287,
       "targetRuleIds": [
-        "solid-geometry"
+        "polish-stereometry",
+        "angle-basic"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
       "sourceLocator": "UPPER / Stereometria / PL:UPPER:STEREOMETRIA:basic:4:287",
@@ -4667,7 +4695,8 @@
       "outcomeCode": "PL:REQ:PL:UPPER:STEREOMETRIA:extended:1:290",
       "serial": 290,
       "targetRuleIds": [
-        "solid-geometry",
+        "polish-stereometry",
+        "parallel-perpendicular",
         "proof-justification"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
@@ -4831,7 +4860,8 @@
       "outcomeCode": "PL:REQ:PL:UPPER:OPTYMALIZACJA-I-RAC-C1FCA18ED8AD:basic:inline:300",
       "serial": 300,
       "targetRuleIds": [
-        "calculus"
+        "quadratic",
+        "functions"
       ],
       "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf",
       "sourceLocator": "UPPER / Optymalizacja i rachunek różniczkowy / PL:UPPER:OPTYMALIZACJA-I-RAC-C1FCA18ED8AD:basic:inline:300",
