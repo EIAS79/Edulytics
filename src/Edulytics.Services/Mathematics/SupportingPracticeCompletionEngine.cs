@@ -982,7 +982,7 @@ internal static class SupportingPracticeCompletionEngine
             1 => "as x increases, y generally decreases",
             _ => "there is no clear upward or downward trend"
         };
-        var context = variant % 4 switch
+        var context = (variant % 4) switch
         {
             0 => "paired measurements collected from students",
             1 => "paired measurements collected over several days",
