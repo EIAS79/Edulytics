@@ -51,7 +51,13 @@ jobs:
       - name: Reconstruct Polish official Outcome evidence
         run: |
           set -euo pipefail
-          python3 tools/math_intelligence/polish_outcome_source_audit.py --write-report
+          python3 tools/math_intelligence/polish_outcome_source_audit.py --strict --write-report
+      - name: Upload Polish official Outcome evidence
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: polish-outcome-source-evidence-${{ github.sha }}
+          path: artifacts/math-intelligence/pl-outcome-source-evidence.json
+          retention-days: 14
       - name: Run Mathematics V2 registry integrity audit
         run: |
           set -euo pipefail
