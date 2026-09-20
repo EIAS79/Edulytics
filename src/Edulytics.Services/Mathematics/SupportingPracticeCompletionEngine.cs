@@ -819,8 +819,7 @@ internal static class SupportingPracticeCompletionEngine
 
     private static Problem AngleClassify(Random r)
     {
-        int[] choices = [25, 45, 90, 120, 175, 225];
-        var angle = choices[r.Next(choices.Length)];
+        var angle = r.Next(1, 360);
         return P("supporting.geometry.angle_classify",
             $"Classify an angle of {angle}° as acute, right, obtuse, straight, or reflex.",
             "Compare the angle with 90°, 180° and 360° and choose the standard classification.",
@@ -923,7 +922,7 @@ internal static class SupportingPracticeCompletionEngine
 
     private static Problem CircleCircumference(Random r, int s)
     {
-        var radius = r.Next(2, 8 + s * 2);
+        var radius = r.Next(2, 18 + s * 4);
         return P("supporting.geometry.circle_circumference_pi_coefficient",
             $"A circle has radius {radius}. Its circumference is kπ. Find k.",
             "Use C = 2πr and report the exact coefficient of π.",
@@ -932,7 +931,7 @@ internal static class SupportingPracticeCompletionEngine
 
     private static Problem CircleArea(Random r, int s)
     {
-        var radius = r.Next(2, 8 + s * 2);
+        var radius = r.Next(2, 18 + s * 4);
         return P("supporting.geometry.circle_area_pi_coefficient",
             $"A circle has radius {radius}. Its area is kπ. Find k.",
             "Use A = πr² and report the exact coefficient of π.",
@@ -976,17 +975,26 @@ internal static class SupportingPracticeCompletionEngine
     private static Problem ScatterCorrelation(Random r)
     {
         var kind = r.Next(0, 3);
+        var variant = r.Next(0, 8);
         var description = kind switch
         {
             0 => "as x increases, y generally increases",
             1 => "as x increases, y generally decreases",
             _ => "there is no clear upward or downward trend"
         };
+        var context = variant % 4 switch
+        {
+            0 => "paired measurements collected from students",
+            1 => "paired measurements collected over several days",
+            2 => "paired measurements from a science investigation",
+            _ => "paired measurements from a survey"
+        };
         return P("supporting.statistics.scatter_correlation",
-            $"A scatter graph shows that {description}. State the correlation: positive, negative, or none.",
+            $"A scatter graph of {context} shows that {description}. State the correlation: positive, negative, or none.",
             "Correlation describes the direction of the overall trend, not whether every point follows it.",
             AssessmentItemType.ShortAnswer,
-            ("kind", kind));
+            ("kind", kind),
+            ("variant", variant));
     }
 
     private static Problem ExperimentalProbability(Random r, int s)
@@ -1023,15 +1031,29 @@ internal static class SupportingPracticeCompletionEngine
 
     private static Problem CollectionMethod(Random r)
     {
-        var method = r.Next(0, 2);
-        var prompt = method == 0
-            ? "A school wants information from every student enrolled this year. Is this a census or a sample?"
-            : "A school surveys 80 students chosen from 800 students. Is this a census or a sample?";
+        var variant = r.Next(0, 12);
+        var method = variant % 2;
+        var prompt = variant switch
+        {
+            0 => "A school asks every enrolled student about travel to school. Is this a census or a sample?",
+            1 => "A school surveys 80 students chosen from 800 students. Is this a census or a sample?",
+            2 => "A club records the age of every member. Is this a census or a sample?",
+            3 => "A club selects 25 members at random for a questionnaire. Is this a census or a sample?",
+            4 => "A factory checks every item produced during one shift. Is this a census or a sample?",
+            5 => "A factory inspects 40 items from a batch of 2000. Is this a census or a sample?",
+            6 => "A class teacher records the height of every student in the class. Is this a census or a sample?",
+            7 => "A class teacher measures 10 students chosen from the class. Is this a census or a sample?",
+            8 => "A library counts the category of every book in one collection. Is this a census or a sample?",
+            9 => "A library examines 100 books selected from 5000. Is this a census or a sample?",
+            10 => "A sports league records the result of every match this season. Is this a census or a sample?",
+            _ => "A sports league analyses 12 matches selected from the season. Is this a census or a sample?"
+        };
         return P("supporting.statistics.collection_method",
             prompt,
             "A census includes the entire population; a sample includes only part of the population.",
             AssessmentItemType.ShortAnswer,
-            ("method", method));
+            ("method", method),
+            ("variant", variant));
     }
 
     private static Problem MultiStep(Random r, int s)
@@ -1225,7 +1247,7 @@ internal static class SupportingPracticeCompletionEngine
 
     private static Problem ChooseTwo(Random r, int s)
     {
-        var n = r.Next(4, 8 + s * 3);
+        var n = r.Next(4, 20 + s * 5);
         return P("supporting.combinatorics.choose_two",
             $"How many unordered pairs can be chosen from {n} distinct objects?",
             "Use n choose 2 = n(n−1)/2 because each pair is counted twice by ordered selection.",
@@ -1361,9 +1383,9 @@ internal static class SupportingPracticeCompletionEngine
 
     private static Problem TrigonometryMixed(Random r, int s)
     {
-        int[][] triples = [[3,4,5],[5,12,13],[8,15,17]];
+        int[][] triples = [[3,4,5],[5,12,13],[8,15,17],[7,24,25]];
         var t = triples[r.Next(triples.Length)];
-        var k = r.Next(1, 2 + s);
+        var k = r.Next(1, 6 + s * 2);
         var opposite = t[0] * k;
         var hypotenuse = t[2] * k;
         return P("supporting.trigonometry.core.mixed",
