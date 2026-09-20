@@ -123,6 +123,7 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
         var targetCodes = new HashSet<string>(StringComparer.Ordinal)
         {
             CambridgePrimaryStage6LessonContentCorrections.TwoUnknownsLessonCode,
+            CambridgePrimaryStage6LessonContentCorrections.ScaleReadingBuildLessonCode,
             CambridgePrimaryStage6LessonContentCorrections.ScaleReadingLessonCode,
             CambridgePrimaryStage6LessonContentCorrections.FractionComparisonLessonCode
         };
