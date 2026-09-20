@@ -10,7 +10,7 @@
         return;
     }
 
-    var guide = '/images/game/v9/eddy-guide.webp';
+    var guide = '/images/public/edulaytiks-character.png?v=43';
     var seeds = [
         { n: 1, d: 2 }, { n: 1, d: 3 }, { n: 2, d: 3 }, { n: 1, d: 4 },
         { n: 3, d: 4 }, { n: 2, d: 5 }, { n: 3, d: 5 }, { n: 4, d: 5 }
@@ -51,7 +51,7 @@
 
     root.innerHTML = '' +
         '<section class="gw-game" aria-label="Fraction Forge game">' +
-            '<header class="gw-hud"><div class="gw-brand"><span class="gw-brand-mark" aria-hidden="true">▦</span><span><strong>FRACTION FORGE</strong><small>Bridge workshop</small></span></div><div class="gw-hud-right"><div class="gw-pill">★ <span data-gw-score>0</span></div><div class="gw-pill" data-gw-round>1 / 8</div><button class="gw-icon" type="button" data-gw-sound>🔊</button><button class="gw-icon" type="button" data-gw-fullscreen>⛶</button></div></header>' +
+            '<header class="gw-hud"><div class="gw-brand"><span class="gw-brand-mark" aria-hidden="true">▦</span><span><strong>EDULYTICS PRACTICE</strong><small>Fraction exploration</small></span></div><div class="gw-hud-right"><div class="gw-pill">★ <span data-gw-score>0</span></div><div class="gw-pill" data-gw-round>1 / 8</div><button class="gw-icon" type="button" data-gw-sound>🔊</button><button class="gw-icon" type="button" data-gw-fullscreen>⛶</button></div></header>' +
             '<div class="gw-progress"><span data-gw-progress></span></div>' +
             '<main class="gw-stage">' +
                 '<div class="gw-mission"><span>YOUR MISSION</span><strong data-gw-question>Repair the fraction bridge</strong><small data-gw-subquestion>Choose a tile that covers the same amount.</small></div>' +
@@ -60,7 +60,7 @@
                     '<section class="gw-fraction-options" data-fraction-options aria-label="Equivalent fraction choices"></section>' +
                 '</div>' +
             '</main>' +
-            '<div class="gw-eddy"><img src="' + guide + '" alt="Eddy" /><div><span>EDDY</span><p data-gw-eddy>Equivalent fractions name the same amount even when the pieces are split differently.</p></div></div>' +
+            '<div class="gw-eddy"><img src="' + guide + '" alt="Edulytics character" /><div><span>EDULYTICS</span><p data-gw-eddy>Equivalent fractions name the same amount even when the pieces are split differently.</p></div></div>' +
             '<div class="gw-complete" data-gw-complete hidden><div class="gw-complete-card"><img src="' + guide + '" alt="Eddy celebrating" /><p>ADVENTURE COMPLETE</p><h2>Bridge restored!</h2><p>You matched equivalent fractions by comparing the amount, not just the numbers.</p><strong data-gw-final-score></strong><br/><button class="gw-primary" type="button" data-gw-replay>Play again</button></div></div>' +
         '</section>';
 
