@@ -1,5 +1,6 @@
 using System.Reflection;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Edulytics.Core.Curriculum;
 
 namespace Edulytics.Core.Mathematics.Practice;
@@ -135,7 +136,11 @@ internal static class PolishLessonPracticeContractProjection
     private static IEnumerable<CanonicalLessonContentPackDocument> LoadPolishContentPacks()
     {
         var assembly = typeof(PolishLessonPracticeContractProjection).Assembly;
-        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+        var options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            Converters = { new JsonStringEnumConverter() }
+        };
 
         foreach (var resource in assembly.GetManifestResourceNames()
                      .Where(name => name.EndsWith(
