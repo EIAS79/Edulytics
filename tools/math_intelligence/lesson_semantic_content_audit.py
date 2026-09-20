@@ -309,9 +309,25 @@ def audit() -> dict[str, Any]:
                     "keyConceptEvidencePatterns": key_hits,
                 })
 
+            reviewed_official_disposition = bool(
+                source_type == "OfficialMapped"
+                and effective_row is not None
+                and normalize_space(effective_row.get("documentStatus")) == "Published"
+                and normalize_space(effective_row.get("reviewedBy"))
+                and normalize_space(effective_row.get("reviewEvidence"))
+                and normalize_space(effective_row.get("reviewMethod"))
+            )
+
             if not matched_rules:
-                status = "UNCLASSIFIED"
-                findings = ["No semantic target signature currently classifies this lesson title."]
+                if reviewed_official_disposition:
+                    status = "PASS_REVIEWED_OFFICIAL"
+                    findings = [
+                        "No hand-authored semantic signature applies, but the lesson is an officially mapped "
+                        "Published canonical learner body with explicit review provenance from the C# materializer."
+                    ]
+                else:
+                    status = "UNCLASSIFIED"
+                    findings = ["No semantic target signature or reviewed official disposition classifies this lesson."]
             else:
                 with_worked = [row for row in matched_rules if row["workedExamplePatterns"]]
                 missing_worked = [
@@ -444,6 +460,7 @@ def audit() -> dict[str, Any]:
                     and effective_content_version != content_version
                 ),
                 "reviewedCorrectionTarget": reviewed_correction_target,
+                "reviewedOfficialDisposition": reviewed_official_disposition,
                 "effectiveContentAuthority": "CanonicalLessonContentMaterializer",
                 "academicLanguage": academic_language,
                 "workedExamplePreview": short(worked),
@@ -531,6 +548,14 @@ def audit() -> dict[str, Any]:
         for lesson in lessons
         if "GENERIC_TEMPLATE" in lesson["studentFacingDefects"]
     )
+    summary["unclassifiedCount"] = sum(
+        1 for lesson in lessons if lesson["status"] == "UNCLASSIFIED"
+    )
+    summary["reviewedOfficialDispositionCount"] = sum(
+        1
+        for lesson in lessons
+        if lesson["status"] == "PASS_REVIEWED_OFFICIAL"
+    )
 
     duplicate_worked_clusters.sort(
         key=lambda row: (-int(row["distinctTargetCount"]), -int(row["lessonCount"]), str(row["hash"]))
@@ -602,6 +627,7 @@ def main() -> int:
         report["summary"]["blockerCount"]
         or report["summary"]["studentFacingBlockerCount"]
         or report["summary"]["pedagogicalWeakOrReviewCount"]
+        or report["summary"]["unclassifiedCount"]
     ):
         return 2
     return 0
