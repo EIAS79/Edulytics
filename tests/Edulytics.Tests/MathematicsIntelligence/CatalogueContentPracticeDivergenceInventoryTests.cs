@@ -12,7 +12,9 @@ public sealed class CatalogueContentPracticeDivergenceInventoryTests
     public void WriteWholeCatalogueContentAndPracticeDivergenceInventory()
     {
         var rows = new List<object>();
-        var genericFallbacks = new List<string>();
+        var serverVerifiedExact = new List<string>();
+        var specializedGames = new List<string>();
+        var presentationMissing = new List<string>();
         var missingCapabilities = new List<string>();
         var missingRenderers = new List<string>();
         var supportingTargets = new List<string>();
@@ -43,15 +45,30 @@ public sealed class CatalogueContentPracticeDivergenceInventoryTests
                     supporting,
                     enableMathematicsV2Pilot: false);
 
-                var genericFallback =
-                    hasCapability &&
-                    (!route.IsPlayable || route.RendererKey is null);
-
-                if (genericFallback)
-                    genericFallbacks.Add(lesson.LessonCode);
+                var hasPresentation =
+                    LessonPracticePresentationResolver.TryResolve(
+                        lesson.LessonCode,
+                        string.Empty,
+                        title,
+                        context,
+                        supporting,
+                        enableMathematicsV2Pilot: false,
+                        out var presentation) &&
+                    presentation is not null;
 
                 if (!hasCapability)
                     missingCapabilities.Add(lesson.LessonCode);
+
+                if (!hasPresentation)
+                    presentationMissing.Add(lesson.LessonCode);
+                else if (
+                    presentation!.Kind ==
+                    LessonPracticePresentationKind.SpecializedGame)
+                    specializedGames.Add(lesson.LessonCode);
+                else if (
+                    presentation.Kind ==
+                    LessonPracticePresentationKind.ServerVerifiedExact)
+                    serverVerifiedExact.Add(lesson.LessonCode);
 
                 if (hasCapability &&
                     route.IsPlayable &&
@@ -103,7 +120,9 @@ public sealed class CatalogueContentPracticeDivergenceInventoryTests
                     routeRenderer = route.RendererKey,
                     routeMechanic = route.Mechanic,
                     routeSource = route.ClassificationSource,
-                    genericLessonPracticeFallback = genericFallback,
+                    presentationKind = presentation?.Kind.ToString(),
+                    presentationRenderer = presentation?.RendererKey,
+                    presentationMissing = !hasPresentation,
                     supportingContentCorrectionTarget =
                         SupportingLessonPracticeContentCorrections.IsTarget(
                             document,
@@ -131,8 +150,12 @@ public sealed class CatalogueContentPracticeDivergenceInventoryTests
                 lessonCount = rows.Count,
                 missingPracticeCapabilityCount =
                     missingCapabilities.Count,
-                genericLessonPracticeFallbackCount =
-                    genericFallbacks.Count,
+                specializedGameCount =
+                    specializedGames.Count,
+                serverVerifiedExactCount =
+                    serverVerifiedExact.Count,
+                presentationMissingCount =
+                    presentationMissing.Count,
                 playableWithoutRendererCount =
                     missingRenderers.Count,
                 supportingContentCorrectionTargetCount =
@@ -153,8 +176,10 @@ public sealed class CatalogueContentPracticeDivergenceInventoryTests
             },
             missingPracticeCapabilities =
                 missingCapabilities.OrderBy(x => x, StringComparer.Ordinal).ToArray(),
-            genericLessonPracticeFallbacks =
-                genericFallbacks.OrderBy(x => x, StringComparer.Ordinal).ToArray(),
+            presentationMissingLessons =
+                presentationMissing.OrderBy(x => x, StringComparer.Ordinal).ToArray(),
+            serverVerifiedExactLessons =
+                serverVerifiedExact.OrderBy(x => x, StringComparer.Ordinal).ToArray(),
             contentCorrectionTargets = new
             {
                 supporting = supportingTargets
@@ -207,6 +232,7 @@ public sealed class CatalogueContentPracticeDivergenceInventoryTests
 
         Assert.Equal(4453, rows.Count);
         Assert.Empty(missingCapabilities);
+        Assert.Empty(presentationMissing);
 
         var fixtureRows = rows
             .Where(row =>
