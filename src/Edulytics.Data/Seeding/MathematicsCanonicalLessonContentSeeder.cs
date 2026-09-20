@@ -92,10 +92,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
     private static bool IsApprovedProductionCorrectionTarget(
         CanonicalLessonContentPackDocument document,
         CanonicalLessonContentPackLesson lesson) =>
-        CambridgePrimaryStage6LessonContentCorrections
-            .IsTarget(document, lesson) ||
-        StudentFacingLessonContentCorrections
-            .IsTarget(document, lesson);
+        CanonicalLessonContentMaterializer
+            .IsReviewedCorrectionTarget(document, lesson);
 
     public static IReadOnlyList<CanonicalLessonContentPackDocument>
         LoadEmbeddedDocuments()
@@ -130,15 +128,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                 ?? throw new InvalidOperationException(
                     $"Invalid canonical lesson content resource {name}.");
 
-            CambridgePrimaryStage6LessonContentCorrections
-                .ApplyApprovedCorrections(document);
-            SupportingLessonPracticeContentCorrections
-                .ApplyApprovedCorrections(document);
-            OfficialLessonPracticeContentCorrections
-                .ApplyApprovedCorrections(document);
-            PolishLessonPracticeContentCorrections
-                .ApplyApprovedCorrections(document);
-            CanonicalLessonContentPackContract.Validate(document);
+            CanonicalLessonContentMaterializer
+                .Materialize(document);
             result.Add(document);
         }
 
@@ -154,15 +145,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
 
         foreach (var document in documents)
         {
-            CambridgePrimaryStage6LessonContentCorrections
-                .ApplyApprovedCorrections(document);
-            SupportingLessonPracticeContentCorrections
-                .ApplyApprovedCorrections(document);
-            OfficialLessonPracticeContentCorrections
-                .ApplyApprovedCorrections(document);
-            PolishLessonPracticeContentCorrections
-                .ApplyApprovedCorrections(document);
-            CanonicalLessonContentPackContract.Validate(document);
+            CanonicalLessonContentMaterializer
+                .Materialize(document);
         }
 
         ValidateDistinctTargets(documents);
@@ -377,32 +361,11 @@ public sealed class MathematicsCanonicalLessonContentSeeder
             var lesson =
                 lessonByCode[sourceLesson.LessonCode];
 
-            var stage6ExpectedContentVersion =
-                CambridgePrimaryStage6LessonContentCorrections
-                    .GetExpectedContentVersion(
+            var expectedContentVersion =
+                CanonicalLessonContentMaterializer
+                    .GetEffectiveContentVersion(
                         document,
                         sourceLesson);
-
-            var supportingExpectedContentVersion =
-                SupportingLessonPracticeContentCorrections
-                    .GetExpectedContentVersion(
-                        document,
-                        sourceLesson,
-                        stage6ExpectedContentVersion);
-
-            var officialExpectedContentVersion =
-                OfficialLessonPracticeContentCorrections
-                    .GetExpectedContentVersion(
-                        document,
-                        sourceLesson,
-                        supportingExpectedContentVersion);
-
-            var expectedContentVersion =
-                PolishLessonPracticeContentCorrections
-                    .GetExpectedContentVersion(
-                        document,
-                        sourceLesson,
-                        officialExpectedContentVersion);
 
             var actualOutcomeCodes =
                 outcomesByLessonId.TryGetValue(
@@ -431,10 +394,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
             var expectedContentId =
                 expectedContentIdByLessonId[lesson.Id];
 
-            var didUpgradeStage6Correction = false;
-            var didUpgradeSupportingCorrection = false;
-            var didUpgradeOfficialPracticeCorrection = false;
-            var didUpgradePolishPracticeCorrection = false;
+            var didUpgradeReviewedCorrection = false;
 
             if (!contentByLessonId.TryGetValue(
                     lesson.Id,
@@ -483,36 +443,15 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                         expectedContentVersion,
                         StringComparison.Ordinal))
                 {
-                    var canUpgradeStage6Correction =
-                        CambridgePrimaryStage6LessonContentCorrections
-                            .CanUpgradeExisting(
-                                document,
-                                sourceLesson,
-                                content.ContentVersion);
-                    var canUpgradeSupportingCorrection =
-                        SupportingLessonPracticeContentCorrections
-                            .CanUpgradeExisting(
-                                document,
-                                sourceLesson,
-                                content.ContentVersion);
-                    var canUpgradeOfficialPracticeCorrection =
-                        OfficialLessonPracticeContentCorrections
-                            .CanUpgradeExisting(
-                                document,
-                                sourceLesson,
-                                content.ContentVersion);
-                    var canUpgradePolishPracticeCorrection =
-                        PolishLessonPracticeContentCorrections
+                    var canUpgradeReviewedCorrection =
+                        CanonicalLessonContentMaterializer
                             .CanUpgradeExisting(
                                 document,
                                 sourceLesson,
                                 content.ContentVersion);
 
                     if (!isApprovedCommonCoreReplacement &&
-                        !canUpgradeStage6Correction &&
-                        !canUpgradeSupportingCorrection &&
-                        !canUpgradeOfficialPracticeCorrection &&
-                        !canUpgradePolishPracticeCorrection)
+                        !canUpgradeReviewedCorrection)
                     {
                         throw new InvalidOperationException(
                             $"Refusing silent canonical content-version replacement for " +
@@ -524,14 +463,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                     content.ContentVersion =
                         expectedContentVersion;
                     content.UpdatedAtUtc = now;
-                    didUpgradeStage6Correction =
-                        canUpgradeStage6Correction;
-                    didUpgradeSupportingCorrection =
-                        canUpgradeSupportingCorrection;
-                    didUpgradeOfficialPracticeCorrection =
-                        canUpgradeOfficialPracticeCorrection;
-                    didUpgradePolishPracticeCorrection =
-                        canUpgradePolishPracticeCorrection;
+                    didUpgradeReviewedCorrection =
+                        canUpgradeReviewedCorrection;
                 }
 
                 if ((int)content.Status >
@@ -611,10 +544,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                         out var current))
                 {
                     if (isApprovedCommonCoreReplacement ||
-                        didUpgradeStage6Correction ||
-                        didUpgradeSupportingCorrection ||
-                        didUpgradeOfficialPracticeCorrection ||
-                        didUpgradePolishPracticeCorrection)
+                        didUpgradeReviewedCorrection)
                     {
                         current.Title = incoming.Title;
                         current.Explanation = incoming.Explanation;
