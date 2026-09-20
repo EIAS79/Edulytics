@@ -103,7 +103,7 @@ jobs:
               f"- Catalogue lessons: **{s['lessonCount']:,}**",
               f"- Practice-eligible: **{s['practiceEligibleLessonCount']:,}**",
               f"- READY_VERIFIED: **{s['READY_VERIFIED']:,}**",
-              f"- Non-standalone with evidence: **{s['NON_STANDALONE_WITH_EVIDENCE']:,}**",
+              f"- Non-standalone with evidence: **{s.get('NON_STANDALONE_WITH_EVIDENCE', 0):,}**",
               f"- Practice-eligible blocked: **{s.get('practiceEligibleBlockedCount', 0):,}**",
               f"- Completion: **{s['completionPercent']:.2f}%**",
               f"- Internal matrix blockers: **{s['internalBlockerCount']:,}**",
@@ -111,6 +111,10 @@ jobs:
           with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as handle:
               handle.write("\n".join(lines) + "\n")
           PY
+      - name: Run Polish 1,569 final Practice closure audit
+        run: |
+          set -euo pipefail
+          python3 tools/math_intelligence/polish_practice_final_closure_audit.py --strict --write-report
       - name: Run final Practice programme closure audit
         run: |
           set -euo pipefail
@@ -178,6 +182,7 @@ jobs:
             artifacts/math-intelligence/practice-readiness-by-curriculum.json
             artifacts/math-intelligence/practice-readiness-by-domain.json
             artifacts/math-intelligence/practice-readiness-by-level.json
+            artifacts/math-intelligence/pl-1569-final-closure-audit.json
             artifacts/math-intelligence/practice-programme-final-closure-audit.json
             artifacts/math-intelligence/stage17-grade1-6-closure-audit.json
             artifacts/math-intelligence/stage18-practice-closure-audit.json
