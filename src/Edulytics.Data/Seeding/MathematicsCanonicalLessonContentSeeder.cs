@@ -87,15 +87,166 @@ public sealed class MathematicsCanonicalLessonContentSeeder
             return;
 
         await SeedDocumentsAsync(targeted, ct);
+
+        var parityMismatches =
+            await FindReviewedProductionParityMismatchesAsync(ct);
+
+        if (parityMismatches.Count != 0)
+        {
+            throw new InvalidOperationException(
+                "Reviewed learner-content Production parity failed: " +
+                string.Join(" | ", parityMismatches.Take(50)) +
+                (parityMismatches.Count > 50
+                    ? $" (+{parityMismatches.Count - 50} more)"
+                    : string.Empty));
+        }
     }
+
+    public async Task<IReadOnlyList<string>>
+        FindReviewedProductionParityMismatchesAsync(
+            CancellationToken ct = default)
+    {
+        var expected = LoadEmbeddedDocuments()
+            .SelectMany(document =>
+                document.Lessons
+                    .Where(lesson =>
+                        CanonicalLessonContentMaterializer
+                            .IsReviewedCorrectionTarget(
+                                document,
+                                lesson))
+                    .Select(lesson => new
+                    {
+                        Document = document,
+                        Lesson = lesson
+                    }))
+            .ToArray();
+
+        var codes = expected
+            .Select(x => x.Lesson.LessonCode)
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+
+        var persistedLessons = await _db.CurriculumPedagogicalLessons
+            .AsNoTracking()
+            .Where(x => codes.Contains(x.Code))
+            .ToArrayAsync(ct);
+
+        var lessonByCode = persistedLessons
+            .ToDictionary(x => x.Code, StringComparer.Ordinal);
+
+        var lessonIds = persistedLessons
+            .Select(x => x.Id)
+            .ToArray();
+
+        var contents = await _db.CurriculumLessonContents
+            .AsNoTracking()
+            .Where(x => lessonIds.Contains(x.PedagogicalLessonId))
+            .ToArrayAsync(ct);
+
+        var contentByLessonId = contents
+            .ToDictionary(x => x.PedagogicalLessonId);
+
+        var contentIds = contents
+            .Select(x => x.Id)
+            .ToArray();
+
+        var translations = await _db.CurriculumLessonContentTranslations
+            .AsNoTracking()
+            .Where(x => contentIds.Contains(x.CurriculumLessonContentId))
+            .ToArrayAsync(ct);
+
+        var translationsByContentId = translations
+            .GroupBy(x => x.CurriculumLessonContentId)
+            .ToDictionary(
+                group => group.Key,
+                group => group.ToDictionary(
+                    x => x.CultureCode,
+                    StringComparer.Ordinal));
+
+        var mismatches = new List<string>();
+
+        foreach (var item in expected)
+        {
+            var code = item.Lesson.LessonCode;
+
+            if (!lessonByCode.TryGetValue(code, out var persistedLesson))
+            {
+                mismatches.Add($"{code}: lesson missing");
+                continue;
+            }
+
+            if (!contentByLessonId.TryGetValue(
+                    persistedLesson.Id,
+                    out var content))
+            {
+                mismatches.Add($"{code}: content missing");
+                continue;
+            }
+
+            var expectedVersion =
+                CanonicalLessonContentMaterializer
+                    .GetEffectiveContentVersion(
+                        item.Document,
+                        item.Lesson);
+
+            if (!string.Equals(
+                    content.ContentVersion,
+                    expectedVersion,
+                    StringComparison.Ordinal))
+            {
+                mismatches.Add(
+                    $"{code}: version {content.ContentVersion} != {expectedVersion}");
+                continue;
+            }
+
+            if (!translationsByContentId.TryGetValue(
+                    content.Id,
+                    out var persistedByCulture))
+            {
+                mismatches.Add($"{code}: translations missing");
+                continue;
+            }
+
+            foreach (var expectedTranslation in item.Lesson.Translations)
+            {
+                if (!persistedByCulture.TryGetValue(
+                        expectedTranslation.CultureCode,
+                        out var current))
+                {
+                    mismatches.Add(
+                        $"{code}:{expectedTranslation.CultureCode}: translation missing");
+                    continue;
+                }
+
+                if (!TranslationMatches(
+                        current,
+                        expectedTranslation))
+                {
+                    mismatches.Add(
+                        $"{code}:{expectedTranslation.CultureCode}: body mismatch");
+                }
+            }
+        }
+
+        return mismatches;
+    }
+
+    private static bool TranslationMatches(
+        CurriculumLessonContentTranslation current,
+        CanonicalLessonContentPackTranslation expected) =>
+        string.Equals(current.Title, expected.Title, StringComparison.Ordinal) &&
+        string.Equals(current.Explanation, expected.Explanation, StringComparison.Ordinal) &&
+        string.Equals(current.KeyConceptsAndRules, expected.KeyConceptsAndRules, StringComparison.Ordinal) &&
+        string.Equals(current.WorkedExamples, expected.WorkedExamples, StringComparison.Ordinal) &&
+        string.Equals(current.StepByStepSolutions, expected.StepByStepSolutions, StringComparison.Ordinal) &&
+        string.Equals(current.CommonMistakes, expected.CommonMistakes, StringComparison.Ordinal) &&
+        string.Equals(current.QuickSummary, expected.QuickSummary, StringComparison.Ordinal);
 
     private static bool IsApprovedProductionCorrectionTarget(
         CanonicalLessonContentPackDocument document,
         CanonicalLessonContentPackLesson lesson) =>
-        CambridgePrimaryStage6LessonContentCorrections
-            .IsTarget(document, lesson) ||
-        StudentFacingLessonContentCorrections
-            .IsTarget(document, lesson);
+        CanonicalLessonContentMaterializer
+            .IsReviewedCorrectionTarget(document, lesson);
 
     public static IReadOnlyList<CanonicalLessonContentPackDocument>
         LoadEmbeddedDocuments()
@@ -130,15 +281,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                 ?? throw new InvalidOperationException(
                     $"Invalid canonical lesson content resource {name}.");
 
-            CambridgePrimaryStage6LessonContentCorrections
-                .ApplyApprovedCorrections(document);
-            SupportingLessonPracticeContentCorrections
-                .ApplyApprovedCorrections(document);
-            OfficialLessonPracticeContentCorrections
-                .ApplyApprovedCorrections(document);
-            PolishLessonPracticeContentCorrections
-                .ApplyApprovedCorrections(document);
-            CanonicalLessonContentPackContract.Validate(document);
+            CanonicalLessonContentMaterializer
+                .Materialize(document);
             result.Add(document);
         }
 
@@ -154,15 +298,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
 
         foreach (var document in documents)
         {
-            CambridgePrimaryStage6LessonContentCorrections
-                .ApplyApprovedCorrections(document);
-            SupportingLessonPracticeContentCorrections
-                .ApplyApprovedCorrections(document);
-            OfficialLessonPracticeContentCorrections
-                .ApplyApprovedCorrections(document);
-            PolishLessonPracticeContentCorrections
-                .ApplyApprovedCorrections(document);
-            CanonicalLessonContentPackContract.Validate(document);
+            CanonicalLessonContentMaterializer
+                .Materialize(document);
         }
 
         ValidateDistinctTargets(documents);
@@ -377,32 +514,11 @@ public sealed class MathematicsCanonicalLessonContentSeeder
             var lesson =
                 lessonByCode[sourceLesson.LessonCode];
 
-            var stage6ExpectedContentVersion =
-                CambridgePrimaryStage6LessonContentCorrections
-                    .GetExpectedContentVersion(
+            var expectedContentVersion =
+                CanonicalLessonContentMaterializer
+                    .GetEffectiveContentVersion(
                         document,
                         sourceLesson);
-
-            var supportingExpectedContentVersion =
-                SupportingLessonPracticeContentCorrections
-                    .GetExpectedContentVersion(
-                        document,
-                        sourceLesson,
-                        stage6ExpectedContentVersion);
-
-            var officialExpectedContentVersion =
-                OfficialLessonPracticeContentCorrections
-                    .GetExpectedContentVersion(
-                        document,
-                        sourceLesson,
-                        supportingExpectedContentVersion);
-
-            var expectedContentVersion =
-                PolishLessonPracticeContentCorrections
-                    .GetExpectedContentVersion(
-                        document,
-                        sourceLesson,
-                        officialExpectedContentVersion);
 
             var actualOutcomeCodes =
                 outcomesByLessonId.TryGetValue(
@@ -431,10 +547,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
             var expectedContentId =
                 expectedContentIdByLessonId[lesson.Id];
 
-            var didUpgradeStage6Correction = false;
-            var didUpgradeSupportingCorrection = false;
-            var didUpgradeOfficialPracticeCorrection = false;
-            var didUpgradePolishPracticeCorrection = false;
+            var didUpgradeReviewedCorrection = false;
 
             if (!contentByLessonId.TryGetValue(
                     lesson.Id,
@@ -483,36 +596,15 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                         expectedContentVersion,
                         StringComparison.Ordinal))
                 {
-                    var canUpgradeStage6Correction =
-                        CambridgePrimaryStage6LessonContentCorrections
-                            .CanUpgradeExisting(
-                                document,
-                                sourceLesson,
-                                content.ContentVersion);
-                    var canUpgradeSupportingCorrection =
-                        SupportingLessonPracticeContentCorrections
-                            .CanUpgradeExisting(
-                                document,
-                                sourceLesson,
-                                content.ContentVersion);
-                    var canUpgradeOfficialPracticeCorrection =
-                        OfficialLessonPracticeContentCorrections
-                            .CanUpgradeExisting(
-                                document,
-                                sourceLesson,
-                                content.ContentVersion);
-                    var canUpgradePolishPracticeCorrection =
-                        PolishLessonPracticeContentCorrections
+                    var canUpgradeReviewedCorrection =
+                        CanonicalLessonContentMaterializer
                             .CanUpgradeExisting(
                                 document,
                                 sourceLesson,
                                 content.ContentVersion);
 
                     if (!isApprovedCommonCoreReplacement &&
-                        !canUpgradeStage6Correction &&
-                        !canUpgradeSupportingCorrection &&
-                        !canUpgradeOfficialPracticeCorrection &&
-                        !canUpgradePolishPracticeCorrection)
+                        !canUpgradeReviewedCorrection)
                     {
                         throw new InvalidOperationException(
                             $"Refusing silent canonical content-version replacement for " +
@@ -524,14 +616,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                     content.ContentVersion =
                         expectedContentVersion;
                     content.UpdatedAtUtc = now;
-                    didUpgradeStage6Correction =
-                        canUpgradeStage6Correction;
-                    didUpgradeSupportingCorrection =
-                        canUpgradeSupportingCorrection;
-                    didUpgradeOfficialPracticeCorrection =
-                        canUpgradeOfficialPracticeCorrection;
-                    didUpgradePolishPracticeCorrection =
-                        canUpgradePolishPracticeCorrection;
+                    didUpgradeReviewedCorrection =
+                        canUpgradeReviewedCorrection;
                 }
 
                 if ((int)content.Status >
@@ -611,10 +697,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                         out var current))
                 {
                     if (isApprovedCommonCoreReplacement ||
-                        didUpgradeStage6Correction ||
-                        didUpgradeSupportingCorrection ||
-                        didUpgradeOfficialPracticeCorrection ||
-                        didUpgradePolishPracticeCorrection)
+                        didUpgradeReviewedCorrection)
                     {
                         current.Title = incoming.Title;
                         current.Explanation = incoming.Explanation;

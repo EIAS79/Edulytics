@@ -77,12 +77,38 @@ public sealed class StudentPracticeController(
             return NotFound();
 
         var lesson = workspace.Lessons.SingleOrDefault(x => x.LessonId == lessonId);
-        if (lesson is null ||
-            !LessonPracticeCapabilityResolver.TryResolve(
-                lesson.LessonCode,
-                out _))
+        if (lesson is null)
+            return NotFound();
+
+        var detailResult = await lessonContent.GetPublishedForStudentAsync(
+            actorId,
+            lessonId,
+            CultureInfo.CurrentUICulture.Name,
+            cancellationToken);
+        if (detailResult.Value is null)
+            return detailResult.Error == LessonContentErrorCode.AccessDenied
+                ? Forbid()
+                : NotFound();
+
+        if (!TryResolveLessonPracticePresentation(
+                lesson,
+                detailResult.Value,
+                out var presentation) ||
+            presentation is null)
         {
             return NotFound();
+        }
+
+        if (presentation.Kind ==
+            LessonPracticePresentationKind.SpecializedGame)
+        {
+            return RedirectToAction(
+                nameof(Game),
+                new
+                {
+                    curriculumAdoptionId,
+                    lessonId
+                });
         }
 
         var result = await privatePractice.GenerateAsync(
@@ -99,14 +125,20 @@ public sealed class StudentPracticeController(
         if (!result.Succeeded)
         {
             TempData["Error"] = PrivatePracticeErrorMessage(result.Error);
-            return RedirectToAction("Lesson", "StudentPortal", new { id = lessonId });
+            return RedirectToAction(
+                "Lesson",
+                "StudentPortal",
+                new { id = lessonId });
         }
 
-        return RedirectToAction(nameof(Attempt), new
-        {
-            id = result.AttemptId,
-            mode = LessonGameMode
-        });
+        return RedirectToAction(
+            nameof(LessonAttempt),
+            new
+            {
+                id = result.AttemptId,
+                curriculumAdoptionId,
+                lessonId
+            });
     }
 
     [HttpPost("lesson-game/start"), ValidateAntiForgeryToken]
@@ -317,6 +349,133 @@ public sealed class StudentPracticeController(
         });
     }
 
+    [HttpGet("lesson-attempt/{id:guid}")]
+    [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+    public async Task<IActionResult> LessonAttempt(
+        Guid id,
+        Guid curriculumAdoptionId,
+        Guid lessonId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+
+        var workspace = await privatePractice.GetWorkspaceAsync(
+            actorId,
+            curriculumAdoptionId,
+            cancellationToken);
+        if (workspace.SelectedCurriculumAdoptionId != curriculumAdoptionId)
+            return NotFound();
+
+        var lesson = workspace.Lessons.SingleOrDefault(
+            x => x.LessonId == lessonId);
+        if (lesson is null)
+            return NotFound();
+
+        var detailResult = await lessonContent.GetPublishedForStudentAsync(
+            actorId,
+            lessonId,
+            CultureInfo.CurrentUICulture.Name,
+            cancellationToken);
+        if (detailResult.Value is null)
+            return detailResult.Error == LessonContentErrorCode.AccessDenied
+                ? Forbid()
+                : NotFound();
+
+        var attempt = await practice.GetAttemptAsync(
+            actorId,
+            id,
+            cancellationToken);
+        if (attempt.Value is null)
+            return attempt.Error == PracticeErrorCode.AccessDenied
+                ? Forbid()
+                : NotFound();
+
+        ViewData["CurriculumAdoptionId"] = curriculumAdoptionId;
+        ViewData["LessonId"] = lessonId;
+        ViewData["LessonCode"] = lesson.LessonCode;
+        ViewData["LessonTitle"] = detailResult.Value.Title;
+        ViewData["LessonUnitTitle"] = lesson.UnitTitle;
+
+        Response.Headers["X-Robots-Tag"] =
+            "noindex, nofollow, noarchive";
+
+        return View(attempt.Value);
+    }
+
+    [HttpPost("lesson-attempt/{id:guid}/answer"), ValidateAntiForgeryToken]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public async Task<IActionResult> AnswerLessonAttempt(
+        Guid id,
+        Guid curriculumAdoptionId,
+        Guid lessonId,
+        Guid attemptItemId,
+        string answer,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+
+        var result = await practice.AnswerAsync(
+            actorId,
+            id,
+            attemptItemId,
+            answer,
+            cancellationToken);
+
+        if (result.Value is null)
+        {
+            TempData["Error"] =
+                PracticeErrorMessage(result.Error);
+        }
+        else
+        {
+            TempData["PracticeFeedback"] =
+                result.Value.IsCorrect
+                    ? "correct"
+                    : "incorrect";
+            TempData["PracticeSolution"] =
+                result.Value.Solution;
+        }
+
+        return RedirectToAction(
+            nameof(LessonAttempt),
+            new
+            {
+                id,
+                curriculumAdoptionId,
+                lessonId
+            });
+    }
+
+    [HttpPost("lesson-attempt/{id:guid}/submit"), ValidateAntiForgeryToken]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public async Task<IActionResult> SubmitLessonAttempt(
+        Guid id,
+        Guid curriculumAdoptionId,
+        Guid lessonId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+
+        var result = await practice.SubmitAsync(
+            actorId,
+            id,
+            cancellationToken);
+        if (result.Value is null)
+            TempData["Error"] =
+                PracticeErrorMessage(result.Error);
+
+        return RedirectToAction(
+            nameof(LessonAttempt),
+            new
+            {
+                id,
+                curriculumAdoptionId,
+                lessonId
+            });
+    }
+
     [HttpGet("attempt/{id:guid}")]
     public async Task<IActionResult> Attempt(Guid id, string? mode, CancellationToken cancellationToken)
     {
@@ -371,6 +530,26 @@ public sealed class StudentPracticeController(
             id,
             mode = NormalizeMode(mode)
         });
+    }
+
+    private static bool TryResolveLessonPracticePresentation(
+        StudentPrivatePracticeLessonOption lesson,
+        StudentLessonDetail detail,
+        out LessonPracticePresentationRoute? presentation)
+    {
+        var context = detail.IsSupporting
+            ? BuildLessonPracticeContext(detail)
+            : null;
+
+        return LessonPracticePresentationResolver.TryResolve(
+            lesson.LessonCode,
+            lesson.UnitTitle,
+            detail.Title,
+            context,
+            detail.IsSupporting,
+            MathematicsV2ProductMigrationPolicy
+                .IsEnabledFromEnvironment(),
+            out presentation);
     }
 
     private static GameLessonRoute ResolveLessonRoute(

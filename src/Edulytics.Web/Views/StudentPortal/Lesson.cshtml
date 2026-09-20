@@ -15,6 +15,10 @@
     var practiceAdoptionId = ViewData["LessonPracticePilotAdoptionId"] is Guid adoptionId
         ? adoptionId
         : (Guid?)null;
+    var unifiedPracticeAdoptionId =
+        exactPracticeAdoptionId ??
+        gameAdoptionId ??
+        practiceAdoptionId;
     var sections = new[]
     {
         new LessonReaderSection("01", L["Explanation"], "explanation", LessonPresentationParser.Parse(Model.Explanation, sectionKind: "explanation")),
@@ -74,37 +78,13 @@
 <div class="lesson-reader lesson-reader--student">
     <a class="lesson-reader-back" asp-action="Learning"><span aria-hidden="true">←</span> @L["BackToLessons"]</a>
 
-    @if (gameAdoptionId.HasValue)
-    {
-        <nav class="lesson-mode-tabs" aria-label="@S["Lesson"] / @P["Practice"]">
-            <span class="lesson-mode-tab lesson-mode-tab--active" aria-current="page">@S["Lesson"]</span>
-            <form asp-controller="StudentPractice" asp-action="StartLessonGame" method="post">
-                @Html.AntiForgeryToken()
-                <input type="hidden" name="curriculumAdoptionId" value="@gameAdoptionId.Value" />
-                <input type="hidden" name="lessonId" value="@Model.Id" />
-                <button class="lesson-mode-tab lesson-mode-tab--practice" type="submit">@P["Practice"]</button>
-            </form>
-        </nav>
-    }
-    else if (exactPracticeAdoptionId.HasValue)
+    @if (unifiedPracticeAdoptionId.HasValue)
     {
         <nav class="lesson-mode-tabs" aria-label="@S["Lesson"] / @P["Practice"]">
             <span class="lesson-mode-tab lesson-mode-tab--active" aria-current="page">@S["Lesson"]</span>
             <form asp-controller="StudentPractice" asp-action="StartLessonPractice" method="post">
                 @Html.AntiForgeryToken()
-                <input type="hidden" name="curriculumAdoptionId" value="@exactPracticeAdoptionId.Value" />
-                <input type="hidden" name="lessonId" value="@Model.Id" />
-                <button class="lesson-mode-tab lesson-mode-tab--practice" type="submit">@P["Practice"]</button>
-            </form>
-        </nav>
-    }
-    else if (practiceAdoptionId.HasValue)
-    {
-        <nav class="lesson-mode-tabs" aria-label="@S["Lesson"] / @P["Practice"]">
-            <span class="lesson-mode-tab lesson-mode-tab--active" aria-current="page">@S["Lesson"]</span>
-            <form asp-controller="StudentPractice" asp-action="StartLessonPilot" method="post">
-                @Html.AntiForgeryToken()
-                <input type="hidden" name="curriculumAdoptionId" value="@practiceAdoptionId.Value" />
+                <input type="hidden" name="curriculumAdoptionId" value="@unifiedPracticeAdoptionId.Value" />
                 <input type="hidden" name="lessonId" value="@Model.Id" />
                 <button class="lesson-mode-tab lesson-mode-tab--practice" type="submit">@P["Practice"]</button>
             </form>

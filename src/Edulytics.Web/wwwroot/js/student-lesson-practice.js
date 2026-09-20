@@ -14,7 +14,10 @@
                 input.value = "";
             } else if (key === "backspace") {
                 input.value = input.value.slice(0, -1);
-            } else if (/^\d$/.test(key) && input.value.length < 32) {
+            } else if (
+                /^[0-9./()\-+]$/.test(key) &&
+                input.value.length < 128
+            ) {
                 input.value += key;
             }
 

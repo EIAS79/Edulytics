@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parents[2]
 CONTENT_DIR = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs"
 SIGNATURES = ROOT / "src/Edulytics.Core/Mathematics/Curriculum/semantic-content-signatures.v1.json"
 REPORT = ROOT / "artifacts/math-intelligence/lesson-semantic-content-audit.json"
+EFFECTIVE_SNAPSHOT = ROOT / "artifacts/math-intelligence/effective-lesson-content-snapshot.json"
 
 
 @dataclass(frozen=True)
@@ -161,6 +162,40 @@ def short(text: str, limit: int = 260) -> str:
     return text if len(text) <= limit else text[: limit - 1].rstrip() + "…"
 
 
+def load_effective_snapshot() -> tuple[dict[str, dict[str, Any]], list[str]]:
+    if not EFFECTIVE_SNAPSHOT.exists():
+        return {}, [
+            "Effective learner-content snapshot is missing. "
+            "Run EffectiveLessonContentSnapshotTests before semantic audit."
+        ]
+
+    doc = read_json(EFFECTIVE_SNAPSHOT)
+    if doc.get("authority") != "CanonicalLessonContentMaterializer":
+        return {}, ["Effective learner-content snapshot has an unexpected authority."]
+
+    rows = doc.get("lessons") or []
+    by_code: dict[str, dict[str, Any]] = {}
+    errors: list[str] = []
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        lesson_code = normalize_space(row.get("lessonCode"))
+        if not lesson_code:
+            errors.append("Effective learner-content snapshot contains a row without LessonCode.")
+            continue
+        if lesson_code in by_code:
+            errors.append(f"Duplicate LessonCode in effective learner-content snapshot: {lesson_code}")
+            continue
+        by_code[lesson_code] = row
+
+    if len(by_code) != 4453:
+        errors.append(
+            f"Effective learner-content snapshot expected 4453 lessons, got {len(by_code)}."
+        )
+
+    return by_code, errors
+
+
 def audit() -> dict[str, Any]:
     rules, blockers = load_rules()
     polish_mappings, polish_mapping_errors = load_polish_outcome_mappings()
@@ -168,14 +203,8 @@ def audit() -> dict[str, Any]:
     supporting_rules, supporting_rule_errors = load_supporting_rules()
     blockers.extend(supporting_rule_errors)
     blockers.extend(validate_supporting_rules(supporting_rules))
-    uae_l6_rule = next(
-        (
-            rule
-            for rule in supporting_rules
-            if rule.rule_id == "uae-systems-inequalities"
-        ),
-        None,
-    )
+    effective_by_code, effective_errors = load_effective_snapshot()
+    blockers.extend(effective_errors)
     lessons: list[dict[str, Any]] = []
     worked_groups: dict[str, list[int]] = defaultdict(list)
     solution_groups: dict[str, list[int]] = defaultdict(list)
@@ -197,7 +226,26 @@ def audit() -> dict[str, Any]:
             lesson_code = str(get_case(lesson, "LessonCode", "lessonCode", default="") or "").strip()
             if not lesson_code:
                 continue
-            translation = choose_translation(lesson)
+            source_translation = choose_translation(lesson)
+            effective_row = effective_by_code.get(lesson_code)
+            if effective_row is None:
+                blockers.append(
+                    f"Effective learner-content snapshot is missing LessonCode: {lesson_code}"
+                )
+                translation = source_translation
+                effective_content_version = content_version
+                effective_fingerprint = ""
+            else:
+                effective_translations = effective_row.get("translations") or []
+                effective_lesson = {"translations": effective_translations}
+                translation = choose_translation(effective_lesson)
+                effective_content_version = normalize_space(
+                    effective_row.get("contentVersion")
+                )
+                effective_fingerprint = normalize_space(
+                    effective_row.get("fingerprint")
+                )
+
             title = normalize_space(
                 get_case(translation, "Title", "title", default="")
                 or get_case(lesson, "Title", "title", default="")
@@ -217,46 +265,31 @@ def audit() -> dict[str, Any]:
                 "keyConceptsAndRules",
                 default="",
             ))
-            outcomes = clean_list(get_case(lesson, "OutcomeCodes", "outcomeCodes", default=[]))
+            outcomes = clean_list(
+                effective_row.get("outcomeCodes")
+                if effective_row is not None
+                else get_case(lesson, "OutcomeCodes", "outcomeCodes", default=[])
+            )
             source_type = "OfficialMapped" if outcomes else "PedagogicalUnmapped"
             supporting_rule = (
                 match_supporting_rule(lesson_code, title, supporting_rules)
                 if not outcomes
                 else None
             )
-            translations = get_case(lesson, "Translations", "translations", default=[])
+            translations = (
+                effective_row.get("translations")
+                if effective_row is not None
+                else get_case(lesson, "Translations", "translations", default=[])
+            )
             has_english_translation = any(
                 isinstance(row, dict) and
                 str(get_case(row, "CultureCode", "cultureCode", default="") or "").lower().startswith("en")
                 for row in (translations if isinstance(translations, list) else [])
             )
 
-            official_practice_content_corrected = False
-            if (
-                source_type == "OfficialMapped"
-                and lesson_code.startswith("PED:UAE:G9:ADV:T1:L6-")
-                and uae_l6_rule is not None
-                and any(
-                    pattern.fullmatch(base_title)
-                    for pattern in uae_l6_rule.title_patterns
-                )
-            ):
-                worked = normalize_space(
-                    "Worked example: "
-                    + uae_l6_rule.content["workedExample"]
-                )
-                solutions = normalize_space(
-                    "Solution method: "
-                    + uae_l6_rule.content["solution"]
-                )
-                explanation = normalize_space(
-                    uae_l6_rule.content["concept"]
-                )
-                key_concepts = normalize_space(
-                    uae_l6_rule.content["concept"]
-                )
-                official_practice_content_corrected = True
-
+            # Effective learner content comes from the C# materializer snapshot.
+            # Python only evaluates the materialized body; it does not reimplement
+            # or mutate any reviewed correction rule.
             matched_rules: list[dict[str, Any]] = []
             for rule in rules:
                 title_hits = pattern_hits(rule.title_patterns, base_title)
@@ -276,9 +309,25 @@ def audit() -> dict[str, Any]:
                     "keyConceptEvidencePatterns": key_hits,
                 })
 
+            reviewed_official_disposition = bool(
+                source_type == "OfficialMapped"
+                and effective_row is not None
+                and normalize_space(effective_row.get("documentStatus")) == "Published"
+                and normalize_space(effective_row.get("reviewedBy"))
+                and normalize_space(effective_row.get("reviewEvidence"))
+                and normalize_space(effective_row.get("reviewMethod"))
+            )
+
             if not matched_rules:
-                status = "UNCLASSIFIED"
-                findings = ["No semantic target signature currently classifies this lesson title."]
+                if reviewed_official_disposition:
+                    status = "PASS_REVIEWED_OFFICIAL"
+                    findings = [
+                        "No hand-authored semantic signature applies, but the lesson is an officially mapped "
+                        "Published canonical learner body with explicit review provenance from the C# materializer."
+                    ]
+                else:
+                    status = "UNCLASSIFIED"
+                    findings = ["No semantic target signature or reviewed official disposition classifies this lesson."]
             else:
                 with_worked = [row for row in matched_rules if row["workedExamplePatterns"]]
                 missing_worked = [
@@ -316,43 +365,52 @@ def audit() -> dict[str, Any]:
                         "Lesson title matches a known mathematical target, but worked examples, explanation and key concepts contain no sufficient target-specific evidence."
                     ]
 
-            # Polish learner-facing lessons are rewritten by the runtime seeder
-            # from pinned official OutcomeCode evidence plus the reviewed exact
-            # Polish Practice map. The raw Phase-29 JSON body is intentionally
-            # broad, so the audit must judge the same effective remediated body
-            # that persistence receives rather than the superseded fallback text.
-            polish_exact_remediated = (
-                pack_code == "PL-NATIONAL-MATH"
-                and outcomes
-                and all(code in polish_mappings for code in outcomes)
+            reviewed_correction_target = bool(
+                supporting_rule is not None
+                or (
+                    pack_code == "PL-NATIONAL-MATH"
+                    and outcomes
+                    and all(code in polish_mappings for code in outcomes)
+                )
+                or (
+                    source_type == "OfficialMapped"
+                    and lesson_code.startswith("PED:UAE:G9:ADV:T1:L6-")
+                )
             )
-            if polish_exact_remediated:
-                status = "PASS_TARGETED"
-                findings = [
-                    "Polish exact OutcomeCode remediation supplies target-specific learner content from pinned official evidence and the reviewed Practice map before seeding."
-                ]
-
-            # The Supporting Practice target registry is also the runtime content
-            # remediation authority. English Supporting lessons receive that
-            # target-specific recipe before seeding, so the audit must inspect
-            # the same effective content. Localized non-English content is never
-            # replaced with English: reviewed rules may classify an otherwise
-            # UNCLASSIFIED title, but genuine weak/review findings remain blocked.
-            if supporting_rule is not None:
-                if has_english_translation:
-                    worked = normalize_space(supporting_rule.content["workedExample"])
-                    solutions = normalize_space(supporting_rule.content["solution"])
-                    explanation = normalize_space(supporting_rule.content["concept"])
-                    key_concepts = normalize_space(supporting_rule.content["concept"])
-                    status = "PASS_TARGETED"
-                    findings = [
-                        "Reviewed Supporting Practice rule supplies the same target-specific content recipe used by runtime seeding."
-                    ]
-                elif status == "UNCLASSIFIED":
-                    status = "PASS_WITH_WARNINGS"
-                    findings = [
-                        "Reviewed Supporting Practice rule resolves this localized target; existing localized learner content is retained unchanged."
-                    ]
+            if reviewed_correction_target:
+                if effective_row is None:
+                    findings.append(
+                        "Reviewed correction target is missing from the C# materializer snapshot."
+                    )
+                else:
+                    findings.append(
+                        "Effective learner body is supplied by CanonicalLessonContentMaterializer "
+                        f"({effective_content_version}, {effective_fingerprint[:12]}…)."
+                    )
+                    if supporting_rule is not None and has_english_translation:
+                        status = "PASS_TARGETED"
+                        findings.append(
+                            "Reviewed Supporting Practice rule and effective learner body resolve the same target."
+                        )
+                    elif (
+                        pack_code == "PL-NATIONAL-MATH"
+                        and outcomes
+                        and all(code in polish_mappings for code in outcomes)
+                        and effective_content_version == "polish-outcome-practice-remediation-v1"
+                    ):
+                        status = "PASS_TARGETED"
+                        findings.append(
+                            "Polish learner body is the exact C# materialized OutcomeCode remediation."
+                        )
+                    elif (
+                        source_type == "OfficialMapped"
+                        and lesson_code.startswith("PED:UAE:G9:ADV:T1:L6-")
+                        and effective_content_version == "official-practice-alignment-v1"
+                    ):
+                        status = "PASS_TARGETED"
+                        findings.append(
+                            "UAE L6 learner body is the reviewed C# materialized official-Practice alignment."
+                        )
 
             effective_body = normalize_space(
                 " ".join(
@@ -386,7 +444,9 @@ def audit() -> dict[str, Any]:
             lessons.append({
                 "lessonCode": lesson_code,
                 "packCode": pack_code,
-                "contentVersion": content_version,
+                "contentVersion": effective_content_version,
+                "sourceContentVersion": content_version,
+                "effectiveContentFingerprint": effective_fingerprint,
                 "sourceType": source_type,
                 "title": title,
                 "baseTitle": base_title,
@@ -396,10 +456,12 @@ def audit() -> dict[str, Any]:
                 "matchedRules": matched_rules,
                 "supportingPracticeRuleId": None if supporting_rule is None else supporting_rule.rule_id,
                 "contentRemediated": bool(
-                    (supporting_rule is not None and has_english_translation)
-                    or official_practice_content_corrected
-                    or polish_exact_remediated
+                    effective_row is not None
+                    and effective_content_version != content_version
                 ),
+                "reviewedCorrectionTarget": reviewed_correction_target,
+                "reviewedOfficialDisposition": reviewed_official_disposition,
+                "effectiveContentAuthority": "CanonicalLessonContentMaterializer",
                 "academicLanguage": academic_language,
                 "workedExamplePreview": short(worked),
                 "workedTemplateHash": worked_hash,
@@ -486,6 +548,14 @@ def audit() -> dict[str, Any]:
         for lesson in lessons
         if "GENERIC_TEMPLATE" in lesson["studentFacingDefects"]
     )
+    summary["unclassifiedCount"] = sum(
+        1 for lesson in lessons if lesson["status"] == "UNCLASSIFIED"
+    )
+    summary["reviewedOfficialDispositionCount"] = sum(
+        1
+        for lesson in lessons
+        if lesson["status"] == "PASS_REVIEWED_OFFICIAL"
+    )
 
     duplicate_worked_clusters.sort(
         key=lambda row: (-int(row["distinctTargetCount"]), -int(row["lessonCount"]), str(row["hash"]))
@@ -557,6 +627,7 @@ def main() -> int:
         report["summary"]["blockerCount"]
         or report["summary"]["studentFacingBlockerCount"]
         or report["summary"]["pedagogicalWeakOrReviewCount"]
+        or report["summary"]["unclassifiedCount"]
     ):
         return 2
     return 0

@@ -70,7 +70,18 @@ jobs:
         run: |
           set -euo pipefail
           python3 tools/math_intelligence/lesson_skill_resolution_audit.py --strict --write-report
-      - name: Run deterministic lesson semantic-content audit
+      - uses: actions/setup-dotnet@v5.2.0
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restore effective learner-content snapshot dependencies
+        run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - name: Materialize effective learner-content snapshot
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
+            --configuration Release \
+            --no-restore \
+            --filter "FullyQualifiedName~EffectiveLessonContentSnapshotTests"
+      - name: Run effective learner semantic-content audit
         run: |
           set -euo pipefail
           python3 tools/math_intelligence/lesson_semantic_content_audit.py --strict --write-report
@@ -168,6 +179,7 @@ jobs:
             artifacts/math-intelligence/math-registry-integrity.json
             artifacts/math-intelligence/catalogue-skill-baseline.json
             artifacts/math-intelligence/lesson-skill-resolution-audit.json
+            artifacts/math-intelligence/effective-lesson-content-snapshot.json
             artifacts/math-intelligence/lesson-semantic-content-audit.json
             artifacts/math-intelligence/lesson-generation-readiness-audit.json
             artifacts/math-intelligence/supporting-practice-remediation-closure-audit.json
@@ -211,3 +223,22 @@ jobs:
             --configuration Release \
             --no-restore \
             --filter "FullyQualifiedName~MathematicsIntelligence"
+      - name: Publish catalogue divergence summary
+        if: always()
+        run: |
+          if [ -f artifacts/math-intelligence/catalogue-content-practice-divergence.json ]; then
+            python3 - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path("artifacts/math-intelligence/catalogue-content-practice-divergence.json").read_text())
+          print(json.dumps(report["summary"], indent=2))
+          PY
+          fi
+      - name: Upload catalogue content and Practice divergence inventory
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: catalogue-content-practice-divergence-${{ github.sha }}
+          path: artifacts/math-intelligence/catalogue-content-practice-divergence.json
+          if-no-files-found: ignore
+          retention-days: 14

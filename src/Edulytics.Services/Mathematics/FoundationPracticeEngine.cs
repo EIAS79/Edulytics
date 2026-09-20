@@ -305,17 +305,25 @@ internal static class FoundationPracticeEngine
     private static Problem FaceCount(Random r)
     {
         var shape = r.Next(0, 3);
+        var variant = r.Next(0, 12);
         var name = shape switch
         {
             0 => "cube",
             1 => "cuboid",
             _ => "triangular prism"
         };
+        var prompt = (variant % 3) switch
+        {
+            0 => $"How many flat faces does a {name} have?",
+            1 => $"A solid model is a {name}. Count all of its flat faces.",
+            _ => $"Imagine a {name} being turned so every face can be seen. How many flat faces are there altogether?"
+        };
         return P(
             "supporting.geometry.face_count",
-            $"How many flat faces does a {name} have?",
-            "Count each flat polygonal surface exactly once.",
-            ("shape", shape));
+            prompt,
+            "Count each flat polygonal surface exactly once; turning the solid does not change its number of faces.",
+            ("shape", shape),
+            ("variant", variant));
     }
 
     private static Problem PositionDirection(Random r)
@@ -338,18 +346,38 @@ internal static class FoundationPracticeEngine
     private static Problem ChooseTool(Random r)
     {
         var context = r.Next(0, 3);
+        var variant = r.Next(0, 8);
         var objectName = context switch
         {
-            0 => "the length of a book",
-            1 => "the mass of a bag of apples",
-            _ => "the volume of water in a jug"
+            0 => (variant % 4) switch
+            {
+                0 => "the length of a book",
+                1 => "the width of a desk",
+                2 => "the height of a plant",
+                _ => "the length of a pencil"
+            },
+            1 => (variant % 4) switch
+            {
+                0 => "the mass of a bag of apples",
+                1 => "the mass of a school bag",
+                2 => "the mass of a parcel",
+                _ => "the mass of a watermelon"
+            },
+            _ => (variant % 4) switch
+            {
+                0 => "the volume of water in a jug",
+                1 => "the amount of juice in a bottle",
+                2 => "the liquid in a measuring container",
+                _ => "the capacity of a small bucket"
+            }
         };
         return P(
             "supporting.measurement.choose_tool",
             $"Which tool is most appropriate for measuring {objectName}?",
             "Choose a tool designed for the attribute being measured: length, mass, or liquid capacity.",
             AssessmentItemType.ShortAnswer,
-            ("context", context));
+            ("context", context),
+            ("variant", variant));
     }
 
     private static Problem CategoryTotal(Random r, int scale)
@@ -400,19 +428,27 @@ internal static class FoundationPracticeEngine
     {
         int[] values = [1, 2, 5, 10, 20, 50];
         var value = values[r.Next(values.Length)];
+        var variant = r.Next(0, 8);
+        var prompt = (variant % 3) switch
+        {
+            0 => $"A coin or note is clearly marked with the value {value}. What value does it represent?",
+            1 => $"A piece of money shows the denomination {value}. State its monetary value.",
+            _ => $"You are sorting money by the printed denomination. An item is marked {value}. What value should you record?"
+        };
         return P(
             "supporting.measurement.money_marked_value",
-            $"A coin or note is clearly marked with the value {value}. What value does it represent?",
+            prompt,
             "Read the printed denomination; physical size does not determine monetary value.",
             AssessmentItemType.ShortAnswer,
-            ("value", value));
+            ("value", value),
+            ("variant", variant));
     }
 
     private static Problem OrientationInvariant(Random r)
     {
         var shape = r.Next(0, 3);
         var name = ShapeName(shape);
-        var turns = r.Next(1, 4);
+        var turns = r.Next(1, 5);
         return P(
             "supporting.geometry.orientation_invariant",
             $"A {name} is rotated by {turns} quarter-turn(s). What shape is it after the rotation?",
@@ -479,16 +515,30 @@ internal static class FoundationPracticeEngine
 
     private static Problem StatisticalQuestion(Random r)
     {
-        var statistical = r.Next(0, 2);
-        var prompt = statistical == 1
-            ? "How many minutes do students in this class spend reading each day?"
-            : "How many minutes did Alex spend reading today?";
+        var variant = r.Next(0, 12);
+        var statistical = variant % 2;
+        var prompt = variant switch
+        {
+            0 => "How many minutes did Alex spend reading today?",
+            1 => "How many minutes do students in this class spend reading each day?",
+            2 => "What is Mia's shoe size?",
+            3 => "What shoe sizes do students in Year 6 wear?",
+            4 => "How long did one bus journey take this morning?",
+            5 => "How long do bus journeys on this route usually take?",
+            6 => "How many goals did this team score in yesterday's match?",
+            7 => "How many goals does this team score per match across the season?",
+            8 => "What was today's temperature at noon?",
+            9 => "How does the noon temperature vary over this month?",
+            10 => "How many pages are in this particular book?",
+            _ => "How many pages are in the books students choose from the class library?"
+        };
         return P(
             "supporting.statistics.statistical_question",
             $"Classify the question as statistical or not statistical: “{prompt}”",
             "A statistical question anticipates variability across a group or repeated observations.",
             AssessmentItemType.ShortAnswer,
-            ("statistical", statistical));
+            ("statistical", statistical),
+            ("variant", variant));
     }
 
     private static Problem CenterOrVariation(Random r, int scale)
