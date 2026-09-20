@@ -1934,7 +1934,7 @@ public sealed class ExactSkillContractQuestionEngine
 
     private static ExactProblem BuildPolygonInteriorAngleSum(Random random, int scale)
     {
-        var sides = random.Next(3, 8 + scale * 2);
+        var sides = random.Next(3, 20 + scale * 4);
         return Problem(
             "geometry.polygons.interior_angle_sum",
             $"Find the sum of the interior angles of a {sides}-sided polygon.",
@@ -1963,9 +1963,8 @@ public sealed class ExactSkillContractQuestionEngine
 
     private static ExactProblem BuildRegularPolygonInteriorAngle(Random random, int scale)
     {
-        int[] sideChoices = [3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20];
-        var maxIndex = Math.Min(sideChoices.Length, 4 + scale * 2);
-        var sides = sideChoices[random.Next(0, maxIndex)];
+        int[] sideChoices = [3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24, 30, 36, 40];
+        var sides = sideChoices[random.Next(0, sideChoices.Length)];
         return Problem(
             "geometry.polygons.regular_interior_angle",
             $"Find one interior angle of a regular {sides}-sided polygon.",
@@ -1978,7 +1977,7 @@ public sealed class ExactSkillContractQuestionEngine
     {
         var triples = new (int A, int B, int C)[] { (3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25) };
         var triple = triples[random.Next(triples.Length)];
-        var multiplier = random.Next(1, Math.Max(2, scale + 1));
+        var multiplier = random.Next(1, 6 + scale * 2);
         var a = triple.A * multiplier;
         var b = triple.B * multiplier;
         var hypotenuse = triple.C * multiplier;
@@ -1997,7 +1996,7 @@ public sealed class ExactSkillContractQuestionEngine
     {
         var triples = new (int A, int B, int C)[] { (3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25) };
         var triple = triples[random.Next(triples.Length)];
-        var multiplier = random.Next(1, Math.Max(2, scale + 1));
+        var multiplier = random.Next(1, 6 + scale * 2);
         var legA = triple.A * multiplier;
         var legB = triple.B * multiplier;
         var hypotenuse = triple.C * multiplier;
