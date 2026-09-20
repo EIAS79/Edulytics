@@ -77,12 +77,38 @@ public sealed class StudentPracticeController(
             return NotFound();
 
         var lesson = workspace.Lessons.SingleOrDefault(x => x.LessonId == lessonId);
-        if (lesson is null ||
-            !LessonPracticeCapabilityResolver.TryResolve(
-                lesson.LessonCode,
-                out _))
+        if (lesson is null)
+            return NotFound();
+
+        var detailResult = await lessonContent.GetPublishedForStudentAsync(
+            actorId,
+            lessonId,
+            CultureInfo.CurrentUICulture.Name,
+            cancellationToken);
+        if (detailResult.Value is null)
+            return detailResult.Error == LessonContentErrorCode.AccessDenied
+                ? Forbid()
+                : NotFound();
+
+        if (!TryResolveLessonPracticePresentation(
+                lesson,
+                detailResult.Value,
+                out var presentation) ||
+            presentation is null)
         {
             return NotFound();
+        }
+
+        if (presentation.Kind ==
+            LessonPracticePresentationKind.SpecializedGame)
+        {
+            return RedirectToAction(
+                nameof(Game),
+                new
+                {
+                    curriculumAdoptionId,
+                    lessonId
+                });
         }
 
         var result = await privatePractice.GenerateAsync(
@@ -99,14 +125,20 @@ public sealed class StudentPracticeController(
         if (!result.Succeeded)
         {
             TempData["Error"] = PrivatePracticeErrorMessage(result.Error);
-            return RedirectToAction("Lesson", "StudentPortal", new { id = lessonId });
+            return RedirectToAction(
+                "Lesson",
+                "StudentPortal",
+                new { id = lessonId });
         }
 
-        return RedirectToAction(nameof(Attempt), new
-        {
-            id = result.AttemptId,
-            mode = LessonGameMode
-        });
+        return RedirectToAction(
+            nameof(LessonAttempt),
+            new
+            {
+                id = result.AttemptId,
+                curriculumAdoptionId,
+                lessonId
+            });
     }
 
     [HttpPost("lesson-game/start"), ValidateAntiForgeryToken]
