@@ -36,7 +36,7 @@
   };
 
   var state = { round: 0, count: 8, score: 0, locked: false, sound: true };
-  var guide = '/images/game/v9/eddy-guide.webp';
+  var guide = '/images/public/edulaytiks-character.png?v=43';
   var title = mechanic === 'PERIMETER_TRACE'
     ? t('Perimeter Workshop', 'Pracownia obwodu', 'ورشة المحيط')
     : mechanic === 'AREA_TILE'
@@ -46,13 +46,13 @@
   root.innerHTML =
     '<section class="gw-game gw-universal" data-specialized-practice>' +
       '<header class="gw-hud">' +
-        '<div class="gw-brand"><span class="gw-brand-mark">◆</span><span><strong>' + title.toUpperCase() + '</strong><small></small></span></div>' +
+        '<div class="gw-brand"><span class="gw-brand-mark">◆</span><span><strong>' + t('EDULYTICS PRACTICE', 'ĆWICZENIA EDULYTICS', 'تدريب EDULYTICS') + '</strong><small></small></span></div>' +
         '<div class="gw-hud-right"><div class="gw-pill">★ <span data-score>0</span></div><div class="gw-pill"><span data-round>1 / 8</span></div><button class="gw-icon" type="button" data-sound aria-label="' + copy.sound + '">🔊</button><button class="gw-icon" type="button" data-fullscreen aria-label="' + copy.fullscreen + '">⛶</button></div>' +
       '</header>' +
       '<div class="gw-progress"><span data-progress></span></div>' +
       '<main class="gw-stage"><div class="gw-mission"><span>' + copy.mission + '</span><strong data-question></strong><small data-subquestion></small></div><div class="gw-runtime-board" data-board></div></main>' +
-      '<div class="gw-eddy"><img src="' + guide + '" alt="Eddy"><div><span>EDDY</span><p data-eddy></p></div></div>' +
-      '<div class="gw-complete" data-complete hidden><div class="gw-complete-card"><img src="' + guide + '" alt="Eddy"><h2>' + copy.complete + '</h2><p>' + t('Practice is feedback, not an official grade.', 'Ćwiczenie daje informację zwrotną, nie jest oficjalną oceną.', 'التدريب للتغذية الراجعة وليس درجة رسمية.') + '</p><strong data-final></strong><br><button class="gw-primary" type="button" data-replay>' + copy.again + '</button></div></div>' +
+      '<div class="gw-eddy"><img src="' + guide + '" alt="Edulytics character"><div><span>EDULYTICS</span><p data-eddy></p></div></div>' +
+      '<div class="gw-complete" data-complete hidden><div class="gw-complete-card"><img src="' + guide + '" alt="Edulytics character"><h2>' + copy.complete + '</h2><p>' + t('Practice is feedback, not an official grade.', 'Ćwiczenie daje informację zwrotną, nie jest oficjalną oceną.', 'التدريب للتغذية الراجعة وليس درجة رسمية.') + '</p><strong data-final></strong><br><button class="gw-primary" type="button" data-replay>' + copy.again + '</button></div></div>' +
     '</section>';
 
   root.querySelector('.gw-brand small').textContent = unitTitle;
