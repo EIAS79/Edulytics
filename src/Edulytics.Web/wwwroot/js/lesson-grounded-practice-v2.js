@@ -16,7 +16,7 @@
   }
 
   var langIndex = locale === 'pl' ? 1 : (locale === 'ar' ? 2 : 0);
-  var guide = '/images/game/v9/eddy-hint.webp';
+  var guide = '/images/public/edulaytiks-character.png?v=43';
   var state = { round: 0, count: 8, score: 0, locked: false };
 
   function t(en, pl, ar) { return [en, pl, ar][langIndex]; }
@@ -39,12 +39,12 @@
   }
 
   root.innerHTML = '<section class="gw-game gw-universal" data-exact-lesson-game>' +
-    '<header class="gw-hud"><div class="gw-brand"><span class="gw-brand-mark">◆</span><span><strong>' + esc(t('EXACT-SKILL PRACTICE', 'ĆWICZENIE DOKŁADNEJ UMIEJĘTNOŚCI', 'تدريب المهارة المحددة')) + '</strong><small>' + esc(unitTitle) + '</small></span></div>' +
+    '<header class="gw-hud"><div class="gw-brand"><span class="gw-brand-mark">◆</span><span><strong>' + esc(t('EDULYTICS PRACTICE', 'ĆWICZENIA EDULYTICS', 'تدريب EDULYTICS')) + '</strong><small>' + esc(unitTitle) + '</small></span></div>' +
     '<div class="gw-hud-right"><div class="gw-pill">★ <span data-score>0</span></div><div class="gw-pill"><span data-round>1 / 8</span></div></div></header>' +
     '<div class="gw-progress"><span data-progress></span></div>' +
     '<main class="gw-stage"><div class="gw-mission"><span>' + esc(t('YOUR MISSION', 'TWOJE ZADANIE', 'مهمتك')) + '</span><strong data-question></strong><small data-subquestion></small></div><div class="gw-runtime-board" data-board></div></main>' +
-    '<div class="gw-eddy"><img src="' + guide + '" alt="Eddy"><div><span>EDDY</span><p data-eddy></p></div></div>' +
-    '<div class="gw-complete" data-complete hidden><div class="gw-complete-card"><img src="' + guide + '" alt="Eddy"><p>' + esc(lessonTitle) + '</p><h2>' + esc(t('Lesson practice complete!', 'Ćwiczenie ukończone!', 'اكتمل تدريب الدرس!')) + '</h2><strong data-final></strong><br><button class="gw-primary" type="button" data-replay>' + esc(t('Practice again', 'Ćwicz ponownie', 'تدرّب مرة أخرى')) + '</button></div></div>' +
+    '<div class="gw-eddy"><img src="' + guide + '" alt="Edulytics character"><div><span>EDULYTICS</span><p data-eddy></p></div></div>' +
+    '<div class="gw-complete" data-complete hidden><div class="gw-complete-card"><img src="' + guide + '" alt="Edulytics character"><p>' + esc(lessonTitle) + '</p><h2>' + esc(t('Lesson practice complete!', 'Ćwiczenie ukończone!', 'اكتمل تدريب الدرس!')) + '</h2><strong data-final></strong><br><button class="gw-primary" type="button" data-replay>' + esc(t('Practice again', 'Ćwicz ponownie', 'تدرّب مرة أخرى')) + '</button></div></div>' +
     '</section>';
 
   var board = root.querySelector('[data-board]');

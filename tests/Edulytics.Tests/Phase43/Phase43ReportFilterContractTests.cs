@@ -290,7 +290,7 @@ public sealed class Phase43ReportFilterContractTests
     }
 
     [Fact]
-    public void Phase43_CountingGrove_UsesDedicatedEddyHintArtworkDirectly()
+    public void Phase43_CountingGrove_UsesCurrentApprovedCharacterDirectly()
     {
         var root = FindRoot();
         var runtime = File.ReadAllText(Path.Combine(
@@ -315,7 +315,8 @@ public sealed class Phase43ReportFilterContractTests
             "js",
             "count-touch-eddy-hint-v1.js");
 
-        Assert.Contains("guide: '/images/game/v9/eddy-hint.webp'", runtime);
+        Assert.Contains("guide: '/images/public/edulaytiks-character.png?v=43'", runtime);
+        Assert.DoesNotContain("/images/game/v9/eddy-hint.webp", runtime);
         Assert.DoesNotContain("count-touch-eddy-hint-v1.js", gameView);
         Assert.False(File.Exists(obsoleteOverride));
     }

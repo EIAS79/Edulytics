@@ -100,7 +100,7 @@ public static class LessonPresentationParser
 
     private static readonly Regex ResidualTagRegex =
         new(
-            @"<[^>]*>",
+            @"</?[A-Za-z][A-Za-z0-9:-]*(?:\s[^<>]*?)?/?>",
             RegexOptions.CultureInvariant);
 
     private static readonly Regex BlockBoundaryRegex =

@@ -7,7 +7,7 @@
   var mechanic = root.dataset.mechanic || 'MODEL_SELECT';
   var locale = root.dataset.lessonLanguage || 'en';
   var unitTitle = root.dataset.unitTitle || '';
-  var guide = '/images/game/v9/eddy-hint.webp';
+  var guide = '/images/public/edulaytiks-character.png?v=43';
   var langIndex = locale === 'pl' ? 1 : (locale === 'ar' ? 2 : 0);
   function t(en, pl, ar) { return [en, pl, ar][langIndex]; }
   function esc(value) { return String(value).replace(/[&<>'\"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','\"':'&quot;'}[c]; }); }
@@ -46,8 +46,8 @@
     '<header class="gw-hud"><div class="gw-brand"><span class="gw-brand-mark">◆</span><span><strong>'+esc((names[workspace]||names.REASONING_MODELING).toUpperCase())+'</strong><small>'+esc(unitTitle)+'</small></span></div>'+
     '<div class="gw-hud-right"><div class="gw-pill">★ <span data-score>0</span></div><div class="gw-pill"><span data-round>1 / 8</span></div><button class="gw-icon" type="button" data-sound aria-label="'+esc(copy.sound)+'">🔊</button><button class="gw-icon" type="button" data-fullscreen aria-label="'+esc(copy.fullscreen)+'">⛶</button></div></header>'+
     '<div class="gw-progress"><span data-progress></span></div><main class="gw-stage"><div class="gw-mission"><span>'+esc(copy.mission)+'</span><strong data-question></strong><small data-subquestion></small></div><div class="gw-runtime-board" data-board></div></main>'+
-    '<div class="gw-eddy"><img src="'+guide+'" alt="Eddy"><div><span>EDDY</span><p data-eddy></p></div></div>'+
-    '<div class="gw-complete" data-complete hidden><div class="gw-complete-card"><img src="'+guide+'" alt="Eddy"><p>'+esc(copy.brand)+'</p><h2>'+esc(copy.complete)+'</h2><p>'+esc(t('Practice is feedback, not an official grade.','Ćwiczenie daje informację zwrotną, nie jest oficjalną oceną.','التدريب للتغذية الراجعة وليس درجة رسمية.'))+'</p><strong data-final></strong><br><button class="gw-primary" type="button" data-replay>'+esc(copy.again)+'</button></div></div></section>';
+    '<div class="gw-eddy"><img src="'+guide+'" alt="Edulytics character"><div><span>EDULYTICS</span><p data-eddy></p></div></div>'+
+    '<div class="gw-complete" data-complete hidden><div class="gw-complete-card"><img src="'+guide+'" alt="Edulytics character"><p>'+esc(copy.brand)+'</p><h2>'+esc(copy.complete)+'</h2><p>'+esc(t('Practice is feedback, not an official grade.','Ćwiczenie daje informację zwrotną, nie jest oficjalną oceną.','التدريب للتغذية الراجعة وليس درجة رسمية.'))+'</p><strong data-final></strong><br><button class="gw-primary" type="button" data-replay>'+esc(copy.again)+'</button></div></div></section>';
 
   var game=root.querySelector('[data-gw-game]'), board=root.querySelector('[data-board]'), question=root.querySelector('[data-question]'), sub=root.querySelector('[data-subquestion]'), eddy=root.querySelector('[data-eddy]'), scoreNode=root.querySelector('[data-score]'), roundNode=root.querySelector('[data-round]'), progress=root.querySelector('[data-progress]'), complete=root.querySelector('[data-complete]'), finalNode=root.querySelector('[data-final]');
   function speak(text){if(!state.sound||!window.speechSynthesis||!window.SpeechSynthesisUtterance)return;try{window.speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(text);u.lang=locale==='pl'?'pl-PL':(locale==='ar'?'ar-AE':'en-GB');u.rate=.92;window.speechSynthesis.speak(u);}catch(e){}}

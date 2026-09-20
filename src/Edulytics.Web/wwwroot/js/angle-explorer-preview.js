@@ -10,7 +10,7 @@
         return;
     }
 
-    var guide = '/images/game/v9/eddy-guide.webp';
+    var guide = '/images/public/edulaytiks-character.png?v=43';
     var targetAngles = [35, 50, 65, 115, 135, 155, 210, 235, 275, 315];
     var state = {
         rounds: [],
@@ -50,7 +50,7 @@
     root.innerHTML = '' +
         '<section class="gw-game" aria-label="Angle Observatory game">' +
             '<header class="gw-hud">' +
-                '<div class="gw-brand"><span class="gw-brand-mark" aria-hidden="true">◒</span><span><strong>ANGLE OBSERVATORY</strong><small>Signal deck</small></span></div>' +
+                '<div class="gw-brand"><span class="gw-brand-mark" aria-hidden="true">◒</span><span><strong>EDULYTICS PRACTICE</strong><small>Angle exploration</small></span></div>' +
                 '<div class="gw-hud-right"><div class="gw-pill">★ <span data-gw-score>0</span></div><div class="gw-pill" data-gw-round>1 / 8</div><button class="gw-icon" type="button" data-gw-sound aria-label="Toggle sound">🔊</button><button class="gw-icon" type="button" data-gw-fullscreen aria-label="Fullscreen">⛶</button></div>' +
             '</header>' +
             '<div class="gw-progress"><span data-gw-progress></span></div>' +
@@ -76,7 +76,7 @@
                     '</aside>' +
                 '</div>' +
             '</main>' +
-            '<div class="gw-eddy"><img src="' + guide + '" alt="Eddy" /><div><span>EDDY</span><p data-gw-eddy>Let’s tune the signal rays. Angles tell us how far a ray has turned.</p></div></div>' +
+            '<div class="gw-eddy"><img src="' + guide + '" alt="Edulytics character" /><div><span>EDULYTICS</span><p data-gw-eddy>Let’s tune the signal rays. Angles tell us how far a ray has turned.</p></div></div>' +
             '<div class="gw-complete" data-gw-complete hidden><div class="gw-complete-card"><img src="' + guide + '" alt="Eddy celebrating" /><p>ADVENTURE COMPLETE</p><h2>Observatory online!</h2><p>You built and identified acute, obtuse and reflex angles.</p><strong data-gw-final-score></strong><br/><button class="gw-primary" type="button" data-gw-replay>Play again</button></div></div>' +
         '</section>';
 

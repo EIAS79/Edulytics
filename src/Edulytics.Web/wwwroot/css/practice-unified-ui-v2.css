@@ -1,0 +1,188 @@
+/* Unified learner-facing Practice shell.
+   Loaded after legacy renderer CSS so renderer mechanics remain intact while
+   the outer product experience is consistent. */
+:root {
+    --practice-shell-max: 1240px;
+    --practice-page-gutter: 24px;
+    --practice-shell-radius: 28px;
+}
+
+.gw-page,
+.cg-preview-page {
+    background:
+        radial-gradient(circle at 50% -10%, rgba(31, 157, 177, .08), transparent 36rem),
+        #f2f7f9;
+}
+
+body.gw-page > .gw-wrap,
+body.cg-preview-page > .cg-preview-wrap {
+    width: min(var(--practice-shell-max), calc(100% - (var(--practice-page-gutter) * 2))) !important;
+    max-width: var(--practice-shell-max) !important;
+    margin-inline: auto !important;
+    padding-top: 28px !important;
+    padding-bottom: 48px !important;
+}
+
+.gw-back {
+    margin-bottom: 16px !important;
+}
+
+.gw-head,
+.cg-preview-head {
+    margin: 0 0 22px !important;
+}
+
+.gw-head > p,
+.cg-preview-head p {
+    margin: 0 !important;
+}
+
+.gw-head > p:first-child,
+.cg-preview-head p:first-child {
+    margin-bottom: 10px !important;
+    color: #527083;
+    font-size: .95rem;
+}
+
+.gw-head h1,
+.cg-preview-head h1 {
+    margin: 0 !important;
+    max-width: 1180px;
+    font-size: clamp(2rem, 3.25vw, 3.35rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -.025em;
+    text-wrap: balance;
+}
+
+.gw-head h1 + p,
+.cg-preview-head h1 + p {
+    margin-top: 11px !important;
+    color: #45677a !important;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.gw-game {
+    width: 100% !important;
+    min-height: 690px !important;
+    border-radius: var(--practice-shell-radius) !important;
+}
+
+.gw-hud {
+    min-height: 78px;
+}
+
+.gw-stage {
+    min-height: 520px !important;
+    padding-top: 22px !important;
+}
+
+.gw-universal .gw-stage {
+    min-height: 520px !important;
+}
+
+.gw-runtime-board {
+    width: min(920px, 100%) !important;
+    min-height: 380px !important;
+}
+
+.gw-mission {
+    width: min(720px, calc(100% - 24px)) !important;
+    margin-bottom: 22px !important;
+}
+
+.gw-mission small:empty {
+    display: none;
+}
+
+.gw-brand strong {
+    letter-spacing: .055em !important;
+}
+
+.gw-eddy {
+    min-height: 88px;
+}
+
+.gw-eddy img,
+.gw-complete-card img,
+.lp-complete img {
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+/* The current approved transparent character is taller than the retired
+   guide headshot. Keep the full character visible without expanding shell. */
+.gw-universal .gw-eddy img {
+    width: 98px !important;
+    height: 132px !important;
+    bottom: 4px !important;
+}
+
+.gw-universal .gw-eddy {
+    padding-left: 116px !important;
+}
+
+html[dir="rtl"] .gw-universal .gw-eddy {
+    padding-left: 20px !important;
+    padding-right: 116px !important;
+}
+
+.lp-server-card {
+    width: min(920px, 100%) !important;
+}
+
+@media (max-width: 850px) {
+    :root {
+        --practice-page-gutter: 12px;
+    }
+
+    body.gw-page > .gw-wrap,
+    body.cg-preview-page > .cg-preview-wrap {
+        padding-top: 16px !important;
+    }
+
+    .gw-head,
+    .cg-preview-head {
+        margin-bottom: 18px !important;
+    }
+
+    .gw-game {
+        min-height: 720px !important;
+        border-radius: 22px !important;
+    }
+
+    .gw-stage,
+    .gw-universal .gw-stage {
+        min-height: 545px !important;
+    }
+}
+
+@media (max-width: 520px) {
+    .gw-head h1,
+    .cg-preview-head h1 {
+        font-size: clamp(1.8rem, 9vw, 2.35rem) !important;
+    }
+
+    .gw-head h1 + p,
+    .cg-preview-head h1 + p {
+        margin-top: 9px !important;
+    }
+
+    .gw-game {
+        min-height: 760px !important;
+    }
+
+    .gw-universal .gw-eddy {
+        padding-left: 92px !important;
+    }
+
+    .gw-universal .gw-eddy img {
+        width: 76px !important;
+        height: 106px !important;
+    }
+
+    html[dir="rtl"] .gw-universal .gw-eddy {
+        padding-left: 16px !important;
+        padding-right: 92px !important;
+    }
+}
