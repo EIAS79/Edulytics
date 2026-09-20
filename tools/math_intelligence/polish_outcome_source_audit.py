@@ -18,6 +18,10 @@ from pypdf import PdfReader
 ROOT = Path(__file__).resolve().parents[2]
 PACK = ROOT / "src/Edulytics.Core/Curriculum/Packs/pl-national-math.curriculum-pack.json"
 REPORT = ROOT / "artifacts/math-intelligence/pl-outcome-source-evidence.json"
+RESOURCE = (
+    ROOT / "src/Edulytics.Core/Mathematics/Curriculum"
+    / "polish-outcome-source-evidence.v1.json"
+)
 
 PRIMARY_URL = "https://eli.gov.pl/api/acts/DU/2024/996/text.html"
 UPPER_PDF_URL = "https://eli.gov.pl/api/acts/DU/2024/1019/text/I/D20241019.pdf"
@@ -388,6 +392,7 @@ def extract_upper(
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--write-report", action="store_true")
+    parser.add_argument("--write-resource", action="store_true")
     parser.add_argument("--strict", action="store_true")
     args = parser.parse_args()
 
@@ -476,6 +481,31 @@ def main() -> int:
         REPORT.parent.mkdir(parents=True, exist_ok=True)
         REPORT.write_text(
             json.dumps(report, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+
+    if args.write_resource:
+        RESOURCE.parent.mkdir(parents=True, exist_ok=True)
+        resource = {
+            "schemaVersion": 1,
+            "packCode": pack.get("PackCode"),
+            "versionCode": pack.get("VersionCode"),
+            "outcomeCount": len(rows),
+            "authority": (
+                "Reconstructed from the accepted 2025/2026 Polish ELI official "
+                "curriculum sources. Raw evidence is not learner prose."
+            ),
+            "entries": [
+                {
+                    "outcomeCode": row["outcomeCode"],
+                    "officialText": row["officialText"],
+                    "officialTextSha256": row["officialTextSha256"],
+                }
+                for row in rows
+            ],
+        }
+        RESOURCE.write_text(
+            json.dumps(resource, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
         )
 
