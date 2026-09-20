@@ -53,6 +53,14 @@ public sealed class MathematicsCanonicalLessonContentSeeder
     public async Task SeedApprovedProductionCorrectionsAsync(
         CancellationToken ct = default)
     {
+        var hasAcceptedCurriculum =
+            await _db.CurriculumPackImportStates
+                .AsNoTracking()
+                .AnyAsync(state => state.IsComplete, ct);
+
+        if (!hasAcceptedCurriculum)
+            return;
+
         var documents = LoadEmbeddedDocuments()
             .Where(document =>
                 document.Lessons.Any(lesson =>
