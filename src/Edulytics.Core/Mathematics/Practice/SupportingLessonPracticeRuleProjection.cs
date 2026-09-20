@@ -107,9 +107,11 @@ internal static class SupportingLessonPracticeRuleProjection
                 .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
                 .ToArray();
         }
-        catch (JsonException)
+        catch (JsonException ex)
         {
-            return [];
+            throw new InvalidOperationException(
+                "Supporting Practice rule projection failed while reading embedded JSON. See inner exception for the exact JSON path.",
+                ex);
         }
         catch (InvalidOperationException ex)
         {
