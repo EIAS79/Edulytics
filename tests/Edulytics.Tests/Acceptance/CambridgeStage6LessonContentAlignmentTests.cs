@@ -14,6 +14,11 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
                 x.LessonCode,
                 CambridgePrimaryStage6LessonContentCorrections.TwoUnknownsLessonCode,
                 StringComparison.Ordinal));
+        var scaleReadingBuild = document.Lessons.Single(
+            x => string.Equals(
+                x.LessonCode,
+                CambridgePrimaryStage6LessonContentCorrections.ScaleReadingBuildLessonCode,
+                StringComparison.Ordinal));
         var scaleReading = document.Lessons.Single(
             x => string.Equals(
                 x.LessonCode,
@@ -31,6 +36,13 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
         Assert.Contains("both original relationships", twoUnknownsEnglish.StepByStepSolutions, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("48+27", twoUnknownsEnglish.WorkedExamples, StringComparison.Ordinal);
 
+        var scaleBuildEnglish = English(scaleReadingBuild);
+        Assert.Contains("equal intervals", scaleBuildEnglish.Explanation, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("60 − 20 = 40", scaleBuildEnglish.WorkedExamples, StringComparison.Ordinal);
+        Assert.Contains("40 ÷ 4 = 10", scaleBuildEnglish.WorkedExamples, StringComparison.Ordinal);
+        Assert.DoesNotContain("powers of ten", scaleBuildEnglish.Explanation, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("6,203,405", scaleBuildEnglish.WorkedExamples, StringComparison.Ordinal);
+
         var scaleEnglish = English(scaleReading);
         Assert.Contains("(end value − start value) ÷ number of intervals", scaleEnglish.Explanation, StringComparison.Ordinal);
         Assert.Contains("2, 4, 5 or 10", scaleEnglish.KeyConceptsAndRules, StringComparison.Ordinal);
@@ -47,13 +59,14 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
     }
 
     [Fact]
-    public void CorrectionVersion_IsRestrictedToThreeExactLessonCodes()
+    public void CorrectionVersion_IsRestrictedToFourExactLessonCodes()
     {
         var document = Stage6Document();
 
         var targetCodes = new HashSet<string>(StringComparer.Ordinal)
         {
             CambridgePrimaryStage6LessonContentCorrections.TwoUnknownsLessonCode,
+            CambridgePrimaryStage6LessonContentCorrections.ScaleReadingBuildLessonCode,
             CambridgePrimaryStage6LessonContentCorrections.ScaleReadingLessonCode,
             CambridgePrimaryStage6LessonContentCorrections.FractionComparisonLessonCode
         };
@@ -119,7 +132,7 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
                 .Where(x => targetCodes.Contains(x.LessonCode))
                 .ToArray();
 
-        Assert.Equal(3, targets.Length);
+        Assert.Equal(4, targets.Length);
         Assert.All(targets, lesson => Assert.Empty(lesson.OutcomeCodes));
     }
 
