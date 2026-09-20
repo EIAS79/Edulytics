@@ -20,10 +20,11 @@ public sealed class StudentLessonContentQualityTests
                 StringComparison.Ordinal));
 
         var english = Assert.Single(
-            lesson.Translations.Where(translation =>
+            lesson.Translations,
+            translation =>
                 translation.CultureCode.StartsWith(
                     "en",
-                    StringComparison.OrdinalIgnoreCase)));
+                    StringComparison.OrdinalIgnoreCase));
 
         Assert.Contains(
             "equal intervals",
