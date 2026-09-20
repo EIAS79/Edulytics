@@ -168,14 +168,6 @@ def audit() -> dict[str, Any]:
     supporting_rules, supporting_rule_errors = load_supporting_rules()
     blockers.extend(supporting_rule_errors)
     blockers.extend(validate_supporting_rules(supporting_rules))
-    uae_l6_rule = next(
-        (
-            rule
-            for rule in supporting_rules
-            if rule.rule_id == "uae-systems-inequalities"
-        ),
-        None,
-    )
     lessons: list[dict[str, Any]] = []
     worked_groups: dict[str, list[int]] = defaultdict(list)
     solution_groups: dict[str, list[int]] = defaultdict(list)
@@ -231,32 +223,10 @@ def audit() -> dict[str, Any]:
                 for row in (translations if isinstance(translations, list) else [])
             )
 
-            official_practice_content_corrected = False
-            if (
-                source_type == "OfficialMapped"
-                and lesson_code.startswith("PED:UAE:G9:ADV:T1:L6-")
-                and uae_l6_rule is not None
-                and any(
-                    pattern.fullmatch(base_title)
-                    for pattern in uae_l6_rule.title_patterns
-                )
-            ):
-                worked = normalize_space(
-                    "Worked example: "
-                    + uae_l6_rule.content["workedExample"]
-                )
-                solutions = normalize_space(
-                    "Solution method: "
-                    + uae_l6_rule.content["solution"]
-                )
-                explanation = normalize_space(
-                    uae_l6_rule.content["concept"]
-                )
-                key_concepts = normalize_space(
-                    uae_l6_rule.content["concept"]
-                )
-                official_practice_content_corrected = True
-
+            # This Python audit inspects raw source-pack content only.
+            # Effective learner content is materialized exclusively by the C#
+            # CanonicalLessonContentMaterializer and certified by the
+            # MathematicsIntelligence C# gates.
             matched_rules: list[dict[str, Any]] = []
             for rule in rules:
                 title_hits = pattern_hits(rule.title_patterns, base_title)
@@ -316,43 +286,23 @@ def audit() -> dict[str, Any]:
                         "Lesson title matches a known mathematical target, but worked examples, explanation and key concepts contain no sufficient target-specific evidence."
                     ]
 
-            # Polish learner-facing lessons are rewritten by the runtime seeder
-            # from pinned official OutcomeCode evidence plus the reviewed exact
-            # Polish Practice map. The raw Phase-29 JSON body is intentionally
-            # broad, so the audit must judge the same effective remediated body
-            # that persistence receives rather than the superseded fallback text.
-            polish_exact_remediated = (
-                pack_code == "PL-NATIONAL-MATH"
-                and outcomes
-                and all(code in polish_mappings for code in outcomes)
+            reviewed_correction_target = bool(
+                supporting_rule is not None
+                or (
+                    pack_code == "PL-NATIONAL-MATH"
+                    and outcomes
+                    and all(code in polish_mappings for code in outcomes)
+                )
+                or (
+                    source_type == "OfficialMapped"
+                    and lesson_code.startswith("PED:UAE:G9:ADV:T1:L6-")
+                )
             )
-            if polish_exact_remediated:
-                status = "PASS_TARGETED"
-                findings = [
-                    "Polish exact OutcomeCode remediation supplies target-specific learner content from pinned official evidence and the reviewed Practice map before seeding."
-                ]
-
-            # The Supporting Practice target registry is also the runtime content
-            # remediation authority. English Supporting lessons receive that
-            # target-specific recipe before seeding, so the audit must inspect
-            # the same effective content. Localized non-English content is never
-            # replaced with English: reviewed rules may classify an otherwise
-            # UNCLASSIFIED title, but genuine weak/review findings remain blocked.
-            if supporting_rule is not None:
-                if has_english_translation:
-                    worked = normalize_space(supporting_rule.content["workedExample"])
-                    solutions = normalize_space(supporting_rule.content["solution"])
-                    explanation = normalize_space(supporting_rule.content["concept"])
-                    key_concepts = normalize_space(supporting_rule.content["concept"])
-                    status = "PASS_TARGETED"
-                    findings = [
-                        "Reviewed Supporting Practice rule supplies the same target-specific content recipe used by runtime seeding."
-                    ]
-                elif status == "UNCLASSIFIED":
-                    status = "PASS_WITH_WARNINGS"
-                    findings = [
-                        "Reviewed Supporting Practice rule resolves this localized target; existing localized learner content is retained unchanged."
-                    ]
+            if reviewed_correction_target:
+                findings.append(
+                    "Effective learner-body correction is owned by CanonicalLessonContentMaterializer; "
+                    "this Python report intentionally retains raw source-pack evidence."
+                )
 
             effective_body = normalize_space(
                 " ".join(
@@ -395,11 +345,9 @@ def audit() -> dict[str, Any]:
                 "studentFacingDefects": student_facing_defects,
                 "matchedRules": matched_rules,
                 "supportingPracticeRuleId": None if supporting_rule is None else supporting_rule.rule_id,
-                "contentRemediated": bool(
-                    (supporting_rule is not None and has_english_translation)
-                    or official_practice_content_corrected
-                    or polish_exact_remediated
-                ),
+                "contentRemediated": False,
+                "reviewedCorrectionTarget": reviewed_correction_target,
+                "effectiveContentAuthority": "CanonicalLessonContentMaterializer",
                 "academicLanguage": academic_language,
                 "workedExamplePreview": short(worked),
                 "workedTemplateHash": worked_hash,
