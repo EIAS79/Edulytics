@@ -166,6 +166,77 @@ public sealed class SupportingLessonPracticeR1Tests
             StringComparison.Ordinal);
     }
 
+
+    [Fact]
+    public void CommonDenominationBuildRuleResolvesButRuntimeContractMustAlsoResolve()
+    {
+        const string lessonCode =
+            "PED:CAMBRIDGE-INTL-MATH:S6:6F-2:BUILD";
+        const string title =
+            "Express fractions in a common denomination: Build the Idea";
+
+        Assert.True(
+            SupportingPracticeTargetRuleRegistry.TryResolve(
+                lessonCode,
+                title,
+                out var rule));
+        Assert.NotNull(rule);
+        Assert.Equal(
+            "fractions.compare.unlike_denominators",
+            rule!.SkillId);
+        Assert.Contains(
+            "fractions.compare.unlike.common_denominator",
+            rule.Families);
+
+        Assert.True(
+            LessonPracticeContractRegistry.TryResolve(
+                lessonCode,
+                out var contract));
+        Assert.NotNull(contract);
+        Assert.Equal(
+            "fractions.compare.unlike_denominators",
+            contract!.SkillId);
+        Assert.Contains(
+            "fractions.compare.unlike.common_denominator",
+            contract.AllowedQuestionFamilies);
+        Assert.Equal("READY_VERIFIED", contract.Readiness);
+    }
+
+    [Fact]
+    public void ScaleReadingBuildRuleAndRuntimeContractResolveIndependentlyOfGameRoute()
+    {
+        const string lessonCode =
+            "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:BUILD";
+        const string title =
+            "Reading scales with 2, 4, 5 or 10 intervals: Build the Idea";
+
+        Assert.True(
+            SupportingPracticeTargetRuleRegistry.TryResolve(
+                lessonCode,
+                title,
+                out var rule));
+        Assert.NotNull(rule);
+
+        Assert.True(
+            LessonPracticeContractRegistry.TryResolve(
+                lessonCode,
+                out var contract));
+        Assert.NotNull(contract);
+        Assert.Equal(rule!.SkillId, contract!.SkillId);
+        Assert.Equal("READY_VERIFIED", contract.Readiness);
+    }
+
+    [Fact]
+    public void SupportingRuleProjectionContributesRuntimeContracts()
+    {
+        Assert.Contains(
+            LessonPracticeContractRegistry.All,
+            contract => string.Equals(
+                contract.SourceType,
+                "SupportingRule",
+                StringComparison.Ordinal));
+    }
+
     private static string FindRoot()
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);
