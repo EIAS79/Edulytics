@@ -6,6 +6,10 @@ from pathlib import Path
 from typing import Any
 
 from official_outcome_practice_rules import load_resolutions as load_outcome_resolutions
+from polish_practice_map import (
+    lesson_mapping as polish_lesson_mapping,
+    load_polish_outcome_mappings,
+)
 from supporting_practice_rules import (
     SupportingRule,
     choose_translation,
@@ -145,6 +149,8 @@ def load_reviewed_official_rule_mappings(
     errors.extend(validate_rules(rules))
     outcome_resolutions, outcome_errors = load_outcome_resolutions()
     errors.extend(outcome_errors)
+    polish_mappings, polish_errors = load_polish_outcome_mappings()
+    errors.extend(polish_errors)
 
     mappings: dict[str, dict[str, Any]] = {}
     seen: set[str] = set()
@@ -161,13 +167,6 @@ def load_reviewed_official_rule_mappings(
         pack_code = str(
             get_case(doc, "PackCode", "packCode", default="") or ""
         ).strip()
-
-        # The current Polish canonical packs use deterministic broad-domain
-        # fallback lesson identities. They do not contain the exact official
-        # outcome wording needed for safe lesson-level Practice promotion.
-        # P13 must classify those nodes explicitly rather than guessing a skill.
-        if pack_code == "PL-NATIONAL-MATH":
-            continue
 
         academic_language = str(
             get_case(doc, "AcademicLanguage", "academicLanguage", default="") or ""
@@ -191,6 +190,16 @@ def load_reviewed_official_rule_mappings(
                 get_case(lesson, "OutcomeCodes", "outcomeCodes", default=[])
             )
             if not outcomes:
+                continue
+
+            if pack_code == "PL-NATIONAL-MATH":
+                polish = polish_lesson_mapping(
+                    lesson_code,
+                    outcomes,
+                    polish_mappings,
+                )
+                if polish is not None:
+                    mappings[lesson_code] = polish
                 continue
 
             resolved_outcomes = [
