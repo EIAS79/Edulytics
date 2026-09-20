@@ -137,9 +137,31 @@
 
     var missionLabel = locale switch
     {
-        "pl" => "ĆWICZENIE DOKŁADNEJ UMIEJĘTNOŚCI",
-        "ar" => "تدريب المهارة المحددة",
-        _ => "EXACT-SKILL PRACTICE"
+        "pl" => "TWOJE ZADANIE",
+        "ar" => "مهمتك",
+        _ => "YOUR MISSION"
+    };
+
+    var guidanceText = interaction?.InteractionKind switch
+    {
+        LessonPracticeInteractionKind.RelationChoice => locale switch
+        {
+            "pl" => "Porównaj wartości i wybierz <, = lub >.",
+            "ar" => "قارن القيم واختر < أو = أو >.",
+            _ => "Compare the values and choose <, =, or >."
+        },
+        LessonPracticeInteractionKind.FractionEntry => locale switch
+        {
+            "pl" => "Wpisz ułamek, a następnie sprawdź odpowiedź.",
+            "ar" => "أدخل الكسر ثم تحقق من إجابتك.",
+            _ => "Enter the fraction, then check your answer."
+        },
+        _ => locale switch
+        {
+            "pl" => "Wpisz odpowiedź, a następnie ją sprawdź.",
+            "ar" => "أدخل إجابتك ثم تحقق منها.",
+            _ => "Enter your answer, then check it."
+        }
     };
 }
 <!DOCTYPE html>
@@ -153,6 +175,7 @@
     <link rel="stylesheet" href="~/css/game-workspace-v1.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/curriculum-workspace-runtime.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/eddy-overlap-v1.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/practice-unified-ui-v2.css" asp-append-version="true" />
     <style>
         .lp-server-card {
             width: min(920px, 100%);
@@ -321,7 +344,6 @@
             </div>
             <div class="gw-hud-right">
                 <span class="gw-pill">
-                    @S["Question"]
                     @Math.Min(answeredCount + 1, totalQuestions)
                     /
                     @totalQuestions
@@ -365,7 +387,7 @@
             @if (Model.Status == PracticeAttemptStatus.Submitted)
             {
                 <section class="lp-complete">
-                    <img src="~/images/game/v9/eddy-guide.webp"
+                    <img src="~/images/public/edulaytiks-character.png?v=43"
                          alt=""
                          width="96"
                          height="96" />
@@ -521,18 +543,13 @@
                 </section>
 
                 <aside class="gw-eddy">
-                    <img src="~/images/game/v9/eddy-guide.webp"
+                    <img src="~/images/public/edulaytiks-character.png?v=43"
                          alt=""
                          width="58"
                          height="58" />
                     <div>
                         <span>EDDY</span>
-                        <p>
-                            @if (interaction is not null)
-                            {
-                                @interaction.InteractionKind.ToString()
-                            }
-                        </p>
+                        <p>@guidanceText</p>
                     </div>
                 </aside>
             }
