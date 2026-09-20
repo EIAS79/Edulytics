@@ -57,6 +57,10 @@ jobs:
         run: |
           set -euo pipefail
           RESOURCE="src/Edulytics.Core/Mathematics/Curriculum/polish-outcome-source-evidence.v1.json"
+          cp "$RESOURCE" /tmp/polish-outcome-source-evidence.v1.json
+          git fetch origin "${{ github.head_ref }}"
+          git checkout -B "${{ github.head_ref }}" "origin/${{ github.head_ref }}"
+          cp /tmp/polish-outcome-source-evidence.v1.json "$RESOURCE"
           git add -f "$RESOURCE"
           if git diff --cached --quiet -- "$RESOURCE"; then
             exit 0
@@ -64,7 +68,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "data: pin 306 Polish official outcome texts"
-          git push origin "HEAD:${{ github.head_ref }}"
+          git push origin "${{ github.head_ref }}"
       - name: Upload Polish official Outcome evidence
         uses: actions/upload-artifact@v7.0.1
         with:
