@@ -356,6 +356,85 @@ public sealed class Phase29CanonicalContentPackPipelineTests
     }
 
     [Fact]
+    public async Task ReviewedProductionCorrectionsRepairStalePersistedLearnerBodyAndCloseParity()
+    {
+        await using var db = CreateDb();
+
+        await new MathematicsCurriculumPackSeeder(db)
+            .SeedAsync();
+
+        await new MathematicsPedagogicalLessonSeeder(db)
+            .SeedAsync();
+
+        var seeder =
+            new MathematicsCanonicalLessonContentSeeder(db);
+
+        await seeder.SeedAsync();
+
+        const string lessonCode =
+            "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-1:BUILD";
+
+        var lesson = await db.CurriculumPedagogicalLessons
+            .SingleAsync(x => x.Code == lessonCode);
+
+        var content = await db.CurriculumLessonContents
+            .SingleAsync(x => x.PedagogicalLessonId == lesson.Id);
+
+        var english = await db.CurriculumLessonContentTranslations
+            .SingleAsync(x =>
+                x.CurriculumLessonContentId == content.Id &&
+                x.CultureCode == "en");
+
+        content.ContentVersion =
+            CambridgePrimaryStage6LessonContentCorrections
+                .BaseContentVersion;
+        english.Explanation =
+            "stale learner body";
+        english.KeyConceptsAndRules =
+            "stale generic rules";
+
+        await db.SaveChangesAsync();
+
+        var mismatchesBefore =
+            await seeder
+                .FindReviewedProductionParityMismatchesAsync();
+
+        Assert.Contains(
+            mismatchesBefore,
+            x => x.StartsWith(
+                lessonCode + ":",
+                StringComparison.Ordinal));
+
+        await seeder
+            .SeedApprovedProductionCorrectionsAsync();
+
+        var repairedContent =
+            await db.CurriculumLessonContents
+                .SingleAsync(x =>
+                    x.PedagogicalLessonId == lesson.Id);
+
+        var repairedEnglish =
+            await db.CurriculumLessonContentTranslations
+                .SingleAsync(x =>
+                    x.CurriculumLessonContentId ==
+                        repairedContent.Id &&
+                    x.CultureCode == "en");
+
+        Assert.Equal(
+            "supporting-practice-remediation-v1",
+            repairedContent.ContentVersion);
+
+        Assert.Contains(
+            "Quantifying a relationship means expressing how quantities are connected by exact operations",
+            repairedEnglish.Explanation,
+            StringComparison.OrdinalIgnoreCase);
+
+        Assert.Empty(
+            await seeder
+                .FindReviewedProductionParityMismatchesAsync());
+    }
+
+    [Fact]
     public void EmbeddedUaePilotIsPublishedReviewedAndExactlyMapped()
     {
         var documents =
