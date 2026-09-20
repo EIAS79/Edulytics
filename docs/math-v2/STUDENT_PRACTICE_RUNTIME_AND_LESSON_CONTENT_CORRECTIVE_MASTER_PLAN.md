@@ -771,7 +771,7 @@ The corrective programme is closed.
 
 ## 8.3 Final catalogue evidence
 
-On merged Production commit `7a00a4a2f7b7ecf459904727837a52dbc5e9f386`:
+On merged Production application-code commit `7a00a4a2f7b7ecf459904727837a52dbc5e9f386`:
 
 - Catalogue lessons: **4,453**
 - Practice eligible: **4,453**
@@ -807,7 +807,7 @@ Phase16 includes successful:
 Render service:
 
 - Service: `Edulytics`
-- Production commit: `7a00a4a2f7b7ecf459904727837a52dbc5e9f386`
+- Production application-code commit: `7a00a4a2f7b7ecf459904727837a52dbc5e9f386`
 - Deploy: `dep-danucomq1p3s73cp1mt0`
 - Status: **live**
 
