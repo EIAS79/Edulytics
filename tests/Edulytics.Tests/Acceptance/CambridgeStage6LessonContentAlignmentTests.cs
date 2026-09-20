@@ -160,7 +160,11 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
             seeder,
             StringComparison.Ordinal);
         Assert.Contains(
-            ".IsTarget(document, lesson)",
+            "StudentFacingLessonContentCorrections",
+            seeder,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "IsApprovedProductionCorrectionTarget",
             seeder,
             StringComparison.Ordinal);
 
@@ -178,6 +182,22 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
             "STARTUP_APPROVED_CONTENT_CORRECTIONS_COMPLETED",
             program,
             StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void StudentFacingProductionCorrectionTargets_AreExactlyTheFourForensicFailures()
+    {
+        var expected = new HashSet<string>(StringComparer.Ordinal)
+        {
+            StudentFacingLessonContentCorrections.Stage3UnitFractionBuild,
+            StudentFacingLessonContentCorrections.Stage3UnitFractionApply,
+            StudentFacingLessonContentCorrections.Stage5NonUnitFractionBuild,
+            StudentFacingLessonContentCorrections.Stage5NonUnitFractionApply
+        };
+
+        Assert.True(
+            expected.SetEquals(
+                StudentFacingLessonContentCorrections.AllLessonCodes));
     }
 
     private static Edulytics.Core.Curriculum.CanonicalLessonContentPackDocument Stage6Document() =>
