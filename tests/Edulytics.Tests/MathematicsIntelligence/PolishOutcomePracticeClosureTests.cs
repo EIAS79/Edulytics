@@ -132,6 +132,68 @@ public sealed class PolishOutcomePracticeClosureTests
             });
     }
 
+
+    [Fact]
+    public void All_1569_Polish_Practice_contracts_generate_and_verify_deterministically()
+    {
+        var polishLessons = MathematicsCanonicalLessonContentSeeder
+            .LoadEmbeddedDocuments()
+            .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.PolandCode)
+            .SelectMany(x => x.Lessons)
+            .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
+            .ToArray();
+
+        Assert.Equal(1569, polishLessons.Length);
+
+        var engine = new ExactSkillContractQuestionEngine();
+        for (var index = 0; index < polishLessons.Length; index++)
+        {
+            var lesson = polishLessons[index];
+            Assert.True(
+                LessonPracticeContractRegistry.TryResolve(
+                    lesson.LessonCode,
+                    out var contract),
+                $"Missing Polish runtime Practice contract: {lesson.LessonCode}");
+            Assert.NotNull(contract);
+
+            var seed = 20260920 + index;
+            var first = Assert.Single(
+                engine.Generate(
+                    "polish-final-closure",
+                    lesson.LessonCode,
+                    contract!.AllowedQuestionFamilies,
+                    ExactSkillQuestionDifficulty.Standard,
+                    1,
+                    seed,
+                    Array.Empty<string>()));
+            var second = Assert.Single(
+                engine.Generate(
+                    "polish-final-closure",
+                    lesson.LessonCode,
+                    contract.AllowedQuestionFamilies,
+                    ExactSkillQuestionDifficulty.Standard,
+                    1,
+                    seed,
+                    Array.Empty<string>()));
+
+            Assert.Equal(first.Family, second.Family);
+            Assert.Equal(first.Prompt, second.Prompt);
+            Assert.Equal(first.CorrectAnswer, second.CorrectAnswer);
+            Assert.Equal(first.Solution, second.Solution);
+            Assert.Equal(first.ExposureFingerprint, second.ExposureFingerprint);
+            Assert.Equal(
+                first.Parameters.OrderBy(x => x.Key, StringComparer.Ordinal),
+                second.Parameters.OrderBy(x => x.Key, StringComparer.Ordinal));
+
+            Assert.True(
+                ExactSkillContractQuestionEngine.Verify(
+                    first.Family,
+                    first.Parameters,
+                    first.CorrectAnswer),
+                $"Verifier rejected Polish generated Practice item: {lesson.LessonCode} / {first.Family}");
+        }
+    }
+
     [Fact]
     public void Polish_mapping_is_deterministic_and_title_independent()
     {
