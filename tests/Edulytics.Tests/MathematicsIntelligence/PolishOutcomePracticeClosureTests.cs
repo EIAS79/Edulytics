@@ -206,37 +206,58 @@ public sealed class PolishOutcomePracticeClosureTests
         const string outcomeCode =
             "PL:REQ:PL:UPPER:WYRAZENIA-ALGEBRAICZNE:extended:4:205";
 
-        Assert.True(
-            PolishOutcomeSourceEvidenceRegistry.TryResolve(
-                outcomeCode,
-                out var evidence));
-        Assert.NotNull(evidence);
+        var affectedLessons = MathematicsCanonicalLessonContentSeeder
+            .LoadEmbeddedDocuments()
+            .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.PolandCode)
+            .SelectMany(x => x.Lessons)
+            .Where(x => x.OutcomeCodes.Contains(outcomeCode, StringComparer.Ordinal))
+            .ToArray();
 
-        var cleaned =
-            PolishLessonPracticeContentCorrections.CleanOfficialTarget(
-                evidence!.OfficialText);
-        var shortened =
-            PolishLessonPracticeContentCorrections.BuildShortTarget(
-                cleaned);
+        Assert.NotEmpty(affectedLessons);
 
-        Assert.EndsWith("…", shortened, StringComparison.Ordinal);
-        Assert.True(shortened.Length <= 180);
-
-        for (var index = 0; index < shortened.Length; index++)
+        foreach (var lesson in affectedLessons)
         {
-            if (char.IsHighSurrogate(shortened[index]))
+            var polish = Assert.Single(
+                lesson.Translations,
+                x => x.CultureCode.StartsWith(
+                    "pl",
+                    StringComparison.OrdinalIgnoreCase));
+
+            Assert.True(
+                polish.Title.EndsWith("…", StringComparison.Ordinal),
+                $"Expected truncated Polish title: {lesson.LessonCode}");
+            Assert.True(
+                polish.Title.Length <= 180,
+                $"Polish title exceeds the target bound: {lesson.LessonCode}");
+
+            AssertValidUtf16(polish.Title, lesson.LessonCode, "Title");
+            AssertValidUtf16(
+                polish.QuickSummary,
+                lesson.LessonCode,
+                "QuickSummary");
+        }
+    }
+
+    private static void AssertValidUtf16(
+        string value,
+        string lessonCode,
+        string field)
+    {
+        for (var index = 0; index < value.Length; index++)
+        {
+            if (char.IsHighSurrogate(value[index]))
             {
                 Assert.True(
-                    index + 1 < shortened.Length &&
-                    char.IsLowSurrogate(shortened[index + 1]),
-                    $"Unpaired high surrogate at {index}.");
+                    index + 1 < value.Length &&
+                    char.IsLowSurrogate(value[index + 1]),
+                    $"Unpaired high surrogate in {lessonCode}/{field} at {index}.");
                 index++;
                 continue;
             }
 
             Assert.False(
-                char.IsLowSurrogate(shortened[index]),
-                $"Unpaired low surrogate at {index}.");
+                char.IsLowSurrogate(value[index]),
+                $"Unpaired low surrogate in {lessonCode}/{field} at {index}.");
         }
     }
 
