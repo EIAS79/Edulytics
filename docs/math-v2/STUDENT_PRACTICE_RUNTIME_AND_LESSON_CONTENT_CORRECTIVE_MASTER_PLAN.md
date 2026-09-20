@@ -5,7 +5,7 @@
 **Baseline SHA:** `2740122f7ff1494ff3ff50b7cd201b44869b2d6b`  
 **Created:** 2026-09-20  
 **Status:** PLANNED — corrective execution not started  
-**Execution stages:** 8 (`C1`–`C8`)
+**Execution stages:** 9 (`C1`–`C9`)
 
 ---
 
@@ -13,7 +13,7 @@
 
 This plan is the single execution source for correcting the production gaps discovered after the Polish 1,569 Practice remediation and live student-portal verification.
 
-It covers four separate problems:
+It covers five separate problems:
 
 1. **Practice availability/runtime integration**
    - A lesson may be classified as Practice-ready by catalogue/audit tooling while the student lesson page still has no Practice entry point.
@@ -29,11 +29,16 @@ It covers four separate problems:
      - **Reading scales with 2, 4, 5 or 10 intervals: Build the Idea**
      - Production page shows Practice and launches `/student/practice/game`.
 
-3. **Student-facing lesson content quality/alignment**
+3. **Practice pedagogical QA and question certification**
+   - Technical Practice existence/readiness and pedagogical question quality are separate QA layers.
+   - The catalogue can be technically mapped, generated and verified while individual generated questions may still need stronger checks for exact lesson alignment, clarity, difficulty, distractor quality, age appropriateness, visual correctness and learner feedback.
+   - This stage must raise quality without redefining or conflating the technical meaning of Practice availability.
+
+4. **Student-facing lesson content quality/alignment**
    - The live `6NPV-4:BUILD` lesson contains generic place-value material instead of a learner-facing explanation of reading scales.
    - A more precise Reading Scales correction exists in code, but currently targets `6NPV-4:APPLY`, not `6NPV-4:BUILD`.
 
-4. **Login copy**
+5. **Login copy**
    - Remove the requested Platform Administrator explanatory copy from the public login page in every supported login locale.
 
 This programme must close the gaps with runtime evidence, not catalogue-level assumptions.
@@ -50,6 +55,7 @@ This programme must close the gaps with runtime evidence, not catalogue-level as
 6. **No “4453/4453” production claim from Python/audit readiness alone.** Closure requires the live C# runtime/UI path.
 7. **No single-lesson patch as final closure.** Reproductions identify defect classes; permanent gates must cover the full catalogue.
 8. **No silent projection failure.** Projection/registry failures must be observable and test-failing.
+9. **Technical Practice coverage and pedagogical certification remain distinct.** A lesson can be technically Practice-ready without that statement meaning every possible generated question has undergone manual pedagogical review.
 
 ---
 
@@ -103,7 +109,18 @@ Current catalogue/audit tooling reports the published mathematics catalogue as P
 
 The new closure criteria therefore require runtime resolution and UI availability.
 
-### 3.5 Confirmed lesson-content defect
+### 3.5 Technical Practice coverage versus pedagogical QA
+
+The project must report two different facts separately:
+
+- **Technical Practice coverage/readiness:** whether the lesson is mapped to a valid Practice capability, can generate, can verify, and is reachable through the intended runtime path.
+- **Pedagogical Practice certification:** whether the generated question families and representative outputs meet the required learning-quality standard.
+
+A technical statement such as “Practice exists for the catalogue” must never be presented as proof that every possible generated question has been manually reviewed question-by-question.
+
+The new pedagogical QA stage raises the quality bar on top of the technical Practice layer; it does not replace or redefine the technical layer.
+
+### 3.6 Confirmed lesson-content defect
 
 For `PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:BUILD`, the Production database currently contains generic Phase 29 material such as:
 
@@ -124,7 +141,7 @@ but currently targets:
 
 not the `BUILD` lesson.
 
-### 3.6 Login copy baseline
+### 3.7 Login copy baseline
 
 The requested Platform Administrator statements are currently embedded directly in:
 
@@ -303,7 +320,129 @@ Only after C4 may the project state that all published mathematics lessons have 
 
 ---
 
-## C5 — Student-facing lesson content forensic audit
+## C5 — Practice Pedagogical QA & Question Certification
+
+### Objective
+
+Raise Practice quality beyond technical existence/generation/verification without confusing pedagogical QA with the technical definition of Practice coverage.
+
+This stage certifies the **question-generation system and representative outputs**, not an impossible claim that every future dynamically generated question has been manually reviewed.
+
+### Quality model
+
+For every lesson/SkillContract and every allowed Question Family, verify the chain:
+
+`Lesson target → SkillContract → Question Family → Generated item → Solver → Independent verifier → Pedagogical checks → Learner feedback`
+
+### Automated certification matrix
+
+For every eligible lesson and allowed Question Family:
+
+1. generate deterministic samples across multiple seeds,
+2. exercise every supported difficulty band,
+3. cover boundary and edge cases relevant to that skill,
+4. prove the generated question tests the exact lesson target rather than an adjacent skill,
+5. prove the authoritative answer is mathematically correct,
+6. prove the independent verifier agrees,
+7. reject ambiguity or multiple unintended valid answers,
+8. validate units, notation, ranges and representations,
+9. validate age/grade-appropriate language,
+10. validate that distractors represent plausible learner misconceptions rather than random noise,
+11. validate that the prompt does not leak the answer,
+12. validate visual/data consistency where a diagram, scale, graph, shape or model is used,
+13. validate sufficient generation diversity and reject near-duplicate template output,
+14. validate that difficulty progression changes reasoning demand appropriately rather than merely inflating numbers,
+15. validate learner feedback/explanation for incorrect answers where the Practice mode provides feedback.
+
+### Property-based and adversarial generation tests
+
+Each mathematical family must include adversarial/boundary cases appropriate to its domain, for example:
+
+- zero/one and equality boundaries,
+- equivalent-value cases,
+- near-equal fractions,
+- denominator/common-denominator edge cases,
+- scale interval boundaries,
+- measurement-unit boundaries,
+- rounding/precision boundaries,
+- invalid negative/zero values where prohibited,
+- geometry degeneracy where applicable,
+- duplicated or misleading multiple-choice options.
+
+The exact cases must be domain-specific; this list is not a generic substitute for mathematical analysis of each family.
+
+### Golden reference set
+
+Create a reviewed **Golden Question Set** for each SkillContract / Question Family class sufficient to establish expected pedagogy.
+
+Golden cases must document:
+
+- lesson/skill target,
+- expected reasoning,
+- valid answer,
+- representative misconception/distractors,
+- expected difficulty,
+- expected explanation/feedback,
+- visual expectation where applicable.
+
+Golden cases serve as regression references for the generator and verifier.
+
+### Lesson ↔ Practice consistency gate
+
+Technical correctness alone is insufficient. For every lesson, verify consistency among:
+
+- lesson target,
+- learner-facing explanation,
+- worked examples,
+- SkillContract,
+- Question Family,
+- generated Practice,
+- misconception model / feedback.
+
+A lesson fails pedagogical certification if the learner studies one concept but Practice tests another, even when both pieces are mathematically correct independently.
+
+### Certification states
+
+Keep these states distinct and reportable:
+
+- `PRACTICE_AVAILABLE`
+- `TECHNICALLY_VERIFIED`
+- `MATHEMATICALLY_VERIFIED`
+- `TARGET_ALIGNED`
+- `PEDAGOGICALLY_VERIFIED`
+- `LESSON_PRACTICE_ALIGNED`
+- `PRODUCTION_VERIFIED`
+
+Do not collapse these into one ambiguous “ready” flag.
+
+### Manual academic review
+
+Manual review is a separate QA layer on representative/golden cases and high-risk families. It must focus on:
+
+- exact curriculum/lesson alignment,
+- learner clarity,
+- cognitive demand,
+- progression,
+- distractor quality,
+- explanation/feedback quality,
+- visual pedagogy.
+
+Manual review must not be described as reviewing every possible dynamically generated future question.
+
+### Exit criteria
+
+- Every Practice Question Family has an automated pedagogical certification suite.
+- Every SkillContract has reviewed golden reference coverage appropriate to its risk/complexity.
+- All tested outputs are mathematically valid and exact-target aligned.
+- Difficulty and distractor checks are green.
+- Lesson ↔ Practice consistency gate is green for the published catalogue.
+- Feedback quality checks are green where feedback is provided.
+- Certification results are reported separately from technical Practice availability.
+- Permanent CI gates prevent regression.
+
+---
+
+## C6 — Student-facing lesson content forensic audit
 
 ### Objective
 
@@ -356,11 +495,11 @@ without teacher-only interpretation.
 
 ---
 
-## C6 — Reconstruct failed learner lesson bodies
+## C7 — Reconstruct failed learner lesson bodies
 
 ### Objective
 
-Repair every lesson identified by C5 using the correct source authority.
+Repair every lesson identified by C6 using the correct source authority.
 
 ### Outcome-backed lessons
 
@@ -425,7 +564,7 @@ The existing `ApplyScaleReadingCorrection` can inform the mathematics, but Build
 
 ### Exit criteria
 
-- Every C5 failure remediated.
+- Every C6 failure remediated.
 - Semantic-content audit green.
 - Learner-facing acceptance tests green.
 - Seeder upgrades existing published content idempotently under a new content version.
@@ -433,7 +572,7 @@ The existing `ApplyScaleReadingCorrection` can inform the mathematics, but Build
 
 ---
 
-## C7 — Login copy cleanup across supported locales
+## C8 — Login copy cleanup across supported locales
 
 ### Objective
 
@@ -474,7 +613,7 @@ At the current baseline the login view contains English and Polish inline varian
 
 ---
 
-## C8 — Full regression, CI protection, deployment and live verification
+## C9 — Full regression, CI protection, deployment and live verification
 
 ### Objective
 
@@ -484,13 +623,15 @@ Close the corrective programme only after end-to-end production evidence.
 
 1. Mathematics Intelligence suite.
 2. New whole-catalogue C# Practice runtime closure gate.
-3. Lesson-content semantic/student-facing quality gate.
-4. Existing solver/verifier tests.
-5. Full regression with coverage.
-6. PostgreSQL/migrations.
-7. architecture/security/tenant/IDOR checks.
-8. SAST/CodeQL.
-9. container build and vulnerability scan.
+3. Practice pedagogical QA & Question Certification gate.
+4. Lesson ↔ Practice consistency gate.
+5. Lesson-content semantic/student-facing quality gate.
+6. Existing solver/verifier tests.
+7. Full regression with coverage.
+8. PostgreSQL/migrations.
+9. architecture/security/tenant/IDOR checks.
+10. SAST/CodeQL.
+11. container build and vulnerability scan.
 
 ### Production deployment sequence
 
@@ -523,6 +664,8 @@ Do not trigger a duplicate deploy if AutoDeploy already picked up the tested mer
 ### Final closure statement allowed only when
 
 - whole-catalogue runtime Practice gate is green,
+- Practice pedagogical certification gates are green,
+- Lesson ↔ Practice alignment is green,
 - student-facing content audit has zero unresolved failures,
 - login cleanup is verified,
 - Production is live on the exact tested commit,
@@ -551,7 +694,7 @@ Do not trigger a duplicate deploy if AutoDeploy already picked up the tested mer
 - `src/Edulytics.Core/Curriculum/LessonContent/Packs/*.lesson-content-pack.json`
 - `src/Edulytics.Data/Seeding/CambridgePrimaryStage6LessonContentCorrections.cs`
 - `src/Edulytics.Data/Seeding/SupportingLessonPracticeContentCorrections.cs`
-- other curriculum-specific correction/seed paths discovered by C5.
+- other curriculum-specific correction/seed paths discovered by C6.
 
 ## Login
 
@@ -572,9 +715,9 @@ Do not trigger a duplicate deploy if AutoDeploy already picked up the tested mer
 
 # 6. Required execution order
 
-`C1 → C2 → C3 → C4 → C5 → C6 → C7 → C8`
+`C1 → C2 → C3 → C4 → C5 → C6 → C7 → C8 → C9`
 
-C5 may collect evidence while C1–C4 are implemented, but C8 cannot begin until all previous stages meet their exit criteria.
+C6 may collect evidence while C1–C5 are implemented, but C9 cannot begin until all previous stages meet their exit criteria.
 
 ---
 
@@ -586,10 +729,11 @@ C5 may collect evidence while C1–C4 are implemented, but C8 cannot begin until
 | C2 | Repair runtime availability defect | NOT STARTED |
 | C3 | Establish one Practice availability authority | NOT STARTED |
 | C4 | Whole-catalogue runtime Practice gate | NOT STARTED |
-| C5 | Student-facing content forensic audit | NOT STARTED |
-| C6 | Reconstruct failed lesson bodies | NOT STARTED |
-| C7 | Login Platform Administrator copy cleanup | NOT STARTED |
-| C8 | Full CI, deploy and live verification | NOT STARTED |
+| C5 | Practice Pedagogical QA & Question Certification | NOT STARTED |
+| C6 | Student-facing content forensic audit | NOT STARTED |
+| C7 | Reconstruct failed lesson bodies | NOT STARTED |
+| C8 | Login Platform Administrator copy cleanup | NOT STARTED |
+| C9 | Full CI, deploy and live verification | NOT STARTED |
 
 ---
 
@@ -607,10 +751,10 @@ against the known working control:
 
 Only after the exact failing runtime condition is proven should C2 begin.
 
-For lesson content, the first known C5/C6 defect is already recorded:
+For lesson content, the first known C6/C7 defect is already recorded:
 
 `PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:BUILD`
 
 whose live body is generic place-value material and must be replaced with learner-facing Reading Scales instruction.
 
-This file remains the authoritative checkpoint until all eight stages are closed.
+This file remains the authoritative checkpoint until all nine stages are closed.
