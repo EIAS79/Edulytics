@@ -200,6 +200,67 @@ public sealed class PolishOutcomePracticeClosureTests
         }
     }
 
+    [Fact]
+    public void Polish_short_target_truncation_preserves_unicode_scalar_boundaries()
+    {
+        const string outcomeCode =
+            "PL:REQ:PL:UPPER:WYRAZENIA-ALGEBRAICZNE:extended:4:205";
+
+        var affectedLessons = MathematicsCanonicalLessonContentSeeder
+            .LoadEmbeddedDocuments()
+            .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.PolandCode)
+            .SelectMany(x => x.Lessons)
+            .Where(x => x.OutcomeCodes.Contains(outcomeCode, StringComparer.Ordinal))
+            .ToArray();
+
+        Assert.NotEmpty(affectedLessons);
+
+        foreach (var lesson in affectedLessons)
+        {
+            var polish = Assert.Single(
+                lesson.Translations,
+                x => x.CultureCode.StartsWith(
+                    "pl",
+                    StringComparison.OrdinalIgnoreCase));
+
+            Assert.True(
+                polish.Title.EndsWith("…", StringComparison.Ordinal),
+                $"Expected truncated Polish title: {lesson.LessonCode}");
+            Assert.True(
+                polish.Title.Length <= 180,
+                $"Polish title exceeds the target bound: {lesson.LessonCode}");
+
+            AssertValidUtf16(polish.Title, lesson.LessonCode, "Title");
+            AssertValidUtf16(
+                polish.QuickSummary,
+                lesson.LessonCode,
+                "QuickSummary");
+        }
+    }
+
+    private static void AssertValidUtf16(
+        string value,
+        string lessonCode,
+        string field)
+    {
+        for (var index = 0; index < value.Length; index++)
+        {
+            if (char.IsHighSurrogate(value[index]))
+            {
+                Assert.True(
+                    index + 1 < value.Length &&
+                    char.IsLowSurrogate(value[index + 1]),
+                    $"Unpaired high surrogate in {lessonCode}/{field} at {index}.");
+                index++;
+                continue;
+            }
+
+            Assert.False(
+                char.IsLowSurrogate(value[index]),
+                $"Unpaired low surrogate in {lessonCode}/{field} at {index}.");
+        }
+    }
+
     private static string NormalizeOfficialEvidenceForLessonAssertion(string raw)
     {
         var value = System.Text.RegularExpressions.Regex.Replace(
