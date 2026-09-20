@@ -90,23 +90,30 @@ internal static class SupportingLessonPracticeRuleProjection
                 }
             }
 
-            var duplicateLessonCodes = projected
-                .GroupBy(x => x.LessonCode, StringComparer.Ordinal)
-                .Where(group => group.Count() > 1)
-                .Select(group => $"{group.Key} ({group.Count()})")
-                .OrderBy(value => value, StringComparer.Ordinal)
-                .ToArray();
-
-            if (duplicateLessonCodes.Length != 0)
+            var resolved = new List<LessonPracticeContract>();
+            foreach (var group in projected
+                         .GroupBy(x => x.LessonCode, StringComparer.Ordinal)
+                         .OrderBy(x => x.Key, StringComparer.Ordinal))
             {
-                throw new InvalidOperationException(
-                    "Duplicate Supporting Practice projection LessonCodes: " +
-                    string.Join(", ", duplicateLessonCodes));
+                var first = group.First();
+                var conflicts = group
+                    .Skip(1)
+                    .Where(candidate => !Equivalent(first, candidate))
+                    .ToArray();
+
+                if (conflicts.Length != 0)
+                {
+                    throw new InvalidOperationException(
+                        $"Conflicting Supporting Practice projections for {group.Key}.");
+                }
+
+                // The same canonical lesson may be embedded by more than one
+                // reviewed pack/version. Identical contracts are one capability,
+                // not an error; conflicting contracts remain fail-closed.
+                resolved.Add(first);
             }
 
-            return projected
-                .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
-                .ToArray();
+            return resolved.ToArray();
         }
         catch (JsonException ex)
         {
@@ -159,6 +166,19 @@ internal static class SupportingLessonPracticeRuleProjection
                 yield return document;
         }
     }
+
+    private static bool Equivalent(
+        LessonPracticeContract left,
+        LessonPracticeContract right) =>
+        string.Equals(left.LessonCode, right.LessonCode, StringComparison.Ordinal) &&
+        string.Equals(left.SkillId, right.SkillId, StringComparison.Ordinal) &&
+        string.Equals(left.Mechanic, right.Mechanic, StringComparison.Ordinal) &&
+        string.Equals(left.SourceType, right.SourceType, StringComparison.Ordinal) &&
+        string.Equals(left.Readiness, right.Readiness, StringComparison.Ordinal) &&
+        string.Equals(left.ContractVersion, right.ContractVersion, StringComparison.Ordinal) &&
+        left.AllowedQuestionFamilies.SequenceEqual(
+            right.AllowedQuestionFamilies,
+            StringComparer.Ordinal);
 
     private static CanonicalLessonContentPackTranslation? ChooseTranslation(
         CanonicalLessonContentPackDocument pack,
