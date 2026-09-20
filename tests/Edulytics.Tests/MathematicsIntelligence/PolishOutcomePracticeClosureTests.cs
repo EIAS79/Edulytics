@@ -94,10 +94,10 @@ public sealed class PolishOutcomePracticeClosureTests
                 Assert.NotNull(source);
 
                 var polish = Assert.Single(
-                    lesson.Translations.Where(x =>
-                        x.CultureCode.StartsWith(
-                            "pl",
-                            StringComparison.OrdinalIgnoreCase)));
+                    lesson.Translations,
+                    x => x.CultureCode.StartsWith(
+                        "pl",
+                        StringComparison.OrdinalIgnoreCase));
 
                 Assert.False(
                     polish.Title.Contains(
