@@ -110,8 +110,14 @@ public sealed class PolishOutcomePracticeClosureTests
                         StringComparison.Ordinal),
                     $"OutcomeCode is not traceable in learner explanation: {lesson.LessonCode}");
 
-                var prefixLength = Math.Min(48, source!.OfficialText.Length);
-                var officialPrefix = source.OfficialText[..prefixLength];
+                var normalizedOfficialTarget =
+                    NormalizeOfficialEvidenceForLessonAssertion(source!.OfficialText);
+                Assert.False(
+                    string.IsNullOrWhiteSpace(normalizedOfficialTarget),
+                    $"Official target evidence normalized to an empty value: {lesson.LessonCode}");
+
+                var prefixLength = Math.Min(48, normalizedOfficialTarget.Length);
+                var officialPrefix = normalizedOfficialTarget[..prefixLength];
                 Assert.True(
                     polish.Explanation.Contains(
                         officialPrefix,
@@ -192,6 +198,31 @@ public sealed class PolishOutcomePracticeClosureTests
                     first.CorrectAnswer),
                 $"Verifier rejected Polish generated Practice item: {lesson.LessonCode} / {first.Family}");
         }
+    }
+
+    private static string NormalizeOfficialEvidenceForLessonAssertion(string raw)
+    {
+        var value = System.Text.RegularExpressions.Regex.Replace(
+                raw ?? string.Empty,
+                @"\s+",
+                " ")
+            .Trim();
+
+        value = System.Text.RegularExpressions.Regex.Replace(
+            value,
+            @"\s+(?:Warunki i sposób realizacji|III\. Edukacja społeczna).*?$",
+            string.Empty,
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase |
+            System.Text.RegularExpressions.RegexOptions.CultureInvariant);
+
+        value = System.Text.RegularExpressions.Regex.Replace(
+            value,
+            @"\s+(?:[IVXLC]+|\d+)\.\s*$",
+            string.Empty,
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase |
+            System.Text.RegularExpressions.RegexOptions.CultureInvariant);
+
+        return value.Trim();
     }
 
     [Fact]
