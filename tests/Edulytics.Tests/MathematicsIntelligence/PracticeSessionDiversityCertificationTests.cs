@@ -30,9 +30,7 @@ public sealed class PracticeSessionDiversityCertificationTests
                 continue;
             }
 
-            var questionCount = Math.Min(
-                12,
-                Math.Max(6, allowed.Length));
+            const int questionCount = 10;
 
             try
             {
@@ -90,7 +88,8 @@ public sealed class PracticeSessionDiversityCertificationTests
             catch (Exception ex)
             {
                 failures.Add(
-                    $"{contract.LessonCode}: {ex.GetType().Name}: {ex.Message}");
+                    $"{contract.LessonCode} [{string.Join(",", allowed)}]: " +
+                    $"{ex.GetType().Name}: {ex.Message}");
             }
         }
 
@@ -101,6 +100,68 @@ public sealed class PracticeSessionDiversityCertificationTests
             (failures.Count > 100
                 ? $" (+{failures.Count - 100} more)"
                 : string.Empty));
+    }
+
+    [Fact]
+    public void EveryLessonPracticeFamilyCanSustainATenQuestionSession()
+    {
+        var engine = new ExactSkillContractQuestionEngine();
+        var families = LessonPracticeContractRegistry.All
+            .SelectMany(contract => contract.AllowedQuestionFamilies)
+            .Distinct(StringComparer.Ordinal)
+            .OrderBy(x => x, StringComparer.Ordinal)
+            .ToArray();
+
+        var failures = new List<string>();
+
+        for (var index = 0; index < families.Length; index++)
+        {
+            var family = families[index];
+
+            try
+            {
+                var questions = engine.Generate(
+                    "family-session-capacity-certification",
+                    family,
+                    [family],
+                    ExactSkillQuestionDifficulty.Standard,
+                    10,
+                    910000 + index,
+                    []);
+
+                if (questions.Count != 10)
+                    failures.Add($"{family}: generated {questions.Count}/10");
+
+                if (questions
+                    .Select(x => x.ExposureFingerprint)
+                    .Distinct(StringComparer.Ordinal)
+                    .Count() != 10)
+                {
+                    failures.Add($"{family}: duplicate exposure fingerprints");
+                }
+
+                foreach (var question in questions)
+                {
+                    if (!ExactSkillContractQuestionEngine.Verify(
+                            question.Family,
+                            question.Parameters,
+                            question.CorrectAnswer))
+                    {
+                        failures.Add($"{family}: verifier rejected generated answer");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                failures.Add(
+                    $"{family}: {ex.GetType().Name}: {ex.Message}");
+            }
+        }
+
+        Assert.True(
+            failures.Count == 0,
+            "Question-family ten-item capacity failures: " +
+            string.Join(" | ", failures));
     }
 
     [Fact]
