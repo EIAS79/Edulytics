@@ -123,14 +123,17 @@ internal static class LessonPracticeContractProjection
 
             return projected;
         }
-        catch (JsonException)
+        catch (JsonException ex)
         {
-            // A malformed manifest must fail closed without taking the site down.
-            return [];
+            throw new InvalidOperationException(
+                "Approved lesson-skill Practice projection failed while reading embedded JSON.",
+                ex);
         }
-        catch (InvalidOperationException)
+        catch (InvalidOperationException ex)
         {
-            return [];
+            throw new InvalidOperationException(
+                "Approved lesson-skill Practice projection failed while building exact contracts.",
+                ex);
         }
     }
 

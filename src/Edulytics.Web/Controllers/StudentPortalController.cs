@@ -259,6 +259,25 @@ public sealed class StudentPortalController : Controller
         if (lesson is null || !workspace.SelectedCurriculumAdoptionId.HasValue)
             return;
 
+        if (!pilotAdoptionId.HasValue &&
+            string.Equals(lesson.LessonCode, LessonPracticePilotCode, StringComparison.Ordinal))
+        {
+            pilotAdoptionId = workspace.SelectedCurriculumAdoptionId;
+        }
+
+        // The verified lesson Practice contract is the single availability
+        // authority. Game routing may select a richer presentation only after
+        // this capability has been established.
+        if (!LessonPracticeCapabilityResolver.TryResolve(
+                lesson.LessonCode,
+                out _))
+        {
+            return;
+        }
+
+        if (!exactPracticeAdoptionId.HasValue)
+            exactPracticeAdoptionId = workspace.SelectedCurriculumAdoptionId;
+
         var route = lessonDetail.IsSupporting
             ? GameLessonRouteResolver.Resolve(
                 lesson.LessonCode,
@@ -271,21 +290,11 @@ public sealed class StudentPortalController : Controller
                 lesson.UnitTitle,
                 lessonDetail.Title);
 
-        if (!gameAdoptionId.HasValue && route.IsPlayable && route.RendererKey is not null)
+        if (!gameAdoptionId.HasValue &&
+            route.IsPlayable &&
+            route.RendererKey is not null)
+        {
             gameAdoptionId = workspace.SelectedCurriculumAdoptionId;
-
-        if (!exactPracticeAdoptionId.HasValue &&
-            LessonPracticeContractRegistry.TryResolve(lesson.LessonCode, out var practiceContract) &&
-            practiceContract is not null &&
-            string.Equals(practiceContract.Readiness, "READY_VERIFIED", StringComparison.Ordinal))
-        {
-            exactPracticeAdoptionId = workspace.SelectedCurriculumAdoptionId;
-        }
-
-        if (!pilotAdoptionId.HasValue &&
-            string.Equals(lesson.LessonCode, LessonPracticePilotCode, StringComparison.Ordinal))
-        {
-            pilotAdoptionId = workspace.SelectedCurriculumAdoptionId;
         }
     }
 

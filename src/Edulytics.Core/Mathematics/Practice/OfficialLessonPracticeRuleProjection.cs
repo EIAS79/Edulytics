@@ -1,5 +1,6 @@
 using System.Reflection;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Edulytics.Core.Curriculum;
 
 namespace Edulytics.Core.Mathematics.Practice;
@@ -201,15 +202,33 @@ internal static class OfficialLessonPracticeRuleProjection
                 }
             }
 
-            return projected
-                .GroupBy(x => x.LessonCode, StringComparer.Ordinal)
-                .Select(group => group.Single())
-                .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
-                .ToArray();
+            var resolved = new List<LessonPracticeContract>();
+            foreach (var group in projected
+                         .GroupBy(x => x.LessonCode, StringComparer.Ordinal)
+                         .OrderBy(x => x.Key, StringComparer.Ordinal))
+            {
+                var first = group.First();
+                var conflicts = group
+                    .Skip(1)
+                    .Where(candidate => !Equivalent(first, candidate))
+                    .ToArray();
+
+                if (conflicts.Length != 0)
+                {
+                    throw new InvalidOperationException(
+                        $"Conflicting official Practice projections for {group.Key}.");
+                }
+
+                resolved.Add(first);
+            }
+
+            return resolved.ToArray();
         }
-        catch (JsonException)
+        catch (JsonException ex)
         {
-            return [];
+            throw new InvalidOperationException(
+                "Official lesson Practice projection failed while reading embedded JSON.",
+                ex);
         }
         catch (InvalidOperationException ex)
         {
@@ -237,7 +256,14 @@ internal static class OfficialLessonPracticeRuleProjection
     private static IEnumerable<CanonicalLessonContentPackDocument> LoadContentPacks()
     {
         var assembly = typeof(OfficialLessonPracticeRuleProjection).Assembly;
-        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+        var options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            Converters =
+            {
+                new JsonStringEnumConverter()
+            }
+        };
         foreach (var resource in assembly.GetManifestResourceNames()
                      .Where(name => name.EndsWith(
                          ".lesson-content-pack.json",
@@ -254,6 +280,20 @@ internal static class OfficialLessonPracticeRuleProjection
                 yield return document;
         }
     }
+
+    private static bool Equivalent(
+        LessonPracticeContract left,
+        LessonPracticeContract right) =>
+        string.Equals(left.LessonCode, right.LessonCode, StringComparison.Ordinal) &&
+        string.Equals(left.SkillId, right.SkillId, StringComparison.Ordinal) &&
+        string.Equals(left.Mechanic, right.Mechanic, StringComparison.Ordinal) &&
+        string.Equals(left.SourceType, right.SourceType, StringComparison.Ordinal) &&
+        string.Equals(left.Readiness, right.Readiness, StringComparison.Ordinal) &&
+        string.Equals(left.ContractVersion, right.ContractVersion, StringComparison.Ordinal) &&
+        left.SkillIds.SequenceEqual(right.SkillIds, StringComparer.Ordinal) &&
+        left.AllowedQuestionFamilies.SequenceEqual(
+            right.AllowedQuestionFamilies,
+            StringComparer.Ordinal);
 
     private static CanonicalLessonContentPackTranslation? ChooseTranslation(
         CanonicalLessonContentPackDocument pack,

@@ -32,6 +32,35 @@ public sealed class AccountLoginCultureContractTests
             StringComparison.Ordinal);
     }
 
+
+    [Fact]
+    public void Login_DoesNotExposePlatformAdministratorBypassCopy()
+    {
+        var source = ReadRepositoryFile(
+            "src",
+            "Edulytics.Web",
+            "Views",
+            "Account",
+            "Login.cshtml");
+
+        var forbidden = new[]
+        {
+            "The platform administrator can sign in directly.",
+            "The platform administrator can continue without a selection.",
+            "The platform administrator does not need to select a public account type.",
+            "Administrator platformy może zalogować się bezpośrednio.",
+            "Administrator platformy może kontynuować bez wyboru.",
+            "Administrator platformy nie musi wybierać publicznego typu konta."
+        };
+
+        Assert.All(
+            forbidden,
+            phrase => Assert.DoesNotContain(
+                phrase,
+                source,
+                StringComparison.Ordinal));
+    }
+
     private static string ReadRepositoryFile(
         params string[] relativeSegments)
     {

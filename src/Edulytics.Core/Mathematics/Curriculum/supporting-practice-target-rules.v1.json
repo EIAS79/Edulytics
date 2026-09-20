@@ -3,6 +3,25 @@
   "registry": "Supporting Practice target rules",
   "rules": [
     {
+      "id": "scale-reading-equal-intervals",
+      "titlePatterns": [
+        "^Reading scales with 2, 4, 5 or 10 intervals$"
+      ],
+      "codePatterns": [],
+      "skillId": "measurement.scale.read_equal_intervals",
+      "mechanic": "SCALE_READING",
+      "families": [
+        "measurement.scale.equal_intervals.read_value"
+      ],
+      "content": {
+        "concept": "A scale is split into equal spaces. Find the value of one space before reading the marked point.",
+        "workedExample": "A scale runs from 20 to 60 in 4 equal intervals. The total change is 40, so each interval is 10. The marks are 20, 30, 40, 50 and 60.",
+        "solution": "Subtract the two labelled values, divide by the number of equal intervals, then count intervals from a known label to the marked point.",
+        "commonMistake": "Count the spaces between marks, not the number of tick marks, and do not assume each small interval is worth 1.",
+        "summary": "Find one interval first, then count equal intervals to read the scale."
+      }
+    },
+    {
       "id": "place-value",
       "titlePatterns": [
         "place value",

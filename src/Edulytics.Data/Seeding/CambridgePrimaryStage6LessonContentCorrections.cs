@@ -22,6 +22,9 @@ public static class CambridgePrimaryStage6LessonContentCorrections
     public const string TwoUnknownsLessonCode =
         "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:APPLY";
 
+    public const string ScaleReadingBuildLessonCode =
+        "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:BUILD";
+
     public const string ScaleReadingLessonCode =
         "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:APPLY";
 
@@ -32,6 +35,7 @@ public static class CambridgePrimaryStage6LessonContentCorrections
         new(StringComparer.Ordinal)
         {
             TwoUnknownsLessonCode,
+            ScaleReadingBuildLessonCode,
             ScaleReadingLessonCode,
             FractionComparisonLessonCode
         };
@@ -111,6 +115,10 @@ public static class CambridgePrimaryStage6LessonContentCorrections
                 ApplyTwoUnknownsCorrection(translation);
                 break;
 
+            case ScaleReadingBuildLessonCode:
+                ApplyScaleReadingBuildCorrection(translation);
+                break;
+
             case ScaleReadingLessonCode:
                 ApplyScaleReadingCorrection(translation);
                 break;
@@ -145,6 +153,28 @@ public static class CambridgePrimaryStage6LessonContentCorrections
 
         translation.QuickSummary =
             "Two unknowns need two independent relationships. Represent both, solve them together, find both values, and verify the final pair in both original facts.";
+    }
+
+    private static void ApplyScaleReadingBuildCorrection(
+        CanonicalLessonContentPackTranslation translation)
+    {
+        translation.Explanation =
+            "This lesson is about reading a scale that is split into equal intervals. Start by looking at two labelled values. Find the total change between them, then divide by the number of equal spaces to find what one interval is worth. For example, from 20 to 60 across 4 equal intervals, the total change is 40 and each interval is 10. The marks are therefore 20, 30, 40, 50 and 60. Once you know the interval value, count from a labelled mark to the pointer. The lesson is Edulytics-authored from OGL material; Cambridge remains the academic reference authority and no Cambridge objective wording is reproduced here.";
+
+        translation.KeyConceptsAndRules =
+            "A scale uses equal spaces to represent equal numerical changes. Count spaces, not tick marks. Interval value = (higher labelled value − lower labelled value) ÷ number of equal intervals. Then move from a known label by that interval value until you reach the marked point. Keep the measurement unit with the answer.";
+
+        translation.WorkedExamples =
+            "Example A: A scale runs from 20 to 60 in 4 equal intervals. The change is 60 − 20 = 40. One interval is 40 ÷ 4 = 10. The marks are 20, 30, 40, 50, 60, so a pointer on the third interval after 20 shows 50. Example B: A scale runs from 10 to 30 in 5 equal intervals. The change is 20. One interval is 20 ÷ 5 = 4. The marks are 10, 14, 18, 22, 26, 30.";
+
+        translation.StepByStepSolutions =
+            "Step 1: Find two labelled values on the scale. Step 2: Count the equal spaces between them. Step 3: Subtract to find the total change. Step 4: Divide the total change by the number of spaces to find one interval. Step 5: Count intervals from a known label to the pointer. Step 6: Check that the answer lies between the surrounding labels and includes the correct unit.";
+
+        translation.CommonMistakes =
+            "Do not count tick marks when the question asks about intervals: 5 intervals have 6 boundary marks. Do not assume each small mark is worth 1. Do not read the pointer before finding the interval value.";
+
+        translation.QuickSummary =
+            "Find the value of one equal interval first, then count intervals from a known label to read the scale.";
     }
 
     private static void ApplyScaleReadingCorrection(

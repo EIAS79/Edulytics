@@ -85,7 +85,7 @@ public sealed class LessonGroundedPracticeContractTests
     }
 
     [Fact]
-    public void StudentLessonPage_OnlyOffersSupportingPracticeWhenGroundedRouteIsPlayable()
+    public void StudentLessonPage_UsesVerifiedCapabilityAsAvailabilityAuthority_AndGameAsOptionalPresentation()
     {
         var root = FindRoot();
         var controller = File.ReadAllText(Path.Combine(
@@ -96,7 +96,10 @@ public sealed class LessonGroundedPracticeContractTests
         Assert.Contains("lessonDetail.IsSupporting", controller, StringComparison.Ordinal);
         Assert.Contains("BuildLessonPracticeContext(lessonDetail)", controller, StringComparison.Ordinal);
         Assert.Contains("requireLessonGrounding: true", controller, StringComparison.Ordinal);
-        Assert.Contains("route.IsPlayable && route.RendererKey is not null", controller, StringComparison.Ordinal);
+        Assert.Contains("LessonPracticeCapabilityResolver.TryResolve", controller, StringComparison.Ordinal);
+        Assert.Contains("exactPracticeAdoptionId = workspace.SelectedCurriculumAdoptionId", controller, StringComparison.Ordinal);
+        Assert.Contains("route.IsPlayable &&", controller, StringComparison.Ordinal);
+        Assert.Contains("route.RendererKey is not null", controller, StringComparison.Ordinal);
     }
 
     [Fact]
