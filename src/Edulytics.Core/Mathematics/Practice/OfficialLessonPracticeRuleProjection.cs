@@ -211,9 +211,11 @@ internal static class OfficialLessonPracticeRuleProjection
         {
             return [];
         }
-        catch (InvalidOperationException)
+        catch (InvalidOperationException ex)
         {
-            return [];
+            throw new InvalidOperationException(
+                "Official lesson Practice projection failed while building exact contracts.",
+                ex);
         }
     }
 
