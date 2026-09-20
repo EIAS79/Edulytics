@@ -99,9 +99,11 @@ internal static class SupportingLessonPracticeRuleProjection
         {
             return [];
         }
-        catch (InvalidOperationException)
+        catch (InvalidOperationException ex)
         {
-            return [];
+            throw new InvalidOperationException(
+                "Supporting Practice rule projection failed. See inner exception for the exact invalid projection condition.",
+                ex);
         }
     }
 
