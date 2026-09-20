@@ -27,6 +27,10 @@ public sealed class EffectiveLessonContentSnapshotTests
                             CanonicalLessonContentMaterializer
                                 .ComputeLessonFingerprint(document, lesson),
                         academicLanguage = document.AcademicLanguage,
+                        documentStatus = document.Status.ToString(),
+                        reviewedBy = document.ReviewedBy,
+                        reviewEvidence = document.ReviewEvidence,
+                        reviewMethod = document.ReviewMethod,
                         outcomeCodes = lesson.OutcomeCodes,
                         isSupporting = lesson.OutcomeCodes.Count == 0,
                         translations = lesson.Translations.Select(translation => new
