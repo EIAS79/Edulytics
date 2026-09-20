@@ -316,7 +316,8 @@ public sealed class Phase43ReportFilterContractTests
             "count-touch-eddy-hint-v1.js");
 
         Assert.Contains("guide: '/images/public/edulaytiks-character.png?v=43'", runtime);
-        Assert.DoesNotContain("/images/game/v9/eddy-hint.webp", runtime);\n        Assert.DoesNotContain("count-touch-eddy-hint-v1.js", gameView);
+        Assert.DoesNotContain("/images/game/v9/eddy-hint.webp", runtime);
+        Assert.DoesNotContain("count-touch-eddy-hint-v1.js", gameView);
         Assert.False(File.Exists(obsoleteOverride));
     }
 
