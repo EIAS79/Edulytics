@@ -542,6 +542,17 @@ def main() -> int:
         )
 
     print(json.dumps(report["summary"], ensure_ascii=False, indent=2))
+    if report["summary"].get("studentFacingBlockerCount", 0):
+        print(
+            json.dumps(
+                {
+                    "studentFacingBlockers":
+                        report["studentFacingBlockers"][:50]
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
     if args.strict and (
         report["summary"]["blockerCount"]
         or report["summary"]["studentFacingBlockerCount"]
