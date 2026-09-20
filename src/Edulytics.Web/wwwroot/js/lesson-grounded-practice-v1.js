@@ -9,7 +9,7 @@
   var unitTitle = root.dataset.unitTitle || '';
   var lessonTitle = root.dataset.lessonTitle || '';
   var langIndex = locale === 'pl' ? 1 : (locale === 'ar' ? 2 : 0);
-  var guide = '/images/game/v9/eddy-hint.webp';
+  var guide = '/images/public/edulaytiks-character.png?v=43';
 
   function t(en, pl, ar) { return [en, pl, ar][langIndex]; }
   function esc(value) {
@@ -31,7 +31,7 @@
   }
 
   var copy = {
-    brand: t('LESSON-GROUNDED PRACTICE', 'ĆWICZENIE Z LEKCJI', 'تدريب مبني على الدرس'),
+    brand: t('EDULYTICS PRACTICE', 'ĆWICZENIA EDULYTICS', 'تدريب EDULYTICS'),
     mission: t('YOUR MISSION', 'TWOJE ZADANIE', 'مهمتك'),
     correct: t('Correct!', 'Dobrze!', 'صحيح!'),
     retry: t('Try again.', 'Spróbuj ponownie.', 'حاول مرة أخرى.'),
@@ -60,8 +60,8 @@
     '<div class="gw-hud-right"><div class="gw-pill">★ <span data-score>0</span></div><div class="gw-pill"><span data-round>1 / 8</span></div><button class="gw-icon" type="button" data-sound aria-label="' + esc(copy.sound) + '">🔊</button><button class="gw-icon" type="button" data-fullscreen aria-label="' + esc(copy.fullscreen) + '">⛶</button></div></header>' +
     '<div class="gw-progress"><span data-progress></span></div>' +
     '<main class="gw-stage"><div class="gw-mission"><span>' + esc(copy.mission) + '</span><strong data-question></strong><small data-subquestion></small></div><div class="gw-runtime-board" data-board></div></main>' +
-    '<div class="gw-eddy"><img src="' + guide + '" alt="Eddy"><div><span>EDDY</span><p data-eddy></p></div></div>' +
-    '<div class="gw-complete" data-complete hidden><div class="gw-complete-card"><img src="' + guide + '" alt="Eddy"><p>' + esc(lessonTitle) + '</p><h2>' + esc(copy.complete) + '</h2><p>' + esc(t(
+    '<div class="gw-eddy"><img src="' + guide + '" alt="Edulytics character"><div><span>EDULYTICS</span><p data-eddy></p></div></div>' +
+    '<div class="gw-complete" data-complete hidden><div class="gw-complete-card"><img src="' + guide + '" alt="Edulytics character"><p>' + esc(lessonTitle) + '</p><h2>' + esc(copy.complete) + '</h2><p>' + esc(t(
       'All eight questions came from the mathematical relationships developed in this lesson.',
       'Wszystkie osiem pytań wynika z zależności matematycznych rozwijanych w tej lekcji.',
       'جميع الأسئلة الثمانية مبنية على العلاقات الرياضية التي يطورها هذا الدرس.'
