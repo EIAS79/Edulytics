@@ -38,7 +38,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   catalogue-skill-audit:
@@ -51,24 +51,7 @@ jobs:
       - name: Reconstruct Polish official Outcome evidence
         run: |
           set -euo pipefail
-          python3 tools/math_intelligence/polish_outcome_source_audit.py --strict --write-report --write-resource
-      - name: Commit reconstructed Polish Outcome evidence
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
-        run: |
-          set -euo pipefail
-          RESOURCE="src/Edulytics.Core/Mathematics/Curriculum/polish-outcome-source-evidence.v1.json"
-          cp "$RESOURCE" /tmp/polish-outcome-source-evidence.v1.json
-          git fetch origin "${{ github.head_ref }}"
-          git checkout -B "${{ github.head_ref }}" "origin/${{ github.head_ref }}"
-          cp /tmp/polish-outcome-source-evidence.v1.json "$RESOURCE"
-          git add -f "$RESOURCE"
-          if git diff --cached --quiet -- "$RESOURCE"; then
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "data: pin 306 Polish official outcome texts"
-          git push origin "${{ github.head_ref }}"
+          python3 tools/math_intelligence/polish_outcome_source_audit.py --strict --write-report
       - name: Upload Polish official Outcome evidence
         uses: actions/upload-artifact@v7.0.1
         with:
