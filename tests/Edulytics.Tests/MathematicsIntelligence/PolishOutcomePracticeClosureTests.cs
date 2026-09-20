@@ -200,6 +200,46 @@ public sealed class PolishOutcomePracticeClosureTests
         }
     }
 
+    [Fact]
+    public void Polish_short_target_truncation_preserves_unicode_scalar_boundaries()
+    {
+        const string outcomeCode =
+            "PL:REQ:PL:UPPER:WYRAZENIA-ALGEBRAICZNE:extended:4:205";
+
+        Assert.True(
+            PolishOutcomeSourceEvidenceRegistry.TryResolve(
+                outcomeCode,
+                out var evidence));
+        Assert.NotNull(evidence);
+
+        var cleaned =
+            PolishLessonPracticeContentCorrections.CleanOfficialTarget(
+                evidence!.OfficialText);
+        var shortened =
+            PolishLessonPracticeContentCorrections.BuildShortTarget(
+                cleaned);
+
+        Assert.EndsWith("…", shortened, StringComparison.Ordinal);
+        Assert.True(shortened.Length <= 180);
+
+        for (var index = 0; index < shortened.Length; index++)
+        {
+            if (char.IsHighSurrogate(shortened[index]))
+            {
+                Assert.True(
+                    index + 1 < shortened.Length &&
+                    char.IsLowSurrogate(shortened[index + 1]),
+                    $"Unpaired high surrogate at {index}.");
+                index++;
+                continue;
+            }
+
+            Assert.False(
+                char.IsLowSurrogate(shortened[index]),
+                $"Unpaired low surrogate at {index}.");
+        }
+    }
+
     private static string NormalizeOfficialEvidenceForLessonAssertion(string raw)
     {
         var value = System.Text.RegularExpressions.Regex.Replace(
