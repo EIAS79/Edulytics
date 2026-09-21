@@ -166,7 +166,7 @@
             '</main>' +
             '<div class="cg-eddy-panel" data-cg-eddy-panel>' +
                 '<img src="' + config.guide + '" alt="Eddy, the Edulytics guide" />' +
-                '<div><span>EDULYTICS</span><p data-cg-eddy-text>' + copy.intro + '</p></div>' +
+                '<div><span>EDDY</span><p data-cg-eddy-text>' + copy.intro + '</p></div>' +
                 '<button class="cg-primary" type="button" data-cg-start>' + copy.start + '</button>' +
             '</div>' +
             '<div class="cg-complete" data-cg-complete hidden>' +
