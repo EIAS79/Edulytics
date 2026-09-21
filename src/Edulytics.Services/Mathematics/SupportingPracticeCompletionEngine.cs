@@ -109,7 +109,11 @@ internal static class SupportingPracticeCompletionEngine
          FoundationPracticeEngine.Supports(family.Trim()) ||
          SupportingPracticeAdvancedEngine.Supports(family.Trim()));
 
-    public static Problem Build(string family, Random random, int scale)
+    public static Problem Build(
+        string family,
+        Random random,
+        int scale,
+        int? preferredVariant = null)
     {
         if (FoundationPracticeEngine.Supports(family))
         {
@@ -190,7 +194,8 @@ internal static class SupportingPracticeCompletionEngine
             "supporting.probability.sample_space_count" => SampleSpaceCount(random, scale),
             "supporting.statistics.compare_range" => CompareRange(random, scale),
             "supporting.statistics.collection_method" => CollectionMethod(random),
-            "supporting.reasoning.multistep" => MultiStep(random, scale),
+            "supporting.reasoning.multistep" =>
+                MultiStep(random, scale, preferredVariant),
             "supporting.reasoning.verify_identity" => VerifyIdentity(random, scale),
             "supporting.calculus.derivative_value" => DerivativeValue(random, scale),
             "supporting.calculus.definite_integral_linear" => DefiniteIntegralLinear(random, scale),
@@ -1122,9 +1127,14 @@ internal static class SupportingPracticeCompletionEngine
             ("variant", variant));
     }
 
-    private static Problem MultiStep(Random r, int s)
+    private static Problem MultiStep(
+        Random r,
+        int s,
+        int? preferredVariant = null)
     {
-        var mode = r.Next(0, 8);
+        var mode = preferredVariant.HasValue
+            ? ((preferredVariant.Value % 8) + 8) % 8
+            : r.Next(0, 8);
         var a = r.Next(2, 5 + s);
         var x = r.Next(3, 10 + s * 3);
         var b = r.Next(
