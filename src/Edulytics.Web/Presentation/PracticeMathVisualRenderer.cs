@@ -82,10 +82,10 @@ public static class PracticeMathVisualRenderer
                 "supporting.geometry.cuboid_volume" or
                 "supporting.geometry.solid.mixed" or
                 "supporting.geometry.surface_area_cuboid" => SolidParameterVisual(parameters),
+                "supporting.geometry.shape_dimension" => ShapeDimensionVisual(parameters),
                 "supporting.geometry.compound_area" or
                 "supporting.geometry.parallelogram_area" or
                 "supporting.geometry.plane.mixed" or
-                "supporting.geometry.shape_dimension" or
                 "supporting.geometry.triangle_area" => PlaneGeometryParameterVisual(parameters),
                 "supporting.trigonometry.graph_special" => TrigonometryGraphVisual(parameters),
                 "supporting.trigonometry.area_sine_double" or
@@ -562,6 +562,66 @@ public static class PracticeMathVisualRenderer
         Text(sb, 315, 193, $"w={width}", "label");
         Text(sb, 62, 150, $"h={height}", "label");
         AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static string? ShapeDimensionVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        if (!values.TryGetValue("shape", out var shape) ||
+            !values.TryGetValue("dimension", out var dimension) ||
+            shape is < 0 or > 7 ||
+            dimension is < 2 or > 3)
+        {
+            // Never show a generic geometry picture when the generator has not
+            // persisted enough semantic information to draw the stated shape.
+            return null;
+        }
+
+        var sb = SvgStart("Diagram of the shape named in the question.");
+        switch (shape)
+        {
+            case 0: // square
+                sb.Append("<rect x='120' y='50' width='180' height='160' class='shape fill'/>");
+                break;
+            case 1: // rectangle
+                sb.Append("<rect x='85' y='75' width='250' height='120' class='shape fill'/>");
+                break;
+            case 2: // triangle
+                sb.Append("<polygon points='210,45 75,210 345,210' class='shape fill'/>");
+                break;
+            case 3: // circle
+                sb.Append("<circle cx='210' cy='130' r='85' class='shape fill'/>");
+                break;
+            case 4: // cube
+                sb.Append("<rect x='110' y='75' width='140' height='130' class='shape fill'/>");
+                sb.Append("<rect x='165' y='40' width='140' height='130' class='shape fill'/>");
+                sb.Append("<line x1='110' y1='75' x2='165' y2='40' class='shape'/>");
+                sb.Append("<line x1='250' y1='75' x2='305' y2='40' class='shape'/>");
+                sb.Append("<line x1='250' y1='205' x2='305' y2='170' class='shape'/>");
+                sb.Append("<line x1='110' y1='205' x2='165' y2='170' class='shape'/>");
+                break;
+            case 5: // cuboid
+                sb.Append("<rect x='80' y='85' width='210' height='115' class='shape fill'/>");
+                sb.Append("<rect x='145' y='45' width='210' height='115' class='shape fill'/>");
+                sb.Append("<line x1='80' y1='85' x2='145' y2='45' class='shape'/>");
+                sb.Append("<line x1='290' y1='85' x2='355' y2='45' class='shape'/>");
+                sb.Append("<line x1='290' y1='200' x2='355' y2='160' class='shape'/>");
+                sb.Append("<line x1='80' y1='200' x2='145' y2='160' class='shape'/>");
+                break;
+            case 6: // sphere
+                sb.Append("<circle cx='210' cy='130' r='88' class='shape fill'/>");
+                sb.Append("<ellipse cx='210' cy='130' rx='88' ry='30' class='dash shape'/>");
+                break;
+            default: // cylinder
+                sb.Append("<ellipse cx='210' cy='62' rx='82' ry='28' class='shape fill'/>");
+                sb.Append("<line x1='128' y1='62' x2='128' y2='196' class='shape'/>");
+                sb.Append("<line x1='292' y1='62' x2='292' y2='196' class='shape'/>");
+                sb.Append("<ellipse cx='210' cy='196' rx='82' ry='28' class='shape fill'/>");
+                break;
+        }
+
+        Text(sb, 210, 245, dimension == 2 ? "2D shape" : "3D shape", "hint");
         return SvgEnd(sb);
     }
 

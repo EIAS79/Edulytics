@@ -1,5 +1,6 @@
 using System.Globalization;
 using Edulytics.Core.Enums;
+using Edulytics.Core.Mathematics.Generation;
 
 namespace Edulytics.Services.Mathematics;
 
@@ -117,7 +118,11 @@ internal static class SupportingPracticeCompletionEngine
     {
         if (FoundationPracticeEngine.Supports(family))
         {
-            var foundation = FoundationPracticeEngine.Build(family, random, scale);
+            var foundation = FoundationPracticeEngine.Build(
+                family,
+                random,
+                scale,
+                preferredVariant);
             return new Problem(
                 foundation.Family,
                 foundation.Prompt,
@@ -128,7 +133,11 @@ internal static class SupportingPracticeCompletionEngine
 
         if (SupportingPracticeAdvancedEngine.Supports(family))
         {
-            var advanced = SupportingPracticeAdvancedEngine.Build(family, random, scale);
+            var advanced = SupportingPracticeAdvancedEngine.Build(
+                family,
+                random,
+                scale,
+                preferredVariant);
             return new Problem(
                 advanced.Family,
                 advanced.Prompt,
@@ -167,10 +176,10 @@ internal static class SupportingPracticeCompletionEngine
             "supporting.algebra.quadratic_larger_root" => QuadraticRoot(random, scale),
             "supporting.functions.evaluate" => FunctionEvaluate(random, scale),
             "supporting.functions.composite" => FunctionComposite(random, scale),
-            "supporting.powers10.evaluate" => PowerOfTenEvaluate(random, scale),
-            "supporting.powers10.multiply" => PowerOfTenMultiply(random, scale),
-            "supporting.powers10.divide" => PowerOfTenDivide(random, scale),
-            "supporting.powers10.missing_exponent" => PowerOfTenMissingExponent(random, scale),
+            "supporting.powers10.evaluate" => PowerOfTenEvaluate(random, scale, preferredVariant),
+            "supporting.powers10.multiply" => PowerOfTenMultiply(random, scale, preferredVariant),
+            "supporting.powers10.divide" => PowerOfTenDivide(random, scale, preferredVariant),
+            "supporting.powers10.missing_exponent" => PowerOfTenMissingExponent(random, scale, preferredVariant),
             "supporting.indices.power_or_root" => PowerOrRoot(random, scale),
             "supporting.standard_form.power10_exponent" => StandardFormExponent(random, scale),
             "supporting.surds.coefficient" => SurdCoefficient(random, scale),
@@ -778,15 +787,21 @@ internal static class SupportingPracticeCompletionEngine
             ("fA", fA), ("fB", fB), ("gA", gA), ("gB", gB), ("x", x));
     }
 
-    private static Problem PowerOfTenEvaluate(Random r, int s)
+    private static Problem PowerOfTenEvaluate(
+        Random r,
+        int s,
+        int? preferredVariant = null)
     {
         var exponent = r.Next(1, Math.Min(10, 6 + s));
-        var variant = r.Next(0, 3);
+        var variant = preferredVariant.HasValue
+            ? QuestionVariantPolicy.NormalizeSlot(preferredVariant.Value) % 4
+            : r.Next(0, 4);
         var prompt = variant switch
         {
             0 => $"Evaluate 10^{exponent}.",
             1 => $"What is the value of 10^{exponent}?",
-            _ => $"Write 10^{exponent} as a whole number."
+            2 => $"Write 10^{exponent} as a whole number.",
+            _ => $"Complete the statement: 10^{exponent} = __."
         };
         return P(
             "supporting.powers10.evaluate",
@@ -796,33 +811,64 @@ internal static class SupportingPracticeCompletionEngine
             ("variant", variant));
     }
 
-    private static Problem PowerOfTenMultiply(Random r, int s)
+    private static Problem PowerOfTenMultiply(
+        Random r,
+        int s,
+        int? preferredVariant = null)
     {
         var exponent = r.Next(1, Math.Min(7, 4 + s));
         var value = r.Next(2, 80 + s * 80);
+        var variant = preferredVariant.HasValue
+            ? QuestionVariantPolicy.NormalizeSlot(preferredVariant.Value) % 4
+            : r.Next(0, 4);
+        var prompt = variant switch
+        {
+            0 => $"Calculate {value} × 10^{exponent}.",
+            1 => $"Find the product of {value} and 10^{exponent}.",
+            2 => $"Complete: {value} × 10^{exponent} = __.",
+            _ => $"Scale {value} by 10^{exponent}. What number do you get?"
+        };
         return P(
             "supporting.powers10.multiply",
-            $"Calculate {value} × 10^{exponent}.",
+            prompt,
             "Multiplying by a power of ten shifts every digit left by the exponent in the place-value system.",
             ("value", value),
-            ("exponent", exponent));
+            ("exponent", exponent),
+            ("variant", variant));
     }
 
-    private static Problem PowerOfTenDivide(Random r, int s)
+    private static Problem PowerOfTenDivide(
+        Random r,
+        int s,
+        int? preferredVariant = null)
     {
         var exponent = r.Next(1, Math.Min(7, 4 + s));
         var quotient = r.Next(2, 80 + s * 80);
         var dividend = checked(quotient * Pow10(exponent));
+        var variant = preferredVariant.HasValue
+            ? QuestionVariantPolicy.NormalizeSlot(preferredVariant.Value) % 4
+            : r.Next(0, 4);
+        var prompt = variant switch
+        {
+            0 => $"Calculate {dividend} ÷ 10^{exponent}.",
+            1 => $"Find the quotient when {dividend} is divided by 10^{exponent}.",
+            2 => $"Complete: {dividend} ÷ 10^{exponent} = __.",
+            _ => $"Scale {dividend} down by 10^{exponent}. What number remains?"
+        };
         return P(
             "supporting.powers10.divide",
-            $"Calculate {dividend} ÷ 10^{exponent}.",
+            prompt,
             "Dividing by a power of ten shifts every digit right by the exponent in the place-value system.",
             ("quotient", quotient),
             ("dividend", dividend),
-            ("exponent", exponent));
+            ("exponent", exponent),
+            ("variant", variant));
     }
 
-    private static Problem PowerOfTenMissingExponent(Random r, int s)
+    private static Problem PowerOfTenMissingExponent(
+        Random r,
+        int s,
+        int? preferredVariant = null)
     {
         var value = r.Next(2, 40 + s * 30);
         // Keep the exact integer representation inside Int32 for every certified
@@ -830,13 +876,24 @@ internal static class SupportingPracticeCompletionEngine
         var maxExponentExclusive = Math.Min(7, 5 + s);
         var exponent = r.Next(1, maxExponentExclusive);
         var result = checked(value * Pow10(exponent));
+        var variant = preferredVariant.HasValue
+            ? QuestionVariantPolicy.NormalizeSlot(preferredVariant.Value) % 4
+            : r.Next(0, 4);
+        var prompt = variant switch
+        {
+            0 => $"{value} × 10^n = {result}. Find n.",
+            1 => $"Which exponent n makes {value} × 10^n equal {result}?",
+            2 => $"Complete the exponent: {value} × 10^__ = {result}.",
+            _ => $"{value} is scaled to {result} by a power of ten. What is the exponent?"
+        };
         return P(
             "supporting.powers10.missing_exponent",
-            $"{value} × 10^n = {result}. Find n.",
+            prompt,
             "Compare the starting value with the result and count the place-value shifts.",
             ("value", value),
             ("result", result),
-            ("exponent", exponent));
+            ("exponent", exponent),
+            ("variant", variant));
     }
 
     private static Problem PowerOrRoot(Random r, int s)

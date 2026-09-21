@@ -45,17 +45,11 @@ public sealed class ImportCorrectiveContractTests
                 ImportType.SubjectSupervisors,
                 []));
 
-        Assert.Equal(
-            new[]
-            {
-                "AssessmentTitle",
-                "AssessmentDate",
-                "ClassName",
-                "StudentNumber",
-                "StudentName",
-                "QuestionOrder",
-                "Score"
-            },
+        Assert.False(
+            MathOnlyImportAdapter.IsSupported(
+                ImportType.AssessmentResults));
+
+        Assert.Empty(
             MathOnlyImportAdapter.TemplateHeaders(
                 ImportType.AssessmentResults,
                 []));

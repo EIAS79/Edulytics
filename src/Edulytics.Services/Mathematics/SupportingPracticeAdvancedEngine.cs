@@ -1,5 +1,6 @@
 using System.Globalization;
 using Edulytics.Core.Enums;
+using Edulytics.Core.Mathematics.Generation;
 
 namespace Edulytics.Services.Mathematics;
 
@@ -70,7 +71,11 @@ internal static class SupportingPracticeAdvancedEngine
     public static bool Supports(string? family) =>
         !string.IsNullOrWhiteSpace(family) && Families.Contains(family.Trim());
 
-    public static Problem Build(string family, Random r, int scale) =>
+    public static Problem Build(
+        string family,
+        Random r,
+        int scale,
+        int? preferredVariant = null) =>
         family switch
         {
             "supporting.number.compare_order" => CompareOrder(r, scale),
@@ -79,7 +84,7 @@ internal static class SupportingPracticeAdvancedEngine
             "supporting.number.scale_power10" => ScalePower10(r, scale),
             "supporting.fractions.mixed_to_improper" => MixedToImproper(r, scale),
             "supporting.measurement.compare" => MeasurementCompare(r, scale),
-            "supporting.geometry.shape_dimension" => ShapeDimension(r),
+            "supporting.geometry.shape_dimension" => ShapeDimension(r, preferredVariant),
             "supporting.geometry.turn_degrees" => TurnDegrees(r),
             "supporting.geometry.triangle_area" => TriangleArea(r, scale),
             "supporting.geometry.surface_area_cuboid" => SurfaceAreaCuboid(r, scale),
@@ -274,7 +279,37 @@ internal static class SupportingPracticeAdvancedEngine
     private static Problem ScalePower10(Random r,int s){var v=r.Next(1,50+s*20);var p=r.Next(1,Math.Min(4,s+2));return P("supporting.number.scale_power10",$"Calculate {v} × 10^{p}.","Multiplying by a power of ten shifts place value by the exponent.",("value",v),("power",p));}
     private static Problem MixedToImproper(Random r,int s){var w=r.Next(1,6+s);var d=r.Next(2,8+s);var n=r.Next(1,d);return P("supporting.fractions.mixed_to_improper",$"Convert {w} {n}/{d} to an improper fraction.","Multiply the whole part by the denominator, add the numerator, and keep the denominator.",AssessmentItemType.ShortAnswer,("whole",w),("numerator",n),("denominator",d));}
     private static Problem MeasurementCompare(Random r,int s){var a=r.Next(1,100+s*50);var b=r.Next(1,100+s*50);return P("supporting.measurement.compare",$"Compare measurements {a} and {b} expressed in the same unit. Enter <, >, or =.","Once units match, compare the numerical measures directly.",AssessmentItemType.ShortAnswer,("left",a),("right",b));}
-    private static Problem ShapeDimension(Random r){var d=r.Next(0,2)==0?2:3;var variant=r.Next(1,9999);var shape=d==2?"a square":"a cube";return P("supporting.geometry.shape_dimension",$"Is {shape} a 2D or 3D shape?","2D shapes are flat; 3D shapes have solid extent.",AssessmentItemType.ShortAnswer,("dimension",d),("variant",variant));}
+    private static Problem ShapeDimension(Random r, int? preferredVariant = null)
+    {
+        var variant = preferredVariant.HasValue
+            ? QuestionVariantPolicy.NormalizeSlot(preferredVariant.Value)
+            : r.Next(0, QuestionVariantPolicy.MaximumVariantsPerFamily);
+        var shape = variant % 8;
+        var dimension = shape <= 3 ? 2 : 3;
+        var name = shape switch
+        {
+            0 => "square",
+            1 => "rectangle",
+            2 => "triangle",
+            3 => "circle",
+            4 => "cube",
+            5 => "cuboid",
+            6 => "sphere",
+            _ => "cylinder"
+        };
+        var prompt = variant < 8
+            ? $"Is a {name} a 2D or 3D shape?"
+            : $"Classify a {name} by dimension. Enter 2D or 3D.";
+
+        return P(
+            "supporting.geometry.shape_dimension",
+            prompt,
+            "2D shapes are flat; 3D shapes have solid extent.",
+            AssessmentItemType.ShortAnswer,
+            ("dimension", dimension),
+            ("shape", shape),
+            ("variant", variant));
+    }
     private static Problem TurnDegrees(Random r){var q=r.Next(1,13);return P("supporting.geometry.turn_degrees",$"How many degrees are in {q} quarter-turn(s)?","One quarter-turn is 90 degrees; repeated quarter-turns can exceed one full turn.",("quarterTurns",q));}
     private static Problem TriangleArea(Random r,int s){var b=2*r.Next(2,8+s);var h=r.Next(2,8+s);return P("supporting.geometry.triangle_area",$"A triangle has base {b} and perpendicular height {h}. Find its area.","Use one half times base times perpendicular height.",("base",b),("height",h));}
     private static Problem SurfaceAreaCuboid(Random r,int s){var l=r.Next(2,7+s);var w=r.Next(2,7+s);var h=r.Next(2,6+s);return P("supporting.geometry.surface_area_cuboid",$"A cuboid has dimensions {l}, {w}, {h}. Find its total surface area.","Add the areas of the three pairs of opposite rectangular faces.",("l",l),("w",w),("h",h));}

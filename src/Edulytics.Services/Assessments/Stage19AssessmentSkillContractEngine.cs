@@ -25,7 +25,8 @@ public sealed class Stage19AssessmentSkillContractEngine
         int questionCount,
         int seed,
         IReadOnlyCollection<string> excludedExposureFingerprints,
-        Guid createdByUserId)
+        Guid createdByUserId,
+        int? preferredVariant = null)
     {
         ArgumentNullException.ThrowIfNull(outcome);
         ArgumentNullException.ThrowIfNull(contract);
@@ -49,7 +50,8 @@ public sealed class Stage19AssessmentSkillContractEngine
             ResolveDifficulty(requestedDifficulty),
             questionCount,
             seed,
-            excludedExposureFingerprints);
+            excludedExposureFingerprints,
+            preferredVariant);
 
         var items = exact.Select(question =>
         {
@@ -82,6 +84,7 @@ public sealed class Stage19AssessmentSkillContractEngine
                     skillId = contract.SkillId,
                     outcomeCode = contract.OutcomeCode,
                     questionFamily = question.Family,
+                    questionVariant = question.VariantId,
                     parameters = question.Parameters
                 }),
                 ExposureFingerprint = question.ExposureFingerprint,
@@ -93,6 +96,7 @@ public sealed class Stage19AssessmentSkillContractEngine
                     skillContract = contract.SkillId,
                     officialOutcomeCode = contract.OutcomeCode,
                     allowedFamily = question.Family,
+                    questionVariant = question.VariantId,
                     solver = Stage19AssessmentSkillContracts.SolverIdentifier,
                     verifier = Stage19AssessmentSkillContracts.VerifierIdentifier,
                     solverVerified = true,
