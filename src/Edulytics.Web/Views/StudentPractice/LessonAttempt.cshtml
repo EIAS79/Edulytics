@@ -38,7 +38,7 @@
             .OrderBy(x => x.Order)
             .ToArray();
     var answeredCount =
-        orderedQuestions.Count(x => x.Answered);
+        orderedQuestions.Count(x => x.IsCorrect == true);
     var totalQuestions =
         orderedQuestions.Length;
     var progressPercent =
@@ -58,9 +58,13 @@
             : null;
     var isReviewing =
         reviewQuestion is not null;
+    var isIncorrectReview =
+        reviewQuestion?.IsCorrect == false;
+    var isCorrectReview =
+        reviewQuestion?.IsCorrect == true;
     var currentQuestion =
         reviewQuestion
-        ?? orderedQuestions.FirstOrDefault(x => !x.Answered);
+        ?? orderedQuestions.FirstOrDefault(x => x.IsCorrect != true);
     var displayedQuestionNumber =
         currentQuestion?.Order
         ?? Math.Min(answeredCount + 1, totalQuestions);
@@ -182,6 +186,19 @@
         currentQuestion?.Order >= totalQuestions
             ? continueLabel
             : nextQuestionLabel;
+
+    var eddyMessage =
+        isIncorrectReview
+            ? $"{S["PracticeIncorrect"].Value} {guidanceText}"
+            : isCorrectReview
+                ? string.Join(
+                    " ",
+                    new[]
+                    {
+                        S["PracticeCorrect"].Value,
+                        currentQuestion?.Feedback
+                    }.Where(x => !string.IsNullOrWhiteSpace(x)))
+                : guidanceText;
 }
 <!DOCTYPE html>
 <html lang="@locale" dir="@(isRtl ? "rtl" : "ltr")">
@@ -409,24 +426,8 @@
                         </div>
                     }
 
-                    @if (isReviewing && currentQuestion is not null)
+                    @if (isCorrectReview && currentQuestion is not null)
                     {
-                        <div class="lp-server-feedback @(currentQuestion.IsCorrect == true ? "lp-server-feedback--ok" : "lp-server-feedback--bad")"
-                             role="status"
-                             data-practice-feedback>
-                            @(currentQuestion.IsCorrect == true
-                                ? S["PracticeCorrect"].Value
-                                : S["PracticeIncorrect"].Value)
-
-                            @if (!string.IsNullOrWhiteSpace(currentQuestion.Feedback))
-                            {
-                                <div>
-                                    <strong>@S["PracticeSolution"]:</strong>
-                                    @currentQuestion.Feedback
-                                </div>
-                            }
-                        </div>
-
                         <div class="lp-server-actions">
                             <a class="gw-primary"
                                asp-action="LessonAttempt"
@@ -527,7 +528,9 @@
                          height="132" />
                     <div>
                         <span>EDDY</span>
-                        <p data-practice-hint>@guidanceText</p>
+                        <p data-practice-hint
+                           role="status"
+                           aria-live="polite">@eddyMessage</p>
                     </div>
                 </aside>
             }
