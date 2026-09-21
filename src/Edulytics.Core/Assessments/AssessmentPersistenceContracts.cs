@@ -22,7 +22,7 @@ public sealed record AssessmentSnapshot(
     IReadOnlyList<StudentAnswer> StudentAnswers)
 {
     public IReadOnlyList<AssessmentItem> AssessmentItems { get; init; } = [];
-};
+}
 
 public enum AssessmentPersistenceError
 {
