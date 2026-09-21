@@ -14,6 +14,9 @@
     var hasEligibleOutcomes = Model.Details.EligibleOutcomes.Count > 0;
     var aiSupportedOutcomeIds = (Model.AiSupportedOutcomeIds ?? Array.Empty<Guid>()).ToHashSet();
     var hasAiSupportedOutcomes = aiSupportedOutcomeIds.Count > 0;
+    var aiSupportedLessons = Model.Lessons.Where(x => x.AiSupported).ToArray();
+    var hasAiSupportedLessons = aiSupportedLessons.Length > 0;
+    var aiSupportedUnits = Model.Units.Where(x => x.AiSupportedLessonCount > 0).ToArray();
     var classItem = Model.Details.ClassGroups.FirstOrDefault(x => x.Id == assessment.ClassGroupId);
     var subjectItem = Model.Details.Subjects.FirstOrDefault(x => x.Id == assessment.SubjectId);
     var draftQuestionCount = Model.Questions.Count(x => x.Status == AssessmentBuilderQuestionStatus.Draft);
@@ -58,10 +61,6 @@
 
     <div class="assessment-info">@A[Model.ReadinessMessage]</div>
 
-    @if (assessment.Status == AssessmentStatus.Draft && !hasEligibleOutcomes)
-    {
-        <div class="school-alert school-alert-error" role="status">@A["LearningOutcomesSetupRequired"]</div>
-    }
 
     @if (assessment.Status == AssessmentStatus.Draft)
     {
@@ -109,17 +108,23 @@
                 <div class="ed-builder-card-heading">
                     <div>
                         <h2>@A["GenerateQuestionsWithAI"]</h2>
-                        <p>@A["NativeGenerationNotice"]</p>
+                        <p>@(isPolish
+                            ? "Wybierz zakres dydaktyczny: konkretne lekcje, jednostki lub cały program. Wyniki są nadal mapowane do oficjalnych efektów uczenia się, gdy takie mapowanie istnieje."
+                            : "Choose the instructional scope: specific lessons, units, or the full curriculum. Official learning-outcome alignment is preserved when available.")</p>
                     </div>
                 </div>
 
-                @if (!hasEligibleOutcomes)
+                @if (Model.CanGenerateNatively && (hasAiSupportedLessons || hasAiSupportedOutcomes))
                 {
-                    <div class="assessment-empty">@A["LearningOutcomesSetupRequired"]</div>
-                }
-                else if (Model.CanGenerateNatively && hasAiSupportedOutcomes)
-                {
-                    <form asp-action="Generate" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form ed-builder-form" data-ai-generate-form>
+                    var defaultScope = hasAiSupportedLessons
+                        ? AssessmentGenerationScopeType.Lessons
+                        : AssessmentGenerationScopeType.Outcomes;
+
+                    <form asp-action="Generate"
+                          asp-route-assessmentId="@assessment.Id"
+                          method="post"
+                          class="assessment-form ed-builder-form"
+                          data-ai-generate-form>
                         @Html.AntiForgeryToken()
                         <input type="hidden" name="rowVersion" value="@rowVersion" />
 
@@ -144,17 +149,102 @@
                         </select>
                         <input type="hidden" name="seed" value="0" />
 
-                        <label for="ai-outcomes">@A["LearningOutcomes"]</label>
-                        <select id="ai-outcomes" class="ed-builder-outcome-select" name="outcomeIds" multiple size="8" required>
-                            @foreach (var outcome in Model.Details.EligibleOutcomes)
+                        <label for="ai-scope-type">@(isPolish ? "Zakres testu" : "Assessment scope")</label>
+                        <select id="ai-scope-type" name="scopeType" data-assessment-scope>
+                            @if (hasAiSupportedLessons)
                             {
-                                var aiSupported = aiSupportedOutcomeIds.Contains(outcome.Id);
-                                var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
-                                var displayTitle = LearningOutcomePresentation.DisplayTitle(outcome.Code, outcome.Description);
-                                <option value="@outcome.Id" disabled="@(!aiSupported)">@displayTitle · @displayCode@(aiSupported ? $" · {A["AiSupported"]}" : $" · {A["ManualOnly"]}")</option>
+                                <option value="@AssessmentGenerationScopeType.Lessons" selected="@(defaultScope == AssessmentGenerationScopeType.Lessons)">
+                                    @(isPolish ? "Wybrane lekcje" : "Specific lessons")
+                                </option>
+                            }
+                            @if (aiSupportedUnits.Length > 0)
+                            {
+                                <option value="@AssessmentGenerationScopeType.Units">
+                                    @(isPolish ? "Całe jednostki" : "Entire units")
+                                </option>
+                            }
+                            @if (hasAiSupportedLessons)
+                            {
+                                <option value="@AssessmentGenerationScopeType.Curriculum">
+                                    @(isPolish ? "Cały program" : "Full curriculum")
+                                </option>
+                            }
+                            @if (hasAiSupportedOutcomes)
+                            {
+                                <option value="@AssessmentGenerationScopeType.Outcomes" selected="@(defaultScope == AssessmentGenerationScopeType.Outcomes)">
+                                    @(isPolish ? "Oficjalne efekty (zgodność wsteczna)" : "Official outcomes (compatibility)")
+                                </option>
                             }
                         </select>
-                        <p class="assessment-info">@A["LearningOutcomes"]</p>
+
+                        <div data-scope-panel="@AssessmentGenerationScopeType.Lessons">
+                            <label for="ai-lessons">@(isPolish ? "Lekcje" : "Lessons")</label>
+                            <select id="ai-lessons"
+                                    class="ed-builder-outcome-select"
+                                    name="lessonIds"
+                                    multiple
+                                    size="10">
+                                @foreach (var lesson in Model.Lessons)
+                                {
+                                    <option value="@lesson.Id" disabled="@(!lesson.AiSupported)">
+                                        @lesson.Title · @lesson.UnitTitle@(lesson.HasOfficialOutcome ? "" : (isPolish ? " · lekcja wspierająca" : " · supporting lesson"))@(!lesson.AiSupported ? (isPolish ? " · tylko ręcznie" : " · manual only") : "")
+                                    </option>
+                                }
+                            </select>
+                            <p class="assessment-info">
+                                @(isPolish
+                                    ? "Każde wygenerowane pytanie zachowuje identyfikator lekcji i mapowanie do oficjalnego efektu, jeśli istnieje."
+                                    : "Each generated question keeps its lesson identity and official outcome alignment when one exists.")
+                            </p>
+                        </div>
+
+                        <div data-scope-panel="@AssessmentGenerationScopeType.Units" hidden>
+                            <label for="ai-units">@(isPolish ? "Jednostki" : "Units")</label>
+                            <select id="ai-units"
+                                    class="ed-builder-outcome-select"
+                                    name="unitKeys"
+                                    multiple
+                                    size="8"
+                                    disabled>
+                                @foreach (var unit in Model.Units)
+                                {
+                                    <option value="@unit.UnitKey" disabled="@(unit.AiSupportedLessonCount == 0)">
+                                        @unit.UnitTitle · @unit.AiSupportedLessonCount/@unit.LessonCount @(isPolish ? "lekcji gotowych do AI" : "AI-ready lessons")
+                                    </option>
+                                }
+                            </select>
+                        </div>
+
+                        <div data-scope-panel="@AssessmentGenerationScopeType.Curriculum" hidden>
+                            <div class="assessment-info">
+                                @(isPolish
+                                    ? $"Pytania zostaną rozłożone pomiędzy jednostki i gotowe do AI lekcje w bieżącym programie ({aiSupportedLessons.Length} lekcji)."
+                                    : $"Questions will be distributed across units and AI-ready lessons in the current curriculum ({aiSupportedLessons.Length} lessons).")
+                            </div>
+                        </div>
+
+                        <div data-scope-panel="@AssessmentGenerationScopeType.Outcomes" hidden>
+                            <label for="ai-outcomes">@A["LearningOutcomes"]</label>
+                            <select id="ai-outcomes"
+                                    class="ed-builder-outcome-select"
+                                    name="outcomeIds"
+                                    multiple
+                                    size="8"
+                                    disabled>
+                                @foreach (var outcome in Model.Details.EligibleOutcomes)
+                                {
+                                    var aiSupported = aiSupportedOutcomeIds.Contains(outcome.Id);
+                                    var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
+                                    var displayTitle = LearningOutcomePresentation.DisplayTitle(outcome.Code, outcome.Description);
+                                    <option value="@outcome.Id" disabled="@(!aiSupported)">@displayTitle · @displayCode@(aiSupported ? $" · {A["AiSupported"]}" : $" · {A["ManualOnly"]}")</option>
+                                }
+                            </select>
+                            <p class="assessment-info">
+                                @(isPolish
+                                    ? "Ten tryb zachowano dla istniejących testów. Nowe testy powinny korzystać z zakresu Lekcja / Jednostka / Program."
+                                    : "This compatibility mode remains for existing assessments. New assessments should use Lesson / Unit / Curriculum scope.")
+                            </p>
+                        </div>
 
                         <button class="school-button school-button-primary ed-ai-generate-button" type="submit">@A["GenerateQuestionsWithAI"]</button>
                     </form>
@@ -256,6 +346,10 @@
                     <span>@A["QuestionMaxScore"]: <strong>@question.MaxScore.ToString("0.##")</strong></span>
                     <span>@A["Difficulty"]: <strong>@(question.Difficulty?.ToString() ?? A["Legacy"].Value)</strong></span>
                     <span>@A["Source"]: <strong>@(question.Source?.ToString() ?? A["Legacy"].Value)</strong></span>
+                    @if (question.LessonId.HasValue)
+                    {
+                        <span>@(isPolish ? "Lekcja" : "Lesson"): <strong>@(question.LessonTitle ?? question.LessonId.Value.ToString("D"))</strong></span>
+                    }
                 </div>
 
                 @if (!string.IsNullOrWhiteSpace(question.CorrectAnswer))
@@ -395,6 +489,24 @@
                     window.setTimeout(() => { if (details) details.open = false; }, 0);
                 });
             });
+
+            const scopeSelect = document.querySelector('[data-assessment-scope]');
+            const scopePanels = Array.from(document.querySelectorAll('[data-scope-panel]'));
+            const syncScope = () => {
+                if (!scopeSelect) return;
+                const selected = scopeSelect.value;
+                scopePanels.forEach(panel => {
+                    const active = panel.dataset.scopePanel === selected;
+                    panel.hidden = !active;
+                    panel.querySelectorAll('select, input').forEach(control => {
+                        control.disabled = !active;
+                    });
+                });
+            };
+            if (scopeSelect) {
+                scopeSelect.addEventListener('change', syncScope);
+                syncScope();
+            }
 
             const form = document.getElementById('manual-question-form');
             if (!form || !window.sessionStorage) return;
