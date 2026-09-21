@@ -593,6 +593,13 @@ public sealed class AssessmentBuilderService(
             return null;
         }
 
+        var difficultyPlan = AssessmentBuilderGenerationPlanner.PlanItemDifficulties(
+            difficulty,
+            count,
+            seed);
+        if (difficultyPlan is null || difficultyPlan.Count != count)
+            return null;
+
         var excluded = context.Items
             .Select(x => x.ExposureFingerprint)
             .Where(x => !string.IsNullOrWhiteSpace(x))
@@ -601,6 +608,7 @@ public sealed class AssessmentBuilderService(
         var baseCount = count / lessons.Count;
         var remainder = count % lessons.Count;
         var engine = new ExactSkillContractQuestionEngine();
+        var globalIndex = 0;
 
         try
         {
@@ -617,20 +625,22 @@ public sealed class AssessmentBuilderService(
                 if (allocation <= 0)
                     return null;
 
-                var questions = engine.Generate(
-                    "assessment-lesson",
-                    lesson.Code,
-                    contract.AllowedQuestionFamilies,
-                    ResolveExactDifficulty(difficulty),
-                    allocation,
-                    unchecked(seed + ((lessonIndex + 1) * 104729)),
-                    excluded);
-
                 var outcomeIds = ResolveLessonOutcomeIds(context, lesson);
                 var topicId = ResolveSingleTopic(context, outcomeIds);
 
-                foreach (var generatedQuestion in questions)
+                for (var localIndex = 0; localIndex < allocation; localIndex++)
                 {
+                    var plannedDifficulty = difficultyPlan[globalIndex];
+                    var generatedQuestion = engine.Generate(
+                        "assessment-lesson",
+                        lesson.Code,
+                        contract.AllowedQuestionFamilies,
+                        ResolveExactDifficulty(plannedDifficulty),
+                        1,
+                        unchecked(seed + ((lessonIndex + 1) * 104729) + (localIndex * 7919)),
+                        excluded,
+                        globalIndex).Single();
+
                     if (!ExactSkillContractQuestionEngine.Verify(
                             generatedQuestion.Family,
                             generatedQuestion.Parameters,
@@ -648,12 +658,13 @@ public sealed class AssessmentBuilderService(
                         CurriculumTopicId = topicId,
                         Source = AssessmentItemSource.SystemGenerated,
                         ItemType = generatedQuestion.ItemType,
-                        Difficulty = ResolveItemDifficulty(difficulty),
+                        Difficulty = AssessmentBuilderGenerationPlanner.ToItemDifficulty(
+                            plannedDifficulty),
                         Prompt = generatedQuestion.Prompt,
                         CorrectAnswer = generatedQuestion.CorrectAnswer,
                         Solution = generatedQuestion.Solution,
                         CreatedByUserId = createdByUserId,
-                        GenerationMethod = "lesson-skill-contract-assessment-solver-verified-v1",
+                        GenerationMethod = "lesson-skill-contract-assessment-solver-verified-v2",
                         GenerationFamily = generatedQuestion.Family,
                         GenerationParametersJson = JsonSerializer.Serialize(new
                         {
@@ -662,6 +673,7 @@ public sealed class AssessmentBuilderService(
                             skillId = contract.SkillId,
                             skillIds = contract.SkillIds,
                             questionFamily = generatedQuestion.Family,
+                            questionVariant = generatedQuestion.VariantId,
                             parameters = generatedQuestion.Parameters
                         }),
                         ExposureFingerprint = generatedQuestion.ExposureFingerprint,
@@ -672,6 +684,7 @@ public sealed class AssessmentBuilderService(
                             lessonCode = lesson.Code,
                             unitKey = lesson.UnitKey,
                             skillContract = contract.SkillId,
+                            questionVariant = generatedQuestion.VariantId,
                             officialOutcomeCount = outcomeIds.Length,
                             supportingLesson = outcomeIds.Length == 0,
                             solverVerified = true,
@@ -687,6 +700,7 @@ public sealed class AssessmentBuilderService(
                         return null;
 
                     generated.Add(new ScopedGeneratedItem(item, outcomeIds));
+                    globalIndex++;
                 }
             }
         }
@@ -831,6 +845,13 @@ public sealed class AssessmentBuilderService(
             return null;
         }
 
+        var difficultyPlan = AssessmentBuilderGenerationPlanner.PlanItemDifficulties(
+            difficulty,
+            count,
+            seed);
+        if (difficultyPlan is null || difficultyPlan.Count != count)
+            return null;
+
         var generated = new List<GeneratedMathematicsItem>(count);
         var excluded = context.Items
             .Select(x => x.ExposureFingerprint)
@@ -840,6 +861,7 @@ public sealed class AssessmentBuilderService(
         var baseCount = count / outcomes.Count;
         var remainder = count % outcomes.Count;
         var engine = new Stage19AssessmentSkillContractEngine();
+        var globalIndex = 0;
 
         try
         {
@@ -849,20 +871,23 @@ public sealed class AssessmentBuilderService(
                 if (allocation <= 0)
                     return null;
 
-                var batch = engine.Generate(
-                    schoolId,
-                    context.CurriculumAdoption.Id,
-                    context.CurriculumAdoption.CurriculumLevelKey!,
-                    outcomes[index],
-                    contracts[index],
-                    difficulty,
-                    allocation,
-                    unchecked(seed + ((index + 1) * 7919)),
-                    excluded,
-                    createdByUserId);
-
-                foreach (var item in batch.Items)
+                for (var localIndex = 0; localIndex < allocation; localIndex++)
                 {
+                    var plannedDifficulty = difficultyPlan[globalIndex];
+                    var batch = engine.Generate(
+                        schoolId,
+                        context.CurriculumAdoption.Id,
+                        context.CurriculumAdoption.CurriculumLevelKey!,
+                        outcomes[index],
+                        contracts[index],
+                        plannedDifficulty,
+                        1,
+                        unchecked(seed + ((index + 1) * 7919) + (localIndex * 104729)),
+                        excluded,
+                        createdByUserId,
+                        globalIndex);
+
+                    var item = batch.Items.Single();
                     if (!Stage19AssessmentSkillContractEngine.VerifyPersistedItem(
                             contracts[index],
                             item.Item))
@@ -874,6 +899,7 @@ public sealed class AssessmentBuilderService(
                         return null;
 
                     generated.Add(item);
+                    globalIndex++;
                 }
             }
         }
