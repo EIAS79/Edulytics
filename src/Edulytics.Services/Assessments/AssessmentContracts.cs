@@ -173,3 +173,13 @@ public sealed record SaveStudentAssessmentResultRequest(
     IReadOnlyList<Guid> QuestionIds,
     IReadOnlyList<decimal> Scores,
     byte[]? ResultRowVersion);
+
+public sealed record ImportAssessmentResultRow(
+    Guid StudentProfileId,
+    IReadOnlyList<decimal> Scores,
+    byte[]? ResultRowVersion);
+
+public sealed record ImportAssessmentResultsRequest(
+    Guid AssessmentId,
+    IReadOnlyList<Guid> QuestionIds,
+    IReadOnlyList<ImportAssessmentResultRow> Rows);
