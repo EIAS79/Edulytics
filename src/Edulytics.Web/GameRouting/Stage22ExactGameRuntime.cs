@@ -92,11 +92,15 @@ public sealed class Stage22ExactGameRuntime
             _ => ExactSkillQuestionDifficulty.Standard
         };
 
+        var selectedFamily =
+            contract.AllowedQuestionFamilies[
+                roundIndex % contract.AllowedQuestionFamilies.Count];
+
         var generated = new ExactSkillContractQuestionEngine()
             .Generate(
                 "stage22-game",
                 contract.LessonCode,
-                contract.AllowedQuestionFamilies,
+                [selectedFamily],
                 difficulty,
                 1,
                 unchecked(seed ^ ((roundIndex + 1) * 7919)),
@@ -135,7 +139,10 @@ public sealed class Stage22ExactGameRuntime
             contract.Mechanic,
             generated.Family,
             generated.Prompt,
-            HintFor(generated.Family),
+            LessonPracticeHintResolver.Resolve(
+                generated.Family,
+                generated.Parameters,
+                "en"),
             choices);
     }
 
@@ -268,31 +275,6 @@ public sealed class Stage22ExactGameRuntime
 
         return values;
     }
-
-    private static string HintFor(string family) => family switch
-    {
-        "algebra.relationships.two_unknowns.total_difference" =>
-            "Use both relationships together; one equation alone is not enough.",
-
-        "measurement.scale.equal_intervals.read_value" =>
-            "Count equal intervals, determine the interval value, then locate the pointer.",
-
-        "fractions.compare.unlike.common_denominator" =>
-            "Compare the values using a common denominator or cross-products.",
-
-        "fractions.equivalent.missing_value" or
-        "fractions.equivalent.recognize" or
-        "fractions.equivalent.generate_multiple" or
-        "fractions.equivalent.number_line" or
-        "fractions.equivalent.reduce_common_factor" =>
-            "Equivalent fractions preserve value when numerator and denominator change by the same factor.",
-
-        "ratio.unit_rate.direct" or
-        "ratio.unit_rate.equivalent_ratio" =>
-            "Use the same multiplicative relationship on both parts of the ratio.",
-
-        _ => "Use the exact mathematical relationship in the question."
-    };
 
     private sealed record ProtectedRoundPayload(
         string RuntimeVersion,
