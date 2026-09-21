@@ -31,7 +31,7 @@ This plan deliberately separates restoration from redesign. The assessment-aware
 ### Phase 1 — Baseline lock and execution plan
 
 - Record this plan in the repository.
-- Use the commit immediately before PR #247 as the authoritative baseline for the Assessment Results bulk-import behavior.
+- Use commit `d6f857c428b22d3109916579999788b89c514c11` (the `main` baseline immediately before PR #247) as the authoritative baseline for the Assessment Results bulk-import behavior.
 - Confirm that only the Assessment Results retirement changes are reverted.
 
 ### Phase 2 — Restore Assessment Results bulk import
