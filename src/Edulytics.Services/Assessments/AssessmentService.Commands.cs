@@ -1257,6 +1257,42 @@ public sealed partial class AssessmentService
                 cancellationToken));
     }
 
+    public async Task<AssessmentCommandResult> ImportStudentResultsAsync(
+        Guid actorUserId,
+        ImportAssessmentResultsRequest request,
+        CancellationToken cancellationToken = default)
+    {
+        if (request.AssessmentId == Guid.Empty ||
+            request.QuestionIds.Count == 0 ||
+            request.QuestionIds.Any(x => x == Guid.Empty) ||
+            request.QuestionIds.Distinct().Count() != request.QuestionIds.Count ||
+            request.Rows.Select(x => x.StudentProfileId).Distinct().Count() != request.Rows.Count ||
+            request.Rows.Any(x =>
+                x.StudentProfileId == Guid.Empty ||
+                x.Scores.Count != request.QuestionIds.Count))
+        {
+            return Fail(AssessmentErrorCode.ResultQuestionMismatch);
+        }
+
+        foreach (var row in request.Rows)
+        {
+            var saved = await SaveStudentResultAsync(
+                actorUserId,
+                new SaveStudentAssessmentResultRequest(
+                    request.AssessmentId,
+                    row.StudentProfileId,
+                    request.QuestionIds,
+                    row.Scores,
+                    row.ResultRowVersion),
+                cancellationToken);
+
+            if (!saved.Succeeded)
+                return saved;
+        }
+
+        return AssessmentCommandResult.Success(request.AssessmentId);
+    }
+
     public async Task<AssessmentCommandResult> SaveStudentResultAsync(
         Guid actorUserId,
         SaveStudentAssessmentResultRequest request,
