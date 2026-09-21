@@ -80,7 +80,7 @@ public sealed class Phase39AcademicUxContractTests
         Assert.True(MathOnlyImportAdapter.IsSupported(ImportType.Teachers));
         Assert.True(MathOnlyImportAdapter.IsSupported(ImportType.SubjectSupervisors));
         Assert.True(MathOnlyImportAdapter.IsSupported(ImportType.Classes));
-        Assert.True(MathOnlyImportAdapter.IsSupported(ImportType.AssessmentResults));
+        Assert.False(MathOnlyImportAdapter.IsSupported(ImportType.AssessmentResults));
         Assert.False(MathOnlyImportAdapter.IsSupported(ImportType.Subjects));
         Assert.False(MathOnlyImportAdapter.IsSupported(ImportType.CurriculumMappings));
 
