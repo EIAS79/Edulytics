@@ -215,7 +215,7 @@ public static class AnalyticsPdfRenderer
         AddSectionHeading(section, "Lesson assessment mastery");
         if (lessons.Count == 0)
         {
-            AddEmpty(section, "Lesson mastery is unavailable because scored assessment questions are not linked to specific lessons. for this student.");
+            AddEmpty(section, "Lesson mastery is unavailable because scored assessment questions are not linked to specific lessons for this student.");
             return;
         }
 
