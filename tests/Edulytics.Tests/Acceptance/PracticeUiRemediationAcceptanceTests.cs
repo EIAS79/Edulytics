@@ -162,7 +162,8 @@ public sealed class PracticeUiRemediationAcceptanceTests
         Assert.DoesNotContain("calculator", css, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("lp-server-keypad", attempt, StringComparison.Ordinal);
         Assert.DoesNotContain("data-practice-key", attempt, StringComparison.Ordinal);
-        Assert.DoesNotContain(""7", "8", "9", "⌫"", attempt, StringComparison.Ordinal);
+        Assert.DoesNotContain("⌫", attempt, StringComparison.Ordinal);
+        Assert.DoesNotContain("backspace", attempt, StringComparison.OrdinalIgnoreCase);
     }
 
     private static string Read(string relativePath)
