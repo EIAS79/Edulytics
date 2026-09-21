@@ -60,7 +60,7 @@
                     '<section class="gw-fraction-options" data-fraction-options aria-label="Equivalent fraction choices"></section>' +
                 '</div>' +
             '</main>' +
-            '<div class="gw-eddy"><img src="' + guide + '" alt="Edulytics character" /><div><span>EDULYTICS</span><p data-gw-eddy>Equivalent fractions name the same amount even when the pieces are split differently.</p></div></div>' +
+            '<div class="gw-eddy"><img src="' + guide + '" alt="Eddy" /><div><span>EDDY</span><p data-gw-eddy>Equivalent fractions name the same amount even when the pieces are split differently.</p></div></div>' +
             '<div class="gw-complete" data-gw-complete hidden><div class="gw-complete-card"><img src="' + guide + '" alt="Eddy celebrating" /><p>ADVENTURE COMPLETE</p><h2>Bridge restored!</h2><p>You matched equivalent fractions by comparing the amount, not just the numbers.</p><strong data-gw-final-score></strong><br/><button class="gw-primary" type="button" data-gw-replay>Play again</button></div></div>' +
         '</section>';
 

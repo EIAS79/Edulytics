@@ -965,6 +965,28 @@
       }
     },
     {
+      "id": "powers-of-ten-primary",
+      "titlePatterns": [
+        "^Powers of 10$"
+      ],
+      "codePatterns": [],
+      "skillId": "supporting.indices.roots_standard_form",
+      "mechanic": "POWERS_ROOTS",
+      "families": [
+        "supporting.powers10.evaluate",
+        "supporting.powers10.multiply",
+        "supporting.powers10.divide",
+        "supporting.powers10.missing_exponent"
+      ],
+      "content": {
+        "concept": "Powers of ten describe place-value scaling by factors of 10, 100, 1000 and beyond.",
+        "workedExample": "32 × 10^2 = 3200 and 54000 ÷ 10^3 = 54.",
+        "solution": "Use the exponent to count place-value shifts and verify by inverse scaling.",
+        "commonMistake": "Do not multiply the number by the exponent.",
+        "summary": "Use powers of ten to scale values by place value."
+      }
+    },
+    {
       "id": "powers-roots",
       "titlePatterns": [
         "powers and roots",

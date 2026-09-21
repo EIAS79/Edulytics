@@ -61,6 +61,36 @@ public sealed class Stage22GameRuntimeMigrationTests
     }
 
     [Fact]
+    public void MultiFamilyLessonRotatesQuestionFamilyAcrossRounds()
+    {
+        var contract = Stage18PracticeSkillContracts.All
+            .First(x => x.AllowedQuestionFamilies.Count > 1);
+        var actor = Guid.NewGuid();
+        var adoption = Guid.NewGuid();
+        var lesson = Guid.NewGuid();
+
+        var first = runtime.CreateRound(
+            actor,
+            adoption,
+            lesson,
+            contract.LessonCode,
+            contract.Mechanic,
+            roundIndex: 0);
+
+        var second = runtime.CreateRound(
+            actor,
+            adoption,
+            lesson,
+            contract.LessonCode,
+            contract.Mechanic,
+            roundIndex: 1);
+
+        Assert.Equal(contract.AllowedQuestionFamilies[0], first.QuestionFamily);
+        Assert.Equal(contract.AllowedQuestionFamilies[1], second.QuestionFamily);
+        Assert.NotEqual(first.QuestionFamily, second.QuestionFamily);
+    }
+
+    [Fact]
     public void BrowserCannotForgeRoundScopeAcrossStudent()
     {
         var contract = Stage18PracticeSkillContracts.All[0];

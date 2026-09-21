@@ -144,10 +144,28 @@ public sealed class PracticeUiRemediationAcceptanceTests
 
         Assert.Contains("gw-game gw-universal", attempt, StringComparison.Ordinal);
         Assert.Contains("gw-runtime-board lp-server-card", attempt, StringComparison.Ordinal);
-        Assert.Contains("<strong>@stem</strong>", attempt, StringComparison.Ordinal);
-        Assert.Contains("<span>EDULYTICS</span>", attempt, StringComparison.Ordinal);
-        Assert.DoesNotContain("<span>EDDY</span>", attempt, StringComparison.Ordinal);
+        Assert.Contains("<strong data-practice-question>@stem</strong>", attempt, StringComparison.Ordinal);
+        Assert.Contains("<span>EDDY</span>", attempt, StringComparison.Ordinal);
+        Assert.DoesNotContain("<span>EDULYTICS</span>", attempt, StringComparison.Ordinal);
+        Assert.Contains("data-practice-hint", attempt, StringComparison.Ordinal);
+        Assert.Contains("LessonPracticeHintResolver.Resolve", attempt, StringComparison.Ordinal);
         Assert.DoesNotContain("lp-server-prompt", attempt, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void PracticeVoiceRuntime_IsLoadedByBothPracticeEntryPaths()
+    {
+        var game = Read("src/Edulytics.Web/Views/StudentPractice/Game.cshtml");
+        var attempt = Read("src/Edulytics.Web/Views/StudentPractice/LessonAttempt.cshtml");
+        var voice = Read("src/Edulytics.Web/wwwroot/js/practice-voice-runtime.js");
+        var stage22 = Read("src/Edulytics.Web/wwwroot/js/lesson-grounded-practice-stage22.js");
+        var v2 = Read("src/Edulytics.Web/wwwroot/js/lesson-grounded-practice-v2.js");
+
+        Assert.Contains("practice-voice-runtime.js", game, StringComparison.Ordinal);
+        Assert.Contains("practice-voice-runtime.js", attempt, StringComparison.Ordinal);
+        Assert.Contains("SpeechSynthesisUtterance", voice, StringComparison.Ordinal);
+        Assert.Contains("speakMany([round.prompt, round.hint])", stage22, StringComparison.Ordinal);
+        Assert.Contains("speakMany([main, guidance || ''])", v2, StringComparison.Ordinal);
     }
 
     [Fact]

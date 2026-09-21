@@ -73,7 +73,9 @@
             <div><p>@practiceLabel</p><h1>@Model.Title</h1><p>@Model.UnitTitle</p></div>
         </header>
         <section aria-label="Practice game">
-            @if (renderer == "count-touch")
+            <script src="~/js/practice-voice-runtime.js" asp-append-version="true"></script>
+
+    @if (renderer == "count-touch")
             {
                 <div data-count-touch-game data-lesson-code="@Model.LessonCode" data-lesson-language="@Model.Route.Locale"></div>
             }

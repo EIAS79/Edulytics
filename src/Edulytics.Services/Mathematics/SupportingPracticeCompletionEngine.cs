@@ -42,6 +42,10 @@ internal static class SupportingPracticeCompletionEngine
             "supporting.algebra.quadratic_larger_root",
             "supporting.functions.evaluate",
             "supporting.functions.composite",
+            "supporting.powers10.evaluate",
+            "supporting.powers10.multiply",
+            "supporting.powers10.divide",
+            "supporting.powers10.missing_exponent",
             "supporting.indices.power_or_root",
             "supporting.standard_form.power10_exponent",
             "supporting.surds.coefficient",
@@ -105,7 +109,11 @@ internal static class SupportingPracticeCompletionEngine
          FoundationPracticeEngine.Supports(family.Trim()) ||
          SupportingPracticeAdvancedEngine.Supports(family.Trim()));
 
-    public static Problem Build(string family, Random random, int scale)
+    public static Problem Build(
+        string family,
+        Random random,
+        int scale,
+        int? preferredVariant = null)
     {
         if (FoundationPracticeEngine.Supports(family))
         {
@@ -159,6 +167,10 @@ internal static class SupportingPracticeCompletionEngine
             "supporting.algebra.quadratic_larger_root" => QuadraticRoot(random, scale),
             "supporting.functions.evaluate" => FunctionEvaluate(random, scale),
             "supporting.functions.composite" => FunctionComposite(random, scale),
+            "supporting.powers10.evaluate" => PowerOfTenEvaluate(random, scale),
+            "supporting.powers10.multiply" => PowerOfTenMultiply(random, scale),
+            "supporting.powers10.divide" => PowerOfTenDivide(random, scale),
+            "supporting.powers10.missing_exponent" => PowerOfTenMissingExponent(random, scale),
             "supporting.indices.power_or_root" => PowerOrRoot(random, scale),
             "supporting.standard_form.power10_exponent" => StandardFormExponent(random, scale),
             "supporting.surds.coefficient" => SurdCoefficient(random, scale),
@@ -182,7 +194,8 @@ internal static class SupportingPracticeCompletionEngine
             "supporting.probability.sample_space_count" => SampleSpaceCount(random, scale),
             "supporting.statistics.compare_range" => CompareRange(random, scale),
             "supporting.statistics.collection_method" => CollectionMethod(random),
-            "supporting.reasoning.multistep" => MultiStep(random, scale),
+            "supporting.reasoning.multistep" =>
+                MultiStep(random, scale, preferredVariant),
             "supporting.reasoning.verify_identity" => VerifyIdentity(random, scale),
             "supporting.calculus.derivative_value" => DerivativeValue(random, scale),
             "supporting.calculus.definite_integral_linear" => DefiniteIntegralLinear(random, scale),
@@ -277,6 +290,14 @@ internal static class SupportingPracticeCompletionEngine
                 (p["a"] * p["x"] + p["b"]).ToString(CultureInfo.InvariantCulture),
             "supporting.functions.composite" =>
                 (p["gA"] * (p["fA"] * p["x"] + p["fB"]) + p["gB"]).ToString(CultureInfo.InvariantCulture),
+            "supporting.powers10.evaluate" =>
+                Pow10(p["exponent"]).ToString(CultureInfo.InvariantCulture),
+            "supporting.powers10.multiply" =>
+                (p["value"] * Pow10(p["exponent"])).ToString(CultureInfo.InvariantCulture),
+            "supporting.powers10.divide" =>
+                p["quotient"].ToString(CultureInfo.InvariantCulture),
+            "supporting.powers10.missing_exponent" =>
+                p["exponent"].ToString(CultureInfo.InvariantCulture),
             "supporting.indices.power_or_root" =>
                 (p["mode"] == 0 ? IntPow(p["base"], p["exponent"]) : p["root"]).ToString(CultureInfo.InvariantCulture),
             "supporting.standard_form.power10_exponent" =>
@@ -757,6 +778,64 @@ internal static class SupportingPracticeCompletionEngine
             ("fA", fA), ("fB", fB), ("gA", gA), ("gB", gB), ("x", x));
     }
 
+    private static Problem PowerOfTenEvaluate(Random r, int s)
+    {
+        var exponent = r.Next(1, Math.Min(10, 6 + s));
+        var variant = r.Next(0, 3);
+        var prompt = variant switch
+        {
+            0 => $"Evaluate 10^{exponent}.",
+            1 => $"What is the value of 10^{exponent}?",
+            _ => $"Write 10^{exponent} as a whole number."
+        };
+        return P(
+            "supporting.powers10.evaluate",
+            prompt,
+            "A power of ten is 1 followed by as many zeros as the exponent.",
+            ("exponent", exponent),
+            ("variant", variant));
+    }
+
+    private static Problem PowerOfTenMultiply(Random r, int s)
+    {
+        var exponent = r.Next(1, Math.Min(7, 4 + s));
+        var value = r.Next(2, 80 + s * 80);
+        return P(
+            "supporting.powers10.multiply",
+            $"Calculate {value} × 10^{exponent}.",
+            "Multiplying by a power of ten shifts every digit left by the exponent in the place-value system.",
+            ("value", value),
+            ("exponent", exponent));
+    }
+
+    private static Problem PowerOfTenDivide(Random r, int s)
+    {
+        var exponent = r.Next(1, Math.Min(7, 4 + s));
+        var quotient = r.Next(2, 80 + s * 80);
+        var dividend = checked(quotient * Pow10(exponent));
+        return P(
+            "supporting.powers10.divide",
+            $"Calculate {dividend} ÷ 10^{exponent}.",
+            "Dividing by a power of ten shifts every digit right by the exponent in the place-value system.",
+            ("quotient", quotient),
+            ("dividend", dividend),
+            ("exponent", exponent));
+    }
+
+    private static Problem PowerOfTenMissingExponent(Random r, int s)
+    {
+        var exponent = r.Next(1, Math.Min(10, 6 + s));
+        var value = r.Next(2, 40 + s * 30);
+        var result = checked(value * Pow10(exponent));
+        return P(
+            "supporting.powers10.missing_exponent",
+            $"{value} × 10^n = {result}. Find n.",
+            "Compare the starting value with the result and count the place-value shifts.",
+            ("value", value),
+            ("result", result),
+            ("exponent", exponent));
+    }
+
     private static Problem PowerOrRoot(Random r, int s)
     {
         var mode = r.Next(0, 2);
@@ -1056,11 +1135,16 @@ internal static class SupportingPracticeCompletionEngine
             ("variant", variant));
     }
 
-    private static Problem MultiStep(Random r, int s)
+    private static Problem MultiStep(
+        Random r,
+        int s,
+        int? preferredVariant = null)
     {
-        var mode = r.Next(0, 4);
+        var mode = preferredVariant.HasValue
+            ? ((preferredVariant.Value % 8) + 8) % 8
+            : r.Next(0, 8);
         var a = r.Next(2, 5 + s);
-        var x = r.Next(2, 10 + s * 3);
+        var x = r.Next(3, 10 + s * 3);
         var b = r.Next(
             1,
             Math.Max(
@@ -1097,16 +1181,75 @@ internal static class SupportingPracticeCompletionEngine
                 P(
                     "supporting.reasoning.multistep",
                     $"{a} times a quantity x is {b} greater than {a * x - b}. Find x.",
-                    "Translate 'b greater than' carefully: ax = stated value + b. Reconstruct the multiplicative relationship, then divide by the multiplier and check both quantities.",
+                    "Translate 'greater than' carefully, rebuild the multiplicative relationship, then divide by the multiplier and check.",
                     ("mode", mode),
                     ("x", x),
                     ("a", a),
                     ("b", b),
                     ("total", a * x - b)),
 
+            3 =>
+                BuildSharedPartsRelationship(r, s, a, b, mode),
+
+            4 =>
+                BuildDecreaseThenMultiplyRelationship(r, a, x, b, mode),
+
+            5 =>
+                P(
+                    "supporting.reasoning.multistep",
+                    $"A quantity x is multiplied by {a}. Then {b} is subtracted to give {a * x - b}. Find x.",
+                    "Model the relationship as ax-b=total. Undo the subtraction first, then undo the multiplication.",
+                    ("mode", mode),
+                    ("x", x),
+                    ("a", a),
+                    ("b", b),
+                    ("total", a * x - b)),
+
+            6 =>
+                P(
+                    "supporting.reasoning.multistep",
+                    $"One quantity is x and another is {a} times x. Together they total {(a + 1) * x}. Find x.",
+                    "Represent the total as x+ax=(a+1)x, then divide the total by the combined number of equal parts.",
+                    ("mode", mode),
+                    ("x", x),
+                    ("a", a),
+                    ("b", 0),
+                    ("total", (a + 1) * x)),
+
             _ =>
-                BuildSharedPartsRelationship(r, s, a, b, mode)
+                P(
+                    "supporting.reasoning.multistep",
+                    $"There are {a} equal packs with x items in each pack and {b} extra items. Altogether there are {a * x + b} items. Find x.",
+                    "Subtract the extra items first, then divide the remaining total equally among the packs.",
+                    ("mode", mode),
+                    ("x", x),
+                    ("a", a),
+                    ("b", b),
+                    ("total", a * x + b))
         };
+    }
+
+    private static Problem BuildDecreaseThenMultiplyRelationship(
+        Random r,
+        int multiplier,
+        int x,
+        int proposedDecrease,
+        int mode)
+    {
+        var decrease = Math.Min(
+            proposedDecrease,
+            Math.Max(1, x - 1));
+        var total = multiplier * (x - decrease);
+
+        return P(
+            "supporting.reasoning.multistep",
+            $"A quantity x is decreased by {decrease}. The result is then multiplied by {multiplier} to give {total}. Find x.",
+            "Model the relationship as a(x-b)=total. Undo the multiplication first, then add the removed amount back.",
+            ("mode", mode),
+            ("x", x),
+            ("a", multiplier),
+            ("b", decrease),
+            ("total", total));
     }
 
     private static Problem BuildSharedPartsRelationship(

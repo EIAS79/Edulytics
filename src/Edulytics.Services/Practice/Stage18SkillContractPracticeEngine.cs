@@ -148,17 +148,24 @@ public sealed class Stage18SkillContractPracticeEngine
                 .Distinct(StringComparer.Ordinal)
                 .ToArray();
 
+            var selectedFamily =
+                contract.AllowedQuestionFamilies[
+                    index % contract.AllowedQuestionFamilies.Count];
+
             ExactSkillGeneratedQuestion question;
             try
             {
                 question = exactEngine.Generate(
                     "stage18",
                     contract.LessonCode,
-                    contract.AllowedQuestionFamilies,
+                    [selectedFamily],
                     difficulty,
                     1,
                     roundSeed,
-                    exclusions)[0];
+                    exclusions,
+                    selectedFamily == "supporting.reasoning.multistep"
+                        ? index
+                        : null)[0];
             }
             catch (ExactSkillQuestionPoolExhaustedException) when (historical.Count > 0)
             {
@@ -169,11 +176,14 @@ public sealed class Stage18SkillContractPracticeEngine
                 question = exactEngine.Generate(
                     "stage18",
                     contract.LessonCode,
-                    contract.AllowedQuestionFamilies,
+                    [selectedFamily],
                     difficulty,
                     1,
                     roundSeed,
-                    attemptFingerprints.ToArray())[0];
+                    attemptFingerprints.ToArray(),
+                    selectedFamily == "supporting.reasoning.multistep"
+                        ? index
+                        : null)[0];
             }
 
             if (!attemptFingerprints.Add(question.ExposureFingerprint))

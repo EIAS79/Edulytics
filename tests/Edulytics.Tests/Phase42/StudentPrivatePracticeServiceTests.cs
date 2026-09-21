@@ -148,7 +148,7 @@ public sealed class StudentPrivatePracticeServiceTests
     }
 
     [Fact]
-    public async Task Lesson_practice_generates_eight_progressive_questions_and_rolls_over_old_exposure()
+    public async Task Lesson_practice_generates_eight_progressive_diverse_questions_with_historical_exposure()
     {
         const string lessonCode =
             "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-1:APPLY";
@@ -158,8 +158,14 @@ public sealed class StudentPrivatePracticeServiceTests
                 lessonCode,
                 out var contract));
         Assert.NotNull(contract);
-        Assert.Contains(
-            "supporting.indices.power_or_root",
+        Assert.Equal(
+            new[]
+            {
+                "supporting.powers10.evaluate",
+                "supporting.powers10.multiply",
+                "supporting.powers10.divide",
+                "supporting.powers10.missing_exponent"
+            },
             contract!.AllowedQuestionFamilies);
 
         var ids = Ids.Create();
@@ -173,22 +179,22 @@ public sealed class StudentPrivatePracticeServiceTests
             "Powers of 10: Reason and Apply",
             1);
 
-        // Standard difficulty currently has a deliberately bounded parameter
-        // range. Saturate it to reproduce the Production condition where
-        // historical exposure must not block a new lesson Practice attempt.
-        var saturatedStandardPool =
+        // Seed realistic prior exposure across all four Powers of 10
+        // families. Historical exposure should improve variety without
+        // changing the eight-question progression contract.
+        var priorQuestions =
             new ExactSkillContractQuestionEngine().Generate(
                 "stage18",
                 lessonCode,
                 contract.AllowedQuestionFamilies,
                 ExactSkillQuestionDifficulty.Standard,
-                16,
+                12,
                 42017,
                 []);
 
-        Assert.Equal(16, saturatedStandardPool.Count);
+        Assert.Equal(12, priorQuestions.Count);
 
-        var historicalExposures = saturatedStandardPool
+        var historicalExposures = priorQuestions
             .Select(question => new StudentItemExposure
             {
                 Id = Guid.NewGuid(),
@@ -231,6 +237,22 @@ public sealed class StudentPrivatePracticeServiceTests
                 .Select(item => item.ExposureFingerprint)
                 .Distinct(StringComparer.Ordinal)
                 .Count());
+
+        Assert.Equal(
+            new[]
+            {
+                "supporting.powers10.evaluate",
+                "supporting.powers10.multiply",
+                "supporting.powers10.divide",
+                "supporting.powers10.missing_exponent",
+                "supporting.powers10.evaluate",
+                "supporting.powers10.multiply",
+                "supporting.powers10.divide",
+                "supporting.powers10.missing_exponent"
+            },
+            repo.SavedItems
+                .Select(item => item.GenerationFamily)
+                .ToArray());
 
         var expectedDifficulty = new[]
         {
