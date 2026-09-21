@@ -1124,9 +1124,9 @@ internal static class SupportingPracticeCompletionEngine
 
     private static Problem MultiStep(Random r, int s)
     {
-        var mode = r.Next(0, 4);
+        var mode = r.Next(0, 8);
         var a = r.Next(2, 5 + s);
-        var x = r.Next(2, 10 + s * 3);
+        var x = r.Next(3, 10 + s * 3);
         var b = r.Next(
             1,
             Math.Max(
@@ -1163,16 +1163,75 @@ internal static class SupportingPracticeCompletionEngine
                 P(
                     "supporting.reasoning.multistep",
                     $"{a} times a quantity x is {b} greater than {a * x - b}. Find x.",
-                    "Translate 'b greater than' carefully: ax = stated value + b. Reconstruct the multiplicative relationship, then divide by the multiplier and check both quantities.",
+                    "Translate 'greater than' carefully, rebuild the multiplicative relationship, then divide by the multiplier and check.",
                     ("mode", mode),
                     ("x", x),
                     ("a", a),
                     ("b", b),
                     ("total", a * x - b)),
 
+            3 =>
+                BuildSharedPartsRelationship(r, s, a, b, mode),
+
+            4 =>
+                BuildDecreaseThenMultiplyRelationship(r, a, x, b, mode),
+
+            5 =>
+                P(
+                    "supporting.reasoning.multistep",
+                    $"A quantity x is multiplied by {a}. Then {b} is subtracted to give {a * x - b}. Find x.",
+                    "Model the relationship as ax-b=total. Undo the subtraction first, then undo the multiplication.",
+                    ("mode", mode),
+                    ("x", x),
+                    ("a", a),
+                    ("b", b),
+                    ("total", a * x - b)),
+
+            6 =>
+                P(
+                    "supporting.reasoning.multistep",
+                    $"One quantity is x and another is {a} times x. Together they total {(a + 1) * x}. Find x.",
+                    "Represent the total as x+ax=(a+1)x, then divide the total by the combined number of equal parts.",
+                    ("mode", mode),
+                    ("x", x),
+                    ("a", a),
+                    ("b", 0),
+                    ("total", (a + 1) * x)),
+
             _ =>
-                BuildSharedPartsRelationship(r, s, a, b, mode)
+                P(
+                    "supporting.reasoning.multistep",
+                    $"There are {a} equal packs with x items in each pack and {b} extra items. Altogether there are {a * x + b} items. Find x.",
+                    "Subtract the extra items first, then divide the remaining total equally among the packs.",
+                    ("mode", mode),
+                    ("x", x),
+                    ("a", a),
+                    ("b", b),
+                    ("total", a * x + b))
         };
+    }
+
+    private static Problem BuildDecreaseThenMultiplyRelationship(
+        Random r,
+        int multiplier,
+        int x,
+        int proposedDecrease,
+        int mode)
+    {
+        var decrease = Math.Min(
+            proposedDecrease,
+            Math.Max(1, x - 1));
+        var total = multiplier * (x - decrease);
+
+        return P(
+            "supporting.reasoning.multistep",
+            $"A quantity x is decreased by {decrease}. The result is then multiplied by {multiplier} to give {total}. Find x.",
+            "Model the relationship as a(x-b)=total. Undo the multiplication first, then add the removed amount back.",
+            ("mode", mode),
+            ("x", x),
+            ("a", multiplier),
+            ("b", decrease),
+            ("total", total));
     }
 
     private static Problem BuildSharedPartsRelationship(
