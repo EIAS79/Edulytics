@@ -43,6 +43,20 @@ public sealed class AnalyticsPresentationFormatterTests
             result);
     }
 
+
+    [Fact]
+    public void Cambridge_source_provenance_description_is_replaced()
+    {
+        var result = AnalyticsPresentationFormatter.OutcomeDescription(
+            "Edulytics-authored from OGL material; Cambridge remains the academic reference authority and no Cambridge objective wording is reproduced here.",
+            "Cambridge 6Nf.11",
+            "Mathematics");
+
+        Assert.Equal(
+            "Mathematics skill aligned to Cambridge 6Nf.11.",
+            result);
+    }
+
     [Fact]
     public void Normal_user_facing_description_is_preserved()
     {
