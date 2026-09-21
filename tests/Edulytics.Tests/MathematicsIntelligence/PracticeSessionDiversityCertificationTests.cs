@@ -231,6 +231,28 @@ public sealed class PracticeSessionDiversityCertificationTests
     }
 
     [Fact]
+    public void PowersOf10PracticeRoutingDoesNotRewriteReviewedLessonBodyRecipe()
+    {
+        Assert.True(
+            SupportingPracticeTargetRuleRegistry.TryGetById(
+                "powers-of-ten-primary",
+                out var powersOfTen));
+        Assert.True(
+            SupportingPracticeTargetRuleRegistry.TryGetById(
+                "powers-roots",
+                out var reviewedLegacyRecipe));
+
+        Assert.NotNull(powersOfTen);
+        Assert.NotNull(reviewedLegacyRecipe);
+        Assert.Equal(
+            reviewedLegacyRecipe!.Content,
+            powersOfTen!.Content);
+        Assert.NotEqual(
+            reviewedLegacyRecipe.Families,
+            powersOfTen.Families);
+    }
+
+    [Fact]
     public void QuantifiedRelationshipsSupportsAllEightReasoningTemplates()
     {
         const string family = "supporting.reasoning.multistep";
