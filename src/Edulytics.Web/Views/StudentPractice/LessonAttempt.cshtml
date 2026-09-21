@@ -45,9 +45,25 @@
         totalQuestions == 0
             ? 0d
             : answeredCount * 100d / totalQuestions;
+    var reviewAttemptItemId =
+        ViewData["ReviewAttemptItemId"] is Guid reviewId
+            ? reviewId
+            : (Guid?)null;
+    var reviewQuestion =
+        reviewAttemptItemId.HasValue
+            ? orderedQuestions.SingleOrDefault(
+                x =>
+                    x.AttemptItemId == reviewAttemptItemId.Value &&
+                    x.Answered)
+            : null;
+    var isReviewing =
+        reviewQuestion is not null;
     var currentQuestion =
-        orderedQuestions
-            .FirstOrDefault(x => !x.Answered);
+        reviewQuestion
+        ?? orderedQuestions.FirstOrDefault(x => !x.Answered);
+    var displayedQuestionNumber =
+        currentQuestion?.Order
+        ?? Math.Min(answeredCount + 1, totalQuestions);
 
     var prompt =
         currentQuestion?.Prompt
@@ -147,6 +163,25 @@
             generationFamily,
             currentQuestion?.GenerationParametersJson,
             locale);
+
+    var nextQuestionLabel = locale switch
+    {
+        "pl" => "Następne pytanie",
+        "ar" => "السؤال التالي",
+        _ => "Next question"
+    };
+
+    var continueLabel = locale switch
+    {
+        "pl" => "Kontynuuj",
+        "ar" => "متابعة",
+        _ => "Continue"
+    };
+
+    var reviewActionLabel =
+        currentQuestion?.Order >= totalQuestions
+            ? continueLabel
+            : nextQuestionLabel;
 }
 <!DOCTYPE html>
 <html lang="@locale" dir="@(isRtl ? "rtl" : "ltr")">
@@ -308,7 +343,7 @@
             </div>
             <div class="gw-hud-right">
                 <span class="gw-pill">
-                    @Math.Min(answeredCount + 1, totalQuestions)
+                    @displayedQuestionNumber
                     /
                     @totalQuestions
                 </span>
@@ -333,20 +368,20 @@
                  role="alert">@error</div>
         }
 
-        @if (TempData["PracticeFeedback"] is string feedback)
+        @if (isReviewing && currentQuestion is not null)
         {
-            <div class="lp-server-feedback @(feedback == "correct" ? "lp-server-feedback--ok" : "lp-server-feedback--bad")"
+            <div class="lp-server-feedback @(currentQuestion.IsCorrect == true ? "lp-server-feedback--ok" : "lp-server-feedback--bad")"
                  role="status"
                  data-practice-feedback>
-                @(feedback == "correct"
+                @(currentQuestion.IsCorrect == true
                     ? S["PracticeCorrect"].Value
                     : S["PracticeIncorrect"].Value)
 
-                @if (TempData["PracticeSolution"] is string solution)
+                @if (!string.IsNullOrWhiteSpace(currentQuestion.Feedback))
                 {
                     <div>
                         <strong>@S["PracticeSolution"]:</strong>
-                        @solution
+                        @currentQuestion.Feedback
                     </div>
                 }
             </div>
@@ -393,7 +428,19 @@
                         </div>
                     }
 
-                    @if (interaction is null)
+                    @if (isReviewing)
+                    {
+                        <div class="lp-server-actions">
+                            <a class="gw-primary"
+                               asp-action="LessonAttempt"
+                               asp-route-id="@Model.AttemptId"
+                               asp-route-curriculumAdoptionId="@curriculumAdoptionId"
+                               asp-route-lessonId="@lessonId">
+                                @reviewActionLabel
+                            </a>
+                        </div>
+                    }
+                    else if (interaction is null)
                     {
                         <div class="gw-error">
                             This Practice interaction is not available.
