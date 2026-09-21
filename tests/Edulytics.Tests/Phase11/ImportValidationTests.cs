@@ -291,7 +291,7 @@ public sealed class ImportValidationTests
         Assert.False(DataImportService.CanImportType(RoleNames.SubjectSupervisor, ImportType.Subjects));
         Assert.False(DataImportService.CanImportType(RoleNames.SubjectSupervisor, ImportType.CurriculumMappings));
 
-        Assert.False(DataImportService.CanImportType(RoleNames.Teacher, ImportType.AssessmentResults));
+        Assert.True(DataImportService.CanImportType(RoleNames.Teacher, ImportType.AssessmentResults));
         Assert.False(DataImportService.CanImportType(RoleNames.Teacher, ImportType.Students));
         Assert.False(DataImportService.CanImportType(RoleNames.Teacher, ImportType.Teachers));
         Assert.False(DataImportService.CanImportType(RoleNames.Teacher, ImportType.Classes));
