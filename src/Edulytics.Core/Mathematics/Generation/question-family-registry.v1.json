@@ -4992,5 +4992,12 @@
       "productionRouting": false,
       "lessonPracticeRouting": true
     }
-  ]
+  ],
+  "variantPolicy": {
+    "version": 1,
+    "maximumVariantsPerFamily": 16,
+    "minimumUsefulVariants": 4,
+    "preferredVariants": 8,
+    "semantics": "family=mathematical structure; variant=learner-facing formulation or representation"
+  }
 }
