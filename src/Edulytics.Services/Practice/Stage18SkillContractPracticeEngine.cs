@@ -98,6 +98,145 @@ public sealed class Stage18SkillContractPracticeEngine
         }).ToArray();
     }
 
+    public IReadOnlyList<AssessmentItem> GenerateProgressiveLesson(
+        Guid schoolId,
+        Guid curriculumAdoptionId,
+        Guid lessonId,
+        Stage18PracticeSkillContract contract,
+        int seed,
+        IReadOnlyCollection<string> excludedExposureFingerprints,
+        Guid createdByUserId)
+    {
+        ArgumentNullException.ThrowIfNull(contract);
+        ArgumentNullException.ThrowIfNull(excludedExposureFingerprints);
+
+        if (schoolId == Guid.Empty ||
+            curriculumAdoptionId == Guid.Empty ||
+            lessonId == Guid.Empty ||
+            createdByUserId == Guid.Empty ||
+            contract.AllowedQuestionFamilies.Count == 0)
+        {
+            throw new InvalidOperationException(
+                "Progressive lesson Practice requires a valid exact lesson contract and request scope.");
+        }
+
+        var progression = new[]
+        {
+            ExactSkillQuestionDifficulty.Standard,
+            ExactSkillQuestionDifficulty.Standard,
+            ExactSkillQuestionDifficulty.Standard,
+            ExactSkillQuestionDifficulty.Stretch,
+            ExactSkillQuestionDifficulty.Stretch,
+            ExactSkillQuestionDifficulty.Stretch,
+            ExactSkillQuestionDifficulty.Challenge,
+            ExactSkillQuestionDifficulty.Challenge
+        };
+
+        var exactEngine = new ExactSkillContractQuestionEngine();
+        var historical = excludedExposureFingerprints
+            .Where(x => !string.IsNullOrWhiteSpace(x))
+            .ToHashSet(StringComparer.Ordinal);
+        var attemptFingerprints = new HashSet<string>(StringComparer.Ordinal);
+        var items = new List<AssessmentItem>(progression.Length);
+
+        for (var index = 0; index < progression.Length; index++)
+        {
+            var difficulty = progression[index];
+            var roundSeed = unchecked((seed == 0 ? 1 : seed) ^ ((index + 1) * 7919));
+            var exclusions = historical
+                .Concat(attemptFingerprints)
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            ExactSkillGeneratedQuestion question;
+            try
+            {
+                question = exactEngine.Generate(
+                    "stage18",
+                    contract.LessonCode,
+                    contract.AllowedQuestionFamilies,
+                    difficulty,
+                    1,
+                    roundSeed,
+                    exclusions)[0];
+            }
+            catch (ExactSkillQuestionPoolExhaustedException) when (historical.Count > 0)
+            {
+                // Historical exposure should improve variety, never block a
+                // lesson. Keep the current 8-question attempt unique and allow
+                // old questions to re-enter only after unseen variants are
+                // exhausted.
+                question = exactEngine.Generate(
+                    "stage18",
+                    contract.LessonCode,
+                    contract.AllowedQuestionFamilies,
+                    difficulty,
+                    1,
+                    roundSeed,
+                    attemptFingerprints.ToArray())[0];
+            }
+
+            if (!attemptFingerprints.Add(question.ExposureFingerprint))
+            {
+                throw new InvalidOperationException(
+                    "Progressive lesson Practice generated a duplicate question in the same attempt.");
+            }
+
+            var alignment = LessonPracticeAlignmentValidator.Validate(contract, question);
+            if (!alignment.IsAligned)
+            {
+                throw new InvalidOperationException(
+                    $"Exact Practice alignment validator rejected {question.Family}: {alignment.ReasonCode}.");
+            }
+
+            items.Add(new AssessmentItem
+            {
+                Id = Guid.NewGuid(),
+                SchoolId = schoolId,
+                CurriculumAdoptionId = curriculumAdoptionId,
+                CurriculumPedagogicalLessonId = lessonId,
+                Source = AssessmentItemSource.SystemGenerated,
+                ItemType = question.ItemType,
+                Difficulty = difficulty == ExactSkillQuestionDifficulty.Standard
+                    ? AssessmentItemDifficulty.Medium
+                    : AssessmentItemDifficulty.Challenging,
+                Prompt = question.Prompt,
+                CorrectAnswer = question.CorrectAnswer,
+                Solution = question.Solution,
+                CreatedByUserId = createdByUserId,
+                GenerationMethod = Stage18PracticeSkillContracts.GenerationMethod,
+                GenerationFamily = question.Family,
+                GenerationParametersJson = JsonSerializer.Serialize(new
+                {
+                    skillId = contract.SkillId,
+                    questionFamily = question.Family,
+                    parameters = question.Parameters
+                }),
+                ExposureFingerprint = question.ExposureFingerprint,
+                ValidationMetadataJson = JsonSerializer.Serialize(new
+                {
+                    stage = 18,
+                    alignment = "skill-contract-verified",
+                    alignmentReason = alignment.ReasonCode,
+                    readiness = "READY_VERIFIED",
+                    skillContract = contract.SkillId,
+                    allowedFamily = question.Family,
+                    difficulty = difficulty.ToString(),
+                    progressionIndex = index + 1,
+                    solver = Stage18PracticeSkillContracts.SolverIdentifier,
+                    verifier = Stage18PracticeSkillContracts.VerifierIdentifier,
+                    solverVerified = true,
+                    broadFallbackUsed = false,
+                    officialMasteryEvidence = false
+                }),
+                CreatedAtUtc = DateTime.UtcNow,
+                RowVersion = []
+            });
+        }
+
+        return items;
+    }
+
     public static bool VerifyPersistedItem(
         Stage18PracticeSkillContract contract,
         AssessmentItem item)
