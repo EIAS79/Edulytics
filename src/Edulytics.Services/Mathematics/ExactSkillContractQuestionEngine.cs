@@ -223,15 +223,19 @@ public sealed class ExactSkillContractQuestionEngine
                     problem.Parameters);
 
                 var normalizedPrompt = NormalizePrompt(problem.Prompt);
+                var hasSemanticVariant =
+                    problem.Parameters.ContainsKey("variant") ||
+                    problem.Parameters.ContainsKey("mode");
                 if (excluded.Contains(fingerprint) ||
                     generated.Contains(fingerprint) ||
-                    generatedPrompts.Contains(normalizedPrompt))
+                    (hasSemanticVariant && generatedPrompts.Contains(normalizedPrompt)))
                 {
                     continue;
                 }
 
                 generated.Add(fingerprint);
-                generatedPrompts.Add(normalizedPrompt);
+                if (hasSemanticVariant)
+                    generatedPrompts.Add(normalizedPrompt);
                 var variant = QuestionVariantPolicy.Describe(
                     problem.Parameters,
                     requestedVariant);
