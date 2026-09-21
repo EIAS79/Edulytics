@@ -126,6 +126,9 @@ public sealed class AnalyticsRepository : IAnalyticsRepository
             await _db.ClassAssessmentTrends.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
             await _db.SchoolAnalyticsSnapshots.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken))
         {
+            StudentEnrollments = await _db.StudentEnrollments.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken),
             Assessments = await _db.Assessments.AsNoTracking()
                 .Where(x => x.SchoolId == schoolId)
                 .ToListAsync(cancellationToken),
