@@ -76,7 +76,7 @@
                     '</aside>' +
                 '</div>' +
             '</main>' +
-            '<div class="gw-eddy"><img src="' + guide + '" alt="Edulytics character" /><div><span>EDULYTICS</span><p data-gw-eddy>Let’s tune the signal rays. Angles tell us how far a ray has turned.</p></div></div>' +
+            '<div class="gw-eddy"><img src="' + guide + '" alt="Eddy" /><div><span>EDDY</span><p data-gw-eddy>Let’s tune the signal rays. Angles tell us how far a ray has turned.</p></div></div>' +
             '<div class="gw-complete" data-gw-complete hidden><div class="gw-complete-card"><img src="' + guide + '" alt="Eddy celebrating" /><p>ADVENTURE COMPLETE</p><h2>Observatory online!</h2><p>You built and identified acute, obtuse and reflex angles.</p><strong data-gw-final-score></strong><br/><button class="gw-primary" type="button" data-gw-replay>Play again</button></div></div>' +
         '</section>';
 
