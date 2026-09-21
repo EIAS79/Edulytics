@@ -664,7 +664,7 @@ public sealed class AssessmentBuilderService(
                         CorrectAnswer = generatedQuestion.CorrectAnswer,
                         Solution = generatedQuestion.Solution,
                         CreatedByUserId = createdByUserId,
-                        GenerationMethod = "lesson-skill-contract-assessment-solver-verified-v2",
+                        GenerationMethod = "lesson-skill-contract-assessment-solver-verified-v1",
                         GenerationFamily = generatedQuestion.Family,
                         GenerationParametersJson = JsonSerializer.Serialize(new
                         {
