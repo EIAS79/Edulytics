@@ -57,7 +57,11 @@ public static class AnalyticsPresentationFormatter
             "source locator",
             "copyright",
             "wording is not reproduced",
-            "not reproduced"
+            "not reproduced",
+            "objective wording",
+            "academic reference authority",
+            "ogl material",
+            "source teaching sequence"
         };
 
         return markers.Any(marker =>
