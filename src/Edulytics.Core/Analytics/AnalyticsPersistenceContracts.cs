@@ -33,6 +33,7 @@ public sealed record AnalyticsProjectionSnapshot(
     IReadOnlyList<ClassAssessmentTrend> ClassAssessmentTrends,
     IReadOnlyList<SchoolAnalyticsSnapshot> SchoolSnapshots)
 {
+    public IReadOnlyList<StudentEnrollment> StudentEnrollments { get; init; } = [];
     public IReadOnlyList<Assessment> Assessments { get; init; } = [];
     public IReadOnlyList<AssessmentQuestion> AssessmentQuestions { get; init; } = [];
     public IReadOnlyList<AssessmentItem> AssessmentItems { get; init; } = [];
