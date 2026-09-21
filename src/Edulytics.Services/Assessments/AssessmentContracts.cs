@@ -128,6 +128,11 @@ public sealed record CreateAssessmentRequest(
     DateOnly AssessmentDate,
     decimal MaxScore);
 
+public sealed record ReuseAssessmentRequest(
+    Guid SourceAssessmentId,
+    Guid TargetClassGroupId,
+    string Title);
+
 public sealed record UpdateAssessmentRequest(
     Guid Id,
     string Title,
