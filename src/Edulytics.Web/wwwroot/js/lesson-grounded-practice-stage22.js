@@ -16,6 +16,7 @@
   var adoptionId = root.dataset.curriculumAdoptionId || '';
   var lessonId = root.dataset.lessonId || '';
   var state = { round: 0, count: 8, score: 0, locked: false, current: null };
+  var voice = window.EdulyticsPracticeVoice || null;
 
   function t(en, pl, ar) {
     return locale === 'pl' ? pl : (locale === 'ar' ? ar : en);
@@ -33,14 +34,14 @@
         '<div class="gw-brand"><span class="gw-brand-mark">◆</span><span><strong>' +
           esc(t('EDULYTICS PRACTICE', 'ĆWICZENIA EDULYTICS', 'تدريب EDULYTICS')) +
         '</strong><small>' + esc(unitTitle) + '</small></span></div>' +
-        '<div class="gw-hud-right"><div class="gw-pill">★ <span data-score>0</span></div><div class="gw-pill"><span data-round>1 / 8</span></div></div>' +
+        '<div class="gw-hud-right"><div class="gw-pill">★ <span data-score>0</span></div><div class="gw-pill"><span data-round>1 / 8</span></div><button class="gw-icon" type="button" data-sound aria-label="' + esc(t('Sound', 'Dźwięk', 'الصوت')) + '">🔊</button></div>' +
       '</header>' +
       '<div class="gw-progress"><span data-progress></span></div>' +
       '<main class="gw-stage">' +
         '<div class="gw-mission"><span>' + esc(t('YOUR MISSION', 'TWOJE ZADANIE', 'مهمتك')) + '</span><strong data-question></strong><small data-family></small></div>' +
         '<div class="gw-runtime-board" data-board></div>' +
       '</main>' +
-      '<div class="gw-eddy"><img src="/images/public/edulaytiks-character.png?v=43" alt="Edulytics character"><div><span>EDULYTICS</span><p data-eddy></p></div></div>' +
+      '<div class="gw-eddy"><img src="/images/public/edulaytiks-character.png?v=43" alt="Eddy"><div><span>EDDY</span><p data-eddy></p></div></div>' +
       '<div class="gw-complete" data-complete hidden><div class="gw-complete-card"><img src="/images/public/edulaytiks-character.png?v=43" alt="Edulytics character"><p>' +
         esc(lessonTitle) +
         '</p><h2>' + esc(t('Lesson practice complete!', 'Ćwiczenie ukończone!', 'اكتمل تدريب الدرس!')) +
@@ -58,6 +59,32 @@
   var progress = root.querySelector('[data-progress]');
   var complete = root.querySelector('[data-complete]');
   var finalNode = root.querySelector('[data-final]');
+  var soundButton = root.querySelector('[data-sound]');
+
+  function speakMany(parts) {
+    if (voice) voice.speakMany(parts, locale);
+  }
+
+  function speak(text) {
+    if (voice) voice.speak(text, locale);
+  }
+
+  function updateSoundButton() {
+    if (!soundButton || !voice) return;
+    soundButton.textContent = voice.isEnabled() ? '🔊' : '🔇';
+    soundButton.setAttribute('aria-pressed', voice.isEnabled() ? 'true' : 'false');
+  }
+
+  if (soundButton && voice) {
+    updateSoundButton();
+    soundButton.addEventListener('click', function () {
+      var enabled = voice.toggle();
+      updateSoundButton();
+      if (enabled && state.current) {
+        speakMany([state.current.prompt, state.current.hint]);
+      }
+    });
+  }
 
   function hud() {
     scoreNode.textContent = state.score;
@@ -130,6 +157,7 @@
       eddy.textContent = round.hint;
       state.locked = false;
       renderChoices(round);
+      speakMany([round.prompt, round.hint]);
     } catch (error) {
       root.innerHTML = '<div class="gw-error">' +
         esc(t(
@@ -159,10 +187,12 @@
         state.score += Number(result.points || 0);
         eddy.textContent = result.feedback + (result.solution ? ' ' + result.solution : '');
         hud();
+        speak(eddy.textContent);
         window.setTimeout(nextRound, 800);
       } else {
         button.classList.add('is-wrong');
         eddy.textContent = result.feedback;
+        speak(eddy.textContent);
         window.setTimeout(function () {
           button.classList.remove('is-wrong');
           button.disabled = false;
@@ -175,6 +205,7 @@
         'Weryfikacja serwerowa nie powiodła się. Odpowiedź nie została oceniona lokalnie.',
         'فشل التحقق على الخادم. لم يتم تصحيح إجابتك محليًا.'
       );
+      speak(eddy.textContent);
       button.disabled = false;
       state.locked = false;
     }
@@ -188,6 +219,7 @@
       progress.style.width = '100%';
       finalNode.textContent = t('Stars: ', 'Gwiazdki: ', 'النجوم: ') + state.score;
       complete.hidden = false;
+      speak(t('Lesson practice complete!', 'Ćwiczenie ukończone!', 'اكتمل تدريب الدرس!'));
       return;
     }
 
