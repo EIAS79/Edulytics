@@ -9,6 +9,7 @@ using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Core.Practice;
 using Edulytics.Services.Assessments;
 using Edulytics.Services.AssessmentIntelligence;
+using Edulytics.Services.Mathematics;
 using Edulytics.Services.MathematicsGeneration;
 
 namespace Edulytics.Services.Practice;
@@ -320,9 +321,10 @@ public sealed class StudentPrivatePracticeService(
             : RandomNumberGenerator.GetInt32(1, int.MaxValue);
 
         IReadOnlyList<AssessmentItem> items;
+        var exactEngine = new Stage18SkillContractPracticeEngine();
         try
         {
-            items = new Stage18SkillContractPracticeEngine().Generate(
+            items = exactEngine.Generate(
                 context.Student.SchoolId,
                 context.Adoption.Id,
                 lessonId,
@@ -333,10 +335,36 @@ public sealed class StudentPrivatePracticeService(
                 excluded,
                 studentUserId);
         }
+        catch (ExactSkillQuestionPoolExhaustedException) when (excluded.Length > 0)
+        {
+            // Historical exposure is a diversity preference, not a permanent
+            // lockout. If the unseen finite pool cannot fill a complete lesson
+            // attempt, roll over historical exposure while preserving exact
+            // verification and within-attempt uniqueness.
+            try
+            {
+                items = exactEngine.Generate(
+                    context.Student.SchoolId,
+                    context.Adoption.Id,
+                    lessonId,
+                    skillContract,
+                    request.Difficulty,
+                    request.QuestionCount,
+                    seed,
+                    [],
+                    studentUserId);
+            }
+            catch (InvalidOperationException)
+            {
+                return StudentPrivatePracticeResult.Failure(
+                    StudentPrivatePracticeError.GenerationFailed);
+            }
+        }
         catch (InvalidOperationException)
         {
-            // READY_VERIFIED Practice must fail closed. Never retry through the
-            // universal contextual provider after an exact generation failure.
+            // READY_VERIFIED Practice must fail closed for genuine exact
+            // generation/verification faults. Never fall back to contextual
+            // Personal Practice for a lesson contract.
             return StudentPrivatePracticeResult.Failure(StudentPrivatePracticeError.GenerationFailed);
         }
 
