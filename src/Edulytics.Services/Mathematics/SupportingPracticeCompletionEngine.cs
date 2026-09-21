@@ -42,6 +42,10 @@ internal static class SupportingPracticeCompletionEngine
             "supporting.algebra.quadratic_larger_root",
             "supporting.functions.evaluate",
             "supporting.functions.composite",
+            "supporting.powers10.evaluate",
+            "supporting.powers10.multiply",
+            "supporting.powers10.divide",
+            "supporting.powers10.missing_exponent",
             "supporting.indices.power_or_root",
             "supporting.standard_form.power10_exponent",
             "supporting.surds.coefficient",
@@ -159,6 +163,10 @@ internal static class SupportingPracticeCompletionEngine
             "supporting.algebra.quadratic_larger_root" => QuadraticRoot(random, scale),
             "supporting.functions.evaluate" => FunctionEvaluate(random, scale),
             "supporting.functions.composite" => FunctionComposite(random, scale),
+            "supporting.powers10.evaluate" => PowerOfTenEvaluate(random, scale),
+            "supporting.powers10.multiply" => PowerOfTenMultiply(random, scale),
+            "supporting.powers10.divide" => PowerOfTenDivide(random, scale),
+            "supporting.powers10.missing_exponent" => PowerOfTenMissingExponent(random, scale),
             "supporting.indices.power_or_root" => PowerOrRoot(random, scale),
             "supporting.standard_form.power10_exponent" => StandardFormExponent(random, scale),
             "supporting.surds.coefficient" => SurdCoefficient(random, scale),
@@ -277,6 +285,14 @@ internal static class SupportingPracticeCompletionEngine
                 (p["a"] * p["x"] + p["b"]).ToString(CultureInfo.InvariantCulture),
             "supporting.functions.composite" =>
                 (p["gA"] * (p["fA"] * p["x"] + p["fB"]) + p["gB"]).ToString(CultureInfo.InvariantCulture),
+            "supporting.powers10.evaluate" =>
+                Pow10(p["exponent"]).ToString(CultureInfo.InvariantCulture),
+            "supporting.powers10.multiply" =>
+                (p["value"] * Pow10(p["exponent"])).ToString(CultureInfo.InvariantCulture),
+            "supporting.powers10.divide" =>
+                p["quotient"].ToString(CultureInfo.InvariantCulture),
+            "supporting.powers10.missing_exponent" =>
+                p["exponent"].ToString(CultureInfo.InvariantCulture),
             "supporting.indices.power_or_root" =>
                 (p["mode"] == 0 ? IntPow(p["base"], p["exponent"]) : p["root"]).ToString(CultureInfo.InvariantCulture),
             "supporting.standard_form.power10_exponent" =>
@@ -755,6 +771,56 @@ internal static class SupportingPracticeCompletionEngine
             $"Let f(x) = {fA}x {Signed(fB)} and g(x) = {gA}x {Signed(gB)}. Find g(f({x})).",
             "Evaluate the inner function first, then use that result as the input to the outer function.",
             ("fA", fA), ("fB", fB), ("gA", gA), ("gB", gB), ("x", x));
+    }
+
+    private static Problem PowerOfTenEvaluate(Random r, int s)
+    {
+        var exponent = r.Next(1, Math.Min(7, 3 + s * 2));
+        return P(
+            "supporting.powers10.evaluate",
+            $"Evaluate 10^{exponent}.",
+            "A power of ten is 1 followed by as many zeros as the exponent.",
+            ("exponent", exponent));
+    }
+
+    private static Problem PowerOfTenMultiply(Random r, int s)
+    {
+        var exponent = r.Next(1, Math.Min(6, 2 + s * 2));
+        var value = r.Next(2, 25 + s * 30);
+        return P(
+            "supporting.powers10.multiply",
+            $"Calculate {value} × 10^{exponent}.",
+            "Multiplying by a power of ten shifts every digit left by the exponent in the place-value system.",
+            ("value", value),
+            ("exponent", exponent));
+    }
+
+    private static Problem PowerOfTenDivide(Random r, int s)
+    {
+        var exponent = r.Next(1, Math.Min(6, 2 + s * 2));
+        var quotient = r.Next(2, 25 + s * 30);
+        var dividend = checked(quotient * Pow10(exponent));
+        return P(
+            "supporting.powers10.divide",
+            $"Calculate {dividend} ÷ 10^{exponent}.",
+            "Dividing by a power of ten shifts every digit right by the exponent in the place-value system.",
+            ("quotient", quotient),
+            ("dividend", dividend),
+            ("exponent", exponent));
+    }
+
+    private static Problem PowerOfTenMissingExponent(Random r, int s)
+    {
+        var exponent = r.Next(1, Math.Min(7, 3 + s * 2));
+        var value = r.Next(2, 10 + s * 4);
+        var result = checked(value * Pow10(exponent));
+        return P(
+            "supporting.powers10.missing_exponent",
+            $"{value} × 10^n = {result}. Find n.",
+            "Compare the starting value with the result and count the place-value shifts.",
+            ("value", value),
+            ("result", result),
+            ("exponent", exponent));
     }
 
     private static Problem PowerOrRoot(Random r, int s)
