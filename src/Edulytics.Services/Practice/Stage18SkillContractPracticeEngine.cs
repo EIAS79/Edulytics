@@ -165,9 +165,7 @@ public sealed class Stage18SkillContractPracticeEngine
                     1,
                     roundSeed,
                     exclusions,
-                    selectedFamily == "supporting.reasoning.multistep"
-                        ? index
-                        : null)[0];
+                    index)[0];
             }
             catch (ExactSkillQuestionPoolExhaustedException) when (historical.Count > 0)
             {
@@ -183,9 +181,7 @@ public sealed class Stage18SkillContractPracticeEngine
                     1,
                     roundSeed,
                     attemptFingerprints.ToArray(),
-                    selectedFamily == "supporting.reasoning.multistep"
-                        ? index
-                        : null)[0];
+                    index)[0];
             }
 
             if (!attemptFingerprints.Add(question.ExposureFingerprint))
@@ -222,6 +218,7 @@ public sealed class Stage18SkillContractPracticeEngine
                 {
                     skillId = contract.SkillId,
                     questionFamily = question.Family,
+                    questionVariant = question.VariantId,
                     parameters = question.Parameters
                 }),
                 ExposureFingerprint = question.ExposureFingerprint,
