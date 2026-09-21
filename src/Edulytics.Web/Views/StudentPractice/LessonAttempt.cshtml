@@ -142,27 +142,11 @@
         _ => "YOUR MISSION"
     };
 
-    var guidanceText = interaction?.InteractionKind switch
-    {
-        LessonPracticeInteractionKind.RelationChoice => locale switch
-        {
-            "pl" => "Porównaj wartości i wybierz <, = lub >.",
-            "ar" => "قارن القيم واختر < أو = أو >.",
-            _ => "Compare the values and choose <, =, or >."
-        },
-        LessonPracticeInteractionKind.FractionEntry => locale switch
-        {
-            "pl" => "Wpisz ułamek, a następnie sprawdź odpowiedź.",
-            "ar" => "أدخل الكسر ثم تحقق من إجابتك.",
-            _ => "Enter the fraction, then check your answer."
-        },
-        _ => locale switch
-        {
-            "pl" => "Wpisz odpowiedź, a następnie ją sprawdź.",
-            "ar" => "أدخل إجابتك ثم تحقق منها.",
-            _ => "Enter your answer, then check it."
-        }
-    };
+    var guidanceText =
+        Edulytics.Web.GameRouting.LessonPracticeHintResolver.Resolve(
+            generationFamily,
+            currentQuestion?.GenerationParametersJson,
+            locale);
 }
 <!DOCTYPE html>
 <html lang="@locale" dir="@(isRtl ? "rtl" : "ltr")">
@@ -328,6 +312,10 @@
                     /
                     @totalQuestions
                 </span>
+                <button class="gw-icon"
+                        type="button"
+                        data-practice-sound
+                        aria-label="Sound">🔊</button>
             </div>
         </div>
 
@@ -348,7 +336,8 @@
         @if (TempData["PracticeFeedback"] is string feedback)
         {
             <div class="lp-server-feedback @(feedback == "correct" ? "lp-server-feedback--ok" : "lp-server-feedback--bad")"
-                 role="status">
+                 role="status"
+                 data-practice-feedback>
                 @(feedback == "correct"
                     ? S["PracticeCorrect"].Value
                     : S["PracticeIncorrect"].Value)
@@ -391,7 +380,7 @@
             {
                 <div class="gw-mission">
                     <span>@missionLabel</span>
-                    <strong>@stem</strong>
+                    <strong data-practice-question>@stem</strong>
                     <small>@unitTitle</small>
                 </div>
 
@@ -493,8 +482,8 @@
                          width="98"
                          height="132" />
                     <div>
-                        <span>EDULYTICS</span>
-                        <p>@guidanceText</p>
+                        <span>EDDY</span>
+                        <p data-practice-hint>@guidanceText</p>
                     </div>
                 </aside>
             }
@@ -522,6 +511,8 @@
         </div>
     </section>
 </main>
+<script src="~/js/practice-voice-runtime.js"
+        asp-append-version="true"></script>
 <script src="~/js/student-lesson-practice.js"
         asp-append-version="true"></script>
 </body>
