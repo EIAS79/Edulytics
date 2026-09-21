@@ -392,6 +392,37 @@ public sealed class AssessmentsController : Controller
         return RedirectToAction(nameof(Details), new { id });
     }
 
+    [Authorize(Roles = RoleNames.Teacher)]
+    [HttpPost("{id:guid}/reuse")]
+    [ValidateAntiForgeryToken]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public async Task<IActionResult> Reuse(
+        Guid id,
+        Guid targetClassGroupId,
+        string title,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+
+        var result = await _service.ReuseAssessmentAsync(
+            actorId,
+            new ReuseAssessmentRequest(
+                id,
+                targetClassGroupId,
+                title),
+            cancellationToken);
+
+        if (result.Succeeded && result.EntityId.HasValue)
+        {
+            TempData["Success"] = "Assessment content was reused as a new draft for the selected class.";
+            return RedirectToAction(nameof(Details), new { id = result.EntityId.Value });
+        }
+
+        TempData["Error"] = _text[ErrorKey(result.Error)].Value;
+        return RedirectToAction(nameof(Details), new { id });
+    }
+
     [HttpGet("{id:guid}/results")]
     public async Task<IActionResult> Results(Guid id, CancellationToken cancellationToken)
     {
