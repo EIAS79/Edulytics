@@ -824,8 +824,11 @@ internal static class SupportingPracticeCompletionEngine
 
     private static Problem PowerOfTenMissingExponent(Random r, int s)
     {
-        var exponent = r.Next(1, Math.Min(10, 6 + s));
         var value = r.Next(2, 40 + s * 30);
+        // Keep the exact integer representation inside Int32 for every certified
+        // difficulty while still increasing the exponent range with difficulty.
+        var maxExponentExclusive = Math.Min(7, 5 + s);
+        var exponent = r.Next(1, maxExponentExclusive);
         var result = checked(value * Pow10(exponent));
         return P(
             "supporting.powers10.missing_exponent",
