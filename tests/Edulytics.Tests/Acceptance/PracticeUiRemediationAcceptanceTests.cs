@@ -138,7 +138,20 @@ public sealed class PracticeUiRemediationAcceptanceTests
     }
 
     [Fact]
-    public void UnifiedPracticeRemediation_DoesNotIntroduceCalculatorUi()
+    public void ServerPractice_UsesApprovedUniversalShellAndHint()
+    {
+        var attempt = Read("src/Edulytics.Web/Views/StudentPractice/LessonAttempt.cshtml");
+
+        Assert.Contains("gw-game gw-universal", attempt, StringComparison.Ordinal);
+        Assert.Contains("gw-runtime-board lp-server-card", attempt, StringComparison.Ordinal);
+        Assert.Contains("<strong>@stem</strong>", attempt, StringComparison.Ordinal);
+        Assert.Contains("<span>EDULYTICS</span>", attempt, StringComparison.Ordinal);
+        Assert.DoesNotContain("<span>EDDY</span>", attempt, StringComparison.Ordinal);
+        Assert.DoesNotContain("lp-server-prompt", attempt, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void ServerPractice_DoesNotRenderGenericOnScreenKeypad()
     {
         var game = Read("src/Edulytics.Web/Views/StudentPractice/Game.cshtml");
         var attempt = Read("src/Edulytics.Web/Views/StudentPractice/LessonAttempt.cshtml");
@@ -147,6 +160,9 @@ public sealed class PracticeUiRemediationAcceptanceTests
         Assert.DoesNotContain("calculator", game, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("calculator", attempt, StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("calculator", css, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("lp-server-keypad", attempt, StringComparison.Ordinal);
+        Assert.DoesNotContain("data-practice-key", attempt, StringComparison.Ordinal);
+        Assert.DoesNotContain(""7", "8", "9", "⌫"", attempt, StringComparison.Ordinal);
     }
 
     private static string Read(string relativePath)
