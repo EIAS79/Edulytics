@@ -57,7 +57,8 @@ public sealed record GenerateStudentPrivatePracticeRequest(
     string? UnitKey,
     StudentPrivatePracticeDifficulty Difficulty,
     int QuestionCount,
-    int Seed = 0);
+    int Seed = 0,
+    bool UseLessonDifficultyProgression = false);
 
 public sealed record StudentPrivatePracticeResult(
     Guid? AttemptId,
