@@ -18,6 +18,7 @@
   var langIndex = locale === 'pl' ? 1 : (locale === 'ar' ? 2 : 0);
   var guide = '/images/public/edulaytiks-character.png?v=43';
   var state = { round: 0, count: 8, score: 0, locked: false };
+  var voice = window.EdulyticsPracticeVoice || null;
 
   function t(en, pl, ar) { return [en, pl, ar][langIndex]; }
   function esc(value) {
@@ -40,10 +41,10 @@
 
   root.innerHTML = '<section class="gw-game gw-universal" data-exact-lesson-game>' +
     '<header class="gw-hud"><div class="gw-brand"><span class="gw-brand-mark">◆</span><span><strong>' + esc(t('EDULYTICS PRACTICE', 'ĆWICZENIA EDULYTICS', 'تدريب EDULYTICS')) + '</strong><small>' + esc(unitTitle) + '</small></span></div>' +
-    '<div class="gw-hud-right"><div class="gw-pill">★ <span data-score>0</span></div><div class="gw-pill"><span data-round>1 / 8</span></div></div></header>' +
+    '<div class="gw-hud-right"><div class="gw-pill">★ <span data-score>0</span></div><div class="gw-pill"><span data-round>1 / 8</span></div><button class="gw-icon" type="button" data-sound aria-label="' + esc(t('Sound', 'Dźwięk', 'الصوت')) + '">🔊</button></div></header>' +
     '<div class="gw-progress"><span data-progress></span></div>' +
     '<main class="gw-stage"><div class="gw-mission"><span>' + esc(t('YOUR MISSION', 'TWOJE ZADANIE', 'مهمتك')) + '</span><strong data-question></strong><small data-subquestion></small></div><div class="gw-runtime-board" data-board></div></main>' +
-    '<div class="gw-eddy"><img src="' + guide + '" alt="Edulytics character"><div><span>EDULYTICS</span><p data-eddy></p></div></div>' +
+    '<div class="gw-eddy"><img src="' + guide + '" alt="Eddy"><div><span>EDDY</span><p data-eddy></p></div></div>' +
     '<div class="gw-complete" data-complete hidden><div class="gw-complete-card"><img src="' + guide + '" alt="Edulytics character"><p>' + esc(lessonTitle) + '</p><h2>' + esc(t('Lesson practice complete!', 'Ćwiczenie ukończone!', 'اكتمل تدريب الدرس!')) + '</h2><strong data-final></strong><br><button class="gw-primary" type="button" data-replay>' + esc(t('Practice again', 'Ćwicz ponownie', 'تدرّب مرة أخرى')) + '</button></div></div>' +
     '</section>';
 
@@ -56,6 +57,30 @@
   var progress = root.querySelector('[data-progress]');
   var complete = root.querySelector('[data-complete]');
   var finalNode = root.querySelector('[data-final]');
+  var soundButton = root.querySelector('[data-sound]');
+
+  function speakMany(parts) {
+    if (voice) voice.speakMany(parts, locale);
+  }
+
+  function speak(text) {
+    if (voice) voice.speak(text, locale);
+  }
+
+  function updateSoundButton() {
+    if (!soundButton || !voice) return;
+    soundButton.textContent = voice.isEnabled() ? '🔊' : '🔇';
+    soundButton.setAttribute('aria-pressed', voice.isEnabled() ? 'true' : 'false');
+  }
+
+  if (soundButton && voice) {
+    updateSoundButton();
+    soundButton.addEventListener('click', function () {
+      var enabled = voice.toggle();
+      updateSoundButton();
+      if (enabled) speakMany([question.textContent, eddy.textContent]);
+    });
+  }
 
   function hud() {
     roundNode.textContent = (state.round + 1) + ' / ' + state.count;
@@ -67,6 +92,7 @@
     question.textContent = main;
     sub.textContent = detail || '';
     eddy.textContent = guidance || '';
+    speakMany([main, guidance || '']);
   }
 
   function success(button, explanation) {
@@ -75,12 +101,14 @@
     if (button) button.classList.add('is-correct');
     eddy.textContent = t('Correct. ', 'Dobrze. ', 'صحيح. ') + explanation;
     hud();
+    speak(eddy.textContent);
     window.setTimeout(next, 750);
   }
 
   function failure(button, hint) {
     if (button) button.classList.add('is-wrong');
     eddy.textContent = t('Try again. ', 'Spróbuj ponownie. ', 'حاول مرة أخرى. ') + hint;
+    speak(eddy.textContent);
     window.setTimeout(function () {
       if (button) button.classList.remove('is-wrong');
     }, 500);
@@ -92,6 +120,7 @@
       progress.style.width = '100%';
       finalNode.textContent = t('Stars: ', 'Gwiazdki: ', 'النجوم: ') + state.score;
       complete.hidden = false;
+      speak(t('Lesson practice complete!', 'Ćwiczenie ukończone!', 'اكتمل تدريب الدرس!'));
       return;
     }
     render();
