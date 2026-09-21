@@ -24,8 +24,7 @@ public static class MathOnlyImportAdapter
         ImportType.Students,
         ImportType.Teachers,
         ImportType.SubjectSupervisors,
-        ImportType.Classes,
-        ImportType.AssessmentResults
+        ImportType.Classes
     ];
 
     private static readonly IReadOnlyList<string> StudentHeaders =
@@ -63,16 +62,6 @@ public static class MathOnlyImportAdapter
         "Name"
     ];
 
-    private static readonly IReadOnlyList<string> FriendlyAssessmentResultHeaders =
-    [
-        "AssessmentTitle",
-        "AssessmentDate",
-        "ClassName",
-        "StudentNumber",
-        "StudentName",
-        "QuestionOrder",
-        "Score"
-    ];
 
     public static bool IsSupported(ImportType type) =>
         SupportedTypes.Contains(type);
@@ -92,8 +81,6 @@ public static class MathOnlyImportAdapter
                         new ImportTypeOption(x.Type, SupervisorHeaders),
                     ImportType.Classes =>
                         new ImportTypeOption(x.Type, ClassTemplateHeaders),
-                    ImportType.AssessmentResults =>
-                        new ImportTypeOption(x.Type, FriendlyAssessmentResultHeaders),
                     _ => x
                 })
             .ToArray();
@@ -107,7 +94,6 @@ public static class MathOnlyImportAdapter
             ImportType.Teachers => TeacherHeaders,
             ImportType.SubjectSupervisors => SupervisorHeaders,
             ImportType.Classes => ClassTemplateHeaders,
-            ImportType.AssessmentResults => FriendlyAssessmentResultHeaders,
             _ => serviceHeaders
         };
 
