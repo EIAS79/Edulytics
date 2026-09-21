@@ -44,7 +44,7 @@ public sealed class AssessmentResultsBreakdownContractTests
     }
 
     [Fact]
-    public void ResultsPaper_IsStrictlyReadOnlyAndTeacherScoreWriteRouteIsRemoved()
+    public void ResultsPaper_RemainsReadOnlyWhileAssessmentAwareWorkbookImportIsExplicit()
     {
         var root = FindRoot();
         var view = File.ReadAllText(Path.Combine(
@@ -59,8 +59,16 @@ public sealed class AssessmentResultsBreakdownContractTests
         Assert.DoesNotContain("assessment-score-editor", view, StringComparison.Ordinal);
         Assert.DoesNotContain("assessment-save-result-button", view, StringComparison.Ordinal);
         Assert.DoesNotContain("SaveResult(", controller, StringComparison.Ordinal);
-        Assert.DoesNotContain("SaveStudentResultAsync", controller, StringComparison.Ordinal);
         Assert.DoesNotContain("{id:guid}/results/{studentProfileId:guid}", controller, StringComparison.Ordinal);
+
+        Assert.Contains("DownloadResultsWorkbook", controller, StringComparison.Ordinal);
+        Assert.Contains("ImportResultsWorkbook", controller, StringComparison.Ordinal);
+        Assert.Contains("AssessmentResultsWorkbook.Parse", controller, StringComparison.Ordinal);
+        Assert.Contains("asp-action=\"ImportResultsWorkbook\"", view, StringComparison.Ordinal);
+        Assert.Contains(
+            "accept=\".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\"",
+            view,
+            StringComparison.Ordinal);
     }
 
     private static string FindRoot()
