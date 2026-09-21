@@ -241,8 +241,12 @@ public sealed class StudentPrivatePracticeServiceTests
 
         for (var index = 0; index < repo.SavedItems.Count; index++)
         {
+            Assert.False(
+                string.IsNullOrWhiteSpace(
+                    repo.SavedItems[index].ValidationMetadataJson));
+
             using var metadata = JsonDocument.Parse(
-                repo.SavedItems[index].ValidationMetadataJson);
+                repo.SavedItems[index].ValidationMetadataJson!);
 
             Assert.Equal(
                 expectedDifficulty[index],
