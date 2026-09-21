@@ -91,8 +91,16 @@ public sealed class StudentPrivatePracticeService(
         CancellationToken cancellationToken = default)
     {
         var questionLimit = QuestionLimitForScope(request.Scope);
-        if (questionLimit == 0 || request.QuestionCount < 1 || request.QuestionCount > questionLimit)
-            return StudentPrivatePracticeResult.Failure(StudentPrivatePracticeError.InvalidQuestionCount);
+        if (questionLimit == 0 ||
+            request.QuestionCount < 1 ||
+            request.QuestionCount > questionLimit ||
+            (request.UseLessonDifficultyProgression &&
+             (request.Scope != StudentPrivatePracticeScope.Lesson ||
+              request.QuestionCount != 8)))
+        {
+            return StudentPrivatePracticeResult.Failure(
+                StudentPrivatePracticeError.InvalidQuestionCount);
+        }
 
         var context = await repository.GetContextAsync(studentUserId, request.CurriculumAdoptionId, cancellationToken);
         if (context is null)
@@ -324,23 +332,38 @@ public sealed class StudentPrivatePracticeService(
         var exactEngine = new Stage18SkillContractPracticeEngine();
         try
         {
-            items = exactEngine.Generate(
-                context.Student.SchoolId,
-                context.Adoption.Id,
-                lessonId,
-                skillContract,
-                request.Difficulty,
-                request.QuestionCount,
-                seed,
-                excluded,
-                studentUserId);
+            if (request.UseLessonDifficultyProgression)
+            {
+                items = exactEngine.GenerateProgressiveLesson(
+                    context.Student.SchoolId,
+                    context.Adoption.Id,
+                    lessonId,
+                    skillContract,
+                    seed,
+                    excluded,
+                    studentUserId);
+            }
+            else
+            {
+                items = exactEngine.Generate(
+                    context.Student.SchoolId,
+                    context.Adoption.Id,
+                    lessonId,
+                    skillContract,
+                    request.Difficulty,
+                    request.QuestionCount,
+                    seed,
+                    excluded,
+                    studentUserId);
+            }
         }
-        catch (ExactSkillQuestionPoolExhaustedException) when (excluded.Length > 0)
+        catch (ExactSkillQuestionPoolExhaustedException) when (
+            !request.UseLessonDifficultyProgression &&
+            excluded.Length > 0)
         {
-            // Historical exposure is a diversity preference, not a permanent
-            // lockout. If the unseen finite pool cannot fill a complete lesson
-            // attempt, roll over historical exposure while preserving exact
-            // verification and within-attempt uniqueness.
+            // AI/private Practice may still use a single selected difficulty.
+            // Historical exposure is a diversity preference rather than a
+            // permanent lockout if that finite parameter space is exhausted.
             try
             {
                 items = exactEngine.Generate(
