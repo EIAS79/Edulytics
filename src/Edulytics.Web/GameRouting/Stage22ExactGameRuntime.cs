@@ -104,7 +104,10 @@ public sealed class Stage22ExactGameRuntime
                 difficulty,
                 1,
                 unchecked(seed ^ ((roundIndex + 1) * 7919)),
-                [])[0];
+                [],
+                selectedFamily == "supporting.reasoning.multistep"
+                    ? roundIndex
+                    : null)[0];
 
         if (!ExactSkillContractQuestionEngine.Verify(
                 generated.Family,
