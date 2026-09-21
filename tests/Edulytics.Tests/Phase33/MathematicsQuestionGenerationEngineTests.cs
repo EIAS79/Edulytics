@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Edulytics.Core.AssessmentIntelligence;
 using Edulytics.Core.Enums;
 using Edulytics.Core.MathematicsGeneration;
@@ -196,7 +197,18 @@ public sealed class MathematicsQuestionGenerationEngineTests
                 [profile],
                 25)).Items);
 
-        Assert.Contains(generated.Item.CorrectAnswer, generated.Item.Prompt, StringComparison.Ordinal);
+        using var metadata = JsonDocument.Parse(generated.Item.ValidationMetadataJson!);
+        var choices = metadata.RootElement
+            .GetProperty("choices")
+            .EnumerateArray()
+            .Select(x => x.GetString())
+            .Where(x => x is not null)
+            .Select(x => x!)
+            .ToArray();
+
+        Assert.Contains(generated.Item.CorrectAnswer, choices, StringComparer.Ordinal);
+        Assert.DoesNotContain("A)", generated.Item.Prompt, StringComparison.Ordinal);
+        Assert.DoesNotContain("D)", generated.Item.Prompt, StringComparison.Ordinal);
     }
 
     [Fact]
