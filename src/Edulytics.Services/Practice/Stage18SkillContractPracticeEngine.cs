@@ -148,13 +148,17 @@ public sealed class Stage18SkillContractPracticeEngine
                 .Distinct(StringComparer.Ordinal)
                 .ToArray();
 
+            var selectedFamily =
+                contract.AllowedQuestionFamilies[
+                    index % contract.AllowedQuestionFamilies.Count];
+
             ExactSkillGeneratedQuestion question;
             try
             {
                 question = exactEngine.Generate(
                     "stage18",
                     contract.LessonCode,
-                    contract.AllowedQuestionFamilies,
+                    [selectedFamily],
                     difficulty,
                     1,
                     roundSeed,
@@ -169,7 +173,7 @@ public sealed class Stage18SkillContractPracticeEngine
                 question = exactEngine.Generate(
                     "stage18",
                     contract.LessonCode,
-                    contract.AllowedQuestionFamilies,
+                    [selectedFamily],
                     difficulty,
                     1,
                     roundSeed,
