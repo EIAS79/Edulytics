@@ -75,6 +75,7 @@ public sealed class Stage18SkillContractPracticeEngine
             {
                 skillId = contract.SkillId,
                 questionFamily = question.Family,
+                questionVariant = question.VariantId,
                 parameters = question.Parameters
             }),
             ExposureFingerprint = question.ExposureFingerprint,
@@ -86,6 +87,7 @@ public sealed class Stage18SkillContractPracticeEngine
                 readiness = "READY_VERIFIED",
                 skillContract = contract.SkillId,
                 allowedFamily = question.Family,
+                questionVariant = question.VariantId,
                 solver = Stage18PracticeSkillContracts.SolverIdentifier,
                 verifier = Stage18PracticeSkillContracts.VerifierIdentifier,
                 solverVerified = true,
