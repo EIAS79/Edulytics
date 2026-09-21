@@ -198,7 +198,7 @@ public sealed class PracticeUiRemediationAcceptanceTests
             attempt,
             StringComparison.Ordinal);
         Assert.Contains(
-            "reviewQuestion\n        ?? orderedQuestions.FirstOrDefault(x => !x.Answered)",
+            "reviewQuestion\n        ?? orderedQuestions.FirstOrDefault(x => x.IsCorrect != true)",
             attempt,
             StringComparison.Ordinal);
         Assert.Contains(
@@ -210,11 +210,70 @@ public sealed class PracticeUiRemediationAcceptanceTests
             attempt,
             StringComparison.Ordinal);
         Assert.Contains(
+            "var isIncorrectReview =",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "var isCorrectReview =",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "var eddyMessage =",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "PracticeIncorrect",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "PracticeCorrect",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "aria-live=\"polite\">@eddyMessage",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
             "data-practice-feedback",
             attempt,
             StringComparison.Ordinal);
         Assert.DoesNotContain(
             "TempData[\"PracticeFeedback\"]",
+            attempt,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void ServerPractice_WrongAnswerRemainsRetryableAndDoesNotAdvanceProgress()
+    {
+        var attempt = Read(
+            "src/Edulytics.Web/Views/StudentPractice/LessonAttempt.cshtml");
+
+        Assert.Contains(
+            "orderedQuestions.Count(x => x.IsCorrect == true)",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "@if (isCorrectReview && currentQuestion is not null)",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "else if (interaction is null)",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "<form asp-action=\"AnswerLessonAttempt\"",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "id=\"lesson-practice-answer\"",
+            attempt,
+            StringComparison.Ordinal);
+
+        // The review branch only captures a solved question, so an incorrect
+        // response falls through to the answer form for another try.
+        Assert.DoesNotContain(
+            "@if (isReviewing && currentQuestion is not null)",
             attempt,
             StringComparison.Ordinal);
     }
