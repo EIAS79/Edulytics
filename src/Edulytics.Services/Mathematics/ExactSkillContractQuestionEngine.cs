@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Mathematics.Ast;
+using Edulytics.Core.Mathematics.Generation;
 using Edulytics.Services.Mathematics.Generation;
 using Edulytics.Services.Mathematics.Runtime;
 using Edulytics.Services.Mathematics.Solving;
@@ -24,7 +25,11 @@ public sealed record ExactSkillGeneratedQuestion(
     AssessmentItemType ItemType,
     string CorrectAnswer,
     IReadOnlyDictionary<string, int> Parameters,
-    string ExposureFingerprint);
+    string ExposureFingerprint)
+{
+    public string VariantId { get; init; } = QuestionVariantPolicy.IdForSlot(0);
+    public ExactSkillQuestionDifficulty Difficulty { get; init; } = ExactSkillQuestionDifficulty.Standard;
+}
 
 public sealed class ExactSkillQuestionPoolExhaustedException()
     : InvalidOperationException(
@@ -179,6 +184,7 @@ public sealed class ExactSkillContractQuestionEngine
             .Where(x => !string.IsNullOrWhiteSpace(x))
             .ToHashSet(StringComparer.Ordinal);
         var generated = new HashSet<string>(StringComparer.Ordinal);
+        var generatedPrompts = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         var items = new List<ExactSkillGeneratedQuestion>(questionCount);
 
         for (var index = 0; index < questionCount; index++)
@@ -188,11 +194,14 @@ public sealed class ExactSkillContractQuestionEngine
             for (var retry = 0; retry < MaxRetriesPerItem && item is null; retry++)
             {
                 var family = allowedQuestionFamilies[(index + retry) % allowedQuestionFamilies.Count];
+                var requestedVariant = preferredVariant.HasValue
+                    ? preferredVariant.Value + index + retry
+                    : index + retry;
                 var problem = BuildProblem(
                     family,
                     random,
                     difficulty,
-                    preferredVariant);
+                    requestedVariant);
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -209,10 +218,19 @@ public sealed class ExactSkillContractQuestionEngine
                     family,
                     problem.Parameters);
 
-                if (excluded.Contains(fingerprint) || generated.Contains(fingerprint))
+                var normalizedPrompt = NormalizePrompt(problem.Prompt);
+                if (excluded.Contains(fingerprint) ||
+                    generated.Contains(fingerprint) ||
+                    generatedPrompts.Contains(normalizedPrompt))
+                {
                     continue;
+                }
 
                 generated.Add(fingerprint);
+                generatedPrompts.Add(normalizedPrompt);
+                var variant = QuestionVariantPolicy.Describe(
+                    problem.Parameters,
+                    requestedVariant);
                 item = new ExactSkillGeneratedQuestion(
                     problem.Family,
                     problem.Prompt,
@@ -220,7 +238,11 @@ public sealed class ExactSkillContractQuestionEngine
                     problem.ItemType,
                     answer,
                     problem.Parameters,
-                    fingerprint);
+                    fingerprint)
+                {
+                    VariantId = variant.Id,
+                    Difficulty = difficulty
+                };
             }
 
             if (item is null)
@@ -842,9 +864,9 @@ public sealed class ExactSkillContractQuestionEngine
             "algebra.relationships.two_unknowns.total_difference" =>
                 BuildTwoUnknowns(random, scale),
             "measurement.scale.equal_intervals.read_value" =>
-                BuildScaleReading(random, scale),
+                BuildScaleReading(random, scale, preferredVariant),
             "fractions.compare.unlike.common_denominator" =>
-                BuildUnlikeFractionComparison(random, scale),
+                BuildUnlikeFractionComparison(random, scale, preferredVariant),
             "fractions.compare.unlike.select_greater" =>
                 BuildUnlikeFractionSelectGreater(random, scale),
             "fractions.compare.unlike.true_false" =>
@@ -1154,7 +1176,10 @@ public sealed class ExactSkillContractQuestionEngine
             ("difference", difference));
     }
 
-    private static ExactProblem BuildScaleReading(Random random, int scale)
+    private static ExactProblem BuildScaleReading(
+        Random random,
+        int scale,
+        int? preferredVariant = null)
     {
         int[] intervalChoices = [2, 4, 5, 10];
         var intervals = intervalChoices[random.Next(intervalChoices.Length)];
@@ -1162,19 +1187,33 @@ public sealed class ExactSkillContractQuestionEngine
         var start = random.Next(0, 10 + scale * 10);
         var end = start + intervals * step;
         var pointer = random.Next(1, intervals);
+        var variant = preferredVariant.HasValue
+            ? QuestionVariantPolicy.NormalizeSlot(preferredVariant.Value) % 4
+            : random.Next(0, 4);
+        var prompt = variant switch
+        {
+            0 => $"A scale runs from {start} to {end} in {intervals} equal intervals. What value is at the tick {pointer} interval(s) after {start}?",
+            1 => $"The interval from {start} to {end} is split into {intervals} equal steps. Find the value after {pointer} step(s).",
+            2 => $"Complete the scale: starting at {start}, there are {intervals} equal intervals to {end}. What number belongs at interval {pointer}?",
+            _ => $"A measuring scale has endpoints {start} and {end} with {intervals} equal gaps. Determine the reading at the {pointer}th gap from {start}."
+        };
 
         return Problem(
             "measurement.scale.equal_intervals.read_value",
-            $"A scale runs from {start} to {end} in {intervals} equal intervals. What value is at the tick {pointer} interval(s) after {start}?",
+            prompt,
             "Find one interval by subtracting the endpoints and dividing by the number of intervals, then count from the start value.",
             AssessmentItemType.Numeric,
             ("start", start),
             ("end", end),
             ("intervals", intervals),
-            ("pointer", pointer));
+            ("pointer", pointer),
+            ("variant", variant));
     }
 
-    private static ExactProblem BuildUnlikeFractionComparison(Random random, int scale)
+    private static ExactProblem BuildUnlikeFractionComparison(
+        Random random,
+        int scale,
+        int? preferredVariant = null)
     {
         var denominator1 = random.Next(3, 8 + scale * 2);
         var denominator2 = random.Next(3, 9 + scale * 2);
@@ -1183,16 +1222,27 @@ public sealed class ExactSkillContractQuestionEngine
 
         var numerator1 = random.Next(1, denominator1);
         var numerator2 = random.Next(1, denominator2);
+        var variant = preferredVariant.HasValue
+            ? QuestionVariantPolicy.NormalizeSlot(preferredVariant.Value) % 4
+            : random.Next(0, 4);
+        var prompt = variant switch
+        {
+            0 => $"Compare {numerator1}/{denominator1} and {numerator2}/{denominator2}. Enter <, >, or =.",
+            1 => $"Complete the statement with <, >, or =: {numerator1}/{denominator1} __ {numerator2}/{denominator2}.",
+            2 => $"Which relation makes this comparison true? {numerator1}/{denominator1} __ {numerator2}/{denominator2}. Enter <, >, or =.",
+            _ => $"Decide whether {numerator1}/{denominator1} is less than, greater than, or equal to {numerator2}/{denominator2}. Answer with <, >, or =."
+        };
 
         return Problem(
             "fractions.compare.unlike.common_denominator",
-            $"Compare {numerator1}/{denominator1} and {numerator2}/{denominator2}. Enter <, >, or =.",
+            prompt,
             "Compare the exact cross-products (or use a common denominator); do not compare denominators by size alone.",
             AssessmentItemType.ShortAnswer,
             ("n1", numerator1),
             ("d1", denominator1),
             ("n2", numerator2),
-            ("d2", denominator2));
+            ("d2", denominator2),
+            ("variant", variant));
     }
 
     private static ExactProblem BuildUnlikeFractionSelectGreater(Random random, int scale)
@@ -3103,4 +3153,12 @@ public sealed class ExactSkillContractQuestionEngine
         string Solution,
         AssessmentItemType ItemType,
         IReadOnlyDictionary<string, int> Parameters);
+    private static string NormalizePrompt(string prompt) =>
+        string.Join(
+            " ",
+            (prompt ?? string.Empty).Split(
+                (char[]?)null,
+                StringSplitOptions.RemoveEmptyEntries))
+            .Trim();
+
 }
