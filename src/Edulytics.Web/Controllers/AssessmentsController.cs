@@ -537,31 +537,28 @@ public sealed class AssessmentsController : Controller
             }
         }
 
-        var importedCount = 0;
-        foreach (var row in imported.Rows)
+        var saved = await _service.ImportStudentResultsAsync(
+            actorId,
+            new ImportAssessmentResultsRequest(
+                id,
+                imported.QuestionIds,
+                imported.Rows
+                    .Select(row => new ImportAssessmentResultRow(
+                        row.StudentProfileId,
+                        row.Scores,
+                        row.ResultRowVersion))
+                    .ToArray()),
+            cancellationToken);
+
+        if (!saved.Succeeded)
         {
-            var saved = await _service.SaveStudentResultAsync(
-                actorId,
-                new SaveStudentAssessmentResultRequest(
-                    id,
-                    row.StudentProfileId,
-                    imported.QuestionIds,
-                    row.Scores,
-                    row.ResultRowVersion),
-                cancellationToken);
-
-            if (!saved.Succeeded)
-            {
-                SetFeedback(saved, "SuccessResultSaved");
-                return RedirectToAction(nameof(Results), new { id });
-            }
-
-            importedCount++;
+            SetFeedback(saved, "SuccessResultSaved");
+            return RedirectToAction(nameof(Results), new { id });
         }
 
-        TempData["Success"] = importedCount == 0
+        TempData["Success"] = imported.Rows.Count == 0
             ? "No completed score rows were found in the workbook."
-            : $"Imported results for {importedCount} student(s).";
+            : $"Imported results for {imported.Rows.Count} student(s).";
         return RedirectToAction(nameof(Results), new { id });
     }
 
