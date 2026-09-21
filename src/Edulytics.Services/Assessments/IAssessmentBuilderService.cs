@@ -41,7 +41,7 @@ public sealed record AssessmentBuilderQuestion(
 {
     public Guid? LessonId { get; init; }
     public string? LessonTitle { get; init; }
-};
+}
 
 public sealed record AssessmentTargetStudentOption(
     Guid Id,
@@ -62,7 +62,7 @@ public sealed record AssessmentBuilderWorkspace(
 {
     public IReadOnlyList<AssessmentBuilderLessonOption> Lessons { get; init; } = [];
     public IReadOnlyList<AssessmentBuilderUnitOption> Units { get; init; } = [];
-};
+}
 
 public sealed record UpdateAssessmentDeliverySettingsRequest(
     Guid AssessmentId,
@@ -107,7 +107,7 @@ public sealed record GenerateBuilderQuestionsRequest(
     public AssessmentGenerationScopeType ScopeType { get; init; } = AssessmentGenerationScopeType.Outcomes;
     public IReadOnlyList<Guid> LessonIds { get; init; } = [];
     public IReadOnlyList<string> UnitKeys { get; init; } = [];
-};
+}
 
 public interface IAssessmentBuilderService
 {
