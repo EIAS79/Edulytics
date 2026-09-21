@@ -42,8 +42,11 @@ public static class QuestionVariantPolicy
                 IdForSlot(variant),
                 NormalizeSlot(variant));
 
+        // A family without an explicit semantic mode/variant has one verified
+        // learner-facing form today. Do not invent a variant identity merely
+        // because the scheduler requested another slot.
         return new QuestionVariantDescriptor(
-            IdForSlot(fallbackSlot),
-            NormalizeSlot(fallbackSlot));
+            IdForSlot(0),
+            0);
     }
 }
