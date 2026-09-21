@@ -77,7 +77,7 @@ public static class AnalyticsPdfRenderer
         metrics.AddFormattedText("Assessment lesson mastery: ", TextFormat.Bold);
         metrics.AddText(report.AssessmentLessonMasteryPercentage.HasValue
             ? Percent(report.AssessmentLessonMasteryPercentage.Value)
-            : "No lesson-linked assessment evidence");
+            : "Lesson mastery is unavailable because scored assessment questions are not linked to specific lessons.");
 
         AddStudentLessonTable(section, report.Lessons);
         AddStudentOutcomeTable(section, report.Outcomes);
@@ -140,7 +140,7 @@ public static class AnalyticsPdfRenderer
         AddSectionHeading(section, "Lesson mastery (explicit lesson provenance)");
         if (lessons.Count == 0)
         {
-            AddEmpty(section, "No lesson-linked scored assessment evidence.");
+            AddEmpty(section, "Lesson mastery is unavailable because scored assessment questions are not linked to specific lessons.");
             return;
         }
 
@@ -215,7 +215,7 @@ public static class AnalyticsPdfRenderer
         AddSectionHeading(section, "Lesson assessment mastery");
         if (lessons.Count == 0)
         {
-            AddEmpty(section, "No lesson-linked assessment evidence for this student.");
+            AddEmpty(section, "Lesson mastery is unavailable because scored assessment questions are not linked to specific lessons. for this student.");
             return;
         }
 
