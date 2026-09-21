@@ -41,7 +41,12 @@ public sealed class AssessmentRepository : IAssessmentRepository
             await _db.AssessmentQuestions.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
             await _db.QuestionLearningOutcomes.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
             await _db.AssessmentResults.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
-            await _db.StudentAnswers.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken));
+            await _db.StudentAnswers.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken))
+        {
+            AssessmentItems = await _db.AssessmentItems.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken)
+        };
     }
 
     public Task<Assessment?> GetAssessmentAsync(Guid schoolId, Guid id, CancellationToken cancellationToken = default) =>
