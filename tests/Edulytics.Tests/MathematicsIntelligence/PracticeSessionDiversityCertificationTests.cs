@@ -208,6 +208,66 @@ public sealed class PracticeSessionDiversityCertificationTests
             $"Expected at least 3 prompt structures, got {promptShapes.Length}.");
     }
 
+    [Fact]
+    public void PowersOf10LessonsResolveToFourDedicatedQuestionFamilies()
+    {
+        Assert.True(
+            SupportingPracticeTargetRuleRegistry.TryResolve(
+                "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-1:APPLY",
+                "Powers of 10: Reason and Apply",
+                out var rule));
+
+        Assert.NotNull(rule);
+        Assert.Equal("powers-of-ten-primary", rule!.Id);
+        Assert.Equal(
+            new[]
+            {
+                "supporting.powers10.evaluate",
+                "supporting.powers10.multiply",
+                "supporting.powers10.divide",
+                "supporting.powers10.missing_exponent"
+            },
+            rule.Families);
+    }
+
+    [Fact]
+    public void QuantifiedRelationshipsSupportsAllEightReasoningTemplates()
+    {
+        const string family = "supporting.reasoning.multistep";
+        var engine = new ExactSkillContractQuestionEngine();
+        var questions = Enumerable.Range(0, 8)
+            .Select(mode =>
+                engine.Generate(
+                    "multistep-template-certification",
+                    "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-1:BUILD",
+                    [family],
+                    ExactSkillQuestionDifficulty.Standard,
+                    1,
+                    81000 + mode,
+                    [],
+                    preferredVariant: mode)[0])
+            .ToArray();
+
+        Assert.Equal(
+            Enumerable.Range(0, 8),
+            questions.Select(question => question.Parameters["mode"]));
+
+        Assert.Equal(
+            8,
+            questions
+                .Select(question => NormalizePromptShape(question.Prompt))
+                .Distinct(StringComparer.Ordinal)
+                .Count());
+
+        Assert.All(
+            questions,
+            question => Assert.True(
+                ExactSkillContractQuestionEngine.Verify(
+                    question.Family,
+                    question.Parameters,
+                    question.CorrectAnswer)));
+    }
+
     private static string NormalizePromptShape(string prompt) =>
         Regex.Replace(
             Regex.Replace(
