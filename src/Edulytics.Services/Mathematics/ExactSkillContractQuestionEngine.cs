@@ -26,6 +26,10 @@ public sealed record ExactSkillGeneratedQuestion(
     IReadOnlyDictionary<string, int> Parameters,
     string ExposureFingerprint);
 
+public sealed class ExactSkillQuestionPoolExhaustedException()
+    : InvalidOperationException(
+        "Exact Mathematics generation exhausted uniqueness retries.");
+
 /// <summary>
 /// Shared deterministic Mathematics Intelligence question kernel used by
 /// learner Practice and teacher Assessment Builder. The caller owns curriculum
@@ -212,7 +216,7 @@ public sealed class ExactSkillContractQuestionEngine
             }
 
             if (item is null)
-                throw new InvalidOperationException("Exact Mathematics generation exhausted uniqueness retries.");
+                throw new ExactSkillQuestionPoolExhaustedException();
 
             items.Add(item);
         }

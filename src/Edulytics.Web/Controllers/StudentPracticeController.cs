@@ -24,7 +24,7 @@ public sealed class StudentPracticeController(
 {
     private const string LessonPracticePilotCode = "PED:CAMBRIDGE-INTL-MATH:S1:L10";
     private const string LessonGameMode = "lesson-game";
-    private const int LessonPracticeQuestionCount = 10;
+    private const int LessonPracticeQuestionCount = 8;
 
     [HttpGet("")]
     public async Task<IActionResult> Index(Guid? curriculumAdoptionId, CancellationToken cancellationToken)
@@ -119,7 +119,8 @@ public sealed class StudentPracticeController(
                 lessonId,
                 null,
                 StudentPrivatePracticeDifficulty.MyLevel,
-                LessonPracticeQuestionCount),
+                LessonPracticeQuestionCount,
+                UseLessonDifficultyProgression: true),
             cancellationToken);
 
         if (!result.Succeeded)
