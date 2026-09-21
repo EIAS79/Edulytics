@@ -9,7 +9,7 @@ public sealed class GradeAwareExactDifficultyPolicyTests
     [Theory]
     [InlineData("G1", AssessmentItemDifficulty.Challenging, MathematicsCurriculumDifficultyStage.EarlyPrimary, ExactSkillQuestionDifficulty.Stretch)]
     [InlineData("GRADE 2", AssessmentItemDifficulty.Medium, MathematicsCurriculumDifficultyStage.EarlyPrimary, ExactSkillQuestionDifficulty.Standard)]
-    [InlineData("S6", AssessmentItemDifficulty.Challenging, MathematicsCurriculumDifficultyStage.Primary, ExactSkillQuestionDifficulty.Stretch)]
+    [InlineData("S6", AssessmentItemDifficulty.Challenging, MathematicsCurriculumDifficultyStage.Primary, ExactSkillQuestionDifficulty.Challenge)]
     [InlineData("L7", AssessmentItemDifficulty.Challenging, MathematicsCurriculumDifficultyStage.LowerSecondary, ExactSkillQuestionDifficulty.Challenge)]
     [InlineData("G8", AssessmentItemDifficulty.Medium, MathematicsCurriculumDifficultyStage.LowerSecondary, ExactSkillQuestionDifficulty.Stretch)]
     [InlineData("HS", AssessmentItemDifficulty.Challenging, MathematicsCurriculumDifficultyStage.UpperSecondary, ExactSkillQuestionDifficulty.Challenge)]
