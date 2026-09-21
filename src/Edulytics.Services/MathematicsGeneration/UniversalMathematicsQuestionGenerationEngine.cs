@@ -774,14 +774,19 @@ public sealed class UniversalMathematicsQuestionGenerationEngine
         var choices = new HashSet<int> { correct };
         for (var i = 1; choices.Count < 4; i++)
         {
-            choices.Add(correct + delta * i);
+            var higher = correct + delta * i;
             if (choices.Count < 4)
-                choices.Add(Math.Max(0, correct - delta * i));
+                choices.Add(higher);
+
+            var lower = Math.Max(0, correct - delta * i);
+            if (choices.Count < 4)
+                choices.Add(lower);
         }
 
+        // The set is capped at four before shuffling so the correct answer
+        // can never be discarded by a later Take(4).
         return choices
             .OrderBy(x => StableInt($"{key}|choice|{x}", int.MaxValue))
-            .Take(4)
             .Select(x => x.ToString())
             .ToArray();
     }
