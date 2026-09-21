@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Mathematics.Practice;
@@ -147,7 +148,7 @@ public sealed class StudentPrivatePracticeServiceTests
     }
 
     [Fact]
-    public async Task Lesson_generation_rolls_over_historical_exposure_when_finite_exact_pool_is_exhausted()
+    public async Task Lesson_practice_generates_eight_progressive_questions_and_rolls_over_old_exposure()
     {
         const string lessonCode =
             "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-1:APPLY";
@@ -172,18 +173,22 @@ public sealed class StudentPrivatePracticeServiceTests
             "Powers of 10: Reason and Apply",
             1);
 
-        var firstSet = new ExactSkillContractQuestionEngine().Generate(
-            "stage18",
-            lessonCode,
-            contract.AllowedQuestionFamilies,
-            ExactSkillQuestionDifficulty.Standard,
-            10,
-            42017,
-            []);
+        // Standard difficulty currently has a deliberately bounded parameter
+        // range. Saturate it to reproduce the Production condition where
+        // historical exposure must not block a new lesson Practice attempt.
+        var saturatedStandardPool =
+            new ExactSkillContractQuestionEngine().Generate(
+                "stage18",
+                lessonCode,
+                contract.AllowedQuestionFamilies,
+                ExactSkillQuestionDifficulty.Standard,
+                16,
+                42017,
+                []);
 
-        Assert.Equal(10, firstSet.Count);
+        Assert.Equal(16, saturatedStandardPool.Count);
 
-        var historicalExposures = firstSet
+        var historicalExposures = saturatedStandardPool
             .Select(question => new StudentItemExposure
             {
                 Id = Guid.NewGuid(),
@@ -213,24 +218,91 @@ public sealed class StudentPrivatePracticeServiceTests
                     lessonId,
                     null,
                     StudentPrivatePracticeDifficulty.MyLevel,
-                    10,
-                    73031));
+                    8,
+                    73031,
+                    UseLessonDifficultyProgression: true));
 
         Assert.True(result.Succeeded);
         Assert.Null(result.Error);
-        Assert.Equal(10, repo.SavedItems.Count);
+        Assert.Equal(8, repo.SavedItems.Count);
         Assert.Equal(
-            10,
+            8,
             repo.SavedItems
                 .Select(item => item.ExposureFingerprint)
                 .Distinct(StringComparer.Ordinal)
                 .Count());
+
+        var expectedDifficulty = new[]
+        {
+            "Standard", "Standard", "Standard",
+            "Stretch", "Stretch", "Stretch",
+            "Challenge", "Challenge"
+        };
+
+        for (var index = 0; index < repo.SavedItems.Count; index++)
+        {
+            using var metadata = JsonDocument.Parse(
+                repo.SavedItems[index].ValidationMetadataJson);
+
+            Assert.Equal(
+                expectedDifficulty[index],
+                metadata.RootElement
+                    .GetProperty("difficulty")
+                    .GetString());
+
+            Assert.Equal(
+                index + 1,
+                metadata.RootElement
+                    .GetProperty("progressionIndex")
+                    .GetInt32());
+        }
+
         Assert.All(
             repo.SavedItems,
             item => Assert.True(
                 Stage18SkillContractPracticeEngine.VerifyPersistedItem(
                     contract.ToLegacyStage18Contract(),
                     item)));
+    }
+
+    [Fact]
+    public async Task Lesson_progression_contract_rejects_any_count_other_than_eight()
+    {
+        var ids = Ids.Create();
+        var lessonId = Guid.NewGuid();
+        var repo = new FakeRepository
+        {
+            Context = BuildContext(
+                ids,
+                [],
+                [
+                    Lesson(
+                        ids,
+                        lessonId,
+                        "S6-NPV",
+                        "Number and Place Value",
+                        "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-1:APPLY",
+                        "Powers of 10: Reason and Apply",
+                        1)
+                ])
+        };
+
+        var result = await new StudentPrivatePracticeService(repo)
+            .GenerateAsync(
+                ids.User,
+                new GenerateStudentPrivatePracticeRequest(
+                    ids.Adoption,
+                    StudentPrivatePracticeScope.Lesson,
+                    lessonId,
+                    null,
+                    StudentPrivatePracticeDifficulty.MyLevel,
+                    10,
+                    7,
+                    UseLessonDifficultyProgression: true));
+
+        Assert.Equal(
+            StudentPrivatePracticeError.InvalidQuestionCount,
+            result.Error);
     }
 
     [Fact]
