@@ -116,6 +116,38 @@ public sealed record AnalyticsRiskStudentItem(
     int CriticalOutcomeCount,
     MasteryBand Band);
 
+public sealed record AnalyticsStudentLessonItem(
+    Guid LessonId,
+    string LessonTitle,
+    string UnitTitle,
+    decimal MasteryPercentage,
+    int EvidenceCount,
+    int AssessmentCount,
+    MasteryBand Band);
+
+public sealed record AnalyticsStudentOutcomeItem(
+    Guid LearningOutcomeId,
+    string OutcomeCode,
+    string OutcomeDescription,
+    decimal MasteryPercentage,
+    int EvidenceCount,
+    MasteryBand Band);
+
+public sealed record AnalyticsStudentReport(
+    Guid StudentProfileId,
+    string StudentNumber,
+    string DisplayName,
+    Guid AcademicYearId,
+    string AcademicYearName,
+    Guid ClassGroupId,
+    string ClassName,
+    Guid SubjectId,
+    string SubjectName,
+    decimal? OfficialOutcomeMasteryPercentage,
+    decimal? AssessmentLessonMasteryPercentage,
+    IReadOnlyList<AnalyticsStudentLessonItem> Lessons,
+    IReadOnlyList<AnalyticsStudentOutcomeItem> Outcomes);
+
 public sealed record AnalyticsDashboard(
     bool HasData,
     bool IsStale,
