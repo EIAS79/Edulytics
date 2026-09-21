@@ -149,7 +149,8 @@ public sealed class ExactSkillContractQuestionEngine
         ExactSkillQuestionDifficulty difficulty,
         int questionCount,
         int seed,
-        IReadOnlyCollection<string> excludedExposureFingerprints)
+        IReadOnlyCollection<string> excludedExposureFingerprints,
+        int? preferredVariant = null)
     {
         if (string.IsNullOrWhiteSpace(fingerprintNamespace) ||
             string.IsNullOrWhiteSpace(scopeKey) ||
@@ -184,7 +185,11 @@ public sealed class ExactSkillContractQuestionEngine
             for (var retry = 0; retry < MaxRetriesPerItem && item is null; retry++)
             {
                 var family = allowedQuestionFamilies[(index + retry) % allowedQuestionFamilies.Count];
-                var problem = BuildProblem(family, random, difficulty);
+                var problem = BuildProblem(
+                    family,
+                    random,
+                    difficulty,
+                    preferredVariant);
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -750,7 +755,8 @@ public sealed class ExactSkillContractQuestionEngine
     private static ExactProblem BuildProblem(
         string family,
         Random random,
-        ExactSkillQuestionDifficulty difficulty)
+        ExactSkillQuestionDifficulty difficulty,
+        int? preferredVariant = null)
     {
         var scale = difficulty switch
         {
@@ -761,7 +767,11 @@ public sealed class ExactSkillContractQuestionEngine
 
         if (SupportingPracticeCompletionEngine.Supports(family))
         {
-            var supporting = SupportingPracticeCompletionEngine.Build(family, random, scale);
+            var supporting = SupportingPracticeCompletionEngine.Build(
+                family,
+                random,
+                scale,
+                preferredVariant);
             return new ExactProblem(
                 supporting.Family,
                 supporting.Prompt,
