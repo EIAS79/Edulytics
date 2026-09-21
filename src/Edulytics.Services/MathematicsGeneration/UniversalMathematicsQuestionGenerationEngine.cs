@@ -241,7 +241,10 @@ public sealed class UniversalMathematicsQuestionGenerationEngine
 
             var raw = BuildContextualRaw(context, difficulty, key);
             ValidateRaw(raw);
-            var prompt = FormatPrompt(raw.Prompt, raw.Answer, itemType, key);
+            var prompt = FormatPrompt(raw.Prompt, itemType);
+            var choices = itemType == AssessmentItemType.MultipleChoice
+                ? BuildMultipleChoiceChoices(raw.Answer, key)
+                : Array.Empty<string>();
             var fingerprint = Fingerprint(
                 blueprint,
                 profile.LearningOutcomeId,
@@ -281,7 +284,8 @@ public sealed class UniversalMathematicsQuestionGenerationEngine
                     scopeValidated = true,
                     answerValidated = true,
                     solutionValidated = true,
-                    reconstructable = true
+                    reconstructable = true,
+                    choices
                 }),
                 CreatedAtUtc = DateTime.UtcNow
             };
@@ -750,20 +754,18 @@ public sealed class UniversalMathematicsQuestionGenerationEngine
 
     private static string FormatPrompt(
         string prompt,
-        string answer,
-        AssessmentItemType itemType,
-        string key)
+        AssessmentItemType itemType)
     {
         return itemType switch
         {
             AssessmentItemType.Numeric => prompt,
             AssessmentItemType.ShortAnswer => $"{prompt} Give your answer as a number.",
-            AssessmentItemType.MultipleChoice => BuildMultipleChoicePrompt(prompt, answer, key),
+            AssessmentItemType.MultipleChoice => prompt,
             _ => throw new InvalidOperationException("Unsupported contextual Mathematics item type.")
         };
     }
 
-    private static string BuildMultipleChoicePrompt(string prompt, string answer, string key)
+    private static string[] BuildMultipleChoiceChoices(string answer, string key)
     {
         if (!int.TryParse(answer, out var correct))
             throw new InvalidOperationException("Contextual multiple-choice answer must be an integer.");
@@ -777,13 +779,11 @@ public sealed class UniversalMathematicsQuestionGenerationEngine
                 choices.Add(Math.Max(0, correct - delta * i));
         }
 
-        var ordered = choices
+        return choices
             .OrderBy(x => StableInt($"{key}|choice|{x}", int.MaxValue))
             .Take(4)
+            .Select(x => x.ToString())
             .ToArray();
-        var labels = new[] { "A", "B", "C", "D" };
-        var options = string.Join("  ", ordered.Select((x, i) => $"{labels[i]}) {x}"));
-        return $"{prompt} {options}";
     }
 
     private static string Fingerprint(
