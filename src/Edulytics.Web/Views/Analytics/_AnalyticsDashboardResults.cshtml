@@ -355,6 +355,24 @@
                                 @A["CriticalGaps"]:
                                 <strong>@item.CriticalOutcomeCount</strong>
                             </span>
+
+                            @if (d.SelectedSubjectId.HasValue)
+                            {
+                                <a class="school-button"
+                                   asp-controller="Analytics"
+                                   asp-action="StudentReportPdf"
+                                   asp-route-studentProfileId="@item.StudentProfileId"
+                                   asp-route-academicYearId="@item.AcademicYearId"
+                                   asp-route-classGroupId="@item.ClassGroupId"
+                                   asp-route-subjectId="@d.SelectedSubjectId.Value">
+                                    @(language switch
+                                    {
+                                        "pl" => "PDF ucznia",
+                                        "ar" => "PDF الطالب",
+                                        _ => "Student PDF"
+                                    })
+                                </a>
+                            }
                         </article>
                     }
                 </div>
