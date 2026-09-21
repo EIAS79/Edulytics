@@ -358,6 +358,14 @@ public sealed class AnalyticsService : IAnalyticsService
                 var outcome =
                     outcomes[x.LearningOutcomeId];
 
+                var displayCode =
+                    AnalyticsPresentationFormatter.OutcomeLabel(outcome.Code);
+                var displayDescription =
+                    AnalyticsPresentationFormatter.OutcomeDescription(
+                        outcome.Description,
+                        displayCode,
+                        SubjectName(x.SubjectId));
+
                 return new AnalyticsOutcomeItem(
                     x.AcademicYearId,
                     YearName(x.AcademicYearId),
@@ -366,8 +374,8 @@ public sealed class AnalyticsService : IAnalyticsService
                     x.SubjectId,
                     SubjectName(x.SubjectId),
                     x.LearningOutcomeId,
-                    outcome.Code,
-                    outcome.Description,
+                    displayCode,
+                    displayDescription,
                     x.AverageMasteryPercentage,
                     x.StudentCount,
                     x.AtRiskStudentCount,
@@ -691,7 +699,7 @@ public sealed class AnalyticsService : IAnalyticsService
                         x =>
                             new AnalyticsFilterItem(
                                 x.Id,
-                                $"{x.Name} ({x.Code})"))
+                                AnalyticsPresentationFormatter.ClassFilterLabel(x.Name)))
                     .ToArray(),
                 visibleSubjects
                     .Select(
@@ -846,10 +854,18 @@ public sealed class AnalyticsService : IAnalyticsService
             .Select(x =>
             {
                 var outcome = outcomesById[x.LearningOutcomeId];
+                var displayCode =
+                    AnalyticsPresentationFormatter.OutcomeLabel(outcome.Code);
+                var displayDescription =
+                    AnalyticsPresentationFormatter.OutcomeDescription(
+                        outcome.Description,
+                        displayCode,
+                        subject.Name);
+
                 return new AnalyticsStudentOutcomeItem(
                     outcome.Id,
-                    outcome.Code,
-                    outcome.Description,
+                    displayCode,
+                    displayDescription,
                     x.MasteryPercentage,
                     x.EvidenceCount,
                     AnalyticsProjectionBuilder.BandFor(x.MasteryPercentage));
