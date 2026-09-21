@@ -2,6 +2,7 @@ using System.Security.Claims;
 using Edulytics.Core.Constants;
 using Edulytics.Services.Analytics;
 using Edulytics.Web.ViewModels.Analytics;
+using Edulytics.Web.Printing;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http.Timeouts;
@@ -50,6 +51,68 @@ public sealed class AnalyticsController : Controller
         return View(
             new AnalyticsIndexViewModel(
                 result.Value));
+    }
+
+    [HttpGet("class-report.pdf")]
+    public async Task<IActionResult> ClassReportPdf(
+        Guid? academicYearId,
+        Guid? classGroupId,
+        Guid? subjectId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        var result = await _analytics.GetDashboardAsync(
+            actorId,
+            academicYearId,
+            classGroupId,
+            subjectId,
+            cancellationToken);
+        if (result.Value is null)
+            return HandleQueryError(result.Error);
+
+        var bytes = AnalyticsPdfRenderer.RenderClassReport(result.Value);
+        return File(
+            bytes,
+            "application/pdf",
+            $"edulytics-class-analytics-{DateTime.UtcNow:yyyyMMdd}.pdf");
+    }
+
+    [HttpGet("student-report.pdf")]
+    public async Task<IActionResult> StudentReportPdf(
+        Guid studentProfileId,
+        Guid academicYearId,
+        Guid classGroupId,
+        Guid subjectId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        if (studentProfileId == Guid.Empty ||
+            academicYearId == Guid.Empty ||
+            classGroupId == Guid.Empty ||
+            subjectId == Guid.Empty)
+        {
+            return BadRequest();
+        }
+
+        var result = await _analytics.GetStudentReportAsync(
+            actorId,
+            studentProfileId,
+            academicYearId,
+            classGroupId,
+            subjectId,
+            cancellationToken);
+        if (result.Value is null)
+            return HandleQueryError(result.Error);
+
+        var bytes = AnalyticsPdfRenderer.RenderStudentReport(result.Value);
+        return File(
+            bytes,
+            "application/pdf",
+            $"edulytics-student-analytics-{studentProfileId:N}-{DateTime.UtcNow:yyyyMMdd}.pdf");
     }
 
     [Authorize(Roles = RoleNames.SubjectSupervisor)]
