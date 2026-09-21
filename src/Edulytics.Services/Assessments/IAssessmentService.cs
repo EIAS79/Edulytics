@@ -26,6 +26,11 @@ public interface IAssessmentService
         CreateAssessmentRequest request,
         CancellationToken cancellationToken = default);
 
+    Task<AssessmentCommandResult> ReuseAssessmentAsync(
+        Guid actorUserId,
+        ReuseAssessmentRequest request,
+        CancellationToken cancellationToken = default);
+
     Task<AssessmentCommandResult> UpdateAssessmentAsync(
         Guid actorUserId,
         UpdateAssessmentRequest request,
