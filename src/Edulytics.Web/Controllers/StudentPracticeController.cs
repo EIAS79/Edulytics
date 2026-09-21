@@ -356,6 +356,7 @@ public sealed class StudentPracticeController(
         Guid id,
         Guid curriculumAdoptionId,
         Guid lessonId,
+        Guid? reviewAttemptItemId,
         CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
@@ -397,6 +398,17 @@ public sealed class StudentPracticeController(
         ViewData["LessonTitle"] = detailResult.Value.Title;
         ViewData["LessonUnitTitle"] = lesson.UnitTitle;
 
+        if (reviewAttemptItemId.HasValue)
+        {
+            var reviewQuestion = attempt.Value.Questions
+                .SingleOrDefault(x =>
+                    x.AttemptItemId == reviewAttemptItemId.Value &&
+                    x.Answered);
+
+            if (reviewQuestion is not null)
+                ViewData["ReviewAttemptItemId"] = reviewQuestion.AttemptItemId;
+        }
+
         Response.Headers["X-Robots-Tag"] =
             "noindex, nofollow, noarchive";
 
@@ -427,15 +439,15 @@ public sealed class StudentPracticeController(
         {
             TempData["Error"] =
                 PracticeErrorMessage(result.Error);
-        }
-        else
-        {
-            TempData["PracticeFeedback"] =
-                result.Value.IsCorrect
-                    ? "correct"
-                    : "incorrect";
-            TempData["PracticeSolution"] =
-                result.Value.Solution;
+
+            return RedirectToAction(
+                nameof(LessonAttempt),
+                new
+                {
+                    id,
+                    curriculumAdoptionId,
+                    lessonId
+                });
         }
 
         return RedirectToAction(
@@ -444,7 +456,8 @@ public sealed class StudentPracticeController(
             {
                 id,
                 curriculumAdoptionId,
-                lessonId
+                lessonId,
+                reviewAttemptItemId = result.Value.AttemptItemId
             });
     }
 
