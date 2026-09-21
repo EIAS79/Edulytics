@@ -780,18 +780,26 @@ internal static class SupportingPracticeCompletionEngine
 
     private static Problem PowerOfTenEvaluate(Random r, int s)
     {
-        var exponent = r.Next(1, Math.Min(7, 3 + s * 2));
+        var exponent = r.Next(1, Math.Min(10, 6 + s));
+        var variant = r.Next(0, 3);
+        var prompt = variant switch
+        {
+            0 => $"Evaluate 10^{exponent}.",
+            1 => $"What is the value of 10^{exponent}?",
+            _ => $"Write 10^{exponent} as a whole number."
+        };
         return P(
             "supporting.powers10.evaluate",
-            $"Evaluate 10^{exponent}.",
+            prompt,
             "A power of ten is 1 followed by as many zeros as the exponent.",
-            ("exponent", exponent));
+            ("exponent", exponent),
+            ("variant", variant));
     }
 
     private static Problem PowerOfTenMultiply(Random r, int s)
     {
-        var exponent = r.Next(1, Math.Min(6, 2 + s * 2));
-        var value = r.Next(2, 25 + s * 30);
+        var exponent = r.Next(1, Math.Min(7, 4 + s));
+        var value = r.Next(2, 80 + s * 80);
         return P(
             "supporting.powers10.multiply",
             $"Calculate {value} × 10^{exponent}.",
@@ -802,8 +810,8 @@ internal static class SupportingPracticeCompletionEngine
 
     private static Problem PowerOfTenDivide(Random r, int s)
     {
-        var exponent = r.Next(1, Math.Min(6, 2 + s * 2));
-        var quotient = r.Next(2, 25 + s * 30);
+        var exponent = r.Next(1, Math.Min(7, 4 + s));
+        var quotient = r.Next(2, 80 + s * 80);
         var dividend = checked(quotient * Pow10(exponent));
         return P(
             "supporting.powers10.divide",
@@ -816,8 +824,8 @@ internal static class SupportingPracticeCompletionEngine
 
     private static Problem PowerOfTenMissingExponent(Random r, int s)
     {
-        var exponent = r.Next(1, Math.Min(7, 3 + s * 2));
-        var value = r.Next(2, 10 + s * 4);
+        var exponent = r.Next(1, Math.Min(10, 6 + s));
+        var value = r.Next(2, 40 + s * 30);
         var result = checked(value * Pow10(exponent));
         return P(
             "supporting.powers10.missing_exponent",
