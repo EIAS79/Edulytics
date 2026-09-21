@@ -107,10 +107,10 @@ public sealed class AnalyticsRepository : IAnalyticsRepository
             .Distinct()
             .ToArray();
         var lessons = lessonIds.Length == 0
-            ? []
+            ? Array.Empty<CurriculumPedagogicalLesson>()
             : await _db.CurriculumPedagogicalLessons.AsNoTracking()
                 .Where(x => lessonIds.Contains(x.Id))
-                .ToListAsync(cancellationToken);
+                .ToArrayAsync(cancellationToken);
 
         return new AnalyticsProjectionSnapshot(
             await _db.AcademicYears.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
