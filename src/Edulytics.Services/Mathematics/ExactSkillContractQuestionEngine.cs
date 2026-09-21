@@ -193,7 +193,11 @@ public sealed class ExactSkillContractQuestionEngine
 
             for (var retry = 0; retry < MaxRetriesPerItem && item is null; retry++)
             {
-                var family = allowedQuestionFamilies[(index + retry) % allowedQuestionFamilies.Count];
+                var familyOffset = preferredVariant.HasValue
+                    ? QuestionVariantPolicy.NormalizeSlot(preferredVariant.Value)
+                    : 0;
+                var family = allowedQuestionFamilies[
+                    (familyOffset + index + retry) % allowedQuestionFamilies.Count];
                 var requestedVariant = preferredVariant.HasValue
                     ? preferredVariant.Value + index + retry
                     : index + retry;
