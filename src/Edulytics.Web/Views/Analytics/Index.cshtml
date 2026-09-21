@@ -171,6 +171,20 @@
         </div>
     </form>
 
+    @if (d.HasData)
+    {
+        <div class="assessment-actions analytics-export-actions">
+            <a class="school-button"
+               asp-controller="Analytics"
+               asp-action="ClassReportPdf"
+               asp-route-academicYearId="@d.SelectedAcademicYearId"
+               asp-route-classGroupId="@d.SelectedClassGroupId"
+               asp-route-subjectId="@d.SelectedSubjectId">
+                Download class analytics PDF
+            </a>
+        </div>
+    }
+
     @if (!d.HasData)
     {
         <section class="analytics-empty">
