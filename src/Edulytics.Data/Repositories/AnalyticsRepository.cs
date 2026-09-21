@@ -1,5 +1,6 @@
 using System.Data;
 using Edulytics.Core.Analytics;
+using Edulytics.Core.Entities;
 using Edulytics.Core.Interfaces;
 using Edulytics.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
