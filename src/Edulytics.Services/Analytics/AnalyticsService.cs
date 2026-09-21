@@ -410,6 +410,111 @@ public sealed class AnalyticsService : IAnalyticsService
             .ThenBy(x => x.TopicName)
             .ToArray();
 
+        var visibleAssessments = projection.Assessments
+            .Where(x =>
+                x.Status != AssessmentStatus.Draft &&
+                Matches(
+                    x.AcademicYearId,
+                    x.ClassGroupId,
+                    x.SubjectId))
+            .ToDictionary(x => x.Id);
+        var visibleResults = projection.AssessmentResults
+            .Where(x => visibleAssessments.ContainsKey(x.AssessmentId))
+            .ToDictionary(x => x.Id);
+        var visibleQuestions = projection.AssessmentQuestions
+            .Where(x => visibleAssessments.ContainsKey(x.AssessmentId))
+            .ToDictionary(x => x.Id);
+        var lessonItemsByQuestion = projection.AssessmentItems
+            .Where(x => x.CurriculumPedagogicalLessonId.HasValue)
+            .Where(x => visibleQuestions.ContainsKey(x.Id))
+            .ToDictionary(x => x.Id);
+        var pedagogicalLessons = projection.PedagogicalLessons
+            .ToDictionary(x => x.Id);
+
+        var lessonEvidenceRows = new List<LessonEvidenceRow>();
+        foreach (var answer in projection.StudentAnswers)
+        {
+            if (!visibleResults.TryGetValue(answer.AssessmentResultId, out var result) ||
+                !visibleAssessments.TryGetValue(result.AssessmentId, out var assessment) ||
+                !visibleQuestions.TryGetValue(answer.AssessmentQuestionId, out var question) ||
+                question.AssessmentId != assessment.Id ||
+                !lessonItemsByQuestion.TryGetValue(question.Id, out var item) ||
+                !item.CurriculumPedagogicalLessonId.HasValue ||
+                !pedagogicalLessons.ContainsKey(item.CurriculumPedagogicalLessonId.Value) ||
+                question.MaxScore <= 0m)
+            {
+                continue;
+            }
+
+            lessonEvidenceRows.Add(new LessonEvidenceRow(
+                assessment.AcademicYearId,
+                assessment.ClassGroupId,
+                assessment.SubjectId,
+                item.CurriculumPedagogicalLessonId.Value,
+                assessment.Id,
+                result.StudentProfileId,
+                answer.Score,
+                question.MaxScore));
+        }
+
+        var lessonItems = lessonEvidenceRows
+            .GroupBy(x => new
+            {
+                x.AcademicYearId,
+                x.ClassGroupId,
+                x.SubjectId,
+                x.LessonId
+            })
+            .Select(group =>
+            {
+                var lesson = pedagogicalLessons[group.Key.LessonId];
+                var earned = group.Sum(x => x.EarnedScore);
+                var possible = group.Sum(x => x.PossibleScore);
+                var mastery = possible <= 0m
+                    ? 0m
+                    : decimal.Round(
+                        earned / possible * 100m,
+                        2,
+                        MidpointRounding.AwayFromZero);
+                var atRisk = group
+                    .GroupBy(x => x.StudentProfileId)
+                    .Count(student =>
+                    {
+                        var studentPossible = student.Sum(x => x.PossibleScore);
+                        if (studentPossible <= 0m)
+                            return false;
+                        var studentMastery = decimal.Round(
+                            student.Sum(x => x.EarnedScore) /
+                            studentPossible *
+                            100m,
+                            2,
+                            MidpointRounding.AwayFromZero);
+                        return studentMastery < 60m;
+                    });
+
+                return new AnalyticsLessonItem(
+                    group.Key.AcademicYearId,
+                    YearName(group.Key.AcademicYearId),
+                    group.Key.ClassGroupId,
+                    ClassName(group.Key.ClassGroupId),
+                    group.Key.SubjectId,
+                    SubjectName(group.Key.SubjectId),
+                    lesson.Id,
+                    lesson.Title,
+                    lesson.UnitKey,
+                    lesson.UnitTitle,
+                    mastery,
+                    group.Select(x => x.StudentProfileId).Distinct().Count(),
+                    atRisk,
+                    group.Count(),
+                    group.Select(x => x.AssessmentId).Distinct().Count(),
+                    AnalyticsProjectionBuilder.BandFor(mastery));
+            })
+            .OrderBy(x => x.MasteryPercentage)
+            .ThenBy(x => x.UnitTitle)
+            .ThenBy(x => x.LessonTitle)
+            .ToArray();
+
         var trendItems = trends
             .Select(
                 x =>
@@ -545,7 +650,7 @@ public sealed class AnalyticsService : IAnalyticsService
 
         var dashboard =
             new AnalyticsDashboard(
-                masteries.Length > 0,
+                masteries.Length > 0 || lessonItems.Length > 0 || trendItems.Length > 0,
                 isStale,
                 scope.Role ==
                 RoleNames.SubjectSupervisor,
@@ -598,10 +703,200 @@ public sealed class AnalyticsService : IAnalyticsService
                 outcomeItems,
                 topicItems,
                 trendItems,
-                riskItems);
+                riskItems)
+            {
+                Lessons = lessonItems
+            };
 
         return AnalyticsQueryResult<AnalyticsDashboard>
             .Success(dashboard);
+    }
+
+    public async Task<AnalyticsQueryResult<AnalyticsStudentReport>>
+        GetStudentReportAsync(
+            Guid actorUserId,
+            Guid studentProfileId,
+            Guid academicYearId,
+            Guid classGroupId,
+            Guid subjectId,
+            CancellationToken cancellationToken = default)
+    {
+        var access = await GetDashboardAsync(
+            actorUserId,
+            academicYearId,
+            classGroupId,
+            subjectId,
+            cancellationToken);
+        if (access.Value is null)
+            return AnalyticsQueryResult<AnalyticsStudentReport>.Failure(
+                access.Error ?? AnalyticsErrorCode.AccessDenied);
+
+        var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
+        if (!scope.Succeeded)
+            return AnalyticsQueryResult<AnalyticsStudentReport>.Failure(
+                scope.Error!.Value);
+
+        var projection = await _analytics.GetProjectionSnapshotAsync(
+            scope.School!.Id,
+            cancellationToken);
+
+        var student = projection.StudentProfiles.SingleOrDefault(x =>
+            x.Id == studentProfileId &&
+            !x.IsArchived &&
+            x.Status == AcademicStructureStatus.Active);
+        var enrolled = projection.StudentEnrollments.Any(x =>
+            x.StudentProfileId == studentProfileId &&
+            x.AcademicYearId == academicYearId &&
+            x.ClassGroupId == classGroupId);
+        if (student is null || !enrolled)
+            return AnalyticsQueryResult<AnalyticsStudentReport>.Failure(
+                AnalyticsErrorCode.AccessDenied);
+
+        var year = projection.AcademicYears.SingleOrDefault(x => x.Id == academicYearId);
+        var classGroup = projection.ClassGroups.SingleOrDefault(x => x.Id == classGroupId);
+        var subject = projection.Subjects.SingleOrDefault(x => x.Id == subjectId);
+        if (year is null || classGroup is null || subject is null)
+            return AnalyticsQueryResult<AnalyticsStudentReport>.Failure(
+                AnalyticsErrorCode.InvalidSourceData);
+
+        var outcomesById = projection.LearningOutcomes.ToDictionary(x => x.Id);
+        var lessonsById = projection.PedagogicalLessons.ToDictionary(x => x.Id);
+        var assessmentsById = projection.Assessments
+            .Where(x =>
+                x.Status != AssessmentStatus.Draft &&
+                x.AcademicYearId == academicYearId &&
+                x.ClassGroupId == classGroupId &&
+                x.SubjectId == subjectId)
+            .ToDictionary(x => x.Id);
+        var resultsById = projection.AssessmentResults
+            .Where(x =>
+                x.StudentProfileId == studentProfileId &&
+                assessmentsById.ContainsKey(x.AssessmentId))
+            .ToDictionary(x => x.Id);
+        var questionsById = projection.AssessmentQuestions
+            .Where(x => assessmentsById.ContainsKey(x.AssessmentId))
+            .ToDictionary(x => x.Id);
+        var itemsById = projection.AssessmentItems
+            .Where(x =>
+                x.CurriculumPedagogicalLessonId.HasValue &&
+                questionsById.ContainsKey(x.Id))
+            .ToDictionary(x => x.Id);
+
+        var lessonRows = new List<LessonEvidenceRow>();
+        foreach (var answer in projection.StudentAnswers)
+        {
+            if (!resultsById.TryGetValue(answer.AssessmentResultId, out var result) ||
+                !assessmentsById.TryGetValue(result.AssessmentId, out var assessment) ||
+                !questionsById.TryGetValue(answer.AssessmentQuestionId, out var question) ||
+                question.AssessmentId != assessment.Id ||
+                !itemsById.TryGetValue(question.Id, out var item) ||
+                !item.CurriculumPedagogicalLessonId.HasValue ||
+                !lessonsById.ContainsKey(item.CurriculumPedagogicalLessonId.Value) ||
+                question.MaxScore <= 0m)
+            {
+                continue;
+            }
+
+            lessonRows.Add(new LessonEvidenceRow(
+                academicYearId,
+                classGroupId,
+                subjectId,
+                item.CurriculumPedagogicalLessonId.Value,
+                assessment.Id,
+                studentProfileId,
+                answer.Score,
+                question.MaxScore));
+        }
+
+        var lessonItems = lessonRows
+            .GroupBy(x => x.LessonId)
+            .Select(group =>
+            {
+                var lesson = lessonsById[group.Key];
+                var possible = group.Sum(x => x.PossibleScore);
+                var mastery = possible <= 0m
+                    ? 0m
+                    : decimal.Round(
+                        group.Sum(x => x.EarnedScore) / possible * 100m,
+                        2,
+                        MidpointRounding.AwayFromZero);
+                return new AnalyticsStudentLessonItem(
+                    lesson.Id,
+                    lesson.Title,
+                    lesson.UnitTitle,
+                    mastery,
+                    group.Count(),
+                    group.Select(x => x.AssessmentId).Distinct().Count(),
+                    AnalyticsProjectionBuilder.BandFor(mastery));
+            })
+            .OrderBy(x => x.MasteryPercentage)
+            .ThenBy(x => x.LessonTitle)
+            .ToArray();
+
+        var studentOutcomeMasteries = projection.StudentOutcomeMasteries
+            .Where(x =>
+                x.StudentProfileId == studentProfileId &&
+                x.AcademicYearId == academicYearId &&
+                x.ClassGroupId == classGroupId &&
+                x.SubjectId == subjectId &&
+                outcomesById.ContainsKey(x.LearningOutcomeId))
+            .ToArray();
+
+        var outcomeItems = studentOutcomeMasteries
+            .Select(x =>
+            {
+                var outcome = outcomesById[x.LearningOutcomeId];
+                return new AnalyticsStudentOutcomeItem(
+                    outcome.Id,
+                    outcome.Code,
+                    outcome.Description,
+                    x.MasteryPercentage,
+                    x.EvidenceCount,
+                    AnalyticsProjectionBuilder.BandFor(x.MasteryPercentage));
+            })
+            .OrderBy(x => x.MasteryPercentage)
+            .ThenBy(x => x.OutcomeCode)
+            .ToArray();
+
+        decimal? officialMastery = null;
+        var officialPossible = studentOutcomeMasteries.Sum(x => x.PossibleScore);
+        if (officialPossible > 0m)
+        {
+            officialMastery = decimal.Round(
+                studentOutcomeMasteries.Sum(x => x.EarnedScore) /
+                officialPossible *
+                100m,
+                2,
+                MidpointRounding.AwayFromZero);
+        }
+
+        decimal? lessonMastery = null;
+        var lessonPossible = lessonRows.Sum(x => x.PossibleScore);
+        if (lessonPossible > 0m)
+        {
+            lessonMastery = decimal.Round(
+                lessonRows.Sum(x => x.EarnedScore) /
+                lessonPossible *
+                100m,
+                2,
+                MidpointRounding.AwayFromZero);
+        }
+
+        return AnalyticsQueryResult<AnalyticsStudentReport>.Success(
+            new AnalyticsStudentReport(
+                student.Id,
+                student.StudentNumber,
+                student.DisplayName,
+                year.Id,
+                year.Name,
+                classGroup.Id,
+                classGroup.Name,
+                subject.Id,
+                subject.Name,
+                officialMastery,
+                lessonMastery,
+                lessonItems,
+                outcomeItems));
     }
 
     private async Task<ScopeResult> ResolveScopeAsync(
@@ -682,6 +977,16 @@ public sealed class AnalyticsService : IAnalyticsService
             role,
             supervisedSubjectIds);
     }
+
+    private sealed record LessonEvidenceRow(
+        Guid AcademicYearId,
+        Guid ClassGroupId,
+        Guid SubjectId,
+        Guid LessonId,
+        Guid AssessmentId,
+        Guid StudentProfileId,
+        decimal EarnedScore,
+        decimal PossibleScore);
 
     private sealed record ScopeResult(
         bool Succeeded,

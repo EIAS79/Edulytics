@@ -26,6 +26,11 @@ public interface IAssessmentService
         CreateAssessmentRequest request,
         CancellationToken cancellationToken = default);
 
+    Task<AssessmentCommandResult> ReuseAssessmentAsync(
+        Guid actorUserId,
+        ReuseAssessmentRequest request,
+        CancellationToken cancellationToken = default);
+
     Task<AssessmentCommandResult> UpdateAssessmentAsync(
         Guid actorUserId,
         UpdateAssessmentRequest request,
@@ -71,6 +76,11 @@ public interface IAssessmentService
         Guid actorUserId,
         Guid assessmentId,
         byte[] rowVersion,
+        CancellationToken cancellationToken = default);
+
+    Task<AssessmentCommandResult> ImportStudentResultsAsync(
+        Guid actorUserId,
+        ImportAssessmentResultsRequest request,
         CancellationToken cancellationToken = default);
 
     Task<AssessmentCommandResult> SaveStudentResultAsync(

@@ -55,7 +55,12 @@ public static class LessonPracticeContractRegistry
             "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:BUILD",
             "fractions.compare.unlike_denominators",
             "FRACTION_COMPARE_UNLIKE",
-            ["fractions.compare.unlike.common_denominator"],
+            [
+                "fractions.compare.unlike.common_denominator",
+                "fractions.compare.unlike.select_greater",
+                "fractions.compare.unlike.true_false",
+                "fractions.compare.unlike.order_three"
+            ],
             "SupportingLesson",
             "READY_VERIFIED",
             Version),
@@ -63,7 +68,12 @@ public static class LessonPracticeContractRegistry
             "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:APPLY",
             "fractions.compare.unlike_denominators",
             "FRACTION_COMPARE_UNLIKE",
-            ["fractions.compare.unlike.common_denominator"],
+            [
+                "fractions.compare.unlike.common_denominator",
+                "fractions.compare.unlike.select_greater",
+                "fractions.compare.unlike.true_false",
+                "fractions.compare.unlike.order_three"
+            ],
             "SupportingLesson",
             "READY_VERIFIED",
             Version),
@@ -607,7 +617,12 @@ public static class LessonPracticeContractRegistry
             "PED:UAE-MOE-MATH:L3:COMMON:02:03:COMPARE-FRACTIONS",
             "fractions.compare.unlike_denominators",
             "SUPPORTING_EXACT",
-            ["fractions.compare.unlike.common_denominator"],
+            [
+                "fractions.compare.unlike.common_denominator",
+                "fractions.compare.unlike.select_greater",
+                "fractions.compare.unlike.true_false",
+                "fractions.compare.unlike.order_three"
+            ],
             "SupportingLesson",
             "READY_VERIFIED",
             Version),

@@ -182,9 +182,18 @@ public sealed class UniversalMathematicsGenerationTests
 
         Assert.Equal(AssessmentItemType.MultipleChoice, item.ItemType);
         Assert.True(int.TryParse(item.CorrectAnswer, out var answer));
-        Assert.Contains(answer.ToString(), item.Prompt, StringComparison.Ordinal);
-        Assert.Contains("A)", item.Prompt, StringComparison.Ordinal);
-        Assert.Contains("D)", item.Prompt, StringComparison.Ordinal);
+        using var metadata = JsonDocument.Parse(item.ValidationMetadataJson!);
+        var choices = metadata.RootElement
+            .GetProperty("choices")
+            .EnumerateArray()
+            .Select(x => x.GetString())
+            .Where(x => x is not null)
+            .Select(x => x!)
+            .ToArray();
+
+        Assert.Contains(answer.ToString(), choices, StringComparer.Ordinal);
+        Assert.DoesNotContain("A)", item.Prompt, StringComparison.Ordinal);
+        Assert.DoesNotContain("D)", item.Prompt, StringComparison.Ordinal);
     }
 
     private static AssessmentBlueprint Blueprint(

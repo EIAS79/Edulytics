@@ -61,6 +61,9 @@ public sealed class ExactSkillContractQuestionEngine
             "algebra.relationships.two_unknowns.total_difference",
             "measurement.scale.equal_intervals.read_value",
             "fractions.compare.unlike.common_denominator",
+            "fractions.compare.unlike.select_greater",
+            "fractions.compare.unlike.true_false",
+            "fractions.compare.unlike.order_three",
             "fractions.equivalent.missing_value",
             "fractions.equivalent.recognize",
             "fractions.equivalent.generate_multiple",
@@ -243,6 +246,40 @@ public sealed class ExactSkillContractQuestionEngine
                 answer,
                 Compare(parameters["n1"] * parameters["d2"], parameters["n2"] * parameters["d1"]),
                 StringComparison.Ordinal);
+
+        if (family == "fractions.compare.unlike.select_greater")
+        {
+            var comparison = Compare(
+                parameters["n1"] * parameters["d2"],
+                parameters["n2"] * parameters["d1"]);
+            var expected = comparison switch
+            {
+                ">" => "left",
+                "<" => "right",
+                _ => "equal"
+            };
+            return string.Equals(answer.Trim(), expected, StringComparison.OrdinalIgnoreCase);
+        }
+
+        if (family == "fractions.compare.unlike.true_false")
+        {
+            var actual = Compare(
+                parameters["n1"] * parameters["d2"],
+                parameters["n2"] * parameters["d1"]);
+            var claimed = RelationFromCode(parameters["claimedRelation"]);
+            var expected = string.Equals(actual, claimed, StringComparison.Ordinal)
+                ? "true"
+                : "false";
+            return string.Equals(answer.Trim(), expected, StringComparison.OrdinalIgnoreCase);
+        }
+
+        if (family == "fractions.compare.unlike.order_three")
+        {
+            return string.Equals(
+                NormalizeFractionOrderAnswer(answer),
+                NormalizeFractionOrderAnswer(OrderThreeFractions(parameters)),
+                StringComparison.Ordinal);
+        }
 
         if (family == ExactLinearInequalityQuestionFactory.FamilyId)
         {
@@ -808,6 +845,12 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildScaleReading(random, scale),
             "fractions.compare.unlike.common_denominator" =>
                 BuildUnlikeFractionComparison(random, scale),
+            "fractions.compare.unlike.select_greater" =>
+                BuildUnlikeFractionSelectGreater(random, scale),
+            "fractions.compare.unlike.true_false" =>
+                BuildUnlikeFractionTrueFalse(random, scale),
+            "fractions.compare.unlike.order_three" =>
+                BuildUnlikeFractionOrderThree(random, scale),
             "fractions.equivalent.missing_value" =>
                 BuildEquivalentMissingValue(random, scale, family, "Complete the equivalent fraction"),
             "fractions.equivalent.recognize" =>
@@ -1150,6 +1193,120 @@ public sealed class ExactSkillContractQuestionEngine
             ("d1", denominator1),
             ("n2", numerator2),
             ("d2", denominator2));
+    }
+
+    private static ExactProblem BuildUnlikeFractionSelectGreater(Random random, int scale)
+    {
+        var (n1, d1, n2, d2) = GenerateUnlikeFractionPair(random, scale, requireDifferentValues: true);
+        return Problem(
+            "fractions.compare.unlike.select_greater",
+            $"Which fraction is greater: {n1}/{d1} or {n2}/{d2}? Enter left, right, or equal.",
+            "Compare the fractions using exact cross-products or a common denominator, then identify which side has the greater value.",
+            AssessmentItemType.ShortAnswer,
+            ("n1", n1),
+            ("d1", d1),
+            ("n2", n2),
+            ("d2", d2));
+    }
+
+    private static ExactProblem BuildUnlikeFractionTrueFalse(Random random, int scale)
+    {
+        var (n1, d1, n2, d2) = GenerateUnlikeFractionPair(random, scale, requireDifferentValues: false);
+        var actual = Compare(n1 * d2, n2 * d1);
+        var actualCode = RelationCode(actual);
+        var useActual = random.Next(0, 2) == 0;
+        var claimedCode = useActual
+            ? actualCode
+            : Enumerable.Range(0, 3)
+                .Where(code => code != actualCode)
+                .ElementAt(random.Next(0, 2));
+        var claimed = RelationFromCode(claimedCode);
+
+        return Problem(
+            "fractions.compare.unlike.true_false",
+            $"True or false: {n1}/{d1} {claimed} {n2}/{d2}.",
+            "Check the statement by using a common denominator or exact cross-products. The truth value depends on the fraction values, not denominator size.",
+            AssessmentItemType.ShortAnswer,
+            ("n1", n1),
+            ("d1", d1),
+            ("n2", n2),
+            ("d2", d2),
+            ("claimedRelation", claimedCode));
+    }
+
+    private static ExactProblem BuildUnlikeFractionOrderThree(Random random, int scale)
+    {
+        var denominator1 = random.Next(3, 8 + scale * 2);
+        var denominator2 = random.Next(3, 9 + scale * 2);
+        while (denominator2 == denominator1)
+            denominator2 = random.Next(3, 9 + scale * 2);
+        var denominator3 = random.Next(3, 10 + scale * 2);
+        while (denominator3 == denominator1 || denominator3 == denominator2)
+            denominator3 = random.Next(3, 10 + scale * 2);
+
+        var numerator1 = random.Next(1, denominator1);
+        var numerator2 = random.Next(1, denominator2);
+        var numerator3 = random.Next(1, denominator3);
+
+        var guard = 0;
+        while ((numerator1 * denominator2 == numerator2 * denominator1 ||
+                numerator1 * denominator3 == numerator3 * denominator1 ||
+                numerator2 * denominator3 == numerator3 * denominator2) &&
+               guard++ < 64)
+        {
+            numerator2 = random.Next(1, denominator2);
+            numerator3 = random.Next(1, denominator3);
+        }
+
+        if (numerator1 * denominator2 == numerator2 * denominator1 ||
+            numerator1 * denominator3 == numerator3 * denominator1 ||
+            numerator2 * denominator3 == numerator3 * denominator2)
+        {
+            throw new InvalidOperationException(
+                "Unable to generate three distinct unlike fractions.");
+        }
+
+        return Problem(
+            "fractions.compare.unlike.order_three",
+            $"Order the fractions from least to greatest: A = {numerator1}/{denominator1}, B = {numerator2}/{denominator2}, C = {numerator3}/{denominator3}. Enter the letters, for example A < B < C.",
+            "Compare the fractions pairwise using exact cross-products or a shared denominator, then place all three in ascending order.",
+            AssessmentItemType.ShortAnswer,
+            ("n1", numerator1),
+            ("d1", denominator1),
+            ("n2", numerator2),
+            ("d2", denominator2),
+            ("n3", numerator3),
+            ("d3", denominator3));
+    }
+
+    private static (int N1, int D1, int N2, int D2) GenerateUnlikeFractionPair(
+        Random random,
+        int scale,
+        bool requireDifferentValues)
+    {
+        var denominator1 = random.Next(3, 8 + scale * 2);
+        var denominator2 = random.Next(3, 9 + scale * 2);
+        while (denominator2 == denominator1)
+            denominator2 = random.Next(3, 9 + scale * 2);
+
+        var numerator1 = random.Next(1, denominator1);
+        var numerator2 = random.Next(1, denominator2);
+        var guard = 0;
+        while (requireDifferentValues &&
+               numerator1 * denominator2 == numerator2 * denominator1 &&
+               guard++ < 64)
+        {
+            numerator2 = random.Next(1, denominator2);
+        }
+
+        if (requireDifferentValues &&
+            numerator1 * denominator2 == numerator2 * denominator1)
+        {
+            throw new InvalidOperationException(
+                "Unable to generate distinct unlike fractions.");
+        }
+
+        return (numerator1, denominator1, numerator2, denominator2);
     }
 
     private static ExactProblem BuildEquivalentMissingValue(
@@ -2420,6 +2577,25 @@ public sealed class ExactSkillContractQuestionEngine
             "fractions.compare.unlike.common_denominator" =>
                 Compare(p["n1"] * p["d2"], p["n2"] * p["d1"]),
 
+            "fractions.compare.unlike.select_greater" =>
+                Compare(p["n1"] * p["d2"], p["n2"] * p["d1"]) switch
+                {
+                    ">" => "left",
+                    "<" => "right",
+                    _ => "equal"
+                },
+
+            "fractions.compare.unlike.true_false" =>
+                string.Equals(
+                    Compare(p["n1"] * p["d2"], p["n2"] * p["d1"]),
+                    RelationFromCode(p["claimedRelation"]),
+                    StringComparison.Ordinal)
+                    ? "true"
+                    : "false",
+
+            "fractions.compare.unlike.order_three" =>
+                OrderThreeFractions(p),
+
             "fractions.equivalent.missing_value" or
             "fractions.equivalent.recognize" or
             "fractions.equivalent.generate_multiple" or
@@ -2861,6 +3037,44 @@ public sealed class ExactSkillContractQuestionEngine
             solution,
             itemType,
             parameters.ToDictionary(x => x.Name, x => x.Value, StringComparer.Ordinal));
+
+    private static int RelationCode(string relation) => relation switch
+    {
+        "<" => 0,
+        ">" => 1,
+        "=" => 2,
+        _ => throw new InvalidOperationException("Unsupported fraction relation.")
+    };
+
+    private static string RelationFromCode(int code) => code switch
+    {
+        0 => "<",
+        1 => ">",
+        2 => "=",
+        _ => throw new InvalidOperationException("Unsupported fraction relation code.")
+    };
+
+    private static string OrderThreeFractions(IReadOnlyDictionary<string, int> parameters)
+    {
+        var values = new List<(string Label, int Numerator, int Denominator)>
+        {
+            ("A", parameters["n1"], parameters["d1"]),
+            ("B", parameters["n2"], parameters["d2"]),
+            ("C", parameters["n3"], parameters["d3"])
+        };
+
+        values.Sort((left, right) =>
+            checked(left.Numerator * right.Denominator)
+                .CompareTo(checked(right.Numerator * left.Denominator)));
+
+        return string.Join(" < ", values.Select(x => x.Label));
+    }
+
+    private static string NormalizeFractionOrderAnswer(string answer) =>
+        answer.Trim()
+            .ToUpperInvariant()
+            .Replace(" ", string.Empty, StringComparison.Ordinal)
+            .Replace("≤", "<", StringComparison.Ordinal);
 
     private static string Compare(int left, int right) =>
         left < right ? "<" : left > right ? ">" : "=";

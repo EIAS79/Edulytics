@@ -5,6 +5,31 @@
 
 @{
     var d = Model;
+    var language = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var lessonWeaknessTitle = language switch
+    {
+        "pl" => "Analiza słabych lekcji",
+        "ar" => "تحليل نقاط الضعف حسب الدرس",
+        _ => "Lesson weakness analysis"
+    };
+    var lessonEvidenceHelp = language switch
+    {
+        "pl" => "Wyłącznie na podstawie ocenionych pytań z jednoznacznie zapisanym identyfikatorem lekcji.",
+        "ar" => "يعتمد فقط على الأسئلة المصححة التي تحمل معرّف درس محفوظًا بشكل صريح.",
+        _ => "Based only on scored questions with an explicitly persisted lesson identity."
+    };
+    var classMasteryLabel = language switch
+    {
+        "pl" => "Opanowanie klasy",
+        "ar" => "إتقان الصف",
+        _ => "Class mastery"
+    };
+    var assessmentsLabel = language switch
+    {
+        "pl" => "Testy",
+        "ar" => "الاختبارات",
+        _ => "Assessments"
+    };
 }
 
         <section class="analytics-metrics"
@@ -30,6 +55,11 @@
             <article class="analytics-metric analytics-metric-danger">
                 <span>@A["CriticalOutcomes"]</span>
                 <strong>@d.CriticalOutcomeCount</strong>
+            </article>
+
+            <article class="analytics-metric analytics-metric-warning">
+                <span>@lessonWeaknessTitle</span>
+                <strong>@d.WeakLessonCount</strong>
             </article>
 
             <article class="analytics-metric analytics-metric-warning">
@@ -111,6 +141,71 @@
                             }
                         </tbody>
                     </table>
+                </div>
+            }
+        </section>
+
+        <section class="analytics-panel">
+            <header>
+                <h2>@lessonWeaknessTitle</h2>
+                <p>@lessonEvidenceHelp</p>
+            </header>
+
+            @if (d.Lessons.Count == 0)
+            {
+                <p class="analytics-empty-inline">
+                    @(language switch
+                    {
+                        "pl" => "Brak ocenionych pytań z wiarygodnym przypisaniem do lekcji.",
+                        "ar" => "لا توجد أسئلة مصححة مرتبطة بدرس بشكل موثوق حتى الآن.",
+                        _ => "No scored questions with reliable lesson provenance yet."
+                    })
+                </p>
+            }
+            else
+            {
+                <div class="analytics-topic-grid">
+                    @foreach (var item in d.Lessons)
+                    {
+                        <article class="analytics-topic-card">
+                            <div class="analytics-topic-heading">
+                                <div>
+                                    <strong>@item.LessonTitle</strong>
+                                    <small>
+                                        @item.UnitTitle · @item.ClassName · @item.SubjectName
+                                    </small>
+                                </div>
+
+                                <span class="analytics-band @AnalyticsIndexViewModel.BandClass(item.Band)">
+                                    @classMasteryLabel: @item.MasteryPercentage.ToString("0.##")%
+                                </span>
+                            </div>
+
+                            <progress max="100"
+                                      value="@item.MasteryPercentage.ToString(CultureInfo.InvariantCulture)"
+                                      aria-label="@classMasteryLabel">
+                            </progress>
+
+                            <dl>
+                                <div>
+                                    <dt>@A["Students"]</dt>
+                                    <dd>@item.StudentCount</dd>
+                                </div>
+                                <div>
+                                    <dt>@A["AtRisk"]</dt>
+                                    <dd>@item.AtRiskStudentCount</dd>
+                                </div>
+                                <div>
+                                    <dt>@A["Evidence"]</dt>
+                                    <dd>@item.EvidenceCount</dd>
+                                </div>
+                                <div>
+                                    <dt>@assessmentsLabel</dt>
+                                    <dd>@item.AssessmentCount</dd>
+                                </div>
+                            </dl>
+                        </article>
+                    }
                 </div>
             }
         </section>
@@ -260,6 +355,24 @@
                                 @A["CriticalGaps"]:
                                 <strong>@item.CriticalOutcomeCount</strong>
                             </span>
+
+                            @if (d.SelectedSubjectId.HasValue)
+                            {
+                                <a class="school-button"
+                                   asp-controller="Analytics"
+                                   asp-action="StudentReportPdf"
+                                   asp-route-studentProfileId="@item.StudentProfileId"
+                                   asp-route-academicYearId="@item.AcademicYearId"
+                                   asp-route-classGroupId="@item.ClassGroupId"
+                                   asp-route-subjectId="@d.SelectedSubjectId.Value">
+                                    @(language switch
+                                    {
+                                        "pl" => "PDF ucznia",
+                                        "ar" => "PDF الطالب",
+                                        _ => "Student PDF"
+                                    })
+                                </a>
+                            }
                         </article>
                     }
                 </div>

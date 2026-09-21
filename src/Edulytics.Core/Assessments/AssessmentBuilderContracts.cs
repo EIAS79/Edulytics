@@ -27,7 +27,9 @@ public sealed record AssessmentBuilderPersistenceContext(
     IReadOnlyList<QuestionLearningOutcome> QuestionOutcomeMappings,
     IReadOnlyList<AssessmentItemOutcome> ItemOutcomeMappings,
     IReadOnlyList<LearningOutcome> LearningOutcomes,
-    IReadOnlyList<ClassOutcomeSummary> ClassOutcomeSummaries);
+    IReadOnlyList<ClassOutcomeSummary> ClassOutcomeSummaries,
+    IReadOnlyList<CurriculumPedagogicalLesson>? PedagogicalLessons = null,
+    IReadOnlyList<CurriculumPedagogicalLessonOutcome>? PedagogicalLessonOutcomes = null);
 
 public sealed record AssessmentBuilderQuestionBundle(
     AssessmentQuestion Question,

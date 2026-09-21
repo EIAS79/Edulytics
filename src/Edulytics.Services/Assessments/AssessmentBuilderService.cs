@@ -9,9 +9,11 @@ using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Interfaces;
 using Edulytics.Core.Mathematics.Assessment;
+using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Core.MathematicsGeneration;
 using Edulytics.Core.Users;
 using Edulytics.Services.AssessmentIntelligence;
+using Edulytics.Services.Mathematics;
 using Edulytics.Services.MathematicsGeneration;
 
 namespace Edulytics.Services.Assessments;
@@ -186,25 +188,73 @@ public sealed class AssessmentBuilderService(
         if (request.MaxScorePerQuestion > 0m && request.QuestionCount * request.MaxScorePerQuestion > remainingMarks)
             return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
 
-        var outcomeIds = NormalizeOutcomes(request.OutcomeIds);
-        if (!ValidateOutcomes(resolved.Details!, outcomeIds)) return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
-        var batch = TryGenerate(context, resolved.SchoolId, outcomeIds, request.QuestionCount, effectiveDifficulty.Value, request.Seed, actorUserId);
-        if (batch is null) return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
-        if (batch.Items.Count != request.QuestionCount) return Failure(AssessmentErrorCode.PersistenceError);
+        IReadOnlyList<ScopedGeneratedItem>? generatedItems;
+        if (request.ScopeType == AssessmentGenerationScopeType.Outcomes)
+        {
+            var outcomeIds = NormalizeOutcomes(request.OutcomeIds);
+            if (!ValidateOutcomes(resolved.Details!, outcomeIds))
+                return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+
+            var batch = TryGenerate(
+                context,
+                resolved.SchoolId,
+                outcomeIds,
+                request.QuestionCount,
+                effectiveDifficulty.Value,
+                request.Seed,
+                actorUserId);
+            if (batch is null)
+                return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+
+            generatedItems = batch.Items
+                .Select(item => new ScopedGeneratedItem(
+                    item.Item,
+                    [item.OutcomeLink.LearningOutcomeId]))
+                .ToArray();
+        }
+        else
+        {
+            var scopedLessons = ResolveScopedLessons(context, request);
+            if (scopedLessons is null || scopedLessons.Count == 0)
+                return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+
+            var budgetedLessons = SelectLessonsForQuestionBudget(
+                request.ScopeType,
+                scopedLessons,
+                request.QuestionCount,
+                request.Seed);
+            if (budgetedLessons.Count == 0)
+                return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+
+            generatedItems = TryGenerateLessons(
+                context,
+                resolved.SchoolId,
+                budgetedLessons,
+                request.QuestionCount,
+                effectiveDifficulty.Value,
+                request.Seed,
+                actorUserId);
+        }
+
+        if (generatedItems is null || generatedItems.Count != request.QuestionCount)
+            return Failure(AssessmentErrorCode.PersistenceError);
 
         var marks = AssessmentBuilderGenerationPlanner.DistributeMarks(
             remainingMarks,
-            batch.Items.Select(x => x.Item.Difficulty).ToArray(),
+            generatedItems.Select(x => x.Item.Difficulty).ToArray(),
             request.MaxScorePerQuestion);
-        if (marks is null || marks.Count != batch.Items.Count)
+        if (marks is null || marks.Count != generatedItems.Count)
             return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
 
         var order = context.Questions.Count == 0 ? 1 : context.Questions.Max(x => x.Order) + 1;
-        for (var index = 0; index < batch.Items.Count; index++)
+        for (var index = 0; index < generatedItems.Count; index++)
         {
-            var generated = batch.Items[index];
+            var generated = generatedItems[index];
             generated.Item.CreatedByUserId = actorUserId;
-            generated.Item.ValidationMetadataJson = SetStatus(generated.Item.ValidationMetadataJson, AssessmentBuilderQuestionStatus.Draft);
+            generated.Item.ValidationMetadataJson = SetStatus(
+                generated.Item.ValidationMetadataJson,
+                AssessmentBuilderQuestionStatus.Draft);
+
             var question = new AssessmentQuestion
             {
                 Id = generated.Item.Id,
@@ -214,13 +264,38 @@ public sealed class AssessmentBuilderService(
                 MaxScore = Round(marks[index]),
                 Order = order++
             };
+
+            var questionMappings = generated.OutcomeIds
+                .Select(outcomeId => new QuestionLearningOutcome
+                {
+                    Id = Guid.NewGuid(),
+                    SchoolId = resolved.SchoolId,
+                    AssessmentQuestionId = question.Id,
+                    LearningOutcomeId = outcomeId
+                })
+                .ToArray();
+            var itemMappings = generated.OutcomeIds
+                .Select(outcomeId => new AssessmentItemOutcome
+                {
+                    Id = Guid.NewGuid(),
+                    SchoolId = resolved.SchoolId,
+                    AssessmentItemId = generated.Item.Id,
+                    LearningOutcomeId = outcomeId
+                })
+                .ToArray();
+
             repository.AddBundle(new AssessmentBuilderQuestionBundle(
                 question,
                 generated.Item,
-                [new QuestionLearningOutcome { Id = Guid.NewGuid(), SchoolId = resolved.SchoolId, AssessmentQuestionId = question.Id, LearningOutcomeId = generated.OutcomeLink.LearningOutcomeId }],
-                [generated.OutcomeLink]));
+                questionMappings,
+                itemMappings));
         }
-        return await SaveAsync(context, request.AssessmentRowVersion, request.AssessmentId, cancellationToken);
+
+        return await SaveAsync(
+            context,
+            request.AssessmentRowVersion,
+            request.AssessmentId,
+            cancellationToken);
     }
 
     public async Task<AssessmentCommandResult> RegenerateQuestionAsync(
@@ -236,19 +311,59 @@ public sealed class AssessmentBuilderService(
         if (context.CurriculumAdoption is null || string.IsNullOrWhiteSpace(context.CurriculumAdoption.CurriculumLevelKey))
             return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
 
-        var outcomeIds = context.QuestionOutcomeMappings
-            .Where(x => x.AssessmentQuestionId == questionId)
-            .Select(x => x.LearningOutcomeId).Distinct().ToArray();
-        if (outcomeIds.Length != 1) return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
         var difficulty = item.Difficulty switch
         {
             AssessmentItemDifficulty.Easy => AssessmentBuilderDifficulty.AtClassLevel,
             AssessmentItemDifficulty.Medium => AssessmentBuilderDifficulty.Stretch,
             _ => AssessmentBuilderDifficulty.Challenge
         };
-        var batch = TryGenerate(context, resolved.SchoolId, outcomeIds, 1, difficulty, seed, actorUserId);
-        var replacement = batch?.Items.SingleOrDefault();
-        if (replacement is null) return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+
+        ScopedGeneratedItem? replacement = null;
+        if (item.CurriculumPedagogicalLessonId.HasValue)
+        {
+            var lesson = (context.PedagogicalLessons ?? [])
+                .SingleOrDefault(x => x.Id == item.CurriculumPedagogicalLessonId.Value);
+            if (lesson is not null)
+            {
+                replacement = TryGenerateLessons(
+                    context,
+                    resolved.SchoolId,
+                    [lesson],
+                    1,
+                    difficulty,
+                    seed,
+                    actorUserId)?.SingleOrDefault();
+            }
+        }
+        else
+        {
+            var outcomeIds = context.QuestionOutcomeMappings
+                .Where(x => x.AssessmentQuestionId == questionId)
+                .Select(x => x.LearningOutcomeId)
+                .Distinct()
+                .ToArray();
+            if (outcomeIds.Length == 1)
+            {
+                var batch = TryGenerate(
+                    context,
+                    resolved.SchoolId,
+                    outcomeIds,
+                    1,
+                    difficulty,
+                    seed,
+                    actorUserId);
+                var legacyReplacement = batch?.Items.SingleOrDefault();
+                if (legacyReplacement is not null)
+                {
+                    replacement = new ScopedGeneratedItem(
+                        legacyReplacement.Item,
+                        [legacyReplacement.OutcomeLink.LearningOutcomeId]);
+                }
+            }
+        }
+
+        if (replacement is null)
+            return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
 
         question.Prompt = replacement.Item.Prompt;
         item.Prompt = replacement.Item.Prompt;
@@ -256,11 +371,16 @@ public sealed class AssessmentBuilderService(
         item.Solution = replacement.Item.Solution;
         item.ItemType = replacement.Item.ItemType;
         item.Difficulty = replacement.Item.Difficulty;
+        item.CurriculumPedagogicalLessonId = replacement.Item.CurriculumPedagogicalLessonId;
+        item.CurriculumTopicId = replacement.Item.CurriculumTopicId;
         item.GenerationMethod = replacement.Item.GenerationMethod;
         item.GenerationFamily = replacement.Item.GenerationFamily;
         item.GenerationParametersJson = replacement.Item.GenerationParametersJson;
         item.ExposureFingerprint = replacement.Item.ExposureFingerprint;
-        item.ValidationMetadataJson = SetStatus(replacement.Item.ValidationMetadataJson, AssessmentBuilderQuestionStatus.Draft);
+        item.ValidationMetadataJson = SetStatus(
+            replacement.Item.ValidationMetadataJson,
+            AssessmentBuilderQuestionStatus.Draft);
+
         return await SaveAsync(context, assessmentRowVersion, question.Id, cancellationToken);
     }
 
@@ -325,6 +445,277 @@ public sealed class AssessmentBuilderService(
             ? (null, actor.SchoolId.Value, details.Error ?? AssessmentErrorCode.AccessDenied)
             : (details.Value, actor.SchoolId.Value, null);
     }
+
+    private sealed record ScopedGeneratedItem(
+        AssessmentItem Item,
+        IReadOnlyList<Guid> OutcomeIds);
+
+    private static IReadOnlyList<CurriculumPedagogicalLesson>? ResolveScopedLessons(
+        AssessmentBuilderPersistenceContext context,
+        GenerateBuilderQuestionsRequest request)
+    {
+        var lessons = (context.PedagogicalLessons ?? [])
+            .OrderBy(x => x.SortOrder)
+            .ThenBy(x => x.UnitKey)
+            .ThenBy(x => x.Code)
+            .ToArray();
+
+        if (lessons.Length == 0)
+            return null;
+
+        IReadOnlyList<CurriculumPedagogicalLesson> selected = request.ScopeType switch
+        {
+            AssessmentGenerationScopeType.Lessons => lessons
+                .Where(x => request.LessonIds.Contains(x.Id))
+                .ToArray(),
+
+            AssessmentGenerationScopeType.Units => lessons
+                .Where(x => request.UnitKeys.Contains(x.UnitKey, StringComparer.Ordinal))
+                .ToArray(),
+
+            AssessmentGenerationScopeType.Curriculum => lessons,
+
+            _ => []
+        };
+
+        if (selected.Count == 0)
+            return null;
+
+        if (request.ScopeType == AssessmentGenerationScopeType.Lessons &&
+            selected.Count != request.LessonIds.Where(x => x != Guid.Empty).Distinct().Count())
+        {
+            return null;
+        }
+
+        if (request.ScopeType == AssessmentGenerationScopeType.Units)
+        {
+            var requestedUnits = request.UnitKeys
+                .Where(x => !string.IsNullOrWhiteSpace(x))
+                .Select(x => x.Trim())
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+            var resolvedUnits = selected
+                .Select(x => x.UnitKey)
+                .Distinct(StringComparer.Ordinal)
+                .ToHashSet(StringComparer.Ordinal);
+            if (requestedUnits.Any(x => !resolvedUnits.Contains(x)))
+                return null;
+        }
+
+        if (request.ScopeType == AssessmentGenerationScopeType.Lessons &&
+            selected.Any(x => !LessonPracticeCapabilityResolver.TryResolve(x.Code, out _)))
+        {
+            return null;
+        }
+
+        return selected
+            .Where(x => LessonPracticeCapabilityResolver.TryResolve(x.Code, out _))
+            .ToArray();
+    }
+
+    private static IReadOnlyList<CurriculumPedagogicalLesson> SelectLessonsForQuestionBudget(
+        AssessmentGenerationScopeType scopeType,
+        IReadOnlyList<CurriculumPedagogicalLesson> lessons,
+        int questionCount,
+        int seed)
+    {
+        if (lessons.Count == 0 || questionCount <= 0)
+            return [];
+
+        if (scopeType == AssessmentGenerationScopeType.Lessons)
+            return questionCount < lessons.Count ? [] : lessons;
+
+        if (lessons.Count <= questionCount)
+            return lessons;
+
+        var groups = lessons
+            .GroupBy(x => x.UnitKey, StringComparer.Ordinal)
+            .OrderBy(x => x.Min(y => y.SortOrder))
+            .ThenBy(x => x.Key, StringComparer.Ordinal)
+            .Select(group => new Queue<CurriculumPedagogicalLesson>(
+                group
+                    .OrderBy(x => x.SortOrder)
+                    .ThenBy(x => x.Code)))
+            .ToArray();
+
+        var selected = new List<CurriculumPedagogicalLesson>(questionCount);
+        var offset = groups.Length == 0 ? 0 : Math.Abs(seed == int.MinValue ? 0 : seed) % groups.Length;
+        while (selected.Count < questionCount && groups.Any(x => x.Count > 0))
+        {
+            for (var step = 0; step < groups.Length && selected.Count < questionCount; step++)
+            {
+                var group = groups[(offset + step) % groups.Length];
+                if (group.Count > 0)
+                    selected.Add(group.Dequeue());
+            }
+        }
+
+        return selected;
+    }
+
+    private static Guid[] ResolveLessonOutcomeIds(
+        AssessmentBuilderPersistenceContext context,
+        CurriculumPedagogicalLesson lesson)
+    {
+        var officialNodeIds = (context.PedagogicalLessonOutcomes ?? [])
+            .Where(x => x.PedagogicalLessonId == lesson.Id)
+            .Select(x => x.OutcomeNodeId)
+            .Distinct()
+            .ToHashSet();
+
+        if (officialNodeIds.Count == 0)
+            return [];
+
+        return context.LearningOutcomes
+            .Where(x =>
+                x.OfficialContentNodeId.HasValue &&
+                officialNodeIds.Contains(x.OfficialContentNodeId.Value))
+            .Select(x => x.Id)
+            .Distinct()
+            .OrderBy(x => x)
+            .ToArray();
+    }
+
+    private static IReadOnlyList<ScopedGeneratedItem>? TryGenerateLessons(
+        AssessmentBuilderPersistenceContext context,
+        Guid schoolId,
+        IReadOnlyList<CurriculumPedagogicalLesson> lessons,
+        int count,
+        AssessmentBuilderDifficulty difficulty,
+        int seed,
+        Guid createdByUserId)
+    {
+        if (context.CurriculumAdoption is null ||
+            string.IsNullOrWhiteSpace(context.CurriculumAdoption.CurriculumLevelKey) ||
+            lessons.Count == 0 ||
+            count < lessons.Count)
+        {
+            return null;
+        }
+
+        var excluded = context.Items
+            .Select(x => x.ExposureFingerprint)
+            .Where(x => !string.IsNullOrWhiteSpace(x))
+            .ToHashSet(StringComparer.Ordinal);
+        var generated = new List<ScopedGeneratedItem>(count);
+        var baseCount = count / lessons.Count;
+        var remainder = count % lessons.Count;
+        var engine = new ExactSkillContractQuestionEngine();
+
+        try
+        {
+            for (var lessonIndex = 0; lessonIndex < lessons.Count; lessonIndex++)
+            {
+                var lesson = lessons[lessonIndex];
+                if (!LessonPracticeCapabilityResolver.TryResolve(lesson.Code, out var contract) ||
+                    contract is null)
+                {
+                    return null;
+                }
+
+                var allocation = baseCount + (lessonIndex < remainder ? 1 : 0);
+                if (allocation <= 0)
+                    return null;
+
+                var questions = engine.Generate(
+                    "assessment-lesson",
+                    lesson.Code,
+                    contract.AllowedQuestionFamilies,
+                    ResolveExactDifficulty(difficulty),
+                    allocation,
+                    unchecked(seed + ((lessonIndex + 1) * 104729)),
+                    excluded);
+
+                var outcomeIds = ResolveLessonOutcomeIds(context, lesson);
+                var topicId = ResolveSingleTopic(context, outcomeIds);
+
+                foreach (var generatedQuestion in questions)
+                {
+                    if (!ExactSkillContractQuestionEngine.Verify(
+                            generatedQuestion.Family,
+                            generatedQuestion.Parameters,
+                            generatedQuestion.CorrectAnswer))
+                    {
+                        return null;
+                    }
+
+                    var item = new AssessmentItem
+                    {
+                        Id = Guid.NewGuid(),
+                        SchoolId = schoolId,
+                        CurriculumAdoptionId = context.CurriculumAdoption.Id,
+                        CurriculumPedagogicalLessonId = lesson.Id,
+                        CurriculumTopicId = topicId,
+                        Source = AssessmentItemSource.SystemGenerated,
+                        ItemType = generatedQuestion.ItemType,
+                        Difficulty = ResolveItemDifficulty(difficulty),
+                        Prompt = generatedQuestion.Prompt,
+                        CorrectAnswer = generatedQuestion.CorrectAnswer,
+                        Solution = generatedQuestion.Solution,
+                        CreatedByUserId = createdByUserId,
+                        GenerationMethod = "lesson-skill-contract-assessment-solver-verified-v1",
+                        GenerationFamily = generatedQuestion.Family,
+                        GenerationParametersJson = JsonSerializer.Serialize(new
+                        {
+                            lessonId = lesson.Id,
+                            lessonCode = lesson.Code,
+                            skillId = contract.SkillId,
+                            skillIds = contract.SkillIds,
+                            questionFamily = generatedQuestion.Family,
+                            parameters = generatedQuestion.Parameters
+                        }),
+                        ExposureFingerprint = generatedQuestion.ExposureFingerprint,
+                        ValidationMetadataJson = JsonSerializer.Serialize(new
+                        {
+                            alignment = "pedagogical-lesson-skill-contract-verified",
+                            lessonId = lesson.Id,
+                            lessonCode = lesson.Code,
+                            unitKey = lesson.UnitKey,
+                            skillContract = contract.SkillId,
+                            officialOutcomeCount = outcomeIds.Length,
+                            supportingLesson = outcomeIds.Length == 0,
+                            solverVerified = true,
+                            broadFallbackUsed = false,
+                            teacherReviewRequired = true,
+                            workflow = "Select-Generate-Review-Approve-Publish"
+                        }),
+                        CreatedAtUtc = DateTime.UtcNow,
+                        RowVersion = []
+                    };
+
+                    if (!excluded.Add(item.ExposureFingerprint))
+                        return null;
+
+                    generated.Add(new ScopedGeneratedItem(item, outcomeIds));
+                }
+            }
+        }
+        catch (InvalidOperationException)
+        {
+            return null;
+        }
+
+        return generated.Count == count ? generated : null;
+    }
+
+    private static ExactSkillQuestionDifficulty ResolveExactDifficulty(
+        AssessmentBuilderDifficulty difficulty) =>
+        difficulty switch
+        {
+            AssessmentBuilderDifficulty.Stretch => ExactSkillQuestionDifficulty.Stretch,
+            AssessmentBuilderDifficulty.Challenge => ExactSkillQuestionDifficulty.Challenge,
+            _ => ExactSkillQuestionDifficulty.Standard
+        };
+
+    private static AssessmentItemDifficulty ResolveItemDifficulty(
+        AssessmentBuilderDifficulty difficulty) =>
+        difficulty switch
+        {
+            AssessmentBuilderDifficulty.AtClassLevel => AssessmentItemDifficulty.Easy,
+            AssessmentBuilderDifficulty.Stretch => AssessmentItemDifficulty.Medium,
+            AssessmentBuilderDifficulty.Challenge => AssessmentItemDifficulty.Challenging,
+            _ => AssessmentItemDifficulty.Medium
+        };
 
     private MathematicsGenerationBatch? TryGenerate(
         AssessmentBuilderPersistenceContext context,
@@ -502,39 +893,75 @@ public sealed class AssessmentBuilderService(
             Stage19AssessmentSkillContracts.GenerationMethod);
     }
 
-    private static AssessmentBuilderWorkspace BuildWorkspace(AssessmentDetails details, AssessmentBuilderPersistenceContext context)
+    private static AssessmentBuilderWorkspace BuildWorkspace(
+        AssessmentDetails details,
+        AssessmentBuilderPersistenceContext context)
     {
         var itemById = context.Items.ToDictionary(x => x.Id);
-        var questions = context.Questions.OrderBy(x => x.Order).Select(question =>
-        {
-            itemById.TryGetValue(question.Id, out var item);
-            return new AssessmentBuilderQuestion(
-                question.Id,
-                question.Order,
-                question.Prompt,
-                question.MaxScore,
-                item?.Source,
-                item?.Difficulty,
-                item is null ? AssessmentBuilderQuestionStatus.Legacy : ReadStatus(item.ValidationMetadataJson),
-                item?.CorrectAnswer ?? string.Empty,
-                item?.Solution ?? string.Empty,
-                context.QuestionOutcomeMappings.Where(x => x.AssessmentQuestionId == question.Id).Select(x => x.LearningOutcomeId).Distinct().OrderBy(x => x).ToArray());
-        }).ToArray();
+        var lessonsById = (context.PedagogicalLessons ?? [])
+            .ToDictionary(x => x.Id);
+
+        var questions = context.Questions
+            .OrderBy(x => x.Order)
+            .Select(question =>
+            {
+                itemById.TryGetValue(question.Id, out var item);
+                CurriculumPedagogicalLesson? lesson = null;
+                if (item?.CurriculumPedagogicalLessonId is Guid lessonId)
+                    lessonsById.TryGetValue(lessonId, out lesson);
+
+                return new AssessmentBuilderQuestion(
+                    question.Id,
+                    question.Order,
+                    question.Prompt,
+                    question.MaxScore,
+                    item?.Source,
+                    item?.Difficulty,
+                    item is null
+                        ? AssessmentBuilderQuestionStatus.Legacy
+                        : ReadStatus(item.ValidationMetadataJson),
+                    item?.CorrectAnswer ?? string.Empty,
+                    item?.Solution ?? string.Empty,
+                    context.QuestionOutcomeMappings
+                        .Where(x => x.AssessmentQuestionId == question.Id)
+                        .Select(x => x.LearningOutcomeId)
+                        .Distinct()
+                        .OrderBy(x => x)
+                        .ToArray())
+                {
+                    LessonId = item?.CurriculumPedagogicalLessonId,
+                    LessonTitle = lesson?.Title
+                };
+            })
+            .ToArray();
+
         var current = questions.Sum(x => x.MaxScore);
         var mappedIds = questions.SelectMany(x => x.OutcomeIds).Distinct().ToArray();
-        var masteryRows = context.ClassOutcomeSummaries.Where(x => mappedIds.Contains(x.LearningOutcomeId)).ToArray();
-        decimal? mastery = masteryRows.Length == 0 ? null : Round(masteryRows.Average(x => x.AverageMasteryPercentage));
-        var allRich = questions.Length > 0 && questions.All(x => x.Status != AssessmentBuilderQuestionStatus.Legacy);
-        var allApproved = allRich && questions.All(x => x.Status == AssessmentBuilderQuestionStatus.Approved);
-        var allMapped = questions.Length > 0 && questions.All(x => x.OutcomeIds.Count > 0);
+        var masteryRows = context.ClassOutcomeSummaries
+            .Where(x => mappedIds.Contains(x.LearningOutcomeId))
+            .ToArray();
+        decimal? mastery = masteryRows.Length == 0
+            ? null
+            : Round(masteryRows.Average(x => x.AverageMasteryPercentage));
+
+        var allRich = questions.Length > 0 &&
+            questions.All(x => x.Status != AssessmentBuilderQuestionStatus.Legacy);
+        var allApproved = allRich &&
+            questions.All(x => x.Status == AssessmentBuilderQuestionStatus.Approved);
+        var allAligned = questions.Length > 0 &&
+            questions.All(x => x.OutcomeIds.Count > 0 || x.LessonId.HasValue);
         var marksMatch = current == details.Assessment.MaxScore;
-        var ready = details.Assessment.Status == AssessmentStatus.Draft && allApproved && allMapped && marksMatch;
+        var ready = details.Assessment.Status == AssessmentStatus.Draft &&
+            allApproved &&
+            allAligned &&
+            marksMatch;
         var message = ready ? "ReadyToPublish"
             : !allRich ? "BuilderLegacyQuestionsNeedReplacement"
             : !allApproved ? "BuilderQuestionsNeedApproval"
-            : !allMapped ? "BuilderQuestionsNeedOutcomes"
+            : !allAligned ? "BuilderQuestionsNeedOutcomes"
             : !marksMatch ? "BuilderMarksMustMatch"
             : "BuilderNotDraft";
+
         var eligibleOutcomeIds = details.EligibleOutcomes
             .Select(x => x.Id)
             .ToHashSet();
@@ -547,9 +974,42 @@ public sealed class AssessmentBuilderService(
             .Distinct()
             .OrderBy(x => x)
             .ToArray();
+
+        var lessonOptions = (context.PedagogicalLessons ?? [])
+            .OrderBy(x => x.SortOrder)
+            .ThenBy(x => x.Code)
+            .Select(lesson =>
+            {
+                var outcomeIds = ResolveLessonOutcomeIds(context, lesson);
+                return new AssessmentBuilderLessonOption(
+                    lesson.Id,
+                    lesson.Code,
+                    lesson.UnitKey,
+                    lesson.UnitTitle,
+                    lesson.Title,
+                    outcomeIds.Length > 0,
+                    LessonPracticeCapabilityResolver.TryResolve(lesson.Code, out _),
+                    outcomeIds);
+            })
+            .ToArray();
+
+        var unitOptions = lessonOptions
+            .GroupBy(x => new { x.UnitKey, x.UnitTitle })
+            .OrderBy(x => x.Min(y =>
+                (context.PedagogicalLessons ?? [])
+                    .FirstOrDefault(z => z.Id == y.Id)?.SortOrder ?? int.MaxValue))
+            .ThenBy(x => x.Key.UnitKey, StringComparer.Ordinal)
+            .Select(group => new AssessmentBuilderUnitOption(
+                group.Key.UnitKey,
+                group.Key.UnitTitle,
+                group.Count(),
+                group.Count(x => x.AiSupported)))
+            .ToArray();
+
         var canGenerate = context.CurriculumAdoption is not null &&
             !string.IsNullOrWhiteSpace(context.CurriculumAdoption.CurriculumLevelKey) &&
-            aiSupportedOutcomeIds.Length > 0;
+            (lessonOptions.Any(x => x.AiSupported) || aiSupportedOutcomeIds.Length > 0);
+
         return new AssessmentBuilderWorkspace(
             details,
             questions,
@@ -560,7 +1020,9 @@ public sealed class AssessmentBuilderService(
             ready,
             message)
         {
-            AiSupportedOutcomeIds = aiSupportedOutcomeIds
+            AiSupportedOutcomeIds = aiSupportedOutcomeIds,
+            Lessons = lessonOptions,
+            Units = unitOptions
         };
     }
 

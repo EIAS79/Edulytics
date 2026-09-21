@@ -15,6 +15,14 @@
     var deliveryClass = assessment.DeliveryMode == AssessmentDeliveryMode.Online
         ? "is-online"
         : "is-offline";
+    var sourceClass = Model.Details.ClassGroups.FirstOrDefault(x => x.Id == assessment.ClassGroupId);
+    var reusableClasses = Model.Details.ClassGroups
+        .Where(x =>
+            x.Id != assessment.ClassGroupId &&
+            x.AcademicYearId == assessment.AcademicYearId &&
+            (sourceClass is null || x.GradeLevelId == sourceClass.GradeLevelId))
+        .OrderBy(x => x.Name)
+        .ToArray();
 }
 <section class="assessment-page @(canManage ? "" : "is-readonly")">
     <header class="assessment-header">
@@ -69,6 +77,42 @@
     else if (assessment.Status == AssessmentStatus.Open)
     {
         <div class="assessment-info">@A["OpenHelp"]</div>
+    }
+
+    @if (canManage && Model.Details.Questions.Count > 0 && reusableClasses.Length > 0)
+    {
+        <section class="assessment-card">
+            <h2>Reuse this assessment for another class</h2>
+            <p>
+                Creates a separate draft with the same question content and lesson/outcome provenance.
+                The target class keeps its own roster, delivery status, and results.
+            </p>
+            <form asp-action="Reuse"
+                  asp-route-id="@assessment.Id"
+                  method="post"
+                  class="assessment-form">
+                @Html.AntiForgeryToken()
+                <label for="reuse-class">Target class</label>
+                <select id="reuse-class" name="targetClassGroupId" required>
+                    <option value="">Select class</option>
+                    @foreach (var item in reusableClasses)
+                    {
+                        <option value="@item.Id">@item.Name (@item.Code)</option>
+                    }
+                </select>
+
+                <label for="reuse-title">Assessment title</label>
+                <input id="reuse-title"
+                       name="title"
+                       maxlength="200"
+                       value="@assessment.Title"
+                       required />
+
+                <button class="school-button school-button-primary" type="submit">
+                    Create class draft
+                </button>
+            </form>
+        </section>
     }
 
     <section class="assessment-question-list">

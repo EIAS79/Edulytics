@@ -10,6 +10,15 @@ public interface IAnalyticsService
             Guid? subjectId = null,
             CancellationToken cancellationToken = default);
 
+    Task<AnalyticsQueryResult<AnalyticsStudentReport>>
+        GetStudentReportAsync(
+            Guid actorUserId,
+            Guid studentProfileId,
+            Guid academicYearId,
+            Guid classGroupId,
+            Guid subjectId,
+            CancellationToken cancellationToken = default);
+
     Task<AnalyticsCommandResult> RecalculateAsync(
         Guid actorUserId,
         CancellationToken cancellationToken = default);

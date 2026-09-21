@@ -1507,6 +1507,60 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "fractions.compare.unlike.select_greater",
+      "version": 1,
+      "skillId": "fractions.compare.unlike_denominators",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "side_label",
+      "verificationPolicy": "exact-skill-contract-independent-recompute",
+      "representations": [
+        "symbolic",
+        "comparative_language"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "fractions.compare.unlike.true_false",
+      "version": 1,
+      "skillId": "fractions.compare.unlike_denominators",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "boolean",
+      "verificationPolicy": "exact-skill-contract-independent-recompute",
+      "representations": [
+        "symbolic",
+        "reasoning_statement"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "fractions.compare.unlike.order_three",
+      "version": 1,
+      "skillId": "fractions.compare.unlike_denominators",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "ordered_labels",
+      "verificationPolicy": "exact-skill-contract-independent-recompute",
+      "representations": [
+        "symbolic",
+        "multi_item_ordering"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "fractions.equivalent.missing_value",
       "version": 1,
       "skillId": "fractions.equivalent",

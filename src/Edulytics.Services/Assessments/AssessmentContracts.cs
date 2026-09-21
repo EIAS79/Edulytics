@@ -128,6 +128,11 @@ public sealed record CreateAssessmentRequest(
     DateOnly AssessmentDate,
     decimal MaxScore);
 
+public sealed record ReuseAssessmentRequest(
+    Guid SourceAssessmentId,
+    Guid TargetClassGroupId,
+    string Title);
+
 public sealed record UpdateAssessmentRequest(
     Guid Id,
     string Title,
@@ -168,3 +173,13 @@ public sealed record SaveStudentAssessmentResultRequest(
     IReadOnlyList<Guid> QuestionIds,
     IReadOnlyList<decimal> Scores,
     byte[]? ResultRowVersion);
+
+public sealed record ImportAssessmentResultRow(
+    Guid StudentProfileId,
+    IReadOnlyList<decimal> Scores,
+    byte[]? ResultRowVersion);
+
+public sealed record ImportAssessmentResultsRequest(
+    Guid AssessmentId,
+    IReadOnlyList<Guid> QuestionIds,
+    IReadOnlyList<ImportAssessmentResultRow> Rows);

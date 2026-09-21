@@ -300,7 +300,10 @@ public sealed class MathematicsQuestionGenerationEngine
                 "Unsupported Mathematics generator family.")
         };
 
-        var prompt = FormatPrompt(raw.Prompt, raw.Answer, itemType, key);
+        var prompt = FormatPrompt(raw.Prompt, itemType);
+        var choices = itemType == AssessmentItemType.MultipleChoice
+            ? BuildMultipleChoiceChoices(raw.Answer, key)
+            : Array.Empty<string>();
         var fingerprint = Fingerprint(
             blueprint,
             outcomeId,
@@ -342,7 +345,8 @@ public sealed class MathematicsQuestionGenerationEngine
                 outcomeProfileValidated = true,
                 difficultyValidated = true,
                 answerValidated = true,
-                solutionValidated = true
+                solutionValidated = true,
+                choices
             }),
             CreatedAtUtc = DateTime.UtcNow
         };
@@ -651,20 +655,18 @@ public sealed class MathematicsQuestionGenerationEngine
 
     private static string FormatPrompt(
         string prompt,
-        string answer,
-        AssessmentItemType itemType,
-        string key)
+        AssessmentItemType itemType)
     {
         return itemType switch
         {
             AssessmentItemType.Numeric => prompt,
             AssessmentItemType.ShortAnswer => $"{prompt} Give your answer as a number.",
-            AssessmentItemType.MultipleChoice => BuildMultipleChoicePrompt(prompt, answer, key),
+            AssessmentItemType.MultipleChoice => prompt,
             _ => throw new InvalidOperationException("Unsupported assessment item type.")
         };
     }
 
-    private static string BuildMultipleChoicePrompt(string prompt, string answer, string key)
+    private static string[] BuildMultipleChoiceChoices(string answer, string key)
     {
         if (!int.TryParse(answer, out var correct))
         {
@@ -676,22 +678,21 @@ public sealed class MathematicsQuestionGenerationEngine
         var choices = new HashSet<int> { correct };
         for (var i = 1; choices.Count < 4; i++)
         {
-            choices.Add(Math.Max(0, correct + delta * i));
+            var higher = correct + delta * i;
             if (choices.Count < 4)
-            {
-                choices.Add(Math.Max(0, correct - delta * i));
-            }
+                choices.Add(higher);
+
+            var lower = Math.Max(0, correct - delta * i);
+            if (choices.Count < 4)
+                choices.Add(lower);
         }
 
-        var ordered = choices
+        // The set is capped at four before shuffling so the correct answer
+        // can never be discarded by a later Take(4).
+        return choices
             .OrderBy(x => StableInt($"{key}|choice|{x}", int.MaxValue))
-            .Take(4)
+            .Select(x => x.ToString())
             .ToArray();
-        var labels = new[] { "A", "B", "C", "D" };
-        var options = string.Join(
-            "  ",
-            ordered.Select((x, i) => $"{labels[i]}) {x}"));
-        return $"{prompt} {options}";
     }
 
     private static void ValidateCandidate(

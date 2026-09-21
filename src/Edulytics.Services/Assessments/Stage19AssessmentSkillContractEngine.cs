@@ -188,8 +188,8 @@ public sealed class Stage19AssessmentSkillContractEngine
         AssessmentBuilderDifficulty difficulty) =>
         difficulty switch
         {
-            AssessmentBuilderDifficulty.AtClassLevel => AssessmentItemDifficulty.Medium,
-            AssessmentBuilderDifficulty.Stretch => AssessmentItemDifficulty.Challenging,
+            AssessmentBuilderDifficulty.AtClassLevel => AssessmentItemDifficulty.Easy,
+            AssessmentBuilderDifficulty.Stretch => AssessmentItemDifficulty.Medium,
             AssessmentBuilderDifficulty.Challenge => AssessmentItemDifficulty.Challenging,
             _ => AssessmentItemDifficulty.Medium
         };

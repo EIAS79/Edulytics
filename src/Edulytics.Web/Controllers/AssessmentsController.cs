@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using Edulytics.Core.Constants;
 using Edulytics.Services.Assessments;
+using Edulytics.Web.Assessments;
 using Edulytics.Web.ViewModels.Assessments;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -391,6 +392,37 @@ public sealed class AssessmentsController : Controller
         return RedirectToAction(nameof(Details), new { id });
     }
 
+    [Authorize(Roles = RoleNames.Teacher)]
+    [HttpPost("{id:guid}/reuse")]
+    [ValidateAntiForgeryToken]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public async Task<IActionResult> Reuse(
+        Guid id,
+        Guid targetClassGroupId,
+        string title,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+
+        var result = await _service.ReuseAssessmentAsync(
+            actorId,
+            new ReuseAssessmentRequest(
+                id,
+                targetClassGroupId,
+                title),
+            cancellationToken);
+
+        if (result.Succeeded && result.EntityId.HasValue)
+        {
+            TempData["Success"] = "Assessment content was reused as a new draft for the selected class.";
+            return RedirectToAction(nameof(Details), new { id = result.EntityId.Value });
+        }
+
+        TempData["Error"] = _text[ErrorKey(result.Error)].Value;
+        return RedirectToAction(nameof(Details), new { id });
+    }
+
     [HttpGet("{id:guid}/results")]
     public async Task<IActionResult> Results(Guid id, CancellationToken cancellationToken)
     {
@@ -410,6 +442,124 @@ public sealed class AssessmentsController : Controller
         }
 
         return View(new AssessmentResultsViewModel(result.Value));
+    }
+
+    [HttpGet("{id:guid}/results-workbook.xlsx")]
+    public async Task<IActionResult> DownloadResultsWorkbook(
+        Guid id,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+
+        var result = await _service.GetResultsAsync(actorId, id, cancellationToken);
+        if (result.Value is null)
+            return HandleQueryError(result.Error);
+
+        var bytes = AssessmentResultsWorkbook.Create(result.Value);
+        return File(
+            bytes,
+            AssessmentResultsWorkbook.ContentType,
+            $"assessment-{id:N}-results.xlsx");
+    }
+
+    [Authorize(Roles = RoleNames.Teacher)]
+    [HttpPost("{id:guid}/results-workbook")]
+    [ValidateAntiForgeryToken]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public async Task<IActionResult> ImportResultsWorkbook(
+        Guid id,
+        IFormFile? workbook,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+
+        if (workbook is null || workbook.Length <= 0 || workbook.Length > 5_000_000)
+        {
+            TempData["Error"] = "Select a valid Edulytics assessment results workbook (maximum 5 MB).";
+            return RedirectToAction(nameof(Results), new { id });
+        }
+
+        var current = await _service.GetResultsAsync(actorId, id, cancellationToken);
+        if (current.Value is null)
+            return HandleQueryError(current.Error);
+
+        AssessmentResultsWorkbookImport imported;
+        try
+        {
+            await using var stream = workbook.OpenReadStream();
+            imported = AssessmentResultsWorkbook.Parse(stream, id);
+        }
+        catch (InvalidDataException)
+        {
+            TempData["Error"] = "The workbook is invalid, stale, or does not belong to this assessment.";
+            return RedirectToAction(nameof(Results), new { id });
+        }
+
+        var expectedQuestionIds = current.Value.Questions
+            .OrderBy(x => x.Order)
+            .Select(x => x.Id)
+            .ToArray();
+        if (!imported.QuestionIds.SequenceEqual(expectedQuestionIds))
+        {
+            TempData["Error"] = "The workbook question layout is stale. Download a fresh results workbook and try again.";
+            return RedirectToAction(nameof(Results), new { id });
+        }
+
+        var studentById = current.Value.Students.ToDictionary(x => x.StudentProfileId);
+        for (var rowIndex = 0; rowIndex < imported.Rows.Count; rowIndex++)
+        {
+            var row = imported.Rows[rowIndex];
+            if (!studentById.TryGetValue(row.StudentProfileId, out var student) ||
+                row.Scores.Count != current.Value.Questions.Count)
+            {
+                TempData["Error"] = "The workbook contains a student or score layout that is not part of this assessment class.";
+                return RedirectToAction(nameof(Results), new { id });
+            }
+
+            if (student.ResultId.HasValue &&
+                (row.ResultRowVersion is null || row.ResultRowVersion.Length == 0))
+            {
+                TempData["Error"] = "The workbook is stale for an existing student result. Download a fresh workbook.";
+                return RedirectToAction(nameof(Results), new { id });
+            }
+
+            for (var questionIndex = 0; questionIndex < current.Value.Questions.Count; questionIndex++)
+            {
+                var score = row.Scores[questionIndex];
+                var question = current.Value.Questions[questionIndex];
+                if (score < 0m || score > question.MaxScore)
+                {
+                    TempData["Error"] =
+                        $"A score is outside the allowed range for question {question.Order}.";
+                    return RedirectToAction(nameof(Results), new { id });
+                }
+            }
+        }
+
+        var saved = await _service.ImportStudentResultsAsync(
+            actorId,
+            new ImportAssessmentResultsRequest(
+                id,
+                imported.QuestionIds,
+                imported.Rows
+                    .Select(row => new ImportAssessmentResultRow(
+                        row.StudentProfileId,
+                        row.Scores,
+                        row.ResultRowVersion))
+                    .ToArray()),
+            cancellationToken);
+
+        if (!saved.Succeeded)
+        {
+            SetFeedback(saved, "SuccessResultSaved");
+            return RedirectToAction(nameof(Results), new { id });
+        }
+
+        TempData["Success"] = imported.Rows.Count == 0
+            ? "No completed score rows were found in the workbook."
+            : $"Imported results for {imported.Rows.Count} student(s).";
+        return RedirectToAction(nameof(Results), new { id });
     }
 
     private bool TryActor(out Guid id) =>

@@ -1,3 +1,4 @@
+@using Edulytics.Core.Enums
 @model Edulytics.Services.Assessments.StudentAssessmentAttempt
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @{
@@ -21,8 +22,47 @@
             </div>
             <input type="hidden" name="questionIds" value="@question.Id" />
             <label for="answer-@question.Id">@S["YourAnswer"]</label>
-            <textarea id="answer-@question.Id" name="responses" maxlength="4000" rows="4"></textarea>
+            @if (question.ItemType == AssessmentItemType.MultipleChoice && question.Choices.Count > 0)
+            {
+                <input id="answer-@question.Id" type="hidden" name="responses" value="" data-choice-response="@question.Id" />
+                <div class="student-assessment-choices" role="radiogroup" aria-labelledby="answer-label-@question.Id">
+                    @foreach (var choice in question.Choices)
+                    {
+                        <label class="student-assessment-choice">
+                            <input type="radio"
+                                   name="choice-@question.Id"
+                                   value="@choice"
+                                   data-choice-for="@question.Id" />
+                            <span>@choice</span>
+                        </label>
+                    }
+                </div>
+            }
+            else if (question.ItemType == AssessmentItemType.Numeric)
+            {
+                <input id="answer-@question.Id"
+                       name="responses"
+                       type="text"
+                       inputmode="decimal"
+                       maxlength="200"
+                       autocomplete="off" />
+            }
+            else
+            {
+                <textarea id="answer-@question.Id" name="responses" maxlength="4000" rows="4"></textarea>
+            }
         </article>
     }
     <button class="student-button student-button-primary" type="submit">@S["SubmitAssessment"]</button>
 </form>
+
+<script>
+    (() => {
+        document.querySelectorAll('[data-choice-for]').forEach(input => {
+            input.addEventListener('change', () => {
+                const hidden = document.querySelector('[data-choice-response="' + input.dataset.choiceFor + '"]');
+                if (hidden) hidden.value = input.value;
+            });
+        });
+    })();
+</script>

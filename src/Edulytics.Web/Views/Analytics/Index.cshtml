@@ -5,6 +5,18 @@
 @{
     ViewData["Title"] = A["AnalyticsTitle"].Value;
     var d = Model.Dashboard;
+
+    // Canonicalize route values from authorized option sets instead of
+    // reflecting raw query-string filter values back into generated HTML.
+    Guid? reportAcademicYearId = d.SelectedAcademicYearId.HasValue
+        ? d.AcademicYears.FirstOrDefault(x => x.Id == d.SelectedAcademicYearId.Value)?.Id
+        : null;
+    Guid? reportClassGroupId = d.SelectedClassGroupId.HasValue
+        ? d.ClassGroups.FirstOrDefault(x => x.Id == d.SelectedClassGroupId.Value)?.Id
+        : null;
+    Guid? reportSubjectId = d.SelectedSubjectId.HasValue
+        ? d.Subjects.FirstOrDefault(x => x.Id == d.SelectedSubjectId.Value)?.Id
+        : null;
 }
 
 <section class="analytics-page" data-analytics-live="true">
@@ -170,6 +182,20 @@
             </button>
         </div>
     </form>
+
+    @if (d.HasData)
+    {
+        <div class="assessment-actions analytics-export-actions">
+            <a class="school-button"
+               asp-controller="Analytics"
+               asp-action="ClassReportPdf"
+               asp-route-academicYearId="@reportAcademicYearId"
+               asp-route-classGroupId="@reportClassGroupId"
+               asp-route-subjectId="@reportSubjectId">
+                Download class analytics PDF
+            </a>
+        </div>
+    }
 
     @if (!d.HasData)
     {

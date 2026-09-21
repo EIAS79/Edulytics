@@ -1,5 +1,6 @@
 using System.Data;
 using Edulytics.Core.Analytics;
+using Edulytics.Core.Entities;
 using Edulytics.Core.Interfaces;
 using Edulytics.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
@@ -96,8 +97,23 @@ public sealed class AnalyticsRepository : IAnalyticsRepository
 
     public async Task<AnalyticsProjectionSnapshot> GetProjectionSnapshotAsync(
         Guid schoolId,
-        CancellationToken cancellationToken = default) =>
-        new(
+        CancellationToken cancellationToken = default)
+    {
+        var items = await _db.AssessmentItems.AsNoTracking()
+            .Where(x => x.SchoolId == schoolId)
+            .ToListAsync(cancellationToken);
+        var lessonIds = items
+            .Where(x => x.CurriculumPedagogicalLessonId.HasValue)
+            .Select(x => x.CurriculumPedagogicalLessonId!.Value)
+            .Distinct()
+            .ToArray();
+        var lessons = lessonIds.Length == 0
+            ? Array.Empty<CurriculumPedagogicalLesson>()
+            : await _db.CurriculumPedagogicalLessons.AsNoTracking()
+                .Where(x => lessonIds.Contains(x.Id))
+                .ToArrayAsync(cancellationToken);
+
+        return new AnalyticsProjectionSnapshot(
             await _db.AcademicYears.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
             await _db.ClassGroups.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
             await _db.Subjects.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
@@ -109,7 +125,27 @@ public sealed class AnalyticsRepository : IAnalyticsRepository
             await _db.ClassOutcomeSummaries.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
             await _db.ClassTopicSummaries.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
             await _db.ClassAssessmentTrends.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
-            await _db.SchoolAnalyticsSnapshots.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken));
+            await _db.SchoolAnalyticsSnapshots.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken))
+        {
+            StudentEnrollments = await _db.StudentEnrollments.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken),
+            Assessments = await _db.Assessments.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken),
+            AssessmentQuestions = await _db.AssessmentQuestions.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken),
+            AssessmentItems = items,
+            AssessmentResults = await _db.AssessmentResults.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken),
+            StudentAnswers = await _db.StudentAnswers.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken),
+            PedagogicalLessons = lessons
+        };
+    }
 
     public async Task<DateTime?> GetLatestSourceUpdateAsync(
         Guid schoolId,

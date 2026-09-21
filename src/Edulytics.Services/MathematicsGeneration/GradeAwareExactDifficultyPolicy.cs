@@ -82,7 +82,7 @@ public static partial class GradeAwareExactDifficultyPolicy
             (MathematicsCurriculumDifficultyStage.Primary, AssessmentItemDifficulty.Medium) =>
                 ExactSkillQuestionDifficulty.Stretch,
             (MathematicsCurriculumDifficultyStage.Primary, AssessmentItemDifficulty.Challenging) =>
-                ExactSkillQuestionDifficulty.Stretch,
+                ExactSkillQuestionDifficulty.Challenge,
 
             (_, AssessmentItemDifficulty.Medium) =>
                 ExactSkillQuestionDifficulty.Stretch,

@@ -3,6 +3,30 @@ using Edulytics.Core.Enums;
 
 namespace Edulytics.Services.Assessments;
 
+public enum AssessmentGenerationScopeType
+{
+    Outcomes = 0,
+    Lessons = 1,
+    Units = 2,
+    Curriculum = 3
+}
+
+public sealed record AssessmentBuilderLessonOption(
+    Guid Id,
+    string Code,
+    string UnitKey,
+    string UnitTitle,
+    string Title,
+    bool HasOfficialOutcome,
+    bool AiSupported,
+    IReadOnlyList<Guid> OutcomeIds);
+
+public sealed record AssessmentBuilderUnitOption(
+    string UnitKey,
+    string UnitTitle,
+    int LessonCount,
+    int AiSupportedLessonCount);
+
 public sealed record AssessmentBuilderQuestion(
     Guid Id,
     int Order,
@@ -13,7 +37,11 @@ public sealed record AssessmentBuilderQuestion(
     AssessmentBuilderQuestionStatus Status,
     string CorrectAnswer,
     string Solution,
-    IReadOnlyList<Guid> OutcomeIds);
+    IReadOnlyList<Guid> OutcomeIds)
+{
+    public Guid? LessonId { get; init; }
+    public string? LessonTitle { get; init; }
+}
 
 public sealed record AssessmentTargetStudentOption(
     Guid Id,
@@ -30,7 +58,11 @@ public sealed record AssessmentBuilderWorkspace(
     bool ReadyToPublish,
     string ReadinessMessage,
     IReadOnlyList<AssessmentTargetStudentOption>? TargetStudents = null,
-    IReadOnlyList<Guid>? AiSupportedOutcomeIds = null);
+    IReadOnlyList<Guid>? AiSupportedOutcomeIds = null)
+{
+    public IReadOnlyList<AssessmentBuilderLessonOption> Lessons { get; init; } = [];
+    public IReadOnlyList<AssessmentBuilderUnitOption> Units { get; init; } = [];
+}
 
 public sealed record UpdateAssessmentDeliverySettingsRequest(
     Guid AssessmentId,
@@ -70,7 +102,12 @@ public sealed record GenerateBuilderQuestionsRequest(
     AssessmentBuilderDifficulty Difficulty,
     IReadOnlyList<Guid> OutcomeIds,
     byte[] AssessmentRowVersion,
-    int Seed = 0);
+    int Seed = 0)
+{
+    public AssessmentGenerationScopeType ScopeType { get; init; } = AssessmentGenerationScopeType.Outcomes;
+    public IReadOnlyList<Guid> LessonIds { get; init; } = [];
+    public IReadOnlyList<string> UnitKeys { get; init; } = [];
+}
 
 public interface IAssessmentBuilderService
 {

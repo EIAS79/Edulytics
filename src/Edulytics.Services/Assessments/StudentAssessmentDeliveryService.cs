@@ -36,8 +36,8 @@ public sealed class StudentAssessmentDeliveryService(
             return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(
                 StudentAssessmentDeliveryErrorCode.AssessmentNotFound);
 
-        var itemIds = context.Items.Select(x => x.Id).ToHashSet();
-        if (context.Questions.Count == 0 || context.Questions.Any(x => !itemIds.Contains(x.Id)))
+        var itemMap = context.Items.ToDictionary(x => x.Id);
+        if (context.Questions.Count == 0 || context.Questions.Any(x => !itemMap.ContainsKey(x.Id)))
             return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(
                 StudentAssessmentDeliveryErrorCode.AssessmentNotFound);
 
@@ -50,7 +50,15 @@ public sealed class StudentAssessmentDeliveryService(
                 context.Assessment.DifficultyBand,
                 context.Questions
                     .OrderBy(x => x.Order)
-                    .Select(x => new StudentAssessmentQuestion(x.Id, x.Order, x.Prompt, x.MaxScore))
+                    .Select(x =>
+                    {
+                        var item = itemMap[x.Id];
+                        return new StudentAssessmentQuestion(x.Id, x.Order, x.Prompt, x.MaxScore)
+                        {
+                            ItemType = item.ItemType,
+                            Choices = ReadChoices(item)
+                        };
+                    })
                     .ToArray()));
     }
 
@@ -97,9 +105,19 @@ public sealed class StudentAssessmentDeliveryService(
                 return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
                     StudentAssessmentDeliveryErrorCode.InvalidSubmission);
 
+            var item = itemMap[question.Id];
+            var choices = ReadChoices(item);
+            if (item.ItemType == AssessmentItemType.MultipleChoice &&
+                choices.Count > 0 &&
+                !choices.Contains(response, StringComparer.Ordinal))
+            {
+                return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
+                    StudentAssessmentDeliveryErrorCode.InvalidSubmission);
+            }
+
             var earned = MathematicsAnswerEquivalence.AreEquivalent(
                 response,
-                itemMap[question.Id].CorrectAnswer)
+                item.CorrectAnswer)
                 ? question.MaxScore
                 : 0m;
             earned = Round(earned);
@@ -247,6 +265,38 @@ public sealed class StudentAssessmentDeliveryService(
             return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.NotTargeted);
 
         return ResolvedDelivery.Ok(school.Id, profile, snapshot);
+    }
+
+    private static IReadOnlyList<string> ReadChoices(AssessmentItem item)
+    {
+        if (item.ItemType != AssessmentItemType.MultipleChoice ||
+            string.IsNullOrWhiteSpace(item.ValidationMetadataJson))
+        {
+            return [];
+        }
+
+        try
+        {
+            using var document = JsonDocument.Parse(item.ValidationMetadataJson);
+            if (!document.RootElement.TryGetProperty("choices", out var choices) ||
+                choices.ValueKind != JsonValueKind.Array)
+            {
+                return [];
+            }
+
+            return choices
+                .EnumerateArray()
+                .Where(x => x.ValueKind == JsonValueKind.String)
+                .Select(x => x.GetString()?.Trim() ?? string.Empty)
+                .Where(x => x.Length > 0)
+                .Distinct(StringComparer.Ordinal)
+                .Take(12)
+                .ToArray();
+        }
+        catch (JsonException)
+        {
+            return [];
+        }
     }
 
     private static decimal Round(decimal value) =>

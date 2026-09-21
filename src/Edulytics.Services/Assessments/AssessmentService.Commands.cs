@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using Edulytics.Core.Assessments;
 using Edulytics.Core.Constants;
 using Edulytics.Core.Entities;
@@ -112,6 +113,204 @@ public sealed partial class AssessmentService
 
         return saved.Succeeded
             ? AssessmentCommandResult.Success(entity.Id)
+            : MapPersistence(saved);
+    }
+
+    public async Task<AssessmentCommandResult> ReuseAssessmentAsync(
+        Guid actorUserId,
+        ReuseAssessmentRequest request,
+        CancellationToken cancellationToken = default)
+    {
+        var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
+        if (scope.Role != RoleNames.Teacher)
+            return Fail(AssessmentErrorCode.AccessDenied);
+        if (_builder is null)
+            return Fail(AssessmentErrorCode.PersistenceError);
+
+        var schoolId = scope.School!.Id;
+        var source = await _repo.GetAssessmentAsync(
+            schoolId,
+            request.SourceAssessmentId,
+            cancellationToken);
+        if (source is null)
+            return Fail(AssessmentErrorCode.AssessmentNotFound);
+        if (!await CanManageAssessmentAsync(scope, source, cancellationToken))
+            return Fail(AssessmentErrorCode.AccessDenied);
+
+        var sourceClass = await _repo.GetClassGroupAsync(
+            schoolId,
+            source.ClassGroupId,
+            cancellationToken);
+        var targetClass = await _repo.GetClassGroupAsync(
+            schoolId,
+            request.TargetClassGroupId,
+            cancellationToken);
+        if (sourceClass is null || targetClass is null)
+            return Fail(AssessmentErrorCode.ClassGroupNotFound);
+        if (targetClass.Id == sourceClass.Id)
+            return Fail(AssessmentErrorCode.DuplicateAssessment);
+        if (targetClass.Status != AcademicStructureStatus.Active ||
+            targetClass.AcademicYearId != sourceClass.AcademicYearId ||
+            targetClass.AcademicProgramId != sourceClass.AcademicProgramId ||
+            targetClass.GradeLevelId != sourceClass.GradeLevelId)
+        {
+            return Fail(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+        }
+
+        if (!await CanManagePairAsync(
+                scope,
+                targetClass.Id,
+                source.SubjectId,
+                cancellationToken))
+        {
+            return Fail(AssessmentErrorCode.TeacherNotAssigned);
+        }
+
+        var title = Clean(request.Title);
+        if (title.Length == 0)
+            return Fail(nameof(request.Title), AssessmentErrorCode.Required);
+        if (title.Length > 200)
+            return Fail(nameof(request.Title), AssessmentErrorCode.InvalidText);
+        if (await _repo.AssessmentTitleExistsAsync(
+                schoolId,
+                targetClass.Id,
+                source.TermId,
+                title.ToUpperInvariant(),
+                cancellationToken: cancellationToken))
+        {
+            return Fail(nameof(request.Title), AssessmentErrorCode.DuplicateAssessment);
+        }
+
+        var sourceContext = await _builder.GetContextAsync(
+            schoolId,
+            source.Id,
+            cancellationToken);
+        if (sourceContext is null ||
+            sourceContext.CurriculumAdoption is null ||
+            sourceContext.Questions.Count == 0 ||
+            sourceContext.Questions.Any(question =>
+                sourceContext.Items.All(item => item.Id != question.Id)))
+        {
+            return Fail(AssessmentErrorCode.AssessmentHasNoQuestions);
+        }
+
+        if (targetClass.CurriculumAdoptionId.HasValue &&
+            targetClass.CurriculumAdoptionId.Value != sourceContext.CurriculumAdoption.Id)
+        {
+            return Fail(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+        }
+
+        var now = DateTime.UtcNow;
+        var target = new Assessment
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = schoolId,
+            SubjectId = source.SubjectId,
+            ClassGroupId = targetClass.Id,
+            AcademicYearId = targetClass.AcademicYearId,
+            TermId = source.TermId,
+            Title = title,
+            AssessmentDate = source.AssessmentDate,
+            MaxScore = source.MaxScore,
+            Status = AssessmentStatus.Draft,
+            TargetType = AssessmentTargetType.Class,
+            TargetStudentProfileId = null,
+            DeliveryMode = source.DeliveryMode,
+            DifficultyBand = source.DifficultyBand,
+            CreatedByUserId = actorUserId,
+            CreatedAtUtc = now,
+            UpdatedAtUtc = now
+        };
+        await _repo.AddAsync(target, cancellationToken);
+
+        var sourceItems = sourceContext.Items.ToDictionary(x => x.Id);
+        foreach (var sourceQuestion in sourceContext.Questions.OrderBy(x => x.Order))
+        {
+            var sourceItem = sourceItems[sourceQuestion.Id];
+            var newId = Guid.NewGuid();
+            var outcomeIds = sourceContext.QuestionOutcomeMappings
+                .Where(x => x.AssessmentQuestionId == sourceQuestion.Id)
+                .Select(x => x.LearningOutcomeId)
+                .Distinct()
+                .OrderBy(x => x)
+                .ToArray();
+
+            var question = new AssessmentQuestion
+            {
+                Id = newId,
+                SchoolId = schoolId,
+                AssessmentId = target.Id,
+                Prompt = sourceQuestion.Prompt,
+                MaxScore = sourceQuestion.MaxScore,
+                Order = sourceQuestion.Order
+            };
+            var item = new AssessmentItem
+            {
+                Id = newId,
+                SchoolId = schoolId,
+                CurriculumAdoptionId = sourceContext.CurriculumAdoption.Id,
+                CurriculumPedagogicalLessonId = sourceItem.CurriculumPedagogicalLessonId,
+                CurriculumTopicId = sourceItem.CurriculumTopicId,
+                Source = sourceItem.Source,
+                ItemType = sourceItem.ItemType,
+                Difficulty = sourceItem.Difficulty,
+                Prompt = sourceItem.Prompt,
+                CorrectAnswer = sourceItem.CorrectAnswer,
+                Solution = sourceItem.Solution,
+                CreatedByUserId = actorUserId,
+                GenerationMethod = sourceItem.GenerationMethod,
+                GenerationFamily = sourceItem.GenerationFamily,
+                GenerationParametersJson = sourceItem.GenerationParametersJson,
+                ExposureFingerprint = sourceItem.ExposureFingerprint,
+                ValidationMetadataJson = MarkReusedQuestionAsDraft(
+                    sourceItem.ValidationMetadataJson,
+                    source.Id),
+                CreatedAtUtc = now,
+                RowVersion = []
+            };
+
+            _builder.AddBundle(new AssessmentBuilderQuestionBundle(
+                question,
+                item,
+                outcomeIds.Select(outcomeId => new QuestionLearningOutcome
+                {
+                    Id = Guid.NewGuid(),
+                    SchoolId = schoolId,
+                    AssessmentQuestionId = newId,
+                    LearningOutcomeId = outcomeId
+                }).ToArray(),
+                outcomeIds.Select(outcomeId => new AssessmentItemOutcome
+                {
+                    Id = Guid.NewGuid(),
+                    SchoolId = schoolId,
+                    AssessmentItemId = newId,
+                    LearningOutcomeId = outcomeId
+                }).ToArray()));
+        }
+
+        await QueueAuditAsync(
+            scope,
+            "Assessment.ReusedForClass",
+            "Assessment",
+            target.Id,
+            oldValues: null,
+            newValues: new Dictionary<string, object?>
+            {
+                ["sourceAssessmentId"] = source.Id,
+                ["sourceClassGroupId"] = source.ClassGroupId,
+                ["targetClassGroupId"] = target.ClassGroupId,
+                ["subjectId"] = target.SubjectId,
+                ["questionCount"] = sourceContext.Questions.Count,
+                ["status"] = target.Status.ToString()
+            },
+            "Assessment content reused as an isolated draft administration for another class.",
+            cancellationToken);
+
+        var saved = await _repo.SaveAsync(cancellationToken);
+        return saved.Succeeded
+            ? AssessmentCommandResult.Success(target.Id)
             : MapPersistence(saved);
     }
 
@@ -897,13 +1096,24 @@ public sealed partial class AssessmentService
         if (questions.Sum(x => x.MaxScore) != assessment.MaxScore)
             return Fail(AssessmentErrorCode.AssessmentScoreMismatch);
 
+        var questionIds = questions.Select(x => x.Id).ToHashSet();
         var mapped = snapshot.OutcomeMappings
-            .Where(x => questions.Any(q => q.Id == x.AssessmentQuestionId))
+            .Where(x => questionIds.Contains(x.AssessmentQuestionId))
             .Select(x => x.AssessmentQuestionId)
             .ToHashSet();
+        var lessonAligned = snapshot.AssessmentItems
+            .Where(x =>
+                questionIds.Contains(x.Id) &&
+                x.CurriculumPedagogicalLessonId.HasValue)
+            .Select(x => x.Id)
+            .ToHashSet();
 
-        if (questions.Any(x => !mapped.Contains(x.Id)))
+        if (questions.Any(x =>
+                !mapped.Contains(x.Id) &&
+                !lessonAligned.Contains(x.Id)))
+        {
             return Fail(AssessmentErrorCode.QuestionMissingOutcome);
+        }
 
         var classGroup = snapshot.ClassGroups
             .FirstOrDefault(x => x.Id == assessment.ClassGroupId);
@@ -1045,6 +1255,42 @@ public sealed partial class AssessmentService
                 assessment,
                 rowVersion,
                 cancellationToken));
+    }
+
+    public async Task<AssessmentCommandResult> ImportStudentResultsAsync(
+        Guid actorUserId,
+        ImportAssessmentResultsRequest request,
+        CancellationToken cancellationToken = default)
+    {
+        if (request.AssessmentId == Guid.Empty ||
+            request.QuestionIds.Count == 0 ||
+            request.QuestionIds.Any(x => x == Guid.Empty) ||
+            request.QuestionIds.Distinct().Count() != request.QuestionIds.Count ||
+            request.Rows.Select(x => x.StudentProfileId).Distinct().Count() != request.Rows.Count ||
+            request.Rows.Any(x =>
+                x.StudentProfileId == Guid.Empty ||
+                x.Scores.Count != request.QuestionIds.Count))
+        {
+            return Fail(AssessmentErrorCode.ResultQuestionMismatch);
+        }
+
+        foreach (var row in request.Rows)
+        {
+            var saved = await SaveStudentResultAsync(
+                actorUserId,
+                new SaveStudentAssessmentResultRequest(
+                    request.AssessmentId,
+                    row.StudentProfileId,
+                    request.QuestionIds,
+                    row.Scores,
+                    row.ResultRowVersion),
+                cancellationToken);
+
+            if (!saved.Succeeded)
+                return saved;
+        }
+
+        return AssessmentCommandResult.Success(request.AssessmentId);
     }
 
     public async Task<AssessmentCommandResult> SaveStudentResultAsync(
@@ -1259,4 +1505,26 @@ public sealed partial class AssessmentService
                 result!.Id)
             : MapPersistence(saved);
     }
+    private static string MarkReusedQuestionAsDraft(
+        string? metadataJson,
+        Guid sourceAssessmentId)
+    {
+        JsonObject root;
+        try
+        {
+            root = string.IsNullOrWhiteSpace(metadataJson)
+                ? new JsonObject()
+                : JsonNode.Parse(metadataJson) as JsonObject ?? new JsonObject();
+        }
+        catch (JsonException)
+        {
+            root = new JsonObject();
+        }
+
+        root["builderStatus"] = AssessmentBuilderQuestionStatus.Draft.ToString();
+        root["reusedFromAssessmentId"] = sourceAssessmentId.ToString("D");
+        root["teacherReviewRequired"] = true;
+        return root.ToJsonString(new JsonSerializerOptions { WriteIndented = false });
+    }
+
 }

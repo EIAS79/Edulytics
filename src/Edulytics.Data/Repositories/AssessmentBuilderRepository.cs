@@ -96,6 +96,39 @@ public sealed class AssessmentBuilderRepository(EdulyticsDbContext db) : IAssess
                 x.SubjectId == assessment.SubjectId)
             .ToListAsync(cancellationToken);
 
+        var pedagogicalLessons = Array.Empty<CurriculumPedagogicalLesson>();
+        var pedagogicalLessonOutcomes = Array.Empty<CurriculumPedagogicalLessonOutcome>();
+        if (adoption is not null && adoption.CurriculumLogicalLevel.HasValue)
+        {
+            var logicalLevel = adoption.CurriculumLogicalLevel.Value;
+            var pathway = string.IsNullOrWhiteSpace(adoption.CurriculumPathway)
+                ? null
+                : adoption.CurriculumPathway.Trim();
+
+            pedagogicalLessons = await db.CurriculumPedagogicalLessons.AsNoTracking()
+                .Where(x =>
+                    x.FrameworkVersionId == adoption.FrameworkVersionId &&
+                    x.LogicalLevelFrom <= logicalLevel &&
+                    x.LogicalLevelTo >= logicalLevel &&
+                    (pathway == null
+                        ? x.Pathway == null || x.Pathway == string.Empty
+                        : x.Pathway == pathway))
+                .OrderBy(x => x.SortOrder)
+                .ThenBy(x => x.Code)
+                .ToArrayAsync(cancellationToken);
+
+            var lessonIds = pedagogicalLessons.Select(x => x.Id).ToArray();
+            pedagogicalLessonOutcomes = lessonIds.Length == 0
+                ? []
+                : await db.CurriculumPedagogicalLessonOutcomes.AsNoTracking()
+                    .Where(x =>
+                        x.FrameworkVersionId == adoption.FrameworkVersionId &&
+                        lessonIds.Contains(x.PedagogicalLessonId))
+                    .OrderBy(x => x.PedagogicalLessonId)
+                    .ThenBy(x => x.SortOrder)
+                    .ToArrayAsync(cancellationToken);
+        }
+
         return new AssessmentBuilderPersistenceContext(
             assessment,
             classGroup,
@@ -105,7 +138,9 @@ public sealed class AssessmentBuilderRepository(EdulyticsDbContext db) : IAssess
             questionMappings,
             itemMappings,
             outcomes,
-            summaries);
+            summaries,
+            pedagogicalLessons,
+            pedagogicalLessonOutcomes);
     }
 
     public async Task<IReadOnlyList<StudentProfile>> ListTargetStudentsAsync(

@@ -31,7 +31,16 @@ public sealed record AnalyticsProjectionSnapshot(
     IReadOnlyList<ClassOutcomeSummary> ClassOutcomeSummaries,
     IReadOnlyList<ClassTopicSummary> ClassTopicSummaries,
     IReadOnlyList<ClassAssessmentTrend> ClassAssessmentTrends,
-    IReadOnlyList<SchoolAnalyticsSnapshot> SchoolSnapshots);
+    IReadOnlyList<SchoolAnalyticsSnapshot> SchoolSnapshots)
+{
+    public IReadOnlyList<StudentEnrollment> StudentEnrollments { get; init; } = [];
+    public IReadOnlyList<Assessment> Assessments { get; init; } = [];
+    public IReadOnlyList<AssessmentQuestion> AssessmentQuestions { get; init; } = [];
+    public IReadOnlyList<AssessmentItem> AssessmentItems { get; init; } = [];
+    public IReadOnlyList<AssessmentResult> AssessmentResults { get; init; } = [];
+    public IReadOnlyList<StudentAnswer> StudentAnswers { get; init; } = [];
+    public IReadOnlyList<CurriculumPedagogicalLesson> PedagogicalLessons { get; init; } = [];
+}
 
 public sealed record AnalyticsProjectionSet(
     IReadOnlyList<StudentOutcomeMastery> StudentOutcomeMasteries,

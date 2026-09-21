@@ -56,6 +56,24 @@ public sealed record AnalyticsOutcomeItem(
     int EvidenceCount,
     MasteryBand Band);
 
+public sealed record AnalyticsLessonItem(
+    Guid AcademicYearId,
+    string AcademicYearName,
+    Guid ClassGroupId,
+    string ClassName,
+    Guid SubjectId,
+    string SubjectName,
+    Guid LessonId,
+    string LessonTitle,
+    string UnitKey,
+    string UnitTitle,
+    decimal MasteryPercentage,
+    int StudentCount,
+    int AtRiskStudentCount,
+    int EvidenceCount,
+    int AssessmentCount,
+    MasteryBand Band);
+
 public sealed record AnalyticsTopicItem(
     Guid AcademicYearId,
     string AcademicYearName,
@@ -98,6 +116,38 @@ public sealed record AnalyticsRiskStudentItem(
     int CriticalOutcomeCount,
     MasteryBand Band);
 
+public sealed record AnalyticsStudentLessonItem(
+    Guid LessonId,
+    string LessonTitle,
+    string UnitTitle,
+    decimal MasteryPercentage,
+    int EvidenceCount,
+    int AssessmentCount,
+    MasteryBand Band);
+
+public sealed record AnalyticsStudentOutcomeItem(
+    Guid LearningOutcomeId,
+    string OutcomeCode,
+    string OutcomeDescription,
+    decimal MasteryPercentage,
+    int EvidenceCount,
+    MasteryBand Band);
+
+public sealed record AnalyticsStudentReport(
+    Guid StudentProfileId,
+    string StudentNumber,
+    string DisplayName,
+    Guid AcademicYearId,
+    string AcademicYearName,
+    Guid ClassGroupId,
+    string ClassName,
+    Guid SubjectId,
+    string SubjectName,
+    decimal? OfficialOutcomeMasteryPercentage,
+    decimal? AssessmentLessonMasteryPercentage,
+    IReadOnlyList<AnalyticsStudentLessonItem> Lessons,
+    IReadOnlyList<AnalyticsStudentOutcomeItem> Outcomes);
+
 public sealed record AnalyticsDashboard(
     bool HasData,
     bool IsStale,
@@ -117,4 +167,8 @@ public sealed record AnalyticsDashboard(
     IReadOnlyList<AnalyticsOutcomeItem> Outcomes,
     IReadOnlyList<AnalyticsTopicItem> Topics,
     IReadOnlyList<AnalyticsTrendItem> Trends,
-    IReadOnlyList<AnalyticsRiskStudentItem> RiskStudents);
+    IReadOnlyList<AnalyticsRiskStudentItem> RiskStudents)
+{
+    public IReadOnlyList<AnalyticsLessonItem> Lessons { get; init; } = [];
+    public int WeakLessonCount => Lessons.Count(x => x.MasteryPercentage < 60m);
+}

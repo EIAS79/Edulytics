@@ -99,8 +99,11 @@ public sealed class AssessmentBuilderAcceptanceCorrectiveTests
         Assert.Contains("public static bool Supports(LearningOutcome outcome)", resolver, StringComparison.Ordinal);
         Assert.Contains("public static bool Supports(string? code, string? description)", resolver, StringComparison.Ordinal);
 
-        Assert.Contains("LearningOutcomesSetupRequired", view, StringComparison.Ordinal);
-        Assert.Contains("disabled=\"@(!hasEligibleOutcomes)\"", view, StringComparison.Ordinal);
+        Assert.Contains("AssessmentGenerationScopeType.Lessons", view, StringComparison.Ordinal);
+        Assert.Contains("AssessmentGenerationScopeType.Units", view, StringComparison.Ordinal);
+        Assert.Contains("AssessmentGenerationScopeType.Curriculum", view, StringComparison.Ordinal);
+        Assert.Contains("name=\"lessonIds\"", view, StringComparison.Ordinal);
+        Assert.Contains("name=\"unitKeys\"", view, StringComparison.Ordinal);
         Assert.Contains("Model.AiSupportedOutcomeIds", view, StringComparison.Ordinal);
         Assert.DoesNotContain("NativeMathematicsOutcomeProfileResolver.Supports", view, StringComparison.Ordinal);
         Assert.Contains("disabled=\"@(!aiSupported)\"", view, StringComparison.Ordinal);

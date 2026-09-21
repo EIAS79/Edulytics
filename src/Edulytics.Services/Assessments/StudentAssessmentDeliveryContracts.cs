@@ -16,7 +16,11 @@ public enum StudentAssessmentDeliveryErrorCode
     PersistenceError = 10
 }
 
-public sealed record StudentAssessmentQuestion(Guid Id, int Order, string Prompt, decimal MaxScore);
+public sealed record StudentAssessmentQuestion(Guid Id, int Order, string Prompt, decimal MaxScore)
+{
+    public AssessmentItemType ItemType { get; init; } = AssessmentItemType.ShortAnswer;
+    public IReadOnlyList<string> Choices { get; init; } = [];
+}
 
 public sealed record StudentAssessmentAttempt(
     Guid AssessmentId,

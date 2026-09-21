@@ -173,6 +173,9 @@ public sealed class AssessmentBuilderController(
         int questionCount,
         decimal? maxScorePerQuestion,
         AssessmentBuilderDifficulty? difficulty,
+        AssessmentGenerationScopeType scopeType,
+        Guid[]? lessonIds,
+        string[]? unitKeys,
         Guid[]? outcomeIds,
         int seed,
         string rowVersion,
@@ -194,7 +197,16 @@ public sealed class AssessmentBuilderController(
                 difficulty ?? 0,
                 outcomeIds ?? [],
                 version,
-                seed),
+                seed)
+            {
+                ScopeType = scopeType,
+                LessonIds = (lessonIds ?? []).Where(x => x != Guid.Empty).Distinct().ToArray(),
+                UnitKeys = (unitKeys ?? [])
+                    .Where(x => !string.IsNullOrWhiteSpace(x))
+                    .Select(x => x.Trim())
+                    .Distinct(StringComparer.Ordinal)
+                    .ToArray()
+            },
             cancellationToken);
         Feedback(result, "BuilderGenerated");
         return RedirectToAction(nameof(Index), new { assessmentId });
