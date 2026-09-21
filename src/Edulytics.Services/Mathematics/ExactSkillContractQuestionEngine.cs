@@ -224,8 +224,7 @@ public sealed class ExactSkillContractQuestionEngine
 
                 var normalizedPrompt = NormalizePrompt(problem.Prompt);
                 var hasSemanticVariant =
-                    problem.Parameters.ContainsKey("variant") ||
-                    problem.Parameters.ContainsKey("mode");
+                    RequiresPromptUniqueness(problem.Family);
                 if (excluded.Contains(fingerprint) ||
                     generated.Contains(fingerprint) ||
                     (hasSemanticVariant && generatedPrompts.Contains(normalizedPrompt)))
@@ -3161,6 +3160,18 @@ public sealed class ExactSkillContractQuestionEngine
         string Solution,
         AssessmentItemType ItemType,
         IReadOnlyDictionary<string, int> Parameters);
+
+    private static bool RequiresPromptUniqueness(string family) =>
+        family is
+            "supporting.geometry.shape_dimension" or
+            "supporting.reasoning.multistep" or
+            "measurement.scale.equal_intervals.read_value" or
+            "fractions.compare.unlike.common_denominator" or
+            "supporting.powers10.evaluate" or
+            "supporting.powers10.multiply" or
+            "supporting.powers10.divide" or
+            "supporting.powers10.missing_exponent";
+
     private static string NormalizePrompt(string prompt) =>
         string.Join(
             " ",
