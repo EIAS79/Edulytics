@@ -169,6 +169,77 @@ public sealed class PracticeUiRemediationAcceptanceTests
     }
 
     [Fact]
+    public void ServerPractice_HoldsAnsweredQuestionUntilNextIsSelected()
+    {
+        var controller = Read(
+            "src/Edulytics.Web/Controllers/StudentPracticeController.cs");
+        var attempt = Read(
+            "src/Edulytics.Web/Views/StudentPractice/LessonAttempt.cshtml");
+
+        Assert.Contains(
+            "Guid? reviewAttemptItemId",
+            controller,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "reviewAttemptItemId = result.Value.AttemptItemId",
+            controller,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "x.AttemptItemId == reviewAttemptItemId.Value &&",
+            controller,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "var reviewQuestion =",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "var isReviewing =",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "reviewQuestion\n        ?? orderedQuestions.FirstOrDefault(x => !x.Answered)",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "Next question",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "asp-action=\"LessonAttempt\"",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "data-practice-feedback",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "TempData[\"PracticeFeedback\"]",
+            attempt,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void ServerPractice_ReviewUsesTheReviewedQuestionNumber()
+    {
+        var attempt = Read(
+            "src/Edulytics.Web/Views/StudentPractice/LessonAttempt.cshtml");
+
+        Assert.Contains(
+            "var displayedQuestionNumber =",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "@displayedQuestionNumber",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "@Math.Min(answeredCount + 1, totalQuestions)",
+            attempt,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void ServerPractice_DoesNotRenderGenericOnScreenKeypad()
     {
         var game = Read("src/Edulytics.Web/Views/StudentPractice/Game.cshtml");
