@@ -368,25 +368,6 @@
                  role="alert">@error</div>
         }
 
-        @if (isReviewing && currentQuestion is not null)
-        {
-            <div class="lp-server-feedback @(currentQuestion.IsCorrect == true ? "lp-server-feedback--ok" : "lp-server-feedback--bad")"
-                 role="status"
-                 data-practice-feedback>
-                @(currentQuestion.IsCorrect == true
-                    ? S["PracticeCorrect"].Value
-                    : S["PracticeIncorrect"].Value)
-
-                @if (!string.IsNullOrWhiteSpace(currentQuestion.Feedback))
-                {
-                    <div>
-                        <strong>@S["PracticeSolution"]:</strong>
-                        @currentQuestion.Feedback
-                    </div>
-                }
-            </div>
-        }
-
         <div class="gw-stage">
             @if (Model.Status == PracticeAttemptStatus.Submitted)
             {
@@ -428,8 +409,24 @@
                         </div>
                     }
 
-                    @if (isReviewing)
+                    @if (isReviewing && currentQuestion is not null)
                     {
+                        <div class="lp-server-feedback @(currentQuestion.IsCorrect == true ? "lp-server-feedback--ok" : "lp-server-feedback--bad")"
+                             role="status"
+                             data-practice-feedback>
+                            @(currentQuestion.IsCorrect == true
+                                ? S["PracticeCorrect"].Value
+                                : S["PracticeIncorrect"].Value)
+
+                            @if (!string.IsNullOrWhiteSpace(currentQuestion.Feedback))
+                            {
+                                <div>
+                                    <strong>@S["PracticeSolution"]:</strong>
+                                    @currentQuestion.Feedback
+                                </div>
+                            }
+                        </div>
+
                         <div class="lp-server-actions">
                             <a class="gw-primary"
                                asp-action="LessonAttempt"
