@@ -69,7 +69,8 @@ public sealed class AssessmentResultsBulkImportRestorationTests
         var option = Assert.Single(options);
         Assert.Equal(ImportType.AssessmentResults, option.Type);
         Assert.Equal(
-            [
+            new[]
+            {
                 "AssessmentTitle",
                 "AssessmentDate",
                 "ClassName",
@@ -77,7 +78,7 @@ public sealed class AssessmentResultsBulkImportRestorationTests
                 "StudentName",
                 "QuestionOrder",
                 "Score"
-            ],
+            },
             option.RequiredHeaders);
     }
 }
