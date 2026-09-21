@@ -45,7 +45,11 @@ internal static class FoundationPracticeEngine
     public static bool Supports(string? family) =>
         !string.IsNullOrWhiteSpace(family) && Families.Contains(family.Trim());
 
-    public static Problem Build(string family, Random random, int scale) =>
+    public static Problem Build(
+        string family,
+        Random random,
+        int scale,
+        int? preferredVariant = null) =>
         family switch
         {
             "supporting.number.count_cardinality" => CountCardinality(random, scale),
