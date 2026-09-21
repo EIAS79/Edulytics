@@ -30,6 +30,25 @@ public sealed class AnalyticsPresentationFormatterTests
                 "INTERNAL:OUT:0042:ABC.12"));
     }
 
+
+    [Fact]
+    public void Polish_outcome_code_keeps_meaningful_identity_without_internal_hash()
+    {
+        Assert.Equal(
+            "Polish I-III Core 1.001",
+            AnalyticsPresentationFormatter.OutcomeLabel(
+                "PL:I-III:OSIAGNIECIA-W-ZAKRE-0CBE2130A8A4:core:1:001"));
+    }
+
+    [Fact]
+    public void Unknown_non_internal_colon_code_is_preserved()
+    {
+        Assert.Equal(
+            "CUSTOM:AREA:SECTION:12",
+            AnalyticsPresentationFormatter.OutcomeLabel(
+                "CUSTOM:AREA:SECTION:12"));
+    }
+
     [Fact]
     public void Technical_reference_only_description_is_replaced()
     {
