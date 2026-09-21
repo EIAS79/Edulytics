@@ -19,7 +19,10 @@ public sealed record AssessmentSnapshot(
     IReadOnlyList<AssessmentQuestion> Questions,
     IReadOnlyList<QuestionLearningOutcome> OutcomeMappings,
     IReadOnlyList<AssessmentResult> Results,
-    IReadOnlyList<StudentAnswer> StudentAnswers);
+    IReadOnlyList<StudentAnswer> StudentAnswers)
+{
+    public IReadOnlyList<AssessmentItem> AssessmentItems { get; init; } = [];
+};
 
 public enum AssessmentPersistenceError
 {
