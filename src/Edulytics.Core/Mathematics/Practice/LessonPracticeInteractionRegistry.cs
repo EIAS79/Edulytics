@@ -138,6 +138,12 @@ public static class LessonPracticeInteractionRegistry
         string familyId,
         string answerType)
     {
+        // Structured comparison families may share a ".compare" family prefix
+        // without using the < = > response shape. Resolve their declared answer
+        // contract before the generic comparison fallback.
+        if (answerType is "side_label" or "boolean" or "ordered_labels")
+            return LessonPracticeInteractionKind.StructuredEntry;
+
         if (string.Equals(
                 answerType,
                 "relation",
