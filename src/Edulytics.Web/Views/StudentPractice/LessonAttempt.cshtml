@@ -459,7 +459,7 @@
                                    value="@lessonId" />
                             <input type="hidden"
                                    name="attemptItemId"
-                                   value="@currentQuestion.AttemptItemId" />
+                                   value="@(currentQuestion!.AttemptItemId)" />
 
                             @if (isPromptMultipleChoice)
                             {
