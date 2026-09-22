@@ -141,15 +141,25 @@
             .Where(_ => isAssessmentResults)
             .GroupBy(row =>
             {
-                if (row.Values.TryGetValue("StudentNumber", out var number) &&
-                    !string.IsNullOrWhiteSpace(number))
-                {
-                    return number;
-                }
+                var assessmentIdentity =
+                    row.Values.TryGetValue("AssessmentId", out var assessmentId) &&
+                    !string.IsNullOrWhiteSpace(assessmentId)
+                        ? assessmentId
+                        : string.Join(
+                            "|",
+                            row.Values.TryGetValue("AssessmentTitle", out var title) ? title : string.Empty,
+                            row.Values.TryGetValue("AssessmentDate", out var date) ? date : string.Empty,
+                            row.Values.TryGetValue("ClassName", out var className) ? className : string.Empty);
 
-                return row.Values.TryGetValue("StudentName", out var name)
-                    ? name
-                    : $"row-{row.RowNumber}";
+                var studentIdentity =
+                    row.Values.TryGetValue("StudentNumber", out var number) &&
+                    !string.IsNullOrWhiteSpace(number)
+                        ? number
+                        : row.Values.TryGetValue("StudentName", out var studentName)
+                            ? studentName
+                            : $"row-{row.RowNumber}";
+
+                return $"{assessmentIdentity}\u001F{studentIdentity}";
             }, StringComparer.OrdinalIgnoreCase)
             .Select(group =>
             {
@@ -161,6 +171,9 @@
                 var studentName = first.Values.TryGetValue("StudentName", out var name)
                     ? name
                     : group.Key;
+                var assessmentTitle = first.Values.TryGetValue("AssessmentTitle", out var title)
+                    ? title
+                    : string.Empty;
                 var total = rows.Sum(row => ParseDecimal(row.Values, "Score"));
                 var assessmentMax = rows
                     .Select(row => ParseDecimal(row.Values, "AssessmentMaxScore"))
@@ -190,6 +203,7 @@
 
                 return new
                 {
+                    AssessmentTitle = assessmentTitle,
                     StudentName = studentName,
                     Total = total,
                     AssessmentMax = assessmentMax,
@@ -362,6 +376,7 @@
                 <table class="import-table import-assessment-student-table">
                     <thead>
                         <tr>
+                            <th>@L("Assessment", "Sprawdzian")</th>
                             <th>@L("Student", "Uczeń")</th>
                             <th>@L("Final score", "Wynik końcowy")</th>
                             <th>@L("Percentage", "Procent")</th>
@@ -383,6 +398,7 @@
                         <tr data-import-row
                             data-validation-state="@validationState"
                             data-import-state="@importState">
+                            <td data-label="@L("Assessment", "Sprawdzian")">@student.AssessmentTitle</td>
                             <td data-label="@L("Student", "Uczeń")"><strong>@student.StudentName</strong></td>
                             <td data-label="@L("Final score", "Wynik końcowy")">@finalScore</td>
                             <td data-label="@L("Percentage", "Procent")">@percentageText</td>
