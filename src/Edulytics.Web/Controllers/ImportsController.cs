@@ -132,12 +132,14 @@ public sealed class ImportsController : Controller
                             classNames[x.ClassGroupId]))
                         .ToArray();
 
-                    var availableYearIds = assessmentResultOptions
+                    var teacherClassYearIds = assessmentWorkspace.ClassGroups
                         .Select(x => x.AcademicYearId)
                         .ToHashSet();
 
                     assessmentAcademicYears = snapshot.AcademicYears
-                        .Where(x => availableYearIds.Contains(x.Id))
+                        .Where(x =>
+                            x.Status == AcademicStructureStatus.Active &&
+                            teacherClassYearIds.Contains(x.Id))
                         .OrderByDescending(x => x.StartsOn)
                         .ThenBy(x => x.Name)
                         .Select(x => new ImportAcademicYearOption(x.Id, x.Name))
