@@ -15,6 +15,8 @@
     var submittedLabel = language switch { "pl" => "Przesłano", "ar" => "تم التسليم", _ => "Submitted" };
     var noSubmissionLabel = language switch { "pl" => "Brak wyniku", "ar" => "لا توجد نتيجة بعد", _ => "No result yet" };
     var viewPaperLabel = language switch { "pl" => "Zobacz arkusz", "ar" => "عرض ورقة الامتحان", _ => "View paper" };
+    var backToListLabel = language switch { "pl" => "Powrót do listy uczniów", "ar" => "العودة إلى قائمة الطلاب", _ => "Back to student list" };
+    var paperTitleLabel = language switch { "pl" => "Arkusz ucznia", "ar" => "ورقة امتحان الطالب", _ => "Student paper" };
     var importScoresLabel = language switch { "pl" => "Importuj punkty", "ar" => "إدخال الدرجات", _ => "Import scores" };
 
     var selectedStudentId = Guid.TryParse(Context.Request.Query["studentProfileId"], out var parsedStudentId)
@@ -174,7 +176,19 @@
         }
         else
         {
-            <div class="assessment-empty">@noSubmissionLabel</div>
+            <section class="assessment-selected-paper">
+                <header class="assessment-result-student-header">
+                    <div>
+                        <span class="assessment-paper-kicker">@paperTitleLabel</span>
+                        <h2>@selectedStudent.DisplayName</h2>
+                        <p>@A["StudentNumber"]: @selectedStudent.StudentNumber</p>
+                    </div>
+                    <div class="assessment-paper-header-actions">
+                        <a class="school-button" asp-action="Results" asp-route-id="@assessment.Id">@backToListLabel</a>
+                    </div>
+                </header>
+                <div class="assessment-empty">@noSubmissionLabel</div>
+            </section>
         }
     }
 </section>
