@@ -1,0 +1,102 @@
+@using System.Globalization
+@model Edulytics.Web.ViewModels.Assessments.AssessmentPaperViewModel
+@{
+    var language = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var questionLabel = language switch { "pl" => "Pytanie", "ar" => "السؤال", _ => "Question" };
+    var studentAnswerLabel = language switch { "pl" => "Odpowiedź ucznia", "ar" => "إجابة الطالب", _ => "Student answer" };
+    var expectedAnswerLabel = language switch { "pl" => "Poprawna / oczekiwana odpowiedź", "ar" => "الإجابة الصحيحة / المتوقعة", _ => "Correct / expected answer" };
+    var scoreLabel = language switch { "pl" => "Punkty", "ar" => "الدرجة", _ => "Score" };
+    var backLabel = language switch { "pl" => "Powrót do listy uczniów", "ar" => "العودة إلى قائمة الطلاب", _ => "Back to student list" };
+    var paperTitleLabel = language switch { "pl" => "Arkusz ucznia", "ar" => "ورقة امتحان الطالب", _ => "Student paper" };
+    var noResponseLabel = language switch { "pl" => "Brak zapisanej odpowiedzi", "ar" => "لا توجد إجابة مسجلة", _ => "No submitted answer recorded" };
+    var blankResponseLabel = language switch { "pl" => "Brak odpowiedzi", "ar" => "لم تتم الإجابة", _ => "No answer submitted" };
+    var noExpectedLabel = language switch { "pl" => "Brak zapisanej odpowiedzi wzorcowej", "ar" => "لا توجد إجابة نموذجية مسجلة", _ => "No expected answer recorded" };
+}
+
+<section class="assessment-selected-paper">
+    <header class="assessment-result-student-header">
+        <div>
+            <span class="assessment-paper-kicker">@paperTitleLabel</span>
+            <h2>@Model.StudentName</h2>
+            @if (!string.IsNullOrWhiteSpace(Model.StudentNumber))
+            {
+                <p>Student number: @Model.StudentNumber</p>
+            }
+        </div>
+        <div class="assessment-paper-header-actions">
+            <div class="assessment-result-total assessment-result-total-v2">
+                <span class="assessment-result-total-label">@scoreLabel</span>
+                <strong>@Model.Score.ToString("0.##") / @Model.MaxScore.ToString("0.##")</strong>
+                <span>@Model.Percentage.ToString("0.##")%</span>
+            </div>
+            @if (!string.IsNullOrWhiteSpace(Model.BackUrl))
+            {
+                <a class="school-button" href="@Model.BackUrl">@backLabel</a>
+            }
+        </div>
+    </header>
+
+    <div class="assessment-breakdown-scroll">
+        <table class="assessment-breakdown-table">
+            <thead>
+                <tr>
+                    <th scope="col">@questionLabel</th>
+                    <th scope="col">@studentAnswerLabel</th>
+                    <th scope="col">@expectedAnswerLabel</th>
+                    <th scope="col" class="assessment-score-column">@scoreLabel</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var question in Model.Questions)
+                {
+                    var hasExpected = !string.IsNullOrWhiteSpace(question.CorrectAnswer);
+                    var scoreClass = question.Score.HasValue && question.Score.Value >= question.MaxScore
+                        ? "is-full"
+                        : question.Score.HasValue && question.Score.Value > 0m
+                            ? "is-partial"
+                            : "is-zero";
+                    <tr>
+                        <td class="assessment-question-cell">
+                            <span class="assessment-question-number">@question.Order</span>
+                            <span>@question.Prompt</span>
+                        </td>
+                        <td>
+                            @if (question.HasStudentAnswer)
+                            {
+                                <span class="assessment-answer-value @(string.IsNullOrWhiteSpace(question.StudentAnswer) ? "is-empty" : null)">
+                                    @(string.IsNullOrWhiteSpace(question.StudentAnswer) ? blankResponseLabel : question.StudentAnswer)
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="assessment-answer-muted">@noResponseLabel</span>
+                            }
+                        </td>
+                        <td>
+                            @if (hasExpected)
+                            {
+                                <span class="assessment-answer-value is-expected">@question.CorrectAnswer</span>
+                            }
+                            else
+                            {
+                                <span class="assessment-answer-muted">@noExpectedLabel</span>
+                            }
+                        </td>
+                        <td class="assessment-score-cell">
+                            @if (question.Score.HasValue)
+                            {
+                                <span class="assessment-score-badge @scoreClass">
+                                    @question.Score.Value.ToString("0.##") / @question.MaxScore.ToString("0.##")
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="assessment-score-badge is-missing">— / @question.MaxScore.ToString("0.##")</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
