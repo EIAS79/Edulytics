@@ -369,10 +369,21 @@ public static class RichLessonSourceDossierFactory
         ArgumentNullException.ThrowIfNull(document);
         ArgumentNullException.ThrowIfNull(lesson);
 
+        var researchReference =
+            string.Equals(
+                document.PackCode,
+                "PL-NATIONAL-MATH",
+                StringComparison.Ordinal)
+                ? RichLessonResearchReferenceRegistry.ResolvePolish(lesson)
+                : null;
+
         var combinedRights = string.Join(
             " ",
             document.PedagogicalSourceRightsNote,
-            lesson.SourceRights);
+            lesson.SourceRights,
+            researchReference is null
+                ? string.Empty
+                : $"{researchReference.Licence}. {researchReference.ScopeNote}");
 
         var adaptationPermitted = AdaptationRightsTokens.Any(token =>
             combinedRights.Contains(
@@ -383,6 +394,24 @@ public static class RichLessonSourceDossierFactory
         string reason;
 
         if (document.PedagogicalSourceType ==
+                PedagogicalSourceType.OfficialFrameworkOnly &&
+            researchReference is not null)
+        {
+            // R8 Polish lessons use the official framework as curriculum authority
+            // and a reviewed open reference only for mathematical/pedagogical
+            // cross-checking. Runtime prose is independently authored, so do not
+            // relabel this route as source adaptation even when the reference is CC BY.
+            adaptationPermitted = false;
+            status =
+                RichLessonSourceDossierStatus.IndependentAuthoringReferenceOnly;
+            reason =
+                "The official Polish framework remains the lesson target authority. " +
+                $"The reviewed research reference “{researchReference.Title}” " +
+                $"({researchReference.Licence}) is resolved for cross-checking. " +
+                "Learner-facing Rich V2 prose is independently authored by Edulytics " +
+                "and exact worked examples remain solver/verifier-backed.";
+        }
+        else if (document.PedagogicalSourceType ==
             PedagogicalSourceType.OfficialFrameworkOnly)
         {
             status = RichLessonSourceDossierStatus.ResearchRequired;
@@ -408,25 +437,25 @@ public static class RichLessonSourceDossierFactory
                 "Learner-facing content must be independently authored.";
         }
 
-        var sourceTitle =
-            !string.IsNullOrWhiteSpace(lesson.SourceTitle)
+        var sourceTitle = researchReference?.Title ??
+            (!string.IsNullOrWhiteSpace(lesson.SourceTitle)
                 ? lesson.SourceTitle
-                : document.PedagogicalSourceTitle;
+                : document.PedagogicalSourceTitle);
 
-        var sourcePublisher =
-            !string.IsNullOrWhiteSpace(lesson.SourcePublisher)
+        var sourcePublisher = researchReference?.Publisher ??
+            (!string.IsNullOrWhiteSpace(lesson.SourcePublisher)
                 ? lesson.SourcePublisher
-                : document.PedagogicalSourcePublisher;
+                : document.PedagogicalSourcePublisher);
 
-        var sourceEdition =
-            !string.IsNullOrWhiteSpace(lesson.SourceEdition)
+        var sourceEdition = researchReference?.Edition ??
+            (!string.IsNullOrWhiteSpace(lesson.SourceEdition)
                 ? lesson.SourceEdition
-                : document.PedagogicalSourceEdition;
+                : document.PedagogicalSourceEdition);
 
-        var sourceUrl =
-            !string.IsNullOrWhiteSpace(lesson.SourceUrl)
+        var sourceUrl = researchReference?.Url ??
+            (!string.IsNullOrWhiteSpace(lesson.SourceUrl)
                 ? lesson.SourceUrl
-                : document.PedagogicalSourceUrl;
+                : document.PedagogicalSourceUrl);
 
         return new(
             lesson.LessonCode,
@@ -442,6 +471,8 @@ public static class RichLessonSourceDossierFactory
             status,
             adaptationPermitted,
             reason,
-            $"{lessonTitle} {lesson.SourceLocator} mathematics teaching guidance");
+            researchReference is null
+                ? $"{lessonTitle} {lesson.SourceLocator} mathematics teaching guidance"
+                : $"{lessonTitle} {lesson.SourceLocator} {researchReference.Title} {researchReference.ScopeNote}");
     }
 }
