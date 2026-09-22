@@ -8,6 +8,7 @@
     var scoreLabel = language switch { "pl" => "Punkty", "ar" => "الدرجة", _ => "Score" };
     var backLabel = language switch { "pl" => "Powrót do listy uczniów", "ar" => "العودة إلى قائمة الطلاب", _ => "Back to student list" };
     var paperTitleLabel = language switch { "pl" => "Arkusz ucznia", "ar" => "ورقة امتحان الطالب", _ => "Student paper" };
+    var studentNumberLabel = language switch { "pl" => "Numer ucznia", "ar" => "رقم الطالب", _ => "Student number" };
     var noResponseLabel = language switch { "pl" => "Brak zapisanej odpowiedzi", "ar" => "لا توجد إجابة مسجلة", _ => "No submitted answer recorded" };
     var blankResponseLabel = language switch { "pl" => "Brak odpowiedzi", "ar" => "لم تتم الإجابة", _ => "No answer submitted" };
     var noExpectedLabel = language switch { "pl" => "Brak zapisanej odpowiedzi wzorcowej", "ar" => "لا توجد إجابة نموذجية مسجلة", _ => "No expected answer recorded" };
@@ -20,7 +21,7 @@
             <h2>@Model.StudentName</h2>
             @if (!string.IsNullOrWhiteSpace(Model.StudentNumber))
             {
-                <p>Student number: @Model.StudentNumber</p>
+                <p>@studentNumberLabel: @Model.StudentNumber</p>
             }
         </div>
         <div class="assessment-paper-header-actions">
