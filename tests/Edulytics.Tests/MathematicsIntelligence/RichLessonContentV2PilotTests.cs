@@ -218,7 +218,7 @@ public sealed class RichLessonContentV2PilotTests
             .Select(x => x.LessonCode)
             .ToHashSet(StringComparer.Ordinal);
 
-        Assert.Subset(existingCodes, richCodes);
+        Assert.Subset(richCodes, existingCodes);
     }
 
     [Fact]
