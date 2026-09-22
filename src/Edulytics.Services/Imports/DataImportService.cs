@@ -507,8 +507,9 @@ public sealed class DataImportService : IDataImportService
                 batch.CompletedAtUtc,
                 batch.RowVersion,
                 parsed.Headers,
-                parsed.Rows
-                    .Take(100)
+                (batch.ImportType == ImportType.AssessmentResults
+                    ? parsed.Rows
+                    : parsed.Rows.Take(100))
                     .Select(x => new ImportPreviewRow(x.RowNumber, x.Values))
                     .ToArray(),
                 errors
