@@ -7,9 +7,6 @@
     ViewData["Title"] = A["Results"];
     var assessment = Model.Workspace.Assessment;
     var language = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
-    var questionLabel = language switch { "pl" => "Pytanie", "ar" => "السؤال", _ => "Question" };
-    var studentAnswerLabel = language switch { "pl" => "Odpowiedź ucznia", "ar" => "إجابة الطالب", _ => "Student answer" };
-    var expectedAnswerLabel = language switch { "pl" => "Poprawna / oczekiwana odpowiedź", "ar" => "الإجابة الصحيحة / المتوقwana", _ => "Correct / expected answer" };
     var scoreLabel = language switch { "pl" => "Punkty", "ar" => "الدرجة", _ => "Score" };
     var statusLabel = language switch { "pl" => "Status", "ar" => "الحالة", _ => "Status" };
     var actionLabel = language switch { "pl" => "Akcja", "ar" => "الإجراء", _ => "Action" };
@@ -18,11 +15,6 @@
     var submittedLabel = language switch { "pl" => "Przesłano", "ar" => "تم التسليم", _ => "Submitted" };
     var noSubmissionLabel = language switch { "pl" => "Brak wyniku", "ar" => "لا توجد نتيجة بعد", _ => "No result yet" };
     var viewPaperLabel = language switch { "pl" => "Zobacz arkusz", "ar" => "عرض ورقة الامتحان", _ => "View paper" };
-    var backToListLabel = language switch { "pl" => "Powrót do listy uczniów", "ar" => "العودة إلى قائمة الطلاب", _ => "Back to student list" };
-    var paperTitleLabel = language switch { "pl" => "Arkusz ucznia", "ar" => "ورقة امتحان الطالب", _ => "Student paper" };
-    var noResponseLabel = language switch { "pl" => "Brak zapisanej odpowiedzi", "ar" => "لا توجد إجابة مسجلة", _ => "No submitted answer recorded" };
-    var blankResponseLabel = language switch { "pl" => "Brak odpowiedzi", "ar" => "لم تتم الإجابة", _ => "No answer submitted" };
-    var noExpectedLabel = language switch { "pl" => "Brak zapisanej odpowiedzi wzorcowej", "ar" => "لا توجد إجابة نموذجية مسجلة", _ => "No expected answer recorded" };
     var importScoresLabel = language switch { "pl" => "Importuj punkty", "ar" => "إدخال الدرجات", _ => "Import scores" };
 
     var selectedStudentId = Guid.TryParse(Context.Request.Query["studentProfileId"], out var parsedStudentId)
@@ -31,6 +23,39 @@
     var selectedStudent = selectedStudentId.HasValue
         ? Model.Workspace.Students.FirstOrDefault(student => student.StudentProfileId == selectedStudentId.Value)
         : null;
+
+    Edulytics.Web.ViewModels.Assessments.AssessmentPaperViewModel? selectedPaper = null;
+    if (selectedStudent?.ResultId.HasValue == true)
+    {
+        selectedPaper = new(
+            selectedStudent.DisplayName,
+            selectedStudent.StudentNumber,
+            selectedStudent.Score,
+            assessment.MaxScore,
+            selectedStudent.Percentage,
+            Model.Workspace.Questions
+                .OrderBy(question => question.Order)
+                .Select(question =>
+                {
+                    var hasScore = selectedStudent.QuestionScores.TryGetValue(
+                        question.Id,
+                        out var score);
+                    var hasResponse = selectedStudent.QuestionResponses.TryGetValue(
+                        question.Id,
+                        out var response);
+
+                    return new Edulytics.Web.ViewModels.Assessments.AssessmentPaperQuestionViewModel(
+                        question.Order,
+                        question.Prompt,
+                        hasResponse,
+                        hasResponse ? response : null,
+                        question.CorrectAnswer,
+                        hasScore ? score : null,
+                        question.MaxScore);
+                })
+                .ToArray(),
+            Url.Action("Results", "Assessments", new { id = assessment.Id }));
+    }
 }
 
 <section class="assessment-page assessment-results-page">
@@ -143,91 +168,14 @@
 
     @if (selectedStudent is not null)
     {
-        <section class="assessment-selected-paper" id="student-paper">
-            <header class="assessment-result-student-header">
-                <div>
-                    <span class="assessment-paper-kicker">@paperTitleLabel</span>
-                    <h2>@selectedStudent.DisplayName</h2>
-                    <p>@A["StudentNumber"]: @selectedStudent.StudentNumber</p>
-                </div>
-                <div class="assessment-paper-header-actions">
-                    @if (selectedStudent.ResultId.HasValue)
-                    {
-                        <div class="assessment-result-total assessment-result-total-v2">
-                            <span class="assessment-result-total-label">@scoreLabel</span>
-                            <strong>@selectedStudent.Score.ToString("0.##") / @assessment.MaxScore.ToString("0.##")</strong>
-                            <span>@selectedStudent.Percentage.ToString("0.##")%</span>
-                        </div>
-                    }
-                    <a class="school-button" asp-action="Results" asp-route-id="@assessment.Id">@backToListLabel</a>
-                </div>
-            </header>
-
-            @if (!selectedStudent.ResultId.HasValue)
-            {
-                <div class="assessment-empty">@noSubmissionLabel</div>
-            }
-            else
-            {
-                <div class="assessment-breakdown-scroll">
-                    <table class="assessment-breakdown-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">@questionLabel</th>
-                                <th scope="col">@studentAnswerLabel</th>
-                                <th scope="col">@expectedAnswerLabel</th>
-                                <th scope="col" class="assessment-score-column">@scoreLabel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var question in Model.Workspace.Questions)
-                            {
-                                var hasScore = selectedStudent.QuestionScores.TryGetValue(question.Id, out var current);
-                                var hasResponse = selectedStudent.QuestionResponses.TryGetValue(question.Id, out var response);
-                                var hasExpected = !string.IsNullOrWhiteSpace(question.CorrectAnswer);
-                                var scoreClass = hasScore && current >= question.MaxScore ? "is-full" : hasScore && current > 0m ? "is-partial" : "is-zero";
-                                <tr>
-                                    <td class="assessment-question-cell">
-                                        <span class="assessment-question-number">@question.Order</span>
-                                        <span>@question.Prompt</span>
-                                    </td>
-                                    <td>
-                                        @if (hasResponse)
-                                        {
-                                            <span class="assessment-answer-value @(string.IsNullOrWhiteSpace(response) ? "is-empty" : null)">@(string.IsNullOrWhiteSpace(response) ? blankResponseLabel : response)</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="assessment-answer-muted">@noResponseLabel</span>
-                                        }
-                                    </td>
-                                    <td>
-                                        @if (hasExpected)
-                                        {
-                                            <span class="assessment-answer-value is-expected">@question.CorrectAnswer</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="assessment-answer-muted">@noExpectedLabel</span>
-                                        }
-                                    </td>
-                                    <td class="assessment-score-cell">
-                                        @if (hasScore)
-                                        {
-                                            <span class="assessment-score-badge @scoreClass">@current.ToString("0.##") / @question.MaxScore.ToString("0.##")</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="assessment-score-badge is-missing">— / @question.MaxScore.ToString("0.##")</span>
-                                        }
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            }
-        </section>
+        @if (selectedPaper is not null)
+        {
+            @await Html.PartialAsync("_AssessmentPaper", selectedPaper)
+        }
+        else
+        {
+            <div class="assessment-empty">@noSubmissionLabel</div>
+        }
     }
 </section>
 
