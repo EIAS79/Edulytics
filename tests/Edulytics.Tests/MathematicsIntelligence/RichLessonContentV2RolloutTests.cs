@@ -11,7 +11,7 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class RichLessonContentV2RolloutTests
 {
     [Fact]
-    public void R8_ClassifiesTheWholeCatalogue_AndCompilesEveryEligibleEnglishLesson()
+    public void R8_ClassifiesTheWholeCatalogue_AndCompilesEveryEligibleEnglishAndPolishLesson()
     {
         var documents = MathematicsCanonicalLessonContentSeeder
             .LoadEmbeddedDocuments()
@@ -46,13 +46,16 @@ public sealed class RichLessonContentV2RolloutTests
                 else if (!string.Equals(
                              NormalizeCulture(translation.CultureCode),
                              "en",
+                             StringComparison.Ordinal) &&
+                         !string.Equals(
+                             NormalizeCulture(translation.CultureCode),
+                             "pl",
                              StringComparison.Ordinal))
                 {
                     blockedLocalized++;
                     status = "BlockedLocalizedAuthoring";
                     reason =
-                        "R8 refuses to silently replace non-English academic content " +
-                        "with generated English prose. Reviewed localized Rich V2 authoring is required.";
+                        "No reviewed Rich V2 runtime authoring path exists for this academic language.";
                 }
                 else if (!LessonPracticeContractRegistry.TryResolve(
                              lesson.LessonCode,
@@ -114,6 +117,10 @@ public sealed class RichLessonContentV2RolloutTests
         Assert.Equal(
             26,
             readyCurated);
+        Assert.Equal(4427, readyRuntime);
+        Assert.Equal(0, blockedLocalized);
+        Assert.Equal(0, blockedContract);
+        Assert.Equal(0, blockedGeneration);
 
         // Every lesson must be either Rich-ready under a deterministic,
         // verifiable route or explicitly identified as a concrete blocker.
@@ -291,7 +298,7 @@ public sealed class RichLessonContentV2RolloutTests
     }
 
     [Fact]
-    public void RuntimeComposer_RefusesSilentEnglishReplacementForPolishLessons()
+    public void RuntimeComposer_ComposesReviewedPolishLocalizedRichContent()
     {
         var document = MathematicsCanonicalLessonContentSeeder
             .LoadEmbeddedDocuments()
@@ -314,10 +321,50 @@ public sealed class RichLessonContentV2RolloutTests
             translation.CommonMistakes,
             translation.QuickSummary);
 
-        Assert.Null(
-            RichLessonContentV2RuntimeComposer.TryCompose(
-                lesson.LessonCode,
-                body));
+        var rich = RichLessonContentV2RuntimeComposer.TryCompose(
+            lesson.LessonCode,
+            body);
+
+        Assert.NotNull(rich);
+        Assert.Equal("pl", NormalizeCulture(rich!.CultureCode));
+        Assert.True(rich.ExplanationParagraphs.Count >= 4);
+        Assert.True(rich.KeyConcepts.Count >= 3);
+        Assert.True(rich.WorkedExamples.Count >= 4);
+        Assert.True(rich.CommonMistakes.Count >= 3);
+        Assert.NotEmpty(rich.Visuals);
+
+        var learnerText = string.Join(
+            " ",
+            rich.ExplanationParagraphs
+                .Concat(rich.KeyConcepts.SelectMany(x => new[]
+                {
+                    x.Title,
+                    x.Definition,
+                    x.Rule,
+                    x.Example
+                }))
+                .Concat(rich.WorkedExamples.SelectMany(x =>
+                    new[]
+                    {
+                        x.Title,
+                        x.Question,
+                        x.Method,
+                        x.Answer,
+                        x.Check
+                    }.Concat(x.Steps)))
+                .Concat(rich.CommonMistakes.SelectMany(x => new[]
+                {
+                    x.Mistake,
+                    x.WhyWrong,
+                    x.Correction
+                }))
+                .Concat(rich.SummaryPoints));
+
+        Assert.DoesNotContain("Find the ", learnerText, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("Calculate ", learnerText, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("Evaluate ", learnerText, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("Solve ", learnerText, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("The answer is", learnerText, StringComparison.OrdinalIgnoreCase);
     }
 
     [Fact]
