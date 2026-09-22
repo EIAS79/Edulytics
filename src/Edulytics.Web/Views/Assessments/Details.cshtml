@@ -62,13 +62,13 @@
                        asp-controller="AssessmentBuilder"
                        asp-action="StudentPaperPdf"
                        asp-route-assessmentId="@assessment.Id">
-                        Download Questions PDF
+                        @B["DownloadStudentPaper"]
                     </a>
                     <a class="school-button"
                        asp-controller="AssessmentBuilder"
                        asp-action="AnswerKeyPdf"
                        asp-route-assessmentId="@assessment.Id">
-                        Download Questions + Answers PDF
+                        @B["DownloadTeacherAnswerKey"]
                     </a>
                 }
                 <a class="school-button school-button-primary"
