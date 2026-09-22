@@ -110,20 +110,6 @@
     var isAccountImport = Model.Batch.Type is ImportType.Students or ImportType.Teachers or ImportType.SubjectSupervisors;
     var isAssessmentResults = Model.Batch.Type == ImportType.AssessmentResults;
 
-    decimal ParseDecimal(IReadOnlyDictionary<string, string> values, string key)
-    {
-        if (!values.TryGetValue(key, out var raw))
-            return 0m;
-
-        return decimal.TryParse(
-            raw,
-            NumberStyles.Number,
-            CultureInfo.InvariantCulture,
-            out var value)
-                ? value
-                : 0m;
-    }
-
     int ParseInt(IReadOnlyDictionary<string, string> values, string key)
     {
         if (!values.TryGetValue(key, out var raw))
@@ -205,10 +191,13 @@
                     ?? new Dictionary<int, Edulytics.Services.Assessments.AssessmentQuestionItem>();
 
                 var total = rows.Sum(row => ParseNullableDecimal(row.Values, "Score") ?? 0m);
+                var batchAssessmentMax = rows
+                    .Select(row => ParseNullableDecimal(row.Values, "AssessmentMaxScore"))
+                    .Where(value => value.HasValue && value.Value > 0m)
+                    .Select(value => value.GetValueOrDefault())
+                    .FirstOrDefault();
                 var assessmentMax = authoritative?.Assessment.MaxScore ??
-                    rows.Select(row => ParseNullableDecimal(row.Values, "AssessmentMaxScore"))
-                        .FirstOrDefault(value => value.HasValue && value.Value > 0m)
-                        ?.Value ?? 0m;
+                    batchAssessmentMax;
                 var percentage = assessmentMax > 0m
                     ? decimal.Round(
                         total / assessmentMax * 100m,
