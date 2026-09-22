@@ -54,6 +54,23 @@
             }
             @if (assessment.Status != AssessmentStatus.Draft)
             {
+                @if (canManage &&
+                     assessment.DeliveryMode == AssessmentDeliveryMode.Offline &&
+                     Model.Details.Questions.Count > 0)
+                {
+                    <a class="school-button"
+                       asp-controller="AssessmentBuilder"
+                       asp-action="StudentPaperPdf"
+                       asp-route-assessmentId="@assessment.Id">
+                        Download Questions PDF
+                    </a>
+                    <a class="school-button"
+                       asp-controller="AssessmentBuilder"
+                       asp-action="AnswerKeyPdf"
+                       asp-route-assessmentId="@assessment.Id">
+                        Download Questions + Answers PDF
+                    </a>
+                }
                 <a class="school-button school-button-primary"
                    asp-action="Results"
                    asp-route-id="@assessment.Id">@A["Results"]</a>
