@@ -9355,11 +9355,18 @@ a.lesson-content-row:hover
     font-weight: 900;
 }
 
+.rich-number-line-scroll {
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+}
+
 .rich-number-line {
     position: relative;
     display: flex;
     justify-content: space-between;
     gap: .25rem;
+    min-width: 32rem;
     padding: 1.5rem .25rem .25rem;
 }
 
@@ -9589,13 +9596,4 @@ a.lesson-content-row:hover
         grid-template-columns: 1fr;
     }
 
-    .rich-number-line {
-        width: 100%;
-        min-width: 0;
-        overflow-x: auto;
-    }
-
-    .rich-number-line > * {
-        min-width: 32rem;
-    }
 }
