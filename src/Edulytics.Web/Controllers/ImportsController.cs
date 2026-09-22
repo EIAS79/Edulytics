@@ -54,6 +54,7 @@ public sealed class ImportsController : Controller
 
     [HttpGet("/school/imports")]
     public async Task<IActionResult> Index(
+        Guid? assessmentId,
         CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId))
@@ -148,11 +149,17 @@ public sealed class ImportsController : Controller
             }
         }
 
+        var selectedAssessmentId = assessmentId.HasValue &&
+            assessmentResultOptions.Any(x => x.AssessmentId == assessmentId.Value)
+                ? assessmentId
+                : null;
+
         return View(new ImportIndexViewModel(
             productWorkspace,
             academicYears,
             assessmentAcademicYears,
-            assessmentResultOptions));
+            assessmentResultOptions,
+            selectedAssessmentId));
     }
 
     [HttpGet("/school/imports/{batchId:guid}")]
@@ -171,7 +178,36 @@ public sealed class ImportsController : Controller
         if (!result.Succeeded)
             return Failure(result.Error);
 
-        return View(new ImportDetailsViewModel(result.Value!));
+        var assessmentWorkspaces =
+            new Dictionary<Guid, AssessmentResultsWorkspace>();
+
+        if (result.Value!.Type == ImportType.AssessmentResults)
+        {
+            var assessmentIds = result.Value.PreviewRows
+                .Select(row =>
+                    row.Values.TryGetValue("AssessmentId", out var raw) &&
+                    Guid.TryParse(raw, out var parsed)
+                        ? parsed
+                        : Guid.Empty)
+                .Where(id => id != Guid.Empty)
+                .Distinct()
+                .ToArray();
+
+            foreach (var assessmentId in assessmentIds)
+            {
+                var workspace = await _assessments.GetResultsAsync(
+                    actorId,
+                    assessmentId,
+                    cancellationToken);
+
+                if (workspace.Value is not null)
+                    assessmentWorkspaces[assessmentId] = workspace.Value;
+            }
+        }
+
+        return View(new ImportDetailsViewModel(
+            result.Value,
+            assessmentWorkspaces));
     }
 
     [Authorize(Roles = ImportManagerRoles)]
