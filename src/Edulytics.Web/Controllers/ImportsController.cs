@@ -209,7 +209,68 @@ public sealed class ImportsController : Controller
         await file.CopyToAsync(stream, cancellationToken);
         var rawBytes = stream.ToArray();
 
-        if (importType != ImportType.Classes &&
+        AdaptedImportUpload? smartAssessmentUpload = null;
+        if (importType == ImportType.AssessmentResults &&
+            string.Equals(
+                Path.GetExtension(file.FileName),
+                ".xlsx",
+                StringComparison.OrdinalIgnoreCase))
+        {
+            var assessmentId = BulkAssessmentResultsWorkbook.ReadAssessmentId(rawBytes);
+            if (!assessmentId.HasValue)
+            {
+                TempData["ImportError"] = Local(
+                    "This is not a valid Edulytics Assessment Results workbook. Download a fresh workbook from Assessment Results and try again.",
+                    "To nie jest prawidłowy skoroszyt wyników Edulytics. Pobierz nowy skoroszyt w sekcji Wyniki sprawdzianów i spróbuj ponownie.");
+                return RedirectToAction(nameof(Index));
+            }
+
+            var currentResults = await _assessments.GetResultsAsync(
+                actorId,
+                assessmentId.Value,
+                cancellationToken);
+
+            if (currentResults.Value is null)
+            {
+                TempData["ImportError"] = Local(
+                    "This assessment is no longer available for this Teacher. Download a workbook for an available Offline assessment.",
+                    "Ten sprawdzian nie jest już dostępny dla tego nauczyciela. Pobierz skoroszyt dla dostępnego sprawdzianu Offline.");
+                return RedirectToAction(nameof(Index));
+            }
+
+            var currentWorkspace = await _assessments.GetWorkspaceAsync(
+                actorId,
+                cancellationToken);
+
+            if (currentWorkspace.Value is null)
+                return Forbid();
+
+            var currentClass = currentWorkspace.Value.ClassGroups
+                .SingleOrDefault(x =>
+                    x.Id == currentResults.Value.Assessment.ClassGroupId);
+
+            if (currentClass is null)
+                return Forbid();
+
+            var reconciliation = BulkAssessmentResultsWorkbook.ValidateAndNormalize(
+                rawBytes,
+                currentResults.Value,
+                currentClass);
+
+            if (!reconciliation.Succeeded || reconciliation.Upload is null)
+            {
+                TempData["ImportError"] = reconciliation.Error ??
+                    Local(
+                        "The workbook could not be validated. Download a fresh workbook and try again.",
+                        "Nie udało się zweryfikować skoroszytu. Pobierz nowy skoroszyt i spróbuj ponownie.");
+                return RedirectToAction(nameof(Index));
+            }
+
+            smartAssessmentUpload = reconciliation.Upload;
+        }
+
+        if (smartAssessmentUpload is null &&
+            importType != ImportType.Classes &&
             MathOnlyImportAdapter.LooksLikeClassesUpload(file.FileName, rawBytes))
         {
             TempData["ImportError"] = Local(
@@ -231,7 +292,8 @@ public sealed class ImportsController : Controller
         AcademicStructureSnapshot? academicSnapshot = null;
         string? selectedAcademicYear = null;
 
-        if (importType == ImportType.AssessmentResults)
+        if (importType == ImportType.AssessmentResults &&
+            smartAssessmentUpload is null)
         {
             var assessmentResult = await _assessments.GetWorkspaceAsync(
                 actorId,
@@ -276,13 +338,14 @@ public sealed class ImportsController : Controller
             }
         }
 
-        var upload = MathOnlyImportAdapter.NormalizeUpload(
-            importType,
-            file.FileName,
-            rawBytes,
-            assessmentWorkspace,
-            academicSnapshot,
-            selectedAcademicYear);
+        var upload = smartAssessmentUpload ??
+            MathOnlyImportAdapter.NormalizeUpload(
+                importType,
+                file.FileName,
+                rawBytes,
+                assessmentWorkspace,
+                academicSnapshot,
+                selectedAcademicYear);
 
         var result = await _imports.UploadAsync(
             actorId,
@@ -391,6 +454,7 @@ public sealed class ImportsController : Controller
     [HttpGet("/school/imports/template/{importType}")]
     public async Task<IActionResult> Template(
         ImportType importType,
+        Guid? assessmentId,
         CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId))
@@ -410,6 +474,70 @@ public sealed class ImportsController : Controller
             !workspace.Value!.AllowedTypes.Any(x => x.Type == importType))
         {
             return Forbid();
+        }
+
+        if (importType == ImportType.AssessmentResults)
+        {
+            if (!assessmentId.HasValue)
+            {
+                TempData["ImportError"] = Local(
+                    "Choose an Academic Year and an Offline assessment before downloading the workbook.",
+                    "Wybierz rok szkolny i sprawdzian Offline przed pobraniem skoroszytu.");
+                return RedirectToAction(nameof(Index));
+            }
+
+            var results = await _assessments.GetResultsAsync(
+                actorId,
+                assessmentId.Value,
+                cancellationToken);
+
+            if (results.Value is null)
+                return Forbid();
+
+            if (results.Value.Assessment.DeliveryMode != AssessmentDeliveryMode.Offline)
+            {
+                TempData["ImportError"] = Local(
+                    "Online assessment results are recorded directly in Edulytics and cannot be downloaded for bulk result import.",
+                    "Wyniki sprawdzianów Online są zapisywane bezpośrednio w Edulytics i nie można ich pobrać do zbiorczego importu wyników.");
+                return RedirectToAction(nameof(Index));
+            }
+
+            if (results.Value.Assessment.Status != AssessmentStatus.Open)
+            {
+                TempData["ImportError"] = Local(
+                    "Only open Offline assessments can use the Assessment Results bulk-import workbook.",
+                    "Tylko otwarte sprawdziany Offline mogą korzystać ze skoroszytu zbiorczego importu wyników.");
+                return RedirectToAction(nameof(Index));
+            }
+
+            var assessmentWorkspace = await _assessments.GetWorkspaceAsync(
+                actorId,
+                cancellationToken);
+
+            if (assessmentWorkspace.Value is null)
+                return Forbid();
+
+            var classItem = assessmentWorkspace.Value.ClassGroups
+                .SingleOrDefault(x =>
+                    x.Id == results.Value.Assessment.ClassGroupId);
+
+            if (classItem is null)
+                return Forbid();
+
+            if (results.Value.Questions.Count == 0)
+            {
+                TempData["ImportError"] = Local(
+                    "This assessment has no questions. Add questions before downloading a results workbook.",
+                    "Ten sprawdzian nie zawiera pytań. Dodaj pytania przed pobraniem skoroszytu wyników.");
+                return RedirectToAction(nameof(Index));
+            }
+
+            return File(
+                BulkAssessmentResultsWorkbook.Create(
+                    results.Value,
+                    classItem),
+                BulkAssessmentResultsWorkbook.ContentType,
+                $"edulytics-AssessmentResults-{assessmentId.Value:N}.xlsx");
         }
 
         if (importType == ImportType.Classes)
