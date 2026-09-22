@@ -428,9 +428,13 @@ public sealed class LessonContentService : ILessonContentService
                 content.PublishedAtUtc ?? content.UpdatedAtUtc,
                 LessonContentPolicy.IsSupporting(lesson.OfficialOutcomeCount))
             {
-                RichContent = RichLessonContentV2Registry.Find(
-                    lesson.Code,
-                    translation.CultureCode)
+                RichContent =
+                    RichLessonContentV2Registry.Find(
+                        lesson.Code,
+                        translation.CultureCode)
+                    ?? RichLessonContentV2RuntimeComposer.TryCompose(
+                        lesson.Code,
+                        translation)
             });
     }
 
@@ -504,6 +508,9 @@ public sealed class LessonContentService : ILessonContentService
                     : RichLessonContentV2Registry.Find(
                         lesson.Code,
                         body.CultureCode)
+                      ?? RichLessonContentV2RuntimeComposer.TryCompose(
+                          lesson.Code,
+                          body)
             });
     }
 
