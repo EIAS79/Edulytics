@@ -56,7 +56,7 @@
 
         const placeholder = document.createElement("option");
         placeholder.value = "";
-        placeholder.textContent = "Select the assessment";
+        placeholder.textContent = builder.dataset.assessmentPlaceholder || "Select the assessment";
         assessmentSelect.appendChild(placeholder);
 
         for (const item of allOptions.filter(x => x.yearId === selectedYear)) {
