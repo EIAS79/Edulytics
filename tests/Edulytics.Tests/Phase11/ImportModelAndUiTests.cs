@@ -189,6 +189,90 @@ public sealed class ImportModelAndUiTests
             css);
     }
 
+    [Fact]
+    public void PublishedOfflineAssessment_DetailsExposeBothPdfDownloads()
+    {
+        var root = Root();
+
+        var source = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Web/Views/Assessments/Details.cshtml"));
+
+        Assert.Contains(
+            "assessment.Status != AssessmentStatus.Draft",
+            source);
+        Assert.Contains(
+            "assessment.DeliveryMode == AssessmentDeliveryMode.Offline",
+            source);
+        Assert.Contains(
+            "asp-action=\"StudentPaperPdf\"",
+            source);
+        Assert.Contains(
+            "asp-action=\"AnswerKeyPdf\"",
+            source);
+    }
+
+    [Fact]
+    public void AssessmentResultsPreview_IsStudentCentricAndKeepsGenericImportsSeparate()
+    {
+        var root = Root();
+
+        var view = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Web/Views/Imports/Details.cshtml"));
+
+        Assert.Contains(
+            "var isAssessmentResults = Model.Batch.Type == ImportType.AssessmentResults",
+            view);
+        Assert.Contains(
+            "AssessmentId",
+            view);
+        Assert.Contains(
+            "StudentNumber",
+            view);
+        Assert.Contains(
+            "import-student-details",
+            view);
+        Assert.Contains(
+            "Final score",
+            view);
+        Assert.Contains(
+            "Percentage",
+            view);
+        Assert.Contains(
+            "else",
+            view);
+        Assert.Contains(
+            "data-import-remove-form",
+            view);
+    }
+
+    [Fact]
+    public void AssessmentResultsPreview_MetadataIsHydratedFromCurrentSnapshot()
+    {
+        var root = Root();
+
+        var source = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Services/Imports/DataImportService.cs"));
+
+        Assert.Contains(
+            "EnrichAssessmentResultPreview",
+            source);
+        Assert.Contains(
+            "AssessmentMaxScore",
+            source);
+        Assert.Contains(
+            "QuestionPrompt",
+            source);
+        Assert.Contains(
+            "QuestionMaxScore",
+            source);
+    }
+
     private static string[] Keys(
         string path) =>
         XDocument.Load(path)
