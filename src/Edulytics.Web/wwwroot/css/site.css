@@ -2875,6 +2875,50 @@ input:focus-visible {
     }
 }
 
+@media (max-width: 767px) {
+    .import-assessment-student-table .import-student-detail-panel {
+        width: 100%;
+    }
+
+    .import-assessment-student-table .import-question-detail-table {
+        display: table;
+        width: 100%;
+    }
+
+    .import-assessment-student-table .import-question-detail-table thead {
+        display: table-header-group;
+    }
+
+    .import-assessment-student-table .import-question-detail-table tbody {
+        display: table-row-group;
+    }
+
+    .import-assessment-student-table .import-question-detail-table tfoot {
+        display: table-footer-group;
+    }
+
+    .import-assessment-student-table .import-question-detail-table tr {
+        display: table-row;
+        width: auto;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+    }
+
+    .import-assessment-student-table .import-question-detail-table th,
+    .import-assessment-student-table .import-question-detail-table td {
+        display: table-cell;
+        width: auto;
+        padding: .45rem;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .import-assessment-student-table .import-question-detail-table td::before {
+        content: none;
+    }
+}
+
 /* Phase 12 - production error experience */
 .production-error-page {
     width: min(100% - 2rem, 56rem);
