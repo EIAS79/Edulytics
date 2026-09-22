@@ -126,9 +126,19 @@ public sealed class RichLessonContentV2PilotTests
         Assert.Equal(1569, polish.Length);
         Assert.All(
             polish,
-            dossier => Assert.Equal(
-                RichLessonSourceDossierStatus.ResearchRequired,
-                dossier.Status));
+            dossier =>
+            {
+                Assert.Equal(
+                    RichLessonSourceDossierStatus.IndependentAuthoringReferenceOnly,
+                    dossier.Status);
+                Assert.False(dossier.SourceAdaptationPermitted);
+                Assert.False(string.IsNullOrWhiteSpace(dossier.PedagogicalSourceTitle));
+                Assert.False(string.IsNullOrWhiteSpace(dossier.PedagogicalSourceUrl));
+                Assert.Contains(
+                    "independently authored",
+                    dossier.DecisionReason,
+                    StringComparison.OrdinalIgnoreCase);
+            });
 
         var outputDirectory = Path.Combine(
             FindRoot(),
