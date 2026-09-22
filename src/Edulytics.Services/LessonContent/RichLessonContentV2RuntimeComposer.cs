@@ -80,13 +80,23 @@ public static partial class RichLessonContentV2RuntimeComposer
             body.QuickSummary,
             contract.ContractVersion);
 
-        return Cache.GetOrAdd(
-            cacheKey,
-            _ => Compose(
-                lessonCode,
-                body,
-                contract,
-                supportedFamilies));
+        try
+        {
+            return Cache.GetOrAdd(
+                cacheKey,
+                _ => Compose(
+                    lessonCode,
+                    body,
+                    contract,
+                    supportedFamilies));
+        }
+        catch (InvalidOperationException)
+        {
+            // Rich V2 is an enhancement layer. If a lesson cannot be compiled
+            // deterministically, fail closed to the existing canonical body
+            // rather than breaking Student/Teacher lesson access.
+            return null;
+        }
     }
 
     private static RichLessonContentV2Lesson Compose(
