@@ -2752,6 +2752,16 @@ input:focus-visible {
     cursor: pointer;
 }
 
+.import-student-paper-preview {
+    width: min(72rem, 78vw);
+    margin-top: .75rem;
+}
+
+.import-student-paper-preview .assessment-selected-paper {
+    width: 100%;
+    margin-top: 0;
+}
+
 .import-student-detail-panel {
     width: min(42rem, 72vw);
     margin-top: .75rem;
@@ -2783,6 +2793,10 @@ input:focus-visible {
 }
 
 @media (max-width: 767px) {
+    .import-student-paper-preview {
+        width: 100%;
+    }
+
     .import-student-detail-panel {
         width: 100%;
         padding: .6rem;
