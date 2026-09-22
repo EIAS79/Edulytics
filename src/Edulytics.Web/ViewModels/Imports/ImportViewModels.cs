@@ -8,9 +8,19 @@ public sealed record ImportAcademicYearOption(
     Guid Id,
     string Name);
 
+public sealed record ImportAssessmentResultOption(
+    Guid AssessmentId,
+    Guid AcademicYearId,
+    string Title,
+    DateOnly AssessmentDate,
+    Guid ClassGroupId,
+    string ClassName);
+
 public sealed record ImportIndexViewModel(
     ImportWorkspace Workspace,
-    IReadOnlyList<ImportAcademicYearOption> AcademicYears);
+    IReadOnlyList<ImportAcademicYearOption> AcademicYears,
+    IReadOnlyList<ImportAcademicYearOption> AssessmentAcademicYears,
+    IReadOnlyList<ImportAssessmentResultOption> AssessmentResultOptions);
 
 public sealed record ImportDetailsViewModel(
     ImportBatchDetail Batch)
