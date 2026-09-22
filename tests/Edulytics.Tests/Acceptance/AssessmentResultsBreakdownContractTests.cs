@@ -44,6 +44,43 @@ public sealed class AssessmentResultsBreakdownContractTests
     }
 
     [Fact]
+    public void PublishedOnlineAndOfflineAssessments_KeepTheSameResultsRoute()
+    {
+        var root = FindRoot();
+        var details = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Assessments/Details.cshtml"));
+
+        Assert.Contains(
+            "assessment.Status != AssessmentStatus.Draft",
+            details,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "asp-action=\"Results\"",
+            details,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "assessment.DeliveryMode == AssessmentDeliveryMode.Offline",
+            details,
+            StringComparison.Ordinal);
+
+        var resultsIndex = details.IndexOf(
+            "asp-action=\"Results\"",
+            StringComparison.Ordinal);
+        var offlineCondition = details.LastIndexOf(
+            "assessment.DeliveryMode == AssessmentDeliveryMode.Offline",
+            resultsIndex,
+            StringComparison.Ordinal);
+
+        Assert.True(resultsIndex >= 0);
+        Assert.True(offlineCondition >= 0);
+        Assert.Contains(
+            "</a>\n            }\n                <a class=\"school-button school-button-primary\"\n                   asp-action=\"Results\"",
+            details.Replace("\r\n", "\n"),
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void ResultsPaper_RemainsReadOnly_AndOfflineEntryRoutesToBulkImport()
     {
         var root = FindRoot();
