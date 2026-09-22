@@ -196,7 +196,8 @@ public static class BulkAssessmentResultsWorkbook
             var now = questions[index];
             if (old.Id != now.Id ||
                 old.Order != now.Order ||
-                old.MaxScore != now.MaxScore)
+                old.MaxScore != now.MaxScore ||
+                !string.Equals(old.Prompt, now.Prompt, StringComparison.Ordinal))
             {
                 return "This workbook is out of date because an assessment question, its order, or its maximum score changed. Download a fresh workbook before importing results.";
             }
@@ -546,7 +547,8 @@ public static class BulkAssessmentResultsWorkbook
                     InlineCell($"A{rowNumber - 1}", "Question"),
                     InlineCell($"B{rowNumber - 1}", question.Id.ToString("D")),
                     NumericCell($"C{rowNumber - 1}", question.Order),
-                    NumericCell($"D{rowNumber - 1}", question.MaxScore)));
+                    NumericCell($"D{rowNumber - 1}", question.MaxScore),
+                    InlineCell($"E{rowNumber - 1}", question.Prompt)));
         }
 
         rowNumber += 2;
@@ -625,7 +627,11 @@ public static class BulkAssessmentResultsWorkbook
                     throw new InvalidDataException("Invalid question metadata.");
                 }
 
-                questions.Add(new QuestionSnapshot(questionId, order, maxScore));
+                questions.Add(new QuestionSnapshot(
+                    questionId,
+                    order,
+                    maxScore,
+                    Value(sheet, row, 5)));
             }
             else if (string.Equals(kind, "Student", StringComparison.Ordinal))
             {
@@ -924,7 +930,8 @@ public static class BulkAssessmentResultsWorkbook
     private sealed record QuestionSnapshot(
         Guid Id,
         int Order,
-        decimal MaxScore);
+        decimal MaxScore,
+        string Prompt);
 
     private sealed record StudentSnapshot(
         Guid StudentProfileId,
