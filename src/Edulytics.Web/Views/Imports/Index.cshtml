@@ -135,7 +135,8 @@
                         <div class="assessment-results-template-builder"
                              data-assessment-results-template
                              data-template-url="@Url.Action("Template", "Imports", new { importType = ImportType.AssessmentResults })"
-                             data-assessment-placeholder="@L("Select the assessment", "Wybierz sprawdzian")">
+                             data-assessment-placeholder="@L("Select the assessment", "Wybierz sprawdzian")"
+                             data-selected-assessment-id="@(Model.SelectedAssessmentId?.ToString("D") ?? string.Empty)">
                             <div class="import-field">
                                 <label for="assessmentResultAcademicYearId">@L("Academic Year", "Rok szkolny")</label>
                                 <select id="assessmentResultAcademicYearId">
