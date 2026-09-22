@@ -21,17 +21,18 @@
 | Overall Rich Content V2 status | Count |
 |---|---:|
 | Good | 139 |
-| Needs expansion | 4,312 |
+| Needs expansion | 2,743 |
 | Generic | 2 |
+| Source research required | 1,569 |
 
-The result confirms the programme premise: **4,314 of 4,453 lessons are not yet Rich Content V2 ready** under the first-pass deterministic structural standard.
+The result confirms the programme premise: **4,314 of 4,453 lessons are not yet Rich Content V2 ready** under the first-pass deterministic structural standard. Of those, **1,569** require a pedagogical-source research pass because the current pack is framework-only.
 
 ## By curriculum
 
 | Curriculum | Lessons | Official | Supporting | Good | Needs expansion | Generic |
 |---|---:|---:|---:|---:|---:|---:|
 | CAMBRIDGE-INTL-MATH | 566 | 27 | 539 | 0 | 564 | 2 |
-| PL-NATIONAL-MATH | 1,569 | 1,569 | 0 | 0 | 1,569 | 0 |
+| PL-NATIONAL-MATH | 1,569 | 1,569 | 0 | 0 | 0 | 0 |
 | UAE-MOE-MATH | 758 | 42 | 716 | 0 | 758 | 0 |
 | US-CCSS-MATH | 1,560 | 1,466 | 94 | 139 | 1,421 | 0 |
 
@@ -64,7 +65,7 @@ Pedagogical source types in the effective catalogue:
 - Official Framework Only: 1,569
 - Current Official Textbook: 42
 
-This means R3 does **not** begin from zero. Existing provenance and rights metadata can be reused as the starting source dossier, while richer lesson-level research evidence is added only where needed.
+This means R3 does **not** begin from zero. Existing provenance and rights metadata can be reused as the starting source dossier. However, the 1,569 Polish lessons currently use `OfficialFrameworkOnly`; under Rich Lesson Content V2 they are explicitly classified as requiring a pedagogical-source research pass before source-driven enrichment.
 
 ## Interpretation
 
