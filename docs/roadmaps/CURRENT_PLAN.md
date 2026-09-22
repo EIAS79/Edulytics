@@ -25,7 +25,7 @@ Its execution order is:
 7. **R7 — Pilot enrichment:** NOT STARTED
 8. **R8 — Catalogue-wide rollout and permanent quality gate:** NOT STARTED
 
-**Current execution position:** R1 and R2 are complete. The exact effective catalogue contains **4,453** learner-visible mathematics lessons: **3,104 official** and **1,349 supporting/no-formal-outcome**. The first-pass Rich Content V2 audit classifies **139 Good**, **4,312 NeedsExpansion**, and **2 Generic**. **2,763** lessons have only generic-fallback/no explicit instructional visual evidence, and no lesson yet has a curated Video Help resource. The next phase is **R3 — Source and research acquisition pipeline**.
+**Current execution position:** R1 and R2 are complete. The exact effective catalogue contains **4,453** learner-visible mathematics lessons: **3,104 official** and **1,349 supporting/no-formal-outcome**. The first-pass Rich Content V2 audit classifies **139 Good**, **2,743 NeedsExpansion**, **2 Generic**, and **1,569 SourceResearchRequired**. Those 1,569 lessons are the Polish framework-only population and require a pedagogical-source research pass before source-driven enrichment. **2,763** lessons have only generic-fallback/no explicit instructional visual evidence, and no lesson yet has a curated Video Help resource. The next phase is **R3 — Source and research acquisition pipeline**.
 
 **R1/R2 evidence:** `docs/lesson-content-v2/catalogue-summary.md`, `RichLessonContentQualityAudit`, and the generated `artifacts/lesson-content-v2/*` CI outputs.
 
