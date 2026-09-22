@@ -106,6 +106,7 @@ jobs:
             artifacts/coverage
             artifacts/tenant
             artifacts/security
+            artifacts/lesson-content-v2
             .ci/quality-baseline.json
           retention-days: 14
           if-no-files-found: warn
