@@ -35,6 +35,7 @@
     }
 
     const templateUrl = builder.dataset.templateUrl || "";
+    const selectedAssessmentId = builder.dataset.selectedAssessmentId || "";
     const allOptions = Array.from(assessmentSelect.options)
         .slice(1)
         .map(option => ({
@@ -97,5 +98,14 @@
     yearSelect.addEventListener("change", renderAssessments);
     assessmentSelect.addEventListener("change", syncAssessment);
 
-    renderAssessments();
+    const preselected = allOptions.find(x => x.value === selectedAssessmentId);
+    if (preselected) {
+        yearSelect.value = preselected.yearId;
+        renderAssessments();
+        assessmentSelect.value = preselected.value;
+        syncAssessment();
+        builder.scrollIntoView({ block: "center" });
+    } else {
+        renderAssessments();
+    }
 })();
