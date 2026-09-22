@@ -52,6 +52,9 @@ public sealed class AssessmentBulkApprovalAndResultFilteringContractTests
         var view = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/Views/Assessments/Results.cshtml"));
+        var paper = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Shared/_AssessmentPaper.cshtml"));
         var layout = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/Views/Shared/_Layout.cshtml"));
@@ -70,7 +73,8 @@ public sealed class AssessmentBulkApprovalAndResultFilteringContractTests
         Assert.Contains("data-has-result", view, StringComparison.Ordinal);
         Assert.Contains("asp-route-studentProfileId", view, StringComparison.Ordinal);
         Assert.Contains("assessment-student-link", view, StringComparison.Ordinal);
-        Assert.Contains("assessment-selected-paper", view, StringComparison.Ordinal);
+        Assert.Contains("_AssessmentPaper", view, StringComparison.Ordinal);
+        Assert.Contains("assessment-selected-paper", paper, StringComparison.Ordinal);
         Assert.Contains("View paper", view, StringComparison.Ordinal);
         Assert.Contains("assessment-results-filter-bar", styles, StringComparison.Ordinal);
         Assert.Contains("assessment-results-pager", styles, StringComparison.Ordinal);

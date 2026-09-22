@@ -20,10 +20,12 @@ public sealed record ImportIndexViewModel(
     ImportWorkspace Workspace,
     IReadOnlyList<ImportAcademicYearOption> AcademicYears,
     IReadOnlyList<ImportAcademicYearOption> AssessmentAcademicYears,
-    IReadOnlyList<ImportAssessmentResultOption> AssessmentResultOptions);
+    IReadOnlyList<ImportAssessmentResultOption> AssessmentResultOptions,
+    Guid? SelectedAssessmentId);
 
 public sealed record ImportDetailsViewModel(
-    ImportBatchDetail Batch)
+    ImportBatchDetail Batch,
+    IReadOnlyDictionary<Guid, Edulytics.Services.Assessments.AssessmentResultsWorkspace> AssessmentWorkspaces)
 {
     public string TypeResourceKey =>
         $"Type{Batch.Type}";

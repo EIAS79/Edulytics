@@ -56,3 +56,22 @@ public sealed record AssessmentResultsViewModel(AssessmentResultsWorkspace Works
             _ => "StatusClosed"
         };
 }
+
+
+public sealed record AssessmentPaperQuestionViewModel(
+    int Order,
+    string Prompt,
+    bool HasStudentAnswer,
+    string? StudentAnswer,
+    string? CorrectAnswer,
+    decimal? Score,
+    decimal MaxScore);
+
+public sealed record AssessmentPaperViewModel(
+    string StudentName,
+    string? StudentNumber,
+    decimal Score,
+    decimal MaxScore,
+    decimal Percentage,
+    IReadOnlyList<AssessmentPaperQuestionViewModel> Questions,
+    string? BackUrl = null);

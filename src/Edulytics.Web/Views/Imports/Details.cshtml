@@ -2,6 +2,7 @@
 @using Edulytics.Core.Constants
 @using Edulytics.Core.Enums
 @using Edulytics.Services.Imports
+@using Edulytics.Web.ViewModels.Assessments
 @model Edulytics.Web.ViewModels.Imports.ImportDetailsViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.ImportResource> I
 
@@ -109,20 +110,6 @@
     var isAccountImport = Model.Batch.Type is ImportType.Students or ImportType.Teachers or ImportType.SubjectSupervisors;
     var isAssessmentResults = Model.Batch.Type == ImportType.AssessmentResults;
 
-    decimal ParseDecimal(IReadOnlyDictionary<string, string> values, string key)
-    {
-        if (!values.TryGetValue(key, out var raw))
-            return 0m;
-
-        return decimal.TryParse(
-            raw,
-            NumberStyles.Number,
-            CultureInfo.InvariantCulture,
-            out var value)
-                ? value
-                : 0m;
-    }
-
     int ParseInt(IReadOnlyDictionary<string, string> values, string key)
     {
         if (!values.TryGetValue(key, out var raw))
@@ -135,6 +122,20 @@
             out var value)
                 ? value
                 : int.MaxValue;
+    }
+
+    decimal? ParseNullableDecimal(IReadOnlyDictionary<string, string> values, string key)
+    {
+        if (!values.TryGetValue(key, out var raw))
+            return null;
+
+        return decimal.TryParse(
+            raw,
+            NumberStyles.Number,
+            CultureInfo.InvariantCulture,
+            out var value)
+                ? value
+                : null;
     }
 
     var assessmentStudentGroups = Model.Batch.PreviewRows
@@ -171,13 +172,32 @@
                 var studentName = first.Values.TryGetValue("StudentName", out var name)
                     ? name
                     : group.Key;
+                var studentNumber = first.Values.TryGetValue("StudentNumber", out var number)
+                    ? number
+                    : string.Empty;
                 var assessmentTitle = first.Values.TryGetValue("AssessmentTitle", out var title)
                     ? title
                     : string.Empty;
-                var total = rows.Sum(row => ParseDecimal(row.Values, "Score"));
-                var assessmentMax = rows
-                    .Select(row => ParseDecimal(row.Values, "AssessmentMaxScore"))
-                    .FirstOrDefault(value => value > 0m);
+                var assessmentId = first.Values.TryGetValue("AssessmentId", out var rawAssessmentId) &&
+                    Guid.TryParse(rawAssessmentId, out var parsedAssessmentId)
+                        ? parsedAssessmentId
+                        : (Guid?)null;
+                var authoritative = assessmentId.HasValue &&
+                    Model.AssessmentWorkspaces.TryGetValue(assessmentId.Value, out var workspace)
+                        ? workspace
+                        : null;
+                var authoritativeQuestions = authoritative?.Questions
+                    .ToDictionary(question => question.Order)
+                    ?? new Dictionary<int, Edulytics.Services.Assessments.AssessmentQuestionItem>();
+
+                var total = rows.Sum(row => ParseNullableDecimal(row.Values, "Score") ?? 0m);
+                var batchAssessmentMax = rows
+                    .Select(row => ParseNullableDecimal(row.Values, "AssessmentMaxScore"))
+                    .Where(value => value.HasValue && value.Value > 0m)
+                    .Select(value => value.GetValueOrDefault())
+                    .FirstOrDefault();
+                var assessmentMax = authoritative?.Assessment.MaxScore ??
+                    batchAssessmentMax;
                 var percentage = assessmentMax > 0m
                     ? decimal.Round(
                         total / assessmentMax * 100m,
@@ -185,21 +205,39 @@
                         MidpointRounding.AwayFromZero)
                     : (decimal?)null;
                 var hasError = rows.Any(row => invalidRows.Contains(row.RowNumber));
-                var questions = rows
-                    .Select(row => new
+
+                var paperQuestions = rows
+                    .Select(row =>
                     {
-                        Order = ParseInt(row.Values, "QuestionOrder"),
-                        Prompt = row.Values.TryGetValue("QuestionPrompt", out var prompt)
-                            ? prompt
-                            : string.Empty,
-                        MaxScore = row.Values.TryGetValue("QuestionMaxScore", out var max)
-                            ? max
-                            : string.Empty,
-                        Score = row.Values.TryGetValue("Score", out var score)
-                            ? score
-                            : string.Empty
+                        var order = ParseInt(row.Values, "QuestionOrder");
+                        authoritativeQuestions.TryGetValue(order, out var authoritativeQuestion);
+                        var prompt = authoritativeQuestion?.Prompt ??
+                            (row.Values.TryGetValue("QuestionPrompt", out var rowPrompt)
+                                ? rowPrompt
+                                : string.Empty);
+                        var maxScore = authoritativeQuestion?.MaxScore ??
+                            ParseNullableDecimal(row.Values, "QuestionMaxScore") ??
+                            0m;
+                        var score = ParseNullableDecimal(row.Values, "Score");
+
+                        return new AssessmentPaperQuestionViewModel(
+                            order,
+                            prompt,
+                            false,
+                            null,
+                            authoritativeQuestion?.CorrectAnswer,
+                            score,
+                            maxScore);
                     })
                     .ToArray();
+
+                var paper = new AssessmentPaperViewModel(
+                    studentName,
+                    studentNumber,
+                    total,
+                    assessmentMax,
+                    percentage ?? 0m,
+                    paperQuestions);
 
                 return new
                 {
@@ -209,7 +247,7 @@
                     AssessmentMax = assessmentMax,
                     Percentage = percentage,
                     HasError = hasError,
-                    Questions = questions
+                    Paper = paper
                 };
             })
             .OrderBy(group => group.StudentName)
@@ -418,44 +456,9 @@
                             </td>
                             <td data-label="@L("Details", "Szczegóły")">
                                 <details class="import-student-details">
-                                    <summary>@L("View", "Pokaż")</summary>
-                                    <div class="import-student-detail-panel">
-                                        <table class="import-question-detail-table">
-                                            <thead>
-                                                <tr>
-                                                    <th>@L("Question", "Pytanie")</th>
-                                                    <th>@L("Maximum", "Maksimum")</th>
-                                                    <th>@L("Score", "Wynik")</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            @foreach (var question in student.Questions)
-                                            {
-                                                var questionLabel = string.IsNullOrWhiteSpace(question.Prompt)
-                                                    ? $"Q{question.Order}"
-                                                    : $"Q{question.Order}. {question.Prompt}";
-                                                <tr>
-                                                    <td>@questionLabel</td>
-                                                    <td>@(string.IsNullOrWhiteSpace(question.MaxScore) ? "—" : question.MaxScore)</td>
-                                                    <td>@question.Score</td>
-                                                </tr>
-                                            }
-                                            </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>@L("Final score", "Wynik końcowy")</th>
-                                                    <th>@(student.AssessmentMax > 0m ? student.AssessmentMax.ToString("0.##", CultureInfo.CurrentCulture) : "—")</th>
-                                                    <th>@student.Total.ToString("0.##", CultureInfo.CurrentCulture)</th>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
-                                        @if (student.Percentage.HasValue)
-                                        {
-                                            <p class="import-student-percentage">
-                                                <strong>@L("Percentage", "Procent"):</strong>
-                                                @student.Percentage.Value.ToString("0.##", CultureInfo.CurrentCulture)%
-                                            </p>
-                                        }
+                                    <summary>@L("View paper", "Zobacz arkusz")</summary>
+                                    <div class="import-student-paper-preview">
+                                        @await Html.PartialAsync("_AssessmentPaper", student.Paper)
                                     </div>
                                 </details>
                             </td>

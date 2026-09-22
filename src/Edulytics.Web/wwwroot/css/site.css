@@ -2752,6 +2752,16 @@ input:focus-visible {
     cursor: pointer;
 }
 
+.import-student-paper-preview {
+    width: min(72rem, 78vw);
+    margin-top: .75rem;
+}
+
+.import-student-paper-preview .assessment-selected-paper {
+    width: 100%;
+    margin-top: 0;
+}
+
 .import-student-detail-panel {
     width: min(42rem, 72vw);
     margin-top: .75rem;
@@ -2783,6 +2793,10 @@ input:focus-visible {
 }
 
 @media (max-width: 767px) {
+    .import-student-paper-preview {
+        width: 100%;
+    }
+
     .import-student-detail-panel {
         width: 100%;
         padding: .6rem;
@@ -9031,3 +9045,92 @@ a.lesson-content-row:hover
         width: 100%;
     }
 }
+
+
+/* Shared assessment result paper — Results + Bulk Import preview */
+.assessment-results-roster-shell,
+    .assessment-selected-paper {
+        margin-top: 1.25rem;
+        overflow: hidden;
+        border: 1px solid #dbe4ef;
+        border-radius: 1rem;
+        background: #fff;
+        box-shadow: 0 12px 32px rgba(31, 55, 92, 0.07);
+    }
+
+    .assessment-results-roster-scroll,
+    .assessment-breakdown-scroll { width: 100%; overflow-x: auto; }
+
+    .assessment-results-roster {
+        width: 100%;
+        min-width: 760px;
+        border-collapse: collapse;
+    }
+
+    .assessment-results-roster th {
+        padding: .82rem 1rem;
+        border-bottom: 1px solid #dce4ef;
+        background: #f3f6fb;
+        color: #52627a;
+        font-size: .76rem;
+        font-weight: 900;
+        letter-spacing: .04em;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    .assessment-results-roster td {
+        padding: 1rem;
+        border-bottom: 1px solid #edf1f6;
+        color: #17233d;
+        vertical-align: middle;
+    }
+
+    .assessment-results-roster tbody tr:last-child td { border-bottom: 0; }
+    .assessment-results-roster tbody tr:hover { background: #fbfdff; }
+    .assessment-student-link { display: inline-block; color: #153b7c; font-size: 1rem; font-weight: 900; text-decoration: none; }
+    .assessment-student-link:hover, .assessment-student-link:focus-visible { color: #2f66e8; text-decoration: underline; }
+    .assessment-student-number { display: block; margin-top: .22rem; color: #7b8798; font-size: .82rem; }
+    .assessment-roster-status { display: inline-flex; padding: .35rem .62rem; border-radius: 999px; font-size: .82rem; font-weight: 850; }
+    .assessment-roster-status.is-submitted { background: #eaf8ef; color: #17643a; }
+    .assessment-roster-status.is-missing { background: #eef2f7; color: #617089; }
+    .assessment-roster-muted { color: #8a96a7; }
+    .assessment-roster-action-column { text-align: right !important; }
+    .assessment-view-paper-button { min-width: 7.5rem; padding: .5rem .75rem; }
+
+    .assessment-selected-paper { scroll-margin-top: 1rem; }
+    .assessment-result-student-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding: 1.15rem 1.25rem; border-bottom: 1px solid #e8edf5; background: linear-gradient(180deg,#fff 0%,#f8faff 100%); }
+    .assessment-result-student-header h2 { margin: .15rem 0 0; font-size: 1.35rem; }
+    .assessment-result-student-header p { margin: .25rem 0 0; color: #617089; }
+    .assessment-paper-kicker { color: #315fcb; font-size: .76rem; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+    .assessment-paper-header-actions { display: flex; align-items: center; gap: 1rem; }
+    .assessment-result-total-v2 { min-width: 8.5rem; text-align: right; }
+    .assessment-result-total-label { display: block; margin-bottom: .15rem; color: #68778c; font-size: .76rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .assessment-result-total-v2 strong { display: block; color: #14213d; font-size: 1.15rem; }
+    .assessment-result-total-v2 > span:last-child { display: block; margin-top: .12rem; color: #466178; font-weight: 800; }
+
+    .assessment-breakdown-table { width: 100%; min-width: 900px; margin: 0; border-collapse: collapse; table-layout: fixed; }
+    .assessment-breakdown-table th { padding: .75rem .9rem; border-bottom: 1px solid #dce4ef; background: #f3f6fb; color: #52627a; font-size: .76rem; font-weight: 900; letter-spacing: .04em; text-align: left; text-transform: uppercase; }
+    .assessment-breakdown-table th:first-child { width: 38%; }
+    .assessment-breakdown-table th:nth-child(2) { width: 21%; }
+    .assessment-breakdown-table th:nth-child(3) { width: 25%; }
+    .assessment-breakdown-table th:last-child { width: 16%; }
+    .assessment-breakdown-table td { padding: .9rem; border-bottom: 1px solid #edf1f6; color: #17233d; vertical-align: top; overflow-wrap: anywhere; }
+    .assessment-breakdown-table tbody tr:last-child td { border-bottom: 0; }
+    .assessment-question-cell { display: flex; align-items: flex-start; gap: .65rem; line-height: 1.45; }
+    .assessment-question-number { display: inline-grid; place-items: center; flex: 0 0 1.75rem; min-width: 1.75rem; height: 1.75rem; border-radius: .5rem; background: #eef3ff; color: #315fcb; font-size: .85rem; font-weight: 900; }
+    .assessment-answer-value { display: inline-block; padding: .38rem .55rem; border-radius: .5rem; background: #f4f7fb; color: #1f2d45; font-weight: 750; white-space: pre-wrap; }
+    .assessment-answer-value.is-expected { background: #eef9f2; color: #17643a; }
+    .assessment-answer-value.is-empty, .assessment-answer-muted { color: #7a8799; font-style: italic; font-weight: 600; }
+    .assessment-score-column, .assessment-score-cell { text-align: right !important; }
+    .assessment-score-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 5.5rem; padding: .4rem .6rem; border-radius: .55rem; font-weight: 900; white-space: nowrap; }
+    .assessment-score-badge.is-full { background: #eaf8ef; color: #17643a; }
+    .assessment-score-badge.is-partial { background: #fff7df; color: #7b5a00; }
+    .assessment-score-badge.is-zero { background: #fff0ef; color: #a03b34; }
+    .assessment-score-badge.is-missing { background: #f1f3f6; color: #7b8798; }
+
+    @media (max-width: 720px) {
+        .assessment-result-student-header, .assessment-paper-header-actions { align-items: stretch; flex-direction: column; }
+        .assessment-result-total-v2 { text-align: left; }
+        .assessment-breakdown-table { min-width: 760px; }
+    }

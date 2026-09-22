@@ -1,4 +1,5 @@
 @using Edulytics.Core.Constants
+@using Edulytics.Core.Enums
 @using System.Globalization
 @model Edulytics.Web.ViewModels.Assessments.AssessmentResultsViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentResource> A
@@ -6,9 +7,6 @@
     ViewData["Title"] = A["Results"];
     var assessment = Model.Workspace.Assessment;
     var language = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
-    var questionLabel = language switch { "pl" => "Pytanie", "ar" => "السؤال", _ => "Question" };
-    var studentAnswerLabel = language switch { "pl" => "Odpowiedź ucznia", "ar" => "إجابة الطالب", _ => "Student answer" };
-    var expectedAnswerLabel = language switch { "pl" => "Poprawna / oczekiwana odpowiedź", "ar" => "الإجابة الصحيحة / المتوقwana", _ => "Correct / expected answer" };
     var scoreLabel = language switch { "pl" => "Punkty", "ar" => "الدرجة", _ => "Score" };
     var statusLabel = language switch { "pl" => "Status", "ar" => "الحالة", _ => "Status" };
     var actionLabel = language switch { "pl" => "Akcja", "ar" => "الإجراء", _ => "Action" };
@@ -19,17 +17,7 @@
     var viewPaperLabel = language switch { "pl" => "Zobacz arkusz", "ar" => "عرض ورقة الامتحان", _ => "View paper" };
     var backToListLabel = language switch { "pl" => "Powrót do listy uczniów", "ar" => "العودة إلى قائمة الطلاب", _ => "Back to student list" };
     var paperTitleLabel = language switch { "pl" => "Arkusz ucznia", "ar" => "ورقة امتحان الطالب", _ => "Student paper" };
-    var noResponseLabel = language switch { "pl" => "Brak zapisanej odpowiedzi", "ar" => "لا توجد إجابة مسجلة", _ => "No submitted answer recorded" };
-    var blankResponseLabel = language switch { "pl" => "Brak odpowiedzi", "ar" => "لم تتم الإجابة", _ => "No answer submitted" };
-    var noExpectedLabel = language switch { "pl" => "Brak zapisanej odpowiedzi wzorcowej", "ar" => "لا توجد إجابة نموذجية مسجلة", _ => "No expected answer recorded" };
-    var downloadWorkbookLabel = language switch { "pl" => "Pobierz arkusz wyników Excel", "ar" => "تنزيل ملف نتائج Excel", _ => "Download Excel results workbook" };
-    var uploadWorkbookLabel = language switch { "pl" => "Zaimportuj wyniki z Excel", "ar" => "استيراد النتائج من Excel", _ => "Import results from Excel" };
-    var workbookHelpLabel = language switch
-    {
-        "pl" => "Arkusz zawiera uczniów tego oddziału w jednym wierszu na ucznia. Uzupełnij tylko punkty przy pytaniach; identyfikatory są ukryte.",
-        "ar" => "الملف يحتوي طلاب هذا الصف، طالب واحد في كل صف. املأ درجات الأسئلة فقط؛ المعرّفات مخفية.",
-        _ => "The workbook is pre-filled with this class roster, one student per row. Enter question scores only; stable IDs are hidden."
-    };
+    var importScoresLabel = language switch { "pl" => "Importuj punkty", "ar" => "إدخال الدرجات", _ => "Import scores" };
 
     var selectedStudentId = Guid.TryParse(Context.Request.Query["studentProfileId"], out var parsedStudentId)
         ? parsedStudentId
@@ -37,6 +25,39 @@
     var selectedStudent = selectedStudentId.HasValue
         ? Model.Workspace.Students.FirstOrDefault(student => student.StudentProfileId == selectedStudentId.Value)
         : null;
+
+    Edulytics.Web.ViewModels.Assessments.AssessmentPaperViewModel? selectedPaper = null;
+    if (selectedStudent?.ResultId.HasValue == true)
+    {
+        selectedPaper = new(
+            selectedStudent.DisplayName,
+            selectedStudent.StudentNumber,
+            selectedStudent.Score,
+            assessment.MaxScore,
+            selectedStudent.Percentage,
+            Model.Workspace.Questions
+                .OrderBy(question => question.Order)
+                .Select(question =>
+                {
+                    var hasScore = selectedStudent.QuestionScores.TryGetValue(
+                        question.Id,
+                        out var score);
+                    var hasResponse = selectedStudent.QuestionResponses.TryGetValue(
+                        question.Id,
+                        out var response);
+
+                    return new Edulytics.Web.ViewModels.Assessments.AssessmentPaperQuestionViewModel(
+                        question.Order,
+                        question.Prompt,
+                        hasResponse,
+                        hasResponse ? response : null,
+                        question.CorrectAnswer,
+                        hasScore ? score : null,
+                        question.MaxScore);
+                })
+                .ToArray(),
+            Url.Action("Results", "Assessments", new { id = assessment.Id }));
+    }
 }
 
 <section class="assessment-page assessment-results-page">
@@ -45,7 +66,20 @@
             <h1>@A["Results"] — @assessment.Title</h1>
             <p>@A["Status"]: @A[Model.StatusKey] · @A["MaxScore"]: @assessment.MaxScore.ToString("0.##")</p>
         </div>
-        <a class="school-button" asp-action="Details" asp-route-id="@assessment.Id">@A["Details"]</a>
+        <div class="assessment-actions">
+            @if (User.IsInRole(RoleNames.Teacher) &&
+                 assessment.DeliveryMode == AssessmentDeliveryMode.Offline &&
+                 assessment.Status == AssessmentStatus.Open)
+            {
+                <a class="school-button school-button-primary"
+                   asp-controller="Imports"
+                   asp-action="Index"
+                   asp-route-assessmentId="@assessment.Id">
+                    @importScoresLabel
+                </a>
+            }
+            <a class="school-button" asp-action="Details" asp-route-id="@assessment.Id">@A["Details"]</a>
+        </div>
     </header>
 
     @if (TempData["Success"] is string success)
@@ -56,34 +90,6 @@
     {
         <div class="school-alert school-alert-error" role="alert">@error</div>
     }
-
-    <section class="assessment-card assessment-results-workbook-card">
-        <div>
-            <h2>@(language switch { "pl" => "Wyniki w Excel", "ar" => "نتائج Excel", _ => "Excel results workflow" })</h2>
-            <p>@workbookHelpLabel</p>
-        </div>
-        <div class="assessment-actions">
-            <a class="school-button"
-               asp-action="DownloadResultsWorkbook"
-               asp-route-id="@assessment.Id">@downloadWorkbookLabel</a>
-
-            @if (User.IsInRole(RoleNames.Teacher))
-            {
-                <form asp-action="ImportResultsWorkbook"
-                      asp-route-id="@assessment.Id"
-                      method="post"
-                      enctype="multipart/form-data"
-                      class="assessment-form assessment-results-workbook-import">
-                    @Html.AntiForgeryToken()
-                    <input type="file"
-                           name="workbook"
-                           accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-                           required />
-                    <button class="school-button school-button-primary" type="submit">@uploadWorkbookLabel</button>
-                </form>
-            }
-        </div>
-    </section>
 
     @if (Model.Workspace.Students.Count == 0)
     {
@@ -164,179 +170,26 @@
 
     @if (selectedStudent is not null)
     {
-        <section class="assessment-selected-paper" id="student-paper">
-            <header class="assessment-result-student-header">
-                <div>
-                    <span class="assessment-paper-kicker">@paperTitleLabel</span>
-                    <h2>@selectedStudent.DisplayName</h2>
-                    <p>@A["StudentNumber"]: @selectedStudent.StudentNumber</p>
-                </div>
-                <div class="assessment-paper-header-actions">
-                    @if (selectedStudent.ResultId.HasValue)
-                    {
-                        <div class="assessment-result-total assessment-result-total-v2">
-                            <span class="assessment-result-total-label">@scoreLabel</span>
-                            <strong>@selectedStudent.Score.ToString("0.##") / @assessment.MaxScore.ToString("0.##")</strong>
-                            <span>@selectedStudent.Percentage.ToString("0.##")%</span>
-                        </div>
-                    }
-                    <a class="school-button" asp-action="Results" asp-route-id="@assessment.Id">@backToListLabel</a>
-                </div>
-            </header>
-
-            @if (!selectedStudent.ResultId.HasValue)
-            {
+        @if (selectedPaper is not null)
+        {
+            @await Html.PartialAsync("_AssessmentPaper", selectedPaper)
+        }
+        else
+        {
+            <section class="assessment-selected-paper">
+                <header class="assessment-result-student-header">
+                    <div>
+                        <span class="assessment-paper-kicker">@paperTitleLabel</span>
+                        <h2>@selectedStudent.DisplayName</h2>
+                        <p>@A["StudentNumber"]: @selectedStudent.StudentNumber</p>
+                    </div>
+                    <div class="assessment-paper-header-actions">
+                        <a class="school-button" asp-action="Results" asp-route-id="@assessment.Id">@backToListLabel</a>
+                    </div>
+                </header>
                 <div class="assessment-empty">@noSubmissionLabel</div>
-            }
-            else
-            {
-                <div class="assessment-breakdown-scroll">
-                    <table class="assessment-breakdown-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">@questionLabel</th>
-                                <th scope="col">@studentAnswerLabel</th>
-                                <th scope="col">@expectedAnswerLabel</th>
-                                <th scope="col" class="assessment-score-column">@scoreLabel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var question in Model.Workspace.Questions)
-                            {
-                                var hasScore = selectedStudent.QuestionScores.TryGetValue(question.Id, out var current);
-                                var hasResponse = selectedStudent.QuestionResponses.TryGetValue(question.Id, out var response);
-                                var hasExpected = !string.IsNullOrWhiteSpace(question.CorrectAnswer);
-                                var scoreClass = hasScore && current >= question.MaxScore ? "is-full" : hasScore && current > 0m ? "is-partial" : "is-zero";
-                                <tr>
-                                    <td class="assessment-question-cell">
-                                        <span class="assessment-question-number">@question.Order</span>
-                                        <span>@question.Prompt</span>
-                                    </td>
-                                    <td>
-                                        @if (hasResponse)
-                                        {
-                                            <span class="assessment-answer-value @(string.IsNullOrWhiteSpace(response) ? "is-empty" : null)">@(string.IsNullOrWhiteSpace(response) ? blankResponseLabel : response)</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="assessment-answer-muted">@noResponseLabel</span>
-                                        }
-                                    </td>
-                                    <td>
-                                        @if (hasExpected)
-                                        {
-                                            <span class="assessment-answer-value is-expected">@question.CorrectAnswer</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="assessment-answer-muted">@noExpectedLabel</span>
-                                        }
-                                    </td>
-                                    <td class="assessment-score-cell">
-                                        @if (hasScore)
-                                        {
-                                            <span class="assessment-score-badge @scoreClass">@current.ToString("0.##") / @question.MaxScore.ToString("0.##")</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="assessment-score-badge is-missing">— / @question.MaxScore.ToString("0.##")</span>
-                                        }
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            }
-        </section>
+            </section>
+        }
     }
 </section>
 
-<style>
-    .assessment-results-roster-shell,
-    .assessment-selected-paper {
-        margin-top: 1.25rem;
-        overflow: hidden;
-        border: 1px solid #dbe4ef;
-        border-radius: 1rem;
-        background: #fff;
-        box-shadow: 0 12px 32px rgba(31, 55, 92, 0.07);
-    }
-
-    .assessment-results-roster-scroll,
-    .assessment-breakdown-scroll { width: 100%; overflow-x: auto; }
-
-    .assessment-results-roster {
-        width: 100%;
-        min-width: 760px;
-        border-collapse: collapse;
-    }
-
-    .assessment-results-roster th {
-        padding: .82rem 1rem;
-        border-bottom: 1px solid #dce4ef;
-        background: #f3f6fb;
-        color: #52627a;
-        font-size: .76rem;
-        font-weight: 900;
-        letter-spacing: .04em;
-        text-align: left;
-        text-transform: uppercase;
-    }
-
-    .assessment-results-roster td {
-        padding: 1rem;
-        border-bottom: 1px solid #edf1f6;
-        color: #17233d;
-        vertical-align: middle;
-    }
-
-    .assessment-results-roster tbody tr:last-child td { border-bottom: 0; }
-    .assessment-results-roster tbody tr:hover { background: #fbfdff; }
-    .assessment-student-link { display: inline-block; color: #153b7c; font-size: 1rem; font-weight: 900; text-decoration: none; }
-    .assessment-student-link:hover, .assessment-student-link:focus-visible { color: #2f66e8; text-decoration: underline; }
-    .assessment-student-number { display: block; margin-top: .22rem; color: #7b8798; font-size: .82rem; }
-    .assessment-roster-status { display: inline-flex; padding: .35rem .62rem; border-radius: 999px; font-size: .82rem; font-weight: 850; }
-    .assessment-roster-status.is-submitted { background: #eaf8ef; color: #17643a; }
-    .assessment-roster-status.is-missing { background: #eef2f7; color: #617089; }
-    .assessment-roster-muted { color: #8a96a7; }
-    .assessment-roster-action-column { text-align: right !important; }
-    .assessment-view-paper-button { min-width: 7.5rem; padding: .5rem .75rem; }
-
-    .assessment-selected-paper { scroll-margin-top: 1rem; }
-    .assessment-result-student-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding: 1.15rem 1.25rem; border-bottom: 1px solid #e8edf5; background: linear-gradient(180deg,#fff 0%,#f8faff 100%); }
-    .assessment-result-student-header h2 { margin: .15rem 0 0; font-size: 1.35rem; }
-    .assessment-result-student-header p { margin: .25rem 0 0; color: #617089; }
-    .assessment-paper-kicker { color: #315fcb; font-size: .76rem; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
-    .assessment-paper-header-actions { display: flex; align-items: center; gap: 1rem; }
-    .assessment-result-total-v2 { min-width: 8.5rem; text-align: right; }
-    .assessment-result-total-label { display: block; margin-bottom: .15rem; color: #68778c; font-size: .76rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
-    .assessment-result-total-v2 strong { display: block; color: #14213d; font-size: 1.15rem; }
-    .assessment-result-total-v2 > span:last-child { display: block; margin-top: .12rem; color: #466178; font-weight: 800; }
-
-    .assessment-breakdown-table { width: 100%; min-width: 900px; margin: 0; border-collapse: collapse; table-layout: fixed; }
-    .assessment-breakdown-table th { padding: .75rem .9rem; border-bottom: 1px solid #dce4ef; background: #f3f6fb; color: #52627a; font-size: .76rem; font-weight: 900; letter-spacing: .04em; text-align: left; text-transform: uppercase; }
-    .assessment-breakdown-table th:first-child { width: 38%; }
-    .assessment-breakdown-table th:nth-child(2) { width: 21%; }
-    .assessment-breakdown-table th:nth-child(3) { width: 25%; }
-    .assessment-breakdown-table th:last-child { width: 16%; }
-    .assessment-breakdown-table td { padding: .9rem; border-bottom: 1px solid #edf1f6; color: #17233d; vertical-align: top; overflow-wrap: anywhere; }
-    .assessment-breakdown-table tbody tr:last-child td { border-bottom: 0; }
-    .assessment-question-cell { display: flex; align-items: flex-start; gap: .65rem; line-height: 1.45; }
-    .assessment-question-number { display: inline-grid; place-items: center; flex: 0 0 1.75rem; min-width: 1.75rem; height: 1.75rem; border-radius: .5rem; background: #eef3ff; color: #315fcb; font-size: .85rem; font-weight: 900; }
-    .assessment-answer-value { display: inline-block; padding: .38rem .55rem; border-radius: .5rem; background: #f4f7fb; color: #1f2d45; font-weight: 750; white-space: pre-wrap; }
-    .assessment-answer-value.is-expected { background: #eef9f2; color: #17643a; }
-    .assessment-answer-value.is-empty, .assessment-answer-muted { color: #7a8799; font-style: italic; font-weight: 600; }
-    .assessment-score-column, .assessment-score-cell { text-align: right !important; }
-    .assessment-score-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 5.5rem; padding: .4rem .6rem; border-radius: .55rem; font-weight: 900; white-space: nowrap; }
-    .assessment-score-badge.is-full { background: #eaf8ef; color: #17643a; }
-    .assessment-score-badge.is-partial { background: #fff7df; color: #7b5a00; }
-    .assessment-score-badge.is-zero { background: #fff0ef; color: #a03b34; }
-    .assessment-score-badge.is-missing { background: #f1f3f6; color: #7b8798; }
-
-    @@media (max-width: 720px) {
-        .assessment-result-student-header, .assessment-paper-header-actions { align-items: stretch; flex-direction: column; }
-        .assessment-result-total-v2 { text-align: left; }
-        .assessment-breakdown-table { min-width: 760px; }
-    }
-</style>

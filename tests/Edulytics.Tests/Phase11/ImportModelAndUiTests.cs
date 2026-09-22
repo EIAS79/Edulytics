@@ -273,6 +273,75 @@ public sealed class ImportModelAndUiTests
             source);
     }
 
+    [Fact]
+    public void AssessmentResultsImport_SupportsResultsPagePreselection()
+    {
+        var root = Root();
+
+        var controller = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Web/Controllers/ImportsController.cs"));
+        var view = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Web/Views/Imports/Index.cshtml"));
+        var script = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Web/wwwroot/js/import-index.js"));
+
+        Assert.Contains(
+            "Guid? assessmentId",
+            controller);
+        Assert.Contains(
+            "selectedAssessmentId",
+            controller);
+        Assert.Contains(
+            "data-selected-assessment-id",
+            view);
+        Assert.Contains(
+            "selectedAssessmentId",
+            script);
+        Assert.Contains(
+            "assessmentSelect.value = preselected.value",
+            script);
+        Assert.Contains(
+            "syncAssessment();",
+            script);
+    }
+
+    [Fact]
+    public void AssessmentResultsPreview_LoadsAuthoritativePaperAnswers()
+    {
+        var root = Root();
+
+        var controller = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Web/Controllers/ImportsController.cs"));
+        var view = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Web/Views/Imports/Details.cshtml"));
+
+        Assert.Contains(
+            "_assessments.GetResultsAsync",
+            controller);
+        Assert.Contains(
+            "assessmentWorkspaces",
+            controller);
+        Assert.Contains(
+            "authoritativeQuestion?.CorrectAnswer",
+            view);
+        Assert.Contains(
+            "new AssessmentPaperViewModel",
+            view);
+        Assert.Contains(
+            "Html.PartialAsync(\"_AssessmentPaper\"",
+            view);
+    }
+
     private static string[] Keys(
         string path) =>
         XDocument.Load(path)
