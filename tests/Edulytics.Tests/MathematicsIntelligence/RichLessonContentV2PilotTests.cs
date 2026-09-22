@@ -246,6 +246,79 @@ public sealed class RichLessonContentV2PilotTests
         Assert.Contains(videos, x => x.VideoId == "UYab2QKERBE");
     }
 
+    [Fact]
+    public void UaeOfficialPilot_PreservesOfficialMappings_AndUsesIndependentAuthoring()
+    {
+        var richDocument = Assert.Single(
+            RichLessonContentV2Registry.AllDocuments,
+            x => x.ContentVersion ==
+                 "rich-v2-uae-g9-advanced-official-pilot-2026-09-22");
+
+        Assert.Equal(2, richDocument.Lessons.Count);
+
+        var baseDocument = MathematicsCanonicalLessonContentSeeder
+            .LoadEmbeddedDocuments()
+            .Single(x =>
+                x.PackCode == "UAE-MOE-MATH" &&
+                x.Lessons.Any(lesson =>
+                    lesson.LessonCode == "PED:UAE:G9:ADV:T1:L2-1"));
+
+        foreach (var richLesson in richDocument.Lessons)
+        {
+            var baseLesson = Assert.Single(
+                baseDocument.Lessons,
+                x => x.LessonCode == richLesson.LessonCode);
+
+            Assert.NotEmpty(baseLesson.OutcomeCodes);
+
+            var sourceDossier = RichLessonSourceDossierFactory.Build(
+                baseDocument,
+                baseLesson,
+                richLesson.Title);
+
+            Assert.Equal(
+                RichLessonSourceDossierStatus.IndependentAuthoringReferenceOnly,
+                sourceDossier.Status);
+            Assert.False(sourceDossier.SourceAdaptationPermitted);
+
+            Assert.True(richLesson.ExplanationParagraphs.Count >= 3);
+            Assert.True(richLesson.KeyConcepts.Count >= 3);
+            Assert.True(richLesson.WorkedExamples.Count >= 3);
+            Assert.True(richLesson.CommonMistakes.Count >= 2);
+            Assert.True(richLesson.SummaryPoints.Count >= 3);
+            Assert.NotEmpty(richLesson.Visuals);
+        }
+
+        var root = FindRoot();
+        var sidecar = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g9-advanced-official.rich-lesson-v2.json"));
+
+        Assert.DoesNotContain(
+            "\"OutcomeCodes\"",
+            sidecar,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "\"FrameworkVersionId\"",
+            sidecar,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void PilotRegistry_Contains26UniqueLessonEntries()
+    {
+        var lessons = RichLessonContentV2Registry.AllDocuments
+            .SelectMany(x => x.Lessons)
+            .ToArray();
+
+        Assert.Equal(26, lessons.Length);
+        Assert.Equal(
+            26,
+            lessons.Select(x => x.LessonCode)
+                .Distinct(StringComparer.Ordinal)
+                .Count());
+    }
+
     private static string FindRoot()
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);
