@@ -72,7 +72,15 @@ public sealed class ImportsController : Controller
             workspace.Batches);
 
         var academicYears = Array.Empty<ImportAcademicYearOption>();
-        if (productWorkspace.AllowedTypes.Any(x => x.Type == ImportType.Classes))
+        var assessmentAcademicYears = Array.Empty<ImportAcademicYearOption>();
+        var assessmentResultOptions = Array.Empty<ImportAssessmentResultOption>();
+
+        var supportsClasses =
+            productWorkspace.AllowedTypes.Any(x => x.Type == ImportType.Classes);
+        var supportsAssessmentResults =
+            productWorkspace.AllowedTypes.Any(x => x.Type == ImportType.AssessmentResults);
+
+        if (supportsClasses || supportsAssessmentResults)
         {
             var actor = await _schoolUsers.GetActorAsync(
                 actorId,
@@ -84,16 +92,65 @@ public sealed class ImportsController : Controller
                     schoolId,
                     cancellationToken);
 
-                academicYears = snapshot.AcademicYears
-                    .Where(x => x.Status == AcademicStructureStatus.Active)
-                    .OrderByDescending(x => x.StartsOn)
-                    .ThenBy(x => x.Name)
-                    .Select(x => new ImportAcademicYearOption(x.Id, x.Name))
-                    .ToArray();
+                if (supportsClasses)
+                {
+                    academicYears = snapshot.AcademicYears
+                        .Where(x => x.Status == AcademicStructureStatus.Active)
+                        .OrderByDescending(x => x.StartsOn)
+                        .ThenBy(x => x.Name)
+                        .Select(x => new ImportAcademicYearOption(x.Id, x.Name))
+                        .ToArray();
+                }
+
+                if (supportsAssessmentResults)
+                {
+                    var assessmentResult = await _assessments.GetWorkspaceAsync(
+                        actorId,
+                        cancellationToken);
+
+                    if (assessmentResult.Value is null)
+                        return Forbid();
+
+                    var assessmentWorkspace = assessmentResult.Value;
+                    var classNames = assessmentWorkspace.ClassGroups
+                        .ToDictionary(x => x.Id, x => x.Name);
+
+                    assessmentResultOptions = assessmentWorkspace.Assessments
+                        .Where(x =>
+                            x.DeliveryMode == AssessmentDeliveryMode.Offline &&
+                            x.Status == AssessmentStatus.Open &&
+                            classNames.ContainsKey(x.ClassGroupId))
+                        .OrderByDescending(x => x.AssessmentDate)
+                        .ThenBy(x => x.Title)
+                        .ThenBy(x => classNames[x.ClassGroupId])
+                        .Select(x => new ImportAssessmentResultOption(
+                            x.Id,
+                            x.AcademicYearId,
+                            x.Title,
+                            x.AssessmentDate,
+                            x.ClassGroupId,
+                            classNames[x.ClassGroupId]))
+                        .ToArray();
+
+                    var availableYearIds = assessmentResultOptions
+                        .Select(x => x.AcademicYearId)
+                        .ToHashSet();
+
+                    assessmentAcademicYears = snapshot.AcademicYears
+                        .Where(x => availableYearIds.Contains(x.Id))
+                        .OrderByDescending(x => x.StartsOn)
+                        .ThenBy(x => x.Name)
+                        .Select(x => new ImportAcademicYearOption(x.Id, x.Name))
+                        .ToArray();
+                }
             }
         }
 
-        return View(new ImportIndexViewModel(productWorkspace, academicYears));
+        return View(new ImportIndexViewModel(
+            productWorkspace,
+            academicYears,
+            assessmentAcademicYears,
+            assessmentResultOptions));
     }
 
     [HttpGet("/school/imports/{batchId:guid}")]
