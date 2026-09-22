@@ -46,7 +46,8 @@ public sealed class DataImportService : IDataImportService
         {
             RoleNames.SubjectSupervisor =>
                 type is ImportType.Students or ImportType.Teachers or ImportType.Classes,
-            RoleNames.Teacher => false,
+            RoleNames.Teacher =>
+                type == ImportType.AssessmentResults,
             _ => false
         };
 
