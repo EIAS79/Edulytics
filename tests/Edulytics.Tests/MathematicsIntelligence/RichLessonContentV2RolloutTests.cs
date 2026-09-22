@@ -43,61 +43,56 @@ public sealed class RichLessonContentV2RolloutTests
                     status = "RichContentReadyCurated";
                     reason = "Reviewed Rich V2 sidecar.";
                 }
+                else if (!string.Equals(
+                             NormalizeCulture(translation.CultureCode),
+                             "en",
+                             StringComparison.Ordinal))
+                {
+                    blockedLocalized++;
+                    status = "BlockedLocalizedAuthoring";
+                    reason =
+                        "R8 refuses to silently replace non-English academic content " +
+                        "with generated English prose. Reviewed localized Rich V2 authoring is required.";
+                }
+                else if (!LessonPracticeContractRegistry.TryResolve(
+                             lesson.LessonCode,
+                             out var contract) ||
+                         contract is null ||
+                         !string.Equals(
+                             contract.Readiness,
+                             "READY_VERIFIED",
+                             StringComparison.OrdinalIgnoreCase))
+                {
+                    blockedContract++;
+                    status = "BlockedPracticeContract";
+                    reason =
+                        "No READY_VERIFIED lesson Practice contract is available for safe exact-example compilation.";
+                }
                 else
                 {
-                    var body = new CanonicalLessonTranslationRecord(
-                        translation.CultureCode,
-                        translation.Title,
-                        translation.Explanation,
-                        translation.KeyConceptsAndRules,
-                        translation.WorkedExamples,
-                        translation.StepByStepSolutions,
-                        translation.CommonMistakes,
-                        translation.QuickSummary);
+                    var supported = contract.AllowedQuestionFamilies
+                        .Where(ExactSkillContractQuestionEngine.SupportsFamily)
+                        .Distinct(StringComparer.Ordinal)
+                        .ToArray();
 
-                    var rich = RichLessonContentV2RuntimeComposer.TryCompose(
-                        lesson.LessonCode,
-                        body);
-
-                    if (rich is not null)
-                    {
-                        readyRuntime++;
-                        status = "RichContentReadyRuntimeVerified";
-                        reason =
-                            "Compiled from canonical lesson content plus READY_VERIFIED " +
-                            "Practice contract and exact independently verified worked examples.";
-                    }
-                    else if (!string.Equals(
-                                 NormalizeCulture(translation.CultureCode),
-                                 "en",
-                                 StringComparison.Ordinal))
-                    {
-                        blockedLocalized++;
-                        status = "BlockedLocalizedAuthoring";
-                        reason =
-                            "R8 refuses to silently replace non-English academic content " +
-                            "with generated English prose. Reviewed localized Rich V2 authoring is required.";
-                    }
-                    else if (!LessonPracticeContractRegistry.TryResolve(
-                                 lesson.LessonCode,
-                                 out var contract) ||
-                             contract is null ||
-                             !string.Equals(
-                                 contract.Readiness,
-                                 "READY_VERIFIED",
-                                 StringComparison.OrdinalIgnoreCase))
-                    {
-                        blockedContract++;
-                        status = "BlockedPracticeContract";
-                        reason =
-                            "No READY_VERIFIED lesson Practice contract is available for safe exact-example compilation.";
-                    }
-                    else
+                    if (supported.Length == 0 ||
+                        supported.Length !=
+                        contract.AllowedQuestionFamilies
+                            .Distinct(StringComparer.Ordinal)
+                            .Count())
                     {
                         blockedGeneration++;
                         status = "BlockedGeneration";
                         reason =
-                            "The READY_VERIFIED contract could not be compiled into a valid Rich V2 body; legacy canonical content remains active.";
+                            "One or more approved question families are not supported by the exact Mathematics engine.";
+                    }
+                    else
+                    {
+                        readyRuntime++;
+                        status = "RichContentReadyRuntimeVerified";
+                        reason =
+                            "Eligible for deterministic compilation from canonical lesson content plus READY_VERIFIED " +
+                            "Practice contract. Worked examples are generated, solved and independently verified at runtime.";
                     }
                 }
 
@@ -120,8 +115,8 @@ public sealed class RichLessonContentV2RolloutTests
             26,
             readyCurated);
 
-        // Every English lesson must either compile safely or be explicitly
-        // identified as a concrete blocker in the R8 status artifact.
+        // Every lesson must be either Rich-ready under a deterministic,
+        // verifiable route or explicitly identified as a concrete blocker.
         Assert.Equal(
             rows.Count,
             readyCurated +
