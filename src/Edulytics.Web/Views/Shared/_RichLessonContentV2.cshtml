@@ -1,0 +1,196 @@
+@model Edulytics.Core.Curriculum.RichLessonContentV2Lesson
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonContentResource> L
+@using Edulytics.Core.Curriculum
+@using System.Globalization
+@{
+    var language = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var approvedVideos = Model.Videos
+        .Where(x => x.ReviewStatus == RichLessonVideoReviewStatus.Approved)
+        .ToArray();
+
+    var questionLabel = language switch { "pl" => "Pytanie", "ar" => "السؤال", _ => "Question" };
+    var methodLabel = language switch { "pl" => "Metoda", "ar" => "الطريقة", _ => "Method" };
+    var answerLabel = language switch { "pl" => "Odpowiedź", "ar" => "الإجابة", _ => "Answer" };
+    var checkLabel = language switch { "pl" => "Sprawdzenie", "ar" => "التحقق", _ => "Check" };
+    var definitionLabel = language switch { "pl" => "Znaczenie", "ar" => "التعريف", _ => "Meaning" };
+    var ruleLabel = language switch { "pl" => "Reguła", "ar" => "القاعدة", _ => "Rule" };
+    var exampleLabel = language switch { "pl" => "Przykład", "ar" => "مثال", _ => "Example" };
+    var mistakeLabel = language switch { "pl" => "Typowy błąd", "ar" => "خطأ شائع", _ => "Common mistake" };
+    var whyWrongLabel = language switch { "pl" => "Dlaczego to błąd", "ar" => "لماذا هذا خطأ", _ => "Why it is wrong" };
+    var correctionLabel = language switch { "pl" => "Jak poprawić", "ar" => "كيفية التصحيح", _ => "How to fix it" };
+    var videoHelpLabel = language switch { "pl" => "Pomoc wideo", "ar" => "مساعدة بالفيديو", _ => "Video Help" };
+    var videoHelpIntro = language switch
+    {
+        "pl" => "Opcjonalne, sprawdzone materiały zewnętrzne wspierające ten sam temat.",
+        "ar" => "مصادر فيديو خارجية اختيارية تمت مراجعتها لدعم نفس موضوع الدرس.",
+        _ => "Optional reviewed external videos that reinforce the same lesson target."
+    };
+    var watchOnYouTubeLabel = language switch { "pl" => "Otwórz w YouTube", "ar" => "فتح على YouTube", _ => "Open on YouTube" };
+}
+
+<section class="lesson-learning-section lesson-learning-section--explanation rich-lesson-section">
+    <header class="lesson-learning-section__header">
+        <span class="lesson-learning-section__number">01</span>
+        <h2>@L["Explanation"]</h2>
+    </header>
+    <div class="rich-lesson-body">
+        @foreach (var paragraph in Model.ExplanationParagraphs)
+        {
+            <p class="lesson-reader-text">@paragraph</p>
+        }
+        @foreach (var visual in Model.Visuals)
+        {
+            <partial name="_RichLessonVisual" model="visual" />
+        }
+    </div>
+</section>
+
+<section class="lesson-learning-section lesson-learning-section--concepts rich-lesson-section">
+    <header class="lesson-learning-section__header">
+        <span class="lesson-learning-section__number">02</span>
+        <h2>@L["KeyConceptsAndRules"]</h2>
+    </header>
+    <div class="rich-concept-grid">
+        @foreach (var concept in Model.KeyConcepts)
+        {
+            <article class="rich-concept-card">
+                <h3>@concept.Title</h3>
+                <dl>
+                    <div><dt>@definitionLabel</dt><dd>@concept.Definition</dd></div>
+                    <div><dt>@ruleLabel</dt><dd>@concept.Rule</dd></div>
+                    @if (!string.IsNullOrWhiteSpace(concept.Example))
+                    {
+                        <div><dt>@exampleLabel</dt><dd>@concept.Example</dd></div>
+                    }
+                </dl>
+            </article>
+        }
+    </div>
+</section>
+
+<section class="lesson-learning-section lesson-learning-section--examples rich-lesson-section">
+    <header class="lesson-learning-section__header">
+        <span class="lesson-learning-section__number">03</span>
+        <h2>@L["WorkedExamples"]</h2>
+    </header>
+    <div class="rich-example-grid">
+        @for (var i = 0; i < Model.WorkedExamples.Count; i++)
+        {
+            var example = Model.WorkedExamples[i];
+            <article class="rich-example-card">
+                <div class="rich-example-card__number">@((i + 1).ToString("00"))</div>
+                <div class="rich-example-card__body">
+                    <h3>@example.Title</h3>
+                    <p><strong>@questionLabel:</strong> @example.Question</p>
+                    <p><strong>@methodLabel:</strong> @example.Method</p>
+                    <p class="rich-example-card__answer"><strong>@answerLabel:</strong> @example.Answer</p>
+                    @if (!string.IsNullOrWhiteSpace(example.Check))
+                    {
+                        <p class="rich-example-card__check"><strong>@checkLabel:</strong> @example.Check</p>
+                    }
+                </div>
+            </article>
+        }
+    </div>
+</section>
+
+<section class="lesson-learning-section lesson-learning-section--steps rich-lesson-section">
+    <header class="lesson-learning-section__header">
+        <span class="lesson-learning-section__number">04</span>
+        <h2>@L["StepByStepSolutions"]</h2>
+    </header>
+    <div class="rich-solution-list">
+        @for (var i = 0; i < Model.WorkedExamples.Count; i++)
+        {
+            var example = Model.WorkedExamples[i];
+            <article class="rich-solution-card">
+                <h3>@((i + 1).ToString("00")) · @example.Title</h3>
+                <p class="rich-solution-question">@example.Question</p>
+                <ol>
+                    @foreach (var step in example.Steps)
+                    {
+                        <li>@step</li>
+                    }
+                </ol>
+                <div class="rich-solution-final">
+                    <span><strong>@answerLabel:</strong> @example.Answer</span>
+                    @if (!string.IsNullOrWhiteSpace(example.Check))
+                    {
+                        <span><strong>@checkLabel:</strong> @example.Check</span>
+                    }
+                </div>
+            </article>
+        }
+    </div>
+</section>
+
+<section class="lesson-learning-section lesson-learning-section--mistakes rich-lesson-section">
+    <header class="lesson-learning-section__header">
+        <span class="lesson-learning-section__number">05</span>
+        <h2>@L["CommonMistakes"]</h2>
+    </header>
+    <div class="rich-mistake-grid">
+        @foreach (var mistake in Model.CommonMistakes)
+        {
+            <article class="rich-mistake-card">
+                <h3>@mistakeLabel</h3>
+                <p class="rich-mistake-card__mistake">@mistake.Mistake</p>
+                <p><strong>@whyWrongLabel:</strong> @mistake.WhyWrong</p>
+                <p><strong>@correctionLabel:</strong> @mistake.Correction</p>
+            </article>
+        }
+    </div>
+</section>
+
+<section class="lesson-learning-section lesson-learning-section--summary rich-lesson-section">
+    <header class="lesson-learning-section__header">
+        <span class="lesson-learning-section__number">06</span>
+        <h2>@L["QuickSummary"]</h2>
+    </header>
+    <div class="lesson-reader-blocks lesson-reader-blocks--summary">
+        <ul class="lesson-summary-list">
+            @foreach (var point in Model.SummaryPoints)
+            {
+                <li>@point</li>
+            }
+        </ul>
+    </div>
+</section>
+
+@if (approvedVideos.Length > 0)
+{
+    <section class="lesson-learning-section lesson-learning-section--video rich-lesson-section">
+        <header class="lesson-learning-section__header">
+            <span class="lesson-learning-section__number">07</span>
+            <h2>@videoHelpLabel</h2>
+        </header>
+        <div class="rich-video-section">
+            <p class="rich-video-section__intro">@videoHelpIntro</p>
+            <div class="rich-video-grid">
+                @foreach (var video in approvedVideos)
+                {
+                    <article class="rich-video-card">
+                        <div class="rich-video-frame">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/@video.VideoId"
+                                title="@video.Title"
+                                loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="rich-video-card__body">
+                            <h3>@video.Title</h3>
+                            <p class="rich-video-card__meta">@video.Creator@if (!string.IsNullOrWhiteSpace(video.DurationLabel)) { <text> · @video.DurationLabel</text> }</p>
+                            <p>@video.WhyRecommended</p>
+                            <a class="school-button"
+                               href="https://www.youtube.com/watch?v=@video.VideoId"
+                               target="_blank"
+                               rel="noopener noreferrer">@watchOnYouTubeLabel</a>
+                        </div>
+                    </article>
+                }
+            </div>
+        </div>
+    </section>
+}
