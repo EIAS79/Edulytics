@@ -107,7 +107,9 @@ public static partial class RichLessonContentQualityAudit
 
     private static readonly Regex GenericTemplateRegex =
         new(
-            @"(?:read the problem and identify the quantities or properties|" +
+            @"(?:step\s*1\s*:\s*identify what is known|" +
+            @"krok\s*1\s*:\s*ustal dane|" +
+            @"read the problem and identify the quantities or properties|" +
             @"represent the situation with numbers, a diagram, a number line, an equation or a labelled shape|" +
             @"apply the relevant rule while preserving place value, units and relationships|" +
             @"calculate carefully and write the result with its meaning|" +
@@ -283,7 +285,10 @@ public static partial class RichLessonContentQualityAudit
             .Split(value)
             .Count(x => !string.IsNullOrWhiteSpace(x));
 
-        var mathSignals = MathSignalRegex.Matches(value).Count;
+        var signalText = StepMarkerRegex.Replace(
+            ExampleMarkerRegex.Replace(value, string.Empty),
+            string.Empty);
+        var mathSignals = MathSignalRegex.Matches(signalText).Count;
 
         var generic = GenericTemplateRegex.IsMatch(value);
         if (generic)
