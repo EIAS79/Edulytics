@@ -98,7 +98,10 @@ public sealed class SmartAssessmentResultsWorkbookTests
                 "StudentNumber",
                 "StudentName",
                 "QuestionOrder",
+                "QuestionPrompt",
+                "QuestionMaxScore",
                 "Score",
+                "AssessmentMaxScore",
                 "ClassCode",
                 "AssessmentId"
             },
@@ -121,6 +124,11 @@ public sealed class SmartAssessmentResultsWorkbookTests
                 Assert.Equal(
                     classItem.Code,
                     row.Values["ClassCode"]);
+                Assert.Equal(
+                    workspace.Assessment.MaxScore.ToString(System.Globalization.CultureInfo.InvariantCulture),
+                    row.Values["AssessmentMaxScore"]);
+                Assert.False(string.IsNullOrWhiteSpace(row.Values["QuestionPrompt"]));
+                Assert.False(string.IsNullOrWhiteSpace(row.Values["QuestionMaxScore"]));
             });
     }
 
