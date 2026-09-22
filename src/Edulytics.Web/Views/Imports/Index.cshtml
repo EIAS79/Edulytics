@@ -118,15 +118,24 @@
         {
             <article class="import-panel import-schema-card">
                 <h2>@TypeLabel(option.Type)</h2>
-                <strong>@I["RequiredColumns"]</strong>
-                <code>@string.Join(",", option.RequiredHeaders)</code>
+                @if (option.Type == ImportType.AssessmentResults)
+                {
+                    <strong>@L("Generated workbook", "Generowany skoroszyt")</strong>
+                    <code>@L("Assessment + Class + Students + Question score columns", "Sprawdzian + Klasa + Uczniowie + kolumny wyników pytań")</code>
+                }
+                else
+                {
+                    <strong>@I["RequiredColumns"]</strong>
+                    <code>@string.Join(",", option.RequiredHeaders)</code>
+                }
                 @if (canManageImports)
                 {
                     @if (option.Type == ImportType.AssessmentResults)
                     {
                         <div class="assessment-results-template-builder"
                              data-assessment-results-template
-                             data-template-url="@Url.Action("Template", "Imports", new { importType = ImportType.AssessmentResults })">
+                             data-template-url="@Url.Action("Template", "Imports", new { importType = ImportType.AssessmentResults })"
+                             data-assessment-placeholder="@L("Select the assessment", "Wybierz sprawdzian")">
                             <div class="import-field">
                                 <label for="assessmentResultAcademicYearId">@L("Academic Year", "Rok szkolny")</label>
                                 <select id="assessmentResultAcademicYearId">
@@ -147,7 +156,7 @@
                                                 data-year-id="@assessment.AcademicYearId"
                                                 data-class-name="@assessment.ClassName"
                                                 data-assessment-date="@assessment.AssessmentDate.ToString("yyyy-MM-dd")">
-                                            @assessment.Title — @assessment.AssessmentDate.ToString("yyyy-MM-dd")
+                                            @assessment.Title — @assessment.AssessmentDate.ToString("yyyy-MM-dd") — @assessment.ClassName
                                         </option>
                                     }
                                 </select>
