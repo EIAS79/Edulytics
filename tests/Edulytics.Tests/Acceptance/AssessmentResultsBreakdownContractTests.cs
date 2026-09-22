@@ -44,7 +44,7 @@ public sealed class AssessmentResultsBreakdownContractTests
     }
 
     [Fact]
-    public void ResultsPaper_RemainsReadOnlyWhileAssessmentAwareWorkbookImportIsExplicit()
+    public void ResultsPaper_RemainsReadOnly_AndOfflineEntryRoutesToBulkImport()
     {
         var root = FindRoot();
         var view = File.ReadAllText(Path.Combine(
@@ -61,15 +61,56 @@ public sealed class AssessmentResultsBreakdownContractTests
         Assert.DoesNotContain("SaveResult(", controller, StringComparison.Ordinal);
         Assert.DoesNotContain("{id:guid}/results/{studentProfileId:guid}", controller, StringComparison.Ordinal);
 
-        Assert.Contains("DownloadResultsWorkbook", controller, StringComparison.Ordinal);
-        Assert.Contains("ImportResultsWorkbook", controller, StringComparison.Ordinal);
-        Assert.Contains("AssessmentResultsWorkbook.Parse", controller, StringComparison.Ordinal);
-        Assert.Contains("asp-action=\"ImportResultsWorkbook\"", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("DownloadResultsWorkbook", controller, StringComparison.Ordinal);
+        Assert.DoesNotContain("ImportResultsWorkbook", controller, StringComparison.Ordinal);
+        Assert.DoesNotContain("results-workbook.xlsx", controller, StringComparison.Ordinal);
+        Assert.DoesNotContain("asp-action=\"ImportResultsWorkbook\"", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("Download Excel results workbook", view, StringComparison.Ordinal);
+
         Assert.Contains(
-            "accept=\".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\"",
+            "assessment.DeliveryMode == AssessmentDeliveryMode.Offline",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "assessment.Status == AssessmentStatus.Open",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "asp-controller=\"Imports\"",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "asp-route-assessmentId=\"@assessment.Id\"",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "@await Html.PartialAsync(\"_AssessmentPaper\", selectedPaper)",
             view,
             StringComparison.Ordinal);
     }
+
+    [Fact]
+    public void SharedAssessmentPaper_IsUsedForResultsAndBulkPreview()
+    {
+        var root = FindRoot();
+        var results = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Assessments/Results.cshtml"));
+        var imports = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Imports/Details.cshtml"));
+        var partial = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Shared/_AssessmentPaper.cshtml"));
+
+        Assert.Contains("_AssessmentPaper", results, StringComparison.Ordinal);
+        Assert.Contains("_AssessmentPaper", imports, StringComparison.Ordinal);
+        Assert.Contains("Student answer", partial, StringComparison.Ordinal);
+        Assert.Contains("Correct / expected answer", partial, StringComparison.Ordinal);
+        Assert.Contains("No submitted answer recorded", partial, StringComparison.Ordinal);
+        Assert.Contains("assessment-score-badge", partial, StringComparison.Ordinal);
+    }
+
 
     private static string FindRoot()
     {
