@@ -30,11 +30,10 @@ public sealed class SmartAssessmentResultsWorkbookTests
         var sheet = LoadXml(archive, "xl/worksheets/sheet1.xml");
 
         var hidden = Assert.Single(
-            sheet
-                .Descendants(SpreadsheetNs + "col")
-                .Where(x =>
-                    (string?)x.Attribute("min") == "1" &&
-                    (string?)x.Attribute("max") == "3"));
+            sheet.Descendants(SpreadsheetNs + "col"),
+            x =>
+                (string?)x.Attribute("min") == "1" &&
+                (string?)x.Attribute("max") == "3");
 
         Assert.Equal("1", (string?)hidden.Attribute("hidden"));
         Assert.Contains(
