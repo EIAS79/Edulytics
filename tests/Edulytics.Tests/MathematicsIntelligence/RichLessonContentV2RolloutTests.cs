@@ -236,6 +236,61 @@ public sealed class RichLessonContentV2RolloutTests
     }
 
     [Fact]
+    public void RuntimeComposer_PreservesMathematicalConceptInFamilyLabels()
+    {
+        var ratioContract = LessonPracticeContractRegistry.All
+            .First(x =>
+                x.AllowedQuestionFamilies.Contains(
+                    "ratio.unit_rate.direct",
+                    StringComparer.Ordinal) &&
+                x.Readiness == "READY_VERIFIED");
+
+        var source = MathematicsCanonicalLessonContentSeeder
+            .LoadEmbeddedDocuments()
+            .SelectMany(document =>
+                document.Lessons
+                    .Where(lesson => lesson.LessonCode == ratioContract.LessonCode)
+                    .Select(lesson => new
+                    {
+                        Document = document,
+                        Lesson = lesson,
+                        Translation = ChooseTranslation(document, lesson)
+                    }))
+            .Single();
+
+        Assert.Equal(
+            "en",
+            NormalizeCulture(source.Translation.CultureCode));
+
+        var body = new CanonicalLessonTranslationRecord(
+            source.Translation.CultureCode,
+            source.Translation.Title,
+            source.Translation.Explanation,
+            source.Translation.KeyConceptsAndRules,
+            source.Translation.WorkedExamples,
+            source.Translation.StepByStepSolutions,
+            source.Translation.CommonMistakes,
+            source.Translation.QuickSummary);
+
+        var rich = RichLessonContentV2RuntimeComposer.TryCompose(
+            source.Lesson.LessonCode,
+            body);
+
+        Assert.NotNull(rich);
+        Assert.Contains(
+            rich!.KeyConcepts,
+            concept => concept.Title.Contains(
+                "Ratio Unit Rate Direct",
+                StringComparison.Ordinal));
+        Assert.DoesNotContain(
+            rich.KeyConcepts,
+            concept => string.Equals(
+                concept.Title,
+                "Direct",
+                StringComparison.Ordinal));
+    }
+
+    [Fact]
     public void RuntimeComposer_RefusesSilentEnglishReplacementForPolishLessons()
     {
         var document = MathematicsCanonicalLessonContentSeeder
