@@ -122,11 +122,64 @@
                 <code>@string.Join(",", option.RequiredHeaders)</code>
                 @if (canManageImports)
                 {
-                    <a asp-action="Template" asp-route-importType="@option.Type">
-                        @(option.Type == ImportType.Classes
-                            ? L("Download XLSX template", "Pobierz szablon XLSX")
-                            : I["DownloadTemplate"].Value)
-                    </a>
+                    @if (option.Type == ImportType.AssessmentResults)
+                    {
+                        <div class="assessment-results-template-builder"
+                             data-assessment-results-template
+                             data-template-url="@Url.Action("Template", "Imports", new { importType = ImportType.AssessmentResults })">
+                            <div class="import-field">
+                                <label for="assessmentResultAcademicYearId">@L("Academic Year", "Rok szkolny")</label>
+                                <select id="assessmentResultAcademicYearId">
+                                    <option value="">@L("Select the academic year", "Wybierz rok szkolny")</option>
+                                    @foreach (var year in Model.AssessmentAcademicYears)
+                                    {
+                                        <option value="@year.Id">@year.Name</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="import-field">
+                                <label for="assessmentResultAssessmentId">@L("Assessment", "Sprawdzian")</label>
+                                <select id="assessmentResultAssessmentId" disabled>
+                                    <option value="">@L("Select the assessment", "Wybierz sprawdzian")</option>
+                                    @foreach (var assessment in Model.AssessmentResultOptions)
+                                    {
+                                        <option value="@assessment.AssessmentId"
+                                                data-year-id="@assessment.AcademicYearId"
+                                                data-class-name="@assessment.ClassName"
+                                                data-assessment-date="@assessment.AssessmentDate.ToString("yyyy-MM-dd")">
+                                            @assessment.Title — @assessment.AssessmentDate.ToString("yyyy-MM-dd")
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="import-field">
+                                <label for="assessmentResultClass">@L("Class", "Klasa")</label>
+                                <input id="assessmentResultClass"
+                                       type="text"
+                                       readonly
+                                       placeholder="@L("Class is set by the selected assessment", "Klasa jest ustawiana przez wybrany sprawdzian")" />
+                            </div>
+                            <a class="school-button school-button-primary"
+                               data-assessment-results-download
+                               aria-disabled="true">
+                                @L("Download XLSX template", "Pobierz szablon XLSX")
+                            </a>
+                            @if (Model.AssessmentResultOptions.Count == 0)
+                            {
+                                <p class="assessment-results-template-note">
+                                    @L("No open Offline assessments are currently available for results import.", "Brak otwartych sprawdzianów Offline dostępnych obecnie do importu wyników.")
+                                </p>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <a asp-action="Template" asp-route-importType="@option.Type">
+                            @(option.Type == ImportType.Classes
+                                ? L("Download XLSX template", "Pobierz szablon XLSX")
+                                : I["DownloadTemplate"].Value)
+                        </a>
+                    }
                 }
 
                 @switch (option.Type)
@@ -144,7 +197,7 @@
                         <p>@L("Choose one existing active Academic Year when Classes is selected in the upload form. The Classes XLSX template contains GradeLevel + Name only. GradeLevel is a dropdown populated from levels already configured in Edulytics, Name is free text, and the internal class Code is generated automatically. The Classes import never creates an Academic Year.", "Po wybraniu importu klas wybierz jeden istniejący aktywny rok szkolny w formularzu przesyłania. Szablon XLSX klas zawiera tylko GradeLevel + Name. GradeLevel jest listą rozwijaną z poziomami już skonfigurowanymi w Edulytics, Name jest polem tekstowym, a wewnętrzny kod klasy jest generowany automatycznie. Import klas nigdy nie tworzy roku szkolnego.")</p>
                         break;
                     case ImportType.AssessmentResults:
-                        <p>@L("Teachers import offline/manual results using AssessmentTitle + AssessmentDate + ClassName. The signed-in teacher is the owner of the upload, so no Teacher name or internal GUID is required. StudentNumber identifies the student; StudentName is for review. Use one row per question. After Confirm, imported grades are read-only.", "Nauczyciele importują wyniki offline/ręczne za pomocą AssessmentTitle + AssessmentDate + ClassName. Zalogowany nauczyciel jest właścicielem importu, więc nie trzeba podawać nazwy nauczyciela ani wewnętrznego GUID. StudentNumber identyfikuje ucznia, a StudentName służy do sprawdzenia. Jeden wiersz odpowiada jednemu pytaniu. Po potwierdzeniu oceny są tylko do odczytu.")</p>
+                        <p>@L("Choose the Academic Year, then one open Offline assessment. Edulytics derives the class and downloads an XLSX pre-filled with the exact assessment roster and questions. Enter scores only; student identity and assessment context are validated on upload. Online assessments are excluded because their results are recorded directly in Edulytics.", "Wybierz rok szkolny, a następnie jeden otwarty sprawdzian Offline. Edulytics ustala klasę i pobiera plik XLSX wypełniony dokładną listą uczniów i pytań. Wprowadź tylko wyniki; tożsamość uczniów i kontekst sprawdzianu są weryfikowane podczas przesyłania. Sprawdziany Online są wykluczone, ponieważ ich wyniki są zapisywane bezpośrednio w Edulytics.")</p>
                         break;
                 }
             </article>
@@ -203,7 +256,7 @@
 </section>
 
 <style>
-.ed-import-workflow{margin-bottom:1rem}.ed-import-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.7rem}.ed-import-steps article{display:grid;grid-template-columns:auto 1fr;gap:.55rem;align-items:start;padding:.8rem;border:1px solid #dbe4ef;border-radius:.8rem;background:#f8faff}.ed-import-steps article>strong{display:grid;place-items:center;width:1.75rem;height:1.75rem;border-radius:50%;background:#2f66e8;color:#fff;font-size:.8rem}.ed-import-steps article>span{color:#425b76;line-height:1.4;font-size:.88rem}.import-history-actions{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}.import-history-actions form{margin:0}.import-link-button{border:0;background:transparent;padding:0;color:#b42318;text-decoration:underline;cursor:pointer;font:inherit}@@media(max-width:1100px){.ed-import-steps{grid-template-columns:1fr 1fr}}@@media(max-width:650px){.ed-import-steps{grid-template-columns:1fr}}
+.assessment-results-template-builder{display:grid;grid-template-columns:minmax(180px,1fr) minmax(240px,1.5fr) minmax(180px,1fr) auto;gap:.75rem;align-items:end;margin:.9rem 0}.assessment-results-template-builder .school-button[aria-disabled="true"]{pointer-events:none;opacity:.55}.assessment-results-template-note{grid-column:1/-1;margin:0;color:#5a6b82}.ed-import-workflow{margin-bottom:1rem}.ed-import-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.7rem}.ed-import-steps article{display:grid;grid-template-columns:auto 1fr;gap:.55rem;align-items:start;padding:.8rem;border:1px solid #dbe4ef;border-radius:.8rem;background:#f8faff}.ed-import-steps article>strong{display:grid;place-items:center;width:1.75rem;height:1.75rem;border-radius:50%;background:#2f66e8;color:#fff;font-size:.8rem}.ed-import-steps article>span{color:#425b76;line-height:1.4;font-size:.88rem}.import-history-actions{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}.import-history-actions form{margin:0}.import-link-button{border:0;background:transparent;padding:0;color:#b42318;text-decoration:underline;cursor:pointer;font:inherit}@@media(max-width:1100px){.assessment-results-template-builder{grid-template-columns:1fr 1fr}.ed-import-steps{grid-template-columns:1fr 1fr}}@@media(max-width:650px){.assessment-results-template-builder{grid-template-columns:1fr}.ed-import-steps{grid-template-columns:1fr}}
 </style>
 
 <script src="~/js/import-index.js" asp-append-version="true" defer></script>
