@@ -74,6 +74,10 @@
                     <span><strong>@statusText</strong><br />@L["ContentPreparationMessage"]</span>
                 </div>
             }
+            else if (Model.Lesson.RichContent is not null)
+            {
+                <partial name="_RichLessonContentV2" model="Model.Lesson.RichContent" />
+            }
             else
             {
                 @foreach (var section in sections)
