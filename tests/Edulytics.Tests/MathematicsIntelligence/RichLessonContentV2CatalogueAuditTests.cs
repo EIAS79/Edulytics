@@ -22,14 +22,11 @@ public sealed class RichLessonContentV2CatalogueAuditTests
             {
                 lesson.LessonCode,
                 lesson.UnitTitle,
-                NativeLevel =
-                    document.SchemaVersion == 1
-                        ? document.NativeLevel
-                        : string.Empty,
+                NativeLevel = document.NativeLevel,
                 LogicalLevel =
                     document.SchemaVersion == 1
                         ? document.LogicalLevel
-                        : 0,
+                        : document.LogicalLevelFrom,
                 document.CourseCode,
                 document.Pathway
             }))
@@ -56,7 +53,11 @@ public sealed class RichLessonContentV2CatalogueAuditTests
                     var gradeLevel =
                         !string.IsNullOrWhiteSpace(blueprint?.NativeLevel)
                             ? blueprint.NativeLevel
-                            : InferLevel(lesson.LessonCode);
+                            : !string.IsNullOrWhiteSpace(blueprint?.CourseCode)
+                                ? blueprint.CourseCode
+                                : blueprint?.LogicalLevel > 0
+                                    ? blueprint.LogicalLevel.ToString()
+                                    : InferLevel(lesson.LessonCode);
 
                     var unit =
                         !string.IsNullOrWhiteSpace(blueprint?.UnitTitle)
