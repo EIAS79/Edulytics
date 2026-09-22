@@ -55,6 +55,17 @@ Its completed work remains authoritative for:
 
 The new Rich Lesson Content V2 programme builds on those foundations; it does not replace or reopen them.
 
+### Accepted predecessor closure markers
+
+The following closure statements remain part of the repository's accepted mathematics baseline and are retained verbatim for CI/audit continuity:
+
+- **Programme Stage 26 — Security and resource controls: COMPLETE.**
+- **Programme Stage 27 — Observability: COMPLETE.**
+- **Programme Stage 28 — Production rollout: COMPLETE.**
+- **Integrated Mathematics Intelligence Master Execution Plan: COMPLETE** as an execution programme.
+
+These statements describe the completed predecessor programme only. They do not change the active Rich Lesson Content V2 execution position.
+
 ## Update rule
 
 Whenever the active programme advances to another phase, update this file in the same PR (or immediately following PR) so the repository always records:
