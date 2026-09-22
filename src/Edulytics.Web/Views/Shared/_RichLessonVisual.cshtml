@@ -28,14 +28,16 @@
     }
     else if (Model.Kind is RichLessonVisualKind.NumberLine or RichLessonVisualKind.Scale)
     {
-        <div class="rich-number-line" role="img" aria-label="@Model.Description">
-            @foreach (var item in Model.Items)
-            {
-                <div class="rich-number-line__tick">
-                    <span class="rich-number-line__mark" aria-hidden="true"></span>
-                    <strong>@item</strong>
-                </div>
-            }
+        <div class="rich-number-line-scroll">
+            <div class="rich-number-line" role="img" aria-label="@Model.Description">
+                @foreach (var item in Model.Items)
+                {
+                    <div class="rich-number-line__tick">
+                        <span class="rich-number-line__mark" aria-hidden="true"></span>
+                        <strong>@item</strong>
+                    </div>
+                }
+            </div>
         </div>
     }
     else if (Model.Kind == RichLessonVisualKind.DoubleNumberLine)
