@@ -191,7 +191,9 @@ public static partial class RichLessonContentQualityAudit
 
         var sourceResearchRequired =
             document.SourcePolicyVersion < 2 ||
-            document.PedagogicalSourceType == PedagogicalSourceType.LegacyUnspecified ||
+            document.PedagogicalSourceType is
+                PedagogicalSourceType.LegacyUnspecified or
+                PedagogicalSourceType.OfficialFrameworkOnly ||
             string.IsNullOrWhiteSpace(document.PedagogicalSourceSelectionReason) ||
             string.IsNullOrWhiteSpace(document.PedagogicalSourceRightsNote);
 
