@@ -468,6 +468,8 @@ public static class MathOnlyImportAdapter
             var matches = dateValid
                 ? workspace.Assessments
                     .Where(x =>
+                        x.DeliveryMode == AssessmentDeliveryMode.Offline &&
+                        x.Status == AssessmentStatus.Open &&
                         classIds.Contains(x.ClassGroupId) &&
                         x.AssessmentDate == date &&
                         string.Equals(

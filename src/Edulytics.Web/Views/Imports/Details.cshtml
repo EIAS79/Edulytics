@@ -50,6 +50,18 @@
             if (item.Code == "DuplicateRow")
                 return L("This email appears more than once in this file.", "Ten adres email występuje w pliku więcej niż raz.");
         }
+        if (Model.Batch.Type == ImportType.AssessmentResults &&
+            item.ColumnName.Equals("StudentNumber", StringComparison.OrdinalIgnoreCase))
+        {
+            if (item.Code == "ExistingConflict")
+                return L(
+                    "A result already exists for this student. Download a fresh workbook so the current result state is respected.",
+                    "Wynik dla tego ucznia już istnieje. Pobierz nowy skoroszyt, aby uwzględnić aktualny stan wyników.");
+            if (item.Code == "UnknownReference" || item.Code == "CrossSchoolReference")
+                return L(
+                    "The student linked to this workbook is no longer valid for this assessment. Download a fresh workbook.",
+                    "Uczeń powiązany z tym skoroszytem nie jest już prawidłowy dla tego sprawdzianu. Pobierz nowy skoroszyt.");
+        }
         if (Model.Batch.Type == ImportType.Classes)
         {
             if (item.Code == "UnknownReference" && item.ColumnName.Equals("AcademicYear", StringComparison.OrdinalIgnoreCase))
@@ -83,7 +95,7 @@
         ImportType.Students => new[] { "ClassCode" },
         ImportType.Teachers => new[] { "ClassCode", "SubjectCode" },
         ImportType.Classes => new[] { "AcademicYear", "CurriculumAdoptionId", "Code" },
-        ImportType.AssessmentResults => new[] { "ClassCode", "AssessmentId" },
+        ImportType.AssessmentResults => new[] { "ClassCode", "AssessmentId", "StudentNumber" },
         _ => Array.Empty<string>()
     };
     var visibleHeaders = Model.Batch.Headers
@@ -177,6 +189,8 @@
                     var column = internalHeaders.Contains(item.ColumnName, StringComparer.OrdinalIgnoreCase)
                         ? item.ColumnName == "ClassCode"
                             ? "ClassName"
+                            : item.ColumnName == "StudentNumber" && Model.Batch.Type == ImportType.AssessmentResults
+                                ? "StudentName"
                             : item.ColumnName == "Code" && Model.Batch.Type == ImportType.Classes
                                 ? "Name"
                                 : item.ColumnName == "CurriculumAdoptionId" && Model.Batch.Type == ImportType.Classes
@@ -186,7 +200,15 @@
                     <article class="import-error-item">
                         <strong>@I["Row"] @item.RowNumber · @column</strong>
                         <span>@ValidationMessage(item)</span>
-                        @if (!string.IsNullOrWhiteSpace(item.RawValue) && !(Model.Batch.Type == ImportType.Classes && (item.ColumnName.Equals("Code", StringComparison.OrdinalIgnoreCase) || item.ColumnName.Equals("CurriculumAdoptionId", StringComparison.OrdinalIgnoreCase)))) { <code>@item.RawValue</code> }
+                        @if (!string.IsNullOrWhiteSpace(item.RawValue) &&
+                             !(Model.Batch.Type == ImportType.Classes &&
+                               (item.ColumnName.Equals("Code", StringComparison.OrdinalIgnoreCase) ||
+                                item.ColumnName.Equals("CurriculumAdoptionId", StringComparison.OrdinalIgnoreCase))) &&
+                             !(Model.Batch.Type == ImportType.AssessmentResults &&
+                               item.ColumnName.Equals("StudentNumber", StringComparison.OrdinalIgnoreCase)))
+                        {
+                            <code>@item.RawValue</code>
+                        }
                     </article>
                 }
             </div>
