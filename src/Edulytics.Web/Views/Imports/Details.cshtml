@@ -236,7 +236,14 @@
     else if (Model.Batch.ErrorCount > 0)
     {
         <div class="import-message import-message-error" role="alert">
-            @L("This batch has validation errors. Remove the invalid rows or correct the source data before confirming.", "Ta partia zawiera błędy walidacji. Usuń nieprawidłowe wiersze lub popraw dane źródłowe przed potwierdzeniem.")
+            @if (Model.Batch.Type == ImportType.AssessmentResults)
+            {
+                @L("This batch has validation errors. Correct the source workbook and upload a new batch before confirming.", "Ta partia zawiera błędy walidacji. Popraw skoroszyt źródłowy i prześlij nową partię przed potwierdzeniem.")
+            }
+            else
+            {
+                @L("This batch has validation errors. Remove the invalid rows or correct the source data before confirming.", "Ta partia zawiera błędy walidacji. Usuń nieprawidłowe wiersze lub popraw dane źródłowe przed potwierdzeniem.")
+            }
         </div>
     }
     else
@@ -321,7 +328,11 @@
         <div class="import-preview-toolbar">
             <div>
                 <h2>@I["Preview"]</h2>
-                <p>@I["PreviewLimit"]</p>
+                <p>
+                    @(isAssessmentResults
+                        ? L("One row per student. Use View to review question scores and the final result.", "Jeden wiersz na ucznia. Użyj opcji Pokaż, aby sprawdzić wyniki pytań i wynik końcowy.")
+                        : I["PreviewLimit"].Value)
+                </p>
             </div>
             <label>
                 @L("Filter", "Filtr")
@@ -523,7 +534,14 @@
         }
         else if (!isCompleted && Model.Batch.ErrorCount > 0)
         {
-            <p>@L("Remove the invalid rows or correct the source file before confirming.", "Usuń nieprawidłowe wiersze lub popraw plik źródłowy przed potwierdzeniem.")</p>
+            @if (Model.Batch.Type == ImportType.AssessmentResults)
+            {
+                <p>@L("Correct the workbook and upload a new Assessment Results batch before confirming.", "Popraw skoroszyt i prześlij nową partię wyników sprawdzianu przed potwierdzeniem.")</p>
+            }
+            else
+            {
+                <p>@L("Remove the invalid rows or correct the source file before confirming.", "Usuń nieprawidłowe wiersze lub popraw plik źródłowy przed potwierdzeniem.")</p>
+            }
         }
     </section>
 </section>
