@@ -18,16 +18,16 @@ Its execution order is:
 
 1. **R1 — Exact catalogue and content-quality audit:** COMPLETE
 2. **R2 — Rich Lesson Content Quality Contract:** COMPLETE
-3. **R3 — Source and research acquisition pipeline:** NEXT
-4. **R4 — Rich Content V2 model and renderer:** NOT STARTED
-5. **R5 — Instructional visual system:** NOT STARTED
-6. **R6 — Curated Video Help:** NOT STARTED
-7. **R7 — Pilot enrichment:** NOT STARTED
+3. **R3 — Source and research acquisition pipeline:** COMPLETE
+4. **R4 — Rich Content V2 model and renderer:** COMPLETE
+5. **R5 — Instructional visual system:** COMPLETE
+6. **R6 — Curated Video Help:** COMPLETE
+7. **R7 — Pilot enrichment:** IMPLEMENTED — CI / review validation pending
 8. **R8 — Catalogue-wide rollout and permanent quality gate:** NOT STARTED
 
-**Current execution position:** R1 and R2 are complete. The exact effective catalogue contains **4,453** learner-visible mathematics lessons: **3,104 official** and **1,349 supporting/no-formal-outcome**. The first-pass Rich Content V2 audit classifies **131 Good**, **2,751 NeedsExpansion**, **2 Generic**, and **1,569 SourceResearchRequired**. Those 1,569 lessons are the Polish framework-only population and require a pedagogical-source research pass before source-driven enrichment. **2,763** lessons have only generic-fallback/no explicit instructional visual evidence, and no lesson yet has a curated Video Help resource. The next phase is **R3 — Source and research acquisition pipeline**.
+**Current execution position:** R1–R6 are complete in implementation. R7 contains a controlled **26-lesson pilot**: all **24 Cambridge Primary Stage 6 source-backed pedagogical lessons** plus **2 existing UAE Grade 9 Advanced officially mapped lessons**. Student and Teacher resolve the same Rich Lesson Content V2 body with legacy-content fallback, structured mathematical visuals, and optional curated privacy-enhanced Video Help. The source-dossier pipeline covers all **4,453** effective mathematics lessons and fails closed: the **1,569 Polish framework-only lessons remain explicitly SourceResearchRequired**, while reference-only official material is not treated as licensed adaptation material. R7 must not be marked complete until branch CI/review passes. **R8 remains the full-catalogue rollout and is not complete.**
 
-**R1/R2 evidence:** `docs/lesson-content-v2/catalogue-summary.md`, `RichLessonContentQualityAudit`, and the generated `artifacts/lesson-content-v2/*` CI outputs.
+**Evidence:** `docs/lesson-content-v2/catalogue-summary.md`, `docs/lesson-content-v2/R3_R7_PILOT_IMPLEMENTATION.md`, `RichLessonContentQualityAudit`, `RichLessonSourceDossierFactory`, `RichLessonContentV2Registry`, the shared Rich V2 renderer, and generated `artifacts/lesson-content-v2/*` CI outputs.
 
 ## Execution hierarchy
 
