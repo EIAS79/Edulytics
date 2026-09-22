@@ -254,6 +254,29 @@ public sealed class RichLessonContentV2CatalogueAuditTests
     }
 
     [Fact]
+    public void QualityContract_RequiresPedagogicalResearchForFrameworkOnlyPacks()
+    {
+        var document = MathematicsCanonicalLessonContentSeeder
+            .LoadEmbeddedDocuments()
+            .First(x =>
+                x.PackCode == "PL-NATIONAL-MATH" &&
+                x.PedagogicalSourceType ==
+                    PedagogicalSourceType.OfficialFrameworkOnly);
+
+        var lesson = document.Lessons.First();
+        var translation = ChooseTranslation(document, lesson);
+        var audit = RichLessonContentQualityAudit.Evaluate(
+            document,
+            lesson,
+            translation);
+
+        Assert.True(audit.SourceResearchRequired);
+        Assert.Equal(
+            RichLessonOverallQuality.SourceResearchRequired,
+            audit.OverallQuality);
+    }
+
+    [Fact]
     public void QualityContract_FlagsKnownThinSupportingLesson()
     {
         var document = MathematicsCanonicalLessonContentSeeder
