@@ -1,0 +1,120 @@
+@model Edulytics.Core.Curriculum.RichLessonVisual
+@using Edulytics.Core.Curriculum
+@{
+    var kindClass = Model.Kind.ToString().ToLowerInvariant();
+}
+
+<figure class="rich-lesson-visual rich-lesson-visual--@kindClass">
+    <div class="rich-lesson-visual__header">
+        <h3>@Model.Title</h3>
+        @if (!string.IsNullOrWhiteSpace(Model.Description))
+        {
+            <p>@Model.Description</p>
+        }
+    </div>
+
+    @if (Model.Kind is RichLessonVisualKind.CalculationChain or RichLessonVisualKind.EquationSet)
+    {
+        <div class="rich-lesson-chain" role="img" aria-label="@Model.Description">
+            @for (var i = 0; i < Model.Items.Count; i++)
+            {
+                <div class="rich-lesson-chain__item">@Model.Items[i]</div>
+                @if (Model.Kind == RichLessonVisualKind.CalculationChain && i < Model.Items.Count - 1)
+                {
+                    <span class="rich-lesson-chain__arrow" aria-hidden="true">→</span>
+                }
+            }
+        </div>
+    }
+    else if (Model.Kind is RichLessonVisualKind.NumberLine or RichLessonVisualKind.Scale)
+    {
+        <div class="rich-number-line-scroll">
+            <div class="rich-number-line" role="img" aria-label="@Model.Description">
+                @foreach (var item in Model.Items)
+                {
+                    <div class="rich-number-line__tick">
+                        <span class="rich-number-line__mark" aria-hidden="true"></span>
+                        <strong>@item</strong>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+    else if (Model.Kind == RichLessonVisualKind.DoubleNumberLine)
+    {
+        <div class="rich-double-line" role="img" aria-label="@Model.Description">
+            <div class="rich-double-line__row">
+                <strong>@Model.PrimaryLabel</strong>
+                <div class="rich-double-line__values">
+                    @foreach (var item in Model.Items)
+                    {
+                        <span>@item</span>
+                    }
+                </div>
+            </div>
+            <div class="rich-double-line__row">
+                <strong>@Model.SecondaryLabel</strong>
+                <div class="rich-double-line__values">
+                    @foreach (var item in Model.SecondaryItems)
+                    {
+                        <span>@item</span>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+    else if (Model.Kind == RichLessonVisualKind.FractionBars)
+    {
+        <div class="rich-fraction-bars" role="img" aria-label="@Model.Description">
+            @foreach (var row in Model.Rows.Where(x => x.Denominator > 0))
+            {
+                var numerator = Math.Clamp(row.Numerator, 0, row.Denominator);
+                <div class="rich-fraction-row">
+                    <strong>@row.Label</strong>
+                    <div class="rich-fraction-bar"
+                         style="grid-template-columns:repeat(@row.Denominator,minmax(0,1fr));">
+                        @for (var i = 0; i < row.Denominator; i++)
+                        {
+                            <span class="@(i < numerator ? "is-filled" : null)"></span>
+                        }
+                    </div>
+                    <span>@numerator/@row.Denominator</span>
+                </div>
+            }
+        </div>
+    }
+    else if (Model.Kind is RichLessonVisualKind.RatioTable or RichLessonVisualKind.PlaceValueChart)
+    {
+        <div class="rich-lesson-table-wrap">
+            <table class="rich-lesson-table">
+                <tbody>
+                    @foreach (var row in Model.Rows)
+                    {
+                        <tr>
+                            <th scope="row">@row.Label</th>
+                            @foreach (var cell in row.Cells)
+                            {
+                                <td>@cell</td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else if (Model.Kind == RichLessonVisualKind.ShapeDecomposition)
+    {
+        <div class="rich-shape-decomposition" role="img" aria-label="@Model.Description">
+            @foreach (var row in Model.Rows)
+            {
+                <article class="rich-shape-card">
+                    <strong>@row.Label</strong>
+                    @foreach (var cell in row.Cells)
+                    {
+                        <span>@cell</span>
+                    }
+                </article>
+            }
+        </div>
+    }
+</figure>

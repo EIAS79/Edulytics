@@ -10,6 +10,9 @@ public sealed class SecurityHeadersMiddleware
     private const string TurnstileOrigin =
         "https://challenges.cloudflare.com";
 
+    private const string YouTubePrivacyOrigin =
+        "https://www.youtube-nocookie.com";
+
     private readonly RequestDelegate _next;
 
     public SecurityHeadersMiddleware(
@@ -88,7 +91,7 @@ public sealed class SecurityHeadersMiddleware
                 "img-src 'self' data: https://images.unsplash.com;",
                 "font-src 'self' data:;",
                 $"connect-src 'self' {websocketSchemes} {TurnstileOrigin};",
-                $"frame-src {TurnstileOrigin};",
+                $"frame-src {TurnstileOrigin} {YouTubePrivacyOrigin};",
                 "worker-src 'self';",
                 "manifest-src 'self';");
 

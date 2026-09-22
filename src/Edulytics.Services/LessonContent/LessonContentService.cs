@@ -426,7 +426,12 @@ public sealed class LessonContentService : ILessonContentService
                 translation.QuickSummary,
                 outcomes,
                 content.PublishedAtUtc ?? content.UpdatedAtUtc,
-                LessonContentPolicy.IsSupporting(lesson.OfficialOutcomeCount)));
+                LessonContentPolicy.IsSupporting(lesson.OfficialOutcomeCount))
+            {
+                RichContent = RichLessonContentV2Registry.Find(
+                    lesson.Code,
+                    translation.CultureCode)
+            });
     }
 
     private async Task<LessonContentQueryResult<CanonicalLessonDetail>> BuildStaffDetailAsync(
@@ -493,7 +498,12 @@ public sealed class LessonContentService : ILessonContentService
                 body,
                 outcomes)
             {
-                IsSupporting = ResolveIsSupporting(lesson)
+                IsSupporting = ResolveIsSupporting(lesson),
+                RichContent = body is null
+                    ? null
+                    : RichLessonContentV2Registry.Find(
+                        lesson.Code,
+                        body.CultureCode)
             });
     }
 

@@ -98,6 +98,16 @@
 
     <header class="lesson-reader-hero"><div class="lesson-reader-hero__main"><div class="lesson-reader-hero__topline"><span class="student-subject-code">@Model.SubjectCode</span></div><p class="lesson-library-eyebrow">@L["LearningContent"]</p><h1>@Model.Title</h1><p class="lesson-reader-hero__unit">@Model.TopicName</p><div class="lesson-reader-meta"><span><small>@L["Grade"]</small><strong>@Model.GradeName</strong></span><span><small>@L["Framework"]</small><strong>@Model.FrameworkName</strong></span><span><small>@L["PublishedOn"]</small><strong>@Model.PublishedAtUtc.ToString("yyyy-MM-dd")</strong></span></div></div></header>
     <div class="lesson-reader-layout"><main class="lesson-reader-main">
-        @foreach (var section in sections) { <partial name="_LessonReaderSection" model="section" /> }
+        @if (Model.RichContent is not null)
+        {
+            <partial name="_RichLessonContentV2" model="Model.RichContent" />
+        }
+        else
+        {
+            @foreach (var section in sections)
+            {
+                <partial name="_LessonReaderSection" model="section" />
+            }
+        }
     </main>@if (Model.Outcomes.Count > 0) { <aside class="lesson-reader-sidebar" aria-label="@L["LessonReference"]"><section class="lesson-reader-sidecard"><h2>@L["StandardsReference"]</h2><div class="lesson-reader-outcomes">@foreach (var outcome in Model.Outcomes) { <article class="lesson-reader-outcome"><strong>@outcome.Code</strong><p>@outcome.Description</p></article> }</div></section></aside> }</div>
 </div>

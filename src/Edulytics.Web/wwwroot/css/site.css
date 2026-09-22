@@ -9134,3 +9134,466 @@ a.lesson-content-row:hover
         .assessment-result-total-v2 { text-align: left; }
         .assessment-breakdown-table { min-width: 760px; }
     }
+
+
+/* Rich Lesson Content V2 — shared student/staff reader */
+.rich-lesson-body,
+.rich-concept-grid,
+.rich-example-grid,
+.rich-solution-list,
+.rich-mistake-grid,
+.rich-video-section {
+    padding: 1.55rem 1.7rem 1.8rem;
+}
+
+.rich-lesson-body {
+    display: grid;
+    gap: 1rem;
+}
+
+.rich-concept-grid,
+.rich-example-grid,
+.rich-mistake-grid,
+.rich-video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.rich-concept-card,
+.rich-example-card,
+.rich-solution-card,
+.rich-mistake-card,
+.rich-video-card {
+    min-width: 0;
+    border: 1px solid #e4e9f2;
+    border-radius: .85rem;
+    background: #fbfcff;
+}
+
+.rich-concept-card {
+    padding: 1.05rem 1.1rem;
+}
+
+.rich-concept-card h3,
+.rich-example-card h3,
+.rich-solution-card h3,
+.rich-mistake-card h3,
+.rich-video-card h3 {
+    margin: 0 0 .75rem;
+    color: #172033;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.rich-concept-card dl,
+.rich-concept-card dl div {
+    margin: 0;
+}
+
+.rich-concept-card dl {
+    display: grid;
+    gap: .75rem;
+}
+
+.rich-concept-card dt {
+    margin: 0 0 .2rem;
+    color: #56667f;
+    font-size: .72rem;
+    font-weight: 900;
+    letter-spacing: .045em;
+    text-transform: uppercase;
+}
+
+.rich-concept-card dd {
+    margin: 0;
+    color: #334155;
+    line-height: 1.65;
+}
+
+.rich-example-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2.6rem minmax(0, 1fr);
+    overflow: hidden;
+    background: #f8faff;
+}
+
+.rich-example-card__number {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 1.15rem;
+    background: #eef3ff;
+    color: #3157d5;
+    font-size: .82rem;
+    font-weight: 900;
+}
+
+.rich-example-card__body {
+    padding: 1.05rem 1.15rem 1.15rem;
+}
+
+.rich-example-card__body p {
+    margin: .55rem 0 0;
+    color: #334155;
+    line-height: 1.62;
+}
+
+.rich-example-card__answer {
+    padding: .65rem .75rem;
+    border-radius: .55rem;
+    background: #eef8f2;
+}
+
+.rich-example-card__check {
+    color: #58697e !important;
+    font-size: .9rem;
+}
+
+.rich-solution-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.rich-solution-card {
+    padding: 1.15rem 1.2rem 1.2rem;
+    background: #fff;
+}
+
+.rich-solution-question {
+    margin: 0 0 1rem;
+    padding: .8rem .9rem;
+    border-left: .22rem solid #7891e9;
+    border-radius: 0 .6rem .6rem 0;
+    background: #f8faff;
+    color: #28364d;
+    line-height: 1.65;
+}
+
+.rich-solution-card ol {
+    display: grid;
+    gap: .65rem;
+    margin: 0;
+    padding-left: 1.5rem;
+    color: #334155;
+}
+
+.rich-solution-card li {
+    padding-left: .25rem;
+    line-height: 1.65;
+}
+
+.rich-solution-final {
+    display: grid;
+    gap: .35rem;
+    margin-top: 1rem;
+    padding: .75rem .85rem;
+    border-radius: .6rem;
+    background: #eef8f2;
+    color: #254235;
+}
+
+.rich-mistake-card {
+    padding: 1rem 1.05rem;
+    border-left: .25rem solid #d66e68;
+    background: #fff9f8;
+}
+
+.rich-mistake-card p {
+    margin: .55rem 0 0;
+    color: #4b5567;
+    line-height: 1.62;
+}
+
+.rich-mistake-card__mistake {
+    color: #8a3d39 !important;
+    font-weight: 800;
+}
+
+.rich-lesson-visual {
+    margin: .35rem 0 0;
+    padding: 1rem;
+    border: 1px solid #dfe6f1;
+    border-radius: .85rem;
+    background: #fbfcff;
+}
+
+.rich-lesson-visual__header h3 {
+    margin: 0;
+    color: #172033;
+    font-size: .98rem;
+}
+
+.rich-lesson-visual__header p {
+    margin: .35rem 0 1rem;
+    color: #64748b;
+    line-height: 1.55;
+}
+
+.rich-lesson-chain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .55rem;
+    flex-wrap: wrap;
+}
+
+.rich-lesson-chain__item {
+    padding: .65rem .8rem;
+    border: 1px solid #dce4f4;
+    border-radius: .6rem;
+    background: #fff;
+    color: #233351;
+    font-weight: 800;
+    text-align: center;
+}
+
+.rich-lesson-chain__arrow {
+    color: #5670c8;
+    font-size: 1.25rem;
+    font-weight: 900;
+}
+
+.rich-number-line-scroll {
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+}
+
+.rich-number-line {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: .25rem;
+    min-width: 32rem;
+    padding: 1.5rem .25rem .25rem;
+}
+
+.rich-number-line::before {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    top: 1.2rem;
+    height: 2px;
+    background: #566987;
+}
+
+.rich-number-line__tick {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    justify-items: center;
+    gap: .35rem;
+    min-width: 0;
+    color: #334155;
+    font-size: .8rem;
+    text-align: center;
+}
+
+.rich-number-line__mark {
+    width: 2px;
+    height: 1rem;
+    background: #566987;
+}
+
+.rich-double-line {
+    display: grid;
+    gap: 1rem;
+}
+
+.rich-double-line__row {
+    display: grid;
+    grid-template-columns: minmax(7rem, auto) minmax(0, 1fr);
+    gap: .75rem;
+    align-items: center;
+}
+
+.rich-double-line__row > strong {
+    color: #3b4e69;
+    font-size: .82rem;
+}
+
+.rich-double-line__values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
+    border-top: 2px solid #687995;
+}
+
+.rich-double-line__values span {
+    position: relative;
+    padding-top: .6rem;
+    text-align: center;
+    color: #26364f;
+    font-weight: 750;
+}
+
+.rich-double-line__values span::before {
+    content: "";
+    position: absolute;
+    top: -.38rem;
+    left: 50%;
+    width: 2px;
+    height: .7rem;
+    background: #687995;
+}
+
+.rich-fraction-bars {
+    display: grid;
+    gap: .8rem;
+}
+
+.rich-fraction-row {
+    display: grid;
+    grid-template-columns: minmax(5rem, auto) minmax(10rem, 1fr) 3.5rem;
+    gap: .75rem;
+    align-items: center;
+}
+
+.rich-fraction-bar {
+    display: grid;
+    min-height: 2.15rem;
+    overflow: hidden;
+    border: 2px solid #526683;
+    border-radius: .35rem;
+}
+
+.rich-fraction-bar span {
+    border-right: 1px solid #aeb9c9;
+    background: #fff;
+}
+
+.rich-fraction-bar span:last-child {
+    border-right: 0;
+}
+
+.rich-fraction-bar span.is-filled {
+    background: #dbe6ff;
+}
+
+.rich-lesson-table-wrap {
+    overflow-x: auto;
+}
+
+.rich-lesson-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.rich-lesson-table th,
+.rich-lesson-table td {
+    padding: .7rem .75rem;
+    border: 1px solid #dde4ef;
+    text-align: center;
+}
+
+.rich-lesson-table th {
+    background: #f2f5fb;
+    color: #40536f;
+    text-align: left;
+}
+
+.rich-shape-decomposition {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: .8rem;
+}
+
+.rich-shape-card {
+    display: grid;
+    place-items: center;
+    min-height: 7.5rem;
+    padding: .8rem;
+    border: 2px solid #64748b;
+    border-radius: .45rem;
+    background:
+        linear-gradient(90deg, transparent 49%, #d9e1ec 50%, transparent 51%),
+        linear-gradient(0deg, transparent 49%, #d9e1ec 50%, transparent 51%),
+        #fff;
+    color: #27364c;
+    text-align: center;
+}
+
+.rich-shape-card strong {
+    font-size: .95rem;
+}
+
+.rich-shape-card span {
+    display: block;
+    margin-top: .25rem;
+    padding: .15rem .35rem;
+    border-radius: .3rem;
+    background: rgba(255,255,255,.9);
+    font-size: .78rem;
+}
+
+.rich-video-section__intro {
+    margin: 0 0 1rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.rich-video-grid {
+    display: grid;
+}
+
+.rich-video-card {
+    overflow: hidden;
+    background: #fff;
+}
+
+.rich-video-frame {
+    aspect-ratio: 16 / 9;
+    background: #111827;
+}
+
+.rich-video-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.rich-video-card__body {
+    padding: 1rem 1.05rem 1.1rem;
+}
+
+.rich-video-card__body p {
+    margin: .5rem 0;
+    color: #4f6077;
+    line-height: 1.55;
+}
+
+.rich-video-card__meta {
+    color: #718096 !important;
+    font-size: .84rem;
+    font-weight: 750;
+}
+
+@media (max-width: 760px) {
+    .rich-lesson-body,
+    .rich-concept-grid,
+    .rich-example-grid,
+    .rich-solution-list,
+    .rich-mistake-grid,
+    .rich-video-section {
+        padding: 1.15rem 1rem 1.3rem;
+    }
+
+    .rich-concept-grid,
+    .rich-example-grid,
+    .rich-mistake-grid,
+    .rich-video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rich-double-line__row {
+        grid-template-columns: 1fr;
+    }
+
+    .rich-fraction-row {
+        grid-template-columns: 1fr;
+    }
+
+}

@@ -1,4 +1,5 @@
 using Edulytics.Core.Enums;
+using Edulytics.Core.Curriculum;
 using Edulytics.Core.Lessons;
 namespace Edulytics.Services.LessonContent;
 
@@ -63,6 +64,7 @@ public sealed record CanonicalLessonDetail(
     CanonicalLessonTranslationRecord? Body,IReadOnlyList<LessonOutcomeRecord> Outcomes)
 {
     public bool IsSupporting { get; init; }
+    public RichLessonContentV2Lesson? RichContent { get; init; }
 }
 
 public sealed record StudentLessonSummary(
@@ -72,4 +74,7 @@ public sealed record StudentLessonSummary(
 public sealed record StudentLessonDetail(
     Guid Id,string Title,string TopicName,string SubjectName,string SubjectCode,string GradeName,string FrameworkName,
     string Explanation,string KeyConceptsAndRules,string WorkedExamples,string StepByStepSolutions,string CommonMistakes,
-    string QuickSummary,IReadOnlyList<LessonOutcomeRecord> Outcomes,DateTime PublishedAtUtc,bool IsSupporting=false);
+    string QuickSummary,IReadOnlyList<LessonOutcomeRecord> Outcomes,DateTime PublishedAtUtc,bool IsSupporting=false)
+{
+    public RichLessonContentV2Lesson? RichContent { get; init; }
+}

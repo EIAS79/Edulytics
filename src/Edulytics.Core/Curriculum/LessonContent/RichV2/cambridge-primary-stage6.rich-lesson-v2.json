@@ -1,0 +1,3531 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "rich-v2-cambridge-primary-stage6-pilot-2026-09-22",
+  "PackCode": "CAMBRIDGE-INTL-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-1:BUILD",
+      "CultureCode": "en",
+      "Title": "Quantify additive and multiplicative relationships: Build the Idea",
+      "ExplanationParagraphs": [
+        "This Build the Idea lesson develops the core structure before applying it in varied questions.",
+        "Two numbers can be compared in different ways. An additive comparison asks how much more or less one number is than another, so it is measured by a difference. A multiplicative comparison asks how many times as large one number is as another, so it is measured by a whole-number scale factor in this lesson.",
+        "The same pair of numbers can have both relationships at once. For example, 12 and 36 differ by 24, so 36 is 24 more than 12; they also satisfy 36 = 3 × 12, so 36 is three times as large as 12. Choosing the correct relationship depends on what the question is asking, not on a keyword.",
+        "A useful habit is to represent the relationship with an equation, a bar model or a double number line. Then state whether the comparison is additive or multiplicative before calculating. This prevents common errors such as treating “three times as many” as “three more”."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Additive relationship",
+          "Definition": "An additive relationship describes a fixed difference between two quantities.",
+          "Rule": "If B is d more than A, then B = A + d and d = B − A.",
+          "Example": "18 and 31 have an additive difference of 13."
+        },
+        {
+          "Title": "Multiplicative relationship",
+          "Definition": "A multiplicative relationship describes one quantity as a whole-number multiple of another.",
+          "Rule": "If B is k times A, then B = k × A. In this lesson k is a whole number.",
+          "Example": "42 is 3 times 14 because 42 = 3 × 14."
+        },
+        {
+          "Title": "One pair, two comparisons",
+          "Definition": "A pair of numbers can be described additively and multiplicatively at the same time.",
+          "Rule": "Compute the difference for the additive comparison and divide larger by smaller for a whole-number multiplicative comparison.",
+          "Example": "12 and 36: difference 24; multiplicative factor 3."
+        },
+        {
+          "Title": "Representation",
+          "Definition": "A diagram or equation makes the kind of relationship visible.",
+          "Rule": "Label every quantity and connect equal units before solving.",
+          "Example": "A double number line can show 1 group → 12 and 3 groups → 36."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare the same pair in two ways",
+          "Question": "Compare 15 and 45 additively and multiplicatively.",
+          "Method": "Find the difference, then find the whole-number scale factor.",
+          "Steps": [
+            "Compute the difference: 45 − 15 = 30.",
+            "So 45 is 30 more than 15.",
+            "Compute the scale factor: 45 ÷ 15 = 3.",
+            "So 45 is 3 times as large as 15."
+          ],
+          "Answer": "Additive: +30. Multiplicative: ×3.",
+          "Check": "15 + 30 = 45 and 15 × 3 = 45."
+        },
+        {
+          "Title": "From words to equations",
+          "Question": "A rope is 28 m long. A second rope is 4 times as long. How long is the second rope, and how much longer is it?",
+          "Method": "Use the multiplicative statement first, then calculate the additive difference.",
+          "Steps": [
+            "Write the multiplicative relationship: B = 4 × 28.",
+            "Calculate B = 112 m.",
+            "Find the difference: 112 − 28 = 84 m.",
+            "State both relationships clearly."
+          ],
+          "Answer": "The second rope is 112 m long and 84 m longer.",
+          "Check": "28 × 4 = 112 and 28 + 84 = 112."
+        },
+        {
+          "Title": "Recover the smaller quantity",
+          "Question": "A number is 5 times another number and equals 65. Find the smaller number.",
+          "Method": "Use inverse division because the larger value and scale factor are known.",
+          "Steps": [
+            "Let the smaller number be A.",
+            "Write 65 = 5 × A.",
+            "Divide by 5: A = 65 ÷ 5.",
+            "Calculate A = 13."
+          ],
+          "Answer": "13",
+          "Check": "13 × 5 = 65."
+        },
+        {
+          "Title": "Choose the useful comparison",
+          "Question": "Class A collected 24 cans and Class B collected 72 cans. A question asks 'how many times as many?' What calculation should you use?",
+          "Method": "Match the phrase to a multiplicative comparison.",
+          "Steps": [
+            "The question asks for a multiplicative factor.",
+            "Divide the larger quantity by the smaller: 72 ÷ 24.",
+            "Calculate 72 ÷ 24 = 3.",
+            "Interpret the quotient as a scale factor."
+          ],
+          "Answer": "Class B collected 3 times as many cans.",
+          "Check": "24 × 3 = 72."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating '4 times as many' as '+4'.",
+          "WhyWrong": "A multiplicative comparison changes by equal groups, not by a fixed difference of 4.",
+          "Correction": "Translate '4 times' to ×4 and '4 more' to +4 before calculating."
+        },
+        {
+          "Mistake": "Giving only the numerical difference when the question asks for a scale factor.",
+          "WhyWrong": "Difference and scale factor answer different questions.",
+          "Correction": "Check whether the question says 'how many more' or 'how many times as many'."
+        },
+        {
+          "Mistake": "Dividing smaller by larger and interpreting a fraction when a whole-number factor is expected.",
+          "WhyWrong": "The factor from smaller to larger should be larger ÷ smaller.",
+          "Correction": "Write a direction sentence first: 'B is ___ times A'."
+        }
+      ],
+      "SummaryPoints": [
+        "Additive comparison uses a difference: larger − smaller.",
+        "Multiplicative comparison uses a scale factor: larger ÷ smaller when the factor is whole-number.",
+        "The same pair of numbers can have both relationships.",
+        "Represent the relationship first, then choose the operation that matches the question."
+      ],
+      "Visuals": [
+        {
+          "Kind": "DoubleNumberLine",
+          "Title": "Additive and multiplicative comparison",
+          "Description": "The same pair 12 and 36 can be read as a difference of 24 and a scale factor of 3.",
+          "PrimaryLabel": "Groups",
+          "SecondaryLabel": "Value",
+          "Items": [
+            "1",
+            "2",
+            "3"
+          ],
+          "SecondaryItems": [
+            "12",
+            "24",
+            "36"
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-1:APPLY",
+      "CultureCode": "en",
+      "Title": "Quantify additive and multiplicative relationships: Reason and Apply",
+      "ExplanationParagraphs": [
+        "This Reason and Apply lesson uses the same core mathematics in less direct and more reasoning-focused situations.",
+        "Two numbers can be compared in different ways. An additive comparison asks how much more or less one number is than another, so it is measured by a difference. A multiplicative comparison asks how many times as large one number is as another, so it is measured by a whole-number scale factor in this lesson.",
+        "The same pair of numbers can have both relationships at once. For example, 12 and 36 differ by 24, so 36 is 24 more than 12; they also satisfy 36 = 3 × 12, so 36 is three times as large as 12. Choosing the correct relationship depends on what the question is asking, not on a keyword.",
+        "A useful habit is to represent the relationship with an equation, a bar model or a double number line. Then state whether the comparison is additive or multiplicative before calculating. This prevents common errors such as treating “three times as many” as “three more”."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Additive relationship",
+          "Definition": "An additive relationship describes a fixed difference between two quantities.",
+          "Rule": "If B is d more than A, then B = A + d and d = B − A.",
+          "Example": "18 and 31 have an additive difference of 13."
+        },
+        {
+          "Title": "Multiplicative relationship",
+          "Definition": "A multiplicative relationship describes one quantity as a whole-number multiple of another.",
+          "Rule": "If B is k times A, then B = k × A. In this lesson k is a whole number.",
+          "Example": "42 is 3 times 14 because 42 = 3 × 14."
+        },
+        {
+          "Title": "One pair, two comparisons",
+          "Definition": "A pair of numbers can be described additively and multiplicatively at the same time.",
+          "Rule": "Compute the difference for the additive comparison and divide larger by smaller for a whole-number multiplicative comparison.",
+          "Example": "12 and 36: difference 24; multiplicative factor 3."
+        },
+        {
+          "Title": "Representation",
+          "Definition": "A diagram or equation makes the kind of relationship visible.",
+          "Rule": "Label every quantity and connect equal units before solving.",
+          "Example": "A double number line can show 1 group → 12 and 3 groups → 36."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare two distances",
+          "Question": "A walk is 18 km and a cycle route is 54 km. Describe both the additive and multiplicative relationships.",
+          "Method": "Calculate difference and whole-number factor, then interpret both.",
+          "Steps": [
+            "Difference: 54 − 18 = 36 km.",
+            "Factor: 54 ÷ 18 = 3.",
+            "Write the additive statement.",
+            "Write the multiplicative statement."
+          ],
+          "Answer": "The route is 36 km longer and 3 times as long.",
+          "Check": "18 + 36 = 54; 18 × 3 = 54."
+        },
+        {
+          "Title": "Find a missing original quantity",
+          "Question": "A tank contains 96 L, which is 4 times the amount in a smaller tank. How much is in the smaller tank?",
+          "Method": "Undo the scale factor with division.",
+          "Steps": [
+            "Write 96 = 4 × S.",
+            "Divide both sides by 4.",
+            "S = 96 ÷ 4 = 24.",
+            "Check by multiplying 24 by 4."
+          ],
+          "Answer": "24 L",
+          "Check": "24 × 4 = 96."
+        },
+        {
+          "Title": "Interpret an incorrect claim",
+          "Question": "A student says 50 is '5 times more than' 10 and writes 10 + 5 = 15. Explain the correct relationship.",
+          "Method": "Separate additive and multiplicative language.",
+          "Steps": [
+            "The intended comparison is multiplicative.",
+            "Five times 10 means 5 × 10.",
+            "Calculate 5 × 10 = 50.",
+            "The additive difference is separately 50 − 10 = 40."
+          ],
+          "Answer": "50 is 5 times 10; it is also 40 more than 10.",
+          "Check": "10 × 5 = 50 and 10 + 40 = 50."
+        },
+        {
+          "Title": "Use a bar-model relationship",
+          "Question": "One bar represents 16. A second bar contains 6 equal copies of the first. Find the second value and the difference.",
+          "Method": "Use the number of equal copies as the multiplicative factor.",
+          "Steps": [
+            "Second value = 6 × 16.",
+            "6 × 16 = 96.",
+            "Difference = 96 − 16.",
+            "96 − 16 = 80."
+          ],
+          "Answer": "Second value 96; difference 80.",
+          "Check": "16 × 6 = 96 and 16 + 80 = 96."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating '4 times as many' as '+4'.",
+          "WhyWrong": "A multiplicative comparison changes by equal groups, not by a fixed difference of 4.",
+          "Correction": "Translate '4 times' to ×4 and '4 more' to +4 before calculating."
+        },
+        {
+          "Mistake": "Giving only the numerical difference when the question asks for a scale factor.",
+          "WhyWrong": "Difference and scale factor answer different questions.",
+          "Correction": "Check whether the question says 'how many more' or 'how many times as many'."
+        },
+        {
+          "Mistake": "Dividing smaller by larger and interpreting a fraction when a whole-number factor is expected.",
+          "WhyWrong": "The factor from smaller to larger should be larger ÷ smaller.",
+          "Correction": "Write a direction sentence first: 'B is ___ times A'."
+        }
+      ],
+      "SummaryPoints": [
+        "Additive comparison uses a difference: larger − smaller.",
+        "Multiplicative comparison uses a scale factor: larger ÷ smaller when the factor is whole-number.",
+        "The same pair of numbers can have both relationships.",
+        "Represent the relationship first, then choose the operation that matches the question."
+      ],
+      "Visuals": [
+        {
+          "Kind": "DoubleNumberLine",
+          "Title": "Additive and multiplicative comparison",
+          "Description": "The same pair 12 and 36 can be read as a difference of 24 and a scale factor of 3.",
+          "PrimaryLabel": "Groups",
+          "SecondaryLabel": "Value",
+          "Items": [
+            "1",
+            "2",
+            "3"
+          ],
+          "SecondaryItems": [
+            "12",
+            "24",
+            "36"
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-2:BUILD",
+      "CultureCode": "en",
+      "Title": "Derive related calculations: Build the Idea",
+      "ExplanationParagraphs": [
+        "This Build the Idea lesson develops the core structure before applying it in varied questions.",
+        "A related calculation is a new calculation that can be obtained from a fact you already know. The key is to identify what stays the same and what changes. Arithmetic properties, inverse operations and place value let you transform a known calculation without starting from scratch.",
+        "When a quantity is made 10, 100 or 1,000 times as large, its place value changes predictably. If one factor in a multiplication is multiplied by 10 while the other factor stays unchanged, the product is also multiplied by 10. The same idea can be reversed by division. Additive calculations can also be scaled when every term is scaled by the same factor.",
+        "Inverse relationships create another family of related facts. From 28 × 7 = 196 you can derive 196 ÷ 7 = 28 and 196 ÷ 28 = 7. A good solution states the original fact, names the change, applies it consistently and checks the result against place value or an inverse operation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Scaling a calculation",
+          "Definition": "Scaling means multiplying or dividing a quantity by a power of 10 or another known factor.",
+          "Rule": "If every term in an additive equation is multiplied by the same factor, equality is preserved. In multiplication, scaling one factor by k scales the product by k if the other factor is unchanged.",
+          "Example": "34 + 56 = 90 gives 340 + 560 = 900."
+        },
+        {
+          "Title": "Inverse operations",
+          "Definition": "Multiplication and division undo each other; addition and subtraction undo each other.",
+          "Rule": "Use the inverse fact family to derive missing calculations without recomputing from zero.",
+          "Example": "28 × 7 = 196 gives 196 ÷ 7 = 28."
+        },
+        {
+          "Title": "Place-value reasoning",
+          "Definition": "Moving between related powers of 10 changes value, not the digit pattern.",
+          "Rule": "Track how many times larger or smaller the changed quantity becomes.",
+          "Example": "2.8 × 7 is one tenth of 28 × 7."
+        },
+        {
+          "Title": "Preserve equality",
+          "Definition": "A valid transformation changes both sides consistently.",
+          "Rule": "Never scale one side of an additive equation without making the corresponding change on the other side.",
+          "Example": "64 − 27 = 37 gives 640 − 270 = 370."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Scale an addition fact",
+          "Question": "Given 34 + 56 = 90, find 340 + 560 without column addition.",
+          "Method": "Both addends are 10 times larger, so scale the sum by 10.",
+          "Steps": [
+            "34 + 56 = 90 is the known fact.",
+            "340 = 10 × 34 and 560 = 10 × 56.",
+            "So the entire sum is 10 × 90.",
+            "10 × 90 = 900."
+          ],
+          "Answer": "340 + 560 = 900.",
+          "Check": "900 ÷ 10 = 90, which returns to the known fact."
+        },
+        {
+          "Title": "Scale one multiplication factor",
+          "Question": "Given 28 × 7 = 196, find 280 × 7.",
+          "Method": "Only the first factor is 10 times larger, so the product is 10 times larger.",
+          "Steps": [
+            "Start with 28 × 7 = 196.",
+            "280 = 10 × 28.",
+            "Keep the factor 7 unchanged.",
+            "Scale the product: 196 × 10 = 1,960."
+          ],
+          "Answer": "280 × 7 = 1,960.",
+          "Check": "1,960 ÷ 10 = 196."
+        },
+        {
+          "Title": "Use the inverse fact family",
+          "Question": "Given 36 × 8 = 288, find 288 ÷ 8.",
+          "Method": "Use division as the inverse of multiplication.",
+          "Steps": [
+            "The known multiplication says eight groups of 36 make 288.",
+            "Undo multiplication by 8 using division by 8.",
+            "288 ÷ 8 = 36.",
+            "Check by multiplying 36 × 8."
+          ],
+          "Answer": "288 ÷ 8 = 36.",
+          "Check": "36 × 8 = 288."
+        },
+        {
+          "Title": "Scale a subtraction fact",
+          "Question": "Given 64 − 27 = 37, find 640 − 270.",
+          "Method": "Both values are 10 times larger, so the difference is 10 times larger.",
+          "Steps": [
+            "Write the known fact 64 − 27 = 37.",
+            "Scale both terms by 10: 640 and 270.",
+            "Scale the difference by 10: 370.",
+            "State the related fact."
+          ],
+          "Answer": "640 − 270 = 370.",
+          "Check": "370 ÷ 10 = 37."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Scaling only one term in an addition or subtraction equation.",
+          "WhyWrong": "Equality is not preserved when only one addend or term is changed.",
+          "Correction": "Identify which quantities were scaled and apply the same relationship to the result."
+        },
+        {
+          "Mistake": "Moving digits mechanically without reasoning about value.",
+          "WhyWrong": "A digit shift rule can be misapplied, especially with decimals.",
+          "Correction": "State '10 times larger' or 'one tenth as large' and use place-value reasoning."
+        },
+        {
+          "Mistake": "Forgetting inverse facts.",
+          "WhyWrong": "A known multiplication or addition fact often gives division or subtraction facts immediately.",
+          "Correction": "Write the whole fact family before doing a new calculation."
+        }
+      ],
+      "SummaryPoints": [
+        "Start from the known fact and identify exactly what changed.",
+        "Use place value to scale by 10, 100 or 1,000 and their reciprocals.",
+        "Use inverse operations to derive related multiplication/division or addition/subtraction facts.",
+        "Preserve equality and verify by reversing the transformation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "CalculationChain",
+          "Title": "One fact generates a family",
+          "Description": "Changing one factor by ×10 changes the product by ×10 when the other factor stays fixed.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "28 × 7 = 196",
+            "280 × 7 = 1,960",
+            "2.8 × 7 = 19.6"
+          ],
+          "SecondaryItems": [],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-2:APPLY",
+      "CultureCode": "en",
+      "Title": "Derive related calculations: Reason and Apply",
+      "ExplanationParagraphs": [
+        "This Reason and Apply lesson uses the same core mathematics in less direct and more reasoning-focused situations.",
+        "A related calculation is a new calculation that can be obtained from a fact you already know. The key is to identify what stays the same and what changes. Arithmetic properties, inverse operations and place value let you transform a known calculation without starting from scratch.",
+        "When a quantity is made 10, 100 or 1,000 times as large, its place value changes predictably. If one factor in a multiplication is multiplied by 10 while the other factor stays unchanged, the product is also multiplied by 10. The same idea can be reversed by division. Additive calculations can also be scaled when every term is scaled by the same factor.",
+        "Inverse relationships create another family of related facts. From 28 × 7 = 196 you can derive 196 ÷ 7 = 28 and 196 ÷ 28 = 7. A good solution states the original fact, names the change, applies it consistently and checks the result against place value or an inverse operation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Scaling a calculation",
+          "Definition": "Scaling means multiplying or dividing a quantity by a power of 10 or another known factor.",
+          "Rule": "If every term in an additive equation is multiplied by the same factor, equality is preserved. In multiplication, scaling one factor by k scales the product by k if the other factor is unchanged.",
+          "Example": "34 + 56 = 90 gives 340 + 560 = 900."
+        },
+        {
+          "Title": "Inverse operations",
+          "Definition": "Multiplication and division undo each other; addition and subtraction undo each other.",
+          "Rule": "Use the inverse fact family to derive missing calculations without recomputing from zero.",
+          "Example": "28 × 7 = 196 gives 196 ÷ 7 = 28."
+        },
+        {
+          "Title": "Place-value reasoning",
+          "Definition": "Moving between related powers of 10 changes value, not the digit pattern.",
+          "Rule": "Track how many times larger or smaller the changed quantity becomes.",
+          "Example": "2.8 × 7 is one tenth of 28 × 7."
+        },
+        {
+          "Title": "Preserve equality",
+          "Definition": "A valid transformation changes both sides consistently.",
+          "Rule": "Never scale one side of an additive equation without making the corresponding change on the other side.",
+          "Example": "64 − 27 = 37 gives 640 − 270 = 370."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Move into decimals",
+          "Question": "Given 28 × 7 = 196, find 2.8 × 7.",
+          "Method": "2.8 is one tenth of 28, so the product is one tenth of 196.",
+          "Steps": [
+            "Recognise 2.8 = 28 ÷ 10.",
+            "Keep the factor 7 unchanged.",
+            "Divide the known product by 10: 196 ÷ 10 = 19.6.",
+            "Write the new multiplication fact."
+          ],
+          "Answer": "2.8 × 7 = 19.6.",
+          "Check": "19.6 × 10 = 196."
+        },
+        {
+          "Title": "Complete a related division",
+          "Question": "Given 4,500 ÷ 9 = 500, find 450 ÷ 9.",
+          "Method": "The dividend is one tenth as large, so the quotient is one tenth as large.",
+          "Steps": [
+            "Compare 450 with 4,500: it is ÷10.",
+            "The divisor 9 is unchanged.",
+            "Scale the quotient 500 ÷ 10 = 50.",
+            "Write 450 ÷ 9 = 50."
+          ],
+          "Answer": "50",
+          "Check": "50 × 9 = 450."
+        },
+        {
+          "Title": "Find a missing scaled value",
+          "Question": "Given 125 + 375 = 500, complete 1,250 + ___ = 5,000.",
+          "Method": "The whole equation is scaled by 10.",
+          "Steps": [
+            "125 becomes 1,250, so the scale factor is 10.",
+            "Scale 375 by 10 to preserve the relationship.",
+            "375 × 10 = 3,750.",
+            "Check 1,250 + 3,750 = 5,000."
+          ],
+          "Answer": "3,750",
+          "Check": "5,000 ÷ 10 = 500 and 3,750 ÷ 10 = 375."
+        },
+        {
+          "Title": "Combine inverse and scaling",
+          "Question": "Given 32 × 25 = 800, find 8,000 ÷ 25.",
+          "Method": "First derive 800 ÷ 25 = 32, then scale the dividend by 10.",
+          "Steps": [
+            "Use the inverse: 800 ÷ 25 = 32.",
+            "8,000 is 10 times 800.",
+            "With divisor 25 unchanged, the quotient is 10 times 32.",
+            "10 × 32 = 320."
+          ],
+          "Answer": "8,000 ÷ 25 = 320.",
+          "Check": "320 × 25 = 8,000."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Scaling only one term in an addition or subtraction equation.",
+          "WhyWrong": "Equality is not preserved when only one addend or term is changed.",
+          "Correction": "Identify which quantities were scaled and apply the same relationship to the result."
+        },
+        {
+          "Mistake": "Moving digits mechanically without reasoning about value.",
+          "WhyWrong": "A digit shift rule can be misapplied, especially with decimals.",
+          "Correction": "State '10 times larger' or 'one tenth as large' and use place-value reasoning."
+        },
+        {
+          "Mistake": "Forgetting inverse facts.",
+          "WhyWrong": "A known multiplication or addition fact often gives division or subtraction facts immediately.",
+          "Correction": "Write the whole fact family before doing a new calculation."
+        }
+      ],
+      "SummaryPoints": [
+        "Start from the known fact and identify exactly what changed.",
+        "Use place value to scale by 10, 100 or 1,000 and their reciprocals.",
+        "Use inverse operations to derive related multiplication/division or addition/subtraction facts.",
+        "Preserve equality and verify by reversing the transformation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "CalculationChain",
+          "Title": "One fact generates a family",
+          "Description": "Changing one factor by ×10 changes the product by ×10 when the other factor stays fixed.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "28 × 7 = 196",
+            "280 × 7 = 1,960",
+            "2.8 × 7 = 19.6"
+          ],
+          "SecondaryItems": [],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-3:BUILD",
+      "CultureCode": "en",
+      "Title": "Solve problems involving ratio relationships: Build the Idea",
+      "ExplanationParagraphs": [
+        "This Build the Idea lesson develops the core structure before applying it in varied questions.",
+        "A ratio compares quantities multiplicatively. The statement 2:3 means that for every 2 equal parts of the first quantity there are 3 equal parts of the second. Equivalent ratios are made by multiplying or dividing every part by the same factor.",
+        "Ratio problems can be solved by building a table, using a double number line, scaling a known ratio or finding the value of one part. When a total is given, add the ratio parts first, divide the total by that number of equal parts, then scale each share.",
+        "Keep the order of the ratio consistent with the order of the quantities named. Always attach units or labels to the ratio so that 2:3 does not become detached from what the two numbers represent."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Ratio parts",
+          "Definition": "A ratio such as 2:3 represents 2 equal parts of one quantity for every 3 equal parts of another.",
+          "Rule": "Keep the order of quantities fixed.",
+          "Example": "2 red : 3 blue means red corresponds to 2 and blue to 3."
+        },
+        {
+          "Title": "Equivalent ratios",
+          "Definition": "Multiplying or dividing both parts by the same non-zero factor preserves the ratio.",
+          "Rule": "2:3 = 4:6 = 8:12.",
+          "Example": "2 × 4 : 3 × 4 = 8:12."
+        },
+        {
+          "Title": "Unitary method",
+          "Definition": "Find the value for one equal part, then scale to the required number of parts.",
+          "Rule": "Divide to get one part before multiplying to the target.",
+          "Example": "If 3 notebooks cost £12, one costs £4, so 5 cost £20."
+        },
+        {
+          "Title": "Sharing a total in a ratio",
+          "Definition": "A total is split according to the total number of ratio parts.",
+          "Rule": "Add the parts, divide the total by that sum, then multiply by each ratio number.",
+          "Example": "Split 32 in 5:3 → 8 parts, 4 each, so 20 and 12."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Build equivalent ratios",
+          "Question": "Red and blue counters are in the ratio 2:3. If there are 8 red counters, how many blue counters are there?",
+          "Method": "Scale both parts of the ratio by the same factor.",
+          "Steps": [
+            "2 red becomes 8 red by multiplying by 4.",
+            "Multiply the blue part by the same factor.",
+            "3 × 4 = 12.",
+            "Keep the order red:blue."
+          ],
+          "Answer": "12 blue counters",
+          "Check": "8:12 simplifies by ÷4 to 2:3."
+        },
+        {
+          "Title": "Use a ratio table",
+          "Question": "A drink uses 3 cups of water for every 2 cups of juice. How much water is needed for 8 cups of juice?",
+          "Method": "Scale from 2 cups of juice to 8 cups.",
+          "Steps": [
+            "8 ÷ 2 = 4, so the scale factor is 4.",
+            "Scale water by the same factor.",
+            "3 × 4 = 12.",
+            "Attach the unit cups."
+          ],
+          "Answer": "12 cups of water",
+          "Check": "12:8 simplifies to 3:2."
+        },
+        {
+          "Title": "Find one part",
+          "Question": "Four identical tickets cost £28. How much do 7 tickets cost?",
+          "Method": "Use the unitary method.",
+          "Steps": [
+            "Find one ticket: £28 ÷ 4 = £7.",
+            "Seven tickets are 7 equal units.",
+            "7 × £7 = £49.",
+            "State the cost."
+          ],
+          "Answer": "£49",
+          "Check": "£49 ÷ 7 = £7 per ticket."
+        },
+        {
+          "Title": "Share a total",
+          "Question": "Share 40 stickers in the ratio 3:2.",
+          "Method": "Use total ratio parts to find one part.",
+          "Steps": [
+            "Total parts = 3 + 2 = 5.",
+            "One part = 40 ÷ 5 = 8.",
+            "First share = 3 × 8 = 24.",
+            "Second share = 2 × 8 = 16."
+          ],
+          "Answer": "24 stickers and 16 stickers",
+          "Check": "24 + 16 = 40 and 24:16 simplifies to 3:2."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Scaling only one side of a ratio.",
+          "WhyWrong": "Equivalent ratios require the same scale factor on both quantities.",
+          "Correction": "Write the scale factor between rows of a ratio table and apply it to both entries."
+        },
+        {
+          "Mistake": "Reversing the order of the quantities.",
+          "WhyWrong": "3:5 and 5:3 describe different comparisons.",
+          "Correction": "Write labels beside each ratio part before calculating."
+        },
+        {
+          "Mistake": "Dividing a total by one ratio number instead of the sum of the parts.",
+          "WhyWrong": "The total represents all ratio parts together.",
+          "Correction": "Add the ratio parts first, then divide the total by that sum."
+        }
+      ],
+      "SummaryPoints": [
+        "A ratio compares quantities multiplicatively and its order matters.",
+        "Equivalent ratios scale every part by the same factor.",
+        "Use a ratio table, double number line or unitary method to find missing values.",
+        "To share a total, add the ratio parts, find one part, then scale."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Equivalent ratio table",
+          "Description": "Each column is an equivalent red:blue ratio.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Red",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "2",
+                "4",
+                "8",
+                "12"
+              ]
+            },
+            {
+              "Label": "Blue",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "3",
+                "6",
+                "12",
+                "18"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "DoubleNumberLine",
+          "Title": "Scale a recipe ratio",
+          "Description": "Water and juice grow by the same scale factor.",
+          "PrimaryLabel": "Water",
+          "SecondaryLabel": "Juice",
+          "Items": [
+            "3",
+            "6",
+            "9",
+            "12"
+          ],
+          "SecondaryItems": [
+            "2",
+            "4",
+            "6",
+            "8"
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": [
+        {
+          "Provider": "YouTube",
+          "VideoId": "HpdMJaKaXXc",
+          "Title": "Introduction to ratios",
+          "Creator": "Khan Academy",
+          "Language": "en",
+          "DurationLabel": "",
+          "WhyRecommended": "A clear external explanation of what ratios mean and how simple ratio relationships are represented.",
+          "ReviewStatus": "Approved",
+          "CheckedAtUtc": "2026-09-22T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-3:APPLY",
+      "CultureCode": "en",
+      "Title": "Solve problems involving ratio relationships: Reason and Apply",
+      "ExplanationParagraphs": [
+        "This Reason and Apply lesson uses the same core mathematics in less direct and more reasoning-focused situations.",
+        "A ratio compares quantities multiplicatively. The statement 2:3 means that for every 2 equal parts of the first quantity there are 3 equal parts of the second. Equivalent ratios are made by multiplying or dividing every part by the same factor.",
+        "Ratio problems can be solved by building a table, using a double number line, scaling a known ratio or finding the value of one part. When a total is given, add the ratio parts first, divide the total by that number of equal parts, then scale each share.",
+        "Keep the order of the ratio consistent with the order of the quantities named. Always attach units or labels to the ratio so that 2:3 does not become detached from what the two numbers represent."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Ratio parts",
+          "Definition": "A ratio such as 2:3 represents 2 equal parts of one quantity for every 3 equal parts of another.",
+          "Rule": "Keep the order of quantities fixed.",
+          "Example": "2 red : 3 blue means red corresponds to 2 and blue to 3."
+        },
+        {
+          "Title": "Equivalent ratios",
+          "Definition": "Multiplying or dividing both parts by the same non-zero factor preserves the ratio.",
+          "Rule": "2:3 = 4:6 = 8:12.",
+          "Example": "2 × 4 : 3 × 4 = 8:12."
+        },
+        {
+          "Title": "Unitary method",
+          "Definition": "Find the value for one equal part, then scale to the required number of parts.",
+          "Rule": "Divide to get one part before multiplying to the target.",
+          "Example": "If 3 notebooks cost £12, one costs £4, so 5 cost £20."
+        },
+        {
+          "Title": "Sharing a total in a ratio",
+          "Definition": "A total is split according to the total number of ratio parts.",
+          "Rule": "Add the parts, divide the total by that sum, then multiply by each ratio number.",
+          "Example": "Split 32 in 5:3 → 8 parts, 4 each, so 20 and 12."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Scale to a non-given row",
+          "Question": "A map scale uses 4 cm for 10 km. What distance does 14 cm represent?",
+          "Method": "Find the distance for 1 cm, then scale.",
+          "Steps": [
+            "10 km ÷ 4 = 2.5 km per cm.",
+            "Multiply by 14 cm.",
+            "2.5 × 14 = 35.",
+            "State the real distance."
+          ],
+          "Answer": "35 km",
+          "Check": "35 ÷ 14 = 2.5 km per cm."
+        },
+        {
+          "Title": "Find the missing ratio quantity",
+          "Question": "Flour:sugar = 5:2. A recipe uses 750 g of flour. How much sugar is needed?",
+          "Method": "Scale from 5 parts to 750 g.",
+          "Steps": [
+            "One ratio part = 750 ÷ 5 = 150 g.",
+            "Sugar uses 2 parts.",
+            "2 × 150 = 300 g.",
+            "Keep units."
+          ],
+          "Answer": "300 g",
+          "Check": "750:300 simplifies by ÷150 to 5:2."
+        },
+        {
+          "Title": "Share money in a ratio",
+          "Question": "£84 is shared in the ratio 4:3. Find both shares.",
+          "Method": "Use seven total parts.",
+          "Steps": [
+            "Total parts = 4 + 3 = 7.",
+            "One part = £84 ÷ 7 = £12.",
+            "First share = 4 × £12 = £48.",
+            "Second share = 3 × £12 = £36."
+          ],
+          "Answer": "£48 and £36",
+          "Check": "£48 + £36 = £84."
+        },
+        {
+          "Title": "Reason backwards",
+          "Question": "Boys:girls = 3:5 and there are 20 girls. How many children are there altogether?",
+          "Method": "Find the scale factor from 5 parts to 20.",
+          "Steps": [
+            "5 parts correspond to 20 girls.",
+            "Scale factor = 20 ÷ 5 = 4.",
+            "Boys = 3 × 4 = 12.",
+            "Total children = 12 + 20 = 32."
+          ],
+          "Answer": "32 children",
+          "Check": "12:20 simplifies to 3:5."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Scaling only one side of a ratio.",
+          "WhyWrong": "Equivalent ratios require the same scale factor on both quantities.",
+          "Correction": "Write the scale factor between rows of a ratio table and apply it to both entries."
+        },
+        {
+          "Mistake": "Reversing the order of the quantities.",
+          "WhyWrong": "3:5 and 5:3 describe different comparisons.",
+          "Correction": "Write labels beside each ratio part before calculating."
+        },
+        {
+          "Mistake": "Dividing a total by one ratio number instead of the sum of the parts.",
+          "WhyWrong": "The total represents all ratio parts together.",
+          "Correction": "Add the ratio parts first, then divide the total by that sum."
+        }
+      ],
+      "SummaryPoints": [
+        "A ratio compares quantities multiplicatively and its order matters.",
+        "Equivalent ratios scale every part by the same factor.",
+        "Use a ratio table, double number line or unitary method to find missing values.",
+        "To share a total, add the ratio parts, find one part, then scale."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Equivalent ratio table",
+          "Description": "Each column is an equivalent red:blue ratio.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Red",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "2",
+                "4",
+                "8",
+                "12"
+              ]
+            },
+            {
+              "Label": "Blue",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "3",
+                "6",
+                "12",
+                "18"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "DoubleNumberLine",
+          "Title": "Scale a recipe ratio",
+          "Description": "Water and juice grow by the same scale factor.",
+          "PrimaryLabel": "Water",
+          "SecondaryLabel": "Juice",
+          "Items": [
+            "3",
+            "6",
+            "9",
+            "12"
+          ],
+          "SecondaryItems": [
+            "2",
+            "4",
+            "6",
+            "8"
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": [
+        {
+          "Provider": "YouTube",
+          "VideoId": "HpdMJaKaXXc",
+          "Title": "Introduction to ratios",
+          "Creator": "Khan Academy",
+          "Language": "en",
+          "DurationLabel": "",
+          "WhyRecommended": "A clear external explanation of what ratios mean and how simple ratio relationships are represented.",
+          "ReviewStatus": "Approved",
+          "CheckedAtUtc": "2026-09-22T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:BUILD",
+      "CultureCode": "en",
+      "Title": "Solve problems with 2 unknowns: Build the Idea",
+      "ExplanationParagraphs": [
+        "This Build the Idea lesson develops the core structure before applying it in varied questions.",
+        "A two-unknown problem gives information about two quantities that are not known at the start. The goal is not to guess both numbers independently; it is to use the relationships between them until only one unknown remains.",
+        "Useful structures include a known total with a known difference, a known total with a multiplicative relationship, perimeter relationships, and pairs of equations. Bar models and equations help keep the two quantities connected.",
+        "After finding one unknown, substitute it back into the original relationship to find the second. A complete check must satisfy every condition in the problem, not just one of them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Two linked unknowns",
+          "Definition": "Two values are unknown but connected by one or more conditions.",
+          "Rule": "Represent each condition before calculating.",
+          "Example": "x + y = 50 and x − y = 14 describe the same two unknowns in two ways."
+        },
+        {
+          "Title": "Equalising a difference",
+          "Definition": "When a total and difference are known, remove the difference before splitting equally.",
+          "Rule": "Smaller = (total − difference) ÷ 2; larger = smaller + difference.",
+          "Example": "Total 50, difference 14 → smaller 18, larger 32."
+        },
+        {
+          "Title": "Multiplicative relationship",
+          "Definition": "One unknown may be a whole-number multiple of the other.",
+          "Rule": "Replace the larger quantity by its multiple to count equal parts.",
+          "Example": "If B = 3A and A + B = 72, then 4A = 72."
+        },
+        {
+          "Title": "Substitution check",
+          "Definition": "A proposed pair must satisfy all original conditions.",
+          "Rule": "Put both values back into each relationship.",
+          "Example": "18 + 54 = 72 and 54 = 3 × 18."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Total and difference",
+          "Question": "Two numbers total 50. The larger is 14 more than the smaller. Find both numbers.",
+          "Method": "Remove the extra 14, then split the remaining equal amount.",
+          "Steps": [
+            "Subtract the difference: 50 − 14 = 36.",
+            "The remaining 36 represents two equal smaller parts.",
+            "36 ÷ 2 = 18, so the smaller number is 18.",
+            "Add the difference: 18 + 14 = 32."
+          ],
+          "Answer": "18 and 32",
+          "Check": "18 + 32 = 50 and 32 − 18 = 14."
+        },
+        {
+          "Title": "Total and multiple",
+          "Question": "Two numbers total 72. One is 3 times the other. Find both.",
+          "Method": "Treat the smaller as one part and the larger as three equal parts.",
+          "Steps": [
+            "Total parts = 1 + 3 = 4.",
+            "One part = 72 ÷ 4 = 18.",
+            "Smaller = 18.",
+            "Larger = 3 × 18 = 54."
+          ],
+          "Answer": "18 and 54",
+          "Check": "18 + 54 = 72 and 54 = 3 × 18."
+        },
+        {
+          "Title": "Rectangle dimensions",
+          "Question": "A rectangle has perimeter 34 cm. Its length is 3 cm more than its width. Find the dimensions.",
+          "Method": "Use half the perimeter as length + width.",
+          "Steps": [
+            "Half perimeter = 34 ÷ 2 = 17, so L + W = 17.",
+            "Length is width + 3.",
+            "Remove the extra 3: 17 − 3 = 14.",
+            "Split 14 equally: W = 7, then L = 10."
+          ],
+          "Answer": "Width 7 cm, length 10 cm",
+          "Check": "2 × (7 + 10) = 34."
+        },
+        {
+          "Title": "Two prices",
+          "Question": "Two identical notebooks and one pen cost £11. A notebook costs £4. Find the pen price.",
+          "Method": "Use the known value to remove the notebook contribution.",
+          "Steps": [
+            "Two notebooks cost 2 × £4 = £8.",
+            "Total cost is £11.",
+            "Pen cost = £11 − £8.",
+            "£11 − £8 = £3."
+          ],
+          "Answer": "£3",
+          "Check": "£8 + £3 = £11."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Finding a pair that satisfies only one condition.",
+          "WhyWrong": "Two-unknown problems normally have multiple constraints.",
+          "Correction": "Substitute the final pair into every condition."
+        },
+        {
+          "Mistake": "Splitting the total equally before accounting for a stated difference.",
+          "WhyWrong": "The larger quantity contains an extra amount that must be removed first.",
+          "Correction": "Subtract the difference, split the equal remainder, then restore the extra."
+        },
+        {
+          "Mistake": "Using the full perimeter as length + width.",
+          "WhyWrong": "Perimeter of a rectangle is 2(L + W).",
+          "Correction": "Divide the perimeter by 2 before solving the dimension relationship."
+        }
+      ],
+      "SummaryPoints": [
+        "Represent both unknowns and every relationship before solving.",
+        "Use equal parts for multiplicative relationships and remove stated differences before equal splitting.",
+        "Find one unknown first, then use the original relationship to find the other.",
+        "Check that the final pair satisfies every condition."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Two conditions identify one pair",
+          "Description": "Both equations must be true for the same values.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "x + y = 50",
+            "x − y = 14",
+            "x = 32, y = 18"
+          ],
+          "SecondaryItems": [],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:APPLY",
+      "CultureCode": "en",
+      "Title": "Solve problems with 2 unknowns: Reason and Apply",
+      "ExplanationParagraphs": [
+        "This Reason and Apply lesson uses the same core mathematics in less direct and more reasoning-focused situations.",
+        "A two-unknown problem gives information about two quantities that are not known at the start. The goal is not to guess both numbers independently; it is to use the relationships between them until only one unknown remains.",
+        "Useful structures include a known total with a known difference, a known total with a multiplicative relationship, perimeter relationships, and pairs of equations. Bar models and equations help keep the two quantities connected.",
+        "After finding one unknown, substitute it back into the original relationship to find the second. A complete check must satisfy every condition in the problem, not just one of them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Two linked unknowns",
+          "Definition": "Two values are unknown but connected by one or more conditions.",
+          "Rule": "Represent each condition before calculating.",
+          "Example": "x + y = 50 and x − y = 14 describe the same two unknowns in two ways."
+        },
+        {
+          "Title": "Equalising a difference",
+          "Definition": "When a total and difference are known, remove the difference before splitting equally.",
+          "Rule": "Smaller = (total − difference) ÷ 2; larger = smaller + difference.",
+          "Example": "Total 50, difference 14 → smaller 18, larger 32."
+        },
+        {
+          "Title": "Multiplicative relationship",
+          "Definition": "One unknown may be a whole-number multiple of the other.",
+          "Rule": "Replace the larger quantity by its multiple to count equal parts.",
+          "Example": "If B = 3A and A + B = 72, then 4A = 72."
+        },
+        {
+          "Title": "Substitution check",
+          "Definition": "A proposed pair must satisfy all original conditions.",
+          "Rule": "Put both values back into each relationship.",
+          "Example": "18 + 54 = 72 and 54 = 3 × 18."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Total and difference in context",
+          "Question": "A school has 86 Year 6 pupils in two classes. One class has 8 more pupils than the other. Find both class sizes.",
+          "Method": "Remove the difference, split, then restore it.",
+          "Steps": [
+            "86 − 8 = 78.",
+            "78 ÷ 2 = 39.",
+            "Smaller class = 39.",
+            "Larger class = 39 + 8 = 47."
+          ],
+          "Answer": "39 pupils and 47 pupils",
+          "Check": "39 + 47 = 86; 47 − 39 = 8."
+        },
+        {
+          "Title": "One quantity four times another",
+          "Question": "Two collections contain 95 cards in total. One collection has 4 times as many cards as the other. Find both.",
+          "Method": "Count five equal parts in total.",
+          "Steps": [
+            "1 + 4 = 5 equal parts.",
+            "95 ÷ 5 = 19 per part.",
+            "Smaller = 19.",
+            "Larger = 4 × 19 = 76."
+          ],
+          "Answer": "19 cards and 76 cards",
+          "Check": "19 + 76 = 95; 76 = 4 × 19."
+        },
+        {
+          "Title": "Perimeter with a relationship",
+          "Question": "A rectangle has perimeter 50 m. Its length is 5 m longer than its width. Find its area.",
+          "Method": "Find dimensions first, then multiply.",
+          "Steps": [
+            "L + W = 50 ÷ 2 = 25.",
+            "L = W + 5, so remove the extra 5: 25 − 5 = 20.",
+            "W = 20 ÷ 2 = 10 and L = 15.",
+            "Area = 10 × 15 = 150 m²."
+          ],
+          "Answer": "150 m²",
+          "Check": "Perimeter 2 × (10 + 15) = 50 m."
+        },
+        {
+          "Title": "Check a proposed pair",
+          "Question": "A student claims two numbers are 21 and 42 when the total is 63 and one is twice the other. Is the claim correct?",
+          "Method": "Test both conditions.",
+          "Steps": [
+            "Check the total: 21 + 42 = 63.",
+            "Check the multiple: 42 = 2 × 21.",
+            "Both conditions are satisfied.",
+            "Therefore the pair is valid."
+          ],
+          "Answer": "Yes, 21 and 42 satisfy both conditions.",
+          "Check": "Both original relationships are true."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Finding a pair that satisfies only one condition.",
+          "WhyWrong": "Two-unknown problems normally have multiple constraints.",
+          "Correction": "Substitute the final pair into every condition."
+        },
+        {
+          "Mistake": "Splitting the total equally before accounting for a stated difference.",
+          "WhyWrong": "The larger quantity contains an extra amount that must be removed first.",
+          "Correction": "Subtract the difference, split the equal remainder, then restore the extra."
+        },
+        {
+          "Mistake": "Using the full perimeter as length + width.",
+          "WhyWrong": "Perimeter of a rectangle is 2(L + W).",
+          "Correction": "Divide the perimeter by 2 before solving the dimension relationship."
+        }
+      ],
+      "SummaryPoints": [
+        "Represent both unknowns and every relationship before solving.",
+        "Use equal parts for multiplicative relationships and remove stated differences before equal splitting.",
+        "Find one unknown first, then use the original relationship to find the other.",
+        "Check that the final pair satisfies every condition."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Two conditions identify one pair",
+          "Description": "Both equations must be true for the same values.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "x + y = 50",
+            "x − y = 14",
+            "x = 32, y = 18"
+          ],
+          "SecondaryItems": [],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-1:BUILD",
+      "CultureCode": "en",
+      "Title": "Simplify fractions: Build the Idea",
+      "ExplanationParagraphs": [
+        "This Build the Idea lesson develops the core structure before applying it in varied questions.",
+        "A fraction is simplified when its numerator and denominator have no common factor greater than 1. Simplifying does not change the value of the fraction; it changes only the way the same value is written.",
+        "To simplify, divide the numerator and denominator by the same common factor. Using the greatest common factor reaches simplest form in one step, but repeated division by smaller common factors is also valid.",
+        "Equivalent fractions occupy the same point on a number line. This is why 18/24, 9/12 and 3/4 represent the same quantity even though their numerators and denominators are different."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Common factor",
+          "Definition": "A common factor divides both numerator and denominator exactly.",
+          "Rule": "Any common factor greater than 1 can simplify the fraction.",
+          "Example": "18 and 24 are both divisible by 6."
+        },
+        {
+          "Title": "Greatest common factor",
+          "Definition": "The greatest common factor is the largest factor shared by both numbers.",
+          "Rule": "Divide by the GCF to reach simplest form in one step.",
+          "Example": "GCF(18,24)=6, so 18/24 = 3/4."
+        },
+        {
+          "Title": "Equivalent fractions",
+          "Definition": "Multiplying or dividing numerator and denominator by the same non-zero number preserves value.",
+          "Rule": "a/b = (a÷k)/(b÷k) when k divides both.",
+          "Example": "12/20 ÷4 = 3/5."
+        },
+        {
+          "Title": "Simplest form",
+          "Definition": "A fraction is in simplest form when numerator and denominator are coprime.",
+          "Rule": "Check that no prime factor is shared.",
+          "Example": "5/12 is already simplest."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Simplify with the GCF",
+          "Question": "Simplify 18/24.",
+          "Method": "Find the greatest common factor and divide both parts.",
+          "Steps": [
+            "Factors shared by 18 and 24 include 1, 2, 3 and 6.",
+            "The greatest common factor is 6.",
+            "18 ÷ 6 = 3 and 24 ÷ 6 = 4.",
+            "Write 3/4."
+          ],
+          "Answer": "3/4",
+          "Check": "3 and 4 share no factor greater than 1."
+        },
+        {
+          "Title": "Simplify in stages",
+          "Question": "Simplify 42/56 using repeated common factors.",
+          "Method": "Divide both parts by the same factor until no common factor remains.",
+          "Steps": [
+            "42 and 56 are both divisible by 2: 42/56 = 21/28.",
+            "21 and 28 are both divisible by 7.",
+            "21 ÷ 7 = 3 and 28 ÷ 7 = 4.",
+            "So the simplest form is 3/4."
+          ],
+          "Answer": "3/4",
+          "Check": "42/56 and 3/4 cross-multiply to 168 on both sides."
+        },
+        {
+          "Title": "Simplify an improper fraction",
+          "Question": "Simplify 84/126.",
+          "Method": "Use the greatest common factor 42.",
+          "Steps": [
+            "Find a large common factor: 84 = 2 × 42 and 126 = 3 × 42.",
+            "Divide numerator by 42: 84 ÷ 42 = 2.",
+            "Divide denominator by 42: 126 ÷ 42 = 3.",
+            "Write 2/3."
+          ],
+          "Answer": "2/3",
+          "Check": "2 and 3 are coprime."
+        },
+        {
+          "Title": "Recognise already simplest",
+          "Question": "Is 35/48 already in simplest form?",
+          "Method": "Check for common prime factors.",
+          "Steps": [
+            "35 = 5 × 7.",
+            "48 = 2⁴ × 3.",
+            "They share no prime factor.",
+            "Therefore no common factor greater than 1 exists."
+          ],
+          "Answer": "Yes, 35/48 is already simplest.",
+          "Check": "GCF(35,48)=1."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Subtracting the same number from numerator and denominator.",
+          "WhyWrong": "Fraction equivalence is preserved by multiplying or dividing both parts by the same non-zero factor, not by equal subtraction.",
+          "Correction": "Use common factors, not common differences."
+        },
+        {
+          "Mistake": "Dividing the numerator but not the denominator.",
+          "WhyWrong": "That changes the value of the fraction.",
+          "Correction": "Every simplification step must apply the same divisor to numerator and denominator."
+        },
+        {
+          "Mistake": "Stopping before simplest form.",
+          "WhyWrong": "A fraction can be equivalent but not fully simplified.",
+          "Correction": "Check the final numerator and denominator for any remaining common factor."
+        }
+      ],
+      "SummaryPoints": [
+        "Simplifying preserves value while reducing numerator and denominator.",
+        "Divide numerator and denominator by the same common factor.",
+        "Using the greatest common factor reaches simplest form efficiently.",
+        "A fraction is simplest when numerator and denominator share only factor 1."
+      ],
+      "Visuals": [
+        {
+          "Kind": "FractionBars",
+          "Title": "Equivalent fraction bars",
+          "Description": "Both bars show the same three-quarters of a whole.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "6/8",
+              "Numerator": 6,
+              "Denominator": 8,
+              "Cells": []
+            },
+            {
+              "Label": "3/4",
+              "Numerator": 3,
+              "Denominator": 4,
+              "Cells": []
+            }
+          ]
+        }
+      ],
+      "Videos": [
+        {
+          "Provider": "YouTube",
+          "VideoId": "PcEwj5_v75g",
+          "Title": "Simplifying Fractions",
+          "Creator": "The Organic Chemistry Tutor",
+          "Language": "en",
+          "DurationLabel": "",
+          "WhyRecommended": "A reviewed external walkthrough showing how common factors reduce fractions to equivalent simplest forms.",
+          "ReviewStatus": "Approved",
+          "CheckedAtUtc": "2026-09-22T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-1:APPLY",
+      "CultureCode": "en",
+      "Title": "Simplify fractions: Reason and Apply",
+      "ExplanationParagraphs": [
+        "This Reason and Apply lesson uses the same core mathematics in less direct and more reasoning-focused situations.",
+        "A fraction is simplified when its numerator and denominator have no common factor greater than 1. Simplifying does not change the value of the fraction; it changes only the way the same value is written.",
+        "To simplify, divide the numerator and denominator by the same common factor. Using the greatest common factor reaches simplest form in one step, but repeated division by smaller common factors is also valid.",
+        "Equivalent fractions occupy the same point on a number line. This is why 18/24, 9/12 and 3/4 represent the same quantity even though their numerators and denominators are different."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Common factor",
+          "Definition": "A common factor divides both numerator and denominator exactly.",
+          "Rule": "Any common factor greater than 1 can simplify the fraction.",
+          "Example": "18 and 24 are both divisible by 6."
+        },
+        {
+          "Title": "Greatest common factor",
+          "Definition": "The greatest common factor is the largest factor shared by both numbers.",
+          "Rule": "Divide by the GCF to reach simplest form in one step.",
+          "Example": "GCF(18,24)=6, so 18/24 = 3/4."
+        },
+        {
+          "Title": "Equivalent fractions",
+          "Definition": "Multiplying or dividing numerator and denominator by the same non-zero number preserves value.",
+          "Rule": "a/b = (a÷k)/(b÷k) when k divides both.",
+          "Example": "12/20 ÷4 = 3/5."
+        },
+        {
+          "Title": "Simplest form",
+          "Definition": "A fraction is in simplest form when numerator and denominator are coprime.",
+          "Rule": "Check that no prime factor is shared.",
+          "Example": "5/12 is already simplest."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Simplify before comparing",
+          "Question": "Simplify 45/60.",
+          "Method": "Find GCF 15 and divide both parts.",
+          "Steps": [
+            "45 and 60 are divisible by 15.",
+            "45 ÷ 15 = 3.",
+            "60 ÷ 15 = 4.",
+            "Write 3/4."
+          ],
+          "Answer": "3/4",
+          "Check": "3/4 × 60 = 45."
+        },
+        {
+          "Title": "Recover the original scale factor",
+          "Question": "A fraction simplifies from 56/72 to 7/9. What common factor was used?",
+          "Method": "Compare original and simplified numerator or denominator.",
+          "Steps": [
+            "56 ÷ 7 = 8.",
+            "Check denominator: 72 ÷ 9 = 8.",
+            "The same divisor was used on both parts.",
+            "Therefore the common factor was 8."
+          ],
+          "Answer": "8",
+          "Check": "7×8=56 and 9×8=72."
+        },
+        {
+          "Title": "Simplify a fraction greater than 1",
+          "Question": "Simplify 150/90.",
+          "Method": "Divide by GCF 30.",
+          "Steps": [
+            "GCF(150,90)=30.",
+            "150 ÷ 30 = 5.",
+            "90 ÷ 30 = 3.",
+            "Write 5/3."
+          ],
+          "Answer": "5/3",
+          "Check": "5 and 3 share no common factor."
+        },
+        {
+          "Title": "Spot an invalid simplification",
+          "Question": "A student writes 24/36 = 23/35 by subtracting 1 from top and bottom. Explain the error and simplify correctly.",
+          "Method": "Equivalent fractions require multiplying or dividing both parts by the same non-zero factor.",
+          "Steps": [
+            "Subtracting the same amount from numerator and denominator does not preserve a fraction's value.",
+            "Find GCF(24,36)=12.",
+            "24 ÷ 12 = 2 and 36 ÷ 12 = 3.",
+            "So 24/36 = 2/3."
+          ],
+          "Answer": "2/3",
+          "Check": "24×3=72 and 36×2=72."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Subtracting the same number from numerator and denominator.",
+          "WhyWrong": "Fraction equivalence is preserved by multiplying or dividing both parts by the same non-zero factor, not by equal subtraction.",
+          "Correction": "Use common factors, not common differences."
+        },
+        {
+          "Mistake": "Dividing the numerator but not the denominator.",
+          "WhyWrong": "That changes the value of the fraction.",
+          "Correction": "Every simplification step must apply the same divisor to numerator and denominator."
+        },
+        {
+          "Mistake": "Stopping before simplest form.",
+          "WhyWrong": "A fraction can be equivalent but not fully simplified.",
+          "Correction": "Check the final numerator and denominator for any remaining common factor."
+        }
+      ],
+      "SummaryPoints": [
+        "Simplifying preserves value while reducing numerator and denominator.",
+        "Divide numerator and denominator by the same common factor.",
+        "Using the greatest common factor reaches simplest form efficiently.",
+        "A fraction is simplest when numerator and denominator share only factor 1."
+      ],
+      "Visuals": [
+        {
+          "Kind": "FractionBars",
+          "Title": "Equivalent fraction bars",
+          "Description": "Both bars show the same three-quarters of a whole.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "6/8",
+              "Numerator": 6,
+              "Denominator": 8,
+              "Cells": []
+            },
+            {
+              "Label": "3/4",
+              "Numerator": 3,
+              "Denominator": 4,
+              "Cells": []
+            }
+          ]
+        }
+      ],
+      "Videos": [
+        {
+          "Provider": "YouTube",
+          "VideoId": "PcEwj5_v75g",
+          "Title": "Simplifying Fractions",
+          "Creator": "The Organic Chemistry Tutor",
+          "Language": "en",
+          "DurationLabel": "",
+          "WhyRecommended": "A reviewed external walkthrough showing how common factors reduce fractions to equivalent simplest forms.",
+          "ReviewStatus": "Approved",
+          "CheckedAtUtc": "2026-09-22T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-2:BUILD",
+      "CultureCode": "en",
+      "Title": "Express fractions in a common denomination: Build the Idea",
+      "ExplanationParagraphs": [
+        "This Build the Idea lesson develops the core structure before applying it in varied questions.",
+        "Fractions have a common denominator when they are written using equal-sized fractional parts. Rewriting fractions with a common denominator does not change their values; it creates a shared unit so numerators can be compared or combined meaningfully.",
+        "A useful common denominator is any common multiple of the original denominators. The least common multiple is often the most efficient because it keeps numbers small, but another common multiple is still mathematically valid.",
+        "To rewrite a fraction, multiply its numerator and denominator by the same factor. The factor is determined by asking what multiplies the original denominator to reach the chosen common denominator."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Common denominator",
+          "Definition": "A common denominator means fractions are expressed in parts of the same size.",
+          "Rule": "Choose a number divisible by each original denominator.",
+          "Example": "For 2/3 and 3/4, 12 is a common denominator."
+        },
+        {
+          "Title": "Least common multiple",
+          "Definition": "The LCM is the smallest positive common multiple of the denominators.",
+          "Rule": "Using the LCM usually minimizes arithmetic.",
+          "Example": "LCM(6,9)=18."
+        },
+        {
+          "Title": "Equivalent rewriting",
+          "Definition": "Scale numerator and denominator by the same factor to preserve value.",
+          "Rule": "If denominator ×k reaches the common denominator, numerator must also ×k.",
+          "Example": "2/3 = 8/12 because 2×4=8 and 3×4=12."
+        },
+        {
+          "Title": "Shared unit",
+          "Definition": "Once denominators match, numerators count equal-sized parts.",
+          "Rule": "Only compare numerators after the fractional unit is the same.",
+          "Example": "8/12 and 9/12 can be compared directly."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Common denominator of 3 and 4",
+          "Question": "Write 2/3 and 3/4 with denominator 12.",
+          "Method": "Scale each fraction to twelfths.",
+          "Steps": [
+            "3 × 4 = 12, so multiply 2/3 by 4/4.",
+            "2/3 = 8/12.",
+            "4 × 3 = 12, so multiply 3/4 by 3/3.",
+            "3/4 = 9/12."
+          ],
+          "Answer": "8/12 and 9/12",
+          "Check": "8/12 simplifies to 2/3; 9/12 simplifies to 3/4."
+        },
+        {
+          "Title": "Use the LCM",
+          "Question": "Write 5/6 and 7/9 with a common denominator.",
+          "Method": "Find LCM(6,9)=18.",
+          "Steps": [
+            "6 × 3 = 18, so 5/6 = 15/18.",
+            "9 × 2 = 18, so 7/9 = 14/18.",
+            "Both fractions now use eighteenths.",
+            "The original values are unchanged."
+          ],
+          "Answer": "15/18 and 14/18",
+          "Check": "15/18 simplifies by 3 to 5/6; 14/18 by 2 to 7/9."
+        },
+        {
+          "Title": "One denominator already divides the other",
+          "Question": "Write 3/5 and 7/10 with a common denominator.",
+          "Method": "Use 10 because 10 is already a multiple of 5.",
+          "Steps": [
+            "5 × 2 = 10.",
+            "3/5 = 6/10.",
+            "7/10 already has denominator 10.",
+            "Write both fractions in tenths."
+          ],
+          "Answer": "6/10 and 7/10",
+          "Check": "6/10 simplifies to 3/5."
+        },
+        {
+          "Title": "Use a larger LCM",
+          "Question": "Write 7/12 and 5/18 with a common denominator.",
+          "Method": "Find LCM(12,18)=36.",
+          "Steps": [
+            "12 × 3 = 36, so 7/12 = 21/36.",
+            "18 × 2 = 36, so 5/18 = 10/36.",
+            "Both now use thirty-sixths.",
+            "Keep numerator scaling matched to denominator scaling."
+          ],
+          "Answer": "21/36 and 10/36",
+          "Check": "21/36 = 7/12 and 10/36 = 5/18."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Changing the denominator without applying the same scale factor to the numerator.",
+          "WhyWrong": "That changes the fraction's value.",
+          "Correction": "Use one scale factor for both numerator and denominator."
+        },
+        {
+          "Mistake": "Adding or multiplying denominators together automatically.",
+          "WhyWrong": "The product is a common denominator but may be unnecessarily large; in some contexts students also change numerators incorrectly.",
+          "Correction": "Find a common multiple deliberately, preferably the LCM when efficient."
+        },
+        {
+          "Mistake": "Comparing numerators before denominators match.",
+          "WhyWrong": "Different denominators represent different-sized parts.",
+          "Correction": "Create a shared denominator or use another valid comparison strategy first."
+        }
+      ],
+      "SummaryPoints": [
+        "A common denominator creates equal-sized fractional parts.",
+        "Use a common multiple of the denominators; the LCM is often most efficient.",
+        "Scale numerator and denominator by the same factor.",
+        "Once denominators match, numerators count the same type of part."
+      ],
+      "Visuals": [
+        {
+          "Kind": "FractionBars",
+          "Title": "Common denominator model",
+          "Description": "The bars show two-thirds and three-quarters rewritten in twelfths.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "2/3 = 8/12",
+              "Numerator": 8,
+              "Denominator": 12,
+              "Cells": []
+            },
+            {
+              "Label": "3/4 = 9/12",
+              "Numerator": 9,
+              "Denominator": 12,
+              "Cells": []
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-2:APPLY",
+      "CultureCode": "en",
+      "Title": "Express fractions in a common denomination: Reason and Apply",
+      "ExplanationParagraphs": [
+        "This Reason and Apply lesson uses the same core mathematics in less direct and more reasoning-focused situations.",
+        "Fractions have a common denominator when they are written using equal-sized fractional parts. Rewriting fractions with a common denominator does not change their values; it creates a shared unit so numerators can be compared or combined meaningfully.",
+        "A useful common denominator is any common multiple of the original denominators. The least common multiple is often the most efficient because it keeps numbers small, but another common multiple is still mathematically valid.",
+        "To rewrite a fraction, multiply its numerator and denominator by the same factor. The factor is determined by asking what multiplies the original denominator to reach the chosen common denominator."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Common denominator",
+          "Definition": "A common denominator means fractions are expressed in parts of the same size.",
+          "Rule": "Choose a number divisible by each original denominator.",
+          "Example": "For 2/3 and 3/4, 12 is a common denominator."
+        },
+        {
+          "Title": "Least common multiple",
+          "Definition": "The LCM is the smallest positive common multiple of the denominators.",
+          "Rule": "Using the LCM usually minimizes arithmetic.",
+          "Example": "LCM(6,9)=18."
+        },
+        {
+          "Title": "Equivalent rewriting",
+          "Definition": "Scale numerator and denominator by the same factor to preserve value.",
+          "Rule": "If denominator ×k reaches the common denominator, numerator must also ×k.",
+          "Example": "2/3 = 8/12 because 2×4=8 and 3×4=12."
+        },
+        {
+          "Title": "Shared unit",
+          "Definition": "Once denominators match, numerators count equal-sized parts.",
+          "Rule": "Only compare numerators after the fractional unit is the same.",
+          "Example": "8/12 and 9/12 can be compared directly."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Choose the most efficient denominator",
+          "Question": "A student chooses 60 as a common denominator for 2/5 and 3/10. Give a smaller valid common denominator and rewrite both fractions.",
+          "Method": "Use the LCM of 5 and 10.",
+          "Steps": [
+            "LCM(5,10)=10.",
+            "2/5 = 4/10.",
+            "3/10 already uses tenths.",
+            "10 is smaller and sufficient."
+          ],
+          "Answer": "4/10 and 3/10",
+          "Check": "Both could also be written over 20, 30, 40… but 10 is simplest."
+        },
+        {
+          "Title": "Find a missing numerator",
+          "Question": "Complete 4/7 = ?/35.",
+          "Method": "Find the scale factor from 7 to 35.",
+          "Steps": [
+            "35 ÷ 7 = 5.",
+            "Multiply numerator by the same factor.",
+            "4 × 5 = 20.",
+            "Write 20/35."
+          ],
+          "Answer": "20",
+          "Check": "20/35 simplifies by 5 to 4/7."
+        },
+        {
+          "Title": "Three fractions",
+          "Question": "Write 1/2, 2/3 and 5/6 with a common denominator.",
+          "Method": "Use LCM(2,3,6)=6.",
+          "Steps": [
+            "1/2 = 3/6.",
+            "2/3 = 4/6.",
+            "5/6 stays 5/6.",
+            "All three now use sixths."
+          ],
+          "Answer": "3/6, 4/6 and 5/6",
+          "Check": "Each fraction simplifies back to its original value."
+        },
+        {
+          "Title": "Diagnose a bad equivalent fraction",
+          "Question": "A student says 3/8 = 9/16. Explain and correct it.",
+          "Method": "The denominator was doubled but the numerator was tripled, so the scale factors do not match.",
+          "Steps": [
+            "8 to 16 is ×2.",
+            "Therefore numerator must also be ×2.",
+            "3 × 2 = 6.",
+            "Correct equivalent fraction is 6/16."
+          ],
+          "Answer": "3/8 = 6/16",
+          "Check": "6/16 simplifies by 2 to 3/8."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Changing the denominator without applying the same scale factor to the numerator.",
+          "WhyWrong": "That changes the fraction's value.",
+          "Correction": "Use one scale factor for both numerator and denominator."
+        },
+        {
+          "Mistake": "Adding or multiplying denominators together automatically.",
+          "WhyWrong": "The product is a common denominator but may be unnecessarily large; in some contexts students also change numerators incorrectly.",
+          "Correction": "Find a common multiple deliberately, preferably the LCM when efficient."
+        },
+        {
+          "Mistake": "Comparing numerators before denominators match.",
+          "WhyWrong": "Different denominators represent different-sized parts.",
+          "Correction": "Create a shared denominator or use another valid comparison strategy first."
+        }
+      ],
+      "SummaryPoints": [
+        "A common denominator creates equal-sized fractional parts.",
+        "Use a common multiple of the denominators; the LCM is often most efficient.",
+        "Scale numerator and denominator by the same factor.",
+        "Once denominators match, numerators count the same type of part."
+      ],
+      "Visuals": [
+        {
+          "Kind": "FractionBars",
+          "Title": "Common denominator model",
+          "Description": "The bars show two-thirds and three-quarters rewritten in twelfths.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "2/3 = 8/12",
+              "Numerator": 8,
+              "Denominator": 12,
+              "Cells": []
+            },
+            {
+              "Label": "3/4 = 9/12",
+              "Numerator": 9,
+              "Denominator": 12,
+              "Cells": []
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:BUILD",
+      "CultureCode": "en",
+      "Title": "Compare fractions with different denominators: Build the Idea",
+      "ExplanationParagraphs": [
+        "This Build the Idea lesson develops the core structure before applying it in varied questions.",
+        "Comparing fractions means deciding which represents the greater value. With different denominators, the larger denominator does not automatically mean a larger or smaller fraction because the numerator also matters.",
+        "Choose a comparison strategy that fits the numbers. You can use a common denominator, compare each fraction with a benchmark such as 1/2 or 1, reason about the gap from 1, or place fractions on a number line. Fractions greater than 1 should be compared using the same reasoning.",
+        "The best strategy is often the one that makes the relationship obvious with the least calculation. A common denominator is reliable, but benchmark reasoning can be faster when one fraction is clearly below a benchmark and the other is above it."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Common-denominator comparison",
+          "Definition": "Equivalent fractions with the same denominator can be compared by numerators.",
+          "Rule": "Rewrite both fractions with a common denominator, then compare numerators.",
+          "Example": "5/8 = 15/24 and 3/4 = 18/24, so 5/8 < 3/4."
+        },
+        {
+          "Title": "Benchmark comparison",
+          "Definition": "A known value such as 1/2 or 1 can separate two fractions quickly.",
+          "Rule": "Compare each fraction to the same benchmark.",
+          "Example": "5/12 < 1/2 because 5<6; 4/7 >1/2 because 4>3.5."
+        },
+        {
+          "Title": "Distance from 1",
+          "Definition": "For fractions close to 1, compare the missing fraction needed to make one whole.",
+          "Rule": "The fraction with the smaller gap from 1 is larger.",
+          "Example": "7/8 is 1/8 below 1; 5/6 is 1/6 below 1, so 7/8 is larger."
+        },
+        {
+          "Title": "Fractions above 1",
+          "Definition": "Improper fractions can be compared by common denominators or mixed-number reasoning.",
+          "Rule": "Separate whole-number and fractional parts when helpful.",
+          "Example": "11/8 = 1 3/8 and 4/3 = 1 1/3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Use a common denominator",
+          "Question": "Compare 5/8 and 3/4.",
+          "Method": "Rewrite both fractions in eighths.",
+          "Steps": [
+            "3/4 = 6/8.",
+            "Compare 5/8 with 6/8.",
+            "5 < 6.",
+            "Therefore 5/8 < 3/4."
+          ],
+          "Answer": "5/8 < 3/4",
+          "Check": "On a number line, 5/8 lies left of 6/8."
+        },
+        {
+          "Title": "Use a benchmark",
+          "Question": "Compare 5/12 and 4/7 without finding a common denominator.",
+          "Method": "Compare both with 1/2.",
+          "Steps": [
+            "Half of 12 is 6, so 5/12 < 1/2.",
+            "Half of 7 is 3.5, and 4/7 > 1/2.",
+            "A number below 1/2 is less than a number above 1/2.",
+            "Therefore 5/12 < 4/7."
+          ],
+          "Answer": "5/12 < 4/7",
+          "Check": "Decimal estimates 0.417 and 0.571 agree."
+        },
+        {
+          "Title": "Compare gaps from one",
+          "Question": "Compare 7/8 and 5/6.",
+          "Method": "Find each gap from 1.",
+          "Steps": [
+            "1 − 7/8 = 1/8.",
+            "1 − 5/6 = 1/6.",
+            "1/8 is smaller than 1/6.",
+            "The fraction with the smaller gap is closer to 1 and therefore larger."
+          ],
+          "Answer": "7/8 > 5/6",
+          "Check": "Common denominator 24 gives 21/24 > 20/24."
+        },
+        {
+          "Title": "Compare improper fractions",
+          "Question": "Compare 11/8 and 4/3.",
+          "Method": "Use common denominator 24.",
+          "Steps": [
+            "11/8 = 33/24.",
+            "4/3 = 32/24.",
+            "33 > 32.",
+            "Therefore 11/8 > 4/3."
+          ],
+          "Answer": "11/8 > 4/3",
+          "Check": "Mixed numbers 1 3/8 and 1 1/3 give the same order."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming the fraction with the larger denominator is smaller.",
+          "WhyWrong": "Denominator size alone is not enough because numerators may differ.",
+          "Correction": "Compare values using a common denominator, benchmark or another valid strategy."
+        },
+        {
+          "Mistake": "Using a common denominator but scaling only the denominator.",
+          "WhyWrong": "That creates a different fraction.",
+          "Correction": "Multiply numerator and denominator by the same factor."
+        },
+        {
+          "Mistake": "Forcing one method for every comparison.",
+          "WhyWrong": "A valid method can be correct but unnecessarily complicated.",
+          "Correction": "Look for benchmarks or gaps from 1 before choosing a common denominator."
+        }
+      ],
+      "SummaryPoints": [
+        "Different denominators require reasoning about value, not denominator size alone.",
+        "Choose among common denominators, benchmarks, gaps from 1 and number-line reasoning.",
+        "Fractions greater than 1 follow the same comparison principles.",
+        "Use the strategy that makes the comparison clearest and verify when useful."
+      ],
+      "Visuals": [
+        {
+          "Kind": "FractionBars",
+          "Title": "Compare with a shared unit",
+          "Description": "Both fractions are rewritten in twenty-fourths.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "5/8 = 15/24",
+              "Numerator": 15,
+              "Denominator": 24,
+              "Cells": []
+            },
+            {
+              "Label": "3/4 = 18/24",
+              "Numerator": 18,
+              "Denominator": 24,
+              "Cells": []
+            }
+          ]
+        },
+        {
+          "Kind": "NumberLine",
+          "Title": "Fractions on the number line",
+          "Description": "Benchmark positions help judge relative size.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "0",
+            "1/2",
+            "5/8",
+            "2/3",
+            "3/4",
+            "1"
+          ],
+          "SecondaryItems": [],
+          "Rows": []
+        }
+      ],
+      "Videos": [
+        {
+          "Provider": "YouTube",
+          "VideoId": "2dbasvm3iG0",
+          "Title": "Comparing fractions with different denominators",
+          "Creator": "Khan Academy",
+          "Language": "en",
+          "DurationLabel": "",
+          "WhyRecommended": "A reviewed external explanation of common-denominator comparison for unlike fractions.",
+          "ReviewStatus": "Approved",
+          "CheckedAtUtc": "2026-09-22T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:APPLY",
+      "CultureCode": "en",
+      "Title": "Compare fractions with different denominators: Reason and Apply",
+      "ExplanationParagraphs": [
+        "This Reason and Apply lesson uses the same core mathematics in less direct and more reasoning-focused situations.",
+        "Comparing fractions means deciding which represents the greater value. With different denominators, the larger denominator does not automatically mean a larger or smaller fraction because the numerator also matters.",
+        "Choose a comparison strategy that fits the numbers. You can use a common denominator, compare each fraction with a benchmark such as 1/2 or 1, reason about the gap from 1, or place fractions on a number line. Fractions greater than 1 should be compared using the same reasoning.",
+        "The best strategy is often the one that makes the relationship obvious with the least calculation. A common denominator is reliable, but benchmark reasoning can be faster when one fraction is clearly below a benchmark and the other is above it."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Common-denominator comparison",
+          "Definition": "Equivalent fractions with the same denominator can be compared by numerators.",
+          "Rule": "Rewrite both fractions with a common denominator, then compare numerators.",
+          "Example": "5/8 = 15/24 and 3/4 = 18/24, so 5/8 < 3/4."
+        },
+        {
+          "Title": "Benchmark comparison",
+          "Definition": "A known value such as 1/2 or 1 can separate two fractions quickly.",
+          "Rule": "Compare each fraction to the same benchmark.",
+          "Example": "5/12 < 1/2 because 5<6; 4/7 >1/2 because 4>3.5."
+        },
+        {
+          "Title": "Distance from 1",
+          "Definition": "For fractions close to 1, compare the missing fraction needed to make one whole.",
+          "Rule": "The fraction with the smaller gap from 1 is larger.",
+          "Example": "7/8 is 1/8 below 1; 5/6 is 1/6 below 1, so 7/8 is larger."
+        },
+        {
+          "Title": "Fractions above 1",
+          "Definition": "Improper fractions can be compared by common denominators or mixed-number reasoning.",
+          "Rule": "Separate whole-number and fractional parts when helpful.",
+          "Example": "11/8 = 1 3/8 and 4/3 = 1 1/3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Choose the shorter method",
+          "Question": "Compare 49/100 and 6/11. Should you use 1/2 as a benchmark or a common denominator?",
+          "Method": "Benchmark 1/2 makes the comparison immediate.",
+          "Steps": [
+            "49/100 < 1/2 because 49<50.",
+            "6/11 > 1/2 because 6>5.5.",
+            "Therefore 49/100 < 6/11.",
+            "No large common denominator is needed."
+          ],
+          "Answer": "49/100 < 6/11",
+          "Check": "Approximate values 0.49 and 0.545 support the conclusion."
+        },
+        {
+          "Title": "Close fractions",
+          "Question": "Compare 7/12 and 5/9.",
+          "Method": "Use common denominator 36 because both are near 0.6.",
+          "Steps": [
+            "7/12 = 21/36.",
+            "5/9 = 20/36.",
+            "21 > 20.",
+            "Therefore 7/12 > 5/9."
+          ],
+          "Answer": "7/12 > 5/9",
+          "Check": "Cross-products 7×9=63 and 5×12=60 agree."
+        },
+        {
+          "Title": "Order three fractions",
+          "Question": "Order 2/3, 7/10 and 5/8 from smallest to largest.",
+          "Method": "Use denominator 120 or compare strategically.",
+          "Steps": [
+            "5/8 = 75/120.",
+            "2/3 = 80/120.",
+            "7/10 = 84/120.",
+            "Order numerators 75 < 80 < 84."
+          ],
+          "Answer": "5/8 < 2/3 < 7/10",
+          "Check": "Decimal estimates 0.625, 0.667, 0.7 agree."
+        },
+        {
+          "Title": "Check a false rule",
+          "Question": "A student says 3/7 > 4/9 because 7<9. Show why this rule fails.",
+          "Method": "Compare using a common denominator or cross-products.",
+          "Steps": [
+            "Common denominator is 63.",
+            "3/7 = 27/63.",
+            "4/9 = 28/63.",
+            "27 < 28, so 3/7 < 4/9."
+          ],
+          "Answer": "The student's rule is false; 3/7 < 4/9.",
+          "Check": "Cross-products 3×9=27 and 4×7=28 confirm it."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming the fraction with the larger denominator is smaller.",
+          "WhyWrong": "Denominator size alone is not enough because numerators may differ.",
+          "Correction": "Compare values using a common denominator, benchmark or another valid strategy."
+        },
+        {
+          "Mistake": "Using a common denominator but scaling only the denominator.",
+          "WhyWrong": "That creates a different fraction.",
+          "Correction": "Multiply numerator and denominator by the same factor."
+        },
+        {
+          "Mistake": "Forcing one method for every comparison.",
+          "WhyWrong": "A valid method can be correct but unnecessarily complicated.",
+          "Correction": "Look for benchmarks or gaps from 1 before choosing a common denominator."
+        }
+      ],
+      "SummaryPoints": [
+        "Different denominators require reasoning about value, not denominator size alone.",
+        "Choose among common denominators, benchmarks, gaps from 1 and number-line reasoning.",
+        "Fractions greater than 1 follow the same comparison principles.",
+        "Use the strategy that makes the comparison clearest and verify when useful."
+      ],
+      "Visuals": [
+        {
+          "Kind": "FractionBars",
+          "Title": "Compare with a shared unit",
+          "Description": "Both fractions are rewritten in twenty-fourths.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "5/8 = 15/24",
+              "Numerator": 15,
+              "Denominator": 24,
+              "Cells": []
+            },
+            {
+              "Label": "3/4 = 18/24",
+              "Numerator": 18,
+              "Denominator": 24,
+              "Cells": []
+            }
+          ]
+        },
+        {
+          "Kind": "NumberLine",
+          "Title": "Fractions on the number line",
+          "Description": "Benchmark positions help judge relative size.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "0",
+            "1/2",
+            "5/8",
+            "2/3",
+            "3/4",
+            "1"
+          ],
+          "SecondaryItems": [],
+          "Rows": []
+        }
+      ],
+      "Videos": [
+        {
+          "Provider": "YouTube",
+          "VideoId": "2dbasvm3iG0",
+          "Title": "Comparing fractions with different denominators",
+          "Creator": "Khan Academy",
+          "Language": "en",
+          "DurationLabel": "",
+          "WhyRecommended": "A reviewed external explanation of common-denominator comparison for unlike fractions.",
+          "ReviewStatus": "Approved",
+          "CheckedAtUtc": "2026-09-22T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6G-1:BUILD",
+      "CultureCode": "en",
+      "Title": "Draw, compose and decompose shapes: Build the Idea",
+      "ExplanationParagraphs": [
+        "This Build the Idea lesson develops the core structure before applying it in varied questions.",
+        "Geometry problems often become easier when a shape is built from simpler shapes or split into simpler parts. Composing means joining shapes; decomposing means partitioning a shape while preserving its overall dimensions and area.",
+        "A diagram must satisfy all stated properties: dimensions, angles, parallel or perpendicular sides, and any area condition. Different decompositions can be valid as long as the pieces exactly cover the original shape without gaps or overlaps.",
+        "Area is additive for non-overlapping pieces. If a compound shape is split into rectangles or triangles, the total area equals the sum of the areas of the parts. You can also subtract a missing piece from a larger enclosing shape."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Composition",
+          "Definition": "Composition builds a larger shape from smaller pieces.",
+          "Rule": "Pieces may be translated or rotated, but their dimensions do not change.",
+          "Example": "Two 4 cm × 3 cm rectangles can compose an 8 cm × 3 cm rectangle."
+        },
+        {
+          "Title": "Decomposition",
+          "Definition": "Decomposition partitions a shape into simpler non-overlapping regions.",
+          "Rule": "The pieces together must exactly reconstruct the original shape.",
+          "Example": "A 12×8 rectangle can split into 7×8 and 5×8 rectangles."
+        },
+        {
+          "Title": "Additive area",
+          "Definition": "Areas of non-overlapping pieces add to the total area.",
+          "Rule": "A_total = A₁ + A₂ + ...",
+          "Example": "7×8 + 5×8 = 96, matching 12×8."
+        },
+        {
+          "Title": "Property constraints",
+          "Definition": "A drawing must satisfy every given length, angle and relationship.",
+          "Rule": "Mark known dimensions and right angles before calculating.",
+          "Example": "A rectangle must retain four right angles and opposite equal sides."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Decompose a rectangle",
+          "Question": "A 12 cm by 8 cm rectangle is split vertically into widths 7 cm and 5 cm. Find each area and the total.",
+          "Method": "Use rectangle area on each piece, then add.",
+          "Steps": [
+            "Left area = 7 × 8 = 56 cm².",
+            "Right area = 5 × 8 = 40 cm².",
+            "Add 56 + 40 = 96 cm².",
+            "Compare with whole rectangle 12 × 8 = 96 cm²."
+          ],
+          "Answer": "56 cm², 40 cm²; total 96 cm²",
+          "Check": "The sum equals the area of the original rectangle."
+        },
+        {
+          "Title": "Subtract a missing rectangle",
+          "Question": "A 10 m by 8 m rectangle has a 4 m by 3 m corner removed. Find the remaining area.",
+          "Method": "Use whole area minus removed area.",
+          "Steps": [
+            "Whole rectangle area = 10 × 8 = 80 m².",
+            "Removed rectangle area = 4 × 3 = 12 m².",
+            "Remaining area = 80 − 12.",
+            "80 − 12 = 68 m²."
+          ],
+          "Answer": "68 m²",
+          "Check": "68 + 12 = 80 m²."
+        },
+        {
+          "Title": "Compose equal rectangles",
+          "Question": "Two rectangles each measure 6 cm by 4 cm. They are joined along a 4 cm side to make one larger rectangle. Find the new dimensions and area.",
+          "Method": "Combine the 6 cm lengths while keeping the shared height 4 cm.",
+          "Steps": [
+            "New length = 6 + 6 = 12 cm.",
+            "Height remains 4 cm.",
+            "Area = 12 × 4 = 48 cm².",
+            "Check separate areas: 2 × (6 × 4) = 48 cm²."
+          ],
+          "Answer": "12 cm by 4 cm; area 48 cm²",
+          "Check": "Both composition and separate-area methods give 48 cm²."
+        },
+        {
+          "Title": "Triangle from a rectangle",
+          "Question": "A rectangle is cut along a diagonal into two congruent triangles. The rectangle is 10 cm by 6 cm. Find the area of each triangle.",
+          "Method": "A diagonal divides a rectangle into two equal-area triangles.",
+          "Steps": [
+            "Rectangle area = 10 × 6 = 60 cm².",
+            "The diagonal creates two congruent triangles.",
+            "Each triangle gets half the area.",
+            "60 ÷ 2 = 30 cm²."
+          ],
+          "Answer": "30 cm² each",
+          "Check": "2 × 30 = 60 cm²."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding side lengths when the task asks for area.",
+          "WhyWrong": "Length and area measure different quantities.",
+          "Correction": "Use square units and the correct area formula for each piece."
+        },
+        {
+          "Mistake": "Double-counting overlap or leaving gaps in a decomposition.",
+          "WhyWrong": "Additive area works only for non-overlapping pieces that exactly cover the original.",
+          "Correction": "Mark boundaries and verify that every region is counted once."
+        },
+        {
+          "Mistake": "Ignoring a stated dimension or angle property when drawing.",
+          "WhyWrong": "A sketch that looks similar may not satisfy the mathematical constraints.",
+          "Correction": "Label every given property and check it after drawing."
+        }
+      ],
+      "SummaryPoints": [
+        "Compose shapes by joining pieces; decompose by splitting into simpler non-overlapping pieces.",
+        "Area of a whole equals the sum of the areas of its non-overlapping parts.",
+        "Subtraction from an enclosing shape is often efficient for cut-out shapes.",
+        "A valid drawing must satisfy every stated dimension, angle and shape property."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "One rectangle, two decompositions",
+          "Description": "The same 12×8 rectangle can be split into different exact parts while keeping total area.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Whole",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "12 × 8",
+                "96 cm²"
+              ]
+            },
+            {
+              "Label": "Split A",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "7 × 8 + 5 × 8",
+                "56 + 40"
+              ]
+            },
+            {
+              "Label": "Split B",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "4 × 8 + 8 × 8",
+                "32 + 64"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6G-1:APPLY",
+      "CultureCode": "en",
+      "Title": "Draw, compose and decompose shapes: Reason and Apply",
+      "ExplanationParagraphs": [
+        "This Reason and Apply lesson uses the same core mathematics in less direct and more reasoning-focused situations.",
+        "Geometry problems often become easier when a shape is built from simpler shapes or split into simpler parts. Composing means joining shapes; decomposing means partitioning a shape while preserving its overall dimensions and area.",
+        "A diagram must satisfy all stated properties: dimensions, angles, parallel or perpendicular sides, and any area condition. Different decompositions can be valid as long as the pieces exactly cover the original shape without gaps or overlaps.",
+        "Area is additive for non-overlapping pieces. If a compound shape is split into rectangles or triangles, the total area equals the sum of the areas of the parts. You can also subtract a missing piece from a larger enclosing shape."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Composition",
+          "Definition": "Composition builds a larger shape from smaller pieces.",
+          "Rule": "Pieces may be translated or rotated, but their dimensions do not change.",
+          "Example": "Two 4 cm × 3 cm rectangles can compose an 8 cm × 3 cm rectangle."
+        },
+        {
+          "Title": "Decomposition",
+          "Definition": "Decomposition partitions a shape into simpler non-overlapping regions.",
+          "Rule": "The pieces together must exactly reconstruct the original shape.",
+          "Example": "A 12×8 rectangle can split into 7×8 and 5×8 rectangles."
+        },
+        {
+          "Title": "Additive area",
+          "Definition": "Areas of non-overlapping pieces add to the total area.",
+          "Rule": "A_total = A₁ + A₂ + ...",
+          "Example": "7×8 + 5×8 = 96, matching 12×8."
+        },
+        {
+          "Title": "Property constraints",
+          "Definition": "A drawing must satisfy every given length, angle and relationship.",
+          "Rule": "Mark known dimensions and right angles before calculating.",
+          "Example": "A rectangle must retain four right angles and opposite equal sides."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Choose a decomposition",
+          "Question": "An L-shape fits inside a 14 cm by 10 cm rectangle. A 5 cm by 4 cm corner is missing. Find the L-shape area.",
+          "Method": "Use enclosing rectangle minus missing rectangle.",
+          "Steps": [
+            "Enclosing area = 14 × 10 = 140 cm².",
+            "Missing area = 5 × 4 = 20 cm².",
+            "Subtract 140 − 20.",
+            "Result = 120 cm²."
+          ],
+          "Answer": "120 cm²",
+          "Check": "120 + 20 = 140 cm²."
+        },
+        {
+          "Title": "Two valid decompositions",
+          "Question": "A 9 cm by 7 cm rectangle is split either as 4 cm + 5 cm widths or 3 cm + 6 cm widths. Show both give the same total area.",
+          "Method": "Calculate both decompositions.",
+          "Steps": [
+            "First: 4×7 + 5×7 = 28 + 35 = 63.",
+            "Second: 3×7 + 6×7 = 21 + 42 = 63.",
+            "Whole rectangle: 9×7 = 63.",
+            "All methods agree."
+          ],
+          "Answer": "63 cm²",
+          "Check": "Each decomposition exactly covers the same rectangle."
+        },
+        {
+          "Title": "Find a missing dimension from area",
+          "Question": "A rectangle has area 72 cm² and height 8 cm. It is decomposed into widths 5 cm and x cm. Find x.",
+          "Method": "First find total width, then subtract the known width.",
+          "Steps": [
+            "Total width = 72 ÷ 8 = 9 cm.",
+            "Known part width = 5 cm.",
+            "Missing width x = 9 − 5.",
+            "x = 4 cm."
+          ],
+          "Answer": "4 cm",
+          "Check": "(5 + 4) × 8 = 72 cm²."
+        },
+        {
+          "Title": "Reason about a rearrangement",
+          "Question": "Four identical right triangles are rearranged without overlap. Does the total area change?",
+          "Method": "Rigid rearrangement preserves each piece's area.",
+          "Steps": [
+            "Each triangle keeps the same base and height.",
+            "No piece is stretched or cut.",
+            "No gaps or overlaps are introduced.",
+            "Therefore the sum of the four triangle areas is unchanged."
+          ],
+          "Answer": "No, the total area is unchanged.",
+          "Check": "Area depends on the pieces, not on their arrangement."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding side lengths when the task asks for area.",
+          "WhyWrong": "Length and area measure different quantities.",
+          "Correction": "Use square units and the correct area formula for each piece."
+        },
+        {
+          "Mistake": "Double-counting overlap or leaving gaps in a decomposition.",
+          "WhyWrong": "Additive area works only for non-overlapping pieces that exactly cover the original.",
+          "Correction": "Mark boundaries and verify that every region is counted once."
+        },
+        {
+          "Mistake": "Ignoring a stated dimension or angle property when drawing.",
+          "WhyWrong": "A sketch that looks similar may not satisfy the mathematical constraints.",
+          "Correction": "Label every given property and check it after drawing."
+        }
+      ],
+      "SummaryPoints": [
+        "Compose shapes by joining pieces; decompose by splitting into simpler non-overlapping pieces.",
+        "Area of a whole equals the sum of the areas of its non-overlapping parts.",
+        "Subtraction from an enclosing shape is often efficient for cut-out shapes.",
+        "A valid drawing must satisfy every stated dimension, angle and shape property."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "One rectangle, two decompositions",
+          "Description": "The same 12×8 rectangle can be split into different exact parts while keeping total area.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Whole",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "12 × 8",
+                "96 cm²"
+              ]
+            },
+            {
+              "Label": "Split A",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "7 × 8 + 5 × 8",
+                "56 + 40"
+              ]
+            },
+            {
+              "Label": "Split B",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "4 × 8 + 8 × 8",
+                "32 + 64"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-1:BUILD",
+      "CultureCode": "en",
+      "Title": "Powers of 10: Build the Idea",
+      "ExplanationParagraphs": [
+        "This Build the Idea lesson develops the core structure before applying it in varied questions.",
+        "The place-value system is built from powers of 10. From one hundredth (0.01) through ten million (10,000,000), each place is 10 times the value of the place immediately to its right and one tenth of the place immediately to its left.",
+        "Making a number 10, 100 or 1,000 times as large is multiplication by 10, 100 or 1,000. Making it one tenth, one hundredth or one thousandth of the size is division by those powers of 10. The digits keep their relative order while their place values change.",
+        "This relationship works across the decimal point as well as with whole numbers. Thinking in terms of value rather than 'moving the decimal point' gives a method that remains reliable for decimals and large numbers."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Adjacent powers of 10",
+          "Definition": "Each place-value unit is 10 times the unit immediately to its right.",
+          "Rule": "Move one place left in the place-value system for ×10 and one place right for ÷10.",
+          "Example": "0.1 → 1 → 10 → 100."
+        },
+        {
+          "Title": "Non-adjacent scaling",
+          "Definition": "100 = 10² and 1,000 = 10³ relative to a one-place change.",
+          "Rule": "×100 changes value by two powers of 10; ×1,000 by three.",
+          "Example": "0.7 × 100 = 70."
+        },
+        {
+          "Title": "Reciprocal scaling",
+          "Definition": "One tenth, one hundredth and one thousandth of a number are obtained by division by 10, 100 and 1,000.",
+          "Rule": "Use division to make a number smaller by the stated factor.",
+          "Example": "9,000 × 1/100 = 90."
+        },
+        {
+          "Title": "Place-value language",
+          "Definition": "Digits do not have fixed values; a digit's value depends on its place.",
+          "Rule": "Track the value of each digit after scaling.",
+          "Example": "5 in 500 represents 500; in 5 it represents 5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Make a number 1,000 times as large",
+          "Question": "Find 500 × 1,000.",
+          "Method": "Scale three powers of 10.",
+          "Steps": [
+            "500 × 10 = 5,000.",
+            "5,000 × 10 = 50,000.",
+            "50,000 × 10 = 500,000.",
+            "So ×1,000 gives 500,000."
+          ],
+          "Answer": "500,000",
+          "Check": "500,000 ÷ 1,000 = 500."
+        },
+        {
+          "Title": "Scale a decimal",
+          "Question": "Make 0.7 one hundred times as large.",
+          "Method": "Multiply by 100 using place value.",
+          "Steps": [
+            "0.7 × 10 = 7.",
+            "7 × 10 = 70.",
+            "Two tenfold changes make ×100.",
+            "Therefore 0.7 × 100 = 70."
+          ],
+          "Answer": "70",
+          "Check": "70 ÷ 100 = 0.7."
+        },
+        {
+          "Title": "Make a large number one thousandth",
+          "Question": "Find one thousandth of 4,000,000.",
+          "Method": "Divide by 1,000.",
+          "Steps": [
+            "4,000,000 ÷ 10 = 400,000.",
+            "÷10 again gives 40,000.",
+            "÷10 again gives 4,000.",
+            "That is ÷1,000."
+          ],
+          "Answer": "4,000",
+          "Check": "4,000 × 1,000 = 4,000,000."
+        },
+        {
+          "Title": "Cross the decimal boundary",
+          "Question": "Find 3 ÷ 10 and 3 ÷ 100.",
+          "Method": "Apply one and two rightward place-value changes.",
+          "Steps": [
+            "3 ÷ 10 = 0.3.",
+            "0.3 ÷ 10 = 0.03.",
+            "Therefore 3 ÷ 100 = 0.03.",
+            "Compare the size of each result."
+          ],
+          "Answer": "0.3 and 0.03",
+          "Check": "0.03 × 100 = 3."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating ×100 as a single tenfold change.",
+          "WhyWrong": "100 equals 10 × 10, so it changes place value by two powers of 10.",
+          "Correction": "Reason through repeated ×10 or ÷10 changes."
+        },
+        {
+          "Mistake": "Adding zeros mechanically to decimals.",
+          "WhyWrong": "Zero-appending rules fail for many decimal forms.",
+          "Correction": "Track the value of digits through the place-value chart."
+        },
+        {
+          "Mistake": "Confusing 'one hundredth of the size' with subtracting 100.",
+          "WhyWrong": "The phrase is multiplicative, not additive.",
+          "Correction": "Translate one hundredth of the size to ÷100."
+        }
+      ],
+      "SummaryPoints": [
+        "Each place-value unit is 10 times the unit to its right.",
+        "×10, ×100 and ×1,000 make values larger by 1, 2 and 3 powers of 10.",
+        "÷10, ÷100 and ÷1,000 make values one tenth, one hundredth and one thousandth as large.",
+        "Use place-value reasoning across the decimal point instead of a mechanical digit rule."
+      ],
+      "Visuals": [
+        {
+          "Kind": "PlaceValueChart",
+          "Title": "Powers of 10 place-value chain",
+          "Description": "Each cell is ten times the value of the cell to its right.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Values",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "0.01",
+                "0.1",
+                "1",
+                "10",
+                "100",
+                "1,000",
+                "10,000",
+                "100,000",
+                "1,000,000",
+                "10,000,000"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-1:APPLY",
+      "CultureCode": "en",
+      "Title": "Powers of 10: Reason and Apply",
+      "ExplanationParagraphs": [
+        "This Reason and Apply lesson uses the same core mathematics in less direct and more reasoning-focused situations.",
+        "The place-value system is built from powers of 10. From one hundredth (0.01) through ten million (10,000,000), each place is 10 times the value of the place immediately to its right and one tenth of the place immediately to its left.",
+        "Making a number 10, 100 or 1,000 times as large is multiplication by 10, 100 or 1,000. Making it one tenth, one hundredth or one thousandth of the size is division by those powers of 10. The digits keep their relative order while their place values change.",
+        "This relationship works across the decimal point as well as with whole numbers. Thinking in terms of value rather than 'moving the decimal point' gives a method that remains reliable for decimals and large numbers."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Adjacent powers of 10",
+          "Definition": "Each place-value unit is 10 times the unit immediately to its right.",
+          "Rule": "Move one place left in the place-value system for ×10 and one place right for ÷10.",
+          "Example": "0.1 → 1 → 10 → 100."
+        },
+        {
+          "Title": "Non-adjacent scaling",
+          "Definition": "100 = 10² and 1,000 = 10³ relative to a one-place change.",
+          "Rule": "×100 changes value by two powers of 10; ×1,000 by three.",
+          "Example": "0.7 × 100 = 70."
+        },
+        {
+          "Title": "Reciprocal scaling",
+          "Definition": "One tenth, one hundredth and one thousandth of a number are obtained by division by 10, 100 and 1,000.",
+          "Rule": "Use division to make a number smaller by the stated factor.",
+          "Example": "9,000 × 1/100 = 90."
+        },
+        {
+          "Title": "Place-value language",
+          "Definition": "Digits do not have fixed values; a digit's value depends on its place.",
+          "Rule": "Track the value of each digit after scaling.",
+          "Example": "5 in 500 represents 500; in 5 it represents 5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Complete a scaling chain",
+          "Question": "Complete: 0.06 → ×10 → ? → ×100 → ?.",
+          "Method": "Apply each scale factor in order.",
+          "Steps": [
+            "0.06 × 10 = 0.6.",
+            "Then 0.6 × 100 = 60.",
+            "Track that the second operation is two powers of 10.",
+            "Record both results."
+          ],
+          "Answer": "0.6, then 60",
+          "Check": "60 ÷ 100 ÷ 10 = 0.06."
+        },
+        {
+          "Title": "Interpret 'one hundredth the size'",
+          "Question": "Make 85,000 one hundredth of the size.",
+          "Method": "Divide by 100.",
+          "Steps": [
+            "One hundredth means ÷100.",
+            "85,000 ÷ 10 = 8,500.",
+            "8,500 ÷ 10 = 850.",
+            "Therefore ÷100 gives 850."
+          ],
+          "Answer": "850",
+          "Check": "850 × 100 = 85,000."
+        },
+        {
+          "Title": "Find a missing factor",
+          "Question": "0.045 × ? = 45. What power-of-10 factor is missing?",
+          "Method": "Compare place values or divide target by starting value.",
+          "Steps": [
+            "0.045 × 10 = 0.45.",
+            "×10 again = 4.5.",
+            "×10 again = 45.",
+            "Three tenfold changes equal ×1,000."
+          ],
+          "Answer": "1,000",
+          "Check": "45 ÷ 1,000 = 0.045."
+        },
+        {
+          "Title": "Reject a decimal-point rule error",
+          "Question": "A student says 2.4 ÷ 100 = 0.24. Correct the result.",
+          "Method": "Division by 100 is two tenfold reductions, not one.",
+          "Steps": [
+            "2.4 ÷ 10 = 0.24.",
+            "Divide by 10 again: 0.24 ÷ 10 = 0.024.",
+            "Therefore 2.4 ÷ 100 = 0.024.",
+            "Check by ×100."
+          ],
+          "Answer": "0.024",
+          "Check": "0.024 × 100 = 2.4."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating ×100 as a single tenfold change.",
+          "WhyWrong": "100 equals 10 × 10, so it changes place value by two powers of 10.",
+          "Correction": "Reason through repeated ×10 or ÷10 changes."
+        },
+        {
+          "Mistake": "Adding zeros mechanically to decimals.",
+          "WhyWrong": "Zero-appending rules fail for many decimal forms.",
+          "Correction": "Track the value of digits through the place-value chart."
+        },
+        {
+          "Mistake": "Confusing 'one hundredth of the size' with subtracting 100.",
+          "WhyWrong": "The phrase is multiplicative, not additive.",
+          "Correction": "Translate one hundredth of the size to ÷100."
+        }
+      ],
+      "SummaryPoints": [
+        "Each place-value unit is 10 times the unit to its right.",
+        "×10, ×100 and ×1,000 make values larger by 1, 2 and 3 powers of 10.",
+        "÷10, ÷100 and ÷1,000 make values one tenth, one hundredth and one thousandth as large.",
+        "Use place-value reasoning across the decimal point instead of a mechanical digit rule."
+      ],
+      "Visuals": [
+        {
+          "Kind": "PlaceValueChart",
+          "Title": "Powers of 10 place-value chain",
+          "Description": "Each cell is ten times the value of the cell to its right.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Values",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "0.01",
+                "0.1",
+                "1",
+                "10",
+                "100",
+                "1,000",
+                "10,000",
+                "100,000",
+                "1,000,000",
+                "10,000,000"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-2:BUILD",
+      "CultureCode": "en",
+      "Title": "Place value in numbers up to 10,000,000: Build the Idea",
+      "ExplanationParagraphs": [
+        "This Build the Idea lesson develops the core structure before applying it in varied questions.",
+        "Place value tells us how much each digit is worth because of its position. In a multi-digit number, the same digit can represent millions, thousands, ones, tenths or hundredths depending on its place.",
+        "Numbers can be composed from place-value parts and decomposed in standard or non-standard ways. Standard partitioning separates each digit value, such as 4,305,020 = 4,000,000 + 300,000 + 5,000 + 20. Non-standard partitioning regroups the same total in another valid way.",
+        "Understanding composition and decomposition supports comparison, rounding, calculation and scaling. Every proposed decomposition should recombine exactly to the original number."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Digit value",
+          "Definition": "A digit's value equals the digit multiplied by the value of its place.",
+          "Rule": "Read from millions through decimal places carefully.",
+          "Example": "In 5,204,031, the 2 represents 200,000."
+        },
+        {
+          "Title": "Standard partitioning",
+          "Definition": "Standard partitioning writes the contribution of each non-zero digit.",
+          "Rule": "Sum the place-value parts.",
+          "Example": "6,070,305 = 6,000,000 + 70,000 + 300 + 5."
+        },
+        {
+          "Title": "Non-standard partitioning",
+          "Definition": "A number can be regrouped into different place-value chunks while keeping the same total.",
+          "Rule": "Exchange 10 of one unit for 1 of the next larger unit or reverse the exchange.",
+          "Example": "3,500 = 35 hundreds = 350 tens."
+        },
+        {
+          "Title": "Zero as placeholder",
+          "Definition": "A zero shows that a place has no units while preserving positions of other digits.",
+          "Rule": "Do not omit internal zeros when reading or writing digits.",
+          "Example": "4,005,020 contains 0 hundred-thousands and 0 ten-thousands."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Read digit values",
+          "Question": "In 7,305,418, what is the value of digit 3?",
+          "Method": "Identify the place occupied by 3.",
+          "Steps": [
+            "Write the place-value positions from millions to ones.",
+            "The 3 is in the hundred-thousands place.",
+            "3 × 100,000 = 300,000.",
+            "State the digit value."
+          ],
+          "Answer": "300,000",
+          "Check": "7,305,418 − 300,000 = 7,005,418."
+        },
+        {
+          "Title": "Standard decomposition",
+          "Question": "Decompose 4,305,020 in standard form.",
+          "Method": "Write each non-zero digit by its place value.",
+          "Steps": [
+            "4 millions = 4,000,000.",
+            "3 hundred-thousands = 300,000.",
+            "5 thousands = 5,000.",
+            "2 tens = 20."
+          ],
+          "Answer": "4,000,000 + 300,000 + 5,000 + 20",
+          "Check": "The parts sum to 4,305,020."
+        },
+        {
+          "Title": "Non-standard decomposition",
+          "Question": "Write 2,400,000 as a number of hundred-thousands.",
+          "Method": "Regroup millions into hundred-thousands.",
+          "Steps": [
+            "1 million = 10 hundred-thousands.",
+            "2 million = 20 hundred-thousands.",
+            "400,000 = 4 hundred-thousands.",
+            "Total = 24 hundred-thousands."
+          ],
+          "Answer": "24 hundred-thousands",
+          "Check": "24 × 100,000 = 2,400,000."
+        },
+        {
+          "Title": "Compose from parts",
+          "Question": "What number is 6,000,000 + 80,000 + 700 + 9?",
+          "Method": "Place each part into its correct column.",
+          "Steps": [
+            "6,000,000 gives 6 in the millions place.",
+            "80,000 gives 8 in the ten-thousands place.",
+            "700 gives 7 hundreds; 9 gives 9 ones.",
+            "Fill missing places with zero."
+          ],
+          "Answer": "6,080,709",
+          "Check": "Decomposing 6,080,709 returns the same parts."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reading an internal zero as if it were not there.",
+          "WhyWrong": "Skipping a placeholder shifts later digits into the wrong places.",
+          "Correction": "Use a place-value chart for numbers containing zeros."
+        },
+        {
+          "Mistake": "Confusing thousands with hundred-thousands.",
+          "WhyWrong": "Both may use the same digit but differ by a factor of 100.",
+          "Correction": "Name the place before stating the digit's value."
+        },
+        {
+          "Mistake": "Assuming there is only one valid decomposition.",
+          "WhyWrong": "Regrouping can create many equivalent decompositions.",
+          "Correction": "Check whether the parts recombine exactly to the original number."
+        }
+      ],
+      "SummaryPoints": [
+        "A digit's value depends on its position.",
+        "Standard decomposition separates each non-zero place-value contribution.",
+        "Non-standard decomposition regroups the same total into different place-value units.",
+        "Zeros preserve empty places and must not cause other digits to shift."
+      ],
+      "Visuals": [
+        {
+          "Kind": "PlaceValueChart",
+          "Title": "Place-value chart",
+          "Description": "Use the chart to keep each digit aligned with its value.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Places",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "Millions",
+                "Hundred-thousands",
+                "Ten-thousands",
+                "Thousands",
+                "Hundreds",
+                "Tens",
+                "Ones"
+              ]
+            },
+            {
+              "Label": "7,305,418",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "7",
+                "3",
+                "0",
+                "5",
+                "4",
+                "1",
+                "8"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-2:APPLY",
+      "CultureCode": "en",
+      "Title": "Place value in numbers up to 10,000,000: Reason and Apply",
+      "ExplanationParagraphs": [
+        "This Reason and Apply lesson uses the same core mathematics in less direct and more reasoning-focused situations.",
+        "Place value tells us how much each digit is worth because of its position. In a multi-digit number, the same digit can represent millions, thousands, ones, tenths or hundredths depending on its place.",
+        "Numbers can be composed from place-value parts and decomposed in standard or non-standard ways. Standard partitioning separates each digit value, such as 4,305,020 = 4,000,000 + 300,000 + 5,000 + 20. Non-standard partitioning regroups the same total in another valid way.",
+        "Understanding composition and decomposition supports comparison, rounding, calculation and scaling. Every proposed decomposition should recombine exactly to the original number."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Digit value",
+          "Definition": "A digit's value equals the digit multiplied by the value of its place.",
+          "Rule": "Read from millions through decimal places carefully.",
+          "Example": "In 5,204,031, the 2 represents 200,000."
+        },
+        {
+          "Title": "Standard partitioning",
+          "Definition": "Standard partitioning writes the contribution of each non-zero digit.",
+          "Rule": "Sum the place-value parts.",
+          "Example": "6,070,305 = 6,000,000 + 70,000 + 300 + 5."
+        },
+        {
+          "Title": "Non-standard partitioning",
+          "Definition": "A number can be regrouped into different place-value chunks while keeping the same total.",
+          "Rule": "Exchange 10 of one unit for 1 of the next larger unit or reverse the exchange.",
+          "Example": "3,500 = 35 hundreds = 350 tens."
+        },
+        {
+          "Title": "Zero as placeholder",
+          "Definition": "A zero shows that a place has no units while preserving positions of other digits.",
+          "Rule": "Do not omit internal zeros when reading or writing digits.",
+          "Example": "4,005,020 contains 0 hundred-thousands and 0 ten-thousands."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find a missing place-value part",
+          "Question": "8,507,214 = 8,000,000 + 500,000 + ? + 200 + 10 + 4. Find the missing part.",
+          "Method": "Subtract or inspect place values.",
+          "Steps": [
+            "The number has 7 in the thousands place.",
+            "That digit contributes 7,000.",
+            "No ten-thousands contribution is present because the digit is 0.",
+            "Insert 7,000."
+          ],
+          "Answer": "7,000",
+          "Check": "The complete parts sum to 8,507,214."
+        },
+        {
+          "Title": "Compare two decompositions",
+          "Question": "Are 3,200,000 and 32 × 100,000 equal?",
+          "Method": "Evaluate the regrouped expression.",
+          "Steps": [
+            "32 × 100,000 = 3,200,000.",
+            "Both expressions represent the same total.",
+            "The second uses non-standard partitioning.",
+            "Therefore they are equal."
+          ],
+          "Answer": "Yes",
+          "Check": "3,200,000 ÷ 100,000 = 32."
+        },
+        {
+          "Title": "Recover a number from digit clues",
+          "Question": "A 7-digit number has 4 millions, 2 ten-thousands, 6 hundreds and 5 ones, with zeros elsewhere. Write it.",
+          "Method": "Place each stated digit in its column.",
+          "Steps": [
+            "Millions digit 4 → 4,000,000.",
+            "Ten-thousands digit 2 → 20,000.",
+            "Hundreds digit 6 → 600.",
+            "Ones digit 5 → 5."
+          ],
+          "Answer": "4,020,605",
+          "Check": "Its standard decomposition matches the clues."
+        },
+        {
+          "Title": "Explain a zero error",
+          "Question": "A student writes four million five thousand twenty as 4,500,020. Correct it.",
+          "Method": "Use place-value columns to distinguish five thousand from five hundred thousand.",
+          "Steps": [
+            "Four million = 4,000,000.",
+            "Five thousand = 5,000.",
+            "Twenty = 20.",
+            "Add: 4,000,000 + 5,000 + 20 = 4,005,020."
+          ],
+          "Answer": "4,005,020",
+          "Check": "Read each digit place back aloud."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reading an internal zero as if it were not there.",
+          "WhyWrong": "Skipping a placeholder shifts later digits into the wrong places.",
+          "Correction": "Use a place-value chart for numbers containing zeros."
+        },
+        {
+          "Mistake": "Confusing thousands with hundred-thousands.",
+          "WhyWrong": "Both may use the same digit but differ by a factor of 100.",
+          "Correction": "Name the place before stating the digit's value."
+        },
+        {
+          "Mistake": "Assuming there is only one valid decomposition.",
+          "WhyWrong": "Regrouping can create many equivalent decompositions.",
+          "Correction": "Check whether the parts recombine exactly to the original number."
+        }
+      ],
+      "SummaryPoints": [
+        "A digit's value depends on its position.",
+        "Standard decomposition separates each non-zero place-value contribution.",
+        "Non-standard decomposition regroups the same total into different place-value units.",
+        "Zeros preserve empty places and must not cause other digits to shift."
+      ],
+      "Visuals": [
+        {
+          "Kind": "PlaceValueChart",
+          "Title": "Place-value chart",
+          "Description": "Use the chart to keep each digit aligned with its value.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Places",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "Millions",
+                "Hundred-thousands",
+                "Ten-thousands",
+                "Thousands",
+                "Hundreds",
+                "Tens",
+                "Ones"
+              ]
+            },
+            {
+              "Label": "7,305,418",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "7",
+                "3",
+                "0",
+                "5",
+                "4",
+                "1",
+                "8"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-3:BUILD",
+      "CultureCode": "en",
+      "Title": "Numbers up to 10 million in the linear number system: Build the Idea",
+      "ExplanationParagraphs": [
+        "This Build the Idea lesson develops the core structure before applying it in varied questions.",
+        "The linear number system places numbers in order along a number line. Position is proportional: a number halfway between two endpoints has a value halfway between them, and a number one quarter of the interval from the left endpoint represents one quarter of the numerical difference.",
+        "Year 6 reasoning includes whole numbers up to ten million and decimal fractions. Number lines may have labelled ticks, partially labelled intervals or no internal marks. To place or estimate a number, first determine the value of the whole interval and then the value of each equal part.",
+        "Rounding is closely connected to number-line position. Locate the two neighbouring multiples of the rounding unit, identify the midpoint, then decide which multiple is nearer."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Interval value",
+          "Definition": "The difference between two labelled endpoints determines the size of the whole interval.",
+          "Rule": "Subtract left endpoint from right endpoint.",
+          "Example": "20,000 − 10,000 = 10,000 across the full interval."
+        },
+        {
+          "Title": "Equal subdivisions",
+          "Definition": "Equal visual spaces represent equal numerical changes.",
+          "Rule": "Divide the interval value by the number of equal gaps.",
+          "Example": "10,000 split into 10 gaps gives 1,000 per gap."
+        },
+        {
+          "Title": "Proportional position",
+          "Definition": "A position partway along an interval represents the same fraction of the numerical change.",
+          "Rule": "Use halves, quarters, tenths or other proportions.",
+          "Example": "65,000 is 15,000 above 50,000, so it is 3/10 of the way to 100,000."
+        },
+        {
+          "Title": "Rounding on a line",
+          "Definition": "Rounding chooses the nearest target multiple.",
+          "Rule": "Compare position with the midpoint between neighbouring multiples.",
+          "Example": "6,450,000 rounds to 6,000,000 to nearest million because it is below 6,500,000."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Read a marked interval",
+          "Question": "A number line runs from 12,000 to 13,000 in 10 equal gaps. What is the value of each gap?",
+          "Method": "Divide the interval by the number of gaps.",
+          "Steps": [
+            "Total interval = 13,000 − 12,000 = 1,000.",
+            "There are 10 equal gaps.",
+            "1,000 ÷ 10 = 100.",
+            "Each tick increases by 100."
+          ],
+          "Answer": "100",
+          "Check": "Ten gaps of 100 total 1,000."
+        },
+        {
+          "Title": "Place a midpoint",
+          "Question": "Where is 12,500 on a line from 12,000 to 13,000?",
+          "Method": "Find how far it is from the left endpoint and compare with the interval.",
+          "Steps": [
+            "12,500 − 12,000 = 500.",
+            "Full interval = 1,000.",
+            "500 is half of 1,000.",
+            "Place 12,500 halfway along the line."
+          ],
+          "Answer": "At the midpoint",
+          "Check": "The distance to each endpoint is 500."
+        },
+        {
+          "Title": "Estimate on an unmarked line",
+          "Question": "Estimate the position of 65,000 on a line from 50,000 to 100,000.",
+          "Method": "Find the fraction of the interval completed.",
+          "Steps": [
+            "Full interval = 50,000.",
+            "65,000 is 15,000 above 50,000.",
+            "15,000 ÷ 50,000 = 0.3.",
+            "Place it about 30% of the way from 50,000."
+          ],
+          "Answer": "About three-tenths from the left endpoint",
+          "Check": "50,000 + 0.3×50,000 = 65,000."
+        },
+        {
+          "Title": "Round to nearest million",
+          "Question": "Round 6,450,000 to the nearest million.",
+          "Method": "Compare with midpoint 6,500,000.",
+          "Steps": [
+            "Neighbouring millions are 6,000,000 and 7,000,000.",
+            "Midpoint is 6,500,000.",
+            "6,450,000 is below the midpoint.",
+            "It is nearer 6,000,000."
+          ],
+          "Answer": "6,000,000",
+          "Check": "Distances are 450,000 and 550,000."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Counting tick marks instead of gaps.",
+          "WhyWrong": "The number of intervals is one less than the number of marks including both endpoints.",
+          "Correction": "Count spaces between marks before dividing the numerical interval."
+        },
+        {
+          "Mistake": "Assuming visual distance is unrelated to numerical distance.",
+          "WhyWrong": "A number line is proportional when drawn to scale.",
+          "Correction": "Use the fraction of the interval to estimate position."
+        },
+        {
+          "Mistake": "Rounding by looking only at the last digit.",
+          "WhyWrong": "For large units you must compare with the midpoint between neighbouring multiples.",
+          "Correction": "Identify lower multiple, upper multiple and midpoint."
+        }
+      ],
+      "SummaryPoints": [
+        "Subtract endpoints to find the numerical size of a number-line interval.",
+        "Divide by the number of equal gaps to find each step.",
+        "Use proportional reasoning for unmarked or partially marked lines.",
+        "Rounding is a nearest-position decision around a midpoint."
+      ],
+      "Visuals": [
+        {
+          "Kind": "NumberLine",
+          "Title": "Locate 12,500 on two scales",
+          "Description": "The same number can occupy different relative positions depending on the endpoints.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "10,000",
+            "12,500",
+            "15,000",
+            "17,500",
+            "20,000"
+          ],
+          "SecondaryItems": [],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-3:APPLY",
+      "CultureCode": "en",
+      "Title": "Numbers up to 10 million in the linear number system: Reason and Apply",
+      "ExplanationParagraphs": [
+        "This Reason and Apply lesson uses the same core mathematics in less direct and more reasoning-focused situations.",
+        "The linear number system places numbers in order along a number line. Position is proportional: a number halfway between two endpoints has a value halfway between them, and a number one quarter of the interval from the left endpoint represents one quarter of the numerical difference.",
+        "Year 6 reasoning includes whole numbers up to ten million and decimal fractions. Number lines may have labelled ticks, partially labelled intervals or no internal marks. To place or estimate a number, first determine the value of the whole interval and then the value of each equal part.",
+        "Rounding is closely connected to number-line position. Locate the two neighbouring multiples of the rounding unit, identify the midpoint, then decide which multiple is nearer."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Interval value",
+          "Definition": "The difference between two labelled endpoints determines the size of the whole interval.",
+          "Rule": "Subtract left endpoint from right endpoint.",
+          "Example": "20,000 − 10,000 = 10,000 across the full interval."
+        },
+        {
+          "Title": "Equal subdivisions",
+          "Definition": "Equal visual spaces represent equal numerical changes.",
+          "Rule": "Divide the interval value by the number of equal gaps.",
+          "Example": "10,000 split into 10 gaps gives 1,000 per gap."
+        },
+        {
+          "Title": "Proportional position",
+          "Definition": "A position partway along an interval represents the same fraction of the numerical change.",
+          "Rule": "Use halves, quarters, tenths or other proportions.",
+          "Example": "65,000 is 15,000 above 50,000, so it is 3/10 of the way to 100,000."
+        },
+        {
+          "Title": "Rounding on a line",
+          "Definition": "Rounding chooses the nearest target multiple.",
+          "Rule": "Compare position with the midpoint between neighbouring multiples.",
+          "Example": "6,450,000 rounds to 6,000,000 to nearest million because it is below 6,500,000."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Different scale, same number",
+          "Question": "Place 12,500 on a line from 10,000 to 20,000.",
+          "Method": "Use proportional position rather than expecting a labelled tick.",
+          "Steps": [
+            "Full interval = 10,000.",
+            "12,500 is 2,500 above 10,000.",
+            "2,500 is one quarter of 10,000.",
+            "Place it one quarter of the way across."
+          ],
+          "Answer": "One quarter of the way from 10,000 to 20,000",
+          "Check": "10,000 + 2,500 = 12,500."
+        },
+        {
+          "Title": "Find a labelled value",
+          "Question": "A line from 2,000,000 to 3,000,000 has 4 equal gaps. What is the first interior tick?",
+          "Method": "Divide the million interval into quarters.",
+          "Steps": [
+            "Interval = 1,000,000.",
+            "1,000,000 ÷ 4 = 250,000 per gap.",
+            "Add one gap to 2,000,000.",
+            "2,000,000 + 250,000 = 2,250,000."
+          ],
+          "Answer": "2,250,000",
+          "Check": "Four jumps of 250,000 reach 3,000,000."
+        },
+        {
+          "Title": "Round to nearest 100,000",
+          "Question": "Round 3,764,000 to the nearest 100,000.",
+          "Method": "Use neighbouring hundred-thousands and midpoint.",
+          "Steps": [
+            "Neighbours are 3,700,000 and 3,800,000.",
+            "Midpoint is 3,750,000.",
+            "3,764,000 is above the midpoint.",
+            "Round up to 3,800,000."
+          ],
+          "Answer": "3,800,000",
+          "Check": "Distance to 3.8m is 36,000; to 3.7m is 64,000."
+        },
+        {
+          "Title": "Decimal position",
+          "Question": "Place 2.75 on a line from 2 to 3 divided into 4 equal gaps.",
+          "Method": "Each quarter interval is 0.25.",
+          "Steps": [
+            "Interval length = 1.",
+            "1 ÷ 4 = 0.25 per gap.",
+            "Values are 2, 2.25, 2.5, 2.75, 3.",
+            "2.75 is the third interior tick."
+          ],
+          "Answer": "Third interior tick",
+          "Check": "2 + 3×0.25 = 2.75."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Counting tick marks instead of gaps.",
+          "WhyWrong": "The number of intervals is one less than the number of marks including both endpoints.",
+          "Correction": "Count spaces between marks before dividing the numerical interval."
+        },
+        {
+          "Mistake": "Assuming visual distance is unrelated to numerical distance.",
+          "WhyWrong": "A number line is proportional when drawn to scale.",
+          "Correction": "Use the fraction of the interval to estimate position."
+        },
+        {
+          "Mistake": "Rounding by looking only at the last digit.",
+          "WhyWrong": "For large units you must compare with the midpoint between neighbouring multiples.",
+          "Correction": "Identify lower multiple, upper multiple and midpoint."
+        }
+      ],
+      "SummaryPoints": [
+        "Subtract endpoints to find the numerical size of a number-line interval.",
+        "Divide by the number of equal gaps to find each step.",
+        "Use proportional reasoning for unmarked or partially marked lines.",
+        "Rounding is a nearest-position decision around a midpoint."
+      ],
+      "Visuals": [
+        {
+          "Kind": "NumberLine",
+          "Title": "Locate 12,500 on two scales",
+          "Description": "The same number can occupy different relative positions depending on the endpoints.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "10,000",
+            "12,500",
+            "15,000",
+            "17,500",
+            "20,000"
+          ],
+          "SecondaryItems": [],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:BUILD",
+      "CultureCode": "en",
+      "Title": "Reading scales with 2, 4, 5 or 10 intervals: Build the Idea",
+      "ExplanationParagraphs": [
+        "This Build the Idea lesson develops the core structure before applying it in varied questions.",
+        "A scale shows values at equal spatial intervals. In this lesson, a labelled power-of-10 interval can be divided into 2, 4, 5 or 10 equal parts. The first task is always to work out the value represented by one small interval.",
+        "Subtract the labelled endpoints, then divide by the number of equal parts. For example, 1,000,000 divided into 4 equal parts gives 250,000 per part. This reasoning applies to number lines, measurement scales and graph axes.",
+        "Once the interval size is known, count equal steps from a labelled value. You can also express each part as a fraction of the whole interval: halves, quarters, fifths or tenths."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Small-interval value",
+          "Definition": "Each equal gap represents the same numerical change.",
+          "Rule": "(right label − left label) ÷ number of gaps.",
+          "Example": "1,000,000 ÷ 4 = 250,000."
+        },
+        {
+          "Title": "Allowed subdivisions",
+          "Definition": "The target subdivisions are 2, 4, 5 and 10 equal parts.",
+          "Rule": "Recognise halves, quarters, fifths and tenths of powers of 10.",
+          "Example": "100 ÷ 5 = 20 per interval."
+        },
+        {
+          "Title": "Count from a label",
+          "Definition": "After finding one interval, move by repeated addition or subtraction.",
+          "Rule": "Value = labelled start + number of steps × interval size.",
+          "Example": "From 0 with 25 per step, third tick = 75."
+        },
+        {
+          "Title": "Fraction connection",
+          "Definition": "Each small interval is a fraction of the labelled interval.",
+          "Rule": "2 parts → halves; 4 → quarters; 5 → fifths; 10 → tenths.",
+          "Example": "1/4 of 1,000,000 = 250,000."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Four equal parts of a million",
+          "Question": "A scale from 0 to 1,000,000 is divided into 4 equal gaps. What is each gap?",
+          "Method": "Divide the total interval by 4.",
+          "Steps": [
+            "Total interval = 1,000,000.",
+            "Number of equal gaps = 4.",
+            "1,000,000 ÷ 4 = 250,000.",
+            "Each step is 250,000."
+          ],
+          "Answer": "250,000",
+          "Check": "4 × 250,000 = 1,000,000."
+        },
+        {
+          "Title": "Five equal parts",
+          "Question": "A scale from 200 to 300 has 5 equal gaps. What is the second interior tick after 200?",
+          "Method": "Find interval size then count two steps.",
+          "Steps": [
+            "Total interval = 300 − 200 = 100.",
+            "100 ÷ 5 = 20 per gap.",
+            "Two steps after 200 = 200 + 40.",
+            "Value = 240."
+          ],
+          "Answer": "240",
+          "Check": "Ticks are 200, 220, 240, 260, 280, 300."
+        },
+        {
+          "Title": "Ten equal decimal parts",
+          "Question": "A scale from 0.1 to 0.2 has 10 equal gaps. What is one gap?",
+          "Method": "Divide the decimal interval by 10.",
+          "Steps": [
+            "Interval = 0.2 − 0.1 = 0.1.",
+            "0.1 ÷ 10 = 0.01.",
+            "Each small interval is one hundredth.",
+            "The first tick after 0.1 is 0.11."
+          ],
+          "Answer": "0.01",
+          "Check": "Ten steps of 0.01 make 0.1."
+        },
+        {
+          "Title": "Two equal parts",
+          "Question": "A graph axis runs from 4,000 to 6,000 with one tick exactly halfway. What value is the tick?",
+          "Method": "Find half the interval.",
+          "Steps": [
+            "Interval = 6,000 − 4,000 = 2,000.",
+            "Two equal gaps means 1,000 per gap.",
+            "Add one gap to 4,000.",
+            "Midpoint = 5,000."
+          ],
+          "Answer": "5,000",
+          "Check": "It is equally distant from both labels."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Dividing by the number of marks instead of the number of gaps.",
+          "WhyWrong": "Endpoints are marks too, so marks and intervals are not the same count.",
+          "Correction": "Count the spaces between consecutive marks."
+        },
+        {
+          "Mistake": "Counting steps before finding their value.",
+          "WhyWrong": "You may reach the correct tick number but assign the wrong numerical value.",
+          "Correction": "First calculate interval size from labelled endpoints."
+        },
+        {
+          "Mistake": "Ignoring decimal place value on small scales.",
+          "WhyWrong": "0.1 split into 10 parts gives 0.01, not 0.1.",
+          "Correction": "Write the subtraction and division explicitly."
+        }
+      ],
+      "SummaryPoints": [
+        "Find the labelled interval value first.",
+        "Divide by 2, 4, 5 or 10 according to the number of equal gaps.",
+        "Count equal steps from a known label to read a target tick.",
+        "Connect intervals with halves, quarters, fifths and tenths of powers of 10."
+      ],
+      "Visuals": [
+        {
+          "Kind": "Scale",
+          "Title": "A million divided into four equal intervals",
+          "Description": "Four equal gaps create quarter-million steps.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "0",
+            "250,000",
+            "500,000",
+            "750,000",
+            "1,000,000"
+          ],
+          "SecondaryItems": [],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:APPLY",
+      "CultureCode": "en",
+      "Title": "Reading scales with 2, 4, 5 or 10 intervals: Reason and Apply",
+      "ExplanationParagraphs": [
+        "This Reason and Apply lesson uses the same core mathematics in less direct and more reasoning-focused situations.",
+        "A scale shows values at equal spatial intervals. In this lesson, a labelled power-of-10 interval can be divided into 2, 4, 5 or 10 equal parts. The first task is always to work out the value represented by one small interval.",
+        "Subtract the labelled endpoints, then divide by the number of equal parts. For example, 1,000,000 divided into 4 equal parts gives 250,000 per part. This reasoning applies to number lines, measurement scales and graph axes.",
+        "Once the interval size is known, count equal steps from a labelled value. You can also express each part as a fraction of the whole interval: halves, quarters, fifths or tenths."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Small-interval value",
+          "Definition": "Each equal gap represents the same numerical change.",
+          "Rule": "(right label − left label) ÷ number of gaps.",
+          "Example": "1,000,000 ÷ 4 = 250,000."
+        },
+        {
+          "Title": "Allowed subdivisions",
+          "Definition": "The target subdivisions are 2, 4, 5 and 10 equal parts.",
+          "Rule": "Recognise halves, quarters, fifths and tenths of powers of 10.",
+          "Example": "100 ÷ 5 = 20 per interval."
+        },
+        {
+          "Title": "Count from a label",
+          "Definition": "After finding one interval, move by repeated addition or subtraction.",
+          "Rule": "Value = labelled start + number of steps × interval size.",
+          "Example": "From 0 with 25 per step, third tick = 75."
+        },
+        {
+          "Title": "Fraction connection",
+          "Definition": "Each small interval is a fraction of the labelled interval.",
+          "Rule": "2 parts → halves; 4 → quarters; 5 → fifths; 10 → tenths.",
+          "Example": "1/4 of 1,000,000 = 250,000."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Read an unlabelled tick",
+          "Question": "A scale from 50,000 to 100,000 has 5 equal gaps. What is the third tick after 50,000?",
+          "Method": "Find 10,000 per gap and count.",
+          "Steps": [
+            "Interval = 50,000.",
+            "50,000 ÷ 5 = 10,000 per gap.",
+            "Three gaps = 30,000.",
+            "50,000 + 30,000 = 80,000."
+          ],
+          "Answer": "80,000",
+          "Check": "Sequence is 50k,60k,70k,80k,90k,100k."
+        },
+        {
+          "Title": "Work backwards from a tick",
+          "Question": "A scale has 4 equal gaps. The endpoints are 2,000 and 3,000. A marker is at 2,750. Which gap number is it after 2,000?",
+          "Method": "Find gap size then divide displacement.",
+          "Steps": [
+            "Interval = 1,000.",
+            "Gap size = 1,000 ÷ 4 = 250.",
+            "Displacement = 2,750 − 2,000 = 750.",
+            "750 ÷ 250 = 3 gaps."
+          ],
+          "Answer": "Third gap",
+          "Check": "2,000 + 3×250 = 2,750."
+        },
+        {
+          "Title": "Connect a fraction and a scale",
+          "Question": "What is 1/5 of 10,000,000?",
+          "Method": "A fifth is one of five equal scale intervals.",
+          "Steps": [
+            "10,000,000 ÷ 5 = 2,000,000.",
+            "One fifth equals one small interval in a five-part scale.",
+            "State the value.",
+            "Relate back to multiplication."
+          ],
+          "Answer": "2,000,000",
+          "Check": "5 × 2,000,000 = 10,000,000."
+        },
+        {
+          "Title": "Detect a gap-count error",
+          "Question": "A line has marks at 0, 25, 50, 75 and 100. A student says there are 5 equal intervals. Correct the statement.",
+          "Method": "Count spaces, not marks.",
+          "Steps": [
+            "There are 5 marks including endpoints.",
+            "Spaces are 0–25, 25–50, 50–75, 75–100.",
+            "That is 4 equal intervals.",
+            "Each interval is 25."
+          ],
+          "Answer": "4 equal intervals",
+          "Check": "4 × 25 = 100."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Dividing by the number of marks instead of the number of gaps.",
+          "WhyWrong": "Endpoints are marks too, so marks and intervals are not the same count.",
+          "Correction": "Count the spaces between consecutive marks."
+        },
+        {
+          "Mistake": "Counting steps before finding their value.",
+          "WhyWrong": "You may reach the correct tick number but assign the wrong numerical value.",
+          "Correction": "First calculate interval size from labelled endpoints."
+        },
+        {
+          "Mistake": "Ignoring decimal place value on small scales.",
+          "WhyWrong": "0.1 split into 10 parts gives 0.01, not 0.1.",
+          "Correction": "Write the subtraction and division explicitly."
+        }
+      ],
+      "SummaryPoints": [
+        "Find the labelled interval value first.",
+        "Divide by 2, 4, 5 or 10 according to the number of equal gaps.",
+        "Count equal steps from a known label to read a target tick.",
+        "Connect intervals with halves, quarters, fifths and tenths of powers of 10."
+      ],
+      "Visuals": [
+        {
+          "Kind": "Scale",
+          "Title": "A million divided into four equal intervals",
+          "Description": "Four equal gaps create quarter-million steps.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "0",
+            "250,000",
+            "500,000",
+            "750,000",
+            "1,000,000"
+          ],
+          "SecondaryItems": [],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
