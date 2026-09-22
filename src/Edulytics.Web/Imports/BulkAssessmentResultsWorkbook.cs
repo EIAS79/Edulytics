@@ -344,7 +344,7 @@ public static class BulkAssessmentResultsWorkbook
         var students = current.Students.OrderBy(x => x.DisplayName).ThenBy(x => x.StudentProfileId).ToArray();
         var output = new StringBuilder();
         output.AppendLine(
-            "AssessmentTitle,AssessmentDate,ClassName,StudentNumber,StudentName,QuestionOrder,Score,ClassCode,AssessmentId");
+            "AssessmentTitle,AssessmentDate,ClassName,StudentNumber,StudentName,QuestionOrder,QuestionPrompt,QuestionMaxScore,Score,AssessmentMaxScore,ClassCode,AssessmentId");
 
         var scoreRowCount = 0;
         for (var studentIndex = 0; studentIndex < students.Length; studentIndex++)
@@ -391,7 +391,10 @@ public static class BulkAssessmentResultsWorkbook
                     students[studentIndex].StudentNumber,
                     students[studentIndex].DisplayName,
                     question.Order.ToString(CultureInfo.InvariantCulture),
+                    question.Prompt,
+                    question.MaxScore.ToString(CultureInfo.InvariantCulture),
                     score.ToString(CultureInfo.InvariantCulture),
+                    current.Assessment.MaxScore.ToString(CultureInfo.InvariantCulture),
                     currentClass.Code,
                     current.Assessment.Id.ToString("D")
                 };

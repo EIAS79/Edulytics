@@ -107,6 +107,114 @@
         .ToHashSet();
     var isCompleted = Model.Batch.Status == ImportBatchStatus.Completed;
     var isAccountImport = Model.Batch.Type is ImportType.Students or ImportType.Teachers or ImportType.SubjectSupervisors;
+    var isAssessmentResults = Model.Batch.Type == ImportType.AssessmentResults;
+
+    decimal ParseDecimal(IReadOnlyDictionary<string, string> values, string key)
+    {
+        if (!values.TryGetValue(key, out var raw))
+            return 0m;
+
+        return decimal.TryParse(
+            raw,
+            NumberStyles.Number,
+            CultureInfo.InvariantCulture,
+            out var value)
+                ? value
+                : 0m;
+    }
+
+    int ParseInt(IReadOnlyDictionary<string, string> values, string key)
+    {
+        if (!values.TryGetValue(key, out var raw))
+            return int.MaxValue;
+
+        return int.TryParse(
+            raw,
+            NumberStyles.Integer,
+            CultureInfo.InvariantCulture,
+            out var value)
+                ? value
+                : int.MaxValue;
+    }
+
+    var assessmentStudentGroups = Model.Batch.PreviewRows
+            .Where(_ => isAssessmentResults)
+            .GroupBy(row =>
+            {
+                var assessmentIdentity =
+                    row.Values.TryGetValue("AssessmentId", out var assessmentId) &&
+                    !string.IsNullOrWhiteSpace(assessmentId)
+                        ? assessmentId
+                        : string.Join(
+                            "|",
+                            row.Values.TryGetValue("AssessmentTitle", out var title) ? title : string.Empty,
+                            row.Values.TryGetValue("AssessmentDate", out var date) ? date : string.Empty,
+                            row.Values.TryGetValue("ClassName", out var className) ? className : string.Empty);
+
+                var studentIdentity =
+                    row.Values.TryGetValue("StudentNumber", out var number) &&
+                    !string.IsNullOrWhiteSpace(number)
+                        ? number
+                        : row.Values.TryGetValue("StudentName", out var studentName)
+                            ? studentName
+                            : $"row-{row.RowNumber}";
+
+                return $"{assessmentIdentity}\u001F{studentIdentity}";
+            }, StringComparer.OrdinalIgnoreCase)
+            .Select(group =>
+            {
+                var rows = group
+                    .OrderBy(row => ParseInt(row.Values, "QuestionOrder"))
+                    .ThenBy(row => row.RowNumber)
+                    .ToArray();
+                var first = rows[0];
+                var studentName = first.Values.TryGetValue("StudentName", out var name)
+                    ? name
+                    : group.Key;
+                var assessmentTitle = first.Values.TryGetValue("AssessmentTitle", out var title)
+                    ? title
+                    : string.Empty;
+                var total = rows.Sum(row => ParseDecimal(row.Values, "Score"));
+                var assessmentMax = rows
+                    .Select(row => ParseDecimal(row.Values, "AssessmentMaxScore"))
+                    .FirstOrDefault(value => value > 0m);
+                var percentage = assessmentMax > 0m
+                    ? decimal.Round(
+                        total / assessmentMax * 100m,
+                        2,
+                        MidpointRounding.AwayFromZero)
+                    : (decimal?)null;
+                var hasError = rows.Any(row => invalidRows.Contains(row.RowNumber));
+                var questions = rows
+                    .Select(row => new
+                    {
+                        Order = ParseInt(row.Values, "QuestionOrder"),
+                        Prompt = row.Values.TryGetValue("QuestionPrompt", out var prompt)
+                            ? prompt
+                            : string.Empty,
+                        MaxScore = row.Values.TryGetValue("QuestionMaxScore", out var max)
+                            ? max
+                            : string.Empty,
+                        Score = row.Values.TryGetValue("Score", out var score)
+                            ? score
+                            : string.Empty
+                    })
+                    .ToArray();
+
+                return new
+                {
+                    AssessmentTitle = assessmentTitle,
+                    StudentName = studentName,
+                    Total = total,
+                    AssessmentMax = assessmentMax,
+                    Percentage = percentage,
+                    HasError = hasError,
+                    Questions = questions
+                };
+            })
+            .OrderBy(group => group.StudentName)
+            .ToArray();
+
     ViewData["Title"] = I["Batch"].Value;
 }
 
@@ -142,7 +250,14 @@
     else if (Model.Batch.ErrorCount > 0)
     {
         <div class="import-message import-message-error" role="alert">
-            @L("This batch has validation errors. Remove the invalid rows or correct the source data before confirming.", "Ta partia zawiera błędy walidacji. Usuń nieprawidłowe wiersze lub popraw dane źródłowe przed potwierdzeniem.")
+            @if (Model.Batch.Type == ImportType.AssessmentResults)
+            {
+                @L("This batch has validation errors. Correct the source workbook and upload a new batch before confirming.", "Ta partia zawiera błędy walidacji. Popraw skoroszyt źródłowy i prześlij nową partię przed potwierdzeniem.")
+            }
+            else
+            {
+                @L("This batch has validation errors. Remove the invalid rows or correct the source data before confirming.", "Ta partia zawiera błędy walidacji. Usuń nieprawidłowe wiersze lub popraw dane źródłowe przed potwierdzeniem.")
+            }
         </div>
     }
     else
@@ -154,8 +269,16 @@
 
     <section class="import-metrics">
         <article><span>@I["Status"]</span><strong>@I[Model.StatusResourceKey]</strong></article>
-        <article><span>@I["Rows"]</span><strong>@Model.Batch.RowCount</strong></article>
-        <article><span>@I["ValidRows"]</span><strong>@Model.Batch.ValidRowCount</strong></article>
+        @if (isAssessmentResults)
+        {
+            <article><span>@L("Students", "Uczniowie")</span><strong>@assessmentStudentGroups.Length</strong></article>
+            <article><span>@L("Question scores", "Wyniki pytań")</span><strong>@Model.Batch.RowCount</strong></article>
+        }
+        else
+        {
+            <article><span>@I["Rows"]</span><strong>@Model.Batch.RowCount</strong></article>
+            <article><span>@I["ValidRows"]</span><strong>@Model.Batch.ValidRowCount</strong></article>
+        }
         <article><span>@I["Errors"]</span><strong>@Model.Batch.ErrorCount</strong></article>
     </section>
 
@@ -219,7 +342,11 @@
         <div class="import-preview-toolbar">
             <div>
                 <h2>@I["Preview"]</h2>
-                <p>@I["PreviewLimit"]</p>
+                <p>
+                    @(isAssessmentResults
+                        ? L("One row per student. Use View to review question scores and the final result.", "Jeden wiersz na ucznia. Użyj opcji Pokaż, aby sprawdzić wyniki pytań i wynik końcowy.")
+                        : I["PreviewLimit"].Value)
+                </p>
             </div>
             <label>
                 @L("Filter", "Filtr")
@@ -243,67 +370,165 @@
             </label>
         </div>
 
-        <form asp-controller="ImportBatchActions" asp-action="RemoveRows" asp-route-batchId="@Model.Batch.Id" method="post" data-import-remove-form>
-            <input type="hidden" name="rowVersion" value="@Model.RowVersionBase64" />
+        @if (isAssessmentResults)
+        {
             <div class="import-table-wrap">
-                <table class="import-table">
+                <table class="import-table import-assessment-student-table">
                     <thead>
                         <tr>
-                            @if (!isCompleted && canManageImports) { <th class="import-select-column"><span class="visually-hidden">@L("Select", "Wybierz")</span></th> }
-                            <th>@I["Row"]</th>
-                            @foreach (var header in visibleHeaders) { <th>@header</th> }
-                            @if (isCompleted) { <th>@I["Status"]</th> }
-                            @if (isCompleted && isAccountImport) { <th>@L("Invitation", "Zaproszenie")</th> }
+                            <th>@L("Assessment", "Sprawdzian")</th>
+                            <th>@L("Student", "Uczeń")</th>
+                            <th>@L("Final score", "Wynik końcowy")</th>
+                            <th>@L("Percentage", "Procent")</th>
+                            <th>@I["Status"]</th>
+                            <th><span class="visually-hidden">@L("Details", "Szczegóły")</span></th>
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach (var row in Model.Batch.PreviewRows)
+                    @foreach (var student in assessmentStudentGroups)
                     {
-                        var validationState = invalidRows.Contains(row.RowNumber) ? "error" : "valid";
-                        var importState = row.Values.TryGetValue("__ImportStatus", out var storedImport) ? storedImport.ToLowerInvariant() : isCompleted ? "imported" : validationState;
-                        var invitationState = row.Values.TryGetValue("__InvitationStatus", out var storedInvitation) ? storedInvitation.ToLowerInvariant() : string.Empty;
-                        var filterState = invitationState == "sent" ? "invitation-sent" : invitationState == "failed" ? "invitation-failed" : importState;
-                        <tr data-import-row data-validation-state="@validationState" data-import-state="@filterState">
-                            @if (!isCompleted && canManageImports)
-                            {
-                                <td class="import-select-column"><input type="checkbox" name="rowNumbers" value="@row.RowNumber" aria-label="@L($"Select row {row.RowNumber}", $"Wybierz wiersz {row.RowNumber}")" /></td>
-                            }
-                            <td data-label="@I["Row"]">@row.RowNumber</td>
-                            @foreach (var header in visibleHeaders)
-                            {
-                                var value = row.Values.TryGetValue(header, out var cell) ? cell : string.Empty;
-                                <td data-label="@header">@value</td>
-                            }
-                            @if (isCompleted)
-                            {
-                                <td data-label="@I["Status"]">@L("Imported", "Zaimportowano")</td>
-                            }
-                            @if (isCompleted && isAccountImport)
-                            {
-                                <td data-label="@L("Invitation", "Zaproszenie")">
-                                    @if (invitationState == "failed") { <span>@L("Failed", "Błąd")</span> }
-                                    else if (invitationState == "sent") { <span>@L("Sent", "Wysłano")</span> }
-                                    else if (invitationState == "notrequired") { <span>@L("Not required", "Nie jest wymagane")</span> }
-                                    else { <span>@L("Available", "Dostępne")</span> }
-                                    @if (invitationState != "notrequired")
-                                    {
-                                        <button type="submit" class="school-button school-button-small" formaction="/school/imports/@Model.Batch.Id/resend-invitation" formmethod="post" name="rowNumber" value="@row.RowNumber">@L("Resend invitation", "Wyślij ponownie")</button>
-                                    }
-                                </td>
-                            }
+                        var validationState = student.HasError ? "error" : "valid";
+                        var importState = isCompleted ? "imported" : validationState;
+                        var finalScore = student.AssessmentMax > 0m
+                            ? $"{student.Total.ToString("0.##", CultureInfo.CurrentCulture)} / {student.AssessmentMax.ToString("0.##", CultureInfo.CurrentCulture)}"
+                            : student.Total.ToString("0.##", CultureInfo.CurrentCulture);
+                        var percentageText = student.Percentage.HasValue
+                            ? $"{student.Percentage.Value.ToString("0.##", CultureInfo.CurrentCulture)}%"
+                            : "—";
+                        <tr data-import-row
+                            data-validation-state="@validationState"
+                            data-import-state="@importState">
+                            <td data-label="@L("Assessment", "Sprawdzian")">@student.AssessmentTitle</td>
+                            <td data-label="@L("Student", "Uczeń")"><strong>@student.StudentName</strong></td>
+                            <td data-label="@L("Final score", "Wynik końcowy")">@finalScore</td>
+                            <td data-label="@L("Percentage", "Procent")">@percentageText</td>
+                            <td data-label="@I["Status"]">
+                                @if (isCompleted)
+                                {
+                                    <span class="import-student-status is-ready">@L("Imported", "Zaimportowano")</span>
+                                }
+                                else if (student.HasError)
+                                {
+                                    <span class="import-student-status is-error">@L("Needs attention", "Wymaga uwagi")</span>
+                                }
+                                else
+                                {
+                                    <span class="import-student-status is-ready">@L("Ready", "Gotowe")</span>
+                                }
+                            </td>
+                            <td data-label="@L("Details", "Szczegóły")">
+                                <details class="import-student-details">
+                                    <summary>@L("View", "Pokaż")</summary>
+                                    <div class="import-student-detail-panel">
+                                        <table class="import-question-detail-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>@L("Question", "Pytanie")</th>
+                                                    <th>@L("Maximum", "Maksimum")</th>
+                                                    <th>@L("Score", "Wynik")</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach (var question in student.Questions)
+                                            {
+                                                var questionLabel = string.IsNullOrWhiteSpace(question.Prompt)
+                                                    ? $"Q{question.Order}"
+                                                    : $"Q{question.Order}. {question.Prompt}";
+                                                <tr>
+                                                    <td>@questionLabel</td>
+                                                    <td>@(string.IsNullOrWhiteSpace(question.MaxScore) ? "—" : question.MaxScore)</td>
+                                                    <td>@question.Score</td>
+                                                </tr>
+                                            }
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>@L("Final score", "Wynik końcowy")</th>
+                                                    <th>@(student.AssessmentMax > 0m ? student.AssessmentMax.ToString("0.##", CultureInfo.CurrentCulture) : "—")</th>
+                                                    <th>@student.Total.ToString("0.##", CultureInfo.CurrentCulture)</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                        @if (student.Percentage.HasValue)
+                                        {
+                                            <p class="import-student-percentage">
+                                                <strong>@L("Percentage", "Procent"):</strong>
+                                                @student.Percentage.Value.ToString("0.##", CultureInfo.CurrentCulture)%
+                                            </p>
+                                        }
+                                    </div>
+                                </details>
+                            </td>
                         </tr>
                     }
                     </tbody>
                 </table>
             </div>
+        }
+        else
+        {
+            <form asp-controller="ImportBatchActions" asp-action="RemoveRows" asp-route-batchId="@Model.Batch.Id" method="post" data-import-remove-form>
+            <input type="hidden" name="rowVersion" value="@Model.RowVersionBase64" />
+            <div class="import-table-wrap">
+            <table class="import-table">
+            <thead>
+            <tr>
+            @if (!isCompleted && canManageImports) { <th class="import-select-column"><span class="visually-hidden">@L("Select", "Wybierz")</span></th> }
+            <th>@I["Row"]</th>
+            @foreach (var header in visibleHeaders) { <th>@header</th> }
+            @if (isCompleted) { <th>@I["Status"]</th> }
+            @if (isCompleted && isAccountImport) { <th>@L("Invitation", "Zaproszenie")</th> }
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var row in Model.Batch.PreviewRows)
+            {
+            var validationState = invalidRows.Contains(row.RowNumber) ? "error" : "valid";
+            var importState = row.Values.TryGetValue("__ImportStatus", out var storedImport) ? storedImport.ToLowerInvariant() : isCompleted ? "imported" : validationState;
+            var invitationState = row.Values.TryGetValue("__InvitationStatus", out var storedInvitation) ? storedInvitation.ToLowerInvariant() : string.Empty;
+            var filterState = invitationState == "sent" ? "invitation-sent" : invitationState == "failed" ? "invitation-failed" : importState;
+            <tr data-import-row data-validation-state="@validationState" data-import-state="@filterState">
             @if (!isCompleted && canManageImports)
             {
-                <div class="import-preview-actions">
-                    <button type="submit" class="school-button" data-remove-selected disabled>@L("Delete selected", "Usuń wybrane")</button>
-                    <span data-import-selection-count>0 @L("selected", "wybranych")</span>
-                </div>
+            <td class="import-select-column"><input type="checkbox" name="rowNumbers" value="@row.RowNumber" aria-label="@L($"Select row {row.RowNumber}", $"Wybierz wiersz {row.RowNumber}")" /></td>
             }
-        </form>
+            <td data-label="@I["Row"]">@row.RowNumber</td>
+            @foreach (var header in visibleHeaders)
+            {
+            var value = row.Values.TryGetValue(header, out var cell) ? cell : string.Empty;
+            <td data-label="@header">@value</td>
+            }
+            @if (isCompleted)
+            {
+            <td data-label="@I["Status"]">@L("Imported", "Zaimportowano")</td>
+            }
+            @if (isCompleted && isAccountImport)
+            {
+            <td data-label="@L("Invitation", "Zaproszenie")">
+            @if (invitationState == "failed") { <span>@L("Failed", "Błąd")</span> }
+            else if (invitationState == "sent") { <span>@L("Sent", "Wysłano")</span> }
+            else if (invitationState == "notrequired") { <span>@L("Not required", "Nie jest wymagane")</span> }
+            else { <span>@L("Available", "Dostępne")</span> }
+            @if (invitationState != "notrequired")
+            {
+            <button type="submit" class="school-button school-button-small" formaction="/school/imports/@Model.Batch.Id/resend-invitation" formmethod="post" name="rowNumber" value="@row.RowNumber">@L("Resend invitation", "Wyślij ponownie")</button>
+            }
+            </td>
+            }
+            </tr>
+            }
+            </tbody>
+            </table>
+            </div>
+            @if (!isCompleted && canManageImports)
+            {
+            <div class="import-preview-actions">
+            <button type="submit" class="school-button" data-remove-selected disabled>@L("Delete selected", "Usuń wybrane")</button>
+            <span data-import-selection-count>0 @L("selected", "wybranych")</span>
+            </div>
+            }
+            </form>
+        }
     </section>
 
     <section class="import-panel">
@@ -325,7 +550,14 @@
         }
         else if (!isCompleted && Model.Batch.ErrorCount > 0)
         {
-            <p>@L("Remove the invalid rows or correct the source file before confirming.", "Usuń nieprawidłowe wiersze lub popraw plik źródłowy przed potwierdzeniem.")</p>
+            @if (Model.Batch.Type == ImportType.AssessmentResults)
+            {
+                <p>@L("Correct the workbook and upload a new Assessment Results batch before confirming.", "Popraw skoroszyt i prześlij nową partię wyników sprawdzianu przed potwierdzeniem.")</p>
+            }
+            else
+            {
+                <p>@L("Remove the invalid rows or correct the source file before confirming.", "Usuń nieprawidłowe wiersze lub popraw plik źródłowy przed potwierdzeniem.")</p>
+            }
         }
     </section>
 </section>
