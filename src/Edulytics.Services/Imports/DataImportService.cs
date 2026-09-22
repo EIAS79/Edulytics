@@ -494,6 +494,25 @@ public sealed class DataImportService : IDataImportService
             batch.Id,
             cancellationToken);
 
+        IReadOnlyList<ImportPreviewRow> previewRows;
+        if (batch.ImportType == ImportType.AssessmentResults)
+        {
+            var snapshot = await _imports.GetSnapshotAsync(
+                batch.SchoolId,
+                cancellationToken);
+
+            previewRows = EnrichAssessmentResultPreview(
+                parsed.Rows,
+                snapshot);
+        }
+        else
+        {
+            previewRows = parsed.Rows
+                .Take(100)
+                .Select(x => new ImportPreviewRow(x.RowNumber, x.Values))
+                .ToArray();
+        }
+
         return ImportResult<ImportBatchDetail>.Success(
             new ImportBatchDetail(
                 batch.Id,
@@ -507,11 +526,7 @@ public sealed class DataImportService : IDataImportService
                 batch.CompletedAtUtc,
                 batch.RowVersion,
                 parsed.Headers,
-                (batch.ImportType == ImportType.AssessmentResults
-                    ? parsed.Rows
-                    : parsed.Rows.Take(100))
-                    .Select(x => new ImportPreviewRow(x.RowNumber, x.Values))
-                    .ToArray(),
+                previewRows,
                 errors
                     .Select(x => new ImportValidationErrorItem(
                         x.RowNumber,
@@ -523,6 +538,54 @@ public sealed class DataImportService : IDataImportService
                 CanImportType(actorRole, batch.ImportType) &&
                 (actorRole == RoleNames.SubjectSupervisor ||
                  batch.UploadedByUserId == actorUserId)));
+    }
+
+    private static IReadOnlyList<ImportPreviewRow> EnrichAssessmentResultPreview(
+        IReadOnlyList<ImportFileRow> rows,
+        ImportDataSnapshot snapshot)
+    {
+        var assessments = snapshot.Assessments
+            .ToDictionary(x => x.Id);
+        var questions = snapshot.AssessmentQuestions
+            .GroupBy(x => x.AssessmentId)
+            .ToDictionary(
+                x => x.Key,
+                x => x.ToDictionary(question => question.Order));
+
+        return rows
+            .Select(row =>
+            {
+                var values = new Dictionary<string, string>(
+                    row.Values,
+                    StringComparer.OrdinalIgnoreCase);
+
+                if (!Guid.TryParse(RowValue(row, "AssessmentId"), out var assessmentId) ||
+                    !assessments.TryGetValue(assessmentId, out var assessment))
+                {
+                    return new ImportPreviewRow(row.RowNumber, values);
+                }
+
+                values["AssessmentMaxScore"] =
+                    assessment.MaxScore.ToString(
+                        System.Globalization.CultureInfo.InvariantCulture);
+
+                if (int.TryParse(
+                        RowValue(row, "QuestionOrder"),
+                        System.Globalization.NumberStyles.Integer,
+                        System.Globalization.CultureInfo.InvariantCulture,
+                        out var questionOrder) &&
+                    questions.TryGetValue(assessmentId, out var assessmentQuestions) &&
+                    assessmentQuestions.TryGetValue(questionOrder, out var question))
+                {
+                    values["QuestionPrompt"] = question.Prompt;
+                    values["QuestionMaxScore"] =
+                        question.MaxScore.ToString(
+                            System.Globalization.CultureInfo.InvariantCulture);
+                }
+
+                return new ImportPreviewRow(row.RowNumber, values);
+            })
+            .ToArray();
     }
 
     private async Task<ScopeResult> ResolveScopeAsync(
