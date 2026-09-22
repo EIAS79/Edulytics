@@ -295,7 +295,7 @@ public sealed class ImportModelAndUiTests
             "Guid? assessmentId",
             controller);
         Assert.Contains(
-            "SelectedAssessmentId",
+            "selectedAssessmentId",
             controller);
         Assert.Contains(
             "data-selected-assessment-id",
