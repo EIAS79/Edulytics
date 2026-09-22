@@ -22,10 +22,10 @@ Its execution order is:
 4. **R4 — Rich Content V2 model and renderer:** COMPLETE
 5. **R5 — Instructional visual system:** COMPLETE
 6. **R6 — Curated Video Help:** COMPLETE
-7. **R7 — Pilot enrichment:** IMPLEMENTED — CI / review validation pending
-8. **R8 — Catalogue-wide rollout and permanent quality gate:** NOT STARTED
+7. **R7 — Pilot enrichment:** COMPLETE — merged, CI green and production deployed
+8. **R8 — Catalogue-wide rollout and permanent quality gate:** IN PROGRESS
 
-**Current execution position:** R1–R6 are complete in implementation. R7 contains a controlled **26-lesson pilot**: all **24 Cambridge Primary Stage 6 source-backed pedagogical lessons** plus **2 existing UAE Grade 9 Advanced officially mapped lessons**. Student and Teacher resolve the same Rich Lesson Content V2 body with legacy-content fallback, structured mathematical visuals, and optional curated privacy-enhanced Video Help. The source-dossier pipeline covers all **4,453** effective mathematics lessons and fails closed: the **1,569 Polish framework-only lessons remain explicitly SourceResearchRequired**, while reference-only official material is not treated as licensed adaptation material. R7 must not be marked complete until branch CI/review passes. **R8 remains the full-catalogue rollout and is not complete.**
+**Current execution position:** R1–R7 are complete. The 26-lesson controlled pilot is merged on `main`, passed both Phase16 CI and Mathematics Intelligence CI, and is live in production. R8 now expands Rich V2 beyond curated sidecars through a fail-closed catalogue-wide compiler. Curated Rich V2 remains authoritative; eligible English lessons may be compiled only from existing canonical content plus a `READY_VERIFIED` Practice contract and worked examples generated, solved and independently verified by the exact Mathematics engine. Non-English lessons are never silently replaced with English generated prose and remain explicitly classified for reviewed localized authoring. A permanent R8 status artifact classifies every one of the **4,453** lessons as Rich-ready or an explicit blocker.
 
 **Evidence:** `docs/lesson-content-v2/catalogue-summary.md`, `docs/lesson-content-v2/R3_R7_PILOT_IMPLEMENTATION.md`, `RichLessonContentQualityAudit`, `RichLessonSourceDossierFactory`, `RichLessonContentV2Registry`, the shared Rich V2 renderer, and generated `artifacts/lesson-content-v2/*` CI outputs.
 
