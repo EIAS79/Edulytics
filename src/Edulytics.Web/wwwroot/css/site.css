@@ -9590,7 +9590,12 @@ a.lesson-content-row:hover
     }
 
     .rich-number-line {
+        width: 100%;
+        min-width: 0;
         overflow-x: auto;
+    }
+
+    .rich-number-line > * {
         min-width: 32rem;
     }
 }
