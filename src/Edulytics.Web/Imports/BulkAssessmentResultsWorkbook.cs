@@ -98,6 +98,14 @@ public static class BulkAssessmentResultsWorkbook
         {
             return null;
         }
+        catch (ArgumentException)
+        {
+            return null;
+        }
+        catch (InvalidOperationException)
+        {
+            return null;
+        }
     }
 
     public static BulkAssessmentResultsWorkbookValidation ValidateAndNormalize(
@@ -121,7 +129,7 @@ public static class BulkAssessmentResultsWorkbook
             var metadata = ReadSheet(archive, "xl/worksheets/sheet2.xml", sharedStrings);
             downloaded = ReadMetadata(metadata);
         }
-        catch (Exception ex) when (ex is InvalidDataException or IOException or FormatException)
+        catch (Exception ex) when (ex is InvalidDataException or IOException or FormatException or ArgumentException or InvalidOperationException)
         {
             return BulkAssessmentResultsWorkbookValidation.Failure(
                 "This is not a valid Edulytics Assessment Results workbook. Download a fresh workbook and try again.");
@@ -281,10 +289,7 @@ public static class BulkAssessmentResultsWorkbook
             var originalId = original.StudentProfileId.ToString("D");
             if (!string.Equals(submittedId, originalId, StringComparison.OrdinalIgnoreCase))
             {
-                return ChangedValue(
-                    $"Student identifier on row {row}",
-                    submittedId,
-                    originalId);
+                return $"Student identity on row {row} was changed. Restore the original row exactly or download a fresh workbook.";
             }
 
             var submittedNumber = Value(results, row, 2);
@@ -302,10 +307,7 @@ public static class BulkAssessmentResultsWorkbook
                 : Convert.ToBase64String(original.ResultRowVersion);
             if (!string.Equals(submittedVersion, originalVersion, StringComparison.Ordinal))
             {
-                return ChangedValue(
-                    $"Result version on row {row}",
-                    submittedVersion,
-                    originalVersion);
+                return $"Protected result metadata on row {row} was changed. Restore the original row exactly or download a fresh workbook.";
             }
 
             var submittedName = Value(results, row, 4);
@@ -481,21 +483,10 @@ public static class BulkAssessmentResultsWorkbook
 
             for (var questionIndex = 0; questionIndex < questions.Length; questionIndex++)
             {
-                var question = questions[questionIndex];
-                if (student.QuestionScores.TryGetValue(question.Id, out var existingScore))
-                {
-                    cells.Add(
-                        NumericCell(
-                            $"{ColumnName(FirstScoreColumn + questionIndex)}{rowNumber}",
-                            existingScore));
-                }
-                else
-                {
-                    cells.Add(
-                        InlineCell(
-                            $"{ColumnName(FirstScoreColumn + questionIndex)}{rowNumber}",
-                            string.Empty));
-                }
+                cells.Add(
+                    InlineCell(
+                        $"{ColumnName(FirstScoreColumn + questionIndex)}{rowNumber}",
+                        string.Empty));
             }
 
             rows.Add(new XElement(
