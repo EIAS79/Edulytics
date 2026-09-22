@@ -177,6 +177,7 @@ public static class BulkAssessmentResultsWorkbook
     {
         if (!string.Equals(downloaded.AssessmentTitle, current.Assessment.Title, StringComparison.Ordinal) ||
             downloaded.AssessmentDate != current.Assessment.AssessmentDate ||
+            downloaded.AcademicYearId != current.Assessment.AcademicYearId ||
             downloaded.ClassGroupId != current.Assessment.ClassGroupId ||
             !string.Equals(downloaded.ClassName, currentClass.Name, StringComparison.Ordinal) ||
             !ByteArraysEqual(downloaded.AssessmentRowVersion, current.Assessment.RowVersion))
@@ -533,9 +534,10 @@ public static class BulkAssessmentResultsWorkbook
             MetadataRow(2, "AssessmentId", workspace.Assessment.Id.ToString("D")),
             MetadataRow(3, "AssessmentTitle", workspace.Assessment.Title),
             MetadataRow(4, "AssessmentDate", workspace.Assessment.AssessmentDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture)),
-            MetadataRow(5, "ClassGroupId", workspace.Assessment.ClassGroupId.ToString("D")),
-            MetadataRow(6, "ClassName", classItem.Name),
-            MetadataRow(7, "AssessmentRowVersion", Convert.ToBase64String(workspace.Assessment.RowVersion))
+            MetadataRow(5, "AcademicYearId", workspace.Assessment.AcademicYearId.ToString("D")),
+            MetadataRow(6, "ClassGroupId", workspace.Assessment.ClassGroupId.ToString("D")),
+            MetadataRow(7, "ClassName", classItem.Name),
+            MetadataRow(8, "AssessmentRowVersion", Convert.ToBase64String(workspace.Assessment.RowVersion))
         };
 
         var rowNumber = 10;
@@ -606,6 +608,9 @@ public static class BulkAssessmentResultsWorkbook
             date = default;
         }
 
+        if (!Guid.TryParse(values.GetValueOrDefault("AcademicYearId"), out var academicYearId))
+            academicYearId = Guid.Empty;
+
         if (!Guid.TryParse(values.GetValueOrDefault("ClassGroupId"), out var classGroupId))
             classGroupId = Guid.Empty;
 
@@ -662,6 +667,7 @@ public static class BulkAssessmentResultsWorkbook
             assessmentId,
             title,
             date,
+            academicYearId,
             classGroupId,
             className,
             assessmentVersion,
@@ -945,6 +951,7 @@ public static class BulkAssessmentResultsWorkbook
         Guid AssessmentId,
         string AssessmentTitle,
         DateOnly AssessmentDate,
+        Guid AcademicYearId,
         Guid ClassGroupId,
         string ClassName,
         byte[]? AssessmentRowVersion,
