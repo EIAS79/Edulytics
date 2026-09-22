@@ -27,20 +27,25 @@ public sealed class AssessmentResultsBreakdownContractTests
         var view = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/Views/Assessments/Results.cshtml"));
+        var paper = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Shared/_AssessmentPaper.cshtml"));
 
         Assert.Contains("assessment-results-roster", view, StringComparison.Ordinal);
         Assert.Contains("assessment-result-roster-row", view, StringComparison.Ordinal);
         Assert.Contains("assessment-student-link", view, StringComparison.Ordinal);
         Assert.Contains("asp-route-studentProfileId", view, StringComparison.Ordinal);
         Assert.Contains("selectedStudentId", view, StringComparison.Ordinal);
-        Assert.Contains("assessment-selected-paper", view, StringComparison.Ordinal);
-        Assert.Contains("assessment-breakdown-table", view, StringComparison.Ordinal);
         Assert.Contains("selectedStudent.QuestionResponses.TryGetValue", view, StringComparison.Ordinal);
         Assert.Contains("question.CorrectAnswer", view, StringComparison.Ordinal);
-        Assert.Contains("assessment-score-badge", view, StringComparison.Ordinal);
-        Assert.Contains("— / @question.MaxScore", view, StringComparison.Ordinal);
-        Assert.Contains("No submitted answer recorded", view, StringComparison.Ordinal);
-        Assert.Contains("No expected answer recorded", view, StringComparison.Ordinal);
+        Assert.Contains("_AssessmentPaper", view, StringComparison.Ordinal);
+
+        Assert.Contains("assessment-selected-paper", paper, StringComparison.Ordinal);
+        Assert.Contains("assessment-breakdown-table", paper, StringComparison.Ordinal);
+        Assert.Contains("assessment-score-badge", paper, StringComparison.Ordinal);
+        Assert.Contains("— / @question.MaxScore", paper, StringComparison.Ordinal);
+        Assert.Contains("No submitted answer recorded", paper, StringComparison.Ordinal);
+        Assert.Contains("No expected answer recorded", paper, StringComparison.Ordinal);
     }
 
     [Fact]
