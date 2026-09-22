@@ -373,11 +373,22 @@ public static partial class RichLessonContentV2RuntimeComposer
     private static string HumanizeFamily(string value)
     {
         var tokens = value
-            .Split('.', StringSplitOptions.RemoveEmptyEntries)
-            .Skip(2)
-            .ToArray();
+            .Split('.', StringSplitOptions.RemoveEmptyEntries);
 
-        return HumanizeTokens(tokens.Length > 0 ? tokens : value.Split('.'));
+        if (tokens.Length > 1 &&
+            string.Equals(
+                tokens[0],
+                "supporting",
+                StringComparison.OrdinalIgnoreCase))
+        {
+            tokens = tokens.Skip(1).ToArray();
+        }
+
+        // Question-family identifiers do not share a universal two-segment
+        // namespace. Keep the mathematical concept in learner-facing labels:
+        // ratio.unit_rate.direct -> "Ratio Unit Rate Direct",
+        // vectors.magnitude.exact -> "Vectors Magnitude Exact".
+        return HumanizeTokens(tokens);
     }
 
     private static string HumanizeTokens(IEnumerable<string> tokens)
