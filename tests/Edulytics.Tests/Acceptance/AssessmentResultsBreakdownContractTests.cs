@@ -51,32 +51,30 @@ public sealed class AssessmentResultsBreakdownContractTests
             root,
             "src/Edulytics.Web/Views/Assessments/Details.cshtml"));
 
+        var publishedStart = details.IndexOf(
+            "@if (assessment.Status != AssessmentStatus.Draft)",
+            StringComparison.Ordinal);
+        var headerEnd = details.IndexOf(
+            "</header>",
+            publishedStart,
+            StringComparison.Ordinal);
+
+        Assert.True(publishedStart >= 0);
+        Assert.True(headerEnd > publishedStart);
+
+        var publishedActions = details[publishedStart..headerEnd];
+
         Assert.Contains(
-            "assessment.Status != AssessmentStatus.Draft",
-            details,
+            "assessment.DeliveryMode == AssessmentDeliveryMode.Offline",
+            publishedActions,
             StringComparison.Ordinal);
         Assert.Contains(
             "asp-action=\"Results\"",
-            details,
+            publishedActions,
             StringComparison.Ordinal);
-        Assert.Contains(
-            "assessment.DeliveryMode == AssessmentDeliveryMode.Offline",
-            details,
-            StringComparison.Ordinal);
-
-        var resultsIndex = details.IndexOf(
-            "asp-action=\"Results\"",
-            StringComparison.Ordinal);
-        var offlineCondition = details.LastIndexOf(
-            "assessment.DeliveryMode == AssessmentDeliveryMode.Offline",
-            resultsIndex,
-            StringComparison.Ordinal);
-
-        Assert.True(resultsIndex >= 0);
-        Assert.True(offlineCondition >= 0);
-        Assert.Contains(
-            "</a>\n            }\n                <a class=\"school-button school-button-primary\"\n                   asp-action=\"Results\"",
-            details.Replace("\r\n", "\n"),
+        Assert.DoesNotContain(
+            "assessment.DeliveryMode == AssessmentDeliveryMode.Online",
+            publishedActions,
             StringComparison.Ordinal);
     }
 
