@@ -242,7 +242,7 @@ public sealed class RichLessonContentV2CatalogueAuditTests
             Path.Combine(
                 outputDirectory,
                 "catalogue-summary.md"),
-            BuildMarkdownSummary(summary, rows));
+            BuildMarkdownSummary(summary));
 
         Console.WriteLine(
             JsonSerializer.Serialize(
@@ -364,8 +364,7 @@ public sealed class RichLessonContentV2CatalogueAuditTests
     }
 
     private static string BuildMarkdownSummary(
-        object summary,
-        IEnumerable<dynamic> rows)
+        object summary)
     {
         var data = JsonSerializer.SerializeToElement(summary);
         var quality = data.GetProperty("quality");
