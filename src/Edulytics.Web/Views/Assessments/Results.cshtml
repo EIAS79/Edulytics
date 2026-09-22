@@ -1,4 +1,5 @@
 @using Edulytics.Core.Constants
+@using Edulytics.Core.Enums
 @using System.Globalization
 @model Edulytics.Web.ViewModels.Assessments.AssessmentResultsViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentResource> A
@@ -22,14 +23,7 @@
     var noResponseLabel = language switch { "pl" => "Brak zapisanej odpowiedzi", "ar" => "لا توجد إجابة مسجلة", _ => "No submitted answer recorded" };
     var blankResponseLabel = language switch { "pl" => "Brak odpowiedzi", "ar" => "لم تتم الإجابة", _ => "No answer submitted" };
     var noExpectedLabel = language switch { "pl" => "Brak zapisanej odpowiedzi wzorcowej", "ar" => "لا توجد إجابة نموذجية مسجلة", _ => "No expected answer recorded" };
-    var downloadWorkbookLabel = language switch { "pl" => "Pobierz arkusz wyników Excel", "ar" => "تنزيل ملف نتائج Excel", _ => "Download Excel results workbook" };
-    var uploadWorkbookLabel = language switch { "pl" => "Zaimportuj wyniki z Excel", "ar" => "استيراد النتائج من Excel", _ => "Import results from Excel" };
-    var workbookHelpLabel = language switch
-    {
-        "pl" => "Arkusz zawiera uczniów tego oddziału w jednym wierszu na ucznia. Uzupełnij tylko punkty przy pytaniach; identyfikatory są ukryte.",
-        "ar" => "الملف يحتوي طلاب هذا الصف، طالب واحد في كل صف. املأ درجات الأسئلة فقط؛ المعرّفات مخفية.",
-        _ => "The workbook is pre-filled with this class roster, one student per row. Enter question scores only; stable IDs are hidden."
-    };
+    var importScoresLabel = language switch { "pl" => "Importuj punkty", "ar" => "إدخال الدرجات", _ => "Import scores" };
 
     var selectedStudentId = Guid.TryParse(Context.Request.Query["studentProfileId"], out var parsedStudentId)
         ? parsedStudentId
@@ -45,7 +39,20 @@
             <h1>@A["Results"] — @assessment.Title</h1>
             <p>@A["Status"]: @A[Model.StatusKey] · @A["MaxScore"]: @assessment.MaxScore.ToString("0.##")</p>
         </div>
-        <a class="school-button" asp-action="Details" asp-route-id="@assessment.Id">@A["Details"]</a>
+        <div class="assessment-actions">
+            @if (User.IsInRole(RoleNames.Teacher) &&
+                 assessment.DeliveryMode == AssessmentDeliveryMode.Offline &&
+                 assessment.Status == AssessmentStatus.Open)
+            {
+                <a class="school-button school-button-primary"
+                   asp-controller="Imports"
+                   asp-action="Index"
+                   asp-route-assessmentId="@assessment.Id">
+                    @importScoresLabel
+                </a>
+            }
+            <a class="school-button" asp-action="Details" asp-route-id="@assessment.Id">@A["Details"]</a>
+        </div>
     </header>
 
     @if (TempData["Success"] is string success)
@@ -56,34 +63,6 @@
     {
         <div class="school-alert school-alert-error" role="alert">@error</div>
     }
-
-    <section class="assessment-card assessment-results-workbook-card">
-        <div>
-            <h2>@(language switch { "pl" => "Wyniki w Excel", "ar" => "نتائج Excel", _ => "Excel results workflow" })</h2>
-            <p>@workbookHelpLabel</p>
-        </div>
-        <div class="assessment-actions">
-            <a class="school-button"
-               asp-action="DownloadResultsWorkbook"
-               asp-route-id="@assessment.Id">@downloadWorkbookLabel</a>
-
-            @if (User.IsInRole(RoleNames.Teacher))
-            {
-                <form asp-action="ImportResultsWorkbook"
-                      asp-route-id="@assessment.Id"
-                      method="post"
-                      enctype="multipart/form-data"
-                      class="assessment-form assessment-results-workbook-import">
-                    @Html.AntiForgeryToken()
-                    <input type="file"
-                           name="workbook"
-                           accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-                           required />
-                    <button class="school-button school-button-primary" type="submit">@uploadWorkbookLabel</button>
-                </form>
-            }
-        </div>
-    </section>
 
     @if (Model.Workspace.Students.Count == 0)
     {
