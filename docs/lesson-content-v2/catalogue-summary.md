@@ -20,8 +20,8 @@
 
 | Overall Rich Content V2 status | Count |
 |---|---:|
-| Good | 139 |
-| Needs expansion | 2,743 |
+| Good | 131 |
+| Needs expansion | 2,751 |
 | Generic | 2 |
 | Source research required | 1,569 |
 
@@ -34,7 +34,7 @@ The result confirms the programme premise: **4,314 of 4,453 lessons are not yet 
 | CAMBRIDGE-INTL-MATH | 566 | 27 | 539 | 0 | 564 | 2 | 0 |
 | PL-NATIONAL-MATH | 1,569 | 1,569 | 0 | 0 | 0 | 0 | 1,569 |
 | UAE-MOE-MATH | 758 | 42 | 716 | 0 | 758 | 0 | 0 |
-| US-CCSS-MATH | 1,560 | 1,466 | 94 | 139 | 1,421 | 0 | 0 |
+| US-CCSS-MATH | 1,560 | 1,466 | 94 | 131 | 1,429 | 0 | 0 |
 
 ## Section-level structural findings
 
