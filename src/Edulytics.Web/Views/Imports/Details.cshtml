@@ -137,8 +137,8 @@
                 : int.MaxValue;
     }
 
-    var assessmentStudentGroups = isAssessmentResults
-        ? Model.Batch.PreviewRows
+    var assessmentStudentGroups = Model.Batch.PreviewRows
+            .Where(_ => isAssessmentResults)
             .GroupBy(row =>
             {
                 if (row.Values.TryGetValue("StudentNumber", out var number) &&
@@ -199,8 +199,7 @@
                 };
             })
             .OrderBy(group => group.StudentName)
-            .ToArray()
-        : [];
+            .ToArray();
 
     ViewData["Title"] = I["Batch"].Value;
 }
