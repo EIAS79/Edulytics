@@ -13,7 +13,7 @@
 | Officially mapped lessons | 3,104 |
 | Supporting / no-formal-outcome lessons | 1,349 |
 | Source Policy v2 coverage | 4,453 |
-| Lessons requiring new source-policy research before enrichment | 0 |
+| Lessons requiring pedagogical-source research before enrichment | 1,569 |
 | Lessons with no curated Video Help resource | 4,453 |
 
 ## Quality baseline
@@ -29,12 +29,12 @@ The result confirms the programme premise: **4,314 of 4,453 lessons are not yet 
 
 ## By curriculum
 
-| Curriculum | Lessons | Official | Supporting | Good | Needs expansion | Generic |
-|---|---:|---:|---:|---:|---:|---:|
-| CAMBRIDGE-INTL-MATH | 566 | 27 | 539 | 0 | 564 | 2 |
-| PL-NATIONAL-MATH | 1,569 | 1,569 | 0 | 0 | 0 | 0 |
-| UAE-MOE-MATH | 758 | 42 | 716 | 0 | 758 | 0 |
-| US-CCSS-MATH | 1,560 | 1,466 | 94 | 139 | 1,421 | 0 |
+| Curriculum | Lessons | Official | Supporting | Good | Needs expansion | Generic | Source research |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| CAMBRIDGE-INTL-MATH | 566 | 27 | 539 | 0 | 564 | 2 | 0 |
+| PL-NATIONAL-MATH | 1,569 | 1,569 | 0 | 0 | 0 | 0 | 1,569 |
+| UAE-MOE-MATH | 758 | 42 | 716 | 0 | 758 | 0 | 0 |
+| US-CCSS-MATH | 1,560 | 1,466 | 94 | 139 | 1,421 | 0 | 0 |
 
 ## Section-level structural findings
 
