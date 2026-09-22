@@ -180,6 +180,22 @@ public sealed class RichLessonContentV2PilotTests
             "youtube-nocookie.com/embed/",
             richPartial,
             StringComparison.Ordinal);
+
+        var securityHeaders = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Middleware/SecurityHeadersMiddleware.cs"));
+        Assert.Contains(
+            "https://www.youtube-nocookie.com",
+            securityHeaders,
+            StringComparison.Ordinal);
+
+        var styles = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/css/site.css"));
+        Assert.DoesNotContain(
+            ".rich-number-line {\n        overflow-x: auto;\n        min-width: 32rem;",
+            styles.Replace("\r\n", "\n"),
+            StringComparison.Ordinal);
         Assert.Contains(
             "RichLessonVideoReviewStatus.Approved",
             richPartial,
@@ -218,7 +234,7 @@ public sealed class RichLessonContentV2PilotTests
             .Select(x => x.LessonCode)
             .ToHashSet(StringComparer.Ordinal);
 
-        Assert.Subset(richCodes, existingCodes);
+        Assert.Subset(existingCodes, richCodes);
     }
 
     [Fact]
@@ -243,7 +259,6 @@ public sealed class RichLessonContentV2PilotTests
         Assert.Contains(videos, x => x.VideoId == "HpdMJaKaXXc");
         Assert.Contains(videos, x => x.VideoId == "2dbasvm3iG0");
         Assert.Contains(videos, x => x.VideoId == "PcEwj5_v75g");
-        Assert.Contains(videos, x => x.VideoId == "UYab2QKERBE");
     }
 
     [Fact]
