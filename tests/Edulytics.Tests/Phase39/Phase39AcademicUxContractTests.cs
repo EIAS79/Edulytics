@@ -66,6 +66,32 @@ public sealed class Phase39AcademicUxContractTests
 
 
     [Fact]
+    public void TeacherAssignment_EnforcesSupervisorSubjectBoundaryServerSide()
+    {
+        var root = FindRepositoryRoot();
+        var service = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Services/Curriculum/ExplicitCurriculumLevelService.cs"));
+
+        Assert.Contains(
+            "ISubjectSupervisorAssignmentRepository?",
+            service,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "ListActiveBySupervisorAsync",
+            service,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "x.SubjectId == adoption.SubjectId",
+            service,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "ExplicitCurriculumLevelErrorCode.AccessDenied",
+            service,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void TeacherAssignments_SupportMultipleClassesWithoutExposingSubjectChoice()
     {
         var root = FindRepositoryRoot();
