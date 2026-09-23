@@ -842,7 +842,10 @@
                     </div>
 
                     <div class="academic-move-summary">
-                        <strong id="student-move-selected">@A["SelectedStudentsValue", 0]</strong>
+                        <strong id="student-move-selected"
+                                data-selected-template="@A["SelectedStudentsValue", "{0}"]">
+                            @A["SelectedStudentsValue", 0]
+                        </strong>
                         <button id="student-move-review"
                                 type="button"
                                 class="school-button school-button-primary"
@@ -1184,9 +1187,10 @@
     const refreshMoveSelection = () => {
         const count = selectedMoveRows().length;
         if (moveSelected) {
-            moveSelected.textContent = count === 1
-                ? '1 student selected'
-                : `${count} students selected`;
+            const template =
+                moveSelected.dataset.selectedTemplate || '{0} selected';
+            moveSelected.textContent =
+                template.replace('{0}', String(count));
         }
 
         const canReview =
