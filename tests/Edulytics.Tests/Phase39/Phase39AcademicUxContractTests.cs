@@ -190,7 +190,9 @@ public sealed class Phase39AcademicUxContractTests
         Assert.DoesNotContain(
             "AddEnrollmentAsync(\n                    new StudentEnrollment",
             service[
-                service.IndexOf("MoveStudentsAsync(", StringComparison.Ordinal)..],
+                service.IndexOf(
+                    "public async Task<StudentPlacementResult> MoveStudentsAsync(",
+                    StringComparison.Ordinal)..],
             StringComparison.Ordinal);
     }
 
