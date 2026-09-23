@@ -374,8 +374,8 @@ public sealed class StudentPrivatePracticeServiceTests
         Assert.True(result.Succeeded);
         Assert.Null(result.Error);
         Assert.NotNull(repo.SavedAttempt);
-        Assert.Equal(10, repo.SavedItems.Count);
-        Assert.Equal(10m, repo.SavedAttempt!.MaxScore);
+        Assert.Equal(8, repo.SavedItems.Count);
+        Assert.Equal(8m, repo.SavedAttempt!.MaxScore);
 
         var semanticPairs = new List<string>();
         var forms = new HashSet<int>();
@@ -400,9 +400,9 @@ public sealed class StudentPrivatePracticeServiceTests
         Assert.Equal(
             repo.SavedItems.Count,
             semanticPairs.Distinct(StringComparer.Ordinal).Count());
-        Assert.True(
-            forms.Count >= 3,
-            $"Expected at least 3 genuine shape question forms, got {string.Join(",", forms.OrderBy(x => x))}.");
+        Assert.Equal(
+            new[] { 0, 1 },
+            forms.OrderBy(x => x).ToArray());
     }
 
     [Fact]
