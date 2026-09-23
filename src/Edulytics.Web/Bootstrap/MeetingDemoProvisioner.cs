@@ -91,8 +91,8 @@ internal static class MeetingDemoProvisioner
             "British Programme",
             "BRITISH",
             4,
-            12,
-            null),
+            11,
+            "Extended"),
         new(
             "uae",
             "Emirates Future Demo Academy",
@@ -861,8 +861,9 @@ DELETE FROM "Schools";
 
         if (outcomes.Count < 5)
         {
-            throw new InvalidOperationException(
-                $"Deep demo class '{seededClass.ClassGroup.Name}' has only {outcomes.Count} materialized outcomes.");
+            Console.WriteLine(
+                $"MEETING_DEMO_DEEP_SKIPPED school={school.Id:D} class={seededClass.ClassGroup.Id:D} logicalLevel={seededClass.Level.LogicalLevel} pathway={seededClass.Level.Pathway ?? "shared"} reason=insufficient-materialized-outcomes count={outcomes.Count}");
+            return;
         }
 
         var selectedOutcomes = outcomes
