@@ -41,6 +41,44 @@ public sealed class SchoolUsersController : Controller
         _studentProvisioning = studentProvisioning;
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor)]
+    [HttpGet("options/teachers")]
+    public async Task<IActionResult> TeacherOptions(
+        string? search,
+        int page = 1,
+        CancellationToken cancellationToken = default)
+    {
+        if (!TryGetActorId(out var actorUserId))
+            return Forbid();
+
+        var result = await _users.ListAsync(
+            actorUserId,
+            requestedSchoolId: null,
+            new SchoolUserListRequest(
+                Search: search,
+                Role: RoleNames.Teacher,
+                IsActive: true,
+                IsLocked: false,
+                Page: page,
+                PageSize: 50),
+            cancellationToken);
+
+        if (result.Value is null)
+            return QueryFailure(result.Error);
+
+        return Json(new
+        {
+            items = result.Value.Users.Select(x => new
+            {
+                id = x.Id,
+                email = x.Email
+            }),
+            page = result.Value.Page,
+            totalPages = result.Value.TotalPages,
+            totalCount = result.Value.TotalCount
+        });
+    }
+
     [HttpGet("")]
     public async Task<IActionResult> Index(
         Guid? schoolId,
