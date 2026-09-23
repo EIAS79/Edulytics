@@ -183,7 +183,9 @@ Not every family must support every form.
 
 # Phase 3 — Practice Assessment Composer
 
-**Status: IN PROGRESS**
+**Status: COMPLETE**
+
+**Closure:** Personal lesson Practice now composes a deterministic candidate blueprint before generation, interleaves families/forms, enforces session-level semantic uniqueness, refuses wording padding, and forbids using forms outside the requested cognitive difficulty. Full Mathematics and Phase16 gates passed.
 
 ## Goal
 
@@ -205,6 +207,8 @@ The composer never pads a session with wording-only duplicates to satisfy a coun
 ---
 
 # Phase 4 — Honest Difficulty Progression
+
+**Status: IN PROGRESS**
 
 ## Goal
 
