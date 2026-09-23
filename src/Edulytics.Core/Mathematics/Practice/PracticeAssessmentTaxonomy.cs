@@ -153,7 +153,7 @@ public static class PracticeQuestionFormCapabilityRegistry
                 PracticeQuestionForm.Calculate,
                 PracticeCognitiveOperation.Apply,
                 PracticeCognitiveDifficulty.Standard,
-                PracticeCognitiveDifficulty.Challenge,
+                PracticeCognitiveDifficulty.Standard,
                 AllVariantSlots)
         ];
     }
