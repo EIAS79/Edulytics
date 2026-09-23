@@ -256,7 +256,9 @@ Certify the complete learner-visible session before persistence.
 
 # Phase 6 — Full 4,453-Lesson Certification
 
-**Status: IN PROGRESS**
+**Status: COMPLETE**
+
+**Closure:** Practice V2 runtime certification executed both Standard composed Practice (maximum 10 items) and 8-item progressive Lesson Practice across all 4,453 learner-visible Mathematics lesson contracts. All 4,453 contracts certified with zero blocked lessons. Standard sessions: 4,233 READY_BALANCED and 220 READY_NARROW; Progressive sessions: 4,396 READY_BALANCED and 57 READY_NARROW. Standard generated 43,760 questions with 43,760 distinct semantic identities; Progressive generated 35,420 questions with 35,420 distinct semantic identities. 20,955 learner visuals were rendered across both paths with zero answer-leak blocks. Mathematics Intelligence Foundation #598 and Phase16 CI #1537 passed, including catalogue closure, full regression, PostgreSQL, CodeQL/SAST and production image/Trivy gates.
 
 ## Goal
 
@@ -295,6 +297,8 @@ There must be:
 ---
 
 # Phase 7 — Production Rollout
+
+**Status: IN PROGRESS**
 
 ## Release gates
 
