@@ -612,12 +612,12 @@
                                 <option value="">@A["AllOptions"]</option>
                                 @foreach (var level in explicitClasses
                                     .Where(x => x.Status == AcademicStructureStatus.Active)
-                                    .GroupBy(x => new { x.CurriculumLogicalLevel, x.CurriculumLevelLabel, x.CurriculumPathway })
+                                    .GroupBy(x => new { x.CurriculumLevelKey, x.CurriculumLogicalLevel, x.CurriculumLevelLabel, x.CurriculumPathway })
                                     .Select(x => x.Key)
                                     .OrderBy(x => x.CurriculumLogicalLevel)
                                     .ThenBy(x => x.CurriculumPathway ?? string.Empty))
                                 {
-                                    <option value="@level.CurriculumLogicalLevel">
+                                    <option value="@level.CurriculumLevelKey">
                                         @level.CurriculumLevelLabel@(string.IsNullOrWhiteSpace(level.CurriculumPathway) ? string.Empty : $" · {level.CurriculumPathway}")
                                     </option>
                                 }
@@ -644,7 +644,7 @@
                             <option value="@item.ClassGroupId"
                                     data-year-id="@item.AcademicYearId"
                                     data-program-id="@item.AcademicProgramId"
-                                    data-level="@item.CurriculumLogicalLevel"
+                                    data-level-key="@item.CurriculumLevelKey"
                                     data-assignment-state="@(hasAssignment ? "assigned" : "unassigned")">
                                 @item.Name — @item.CurriculumLevelLabel@(string.IsNullOrWhiteSpace(item.CurriculumPathway) ? string.Empty : $" — {item.CurriculumPathway}") — @item.AcademicYearName
                             </option>
