@@ -329,21 +329,21 @@ public sealed class ProductionHardeningTests
                 "app.MapFallback(",
                 StringComparison.Ordinal);
 
-        var runIndex =
+        var startIndex =
             program.IndexOf(
-                "app.Run();",
+                "await app.StartAsync();",
                 StringComparison.Ordinal);
 
         Assert.True(
             fallbackIndex >= 0);
 
         Assert.True(
-            runIndex > fallbackIndex);
+            startIndex > fallbackIndex);
 
         var fallback =
             program[
                 fallbackIndex..
-                runIndex];
+                startIndex];
 
         Assert.Contains(
             "StatusCodes.Status404NotFound",
