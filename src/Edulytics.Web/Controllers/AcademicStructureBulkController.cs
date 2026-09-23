@@ -124,6 +124,7 @@ public sealed class AcademicStructureBulkController : Controller
     [HttpPost("student-placements/bulk")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> PlaceStudents(
+        Guid sourceClassGroupId,
         Guid classGroupId,
         Guid[]? studentProfileIds,
         CancellationToken cancellationToken)
@@ -136,7 +137,10 @@ public sealed class AcademicStructureBulkController : Controller
             .Distinct()
             .ToArray();
 
-        if (classGroupId == Guid.Empty || ids.Length == 0)
+        if (sourceClassGroupId == Guid.Empty ||
+            classGroupId == Guid.Empty ||
+            sourceClassGroupId == classGroupId ||
+            ids.Length == 0)
         {
             TempData["AcademicError"] = IsPolish()
                 ? "Wybierz klasę i co najmniej jednego ucznia."
@@ -144,16 +148,17 @@ public sealed class AcademicStructureBulkController : Controller
             return BackToStudents();
         }
 
-        var result = await _placements.PlaceStudentsAsync(
+        var result = await _placements.MoveStudentsAsync(
             actorUserId,
+            sourceClassGroupId,
             classGroupId,
             ids,
             cancellationToken);
 
         var polish = IsPolish();
         var summary = polish
-            ? $"Dodano: {result.Enrolled}. Przeniesiono: {result.Moved}. Bez zmian: {result.Unchanged}."
-            : $"Enrolled: {result.Enrolled}. Moved: {result.Moved}. Unchanged: {result.Unchanged}.";
+            ? $"Przeniesiono uczniów: {result.Moved}."
+            : $"Students moved: {result.Moved}.";
 
         if (result.Failures.Count == 0)
         {

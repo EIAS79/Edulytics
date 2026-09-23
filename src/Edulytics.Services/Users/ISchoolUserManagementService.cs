@@ -7,6 +7,12 @@ public interface ISchoolUserManagementService
         Guid? requestedSchoolId,
         CancellationToken cancellationToken = default);
 
+    Task<SchoolUserQueryResult<SchoolUserListData>> ListAsync(
+        Guid actorUserId,
+        Guid? requestedSchoolId,
+        SchoolUserListRequest request,
+        CancellationToken cancellationToken = default);
+
     Task<SchoolUserQueryResult<SchoolUserManagementContext>>
         GetManagementContextAsync(
             Guid actorUserId,

@@ -74,9 +74,27 @@ public sealed record SchoolUserListItem(
     DateTime CreatedAtUtc,
     DateTime UpdatedAtUtc);
 
+public sealed record SchoolUserListRequest(
+    string? Search = null,
+    string? Role = null,
+    bool? IsActive = null,
+    bool? IsLocked = null,
+    int Page = 1,
+    int PageSize = 50);
+
 public sealed record SchoolUserListData(
     SchoolUserManagementContext Context,
-    IReadOnlyList<SchoolUserListItem> Users);
+    IReadOnlyList<SchoolUserListItem> Users)
+{
+    public string? Search { get; init; }
+    public string? Role { get; init; }
+    public bool? IsActive { get; init; }
+    public bool? IsLocked { get; init; }
+    public int Page { get; init; } = 1;
+    public int PageSize { get; init; } = 50;
+    public int TotalCount { get; init; }
+    public int TotalPages { get; init; } = 1;
+}
 
 public sealed record SchoolUserDetails(
     SchoolUserManagementContext Context,

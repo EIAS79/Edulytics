@@ -1,5 +1,6 @@
 using System.Text;
 using Edulytics.Core.Enums;
+using Edulytics.Core.Curriculum;
 using Edulytics.Services.Assessments;
 using Edulytics.Services.Imports;
 using Edulytics.Web.Imports;
@@ -32,6 +33,64 @@ public sealed class Phase39AcademicUxContractTests
         Assert.Contains("label = x.DisplayLabel", studentOptions, StringComparison.Ordinal);
     }
 
+
+    [Fact]
+    public void CambridgeCoreAndExtended_AreDistinctTracksWithExplicitUiLabels()
+    {
+        var level10 = CurriculumLevelIdentityRegistry
+            .ForPack(MathematicsCurriculumPackRegistry.CambridgeCode)
+            .Where(x => x.LogicalLevel == 10)
+            .ToArray();
+
+        var core = Assert.Single(level10, x => x.Pathway == "Core");
+        var extended = Assert.Single(level10, x => x.Pathway == "Extended");
+
+        Assert.NotEqual(core.Key, extended.Key);
+        Assert.NotEqual(core.DisplayLabel, extended.DisplayLabel);
+        Assert.Contains("Core", core.DisplayLabel, StringComparison.Ordinal);
+        Assert.Contains("Extended", extended.DisplayLabel, StringComparison.Ordinal);
+        Assert.Contains("level 10", core.DisplayLabel, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("level 10", extended.DisplayLabel, StringComparison.OrdinalIgnoreCase);
+
+        var root = FindRepositoryRoot();
+        var view = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/AcademicStructure/Index.cshtml"));
+
+        Assert.Contains("@level.DisplayLabel", view, StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "@level.Label@(string.IsNullOrWhiteSpace(level.Pathway)",
+            view,
+            StringComparison.Ordinal);
+    }
+
+
+    [Fact]
+    public void TeacherAssignment_EnforcesSupervisorSubjectBoundaryServerSide()
+    {
+        var root = FindRepositoryRoot();
+        var service = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Services/Curriculum/ExplicitCurriculumLevelService.cs"));
+
+        Assert.Contains(
+            "ISubjectSupervisorAssignmentRepository?",
+            service,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "ListActiveBySupervisorAsync",
+            service,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "x.SubjectId == adoption.SubjectId",
+            service,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "ExplicitCurriculumLevelErrorCode.AccessDenied",
+            service,
+            StringComparison.Ordinal);
+    }
+
     [Fact]
     public void TeacherAssignments_SupportMultipleClassesWithoutExposingSubjectChoice()
     {
@@ -53,6 +112,29 @@ public sealed class Phase39AcademicUxContractTests
     }
 
     [Fact]
+    public void TeacherAssignmentDirectory_UsesServerSearchAndStableCurriculumLevelKeys()
+    {
+        var root = FindRepositoryRoot();
+        var controller = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Controllers/SchoolUsersController.cs"));
+        var view = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/AcademicStructure/Index.cshtml"));
+        var javascript = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/site.js"));
+
+        Assert.Contains("options/teachers", controller, StringComparison.Ordinal);
+        Assert.Contains("Role: RoleNames.Teacher", controller, StringComparison.Ordinal);
+        Assert.Contains("data-level-key", view, StringComparison.Ordinal);
+        Assert.Contains("CurriculumLevelKey", view, StringComparison.Ordinal);
+        Assert.Contains("/School/Users/options/teachers", javascript, StringComparison.Ordinal);
+        Assert.Contains("wireTeacherAssignmentDirectory", javascript, StringComparison.Ordinal);
+        Assert.Contains("option.dataset.levelKey", javascript, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void StudentCreation_UsesUserManagementAsTheNormalEntryPoint()
     {
         var root = FindRepositoryRoot();
@@ -71,6 +153,47 @@ public sealed class Phase39AcademicUxContractTests
         Assert.Contains("ConvertToStudentAsync", filter, StringComparison.Ordinal);
         Assert.Contains("RollbackAsync", filter, StringComparison.Ordinal);
         Assert.Contains("CommitAsync", filter, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void StudentMovement_RequiresExplicitSourceSelectionDestinationAndReview()
+    {
+        var root = FindRepositoryRoot();
+        var view = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/AcademicStructure/Index.cshtml"));
+        var controller = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Controllers/AcademicStructureBulkController.cs"));
+        var service = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Services/Academics/StudentPlacementService.cs"));
+
+        Assert.Contains("id=\"move-source-class\"", view, StringComparison.Ordinal);
+        Assert.Contains("name=\"sourceClassGroupId\"", view, StringComparison.Ordinal);
+        Assert.Contains("name=\"studentProfileIds\"", view, StringComparison.Ordinal);
+        Assert.Contains("id=\"move-target-class\"", view, StringComparison.Ordinal);
+        Assert.Contains("id=\"student-move-review\"", view, StringComparison.Ordinal);
+        Assert.Contains("student-move-dialog", view, StringComparison.Ordinal);
+        Assert.Contains("@A[\"ConfirmMove\"]", view, StringComparison.Ordinal);
+        Assert.Contains("SelectAllVisible", view, StringComparison.Ordinal);
+        Assert.Contains("ManageStudentAccounts", view, StringComparison.Ordinal);
+
+        Assert.Contains("Guid sourceClassGroupId", controller, StringComparison.Ordinal);
+        Assert.Contains("MoveStudentsAsync(", controller, StringComparison.Ordinal);
+
+        Assert.Contains("sourceClassGroupId == targetClassGroupId", service, StringComparison.Ordinal);
+        Assert.Contains("CrossAcademicYearMoveNotAllowed", service, StringComparison.Ordinal);
+        Assert.Contains("CrossGradeMoveNotAllowed", service, StringComparison.Ordinal);
+        Assert.Contains("CrossCurriculumMoveNotAllowed", service, StringComparison.Ordinal);
+        Assert.Contains("StudentNotInSourceClass", service, StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "AddEnrollmentAsync(\n                    new StudentEnrollment",
+            service[
+                service.IndexOf(
+                    "public async Task<StudentPlacementResult> MoveStudentsAsync(",
+                    StringComparison.Ordinal)..],
+            StringComparison.Ordinal);
     }
 
     [Fact]

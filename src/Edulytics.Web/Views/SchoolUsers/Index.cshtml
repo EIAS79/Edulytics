@@ -17,6 +17,22 @@
                 : H["AdminUsersSubtitle"].Value;
 
     ViewData["Title"] = T["SchoolUsersTitle"].Value;
+
+    var roleTabs = new[]
+    {
+        (Value: string.Empty, Label: T["AllUsers"].Value),
+        (Value: RoleNames.Student, Label: T["RoleStudent"].Value),
+        (Value: RoleNames.Teacher, Label: T["RoleTeacher"].Value),
+        (Value: RoleNames.SubjectSupervisor, Label: T["RoleSubjectSupervisor"].Value),
+        (Value: RoleNames.SchoolAdmin, Label: T["RoleSchoolAdmin"].Value)
+    };
+
+    var firstVisible = Model.TotalCount == 0
+        ? 0
+        : ((Model.Page - 1) * Model.PageSize) + 1;
+    var lastVisible = Model.TotalCount == 0
+        ? 0
+        : Math.Min(Model.Page * Model.PageSize, Model.TotalCount);
 }
 
 <section class="user-page">
@@ -86,6 +102,90 @@
             @T["ArchivedUsersReadOnly"]
         </div>
     }
+
+    <section class="user-directory-controls" aria-label="@T["UserDirectoryFilters"]">
+        <nav class="user-role-tabs" aria-label="@T["UserRole"]">
+            @foreach (var tab in roleTabs)
+            {
+                var selected = string.Equals(
+                    Model.Role ?? string.Empty,
+                    tab.Value,
+                    StringComparison.Ordinal);
+
+                <form method="get" asp-action="Index" class="user-role-tab-form">
+                    <input type="hidden" name="schoolId" value="@Model.Context.SchoolId" />
+                    <input type="hidden" name="search" value="@Model.Search" />
+                    <input type="hidden" name="isActive" value="@Model.IsActive" />
+                    <input type="hidden" name="isLocked" value="@Model.IsLocked" />
+                    <input type="hidden" name="page" value="1" />
+                    <input type="hidden" name="pageSize" value="@Model.PageSize" />
+                    <button type="submit"
+                            name="role"
+                            value="@tab.Value"
+                            class="user-role-tab @(selected ? "is-active" : string.Empty)">
+                        @tab.Label
+                    </button>
+                </form>
+            }
+        </nav>
+
+        <form method="get" asp-action="Index" class="user-filter-bar">
+            <input type="hidden" name="schoolId" value="@Model.Context.SchoolId" />
+            <input type="hidden" name="role" value="@Model.Role" />
+
+            <label class="user-filter-field user-filter-search">
+                <span>@T["SearchUsers"]</span>
+                <input type="search"
+                       name="search"
+                       value="@Model.Search"
+                       maxlength="256"
+                       placeholder="@T["SearchUsersPlaceholder"]" />
+            </label>
+
+            <label class="user-filter-field">
+                <span>@T["AccountStatus"]</span>
+                <select name="isActive">
+                    <option value="" selected="@(!Model.IsActive.HasValue ? "selected" : null)">@T["AllStatuses"]</option>
+                    <option value="true" selected="@(Model.IsActive == true ? "selected" : null)">@T["UserActive"]</option>
+                    <option value="false" selected="@(Model.IsActive == false ? "selected" : null)">@T["UserInactive"]</option>
+                </select>
+            </label>
+
+            <label class="user-filter-field">
+                <span>@T["LockState"]</span>
+                <select name="isLocked">
+                    <option value="" selected="@(!Model.IsLocked.HasValue ? "selected" : null)">@T["AllStatuses"]</option>
+                    <option value="false" selected="@(Model.IsLocked == false ? "selected" : null)">@T["UserUnlocked"]</option>
+                    <option value="true" selected="@(Model.IsLocked == true ? "selected" : null)">@T["UserLocked"]</option>
+                </select>
+            </label>
+
+            <label class="user-filter-field user-filter-page-size">
+                <span>@T["RowsPerPage"]</span>
+                <select name="pageSize">
+                    @foreach (var size in new[] { 25, 50, 100 })
+                    {
+                        <option value="@size" selected="@(Model.PageSize == size ? "selected" : null)">@size</option>
+                    }
+                </select>
+            </label>
+
+            <div class="user-filter-actions">
+                <button type="submit" class="school-button school-button-primary">
+                    @T["ApplyFilters"]
+                </button>
+                <a class="school-button school-button-secondary"
+                   asp-action="Index"
+                   asp-route-schoolId="@Model.Context.SchoolId">
+                    @T["ClearFilters"]
+                </a>
+            </div>
+        </form>
+
+        <div class="user-directory-summary" aria-live="polite">
+            @T["ShowingUsers", firstVisible, lastVisible, Model.TotalCount]
+        </div>
+    </section>
 
     @if (Model.Users.Count == 0)
     {
@@ -184,5 +284,44 @@
                 </tbody>
             </table>
         </div>
+
+        @if (Model.TotalPages > 1)
+        {
+            <nav class="user-pagination" aria-label="@T["Pagination"]">
+                <form method="get" asp-action="Index" class="user-pagination-form">
+                    <input type="hidden" name="schoolId" value="@Model.Context.SchoolId" />
+                    <input type="hidden" name="search" value="@Model.Search" />
+                    <input type="hidden" name="role" value="@Model.Role" />
+                    <input type="hidden" name="isActive" value="@Model.IsActive" />
+                    <input type="hidden" name="isLocked" value="@Model.IsLocked" />
+                    <input type="hidden" name="pageSize" value="@Model.PageSize" />
+                    <button type="submit"
+                            name="page"
+                            value="@(Math.Max(1, Model.Page - 1))"
+                            class="school-button school-button-secondary school-button-small"
+                            disabled="@(Model.Page <= 1 ? "disabled" : null)">
+                        @T["PreviousPage"]
+                    </button>
+                </form>
+
+                <span>@T["PageOf", Model.Page, Model.TotalPages]</span>
+
+                <form method="get" asp-action="Index" class="user-pagination-form">
+                    <input type="hidden" name="schoolId" value="@Model.Context.SchoolId" />
+                    <input type="hidden" name="search" value="@Model.Search" />
+                    <input type="hidden" name="role" value="@Model.Role" />
+                    <input type="hidden" name="isActive" value="@Model.IsActive" />
+                    <input type="hidden" name="isLocked" value="@Model.IsLocked" />
+                    <input type="hidden" name="pageSize" value="@Model.PageSize" />
+                    <button type="submit"
+                            name="page"
+                            value="@(Math.Min(Model.TotalPages, Model.Page + 1))"
+                            class="school-button school-button-secondary school-button-small"
+                            disabled="@(Model.Page >= Model.TotalPages ? "disabled" : null)">
+                        @T["NextPage"]
+                    </button>
+                </form>
+            </nav>
+        }
     }
 </section>

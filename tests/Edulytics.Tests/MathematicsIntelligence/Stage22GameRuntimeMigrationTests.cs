@@ -200,6 +200,127 @@ public sealed class Stage22GameRuntimeMigrationTests
                 roundIndex: 0));
     }
 
+
+    [Fact]
+    public void ConcurrentTabs_DifferentLessons_KeepProtectedRoundsIsolated()
+    {
+        var contracts = Stage18PracticeSkillContracts.All.Take(2).ToArray();
+        Assert.Equal(2, contracts.Length);
+
+        var actor = Guid.NewGuid();
+        var adoption = Guid.NewGuid();
+        var lessonA = Guid.NewGuid();
+        var lessonB = Guid.NewGuid();
+
+        var roundA = runtime.CreateRound(
+            actor,
+            adoption,
+            lessonA,
+            contracts[0].LessonCode,
+            contracts[0].Mechanic,
+            roundIndex: 0);
+
+        var roundB = runtime.CreateRound(
+            actor,
+            adoption,
+            lessonB,
+            contracts[1].LessonCode,
+            contracts[1].Mechanic,
+            roundIndex: 0);
+
+        var correctA = CorrectChoice(actor, adoption, lessonA, roundA);
+        var correctB = CorrectChoice(actor, adoption, lessonB, roundB);
+        var wrongA = roundA.Choices.First(x => !string.Equals(x, correctA, StringComparison.Ordinal));
+        var wrongB = roundB.Choices.First(x => !string.Equals(x, correctB, StringComparison.Ordinal));
+
+        Assert.True(Evaluate(actor, adoption, lessonA, roundA, correctA).IsCorrect);
+        Assert.False(Evaluate(actor, adoption, lessonB, roundB, wrongB).IsCorrect);
+        Assert.True(Evaluate(actor, adoption, lessonB, roundB, correctB).IsCorrect);
+        Assert.False(Evaluate(actor, adoption, lessonA, roundA, wrongA).IsCorrect);
+
+        // Re-evaluating either tab after activity in the other must still use
+        // that tab's own protected lesson/question parameters.
+        Assert.True(Evaluate(actor, adoption, lessonA, roundA, correctA).IsCorrect);
+        Assert.True(Evaluate(actor, adoption, lessonB, roundB, correctB).IsCorrect);
+    }
+
+    [Fact]
+    public void ConcurrentTabs_SameLessonSeparateRounds_DoNotOverwriteEachOther()
+    {
+        var contract = Stage18PracticeSkillContracts.All
+            .First(x => x.AllowedQuestionFamilies.Count > 1);
+        var actor = Guid.NewGuid();
+        var adoption = Guid.NewGuid();
+        var lesson = Guid.NewGuid();
+
+        var tabA = runtime.CreateRound(
+            actor,
+            adoption,
+            lesson,
+            contract.LessonCode,
+            contract.Mechanic,
+            roundIndex: 0);
+
+        var tabB = runtime.CreateRound(
+            actor,
+            adoption,
+            lesson,
+            contract.LessonCode,
+            contract.Mechanic,
+            roundIndex: 1);
+
+        Assert.NotEqual(tabA.RoundToken, tabB.RoundToken);
+
+        var correctA = CorrectChoice(actor, adoption, lesson, tabA);
+        var correctB = CorrectChoice(actor, adoption, lesson, tabB);
+
+        Assert.True(Evaluate(actor, adoption, lesson, tabA, correctA).IsCorrect);
+        Assert.True(Evaluate(actor, adoption, lesson, tabB, correctB).IsCorrect);
+
+        // Starting additional rounds in one browser tab must not mutate the
+        // server authority represented by the other tab's protected token.
+        _ = runtime.CreateRound(
+            actor,
+            adoption,
+            lesson,
+            contract.LessonCode,
+            contract.Mechanic,
+            roundIndex: 2);
+        _ = runtime.CreateRound(
+            actor,
+            adoption,
+            lesson,
+            contract.LessonCode,
+            contract.Mechanic,
+            roundIndex: 3);
+
+        Assert.True(Evaluate(actor, adoption, lesson, tabA, correctA).IsCorrect);
+        Assert.True(Evaluate(actor, adoption, lesson, tabB, correctB).IsCorrect);
+    }
+
+    private string CorrectChoice(
+        Guid actor,
+        Guid adoption,
+        Guid lesson,
+        Stage22GameRound round) =>
+        round.Choices.Single(choice =>
+            Evaluate(actor, adoption, lesson, round, choice).IsCorrect);
+
+    private Stage22GameAnswerResult Evaluate(
+        Guid actor,
+        Guid adoption,
+        Guid lesson,
+        Stage22GameRound round,
+        string answer) =>
+        runtime.EvaluateAnswer(
+            actor,
+            new Stage22GameAnswerRequest(
+                adoption,
+                lesson,
+                round.RoundToken,
+                answer));
+
+
     [Fact]
     public void ArbitraryWrongAnswerIsRejectedByServer()
     {
