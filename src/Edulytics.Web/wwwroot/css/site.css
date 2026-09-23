@@ -9610,7 +9610,14 @@ a.lesson-content-row:hover
     flex-wrap: wrap;
     gap: .5rem;
 }
+.user-role-tab-form,
+.user-pagination-form {
+    margin: 0;
+}
+
 .user-role-tab {
+    font: inherit;
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
     min-height: 2.5rem;
