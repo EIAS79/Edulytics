@@ -9920,3 +9920,68 @@ a.lesson-content-row:hover
         flex-direction: column;
     }
 }
+
+
+/* Evidence-backed student report summary */
+.report-student-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: .75rem;
+    margin: 1rem 0;
+}
+.report-summary-card {
+    display: grid;
+    gap: .25rem;
+    padding: .9rem 1rem;
+    border: 1px solid var(--border, #d8dee8);
+    border-radius: .85rem;
+}
+.report-summary-card span,
+.report-summary-card small {
+    opacity: .72;
+}
+.report-summary-card strong {
+    font-size: 1.35rem;
+}
+.report-student-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .75rem;
+    margin: 0 0 1rem;
+}
+.report-student-highlights article {
+    display: grid;
+    gap: .25rem;
+    padding: .85rem 1rem;
+    border: 1px solid var(--border, #d8dee8);
+    border-radius: .85rem;
+}
+.report-student-highlights span,
+.report-student-highlights small {
+    opacity: .72;
+}
+.report-mastery-bar {
+    width: 100%;
+    height: .4rem;
+    margin-top: .35rem;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(120, 130, 150, .18);
+}
+.report-mastery-bar > span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: currentColor;
+}
+@media (max-width: 900px) {
+    .report-student-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 600px) {
+    .report-student-summary,
+    .report-student-highlights {
+        grid-template-columns: 1fr;
+    }
+}
