@@ -174,6 +174,124 @@
         });
     }
 
+    function wireTeacherAssignmentDirectory() {
+        const teacherSearch = document.getElementById("teacher-search");
+        const teacherSelect = document.getElementById("teacher-id");
+        const teacherClass = document.getElementById("teacher-class");
+        if (!teacherSelect || !teacherClass) return;
+
+        const yearFilter = document.getElementById("teacher-year-filter");
+        const programFilter = document.getElementById("teacher-program-filter");
+        const levelFilter = document.getElementById("teacher-level-filter");
+        const assignmentFilter = document.getElementById("teacher-assignment-filter");
+        const searchStatus = document.getElementById("teacher-search-status");
+        const language = (document.documentElement.lang || "en").toLowerCase();
+        let searchTimer = 0;
+        let searchSerial = 0;
+
+        const classOptions = () =>
+            Array.from(teacherClass.options).filter(option => option.value);
+
+        const applyClassFilters = () => {
+            const year = yearFilter?.value || "";
+            const program = programFilter?.value || "";
+            const levelKey = levelFilter?.value || "";
+            const assignment = assignmentFilter?.value || "";
+
+            classOptions().forEach(option => {
+                const visible =
+                    (!year || option.dataset.yearId === year) &&
+                    (!program || option.dataset.programId === program) &&
+                    (!levelKey || option.dataset.levelKey === levelKey) &&
+                    (!assignment || option.dataset.assignmentState === assignment);
+
+                option.hidden = !visible;
+                option.disabled = !visible;
+                if (!visible) option.selected = false;
+            });
+
+            const visibleCount = classOptions().filter(option => !option.hidden).length;
+            teacherClass.size = Math.min(10, Math.max(4, visibleCount));
+        };
+
+        [yearFilter, programFilter, levelFilter, assignmentFilter]
+            .filter(Boolean)
+            .forEach(control => control.addEventListener("change", applyClassFilters));
+
+        const updateTeacherOptions = async () => {
+            if (!teacherSearch) return;
+
+            const serial = ++searchSerial;
+            const query = teacherSearch.value.trim();
+            if (searchStatus) {
+                searchStatus.textContent = language.startsWith("pl")
+                    ? "Wyszukiwanie nauczycieli…"
+                    : "Searching teachers…";
+            }
+
+            let response;
+            try {
+                response = await fetch(
+                    "/School/Users/options/teachers?search=" + encodeURIComponent(query) + "&page=1",
+                    { headers: { "Accept": "application/json" } });
+            } catch {
+                if (serial !== searchSerial) return;
+                if (searchStatus) {
+                    searchStatus.textContent = language.startsWith("pl")
+                        ? "Nie udało się wyszukać nauczycieli."
+                        : "Teacher search is unavailable.";
+                }
+                return;
+            }
+
+            if (serial !== searchSerial) return;
+            if (!response.ok) {
+                if (searchStatus) {
+                    searchStatus.textContent = language.startsWith("pl")
+                        ? "Nie udało się wyszukać nauczycieli."
+                        : "Teacher search is unavailable.";
+                }
+                return;
+            }
+
+            const payload = await response.json();
+            const selected = teacherSelect.value;
+            teacherSelect.replaceChildren();
+
+            const placeholder = document.createElement("option");
+            placeholder.value = "";
+            placeholder.textContent = language.startsWith("pl")
+                ? "Wybierz"
+                : "Select";
+            teacherSelect.appendChild(placeholder);
+
+            (payload.items || []).forEach(item => {
+                const option = document.createElement("option");
+                option.value = item.id;
+                option.textContent = item.email;
+                option.selected =
+                    String(item.id).toLowerCase() === String(selected).toLowerCase();
+                teacherSelect.appendChild(option);
+            });
+
+            if (searchStatus) {
+                const count = Number(payload.totalCount || 0);
+                searchStatus.textContent = language.startsWith("pl")
+                    ? "Znaleziono nauczycieli: " + count + "."
+                    : count + " teacher" + (count === 1 ? "" : "s") + " found.";
+            }
+        };
+
+        if (teacherSearch) {
+            teacherSearch.addEventListener("input", () => {
+                window.clearTimeout(searchTimer);
+                searchTimer = window.setTimeout(updateTeacherOptions, 250);
+            });
+        }
+
+        applyClassFilters();
+    }
+
     function wireCurriculumLevelMultiSelect() {
         const levelKey = document.getElementById("level-key");
         const levelYear = document.getElementById("level-year");
@@ -465,7 +583,9 @@
         wireConfirmationForms();
         wireSchoolCountryTimeZones();
         wireStudentWorkflowCleanup();
-        void wireAcademicClassRelationships();
+        void wireAcademicClassRelationships().then(() => {
+            wireTeacherAssignmentDirectory();
+        });
         wireCurriculumLevelMultiSelect();
         simplifyStudentLearningCta();
         normalizeWholeMarkInputs();
