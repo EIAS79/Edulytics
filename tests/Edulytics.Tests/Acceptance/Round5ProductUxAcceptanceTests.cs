@@ -85,7 +85,8 @@ public sealed class Round5ProductUxAcceptanceTests
         Assert.Contains("existing.ClassGroupId = targetClass.Id", service, StringComparison.Ordinal);
         Assert.Contains("studentProfileIds", ui, StringComparison.Ordinal);
         Assert.Contains("student-placements/bulk", ui, StringComparison.Ordinal);
-        Assert.Contains("PlaceStudentsAsync", controller, StringComparison.Ordinal);
+        Assert.Contains("MoveStudentsAsync", controller, StringComparison.Ordinal);
+        Assert.Contains("sourceClassGroupId", controller, StringComparison.Ordinal);
     }
 
     [Fact]
