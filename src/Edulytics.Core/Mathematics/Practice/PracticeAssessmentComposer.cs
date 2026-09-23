@@ -99,9 +99,13 @@ public sealed class PracticeAssessmentComposer
             PracticeCognitiveDifficulty requestedDifficulty)
     {
         var capabilities =
-            PracticeQuestionFormCapabilityRegistry.Resolve(family);
+            PracticeQuestionFormCapabilityRegistry.Resolve(family)
+                .Where(capability =>
+                    requestedDifficulty >= capability.MinimumDifficulty &&
+                    requestedDifficulty <= capability.MaximumDifficulty)
+                .ToArray();
 
-        if (capabilities.Count == 0)
+        if (capabilities.Length == 0)
             return [];
 
         // Each capability owns explicit variant slots. Walk capabilities in
@@ -134,10 +138,7 @@ public sealed class PracticeAssessmentComposer
                     family,
                     capability.Form,
                     capability.CognitiveOperation,
-                    ClampDifficulty(
-                        requestedDifficulty,
-                        capability.MinimumDifficulty,
-                        capability.MaximumDifficulty),
+                    requestedDifficulty,
                     entry.Slots[depth]));
             }
         }
@@ -145,15 +146,4 @@ public sealed class PracticeAssessmentComposer
         return result;
     }
 
-    private static PracticeCognitiveDifficulty ClampDifficulty(
-        PracticeCognitiveDifficulty requested,
-        PracticeCognitiveDifficulty minimum,
-        PracticeCognitiveDifficulty maximum)
-    {
-        if (requested < minimum)
-            return minimum;
-        if (requested > maximum)
-            return maximum;
-        return requested;
-    }
 }
