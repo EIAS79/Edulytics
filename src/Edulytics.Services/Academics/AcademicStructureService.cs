@@ -46,7 +46,40 @@ public sealed class AcademicStructureService : IAcademicStructureService
 
         var schoolId = scope.School!.Id;
         var snapshot = await _academic.GetSnapshotAsync(schoolId, cancellationToken);
-        var users = await _users.ListBySchoolAsync(schoolId, cancellationToken);
+
+        var referencedUserIds = snapshot.TeacherAssignments
+            .Select(x => x.TeacherUserId)
+            .Concat(
+                snapshot.StudentProfiles
+                    .Where(x => x.UserId.HasValue)
+                    .Select(x => x.UserId!.Value))
+            .Distinct()
+            .ToArray();
+
+        var users = await _users.ListBySchoolAndIdsAsync(
+            schoolId,
+            referencedUserIds,
+            cancellationToken);
+
+        var teacherPage = await _users.QueryBySchoolAsync(
+            schoolId,
+            new SchoolUserListQuery(
+                Role: RoleNames.Teacher,
+                IsActive: true,
+                IsLocked: false,
+                Page: 1,
+                PageSize: 100),
+            cancellationToken);
+
+        var studentPage = await _users.QueryBySchoolAsync(
+            schoolId,
+            new SchoolUserListQuery(
+                Role: RoleNames.Student,
+                IsActive: true,
+                IsLocked: false,
+                Page: 1,
+                PageSize: 100),
+            cancellationToken);
 
         var years = snapshot.AcademicYears.ToDictionary(x => x.Id);
         var grades = snapshot.GradeLevels.ToDictionary(x => x.Id);
@@ -61,21 +94,13 @@ public sealed class AcademicStructureService : IAcademicStructureService
             .Select(x => x.UserId!.Value)
             .ToHashSet();
 
-        var teacherCandidates = users
-            .Where(x =>
-                x.IsActive &&
-                !x.IsLocked &&
-                SingleRole(x.Roles) == RoleNames.Teacher)
+        var teacherCandidates = teacherPage.Users
             .OrderBy(x => x.Email)
             .Select(x => new UserCandidate(x.Id, x.Email))
             .ToArray();
 
-        var studentCandidates = users
-            .Where(x =>
-                x.IsActive &&
-                !x.IsLocked &&
-                SingleRole(x.Roles) == RoleNames.Student &&
-                !linkedStudentUsers.Contains(x.Id))
+        var studentCandidates = studentPage.Users
+            .Where(x => !linkedStudentUsers.Contains(x.Id))
             .OrderBy(x => x.Email)
             .Select(x => new UserCandidate(x.Id, x.Email))
             .ToArray();
