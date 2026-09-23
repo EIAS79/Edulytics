@@ -162,6 +162,11 @@ public sealed class IdentitySchoolUserRepository
         }
 
         var total = await usersQuery.CountAsync(cancellationToken);
+        var totalPages = Math.Max(
+            1,
+            (int)Math.Ceiling(total / (double)pageSize));
+        page = Math.Min(page, totalPages);
+
         var users = await usersQuery
             .OrderBy(x => x.Email)
             .Skip((page - 1) * pageSize)
