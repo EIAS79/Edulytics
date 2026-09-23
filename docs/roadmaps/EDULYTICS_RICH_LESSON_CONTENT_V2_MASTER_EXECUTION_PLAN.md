@@ -1,6 +1,6 @@
 # Edulytics Rich Lesson Content V2 — Master Execution Plan
 
-**Status:** ACTIVE — CURRENT GOVERNING CONTENT PROGRAMME  
+**Status:** COMPLETE — CATALOGUE-WIDE PRODUCTION ROLLOUT CLOSED  
 **Repository:** `EIAS79/Edulytics`  
 **Programme scope:** Every learner-visible mathematics pedagogical lesson in every supported curriculum, official and supporting.  
 **Primary purpose:** Replace thin/generic lesson bodies with complete, accurate, source-backed, student- and teacher-usable teaching content without changing curriculum objectives, official outcomes, lesson identities, assessment history, mastery history, or existing academic mappings.
@@ -858,6 +858,27 @@ A lesson is Rich Content Ready only when:
 ```
 
 ---
+
+# 22.1 R8 closure record
+
+R8 is closed when repository CI confirms the final catalogue state:
+
+```text
+Total learner-visible mathematics lessons: 4,453
+Curated Rich V2: 26
+Runtime verified Rich V2: 4,427
+Total Rich-ready: 4,453 / 4,453
+Polish localized runtime Rich V2: 1,569
+Localized-authoring blockers: 0
+Practice-contract blockers: 0
+Generation blockers: 0
+```
+
+The Polish closure reuses the accepted official OutcomeCode mapping and the existing
+`READY_VERIFIED` Polish Practice contracts. Generated worked examples continue to
+come from the exact Mathematics engine and independent verifier; learner-facing
+Polish prompt/solution prose is produced by a deterministic, reviewable localization
+layer rather than a runtime machine-translation service.
 
 # 23. Definition of programme success
 

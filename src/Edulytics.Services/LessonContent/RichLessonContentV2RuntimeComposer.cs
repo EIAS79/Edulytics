@@ -19,8 +19,9 @@ namespace Edulytics.Services.LessonContent;
 /// - only READY_VERIFIED lesson Practice contracts may be used;
 /// - every generated worked example comes from the exact Mathematics engine,
 ///   which solves and independently verifies the answer before it is returned;
-/// - non-English content is not silently translated. It remains on the legacy
-///   canonical body until a reviewed localized rich-authoring wave is available.
+/// - English and Polish are authored through separate deterministic presentation
+///   paths. Polish is enabled only for the reviewed PL-NATIONAL exact Practice
+///   contracts and never by translating an unrelated English lesson body.
 /// </summary>
 public static partial class RichLessonContentV2RuntimeComposer
 {
@@ -41,11 +42,11 @@ public static partial class RichLessonContentV2RuntimeComposer
 
         var culture = NormalizeCulture(body.CultureCode);
 
-        // R8 does not silently replace Polish academic-language content with
-        // English generated prose. Polish is tracked as a localized-authoring
-        // rollout block until reviewed Polish Rich V2 content is available.
-        if (!string.Equals(culture, "en", StringComparison.Ordinal))
+        if (!string.Equals(culture, "en", StringComparison.Ordinal) &&
+            !string.Equals(culture, "pl", StringComparison.Ordinal))
+        {
             return null;
+        }
 
         if (!LessonPracticeContractRegistry.TryResolve(
                 lessonCode,
@@ -55,6 +56,15 @@ public static partial class RichLessonContentV2RuntimeComposer
                 contract.Readiness,
                 "READY_VERIFIED",
                 StringComparison.OrdinalIgnoreCase))
+        {
+            return null;
+        }
+
+        if (string.Equals(culture, "pl", StringComparison.Ordinal) &&
+            !string.Equals(
+                contract.SourceType,
+                "PolishOfficialOutcomeMap",
+                StringComparison.Ordinal))
         {
             return null;
         }
@@ -84,11 +94,17 @@ public static partial class RichLessonContentV2RuntimeComposer
         {
             return Cache.GetOrAdd(
                 cacheKey,
-                _ => Compose(
-                    lessonCode,
-                    body,
-                    contract,
-                    supportedFamilies));
+                _ => string.Equals(culture, "pl", StringComparison.Ordinal)
+                    ? ComposePolish(
+                        lessonCode,
+                        body,
+                        contract,
+                        supportedFamilies)
+                    : Compose(
+                        lessonCode,
+                        body,
+                        contract,
+                        supportedFamilies));
         }
         catch (InvalidOperationException)
         {
@@ -105,6 +121,18 @@ public static partial class RichLessonContentV2RuntimeComposer
         LessonPracticeContract contract,
         IReadOnlyList<string> families)
     {
+        if (string.Equals(
+                NormalizeCulture(body.CultureCode),
+                "pl",
+                StringComparison.Ordinal))
+        {
+            return ComposePolish(
+                lessonCode,
+                body,
+                contract,
+                families);
+        }
+
         var exampleCount = Math.Clamp(
             families.Count,
             4,
@@ -182,6 +210,235 @@ public static partial class RichLessonContentV2RuntimeComposer
             $"runtime:{lessonCode}");
 
         return result;
+    }
+
+
+    private static RichLessonContentV2Lesson ComposePolish(
+        string lessonCode,
+        CanonicalLessonTranslationRecord body,
+        LessonPracticeContract contract,
+        IReadOnlyList<string> families)
+    {
+        var exampleCount = Math.Clamp(
+            families.Count,
+            4,
+            12);
+
+        var generated = Engine.Generate(
+            fingerprintNamespace: "rich-lesson-content-v2-pl",
+            scopeKey: lessonCode,
+            allowedQuestionFamilies: families,
+            difficulty: ExactSkillQuestionDifficulty.Standard,
+            questionCount: exampleCount,
+            seed: StableSeed(lessonCode),
+            excludedExposureFingerprints: []);
+
+        var familyLabels = families
+            .Select(PolishMathematicsTextLocalizer.FamilyLabel)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+
+        var examples = generated
+            .Select((question, index) =>
+                BuildPolishWorkedExample(
+                    question,
+                    index + 1,
+                    contract))
+            .ToArray();
+
+        var explanation = new[]
+        {
+            PolishMathematicsTextLocalizer.Localize(body.Explanation),
+            PolishMathematicsTextLocalizer.Localize(body.KeyConceptsAndRules),
+            $"Zweryfikowany kontrakt tej lekcji obejmuje następujące postacie zadań: " +
+            $"{JoinPolish(familyLabels)}. Wszystkie pozostają w zakresie dokładnego celu " +
+            "matematycznego przypisanego do oficjalnego wymagania.",
+            $"Przykłady poniżej pochodzą z tego samego kontraktu Practice co zadania ucznia. " +
+            "Każdy przypadek jest najpierw generowany, następnie rozwiązywany przez silnik " +
+            "matematyczny i niezależnie weryfikowany przed zbudowaniem treści Rich V2."
+        };
+
+        var concepts = new List<RichLessonKeyConcept>
+        {
+            new()
+            {
+                Title = "Główna idea",
+                Definition = PolishMathematicsTextLocalizer.Localize(body.Explanation),
+                Rule = PolishMathematicsTextLocalizer.Localize(body.KeyConceptsAndRules),
+                Example = PolishMathematicsTextLocalizer.Localize(body.WorkedExamples)
+            },
+            new()
+            {
+                Title = "Dokładny cel lekcji",
+                Definition =
+                    $"Zweryfikowana umiejętność tej lekcji: " +
+                    $"„{PolishMathematicsTextLocalizer.SkillLabel(contract.SkillId)}”.",
+                Rule =
+                    "Rozwiązuj dokładnie ten cel matematyczny; nie zastępuj go podobnym, " +
+                    "ale innym typem zadania.",
+                Example =
+                    "Edulytics dopuszcza wyłącznie rodziny z zatwierdzonego kontraktu " +
+                    "Practice, dla których działa solver i niezależny verifier."
+            }
+        };
+
+        foreach (var label in familyLabels.Take(4))
+        {
+            concepts.Add(new RichLessonKeyConcept
+            {
+                Title = label,
+                Definition =
+                    $"To jedna ze zweryfikowanych postaci zadania w lekcji „{body.Title}”.",
+                Rule =
+                    "Najpierw rozpoznaj relację matematyczną, a dopiero potem wykonaj " +
+                    "obliczenie lub przekształcenie.",
+                Example =
+                    "Pełny przykład liczbowy z rozwiązaniem znajduje się w sekcji " +
+                    "przykładów poniżej."
+            });
+        }
+
+        var firstFamily = familyLabels.FirstOrDefault() ?? "wymagany przypadek";
+        var mistakes = new[]
+        {
+            new RichLessonCommonMistake
+            {
+                Mistake = PolishMathematicsTextLocalizer.Localize(body.CommonMistakes),
+                WhyWrong =
+                    "Taki błąd zmienia relację matematyczną albo stosuje regułę poza jej zakresem.",
+                Correction =
+                    "Wróć do dokładnego celu lekcji, wykonaj obliczenie ponownie i sprawdź " +
+                    "wynik niezależną metodą."
+            },
+            new RichLessonCommonMistake
+            {
+                Mistake =
+                    $"Traktowanie każdej postaci zadania tak samo, bez rozpoznania przypadku " +
+                    $"takiego jak „{firstFamily}”.",
+                WhyWrong =
+                    "Różne postacie mogą wymagać innej reprezentacji, kolejności działań " +
+                    "albo sposobu sprawdzenia.",
+                Correction =
+                    "Najpierw rozpoznaj typ relacji, potem wybierz odpowiadającą mu metodę."
+            },
+            new RichLessonCommonMistake
+            {
+                Mistake = "Zakończenie pracy na samym obliczeniu bez sprawdzenia odpowiedzi.",
+                WhyWrong =
+                    "Poprawnie wykonane działanie może nadal odpowiadać na inną wielkość, " +
+                    "mieć złą jednostkę albo nie spełniać warunków zadania.",
+                Correction =
+                    "Sprawdź wynik przez podstawienie, działanie odwrotne, oszacowanie albo " +
+                    "inną metodę właściwą dla danego typu zadania."
+            }
+        };
+
+        var summary = new[]
+        {
+            PolishMathematicsTextLocalizer.Localize(body.QuickSummary),
+            $"Zweryfikowana umiejętność: {PolishMathematicsTextLocalizer.SkillLabel(contract.SkillId)}.",
+            $"Rozpoznawaj następujące postacie zadań: {JoinPolish(familyLabels)}.",
+            "Porównuj metody rozwiązania, a nie tylko końcowe odpowiedzi.",
+            "Zawsze sprawdzaj, czy wynik odpowiada dokładnie na pytanie i zachowuje " +
+            "relację matematyczną z treści zadania."
+        };
+
+        var visuals = new[]
+        {
+            new RichLessonVisual
+            {
+                Kind = RichLessonVisualKind.EquationSet,
+                Title = $"{body.Title} — zweryfikowane przykłady",
+                Description =
+                    "Zestaw kilku zweryfikowanych pytań i odpowiedzi z tej lekcji. " +
+                    "Pełne rozumowanie znajduje się w przykładach z rozwiązaniem.",
+                PrimaryLabel =
+                    PolishMathematicsTextLocalizer.SkillLabel(contract.SkillId),
+                Items = examples
+                    .Take(4)
+                    .Select(example =>
+                        $"{example.Question}  →  {example.Answer}")
+                    .ToList()
+            }
+        };
+
+        var result = new RichLessonContentV2Lesson
+        {
+            LessonCode = lessonCode,
+            CultureCode = body.CultureCode,
+            Title = body.Title,
+            ExplanationParagraphs = explanation.ToList(),
+            KeyConcepts = concepts,
+            WorkedExamples = examples.ToList(),
+            CommonMistakes = mistakes.ToList(),
+            SummaryPoints = summary.ToList(),
+            Visuals = visuals.ToList(),
+            Videos = []
+        };
+
+        RichLessonContentV2Registry.Validate(
+            new RichLessonContentV2Document
+            {
+                SchemaVersion = 1,
+                ContentVersion = "rich-v2-r8-polish-runtime-verified-v1",
+                PackCode = "R8-RUNTIME-PL",
+                Lessons = [result]
+            },
+            $"runtime-pl:{lessonCode}");
+
+        return result;
+    }
+
+    private static RichLessonWorkedExample BuildPolishWorkedExample(
+        ExactSkillGeneratedQuestion question,
+        int order,
+        LessonPracticeContract contract)
+    {
+        var familyLabel =
+            PolishMathematicsTextLocalizer.FamilyLabel(question.Family);
+        var prompt =
+            PolishMathematicsTextLocalizer.Localize(question.Prompt);
+        var solverExplanation =
+            PolishMathematicsTextLocalizer.Localize(question.Solution);
+        var answer =
+            PolishMathematicsTextLocalizer.LocalizeAnswer(question.CorrectAnswer);
+
+        return new RichLessonWorkedExample
+        {
+            Title = $"Przykład {order} — {familyLabel}",
+            Question = prompt,
+            Method =
+                $"Zastosuj zweryfikowaną metodę „" +
+                $"{PolishMathematicsTextLocalizer.SkillLabel(contract.SkillId)}” " +
+                $"dla przypadku „{familyLabel}”.",
+            Steps =
+            [
+                $"Przeczytaj zadanie: {prompt}",
+                $"Rozpoznaj przypadek „{familyLabel}”.",
+                solverExplanation,
+                $"Podaj dokładną odpowiedź: {answer}.",
+                "Sprawdź wynik względem pierwotnych danych i relacji. " +
+                "Ten przykład został niezależnie zweryfikowany przez silnik matematyczny Edulytics."
+            ],
+            Answer = answer,
+            Check =
+                "Zweryfikowano przez dokładny mechanizm rozwiązujący i niezależny weryfikator " +
+                $"dla przypadku „{familyLabel}”."
+        };
+    }
+
+    private static string JoinPolish(IReadOnlyList<string> values)
+    {
+        if (values.Count == 0)
+            return "zweryfikowane przypadki lekcji";
+
+        if (values.Count == 1)
+            return values[0];
+
+        if (values.Count == 2)
+            return $"{values[0]} i {values[1]}";
+
+        return $"{string.Join(", ", values.Take(values.Count - 1))} oraz {values[^1]}";
     }
 
     private static IReadOnlyList<string> BuildExplanation(
