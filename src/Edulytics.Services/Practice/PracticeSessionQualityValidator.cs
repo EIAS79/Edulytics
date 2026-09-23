@@ -1,6 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using Edulytics.Core.Entities;
+using Edulytics.Core.Enums;
 using Edulytics.Core.Mathematics.Practice;
 
 namespace Edulytics.Services.Practice;
