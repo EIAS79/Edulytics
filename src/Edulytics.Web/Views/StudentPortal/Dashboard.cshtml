@@ -19,20 +19,20 @@
 
 <section class="student-summary-grid">
     <article class="student-summary-card">
-        <span>@S["School"]</span>
-        <strong>@Model.Workspace.SchoolName</strong>
+        <span>@S["TasksToDo"]</span>
+        <strong>@Model.ToDoAssessments.Count</strong>
     </article>
     <article class="student-summary-card">
-        <span>@S["ClassAndGrade"]</span>
-        <strong>
-            @(enrollment is null
-                ? "—"
-                : $"{enrollment.ClassName} · {enrollment.GradeName}")
-        </strong>
+        <span>@S["AwaitingResult"]</span>
+        <strong>@(Model.SubmittedOnlineAssessments.Count + Model.AwaitingOfflineResults.Count)</strong>
     </article>
     <article class="student-summary-card">
-        <span>@S["ActiveAssessments"]</span>
-        <strong>@Model.Workspace.Assessments.Count</strong>
+        <span>@S["CompletedResults"]</span>
+        <strong>@Model.Workspace.Results.Count</strong>
+    </article>
+    <article class="student-summary-card">
+        <span>@S["RecentAverage"]</span>
+        <strong>@(Model.RecentAverage.HasValue ? $"{Model.RecentAverage.Value:0.#}%" : "—")</strong>
     </article>
     <article class="student-summary-card">
         <span>@S["UnreadNotifications"]</span>
@@ -40,10 +40,84 @@
     </article>
 </section>
 
+<section class="student-dashboard-status-grid">
+    <article class="student-panel student-dashboard-priority">
+        <div class="student-panel-heading">
+            <div>
+                <span class="student-eyebrow">@S["TasksToDo"]</span>
+                <h2>@S["OnlineAssessments"]</h2>
+            </div>
+            <a class="student-secondary-link" asp-action="Assessments">@S["ViewAssessments"]</a>
+        </div>
+
+        @if (Model.ToDoAssessments.Count == 0)
+        {
+            <p class="student-empty">@S["NoTasksToDo"]</p>
+        }
+        else
+        {
+            <div class="student-dashboard-task-list">
+                @foreach (var item in Model.ToDoAssessments.Take(5))
+                {
+                    <article class="student-dashboard-task">
+                        <div>
+                            <strong>@item.Title</strong>
+                            <span>@item.SubjectName · @item.ClassName</span>
+                            <small>@S["AssessmentDate"]: @item.AssessmentDate.ToString("yyyy-MM-dd")</small>
+                        </div>
+                        <a class="student-button student-button-primary"
+                           asp-action="TakeAssessment"
+                           asp-route-id="@item.AssessmentId">
+                            @S["StartAssessment"]
+                        </a>
+                    </article>
+                }
+            </div>
+        }
+    </article>
+
+    <article class="student-panel student-dashboard-priority">
+        <div class="student-panel-heading">
+            <div>
+                <span class="student-eyebrow">@S["AwaitingResult"]</span>
+                <h2>@(Model.SubmittedOnlineAssessments.Count + Model.AwaitingOfflineResults.Count)</h2>
+            </div>
+        </div>
+
+        @if (Model.SubmittedOnlineAssessments.Count == 0 &&
+             Model.AwaitingOfflineResults.Count == 0)
+        {
+            <p class="student-empty">@S["NothingAwaitingResult"]</p>
+        }
+        else
+        {
+            <div class="student-compact-list">
+                @foreach (var item in Model.SubmittedOnlineAssessments.Take(3))
+                {
+                    <div>
+                        <strong>@item.Title</strong>
+                        <span>@S["SubmittedInReview"] · @S["OnlineAssessment"]</span>
+                    </div>
+                }
+                @foreach (var item in Model.AwaitingOfflineResults.Take(3))
+                {
+                    <div>
+                        <strong>@item.Title</strong>
+                        <span>@S["WaitingForTeacherResult"] · @S["OfflineAssessment"]</span>
+                    </div>
+                }
+            </div>
+        }
+    </article>
+</section>
+
 <section class="student-dashboard-grid">
     <article class="student-panel student-learning-panel">
         <div class="student-panel-heading">
-            <div><h2>@S["MyLearning"]</h2></div>
+            <div>
+                <span class="student-eyebrow">@S["LearnAndPractice"]</span>
+                <h2>@S["MyLearning"]</h2>
+            </div>
         </div>
 
         @if (Model.Workspace.Learning.Count == 0)
@@ -73,35 +147,8 @@
     <article class="student-panel student-dashboard-list-panel">
         <div class="student-panel-heading">
             <div>
-                <span class="student-eyebrow">@S["ActiveAssessments"]</span>
-                <h2>@Model.Workspace.Assessments.Count</h2>
-            </div>
-            <a class="student-secondary-link" asp-action="Assessments">@S["ViewAssessments"]</a>
-        </div>
-
-        @if (Model.Workspace.Assessments.Count == 0)
-        {
-            <p class="student-empty">@S["NoActiveAssessments"]</p>
-        }
-        else
-        {
-            <div class="student-compact-list">
-                @foreach (var item in Model.Workspace.Assessments)
-                {
-                    <div>
-                        <strong>@item.Title</strong>
-                        <span>@item.AssessmentDate.ToString("yyyy-MM-dd")</span>
-                    </div>
-                }
-            </div>
-        }
-    </article>
-
-    <article class="student-panel student-dashboard-list-panel">
-        <div class="student-panel-heading">
-            <div>
-                <span class="student-eyebrow">@S["RecentResults"]</span>
-                <h2>@S["MyResults"]</h2>
+                <span class="student-eyebrow">@S["CompletedResults"]</span>
+                <h2>@S["RecentResults"]</h2>
             </div>
             <a class="student-secondary-link" asp-action="Results">@S["ViewResults"]</a>
         </div>
@@ -118,7 +165,7 @@
                     <div>
                         <span>
                             <strong>@item.AssessmentTitle</strong>
-                            <small>@item.SubjectName</small>
+                            <small>@item.SubjectName · @item.AssessmentDate.ToString("yyyy-MM-dd")</small>
                         </span>
                         <strong>@item.Percentage.ToString("0.##")%</strong>
                     </div>
@@ -127,3 +174,4 @@
         }
     </article>
 </section>
+
