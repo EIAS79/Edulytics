@@ -2,6 +2,7 @@ using System.Globalization;
 using System.Net;
 using System.Text;
 using System.Text.Json;
+using Edulytics.Core.Mathematics.Practice;
 
 namespace Edulytics.Web.Presentation;
 
@@ -25,7 +26,7 @@ public static class PracticeMathVisualRenderer
                 ? nested
                 : root;
 
-            return family switch
+            var svg = family switch
             {
                 "supporting.circle.arc_angle_degrees" => CircleArc(parameters),
                 "geometry.coordinate.gradient_between_points" => CoordinateGradient(parameters),
@@ -77,8 +78,8 @@ public static class PracticeMathVisualRenderer
                 "supporting.geometry.angle_classify" or
                 "supporting.geometry.turn_degrees" => AngleParameterVisual(parameters),
                 "supporting.geometry.circle_area_pi_coefficient" or
-                "supporting.geometry.circle_circumference_pi_coefficient" or
-                "supporting.geometry.locus_equidistant" => CircleParameterVisual(parameters),
+                "supporting.geometry.circle_circumference_pi_coefficient" => CircleParameterVisual(parameters),
+                "supporting.geometry.locus_equidistant" => LocusEquidistantVisual(parameters),
                 "supporting.geometry.cuboid_volume" or
                 "supporting.geometry.solid.mixed" or
                 "supporting.geometry.surface_area_cuboid" => SolidParameterVisual(parameters),
@@ -94,6 +95,13 @@ public static class PracticeMathVisualRenderer
                 "supporting.trigonometry.sine_rule_exact" => TrigonometryTriangleVisual(parameters),
                 _ => null
             };
+
+            var leakCheck =
+                PracticeAnswerLeakValidator.ValidateVisual(
+                    family,
+                    correctAnswer: null,
+                    svg);
+            return leakCheck.IsSafe ? svg : null;
         }
         catch (JsonException)
         {
@@ -531,6 +539,41 @@ public static class PracticeMathVisualRenderer
         return SvgEnd(sb);
     }
 
+    private static string LocusEquidistantVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var mode = ValueOr(values, "mode", fallback: 0);
+        var sb = SvgStart("Two fixed points for an equidistance locus question. The required locus is not drawn.");
+
+        const double y = 132;
+        var ax = 120d;
+        var bx = 300d;
+        sb.Append($"<line x1='{F(ax)}' y1='{F(y)}' x2='{F(bx)}' y2='{F(y)}' class='shape'/>");
+        Point(sb, ax, y, "A");
+        Point(sb, bx, y, "B");
+
+        if (mode == 1 &&
+            values.TryGetValue("start", out var start) &&
+            values.TryGetValue("end", out var end))
+        {
+            Text(sb, ax, 165, $"({start}, 0)", "label");
+            Text(sb, bx, 165, $"({end}, 0)", "label");
+        }
+        else if (mode == 3 &&
+                 values.TryGetValue("distance", out var distance))
+        {
+            const double px = 210d;
+            const double py = 55d;
+            Point(sb, px, py, "P");
+            sb.Append($"<line x1='{F(px)}' y1='{F(py)}' x2='{F(ax)}' y2='{F(y)}' class='shape'/>");
+            sb.Append($"<line x1='{F(px)}' y1='{F(py)}' x2='{F(bx)}' y2='{F(y)}' class='shape dash'/>");
+            Text(sb, 155, 82, $"PA = {distance}", "label");
+            Text(sb, 275, 82, "PB = ?", "unknown");
+        }
+
+        return SvgEnd(sb);
+    }
+
     private static string CircleParameterVisual(JsonElement p)
     {
         var values = IntegerParameters(p);
@@ -621,7 +664,9 @@ public static class PracticeMathVisualRenderer
                 break;
         }
 
-        Text(sb, 210, 245, dimension == 2 ? "2D shape" : "3D shape", "hint");
+        // Do not render learner-visible answer-bearing dimension labels.
+        // The exact dimension remains in server-owned parameters for solving
+        // and verification, but the diagram itself must remain neutral.
         return SvgEnd(sb);
     }
 

@@ -148,7 +148,7 @@ public sealed class StudentPrivatePracticeServiceTests
     }
 
     [Fact]
-    public async Task Lesson_practice_generates_eight_progressive_diverse_questions_with_historical_exposure()
+    public async Task Lesson_practice_falls_back_to_honest_standard_composition_when_higher_forms_are_not_supported()
     {
         const string lessonCode =
             "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-1:APPLY";
@@ -180,8 +180,9 @@ public sealed class StudentPrivatePracticeServiceTests
             1);
 
         // Seed realistic prior exposure across all four Powers of 10
-        // families. Historical exposure should improve variety without
-        // changing the eight-question progression contract.
+        // families. These families do not implement distinct Stretch/Challenge
+        // cognitive forms, so Lesson Practice must remain Standard rather than
+        // attaching unsupported higher-difficulty labels.
         var priorQuestions =
             new ExactSkillContractQuestionEngine().Generate(
                 "stage18",
@@ -254,33 +255,41 @@ public sealed class StudentPrivatePracticeServiceTests
                 .Select(item => item.GenerationFamily)
                 .ToArray());
 
-        var expectedDifficulty = new[]
-        {
-            "Standard", "Standard", "Standard",
-            "Stretch", "Stretch", "Stretch",
-            "Challenge", "Challenge"
-        };
-
-        for (var index = 0; index < repo.SavedItems.Count; index++)
+        foreach (var item in repo.SavedItems)
         {
             Assert.False(
                 string.IsNullOrWhiteSpace(
-                    repo.SavedItems[index].ValidationMetadataJson));
+                    item.ValidationMetadataJson));
 
             using var metadata = JsonDocument.Parse(
-                repo.SavedItems[index].ValidationMetadataJson!);
+                item.ValidationMetadataJson!);
 
             Assert.Equal(
-                expectedDifficulty[index],
+                "practice-assessment-v2",
                 metadata.RootElement
-                    .GetProperty("difficulty")
+                    .GetProperty("composer")
                     .GetString());
-
             Assert.Equal(
-                index + 1,
+                "Standard",
                 metadata.RootElement
-                    .GetProperty("progressionIndex")
-                    .GetInt32());
+                    .GetProperty("cognitiveDifficulty")
+                    .GetString());
+            Assert.False(
+                metadata.RootElement.TryGetProperty(
+                    "progressionIndex",
+                    out _));
+            Assert.Equal(
+                AssessmentItemDifficulty.Medium,
+                item.Difficulty);
+            Assert.Equal(
+                "READY_BALANCED",
+                metadata.RootElement
+                    .GetProperty("sessionReadiness")
+                    .GetString());
+            Assert.True(
+                metadata.RootElement
+                    .GetProperty("sessionQualityValidated")
+                    .GetBoolean());
         }
 
         Assert.All(
@@ -329,6 +338,216 @@ public sealed class StudentPrivatePracticeServiceTests
         Assert.Equal(
             StudentPrivatePracticeError.InvalidQuestionCount,
             result.Error);
+    }
+
+    [Fact]
+    public async Task Lesson_personal_practice_uses_genuine_shape_form_diversity_without_padding()
+    {
+        const string family = "supporting.geometry.shape_dimension";
+        var contract = LessonPracticeContractRegistry.All
+            .First(x =>
+                x.AllowedQuestionFamilies.Count == 1 &&
+                string.Equals(
+                    x.AllowedQuestionFamilies[0],
+                    family,
+                    StringComparison.Ordinal));
+
+        var ids = Ids.Create();
+        var lessonId = Guid.NewGuid();
+        var lesson = Lesson(
+            ids,
+            lessonId,
+            "SHAPES",
+            "Geometry",
+            contract.LessonCode,
+            "2D and 3D shape properties",
+            1);
+
+        var repo = new FakeRepository
+        {
+            Context = BuildContext(ids, [], [lesson])
+        };
+
+        var result = await new StudentPrivatePracticeService(repo)
+            .GenerateAsync(
+                ids.User,
+                new GenerateStudentPrivatePracticeRequest(
+                    ids.Adoption,
+                    StudentPrivatePracticeScope.Lesson,
+                    lessonId,
+                    null,
+                    StudentPrivatePracticeDifficulty.MyLevel,
+                    10,
+                    20260923));
+
+        Assert.True(result.Succeeded);
+        Assert.Null(result.Error);
+        Assert.NotNull(repo.SavedAttempt);
+        Assert.Equal(8, repo.SavedItems.Count);
+        Assert.Equal(8m, repo.SavedAttempt!.MaxScore);
+
+        var semanticPairs = new List<string>();
+        var forms = new HashSet<int>();
+
+        foreach (var item in repo.SavedItems)
+        {
+            using var document = JsonDocument.Parse(
+                item.GenerationParametersJson!);
+            var parameters = document.RootElement
+                .GetProperty("parameters");
+            var shape = parameters
+                .GetProperty("shape")
+                .GetInt32();
+            var form = parameters
+                .GetProperty("form")
+                .GetInt32();
+
+            forms.Add(form);
+            semanticPairs.Add($"{form}:{shape}");
+        }
+
+        Assert.Equal(
+            repo.SavedItems.Count,
+            semanticPairs.Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(
+            new[] { 0, 1 },
+            forms.OrderBy(x => x).ToArray());
+
+        Assert.All(
+            repo.SavedItems,
+            item =>
+            {
+                using var metadata = JsonDocument.Parse(
+                    item.ValidationMetadataJson!);
+                Assert.Equal(
+                    "READY_NARROW",
+                    metadata.RootElement
+                        .GetProperty("sessionReadiness")
+                        .GetString());
+                Assert.True(
+                    metadata.RootElement
+                        .GetProperty("sessionQualityValidated")
+                        .GetBoolean());
+                Assert.Equal(
+                    8,
+                    metadata.RootElement
+                        .GetProperty("sessionSemanticCount")
+                        .GetInt32());
+            });
+    }
+
+    [Fact]
+    public async Task Shape_lesson_progression_uses_forms_that_truthfully_support_each_cognitive_level()
+    {
+        const string family = "supporting.geometry.shape_dimension";
+        var contract = LessonPracticeContractRegistry.All
+            .First(x =>
+                x.AllowedQuestionFamilies.Count == 1 &&
+                string.Equals(
+                    x.AllowedQuestionFamilies[0],
+                    family,
+                    StringComparison.Ordinal));
+
+        var ids = Ids.Create();
+        var lessonId = Guid.NewGuid();
+        var repo = new FakeRepository
+        {
+            Context = BuildContext(
+                ids,
+                [],
+                [
+                    Lesson(
+                        ids,
+                        lessonId,
+                        "SHAPES",
+                        "Geometry",
+                        contract.LessonCode,
+                        "2D and 3D shape properties",
+                        1)
+                ])
+        };
+
+        var result = await new StudentPrivatePracticeService(repo)
+            .GenerateAsync(
+                ids.User,
+                new GenerateStudentPrivatePracticeRequest(
+                    ids.Adoption,
+                    StudentPrivatePracticeScope.Lesson,
+                    lessonId,
+                    null,
+                    StudentPrivatePracticeDifficulty.MyLevel,
+                    8,
+                    20260924,
+                    UseLessonDifficultyProgression: true));
+
+        Assert.True(result.Succeeded);
+        Assert.Equal(8, repo.SavedItems.Count);
+
+        var expectedDifficulty = new[]
+        {
+            "Standard", "Standard", "Standard",
+            "Stretch", "Stretch", "Stretch",
+            "Challenge", "Challenge"
+        };
+        var semanticKeys = new List<string>();
+
+        for (var index = 0; index < repo.SavedItems.Count; index++)
+        {
+            var item = repo.SavedItems[index];
+            using var metadata = JsonDocument.Parse(
+                item.ValidationMetadataJson!);
+
+            Assert.Equal(
+                "honest-cognitive-v2",
+                metadata.RootElement
+                    .GetProperty("progression")
+                    .GetString());
+            Assert.Equal(
+                expectedDifficulty[index],
+                metadata.RootElement
+                    .GetProperty("difficulty")
+                    .GetString());
+            Assert.Equal(
+                index + 1,
+                metadata.RootElement
+                    .GetProperty("progressionIndex")
+                    .GetInt32());
+            Assert.Equal(
+                "READY_BALANCED",
+                metadata.RootElement
+                    .GetProperty("sessionReadiness")
+                    .GetString());
+            Assert.True(
+                metadata.RootElement
+                    .GetProperty("sessionQualityValidated")
+                    .GetBoolean());
+
+            var form = metadata.RootElement
+                .GetProperty("questionForm")
+                .GetString();
+
+            if (index < 3)
+                Assert.Contains(form, new[] { "Identify", "Classify" });
+            else if (index < 6)
+                Assert.Contains(form, new[] { "Classify", "ErrorAnalysis" });
+            else
+                Assert.Contains(form, new[] { "ErrorAnalysis", "Transfer" });
+
+            Assert.Equal(
+                index < 3
+                    ? AssessmentItemDifficulty.Medium
+                    : AssessmentItemDifficulty.Challenging,
+                item.Difficulty);
+
+            semanticKeys.Add(
+                metadata.RootElement
+                    .GetProperty("semanticKey")
+                    .GetString()!);
+        }
+
+        Assert.Equal(
+            semanticKeys.Count,
+            semanticKeys.Distinct(StringComparer.Ordinal).Count());
     }
 
     [Fact]

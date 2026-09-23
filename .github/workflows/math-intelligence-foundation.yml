@@ -223,6 +223,53 @@ jobs:
             --configuration Release \
             --no-restore \
             --filter "FullyQualifiedName~MathematicsIntelligence"
+      - name: Run Practice V2 full 4,453-lesson runtime certification
+        env:
+          EDULYTICS_RUN_FULL_PRACTICE_V2_CERTIFICATION: "1"
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
+            --configuration Release \
+            --no-restore \
+            --filter "FullyQualifiedName~PracticeV2FullCatalogueCertificationTests"
+      - name: Publish Practice V2 full catalogue certification
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          path = Path("artifacts/math-intelligence/practice-v2-full-catalogue-certification.json")
+          if not path.exists():
+              print("Practice V2 full catalogue certification report was not produced.")
+              raise SystemExit(0)
+          report = json.loads(path.read_text(encoding="utf-8"))
+          s = report["summary"]
+          lines = [
+              "# Practice Assessment Composition V2 — Full Runtime Certification",
+              "",
+              f"- Certified lessons: **{s['CertifiedLessonCount']:,} / {s['ExpectedLessonCount']:,}**",
+              f"- Standard READY_BALANCED: **{s['StandardReadyBalancedCount']:,}**",
+              f"- Standard READY_NARROW: **{s['StandardReadyNarrowCount']:,}**",
+              f"- Progressive READY_BALANCED: **{s['ProgressiveReadyBalancedCount']:,}**",
+              f"- Progressive READY_NARROW: **{s['ProgressiveReadyNarrowCount']:,}**",
+              f"- Blocked lessons: **{s['BlockedLessonCount']:,}**",
+              f"- Standard generated questions: **{s['StandardGeneratedQuestionCount']:,}**",
+              f"- Progressive generated questions: **{s['ProgressiveGeneratedQuestionCount']:,}**",
+              f"- Standard visual leak blocks: **{s['StandardVisualLeakBlockedCount']:,}**",
+              f"- Progressive visual leak blocks: **{s['ProgressiveVisualLeakBlockedCount']:,}**",
+          ]
+          print("\n".join(lines))
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as handle:
+              handle.write("\n".join(lines) + "\n")
+          PY
+      - name: Upload Practice V2 full catalogue certification
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: practice-v2-full-catalogue-certification-${{ github.sha }}
+          path: artifacts/math-intelligence/practice-v2-full-catalogue-certification.json
+          retention-days: 14
       - name: Publish catalogue divergence summary
         if: always()
         run: |

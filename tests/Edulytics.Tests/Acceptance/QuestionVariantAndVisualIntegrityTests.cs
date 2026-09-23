@@ -83,12 +83,24 @@ public sealed class QuestionVariantAndVisualIntegrityTests
             json);
 
         Assert.False(string.IsNullOrWhiteSpace(svg));
-        Assert.Contains(
-            dimension == 2 ? "2D shape" : "3D shape",
+        Assert.DoesNotContain(
+            "2D shape",
             svg,
-            StringComparison.Ordinal);
+            StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain(
+            "3D shape",
+            svg,
+            StringComparison.OrdinalIgnoreCase);
         Assert.DoesNotContain("base =", svg, StringComparison.Ordinal);
         Assert.DoesNotContain("h =", svg, StringComparison.Ordinal);
+
+        if (shape == 7)
+            Assert.Contains("<ellipse", svg, StringComparison.Ordinal);
+        else
+            Assert.Contains(
+                shape <= 1 || shape is 4 or 5 ? "<rect" : "<",
+                svg,
+                StringComparison.Ordinal);
     }
 
     [Fact]

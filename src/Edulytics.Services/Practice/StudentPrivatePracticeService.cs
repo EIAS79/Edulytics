@@ -270,7 +270,7 @@ public sealed class StudentPrivatePracticeService(
                 Status = PracticeAttemptStatus.InProgress,
                 StartedAtUtc = now,
                 Score = 0m,
-                MaxScore = request.QuestionCount,
+                MaxScore = items.Length,
                 Percentage = 0m
             };
 
@@ -345,7 +345,7 @@ public sealed class StudentPrivatePracticeService(
             }
             else
             {
-                items = exactEngine.Generate(
+                items = exactEngine.GenerateComposed(
                     context.Student.SchoolId,
                     context.Adoption.Id,
                     lessonId,
@@ -357,32 +357,6 @@ public sealed class StudentPrivatePracticeService(
                     studentUserId);
             }
         }
-        catch (ExactSkillQuestionPoolExhaustedException) when (
-            !request.UseLessonDifficultyProgression &&
-            excluded.Length > 0)
-        {
-            // AI/private Practice may still use a single selected difficulty.
-            // Historical exposure is a diversity preference rather than a
-            // permanent lockout if that finite parameter space is exhausted.
-            try
-            {
-                items = exactEngine.Generate(
-                    context.Student.SchoolId,
-                    context.Adoption.Id,
-                    lessonId,
-                    skillContract,
-                    request.Difficulty,
-                    request.QuestionCount,
-                    seed,
-                    [],
-                    studentUserId);
-            }
-            catch (InvalidOperationException)
-            {
-                return StudentPrivatePracticeResult.Failure(
-                    StudentPrivatePracticeError.GenerationFailed);
-            }
-        }
         catch (InvalidOperationException)
         {
             // READY_VERIFIED Practice must fail closed for genuine exact
@@ -391,16 +365,20 @@ public sealed class StudentPrivatePracticeService(
             return StudentPrivatePracticeResult.Failure(StudentPrivatePracticeError.GenerationFailed);
         }
 
-        if (items.Count != request.QuestionCount ||
-            items.Any(item =>
-                !string.Equals(
-                    item.GenerationMethod,
-                    Stage18PracticeSkillContracts.GenerationMethod,
-                    StringComparison.Ordinal) ||
-                !Stage18SkillContractPracticeEngine.VerifyPersistedItem(skillContract, item)))
+        var qualityResult =
+            new PracticeSessionQualityValidator().Validate(
+                skillContract,
+                items,
+                request.QuestionCount);
+        if (!qualityResult.IsReady)
         {
-            return StudentPrivatePracticeResult.Failure(StudentPrivatePracticeError.GenerationFailed);
+            return StudentPrivatePracticeResult.Failure(
+                StudentPrivatePracticeError.GenerationFailed);
         }
+
+        PracticeSessionQualityValidator.StampReadiness(
+            items,
+            qualityResult);
 
         var now = DateTime.UtcNow;
         var attemptId = Guid.NewGuid();
@@ -428,7 +406,7 @@ public sealed class StudentPrivatePracticeService(
             Status = PracticeAttemptStatus.InProgress,
             StartedAtUtc = now,
             Score = 0m,
-            MaxScore = request.QuestionCount,
+            MaxScore = items.Count,
             Percentage = 0m
         };
 

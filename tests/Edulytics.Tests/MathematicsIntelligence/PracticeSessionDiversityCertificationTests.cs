@@ -103,7 +103,7 @@ public sealed class PracticeSessionDiversityCertificationTests
     }
 
     [Fact]
-    public void EveryLessonPracticeFamilyCanSustainATenQuestionSession()
+    public void EveryLessonPracticeFamilyCanSustainItsCertifiedMeaningfulSessionCapacity()
     {
         var engine = new ExactSkillContractQuestionEngine();
         var families = LessonPracticeContractRegistry.All
@@ -120,22 +120,24 @@ public sealed class PracticeSessionDiversityCertificationTests
 
             try
             {
+                const int questionCount = 10;
+
                 var questions = engine.Generate(
                     "family-session-capacity-certification",
                     family,
                     [family],
                     ExactSkillQuestionDifficulty.Standard,
-                    10,
+                    questionCount,
                     910000 + index,
                     []);
 
-                if (questions.Count != 10)
-                    failures.Add($"{family}: generated {questions.Count}/10");
+                if (questions.Count != questionCount)
+                    failures.Add($"{family}: generated {questions.Count}/{questionCount}");
 
                 if (questions
                     .Select(x => x.ExposureFingerprint)
                     .Distinct(StringComparer.Ordinal)
-                    .Count() != 10)
+                    .Count() != questionCount)
                 {
                     failures.Add($"{family}: duplicate exposure fingerprints");
                 }
@@ -162,6 +164,55 @@ public sealed class PracticeSessionDiversityCertificationTests
             failures.Count == 0,
             "Question-family ten-item capacity failures: " +
             string.Join(" | ", failures));
+    }
+
+    [Fact]
+    public void ShapeDimensionProvidesGenuineQuestionFormAndSemanticDiversity()
+    {
+        const string family = "supporting.geometry.shape_dimension";
+        var engine = new ExactSkillContractQuestionEngine();
+
+        var questions = engine.Generate(
+            "shape-form-certification",
+            family,
+            [family],
+            ExactSkillQuestionDifficulty.Standard,
+            10,
+            20260923,
+            []);
+
+        Assert.Equal(10, questions.Count);
+
+        var forms = questions
+            .Select(question => question.Parameters["form"])
+            .Distinct()
+            .OrderBy(value => value)
+            .ToArray();
+
+        Assert.True(
+            forms.Length >= 3,
+            $"Expected at least 3 genuine shape question forms, got {string.Join(",", forms)}.");
+
+        var semanticKeys = questions
+            .Select(question =>
+                PracticeSemanticQuestionIdentityPolicy
+                    .Create(
+                        question.Family,
+                        question.Parameters)
+                    .Key)
+            .ToArray();
+
+        Assert.Equal(
+            questions.Count,
+            semanticKeys.Distinct(StringComparer.Ordinal).Count());
+
+        Assert.All(
+            questions,
+            question => Assert.True(
+                ExactSkillContractQuestionEngine.Verify(
+                    question.Family,
+                    question.Parameters,
+                    question.CorrectAnswer)));
     }
 
     [Fact]

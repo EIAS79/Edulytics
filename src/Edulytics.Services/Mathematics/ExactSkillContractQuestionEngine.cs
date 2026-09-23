@@ -4,6 +4,7 @@ using System.Text;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Mathematics.Ast;
 using Edulytics.Core.Mathematics.Generation;
+using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.Mathematics.Generation;
 using Edulytics.Services.Mathematics.Runtime;
 using Edulytics.Services.Mathematics.Solving;
@@ -185,6 +186,7 @@ public sealed class ExactSkillContractQuestionEngine
             .ToHashSet(StringComparer.Ordinal);
         var generated = new HashSet<string>(StringComparer.Ordinal);
         var generatedPrompts = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var generatedSemanticKeys = new HashSet<string>(StringComparer.Ordinal);
         var items = new List<ExactSkillGeneratedQuestion>(questionCount);
 
         for (var index = 0; index < questionCount; index++)
@@ -225,9 +227,21 @@ public sealed class ExactSkillContractQuestionEngine
                 var normalizedPrompt = NormalizePrompt(problem.Prompt);
                 var hasSemanticVariant =
                     RequiresPromptUniqueness(problem.Family);
+                var semanticKey =
+                    PracticeSemanticQuestionIdentityPolicy
+                        .EnforceInsideExactGenerator(problem.Family)
+                        ? PracticeSemanticQuestionIdentityPolicy
+                            .Create(
+                                problem.Family,
+                                problem.Parameters)
+                            .Key
+                        : null;
+
                 if (excluded.Contains(fingerprint) ||
                     generated.Contains(fingerprint) ||
-                    (hasSemanticVariant && generatedPrompts.Contains(normalizedPrompt)))
+                    (hasSemanticVariant && generatedPrompts.Contains(normalizedPrompt)) ||
+                    (semanticKey is not null &&
+                     generatedSemanticKeys.Contains(semanticKey)))
                 {
                     continue;
                 }
@@ -235,6 +249,8 @@ public sealed class ExactSkillContractQuestionEngine
                 generated.Add(fingerprint);
                 if (hasSemanticVariant)
                     generatedPrompts.Add(normalizedPrompt);
+                if (semanticKey is not null)
+                    generatedSemanticKeys.Add(semanticKey);
                 var variant = QuestionVariantPolicy.Describe(
                     problem.Parameters,
                     requestedVariant);

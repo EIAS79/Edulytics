@@ -195,14 +195,14 @@ internal static class SupportingPracticeCompletionEngine
             "supporting.geometry.axis_distance" => AxisDistance(random, scale),
             "supporting.geometry.circle_circumference_pi_coefficient" => CircleCircumference(random, scale),
             "supporting.geometry.circle_area_pi_coefficient" => CircleArea(random, scale),
-            "supporting.geometry.locus_equidistant" => LocusEquidistant(random),
+            "supporting.geometry.locus_equidistant" => LocusEquidistant(random, preferredVariant),
             "supporting.statistics.table_total" => TableTotal(random, scale),
             "supporting.statistics.pie_sector_angle" => PieSector(random, scale),
             "supporting.statistics.scatter_correlation" => ScatterCorrelation(random),
             "supporting.statistics.experimental_probability" => ExperimentalProbability(random, scale),
             "supporting.probability.sample_space_count" => SampleSpaceCount(random, scale),
             "supporting.statistics.compare_range" => CompareRange(random, scale),
-            "supporting.statistics.collection_method" => CollectionMethod(random),
+            "supporting.statistics.collection_method" => CollectionMethod(random, preferredVariant),
             "supporting.reasoning.multistep" =>
                 MultiStep(random, scale, preferredVariant),
             "supporting.reasoning.verify_identity" => VerifyIdentity(random, scale),
@@ -338,7 +338,7 @@ internal static class SupportingPracticeCompletionEngine
             "supporting.geometry.circle_area_pi_coefficient" =>
                 (p["radius"] * p["radius"]).ToString(CultureInfo.InvariantCulture),
             "supporting.geometry.locus_equidistant" =>
-                "perpendicular bisector",
+                SolveLocusEquidistant(p),
             "supporting.statistics.table_total" =>
                 (p["f1"] + p["f2"] + p["f3"] + p["f4"]).ToString(CultureInfo.InvariantCulture),
             "supporting.statistics.pie_sector_angle" =>
@@ -1077,14 +1077,70 @@ internal static class SupportingPracticeCompletionEngine
             ("radius", radius));
     }
 
-    private static Problem LocusEquidistant(Random r)
+    private static Problem LocusEquidistant(
+        Random r,
+        int? preferredVariant = null)
     {
-        var variant = r.Next(1, 1000);
-        return P("supporting.geometry.locus_equidistant",
-            "What is the locus of points that are exactly the same distance from two fixed points A and B?",
-            "Points equidistant from A and B lie on the perpendicular bisector of segment AB.",
-            AssessmentItemType.ShortAnswer,
-            ("variant", variant));
+        var slot = QuestionVariantPolicy.NormalizeSlot(
+            preferredVariant ?? r.Next(0, 16));
+        var mode = slot / 4;
+
+        if (mode == 0)
+        {
+            return P(
+                "supporting.geometry.locus_equidistant",
+                "What is the locus of points that are exactly the same distance from two fixed points A and B?",
+                "Points equidistant from A and B lie on the perpendicular bisector of segment AB.",
+                AssessmentItemType.ShortAnswer,
+                ("mode", mode),
+                ("variant", slot));
+        }
+
+        if (mode == 1)
+        {
+            var start = 2 * r.Next(-6, 5);
+            var gap = 2 * r.Next(2, 8);
+            var end = start + gap;
+            var midpoint = (start + end) / 2;
+            return P(
+                "supporting.geometry.locus_equidistant",
+                $"Points A({start}, 0) and B({end}, 0) are fixed. The locus of points equidistant from A and B is a vertical line. Find its x-coordinate.",
+                "The locus is the perpendicular bisector of AB, so its x-coordinate is the midpoint of the two x-coordinates.",
+                ("mode", mode),
+                ("start", start),
+                ("end", end),
+                ("midpoint", midpoint),
+                ("variant", slot));
+        }
+
+        if (mode == 2)
+        {
+            var claim = slot % 4;
+            var claimedLocus = claim switch
+            {
+                0 => "the midpoint of AB only",
+                1 => "a circle centred at A",
+                2 => "a line through A parallel to AB",
+                _ => "the line segment AB"
+            };
+            return P(
+                "supporting.geometry.locus_equidistant",
+                $"A student says the locus of points equidistant from fixed points A and B is {claimedLocus}. State the correct locus.",
+                "The complete set of points equidistant from two fixed points is the perpendicular bisector of the segment joining them.",
+                AssessmentItemType.ShortAnswer,
+                ("mode", mode),
+                ("claim", claim),
+                ("variant", slot));
+        }
+
+        var distance = r.Next(2, 30);
+        return P(
+            "supporting.geometry.locus_equidistant",
+            $"Point P lies on the perpendicular bisector of AB. If PA = {distance}, find PB.",
+            "Every point on the perpendicular bisector is equidistant from A and B.",
+            ("mode", mode),
+            ("distance", distance),
+            ("variant", slot));
     }
 
     private static Problem TableTotal(Random r, int s)
@@ -1168,31 +1224,94 @@ internal static class SupportingPracticeCompletionEngine
             ("rangeA", rangeA), ("rangeB", rangeB));
     }
 
-    private static Problem CollectionMethod(Random r)
+    private static Problem CollectionMethod(
+        Random r,
+        int? preferredVariant = null)
     {
-        var variant = r.Next(0, 12);
-        var method = variant % 2;
-        var prompt = variant switch
+        var slot = QuestionVariantPolicy.NormalizeSlot(
+            preferredVariant ?? r.Next(0, 16));
+        var mode = slot / 4;
+
+        if (mode == 0)
         {
-            0 => "A school asks every enrolled student about travel to school. Is this a census or a sample?",
-            1 => "A school surveys 80 students chosen from 800 students. Is this a census or a sample?",
-            2 => "A club records the age of every member. Is this a census or a sample?",
-            3 => "A club selects 25 members at random for a questionnaire. Is this a census or a sample?",
-            4 => "A factory checks every item produced during one shift. Is this a census or a sample?",
-            5 => "A factory inspects 40 items from a batch of 2000. Is this a census or a sample?",
-            6 => "A class teacher records the height of every student in the class. Is this a census or a sample?",
-            7 => "A class teacher measures 10 students chosen from the class. Is this a census or a sample?",
-            8 => "A library counts the category of every book in one collection. Is this a census or a sample?",
-            9 => "A library examines 100 books selected from 5000. Is this a census or a sample?",
-            10 => "A sports league records the result of every match this season. Is this a census or a sample?",
-            _ => "A sports league analyses 12 matches selected from the season. Is this a census or a sample?"
-        };
-        return P("supporting.statistics.collection_method",
-            prompt,
-            "A census includes the entire population; a sample includes only part of the population.",
+            var scenario = slot % 4;
+            var prompt = scenario switch
+            {
+                0 => "A school asks every enrolled student about travel to school. Is this a census or a sample?",
+                1 => "A school surveys 80 students chosen from 800 students. Is this a census or a sample?",
+                2 => "A club records the age of every member. Is this a census or a sample?",
+                _ => "A club selects 25 members at random for a questionnaire. Is this a census or a sample?"
+            };
+            var method = scenario % 2;
+            return P(
+                "supporting.statistics.collection_method",
+                prompt,
+                "A census includes the entire population; a sample includes only part of the population.",
+                AssessmentItemType.ShortAnswer,
+                ("mode", mode),
+                ("scenario", scenario),
+                ("method", method),
+                ("variant", slot));
+        }
+
+        if (mode == 1)
+        {
+            var population = 100 * r.Next(3, 21);
+            var wholePopulation = slot % 2 == 0;
+            var observed = wholePopulation
+                ? population
+                : Math.Max(10, population / r.Next(3, 8));
+            var method = wholePopulation ? 0 : 1;
+            return P(
+                "supporting.statistics.collection_method",
+                $"A study defines a population of {population} people and records data from {observed} of them. Is the study a census or a sample?",
+                "Compare the number observed with the full population. Observing everyone is a census; observing only part is a sample.",
+                AssessmentItemType.ShortAnswer,
+                ("mode", mode),
+                ("population", population),
+                ("observed", observed),
+                ("method", method),
+                ("variant", slot));
+        }
+
+        if (mode == 2)
+        {
+            var population = 50 * r.Next(6, 31);
+            var method = slot % 2;
+            var observed = method == 0
+                ? population
+                : Math.Max(10, population / r.Next(3, 8));
+            var claimedMethod = 1 - method;
+            var claimedLabel = claimedMethod == 0 ? "census" : "sample";
+            return P(
+                "supporting.statistics.collection_method",
+                $"A study records data from {observed} of a population of {population}. A student calls this a {claimedLabel}. What is the correct classification?",
+                "Check whether the study observes the whole population or only a subset.",
+                AssessmentItemType.ShortAnswer,
+                ("mode", mode),
+                ("population", population),
+                ("observed", observed),
+                ("method", method),
+                ("claimedMethod", claimedMethod),
+                ("variant", slot));
+        }
+
+        var targetPopulation = 100 * r.Next(4, 25);
+        var requirement = slot % 2;
+        var correctMethod = requirement == 0 ? 0 : 1;
+        var requirementText = requirement == 0
+            ? "collect data from every member of the population"
+            : "estimate the population efficiently from only part of it";
+        return P(
+            "supporting.statistics.collection_method",
+            $"Researchers have a population of {targetPopulation} people and want to {requirementText}. Should they use a census or a sample?",
+            "Choose a census when every member must be observed; choose a sample when only a subset is intended.",
             AssessmentItemType.ShortAnswer,
-            ("method", method),
-            ("variant", variant));
+            ("mode", mode),
+            ("population", targetPopulation),
+            ("requirement", requirement),
+            ("method", correctMethod),
+            ("variant", slot));
     }
 
     private static Problem MultiStep(
@@ -1759,6 +1878,21 @@ internal static class SupportingPracticeCompletionEngine
 
     private static string Compare(int left, int right) =>
         left < right ? "<" : left > right ? ">" : "=";
+
+    private static string SolveLocusEquidistant(
+        IReadOnlyDictionary<string, int> p)
+    {
+        if (!p.TryGetValue("mode", out var mode))
+            return "perpendicular bisector";
+
+        return mode switch
+        {
+            0 => "perpendicular bisector",
+            1 => p["midpoint"].ToString(CultureInfo.InvariantCulture),
+            2 => "perpendicular bisector",
+            _ => p["distance"].ToString(CultureInfo.InvariantCulture)
+        };
+    }
 
     private static string CompareLabel(int left, int right) =>
         left > right ? "A" : right > left ? "B" : "equal";
