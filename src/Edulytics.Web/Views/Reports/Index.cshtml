@@ -24,6 +24,29 @@
         : null;
     var isPolish = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "pl";
 
+    var studentReportRows =
+        Model.Request.Kind == ReportKind.Student && Model.Document is not null
+            ? Model.Document.Rows
+            : [];
+    var studentEarned = studentReportRows.Sum(x => x.Cells.Count > 3 ? x.Cells[3].NumberValue ?? 0m : 0m);
+    var studentPossible = studentReportRows.Sum(x => x.Cells.Count > 4 ? x.Cells[4].NumberValue ?? 0m : 0m);
+    var studentOverallMastery =
+        studentPossible > 0m
+            ? studentEarned / studentPossible * 100m
+            : (decimal?)null;
+    var studentEvidence = studentReportRows.Sum(x =>
+        x.Cells.Count > 6
+            ? (int)(x.Cells[6].NumberValue ?? 0m)
+            : 0);
+    var strongestStudentOutcome = studentReportRows
+        .Where(x => x.Cells.Count > 6 && (x.Cells[6].NumberValue ?? 0m) > 0m)
+        .OrderByDescending(x => x.Cells[5].NumberValue ?? 0m)
+        .FirstOrDefault();
+    var weakestStudentOutcome = studentReportRows
+        .Where(x => x.Cells.Count > 6 && (x.Cells[6].NumberValue ?? 0m) > 0m)
+        .OrderBy(x => x.Cells[5].NumberValue ?? 0m)
+        .FirstOrDefault();
+
     ViewData["Title"] = R["ReportsTitle"].Value;
 }
 
@@ -284,6 +307,58 @@
             }
             else if (Model.Request.Kind == ReportKind.Student)
             {
+                <section class="report-student-summary" aria-label="@R["StudentAcademicSummary"]">
+                    <article class="report-summary-card">
+                        <span>@R["OverallMastery"]</span>
+                        <strong>@(studentOverallMastery.HasValue ? $"{studentOverallMastery.Value:0.##}%" : "—")</strong>
+                        <small>@R["WeightedFromStoredScores"]</small>
+                    </article>
+                    <article class="report-summary-card">
+                        <span>@R["LearningOutcomesWithEvidence"]</span>
+                        <strong>@studentReportRows.Count</strong>
+                    </article>
+                    <article class="report-summary-card">
+                        <span>@R["EvidenceCount"]</span>
+                        <strong>@studentEvidence</strong>
+                    </article>
+                    <article class="report-summary-card">
+                        <span>@R["RecordedScore"]</span>
+                        <strong>@studentEarned.ToString("0.##") / @studentPossible.ToString("0.##")</strong>
+                    </article>
+                </section>
+
+                @if (strongestStudentOutcome is not null || weakestStudentOutcome is not null)
+                {
+                    <section class="report-student-highlights">
+                        @if (strongestStudentOutcome is not null)
+                        {
+                            var strongCode = strongestStudentOutcome.Cells[1].TextValue ?? string.Empty;
+                            var strongSeparator = strongCode.LastIndexOf(':');
+                            var strongShortCode = strongSeparator >= 0 && strongSeparator < strongCode.Length - 1
+                                ? strongCode[(strongSeparator + 1)..]
+                                : strongCode;
+                            <article>
+                                <span>@R["HighestCurrentMastery"]</span>
+                                <strong>@strongestStudentOutcome.Cells[0].TextValue — @strongShortCode</strong>
+                                <small>@ReportIndexViewModel.Display(strongestStudentOutcome.Cells[5]) · @R["EvidenceCount"]: @ReportIndexViewModel.Display(strongestStudentOutcome.Cells[6])</small>
+                            </article>
+                        }
+                        @if (weakestStudentOutcome is not null)
+                        {
+                            var weakCode = weakestStudentOutcome.Cells[1].TextValue ?? string.Empty;
+                            var weakSeparator = weakCode.LastIndexOf(':');
+                            var weakShortCode = weakSeparator >= 0 && weakSeparator < weakCode.Length - 1
+                                ? weakCode[(weakSeparator + 1)..]
+                                : weakCode;
+                            <article>
+                                <span>@R["LowestCurrentMastery"]</span>
+                                <strong>@weakestStudentOutcome.Cells[0].TextValue — @weakShortCode</strong>
+                                <small>@ReportIndexViewModel.Display(weakestStudentOutcome.Cells[5]) · @R["EvidenceCount"]: @ReportIndexViewModel.Display(weakestStudentOutcome.Cells[6])</small>
+                            </article>
+                        }
+                    </section>
+                }
+
                 <div class="analytics-table-wrap">
                     <table class="analytics-table report-table report-student-mastery-table">
                         <thead>
@@ -310,7 +385,15 @@
                                         @ReportIndexViewModel.Display(row.Cells[3]) / @ReportIndexViewModel.Display(row.Cells[4])
                                     </td>
                                     <td data-label="@R["ColumnMastery"]">
+                                        @{
+                                            var mastery = Math.Clamp(row.Cells[5].NumberValue ?? 0m, 0m, 100m);
+                                        }
                                         <strong>@ReportIndexViewModel.Display(row.Cells[5])</strong>
+                                        <div class="report-mastery-bar"
+                                             role="img"
+                                             aria-label="@R["MasteryBarLabel", ReportIndexViewModel.Display(row.Cells[5])]">
+                                            <span style="width: @mastery.ToString("0.##", CultureInfo.InvariantCulture)%"></span>
+                                        </div>
                                     </td>
                                     <td data-label="@R["ColumnEvidence"]">
                                         @ReportIndexViewModel.Display(row.Cells[6])
