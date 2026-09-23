@@ -281,6 +281,15 @@ public sealed class StudentPrivatePracticeServiceTests
             Assert.Equal(
                 AssessmentItemDifficulty.Medium,
                 item.Difficulty);
+            Assert.Equal(
+                "READY_BALANCED",
+                metadata.RootElement
+                    .GetProperty("sessionReadiness")
+                    .GetString());
+            Assert.True(
+                metadata.RootElement
+                    .GetProperty("sessionQualityValidated")
+                    .GetBoolean());
         }
 
         Assert.All(
@@ -403,6 +412,28 @@ public sealed class StudentPrivatePracticeServiceTests
         Assert.Equal(
             new[] { 0, 1 },
             forms.OrderBy(x => x).ToArray());
+
+        Assert.All(
+            repo.SavedItems,
+            item =>
+            {
+                using var metadata = JsonDocument.Parse(
+                    item.ValidationMetadataJson!);
+                Assert.Equal(
+                    "READY_NARROW",
+                    metadata.RootElement
+                        .GetProperty("sessionReadiness")
+                        .GetString());
+                Assert.True(
+                    metadata.RootElement
+                        .GetProperty("sessionQualityValidated")
+                        .GetBoolean());
+                Assert.Equal(
+                    8,
+                    metadata.RootElement
+                        .GetProperty("sessionSemanticCount")
+                        .GetInt32());
+            });
     }
 
     [Fact]
@@ -481,6 +512,15 @@ public sealed class StudentPrivatePracticeServiceTests
                 metadata.RootElement
                     .GetProperty("progressionIndex")
                     .GetInt32());
+            Assert.Equal(
+                "READY_BALANCED",
+                metadata.RootElement
+                    .GetProperty("sessionReadiness")
+                    .GetString());
+            Assert.True(
+                metadata.RootElement
+                    .GetProperty("sessionQualityValidated")
+                    .GetBoolean());
 
             var form = metadata.RootElement
                 .GetProperty("questionForm")
