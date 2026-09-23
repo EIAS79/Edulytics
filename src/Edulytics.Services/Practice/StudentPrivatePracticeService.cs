@@ -270,7 +270,7 @@ public sealed class StudentPrivatePracticeService(
                 Status = PracticeAttemptStatus.InProgress,
                 StartedAtUtc = now,
                 Score = 0m,
-                MaxScore = items.Count,
+                MaxScore = items.Length,
                 Percentage = 0m
             };
 
