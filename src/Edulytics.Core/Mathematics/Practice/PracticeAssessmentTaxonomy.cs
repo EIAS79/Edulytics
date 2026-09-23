@@ -90,6 +90,86 @@ public static class PracticeQuestionFormCapabilityRegistry
             ];
         }
 
+        if (string.Equals(
+                family,
+                "supporting.probability.independent_product",
+                StringComparison.Ordinal) ||
+            string.Equals(
+                family,
+                "supporting.circle.angle_semicircle",
+                StringComparison.Ordinal) ||
+            string.Equals(
+                family,
+                "supporting.probability.normal_symmetry",
+                StringComparison.Ordinal) ||
+            string.Equals(
+                family,
+                "supporting.geometry.locus_equidistant",
+                StringComparison.Ordinal))
+        {
+            return
+            [
+                new(
+                    PracticeQuestionForm.Identify,
+                    PracticeCognitiveOperation.Understand,
+                    PracticeCognitiveDifficulty.Standard,
+                    PracticeCognitiveDifficulty.Standard,
+                    [0, 1, 2, 3]),
+                new(
+                    PracticeQuestionForm.Apply,
+                    PracticeCognitiveOperation.Apply,
+                    PracticeCognitiveDifficulty.Standard,
+                    PracticeCognitiveDifficulty.Stretch,
+                    [4, 5, 6, 7]),
+                new(
+                    PracticeQuestionForm.ErrorAnalysis,
+                    PracticeCognitiveOperation.Reason,
+                    PracticeCognitiveDifficulty.Stretch,
+                    PracticeCognitiveDifficulty.Challenge,
+                    [8, 9, 10, 11]),
+                new(
+                    PracticeQuestionForm.Transfer,
+                    PracticeCognitiveOperation.Transfer,
+                    PracticeCognitiveDifficulty.Challenge,
+                    PracticeCognitiveDifficulty.Challenge,
+                    [12, 13, 14, 15])
+            ];
+        }
+
+        if (string.Equals(
+                family,
+                "supporting.statistics.collection_method",
+                StringComparison.Ordinal))
+        {
+            return
+            [
+                new(
+                    PracticeQuestionForm.Classify,
+                    PracticeCognitiveOperation.Understand,
+                    PracticeCognitiveDifficulty.Standard,
+                    PracticeCognitiveDifficulty.Standard,
+                    [0, 1, 2, 3]),
+                new(
+                    PracticeQuestionForm.Apply,
+                    PracticeCognitiveOperation.Apply,
+                    PracticeCognitiveDifficulty.Standard,
+                    PracticeCognitiveDifficulty.Stretch,
+                    [4, 5, 6, 7]),
+                new(
+                    PracticeQuestionForm.ErrorAnalysis,
+                    PracticeCognitiveOperation.Reason,
+                    PracticeCognitiveDifficulty.Stretch,
+                    PracticeCognitiveDifficulty.Challenge,
+                    [8, 9, 10, 11]),
+                new(
+                    PracticeQuestionForm.Transfer,
+                    PracticeCognitiveOperation.Transfer,
+                    PracticeCognitiveDifficulty.Challenge,
+                    PracticeCognitiveDifficulty.Challenge,
+                    [12, 13, 14, 15])
+            ];
+        }
+
         if (family.Contains(
                 "compare",
                 StringComparison.OrdinalIgnoreCase) ||
