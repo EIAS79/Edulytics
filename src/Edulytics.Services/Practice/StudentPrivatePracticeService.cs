@@ -365,17 +365,20 @@ public sealed class StudentPrivatePracticeService(
             return StudentPrivatePracticeResult.Failure(StudentPrivatePracticeError.GenerationFailed);
         }
 
-        if (items.Count < 1 ||
-            items.Count > request.QuestionCount ||
-            items.Any(item =>
-                !string.Equals(
-                    item.GenerationMethod,
-                    Stage18PracticeSkillContracts.GenerationMethod,
-                    StringComparison.Ordinal) ||
-                !Stage18SkillContractPracticeEngine.VerifyPersistedItem(skillContract, item)))
+        var qualityResult =
+            new PracticeSessionQualityValidator().Validate(
+                skillContract,
+                items,
+                request.QuestionCount);
+        if (!qualityResult.IsReady)
         {
-            return StudentPrivatePracticeResult.Failure(StudentPrivatePracticeError.GenerationFailed);
+            return StudentPrivatePracticeResult.Failure(
+                StudentPrivatePracticeError.GenerationFailed);
         }
+
+        PracticeSessionQualityValidator.StampReadiness(
+            items,
+            qualityResult);
 
         var now = DateTime.UtcNow;
         var attemptId = Guid.NewGuid();
