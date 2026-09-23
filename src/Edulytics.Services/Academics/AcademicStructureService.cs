@@ -119,7 +119,11 @@ public sealed class AcademicStructureService : IAcademicStructureService
                     classGroup?.Name ?? string.Empty,
                     classGroup?.Code ?? string.Empty,
                     subjects.GetValueOrDefault(x.SubjectId)?.Name ?? string.Empty,
-                    years.GetValueOrDefault(x.AcademicYearId)?.Name ?? string.Empty);
+                    years.GetValueOrDefault(x.AcademicYearId)?.Name ?? string.Empty)
+                {
+                    ClassGroupId = x.ClassGroupId,
+                    TeacherUserId = x.TeacherUserId
+                };
             }).ToArray(),
             snapshot.StudentProfiles.Select(x => new StudentProfileItem(
                 x.Id,
@@ -144,7 +148,11 @@ public sealed class AcademicStructureService : IAcademicStructureService
                         string.Empty,
                     classGroup?.Name ?? string.Empty,
                     classGroup?.Code ?? string.Empty,
-                    years.GetValueOrDefault(x.AcademicYearId)?.Name ?? string.Empty);
+                    years.GetValueOrDefault(x.AcademicYearId)?.Name ?? string.Empty)
+                {
+                    ClassGroupId = x.ClassGroupId,
+                    AcademicYearId = x.AcademicYearId
+                };
             }).ToArray(),
             teacherCandidates,
             studentCandidates)
