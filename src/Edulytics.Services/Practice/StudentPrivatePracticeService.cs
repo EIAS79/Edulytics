@@ -270,7 +270,7 @@ public sealed class StudentPrivatePracticeService(
                 Status = PracticeAttemptStatus.InProgress,
                 StartedAtUtc = now,
                 Score = 0m,
-                MaxScore = request.QuestionCount,
+                MaxScore = items.Count,
                 Percentage = 0m
             };
 
@@ -345,7 +345,8 @@ public sealed class StudentPrivatePracticeService(
             }
             else
             {
-                items = exactEngine.Generate(
+                items = GenerateBestEffortExactLesson(
+                    exactEngine,
                     context.Student.SchoolId,
                     context.Adoption.Id,
                     lessonId,
@@ -357,32 +358,6 @@ public sealed class StudentPrivatePracticeService(
                     studentUserId);
             }
         }
-        catch (ExactSkillQuestionPoolExhaustedException) when (
-            !request.UseLessonDifficultyProgression &&
-            excluded.Length > 0)
-        {
-            // AI/private Practice may still use a single selected difficulty.
-            // Historical exposure is a diversity preference rather than a
-            // permanent lockout if that finite parameter space is exhausted.
-            try
-            {
-                items = exactEngine.Generate(
-                    context.Student.SchoolId,
-                    context.Adoption.Id,
-                    lessonId,
-                    skillContract,
-                    request.Difficulty,
-                    request.QuestionCount,
-                    seed,
-                    [],
-                    studentUserId);
-            }
-            catch (InvalidOperationException)
-            {
-                return StudentPrivatePracticeResult.Failure(
-                    StudentPrivatePracticeError.GenerationFailed);
-            }
-        }
         catch (InvalidOperationException)
         {
             // READY_VERIFIED Practice must fail closed for genuine exact
@@ -391,7 +366,8 @@ public sealed class StudentPrivatePracticeService(
             return StudentPrivatePracticeResult.Failure(StudentPrivatePracticeError.GenerationFailed);
         }
 
-        if (items.Count != request.QuestionCount ||
+        if (items.Count < 1 ||
+            items.Count > request.QuestionCount ||
             items.Any(item =>
                 !string.Equals(
                     item.GenerationMethod,
@@ -461,6 +437,72 @@ public sealed class StudentPrivatePracticeService(
             cancellationToken);
 
         return StudentPrivatePracticeResult.Success(attemptId);
+    }
+
+    private static IReadOnlyList<AssessmentItem> GenerateBestEffortExactLesson(
+        Stage18SkillContractPracticeEngine exactEngine,
+        Guid schoolId,
+        Guid curriculumAdoptionId,
+        Guid lessonId,
+        Stage18PracticeSkillContract skillContract,
+        StudentPrivatePracticeDifficulty difficulty,
+        int requestedQuestionCount,
+        int seed,
+        IReadOnlyCollection<string> historicalExclusions,
+        Guid studentUserId)
+    {
+        // A requested count is a maximum target. If a finite semantic pool
+        // cannot honestly sustain that count, prefer a shorter verified
+        // session over wording-only padding.
+        var minimumAcceptableCount = Math.Min(3, requestedQuestionCount);
+
+        for (var count = requestedQuestionCount;
+             count >= minimumAcceptableCount;
+             count--)
+        {
+            try
+            {
+                return exactEngine.Generate(
+                    schoolId,
+                    curriculumAdoptionId,
+                    lessonId,
+                    skillContract,
+                    difficulty,
+                    count,
+                    seed,
+                    historicalExclusions,
+                    studentUserId);
+            }
+            catch (ExactSkillQuestionPoolExhaustedException)
+                when (historicalExclusions.Count > 0)
+            {
+                try
+                {
+                    // Historical exposure is a diversity preference, not a
+                    // reason to pad or block a valid current attempt.
+                    return exactEngine.Generate(
+                        schoolId,
+                        curriculumAdoptionId,
+                        lessonId,
+                        skillContract,
+                        difficulty,
+                        count,
+                        seed,
+                        [],
+                        studentUserId);
+                }
+                catch (ExactSkillQuestionPoolExhaustedException)
+                {
+                    // Try the next smaller honest session size.
+                }
+            }
+            catch (ExactSkillQuestionPoolExhaustedException)
+            {
+                // Try the next smaller honest session size.
+            }
+        }
+
+        throw new ExactSkillQuestionPoolExhaustedException();
     }
 
     private static int QuestionLimitForScope(StudentPrivatePracticeScope scope) => scope switch
