@@ -332,6 +332,67 @@ public sealed class StudentPrivatePracticeServiceTests
     }
 
     [Fact]
+    public async Task Lesson_personal_practice_prefers_shorter_semantically_unique_session_to_padding()
+    {
+        const string family = "supporting.geometry.shape_dimension";
+        var contract = LessonPracticeContractRegistry.All
+            .First(x =>
+                x.AllowedQuestionFamilies.Count == 1 &&
+                string.Equals(
+                    x.AllowedQuestionFamilies[0],
+                    family,
+                    StringComparison.Ordinal));
+
+        var ids = Ids.Create();
+        var lessonId = Guid.NewGuid();
+        var lesson = Lesson(
+            ids,
+            lessonId,
+            "SHAPES",
+            "Geometry",
+            contract.LessonCode,
+            "2D and 3D shape properties",
+            1);
+
+        var repo = new FakeRepository
+        {
+            Context = BuildContext(ids, [], [lesson])
+        };
+
+        var result = await new StudentPrivatePracticeService(repo)
+            .GenerateAsync(
+                ids.User,
+                new GenerateStudentPrivatePracticeRequest(
+                    ids.Adoption,
+                    StudentPrivatePracticeScope.Lesson,
+                    lessonId,
+                    null,
+                    StudentPrivatePracticeDifficulty.MyLevel,
+                    10,
+                    20260923));
+
+        Assert.True(result.Succeeded);
+        Assert.Null(result.Error);
+        Assert.NotNull(repo.SavedAttempt);
+        Assert.Equal(8, repo.SavedItems.Count);
+        Assert.Equal(8m, repo.SavedAttempt!.MaxScore);
+
+        var shapes = repo.SavedItems
+            .Select(item =>
+            {
+                using var document = JsonDocument.Parse(
+                    item.GenerationParametersJson!);
+                return document.RootElement
+                    .GetProperty("parameters")
+                    .GetProperty("shape")
+                    .GetInt32();
+            })
+            .ToArray();
+
+        Assert.Equal(8, shapes.Distinct().Count());
+    }
+
+    [Fact]
     public async Task Weak_area_generation_prefers_low_official_mastery()
     {
         var ids = Ids.Create();
