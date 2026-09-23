@@ -387,12 +387,15 @@
                                     <td data-label="@R["ColumnMastery"]">
                                         @{
                                             var mastery = Math.Clamp(row.Cells[5].NumberValue ?? 0m, 0m, 100m);
+                                            var masteryWidth = mastery.ToString(
+                                                "0.##",
+                                                CultureInfo.InvariantCulture);
                                         }
                                         <strong>@ReportIndexViewModel.Display(row.Cells[5])</strong>
                                         <div class="report-mastery-bar"
                                              role="img"
                                              aria-label="@R["MasteryBarLabel", ReportIndexViewModel.Display(row.Cells[5])]">
-                                            <span style="width: @mastery.ToString("0.##", CultureInfo.InvariantCulture)%"></span>
+                                            <span style="width: @masteryWidth%"></span>
                                         </div>
                                     </td>
                                     <td data-label="@R["ColumnEvidence"]">
