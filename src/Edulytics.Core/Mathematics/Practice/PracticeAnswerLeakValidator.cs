@@ -70,7 +70,9 @@ public static class PracticeAnswerLeakValidator
 
         var normalizedFamily = family?.Trim() ?? string.Empty;
         var normalizedVisual = Normalize(learnerVisibleVisual);
-        var normalizedAnswer = Normalize(correctAnswer);
+        var normalizedAnswer = string.IsNullOrWhiteSpace(correctAnswer)
+            ? string.Empty
+            : Normalize(correctAnswer);
 
         foreach (var prefix in ExplicitDisclosurePrefixes)
         {
