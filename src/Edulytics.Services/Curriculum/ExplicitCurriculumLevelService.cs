@@ -159,17 +159,21 @@ public sealed class ExplicitCurriculumLevelService : IExplicitCurriculumLevelSer
     private readonly IAcademicStructureRepository _academic;
     private readonly ISchoolRepository _schools;
     private readonly ISchoolUserRepository _users;
+    private readonly ISubjectSupervisorAssignmentRepository?
+        _subjectSupervisorAssignments;
 
     public ExplicitCurriculumLevelService(
         ICurriculumRepository curriculum,
         IAcademicStructureRepository academic,
         ISchoolRepository schools,
-        ISchoolUserRepository users)
+        ISchoolUserRepository users,
+        ISubjectSupervisorAssignmentRepository? subjectSupervisorAssignments = null)
     {
         _curriculum = curriculum;
         _academic = academic;
         _schools = schools;
         _users = users;
+        _subjectSupervisorAssignments = subjectSupervisorAssignments;
     }
 
     public async Task<ExplicitCurriculumLevelQueryResult<ExplicitCurriculumLevelDashboard>>
@@ -465,6 +469,26 @@ public sealed class ExplicitCurriculumLevelService : IExplicitCurriculumLevelSer
             x.AdoptionId == classGroup.CurriculumAdoptionId.Value);
         if (adoption is null)
             return Fail(nameof(request.ClassGroupId), ExplicitCurriculumLevelErrorCode.CurriculumAdoptionNotFound);
+
+        // Subject supervisors are scoped by explicit subject assignment.
+        // In production this repository is registered by Phase19. The nullable
+        // fallback preserves direct legacy test construction while the runtime
+        // path always enforces the subject boundary.
+        if (_subjectSupervisorAssignments is not null)
+        {
+            var supervisorAssignments =
+                await _subjectSupervisorAssignments.ListActiveBySupervisorAsync(
+                    schoolId,
+                    actorUserId,
+                    cancellationToken);
+
+            if (!supervisorAssignments.Any(x => x.SubjectId == adoption.SubjectId))
+            {
+                return Fail(
+                    nameof(request.ClassGroupId),
+                    ExplicitCurriculumLevelErrorCode.AccessDenied);
+            }
+        }
 
         if (await _academic.TeacherAssignmentExistsAsync(
                 schoolId,
