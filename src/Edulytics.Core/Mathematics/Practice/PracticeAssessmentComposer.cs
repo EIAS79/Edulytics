@@ -61,11 +61,12 @@ public sealed class PracticeAssessmentComposer
             .Select(family => BuildFamilyCandidates(
                 family,
                 requestedDifficulty))
+            .Where(candidates => candidates.Count > 0)
             .ToArray();
 
-        if (familyCandidates.Any(candidates => candidates.Count == 0))
+        if (familyCandidates.Length == 0)
             throw new InvalidOperationException(
-                "Every Practice family must expose at least one question-form capability.");
+                "No allowed Practice family exposes a question-form capability for the requested difficulty.");
 
         // Interleave families after each family has already been internally
         // interleaved by question form. This prevents the requested count from
