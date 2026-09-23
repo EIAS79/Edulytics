@@ -103,7 +103,7 @@ public static class PracticeQuestionFormCapabilityRegistry
                     PracticeQuestionForm.Compare,
                     PracticeCognitiveOperation.Understand,
                     PracticeCognitiveDifficulty.Standard,
-                    PracticeCognitiveDifficulty.Challenge,
+                    PracticeCognitiveDifficulty.Standard,
                     AllVariantSlots)
             ];
         }
@@ -124,7 +124,7 @@ public static class PracticeQuestionFormCapabilityRegistry
                     PracticeQuestionForm.Classify,
                     PracticeCognitiveOperation.Understand,
                     PracticeCognitiveDifficulty.Standard,
-                    PracticeCognitiveDifficulty.Challenge,
+                    PracticeCognitiveDifficulty.Standard,
                     AllVariantSlots)
             ];
         }
@@ -142,7 +142,7 @@ public static class PracticeQuestionFormCapabilityRegistry
                     PracticeQuestionForm.Apply,
                     PracticeCognitiveOperation.Reason,
                     PracticeCognitiveDifficulty.Standard,
-                    PracticeCognitiveDifficulty.Challenge,
+                    PracticeCognitiveDifficulty.Standard,
                     AllVariantSlots)
             ];
         }
