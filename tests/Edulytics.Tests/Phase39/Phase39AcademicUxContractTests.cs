@@ -112,6 +112,29 @@ public sealed class Phase39AcademicUxContractTests
     }
 
     [Fact]
+    public void TeacherAssignmentDirectory_UsesServerSearchAndStableCurriculumLevelKeys()
+    {
+        var root = FindRepositoryRoot();
+        var controller = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Controllers/SchoolUsersController.cs"));
+        var view = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/AcademicStructure/Index.cshtml"));
+        var javascript = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/site.js"));
+
+        Assert.Contains("options/teachers", controller, StringComparison.Ordinal);
+        Assert.Contains("Role: RoleNames.Teacher", controller, StringComparison.Ordinal);
+        Assert.Contains("data-level-key", view, StringComparison.Ordinal);
+        Assert.Contains("CurriculumLevelKey", view, StringComparison.Ordinal);
+        Assert.Contains("/School/Users/options/teachers", javascript, StringComparison.Ordinal);
+        Assert.Contains("wireTeacherAssignmentDirectory", javascript, StringComparison.Ordinal);
+        Assert.Contains("option.dataset.levelKey", javascript, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void StudentCreation_UsesUserManagementAsTheNormalEntryPoint()
     {
         var root = FindRepositoryRoot();
