@@ -1,5 +1,6 @@
 using System.Text;
 using Edulytics.Core.Enums;
+using Edulytics.Core.Curriculum;
 using Edulytics.Services.Assessments;
 using Edulytics.Services.Imports;
 using Edulytics.Web.Imports;
@@ -31,6 +32,38 @@ public sealed class Phase39AcademicUxContractTests
         Assert.Contains("CurriculumDisplayLabel", studentCatalog, StringComparison.Ordinal);
         Assert.Contains("label = x.DisplayLabel", studentOptions, StringComparison.Ordinal);
     }
+
+
+    [Fact]
+    public void CambridgeCoreAndExtended_AreDistinctTracksWithExplicitUiLabels()
+    {
+        var level10 = CurriculumLevelIdentityRegistry
+            .ForPack(MathematicsCurriculumPackRegistry.CambridgeCode)
+            .Where(x => x.LogicalLevel == 10)
+            .ToArray();
+
+        var core = Assert.Single(level10, x => x.Pathway == "Core");
+        var extended = Assert.Single(level10, x => x.Pathway == "Extended");
+
+        Assert.NotEqual(core.Key, extended.Key);
+        Assert.NotEqual(core.DisplayLabel, extended.DisplayLabel);
+        Assert.Contains("Core", core.DisplayLabel, StringComparison.Ordinal);
+        Assert.Contains("Extended", extended.DisplayLabel, StringComparison.Ordinal);
+        Assert.Contains("level 10", core.DisplayLabel, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("level 10", extended.DisplayLabel, StringComparison.OrdinalIgnoreCase);
+
+        var root = FindRepositoryRoot();
+        var view = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/AcademicStructure/Index.cshtml"));
+
+        Assert.Contains("@level.DisplayLabel", view, StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "@level.Label@(string.IsNullOrWhiteSpace(level.Pathway)",
+            view,
+            StringComparison.Ordinal);
+    }
+
 
     [Fact]
     public void TeacherAssignments_SupportMultipleClassesWithoutExposingSubjectChoice()
