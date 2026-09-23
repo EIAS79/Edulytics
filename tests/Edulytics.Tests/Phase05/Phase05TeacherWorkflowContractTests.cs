@@ -101,7 +101,8 @@ public sealed class Phase05TeacherWorkflowContractTests
         Assert.Contains("AssignTeacherToCurriculumClassRequest", controller, StringComparison.Ordinal);
         Assert.Contains("name=\"teacherUserId\"", view, StringComparison.Ordinal);
         Assert.Contains("name=\"classGroupId\"", view, StringComparison.Ordinal);
-        Assert.Contains("Mathematics is inferred", view, StringComparison.Ordinal);
+        Assert.Contains("MathematicsAssignmentContextHelp", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("name=\"subjectId\"", view, StringComparison.Ordinal);
     }
 
     [Fact]
