@@ -26,6 +26,27 @@ public sealed class PracticeAssessmentTaxonomyTests
     }
 
     [Fact]
+    public void GenericFamiliesDoNotClaimUnsupportedStretchOrChallengeForms()
+    {
+        var capabilities =
+            PracticeQuestionFormCapabilityRegistry.Resolve(
+                "supporting.powers10.evaluate");
+
+        Assert.NotEmpty(capabilities);
+        Assert.All(
+            capabilities,
+            capability =>
+            {
+                Assert.Equal(
+                    PracticeCognitiveDifficulty.Standard,
+                    capability.MinimumDifficulty);
+                Assert.Equal(
+                    PracticeCognitiveDifficulty.Standard,
+                    capability.MaximumDifficulty);
+            });
+    }
+
+    [Fact]
     public void ShapeDimensionDeclaresFourGenuineCognitiveFormsAcrossAllVariantSlots()
     {
         const string family = "supporting.geometry.shape_dimension";
