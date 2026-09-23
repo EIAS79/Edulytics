@@ -558,6 +558,13 @@
                       method="post"
                       class="academic-card academic-form">
                     <h3>@A["AssignTeacher"]</h3>
+
+                    <label for="teacher-search">@A["SearchTeachers"]</label>
+                    <input id="teacher-search"
+                           type="search"
+                           autocomplete="off"
+                           placeholder="@A["SearchTeachersPlaceholder"]" />
+
                     <label for="teacher-id">@A["Teacher"]</label>
                     <select id="teacher-id" name="teacherUserId" required>
                         <option value="">@A["SelectOption"]</option>
@@ -566,19 +573,85 @@
                             <option value="@teacher.Id">@teacher.Email</option>
                         }
                     </select>
+                    <p id="teacher-search-status" class="academic-help" aria-live="polite"></p>
+
+                    <div class="academic-assignment-filter-grid">
+                        <label for="teacher-year-filter">
+                            <span>@A["AcademicYear"]</span>
+                            <select id="teacher-year-filter">
+                                <option value="">@A["AllOptions"]</option>
+                                @foreach (var year in explicitClasses
+                                    .Where(x => x.Status == AcademicStructureStatus.Active)
+                                    .GroupBy(x => new { x.AcademicYearId, x.AcademicYearName })
+                                    .Select(x => x.Key)
+                                    .OrderByDescending(x => x.AcademicYearName))
+                                {
+                                    <option value="@year.AcademicYearId">@year.AcademicYearName</option>
+                                }
+                            </select>
+                        </label>
+
+                        <label for="teacher-program-filter">
+                            <span>@A["Curriculum"]</span>
+                            <select id="teacher-program-filter">
+                                <option value="">@A["AllOptions"]</option>
+                                @foreach (var program in explicitClasses
+                                    .Where(x => x.Status == AcademicStructureStatus.Active)
+                                    .GroupBy(x => new { x.AcademicProgramId, x.AcademicProgramName })
+                                    .Select(x => x.Key)
+                                    .OrderBy(x => x.AcademicProgramName))
+                                {
+                                    <option value="@program.AcademicProgramId">@program.AcademicProgramName</option>
+                                }
+                            </select>
+                        </label>
+
+                        <label for="teacher-level-filter">
+                            <span>@A["Grade"] / @A["CurriculumLevel"]</span>
+                            <select id="teacher-level-filter">
+                                <option value="">@A["AllOptions"]</option>
+                                @foreach (var level in explicitClasses
+                                    .Where(x => x.Status == AcademicStructureStatus.Active)
+                                    .GroupBy(x => new { x.CurriculumLogicalLevel, x.CurriculumLevelLabel, x.CurriculumPathway })
+                                    .Select(x => x.Key)
+                                    .OrderBy(x => x.CurriculumLogicalLevel)
+                                    .ThenBy(x => x.CurriculumPathway ?? string.Empty))
+                                {
+                                    <option value="@level.CurriculumLogicalLevel">
+                                        @level.CurriculumLevelLabel@(string.IsNullOrWhiteSpace(level.CurriculumPathway) ? string.Empty : $" · {level.CurriculumPathway}")
+                                    </option>
+                                }
+                            </select>
+                        </label>
+
+                        <label for="teacher-assignment-filter">
+                            <span>@A["AssignmentStatus"]</span>
+                            <select id="teacher-assignment-filter">
+                                <option value="">@A["AllOptions"]</option>
+                                <option value="assigned">@A["Assigned"]</option>
+                                <option value="unassigned">@A["Unassigned"]</option>
+                            </select>
+                        </label>
+                    </div>
 
                     <label for="teacher-class">@A["Class"]</label>
                     <select id="teacher-class" name="classGroupId" required>
                         <option value="">@A["SelectOption"]</option>
                         @foreach (var item in explicitClasses.Where(x => x.Status == AcademicStructureStatus.Active))
                         {
-                            <option value="@item.ClassGroupId">
-                                @item.Name — @item.CurriculumLevelLabel@(string.IsNullOrWhiteSpace(item.CurriculumPathway) ? string.Empty : $" — {item.CurriculumPathway}")
+                            var hasAssignment = Model.TeacherAssignments.Any(
+                                x => x.ClassGroupId == item.ClassGroupId);
+                            <option value="@item.ClassGroupId"
+                                    data-year-id="@item.AcademicYearId"
+                                    data-program-id="@item.AcademicProgramId"
+                                    data-level="@item.CurriculumLogicalLevel"
+                                    data-assignment-state="@(hasAssignment ? "assigned" : "unassigned")">
+                                @item.Name — @item.CurriculumLevelLabel@(string.IsNullOrWhiteSpace(item.CurriculumPathway) ? string.Empty : $" — {item.CurriculumPathway}") — @item.AcademicYearName
                             </option>
                         }
                     </select>
 
-                    <p class="academic-help">Mathematics is inferred from the selected class Curriculum Level.</p>
+                    <p class="academic-help">@A["MathematicsAssignmentContextHelp"]</p>
                     <button class="school-button school-button-primary" type="submit">@A["AssignTeacher"]</button>
                 </form>
             }
