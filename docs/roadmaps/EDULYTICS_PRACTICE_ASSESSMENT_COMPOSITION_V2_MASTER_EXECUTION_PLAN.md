@@ -91,6 +91,10 @@ It composes and validates sessions above those layers.
 
 # Phase 0 — Production Hotfix
 
+**Status: COMPLETE**
+
+**Closure:** Learner-visible shape dimension labels were removed; wording-only shape duplicates are rejected; Personal Practice may return a shorter exact session instead of padding; actual item count drives MaxScore. Regression, Mathematics, PostgreSQL, SAST and production-container gates passed.
+
 ## Goal
 
 Remove the currently learner-visible failure modes immediately.
@@ -117,6 +121,10 @@ Remove the currently learner-visible failure modes immediately.
 
 # Phase 1 — Semantic Question Identity
 
+**Status: COMPLETE**
+
+**Closure:** A deterministic semantic identity contract now exists for every runtime Practice family. Synthetic `variant` parameters do not contribute to learner-meaningful identity. Shape-dimension runtime enforcement uses the shared policy. Full Mathematics and Phase16 CI gates passed.
+
 ## Goal
 
 Define learner-meaningful uniqueness independently from technical fingerprints.
@@ -137,6 +145,10 @@ coexist in one session only because wording or variant IDs differ.
 ---
 
 # Phase 2 — Question Forms and Cognitive Operations
+
+**Status: COMPLETE**
+
+**Closure:** Question-form, cognitive-operation and cognitive-difficulty taxonomy is implemented. Every routed runtime family resolves to a capability. Shape dimension now implements four genuine forms (Identify, Classify, ErrorAnalysis, Transfer), and a ten-item session demonstrates semantic/form diversity while remaining exact-solver verified. Full Mathematics and Phase16 CI gates passed.
 
 ## Goal
 
@@ -170,6 +182,8 @@ Not every family must support every form.
 ---
 
 # Phase 3 — Practice Assessment Composer
+
+**Status: IN PROGRESS**
 
 ## Goal
 
