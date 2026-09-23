@@ -93,6 +93,77 @@ public sealed class IdentitySchoolUserRepositoryTests
     }
 
     [Fact]
+    public async Task QueryBySchoolAsync_FiltersRolesAndPagesOnTheServerContract()
+    {
+        using var provider = BuildProvider();
+        using var scope = provider.CreateScope();
+
+        var services = scope.ServiceProvider;
+        var context = services.GetRequiredService<EdulyticsDbContext>();
+        var roleManager = services.GetRequiredService<RoleManager<ApplicationRole>>();
+        var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+
+        foreach (var role in new[]
+                 {
+                     RoleNames.SchoolAdmin,
+                     RoleNames.Teacher,
+                     RoleNames.Student
+                 })
+        {
+            await roleManager.CreateAsync(new ApplicationRole { Name = role });
+        }
+
+        var school = NewSchool();
+        context.Schools.Add(school);
+        await context.SaveChangesAsync();
+
+        var repository = new IdentitySchoolUserRepository(
+            userManager,
+            roleManager,
+            context);
+
+        await repository.CreateAsync(
+            school.Id,
+            "teacher-a@example.com",
+            RoleNames.Teacher);
+        await repository.CreateAsync(
+            school.Id,
+            "teacher-b@example.com",
+            RoleNames.Teacher);
+        await repository.CreateAsync(
+            school.Id,
+            "student@example.com",
+            RoleNames.Student);
+
+        var secondTeacherPage = await repository.QueryBySchoolAsync(
+            school.Id,
+            new Edulytics.Core.Users.SchoolUserListQuery(
+                Role: RoleNames.Teacher,
+                Page: 2,
+                PageSize: 1));
+
+        Assert.Equal(2, secondTeacherPage.TotalCount);
+        Assert.Equal(2, secondTeacherPage.Page);
+        Assert.Equal(1, secondTeacherPage.PageSize);
+        Assert.Equal(
+            "teacher-b@example.com",
+            Assert.Single(secondTeacherPage.Users).Email);
+
+        var searched = await repository.QueryBySchoolAsync(
+            school.Id,
+            new Edulytics.Core.Users.SchoolUserListQuery(
+                Search: "student@",
+                Page: 99,
+                PageSize: 25));
+
+        Assert.Equal(1, searched.TotalCount);
+        Assert.Equal(1, searched.Page);
+        Assert.Equal(
+            RoleNames.Student,
+            Assert.Single(Assert.Single(searched.Users).Roles));
+    }
+
+    [Fact]
     public async Task GetBySchoolAndIdAsync_DoesNotCrossTenant()
     {
         using var provider = BuildProvider();
