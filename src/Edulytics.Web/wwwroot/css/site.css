@@ -9853,3 +9853,70 @@ a.lesson-content-row:hover
         flex-direction: column;
     }
 }
+
+
+/* Student dashboard status-first information architecture */
+.student-dashboard-status-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(18rem, .8fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.student-dashboard-task-list {
+    display: grid;
+    gap: .65rem;
+}
+.student-dashboard-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: .75rem 0;
+    border-bottom: 1px solid var(--student-border, rgba(120, 130, 150, .2));
+}
+.student-dashboard-task:last-child {
+    border-bottom: 0;
+}
+.student-dashboard-task > div {
+    display: grid;
+    gap: .18rem;
+    min-width: 0;
+}
+.student-dashboard-task span,
+.student-dashboard-task small {
+    opacity: .72;
+}
+.student-assessment-state-nav {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    margin: 0 0 1rem;
+}
+.student-assessment-state-nav a {
+    display: inline-flex;
+    gap: .5rem;
+    align-items: center;
+    padding: .55rem .75rem;
+    border: 1px solid var(--student-border, rgba(120, 130, 150, .2));
+    border-radius: .75rem;
+    text-decoration: none;
+    color: inherit;
+}
+.student-assessment-state-nav strong {
+    min-width: 1.6rem;
+    text-align: center;
+}
+.student-assessment-state-section + .student-assessment-state-section {
+    margin-top: 1.25rem;
+}
+@media (max-width: 860px) {
+    .student-dashboard-status-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 640px) {
+    .student-dashboard-task {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}
