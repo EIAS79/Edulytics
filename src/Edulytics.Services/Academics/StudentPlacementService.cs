@@ -247,6 +247,13 @@ public sealed class StudentPlacementService : IStudentPlacementService
         if (sourceClass.GradeLevelId != targetClass.GradeLevelId)
             return StudentPlacementResult.Denied("CrossGradeMoveNotAllowed");
 
+        if (sourceClass.AcademicProgramId != targetClass.AcademicProgramId ||
+            sourceClass.CurriculumAdoptionId != targetClass.CurriculumAdoptionId)
+        {
+            return StudentPlacementResult.Denied(
+                "CrossCurriculumMoveNotAllowed");
+        }
+
         var ids = studentProfileIds
             .Where(x => x != Guid.Empty)
             .Distinct()
