@@ -152,7 +152,7 @@ def audit() -> dict[str, Any]:
     visual_required = [row for row in eligible if bool(row.get("visualRequired"))]
     renderer_source = VISUAL_RENDERER.read_text(encoding="utf-8")
     switch_match = re.search(
-        r"return\s+family\s+switch\s*\{(?P<body>.*?)_\s*=>\s*null",
+        r"family\s+switch\s*\{(?P<body>.*?)_\s*=>\s*null",
         renderer_source,
         flags=re.DOTALL,
     )
