@@ -121,6 +121,18 @@ public static partial class RichLessonContentV2RuntimeComposer
         LessonPracticeContract contract,
         IReadOnlyList<string> families)
     {
+        if (string.Equals(
+                NormalizeCulture(body.CultureCode),
+                "pl",
+                StringComparison.Ordinal))
+        {
+            return ComposePolish(
+                lessonCode,
+                body,
+                contract,
+                families);
+        }
+
         var exampleCount = Math.Clamp(
             families.Count,
             4,
