@@ -58,12 +58,26 @@ public sealed class SchoolUserManagementService
         _trials = trials;
     }
 
+    public Task<SchoolUserQueryResult<SchoolUserListData>>
+        ListAsync(
+            Guid actorUserId,
+            Guid? requestedSchoolId,
+            CancellationToken cancellationToken = default) =>
+        ListAsync(
+            actorUserId,
+            requestedSchoolId,
+            new SchoolUserListRequest(),
+            cancellationToken);
+
     public async Task<SchoolUserQueryResult<SchoolUserListData>>
         ListAsync(
             Guid actorUserId,
             Guid? requestedSchoolId,
+            SchoolUserListRequest request,
             CancellationToken cancellationToken = default)
     {
+        ArgumentNullException.ThrowIfNull(request);
+
         var scope = await ResolveScopeAsync(
             actorUserId,
             requestedSchoolId,
@@ -76,28 +90,54 @@ public sealed class SchoolUserManagementService
                 .Failure(scope.Error!.Value);
         }
 
-        var users = await _users.ListBySchoolAsync(
+        var role = request.Role?.Trim();
+        if (!string.IsNullOrWhiteSpace(role) && !TenantRoles.Contains(role))
+            role = null;
+
+        var search = request.Search?.Trim();
+        if (search?.Length > MaxEmailLength)
+            search = search[..MaxEmailLength];
+
+        var page = Math.Max(1, request.Page);
+        var pageSize = Math.Clamp(request.PageSize, 10, 100);
+
+        var result = await _users.QueryBySchoolAsync(
             scope.School!.Id,
+            new SchoolUserListQuery(
+                search,
+                role,
+                request.IsActive,
+                request.IsLocked,
+                page,
+                pageSize),
             cancellationToken);
 
-        var items = users
-            .Select(
-                user => new SchoolUserListItem(
-                    user.Id,
-                    user.Email,
-                    GetSingleRole(user.Roles) ?? string.Empty,
-                    user.IsActive,
-                    user.IsLocked,
-                    user.Id == scope.Actor!.Id,
-                    user.CreatedAtUtc,
-                    user.UpdatedAtUtc))
+        var items = result.Users
+            .Select(user => new SchoolUserListItem(
+                user.Id,
+                user.Email,
+                GetSingleRole(user.Roles) ?? string.Empty,
+                user.IsActive,
+                user.IsLocked,
+                user.Id == scope.Actor!.Id,
+                user.CreatedAtUtc,
+                user.UpdatedAtUtc))
             .ToArray();
 
-        return SchoolUserQueryResult<SchoolUserListData>
-            .Success(
-                new SchoolUserListData(
-                    BuildContext(scope),
-                    items));
+        return SchoolUserQueryResult<SchoolUserListData>.Success(
+            new SchoolUserListData(
+                BuildContext(scope),
+                items)
+            {
+                Search = search,
+                Role = role,
+                IsActive = request.IsActive,
+                IsLocked = request.IsLocked,
+                Page = result.Page,
+                PageSize = result.PageSize,
+                TotalCount = result.TotalCount,
+                TotalPages = result.TotalPages
+            });
     }
 
     public async Task<
