@@ -404,7 +404,7 @@ public sealed class StudentPrivatePracticeService(
             Status = PracticeAttemptStatus.InProgress,
             StartedAtUtc = now,
             Score = 0m,
-            MaxScore = request.QuestionCount,
+            MaxScore = items.Count,
             Percentage = 0m
         };
 
