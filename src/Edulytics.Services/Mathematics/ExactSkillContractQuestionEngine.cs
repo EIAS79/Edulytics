@@ -185,6 +185,7 @@ public sealed class ExactSkillContractQuestionEngine
             .ToHashSet(StringComparer.Ordinal);
         var generated = new HashSet<string>(StringComparer.Ordinal);
         var generatedPrompts = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var generatedSemanticKeys = new HashSet<string>(StringComparer.Ordinal);
         var items = new List<ExactSkillGeneratedQuestion>(questionCount);
 
         for (var index = 0; index < questionCount; index++)
@@ -225,9 +226,15 @@ public sealed class ExactSkillContractQuestionEngine
                 var normalizedPrompt = NormalizePrompt(problem.Prompt);
                 var hasSemanticVariant =
                     RequiresPromptUniqueness(problem.Family);
+                var semanticKey = BuildHotfixSemanticKey(
+                    problem.Family,
+                    problem.Parameters);
+
                 if (excluded.Contains(fingerprint) ||
                     generated.Contains(fingerprint) ||
-                    (hasSemanticVariant && generatedPrompts.Contains(normalizedPrompt)))
+                    (hasSemanticVariant && generatedPrompts.Contains(normalizedPrompt)) ||
+                    (semanticKey is not null &&
+                     generatedSemanticKeys.Contains(semanticKey)))
                 {
                     continue;
                 }
@@ -235,6 +242,8 @@ public sealed class ExactSkillContractQuestionEngine
                 generated.Add(fingerprint);
                 if (hasSemanticVariant)
                     generatedPrompts.Add(normalizedPrompt);
+                if (semanticKey is not null)
+                    generatedSemanticKeys.Add(semanticKey);
                 var variant = QuestionVariantPolicy.Describe(
                     problem.Parameters,
                     requestedVariant);
@@ -3160,6 +3169,26 @@ public sealed class ExactSkillContractQuestionEngine
         string Solution,
         AssessmentItemType ItemType,
         IReadOnlyDictionary<string, int> Parameters);
+
+    private static string? BuildHotfixSemanticKey(
+        string family,
+        IReadOnlyDictionary<string, int> parameters)
+    {
+        // Phase 0 production hotfix: wording-only variants of the same shape
+        // are the same learner task and must not coexist in one session.
+        // Phase 1 replaces this narrow rule with the general semantic identity
+        // registry used by the Practice Assessment Composer.
+        if (string.Equals(
+                family,
+                "supporting.geometry.shape_dimension",
+                StringComparison.Ordinal) &&
+            parameters.TryGetValue("shape", out var shape))
+        {
+            return $"{family}|shape={shape.ToString(CultureInfo.InvariantCulture)}";
+        }
+
+        return null;
+    }
 
     private static bool RequiresPromptUniqueness(string family) =>
         family is
