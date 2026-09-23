@@ -30,7 +30,14 @@ public sealed class PracticeSessionDiversityCertificationTests
                 continue;
             }
 
-            const int questionCount = 10;
+            var questionCount =
+                allowed.Length == 1 &&
+                string.Equals(
+                    allowed[0],
+                    "supporting.geometry.shape_dimension",
+                    StringComparison.Ordinal)
+                    ? 8
+                    : 10;
 
             try
             {
@@ -103,7 +110,7 @@ public sealed class PracticeSessionDiversityCertificationTests
     }
 
     [Fact]
-    public void EveryLessonPracticeFamilyCanSustainATenQuestionSession()
+    public void EveryLessonPracticeFamilyCanSustainItsCertifiedMeaningfulSessionCapacity()
     {
         var engine = new ExactSkillContractQuestionEngine();
         var families = LessonPracticeContractRegistry.All
@@ -120,22 +127,29 @@ public sealed class PracticeSessionDiversityCertificationTests
 
             try
             {
+                var questionCount = string.Equals(
+                    family,
+                    "supporting.geometry.shape_dimension",
+                    StringComparison.Ordinal)
+                        ? 8
+                        : 10;
+
                 var questions = engine.Generate(
                     "family-session-capacity-certification",
                     family,
                     [family],
                     ExactSkillQuestionDifficulty.Standard,
-                    10,
+                    questionCount,
                     910000 + index,
                     []);
 
-                if (questions.Count != 10)
-                    failures.Add($"{family}: generated {questions.Count}/10");
+                if (questions.Count != questionCount)
+                    failures.Add($"{family}: generated {questions.Count}/{questionCount}");
 
                 if (questions
                     .Select(x => x.ExposureFingerprint)
                     .Distinct(StringComparer.Ordinal)
-                    .Count() != 10)
+                    .Count() != questionCount)
                 {
                     failures.Add($"{family}: duplicate exposure fingerprints");
                 }
@@ -162,6 +176,40 @@ public sealed class PracticeSessionDiversityCertificationTests
             failures.Count == 0,
             "Question-family ten-item capacity failures: " +
             string.Join(" | ", failures));
+    }
+
+    [Fact]
+    public void ShapeDimensionTreatsWordingOnlyReuseOfTheSameShapeAsASemanticDuplicate()
+    {
+        const string family = "supporting.geometry.shape_dimension";
+        var engine = new ExactSkillContractQuestionEngine();
+
+        var questions = engine.Generate(
+            "shape-semantic-hotfix-certification",
+            family,
+            [family],
+            ExactSkillQuestionDifficulty.Standard,
+            8,
+            20260923,
+            []);
+
+        Assert.Equal(8, questions.Count);
+        Assert.Equal(
+            8,
+            questions
+                .Select(question => question.Parameters["shape"])
+                .Distinct()
+                .Count());
+
+        Assert.Throws<ExactSkillQuestionPoolExhaustedException>(() =>
+            engine.Generate(
+                "shape-semantic-hotfix-certification",
+                family,
+                [family],
+                ExactSkillQuestionDifficulty.Standard,
+                9,
+                20260923,
+                []));
     }
 
     [Fact]
