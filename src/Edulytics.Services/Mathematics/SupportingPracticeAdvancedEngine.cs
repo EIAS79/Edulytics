@@ -284,7 +284,17 @@ internal static class SupportingPracticeAdvancedEngine
         var variant = preferredVariant.HasValue
             ? QuestionVariantPolicy.NormalizeSlot(preferredVariant.Value)
             : r.Next(0, QuestionVariantPolicy.MaximumVariantsPerFamily);
-        var shape = variant % 8;
+
+        var form = variant / 4;
+        var local = variant % 4;
+        var shape = form switch
+        {
+            0 => new[] { 0, 4, 2, 6 }[local],
+            1 => new[] { 1, 5, 3, 7 }[local],
+            2 => new[] { 0, 4, 1, 5 }[local],
+            _ => new[] { 2, 6, 3, 7 }[local]
+        };
+
         var dimension = shape <= 3 ? 2 : 3;
         var name = shape switch
         {
@@ -297,19 +307,49 @@ internal static class SupportingPracticeAdvancedEngine
             6 => "sphere",
             _ => "cylinder"
         };
-        var prompt = variant < 8
-            ? $"Is a {name} a 2D or 3D shape?"
-            : $"Classify a {name} by dimension. Enter 2D or 3D.";
+
+        var prompt = form switch
+        {
+            0 => $"Is a {name} a 2D or 3D shape?",
+            1 => dimension == 2
+                ? $"A {name} is flat and has no solid depth. Classify it as 2D or 3D."
+                : $"A {name} has solid extent and occupies space. Classify it as 2D or 3D.",
+            2 =>
+                $"A student says a {name} is {(dimension == 2 ? "3D" : "2D")}. Correct the classification. Enter 2D or 3D.",
+            _ => $"In a real-world model, {ShapeContext(shape)} is represented by a {name}. Is the mathematical model 2D or 3D?"
+        };
+
+        var solution = form switch
+        {
+            0 => "2D shapes are flat; 3D shapes have solid extent.",
+            1 => "Use defining dimensional properties rather than appearance: flat figures are 2D and solids with extent are 3D.",
+            2 => "Check whether the named shape is flat or has solid extent, then correct the student's classification.",
+            _ => "Classify the mathematical model, not the material object: flat figures are 2D and solid forms are 3D."
+        };
 
         return P(
             "supporting.geometry.shape_dimension",
             prompt,
-            "2D shapes are flat; 3D shapes have solid extent.",
+            solution,
             AssessmentItemType.ShortAnswer,
             ("dimension", dimension),
+            ("form", form),
             ("shape", shape),
             ("variant", variant));
     }
+
+    private static string ShapeContext(int shape) =>
+        shape switch
+        {
+            0 => "a square floor tile face",
+            1 => "a rectangular book cover",
+            2 => "a triangular road-sign face",
+            3 => "a circular clock face",
+            4 => "a cube-shaped block",
+            5 => "a rectangular storage box",
+            6 => "a ball",
+            _ => "a drinks can"
+        };
     private static Problem TurnDegrees(Random r){var q=r.Next(1,13);return P("supporting.geometry.turn_degrees",$"How many degrees are in {q} quarter-turn(s)?","One quarter-turn is 90 degrees; repeated quarter-turns can exceed one full turn.",("quarterTurns",q));}
     private static Problem TriangleArea(Random r,int s){var b=2*r.Next(2,8+s);var h=r.Next(2,8+s);return P("supporting.geometry.triangle_area",$"A triangle has base {b} and perpendicular height {h}. Find its area.","Use one half times base times perpendicular height.",("base",b),("height",h));}
     private static Problem SurfaceAreaCuboid(Random r,int s){var l=r.Next(2,7+s);var w=r.Next(2,7+s);var h=r.Next(2,6+s);return P("supporting.geometry.surface_area_cuboid",$"A cuboid has dimensions {l}, {w}, {h}. Find its total surface area.","Add the areas of the three pairs of opposite rectangular faces.",("l",l),("w",w),("h",h));}
