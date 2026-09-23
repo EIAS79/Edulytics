@@ -26,7 +26,8 @@ internal static class MeetingDemoProvisioner
     private const string SeedVersion = "meeting-demo-2026-09-23-v1";
     private const string MarkerOperation = "MeetingDemoSeed";
 
-    private static readonly int[] DeepLogicalLevels = [2, 4, 5, 10, 11, 12];
+    private static readonly int[] DefaultDeepLogicalLevels = [2, 4, 5, 10, 11, 12];
+    private static readonly int[] CommonCoreDeepLogicalLevels = [3, 5, 6, 11, 12, 13];
 
     private static readonly string[] FirstNames =
     [
@@ -119,7 +120,7 @@ internal static class MeetingDemoProvisioner
             "American Programme",
             "AMERICAN",
             5,
-            12,
+            13,
             null),
         new(
             "polish",
@@ -308,17 +309,17 @@ DELETE FROM "PracticeAttempts";
 DELETE FROM "AssessmentItemOutcomes";
 DELETE FROM "AssessmentItems";
 
-DELETE FROM "StudentAnswers";
-DELETE FROM "AssessmentResults";
-DELETE FROM "QuestionLearningOutcomes";
-DELETE FROM "AssessmentQuestions";
-DELETE FROM "Assessments";
-
 DELETE FROM "StudentOutcomeMasteries";
 DELETE FROM "ClassOutcomeSummaries";
 DELETE FROM "ClassTopicSummaries";
 DELETE FROM "ClassAssessmentTrends";
 DELETE FROM "SchoolAnalyticsSnapshots";
+
+DELETE FROM "StudentAnswers";
+DELETE FROM "AssessmentResults";
+DELETE FROM "QuestionLearningOutcomes";
+DELETE FROM "AssessmentQuestions";
+DELETE FROM "Assessments";
 
 DELETE FROM "LearningLessonTranslations";
 DELETE FROM "LearningLessonOutcomes";
@@ -1347,7 +1348,7 @@ DELETE FROM "Schools";
         SchoolDefinition definition,
         IReadOnlyList<SeededClass> classes)
     {
-        return DeepLogicalLevels
+        return DeepLogicalLevelsFor(definition.PackCode)
             .Select(
                 logicalLevel =>
                 {
@@ -1377,6 +1378,15 @@ DELETE FROM "Schools";
                 })
             .ToArray();
     }
+
+    private static IReadOnlyList<int> DeepLogicalLevelsFor(
+        string packCode) =>
+        string.Equals(
+            packCode,
+            MathematicsCurriculumPackRegistry.CommonCoreCode,
+            StringComparison.Ordinal)
+            ? CommonCoreDeepLogicalLevels
+            : DefaultDeepLogicalLevels;
 
     private static string? PreferredPathway(
         string packCode,
