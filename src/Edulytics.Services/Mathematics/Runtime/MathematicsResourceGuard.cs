@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Numerics;
 using Edulytics.Core.Mathematics.Ast;
 using Edulytics.Core.Mathematics.Runtime;
@@ -320,7 +321,9 @@ public sealed class MathematicsExecutionBudget
     {
         ArgumentNullException.ThrowIfNull(operation);
 
-        using var waitBudget = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        var queueStarted = Stopwatch.GetTimestamp();
+        using var waitBudget =
+            CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
         waitBudget.CancelAfter(limits.SolverTimeout);
 
         try
@@ -330,24 +333,50 @@ public sealed class MathematicsExecutionBudget
         catch (OperationCanceledException) when (!cancellationToken.IsCancellationRequested)
         {
             MathematicsObservability.Record(MathematicsMetricKind.Timeout);
-            throw new TimeoutException("Mathematics concurrency queue exceeded the solver time budget.");
+            throw new TimeoutException(
+                "Mathematics concurrency queue exceeded the solver time budget.");
+        }
+
+        cancellationToken.ThrowIfCancellationRequested();
+        if (Stopwatch.GetElapsedTime(queueStarted) > limits.SolverTimeout)
+        {
+            semaphore.Release();
+            MathematicsObservability.Record(MathematicsMetricKind.Timeout);
+            throw new TimeoutException(
+                "Mathematics concurrency queue exceeded the solver time budget.");
         }
 
         try
         {
-            using var executionBudget = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            using var executionBudget =
+                CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             executionBudget.CancelAfter(limits.SolverTimeout);
+            var executionStarted = Stopwatch.GetTimestamp();
 
             try
             {
                 var result = await operation(executionBudget.Token);
+                cancellationToken.ThrowIfCancellationRequested();
+
+                // CancelAfter is cooperative and its timer callback can be delayed
+                // under thread-pool pressure. Never accept a solver result that
+                // actually exceeded the reviewed wall-clock budget even if the
+                // cancellation callback arrived late.
+                if (Stopwatch.GetElapsedTime(executionStarted) > limits.SolverTimeout)
+                {
+                    MathematicsObservability.Record(MathematicsMetricKind.Timeout);
+                    throw new TimeoutException(
+                        "Mathematics operation exceeded the solver time budget.");
+                }
+
                 MathematicsObservability.Record(MathematicsMetricKind.SolverSuccess);
                 return result;
             }
             catch (OperationCanceledException) when (!cancellationToken.IsCancellationRequested)
             {
                 MathematicsObservability.Record(MathematicsMetricKind.Timeout);
-                throw new TimeoutException("Mathematics operation exceeded the solver time budget.");
+                throw new TimeoutException(
+                    "Mathematics operation exceeded the solver time budget.");
             }
         }
         finally
