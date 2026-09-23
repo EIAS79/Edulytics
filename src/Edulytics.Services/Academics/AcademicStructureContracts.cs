@@ -131,7 +131,11 @@ public sealed record TeacherAssignmentItem(
     string ClassName,
     string ClassCode,
     string SubjectName,
-    string AcademicYearName);
+    string AcademicYearName)
+{
+    public Guid ClassGroupId { get; init; }
+    public Guid TeacherUserId { get; init; }
+}
 
 public sealed record StudentProfileItem(
     Guid Id,
@@ -151,7 +155,11 @@ public sealed record StudentEnrollmentItem(
     string StudentDisplayName,
     string ClassName,
     string ClassCode,
-    string AcademicYearName);
+    string AcademicYearName)
+{
+    public Guid ClassGroupId { get; init; }
+    public Guid AcademicYearId { get; init; }
+}
 
 public sealed record UserCandidate(Guid Id, string Email);
 
