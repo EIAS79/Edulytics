@@ -49,6 +49,10 @@ public interface ISchoolUserRepository
             .OrderBy(x => x.Email, StringComparer.OrdinalIgnoreCase)
             .ToArray();
         var total = ordered.Length;
+        var totalPages = Math.Max(
+            1,
+            (int)Math.Ceiling(total / (double)pageSize));
+        page = Math.Min(page, totalPages);
 
         return new SchoolUserPage(
             ordered.Skip((page - 1) * pageSize).Take(pageSize).ToArray(),
