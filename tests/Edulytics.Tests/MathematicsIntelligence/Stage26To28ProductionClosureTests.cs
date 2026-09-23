@@ -117,6 +117,15 @@ public sealed class Stage26To28ProductionClosureTests
                 await Task.Delay(TimeSpan.FromSeconds(2), token);
                 return 1;
             }));
+
+        await Assert.ThrowsAsync<TimeoutException>(() =>
+            timeoutBudget.RunAsync<int>(async _ =>
+            {
+                // Simulate a solver that ignores cooperative cancellation.
+                // Wall-clock enforcement must still fail closed.
+                await Task.Delay(TimeSpan.FromMilliseconds(150));
+                return 1;
+            }));
     }
 
     [Fact]
