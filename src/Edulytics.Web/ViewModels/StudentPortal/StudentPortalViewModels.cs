@@ -13,6 +13,35 @@ public sealed record StudentDashboardViewModel(
 
     public IReadOnlyList<StudentResultItem> RecentResults =>
         Workspace.Results.Take(4).ToArray();
+
+    public IReadOnlyList<StudentAssessmentItem> ToDoAssessments =>
+        Workspace.Assessments
+            .Where(x =>
+                x.DeliveryMode == Edulytics.Core.Enums.AssessmentDeliveryMode.Online &&
+                !x.IsSubmitted)
+            .OrderBy(x => x.AssessmentDate)
+            .ToArray();
+
+    public IReadOnlyList<StudentAssessmentItem> SubmittedOnlineAssessments =>
+        Workspace.Assessments
+            .Where(x =>
+                x.DeliveryMode == Edulytics.Core.Enums.AssessmentDeliveryMode.Online &&
+                x.IsSubmitted)
+            .OrderByDescending(x => x.AssessmentDate)
+            .ToArray();
+
+    public IReadOnlyList<StudentAssessmentItem> AwaitingOfflineResults =>
+        Workspace.Assessments
+            .Where(x =>
+                x.DeliveryMode == Edulytics.Core.Enums.AssessmentDeliveryMode.Offline &&
+                !x.IsSubmitted)
+            .OrderBy(x => x.AssessmentDate)
+            .ToArray();
+
+    public decimal? RecentAverage =>
+        RecentResults.Count == 0
+            ? null
+            : RecentResults.Average(x => x.Percentage);
 }
 
 public sealed record StudentLearningViewModel(
