@@ -4,6 +4,7 @@ using System.Text;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Mathematics.Ast;
 using Edulytics.Core.Mathematics.Generation;
+using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.Mathematics.Generation;
 using Edulytics.Services.Mathematics.Runtime;
 using Edulytics.Services.Mathematics.Solving;
@@ -226,9 +227,15 @@ public sealed class ExactSkillContractQuestionEngine
                 var normalizedPrompt = NormalizePrompt(problem.Prompt);
                 var hasSemanticVariant =
                     RequiresPromptUniqueness(problem.Family);
-                var semanticKey = BuildHotfixSemanticKey(
-                    problem.Family,
-                    problem.Parameters);
+                var semanticKey =
+                    PracticeSemanticQuestionIdentityPolicy
+                        .EnforceInsideExactGenerator(problem.Family)
+                        ? PracticeSemanticQuestionIdentityPolicy
+                            .Create(
+                                problem.Family,
+                                problem.Parameters)
+                            .Key
+                        : null;
 
                 if (excluded.Contains(fingerprint) ||
                     generated.Contains(fingerprint) ||
@@ -3169,26 +3176,6 @@ public sealed class ExactSkillContractQuestionEngine
         string Solution,
         AssessmentItemType ItemType,
         IReadOnlyDictionary<string, int> Parameters);
-
-    private static string? BuildHotfixSemanticKey(
-        string family,
-        IReadOnlyDictionary<string, int> parameters)
-    {
-        // Phase 0 production hotfix: wording-only variants of the same shape
-        // are the same learner task and must not coexist in one session.
-        // Phase 1 replaces this narrow rule with the general semantic identity
-        // registry used by the Practice Assessment Composer.
-        if (string.Equals(
-                family,
-                "supporting.geometry.shape_dimension",
-                StringComparison.Ordinal) &&
-            parameters.TryGetValue("shape", out var shape))
-        {
-            return $"{family}|shape={shape.ToString(CultureInfo.InvariantCulture)}";
-        }
-
-        return null;
-    }
 
     private static bool RequiresPromptUniqueness(string family) =>
         family is
