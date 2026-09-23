@@ -619,6 +619,274 @@
     <section id="students" class="academic-section">
         <h2>@A["Students"]</h2>
 
+        <div class="academic-section-actions">
+            <a class="school-button school-button-secondary"
+               asp-controller="SchoolUsers"
+               asp-action="Index"
+               asp-route-role="@RoleNames.Student">
+                @A["ManageStudentAccounts"]
+            </a>
+        </div>
+
+        <section class="academic-card academic-class-browser">
+            <div class="academic-card-heading">
+                <div>
+                    <h3>@A["ClassOverview"]</h3>
+                    <p class="academic-help">@A["ClassOverviewHelp"]</p>
+                </div>
+            </div>
+
+            @if (explicitClasses.Count == 0)
+            {
+                <p>@A["NoRecords"]</p>
+            }
+            else
+            {
+                @foreach (var yearGroup in explicitClasses
+                    .Where(x => x.Status == AcademicStructureStatus.Active)
+                    .GroupBy(x => new { x.AcademicYearId, x.AcademicYearName })
+                    .OrderByDescending(x => x.Key.AcademicYearName))
+                {
+                    <div class="academic-class-year-group">
+                        <h4>@yearGroup.Key.AcademicYearName</h4>
+
+                        @foreach (var programGroup in yearGroup
+                            .GroupBy(x => new { x.AcademicProgramId, x.AcademicProgramName })
+                            .OrderBy(x => x.Key.AcademicProgramName))
+                        {
+                            <div class="academic-class-program-group">
+                                <h5>@programGroup.Key.AcademicProgramName</h5>
+                                <div class="academic-class-browser-grid">
+                                    @foreach (var classItem in programGroup
+                                        .OrderBy(x => x.CurriculumLogicalLevel)
+                                        .ThenBy(x => x.CurriculumPathway ?? string.Empty)
+                                        .ThenBy(x => x.Name))
+                                    {
+                                        var classStudents = Model.StudentEnrollments
+                                            .Where(x => x.ClassGroupId == classItem.ClassGroupId)
+                                            .OrderBy(x => x.StudentDisplayName)
+                                            .ToArray();
+                                        var classTeachers = Model.TeacherAssignments
+                                            .Where(x => x.ClassGroupId == classItem.ClassGroupId)
+                                            .Select(x => x.TeacherEmail)
+                                            .Where(x => !string.IsNullOrWhiteSpace(x))
+                                            .Distinct(StringComparer.OrdinalIgnoreCase)
+                                            .OrderBy(x => x)
+                                            .ToArray();
+
+                                        <details class="academic-class-browser-card">
+                                            <summary>
+                                                <span>
+                                                    <strong>@classItem.Name</strong>
+                                                    <small>@classItem.CurriculumLevelLabel@(string.IsNullOrWhiteSpace(classItem.CurriculumPathway) ? string.Empty : $" · {classItem.CurriculumPathway}")</small>
+                                                </span>
+                                                <span class="academic-class-count">
+                                                    @A["StudentCountValue", classStudents.Length]
+                                                </span>
+                                            </summary>
+
+                                            <div class="academic-class-browser-body">
+                                                <p>
+                                                    <strong>@A["AssignedTeachers"]:</strong>
+                                                    @(classTeachers.Length == 0
+                                                        ? A["NoAssignedTeacher"].Value
+                                                        : string.Join(", ", classTeachers))
+                                                </p>
+
+                                                @if (classStudents.Length == 0)
+                                                {
+                                                    <p class="academic-help">@A["NoStudentsInClass"]</p>
+                                                }
+                                                else
+                                                {
+                                                    <ul class="academic-class-student-list">
+                                                        @foreach (var enrollment in classStudents)
+                                                        {
+                                                            var profile = Model.StudentProfiles
+                                                                .FirstOrDefault(x => x.Id == enrollment.StudentProfileId);
+                                                            <li>
+                                                                <span>@enrollment.StudentDisplayName</span>
+                                                                @if (profile is not null)
+                                                                {
+                                                                    <small>@profile.StudentNumber</small>
+                                                                }
+                                                            </li>
+                                                        }
+                                                    </ul>
+                                                }
+                                            </div>
+                                        </details>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            }
+        </section>
+
+        @if (canManageAcademic)
+        {
+            <section class="academic-card academic-student-move">
+                <div class="academic-card-heading">
+                    <div>
+                        <h3>@A["MoveStudents"]</h3>
+                        <p class="academic-help">@A["MoveStudentsHelp"]</p>
+                    </div>
+                </div>
+
+                <form id="student-move-form"
+                      asp-controller="AcademicStructureBulk"
+                      asp-action="PlaceStudents"
+                      method="post">
+                    @Html.AntiForgeryToken()
+
+                    <div class="academic-move-grid">
+                        <label class="academic-form-field" for="move-source-class">
+                            <span>@A["FromClass"]</span>
+                            <select id="move-source-class"
+                                    name="sourceClassGroupId"
+                                    required>
+                                <option value="">@A["SelectOption"]</option>
+                                @foreach (var item in explicitClasses.Where(x => x.Status == AcademicStructureStatus.Active))
+                                {
+                                    <option value="@item.ClassGroupId"
+                                            data-year-id="@item.AcademicYearId"
+                                            data-adoption-id="@item.CurriculumAdoptionId"
+                                            data-level="@item.CurriculumLogicalLevel"
+                                            data-class-label="@item.DisplayLabel">
+                                        @item.DisplayLabel · @item.AcademicYearName
+                                    </option>
+                                }
+                            </select>
+                        </label>
+
+                        <label class="academic-form-field" for="move-target-class">
+                            <span>@A["ToClass"]</span>
+                            <select id="move-target-class"
+                                    name="classGroupId"
+                                    required
+                                    disabled>
+                                <option value="">@A["SelectOption"]</option>
+                                @foreach (var item in explicitClasses.Where(x => x.Status == AcademicStructureStatus.Active))
+                                {
+                                    <option value="@item.ClassGroupId"
+                                            data-year-id="@item.AcademicYearId"
+                                            data-adoption-id="@item.CurriculumAdoptionId"
+                                            data-level="@item.CurriculumLogicalLevel"
+                                            data-class-label="@item.DisplayLabel"
+                                            hidden
+                                            disabled>
+                                        @item.DisplayLabel · @item.AcademicYearName
+                                    </option>
+                                }
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="academic-student-picker">
+                        <div class="academic-student-picker-toolbar">
+                            <label for="student-move-search">
+                                <span>@A["SearchStudents"]</span>
+                                <input id="student-move-search"
+                                       type="search"
+                                       autocomplete="off"
+                                       placeholder="@A["SearchStudentsPlaceholder"]" />
+                            </label>
+
+                            <label class="academic-check-inline">
+                                <input id="student-move-select-all"
+                                       type="checkbox"
+                                       disabled />
+                                <span>@A["SelectAllVisible"]</span>
+                            </label>
+                        </div>
+
+                        <div id="student-move-empty"
+                             class="academic-help">
+                            @A["SelectSourceClassHelp"]
+                        </div>
+
+                        <div id="student-move-list"
+                             class="academic-student-move-list">
+                            @foreach (var enrollment in Model.StudentEnrollments
+                                .OrderBy(x => x.StudentDisplayName))
+                            {
+                                var profile = Model.StudentProfiles
+                                    .FirstOrDefault(x => x.Id == enrollment.StudentProfileId);
+                                var searchValue = $"{enrollment.StudentDisplayName} {profile?.StudentNumber} {profile?.UserEmail}"
+                                    .ToLowerInvariant();
+
+                                <label class="academic-student-move-row"
+                                       data-student-move-row
+                                       data-class-id="@enrollment.ClassGroupId"
+                                       data-search="@searchValue"
+                                       hidden>
+                                    <input type="checkbox"
+                                           name="studentProfileIds"
+                                           value="@enrollment.StudentProfileId"
+                                           disabled />
+                                    <span>
+                                        <strong>@enrollment.StudentDisplayName</strong>
+                                        <small>
+                                            @(profile?.StudentNumber ?? string.Empty)
+                                            @if (!string.IsNullOrWhiteSpace(profile?.UserEmail))
+                                            {
+                                                <span> · @profile.UserEmail</span>
+                                            }
+                                        </small>
+                                    </span>
+                                </label>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="academic-move-summary">
+                        <strong id="student-move-selected">@A["SelectedStudentsValue", 0]</strong>
+                        <button id="student-move-review"
+                                type="button"
+                                class="school-button school-button-primary"
+                                disabled>
+                            @A["ReviewMove"]
+                        </button>
+                    </div>
+                </form>
+
+                <dialog id="student-move-dialog"
+                        class="academic-move-dialog">
+                    <h3>@A["MoveStudents"]</h3>
+                    <dl>
+                        <div>
+                            <dt>@A["FromClass"]</dt>
+                            <dd id="student-move-review-from">—</dd>
+                        </div>
+                        <div>
+                            <dt>@A["ToClass"]</dt>
+                            <dd id="student-move-review-to">—</dd>
+                        </div>
+                        <div>
+                            <dt>@A["Students"]</dt>
+                            <dd id="student-move-review-count">0</dd>
+                        </div>
+                    </dl>
+                    <div class="academic-move-dialog-actions">
+                        <button id="student-move-cancel"
+                                type="button"
+                                class="school-button school-button-secondary">
+                            @A["Cancel"]
+                        </button>
+                        <button type="submit"
+                                form="student-move-form"
+                                class="school-button school-button-primary">
+                            @A["ConfirmMove"]
+                        </button>
+                    </div>
+                </dialog>
+            </section>
+        }
+
+        <details class="academic-card academic-legacy-student-tools">
+            <summary>@A["AdditionalStudentAdministration"]</summary>
         <div class="academic-grid">
             @if (canManageAcademic)
             {
@@ -771,6 +1039,7 @@
                 }
             </div>
         </div>
+        </details>
     </section>
 </section>
 
@@ -890,5 +1159,189 @@
 
     classYear?.addEventListener('change', refreshClassPrograms);
     refreshClassPrograms();
+
+    const moveForm = document.getElementById('student-move-form');
+    const moveSource = document.getElementById('move-source-class');
+    const moveTarget = document.getElementById('move-target-class');
+    const moveSearch = document.getElementById('student-move-search');
+    const moveRows = Array.from(document.querySelectorAll('[data-student-move-row]'));
+    const moveSelectAll = document.getElementById('student-move-select-all');
+    const moveEmpty = document.getElementById('student-move-empty');
+    const moveSelected = document.getElementById('student-move-selected');
+    const moveReview = document.getElementById('student-move-review');
+    const moveDialog = document.getElementById('student-move-dialog');
+    const moveReviewFrom = document.getElementById('student-move-review-from');
+    const moveReviewTo = document.getElementById('student-move-review-to');
+    const moveReviewCount = document.getElementById('student-move-review-count');
+    const moveCancel = document.getElementById('student-move-cancel');
+
+    const selectedMoveRows = () =>
+        moveRows.filter(row => {
+            const checkbox = row.querySelector('input[type="checkbox"]');
+            return checkbox && checkbox.checked && !checkbox.disabled;
+        });
+
+    const refreshMoveSelection = () => {
+        const count = selectedMoveRows().length;
+        if (moveSelected) {
+            moveSelected.textContent = count === 1
+                ? '1 student selected'
+                : `${count} students selected`;
+        }
+
+        const canReview =
+            count > 0 &&
+            moveSource?.value &&
+            moveTarget?.value &&
+            moveSource.value !== moveTarget.value;
+
+        if (moveReview) moveReview.disabled = !canReview;
+
+        if (moveSelectAll) {
+            const visible = moveRows.filter(row => !row.hidden);
+            const checked = visible.filter(row => {
+                const checkbox = row.querySelector('input[type="checkbox"]');
+                return checkbox?.checked;
+            });
+            moveSelectAll.checked =
+                visible.length > 0 &&
+                checked.length === visible.length;
+            moveSelectAll.indeterminate =
+                checked.length > 0 &&
+                checked.length < visible.length;
+        }
+    };
+
+    const refreshMoveStudents = (resetSelection = false) => {
+        if (!moveSource) return;
+
+        const sourceId = moveSource.value;
+        const query = (moveSearch?.value || '').trim().toLowerCase();
+        let visibleCount = 0;
+
+        for (const row of moveRows) {
+            const checkbox = row.querySelector('input[type="checkbox"]');
+            const inSource = sourceId && row.dataset.classId === sourceId;
+            const matchesSearch =
+                !query ||
+                (row.dataset.search || '').includes(query);
+            const visible = Boolean(inSource && matchesSearch);
+
+            row.hidden = !visible;
+            if (checkbox) {
+                checkbox.disabled = !inSource;
+                if (!inSource || resetSelection) checkbox.checked = false;
+            }
+            if (visible) visibleCount++;
+        }
+
+        if (moveSelectAll) {
+            moveSelectAll.disabled = !sourceId || visibleCount === 0;
+            if (resetSelection) moveSelectAll.checked = false;
+        }
+
+        if (moveEmpty) {
+            moveEmpty.hidden = Boolean(sourceId && visibleCount > 0);
+            if (!sourceId) {
+                moveEmpty.textContent = '@A["SelectSourceClassHelp"]';
+            } else if (visibleCount === 0) {
+                moveEmpty.textContent = '@A["NoStudentsInClass"]';
+            }
+        }
+
+        refreshMoveSelection();
+    };
+
+    const refreshMoveTargets = () => {
+        if (!moveSource || !moveTarget) return;
+
+        const sourceOption =
+            moveSource.options[moveSource.selectedIndex];
+        const sourceId = moveSource.value;
+        const yearId = sourceOption?.dataset.yearId || '';
+        const adoptionId = sourceOption?.dataset.adoptionId || '';
+
+        moveTarget.value = '';
+        let available = 0;
+
+        for (const option of Array.from(moveTarget.options)) {
+            if (!option.value) continue;
+
+            const visible =
+                Boolean(sourceId) &&
+                option.value !== sourceId &&
+                option.dataset.yearId === yearId &&
+                option.dataset.adoptionId === adoptionId;
+
+            option.hidden = !visible;
+            option.disabled = !visible;
+            if (visible) available++;
+        }
+
+        moveTarget.disabled = !sourceId || available === 0;
+        refreshMoveSelection();
+    };
+
+    moveSource?.addEventListener('change', () => {
+        if (moveSearch) moveSearch.value = '';
+        refreshMoveStudents(true);
+        refreshMoveTargets();
+    });
+
+    moveTarget?.addEventListener('change', refreshMoveSelection);
+    moveSearch?.addEventListener('input', () => refreshMoveStudents(false));
+
+    for (const row of moveRows) {
+        row.querySelector('input[type="checkbox"]')
+            ?.addEventListener('change', refreshMoveSelection);
+    }
+
+    moveSelectAll?.addEventListener('change', () => {
+        for (const row of moveRows.filter(item => !item.hidden)) {
+            const checkbox = row.querySelector('input[type="checkbox"]');
+            if (checkbox && !checkbox.disabled)
+                checkbox.checked = moveSelectAll.checked;
+        }
+        refreshMoveSelection();
+    });
+
+    moveReview?.addEventListener('click', () => {
+        if (!moveSource || !moveTarget || !moveDialog) return;
+
+        const sourceOption =
+            moveSource.options[moveSource.selectedIndex];
+        const targetOption =
+            moveTarget.options[moveTarget.selectedIndex];
+        const count = selectedMoveRows().length;
+
+        if (!sourceOption?.value || !targetOption?.value || count === 0)
+            return;
+
+        if (moveReviewFrom)
+            moveReviewFrom.textContent =
+                sourceOption.dataset.classLabel || sourceOption.textContent || '';
+        if (moveReviewTo)
+            moveReviewTo.textContent =
+                targetOption.dataset.classLabel || targetOption.textContent || '';
+        if (moveReviewCount)
+            moveReviewCount.textContent = String(count);
+
+        if (typeof moveDialog.showModal === 'function')
+            moveDialog.showModal();
+    });
+
+    moveCancel?.addEventListener('click', () => moveDialog?.close());
+
+    moveForm?.addEventListener('submit', event => {
+        if (!moveSource?.value ||
+            !moveTarget?.value ||
+            moveSource.value === moveTarget.value ||
+            selectedMoveRows().length === 0) {
+            event.preventDefault();
+        }
+    });
+
+    refreshMoveStudents(true);
+    refreshMoveTargets();
 })();
 </script>
