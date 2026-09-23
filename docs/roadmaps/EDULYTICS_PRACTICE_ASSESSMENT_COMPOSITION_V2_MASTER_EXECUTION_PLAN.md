@@ -227,7 +227,7 @@ Difficulty must change cognitive demand, not only labels or number ranges.
 
 # Phase 5 — Session Quality and Answer-Leak Validation
 
-**Status: READY TO START**
+**Status: IN PROGRESS**
 
 ## Goal
 
