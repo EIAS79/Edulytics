@@ -20,6 +20,29 @@ public sealed class PracticeVisualFamilyCoverageTests
         };
 
     [Fact]
+    public void ShapeDimensionVisualDoesNotRevealTheCorrectDimension()
+    {
+        var json = JsonSerializer.Serialize(new
+        {
+            parameters = new
+            {
+                shape = 7,
+                dimension = 3,
+                variant = 7
+            }
+        });
+
+        var svg = PracticeMathVisualRenderer.RenderSvg(
+            "supporting.geometry.shape_dimension",
+            json);
+
+        Assert.False(string.IsNullOrWhiteSpace(svg));
+        Assert.DoesNotContain("3D shape", svg!, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("2D shape", svg!, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("<ellipse", svg!, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void EveryLessonPracticeVisualFamily_GeneratesAndRendersDeterministically()
     {
         var assembly = typeof(SkillContract).Assembly;
