@@ -451,7 +451,27 @@ app.MapFallback(
         })
     .AllowAnonymous();
 
-app.Run();
+await app.StartAsync();
+
+try
+{
+    using var meetingDemoScope =
+        app.Services.CreateScope();
+
+    await MeetingDemoProvisioner.RunAsync(
+        meetingDemoScope.ServiceProvider
+            .GetRequiredService<Edulytics.Data.Contexts.EdulyticsDbContext>(),
+        meetingDemoScope.ServiceProvider
+            .GetRequiredService<Microsoft.AspNetCore.Identity.UserManager<Edulytics.Data.Identity.ApplicationUser>>(),
+        app.Configuration);
+}
+catch (Exception exception)
+{
+    Console.Error.WriteLine(
+        $"MEETING_DEMO_POST_START_FAILED type={exception.GetType().Name} message={exception.Message}");
+}
+
+await app.WaitForShutdownAsync();
 
 public partial class Program
 {
