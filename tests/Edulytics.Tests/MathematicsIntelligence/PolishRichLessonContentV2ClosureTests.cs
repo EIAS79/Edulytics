@@ -138,6 +138,11 @@ public sealed class PolishRichLessonContentV2ClosureTests
             Assert.False(
                 solutionLeak.Success,
                 $"English prose leaked for {family} solution: {solution}");
+
+            var labelLeak = ObviousEnglishProse.Match(label);
+            Assert.False(
+                labelLeak.Success,
+                $"English prose leaked for {family} label: {label}");
         }
     }
 }
