@@ -510,6 +510,7 @@ public sealed class Stage18SkillContractPracticeEngine
                     composer = "practice-assessment-v2",
                     progression = "honest-cognitive-v2",
                     difficulty = targetDifficulty.ToString(),
+                    cognitiveDifficulty = targetDifficulty.ToString(),
                     progressionIndex = index + 1,
                     questionForm = acceptedCapability.Form.ToString(),
                     cognitiveOperation =
