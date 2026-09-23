@@ -2,6 +2,7 @@ using System.Globalization;
 using System.Net;
 using System.Text;
 using System.Text.Json;
+using Edulytics.Core.Mathematics.Practice;
 
 namespace Edulytics.Web.Presentation;
 
@@ -25,7 +26,7 @@ public static class PracticeMathVisualRenderer
                 ? nested
                 : root;
 
-            return family switch
+            var svg = family switch
             {
                 "supporting.circle.arc_angle_degrees" => CircleArc(parameters),
                 "geometry.coordinate.gradient_between_points" => CoordinateGradient(parameters),
@@ -94,6 +95,13 @@ public static class PracticeMathVisualRenderer
                 "supporting.trigonometry.sine_rule_exact" => TrigonometryTriangleVisual(parameters),
                 _ => null
             };
+
+            var leakCheck =
+                PracticeAnswerLeakValidator.ValidateVisual(
+                    family,
+                    correctAnswer: null,
+                    svg);
+            return leakCheck.IsSafe ? svg : null;
         }
         catch (JsonException)
         {
