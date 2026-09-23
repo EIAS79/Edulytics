@@ -290,6 +290,11 @@ public static class PolishMathematicsTextLocalizer
             ["total"] = "suma",
             ["result"] = "wynik",
             ["answer"] = "odpowiedź",
+            ["correct"] = "poprawny",
+            ["correctly"] = "poprawnie",
+            ["arc"] = "łuk",
+            ["today"] = "dzisiaj",
+            ["yesterday"] = "wczoraj",
             ["verify"] = "sprawdź",
             ["verifies"] = "sprawdza",
             ["verified"] = "zweryfikowany",
@@ -442,6 +447,18 @@ public static class PolishMathematicsTextLocalizer
 
         foreach (var (pattern, replacement) in PhraseRules)
             value = pattern.Replace(value, replacement);
+
+        value = Regex.Replace(
+            value,
+            @"\b([A-Za-z]+)'s\b",
+            match =>
+            {
+                var baseWord = match.Groups[1].Value;
+                return WordMap.TryGetValue(baseWord, out var replacement)
+                    ? replacement
+                    : baseWord;
+            },
+            RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
 
         value = Regex.Replace(
             value,
