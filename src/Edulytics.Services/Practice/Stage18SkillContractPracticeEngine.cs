@@ -310,79 +310,171 @@ public sealed class Stage18SkillContractPracticeEngine
 
         var progression = new[]
         {
-            ExactSkillQuestionDifficulty.Standard,
-            ExactSkillQuestionDifficulty.Standard,
-            ExactSkillQuestionDifficulty.Standard,
-            ExactSkillQuestionDifficulty.Stretch,
-            ExactSkillQuestionDifficulty.Stretch,
-            ExactSkillQuestionDifficulty.Stretch,
-            ExactSkillQuestionDifficulty.Challenge,
-            ExactSkillQuestionDifficulty.Challenge
+            PracticeCognitiveDifficulty.Standard,
+            PracticeCognitiveDifficulty.Standard,
+            PracticeCognitiveDifficulty.Standard,
+            PracticeCognitiveDifficulty.Stretch,
+            PracticeCognitiveDifficulty.Stretch,
+            PracticeCognitiveDifficulty.Stretch,
+            PracticeCognitiveDifficulty.Challenge,
+            PracticeCognitiveDifficulty.Challenge
         };
 
+        if (!SupportsHonestProgression(
+                contract.AllowedQuestionFamilies,
+                progression))
+        {
+            // A difficulty label must not outrun the implemented question form.
+            // Narrow lessons therefore use an honest composed Standard session
+            // rather than re-labelling the same mechanic as Stretch/Challenge.
+            return GenerateComposed(
+                schoolId,
+                curriculumAdoptionId,
+                lessonId,
+                contract,
+                StudentPrivatePracticeDifficulty.MyLevel,
+                progression.Length,
+                seed,
+                excludedExposureFingerprints,
+                createdByUserId);
+        }
+
+        var composer = new PracticeAssessmentComposer();
         var exactEngine = new ExactSkillContractQuestionEngine();
         var historical = excludedExposureFingerprints
-            .Where(x => !string.IsNullOrWhiteSpace(x))
+            .Where(value => !string.IsNullOrWhiteSpace(value))
             .ToHashSet(StringComparer.Ordinal);
         var attemptFingerprints = new HashSet<string>(StringComparer.Ordinal);
+        var semanticKeys = new HashSet<string>(StringComparer.Ordinal);
         var items = new List<AssessmentItem>(progression.Length);
 
         for (var index = 0; index < progression.Length; index++)
         {
-            var difficulty = progression[index];
-            var roundSeed = unchecked((seed == 0 ? 1 : seed) ^ ((index + 1) * 7919));
-            var exclusions = historical
-                .Concat(attemptFingerprints)
-                .Distinct(StringComparer.Ordinal)
-                .ToArray();
+            var targetDifficulty = progression[index];
+            var blueprint = composer.Compose(
+                contract.AllowedQuestionFamilies,
+                1,
+                targetDifficulty);
 
-            var selectedFamily =
-                contract.AllowedQuestionFamilies[
-                    index % contract.AllowedQuestionFamilies.Count];
+            ExactSkillGeneratedQuestion? acceptedQuestion = null;
+            PracticeAssessmentBlueprintItem? acceptedCandidate = null;
+            PracticeQuestionFormCapability? acceptedCapability = null;
+            PracticeSemanticQuestionIdentity? acceptedSemanticIdentity = null;
 
-            ExactSkillGeneratedQuestion question;
-            try
+            var candidateCount = blueprint.Candidates.Count;
+            for (var offset = 0;
+                 offset < candidateCount && acceptedQuestion is null;
+                 offset++)
             {
-                question = exactEngine.Generate(
-                    "stage18",
-                    contract.LessonCode,
-                    [selectedFamily],
-                    difficulty,
-                    1,
-                    roundSeed,
-                    exclusions,
-                    index)[0];
-            }
-            catch (ExactSkillQuestionPoolExhaustedException) when (historical.Count > 0)
-            {
-                // Historical exposure should improve variety, never block a
-                // lesson. Keep the current 8-question attempt unique and allow
-                // old questions to re-enter only after unseen variants are
-                // exhausted.
-                question = exactEngine.Generate(
-                    "stage18",
-                    contract.LessonCode,
-                    [selectedFamily],
-                    difficulty,
-                    1,
-                    roundSeed,
-                    attemptFingerprints.ToArray(),
-                    index)[0];
+                var candidate =
+                    blueprint.Candidates[
+                        (index + offset) % candidateCount];
+                var exactDifficulty = ResolveExactDifficulty(
+                    targetDifficulty);
+                var roundSeed = unchecked(
+                    (seed == 0 ? 1 : seed) ^
+                    ((index + 1) * 7919) ^
+                    ((offset + 1) * 104729));
+
+                ExactSkillGeneratedQuestion question;
+                try
+                {
+                    question = exactEngine.Generate(
+                        "stage18",
+                        contract.LessonCode,
+                        [candidate.Family],
+                        exactDifficulty,
+                        1,
+                        roundSeed,
+                        historical
+                            .Concat(attemptFingerprints)
+                            .Distinct(StringComparer.Ordinal)
+                            .ToArray(),
+                        candidate.PreferredVariantSlot)[0];
+                }
+                catch (ExactSkillQuestionPoolExhaustedException)
+                    when (historical.Count > 0)
+                {
+                    try
+                    {
+                        question = exactEngine.Generate(
+                            "stage18",
+                            contract.LessonCode,
+                            [candidate.Family],
+                            exactDifficulty,
+                            1,
+                            roundSeed,
+                            attemptFingerprints.ToArray(),
+                            candidate.PreferredVariantSlot)[0];
+                    }
+                    catch (ExactSkillQuestionPoolExhaustedException)
+                    {
+                        continue;
+                    }
+                }
+                catch (ExactSkillQuestionPoolExhaustedException)
+                {
+                    continue;
+                }
+
+                var semanticIdentity =
+                    PracticeSemanticQuestionIdentityPolicy.Create(
+                        question.Family,
+                        question.Parameters);
+                if (semanticKeys.Contains(semanticIdentity.Key) ||
+                    attemptFingerprints.Contains(question.ExposureFingerprint))
+                {
+                    continue;
+                }
+
+                var alignment = LessonPracticeAlignmentValidator.Validate(
+                    contract,
+                    question);
+                if (!alignment.IsAligned)
+                {
+                    throw new InvalidOperationException(
+                        $"Progressive Practice alignment validator rejected {question.Family}: {alignment.ReasonCode}.");
+                }
+
+                var actualVariantSlot =
+                    question.Parameters.TryGetValue(
+                        "variant",
+                        out var persistedVariant)
+                        ? persistedVariant
+                        : candidate.PreferredVariantSlot;
+                var capability =
+                    PracticeQuestionFormCapabilityRegistry.ResolveForVariant(
+                        question.Family,
+                        actualVariantSlot);
+
+                if (capability is null ||
+                    targetDifficulty < capability.MinimumDifficulty ||
+                    targetDifficulty > capability.MaximumDifficulty)
+                {
+                    // Never attach a difficulty label to a form that does not
+                    // explicitly support that cognitive level.
+                    continue;
+                }
+
+                acceptedQuestion = question;
+                acceptedCandidate = candidate;
+                acceptedCapability = capability;
+                acceptedSemanticIdentity = semanticIdentity;
             }
 
-            if (!attemptFingerprints.Add(question.ExposureFingerprint))
+            if (acceptedQuestion is null ||
+                acceptedCandidate is null ||
+                acceptedCapability is null ||
+                acceptedSemanticIdentity is null)
             {
-                throw new InvalidOperationException(
-                    "Progressive lesson Practice generated a duplicate question in the same attempt.");
+                throw new ExactSkillQuestionPoolExhaustedException();
             }
 
-            var alignment = LessonPracticeAlignmentValidator.Validate(contract, question);
-            if (!alignment.IsAligned)
-            {
-                throw new InvalidOperationException(
-                    $"Exact Practice alignment validator rejected {question.Family}: {alignment.ReasonCode}.");
-            }
+            semanticKeys.Add(acceptedSemanticIdentity.Key);
+            attemptFingerprints.Add(
+                acceptedQuestion.ExposureFingerprint);
 
+            var exactLevel = ResolveExactDifficulty(targetDifficulty);
             items.Add(new AssessmentItem
             {
                 Id = Guid.NewGuid(),
@@ -390,34 +482,39 @@ public sealed class Stage18SkillContractPracticeEngine
                 CurriculumAdoptionId = curriculumAdoptionId,
                 CurriculumPedagogicalLessonId = lessonId,
                 Source = AssessmentItemSource.SystemGenerated,
-                ItemType = question.ItemType,
-                Difficulty = difficulty == ExactSkillQuestionDifficulty.Standard
+                ItemType = acceptedQuestion.ItemType,
+                Difficulty = exactLevel == ExactSkillQuestionDifficulty.Standard
                     ? AssessmentItemDifficulty.Medium
                     : AssessmentItemDifficulty.Challenging,
-                Prompt = question.Prompt,
-                CorrectAnswer = question.CorrectAnswer,
-                Solution = question.Solution,
+                Prompt = acceptedQuestion.Prompt,
+                CorrectAnswer = acceptedQuestion.CorrectAnswer,
+                Solution = acceptedQuestion.Solution,
                 CreatedByUserId = createdByUserId,
                 GenerationMethod = Stage18PracticeSkillContracts.GenerationMethod,
-                GenerationFamily = question.Family,
+                GenerationFamily = acceptedQuestion.Family,
                 GenerationParametersJson = JsonSerializer.Serialize(new
                 {
                     skillId = contract.SkillId,
-                    questionFamily = question.Family,
-                    questionVariant = question.VariantId,
-                    parameters = question.Parameters
+                    questionFamily = acceptedQuestion.Family,
+                    questionVariant = acceptedQuestion.VariantId,
+                    parameters = acceptedQuestion.Parameters
                 }),
-                ExposureFingerprint = question.ExposureFingerprint,
+                ExposureFingerprint = acceptedQuestion.ExposureFingerprint,
                 ValidationMetadataJson = JsonSerializer.Serialize(new
                 {
                     stage = 18,
                     alignment = "skill-contract-verified",
-                    alignmentReason = alignment.ReasonCode,
                     readiness = "READY_VERIFIED",
                     skillContract = contract.SkillId,
-                    allowedFamily = question.Family,
-                    difficulty = difficulty.ToString(),
+                    allowedFamily = acceptedQuestion.Family,
+                    composer = "practice-assessment-v2",
+                    progression = "honest-cognitive-v2",
+                    difficulty = targetDifficulty.ToString(),
                     progressionIndex = index + 1,
+                    questionForm = acceptedCapability.Form.ToString(),
+                    cognitiveOperation =
+                        acceptedCapability.CognitiveOperation.ToString(),
+                    semanticKey = acceptedSemanticIdentity.Key,
                     solver = Stage18PracticeSkillContracts.SolverIdentifier,
                     verifier = Stage18PracticeSkillContracts.VerifierIdentifier,
                     solverVerified = true,
@@ -430,6 +527,26 @@ public sealed class Stage18SkillContractPracticeEngine
         }
 
         return items;
+    }
+
+    private static bool SupportsHonestProgression(
+        IReadOnlyList<string> families,
+        IReadOnlyList<PracticeCognitiveDifficulty> progression)
+    {
+        foreach (var difficulty in progression.Distinct())
+        {
+            var supported = families.Any(family =>
+                PracticeQuestionFormCapabilityRegistry
+                    .Resolve(family)
+                    .Any(capability =>
+                        difficulty >= capability.MinimumDifficulty &&
+                        difficulty <= capability.MaximumDifficulty));
+
+            if (!supported)
+                return false;
+        }
+
+        return true;
     }
 
     public static bool VerifyPersistedItem(
