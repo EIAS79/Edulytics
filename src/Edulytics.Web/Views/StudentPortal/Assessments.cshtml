@@ -4,9 +4,17 @@
 @{
     Layout = "_StudentLayout";
     ViewData["Title"] = S["AssessmentsTitle"].Value;
-    var orderedAssessments = Model.Workspace.Assessments
+    var toDo = Model.Workspace.Assessments
+        .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Online && !x.IsSubmitted)
+        .OrderBy(x => x.AssessmentDate)
+        .ToArray();
+    var submitted = Model.Workspace.Assessments
+        .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Online && x.IsSubmitted)
         .OrderByDescending(x => x.AssessmentDate)
-        .ThenByDescending(x => x.AssessmentId)
+        .ToArray();
+    var awaitingOffline = Model.Workspace.Assessments
+        .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Offline && !x.IsSubmitted)
+        .OrderBy(x => x.AssessmentDate)
         .ToArray();
 }
 <link rel="stylesheet" href="~/css/round7-list-scroll.css" asp-append-version="true" />
@@ -16,51 +24,97 @@
     <p>@S["AssessmentsSubtitle"]</p>
 </header>
 
-@if (orderedAssessments.Length == 0)
-{
-    <div class="student-empty-state">@S["NoActiveAssessments"]</div>
-}
-else
-{
-    <div class="student-card-list ed-scroll-list">
-        @foreach (var item in orderedAssessments)
-        {
-            <article class="student-assessment-card">
-                <div>
-                    <h2>@item.Title</h2>
-                    <p>@S["Class"]: @item.ClassName</p>
-                    <p>@S["AssessmentMode"]: @(item.DeliveryMode == AssessmentDeliveryMode.Online ? S["OnlineAssessment"] : S["OfflineAssessment"])</p>
-                    <p>@S["AssessmentDifficulty"]: @S[$"AssessmentDifficulty{item.DifficultyBand}"]</p>
-                </div>
-                <dl>
-                    <div>
-                        <dt>@S["AssessmentDate"]</dt>
-                        <dd>@item.AssessmentDate.ToString("yyyy-MM-dd")</dd>
-                    </div>
-                    <div>
-                        <dt>@S["MaxScore"]</dt>
-                        <dd>@item.MaxScore.ToString("0.##")</dd>
-                    </div>
-                </dl>
-                <div class="student-actions">
-                    @if (item.IsSubmitted && item.DeliveryMode == AssessmentDeliveryMode.Online)
-                    {
-                        <span class="student-muted">@S["AssessmentSubmittedTitle"]</span>
-                    }
-                    else if (item.IsSubmitted)
-                    {
-                        <a class="student-button" asp-action="Results">@S["ViewResults"]</a>
-                    }
-                    else if (item.DeliveryMode == AssessmentDeliveryMode.Online)
-                    {
-                        <a class="student-button student-button-primary" asp-action="TakeAssessment" asp-route-id="@item.AssessmentId">@S["StartAssessment"]</a>
-                    }
-                    else
-                    {
-                        <span class="student-muted">@S["TeacherManagedAssessment"]</span>
-                    }
-                </div>
-            </article>
-        }
+<nav class="student-assessment-state-nav" aria-label="@S["AssessmentStatus"]">
+    <a href="#to-do">@S["TasksToDo"] <strong>@toDo.Length</strong></a>
+    <a href="#submitted">@S["SubmittedInReview"] <strong>@submitted.Length</strong></a>
+    <a href="#offline">@S["AwaitingOfflineResult"] <strong>@awaitingOffline.Length</strong></a>
+    <a asp-action="Results">@S["CompletedResults"] <strong>@Model.Workspace.Results.Count</strong></a>
+</nav>
+
+<section id="to-do" class="student-assessment-state-section">
+    <div class="student-panel-heading">
+        <div>
+            <span class="student-eyebrow">@S["OnlineAssessment"]</span>
+            <h2>@S["TasksToDo"]</h2>
+        </div>
     </div>
-}
+    @if (toDo.Length == 0)
+    {
+        <div class="student-empty-state">@S["NoTasksToDo"]</div>
+    }
+    else
+    {
+        <div class="student-card-list ed-scroll-list">
+            @foreach (var item in toDo)
+            {
+                <article class="student-assessment-card">
+                    <div>
+                        <h3>@item.Title</h3>
+                        <p>@S["Class"]: @item.ClassName</p>
+                        <p>@S["AssessmentDifficulty"]: @S[$"AssessmentDifficulty{item.DifficultyBand}"]</p>
+                    </div>
+                    <dl>
+                        <div><dt>@S["AssessmentDate"]</dt><dd>@item.AssessmentDate.ToString("yyyy-MM-dd")</dd></div>
+                        <div><dt>@S["MaxScore"]</dt><dd>@item.MaxScore.ToString("0.##")</dd></div>
+                    </dl>
+                    <div class="student-actions">
+                        <a class="student-button student-button-primary"
+                           asp-action="TakeAssessment"
+                           asp-route-id="@item.AssessmentId">@S["StartAssessment"]</a>
+                    </div>
+                </article>
+            }
+        </div>
+    }
+</section>
+
+<section id="submitted" class="student-assessment-state-section">
+    <div class="student-panel-heading"><h2>@S["SubmittedInReview"]</h2></div>
+    @if (submitted.Length == 0)
+    {
+        <div class="student-empty-state">@S["NoSubmittedAssessments"]</div>
+    }
+    else
+    {
+        <div class="student-card-list ed-scroll-list">
+            @foreach (var item in submitted)
+            {
+                <article class="student-assessment-card">
+                    <div>
+                        <h3>@item.Title</h3>
+                        <p>@item.SubjectName · @item.ClassName</p>
+                    </div>
+                    <div class="student-actions">
+                        <span class="student-muted">@S["SubmittedInReview"]</span>
+                    </div>
+                </article>
+            }
+        </div>
+    }
+</section>
+
+<section id="offline" class="student-assessment-state-section">
+    <div class="student-panel-heading"><h2>@S["AwaitingOfflineResult"]</h2></div>
+    @if (awaitingOffline.Length == 0)
+    {
+        <div class="student-empty-state">@S["NoOfflineAssessmentsAwaitingResult"]</div>
+    }
+    else
+    {
+        <div class="student-card-list ed-scroll-list">
+            @foreach (var item in awaitingOffline)
+            {
+                <article class="student-assessment-card">
+                    <div>
+                        <h3>@item.Title</h3>
+                        <p>@item.SubjectName · @item.ClassName</p>
+                        <p>@S["AssessmentDate"]: @item.AssessmentDate.ToString("yyyy-MM-dd")</p>
+                    </div>
+                    <div class="student-actions">
+                        <span class="student-muted">@S["WaitingForTeacherResult"]</span>
+                    </div>
+                </article>
+            }
+        </div>
+    }
+</section>
