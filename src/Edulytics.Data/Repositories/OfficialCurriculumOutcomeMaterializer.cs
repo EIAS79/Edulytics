@@ -10,7 +10,7 @@ namespace Edulytics.Data.Repositories;
 /// official Standard/Outcome nodes into the school-scoped LearningOutcome model required by
 /// assessment, mastery and evidence foreign keys.
 /// </summary>
-internal static class OfficialCurriculumOutcomeMaterializer
+public static class OfficialCurriculumOutcomeMaterializer
 {
     public static async Task EnsureAllActiveAsync(
         EdulyticsDbContext db,
