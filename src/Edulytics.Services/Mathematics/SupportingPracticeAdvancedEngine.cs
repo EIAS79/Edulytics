@@ -94,7 +94,7 @@ internal static class SupportingPracticeAdvancedEngine
             "supporting.functions.inverse_linear" => InverseLinear(r, scale),
             "supporting.functions.polynomial_value" => PolynomialValue(r, scale),
             "supporting.coordinate.line_intersection" => LineIntersection(r, scale),
-            "supporting.circle.angle_semicircle" => CircleSemicircle(r),
+            "supporting.circle.angle_semicircle" => CircleSemicircle(r, preferredVariant),
             "supporting.trigonometry.bearing" => Bearing(r),
             "supporting.trigonometry.sine_rule_exact" => SineRule(r, scale),
             "supporting.trigonometry.cosine_rule_square" => CosineRule(r, scale),
@@ -105,10 +105,10 @@ internal static class SupportingPracticeAdvancedEngine
             "supporting.statistics.cumulative_total" => CumulativeTotal(r, scale),
             "supporting.statistics.histogram_density" => HistogramDensity(r, scale),
             "supporting.statistics.quartile" => Quartile(r, scale),
-            "supporting.probability.independent_product" => IndependentProduct(r),
+            "supporting.probability.independent_product" => IndependentProduct(r, preferredVariant),
             "supporting.probability.expected_frequency" => ExpectedFrequency(r, scale),
             "supporting.probability.binomial_half" => BinomialHalf(r),
-            "supporting.probability.normal_symmetry" => NormalSymmetry(r),
+            "supporting.probability.normal_symmetry" => NormalSymmetry(r, preferredVariant),
             "supporting.probability.poisson_mean" => PoissonMean(r, scale),
             "supporting.probability.uniform_interval" => UniformInterval(r, scale),
             "supporting.statistics.hypothesis_decision" => HypothesisDecision(r),
@@ -150,7 +150,14 @@ internal static class SupportingPracticeAdvancedEngine
             "supporting.functions.inverse_linear" => ((p["y"] - p["b"]) / p["a"]).ToString(CultureInfo.InvariantCulture),
             "supporting.functions.polynomial_value" => (p["a"] * p["x"] * p["x"] + p["b"] * p["x"] + p["c"]).ToString(CultureInfo.InvariantCulture),
             "supporting.coordinate.line_intersection" => p["x"].ToString(CultureInfo.InvariantCulture),
-            "supporting.circle.angle_semicircle" => "90",
+            "supporting.circle.angle_semicircle" =>
+                p["mode"] switch
+                {
+                    0 => "90",
+                    1 => (90 - p["givenAngle"]).ToString(CultureInfo.InvariantCulture),
+                    2 => "90",
+                    _ => (90 / (1 + p["ratio"])).ToString(CultureInfo.InvariantCulture)
+                },
             "supporting.trigonometry.bearing" => p["bearing"].ToString("000", CultureInfo.InvariantCulture),
             "supporting.trigonometry.sine_rule_exact" => p["targetSide"].ToString(CultureInfo.InvariantCulture),
             "supporting.trigonometry.cosine_rule_square" => (p["b"] * p["b"] + p["c"] * p["c"] - p["bcTerm"]).ToString(CultureInfo.InvariantCulture),
@@ -161,10 +168,14 @@ internal static class SupportingPracticeAdvancedEngine
             "supporting.statistics.cumulative_total" => (p["f1"] + p["f2"] + p["f3"]).ToString(CultureInfo.InvariantCulture),
             "supporting.statistics.histogram_density" => (p["frequency"] / p["width"]).ToString(CultureInfo.InvariantCulture),
             "supporting.statistics.quartile" => p["q"].ToString(CultureInfo.InvariantCulture),
-            "supporting.probability.independent_product" => "1/4",
+            "supporting.probability.independent_product" =>
+                p["mode"] == 3
+                    ? $"{Pow(p["n1"], p["power"])}/{Pow(p["d1"], p["power"])}"
+                    : $"{p["n1"] * p["n2"]}/{p["d1"] * p["d2"]}",
             "supporting.probability.expected_frequency" => (p["trials"] * p["numerator"] / p["denominator"]).ToString(CultureInfo.InvariantCulture),
             "supporting.probability.binomial_half" => $"{p["n"]}/{Pow2(p["n"])}",
-            "supporting.probability.normal_symmetry" => "1/2",
+            "supporting.probability.normal_symmetry" =>
+                $"{p["numerator"]}/{p["denominator"]}",
             "supporting.probability.poisson_mean" => p["lambda"].ToString(CultureInfo.InvariantCulture),
             "supporting.probability.uniform_interval" => $"{p["favourable"]}/{p["total"]}",
             "supporting.statistics.hypothesis_decision" => p["reject"] == 1 ? "reject" : "do not reject",
@@ -359,7 +370,40 @@ internal static class SupportingPracticeAdvancedEngine
     private static Problem InverseLinear(Random r,int s){var a=r.Next(2,5+s);var x=r.Next(-5-s,6+s);var b=r.Next(-8-s,9+s);var y=a*x+b;return P("supporting.functions.inverse_linear",$"For f(x)={a}x{Sign(b)}, find f⁻¹({y}).","Set y=ax+b and solve for x.",("a",a),("b",b),("y",y));}
     private static Problem PolynomialValue(Random r,int s){var a=r.Next(1,4+s);var b=r.Next(-4-s,5+s);var c=r.Next(-6-s,7+s);var x=r.Next(-3-s,4+s);return P("supporting.functions.polynomial_value",$"For p(x)={a}x²{Sign(b)}x{Sign(c)}, find p({x}).","Substitute the input and apply powers before multiplication and addition.",("a",a),("b",b),("c",c),("x",x));}
     private static Problem LineIntersection(Random r,int s){var x=r.Next(-5-s,6+s);var m1=r.Next(1,4+s);var m2=m1+r.Next(1,4+s);var b1=r.Next(-6-s,7+s);var y=m1*x+b1;var b2=y-m2*x;return P("supporting.coordinate.line_intersection",$"Lines y={m1}x{Sign(b1)} and y={m2}x{Sign(b2)} intersect at x=k. Find k.","At an intersection the y-values are equal; solve the resulting linear equation.",("x",x),("m1",m1),("m2",m2),("b1",b1),("b2",b2));}
-    private static Problem CircleSemicircle(Random r){var variant=r.Next(1,10000);return P("supporting.circle.angle_semicircle","An angle at the circumference subtends a diameter. Find the angle in degrees.","An angle in a semicircle is a right angle.",("variant",variant));}
+    private static Problem CircleSemicircle(Random r,int? preferredVariant=null)
+    {
+        var slot=QuestionVariantPolicy.NormalizeSlot(preferredVariant ?? r.Next(0,16));
+        var mode=slot/4;
+        if(mode==0)
+            return P("supporting.circle.angle_semicircle",
+                "An angle at the circumference subtends a diameter. Find the angle in degrees.",
+                "An angle in a semicircle is a right angle.",
+                ("mode",mode),("variant",slot));
+        if(mode==1)
+        {
+            var given=r.Next(20,71);
+            return P("supporting.circle.angle_semicircle",
+                $"Triangle ABC is inscribed in a semicircle with AB as the diameter. If angle A is {given}°, find angle B.",
+                "The angle at C is 90° because it subtends the diameter. The two acute angles therefore sum to 90°.",
+                ("mode",mode),("givenAngle",given),("variant",slot));
+        }
+        if(mode==2)
+        {
+            int[] claims=[45,60,75,120];
+            var claim=claims[r.Next(claims.Length)];
+            return P("supporting.circle.angle_semicircle",
+                $"A student says an angle at the circumference subtending a diameter can be {claim}°. What is the correct angle?",
+                "The diameter subtends a right angle at the circumference, so the claimed non-right angle is incorrect.",
+                ("mode",mode),("claim",claim),("variant",slot));
+        }
+
+        int[] ratios=[1,2,4,5,8];
+        var ratio=ratios[r.Next(ratios.Length)];
+        return P("supporting.circle.angle_semicircle",
+            $"Triangle ABC is inscribed in a semicircle with AB as the diameter. Its two acute angles are in the ratio 1:{ratio}. Find the smaller acute angle.",
+            "The angle subtending the diameter is 90°, so the two remaining angles total 90°. Split 90° in the stated ratio.",
+            ("mode",mode),("ratio",ratio),("variant",slot));
+    }
     private static Problem Bearing(Random r){int[] b=[30,45,60,90,120,135,180,225,270,315];var v=b[r.Next(b.Length)];return P("supporting.trigonometry.bearing",$"A direction is {v}° clockwise from north. Write the three-figure bearing.","Bearings are measured clockwise from north and written with three digits.",AssessmentItemType.ShortAnswer,("bearing",v));}
     private static Problem SineRule(Random r,int s){var baseSide=2*r.Next(2,14+s*3);var target=baseSide*2;return P("supporting.trigonometry.sine_rule_exact",$"Using a/sin A=b/sin B, let a={baseSide}, sin A=1/2 and sin B=1. Find b.","Rearrange b=a·sinB/sinA and substitute the exact sine values.",("baseSide",baseSide),("targetSide",target));}
     private static Problem CosineRule(Random r,int s){var b=r.Next(2,7+s);var c=r.Next(2,7+s);var bc=b*c;return P("supporting.trigonometry.cosine_rule_square",$"For sides b={b}, c={c} with included angle 60°, use a²=b²+c²-2bc cos60°. Find a².","Since cos60°=1/2, the final term is bc.",("b",b),("c",c),("bcTerm",bc));}
@@ -370,10 +414,85 @@ internal static class SupportingPracticeAdvancedEngine
     private static Problem CumulativeTotal(Random r,int s){var a=r.Next(1,10+s*2);var b=r.Next(1,10+s*2);var c=r.Next(1,10+s*2);return P("supporting.statistics.cumulative_total",$"Class frequencies are {a}, {b}, {c}. Find the final cumulative frequency.","The final cumulative frequency is the total frequency.",("f1",a),("f2",b),("f3",c));}
     private static Problem HistogramDensity(Random r,int s){var width=r.Next(1,5+s);var density=r.Next(1,8+s);var freq=width*density;return P("supporting.statistics.histogram_density",$"A histogram class has width {width} and frequency {freq}. Find frequency density.","Frequency density=frequency/class width.",("width",width),("frequency",freq));}
     private static Problem Quartile(Random r,int s){var q=r.Next(2,20+s*5);var variant=r.Next(1,9999);return P("supporting.statistics.quartile",$"An ordered data summary states the lower quartile is {q}. What is Q1?","Q1 is another name for the lower quartile.",("q",q),("variant",variant));}
-    private static Problem IndependentProduct(Random r){var variant=r.Next(1,10000);return P("supporting.probability.independent_product","Two independent fair coins are tossed. Find P(head then head).","Multiply independent branch probabilities: 1/2×1/2=1/4.",AssessmentItemType.ShortAnswer,("variant",variant));}
+    private static Problem IndependentProduct(Random r,int? preferredVariant=null)
+    {
+        var slot=QuestionVariantPolicy.NormalizeSlot(preferredVariant ?? r.Next(0,16));
+        var mode=slot/4;
+        int[] denominators=[2,3,4,5,6,8,10];
+        var d1=denominators[r.Next(denominators.Length)];
+        var d2=denominators[r.Next(denominators.Length)];
+        var n1=r.Next(1,d1);
+        var n2=r.Next(1,d2);
+
+        if(mode==0)
+            return P("supporting.probability.independent_product",
+                $"Independent events A and B have probabilities {n1}/{d1} and {n2}/{d2}. Find P(A and B).",
+                "For independent events, multiply the probabilities along the branch.",
+                AssessmentItemType.ShortAnswer,
+                ("mode",mode),("n1",n1),("d1",d1),("n2",n2),("d2",d2),("power",2),("variant",slot));
+
+        if(mode==1)
+            return P("supporting.probability.independent_product",
+                $"A spinner lands on blue with probability {n1}/{d1}. An independent second spinner lands on red with probability {n2}/{d2}. Find the probability that both events occur.",
+                "The spinner outcomes are independent, so multiply their probabilities.",
+                AssessmentItemType.ShortAnswer,
+                ("mode",mode),("n1",n1),("d1",d1),("n2",n2),("d2",d2),("power",2),("variant",slot));
+
+        if(mode==2)
+            return P("supporting.probability.independent_product",
+                $"For independent events with probabilities {n1}/{d1} and {n2}/{d2}, a student adds the probabilities to find P(A and B). What is the correct probability?",
+                "For an AND event on independent branches, multiply rather than add.",
+                AssessmentItemType.ShortAnswer,
+                ("mode",mode),("n1",n1),("d1",d1),("n2",n2),("d2",d2),("power",2),("variant",slot));
+
+        var d=denominators[r.Next(denominators.Length)];
+        var n=r.Next(1,d);
+        var power=slot%2==0?3:4;
+        return P("supporting.probability.independent_product",
+            $"An event with probability {n}/{d} is repeated independently {power} times. Find the probability that it occurs every time.",
+            "Repeated independent occurrences multiply, so raise the single-event probability to the number of repetitions.",
+            AssessmentItemType.ShortAnswer,
+            ("mode",mode),("n1",n),("d1",d),("n2",n),("d2",d),("power",power),("variant",slot));
+    }
     private static Problem ExpectedFrequency(Random r,int s){int[] den=[2,4,5,10];var d=den[r.Next(den.Length)];var n=r.Next(1,d);var trials=d*r.Next(5,15+s*5);return P("supporting.probability.expected_frequency",$"An event has probability {n}/{d} and is repeated {trials} times. Find the expected frequency.","Expected frequency=number of trials×probability.",("numerator",n),("denominator",d),("trials",trials));}
     private static Problem BinomialHalf(Random r){var n=r.Next(2,7);var variant=r.Next(1,9999);return P("supporting.probability.binomial_half",$"A fair coin is tossed {n} times. Find the probability of exactly one head as n/2^n, reduced if desired.","There are n positions for the one head among 2^n equally likely sequences.",AssessmentItemType.ShortAnswer,("n",n),("variant",variant));}
-    private static Problem NormalSymmetry(Random r){var variant=r.Next(1,9999);return P("supporting.probability.normal_symmetry","For a normal distribution with mean μ, find P(X>μ).","A normal distribution is symmetric about its mean, so half the area lies above μ.",AssessmentItemType.ShortAnswer,("variant",variant));}
+    private static Problem NormalSymmetry(Random r,int? preferredVariant=null)
+    {
+        var slot=QuestionVariantPolicy.NormalizeSlot(preferredVariant ?? r.Next(0,16));
+        var mode=slot/4;
+        int[] denominators=[4,5,8,10,20];
+        var d=denominators[r.Next(denominators.Length)];
+        var n=r.Next(1,Math.Max(2,d/2));
+
+        if(mode==0)
+            return P("supporting.probability.normal_symmetry",
+                slot%2==0
+                    ? "For a normal distribution with mean μ, find P(X>μ)."
+                    : "For a normal distribution with mean μ, find P(X<μ).",
+                "A normal distribution is symmetric about its mean, so half the area lies on either side of μ.",
+                AssessmentItemType.ShortAnswer,
+                ("mode",mode),("numerator",1),("denominator",2),("variant",slot));
+
+        if(mode==1)
+            return P("supporting.probability.normal_symmetry",
+                $"For a normal distribution symmetric about μ, P(X>μ+k)={n}/{d}. Find P(X<μ-k).",
+                "Symmetric intervals equally far from the mean have equal tail probabilities.",
+                AssessmentItemType.ShortAnswer,
+                ("mode",mode),("numerator",n),("denominator",d),("variant",slot));
+
+        if(mode==2)
+            return P("supporting.probability.normal_symmetry",
+                $"A student claims P(X>μ)={n}/{d} for a normal distribution. What is the correct probability?",
+                "Exactly half of a normal distribution lies above its mean.",
+                AssessmentItemType.ShortAnswer,
+                ("mode",mode),("numerator",1),("denominator",2),("claimNumerator",n),("claimDenominator",d),("variant",slot));
+
+        return P("supporting.probability.normal_symmetry",
+            $"For a normal distribution symmetric about μ, P(X<μ-k)={n}/{d}. Find P(X>μ+k).",
+            "Reflect the tail across the mean: symmetric tail probabilities are equal.",
+            AssessmentItemType.ShortAnswer,
+            ("mode",mode),("numerator",n),("denominator",d),("variant",slot));
+    }
     private static Problem PoissonMean(Random r,int s){var l=r.Next(1,20+s*5);return P("supporting.probability.poisson_mean",$"For X~Poisson({l}), find E(X).","A Poisson distribution has mean λ.",("lambda",l));}
     private static Problem UniformInterval(Random r,int s){var total=r.Next(4,10+s);var fav=r.Next(1,total);return P("supporting.probability.uniform_interval",$"A continuous uniform variable is spread evenly over an interval of length {total}. A subinterval has length {fav}. Find its probability.","For a uniform distribution, probability is favourable interval length divided by total interval length.",AssessmentItemType.ShortAnswer,("favourable",fav),("total",total));}
     private static Problem HypothesisDecision(Random r){int[] pValues=[1,2,3,4,5,6,7,8,9,12,15,20];var p=pValues[r.Next(pValues.Length)];var reject=p<5?1:0;return P("supporting.statistics.hypothesis_decision",$"At the 5% significance level, a test has p-value {(p/100.0):0.00}. Enter 'reject' or 'do not reject' for H0.","Reject H0 when p-value is less than the significance level.",AssessmentItemType.ShortAnswer,("reject",reject),("pHundredths",p),("alphaHundredths",5));}
