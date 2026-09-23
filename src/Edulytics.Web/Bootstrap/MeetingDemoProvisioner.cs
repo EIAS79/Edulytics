@@ -553,14 +553,27 @@ DELETE FROM "Schools";
         }
 
         var gradeByLogicalLevel = new Dictionary<int, GradeLevel>();
+        var usedGradeNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         foreach (var logicalLevel in levels.Select(x => x.LogicalLevel).Distinct().OrderBy(x => x))
         {
             var representative = levels.First(x => x.LogicalLevel == logicalLevel);
+            var gradeName = representative.Label;
+
+            if (!usedGradeNames.Add(gradeName))
+            {
+                gradeName = $"{representative.Label} — Level {logicalLevel}";
+                if (!usedGradeNames.Add(gradeName))
+                {
+                    throw new InvalidOperationException(
+                        $"Unable to create a unique grade name for {definition.PackCode} logical level {logicalLevel}.");
+                }
+            }
+
             var grade = new GradeLevel
             {
                 Id = Guid.NewGuid(),
                 SchoolId = school.Id,
-                Name = representative.Label,
+                Name = gradeName,
                 Order = logicalLevel
             };
             gradeByLogicalLevel[logicalLevel] = grade;
