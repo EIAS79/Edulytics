@@ -148,7 +148,7 @@ public sealed class StudentPrivatePracticeServiceTests
     }
 
     [Fact]
-    public async Task Lesson_practice_generates_eight_progressive_diverse_questions_with_historical_exposure()
+    public async Task Lesson_practice_falls_back_to_honest_standard_composition_when_higher_forms_are_not_supported()
     {
         const string lessonCode =
             "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-1:APPLY";
@@ -180,8 +180,9 @@ public sealed class StudentPrivatePracticeServiceTests
             1);
 
         // Seed realistic prior exposure across all four Powers of 10
-        // families. Historical exposure should improve variety without
-        // changing the eight-question progression contract.
+        // families. These families do not implement distinct Stretch/Challenge
+        // cognitive forms, so Lesson Practice must remain Standard rather than
+        // attaching unsupported higher-difficulty labels.
         var priorQuestions =
             new ExactSkillContractQuestionEngine().Generate(
                 "stage18",
@@ -254,33 +255,32 @@ public sealed class StudentPrivatePracticeServiceTests
                 .Select(item => item.GenerationFamily)
                 .ToArray());
 
-        var expectedDifficulty = new[]
-        {
-            "Standard", "Standard", "Standard",
-            "Stretch", "Stretch", "Stretch",
-            "Challenge", "Challenge"
-        };
-
-        for (var index = 0; index < repo.SavedItems.Count; index++)
+        foreach (var item in repo.SavedItems)
         {
             Assert.False(
                 string.IsNullOrWhiteSpace(
-                    repo.SavedItems[index].ValidationMetadataJson));
+                    item.ValidationMetadataJson));
 
             using var metadata = JsonDocument.Parse(
-                repo.SavedItems[index].ValidationMetadataJson!);
+                item.ValidationMetadataJson!);
 
             Assert.Equal(
-                expectedDifficulty[index],
+                "practice-assessment-v2",
                 metadata.RootElement
-                    .GetProperty("difficulty")
+                    .GetProperty("composer")
                     .GetString());
-
             Assert.Equal(
-                index + 1,
+                "Standard",
                 metadata.RootElement
-                    .GetProperty("progressionIndex")
-                    .GetInt32());
+                    .GetProperty("cognitiveDifficulty")
+                    .GetString());
+            Assert.False(
+                metadata.RootElement.TryGetProperty(
+                    "progressionIndex",
+                    out _));
+            Assert.Equal(
+                AssessmentItemDifficulty.Medium,
+                item.Difficulty);
         }
 
         Assert.All(
