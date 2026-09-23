@@ -332,7 +332,7 @@ public sealed class StudentPrivatePracticeServiceTests
     }
 
     [Fact]
-    public async Task Lesson_personal_practice_prefers_shorter_semantically_unique_session_to_padding()
+    public async Task Lesson_personal_practice_uses_genuine_shape_form_diversity_without_padding()
     {
         const string family = "supporting.geometry.shape_dimension";
         var contract = LessonPracticeContractRegistry.All
@@ -374,22 +374,35 @@ public sealed class StudentPrivatePracticeServiceTests
         Assert.True(result.Succeeded);
         Assert.Null(result.Error);
         Assert.NotNull(repo.SavedAttempt);
-        Assert.Equal(8, repo.SavedItems.Count);
-        Assert.Equal(8m, repo.SavedAttempt!.MaxScore);
+        Assert.Equal(10, repo.SavedItems.Count);
+        Assert.Equal(10m, repo.SavedAttempt!.MaxScore);
 
-        var shapes = repo.SavedItems
-            .Select(item =>
-            {
-                using var document = JsonDocument.Parse(
-                    item.GenerationParametersJson!);
-                return document.RootElement
-                    .GetProperty("parameters")
-                    .GetProperty("shape")
-                    .GetInt32();
-            })
-            .ToArray();
+        var semanticPairs = new List<string>();
+        var forms = new HashSet<int>();
 
-        Assert.Equal(8, shapes.Distinct().Count());
+        foreach (var item in repo.SavedItems)
+        {
+            using var document = JsonDocument.Parse(
+                item.GenerationParametersJson!);
+            var parameters = document.RootElement
+                .GetProperty("parameters");
+            var shape = parameters
+                .GetProperty("shape")
+                .GetInt32();
+            var form = parameters
+                .GetProperty("form")
+                .GetInt32();
+
+            forms.Add(form);
+            semanticPairs.Add($"{form}:{shape}");
+        }
+
+        Assert.Equal(
+            repo.SavedItems.Count,
+            semanticPairs.Distinct(StringComparer.Ordinal).Count());
+        Assert.True(
+            forms.Count >= 3,
+            $"Expected at least 3 genuine shape question forms, got {string.Join(",", forms.OrderBy(x => x))}.");
     }
 
     [Fact]
