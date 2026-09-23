@@ -110,6 +110,103 @@ public sealed class IdentitySchoolUserRepository
             .ToArray();
     }
 
+    public async Task<SchoolUserPage> QueryBySchoolAsync(
+        Guid schoolId,
+        SchoolUserListQuery query,
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(query);
+
+        var page = Math.Max(1, query.Page);
+        var pageSize = Math.Clamp(query.PageSize, 1, 100);
+        var search = query.Search?.Trim();
+        var role = query.Role?.Trim();
+
+        var usersQuery = _context.Users
+            .AsNoTracking()
+            .Where(x => x.SchoolId == schoolId);
+
+        if (!string.IsNullOrWhiteSpace(search))
+        {
+            usersQuery = usersQuery.Where(x =>
+                x.Email != null && EF.Functions.Like(x.Email, $"%{search}%"));
+        }
+
+        if (query.IsActive.HasValue)
+            usersQuery = usersQuery.Where(x => x.IsActive == query.IsActive.Value);
+
+        if (query.IsLocked.HasValue)
+        {
+            var now = DateTimeOffset.UtcNow;
+            usersQuery = query.IsLocked.Value
+                ? usersQuery.Where(x =>
+                    x.LockoutEnabled &&
+                    x.LockoutEnd.HasValue &&
+                    x.LockoutEnd.Value > now)
+                : usersQuery.Where(x =>
+                    !x.LockoutEnabled ||
+                    !x.LockoutEnd.HasValue ||
+                    x.LockoutEnd.Value <= now);
+        }
+
+        if (!string.IsNullOrWhiteSpace(role))
+        {
+            var roleUserIds =
+                from userRole in _context.UserRoles
+                join roleRow in _context.Roles
+                    on userRole.RoleId equals roleRow.Id
+                where roleRow.Name == role
+                select userRole.UserId;
+
+            usersQuery = usersQuery.Where(x => roleUserIds.Contains(x.Id));
+        }
+
+        var total = await usersQuery.CountAsync(cancellationToken);
+        var users = await usersQuery
+            .OrderBy(x => x.Email)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToArrayAsync(cancellationToken);
+
+        if (users.Length == 0)
+            return new SchoolUserPage([], page, pageSize, total);
+
+        var userIds = users.Select(x => x.Id).ToArray();
+        var roleRows = await (
+                from userRole in _context.UserRoles
+                join roleRow in _context.Roles
+                    on userRole.RoleId equals roleRow.Id
+                where userIds.Contains(userRole.UserId)
+                select new
+                {
+                    userRole.UserId,
+                    RoleName = roleRow.Name!
+                })
+            .AsNoTracking()
+            .ToArrayAsync(cancellationToken);
+
+        var rolesByUser = roleRows
+            .GroupBy(x => x.UserId)
+            .ToDictionary(
+                group => group.Key,
+                group => group
+                    .Select(x => x.RoleName)
+                    .OrderBy(x => x)
+                    .ToArray());
+
+        return new SchoolUserPage(
+            users.Select(user =>
+                    ToRecord(
+                        user,
+                        rolesByUser.TryGetValue(user.Id, out var roles)
+                            ? roles
+                            : []))
+                .ToArray(),
+            page,
+            pageSize,
+            total);
+    }
+
     public async Task<SchoolUserRecord?>
         GetBySchoolAndIdAsync(
             Guid schoolId,
