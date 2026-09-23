@@ -227,7 +227,9 @@ Difficulty must change cognitive demand, not only labels or number ranges.
 
 # Phase 5 — Session Quality and Answer-Leak Validation
 
-**Status: IN PROGRESS**
+**Status: COMPLETE**
+
+**Closure:** Exact lesson Practice sessions are now certified before persistence by a session-level quality gate. The gate rejects semantic duplicates, duplicate exposure fingerprints, explicit prompt answer leaks, false difficulty/form capability claims, invalid composer metadata, and failed exact verification. Learner-visible visuals are guarded fail-closed against family-specific answer leakage, and persisted items are stamped with READY_BALANCED or READY_NARROW readiness metadata. Mathematics Intelligence Foundation #585 and Phase16 CI #1524 passed, including full regression, PostgreSQL, CodeQL/SAST, catalogue closure and production container/Trivy gates.
 
 ## Goal
 
@@ -253,6 +255,8 @@ Certify the complete learner-visible session before persistence.
 ---
 
 # Phase 6 — Full 4,453-Lesson Certification
+
+**Status: READY TO START**
 
 ## Goal
 
