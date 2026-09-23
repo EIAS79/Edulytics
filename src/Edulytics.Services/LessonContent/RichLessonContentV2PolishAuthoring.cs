@@ -139,7 +139,7 @@ public static partial class RichLessonContentV2RuntimeComposer
                     "Rozwiązuj dokładnie ten typ problemu, który wynika z celu lekcji; " +
                     "nie zastępuj go podobną, ale inną umiejętnością.",
                 Example =
-                    $"Practice używa zweryfikowanego mechanizmu {contract.Mechanic} dla tego samego celu."
+                    "Practice używa tego samego zweryfikowanego kontraktu matematycznego dla tego celu."
             }
         };
 
@@ -186,7 +186,7 @@ public static partial class RichLessonContentV2RuntimeComposer
             ],
             Answer = answer,
             Check =
-                $"Wynik zweryfikowany przez exact Mathematics engine dla rodziny „{label}”."
+                $"Wynik zweryfikowany przez niezależny silnik matematyczny Edulytics dla przypadku „{label}”."
         };
     }
 
@@ -647,7 +647,6 @@ public static partial class RichLessonContentV2RuntimeComposer
             "opposite" => "bok naprzeciw",
             "scaleFactor" => "skala podobieństwa",
             "first" => "pierwszy wyraz",
-            "difference" => "różnica",
             "ratio" => "iloraz ciągu",
             "n" => "n",
             "target" => "wartość docelowa",
@@ -700,6 +699,7 @@ public static partial class RichLessonContentV2RuntimeComposer
     {
         var parts = Regex
             .Matches(key, @"[A-Z]?[a-z]+|[A-Z]+(?![a-z])|\d+")
+            .Cast<Match>()
             .Select(x => PolishMathToken(x.Value))
             .Where(x => !string.IsNullOrWhiteSpace(x) &&
                         !string.Equals(x, "przypadek", StringComparison.Ordinal))
@@ -760,6 +760,18 @@ public static partial class RichLessonContentV2RuntimeComposer
             "ruler" => "linijka",
             "scale" => "waga",
             "measuring jug" => "dzbanek z podziałką",
+            "center" => "miara położenia",
+            "variation" => "miara zróżnicowania",
+            "statistical" => "pytanie statystyczne",
+            "not statistical" => "pytanie niestatystyczne",
+            "yes" => "tak",
+            "no" => "nie",
+            "zero" => "zero",
+            "five" => "pięć",
+            "ten" => "dziesięć",
+            "fourteen" => "czternaście",
+            "seventeen" => "siedemnaście",
+            "twenty" => "dwadzieścia",
             "as x increases, y generally increases" => "gdy x rośnie, y na ogół rośnie",
             "as x increases, y generally decreases" => "gdy x rośnie, y na ogół maleje",
             "there is no clear upward or downward trend" => "brak wyraźnego trendu rosnącego lub malejącego",
