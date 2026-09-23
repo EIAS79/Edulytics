@@ -129,12 +129,15 @@ public sealed class PolishRichLessonContentV2ClosureTests
             Assert.False(string.IsNullOrWhiteSpace(answer));
             Assert.False(string.IsNullOrWhiteSpace(label));
 
-            Assert.DoesNotMatch(
-                ObviousEnglishProse,
-                prompt);
-            Assert.DoesNotMatch(
-                ObviousEnglishProse,
-                solution);
+            var promptLeak = ObviousEnglishProse.Match(prompt);
+            Assert.False(
+                promptLeak.Success,
+                $"English prose leaked for {family} prompt: {prompt}");
+
+            var solutionLeak = ObviousEnglishProse.Match(solution);
+            Assert.False(
+                solutionLeak.Success,
+                $"English prose leaked for {family} solution: {solution}");
         }
     }
 }
