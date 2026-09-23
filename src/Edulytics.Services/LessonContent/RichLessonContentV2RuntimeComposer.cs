@@ -422,8 +422,8 @@ public static partial class RichLessonContentV2RuntimeComposer
             ],
             Answer = answer,
             Check =
-                "Zweryfikowano przez dokładny solver i niezależny verifier " +
-                $"dla rodziny „{question.Family}”."
+                "Zweryfikowano przez dokładny mechanizm rozwiązujący i niezależny weryfikator " +
+                $"dla przypadku „{familyLabel}”."
         };
     }
 
