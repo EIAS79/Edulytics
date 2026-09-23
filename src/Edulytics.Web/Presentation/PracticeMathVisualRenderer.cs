@@ -621,7 +621,9 @@ public static class PracticeMathVisualRenderer
                 break;
         }
 
-        Text(sb, 210, 245, dimension == 2 ? "2D shape" : "3D shape", "hint");
+        // Do not render learner-visible answer-bearing dimension labels.
+        // The exact dimension remains in server-owned parameters for solving
+        // and verification, but the diagram itself must remain neutral.
         return SvgEnd(sb);
     }
 
