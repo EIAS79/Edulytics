@@ -656,16 +656,9 @@ DELETE FROM "Schools";
         var secondaryStudent = await CreateDemoUserAsync(
             userManager, school.Id, secondaryStudentEmail, RoleNames.Student, password);
 
-        db.SubjectSupervisorAssignments.Add(
-            new SubjectSupervisorAssignment
-            {
-                Id = Guid.NewGuid(),
-                SchoolId = school.Id,
-                SupervisorUserId = supervisor.Id,
-                SubjectId = subject.Id,
-                CreatedAtUtc = now
-            });
-
+        // SubjectSupervisor role assignment is authoritative here. The PostgreSQL
+        // trigger installed by AutoAssignMathSupervisorsAndRefreshMastery creates
+        // the Mathematics SubjectSupervisorAssignment automatically.
         foreach (var seededClass in classes)
         {
             db.TeacherAssignments.Add(
