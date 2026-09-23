@@ -68,14 +68,20 @@ public sealed class PracticeV2FullCatalogueCertificationTests
             {
                 blockers.Add(
                     $"{contract.LessonCode}: standard={standard.StatusCode} " +
-                    $"[{string.Join(",", standard.ReasonCodes)}]");
+                    $"[{string.Join(",", standard.ReasonCodes)}]" +
+                    (string.IsNullOrWhiteSpace(standard.Exception)
+                        ? string.Empty
+                        : $" exception={standard.Exception}"));
             }
 
             if (!progressive.IsReady)
             {
                 blockers.Add(
                     $"{contract.LessonCode}: progressive={progressive.StatusCode} " +
-                    $"[{string.Join(",", progressive.ReasonCodes)}]");
+                    $"[{string.Join(",", progressive.ReasonCodes)}]" +
+                    (string.IsNullOrWhiteSpace(progressive.Exception)
+                        ? string.Empty
+                        : $" exception={progressive.Exception}"));
             }
         }
 
