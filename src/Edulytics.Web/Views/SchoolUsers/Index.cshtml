@@ -112,17 +112,20 @@
                     tab.Value,
                     StringComparison.Ordinal);
 
-                <a class="user-role-tab @(selected ? "is-active" : string.Empty)"
-                   asp-action="Index"
-                   asp-route-schoolId="@Model.Context.SchoolId"
-                   asp-route-search="@Model.Search"
-                   asp-route-role="@(string.IsNullOrWhiteSpace(tab.Value) ? null : tab.Value)"
-                   asp-route-isActive="@Model.IsActive"
-                   asp-route-isLocked="@Model.IsLocked"
-                   asp-route-page="1"
-                   asp-route-pageSize="@Model.PageSize">
-                    @tab.Label
-                </a>
+                <form method="get" asp-action="Index" class="user-role-tab-form">
+                    <input type="hidden" name="schoolId" value="@Model.Context.SchoolId" />
+                    <input type="hidden" name="search" value="@Model.Search" />
+                    <input type="hidden" name="isActive" value="@Model.IsActive" />
+                    <input type="hidden" name="isLocked" value="@Model.IsLocked" />
+                    <input type="hidden" name="page" value="1" />
+                    <input type="hidden" name="pageSize" value="@Model.PageSize" />
+                    <button type="submit"
+                            name="role"
+                            value="@tab.Value"
+                            class="user-role-tab @(selected ? "is-active" : string.Empty)">
+                        @tab.Label
+                    </button>
+                </form>
             }
         </nav>
 
@@ -285,33 +288,39 @@
         @if (Model.TotalPages > 1)
         {
             <nav class="user-pagination" aria-label="@T["Pagination"]">
-                <a class="school-button school-button-secondary school-button-small @(Model.Page <= 1 ? "is-disabled" : string.Empty)"
-                   aria-disabled="@(Model.Page <= 1 ? "true" : "false")"
-                   asp-action="Index"
-                   asp-route-schoolId="@Model.Context.SchoolId"
-                   asp-route-search="@Model.Search"
-                   asp-route-role="@Model.Role"
-                   asp-route-isActive="@Model.IsActive"
-                   asp-route-isLocked="@Model.IsLocked"
-                   asp-route-page="@(Math.Max(1, Model.Page - 1))"
-                   asp-route-pageSize="@Model.PageSize">
-                    @T["PreviousPage"]
-                </a>
+                <form method="get" asp-action="Index" class="user-pagination-form">
+                    <input type="hidden" name="schoolId" value="@Model.Context.SchoolId" />
+                    <input type="hidden" name="search" value="@Model.Search" />
+                    <input type="hidden" name="role" value="@Model.Role" />
+                    <input type="hidden" name="isActive" value="@Model.IsActive" />
+                    <input type="hidden" name="isLocked" value="@Model.IsLocked" />
+                    <input type="hidden" name="pageSize" value="@Model.PageSize" />
+                    <button type="submit"
+                            name="page"
+                            value="@(Math.Max(1, Model.Page - 1))"
+                            class="school-button school-button-secondary school-button-small"
+                            disabled="@(Model.Page <= 1 ? "disabled" : null)">
+                        @T["PreviousPage"]
+                    </button>
+                </form>
 
                 <span>@T["PageOf", Model.Page, Model.TotalPages]</span>
 
-                <a class="school-button school-button-secondary school-button-small @(Model.Page >= Model.TotalPages ? "is-disabled" : string.Empty)"
-                   aria-disabled="@(Model.Page >= Model.TotalPages ? "true" : "false")"
-                   asp-action="Index"
-                   asp-route-schoolId="@Model.Context.SchoolId"
-                   asp-route-search="@Model.Search"
-                   asp-route-role="@Model.Role"
-                   asp-route-isActive="@Model.IsActive"
-                   asp-route-isLocked="@Model.IsLocked"
-                   asp-route-page="@(Math.Min(Model.TotalPages, Model.Page + 1))"
-                   asp-route-pageSize="@Model.PageSize">
-                    @T["NextPage"]
-                </a>
+                <form method="get" asp-action="Index" class="user-pagination-form">
+                    <input type="hidden" name="schoolId" value="@Model.Context.SchoolId" />
+                    <input type="hidden" name="search" value="@Model.Search" />
+                    <input type="hidden" name="role" value="@Model.Role" />
+                    <input type="hidden" name="isActive" value="@Model.IsActive" />
+                    <input type="hidden" name="isLocked" value="@Model.IsLocked" />
+                    <input type="hidden" name="pageSize" value="@Model.PageSize" />
+                    <button type="submit"
+                            name="page"
+                            value="@(Math.Min(Model.TotalPages, Model.Page + 1))"
+                            class="school-button school-button-secondary school-button-small"
+                            disabled="@(Model.Page >= Model.TotalPages ? "disabled" : null)">
+                        @T["NextPage"]
+                    </button>
+                </form>
             </nav>
         }
     }
