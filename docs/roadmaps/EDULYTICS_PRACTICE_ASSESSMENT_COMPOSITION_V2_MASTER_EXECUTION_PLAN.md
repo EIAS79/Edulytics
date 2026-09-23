@@ -256,7 +256,7 @@ Certify the complete learner-visible session before persistence.
 
 # Phase 6 — Full 4,453-Lesson Certification
 
-**Status: READY TO START**
+**Status: IN PROGRESS**
 
 ## Goal
 
