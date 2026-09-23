@@ -66,6 +66,19 @@ public interface ISchoolUserRepository
         Guid userId,
         CancellationToken cancellationToken = default);
 
+    async Task<IReadOnlyList<SchoolUserRecord>> ListBySchoolAndIdsAsync(
+        Guid schoolId,
+        IReadOnlyCollection<Guid> userIds,
+        CancellationToken cancellationToken = default)
+    {
+        if (userIds.Count == 0)
+            return [];
+
+        var ids = userIds.ToHashSet();
+        var users = await ListBySchoolAsync(schoolId, cancellationToken);
+        return users.Where(x => ids.Contains(x.Id)).ToArray();
+    }
+
     Task<SchoolUserPersistenceResult> CreateAsync(
         Guid schoolId,
         string email,
