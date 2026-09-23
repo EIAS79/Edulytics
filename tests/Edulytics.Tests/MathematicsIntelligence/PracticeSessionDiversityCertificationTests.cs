@@ -30,14 +30,7 @@ public sealed class PracticeSessionDiversityCertificationTests
                 continue;
             }
 
-            var questionCount =
-                allowed.Length == 1 &&
-                string.Equals(
-                    allowed[0],
-                    "supporting.geometry.shape_dimension",
-                    StringComparison.Ordinal)
-                    ? 8
-                    : 10;
+            const int questionCount = 10;
 
             try
             {
@@ -127,12 +120,7 @@ public sealed class PracticeSessionDiversityCertificationTests
 
             try
             {
-                var questionCount = string.Equals(
-                    family,
-                    "supporting.geometry.shape_dimension",
-                    StringComparison.Ordinal)
-                        ? 8
-                        : 10;
+                const int questionCount = 10;
 
                 var questions = engine.Generate(
                     "family-session-capacity-certification",
@@ -179,37 +167,52 @@ public sealed class PracticeSessionDiversityCertificationTests
     }
 
     [Fact]
-    public void ShapeDimensionTreatsWordingOnlyReuseOfTheSameShapeAsASemanticDuplicate()
+    public void ShapeDimensionProvidesGenuineQuestionFormAndSemanticDiversity()
     {
         const string family = "supporting.geometry.shape_dimension";
         var engine = new ExactSkillContractQuestionEngine();
 
         var questions = engine.Generate(
-            "shape-semantic-hotfix-certification",
+            "shape-form-certification",
             family,
             [family],
             ExactSkillQuestionDifficulty.Standard,
-            8,
+            10,
             20260923,
             []);
 
-        Assert.Equal(8, questions.Count);
-        Assert.Equal(
-            8,
-            questions
-                .Select(question => question.Parameters["shape"])
-                .Distinct()
-                .Count());
+        Assert.Equal(10, questions.Count);
 
-        Assert.Throws<ExactSkillQuestionPoolExhaustedException>(() =>
-            engine.Generate(
-                "shape-semantic-hotfix-certification",
-                family,
-                [family],
-                ExactSkillQuestionDifficulty.Standard,
-                9,
-                20260923,
-                []));
+        var forms = questions
+            .Select(question => question.Parameters["form"])
+            .Distinct()
+            .OrderBy(value => value)
+            .ToArray();
+
+        Assert.True(
+            forms.Length >= 3,
+            $"Expected at least 3 genuine shape question forms, got {string.Join(",", forms)}.");
+
+        var semanticKeys = questions
+            .Select(question =>
+                PracticeSemanticQuestionIdentityPolicy
+                    .Create(
+                        question.Family,
+                        question.Parameters)
+                    .Key)
+            .ToArray();
+
+        Assert.Equal(
+            questions.Count,
+            semanticKeys.Distinct(StringComparer.Ordinal).Count());
+
+        Assert.All(
+            questions,
+            question => Assert.True(
+                ExactSkillContractQuestionEngine.Verify(
+                    question.Family,
+                    question.Parameters,
+                    question.CorrectAnswer)));
     }
 
     [Fact]
