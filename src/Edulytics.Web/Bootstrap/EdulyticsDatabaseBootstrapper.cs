@@ -59,10 +59,6 @@ public sealed class EdulyticsDatabaseBootstrapper
                 _userManager,
                 _configuration);
 
-            await MeetingDemoProvisioner.RunAsync(
-                _db,
-                _userManager,
-                _configuration);
             return;
         }
 
@@ -103,10 +99,6 @@ public sealed class EdulyticsDatabaseBootstrapper
                 _userManager,
                 _configuration);
 
-            await MeetingDemoProvisioner.RunAsync(
-                _db,
-                _userManager,
-                _configuration);
         }
         finally
         {
