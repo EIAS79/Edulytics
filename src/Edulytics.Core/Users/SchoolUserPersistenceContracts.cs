@@ -43,3 +43,24 @@ public sealed record SchoolUserPersistenceResult(
             false,
             error);
 }
+
+
+public sealed record SchoolUserListQuery(
+    string? Search = null,
+    string? Role = null,
+    bool? IsActive = null,
+    bool? IsLocked = null,
+    int Page = 1,
+    int PageSize = 50);
+
+public sealed record SchoolUserPage(
+    IReadOnlyList<SchoolUserRecord> Users,
+    int Page,
+    int PageSize,
+    int TotalCount)
+{
+    public int TotalPages =>
+        TotalCount == 0
+            ? 1
+            : (int)Math.Ceiling(TotalCount / (double)PageSize);
+}
