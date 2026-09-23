@@ -933,7 +933,7 @@ DELETE FROM "Schools";
                     ? AssessmentDifficultyBand.Stretch
                     : AssessmentDifficultyBand.AtClassLevel,
                 CreatedByUserId = teacherUserId,
-                CreatedAtUtc = assessmentDates[assessmentIndex].ToDateTime(new TimeOnly(8, 0)).AddDays(-3),
+                CreatedAtUtc = UtcAt(assessmentDates[assessmentIndex], new TimeOnly(8, 0)).AddDays(-3),
                 UpdatedAtUtc = DateTime.UtcNow,
                 RowVersion = []
             };
@@ -995,8 +995,8 @@ DELETE FROM "Schools";
                             Score = score,
                             Percentage = percentage,
                             EnteredByUserId = teacherUserId,
-                            EnteredAtUtc = assessment.AssessmentDate.ToDateTime(new TimeOnly(15, 30)),
-                            UpdatedAtUtc = assessment.AssessmentDate.ToDateTime(new TimeOnly(15, 30)),
+                            EnteredAtUtc = UtcAt(assessment.AssessmentDate, new TimeOnly(15, 30)),
+                            UpdatedAtUtc = UtcAt(assessment.AssessmentDate, new TimeOnly(15, 30)),
                             RowVersion = []
                         });
 
@@ -1016,7 +1016,7 @@ DELETE FROM "Schools";
                                     ? item.CorrectAnswer
                                     : "Demo learner response",
                                 Score = qScore,
-                                UpdatedAtUtc = assessment.AssessmentDate.ToDateTime(new TimeOnly(15, 25))
+                                UpdatedAtUtc = UtcAt(assessment.AssessmentDate, new TimeOnly(15, 25))
                             });
                     }
                 }
@@ -1464,6 +1464,11 @@ DELETE FROM "Schools";
             1,
             MidpointRounding.AwayFromZero);
     }
+
+    private static DateTime UtcAt(DateOnly date, TimeOnly time) =>
+        DateTime.SpecifyKind(
+            date.ToDateTime(time),
+            DateTimeKind.Utc);
 
     private static int StableSeed(string value)
     {
