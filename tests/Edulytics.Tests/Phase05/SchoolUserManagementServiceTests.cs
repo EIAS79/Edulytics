@@ -143,6 +143,67 @@ public sealed class SchoolUserManagementServiceTests
     }
 
     [Fact]
+    public async Task ListAsync_AppliesAuthorizedSearchRoleStatusAndPaging()
+    {
+        var school = NewSchool(SchoolStatus.Active);
+        var users = new FakeUserRepository();
+
+        var schoolAdmin = NewUser(
+            school.Id,
+            RoleNames.SchoolAdmin) with
+        {
+            Email = "admin@example.com"
+        };
+        var matchingStudent = NewUser(
+            school.Id,
+            RoleNames.Student) with
+        {
+            Email = "target.student@example.com"
+        };
+        var otherStudent = NewUser(
+            school.Id,
+            RoleNames.Student) with
+        {
+            Email = "other.student@example.com"
+        };
+        var teacher = NewUser(
+            school.Id,
+            RoleNames.Teacher) with
+        {
+            Email = "target.teacher@example.com"
+        };
+
+        users.Seed(schoolAdmin);
+        users.Seed(matchingStudent);
+        users.Seed(otherStudent);
+        users.Seed(teacher);
+
+        var schools = new FakeSchoolRepository();
+        schools.Seed(school);
+
+        var service = new SchoolUserManagementService(users, schools);
+
+        var result = await service.ListAsync(
+            schoolAdmin.Id,
+            school.Id,
+            new SchoolUserListRequest(
+                Search: "target",
+                Role: RoleNames.Student,
+                IsActive: true,
+                Page: 1,
+                PageSize: 25));
+
+        Assert.NotNull(result.Value);
+        Assert.Equal(1, result.Value!.TotalCount);
+        Assert.Equal(1, result.Value.Page);
+        Assert.Equal(25, result.Value.PageSize);
+
+        var item = Assert.Single(result.Value.Users);
+        Assert.Equal(matchingStudent.Id, item.Id);
+        Assert.Equal(RoleNames.Student, item.Role);
+    }
+
+    [Fact]
     public async Task SchoolAdmin_CannotDeactivateSelf()
     {
         var school = NewSchool(
