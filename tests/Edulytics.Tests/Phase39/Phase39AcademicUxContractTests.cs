@@ -107,6 +107,45 @@ public sealed class Phase39AcademicUxContractTests
     }
 
     [Fact]
+    public void StudentMovement_RequiresExplicitSourceSelectionDestinationAndReview()
+    {
+        var root = FindRepositoryRoot();
+        var view = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/AcademicStructure/Index.cshtml"));
+        var controller = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Controllers/AcademicStructureBulkController.cs"));
+        var service = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Services/Academics/StudentPlacementService.cs"));
+
+        Assert.Contains("id=\"move-source-class\"", view, StringComparison.Ordinal);
+        Assert.Contains("name=\"sourceClassGroupId\"", view, StringComparison.Ordinal);
+        Assert.Contains("name=\"studentProfileIds\"", view, StringComparison.Ordinal);
+        Assert.Contains("id=\"move-target-class\"", view, StringComparison.Ordinal);
+        Assert.Contains("id=\"student-move-review\"", view, StringComparison.Ordinal);
+        Assert.Contains("student-move-dialog", view, StringComparison.Ordinal);
+        Assert.Contains("@A[\"ConfirmMove\"]", view, StringComparison.Ordinal);
+        Assert.Contains("SelectAllVisible", view, StringComparison.Ordinal);
+        Assert.Contains("ManageStudentAccounts", view, StringComparison.Ordinal);
+
+        Assert.Contains("Guid sourceClassGroupId", controller, StringComparison.Ordinal);
+        Assert.Contains("MoveStudentsAsync(", controller, StringComparison.Ordinal);
+
+        Assert.Contains("sourceClassGroupId == targetClassGroupId", service, StringComparison.Ordinal);
+        Assert.Contains("CrossAcademicYearMoveNotAllowed", service, StringComparison.Ordinal);
+        Assert.Contains("CrossGradeMoveNotAllowed", service, StringComparison.Ordinal);
+        Assert.Contains("CrossCurriculumMoveNotAllowed", service, StringComparison.Ordinal);
+        Assert.Contains("StudentNotInSourceClass", service, StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "AddEnrollmentAsync(\n                    new StudentEnrollment",
+            service[
+                service.IndexOf("MoveStudentsAsync(", StringComparison.Ordinal)..],
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void DataImport_ExposesOnlyProductImportTypes()
     {
         Assert.True(MathOnlyImportAdapter.IsSupported(ImportType.Students));
