@@ -468,6 +468,15 @@ public static class PolishMathematicsTextLocalizer
             : string.Join(" ", tokens);
     }
 
-    private static Regex R(string pattern, string replacement) =>
-        new(pattern, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Compiled);
+    private static (Regex Pattern, string Replacement) R(
+        string pattern,
+        string replacement) =>
+        (
+            new Regex(
+                pattern,
+                RegexOptions.IgnoreCase |
+                RegexOptions.CultureInvariant |
+                RegexOptions.Compiled),
+            replacement
+        );
 }
