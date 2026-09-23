@@ -488,13 +488,31 @@ public static class PolishMathematicsTextLocalizer
             .Select(token =>
                 IdentifierTokens.TryGetValue(token, out var localized)
                     ? localized
-                    : token)
+                    : LocalizeIdentifierToken(token))
             .Where(token => !string.IsNullOrWhiteSpace(token))
             .ToArray();
 
         return tokens.Length == 0
             ? "zweryfikowany przypadek matematyczny"
             : string.Join(" ", tokens);
+    }
+
+    private static string LocalizeIdentifierToken(string token)
+    {
+        var localized = Localize(token);
+        if (!string.Equals(
+                localized,
+                token,
+                StringComparison.OrdinalIgnoreCase))
+        {
+            return localized;
+        }
+
+        // Unknown prose-like identifier fragments are never surfaced directly
+        // to Polish learners. Mathematical symbols and numeric tokens remain.
+        return token.Length <= 2 || token.All(char.IsDigit)
+            ? token
+            : string.Empty;
     }
 
     private static (Regex Pattern, string Replacement) R(
