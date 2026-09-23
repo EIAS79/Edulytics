@@ -150,14 +150,7 @@ internal static class SupportingPracticeAdvancedEngine
             "supporting.functions.inverse_linear" => ((p["y"] - p["b"]) / p["a"]).ToString(CultureInfo.InvariantCulture),
             "supporting.functions.polynomial_value" => (p["a"] * p["x"] * p["x"] + p["b"] * p["x"] + p["c"]).ToString(CultureInfo.InvariantCulture),
             "supporting.coordinate.line_intersection" => p["x"].ToString(CultureInfo.InvariantCulture),
-            "supporting.circle.angle_semicircle" =>
-                p["mode"] switch
-                {
-                    0 => "90",
-                    1 => (90 - p["givenAngle"]).ToString(CultureInfo.InvariantCulture),
-                    2 => "90",
-                    _ => (90 / (1 + p["ratio"])).ToString(CultureInfo.InvariantCulture)
-                },
+            "supporting.circle.angle_semicircle" => SolveCircleSemicircle(p),
             "supporting.trigonometry.bearing" => p["bearing"].ToString("000", CultureInfo.InvariantCulture),
             "supporting.trigonometry.sine_rule_exact" => p["targetSide"].ToString(CultureInfo.InvariantCulture),
             "supporting.trigonometry.cosine_rule_square" => (p["b"] * p["b"] + p["c"] * p["c"] - p["bcTerm"]).ToString(CultureInfo.InvariantCulture),
@@ -168,14 +161,10 @@ internal static class SupportingPracticeAdvancedEngine
             "supporting.statistics.cumulative_total" => (p["f1"] + p["f2"] + p["f3"]).ToString(CultureInfo.InvariantCulture),
             "supporting.statistics.histogram_density" => (p["frequency"] / p["width"]).ToString(CultureInfo.InvariantCulture),
             "supporting.statistics.quartile" => p["q"].ToString(CultureInfo.InvariantCulture),
-            "supporting.probability.independent_product" =>
-                p["mode"] == 3
-                    ? $"{Pow(p["n1"], p["power"])}/{Pow(p["d1"], p["power"])}"
-                    : $"{p["n1"] * p["n2"]}/{p["d1"] * p["d2"]}",
+            "supporting.probability.independent_product" => SolveIndependentProduct(p),
             "supporting.probability.expected_frequency" => (p["trials"] * p["numerator"] / p["denominator"]).ToString(CultureInfo.InvariantCulture),
             "supporting.probability.binomial_half" => $"{p["n"]}/{Pow2(p["n"])}",
-            "supporting.probability.normal_symmetry" =>
-                $"{p["numerator"]}/{p["denominator"]}",
+            "supporting.probability.normal_symmetry" => SolveNormalSymmetry(p),
             "supporting.probability.poisson_mean" => p["lambda"].ToString(CultureInfo.InvariantCulture),
             "supporting.probability.uniform_interval" => $"{p["favourable"]}/{p["total"]}",
             "supporting.statistics.hypothesis_decision" => p["reject"] == 1 ? "reject" : "do not reject",
@@ -508,6 +497,38 @@ internal static class SupportingPracticeAdvancedEngine
     private static Problem ConnectedParticles(Random r,int s){var m1=r.Next(1,5+s);var m2=r.Next(1,5+s);var a=r.Next(1,5+s);var force=(m1+m2)*a;return P("supporting.mechanics.connected_particles",$"Two connected particles of masses {m1} kg and {m2} kg are pulled by a net external force {force} N. Find their common acceleration.","Treat the connected system as total mass m1+m2 and use F=ma.",("m1",m1),("m2",m2),("force",force));}
     private static Problem VectorAdd(Random r,int s){var ax=NZ(r,-5-s,6+s);var ay=NZ(r,-5-s,6+s);var bx=NZ(r,-5-s,6+s);var by=NZ(r,-5-s,6+s);return P("supporting.vectors.add",$"Add vectors <{ax},{ay}> and <{bx},{by}>.","Add corresponding components.",AssessmentItemType.ShortAnswer,("ax",ax),("ay",ay),("bx",bx),("by",by));}
     private static Problem VectorMagnitude(Random r,int s){int[][] t=[[3,4,5],[5,12,13],[8,15,17],[7,24,25]];var v=t[r.Next(t.Length)];var k=r.Next(1,6+s*2);return P("supporting.vectors.magnitude",$"Find the magnitude of <{v[0]*k},{v[1]*k}>.","Use sqrt(x²+y²).",("ax",v[0]*k),("ay",v[1]*k),("magnitude",v[2]*k));}
+
+    private static string SolveCircleSemicircle(IReadOnlyDictionary<string,int> p)
+    {
+        if(!p.TryGetValue("mode",out var mode))
+            return "90";
+
+        return mode switch
+        {
+            0 => "90",
+            1 => (90-p["givenAngle"]).ToString(CultureInfo.InvariantCulture),
+            2 => "90",
+            _ => (90/(1+p["ratio"])).ToString(CultureInfo.InvariantCulture)
+        };
+    }
+
+    private static string SolveIndependentProduct(IReadOnlyDictionary<string,int> p)
+    {
+        if(!p.TryGetValue("mode",out var mode))
+            return "1/4";
+
+        return mode==3
+            ? $"{Pow(p["n1"],p["power"])}/{Pow(p["d1"],p["power"])}"
+            : $"{p["n1"]*p["n2"]}/{p["d1"]*p["d2"]}";
+    }
+
+    private static string SolveNormalSymmetry(IReadOnlyDictionary<string,int> p)
+    {
+        if(!p.TryGetValue("mode",out _))
+            return "1/2";
+
+        return $"{p["numerator"]}/{p["denominator"]}";
+    }
 
     private static Problem P(string f,string prompt,string sol,params (string,int)[] p)=>P(f,prompt,sol,AssessmentItemType.Numeric,p);
     private static Problem P(string f,string prompt,string sol,AssessmentItemType type,params (string,int)[] p)=>new(f,prompt,sol,type,p.ToDictionary(x=>x.Item1,x=>x.Item2,StringComparer.Ordinal));
