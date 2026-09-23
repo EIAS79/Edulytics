@@ -12,6 +12,10 @@ public static class PolishMathematicsTextLocalizer
 {
     private static readonly (Regex Pattern, string Replacement)[] PhraseRules =
     [
+        R(@"\bx-values?\b", "wartości x"),
+        R(@"\by-values?\b", "wartości y"),
+        R(@"\bp-value\b", "wartość p"),
+        R(@"\bwhole-number\b", "liczba całkowita nieujemna"),
         R(@"\bHow many\b", "Ile"),
         R(@"\bWhat is\b", "Ile wynosi"),
         R(@"\bWhich of the following\b", "Która z poniższych odpowiedzi"),
@@ -280,6 +284,12 @@ public static class PolishMathematicsTextLocalizer
             ["total"] = "suma",
             ["result"] = "wynik",
             ["answer"] = "odpowiedź",
+            ["verify"] = "sprawdź",
+            ["verifies"] = "sprawdza",
+            ["verified"] = "zweryfikowany",
+            ["satisfy"] = "spełniać",
+            ["satisfies"] = "spełnia",
+            ["satisfied"] = "spełniony",
             ["given"] = "dany",
             ["same"] = "ten sam",
             ["requested"] = "wymagany",
