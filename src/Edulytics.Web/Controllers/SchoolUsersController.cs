@@ -44,7 +44,13 @@ public sealed class SchoolUsersController : Controller
     [HttpGet("")]
     public async Task<IActionResult> Index(
         Guid? schoolId,
-        CancellationToken cancellationToken)
+        string? search,
+        string? role,
+        bool? isActive,
+        bool? isLocked,
+        int page = 1,
+        int pageSize = 50,
+        CancellationToken cancellationToken = default)
     {
         if (!TryGetActorId(out var actorUserId))
         {
@@ -54,6 +60,13 @@ public sealed class SchoolUsersController : Controller
         var result = await _users.ListAsync(
             actorUserId,
             schoolId,
+            new SchoolUserListRequest(
+                search,
+                role,
+                isActive,
+                isLocked,
+                page,
+                pageSize),
             cancellationToken);
 
         if (result.Value is null)
@@ -65,7 +78,15 @@ public sealed class SchoolUsersController : Controller
             new SchoolUserListViewModel
             {
                 Context = result.Value.Context,
-                Users = result.Value.Users
+                Users = result.Value.Users,
+                Search = result.Value.Search,
+                Role = result.Value.Role,
+                IsActive = result.Value.IsActive,
+                IsLocked = result.Value.IsLocked,
+                Page = result.Value.Page,
+                PageSize = result.Value.PageSize,
+                TotalCount = result.Value.TotalCount,
+                TotalPages = result.Value.TotalPages
             });
     }
 
