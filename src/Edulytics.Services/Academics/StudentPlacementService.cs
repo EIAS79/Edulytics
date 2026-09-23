@@ -28,6 +28,13 @@ public interface IStudentPlacementService
         Guid targetClassGroupId,
         IReadOnlyCollection<Guid> studentProfileIds,
         CancellationToken cancellationToken = default);
+
+    Task<StudentPlacementResult> MoveStudentsAsync(
+        Guid actorUserId,
+        Guid sourceClassGroupId,
+        Guid targetClassGroupId,
+        IReadOnlyCollection<Guid> studentProfileIds,
+        CancellationToken cancellationToken = default);
 }
 
 public sealed class StudentPlacementService : IStudentPlacementService
@@ -186,4 +193,150 @@ public sealed class StudentPlacementService : IStudentPlacementService
             unchanged,
             failures);
     }
+
+    public async Task<StudentPlacementResult> MoveStudentsAsync(
+        Guid actorUserId,
+        Guid sourceClassGroupId,
+        Guid targetClassGroupId,
+        IReadOnlyCollection<Guid> studentProfileIds,
+        CancellationToken cancellationToken = default)
+    {
+        if (sourceClassGroupId == Guid.Empty ||
+            targetClassGroupId == Guid.Empty ||
+            sourceClassGroupId == targetClassGroupId)
+        {
+            return StudentPlacementResult.Denied("InvalidClassMove");
+        }
+
+        var actor = await _users.GetActorAsync(actorUserId, cancellationToken);
+        if (actor is null ||
+            !actor.IsActive ||
+            actor.IsLocked ||
+            !actor.SchoolId.HasValue ||
+            actor.Roles.Count != 1 ||
+            !actor.Roles.Contains(RoleNames.SubjectSupervisor, StringComparer.Ordinal))
+        {
+            return StudentPlacementResult.Denied("AccessDenied");
+        }
+
+        var school = await _schools.GetByIdAsync(actor.SchoolId.Value, cancellationToken);
+        if (school is null || school.Status != SchoolStatus.Active)
+            return StudentPlacementResult.Denied("SchoolNotActive");
+
+        var schoolId = school.Id;
+        var sourceClass = await _academic.GetClassGroupAsync(
+            schoolId,
+            sourceClassGroupId,
+            cancellationToken);
+        var targetClass = await _academic.GetClassGroupAsync(
+            schoolId,
+            targetClassGroupId,
+            cancellationToken);
+
+        if (sourceClass is null ||
+            targetClass is null ||
+            sourceClass.Status != AcademicStructureStatus.Active ||
+            targetClass.Status != AcademicStructureStatus.Active)
+        {
+            return StudentPlacementResult.Denied("ClassGroupNotFound");
+        }
+
+        if (sourceClass.AcademicYearId != targetClass.AcademicYearId)
+            return StudentPlacementResult.Denied("CrossAcademicYearMoveNotAllowed");
+
+        if (sourceClass.GradeLevelId != targetClass.GradeLevelId)
+            return StudentPlacementResult.Denied("CrossGradeMoveNotAllowed");
+
+        var ids = studentProfileIds
+            .Where(x => x != Guid.Empty)
+            .Distinct()
+            .ToArray();
+        if (ids.Length == 0)
+            return StudentPlacementResult.Denied("Required");
+
+        var failures = new List<StudentPlacementFailure>();
+        var moved = 0;
+
+        foreach (var studentId in ids)
+        {
+            var profile = await _academic.GetStudentProfileAsync(
+                schoolId,
+                studentId,
+                cancellationToken);
+
+            if (profile is null)
+            {
+                failures.Add(new StudentPlacementFailure(
+                    studentId,
+                    "StudentProfileNotFound"));
+                continue;
+            }
+
+            if (profile.IsArchived ||
+                profile.Status != AcademicStructureStatus.Active)
+            {
+                failures.Add(new StudentPlacementFailure(
+                    studentId,
+                    "StudentInactive"));
+                continue;
+            }
+
+            var existing = await _placements.GetEnrollmentAsync(
+                schoolId,
+                sourceClass.AcademicYearId,
+                studentId,
+                cancellationToken);
+
+            if (existing is null)
+            {
+                failures.Add(new StudentPlacementFailure(
+                    studentId,
+                    "StudentNotEnrolledForAcademicYear"));
+                continue;
+            }
+
+            if (existing.ClassGroupId != sourceClass.Id)
+            {
+                failures.Add(new StudentPlacementFailure(
+                    studentId,
+                    "StudentNotInSourceClass"));
+                continue;
+            }
+
+            existing.ClassGroupId = targetClass.Id;
+            moved++;
+        }
+
+        if (moved == 0)
+        {
+            return new StudentPlacementResult(
+                failures.Count == 0,
+                0,
+                0,
+                0,
+                failures);
+        }
+
+        var saved = await _placements.SaveAsync(cancellationToken);
+        if (!saved.Succeeded)
+        {
+            failures.Add(new StudentPlacementFailure(
+                Guid.Empty,
+                "PersistenceError"));
+            return new StudentPlacementResult(
+                false,
+                0,
+                0,
+                0,
+                failures);
+        }
+
+        return new StudentPlacementResult(
+            failures.Count == 0,
+            0,
+            moved,
+            0,
+            failures);
+    }
+
 }
