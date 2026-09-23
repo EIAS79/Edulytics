@@ -308,17 +308,17 @@ DELETE FROM "PracticeAttempts";
 DELETE FROM "AssessmentItemOutcomes";
 DELETE FROM "AssessmentItems";
 
-DELETE FROM "StudentAnswers";
-DELETE FROM "AssessmentResults";
-DELETE FROM "QuestionLearningOutcomes";
-DELETE FROM "AssessmentQuestions";
-DELETE FROM "Assessments";
-
 DELETE FROM "StudentOutcomeMasteries";
 DELETE FROM "ClassOutcomeSummaries";
 DELETE FROM "ClassTopicSummaries";
 DELETE FROM "ClassAssessmentTrends";
 DELETE FROM "SchoolAnalyticsSnapshots";
+
+DELETE FROM "StudentAnswers";
+DELETE FROM "AssessmentResults";
+DELETE FROM "QuestionLearningOutcomes";
+DELETE FROM "AssessmentQuestions";
+DELETE FROM "Assessments";
 
 DELETE FROM "LearningLessonTranslations";
 DELETE FROM "LearningLessonOutcomes";
