@@ -212,6 +212,59 @@ public sealed class IdentitySchoolUserRepository
             total);
     }
 
+    public async Task<IReadOnlyList<SchoolUserRecord>>
+        ListBySchoolAndIdsAsync(
+            Guid schoolId,
+            IReadOnlyCollection<Guid> userIds,
+            CancellationToken cancellationToken = default)
+    {
+        if (userIds.Count == 0)
+            return [];
+
+        var ids = userIds
+            .Where(x => x != Guid.Empty)
+            .Distinct()
+            .ToArray();
+        if (ids.Length == 0)
+            return [];
+
+        var users = await _context.Users
+            .AsNoTracking()
+            .Where(x => x.SchoolId == schoolId && ids.Contains(x.Id))
+            .OrderBy(x => x.Email)
+            .ToArrayAsync(cancellationToken);
+
+        if (users.Length == 0)
+            return [];
+
+        var foundIds = users.Select(x => x.Id).ToArray();
+        var roleRows = await (
+                from userRole in _context.UserRoles
+                join role in _context.Roles
+                    on userRole.RoleId equals role.Id
+                where foundIds.Contains(userRole.UserId)
+                select new
+                {
+                    userRole.UserId,
+                    RoleName = role.Name!
+                })
+            .AsNoTracking()
+            .ToArrayAsync(cancellationToken);
+
+        var rolesByUser = roleRows
+            .GroupBy(x => x.UserId)
+            .ToDictionary(
+                group => group.Key,
+                group => group.Select(x => x.RoleName).OrderBy(x => x).ToArray());
+
+        return users.Select(user => ToRecord(
+                user,
+                rolesByUser.TryGetValue(user.Id, out var roles)
+                    ? roles
+                    : []))
+            .ToArray();
+    }
+
     public async Task<SchoolUserRecord?>
         GetBySchoolAndIdAsync(
             Guid schoolId,
