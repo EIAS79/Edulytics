@@ -26,6 +26,15 @@
     string Value(decimal? value) =>
         value.HasValue ? $"{value.Value:0.#}%" : "—";
 
+    string ConfidenceLabel(EvaluationConfidenceBand value) => value switch
+    {
+        EvaluationConfidenceBand.VeryStrong => "Very strong",
+        EvaluationConfidenceBand.Strong => "Strong",
+        EvaluationConfidenceBand.Moderate => "Moderate",
+        EvaluationConfidenceBand.Limited => "Limited",
+        _ => "Insufficient"
+    };
+
     string GradeLabel(decimal? mastery) =>
         !mastery.HasValue ? A["InsufficientEvidence"].Value :
         mastery.Value < 40m ? A["MasteryCritical"].Value :
@@ -337,7 +346,7 @@
                         <div class="evaluation-evidence-item">
                             <span>Evidence confidence</span>
                             <strong>@item.ConfidencePercentage.ToString("0.#")%</strong>
-                            <small>@item.ConfidenceBand</small>
+                            <small>@ConfidenceLabel(item.ConfidenceBand)</small>
                         </div>
 
                         <div class="evaluation-evidence-item">
