@@ -183,9 +183,34 @@ public sealed class IdentitySchoolUserRepository
 
         if (!string.IsNullOrWhiteSpace(search))
         {
-            usersQuery = usersQuery.Where(x =>
-                x.Email != null &&
-                EF.Functions.Like(x.Email, $"%{search}%"));
+            var matchingStudentUserIds = _context.StudentProfiles
+                .AsNoTracking()
+                .Where(profile =>
+                    profile.SchoolId == schoolId &&
+                    profile.UserId.HasValue &&
+                    (
+                        EF.Functions.Like(profile.DisplayName, $"%{search}%") ||
+                        EF.Functions.Like(profile.FirstName, $"%{search}%") ||
+                        EF.Functions.Like(profile.LastName, $"%{search}%") ||
+                        EF.Functions.Like(profile.StudentNumber, $"%{search}%")
+                    ))
+                .Select(profile => profile.UserId.Value);
+
+            if (Guid.TryParse(search, out var parsedSearchUserId))
+            {
+                usersQuery = usersQuery.Where(x =>
+                    x.Id == parsedSearchUserId ||
+                    (x.Email != null &&
+                     EF.Functions.Like(x.Email, $"%{search}%")) ||
+                    matchingStudentUserIds.Contains(x.Id));
+            }
+            else
+            {
+                usersQuery = usersQuery.Where(x =>
+                    (x.Email != null &&
+                     EF.Functions.Like(x.Email, $"%{search}%")) ||
+                    matchingStudentUserIds.Contains(x.Id));
+            }
         }
 
         if (!string.IsNullOrWhiteSpace(email))
