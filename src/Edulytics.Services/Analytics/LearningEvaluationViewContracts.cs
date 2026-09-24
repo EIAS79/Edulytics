@@ -11,7 +11,8 @@ public sealed record AnalyticsStudentAssessmentEvaluationItem(
     decimal? OverallChangePercentagePoints,
     decimal? ComparableSkillChangePercentagePoints,
     int ComparableSkillCount,
-    bool IsPersonalizedCheck = false);
+    bool IsPersonalizedCheck = false,
+    Guid? TermId = null);
 
 public sealed record AnalyticsTermEvaluationItem(
     Guid TermId,
@@ -196,3 +197,13 @@ public sealed record AnalyticsSupervisorSubjectOverviewPage(
     int CriticalStudentCount,
     IReadOnlyList<AnalyticsSupervisorClassEvaluationRow> Classes,
     IReadOnlyList<AnalyticsSupervisorSkillGap> PriorityGaps);
+
+
+public sealed record AnalyticsStudentEvaluationReportPage(
+    AnalyticsStudentEvaluationPage Source,
+    Guid? SelectedTermId,
+    string? SelectedTermName,
+    AnalyticsTermEvaluationItem? SelectedTerm,
+    IReadOnlyList<AnalyticsStudentAssessmentEvaluationItem> Assessments,
+    IReadOnlyList<EvaluationEvidenceRecord> Evidence,
+    DateTime GeneratedAtUtc);
