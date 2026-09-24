@@ -1,11 +1,24 @@
+@using System.Globalization
 @model Edulytics.Web.ViewModels.StudentPortal.StudentDashboardViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @{
     Layout = "_StudentLayout";
     ViewData["Title"] = S["StudentDashboard"].Value;
-    var enrollment = Model.Workspace.Enrollments.FirstOrDefault();
+
+    var awaitingResultCount =
+        Model.SubmittedOnlineAssessments.Count +
+        Model.AwaitingOfflineResults.Count;
+
+    var recentAverage =
+        Math.Clamp(Model.RecentAverage ?? 0m, 0m, 100m);
+
+    var recentAverageCss =
+        recentAverage.ToString(
+            "0.##",
+            CultureInfo.InvariantCulture);
 }
-<section class="student-hero">
+
+<section class="student-hero student-dashboard-hero">
     <div>
         <span class="student-eyebrow">@S["WelcomeBack"]</span>
         <h1>@Model.Workspace.DisplayName</h1>
@@ -17,47 +30,123 @@
     </div>
 </section>
 
-<section class="student-summary-grid">
-    <article class="student-summary-card">
-        <span>@S["TasksToDo"]</span>
-        <strong>@Model.ToDoAssessments.Count</strong>
+<section class="student-dashboard-overview-grid">
+    <article class="student-panel student-progress-overview">
+        <div class="student-panel-heading student-progress-heading">
+            <div>
+                <span class="student-eyebrow">@S["RecentResults"]</span>
+                <h2>@S["RecentAverage"]</h2>
+            </div>
+            <a class="student-secondary-link"
+               asp-action="Results">
+                @S["ViewResults"]
+            </a>
+        </div>
+
+        <div class="student-progress-overview-body">
+            <div class="student-average-donut-wrap">
+                <div class="student-average-donut"
+                     style="--student-average:@recentAverageCss"
+                     role="img"
+                     aria-label="@S["RecentAverage"]: @(Model.RecentAverage.HasValue ? $"{Model.RecentAverage.Value:0.#}%" : "—")">
+                    <div class="student-average-donut-center">
+                        <strong>@(Model.RecentAverage.HasValue ? $"{Model.RecentAverage.Value:0.#}%" : "—")</strong>
+                        <span>@S["RecentAverage"]</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="student-dashboard-stat-grid">
+                <article class="student-dashboard-stat">
+                    <span>@S["TasksToDo"]</span>
+                    <strong>@Model.ToDoAssessments.Count</strong>
+                </article>
+                <article class="student-dashboard-stat">
+                    <span>@S["CompletedResults"]</span>
+                    <strong>@Model.Workspace.Results.Count</strong>
+                </article>
+                <article class="student-dashboard-stat">
+                    <span>@S["UnreadNotifications"]</span>
+                    <strong>@Model.UnreadNotifications</strong>
+                </article>
+            </div>
+        </div>
     </article>
-    <article class="student-summary-card">
-        <span>@S["AwaitingResult"]</span>
-        <strong>@(Model.SubmittedOnlineAssessments.Count + Model.AwaitingOfflineResults.Count)</strong>
-    </article>
-    <article class="student-summary-card">
-        <span>@S["CompletedResults"]</span>
-        <strong>@Model.Workspace.Results.Count</strong>
-    </article>
-    <article class="student-summary-card">
-        <span>@S["RecentAverage"]</span>
-        <strong>@(Model.RecentAverage.HasValue ? $"{Model.RecentAverage.Value:0.#}%" : "—")</strong>
-    </article>
-    <article class="student-summary-card">
-        <span>@S["UnreadNotifications"]</span>
-        <strong>@Model.UnreadNotifications</strong>
+
+    <article class="student-panel student-awaiting-panel">
+        <div class="student-panel-heading">
+            <div>
+                <span class="student-eyebrow">@S["AssessmentStatus"]</span>
+                <h2>@S["AwaitingResult"]</h2>
+            </div>
+            <span class="student-awaiting-count"
+                  aria-label="@S["AwaitingResult"]: @awaitingResultCount">
+                @awaitingResultCount
+            </span>
+        </div>
+
+        @if (awaitingResultCount == 0)
+        {
+            <p class="student-empty">@S["NothingAwaitingResult"]</p>
+        }
+        else
+        {
+            <div class="student-awaiting-list">
+                @foreach (var item in Model.SubmittedOnlineAssessments.Take(2))
+                {
+                    <div class="student-awaiting-item">
+                        <span class="student-awaiting-dot" aria-hidden="true"></span>
+                        <span>
+                            <strong>@item.Title</strong>
+                            <small>@S["SubmittedInReview"] · @S["OnlineAssessment"]</small>
+                        </span>
+                    </div>
+                }
+
+                @foreach (var item in Model.AwaitingOfflineResults.Take(2))
+                {
+                    <div class="student-awaiting-item">
+                        <span class="student-awaiting-dot" aria-hidden="true"></span>
+                        <span>
+                            <strong>@item.Title</strong>
+                            <small>@S["WaitingForTeacherResult"] · @S["OfflineAssessment"]</small>
+                        </span>
+                    </div>
+                }
+            </div>
+        }
+
+        <a class="student-panel-text-link"
+           asp-action="Assessments">
+            @S["ViewAssessments"] <span aria-hidden="true">→</span>
+        </a>
     </article>
 </section>
 
-<section class="student-dashboard-status-grid">
+<section class="student-dashboard-content-grid">
     <article class="student-panel student-dashboard-priority">
         <div class="student-panel-heading">
             <div>
                 <span class="student-eyebrow">@S["TasksToDo"]</span>
                 <h2>@S["OnlineAssessments"]</h2>
             </div>
-            <a class="student-secondary-link" asp-action="Assessments">@S["ViewAssessments"]</a>
+            <a class="student-secondary-link"
+               asp-action="Assessments">
+                @S["ViewAssessments"]
+            </a>
         </div>
 
         @if (Model.ToDoAssessments.Count == 0)
         {
-            <p class="student-empty">@S["NoTasksToDo"]</p>
+            <div class="student-dashboard-empty-callout">
+                <span class="student-dashboard-empty-icon" aria-hidden="true">✓</span>
+                <p class="student-empty">@S["NoTasksToDo"]</p>
+            </div>
         }
         else
         {
             <div class="student-dashboard-task-list">
-                @foreach (var item in Model.ToDoAssessments.Take(5))
+                @foreach (var item in Model.ToDoAssessments.Take(4))
                 {
                     <article class="student-dashboard-task">
                         <div>
@@ -76,81 +165,16 @@
         }
     </article>
 
-    <article class="student-panel student-dashboard-priority">
-        <div class="student-panel-heading">
-            <div>
-                <span class="student-eyebrow">@S["AwaitingResult"]</span>
-                <h2>@(Model.SubmittedOnlineAssessments.Count + Model.AwaitingOfflineResults.Count)</h2>
-            </div>
-        </div>
-
-        @if (Model.SubmittedOnlineAssessments.Count == 0 &&
-             Model.AwaitingOfflineResults.Count == 0)
-        {
-            <p class="student-empty">@S["NothingAwaitingResult"]</p>
-        }
-        else
-        {
-            <div class="student-compact-list">
-                @foreach (var item in Model.SubmittedOnlineAssessments.Take(3))
-                {
-                    <div>
-                        <strong>@item.Title</strong>
-                        <span>@S["SubmittedInReview"] · @S["OnlineAssessment"]</span>
-                    </div>
-                }
-                @foreach (var item in Model.AwaitingOfflineResults.Take(3))
-                {
-                    <div>
-                        <strong>@item.Title</strong>
-                        <span>@S["WaitingForTeacherResult"] · @S["OfflineAssessment"]</span>
-                    </div>
-                }
-            </div>
-        }
-    </article>
-</section>
-
-<section class="student-dashboard-grid">
-    <article class="student-panel student-learning-panel">
-        <div class="student-panel-heading">
-            <div>
-                <span class="student-eyebrow">@S["LearnAndPractice"]</span>
-                <h2>@S["MyLearning"]</h2>
-            </div>
-        </div>
-
-        @if (Model.Workspace.Learning.Count == 0)
-        {
-            <p class="student-empty">@S["NoLearningYet"]</p>
-        }
-        else
-        {
-            <div class="student-subject-chips student-subject-tiles">
-                @foreach (var item in Model.Workspace.Learning.Take(6))
-                {
-                    <a class="student-subject-tile"
-                       asp-action="Learning"
-                       asp-route-curriculumAdoptionId="@item.CurriculumAdoptionId"
-                       asp-route-classGroupId="@item.ClassGroupId"
-                       asp-fragment="selected-curriculum-context">
-                        <strong>@item.SubjectName</strong>
-                        <small>@item.GradeName</small>
-                        <small>@item.FrameworkName · @item.ClassName</small>
-                        <span aria-hidden="true">→</span>
-                    </a>
-                }
-            </div>
-        }
-    </article>
-
     <article class="student-panel student-dashboard-list-panel">
         <div class="student-panel-heading">
             <div>
                 <span class="student-eyebrow">@S["CompletedResults"]</span>
                 <h2>@S["RecentResults"]</h2>
             </div>
-            <a class="student-secondary-link" asp-action="Results">@S["ViewResults"]</a>
+            <a class="student-secondary-link"
+               asp-action="Results">
+                @S["ViewResults"]
+            </a>
         </div>
 
         @if (Model.RecentResults.Count == 0)
@@ -159,15 +183,17 @@
         }
         else
         {
-            <div class="student-result-stack">
+            <div class="student-result-stack student-result-stack-modern">
                 @foreach (var item in Model.RecentResults)
                 {
-                    <div>
-                        <span>
+                    <div class="student-result-row">
+                        <span class="student-result-copy">
                             <strong>@item.AssessmentTitle</strong>
                             <small>@item.SubjectName · @item.AssessmentDate.ToString("yyyy-MM-dd")</small>
                         </span>
-                        <strong>@item.Percentage.ToString("0.##")%</strong>
+                        <span class="student-result-score">
+                            @item.Percentage.ToString("0.##")%
+                        </span>
                     </div>
                 }
             </div>
@@ -175,3 +201,36 @@
     </article>
 </section>
 
+<section class="student-panel student-learning-panel student-learning-panel-wide">
+    <div class="student-panel-heading">
+        <div>
+            <span class="student-eyebrow">@S["LearnAndPractice"]</span>
+            <h2>@S["MyLearning"]</h2>
+        </div>
+    </div>
+
+    @if (Model.Workspace.Learning.Count == 0)
+    {
+        <p class="student-empty">@S["NoLearningYet"]</p>
+    }
+    else
+    {
+        <div class="student-subject-chips student-subject-tiles student-subject-tiles-dashboard">
+            @foreach (var item in Model.Workspace.Learning.Take(6))
+            {
+                <a class="student-subject-tile"
+                   asp-action="Learning"
+                   asp-route-curriculumAdoptionId="@item.CurriculumAdoptionId"
+                   asp-route-classGroupId="@item.ClassGroupId"
+                   asp-fragment="selected-curriculum-context">
+                    <span class="student-subject-tile-copy">
+                        <strong>@item.SubjectName</strong>
+                        <small>@item.GradeName</small>
+                        <small>@item.FrameworkName · @item.ClassName</small>
+                    </span>
+                    <span class="student-subject-tile-arrow" aria-hidden="true">→</span>
+                </a>
+            }
+        </div>
+    }
+</section>
