@@ -7,7 +7,40 @@ public sealed record AnalyticsStudentAssessmentEvaluationItem(
     string Title,
     DateOnly AssessmentDate,
     string? TermName,
-    decimal Percentage);
+    decimal Percentage,
+    decimal? OverallChangePercentagePoints,
+    decimal? ComparableSkillChangePercentagePoints,
+    int ComparableSkillCount);
+
+public sealed record AnalyticsTermEvaluationItem(
+    Guid TermId,
+    string TermName,
+    DateOnly StartsOn,
+    DateOnly EndsOn,
+    decimal? AssessmentMasteryPercentage,
+    decimal? PracticeMasteryPercentage,
+    decimal? CombinedMasteryPercentage,
+    decimal? AssessmentChangePercentagePoints,
+    decimal? ComparableSkillGrowthPercentagePoints,
+    int ComparableSkillCount,
+    int EvidenceCount);
+
+public sealed record AnalyticsPracticeEvaluationSummary(
+    int SessionCount,
+    int EvidenceCount,
+    int ActiveDayCount,
+    int SkillCount,
+    decimal? MasteryPercentage,
+    EvaluationTrendBand Trend,
+    DateTime? LatestPracticeAtUtc);
+
+public sealed record AnalyticsInterventionRecommendation(
+    string SkillKey,
+    string SkillName,
+    EvaluationPriority Priority,
+    decimal? CurrentMasteryPercentage,
+    IReadOnlyList<string> RecommendedPrerequisitePath,
+    string Reason);
 
 public sealed record AnalyticsStudentEvaluationTopic(
     Guid TopicId,
@@ -26,6 +59,9 @@ public sealed record AnalyticsStudentEvaluationPage(
     StudentSubjectEvaluation Evaluation,
     IReadOnlyList<AnalyticsStudentEvaluationTopic> Topics,
     IReadOnlyList<AnalyticsStudentAssessmentEvaluationItem> Assessments,
+    IReadOnlyList<AnalyticsTermEvaluationItem> Terms,
+    AnalyticsPracticeEvaluationSummary Practice,
+    IReadOnlyList<AnalyticsInterventionRecommendation> Recommendations,
     IReadOnlyList<EvaluationEvidenceRecord> Evidence);
 
 public sealed record AnalyticsStudentEvaluationRow(
