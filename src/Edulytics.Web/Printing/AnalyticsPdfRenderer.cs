@@ -929,6 +929,22 @@ public static class AnalyticsPdfRenderer
             Percent(averageCoverage),
             Percent(averageConfidence));
 
+        AddClassMetricBar(
+            section,
+            "Average current mastery",
+            averageMastery,
+            Color.FromRgb(82, 98, 227));
+        AddClassMetricBar(
+            section,
+            "Average curriculum coverage",
+            averageCoverage,
+            Color.FromRgb(233, 162, 61));
+        AddClassMetricBar(
+            section,
+            "Evidence confidence",
+            averageConfidence,
+            Color.FromRgb(92, 79, 216));
+
         var confidenceNote = section.AddParagraph();
         confidenceNote.Format.SpaceBefore = Unit.FromPoint(4);
         confidenceNote.Format.SpaceAfter = Unit.FromPoint(7);
@@ -939,6 +955,7 @@ public static class AnalyticsPdfRenderer
             + "Evidence confidence is coverage-adjusted and describes how strongly the available evidence supports the subject-level evaluation; it is not the student's grade.");
 
         AddReportSectionHeading(section, "Mastery distribution");
+        AddClassDistributionBar(section, distribution);
         var masteryBands = ClassReportTable(
             section,
             5.1,
@@ -1221,6 +1238,103 @@ public static class AnalyticsPdfRenderer
             table.AddColumn(Unit.FromCentimeter(width));
 
         return table;
+    }
+
+    private static void AddClassMetricBar(
+        Section section,
+        string label,
+        decimal? value,
+        Color color)
+    {
+        var percentage = value.HasValue
+            ? Math.Clamp(value.Value, 0m, 100m)
+            : 0m;
+        const double trackWidthCm = 17.2;
+        var fillWidth = value.HasValue
+            ? Math.Max(
+                .12,
+                Math.Min(
+                    trackWidthCm - .12,
+                    trackWidthCm *
+                    (double)(percentage / 100m)))
+            : .12;
+        var remainderWidth =
+            Math.Max(.12, trackWidthCm - fillWidth);
+
+        var table = section.AddTable();
+        table.Borders.Width = Unit.FromPoint(0);
+        table.Format.Font.Size = Unit.FromPoint(8);
+        table.AddColumn(Unit.FromCentimeter(4.5));
+        table.AddColumn(Unit.FromCentimeter(fillWidth));
+        table.AddColumn(Unit.FromCentimeter(remainderWidth));
+        table.AddColumn(Unit.FromCentimeter(3.0));
+
+        var row = table.AddRow();
+        row.Height = Unit.FromPoint(12);
+        row.VerticalAlignment = VerticalAlignment.Center;
+        row.Cells[0].AddParagraph(label);
+        row.Cells[1].Shading.Color = value.HasValue
+            ? color
+            : Color.FromRgb(210, 215, 226);
+        row.Cells[2].Shading.Color = Color.FromRgb(238, 241, 246);
+        row.Cells[3].AddParagraph(
+            value.HasValue
+                ? Percent(value.Value)
+                : "—");
+        row.Cells[3].Format.Font.Bold = true;
+        row.Cells[3].Format.Alignment = ParagraphAlignment.Right;
+
+        var spacer = section.AddParagraph();
+        spacer.Format.SpaceAfter = Unit.FromPoint(1);
+    }
+
+    private static void AddClassDistributionBar(
+        Section section,
+        AnalyticsEvaluationDistribution distribution)
+    {
+        var total = Math.Max(1, distribution.TotalStudents);
+        const double chartWidth = 25.4;
+
+        var values = new[]
+        {
+            distribution.StrongOrSecure,
+            distribution.Developing,
+            distribution.NeedsFocus,
+            distribution.Critical,
+            distribution.InsufficientEvidence
+        };
+        var colors = new[]
+        {
+            Color.FromRgb(44, 169, 119),
+            Color.FromRgb(92, 114, 222),
+            Color.FromRgb(233, 162, 61),
+            Color.FromRgb(214, 90, 84),
+            Color.FromRgb(171, 179, 193)
+        };
+
+        var widths = values
+            .Select(value =>
+                Math.Max(
+                    .12,
+                    chartWidth *
+                    (double)(value / (decimal)total)))
+            .ToArray();
+
+        var table = section.AddTable();
+        table.Borders.Width = Unit.FromPoint(0);
+        table.Rows.LeftIndent = Unit.Zero;
+
+        foreach (var width in widths)
+            table.AddColumn(Unit.FromCentimeter(width));
+
+        var row = table.AddRow();
+        row.Height = Unit.FromPoint(12);
+
+        for (var i = 0; i < colors.Length; i++)
+            row.Cells[i].Shading.Color = colors[i];
+
+        var spacer = section.AddParagraph();
+        spacer.Format.SpaceAfter = Unit.FromPoint(3);
     }
 
     private static string ClassShare(
