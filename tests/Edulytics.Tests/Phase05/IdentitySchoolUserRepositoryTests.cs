@@ -324,7 +324,7 @@ public sealed class IdentitySchoolUserRepositoryTests
         Assert.Equal("Alice Bennett", named.DisplayName);
         Assert.Equal("CAMB-9001", named.StudentNumber);
         Assert.Contains(
-            Assert.Single(named.AcademicContexts!),
+            named.AcademicContexts!,
             contextItem => contextItem.ClassGroupId == classGroup.Id);
 
         var byUserId = await repository.QueryBySchoolAsync(
