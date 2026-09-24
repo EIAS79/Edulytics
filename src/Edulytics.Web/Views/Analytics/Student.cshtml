@@ -283,6 +283,10 @@
                             <span class="evaluation-timeline-dot" aria-hidden="true"></span>
                             <div>
                                 <strong>@assessment.Title</strong>
+                                @if (assessment.IsPersonalizedCheck)
+                                {
+                                    <span class="evaluation-personalized-badge">@A["PersonalizedCheck"]</span>
+                                }
                                 <small>
                                     @assessment.AssessmentDate.ToString("yyyy-MM-dd")
                                     @if (!string.IsNullOrWhiteSpace(assessment.TermName))
