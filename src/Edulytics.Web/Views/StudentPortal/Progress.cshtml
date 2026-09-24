@@ -278,6 +278,10 @@
                     <article>
                         <div>
                             <strong>@item.Title</strong>
+                            @if (item.IsPersonalizedCheck)
+                            {
+                                <span class="student-personalized-check-badge">@S["PersonalizedCheck"]</span>
+                            }
                             <small>
                                 @item.AssessmentDate.ToString("yyyy-MM-dd")
                                 @if (!string.IsNullOrWhiteSpace(item.TermName))
