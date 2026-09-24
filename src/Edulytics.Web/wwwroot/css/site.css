@@ -10873,3 +10873,242 @@ a.lesson-content-row:hover
         max-width: 100%;
     }
 }
+
+
+/* Manage Users V3 — unified search + compact dependent filters. */
+.user-directory-controls {
+    gap: .8rem;
+    margin: 1.1rem 0 1.35rem;
+}
+
+.user-role-tabs {
+    gap: .4rem;
+    padding: .35rem;
+    width: fit-content;
+    max-width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: #f8fafc;
+    scrollbar-width: thin;
+}
+
+.user-role-tab {
+    min-height: 38px;
+    padding: .48rem .78rem;
+    border-color: transparent;
+    border-radius: 10px;
+    color: #475569;
+    background: transparent;
+    font-size: .9rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition:
+        color .15s ease,
+        background .15s ease,
+        box-shadow .15s ease;
+}
+
+.user-role-tab:hover {
+    color: #1e40af;
+    background: #eef4ff;
+}
+
+.user-role-tab.is-active {
+    color: #1d4ed8;
+    border-color: #dbe7ff;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, .08);
+}
+
+.user-directory-filter-card {
+    display: grid;
+    gap: 1rem;
+    padding: 1.05rem;
+    border: 1px solid #dfe6f0;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(25, 39, 75, .055);
+}
+
+.user-directory-search-strip {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: .75rem;
+    align-items: end;
+}
+
+.user-directory-search-field,
+.user-directory-filter-field {
+    display: grid;
+    gap: .42rem;
+    min-width: 0;
+}
+
+.user-directory-filter-label {
+    color: #475569;
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .035em;
+    text-transform: uppercase;
+}
+
+.user-directory-search-box {
+    position: relative;
+    display: block;
+    min-width: 0;
+}
+
+.user-directory-search-icon {
+    position: absolute;
+    top: 50%;
+    left: .85rem;
+    z-index: 1;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 1.15rem;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.user-directory-search-box input,
+.user-directory-filter-field select {
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    background: #fff;
+    color: #0f172a;
+    font: inherit;
+    outline: none;
+    transition:
+        border-color .15s ease,
+        box-shadow .15s ease;
+}
+
+.user-directory-search-box input {
+    padding: .68rem .85rem .68rem 2.6rem;
+}
+
+.user-directory-filter-field select {
+    padding: .65rem 2rem .65rem .78rem;
+    font-weight: 600;
+}
+
+.user-directory-search-box input:focus,
+.user-directory-filter-field select:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, .13);
+}
+
+.user-directory-search-action {
+    min-height: 46px;
+    padding-inline: 1.25rem;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.user-directory-filter-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: .8rem;
+    align-items: end;
+    padding-top: .95rem;
+    border-top: 1px solid #eef2f7;
+}
+
+.user-directory-filter-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: .95rem;
+    border-top: 1px solid #eef2f7;
+}
+
+.user-directory-filter-card .user-filter-actions {
+    justify-content: flex-end;
+}
+
+.user-directory-filter-card .school-button {
+    border-radius: 11px;
+}
+
+.user-directory-filter-card .school-button-primary {
+    background: var(--ed-primary, #2357d8);
+}
+
+.user-directory-filter-card .school-button-primary:hover {
+    background: var(--ed-primary-dark, #1944ad);
+}
+
+.user-directory-filter-card .school-button-secondary {
+    border-color: #d7e0eb;
+    color: #334155;
+    background: #fff;
+}
+
+.user-directory-summary {
+    color: #64748b;
+    font-size: .88rem;
+    font-weight: 650;
+    opacity: 1;
+}
+
+@media (max-width: 1180px) {
+    .user-directory-filter-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .user-directory-search-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .user-directory-search-action {
+        width: 100%;
+    }
+
+    .user-directory-filter-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .user-directory-filter-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .user-directory-filter-card .user-filter-actions {
+        justify-content: stretch;
+    }
+
+    .user-directory-filter-card .user-filter-actions > * {
+        flex: 1 1 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .user-directory-filter-card {
+        padding: .85rem;
+        border-radius: 14px;
+    }
+
+    .user-directory-filter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .user-role-tabs {
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+
+    .user-directory-filter-card .user-filter-actions {
+        flex-direction: column-reverse;
+    }
+
+    .user-directory-filter-card .user-filter-actions > * {
+        width: 100%;
+    }
+}
