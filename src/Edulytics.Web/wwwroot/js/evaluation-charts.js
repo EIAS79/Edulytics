@@ -292,6 +292,20 @@
     }
   };
 
+  document
+    .querySelectorAll("[data-report-autosubmit]")
+    .forEach((element) => {
+      element.addEventListener("change", () => {
+        element.form?.requestSubmit();
+      });
+    });
+
+  document
+    .querySelectorAll("[data-report-print]")
+    .forEach((element) => {
+      element.addEventListener("click", () => window.print());
+    });
+
   const roots = Array.from(
     document.querySelectorAll("[data-evaluation-chart]")
   );
