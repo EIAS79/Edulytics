@@ -1,0 +1,81 @@
+name: Evaluation Engine
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/Edulytics.Core/Analytics/**'
+      - 'src/Edulytics.Core/Mathematics/Skills/**'
+      - 'src/Edulytics.Data/Repositories/AnalyticsRepository.cs'
+      - 'src/Edulytics.Services/Analytics/**'
+      - 'src/Edulytics.Web/Controllers/AnalyticsController.cs'
+      - 'src/Edulytics.Web/Extensions/AnalyticsRegistrationExtensions.cs'
+      - 'src/Edulytics.Web/Views/Analytics/**'
+      - 'src/Edulytics.Web/Resources/AnalyticsResource*.resx'
+      - 'src/Edulytics.Web/wwwroot/css/site.css'
+      - 'tests/Edulytics.Tests/Phase43/**'
+      - 'tests/Edulytics.Tests/Phase44/**'
+      - 'docs/evaluation/**'
+      - '.github/workflows/evaluation-engine.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/Edulytics.Core/Analytics/**'
+      - 'src/Edulytics.Core/Mathematics/Skills/**'
+      - 'src/Edulytics.Data/Repositories/AnalyticsRepository.cs'
+      - 'src/Edulytics.Services/Analytics/**'
+      - 'src/Edulytics.Web/Controllers/AnalyticsController.cs'
+      - 'src/Edulytics.Web/Extensions/AnalyticsRegistrationExtensions.cs'
+      - 'src/Edulytics.Web/Views/Analytics/**'
+      - 'src/Edulytics.Web/Resources/AnalyticsResource*.resx'
+      - 'src/Edulytics.Web/wwwroot/css/site.css'
+      - 'tests/Edulytics.Tests/Phase43/**'
+      - 'tests/Edulytics.Tests/Phase44/**'
+      - 'docs/evaluation/**'
+      - '.github/workflows/evaluation-engine.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: evaluation-engine-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+  DOTNET_NOLOGO: "1"
+
+jobs:
+  build-and-contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      - uses: actions/setup-dotnet@v6.0.0
+        with:
+          dotnet-version: "10.0.200"
+
+      - name: Restore
+        run: dotnet restore Edulytics.sln
+
+      - name: Build
+        run: dotnet build Edulytics.sln --configuration Release --no-restore
+
+      - name: Evaluation and privacy regression
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
+            --configuration Release \
+            --no-build \
+            --no-restore \
+            --filter "FullyQualifiedName~Phase44|FullyQualifiedName~Phase43PrivacyAndReportBoundaryTests"
+
+      - name: Localization parity
+        run: python3 scripts/ci-localization-parity.py
+
+      - name: Architecture gate
+        run: python3 scripts/ci-architecture-gate.py

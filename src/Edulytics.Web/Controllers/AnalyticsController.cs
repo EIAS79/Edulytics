@@ -53,6 +53,96 @@ public sealed class AnalyticsController : Controller
                 result.Value));
     }
 
+    [HttpGet("students")]
+    public async Task<IActionResult> Students(
+        Guid academicYearId,
+        Guid classGroupId,
+        Guid subjectId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        if (academicYearId == Guid.Empty ||
+            classGroupId == Guid.Empty ||
+            subjectId == Guid.Empty)
+        {
+            return BadRequest();
+        }
+
+        var result = await _analytics.GetStudentsEvaluationAsync(
+            actorId,
+            academicYearId,
+            classGroupId,
+            subjectId,
+            cancellationToken);
+
+        return result.Value is null
+            ? HandleQueryError(result.Error)
+            : View(result.Value);
+    }
+
+    [HttpGet("student/{studentProfileId:guid}")]
+    public async Task<IActionResult> Student(
+        Guid studentProfileId,
+        Guid academicYearId,
+        Guid classGroupId,
+        Guid subjectId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        if (studentProfileId == Guid.Empty ||
+            academicYearId == Guid.Empty ||
+            classGroupId == Guid.Empty ||
+            subjectId == Guid.Empty)
+        {
+            return BadRequest();
+        }
+
+        var result = await _analytics.GetStudentEvaluationAsync(
+            actorId,
+            studentProfileId,
+            academicYearId,
+            classGroupId,
+            subjectId,
+            cancellationToken);
+
+        return result.Value is null
+            ? HandleQueryError(result.Error)
+            : View(result.Value);
+    }
+
+    [HttpGet("topics-skills")]
+    public async Task<IActionResult> TopicsSkills(
+        Guid academicYearId,
+        Guid classGroupId,
+        Guid subjectId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        if (academicYearId == Guid.Empty ||
+            classGroupId == Guid.Empty ||
+            subjectId == Guid.Empty)
+        {
+            return BadRequest();
+        }
+
+        var result = await _analytics.GetTopicSkillEvaluationAsync(
+            actorId,
+            academicYearId,
+            classGroupId,
+            subjectId,
+            cancellationToken);
+
+        return result.Value is null
+            ? HandleQueryError(result.Error)
+            : View(result.Value);
+    }
+
     [HttpGet("class-report.pdf")]
     public async Task<IActionResult> ClassReportPdf(
         Guid? academicYearId,

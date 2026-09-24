@@ -1,0 +1,188 @@
+@model Edulytics.Services.Analytics.AnalyticsTopicSkillEvaluationPage
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AnalyticsResource> A
+@using Edulytics.Core.Analytics
+@{
+    ViewData["Title"] = A["TopicsSkills"].Value;
+
+    string Value(decimal? value) =>
+        value.HasValue ? $"{value.Value:0.#}%" : "—";
+
+    string TrendLabel(EvaluationTrendBand value) => value switch
+    {
+        EvaluationTrendBand.RapidlyImproving => "↑↑ Rapidly improving",
+        EvaluationTrendBand.Improving => "↑ Improving",
+        EvaluationTrendBand.Stable => "→ Stable",
+        EvaluationTrendBand.Declining => "↓ Declining",
+        EvaluationTrendBand.RapidlyDeclining => "↓↓ Rapidly declining",
+        _ => A["InsufficientEvidence"].Value
+    };
+
+    string TrendClass(EvaluationTrendBand value) => value switch
+    {
+        EvaluationTrendBand.RapidlyImproving or EvaluationTrendBand.Improving => "is-positive",
+        EvaluationTrendBand.RapidlyDeclining or EvaluationTrendBand.Declining => "is-negative",
+        EvaluationTrendBand.Stable => "is-neutral",
+        _ => "is-muted"
+    };
+}
+
+<section class="analytics-page evaluation-page">
+    <header class="analytics-header evaluation-page-header">
+        <div>
+            <div class="user-eyebrow">@A["TopicsSkills"]</div>
+            <h1>@A["TopicsSkills"]</h1>
+            <p>@Model.AcademicYearName · @Model.ClassName · @Model.SubjectName</p>
+        </div>
+        <a class="school-button school-button-secondary"
+           asp-action="Index"
+           asp-route-academicYearId="@Model.AcademicYearId"
+           asp-route-classGroupId="@Model.ClassGroupId"
+           asp-route-subjectId="@Model.SubjectId">
+            @A["EvaluationOverview"]
+        </a>
+    </header>
+
+    <nav class="evaluation-nav" aria-label="@A["AnalyticsTitle"]">
+        <a asp-action="Index"
+           asp-route-academicYearId="@Model.AcademicYearId"
+           asp-route-classGroupId="@Model.ClassGroupId"
+           asp-route-subjectId="@Model.SubjectId">@A["EvaluationOverview"]</a>
+        <a asp-action="Students"
+           asp-route-academicYearId="@Model.AcademicYearId"
+           asp-route-classGroupId="@Model.ClassGroupId"
+           asp-route-subjectId="@Model.SubjectId">@A["AllStudents"]</a>
+        <a class="is-active"
+           asp-action="TopicsSkills"
+           asp-route-academicYearId="@Model.AcademicYearId"
+           asp-route-classGroupId="@Model.ClassGroupId"
+           asp-route-subjectId="@Model.SubjectId">@A["TopicsSkills"]</a>
+    </nav>
+
+    @if (Model.Topics.Count == 0)
+    {
+        <section class="analytics-empty">
+            <h2>@A["NoTopics"]</h2>
+        </section>
+    }
+    else
+    {
+        <section class="evaluation-topic-analytics-grid">
+            @foreach (var topic in Model.Topics)
+            {
+                <article class="analytics-panel evaluation-topic-analytics-card">
+                    <header>
+                        <div>
+                            <span class="user-eyebrow">@A["Topic"]</span>
+                            <h2>@topic.TopicName</h2>
+                        </div>
+                        <span class="evaluation-status @(topic.AffectedStudentCount > 0 ? "is-warning" : "is-positive")">
+                            @topic.AffectedStudentCount / @topic.StudentCount @A["AffectedStudents"]
+                        </span>
+                    </header>
+
+                    <div class="evaluation-topic-metrics">
+                        <div>
+                            <span>@A["ClassMastery"]</span>
+                            <strong>@Value(topic.ClassMasteryPercentage)</strong>
+                        </div>
+                        <div>
+                            <span>@A["AssessmentMastery"]</span>
+                            <strong>@Value(topic.AssessmentMasteryPercentage)</strong>
+                        </div>
+                        <div>
+                            <span>@A["PracticeMastery"]</span>
+                            <strong>@Value(topic.PracticeMasteryPercentage)</strong>
+                        </div>
+                        <div>
+                            <span>@A["Coverage"]</span>
+                            <strong>@topic.CoveragePercentage.ToString("0.#")%</strong>
+                        </div>
+                        <div>
+                            <span>@A["Trend"]</span>
+                            <strong class="@TrendClass(topic.Trend)">@TrendLabel(topic.Trend)</strong>
+                        </div>
+                        <div>
+                            <span>@A["CriticalGaps"]</span>
+                            <strong>@topic.CriticalSkillCount</strong>
+                        </div>
+                    </div>
+
+                    <div class="evaluation-skill-cohort-list">
+                        @foreach (var skill in topic.Skills)
+                        {
+                            <details class="evaluation-skill-cohort">
+                                <summary>
+                                    <span>
+                                        <strong>@skill.SkillName</strong>
+                                        <small>@skill.SkillKey</small>
+                                    </span>
+                                    <span>
+                                        <strong>@Value(skill.ClassMasteryPercentage)</strong>
+                                        <small>
+                                            @skill.CriticalStudentCount critical ·
+                                            @skill.NeedsFocusStudentCount needs focus
+                                        </small>
+                                    </span>
+                                </summary>
+
+                                <div class="evaluation-skill-cohort-metrics">
+                                    <span>@A["AssessmentMastery"]: <strong>@Value(skill.AssessmentMasteryPercentage)</strong></span>
+                                    <span>@A["PracticeMastery"]: <strong>@Value(skill.PracticeMasteryPercentage)</strong></span>
+                                    <span>@A["Coverage"]: <strong>@skill.CoveragePercentage.ToString("0.#")%</strong></span>
+                                    <span class="evaluation-trend-chip @TrendClass(skill.Trend)">@TrendLabel(skill.Trend)</span>
+                                    <span>@A["Priority"]: <strong>@skill.HighestPriority</strong></span>
+                                </div>
+
+                                <div class="analytics-table-wrap">
+                                    <table class="analytics-table evaluation-cohort-students">
+                                        <thead>
+                                            <tr>
+                                                <th>@A["Student"]</th>
+                                                <th>@A["Mastery"]</th>
+                                                <th>@A["AssessmentMastery"]</th>
+                                                <th>@A["PracticeMastery"]</th>
+                                                <th>@A["Status"]</th>
+                                                <th>@A["Trend"]</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var student in skill.Students)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        <strong>@student.DisplayName</strong>
+                                                        <small>@student.StudentNumber</small>
+                                                    </td>
+                                                    <td>@Value(student.MasteryPercentage)</td>
+                                                    <td>@Value(student.AssessmentMasteryPercentage)</td>
+                                                    <td>@Value(student.PracticeMasteryPercentage)</td>
+                                                    <td>@student.Status</td>
+                                                    <td>
+                                                        <span class="evaluation-trend-chip @TrendClass(student.Trend)">
+                                                            @TrendLabel(student.Trend)
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <a class="school-button school-button-secondary"
+                                                           asp-action="Student"
+                                                           asp-route-studentProfileId="@student.StudentProfileId"
+                                                           asp-route-academicYearId="@Model.AcademicYearId"
+                                                           asp-route-classGroupId="@Model.ClassGroupId"
+                                                           asp-route-subjectId="@Model.SubjectId">
+                                                            @A["ViewEvaluation"]
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </details>
+                        }
+                    </div>
+                </article>
+            }
+        </section>
+    }
+</section>
