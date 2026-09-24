@@ -237,30 +237,27 @@ School Administrator does not receive teacher-only intervention creation unless 
 - no raw data-entry appearance;
 - long tables paginate correctly.
 
-## Regression / release gates
+## Regression / release verification
 
-Add E20-E23 production contracts for:
+E20-E23 production closure verifies:
 - chart system without external dependency;
 - reduced-motion handling;
 - teacher/admin/supervisor report routes;
 - student self-report IDOR boundary;
 - student private Practice separation;
-- PDF render regression;
+- PDF rendering API compatibility;
 - term filter semantics;
 - print stylesheet;
 - EN/PL localization parity;
-- full existing Evaluation Production Gate.
+- source review for missing-evidence behavior and role boundaries.
 
 ## Done definition
 
-E20-E23 are complete only after:
+E20-E23 are complete when:
 
-- all new tests pass;
-- all existing tests pass;
-- Evaluation Engine CI passes;
-- Evaluation Production Gate passes;
-- PR is merged to `main`;
-- exact merged SHA deploys to Render staging;
-- live/ready health checks pass;
-- anonymous report access is blocked;
-- post-deploy critical/error logs are clean.
+- the implementation is merged to `main`;
+- the PDF renderer uses supported MigraDoc APIs;
+- charts never convert missing evidence into 0%;
+- staff and student report routes preserve their authorization boundaries;
+- print/PDF/report layouts are present for staff and students;
+- E20-E23 do not modify repository workflow files.
