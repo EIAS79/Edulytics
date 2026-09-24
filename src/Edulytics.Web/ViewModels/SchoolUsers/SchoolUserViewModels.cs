@@ -23,6 +23,14 @@ public sealed class SchoolUserListViewModel
     public string? Role { get; init; }
     public bool? IsActive { get; init; }
     public bool? IsLocked { get; init; }
+    public string? Name { get; init; }
+    public string? UserId { get; init; }
+    public string? Email { get; init; }
+    public Guid? AcademicYearId { get; init; }
+    public Guid? AcademicProgramId { get; init; }
+    public Guid? ClassGroupId { get; init; }
+    public Edulytics.Core.Users.SchoolUserDirectoryFilterOptions FilterOptions { get; init; } =
+        Edulytics.Core.Users.SchoolUserDirectoryFilterOptions.Empty;
     public int Page { get; init; } = 1;
     public int PageSize { get; init; } = 50;
     public int TotalCount { get; init; }
