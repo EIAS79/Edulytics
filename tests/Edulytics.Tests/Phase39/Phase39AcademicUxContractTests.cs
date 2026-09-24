@@ -211,9 +211,7 @@ public sealed class Phase39AcademicUxContractTests
 
         foreach (var field in new[]
                  {
-                     "name=\"name\"",
-                     "name=\"userId\"",
-                     "name=\"email\"",
+                     "name=\"search\"",
                      "name=\"academicYearId\"",
                      "name=\"academicProgramId\"",
                      "name=\"classGroupId\""
@@ -221,6 +219,13 @@ public sealed class Phase39AcademicUxContractTests
         {
             Assert.Contains(field, view, StringComparison.Ordinal);
         }
+
+        // Identity lookup is intentionally one search box: name, email,
+        // user id/student number are resolved server-side instead of
+        // exposing three competing identity filters.
+        Assert.DoesNotContain("name=\"name\"", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("name=\"userId\"", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("name=\"email\"", view, StringComparison.Ordinal);
 
         Assert.Contains("AcademicYearId: academicYearId", controller, StringComparison.Ordinal);
         Assert.Contains("AcademicProgramId: academicProgramId", controller, StringComparison.Ordinal);
