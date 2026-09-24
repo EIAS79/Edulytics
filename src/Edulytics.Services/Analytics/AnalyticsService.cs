@@ -3,6 +3,7 @@ using Edulytics.Core.Constants;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Interfaces;
+using Edulytics.Core.Mathematics.Skills;
 using Edulytics.Core.Users;
 
 namespace Edulytics.Services.Analytics;
@@ -843,35 +844,6 @@ public sealed class AnalyticsService : IAnalyticsService
                 .ThenBy(x => x.TopicName)
                 .ToArray();
 
-            var termNames = projection.Terms
-                .ToDictionary(x => x.Id, x => x.Name);
-            var assessments = projection.Assessments
-                .Where(x =>
-                    x.Status != AssessmentStatus.Draft &&
-                    x.AcademicYearId == academicYearId &&
-                    x.ClassGroupId == classGroupId &&
-                    x.SubjectId == subjectId)
-                .ToDictionary(x => x.Id);
-            var assessmentRows = projection.AssessmentResults
-                .Where(x =>
-                    x.StudentProfileId == studentProfileId &&
-                    assessments.ContainsKey(x.AssessmentId))
-                .Select(x =>
-                {
-                    var assessment = assessments[x.AssessmentId];
-
-                    return new AnalyticsStudentAssessmentEvaluationItem(
-                        assessment.Id,
-                        assessment.Title,
-                        assessment.AssessmentDate,
-                        termNames.GetValueOrDefault(
-                            assessment.TermId),
-                        x.Percentage);
-                })
-                .OrderBy(x => x.AssessmentDate)
-                .ThenBy(x => x.Title)
-                .ToArray();
-
             var evidence = normalized
                 .Where(x =>
                     x.StudentProfileId == studentProfileId &&
@@ -882,11 +854,34 @@ public sealed class AnalyticsService : IAnalyticsService
                 .ThenBy(x => x.SkillName)
                 .ToArray();
 
+            var assessmentRows = BuildAssessmentEvaluationRows(
+                projection,
+                evidence,
+                studentProfileId,
+                academicYearId,
+                classGroupId,
+                subjectId);
+
+            var termRows = BuildTermEvaluationRows(
+                projection,
+                evidence,
+                academicYearId);
+
+            var practice = BuildPracticeSummary(
+                evidence,
+                evaluation);
+
+            var recommendations = BuildRecommendations(
+                evaluation);
+
             return AnalyticsQueryResult<AnalyticsStudentEvaluationPage>.Success(
                 new AnalyticsStudentEvaluationPage(
                     evaluation,
                     topicRows,
                     assessmentRows,
+                    termRows,
+                    practice,
+                    recommendations,
                     evidence));
         }
         catch (InvalidOperationException)
