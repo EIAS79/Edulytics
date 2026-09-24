@@ -162,13 +162,22 @@
                             <span class="user-eyebrow">@A["Class"]</span>
                             <h3>@item.ClassName</h3>
                         </div>
-                        <a class="school-button school-button-secondary"
-                           asp-action="Students"
-                           asp-route-academicYearId="@Model.AcademicYearId"
-                           asp-route-classGroupId="@item.ClassGroupId"
-                           asp-route-subjectId="@Model.SubjectId">
-                            @A["ViewClass"]
-                        </a>
+                        <div class="analytics-student-row-actions">
+                            <a class="school-button school-button-secondary"
+                               asp-action="Students"
+                               asp-route-academicYearId="@Model.AcademicYearId"
+                               asp-route-classGroupId="@item.ClassGroupId"
+                               asp-route-subjectId="@Model.SubjectId">
+                                @A["ViewClass"]
+                            </a>
+                            <a class="school-button"
+                               asp-action="ClassReportPdf"
+                               asp-route-academicYearId="@Model.AcademicYearId"
+                               asp-route-classGroupId="@item.ClassGroupId"
+                               asp-route-subjectId="@Model.SubjectId">
+                                PDF
+                            </a>
+                        </div>
                     </header>
 
                     <div class="supervisor-class-stat-grid">
