@@ -56,13 +56,16 @@
   };
 
   const initDonut = (root) => {
-    const value = clamp(
-      Number.parseFloat(root.dataset.value || "0"),
-      0,
-      100
-    );
+    const parsed = Number.parseFloat(root.dataset.value || "");
 
     root.style.setProperty("--chart-value", "0");
+
+    if (!Number.isFinite(parsed)) {
+      root.classList.add("is-chart-missing");
+      return;
+    }
+
+    const value = clamp(parsed, 0, 100);
 
     requestAnimationFrame(() => {
       root.style.setProperty("--chart-value", String(value));
@@ -82,13 +85,16 @@
 
   const initBars = (root) => {
     root.querySelectorAll("[data-chart-value]").forEach((bar, index) => {
-      const value = clamp(
-        Number.parseFloat(bar.dataset.chartValue || "0"),
-        0,
-        100
-      );
+      const parsed = Number.parseFloat(bar.dataset.chartValue || "");
 
       bar.style.setProperty("--bar-value", "0");
+
+      if (!Number.isFinite(parsed)) {
+        bar.classList.add("is-chart-missing");
+        return;
+      }
+
+      const value = clamp(parsed, 0, 100);
 
       window.setTimeout(() => {
         bar.style.setProperty("--bar-value", String(value));

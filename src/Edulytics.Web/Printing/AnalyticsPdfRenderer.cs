@@ -1077,6 +1077,8 @@ public static class AnalyticsPdfRenderer
         table.Borders.Color = Color.FromRgb(224, 229, 239);
         table.Format.Font.Size = Unit.FromPoint(7.8);
         table.Rows.LeftIndent = Unit.Zero;
+        table.LeftPadding = Unit.FromPoint(4);
+        table.RightPadding = Unit.FromPoint(4);
 
         var total = 17.5;
         var width = total / columns;
