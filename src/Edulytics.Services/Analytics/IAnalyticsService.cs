@@ -35,6 +35,13 @@ public interface IAnalyticsService
             Guid subjectId,
             CancellationToken cancellationToken = default);
 
+    Task<AnalyticsQueryResult<AnalyticsSupervisorSubjectOverviewPage>>
+        GetSupervisorSubjectOverviewAsync(
+            Guid actorUserId,
+            Guid academicYearId,
+            Guid subjectId,
+            CancellationToken cancellationToken = default);
+
     Task<AnalyticsQueryResult<AnalyticsStudentReport>>
         GetStudentReportAsync(
             Guid actorUserId,

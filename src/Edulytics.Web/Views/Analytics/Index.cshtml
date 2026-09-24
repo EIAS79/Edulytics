@@ -183,6 +183,24 @@
         </div>
     </form>
 
+    @if (d.CanRecalculate &&
+         reportAcademicYearId.HasValue &&
+         reportSubjectId.HasValue)
+    {
+        <div class="analytics-supervisor-entry">
+            <div>
+                <strong>@A["SubjectOverview"]</strong>
+                <span>Compare classes, student movement and shared skill gaps across the supervised subject.</span>
+            </div>
+            <a class="school-button school-button-secondary"
+               asp-action="SubjectOverview"
+               asp-route-academicYearId="@reportAcademicYearId"
+               asp-route-subjectId="@reportSubjectId">
+                @A["SubjectOverview"]
+            </a>
+        </div>
+    }
+
     @if (reportAcademicYearId.HasValue &&
          reportClassGroupId.HasValue &&
          reportSubjectId.HasValue)

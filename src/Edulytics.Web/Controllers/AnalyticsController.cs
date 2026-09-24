@@ -143,6 +143,33 @@ public sealed class AnalyticsController : Controller
             : View(result.Value);
     }
 
+    [Authorize(Roles = RoleNames.SubjectSupervisor + "," + RoleNames.SchoolAdmin)]
+    [HttpGet("subject-overview")]
+    public async Task<IActionResult> SubjectOverview(
+        Guid academicYearId,
+        Guid subjectId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        if (academicYearId == Guid.Empty ||
+            subjectId == Guid.Empty)
+        {
+            return BadRequest();
+        }
+
+        var result = await _analytics.GetSupervisorSubjectOverviewAsync(
+            actorId,
+            academicYearId,
+            subjectId,
+            cancellationToken);
+
+        return result.Value is null
+            ? HandleQueryError(result.Error)
+            : View(result.Value);
+    }
+
     [HttpGet("class-report.pdf")]
     public async Task<IActionResult> ClassReportPdf(
         Guid? academicYearId,
