@@ -8,6 +8,7 @@ using Edulytics.Services.LessonContent;
 using Edulytics.Services.Practice;
 using Edulytics.Services.StudentPortal;
 using Edulytics.Web.GameRouting;
+using Edulytics.Web.Printing;
 using Edulytics.Web.ViewModels.StudentPortal;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -136,6 +137,74 @@ public sealed class StudentPortalController : Controller
                 workspace,
                 evaluation.Value,
                 selected.CurriculumAdoptionId));
+    }
+
+    [HttpGet("progress/report")]
+    public async Task<IActionResult> ProgressReport(
+        Guid? academicYearId,
+        Guid? classGroupId,
+        Guid? subjectId,
+        Guid? termId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        var context = await ResolveProgressContextAsync(
+            actorId,
+            academicYearId,
+            classGroupId,
+            subjectId,
+            cancellationToken);
+
+        if (context.Result is not null)
+            return context.Result;
+
+        var report = BuildSelfReportPage(
+            context.Evaluation!,
+            termId);
+
+        return report is null
+            ? NotFound()
+            : View(nameof(ProgressReport), report);
+    }
+
+    [HttpGet("progress/report.pdf")]
+    public async Task<IActionResult> ProgressReportPdf(
+        Guid? academicYearId,
+        Guid? classGroupId,
+        Guid? subjectId,
+        Guid? termId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        var context = await ResolveProgressContextAsync(
+            actorId,
+            academicYearId,
+            classGroupId,
+            subjectId,
+            cancellationToken);
+
+        if (context.Result is not null)
+            return context.Result;
+
+        var report = BuildSelfReportPage(
+            context.Evaluation!,
+            termId);
+
+        if (report is null)
+            return NotFound();
+
+        var bytes =
+            AnalyticsPdfRenderer.RenderStudentSelfEvaluationReport(
+                report);
+
+        return File(
+            bytes,
+            "application/pdf",
+            $"edulytics-my-progress-{DateTime.UtcNow:yyyyMMdd}.pdf");
     }
 
     [HttpGet("learning")]
@@ -400,6 +469,96 @@ public sealed class StudentPortalController : Controller
                 lesson.CommonMistakes,
                 lesson.QuickSummary
             }.Where(x => !string.IsNullOrWhiteSpace(x)));
+
+    private async Task<(
+        StudentSelfEvaluationPage? Evaluation,
+        IActionResult? Result)>
+        ResolveProgressContextAsync(
+            Guid actorId,
+            Guid? academicYearId,
+            Guid? classGroupId,
+            Guid? subjectId,
+            CancellationToken cancellationToken)
+    {
+        var workspaceResult = await _portal.GetWorkspaceAsync(
+            actorId,
+            cancellationToken);
+
+        if (workspaceResult.Value is null)
+            return (null, HandlePortalError(workspaceResult.Error));
+
+        var workspace = workspaceResult.Value;
+
+        StudentLearningSubjectItem? selected = null;
+
+        if (academicYearId.HasValue &&
+            classGroupId.HasValue &&
+            subjectId.HasValue)
+        {
+            selected = workspace.Learning.FirstOrDefault(x =>
+                x.AcademicYearId == academicYearId.Value &&
+                x.ClassGroupId == classGroupId.Value &&
+                x.SubjectId == subjectId.Value);
+        }
+        else
+        {
+            selected = workspace.Learning.FirstOrDefault();
+        }
+
+        if (selected is null)
+            return (null, NotFound());
+
+        var evaluation = await _selfEvaluation.GetAsync(
+            actorId,
+            selected.AcademicYearId,
+            selected.ClassGroupId,
+            selected.SubjectId,
+            cancellationToken);
+
+        if (evaluation.Value is not null)
+            return (evaluation.Value, null);
+
+        return (
+            null,
+            evaluation.Error switch
+            {
+                StudentSelfEvaluationErrorCode.AccessDenied or
+                StudentSelfEvaluationErrorCode.ProfileNotLinked or
+                StudentSelfEvaluationErrorCode.SchoolNotActive => Forbid(),
+                _ => NotFound()
+            });
+    }
+
+    private static StudentSelfEvaluationReportPage?
+        BuildSelfReportPage(
+            StudentSelfEvaluationPage source,
+            Guid? termId)
+    {
+        AnalyticsTermEvaluationItem? selectedTerm = null;
+
+        if (termId.HasValue)
+        {
+            selectedTerm = source.Terms.SingleOrDefault(
+                x => x.TermId == termId.Value);
+
+            if (selectedTerm is null)
+                return null;
+        }
+
+        var assessments = termId.HasValue
+            ? source.Assessments
+                .Where(x => x.TermId == termId.Value)
+                .ToArray()
+            : source.Assessments;
+
+        return new StudentSelfEvaluationReportPage(
+            source,
+            termId,
+            selectedTerm?.TermName,
+            selectedTerm,
+            assessments,
+            DateTime.UtcNow);
+    }
 
     private async Task<(StudentPortalWorkspace? Workspace, IActionResult? Result)> WorkspaceAsync(
         CancellationToken cancellationToken)
