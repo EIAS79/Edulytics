@@ -224,6 +224,18 @@ public sealed class IdentitySchoolUserRepositoryTests
             Code = "BRITISH",
             NormalizedCode = "BRITISH",
             Status = AcademicStructureStatus.Active,
+            IsDefault = true,
+            CreatedAtUtc = now,
+            UpdatedAtUtc = now
+        };
+        var polishProgram = new AcademicProgram
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = school.Id,
+            Name = "Polish Stream",
+            Code = "POLISH",
+            NormalizedCode = "POLISH",
+            Status = AcademicStructureStatus.Active,
             IsDefault = false,
             CreatedAtUtc = now,
             UpdatedAtUtc = now
@@ -248,6 +260,20 @@ public sealed class IdentitySchoolUserRepositoryTests
             NormalizedCode = "CAM6A",
             Status = AcademicStructureStatus.Active
         };
+        var polishClassGroup = new ClassGroup
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = school.Id,
+            AcademicYearId = year.Id,
+            AcademicProgramId = polishProgram.Id,
+            GradeLevelId = grade.Id,
+            Name = "Polish Grade 6 — A",
+            NormalizedName = "POLISH GRADE 6 — A",
+            Code = "PL6A",
+            NormalizedCode = "PL6A",
+            Status = AcademicStructureStatus.Active
+        };
+
         var subject = new Subject
         {
             Id = Guid.NewGuid(),
@@ -275,8 +301,10 @@ public sealed class IdentitySchoolUserRepositoryTests
         context.AddRange(
             year,
             program,
+            polishProgram,
             grade,
             classGroup,
+            polishClassGroup,
             subject,
             profile,
             new StudentEnrollment
@@ -382,7 +410,19 @@ public sealed class IdentitySchoolUserRepositoryTests
 
         Assert.Contains(options.AcademicYears, x => x.Id == year.Id);
         Assert.Contains(options.AcademicPrograms, x => x.Id == program.Id);
+        Assert.Contains(options.AcademicPrograms, x => x.Id == polishProgram.Id);
         Assert.Contains(options.Classes, x => x.Id == classGroup.Id);
+        Assert.Contains(options.Classes, x => x.Id == polishClassGroup.Id);
+        Assert.Contains(
+            options.Classes,
+            x =>
+                x.AcademicYearId == year.Id &&
+                x.AcademicProgramId == program.Id);
+        Assert.Contains(
+            options.Classes,
+            x =>
+                x.AcademicYearId == year.Id &&
+                x.AcademicProgramId == polishProgram.Id);
     }
 
     [Fact]
