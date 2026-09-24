@@ -115,9 +115,6 @@
                 <form method="get" asp-action="Index" class="user-role-tab-form">
                     <input type="hidden" name="schoolId" value="@Model.Context.SchoolId" />
                     <input type="hidden" name="search" value="@Model.Search" />
-                    <input type="hidden" name="name" value="@Model.Name" />
-                    <input type="hidden" name="userId" value="@Model.UserId" />
-                    <input type="hidden" name="email" value="@Model.Email" />
                     <input type="hidden" name="academicYearId" value="@Model.AcademicYearId" />
                     <input type="hidden" name="academicProgramId" value="@Model.AcademicProgramId" />
                     <input type="hidden" name="classGroupId" value="@Model.ClassGroupId" />
@@ -137,50 +134,34 @@
 
         <form method="get"
               asp-action="Index"
-              class="user-filter-bar user-filter-bar-advanced"
+              class="user-directory-filter-card"
               data-user-directory-filters>
             <input type="hidden" name="schoolId" value="@Model.Context.SchoolId" />
             <input type="hidden" name="role" value="@Model.Role" />
 
-            <fieldset class="user-filter-group user-filter-group-identity">
-                <legend>@T["IdentityFilters"]</legend>
-
-                <label class="user-filter-field">
-                    <span>@T["UserName"]</span>
-                    <input type="search"
-                           name="name"
-                           value="@Model.Name"
-                           maxlength="150"
-                           autocomplete="off"
-                           placeholder="@T["UserNameFilterPlaceholder"]" />
+            <div class="user-directory-search-strip">
+                <label class="user-directory-search-field">
+                    <span class="user-directory-filter-label">@T["SearchUsers"]</span>
+                    <span class="user-directory-search-box">
+                        <span class="user-directory-search-icon" aria-hidden="true">⌕</span>
+                        <input type="search"
+                               name="search"
+                               value="@Model.Search"
+                               maxlength="256"
+                               autocomplete="off"
+                               placeholder="@T["SearchUsersPlaceholder"]" />
+                    </span>
                 </label>
 
-                <label class="user-filter-field">
-                    <span>@T["UserId"]</span>
-                    <input type="search"
-                           name="userId"
-                           value="@Model.UserId"
-                           maxlength="64"
-                           autocomplete="off"
-                           placeholder="@T["UserIdFilterPlaceholder"]" />
-                </label>
+                <button type="submit"
+                        class="school-button school-button-primary user-directory-search-action">
+                    @T["SearchUsers"]
+                </button>
+            </div>
 
-                <label class="user-filter-field">
-                    <span>@T["UserEmail"]</span>
-                    <input type="search"
-                           name="email"
-                           value="@Model.Email"
-                           maxlength="256"
-                           autocomplete="off"
-                           placeholder="@T["UserEmailFilterPlaceholder"]" />
-                </label>
-            </fieldset>
-
-            <fieldset class="user-filter-group user-filter-group-academic">
-                <legend>@T["AcademicFilters"]</legend>
-
-                <label class="user-filter-field">
-                    <span>@T["AcademicYearFilter"]</span>
+            <div class="user-directory-filter-grid">
+                <label class="user-directory-filter-field">
+                    <span class="user-directory-filter-label">@T["AcademicYearFilter"]</span>
                     <select name="academicYearId"
                             data-user-filter-year>
                         <option value="">@T["AllAcademicYears"]</option>
@@ -194,14 +175,20 @@
                     </select>
                 </label>
 
-                <label class="user-filter-field">
-                    <span>@T["CurriculumFilter"]</span>
+                <label class="user-directory-filter-field">
+                    <span class="user-directory-filter-label">@T["CurriculumFilter"]</span>
                     <select name="academicProgramId"
                             data-user-filter-program>
                         <option value="">@T["AllCurricula"]</option>
                         @foreach (var option in Model.FilterOptions.AcademicPrograms)
                         {
+                            var offeredYearIds = Model.FilterOptions.Classes
+                                .Where(x => x.AcademicProgramId == option.Id)
+                                .Select(x => x.AcademicYearId.ToString("D"))
+                                .Distinct(StringComparer.OrdinalIgnoreCase);
+
                             <option value="@option.Id"
+                                    data-year-ids="@string.Join("|", offeredYearIds)"
                                     selected="@(Model.AcademicProgramId == option.Id ? "selected" : null)">
                                 @option.Label
                             </option>
@@ -209,8 +196,8 @@
                     </select>
                 </label>
 
-                <label class="user-filter-field">
-                    <span>@T["ClassFilter"]</span>
+                <label class="user-directory-filter-field">
+                    <span class="user-directory-filter-label">@T["ClassFilter"]</span>
                     <select name="classGroupId"
                             data-user-filter-class>
                         <option value="">@T["AllClasses"]</option>
@@ -225,13 +212,9 @@
                         }
                     </select>
                 </label>
-            </fieldset>
 
-            <fieldset class="user-filter-group user-filter-group-account">
-                <legend>@T["AccountFilters"]</legend>
-
-                <label class="user-filter-field">
-                    <span>@T["AccountStatus"]</span>
+                <label class="user-directory-filter-field">
+                    <span class="user-directory-filter-label">@T["AccountStatus"]</span>
                     <select name="isActive">
                         <option value="" selected="@(!Model.IsActive.HasValue ? "selected" : null)">@T["AllStatuses"]</option>
                         <option value="true" selected="@(Model.IsActive == true ? "selected" : null)">@T["UserActive"]</option>
@@ -239,8 +222,8 @@
                     </select>
                 </label>
 
-                <label class="user-filter-field">
-                    <span>@T["LockState"]</span>
+                <label class="user-directory-filter-field">
+                    <span class="user-directory-filter-label">@T["LockState"]</span>
                     <select name="isLocked">
                         <option value="" selected="@(!Model.IsLocked.HasValue ? "selected" : null)">@T["AllStatuses"]</option>
                         <option value="false" selected="@(Model.IsLocked == false ? "selected" : null)">@T["UserUnlocked"]</option>
@@ -248,8 +231,8 @@
                     </select>
                 </label>
 
-                <label class="user-filter-field user-filter-page-size">
-                    <span>@T["RowsPerPage"]</span>
+                <label class="user-directory-filter-field user-directory-page-size">
+                    <span class="user-directory-filter-label">@T["RowsPerPage"]</span>
                     <select name="pageSize">
                         @foreach (var size in new[] { 25, 50, 100 })
                         {
@@ -257,23 +240,81 @@
                         }
                     </select>
                 </label>
-            </fieldset>
+            </div>
 
-            <div class="user-filter-actions">
-                <button type="submit" class="school-button school-button-primary">
-                    @T["ApplyFilters"]
-                </button>
-                <a class="school-button school-button-secondary"
-                   asp-action="Index"
-                   asp-route-schoolId="@Model.Context.SchoolId">
-                    @T["ClearFilters"]
-                </a>
+            <div class="user-directory-filter-footer">
+                <div class="user-directory-summary" aria-live="polite">
+                    @T["ShowingUsers", firstVisible, lastVisible, Model.TotalCount]
+                </div>
+
+                <div class="user-filter-actions">
+                    <a class="school-button school-button-secondary"
+                       asp-action="Index"
+                       asp-route-schoolId="@Model.Context.SchoolId">
+                        @T["ClearFilters"]
+                    </a>
+                    <button type="submit" class="school-button school-button-primary">
+                        @T["ApplyFilters"]
+                    </button>
+                </div>
             </div>
         </form>
 
-        <div class="user-directory-summary" aria-live="polite">
-            @T["ShowingUsers", firstVisible, lastVisible, Model.TotalCount]
-        </div>
+        <script>
+            (() => {
+                const form = document.querySelector("[data-user-directory-filters]");
+                if (!form) return;
+
+                const year = form.querySelector("[data-user-filter-year]");
+                const program = form.querySelector("[data-user-filter-program]");
+                const classGroup = form.querySelector("[data-user-filter-class]");
+                if (!year || !program || !classGroup) return;
+
+                const programOptions = [...program.options].filter(option => option.value);
+                const classOptions = [...classGroup.options].filter(option => option.value);
+
+                const syncAcademicFilters = () => {
+                    const yearId = year.value;
+                    const programId = program.value;
+
+                    for (const option of programOptions) {
+                        const years = (option.dataset.yearIds || "")
+                            .split("|")
+                            .filter(Boolean);
+                        const visible = !yearId || years.includes(yearId);
+                        option.hidden = !visible;
+                        option.disabled = !visible;
+                    }
+
+                    if (program.selectedOptions[0]?.disabled) {
+                        program.value = "";
+                    }
+
+                    const activeProgramId = program.value;
+
+                    for (const option of classOptions) {
+                        const yearMatches =
+                            !yearId ||
+                            option.dataset.yearId === yearId;
+                        const programMatches =
+                            !activeProgramId ||
+                            option.dataset.programId === activeProgramId;
+                        const visible = yearMatches && programMatches;
+
+                        option.hidden = !visible;
+                        option.disabled = !visible;
+                    }
+
+                    if (classGroup.selectedOptions[0]?.disabled) {
+                        classGroup.value = "";
+                    }
+                };
+
+                year.addEventListener("change", syncAcademicFilters);
+                program.addEventListener("change", syncAcademicFilters);
+                syncAcademicFilters();
+            })();
+        </script>
     </section>
 
     @if (Model.Users.Count == 0)
@@ -436,9 +477,6 @@
                     <input type="hidden" name="schoolId" value="@Model.Context.SchoolId" />
                     <input type="hidden" name="search" value="@Model.Search" />
                     <input type="hidden" name="role" value="@Model.Role" />
-                    <input type="hidden" name="name" value="@Model.Name" />
-                    <input type="hidden" name="userId" value="@Model.UserId" />
-                    <input type="hidden" name="email" value="@Model.Email" />
                     <input type="hidden" name="academicYearId" value="@Model.AcademicYearId" />
                     <input type="hidden" name="academicProgramId" value="@Model.AcademicProgramId" />
                     <input type="hidden" name="classGroupId" value="@Model.ClassGroupId" />
@@ -460,9 +498,6 @@
                     <input type="hidden" name="schoolId" value="@Model.Context.SchoolId" />
                     <input type="hidden" name="search" value="@Model.Search" />
                     <input type="hidden" name="role" value="@Model.Role" />
-                    <input type="hidden" name="name" value="@Model.Name" />
-                    <input type="hidden" name="userId" value="@Model.UserId" />
-                    <input type="hidden" name="email" value="@Model.Email" />
                     <input type="hidden" name="academicYearId" value="@Model.AcademicYearId" />
                     <input type="hidden" name="academicProgramId" value="@Model.AcademicProgramId" />
                     <input type="hidden" name="classGroupId" value="@Model.ClassGroupId" />
