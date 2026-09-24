@@ -155,28 +155,63 @@ public sealed class AcademicStructureBulkController : Controller
             ids,
             cancellationToken);
 
-        var polish = IsPolish();
-        var summary = polish
-            ? $"Przeniesiono uczniów: {result.Moved}."
-            : $"Students moved: {result.Moved}.";
-
-        if (result.Failures.Count == 0)
+        if (result.Succeeded && result.Failures.Count == 0)
         {
-            TempData["AcademicSuccess"] = summary;
+            TempData["AcademicSuccess"] = IsPolish()
+                ? $"Przeniesiono uczniów: {result.Moved}."
+                : $"Students moved: {result.Moved}.";
             return BackToStudents();
         }
 
-        var crossGrade = result.Failures.Count(x =>
-            string.Equals(x.Code, "CrossGradeMoveNotAllowed", StringComparison.Ordinal));
-        var otherFailures = result.Failures.Count - crossGrade;
-
-        var details = polish
-            ? $" Nie przeniesiono między poziomami: {crossGrade}. Inne pominięte: {otherFailures}."
-            : $" Cross-grade moves blocked: {crossGrade}. Other skipped: {otherFailures}.";
-
-        TempData["AcademicSuccess"] = summary;
-        TempData["AcademicError"] = details.Trim();
+        TempData["AcademicError"] = BuildMoveFailureMessage(result.Failures);
         return BackToStudents();
+    }
+
+    private string BuildMoveFailureMessage(
+        IReadOnlyList<StudentPlacementFailure> failures)
+    {
+        var codes = failures
+            .Select(x => x.Code)
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+
+        if (codes.Any(code =>
+                code is "CrossAcademicYearMoveNotAllowed" or
+                    "CrossGradeMoveNotAllowed" or
+                    "CrossCurriculumMoveNotAllowed" or
+                    "InvalidClassMove"))
+        {
+            return IsPolish()
+                ? "Wybierz inną klasę w tym samym roku akademickim, programie i poziomie programu nauczania."
+                : "Choose a different destination class in the same academic year, program, and curriculum level.";
+        }
+
+        if (codes.Contains("StudentNotInSourceClass", StringComparer.Ordinal) ||
+            codes.Contains("StudentNotEnrolledForAcademicYear", StringComparer.Ordinal))
+        {
+            return IsPolish()
+                ? "Co najmniej jeden wybrany uczeń nie należy już do klasy źródłowej. Odśwież stronę i spróbuj ponownie."
+                : "At least one selected student is no longer enrolled in the source class. Refresh the page and try again.";
+        }
+
+        if (codes.Contains("StudentInactive", StringComparer.Ordinal) ||
+            codes.Contains("StudentProfileNotFound", StringComparer.Ordinal))
+        {
+            return IsPolish()
+                ? "Nie można przenieść co najmniej jednego wybranego ucznia, ponieważ jego profil jest nieaktywny lub niedostępny."
+                : "At least one selected student cannot be moved because the profile is inactive or unavailable.";
+        }
+
+        if (codes.Contains("PersistenceError", StringComparer.Ordinal))
+        {
+            return IsPolish()
+                ? "Nie udało się zapisać zmiany klasy. Żaden uczeń nie został przeniesiony."
+                : "The class change could not be saved. No students were moved.";
+        }
+
+        return IsPolish()
+            ? "Nie udało się przenieść wybranych uczniów. Żaden uczeń nie został przeniesiony."
+            : "The selected students could not be moved. No students were moved.";
     }
 
     private bool TryGetActorId(out Guid actorUserId) =>

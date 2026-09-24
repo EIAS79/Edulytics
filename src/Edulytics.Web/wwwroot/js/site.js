@@ -61,55 +61,406 @@
     function wireStudentWorkflowCleanup() {
         const students = document.getElementById("students");
         if (!students) return;
+
         students.classList.add("round2-students-section");
         students.querySelectorAll("table").forEach(table => {
             table.classList.add("round2-readable-table");
             table.parentElement?.classList.add("round2-table-scroll");
         });
-
-        const profileForm = Array.from(students.querySelectorAll("form"))
-            .find(form => (form.action || "").toLowerCase().includes("createstudentprofile"));
-        const enrollmentForm = Array.from(students.querySelectorAll("form"))
-            .find(form => (form.action || "").toLowerCase().includes("createstudentenrollment"));
-
-        if (profileForm) {
-            profileForm.hidden = true;
-            profileForm.setAttribute("aria-hidden", "true");
-            const language = (document.documentElement.lang || "en").toLowerCase();
-            const panel = document.createElement("div");
-            panel.className = "academic-card";
-            const heading = document.createElement("h3");
-            heading.textContent = language.startsWith("pl") ? "Utwórz konto ucznia" : "Create a student account";
-            const description = document.createElement("p");
-            description.className = "academic-help";
-            description.textContent = language.startsWith("pl")
-                ? "Nowych uczniów twórz w zarządzaniu użytkownikami. Profil ucznia i pierwsze przypisanie do klasy są wtedy tworzone i łączone automatycznie."
-                : "Create new students in User Management. Their student profile and first class enrollment are created and linked automatically.";
-            const link = document.createElement("a");
-            link.className = "school-button school-button-primary";
-            link.href = "/School/Users/Create";
-            link.textContent = language.startsWith("pl") ? "Utwórz ucznia" : "Create student";
-            panel.append(heading, description, link);
-            profileForm.insertAdjacentElement("beforebegin", panel);
-        }
-
-        if (enrollmentForm) {
-            const language = (document.documentElement.lang || "en").toLowerCase();
-            const heading = enrollmentForm.querySelector("h3");
-            if (heading) heading.textContent = language.startsWith("pl")
-                ? "Zmień przypisanie ucznia do klasy"
-                : "Change student class enrollment";
-            const studentSelect = enrollmentForm.querySelector("select[name='studentProfileId']");
-            if (studentSelect && !studentSelect.nextElementSibling?.classList.contains("round2-enrollment-help")) {
-                const help = document.createElement("p");
-                help.className = "academic-help round2-enrollment-help";
-                help.textContent = language.startsWith("pl")
-                    ? "Wybierz istniejącego ucznia, a następnie jego nową klasę. Nie twórz tutaj ponownie profilu ucznia."
-                    : "Select an existing student, then choose the new class. Do not recreate the student profile here.";
-                studentSelect.insertAdjacentElement("afterend", help);
-            }
-        }
     }
+
+    function wireClassOverviewDialogs() {
+        document.querySelectorAll("[data-class-details-open]").forEach(button => {
+            button.addEventListener("click", () => {
+                const id = button.getAttribute("data-class-details-open");
+                if (!id) return;
+
+                const dialog = document.getElementById(id);
+                if (!(dialog instanceof HTMLDialogElement)) return;
+
+                if (typeof dialog.showModal === "function") {
+                    dialog.showModal();
+                }
+            });
+        });
+
+        document.querySelectorAll(".academic-class-details-dialog").forEach(dialog => {
+            if (!(dialog instanceof HTMLDialogElement)) return;
+
+            dialog.querySelectorAll("[data-class-details-close]").forEach(button => {
+                button.addEventListener("click", () => dialog.close());
+            });
+
+            dialog.addEventListener("click", event => {
+                if (event.target !== dialog) return;
+
+                const rect = dialog.getBoundingClientRect();
+                const inside =
+                    event.clientX >= rect.left &&
+                    event.clientX <= rect.right &&
+                    event.clientY >= rect.top &&
+                    event.clientY <= rect.bottom;
+
+                if (!inside) dialog.close();
+            });
+        });
+    }
+
+    function wireStudentMoveWorkflow() {
+        const form = document.getElementById("student-move-form");
+        if (!form) return;
+
+        const source = document.getElementById("move-source-class");
+        const target = document.getElementById("move-target-class");
+        const search = document.getElementById("student-move-search");
+        const rows = Array.from(document.querySelectorAll("[data-student-move-row]"));
+        const selectAll = document.getElementById("student-move-select-all");
+        const empty = document.getElementById("student-move-empty");
+        const emptyCopy = empty?.querySelector("strong");
+        const selectedCopy = document.getElementById("student-move-selected");
+        const headerCount = document.getElementById("student-move-header-count");
+        const visibleCount = document.getElementById("student-move-visible-count");
+        const readyCopy = document.getElementById("student-move-ready-copy");
+        const sourceMeta = document.getElementById("student-move-source-meta");
+        const targetHint = document.getElementById("student-move-target-hint");
+        const studentsPanel = document.getElementById("student-move-students-panel");
+        const targetPanel = document.getElementById("student-move-target-panel");
+        const review = document.getElementById("student-move-review");
+        const dialog = document.getElementById("student-move-dialog");
+        const reviewFrom = document.getElementById("student-move-review-from");
+        const reviewTo = document.getElementById("student-move-review-to");
+        const reviewCount = document.getElementById("student-move-review-count");
+        const reviewStudents = document.getElementById("student-move-review-students");
+        const cancel = document.getElementById("student-move-cancel");
+        const stepSource = document.getElementById("student-move-step-source");
+        const stepStudents = document.getElementById("student-move-step-students");
+        const stepTarget = document.getElementById("student-move-step-target");
+        const stepStudentsCopy = document.getElementById("student-move-step-students-copy");
+
+        if (!source || !target) return;
+
+        const language = (document.documentElement.lang || "en").toLowerCase();
+        const isPolish = language.startsWith("pl");
+        const selectedIds = new Set();
+        const selectSourceCopy = form.dataset.selectSource || "Select a source class.";
+        const noStudentsCopy = form.dataset.noStudents || "No students in this class.";
+        const selectedTemplate = form.dataset.selectedTemplate || "{0} selected";
+        const targetPlaceholder = target.options[0]?.textContent || "Select";
+
+        const targetCatalog = Array.from(target.options)
+            .filter(option => option.value)
+            .map(option => ({
+                value: option.value,
+                text: option.textContent || "",
+                yearId: option.dataset.yearId || "",
+                programId: option.dataset.programId || "",
+                adoptionId: option.dataset.adoptionId || "",
+                levelKey: option.dataset.levelKey || "",
+                classLabel: option.dataset.classLabel || option.textContent || ""
+            }));
+
+        const sourceRows = () =>
+            rows.filter(row => row.dataset.classId === source.value);
+
+        const visibleRows = () =>
+            sourceRows().filter(row => !row.hidden);
+
+        const selectedRows = () =>
+            sourceRows().filter(row => {
+                const checkbox = row.querySelector("input[type='checkbox']");
+                return checkbox && selectedIds.has(checkbox.value);
+            });
+
+        const selectedText = count =>
+            selectedTemplate.replace("{0}", String(count));
+
+        const updateSteps = () => {
+            const hasSource = Boolean(source.value);
+            const hasStudents = selectedIds.size > 0;
+            const hasTarget = Boolean(target.value);
+
+            [stepSource, stepStudents, stepTarget].forEach(step => {
+                step?.classList.remove("is-active", "is-complete");
+            });
+
+            if (!hasSource) {
+                stepSource?.classList.add("is-active");
+            } else {
+                stepSource?.classList.add("is-complete");
+                if (!hasStudents) {
+                    stepStudents?.classList.add("is-active");
+                } else {
+                    stepStudents?.classList.add("is-complete");
+                    if (!hasTarget) stepTarget?.classList.add("is-active");
+                    else stepTarget?.classList.add("is-complete");
+                }
+            }
+        };
+
+        const refreshSelection = () => {
+            const count = selectedIds.size;
+            const copy = selectedText(count);
+
+            if (selectedCopy) selectedCopy.textContent = copy;
+            if (headerCount) headerCount.textContent = copy;
+            if (stepStudentsCopy) stepStudentsCopy.textContent = copy;
+
+            rows.forEach(row => {
+                const checkbox = row.querySelector("input[type='checkbox']");
+                const isSelected = Boolean(checkbox && selectedIds.has(checkbox.value));
+                row.classList.toggle("is-selected", isSelected);
+                if (checkbox) checkbox.checked = isSelected;
+            });
+
+            const visible = visibleRows();
+            const visibleSelected = visible.filter(row => {
+                const checkbox = row.querySelector("input[type='checkbox']");
+                return Boolean(checkbox && selectedIds.has(checkbox.value));
+            });
+
+            if (selectAll) {
+                selectAll.checked =
+                    visible.length > 0 && visibleSelected.length === visible.length;
+                selectAll.indeterminate =
+                    visibleSelected.length > 0 && visibleSelected.length < visible.length;
+            }
+
+            const ready =
+                count > 0 &&
+                Boolean(source.value) &&
+                Boolean(target.value) &&
+                source.value !== target.value;
+
+            if (review) review.disabled = !ready;
+            if (readyCopy) {
+                readyCopy.textContent = ready
+                    ? (isPolish
+                        ? "Gotowe do sprawdzenia przed przeniesieniem."
+                        : "Ready to review before moving.")
+                    : (isPolish
+                        ? "Wybierz klasę źródłową, uczniów i klasę docelową."
+                        : "Choose a source class, students, and a destination class.");
+            }
+
+            updateSteps();
+        };
+
+        const refreshStudents = (resetSelection = false) => {
+            const sourceId = source.value;
+            const query = (search?.value || "").trim().toLocaleLowerCase();
+
+            if (resetSelection) selectedIds.clear();
+
+            let visible = 0;
+            let total = 0;
+
+            rows.forEach(row => {
+                const checkbox = row.querySelector("input[type='checkbox']");
+                const inSource = Boolean(sourceId) && row.dataset.classId === sourceId;
+                const matches =
+                    !query ||
+                    (row.dataset.search || "").includes(query);
+                const show = inSource && matches;
+
+                row.hidden = !show;
+                if (checkbox) {
+                    checkbox.disabled = !inSource;
+                    if (!inSource) {
+                        selectedIds.delete(checkbox.value);
+                        checkbox.checked = false;
+                    }
+                }
+
+                if (inSource) total++;
+                if (show) visible++;
+            });
+
+            if (search) {
+                search.disabled = !sourceId;
+                if (!sourceId) search.value = "";
+            }
+
+            if (selectAll) {
+                selectAll.disabled = !sourceId || visible === 0;
+            }
+
+            studentsPanel?.classList.toggle("is-disabled", !sourceId);
+
+            if (empty) {
+                empty.hidden = Boolean(sourceId && visible > 0);
+                if (emptyCopy) {
+                    emptyCopy.textContent = !sourceId
+                        ? selectSourceCopy
+                        : noStudentsCopy;
+                }
+            }
+
+            if (visibleCount) {
+                visibleCount.textContent = !sourceId
+                    ? selectSourceCopy
+                    : (isPolish
+                        ? visible + " z " + total + " uczniów"
+                        : visible + " of " + total + " students");
+            }
+
+            refreshSelection();
+        };
+
+        const refreshTargets = () => {
+            const sourceOption = source.options[source.selectedIndex];
+            const sourceId = source.value;
+            const yearId = sourceOption?.dataset.yearId || "";
+            const programId = sourceOption?.dataset.programId || "";
+            const adoptionId = sourceOption?.dataset.adoptionId || "";
+            const levelKey = sourceOption?.dataset.levelKey || "";
+
+            target.replaceChildren();
+            const placeholder = document.createElement("option");
+            placeholder.value = "";
+            placeholder.textContent = targetPlaceholder;
+            target.appendChild(placeholder);
+
+            const compatible = targetCatalog.filter(item =>
+                Boolean(sourceId) &&
+                item.value !== sourceId &&
+                item.yearId === yearId &&
+                item.programId === programId &&
+                item.adoptionId === adoptionId &&
+                item.levelKey === levelKey);
+
+            compatible.forEach(item => {
+                const option = document.createElement("option");
+                option.value = item.value;
+                option.textContent = item.text;
+                option.dataset.classLabel = item.classLabel;
+                target.appendChild(option);
+            });
+
+            target.disabled = !sourceId || compatible.length === 0;
+            targetPanel?.classList.toggle("is-disabled", target.disabled);
+
+            if (targetHint) {
+                targetHint.textContent = !sourceId
+                    ? selectSourceCopy
+                    : compatible.length === 0
+                        ? (isPolish
+                            ? "Brak zgodnej klasy docelowej dla tego samego roku, programu i poziomu."
+                            : "No compatible destination class exists in the same year, program, and level.")
+                        : (isPolish
+                            ? "Dostępne klasy docelowe: " + compatible.length + "."
+                            : compatible.length + " compatible destination class" +
+                                (compatible.length === 1 ? "" : "es") + ".");
+            }
+
+            refreshSelection();
+        };
+
+        const refreshSourceMeta = () => {
+            if (!sourceMeta) return;
+            const option = source.options[source.selectedIndex];
+            sourceMeta.hidden = !source.value;
+            sourceMeta.textContent = source.value
+                ? (option?.textContent || "")
+                : "";
+        };
+
+        source.addEventListener("change", () => {
+            selectedIds.clear();
+            if (search) search.value = "";
+            refreshSourceMeta();
+            refreshStudents(true);
+            refreshTargets();
+        });
+
+        target.addEventListener("change", refreshSelection);
+        search?.addEventListener("input", () => refreshStudents(false));
+
+        rows.forEach(row => {
+            const checkbox = row.querySelector("input[type='checkbox']");
+            checkbox?.addEventListener("change", () => {
+                if (checkbox.disabled) return;
+                if (checkbox.checked) selectedIds.add(checkbox.value);
+                else selectedIds.delete(checkbox.value);
+                refreshSelection();
+            });
+        });
+
+        selectAll?.addEventListener("change", () => {
+            visibleRows().forEach(row => {
+                const checkbox = row.querySelector("input[type='checkbox']");
+                if (!checkbox || checkbox.disabled) return;
+
+                checkbox.checked = selectAll.checked;
+                if (selectAll.checked) selectedIds.add(checkbox.value);
+                else selectedIds.delete(checkbox.value);
+            });
+            refreshSelection();
+        });
+
+        review?.addEventListener("click", () => {
+            const sourceOption = source.options[source.selectedIndex];
+            const targetOption = target.options[target.selectedIndex];
+            const selected = selectedRows();
+
+            if (!sourceOption?.value || !targetOption?.value || selected.length === 0)
+                return;
+
+            if (reviewFrom) {
+                reviewFrom.textContent =
+                    sourceOption.dataset.classLabel ||
+                    sourceOption.textContent ||
+                    "";
+            }
+            if (reviewTo) {
+                reviewTo.textContent =
+                    targetOption.dataset.classLabel ||
+                    targetOption.textContent ||
+                    "";
+            }
+            if (reviewCount) reviewCount.textContent = String(selected.length);
+
+            if (reviewStudents) {
+                reviewStudents.replaceChildren();
+                selected.forEach(row => {
+                    const item = document.createElement("li");
+                    item.textContent = row.dataset.studentName || "";
+                    reviewStudents.appendChild(item);
+                });
+            }
+
+            if (typeof dialog?.showModal === "function") {
+                dialog.showModal();
+            }
+        });
+
+        cancel?.addEventListener("click", () => dialog?.close());
+
+        dialog?.addEventListener("click", event => {
+            if (event.target === dialog) dialog.close();
+        });
+
+        form.addEventListener("submit", event => {
+            const valid =
+                Boolean(source.value) &&
+                Boolean(target.value) &&
+                source.value !== target.value &&
+                selectedRows().length > 0;
+
+            if (!valid || form.dataset.submitting === "true") {
+                event.preventDefault();
+                return;
+            }
+
+            form.dataset.submitting = "true";
+            const confirmButton = dialog?.querySelector("button[type='submit']");
+            if (confirmButton) confirmButton.disabled = true;
+        });
+
+        refreshSourceMeta();
+        refreshStudents(true);
+        refreshTargets();
+    }
+
 
     function classFirstLabel(label) {
         const parts = String(label || "").split("·").map(part => part.trim()).filter(Boolean);
@@ -119,8 +470,7 @@
 
     async function wireAcademicClassRelationships() {
         const teacherClass = document.getElementById("teacher-class");
-        const enrollmentClass = document.getElementById("enroll-class");
-        if (!teacherClass && !enrollmentClass) return;
+        if (!teacherClass) return;
 
         let response;
         try {
@@ -134,12 +484,11 @@
 
         const classOptions = await response.json();
         const labels = new Map(classOptions.map(item => [String(item.id).toLowerCase(), item.label]));
-        [teacherClass, enrollmentClass].filter(Boolean).forEach(select => {
-            Array.from(select.options).forEach(option => {
-                if (!option.value) return;
-                option.textContent = classFirstLabel(labels.get(option.value.toLowerCase()) || option.textContent);
-                option.title = option.textContent;
-            });
+        Array.from(teacherClass.options).forEach(option => {
+            if (!option.value) return;
+            option.textContent = classFirstLabel(
+                labels.get(option.value.toLowerCase()) || option.textContent);
+            option.title = option.textContent;
         });
 
         if (teacherClass) {
@@ -583,6 +932,8 @@
         wireConfirmationForms();
         wireSchoolCountryTimeZones();
         wireStudentWorkflowCleanup();
+        wireClassOverviewDialogs();
+        wireStudentMoveWorkflow();
         void wireAcademicClassRelationships().then(() => {
             wireTeacherAssignmentDirectory();
         });

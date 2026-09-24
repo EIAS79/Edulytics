@@ -262,8 +262,11 @@ public sealed class StudentPlacementService : IStudentPlacementService
             return StudentPlacementResult.Denied("Required");
 
         var failures = new List<StudentPlacementFailure>();
-        var moved = 0;
+        var enrollments = new List<StudentEnrollment>(ids.Length);
 
+        // Validate the full selection before mutating any tracked enrollment.
+        // A reviewed bulk move is atomic: one stale/invalid student blocks the
+        // operation instead of leaving the class split across two destinations.
         foreach (var studentId in ids)
         {
             var profile = await _academic.GetStudentProfileAsync(
@@ -310,26 +313,11 @@ public sealed class StudentPlacementService : IStudentPlacementService
                 continue;
             }
 
-            existing.ClassGroupId = targetClass.Id;
-            moved++;
+            enrollments.Add(existing);
         }
 
-        if (moved == 0)
+        if (failures.Count > 0)
         {
-            return new StudentPlacementResult(
-                failures.Count == 0,
-                0,
-                0,
-                0,
-                failures);
-        }
-
-        var saved = await _placements.SaveAsync(cancellationToken);
-        if (!saved.Succeeded)
-        {
-            failures.Add(new StudentPlacementFailure(
-                Guid.Empty,
-                "PersistenceError"));
             return new StudentPlacementResult(
                 false,
                 0,
@@ -338,12 +326,28 @@ public sealed class StudentPlacementService : IStudentPlacementService
                 failures);
         }
 
+        foreach (var enrollment in enrollments)
+            enrollment.ClassGroupId = targetClass.Id;
+
+        var saved = await _placements.SaveAsync(cancellationToken);
+        if (!saved.Succeeded)
+        {
+            return new StudentPlacementResult(
+                false,
+                0,
+                0,
+                0,
+                [new StudentPlacementFailure(
+                    Guid.Empty,
+                    "PersistenceError")]);
+        }
+
         return new StudentPlacementResult(
-            failures.Count == 0,
+            true,
             0,
-            moved,
+            enrollments.Count,
             0,
-            failures);
+            []);
     }
 
 }
