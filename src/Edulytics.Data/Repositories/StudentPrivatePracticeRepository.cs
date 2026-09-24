@@ -215,6 +215,63 @@ public sealed class StudentPrivatePracticeRepository(EdulyticsDbContext db)
 
         var attemptById = attempts.ToDictionary(x => x.Id);
         var attemptIds = attemptById.Keys.ToArray();
+        var adoptionIds = attempts
+            .Select(x => x.CurriculumAdoptionId)
+            .Distinct()
+            .ToArray();
+
+        var adoptions = await db.SchoolCurriculumAdoptions.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == student.SchoolId &&
+                adoptionIds.Contains(x.Id))
+            .ToDictionaryAsync(x => x.Id, cancellationToken);
+
+        var enrollments = await db.StudentEnrollments.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == student.SchoolId &&
+                x.StudentProfileId == student.Id)
+            .ToListAsync(cancellationToken);
+
+        var enrolledClassIds = enrollments
+            .Select(x => x.ClassGroupId)
+            .Distinct()
+            .ToArray();
+
+        var classes = await db.ClassGroups.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == student.SchoolId &&
+                enrolledClassIds.Contains(x.Id))
+            .ToDictionaryAsync(x => x.Id, cancellationToken);
+
+        var academicScopeByAdoption =
+            new Dictionary<Guid, (Guid AcademicYearId, Guid ClassGroupId, Guid SubjectId)>();
+
+        foreach (var adoptionId in adoptionIds)
+        {
+            if (!adoptions.TryGetValue(adoptionId, out var adoption))
+                continue;
+
+            var candidates = enrollments
+                .Where(enrollment =>
+                    classes.TryGetValue(
+                        enrollment.ClassGroupId,
+                        out var classGroup) &&
+                    classGroup.CurriculumAdoptionId == adoptionId &&
+                    (!adoption.AcademicYearId.HasValue ||
+                     adoption.AcademicYearId.Value ==
+                        enrollment.AcademicYearId))
+                .Select(enrollment =>
+                    (
+                        enrollment.AcademicYearId,
+                        enrollment.ClassGroupId,
+                        adoption.SubjectId
+                    ))
+                .Distinct()
+                .ToArray();
+
+            if (candidates.Length == 1)
+                academicScopeByAdoption[adoptionId] = candidates[0];
+        }
 
         var attemptItems = await db.PracticeAttemptItems.AsNoTracking()
             .Where(x =>
@@ -278,10 +335,20 @@ public sealed class StudentPrivatePracticeRepository(EdulyticsDbContext db)
                 continue;
             }
 
+            if (!academicScopeByAdoption.TryGetValue(
+                    attempt.CurriculumAdoptionId,
+                    out var academicScope))
+            {
+                continue;
+            }
+
             result.Add(
                 new PrivatePracticeEvidenceItem(
                     attempt.Id,
                     attempt.CurriculumAdoptionId,
+                    academicScope.AcademicYearId,
+                    academicScope.ClassGroupId,
+                    academicScope.SubjectId,
                     attempt.CurriculumPedagogicalLessonId,
                     item.Id,
                     item.GenerationFamily,
