@@ -646,6 +646,7 @@ public sealed class StudentPrivatePracticeServiceTests
             return Task.FromResult(Context);
         }
         public Task<IReadOnlyList<PrivatePracticeAttemptSummary>> ListPrivateAttemptsAsync(Guid studentUserId, CancellationToken cancellationToken = default) => Task.FromResult(Attempts);
+        public Task<IReadOnlyList<PrivatePracticeEvidenceItem>> ListPrivateEvidenceAsync(Guid studentUserId, CancellationToken cancellationToken = default) => Task.FromResult<IReadOnlyList<PrivatePracticeEvidenceItem>>([]);
         public Task AddGeneratedAttemptAsync(IReadOnlyList<AssessmentItem> items, IReadOnlyList<AssessmentItemOutcome> itemOutcomes, PracticeAttempt attempt, IReadOnlyList<PracticeAttemptItem> attemptItems, IReadOnlyList<StudentItemExposure> exposures, CancellationToken cancellationToken = default)
         {
             SavedAttempt = attempt;

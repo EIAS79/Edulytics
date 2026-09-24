@@ -1,4 +1,5 @@
 using Edulytics.Core.Entities;
+using Edulytics.Core.Enums;
 using Edulytics.Core.Practice;
 using Edulytics.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
@@ -184,5 +185,192 @@ public sealed class StudentPrivatePracticeRepository(EdulyticsDbContext db)
                 x.Id, x.CurriculumAdoptionId, x.CurriculumPedagogicalLessonId,
                 x.Status, x.StartedAtUtc, x.SubmittedAtUtc, x.Score, x.MaxScore, x.Percentage))
             .ToListAsync(cancellationToken);
+    }
+
+    public async Task<IReadOnlyList<PrivatePracticeEvidenceItem>> ListPrivateEvidenceAsync(
+        Guid studentUserId,
+        CancellationToken cancellationToken = default)
+    {
+        var student = await db.StudentProfiles.AsNoTracking()
+            .SingleOrDefaultAsync(
+                x =>
+                    x.UserId == studentUserId &&
+                    !x.IsArchived,
+                cancellationToken);
+
+        if (student is null)
+            return [];
+
+        var attempts = await db.PracticeAttempts.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == student.SchoolId &&
+                x.StudentProfileId == student.Id &&
+                x.IsPrivate &&
+                x.Status == PracticeAttemptStatus.Submitted)
+            .OrderByDescending(x => x.SubmittedAtUtc ?? x.StartedAtUtc)
+            .Take(100)
+            .ToListAsync(cancellationToken);
+
+        if (attempts.Count == 0)
+            return [];
+
+        var attemptById = attempts.ToDictionary(x => x.Id);
+        var attemptIds = attemptById.Keys.ToArray();
+        var adoptionIds = attempts
+            .Select(x => x.CurriculumAdoptionId)
+            .Distinct()
+            .ToArray();
+
+        var adoptions = await db.SchoolCurriculumAdoptions.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == student.SchoolId &&
+                adoptionIds.Contains(x.Id))
+            .ToDictionaryAsync(x => x.Id, cancellationToken);
+
+        var enrollments = await db.StudentEnrollments.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == student.SchoolId &&
+                x.StudentProfileId == student.Id)
+            .ToListAsync(cancellationToken);
+
+        var enrolledClassIds = enrollments
+            .Select(x => x.ClassGroupId)
+            .Distinct()
+            .ToArray();
+
+        var classes = await db.ClassGroups.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == student.SchoolId &&
+                enrolledClassIds.Contains(x.Id))
+            .ToDictionaryAsync(x => x.Id, cancellationToken);
+
+        var academicScopeByAdoption =
+            new Dictionary<Guid, (Guid AcademicYearId, Guid ClassGroupId, Guid SubjectId)>();
+
+        foreach (var adoptionId in adoptionIds)
+        {
+            if (!adoptions.TryGetValue(adoptionId, out var adoption))
+                continue;
+
+            var candidates = enrollments
+                .Where(enrollment =>
+                    classes.TryGetValue(
+                        enrollment.ClassGroupId,
+                        out var classGroup) &&
+                    classGroup.CurriculumAdoptionId == adoptionId &&
+                    (!adoption.AcademicYearId.HasValue ||
+                     adoption.AcademicYearId.Value ==
+                        enrollment.AcademicYearId))
+                .Select(enrollment =>
+                    (
+                        enrollment.AcademicYearId,
+                        enrollment.ClassGroupId,
+                        adoption.SubjectId
+                    ))
+                .Distinct()
+                .ToArray();
+
+            if (candidates.Length == 1)
+                academicScopeByAdoption[adoptionId] = candidates[0];
+        }
+
+        var attemptItems = await db.PracticeAttemptItems.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == student.SchoolId &&
+                attemptIds.Contains(x.PracticeAttemptId))
+            .ToListAsync(cancellationToken);
+
+        if (attemptItems.Count == 0)
+            return [];
+
+        var attemptItemById = attemptItems.ToDictionary(x => x.Id);
+        var attemptItemIds = attemptItemById.Keys.ToArray();
+
+        var responses = await db.PracticeResponses.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == student.SchoolId &&
+                attemptItemIds.Contains(x.PracticeAttemptItemId))
+            .ToListAsync(cancellationToken);
+
+        var itemIds = attemptItems
+            .Select(x => x.AssessmentItemId)
+            .Distinct()
+            .ToArray();
+
+        var items = await db.AssessmentItems.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == student.SchoolId &&
+                itemIds.Contains(x.Id))
+            .ToDictionaryAsync(x => x.Id, cancellationToken);
+
+        var outcomeRows = await db.AssessmentItemOutcomes.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == student.SchoolId &&
+                itemIds.Contains(x.AssessmentItemId))
+            .ToListAsync(cancellationToken);
+
+        var outcomesByItem = outcomeRows
+            .GroupBy(x => x.AssessmentItemId)
+            .ToDictionary(
+                x => x.Key,
+                x => (IReadOnlyList<Guid>)x
+                    .Select(row => row.LearningOutcomeId)
+                    .Distinct()
+                    .ToArray());
+
+        var result = new List<PrivatePracticeEvidenceItem>();
+
+        foreach (var response in responses)
+        {
+            if (!attemptItemById.TryGetValue(
+                    response.PracticeAttemptItemId,
+                    out var attemptItem) ||
+                !attemptById.TryGetValue(
+                    attemptItem.PracticeAttemptId,
+                    out var attempt) ||
+                !items.TryGetValue(
+                    attemptItem.AssessmentItemId,
+                    out var item) ||
+                attemptItem.MaxScore <= 0m)
+            {
+                continue;
+            }
+
+            if (!academicScopeByAdoption.TryGetValue(
+                    attempt.CurriculumAdoptionId,
+                    out var academicScope))
+            {
+                continue;
+            }
+
+            result.Add(
+                new PrivatePracticeEvidenceItem(
+                    attempt.Id,
+                    attempt.CurriculumAdoptionId,
+                    academicScope.AcademicYearId,
+                    academicScope.ClassGroupId,
+                    academicScope.SubjectId,
+                    attempt.CurriculumPedagogicalLessonId,
+                    item.Id,
+                    item.GenerationFamily,
+                    item.GenerationParametersJson,
+                    item.ValidationMetadataJson,
+                    item.Difficulty,
+                    response.IsCorrect,
+                    response.Score,
+                    attemptItem.MaxScore,
+                    response.AnsweredAtUtc,
+                    outcomesByItem.TryGetValue(
+                        item.Id,
+                        out var outcomeIds)
+                        ? outcomeIds
+                        : []));
+        }
+
+        return result
+            .OrderByDescending(x => x.AnsweredAtUtc)
+            .ThenBy(x => x.AttemptId)
+            .ThenBy(x => x.AssessmentItemId)
+            .ToArray();
     }
 }

@@ -117,6 +117,49 @@ internal static class EvaluationSkillResolver
         return ResolveExpected(outcome);
     }
 
+    public static EvaluationSkillDescriptor? ResolvePrivatePractice(
+        string? generationParametersJson,
+        string? validationMetadataJson,
+        CurriculumPedagogicalLesson? lesson)
+    {
+        if (TryRead(
+                generationParametersJson,
+                out var exactSkillId) ||
+            TryRead(
+                validationMetadataJson,
+                out exactSkillId))
+        {
+            return Descriptor(
+                exactSkillId,
+                EvaluationSkillResolutionKind.ExactSkillContract);
+        }
+
+        if (lesson is not null &&
+            Stage18PracticeSkillContracts.TryResolve(
+                lesson.Code,
+                out var practiceContract) &&
+            practiceContract is not null)
+        {
+            return Descriptor(
+                practiceContract.SkillId,
+                EvaluationSkillResolutionKind.ExactSkillContract);
+        }
+
+        if (lesson is not null &&
+            SupportingPracticeTargetRuleRegistry.TryResolveReviewedOfficialTitle(
+                lesson.Code,
+                lesson.Title,
+                out var reviewedRule) &&
+            reviewedRule is not null)
+        {
+            return Descriptor(
+                reviewedRule.SkillId,
+                EvaluationSkillResolutionKind.ReviewedOutcomeMapping);
+        }
+
+        return null;
+    }
+
     private static EvaluationSkillDescriptor Descriptor(
         string skillId,
         EvaluationSkillResolutionKind resolutionKind)

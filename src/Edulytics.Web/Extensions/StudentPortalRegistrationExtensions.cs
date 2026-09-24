@@ -1,6 +1,7 @@
 using Edulytics.Core.Constants;
 using Edulytics.Core.Interfaces;
 using Edulytics.Data.Repositories;
+using Edulytics.Services.Analytics;
 using Edulytics.Services.StudentPortal;
 using Edulytics.Services.StudentSetup;
 
@@ -18,6 +19,10 @@ public static class StudentPortalRegistrationExtensions
         services.AddScoped<
             IStudentPortalService,
             StudentPortalService>();
+
+        services.AddScoped<
+            IStudentSelfEvaluationService,
+            StudentSelfEvaluationService>();
 
         services.AddScoped<
             IStudentRoleProvisioningOperations,

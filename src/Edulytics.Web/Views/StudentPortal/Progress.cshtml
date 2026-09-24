@@ -1,0 +1,336 @@
+@model Edulytics.Web.ViewModels.StudentPortal.StudentProgressViewModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@using Edulytics.Core.Analytics
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = S["MyProgress"].Value;
+
+    var evaluationPage = Model.Evaluation;
+    var e = evaluationPage.OfficialEvaluation;
+
+    string Value(decimal? value) =>
+        value.HasValue ? $"{value.Value:0.#}%" : "—";
+
+    string Trend(EvaluationTrendBand value) => value switch
+    {
+        EvaluationTrendBand.RapidlyImproving => "↑↑ Improving quickly",
+        EvaluationTrendBand.Improving => "↑ Improving",
+        EvaluationTrendBand.Stable => "→ Stable",
+        EvaluationTrendBand.Declining => "↓ Needs review",
+        EvaluationTrendBand.RapidlyDeclining => "↓↓ Needs review",
+        _ => S["NotEnoughEvidence"].Value
+    };
+
+    string TrendClass(EvaluationTrendBand value) => value switch
+    {
+        EvaluationTrendBand.RapidlyImproving or EvaluationTrendBand.Improving => "is-positive",
+        EvaluationTrendBand.Declining or EvaluationTrendBand.RapidlyDeclining => "is-negative",
+        EvaluationTrendBand.Stable => "is-neutral",
+        _ => "is-muted"
+    };
+
+    string SkillStatus(EvaluationSkillStatus value) => value switch
+    {
+        EvaluationSkillStatus.Strong or EvaluationSkillStatus.Secure => S["Secure"].Value,
+        EvaluationSkillStatus.Developing => S["Developing"].Value,
+        EvaluationSkillStatus.NeedsFocus => S["NeedsFocus"].Value,
+        EvaluationSkillStatus.Critical => S["Critical"].Value,
+        _ => S["NotEnoughEvidence"].Value
+    };
+
+    string StatusClass(EvaluationSkillStatus value) => value switch
+    {
+        EvaluationSkillStatus.Strong or EvaluationSkillStatus.Secure => "is-positive",
+        EvaluationSkillStatus.Developing => "is-neutral",
+        EvaluationSkillStatus.NeedsFocus => "is-warning",
+        EvaluationSkillStatus.Critical => "is-negative",
+        _ => "is-muted"
+    };
+}
+
+<section class="student-progress-page">
+    <header class="student-progress-hero">
+        <div>
+            <span class="student-eyebrow">@S["MyEvaluation"]</span>
+            <h1>@e.SubjectName</h1>
+            <p>@e.AcademicYearName · @e.ClassName</p>
+            <small>@S["OfficialEvaluationNote"]</small>
+        </div>
+
+        @if (Model.Workspace.Learning.Count > 1)
+        {
+            <div class="student-progress-subject-switcher">
+                @foreach (var subject in Model.Workspace.Learning)
+                {
+                    var isCurrent =
+                        subject.AcademicYearId == e.AcademicYearId &&
+                        subject.ClassGroupId == e.ClassGroupId &&
+                        subject.SubjectId == e.SubjectId;
+
+                    <a class="@(isCurrent ? "is-active" : "")"
+                       asp-action="Progress"
+                       asp-route-academicYearId="@subject.AcademicYearId"
+                       asp-route-classGroupId="@subject.ClassGroupId"
+                       asp-route-subjectId="@subject.SubjectId">
+                        @subject.SubjectName
+                        <small>@subject.ClassName</small>
+                    </a>
+                }
+            </div>
+        }
+    </header>
+
+    <section class="student-progress-overview">
+        <article class="student-progress-primary">
+            <span>@S["CurrentMastery"]</span>
+            <div class="student-progress-ring"
+                 style="--student-progress-score:@((e.CurrentMasteryPercentage ?? 0m).ToString(System.Globalization.CultureInfo.InvariantCulture))">
+                <strong>@Value(e.CurrentMasteryPercentage)</strong>
+            </div>
+            <small>@e.EvaluatedSkillCount / @e.ExpectedSkillCount @S["MySkills"].Value.ToLowerInvariant()</small>
+        </article>
+
+        <div class="student-progress-metric-grid">
+            <article>
+                <span>@S["AssessmentMastery"]</span>
+                <strong>@Value(e.AssessmentMasteryPercentage)</strong>
+            </article>
+            <article>
+                <span>@S["PrivatePracticeMastery"]</span>
+                <strong>@Value(evaluationPage.PrivatePractice.MasteryPercentage)</strong>
+            </article>
+            <article>
+                <span>@S["PracticeAssessmentGap"]</span>
+                <strong>
+                    @(evaluationPage.PrivatePracticeToAssessmentGapPercentagePoints.HasValue
+                        ? $"{evaluationPage.PrivatePracticeToAssessmentGapPercentagePoints.Value:+0.#;-0.#;0} pts"
+                        : "—")
+                </strong>
+            </article>
+            <article>
+                <span>@S["CurriculumCoverage"]</span>
+                <strong>@e.CurriculumCoveragePercentage.ToString("0.#")%</strong>
+            </article>
+            <article>
+                <span>@S["EvidenceConfidence"]</span>
+                <strong>@e.ConfidencePercentage.ToString("0.#")%</strong>
+                <small>@e.ConfidenceBand</small>
+            </article>
+            <article>
+                <span>@S["Trend"]</span>
+                <strong class="@TrendClass(e.ShortTermTrend)">
+                    @Trend(e.ShortTermTrend)
+                </strong>
+            </article>
+        </div>
+    </section>
+
+    <section class="student-progress-two-column">
+        <article class="student-panel student-progress-next">
+            <div class="student-panel-heading">
+                <div>
+                    <span class="student-eyebrow">@S["SkillsToStrengthen"]</span>
+                    <h2>@S["MyNextSteps"]</h2>
+                </div>
+            </div>
+
+            @if (evaluationPage.NextSteps.Count == 0)
+            {
+                <p class="student-empty">@S["NotEnoughEvidence"]</p>
+            }
+            else
+            {
+                <div class="student-next-step-list">
+                    @foreach (var item in evaluationPage.NextSteps)
+                    {
+                        <article>
+                            <span class="student-next-step-priority priority-@item.Priority.ToString().ToLowerInvariant()">
+                                @item.Priority
+                            </span>
+                            <div>
+                                <strong>@item.SkillName</strong>
+                                <p>@item.Message</p>
+                            </div>
+                        </article>
+                    }
+                </div>
+            }
+
+            <div class="student-progress-actions">
+                <a class="student-button student-button-primary"
+                   asp-action="Learning"
+                   asp-route-curriculumAdoptionId="@Model.CurriculumAdoptionId"
+                   asp-route-classGroupId="@e.ClassGroupId">
+                    @S["StartLearning"]
+                </a>
+                <a class="student-button"
+                   asp-controller="StudentPractice"
+                   asp-action="Index"
+                   asp-route-curriculumAdoptionId="@Model.CurriculumAdoptionId">
+                    @S["StartPractice"]
+                </a>
+            </div>
+        </article>
+
+        <article class="student-panel">
+            <div class="student-panel-heading">
+                <div>
+                    <span class="student-eyebrow">@S["PrivatePractice"]</span>
+                    <h2>@S["PrivatePracticeMastery"]</h2>
+                </div>
+            </div>
+
+            <div class="student-private-practice-summary">
+                <div>
+                    <span>@S["PracticeSessions"]</span>
+                    <strong>@evaluationPage.PrivatePractice.SessionCount</strong>
+                </div>
+                <div>
+                    <span>@S["ActivePracticeDays"]</span>
+                    <strong>@evaluationPage.PrivatePractice.ActiveDayCount</strong>
+                </div>
+                <div>
+                    <span>@S["SkillsPracticed"]</span>
+                    <strong>@evaluationPage.PrivatePractice.SkillCount</strong>
+                </div>
+                <div>
+                    <span>@S["Evidence"]</span>
+                    <strong>@evaluationPage.PrivatePractice.EvidenceCount</strong>
+                </div>
+            </div>
+
+            <div class="student-progress-trend-line">
+                <span>@S["Trend"]</span>
+                <strong class="@TrendClass(evaluationPage.PrivatePractice.Trend)">
+                    @Trend(evaluationPage.PrivatePractice.Trend)
+                </strong>
+            </div>
+        </article>
+    </section>
+
+    <section class="student-panel">
+        <div class="student-panel-heading">
+            <div>
+                <span class="student-eyebrow">@S["MyEvaluation"]</span>
+                <h2>@S["MySkills"]</h2>
+            </div>
+        </div>
+
+        <div class="student-progress-skill-list">
+            @foreach (var skill in evaluationPage.Skills)
+            {
+                <article class="student-progress-skill-row">
+                    <div class="student-progress-skill-name">
+                        <strong>@skill.SkillName</strong>
+                        <span class="student-skill-status @StatusClass(skill.OfficialStatus)">
+                            @SkillStatus(skill.OfficialStatus)
+                        </span>
+                    </div>
+
+                    <div class="student-progress-skill-metrics">
+                        <div>
+                            <span>@S["CurrentMastery"]</span>
+                            <strong>@Value(skill.OfficialMasteryPercentage)</strong>
+                        </div>
+                        <div>
+                            <span>@S["AssessmentMastery"]</span>
+                            <strong>@Value(skill.AssessmentMasteryPercentage)</strong>
+                        </div>
+                        <div>
+                            <span>@S["PrivatePractice"]</span>
+                            <strong>@Value(skill.PrivatePracticeMasteryPercentage)</strong>
+                        </div>
+                        <div>
+                            <span>@S["Evidence"]</span>
+                            <strong>@skill.OfficialEvidenceCount + @skill.PrivatePracticeEvidenceCount</strong>
+                        </div>
+                    </div>
+
+                    <div class="student-progress-skill-footer">
+                        <span class="student-trend-chip @TrendClass(skill.OfficialTrend)">
+                            @Trend(skill.OfficialTrend)
+                        </span>
+                        @if (skill.PracticeToAssessmentGapPercentagePoints.HasValue)
+                        {
+                            <small>
+                                @S["PracticeAssessmentGap"]:
+                                @skill.PracticeToAssessmentGapPercentagePoints.Value.ToString("+0.#;-0.#;0") pts
+                            </small>
+                        }
+                    </div>
+                </article>
+            }
+        </div>
+    </section>
+
+    <section class="student-progress-two-column">
+        <article class="student-panel">
+            <div class="student-panel-heading">
+                <div>
+                    <span class="student-eyebrow">@S["Assessments"]</span>
+                    <h2>@S["AssessmentHistory"]</h2>
+                </div>
+            </div>
+
+            <div class="student-assessment-progress-list">
+                @foreach (var item in evaluationPage.Assessments)
+                {
+                    <article>
+                        <div>
+                            <strong>@item.Title</strong>
+                            <small>
+                                @item.AssessmentDate.ToString("yyyy-MM-dd")
+                                @if (!string.IsNullOrWhiteSpace(item.TermName))
+                                {
+                                    <text> · @item.TermName</text>
+                                }
+                            </small>
+                        </div>
+                        <div>
+                            <strong>@item.Percentage.ToString("0.#")%</strong>
+                            @if (item.ComparableSkillChangePercentagePoints.HasValue)
+                            {
+                                <small>
+                                    @S["ComparableSkillGrowth"]:
+                                    @item.ComparableSkillChangePercentagePoints.Value.ToString("+0.#;-0.#;0") pts
+                                </small>
+                            }
+                        </div>
+                    </article>
+                }
+            </div>
+        </article>
+
+        <article class="student-panel">
+            <div class="student-panel-heading">
+                <div>
+                    <span class="student-eyebrow">@S["MyProgress"]</span>
+                    <h2>@S["TermProgress"]</h2>
+                </div>
+            </div>
+
+            <div class="student-term-progress-list">
+                @foreach (var term in evaluationPage.Terms)
+                {
+                    <article>
+                        <div>
+                            <strong>@term.TermName</strong>
+                            <small>@term.EvidenceCount @S["Evidence"].Value.ToLowerInvariant()</small>
+                        </div>
+                        <div class="student-term-progress-values">
+                            <span>A <strong>@Value(term.AssessmentMasteryPercentage)</strong></span>
+                            <span>P <strong>@Value(term.PracticeMasteryPercentage)</strong></span>
+                            @if (term.ComparableSkillGrowthPercentagePoints.HasValue)
+                            {
+                                <span>
+                                    Δ
+                                    <strong>@term.ComparableSkillGrowthPercentagePoints.Value.ToString("+0.#;-0.#;0")</strong>
+                                </span>
+                            }
+                        </div>
+                    </article>
+                }
+            </div>
+        </article>
+    </section>
+</section>

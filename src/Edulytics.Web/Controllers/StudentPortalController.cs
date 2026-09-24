@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using System.Globalization;
 using Edulytics.Core.Mathematics.Practice;
+using Edulytics.Services.Analytics;
 using Edulytics.Services.Assessments;
 using Edulytics.Services.Notifications;
 using Edulytics.Services.LessonContent;
@@ -24,19 +25,22 @@ public sealed class StudentPortalController : Controller
     private readonly ILessonContentService _lessonContent;
     private readonly IStudentAssessmentDeliveryService _assessmentDelivery;
     private readonly IStudentPrivatePracticeService _privatePractice;
+    private readonly IStudentSelfEvaluationService _selfEvaluation;
 
     public StudentPortalController(
         IStudentPortalService portal,
         INotificationService notifications,
         ILessonContentService lessonContent,
         IStudentAssessmentDeliveryService assessmentDelivery,
-        IStudentPrivatePracticeService privatePractice)
+        IStudentPrivatePracticeService privatePractice,
+        IStudentSelfEvaluationService selfEvaluation)
     {
         _portal = portal;
         _notifications = notifications;
         _lessonContent = lessonContent;
         _assessmentDelivery = assessmentDelivery;
         _privatePractice = privatePractice;
+        _selfEvaluation = selfEvaluation;
     }
 
     [HttpGet("")]
@@ -47,7 +51,91 @@ public sealed class StudentPortalController : Controller
         var workspace = await _portal.GetWorkspaceAsync(actorId, cancellationToken);
         if (workspace.Value is null) return HandlePortalError(workspace.Error);
         var notifications = await _notifications.ListInboxAsync(actorId, cancellationToken);
-        return View(new StudentDashboardViewModel(workspace.Value, notifications.Value ?? []));
+
+        StudentSelfEvaluationPage? evaluation = null;
+        var defaultLearning = workspace.Value.Learning.FirstOrDefault();
+
+        if (defaultLearning is not null)
+        {
+            var evaluationResult = await _selfEvaluation.GetAsync(
+                actorId,
+                defaultLearning.AcademicYearId,
+                defaultLearning.ClassGroupId,
+                defaultLearning.SubjectId,
+                cancellationToken);
+
+            evaluation = evaluationResult.Value;
+        }
+
+        return View(
+            new StudentDashboardViewModel(
+                workspace.Value,
+                notifications.Value ?? [],
+                evaluation));
+    }
+
+    [HttpGet("progress")]
+    public async Task<IActionResult> Progress(
+        Guid? academicYearId,
+        Guid? classGroupId,
+        Guid? subjectId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        var workspaceResult = await _portal.GetWorkspaceAsync(
+            actorId,
+            cancellationToken);
+
+        if (workspaceResult.Value is null)
+            return HandlePortalError(workspaceResult.Error);
+
+        var workspace = workspaceResult.Value;
+
+        StudentLearningSubjectItem? selected = null;
+
+        if (academicYearId.HasValue &&
+            classGroupId.HasValue &&
+            subjectId.HasValue)
+        {
+            selected = workspace.Learning.FirstOrDefault(x =>
+                x.AcademicYearId == academicYearId.Value &&
+                x.ClassGroupId == classGroupId.Value &&
+                x.SubjectId == subjectId.Value);
+        }
+        else
+        {
+            selected = workspace.Learning.FirstOrDefault();
+        }
+
+        if (selected is null)
+            return NotFound();
+
+        var evaluation = await _selfEvaluation.GetAsync(
+            actorId,
+            selected.AcademicYearId,
+            selected.ClassGroupId,
+            selected.SubjectId,
+            cancellationToken);
+
+        if (evaluation.Value is null)
+        {
+            return evaluation.Error switch
+            {
+                StudentSelfEvaluationErrorCode.AccessDenied or
+                StudentSelfEvaluationErrorCode.ProfileNotLinked or
+                StudentSelfEvaluationErrorCode.SchoolNotActive => Forbid(),
+                _ => NotFound()
+            };
+        }
+
+        return View(
+            nameof(Progress),
+            new StudentProgressViewModel(
+                workspace,
+                evaluation.Value,
+                selected.CurriculumAdoptionId));
     }
 
     [HttpGet("learning")]
