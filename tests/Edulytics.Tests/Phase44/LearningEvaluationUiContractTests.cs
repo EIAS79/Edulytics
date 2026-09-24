@@ -46,7 +46,7 @@ public sealed class LearningEvaluationUiContractTests
         Assert.Contains("Model.Students", students);
         Assert.DoesNotContain("RiskStudents", students);
 
-        Assert.Contains("evaluation-score-ring", student);
+        Assert.Contains("evaluation-donut", student);
         Assert.Contains("EvidenceDetails", student);
         Assert.Contains("WeakPrerequisiteSkillKeys", student);
         Assert.Contains("PracticeToAssessmentGapPercentagePoints", student);
