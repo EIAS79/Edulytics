@@ -327,6 +327,36 @@ public sealed class IdentitySchoolUserRepositoryTests
             named.AcademicContexts!,
             contextItem => contextItem.ClassGroupId == classGroup.Id);
 
+        var byUnifiedName = await repository.QueryBySchoolAsync(
+            school.Id,
+            new Edulytics.Core.Users.SchoolUserListQuery(
+                Search: "Alice",
+                PageSize: 25));
+
+        Assert.Equal(
+            studentResult.User.Id,
+            Assert.Single(byUnifiedName.Users).Id);
+
+        var byUnifiedStudentNumber = await repository.QueryBySchoolAsync(
+            school.Id,
+            new Edulytics.Core.Users.SchoolUserListQuery(
+                Search: "CAMB-9001",
+                PageSize: 25));
+
+        Assert.Equal(
+            studentResult.User.Id,
+            Assert.Single(byUnifiedStudentNumber.Users).Id);
+
+        var byUnifiedUserId = await repository.QueryBySchoolAsync(
+            school.Id,
+            new Edulytics.Core.Users.SchoolUserListQuery(
+                Search: teacherResult.User.Id.ToString(),
+                PageSize: 25));
+
+        Assert.Equal(
+            teacherResult.User.Id,
+            Assert.Single(byUnifiedUserId.Users).Id);
+
         var byUserId = await repository.QueryBySchoolAsync(
             school.Id,
             new Edulytics.Core.Users.SchoolUserListQuery(
