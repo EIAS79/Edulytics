@@ -170,12 +170,13 @@
                     item.PracticeMasteryPercentage ?? 0m,
                     0m,
                     100m);
-                var gapClass = item.TransferGapPercentagePoints switch
-                {
-                    <= -10m => "is-negative",
-                    >= 10m => "is-positive",
-                    _ => "is-neutral"
-                };
+                var gapClass = !item.TransferGapPercentagePoints.HasValue
+                    ? "is-neutral"
+                    : item.TransferGapPercentagePoints.Value <= -10m
+                        ? "is-negative"
+                        : item.TransferGapPercentagePoints.Value >= 10m
+                            ? "is-positive"
+                            : "is-neutral";
 
                 <article class="evaluation-student-list-row">
                     <div class="evaluation-student-list-identity">
