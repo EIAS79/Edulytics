@@ -79,7 +79,7 @@ public sealed class AnalyticsInterventionWorkflowTests
             "User.IsInRole(RoleNames.Teacher)",
             view);
         Assert.Contains(
-            "asp-action="CreateInterventionCheck"",
+            "asp-action=\"CreateInterventionCheck\"",
             view);
         Assert.Contains(
             "learningOutcomeId",
