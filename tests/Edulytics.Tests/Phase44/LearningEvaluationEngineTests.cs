@@ -62,6 +62,7 @@ public sealed class LearningEvaluationEngineTests
         Assert.Equal(100m, evaluation.CurriculumCoveragePercentage);
 
         var skill = Assert.Single(evaluation.Skills);
+        Assert.True(skill.TargetedCheckAvailable);
         Assert.Equal(4, skill.Evidence.TotalEvidence);
         Assert.Equal(2, skill.Evidence.AssessmentEvidence);
         Assert.Equal(2, skill.Evidence.PracticeEvidence);
@@ -94,6 +95,7 @@ public sealed class LearningEvaluationEngineTests
         Assert.Equal(
             EvaluationSkillResolutionKind.ExactSkillContract,
             skill.SkillResolutionKind);
+        Assert.False(skill.TargetedCheckAvailable);
         Assert.Contains(
             "fractions.equivalent",
             skill.PrerequisiteSkillKeys);
