@@ -398,7 +398,10 @@ public static class AnalyticsPdfRenderer
         note.Format.Font.Color = Color.FromRgb(93, 105, 130);
         note.AddText(
             "Assessment and Practice remain separate. Private student Practice is not included in this staff-facing report. "
-            + "Missing evidence is never converted to 0% mastery.");
+            + "Missing evidence is never converted to 0% mastery. "
+            + (page.SelectedTermId.HasValue
+                ? "The selected term filters assessment/evidence history and highlights term metrics; current mastery remains the latest year-level evaluation."
+                : string.Empty));
 
         AddReportSectionHeading(section, "Strengths and areas to strengthen");
         var split = ReportTable(section, 2);
@@ -499,6 +502,17 @@ public static class AnalyticsPdfRenderer
         }
 
         AddReportSectionHeading(section, "Assessment development");
+        foreach (var item in page.Assessments
+                     .OrderBy(x => x.AssessmentDate)
+                     .TakeLast(8))
+        {
+            AddReportMetricBar(
+                section,
+                item.Title,
+                item.Percentage,
+                Color.FromRgb(84, 97, 225));
+        }
+
         if (page.Assessments.Count == 0)
         {
             AddEmpty(section, "No assessment history is available in this report scope.");
@@ -750,6 +764,17 @@ public static class AnalyticsPdfRenderer
         }
 
         AddReportSectionHeading(section, "Assessment development");
+        foreach (var item in page.Assessments
+                     .OrderBy(x => x.AssessmentDate)
+                     .TakeLast(8))
+        {
+            AddReportMetricBar(
+                section,
+                item.Title,
+                item.Percentage,
+                Color.FromRgb(84, 97, 225));
+        }
+
         if (page.Assessments.Count == 0)
         {
             AddEmpty(section, "No assessment history is available in this report scope.");
