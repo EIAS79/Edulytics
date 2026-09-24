@@ -10,7 +10,8 @@ public sealed record AnalyticsStudentAssessmentEvaluationItem(
     decimal Percentage,
     decimal? OverallChangePercentagePoints,
     decimal? ComparableSkillChangePercentagePoints,
-    int ComparableSkillCount);
+    int ComparableSkillCount,
+    bool IsPersonalizedCheck = false);
 
 public sealed record AnalyticsTermEvaluationItem(
     Guid TermId,

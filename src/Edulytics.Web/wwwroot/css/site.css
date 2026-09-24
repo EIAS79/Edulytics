@@ -12076,3 +12076,45 @@ a.lesson-content-row:hover
         width: 100%;
     }
 }
+
+
+/* Evaluation E18 — targeted intervention workflow */
+.evaluation-priority-actions {
+    display: grid;
+    gap: 8px;
+    justify-items: start;
+}
+
+.evaluation-intervention-form {
+    margin: 0;
+}
+
+.evaluation-intervention-button {
+    min-height: 32px;
+    padding: 5px 9px;
+    border-radius: 9px;
+    font-size: .7rem;
+    white-space: nowrap;
+}
+
+.evaluation-personalized-badge {
+    display: inline-flex;
+    width: fit-content;
+    margin-top: 4px;
+    padding: 3px 7px;
+    border-radius: 999px;
+    color: #4a43a9;
+    background: #efedff;
+    font-size: .65rem;
+    font-weight: 800;
+}
+
+@media (max-width: 760px) {
+    .evaluation-priority-actions {
+        justify-items: stretch;
+    }
+
+    .evaluation-intervention-button {
+        width: 100%;
+    }
+}
