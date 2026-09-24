@@ -1,3 +1,4 @@
+using Edulytics.Services.Analytics;
 using Edulytics.Services.Notifications;
 using Edulytics.Services.LessonContent;
 using Edulytics.Services.StudentPortal;
@@ -6,7 +7,8 @@ namespace Edulytics.Web.ViewModels.StudentPortal;
 
 public sealed record StudentDashboardViewModel(
     StudentPortalWorkspace Workspace,
-    IReadOnlyList<NotificationInboxItem> Notifications)
+    IReadOnlyList<NotificationInboxItem> Notifications,
+    StudentSelfEvaluationPage? Evaluation = null)
 {
     public int UnreadNotifications =>
         Notifications.Count(x => !x.ReadAtUtc.HasValue);
@@ -43,6 +45,11 @@ public sealed record StudentDashboardViewModel(
             ? null
             : RecentResults.Average(x => x.Percentage);
 }
+
+public sealed record StudentProgressViewModel(
+    StudentPortalWorkspace Workspace,
+    StudentSelfEvaluationPage Evaluation,
+    Guid CurriculumAdoptionId);
 
 public sealed record StudentLearningViewModel(
     StudentPortalWorkspace Workspace,
