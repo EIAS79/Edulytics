@@ -110,6 +110,55 @@ public sealed class IdentitySchoolUserRepository
             .ToArray();
     }
 
+    public async Task<SchoolUserDirectoryFilterOptions>
+        GetDirectoryFilterOptionsAsync(
+            Guid schoolId,
+            CancellationToken cancellationToken = default)
+    {
+        var years = await _context.AcademicYears
+            .AsNoTracking()
+            .Where(x => x.SchoolId == schoolId)
+            .OrderByDescending(x => x.StartsOn)
+            .ThenByDescending(x => x.Name)
+            .Select(x => new SchoolUserDirectoryFilterOption(
+                x.Id,
+                x.Name))
+            .ToArrayAsync(cancellationToken);
+
+        var programs = await _context.AcademicPrograms
+            .AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                !x.IsDefault)
+            .OrderBy(x => x.Name)
+            .Select(x => new SchoolUserDirectoryFilterOption(
+                x.Id,
+                x.Name))
+            .ToArrayAsync(cancellationToken);
+
+        var classes = await (
+                from classGroup in _context.ClassGroups.AsNoTracking()
+                join year in _context.AcademicYears.AsNoTracking()
+                    on classGroup.AcademicYearId equals year.Id
+                join program in _context.AcademicPrograms.AsNoTracking()
+                    on classGroup.AcademicProgramId equals program.Id
+                where classGroup.SchoolId == schoolId
+                orderby year.StartsOn descending,
+                    program.Name,
+                    classGroup.Name
+                select new SchoolUserClassFilterOption(
+                    classGroup.Id,
+                    classGroup.Name + " · " + year.Name + " · " + program.Name,
+                    year.Id,
+                    program.Id))
+            .ToArrayAsync(cancellationToken);
+
+        return new SchoolUserDirectoryFilterOptions(
+            years,
+            programs,
+            classes);
+    }
+
     public async Task<SchoolUserPage> QueryBySchoolAsync(
         Guid schoolId,
         SchoolUserListQuery query,
@@ -121,6 +170,9 @@ public sealed class IdentitySchoolUserRepository
         var pageSize = Math.Clamp(query.PageSize, 1, 100);
         var search = query.Search?.Trim();
         var role = query.Role?.Trim();
+        var name = query.Name?.Trim();
+        var userId = query.UserId?.Trim();
+        var email = query.Email?.Trim();
 
         var usersQuery = _context.Users
             .AsNoTracking()
@@ -129,7 +181,43 @@ public sealed class IdentitySchoolUserRepository
         if (!string.IsNullOrWhiteSpace(search))
         {
             usersQuery = usersQuery.Where(x =>
-                x.Email != null && EF.Functions.Like(x.Email, $"%{search}%"));
+                x.Email != null &&
+                EF.Functions.Like(x.Email, $"%{search}%"));
+        }
+
+        if (!string.IsNullOrWhiteSpace(email))
+        {
+            usersQuery = usersQuery.Where(x =>
+                x.Email != null &&
+                EF.Functions.Like(x.Email, $"%{email}%"));
+        }
+
+        if (!string.IsNullOrWhiteSpace(name))
+        {
+            var namedStudentUserIds = _context.StudentProfiles
+                .AsNoTracking()
+                .Where(profile =>
+                    profile.SchoolId == schoolId &&
+                    profile.UserId.HasValue &&
+                    (EF.Functions.Like(profile.DisplayName, $"%{name}%") ||
+                     EF.Functions.Like(profile.FirstName, $"%{name}%") ||
+                     EF.Functions.Like(profile.LastName, $"%{name}%")))
+                .Select(profile => profile.UserId!.Value);
+
+            usersQuery = usersQuery.Where(x =>
+                namedStudentUserIds.Contains(x.Id));
+        }
+
+        if (!string.IsNullOrWhiteSpace(userId))
+        {
+            if (Guid.TryParse(userId, out var parsedUserId))
+            {
+                usersQuery = usersQuery.Where(x => x.Id == parsedUserId);
+            }
+            else
+            {
+                usersQuery = usersQuery.Where(_ => false);
+            }
         }
 
         if (query.IsActive.HasValue)
@@ -161,6 +249,51 @@ public sealed class IdentitySchoolUserRepository
             usersQuery = usersQuery.Where(x => roleUserIds.Contains(x.Id));
         }
 
+        if (query.AcademicYearId.HasValue ||
+            query.AcademicProgramId.HasValue ||
+            query.ClassGroupId.HasValue)
+        {
+            var studentAcademicUserIds =
+                from profile in _context.StudentProfiles.AsNoTracking()
+                join enrollment in _context.StudentEnrollments.AsNoTracking()
+                    on profile.Id equals enrollment.StudentProfileId
+                join classGroup in _context.ClassGroups.AsNoTracking()
+                    on enrollment.ClassGroupId equals classGroup.Id
+                where
+                    profile.SchoolId == schoolId &&
+                    enrollment.SchoolId == schoolId &&
+                    classGroup.SchoolId == schoolId &&
+                    profile.UserId.HasValue &&
+                    (!query.AcademicYearId.HasValue ||
+                     classGroup.AcademicYearId == query.AcademicYearId.Value) &&
+                    (!query.AcademicProgramId.HasValue ||
+                     classGroup.AcademicProgramId == query.AcademicProgramId.Value) &&
+                    (!query.ClassGroupId.HasValue ||
+                     classGroup.Id == query.ClassGroupId.Value)
+                select profile.UserId!.Value;
+
+            var teacherAcademicUserIds =
+                from assignment in _context.TeacherAssignments.AsNoTracking()
+                join classGroup in _context.ClassGroups.AsNoTracking()
+                    on assignment.ClassGroupId equals classGroup.Id
+                where
+                    assignment.SchoolId == schoolId &&
+                    classGroup.SchoolId == schoolId &&
+                    (!query.AcademicYearId.HasValue ||
+                     classGroup.AcademicYearId == query.AcademicYearId.Value) &&
+                    (!query.AcademicProgramId.HasValue ||
+                     classGroup.AcademicProgramId == query.AcademicProgramId.Value) &&
+                    (!query.ClassGroupId.HasValue ||
+                     classGroup.Id == query.ClassGroupId.Value)
+                select assignment.TeacherUserId;
+
+            var academicUserIds =
+                studentAcademicUserIds.Union(teacherAcademicUserIds);
+
+            usersQuery = usersQuery.Where(x =>
+                academicUserIds.Contains(x.Id));
+        }
+
         var total = await usersQuery.CountAsync(cancellationToken);
         var totalPages = Math.Max(
             1,
@@ -177,6 +310,7 @@ public sealed class IdentitySchoolUserRepository
             return new SchoolUserPage([], page, pageSize, total);
 
         var userIds = users.Select(x => x.Id).ToArray();
+
         var roleRows = await (
                 from userRole in _context.UserRoles
                 join roleRow in _context.Roles
@@ -190,6 +324,69 @@ public sealed class IdentitySchoolUserRepository
             .AsNoTracking()
             .ToArrayAsync(cancellationToken);
 
+        var studentRows = await _context.StudentProfiles
+            .AsNoTracking()
+            .Where(profile =>
+                profile.SchoolId == schoolId &&
+                profile.UserId.HasValue &&
+                userIds.Contains(profile.UserId.Value))
+            .Select(profile => new
+            {
+                UserId = profile.UserId!.Value,
+                profile.DisplayName,
+                profile.StudentNumber
+            })
+            .ToArrayAsync(cancellationToken);
+
+        var studentContexts = await (
+                from profile in _context.StudentProfiles.AsNoTracking()
+                join enrollment in _context.StudentEnrollments.AsNoTracking()
+                    on profile.Id equals enrollment.StudentProfileId
+                join classGroup in _context.ClassGroups.AsNoTracking()
+                    on enrollment.ClassGroupId equals classGroup.Id
+                join year in _context.AcademicYears.AsNoTracking()
+                    on classGroup.AcademicYearId equals year.Id
+                join program in _context.AcademicPrograms.AsNoTracking()
+                    on classGroup.AcademicProgramId equals program.Id
+                where
+                    profile.SchoolId == schoolId &&
+                    profile.UserId.HasValue &&
+                    userIds.Contains(profile.UserId.Value)
+                select new
+                {
+                    UserId = profile.UserId!.Value,
+                    YearId = year.Id,
+                    YearName = year.Name,
+                    ProgramId = program.Id,
+                    ProgramName = program.Name,
+                    ClassId = classGroup.Id,
+                    ClassName = classGroup.Name
+                })
+            .ToArrayAsync(cancellationToken);
+
+        var teacherContexts = await (
+                from assignment in _context.TeacherAssignments.AsNoTracking()
+                join classGroup in _context.ClassGroups.AsNoTracking()
+                    on assignment.ClassGroupId equals classGroup.Id
+                join year in _context.AcademicYears.AsNoTracking()
+                    on classGroup.AcademicYearId equals year.Id
+                join program in _context.AcademicPrograms.AsNoTracking()
+                    on classGroup.AcademicProgramId equals program.Id
+                where
+                    assignment.SchoolId == schoolId &&
+                    userIds.Contains(assignment.TeacherUserId)
+                select new
+                {
+                    UserId = assignment.TeacherUserId,
+                    YearId = year.Id,
+                    YearName = year.Name,
+                    ProgramId = program.Id,
+                    ProgramName = program.Name,
+                    ClassId = classGroup.Id,
+                    ClassName = classGroup.Name
+                })
+            .ToArrayAsync(cancellationToken);
+
         var rolesByUser = roleRows
             .GroupBy(x => x.UserId)
             .ToDictionary(
@@ -199,14 +396,58 @@ public sealed class IdentitySchoolUserRepository
                     .OrderBy(x => x)
                     .ToArray());
 
+        var studentsByUser = studentRows
+            .GroupBy(x => x.UserId)
+            .ToDictionary(
+                group => group.Key,
+                group => group.First());
+
+        var contextsByUser = studentContexts
+            .Concat(teacherContexts)
+            .GroupBy(x => x.UserId)
+            .ToDictionary(
+                group => group.Key,
+                group => group
+                    .GroupBy(x => new
+                    {
+                        x.YearId,
+                        x.ProgramId,
+                        x.ClassId
+                    })
+                    .Select(context => context.First())
+                    .OrderBy(x => x.YearName)
+                    .ThenBy(x => x.ProgramName)
+                    .ThenBy(x => x.ClassName)
+                    .Select(x => new SchoolUserAcademicContext(
+                        x.YearId,
+                        x.YearName,
+                        x.ProgramId,
+                        x.ProgramName,
+                        x.ClassId,
+                        x.ClassName))
+                    .ToArray());
+
         return new SchoolUserPage(
             users.Select(user =>
-                    ToRecord(
-                        user,
-                        rolesByUser.TryGetValue(user.Id, out var roles)
-                            ? roles
-                            : []))
-                .ToArray(),
+            {
+                var record = ToRecord(
+                    user,
+                    rolesByUser.TryGetValue(user.Id, out var roles)
+                        ? roles
+                        : []);
+
+                var student = studentsByUser.GetValueOrDefault(user.Id);
+
+                return record with
+                {
+                    DisplayName = student?.DisplayName,
+                    StudentNumber = student?.StudentNumber,
+                    AcademicContexts =
+                        contextsByUser.TryGetValue(user.Id, out var contexts)
+                            ? contexts
+                            : []
+                };
+            }).ToArray(),
             page,
             pageSize,
             total);
