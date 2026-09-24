@@ -239,14 +239,32 @@
                                 <small>@item.ConfidenceBand</small>
                             </td>
                             <td>
-                                <a class="school-button school-button-secondary"
-                                   asp-action="Student"
-                                   asp-route-studentProfileId="@item.StudentProfileId"
-                                   asp-route-academicYearId="@Model.AcademicYearId"
-                                   asp-route-classGroupId="@Model.ClassGroupId"
-                                   asp-route-subjectId="@Model.SubjectId">
-                                    @A["ViewEvaluation"]
-                                </a>
+                                <div class="analytics-student-row-actions">
+                                    <a class="school-button school-button-secondary"
+                                       asp-action="Student"
+                                       asp-route-studentProfileId="@item.StudentProfileId"
+                                       asp-route-academicYearId="@Model.AcademicYearId"
+                                       asp-route-classGroupId="@Model.ClassGroupId"
+                                       asp-route-subjectId="@Model.SubjectId">
+                                        @A["ViewEvaluation"]
+                                    </a>
+                                    <a class="school-button school-button-secondary"
+                                       asp-action="StudentReport"
+                                       asp-route-studentProfileId="@item.StudentProfileId"
+                                       asp-route-academicYearId="@Model.AcademicYearId"
+                                       asp-route-classGroupId="@Model.ClassGroupId"
+                                       asp-route-subjectId="@Model.SubjectId">
+                                        @A["Report"]
+                                    </a>
+                                    <a class="school-button"
+                                       asp-action="StudentReportPdf"
+                                       asp-route-studentProfileId="@item.StudentProfileId"
+                                       asp-route-academicYearId="@Model.AcademicYearId"
+                                       asp-route-classGroupId="@Model.ClassGroupId"
+                                       asp-route-subjectId="@Model.SubjectId">
+                                        PDF
+                                    </a>
+                                </div>
                             </td>
                         </tr>
                     }
