@@ -185,6 +185,11 @@ public sealed class AnalyticsInterventionService : IAnalyticsInterventionService
 
         if (!delivery.Succeeded)
         {
+            await TryDeleteDraftAsync(
+                actorUserId,
+                assessmentId,
+                cancellationToken);
+
             return AnalyticsInterventionResult.Failure(
                 delivery.Error == AssessmentErrorCode.AccessDenied ||
                 delivery.Error == AssessmentErrorCode.StudentNotEnrolled
@@ -199,6 +204,11 @@ public sealed class AnalyticsInterventionService : IAnalyticsInterventionService
 
         if (workspace.Value is null)
         {
+            await TryDeleteDraftAsync(
+                actorUserId,
+                assessmentId,
+                cancellationToken);
+
             return AnalyticsInterventionResult.Failure(
                 AnalyticsInterventionErrorCode.QuestionGenerationFailed);
         }
@@ -217,6 +227,11 @@ public sealed class AnalyticsInterventionService : IAnalyticsInterventionService
 
         if (!generated.Succeeded)
         {
+            await TryDeleteDraftAsync(
+                actorUserId,
+                assessmentId,
+                cancellationToken);
+
             return AnalyticsInterventionResult.Failure(
                 generated.Error == AssessmentErrorCode.AccessDenied
                     ? AnalyticsInterventionErrorCode.AccessDenied
@@ -236,5 +251,29 @@ public sealed class AnalyticsInterventionService : IAnalyticsInterventionService
                 assessmentDate,
                 request.QuestionCount,
                 $"/school/assessments/{assessmentId:D}/builder"));
+    }
+
+    private async Task TryDeleteDraftAsync(
+        Guid actorUserId,
+        Guid assessmentId,
+        CancellationToken cancellationToken)
+    {
+        var details = await _assessments.GetDetailsAsync(
+            actorUserId,
+            assessmentId,
+            cancellationToken);
+
+        if (details.Value is null ||
+            details.Value.Assessment.Status != AssessmentStatus.Draft)
+        {
+            return;
+        }
+
+        await _assessments.DeleteAssessmentAsync(
+            actorUserId,
+            new DeleteAssessmentRequest(
+                assessmentId,
+                details.Value.Assessment.RowVersion),
+            cancellationToken);
     }
 }
