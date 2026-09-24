@@ -58,21 +58,21 @@
         evaluationPage.Assessments.Select(x =>
             x.AssessmentDate.ToString("MM-dd", CultureInfo.InvariantCulture)));
 
-    var termDeltas = string.Join(
+    var assessmentDeltas = string.Join(
         ",",
-        evaluationPage.Terms
+        evaluationPage.Assessments
             .Skip(1)
             .Select(x =>
-                (x.ComparableSkillGrowthPercentagePoints ?? 0m)
+                (x.OverallChangePercentagePoints ?? 0m)
                     .ToString(CultureInfo.InvariantCulture)));
 
-    var termLabels = string.Join(
+    var assessmentWaterfallLabels = string.Join(
         "|",
-        evaluationPage.Terms.Select(x =>
-            x.TermName.Replace("|", "/", StringComparison.Ordinal)));
+        evaluationPage.Assessments.Select(x =>
+            x.Title.Replace("|", "/", StringComparison.Ordinal)));
 
-    var termStart = evaluationPage.Terms.Count > 0
-        ? (evaluationPage.Terms[0].CombinedMasteryPercentage ?? 0m)
+    var assessmentStart = evaluationPage.Assessments.Count > 0
+        ? evaluationPage.Assessments[0].Percentage
             .ToString(CultureInfo.InvariantCulture)
         : string.Empty;
 }
@@ -266,15 +266,15 @@
         <article class="evaluation-chart-panel">
             <header>
                 <div>
-                    <h2>@S["TermChangeChart"]</h2>
-                    <p>Comparable-skill movement between terms.</p>
+                    <h2>@S["AssessmentChangeChart"]</h2>
+                    <p>How your score moved from one assessment to the next.</p>
                 </div>
             </header>
             <div class="evaluation-waterfall"
                  data-evaluation-chart="waterfall"
-                 data-start="@termStart"
-                 data-deltas="@termDeltas"
-                 data-labels="@termLabels"
+                 data-start="@assessmentStart"
+                 data-deltas="@assessmentDeltas"
+                 data-labels="@assessmentWaterfallLabels"
                  data-empty-label="@S["NotEnoughEvidence"]">
             </div>
         </article>
