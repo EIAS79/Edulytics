@@ -165,15 +165,22 @@ public sealed class EvaluationVisualReportingTests
             "src/Edulytics.Web/wwwroot/css/site.css"));
 
         Assert.Contains("_LocalizedBrand", staff);
-        Assert.Contains("window.print()", staff);
+        Assert.Contains("data-report-print", staff);
         Assert.Contains("TeacherComments", staff);
         Assert.Contains("ParentStudentReview", staff);
         Assert.Contains("asp-route-termId", staff);
 
         Assert.Contains("_LocalizedBrand", student);
-        Assert.Contains("window.print()", student);
+        Assert.Contains("data-report-print", student);
         Assert.Contains("ProgressReportPdf", student);
         Assert.Contains("asp-route-termId", student);
+
+        var script = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/evaluation-charts.js"));
+
+        Assert.Contains("window.print()", script);
+        Assert.Contains("data-report-autosubmit", script);
 
         Assert.Contains("@media print", css);
         Assert.Contains(".evaluation-report-sheet", css);
