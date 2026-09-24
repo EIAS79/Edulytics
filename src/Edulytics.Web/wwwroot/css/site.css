@@ -12620,3 +12620,530 @@ a.lesson-content-row:hover
         animation: none !important;
     }
 }
+
+
+/* Evaluation E21-E23 — professional printable report surfaces */
+.evaluation-report-page {
+    display: grid;
+    gap: 16px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.evaluation-report-toolbar {
+    position: sticky;
+    z-index: 20;
+    top: 8px;
+    display: grid;
+    grid-template-columns: auto minmax(260px, 1fr) auto;
+    gap: 12px;
+    align-items: end;
+    padding: 12px;
+    border: 1px solid #e2e7f1;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .95);
+    box-shadow: 0 10px 28px rgba(31, 43, 89, .08);
+    backdrop-filter: blur(12px);
+}
+
+.evaluation-report-filter {
+    display: flex;
+    align-items: end;
+    gap: 8px;
+    min-width: 0;
+}
+
+.evaluation-report-filter label {
+    color: #59667f;
+    font-size: .72rem;
+    font-weight: 800;
+}
+
+.evaluation-report-filter select {
+    min-width: 210px;
+    min-height: 38px;
+    padding: 7px 10px;
+    border: 1px solid #dfe5ef;
+    border-radius: 10px;
+    color: #263451;
+    background: #fff;
+}
+
+.evaluation-report-toolbar-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.evaluation-report-sheet {
+    display: grid;
+    gap: 18px;
+    padding: clamp(22px, 4vw, 44px);
+    border: 1px solid #e2e6ef;
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(31, 43, 89, .075);
+}
+
+.evaluation-report-brand {
+    display: grid;
+    grid-template-columns: minmax(150px, 230px) minmax(0, 1fr) auto;
+    gap: 24px;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #5662df;
+}
+
+.evaluation-report-logo {
+    min-width: 0;
+}
+
+.evaluation-report-logo .localized-brand-logo {
+    display: block;
+    width: min(210px, 100%);
+    max-height: 72px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.evaluation-report-brand h1 {
+    margin: 4px 0 5px;
+    color: #17243f;
+    font-size: clamp(1.8rem, 3vw, 2.65rem);
+    letter-spacing: -.045em;
+}
+
+.evaluation-report-brand p {
+    margin: 0;
+    color: #6f7a90;
+}
+
+.evaluation-report-meta {
+    display: grid;
+    gap: 3px;
+    justify-items: end;
+    text-align: right;
+}
+
+.evaluation-report-meta span,
+.evaluation-report-context-grid span,
+.evaluation-report-term-focus span,
+.evaluation-report-kpis span,
+.evaluation-report-evidence-summary span {
+    color: #7a8598;
+    font-size: .68rem;
+    font-weight: 760;
+    text-transform: uppercase;
+    letter-spacing: .035em;
+}
+
+.evaluation-report-meta strong {
+    color: #2b3858;
+    font-size: .78rem;
+}
+
+.evaluation-report-context-grid,
+.evaluation-report-evidence-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 9px;
+}
+
+.evaluation-report-context-grid > div,
+.evaluation-report-evidence-summary > div {
+    display: grid;
+    gap: 4px;
+    padding: 12px 14px;
+    border: 1px solid #e7eaf1;
+    border-radius: 12px;
+    background: #f8f9fc;
+}
+
+.evaluation-report-context-grid strong,
+.evaluation-report-evidence-summary strong {
+    color: #1b2846;
+    font-size: .95rem;
+}
+
+.evaluation-report-context-grid small,
+.evaluation-report-evidence-summary small {
+    color: #828c9f;
+    font-size: .67rem;
+}
+
+.evaluation-report-term-focus {
+    display: grid;
+    grid-template-columns: minmax(180px, 1.3fr) repeat(3, minmax(120px, 1fr));
+    gap: 9px;
+    padding: 14px;
+    border: 1px solid #dfe4f7;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #f7f8ff, #f9fbff);
+}
+
+.evaluation-report-term-focus > div {
+    display: grid;
+    gap: 3px;
+}
+
+.evaluation-report-term-focus strong {
+    color: #24345d;
+}
+
+.evaluation-report-term-focus small {
+    color: #818b9e;
+    font-size: .67rem;
+}
+
+.evaluation-report-term-focus > p {
+    grid-column: 1 / -1;
+    margin: 2px 0 0;
+    color: #6f7a90;
+    font-size: .74rem;
+    line-height: 1.45;
+}
+
+.evaluation-report-executive {
+    display: grid;
+    grid-template-columns: minmax(220px, .65fr) minmax(0, 1.8fr);
+    gap: 14px;
+}
+
+.evaluation-report-master-card {
+    align-content: center;
+}
+
+.evaluation-report-kpis {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.evaluation-report-kpis > article {
+    display: grid;
+    align-content: center;
+    gap: 5px;
+    min-height: 104px;
+    padding: 14px;
+    border: 1px solid #e6eaf1;
+    border-radius: 14px;
+    background: #fbfcfe;
+}
+
+.evaluation-report-kpis strong {
+    color: #1b2846;
+    font-size: 1.12rem;
+    letter-spacing: -.025em;
+}
+
+.evaluation-report-kpis small {
+    color: #858fa1;
+    font-size: .67rem;
+}
+
+.evaluation-report-section {
+    display: grid;
+    gap: 12px;
+    padding: 18px;
+    border: 1px solid #e5e9f1;
+    border-radius: 16px;
+    background: #fff;
+}
+
+.evaluation-report-section > header {
+    display: grid;
+    gap: 3px;
+}
+
+.evaluation-report-section > header h2 {
+    margin: 0;
+    color: #1c2948;
+    font-size: 1.15rem;
+}
+
+.evaluation-report-two-column,
+.evaluation-report-placeholder-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.evaluation-report-strengths {
+    border-color: #d4eadf;
+    background: #fbfffd;
+}
+
+.evaluation-report-focus {
+    border-color: #f0dfbd;
+    background: #fffdf9;
+}
+
+.evaluation-report-chip-list {
+    display: grid;
+    gap: 7px;
+}
+
+.evaluation-report-chip-list > span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(246, 248, 252, .88);
+}
+
+.evaluation-report-chip-list strong {
+    min-width: 0;
+    color: #24304e;
+    font-size: .78rem;
+}
+
+.evaluation-report-chip-list small {
+    color: #6f7a90;
+    font-size: .68rem;
+    white-space: nowrap;
+}
+
+.evaluation-report-skill-table td:first-child strong,
+.evaluation-report-skill-table td:first-child small {
+    display: block;
+}
+
+.evaluation-report-skill-table td:first-child small {
+    margin-top: 3px;
+    color: #818b9e;
+}
+
+.evaluation-report-recommendations {
+    display: grid;
+    gap: 8px;
+}
+
+.evaluation-report-recommendations > article {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    padding: 10px 0;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.evaluation-report-recommendations > article:last-child {
+    border-bottom: 0;
+}
+
+.evaluation-report-recommendations p {
+    margin: 4px 0 0;
+    color: #717c90;
+    font-size: .74rem;
+    line-height: 1.45;
+}
+
+.evaluation-report-writing-space {
+    min-height: 118px;
+    border: 1px dashed #cfd6e2;
+    border-radius: 12px;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fff 0,
+            #fff 27px,
+            #edf0f5 28px);
+}
+
+.evaluation-report-placeholder-grid > article {
+    display: grid;
+    gap: 8px;
+    padding: 16px;
+    border: 1px solid #e6eaf1;
+    border-radius: 15px;
+    background: #fcfdff;
+}
+
+.evaluation-report-placeholder-grid h2 {
+    margin: 0;
+    color: #263452;
+    font-size: .95rem;
+}
+
+.evaluation-report-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #e7eaf0;
+    color: #858fa1;
+    font-size: .69rem;
+}
+
+.evaluation-report-empty {
+    margin: 0;
+    color: #7b8698;
+    font-size: .78rem;
+}
+
+.student-self-report .evaluation-report-sheet {
+    background:
+        radial-gradient(circle at 100% 0, rgba(91, 77, 220, .055), transparent 22rem),
+        #fff;
+}
+
+.student-progress-report-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 13px;
+}
+
+.analytics-student-row-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.analytics-student-row-actions .school-button {
+    min-height: 34px;
+    padding: 6px 9px;
+    font-size: .7rem;
+}
+
+@media (max-width: 1050px) {
+    .evaluation-report-toolbar {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+    }
+
+    .evaluation-report-toolbar-actions {
+        justify-content: flex-start;
+    }
+
+    .evaluation-report-brand {
+        grid-template-columns: 160px minmax(0, 1fr);
+    }
+
+    .evaluation-report-meta {
+        grid-column: 1 / -1;
+        justify-items: start;
+        text-align: left;
+    }
+
+    .evaluation-report-executive {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 760px) {
+    .evaluation-report-sheet {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .evaluation-report-brand,
+    .evaluation-report-context-grid,
+    .evaluation-report-evidence-summary,
+    .evaluation-report-term-focus,
+    .evaluation-report-two-column,
+    .evaluation-report-placeholder-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .evaluation-report-brand {
+        gap: 12px;
+    }
+
+    .evaluation-report-meta {
+        grid-column: auto;
+    }
+
+    .evaluation-report-kpis {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .evaluation-report-term-focus > p {
+        grid-column: auto;
+    }
+
+    .evaluation-report-filter {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .evaluation-report-filter select {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 440px) {
+    .evaluation-report-kpis {
+        grid-template-columns: 1fr;
+    }
+
+    .evaluation-report-toolbar-actions > * {
+        width: 100%;
+    }
+}
+
+@media print {
+    body {
+        background: #fff !important;
+    }
+
+    .no-print,
+    .ed-v3-sidebar,
+    .ed-v3-topbar,
+    .ed-v3-footer,
+    .student-sidebar,
+    .student-topbar,
+    .student-main > .ed-v3-footer {
+        display: none !important;
+    }
+
+    .ed-v3-shell,
+    .student-app-shell,
+    .student-main,
+    .student-page-frame,
+    .ed-v3-main,
+    .ed-v3-main-content {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .evaluation-report-page,
+    .evaluation-report-sheet {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+    }
+
+    .evaluation-report-sheet {
+        gap: 12px;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .evaluation-report-section,
+    .evaluation-chart-panel,
+    .evaluation-report-kpis > article,
+    .evaluation-report-context-grid > div,
+    .evaluation-report-placeholder-grid > article {
+        break-inside: avoid;
+        box-shadow: none !important;
+    }
+
+    .evaluation-report-writing-space {
+        min-height: 88px;
+    }
+
+    a {
+        color: inherit !important;
+        text-decoration: none !important;
+    }
+}
