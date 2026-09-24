@@ -726,6 +726,569 @@ public sealed class AnalyticsService : IAnalyticsService
             .Success(dashboard);
     }
 
+    public async Task<AnalyticsQueryResult<AnalyticsStudentEvaluationPage>>
+        GetStudentEvaluationAsync(
+            Guid actorUserId,
+            Guid studentProfileId,
+            Guid academicYearId,
+            Guid classGroupId,
+            Guid subjectId,
+            CancellationToken cancellationToken = default)
+    {
+        var access = await GetDashboardAsync(
+            actorUserId,
+            academicYearId,
+            classGroupId,
+            subjectId,
+            cancellationToken);
+
+        if (access.Value is null)
+        {
+            return AnalyticsQueryResult<AnalyticsStudentEvaluationPage>.Failure(
+                access.Error ?? AnalyticsErrorCode.AccessDenied);
+        }
+
+        var scope = await ResolveScopeAsync(
+            actorUserId,
+            cancellationToken);
+
+        if (!scope.Succeeded)
+        {
+            return AnalyticsQueryResult<AnalyticsStudentEvaluationPage>.Failure(
+                scope.Error!.Value);
+        }
+
+        var projection = await _analytics.GetProjectionSnapshotAsync(
+            scope.School!.Id,
+            cancellationToken);
+
+        var student = projection.StudentProfiles.SingleOrDefault(
+            x =>
+                x.Id == studentProfileId &&
+                !x.IsArchived &&
+                x.Status == AcademicStructureStatus.Active);
+
+        if (student is null ||
+            !projection.StudentEnrollments.Any(
+                x =>
+                    x.StudentProfileId == studentProfileId &&
+                    x.AcademicYearId == academicYearId &&
+                    x.ClassGroupId == classGroupId))
+        {
+            return AnalyticsQueryResult<AnalyticsStudentEvaluationPage>.Failure(
+                AnalyticsErrorCode.AccessDenied);
+        }
+
+        try
+        {
+            var now = DateTime.UtcNow;
+            var normalized =
+                _evaluation.NormalizeOfficialEvidence(projection);
+            var evaluation =
+                _evaluation.BuildStudentSubject(
+                    projection,
+                    normalized,
+                    studentProfileId,
+                    academicYearId,
+                    classGroupId,
+                    subjectId,
+                    now);
+
+            var topics = projection.CurriculumTopics
+                .ToDictionary(x => x.Id);
+            var topicRows = evaluation.Skills
+                .GroupBy(x => x.TopicId)
+                .Select(group =>
+                {
+                    var rows = group.ToArray();
+                    var evaluated = rows
+                        .Where(x => x.CurrentMasteryPercentage.HasValue)
+                        .ToArray();
+
+                    return new AnalyticsStudentEvaluationTopic(
+                        group.Key,
+                        topics.TryGetValue(group.Key, out var topic)
+                            ? topic.Name
+                            : string.Empty,
+                        AverageNullable(
+                            evaluated.Select(
+                                x => x.CurrentMasteryPercentage)),
+                        AverageNullable(
+                            evaluated.Select(
+                                x => x.AssessmentMasteryPercentage)),
+                        AverageNullable(
+                            evaluated.Select(
+                                x => x.PracticeMasteryPercentage)),
+                        rows.Length == 0
+                            ? 0m
+                            : Round2(
+                                evaluated.Length /
+                                (decimal)rows.Length *
+                                100m),
+                        rows.Length,
+                        evaluated.Length,
+                        rows.Count(
+                            x =>
+                                x.Status ==
+                                EvaluationSkillStatus.Critical),
+                        rows.Count(
+                            x =>
+                                x.Status ==
+                                EvaluationSkillStatus.NeedsFocus),
+                        AggregateTrend(
+                            rows.Select(
+                                x => x.ShortTermTrend)));
+                })
+                .OrderBy(x => x.CurrentMasteryPercentage ?? 101m)
+                .ThenBy(x => x.TopicName)
+                .ToArray();
+
+            var termNames = projection.Terms
+                .ToDictionary(x => x.Id, x => x.Name);
+            var assessments = projection.Assessments
+                .Where(x =>
+                    x.Status != AssessmentStatus.Draft &&
+                    x.AcademicYearId == academicYearId &&
+                    x.ClassGroupId == classGroupId &&
+                    x.SubjectId == subjectId)
+                .ToDictionary(x => x.Id);
+            var assessmentRows = projection.AssessmentResults
+                .Where(x =>
+                    x.StudentProfileId == studentProfileId &&
+                    assessments.ContainsKey(x.AssessmentId))
+                .Select(x =>
+                {
+                    var assessment = assessments[x.AssessmentId];
+
+                    return new AnalyticsStudentAssessmentEvaluationItem(
+                        assessment.Id,
+                        assessment.Title,
+                        assessment.AssessmentDate,
+                        termNames.GetValueOrDefault(
+                            assessment.TermId),
+                        x.Percentage);
+                })
+                .OrderBy(x => x.AssessmentDate)
+                .ThenBy(x => x.Title)
+                .ToArray();
+
+            var evidence = normalized
+                .Where(x =>
+                    x.StudentProfileId == studentProfileId &&
+                    x.AcademicYearId == academicYearId &&
+                    x.ClassGroupId == classGroupId &&
+                    x.SubjectId == subjectId)
+                .OrderByDescending(x => x.OccurredAtUtc)
+                .ThenBy(x => x.SkillName)
+                .ToArray();
+
+            return AnalyticsQueryResult<AnalyticsStudentEvaluationPage>.Success(
+                new AnalyticsStudentEvaluationPage(
+                    evaluation,
+                    topicRows,
+                    assessmentRows,
+                    evidence));
+        }
+        catch (InvalidOperationException)
+        {
+            return AnalyticsQueryResult<AnalyticsStudentEvaluationPage>.Failure(
+                AnalyticsErrorCode.InvalidSourceData);
+        }
+    }
+
+    public async Task<AnalyticsQueryResult<AnalyticsStudentsEvaluationPage>>
+        GetStudentsEvaluationAsync(
+            Guid actorUserId,
+            Guid academicYearId,
+            Guid classGroupId,
+            Guid subjectId,
+            CancellationToken cancellationToken = default)
+    {
+        var access = await GetDashboardAsync(
+            actorUserId,
+            academicYearId,
+            classGroupId,
+            subjectId,
+            cancellationToken);
+
+        if (access.Value is null)
+        {
+            return AnalyticsQueryResult<AnalyticsStudentsEvaluationPage>.Failure(
+                access.Error ?? AnalyticsErrorCode.AccessDenied);
+        }
+
+        var scope = await ResolveScopeAsync(
+            actorUserId,
+            cancellationToken);
+
+        if (!scope.Succeeded)
+        {
+            return AnalyticsQueryResult<AnalyticsStudentsEvaluationPage>.Failure(
+                scope.Error!.Value);
+        }
+
+        var projection = await _analytics.GetProjectionSnapshotAsync(
+            scope.School!.Id,
+            cancellationToken);
+        var year = projection.AcademicYears.SingleOrDefault(
+            x => x.Id == academicYearId);
+        var classGroup = projection.ClassGroups.SingleOrDefault(
+            x =>
+                x.Id == classGroupId &&
+                x.AcademicYearId == academicYearId);
+        var subject = projection.Subjects.SingleOrDefault(
+            x => x.Id == subjectId);
+
+        if (year is null ||
+            classGroup is null ||
+            subject is null)
+        {
+            return AnalyticsQueryResult<AnalyticsStudentsEvaluationPage>.Failure(
+                AnalyticsErrorCode.InvalidSourceData);
+        }
+
+        try
+        {
+            var now = DateTime.UtcNow;
+            var normalized =
+                _evaluation.NormalizeOfficialEvidence(projection);
+            var enrolledIds = projection.StudentEnrollments
+                .Where(x =>
+                    x.AcademicYearId == academicYearId &&
+                    x.ClassGroupId == classGroupId)
+                .Select(x => x.StudentProfileId)
+                .ToHashSet();
+            var students = projection.StudentProfiles
+                .Where(x =>
+                    enrolledIds.Contains(x.Id) &&
+                    !x.IsArchived &&
+                    x.Status == AcademicStructureStatus.Active)
+                .OrderBy(x => x.DisplayName)
+                .ThenBy(x => x.StudentNumber)
+                .ToArray();
+
+            var evaluations = students
+                .Select(student =>
+                    _evaluation.BuildStudentSubject(
+                        projection,
+                        normalized,
+                        student.Id,
+                        academicYearId,
+                        classGroupId,
+                        subjectId,
+                        now))
+                .ToArray();
+
+            var rows = evaluations
+                .Select(evaluation =>
+                    new AnalyticsStudentEvaluationRow(
+                        evaluation.StudentProfileId,
+                        evaluation.StudentNumber,
+                        evaluation.DisplayName,
+                        evaluation.CurrentMasteryPercentage,
+                        evaluation.AssessmentMasteryPercentage,
+                        evaluation.PracticeMasteryPercentage,
+                        evaluation.PracticeToAssessmentGapPercentagePoints,
+                        evaluation.CurriculumCoveragePercentage,
+                        evaluation.ConfidencePercentage,
+                        evaluation.ConfidenceBand,
+                        evaluation.ShortTermTrend,
+                        evaluation.LongTermTrend,
+                        evaluation.SecureSkillCount,
+                        evaluation.NeedsFocusSkillCount,
+                        evaluation.CriticalSkillCount,
+                        evaluation.RetentionConcernCount,
+                        evaluation.Skills.Count == 0
+                            ? EvaluationPriority.None
+                            : evaluation.Skills.Max(
+                                x => x.InterventionPriority)))
+                .OrderByDescending(
+                    x => x.HighestPriority)
+                .ThenBy(
+                    x => x.CurrentMasteryPercentage ?? 101m)
+                .ThenBy(x => x.DisplayName)
+                .ToArray();
+
+            var distribution = new AnalyticsEvaluationDistribution(
+                rows.Length,
+                rows.Count(x =>
+                    x.CurrentMasteryPercentage >= 75m &&
+                    x.CoveragePercentage > 0m),
+                rows.Count(x =>
+                    x.CurrentMasteryPercentage is >= 60m and < 75m),
+                rows.Count(x =>
+                    x.CurrentMasteryPercentage is >= 40m and < 60m),
+                rows.Count(x =>
+                    x.CurrentMasteryPercentage.HasValue &&
+                    x.CurrentMasteryPercentage < 40m),
+                rows.Count(x =>
+                    !x.CurrentMasteryPercentage.HasValue ||
+                    x.CoveragePercentage <= 0m),
+                rows.Count(x =>
+                    x.ShortTermTrend is
+                        EvaluationTrendBand.Improving or
+                        EvaluationTrendBand.RapidlyImproving),
+                rows.Count(x =>
+                    x.ShortTermTrend ==
+                        EvaluationTrendBand.Stable),
+                rows.Count(x =>
+                    x.ShortTermTrend is
+                        EvaluationTrendBand.Declining or
+                        EvaluationTrendBand.RapidlyDeclining));
+
+            return AnalyticsQueryResult<AnalyticsStudentsEvaluationPage>.Success(
+                new AnalyticsStudentsEvaluationPage(
+                    academicYearId,
+                    year.Name,
+                    classGroupId,
+                    classGroup.Name,
+                    subjectId,
+                    subject.Name,
+                    distribution,
+                    rows));
+        }
+        catch (InvalidOperationException)
+        {
+            return AnalyticsQueryResult<AnalyticsStudentsEvaluationPage>.Failure(
+                AnalyticsErrorCode.InvalidSourceData);
+        }
+    }
+
+    public async Task<AnalyticsQueryResult<AnalyticsTopicSkillEvaluationPage>>
+        GetTopicSkillEvaluationAsync(
+            Guid actorUserId,
+            Guid academicYearId,
+            Guid classGroupId,
+            Guid subjectId,
+            CancellationToken cancellationToken = default)
+    {
+        var access = await GetDashboardAsync(
+            actorUserId,
+            academicYearId,
+            classGroupId,
+            subjectId,
+            cancellationToken);
+
+        if (access.Value is null)
+        {
+            return AnalyticsQueryResult<AnalyticsTopicSkillEvaluationPage>.Failure(
+                access.Error ?? AnalyticsErrorCode.AccessDenied);
+        }
+
+        var scope = await ResolveScopeAsync(
+            actorUserId,
+            cancellationToken);
+
+        if (!scope.Succeeded)
+        {
+            return AnalyticsQueryResult<AnalyticsTopicSkillEvaluationPage>.Failure(
+                scope.Error!.Value);
+        }
+
+        var projection = await _analytics.GetProjectionSnapshotAsync(
+            scope.School!.Id,
+            cancellationToken);
+        var year = projection.AcademicYears.SingleOrDefault(
+            x => x.Id == academicYearId);
+        var classGroup = projection.ClassGroups.SingleOrDefault(
+            x =>
+                x.Id == classGroupId &&
+                x.AcademicYearId == academicYearId);
+        var subject = projection.Subjects.SingleOrDefault(
+            x => x.Id == subjectId);
+
+        if (year is null ||
+            classGroup is null ||
+            subject is null)
+        {
+            return AnalyticsQueryResult<AnalyticsTopicSkillEvaluationPage>.Failure(
+                AnalyticsErrorCode.InvalidSourceData);
+        }
+
+        try
+        {
+            var now = DateTime.UtcNow;
+            var normalized =
+                _evaluation.NormalizeOfficialEvidence(projection);
+            var enrolledIds = projection.StudentEnrollments
+                .Where(x =>
+                    x.AcademicYearId == academicYearId &&
+                    x.ClassGroupId == classGroupId)
+                .Select(x => x.StudentProfileId)
+                .ToHashSet();
+            var studentMap = projection.StudentProfiles
+                .Where(x =>
+                    enrolledIds.Contains(x.Id) &&
+                    !x.IsArchived &&
+                    x.Status == AcademicStructureStatus.Active)
+                .ToDictionary(x => x.Id);
+
+            var evaluations = studentMap.Values
+                .Select(student =>
+                    _evaluation.BuildStudentSubject(
+                        projection,
+                        normalized,
+                        student.Id,
+                        academicYearId,
+                        classGroupId,
+                        subjectId,
+                        now))
+                .ToArray();
+
+            var topics = projection.CurriculumTopics
+                .ToDictionary(x => x.Id);
+
+            var skillRows = evaluations
+                .SelectMany(evaluation =>
+                    evaluation.Skills.Select(skill =>
+                        new
+                        {
+                            evaluation.StudentProfileId,
+                            evaluation.StudentNumber,
+                            evaluation.DisplayName,
+                            Skill = skill
+                        }))
+                .GroupBy(x =>
+                    new
+                    {
+                        x.Skill.TopicId,
+                        x.Skill.SkillKey,
+                        x.Skill.SkillName
+                    })
+                .Select(group =>
+                {
+                    var members = group.ToArray();
+                    var evaluated = members
+                        .Where(x =>
+                            x.Skill.CurrentMasteryPercentage.HasValue)
+                        .ToArray();
+                    var studentRows = members
+                        .Select(x =>
+                            new AnalyticsSkillCohortStudent(
+                                x.StudentProfileId,
+                                x.StudentNumber,
+                                x.DisplayName,
+                                x.Skill.CurrentMasteryPercentage,
+                                x.Skill.AssessmentMasteryPercentage,
+                                x.Skill.PracticeMasteryPercentage,
+                                x.Skill.Status,
+                                x.Skill.ShortTermTrend,
+                                x.Skill.ConfidenceBand,
+                                x.Skill.InterventionPriority))
+                        .OrderByDescending(x => x.Priority)
+                        .ThenBy(x => x.MasteryPercentage ?? 101m)
+                        .ThenBy(x => x.DisplayName)
+                        .ToArray();
+
+                    return new AnalyticsSkillCohortEvaluation(
+                        group.Key.TopicId,
+                        topics.GetValueOrDefault(
+                            group.Key.TopicId)?.Name ??
+                            string.Empty,
+                        group.Key.SkillKey,
+                        group.Key.SkillName,
+                        AverageNullable(
+                            evaluated.Select(
+                                x => x.Skill.CurrentMasteryPercentage)),
+                        AverageNullable(
+                            evaluated.Select(
+                                x => x.Skill.AssessmentMasteryPercentage)),
+                        AverageNullable(
+                            evaluated.Select(
+                                x => x.Skill.PracticeMasteryPercentage)),
+                        members.Length == 0
+                            ? 0m
+                            : Round2(
+                                evaluated.Length /
+                                (decimal)members.Length *
+                                100m),
+                        members.Length,
+                        evaluated.Length,
+                        members.Count(x =>
+                            x.Skill.Status ==
+                            EvaluationSkillStatus.Critical),
+                        members.Count(x =>
+                            x.Skill.Status ==
+                            EvaluationSkillStatus.NeedsFocus),
+                        AggregateTrend(
+                            members.Select(
+                                x => x.Skill.ShortTermTrend)),
+                        members.Length == 0
+                            ? EvaluationPriority.None
+                            : members.Max(
+                                x => x.Skill.InterventionPriority),
+                        studentRows);
+                })
+                .OrderByDescending(x => x.HighestPriority)
+                .ThenBy(x => x.ClassMasteryPercentage ?? 101m)
+                .ThenBy(x => x.SkillName)
+                .ToArray();
+
+            var topicRows = skillRows
+                .GroupBy(x => x.TopicId)
+                .Select(group =>
+                {
+                    var rows = group.ToArray();
+                    var affectedStudentIds = rows
+                        .SelectMany(x => x.Students)
+                        .Where(x =>
+                            x.Status is
+                                EvaluationSkillStatus.Critical or
+                                EvaluationSkillStatus.NeedsFocus)
+                        .Select(x => x.StudentProfileId)
+                        .Distinct()
+                        .Count();
+
+                    return new AnalyticsTopicEvaluation(
+                        group.Key,
+                        topics.GetValueOrDefault(group.Key)?.Name ??
+                            string.Empty,
+                        AverageNullable(
+                            rows.Select(
+                                x => x.ClassMasteryPercentage)),
+                        AverageNullable(
+                            rows.Select(
+                                x => x.AssessmentMasteryPercentage)),
+                        AverageNullable(
+                            rows.Select(
+                                x => x.PracticeMasteryPercentage)),
+                        AverageNullable(
+                            rows.Select(
+                                x => (decimal?)x.CoveragePercentage)) ??
+                            0m,
+                        studentMap.Count,
+                        affectedStudentIds,
+                        rows.Count(x =>
+                            x.HighestPriority ==
+                            EvaluationPriority.Critical),
+                        AggregateTrend(
+                            rows.Select(x => x.Trend)),
+                        rows);
+                })
+                .OrderByDescending(x =>
+                    x.CriticalSkillCount)
+                .ThenBy(x =>
+                    x.ClassMasteryPercentage ?? 101m)
+                .ThenBy(x => x.TopicName)
+                .ToArray();
+
+            return AnalyticsQueryResult<AnalyticsTopicSkillEvaluationPage>.Success(
+                new AnalyticsTopicSkillEvaluationPage(
+                    academicYearId,
+                    year.Name,
+                    classGroupId,
+                    classGroup.Name,
+                    subjectId,
+                    subject.Name,
+                    topicRows));
+        }
+        catch (InvalidOperationException)
+        {
+            return AnalyticsQueryResult<AnalyticsTopicSkillEvaluationPage>.Failure(
+                AnalyticsErrorCode.InvalidSourceData);
+        }
+    }
+
     public async Task<AnalyticsQueryResult<AnalyticsStudentReport>>
         GetStudentReportAsync(
             Guid actorUserId,
@@ -919,6 +1482,58 @@ public sealed class AnalyticsService : IAnalyticsService
                 lessonMastery,
                 lessonItems,
                 outcomeItems));
+    }
+
+    private static decimal? AverageNullable(
+        IEnumerable<decimal?> values)
+    {
+        var present = values
+            .Where(x => x.HasValue)
+            .Select(x => x!.Value)
+            .ToArray();
+
+        return present.Length == 0
+            ? null
+            : Round2(present.Average());
+    }
+
+    private static decimal Round2(decimal value) =>
+        decimal.Round(
+            value,
+            2,
+            MidpointRounding.AwayFromZero);
+
+    private static EvaluationTrendBand AggregateTrend(
+        IEnumerable<EvaluationTrendBand> values)
+    {
+        var scored = values
+            .Where(x =>
+                x !=
+                EvaluationTrendBand.InsufficientEvidence)
+            .Select(x =>
+                x switch
+                {
+                    EvaluationTrendBand.RapidlyDeclining => -2m,
+                    EvaluationTrendBand.Declining => -1m,
+                    EvaluationTrendBand.Improving => 1m,
+                    EvaluationTrendBand.RapidlyImproving => 2m,
+                    _ => 0m
+                })
+            .ToArray();
+
+        if (scored.Length == 0)
+            return EvaluationTrendBand.InsufficientEvidence;
+
+        var average = scored.Average();
+
+        return average switch
+        {
+            <= -1.2m => EvaluationTrendBand.RapidlyDeclining,
+            <= -0.35m => EvaluationTrendBand.Declining,
+            >= 1.2m => EvaluationTrendBand.RapidlyImproving,
+            >= 0.35m => EvaluationTrendBand.Improving,
+            _ => EvaluationTrendBand.Stable
+        };
     }
 
     private async Task<ScopeResult> ResolveScopeAsync(
