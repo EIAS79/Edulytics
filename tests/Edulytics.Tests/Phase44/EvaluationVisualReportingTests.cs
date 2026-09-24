@@ -73,6 +73,9 @@ public sealed class EvaluationVisualReportingTests
         Assert.Contains("asp-action=\"StudentReport\"", student);
 
         Assert.Contains("MasteryDistribution", students);
+        Assert.Contains("evaluation-distribution-donut", students);
+        Assert.Contains("evaluation-student-card-row", students);
+        Assert.Contains("Mastery grading", students);
         Assert.Contains("evaluation-student-list", students);
         Assert.Contains("asp-action=\"StudentReport\"", students);
         Assert.Contains("asp-action=\"StudentReportPdf\"", students);
@@ -254,6 +257,71 @@ public sealed class EvaluationVisualReportingTests
     }
 
     [Fact]
+    public void BrandedClassEvaluationPdf_RendersWithMasteryGradeAndConfidenceSemantics()
+    {
+        var yearId = Guid.NewGuid();
+        var classId = Guid.NewGuid();
+        var subjectId = Guid.NewGuid();
+        var studentId = Guid.NewGuid();
+
+        var studentsPage = new AnalyticsStudentsEvaluationPage(
+            yearId,
+            "2026/2027",
+            classId,
+            "Cambridge Primary Stage 5 — A",
+            subjectId,
+            "Mathematics",
+            new AnalyticsEvaluationDistribution(
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0),
+            [
+                new AnalyticsStudentEvaluationRow(
+                    studentId,
+                    "CAMB-0001",
+                    "Student One",
+                    55m,
+                    50m,
+                    65m,
+                    -15m,
+                    8.5m,
+                    7.2m,
+                    EvaluationConfidenceBand.Insufficient,
+                    EvaluationTrendBand.Improving,
+                    EvaluationTrendBand.Improving,
+                    0,
+                    1,
+                    1,
+                    0,
+                    EvaluationPriority.Medium)
+            ]);
+
+        var topicPage = new AnalyticsTopicSkillEvaluationPage(
+            yearId,
+            "2026/2027",
+            classId,
+            "Cambridge Primary Stage 5 — A",
+            subjectId,
+            "Mathematics",
+            []);
+
+        var bytes = AnalyticsPdfRenderer.RenderClassEvaluationReport(
+            studentsPage,
+            topicPage);
+
+        Assert.True(bytes.Length > 1000);
+        Assert.Equal(
+            "%PDF",
+            Encoding.ASCII.GetString(bytes, 0, 4));
+    }
+
+    [Fact]
     public void BrandedStudentSelfReportPdf_RendersWithoutAnotherStudentId()
     {
         var evaluation = MinimalEvaluation();
@@ -319,7 +387,7 @@ public sealed class EvaluationVisualReportingTests
             0,
             0,
             [],
-            "evaluation-v1");
+            "evaluation-v2");
 
     private static string FindRoot()
     {
