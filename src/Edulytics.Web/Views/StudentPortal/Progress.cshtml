@@ -5,8 +5,8 @@
     Layout = "_StudentLayout";
     ViewData["Title"] = S["MyProgress"].Value;
 
-    var page = Model.Evaluation;
-    var e = page.OfficialEvaluation;
+    var evaluationPage = Model.Evaluation;
+    var e = evaluationPage.OfficialEvaluation;
 
     string Value(decimal? value) =>
         value.HasValue ? $"{value.Value:0.#}%" : "—";
@@ -97,13 +97,13 @@
             </article>
             <article>
                 <span>@S["PrivatePracticeMastery"]</span>
-                <strong>@Value(page.PrivatePractice.MasteryPercentage)</strong>
+                <strong>@Value(evaluationPage.PrivatePractice.MasteryPercentage)</strong>
             </article>
             <article>
                 <span>@S["PracticeAssessmentGap"]</span>
                 <strong>
-                    @(page.PrivatePracticeToAssessmentGapPercentagePoints.HasValue
-                        ? $"{page.PrivatePracticeToAssessmentGapPercentagePoints.Value:+0.#;-0.#;0} pts"
+                    @(evaluationPage.PrivatePracticeToAssessmentGapPercentagePoints.HasValue
+                        ? $"{evaluationPage.PrivatePracticeToAssessmentGapPercentagePoints.Value:+0.#;-0.#;0} pts"
                         : "—")
                 </strong>
             </article>
@@ -134,14 +134,14 @@
                 </div>
             </div>
 
-            @if (page.NextSteps.Count == 0)
+            @if (evaluationPage.NextSteps.Count == 0)
             {
                 <p class="student-empty">@S["NotEnoughEvidence"]</p>
             }
             else
             {
                 <div class="student-next-step-list">
-                    @foreach (var item in page.NextSteps)
+                    @foreach (var item in evaluationPage.NextSteps)
                     {
                         <article>
                             <span class="student-next-step-priority priority-@item.Priority.ToString().ToLowerInvariant()">
@@ -183,26 +183,26 @@
             <div class="student-private-practice-summary">
                 <div>
                     <span>@S["PracticeSessions"]</span>
-                    <strong>@page.PrivatePractice.SessionCount</strong>
+                    <strong>@evaluationPage.PrivatePractice.SessionCount</strong>
                 </div>
                 <div>
                     <span>@S["ActivePracticeDays"]</span>
-                    <strong>@page.PrivatePractice.ActiveDayCount</strong>
+                    <strong>@evaluationPage.PrivatePractice.ActiveDayCount</strong>
                 </div>
                 <div>
                     <span>@S["SkillsPracticed"]</span>
-                    <strong>@page.PrivatePractice.SkillCount</strong>
+                    <strong>@evaluationPage.PrivatePractice.SkillCount</strong>
                 </div>
                 <div>
                     <span>@S["Evidence"]</span>
-                    <strong>@page.PrivatePractice.EvidenceCount</strong>
+                    <strong>@evaluationPage.PrivatePractice.EvidenceCount</strong>
                 </div>
             </div>
 
             <div class="student-progress-trend-line">
                 <span>@S["Trend"]</span>
-                <strong class="@TrendClass(page.PrivatePractice.Trend)">
-                    @Trend(page.PrivatePractice.Trend)
+                <strong class="@TrendClass(evaluationPage.PrivatePractice.Trend)">
+                    @Trend(evaluationPage.PrivatePractice.Trend)
                 </strong>
             </div>
         </article>
@@ -217,7 +217,7 @@
         </div>
 
         <div class="student-progress-skill-list">
-            @foreach (var skill in page.Skills)
+            @foreach (var skill in evaluationPage.Skills)
             {
                 <article class="student-progress-skill-row">
                     <div class="student-progress-skill-name">
@@ -273,7 +273,7 @@
             </div>
 
             <div class="student-assessment-progress-list">
-                @foreach (var item in page.Assessments)
+                @foreach (var item in evaluationPage.Assessments)
                 {
                     <article>
                         <div>
@@ -310,7 +310,7 @@
             </div>
 
             <div class="student-term-progress-list">
-                @foreach (var term in page.Terms)
+                @foreach (var term in evaluationPage.Terms)
                 {
                     <article>
                         <div>
