@@ -146,6 +146,8 @@ jobs:
         run: python3 scripts/ci-architecture-gate.py
 
       - name: Tenant and IDOR regression
+        env:
+          EDULYTICS_TEST_CONFIGURATION: Release
         run: bash scripts/ci-tenant-idor-gate.sh artifacts/evaluation/tenant
 
       - name: Dependency vulnerability gate
