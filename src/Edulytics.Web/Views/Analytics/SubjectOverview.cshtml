@@ -1,0 +1,187 @@
+@model Edulytics.Services.Analytics.AnalyticsSupervisorSubjectOverviewPage
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AnalyticsResource> A
+@using Edulytics.Core.Analytics
+@{
+    ViewData["Title"] = A["SubjectOverview"].Value;
+
+    string Value(decimal? value) =>
+        value.HasValue ? $"{value.Value:0.#}%" : "—";
+}
+
+<section class="analytics-page evaluation-page supervisor-evaluation-page">
+    <header class="analytics-header evaluation-page-header">
+        <div>
+            <div class="user-eyebrow">@A["SubjectOverview"]</div>
+            <h1>@Model.SubjectName</h1>
+            <p>@Model.AcademicYearName · cross-class evaluation</p>
+        </div>
+        <a class="school-button school-button-secondary"
+           asp-action="Index"
+           asp-route-academicYearId="@Model.AcademicYearId"
+           asp-route-subjectId="@Model.SubjectId">
+            @A["EvaluationOverview"]
+        </a>
+    </header>
+
+    <section class="supervisor-evaluation-metrics">
+        <article>
+            <span>@A["Classes"]</span>
+            <strong>@Model.ClassCount</strong>
+        </article>
+        <article>
+            <span>@A["Students"]</span>
+            <strong>@Model.StudentCount</strong>
+        </article>
+        <article>
+            <span>@A["EvaluatedStudents"]</span>
+            <strong>@Model.EvaluatedStudentCount</strong>
+        </article>
+        <article>
+            <span>@A["CurrentMastery"]</span>
+            <strong>@Value(Model.CurrentMasteryPercentage)</strong>
+        </article>
+        <article>
+            <span>@A["AssessmentMastery"]</span>
+            <strong>@Value(Model.AssessmentMasteryPercentage)</strong>
+        </article>
+        <article>
+            <span>@A["PracticeMastery"]</span>
+            <strong>@Value(Model.PracticeMasteryPercentage)</strong>
+        </article>
+        <article>
+            <span>@A["Coverage"]</span>
+            <strong>@Model.AverageCoveragePercentage.ToString("0.#")%</strong>
+        </article>
+        <article class="is-positive">
+            <span>@A["ImprovingStudents"]</span>
+            <strong>@Model.ImprovingStudentCount</strong>
+        </article>
+        <article class="is-negative">
+            <span>@A["DecliningStudents"]</span>
+            <strong>@Model.DecliningStudentCount</strong>
+        </article>
+        <article class="is-warning">
+            <span>@A["CriticalStudents"]</span>
+            <strong>@Model.CriticalStudentCount</strong>
+        </article>
+    </section>
+
+    <section class="analytics-panel">
+        <header>
+            <h2>@A["Classes"]</h2>
+            <p>Compare classes using the same evaluation model instead of comparing raw assessment percentages alone.</p>
+        </header>
+
+        <div class="supervisor-class-grid">
+            @foreach (var item in Model.Classes)
+            {
+                <article class="supervisor-class-card">
+                    <header>
+                        <div>
+                            <span class="user-eyebrow">@A["Class"]</span>
+                            <h3>@item.ClassName</h3>
+                        </div>
+                        <a class="school-button school-button-secondary"
+                           asp-action="Students"
+                           asp-route-academicYearId="@Model.AcademicYearId"
+                           asp-route-classGroupId="@item.ClassGroupId"
+                           asp-route-subjectId="@Model.SubjectId">
+                            @A["ViewClass"]
+                        </a>
+                    </header>
+
+                    <div class="supervisor-class-stat-grid">
+                        <div>
+                            <span>@A["Students"]</span>
+                            <strong>@item.StudentCount</strong>
+                        </div>
+                        <div>
+                            <span>@A["CurrentMastery"]</span>
+                            <strong>@Value(item.CurrentMasteryPercentage)</strong>
+                        </div>
+                        <div>
+                            <span>@A["AssessmentMastery"]</span>
+                            <strong>@Value(item.AssessmentMasteryPercentage)</strong>
+                        </div>
+                        <div>
+                            <span>@A["PracticeMastery"]</span>
+                            <strong>@Value(item.PracticeMasteryPercentage)</strong>
+                        </div>
+                        <div>
+                            <span>@A["Coverage"]</span>
+                            <strong>@item.AverageCoveragePercentage.ToString("0.#")%</strong>
+                        </div>
+                        <div>
+                            <span>@A["CriticalStudents"]</span>
+                            <strong>@item.CriticalStudentCount</strong>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <span class="evaluation-trend-chip is-positive">
+                            ↑ @item.ImprovingStudentCount @A["Improving"]
+                        </span>
+                        <span class="evaluation-trend-chip @(item.DecliningStudentCount > 0 ? "is-negative" : "is-muted")">
+                            ↓ @item.DecliningStudentCount @A["Declining"]
+                        </span>
+                        <a asp-action="TopicsSkills"
+                           asp-route-academicYearId="@Model.AcademicYearId"
+                           asp-route-classGroupId="@item.ClassGroupId"
+                           asp-route-subjectId="@Model.SubjectId">
+                            @A["TopicsSkills"] →
+                        </a>
+                    </footer>
+                </article>
+            }
+        </div>
+    </section>
+
+    <section class="analytics-panel">
+        <header>
+            <h2>@A["PriorityGaps"]</h2>
+            <p>Skills are prioritized by affected students, affected classes and the deterministic intervention priority from the Evaluation Engine.</p>
+        </header>
+
+        @if (Model.PriorityGaps.Count == 0)
+        {
+            <p class="analytics-empty-inline">@A["InsufficientEvidence"]</p>
+        }
+        else
+        {
+            <div class="analytics-table-wrap">
+                <table class="analytics-table supervisor-gap-table">
+                    <thead>
+                        <tr>
+                            <th>@A["Skill"]</th>
+                            <th>@A["AffectedStudents"]</th>
+                            <th>@A["EvaluatedStudents"]</th>
+                            <th>@A["AffectedClasses"]</th>
+                            <th>@A["ClassMastery"]</th>
+                            <th>@A["Priority"]</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var gap in Model.PriorityGaps)
+                        {
+                            <tr>
+                                <td>
+                                    <strong>@gap.SkillName</strong>
+                                    <small>@gap.SkillKey</small>
+                                </td>
+                                <td>@gap.AffectedStudentCount</td>
+                                <td>@gap.EvaluatedStudentCount</td>
+                                <td>@gap.AffectedClassCount</td>
+                                <td>@Value(gap.AverageMasteryPercentage)</td>
+                                <td>
+                                    <span class="evaluation-priority priority-@gap.HighestPriority.ToString().ToLowerInvariant()">
+                                        @gap.HighestPriority
+                                    </span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </section>
+</section>
