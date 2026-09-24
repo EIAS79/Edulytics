@@ -127,11 +127,18 @@ public sealed class IdentitySchoolUserRepository
                 x.Name))
             .ToArrayAsync(cancellationToken);
 
+        var classProgramIds = _context.ClassGroups
+            .AsNoTracking()
+            .Where(x => x.SchoolId == schoolId)
+            .Select(x => x.AcademicProgramId)
+            .Distinct();
+
         var programs = await _context.AcademicPrograms
             .AsNoTracking()
             .Where(x =>
                 x.SchoolId == schoolId &&
-                !x.IsDefault)
+                (!x.IsDefault ||
+                 classProgramIds.Contains(x.Id)))
             .OrderBy(x => x.Name)
             .Select(x => new SchoolUserDirectoryFilterOption(
                 x.Id,
