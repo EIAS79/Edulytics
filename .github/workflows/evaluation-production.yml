@@ -1,0 +1,169 @@
+name: Evaluation Production Gate
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/Edulytics.Core/Analytics/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Core/Practice/**'
+      - 'src/Edulytics.Data/Repositories/AnalyticsRepository.cs'
+      - 'src/Edulytics.Data/Repositories/StudentPrivatePracticeRepository.cs'
+      - 'src/Edulytics.Services/Analytics/**'
+      - 'src/Edulytics.Web/Controllers/AnalyticsController.cs'
+      - 'src/Edulytics.Web/Controllers/StudentPortalController.cs'
+      - 'src/Edulytics.Web/Extensions/AnalyticsRegistrationExtensions.cs'
+      - 'src/Edulytics.Web/Extensions/StudentPortalRegistrationExtensions.cs'
+      - 'src/Edulytics.Web/Views/Analytics/**'
+      - 'src/Edulytics.Web/Views/StudentPortal/**'
+      - 'src/Edulytics.Web/Printing/AnalyticsPdfRenderer.cs'
+      - 'src/Edulytics.Web/wwwroot/css/site.css'
+      - 'src/Edulytics.Web/wwwroot/css/round4-ux-display.css'
+      - 'src/Edulytics.Web/Resources/AnalyticsResource*.resx'
+      - 'src/Edulytics.Web/Resources/StudentResource*.resx'
+      - 'tests/Edulytics.Tests/Phase43/**'
+      - 'tests/Edulytics.Tests/Phase44/**'
+      - 'docs/evaluation/**'
+      - 'tools/evaluation/**'
+      - '.github/workflows/evaluation-production.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/Edulytics.Core/Analytics/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Core/Practice/**'
+      - 'src/Edulytics.Data/Repositories/AnalyticsRepository.cs'
+      - 'src/Edulytics.Data/Repositories/StudentPrivatePracticeRepository.cs'
+      - 'src/Edulytics.Services/Analytics/**'
+      - 'src/Edulytics.Web/Controllers/AnalyticsController.cs'
+      - 'src/Edulytics.Web/Controllers/StudentPortalController.cs'
+      - 'src/Edulytics.Web/Extensions/AnalyticsRegistrationExtensions.cs'
+      - 'src/Edulytics.Web/Extensions/StudentPortalRegistrationExtensions.cs'
+      - 'src/Edulytics.Web/Views/Analytics/**'
+      - 'src/Edulytics.Web/Views/StudentPortal/**'
+      - 'src/Edulytics.Web/Printing/AnalyticsPdfRenderer.cs'
+      - 'src/Edulytics.Web/wwwroot/css/site.css'
+      - 'src/Edulytics.Web/wwwroot/css/round4-ux-display.css'
+      - 'src/Edulytics.Web/Resources/AnalyticsResource*.resx'
+      - 'src/Edulytics.Web/Resources/StudentResource*.resx'
+      - 'tests/Edulytics.Tests/Phase43/**'
+      - 'tests/Edulytics.Tests/Phase44/**'
+      - 'docs/evaluation/**'
+      - 'tools/evaluation/**'
+      - '.github/workflows/evaluation-production.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: evaluation-production-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+  DOTNET_NOLOGO: "1"
+
+jobs:
+  production-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_DB: edulytics_evaluation_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_evaluation_ci"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=20
+
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v6.0.0
+        with:
+          dotnet-version: "10.0.200"
+
+      - name: Configure PostgreSQL
+        shell: bash
+        run: |
+          {
+            echo 'ConnectionStrings__DefaultConnection=Host=127.0.0.1;Port=5432;Database=edulytics_evaluation_ci;Username=postgres;Password=postgres;SSL Mode=Disable;Include Error Detail=true'
+            echo 'EDULYTICS_CI_POSTGRES_CONNECTION=Host=127.0.0.1;Port=5432;Database=edulytics_evaluation_ci;Username=postgres;Password=postgres;SSL Mode=Disable;Include Error Detail=true'
+          } >> "$GITHUB_ENV"
+
+      - name: Restore tools
+        run: dotnet tool restore
+
+      - name: Restore
+        run: dotnet restore Edulytics.sln
+
+      - name: Release build
+        run: dotnet build Edulytics.sln --configuration Release --no-restore
+
+      - name: Apply migrations
+        run: |
+          dotnet ef database update             --project src/Edulytics.Data/Edulytics.Data.csproj             --startup-project src/Edulytics.Web/Edulytics.Web.csproj             --context EdulyticsDbContext
+
+      - name: Reject pending model changes
+        run: |
+          dotnet ef migrations has-pending-model-changes             --project src/Edulytics.Data/Edulytics.Data.csproj             --startup-project src/Edulytics.Web/Edulytics.Web.csproj             --context EdulyticsDbContext
+
+      - name: Focused evaluation privacy regression
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj             --configuration Release             --no-build             --no-restore             --filter "FullyQualifiedName~Phase44|FullyQualifiedName~Phase43PrivacyAndReportBoundaryTests"
+
+      - name: Full regression
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/evaluation
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj             --configuration Release             --no-build             --no-restore             --logger "trx;LogFileName=evaluation-production.trx"             2>&1 | tee artifacts/evaluation/full-test.log
+          bash scripts/ci-test-log-gate.sh             artifacts/evaluation/full-test.log
+
+      - name: PostgreSQL repository/concurrency gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet run             --project tests/Edulytics.PostgresGate/Edulytics.PostgresGate.csproj             -c Release             2>&1 | tee artifacts/evaluation/postgres-gate.log
+          grep -q 'PHASE16_POSTGRES_GATE_PASS'             artifacts/evaluation/postgres-gate.log
+
+      - name: Localization parity
+        run: python3 scripts/ci-localization-parity.py
+
+      - name: Architecture gate
+        run: python3 scripts/ci-architecture-gate.py
+
+      - name: Tenant and IDOR regression
+        env:
+          EDULYTICS_TEST_CONFIGURATION: Release
+        run: bash scripts/ci-tenant-idor-gate.sh artifacts/evaluation/tenant
+
+      - name: Dependency vulnerability gate
+        run: bash scripts/ci-dependency-gate.sh artifacts/evaluation/nuget-vulnerabilities.txt
+
+      - name: Evaluation staging-smoke contract
+        run: python3 tools/evaluation/evaluation_staging_smoke.py --self-test
+
+      - name: Diff whitespace gate
+        run: git diff --check origin/main...HEAD
+
+      - name: Preserve production gate artifacts
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: evaluation-production-${{ github.sha }}
+          path: artifacts/evaluation
+          retention-days: 14
+          if-no-files-found: warn

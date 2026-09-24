@@ -7,6 +7,7 @@ ROOT="$(
 )"
 
 RESULTS="${1:-$ROOT/artifacts/tenant}"
+CONFIGURATION="${EDULYTICS_TEST_CONFIGURATION:-Debug}"
 
 mkdir -p "$RESULTS"
 
@@ -19,6 +20,7 @@ run_gate() {
 
     dotnet test \
         "$ROOT/tests/Edulytics.Tests/Edulytics.Tests.csproj" \
+        --configuration "$CONFIGURATION" \
         --no-build \
         --no-restore \
         --filter "$filter" \

@@ -1,6 +1,7 @@
 using Edulytics.Core.Analytics;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
+using Edulytics.Core.Mathematics.Assessment;
 using Edulytics.Core.Mathematics.Skills;
 
 namespace Edulytics.Services.Analytics;
@@ -405,7 +406,15 @@ public sealed class LearningEvaluationEngine
             skill.PrerequisiteSkillKeys,
             [],
             Summary(evidence),
-            FormulaVersion);
+            FormulaVersion,
+            Stage19AssessmentSkillContracts.TryResolve(
+                outcome.Code,
+                out var assessmentContract) &&
+            assessmentContract is not null &&
+            string.Equals(
+                assessmentContract.SkillId,
+                skill.SkillKey,
+                StringComparison.Ordinal));
     }
 
     private static EvaluationEvidenceSummary Summary(

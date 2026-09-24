@@ -56,6 +56,9 @@ public sealed class AnalyticsInterventionWorkflowTests
             "request.LearningOutcomeId",
             source);
         Assert.Contains(
+            "!skill.TargetedCheckAvailable",
+            source);
+        Assert.Contains(
             "/school/assessments/{assessmentId:D}/builder",
             source);
 
@@ -86,6 +89,9 @@ public sealed class AnalyticsInterventionWorkflowTests
             view);
         Assert.Contains(
             "skillKey",
+            view);
+        Assert.Contains(
+            "skill.TargetedCheckAvailable",
             view);
         Assert.Contains(
             "questionCount",

@@ -5,18 +5,6 @@
 @{
     ViewData["Title"] = A["AnalyticsTitle"].Value;
     var d = Model.Dashboard;
-
-    // Canonicalize route values from authorized option sets instead of
-    // reflecting raw query-string filter values back into generated HTML.
-    Guid? reportAcademicYearId = d.SelectedAcademicYearId.HasValue
-        ? d.AcademicYears.FirstOrDefault(x => x.Id == d.SelectedAcademicYearId.Value)?.Id
-        : null;
-    Guid? reportClassGroupId = d.SelectedClassGroupId.HasValue
-        ? d.ClassGroups.FirstOrDefault(x => x.Id == d.SelectedClassGroupId.Value)?.Id
-        : null;
-    Guid? reportSubjectId = d.SelectedSubjectId.HasValue
-        ? d.Subjects.FirstOrDefault(x => x.Id == d.SelectedSubjectId.Value)?.Id
-        : null;
 }
 
 <section class="analytics-page" data-analytics-live="true">
@@ -183,70 +171,8 @@
         </div>
     </form>
 
-    @if (d.CanRecalculate &&
-         reportAcademicYearId.HasValue &&
-         reportSubjectId.HasValue)
-    {
-        <div class="analytics-supervisor-entry">
-            <div>
-                <strong>@A["SubjectOverview"]</strong>
-                <span>Compare classes, student movement and shared skill gaps across the supervised subject.</span>
-            </div>
-            <a class="school-button school-button-secondary"
-               asp-action="SubjectOverview"
-               asp-route-academicYearId="@reportAcademicYearId"
-               asp-route-subjectId="@reportSubjectId">
-                @A["SubjectOverview"]
-            </a>
-        </div>
-    }
-
-    @if (reportAcademicYearId.HasValue &&
-         reportClassGroupId.HasValue &&
-         reportSubjectId.HasValue)
-    {
-        <nav class="evaluation-nav" aria-label="@A["AnalyticsTitle"]">
-            <a class="is-active"
-               asp-action="Index"
-               asp-route-academicYearId="@reportAcademicYearId"
-               asp-route-classGroupId="@reportClassGroupId"
-               asp-route-subjectId="@reportSubjectId">
-                @A["EvaluationOverview"]
-            </a>
-            <a asp-action="Students"
-               asp-route-academicYearId="@reportAcademicYearId"
-               asp-route-classGroupId="@reportClassGroupId"
-               asp-route-subjectId="@reportSubjectId">
-                @A["AllStudents"]
-            </a>
-            <a asp-action="TopicsSkills"
-               asp-route-academicYearId="@reportAcademicYearId"
-               asp-route-classGroupId="@reportClassGroupId"
-               asp-route-subjectId="@reportSubjectId">
-                @A["TopicsSkills"]
-            </a>
-        </nav>
-    }
-    else
-    {
-        <div class="analytics-info-note">
-            @A["EvaluationRequiresScope"]
-        </div>
-    }
-
-    @if (d.HasData)
-    {
-        <div class="assessment-actions analytics-export-actions">
-            <a class="school-button"
-               asp-controller="Analytics"
-               asp-action="ClassReportPdf"
-               asp-route-academicYearId="@reportAcademicYearId"
-               asp-route-classGroupId="@reportClassGroupId"
-               asp-route-subjectId="@reportSubjectId">
-                Download class analytics PDF
-            </a>
-        </div>
-    }
+    <partial name="_AnalyticsEvaluationNavigation"
+             model="Model" />
 
     @if (!d.HasData)
     {

@@ -170,7 +170,7 @@
 }
 
 <section class="student-dashboard-content-grid">
-    <article class="student-panel student-dashboard-priority">
+    <article class="student-panel student-dashboard-priority student-dashboard-list-panel">
         <div class="student-panel-heading">
             <div>
                 <span class="student-eyebrow">@S["TasksToDo"]</span>
@@ -192,7 +192,7 @@
         else
         {
             <div class="student-dashboard-task-list">
-                @foreach (var item in Model.ToDoAssessments.Take(4))
+                @foreach (var item in Model.ToDoAssessments)
                 {
                     <article class="student-dashboard-task">
                         <div>
