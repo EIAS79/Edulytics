@@ -1207,3 +1207,29 @@
   font-size: .64rem;
   font-weight: 820;
 }
+
+
+/* Evaluation E22 — student report access */
+.student-dashboard-evaluation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.student-progress-report-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+@media (max-width: 700px) {
+  .student-dashboard-evaluation-actions {
+    justify-content: flex-start;
+  }
+
+  .student-progress-report-actions > * {
+    flex: 1 1 150px;
+  }
+}
