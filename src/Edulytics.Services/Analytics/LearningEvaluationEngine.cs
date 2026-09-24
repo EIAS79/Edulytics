@@ -13,7 +13,7 @@ namespace Edulytics.Services.Analytics;
 /// </summary>
 public sealed class LearningEvaluationEngine
 {
-    public const string FormulaVersion = "evaluation-v1";
+    public const string FormulaVersion = "evaluation-v2";
 
     private readonly EvaluationEvidenceNormalizer _normalizer;
 
@@ -267,11 +267,15 @@ public sealed class LearningEvaluationEngine
                 (decimal)expectedCount *
                 100m);
 
-        var confidence = evaluatedSkills.Length == 0
-            ? 0m
-            : Round2(
-                evaluatedSkills.Average(
-                    x => x.ConfidencePercentage));
+        var averageEvaluatedSkillConfidence =
+            evaluatedSkills.Length == 0
+                ? 0m
+                : evaluatedSkills.Average(
+                    x => x.ConfidencePercentage);
+        var confidence = Round2(
+            averageEvaluatedSkillConfidence *
+            coverage /
+            100m);
 
         var allEvidence = evidence.ToArray();
         var assessmentMastery = WeightedMastery(
