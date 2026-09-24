@@ -842,67 +842,236 @@ public static class AnalyticsPdfRenderer
         ArgumentNullException.ThrowIfNull(studentsPage);
         ArgumentNullException.ThrowIfNull(topicPage);
 
+        var generatedAtUtc = DateTime.UtcNow;
         var document = CreateDocument("Edulytics class evaluation report");
         var section = document.AddSection();
-        ConfigurePage(section);
-        AddTitle(section, "Class evaluation report");
 
-        AddContext(
+        ConfigureClassEvaluationReportPage(section);
+        AddClassReportBrandHeader(
             section,
+            "Class evaluation report",
+            $"{studentsPage.ClassName} · {studentsPage.SubjectName}");
+
+        var context = ClassReportTable(
+            section,
+            6.4,
+            7.0,
+            6.0,
+            6.2);
+        ReportHeader(
+            context,
+            "Academic year",
+            "Class",
+            "Subject",
+            "Report scope");
+        ReportRow(
+            context,
             studentsPage.AcademicYearName,
             studentsPage.ClassName,
-            studentsPage.SubjectName);
+            studentsPage.SubjectName,
+            "Whole class evaluation");
+
+        var generated = section.AddParagraph();
+        generated.Format.SpaceBefore = Unit.FromPoint(3);
+        generated.Format.SpaceAfter = Unit.FromPoint(7);
+        generated.Format.Font.Size = Unit.FromPoint(7.5);
+        generated.Format.Font.Color = Color.FromRgb(122, 132, 153);
+        generated.AddText(
+            $"Generated {generatedAtUtc:yyyy-MM-dd HH:mm} UTC");
 
         var distribution = studentsPage.Distribution;
+        var studentsWithMastery = studentsPage.Students
+            .Where(x => x.CurrentMasteryPercentage.HasValue)
+            .ToArray();
+        var averageMastery = studentsWithMastery.Length == 0
+            ? (decimal?)null
+            : decimal.Round(
+                studentsWithMastery.Average(
+                    x => x.CurrentMasteryPercentage!.Value),
+                1,
+                MidpointRounding.AwayFromZero);
+        var averageCoverage = studentsPage.Students.Count == 0
+            ? 0m
+            : decimal.Round(
+                studentsPage.Students.Average(x => x.CoveragePercentage),
+                1,
+                MidpointRounding.AwayFromZero);
+        var averageConfidence = studentsPage.Students.Count == 0
+            ? 0m
+            : decimal.Round(
+                studentsPage.Students.Average(x => x.ConfidencePercentage),
+                1,
+                MidpointRounding.AwayFromZero);
+        var needsAttention =
+            distribution.NeedsFocus +
+            distribution.Critical;
 
-        AddSectionHeading(section, "Class evaluation summary");
-        var summary = BaseTable(section, 2);
-        Header(summary, "Metric", "Value");
-        Row(summary, "Students", distribution.TotalStudents.ToString(CultureInfo.InvariantCulture));
-        Row(summary, "Strong / secure", distribution.StrongOrSecure.ToString(CultureInfo.InvariantCulture));
-        Row(summary, "Developing", distribution.Developing.ToString(CultureInfo.InvariantCulture));
-        Row(summary, "Needs focus", distribution.NeedsFocus.ToString(CultureInfo.InvariantCulture));
-        Row(summary, "Critical", distribution.Critical.ToString(CultureInfo.InvariantCulture));
-        Row(summary, "Insufficient evidence", distribution.InsufficientEvidence.ToString(CultureInfo.InvariantCulture));
-        Row(summary, "Improving", distribution.Improving.ToString(CultureInfo.InvariantCulture));
-        Row(summary, "Stable", distribution.Stable.ToString(CultureInfo.InvariantCulture));
-        Row(summary, "Declining", distribution.Declining.ToString(CultureInfo.InvariantCulture));
+        AddReportSectionHeading(section, "Class performance overview");
+        var kpis = ClassReportTable(
+            section,
+            5.1,
+            5.1,
+            5.1,
+            5.1,
+            5.1);
+        ReportHeader(
+            kpis,
+            "Students",
+            "Average mastery",
+            "Needs attention",
+            "Average coverage",
+            "Evidence confidence");
+        ReportRow(
+            kpis,
+            distribution.TotalStudents.ToString(CultureInfo.InvariantCulture),
+            NullablePercent(averageMastery),
+            needsAttention.ToString(CultureInfo.InvariantCulture),
+            Percent(averageCoverage),
+            Percent(averageConfidence));
 
-        AddSectionHeading(section, "All students");
+        var confidenceNote = section.AddParagraph();
+        confidenceNote.Format.SpaceBefore = Unit.FromPoint(4);
+        confidenceNote.Format.SpaceAfter = Unit.FromPoint(7);
+        confidenceNote.Format.Font.Size = Unit.FromPoint(8);
+        confidenceNote.Format.Font.Color = Color.FromRgb(93, 105, 130);
+        confidenceNote.AddText(
+            "Mastery grade and evidence confidence are different. "
+            + "Evidence confidence is coverage-adjusted and describes how strongly the available evidence supports the subject-level evaluation; it is not the student's grade.");
+
+        AddReportSectionHeading(section, "Mastery distribution");
+        var masteryBands = ClassReportTable(
+            section,
+            5.1,
+            5.1,
+            5.1,
+            5.1,
+            5.1);
+        var masteryHeader = masteryBands.AddRow();
+        masteryHeader.Format.Font.Bold = true;
+        masteryHeader.Format.Font.Color = Color.FromRgb(53, 67, 103);
+        masteryHeader.Cells[0].Shading.Color = Color.FromRgb(232, 248, 240);
+        masteryHeader.Cells[1].Shading.Color = Color.FromRgb(238, 240, 255);
+        masteryHeader.Cells[2].Shading.Color = Color.FromRgb(255, 244, 225);
+        masteryHeader.Cells[3].Shading.Color = Color.FromRgb(253, 235, 234);
+        masteryHeader.Cells[4].Shading.Color = Color.FromRgb(241, 243, 247);
+        masteryHeader.Cells[0].AddParagraph("Secure / strong");
+        masteryHeader.Cells[1].AddParagraph("Developing");
+        masteryHeader.Cells[2].AddParagraph("Needs focus");
+        masteryHeader.Cells[3].AddParagraph("Critical");
+        masteryHeader.Cells[4].AddParagraph("Insufficient");
+
+        var masteryRow = masteryBands.AddRow();
+        masteryRow.Format.Font.Size = Unit.FromPoint(9);
+        masteryRow.Format.Font.Bold = true;
+        masteryRow.Cells[0].AddParagraph(
+            $"{distribution.StrongOrSecure} · {ClassShare(distribution.StrongOrSecure, distribution.TotalStudents)}");
+        masteryRow.Cells[1].AddParagraph(
+            $"{distribution.Developing} · {ClassShare(distribution.Developing, distribution.TotalStudents)}");
+        masteryRow.Cells[2].AddParagraph(
+            $"{distribution.NeedsFocus} · {ClassShare(distribution.NeedsFocus, distribution.TotalStudents)}");
+        masteryRow.Cells[3].AddParagraph(
+            $"{distribution.Critical} · {ClassShare(distribution.Critical, distribution.TotalStudents)}");
+        masteryRow.Cells[4].AddParagraph(
+            $"{distribution.InsufficientEvidence} · {ClassShare(distribution.InsufficientEvidence, distribution.TotalStudents)}");
+
+        AddReportSectionHeading(section, "Student movement");
+        var movement = ClassReportTable(
+            section,
+            8.5,
+            8.5,
+            8.5);
+        var movementHeader = movement.AddRow();
+        movementHeader.Format.Font.Bold = true;
+        movementHeader.Cells[0].Shading.Color = Color.FromRgb(232, 248, 240);
+        movementHeader.Cells[1].Shading.Color = Color.FromRgb(238, 243, 255);
+        movementHeader.Cells[2].Shading.Color = Color.FromRgb(253, 235, 234);
+        movementHeader.Cells[0].AddParagraph("Improving");
+        movementHeader.Cells[1].AddParagraph("Stable");
+        movementHeader.Cells[2].AddParagraph("Declining");
+        ReportRow(
+            movement,
+            $"{distribution.Improving} · {ClassShare(distribution.Improving, distribution.TotalStudents)}",
+            $"{distribution.Stable} · {ClassShare(distribution.Stable, distribution.TotalStudents)}",
+            $"{distribution.Declining} · {ClassShare(distribution.Declining, distribution.TotalStudents)}");
+
+        AddReportSectionHeading(section, "Mastery grading");
+        var grading = ClassReportTable(
+            section,
+            5.1,
+            5.1,
+            5.1,
+            5.1,
+            5.1);
+        var gradingRow = grading.AddRow();
+        gradingRow.Cells[0].Shading.Color = Color.FromRgb(253, 235, 234);
+        gradingRow.Cells[1].Shading.Color = Color.FromRgb(255, 244, 225);
+        gradingRow.Cells[2].Shading.Color = Color.FromRgb(238, 240, 255);
+        gradingRow.Cells[3].Shading.Color = Color.FromRgb(232, 248, 240);
+        gradingRow.Cells[4].Shading.Color = Color.FromRgb(233, 245, 255);
+        gradingRow.Cells[0].AddParagraph("Critical < 40%");
+        gradingRow.Cells[1].AddParagraph("Needs focus 40-59%");
+        gradingRow.Cells[2].AddParagraph("Developing 60-74%");
+        gradingRow.Cells[3].AddParagraph("Secure 75-89%");
+        gradingRow.Cells[4].AddParagraph("Strong 90-100%");
+
+        AddReportSectionHeading(section, "All students");
         if (studentsPage.Students.Count == 0)
         {
             AddEmpty(section, "No students are available in this class.");
         }
         else
         {
-            var students = BaseTable(section, 8);
-            Header(
+            var students = ClassReportTable(
+                section,
+                4.2,
+                2.0,
+                2.7,
+                2.5,
+                2.5,
+                2.1,
+                2.5,
+                1.6,
+                3.4);
+            ReportHeader(
                 students,
                 "Student",
                 "Current",
+                "Grade",
                 "Assessment",
                 "Practice",
                 "Coverage",
                 "Trend",
-                "Critical gaps",
-                "Confidence");
+                "Gaps",
+                "Evidence confidence");
 
             foreach (var item in studentsPage.Students.Take(120))
             {
-                Row(
-                    students,
-                    $"{item.DisplayName} ({item.StudentNumber})",
-                    NullablePercent(item.CurrentMasteryPercentage),
-                    NullablePercent(item.AssessmentMasteryPercentage),
-                    NullablePercent(item.PracticeMasteryPercentage),
-                    Percent(item.CoveragePercentage),
-                    Trend(item.ShortTermTrend),
-                    item.CriticalSkillCount.ToString(CultureInfo.InvariantCulture),
-                    $"{Percent(item.ConfidencePercentage)} {item.ConfidenceBand}");
+                var row = students.AddRow();
+                row.VerticalAlignment = VerticalAlignment.Center;
+                var grade = ClassMasteryGrade(item.CurrentMasteryPercentage);
+
+                row.Cells[0].AddParagraph(
+                    $"{item.DisplayName}\n{item.StudentNumber}");
+                row.Cells[1].AddParagraph(
+                    NullablePercent(item.CurrentMasteryPercentage));
+                row.Cells[2].AddParagraph(grade.Label);
+                row.Cells[2].Shading.Color = grade.Color;
+                row.Cells[3].AddParagraph(
+                    NullablePercent(item.AssessmentMasteryPercentage));
+                row.Cells[4].AddParagraph(
+                    NullablePercent(item.PracticeMasteryPercentage));
+                row.Cells[5].AddParagraph(
+                    Percent(item.CoveragePercentage));
+                row.Cells[6].AddParagraph(
+                    Trend(item.ShortTermTrend));
+                row.Cells[7].AddParagraph(
+                    item.CriticalSkillCount.ToString(CultureInfo.InvariantCulture));
+                row.Cells[8].AddParagraph(
+                    $"{Percent(item.ConfidencePercentage)}\n{item.ConfidenceBand}");
             }
         }
 
-        AddSectionHeading(section, "Priority topic and skill gaps");
+        AddReportSectionHeading(section, "Priority topic and skill gaps");
         var skillRows = topicPage.Topics
             .SelectMany(topic =>
                 topic.Skills.Select(skill =>
@@ -929,8 +1098,16 @@ public static class AnalyticsPdfRenderer
         }
         else
         {
-            var gaps = BaseTable(section, 7);
-            Header(
+            var gaps = ClassReportTable(
+                section,
+                5.0,
+                6.3,
+                3.0,
+                2.6,
+                2.5,
+                3.0,
+                3.0);
+            ReportHeader(
                 gaps,
                 "Topic",
                 "Skill",
@@ -942,7 +1119,7 @@ public static class AnalyticsPdfRenderer
 
             foreach (var item in skillRows)
             {
-                Row(
+                ReportRow(
                     gaps,
                     item.Topic,
                     item.Skill.SkillName,
@@ -954,7 +1131,142 @@ public static class AnalyticsPdfRenderer
             }
         }
 
+        AddReportFooter(
+            section,
+            "Edulytics · Class evaluation report",
+            generatedAtUtc);
+
         return Render(document);
+    }
+
+    private static void ConfigureClassEvaluationReportPage(
+        Section section)
+    {
+        section.PageSetup.PageFormat = PageFormat.A4;
+        section.PageSetup.Orientation = Orientation.Landscape;
+        section.PageSetup.TopMargin = Unit.FromCentimeter(.9);
+        section.PageSetup.BottomMargin = Unit.FromCentimeter(1.1);
+        section.PageSetup.LeftMargin = Unit.FromCentimeter(1.0);
+        section.PageSetup.RightMargin = Unit.FromCentimeter(1.0);
+    }
+
+    private static void AddClassReportBrandHeader(
+        Section section,
+        string title,
+        string subtitle)
+    {
+        var table = section.AddTable();
+        table.Borders.Width = Unit.FromPoint(0);
+        table.AddColumn(Unit.FromCentimeter(6.0));
+        table.AddColumn(Unit.FromCentimeter(19.5));
+
+        var row = table.AddRow();
+        row.Cells[0].VerticalAlignment = VerticalAlignment.Center;
+        row.Cells[1].VerticalAlignment = VerticalAlignment.Center;
+
+        var logoPath = ResolveBrandLogoPath();
+        if (logoPath is not null)
+        {
+            try
+            {
+                var logo = row.Cells[0].AddImage(logoPath);
+                logo.LockAspectRatio = true;
+                logo.Width = Unit.FromCentimeter(4.7);
+            }
+            catch
+            {
+                row.Cells[0].AddParagraph("EDULYTICS");
+            }
+        }
+        else
+        {
+            var brand = row.Cells[0].AddParagraph("EDULYTICS");
+            brand.Format.Font.Bold = true;
+            brand.Format.Font.Size = Unit.FromPoint(16);
+            brand.Format.Font.Color = Color.FromRgb(55, 77, 172);
+        }
+
+        var heading = row.Cells[1].AddParagraph();
+        heading.Format.Alignment = ParagraphAlignment.Right;
+        heading.Format.Font.Bold = true;
+        heading.Format.Font.Size = Unit.FromPoint(18);
+        heading.Format.Font.Color = Color.FromRgb(28, 42, 81);
+        heading.AddText(title);
+
+        var sub = row.Cells[1].AddParagraph();
+        sub.Format.Alignment = ParagraphAlignment.Right;
+        sub.Format.Font.Size = Unit.FromPoint(9);
+        sub.Format.Font.Color = Color.FromRgb(111, 123, 150);
+        sub.AddText(subtitle);
+
+        var rule = section.AddParagraph();
+        rule.Format.SpaceAfter = Unit.FromPoint(7);
+        rule.Format.Borders.Bottom.Width = Unit.FromPoint(1.2);
+        rule.Format.Borders.Bottom.Color = Color.FromRgb(82, 98, 227);
+    }
+
+    private static Table ClassReportTable(
+        Section section,
+        params double[] widthsCm)
+    {
+        var table = section.AddTable();
+        table.Borders.Width = Unit.FromPoint(.45);
+        table.Borders.Color = Color.FromRgb(224, 229, 239);
+        table.Format.Font.Size = Unit.FromPoint(7.6);
+        table.Rows.LeftIndent = Unit.Zero;
+        table.LeftPadding = Unit.FromPoint(4);
+        table.RightPadding = Unit.FromPoint(4);
+
+        foreach (var width in widthsCm)
+            table.AddColumn(Unit.FromCentimeter(width));
+
+        return table;
+    }
+
+    private static string ClassShare(
+        int count,
+        int total)
+    {
+        if (total <= 0)
+            return "0%";
+
+        var percentage =
+            decimal.Round(
+                count * 100m / total,
+                1,
+                MidpointRounding.AwayFromZero);
+
+        return Percent(percentage);
+    }
+
+    private static (string Label, Color Color) ClassMasteryGrade(
+        decimal? mastery)
+    {
+        if (!mastery.HasValue)
+        {
+            return (
+                "Insufficient",
+                Color.FromRgb(241, 243, 247));
+        }
+
+        return mastery.Value switch
+        {
+            < 40m => (
+                "Critical",
+                Color.FromRgb(253, 235, 234)),
+            < 60m => (
+                "Needs focus",
+                Color.FromRgb(255, 244, 225)),
+            < 75m => (
+                "Developing",
+                Color.FromRgb(238, 240, 255)),
+            < 90m => (
+                "Secure",
+                Color.FromRgb(232, 248, 240)),
+            _ => (
+                "Strong",
+                Color.FromRgb(233, 245, 255))
+        };
     }
 
     private static void ConfigureStudentReportPage(
