@@ -32,6 +32,28 @@ public sealed class LearningEvaluationEngine
     {
         ArgumentNullException.ThrowIfNull(snapshot);
 
+        return BuildStudentSubject(
+            snapshot,
+            _normalizer.NormalizeOfficial(snapshot),
+            studentProfileId,
+            academicYearId,
+            classGroupId,
+            subjectId,
+            calculatedAtUtc);
+    }
+
+    public StudentSubjectEvaluation BuildStudentSubject(
+        AnalyticsProjectionSnapshot snapshot,
+        IReadOnlyList<EvaluationEvidenceRecord> normalizedEvidence,
+        Guid studentProfileId,
+        Guid academicYearId,
+        Guid classGroupId,
+        Guid subjectId,
+        DateTime calculatedAtUtc)
+    {
+        ArgumentNullException.ThrowIfNull(snapshot);
+        ArgumentNullException.ThrowIfNull(normalizedEvidence);
+
         var student = snapshot.StudentProfiles.SingleOrDefault(
             x =>
                 x.Id == studentProfileId &&
@@ -67,7 +89,7 @@ public sealed class LearningEvaluationEngine
                 "Student is not enrolled in the requested class.");
         }
 
-        var evidence = _normalizer.NormalizeOfficial(snapshot)
+        var evidence = normalizedEvidence
             .Where(x =>
                 x.StudentProfileId == studentProfileId &&
                 x.AcademicYearId == academicYearId &&
@@ -742,6 +764,13 @@ public sealed class LearningEvaluationEngine
                 assessment.Value -
                 practice.Value)
             : null;
+
+    public IReadOnlyList<EvaluationEvidenceRecord> NormalizeOfficialEvidence(
+        AnalyticsProjectionSnapshot snapshot)
+    {
+        ArgumentNullException.ThrowIfNull(snapshot);
+        return _normalizer.NormalizeOfficial(snapshot);
+    }
 
     private static decimal Round2(decimal value) =>
         decimal.Round(
