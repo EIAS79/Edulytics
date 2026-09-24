@@ -141,7 +141,8 @@ public sealed record StudentSkillEvaluation(
     IReadOnlyList<string> PrerequisiteSkillKeys,
     IReadOnlyList<string> WeakPrerequisiteSkillKeys,
     EvaluationEvidenceSummary Evidence,
-    string FormulaVersion);
+    string FormulaVersion,
+    bool TargetedCheckAvailable = false);
 
 public sealed record StudentSubjectEvaluation(
     Guid SchoolId,
