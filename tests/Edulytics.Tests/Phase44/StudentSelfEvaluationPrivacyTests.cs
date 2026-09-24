@@ -49,9 +49,17 @@ public sealed class StudentSelfEvaluationPrivacyTests
         Assert.Contains(
             "ListPrivateEvidenceAsync(",
             service);
+
+        var method = typeof(Edulytics.Services.Analytics.IStudentSelfEvaluationService)
+            .GetMethod(nameof(Edulytics.Services.Analytics.IStudentSelfEvaluationService.GetAsync));
+
+        Assert.NotNull(method);
         Assert.DoesNotContain(
-            "Guid studentProfileId",
-            service);
+            method!.GetParameters(),
+            parameter => string.Equals(
+                parameter.Name,
+                "studentProfileId",
+                StringComparison.OrdinalIgnoreCase));
     }
 
     [Fact]
