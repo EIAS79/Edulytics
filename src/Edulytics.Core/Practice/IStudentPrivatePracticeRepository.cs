@@ -35,6 +35,9 @@ public sealed record PrivatePracticeAttemptSummary(
 public sealed record PrivatePracticeEvidenceItem(
     Guid AttemptId,
     Guid CurriculumAdoptionId,
+    Guid AcademicYearId,
+    Guid ClassGroupId,
+    Guid SubjectId,
     Guid? PedagogicalLessonId,
     Guid AssessmentItemId,
     string? GenerationFamily,
