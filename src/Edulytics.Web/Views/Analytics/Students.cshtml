@@ -151,134 +151,131 @@
         </article>
     </section>
 
-    <section class="evaluation-distribution-grid">
-        <article>
-            <span>@A["Students"]</span>
-            <strong>@Model.Distribution.TotalStudents</strong>
-        </article>
-        <article class="is-positive">
-            <span>@A["StrongSecure"]</span>
-            <strong>@Model.Distribution.StrongOrSecure</strong>
-        </article>
-        <article>
-            <span>@A["MasteryDeveloping"]</span>
-            <strong>@Model.Distribution.Developing</strong>
-        </article>
-        <article class="is-warning">
-            <span>@A["NeedsFocus"]</span>
-            <strong>@Model.Distribution.NeedsFocus</strong>
-        </article>
-        <article class="is-danger">
-            <span>@A["MasteryCritical"]</span>
-            <strong>@Model.Distribution.Critical</strong>
-        </article>
-        <article class="is-muted">
-            <span>@A["InsufficientEvidence"]</span>
-            <strong>@Model.Distribution.InsufficientEvidence</strong>
-        </article>
-    </section>
-
-    <section class="analytics-panel evaluation-trend-summary">
-        <div>
-            <span class="evaluation-trend-chip is-positive">↑ @A["Improving"] <strong>@Model.Distribution.Improving</strong></span>
-            <span class="evaluation-trend-chip is-neutral">→ @A["Stable"] <strong>@Model.Distribution.Stable</strong></span>
-            <span class="evaluation-trend-chip is-negative">↓ @A["Declining"] <strong>@Model.Distribution.Declining</strong></span>
-        </div>
-        <p>Current state and movement are shown separately so a strong student who is declining is not hidden, and a weak student who is recovering remains visible.</p>
-    </section>
-
-    <section class="analytics-panel">
+    <section class="analytics-panel evaluation-students-panel">
         <header>
-            <h2>@A["AllStudents"]</h2>
-            <p>Review every student, not only those currently below a risk threshold.</p>
+            <div>
+                <h2>@A["AllStudents"]</h2>
+                <p>Current mastery, Assessment evidence, Practice evidence, coverage, trend and confidence are grouped per student without forcing ten columns into one table.</p>
+            </div>
         </header>
 
-        <div class="analytics-table-wrap">
-            <table class="analytics-table evaluation-students-table">
-                <thead>
-                    <tr>
-                        <th>@A["Student"]</th>
-                        <th>@A["CurrentMastery"]</th>
-                        <th>@A["AssessmentMastery"]</th>
-                        <th>@A["PracticeMastery"]</th>
-                        <th>@A["TransferGap"]</th>
-                        <th>@A["Coverage"]</th>
-                        <th>@A["ShortTrend"]</th>
-                        <th>@A["CriticalGaps"]</th>
-                        <th>@A["Confidence"]</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model.Students)
-                    {
-                        <tr>
-                            <td data-label="@A["Student"]">
-                                <strong>@item.DisplayName</strong>
-                                <small>@item.StudentNumber</small>
-                            </td>
-                            <td data-label="@A["CurrentMastery"]">
-                                <strong>@Value(item.CurrentMasteryPercentage)</strong>
-                            </td>
-                            <td data-label="@A["AssessmentMastery"]">@Value(item.AssessmentMasteryPercentage)</td>
-                            <td data-label="@A["PracticeMastery"]">@Value(item.PracticeMasteryPercentage)</td>
-                            <td data-label="@A["TransferGap"]">
+        <div class="evaluation-student-list">
+            @foreach (var item in Model.Students)
+            {
+                var assessmentBar = Math.Clamp(
+                    item.AssessmentMasteryPercentage ?? 0m,
+                    0m,
+                    100m);
+                var practiceBar = Math.Clamp(
+                    item.PracticeMasteryPercentage ?? 0m,
+                    0m,
+                    100m);
+                var gapClass = !item.TransferGapPercentagePoints.HasValue
+                    ? "is-neutral"
+                    : item.TransferGapPercentagePoints.Value <= -10m
+                        ? "is-negative"
+                        : item.TransferGapPercentagePoints.Value >= 10m
+                            ? "is-positive"
+                            : "is-neutral";
+
+                <article class="evaluation-student-list-row">
+                    <div class="evaluation-student-list-identity">
+                        <div>
+                            <strong>@item.DisplayName</strong>
+                            <small>@item.StudentNumber</small>
+                        </div>
+                        <span class="evaluation-trend-chip @TrendClass(item.ShortTermTrend)">
+                            @TrendLabel(item.ShortTermTrend)
+                        </span>
+                    </div>
+
+                    <div class="evaluation-student-list-mastery">
+                        <div class="evaluation-current-mastery">
+                            <span>@A["CurrentMastery"]</span>
+                            <strong>@Value(item.CurrentMasteryPercentage)</strong>
+                        </div>
+
+                        <div class="evaluation-comparison-bars">
+                            <div>
+                                <span>@A["AssessmentMastery"]</span>
+                                <span class="evaluation-mastery-track @(item.AssessmentMasteryPercentage.HasValue ? "" : "is-missing")">
+                                    <i style="--mastery-value:@assessmentBar.ToString(CultureInfo.InvariantCulture)"></i>
+                                </span>
+                                <strong>@Value(item.AssessmentMasteryPercentage)</strong>
+                            </div>
+                            <div>
+                                <span>@A["PracticeMastery"]</span>
+                                <span class="evaluation-mastery-track @(item.PracticeMasteryPercentage.HasValue ? "" : "is-missing")">
+                                    <i style="--mastery-value:@practiceBar.ToString(CultureInfo.InvariantCulture)"></i>
+                                </span>
+                                <strong>@Value(item.PracticeMasteryPercentage)</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <dl class="evaluation-student-list-signals">
+                        <div>
+                            <dt>@A["TransferGap"]</dt>
+                            <dd class="@gapClass">
                                 @(item.TransferGapPercentagePoints.HasValue
                                     ? $"{item.TransferGapPercentagePoints.Value:+0.#;-0.#;0} pts"
                                     : "—")
-                            </td>
-                            <td data-label="@A["Coverage"]">
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>@A["Coverage"]</dt>
+                            <dd>
                                 <span class="evaluation-inline-progress">
-                                    <span style="width:@Math.Clamp(item.CoveragePercentage, 0m, 100m).ToString(System.Globalization.CultureInfo.InvariantCulture)%"></span>
+                                    <span style="width:@Math.Clamp(item.CoveragePercentage, 0m, 100m).ToString(CultureInfo.InvariantCulture)%"></span>
                                 </span>
-                                <small>@item.CoveragePercentage.ToString("0.#")%</small>
-                            </td>
-                            <td data-label="@A["ShortTrend"]">
-                                <span class="evaluation-trend-chip @TrendClass(item.ShortTermTrend)">
-                                    @TrendLabel(item.ShortTermTrend)
-                                </span>
-                            </td>
-                            <td data-label="@A["CriticalGaps"]">
+                                <strong>@item.CoveragePercentage.ToString("0.#")%</strong>
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>@A["CriticalGaps"]</dt>
+                            <dd>
                                 <span class="evaluation-gap-count @(item.CriticalSkillCount > 0 ? "has-gaps" : "")">
                                     @item.CriticalSkillCount
                                 </span>
-                            </td>
-                            <td data-label="@A["Confidence"]">
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>@A["Confidence"]</dt>
+                            <dd>
                                 <strong>@item.ConfidencePercentage.ToString("0.#")%</strong>
                                 <small>@item.ConfidenceBand</small>
-                            </td>
-                            <td>
-                                <div class="analytics-student-row-actions">
-                                    <a class="school-button school-button-secondary"
-                                       asp-action="Student"
-                                       asp-route-studentProfileId="@item.StudentProfileId"
-                                       asp-route-academicYearId="@Model.AcademicYearId"
-                                       asp-route-classGroupId="@Model.ClassGroupId"
-                                       asp-route-subjectId="@Model.SubjectId">
-                                        @A["ViewEvaluation"]
-                                    </a>
-                                    <a class="school-button school-button-secondary"
-                                       asp-action="StudentReport"
-                                       asp-route-studentProfileId="@item.StudentProfileId"
-                                       asp-route-academicYearId="@Model.AcademicYearId"
-                                       asp-route-classGroupId="@Model.ClassGroupId"
-                                       asp-route-subjectId="@Model.SubjectId">
-                                        @A["Report"]
-                                    </a>
-                                    <a class="school-button"
-                                       asp-action="StudentReportPdf"
-                                       asp-route-studentProfileId="@item.StudentProfileId"
-                                       asp-route-academicYearId="@Model.AcademicYearId"
-                                       asp-route-classGroupId="@Model.ClassGroupId"
-                                       asp-route-subjectId="@Model.SubjectId">
-                                        PDF
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <div class="analytics-student-row-actions evaluation-student-list-actions">
+                        <a class="school-button school-button-secondary"
+                           asp-action="Student"
+                           asp-route-studentProfileId="@item.StudentProfileId"
+                           asp-route-academicYearId="@Model.AcademicYearId"
+                           asp-route-classGroupId="@Model.ClassGroupId"
+                           asp-route-subjectId="@Model.SubjectId">
+                            @A["ViewEvaluation"]
+                        </a>
+                        <a class="school-button school-button-secondary"
+                           asp-action="StudentReport"
+                           asp-route-studentProfileId="@item.StudentProfileId"
+                           asp-route-academicYearId="@Model.AcademicYearId"
+                           asp-route-classGroupId="@Model.ClassGroupId"
+                           asp-route-subjectId="@Model.SubjectId">
+                            @A["Report"]
+                        </a>
+                        <a class="school-button"
+                           asp-action="StudentReportPdf"
+                           asp-route-studentProfileId="@item.StudentProfileId"
+                           asp-route-academicYearId="@Model.AcademicYearId"
+                           asp-route-classGroupId="@Model.ClassGroupId"
+                           asp-route-subjectId="@Model.SubjectId">
+                            PDF
+                        </a>
+                    </div>
+                </article>
+            }
         </div>
     </section>
 </section>

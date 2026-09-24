@@ -42,7 +42,10 @@ public sealed class LearningEvaluationUiContractTests
             root,
             "src/Edulytics.Web/Views/Analytics/TopicsSkills.cshtml"));
 
-        Assert.Contains("evaluation-students-table", students);
+        Assert.Contains("evaluation-student-list", students);
+        Assert.Contains("evaluation-comparison-bars", students);
+        Assert.Contains("evaluation-student-list-actions", students);
+        Assert.DoesNotContain("evaluation-students-table", students);
         Assert.Contains("Model.Students", students);
         Assert.DoesNotContain("RiskStudents", students);
 
@@ -73,6 +76,9 @@ public sealed class LearningEvaluationUiContractTests
             "Evaluation Engine UI — Student 360 / cohort / topic-skill analytics",
             css);
         Assert.Contains(".evaluation-distribution-grid", css);
+        Assert.Contains(".analytics-overview-layout", css);
+        Assert.Contains(".evaluation-student-list-row", css);
+        Assert.Contains(".evaluation-mastery-track", css);
         Assert.Contains(".evaluation-hero-grid", css);
         Assert.Contains(".evaluation-topic-analytics-grid", css);
         Assert.Contains(".evaluation-practice-grid", css);
