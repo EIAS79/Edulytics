@@ -12120,6 +12120,12 @@ a.lesson-content-row:hover
 }
 
 
+@property --chart-value {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+}
+
 /* Evaluation E20 — visual analytics chart system */
 .evaluation-chart-panel {
     display: grid;
@@ -12596,6 +12602,7 @@ a.lesson-content-row:hover
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .evaluation-donut,
     .evaluation-bar-fill,
     .evaluation-lollipop-stick,
     .evaluation-chart-line,
