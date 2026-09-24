@@ -24,6 +24,7 @@
             <nav class="student-nav">
                 <a class="student-nav-link @(controller == "StudentPortal" && action == "Dashboard" ? "is-active" : "")" asp-controller="StudentPortal" asp-action="Dashboard"><span aria-hidden="true">⌂</span><span>@S["Dashboard"]</span></a>
                 <a class="student-nav-link @(controller == "StudentPortal" && action == "Learning" ? "is-active" : "")" asp-controller="StudentPortal" asp-action="Learning"><span aria-hidden="true">▤</span><span>@S["MyLearning"]</span></a>
+                <a class="student-nav-link @(controller == "StudentPortal" && action == "Progress" ? "is-active" : "")" asp-controller="StudentPortal" asp-action="Progress"><span aria-hidden="true">↗</span><span>@S["MyProgress"]</span></a>
                 <a class="student-nav-link @(controller == "StudentPortal" && action == "Assessments" ? "is-active" : "")" asp-controller="StudentPortal" asp-action="Assessments"><span aria-hidden="true">✓</span><span>@S["Assessments"]</span></a>
                 <a class="student-nav-link @(controller == "StudentPractice" ? "is-active" : "")" asp-controller="StudentPractice" asp-action="Index"><span aria-hidden="true">✦</span><span>@S["PrivatePractice"]</span></a>
                 <a class="student-nav-link @(controller == "StudentPortal" && action == "Results" ? "is-active" : "")" asp-controller="StudentPortal" asp-action="Results"><span aria-hidden="true">↗</span><span>@S["MyResults"]</span></a>
