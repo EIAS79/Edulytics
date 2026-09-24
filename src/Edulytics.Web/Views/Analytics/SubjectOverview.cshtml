@@ -1,6 +1,7 @@
 @model Edulytics.Services.Analytics.AnalyticsSupervisorSubjectOverviewPage
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AnalyticsResource> A
 @using Edulytics.Core.Analytics
+@using System.Globalization
 @{
     ViewData["Title"] = A["SubjectOverview"].Value;
 
@@ -63,6 +64,86 @@
         <article class="is-warning">
             <span>@A["CriticalStudents"]</span>
             <strong>@Model.CriticalStudentCount</strong>
+        </article>
+    </section>
+
+    <section class="evaluation-visual-grid">
+        <article class="evaluation-chart-panel">
+            <header>
+                <div>
+                    <h2>@A["ClassComparisonChart"]</h2>
+                    <p>Class mastery is compared on the same subject/year evaluation model, with coverage retained separately.</p>
+                </div>
+            </header>
+            @if (Model.Classes.Count == 0)
+            {
+                <div class="evaluation-chart-empty">@A["InsufficientEvidence"]</div>
+            }
+            else
+            {
+                <div class="evaluation-lollipop-list"
+                     data-evaluation-chart="lollipop">
+                    @foreach (var item in Model.Classes
+                        .OrderBy(x => x.CurrentMasteryPercentage ?? 101m)
+                        .Take(12))
+                    {
+                        var classValue = item.CurrentMasteryPercentage ?? 0m;
+                        var classState = classValue < 40m
+                            ? "is-danger"
+                            : classValue < 60m
+                                ? "is-warning"
+                                : string.Empty;
+                        <div class="evaluation-lollipop-row @classState">
+                            <span class="evaluation-lollipop-label"
+                                  title="@item.ClassName">@item.ClassName</span>
+                            <span class="evaluation-lollipop-track">
+                                <i class="evaluation-lollipop-stick"
+                                   data-chart-value="@classValue.ToString(CultureInfo.InvariantCulture)"></i>
+                            </span>
+                            <strong>@Value(item.CurrentMasteryPercentage)</strong>
+                        </div>
+                    }
+                </div>
+            }
+        </article>
+
+        <article class="evaluation-chart-panel">
+            <header>
+                <div>
+                    <h2>@A["PriorityGapChart"]</h2>
+                    <p>Each lollipop shows the percentage of evaluated students affected by a priority skill gap.</p>
+                </div>
+            </header>
+            @if (Model.PriorityGaps.Count == 0)
+            {
+                <div class="evaluation-chart-empty">@A["InsufficientEvidence"]</div>
+            }
+            else
+            {
+                <div class="evaluation-lollipop-list"
+                     data-evaluation-chart="lollipop">
+                    @foreach (var gap in Model.PriorityGaps.Take(10))
+                    {
+                        var affectedShare = gap.EvaluatedStudentCount <= 0
+                            ? 0m
+                            : gap.AffectedStudentCount * 100m / gap.EvaluatedStudentCount;
+                        var gapClass = affectedShare >= 50m
+                            ? "is-danger"
+                            : affectedShare >= 25m
+                                ? "is-warning"
+                                : string.Empty;
+                        <div class="evaluation-lollipop-row @gapClass">
+                            <span class="evaluation-lollipop-label"
+                                  title="@gap.SkillName">@gap.SkillName</span>
+                            <span class="evaluation-lollipop-track">
+                                <i class="evaluation-lollipop-stick"
+                                   data-chart-value="@affectedShare.ToString(CultureInfo.InvariantCulture)"></i>
+                            </span>
+                            <strong>@gap.AffectedStudentCount/@gap.EvaluatedStudentCount</strong>
+                        </div>
+                    }
+                </div>
+            }
         </article>
     </section>
 
@@ -185,3 +266,8 @@
         }
     </section>
 </section>
+
+
+@section Scripts {
+    <script src="~/js/evaluation-charts.js" asp-append-version="true"></script>
+}
