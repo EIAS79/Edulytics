@@ -202,7 +202,7 @@ public sealed class IdentitySchoolUserRepository
                     (EF.Functions.Like(profile.DisplayName, $"%{name}%") ||
                      EF.Functions.Like(profile.FirstName, $"%{name}%") ||
                      EF.Functions.Like(profile.LastName, $"%{name}%")))
-                .Select(profile => profile.UserId!.Value);
+                .Select(profile => profile.UserId.GetValueOrDefault());
 
             usersQuery = usersQuery.Where(x =>
                 namedStudentUserIds.Contains(x.Id));
@@ -270,7 +270,7 @@ public sealed class IdentitySchoolUserRepository
                      classGroup.AcademicProgramId == query.AcademicProgramId.Value) &&
                     (!query.ClassGroupId.HasValue ||
                      classGroup.Id == query.ClassGroupId.Value)
-                select profile.UserId!.Value;
+                select profile.UserId.GetValueOrDefault();
 
             var teacherAcademicUserIds =
                 from assignment in _context.TeacherAssignments.AsNoTracking()
@@ -329,10 +329,10 @@ public sealed class IdentitySchoolUserRepository
             .Where(profile =>
                 profile.SchoolId == schoolId &&
                 profile.UserId.HasValue &&
-                userIds.Contains(profile.UserId.Value))
+                userIds.Contains(profile.UserId.GetValueOrDefault()))
             .Select(profile => new
             {
-                UserId = profile.UserId!.Value,
+                UserId = profile.UserId.GetValueOrDefault(),
                 profile.DisplayName,
                 profile.StudentNumber
             })
@@ -351,10 +351,10 @@ public sealed class IdentitySchoolUserRepository
                 where
                     profile.SchoolId == schoolId &&
                     profile.UserId.HasValue &&
-                    userIds.Contains(profile.UserId.Value)
+                    userIds.Contains(profile.UserId.GetValueOrDefault())
                 select new
                 {
-                    UserId = profile.UserId!.Value,
+                    UserId = profile.UserId.GetValueOrDefault(),
                     YearId = year.Id,
                     YearName = year.Name,
                     ProgramId = program.Id,
