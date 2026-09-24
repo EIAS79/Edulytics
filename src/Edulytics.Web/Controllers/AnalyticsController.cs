@@ -117,6 +117,46 @@ public sealed class AnalyticsController : Controller
             : View(result.Value);
     }
 
+    [HttpGet("student/{studentProfileId:guid}/report")]
+    public async Task<IActionResult> StudentReport(
+        Guid studentProfileId,
+        Guid academicYearId,
+        Guid classGroupId,
+        Guid subjectId,
+        Guid? termId,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        if (studentProfileId == Guid.Empty ||
+            academicYearId == Guid.Empty ||
+            classGroupId == Guid.Empty ||
+            subjectId == Guid.Empty)
+        {
+            return BadRequest();
+        }
+
+        var result = await _analytics.GetStudentEvaluationAsync(
+            actorId,
+            studentProfileId,
+            academicYearId,
+            classGroupId,
+            subjectId,
+            cancellationToken);
+
+        if (result.Value is null)
+            return HandleQueryError(result.Error);
+
+        var report = BuildStudentReportPage(
+            result.Value,
+            termId);
+
+        return report is null
+            ? NotFound()
+            : View(report);
+    }
+
     [HttpGet("topics-skills")]
     public async Task<IActionResult> TopicsSkills(
         Guid academicYearId,
@@ -308,6 +348,7 @@ public sealed class AnalyticsController : Controller
         Guid academicYearId,
         Guid classGroupId,
         Guid subjectId,
+        Guid? termId,
         CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId))
@@ -331,9 +372,16 @@ public sealed class AnalyticsController : Controller
         if (result.Value is null)
             return HandleQueryError(result.Error);
 
+        var report = BuildStudentReportPage(
+            result.Value,
+            termId);
+
+        if (report is null)
+            return NotFound();
+
         var bytes =
             AnalyticsPdfRenderer.RenderStudentEvaluationReport(
-                result.Value);
+                report);
         return File(
             bytes,
             "application/pdf",
@@ -368,6 +416,44 @@ public sealed class AnalyticsController : Controller
                         result.Error)].Value;
 
         return RedirectToAction(nameof(Index));
+    }
+
+    private static AnalyticsStudentEvaluationReportPage?
+        BuildStudentReportPage(
+            AnalyticsStudentEvaluationPage source,
+            Guid? termId)
+    {
+        AnalyticsTermEvaluationItem? selectedTerm = null;
+
+        if (termId.HasValue)
+        {
+            selectedTerm = source.Terms.SingleOrDefault(
+                x => x.TermId == termId.Value);
+
+            if (selectedTerm is null)
+                return null;
+        }
+
+        var assessments = termId.HasValue
+            ? source.Assessments
+                .Where(x => x.TermId == termId.Value)
+                .ToArray()
+            : source.Assessments;
+
+        var evidence = termId.HasValue
+            ? source.Evidence
+                .Where(x => x.TermId == termId.Value)
+                .ToArray()
+            : source.Evidence;
+
+        return new AnalyticsStudentEvaluationReportPage(
+            source,
+            termId,
+            selectedTerm?.TermName,
+            selectedTerm,
+            assessments,
+            evidence,
+            DateTime.UtcNow);
     }
 
     private bool TryActor(out Guid id) =>
