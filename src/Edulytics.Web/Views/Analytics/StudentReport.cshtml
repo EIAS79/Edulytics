@@ -193,7 +193,7 @@
                 </header>
                 <div class="evaluation-donut"
                      data-evaluation-chart="donut"
-                     data-value="@((e.CurrentMasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"
+                     data-value="@(e.CurrentMasteryPercentage?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"
                      data-suffix="%"
                      data-decimals="1">
                     <div class="evaluation-donut-content">
@@ -245,7 +245,7 @@
                             <span>@A["AssessmentMastery"]</span>
                             <span class="evaluation-bar-track">
                                 <i class="evaluation-bar-fill"
-                                   data-chart-value="@((e.AssessmentMasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"></i>
+                                   data-chart-value="@(e.AssessmentMasteryPercentage?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"></i>
                             </span>
                             <strong>@Value(e.AssessmentMasteryPercentage)</strong>
                         </div>
@@ -253,7 +253,7 @@
                             <span>@A["PracticeMastery"]</span>
                             <span class="evaluation-bar-track">
                                 <i class="evaluation-bar-fill"
-                                   data-chart-value="@((e.PracticeMasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"></i>
+                                   data-chart-value="@(e.PracticeMasteryPercentage?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"></i>
                             </span>
                             <strong>@Value(e.PracticeMasteryPercentage)</strong>
                         </div>
@@ -299,17 +299,19 @@
                         .OrderBy(x => x.CurrentMasteryPercentage ?? 101m)
                         .Take(12))
                     {
-                        var value = topic.CurrentMasteryPercentage ?? 0m;
-                        var css = value < 40m
-                            ? "is-danger"
-                            : value < 60m
-                                ? "is-warning"
-                                : string.Empty;
+                        var value = topic.CurrentMasteryPercentage;
+                        var css = !value.HasValue
+                            ? string.Empty
+                            : value.Value < 40m
+                                ? "is-danger"
+                                : value.Value < 60m
+                                    ? "is-warning"
+                                    : string.Empty;
                         <div class="evaluation-lollipop-row @css">
                             <span class="evaluation-lollipop-label">@topic.TopicName</span>
                             <span class="evaluation-lollipop-track">
                                 <i class="evaluation-lollipop-stick"
-                                   data-chart-value="@value.ToString(CultureInfo.InvariantCulture)"></i>
+                                   data-chart-value="@(value?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"></i>
                             </span>
                             <strong>@Value(topic.CurrentMasteryPercentage)</strong>
                         </div>
