@@ -21,6 +21,12 @@ public static class AnalyticsRegistrationExtensions
         services.AddSingleton<
             AnalyticsProjectionBuilder>();
 
+        services.AddSingleton<
+            EvaluationEvidenceNormalizer>();
+
+        services.AddSingleton<
+            LearningEvaluationEngine>();
+
         services.AddAuthorization(
             options =>
             {

@@ -67,6 +67,45 @@ public sealed class Phase43PrivacyAndReportBoundaryTests
     }
 
     [Fact]
+    public async Task EvaluationProjection_PrivatePractice_RemainsExcludedFromStaffAnalytics()
+    {
+        await using var db = CreateDb();
+
+        var schoolId = Guid.NewGuid();
+        var official = NewPracticeAttempt(schoolId, isPrivate: false);
+        var privateAttempt = NewPracticeAttempt(schoolId, isPrivate: true);
+        var officialEvidence = NewEvidence(schoolId, official.Id);
+        var privateEvidence = NewEvidence(schoolId, privateAttempt.Id);
+
+        await db.PracticeAttempts.AddRangeAsync(
+            official,
+            privateAttempt);
+        await db.LearningEvidence.AddRangeAsync(
+            officialEvidence,
+            privateEvidence);
+        await db.SaveChangesAsync();
+
+        var snapshot = await new AnalyticsRepository(db)
+            .GetProjectionSnapshotAsync(schoolId);
+
+        Assert.Single(snapshot.PracticeAttempts);
+        Assert.Equal(
+            official.Id,
+            snapshot.PracticeAttempts[0].Id);
+        Assert.DoesNotContain(
+            snapshot.PracticeAttempts,
+            x => x.IsPrivate);
+
+        Assert.Single(snapshot.LearningEvidence);
+        Assert.Equal(
+            officialEvidence.Id,
+            snapshot.LearningEvidence[0].Id);
+        Assert.DoesNotContain(
+            snapshot.LearningEvidence,
+            x => x.PracticeAttemptId == privateAttempt.Id);
+    }
+
+    [Fact]
     public async Task Phase43_ReportFilter_WithClassIdFromAnotherSchool_IsRejected()
     {
         var fixture = ReportFixture.Create();
