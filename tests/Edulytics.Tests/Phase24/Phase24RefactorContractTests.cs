@@ -101,6 +101,11 @@ public sealed class Phase24RefactorContractTests
             StringComparison.Ordinal);
 
         Assert.Contains(
+            "analytics-overview-layout",
+            partial,
+            StringComparison.Ordinal);
+
+        Assert.DoesNotContain(
             "analytics-metrics",
             partial,
             StringComparison.Ordinal);
