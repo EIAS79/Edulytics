@@ -1075,8 +1075,8 @@ public static class AnalyticsPdfRenderer
         for (var i = 0; i < values.Length; i++)
         {
             row.Cells[i].AddParagraph(values[i]);
-            row.Cells[i].Format.LeftPadding = Unit.FromPoint(4);
-            row.Cells[i].Format.RightPadding = Unit.FromPoint(4);
+            row.Cells[i].LeftPadding = Unit.FromPoint(4);
+            row.Cells[i].RightPadding = Unit.FromPoint(4);
         }
     }
 
@@ -1090,8 +1090,8 @@ public static class AnalyticsPdfRenderer
         for (var i = 0; i < values.Length; i++)
         {
             row.Cells[i].AddParagraph(values[i] ?? string.Empty);
-            row.Cells[i].Format.LeftPadding = Unit.FromPoint(4);
-            row.Cells[i].Format.RightPadding = Unit.FromPoint(4);
+            row.Cells[i].LeftPadding = Unit.FromPoint(4);
+            row.Cells[i].RightPadding = Unit.FromPoint(4);
         }
     }
 
