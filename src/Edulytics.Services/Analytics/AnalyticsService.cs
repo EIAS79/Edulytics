@@ -1,3 +1,4 @@
+using Edulytics.Core.Analytics;
 using Edulytics.Core.Constants;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
@@ -12,6 +13,7 @@ public sealed class AnalyticsService : IAnalyticsService
     private readonly ISchoolRepository _schools;
     private readonly ISchoolUserRepository _users;
     private readonly AnalyticsProjectionBuilder _builder;
+    private readonly LearningEvaluationEngine _evaluation;
     private readonly ISubjectSupervisorAssignmentRepository?
         _subjectSupervisors;
 
@@ -21,13 +23,17 @@ public sealed class AnalyticsService : IAnalyticsService
         ISchoolUserRepository users,
         AnalyticsProjectionBuilder builder,
         ISubjectSupervisorAssignmentRepository?
-            subjectSupervisors = null)
+            subjectSupervisors = null,
+        LearningEvaluationEngine? evaluation = null)
     {
         _analytics = analytics;
         _schools = schools;
         _users = users;
         _builder = builder;
         _subjectSupervisors = subjectSupervisors;
+        _evaluation = evaluation ??
+            new LearningEvaluationEngine(
+                new EvaluationEvidenceNormalizer());
     }
 
     public async Task<AnalyticsCommandResult> RecalculateAsync(
