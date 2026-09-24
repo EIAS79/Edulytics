@@ -69,6 +69,43 @@
         });
     }
 
+    function wireClassOverviewDialogs() {
+        document.querySelectorAll("[data-class-details-open]").forEach(button => {
+            button.addEventListener("click", () => {
+                const id = button.getAttribute("data-class-details-open");
+                if (!id) return;
+
+                const dialog = document.getElementById(id);
+                if (!(dialog instanceof HTMLDialogElement)) return;
+
+                if (typeof dialog.showModal === "function") {
+                    dialog.showModal();
+                }
+            });
+        });
+
+        document.querySelectorAll(".academic-class-details-dialog").forEach(dialog => {
+            if (!(dialog instanceof HTMLDialogElement)) return;
+
+            dialog.querySelectorAll("[data-class-details-close]").forEach(button => {
+                button.addEventListener("click", () => dialog.close());
+            });
+
+            dialog.addEventListener("click", event => {
+                if (event.target !== dialog) return;
+
+                const rect = dialog.getBoundingClientRect();
+                const inside =
+                    event.clientX >= rect.left &&
+                    event.clientX <= rect.right &&
+                    event.clientY >= rect.top &&
+                    event.clientY <= rect.bottom;
+
+                if (!inside) dialog.close();
+            });
+        });
+    }
+
     function wireStudentMoveWorkflow() {
         const form = document.getElementById("student-move-form");
         if (!form) return;
@@ -895,6 +932,7 @@
         wireConfirmationForms();
         wireSchoolCountryTimeZones();
         wireStudentWorkflowCleanup();
+        wireClassOverviewDialogs();
         wireStudentMoveWorkflow();
         void wireAcademicClassRelationships().then(() => {
             wireTeacherAssignmentDirectory();
