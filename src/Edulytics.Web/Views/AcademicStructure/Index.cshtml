@@ -701,9 +701,10 @@
             </a>
         </div>
 
-        <section class="academic-card academic-class-browser">
-            <div class="academic-card-heading">
+        <section class="academic-card academic-class-browser academic-class-browser-modern">
+            <div class="academic-class-browser-heading">
                 <div>
+                    <span class="academic-class-browser-eyebrow">@A["Classes"]</span>
                     <h3>@A["ClassOverview"]</h3>
                     <p class="academic-help">@A["ClassOverviewHelp"]</p>
                 </div>
@@ -720,15 +721,22 @@
                     .GroupBy(x => new { x.AcademicYearId, x.AcademicYearName })
                     .OrderByDescending(x => x.Key.AcademicYearName))
                 {
-                    <div class="academic-class-year-group">
-                        <h4>@yearGroup.Key.AcademicYearName</h4>
+                    <section class="academic-class-year-group">
+                        <div class="academic-class-group-heading">
+                            <span class="academic-class-group-kicker">@A["AcademicYear"]</span>
+                            <h4>@yearGroup.Key.AcademicYearName</h4>
+                        </div>
 
                         @foreach (var programGroup in yearGroup
                             .GroupBy(x => new { x.AcademicProgramId, x.AcademicProgramName })
                             .OrderBy(x => x.Key.AcademicProgramName))
                         {
-                            <div class="academic-class-program-group">
-                                <h5>@programGroup.Key.AcademicProgramName</h5>
+                            <section class="academic-class-program-group">
+                                <div class="academic-class-program-heading">
+                                    <h5>@programGroup.Key.AcademicProgramName</h5>
+                                    <span>@programGroup.Count() @A["Classes"]</span>
+                                </div>
+
                                 <div class="academic-class-browser-grid">
                                     @foreach (var classItem in programGroup
                                         .OrderBy(x => x.CurriculumLogicalLevel)
@@ -746,54 +754,174 @@
                                             .Distinct(StringComparer.OrdinalIgnoreCase)
                                             .OrderBy(x => x)
                                             .ToArray();
+                                        var primaryTeacher = classTeachers.FirstOrDefault();
+                                        var additionalTeachers = Math.Max(0, classTeachers.Length - 1);
+                                        var classDialogId = $"class-details-{classItem.ClassGroupId:N}";
 
-                                        <details class="academic-class-browser-card">
-                                            <summary>
-                                                <span>
-                                                    <strong>@classItem.Name</strong>
-                                                    <small>@classItem.CurriculumLevelLabel@(string.IsNullOrWhiteSpace(classItem.CurriculumPathway) ? string.Empty : $" · {classItem.CurriculumPathway}")</small>
+                                        <article class="academic-class-browser-card academic-class-browser-card-modern">
+                                            <div class="academic-class-card-topline">
+                                                <span class="academic-class-level-badge">
+                                                    @A["GradeLevel"] @classItem.CurriculumLogicalLevel
                                                 </span>
-                                                <span class="academic-class-count">
-                                                    @A["StudentCountValue", classStudents.Length]
-                                                </span>
-                                            </summary>
-
-                                            <div class="academic-class-browser-body">
-                                                <p>
-                                                    <strong>@A["AssignedTeachers"]:</strong>
-                                                    @(classTeachers.Length == 0
-                                                        ? A["NoAssignedTeacher"].Value
-                                                        : string.Join(", ", classTeachers))
-                                                </p>
-
-                                                @if (classStudents.Length == 0)
+                                                @if (!string.IsNullOrWhiteSpace(classItem.CurriculumPathway))
                                                 {
-                                                    <p class="academic-help">@A["NoStudentsInClass"]</p>
+                                                    <span class="academic-class-pathway-badge">
+                                                        @classItem.CurriculumPathway
+                                                    </span>
+                                                }
+                                            </div>
+
+                                            <div class="academic-class-card-title">
+                                                <h6 title="@classItem.Name">@classItem.Name</h6>
+                                                <p title="@classItem.CurriculumLevelLabel">
+                                                    @classItem.CurriculumLevelLabel
+                                                </p>
+                                            </div>
+
+                                            <div class="academic-class-card-stats">
+                                                <div>
+                                                    <strong>@classStudents.Length</strong>
+                                                    <span>@A["Students"]</span>
+                                                </div>
+                                                <div>
+                                                    <strong>@classTeachers.Length</strong>
+                                                    <span>@A["Teachers"]</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="academic-class-teacher-preview">
+                                                <span class="academic-class-teacher-icon" aria-hidden="true">@@</span>
+                                                @if (string.IsNullOrWhiteSpace(primaryTeacher))
+                                                {
+                                                    <span class="academic-class-teacher-empty">
+                                                        @A["NoAssignedTeacher"]
+                                                    </span>
                                                 }
                                                 else
                                                 {
-                                                    <ul class="academic-class-student-list">
-                                                        @foreach (var enrollment in classStudents)
-                                                        {
-                                                            var profile = Model.StudentProfiles
-                                                                .FirstOrDefault(x => x.Id == enrollment.StudentProfileId);
-                                                            <li>
-                                                                <span>@enrollment.StudentDisplayName</span>
-                                                                @if (profile is not null)
-                                                                {
-                                                                    <small>@profile.StudentNumber</small>
-                                                                }
-                                                            </li>
-                                                        }
-                                                    </ul>
+                                                    <a class="academic-class-teacher-email"
+                                                       href="mailto:@primaryTeacher"
+                                                       title="@primaryTeacher">
+                                                        @primaryTeacher
+                                                    </a>
+                                                    @if (additionalTeachers > 0)
+                                                    {
+                                                        <span class="academic-class-more-count">
+                                                            +@additionalTeachers
+                                                        </span>
+                                                    }
                                                 }
                                             </div>
-                                        </details>
+
+                                            <button type="button"
+                                                    class="academic-class-details-button"
+                                                    data-class-details-open="@classDialogId">
+                                                <span>@A["ViewClassDetails"]</span>
+                                                <span aria-hidden="true">→</span>
+                                            </button>
+                                        </article>
+
+                                        <dialog id="@classDialogId"
+                                                class="academic-class-details-dialog">
+                                            <div class="academic-class-details-header">
+                                                <div>
+                                                    <span class="academic-class-browser-eyebrow">
+                                                        @yearGroup.Key.AcademicYearName · @programGroup.Key.AcademicProgramName
+                                                    </span>
+                                                    <h3>@classItem.Name</h3>
+                                                    <p>
+                                                        @classItem.CurriculumLevelLabel@(string.IsNullOrWhiteSpace(classItem.CurriculumPathway) ? string.Empty : $" · {classItem.CurriculumPathway}")
+                                                    </p>
+                                                </div>
+                                                <button type="button"
+                                                        class="academic-class-dialog-close"
+                                                        data-class-details-close
+                                                        aria-label="@A["Close"]">
+                                                    ×
+                                                </button>
+                                            </div>
+
+                                            <div class="academic-class-details-summary">
+                                                <div>
+                                                    <strong>@classStudents.Length</strong>
+                                                    <span>@A["Students"]</span>
+                                                </div>
+                                                <div>
+                                                    <strong>@classTeachers.Length</strong>
+                                                    <span>@A["Teachers"]</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="academic-class-details-grid">
+                                                <section>
+                                                    <h4>@A["AssignedTeachers"]</h4>
+                                                    @if (classTeachers.Length == 0)
+                                                    {
+                                                        <p class="academic-help">@A["NoAssignedTeacher"]</p>
+                                                    }
+                                                    else
+                                                    {
+                                                        <ul class="academic-class-teacher-list">
+                                                            @foreach (var teacherEmail in classTeachers)
+                                                            {
+                                                                <li>
+                                                                    <span class="academic-class-teacher-icon" aria-hidden="true">@@</span>
+                                                                    <a href="mailto:@teacherEmail"
+                                                                       title="@teacherEmail">
+                                                                        @teacherEmail
+                                                                    </a>
+                                                                </li>
+                                                            }
+                                                        </ul>
+                                                    }
+                                                </section>
+
+                                                <section>
+                                                    <h4>@A["Students"]</h4>
+                                                    @if (classStudents.Length == 0)
+                                                    {
+                                                        <p class="academic-help">@A["NoStudentsInClass"]</p>
+                                                    }
+                                                    else
+                                                    {
+                                                        <ul class="academic-class-student-list academic-class-student-list-modern">
+                                                            @foreach (var enrollment in classStudents)
+                                                            {
+                                                                var profile = Model.StudentProfiles
+                                                                    .FirstOrDefault(x => x.Id == enrollment.StudentProfileId);
+                                                                var studentInitial = string.IsNullOrWhiteSpace(enrollment.StudentDisplayName)
+                                                                    ? "?"
+                                                                    : enrollment.StudentDisplayName.Trim()[..1].ToUpperInvariant();
+
+                                                                <li>
+                                                                    <span class="academic-class-student-avatar" aria-hidden="true">@studentInitial</span>
+                                                                    <span>
+                                                                        <strong>@enrollment.StudentDisplayName</strong>
+                                                                        @if (profile is not null)
+                                                                        {
+                                                                            <small>@profile.StudentNumber</small>
+                                                                        }
+                                                                    </span>
+                                                                </li>
+                                                            }
+                                                        </ul>
+                                                    }
+                                                </section>
+                                            </div>
+
+                                            <div class="academic-class-details-actions">
+                                                <button type="button"
+                                                        class="school-button school-button-primary"
+                                                        data-class-details-close>
+                                                    @A["Close"]
+                                                </button>
+                                            </div>
+                                        </dialog>
                                     }
                                 </div>
-                            </div>
+                            </section>
                         }
-                    </div>
+                    </section>
                 }
             }
         </section>
