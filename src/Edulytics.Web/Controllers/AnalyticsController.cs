@@ -17,13 +17,16 @@ namespace Edulytics.Web.Controllers;
 public sealed class AnalyticsController : Controller
 {
     private readonly IAnalyticsService _analytics;
+    private readonly IAnalyticsInterventionService _interventions;
     private readonly IStringLocalizer<AnalyticsResource> _text;
 
     public AnalyticsController(
         IAnalyticsService analytics,
+        IAnalyticsInterventionService interventions,
         IStringLocalizer<AnalyticsResource> text)
     {
         _analytics = analytics;
+        _interventions = interventions;
         _text = text;
     }
 
@@ -141,6 +144,73 @@ public sealed class AnalyticsController : Controller
         return result.Value is null
             ? HandleQueryError(result.Error)
             : View(result.Value);
+    }
+
+    [Authorize(Roles = RoleNames.Teacher)]
+    [HttpPost("student/{studentProfileId:guid}/intervention-check")]
+    [ValidateAntiForgeryToken]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public async Task<IActionResult> CreateInterventionCheck(
+        Guid studentProfileId,
+        Guid academicYearId,
+        Guid classGroupId,
+        Guid subjectId,
+        Guid learningOutcomeId,
+        string skillKey,
+        int questionCount,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        var result = await _interventions.CreateTargetedCheckAsync(
+            actorId,
+            new CreateInterventionCheckRequest(
+                studentProfileId,
+                academicYearId,
+                classGroupId,
+                subjectId,
+                learningOutcomeId,
+                skillKey,
+                questionCount is >= 3 and <= 10
+                    ? questionCount
+                    : 5),
+            cancellationToken);
+
+        if (result.Value is not null)
+        {
+            TempData["Success"] =
+                _text["SuccessInterventionDraftCreated"].Value;
+
+            return Redirect(
+                result.Value.ReviewRoute);
+        }
+
+        TempData["Error"] =
+            result.Error switch
+            {
+                AnalyticsInterventionErrorCode.AccessDenied =>
+                    _text["ErrorAccessDenied"].Value,
+                AnalyticsInterventionErrorCode.SkillNotFound =>
+                    _text["ErrorInterventionSkillUnavailable"].Value,
+                AnalyticsInterventionErrorCode.TermNotFound =>
+                    _text["ErrorInterventionTermUnavailable"].Value,
+                AnalyticsInterventionErrorCode.QuestionGenerationFailed =>
+                    _text["ErrorInterventionGenerationFailed"].Value,
+                _ =>
+                    _text["ErrorPersistence"].Value
+            };
+
+        return RedirectToAction(
+            nameof(Student),
+            new
+            {
+                studentProfileId,
+                academicYearId,
+                classGroupId,
+                subjectId
+            });
     }
 
     [Authorize(Roles = RoleNames.SubjectSupervisor + "," + RoleNames.SchoolAdmin)]

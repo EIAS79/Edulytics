@@ -522,7 +522,11 @@ public sealed class StudentSelfEvaluationService : IStudentSelfEvaluationService
                     current.Result.Percentage,
                     overallDelta,
                     comparableDelta,
-                    comparableCount));
+                    comparableCount,
+                    current.Assessment.TargetType ==
+                        AssessmentTargetType.Student &&
+                    current.Assessment.TargetStudentProfileId ==
+                        studentProfileId));
         }
 
         return rows;
