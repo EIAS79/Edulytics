@@ -45,6 +45,9 @@ public sealed class EvaluationVisualReportingTests
     public void StaffAnalytics_ExposeVisualsAndReportActions()
     {
         var root = FindRoot();
+        var dashboard = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Analytics/_AnalyticsDashboardResults.cshtml"));
         var student = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/Views/Analytics/Student.cshtml"));
@@ -58,12 +61,19 @@ public sealed class EvaluationVisualReportingTests
             root,
             "src/Edulytics.Web/Views/Analytics/SubjectOverview.cshtml"));
 
+        Assert.Contains("analytics-overview-layout", dashboard);
+        Assert.Contains("data-evaluation-chart=\"donut\"", dashboard);
+        Assert.Contains("data-evaluation-chart=\"lollipop\"", dashboard);
+        Assert.Contains("data-evaluation-chart=\"line\"", dashboard);
+        Assert.DoesNotContain("analytics-metrics", dashboard);
+
         Assert.Contains("data-evaluation-chart=\"donut\"", student);
         Assert.Contains("data-evaluation-chart=\"line\"", student);
         Assert.Contains("data-evaluation-chart=\"waterfall\"", student);
         Assert.Contains("asp-action=\"StudentReport\"", student);
 
         Assert.Contains("MasteryDistribution", students);
+        Assert.Contains("evaluation-student-list", students);
         Assert.Contains("asp-action=\"StudentReport\"", students);
         Assert.Contains("asp-action=\"StudentReportPdf\"", students);
         Assert.Contains("asp-action=\"ClassReportPdf\"", students);
