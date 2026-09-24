@@ -185,7 +185,7 @@
                             var offeredYearIds = Model.FilterOptions.Classes
                                 .Where(x => x.AcademicProgramId == option.Id)
                                 .Select(x => x.AcademicYearId.ToString("D"))
-                                .Distinct(StringComparer.OrdinalIgnoreCase);
+                                .Distinct();
 
                             <option value="@option.Id"
                                     data-year-ids="@string.Join("|", offeredYearIds)"
@@ -275,8 +275,6 @@
 
                 const syncAcademicFilters = () => {
                     const yearId = year.value;
-                    const programId = program.value;
-
                     for (const option of programOptions) {
                         const years = (option.dataset.yearIds || "")
                             .split("|")
