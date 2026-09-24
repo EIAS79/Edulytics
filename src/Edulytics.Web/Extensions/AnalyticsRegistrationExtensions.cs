@@ -18,6 +18,10 @@ public static class AnalyticsRegistrationExtensions
             IAnalyticsService,
             AnalyticsService>();
 
+        services.AddScoped<
+            IAnalyticsInterventionService,
+            AnalyticsInterventionService>();
+
         services.AddSingleton<
             AnalyticsProjectionBuilder>();
 
