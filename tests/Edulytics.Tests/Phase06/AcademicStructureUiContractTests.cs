@@ -320,28 +320,35 @@ public sealed class AcademicStructureUiContractTests
             "@item.Name",
             teacherClassSelector);
 
-        var enrollClassStart =
-            academic.IndexOf(
-                "<select id=\"enroll-class\"",
-                StringComparison.Ordinal);
+        foreach (var selectorId in new[]
+                 {
+                     "move-source-class",
+                     "move-target-class"
+                 })
+        {
+            var moveClassStart =
+                academic.IndexOf(
+                    $"<select id=\"{selectorId}\"",
+                    StringComparison.Ordinal);
 
-        var enrollClassEnd =
-            academic.IndexOf(
-                "</select>",
-                enrollClassStart,
-                StringComparison.Ordinal);
+            Assert.True(moveClassStart >= 0);
 
-        Assert.True(
-            enrollClassStart >= 0 &&
-            enrollClassEnd > enrollClassStart);
+            var moveClassEnd =
+                academic.IndexOf(
+                    "</select>",
+                    moveClassStart,
+                    StringComparison.Ordinal);
 
-        var enrollClassSelector =
-            academic[
-                enrollClassStart..(enrollClassEnd + "</select>".Length)];
+            Assert.True(moveClassEnd > moveClassStart);
 
-        Assert.DoesNotContain(
-            "@item.Code",
-            enrollClassSelector);
+            var moveClassSelector =
+                academic[
+                    moveClassStart..(moveClassEnd + "</select>".Length)];
+
+            Assert.DoesNotContain(
+                "@item.Code",
+                moveClassSelector);
+        }
 
         Assert.Contains(
             "@item.Name",
