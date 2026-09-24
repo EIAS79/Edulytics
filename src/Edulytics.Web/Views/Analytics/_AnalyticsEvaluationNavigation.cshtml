@@ -1,0 +1,85 @@
+@model Edulytics.Web.ViewModels.Analytics.AnalyticsIndexViewModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AnalyticsResource> A
+@using Edulytics.Core.Constants
+@{
+    var d = Model.Dashboard;
+
+    Guid? academicYearId = d.SelectedAcademicYearId.HasValue
+        ? d.AcademicYears.FirstOrDefault(x => x.Id == d.SelectedAcademicYearId.Value)?.Id
+        : null;
+    Guid? classGroupId = d.SelectedClassGroupId.HasValue
+        ? d.ClassGroups.FirstOrDefault(x => x.Id == d.SelectedClassGroupId.Value)?.Id
+        : null;
+    Guid? subjectId = d.SelectedSubjectId.HasValue
+        ? d.Subjects.FirstOrDefault(x => x.Id == d.SelectedSubjectId.Value)?.Id
+        : null;
+
+    var canOpenSubjectOverview =
+        User.IsInRole(RoleNames.SubjectSupervisor) ||
+        User.IsInRole(RoleNames.SchoolAdmin);
+}
+
+@if (canOpenSubjectOverview &&
+     academicYearId.HasValue &&
+     subjectId.HasValue)
+{
+    <div class="analytics-supervisor-entry">
+        <div>
+            <strong>@A["SubjectOverview"]</strong>
+            <span>Compare classes, student movement and shared skill gaps across the supervised subject.</span>
+        </div>
+        <a class="school-button school-button-secondary"
+           asp-action="SubjectOverview"
+           asp-route-academicYearId="@academicYearId"
+           asp-route-subjectId="@subjectId">
+            @A["SubjectOverview"]
+        </a>
+    </div>
+}
+
+@if (academicYearId.HasValue &&
+     classGroupId.HasValue &&
+     subjectId.HasValue)
+{
+    <nav class="evaluation-nav" aria-label="@A["AnalyticsTitle"]">
+        <a class="is-active"
+           asp-action="Index"
+           asp-route-academicYearId="@academicYearId"
+           asp-route-classGroupId="@classGroupId"
+           asp-route-subjectId="@subjectId">
+            @A["EvaluationOverview"]
+        </a>
+        <a asp-action="Students"
+           asp-route-academicYearId="@academicYearId"
+           asp-route-classGroupId="@classGroupId"
+           asp-route-subjectId="@subjectId">
+            @A["AllStudents"]
+        </a>
+        <a asp-action="TopicsSkills"
+           asp-route-academicYearId="@academicYearId"
+           asp-route-classGroupId="@classGroupId"
+           asp-route-subjectId="@subjectId">
+            @A["TopicsSkills"]
+        </a>
+    </nav>
+}
+else
+{
+    <div class="analytics-info-note">
+        @A["EvaluationRequiresScope"]
+    </div>
+}
+
+@if (d.HasData)
+{
+    <div class="assessment-actions analytics-export-actions">
+        <a class="school-button"
+           asp-controller="Analytics"
+           asp-action="ClassReportPdf"
+           asp-route-academicYearId="@academicYearId"
+           asp-route-classGroupId="@classGroupId"
+           asp-route-subjectId="@subjectId">
+            Download class analytics PDF
+        </a>
+    </div>
+}
