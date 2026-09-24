@@ -526,7 +526,8 @@ public sealed class StudentSelfEvaluationService : IStudentSelfEvaluationService
                     current.Assessment.TargetType ==
                         AssessmentTargetType.Student &&
                     current.Assessment.TargetStudentProfileId ==
-                        studentProfileId));
+                        studentProfileId,
+                    current.Assessment.TermId));
         }
 
         return rows;

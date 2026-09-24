@@ -134,13 +134,29 @@
                 <span class="student-eyebrow">@S["MyEvaluation"]</span>
                 <h2>@official.SubjectName · @S["MyProgress"]</h2>
             </div>
-            <a class="student-secondary-link"
-               asp-action="Progress"
-               asp-route-academicYearId="@official.AcademicYearId"
-               asp-route-classGroupId="@official.ClassGroupId"
-               asp-route-subjectId="@official.SubjectId">
-                @S["OpenFullEvaluation"]
-            </a>
+            <div class="student-dashboard-evaluation-actions">
+                <a class="student-secondary-link"
+                   asp-action="Progress"
+                   asp-route-academicYearId="@official.AcademicYearId"
+                   asp-route-classGroupId="@official.ClassGroupId"
+                   asp-route-subjectId="@official.SubjectId">
+                    @S["OpenFullEvaluation"]
+                </a>
+                <a class="student-secondary-link"
+                   asp-action="ProgressReport"
+                   asp-route-academicYearId="@official.AcademicYearId"
+                   asp-route-classGroupId="@official.ClassGroupId"
+                   asp-route-subjectId="@official.SubjectId">
+                    @S["ViewReport"]
+                </a>
+                <a class="student-secondary-link"
+                   asp-action="ProgressReportPdf"
+                   asp-route-academicYearId="@official.AcademicYearId"
+                   asp-route-classGroupId="@official.ClassGroupId"
+                   asp-route-subjectId="@official.SubjectId">
+                    PDF
+                </a>
+            </div>
         </div>
 
         <div class="student-dashboard-evaluation-grid">

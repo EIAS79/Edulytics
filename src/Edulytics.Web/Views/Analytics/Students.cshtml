@@ -1,6 +1,7 @@
 @model Edulytics.Services.Analytics.AnalyticsStudentsEvaluationPage
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AnalyticsResource> A
 @using Edulytics.Core.Analytics
+@using System.Globalization
 @{
     ViewData["Title"] = A["AllStudents"].Value;
 
@@ -24,6 +25,8 @@
 
     string Value(decimal? value) =>
         value.HasValue ? $"{value.Value:0.#}%" : "—";
+    var totalStudents = Math.Max(1, Model.Distribution.TotalStudents);
+    decimal Share(int count) => count * 100m / totalStudents;
 }
 
 <section class="analytics-page evaluation-page">
@@ -33,13 +36,22 @@
             <h1>@A["AllStudents"]</h1>
             <p>@Model.AcademicYearName · @Model.ClassName · @Model.SubjectName</p>
         </div>
-        <a class="school-button school-button-secondary"
-           asp-action="Index"
-           asp-route-academicYearId="@Model.AcademicYearId"
-           asp-route-classGroupId="@Model.ClassGroupId"
-           asp-route-subjectId="@Model.SubjectId">
-            @A["EvaluationOverview"]
-        </a>
+        <div class="evaluation-student-hero-actions">
+            <a class="school-button school-button-secondary"
+               asp-action="Index"
+               asp-route-academicYearId="@Model.AcademicYearId"
+               asp-route-classGroupId="@Model.ClassGroupId"
+               asp-route-subjectId="@Model.SubjectId">
+                @A["EvaluationOverview"]
+            </a>
+            <a class="school-button"
+               asp-action="ClassReportPdf"
+               asp-route-academicYearId="@Model.AcademicYearId"
+               asp-route-classGroupId="@Model.ClassGroupId"
+               asp-route-subjectId="@Model.SubjectId">
+                @A["DownloadPdf"]
+            </a>
+        </div>
     </header>
 
     <nav class="evaluation-nav" aria-label="@A["AnalyticsTitle"]">
@@ -63,6 +75,81 @@
             @A["TopicsSkills"]
         </a>
     </nav>
+
+    <section class="evaluation-visual-grid" aria-label="@A["VisualAnalytics"]">
+        <article class="evaluation-chart-panel">
+            <header>
+                <div>
+                    <h2>@A["MasteryDistribution"]</h2>
+                    <p>Class state is shown as a distribution so the average cannot hide very different student groups.</p>
+                </div>
+            </header>
+            <div class="evaluation-visual-grid">
+                <div>
+                    <div class="evaluation-donut"
+                         data-evaluation-chart="donut"
+                         data-value="@Share(Model.Distribution.StrongOrSecure).ToString(CultureInfo.InvariantCulture)"
+                         data-suffix="%"
+                         data-decimals="0"
+                         style="--chart-accent:#2ca977"
+                         aria-label="@A["StrongSecure"]: @Model.Distribution.StrongOrSecure">
+                        <div class="evaluation-donut-content">
+                            <strong data-chart-number>
+                                @Share(Model.Distribution.StrongOrSecure).ToString("0")%
+                            </strong>
+                            <small>@A["StrongSecure"]</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="evaluation-chart-legend">
+                    <span><i style="--legend-color:#2ca977"></i>@A["StrongSecure"] · @Model.Distribution.StrongOrSecure</span>
+                    <span><i style="--legend-color:#5c72de"></i>@A["MasteryDeveloping"] · @Model.Distribution.Developing</span>
+                    <span><i style="--legend-color:#e9a23d"></i>@A["NeedsFocus"] · @Model.Distribution.NeedsFocus</span>
+                    <span><i style="--legend-color:#d65a54"></i>@A["MasteryCritical"] · @Model.Distribution.Critical</span>
+                    <span><i style="--legend-color:#abb3c1"></i>@A["InsufficientEvidence"] · @Model.Distribution.InsufficientEvidence</span>
+                </div>
+            </div>
+            <div class="evaluation-stacked-chart" aria-label="@A["MasteryDistribution"]">
+                <span class="evaluation-stack-secure" style="--stack-width:@Share(Model.Distribution.StrongOrSecure).ToString(CultureInfo.InvariantCulture)%"></span>
+                <span class="evaluation-stack-developing" style="--stack-width:@Share(Model.Distribution.Developing).ToString(CultureInfo.InvariantCulture)%"></span>
+                <span class="evaluation-stack-focus" style="--stack-width:@Share(Model.Distribution.NeedsFocus).ToString(CultureInfo.InvariantCulture)%"></span>
+                <span class="evaluation-stack-critical" style="--stack-width:@Share(Model.Distribution.Critical).ToString(CultureInfo.InvariantCulture)%"></span>
+                <span class="evaluation-stack-insufficient" style="--stack-width:@Share(Model.Distribution.InsufficientEvidence).ToString(CultureInfo.InvariantCulture)%"></span>
+            </div>
+        </article>
+
+        <article class="evaluation-chart-panel">
+            <header>
+                <div>
+                    <h2>@A["MovementDistribution"]</h2>
+                    <p>Current attainment and movement are separate dimensions: weak students can be recovering and strong students can be declining.</p>
+                </div>
+            </header>
+            <div class="evaluation-bars" data-evaluation-chart="bars">
+                <div class="evaluation-bar-row is-practice">
+                    <span>@A["Improving"]</span>
+                    <span class="evaluation-bar-track">
+                        <i class="evaluation-bar-fill" data-chart-value="@Share(Model.Distribution.Improving).ToString(CultureInfo.InvariantCulture)"></i>
+                    </span>
+                    <strong>@Model.Distribution.Improving</strong>
+                </div>
+                <div class="evaluation-bar-row">
+                    <span>@A["Stable"]</span>
+                    <span class="evaluation-bar-track">
+                        <i class="evaluation-bar-fill" data-chart-value="@Share(Model.Distribution.Stable).ToString(CultureInfo.InvariantCulture)"></i>
+                    </span>
+                    <strong>@Model.Distribution.Stable</strong>
+                </div>
+                <div class="evaluation-bar-row is-danger">
+                    <span>@A["Declining"]</span>
+                    <span class="evaluation-bar-track">
+                        <i class="evaluation-bar-fill" data-chart-value="@Share(Model.Distribution.Declining).ToString(CultureInfo.InvariantCulture)"></i>
+                    </span>
+                    <strong>@Model.Distribution.Declining</strong>
+                </div>
+            </div>
+        </article>
+    </section>
 
     <section class="evaluation-distribution-grid">
         <article>
@@ -161,14 +248,32 @@
                                 <small>@item.ConfidenceBand</small>
                             </td>
                             <td>
-                                <a class="school-button school-button-secondary"
-                                   asp-action="Student"
-                                   asp-route-studentProfileId="@item.StudentProfileId"
-                                   asp-route-academicYearId="@Model.AcademicYearId"
-                                   asp-route-classGroupId="@Model.ClassGroupId"
-                                   asp-route-subjectId="@Model.SubjectId">
-                                    @A["ViewEvaluation"]
-                                </a>
+                                <div class="analytics-student-row-actions">
+                                    <a class="school-button school-button-secondary"
+                                       asp-action="Student"
+                                       asp-route-studentProfileId="@item.StudentProfileId"
+                                       asp-route-academicYearId="@Model.AcademicYearId"
+                                       asp-route-classGroupId="@Model.ClassGroupId"
+                                       asp-route-subjectId="@Model.SubjectId">
+                                        @A["ViewEvaluation"]
+                                    </a>
+                                    <a class="school-button school-button-secondary"
+                                       asp-action="StudentReport"
+                                       asp-route-studentProfileId="@item.StudentProfileId"
+                                       asp-route-academicYearId="@Model.AcademicYearId"
+                                       asp-route-classGroupId="@Model.ClassGroupId"
+                                       asp-route-subjectId="@Model.SubjectId">
+                                        @A["Report"]
+                                    </a>
+                                    <a class="school-button"
+                                       asp-action="StudentReportPdf"
+                                       asp-route-studentProfileId="@item.StudentProfileId"
+                                       asp-route-academicYearId="@Model.AcademicYearId"
+                                       asp-route-classGroupId="@Model.ClassGroupId"
+                                       asp-route-subjectId="@Model.SubjectId">
+                                        PDF
+                                    </a>
+                                </div>
                             </td>
                         </tr>
                     }
@@ -177,3 +282,8 @@
         </div>
     </section>
 </section>
+
+
+@section Scripts {
+    <script src="~/js/evaluation-charts.js" asp-append-version="true"></script>
+}

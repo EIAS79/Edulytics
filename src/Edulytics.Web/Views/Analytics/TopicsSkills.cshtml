@@ -1,6 +1,7 @@
 @model Edulytics.Services.Analytics.AnalyticsTopicSkillEvaluationPage
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AnalyticsResource> A
 @using Edulytics.Core.Analytics
+@using System.Globalization
 @{
     ViewData["Title"] = A["TopicsSkills"].Value;
 
@@ -107,6 +108,35 @@
                         </div>
                     </div>
 
+                    <div class="evaluation-bars evaluation-topic-comparison"
+                         data-evaluation-chart="bars"
+                         aria-label="@A["PerformanceComparison"]">
+                        <div class="evaluation-bar-row">
+                            <span>@A["ClassMastery"]</span>
+                            <span class="evaluation-bar-track">
+                                <i class="evaluation-bar-fill"
+                                   data-chart-value="@((topic.ClassMasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"></i>
+                            </span>
+                            <strong>@Value(topic.ClassMasteryPercentage)</strong>
+                        </div>
+                        <div class="evaluation-bar-row">
+                            <span>@A["AssessmentMastery"]</span>
+                            <span class="evaluation-bar-track">
+                                <i class="evaluation-bar-fill"
+                                   data-chart-value="@((topic.AssessmentMasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"></i>
+                            </span>
+                            <strong>@Value(topic.AssessmentMasteryPercentage)</strong>
+                        </div>
+                        <div class="evaluation-bar-row is-practice">
+                            <span>@A["PracticeMastery"]</span>
+                            <span class="evaluation-bar-track">
+                                <i class="evaluation-bar-fill"
+                                   data-chart-value="@((topic.PracticeMasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"></i>
+                            </span>
+                            <strong>@Value(topic.PracticeMasteryPercentage)</strong>
+                        </div>
+                    </div>
+
                     <div class="evaluation-skill-cohort-list">
                         @foreach (var skill in topic.Skills)
                         {
@@ -186,3 +216,8 @@
         </section>
     }
 </section>
+
+
+@section Scripts {
+    <script src="~/js/evaluation-charts.js" asp-append-version="true"></script>
+}

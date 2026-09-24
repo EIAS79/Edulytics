@@ -1,0 +1,436 @@
+@model Edulytics.Services.Analytics.StudentSelfEvaluationReportPage
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@using Edulytics.Core.Analytics
+@using System.Globalization
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = S["MyProgressReport"].Value;
+
+    var source = Model.Source;
+    var e = source.OfficialEvaluation;
+
+    string Value(decimal? value) =>
+        value.HasValue ? $"{value.Value:0.#}%" : "—";
+
+    string Trend(EvaluationTrendBand value) => value switch
+    {
+        EvaluationTrendBand.RapidlyImproving => "↑↑ Improving quickly",
+        EvaluationTrendBand.Improving => "↑ Improving",
+        EvaluationTrendBand.Stable => "→ Stable",
+        EvaluationTrendBand.Declining => "↓ Needs review",
+        EvaluationTrendBand.RapidlyDeclining => "↓↓ Needs review",
+        _ => S["NotEnoughEvidence"].Value
+    };
+
+    var assessmentSeries = string.Join(
+        ",",
+        Model.Assessments.Select(x =>
+            x.Percentage.ToString(CultureInfo.InvariantCulture)));
+
+    var assessmentLabels = string.Join(
+        "|",
+        Model.Assessments.Select(x =>
+            x.AssessmentDate.ToString("MM-dd", CultureInfo.InvariantCulture)));
+
+    var strengths = source.Skills
+        .Where(x =>
+            x.OfficialStatus is EvaluationSkillStatus.Strong or
+                EvaluationSkillStatus.Secure)
+        .OrderByDescending(x => x.OfficialMasteryPercentage ?? 0m)
+        .Take(8)
+        .ToArray();
+
+    var focus = source.Skills
+        .Where(x =>
+            x.OfficialStatus is EvaluationSkillStatus.Critical or
+                EvaluationSkillStatus.NeedsFocus)
+        .OrderByDescending(x => x.Priority)
+        .ThenBy(x => x.OfficialMasteryPercentage ?? 101m)
+        .Take(8)
+        .ToArray();
+}
+
+<section class="evaluation-report-page student-self-report">
+    <header class="evaluation-report-toolbar no-print">
+        <a class="student-button"
+           asp-action="Progress"
+           asp-route-academicYearId="@e.AcademicYearId"
+           asp-route-classGroupId="@e.ClassGroupId"
+           asp-route-subjectId="@e.SubjectId">
+            @S["MyProgress"]
+        </a>
+
+        <form method="get"
+              asp-action="ProgressReport"
+              class="evaluation-report-filter">
+            <input type="hidden" name="academicYearId" value="@e.AcademicYearId" />
+            <input type="hidden" name="classGroupId" value="@e.ClassGroupId" />
+            <input type="hidden" name="subjectId" value="@e.SubjectId" />
+
+            <label for="termId">@S["SelectTerm"]</label>
+            <select id="termId" name="termId" data-report-autosubmit="true">
+                <option value="">@S["AllTerms"]</option>
+                @foreach (var term in source.Terms)
+                {
+                    <option value="@term.TermId"
+                            selected="@(Model.SelectedTermId == term.TermId ? "selected" : null)">
+                        @term.TermName
+                    </option>
+                }
+            </select>
+        </form>
+
+        <div class="evaluation-report-toolbar-actions">
+            <button type="button"
+                    class="student-button"
+                    data-report-print="true">
+                @S["PrintReport"]
+            </button>
+            <a class="student-button student-button-primary"
+               asp-action="ProgressReportPdf"
+               asp-route-academicYearId="@e.AcademicYearId"
+               asp-route-classGroupId="@e.ClassGroupId"
+               asp-route-subjectId="@e.SubjectId"
+               asp-route-termId="@Model.SelectedTermId">
+                @S["DownloadPdf"]
+            </a>
+        </div>
+    </header>
+
+    <article class="evaluation-report-sheet">
+        <header class="evaluation-report-brand">
+            <div class="evaluation-report-logo">
+                <partial name="_LocalizedBrand" />
+            </div>
+            <div>
+                <span class="student-eyebrow">@S["MyProgressReport"]</span>
+                <h1>@e.DisplayName</h1>
+                <p>@e.StudentNumber · @e.SubjectName</p>
+            </div>
+            <div class="evaluation-report-meta">
+                <span>@S["ReportGenerated"]</span>
+                <strong>@Model.GeneratedAtUtc.ToString("yyyy-MM-dd HH:mm 'UTC'")</strong>
+            </div>
+        </header>
+
+        <section class="evaluation-report-context-grid">
+            <div>
+                <span>Academic year</span>
+                <strong>@e.AcademicYearName</strong>
+            </div>
+            <div>
+                <span>Class</span>
+                <strong>@e.ClassName</strong>
+            </div>
+            <div>
+                <span>Subject</span>
+                <strong>@e.SubjectName</strong>
+            </div>
+            <div>
+                <span>@S["SelectTerm"]</span>
+                <strong>@(Model.SelectedTermName ?? S["AllTerms"].Value)</strong>
+            </div>
+        </section>
+
+        @if (Model.SelectedTerm is not null)
+        {
+            <section class="evaluation-report-term-focus">
+                <div>
+                    <span>@S["SelectTerm"]</span>
+                    <strong>@Model.SelectedTerm.TermName</strong>
+                </div>
+                <div>
+                    <span>@S["AssessmentMastery"]</span>
+                    <strong>@Value(Model.SelectedTerm.AssessmentMasteryPercentage)</strong>
+                </div>
+                <div>
+                    <span>@S["PrivatePracticeMastery"]</span>
+                    <strong>@Value(source.PrivatePractice.MasteryPercentage)</strong>
+                    <small>Private Practice shown for the academic-year self-practice record.</small>
+                </div>
+                <div>
+                    <span>@S["ComparableSkillGrowth"]</span>
+                    <strong>
+                        @(Model.SelectedTerm.ComparableSkillGrowthPercentagePoints.HasValue
+                            ? $"{Model.SelectedTerm.ComparableSkillGrowthPercentagePoints.Value:+0.#;-0.#;0} pts"
+                            : "—")
+                    </strong>
+                </div>
+            </section>
+        }
+
+        <section class="evaluation-report-executive">
+            <article class="evaluation-chart-panel evaluation-report-master-card">
+                <header>
+                    <div>
+                        <h2>@S["CurrentMastery"]</h2>
+                        <p>@e.EvaluatedSkillCount / @e.ExpectedSkillCount @S["MySkills"].Value.ToLowerInvariant()</p>
+                    </div>
+                </header>
+                <div class="evaluation-donut"
+                     data-evaluation-chart="donut"
+                     data-value="@((e.CurrentMasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"
+                     data-suffix="%"
+                     data-decimals="1">
+                    <div class="evaluation-donut-content">
+                        <strong data-chart-number>@Value(e.CurrentMasteryPercentage)</strong>
+                        <small>@S["CurrentMastery"]</small>
+                    </div>
+                </div>
+            </article>
+
+            <div class="evaluation-report-kpis">
+                <article>
+                    <span>@S["AssessmentMastery"]</span>
+                    <strong>@Value(e.AssessmentMasteryPercentage)</strong>
+                </article>
+                <article>
+                    <span>@S["PrivatePracticeMastery"]</span>
+                    <strong>@Value(source.PrivatePractice.MasteryPercentage)</strong>
+                </article>
+                <article>
+                    <span>@S["PracticeAssessmentGap"]</span>
+                    <strong>
+                        @(source.PrivatePracticeToAssessmentGapPercentagePoints.HasValue
+                            ? $"{source.PrivatePracticeToAssessmentGapPercentagePoints.Value:+0.#;-0.#;0} pts"
+                            : "—")
+                    </strong>
+                </article>
+                <article>
+                    <span>@S["CurriculumCoverage"]</span>
+                    <strong>@e.CurriculumCoveragePercentage.ToString("0.#")%</strong>
+                </article>
+                <article>
+                    <span>@S["EvidenceConfidence"]</span>
+                    <strong>@e.ConfidencePercentage.ToString("0.#")%</strong>
+                    <small>@e.ConfidenceBand</small>
+                </article>
+                <article>
+                    <span>@S["Trend"]</span>
+                    <strong>@Trend(e.ShortTermTrend)</strong>
+                </article>
+            </div>
+        </section>
+
+        <section class="evaluation-report-section">
+            <header>
+                <span class="student-eyebrow">@S["VisualProgress"]</span>
+                <h2>@S["AssessmentPracticeComparison"]</h2>
+            </header>
+            <div class="evaluation-visual-grid">
+                <article class="evaluation-chart-panel">
+                    <div class="evaluation-bars" data-evaluation-chart="bars">
+                        <div class="evaluation-bar-row">
+                            <span>@S["AssessmentMastery"]</span>
+                            <span class="evaluation-bar-track">
+                                <i class="evaluation-bar-fill"
+                                   data-chart-value="@((e.AssessmentMasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"></i>
+                            </span>
+                            <strong>@Value(e.AssessmentMasteryPercentage)</strong>
+                        </div>
+                        <div class="evaluation-bar-row is-practice">
+                            <span>@S["PrivatePracticeMastery"]</span>
+                            <span class="evaluation-bar-track">
+                                <i class="evaluation-bar-fill"
+                                   data-chart-value="@((source.PrivatePractice.MasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"></i>
+                            </span>
+                            <strong>@Value(source.PrivatePractice.MasteryPercentage)</strong>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="evaluation-chart-panel">
+                    <div class="evaluation-line-chart-scroll">
+                        <div class="evaluation-line-chart"
+                             data-evaluation-chart="line"
+                             data-values="@assessmentSeries"
+                             data-labels="@assessmentLabels"
+                             data-aria-label="@S["AssessmentProgressChart"]"
+                             data-empty-label="@S["NotEnoughEvidence"]">
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="evaluation-report-two-column">
+            <article class="evaluation-report-section evaluation-report-strengths">
+                <header>
+                    <span class="student-eyebrow">@S["Secure"]</span>
+                    <h2>What is going well</h2>
+                </header>
+                @if (strengths.Length == 0)
+                {
+                    <p class="evaluation-report-empty">@S["NotEnoughEvidence"]</p>
+                }
+                else
+                {
+                    <div class="evaluation-report-chip-list">
+                        @foreach (var skill in strengths)
+                        {
+                            <span>
+                                <strong>@skill.SkillName</strong>
+                                <small>@Value(skill.OfficialMasteryPercentage)</small>
+                            </span>
+                        }
+                    </div>
+                }
+            </article>
+
+            <article class="evaluation-report-section evaluation-report-focus">
+                <header>
+                    <span class="student-eyebrow">@S["SkillsToStrengthen"]</span>
+                    <h2>@S["SkillsToStrengthen"]</h2>
+                </header>
+                @if (focus.Length == 0)
+                {
+                    <p class="evaluation-report-empty">@S["NotEnoughEvidence"]</p>
+                }
+                else
+                {
+                    <div class="evaluation-report-chip-list">
+                        @foreach (var skill in focus)
+                        {
+                            <span>
+                                <strong>@skill.SkillName</strong>
+                                <small>@Value(skill.OfficialMasteryPercentage)</small>
+                            </span>
+                        }
+                    </div>
+                }
+            </article>
+        </section>
+
+        <section class="evaluation-report-section">
+            <header>
+                <span class="student-eyebrow">@S["SkillProgressChart"]</span>
+                <h2>@S["MySkills"]</h2>
+            </header>
+            <div class="evaluation-lollipop-list"
+                 data-evaluation-chart="lollipop">
+                @foreach (var skill in source.Skills
+                    .OrderBy(x => x.OfficialMasteryPercentage ?? 101m)
+                    .Take(15))
+                {
+                    var skillValue = skill.OfficialMasteryPercentage ?? 0m;
+                    var css = skillValue < 40m
+                        ? "is-danger"
+                        : skillValue < 60m
+                            ? "is-warning"
+                            : string.Empty;
+                    <div class="evaluation-lollipop-row @css">
+                        <span class="evaluation-lollipop-label">@skill.SkillName</span>
+                        <span class="evaluation-lollipop-track">
+                            <i class="evaluation-lollipop-stick"
+                               data-chart-value="@skillValue.ToString(CultureInfo.InvariantCulture)"></i>
+                        </span>
+                        <strong>@Value(skill.OfficialMasteryPercentage)</strong>
+                    </div>
+                }
+            </div>
+        </section>
+
+        <section class="evaluation-report-two-column">
+            <article class="evaluation-report-section">
+                <header>
+                    <span class="student-eyebrow">@S["AssessmentHistory"]</span>
+                    <h2>@S["AssessmentHistory"]</h2>
+                </header>
+                @if (Model.Assessments.Count == 0)
+                {
+                    <p class="evaluation-report-empty">@S["NotEnoughEvidence"]</p>
+                }
+                else
+                {
+                    <div class="student-assessment-progress-list">
+                        @foreach (var item in Model.Assessments)
+                        {
+                            <article>
+                                <div>
+                                    <strong>@item.Title</strong>
+                                    <small>@item.AssessmentDate.ToString("yyyy-MM-dd") · @(item.TermName ?? "—")</small>
+                                </div>
+                                <div>
+                                    <strong>@item.Percentage.ToString("0.#")%</strong>
+                                    @if (item.ComparableSkillChangePercentagePoints.HasValue)
+                                    {
+                                        <small>
+                                            @S["ComparableSkillGrowth"]:
+                                            @item.ComparableSkillChangePercentagePoints.Value.ToString("+0.#;-0.#;0") pts
+                                        </small>
+                                    }
+                                </div>
+                            </article>
+                        }
+                    </div>
+                }
+            </article>
+
+            <article class="evaluation-report-section">
+                <header>
+                    <span class="student-eyebrow">@S["PrivatePractice"]</span>
+                    <h2>@S["PrivatePracticeMastery"]</h2>
+                </header>
+                <div class="student-private-practice-summary">
+                    <div>
+                        <span>@S["PracticeSessions"]</span>
+                        <strong>@source.PrivatePractice.SessionCount</strong>
+                    </div>
+                    <div>
+                        <span>@S["ActivePracticeDays"]</span>
+                        <strong>@source.PrivatePractice.ActiveDayCount</strong>
+                    </div>
+                    <div>
+                        <span>@S["SkillsPracticed"]</span>
+                        <strong>@source.PrivatePractice.SkillCount</strong>
+                    </div>
+                    <div>
+                        <span>@S["Evidence"]</span>
+                        <strong>@source.PrivatePractice.EvidenceCount</strong>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="evaluation-report-section">
+            <header>
+                <span class="student-eyebrow">@S["MyNextSteps"]</span>
+                <h2>@S["MyNextSteps"]</h2>
+            </header>
+            <div class="student-next-step-list">
+                @foreach (var item in source.NextSteps)
+                {
+                    <article>
+                        <span class="student-next-step-priority priority-@item.Priority.ToString().ToLowerInvariant()">
+                            @item.Priority
+                        </span>
+                        <div>
+                            <strong>@item.SkillName</strong>
+                            <p>@item.Message</p>
+                        </div>
+                    </article>
+                }
+            </div>
+        </section>
+
+        <section class="evaluation-report-placeholder-grid">
+            <article>
+                <h2>@S["StudentReflection"]</h2>
+                <div class="evaluation-report-writing-space"></div>
+            </article>
+            <article>
+                <h2>@S["ParentReview"]</h2>
+                <div class="evaluation-report-writing-space"></div>
+            </article>
+        </section>
+
+        <footer class="evaluation-report-footer">
+            <span>Edulytics · @S["MyProgressReport"]</span>
+            <span>@Model.GeneratedAtUtc.ToString("yyyy-MM-dd HH:mm 'UTC'")</span>
+        </footer>
+    </article>
+</section>
+
+@section Scripts {
+    <script src="~/js/evaluation-charts.js" asp-append-version="true"></script>
+}

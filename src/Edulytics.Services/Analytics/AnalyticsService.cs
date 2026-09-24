@@ -1856,7 +1856,8 @@ public sealed class AnalyticsService : IAnalyticsService
                     current.Assessment.TargetType ==
                         AssessmentTargetType.Student &&
                     current.Assessment.TargetStudentProfileId ==
-                        studentProfileId));
+                        studentProfileId,
+                    current.Assessment.TermId));
         }
 
         return rows;

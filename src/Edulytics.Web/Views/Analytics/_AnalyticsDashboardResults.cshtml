@@ -30,7 +30,74 @@
         "ar" => "الاختبارات",
         _ => "Assessments"
     };
+
+    var evidenceStudentTotal = Math.Max(1, d.StudentsWithEvidence);
+    decimal StudentShare(int count) => count * 100m / evidenceStudentTotal;
+    decimal OutcomeShare(int count) => d.Outcomes.Count == 0
+        ? 0m
+        : count * 100m / d.Outcomes.Count;
+    decimal TopicShare(int count) => d.Topics.Count == 0
+        ? 0m
+        : count * 100m / d.Topics.Count;
 }
+
+        <section class="evaluation-visual-grid analytics-overview-visuals"
+                 aria-label="@A["VisualAnalytics"]">
+            <article class="evaluation-chart-panel">
+                <header>
+                    <div>
+                        <h2>@A["OverallMastery"]</h2>
+                        <p>Overall mastery remains visible as a number and as a progress shape.</p>
+                    </div>
+                </header>
+                <div class="evaluation-donut"
+                     data-evaluation-chart="donut"
+                     data-value="@d.OverallMasteryPercentage.ToString(CultureInfo.InvariantCulture)"
+                     data-suffix="%"
+                     data-decimals="1"
+                     aria-label="@A["OverallMastery"]: @d.OverallMasteryPercentage.ToString("0.#")%">
+                    <div class="evaluation-donut-content">
+                        <strong data-chart-number>@d.OverallMasteryPercentage.ToString("0.#")%</strong>
+                        <small>@A["OverallMastery"]</small>
+                    </div>
+                </div>
+            </article>
+
+            <article class="evaluation-chart-panel">
+                <header>
+                    <div>
+                        <h2>@A["MasteryDistribution"]</h2>
+                        <p>Counts are normalized to the visible analytics scope so risk and weakness are easier to compare.</p>
+                    </div>
+                </header>
+                <div class="evaluation-bars" data-evaluation-chart="bars">
+                    <div class="evaluation-bar-row is-danger">
+                        <span>@A["AtRiskStudents"]</span>
+                        <span class="evaluation-bar-track">
+                            <i class="evaluation-bar-fill"
+                               data-chart-value="@StudentShare(d.AtRiskStudents).ToString(CultureInfo.InvariantCulture)"></i>
+                        </span>
+                        <strong>@d.AtRiskStudents</strong>
+                    </div>
+                    <div class="evaluation-bar-row is-warning">
+                        <span>@A["CriticalOutcomes"]</span>
+                        <span class="evaluation-bar-track">
+                            <i class="evaluation-bar-fill"
+                               data-chart-value="@OutcomeShare(d.CriticalOutcomeCount).ToString(CultureInfo.InvariantCulture)"></i>
+                        </span>
+                        <strong>@d.CriticalOutcomeCount</strong>
+                    </div>
+                    <div class="evaluation-bar-row is-warning">
+                        <span>@A["WeakTopics"]</span>
+                        <span class="evaluation-bar-track">
+                            <i class="evaluation-bar-fill"
+                               data-chart-value="@TopicShare(d.WeakTopicCount).ToString(CultureInfo.InvariantCulture)"></i>
+                        </span>
+                        <strong>@d.WeakTopicCount</strong>
+                    </div>
+                </div>
+            </article>
+        </section>
 
         <section class="analytics-metrics"
                  aria-label="@A["AnalyticsTitle"]">

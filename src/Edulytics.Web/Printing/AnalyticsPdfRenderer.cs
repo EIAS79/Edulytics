@@ -314,6 +314,527 @@ public static class AnalyticsPdfRenderer
         return Render(document);
     }
 
+    public static byte[] RenderStudentEvaluationReport(
+        AnalyticsStudentEvaluationReportPage page)
+    {
+        ArgumentNullException.ThrowIfNull(page);
+
+        var source = page.Source;
+        var report = source.Evaluation;
+        var document = CreateDocument(
+            $"Edulytics student evaluation report - {report.DisplayName}");
+        var section = document.AddSection();
+
+        ConfigureStudentReportPage(section);
+        AddReportBrandHeader(
+            section,
+            "Student evaluation report",
+            $"{report.DisplayName} · {report.StudentNumber}");
+        AddReportContext(
+            section,
+            report.AcademicYearName,
+            report.ClassName,
+            report.SubjectName,
+            page.SelectedTermName ?? "Whole academic year",
+            page.GeneratedAtUtc);
+
+        if (page.SelectedTerm is not null)
+        {
+            AddReportSectionHeading(section, $"Term focus · {page.SelectedTerm.TermName}");
+            var termTable = ReportTable(section, 4);
+            ReportHeader(
+                termTable,
+                "Assessment",
+                "Practice",
+                "Comparable growth",
+                "Evidence");
+            ReportRow(
+                termTable,
+                NullablePercent(page.SelectedTerm.AssessmentMasteryPercentage),
+                NullablePercent(page.SelectedTerm.PracticeMasteryPercentage),
+                Points(page.SelectedTerm.ComparableSkillGrowthPercentagePoints),
+                page.SelectedTerm.EvidenceCount.ToString(CultureInfo.InvariantCulture));
+        }
+
+        AddReportSectionHeading(section, "Performance overview");
+        AddReportMetricBar(
+            section,
+            "Current mastery",
+            report.CurrentMasteryPercentage,
+            Color.FromRgb(82, 98, 227));
+        AddReportMetricBar(
+            section,
+            "Assessment mastery",
+            report.AssessmentMasteryPercentage,
+            Color.FromRgb(62, 96, 210));
+        AddReportMetricBar(
+            section,
+            "Practice mastery",
+            report.PracticeMasteryPercentage,
+            Color.FromRgb(42, 169, 119));
+        AddReportMetricBar(
+            section,
+            "Curriculum coverage",
+            report.CurriculumCoveragePercentage,
+            Color.FromRgb(233, 162, 61));
+
+        var kpis = ReportTable(section, 4);
+        ReportHeader(
+            kpis,
+            "Evidence confidence",
+            "Recent trend",
+            "Critical gaps",
+            "Retention concerns");
+        ReportRow(
+            kpis,
+            $"{Percent(report.ConfidencePercentage)} · {report.ConfidenceBand}",
+            Trend(report.ShortTermTrend),
+            report.CriticalSkillCount.ToString(CultureInfo.InvariantCulture),
+            report.RetentionConcernCount.ToString(CultureInfo.InvariantCulture));
+
+        var note = section.AddParagraph();
+        note.Format.SpaceBefore = Unit.FromPoint(5);
+        note.Format.SpaceAfter = Unit.FromPoint(8);
+        note.Format.Font.Color = Color.FromRgb(93, 105, 130);
+        note.AddText(
+            "Assessment and Practice remain separate. Private student Practice is not included in this staff-facing report. "
+            + "Missing evidence is never converted to 0% mastery. "
+            + (page.SelectedTermId.HasValue
+                ? "The selected term filters assessment/evidence history and highlights term metrics; current mastery remains the latest year-level evaluation."
+                : string.Empty));
+
+        AddReportSectionHeading(section, "Strengths and areas to strengthen");
+        var split = ReportTable(section, 2);
+        var splitHeader = split.AddRow();
+        splitHeader.Format.Font.Bold = true;
+        splitHeader.Cells[0].Shading.Color = Color.FromRgb(232, 248, 240);
+        splitHeader.Cells[1].Shading.Color = Color.FromRgb(255, 244, 225);
+        splitHeader.Cells[0].AddParagraph("Strengths");
+        splitHeader.Cells[1].AddParagraph("Needs attention");
+
+        var splitRow = split.AddRow();
+        var strengths = report.Skills
+            .Where(x =>
+                x.Status is
+                    Edulytics.Core.Analytics.EvaluationSkillStatus.Strong or
+                    Edulytics.Core.Analytics.EvaluationSkillStatus.Secure)
+            .OrderByDescending(x => x.CurrentMasteryPercentage ?? 0m)
+            .Take(8)
+            .ToArray();
+        var focus = report.Skills
+            .Where(x =>
+                x.Status is
+                    Edulytics.Core.Analytics.EvaluationSkillStatus.Critical or
+                    Edulytics.Core.Analytics.EvaluationSkillStatus.NeedsFocus)
+            .OrderByDescending(x => x.InterventionPriority)
+            .ThenBy(x => x.CurrentMasteryPercentage ?? 101m)
+            .Take(8)
+            .ToArray();
+
+        splitRow.Cells[0].AddParagraph(
+            strengths.Length == 0
+                ? "No secure skill is supported by enough evidence yet."
+                : string.Join(
+                    "\n",
+                    strengths.Select(x =>
+                        $"• {x.SkillName} · {NullablePercent(x.CurrentMasteryPercentage)}")));
+        splitRow.Cells[1].AddParagraph(
+            focus.Length == 0
+                ? "No priority gap is currently supported by the available evidence."
+                : string.Join(
+                    "\n",
+                    focus.Select(x =>
+                        $"• {x.SkillName} · {NullablePercent(x.CurrentMasteryPercentage)}")));
+
+        AddReportSectionHeading(section, "Topic mastery");
+        if (source.Topics.Count == 0)
+        {
+            AddEmpty(section, "No topic-level evaluation is available.");
+        }
+        else
+        {
+            foreach (var topic in source.Topics
+                         .OrderBy(x => x.CurrentMasteryPercentage ?? 101m)
+                         .Take(12))
+            {
+                AddReportMetricBar(
+                    section,
+                    topic.TopicName,
+                    topic.CurrentMasteryPercentage,
+                    topic.CurrentMasteryPercentage switch
+                    {
+                        < 40m => Color.FromRgb(214, 90, 84),
+                        < 60m => Color.FromRgb(233, 162, 61),
+                        _ => Color.FromRgb(82, 98, 227)
+                    });
+            }
+        }
+
+        AddReportSectionHeading(section, "Exact skill record");
+        if (report.Skills.Count == 0)
+        {
+            AddEmpty(section, "No exact-skill evaluation is available.");
+        }
+        else
+        {
+            var skills = ReportTable(section, 5);
+            ReportHeader(
+                skills,
+                "Skill",
+                "Current",
+                "Assessment",
+                "Practice",
+                "Status");
+
+            foreach (var item in report.Skills
+                         .OrderByDescending(x => x.InterventionPriority)
+                         .ThenBy(x => x.CurrentMasteryPercentage ?? 101m)
+                         .Take(80))
+            {
+                ReportRow(
+                    skills,
+                    item.SkillName,
+                    NullablePercent(item.CurrentMasteryPercentage),
+                    NullablePercent(item.AssessmentMasteryPercentage),
+                    NullablePercent(item.PracticeMasteryPercentage),
+                    item.Status.ToString());
+            }
+        }
+
+        AddReportSectionHeading(section, "Assessment development");
+        foreach (var item in page.Assessments
+                     .OrderBy(x => x.AssessmentDate)
+                     .TakeLast(8))
+        {
+            AddReportMetricBar(
+                section,
+                item.Title,
+                item.Percentage,
+                Color.FromRgb(84, 97, 225));
+        }
+
+        if (page.Assessments.Count == 0)
+        {
+            AddEmpty(section, "No assessment history is available in this report scope.");
+        }
+        else
+        {
+            var assessments = ReportTable(section, 5);
+            ReportHeader(
+                assessments,
+                "Date",
+                "Assessment",
+                "Score",
+                "Overall change",
+                "Comparable-skill growth");
+
+            foreach (var item in page.Assessments.Take(40))
+            {
+                ReportRow(
+                    assessments,
+                    item.AssessmentDate.ToString(
+                        "yyyy-MM-dd",
+                        CultureInfo.InvariantCulture),
+                    item.Title,
+                    Percent(item.Percentage),
+                    Points(item.OverallChangePercentagePoints),
+                    item.ComparableSkillChangePercentagePoints.HasValue
+                        ? $"{Points(item.ComparableSkillChangePercentagePoints)} · {item.ComparableSkillCount} skills"
+                        : "—");
+            }
+        }
+
+        AddReportSectionHeading(section, "Recommended next steps");
+        if (source.Recommendations.Count == 0)
+        {
+            AddEmpty(
+                section,
+                "No intervention priority is currently supported by the available evidence.");
+        }
+        else
+        {
+            var recommendations = ReportTable(section, 3);
+            ReportHeader(
+                recommendations,
+                "Priority",
+                "Skill",
+                "Reason");
+
+            foreach (var item in source.Recommendations.Take(10))
+            {
+                var path = item.RecommendedPrerequisitePath.Count == 0
+                    ? string.Empty
+                    : " Prerequisite path: "
+                      + string.Join(" -> ", item.RecommendedPrerequisitePath)
+                      + " -> "
+                      + item.SkillKey;
+
+                ReportRow(
+                    recommendations,
+                    item.Priority.ToString(),
+                    item.SkillName,
+                    item.Reason + path);
+            }
+        }
+
+        AddReportSectionHeading(section, "Evidence summary");
+        var evidence = ReportTable(section, 4);
+        ReportHeader(
+            evidence,
+            "Evidence records",
+            "Confidence",
+            "Coverage",
+            "Report scope");
+        ReportRow(
+            evidence,
+            page.Evidence.Count.ToString(CultureInfo.InvariantCulture),
+            $"{Percent(report.ConfidencePercentage)} · {report.ConfidenceBand}",
+            Percent(report.CurriculumCoveragePercentage),
+            page.SelectedTermName ?? "Whole academic year");
+
+        AddReportWritingPlaceholders(
+            section,
+            "Teacher comments",
+            "Parent / student review");
+
+        AddReportFooter(
+            section,
+            "Edulytics · Student evaluation report",
+            page.GeneratedAtUtc);
+
+        return Render(document);
+    }
+
+    public static byte[] RenderStudentSelfEvaluationReport(
+        StudentSelfEvaluationReportPage page)
+    {
+        ArgumentNullException.ThrowIfNull(page);
+
+        var source = page.Source;
+        var report = source.OfficialEvaluation;
+        var document = CreateDocument(
+            $"Edulytics my progress report - {report.DisplayName}");
+        var section = document.AddSection();
+
+        ConfigureStudentReportPage(section);
+        AddReportBrandHeader(
+            section,
+            "My progress report",
+            $"{report.DisplayName} · {report.StudentNumber}");
+        AddReportContext(
+            section,
+            report.AcademicYearName,
+            report.ClassName,
+            report.SubjectName,
+            page.SelectedTermName ?? "Whole academic year",
+            page.GeneratedAtUtc);
+
+        if (page.SelectedTerm is not null)
+        {
+            AddReportSectionHeading(section, $"Term focus · {page.SelectedTerm.TermName}");
+            var termTable = ReportTable(section, 3);
+            ReportHeader(
+                termTable,
+                "Assessment",
+                "Comparable growth",
+                "Evidence");
+            ReportRow(
+                termTable,
+                NullablePercent(page.SelectedTerm.AssessmentMasteryPercentage),
+                Points(page.SelectedTerm.ComparableSkillGrowthPercentagePoints),
+                page.SelectedTerm.EvidenceCount.ToString(CultureInfo.InvariantCulture));
+        }
+
+        AddReportSectionHeading(section, "My progress overview");
+        AddReportMetricBar(
+            section,
+            "Current mastery",
+            report.CurrentMasteryPercentage,
+            Color.FromRgb(82, 98, 227));
+        AddReportMetricBar(
+            section,
+            "Assessment mastery",
+            report.AssessmentMasteryPercentage,
+            Color.FromRgb(62, 96, 210));
+        AddReportMetricBar(
+            section,
+            "Private Practice mastery",
+            source.PrivatePractice.MasteryPercentage,
+            Color.FromRgb(42, 169, 119));
+        AddReportMetricBar(
+            section,
+            "Curriculum coverage",
+            report.CurriculumCoveragePercentage,
+            Color.FromRgb(233, 162, 61));
+
+        var privatePractice = ReportTable(section, 4);
+        ReportHeader(
+            privatePractice,
+            "Practice sessions",
+            "Active Practice days",
+            "Skills practiced",
+            "Practice evidence");
+        ReportRow(
+            privatePractice,
+            source.PrivatePractice.SessionCount.ToString(CultureInfo.InvariantCulture),
+            source.PrivatePractice.ActiveDayCount.ToString(CultureInfo.InvariantCulture),
+            source.PrivatePractice.SkillCount.ToString(CultureInfo.InvariantCulture),
+            source.PrivatePractice.EvidenceCount.ToString(CultureInfo.InvariantCulture));
+
+        var note = section.AddParagraph();
+        note.Format.SpaceBefore = Unit.FromPoint(5);
+        note.Format.SpaceAfter = Unit.FromPoint(8);
+        note.Format.Font.Color = Color.FromRgb(93, 105, 130);
+        note.AddText(
+            "Official mastery and private Practice are intentionally shown separately. "
+            + "Private Practice helps explain progress but is not silently merged into official mastery.");
+
+        AddReportSectionHeading(section, "What is going well / what to strengthen");
+        var split = ReportTable(section, 2);
+        var header = split.AddRow();
+        header.Format.Font.Bold = true;
+        header.Cells[0].Shading.Color = Color.FromRgb(232, 248, 240);
+        header.Cells[1].Shading.Color = Color.FromRgb(255, 244, 225);
+        header.Cells[0].AddParagraph("Going well");
+        header.Cells[1].AddParagraph("Skills to strengthen");
+
+        var row = split.AddRow();
+        var strengths = source.Skills
+            .Where(x =>
+                x.OfficialStatus is
+                    Edulytics.Core.Analytics.EvaluationSkillStatus.Strong or
+                    Edulytics.Core.Analytics.EvaluationSkillStatus.Secure)
+            .OrderByDescending(x => x.OfficialMasteryPercentage ?? 0m)
+            .Take(8)
+            .ToArray();
+        var focus = source.Skills
+            .Where(x =>
+                x.OfficialStatus is
+                    Edulytics.Core.Analytics.EvaluationSkillStatus.Critical or
+                    Edulytics.Core.Analytics.EvaluationSkillStatus.NeedsFocus)
+            .OrderByDescending(x => x.Priority)
+            .ThenBy(x => x.OfficialMasteryPercentage ?? 101m)
+            .Take(8)
+            .ToArray();
+
+        row.Cells[0].AddParagraph(
+            strengths.Length == 0
+                ? "More evidence is needed before a secure skill can be confirmed."
+                : string.Join(
+                    "\n",
+                    strengths.Select(x =>
+                        $"• {x.SkillName} · {NullablePercent(x.OfficialMasteryPercentage)}")));
+        row.Cells[1].AddParagraph(
+            focus.Length == 0
+                ? "No priority focus skill is currently supported by enough evidence."
+                : string.Join(
+                    "\n",
+                    focus.Select(x =>
+                        $"• {x.SkillName} · {NullablePercent(x.OfficialMasteryPercentage)}")));
+
+        AddReportSectionHeading(section, "My skill record");
+        if (source.Skills.Count == 0)
+        {
+            AddEmpty(section, "No skill evaluation is available yet.");
+        }
+        else
+        {
+            var skills = ReportTable(section, 5);
+            ReportHeader(
+                skills,
+                "Skill",
+                "Current",
+                "Assessment",
+                "Private Practice",
+                "Status");
+
+            foreach (var item in source.Skills
+                         .OrderByDescending(x => x.Priority)
+                         .ThenBy(x => x.OfficialMasteryPercentage ?? 101m)
+                         .Take(80))
+            {
+                ReportRow(
+                    skills,
+                    item.SkillName,
+                    NullablePercent(item.OfficialMasteryPercentage),
+                    NullablePercent(item.AssessmentMasteryPercentage),
+                    NullablePercent(item.PrivatePracticeMasteryPercentage),
+                    item.OfficialStatus.ToString());
+            }
+        }
+
+        AddReportSectionHeading(section, "Assessment development");
+        foreach (var item in page.Assessments
+                     .OrderBy(x => x.AssessmentDate)
+                     .TakeLast(8))
+        {
+            AddReportMetricBar(
+                section,
+                item.Title,
+                item.Percentage,
+                Color.FromRgb(84, 97, 225));
+        }
+
+        if (page.Assessments.Count == 0)
+        {
+            AddEmpty(section, "No assessment history is available in this report scope.");
+        }
+        else
+        {
+            var assessments = ReportTable(section, 4);
+            ReportHeader(
+                assessments,
+                "Date",
+                "Assessment",
+                "Score",
+                "Comparable-skill growth");
+
+            foreach (var item in page.Assessments.Take(40))
+            {
+                ReportRow(
+                    assessments,
+                    item.AssessmentDate.ToString(
+                        "yyyy-MM-dd",
+                        CultureInfo.InvariantCulture),
+                    item.Title,
+                    Percent(item.Percentage),
+                    Points(item.ComparableSkillChangePercentagePoints));
+            }
+        }
+
+        AddReportSectionHeading(section, "My next steps");
+        if (source.NextSteps.Count == 0)
+        {
+            AddEmpty(section, "More evidence is needed before a next step can be prioritized.");
+        }
+        else
+        {
+            var next = ReportTable(section, 3);
+            ReportHeader(next, "Priority", "Skill", "Next step");
+
+            foreach (var item in source.NextSteps.Take(8))
+            {
+                ReportRow(
+                    next,
+                    item.Priority.ToString(),
+                    item.SkillName,
+                    item.Message);
+            }
+        }
+
+        AddReportWritingPlaceholders(
+            section,
+            "My reflection",
+            "Parent review");
+
+        AddReportFooter(
+            section,
+            "Edulytics · My progress report",
+            page.GeneratedAtUtc);
+
+        return Render(document);
+    }
+
     public static byte[] RenderClassEvaluationReport(
         AnalyticsStudentsEvaluationPage studentsPage,
         AnalyticsTopicSkillEvaluationPage topicPage)
@@ -434,6 +955,282 @@ public static class AnalyticsPdfRenderer
         }
 
         return Render(document);
+    }
+
+    private static void ConfigureStudentReportPage(
+        Section section)
+    {
+        section.PageSetup.PageFormat = PageFormat.A4;
+        section.PageSetup.Orientation = Orientation.Portrait;
+        section.PageSetup.TopMargin = Unit.FromCentimeter(1.1);
+        section.PageSetup.BottomMargin = Unit.FromCentimeter(1.25);
+        section.PageSetup.LeftMargin = Unit.FromCentimeter(1.15);
+        section.PageSetup.RightMargin = Unit.FromCentimeter(1.15);
+    }
+
+    private static void AddReportBrandHeader(
+        Section section,
+        string title,
+        string subtitle)
+    {
+        var table = section.AddTable();
+        table.Borders.Width = Unit.FromPoint(0);
+        table.AddColumn(Unit.FromCentimeter(5));
+        table.AddColumn(Unit.FromCentimeter(12.5));
+
+        var row = table.AddRow();
+        row.Cells[0].VerticalAlignment = VerticalAlignment.Center;
+        row.Cells[1].VerticalAlignment = VerticalAlignment.Center;
+
+        var logoPath = ResolveBrandLogoPath();
+
+        if (logoPath is not null)
+        {
+            try
+            {
+                var logo = row.Cells[0].AddImage(logoPath);
+                logo.LockAspectRatio = true;
+                logo.Width = Unit.FromCentimeter(4.2);
+            }
+            catch
+            {
+                row.Cells[0].AddParagraph("EDULYTICS");
+            }
+        }
+        else
+        {
+            var brand = row.Cells[0].AddParagraph("EDULYTICS");
+            brand.Format.Font.Bold = true;
+            brand.Format.Font.Size = Unit.FromPoint(15);
+            brand.Format.Font.Color = Color.FromRgb(55, 77, 172);
+        }
+
+        var heading = row.Cells[1].AddParagraph();
+        heading.Format.Alignment = ParagraphAlignment.Right;
+        heading.Format.Font.Bold = true;
+        heading.Format.Font.Size = Unit.FromPoint(17);
+        heading.Format.Font.Color = Color.FromRgb(28, 42, 81);
+        heading.AddText(title);
+
+        var sub = row.Cells[1].AddParagraph();
+        sub.Format.Alignment = ParagraphAlignment.Right;
+        sub.Format.Font.Size = Unit.FromPoint(9);
+        sub.Format.Font.Color = Color.FromRgb(111, 123, 150);
+        sub.AddText(subtitle);
+
+        var rule = section.AddParagraph();
+        rule.Format.SpaceAfter = Unit.FromPoint(7);
+        rule.Format.Borders.Bottom.Width = Unit.FromPoint(1.2);
+        rule.Format.Borders.Bottom.Color = Color.FromRgb(82, 98, 227);
+    }
+
+    private static void AddReportContext(
+        Section section,
+        string academicYear,
+        string className,
+        string subjectName,
+        string scope,
+        DateTime generatedAtUtc)
+    {
+        var table = ReportTable(section, 4);
+        ReportHeader(
+            table,
+            "Academic year",
+            "Class",
+            "Subject",
+            "Report scope");
+        ReportRow(
+            table,
+            academicYear,
+            className,
+            subjectName,
+            scope);
+
+        var generated = section.AddParagraph();
+        generated.Format.SpaceBefore = Unit.FromPoint(3);
+        generated.Format.SpaceAfter = Unit.FromPoint(6);
+        generated.Format.Font.Size = Unit.FromPoint(7.5);
+        generated.Format.Font.Color = Color.FromRgb(122, 132, 153);
+        generated.AddText(
+            $"Generated {generatedAtUtc:yyyy-MM-dd HH:mm} UTC");
+    }
+
+    private static void AddReportSectionHeading(
+        Section section,
+        string title)
+    {
+        var heading = section.AddParagraph();
+        heading.Format.Font.Bold = true;
+        heading.Format.Font.Size = Unit.FromPoint(11.5);
+        heading.Format.Font.Color = Color.FromRgb(31, 45, 82);
+        heading.Format.SpaceBefore = Unit.FromPoint(9);
+        heading.Format.SpaceAfter = Unit.FromPoint(4);
+        heading.AddText(title);
+    }
+
+    private static Table ReportTable(
+        Section section,
+        int columns)
+    {
+        var table = section.AddTable();
+        table.Borders.Width = Unit.FromPoint(.45);
+        table.Borders.Color = Color.FromRgb(224, 229, 239);
+        table.Format.Font.Size = Unit.FromPoint(7.8);
+        table.Rows.LeftIndent = Unit.Zero;
+
+        var total = 17.5;
+        var width = total / columns;
+
+        for (var i = 0; i < columns; i++)
+            table.AddColumn(Unit.FromCentimeter(width));
+
+        return table;
+    }
+
+    private static void ReportHeader(
+        Table table,
+        params string[] values)
+    {
+        var row = table.AddRow();
+        row.Format.Font.Bold = true;
+        row.Format.Font.Color = Color.FromRgb(53, 67, 103);
+        row.Shading.Color = Color.FromRgb(244, 246, 251);
+        row.VerticalAlignment = VerticalAlignment.Center;
+
+        for (var i = 0; i < values.Length; i++)
+        {
+            row.Cells[i].AddParagraph(values[i]);
+        }
+    }
+
+    private static void ReportRow(
+        Table table,
+        params string[] values)
+    {
+        var row = table.AddRow();
+        row.VerticalAlignment = VerticalAlignment.Center;
+
+        for (var i = 0; i < values.Length; i++)
+        {
+            row.Cells[i].AddParagraph(values[i] ?? string.Empty);
+        }
+    }
+
+    private static void AddReportMetricBar(
+        Section section,
+        string label,
+        decimal? value,
+        Color color)
+    {
+        var percentage = value.HasValue
+            ? Math.Clamp(value.Value, 0m, 100m)
+            : 0m;
+        const double trackWidthCm = 10.2;
+        var fillWidth = value.HasValue
+            ? Math.Max(
+                .12,
+                Math.Min(
+                    trackWidthCm - .12,
+                    trackWidthCm *
+                    (double)(percentage / 100m)))
+            : .12;
+        var remainderWidth =
+            Math.Max(.12, trackWidthCm - fillWidth);
+
+        var table = section.AddTable();
+        table.Borders.Width = Unit.FromPoint(0);
+        table.Format.Font.Size = Unit.FromPoint(8);
+        table.AddColumn(Unit.FromCentimeter(4.3));
+        table.AddColumn(Unit.FromCentimeter(fillWidth));
+        table.AddColumn(Unit.FromCentimeter(remainderWidth));
+        table.AddColumn(Unit.FromCentimeter(2.5));
+
+        var row = table.AddRow();
+        row.Height = Unit.FromPoint(12);
+        row.VerticalAlignment = VerticalAlignment.Center;
+        row.Cells[0].AddParagraph(label);
+        row.Cells[1].Shading.Color = value.HasValue
+            ? color
+            : Color.FromRgb(210, 215, 226);
+        row.Cells[2].Shading.Color = Color.FromRgb(238, 241, 246);
+        row.Cells[3].AddParagraph(
+            value.HasValue
+                ? Percent(value.Value)
+                : "—");
+        row.Cells[3].Format.Font.Bold = true;
+        row.Cells[3].Format.Alignment = ParagraphAlignment.Right;
+
+        var spacer = section.AddParagraph();
+        spacer.Format.SpaceAfter = Unit.FromPoint(2);
+    }
+
+    private static void AddReportWritingPlaceholders(
+        Section section,
+        string firstTitle,
+        string secondTitle)
+    {
+        AddReportSectionHeading(section, "Review notes");
+        var table = ReportTable(section, 2);
+        var header = table.AddRow();
+        header.Format.Font.Bold = true;
+        header.Shading.Color = Color.FromRgb(247, 248, 252);
+        header.Cells[0].AddParagraph(firstTitle);
+        header.Cells[1].AddParagraph(secondTitle);
+
+        var row = table.AddRow();
+        row.Height = Unit.FromCentimeter(2.2);
+        row.Cells[0].AddParagraph(" ");
+        row.Cells[1].AddParagraph(" ");
+    }
+
+    private static void AddReportFooter(
+        Section section,
+        string label,
+        DateTime generatedAtUtc)
+    {
+        var footer = section.Footers.Primary.AddParagraph();
+        footer.Format.Font.Size = Unit.FromPoint(7);
+        footer.Format.Font.Color = Color.FromRgb(128, 137, 155);
+        footer.Format.Alignment = ParagraphAlignment.Center;
+        footer.AddText(
+            $"{label} · Generated {generatedAtUtc:yyyy-MM-dd} · Page ");
+        footer.AddPageField();
+        footer.AddText(" of ");
+        footer.AddNumPagesField();
+    }
+
+    private static string? ResolveBrandLogoPath()
+    {
+        var fileName =
+            CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "pl"
+                ? "edulityks-pl.png"
+                : "edulytics-en.png";
+
+        var candidates = new[]
+        {
+            Path.Combine(
+                Directory.GetCurrentDirectory(),
+                "wwwroot",
+                "images",
+                "brand",
+                fileName),
+            Path.Combine(
+                Directory.GetCurrentDirectory(),
+                "src",
+                "Edulytics.Web",
+                "wwwroot",
+                "images",
+                "brand",
+                fileName),
+            Path.Combine(
+                AppContext.BaseDirectory,
+                "wwwroot",
+                "images",
+                "brand",
+                fileName)
+        };
+
+        return candidates.FirstOrDefault(File.Exists);
     }
 
     private static Document CreateDocument(string title)

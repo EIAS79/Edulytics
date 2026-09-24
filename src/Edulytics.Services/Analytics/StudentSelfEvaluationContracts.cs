@@ -71,3 +71,12 @@ public sealed record StudentSelfEvaluationPage(
     IReadOnlyList<StudentSelfNextStep> NextSteps,
     IReadOnlyList<AnalyticsStudentAssessmentEvaluationItem> Assessments,
     IReadOnlyList<AnalyticsTermEvaluationItem> Terms);
+
+
+public sealed record StudentSelfEvaluationReportPage(
+    StudentSelfEvaluationPage Source,
+    Guid? SelectedTermId,
+    string? SelectedTermName,
+    AnalyticsTermEvaluationItem? SelectedTerm,
+    IReadOnlyList<AnalyticsStudentAssessmentEvaluationItem> Assessments,
+    DateTime GeneratedAtUtc);
