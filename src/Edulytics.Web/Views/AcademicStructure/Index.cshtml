@@ -926,6 +926,9 @@
                                         .FirstOrDefault(x => x.Id == enrollment.StudentProfileId);
                                     var searchValue = $"{enrollment.StudentDisplayName} {profile?.StudentNumber} {profile?.UserEmail}"
                                         .ToLowerInvariant();
+                                    var studentInitial = string.IsNullOrWhiteSpace(enrollment.StudentDisplayName)
+                                        ? "?"
+                                        : enrollment.StudentDisplayName.Trim()[..1].ToUpperInvariant();
 
                                     <label class="academic-student-move-row"
                                            data-student-move-row
@@ -938,7 +941,7 @@
                                                value="@enrollment.StudentProfileId"
                                                disabled />
                                         <span class="academic-student-avatar" aria-hidden="true">
-                                            @enrollment.StudentDisplayName.Trim().Substring(0, 1).ToUpperInvariant()
+                                            @studentInitial
                                         </span>
                                         <span class="academic-student-move-copy">
                                             <strong>@enrollment.StudentDisplayName</strong>
