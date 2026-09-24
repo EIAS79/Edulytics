@@ -154,3 +154,44 @@ public sealed record AnalyticsTopicSkillEvaluationPage(
     Guid SubjectId,
     string SubjectName,
     IReadOnlyList<AnalyticsTopicEvaluation> Topics);
+
+public sealed record AnalyticsSupervisorClassEvaluationRow(
+    Guid ClassGroupId,
+    string ClassName,
+    int StudentCount,
+    int EvaluatedStudentCount,
+    decimal? CurrentMasteryPercentage,
+    decimal? AssessmentMasteryPercentage,
+    decimal? PracticeMasteryPercentage,
+    decimal AverageCoveragePercentage,
+    int ImprovingStudentCount,
+    int DecliningStudentCount,
+    int CriticalStudentCount,
+    int CriticalSkillCount);
+
+public sealed record AnalyticsSupervisorSkillGap(
+    string SkillKey,
+    string SkillName,
+    int AffectedStudentCount,
+    int EvaluatedStudentCount,
+    int AffectedClassCount,
+    decimal? AverageMasteryPercentage,
+    EvaluationPriority HighestPriority);
+
+public sealed record AnalyticsSupervisorSubjectOverviewPage(
+    Guid AcademicYearId,
+    string AcademicYearName,
+    Guid SubjectId,
+    string SubjectName,
+    int ClassCount,
+    int StudentCount,
+    int EvaluatedStudentCount,
+    decimal? CurrentMasteryPercentage,
+    decimal? AssessmentMasteryPercentage,
+    decimal? PracticeMasteryPercentage,
+    decimal AverageCoveragePercentage,
+    int ImprovingStudentCount,
+    int DecliningStudentCount,
+    int CriticalStudentCount,
+    IReadOnlyList<AnalyticsSupervisorClassEvaluationRow> Classes,
+    IReadOnlyList<AnalyticsSupervisorSkillGap> PriorityGaps);
