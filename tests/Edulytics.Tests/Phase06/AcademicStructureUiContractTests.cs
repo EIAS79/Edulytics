@@ -351,8 +351,9 @@ public sealed class AcademicStructureUiContractTests
         }
 
         Assert.Contains(
-            "@item.Name",
-            enrollClassSelector);
+            "@item.DisplayLabel",
+            academic,
+            StringComparison.Ordinal);
     }
 
     [Fact]
