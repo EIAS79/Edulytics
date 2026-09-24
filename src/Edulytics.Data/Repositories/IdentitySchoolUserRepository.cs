@@ -55,6 +55,8 @@ public sealed class IdentitySchoolUserRepository
             roles);
     }
 
+#pragma warning restore CS8629
+
     public async Task<IReadOnlyList<SchoolUserRecord>>
         ListBySchoolAsync(
             Guid schoolId,
@@ -159,6 +161,7 @@ public sealed class IdentitySchoolUserRepository
             classes);
     }
 
+#pragma warning disable CS8629
     public async Task<SchoolUserPage> QueryBySchoolAsync(
         Guid schoolId,
         SchoolUserListQuery query,
@@ -202,7 +205,7 @@ public sealed class IdentitySchoolUserRepository
                     (EF.Functions.Like(profile.DisplayName, $"%{name}%") ||
                      EF.Functions.Like(profile.FirstName, $"%{name}%") ||
                      EF.Functions.Like(profile.LastName, $"%{name}%")))
-                .Select(profile => profile.UserId.GetValueOrDefault());
+                .Select(profile => profile.UserId.Value);
 
             usersQuery = usersQuery.Where(x =>
                 namedStudentUserIds.Contains(x.Id));
@@ -270,7 +273,7 @@ public sealed class IdentitySchoolUserRepository
                      classGroup.AcademicProgramId == query.AcademicProgramId.Value) &&
                     (!query.ClassGroupId.HasValue ||
                      classGroup.Id == query.ClassGroupId.Value)
-                select profile.UserId.GetValueOrDefault();
+                select profile.UserId.Value;
 
             var teacherAcademicUserIds =
                 from assignment in _context.TeacherAssignments.AsNoTracking()
@@ -329,10 +332,10 @@ public sealed class IdentitySchoolUserRepository
             .Where(profile =>
                 profile.SchoolId == schoolId &&
                 profile.UserId.HasValue &&
-                userIds.Contains(profile.UserId.GetValueOrDefault()))
+                userIds.Contains(profile.UserId.Value))
             .Select(profile => new
             {
-                UserId = profile.UserId.GetValueOrDefault(),
+                UserId = profile.UserId.Value,
                 profile.DisplayName,
                 profile.StudentNumber
             })
@@ -351,10 +354,10 @@ public sealed class IdentitySchoolUserRepository
                 where
                     profile.SchoolId == schoolId &&
                     profile.UserId.HasValue &&
-                    userIds.Contains(profile.UserId.GetValueOrDefault())
+                    userIds.Contains(profile.UserId.Value)
                 select new
                 {
-                    UserId = profile.UserId.GetValueOrDefault(),
+                    UserId = profile.UserId.Value,
                     YearId = year.Id,
                     YearName = year.Name,
                     ProgramId = program.Id,
