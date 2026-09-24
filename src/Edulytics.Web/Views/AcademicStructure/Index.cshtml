@@ -800,128 +800,213 @@
 
         @if (canManageAcademic)
         {
-            <section class="academic-card academic-student-move">
-                <div class="academic-card-heading">
+            <section class="academic-card academic-student-move academic-student-move-modern">
+                <div class="academic-move-header">
                     <div>
+                        <span class="academic-move-eyebrow">@A["Students"]</span>
                         <h3>@A["MoveStudents"]</h3>
                         <p class="academic-help">@A["MoveStudentsHelp"]</p>
                     </div>
+                    <span id="student-move-header-count"
+                          class="academic-move-count-badge"
+                          data-selected-template="@A["SelectedStudentsValue", "{0}"]">
+                        @A["SelectedStudentsValue", 0]
+                    </span>
                 </div>
 
                 <form id="student-move-form"
                       asp-controller="AcademicStructureBulk"
                       asp-action="PlaceStudents"
-                      method="post">
+                      method="post"
+                      data-select-source="@A["SelectSourceClassHelp"]"
+                      data-no-students="@A["NoStudentsInClass"]"
+                      data-selected-template="@A["SelectedStudentsValue", "{0}"]">
                     @Html.AntiForgeryToken()
 
-                    <div class="academic-move-grid">
-                        <label class="academic-form-field" for="move-source-class">
-                            <span>@A["FromClass"]</span>
-                            <select id="move-source-class"
-                                    name="sourceClassGroupId"
-                                    required>
-                                <option value="">@A["SelectOption"]</option>
-                                @foreach (var item in explicitClasses.Where(x => x.Status == AcademicStructureStatus.Active))
-                                {
-                                    <option value="@item.ClassGroupId"
-                                            data-year-id="@item.AcademicYearId"
-                                            data-adoption-id="@item.CurriculumAdoptionId"
-                                            data-level="@item.CurriculumLogicalLevel"
-                                            data-class-label="@item.DisplayLabel">
-                                        @item.DisplayLabel · @item.AcademicYearName
-                                    </option>
-                                }
-                            </select>
-                        </label>
+                    <ol class="academic-move-stepper" aria-label="@A["MoveStudents"]">
+                        <li id="student-move-step-source" class="is-active">
+                            <span class="academic-move-step-number">1</span>
+                            <span>
+                                <strong>@A["FromClass"]</strong>
+                                <small>@A["SelectOption"]</small>
+                            </span>
+                        </li>
+                        <li id="student-move-step-students">
+                            <span class="academic-move-step-number">2</span>
+                            <span>
+                                <strong>@A["Students"]</strong>
+                                <small id="student-move-step-students-copy">@A["SelectSourceClassHelp"]</small>
+                            </span>
+                        </li>
+                        <li id="student-move-step-target">
+                            <span class="academic-move-step-number">3</span>
+                            <span>
+                                <strong>@A["ToClass"]</strong>
+                                <small>@A["ReviewMove"]</small>
+                            </span>
+                        </li>
+                    </ol>
 
-                        <label class="academic-form-field" for="move-target-class">
-                            <span>@A["ToClass"]</span>
-                            <select id="move-target-class"
-                                    name="classGroupId"
-                                    required
-                                    disabled>
-                                <option value="">@A["SelectOption"]</option>
-                                @foreach (var item in explicitClasses.Where(x => x.Status == AcademicStructureStatus.Active))
-                                {
-                                    <option value="@item.ClassGroupId"
-                                            data-year-id="@item.AcademicYearId"
-                                            data-adoption-id="@item.CurriculumAdoptionId"
-                                            data-level="@item.CurriculumLogicalLevel"
-                                            data-class-label="@item.DisplayLabel"
-                                            hidden
-                                            disabled>
-                                        @item.DisplayLabel · @item.AcademicYearName
-                                    </option>
-                                }
-                            </select>
-                        </label>
-                    </div>
+                    <div class="academic-move-workspace">
+                        <section class="academic-move-panel academic-move-source-panel">
+                            <div class="academic-move-panel-heading">
+                                <span class="academic-move-panel-index">01</span>
+                                <div>
+                                    <strong>@A["FromClass"]</strong>
+                                    <small>@A["SelectSourceClassHelp"]</small>
+                                </div>
+                            </div>
 
-                    <div class="academic-student-picker">
-                        <div class="academic-student-picker-toolbar">
-                            <label for="student-move-search">
-                                <span>@A["SearchStudents"]</span>
-                                <input id="student-move-search"
-                                       type="search"
-                                       autocomplete="off"
-                                       placeholder="@A["SearchStudentsPlaceholder"]" />
+                            <label class="academic-form-field" for="move-source-class">
+                                <span>@A["Class"]</span>
+                                <select id="move-source-class"
+                                        name="sourceClassGroupId"
+                                        required>
+                                    <option value="">@A["SelectOption"]</option>
+                                    @foreach (var item in explicitClasses.Where(x => x.Status == AcademicStructureStatus.Active))
+                                    {
+                                        <option value="@item.ClassGroupId"
+                                                data-year-id="@item.AcademicYearId"
+                                                data-program-id="@item.AcademicProgramId"
+                                                data-adoption-id="@item.CurriculumAdoptionId"
+                                                data-level-key="@item.CurriculumLevelKey"
+                                                data-class-label="@item.DisplayLabel">
+                                            @item.DisplayLabel · @item.AcademicYearName
+                                        </option>
+                                    }
+                                </select>
                             </label>
 
-                            <label class="academic-check-inline">
-                                <input id="student-move-select-all"
-                                       type="checkbox"
-                                       disabled />
-                                <span>@A["SelectAllVisible"]</span>
-                            </label>
-                        </div>
+                            <div id="student-move-source-meta"
+                                 class="academic-move-context"
+                                 hidden></div>
+                        </section>
 
-                        <div id="student-move-empty"
-                             class="academic-help">
-                            @A["SelectSourceClassHelp"]
-                        </div>
+                        <section id="student-move-students-panel"
+                                 class="academic-move-panel academic-move-students-panel is-disabled">
+                            <div class="academic-move-panel-heading">
+                                <span class="academic-move-panel-index">02</span>
+                                <div>
+                                    <strong>@A["Students"]</strong>
+                                    <small id="student-move-visible-count">@A["SelectSourceClassHelp"]</small>
+                                </div>
+                            </div>
 
-                        <div id="student-move-list"
-                             class="academic-student-move-list">
-                            @foreach (var enrollment in Model.StudentEnrollments
-                                .OrderBy(x => x.StudentDisplayName))
-                            {
-                                var profile = Model.StudentProfiles
-                                    .FirstOrDefault(x => x.Id == enrollment.StudentProfileId);
-                                var searchValue = $"{enrollment.StudentDisplayName} {profile?.StudentNumber} {profile?.UserEmail}"
-                                    .ToLowerInvariant();
-
-                                <label class="academic-student-move-row"
-                                       data-student-move-row
-                                       data-class-id="@enrollment.ClassGroupId"
-                                       data-search="@searchValue"
-                                       hidden>
-                                    <input type="checkbox"
-                                           name="studentProfileIds"
-                                           value="@enrollment.StudentProfileId"
-                                           disabled />
-                                    <span>
-                                        <strong>@enrollment.StudentDisplayName</strong>
-                                        <small>
-                                            @(profile?.StudentNumber ?? string.Empty)
-                                            @if (!string.IsNullOrWhiteSpace(profile?.UserEmail))
-                                            {
-                                                <span> · @profile.UserEmail</span>
-                                            }
-                                        </small>
-                                    </span>
+                            <div class="academic-student-picker-toolbar">
+                                <label for="student-move-search">
+                                    <span>@A["SearchStudents"]</span>
+                                    <input id="student-move-search"
+                                           type="search"
+                                           autocomplete="off"
+                                           disabled
+                                           placeholder="@A["SearchStudentsPlaceholder"]" />
                                 </label>
-                            }
-                        </div>
+
+                                <label class="academic-check-inline academic-select-all-card">
+                                    <input id="student-move-select-all"
+                                           type="checkbox"
+                                           disabled />
+                                    <span>@A["SelectAllVisible"]</span>
+                                </label>
+                            </div>
+
+                            <div id="student-move-empty"
+                                 class="academic-move-empty-state">
+                                <span class="academic-move-empty-icon" aria-hidden="true">↳</span>
+                                <strong>@A["SelectSourceClassHelp"]</strong>
+                            </div>
+
+                            <div id="student-move-list"
+                                 class="academic-student-move-list"
+                                 aria-live="polite">
+                                @foreach (var enrollment in Model.StudentEnrollments
+                                    .OrderBy(x => x.StudentDisplayName))
+                                {
+                                    var profile = Model.StudentProfiles
+                                        .FirstOrDefault(x => x.Id == enrollment.StudentProfileId);
+                                    var searchValue = $"{enrollment.StudentDisplayName} {profile?.StudentNumber} {profile?.UserEmail}"
+                                        .ToLowerInvariant();
+
+                                    <label class="academic-student-move-row"
+                                           data-student-move-row
+                                           data-class-id="@enrollment.ClassGroupId"
+                                           data-search="@searchValue"
+                                           data-student-name="@enrollment.StudentDisplayName"
+                                           hidden>
+                                        <input type="checkbox"
+                                               name="studentProfileIds"
+                                               value="@enrollment.StudentProfileId"
+                                               disabled />
+                                        <span class="academic-student-avatar" aria-hidden="true">
+                                            @enrollment.StudentDisplayName.Trim().Substring(0, 1).ToUpperInvariant()
+                                        </span>
+                                        <span class="academic-student-move-copy">
+                                            <strong>@enrollment.StudentDisplayName</strong>
+                                            <small>
+                                                @(profile?.StudentNumber ?? string.Empty)
+                                                @if (!string.IsNullOrWhiteSpace(profile?.UserEmail))
+                                                {
+                                                    <span> · @profile.UserEmail</span>
+                                                }
+                                            </small>
+                                        </span>
+                                        <span class="academic-student-selected-mark" aria-hidden="true">✓</span>
+                                    </label>
+                                }
+                            </div>
+                        </section>
+
+                        <section id="student-move-target-panel"
+                                 class="academic-move-panel academic-move-target-panel is-disabled">
+                            <div class="academic-move-panel-heading">
+                                <span class="academic-move-panel-index">03</span>
+                                <div>
+                                    <strong>@A["ToClass"]</strong>
+                                    <small>@A["ReviewMove"]</small>
+                                </div>
+                            </div>
+
+                            <label class="academic-form-field" for="move-target-class">
+                                <span>@A["Class"]</span>
+                                <select id="move-target-class"
+                                        name="classGroupId"
+                                        required
+                                        disabled>
+                                    <option value="">@A["SelectOption"]</option>
+                                    @foreach (var item in explicitClasses.Where(x => x.Status == AcademicStructureStatus.Active))
+                                    {
+                                        <option value="@item.ClassGroupId"
+                                                data-year-id="@item.AcademicYearId"
+                                                data-program-id="@item.AcademicProgramId"
+                                                data-adoption-id="@item.CurriculumAdoptionId"
+                                                data-level-key="@item.CurriculumLevelKey"
+                                                data-class-label="@item.DisplayLabel"
+                                                hidden
+                                                disabled>
+                                            @item.DisplayLabel · @item.AcademicYearName
+                                        </option>
+                                    }
+                                </select>
+                            </label>
+
+                            <div id="student-move-target-hint"
+                                 class="academic-move-context">
+                                @A["SelectSourceClassHelp"]
+                            </div>
+                        </section>
                     </div>
 
-                    <div class="academic-move-summary">
-                        <strong id="student-move-selected"
-                                data-selected-template="@A["SelectedStudentsValue", "{0}"]">
-                            @A["SelectedStudentsValue", 0]
-                        </strong>
+                    <div class="academic-move-summary academic-move-actionbar">
+                        <div>
+                            <strong id="student-move-selected"
+                                    data-selected-template="@A["SelectedStudentsValue", "{0}"]">
+                                @A["SelectedStudentsValue", 0]
+                            </strong>
+                            <small id="student-move-ready-copy">@A["SelectSourceClassHelp"]</small>
+                        </div>
                         <button id="student-move-review"
                                 type="button"
-                                class="school-button school-button-primary"
+                                class="school-button school-button-primary academic-move-review-button"
                                 disabled>
                             @A["ReviewMove"]
                         </button>
@@ -929,8 +1014,14 @@
                 </form>
 
                 <dialog id="student-move-dialog"
-                        class="academic-move-dialog">
-                    <h3>@A["MoveStudents"]</h3>
+                        class="academic-move-dialog academic-move-dialog-modern">
+                    <div class="academic-move-dialog-heading">
+                        <span class="academic-move-panel-index">✓</span>
+                        <div>
+                            <h3>@A["MoveStudents"]</h3>
+                            <p class="academic-help">@A["ReviewMove"]</p>
+                        </div>
+                    </div>
                     <dl>
                         <div>
                             <dt>@A["FromClass"]</dt>
@@ -945,6 +1036,8 @@
                             <dd id="student-move-review-count">0</dd>
                         </div>
                     </dl>
+                    <ul id="student-move-review-students"
+                        class="academic-move-review-students"></ul>
                     <div class="academic-move-dialog-actions">
                         <button id="student-move-cancel"
                                 type="button"
@@ -963,61 +1056,6 @@
 
         <details class="academic-card academic-legacy-student-tools">
             <summary>@A["AdditionalStudentAdministration"]</summary>
-        <div class="academic-grid">
-            @if (canManageAcademic)
-            {
-                <form asp-action="CreateStudentProfile" method="post"
-                      class="academic-card academic-form">
-                    <h3>@A["CreateStudent"]</h3>
-                    <label for="student-number">@A["StudentNumber"]</label>
-                    <input id="student-number" name="studentNumber" maxlength="50"
-                           pattern="[A-Za-z0-9-]+" required />
-                    <label for="student-first">@A["FirstName"]</label>
-                    <input id="student-first" name="firstName" maxlength="100" required />
-                    <label for="student-last">@A["LastName"]</label>
-                    <input id="student-last" name="lastName" maxlength="100" required />
-                    <label for="student-user">@A["LinkedAccount"] (@A["Optional"])</label>
-                    <select id="student-user" name="userId">
-                        <option value="">@A["NoLinkedAccount"]</option>
-                        @foreach (var user in Model.StudentAccountCandidates)
-                        {
-                            <option value="@user.Id">@user.Email</option>
-                        }
-                    </select>
-                    <label for="student-status">@A["Status"]</label>
-                    <select id="student-status" name="status">
-                        <option value="@((int)AcademicStructureStatus.Active)">@A["StatusActive"]</option>
-                        <option value="@((int)AcademicStructureStatus.Inactive)">@A["StatusInactive"]</option>
-                    </select>
-                    <button class="school-button school-button-primary" type="submit">@A["CreateStudent"]</button>
-                </form>
-
-                <form asp-action="CreateStudentEnrollment" method="post"
-                      class="academic-card academic-form">
-                    <h3>@A["EnrollStudent"]</h3>
-                    <label for="enroll-student">@A["Student"]</label>
-                    <select id="enroll-student" name="studentProfileId" required>
-                        <option value="">@A["SelectOption"]</option>
-                        @foreach (var student in Model.StudentProfiles.Where(x => !x.IsArchived))
-                        {
-                            <option value="@student.Id">@student.StudentNumber — @student.DisplayName</option>
-                        }
-                    </select>
-                    <label for="enroll-class">@A["Class"]</label>
-                    <select id="enroll-class" name="classGroupId" required>
-                        <option value="">@A["SelectOption"]</option>
-                        @foreach (var item in explicitClasses.Where(x => x.Status == AcademicStructureStatus.Active))
-                        {
-                            <option value="@item.ClassGroupId">
-                                @item.Name — @item.CurriculumLevelLabel
-                            </option>
-                        }
-                    </select>
-                    <button class="school-button school-button-primary" type="submit">@A["EnrollStudent"]</button>
-                </form>
-            }
-        </div>
-
         <div class="academic-two-column academic-list-grid">
             <div class="academic-card">
                 <h3>@A["Students"]</h3>
@@ -1236,133 +1274,6 @@
     classYear?.addEventListener('change', refreshClassPrograms);
     refreshClassPrograms();
 
-    const moveForm = document.getElementById('student-move-form');
-    const moveSource = document.getElementById('move-source-class');
-    const moveTarget = document.getElementById('move-target-class');
-    const moveSearch = document.getElementById('student-move-search');
-    const moveRows = Array.from(document.querySelectorAll('[data-student-move-row]'));
-    const moveSelectAll = document.getElementById('student-move-select-all');
-    const moveEmpty = document.getElementById('student-move-empty');
-    const moveSelected = document.getElementById('student-move-selected');
-    const moveReview = document.getElementById('student-move-review');
-    const moveDialog = document.getElementById('student-move-dialog');
-    const moveReviewFrom = document.getElementById('student-move-review-from');
-    const moveReviewTo = document.getElementById('student-move-review-to');
-    const moveReviewCount = document.getElementById('student-move-review-count');
-    const moveCancel = document.getElementById('student-move-cancel');
-
-    const selectedMoveRows = () =>
-        moveRows.filter(row => {
-            const checkbox = row.querySelector('input[type="checkbox"]');
-            return checkbox && checkbox.checked && !checkbox.disabled;
-        });
-
-    const refreshMoveSelection = () => {
-        const count = selectedMoveRows().length;
-        if (moveSelected) {
-            const template =
-                moveSelected.dataset.selectedTemplate || '{0} selected';
-            moveSelected.textContent =
-                template.replace('{0}', String(count));
-        }
-
-        const canReview =
-            count > 0 &&
-            moveSource?.value &&
-            moveTarget?.value &&
-            moveSource.value !== moveTarget.value;
-
-        if (moveReview) moveReview.disabled = !canReview;
-
-        if (moveSelectAll) {
-            const visible = moveRows.filter(row => !row.hidden);
-            const checked = visible.filter(row => {
-                const checkbox = row.querySelector('input[type="checkbox"]');
-                return checkbox?.checked;
-            });
-            moveSelectAll.checked =
-                visible.length > 0 &&
-                checked.length === visible.length;
-            moveSelectAll.indeterminate =
-                checked.length > 0 &&
-                checked.length < visible.length;
-        }
-    };
-
-    const refreshMoveStudents = (resetSelection = false) => {
-        if (!moveSource) return;
-
-        const sourceId = moveSource.value;
-        const query = (moveSearch?.value || '').trim().toLowerCase();
-        let visibleCount = 0;
-
-        for (const row of moveRows) {
-            const checkbox = row.querySelector('input[type="checkbox"]');
-            const inSource = sourceId && row.dataset.classId === sourceId;
-            const matchesSearch =
-                !query ||
-                (row.dataset.search || '').includes(query);
-            const visible = Boolean(inSource && matchesSearch);
-
-            row.hidden = !visible;
-            if (checkbox) {
-                checkbox.disabled = !inSource;
-                if (!inSource || resetSelection) checkbox.checked = false;
-            }
-            if (visible) visibleCount++;
-        }
-
-        if (moveSelectAll) {
-            moveSelectAll.disabled = !sourceId || visibleCount === 0;
-            if (resetSelection) moveSelectAll.checked = false;
-        }
-
-        if (moveEmpty) {
-            moveEmpty.hidden = Boolean(sourceId && visibleCount > 0);
-            if (!sourceId) {
-                moveEmpty.textContent = '@A["SelectSourceClassHelp"]';
-            } else if (visibleCount === 0) {
-                moveEmpty.textContent = '@A["NoStudentsInClass"]';
-            }
-        }
-
-        refreshMoveSelection();
-    };
-
-    const refreshMoveTargets = () => {
-        if (!moveSource || !moveTarget) return;
-
-        const sourceOption =
-            moveSource.options[moveSource.selectedIndex];
-        const sourceId = moveSource.value;
-        const yearId = sourceOption?.dataset.yearId || '';
-        const adoptionId = sourceOption?.dataset.adoptionId || '';
-
-        moveTarget.value = '';
-        let available = 0;
-
-        for (const option of Array.from(moveTarget.options)) {
-            if (!option.value) continue;
-
-            const visible =
-                Boolean(sourceId) &&
-                option.value !== sourceId &&
-                option.dataset.yearId === yearId &&
-                option.dataset.adoptionId === adoptionId;
-
-            option.hidden = !visible;
-            option.disabled = !visible;
-            if (visible) available++;
-        }
-
-        moveTarget.disabled = !sourceId || available === 0;
-        refreshMoveSelection();
-    };
-
-    moveSource?.addEventListener('change', () => {
-        if (moveSearch) moveSearch.value = '';
-        refreshMoveStudents(true);
-        refreshMoveTargets();
     });
 
     moveTarget?.addEventListener('change', refreshMoveSelection);
