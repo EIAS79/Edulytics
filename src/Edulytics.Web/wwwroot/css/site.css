@@ -12040,3 +12040,39 @@ a.lesson-content-row:hover
         margin-left: 0;
     }
 }
+
+.analytics-supervisor-entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 16px;
+    border: 1px solid #dfe6f5;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #fbfcff, #f5f7ff);
+}
+
+.analytics-supervisor-entry > div {
+    display: grid;
+    gap: 3px;
+}
+
+.analytics-supervisor-entry strong {
+    color: #23345f;
+}
+
+.analytics-supervisor-entry span {
+    color: #738099;
+    font-size: .78rem;
+}
+
+@media (max-width: 640px) {
+    .analytics-supervisor-entry {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .analytics-supervisor-entry .school-button {
+        width: 100%;
+    }
+}
