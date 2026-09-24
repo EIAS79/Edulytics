@@ -99,7 +99,7 @@ public sealed class StudentSelfEvaluationPrivacyTests
             "Model.Evaluation",
             dashboard);
         Assert.Contains(
-            "asp-action="Progress"",
+            "asp-action=\"Progress\"",
             layout);
     }
 
