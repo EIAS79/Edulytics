@@ -133,7 +133,7 @@ public sealed class AnalyticsInterventionService : IAnalyticsInterventionService
                 : skill.SkillName.Trim();
 
         var title =
-            $"Intervention check - {cleanSkillName} - {DateTime.UtcNow:yyyyMMdd-HHmmss}";
+            $"Intervention check - {cleanSkillName} - {DateTime.UtcNow:yyyyMMdd-HHmmssfff}";
 
         if (title.Length > 200)
             title = title[..200];
