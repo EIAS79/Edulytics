@@ -190,6 +190,53 @@ public sealed class Phase39AcademicUxContractTests
     }
 
     [Fact]
+    public void ManageUsers_UsesServerBackedIdentityAndAcademicFilters()
+    {
+        var root = FindRepositoryRoot();
+        var view = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/SchoolUsers/Index.cshtml"));
+        var controller = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Controllers/SchoolUsersController.cs"));
+        var repository = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Data/Repositories/IdentitySchoolUserRepository.cs"));
+        var javascript = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/site.js"));
+        var css = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/css/site.css"));
+
+        foreach (var field in new[]
+                 {
+                     "name=\"name\"",
+                     "name=\"userId\"",
+                     "name=\"email\"",
+                     "name=\"academicYearId\"",
+                     "name=\"academicProgramId\"",
+                     "name=\"classGroupId\""
+                 })
+        {
+            Assert.Contains(field, view, StringComparison.Ordinal);
+        }
+
+        Assert.Contains("AcademicYearId: academicYearId", controller, StringComparison.Ordinal);
+        Assert.Contains("AcademicProgramId: academicProgramId", controller, StringComparison.Ordinal);
+        Assert.Contains("ClassGroupId: classGroupId", controller, StringComparison.Ordinal);
+        Assert.Contains("studentAcademicUserIds", repository, StringComparison.Ordinal);
+        Assert.Contains("teacherAcademicUserIds", repository, StringComparison.Ordinal);
+        Assert.Contains("GetDirectoryFilterOptionsAsync", repository, StringComparison.Ordinal);
+        Assert.Contains("wireUserDirectoryAcademicFilters", javascript, StringComparison.Ordinal);
+        Assert.Contains(".user-filter-bar-advanced", css, StringComparison.Ordinal);
+
+        Assert.Contains(".academic-move-panel select", css, StringComparison.Ordinal);
+        Assert.Contains("max-width: 100%", css, StringComparison.Ordinal);
+        Assert.Contains("min-width: 0", css, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void StudentMovement_RequiresExplicitSourceSelectionDestinationAndReview()
     {
         var root = FindRepositoryRoot();

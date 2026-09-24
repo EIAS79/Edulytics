@@ -115,6 +115,12 @@
                 <form method="get" asp-action="Index" class="user-role-tab-form">
                     <input type="hidden" name="schoolId" value="@Model.Context.SchoolId" />
                     <input type="hidden" name="search" value="@Model.Search" />
+                    <input type="hidden" name="name" value="@Model.Name" />
+                    <input type="hidden" name="userId" value="@Model.UserId" />
+                    <input type="hidden" name="email" value="@Model.Email" />
+                    <input type="hidden" name="academicYearId" value="@Model.AcademicYearId" />
+                    <input type="hidden" name="academicProgramId" value="@Model.AcademicProgramId" />
+                    <input type="hidden" name="classGroupId" value="@Model.ClassGroupId" />
                     <input type="hidden" name="isActive" value="@Model.IsActive" />
                     <input type="hidden" name="isLocked" value="@Model.IsLocked" />
                     <input type="hidden" name="page" value="1" />
@@ -129,46 +135,129 @@
             }
         </nav>
 
-        <form method="get" asp-action="Index" class="user-filter-bar">
+        <form method="get"
+              asp-action="Index"
+              class="user-filter-bar user-filter-bar-advanced"
+              data-user-directory-filters>
             <input type="hidden" name="schoolId" value="@Model.Context.SchoolId" />
             <input type="hidden" name="role" value="@Model.Role" />
 
-            <label class="user-filter-field user-filter-search">
-                <span>@T["SearchUsers"]</span>
-                <input type="search"
-                       name="search"
-                       value="@Model.Search"
-                       maxlength="256"
-                       placeholder="@T["SearchUsersPlaceholder"]" />
-            </label>
+            <fieldset class="user-filter-group user-filter-group-identity">
+                <legend>@T["IdentityFilters"]</legend>
 
-            <label class="user-filter-field">
-                <span>@T["AccountStatus"]</span>
-                <select name="isActive">
-                    <option value="" selected="@(!Model.IsActive.HasValue ? "selected" : null)">@T["AllStatuses"]</option>
-                    <option value="true" selected="@(Model.IsActive == true ? "selected" : null)">@T["UserActive"]</option>
-                    <option value="false" selected="@(Model.IsActive == false ? "selected" : null)">@T["UserInactive"]</option>
-                </select>
-            </label>
+                <label class="user-filter-field">
+                    <span>@T["UserName"]</span>
+                    <input type="search"
+                           name="name"
+                           value="@Model.Name"
+                           maxlength="150"
+                           autocomplete="off"
+                           placeholder="@T["UserNameFilterPlaceholder"]" />
+                </label>
 
-            <label class="user-filter-field">
-                <span>@T["LockState"]</span>
-                <select name="isLocked">
-                    <option value="" selected="@(!Model.IsLocked.HasValue ? "selected" : null)">@T["AllStatuses"]</option>
-                    <option value="false" selected="@(Model.IsLocked == false ? "selected" : null)">@T["UserUnlocked"]</option>
-                    <option value="true" selected="@(Model.IsLocked == true ? "selected" : null)">@T["UserLocked"]</option>
-                </select>
-            </label>
+                <label class="user-filter-field">
+                    <span>@T["UserId"]</span>
+                    <input type="search"
+                           name="userId"
+                           value="@Model.UserId"
+                           maxlength="64"
+                           autocomplete="off"
+                           placeholder="@T["UserIdFilterPlaceholder"]" />
+                </label>
 
-            <label class="user-filter-field user-filter-page-size">
-                <span>@T["RowsPerPage"]</span>
-                <select name="pageSize">
-                    @foreach (var size in new[] { 25, 50, 100 })
-                    {
-                        <option value="@size" selected="@(Model.PageSize == size ? "selected" : null)">@size</option>
-                    }
-                </select>
-            </label>
+                <label class="user-filter-field">
+                    <span>@T["UserEmail"]</span>
+                    <input type="search"
+                           name="email"
+                           value="@Model.Email"
+                           maxlength="256"
+                           autocomplete="off"
+                           placeholder="@T["UserEmailFilterPlaceholder"]" />
+                </label>
+            </fieldset>
+
+            <fieldset class="user-filter-group user-filter-group-academic">
+                <legend>@T["AcademicFilters"]</legend>
+
+                <label class="user-filter-field">
+                    <span>@T["AcademicYearFilter"]</span>
+                    <select name="academicYearId"
+                            data-user-filter-year>
+                        <option value="">@T["AllAcademicYears"]</option>
+                        @foreach (var option in Model.FilterOptions.AcademicYears)
+                        {
+                            <option value="@option.Id"
+                                    selected="@(Model.AcademicYearId == option.Id ? "selected" : null)">
+                                @option.Label
+                            </option>
+                        }
+                    </select>
+                </label>
+
+                <label class="user-filter-field">
+                    <span>@T["CurriculumFilter"]</span>
+                    <select name="academicProgramId"
+                            data-user-filter-program>
+                        <option value="">@T["AllCurricula"]</option>
+                        @foreach (var option in Model.FilterOptions.AcademicPrograms)
+                        {
+                            <option value="@option.Id"
+                                    selected="@(Model.AcademicProgramId == option.Id ? "selected" : null)">
+                                @option.Label
+                            </option>
+                        }
+                    </select>
+                </label>
+
+                <label class="user-filter-field">
+                    <span>@T["ClassFilter"]</span>
+                    <select name="classGroupId"
+                            data-user-filter-class>
+                        <option value="">@T["AllClasses"]</option>
+                        @foreach (var option in Model.FilterOptions.Classes)
+                        {
+                            <option value="@option.Id"
+                                    data-year-id="@option.AcademicYearId"
+                                    data-program-id="@option.AcademicProgramId"
+                                    selected="@(Model.ClassGroupId == option.Id ? "selected" : null)">
+                                @option.Label
+                            </option>
+                        }
+                    </select>
+                </label>
+            </fieldset>
+
+            <fieldset class="user-filter-group user-filter-group-account">
+                <legend>@T["AccountFilters"]</legend>
+
+                <label class="user-filter-field">
+                    <span>@T["AccountStatus"]</span>
+                    <select name="isActive">
+                        <option value="" selected="@(!Model.IsActive.HasValue ? "selected" : null)">@T["AllStatuses"]</option>
+                        <option value="true" selected="@(Model.IsActive == true ? "selected" : null)">@T["UserActive"]</option>
+                        <option value="false" selected="@(Model.IsActive == false ? "selected" : null)">@T["UserInactive"]</option>
+                    </select>
+                </label>
+
+                <label class="user-filter-field">
+                    <span>@T["LockState"]</span>
+                    <select name="isLocked">
+                        <option value="" selected="@(!Model.IsLocked.HasValue ? "selected" : null)">@T["AllStatuses"]</option>
+                        <option value="false" selected="@(Model.IsLocked == false ? "selected" : null)">@T["UserUnlocked"]</option>
+                        <option value="true" selected="@(Model.IsLocked == true ? "selected" : null)">@T["UserLocked"]</option>
+                    </select>
+                </label>
+
+                <label class="user-filter-field user-filter-page-size">
+                    <span>@T["RowsPerPage"]</span>
+                    <select name="pageSize">
+                        @foreach (var size in new[] { 25, 50, 100 })
+                        {
+                            <option value="@size" selected="@(Model.PageSize == size ? "selected" : null)">@size</option>
+                        }
+                    </select>
+                </label>
+            </fieldset>
 
             <div class="user-filter-actions">
                 <button type="submit" class="school-button school-button-primary">
@@ -210,8 +299,10 @@
             <table class="user-table">
                 <thead>
                 <tr>
+                    <th>@T["UserNameAndId"]</th>
                     <th>@T["UserEmail"]</th>
                     <th>@T["UserRole"]</th>
+                    <th>@T["AcademicContext"]</th>
                     <th>@T["AccountStatus"]</th>
                     <th>@T["LockState"]</th>
                     <th>@T["CreatedAt"]</th>
@@ -223,8 +314,27 @@
                 @foreach (var user in Model.Users)
                 {
                     <tr>
+                        <td data-label="@T["UserNameAndId"]">
+                            <div class="user-directory-identity">
+                                <strong>
+                                    @(string.IsNullOrWhiteSpace(user.DisplayName)
+                                        ? T["NameUnavailable"].Value
+                                        : user.DisplayName)
+                                </strong>
+                                @if (!string.IsNullOrWhiteSpace(user.StudentNumber))
+                                {
+                                    <small>@T["StudentNumberLabel"]: @user.StudentNumber</small>
+                                }
+                                <code title="@user.Id">@user.Id</code>
+                            </div>
+                        </td>
+
                         <td data-label="@T["UserEmail"]">
-                            <strong>@user.Email</strong>
+                            <a class="user-directory-email"
+                               href="mailto:@user.Email"
+                               title="@user.Email">
+                                @user.Email
+                            </a>
 
                             @if (user.IsSelf)
                             {
@@ -244,6 +354,40 @@
                             else
                             {
                                 @T[$"Role{user.Role}"]
+                            }
+                        </td>
+
+                        <td data-label="@T["AcademicContext"]">
+                            @{
+                                var contexts = user.AcademicContexts ?? [];
+                                var visibleContexts = contexts.Take(2).ToArray();
+                            }
+
+                            @if (contexts.Count == 0)
+                            {
+                                <span class="user-directory-context-empty">
+                                    @T["NoAcademicContext"]
+                                </span>
+                            }
+                            else
+                            {
+                                <div class="user-directory-context-list">
+                                    @foreach (var context in visibleContexts)
+                                    {
+                                        <span class="user-directory-context-chip"
+                                              title="@($"{context.AcademicYearName} · {context.AcademicProgramName} · {context.ClassGroupName}")">
+                                            <strong>@context.ClassGroupName</strong>
+                                            <small>@context.AcademicYearName · @context.AcademicProgramName</small>
+                                        </span>
+                                    }
+
+                                    @if (contexts.Count > visibleContexts.Length)
+                                    {
+                                        <span class="user-directory-context-more">
+                                            +@(contexts.Count - visibleContexts.Length) @T["More"]
+                                        </span>
+                                    }
+                                </div>
                             }
                         </td>
 
@@ -292,6 +436,12 @@
                     <input type="hidden" name="schoolId" value="@Model.Context.SchoolId" />
                     <input type="hidden" name="search" value="@Model.Search" />
                     <input type="hidden" name="role" value="@Model.Role" />
+                    <input type="hidden" name="name" value="@Model.Name" />
+                    <input type="hidden" name="userId" value="@Model.UserId" />
+                    <input type="hidden" name="email" value="@Model.Email" />
+                    <input type="hidden" name="academicYearId" value="@Model.AcademicYearId" />
+                    <input type="hidden" name="academicProgramId" value="@Model.AcademicProgramId" />
+                    <input type="hidden" name="classGroupId" value="@Model.ClassGroupId" />
                     <input type="hidden" name="isActive" value="@Model.IsActive" />
                     <input type="hidden" name="isLocked" value="@Model.IsLocked" />
                     <input type="hidden" name="pageSize" value="@Model.PageSize" />
@@ -310,6 +460,12 @@
                     <input type="hidden" name="schoolId" value="@Model.Context.SchoolId" />
                     <input type="hidden" name="search" value="@Model.Search" />
                     <input type="hidden" name="role" value="@Model.Role" />
+                    <input type="hidden" name="name" value="@Model.Name" />
+                    <input type="hidden" name="userId" value="@Model.UserId" />
+                    <input type="hidden" name="email" value="@Model.Email" />
+                    <input type="hidden" name="academicYearId" value="@Model.AcademicYearId" />
+                    <input type="hidden" name="academicProgramId" value="@Model.AcademicProgramId" />
+                    <input type="hidden" name="classGroupId" value="@Model.ClassGroupId" />
                     <input type="hidden" name="isActive" value="@Model.IsActive" />
                     <input type="hidden" name="isLocked" value="@Model.IsLocked" />
                     <input type="hidden" name="pageSize" value="@Model.PageSize" />

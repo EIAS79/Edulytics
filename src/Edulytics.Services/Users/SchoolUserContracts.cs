@@ -72,7 +72,10 @@ public sealed record SchoolUserListItem(
     bool IsLocked,
     bool IsSelf,
     DateTime CreatedAtUtc,
-    DateTime UpdatedAtUtc);
+    DateTime UpdatedAtUtc,
+    string? DisplayName = null,
+    string? StudentNumber = null,
+    IReadOnlyList<Edulytics.Core.Users.SchoolUserAcademicContext>? AcademicContexts = null);
 
 public sealed record SchoolUserListRequest(
     string? Search = null,
@@ -80,7 +83,13 @@ public sealed record SchoolUserListRequest(
     bool? IsActive = null,
     bool? IsLocked = null,
     int Page = 1,
-    int PageSize = 50);
+    int PageSize = 50,
+    string? Name = null,
+    string? UserId = null,
+    string? Email = null,
+    Guid? AcademicYearId = null,
+    Guid? AcademicProgramId = null,
+    Guid? ClassGroupId = null);
 
 public sealed record SchoolUserListData(
     SchoolUserManagementContext Context,
@@ -94,6 +103,14 @@ public sealed record SchoolUserListData(
     public int PageSize { get; init; } = 50;
     public int TotalCount { get; init; }
     public int TotalPages { get; init; } = 1;
+    public string? Name { get; init; }
+    public string? UserId { get; init; }
+    public string? Email { get; init; }
+    public Guid? AcademicYearId { get; init; }
+    public Guid? AcademicProgramId { get; init; }
+    public Guid? ClassGroupId { get; init; }
+    public Edulytics.Core.Users.SchoolUserDirectoryFilterOptions FilterOptions { get; init; } =
+        Edulytics.Core.Users.SchoolUserDirectoryFilterOptions.Empty;
 }
 
 public sealed record SchoolUserDetails(

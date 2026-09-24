@@ -1,5 +1,13 @@
 namespace Edulytics.Core.Users;
 
+public sealed record SchoolUserAcademicContext(
+    Guid AcademicYearId,
+    string AcademicYearName,
+    Guid AcademicProgramId,
+    string AcademicProgramName,
+    Guid ClassGroupId,
+    string ClassGroupName);
+
 public sealed record SchoolUserRecord(
     Guid Id,
     Guid? SchoolId,
@@ -8,7 +16,10 @@ public sealed record SchoolUserRecord(
     bool IsLocked,
     DateTime CreatedAtUtc,
     DateTime UpdatedAtUtc,
-    IReadOnlyList<string> Roles);
+    IReadOnlyList<string> Roles,
+    string? DisplayName = null,
+    string? StudentNumber = null,
+    IReadOnlyList<SchoolUserAcademicContext>? AcademicContexts = null);
 
 public enum SchoolUserPersistenceError
 {
@@ -51,7 +62,32 @@ public sealed record SchoolUserListQuery(
     bool? IsActive = null,
     bool? IsLocked = null,
     int Page = 1,
-    int PageSize = 50);
+    int PageSize = 50,
+    string? Name = null,
+    string? UserId = null,
+    string? Email = null,
+    Guid? AcademicYearId = null,
+    Guid? AcademicProgramId = null,
+    Guid? ClassGroupId = null);
+
+public sealed record SchoolUserDirectoryFilterOption(
+    Guid Id,
+    string Label);
+
+public sealed record SchoolUserClassFilterOption(
+    Guid Id,
+    string Label,
+    Guid AcademicYearId,
+    Guid AcademicProgramId);
+
+public sealed record SchoolUserDirectoryFilterOptions(
+    IReadOnlyList<SchoolUserDirectoryFilterOption> AcademicYears,
+    IReadOnlyList<SchoolUserDirectoryFilterOption> AcademicPrograms,
+    IReadOnlyList<SchoolUserClassFilterOption> Classes)
+{
+    public static SchoolUserDirectoryFilterOptions Empty { get; } =
+        new([], [], []);
+}
 
 public sealed record SchoolUserPage(
     IReadOnlyList<SchoolUserRecord> Users,

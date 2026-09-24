@@ -12,6 +12,11 @@ public interface ISchoolUserRepository
         Guid schoolId,
         CancellationToken cancellationToken = default);
 
+    Task<SchoolUserDirectoryFilterOptions> GetDirectoryFilterOptionsAsync(
+        Guid schoolId,
+        CancellationToken cancellationToken = default) =>
+        Task.FromResult(SchoolUserDirectoryFilterOptions.Empty);
+
     async Task<SchoolUserPage> QueryBySchoolAsync(
         Guid schoolId,
         SchoolUserListQuery query,
@@ -23,6 +28,9 @@ public interface ISchoolUserRepository
         var pageSize = Math.Clamp(query.PageSize, 1, 100);
         var search = query.Search?.Trim();
         var role = query.Role?.Trim();
+        var name = query.Name?.Trim();
+        var userId = query.UserId?.Trim();
+        var email = query.Email?.Trim();
 
         IEnumerable<SchoolUserRecord> filtered =
             await ListBySchoolAsync(schoolId, cancellationToken);
@@ -31,6 +39,41 @@ public interface ISchoolUserRepository
         {
             filtered = filtered.Where(x =>
                 x.Email.Contains(search, StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (!string.IsNullOrWhiteSpace(email))
+        {
+            filtered = filtered.Where(x =>
+                x.Email.Contains(email, StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (!string.IsNullOrWhiteSpace(name))
+        {
+            filtered = filtered.Where(x =>
+                !string.IsNullOrWhiteSpace(x.DisplayName) &&
+                x.DisplayName.Contains(name, StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (!string.IsNullOrWhiteSpace(userId))
+        {
+            filtered = Guid.TryParse(userId, out var parsedUserId)
+                ? filtered.Where(x => x.Id == parsedUserId)
+                : [];
+        }
+
+        if (query.AcademicYearId.HasValue ||
+            query.AcademicProgramId.HasValue ||
+            query.ClassGroupId.HasValue)
+        {
+            filtered = filtered.Where(x =>
+                (x.AcademicContexts ?? [])
+                    .Any(context =>
+                        (!query.AcademicYearId.HasValue ||
+                         context.AcademicYearId == query.AcademicYearId.Value) &&
+                        (!query.AcademicProgramId.HasValue ||
+                         context.AcademicProgramId == query.AcademicProgramId.Value) &&
+                        (!query.ClassGroupId.HasValue ||
+                         context.ClassGroupId == query.ClassGroupId.Value)));
         }
 
         if (!string.IsNullOrWhiteSpace(role))

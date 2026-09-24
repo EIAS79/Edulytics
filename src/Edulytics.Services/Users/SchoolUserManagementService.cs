@@ -94,22 +94,47 @@ public sealed class SchoolUserManagementService
         if (!string.IsNullOrWhiteSpace(role) && !TenantRoles.Contains(role))
             role = null;
 
-        var search = request.Search?.Trim();
-        if (search?.Length > MaxEmailLength)
-            search = search[..MaxEmailLength];
+        var search = CleanFilter(request.Search, MaxEmailLength);
+        var name = CleanFilter(request.Name, 150);
+        var userId = CleanFilter(request.UserId, 64);
+        var email = CleanFilter(request.Email, MaxEmailLength);
+
+        var academicYearId =
+            request.AcademicYearId == Guid.Empty
+                ? null
+                : request.AcademicYearId;
+        var academicProgramId =
+            request.AcademicProgramId == Guid.Empty
+                ? null
+                : request.AcademicProgramId;
+        var classGroupId =
+            request.ClassGroupId == Guid.Empty
+                ? null
+                : request.ClassGroupId;
 
         var page = Math.Max(1, request.Page);
         var pageSize = Math.Clamp(request.PageSize, 10, 100);
 
+        var schoolId = scope.School!.Id;
         var result = await _users.QueryBySchoolAsync(
-            scope.School!.Id,
+            schoolId,
             new SchoolUserListQuery(
-                search,
-                role,
-                request.IsActive,
-                request.IsLocked,
-                page,
-                pageSize),
+                Search: search,
+                Role: role,
+                IsActive: request.IsActive,
+                IsLocked: request.IsLocked,
+                Page: page,
+                PageSize: pageSize,
+                Name: name,
+                UserId: userId,
+                Email: email,
+                AcademicYearId: academicYearId,
+                AcademicProgramId: academicProgramId,
+                ClassGroupId: classGroupId),
+            cancellationToken);
+
+        var filterOptions = await _users.GetDirectoryFilterOptionsAsync(
+            schoolId,
             cancellationToken);
 
         var items = result.Users
@@ -121,7 +146,10 @@ public sealed class SchoolUserManagementService
                 user.IsLocked,
                 user.Id == scope.Actor!.Id,
                 user.CreatedAtUtc,
-                user.UpdatedAtUtc))
+                user.UpdatedAtUtc,
+                user.DisplayName,
+                user.StudentNumber,
+                user.AcademicContexts ?? []))
             .ToArray();
 
         return SchoolUserQueryResult<SchoolUserListData>.Success(
@@ -136,7 +164,14 @@ public sealed class SchoolUserManagementService
                 Page = result.Page,
                 PageSize = result.PageSize,
                 TotalCount = result.TotalCount,
-                TotalPages = result.TotalPages
+                TotalPages = result.TotalPages,
+                Name = name,
+                UserId = userId,
+                Email = email,
+                AcademicYearId = academicYearId,
+                AcademicProgramId = academicProgramId,
+                ClassGroupId = classGroupId,
+                FilterOptions = filterOptions
             });
     }
 
@@ -1028,6 +1063,19 @@ public sealed class SchoolUserManagementService
 
         return actorRole == RoleNames.SubjectSupervisor &&
                OperationalUserRoles.Contains(targetRole);
+    }
+
+    private static string? CleanFilter(
+        string? value,
+        int maxLength)
+    {
+        var cleaned = value?.Trim();
+        if (string.IsNullOrWhiteSpace(cleaned))
+            return null;
+
+        return cleaned.Length <= maxLength
+            ? cleaned
+            : cleaned[..maxLength];
     }
 
     private static string? GetSingleRole(

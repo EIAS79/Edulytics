@@ -925,12 +925,77 @@
         apply();
     }
 
+    function wireUserDirectoryAcademicFilters() {
+        const form = document.querySelector("[data-user-directory-filters]");
+        if (!form) return;
+
+        const year = form.querySelector("[data-user-filter-year]");
+        const program = form.querySelector("[data-user-filter-program]");
+        const classSelect = form.querySelector("[data-user-filter-class]");
+        if (!year || !program || !classSelect) return;
+
+        const classOptions = Array.from(classSelect.options)
+            .filter(option => option.value);
+        const programOptions = Array.from(program.options)
+            .filter(option => option.value);
+
+        const refresh = () => {
+            const yearId = year.value;
+
+            const programsForYear = new Set(
+                classOptions
+                    .filter(option =>
+                        !yearId || option.dataset.yearId === yearId)
+                    .map(option => option.dataset.programId)
+                    .filter(Boolean));
+
+            programOptions.forEach(option => {
+                const visible =
+                    !yearId ||
+                    programsForYear.has(option.value);
+                option.hidden = !visible;
+                option.disabled = !visible;
+            });
+
+            if (program.value &&
+                program.options[program.selectedIndex]?.disabled) {
+                program.value = "";
+            }
+
+            const programId = program.value;
+            classOptions.forEach(option => {
+                const visible =
+                    (!yearId || option.dataset.yearId === yearId) &&
+                    (!programId || option.dataset.programId === programId);
+
+                option.hidden = !visible;
+                option.disabled = !visible;
+            });
+
+            if (classSelect.value &&
+                classSelect.options[classSelect.selectedIndex]?.disabled) {
+                classSelect.value = "";
+            }
+        };
+
+        year.addEventListener("change", () => {
+            refresh();
+        });
+
+        program.addEventListener("change", () => {
+            refresh();
+        });
+
+        refresh();
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
         ensureRound2Stylesheet();
         wirePrintButtons();
         wireReportKindFilters();
         wireConfirmationForms();
         wireSchoolCountryTimeZones();
+        wireUserDirectoryAcademicFilters();
         wireStudentWorkflowCleanup();
         wireClassOverviewDialogs();
         wireStudentMoveWorkflow();
