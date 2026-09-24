@@ -161,6 +161,35 @@ public sealed class Phase39AcademicUxContractTests
     }
 
     [Fact]
+    public void ClassOverview_UsesCompactResponsiveCardsAndModalDetails()
+    {
+        var root = FindRepositoryRoot();
+        var view = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/AcademicStructure/Index.cshtml"));
+        var javascript = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/site.js"));
+        var css = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/css/site.css"));
+
+        Assert.Contains("academic-class-browser-card-modern", view, StringComparison.Ordinal);
+        Assert.Contains("data-class-details-open", view, StringComparison.Ordinal);
+        Assert.Contains("academic-class-details-dialog", view, StringComparison.Ordinal);
+        Assert.Contains("mailto:@primaryTeacher", view, StringComparison.Ordinal);
+        Assert.Contains("mailto:@teacherEmail", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("<details class=\"academic-class-browser-card\"", view, StringComparison.Ordinal);
+
+        Assert.Contains("wireClassOverviewDialogs", javascript, StringComparison.Ordinal);
+        Assert.Contains("showModal()", javascript, StringComparison.Ordinal);
+
+        Assert.Contains("repeat(auto-fit, minmax(min(100%, 18.75rem), 1fr))", css, StringComparison.Ordinal);
+        Assert.Contains("text-overflow: ellipsis", css, StringComparison.Ordinal);
+        Assert.Contains(".academic-class-details-dialog", css, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void StudentMovement_RequiresExplicitSourceSelectionDestinationAndReview()
     {
         var root = FindRepositoryRoot();
