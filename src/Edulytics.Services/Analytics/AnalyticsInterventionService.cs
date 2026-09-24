@@ -91,6 +91,7 @@ public sealed class AnalyticsInterventionService : IAnalyticsInterventionService
                     StringComparison.Ordinal));
 
         if (skill is null ||
+            !skill.TargetedCheckAvailable ||
             skill.Status is
                 Edulytics.Core.Analytics.EvaluationSkillStatus.NotYetAssessed or
                 Edulytics.Core.Analytics.EvaluationSkillStatus.InsufficientEvidence)
