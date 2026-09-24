@@ -123,6 +123,52 @@
     </article>
 </section>
 
+@if (Model.Evaluation is not null)
+{
+    var evaluation = Model.Evaluation;
+    var official = evaluation.OfficialEvaluation;
+
+    <section class="student-panel student-dashboard-evaluation-card">
+        <div class="student-panel-heading">
+            <div>
+                <span class="student-eyebrow">@S["MyEvaluation"]</span>
+                <h2>@official.SubjectName · @S["MyProgress"]</h2>
+            </div>
+            <a class="student-secondary-link"
+               asp-action="Progress"
+               asp-route-academicYearId="@official.AcademicYearId"
+               asp-route-classGroupId="@official.ClassGroupId"
+               asp-route-subjectId="@official.SubjectId">
+                @S["OpenFullEvaluation"]
+            </a>
+        </div>
+
+        <div class="student-dashboard-evaluation-grid">
+            <div>
+                <span>@S["CurrentMastery"]</span>
+                <strong>@(official.CurrentMasteryPercentage.HasValue ? $"{official.CurrentMasteryPercentage.Value:0.#}%" : "—")</strong>
+            </div>
+            <div>
+                <span>@S["AssessmentMastery"]</span>
+                <strong>@(official.AssessmentMasteryPercentage.HasValue ? $"{official.AssessmentMasteryPercentage.Value:0.#}%" : "—")</strong>
+            </div>
+            <div>
+                <span>@S["PrivatePracticeMastery"]</span>
+                <strong>@(evaluation.PrivatePractice.MasteryPercentage.HasValue ? $"{evaluation.PrivatePractice.MasteryPercentage.Value:0.#}%" : "—")</strong>
+            </div>
+            <div>
+                <span>@S["CurriculumCoverage"]</span>
+                <strong>@official.CurriculumCoveragePercentage.ToString("0.#")%</strong>
+            </div>
+            <div>
+                <span>@S["SkillsToStrengthen"]</span>
+                <strong>@official.CriticalSkillCount</strong>
+                <small>@official.NeedsFocusSkillCount @S["NeedsFocus"].Value.ToLowerInvariant()</small>
+            </div>
+        </div>
+    </section>
+}
+
 <section class="student-dashboard-content-grid">
     <article class="student-panel student-dashboard-priority">
         <div class="student-panel-heading">
