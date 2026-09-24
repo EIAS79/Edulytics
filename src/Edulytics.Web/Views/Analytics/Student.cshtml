@@ -3,6 +3,7 @@
 @using Edulytics.Core.Analytics
 @using Edulytics.Core.Constants
 @using Edulytics.Core.Enums
+@using System.Globalization
 @{
     ViewData["Title"] = A["Student360"].Value;
     var e = Model.Evaluation;
@@ -47,6 +48,33 @@
         EvaluationSkillStatus.Critical => "is-negative",
         _ => "is-muted"
     };
+
+    var assessmentSeries = string.Join(
+        ",",
+        Model.Assessments.Select(x =>
+            x.Percentage.ToString(CultureInfo.InvariantCulture)));
+
+    var assessmentLabels = string.Join(
+        "|",
+        Model.Assessments.Select(x =>
+            x.AssessmentDate.ToString("MM-dd", CultureInfo.InvariantCulture)));
+
+    var assessmentWaterfallLabels = string.Join(
+        "|",
+        Model.Assessments.Select(x =>
+            x.Title.Replace("|", "/", StringComparison.Ordinal)));
+
+    var assessmentDeltas = string.Join(
+        ",",
+        Model.Assessments.Skip(1).Select(x =>
+            (x.OverallChangePercentagePoints ?? 0m)
+                .ToString(CultureInfo.InvariantCulture)));
+
+    var assessmentStart =
+        Model.Assessments.Count > 0
+            ? Model.Assessments[0].Percentage
+                .ToString(CultureInfo.InvariantCulture)
+            : string.Empty;
 }
 
 <section class="analytics-page evaluation-page">
@@ -65,6 +93,14 @@
                asp-route-classGroupId="@e.ClassGroupId"
                asp-route-subjectId="@e.SubjectId">
                 @A["BackToStudents"]
+            </a>
+            <a class="school-button school-button-secondary"
+               asp-action="StudentReport"
+               asp-route-studentProfileId="@e.StudentProfileId"
+               asp-route-academicYearId="@e.AcademicYearId"
+               asp-route-classGroupId="@e.ClassGroupId"
+               asp-route-subjectId="@e.SubjectId">
+                @A["ViewReport"]
             </a>
             <a class="school-button"
                asp-action="StudentReportPdf"
@@ -95,9 +131,16 @@
     <section class="evaluation-hero-grid">
         <article class="evaluation-primary-score">
             <span>@A["CurrentMastery"]</span>
-            <div class="evaluation-score-ring"
-                 style="--evaluation-score:@((e.CurrentMasteryPercentage ?? 0m).ToString(System.Globalization.CultureInfo.InvariantCulture))">
-                <strong>@Value(e.CurrentMasteryPercentage)</strong>
+            <div class="evaluation-donut"
+                 data-evaluation-chart="donut"
+                 data-value="@((e.CurrentMasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"
+                 data-suffix="%"
+                 data-decimals="1"
+                 aria-label="@A["CurrentMastery"]: @Value(e.CurrentMasteryPercentage)">
+                <div class="evaluation-donut-content">
+                    <strong data-chart-number>@Value(e.CurrentMasteryPercentage)</strong>
+                    <small>@A["CurrentMastery"]</small>
+                </div>
             </div>
             <small>@e.EvaluatedSkillCount / @e.ExpectedSkillCount skills evaluated</small>
         </article>
@@ -142,6 +185,127 @@
                 <small>@e.NeedsFocusSkillCount @A["NeedsFocus"].Value.ToLowerInvariant()</small>
             </article>
         </div>
+    </section>
+
+    <section class="evaluation-visual-grid" aria-label="@A["VisualAnalytics"]">
+        <article class="evaluation-chart-panel">
+            <header>
+                <div>
+                    <h2>@A["PerformanceComparison"]</h2>
+                    <p>@A["PerformanceComparisonHelp"]</p>
+                </div>
+            </header>
+            <div class="evaluation-bars"
+                 data-evaluation-chart="bars">
+                <div class="evaluation-bar-row">
+                    <span>@A["AssessmentMastery"]</span>
+                    <span class="evaluation-bar-track">
+                        <i class="evaluation-bar-fill"
+                           data-chart-value="@((e.AssessmentMasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"></i>
+                    </span>
+                    <strong>@Value(e.AssessmentMasteryPercentage)</strong>
+                </div>
+                <div class="evaluation-bar-row is-practice">
+                    <span>@A["PracticeMastery"]</span>
+                    <span class="evaluation-bar-track">
+                        <i class="evaluation-bar-fill"
+                           data-chart-value="@((e.PracticeMasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"></i>
+                    </span>
+                    <strong>@Value(e.PracticeMasteryPercentage)</strong>
+                </div>
+                <div class="evaluation-bar-row is-warning">
+                    <span>@A["Coverage"]</span>
+                    <span class="evaluation-bar-track">
+                        <i class="evaluation-bar-fill"
+                           data-chart-value="@e.CurriculumCoveragePercentage.ToString(CultureInfo.InvariantCulture)"></i>
+                    </span>
+                    <strong>@e.CurriculumCoveragePercentage.ToString("0.#")%</strong>
+                </div>
+            </div>
+            <div class="evaluation-chart-callout">
+                <span class="evaluation-chart-score">
+                    @(e.PracticeToAssessmentGapPercentagePoints.HasValue
+                        ? e.PracticeToAssessmentGapPercentagePoints.Value.ToString("+0.#;-0.#;0")
+                        : "—")
+                </span>
+                <span>@A["TransferGap"] · @A["TransferGapHelp"]</span>
+            </div>
+        </article>
+
+        <article class="evaluation-chart-panel">
+            <header>
+                <div>
+                    <h2>@A["AssessmentProgressChart"]</h2>
+                    <p>@A["AssessmentProgressChartHelp"]</p>
+                </div>
+            </header>
+            <div class="evaluation-line-chart-scroll">
+                <div class="evaluation-line-chart"
+                     data-evaluation-chart="line"
+                     data-values="@assessmentSeries"
+                     data-labels="@assessmentLabels"
+                     data-aria-label="@A["AssessmentProgressChart"]"
+                     data-empty-label="@A["InsufficientEvidence"]">
+                </div>
+            </div>
+        </article>
+
+        <article class="evaluation-chart-panel">
+            <header>
+                <div>
+                    <h2>@A["TopicMasteryChart"]</h2>
+                    <p>@A["TopicMasteryChartHelp"]</p>
+                </div>
+            </header>
+            @if (Model.Topics.Count == 0)
+            {
+                <div class="evaluation-chart-empty">@A["InsufficientEvidence"]</div>
+            }
+            else
+            {
+                <div class="evaluation-lollipop-list"
+                     data-evaluation-chart="lollipop">
+                    @foreach (var topic in Model.Topics
+                        .OrderBy(x => x.CurrentMasteryPercentage ?? 101m)
+                        .Take(8))
+                    {
+                        var topicValue = topic.CurrentMasteryPercentage ?? 0m;
+                        var topicClass = topicValue < 40m
+                            ? "is-danger"
+                            : topicValue < 60m
+                                ? "is-warning"
+                                : string.Empty;
+                        <div class="evaluation-lollipop-row @topicClass">
+                            <span class="evaluation-lollipop-label"
+                                  title="@topic.TopicName">
+                                @topic.TopicName
+                            </span>
+                            <span class="evaluation-lollipop-track">
+                                <i class="evaluation-lollipop-stick"
+                                   data-chart-value="@topicValue.ToString(CultureInfo.InvariantCulture)"></i>
+                            </span>
+                            <strong>@Value(topic.CurrentMasteryPercentage)</strong>
+                        </div>
+                    }
+                </div>
+            }
+        </article>
+
+        <article class="evaluation-chart-panel">
+            <header>
+                <div>
+                    <h2>@A["AssessmentChangeWaterfall"]</h2>
+                    <p>@A["AssessmentChangeWaterfallHelp"]</p>
+                </div>
+            </header>
+            <div class="evaluation-waterfall"
+                 data-evaluation-chart="waterfall"
+                 data-start="@assessmentStart"
+                 data-deltas="@assessmentDeltas"
+                 data-labels="@assessmentWaterfallLabels"
+                 data-empty-label="@A["InsufficientEvidence"]">
+            </div>
+        </article>
     </section>
 
     <section class="analytics-panel">
@@ -502,3 +666,8 @@
         </details>
     </section>
 </section>
+
+
+@section Scripts {
+    <script src="~/js/evaluation-charts.js" asp-append-version="true"></script>
+}
