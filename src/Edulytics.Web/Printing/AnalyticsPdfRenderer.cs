@@ -1084,7 +1084,7 @@ public static class AnalyticsPdfRenderer
                 row.Cells[7].AddParagraph(
                     item.CriticalSkillCount.ToString(CultureInfo.InvariantCulture));
                 row.Cells[8].AddParagraph(
-                    $"{Percent(item.ConfidencePercentage)}\n{item.ConfidenceBand}");
+                    $"{Percent(item.ConfidencePercentage)}\n{ConfidenceBand(item.ConfidenceBand)}");
             }
         }
 
@@ -1903,6 +1903,22 @@ public static class AnalyticsPdfRenderer
                 "Rapidly declining",
             _ =>
                 "Insufficient evidence"
+        };
+
+    private static string ConfidenceBand(
+        Edulytics.Core.Analytics.EvaluationConfidenceBand value) =>
+        value switch
+        {
+            Edulytics.Core.Analytics.EvaluationConfidenceBand.VeryStrong =>
+                "Very strong",
+            Edulytics.Core.Analytics.EvaluationConfidenceBand.Strong =>
+                "Strong",
+            Edulytics.Core.Analytics.EvaluationConfidenceBand.Moderate =>
+                "Moderate",
+            Edulytics.Core.Analytics.EvaluationConfidenceBand.Limited =>
+                "Limited",
+            _ =>
+                "Insufficient"
         };
 
     private static string Percent(decimal value) =>
