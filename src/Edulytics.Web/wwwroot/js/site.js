@@ -941,7 +941,6 @@
 
         const refresh = () => {
             const yearId = year.value;
-            const selectedProgramId = program.value;
 
             const programsForYear = new Set(
                 classOptions
@@ -963,7 +962,7 @@
                 program.value = "";
             }
 
-            const programId = program.value || selectedProgramId;
+            const programId = program.value;
             classOptions.forEach(option => {
                 const visible =
                     (!yearId || option.dataset.yearId === yearId) &&
