@@ -87,18 +87,20 @@
                         .OrderBy(x => x.CurrentMasteryPercentage ?? 101m)
                         .Take(12))
                     {
-                        var classValue = item.CurrentMasteryPercentage ?? 0m;
-                        var classState = classValue < 40m
-                            ? "is-danger"
-                            : classValue < 60m
-                                ? "is-warning"
-                                : string.Empty;
+                        var classValue = item.CurrentMasteryPercentage;
+                        var classState = !classValue.HasValue
+                            ? string.Empty
+                            : classValue.Value < 40m
+                                ? "is-danger"
+                                : classValue.Value < 60m
+                                    ? "is-warning"
+                                    : string.Empty;
                         <div class="evaluation-lollipop-row @classState">
                             <span class="evaluation-lollipop-label"
                                   title="@item.ClassName">@item.ClassName</span>
                             <span class="evaluation-lollipop-track">
                                 <i class="evaluation-lollipop-stick"
-                                   data-chart-value="@classValue.ToString(CultureInfo.InvariantCulture)"></i>
+                                   data-chart-value="@(classValue?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"></i>
                             </span>
                             <strong>@Value(item.CurrentMasteryPercentage)</strong>
                         </div>
