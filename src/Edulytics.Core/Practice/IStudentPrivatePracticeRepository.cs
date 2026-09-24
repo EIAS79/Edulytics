@@ -32,6 +32,21 @@ public sealed record PrivatePracticeAttemptSummary(
     decimal MaxScore,
     decimal Percentage);
 
+public sealed record PrivatePracticeEvidenceItem(
+    Guid AttemptId,
+    Guid CurriculumAdoptionId,
+    Guid? PedagogicalLessonId,
+    Guid AssessmentItemId,
+    string? GenerationFamily,
+    string? GenerationParametersJson,
+    string? ValidationMetadataJson,
+    AssessmentItemDifficulty Difficulty,
+    bool IsCorrect,
+    decimal Score,
+    decimal MaxScore,
+    DateTime AnsweredAtUtc,
+    IReadOnlyList<Guid> LearningOutcomeIds);
+
 public interface IStudentPrivatePracticeRepository
 {
     Task<IReadOnlyList<PrivatePracticeCurriculumOption>> ListCurriculaAsync(
@@ -52,6 +67,10 @@ public interface IStudentPrivatePracticeRepository
         CancellationToken cancellationToken = default);
 
     Task<IReadOnlyList<PrivatePracticeAttemptSummary>> ListPrivateAttemptsAsync(
+        Guid studentUserId,
+        CancellationToken cancellationToken = default);
+
+    Task<IReadOnlyList<PrivatePracticeEvidenceItem>> ListPrivateEvidenceAsync(
         Guid studentUserId,
         CancellationToken cancellationToken = default);
 }
