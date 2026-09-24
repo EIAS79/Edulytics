@@ -170,6 +170,8 @@ public sealed class LearningEvaluationEngine
         var preliminary = targetRows
             .Select(target =>
                 BuildPreliminarySkill(
+                    academicYearId,
+                    classGroupId,
                     target.Outcome,
                     target.Skill,
                     evidence
@@ -320,6 +322,8 @@ public sealed class LearningEvaluationEngine
     }
 
     private static StudentSkillEvaluation BuildPreliminarySkill(
+        Guid academicYearId,
+        Guid classGroupId,
         LearningOutcome outcome,
         EvaluationSkillDescriptor skill,
         IReadOnlyList<EvaluationEvidenceRecord> evidence,
@@ -348,10 +352,8 @@ public sealed class LearningEvaluationEngine
             evidence.Count);
 
         return new StudentSkillEvaluation(
-            evidence.FirstOrDefault()?.AcademicYearId ??
-                Guid.Empty,
-            evidence.FirstOrDefault()?.ClassGroupId ??
-                Guid.Empty,
+            academicYearId,
+            classGroupId,
             outcome.SubjectId,
             outcome.TopicId,
             outcome.Id,
