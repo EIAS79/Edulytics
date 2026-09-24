@@ -33,12 +33,19 @@ public sealed record AnalyticsProjectionSnapshot(
     IReadOnlyList<ClassAssessmentTrend> ClassAssessmentTrends,
     IReadOnlyList<SchoolAnalyticsSnapshot> SchoolSnapshots)
 {
+    public IReadOnlyList<Term> Terms { get; init; } = [];
     public IReadOnlyList<StudentEnrollment> StudentEnrollments { get; init; } = [];
     public IReadOnlyList<Assessment> Assessments { get; init; } = [];
     public IReadOnlyList<AssessmentQuestion> AssessmentQuestions { get; init; } = [];
+    public IReadOnlyList<QuestionLearningOutcome> OutcomeMappings { get; init; } = [];
     public IReadOnlyList<AssessmentItem> AssessmentItems { get; init; } = [];
+    public IReadOnlyList<AssessmentItemOutcome> AssessmentItemOutcomes { get; init; } = [];
     public IReadOnlyList<AssessmentResult> AssessmentResults { get; init; } = [];
     public IReadOnlyList<StudentAnswer> StudentAnswers { get; init; } = [];
+    public IReadOnlyList<PracticeAttempt> PracticeAttempts { get; init; } = [];
+    public IReadOnlyList<PracticeAttemptItem> PracticeAttemptItems { get; init; } = [];
+    public IReadOnlyList<PracticeResponse> PracticeResponses { get; init; } = [];
+    public IReadOnlyList<LearningEvidence> LearningEvidence { get; init; } = [];
     public IReadOnlyList<CurriculumPedagogicalLesson> PedagogicalLessons { get; init; } = [];
 }
 
