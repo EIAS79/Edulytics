@@ -135,9 +135,12 @@ public sealed class Phase39AcademicUxContractTests
     }
 
     [Fact]
-    public void StudentCreation_UsesUserManagementAsTheNormalEntryPoint()
+    public void StudentCreation_UsesUserManagementWithoutLegacyEnrollmentForms()
     {
         var root = FindRepositoryRoot();
+        var view = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/AcademicStructure/Index.cshtml"));
         var javascript = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/wwwroot/js/site.js"));
@@ -145,10 +148,12 @@ public sealed class Phase39AcademicUxContractTests
             root,
             "src/Edulytics.Web/Filters/DirectStudentCreationFilter.cs"));
 
-        Assert.Contains("createstudentprofile", javascript, StringComparison.Ordinal);
-        Assert.Contains("profileForm.hidden = true", javascript, StringComparison.Ordinal);
-        Assert.Contains("/School/Users/Create", javascript, StringComparison.Ordinal);
-        Assert.Contains("Change student class enrollment", javascript, StringComparison.Ordinal);
+        Assert.Contains("ManageStudentAccounts", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("asp-action=\"CreateStudentEnrollment\"", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("id=\"enroll-student\"", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("id=\"enroll-class\"", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("Change student class enrollment", javascript, StringComparison.Ordinal);
+        Assert.DoesNotContain("enrollmentClass", javascript, StringComparison.Ordinal);
         Assert.Contains("_transactions.BeginAsync", filter, StringComparison.Ordinal);
         Assert.Contains("ConvertToStudentAsync", filter, StringComparison.Ordinal);
         Assert.Contains("RollbackAsync", filter, StringComparison.Ordinal);
@@ -175,9 +180,13 @@ public sealed class Phase39AcademicUxContractTests
         Assert.Contains("id=\"move-target-class\"", view, StringComparison.Ordinal);
         Assert.Contains("id=\"student-move-review\"", view, StringComparison.Ordinal);
         Assert.Contains("student-move-dialog", view, StringComparison.Ordinal);
+        Assert.Contains("academic-student-move-modern", view, StringComparison.Ordinal);
+        Assert.Contains("student-move-review-students", view, StringComparison.Ordinal);
+        Assert.Contains("data-level-key", view, StringComparison.Ordinal);
         Assert.Contains("@A[\"ConfirmMove\"]", view, StringComparison.Ordinal);
         Assert.Contains("SelectAllVisible", view, StringComparison.Ordinal);
         Assert.Contains("ManageStudentAccounts", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("asp-action=\"CreateStudentEnrollment\"", view, StringComparison.Ordinal);
 
         Assert.Contains("Guid sourceClassGroupId", controller, StringComparison.Ordinal);
         Assert.Contains("MoveStudentsAsync(", controller, StringComparison.Ordinal);
@@ -187,6 +196,9 @@ public sealed class Phase39AcademicUxContractTests
         Assert.Contains("CrossGradeMoveNotAllowed", service, StringComparison.Ordinal);
         Assert.Contains("CrossCurriculumMoveNotAllowed", service, StringComparison.Ordinal);
         Assert.Contains("StudentNotInSourceClass", service, StringComparison.Ordinal);
+        Assert.Contains("if (failures.Count > 0)", service, StringComparison.Ordinal);
+        Assert.Contains("foreach (var enrollment in enrollments)", service, StringComparison.Ordinal);
+        Assert.Contains("A reviewed bulk move is atomic", service, StringComparison.Ordinal);
         Assert.DoesNotContain(
             "AddEnrollmentAsync(\n                    new StudentEnrollment",
             service[
