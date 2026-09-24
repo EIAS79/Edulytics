@@ -36,13 +36,22 @@
             <h1>@A["AllStudents"]</h1>
             <p>@Model.AcademicYearName · @Model.ClassName · @Model.SubjectName</p>
         </div>
-        <a class="school-button school-button-secondary"
-           asp-action="Index"
-           asp-route-academicYearId="@Model.AcademicYearId"
-           asp-route-classGroupId="@Model.ClassGroupId"
-           asp-route-subjectId="@Model.SubjectId">
-            @A["EvaluationOverview"]
-        </a>
+        <div class="evaluation-student-hero-actions">
+            <a class="school-button school-button-secondary"
+               asp-action="Index"
+               asp-route-academicYearId="@Model.AcademicYearId"
+               asp-route-classGroupId="@Model.ClassGroupId"
+               asp-route-subjectId="@Model.SubjectId">
+                @A["EvaluationOverview"]
+            </a>
+            <a class="school-button"
+               asp-action="ClassReportPdf"
+               asp-route-academicYearId="@Model.AcademicYearId"
+               asp-route-classGroupId="@Model.ClassGroupId"
+               asp-route-subjectId="@Model.SubjectId">
+                @A["DownloadPdf"]
+            </a>
+        </div>
     </header>
 
     <nav class="evaluation-nav" aria-label="@A["AnalyticsTitle"]">
