@@ -82,7 +82,7 @@
             <input type="hidden" name="subjectId" value="@e.SubjectId" />
 
             <label for="termId">@A["SelectTerm"]</label>
-            <select id="termId" name="termId" onchange="this.form.submit()">
+            <select id="termId" name="termId" data-report-autosubmit="true">
                 <option value="">@A["AllTerms"]</option>
                 @foreach (var term in source.Terms)
                 {
@@ -97,7 +97,7 @@
         <div class="evaluation-report-toolbar-actions">
             <button type="button"
                     class="school-button school-button-secondary"
-                    onclick="window.print()">
+                    data-report-print="true">
                 @A["PrintReport"]
             </button>
 
