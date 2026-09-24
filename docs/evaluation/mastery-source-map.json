@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "generatedFor": "evaluation-engine-e0",
+  "officialMastery": {
+    "projection": "StudentOutcomeMastery",
+    "formulaVersion": "phase31-v2",
+    "formalAssessment": [
+      "Assessment",
+      "AssessmentQuestion",
+      "QuestionLearningOutcome",
+      "AssessmentResult",
+      "StudentAnswer"
+    ],
+    "practice": [
+      "PracticeAttempt(IsPrivate=false)",
+      "LearningEvidence"
+    ],
+    "notes": [
+      "Formal evidence is outcome-mapped and recency weighted.",
+      "Eligible Practice evidence is outcome-mapped, difficulty weighted and recency weighted.",
+      "Private Practice is excluded from official staff analytics."
+    ]
+  }
+}
