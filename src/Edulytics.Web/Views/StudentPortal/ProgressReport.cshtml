@@ -169,7 +169,7 @@
                 </header>
                 <div class="evaluation-donut"
                      data-evaluation-chart="donut"
-                     data-value="@((e.CurrentMasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"
+                     data-value="@(e.CurrentMasteryPercentage?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"
                      data-suffix="%"
                      data-decimals="1">
                     <div class="evaluation-donut-content">
@@ -224,7 +224,7 @@
                             <span>@S["AssessmentMastery"]</span>
                             <span class="evaluation-bar-track">
                                 <i class="evaluation-bar-fill"
-                                   data-chart-value="@((e.AssessmentMasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"></i>
+                                   data-chart-value="@(e.AssessmentMasteryPercentage?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"></i>
                             </span>
                             <strong>@Value(e.AssessmentMasteryPercentage)</strong>
                         </div>
@@ -232,7 +232,7 @@
                             <span>@S["PrivatePracticeMastery"]</span>
                             <span class="evaluation-bar-track">
                                 <i class="evaluation-bar-fill"
-                                   data-chart-value="@((source.PrivatePractice.MasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"></i>
+                                   data-chart-value="@(source.PrivatePractice.MasteryPercentage?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"></i>
                             </span>
                             <strong>@Value(source.PrivatePractice.MasteryPercentage)</strong>
                         </div>
@@ -312,17 +312,19 @@
                     .OrderBy(x => x.OfficialMasteryPercentage ?? 101m)
                     .Take(15))
                 {
-                    var skillValue = skill.OfficialMasteryPercentage ?? 0m;
-                    var css = skillValue < 40m
-                        ? "is-danger"
-                        : skillValue < 60m
-                            ? "is-warning"
-                            : string.Empty;
+                    var skillValue = skill.OfficialMasteryPercentage;
+                    var css = !skillValue.HasValue
+                        ? string.Empty
+                        : skillValue.Value < 40m
+                            ? "is-danger"
+                            : skillValue.Value < 60m
+                                ? "is-warning"
+                                : string.Empty;
                     <div class="evaluation-lollipop-row @css">
                         <span class="evaluation-lollipop-label">@skill.SkillName</span>
                         <span class="evaluation-lollipop-track">
                             <i class="evaluation-lollipop-stick"
-                               data-chart-value="@skillValue.ToString(CultureInfo.InvariantCulture)"></i>
+                               data-chart-value="@(skillValue?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"></i>
                         </span>
                         <strong>@Value(skill.OfficialMasteryPercentage)</strong>
                     </div>
