@@ -180,6 +180,42 @@ public sealed class AnalyticsController : Controller
         if (!TryActor(out var actorId))
             return Forbid();
 
+        if (academicYearId.HasValue &&
+            academicYearId.Value != Guid.Empty &&
+            classGroupId.HasValue &&
+            classGroupId.Value != Guid.Empty &&
+            subjectId.HasValue &&
+            subjectId.Value != Guid.Empty)
+        {
+            var students = await _analytics.GetStudentsEvaluationAsync(
+                actorId,
+                academicYearId.Value,
+                classGroupId.Value,
+                subjectId.Value,
+                cancellationToken);
+            var topics = await _analytics.GetTopicSkillEvaluationAsync(
+                actorId,
+                academicYearId.Value,
+                classGroupId.Value,
+                subjectId.Value,
+                cancellationToken);
+
+            if (students.Value is null)
+                return HandleQueryError(students.Error);
+            if (topics.Value is null)
+                return HandleQueryError(topics.Error);
+
+            var evaluationBytes =
+                AnalyticsPdfRenderer.RenderClassEvaluationReport(
+                    students.Value,
+                    topics.Value);
+
+            return File(
+                evaluationBytes,
+                "application/pdf",
+                $"edulytics-class-evaluation-{DateTime.UtcNow:yyyyMMdd}.pdf");
+        }
+
         var result = await _analytics.GetDashboardAsync(
             actorId,
             academicYearId,
@@ -215,7 +251,7 @@ public sealed class AnalyticsController : Controller
             return BadRequest();
         }
 
-        var result = await _analytics.GetStudentReportAsync(
+        var result = await _analytics.GetStudentEvaluationAsync(
             actorId,
             studentProfileId,
             academicYearId,
@@ -225,11 +261,13 @@ public sealed class AnalyticsController : Controller
         if (result.Value is null)
             return HandleQueryError(result.Error);
 
-        var bytes = AnalyticsPdfRenderer.RenderStudentReport(result.Value);
+        var bytes =
+            AnalyticsPdfRenderer.RenderStudentEvaluationReport(
+                result.Value);
         return File(
             bytes,
             "application/pdf",
-            $"edulytics-student-analytics-{studentProfileId:N}-{DateTime.UtcNow:yyyyMMdd}.pdf");
+            $"edulytics-student-evaluation-{studentProfileId:N}-{DateTime.UtcNow:yyyyMMdd}.pdf");
     }
 
     [Authorize(Roles = RoleNames.SubjectSupervisor)]
