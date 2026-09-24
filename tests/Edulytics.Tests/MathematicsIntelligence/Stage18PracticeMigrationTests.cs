@@ -266,5 +266,10 @@ public sealed class Stage18PracticeMigrationTests
             Guid studentUserId,
             CancellationToken cancellationToken = default) =>
             Task.FromResult<IReadOnlyList<PrivatePracticeAttemptSummary>>([]);
+
+        public Task<IReadOnlyList<PrivatePracticeEvidenceItem>> ListPrivateEvidenceAsync(
+            Guid studentUserId,
+            CancellationToken cancellationToken = default) =>
+            Task.FromResult<IReadOnlyList<PrivatePracticeEvidenceItem>>([]);
     }
 }
