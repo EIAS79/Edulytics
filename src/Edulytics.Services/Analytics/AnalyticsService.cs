@@ -1284,6 +1284,306 @@ public sealed class AnalyticsService : IAnalyticsService
         }
     }
 
+    public async Task<AnalyticsQueryResult<AnalyticsSupervisorSubjectOverviewPage>>
+        GetSupervisorSubjectOverviewAsync(
+            Guid actorUserId,
+            Guid academicYearId,
+            Guid subjectId,
+            CancellationToken cancellationToken = default)
+    {
+        var scope = await ResolveScopeAsync(
+            actorUserId,
+            cancellationToken);
+
+        if (!scope.Succeeded)
+        {
+            return AnalyticsQueryResult<AnalyticsSupervisorSubjectOverviewPage>
+                .Failure(scope.Error!.Value);
+        }
+
+        if (scope.Role != RoleNames.SubjectSupervisor &&
+            scope.Role != RoleNames.SchoolAdmin)
+        {
+            return AnalyticsQueryResult<AnalyticsSupervisorSubjectOverviewPage>
+                .Failure(AnalyticsErrorCode.AccessDenied);
+        }
+
+        if (scope.Role == RoleNames.SubjectSupervisor &&
+            !scope.SupervisedSubjectIds.Contains(subjectId))
+        {
+            return AnalyticsQueryResult<AnalyticsSupervisorSubjectOverviewPage>
+                .Failure(AnalyticsErrorCode.AccessDenied);
+        }
+
+        var projection = await _analytics.GetProjectionSnapshotAsync(
+            scope.School!.Id,
+            cancellationToken);
+
+        var year = projection.AcademicYears.SingleOrDefault(
+            x => x.Id == academicYearId);
+        var subject = projection.Subjects.SingleOrDefault(
+            x => x.Id == subjectId);
+
+        if (year is null ||
+            subject is null)
+        {
+            return AnalyticsQueryResult<AnalyticsSupervisorSubjectOverviewPage>
+                .Failure(AnalyticsErrorCode.InvalidSourceData);
+        }
+
+        try
+        {
+            var normalized =
+                _evaluation.NormalizeOfficialEvidence(projection);
+            var now = DateTime.UtcNow;
+
+            var outcomeScopes = projection.LearningOutcomes
+                .Where(x => x.SubjectId == subjectId)
+                .Select(x =>
+                    (
+                        x.AcademicProgramId,
+                        x.GradeLevelId
+                    ))
+                .Distinct()
+                .ToHashSet();
+
+            var eligibleClasses = projection.ClassGroups
+                .Where(x =>
+                    x.AcademicYearId == academicYearId &&
+                    x.Status == AcademicStructureStatus.Active &&
+                    outcomeScopes.Contains(
+                        (
+                            x.AcademicProgramId,
+                            x.GradeLevelId
+                        )))
+                .OrderBy(x => x.Name)
+                .ToArray();
+
+            var activeStudents = projection.StudentProfiles
+                .Where(x =>
+                    !x.IsArchived &&
+                    x.Status == AcademicStructureStatus.Active)
+                .ToDictionary(x => x.Id);
+
+            var allEvaluations =
+                new List<(
+                    Guid ClassGroupId,
+                    StudentSubjectEvaluation Evaluation
+                )>();
+
+            var classRows =
+                new List<AnalyticsSupervisorClassEvaluationRow>();
+
+            foreach (var classGroup in eligibleClasses)
+            {
+                var studentIds = projection.StudentEnrollments
+                    .Where(x =>
+                        x.AcademicYearId == academicYearId &&
+                        x.ClassGroupId == classGroup.Id &&
+                        activeStudents.ContainsKey(
+                            x.StudentProfileId))
+                    .Select(x => x.StudentProfileId)
+                    .Distinct()
+                    .ToArray();
+
+                var evaluations = new List<StudentSubjectEvaluation>();
+
+                foreach (var studentId in studentIds)
+                {
+                    var evaluation = _evaluation.BuildStudentSubject(
+                        projection,
+                        normalized,
+                        studentId,
+                        academicYearId,
+                        classGroup.Id,
+                        subjectId,
+                        now);
+
+                    evaluations.Add(evaluation);
+                    allEvaluations.Add(
+                        (
+                            classGroup.Id,
+                            evaluation
+                        ));
+                }
+
+                var evaluated = evaluations
+                    .Where(x =>
+                        x.CurrentMasteryPercentage.HasValue)
+                    .ToArray();
+
+                var criticalSkillCount = evaluations
+                    .SelectMany(x => x.Skills)
+                    .Where(x =>
+                        x.Status ==
+                        EvaluationSkillStatus.Critical)
+                    .Select(x => x.SkillKey)
+                    .Distinct(StringComparer.Ordinal)
+                    .Count();
+
+                classRows.Add(
+                    new AnalyticsSupervisorClassEvaluationRow(
+                        classGroup.Id,
+                        classGroup.Name,
+                        evaluations.Count,
+                        evaluated.Length,
+                        AverageNullable(
+                            evaluated.Select(
+                                x =>
+                                    x.CurrentMasteryPercentage)),
+                        AverageNullable(
+                            evaluated.Select(
+                                x =>
+                                    x.AssessmentMasteryPercentage)),
+                        AverageNullable(
+                            evaluated.Select(
+                                x =>
+                                    x.PracticeMasteryPercentage)),
+                        evaluations.Count == 0
+                            ? 0m
+                            : Round2(
+                                evaluations.Average(
+                                    x =>
+                                        x.CurriculumCoveragePercentage)),
+                        evaluations.Count(x =>
+                            x.ShortTermTrend is
+                                EvaluationTrendBand.Improving or
+                                EvaluationTrendBand.RapidlyImproving),
+                        evaluations.Count(x =>
+                            x.ShortTermTrend is
+                                EvaluationTrendBand.Declining or
+                                EvaluationTrendBand.RapidlyDeclining),
+                        evaluations.Count(x =>
+                            x.CriticalSkillCount > 0),
+                        criticalSkillCount));
+            }
+
+            var evaluationRows = allEvaluations
+                .Select(x => x.Evaluation)
+                .ToArray();
+            var evaluatedStudents = evaluationRows
+                .Where(x =>
+                    x.CurrentMasteryPercentage.HasValue)
+                .ToArray();
+
+            var priorityGaps = allEvaluations
+                .SelectMany(x =>
+                    x.Evaluation.Skills.Select(skill =>
+                        new
+                        {
+                            x.ClassGroupId,
+                            x.Evaluation.StudentProfileId,
+                            Skill = skill
+                        }))
+                .GroupBy(x =>
+                    new
+                    {
+                        x.Skill.SkillKey,
+                        x.Skill.SkillName
+                    })
+                .Select(group =>
+                {
+                    var rows = group.ToArray();
+                    var evaluated = rows
+                        .Where(x =>
+                            x.Skill.CurrentMasteryPercentage.HasValue)
+                        .ToArray();
+                    var affected = rows
+                        .Where(x =>
+                            x.Skill.Status is
+                                EvaluationSkillStatus.Critical or
+                                EvaluationSkillStatus.NeedsFocus)
+                        .ToArray();
+
+                    return new AnalyticsSupervisorSkillGap(
+                        group.Key.SkillKey,
+                        group.Key.SkillName,
+                        affected
+                            .Select(x =>
+                                x.StudentProfileId)
+                            .Distinct()
+                            .Count(),
+                        evaluated
+                            .Select(x =>
+                                x.StudentProfileId)
+                            .Distinct()
+                            .Count(),
+                        affected
+                            .Select(x =>
+                                x.ClassGroupId)
+                            .Distinct()
+                            .Count(),
+                        AverageNullable(
+                            evaluated.Select(x =>
+                                x.Skill.CurrentMasteryPercentage)),
+                        rows.Length == 0
+                            ? EvaluationPriority.None
+                            : rows.Max(x =>
+                                x.Skill.InterventionPriority));
+                })
+                .Where(x =>
+                    x.AffectedStudentCount > 0)
+                .OrderByDescending(x =>
+                    x.HighestPriority)
+                .ThenByDescending(x =>
+                    x.AffectedStudentCount)
+                .ThenBy(x =>
+                    x.AverageMasteryPercentage ?? 101m)
+                .Take(20)
+                .ToArray();
+
+            return AnalyticsQueryResult<AnalyticsSupervisorSubjectOverviewPage>
+                .Success(
+                    new AnalyticsSupervisorSubjectOverviewPage(
+                        year.Id,
+                        year.Name,
+                        subject.Id,
+                        subject.Name,
+                        classRows.Count,
+                        evaluationRows
+                            .Select(x =>
+                                x.StudentProfileId)
+                            .Distinct()
+                            .Count(),
+                        evaluatedStudents
+                            .Select(x =>
+                                x.StudentProfileId)
+                            .Distinct()
+                            .Count(),
+                        AverageNullable(
+                            evaluatedStudents.Select(x =>
+                                x.CurrentMasteryPercentage)),
+                        AverageNullable(
+                            evaluatedStudents.Select(x =>
+                                x.AssessmentMasteryPercentage)),
+                        AverageNullable(
+                            evaluatedStudents.Select(x =>
+                                x.PracticeMasteryPercentage)),
+                        evaluationRows.Length == 0
+                            ? 0m
+                            : Round2(
+                                evaluationRows.Average(x =>
+                                    x.CurriculumCoveragePercentage)),
+                        evaluationRows.Count(x =>
+                            x.ShortTermTrend is
+                                EvaluationTrendBand.Improving or
+                                EvaluationTrendBand.RapidlyImproving),
+                        evaluationRows.Count(x =>
+                            x.ShortTermTrend is
+                                EvaluationTrendBand.Declining or
+                                EvaluationTrendBand.RapidlyDeclining),
+                        evaluationRows.Count(x =>
+                            x.CriticalSkillCount > 0),
+                        classRows,
+                        priorityGaps));
+        }
+        catch (InvalidOperationException)
+        {
+            return AnalyticsQueryResult<AnalyticsSupervisorSubjectOverviewPage>
+                .Failure(AnalyticsErrorCode.InvalidSourceData);
+        }
+    }
+
     public async Task<AnalyticsQueryResult<AnalyticsStudentReport>>
         GetStudentReportAsync(
             Guid actorUserId,
