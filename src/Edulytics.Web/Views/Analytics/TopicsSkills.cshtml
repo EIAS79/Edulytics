@@ -115,7 +115,7 @@
                             <span>@A["ClassMastery"]</span>
                             <span class="evaluation-bar-track">
                                 <i class="evaluation-bar-fill"
-                                   data-chart-value="@((topic.ClassMasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"></i>
+                                   data-chart-value="@(topic.ClassMasteryPercentage?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"></i>
                             </span>
                             <strong>@Value(topic.ClassMasteryPercentage)</strong>
                         </div>
@@ -123,7 +123,7 @@
                             <span>@A["AssessmentMastery"]</span>
                             <span class="evaluation-bar-track">
                                 <i class="evaluation-bar-fill"
-                                   data-chart-value="@((topic.AssessmentMasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"></i>
+                                   data-chart-value="@(topic.AssessmentMasteryPercentage?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"></i>
                             </span>
                             <strong>@Value(topic.AssessmentMasteryPercentage)</strong>
                         </div>
@@ -131,7 +131,7 @@
                             <span>@A["PracticeMastery"]</span>
                             <span class="evaluation-bar-track">
                                 <i class="evaluation-bar-fill"
-                                   data-chart-value="@((topic.PracticeMasteryPercentage ?? 0m).ToString(CultureInfo.InvariantCulture))"></i>
+                                   data-chart-value="@(topic.PracticeMasteryPercentage?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"></i>
                             </span>
                             <strong>@Value(topic.PracticeMasteryPercentage)</strong>
                         </div>
