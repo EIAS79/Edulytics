@@ -253,7 +253,7 @@ public sealed class StudentSelfEvaluationService : IStudentSelfEvaluationService
                 official,
                 privateBySkill);
 
-            var privateTransferGap =
+            decimal? privateTransferGap =
                 official.AssessmentMasteryPercentage.HasValue &&
                 privateSummary.MasteryPercentage.HasValue
                     ? Round2(
