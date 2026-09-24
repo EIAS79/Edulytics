@@ -82,13 +82,13 @@ public sealed class EvaluationProductionClosureTests
             "tools/evaluation/evaluation_staging_smoke.py"));
 
         Assert.Contains(
-            "LOCKED_HOST = "staging.edulytiks.com"",
+            "LOCKED_HOST = \"staging.edulytiks.com\"",
             smoke);
         Assert.Contains(
-            ""/school/analytics"",
+            "\"/school/analytics\"",
             smoke);
         Assert.Contains(
-            ""/student/progress"",
+            "\"/student/progress\"",
             smoke);
         Assert.Contains(
             "intervention-check",
@@ -106,14 +106,14 @@ public sealed class EvaluationProductionClosureTests
             "src/Edulytics.Services/Analytics/AnalyticsService.cs"));
 
         Assert.Contains(
-            "var normalized =
-                _evaluation.NormalizeOfficialEvidence(projection);",
+            "NormalizeOfficialEvidence(projection)",
             service);
 
         Assert.Contains(
-            "_evaluation.BuildStudentSubject(
-                        projection,
-                        normalized,",
+            "BuildStudentSubject(",
+            service);
+        Assert.Contains(
+            "normalized,",
             service);
     }
 
