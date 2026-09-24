@@ -10737,3 +10737,139 @@ a.lesson-content-row:hover
         max-height: calc(100vh - 13rem);
     }
 }
+
+
+/* Prevent long class labels from stretching the student-move cards. */
+.academic-move-workspace,
+.academic-move-panel,
+.academic-form-field {
+    min-width: 0;
+}
+.academic-move-panel select,
+.academic-move-panel input,
+.academic-form-field select {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Manage Users V2 — identity + academic classification filters. */
+.user-filter-bar-advanced {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .85rem;
+}
+.user-filter-group {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .75rem;
+    min-width: 0;
+    margin: 0;
+    padding: .85rem;
+    border: 1px solid var(--border, #dce3ee);
+    border-radius: .9rem;
+    background: rgba(84, 104, 145, .025);
+}
+.user-filter-group legend {
+    padding: 0 .35rem;
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .045em;
+    text-transform: uppercase;
+    opacity: .66;
+}
+.user-filter-bar-advanced .user-filter-field {
+    min-width: 0;
+}
+.user-filter-bar-advanced .user-filter-field input,
+.user-filter-bar-advanced .user-filter-field select {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+.user-filter-bar-advanced .user-filter-actions {
+    justify-content: flex-end;
+}
+.user-directory-identity {
+    display: grid;
+    gap: .18rem;
+    min-width: 10rem;
+}
+.user-directory-identity > strong {
+    overflow-wrap: anywhere;
+}
+.user-directory-identity small {
+    opacity: .67;
+}
+.user-directory-identity code {
+    display: block;
+    max-width: 16rem;
+    padding: .18rem .3rem;
+    overflow: hidden;
+    border-radius: .35rem;
+    background: rgba(80, 100, 135, .06);
+    font-size: .72rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.user-directory-email {
+    display: inline-block;
+    max-width: 18rem;
+    color: inherit;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+}
+.user-directory-email:hover {
+    text-decoration: underline;
+}
+.user-directory-context-list {
+    display: grid;
+    gap: .35rem;
+    min-width: 12rem;
+}
+.user-directory-context-chip {
+    display: grid;
+    gap: .08rem;
+    min-width: 0;
+    padding: .42rem .5rem;
+    border: 1px solid rgba(42, 101, 210, .14);
+    border-radius: .6rem;
+    background: rgba(42, 101, 210, .045);
+}
+.user-directory-context-chip strong,
+.user-directory-context-chip small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.user-directory-context-chip small {
+    opacity: .68;
+}
+.user-directory-context-more {
+    font-size: .76rem;
+    font-weight: 700;
+    opacity: .68;
+}
+.user-directory-context-empty {
+    opacity: .55;
+}
+@media (max-width: 980px) {
+    .user-filter-group {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 640px) {
+    .user-filter-group {
+        grid-template-columns: 1fr;
+    }
+    .user-filter-bar-advanced .user-filter-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+    .user-directory-email,
+    .user-directory-identity code {
+        max-width: 100%;
+    }
+}
