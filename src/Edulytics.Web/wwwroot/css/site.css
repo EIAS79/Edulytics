@@ -11747,3 +11747,138 @@ a.lesson-content-row:hover
         width: 100%;
     }
 }
+
+
+/* Evaluation Intelligence E8-E14 */
+.evaluation-assessment-score {
+    display: grid;
+    gap: 3px;
+    justify-items: end;
+    text-align: right;
+}
+
+.evaluation-assessment-score small,
+.evaluation-term-table small {
+    display: block;
+    color: #7b8699;
+    font-size: .69rem;
+    line-height: 1.35;
+}
+
+.evaluation-practice-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.evaluation-practice-grid > div {
+    display: grid;
+    gap: 5px;
+    min-height: 88px;
+    align-content: center;
+    padding: 13px;
+    border: 1px solid #e8ebf2;
+    border-radius: 12px;
+    background: #fafbfe;
+}
+
+.evaluation-practice-grid span {
+    color: #788398;
+    font-size: .72rem;
+    font-weight: 750;
+}
+
+.evaluation-practice-grid strong {
+    color: #17233f;
+    font-size: 1.08rem;
+}
+
+.evaluation-muted-note {
+    margin: 13px 0 0;
+    color: #7b8699;
+    font-size: .75rem;
+}
+
+.evaluation-recommendations-panel {
+    overflow: hidden;
+}
+
+.evaluation-recommendation-list {
+    display: grid;
+    gap: 9px;
+}
+
+.evaluation-recommendation-list > article {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 14px;
+    align-items: start;
+    padding: 15px;
+    border: 1px solid #e6eaf1;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #fff, #fafbfe);
+}
+
+.evaluation-recommendation-list > article > div:last-child {
+    display: grid;
+    gap: 5px;
+}
+
+.evaluation-recommendation-list small {
+    color: #7c879b;
+}
+
+.evaluation-recommendation-list p {
+    margin: 3px 0 0;
+    color: #5e6c84;
+    font-size: .8rem;
+    line-height: 1.5;
+}
+
+.evaluation-recommendation-rank {
+    padding-top: 1px;
+}
+
+.evaluation-prerequisite-path {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 6px;
+    color: #526078;
+    font-size: .72rem;
+}
+
+.evaluation-prerequisite-path span {
+    padding: 5px 8px;
+    border-radius: 8px;
+    background: #eef2ff;
+    color: #3c4e9a;
+    font-weight: 750;
+}
+
+.evaluation-prerequisite-path b {
+    color: #8893a7;
+    font-weight: 700;
+}
+
+@media (max-width: 680px) {
+    .evaluation-practice-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .evaluation-assessment-score {
+        justify-items: start;
+        text-align: left;
+    }
+}
+
+@media (max-width: 430px) {
+    .evaluation-practice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .evaluation-recommendation-list > article {
+        grid-template-columns: 1fr;
+    }
+}

@@ -264,12 +264,168 @@
                                     }
                                 </small>
                             </div>
-                            <strong>@assessment.Percentage.ToString("0.#")%</strong>
+                            <div class="evaluation-assessment-score">
+                                <strong>@assessment.Percentage.ToString("0.#")%</strong>
+                                @if (assessment.OverallChangePercentagePoints.HasValue)
+                                {
+                                    <small>
+                                        @A["OverallChange"]:
+                                        @assessment.OverallChangePercentagePoints.Value.ToString("+0.#;-0.#;0") pts
+                                    </small>
+                                }
+                                @if (assessment.ComparableSkillChangePercentagePoints.HasValue)
+                                {
+                                    <small>
+                                        @A["ComparableSkillGrowth"]:
+                                        @assessment.ComparableSkillChangePercentagePoints.Value.ToString("+0.#;-0.#;0") pts
+                                        · @assessment.ComparableSkillCount skills
+                                    </small>
+                                }
+                            </div>
                         </article>
                     }
                 </div>
             }
         </article>
+    </section>
+
+    <section class="evaluation-two-column">
+        <article class="analytics-panel">
+            <header>
+                <h2>@A["PracticeMastery"]</h2>
+                <p>Practice engagement is shown separately from formal Assessment performance.</p>
+            </header>
+            <div class="evaluation-practice-grid">
+                <div>
+                    <span>@A["PracticeSessions"]</span>
+                    <strong>@Model.Practice.SessionCount</strong>
+                </div>
+                <div>
+                    <span>@A["Evidence"]</span>
+                    <strong>@Model.Practice.EvidenceCount</strong>
+                </div>
+                <div>
+                    <span>@A["ActiveDays"]</span>
+                    <strong>@Model.Practice.ActiveDayCount</strong>
+                </div>
+                <div>
+                    <span>@A["SkillsPracticed"]</span>
+                    <strong>@Model.Practice.SkillCount</strong>
+                </div>
+                <div>
+                    <span>@A["PracticeMastery"]</span>
+                    <strong>@Value(Model.Practice.MasteryPercentage)</strong>
+                </div>
+                <div>
+                    <span>@A["Trend"]</span>
+                    <strong class="@TrendClass(Model.Practice.Trend)">
+                        @TrendLabel(Model.Practice.Trend)
+                    </strong>
+                </div>
+            </div>
+            @if (Model.Practice.LatestPracticeAtUtc.HasValue)
+            {
+                <p class="evaluation-muted-note">
+                    @A["LatestPractice"]:
+                    @Model.Practice.LatestPracticeAtUtc.Value.ToString("yyyy-MM-dd HH:mm 'UTC'")
+                </p>
+            }
+        </article>
+
+        <article class="analytics-panel">
+            <header>
+                <h2>@A["Term"]</h2>
+                <p>Term comparisons keep Assessment and Practice separate and calculate growth only across skills present in both periods.</p>
+            </header>
+            @if (Model.Terms.Count == 0)
+            {
+                <p class="analytics-empty-inline">@A["InsufficientEvidence"]</p>
+            }
+            else
+            {
+                <div class="analytics-table-wrap">
+                    <table class="analytics-table evaluation-term-table">
+                        <thead>
+                            <tr>
+                                <th>@A["Term"]</th>
+                                <th>@A["AssessmentMastery"]</th>
+                                <th>@A["PracticeMastery"]</th>
+                                <th>@A["CombinedMastery"]</th>
+                                <th>@A["ComparableSkillGrowth"]</th>
+                                <th>@A["Evidence"]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var term in Model.Terms)
+                            {
+                                <tr>
+                                    <td>
+                                        <strong>@term.TermName</strong>
+                                        <small>@term.StartsOn.ToString("yyyy-MM-dd") — @term.EndsOn.ToString("yyyy-MM-dd")</small>
+                                    </td>
+                                    <td>@Value(term.AssessmentMasteryPercentage)</td>
+                                    <td>@Value(term.PracticeMasteryPercentage)</td>
+                                    <td>@Value(term.CombinedMasteryPercentage)</td>
+                                    <td>
+                                        @(term.ComparableSkillGrowthPercentagePoints.HasValue
+                                            ? $"{term.ComparableSkillGrowthPercentagePoints.Value:+0.#;-0.#;0} pts"
+                                            : "—")
+                                        @if (term.ComparableSkillCount > 0)
+                                        {
+                                            <small>@term.ComparableSkillCount skills</small>
+                                        }
+                                    </td>
+                                    <td>@term.EvidenceCount</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </article>
+    </section>
+
+    <section class="analytics-panel evaluation-recommendations-panel">
+        <header>
+            <h2>@A["RecommendedNextSteps"]</h2>
+            <p>Priorities are derived from mastery, evidence confidence, decline, retention, prerequisite dependencies and transfer—not from a hidden AI score.</p>
+        </header>
+
+        @if (Model.Recommendations.Count == 0)
+        {
+            <p class="analytics-empty-inline">No intervention priority is currently supported by the available evidence.</p>
+        }
+        else
+        {
+            <div class="evaluation-recommendation-list">
+                @foreach (var item in Model.Recommendations)
+                {
+                    <article>
+                        <div class="evaluation-recommendation-rank">
+                            <span class="evaluation-priority priority-@item.Priority.ToString().ToLowerInvariant()">
+                                @item.Priority
+                            </span>
+                        </div>
+                        <div>
+                            <strong>@item.SkillName</strong>
+                            <small>@item.SkillKey · @Value(item.CurrentMasteryPercentage)</small>
+                            <p>@item.Reason</p>
+                            @if (item.RecommendedPrerequisitePath.Count > 0)
+                            {
+                                <div class="evaluation-prerequisite-path">
+                                    @foreach (var prerequisite in item.RecommendedPrerequisitePath)
+                                    {
+                                        <span>@prerequisite</span>
+                                        <b aria-hidden="true">→</b>
+                                    }
+                                    <span>@item.SkillKey</span>
+                                </div>
+                            }
+                        </div>
+                    </article>
+                }
+            </div>
+        }
     </section>
 
     <section class="analytics-panel">

@@ -3,6 +3,7 @@ using Edulytics.Core.Constants;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Interfaces;
+using Edulytics.Core.Mathematics.Skills;
 using Edulytics.Core.Users;
 
 namespace Edulytics.Services.Analytics;
@@ -843,35 +844,6 @@ public sealed class AnalyticsService : IAnalyticsService
                 .ThenBy(x => x.TopicName)
                 .ToArray();
 
-            var termNames = projection.Terms
-                .ToDictionary(x => x.Id, x => x.Name);
-            var assessments = projection.Assessments
-                .Where(x =>
-                    x.Status != AssessmentStatus.Draft &&
-                    x.AcademicYearId == academicYearId &&
-                    x.ClassGroupId == classGroupId &&
-                    x.SubjectId == subjectId)
-                .ToDictionary(x => x.Id);
-            var assessmentRows = projection.AssessmentResults
-                .Where(x =>
-                    x.StudentProfileId == studentProfileId &&
-                    assessments.ContainsKey(x.AssessmentId))
-                .Select(x =>
-                {
-                    var assessment = assessments[x.AssessmentId];
-
-                    return new AnalyticsStudentAssessmentEvaluationItem(
-                        assessment.Id,
-                        assessment.Title,
-                        assessment.AssessmentDate,
-                        termNames.GetValueOrDefault(
-                            assessment.TermId),
-                        x.Percentage);
-                })
-                .OrderBy(x => x.AssessmentDate)
-                .ThenBy(x => x.Title)
-                .ToArray();
-
             var evidence = normalized
                 .Where(x =>
                     x.StudentProfileId == studentProfileId &&
@@ -882,11 +854,34 @@ public sealed class AnalyticsService : IAnalyticsService
                 .ThenBy(x => x.SkillName)
                 .ToArray();
 
+            var assessmentRows = BuildAssessmentEvaluationRows(
+                projection,
+                evidence,
+                studentProfileId,
+                academicYearId,
+                classGroupId,
+                subjectId);
+
+            var termRows = BuildTermEvaluationRows(
+                projection,
+                evidence,
+                academicYearId);
+
+            var practice = BuildPracticeSummary(
+                evidence,
+                evaluation);
+
+            var recommendations = BuildRecommendations(
+                evaluation);
+
             return AnalyticsQueryResult<AnalyticsStudentEvaluationPage>.Success(
                 new AnalyticsStudentEvaluationPage(
                     evaluation,
                     topicRows,
                     assessmentRows,
+                    termRows,
+                    practice,
+                    recommendations,
                     evidence));
         }
         catch (InvalidOperationException)
@@ -1482,6 +1477,396 @@ public sealed class AnalyticsService : IAnalyticsService
                 lessonMastery,
                 lessonItems,
                 outcomeItems));
+    }
+
+    private static IReadOnlyList<AnalyticsStudentAssessmentEvaluationItem>
+        BuildAssessmentEvaluationRows(
+            AnalyticsProjectionSnapshot projection,
+            IReadOnlyList<EvaluationEvidenceRecord> evidence,
+            Guid studentProfileId,
+            Guid academicYearId,
+            Guid classGroupId,
+            Guid subjectId)
+    {
+        var termNames = projection.Terms
+            .ToDictionary(x => x.Id, x => x.Name);
+        var assessments = projection.Assessments
+            .Where(x =>
+                x.Status != AssessmentStatus.Draft &&
+                x.AcademicYearId == academicYearId &&
+                x.ClassGroupId == classGroupId &&
+                x.SubjectId == subjectId)
+            .ToDictionary(x => x.Id);
+        var results = projection.AssessmentResults
+            .Where(x =>
+                x.StudentProfileId == studentProfileId &&
+                assessments.ContainsKey(x.AssessmentId))
+            .Select(x =>
+                (
+                    Assessment: assessments[x.AssessmentId],
+                    Result: x
+                ))
+            .OrderBy(x => x.Assessment.AssessmentDate)
+            .ThenBy(x => x.Assessment.Title)
+            .ToArray();
+
+        var rows =
+            new List<AnalyticsStudentAssessmentEvaluationItem>(
+                results.Length);
+
+        for (var index = 0; index < results.Length; index++)
+        {
+            var current = results[index];
+            decimal? overallDelta = null;
+            decimal? comparableDelta = null;
+            var comparableCount = 0;
+
+            if (index > 0)
+            {
+                var previous = results[index - 1];
+                overallDelta = Round2(
+                    current.Result.Percentage -
+                    previous.Result.Percentage);
+
+                (comparableDelta, comparableCount) =
+                    ComparableSkillDelta(
+                        evidence.Where(x =>
+                            x.Source ==
+                                EvaluationEvidenceSource.Assessment &&
+                            x.SourceId ==
+                                previous.Assessment.Id),
+                        evidence.Where(x =>
+                            x.Source ==
+                                EvaluationEvidenceSource.Assessment &&
+                            x.SourceId ==
+                                current.Assessment.Id));
+            }
+
+            rows.Add(
+                new AnalyticsStudentAssessmentEvaluationItem(
+                    current.Assessment.Id,
+                    current.Assessment.Title,
+                    current.Assessment.AssessmentDate,
+                    termNames.GetValueOrDefault(
+                        current.Assessment.TermId),
+                    current.Result.Percentage,
+                    overallDelta,
+                    comparableDelta,
+                    comparableCount));
+        }
+
+        return rows;
+    }
+
+    private static IReadOnlyList<AnalyticsTermEvaluationItem>
+        BuildTermEvaluationRows(
+            AnalyticsProjectionSnapshot projection,
+            IReadOnlyList<EvaluationEvidenceRecord> evidence,
+            Guid academicYearId)
+    {
+        var terms = projection.Terms
+            .Where(x => x.AcademicYearId == academicYearId)
+            .OrderBy(x => x.StartsOn)
+            .ThenBy(x => x.Name)
+            .ToArray();
+
+        var rows =
+            new List<AnalyticsTermEvaluationItem>(
+                terms.Length);
+
+        for (var index = 0; index < terms.Length; index++)
+        {
+            var term = terms[index];
+            var termEvidence = evidence
+                .Where(x => x.TermId == term.Id)
+                .ToArray();
+            var assessment = EvidenceMastery(
+                termEvidence.Where(x =>
+                    x.Source ==
+                    EvaluationEvidenceSource.Assessment));
+            var practice = EvidenceMastery(
+                termEvidence.Where(x =>
+                    x.Source ==
+                    EvaluationEvidenceSource.Practice));
+            var combined = EvidenceMastery(termEvidence);
+
+            decimal? assessmentDelta = null;
+            decimal? comparableGrowth = null;
+            var comparableCount = 0;
+
+            if (index > 0)
+            {
+                var previousEvidence = evidence
+                    .Where(x =>
+                        x.TermId == terms[index - 1].Id)
+                    .ToArray();
+                var previousAssessment = EvidenceMastery(
+                    previousEvidence.Where(x =>
+                        x.Source ==
+                        EvaluationEvidenceSource.Assessment));
+
+                if (assessment.HasValue &&
+                    previousAssessment.HasValue)
+                {
+                    assessmentDelta = Round2(
+                        assessment.Value -
+                        previousAssessment.Value);
+                }
+
+                (comparableGrowth, comparableCount) =
+                    ComparableSkillDelta(
+                        previousEvidence,
+                        termEvidence);
+            }
+
+            rows.Add(
+                new AnalyticsTermEvaluationItem(
+                    term.Id,
+                    term.Name,
+                    term.StartsOn,
+                    term.EndsOn,
+                    assessment,
+                    practice,
+                    combined,
+                    assessmentDelta,
+                    comparableGrowth,
+                    comparableCount,
+                    termEvidence.Length));
+        }
+
+        return rows;
+    }
+
+    private static AnalyticsPracticeEvaluationSummary
+        BuildPracticeSummary(
+            IReadOnlyList<EvaluationEvidenceRecord> evidence,
+            StudentSubjectEvaluation evaluation)
+    {
+        var rows = evidence
+            .Where(x =>
+                x.Source ==
+                EvaluationEvidenceSource.Practice)
+            .OrderBy(x => x.OccurredAtUtc)
+            .ToArray();
+
+        return new AnalyticsPracticeEvaluationSummary(
+            rows.Select(x => x.SourceId)
+                .Distinct()
+                .Count(),
+            rows.Length,
+            rows.Select(x =>
+                    DateOnly.FromDateTime(
+                        x.OccurredAtUtc))
+                .Distinct()
+                .Count(),
+            rows.Select(x => x.SkillKey)
+                .Distinct(StringComparer.Ordinal)
+                .Count(),
+            evaluation.PracticeMasteryPercentage,
+            TrendFromEvidence(rows),
+            rows.Length == 0
+                ? null
+                : rows.Max(x => x.OccurredAtUtc));
+    }
+
+    private static IReadOnlyList<AnalyticsInterventionRecommendation>
+        BuildRecommendations(
+            StudentSubjectEvaluation evaluation)
+    {
+        var masteryBySkill = evaluation.Skills
+            .Where(x => x.CurrentMasteryPercentage.HasValue)
+            .GroupBy(x => x.SkillKey, StringComparer.Ordinal)
+            .ToDictionary(
+                x => x.Key,
+                x => x.Average(
+                    row =>
+                        row.CurrentMasteryPercentage!.Value),
+                StringComparer.Ordinal);
+
+        return evaluation.Skills
+            .Where(x =>
+                x.InterventionPriority !=
+                EvaluationPriority.None)
+            .OrderByDescending(x =>
+                x.InterventionPriority)
+            .ThenByDescending(x =>
+                x.GapCriticalityScore)
+            .ThenBy(x =>
+                x.CurrentMasteryPercentage ?? 101m)
+            .Take(8)
+            .Select(skill =>
+            {
+                var prerequisitePath =
+                    BuildWeakPrerequisitePath(
+                        skill.SkillKey,
+                        masteryBySkill);
+
+                var reason =
+                    prerequisitePath.Count > 0
+                        ? "Weak prerequisite evidence exists upstream of this target."
+                        : skill.Retention is
+                            EvaluationRetentionBand.Concern or
+                            EvaluationRetentionBand.SignificantConcern
+                            ? "Previously stronger evidence has declined, indicating a retention concern."
+                            : skill.PracticeToAssessmentGapPercentagePoints <= -15m
+                                ? "Practice performance is materially stronger than formal Assessment performance."
+                                : skill.ShortTermTrend is
+                                    EvaluationTrendBand.Declining or
+                                    EvaluationTrendBand.RapidlyDeclining
+                                    ? "Recent evidence is declining."
+                                    : "Current mastery and evidence place this skill above the intervention threshold.";
+
+                return new AnalyticsInterventionRecommendation(
+                    skill.SkillKey,
+                    skill.SkillName,
+                    skill.InterventionPriority,
+                    skill.CurrentMasteryPercentage,
+                    prerequisitePath,
+                    reason);
+            })
+            .ToArray();
+    }
+
+    private static IReadOnlyList<string> BuildWeakPrerequisitePath(
+        string skillKey,
+        IReadOnlyDictionary<string, decimal> masteryBySkill)
+    {
+        var result = new List<string>();
+        var visited = new HashSet<string>(
+            StringComparer.Ordinal);
+
+        void Visit(string key)
+        {
+            if (!visited.Add(key) ||
+                !MathematicsSkillMetadataRegistry.TryResolve(
+                    key,
+                    out var metadata) ||
+                metadata is null)
+            {
+                return;
+            }
+
+            foreach (var prerequisite in metadata.Prerequisites)
+            {
+                if (masteryBySkill.TryGetValue(
+                        prerequisite,
+                        out var mastery) &&
+                    mastery < 60m)
+                {
+                    Visit(prerequisite);
+
+                    if (!result.Contains(
+                            prerequisite,
+                            StringComparer.Ordinal))
+                    {
+                        result.Add(prerequisite);
+                    }
+                }
+            }
+        }
+
+        Visit(skillKey);
+        return result;
+    }
+
+    private static (decimal? Delta, int ComparableSkillCount)
+        ComparableSkillDelta(
+            IEnumerable<EvaluationEvidenceRecord> previous,
+            IEnumerable<EvaluationEvidenceRecord> current)
+    {
+        var previousBySkill = previous
+            .GroupBy(x => x.SkillKey, StringComparer.Ordinal)
+            .ToDictionary(
+                x => x.Key,
+                x => EvidenceMastery(x),
+                StringComparer.Ordinal);
+        var currentBySkill = current
+            .GroupBy(x => x.SkillKey, StringComparer.Ordinal)
+            .ToDictionary(
+                x => x.Key,
+                x => EvidenceMastery(x),
+                StringComparer.Ordinal);
+
+        var common = previousBySkill.Keys
+            .Intersect(
+                currentBySkill.Keys,
+                StringComparer.Ordinal)
+            .Where(key =>
+                previousBySkill[key].HasValue &&
+                currentBySkill[key].HasValue)
+            .ToArray();
+
+        if (common.Length == 0)
+            return (null, 0);
+
+        return (
+            Round2(
+                common.Average(key =>
+                    currentBySkill[key]!.Value -
+                    previousBySkill[key]!.Value)),
+            common.Length);
+    }
+
+    private static decimal? EvidenceMastery(
+        IEnumerable<EvaluationEvidenceRecord> source)
+    {
+        var rows = source.ToArray();
+        if (rows.Length == 0)
+            return null;
+
+        decimal earned = 0m;
+        decimal possible = 0m;
+
+        foreach (var row in rows)
+        {
+            if (row.MaxScore <= 0m)
+                continue;
+
+            var difficultyWeight =
+                row.Difficulty.HasValue
+                    ? MasteryEvidenceEngine.DifficultyWeight(
+                        row.Difficulty.Value)
+                    : 1m;
+            var weight =
+                row.MappingWeight *
+                difficultyWeight;
+
+            if (weight <= 0m)
+                continue;
+
+            earned += row.Percentage * weight;
+            possible += weight;
+        }
+
+        return possible <= 0m
+            ? null
+            : Round2(earned / possible);
+    }
+
+    private static EvaluationTrendBand TrendFromEvidence(
+        IReadOnlyList<EvaluationEvidenceRecord> evidence)
+    {
+        if (evidence.Count < 4)
+            return EvaluationTrendBand.InsufficientEvidence;
+
+        var ordered = evidence
+            .OrderBy(x => x.OccurredAtUtc)
+            .ThenBy(x => x.EvidenceKey, StringComparer.Ordinal)
+            .ToArray();
+        var before = ordered.Take(2)
+            .Average(x => x.Percentage);
+        var after = ordered.TakeLast(2)
+            .Average(x => x.Percentage);
+        var delta = after - before;
+
+        return delta switch
+        {
+            <= -10m => EvaluationTrendBand.RapidlyDeclining,
+            <= -4m => EvaluationTrendBand.Declining,
+            >= 10m => EvaluationTrendBand.RapidlyImproving,
+            >= 4m => EvaluationTrendBand.Improving,
+            _ => EvaluationTrendBand.Stable
+        };
     }
 
     private static decimal? AverageNullable(

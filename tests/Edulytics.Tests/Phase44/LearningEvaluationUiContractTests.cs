@@ -50,6 +50,11 @@ public sealed class LearningEvaluationUiContractTests
         Assert.Contains("EvidenceDetails", student);
         Assert.Contains("WeakPrerequisiteSkillKeys", student);
         Assert.Contains("PracticeToAssessmentGapPercentagePoints", student);
+        Assert.Contains("ComparableSkillGrowth", student);
+        Assert.Contains("Model.Terms", student);
+        Assert.Contains("Model.Practice", student);
+        Assert.Contains("Model.Recommendations", student);
+        Assert.Contains("RecommendedPrerequisitePath", student);
 
         Assert.Contains("AffectedStudentCount", topics);
         Assert.Contains("evaluation-skill-cohort", topics);
@@ -70,7 +75,26 @@ public sealed class LearningEvaluationUiContractTests
         Assert.Contains(".evaluation-distribution-grid", css);
         Assert.Contains(".evaluation-hero-grid", css);
         Assert.Contains(".evaluation-topic-analytics-grid", css);
+        Assert.Contains(".evaluation-practice-grid", css);
+        Assert.Contains(".evaluation-recommendation-list", css);
+        Assert.Contains(".evaluation-term-table", css);
         Assert.Contains("@media (max-width: 640px)", css);
+    }
+
+    [Fact]
+    public void EvaluationService_UsesComparableSkillGrowth_NotRawOnlyComparison()
+    {
+        var root = FindRoot();
+        var service = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Services/Analytics/AnalyticsService.cs"));
+
+        Assert.Contains("ComparableSkillDelta", service);
+        Assert.Contains("BuildTermEvaluationRows", service);
+        Assert.Contains("BuildPracticeSummary", service);
+        Assert.Contains("BuildRecommendations", service);
+        Assert.Contains("BuildWeakPrerequisitePath", service);
+        Assert.Contains("MathematicsSkillMetadataRegistry", service);
     }
 
     private static string FindRoot()
