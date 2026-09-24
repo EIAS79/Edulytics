@@ -43,8 +43,11 @@ public sealed class LearningEvaluationUiContractTests
             "src/Edulytics.Web/Views/Analytics/TopicsSkills.cshtml"));
 
         Assert.Contains("evaluation-student-list", students);
-        Assert.Contains("evaluation-comparison-bars", students);
-        Assert.Contains("evaluation-student-list-actions", students);
+        Assert.Contains("evaluation-distribution-donut", students);
+        Assert.Contains("evaluation-student-card-row", students);
+        Assert.Contains("evaluation-student-card-actions", students);
+        Assert.Contains("Mastery grading", students);
+        Assert.Contains("Evidence confidence", students);
         Assert.DoesNotContain("evaluation-students-table", students);
         Assert.Contains("Model.Students", students);
         Assert.DoesNotContain("RiskStudents", students);
@@ -77,7 +80,9 @@ public sealed class LearningEvaluationUiContractTests
             css);
         Assert.Contains(".evaluation-distribution-grid", css);
         Assert.Contains(".analytics-overview-layout", css);
-        Assert.Contains(".evaluation-student-list-row", css);
+        Assert.Contains(".evaluation-student-card-row", css);
+        Assert.Contains(".evaluation-distribution-donut", css);
+        Assert.Contains(".evaluation-student-grade", css);
         Assert.Contains(".evaluation-mastery-track", css);
         Assert.Contains(".evaluation-hero-grid", css);
         Assert.Contains(".evaluation-topic-analytics-grid", css);

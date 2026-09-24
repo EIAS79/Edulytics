@@ -126,6 +126,39 @@ public sealed class LearningEvaluationEngineTests
             skill.ConfidenceBand);
     }
 
+
+    [Fact]
+    public void SubjectConfidence_IsCoverageAdjusted()
+    {
+        var fixture = BuildFixture(
+            assessmentScores: [0.7m, 0.7m],
+            practiceScores: [0.7m, 0.7m],
+            includeUnassessedOutcome: true);
+
+        var evaluation = NewEngine().BuildStudentSubject(
+            fixture.Snapshot,
+            fixture.StudentId,
+            fixture.YearId,
+            fixture.ClassId,
+            fixture.SubjectId,
+            Now);
+
+        Assert.Equal(2, evaluation.ExpectedSkillCount);
+        Assert.Equal(1, evaluation.EvaluatedSkillCount);
+        Assert.Equal(50m, evaluation.CurriculumCoveragePercentage);
+        Assert.Equal(42.5m, evaluation.ConfidencePercentage);
+        Assert.Equal(
+            EvaluationConfidenceBand.Moderate,
+            evaluation.ConfidenceBand);
+
+        var evaluatedSkill = evaluation.Skills.Single(
+            x => x.CurrentMasteryPercentage.HasValue);
+        Assert.Equal(85m, evaluatedSkill.ConfidencePercentage);
+        Assert.Equal(
+            EvaluationConfidenceBand.VeryStrong,
+            evaluatedSkill.ConfidenceBand);
+    }
+
     private static LearningEvaluationEngine NewEngine() =>
         new(new EvaluationEvidenceNormalizer());
 
@@ -133,7 +166,8 @@ public sealed class LearningEvaluationEngineTests
         IReadOnlyList<decimal> assessmentScores,
         IReadOnlyList<decimal> practiceScores,
         string outcomeCode = "CCSS:4.NF.A.1",
-        string exactSkillId = "fractions.equivalent")
+        string exactSkillId = "fractions.equivalent",
+        bool includeUnassessedOutcome = false)
     {
         var schoolId = Guid.NewGuid();
         var yearId = Guid.NewGuid();
@@ -213,6 +247,22 @@ public sealed class LearningEvaluationEngineTests
             Description = "Equivalent fractions",
             Weight = 1m,
             Order = 1
+        };
+
+        var additionalOutcome = new LearningOutcome
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = schoolId,
+            AcademicProgramId = programId,
+            FrameworkVersionId = topic.FrameworkVersionId,
+            SubjectId = subjectId,
+            GradeLevelId = gradeId,
+            CurriculumAdoptionId = adoptionId,
+            TopicId = topicId,
+            Code = "UNASSESSED-OUTCOME",
+            Description = "Unassessed skill",
+            Weight = 1m,
+            Order = 2
         };
         var enrollment = new StudentEnrollment
         {
@@ -380,7 +430,9 @@ public sealed class LearningEvaluationEngineTests
             [student],
             [],
             [topic],
-            [outcome],
+            includeUnassessedOutcome
+                ? [outcome, additionalOutcome]
+                : [outcome],
             [],
             [],
             [],
