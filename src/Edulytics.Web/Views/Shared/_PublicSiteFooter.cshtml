@@ -1,51 +1,53 @@
 @using Edulytics.Web.Support
 @using System.Globalization
 @{
-    var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
-    string L(string en, string pl) => isPolish ? pl : en;
+    var language = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var isPolish = string.Equals(language, "pl", StringComparison.OrdinalIgnoreCase);
+    var isArabic = string.Equals(language, "ar", StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl, string ar) => isArabic ? ar : isPolish ? pl : en;
 }
 <footer class="ed-home-footer">
     <div class="ed-home-container ed-home-footer-grid">
         <div class="ed-home-footer-brand">
             <partial name="_LocalizedBrand" />
-            <p>@L("Mathematics. Learning. Progress.", "Matematyka. Nauka. Postęp.")</p>
+            <p>@L("Mathematics. Learning. Progress.", "Matematyka. Nauka. Postęp.", "الرياضيات. التعلّم. التقدم.")</p>
             <div class="footer-contact">
                 <a href="/contact/message">@SupportContactOptions.Email</a>
                 <a href="@SupportContactOptions.PhoneUri">@SupportContactOptions.PhoneDisplay</a>
             </div>
         </div>
         <div>
-            <h3>@L("Platform", "Platforma")</h3>
-            <a href="/#platform">@L("Principles", "Zasady")</a>
-            <a href="/product/curricula">@L("Curricula", "Programy nauczania")</a>
+            <h3>@L("Platform", "Platforma", "المنصة")</h3>
+            <a href="/#platform">@L("Principles", "Zasady", "المبادئ")</a>
+            <a href="/product/curricula">@L("Curricula", "Programy nauczania", "المناهج")</a>
             <a href="/product/edulytics-ai">Edulytics AI</a>
         </div>
         <div>
-            <h3>@L("For schools", "Dla szkół")</h3>
-            <a href="/schools/overview">@L("Overview", "Przegląd")</a>
-            <a href="/product/student-portal">@L("Student experience", "Doświadczenie ucznia")</a>
-            <a href="/contact/request-demo">@L("Request a demo", "Poproś o demo")</a>
+            <h3>@L("For schools", "Dla szkół", "للمدارس")</h3>
+            <a href="/schools/overview">@L("Overview", "Przegląd", "نظرة عامة")</a>
+            <a href="/product/student-portal">@L("Student experience", "Doświadczenie ucznia", "تجربة الطالب")</a>
+            <a href="/contact/request-demo">@L("Request a demo", "Poproś o demo", "اطلب عرضًا تجريبيًا")</a>
         </div>
         <div>
-            <h3>@L("For users", "Dla użytkowników")</h3>
-            <a href="/teachers/overview">@L("Teachers", "Nauczyciele")</a>
-            <a href="/students/overview">@L("Students", "Uczniowie")</a>
-            <a asp-controller="Account" asp-action="Login">@L("Log in", "Zaloguj się")</a>
+            <h3>@L("For users", "Dla użytkowników", "للمستخدمين")</h3>
+            <a href="/teachers/overview">@L("Teachers", "Nauczyciele", "المعلمون")</a>
+            <a href="/students/overview">@L("Students", "Uczniowie", "الطلاب")</a>
+            <a asp-controller="Account" asp-action="Login">@L("Log in", "Zaloguj się", "تسجيل الدخول")</a>
         </div>
         <div>
-            <h3>@L("Company", "Firma")</h3>
-            <a href="/company/about">@L("About", "O nas")</a>
-            <a href="/contact">@L("Contact", "Kontakt")</a>
-            <a href="/help">@L("Help center", "Centrum pomocy")</a>
+            <h3>@L("Company", "Firma", "الشركة")</h3>
+            <a href="/company/about">@L("About", "O nas", "عن Edulytics")</a>
+            <a href="/contact">@L("Contact", "Kontakt", "تواصل معنا")</a>
+            <a href="/help">@L("Help center", "Centrum pomocy", "مركز المساعدة")</a>
         </div>
     </div>
     <div class="ed-home-container ed-home-footer-bottom">
         <span>© @DateTime.UtcNow.Year Edulytics</span>
-        <nav class="ed-home-footer-legal" aria-label="@L("Legal", "Informacje prawne")">
-            <a href="/legal/privacy">@L("Privacy", "Prywatność")</a>
-            <a href="/legal/terms">@L("Terms", "Regulamin")</a>
-            <a href="/legal/content-sources">@L("Content licences", "Licencje treści")</a>
-            <a href="/legal/data-processing-agreement">@L("Data Processing Agreement", "Powierzenie danych")</a>
+        <nav class="ed-home-footer-legal" aria-label="@L("Legal", "Informacje prawne", "معلومات قانونية")">
+            <a href="/legal/privacy">@L("Privacy", "Prywatność", "الخصوصية")</a>
+            <a href="/legal/terms">@L("Terms", "Regulamin", "الشروط")</a>
+            <a href="/legal/content-sources">@L("Content licences", "Licencje treści", "مصادر المحتوى والتراخيص")</a>
+            <a href="/legal/data-processing-agreement">@L("Data Processing Agreement", "Powierzenie danych", "اتفاقية معالجة البيانات")</a>
         </nav>
     </div>
 </footer>
