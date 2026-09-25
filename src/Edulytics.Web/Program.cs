@@ -103,6 +103,38 @@ builder.Services
                     new CustomRequestCultureProvider(
                         context =>
                         {
+                            // Migrate visitors who selected Arabic through the
+                            // legacy client-only public-language cookie. This
+                            // preserves their choice on the first request after
+                            // deployment and upgrades it to the canonical culture.
+                            if (context.Request.Cookies.TryGetValue(
+                                    "Edulytics.PublicLanguage",
+                                    out var legacyPublicLanguage) &&
+                                string.Equals(
+                                    legacyPublicLanguage,
+                                    "ar",
+                                    StringComparison.OrdinalIgnoreCase))
+                            {
+                                context.Response.Cookies.Append(
+                                    CultureCookie.Name,
+                                    CultureCookie.CreateValue("ar"),
+                                    new CookieOptions
+                                    {
+                                        Path = "/",
+                                        Expires = DateTimeOffset.UtcNow.AddYears(1),
+                                        IsEssential = true,
+                                        HttpOnly = true,
+                                        SameSite = SameSiteMode.Strict,
+                                        Secure = context.Request.IsHttps
+                                    });
+
+                                return Task.FromResult<
+                                    ProviderCultureResult?>(
+                                    new ProviderCultureResult(
+                                        "ar",
+                                        "ar"));
+                            }
+
                             if (CultureCookie.TryRead(
                                     context.Request,
                                     out var culture))
