@@ -36,7 +36,17 @@ public sealed class HomeController : Controller
     [HttpGet("/")]
     public IActionResult Index()
     {
-        if (!CultureCookie.TryRead(Request, out _))
+        var hasLegacyArabicSelection =
+            Request.Cookies.TryGetValue(
+                "Edulytics.PublicLanguage",
+                out var legacyPublicLanguage) &&
+            string.Equals(
+                legacyPublicLanguage,
+                "ar",
+                StringComparison.OrdinalIgnoreCase);
+
+        if (!CultureCookie.TryRead(Request, out _) &&
+            !hasLegacyArabicSelection)
         {
             Response.Cookies.Append(
                 CultureCookie.Name,
