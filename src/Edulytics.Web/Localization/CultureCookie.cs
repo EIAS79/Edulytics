@@ -7,7 +7,7 @@ public static class CultureCookie
     public const string Name = "Edulytics.Culture";
 
     public static readonly IReadOnlyList<string> SupportedCultures =
-        new[] { "en", "pl" };
+        new[] { "en", "pl", "ar" };
 
     public static bool IsSupported(string? culture)
     {
