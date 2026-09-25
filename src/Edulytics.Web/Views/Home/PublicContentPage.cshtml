@@ -5,8 +5,8 @@
     var language = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
     var isPolish = string.Equals(language, "pl", StringComparison.OrdinalIgnoreCase);
     var isArabic = string.Equals(language, "ar", StringComparison.OrdinalIgnoreCase);
-    string L(string en, string pl) => isArabic ? en : isPolish ? pl : en;
-    string L(string en, string pl, string ar) => isArabic ? ar : isPolish ? pl : en;
+    string L(string en, string pl, string? ar = null) =>
+        isArabic ? (ar ?? en) : isPolish ? pl : en;
     var pageKey = (ViewData["MarketingPageKey"] as string) ?? string.Empty;
     var pageUrl = (ViewData["MarketingPageUrl"] as string) ?? "/";
     var pageTitleEn = (ViewData["MarketingPageTitle"] as string) ?? "Edulytics";
