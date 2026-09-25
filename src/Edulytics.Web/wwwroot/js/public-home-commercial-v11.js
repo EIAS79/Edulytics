@@ -4,7 +4,8 @@
 
   const supported = ['en', 'pl', 'ar'];
   const storageKey = 'edulytics.public.siteLanguage';
-  const serverLanguage = (document.documentElement.lang || 'en').toLowerCase().startsWith('pl') ? 'pl' : 'en';
+  const documentLanguage = (document.documentElement.lang || 'en').toLowerCase();
+  const serverLanguage = documentLanguage.startsWith('ar') ? 'ar' : documentLanguage.startsWith('pl') ? 'pl' : 'en';
 
   const readStoredLanguage = () => {
     try {
@@ -15,16 +16,15 @@
     }
   };
 
-  const storeLanguage = value => {
-    try {
-      if (value === 'ar') window.localStorage.setItem(storageKey, value);
-      else window.localStorage.removeItem(storageKey);
-    } catch {
-      // Storage can be unavailable in strict privacy modes. Server language still works for EN/PL.
+  const storeLanguage = () => {
+    try { window.localStorage.removeItem(storageKey); } catch {
+      // Storage can be unavailable in strict privacy modes.
     }
   };
 
-  const language = readStoredLanguage() === 'ar' ? 'ar' : serverLanguage;
+  // The server culture is authoritative. Local storage is retained only for
+  // one-release compatibility with visitors from the old client-only Arabic switch.
+  const language = serverLanguage;
   root.dataset.siteLanguage = language;
   root.classList.toggle('is-site-ar', language === 'ar');
 
@@ -237,13 +237,7 @@
 
   const switchLanguage = target => {
     if (!supported.includes(target)) return;
-    if (target === 'ar') {
-      storeLanguage('ar');
-      window.location.reload();
-      return;
-    }
-
-    storeLanguage(target);
+    storeLanguage();
     const form = [...root.querySelectorAll('.ed-home-lang form')]
       .find(candidate => candidate.querySelector('input[name="culture"]')?.value === target);
     if (form) form.requestSubmit();
@@ -255,7 +249,8 @@
     const existingTarget = languageWrap.querySelector(`input[name="culture"][value="${language}"]`)?.closest('form')?.querySelector('button');
     if (existingTarget) existingTarget.classList.add('is-active');
 
-    if (!languageWrap.querySelector('[data-v11-language="ar"]')) {
+    if (!languageWrap.querySelector('input[name="culture"][value="ar"]') &&
+        !languageWrap.querySelector('[data-v11-language="ar"]')) {
       const arButton = document.createElement('button');
       arButton.type = 'button';
       arButton.className = `ed-home-v11-lang-button${language === 'ar' ? ' is-active' : ''}`;
@@ -268,7 +263,7 @@
 
     languageWrap.querySelectorAll('form button').forEach(button => {
       const target = button.closest('form')?.querySelector('input[name="culture"]')?.value;
-      button.addEventListener('click', () => target && storeLanguage(target));
+      button.addEventListener('click', () => target && storeLanguage());
     });
   }
 
