@@ -45,4 +45,21 @@
             Polski
         </button>
     </form>
+
+    <form method="post"
+          asp-controller="Home"
+          asp-action="SetCulture">
+        <input type="hidden"
+               name="culture"
+               value="ar" />
+        <input type="hidden"
+               name="returnUrl"
+               value="@returnUrl" />
+
+        <button type="submit"
+                class="public-language-option @(currentCulture == "ar" ? "is-active" : null)"
+                aria-pressed="@(currentCulture == "ar" ? "true" : "false")">
+            العربية
+        </button>
+    </form>
 </nav>
