@@ -40,10 +40,10 @@ public sealed class PublicHomeMascotTransparencyContractTests
 
         Assert.Contains("[HttpGet(\"/css/public-site-v44.css\")]", bundle, StringComparison.Ordinal);
         Assert.Contains("public-css-v44", bundle, StringComparison.Ordinal);
-        Assert.Contains("[HttpGet(\"/js/public-site-v44.js\")]", bundle, StringComparison.Ordinal);
-        Assert.Contains("public-js-v44", bundle, StringComparison.Ordinal);
+        Assert.Contains("[HttpGet(\"/js/public-site-v45.js\")]", bundle, StringComparison.Ordinal);
+        Assert.Contains("public-js-v45", bundle, StringComparison.Ordinal);
         Assert.Contains("~/css/public-site-v44.css", layout, StringComparison.Ordinal);
-        Assert.Contains("~/js/public-site-v44.js", layout, StringComparison.Ordinal);
+        Assert.Contains("~/js/public-site-v45.js", layout, StringComparison.Ordinal);
     }
 
     private static string FindRoot()
