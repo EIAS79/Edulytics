@@ -117,6 +117,16 @@ public sealed class Phase25BPublicLanguageSwitchTests
             StringComparison.Ordinal);
 
         Assert.Contains(
+            "value=\"ar\"",
+            partial,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "العربية",
+            partial,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
             "name=\"returnUrl\"",
             partial,
             StringComparison.Ordinal);
