@@ -3,10 +3,9 @@
   if (!root) return;
 
   const storageKey = 'edulytics.public.siteLanguage';
-  const serverLanguage = (document.documentElement.lang || 'en').toLowerCase().startsWith('pl') ? 'pl' : 'en';
-  let storedLanguage = null;
-  try { storedLanguage = window.localStorage.getItem(storageKey); } catch { /* storage may be blocked */ }
-  const language = storedLanguage === 'ar' ? 'ar' : serverLanguage;
+  const documentLanguage = (document.documentElement.lang || 'en').toLowerCase();
+  const serverLanguage = documentLanguage.startsWith('ar') ? 'ar' : documentLanguage.startsWith('pl') ? 'pl' : 'en';
+  const language = serverLanguage;
 
   const normalizePath = href => {
     if (!href) return '';
@@ -85,7 +84,9 @@
   });
 
   const installArabicSwitch = languageHost => {
-    if (!languageHost || languageHost.querySelector('[data-public-arabic-switch]')) return;
+    if (!languageHost ||
+        languageHost.querySelector('input[name="culture"][value="ar"]') ||
+        languageHost.querySelector('[data-public-arabic-switch]')) return;
 
     const button = document.createElement('button');
     button.type = 'button';
@@ -126,7 +127,10 @@
   root.dataset.siteLanguage = 'ar';
 
   root.querySelectorAll('.ed-home-lang button').forEach(button => {
-    button.classList.toggle('is-active', button.hasAttribute('data-public-arabic-switch'));
+    const target = button.closest('form')?.querySelector('input[name="culture"]')?.value;
+    button.classList.toggle(
+      'is-active',
+      target === 'ar' || button.hasAttribute('data-public-arabic-switch'));
   });
 
   // The compact AR label beside the logo is intentionally preserved.
