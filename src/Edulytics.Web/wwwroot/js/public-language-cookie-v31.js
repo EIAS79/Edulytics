@@ -1,32 +1,19 @@
 (() => {
-  const cookieName = 'Edulytics.PublicLanguage';
-  const storageKey = 'edulytics.public.siteLanguage';
-  const secure = window.location.protocol === 'https:' ? '; Secure' : '';
+  const legacyCookieName = 'Edulytics.PublicLanguage';
+  const legacyStorageKey = 'edulytics.public.siteLanguage';
 
-  const write = (value, maxAge) => {
-    document.cookie = `${cookieName}=${encodeURIComponent(value)}; Path=/; Max-Age=${maxAge}; SameSite=Lax${secure}`;
+  const clearLegacy = () => {
+    try { window.localStorage.removeItem(legacyStorageKey); } catch { /* no-op */ }
+    document.cookie = `${legacyCookieName}=; Max-Age=0; Path=/; SameSite=Strict${location.protocol === 'https:' ? '; Secure' : ''}`;
   };
-  const clear = () => write('', 0);
 
-  try {
-    if (window.localStorage.getItem(storageKey) === 'ar') write('ar', 31536000);
-  } catch { /* storage can be blocked */ }
-
-  document.addEventListener('click', event => {
-    const arabic = event.target.closest?.('[data-public-arabic-switch]');
-    if (arabic) {
-      write('ar', 31536000);
-      return;
-    }
-
-    const button = event.target.closest?.('form button');
-    const form = button?.closest('form');
-    const culture = form?.querySelector('input[name="culture"]')?.value;
-    if (culture === 'en' || culture === 'pl') clear();
-  }, true);
+  // Arabic is now a canonical server culture. Clear the old client-only state
+  // after the server had a chance to migrate it on this request.
+  clearLegacy();
 
   document.addEventListener('submit', event => {
-    const culture = event.target?.querySelector?.('input[name="culture"]')?.value;
-    if (culture === 'en' || culture === 'pl') clear();
+    const form = event.target;
+    const culture = form?.querySelector?.('input[name="culture"]')?.value;
+    if (culture === 'en' || culture === 'pl' || culture === 'ar') clearLegacy();
   }, true);
 })();
