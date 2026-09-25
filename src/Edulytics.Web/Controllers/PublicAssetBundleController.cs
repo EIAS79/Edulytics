@@ -95,9 +95,10 @@ public sealed class PublicAssetBundleController(IWebHostEnvironment environment)
     [HttpGet("/js/public-site-v42.js")]
     [HttpGet("/js/public-site-v43.js")]
     [HttpGet("/js/public-site-v44.js")]
+    [HttpGet("/js/public-site-v45.js")]
     [ResponseCache(Duration = 86400, Location = ResponseCacheLocation.Client)]
     public IActionResult JavaScript() =>
-        Bundle("public-js-v44", JsFiles, "application/javascript; charset=utf-8");
+        Bundle("public-js-v45", JsFiles, "application/javascript; charset=utf-8");
 
     [HttpGet("/js/public-content-v31.js")]
     [HttpGet("/js/public-content-v32.js")]

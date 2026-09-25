@@ -49,7 +49,7 @@ public sealed class PublicWebsiteSiteWideContractTests
             "public-site-v43.css",
             StringComparison.Ordinal);
         var publicRuntime = layout.IndexOf(
-            "public-site-v43.js",
+            "public-site-v45.js",
             StringComparison.Ordinal);
         var contentRuntime = layout.IndexOf(
             "public-content-v33.js",
@@ -68,19 +68,19 @@ public sealed class PublicWebsiteSiteWideContractTests
         Assert.True(globalUi > contentRuntime);
         Assert.True(languageCookie > globalUi);
         Assert.Contains(
-            "Edulytics.PublicLanguage",
+            "pageLanguage = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName",
             layout,
             StringComparison.Ordinal);
         Assert.Contains(
-            "edulytics.public.siteLanguage",
+            "isArabic = string.Equals(pageLanguage, \"ar\"",
             layout,
             StringComparison.Ordinal);
         Assert.Contains(
             "pageDirection = isArabic ? \"rtl\" : \"ltr\"",
             layout,
             StringComparison.Ordinal);
-        Assert.Contains(
-            "document.documentElement.dir = 'rtl'",
+        Assert.DoesNotContain(
+            "window.localStorage.getItem('edulytics.public.siteLanguage')",
             layout,
             StringComparison.Ordinal);
     }

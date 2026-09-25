@@ -1,14 +1,18 @@
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SharedResource> Brand
 @using System.Globalization
 @{
-    const string publicLanguageCookie = "Edulytics.PublicLanguage";
     var localizedProductName = Brand["ProductName"].Value;
-    var publicLanguage = Context.Request.Cookies[publicLanguageCookie];
-    var isArabic = string.Equals(publicLanguage, "ar", StringComparison.OrdinalIgnoreCase);
-    var pageLanguage = isArabic ? "ar" : CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var pageLanguage = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var isPolish = string.Equals(pageLanguage, "pl", StringComparison.OrdinalIgnoreCase);
+    var isArabic = string.Equals(pageLanguage, "ar", StringComparison.OrdinalIgnoreCase);
     var pageDirection = isArabic ? "rtl" : "ltr";
     var isMarketingContentPage = ViewData["MarketingPageKey"] is string;
     var pageTitle = ViewData["Title"] as string;
+    var metaDescription = isArabic
+        ? "Edulytics منصة رياضيات متوافقة مع المناهج للتعلّم والتقييم والإتقان، مصممة للمدارس والمعلمين والطلاب."
+        : isPolish
+            ? "Edulytics to zgodna z programem platforma do nauki matematyki, oceniania i monitorowania postępów dla szkół, nauczycieli i uczniów."
+            : "Edulytics is a curriculum-aligned mathematics learning, assessment and mastery platform for schools, teachers and students.";
 }
 @* Previous cache-busted bundle markers retained for acceptance compatibility: public-site-v43.css public-site-v43.js public-site-v44.css public-site-v44.js *@
 <!DOCTYPE html>
@@ -17,20 +21,8 @@
     <meta charset="utf-8" />
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0" />
-    <script>
-        (() => {
-            try {
-                const language = window.localStorage.getItem('edulytics.public.siteLanguage');
-                if (language === 'ar') {
-                    document.documentElement.lang = 'ar';
-                    document.documentElement.dir = 'rtl';
-                    document.documentElement.classList.add('ed-site-ar');
-                }
-            } catch { }
-        })();
-    </script>
     <title>@localizedProductName@(string.IsNullOrWhiteSpace(pageTitle) ? "" : $" | {pageTitle}")</title>
-    <meta name="description" content="Edulytics is a curriculum-aligned mathematics learning, assessment and mastery platform for schools, teachers and students." />
+    <meta name="description" content="@metaDescription" />
     <link rel="stylesheet"
           href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet"
@@ -78,7 +70,7 @@
     <main class="ed-public-main">
         @RenderBody()
     </main>
-    <script src="~/js/public-site-v44.js"></script>
+    <script src="~/js/public-site-v45.js"></script>
     <script src="~/js/public-home-philosophy-v34.js" asp-append-version="true"></script>
     @if (isMarketingContentPage)
     {

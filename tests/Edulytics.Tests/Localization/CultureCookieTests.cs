@@ -7,8 +7,10 @@ public sealed class CultureCookieTests
     [Theory]
     [InlineData("en")]
     [InlineData("pl")]
+    [InlineData("ar")]
     [InlineData(" EN ")]
     [InlineData(" PL ")]
+    [InlineData(" AR ")]
     public void TryParseValue_AcceptsLegacyRawValues(
         string cookieValue)
     {
@@ -26,6 +28,7 @@ public sealed class CultureCookieTests
     [Theory]
     [InlineData("en")]
     [InlineData("pl")]
+    [InlineData("ar")]
     public void TryParseValue_AcceptsCanonicalValues(
         string culture)
     {
