@@ -408,6 +408,29 @@ if (!app.Environment.IsDevelopment())
 
 app.UseRouting();
 
+// The always-on static public front door wakes this free web service in the
+// background and polls readiness before sending a visitor into the app. Keep
+// readiness anonymous, non-cacheable and readable cross-origin so visitors
+// never need to see Render's cold-start loading page.
+app.Use(async (context, next) =>
+{
+    if (context.Request.Path.Equals(
+            "/health/ready",
+            StringComparison.OrdinalIgnoreCase))
+    {
+        context.Response.Headers.AccessControlAllowOrigin = "*";
+        context.Response.Headers.CacheControl = "no-store";
+
+        if (HttpMethods.IsOptions(context.Request.Method))
+        {
+            context.Response.StatusCode = StatusCodes.Status204NoContent;
+            return;
+        }
+    }
+
+    await next();
+});
+
 app.UseRequestTimeouts();
 
 app.UseAuthentication();
