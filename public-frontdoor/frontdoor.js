@@ -84,6 +84,30 @@
       footerCompany: 'Company',
       footerAbout: 'About',
       footerHelp: 'Help center',
+      polishCurriculum: 'Polish curriculum',
+      curriculumFlow: 'Curriculum → Lessons → Outcomes → Assessment → Practice → Mastery',
+      integers: 'Integers and directed number',
+      algebraic: 'Algebraic expressions',
+      equations: 'Equations and inequalities',
+      lesson: 'Lesson',
+      examples: 'Examples',
+      practice: 'Practice',
+      test: 'Test',
+      scope: 'Scope',
+      questions: 'Questions',
+      level: 'Level',
+      generatedQuestion: 'Generated question',
+      edit: 'Edit',
+      regenerate: 'Regenerate',
+      approve: 'Approve',
+      learningPhilosophy: 'Learning Philosophy',
+      principles: 'Principles',
+      privacy: 'Privacy',
+      terms: 'Terms',
+      contentLicences: 'Content licences',
+      metricMastery: 'Mastery',
+      metricPractice: 'Practice',
+      metricProgress: 'Progress',
       wakePreparing: 'Preparing the Edulytics workspace…',
       wakeAlmost: 'The workspace is waking up. You will enter automatically when it is ready.',
       wakeRetry: 'The workspace is taking longer than usual. Please try again.'
@@ -168,6 +192,30 @@
       footerCompany: 'Firma',
       footerAbout: 'O nas',
       footerHelp: 'Centrum pomocy',
+      polishCurriculum: 'Polski program',
+      curriculumFlow: 'Program → Lekcje → Efekty → Ocenianie → Ćwiczenia → Opanowanie',
+      integers: 'Liczby całkowite i liczby ze znakiem',
+      algebraic: 'Wyrażenia algebraiczne',
+      equations: 'Równania i nierówności',
+      lesson: 'Lekcja',
+      examples: 'Przykłady',
+      practice: 'Ćwiczenia',
+      test: 'Test',
+      scope: 'Zakres',
+      questions: 'Liczba pytań',
+      level: 'Poziom',
+      generatedQuestion: 'Pytanie wygenerowane',
+      edit: 'Edytuj',
+      regenerate: 'Regeneruj',
+      approve: 'Zatwierdź',
+      learningPhilosophy: 'Filozofia nauczania',
+      principles: 'Zasady',
+      privacy: 'Prywatność',
+      terms: 'Regulamin',
+      contentLicences: 'Licencje treści',
+      metricMastery: 'Opanowanie',
+      metricPractice: 'Ćwiczenia',
+      metricProgress: 'Postęp',
       wakePreparing: 'Przygotowujemy środowisko Edulytics…',
       wakeAlmost: 'Środowisko uruchamia się w tle. Przejdziesz dalej automatycznie, gdy będzie gotowe.',
       wakeRetry: 'Uruchamianie trwa dłużej niż zwykle. Spróbuj ponownie.'
@@ -252,6 +300,30 @@
       footerCompany: 'الشركة',
       footerAbout: 'عن Edulytics',
       footerHelp: 'مركز المساعدة',
+      polishCurriculum: 'المنهج البولندي',
+      curriculumFlow: 'المنهج ← الدروس ← نواتج التعلّم ← التقييم ← التدريب ← الإتقان',
+      integers: 'الأعداد الصحيحة والأعداد الموجّهة',
+      algebraic: 'التعبيرات الجبرية',
+      equations: 'المعادلات والمتباينات',
+      lesson: 'درس',
+      examples: 'أمثلة',
+      practice: 'تدريب',
+      test: 'اختبار',
+      scope: 'النطاق',
+      questions: 'الأسئلة',
+      level: 'المستوى',
+      generatedQuestion: 'سؤال تم توليده',
+      edit: 'تعديل',
+      regenerate: 'إعادة توليد',
+      approve: 'اعتماد',
+      learningPhilosophy: 'فلسفة التعلّم',
+      principles: 'المبادئ',
+      privacy: 'الخصوصية',
+      terms: 'الشروط',
+      contentLicences: 'تراخيص المحتوى',
+      metricMastery: 'الإتقان',
+      metricPractice: 'التدريب',
+      metricProgress: 'التقدم',
       wakePreparing: 'جارٍ تجهيز مساحة Edulytics…',
       wakeAlmost: 'يتم تشغيل البرنامج في الخلفية. سيتم نقلك تلقائيًا عندما يصبح جاهزًا.',
       wakeRetry: 'استغرق تشغيل البرنامج وقتًا أطول من المعتاد. حاول مرة أخرى.'
@@ -302,13 +374,12 @@
       button.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
 
-    const brand = document.querySelector('[data-brand-logo]');
-    if (brand) {
+    document.querySelectorAll('[data-brand-logo]').forEach(brand => {
       brand.src = language === 'pl'
         ? '/images/brand/edulityks-pl.png'
         : '/images/brand/edulytics-en.png';
       brand.alt = language === 'pl' ? 'Edulityks' : 'Edulytics';
-    }
+    });
 
     const languageLabel = document.querySelector('[data-language-label]');
     if (languageLabel) languageLabel.textContent = language.toUpperCase();
