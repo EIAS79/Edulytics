@@ -16,9 +16,9 @@ public sealed class PublicStaticFrontDoorContractTests
             root,
             "public-frontdoor/build.sh"));
 
-        Assert.Contains("data-lang=\\\"pl\\\"", html, StringComparison.Ordinal);
-        Assert.Contains("data-lang=\\\"en\\\"", html, StringComparison.Ordinal);
-        Assert.Contains("data-lang=\\\"ar\\\"", html, StringComparison.Ordinal);
+        Assert.Contains("data-lang=\"pl\"", html, StringComparison.Ordinal);
+        Assert.Contains("data-lang=\"en\"", html, StringComparison.Ordinal);
+        Assert.Contains("data-lang=\"ar\"", html, StringComparison.Ordinal);
 
         Assert.Contains(
             "https://edulytics-4346.onrender.com",
@@ -59,7 +59,7 @@ public sealed class PublicStaticFrontDoorContractTests
             build,
             StringComparison.Ordinal);
         Assert.Contains(
-            "cp -R \\\"$SRC/images/.\\\" \\\"$OUT/images/\\\"",
+            "cp -R \"$SRC/images/.\" \"$OUT/images/\"",
             build,
             StringComparison.Ordinal);
 
@@ -78,15 +78,15 @@ public sealed class PublicStaticFrontDoorContractTests
             "src/Edulytics.Web/Program.cs"));
 
         Assert.Contains(
-            "\\\"/health/ready\\\"",
+            "\"/health/ready\"",
             program,
             StringComparison.Ordinal);
         Assert.Contains(
-            "AccessControlAllowOrigin = "*"",
+            "AccessControlAllowOrigin = \"*\"",
             program,
             StringComparison.Ordinal);
         Assert.Contains(
-            "CacheControl = "no-store"",
+            "CacheControl = \"no-store\"",
             program,
             StringComparison.Ordinal);
     }
