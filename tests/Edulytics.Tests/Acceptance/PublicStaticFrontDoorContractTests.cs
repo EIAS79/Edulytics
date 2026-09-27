@@ -21,7 +21,7 @@ public sealed class PublicStaticFrontDoorContractTests
         Assert.Contains("data-lang=\"ar\"", html, StringComparison.Ordinal);
 
         Assert.Contains(
-            "https://edulytics-4346.onrender.com",
+            "https://staging.edulytiks.com",
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
