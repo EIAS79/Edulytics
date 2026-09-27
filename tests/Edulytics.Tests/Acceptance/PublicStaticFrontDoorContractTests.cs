@@ -3,22 +3,58 @@ namespace Edulytics.Tests.Acceptance;
 public sealed class PublicStaticFrontDoorContractTests
 {
     [Fact]
-    public void FrontDoor_IsStaticMultilingualAndWakesTheBackendInTheBackground()
+    public void FrontDoor_BuildsExactServerRenderedSnapshotsForAllLanguages()
     {
         var root = FindRoot();
-        var html = File.ReadAllText(Path.Combine(
-            root,
-            "public-frontdoor/index.html"));
-        var runtime = File.ReadAllText(Path.Combine(
-            root,
-            "public-frontdoor/frontdoor.js"));
         var build = File.ReadAllText(Path.Combine(
             root,
             "public-frontdoor/build.sh"));
 
-        Assert.Contains("data-lang=\"pl\"", html, StringComparison.Ordinal);
-        Assert.Contains("data-lang=\"en\"", html, StringComparison.Ordinal);
-        Assert.Contains("data-lang=\"ar\"", html, StringComparison.Ordinal);
+        Assert.Contains(
+            "ORIGIN=\"https://staging.edulytiks.com\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "snapshot \"pl\" \"$OUT/pl/index.html\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "snapshot \"en\" \"$OUT/en/index.html\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "snapshot \"ar\" \"$OUT/ar/index.html\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "Edulytics.Culture=c=${language}|uic=${language}",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "$ORIGIN/css/public-site-v44.css",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "$ORIGIN/js/public-site-v45.js",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "cp -R \"$SRC/.\" \"$OUT/\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "<script src=\"/frontdoor.js\" defer></script>",
+            build,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void FrontDoor_RuntimeOnlyAddsWakeupAndBackendRouting()
+    {
+        var root = FindRoot();
+        var runtime = File.ReadAllText(Path.Combine(
+            root,
+            "public-frontdoor/frontdoor.js"));
 
         Assert.Contains(
             "https://staging.edulytiks.com",
@@ -33,40 +69,22 @@ public sealed class PublicStaticFrontDoorContractTests
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
-            "data-backend-path",
-            html,
-            StringComparison.Ordinal);
-
-        Assert.Contains(
-            "حل متكامل لتعليم الرياضيات",
+            "installLanguageRouting",
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
-            "ابدأ باستخدام Edulytics",
+            "installBackendRouting",
             runtime,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "Get started with Edulytics",
-            runtime,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "Zacznij korzystać z Edulytics",
-            runtime,
-            StringComparison.Ordinal);
-
-        Assert.Contains(
-            "css/public-home.css",
-            build,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "cp -R \"$SRC/images/.\" \"$OUT/images/\"",
-            build,
             StringComparison.Ordinal);
 
         Assert.DoesNotContain(
-            "Render",
-            html,
-            StringComparison.OrdinalIgnoreCase);
+            "completeTitle:",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "frontdoor-hero-card",
+            runtime,
+            StringComparison.Ordinal);
     }
 
     [Fact]
