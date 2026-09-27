@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edulityks | Nauka matematyki, ocenianie i opanowanie</title>
+  <meta name="description" content="Edulytics to zgodna z programem platforma do nauki matematyki, oceniania i monitorowania postępów dla szkół, nauczycieli i uczniów." />
+  <link rel="stylesheet" href="/css/public-site.css" />
+  <link rel="stylesheet" href="/frontdoor.css" />
+</head>
+<body class="ed-public-body frontdoor-body">
+  <main class="ed-public-main">
+    <div class="ed-home">
+      <header class="ed-home-header">
+        <div class="ed-home-nav-shell">
+          <div class="ed-home-brand-row">
+            <a class="ed-home-brand" href="/" aria-label="Edulytics">
+              <img data-brand-logo src="/images/brand/edulityks-pl.png" alt="Edulityks" />
+            </a>
+            <span class="ed-home-lang-label" data-language-label>PL</span>
+          </div>
+
+          <nav class="ed-home-links" aria-label="Main navigation">
+            <a href="#platform" data-i18n="navProduct">Produkt</a>
+            <a href="#schools" data-i18n="navSchools">Dla szkół</a>
+            <a href="#teachers" data-i18n="navTeachers">Dla nauczycieli</a>
+            <a href="#students" data-i18n="navStudents">Dla uczniów</a>
+            <a href="#curricula" data-i18n="navCurricula">Programy</a>
+            <a data-backend-path="/contact" href="#" data-i18n="navContact">Kontakt</a>
+          </nav>
+
+          <div class="ed-home-actions">
+            <div class="ed-home-lang" aria-label="Website language">
+              <button type="button" data-lang="pl" class="is-active" aria-pressed="true">PL</button>
+              <button type="button" data-lang="en" aria-pressed="false">EN</button>
+              <button type="button" data-lang="ar" aria-pressed="false">AR</button>
+            </div>
+            <a class="ed-home-login" data-backend-path="/account/login" href="#" data-i18n="login">Zaloguj się</a>
+            <a class="ed-home-cta" data-backend-path="/contact/request-demo" href="#" data-i18n="demo">Poproś o demo</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="ed-home-hero ed-geo-scene">
+        <span class="geo geo-a"></span><span class="geo geo-b"></span><span class="geo geo-c"></span><span class="geo geo-d"></span>
+        <div class="ed-home-container ed-home-hero-grid">
+          <div class="ed-home-hero-copy">
+            <div class="ed-home-kicker" data-i18n="heroKicker">MATEMATYKA • AI • MASTERY</div>
+            <h1 data-i18n="heroTitle">Od programu nauczania do prawdziwych efektów w matematyce.</h1>
+            <p data-i18n="heroBody">Edulytics łączy program nauczania, gotowe lekcje, ocenianie, generowanie pytań przez AI i indywidualną praktykę ucznia w jednym spójnym środowisku.</p>
+            <div class="ed-home-hero-actions">
+              <a class="ed-home-cta ed-home-cta-large" data-backend-path="/contact/request-demo" href="#"><span data-i18n="demo">Poproś o demo</span> →</a>
+              <a class="ed-home-secondary ed-home-cta-large" href="#platform" data-i18n="explore">Zobacz platformę</a>
+            </div>
+            <div class="ed-home-hero-checks">
+              <span data-i18n="checkCurriculum">Zgodność z programem nauczania</span>
+              <span data-i18n="checkAi">AI pod kontrolą nauczyciela</span>
+              <span data-i18n="checkAudience">Dla szkoły, nauczyciela i ucznia</span>
+            </div>
+          </div>
+
+          <div class="frontdoor-hero-visual" aria-hidden="true">
+            <div class="frontdoor-hero-card">
+              <div class="frontdoor-metric-stack">
+                <div class="frontdoor-metric"><small>Mastery</small><strong>82%</strong></div>
+                <div class="frontdoor-metric"><small>Practice</small><strong>AI + Curriculum</strong></div>
+                <div class="frontdoor-metric"><small>Progress</small><strong>↑ 14 pts</strong></div>
+              </div>
+              <img class="frontdoor-mascot" src="/images/public/edulaytiks-character.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="schools" class="ed-home-audience-band">
+        <div class="ed-home-container">
+          <div class="ed-home-center-head"><h2 data-i18n="audienceTitle">Dla kogo jest Edulytics?</h2></div>
+          <div class="ed-home-audience-grid">
+            <article class="audience-card">
+              <h3 data-i18n="schoolsTitle">Dla szkół</h3>
+              <p data-i18n="schoolsBody">Programy, klasy, wyniki i nadzór akademicki w jednym miejscu.</p>
+              <a data-backend-path="/schools/overview" href="#"><span data-i18n="learnMore">Dowiedz się więcej</span> →</a>
+            </article>
+            <article id="teachers" class="audience-card">
+              <h3 data-i18n="teachersTitle">Dla nauczycieli</h3>
+              <p data-i18n="teachersBody">Twórz oceny, korzystaj z AI i śledź postępy uczniów.</p>
+              <a href="#ai"><span data-i18n="generateAi">Generuj z Edulytics AI</span> →</a>
+            </article>
+            <article id="students" class="audience-card">
+              <h3 data-i18n="studentsTitle">Dla uczniów</h3>
+              <p data-i18n="studentsBody">Ucz się z lekcji, rozwiązuj testy i ćwicz prywatnie z AI.</p>
+              <a href="#experience"><span data-i18n="exploreExperience">Zobacz doświadczenie</span> →</a>
+            </article>
+            <article class="audience-card">
+              <h3 data-i18n="leadersTitle">Dla liderów akademickich</h3>
+              <p data-i18n="leadersBody">Monitoruj realizację programu, wyniki i jakość pracy nauczycieli.</p>
+              <a href="#platform"><span data-i18n="learnMore">Dowiedz się więcej</span> →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ed-home-value-band ed-geo-scene">
+        <span class="geo geo-e"></span><span class="geo geo-f"></span>
+        <div class="ed-home-container">
+          <div class="ed-home-center-head"><h2 data-i18n="completeTitle">Kompletne rozwiązanie dla nauczania matematyki</h2></div>
+          <div class="ed-home-value-icons">
+            <div><b>▣</b><span data-i18n="curriculum">Program nauczania</span></div>
+            <div><b>▤</b><span data-i18n="readyLessons">Gotowe lekcje</span></div>
+            <div><b>✦</b><span data-i18n="aiQuestions">Generowanie pytań z AI</span></div>
+            <div><b>▥</b><span data-i18n="assessmentsResults">Oceny i wyniki</span></div>
+            <div><b>◎</b><span data-i18n="individualPractice">Indywidualna praktyka</span></div>
+            <div><b>♟</b><span data-i18n="schoolOversight">Nadzór szkoły</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="curricula" class="ed-home-section ed-home-curricula">
+        <div class="ed-home-container">
+          <div class="ed-home-center-head">
+            <h2 data-i18n="curriculaTitle">Obsługiwane programy nauczania</h2>
+            <p data-i18n="curriculaBody">Wybierz program i poziom, a Edulytics zachowa ten kontekst w lekcjach, ocenach i analizie postępów.</p>
+          </div>
+          <div class="ed-home-tabs"><span class="is-active">Cambridge</span><span>Common Core</span><span>Polish Curriculum</span><span>UAE</span></div>
+          <div class="ed-home-curriculum-showcase">
+            <div class="curriculum-intro">
+              <h3>Cambridge Mathematics</h3>
+              <p>Curriculum → Lessons → Outcomes → Assessment → Practice → Mastery</p>
+              <span class="stage-pill">Stage 7</span>
+            </div>
+            <div class="curriculum-lessons">
+              <article><span class="stage-pill">Stage 7</span><h4>Integers and directed number</h4><div class="lesson-tags"><span>Lesson</span><span>Examples</span><span>Practice</span></div></article>
+              <article><span class="stage-pill">Stage 7</span><h4>Algebraic expressions</h4><div class="lesson-tags"><span>Lesson</span><span>Practice</span><span>Test</span></div></article>
+              <article><span class="stage-pill">Stage 7</span><h4>Equations and inequalities</h4><div class="lesson-tags"><span>Lesson</span><span>Practice</span><span>Test</span></div></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="ed-home-section ed-home-experience ed-geo-scene">
+        <span class="geo geo-g"></span><span class="geo geo-h"></span>
+        <div class="ed-home-container">
+          <div class="ed-home-center-head"><h2 data-i18n="experienceTitle">Doświadczenie w praktyce</h2></div>
+          <div class="ed-home-experience-tabs">
+            <span class="is-active" data-i18n="student">Uczeń</span>
+            <span data-i18n="teacher">Nauczyciel</span>
+            <span data-i18n="academicLeader">Lider akademicki</span>
+            <span data-i18n="administrator">Administrator</span>
+          </div>
+          <div class="ed-home-experience-grid">
+            <div class="ed-home-experience-copy">
+              <span class="ed-home-kicker" data-i18n="studentExperience">DOŚWIADCZENIE UCZNIA</span>
+              <h2 data-i18n="learningNext">Nauka, która prowadzi do kolejnego kroku.</h2>
+              <div class="ed-home-checks">
+                <span data-i18n="lessonExplanations">Lekcje z wyjaśnieniami i przykładami</span>
+                <span data-i18n="aiPractice">Indywidualna praktyka z AI</span>
+                <span data-i18n="resultsImprove">Wyniki i obszary do poprawy</span>
+                <span data-i18n="matchedPractice">Ćwiczenia dopasowane do wybranego zakresu</span>
+              </div>
+              <a class="ed-home-secondary ed-home-cta-large" data-backend-path="/account/login" href="#"><span data-i18n="explorePortal">Zobacz portal ucznia</span> →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="ai" class="ed-home-section ed-home-ai-section">
+        <div class="ed-home-container ed-home-ai-grid">
+          <div class="ed-home-ai-copy">
+            <span class="ed-home-kicker">EDULYTICS AI</span>
+            <h2 data-i18n="aiTitle">Generuj oceny z Edulytics AI</h2>
+            <p data-i18n="aiBody">Twórz pytania dla lekcji, działów i całego programu. Nauczyciel sprawdza, edytuje, zatwierdza i publikuje.</p>
+            <div class="ed-home-checks">
+              <span data-i18n="aiContext">Generowanie pytań w kontekście programu</span>
+              <span data-i18n="aiScope">Automatyczne powiązanie z zakresem</span>
+              <span data-i18n="aiEdit">Edytuj, regeneruj i zatwierdzaj</span>
+              <span data-i18n="aiFifty">Do 50 pytań w jednym generowaniu</span>
+            </div>
+          </div>
+          <div class="ed-home-ai-workbench">
+            <div class="ai-top"><strong>Edulytics AI</strong><span>AI supported</span></div>
+            <div class="ai-fields">
+              <div><small>Scope</small><b>Lesson · Algebra</b></div>
+              <div><small>Questions</small><b>20</b></div>
+              <div><small>Level</small><b>Stage 7</b></div>
+            </div>
+            <div class="ai-question"><span>1</span><div><small>Generated question</small><strong>2(x + 3) = 14</strong></div></div>
+            <div class="ai-actions"><span>Edit</span><span>Regenerate</span><b>Approve</b></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="platform" class="ed-home-section ed-home-philosophy">
+        <div class="ed-home-container">
+          <div class="ed-philosophy-head">
+            <h2 data-i18n="principlesTitle">Zasady Edulytics</h2>
+            <p data-i18n="principlesBody">Pięć zasad, które określają, w jaki sposób Edulytics łączy program nauczania, pracę nauczyciela, proces uczenia się i mierzalne postępy.</p>
+          </div>
+
+          <div class="ed-philosophy-map">
+            <div class="ed-philosophy-orbit" aria-hidden="true"></div>
+            <div class="ed-philosophy-hub"><span>EDULYTICS</span><strong>Learning Philosophy</strong></div>
+
+            <article class="ed-philosophy-card ed-philosophy-card--curriculum">
+              <div class="ed-philosophy-card__top"><span class="ed-philosophy-icon">▤</span><span class="ed-philosophy-number">01</span></div>
+              <h3 data-i18n="principle1">Program nauczania w centrum</h3>
+              <p data-i18n="principle1Body">Każda lekcja, ocena i informacja o postępach w nauce wynika z programu nauczania i powiązanych z nim efektów uczenia się.</p>
+            </article>
+            <article class="ed-philosophy-card ed-philosophy-card--understanding">
+              <div class="ed-philosophy-card__top"><span class="ed-philosophy-icon">◎</span><span class="ed-philosophy-number">02</span></div>
+              <h3 data-i18n="principle2">Zrozumienie przed oceną</h3>
+              <p data-i18n="principle2Body">Uczenie się to coś więcej niż udzielenie poprawnej odpowiedzi. Edulytics stawia zrozumienie w centrum sposobu mierzenia postępów.</p>
+            </article>
+            <article class="ed-philosophy-card ed-philosophy-card--teacher">
+              <div class="ed-philosophy-card__top"><span class="ed-philosophy-icon">✓</span><span class="ed-philosophy-number">03</span></div>
+              <h3 data-i18n="principle3">Nauczyciel zachowuje kontrolę</h3>
+              <p data-i18n="principle3Body">Technologia wspiera decyzje nauczyciela. Formalne sprawdziany są przez niego przeglądane, zatwierdzane i publikowane.</p>
+            </article>
+            <article class="ed-philosophy-card ed-philosophy-card--practice">
+              <div class="ed-philosophy-card__top"><span class="ed-philosophy-icon">↻</span><span class="ed-philosophy-number">04</span></div>
+              <h3 data-i18n="principle4">Ćwiczenie służy nauce</h3>
+              <p data-i18n="principle4Body">Uczniowie mogą ćwiczyć, popełniać błędy i wzmacniać słabsze obszary bez mylenia ćwiczeń z oficjalnymi ocenami szkolnymi.</p>
+            </article>
+            <article class="ed-philosophy-card ed-philosophy-card--next">
+              <div class="ed-philosophy-card__top"><span class="ed-philosophy-icon">→</span><span class="ed-philosophy-number">05</span></div>
+              <h3 data-i18n="principle5">Każdy wynik prowadzi do kolejnego kroku</h3>
+              <p data-i18n="principle5Body">Dane z oceniania pokazują poziom opanowania materiału, słabsze obszary i postępy, a następnie kierują ucznia do najbardziej odpowiedniego kolejnego działania.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ed-home-start ed-geo-scene">
+        <span class="geo geo-i"></span><span class="geo geo-j"></span>
+        <div class="ed-home-container">
+          <div class="ed-home-center-head">
+            <h2 data-i18n="getStarted">Zacznij korzystać z Edulytics</h2>
+            <p data-i18n="chooseRole">Wybierz swoją rolę i przejdź do logowania.</p>
+          </div>
+          <div class="role-grid">
+            <a data-backend-path="/account/login" href="#"><div class="role-icon">✎</div><strong data-i18n="teacher">Nauczyciel</strong></a>
+            <a data-backend-path="/account/login" href="#"><div class="role-icon">🏫</div><strong data-i18n="schoolLeader">Dyrektor szkoły</strong></a>
+            <a data-backend-path="/account/login" href="#"><div class="role-icon">🎒</div><strong data-i18n="student">Uczeń</strong></a>
+            <a data-backend-path="/account/login" href="#"><div class="role-icon">◎</div><strong data-i18n="staffAdmin">Personel / administrator</strong></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="ed-home-final-cta">
+        <div class="ed-home-container">
+          <div><span class="ed-home-kicker">EDULYTICS</span><h2 data-i18n="finalCta">Połącz program, lekcje, ocenianie i praktykę ucznia w jednej platformie.</h2></div>
+          <div class="ed-home-final-actions">
+            <a class="ed-home-cta ed-home-cta-large" data-backend-path="/contact/request-demo" href="#"><span data-i18n="demo">Poproś o demo</span> →</a>
+            <a class="ed-home-secondary ed-home-cta-large" data-backend-path="/contact" href="#" data-i18n="navContact">Kontakt</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ed-home-footer">
+        <div class="ed-home-container ed-home-footer-grid">
+          <div class="ed-home-footer-brand">
+            <img data-brand-logo src="/images/brand/edulityks-pl.png" alt="Edulityks" />
+            <p data-i18n="footerTagline">Matematyka. Nauka. Postęp.</p>
+          </div>
+          <div><h3 data-i18n="footerPlatform">Platforma</h3><a href="#platform">Principles</a><a href="#curricula" data-i18n="navCurricula">Programy</a><a href="#ai">Edulytics AI</a></div>
+          <div><h3 data-i18n="navSchools">Dla szkół</h3><a data-backend-path="/schools/overview" href="#" data-i18n="learnMore">Dowiedz się więcej</a><a data-backend-path="/contact/request-demo" href="#" data-i18n="demo">Poproś o demo</a></div>
+          <div><h3 data-i18n="footerUsers">Dla użytkowników</h3><a href="#teachers" data-i18n="navTeachers">Dla nauczycieli</a><a href="#students" data-i18n="navStudents">Dla uczniów</a><a data-backend-path="/account/login" href="#" data-i18n="login">Zaloguj się</a></div>
+          <div><h3 data-i18n="footerCompany">Firma</h3><a data-backend-path="/company/about" href="#" data-i18n="footerAbout">O nas</a><a data-backend-path="/contact" href="#" data-i18n="navContact">Kontakt</a><a data-backend-path="/help" href="#" data-i18n="footerHelp">Centrum pomocy</a></div>
+        </div>
+        <div class="ed-home-container ed-home-footer-bottom">
+          <span>© 2026 Edulytics</span>
+          <nav class="ed-home-footer-legal">
+            <a data-backend-path="/legal/privacy" href="#">Privacy</a>
+            <a data-backend-path="/legal/terms" href="#">Terms</a>
+            <a data-backend-path="/legal/content-sources" href="#">Content licences</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <aside class="frontdoor-workspace-status is-pending" data-workspace-status hidden role="status" aria-live="polite">
+    <span data-workspace-status-message>Przygotowujemy środowisko Edulytics…</span>
+    <button type="button" data-workspace-status-close aria-label="Close">×</button>
+  </aside>
+
+  <script src="/frontdoor.js" defer></script>
+</body>
+</html>
