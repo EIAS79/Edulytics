@@ -149,6 +149,28 @@
            url.pathname === '/ar/';
   }
 
+  function normalizeBackendLinks() {
+    document.querySelectorAll('a[href]').forEach(anchor => {
+      const raw = anchor.getAttribute('href');
+      if (!raw || raw.startsWith('#') ||
+          raw.startsWith('mailto:') || raw.startsWith('tel:') ||
+          raw.startsWith('javascript:')) {
+        return;
+      }
+
+      const url = new URL(raw, window.location.href);
+      if (shouldStayStatic(url)) return;
+
+      if (url.origin === window.location.origin) {
+        const destination = new URL(
+          `${url.pathname}${url.search}${url.hash}`,
+          APP_ORIGIN);
+        anchor.href = destination.toString();
+        anchor.dataset.frontdoorBackend = 'true';
+      }
+    });
+  }
+
   function installBackendRouting() {
     document.addEventListener('click', async event => {
       if (event.defaultPrevented || event.button !== 0 ||
@@ -167,10 +189,11 @@
       }
 
       const url = new URL(raw, window.location.href);
-      if (shouldStayStatic(url)) return;
+      const isBackend =
+        anchor.dataset.frontdoorBackend === 'true' ||
+        url.origin === APP_ORIGIN;
 
-      // External third-party links keep their normal behavior.
-      if (url.origin !== window.location.origin) return;
+      if (!isBackend) return;
 
       event.preventDefault();
       showStatus('preparing');
@@ -182,10 +205,7 @@
       }
 
       hideStatus();
-      const destination = new URL(
-        `${url.pathname}${url.search}${url.hash}`,
-        APP_ORIGIN);
-      window.location.assign(destination.toString());
+      window.location.assign(url.toString());
     }, true);
   }
 
@@ -206,6 +226,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     installLanguageRouting();
+    normalizeBackendLinks();
     installBackendRouting();
 
     // Wake the free application immediately without blocking the public page.
