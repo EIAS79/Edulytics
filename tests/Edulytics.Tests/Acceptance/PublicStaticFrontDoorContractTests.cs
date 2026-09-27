@@ -73,15 +73,23 @@ public sealed class PublicStaticFrontDoorContractTests
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
-            "normalizeBackendLinks",
-            runtime,
-            StringComparison.Ordinal);
-        Assert.Contains(
             "installBackendRouting",
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
-            "anchor.dataset.frontdoorBackend = 'true'",
+            "url.origin === window.location.origin",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "window.location.assign(",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "normalizeBackendLinks",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "frontdoorBackend",
             runtime,
             StringComparison.Ordinal);
 

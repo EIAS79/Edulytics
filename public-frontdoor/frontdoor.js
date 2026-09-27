@@ -149,28 +149,6 @@
            url.pathname === '/ar/';
   }
 
-  function normalizeBackendLinks() {
-    document.querySelectorAll('a[href]').forEach(anchor => {
-      const raw = anchor.getAttribute('href');
-      if (!raw || raw.startsWith('#') ||
-          raw.startsWith('mailto:') || raw.startsWith('tel:') ||
-          raw.startsWith('javascript:')) {
-        return;
-      }
-
-      const url = new URL(raw, window.location.href);
-      if (shouldStayStatic(url)) return;
-
-      if (url.origin === window.location.origin) {
-        const destination = new URL(
-          `${url.pathname}${url.search}${url.hash}`,
-          APP_ORIGIN);
-        anchor.href = destination.toString();
-        anchor.dataset.frontdoorBackend = 'true';
-      }
-    });
-  }
-
   function installBackendRouting() {
     document.addEventListener('click', async event => {
       if (event.defaultPrevented || event.button !== 0 ||
@@ -189,9 +167,13 @@
       }
 
       const url = new URL(raw, window.location.href);
+
+      // Keep every application URL on edulytiks.com. Render's static-site
+      // rewrite forwards missing dynamic paths to staging.edulytiks.com
+      // without changing the address shown in the browser.
       const isBackend =
-        anchor.dataset.frontdoorBackend === 'true' ||
-        url.origin === APP_ORIGIN;
+        url.origin === window.location.origin &&
+        !shouldStayStatic(url);
 
       if (!isBackend) return;
 
@@ -205,7 +187,8 @@
       }
 
       hideStatus();
-      window.location.assign(url.toString());
+      window.location.assign(
+        `${url.pathname}${url.search}${url.hash}`);
     }, true);
   }
 
@@ -226,7 +209,6 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     installLanguageRouting();
-    normalizeBackendLinks();
     installBackendRouting();
 
     // Wake the free application immediately without blocking the public page.
