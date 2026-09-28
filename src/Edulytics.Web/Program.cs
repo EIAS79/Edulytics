@@ -103,6 +103,57 @@ builder.Services
                     new CustomRequestCultureProvider(
                         context =>
                         {
+                            var path =
+                                context.Request.Path.Value?
+                                    .TrimEnd('/');
+
+                            if (!string.Equals(
+                                    path,
+                                    "/account/login",
+                                    StringComparison.OrdinalIgnoreCase) ||
+                                !context.Request.Query.TryGetValue(
+                                    "culture",
+                                    out var requestedCulture))
+                            {
+                                return Task.FromResult<
+                                    ProviderCultureResult?>(
+                                    null);
+                            }
+
+                            var culture =
+                                requestedCulture
+                                    .ToString()
+                                    .Trim()
+                                    .ToLowerInvariant();
+
+                            if (string.Equals(
+                                    culture,
+                                    "ar",
+                                    StringComparison.Ordinal))
+                            {
+                                culture = "en";
+                            }
+
+                            if (culture is not ("en" or "pl"))
+                            {
+                                return Task.FromResult<
+                                    ProviderCultureResult?>(
+                                    null);
+                            }
+
+                            return Task.FromResult<
+                                ProviderCultureResult?>(
+                                new ProviderCultureResult(
+                                    culture,
+                                    culture));
+                        }));
+
+            options
+                .RequestCultureProviders
+                .Add(
+                    new CustomRequestCultureProvider(
+                        context =>
+                        {
                             // Migrate visitors who selected Arabic through the
                             // legacy client-only public-language cookie. This
                             // preserves their choice on the first request after
