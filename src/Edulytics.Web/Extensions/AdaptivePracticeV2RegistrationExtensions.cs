@@ -56,6 +56,7 @@ public static class AdaptivePracticeV2RegistrationExtensions
         services.AddSingleton<AdaptivePracticeEvidenceProjector>();
         services.AddScoped<IAdaptivePracticeRepository, AdaptivePracticeRepository>();
         services.AddScoped<IAdaptivePracticeV2Service, AdaptivePracticeV2Service>();
+        services.AddScoped<IAdaptivePracticeShadowObserver, AdaptivePracticeShadowObserver>();
 
         return services;
     }
