@@ -69,7 +69,11 @@ public sealed class AdaptivePracticeEligibilityResolverTests
                 [schoolId]));
 
         var decision = resolver.Resolve(
-            Request(level.Key, ReadyPrimaryLesson));
+            new AdaptivePracticeEligibilityRequest(
+                schoolId,
+                level.Key,
+                ReadyPrimaryLesson,
+                IsMathematics: true));
 
         Assert.False(decision.IsEligible);
         Assert.Equal(
@@ -187,6 +191,26 @@ public sealed class AdaptivePracticeEligibilityResolverTests
         Assert.False(decision.IsEligible);
         Assert.Equal(
             AdaptivePracticeEligibilityReasonCodes.InvalidScope,
+            decision.ReasonCode);
+    }
+
+    [Fact]
+    public void OnModeRetainsOptionalSchoolAndLessonScope()
+    {
+        var level = PrimaryLevel(2);
+        var resolver = new AdaptivePracticeEligibilityResolver(
+            Policy(
+                AdaptivePracticeV2Mode.On,
+                [level.Key],
+                []));
+
+        var decision = resolver.Resolve(
+            Request(level.Key, ReadyPrimaryLesson));
+
+        Assert.True(decision.IsEligible);
+        Assert.True(decision.IsLearnerFacing);
+        Assert.Equal(
+            AdaptivePracticeEligibilityReasonCodes.Eligible,
             decision.ReasonCode);
     }
 
