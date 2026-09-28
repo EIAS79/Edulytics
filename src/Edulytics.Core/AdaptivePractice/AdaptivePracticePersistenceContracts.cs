@@ -31,8 +31,13 @@ public enum AdaptiveMisconceptionStatus
 
 public interface IAdaptivePracticeRepository
 {
-    Task AddSessionAsync(
+    Task CreateSessionWithFirstTurnAsync(
         AdaptivePracticeSession session,
+        AssessmentItem item,
+        IReadOnlyList<AssessmentItemOutcome> itemOutcomes,
+        StudentItemExposure exposure,
+        AdaptiveDecisionSnapshot decision,
+        AdaptivePracticeTurn turn,
         CancellationToken cancellationToken = default);
 
     Task<AdaptivePracticeSession?> GetSessionAsync(
@@ -40,19 +45,30 @@ public interface IAdaptivePracticeRepository
         Guid sessionId,
         CancellationToken cancellationToken = default);
 
+    Task<AdaptivePracticeTurn?> GetTurnAsync(
+        Guid schoolId,
+        Guid sessionId,
+        int sequence,
+        CancellationToken cancellationToken = default);
+
     Task<IReadOnlyList<AdaptivePracticeTurn>> GetTurnsAsync(
         Guid schoolId,
         Guid sessionId,
         CancellationToken cancellationToken = default);
 
-    Task AddDecisionAndTurnAsync(
-        AdaptiveDecisionSnapshot decision,
-        AdaptivePracticeTurn turn,
+    Task<AssessmentItem?> GetItemAsync(
+        Guid schoolId,
+        Guid assessmentItemId,
         CancellationToken cancellationToken = default);
 
-    Task SaveAnsweredTurnAsync(
-        AdaptivePracticeTurn turn,
+    Task CommitAnsweredTurnAsync(
         AdaptivePracticeSession session,
+        AdaptivePracticeTurn answeredTurn,
+        AssessmentItem? nextItem,
+        IReadOnlyList<AssessmentItemOutcome> nextItemOutcomes,
+        StudentItemExposure? nextExposure,
+        AdaptiveDecisionSnapshot? nextDecision,
+        AdaptivePracticeTurn? nextTurn,
         CancellationToken cancellationToken = default);
 
     Task<IReadOnlyList<StudentMisconceptionState>>
