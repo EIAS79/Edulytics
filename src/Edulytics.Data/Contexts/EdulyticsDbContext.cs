@@ -62,6 +62,7 @@ public class EdulyticsDbContext
     public DbSet<AdaptivePracticeTurn> AdaptivePracticeTurns => Set<AdaptivePracticeTurn>();
     public DbSet<StudentMisconceptionState> StudentMisconceptionStates => Set<StudentMisconceptionState>();
     public DbSet<StudentRepresentationFluencyState> StudentRepresentationFluencyStates => Set<StudentRepresentationFluencyState>();
+    public DbSet<AdaptivePracticeShadowObservation> AdaptivePracticeShadowObservations => Set<AdaptivePracticeShadowObservation>();
     public DbSet<StudentOutcomeMastery> StudentOutcomeMasteries => Set<StudentOutcomeMastery>();
     public DbSet<ClassOutcomeSummary> ClassOutcomeSummaries => Set<ClassOutcomeSummary>();
     public DbSet<ClassTopicSummary> ClassTopicSummaries => Set<ClassTopicSummary>();
@@ -204,6 +205,7 @@ public class EdulyticsDbContext
         builder.ApplyConfiguration(new AdaptivePracticeTurnConfiguration());
         builder.ApplyConfiguration(new StudentMisconceptionStateConfiguration());
         builder.ApplyConfiguration(new StudentRepresentationFluencyStateConfiguration());
+        builder.ApplyConfiguration(new AdaptivePracticeShadowObservationConfiguration());
         builder.ApplyConfiguration(new StudentOutcomeMasteryConfiguration());
         builder.ApplyConfiguration(new ClassOutcomeSummaryConfiguration());
         builder.ApplyConfiguration(new ClassTopicSummaryConfiguration());
