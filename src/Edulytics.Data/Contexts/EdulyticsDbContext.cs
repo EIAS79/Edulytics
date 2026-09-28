@@ -57,6 +57,11 @@ public class EdulyticsDbContext
     public DbSet<PracticeResponse> PracticeResponses => Set<PracticeResponse>();
     public DbSet<LearningEvidence> LearningEvidence => Set<LearningEvidence>();
     public DbSet<StudentItemExposure> StudentItemExposures => Set<StudentItemExposure>();
+    public DbSet<AdaptivePracticeSession> AdaptivePracticeSessions => Set<AdaptivePracticeSession>();
+    public DbSet<AdaptiveDecisionSnapshot> AdaptiveDecisionSnapshots => Set<AdaptiveDecisionSnapshot>();
+    public DbSet<AdaptivePracticeTurn> AdaptivePracticeTurns => Set<AdaptivePracticeTurn>();
+    public DbSet<StudentMisconceptionState> StudentMisconceptionStates => Set<StudentMisconceptionState>();
+    public DbSet<StudentRepresentationFluencyState> StudentRepresentationFluencyStates => Set<StudentRepresentationFluencyState>();
     public DbSet<StudentOutcomeMastery> StudentOutcomeMasteries => Set<StudentOutcomeMastery>();
     public DbSet<ClassOutcomeSummary> ClassOutcomeSummaries => Set<ClassOutcomeSummary>();
     public DbSet<ClassTopicSummary> ClassTopicSummaries => Set<ClassTopicSummary>();
@@ -194,6 +199,11 @@ public class EdulyticsDbContext
         builder.ApplyConfiguration(new PracticeResponseConfiguration());
         builder.ApplyConfiguration(new LearningEvidenceConfiguration());
         builder.ApplyConfiguration(new StudentItemExposureConfiguration());
+        builder.ApplyConfiguration(new AdaptivePracticeSessionConfiguration());
+        builder.ApplyConfiguration(new AdaptiveDecisionSnapshotConfiguration());
+        builder.ApplyConfiguration(new AdaptivePracticeTurnConfiguration());
+        builder.ApplyConfiguration(new StudentMisconceptionStateConfiguration());
+        builder.ApplyConfiguration(new StudentRepresentationFluencyStateConfiguration());
         builder.ApplyConfiguration(new StudentOutcomeMasteryConfiguration());
         builder.ApplyConfiguration(new ClassOutcomeSummaryConfiguration());
         builder.ApplyConfiguration(new ClassTopicSummaryConfiguration());
