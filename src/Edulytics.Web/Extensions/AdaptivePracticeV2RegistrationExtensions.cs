@@ -4,6 +4,7 @@ using Edulytics.Services.AdaptivePractice;
 using Edulytics.Services.AdaptiveAssessment;
 using Edulytics.Services.Mathematics.Difficulty;
 using Edulytics.Web.AdaptivePractice;
+using Edulytics.Web.Health;
 using Microsoft.Extensions.Options;
 
 namespace Edulytics.Web.Extensions;
@@ -28,6 +29,18 @@ public static class AdaptivePracticeV2RegistrationExtensions
                 options =>
                     options.MaxLessonQuestions is >= 1 and <= 30,
                 "AdaptivePracticeV2 MaxLessonQuestions must be between 1 and 30.")
+            .Validate(
+                options =>
+                    options.MinimumPsychometricResponses is >= 10 and <= 10000 &&
+                    options.MinimumPsychometricStudents is >= 5 and <= 1000 &&
+                    options.MinimumResearchCohortSize is >= 10 and <= 10000 &&
+                    options.MaximumIntelligenceRows is >= 50 and <= 2000,
+                "AdaptivePracticeV2 intelligence thresholds or resource limits are invalid.")
+            .Validate(
+                options =>
+                    !options.EnableLiveGroupSession ||
+                    options.EnableLiveClassroom,
+                "AdaptivePracticeV2 Live Group Session requires Live Classroom Intelligence.")
             .Validate(
                 options =>
                     Enum.TryParse<AdaptivePracticeV2Mode>(
@@ -79,7 +92,13 @@ public static class AdaptivePracticeV2RegistrationExtensions
         services.AddScoped<IAdaptivePracticeRepository, AdaptivePracticeRepository>();
         services.AddScoped<IAdaptivePracticeV2Service, AdaptivePracticeV2Service>();
         services.AddScoped<IAdaptiveIntelligenceV2Service, AdaptiveIntelligenceV2Service>();
+        services.AddScoped<IAdaptiveProgrammeClosureService, AdaptiveProgrammeClosureService>();
         services.AddScoped<IAdaptivePracticeShadowObserver, AdaptivePracticeShadowObserver>();
+
+        services.AddHealthChecks()
+            .AddCheck<AdaptivePracticeV2ReadinessHealthCheck>(
+                "adaptive-v2",
+                tags: ["ready"]);
 
         return services;
     }
