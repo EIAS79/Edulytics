@@ -1,0 +1,84 @@
+@model Edulytics.Services.AdaptivePractice.AdaptiveQuestionLogView
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = "Question log";
+}
+
+<section class="student-progress-page">
+    <header class="student-progress-hero">
+        <div>
+            <span class="student-eyebrow">Adaptive Practice V2</span>
+            <h1>Question log</h1>
+            <p>@Model.QuestionCount questions across @Model.SessionCount adaptive sessions.</p>
+            <small>
+                This log is your own learner evidence. It shows why the adaptive engine selected each question.
+            </small>
+        </div>
+    </header>
+
+    @if (Model.Questions.Count == 0)
+    {
+        <section class="student-panel">
+            <p class="student-empty">No adaptive questions have been recorded yet.</p>
+        </section>
+    }
+    else
+    {
+        <section class="student-panel">
+            <div class="student-progress-skill-list">
+                @foreach (var item in Model.Questions)
+                {
+                    <article class="student-progress-skill-row">
+                        <div class="student-progress-skill-name">
+                            <strong>#@item.Sequence · @item.SkillId</strong>
+                            <span class="student-skill-status @(item.IsCorrect == true ? "is-positive" : item.IsCorrect == false ? "is-negative" : "is-muted")">
+                                @(item.IsCorrect == true ? "Correct" : item.IsCorrect == false ? "Needs review" : "Not answered")
+                            </span>
+                        </div>
+
+                        <p>@item.Prompt</p>
+
+                        <div class="student-progress-skill-metrics">
+                            <div>
+                                <span>Family</span>
+                                <strong>@item.QuestionFamily</strong>
+                            </div>
+                            <div>
+                                <span>Difficulty</span>
+                                <strong>@item.Difficulty</strong>
+                            </div>
+                            <div>
+                                <span>Complexity</span>
+                                <strong>@item.MathematicalComplexityScore</strong>
+                            </div>
+                            <div>
+                                <span>Representation</span>
+                                <strong>@(item.Representation ?? "—")</strong>
+                            </div>
+                        </div>
+
+                        @if (!string.IsNullOrWhiteSpace(item.SubmittedAnswer))
+                        {
+                            <p><strong>Your answer:</strong> @item.SubmittedAnswer</p>
+                        }
+
+                        @if (!string.IsNullOrWhiteSpace(item.DecisionReasonCode))
+                        {
+                            <p><strong>Why this question:</strong> @item.DecisionReasonCode</p>
+                        }
+
+                        @if (!string.IsNullOrWhiteSpace(item.MisconceptionFocusId))
+                        {
+                            <p><strong>Misconception focus:</strong> @item.MisconceptionFocusId</p>
+                        }
+
+                        @if (item.IsIndependentConfirmation)
+                        {
+                            <p><strong>Independent confirmation:</strong> yes</p>
+                        }
+                    </article>
+                }
+            </div>
+        </section>
+    }
+</section>
