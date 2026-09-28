@@ -103,21 +103,33 @@ builder.Services
                     new CustomRequestCultureProvider(
                         context =>
                         {
-                            // Migrate visitors who selected Arabic through the
-                            // legacy client-only public-language cookie. This
-                            // preserves their choice on the first request after
-                            // deployment and upgrades it to the canonical culture.
-                            if (context.Request.Cookies.TryGetValue(
-                                    "Edulytics.PublicLanguage",
-                                    out var legacyPublicLanguage) &&
-                                string.Equals(
-                                    legacyPublicLanguage,
-                                    "ar",
-                                    StringComparison.OrdinalIgnoreCase))
+                            var requestedCulture =
+                                context.Request.Query["culture"]
+                                    .ToString()
+                                    .Trim()
+                                    .ToLowerInvariant();
+
+                            if (CultureCookie.IsSupported(requestedCulture))
                             {
+                                // The public website supports Arabic, while
+                                // the login/application gateway is bilingual.
+                                // Normalize Arabic to English before MVC/view
+                                // localization runs so the entire login page
+                                // uses one consistent culture.
+                                if (context.Request.Path.Equals(
+                                        "/account/login",
+                                        StringComparison.OrdinalIgnoreCase) &&
+                                    string.Equals(
+                                        requestedCulture,
+                                        "ar",
+                                        StringComparison.Ordinal))
+                                {
+                                    requestedCulture = "en";
+                                }
+
                                 context.Response.Cookies.Append(
                                     CultureCookie.Name,
-                                    CultureCookie.CreateValue("ar"),
+                                    CultureCookie.CreateValue(requestedCulture),
                                     new CookieOptions
                                     {
                                         Path = "/",
@@ -131,14 +143,77 @@ builder.Services
                                 return Task.FromResult<
                                     ProviderCultureResult?>(
                                     new ProviderCultureResult(
-                                        "ar",
-                                        "ar"));
+                                        requestedCulture,
+                                        requestedCulture));
+                            }
+
+                            // Migrate visitors who selected Arabic through the
+                            // legacy client-only public-language cookie. This
+                            // preserves their choice on the first request after
+                            // deployment and upgrades it to the canonical culture.
+                            if (context.Request.Cookies.TryGetValue(
+                                    "Edulytics.PublicLanguage",
+                                    out var legacyPublicLanguage) &&
+                                string.Equals(
+                                    legacyPublicLanguage,
+                                    "ar",
+                                    StringComparison.OrdinalIgnoreCase))
+                            {
+                                var legacyCulture =
+                                    context.Request.Path.Equals(
+                                            "/account/login",
+                                            StringComparison.OrdinalIgnoreCase)
+                                        ? "en"
+                                        : "ar";
+
+                                context.Response.Cookies.Append(
+                                    CultureCookie.Name,
+                                    CultureCookie.CreateValue(legacyCulture),
+                                    new CookieOptions
+                                    {
+                                        Path = "/",
+                                        Expires = DateTimeOffset.UtcNow.AddYears(1),
+                                        IsEssential = true,
+                                        HttpOnly = true,
+                                        SameSite = SameSiteMode.Strict,
+                                        Secure = context.Request.IsHttps
+                                    });
+
+                                return Task.FromResult<
+                                    ProviderCultureResult?>(
+                                    new ProviderCultureResult(
+                                        legacyCulture,
+                                        legacyCulture));
                             }
 
                             if (CultureCookie.TryRead(
                                     context.Request,
                                     out var culture))
                             {
+                                if (context.Request.Path.Equals(
+                                        "/account/login",
+                                        StringComparison.OrdinalIgnoreCase) &&
+                                    string.Equals(
+                                        culture,
+                                        "ar",
+                                        StringComparison.Ordinal))
+                                {
+                                    culture = "en";
+
+                                    context.Response.Cookies.Append(
+                                        CultureCookie.Name,
+                                        CultureCookie.CreateValue(culture),
+                                        new CookieOptions
+                                        {
+                                            Path = "/",
+                                            Expires = DateTimeOffset.UtcNow.AddYears(1),
+                                            IsEssential = true,
+                                            HttpOnly = true,
+                                            SameSite = SameSiteMode.Strict,
+                                            Secure = context.Request.IsHttps
+                                        });
+                                }
+
                                 return Task.FromResult<
                                     ProviderCultureResult?>(
                                     new ProviderCultureResult(
