@@ -1,9 +1,14 @@
-# Adaptive V2 implementation branch policy (2026-09-28)
-# Automatic triggers are disabled on this branch. This workflow is retained
-# for explicit manual verification only while the additive V2 work is built.
 name: Phase29 Cambridge Primary Rollout
 
 on:
+  push:
+    branches:
+      - phase29/curriculum-experience-and-content
+    paths:
+      - 'tools/phase29/cambridge_primary_dfe_rollout.py'
+      - 'tools/phase29/patch_supporting_blueprint_contract.py'
+      - 'tools/phase29/patch_cambridge_primary_rollout_tests.py'
+      - '.github/workflows/phase29-cambridge-primary-rollout.yml'
   workflow_dispatch:
 
 permissions:
