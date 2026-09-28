@@ -354,7 +354,7 @@ public sealed class AdaptivePracticeShadowObserver(
         AssessmentItemDifficulty difficulty) =>
         difficulty switch
         {
-            AssessmentItemDifficulty.Basic => 30,
+            AssessmentItemDifficulty.Easy => 30,
             AssessmentItemDifficulty.Medium => 42,
             AssessmentItemDifficulty.Challenging => 68,
             _ => 42
