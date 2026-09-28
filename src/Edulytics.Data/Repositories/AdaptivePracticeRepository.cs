@@ -269,6 +269,28 @@ public sealed class AdaptivePracticeRepository(
         existing.EngineVersion = state.EngineVersion;
     }
 
+    public async Task AddShadowObservationIfMissingAsync(
+        AdaptivePracticeShadowObservation observation,
+        CancellationToken cancellationToken = default)
+    {
+        var exists =
+            await context.AdaptivePracticeShadowObservations
+                .AnyAsync(
+                    x =>
+                        x.SchoolId == observation.SchoolId &&
+                        x.V1AttemptId == observation.V1AttemptId &&
+                        x.V1AttemptItemId == observation.V1AttemptItemId,
+                    cancellationToken);
+
+        if (exists)
+            return;
+
+        context.AdaptivePracticeShadowObservations.Add(
+            observation);
+
+        await context.SaveChangesAsync(cancellationToken);
+    }
+
     private static void ValidateGeneratedTurn(
         AdaptivePracticeSession session,
         AssessmentItem item,
