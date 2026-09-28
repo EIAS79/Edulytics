@@ -49,9 +49,11 @@ public static class AdaptivePracticeV2RegistrationExtensions
         services.AddSingleton<MathematicsDifficultyEngine>();
         services.AddSingleton<AdaptiveNextItemDecisionEngine>();
         services.AddSingleton<AdaptiveRemediationStateMachine>();
+        services.AddSingleton<AdaptiveLearningStateAssembler>();
         services.AddSingleton<AdaptivePracticeShadowEvaluator>();
         services.AddSingleton<AdaptiveVerifiedItemGenerator>();
         services.AddScoped<IAdaptivePracticeRepository, AdaptivePracticeRepository>();
+        services.AddScoped<IAdaptivePracticeV2Service, AdaptivePracticeV2Service>();
 
         return services;
     }
