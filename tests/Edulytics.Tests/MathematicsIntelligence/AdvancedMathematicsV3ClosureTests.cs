@@ -171,7 +171,7 @@ public sealed class AdvancedMathematicsV3ClosureTests
         Assert.False(
             aLevel.RootElement
                 .GetProperty("gatePolicy")
-                .GetProperty("globalAsALevel9709CapabilityClaimAllowed")
+                .GetProperty("global9709CapabilityClaimAllowed")
                 .GetBoolean());
         Assert.False(
             aLevel.RootElement
