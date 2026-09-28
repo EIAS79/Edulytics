@@ -155,7 +155,7 @@ public sealed class AdaptiveNextItemDecisionEngine(
         }
 
         var representationAverage = state.RepresentationFluency.Count == 0
-            ? 1m
+            ? 0.50m
             : state.RepresentationFluency.Average(x => x.Fluency);
 
         var misconceptionCount = state.Misconceptions
@@ -174,6 +174,21 @@ public sealed class AdaptiveNextItemDecisionEngine(
             recommendation.TargetComplexityScore,
             0,
             MaximumComplexityScore);
+
+        // Session evidence is allowed to demonstrate readiness beyond an older
+        // official mastery snapshot, but only after at least two consecutive
+        // verified successes and while no prerequisite/misconception lock is active.
+        // This is what allows: recover → confirm → then progress one bounded step.
+        if (state.RecentSuccessfulItems >= 2 &&
+            state.PrerequisiteMastery >= BlockingPrerequisiteThreshold &&
+            activeMisconception is null)
+        {
+            desired = Math.Max(
+                desired,
+                Math.Min(
+                    MaximumComplexityScore,
+                    state.CurrentComplexityScore + ComplexityStepLimit));
+        }
 
         var bounded = BoundStep(
             state.CurrentComplexityScore,
