@@ -159,9 +159,16 @@ builder.Services
                                     "ar",
                                     StringComparison.OrdinalIgnoreCase))
                             {
+                                var legacyCulture =
+                                    context.Request.Path.Equals(
+                                            "/account/login",
+                                            StringComparison.OrdinalIgnoreCase)
+                                        ? "en"
+                                        : "ar";
+
                                 context.Response.Cookies.Append(
                                     CultureCookie.Name,
-                                    CultureCookie.CreateValue("ar"),
+                                    CultureCookie.CreateValue(legacyCulture),
                                     new CookieOptions
                                     {
                                         Path = "/",
@@ -175,14 +182,38 @@ builder.Services
                                 return Task.FromResult<
                                     ProviderCultureResult?>(
                                     new ProviderCultureResult(
-                                        "ar",
-                                        "ar"));
+                                        legacyCulture,
+                                        legacyCulture));
                             }
 
                             if (CultureCookie.TryRead(
                                     context.Request,
                                     out var culture))
                             {
+                                if (context.Request.Path.Equals(
+                                        "/account/login",
+                                        StringComparison.OrdinalIgnoreCase) &&
+                                    string.Equals(
+                                        culture,
+                                        "ar",
+                                        StringComparison.Ordinal))
+                                {
+                                    culture = "en";
+
+                                    context.Response.Cookies.Append(
+                                        CultureCookie.Name,
+                                        CultureCookie.CreateValue(culture),
+                                        new CookieOptions
+                                        {
+                                            Path = "/",
+                                            Expires = DateTimeOffset.UtcNow.AddYears(1),
+                                            IsEssential = true,
+                                            HttpOnly = true,
+                                            SameSite = SameSiteMode.Strict,
+                                            Secure = context.Request.IsHttps
+                                        });
+                                }
+
                                 return Task.FromResult<
                                     ProviderCultureResult?>(
                                     new ProviderCultureResult(
