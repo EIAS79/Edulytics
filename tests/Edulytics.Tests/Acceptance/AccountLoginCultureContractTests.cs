@@ -11,10 +11,10 @@ public sealed class AccountLoginCultureContractTests
             "Program.cs");
 
         var loginProviderIndex = source.IndexOf(
-            ""/account/login"",
+            "\"/account/login\",
             StringComparison.Ordinal);
         var legacyArabicCookieIndex = source.IndexOf(
-            ""Edulytics.PublicLanguage"",
+            "\"Edulytics.PublicLanguage\",
             StringComparison.Ordinal);
 
         Assert.True(loginProviderIndex >= 0);
