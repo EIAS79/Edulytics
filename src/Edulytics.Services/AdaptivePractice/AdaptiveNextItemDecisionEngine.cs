@@ -84,6 +84,7 @@ public sealed class AdaptiveNextItemDecisionEngine(
                 reason,
                 remediationLockActive: true,
                 confirmationRequired: true,
+                isIndependentConfirmation: false,
                 progressionEligible: false);
         }
 
@@ -114,6 +115,7 @@ public sealed class AdaptiveNextItemDecisionEngine(
                         .MisconceptionConfirmationRequired,
                     remediationLockActive: true,
                     confirmationRequired: true,
+                    isIndependentConfirmation: true,
                     progressionEligible: false);
             }
 
@@ -128,6 +130,7 @@ public sealed class AdaptiveNextItemDecisionEngine(
                     AdaptivePracticeDecisionReasonCodes.RemediationLockActive,
                     remediationLockActive: true,
                     confirmationRequired: true,
+                    isIndependentConfirmation: false,
                     progressionEligible: false);
             }
         }
@@ -147,6 +150,7 @@ public sealed class AdaptiveNextItemDecisionEngine(
                 AdaptivePracticeDecisionReasonCodes.PrerequisiteRecovery,
                 remediationLockActive: false,
                 confirmationRequired: false,
+                isIndependentConfirmation: false,
                 progressionEligible: false);
         }
 
@@ -190,6 +194,7 @@ public sealed class AdaptiveNextItemDecisionEngine(
             reason,
             remediationLockActive: false,
             confirmationRequired: false,
+            isIndependentConfirmation: false,
             progressionEligible:
                 bounded > state.CurrentComplexityScore);
     }
@@ -203,6 +208,7 @@ public sealed class AdaptiveNextItemDecisionEngine(
         string reason,
         bool remediationLockActive,
         bool confirmationRequired,
+        bool isIndependentConfirmation,
         bool progressionEligible) =>
         new(
             state.SkillId,
@@ -217,6 +223,7 @@ public sealed class AdaptiveNextItemDecisionEngine(
             RequiresFreshExposure: true,
             remediationLockActive,
             confirmationRequired,
+            isIndependentConfirmation,
             progressionEligible,
             AdaptivePracticeV2Versions.EngineVersion,
             AdaptivePracticeV2Versions.PolicyVersion);
