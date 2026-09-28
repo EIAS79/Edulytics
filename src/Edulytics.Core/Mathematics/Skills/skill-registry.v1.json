@@ -1783,6 +1783,22 @@
       "v2QuestionFamilies": [
         "supporting.algebra.systems_inequalities.mixed"
       ]
+    },
+    {
+      "id": "calculus.area_between_curves",
+      "domain": "calculus",
+      "canonicalName": "Find exact geometric area between bounded polynomial curves",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "algebra.polynomial.normalize.exact_rational",
+        "calculus.polynomial.definite_integral.exact",
+        "calculus.area_between_curves.exact",
+        "calculus.verify.area_between_curves.piecewise"
+      ],
+      "v2QuestionFamilies": [
+        "calculus.area_between_curves.polynomial_exact"
+      ]
     }
   ]
 }
