@@ -1,9 +1,40 @@
-# Adaptive V2 implementation branch policy (2026-09-28)
-# Automatic triggers are disabled on this branch. This workflow is retained
-# for explicit manual verification only while the additive V2 work is built.
 name: Evaluation Engine
 
 on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/Edulytics.Core/Analytics/**'
+      - 'src/Edulytics.Core/Mathematics/Skills/**'
+      - 'src/Edulytics.Data/Repositories/AnalyticsRepository.cs'
+      - 'src/Edulytics.Services/Analytics/**'
+      - 'src/Edulytics.Web/Controllers/AnalyticsController.cs'
+      - 'src/Edulytics.Web/Extensions/AnalyticsRegistrationExtensions.cs'
+      - 'src/Edulytics.Web/Views/Analytics/**'
+      - 'src/Edulytics.Web/Resources/AnalyticsResource*.resx'
+      - 'src/Edulytics.Web/wwwroot/css/site.css'
+      - 'tests/Edulytics.Tests/Phase43/**'
+      - 'tests/Edulytics.Tests/Phase44/**'
+      - 'docs/evaluation/**'
+      - '.github/workflows/evaluation-engine.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/Edulytics.Core/Analytics/**'
+      - 'src/Edulytics.Core/Mathematics/Skills/**'
+      - 'src/Edulytics.Data/Repositories/AnalyticsRepository.cs'
+      - 'src/Edulytics.Services/Analytics/**'
+      - 'src/Edulytics.Web/Controllers/AnalyticsController.cs'
+      - 'src/Edulytics.Web/Extensions/AnalyticsRegistrationExtensions.cs'
+      - 'src/Edulytics.Web/Views/Analytics/**'
+      - 'src/Edulytics.Web/Resources/AnalyticsResource*.resx'
+      - 'src/Edulytics.Web/wwwroot/css/site.css'
+      - 'tests/Edulytics.Tests/Phase43/**'
+      - 'tests/Edulytics.Tests/Phase44/**'
+      - 'docs/evaluation/**'
+      - '.github/workflows/evaluation-engine.yml'
   workflow_dispatch:
 
 permissions:
