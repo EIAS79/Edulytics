@@ -4991,6 +4991,28 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "calculus.area_between_curves.polynomial_exact",
+      "version": 1,
+      "skillId": "calculus.area_between_curves",
+      "requiredCapabilities": [
+        "rational.exact_arithmetic",
+        "algebra.polynomial.normalize.exact_rational",
+        "calculus.polynomial.definite_integral.exact",
+        "calculus.area_between_curves.exact",
+        "calculus.verify.area_between_curves.piecewise"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "independent-exact-intersections-piecewise-ordering-and-absolute-polynomial-integration",
+      "representations": [
+        "symbolic",
+        "graph",
+        "region_of_integration"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
     }
   ],
   "variantPolicy": {
