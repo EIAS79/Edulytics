@@ -130,6 +130,9 @@ public sealed class AdaptivePracticeTurnConfiguration :
             .HasConversion<int>();
         builder.Property(x => x.MisconceptionFocusId)
             .HasMaxLength(200);
+        builder.Property(x => x.IsIndependentConfirmation)
+            .IsRequired()
+            .HasDefaultValue(false);
         builder.Property(x => x.SubmittedAnswer)
             .HasMaxLength(2000);
         builder.Property(x => x.Score).HasPrecision(10, 2);
