@@ -60,11 +60,13 @@ public sealed class AdaptivePracticeEligibilityResolverTests
     public void PrimaryLevelIsNotEnoughWithoutExplicitAllowList()
     {
         var level = PrimaryLevel(2);
+        var schoolId = Guid.NewGuid();
         var resolver = new AdaptivePracticeEligibilityResolver(
             Policy(
                 AdaptivePracticeV2Mode.Canary,
                 [],
-                [ReadyPrimaryLesson]));
+                [ReadyPrimaryLesson],
+                [schoolId]));
 
         var decision = resolver.Resolve(
             Request(level.Key, ReadyPrimaryLesson));
@@ -72,6 +74,52 @@ public sealed class AdaptivePracticeEligibilityResolverTests
         Assert.False(decision.IsEligible);
         Assert.Equal(
             AdaptivePracticeEligibilityReasonCodes.CurriculumLevelNotAllowed,
+            decision.ReasonCode);
+    }
+
+    [Fact]
+    public void CanaryWithoutExplicitSchoolAllowListFailsClosed()
+    {
+        var level = PrimaryLevel(2);
+        var resolver = new AdaptivePracticeEligibilityResolver(
+            Policy(
+                AdaptivePracticeV2Mode.Canary,
+                [level.Key],
+                [ReadyPrimaryLesson]));
+
+        var decision = resolver.Resolve(
+            Request(level.Key, ReadyPrimaryLesson));
+
+        Assert.False(decision.IsEligible);
+        Assert.False(decision.IsLearnerFacing);
+        Assert.Equal(
+            AdaptivePracticeEligibilityReasonCodes.SchoolNotAllowed,
+            decision.ReasonCode);
+    }
+
+    [Fact]
+    public void CanaryWithoutExplicitLessonAllowListFailsClosed()
+    {
+        var level = PrimaryLevel(2);
+        var schoolId = Guid.NewGuid();
+        var resolver = new AdaptivePracticeEligibilityResolver(
+            Policy(
+                AdaptivePracticeV2Mode.Canary,
+                [level.Key],
+                [],
+                [schoolId]));
+
+        var decision = resolver.Resolve(
+            new AdaptivePracticeEligibilityRequest(
+                schoolId,
+                level.Key,
+                ReadyPrimaryLesson,
+                IsMathematics: true));
+
+        Assert.False(decision.IsEligible);
+        Assert.False(decision.IsLearnerFacing);
+        Assert.Equal(
+            AdaptivePracticeEligibilityReasonCodes.LessonNotAllowed,
             decision.ReasonCode);
     }
 
@@ -98,14 +146,20 @@ public sealed class AdaptivePracticeEligibilityResolverTests
     public void MissingReadyVerifiedPracticeCapabilityFailsClosed()
     {
         var level = PrimaryLevel(2);
+        var schoolId = Guid.NewGuid();
         var resolver = new AdaptivePracticeEligibilityResolver(
             Policy(
                 AdaptivePracticeV2Mode.Canary,
                 [level.Key],
-                ["PED:DOES-NOT-EXIST"]));
+                ["PED:DOES-NOT-EXIST"],
+                [schoolId]));
 
         var decision = resolver.Resolve(
-            Request(level.Key, "PED:DOES-NOT-EXIST"));
+            new AdaptivePracticeEligibilityRequest(
+                schoolId,
+                level.Key,
+                "PED:DOES-NOT-EXIST",
+                IsMathematics: true));
 
         Assert.False(decision.IsEligible);
         Assert.Equal(
