@@ -86,9 +86,20 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         if (targeted.Length == 0)
             return;
 
+        // Production can start multiple instances during a rolling deploy.
+        // Avoid taking the PostgreSQL advisory write lock when the reviewed
+        // correction set is already at exact parity. Without this fast path,
+        // a second instance can wait behind a long-running idempotent seed and
+        // hit the database command timeout before the web host starts.
+        var parityMismatches =
+            await FindReviewedProductionParityMismatchesAsync(ct);
+
+        if (parityMismatches.Count == 0)
+            return;
+
         await SeedDocumentsAsync(targeted, ct);
 
-        var parityMismatches =
+        parityMismatches =
             await FindReviewedProductionParityMismatchesAsync(ct);
 
         if (parityMismatches.Count != 0)
