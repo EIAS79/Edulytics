@@ -30,6 +30,20 @@ public sealed class AdaptivePracticeV2Options
 
     public bool EnableDiagnosticV2 { get; set; }
 
+    public bool EnableLiveGroupSession { get; set; }
+
+    public bool EnablePsychometricReadiness { get; set; }
+
+    public bool EnableResearchProgramme { get; set; }
+
+    public int MinimumPsychometricResponses { get; set; } = 30;
+
+    public int MinimumPsychometricStudents { get; set; } = 10;
+
+    public int MinimumResearchCohortSize { get; set; } = 10;
+
+    public int MaximumIntelligenceRows { get; set; } = 500;
+
     public AdaptivePracticeV2Policy ToPolicy()
     {
         var mode = Enum.TryParse<AdaptivePracticeV2Mode>(
@@ -59,6 +73,15 @@ public sealed class AdaptivePracticeV2Options
             EnableDirectNextSteps,
             EnableQuestionLog,
             EnableLiveClassroom,
-            EnableDiagnosticV2);
+            EnableDiagnosticV2)
+        {
+            EnableLiveGroupSession = EnableLiveGroupSession,
+            EnablePsychometricReadiness = EnablePsychometricReadiness,
+            EnableResearchProgramme = EnableResearchProgramme,
+            MinimumPsychometricResponses = MinimumPsychometricResponses,
+            MinimumPsychometricStudents = MinimumPsychometricStudents,
+            MinimumResearchCohortSize = MinimumResearchCohortSize,
+            MaximumIntelligenceRows = MaximumIntelligenceRows
+        };
     }
 }
