@@ -140,7 +140,16 @@
 
   function withPublicCulture(url) {
     const target = new URL(url.toString());
-    target.searchParams.set('culture', language());
+    const currentLanguage = language();
+    const isLoginRoute =
+      target.pathname.toLowerCase().replace(/\/+$/, '') === '/account/login';
+
+    target.searchParams.set(
+      'culture',
+      isLoginRoute && currentLanguage === 'ar'
+        ? 'en'
+        : currentLanguage);
+
     return target;
   }
 
