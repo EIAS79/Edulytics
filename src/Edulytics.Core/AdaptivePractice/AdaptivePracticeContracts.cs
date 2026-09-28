@@ -85,14 +85,18 @@ public sealed record AdaptivePracticeV2Policy(
             false);
 
     public bool AllowsSchool(Guid schoolId) =>
-        AllowedSchoolIds.Count == 0 || AllowedSchoolIds.Contains(schoolId);
+        Mode == AdaptivePracticeV2Mode.Canary
+            ? AllowedSchoolIds.Contains(schoolId)
+            : AllowedSchoolIds.Count == 0 || AllowedSchoolIds.Contains(schoolId);
 
     public bool AllowsCurriculumLevel(string key) =>
         AllowedCurriculumLevelKeys.Contains(key);
 
     public bool AllowsLesson(string lessonCode) =>
-        AllowedLessonCodes.Count == 0 ||
-        AllowedLessonCodes.Contains(lessonCode);
+        Mode == AdaptivePracticeV2Mode.Canary
+            ? AllowedLessonCodes.Contains(lessonCode)
+            : AllowedLessonCodes.Count == 0 ||
+              AllowedLessonCodes.Contains(lessonCode);
 }
 
 public interface IAdaptivePracticeEligibilityResolver
