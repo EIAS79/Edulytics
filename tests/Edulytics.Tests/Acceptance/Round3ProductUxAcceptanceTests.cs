@@ -7,14 +7,17 @@ public sealed class Round3ProductUxAcceptanceTests
     {
         var program = ReadRepositoryFile("src", "Edulytics.Web", "Program.cs");
         var home = ReadRepositoryFile("src", "Edulytics.Web", "Views", "Home", "Index.cshtml");
+        var header = ReadRepositoryFile("src", "Edulytics.Web", "Views", "Shared", "_PublicSiteHeader.cshtml");
+        var footer = ReadRepositoryFile("src", "Edulytics.Web", "Views", "Shared", "_PublicSiteFooter.cshtml");
 
         Assert.Contains("new RequestCulture(\n                    \"pl\")", program, StringComparison.Ordinal);
-        Assert.Contains("isPolish ? \"Kontakt\" : \"Contact\"", home, StringComparison.Ordinal);
-        Assert.Contains("ed-home-flag", home, StringComparison.Ordinal);
-        Assert.Contains("ed-home-mobile-menu", home, StringComparison.Ordinal);
-        Assert.Contains("href=\"#contact\"", home, StringComparison.Ordinal);
+        Assert.Contains("var contactLabel = L(\"Contact\", \"Kontakt\", \"تواصل معنا\")", home, StringComparison.Ordinal);
+        Assert.Contains("ed-home-flag", header, StringComparison.Ordinal);
+        Assert.Contains("ed-home-mobile-menu", header, StringComparison.Ordinal);
+        Assert.Contains("href=\"/contact\"", header, StringComparison.Ordinal);
+        Assert.Contains("id=\"contact\"", home, StringComparison.Ordinal);
         Assert.DoesNotContain("public-contact-card", home, StringComparison.Ordinal);
-        Assert.Contains("SupportContactOptions.Email", home, StringComparison.Ordinal);
+        Assert.Contains("SupportContactOptions.Email", footer, StringComparison.Ordinal);
     }
 
     [Fact]

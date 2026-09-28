@@ -909,6 +909,22 @@
       "provider": "edulytics-exact-skill-contract",
       "providerVersion": "probability-theoretical-v1",
       "status": "ShadowVerified"
+    },
+    {
+      "id": "calculus.area_between_curves.exact",
+      "domain": "calculus",
+      "canonicalName": "Compute geometric area between bounded polynomial curves by exact intersection splitting and piecewise absolute integration",
+      "provider": "edulytics-native-calculus",
+      "providerVersion": "calculus-area-between-curves-exact-v1",
+      "status": "ShadowVerified"
+    },
+    {
+      "id": "calculus.verify.area_between_curves.piecewise",
+      "domain": "calculus",
+      "canonicalName": "Independently verify exact polynomial intersections, interval ordering and piecewise absolute area between curves",
+      "provider": "edulytics-native-calculus",
+      "providerVersion": "calculus-area-between-curves-exact-v1",
+      "status": "ShadowVerified"
     }
   ]
 }
