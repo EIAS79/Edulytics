@@ -138,6 +138,12 @@
     }, true);
   }
 
+  function withPublicCulture(url) {
+    const target = new URL(url.toString());
+    target.searchParams.set('culture', language());
+    return target;
+  }
+
   function shouldStayStatic(url) {
     if (url.origin !== window.location.origin) return true;
 
@@ -187,8 +193,9 @@
       }
 
       hideStatus();
+      const localizedUrl = withPublicCulture(url);
       window.location.assign(
-        `${url.pathname}${url.search}${url.hash}`);
+        `${localizedUrl.pathname}${localizedUrl.search}${localizedUrl.hash}`);
     }, true);
   }
 
