@@ -12,6 +12,7 @@ public sealed class AdaptivePracticeSession : ISchoolScoped
     public Guid CurriculumAdoptionId { get; set; }
     public string CurriculumLevelKey { get; set; } = string.Empty;
     public Guid CurriculumPedagogicalLessonId { get; set; }
+    public string LessonCode { get; set; } = string.Empty;
     public string PrimarySkillId { get; set; } = string.Empty;
     public AdaptivePracticePurpose Purpose { get; set; }
     public AdaptivePracticeSessionStatus Status { get; set; }
