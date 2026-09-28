@@ -1,14 +1,9 @@
+# Adaptive V2 implementation branch policy (2026-09-28)
+# Automatic triggers are disabled on this branch. This workflow is retained
+# for explicit manual verification only while the additive V2 work is built.
 name: Phase29 Full Curriculum Rollout
 
 on:
-  push:
-    branches:
-      - phase29/curriculum-experience-and-content
-    paths:
-      - 'tools/phase29/complete_remaining_curricula.py'
-      - 'tools/phase29/full_curriculum_closure_audit.py'
-      - 'tools/phase29/patch_full_curriculum_regression_tests.py'
-      - '.github/workflows/phase29-full-curriculum-rollout.yml'
   workflow_dispatch:
 
 permissions:
