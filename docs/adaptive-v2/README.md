@@ -21,6 +21,19 @@ Initial rollout order:
 
 Secondary / IGCSE / AS / A-Level levels are not automatically included.
 
+## Canary safety contract
+
+Learner-facing `Canary` mode is fail-closed and requires all three explicit
+allow-lists to be non-empty:
+
+- curriculum level;
+- lesson code;
+- school ID.
+
+An empty school or lesson allow-list never means "all" in Canary mode.
+`On` mode retains the broader rollout semantics for future controlled
+production expansion.
+
 See `BASELINE_INVENTORY.md` for the protected production baseline.
 
 
