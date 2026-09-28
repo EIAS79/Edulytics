@@ -82,6 +82,8 @@ public sealed class AdaptivePracticeRepository(
     public async Task CommitAnsweredTurnAsync(
         AdaptivePracticeSession session,
         AdaptivePracticeTurn answeredTurn,
+        StudentMisconceptionState? misconceptionState,
+        StudentRepresentationFluencyState? representationState,
         AssessmentItem? nextItem,
         IReadOnlyList<AssessmentItemOutcome> nextItemOutcomes,
         StudentItemExposure? nextExposure,
@@ -128,8 +130,22 @@ public sealed class AdaptivePracticeRepository(
             }
         }
 
-        // The answered turn/session mutations and optional next-turn bundle
-        // are committed by the same SaveChanges transaction.
+        if (misconceptionState is not null)
+        {
+            await ApplyMisconceptionStateAsync(
+                misconceptionState,
+                cancellationToken);
+        }
+
+        if (representationState is not null)
+        {
+            await ApplyRepresentationStateAsync(
+                representationState,
+                cancellationToken);
+        }
+
+        // The answered turn/session mutations, learner-state updates and
+        // optional next-turn bundle are committed by the same SaveChanges transaction.
         if (nextItem is not null &&
             nextExposure is not null &&
             nextDecision is not null &&
@@ -165,33 +181,9 @@ public sealed class AdaptivePracticeRepository(
         StudentMisconceptionState state,
         CancellationToken cancellationToken = default)
     {
-        var existing =
-            await context.StudentMisconceptionStates.SingleOrDefaultAsync(
-                x =>
-                    x.SchoolId == state.SchoolId &&
-                    x.StudentProfileId == state.StudentProfileId &&
-                    x.CurriculumAdoptionId == state.CurriculumAdoptionId &&
-                    x.SkillId == state.SkillId &&
-                    x.MisconceptionId == state.MisconceptionId,
-                cancellationToken);
-
-        if (existing is null)
-        {
-            context.StudentMisconceptionStates.Add(state);
-        }
-        else
-        {
-            existing.QuestionFamily = state.QuestionFamily;
-            existing.Status = state.Status;
-            existing.Confidence = state.Confidence;
-            existing.ObservationCount = state.ObservationCount;
-            existing.FirstObservedAtUtc = state.FirstObservedAtUtc;
-            existing.LastObservedAtUtc = state.LastObservedAtUtc;
-            existing.LastRemediationAtUtc = state.LastRemediationAtUtc;
-            existing.ResolvedAtUtc = state.ResolvedAtUtc;
-            existing.EngineVersion = state.EngineVersion;
-        }
-
+        await ApplyMisconceptionStateAsync(
+            state,
+            cancellationToken);
         await context.SaveChangesAsync(cancellationToken);
     }
 
@@ -213,6 +205,47 @@ public sealed class AdaptivePracticeRepository(
         StudentRepresentationFluencyState state,
         CancellationToken cancellationToken = default)
     {
+        await ApplyRepresentationStateAsync(
+            state,
+            cancellationToken);
+        await context.SaveChangesAsync(cancellationToken);
+    }
+
+    private async Task ApplyMisconceptionStateAsync(
+        StudentMisconceptionState state,
+        CancellationToken cancellationToken)
+    {
+        var existing =
+            await context.StudentMisconceptionStates.SingleOrDefaultAsync(
+                x =>
+                    x.SchoolId == state.SchoolId &&
+                    x.StudentProfileId == state.StudentProfileId &&
+                    x.CurriculumAdoptionId == state.CurriculumAdoptionId &&
+                    x.SkillId == state.SkillId &&
+                    x.MisconceptionId == state.MisconceptionId,
+                cancellationToken);
+
+        if (existing is null)
+        {
+            context.StudentMisconceptionStates.Add(state);
+            return;
+        }
+
+        existing.QuestionFamily = state.QuestionFamily;
+        existing.Status = state.Status;
+        existing.Confidence = state.Confidence;
+        existing.ObservationCount = state.ObservationCount;
+        existing.FirstObservedAtUtc = state.FirstObservedAtUtc;
+        existing.LastObservedAtUtc = state.LastObservedAtUtc;
+        existing.LastRemediationAtUtc = state.LastRemediationAtUtc;
+        existing.ResolvedAtUtc = state.ResolvedAtUtc;
+        existing.EngineVersion = state.EngineVersion;
+    }
+
+    private async Task ApplyRepresentationStateAsync(
+        StudentRepresentationFluencyState state,
+        CancellationToken cancellationToken)
+    {
         var existing =
             await context.StudentRepresentationFluencyStates
                 .SingleOrDefaultAsync(
@@ -226,17 +259,14 @@ public sealed class AdaptivePracticeRepository(
         if (existing is null)
         {
             context.StudentRepresentationFluencyStates.Add(state);
-        }
-        else
-        {
-            existing.EvidenceCount = state.EvidenceCount;
-            existing.SuccessCount = state.SuccessCount;
-            existing.WeightedFluency = state.WeightedFluency;
-            existing.LatestEvidenceAtUtc = state.LatestEvidenceAtUtc;
-            existing.EngineVersion = state.EngineVersion;
+            return;
         }
 
-        await context.SaveChangesAsync(cancellationToken);
+        existing.EvidenceCount = state.EvidenceCount;
+        existing.SuccessCount = state.SuccessCount;
+        existing.WeightedFluency = state.WeightedFluency;
+        existing.LatestEvidenceAtUtc = state.LatestEvidenceAtUtc;
+        existing.EngineVersion = state.EngineVersion;
     }
 
     private static void ValidateGeneratedTurn(
