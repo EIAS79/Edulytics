@@ -53,6 +53,40 @@ public sealed class AccountLoginCultureContractTests
     }
 
     [Fact]
+    public void RequestLocalization_ResolvesLoginCultureBeforeMvcRendering()
+    {
+        var source = ReadRepositoryFile(
+            "src",
+            "Edulytics.Web",
+            "Program.cs");
+
+        Assert.Contains(
+            "context.Request.Query[\"culture\"]",
+            source,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "context.Request.Path.Equals(\n                                        \"/account/login\"",
+            source,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "requestedCulture = \"en\";",
+            source,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "CultureCookie.CreateValue(legacyCulture)",
+            source,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "culture = \"en\";",
+            source,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void Login_PreservesResolvedCultureOnPost()
     {
         var source = ReadRepositoryFile(
