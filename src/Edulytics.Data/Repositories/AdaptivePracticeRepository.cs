@@ -25,10 +25,8 @@ public sealed class AdaptivePracticeRepository(
             decision,
             turn);
 
-        await using var transaction =
-            await context.Database.BeginTransactionAsync(
-                cancellationToken);
-
+        // One SaveChanges call is the atomic unit. Relational EF providers
+        // (including PostgreSQL/Npgsql) wrap the save in a transaction.
         context.AdaptivePracticeSessions.Add(session);
         context.AssessmentItems.Add(item);
         context.AssessmentItemOutcomes.AddRange(itemOutcomes);
@@ -37,7 +35,6 @@ public sealed class AdaptivePracticeRepository(
         context.AdaptivePracticeTurns.Add(turn);
 
         await context.SaveChangesAsync(cancellationToken);
-        await transaction.CommitAsync(cancellationToken);
     }
 
     public Task<AdaptivePracticeSession?> GetSessionAsync(
@@ -131,10 +128,8 @@ public sealed class AdaptivePracticeRepository(
             }
         }
 
-        await using var transaction =
-            await context.Database.BeginTransactionAsync(
-                cancellationToken);
-
+        // The answered turn/session mutations and optional next-turn bundle
+        // are committed by the same SaveChanges transaction.
         if (nextItem is not null &&
             nextExposure is not null &&
             nextDecision is not null &&
@@ -148,7 +143,6 @@ public sealed class AdaptivePracticeRepository(
         }
 
         await context.SaveChangesAsync(cancellationToken);
-        await transaction.CommitAsync(cancellationToken);
     }
 
     public async Task<IReadOnlyList<StudentMisconceptionState>>
