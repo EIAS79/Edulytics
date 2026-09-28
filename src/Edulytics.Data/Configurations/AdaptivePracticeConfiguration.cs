@@ -15,6 +15,8 @@ public sealed class AdaptivePracticeSessionConfiguration :
         builder.HasAlternateKey(x => new { x.SchoolId, x.Id });
         builder.Property(x => x.CurriculumLevelKey)
             .HasMaxLength(160).IsRequired();
+        builder.Property(x => x.LessonCode)
+            .HasMaxLength(240).IsRequired();
         builder.Property(x => x.PrimarySkillId)
             .HasMaxLength(200).IsRequired();
         builder.Property(x => x.Purpose).HasConversion<int>();
