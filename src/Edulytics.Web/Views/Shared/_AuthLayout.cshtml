@@ -4,8 +4,14 @@
     var localizedProductName = Brand["ProductName"].Value;
 }
 @using System.Globalization
+@{
+    var authLanguage = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var authDirection = string.Equals(authLanguage, "ar", StringComparison.OrdinalIgnoreCase)
+        ? "rtl"
+        : "ltr";
+}
 <!DOCTYPE html>
-<html lang="@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName">
+<html lang="@authLanguage" dir="@authDirection">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport"
