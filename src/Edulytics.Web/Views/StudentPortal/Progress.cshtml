@@ -1,5 +1,6 @@
 @model Edulytics.Web.ViewModels.StudentPortal.StudentProgressViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@inject Edulytics.Core.AdaptivePractice.AdaptivePracticeV2Policy AdaptivePolicy
 @using Edulytics.Core.Analytics
 @using System.Globalization
 @{
@@ -99,6 +100,16 @@
                    asp-route-subjectId="@e.SubjectId">
                     @S["DownloadPdf"]
                 </a>
+                @if (AdaptivePolicy.Enabled &&
+                     AdaptivePolicy.Mode != Edulytics.Core.AdaptivePractice.AdaptivePracticeV2Mode.Off &&
+                     AdaptivePolicy.EnableQuestionLog)
+                {
+                    <a class="student-button"
+                       asp-controller="StudentAdaptiveIntelligence"
+                       asp-action="QuestionLog">
+                        Question log
+                    </a>
+                }
             </div>
         </div>
 
