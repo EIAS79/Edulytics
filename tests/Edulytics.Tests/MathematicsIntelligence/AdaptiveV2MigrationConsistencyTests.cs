@@ -32,11 +32,17 @@ public sealed class AdaptiveV2MigrationConsistencyTests
 
         var designTimeModel =
             context.GetService<IDesignTimeModel>().Model;
+        var runtimeInitializer =
+            context.GetService<IModelRuntimeInitializer>();
+        var initializedSnapshot =
+            runtimeInitializer.Initialize(
+                snapshot.Model,
+                designTime: true);
         var differ =
             context.GetService<IMigrationsModelDiffer>();
 
         var hasDifferences = differ.HasDifferences(
-            snapshot.Model.GetRelationalModel(),
+            initializedSnapshot.GetRelationalModel(),
             designTimeModel.GetRelationalModel());
 
         Assert.False(
