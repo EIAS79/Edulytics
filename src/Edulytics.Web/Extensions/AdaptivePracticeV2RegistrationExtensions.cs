@@ -1,4 +1,5 @@
 using Edulytics.Core.AdaptivePractice;
+using Edulytics.Data.Repositories;
 using Edulytics.Services.AdaptivePractice;
 using Edulytics.Services.Mathematics.Difficulty;
 using Edulytics.Web.AdaptivePractice;
@@ -50,6 +51,7 @@ public static class AdaptivePracticeV2RegistrationExtensions
         services.AddSingleton<AdaptiveRemediationStateMachine>();
         services.AddSingleton<AdaptivePracticeShadowEvaluator>();
         services.AddSingleton<AdaptiveVerifiedItemGenerator>();
+        services.AddScoped<IAdaptivePracticeRepository, AdaptivePracticeRepository>();
 
         return services;
     }
