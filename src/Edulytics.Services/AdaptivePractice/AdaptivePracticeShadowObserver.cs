@@ -5,7 +5,6 @@ using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Core.Practice;
-using Microsoft.Extensions.Logging;
 
 namespace Edulytics.Services.AdaptivePractice;
 
@@ -33,8 +32,7 @@ public sealed class AdaptivePracticeShadowObserver(
     AdaptiveNextItemDecisionEngine decisionEngine,
     AdaptiveVerifiedItemGenerator itemGenerator,
     AdaptiveMisconceptionClassifier misconceptionClassifier,
-    AdaptivePracticeV2Policy policy,
-    ILogger<AdaptivePracticeShadowObserver> logger)
+    AdaptivePracticeV2Policy policy)
     : IAdaptivePracticeShadowObserver
 {
     public async Task ObserveLessonAnswerAsync(
@@ -72,13 +70,10 @@ public sealed class AdaptivePracticeShadowObserver(
             // Shadow must never turn a successfully accepted V1 answer into
             // a learner-facing failure because the request was disconnected.
         }
-        catch (Exception exception)
+        catch (Exception)
         {
-            logger.LogWarning(
-                exception,
-                "Adaptive V2 shadow observation failed for V1 attempt {AttemptId}, item {AttemptItemId}.",
-                v1AttemptId,
-                v1AttemptItemId);
+            // Shadow is deliberately best-effort. Counterfactual observations
+            // must never change or fail an already accepted V1 learner answer.
         }
     }
 
