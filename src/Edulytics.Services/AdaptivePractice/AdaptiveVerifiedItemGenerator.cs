@@ -60,8 +60,20 @@ public sealed class AdaptiveVerifiedItemGenerator
                 SkillIds = contract.SkillIds
             };
 
-        var difficulty = DifficultyFor(
+        var requestedCognitive = CognitiveDifficultyFor(
             decision.TargetComplexityScore);
+        var capability = ResolveTruthfulCapability(
+            decision.TargetQuestionFamily,
+            requestedCognitive);
+        var effectiveCognitive = requestedCognitive < capability.MinimumDifficulty
+            ? capability.MinimumDifficulty
+            : requestedCognitive > capability.MaximumDifficulty
+                ? capability.MaximumDifficulty
+                : requestedCognitive;
+        var difficulty = DifficultyFor(effectiveCognitive);
+        var preferredVariant = capability.VariantSlots[
+            Math.Abs(seed == int.MinValue ? 0 : seed) %
+            capability.VariantSlots.Count];
 
         var item = new Stage18SkillContractPracticeEngine()
             .Generate(
@@ -73,8 +85,13 @@ public sealed class AdaptiveVerifiedItemGenerator
                 questionCount: 1,
                 seed,
                 excludedExposureFingerprints,
-                createdByUserId)
+                createdByUserId,
+                preferredVariant)
             .Single();
+
+        ValidateTruthfulGeneratedForm(
+            item,
+            effectiveCognitive);
 
         if (!string.Equals(
                 item.GenerationFamily,
@@ -92,7 +109,7 @@ public sealed class AdaptiveVerifiedItemGenerator
         return item;
     }
 
-    private static StudentPrivatePracticeDifficulty DifficultyFor(
+    private static PracticeCognitiveDifficulty CognitiveDifficultyFor(
         int complexity)
     {
         if (complexity is < 0 or >
@@ -104,9 +121,98 @@ public sealed class AdaptiveVerifiedItemGenerator
 
         return complexity switch
         {
-            <= 55 => StudentPrivatePracticeDifficulty.MyLevel,
-            <= 67 => StudentPrivatePracticeDifficulty.Stretch,
-            _ => StudentPrivatePracticeDifficulty.Challenge
+            <= 55 => PracticeCognitiveDifficulty.Standard,
+            <= 67 => PracticeCognitiveDifficulty.Stretch,
+            _ => PracticeCognitiveDifficulty.Challenge
         };
+    }
+
+    private static StudentPrivatePracticeDifficulty DifficultyFor(
+        PracticeCognitiveDifficulty difficulty) =>
+        difficulty switch
+        {
+            PracticeCognitiveDifficulty.Stretch =>
+                StudentPrivatePracticeDifficulty.Stretch,
+            PracticeCognitiveDifficulty.Challenge =>
+                StudentPrivatePracticeDifficulty.Challenge,
+            _ =>
+                StudentPrivatePracticeDifficulty.MyLevel
+        };
+
+    private static PracticeQuestionFormCapability ResolveTruthfulCapability(
+        string family,
+        PracticeCognitiveDifficulty requested)
+    {
+        var capabilities =
+            PracticeQuestionFormCapabilityRegistry.Resolve(family);
+
+        var direct = capabilities
+            .Where(x =>
+                requested >= x.MinimumDifficulty &&
+                requested <= x.MaximumDifficulty)
+            .OrderByDescending(x => x.CognitiveOperation)
+            .ThenByDescending(x => x.Form)
+            .FirstOrDefault();
+
+        if (direct is not null)
+            return direct;
+
+        var bounded = capabilities
+            .Where(x => x.MaximumDifficulty <= requested)
+            .OrderByDescending(x => x.MaximumDifficulty)
+            .ThenByDescending(x => x.CognitiveOperation)
+            .FirstOrDefault();
+
+        return bounded ??
+            capabilities
+                .OrderBy(x => x.MinimumDifficulty)
+                .FirstOrDefault() ??
+            throw new InvalidOperationException(
+                $"Adaptive Practice V2 has no truthful form capability for {family}.");
+    }
+
+    private static void ValidateTruthfulGeneratedForm(
+        AssessmentItem item,
+        PracticeCognitiveDifficulty effectiveDifficulty)
+    {
+        if (string.IsNullOrWhiteSpace(item.GenerationFamily) ||
+            string.IsNullOrWhiteSpace(item.GenerationParametersJson))
+        {
+            throw new InvalidOperationException(
+                "Adaptive Practice V2 generated item is missing form provenance.");
+        }
+
+        try
+        {
+            using var document =
+                System.Text.Json.JsonDocument.Parse(
+                    item.GenerationParametersJson);
+            var parameters =
+                document.RootElement.GetProperty("parameters");
+            var variant = parameters.TryGetProperty(
+                    "variant",
+                    out var variantElement)
+                ? variantElement.GetInt32()
+                : 0;
+
+            var actual =
+                PracticeQuestionFormCapabilityRegistry.ResolveForVariant(
+                    item.GenerationFamily,
+                    variant);
+
+            if (actual is null ||
+                effectiveDifficulty < actual.MinimumDifficulty ||
+                effectiveDifficulty > actual.MaximumDifficulty)
+            {
+                throw new InvalidOperationException(
+                    "Adaptive Practice V2 rejected a falsely-labelled cognitive form.");
+            }
+        }
+        catch (System.Text.Json.JsonException exception)
+        {
+            throw new InvalidOperationException(
+                "Adaptive Practice V2 could not validate cognitive form provenance.",
+                exception);
+        }
     }
 }
