@@ -9,12 +9,35 @@ public sealed class AdaptivePracticeRepository(
     EdulyticsDbContext context)
     : IAdaptivePracticeRepository
 {
-    public async Task AddSessionAsync(
+    public async Task CreateSessionWithFirstTurnAsync(
         AdaptivePracticeSession session,
+        AssessmentItem item,
+        IReadOnlyList<AssessmentItemOutcome> itemOutcomes,
+        StudentItemExposure exposure,
+        AdaptiveDecisionSnapshot decision,
+        AdaptivePracticeTurn turn,
         CancellationToken cancellationToken = default)
     {
+        ValidateGeneratedTurn(
+            session,
+            item,
+            exposure,
+            decision,
+            turn);
+
+        await using var transaction =
+            await context.Database.BeginTransactionAsync(
+                cancellationToken);
+
         context.AdaptivePracticeSessions.Add(session);
+        context.AssessmentItems.Add(item);
+        context.AssessmentItemOutcomes.AddRange(itemOutcomes);
+        context.StudentItemExposures.Add(exposure);
+        context.AdaptiveDecisionSnapshots.Add(decision);
+        context.AdaptivePracticeTurns.Add(turn);
+
         await context.SaveChangesAsync(cancellationToken);
+        await transaction.CommitAsync(cancellationToken);
     }
 
     public Task<AdaptivePracticeSession?> GetSessionAsync(
@@ -23,6 +46,18 @@ public sealed class AdaptivePracticeRepository(
         CancellationToken cancellationToken = default) =>
         context.AdaptivePracticeSessions.SingleOrDefaultAsync(
             x => x.SchoolId == schoolId && x.Id == sessionId,
+            cancellationToken);
+
+    public Task<AdaptivePracticeTurn?> GetTurnAsync(
+        Guid schoolId,
+        Guid sessionId,
+        int sequence,
+        CancellationToken cancellationToken = default) =>
+        context.AdaptivePracticeTurns.SingleOrDefaultAsync(
+            x =>
+                x.SchoolId == schoolId &&
+                x.SessionId == sessionId &&
+                x.Sequence == sequence,
             cancellationToken);
 
     public async Task<IReadOnlyList<AdaptivePracticeTurn>> GetTurnsAsync(
@@ -36,38 +71,84 @@ public sealed class AdaptivePracticeRepository(
             .OrderBy(x => x.Sequence)
             .ToListAsync(cancellationToken);
 
-    public async Task AddDecisionAndTurnAsync(
-        AdaptiveDecisionSnapshot decision,
-        AdaptivePracticeTurn turn,
-        CancellationToken cancellationToken = default)
-    {
-        if (decision.SchoolId != turn.SchoolId ||
-            decision.SessionId != turn.SessionId ||
-            decision.Sequence != turn.Sequence ||
-            decision.Id != turn.DecisionSnapshotId)
-        {
-            throw new InvalidOperationException(
-                "Adaptive Practice decision/turn scope mismatch.");
-        }
+    public Task<AssessmentItem?> GetItemAsync(
+        Guid schoolId,
+        Guid assessmentItemId,
+        CancellationToken cancellationToken = default) =>
+        context.AssessmentItems.AsNoTracking()
+            .SingleOrDefaultAsync(
+                x =>
+                    x.SchoolId == schoolId &&
+                    x.Id == assessmentItemId,
+                cancellationToken);
 
-        context.AdaptiveDecisionSnapshots.Add(decision);
-        context.AdaptivePracticeTurns.Add(turn);
-        await context.SaveChangesAsync(cancellationToken);
-    }
-
-    public async Task SaveAnsweredTurnAsync(
-        AdaptivePracticeTurn turn,
+    public async Task CommitAnsweredTurnAsync(
         AdaptivePracticeSession session,
+        AdaptivePracticeTurn answeredTurn,
+        AssessmentItem? nextItem,
+        IReadOnlyList<AssessmentItemOutcome> nextItemOutcomes,
+        StudentItemExposure? nextExposure,
+        AdaptiveDecisionSnapshot? nextDecision,
+        AdaptivePracticeTurn? nextTurn,
         CancellationToken cancellationToken = default)
     {
-        if (turn.SchoolId != session.SchoolId ||
-            turn.SessionId != session.Id)
+        if (session.SchoolId != answeredTurn.SchoolId ||
+            session.Id != answeredTurn.SessionId)
         {
             throw new InvalidOperationException(
                 "Adaptive Practice answered turn/session scope mismatch.");
         }
 
+        var hasNext =
+            nextItem is not null ||
+            nextExposure is not null ||
+            nextDecision is not null ||
+            nextTurn is not null ||
+            nextItemOutcomes.Count > 0;
+
+        if (hasNext)
+        {
+            if (nextItem is null ||
+                nextExposure is null ||
+                nextDecision is null ||
+                nextTurn is null)
+            {
+                throw new InvalidOperationException(
+                    "Adaptive Practice next turn persistence must be atomic.");
+            }
+
+            ValidateGeneratedTurn(
+                session,
+                nextItem,
+                nextExposure,
+                nextDecision,
+                nextTurn);
+
+            if (nextTurn.Sequence != answeredTurn.Sequence + 1)
+            {
+                throw new InvalidOperationException(
+                    "Adaptive Practice next sequence must be contiguous.");
+            }
+        }
+
+        await using var transaction =
+            await context.Database.BeginTransactionAsync(
+                cancellationToken);
+
+        if (nextItem is not null &&
+            nextExposure is not null &&
+            nextDecision is not null &&
+            nextTurn is not null)
+        {
+            context.AssessmentItems.Add(nextItem);
+            context.AssessmentItemOutcomes.AddRange(nextItemOutcomes);
+            context.StudentItemExposures.Add(nextExposure);
+            context.AdaptiveDecisionSnapshots.Add(nextDecision);
+            context.AdaptivePracticeTurns.Add(nextTurn);
+        }
+
         await context.SaveChangesAsync(cancellationToken);
+        await transaction.CommitAsync(cancellationToken);
     }
 
     public async Task<IReadOnlyList<StudentMisconceptionState>>
@@ -162,5 +243,40 @@ public sealed class AdaptivePracticeRepository(
         }
 
         await context.SaveChangesAsync(cancellationToken);
+    }
+
+    private static void ValidateGeneratedTurn(
+        AdaptivePracticeSession session,
+        AssessmentItem item,
+        StudentItemExposure exposure,
+        AdaptiveDecisionSnapshot decision,
+        AdaptivePracticeTurn turn)
+    {
+        if (session.SchoolId == Guid.Empty ||
+            session.Id == Guid.Empty ||
+            item.SchoolId != session.SchoolId ||
+            item.CurriculumAdoptionId !=
+                session.CurriculumAdoptionId ||
+            item.CurriculumPedagogicalLessonId !=
+                session.CurriculumPedagogicalLessonId ||
+            exposure.SchoolId != session.SchoolId ||
+            exposure.StudentProfileId !=
+                session.StudentProfileId ||
+            exposure.AssessmentItemId != item.Id ||
+            !string.Equals(
+                exposure.ExposureFingerprint,
+                item.ExposureFingerprint,
+                StringComparison.Ordinal) ||
+            decision.SchoolId != session.SchoolId ||
+            decision.SessionId != session.Id ||
+            turn.SchoolId != session.SchoolId ||
+            turn.SessionId != session.Id ||
+            turn.AssessmentItemId != item.Id ||
+            turn.DecisionSnapshotId != decision.Id ||
+            turn.Sequence != decision.Sequence)
+        {
+            throw new InvalidOperationException(
+                "Adaptive Practice generated turn scope mismatch.");
+        }
     }
 }
