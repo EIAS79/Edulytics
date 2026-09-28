@@ -32,9 +32,9 @@ public sealed class AdvancedMathematicsV3ClosureTests
         Assert.Contains(rows, x => x.FamilyId.StartsWith("mechanics.", StringComparison.Ordinal));
 
         var area = Assert.Single(
-            rows.Where(x =>
-                x.FamilyId ==
-                ExactAreaBetweenCurvesQuestionFactory.FamilyId));
+            rows,
+            x => x.FamilyId ==
+                 ExactAreaBetweenCurvesQuestionFactory.FamilyId);
 
         Assert.Equal(
             AdvancedMathematicsReadiness.EngineVerified,
