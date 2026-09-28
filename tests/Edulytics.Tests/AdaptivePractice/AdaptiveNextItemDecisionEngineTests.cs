@@ -2,7 +2,7 @@ using Edulytics.Core.AdaptivePractice;
 using Edulytics.Services.AdaptivePractice;
 using Edulytics.Services.Mathematics.Difficulty;
 
-namespace Edulytics.Tests.AdaptivePractice;
+namespace Edulytics.Tests.MathematicsIntelligence.AdaptivePractice;
 
 public sealed class AdaptiveNextItemDecisionEngineTests
 {
