@@ -103,6 +103,50 @@ builder.Services
                     new CustomRequestCultureProvider(
                         context =>
                         {
+                            var requestedCulture =
+                                context.Request.Query["culture"]
+                                    .ToString()
+                                    .Trim()
+                                    .ToLowerInvariant();
+
+                            if (CultureCookie.IsSupported(requestedCulture))
+                            {
+                                // The public website supports Arabic, while
+                                // the login/application gateway is bilingual.
+                                // Normalize Arabic to English before MVC/view
+                                // localization runs so the entire login page
+                                // uses one consistent culture.
+                                if (context.Request.Path.Equals(
+                                        "/account/login",
+                                        StringComparison.OrdinalIgnoreCase) &&
+                                    string.Equals(
+                                        requestedCulture,
+                                        "ar",
+                                        StringComparison.Ordinal))
+                                {
+                                    requestedCulture = "en";
+                                }
+
+                                context.Response.Cookies.Append(
+                                    CultureCookie.Name,
+                                    CultureCookie.CreateValue(requestedCulture),
+                                    new CookieOptions
+                                    {
+                                        Path = "/",
+                                        Expires = DateTimeOffset.UtcNow.AddYears(1),
+                                        IsEssential = true,
+                                        HttpOnly = true,
+                                        SameSite = SameSiteMode.Strict,
+                                        Secure = context.Request.IsHttps
+                                    });
+
+                                return Task.FromResult<
+                                    ProviderCultureResult?>(
+                                    new ProviderCultureResult(
+                                        requestedCulture,
+                                        requestedCulture));
+                            }
+
                             // Migrate visitors who selected Arabic through the
                             // legacy client-only public-language cookie. This
                             // preserves their choice on the first request after
