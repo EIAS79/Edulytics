@@ -2,7 +2,7 @@ using Edulytics.Core.AdaptivePractice;
 using Edulytics.Core.Curriculum;
 using Edulytics.Services.AdaptivePractice;
 
-namespace Edulytics.Tests.AdaptivePractice;
+namespace Edulytics.Tests.MathematicsIntelligence.AdaptivePractice;
 
 public sealed class AdaptivePracticeEligibilityResolverTests
 {
