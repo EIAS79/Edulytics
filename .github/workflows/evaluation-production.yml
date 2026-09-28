@@ -1,58 +1,14 @@
+# Adaptive V2 production implementation branch policy (2026-09-28)
+# Automatic PR/push execution is intentionally disabled while the additive
+# Adaptive Practice V2 architecture is being built. The workflow remains
+# available for explicit manual verification before merge/release.
+#
+# IMPORTANT: this does not disable runtime READY_VERIFIED capability gates,
+# solver/verifier checks, tenant isolation, or application fail-closed rules.
+# It only removes automatic CI execution/polling from this workflow.
 name: Evaluation Production Gate
 
 on:
-  pull_request:
-    branches:
-      - main
-    paths:
-      - 'src/Edulytics.Core/Analytics/**'
-      - 'src/Edulytics.Core/Mathematics/**'
-      - 'src/Edulytics.Core/Practice/**'
-      - 'src/Edulytics.Data/Repositories/AnalyticsRepository.cs'
-      - 'src/Edulytics.Data/Repositories/StudentPrivatePracticeRepository.cs'
-      - 'src/Edulytics.Services/Analytics/**'
-      - 'src/Edulytics.Web/Controllers/AnalyticsController.cs'
-      - 'src/Edulytics.Web/Controllers/StudentPortalController.cs'
-      - 'src/Edulytics.Web/Extensions/AnalyticsRegistrationExtensions.cs'
-      - 'src/Edulytics.Web/Extensions/StudentPortalRegistrationExtensions.cs'
-      - 'src/Edulytics.Web/Views/Analytics/**'
-      - 'src/Edulytics.Web/Views/StudentPortal/**'
-      - 'src/Edulytics.Web/Printing/AnalyticsPdfRenderer.cs'
-      - 'src/Edulytics.Web/wwwroot/css/site.css'
-      - 'src/Edulytics.Web/wwwroot/css/round4-ux-display.css'
-      - 'src/Edulytics.Web/Resources/AnalyticsResource*.resx'
-      - 'src/Edulytics.Web/Resources/StudentResource*.resx'
-      - 'tests/Edulytics.Tests/Phase43/**'
-      - 'tests/Edulytics.Tests/Phase44/**'
-      - 'docs/evaluation/**'
-      - 'tools/evaluation/**'
-      - '.github/workflows/evaluation-production.yml'
-  push:
-    branches:
-      - main
-    paths:
-      - 'src/Edulytics.Core/Analytics/**'
-      - 'src/Edulytics.Core/Mathematics/**'
-      - 'src/Edulytics.Core/Practice/**'
-      - 'src/Edulytics.Data/Repositories/AnalyticsRepository.cs'
-      - 'src/Edulytics.Data/Repositories/StudentPrivatePracticeRepository.cs'
-      - 'src/Edulytics.Services/Analytics/**'
-      - 'src/Edulytics.Web/Controllers/AnalyticsController.cs'
-      - 'src/Edulytics.Web/Controllers/StudentPortalController.cs'
-      - 'src/Edulytics.Web/Extensions/AnalyticsRegistrationExtensions.cs'
-      - 'src/Edulytics.Web/Extensions/StudentPortalRegistrationExtensions.cs'
-      - 'src/Edulytics.Web/Views/Analytics/**'
-      - 'src/Edulytics.Web/Views/StudentPortal/**'
-      - 'src/Edulytics.Web/Printing/AnalyticsPdfRenderer.cs'
-      - 'src/Edulytics.Web/wwwroot/css/site.css'
-      - 'src/Edulytics.Web/wwwroot/css/round4-ux-display.css'
-      - 'src/Edulytics.Web/Resources/AnalyticsResource*.resx'
-      - 'src/Edulytics.Web/Resources/StudentResource*.resx'
-      - 'tests/Edulytics.Tests/Phase43/**'
-      - 'tests/Edulytics.Tests/Phase44/**'
-      - 'docs/evaluation/**'
-      - 'tools/evaluation/**'
-      - '.github/workflows/evaluation-production.yml'
   workflow_dispatch:
 
 permissions:
