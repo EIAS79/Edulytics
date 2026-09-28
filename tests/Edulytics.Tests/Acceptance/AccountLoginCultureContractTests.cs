@@ -3,6 +3,48 @@ namespace Edulytics.Tests.Acceptance;
 public sealed class AccountLoginCultureContractTests
 {
     [Fact]
+    public void RequestLocalization_ResolvesLoginCultureBeforeMvcAndMapsArabicToEnglish()
+    {
+        var source = ReadRepositoryFile(
+            "src",
+            "Edulytics.Web",
+            "Program.cs");
+
+        var loginProviderIndex = source.IndexOf(
+            ""/account/login"",
+            StringComparison.Ordinal);
+        var legacyArabicCookieIndex = source.IndexOf(
+            ""Edulytics.PublicLanguage"",
+            StringComparison.Ordinal);
+
+        Assert.True(loginProviderIndex >= 0);
+        Assert.True(legacyArabicCookieIndex >= 0);
+        Assert.True(
+            loginProviderIndex < legacyArabicCookieIndex,
+            "The explicit login query culture must be evaluated before legacy/public cookies.");
+
+        Assert.Contains(
+            "context.Request.Query.TryGetValue(\n                                    \"culture\"",
+            source,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "if (string.Equals(\n                                    culture,\n                                    \"ar\"",
+            source,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "culture = \"en\";",
+            source,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "culture is not (\"en\" or \"pl\")",
+            source,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void Login_HonorsExplicitEnglishOrPolishCulture()
     {
         var source = ReadRepositoryFile(
