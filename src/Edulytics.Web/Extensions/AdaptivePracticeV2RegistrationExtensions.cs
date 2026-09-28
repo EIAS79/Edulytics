@@ -34,6 +34,27 @@ public static class AdaptivePracticeV2RegistrationExtensions
                         ignoreCase: true,
                         out _),
                 "AdaptivePracticeV2 Mode must be Off, Shadow, Canary, or On.")
+            .Validate(
+                options =>
+                {
+                    if (!options.Enabled ||
+                        !Enum.TryParse<AdaptivePracticeV2Mode>(
+                            options.Mode,
+                            ignoreCase: true,
+                            out var mode) ||
+                        mode != AdaptivePracticeV2Mode.Canary)
+                    {
+                        return true;
+                    }
+
+                    return options.AllowedCurriculumLevelKeys.Any(
+                               x => !string.IsNullOrWhiteSpace(x)) &&
+                           options.AllowedLessonCodes.Any(
+                               x => !string.IsNullOrWhiteSpace(x)) &&
+                           options.AllowedSchoolIds.Any(
+                               x => x != Guid.Empty);
+                },
+                "AdaptivePracticeV2 Canary requires explicit curriculum-level, lesson, and school allow-lists.")
             .ValidateOnStart();
 
         services.AddSingleton(
