@@ -795,6 +795,8 @@ public sealed class AdaptivePracticeV2Service(
                 session.TargetQuestionCount,
                 session.Status ==
                     AdaptivePracticeSessionStatus.Completed,
+                session.Status ==
+                    AdaptivePracticeSessionStatus.Paused,
                 session.StopReason,
                 new AdaptivePracticeQuestionView(
                     turn.Id,
@@ -820,7 +822,10 @@ public sealed class AdaptivePracticeV2Service(
             session.PrimarySkillId,
             session.CurrentSequence,
             session.TargetQuestionCount,
-            true,
+            session.Status ==
+                AdaptivePracticeSessionStatus.Completed,
+            session.Status ==
+                AdaptivePracticeSessionStatus.Paused,
             session.StopReason,
             null);
 }
