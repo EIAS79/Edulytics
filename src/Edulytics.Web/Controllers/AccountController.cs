@@ -158,17 +158,6 @@ public sealed class AccountController : Controller
             user,
             isPersistent: false);
 
-        // Arabic is supported on the public website and login gateway only.
-        // The authenticated application remains intentionally bilingual
-        // (English / Polish), so an Arabic login continues in English.
-        if (string.Equals(
-                loginCulture,
-                "ar",
-                StringComparison.Ordinal))
-        {
-            ApplyAuthenticatedAppCulture("en");
-        }
-
         if (Url.IsLocalUrl(returnUrl))
         {
             return Redirect(returnUrl!);
@@ -310,9 +299,7 @@ public sealed class AccountController : Controller
             nameof(LoginViewModel.AccountType),
             IsPolishUi()
                 ? "Najpierw wybierz typ konta."
-                : IsArabicUi()
-                    ? "اختر نوع الحساب أولًا."
-                    : "Choose your account type first.");
+                : "Choose your account type first.");
     }
 
     private void AddAccountTypeMismatch(
@@ -324,21 +311,13 @@ public sealed class AccountController : Controller
             nameof(LoginViewModel.AccountType),
             IsPolishUi()
                 ? $"To konto nie jest zarejestrowane jako {label}. Wybierz właściwy typ konta."
-                : IsArabicUi()
-                    ? $"هذا الحساب غير مسجل بصفة {label}. اختر نوع الحساب الصحيح."
-                    : $"This account is not registered as {label}. Please choose the correct account type.");
+                : $"This account is not registered as {label}. Please choose the correct account type.");
     }
 
     private bool IsPolishUi() =>
         string.Equals(
             CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
             "pl",
-            StringComparison.OrdinalIgnoreCase);
-
-    private bool IsArabicUi() =>
-        string.Equals(
-            CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
-            "ar",
             StringComparison.OrdinalIgnoreCase);
 
     private string GetAccountTypeLabel(
@@ -355,19 +334,6 @@ public sealed class AccountController : Controller
                 _ => "wybrany typ konta"
             };
         }
-
-        if (IsArabicUi())
-        {
-            return accountType switch
-            {
-                RoleNames.SchoolAdmin => "مسؤول المدرسة",
-                RoleNames.SubjectSupervisor => "مشرف المادة",
-                RoleNames.Teacher => "المعلم",
-                RoleNames.Student => "الطالب",
-                _ => "نوع الحساب المحدد"
-            };
-        }
-
         return accountType switch
         {
             RoleNames.SchoolAdmin => "a School Administrator",
@@ -391,13 +357,29 @@ public sealed class AccountController : Controller
                 .Trim()
                 .ToLowerInvariant();
 
-        if (!CultureCookie.IsSupported(culture))
+        // The public website supports Arabic, but the application/login
+        // gateway is intentionally bilingual. Arabic visitors enter the
+        // application through the English login experience.
+        if (string.Equals(
+                culture,
+                "ar",
+                StringComparison.Ordinal))
+        {
+            culture = "en";
+        }
+
+        if (culture is not ("en" or "pl"))
         {
             culture =
                 CultureCookie.TryRead(
                     Request,
                     out var cookieCulture)
-                    ? cookieCulture
+                    ? string.Equals(
+                        cookieCulture,
+                        "ar",
+                        StringComparison.Ordinal)
+                        ? "en"
+                        : cookieCulture
                     : "pl";
         }
 
@@ -413,29 +395,6 @@ public sealed class AccountController : Controller
         AppendCultureCookie(culture);
 
         return culture;
-    }
-
-    private void ApplyAuthenticatedAppCulture(
-        string culture)
-    {
-        if (culture is not ("en" or "pl"))
-        {
-            throw new ArgumentOutOfRangeException(
-                nameof(culture),
-                culture,
-                "Authenticated application culture must be English or Polish.");
-        }
-
-        var cultureInfo =
-            CultureInfo.GetCultureInfo(culture);
-
-        CultureInfo.CurrentCulture =
-            cultureInfo;
-
-        CultureInfo.CurrentUICulture =
-            cultureInfo;
-
-        AppendCultureCookie(culture);
     }
 
     private string ApplySetupCulture(
