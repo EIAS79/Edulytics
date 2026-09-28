@@ -32,6 +32,7 @@ public sealed class AdaptiveVerifiedItemGeneratorTests
             RequiresFreshExposure: true,
             RemediationLockActive: false,
             ConfirmationRequired: false,
+            IsIndependentConfirmation: false,
             ProgressionEligible: false,
             EngineVersion:
                 AdaptivePracticeV2Versions.EngineVersion,
@@ -79,6 +80,7 @@ public sealed class AdaptiveVerifiedItemGeneratorTests
             null,
             AdaptivePracticeDecisionReasonCodes.SessionBaseline,
             true,
+            false,
             false,
             false,
             false,
