@@ -22,6 +22,7 @@ public sealed class AdaptivePracticeV2Service(
     AdaptiveLearningStateAssembler stateAssembler,
     AdaptiveNextItemDecisionEngine decisionEngine,
     AdaptiveVerifiedItemGenerator itemGenerator,
+    AdaptivePracticeEvidenceProjector evidenceProjector,
     AdaptivePracticeV2Policy policy)
     : IAdaptivePracticeV2Service
 {
@@ -142,7 +143,8 @@ public sealed class AdaptivePracticeV2Service(
                     .Select(x => x.ExposureFingerprint)
                     .Where(x => !string.IsNullOrWhiteSpace(x))
                     .Distinct(StringComparer.Ordinal)
-                    .ToArray());
+                    .ToArray(),
+                excludedSemanticIdentityKeys: []);
         }
         catch (InvalidOperationException)
         {
@@ -358,6 +360,30 @@ public sealed class AdaptivePracticeV2Service(
             0L,
             (long)(now - turn.PresentedAtUtc).TotalMilliseconds);
 
+        var existingMisconceptionStates =
+            await adaptiveRepository.GetMisconceptionStatesAsync(
+                session.SchoolId,
+                session.StudentProfileId,
+                session.CurriculumAdoptionId,
+                session.PrimarySkillId,
+                cancellationToken);
+
+        var existingRepresentationStates =
+            await adaptiveRepository.GetRepresentationStatesAsync(
+                session.SchoolId,
+                session.StudentProfileId,
+                session.PrimarySkillId,
+                cancellationToken);
+
+        var evidenceUpdate = evidenceProjector.Project(
+            session,
+            turn,
+            item,
+            existingMisconceptionStates,
+            existingRepresentationStates,
+            policy.EnableMisconceptionLoop,
+            now);
+
         if (sequence >= session.TargetQuestionCount)
         {
             session.Status =
@@ -368,8 +394,8 @@ public sealed class AdaptivePracticeV2Service(
             await adaptiveRepository.CommitAnsweredTurnAsync(
                 session,
                 turn,
-                null,
-                null,
+                evidenceUpdate.MisconceptionState,
+                evidenceUpdate.RepresentationState,
                 null,
                 [],
                 null,
@@ -398,8 +424,8 @@ public sealed class AdaptivePracticeV2Service(
             await adaptiveRepository.CommitAnsweredTurnAsync(
                 session,
                 turn,
-                null,
-                null,
+                evidenceUpdate.MisconceptionState,
+                evidenceUpdate.RepresentationState,
                 null,
                 [],
                 null,
@@ -451,20 +477,12 @@ public sealed class AdaptivePracticeV2Service(
             .OrderBy(x => x.Sequence)
             .ToArray();
 
-        var misconceptionStates =
-            await adaptiveRepository.GetMisconceptionStatesAsync(
-                session.SchoolId,
-                session.StudentProfileId,
-                session.CurriculumAdoptionId,
-                session.PrimarySkillId,
-                cancellationToken);
-
-        var representationStates =
-            await adaptiveRepository.GetRepresentationStatesAsync(
-                session.SchoolId,
-                session.StudentProfileId,
-                session.PrimarySkillId,
-                cancellationToken);
+        var misconceptionStates = MergeMisconceptionState(
+            existingMisconceptionStates,
+            evidenceUpdate.MisconceptionState);
+        var representationStates = MergeRepresentationState(
+            existingRepresentationStates,
+            evidenceUpdate.RepresentationState);
 
         var learningState = stateAssembler.Build(
             context,
@@ -495,6 +513,11 @@ public sealed class AdaptivePracticeV2Service(
                     .Where(x =>
                         !string.IsNullOrWhiteSpace(x))
                     .Distinct(StringComparer.Ordinal)
+                    .ToArray(),
+                replayTurns
+                    .Select(x => x.SemanticIdentityKey)
+                    .Where(x => !string.IsNullOrWhiteSpace(x))
+                    .Distinct(StringComparer.Ordinal)
                     .ToArray());
         }
         catch (InvalidOperationException)
@@ -507,8 +530,8 @@ public sealed class AdaptivePracticeV2Service(
             await adaptiveRepository.CommitAnsweredTurnAsync(
                 session,
                 turn,
-                null,
-                null,
+                evidenceUpdate.MisconceptionState,
+                evidenceUpdate.RepresentationState,
                 null,
                 [],
                 null,
@@ -553,8 +576,8 @@ public sealed class AdaptivePracticeV2Service(
         await adaptiveRepository.CommitAnsweredTurnAsync(
             session,
             turn,
-            null,
-            null,
+            evidenceUpdate.MisconceptionState,
+            evidenceUpdate.RepresentationState,
             nextItem,
             nextOutcomeLinks,
             nextExposure,
@@ -727,7 +750,9 @@ public sealed class AdaptivePracticeV2Service(
                 item.GenerationFamily ??
                 decision.TargetQuestionFamily,
             Representation =
-                decision.TargetRepresentation,
+                ResolveRepresentation(
+                    item,
+                    decision),
             MathematicalComplexityScore =
                 decision.TargetComplexityScore,
             UiDifficultyBand = item.Difficulty,
@@ -739,48 +764,68 @@ public sealed class AdaptivePracticeV2Service(
             ExposureFingerprint =
                 item.ExposureFingerprint,
             SemanticIdentityKey =
-                ResolveSemanticIdentity(item),
+                AdaptivePracticeSemanticIdentity.Resolve(item),
             RowVersion = []
         };
 
-    private static string ResolveSemanticIdentity(
-        AssessmentItem item)
+    private static string? ResolveRepresentation(
+        AssessmentItem item,
+        AdaptiveNextItemDecision decision)
     {
-        if (string.IsNullOrWhiteSpace(item.GenerationFamily))
-            return item.ExposureFingerprint;
-
-        try
+        if (!string.IsNullOrWhiteSpace(
+                decision.TargetRepresentation))
         {
-            using var document = JsonDocument.Parse(
-                item.GenerationParametersJson ?? "{}");
-
-            var parameters =
-                new Dictionary<string, int>(
-                    StringComparer.Ordinal);
-
-            foreach (var property in
-                     document.RootElement.EnumerateObject())
-            {
-                if (property.Value.ValueKind ==
-                        JsonValueKind.Number &&
-                    property.Value.TryGetInt32(out var value))
-                {
-                    parameters[property.Name] = value;
-                }
-            }
-
-            return PracticeSemanticQuestionIdentityPolicy
-                .Create(
-                    item.GenerationFamily,
-                    parameters)
-                .Key;
+            return decision.TargetRepresentation;
         }
-        catch (JsonException)
+
+        if (!string.IsNullOrWhiteSpace(
+                item.GenerationFamily) &&
+            LessonPracticeInteractionRegistry.TryResolve(
+                item.GenerationFamily,
+                out var interaction) &&
+            interaction is not null)
         {
-            return item.GenerationFamily +
-                "|" +
-                item.ExposureFingerprint;
+            return interaction.Representations
+                .FirstOrDefault();
         }
+
+        return null;
+    }
+
+    private static IReadOnlyList<StudentMisconceptionState>
+        MergeMisconceptionState(
+            IReadOnlyList<StudentMisconceptionState> source,
+            StudentMisconceptionState? update)
+    {
+        if (update is null)
+            return source;
+
+        return source
+            .Where(x =>
+                !string.Equals(
+                    x.MisconceptionId,
+                    update.MisconceptionId,
+                    StringComparison.Ordinal))
+            .Append(update)
+            .ToArray();
+    }
+
+    private static IReadOnlyList<StudentRepresentationFluencyState>
+        MergeRepresentationState(
+            IReadOnlyList<StudentRepresentationFluencyState> source,
+            StudentRepresentationFluencyState? update)
+    {
+        if (update is null)
+            return source;
+
+        return source
+            .Where(x =>
+                !string.Equals(
+                    x.Representation,
+                    update.Representation,
+                    StringComparison.Ordinal))
+            .Append(update)
+            .ToArray();
     }
 
     private Task<AdaptivePracticeSessionView>
