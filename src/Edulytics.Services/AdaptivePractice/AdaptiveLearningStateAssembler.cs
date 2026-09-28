@@ -1,7 +1,9 @@
 using Edulytics.Core.AdaptivePractice;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Mathematics.Practice;
+using Edulytics.Core.Mathematics.Skills;
 using Edulytics.Core.Practice;
+using Edulytics.Services.Analytics;
 
 namespace Edulytics.Services.AdaptivePractice;
 
@@ -56,6 +58,10 @@ public sealed class AdaptiveLearningStateAssembler(
         var skillMastery = masteryValues.Length == 0
             ? 0.50m
             : masteryValues.Average();
+
+        var prerequisiteMastery = ResolvePrerequisiteMastery(
+            context,
+            contract.SkillId);
 
         var answered = turns
             .Where(x => x.IsCorrect.HasValue)
@@ -122,7 +128,7 @@ public sealed class AdaptiveLearningStateAssembler(
         return new AdaptivePracticeLearningState(
             contract.SkillId,
             skillMastery,
-            NeutralPrerequisiteMastery,
+            prerequisiteMastery,
             currentComplexity,
             recentSuccessfulItems,
             recent,
@@ -130,6 +136,69 @@ public sealed class AdaptiveLearningStateAssembler(
             representations,
             contract.AllowedQuestionFamilies,
             remediation);
+    }
+
+    private static decimal ResolvePrerequisiteMastery(
+        StudentPrivatePracticeContext context,
+        string skillId)
+    {
+        if (!MathematicsSkillMetadataRegistry.TryResolve(
+                skillId,
+                out var metadata) ||
+            metadata is null ||
+            metadata.Prerequisites.Count == 0)
+        {
+            return NeutralPrerequisiteMastery;
+        }
+
+        var prerequisiteKeys =
+            metadata.Prerequisites.ToHashSet(
+                StringComparer.Ordinal);
+
+        var masteryByOutcome = context.OfficialMasteries
+            .Where(x => x.EvidenceCount > 0)
+            .GroupBy(x => x.LearningOutcomeId)
+            .ToDictionary(
+                x => x.Key,
+                x => x.OrderByDescending(row =>
+                        row.CalculatedAtUtc)
+                    .First()
+                    .MasteryPercentage);
+
+        var measuredPrerequisites =
+            new List<decimal>();
+
+        foreach (var outcome in context.LearningOutcomes)
+        {
+            if (!masteryByOutcome.TryGetValue(
+                    outcome.Id,
+                    out var mastery))
+            {
+                continue;
+            }
+
+            var descriptors =
+                EvaluationSkillResolver.ResolveExpected(
+                    outcome);
+
+            if (descriptors.Any(descriptor =>
+                    prerequisiteKeys.Contains(
+                        descriptor.SkillKey)))
+            {
+                measuredPrerequisites.Add(
+                    Math.Clamp(
+                        mastery / 100m,
+                        0m,
+                        1m));
+            }
+        }
+
+        // Missing prerequisite evidence is not interpreted as failure.
+        // When evidence exists, the weakest measured canonical prerequisite
+        // controls readiness, matching Student 360's weak-prerequisite intent.
+        return measuredPrerequisites.Count == 0
+            ? NeutralPrerequisiteMastery
+            : measuredPrerequisites.Min();
     }
 
     private AdaptivePracticeRemediationState ReplayRemediation(
