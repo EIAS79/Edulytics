@@ -3,7 +3,7 @@ namespace Edulytics.Tests.Acceptance;
 public sealed class AccountLoginCultureContractTests
 {
     [Fact]
-    public void Login_AllowsFreshBrowserWithoutCultureCookie()
+    public void Login_HonorsExplicitEnglishOrPolishCulture()
     {
         var source = ReadRepositoryFile(
             "src",
@@ -12,26 +12,71 @@ public sealed class AccountLoginCultureContractTests
             "AccountController.cs");
 
         Assert.Contains(
-            "EnsureLoginCulture();",
+            "ApplyLoginCulture(culture);",
             source,
             StringComparison.Ordinal);
 
         Assert.Contains(
-            "const string defaultCulture = \"pl\";",
+            "culture is not (\"en\" or \"pl\")",
             source,
             StringComparison.Ordinal);
 
         Assert.Contains(
-            "AppendCultureCookie(",
-            source,
-            StringComparison.Ordinal);
-
-        Assert.DoesNotContain(
-            "if (!CultureCookie.TryRead(Request, out _))\n        {\n            return RedirectToAction",
+            "AppendCultureCookie(culture);",
             source,
             StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void Login_MapsArabicWebsiteCultureToEnglish()
+    {
+        var source = ReadRepositoryFile(
+            "src",
+            "Edulytics.Web",
+            "Controllers",
+            "AccountController.cs");
+
+        Assert.Contains(
+            "string.Equals(\n                culture,\n                \"ar\"",
+            source,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "culture = \"en\";",
+            source,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "string.Equals(\n                        cookieCulture,\n                        \"ar\"",
+            source,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void Login_PreservesResolvedCultureOnPost()
+    {
+        var source = ReadRepositoryFile(
+            "src",
+            "Edulytics.Web",
+            "Views",
+            "Account",
+            "Login.cshtml");
+
+        Assert.Contains(
+            "var loginCulture = (ViewData[\"LoginCulture\"] as string)",
+            source,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "asp-route-culture=\"@loginCulture\"",
+            source,
+            StringComparison.Ordinal);
+
+        Assert.DoesNotContain(
+            "isArabic",
+            source,
+            StringComparison.Ordinal);
+    }
 
     [Fact]
     public void Login_DoesNotExposePlatformAdministratorBypassCopy()

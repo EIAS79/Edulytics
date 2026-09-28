@@ -11,7 +11,9 @@
     Layout = "_AuthLayout";
     ViewData["Title"] = Text["SignInTitle"];
     var returnUrl = ViewData["ReturnUrl"] as string;
-    var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
+    var loginCulture = (ViewData["LoginCulture"] as string)
+        ?? CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var isPolish = string.Equals(loginCulture, "pl", StringComparison.OrdinalIgnoreCase);
     string L(string en, string pl) => isPolish ? pl : en;
 }
 
@@ -122,6 +124,7 @@
             <form asp-controller="Account"
                   asp-action="Login"
                   asp-route-returnUrl="@returnUrl"
+                  asp-route-culture="@loginCulture"
                   method="post"
                   id="login-form"
                   class="auth-form"

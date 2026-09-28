@@ -52,12 +52,16 @@ public sealed class AccountController : Controller
     [AllowAnonymous]
     [HttpGet("/account/login")]
     public IActionResult Login(
-        string? returnUrl = null)
+        string? returnUrl = null,
+        string? culture = null)
     {
-        EnsureLoginCulture();
+        var loginCulture =
+            ApplyLoginCulture(culture);
 
         ViewData["ReturnUrl"] =
             returnUrl;
+        ViewData["LoginCulture"] =
+            loginCulture;
 
         return View(
             new LoginViewModel());
@@ -69,12 +73,16 @@ public sealed class AccountController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Login(
         LoginViewModel model,
-        string? returnUrl = null)
+        string? returnUrl = null,
+        string? culture = null)
     {
-        EnsureLoginCulture();
+        var loginCulture =
+            ApplyLoginCulture(culture);
 
         ViewData["ReturnUrl"] =
             returnUrl;
+        ViewData["LoginCulture"] =
+            loginCulture;
 
         if (!string.IsNullOrWhiteSpace(model.AccountType) &&
             !IsSupportedAccountType(model.AccountType))
@@ -326,7 +334,6 @@ public sealed class AccountController : Controller
                 _ => "wybrany typ konta"
             };
         }
-
         return accountType switch
         {
             RoleNames.SchoolAdmin => "a School Administrator",
@@ -342,19 +349,42 @@ public sealed class AccountController : Controller
         !string.IsNullOrWhiteSpace(accountType) &&
         PublicAccountTypes.Contains(accountType);
 
-    private void EnsureLoginCulture()
+    private string ApplyLoginCulture(
+        string? requestedCulture)
     {
-        if (CultureCookie.TryRead(
-                Request,
-                out _))
+        var culture =
+            requestedCulture?
+                .Trim()
+                .ToLowerInvariant();
+
+        // The public website supports Arabic, but the application/login
+        // gateway is intentionally bilingual. Arabic visitors enter the
+        // application through the English login experience.
+        if (string.Equals(
+                culture,
+                "ar",
+                StringComparison.Ordinal))
         {
-            return;
+            culture = "en";
         }
 
-        const string defaultCulture = "pl";
+        if (culture is not ("en" or "pl"))
+        {
+            culture =
+                CultureCookie.TryRead(
+                    Request,
+                    out var cookieCulture)
+                    ? string.Equals(
+                        cookieCulture,
+                        "ar",
+                        StringComparison.Ordinal)
+                        ? "en"
+                        : cookieCulture
+                    : "pl";
+        }
+
         var cultureInfo =
-            CultureInfo.GetCultureInfo(
-                defaultCulture);
+            CultureInfo.GetCultureInfo(culture);
 
         CultureInfo.CurrentCulture =
             cultureInfo;
@@ -362,8 +392,9 @@ public sealed class AccountController : Controller
         CultureInfo.CurrentUICulture =
             cultureInfo;
 
-        AppendCultureCookie(
-            defaultCulture);
+        AppendCultureCookie(culture);
+
+        return culture;
     }
 
     private string ApplySetupCulture(

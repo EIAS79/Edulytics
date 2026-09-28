@@ -138,6 +138,21 @@
     }, true);
   }
 
+  function withPublicCulture(url) {
+    const target = new URL(url.toString());
+    const currentLanguage = language();
+    const isLoginRoute =
+      target.pathname.toLowerCase().replace(/\/+$/, '') === '/account/login';
+
+    target.searchParams.set(
+      'culture',
+      isLoginRoute && currentLanguage === 'ar'
+        ? 'en'
+        : currentLanguage);
+
+    return target;
+  }
+
   function shouldStayStatic(url) {
     if (url.origin !== window.location.origin) return true;
 
@@ -187,8 +202,9 @@
       }
 
       hideStatus();
+      const localizedUrl = withPublicCulture(url);
       window.location.assign(
-        `${url.pathname}${url.search}${url.hash}`);
+        `${localizedUrl.pathname}${localizedUrl.search}${localizedUrl.hash}`);
     }, true);
   }
 

@@ -81,6 +81,19 @@ public sealed class PublicStaticFrontDoorContractTests
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
+            "withPublicCulture",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "isLoginRoute && currentLanguage === 'ar'",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "? 'en'",
+            runtime,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
             "window.location.assign(",
             runtime,
             StringComparison.Ordinal);
