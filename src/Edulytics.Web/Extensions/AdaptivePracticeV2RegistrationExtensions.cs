@@ -49,6 +49,7 @@ public static class AdaptivePracticeV2RegistrationExtensions
         services.AddSingleton<AdaptiveNextItemDecisionEngine>();
         services.AddSingleton<AdaptiveRemediationStateMachine>();
         services.AddSingleton<AdaptivePracticeShadowEvaluator>();
+        services.AddSingleton<AdaptiveVerifiedItemGenerator>();
 
         return services;
     }
