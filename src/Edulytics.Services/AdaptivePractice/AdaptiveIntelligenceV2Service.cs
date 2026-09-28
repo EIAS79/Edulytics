@@ -1,3 +1,5 @@
+using Edulytics.Core.Entities;
+using Edulytics.Core.Analytics;
 using Edulytics.Core.AdaptiveAssessment;
 using Edulytics.Core.AdaptivePractice;
 using Edulytics.Core.AssessmentIntelligence;
