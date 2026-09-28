@@ -1,0 +1,325 @@
+@using System.Globalization
+@using System.Text.RegularExpressions
+@using Edulytics.Core.Mathematics.Practice
+@using Edulytics.Services.AdaptivePractice
+@using Edulytics.Web.Presentation
+@model AdaptivePracticeSessionView
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@{
+    Layout = null;
+    var locale = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var isRtl = string.Equals(locale, "ar", StringComparison.OrdinalIgnoreCase);
+    var lessonTitle = ViewData["LessonTitle"]?.ToString() ?? "Mathematics";
+    var unitTitle = ViewData["LessonUnitTitle"]?.ToString() ?? string.Empty;
+    var question = Model.CurrentQuestion;
+    var progress = Model.TargetQuestionCount <= 0
+        ? 0d
+        : Math.Min(100d, Math.Max(0d, (Model.CurrentSequence - 1d) / Model.TargetQuestionCount * 100d));
+
+    LessonPracticeInteractionContract? interaction = null;
+    if (!string.IsNullOrWhiteSpace(question?.GenerationFamily))
+    {
+        LessonPracticeInteractionRegistry.TryResolve(
+            question.GenerationFamily,
+            out interaction);
+    }
+
+    var visualSvg = question is null
+        ? null
+        : PracticeMathVisualRenderer.RenderSvg(
+            question.GenerationFamily,
+            question.GenerationParametersJson);
+
+    var prompt = question?.Prompt ?? string.Empty;
+    var optionMatches = Regex.Matches(
+        prompt,
+        @"(?<![A-Za-z0-9])([A-D])\)\s*",
+        RegexOptions.CultureInvariant);
+    var isPromptMultipleChoice =
+        question is not null &&
+        optionMatches.Count >= 2 &&
+        optionMatches[0].Index > 0;
+    var stem = isPromptMultipleChoice
+        ? prompt[..optionMatches[0].Index].Trim()
+        : prompt;
+    var choices = new List<(string Label, string Value)>();
+
+    if (isPromptMultipleChoice)
+    {
+        for (var index = 0; index < optionMatches.Count; index++)
+        {
+            var match = optionMatches[index];
+            var start = match.Index + match.Length;
+            var end = index + 1 < optionMatches.Count
+                ? optionMatches[index + 1].Index
+                : prompt.Length;
+            var value = prompt[start..end].Trim();
+            if (value.Length > 0)
+                choices.Add((match.Groups[1].Value, value));
+        }
+
+        isPromptMultipleChoice = choices.Count >= 2;
+    }
+
+    var feedbackKind = TempData["PracticeFeedback"]?.ToString();
+    var feedbackSolution = TempData["PracticeSolution"]?.ToString();
+    var backLabel = locale switch
+    {
+        "pl" => "← Powrót do lekcji",
+        "ar" => "العودة إلى الدرس →",
+        _ => "← Back to lesson"
+    };
+    var adaptiveLabel = locale switch
+    {
+        "pl" => "Adaptacyjne ćwiczenie Edulytics",
+        "ar" => "تدريب Edulytics التكيفي",
+        _ => "Edulytics Adaptive Practice"
+    };
+}
+<!DOCTYPE html>
+<html lang="@locale" dir="@(isRtl ? "rtl" : "ltr")">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>@lessonTitle - @adaptiveLabel</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/game-workspace-v1.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/practice-unified-ui-v2.css" asp-append-version="true" />
+    <style>
+        .av2-card {
+            display:grid;
+            place-items:center;
+            gap:20px;
+            width:min(920px,100%);
+            min-height:330px;
+            margin:0 auto;
+            padding:28px 24px 42px;
+        }
+        .av2-visual {
+            width:min(660px,100%);
+            padding:12px;
+            border-radius:20px;
+            background:#fff;
+            color:#123547;
+        }
+        .av2-visual svg { display:block; width:100%; height:auto; max-height:360px; }
+        .av2-form { display:grid; gap:16px; justify-items:center; width:min(720px,100%); }
+        .av2-input {
+            width:min(440px,100%);
+            min-height:64px;
+            border:3px solid rgba(255,212,95,.92);
+            border-radius:16px;
+            padding:10px 18px;
+            text-align:center;
+            font-size:1.55rem;
+            font-weight:900;
+        }
+        .av2-choices { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
+        .av2-choice {
+            min-width:126px;
+            border:2px solid rgba(255,255,255,.68);
+            border-radius:18px;
+            padding:13px 18px;
+            background:#fff2cf;
+            color:#173c47;
+            font-weight:900;
+            cursor:pointer;
+        }
+        .av2-feedback {
+            width:min(760px,calc(100% - 32px));
+            margin:12px auto;
+            padding:14px 18px;
+            border-radius:16px;
+        }
+        .av2-feedback--ok { background:rgba(113,224,196,.2); color:#e6fff7; }
+        .av2-feedback--bad { background:rgba(255,143,131,.18); color:#fff0ee; }
+        .av2-confirmation {
+            padding:7px 12px;
+            border-radius:999px;
+            background:rgba(113,224,196,.16);
+            font-size:.85rem;
+            font-weight:800;
+        }
+        .av2-complete {
+            width:min(600px,100%);
+            margin:80px auto;
+            padding:36px;
+            text-align:center;
+            border-radius:26px;
+            background:rgba(4,28,45,.84);
+            color:#fff;
+        }
+    </style>
+</head>
+<body class="gw-page">
+<main class="gw-wrap">
+    <a class="gw-back"
+       asp-controller="StudentPortal"
+       asp-action="Lesson"
+       asp-route-id="@Model.LessonId">@backLabel</a>
+
+    <header class="gw-head">
+        <p>@adaptiveLabel</p>
+        <h1>@lessonTitle</h1>
+        <p>@unitTitle</p>
+    </header>
+
+    @if (TempData["Error"] is string error)
+    {
+        <div class="av2-feedback av2-feedback--bad" role="alert">@error</div>
+    }
+
+    @if (feedbackKind is not null)
+    {
+        <div class="av2-feedback @(feedbackKind == "correct" ? "av2-feedback--ok" : "av2-feedback--bad")"
+             role="status">
+            <strong>@(feedbackKind == "correct" ? S["PracticeCorrect"].Value : S["PracticeIncorrect"].Value)</strong>
+            @if (!string.IsNullOrWhiteSpace(feedbackSolution))
+            {
+                <div>@feedbackSolution</div>
+            }
+        </div>
+    }
+
+    @if (Model.IsPaused)
+    {
+        <section class="av2-complete" role="status">
+            <img src="~/images/public/edulaytiks-character.png?v=43"
+                 alt=""
+                 width="96"
+                 height="96" />
+            <h2>@(locale switch
+            {
+                "pl" => "Ćwiczenie zostało bezpiecznie wstrzymane",
+                "ar" => "تم إيقاف التدريب مؤقتًا بأمان",
+                _ => "Practice safely paused"
+            })</h2>
+            <p>@(locale switch
+            {
+                "pl" => "Twoja ostatnia odpowiedź została zapisana. Wróć do lekcji i spróbuj ponownie później.",
+                "ar" => "تم حفظ إجابتك الأخيرة. ارجع إلى الدرس وحاول مرة أخرى لاحقًا.",
+                _ => "Your last answer was saved. Return to the lesson and try again later."
+            })</p>
+            <a class="gw-primary"
+               asp-controller="StudentPortal"
+               asp-action="Lesson"
+               asp-route-id="@Model.LessonId">@backLabel</a>
+        </section>
+    }
+    else if (Model.IsCompleted)
+    {
+        <section class="av2-complete">
+            <img src="~/images/public/edulaytiks-character.png?v=43"
+                 alt=""
+                 width="96"
+                 height="96" />
+            <h2>@S["PracticeFinish"]</h2>
+            <p>@Model.StopReason</p>
+            <a class="gw-primary"
+               asp-controller="StudentPortal"
+               asp-action="Lesson"
+               asp-route-id="@Model.LessonId">@backLabel</a>
+        </section>
+    }
+    else if (question is not null)
+    {
+        <section class="gw-game gw-universal" aria-label="@adaptiveLabel">
+            <div class="gw-hud">
+                <div class="gw-brand">
+                    <div class="gw-brand-mark" aria-hidden="true">◆</div>
+                    <div>
+                        <strong>EDULYTICS ADAPTIVE</strong>
+                        <small>@Model.SkillId</small>
+                    </div>
+                </div>
+                <div class="gw-hud-right">
+                    <span class="gw-pill">@question.Sequence / @Model.TargetQuestionCount</span>
+                </div>
+            </div>
+
+            <div class="gw-progress"
+                 role="progressbar"
+                 aria-valuemin="0"
+                 aria-valuemax="100"
+                 aria-valuenow="@progress">
+                <span style="width:@progress%"></span>
+            </div>
+
+            <div class="gw-stage">
+                <div class="gw-mission">
+                    <span>YOUR MISSION</span>
+                    <strong>@stem</strong>
+                    @if (question.IsIndependentConfirmation)
+                    {
+                        <small class="av2-confirmation">Fresh confirmation</small>
+                    }
+                </div>
+
+                <section class="gw-runtime-board av2-card">
+                    @if (!string.IsNullOrWhiteSpace(visualSvg))
+                    {
+                        <div class="av2-visual">@Html.Raw(visualSvg)</div>
+                    }
+
+                    @if (interaction is null)
+                    {
+                        <div class="gw-error">This Practice interaction is not available.</div>
+                    }
+                    else
+                    {
+                        <form asp-action="AnswerAdaptiveLessonAttempt"
+                              asp-route-id="@Model.SessionId"
+                              method="post"
+                              class="av2-form">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="sequence" value="@question.Sequence" />
+
+                            @if (isPromptMultipleChoice)
+                            {
+                                <div class="av2-choices" role="radiogroup" aria-label="@S["YourAnswer"]">
+                                    @foreach (var choice in choices)
+                                    {
+                                        <button class="av2-choice"
+                                                type="submit"
+                                                name="answer"
+                                                value="@choice.Value">
+                                            @choice.Label) @choice.Value
+                                        </button>
+                                    }
+                                </div>
+                            }
+                            else if (interaction.InteractionKind == LessonPracticeInteractionKind.RelationChoice)
+                            {
+                                <div class="av2-choices" aria-label="@S["YourAnswer"]">
+                                    @foreach (var relation in new[] { "<", "=", ">" })
+                                    {
+                                        <button class="av2-choice"
+                                                type="submit"
+                                                name="answer"
+                                                value="@relation">@relation</button>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <input class="av2-input"
+                                       name="answer"
+                                       maxlength="128"
+                                       required
+                                       autocomplete="off"
+                                       autofocus
+                                       aria-label="@S["YourAnswer"]" />
+                                <button class="gw-primary" type="submit">
+                                    @S["PracticeCheckAnswer"]
+                                </button>
+                            }
+                        </form>
+                    }
+                </section>
+            </div>
+        </section>
+    }
+</main>
+</body>
+</html>
