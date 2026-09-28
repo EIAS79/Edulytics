@@ -22,6 +22,520 @@ namespace Edulytics.Data.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AdaptiveDecisionSnapshot", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("ActiveMisconceptionsJson")
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("CurrentComplexity")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("DecisionReasonCode")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("DecisionTraceJson")
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.Property<string>("EngineVersion")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("FreshnessConstraintsJson")
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.Property<string>("MisconceptionFocusId")
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<string>("PolicyVersion")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<decimal>("PrerequisiteMasteryBefore")
+                        .HasPrecision(8, 6)
+                        .HasColumnType("numeric(8,6)");
+
+                    b.Property<string>("RepresentationFluencyJson")
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.Property<Guid>("SchoolId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("SelectedFamily")
+                        .IsRequired()
+                        .HasMaxLength(240)
+                        .HasColumnType("character varying(240)");
+
+                    b.Property<string>("SelectedRepresentation")
+                        .HasMaxLength(120)
+                        .HasColumnType("character varying(120)");
+
+                    b.Property<int>("Sequence")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("SessionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<decimal>("SkillMasteryBefore")
+                        .HasPrecision(8, 6)
+                        .HasColumnType("numeric(8,6)");
+
+                    b.Property<int>("TargetComplexity")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("SchoolId", "Id");
+
+                    b.HasIndex("SchoolId", "SessionId", "Sequence")
+                        .IsUnique();
+
+                    b.ToTable("AdaptiveDecisionSnapshots", (string)null);
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AdaptivePracticeSession", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("CapabilityVersion")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<DateTime?>("CompletedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("CurriculumAdoptionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("CurriculumLevelKey")
+                        .IsRequired()
+                        .HasMaxLength(160)
+                        .HasColumnType("character varying(160)");
+
+                    b.Property<Guid>("CurriculumPedagogicalLessonId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("CurrentSequence")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("EngineVersion")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("FeatureFlagSnapshotJson")
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.Property<string>("LessonCode")
+                        .IsRequired()
+                        .HasMaxLength(240)
+                        .HasColumnType("character varying(240)");
+
+                    b.Property<string>("PolicyVersion")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("PrimarySkillId")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<int>("Purpose")
+                        .HasColumnType("integer");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<Guid>("SchoolId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("StartedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("StopReason")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<Guid>("StudentProfileId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("TargetQuestionCount")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("SchoolId", "Id");
+
+                    b.HasIndex("CurriculumPedagogicalLessonId");
+
+                    b.HasIndex("SchoolId", "CurriculumAdoptionId");
+
+                    b.HasIndex("SchoolId", "Status", "StartedAtUtc");
+
+                    b.HasIndex("SchoolId", "StudentProfileId", "StartedAtUtc");
+
+                    b.ToTable("AdaptivePracticeSessions", (string)null);
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AdaptivePracticeShadowObservation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("CurriculumAdoptionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CurriculumPedagogicalLessonId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("DecisionReasonCode")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("EngineVersion")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<bool>("GenerationFeasible")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("ObservedMisconceptionId")
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<string>("PolicyVersion")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<int>("ProposedComplexity")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ProposedFamily")
+                        .IsRequired()
+                        .HasMaxLength(240)
+                        .HasColumnType("character varying(240)");
+
+                    b.Property<string>("ProposedMisconceptionFocusId")
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<string>("ProposedRepresentation")
+                        .HasMaxLength(120)
+                        .HasColumnType("character varying(120)");
+
+                    b.Property<string>("ProposedSkillId")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<Guid>("SchoolId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("StudentProfileId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("V1AttemptId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("V1AttemptItemId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("V1Difficulty")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("V1QuestionFamily")
+                        .HasMaxLength(240)
+                        .HasColumnType("character varying(240)");
+
+                    b.Property<int>("V1Sequence")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("V1WasCorrect")
+                        .HasColumnType("boolean");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("SchoolId", "Id");
+
+                    b.HasIndex("CurriculumPedagogicalLessonId");
+
+                    b.HasIndex("SchoolId", "CurriculumAdoptionId");
+
+                    b.HasIndex("SchoolId", "StudentProfileId", "CreatedAtUtc");
+
+                    b.HasIndex("SchoolId", "V1AttemptId", "V1AttemptItemId")
+                        .IsUnique();
+
+                    b.ToTable("AdaptivePracticeShadowObservations", (string)null);
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AdaptivePracticeTurn", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime?>("AnsweredAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("AssessmentItemId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("DecisionSnapshotId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("ExposureFingerprint")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("character varying(128)");
+
+                    b.Property<string>("Feedback")
+                        .HasMaxLength(8000)
+                        .HasColumnType("character varying(8000)");
+
+                    b.Property<bool>("IsIndependentConfirmation")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
+
+                    b.Property<bool?>("IsCorrect")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("MathematicalComplexityScore")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("MisconceptionFocusId")
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<DateTime>("PresentedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("QuestionFamily")
+                        .IsRequired()
+                        .HasMaxLength(240)
+                        .HasColumnType("character varying(240)");
+
+                    b.Property<string>("Representation")
+                        .HasMaxLength(120)
+                        .HasColumnType("character varying(120)");
+
+                    b.Property<long?>("ResponseDurationMs")
+                        .HasColumnType("bigint");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<decimal?>("Score")
+                        .HasPrecision(10, 2)
+                        .HasColumnType("numeric(10,2)");
+
+                    b.Property<string>("SemanticIdentityKey")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("character varying(256)");
+
+                    b.Property<int>("Sequence")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("SessionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("SkillId")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<string>("SubmittedAnswer")
+                        .HasMaxLength(2000)
+                        .HasColumnType("character varying(2000)");
+
+                    b.Property<int>("UiDifficultyBand")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("SchoolId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("SchoolId", "Id");
+
+                    b.HasIndex("SchoolId", "AssessmentItemId");
+
+                    b.HasIndex("SchoolId", "DecisionSnapshotId");
+
+                    b.HasIndex("SchoolId", "SessionId", "ExposureFingerprint")
+                        .IsUnique();
+
+                    b.HasIndex("SchoolId", "SessionId", "Sequence")
+                        .IsUnique();
+
+                    b.ToTable("AdaptivePracticeTurns", (string)null);
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.StudentMisconceptionState", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<decimal>("Confidence")
+                        .HasPrecision(8, 6)
+                        .HasColumnType("numeric(8,6)");
+
+                    b.Property<Guid>("CurriculumAdoptionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("EngineVersion")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<DateTime>("FirstObservedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("LastRemediationAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("LastObservedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("MisconceptionId")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<int>("ObservationCount")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("QuestionFamily")
+                        .HasMaxLength(240)
+                        .HasColumnType("character varying(240)");
+
+                    b.Property<DateTime?>("ResolvedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<Guid>("SchoolId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("SkillId")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("StudentProfileId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("SchoolId", "Id");
+
+                    b.HasIndex("SchoolId", "CurriculumAdoptionId");
+
+                    b.HasIndex("SchoolId", "StudentProfileId", "CurriculumAdoptionId", "SkillId", "MisconceptionId")
+                        .IsUnique();
+
+                    b.ToTable("StudentMisconceptionStates", (string)null);
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.StudentRepresentationFluencyState", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("EngineVersion")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<int>("EvidenceCount")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("LatestEvidenceAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Representation")
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("character varying(120)");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<Guid>("SchoolId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("SkillId")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<int>("SuccessCount")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("StudentProfileId")
+                        .HasColumnType("uuid");
+
+                    b.Property<decimal>("WeightedFluency")
+                        .HasPrecision(8, 6)
+                        .HasColumnType("numeric(8,6)");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("SchoolId", "Id");
+
+                    b.HasIndex("SchoolId", "StudentProfileId", "SkillId", "Representation")
+                        .IsUnique();
+
+                    b.ToTable("StudentRepresentationFluencyStates", (string)null);
+                });
+
             modelBuilder.Entity("Edulytics.Core.Entities.AcademicProgram", b =>
                 {
                     b.Property<Guid>("Id")
@@ -3846,6 +4360,120 @@ namespace Edulytics.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AdaptiveDecisionSnapshot", b =>
+                {
+                    b.HasOne("Edulytics.Core.Entities.AdaptivePracticeSession", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "SessionId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AdaptivePracticeSession", b =>
+                {
+                    b.HasOne("Edulytics.Core.Entities.CurriculumPedagogicalLesson", null)
+                        .WithMany()
+                        .HasForeignKey("CurriculumPedagogicalLessonId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.School", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.SchoolCurriculumAdoption", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "CurriculumAdoptionId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.StudentProfile", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "StudentProfileId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AdaptivePracticeShadowObservation", b =>
+                {
+                    b.HasOne("Edulytics.Core.Entities.CurriculumPedagogicalLesson", null)
+                        .WithMany()
+                        .HasForeignKey("CurriculumPedagogicalLessonId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.SchoolCurriculumAdoption", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "CurriculumAdoptionId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.StudentProfile", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "StudentProfileId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AdaptivePracticeTurn", b =>
+                {
+                    b.HasOne("Edulytics.Core.Entities.AdaptiveDecisionSnapshot", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "DecisionSnapshotId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.AdaptivePracticeSession", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "SessionId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.AssessmentItem", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "AssessmentItemId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.StudentMisconceptionState", b =>
+                {
+                    b.HasOne("Edulytics.Core.Entities.SchoolCurriculumAdoption", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "CurriculumAdoptionId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.StudentProfile", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "StudentProfileId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.StudentRepresentationFluencyState", b =>
+                {
+                    b.HasOne("Edulytics.Core.Entities.StudentProfile", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "StudentProfileId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Edulytics.Core.Entities.AcademicProgram", b =>
