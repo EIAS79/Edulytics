@@ -22,3 +22,21 @@ Initial rollout order:
 Secondary / IGCSE / AS / A-Level levels are not automatically included.
 
 See `BASELINE_INVENTORY.md` for the protected production baseline.
+
+
+## Companion programme: Advanced Mathematics Capability Expansion
+
+Advanced mathematics is intentionally implemented as a separate companion programme.
+
+Adaptive V2 controls learner sequencing and remediation. The advanced-mathematics
+programme controls which deeper mathematical capabilities are safe to generate,
+solve, verify, render and expose in Practice/Assessment/Exam.
+
+Adaptive V2 may consume a newly expanded family only after that family is formally
+curriculum-mapped and READY_VERIFIED for the exact learner level/lesson.
+
+See:
+
+`docs/math-v3/ADVANCED_MATHEMATICS_CAPABILITY_EXPANSION.md`
+
+This companion programme does not expand the Primary 1–6 rollout boundary.
