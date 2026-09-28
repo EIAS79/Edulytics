@@ -239,24 +239,42 @@ public static class AdvancedMathematicsVisualRenderer
         var sb = Start(spec.Accessibility);
         Axes(sb, plot);
 
-        var upper = SampleCurve(
-            spec.UpperCurve,
-            spec.XFrom,
-            spec.XTo,
-            120);
-        var lower = SampleCurve(
-            spec.LowerCurve,
-            spec.XFrom,
-            spec.XTo,
-            120);
-
-        if (upper.Count > 1 &&
-            lower.Count > 1 &&
-            upper.All(p => IsFinite(p.Y)) &&
-            lower.All(p => IsFinite(p.Y)))
+        var breakpoints = new List<decimal> { spec.XFrom };
+        foreach (var x in spec.Intersections
+                     .Select(point => point.X)
+                     .Where(x => x > spec.XFrom && x < spec.XTo)
+                     .Distinct()
+                     .OrderBy(x => x))
         {
-            var polygon = upper
-                .Concat(lower.AsEnumerable().Reverse())
+            breakpoints.Add(x);
+        }
+        breakpoints.Add(spec.XTo);
+
+        for (var index = 0; index < breakpoints.Count - 1; index++)
+        {
+            var from = breakpoints[index];
+            var to = breakpoints[index + 1];
+            var first = SampleCurve(
+                spec.FirstCurve,
+                from,
+                to,
+                60);
+            var second = SampleCurve(
+                spec.SecondCurve,
+                from,
+                to,
+                60);
+
+            if (first.Count <= 1 ||
+                second.Count <= 1 ||
+                first.Any(p => !IsFinite(p.Y)) ||
+                second.Any(p => !IsFinite(p.Y)))
+            {
+                continue;
+            }
+
+            var polygon = first
+                .Concat(second.AsEnumerable().Reverse())
                 .Select(point =>
                     $"{F(plot.X(point.X))},{F(plot.Y(point.Y))}");
 
@@ -264,8 +282,8 @@ public static class AdvancedMathematicsVisualRenderer
                 $"<polygon points='{string.Join(" ", polygon)}' class='amv-region'/>");
         }
 
-        Curve(sb, plot, spec.UpperCurve, 0);
-        Curve(sb, plot, spec.LowerCurve, 1);
+        Curve(sb, plot, spec.FirstCurve, 0);
+        Curve(sb, plot, spec.SecondCurve, 1);
 
         foreach (var point in spec.Intersections)
             Point(sb, plot, point);
