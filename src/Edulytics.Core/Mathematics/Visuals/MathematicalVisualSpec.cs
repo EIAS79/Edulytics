@@ -145,8 +145,8 @@ public sealed record ArgandDiagramVisualSpec(
 
 public sealed record RegionOfIntegrationVisualSpec(
     MathematicalAxisWindow Window,
-    MathematicalCurveSpec UpperCurve,
-    MathematicalCurveSpec LowerCurve,
+    MathematicalCurveSpec FirstCurve,
+    MathematicalCurveSpec SecondCurve,
     decimal XFrom,
     decimal XTo,
     IReadOnlyList<MathematicalPoint> Intersections,
@@ -259,8 +259,8 @@ public static class MathematicalVisualSpecValidator
 
             case RegionOfIntegrationVisualSpec region:
                 ValidateWindow(region.Window);
-                ValidateCurve(region.UpperCurve);
-                ValidateCurve(region.LowerCurve);
+                ValidateCurve(region.FirstCurve);
+                ValidateCurve(region.SecondCurve);
                 ValidateCoordinate(region.XFrom, nameof(region.XFrom));
                 ValidateCoordinate(region.XTo, nameof(region.XTo));
                 if (region.XFrom >= region.XTo)
