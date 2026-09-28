@@ -39,6 +39,7 @@ public sealed record AdaptivePracticeSessionView(
     int CurrentSequence,
     int TargetQuestionCount,
     bool IsCompleted,
+    bool IsPaused,
     string? StopReason,
     AdaptivePracticeQuestionView? CurrentQuestion);
 
