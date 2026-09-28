@@ -97,6 +97,20 @@ public sealed record AdaptivePracticeV2Policy(
             ? AllowedLessonCodes.Contains(lessonCode)
             : AllowedLessonCodes.Count == 0 ||
               AllowedLessonCodes.Contains(lessonCode);
+
+    public bool EnableLiveGroupSession { get; init; }
+
+    public bool EnablePsychometricReadiness { get; init; }
+
+    public bool EnableResearchProgramme { get; init; }
+
+    public int MinimumPsychometricResponses { get; init; } = 30;
+
+    public int MinimumPsychometricStudents { get; init; } = 10;
+
+    public int MinimumResearchCohortSize { get; init; } = 10;
+
+    public int MaximumIntelligenceRows { get; init; } = 500;
 }
 
 public interface IAdaptivePracticeEligibilityResolver
