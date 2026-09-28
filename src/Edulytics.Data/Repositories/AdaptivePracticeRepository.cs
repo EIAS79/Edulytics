@@ -79,6 +79,116 @@ public sealed class AdaptivePracticeRepository(
                     x.Id == assessmentItemId,
                 cancellationToken);
 
+    public async Task<IReadOnlyList<AssessmentItem>> GetItemsAsync(
+        Guid schoolId,
+        IReadOnlyCollection<Guid> assessmentItemIds,
+        CancellationToken cancellationToken = default)
+    {
+        if (assessmentItemIds.Count == 0)
+            return [];
+
+        var ids = assessmentItemIds.ToHashSet();
+
+        return await context.AssessmentItems.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                ids.Contains(x.Id))
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task<IReadOnlyList<AdaptivePracticeSession>> GetSessionsForStudentAsync(
+        Guid schoolId,
+        Guid studentProfileId,
+        int take = 50,
+        CancellationToken cancellationToken = default) =>
+        await context.AdaptivePracticeSessions.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                x.StudentProfileId == studentProfileId)
+            .OrderByDescending(x => x.StartedAtUtc)
+            .ThenByDescending(x => x.Id)
+            .Take(Math.Clamp(take, 1, 200))
+            .ToListAsync(cancellationToken);
+
+    public async Task<IReadOnlyList<AdaptivePracticeSession>> GetRecentSessionsAsync(
+        Guid schoolId,
+        IReadOnlyCollection<Guid> studentProfileIds,
+        DateTime sinceUtc,
+        int take = 500,
+        CancellationToken cancellationToken = default)
+    {
+        if (studentProfileIds.Count == 0)
+            return [];
+
+        var ids = studentProfileIds.ToHashSet();
+
+        return await context.AdaptivePracticeSessions.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                ids.Contains(x.StudentProfileId) &&
+                x.StartedAtUtc >= sinceUtc)
+            .OrderByDescending(x => x.StartedAtUtc)
+            .ThenByDescending(x => x.Id)
+            .Take(Math.Clamp(take, 1, 2000))
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task<IReadOnlyList<AdaptivePracticeTurn>> GetTurnsForSessionsAsync(
+        Guid schoolId,
+        IReadOnlyCollection<Guid> sessionIds,
+        CancellationToken cancellationToken = default)
+    {
+        if (sessionIds.Count == 0)
+            return [];
+
+        var ids = sessionIds.ToHashSet();
+
+        return await context.AdaptivePracticeTurns.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                ids.Contains(x.SessionId))
+            .OrderBy(x => x.SessionId)
+            .ThenBy(x => x.Sequence)
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task<IReadOnlyList<AdaptiveDecisionSnapshot>> GetDecisionSnapshotsForSessionsAsync(
+        Guid schoolId,
+        IReadOnlyCollection<Guid> sessionIds,
+        CancellationToken cancellationToken = default)
+    {
+        if (sessionIds.Count == 0)
+            return [];
+
+        var ids = sessionIds.ToHashSet();
+
+        return await context.AdaptiveDecisionSnapshots.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                ids.Contains(x.SessionId))
+            .OrderBy(x => x.SessionId)
+            .ThenBy(x => x.Sequence)
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task<IReadOnlyList<StudentMisconceptionState>> GetMisconceptionStatesForStudentsAsync(
+        Guid schoolId,
+        IReadOnlyCollection<Guid> studentProfileIds,
+        CancellationToken cancellationToken = default)
+    {
+        if (studentProfileIds.Count == 0)
+            return [];
+
+        var ids = studentProfileIds.ToHashSet();
+
+        return await context.StudentMisconceptionStates.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                ids.Contains(x.StudentProfileId))
+            .OrderByDescending(x => x.LastObservedAtUtc)
+            .ToListAsync(cancellationToken);
+    }
+
     public async Task CommitAnsweredTurnAsync(
         AdaptivePracticeSession session,
         AdaptivePracticeTurn answeredTurn,

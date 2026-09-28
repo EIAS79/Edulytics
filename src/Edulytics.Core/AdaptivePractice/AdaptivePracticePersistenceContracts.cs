@@ -61,6 +61,39 @@ public interface IAdaptivePracticeRepository
         Guid assessmentItemId,
         CancellationToken cancellationToken = default);
 
+    Task<IReadOnlyList<AssessmentItem>> GetItemsAsync(
+        Guid schoolId,
+        IReadOnlyCollection<Guid> assessmentItemIds,
+        CancellationToken cancellationToken = default);
+
+    Task<IReadOnlyList<AdaptivePracticeSession>> GetSessionsForStudentAsync(
+        Guid schoolId,
+        Guid studentProfileId,
+        int take = 50,
+        CancellationToken cancellationToken = default);
+
+    Task<IReadOnlyList<AdaptivePracticeSession>> GetRecentSessionsAsync(
+        Guid schoolId,
+        IReadOnlyCollection<Guid> studentProfileIds,
+        DateTime sinceUtc,
+        int take = 500,
+        CancellationToken cancellationToken = default);
+
+    Task<IReadOnlyList<AdaptivePracticeTurn>> GetTurnsForSessionsAsync(
+        Guid schoolId,
+        IReadOnlyCollection<Guid> sessionIds,
+        CancellationToken cancellationToken = default);
+
+    Task<IReadOnlyList<AdaptiveDecisionSnapshot>> GetDecisionSnapshotsForSessionsAsync(
+        Guid schoolId,
+        IReadOnlyCollection<Guid> sessionIds,
+        CancellationToken cancellationToken = default);
+
+    Task<IReadOnlyList<StudentMisconceptionState>> GetMisconceptionStatesForStudentsAsync(
+        Guid schoolId,
+        IReadOnlyCollection<Guid> studentProfileIds,
+        CancellationToken cancellationToken = default);
+
     Task CommitAnsweredTurnAsync(
         AdaptivePracticeSession session,
         AdaptivePracticeTurn answeredTurn,
