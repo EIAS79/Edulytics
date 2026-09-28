@@ -22,7 +22,8 @@ public sealed class Stage18SkillContractPracticeEngine
         int questionCount,
         int seed,
         IReadOnlyCollection<string> excludedExposureFingerprints,
-        Guid createdByUserId)
+        Guid createdByUserId,
+        int? preferredVariant = null)
     {
         ArgumentNullException.ThrowIfNull(contract);
         ArgumentNullException.ThrowIfNull(excludedExposureFingerprints);
@@ -45,7 +46,8 @@ public sealed class Stage18SkillContractPracticeEngine
             ResolveDifficulty(requestedDifficulty),
             questionCount,
             seed,
-            excludedExposureFingerprints);
+            excludedExposureFingerprints,
+            preferredVariant);
 
         return exact.Select(question =>
         {
