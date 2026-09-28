@@ -64,6 +64,8 @@ public interface IAdaptivePracticeRepository
     Task CommitAnsweredTurnAsync(
         AdaptivePracticeSession session,
         AdaptivePracticeTurn answeredTurn,
+        StudentMisconceptionState? misconceptionState,
+        StudentRepresentationFluencyState? representationState,
         AssessmentItem? nextItem,
         IReadOnlyList<AssessmentItemOutcome> nextItemOutcomes,
         StudentItemExposure? nextExposure,
