@@ -137,16 +137,24 @@ public sealed class AdaptiveProgrammeClosureService(
             }
         }
 
+        var plan = new AdaptiveLiveGroupPlan(
+            Guid.NewGuid(),
+            academicYearId,
+            classGroupId,
+            subjectId,
+            snapshot.Value.StudentCount,
+            groups,
+            DateTime.UtcNow);
+
+        Console.WriteLine(
+            "ADAPTIVE_V2_PHASE14_GROUP_PLAN " +
+            $"classGroupId={classGroupId:D} " +
+            $"subjectId={subjectId:D} " +
+            $"students={plan.StudentCount} " +
+            $"groups={plan.Groups.Count}");
+
         return AdaptiveIntelligenceV2Result<AdaptiveLiveGroupPlan>
-            .Success(
-                new AdaptiveLiveGroupPlan(
-                    Guid.NewGuid(),
-                    academicYearId,
-                    classGroupId,
-                    subjectId,
-                    snapshot.Value.StudentCount,
-                    groups,
-                    DateTime.UtcNow));
+            .Success(plan);
     }
 
     public async Task<
@@ -259,19 +267,29 @@ public sealed class AdaptiveProgrammeClosureService(
             })
             .ToArray();
 
+        var report =
+            new AdaptivePsychometricReadinessReport(
+                academicYearId,
+                classGroupId,
+                subjectId,
+                distinctStudents,
+                answered.Length,
+                status,
+                calibrationReady,
+                families,
+                DateTime.UtcNow);
+
+        Console.WriteLine(
+            "ADAPTIVE_V2_PHASE15_PSYCHOMETRIC " +
+            $"classGroupId={classGroupId:D} " +
+            $"subjectId={subjectId:D} " +
+            $"students={report.StudentCount} " +
+            $"responses={report.ResponseCount} " +
+            $"status={report.Status}");
+
         return AdaptiveIntelligenceV2Result<
                 AdaptivePsychometricReadinessReport>
-            .Success(
-                new AdaptivePsychometricReadinessReport(
-                    academicYearId,
-                    classGroupId,
-                    subjectId,
-                    distinctStudents,
-                    answered.Length,
-                    status,
-                    calibrationReady,
-                    families,
-                    DateTime.UtcNow));
+            .Success(report);
     }
 
     public async Task<AdaptiveIntelligenceV2Result<AdaptiveResearchAggregate>>
@@ -349,22 +367,31 @@ public sealed class AdaptiveProgrammeClosureService(
                 answered.Average(
                     x => x.IsCorrect == true ? 1m : 0m));
 
+        var aggregate = new AdaptiveResearchAggregate(
+            academicYearId,
+            classGroupId,
+            subjectId,
+            scope.StudentIds.Count,
+            evidence.Sessions.Count,
+            answered.Length,
+            overall,
+            misconceptions.Count(x =>
+                x.Status !=
+                AdaptiveMisconceptionStatus.Resolved),
+            families,
+            $"Aggregate only; cohort >= {policy.MinimumResearchCohortSize}; no learner identifiers; family cells require >= {MinimumResearchFamilyResponses} responses.",
+            DateTime.UtcNow);
+
+        Console.WriteLine(
+            "ADAPTIVE_V2_PHASE16_RESEARCH " +
+            $"classGroupId={classGroupId:D} " +
+            $"subjectId={subjectId:D} " +
+            $"cohort={aggregate.CohortSize} " +
+            $"sessions={aggregate.SessionCount} " +
+            $"responses={aggregate.AnsweredResponseCount}");
+
         return AdaptiveIntelligenceV2Result<AdaptiveResearchAggregate>
-            .Success(
-                new AdaptiveResearchAggregate(
-                    academicYearId,
-                    classGroupId,
-                    subjectId,
-                    scope.StudentIds.Count,
-                    evidence.Sessions.Count,
-                    answered.Length,
-                    overall,
-                    misconceptions.Count(x =>
-                        x.Status !=
-                        AdaptiveMisconceptionStatus.Resolved),
-                    families,
-                    $"Aggregate only; cohort >= {policy.MinimumResearchCohortSize}; no learner identifiers; family cells require >= {MinimumResearchFamilyResponses} responses.",
-                    DateTime.UtcNow));
+            .Success(aggregate);
     }
 
     private async Task<ScopeResolution> ResolveStaffScopeAsync(
