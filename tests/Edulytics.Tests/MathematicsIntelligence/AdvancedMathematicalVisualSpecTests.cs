@@ -1,3 +1,4 @@
+using System.Net;
 using Edulytics.Core.Mathematics.Visuals;
 using Edulytics.Web.Presentation;
 
@@ -24,7 +25,7 @@ public sealed class AdvancedMathematicalVisualSpecTests
         Assert.Equal(first, second);
         Assert.Contains("<svg", first, StringComparison.Ordinal);
         Assert.Contains("amv-curve", first, StringComparison.Ordinal);
-        Assert.Contains("y = x²", first, StringComparison.Ordinal);
+        Assert.Contains(WebUtility.HtmlEncode("y = x²"), first, StringComparison.Ordinal);
     }
 
     [Fact]
@@ -82,7 +83,7 @@ public sealed class AdvancedMathematicalVisualSpecTests
         var svg = AdvancedMathematicsVisualRenderer.RenderSvg(spec);
 
         Assert.Contains("amv-region", svg, StringComparison.Ordinal);
-        Assert.Contains("4 − x²", svg, StringComparison.Ordinal);
+        Assert.Contains(WebUtility.HtmlEncode("4 − x²"), svg, StringComparison.Ordinal);
     }
 
     [Fact]
