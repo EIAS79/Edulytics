@@ -220,6 +220,10 @@ builder.Services
     .AddMathematicsGenerationPhase33();
 
 builder.Services
+    .AddAdvancedMathematicsV3(
+        builder.Configuration);
+
+builder.Services
     .AddWeaknessRecoveryPhase36();
 
 builder.Services
