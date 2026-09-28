@@ -95,4 +95,8 @@ public interface IAdaptivePracticeRepository
     Task UpsertRepresentationStateAsync(
         StudentRepresentationFluencyState state,
         CancellationToken cancellationToken = default);
+
+    Task AddShadowObservationIfMissingAsync(
+        AdaptivePracticeShadowObservation observation,
+        CancellationToken cancellationToken = default);
 }
