@@ -254,3 +254,87 @@ public sealed class StudentRepresentationFluencyStateConfiguration :
             .OnDelete(DeleteBehavior.Restrict);
     }
 }
+
+
+public sealed class AdaptivePracticeShadowObservationConfiguration :
+    IEntityTypeConfiguration<AdaptivePracticeShadowObservation>
+{
+    public void Configure(
+        EntityTypeBuilder<AdaptivePracticeShadowObservation> builder)
+    {
+        builder.ToTable("AdaptivePracticeShadowObservations");
+        builder.HasKey(x => x.Id);
+        builder.HasAlternateKey(x => new { x.SchoolId, x.Id });
+
+        builder.Property(x => x.V1QuestionFamily)
+            .HasMaxLength(240);
+        builder.Property(x => x.V1Difficulty)
+            .HasConversion<int>();
+        builder.Property(x => x.ProposedSkillId)
+            .HasMaxLength(200)
+            .IsRequired();
+        builder.Property(x => x.ProposedFamily)
+            .HasMaxLength(240)
+            .IsRequired();
+        builder.Property(x => x.ProposedRepresentation)
+            .HasMaxLength(120);
+        builder.Property(x => x.ProposedMisconceptionFocusId)
+            .HasMaxLength(200);
+        builder.Property(x => x.ObservedMisconceptionId)
+            .HasMaxLength(200);
+        builder.Property(x => x.DecisionReasonCode)
+            .HasMaxLength(100)
+            .IsRequired();
+        builder.Property(x => x.EngineVersion)
+            .HasMaxLength(100)
+            .IsRequired();
+        builder.Property(x => x.PolicyVersion)
+            .HasMaxLength(100)
+            .IsRequired();
+
+        builder.HasIndex(x => new
+        {
+            x.SchoolId,
+            x.V1AttemptId,
+            x.V1AttemptItemId
+        }).IsUnique();
+
+        builder.HasIndex(x => new
+        {
+            x.SchoolId,
+            x.StudentProfileId,
+            x.CreatedAtUtc
+        });
+
+        builder.HasOne<StudentProfile>().WithMany()
+            .HasForeignKey(x => new
+            {
+                x.SchoolId,
+                x.StudentProfileId
+            })
+            .HasPrincipalKey(x => new
+            {
+                x.SchoolId,
+                x.Id
+            })
+            .OnDelete(DeleteBehavior.Restrict);
+
+        builder.HasOne<SchoolCurriculumAdoption>().WithMany()
+            .HasForeignKey(x => new
+            {
+                x.SchoolId,
+                x.CurriculumAdoptionId
+            })
+            .HasPrincipalKey(x => new
+            {
+                x.SchoolId,
+                x.Id
+            })
+            .OnDelete(DeleteBehavior.Restrict);
+
+        builder.HasOne<CurriculumPedagogicalLesson>().WithMany()
+            .HasForeignKey(x =>
+                x.CurriculumPedagogicalLessonId)
+            .OnDelete(DeleteBehavior.Restrict);
+    }
+}
