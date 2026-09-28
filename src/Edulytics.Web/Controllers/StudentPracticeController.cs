@@ -20,6 +20,7 @@ public sealed class StudentPracticeController(
     IStudentPrivatePracticeService privatePractice,
     IPracticeService practice,
     IAdaptivePracticeV2Service adaptivePractice,
+    IAdaptivePracticeShadowObserver adaptiveShadowObserver,
     ILessonContentService lessonContent,
     Stage22ExactGameRuntime gameRuntime,
     IStringLocalizer<StudentResource> text) : Controller
@@ -579,6 +580,16 @@ public sealed class StudentPracticeController(
                     lessonId
                 });
         }
+
+        // Shadow observation is deliberately non-blocking and never changes
+        // the accepted V1 answer or the next V1 question.
+        await adaptiveShadowObserver.ObserveLessonAnswerAsync(
+            actorId,
+            curriculumAdoptionId,
+            lessonId,
+            id,
+            result.Value.AttemptItemId,
+            cancellationToken);
 
         return RedirectToAction(
             nameof(LessonAttempt),
