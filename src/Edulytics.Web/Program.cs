@@ -207,6 +207,10 @@ builder.Services
     .AddPracticePhase30();
 
 builder.Services
+    .AddAdaptivePracticeV2(
+        builder.Configuration);
+
+builder.Services
     .AddSingleton<Edulytics.Web.GameRouting.Stage22ExactGameRuntime>();
 
 builder.Services
