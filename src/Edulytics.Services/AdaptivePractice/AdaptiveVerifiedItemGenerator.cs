@@ -23,7 +23,8 @@ public sealed class AdaptiveVerifiedItemGenerator
         LessonPracticeContract contract,
         AdaptiveNextItemDecision decision,
         int seed,
-        IReadOnlyCollection<string> excludedExposureFingerprints)
+        IReadOnlyCollection<string> excludedExposureFingerprints,
+        IReadOnlyCollection<string>? excludedSemanticIdentityKeys = null)
     {
         ArgumentNullException.ThrowIfNull(contract);
         ArgumentNullException.ThrowIfNull(decision);
@@ -71,27 +72,64 @@ public sealed class AdaptiveVerifiedItemGenerator
                 ? capability.MaximumDifficulty
                 : requestedCognitive;
         var difficulty = DifficultyFor(effectiveCognitive);
-        var preferredVariant = capability.VariantSlots[
-            Math.Abs(seed == int.MinValue ? 0 : seed) %
-            capability.VariantSlots.Count];
+        var semanticExclusions =
+            (excludedSemanticIdentityKeys ?? [])
+                .Where(x => !string.IsNullOrWhiteSpace(x))
+                .ToHashSet(StringComparer.Ordinal);
 
-        var item = new Stage18SkillContractPracticeEngine()
-            .Generate(
-                schoolId,
-                curriculumAdoptionId,
-                lessonId,
-                narrowedContract,
-                difficulty,
-                questionCount: 1,
-                seed,
-                excludedExposureFingerprints,
-                createdByUserId,
-                preferredVariant)
-            .Single();
+        AssessmentItem? item = null;
+        const int maxSemanticRetries = 32;
 
-        ValidateTruthfulGeneratedForm(
-            item,
-            effectiveCognitive);
+        for (var retry = 0;
+             retry < maxSemanticRetries && item is null;
+             retry++)
+        {
+            var roundSeed = unchecked(
+                (seed == 0 ? 1 : seed) ^
+                ((retry + 1) * 104729));
+            var preferredVariant = capability.VariantSlots[
+                Math.Abs(
+                    roundSeed == int.MinValue
+                        ? 0
+                        : roundSeed) %
+                capability.VariantSlots.Count];
+
+            var candidate = new Stage18SkillContractPracticeEngine()
+                .Generate(
+                    schoolId,
+                    curriculumAdoptionId,
+                    lessonId,
+                    narrowedContract,
+                    difficulty,
+                    questionCount: 1,
+                    roundSeed,
+                    excludedExposureFingerprints,
+                    createdByUserId,
+                    preferredVariant)
+                .Single();
+
+            ValidateTruthfulGeneratedForm(
+                candidate,
+                effectiveCognitive);
+
+            var semanticIdentity =
+                AdaptivePracticeSemanticIdentity.Resolve(
+                    candidate);
+
+            if (semanticExclusions.Contains(
+                    semanticIdentity))
+            {
+                continue;
+            }
+
+            item = candidate;
+        }
+
+        if (item is null)
+        {
+            throw new InvalidOperationException(
+                "Adaptive Practice V2 exhausted semantic freshness retries.");
+        }
 
         if (!string.Equals(
                 item.GenerationFamily,
