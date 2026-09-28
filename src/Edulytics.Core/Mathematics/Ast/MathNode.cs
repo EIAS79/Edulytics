@@ -23,6 +23,7 @@ namespace Edulytics.Core.Mathematics.Ast;
 [JsonDerivedType(typeof(MatrixNode), "matrix")]
 [JsonDerivedType(typeof(DerivativeNode), "derivative")]
 [JsonDerivedType(typeof(IntegralNode), "integral")]
+[JsonDerivedType(typeof(AreaBetweenCurvesNode), "areaBetweenCurves")]
 public abstract record MathNode;
 
 public sealed record IntegerNode : MathNode
@@ -263,3 +264,16 @@ public sealed record IntegralNode(
     SymbolNode Variable,
     MathNode? LowerBound = null,
     MathNode? UpperBound = null) : MathNode;
+
+
+/// <summary>
+/// Typed exact-calculus problem for geometric area between two curves over a
+/// bounded interval. Solver implementations must split the interval at exact
+/// intersections and integrate the absolute curve difference piecewise.
+/// </summary>
+public sealed record AreaBetweenCurvesNode(
+    MathNode FirstCurve,
+    MathNode SecondCurve,
+    SymbolNode Variable,
+    MathNode LowerBound,
+    MathNode UpperBound) : MathNode;
