@@ -182,7 +182,32 @@
         </div>
     }
 
-    @if (Model.IsCompleted)
+    @if (Model.IsPaused)
+    {
+        <section class="av2-complete" role="status">
+            <img src="~/images/public/edulaytiks-character.png?v=43"
+                 alt=""
+                 width="96"
+                 height="96" />
+            <h2>@(locale switch
+            {
+                "pl" => "Ćwiczenie zostało bezpiecznie wstrzymane",
+                "ar" => "تم إيقاف التدريب مؤقتًا بأمان",
+                _ => "Practice safely paused"
+            })</h2>
+            <p>@(locale switch
+            {
+                "pl" => "Twoja ostatnia odpowiedź została zapisana. Wróć do lekcji i spróbuj ponownie później.",
+                "ar" => "تم حفظ إجابتك الأخيرة. ارجع إلى الدرس وحاول مرة أخرى لاحقًا.",
+                _ => "Your last answer was saved. Return to the lesson and try again later."
+            })</p>
+            <a class="gw-primary"
+               asp-controller="StudentPortal"
+               asp-action="Lesson"
+               asp-route-id="@Model.LessonId">@backLabel</a>
+        </section>
+    }
+    else if (Model.IsCompleted)
     {
         <section class="av2-complete">
             <img src="~/images/public/edulaytiks-character.png?v=43"
