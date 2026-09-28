@@ -47,12 +47,11 @@ public static class AdaptivePracticeV2RegistrationExtensions
                         return true;
                     }
 
-                    return options.AllowedCurriculumLevelKeys.Any(
-                               x => !string.IsNullOrWhiteSpace(x)) &&
-                           options.AllowedLessonCodes.Any(
-                               x => !string.IsNullOrWhiteSpace(x)) &&
-                           options.AllowedSchoolIds.Any(
-                               x => x != Guid.Empty);
+                    return options.AllowedSchoolIds.Any(
+                               x => x != Guid.Empty) &&
+                           AdaptivePrimaryRolloutPlan.IsValidCanaryScope(
+                               options.AllowedCurriculumLevelKeys,
+                               options.AllowedLessonCodes);
                 },
                 "AdaptivePracticeV2 Canary requires explicit curriculum-level, lesson, and school allow-lists.")
             .ValidateOnStart();
