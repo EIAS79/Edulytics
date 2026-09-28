@@ -1,0 +1,789 @@
+using System.Security.Cryptography;
+using System.Text.Json;
+using Edulytics.Core.AdaptivePractice;
+using Edulytics.Core.Entities;
+using Edulytics.Core.Mathematics.Practice;
+using Edulytics.Core.Practice;
+using Edulytics.Services.Assessments;
+
+namespace Edulytics.Services.AdaptivePractice;
+
+/// <summary>
+/// Learner-facing Adaptive Practice V2 orchestrator.
+///
+/// This service is additive. It never mutates a V1 PracticeAttempt and may be
+/// entered only through the fail-closed AdaptivePracticeEligibilityResolver.
+/// </summary>
+public sealed class AdaptivePracticeV2Service(
+    IPracticeRepository practiceRepository,
+    IStudentPrivatePracticeRepository privatePracticeRepository,
+    IAdaptivePracticeRepository adaptiveRepository,
+    IAdaptivePracticeEligibilityResolver eligibilityResolver,
+    AdaptiveLearningStateAssembler stateAssembler,
+    AdaptiveNextItemDecisionEngine decisionEngine,
+    AdaptiveVerifiedItemGenerator itemGenerator,
+    AdaptivePracticeV2Policy policy)
+    : IAdaptivePracticeV2Service
+{
+    public async Task<AdaptivePracticeStartResult> StartLessonAsync(
+        Guid studentUserId,
+        Guid curriculumAdoptionId,
+        Guid lessonId,
+        CancellationToken cancellationToken = default)
+    {
+        if (studentUserId == Guid.Empty ||
+            curriculumAdoptionId == Guid.Empty ||
+            lessonId == Guid.Empty)
+        {
+            return AdaptivePracticeStartResult.Failure(
+                AdaptivePracticeV2Error.AccessDenied);
+        }
+
+        var context =
+            await privatePracticeRepository.GetContextAsync(
+                studentUserId,
+                curriculumAdoptionId,
+                cancellationToken);
+
+        if (context is null)
+        {
+            return AdaptivePracticeStartResult.Failure(
+                AdaptivePracticeV2Error.CurriculumNotAvailable);
+        }
+
+        var lesson = context.Lessons.SingleOrDefault(
+            x => x.Id == lessonId);
+
+        if (lesson is null)
+        {
+            return AdaptivePracticeStartResult.Failure(
+                AdaptivePracticeV2Error.LessonNotAvailable);
+        }
+
+        var eligibility = eligibilityResolver.Resolve(
+            new AdaptivePracticeEligibilityRequest(
+                context.Student.SchoolId,
+                context.Adoption.CurriculumLevelKey ?? string.Empty,
+                lesson.Code,
+                IsMathematics: true));
+
+        if (!eligibility.IsLearnerFacing)
+        {
+            return AdaptivePracticeStartResult.Failure(
+                AdaptivePracticeV2Error.NotEligible);
+        }
+
+        if (!LessonPracticeCapabilityResolver.TryResolve(
+                lesson.Code,
+                out var contract) ||
+            contract is null)
+        {
+            return AdaptivePracticeStartResult.Failure(
+                AdaptivePracticeV2Error.NotEligible);
+        }
+
+        var misconceptionStates =
+            await adaptiveRepository.GetMisconceptionStatesAsync(
+                context.Student.SchoolId,
+                context.Student.Id,
+                context.Adoption.Id,
+                contract.SkillId,
+                cancellationToken);
+
+        var representationStates =
+            await adaptiveRepository.GetRepresentationStatesAsync(
+                context.Student.SchoolId,
+                context.Student.Id,
+                contract.SkillId,
+                cancellationToken);
+
+        var learningState = stateAssembler.Build(
+            context,
+            lessonId,
+            contract,
+            [],
+            misconceptionStates,
+            representationStates);
+
+        var proposed = decisionEngine.Decide(learningState);
+        var decision = proposed with
+        {
+            ReasonCode =
+                AdaptivePracticeDecisionReasonCodes.SessionBaseline,
+            RemediationLockActive = false,
+            ConfirmationRequired = false,
+            IsIndependentConfirmation = false,
+            ProgressionEligible = false
+        };
+
+        AssessmentItem item;
+        try
+        {
+            item = itemGenerator.GenerateOne(
+                context.Student.SchoolId,
+                context.Adoption.Id,
+                lessonId,
+                studentUserId,
+                contract,
+                decision,
+                RandomNumberGenerator.GetInt32(1, int.MaxValue),
+                context.Exposures
+                    .Select(x => x.ExposureFingerprint)
+                    .Where(x => !string.IsNullOrWhiteSpace(x))
+                    .Distinct(StringComparer.Ordinal)
+                    .ToArray());
+        }
+        catch (InvalidOperationException)
+        {
+            return AdaptivePracticeStartResult.Failure(
+                AdaptivePracticeV2Error.GenerationFailed);
+        }
+
+        var now = DateTime.UtcNow;
+        var session = new AdaptivePracticeSession
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = context.Student.SchoolId,
+            StudentProfileId = context.Student.Id,
+            CurriculumAdoptionId = context.Adoption.Id,
+            CurriculumLevelKey =
+                context.Adoption.CurriculumLevelKey ?? string.Empty,
+            CurriculumPedagogicalLessonId = lessonId,
+            LessonCode = lesson.Code,
+            PrimarySkillId = contract.SkillId,
+            Purpose = AdaptivePracticePurpose.PrivatePractice,
+            Status = AdaptivePracticeSessionStatus.InProgress,
+            EngineVersion = decision.EngineVersion,
+            PolicyVersion = decision.PolicyVersion,
+            CapabilityVersion = contract.ContractVersion,
+            FeatureFlagSnapshotJson = JsonSerializer.Serialize(new
+            {
+                policy.Enabled,
+                Mode = policy.Mode.ToString(),
+                policy.MaxLessonQuestions,
+                policy.EnableMisconceptionLoop
+            }),
+            TargetQuestionCount = policy.MaxLessonQuestions,
+            CurrentSequence = 1,
+            StartedAtUtc = now,
+            RowVersion = []
+        };
+
+        var decisionSnapshot = CreateDecisionSnapshot(
+            session,
+            sequence: 1,
+            learningState,
+            decision,
+            now);
+
+        var turn = CreateTurn(
+            session,
+            item,
+            decisionSnapshot,
+            decision,
+            now);
+
+        var exposure = CreateExposure(
+            context.Student,
+            item,
+            now);
+
+        var outcomeLinks = BuildOutcomeLinks(
+            context,
+            lessonId,
+            item);
+
+        await adaptiveRepository.CreateSessionWithFirstTurnAsync(
+            session,
+            item,
+            outcomeLinks,
+            exposure,
+            decisionSnapshot,
+            turn,
+            cancellationToken);
+
+        return AdaptivePracticeStartResult.Success(
+            await BuildSessionViewAsync(
+                session,
+                turn,
+                item,
+                cancellationToken));
+    }
+
+    public async Task<AdaptivePracticeStartResult> GetSessionAsync(
+        Guid studentUserId,
+        Guid sessionId,
+        CancellationToken cancellationToken = default)
+    {
+        var access = await GetOwnedSessionAsync(
+            studentUserId,
+            sessionId,
+            cancellationToken);
+
+        if (access.Error.HasValue)
+        {
+            return AdaptivePracticeStartResult.Failure(
+                access.Error.Value);
+        }
+
+        var session = access.Session!;
+        if (session.Status != AdaptivePracticeSessionStatus.InProgress)
+        {
+            return AdaptivePracticeStartResult.Success(
+                BuildCompletedView(session));
+        }
+
+        var turn = await adaptiveRepository.GetTurnAsync(
+            session.SchoolId,
+            session.Id,
+            session.CurrentSequence,
+            cancellationToken);
+
+        if (turn is null)
+        {
+            return AdaptivePracticeStartResult.Failure(
+                AdaptivePracticeV2Error.TurnNotFound);
+        }
+
+        var item = await adaptiveRepository.GetItemAsync(
+            session.SchoolId,
+            turn.AssessmentItemId,
+            cancellationToken);
+
+        if (item is null)
+        {
+            return AdaptivePracticeStartResult.Failure(
+                AdaptivePracticeV2Error.TurnNotFound);
+        }
+
+        return AdaptivePracticeStartResult.Success(
+            await BuildSessionViewAsync(
+                session,
+                turn,
+                item,
+                cancellationToken));
+    }
+
+    public async Task<AdaptivePracticeAnswerResult> AnswerAsync(
+        Guid studentUserId,
+        Guid sessionId,
+        int sequence,
+        string answer,
+        CancellationToken cancellationToken = default)
+    {
+        if (string.IsNullOrWhiteSpace(answer) ||
+            answer.Trim().Length > 2000 ||
+            sequence <= 0)
+        {
+            return AdaptivePracticeAnswerResult.Failure(
+                AdaptivePracticeV2Error.InvalidAnswer);
+        }
+
+        var access = await GetOwnedSessionAsync(
+            studentUserId,
+            sessionId,
+            cancellationToken);
+
+        if (access.Error.HasValue)
+        {
+            return AdaptivePracticeAnswerResult.Failure(
+                access.Error.Value);
+        }
+
+        var session = access.Session!;
+        if (session.Status != AdaptivePracticeSessionStatus.InProgress)
+        {
+            return AdaptivePracticeAnswerResult.Failure(
+                AdaptivePracticeV2Error.SessionNotInProgress);
+        }
+
+        if (sequence != session.CurrentSequence)
+        {
+            return AdaptivePracticeAnswerResult.Failure(
+                AdaptivePracticeV2Error.TurnNotFound);
+        }
+
+        var turn = await adaptiveRepository.GetTurnAsync(
+            session.SchoolId,
+            session.Id,
+            sequence,
+            cancellationToken);
+
+        if (turn is null)
+        {
+            return AdaptivePracticeAnswerResult.Failure(
+                AdaptivePracticeV2Error.TurnNotFound);
+        }
+
+        if (turn.AnsweredAtUtc.HasValue)
+        {
+            return AdaptivePracticeAnswerResult.Failure(
+                AdaptivePracticeV2Error.TurnAlreadyAnswered);
+        }
+
+        var item = await adaptiveRepository.GetItemAsync(
+            session.SchoolId,
+            turn.AssessmentItemId,
+            cancellationToken);
+
+        if (item is null)
+        {
+            return AdaptivePracticeAnswerResult.Failure(
+                AdaptivePracticeV2Error.TurnNotFound);
+        }
+
+        var now = DateTime.UtcNow;
+        var trimmed = answer.Trim();
+        var correct = MathematicsAnswerEquivalence.AreEquivalent(
+            trimmed,
+            item.CorrectAnswer);
+
+        turn.SubmittedAnswer = trimmed;
+        turn.IsCorrect = correct;
+        turn.Score = correct ? 1m : 0m;
+        turn.Feedback = item.Solution;
+        turn.AnsweredAtUtc = now;
+        turn.ResponseDurationMs = Math.Max(
+            0L,
+            (long)(now - turn.PresentedAtUtc).TotalMilliseconds);
+
+        if (sequence >= session.TargetQuestionCount)
+        {
+            session.Status =
+                AdaptivePracticeSessionStatus.Completed;
+            session.CompletedAtUtc = now;
+            session.StopReason = "QUESTION_BUDGET_REACHED";
+
+            await adaptiveRepository.CommitAnsweredTurnAsync(
+                session,
+                turn,
+                null,
+                [],
+                null,
+                null,
+                null,
+                cancellationToken);
+
+            return AdaptivePracticeAnswerResult.Success(
+                BuildCompletedView(session),
+                correct,
+                item.Solution);
+        }
+
+        var context =
+            await privatePracticeRepository.GetContextAsync(
+                studentUserId,
+                session.CurriculumAdoptionId,
+                cancellationToken);
+
+        if (context is null)
+        {
+            return AdaptivePracticeAnswerResult.Failure(
+                AdaptivePracticeV2Error.CurriculumNotAvailable);
+        }
+
+        if (!LessonPracticeCapabilityResolver.TryResolve(
+                session.LessonCode,
+                out var contract) ||
+            contract is null ||
+            !string.Equals(
+                contract.ContractVersion,
+                session.CapabilityVersion,
+                StringComparison.Ordinal) ||
+            !string.Equals(
+                contract.SkillId,
+                session.PrimarySkillId,
+                StringComparison.Ordinal))
+        {
+            return AdaptivePracticeAnswerResult.Failure(
+                AdaptivePracticeV2Error.NotEligible);
+        }
+
+        var storedTurns = await adaptiveRepository.GetTurnsAsync(
+            session.SchoolId,
+            session.Id,
+            cancellationToken);
+
+        var replayTurns = storedTurns
+            .Where(x => x.Sequence != turn.Sequence)
+            .Append(turn)
+            .OrderBy(x => x.Sequence)
+            .ToArray();
+
+        var misconceptionStates =
+            await adaptiveRepository.GetMisconceptionStatesAsync(
+                session.SchoolId,
+                session.StudentProfileId,
+                session.CurriculumAdoptionId,
+                session.PrimarySkillId,
+                cancellationToken);
+
+        var representationStates =
+            await adaptiveRepository.GetRepresentationStatesAsync(
+                session.SchoolId,
+                session.StudentProfileId,
+                session.PrimarySkillId,
+                cancellationToken);
+
+        var learningState = stateAssembler.Build(
+            context,
+            session.CurriculumPedagogicalLessonId,
+            contract,
+            replayTurns,
+            misconceptionStates,
+            representationStates);
+
+        var decision = decisionEngine.Decide(learningState);
+
+        AssessmentItem nextItem;
+        try
+        {
+            nextItem = itemGenerator.GenerateOne(
+                session.SchoolId,
+                session.CurriculumAdoptionId,
+                session.CurriculumPedagogicalLessonId,
+                studentUserId,
+                contract,
+                decision,
+                RandomNumberGenerator.GetInt32(1, int.MaxValue),
+                context.Exposures
+                    .Select(x => x.ExposureFingerprint)
+                    .Concat(
+                        replayTurns.Select(x =>
+                            x.ExposureFingerprint))
+                    .Where(x =>
+                        !string.IsNullOrWhiteSpace(x))
+                    .Distinct(StringComparer.Ordinal)
+                    .ToArray());
+        }
+        catch (InvalidOperationException)
+        {
+            session.Status =
+                AdaptivePracticeSessionStatus.Paused;
+            session.StopReason =
+                "VERIFIED_NEXT_ITEM_GENERATION_FAILED";
+
+            await adaptiveRepository.CommitAnsweredTurnAsync(
+                session,
+                turn,
+                null,
+                [],
+                null,
+                null,
+                null,
+                cancellationToken);
+
+            return AdaptivePracticeAnswerResult.Failure(
+                AdaptivePracticeV2Error.GenerationFailed);
+        }
+
+        var nextSequence = sequence + 1;
+        var nextDecisionSnapshot = CreateDecisionSnapshot(
+            session,
+            nextSequence,
+            learningState,
+            decision,
+            now);
+
+        var nextTurn = CreateTurn(
+            session,
+            nextItem,
+            nextDecisionSnapshot,
+            decision,
+            now);
+
+        nextTurn.Sequence = nextSequence;
+        nextDecisionSnapshot.Sequence = nextSequence;
+
+        var nextExposure = CreateExposure(
+            context.Student,
+            nextItem,
+            now);
+
+        var nextOutcomeLinks = BuildOutcomeLinks(
+            context,
+            session.CurriculumPedagogicalLessonId,
+            nextItem);
+
+        session.CurrentSequence = nextSequence;
+
+        await adaptiveRepository.CommitAnsweredTurnAsync(
+            session,
+            turn,
+            nextItem,
+            nextOutcomeLinks,
+            nextExposure,
+            nextDecisionSnapshot,
+            nextTurn,
+            cancellationToken);
+
+        return AdaptivePracticeAnswerResult.Success(
+            await BuildSessionViewAsync(
+                session,
+                nextTurn,
+                nextItem,
+                cancellationToken),
+            correct,
+            item.Solution);
+    }
+
+    private async Task<(
+        StudentProfile? Student,
+        AdaptivePracticeSession? Session,
+        AdaptivePracticeV2Error? Error)> GetOwnedSessionAsync(
+            Guid studentUserId,
+            Guid sessionId,
+            CancellationToken cancellationToken)
+    {
+        var student =
+            await practiceRepository.FindStudentByUserIdAsync(
+                studentUserId,
+                cancellationToken);
+
+        if (student is null)
+        {
+            return (
+                null,
+                null,
+                AdaptivePracticeV2Error.AccessDenied);
+        }
+
+        var session = await adaptiveRepository.GetSessionAsync(
+            student.SchoolId,
+            sessionId,
+            cancellationToken);
+
+        if (session is null)
+        {
+            return (
+                student,
+                null,
+                AdaptivePracticeV2Error.SessionNotFound);
+        }
+
+        if (session.StudentProfileId != student.Id)
+        {
+            return (
+                student,
+                session,
+                AdaptivePracticeV2Error.AccessDenied);
+        }
+
+        return (student, session, null);
+    }
+
+    private static IReadOnlyList<AssessmentItemOutcome>
+        BuildOutcomeLinks(
+            StudentPrivatePracticeContext context,
+            Guid lessonId,
+            AssessmentItem item)
+    {
+        var nodeIds = context.LessonOutcomes
+            .Where(x => x.PedagogicalLessonId == lessonId)
+            .Select(x => x.OutcomeNodeId)
+            .ToHashSet();
+
+        return context.LearningOutcomes
+            .Where(x =>
+                x.OfficialContentNodeId.HasValue &&
+                nodeIds.Contains(
+                    x.OfficialContentNodeId.Value))
+            .Select(x =>
+                new AssessmentItemOutcome
+                {
+                    Id = Guid.NewGuid(),
+                    SchoolId = context.Student.SchoolId,
+                    AssessmentItemId = item.Id,
+                    LearningOutcomeId = x.Id
+                })
+            .ToArray();
+    }
+
+    private static StudentItemExposure CreateExposure(
+        StudentProfile student,
+        AssessmentItem item,
+        DateTime now) =>
+        new()
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = student.SchoolId,
+            StudentProfileId = student.Id,
+            AssessmentItemId = item.Id,
+            ExposureFingerprint = item.ExposureFingerprint,
+            ExposedAtUtc = now
+        };
+
+    private static AdaptiveDecisionSnapshot CreateDecisionSnapshot(
+        AdaptivePracticeSession session,
+        int sequence,
+        AdaptivePracticeLearningState state,
+        AdaptiveNextItemDecision decision,
+        DateTime now) =>
+        new()
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = session.SchoolId,
+            SessionId = session.Id,
+            Sequence = sequence,
+            EngineVersion = decision.EngineVersion,
+            PolicyVersion = decision.PolicyVersion,
+            SkillMasteryBefore = state.SkillMastery,
+            PrerequisiteMasteryBefore =
+                state.PrerequisiteMastery,
+            RepresentationFluencyJson =
+                JsonSerializer.Serialize(
+                    state.RepresentationFluency),
+            ActiveMisconceptionsJson =
+                JsonSerializer.Serialize(
+                    state.Misconceptions),
+            CurrentComplexity =
+                state.CurrentComplexityScore,
+            TargetComplexity =
+                decision.TargetComplexityScore,
+            SelectedFamily =
+                decision.TargetQuestionFamily,
+            SelectedRepresentation =
+                decision.TargetRepresentation,
+            MisconceptionFocusId =
+                decision.MisconceptionFocusId,
+            FreshnessConstraintsJson =
+                JsonSerializer.Serialize(new
+                {
+                    decision.RequiresFreshExposure
+                }),
+            DecisionReasonCode = decision.ReasonCode,
+            DecisionTraceJson =
+                JsonSerializer.Serialize(new
+                {
+                    decision.RemediationLockActive,
+                    decision.ConfirmationRequired,
+                    decision.IsIndependentConfirmation,
+                    decision.ProgressionEligible
+                }),
+            CreatedAtUtc = now
+        };
+
+    private static AdaptivePracticeTurn CreateTurn(
+        AdaptivePracticeSession session,
+        AssessmentItem item,
+        AdaptiveDecisionSnapshot snapshot,
+        AdaptiveNextItemDecision decision,
+        DateTime now) =>
+        new()
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = session.SchoolId,
+            SessionId = session.Id,
+            Sequence = snapshot.Sequence,
+            AssessmentItemId = item.Id,
+            DecisionSnapshotId = snapshot.Id,
+            SkillId = decision.TargetSkillId,
+            QuestionFamily =
+                item.GenerationFamily ??
+                decision.TargetQuestionFamily,
+            Representation =
+                decision.TargetRepresentation,
+            MathematicalComplexityScore =
+                decision.TargetComplexityScore,
+            UiDifficultyBand = item.Difficulty,
+            MisconceptionFocusId =
+                decision.MisconceptionFocusId,
+            IsIndependentConfirmation =
+                decision.IsIndependentConfirmation,
+            PresentedAtUtc = now,
+            ExposureFingerprint =
+                item.ExposureFingerprint,
+            SemanticIdentityKey =
+                ResolveSemanticIdentity(item),
+            RowVersion = []
+        };
+
+    private static string ResolveSemanticIdentity(
+        AssessmentItem item)
+    {
+        if (string.IsNullOrWhiteSpace(item.GenerationFamily))
+            return item.ExposureFingerprint;
+
+        try
+        {
+            using var document = JsonDocument.Parse(
+                item.GenerationParametersJson ?? "{}");
+
+            var parameters =
+                new Dictionary<string, int>(
+                    StringComparer.Ordinal);
+
+            foreach (var property in
+                     document.RootElement.EnumerateObject())
+            {
+                if (property.Value.ValueKind ==
+                        JsonValueKind.Number &&
+                    property.Value.TryGetInt32(out var value))
+                {
+                    parameters[property.Name] = value;
+                }
+            }
+
+            return PracticeSemanticQuestionIdentityPolicy
+                .Create(
+                    item.GenerationFamily,
+                    parameters)
+                .Key;
+        }
+        catch (JsonException)
+        {
+            return item.GenerationFamily +
+                "|" +
+                item.ExposureFingerprint;
+        }
+    }
+
+    private Task<AdaptivePracticeSessionView>
+        BuildSessionViewAsync(
+            AdaptivePracticeSession session,
+            AdaptivePracticeTurn turn,
+            AssessmentItem item,
+            CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+
+        return Task.FromResult(
+            new AdaptivePracticeSessionView(
+                session.Id,
+                session.CurriculumAdoptionId,
+                session.CurriculumPedagogicalLessonId,
+                session.LessonCode,
+                session.PrimarySkillId,
+                session.CurrentSequence,
+                session.TargetQuestionCount,
+                session.Status ==
+                    AdaptivePracticeSessionStatus.Completed,
+                session.StopReason,
+                new AdaptivePracticeQuestionView(
+                    turn.Id,
+                    turn.Sequence,
+                    item.Id,
+                    item.ItemType,
+                    item.Difficulty,
+                    item.Prompt,
+                    item.GenerationFamily,
+                    item.GenerationParametersJson,
+                    turn.Representation,
+                    turn.MathematicalComplexityScore,
+                    turn.IsIndependentConfirmation)));
+    }
+
+    private static AdaptivePracticeSessionView BuildCompletedView(
+        AdaptivePracticeSession session) =>
+        new(
+            session.Id,
+            session.CurriculumAdoptionId,
+            session.CurriculumPedagogicalLessonId,
+            session.LessonCode,
+            session.PrimarySkillId,
+            session.CurrentSequence,
+            session.TargetQuestionCount,
+            true,
+            session.StopReason,
+            null);
+}
