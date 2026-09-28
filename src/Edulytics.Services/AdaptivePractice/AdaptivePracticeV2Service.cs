@@ -31,6 +31,17 @@ public sealed class AdaptivePracticeV2Service(
         Guid lessonId,
         CancellationToken cancellationToken = default)
     {
+        // Off/Shadow must not add database work or alter the V1 learner path.
+        // Shadow observation is wired separately against V1 answer events.
+        if (!policy.Enabled ||
+            policy.Mode is
+                AdaptivePracticeV2Mode.Off or
+                AdaptivePracticeV2Mode.Shadow)
+        {
+            return AdaptivePracticeStartResult.Failure(
+                AdaptivePracticeV2Error.NotEligible);
+        }
+
         if (studentUserId == Guid.Empty ||
             curriculumAdoptionId == Guid.Empty ||
             lessonId == Guid.Empty)
@@ -368,6 +379,32 @@ public sealed class AdaptivePracticeV2Service(
                 BuildCompletedView(session),
                 correct,
                 item.Solution);
+        }
+
+        if (!string.Equals(
+                session.EngineVersion,
+                AdaptivePracticeV2Versions.EngineVersion,
+                StringComparison.Ordinal) ||
+            !string.Equals(
+                session.PolicyVersion,
+                AdaptivePracticeV2Versions.PolicyVersion,
+                StringComparison.Ordinal))
+        {
+            session.Status = AdaptivePracticeSessionStatus.Paused;
+            session.StopReason = "PINNED_ENGINE_VERSION_UNAVAILABLE";
+
+            await adaptiveRepository.CommitAnsweredTurnAsync(
+                session,
+                turn,
+                null,
+                [],
+                null,
+                null,
+                null,
+                cancellationToken);
+
+            return AdaptivePracticeAnswerResult.Failure(
+                AdaptivePracticeV2Error.SessionNotInProgress);
         }
 
         var context =
