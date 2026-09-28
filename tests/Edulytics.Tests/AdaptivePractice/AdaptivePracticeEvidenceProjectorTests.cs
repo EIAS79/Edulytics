@@ -3,7 +3,7 @@ using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Services.AdaptivePractice;
 
-namespace Edulytics.Tests.AdaptivePractice;
+namespace Edulytics.Tests.MathematicsIntelligence.AdaptivePractice;
 
 public sealed class AdaptivePracticeEvidenceProjectorTests
 {
