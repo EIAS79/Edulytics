@@ -1,5 +1,6 @@
 using Edulytics.Core.AdaptivePractice;
 using Edulytics.Services.AdaptivePractice;
+using Edulytics.Services.Mathematics.Difficulty;
 using Edulytics.Web.AdaptivePractice;
 using Microsoft.Extensions.Options;
 
@@ -43,6 +44,11 @@ public static class AdaptivePracticeV2RegistrationExtensions
 
         services.AddSingleton<IAdaptivePracticeEligibilityResolver,
             AdaptivePracticeEligibilityResolver>();
+
+        services.AddSingleton<MathematicsDifficultyEngine>();
+        services.AddSingleton<AdaptiveNextItemDecisionEngine>();
+        services.AddSingleton<AdaptiveRemediationStateMachine>();
+        services.AddSingleton<AdaptivePracticeShadowEvaluator>();
 
         return services;
     }
