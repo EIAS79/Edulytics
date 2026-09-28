@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Security.Claims;
 using Edulytics.Core.Mathematics.Practice;
+using Edulytics.Services.AdaptivePractice;
 using Edulytics.Services.LessonContent;
 using Edulytics.Services.Practice;
 using Edulytics.Web.GameRouting;
@@ -18,6 +19,8 @@ namespace Edulytics.Web.Controllers;
 public sealed class StudentPracticeController(
     IStudentPrivatePracticeService privatePractice,
     IPracticeService practice,
+    IAdaptivePracticeV2Service adaptivePractice,
+    IAdaptivePracticeShadowObserver adaptiveShadowObserver,
     ILessonContentService lessonContent,
     Stage22ExactGameRuntime gameRuntime,
     IStringLocalizer<StudentResource> text) : Controller
@@ -108,6 +111,27 @@ public sealed class StudentPracticeController(
                 {
                     curriculumAdoptionId,
                     lessonId
+                });
+        }
+
+        // Adaptive V2 is additive and fail-closed. When it is Off, Shadow,
+        // outside the explicit Primary allow-list, or unable to initialize before
+        // a V2 session is created, the existing V1 lesson Practice remains the
+        // authoritative fallback.
+        var adaptiveStart = await adaptivePractice.StartLessonAsync(
+            actorId,
+            curriculumAdoptionId,
+            lessonId,
+            cancellationToken);
+
+        if (adaptiveStart.Succeeded &&
+            adaptiveStart.Session is not null)
+        {
+            return RedirectToAction(
+                nameof(AdaptiveLessonAttempt),
+                new
+                {
+                    id = adaptiveStart.Session.SessionId
                 });
         }
 
@@ -350,6 +374,113 @@ public sealed class StudentPracticeController(
         });
     }
 
+    [HttpGet("adaptive/{id:guid}")]
+    [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+    public async Task<IActionResult> AdaptiveLessonAttempt(
+        Guid id,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        var result = await adaptivePractice.GetSessionAsync(
+            actorId,
+            id,
+            cancellationToken);
+
+        if (result.Session is null)
+        {
+            return result.Error == AdaptivePracticeV2Error.AccessDenied
+                ? Forbid()
+                : NotFound();
+        }
+
+        var session = result.Session;
+        var detailResult =
+            await lessonContent.GetPublishedForStudentAsync(
+                actorId,
+                session.LessonId,
+                CultureInfo.CurrentUICulture.Name,
+                cancellationToken);
+
+        if (detailResult.Value is null)
+        {
+            return detailResult.Error ==
+                LessonContentErrorCode.AccessDenied
+                ? Forbid()
+                : NotFound();
+        }
+
+        var workspace = await privatePractice.GetWorkspaceAsync(
+            actorId,
+            session.CurriculumAdoptionId,
+            cancellationToken);
+
+        var lesson = workspace.Lessons.SingleOrDefault(
+            x => x.LessonId == session.LessonId);
+
+        ViewData["LessonTitle"] =
+            detailResult.Value.Title;
+        ViewData["LessonUnitTitle"] =
+            lesson?.UnitTitle ?? string.Empty;
+
+        Response.Headers["X-Robots-Tag"] =
+            "noindex, nofollow, noarchive";
+
+        return View(
+            "~/Views/StudentAdaptivePractice/Attempt.cshtml",
+            session);
+    }
+
+    [HttpPost("adaptive/{id:guid}/answer"), ValidateAntiForgeryToken]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public async Task<IActionResult> AnswerAdaptiveLessonAttempt(
+        Guid id,
+        int sequence,
+        string answer,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        var result = await adaptivePractice.AnswerAsync(
+            actorId,
+            id,
+            sequence,
+            answer,
+            cancellationToken);
+
+        if (!result.Succeeded)
+        {
+            TempData["Error"] =
+                result.Error switch
+                {
+                    AdaptivePracticeV2Error.InvalidAnswer =>
+                        text["PracticeInvalidAnswer"].Value,
+                    AdaptivePracticeV2Error.GenerationFailed =>
+                        text["PracticeOperationFailed"].Value,
+                    AdaptivePracticeV2Error.TurnAlreadyAnswered =>
+                        text["PracticeOperationFailed"].Value,
+                    _ =>
+                        text["PracticeOperationFailed"].Value
+                };
+        }
+        else
+        {
+            TempData["PracticeFeedback"] =
+                result.IsCorrect == true
+                    ? "correct"
+                    : "incorrect";
+            TempData["PracticeSolution"] =
+                result.Feedback ?? string.Empty;
+        }
+
+        return RedirectToAction(
+            nameof(AdaptiveLessonAttempt),
+            new { id });
+    }
+
     [HttpGet("lesson-attempt/{id:guid}")]
     [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
     public async Task<IActionResult> LessonAttempt(
@@ -449,6 +580,16 @@ public sealed class StudentPracticeController(
                     lessonId
                 });
         }
+
+        // Shadow observation is deliberately non-blocking and never changes
+        // the accepted V1 answer or the next V1 question.
+        await adaptiveShadowObserver.ObserveLessonAnswerAsync(
+            actorId,
+            curriculumAdoptionId,
+            lessonId,
+            id,
+            result.Value.AttemptItemId,
+            cancellationToken);
 
         return RedirectToAction(
             nameof(LessonAttempt),
