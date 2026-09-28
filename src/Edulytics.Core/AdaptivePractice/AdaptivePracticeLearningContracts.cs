@@ -74,6 +74,7 @@ public sealed record AdaptiveNextItemDecision(
     bool RequiresFreshExposure,
     bool RemediationLockActive,
     bool ConfirmationRequired,
+    bool IsIndependentConfirmation,
     bool ProgressionEligible,
     string EngineVersion,
     string PolicyVersion);
