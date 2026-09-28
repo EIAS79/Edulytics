@@ -7,6 +7,12 @@
     var approvedVideos = Model.Videos
         .Where(x => x.ReviewStatus == RichLessonVideoReviewStatus.Approved)
         .ToArray();
+    var externalHelp = RichLessonExternalHelpRegistry.Resolve(
+        Model.LessonCode,
+        Model.Title,
+        Model.CultureCode);
+    var externalHelpSectionNumber =
+        approvedVideos.Length > 0 ? "08" : "07";
 
     var questionLabel = language switch { "pl" => "Pytanie", "ar" => "السؤال", _ => "Question" };
     var methodLabel = language switch { "pl" => "Metoda", "ar" => "الطريقة", _ => "Method" };
@@ -26,6 +32,16 @@
         _ => "Optional reviewed external videos that reinforce the same lesson target."
     };
     var watchOnYouTubeLabel = language switch { "pl" => "Otwórz w YouTube", "ar" => "فتح على YouTube", _ => "Open on YouTube" };
+    var extraHelpLabel = language switch { "pl" => "Dodatkowa pomoc", "ar" => "مساعدة إضافية", _ => "Extra Help" };
+    var reviewedResourcesLabel = language switch { "pl" => "Sprawdzone materiały", "ar" => "مصادر تمت مراجعتها", _ => "Reviewed resources" };
+    var searchHelpLabel = language switch { "pl" => "Sugestie wyszukiwania", "ar" => "اقتراحات للبحث", _ => "Search suggestions" };
+    var externalHelpNotice = language switch
+    {
+        "pl" => "Materiały i wyniki wyszukiwania są opcjonalne. Zewnętrzne wyniki nie są sprawdzane przez Edulytics i nigdy nie wpływają na opanowanie materiału, ocenę ani decyzje adaptacyjne.",
+        "ar" => "هذه المصادر ونتائج البحث اختيارية. نتائج البحث الخارجية لا تتم مراجعتها من Edulytics ولا تؤثر أبدًا على مستوى الإتقان أو التقييم أو القرارات التكيفية.",
+        _ => "These resources and searches are optional. External search results are not reviewed by Edulytics and never affect mastery, assessment, or Adaptive decisions."
+    };
+    var openResourceLabel = language switch { "pl" => "Otwórz materiał", "ar" => "فتح المصدر", _ => "Open resource" };
 }
 
 <section class="lesson-learning-section lesson-learning-section--explanation rich-lesson-section">
@@ -191,6 +207,61 @@
                     </article>
                 }
             </div>
+        </div>
+    </section>
+}
+
+@if (externalHelp.ApprovedResources.Count > 0 ||
+     externalHelp.SearchSuggestions.Count > 0)
+{
+    <section class="lesson-learning-section lesson-learning-section--external-help rich-lesson-section">
+        <header class="lesson-learning-section__header">
+            <span class="lesson-learning-section__number">@externalHelpSectionNumber</span>
+            <h2>@extraHelpLabel</h2>
+        </header>
+        <div class="rich-external-help">
+            <p class="rich-video-section__intro">@externalHelpNotice</p>
+
+            @if (externalHelp.ApprovedResources.Count > 0)
+            {
+                <h3>@reviewedResourcesLabel</h3>
+                <div class="rich-video-grid">
+                    @foreach (var resource in externalHelp.ApprovedResources)
+                    {
+                        <article class="rich-video-card">
+                            <div class="rich-video-card__body">
+                                <p class="rich-video-card__meta">@resource.Provider</p>
+                                <h3>@resource.Title</h3>
+                                <p>@resource.WhyRecommended</p>
+                                <a class="school-button"
+                                   href="@resource.Url"
+                                   target="_blank"
+                                   rel="noopener noreferrer external">@openResourceLabel</a>
+                            </div>
+                        </article>
+                    }
+                </div>
+            }
+
+            @if (externalHelp.SearchSuggestions.Count > 0)
+            {
+                <h3>@searchHelpLabel</h3>
+                <div class="rich-video-grid">
+                    @foreach (var suggestion in externalHelp.SearchSuggestions)
+                    {
+                        <article class="rich-video-card">
+                            <div class="rich-video-card__body">
+                                <p class="rich-video-card__meta">@suggestion.Provider</p>
+                                <p><code>@suggestion.Query</code></p>
+                                <a class="school-button"
+                                   href="@suggestion.Url"
+                                   target="_blank"
+                                   rel="noopener noreferrer external">@suggestion.Label</a>
+                            </div>
+                        </article>
+                    }
+                </div>
+            }
         </div>
     </section>
 }
