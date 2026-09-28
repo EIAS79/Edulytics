@@ -64,6 +64,7 @@ public sealed class AdaptivePracticeTurn : ISchoolScoped
     public int MathematicalComplexityScore { get; set; }
     public AssessmentItemDifficulty UiDifficultyBand { get; set; }
     public string? MisconceptionFocusId { get; set; }
+    public bool IsIndependentConfirmation { get; set; }
     public DateTime PresentedAtUtc { get; set; }
     public DateTime? AnsweredAtUtc { get; set; }
     public string? SubmittedAnswer { get; set; }
