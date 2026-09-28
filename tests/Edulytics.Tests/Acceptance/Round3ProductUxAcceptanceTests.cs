@@ -9,7 +9,7 @@ public sealed class Round3ProductUxAcceptanceTests
         var home = ReadRepositoryFile("src", "Edulytics.Web", "Views", "Home", "Index.cshtml");
 
         Assert.Contains("new RequestCulture(\n                    \"pl\")", program, StringComparison.Ordinal);
-        Assert.Contains("isPolish ? \"Kontakt\" : \"Contact\"", home, StringComparison.Ordinal);
+        Assert.Contains("var contactLabel = L(\"Contact\", \"Kontakt\", \"تواصل معنا\")", home, StringComparison.Ordinal);
         Assert.Contains("ed-home-flag", home, StringComparison.Ordinal);
         Assert.Contains("ed-home-mobile-menu", home, StringComparison.Ordinal);
         Assert.Contains("href=\"#contact\"", home, StringComparison.Ordinal);
