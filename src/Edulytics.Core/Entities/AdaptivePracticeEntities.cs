@@ -112,3 +112,30 @@ public sealed class StudentRepresentationFluencyState : ISchoolScoped
     public string EngineVersion { get; set; } = string.Empty;
     public byte[] RowVersion { get; set; } = [];
 }
+
+
+public sealed class AdaptivePracticeShadowObservation : ISchoolScoped
+{
+    public Guid Id { get; set; }
+    public Guid SchoolId { get; set; }
+    public Guid StudentProfileId { get; set; }
+    public Guid CurriculumAdoptionId { get; set; }
+    public Guid CurriculumPedagogicalLessonId { get; set; }
+    public Guid V1AttemptId { get; set; }
+    public Guid V1AttemptItemId { get; set; }
+    public int V1Sequence { get; set; }
+    public bool V1WasCorrect { get; set; }
+    public string? V1QuestionFamily { get; set; }
+    public AssessmentItemDifficulty V1Difficulty { get; set; }
+    public string ProposedSkillId { get; set; } = string.Empty;
+    public int ProposedComplexity { get; set; }
+    public string ProposedFamily { get; set; } = string.Empty;
+    public string? ProposedRepresentation { get; set; }
+    public string? ProposedMisconceptionFocusId { get; set; }
+    public string? ObservedMisconceptionId { get; set; }
+    public string DecisionReasonCode { get; set; } = string.Empty;
+    public bool GenerationFeasible { get; set; }
+    public string EngineVersion { get; set; } = string.Empty;
+    public string PolicyVersion { get; set; } = string.Empty;
+    public DateTime CreatedAtUtc { get; set; }
+}
