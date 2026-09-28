@@ -65,7 +65,7 @@ public sealed class AdaptiveNextItemDecisionEngine(
                 0,
                 observed - ComplexityStepLimit);
 
-            var reason = activeMisconception is not null
+            var recoveryReason = activeMisconception is not null
                 ? AdaptivePracticeDecisionReasonCodes.MisconceptionRemediation
                 : state.PrerequisiteMastery < BlockingPrerequisiteThreshold
                     ? AdaptivePracticeDecisionReasonCodes.PrerequisiteRecovery
@@ -81,7 +81,7 @@ public sealed class AdaptiveNextItemDecisionEngine(
                 representation,
                 activeMisconception?.MisconceptionId ??
                 latest.MisconceptionId,
-                reason,
+                recoveryReason,
                 remediationLockActive: true,
                 confirmationRequired: true,
                 isIndependentConfirmation: false,
