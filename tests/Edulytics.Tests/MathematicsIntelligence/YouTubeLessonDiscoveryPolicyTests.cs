@@ -2,6 +2,10 @@ using System.Net;
 using System.Text;
 using Edulytics.Services.LessonContent;
 
+using System.Reflection;
+using Edulytics.Web.Controllers;
+using Edulytics.Web.Resilience;
+using Microsoft.AspNetCore.RateLimiting;
 namespace Edulytics.Tests.MathematicsIntelligence;
 
 public sealed class YouTubeLessonDiscoveryPolicyTests
@@ -163,6 +167,26 @@ public sealed class YouTubeLessonDiscoveryPolicyTests
             "No embeddable YouTube result passed",
             result.Message,
             StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void StudentYouTubeEndpoint_UsesActorPartitionedNamedRatePolicy()
+    {
+        var action =
+            typeof(StudentPortalController)
+                .GetMethod(
+                    nameof(StudentPortalController.LessonYouTube));
+
+        Assert.NotNull(action);
+
+        var attribute =
+            action!.GetCustomAttribute<
+                EnableRateLimitingAttribute>();
+
+        Assert.NotNull(attribute);
+        Assert.Equal(
+            BackendResiliencePolicyNames.YouTubeLessonSearch,
+            attribute!.PolicyName);
     }
 
     private static Task<YouTubeLessonDiscoveryResult> DiscoverAsync(
