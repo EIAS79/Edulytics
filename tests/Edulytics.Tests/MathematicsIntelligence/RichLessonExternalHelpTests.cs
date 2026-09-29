@@ -144,7 +144,11 @@ public sealed class RichLessonExternalHelpTests
             root,
             "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"));
 
-        Assert.DoesNotContain(
+        Assert.Contains(
+            "suppressLegacyLessonVideos",
+            richPartial,
+            StringComparison.Ordinal);
+        Assert.Contains(
             "youtube-nocookie.com/embed/",
             richPartial,
             StringComparison.Ordinal);
@@ -166,6 +170,10 @@ public sealed class RichLessonExternalHelpTests
             studioPartial,
             StringComparison.OrdinalIgnoreCase);
 
+        Assert.Contains(
+            "ViewData[\"UseYouTubeStudioV2\"] = true",
+            lessonView,
+            StringComparison.Ordinal);
         Assert.Contains(
             "_LessonYouTubeStudio",
             lessonView,
