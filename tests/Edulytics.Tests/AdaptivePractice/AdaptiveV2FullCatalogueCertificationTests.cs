@@ -9,7 +9,6 @@ namespace Edulytics.Tests.MathematicsIntelligence.AdaptivePractice;
 public sealed class AdaptiveV2FullCatalogueCertificationTests
 {
     private const int ExpectedLessonCount = 4453;
-    private const int CertifiedSessionLength = 8;
     private const string RunEnvironmentVariable =
         "EDULYTICS_RUN_FULL_ADAPTIVE_V2_CERTIFICATION";
 
@@ -52,11 +51,16 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
                                         family)))
                 .ToArray();
 
-        var distinctFamilyCount =
+        var familyRepresentatives =
             pairs
-                .Select(pair => pair.Family)
-                .Distinct(StringComparer.Ordinal)
-                .Count();
+                .GroupBy(
+                    pair => pair.Family,
+                    StringComparer.Ordinal)
+                .OrderBy(
+                    group => group.Key,
+                    StringComparer.Ordinal)
+                .Select(group => group.First())
+                .ToArray();
 
         var generator =
             new AdaptiveVerifiedItemGenerator();
@@ -66,8 +70,7 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
         var certifiedPairCount = 0;
 
         // Every lesson-family pairing is a possible adaptive target. Certify
-        // the exact pairing at maximum requested complexity; the generator is
-        // responsible for truthfully bounding to the family's supported form.
+        // one exact solver-backed item at maximum requested complexity.
         for (var index = 0;
              index < pairs.Length;
              index++)
@@ -115,25 +118,22 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
         var certifiedSessionCount = 0;
         var generatedSessionItemCount = 0;
 
-        // A one-item smoke test cannot prove runtime freshness. For every
-        // lesson, generate a complete default learner session while carrying
-        // exposure fingerprints and semantic identities forward exactly as
-        // the real Adaptive V2 service does. Families rotate deterministically
-        // so multi-family contracts exercise more than their first family.
+        // Production normally keeps the latest family selected unless
+        // remediation/misconception/representation evidence changes it. A
+        // certification that round-robins families is therefore weaker than
+        // production. Exercise a full 30-item same-family path for every
+        // lesson using the exact bounded freshness policy used at runtime.
         for (var contractIndex = 0;
              contractIndex < contracts.Length;
              contractIndex++)
         {
             var contract = contracts[contractIndex];
-            var families =
+            var family =
                 contract.AllowedQuestionFamilies
                     .Distinct(StringComparer.Ordinal)
-                    .OrderBy(
-                        family => family,
-                        StringComparer.Ordinal)
-                    .ToArray();
+                    .FirstOrDefault();
 
-            if (families.Length == 0)
+            if (string.IsNullOrWhiteSpace(family))
             {
                 blockers.Add(
                     $"{contract.LessonCode}: no allowed question family.");
@@ -141,23 +141,16 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
             }
 
             var exposureExclusions =
-                new HashSet<string>(
-                    StringComparer.Ordinal);
+                new List<string>();
             var semanticExclusions =
-                new HashSet<string>(
-                    StringComparer.Ordinal);
-
+                new List<string>();
             var sessionSucceeded = true;
 
             for (var sequence = 1;
-                 sequence <= CertifiedSessionLength;
+                 sequence <=
+                 AdaptivePracticeV2Behavior.MaximumSessionItems;
                  sequence++)
             {
-                var family =
-                    families[
-                        (sequence - 1) %
-                        families.Length];
-
                 try
                 {
                     var item =
@@ -187,29 +180,10 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
                         family,
                         item);
 
-                    if (!string.IsNullOrWhiteSpace(
-                            item.ExposureFingerprint))
-                    {
-                        if (!exposureExclusions.Add(
-                                item.ExposureFingerprint))
-                        {
-                            throw new InvalidOperationException(
-                                "Adaptive session repeated an excluded exposure fingerprint.");
-                        }
-                    }
-
-                    var semanticIdentity =
-                        AdaptivePracticeSemanticIdentity
-                            .Resolve(item);
-
-                    if (!string.IsNullOrWhiteSpace(
-                            semanticIdentity) &&
-                        !semanticExclusions.Add(
-                            semanticIdentity))
-                    {
-                        throw new InvalidOperationException(
-                            "Adaptive session repeated an excluded semantic identity.");
-                    }
+                    RememberFreshness(
+                        item,
+                        exposureExclusions,
+                        semanticExclusions);
 
                     generatedSessionItemCount++;
                 }
@@ -228,15 +202,88 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
                 certifiedSessionCount++;
         }
 
+        var certifiedFamilyBudgetCount = 0;
+
+        // A lesson's first family is not enough: any allowed family can become
+        // the production-selected remediation target. Stress every distinct
+        // family through the full maximum remediation budget with the same
+        // recent exposure/semantic exclusions used by the service.
+        for (var familyIndex = 0;
+             familyIndex < familyRepresentatives.Length;
+             familyIndex++)
+        {
+            var pair =
+                familyRepresentatives[familyIndex];
+            var exposureExclusions =
+                new List<string>();
+            var semanticExclusions =
+                new List<string>();
+            var succeeded = true;
+
+            for (var sequence = 1;
+                 sequence <=
+                 AdaptivePracticeV2Behavior.MaximumSessionItems;
+                 sequence++)
+            {
+                try
+                {
+                    var item =
+                        Generate(
+                            generator,
+                            pair.Contract,
+                            pair.Family,
+                            complexity:
+                                sequence <= 4
+                                    ? 42
+                                    : AdaptiveNextItemDecisionEngine
+                                        .MaximumComplexityScore,
+                            seed:
+                                unchecked(
+                                    60260929 +
+                                    (familyIndex * 2003) +
+                                    (sequence * 149)),
+                            identityIndex:
+                                pairs.Length +
+                                contracts.Length +
+                                familyIndex,
+                            sequence,
+                            exposureExclusions,
+                            semanticExclusions);
+
+                    ValidateGeneratedItem(
+                        pair.Contract,
+                        pair.Family,
+                        item);
+
+                    RememberFreshness(
+                        item,
+                        exposureExclusions,
+                        semanticExclusions);
+                }
+                catch (Exception exception)
+                {
+                    blockers.Add(
+                        $"family-budget {pair.Family} turn {sequence}: " +
+                        $"{exception.GetType().Name}: {exception.Message}");
+                    succeeded = false;
+                    break;
+                }
+            }
+
+            if (succeeded)
+                certifiedFamilyBudgetCount++;
+        }
+
         var summary =
             new CertificationSummary(
                 ExpectedLessonCount,
                 certifiedSessionCount,
-                CertifiedSessionLength,
+                AdaptivePracticeV2Behavior.MaximumSessionItems,
                 generatedSessionItemCount,
                 pairs.Length,
                 certifiedPairCount,
-                distinctFamilyCount,
+                familyRepresentatives.Length,
+                certifiedFamilyBudgetCount,
                 blockers.Count);
 
         WriteReport(
@@ -252,6 +299,69 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
             (blockers.Count > 100
                 ? $" (+{blockers.Count - 100} more)"
                 : string.Empty));
+    }
+
+    private static void RememberFreshness(
+        AssessmentItem item,
+        List<string> exposureExclusions,
+        List<string> semanticExclusions)
+    {
+        if (!string.IsNullOrWhiteSpace(
+                item.ExposureFingerprint))
+        {
+            if (exposureExclusions.Contains(
+                    item.ExposureFingerprint,
+                    StringComparer.Ordinal))
+            {
+                throw new InvalidOperationException(
+                    "Adaptive session repeated a recently excluded exposure fingerprint.");
+            }
+
+            exposureExclusions.Insert(
+                0,
+                item.ExposureFingerprint);
+
+            if (exposureExclusions.Count >
+                AdaptivePracticeV2Behavior
+                    .RecentExposureFreshnessWindow)
+            {
+                exposureExclusions.RemoveRange(
+                    AdaptivePracticeV2Behavior
+                        .RecentExposureFreshnessWindow,
+                    exposureExclusions.Count -
+                    AdaptivePracticeV2Behavior
+                        .RecentExposureFreshnessWindow);
+            }
+        }
+
+        var semanticIdentity =
+            AdaptivePracticeSemanticIdentity
+                .Resolve(item);
+
+        if (!string.IsNullOrWhiteSpace(
+                semanticIdentity))
+        {
+            semanticExclusions.RemoveAll(
+                x => string.Equals(
+                    x,
+                    semanticIdentity,
+                    StringComparison.Ordinal));
+            semanticExclusions.Insert(
+                0,
+                semanticIdentity);
+
+            if (semanticExclusions.Count >
+                AdaptivePracticeV2Behavior
+                    .RecentSemanticFreshnessWindow)
+            {
+                semanticExclusions.RemoveRange(
+                    AdaptivePracticeV2Behavior
+                        .RecentSemanticFreshnessWindow,
+                    semanticExclusions.Count -
+                    AdaptivePracticeV2Behavior
+                        .RecentSemanticFreshnessWindow);
+            }
+        }
     }
 
     private static AssessmentItem Generate(
@@ -391,7 +501,7 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
         var payload =
             new
             {
-                schemaVersion = 2,
+                schemaVersion = 3,
                 audit =
                     "Adaptive Practice V2 full READY_VERIFIED catalogue runtime certification",
                 generatedAtUtc =
@@ -462,5 +572,6 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
         int ExpectedLessonFamilyPairCount,
         int CertifiedLessonFamilyPairCount,
         int DistinctQuestionFamilyCount,
+        int CertifiedFamilyBudgetCount,
         int BlockerCount);
 }
