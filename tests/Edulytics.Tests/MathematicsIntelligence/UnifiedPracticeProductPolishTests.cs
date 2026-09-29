@@ -88,7 +88,7 @@ public sealed class UnifiedPracticeProductPolishTests
     }
 
     [Fact]
-    public void LessonHelp_DoesNotRenderGoogleOrYoutubeSearchButtons()
+    public void LessonHelp_RendersYoutubeNativeHubWithoutGoogleSearch()
     {
         var root = FindRoot();
         var partial = File.ReadAllText(Path.Combine(
@@ -96,9 +96,11 @@ public sealed class UnifiedPracticeProductPolishTests
             "src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml"));
 
         Assert.DoesNotContain("Search the web", partial, StringComparison.Ordinal);
-        Assert.DoesNotContain("Search YouTube", partial, StringComparison.Ordinal);
+        Assert.Contains("data-yt-learning-hub", partial, StringComparison.Ordinal);
+        Assert.Contains("Search YouTube", partial, StringComparison.Ordinal);
         Assert.DoesNotContain("suggestion.Url", partial, StringComparison.Ordinal);
-        Assert.Contains("youtube-nocookie.com/embed/", partial, StringComparison.Ordinal);
+        Assert.Contains("lesson-youtube-hub-v1.js", partial, StringComparison.Ordinal);
+        Assert.Contains("externalHelp.ApprovedResources", partial, StringComparison.Ordinal);
     }
 
     private static string FindRoot()
