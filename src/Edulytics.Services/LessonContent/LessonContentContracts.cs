@@ -76,5 +76,6 @@ public sealed record StudentLessonDetail(
     string Explanation,string KeyConceptsAndRules,string WorkedExamples,string StepByStepSolutions,string CommonMistakes,
     string QuickSummary,IReadOnlyList<LessonOutcomeRecord> Outcomes,DateTime PublishedAtUtc,bool IsSupporting=false)
 {
+    public string LessonCode { get; init; } = string.Empty;
     public RichLessonContentV2Lesson? RichContent { get; init; }
 }
