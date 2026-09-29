@@ -4,6 +4,20 @@
 @using System.Globalization
 @{
     var language = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var suppressLegacyLessonVideos =
+        ViewData["UseYouTubeStudioV2"] is true;
+    var approvedVideos = Model.Videos
+        .Where(x => x.ReviewStatus == RichLessonVideoReviewStatus.Approved)
+        .ToArray();
+    var externalHelp = RichLessonExternalHelpRegistry.Resolve(
+        Model.LessonCode,
+        Model.Title,
+        Model.CultureCode);
+    var externalHelpSectionNumber =
+        approvedVideos.Length > 0 ? "08" : "07";
+    var approvedExternalVideos =
+        externalHelp.ApprovedVideos;
+
     var questionLabel = language switch { "pl" => "Pytanie", "ar" => "السؤال", _ => "Question" };
     var methodLabel = language switch { "pl" => "Metoda", "ar" => "الطريقة", _ => "Method" };
     var answerLabel = language switch { "pl" => "Odpowiedź", "ar" => "الإجابة", _ => "Answer" };
@@ -14,6 +28,23 @@
     var mistakeLabel = language switch { "pl" => "Typowy błąd", "ar" => "خطأ شائع", _ => "Common mistake" };
     var whyWrongLabel = language switch { "pl" => "Dlaczego to błąd", "ar" => "لماذا هذا خطأ", _ => "Why it is wrong" };
     var correctionLabel = language switch { "pl" => "Jak poprawić", "ar" => "كيفية التصحيح", _ => "How to fix it" };
+    var videoHelpLabel = language switch { "pl" => "Pomoc wideo", "ar" => "مساعدة بالفيديو", _ => "Video Help" };
+    var videoHelpIntro = language switch
+    {
+        "pl" => "Opcjonalne, sprawdzone materiały zewnętrzne wspierające ten sam temat.",
+        "ar" => "مصادر فيديو خارجية اختيارية تمت مراجعتها لدعم نفس موضوع الدرس.",
+        _ => "Optional reviewed external videos that reinforce the same lesson target."
+    };
+    var watchOnYouTubeLabel = language switch { "pl" => "Otwórz w YouTube", "ar" => "فتح على YouTube", _ => "Open on YouTube" };
+    var extraHelpLabel = language switch { "pl" => "Dodatkowa pomoc", "ar" => "مساعدة إضافية", _ => "Extra Help" };
+    var reviewedResourcesLabel = language switch { "pl" => "Sprawdzone materiały", "ar" => "مصادر تمت مراجعتها", _ => "Reviewed resources" };
+    var externalHelpNotice = language switch
+    {
+        "pl" => "Poniżej pokazujemy wyłącznie materiały wideo sprawdzone dla tego tematu. Materiały pomocnicze nie wpływają na opanowanie materiału, ocenę ani decyzje adaptacyjne.",
+        "ar" => "نعرض هنا فقط فيديوهات تمت مراجعتها لهذا الموضوع. المحتوى المساعد لا يؤثر على مستوى الإتقان أو التقييم أو القرارات التكيفية.",
+        _ => "Only reviewed lesson-support videos are shown here. Help content never affects mastery, assessment, or Adaptive decisions."
+    };
+    var openResourceLabel = language switch { "pl" => "Otwórz materiał", "ar" => "فتح المصدر", _ => "Open resource" };
 }
 
 <section class="lesson-learning-section lesson-learning-section--explanation rich-lesson-section">
@@ -144,3 +175,104 @@
         </ul>
     </div>
 </section>
+
+@if (!suppressLegacyLessonVideos && approvedVideos.Length > 0)
+{
+    <section class="lesson-learning-section lesson-learning-section--video rich-lesson-section">
+        <header class="lesson-learning-section__header">
+            <span class="lesson-learning-section__number">07</span>
+            <h2>@videoHelpLabel</h2>
+        </header>
+        <div class="rich-video-section">
+            <p class="rich-video-section__intro">@videoHelpIntro</p>
+            <div class="rich-video-grid">
+                @foreach (var video in approvedVideos)
+                {
+                    <article class="rich-video-card">
+                        <div class="rich-video-frame">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/@video.VideoId"
+                                title="@video.Title"
+                                loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="rich-video-card__body">
+                            <h3>@video.Title</h3>
+                            <p class="rich-video-card__meta">@video.Creator@if (!string.IsNullOrWhiteSpace(video.DurationLabel)) { <text> · @video.DurationLabel</text> }</p>
+                            <p>@video.WhyRecommended</p>
+                            <a class="school-button"
+                               href="https://www.youtube.com/watch?v=@video.VideoId"
+                               target="_blank"
+                               rel="noopener noreferrer">@watchOnYouTubeLabel</a>
+                        </div>
+                    </article>
+                }
+            </div>
+        </div>
+    </section>
+}
+
+@if (!suppressLegacyLessonVideos &&
+     (externalHelp.ApprovedResources.Count > 0 ||
+      approvedExternalVideos.Count > 0))
+{
+    <section class="lesson-learning-section lesson-learning-section--external-help rich-lesson-section">
+        <header class="lesson-learning-section__header">
+            <span class="lesson-learning-section__number">@externalHelpSectionNumber</span>
+            <h2>@extraHelpLabel</h2>
+        </header>
+        <div class="rich-external-help">
+            <p class="rich-video-section__intro">@externalHelpNotice</p>
+
+            @if (approvedExternalVideos.Count > 0)
+            {
+                <h3>@videoHelpLabel</h3>
+                <div class="rich-video-grid">
+                    @foreach (var video in approvedExternalVideos)
+                    {
+                        <article class="rich-video-card">
+                            <div class="rich-video-frame">
+                                <iframe
+                                    src="https://www.youtube-nocookie.com/embed/@video.VideoId"
+                                    title="@video.Title"
+                                    loading="lazy"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                            </div>
+                            <div class="rich-video-card__body">
+                                <p class="rich-video-card__meta">@video.Creator</p>
+                                <h3>@video.Title</h3>
+                                <p>@video.WhyRecommended</p>
+                            </div>
+                        </article>
+                    }
+                </div>
+            }
+
+            @if (externalHelp.ApprovedResources.Count > 0)
+            {
+                <h3>@reviewedResourcesLabel</h3>
+                <div class="rich-video-grid">
+                    @foreach (var resource in externalHelp.ApprovedResources)
+                    {
+                        <article class="rich-video-card">
+                            <div class="rich-video-card__body">
+                                <p class="rich-video-card__meta">@resource.Provider</p>
+                                <h3>@resource.Title</h3>
+                                <p>@resource.WhyRecommended</p>
+                                <a class="school-button"
+                                   href="@resource.Url"
+                                   target="_blank"
+                                   rel="noopener noreferrer external">@openResourceLabel</a>
+                            </div>
+                        </article>
+                    }
+                </div>
+            }
+
+        </div>
+    </section>
+}
