@@ -205,7 +205,7 @@ public sealed class AdaptiveRemediationGuidanceEngine(
         var method = item.Solution.Trim();
         var answer = (item.CorrectAnswer ?? string.Empty).Trim();
 
-        if (answer.Length > 1 &&
+        if (answer.Length > 0 &&
             method.Contains(
                 answer,
                 StringComparison.OrdinalIgnoreCase))
