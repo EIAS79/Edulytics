@@ -352,15 +352,6 @@ public sealed class AdaptivePracticeV2Service(
             trimmed,
             item.CorrectAnswer);
 
-        turn.SubmittedAnswer = trimmed;
-        turn.IsCorrect = correct;
-        turn.Score = correct ? 1m : 0m;
-        turn.Feedback = item.Solution;
-        turn.AnsweredAtUtc = now;
-        turn.ResponseDurationMs = Math.Max(
-            0L,
-            (long)(now - turn.PresentedAtUtc).TotalMilliseconds);
-
         var existingMisconceptionStates =
             await adaptiveRepository.GetMisconceptionStatesAsync(
                 session.SchoolId,
@@ -375,6 +366,66 @@ public sealed class AdaptivePracticeV2Service(
                 session.StudentProfileId,
                 session.PrimarySkillId,
                 cancellationToken);
+
+        if (!correct)
+        {
+            var observation = CreateEvidenceObservation(
+                turn,
+                trimmed,
+                isCorrect: false,
+                item.Solution,
+                now);
+
+            var evidenceUpdate = evidenceProjector.Project(
+                session,
+                observation,
+                item,
+                existingMisconceptionStates,
+                existingRepresentationStates,
+                policy.EnableMisconceptionLoop,
+                now);
+
+            turn.IncorrectAttemptCount++;
+            turn.LastIncorrectAnswer = trimmed;
+            turn.LastIncorrectAtUtc = now;
+            turn.Feedback = item.Solution;
+
+            if (evidenceUpdate.MisconceptionState is not null)
+            {
+                turn.MisconceptionFocusId =
+                    evidenceUpdate.MisconceptionState.MisconceptionId;
+            }
+
+            await adaptiveRepository.CommitAnsweredTurnAsync(
+                session,
+                turn,
+                evidenceUpdate.MisconceptionState,
+                evidenceUpdate.RepresentationState,
+                null,
+                [],
+                null,
+                null,
+                null,
+                cancellationToken);
+
+            return AdaptivePracticeAnswerResult.Success(
+                await BuildSessionViewAsync(
+                    session,
+                    turn,
+                    item,
+                    cancellationToken),
+                false,
+                item.Solution);
+        }
+
+        turn.SubmittedAnswer = trimmed;
+        turn.IsCorrect = true;
+        turn.Score = 1m;
+        turn.Feedback = item.Solution;
+        turn.AnsweredAtUtc = now;
+        turn.ResponseDurationMs = Math.Max(
+            0L,
+            (long)(now - turn.PresentedAtUtc).TotalMilliseconds);
 
         var evidenceUpdate = evidenceProjector.Project(
             session,
@@ -829,6 +880,53 @@ public sealed class AdaptivePracticeV2Service(
             .ToArray();
     }
 
+    private static AdaptivePracticeTurn CreateEvidenceObservation(
+        AdaptivePracticeTurn source,
+        string submittedAnswer,
+        bool isCorrect,
+        string feedback,
+        DateTime answeredAtUtc) =>
+        new()
+        {
+            Id = source.Id,
+            SchoolId = source.SchoolId,
+            SessionId = source.SessionId,
+            Sequence = source.Sequence,
+            AssessmentItemId = source.AssessmentItemId,
+            DecisionSnapshotId = source.DecisionSnapshotId,
+            SkillId = source.SkillId,
+            QuestionFamily = source.QuestionFamily,
+            Representation = source.Representation,
+            MathematicalComplexityScore =
+                source.MathematicalComplexityScore,
+            UiDifficultyBand = source.UiDifficultyBand,
+            MisconceptionFocusId =
+                source.MisconceptionFocusId,
+            IsIndependentConfirmation =
+                source.IsIndependentConfirmation,
+            PresentedAtUtc = source.PresentedAtUtc,
+            AnsweredAtUtc = answeredAtUtc,
+            SubmittedAnswer = submittedAnswer,
+            IsCorrect = isCorrect,
+            Score = isCorrect ? 1m : 0m,
+            Feedback = feedback,
+            ResponseDurationMs = Math.Max(
+                0L,
+                (long)(answeredAtUtc -
+                    source.PresentedAtUtc).TotalMilliseconds),
+            ExposureFingerprint =
+                source.ExposureFingerprint,
+            SemanticIdentityKey =
+                source.SemanticIdentityKey,
+            IncorrectAttemptCount =
+                source.IncorrectAttemptCount,
+            LastIncorrectAnswer =
+                source.LastIncorrectAnswer,
+            LastIncorrectAtUtc =
+                source.LastIncorrectAtUtc,
+            RowVersion = source.RowVersion
+        };
+
     private Task<AdaptivePracticeSessionView>
         BuildSessionViewAsync(
             AdaptivePracticeSession session,
@@ -863,7 +961,9 @@ public sealed class AdaptivePracticeV2Service(
                     item.GenerationParametersJson,
                     turn.Representation,
                     turn.MathematicalComplexityScore,
-                    turn.IsIndependentConfirmation)));
+                    turn.IsIndependentConfirmation,
+                    turn.IncorrectAttemptCount,
+                    turn.LastIncorrectAnswer)));
     }
 
     private static AdaptivePracticeSessionView BuildCompletedView(
