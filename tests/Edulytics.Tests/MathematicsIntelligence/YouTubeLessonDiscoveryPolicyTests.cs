@@ -134,6 +134,45 @@ public sealed class YouTubeLessonDiscoveryPolicyTests
     }
 
     [Fact]
+    public async Task LearnerQuery_TruncatesWithoutSplittingAstralUnicode()
+    {
+        var service =
+            new YouTubeLessonDiscoveryService(
+                new HttpClient(),
+                new YouTubeLessonDiscoveryOptions
+                {
+                    Enabled = true,
+                    ApiKey = string.Empty
+                });
+
+        var refinement =
+            new string('a', 79) +
+            "😀" +
+            "x";
+
+        var result =
+            await service.DiscoverAsync(
+                "PED:TEST:G8:UNICODE",
+                "Solve linear equations",
+                "Grade 8",
+                "en",
+                refinement);
+
+        Assert.Contains(
+            "😀",
+            result.SearchQuery,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "x math",
+            result.SearchQuery,
+            StringComparison.Ordinal);
+        Assert.StartsWith(
+            "https://www.youtube.com/results?search_query=",
+            result.SearchUrl,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public async Task Cache_IsolatedByImmutableLessonTopic_WhenFlattenedSearchQueryMatches()
     {
         using var client =
