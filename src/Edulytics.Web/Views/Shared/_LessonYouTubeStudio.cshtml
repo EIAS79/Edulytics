@@ -201,7 +201,8 @@
                     <div class="yt-studio-feature__actions">
                         <a class="yt-studio-button yt-studio-button--primary"
                            data-youtube-watch
-                           href="@(string.IsNullOrWhiteSpace(fallbackVideoId) ? "#" : $"https://www.youtube.com/watch?v={fallbackVideoId}")"
+                           href="@(string.IsNullOrWhiteSpace(fallbackVideoId) ? null : $"https://www.youtube.com/watch?v={fallbackVideoId}")"
+                           aria-disabled="@(string.IsNullOrWhiteSpace(fallbackVideoId) ? "true" : null)"
                            target="_blank"
                            rel="noopener noreferrer">@watchLabel</a>
                         <a class="yt-studio-button yt-studio-button--ghost"
