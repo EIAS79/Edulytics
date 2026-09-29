@@ -16,6 +16,12 @@ public static class AdaptivePracticeV2Versions
     public const string PolicyVersion = "adaptive-v2-c0-c5-closure-v1";
 }
 
+public static class AdaptivePracticeV2Behavior
+{
+    public const int MaximumSameItemRetries = 1;
+    public const int MaximumSessionItems = 30;
+}
+
 public static class AdaptivePracticeEligibilityReasonCodes
 {
     public const string Eligible = "ELIGIBLE";
