@@ -81,10 +81,6 @@ public sealed class LessonObjectiveContentAlignmentCertificationTests
                                 StringComparison.OrdinalIgnoreCase))
                         ?? lesson.Translations.First();
 
-                    var isSupporting =
-                        lesson.IsSupporting ||
-                        lesson.OutcomeCodes.Count == 0;
-
                     if (lesson.IsSupporting &&
                         lesson.OutcomeCodes.Count != 0)
                     {
@@ -150,7 +146,7 @@ public sealed class LessonObjectiveContentAlignmentCertificationTests
                             lesson.LessonCode,
                             translation.Title,
                             gradeLabel: string.Empty,
-                            translation.CultureCode,
+                            cultureCode: translation.CultureCode,
                             learnerQuery: null);
 
                     if (!youtubeResult.SearchQuery.Contains(
