@@ -249,5 +249,6 @@ public sealed class AdaptiveLearningStateAssembler(
             turn.QuestionFamily,
             turn.Representation,
             turn.MisconceptionFocusId,
-            turn.IsIndependentConfirmation);
+            turn.IsIndependentConfirmation &&
+            turn.IncorrectAttemptCount == 0);
 }
