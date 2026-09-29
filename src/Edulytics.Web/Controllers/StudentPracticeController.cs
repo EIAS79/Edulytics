@@ -102,22 +102,11 @@ public sealed class StudentPracticeController(
             return NotFound();
         }
 
-        if (presentation.Kind ==
-            LessonPracticePresentationKind.SpecializedGame)
-        {
-            return RedirectToAction(
-                nameof(Game),
-                new
-                {
-                    curriculumAdoptionId,
-                    lessonId
-                });
-        }
-
-        // Adaptive V2 is additive and fail-closed. When it is Off, Shadow,
-        // outside the explicit Primary allow-list, or unable to initialize before
-        // a V2 session is created, the existing V1 lesson Practice remains the
-        // authoritative fallback.
+        // Unified Practice is the learner-facing default for every
+        // READY_VERIFIED lesson inside the configured Primary rollout. The
+        // legacy lesson runtime is reached only when the learner is outside
+        // that rollout; an eligible V2 generation/persistence failure is never
+        // silently disguised as a legacy Practice session.
         var adaptiveStart = await adaptivePractice.StartLessonAsync(
             actorId,
             curriculumAdoptionId,
@@ -132,6 +121,44 @@ public sealed class StudentPracticeController(
                 new
                 {
                     id = adaptiveStart.Session.SessionId
+                });
+        }
+
+        if (adaptiveStart.Error is
+            AdaptivePracticeV2Error.GenerationFailed or
+            AdaptivePracticeV2Error.PersistenceFailed)
+        {
+            TempData["Error"] =
+                text["PracticeOperationFailed"].Value;
+
+            return RedirectToAction(
+                "Lesson",
+                "StudentPortal",
+                new { id = lessonId });
+        }
+
+        if (adaptiveStart.Error == AdaptivePracticeV2Error.AccessDenied)
+            return Forbid();
+
+        if (adaptiveStart.Error is
+            AdaptivePracticeV2Error.CurriculumNotAvailable or
+            AdaptivePracticeV2Error.LessonNotAvailable)
+        {
+            return NotFound();
+        }
+
+        // Compatibility-only path for schools/curriculum levels that have not
+        // entered Unified Practice yet. Within the production rollout, all
+        // READY_VERIFIED lessons use the Adaptive runtime above.
+        if (presentation.Kind ==
+            LessonPracticePresentationKind.SpecializedGame)
+        {
+            return RedirectToAction(
+                nameof(Game),
+                new
+                {
+                    curriculumAdoptionId,
+                    lessonId
                 });
         }
 
