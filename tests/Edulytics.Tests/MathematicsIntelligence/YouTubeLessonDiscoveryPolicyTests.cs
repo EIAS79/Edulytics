@@ -1,3 +1,5 @@
+using System.Net;
+using System.Text;
 using Edulytics.Services.LessonContent;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
@@ -127,6 +129,42 @@ public sealed class YouTubeLessonDiscoveryPolicyTests
             StringComparison.OrdinalIgnoreCase);
     }
 
+    [Fact]
+    public async Task HardRelevanceThreshold_DoesNotFallBackToUnrelatedVideo()
+    {
+        using var client =
+            new HttpClient(
+                new LowRelevanceYouTubeHandler());
+
+        var service =
+            new YouTubeLessonDiscoveryService(
+                client,
+                new YouTubeLessonDiscoveryOptions
+                {
+                    Enabled = true,
+                    ApiKey = "test-key",
+                    MinimumRelevancePercent = 95,
+                    SearchResultCount = 8,
+                    RelatedResultCount = 6
+                });
+
+        var result =
+            await service.DiscoverAsync(
+                "PED:TEST:G8:UNRELATED",
+                "Solve linear equations",
+                "Grade 8",
+                "en",
+                null);
+
+        Assert.True(result.Available);
+        Assert.Null(result.Featured);
+        Assert.Empty(result.Related);
+        Assert.Contains(
+            "No embeddable YouTube result passed",
+            result.Message,
+            StringComparison.Ordinal);
+    }
+
     private static Task<YouTubeLessonDiscoveryResult> DiscoverAsync(
         string lessonCode,
         string title,
@@ -148,4 +186,88 @@ public sealed class YouTubeLessonDiscoveryPolicyTests
             "en",
             learnerQuery);
     }
+    private sealed class LowRelevanceYouTubeHandler
+        : HttpMessageHandler
+    {
+        protected override Task<HttpResponseMessage> SendAsync(
+            HttpRequestMessage request,
+            CancellationToken cancellationToken)
+        {
+            var path =
+                request.RequestUri?.AbsolutePath
+                ?? string.Empty;
+
+            var json =
+                path.EndsWith(
+                    "/channels",
+                    StringComparison.Ordinal)
+                    ? """{"items":[]}"""
+                    : path.EndsWith(
+                        "/search",
+                        StringComparison.Ordinal)
+                        ? """
+                          {
+                            "items": [
+                              {
+                                "id": { "videoId": "unrelated-1" },
+                                "snippet": {
+                                  "title": "Cooking pasta perfectly",
+                                  "channelId": "UC-kitchen",
+                                  "channelTitle": "Kitchen Lessons",
+                                  "description": "Recipe and kitchen timing guide",
+                                  "thumbnails": {
+                                    "high": {
+                                      "url": "https://i.ytimg.com/vi/unrelated-1/hqdefault.jpg"
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                          """
+                        : """
+                          {
+                            "items": [
+                              {
+                                "id": "unrelated-1",
+                                "status": {
+                                  "embeddable": true,
+                                  "privacyStatus": "public"
+                                },
+                                "snippet": {
+                                  "title": "Cooking pasta perfectly",
+                                  "channelId": "UC-kitchen",
+                                  "channelTitle": "Kitchen Lessons",
+                                  "description": "Recipe and kitchen timing guide",
+                                  "thumbnails": {
+                                    "high": {
+                                      "url": "https://i.ytimg.com/vi/unrelated-1/hqdefault.jpg"
+                                    }
+                                  }
+                                },
+                                "contentDetails": {
+                                  "duration": "PT5M"
+                                },
+                                "statistics": {
+                                  "viewCount": "1000000",
+                                  "likeCount": "10000"
+                                }
+                              }
+                            ]
+                          }
+                          """;
+
+            return Task.FromResult(
+                new HttpResponseMessage(
+                    HttpStatusCode.OK)
+                {
+                    Content =
+                        new StringContent(
+                            json,
+                            Encoding.UTF8,
+                            "application/json")
+                });
+        }
+    }
+
 }
