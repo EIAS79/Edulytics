@@ -996,6 +996,33 @@ public sealed class AdaptivePracticeV2Service(
     {
         cancellationToken.ThrowIfCancellationRequested();
 
+        var remediationStageCode =
+            turn.IsIndependentConfirmation
+                ? AdaptiveRemediationStageCodes.FreshConfirmation
+                : turn.IncorrectAttemptCount > 0 &&
+                  !turn.AnsweredAtUtc.HasValue
+                    ? AdaptiveRemediationStageCodes.TargetedRetry
+                    : !turn.AnsweredAtUtc.HasValue &&
+                      !string.IsNullOrWhiteSpace(turn.Feedback)
+                        ? AdaptiveRemediationStageCodes.ScaffoldedRecovery
+                        : null;
+
+        var remediationHint =
+            string.Equals(
+                remediationStageCode,
+                AdaptiveRemediationStageCodes.TargetedRetry,
+                StringComparison.Ordinal)
+                ? turn.Feedback
+                : null;
+
+        var workedExample =
+            string.Equals(
+                remediationStageCode,
+                AdaptiveRemediationStageCodes.ScaffoldedRecovery,
+                StringComparison.Ordinal)
+                ? turn.Feedback
+                : null;
+
         return Task.FromResult(
             new AdaptivePracticeSessionView(
                 session.Id,
@@ -1023,7 +1050,11 @@ public sealed class AdaptivePracticeV2Service(
                     turn.MathematicalComplexityScore,
                     turn.IsIndependentConfirmation,
                     turn.IncorrectAttemptCount,
-                    turn.LastIncorrectAnswer)));
+                    turn.LastIncorrectAnswer,
+                    remediationStageCode,
+                    remediationHint,
+                    workedExample,
+                    turn.MisconceptionFocusId)));
     }
 
     private static AdaptivePracticeSessionView BuildCompletedView(
