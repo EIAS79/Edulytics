@@ -50,6 +50,16 @@ public sealed class StudentPracticeController(
         CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
+
+        if (scope == StudentPrivatePracticeScope.Lesson &&
+            lessonId.HasValue)
+        {
+            return await StartLessonPractice(
+                curriculumAdoptionId,
+                lessonId.Value,
+                cancellationToken);
+        }
+
         var result = await privatePractice.GenerateAsync(actorId,
             new GenerateStudentPrivatePracticeRequest(
                 curriculumAdoptionId, scope, lessonId, unitKey, difficulty, questionCount),
@@ -102,22 +112,11 @@ public sealed class StudentPracticeController(
             return NotFound();
         }
 
-        if (presentation.Kind ==
-            LessonPracticePresentationKind.SpecializedGame)
-        {
-            return RedirectToAction(
-                nameof(Game),
-                new
-                {
-                    curriculumAdoptionId,
-                    lessonId
-                });
-        }
-
-        // Adaptive V2 is additive and fail-closed. When it is Off, Shadow,
-        // outside the explicit Primary allow-list, or unable to initialize before
-        // a V2 session is created, the existing V1 lesson Practice remains the
-        // authoritative fallback.
+        // Unified Practice is the learner-facing default for every
+        // READY_VERIFIED lesson inside the configured Primary rollout. The
+        // legacy lesson runtime is reached only when the learner is outside
+        // that rollout; an eligible V2 generation/persistence failure is never
+        // silently disguised as a legacy Practice session.
         var adaptiveStart = await adaptivePractice.StartLessonAsync(
             actorId,
             curriculumAdoptionId,
@@ -132,6 +131,44 @@ public sealed class StudentPracticeController(
                 new
                 {
                     id = adaptiveStart.Session.SessionId
+                });
+        }
+
+        if (adaptiveStart.Error is
+            AdaptivePracticeV2Error.GenerationFailed or
+            AdaptivePracticeV2Error.PersistenceFailed)
+        {
+            TempData["Error"] =
+                text["PracticeOperationFailed"].Value;
+
+            return RedirectToAction(
+                "Lesson",
+                "StudentPortal",
+                new { id = lessonId });
+        }
+
+        if (adaptiveStart.Error == AdaptivePracticeV2Error.AccessDenied)
+            return Forbid();
+
+        if (adaptiveStart.Error is
+            AdaptivePracticeV2Error.CurriculumNotAvailable or
+            AdaptivePracticeV2Error.LessonNotAvailable)
+        {
+            return NotFound();
+        }
+
+        // Compatibility-only path for schools/curriculum levels that have not
+        // entered Unified Practice yet. Within the production rollout, all
+        // READY_VERIFIED lessons use the Adaptive runtime above.
+        if (presentation.Kind ==
+            LessonPracticePresentationKind.SpecializedGame)
+        {
+            return RedirectToAction(
+                nameof(Game),
+                new
+                {
+                    curriculumAdoptionId,
+                    lessonId
                 });
         }
 
@@ -343,35 +380,26 @@ public sealed class StudentPracticeController(
         if (!TryActor(out var actorId)) return Forbid();
 
         var workspace = await privatePractice.GetWorkspaceAsync(
-            actorId, curriculumAdoptionId, cancellationToken);
+            actorId,
+            curriculumAdoptionId,
+            cancellationToken);
         var pilotLesson = workspace.Lessons.SingleOrDefault(x =>
             x.LessonId == lessonId &&
-            string.Equals(x.LessonCode, LessonPracticePilotCode, StringComparison.Ordinal));
-        if (pilotLesson is null || workspace.SelectedCurriculumAdoptionId != curriculumAdoptionId)
-            return NotFound();
+            string.Equals(
+                x.LessonCode,
+                LessonPracticePilotCode,
+                StringComparison.Ordinal));
 
-        var result = await privatePractice.GenerateAsync(
-            actorId,
-            new GenerateStudentPrivatePracticeRequest(
-                curriculumAdoptionId,
-                StudentPrivatePracticeScope.Lesson,
-                lessonId,
-                null,
-                StudentPrivatePracticeDifficulty.MyLevel,
-                LessonPracticeQuestionCount),
-            cancellationToken);
-
-        if (!result.Succeeded)
+        if (pilotLesson is null ||
+            workspace.SelectedCurriculumAdoptionId != curriculumAdoptionId)
         {
-            TempData["Error"] = PrivatePracticeErrorMessage(result.Error);
-            return RedirectToAction("Lesson", "StudentPortal", new { id = lessonId });
+            return NotFound();
         }
 
-        return RedirectToAction(nameof(Attempt), new
-        {
-            id = result.AttemptId,
-            mode = LessonGameMode
-        });
+        return await StartLessonPractice(
+            curriculumAdoptionId,
+            lessonId,
+            cancellationToken);
     }
 
     [HttpGet("adaptive/{id:guid}")]

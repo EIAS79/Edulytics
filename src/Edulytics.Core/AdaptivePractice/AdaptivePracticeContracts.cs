@@ -13,7 +13,7 @@ public enum AdaptivePracticeV2Mode
 public static class AdaptivePracticeV2Versions
 {
     public const string EngineVersion = "adaptive-practice-v2.0";
-    public const string PolicyVersion = "primary-remediation-lock-v1";
+    public const string PolicyVersion = "unified-practice-ready-verified-v1";
 }
 
 public static class AdaptivePracticeEligibilityReasonCodes
@@ -92,11 +92,14 @@ public sealed record AdaptivePracticeV2Policy(
     public bool AllowsCurriculumLevel(string key) =>
         AllowedCurriculumLevelKeys.Contains(key);
 
+    public bool RouteAllReadyVerifiedLessons { get; init; }
+
     public bool AllowsLesson(string lessonCode) =>
-        Mode == AdaptivePracticeV2Mode.Canary
+        RouteAllReadyVerifiedLessons ||
+        (Mode == AdaptivePracticeV2Mode.Canary
             ? AllowedLessonCodes.Contains(lessonCode)
             : AllowedLessonCodes.Count == 0 ||
-              AllowedLessonCodes.Contains(lessonCode);
+              AllowedLessonCodes.Contains(lessonCode));
 
     public bool EnableLiveGroupSession { get; init; }
 

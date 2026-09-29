@@ -58,6 +58,30 @@ public static class AdaptivePrimaryRolloutPlan
             "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:APPLY")
     ];
 
+    public static bool IsValidReadyVerifiedScope(
+        IEnumerable<string>? curriculumLevelKeys)
+    {
+        var levels = (curriculumLevelKeys ?? [])
+            .Where(x => !string.IsNullOrWhiteSpace(x))
+            .Select(x => x.Trim())
+            .ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+        if (levels.Count == 0)
+            return false;
+
+        foreach (var key in levels)
+        {
+            var level = CurriculumLevelIdentityRegistry.Find(key);
+            if (level is null ||
+                level.LogicalLevel is < 1 or > 6)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public static bool IsValidCanaryScope(
         IEnumerable<string>? curriculumLevelKeys,
         IEnumerable<string>? lessonCodes)
