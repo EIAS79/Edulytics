@@ -307,8 +307,11 @@ jobs:
           lines = [
               "# Adaptive Practice V2 — Full READY_VERIFIED Runtime Certification",
               "",
-              f"- Certified lessons: **{s['CertifiedLessonCount']:,} / {s['ExpectedLessonCount']:,}**",
-              f"- Certified question families: **{s['CertifiedQuestionFamilyCount']:,} / {s['DistinctQuestionFamilyCount']:,}**",
+              f"- Certified full sessions: **{s['CertifiedSessionCount']:,} / {s['ExpectedLessonCount']:,}**",
+              f"- Session length: **{s['CertifiedSessionLength']:,}**",
+              f"- Generated session items: **{s['GeneratedSessionItemCount']:,}**",
+              f"- Certified lesson-family pairs: **{s['CertifiedLessonFamilyPairCount']:,} / {s['ExpectedLessonFamilyPairCount']:,}**",
+              f"- Distinct question families represented: **{s['DistinctQuestionFamilyCount']:,}**",
               f"- Blockers: **{s['BlockerCount']:,}**",
           ]
           print("\n".join(lines))
