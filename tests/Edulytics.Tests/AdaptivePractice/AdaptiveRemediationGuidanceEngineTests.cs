@@ -102,13 +102,10 @@ public sealed class AdaptiveRemediationGuidanceEngineTests
             Solution =
                 "Locate the two multiples and use the halfway point.",
             GenerationParametersJson =
-                $$"""
-                {
-                  "parameters": {
-                    "value": {{value}},
-                    "place": {{place}}
-                  }
-                }
-                """
+                "{\"parameters\":{\"value\":" +
+                value +
+                ",\"place\":" +
+                place +
+                "}}"
         };
 }
