@@ -141,9 +141,13 @@ public sealed class AdaptivePracticeV2Service(
                 decision,
                 RandomNumberGenerator.GetInt32(1, int.MaxValue),
                 context.Exposures
+                    .OrderByDescending(x => x.ExposedAtUtc)
                     .Select(x => x.ExposureFingerprint)
                     .Where(x => !string.IsNullOrWhiteSpace(x))
                     .Distinct(StringComparer.Ordinal)
+                    .Take(
+                        AdaptivePracticeV2Behavior
+                            .RecentExposureFreshnessWindow)
                     .ToArray(),
                 excludedSemanticIdentityKeys: []);
         }
@@ -609,19 +613,28 @@ public sealed class AdaptivePracticeV2Service(
                 contract,
                 decision,
                 RandomNumberGenerator.GetInt32(1, int.MaxValue),
-                context.Exposures
+                replayTurns
+                    .OrderByDescending(x => x.Sequence)
                     .Select(x => x.ExposureFingerprint)
                     .Concat(
-                        replayTurns.Select(x =>
-                            x.ExposureFingerprint))
+                        context.Exposures
+                            .OrderByDescending(x => x.ExposedAtUtc)
+                            .Select(x => x.ExposureFingerprint))
                     .Where(x =>
                         !string.IsNullOrWhiteSpace(x))
                     .Distinct(StringComparer.Ordinal)
+                    .Take(
+                        AdaptivePracticeV2Behavior
+                            .RecentExposureFreshnessWindow)
                     .ToArray(),
                 replayTurns
+                    .OrderByDescending(x => x.Sequence)
                     .Select(x => x.SemanticIdentityKey)
                     .Where(x => !string.IsNullOrWhiteSpace(x))
                     .Distinct(StringComparer.Ordinal)
+                    .Take(
+                        AdaptivePracticeV2Behavior
+                            .RecentSemanticFreshnessWindow)
                     .ToArray());
         }
         catch (InvalidOperationException)
