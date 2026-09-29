@@ -92,11 +92,14 @@ public sealed record AdaptivePracticeV2Policy(
     public bool AllowsCurriculumLevel(string key) =>
         AllowedCurriculumLevelKeys.Contains(key);
 
+    public bool RouteAllReadyVerifiedLessons { get; init; }
+
     public bool AllowsLesson(string lessonCode) =>
-        Mode == AdaptivePracticeV2Mode.Canary
+        RouteAllReadyVerifiedLessons ||
+        (Mode == AdaptivePracticeV2Mode.Canary
             ? AllowedLessonCodes.Contains(lessonCode)
             : AllowedLessonCodes.Count == 0 ||
-              AllowedLessonCodes.Contains(lessonCode);
+              AllowedLessonCodes.Contains(lessonCode));
 
     public bool EnableLiveGroupSession { get; init; }
 
