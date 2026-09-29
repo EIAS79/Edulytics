@@ -224,6 +224,10 @@ public sealed class RichLessonExternalHelpTests
             "YouTube discovery could not load right now. Use the lesson-scoped YouTube links instead.",
             studioScript,
             StringComparison.Ordinal);
+        Assert.Contains(
+            "if (resultCount) resultCount.textContent = \"0\";",
+            studioScript,
+            StringComparison.Ordinal);
     }
 
     private static string FindRoot()
