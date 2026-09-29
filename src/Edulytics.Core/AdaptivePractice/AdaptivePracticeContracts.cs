@@ -13,7 +13,7 @@ public enum AdaptivePracticeV2Mode
 public static class AdaptivePracticeV2Versions
 {
     public const string EngineVersion = "adaptive-practice-v2.1";
-    public const string PolicyVersion = "adaptive-v2-c0-c5-closure-v1";
+    public const string PolicyVersion = "adaptive-v2-c0-c5-closure-v2";
 }
 
 public static class AdaptivePracticeV2Behavior
