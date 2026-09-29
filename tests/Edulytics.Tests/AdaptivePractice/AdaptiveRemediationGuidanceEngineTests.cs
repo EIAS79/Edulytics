@@ -62,6 +62,36 @@ public sealed class AdaptiveRemediationGuidanceEngineTests
     }
 
     [Fact]
+    public void FreshRoundingRecoveryExampleMatchesRecoveryPlaceAndDoesNotLeakAnswer()
+    {
+        var recoveryItem = RoundingItem(
+            value: 773,
+            place: 10,
+            correct: "770");
+
+        var workedExample =
+            engine.BuildRecoveryWorkedExample(
+                recoveryItem);
+
+        Assert.Contains(
+            "nearest 10",
+            workedExample,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "nearest 100",
+            workedExample,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "770",
+            workedExample,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "773",
+            workedExample,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void GenericFamilyStillProvidesBoundedProgressiveGuidance()
     {
         var item = new AssessmentItem
