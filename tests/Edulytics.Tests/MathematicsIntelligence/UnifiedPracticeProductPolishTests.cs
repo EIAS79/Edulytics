@@ -58,7 +58,10 @@ public sealed class UnifiedPracticeProductPolishTests
         Assert.True(nextSequence > retryReturn);
         Assert.Contains("turn.IncorrectAttemptCount++", service, StringComparison.Ordinal);
         Assert.Contains("turn.LastIncorrectAnswer = trimmed", service, StringComparison.Ordinal);
-        Assert.Contains("BuildSessionViewAsync", service[wrong..retryReturn], StringComparison.Ordinal);
+        Assert.Contains(
+            "BuildSessionViewAsync",
+            service[wrong..nextSequence],
+            StringComparison.Ordinal);
     }
 
     [Fact]
