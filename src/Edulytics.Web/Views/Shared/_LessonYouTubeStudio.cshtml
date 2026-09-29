@@ -147,7 +147,7 @@
                     @if (!string.IsNullOrWhiteSpace(fallbackVideoId))
                     {
                         <iframe data-youtube-player
-                                src="https://www.youtube-nocookie.com/embed/@fallbackVideoId?rel=0&amp;modestbranding=1"
+                                src="https://www.youtube-nocookie.com/embed/@(fallbackVideoId)?rel=0&amp;modestbranding=1"
                                 title="@(fallbackTitle ?? sectionTitle)"
                                 loading="lazy"
                                 referrerpolicy="strict-origin-when-cross-origin"
