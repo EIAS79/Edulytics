@@ -13,6 +13,9 @@ public sealed class SecurityHeadersMiddleware
     private const string YouTubePrivacyOrigin =
         "https://www.youtube-nocookie.com";
 
+    private const string YouTubeThumbnailOrigin =
+        "https://i.ytimg.com";
+
     private readonly RequestDelegate _next;
 
     public SecurityHeadersMiddleware(
@@ -88,7 +91,7 @@ public sealed class SecurityHeadersMiddleware
                 $"script-src 'self' 'nonce-{nonce}' {TurnstileOrigin};",
                 "script-src-attr 'none';",
                 "style-src 'self' 'unsafe-inline';",
-                "img-src 'self' data: https://images.unsplash.com;",
+                $"img-src 'self' data: https://images.unsplash.com {YouTubeThumbnailOrigin};",
                 "font-src 'self' data:;",
                 $"connect-src 'self' {websocketSchemes} {TurnstileOrigin};",
                 $"frame-src {TurnstileOrigin} {YouTubePrivacyOrigin};",
