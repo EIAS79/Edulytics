@@ -177,7 +177,8 @@ public static class BackendResilienceRegistrationExtensions
                     });
 
                 options.AddPolicy(
-                    "YouTubeLessonSearch",
+                    BackendResiliencePolicyNames
+                        .YouTubeLessonSearch,
                     context =>
                     {
                         var actor =
