@@ -1,0 +1,224 @@
+@model Edulytics.Services.LessonContent.StudentLessonDetail
+@using Edulytics.Core.Curriculum
+@using System.Globalization
+@{
+    var language = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var externalHelp = RichLessonExternalHelpRegistry.Resolve(
+        Model.LessonCode,
+        Model.Title,
+        CultureInfo.CurrentUICulture.Name);
+
+    string? fallbackVideoId = null;
+    string? fallbackTitle = null;
+    string? fallbackCreator = null;
+
+    var richFallback = Model.RichContent?.Videos
+        .FirstOrDefault(x => x.ReviewStatus == RichLessonVideoReviewStatus.Approved);
+
+    if (richFallback is not null)
+    {
+        fallbackVideoId = richFallback.VideoId;
+        fallbackTitle = richFallback.Title;
+        fallbackCreator = richFallback.Creator;
+    }
+    else
+    {
+        var reviewedFallback = externalHelp.ApprovedVideos.FirstOrDefault();
+        if (reviewedFallback is not null)
+        {
+            fallbackVideoId = reviewedFallback.VideoId;
+            fallbackTitle = reviewedFallback.Title;
+            fallbackCreator = reviewedFallback.Creator;
+        }
+    }
+
+    var endpoint = Url.Action(
+        "LessonYouTube",
+        "StudentPortal",
+        new { id = Model.Id }) ?? string.Empty;
+
+    var sectionTitle = language switch
+    {
+        "pl" => "Studio nauki YouTube",
+        "ar" => "استوديو تعلم YouTube",
+        _ => "YouTube Learning Studio"
+    };
+    var sectionIntro = language switch
+    {
+        "pl" => "Filmy są wyszukiwane wyłącznie w YouTube i dopasowywane do tematu tej lekcji. Najpierw sprawdzamy pięć kanałów dobranych do poziomu nauczania.",
+        "ar" => "يتم البحث داخل YouTube فقط وربط النتائج بموضوع هذا الدرس. نعطي الأولوية أولاً لخمسة قنوات تعليمية مناسبة للمرحلة.",
+        _ => "Videos are searched inside YouTube only and matched to this lesson. We prioritize five teaching channels selected for the learner's grade band."
+    };
+    var searchPlaceholder = language switch
+    {
+        "pl" => "Doprecyzuj temat w ramach tej lekcji…",
+        "ar" => "حدّد ما تريد شرحه داخل موضوع هذا الدرس…",
+        _ => "Refine what you want explained in this lesson…"
+    };
+    var searchLabel = language switch
+    {
+        "pl" => "Szukaj w YouTube",
+        "ar" => "ابحث في YouTube",
+        _ => "Search YouTube"
+    };
+    var preferredLabel = language switch
+    {
+        "pl" => "Preferowane kanały dla tego poziomu",
+        "ar" => "القنوات المفضلة لهذه المرحلة",
+        _ => "Preferred channels for this level"
+    };
+    var relatedLabel = language switch
+    {
+        "pl" => "Powiązane wyniki YouTube",
+        "ar" => "نتائج YouTube ذات الصلة",
+        _ => "Related YouTube results"
+    };
+    var matchLabel = language switch
+    {
+        "pl" => "Dopasowanie do tematu",
+        "ar" => "مدى التطابق مع الموضوع",
+        _ => "Topic match"
+    };
+    var loadingLabel = language switch
+    {
+        "pl" => "Wyszukiwanie najlepszego filmu dla tej lekcji…",
+        "ar" => "جارٍ البحث عن أفضل فيديو مناسب لهذا الدرس…",
+        _ => "Finding the strongest lesson-matched video…"
+    };
+    var watchLabel = language switch
+    {
+        "pl" => "Otwórz w YouTube",
+        "ar" => "افتح في YouTube",
+        _ => "Open on YouTube"
+    };
+    var allResultsLabel = language switch
+    {
+        "pl" => "Wszystkie wyniki w YouTube",
+        "ar" => "كل النتائج على YouTube",
+        _ => "All results on YouTube"
+    };
+}
+<section class="lesson-learning-section lesson-learning-section--youtube lesson-youtube-studio"
+         data-youtube-studio
+         data-endpoint="@endpoint"
+         data-lesson-title="@Model.Title">
+    <header class="lesson-learning-section__header yt-studio-section-header">
+        <span class="lesson-learning-section__number">07</span>
+        <div class="yt-studio-heading">
+            <div class="yt-studio-heading__line">
+                <h2>@sectionTitle</h2>
+                <span class="yt-studio-source-badge" aria-label="YouTube">YouTube</span>
+            </div>
+            <p>@sectionIntro</p>
+        </div>
+    </header>
+
+    <div class="yt-studio-shell">
+        <div class="yt-studio-commandbar">
+            <div class="yt-studio-context">
+                <span class="yt-studio-context__eyebrow">@preferredLabel</span>
+                <strong data-youtube-grade-band>@Model.GradeName</strong>
+            </div>
+            <form class="yt-studio-search" data-youtube-search-form role="search">
+                <label class="sr-only" for="lesson-youtube-query-@Model.Id">@searchLabel</label>
+                <div class="yt-studio-search__box">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" /></svg>
+                    <input id="lesson-youtube-query-@Model.Id"
+                           type="search"
+                           maxlength="80"
+                           autocomplete="off"
+                           placeholder="@searchPlaceholder"
+                           data-youtube-query />
+                    <button type="submit">@searchLabel</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="yt-studio-channel-strip"
+             data-youtube-channels
+             aria-label="@preferredLabel"
+             aria-live="polite">
+            <span class="yt-studio-chip yt-studio-chip--loading">@loadingLabel</span>
+        </div>
+
+        <div class="yt-studio-grid">
+            <article class="yt-studio-feature">
+                <div class="yt-studio-player" data-youtube-player-shell>
+                    @if (!string.IsNullOrWhiteSpace(fallbackVideoId))
+                    {
+                        <iframe data-youtube-player
+                                src="https://www.youtube-nocookie.com/embed/@fallbackVideoId?rel=0&amp;modestbranding=1"
+                                title="@(fallbackTitle ?? sectionTitle)"
+                                loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                    }
+                    else
+                    {
+                        <div class="yt-studio-player__empty" data-youtube-player-empty>
+                            <span class="yt-studio-play-mark" aria-hidden="true">▶</span>
+                            <strong>@loadingLabel</strong>
+                        </div>
+                    }
+                </div>
+                <div class="yt-studio-feature__body">
+                    <div class="yt-studio-feature__headline">
+                        <div>
+                            <p class="yt-studio-feature__channel"
+                               data-youtube-feature-channel>@(fallbackCreator ?? "YouTube")</p>
+                            <h3 data-youtube-feature-title>@(fallbackTitle ?? Model.Title)</h3>
+                        </div>
+                        <span class="yt-studio-match"
+                              data-youtube-match
+                              title="@matchLabel">—</span>
+                    </div>
+                    <div class="yt-studio-feature__meta" data-youtube-feature-meta></div>
+                    <div class="yt-studio-feature__actions">
+                        <a class="yt-studio-button yt-studio-button--primary"
+                           data-youtube-watch
+                           href="@(string.IsNullOrWhiteSpace(fallbackVideoId) ? "#" : $"https://www.youtube.com/watch?v={fallbackVideoId}")"
+                           target="_blank"
+                           rel="noopener noreferrer">@watchLabel</a>
+                        <a class="yt-studio-button yt-studio-button--ghost"
+                           data-youtube-all-results
+                           href="https://www.youtube.com/results?search_query=@Uri.EscapeDataString(Model.Title + " math")"
+                           target="_blank"
+                           rel="noopener noreferrer">@allResultsLabel</a>
+                    </div>
+                </div>
+            </article>
+
+            <aside class="yt-studio-insight" aria-live="polite">
+                <div class="yt-studio-insight__icon" aria-hidden="true">✦</div>
+                <div>
+                    <span class="yt-studio-insight__eyebrow">@matchLabel</span>
+                    <p data-youtube-status>@loadingLabel</p>
+                </div>
+                <div class="yt-studio-signal-grid">
+                    <div><small>@matchLabel</small><strong data-youtube-match-detail>—</strong></div>
+                    <div><small>Views</small><strong data-youtube-views>—</strong></div>
+                    <div><small>Likes</small><strong data-youtube-likes>—</strong></div>
+                    <div><small>Duration</small><strong data-youtube-duration>—</strong></div>
+                </div>
+            </aside>
+        </div>
+
+        <div class="yt-studio-related-head">
+            <div>
+                <span class="yt-studio-context__eyebrow">YouTube</span>
+                <h3>@relatedLabel</h3>
+            </div>
+            <span class="yt-studio-related-count" data-youtube-result-count>0</span>
+        </div>
+
+        <div class="yt-studio-related" data-youtube-related aria-live="polite">
+            @for (var i = 0; i < 3; i++)
+            {
+                <div class="yt-studio-result-skeleton" aria-hidden="true">
+                    <span></span><div><i></i><i></i><i></i></div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
