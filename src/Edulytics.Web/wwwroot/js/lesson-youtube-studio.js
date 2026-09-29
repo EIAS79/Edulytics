@@ -447,7 +447,10 @@
             load((queryInput?.value || "").trim());
         });
 
-        load("");
+        // YouTube search.list is quota-expensive. Keep the reviewed
+        // fallback and server-rendered grade-band channel links visible on
+        // initial lesson view; call the live discovery API only after the
+        // learner explicitly submits this YouTube search form.
     }
 
     document
