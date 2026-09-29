@@ -236,3 +236,33 @@
 </section>
 
 <script src="~/js/lesson-youtube-hub-v1.js" asp-append-version="true" defer></script>
+@if (externalHelp.ApprovedResources.Count > 0)
+{
+    <section class="lesson-learning-section lesson-learning-section--external-help rich-lesson-section">
+        <header class="lesson-learning-section__header">
+            <span class="lesson-learning-section__number">08</span>
+            <h2>@extraHelpLabel</h2>
+        </header>
+        <div class="rich-external-help">
+            <p class="rich-video-section__intro">@externalHelpNotice</p>
+            <h3>@reviewedResourcesLabel</h3>
+            <div class="rich-video-grid">
+                @foreach (var resource in externalHelp.ApprovedResources)
+                {
+                    <article class="rich-video-card">
+                        <div class="rich-video-card__body">
+                            <p class="rich-video-card__meta">@resource.Provider</p>
+                            <h3>@resource.Title</h3>
+                            <p>@resource.WhyRecommended</p>
+                            <a class="school-button"
+                               href="@resource.Url"
+                               target="_blank"
+                               rel="noopener noreferrer external">@openResourceLabel</a>
+                        </div>
+                    </article>
+                }
+            </div>
+        </div>
+    </section>
+}
+
