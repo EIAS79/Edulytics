@@ -137,6 +137,11 @@ public sealed class AdaptivePracticeTurnConfiguration :
             .HasDefaultValue(false);
         builder.Property(x => x.SubmittedAnswer)
             .HasMaxLength(2000);
+        builder.Property(x => x.LastIncorrectAnswer)
+            .HasMaxLength(2000);
+        builder.Property(x => x.IncorrectAttemptCount)
+            .IsRequired()
+            .HasDefaultValue(0);
         builder.Property(x => x.Score).HasPrecision(10, 2);
         builder.Property(x => x.Feedback).HasMaxLength(8000);
         builder.Property(x => x.ExposureFingerprint)
