@@ -265,20 +265,29 @@ public sealed class AdaptivePracticeShadowObserver(
                 DeterministicSeed(
                     v1AttemptId,
                     v1AttemptItemId),
-                context.Exposures
+                pseudoTurns
+                    .OrderByDescending(x => x.Sequence)
                     .Select(x => x.ExposureFingerprint)
                     .Concat(
-                        pseudoTurns.Select(x =>
-                            x.ExposureFingerprint))
+                        context.Exposures
+                            .OrderByDescending(x => x.ExposedAtUtc)
+                            .Select(x => x.ExposureFingerprint))
                     .Where(x =>
                         !string.IsNullOrWhiteSpace(x))
                     .Distinct(StringComparer.Ordinal)
+                    .Take(
+                        AdaptivePracticeV2Behavior
+                            .RecentExposureFreshnessWindow)
                     .ToArray(),
                 pseudoTurns
+                    .OrderByDescending(x => x.Sequence)
                     .Select(x => x.SemanticIdentityKey)
                     .Where(x =>
                         !string.IsNullOrWhiteSpace(x))
                     .Distinct(StringComparer.Ordinal)
+                    .Take(
+                        AdaptivePracticeV2Behavior
+                            .RecentSemanticFreshnessWindow)
                     .ToArray());
 
             generationFeasible = true;

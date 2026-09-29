@@ -22,12 +22,14 @@ public sealed class AdaptivePracticeV2ReadinessHealthCheck(
         if (policy.Mode == AdaptivePracticeV2Mode.Canary)
         {
             var validScope =
-                policy.RouteAllReadyVerifiedLessons
-                    ? AdaptivePrimaryRolloutPlan.IsValidReadyVerifiedScope(
-                        policy.AllowedCurriculumLevelKeys)
-                    : AdaptivePrimaryRolloutPlan.IsValidCanaryScope(
-                        policy.AllowedCurriculumLevelKeys,
-                        policy.AllowedLessonCodes);
+                policy.RouteAllReadyVerifiedCatalogue
+                    ? true
+                    : policy.RouteAllReadyVerifiedLessons
+                        ? AdaptivePrimaryRolloutPlan.IsValidReadyVerifiedScope(
+                            policy.AllowedCurriculumLevelKeys)
+                        : AdaptivePrimaryRolloutPlan.IsValidCanaryScope(
+                            policy.AllowedCurriculumLevelKeys,
+                            policy.AllowedLessonCodes);
 
             if (policy.AllowedSchoolIds.Count == 0 ||
                 !validScope)

@@ -13,13 +13,20 @@ public enum AdaptivePracticeV2Mode
 public static class AdaptivePracticeV2Versions
 {
     public const string EngineVersion = "adaptive-practice-v2.1";
-    public const string PolicyVersion = "adaptive-v2-c0-c5-closure-v1";
+    public const string PolicyVersion = "adaptive-v2-c0-c5-closure-v2";
 }
 
 public static class AdaptivePracticeV2Behavior
 {
     public const int MaximumSameItemRetries = 1;
     public const int MaximumSessionItems = 30;
+
+    // Freshness is intentionally bounded to recent learner-facing items.
+    // Exact exposure fingerprints still prevent immediate repeats, while the
+    // bounded window prevents finite-but-valid question families from
+    // exhausting over a long remediation session.
+    public const int RecentExposureFreshnessWindow = 3;
+    public const int RecentSemanticFreshnessWindow = 3;
 }
 
 public static class AdaptivePracticeEligibilityReasonCodes
@@ -95,12 +102,16 @@ public sealed record AdaptivePracticeV2Policy(
             ? AllowedSchoolIds.Contains(schoolId)
             : AllowedSchoolIds.Count == 0 || AllowedSchoolIds.Contains(schoolId);
 
+    public bool RouteAllReadyVerifiedCatalogue { get; init; }
+
     public bool AllowsCurriculumLevel(string key) =>
+        RouteAllReadyVerifiedCatalogue ||
         AllowedCurriculumLevelKeys.Contains(key);
 
     public bool RouteAllReadyVerifiedLessons { get; init; }
 
     public bool AllowsLesson(string lessonCode) =>
+        RouteAllReadyVerifiedCatalogue ||
         RouteAllReadyVerifiedLessons ||
         (Mode == AdaptivePracticeV2Mode.Canary
             ? AllowedLessonCodes.Contains(lessonCode)

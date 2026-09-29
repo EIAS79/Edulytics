@@ -147,6 +147,62 @@ public sealed class AdaptivePracticeEligibilityResolverTests
     }
 
     [Fact]
+    public void FullCataloguePolicyAllowsReadyVerifiedSecondaryLesson()
+    {
+        const string readySecondaryLesson =
+            "PED:US-CCSS-MATH:G7:U06:L15";
+
+        var level = Level(7);
+        var resolver =
+            new AdaptivePracticeEligibilityResolver(
+                Policy(
+                    AdaptivePracticeV2Mode.On,
+                    [],
+                    [],
+                    routeAllCatalogue: true));
+
+        var decision =
+            resolver.Resolve(
+                Request(
+                    level.Key,
+                    readySecondaryLesson));
+
+        Assert.True(decision.IsEligible);
+        Assert.True(decision.IsLearnerFacing);
+        Assert.Equal(
+            AdaptivePracticeEligibilityReasonCodes.Eligible,
+            decision.ReasonCode);
+        Assert.Equal(7, decision.LogicalLevel);
+        Assert.Equal(
+            readySecondaryLesson,
+            decision.LessonCode);
+    }
+
+    [Fact]
+    public void FullCataloguePolicyStillFailsClosedWithoutReadyVerifiedContract()
+    {
+        var level = Level(10);
+        var resolver =
+            new AdaptivePracticeEligibilityResolver(
+                Policy(
+                    AdaptivePracticeV2Mode.On,
+                    [],
+                    [],
+                    routeAllCatalogue: true));
+
+        var decision =
+            resolver.Resolve(
+                Request(
+                    level.Key,
+                    "PED:DOES-NOT-EXIST"));
+
+        Assert.False(decision.IsEligible);
+        Assert.Equal(
+            AdaptivePracticeEligibilityReasonCodes.PracticeCapabilityMissing,
+            decision.ReasonCode);
+    }
+
+    [Fact]
     public void MissingReadyVerifiedPracticeCapabilityFailsClosed()
     {
         var level = PrimaryLevel(2);
@@ -245,7 +301,8 @@ public sealed class AdaptivePracticeEligibilityResolverTests
         AdaptivePracticeV2Mode mode,
         IReadOnlyCollection<string> levels,
         IReadOnlyCollection<string> lessons,
-        IReadOnlyCollection<Guid>? schools = null) =>
+        IReadOnlyCollection<Guid>? schools = null,
+        bool routeAllCatalogue = false) =>
         new(
             Enabled: true,
             Mode: mode,
@@ -261,7 +318,10 @@ public sealed class AdaptivePracticeEligibilityResolverTests
             EnableDirectNextSteps: false,
             EnableQuestionLog: false,
             EnableLiveClassroom: false,
-            EnableDiagnosticV2: false);
+            EnableDiagnosticV2: false)
+        {
+            RouteAllReadyVerifiedCatalogue = routeAllCatalogue
+        };
 
     private static CurriculumLevelIdentity PrimaryLevel(int logicalLevel) =>
         Level(logicalLevel);

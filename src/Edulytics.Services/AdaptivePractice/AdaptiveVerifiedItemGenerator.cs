@@ -2,6 +2,7 @@ using Edulytics.Core.AdaptivePractice;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.Practice;
+using Edulytics.Services.Mathematics;
 
 namespace Edulytics.Services.AdaptivePractice;
 
@@ -80,55 +81,87 @@ public sealed class AdaptiveVerifiedItemGenerator
         AssessmentItem? item = null;
         const int maxSemanticRetries = 32;
 
-        for (var retry = 0;
-             retry < maxSemanticRetries && item is null;
-             retry++)
+        // Prefer a mathematically new semantic instance. Some verified
+        // identification/classification families have deliberately finite
+        // semantic state (for example a theorem with a fixed answer). In that
+        // case, after exhausting strong semantic freshness, fall back to a
+        // still-fresh exposure rather than pausing the learner session. Exact
+        // exposure repetition remains prohibited by the caller's recent
+        // exposure window.
+        for (var semanticPass = 0;
+             semanticPass < 2 && item is null;
+             semanticPass++)
         {
-            var roundSeed = unchecked(
-                (seed == 0 ? 1 : seed) ^
-                ((retry + 1) * 104729));
-            var preferredVariant = capability.VariantSlots[
-                Math.Abs(
-                    roundSeed == int.MinValue
-                        ? 0
-                        : roundSeed) %
-                capability.VariantSlots.Count];
+            var enforceSemanticFreshness =
+                semanticPass == 0 &&
+                semanticExclusions.Count > 0;
 
-            var candidate = new Stage18SkillContractPracticeEngine()
-                .Generate(
-                    schoolId,
-                    curriculumAdoptionId,
-                    lessonId,
-                    narrowedContract,
-                    difficulty,
-                    questionCount: 1,
-                    roundSeed,
-                    excludedExposureFingerprints,
-                    createdByUserId,
-                    preferredVariant)
-                .Single();
-
-            ValidateTruthfulGeneratedForm(
-                candidate,
-                effectiveCognitive);
-
-            var semanticIdentity =
-                AdaptivePracticeSemanticIdentity.Resolve(
-                    candidate);
-
-            if (semanticExclusions.Contains(
-                    semanticIdentity))
+            for (var retry = 0;
+                 retry < maxSemanticRetries && item is null;
+                 retry++)
             {
-                continue;
-            }
+                var roundSeed = unchecked(
+                    (seed == 0 ? 1 : seed) ^
+                    ((retry + 1 + semanticPass * maxSemanticRetries) * 104729));
+                var preferredVariant = capability.VariantSlots[
+                    Math.Abs(
+                        roundSeed == int.MinValue
+                            ? 0
+                            : roundSeed) %
+                    capability.VariantSlots.Count];
 
-            item = candidate;
+                AssessmentItem candidate;
+                try
+                {
+                    candidate = new Stage18SkillContractPracticeEngine()
+                        .Generate(
+                            schoolId,
+                            curriculumAdoptionId,
+                            lessonId,
+                            narrowedContract,
+                            difficulty,
+                            questionCount: 1,
+                            roundSeed,
+                            excludedExposureFingerprints,
+                            createdByUserId,
+                            preferredVariant)
+                        .Single();
+                }
+                catch (ExactSkillQuestionPoolExhaustedException)
+                {
+                    continue;
+                }
+
+                // The exact generator may advance preferred variant slots while
+                // avoiding an excluded fingerprint. Reject that candidate and
+                // retry if it crossed out of the capability selected by the
+                // adaptive difficulty contract.
+                if (!IsTruthfulGeneratedForm(
+                        candidate,
+                        effectiveCognitive))
+                {
+                    continue;
+                }
+
+                var semanticIdentity =
+                    AdaptivePracticeSemanticIdentity.Resolve(
+                        candidate);
+
+                if (enforceSemanticFreshness &&
+                    semanticExclusions.Contains(
+                        semanticIdentity))
+                {
+                    continue;
+                }
+
+                item = candidate;
+            }
         }
 
         if (item is null)
         {
             throw new InvalidOperationException(
-                "Adaptive Practice V2 exhausted semantic freshness retries.");
+                "Adaptive Practice V2 exhausted verified freshness retries.");
         }
 
         if (!string.Equals(
@@ -209,15 +242,14 @@ public sealed class AdaptiveVerifiedItemGenerator
                 $"Adaptive Practice V2 has no truthful form capability for {family}.");
     }
 
-    private static void ValidateTruthfulGeneratedForm(
+    private static bool IsTruthfulGeneratedForm(
         AssessmentItem item,
         PracticeCognitiveDifficulty effectiveDifficulty)
     {
         if (string.IsNullOrWhiteSpace(item.GenerationFamily) ||
             string.IsNullOrWhiteSpace(item.GenerationParametersJson))
         {
-            throw new InvalidOperationException(
-                "Adaptive Practice V2 generated item is missing form provenance.");
+            return false;
         }
 
         try
@@ -238,19 +270,16 @@ public sealed class AdaptiveVerifiedItemGenerator
                     item.GenerationFamily,
                     variant);
 
-            if (actual is null ||
-                effectiveDifficulty < actual.MinimumDifficulty ||
-                effectiveDifficulty > actual.MaximumDifficulty)
-            {
-                throw new InvalidOperationException(
-                    "Adaptive Practice V2 rejected a falsely-labelled cognitive form.");
-            }
+            return actual is not null &&
+                   effectiveDifficulty >= actual.MinimumDifficulty &&
+                   effectiveDifficulty <= actual.MaximumDifficulty;
         }
-        catch (System.Text.Json.JsonException exception)
+        catch (
+            Exception exception) when (
+            exception is System.Text.Json.JsonException or
+            InvalidOperationException)
         {
-            throw new InvalidOperationException(
-                "Adaptive Practice V2 could not validate cognitive form provenance.",
-                exception);
+            return false;
         }
     }
 }
