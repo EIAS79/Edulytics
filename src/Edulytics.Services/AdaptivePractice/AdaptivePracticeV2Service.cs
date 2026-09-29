@@ -845,7 +845,14 @@ public sealed class AdaptivePracticeV2Service(
             FreshnessConstraintsJson =
                 JsonSerializer.Serialize(new
                 {
-                    decision.RequiresFreshExposure
+                    decision.RequiresFreshExposure,
+                    RecentExposureWindow =
+                        AdaptivePracticeV2Behavior
+                            .RecentExposureFreshnessWindow,
+                    RecentSemanticWindow =
+                        AdaptivePracticeV2Behavior
+                            .RecentSemanticFreshnessWindow,
+                    SemanticReuseAfterVerifiedFreshnessExhaustion = true
                 }),
             DecisionReasonCode = decision.ReasonCode,
             DecisionTraceJson =
