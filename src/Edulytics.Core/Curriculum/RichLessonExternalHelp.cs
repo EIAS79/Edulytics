@@ -163,19 +163,13 @@ public static class RichLessonExternalHelpRegistry
             _ => "worked examples"
         };
 
-        var googleQuery = $"{baseQuery} {explanationSuffix}".Trim();
-        var youtubeQuery = $"{baseQuery} {examplesSuffix}".Trim();
+        var youtubeQuery =
+            $"{baseQuery} {explanationSuffix} {examplesSuffix}".Trim();
 
         return new RichLessonExternalHelp(
             approvedResources,
             approvedVideos,
             [
-                new RichLessonSearchSuggestion(
-                    "Google",
-                    "Search the web",
-                    googleQuery,
-                    "https://www.google.com/search?q=" +
-                    Uri.EscapeDataString(googleQuery)),
                 new RichLessonSearchSuggestion(
                     "YouTube",
                     "Search YouTube",

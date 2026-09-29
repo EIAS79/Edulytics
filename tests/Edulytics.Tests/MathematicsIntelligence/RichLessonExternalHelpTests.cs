@@ -46,14 +46,8 @@ public sealed class RichLessonExternalHelpTests
             "en");
 
         Assert.Equal(first.SearchSuggestions, second.SearchSuggestions);
-        Assert.Equal(2, first.SearchSuggestions.Count);
+        Assert.Single(first.SearchSuggestions);
 
-        Assert.Contains(
-            first.SearchSuggestions,
-            x => x.Provider == "Google" &&
-                 x.Url.StartsWith(
-                     "https://www.google.com/search?q=",
-                     StringComparison.Ordinal));
         Assert.Contains(
             first.SearchSuggestions,
             x => x.Provider == "YouTube" &&
@@ -90,7 +84,7 @@ public sealed class RichLessonExternalHelpTests
 
         Assert.Empty(help.ApprovedResources);
         Assert.Empty(help.ApprovedVideos);
-        Assert.Equal(2, help.SearchSuggestions.Count);
+        Assert.Single(help.SearchSuggestions);
     }
 
     [Fact]
@@ -134,36 +128,105 @@ public sealed class RichLessonExternalHelpTests
     }
 
     [Fact]
-    public void Phase8A_SharedRenderer_EmbedsReviewedHelpAndDoesNotExposeSearchExits()
+    public void Phase8A_StudentYouTubeStudio_OwnsEmbedAndYouTubeOnlySearch()
     {
         var root = FindRoot();
-        var partial = File.ReadAllText(Path.Combine(
+
+        var richPartial = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml"));
 
+        var studioPartial = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Shared/_LessonYouTubeStudio.cshtml"));
+
+        var reviewedResourcesPartial = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Shared/_LessonReviewedResources.cshtml"));
+
+        var studioScript = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/lesson-youtube-studio.js"));
+
+        var lessonView = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"));
+
         Assert.Contains(
-            "RichLessonExternalHelpRegistry.Resolve",
-            partial,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "approvedExternalVideos",
-            partial,
+            "suppressLegacyLessonVideos",
+            richPartial,
             StringComparison.Ordinal);
         Assert.Contains(
             "youtube-nocookie.com/embed/",
-            partial,
+            richPartial,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "data-youtube-studio",
+            studioPartial,
             StringComparison.Ordinal);
         Assert.Contains(
-            "Help content never affects mastery, assessment, or Adaptive decisions",
-            partial,
+            "youtube-nocookie.com/embed/",
+            studioPartial,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "www.youtube.com/results?search_query=",
+            studioPartial,
             StringComparison.Ordinal);
         Assert.DoesNotContain(
-            "externalHelp.SearchSuggestions.Count",
-            partial,
+            "google.com/search",
+            studioPartial,
+            StringComparison.OrdinalIgnoreCase);
+
+        Assert.Contains(
+            "YouTubeLessonChannelPolicy.Resolve",
+            studioPartial,
             StringComparison.Ordinal);
         Assert.DoesNotContain(
-            "suggestion.Url",
-            partial,
+            "load(\"\");",
+            studioScript,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "ApprovedResources",
+            reviewedResourcesPartial,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "08",
+            reviewedResourcesPartial,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "ViewData[\"UseYouTubeStudioV2\"] = true",
+            lessonView,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "_LessonYouTubeStudio",
+            lessonView,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "_LessonReviewedResources",
+            lessonView,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "lesson-youtube-studio.js",
+            lessonView,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "restoreFallbackFeature",
+            studioScript,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "No embeddable video passed the current lesson-match checks.",
+            studioScript,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "YouTube discovery could not load right now. Use the lesson-scoped YouTube links instead.",
+            studioScript,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "if (resultCount) resultCount.textContent = \"0\";",
+            studioScript,
             StringComparison.Ordinal);
     }
 

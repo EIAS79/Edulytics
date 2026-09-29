@@ -189,6 +189,25 @@ public sealed class Phase25ScaleCoreTests
     }
 
     [Fact]
+    public void YouTubeLessonSearch_IsCoveredByDistributedSensitiveLimiter()
+    {
+        var source =
+            ReadSource(
+                "src/Edulytics.Web/Scale/" +
+                "DistributedSensitiveRateLimitMiddleware.cs");
+
+        Assert.Contains(
+            "BackendResiliencePolicyNames.YouTubeLessonSearch",
+            source,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "TimeSpan.FromMinutes(10)",
+            source,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void ScaleConfiguration_IsDisabledByDefault()
     {
         var settings =

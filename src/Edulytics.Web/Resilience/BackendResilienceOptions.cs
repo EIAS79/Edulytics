@@ -39,5 +39,6 @@ public static class BackendResiliencePolicyNames
     public const string AnalyticsConcurrency = "AnalyticsConcurrency";
     public const string ReportConcurrency = "ReportConcurrency";
     public const string ReportExportRate = "ReportExport";
+    public const string YouTubeLessonSearch = "YouTubeLessonSearch";
     public const string OperationalConcurrency = "OperationalConcurrency";
 }

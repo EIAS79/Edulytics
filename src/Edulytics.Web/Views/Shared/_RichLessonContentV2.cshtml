@@ -4,6 +4,8 @@
 @using System.Globalization
 @{
     var language = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var suppressLegacyLessonVideos =
+        ViewData["UseYouTubeStudioV2"] is true;
     var approvedVideos = Model.Videos
         .Where(x => x.ReviewStatus == RichLessonVideoReviewStatus.Approved)
         .ToArray();
@@ -38,9 +40,9 @@
     var reviewedResourcesLabel = language switch { "pl" => "Sprawdzone materiały", "ar" => "مصادر تمت مراجعتها", _ => "Reviewed resources" };
     var externalHelpNotice = language switch
     {
-        "pl" => "Poniżej pokazujemy wyłącznie materiały wideo sprawdzone dla tego tematu. Materiały pomocnicze nie wpływają na opanowanie materiału, ocenę ani decyzje adaptacyjne.",
-        "ar" => "نعرض هنا فقط فيديوهات تمت مراجعتها لهذا الموضوع. المحتوى المساعد لا يؤثر على مستوى الإتقان أو التقييم أو القرارات التكيفية.",
-        _ => "Only reviewed lesson-support videos are shown here. Help content never affects mastery, assessment, or Adaptive decisions."
+        "pl" => "Poniżej pokazujemy wyłącznie sprawdzone materiały zewnętrzne dla tego tematu. Materiały pomocnicze nie wpływają na opanowanie materiału, ocenę ani decyzje adaptacyjne.",
+        "ar" => "نعرض هنا فقط مصادر خارجية تمت مراجعتها لهذا الموضوع. المحتوى المساعد لا يؤثر على مستوى الإتقان أو التقييم أو القرارات التكيفية.",
+        _ => "Only reviewed external lesson-support resources are shown here. Help content never affects mastery, assessment, or Adaptive decisions."
     };
     var openResourceLabel = language switch { "pl" => "Otwórz materiał", "ar" => "فتح المصدر", _ => "Open resource" };
 }
@@ -174,7 +176,7 @@
     </div>
 </section>
 
-@if (approvedVideos.Length > 0)
+@if (!suppressLegacyLessonVideos && approvedVideos.Length > 0)
 {
     <section class="lesson-learning-section lesson-learning-section--video rich-lesson-section">
         <header class="lesson-learning-section__header">
@@ -212,8 +214,9 @@
     </section>
 }
 
-@if (externalHelp.ApprovedResources.Count > 0 ||
-     approvedExternalVideos.Count > 0)
+@if (!suppressLegacyLessonVideos &&
+     (externalHelp.ApprovedResources.Count > 0 ||
+      approvedExternalVideos.Count > 0))
 {
     <section class="lesson-learning-section lesson-learning-section--external-help rich-lesson-section">
         <header class="lesson-learning-section__header">

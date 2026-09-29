@@ -428,6 +428,7 @@ public sealed class LessonContentService : ILessonContentService
                 content.PublishedAtUtc ?? content.UpdatedAtUtc,
                 LessonContentPolicy.IsSupporting(lesson.OfficialOutcomeCount))
             {
+                LessonCode = lesson.Code,
                 RichContent =
                     RichLessonContentV2Registry.Find(
                         lesson.Code,

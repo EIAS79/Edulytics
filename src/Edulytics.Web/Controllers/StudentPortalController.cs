@@ -9,9 +9,11 @@ using Edulytics.Services.Practice;
 using Edulytics.Services.StudentPortal;
 using Edulytics.Web.GameRouting;
 using Edulytics.Web.Printing;
+using Edulytics.Web.Resilience;
 using Edulytics.Web.ViewModels.StudentPortal;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace Edulytics.Web.Controllers;
 
@@ -27,6 +29,7 @@ public sealed class StudentPortalController : Controller
     private readonly IStudentAssessmentDeliveryService _assessmentDelivery;
     private readonly IStudentPrivatePracticeService _privatePractice;
     private readonly IStudentSelfEvaluationService _selfEvaluation;
+    private readonly IYouTubeLessonDiscoveryService _youTubeLessons;
 
     public StudentPortalController(
         IStudentPortalService portal,
@@ -34,7 +37,8 @@ public sealed class StudentPortalController : Controller
         ILessonContentService lessonContent,
         IStudentAssessmentDeliveryService assessmentDelivery,
         IStudentPrivatePracticeService privatePractice,
-        IStudentSelfEvaluationService selfEvaluation)
+        IStudentSelfEvaluationService selfEvaluation,
+        IYouTubeLessonDiscoveryService youTubeLessons)
     {
         _portal = portal;
         _notifications = notifications;
@@ -42,6 +46,7 @@ public sealed class StudentPortalController : Controller
         _assessmentDelivery = assessmentDelivery;
         _privatePractice = privatePractice;
         _selfEvaluation = selfEvaluation;
+        _youTubeLessons = youTubeLessons;
     }
 
     [HttpGet("")]
@@ -270,6 +275,40 @@ public sealed class StudentPortalController : Controller
         ViewData["ExactPracticeAdoptionId"] = availability.ExactPracticeAdoptionId;
         ViewData["LessonPracticePilotAdoptionId"] = availability.PilotAdoptionId;
         return View(nameof(Lesson), lesson.Value);
+    }
+
+    [HttpGet("learning/lesson/{id:guid}/youtube")]
+    [EnableRateLimiting(BackendResiliencePolicyNames.YouTubeLessonSearch)]
+    public async Task<IActionResult> LessonYouTube(
+        Guid id,
+        string? q,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        var lesson = await _lessonContent.GetPublishedForStudentAsync(
+            actorId,
+            id,
+            CultureInfo.CurrentUICulture.Name,
+            cancellationToken);
+
+        if (lesson.Value is null)
+        {
+            return lesson.Error == LessonContentErrorCode.AccessDenied
+                ? Forbid()
+                : NotFound();
+        }
+
+        var result = await _youTubeLessons.DiscoverAsync(
+            lesson.Value.LessonCode,
+            lesson.Value.Title,
+            lesson.Value.GradeName,
+            CultureInfo.CurrentUICulture.Name,
+            q,
+            cancellationToken);
+
+        return Json(result);
     }
 
     [HttpGet("assessments")]
