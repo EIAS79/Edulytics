@@ -282,7 +282,7 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
                         ? AdaptivePracticeDecisionReasonCodes
                             .SessionBaseline
                         : AdaptivePracticeDecisionReasonCodes
-                            .ContinuePractice,
+                            .ComplexityConsolidate,
                 RequiresFreshExposure:
                     true,
                 RemediationLockActive:
