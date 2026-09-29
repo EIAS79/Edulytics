@@ -45,6 +45,8 @@ public sealed record AdaptiveQuestionLogRow(
     string? Representation,
     int MathematicalComplexityScore,
     string? SubmittedAnswer,
+    int IncorrectAttemptCount,
+    string? LastIncorrectAnswer,
     bool? IsCorrect,
     string? Feedback,
     string DecisionReasonCode,
