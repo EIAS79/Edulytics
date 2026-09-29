@@ -20,6 +20,13 @@ public static class AdaptivePracticeV2Behavior
 {
     public const int MaximumSameItemRetries = 1;
     public const int MaximumSessionItems = 30;
+
+    // Freshness is intentionally bounded to recent learner-facing items.
+    // Exact exposure fingerprints still prevent immediate repeats, while the
+    // bounded window prevents finite-but-valid question families from
+    // exhausting over a long remediation session.
+    public const int RecentExposureFreshnessWindow = 3;
+    public const int RecentSemanticFreshnessWindow = 3;
 }
 
 public static class AdaptivePracticeEligibilityReasonCodes
