@@ -171,6 +171,8 @@ public sealed class AdaptiveIntelligenceV2Service(
                     turn.Representation,
                     turn.MathematicalComplexityScore,
                     turn.SubmittedAnswer,
+                    turn.IncorrectAttemptCount,
+                    turn.LastIncorrectAnswer,
                     turn.IsCorrect,
                     turn.Feedback,
                     decision?.DecisionReasonCode ?? string.Empty,
