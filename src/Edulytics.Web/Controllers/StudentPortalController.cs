@@ -9,6 +9,7 @@ using Edulytics.Services.Practice;
 using Edulytics.Services.StudentPortal;
 using Edulytics.Web.GameRouting;
 using Edulytics.Web.Printing;
+using Edulytics.Web.Resilience;
 using Edulytics.Web.ViewModels.StudentPortal;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -277,7 +278,7 @@ public sealed class StudentPortalController : Controller
     }
 
     [HttpGet("learning/lesson/{id:guid}/youtube")]
-    [EnableRateLimiting("YouTubeLessonSearch")]
+    [EnableRateLimiting(BackendResiliencePolicyNames.YouTubeLessonSearch)]
     public async Task<IActionResult> LessonYouTube(
         Guid id,
         string? q,
