@@ -177,6 +177,32 @@ public static class BackendResilienceRegistrationExtensions
                     });
 
                 options.AddPolicy(
+                    "YouTubeLessonSearch",
+                    context =>
+                    {
+                        var actor =
+                            ActorPartition(context);
+
+                        return RateLimitPartition
+                            .GetFixedWindowLimiter(
+                                actor,
+                                _ => new FixedWindowRateLimiterOptions
+                                {
+                                    // Live YouTube discovery is upstream-quota
+                                    // backed. Bound each authenticated learner
+                                    // independently so unique q values cannot
+                                    // exhaust the shared project quota.
+                                    PermitLimit = 20,
+                                    Window = TimeSpan.FromMinutes(10),
+                                    QueueLimit = 0,
+                                    QueueProcessingOrder =
+                                        QueueProcessingOrder.OldestFirst,
+                                    AutoReplenishment = true
+                                });
+                    });
+
+
+                options.AddPolicy(
                     "RequestDemo",
                     context =>
                     {
