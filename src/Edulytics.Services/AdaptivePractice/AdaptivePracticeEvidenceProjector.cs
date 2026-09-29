@@ -81,14 +81,18 @@ public sealed class AdaptivePracticeEvidenceProjector(
             if (focused is null)
                 return null;
 
+            var cleanIndependentConfirmation =
+                turn.IsIndependentConfirmation &&
+                turn.IncorrectAttemptCount == 0;
+
             return Copy(
                 focused,
                 status:
-                    turn.IsIndependentConfirmation
+                    cleanIndependentConfirmation
                         ? AdaptiveMisconceptionStatus.Resolved
                         : AdaptiveMisconceptionStatus.Remediating,
                 confidence:
-                    turn.IsIndependentConfirmation
+                    cleanIndependentConfirmation
                         ? Math.Max(0m, focused.Confidence - 0.25m)
                         : focused.Confidence,
                 observationCount:
@@ -98,7 +102,7 @@ public sealed class AdaptivePracticeEvidenceProjector(
                 lastRemediationAtUtc:
                     occurredAtUtc,
                 resolvedAtUtc:
-                    turn.IsIndependentConfirmation
+                    cleanIndependentConfirmation
                         ? occurredAtUtc
                         : focused.ResolvedAtUtc);
         }
