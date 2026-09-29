@@ -174,102 +174,65 @@
     </div>
 </section>
 
-@if (approvedVideos.Length > 0)
-{
-    <section class="lesson-learning-section lesson-learning-section--video rich-lesson-section">
-        <header class="lesson-learning-section__header">
-            <span class="lesson-learning-section__number">07</span>
-            <h2>@videoHelpLabel</h2>
-        </header>
-        <div class="rich-video-section">
-            <p class="rich-video-section__intro">@videoHelpIntro</p>
-            <div class="rich-video-grid">
-                @foreach (var video in approvedVideos)
-                {
-                    <article class="rich-video-card">
-                        <div class="rich-video-frame">
-                            <iframe
-                                src="https://www.youtube-nocookie.com/embed/@video.VideoId"
-                                title="@video.Title"
-                                loading="lazy"
-                                referrerpolicy="strict-origin-when-cross-origin"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="rich-video-card__body">
-                            <h3>@video.Title</h3>
-                            <p class="rich-video-card__meta">@video.Creator@if (!string.IsNullOrWhiteSpace(video.DurationLabel)) { <text> · @video.DurationLabel</text> }</p>
-                            <p>@video.WhyRecommended</p>
-                            <a class="school-button"
-                               href="https://www.youtube.com/watch?v=@video.VideoId"
-                               target="_blank"
-                               rel="noopener noreferrer">@watchOnYouTubeLabel</a>
-                        </div>
-                    </article>
-                }
+<link rel="stylesheet" href="~/css/lesson-youtube-hub-v1.css" asp-append-version="true" />
+
+<section class="lesson-learning-section lesson-learning-section--video rich-lesson-section">
+    <header class="lesson-learning-section__header">
+        <span class="lesson-learning-section__number">07</span>
+        <h2>YouTube Learning</h2>
+    </header>
+
+    <div class="yt-learning-hub"
+         data-yt-learning-hub
+         data-lesson-code="@Model.LessonCode"
+         data-lesson-title="@Model.Title"
+         data-culture="@Model.CultureCode">
+        <div class="yt-learning-hub__head">
+            <div>
+                <p class="yt-learning-hub__eyebrow">YouTube · topic-matched learning</p>
+                <h3 class="yt-learning-hub__title">Watch, search and continue learning</h3>
+                <p class="yt-learning-hub__sub">
+                    Videos are selected for this exact lesson topic. Edulytics checks the preferred
+                    education channels for the learner's grade band first.
+                </p>
             </div>
+            <span class="yt-learning-hub__badge" data-yt-band>Grade band</span>
         </div>
-    </section>
-}
 
-@if (externalHelp.ApprovedResources.Count > 0 ||
-     approvedExternalVideos.Count > 0)
-{
-    <section class="lesson-learning-section lesson-learning-section--external-help rich-lesson-section">
-        <header class="lesson-learning-section__header">
-            <span class="lesson-learning-section__number">@externalHelpSectionNumber</span>
-            <h2>@extraHelpLabel</h2>
-        </header>
-        <div class="rich-external-help">
-            <p class="rich-video-section__intro">@externalHelpNotice</p>
+        <form class="yt-learning-hub__search" data-yt-search-form role="search">
+            <input type="search"
+                   maxlength="180"
+                   autocomplete="off"
+                   value="@Model.Title"
+                   aria-label="Search YouTube for this lesson"
+                   placeholder="Search YouTube for this topic…" />
+            <button type="submit">Search YouTube</button>
+        </form>
 
-            @if (approvedExternalVideos.Count > 0)
-            {
-                <h3>@videoHelpLabel</h3>
-                <div class="rich-video-grid">
-                    @foreach (var video in approvedExternalVideos)
-                    {
-                        <article class="rich-video-card">
-                            <div class="rich-video-frame">
-                                <iframe
-                                    src="https://www.youtube-nocookie.com/embed/@video.VideoId"
-                                    title="@video.Title"
-                                    loading="lazy"
-                                    referrerpolicy="strict-origin-when-cross-origin"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen></iframe>
-                            </div>
-                            <div class="rich-video-card__body">
-                                <p class="rich-video-card__meta">@video.Creator</p>
-                                <h3>@video.Title</h3>
-                                <p>@video.WhyRecommended</p>
-                            </div>
-                        </article>
-                    }
+        <p class="yt-learning-hub__fallback" data-yt-fallback hidden></p>
+
+        <div class="yt-learning-hub__body" data-yt-body hidden>
+            <article class="yt-learning-hub__player">
+                <div class="yt-learning-hub__frame" data-yt-frame></div>
+                <div class="yt-learning-hub__feature-copy">
+                    <h3 data-yt-feature-title></h3>
+                    <p class="yt-learning-hub__meta" data-yt-feature-meta></p>
                 </div>
-            }
+            </article>
 
-            @if (externalHelp.ApprovedResources.Count > 0)
-            {
-                <h3>@reviewedResourcesLabel</h3>
-                <div class="rich-video-grid">
-                    @foreach (var resource in externalHelp.ApprovedResources)
-                    {
-                        <article class="rich-video-card">
-                            <div class="rich-video-card__body">
-                                <p class="rich-video-card__meta">@resource.Provider</p>
-                                <h3>@resource.Title</h3>
-                                <p>@resource.WhyRecommended</p>
-                                <a class="school-button"
-                                   href="@resource.Url"
-                                   target="_blank"
-                                   rel="noopener noreferrer external">@openResourceLabel</a>
-                            </div>
-                        </article>
-                    }
-                </div>
-            }
-
+            <aside class="yt-learning-hub__related">
+                <h4 class="yt-learning-hub__related-title">Related on YouTube</h4>
+                <div class="yt-learning-hub__results" data-yt-results></div>
+            </aside>
         </div>
-    </section>
-}
+
+        <div class="yt-learning-hub__state" data-yt-state>
+            Searching YouTube for this lesson…
+        </div>
+
+        <div class="yt-learning-hub__channels" data-yt-channels
+             aria-label="Preferred YouTube education channels"></div>
+    </div>
+</section>
+
+<script src="~/js/lesson-youtube-hub-v1.js" asp-append-version="true" defer></script>
