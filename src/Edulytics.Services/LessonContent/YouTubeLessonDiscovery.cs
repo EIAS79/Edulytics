@@ -58,13 +58,13 @@ public interface IYouTubeLessonDiscoveryService
         CancellationToken cancellationToken = default);
 }
 
-internal sealed record YouTubeChannelPolicy(
+public sealed record YouTubeChannelPolicy(
     string Name,
     string Handle,
     string? ChannelId = null,
     string? LegacyUsername = null);
 
-internal sealed record YouTubeLessonBandPolicy(
+public sealed record YouTubeLessonBandPolicy(
     string Code,
     string Label,
     IReadOnlyList<YouTubeChannelPolicy> Channels);
