@@ -19,6 +19,8 @@
         exactPracticeAdoptionId ??
         gameAdoptionId ??
         practiceAdoptionId;
+    ViewData["UseYouTubeStudioV2"] = true;
+
     var sections = new[]
     {
         new LessonReaderSection("01", L["Explanation"], "explanation", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.Explanation), sectionKind: "explanation")),
