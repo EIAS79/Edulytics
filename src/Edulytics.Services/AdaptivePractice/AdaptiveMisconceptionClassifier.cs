@@ -164,10 +164,7 @@ public sealed partial class AdaptiveMisconceptionClassifier
                 1);
         }
 
-        return new(
-            "rounding.place_value_rule",
-            0.70m,
-            2);
+        return null;
     }
 
     private static bool TryReadIntegerParameter(
