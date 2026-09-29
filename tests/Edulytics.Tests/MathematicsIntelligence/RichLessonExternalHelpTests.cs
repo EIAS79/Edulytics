@@ -140,6 +140,10 @@ public sealed class RichLessonExternalHelpTests
             root,
             "src/Edulytics.Web/Views/Shared/_LessonYouTubeStudio.cshtml"));
 
+        var reviewedResourcesPartial = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Shared/_LessonReviewedResources.cshtml"));
+
         var lessonView = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"));
@@ -176,11 +180,24 @@ public sealed class RichLessonExternalHelpTests
             StringComparison.OrdinalIgnoreCase);
 
         Assert.Contains(
+            "ApprovedResources",
+            reviewedResourcesPartial,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "08",
+            reviewedResourcesPartial,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
             "ViewData[\"UseYouTubeStudioV2\"] = true",
             lessonView,
             StringComparison.Ordinal);
         Assert.Contains(
             "_LessonYouTubeStudio",
+            lessonView,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "_LessonReviewedResources",
             lessonView,
             StringComparison.Ordinal);
         Assert.Contains(
