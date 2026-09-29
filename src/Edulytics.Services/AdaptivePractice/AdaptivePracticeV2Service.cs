@@ -559,47 +559,45 @@ public sealed class AdaptivePracticeV2Service(
 
         var decision = decisionEngine.Decide(learningState);
 
-        if (sequence >= session.TargetQuestionCount)
+        var budgetDecision =
+            AdaptiveSessionBudgetPolicy.Evaluate(
+                sequence,
+                session.TargetQuestionCount,
+                decision.RemediationLockActive,
+                decision.ConfirmationRequired,
+                correct);
+
+        if (budgetDecision.ExtendSession)
         {
-            var unresolvedAdaptiveWork =
-                decision.RemediationLockActive ||
-                decision.ConfirmationRequired ||
-                !correct;
+            // The ordinary item budget cannot end a session while a
+            // remediation/confirmation contract is still open.
+            session.TargetQuestionCount =
+                budgetDecision.TargetQuestionCount;
+        }
+        else if (budgetDecision.CompleteSession)
+        {
+            session.Status =
+                AdaptivePracticeSessionStatus.Completed;
+            session.CompletedAtUtc = now;
+            session.StopReason =
+                budgetDecision.StopReason;
 
-            if (unresolvedAdaptiveWork &&
-                session.TargetQuestionCount <
-                AdaptivePracticeV2Behavior.MaximumSessionItems)
-            {
-                // The ordinary item budget cannot end a session while a
-                // remediation/confirmation contract is still open.
-                session.TargetQuestionCount++;
-            }
-            else
-            {
-                session.Status =
-                    AdaptivePracticeSessionStatus.Completed;
-                session.CompletedAtUtc = now;
-                session.StopReason = unresolvedAdaptiveWork
-                    ? "MAX_REMEDIATION_BUDGET_REACHED"
-                    : "QUESTION_BUDGET_REACHED";
+            await adaptiveRepository.CommitAnsweredTurnAsync(
+                session,
+                turn,
+                evidenceUpdate.MisconceptionState,
+                evidenceUpdate.RepresentationState,
+                null,
+                [],
+                null,
+                null,
+                null,
+                cancellationToken);
 
-                await adaptiveRepository.CommitAnsweredTurnAsync(
-                    session,
-                    turn,
-                    evidenceUpdate.MisconceptionState,
-                    evidenceUpdate.RepresentationState,
-                    null,
-                    [],
-                    null,
-                    null,
-                    null,
-                    cancellationToken);
-
-                return AdaptivePracticeAnswerResult.Success(
-                    BuildCompletedView(session),
-                    correct,
-                    turn.Feedback ?? item.Solution);
-            }
+            return AdaptivePracticeAnswerResult.Success(
+                BuildCompletedView(session),
+                correct,
+                turn.Feedback ?? item.Solution);
         }
 
         AssessmentItem nextItem;
