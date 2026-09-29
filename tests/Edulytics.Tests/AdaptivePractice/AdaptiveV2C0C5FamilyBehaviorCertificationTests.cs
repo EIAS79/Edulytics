@@ -427,6 +427,151 @@ public sealed class AdaptiveV2C0C5FamilyBehaviorCertificationTests
             failedConfirmationDecision.TargetComplexityScore <=
                 confirmationDecision.TargetComplexityScore,
             "Wrong fresh confirmation did not continue bounded remediation.");
+
+        CertifyFullSessionBudget(
+            target,
+            seedBase + 100,
+            generator);
+    }
+
+    private static void CertifyFullSessionBudget(
+        FamilyTarget target,
+        int seedBase,
+        AdaptiveVerifiedItemGenerator generator)
+    {
+        var exposureExclusions = new List<string>();
+        var semanticExclusions = new List<string>();
+
+        for (var sequence = 1;
+             sequence <= AdaptivePracticeV2Behavior.MaximumSessionItems;
+             sequence++)
+        {
+            var decision = Decision(
+                target,
+                complexity:
+                    Math.Min(
+                        AdaptiveNextItemDecisionEngine.MaximumComplexityScore,
+                        42 +
+                        ((sequence - 1) *
+                         AdaptiveNextItemDecisionEngine.ComplexityStepLimit)),
+                reason:
+                    sequence == 1
+                        ? AdaptivePracticeDecisionReasonCodes.SessionBaseline
+                        : AdaptivePracticeDecisionReasonCodes.ComplexityConsolidate,
+                remediationLockActive: false,
+                confirmationRequired: false,
+                isIndependentConfirmation: false,
+                progressionEligible: false);
+
+            var item = Generate(
+                generator,
+                target,
+                decision,
+                unchecked(seedBase + (sequence * 149)),
+                exposureExclusions,
+                semanticExclusions);
+
+            ValidateItem(target, item);
+            RememberFreshness(
+                item,
+                exposureExclusions,
+                semanticExclusions);
+        }
+
+        var cleanBoundary =
+            AdaptiveSessionBudgetPolicy.Evaluate(
+                AdaptivePracticeV2Behavior.MaximumSessionItems,
+                AdaptivePracticeV2Behavior.MaximumSessionItems,
+                remediationLockActive: false,
+                confirmationRequired: false,
+                answerCorrect: true);
+
+        Require(
+            cleanBoundary.CompleteSession &&
+            !cleanBoundary.ExtendSession &&
+            string.Equals(
+                cleanBoundary.StopReason,
+                "QUESTION_BUDGET_REACHED",
+                StringComparison.Ordinal),
+            "A clean maximum-budget boundary did not complete the session.");
+
+        var openRemediation =
+            AdaptiveSessionBudgetPolicy.Evaluate(
+                answeredSequence: 8,
+                targetQuestionCount: 8,
+                remediationLockActive: true,
+                confirmationRequired: true,
+                answerCorrect: false);
+
+        Require(
+            openRemediation.ExtendSession &&
+            !openRemediation.CompleteSession &&
+            openRemediation.TargetQuestionCount == 9,
+            "Open remediation did not extend the ordinary question budget.");
+
+        var hardBoundary =
+            AdaptiveSessionBudgetPolicy.Evaluate(
+                AdaptivePracticeV2Behavior.MaximumSessionItems,
+                AdaptivePracticeV2Behavior.MaximumSessionItems,
+                remediationLockActive: true,
+                confirmationRequired: true,
+                answerCorrect: false);
+
+        Require(
+            hardBoundary.CompleteSession &&
+            !hardBoundary.ExtendSession &&
+            string.Equals(
+                hardBoundary.StopReason,
+                "MAX_REMEDIATION_BUDGET_REACHED",
+                StringComparison.Ordinal),
+            "Open remediation did not stop safely at the hard session budget.");
+    }
+
+    private static void RememberFreshness(
+        AssessmentItem item,
+        List<string> exposureExclusions,
+        List<string> semanticExclusions)
+    {
+        if (!string.IsNullOrWhiteSpace(item.ExposureFingerprint))
+        {
+            Require(
+                !exposureExclusions.Contains(
+                    item.ExposureFingerprint,
+                    StringComparer.Ordinal),
+                "Full-session scenario repeated an excluded exposure fingerprint.");
+
+            exposureExclusions.Insert(0, item.ExposureFingerprint);
+            if (exposureExclusions.Count >
+                AdaptivePracticeV2Behavior.RecentExposureFreshnessWindow)
+            {
+                exposureExclusions.RemoveRange(
+                    AdaptivePracticeV2Behavior.RecentExposureFreshnessWindow,
+                    exposureExclusions.Count -
+                    AdaptivePracticeV2Behavior.RecentExposureFreshnessWindow);
+            }
+        }
+
+        var semantic =
+            AdaptivePracticeSemanticIdentity.Resolve(item);
+
+        if (!string.IsNullOrWhiteSpace(semantic))
+        {
+            semanticExclusions.RemoveAll(x =>
+                string.Equals(
+                    x,
+                    semantic,
+                    StringComparison.Ordinal));
+            semanticExclusions.Insert(0, semantic);
+
+            if (semanticExclusions.Count >
+                AdaptivePracticeV2Behavior.RecentSemanticFreshnessWindow)
+            {
+                semanticExclusions.RemoveRange(
+                    AdaptivePracticeV2Behavior.RecentSemanticFreshnessWindow,
+                    semanticExclusions.Count -
+                    AdaptivePracticeV2Behavior.RecentSemanticFreshnessWindow);
+            }
+        }
     }
 
     private static AdaptivePracticeLearningState State(
