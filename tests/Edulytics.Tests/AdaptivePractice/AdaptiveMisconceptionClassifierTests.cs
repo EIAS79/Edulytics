@@ -45,14 +45,11 @@ public sealed class AdaptiveMisconceptionClassifierTests
             CorrectAnswer = correct,
             GenerationFamily = "supporting.number.rounding",
             GenerationParametersJson =
-                $"""
-                {
-                  "parameters": {
-                    "value": {{value}},
-                    "place": {{place}}
-                  }
-                }
-                """
+                "{\"parameters\":{\"value\":" +
+                value +
+                ",\"place\":" +
+                place +
+                "}}"
         };
 
         var result = classifier.Classify(
