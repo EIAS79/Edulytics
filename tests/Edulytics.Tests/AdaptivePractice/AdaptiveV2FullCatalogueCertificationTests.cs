@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Edulytics.Core.AdaptivePractice;
+using Edulytics.Core.Entities;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.AdaptivePractice;
 
@@ -8,11 +9,12 @@ namespace Edulytics.Tests.MathematicsIntelligence.AdaptivePractice;
 public sealed class AdaptiveV2FullCatalogueCertificationTests
 {
     private const int ExpectedLessonCount = 4453;
+    private const int CertifiedSessionLength = 8;
     private const string RunEnvironmentVariable =
         "EDULYTICS_RUN_FULL_ADAPTIVE_V2_CERTIFICATION";
 
     [Fact]
-    public void EveryReadyVerifiedLessonCanGenerateThroughAdaptiveV2()
+    public void EveryReadyVerifiedLessonAndAllowedFamilyCanRunThroughAdaptiveV2()
     {
         if (!string.Equals(
                 Environment.GetEnvironmentVariable(
@@ -34,117 +36,51 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
             ExpectedLessonCount,
             contracts.Length);
 
-        var generator =
-            new AdaptiveVerifiedItemGenerator();
-        var blockers =
-            new List<string>();
-        var generatedLessonCount = 0;
-
-        for (var index = 0;
-             index < contracts.Length;
-             index++)
-        {
-            var contract = contracts[index];
-            var family =
-                contract.AllowedQuestionFamilies
-                    .Distinct(StringComparer.Ordinal)
-                    .FirstOrDefault();
-
-            if (string.IsNullOrWhiteSpace(family))
-            {
-                blockers.Add(
-                    $"{contract.LessonCode}: no allowed question family.");
-                continue;
-            }
-
-            try
-            {
-                var item =
-                    Generate(
-                        generator,
-                        contract,
-                        family,
-                        complexity: 42,
-                        seed:
-                            unchecked(
-                                20260929 +
-                                (index * 131)),
-                        identityIndex:
-                            index);
-
-                if (!string.Equals(
-                        item.GenerationFamily,
-                        family,
-                        StringComparison.Ordinal))
-                {
-                    blockers.Add(
-                        $"{contract.LessonCode}: generated family " +
-                        $"{item.GenerationFamily} != {family}.");
-                    continue;
-                }
-
-                if (string.IsNullOrWhiteSpace(
-                        item.ExposureFingerprint) ||
-                    string.IsNullOrWhiteSpace(
-                        item.ValidationMetadataJson) ||
-                    !item.ValidationMetadataJson.Contains(
-                        "solverVerified",
-                        StringComparison.Ordinal))
-                {
-                    blockers.Add(
-                        $"{contract.LessonCode}: generated item is missing " +
-                        "verified provenance.");
-                    continue;
-                }
-
-                generatedLessonCount++;
-            }
-            catch (Exception exception)
-            {
-                blockers.Add(
-                    $"{contract.LessonCode}: " +
-                    $"{exception.GetType().Name}: {exception.Message}");
-            }
-        }
-
-        var familyRepresentatives =
+        var pairs =
             contracts
                 .SelectMany(
                     contract =>
                         contract.AllowedQuestionFamilies
                             .Distinct(StringComparer.Ordinal)
+                            .OrderBy(
+                                family => family,
+                                StringComparer.Ordinal)
                             .Select(
                                 family =>
-                                    new
-                                    {
-                                        Contract = contract,
-                                        Family = family
-                                    }))
-                .GroupBy(
-                    row => row.Family,
-                    StringComparer.Ordinal)
-                .OrderBy(
-                    group => group.Key,
-                    StringComparer.Ordinal)
-                .Select(group => group.First())
+                                    new ContractFamilyPair(
+                                        contract,
+                                        family)))
                 .ToArray();
 
-        var certifiedFamilyCount = 0;
+        var distinctFamilyCount =
+            pairs
+                .Select(pair => pair.Family)
+                .Distinct(StringComparer.Ordinal)
+                .Count();
 
+        var generator =
+            new AdaptiveVerifiedItemGenerator();
+        var blockers =
+            new List<string>();
+
+        var certifiedPairCount = 0;
+
+        // Every lesson-family pairing is a possible adaptive target. Certify
+        // the exact pairing at maximum requested complexity; the generator is
+        // responsible for truthfully bounding to the family's supported form.
         for (var index = 0;
-             index < familyRepresentatives.Length;
+             index < pairs.Length;
              index++)
         {
-            var representative =
-                familyRepresentatives[index];
+            var pair = pairs[index];
 
             try
             {
                 var item =
                     Generate(
                         generator,
-                        representative.Contract,
-                        representative.Family,
+                        pair.Contract,
+                        pair.Family,
                         complexity:
                             AdaptiveNextItemDecisionEngine
                                 .MaximumComplexityScore,
@@ -153,35 +89,154 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
                                 90260929 +
                                 (index * 257)),
                         identityIndex:
-                            contracts.Length + index);
+                            index,
+                        sequence:
+                            1,
+                        excludedExposureFingerprints:
+                            [],
+                        excludedSemanticIdentityKeys:
+                            []);
 
-                if (!string.Equals(
-                        item.GenerationFamily,
-                        representative.Family,
-                        StringComparison.Ordinal))
-                {
-                    blockers.Add(
-                        $"family {representative.Family}: generated " +
-                        $"{item.GenerationFamily}.");
-                    continue;
-                }
+                ValidateGeneratedItem(
+                    pair.Contract,
+                    pair.Family,
+                    item);
 
-                certifiedFamilyCount++;
+                certifiedPairCount++;
             }
             catch (Exception exception)
             {
                 blockers.Add(
-                    $"family {representative.Family}: " +
+                    $"{pair.Contract.LessonCode} / {pair.Family}: " +
                     $"{exception.GetType().Name}: {exception.Message}");
             }
+        }
+
+        var certifiedSessionCount = 0;
+        var generatedSessionItemCount = 0;
+
+        // A one-item smoke test cannot prove runtime freshness. For every
+        // lesson, generate a complete default learner session while carrying
+        // exposure fingerprints and semantic identities forward exactly as
+        // the real Adaptive V2 service does. Families rotate deterministically
+        // so multi-family contracts exercise more than their first family.
+        for (var contractIndex = 0;
+             contractIndex < contracts.Length;
+             contractIndex++)
+        {
+            var contract = contracts[contractIndex];
+            var families =
+                contract.AllowedQuestionFamilies
+                    .Distinct(StringComparer.Ordinal)
+                    .OrderBy(
+                        family => family,
+                        StringComparer.Ordinal)
+                    .ToArray();
+
+            if (families.Length == 0)
+            {
+                blockers.Add(
+                    $"{contract.LessonCode}: no allowed question family.");
+                continue;
+            }
+
+            var exposureExclusions =
+                new HashSet<string>(
+                    StringComparer.Ordinal);
+            var semanticExclusions =
+                new HashSet<string>(
+                    StringComparer.Ordinal);
+
+            var sessionSucceeded = true;
+
+            for (var sequence = 1;
+                 sequence <= CertifiedSessionLength;
+                 sequence++)
+            {
+                var family =
+                    families[
+                        (sequence - 1) %
+                        families.Length];
+
+                try
+                {
+                    var item =
+                        Generate(
+                            generator,
+                            contract,
+                            family,
+                            complexity:
+                                sequence <= 4
+                                    ? 42
+                                    : AdaptiveNextItemDecisionEngine
+                                        .MaximumComplexityScore,
+                            seed:
+                                unchecked(
+                                    20260929 +
+                                    (contractIndex * 1009) +
+                                    (sequence * 131)),
+                            identityIndex:
+                                pairs.Length +
+                                contractIndex,
+                            sequence,
+                            exposureExclusions,
+                            semanticExclusions);
+
+                    ValidateGeneratedItem(
+                        contract,
+                        family,
+                        item);
+
+                    if (!string.IsNullOrWhiteSpace(
+                            item.ExposureFingerprint))
+                    {
+                        if (!exposureExclusions.Add(
+                                item.ExposureFingerprint))
+                        {
+                            throw new InvalidOperationException(
+                                "Adaptive session repeated an excluded exposure fingerprint.");
+                        }
+                    }
+
+                    var semanticIdentity =
+                        AdaptivePracticeSemanticIdentity
+                            .Resolve(item);
+
+                    if (!string.IsNullOrWhiteSpace(
+                            semanticIdentity) &&
+                        !semanticExclusions.Add(
+                            semanticIdentity))
+                    {
+                        throw new InvalidOperationException(
+                            "Adaptive session repeated an excluded semantic identity.");
+                    }
+
+                    generatedSessionItemCount++;
+                }
+                catch (Exception exception)
+                {
+                    blockers.Add(
+                        $"{contract.LessonCode} session turn {sequence} " +
+                        $"({family}): {exception.GetType().Name}: " +
+                        exception.Message);
+                    sessionSucceeded = false;
+                    break;
+                }
+            }
+
+            if (sessionSucceeded)
+                certifiedSessionCount++;
         }
 
         var summary =
             new CertificationSummary(
                 ExpectedLessonCount,
-                generatedLessonCount,
-                familyRepresentatives.Length,
-                certifiedFamilyCount,
+                certifiedSessionCount,
+                CertifiedSessionLength,
+                generatedSessionItemCount,
+                pairs.Length,
+                certifiedPairCount,
+                distinctFamilyCount,
                 blockers.Count);
 
         WriteReport(
@@ -199,13 +254,16 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
                 : string.Empty));
     }
 
-    private static Edulytics.Core.Entities.AssessmentItem Generate(
+    private static AssessmentItem Generate(
         AdaptiveVerifiedItemGenerator generator,
         LessonPracticeContract contract,
         string family,
         int complexity,
         int seed,
-        int identityIndex)
+        int identityIndex,
+        int sequence,
+        IReadOnlyCollection<string> excludedExposureFingerprints,
+        IReadOnlyCollection<string> excludedSemanticIdentityKeys)
     {
         var decision =
             new AdaptiveNextItemDecision(
@@ -220,8 +278,11 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
                 MisconceptionFocusId:
                     null,
                 ReasonCode:
-                    AdaptivePracticeDecisionReasonCodes
-                        .SessionBaseline,
+                    sequence == 1
+                        ? AdaptivePracticeDecisionReasonCodes
+                            .SessionBaseline
+                        : AdaptivePracticeDecisionReasonCodes
+                            .ContinuePractice,
                 RequiresFreshExposure:
                     true,
                 RemediationLockActive:
@@ -255,10 +316,37 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
             contract,
             decision,
             seed,
-            excludedExposureFingerprints:
-                [],
-            excludedSemanticIdentityKeys:
-                []);
+            excludedExposureFingerprints,
+            excludedSemanticIdentityKeys);
+    }
+
+    private static void ValidateGeneratedItem(
+        LessonPracticeContract contract,
+        string expectedFamily,
+        AssessmentItem item)
+    {
+        if (!string.Equals(
+                item.GenerationFamily,
+                expectedFamily,
+                StringComparison.Ordinal))
+        {
+            throw new InvalidOperationException(
+                $"Generated family {item.GenerationFamily} " +
+                $"did not preserve {expectedFamily}.");
+        }
+
+        if (string.IsNullOrWhiteSpace(
+                item.ExposureFingerprint) ||
+            string.IsNullOrWhiteSpace(
+                item.ValidationMetadataJson) ||
+            !item.ValidationMetadataJson.Contains(
+                "solverVerified",
+                StringComparison.Ordinal))
+        {
+            throw new InvalidOperationException(
+                $"Generated item for {contract.LessonCode} " +
+                "is missing solver-verified provenance.");
+        }
     }
 
     private static Guid DeterministicGuid(
@@ -303,7 +391,7 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
         var payload =
             new
             {
-                schemaVersion = 1,
+                schemaVersion = 2,
                 audit =
                     "Adaptive Practice V2 full READY_VERIFIED catalogue runtime certification",
                 generatedAtUtc =
@@ -362,10 +450,17 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
             "for Adaptive V2 certification report.");
     }
 
+    private sealed record ContractFamilyPair(
+        LessonPracticeContract Contract,
+        string Family);
+
     private sealed record CertificationSummary(
         int ExpectedLessonCount,
-        int CertifiedLessonCount,
+        int CertifiedSessionCount,
+        int CertifiedSessionLength,
+        int GeneratedSessionItemCount,
+        int ExpectedLessonFamilyPairCount,
+        int CertifiedLessonFamilyPairCount,
         int DistinctQuestionFamilyCount,
-        int CertifiedQuestionFamilyCount,
         int BlockerCount);
 }
