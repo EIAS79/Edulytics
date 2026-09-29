@@ -170,6 +170,43 @@ public sealed class YouTubeLessonDiscoveryPolicyTests
     }
 
     [Fact]
+    public async Task UpstreamTimeout_FailsOpenWithoutCancellingLessonRequest()
+    {
+        using var client =
+            new HttpClient(
+                new TimeoutYouTubeHandler())
+            {
+                Timeout =
+                    TimeSpan.FromMilliseconds(20)
+            };
+
+        var service =
+            new YouTubeLessonDiscoveryService(
+                client,
+                new YouTubeLessonDiscoveryOptions
+                {
+                    Enabled = true,
+                    ApiKey = "test-key"
+                });
+
+        var result =
+            await service.DiscoverAsync(
+                "PED:TEST:G8:TIMEOUT",
+                "Solve linear equations",
+                "Grade 8",
+                "en",
+                null,
+                CancellationToken.None);
+
+        Assert.False(result.Available);
+        Assert.Null(result.Featured);
+        Assert.Contains(
+            "timed out",
+            result.Message,
+            StringComparison.OrdinalIgnoreCase);
+    }
+
+    [Fact]
     public void StudentYouTubeEndpoint_UsesActorPartitionedNamedRatePolicy()
     {
         var action =
@@ -210,6 +247,22 @@ public sealed class YouTubeLessonDiscoveryPolicyTests
             "en",
             learnerQuery);
     }
+    private sealed class TimeoutYouTubeHandler
+        : HttpMessageHandler
+    {
+        protected override async Task<HttpResponseMessage> SendAsync(
+            HttpRequestMessage request,
+            CancellationToken cancellationToken)
+        {
+            await Task.Delay(
+                TimeSpan.FromSeconds(5),
+                cancellationToken);
+
+            return new HttpResponseMessage(
+                HttpStatusCode.OK);
+        }
+    }
+
     private sealed class LowRelevanceYouTubeHandler
         : HttpMessageHandler
     {
