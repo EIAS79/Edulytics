@@ -134,6 +134,38 @@ public sealed class YouTubeLessonDiscoveryPolicyTests
     }
 
     [Fact]
+    public async Task LearnerRefinement_CannotMakeOffTopicVideoPassLessonGate()
+    {
+        using var client =
+            new HttpClient(
+                new LowRelevanceYouTubeHandler());
+
+        var service =
+            new YouTubeLessonDiscoveryService(
+                client,
+                new YouTubeLessonDiscoveryOptions
+                {
+                    Enabled = true,
+                    ApiKey = "test-key",
+                    MinimumRelevancePercent = 34,
+                    SearchResultCount = 8,
+                    RelatedResultCount = 6
+                });
+
+        var result =
+            await service.DiscoverAsync(
+                "PED:TEST:G8:OFFTOPIC-REFINEMENT",
+                "Solve linear equations",
+                "Grade 8",
+                "en",
+                "cooking pasta recipe kitchen timing guide");
+
+        Assert.True(result.Available);
+        Assert.Null(result.Featured);
+        Assert.Empty(result.Related);
+    }
+
+    [Fact]
     public async Task HardRelevanceThreshold_DoesNotFallBackToUnrelatedVideo()
     {
         using var client =
@@ -288,10 +320,10 @@ public sealed class YouTubeLessonDiscoveryPolicyTests
                               {
                                 "id": { "videoId": "unrelated-1" },
                                 "snippet": {
-                                  "title": "Cooking pasta perfectly",
+                                  "title": "Cooking pasta recipe kitchen timing guide",
                                   "channelId": "UC-kitchen",
                                   "channelTitle": "Kitchen Lessons",
-                                  "description": "Recipe and kitchen timing guide",
+                                  "description": "Cooking pasta recipe kitchen timing guide",
                                   "thumbnails": {
                                     "high": {
                                       "url": "https://i.ytimg.com/vi/unrelated-1/hqdefault.jpg"
