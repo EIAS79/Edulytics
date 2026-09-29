@@ -61,13 +61,19 @@ public static class AdaptivePracticeV2RegistrationExtensions
                         return true;
                     }
 
+                    var validCurriculumScope =
+                        options.RouteAllReadyVerifiedLessons
+                            ? AdaptivePrimaryRolloutPlan.IsValidReadyVerifiedScope(
+                                options.AllowedCurriculumLevelKeys)
+                            : AdaptivePrimaryRolloutPlan.IsValidCanaryScope(
+                                options.AllowedCurriculumLevelKeys,
+                                options.AllowedLessonCodes);
+
                     return options.AllowedSchoolIds.Any(
                                x => x != Guid.Empty) &&
-                           AdaptivePrimaryRolloutPlan.IsValidCanaryScope(
-                               options.AllowedCurriculumLevelKeys,
-                               options.AllowedLessonCodes);
+                           validCurriculumScope;
                 },
-                "AdaptivePracticeV2 Canary requires explicit curriculum-level, lesson, and school allow-lists.")
+                "AdaptivePracticeV2 Canary requires an explicit Primary curriculum scope and school allow-list; legacy lesson allow-lists are required only when unified READY_VERIFIED routing is disabled.")
             .ValidateOnStart();
 
         services.AddSingleton(
