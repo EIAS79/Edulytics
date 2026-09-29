@@ -292,6 +292,48 @@ jobs:
             --configuration Release \
             --no-restore \
             --filter "FullyQualifiedName~AdaptiveV2FullCatalogueCertificationTests"
+      - name: Run Adaptive V2 C0-C5 per-family behavior certification
+        env:
+          EDULYTICS_RUN_FULL_ADAPTIVE_V2_CERTIFICATION: "1"
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
+            --configuration Release \
+            --no-restore \
+            --filter "FullyQualifiedName~AdaptiveV2C0C5FamilyBehaviorCertificationTests"
+      - name: Publish Adaptive V2 C0-C5 per-family certification
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          path = Path("artifacts/math-intelligence/adaptive-v2-c0-c5-family-behavior-certification.json")
+          if not path.exists():
+              print("Adaptive V2 C0-C5 family behavior certification report was not produced.")
+              raise SystemExit(0)
+          report = json.loads(path.read_text(encoding="utf-8"))
+          s = report["summary"]
+          lines = [
+              "# Adaptive Practice V2 — C0-C5 Per-Family Behavior Certification",
+              "",
+              f"- Certified families: **{s['certifiedFamilyCount']:,} / {s['expectedFamilyCount']:,}**",
+              f"- Scenarios per family: **{s['scenarioCountPerFamily']:,}**",
+              f"- Same-item retry ceiling: **{s['maximumSameItemRetries']:,}**",
+              f"- Maximum session items: **{s['maximumSessionItems']:,}**",
+              f"- Blockers: **{s['blockerCount']:,}**",
+          ]
+          print("\n".join(lines))
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as handle:
+              handle.write("\n".join(lines) + "\n")
+          PY
+      - name: Upload Adaptive V2 C0-C5 per-family certification
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: adaptive-v2-c0-c5-family-behavior-${{ github.sha }}
+          path: artifacts/math-intelligence/adaptive-v2-c0-c5-family-behavior-certification.json
+          retention-days: 14
       - name: Publish Adaptive V2 full catalogue certification
         if: always()
         run: |
