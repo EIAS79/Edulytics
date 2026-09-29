@@ -681,12 +681,13 @@ public sealed class AdaptivePracticeV2Service(
         if (!correct &&
             remediationGuidance is not null)
         {
-            // Carry the stronger scaffold onto the fresh remediation item.
-            // The learner sees the worked example before attempting the new
-            // numbers; the current item's verified answer is never exposed.
+            // Build the scaffold from the freshly generated recovery item,
+            // not from the closed item. This keeps place value, family and
+            // representation aligned with the question the learner now sees
+            // while still avoiding the recovery item's verified answer.
             nextTurn.Feedback =
-                remediationGuidance.WorkedExample ??
-                remediationGuidance.Hint;
+                guidanceEngine.BuildRecoveryWorkedExample(
+                    nextItem);
         }
 
         var nextExposure = CreateExposure(
