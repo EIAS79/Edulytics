@@ -24,6 +24,8 @@ public sealed class AdaptivePracticeV2Options
 
     public bool RouteAllReadyVerifiedLessons { get; set; }
 
+    public bool RouteAllReadyVerifiedCatalogue { get; set; }
+
     public bool EnableDirectNextSteps { get; set; }
 
     public bool EnableQuestionLog { get; set; }
@@ -78,6 +80,7 @@ public sealed class AdaptivePracticeV2Options
             EnableDiagnosticV2)
         {
             RouteAllReadyVerifiedLessons = RouteAllReadyVerifiedLessons,
+            RouteAllReadyVerifiedCatalogue = RouteAllReadyVerifiedCatalogue,
             EnableLiveGroupSession = EnableLiveGroupSession,
             EnablePsychometricReadiness = EnablePsychometricReadiness,
             EnableResearchProgramme = EnableResearchProgramme,
