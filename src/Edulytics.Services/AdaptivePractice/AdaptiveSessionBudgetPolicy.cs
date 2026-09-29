@@ -1,3 +1,5 @@
+using Edulytics.Core.AdaptivePractice;
+
 namespace Edulytics.Services.AdaptivePractice;
 
 public sealed record AdaptiveSessionBudgetDecision(
