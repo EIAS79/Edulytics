@@ -241,7 +241,8 @@ public sealed class LessonObjectiveContentAlignmentCertificationTests
         Directory.CreateDirectory(directory);
 
         var elements =
-            rows.Select(JsonSerializer.SerializeToElement)
+            rows.Select(row =>
+                    JsonSerializer.SerializeToElement(row))
                 .ToArray();
 
         var objectiveKinds =
