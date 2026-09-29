@@ -428,6 +428,7 @@
                     status.textContent =
                         "YouTube discovery could not load right now. The lesson remains available and you can use the direct YouTube links.";
                 }
+                if (resultCount) resultCount.textContent = "0";
                 if (related) {
                     related.replaceChildren(
                         create(
