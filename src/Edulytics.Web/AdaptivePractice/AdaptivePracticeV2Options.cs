@@ -22,6 +22,8 @@ public sealed class AdaptivePracticeV2Options
 
     public bool EnableMisconceptionLoop { get; set; }
 
+    public bool RouteAllReadyVerifiedLessons { get; set; }
+
     public bool EnableDirectNextSteps { get; set; }
 
     public bool EnableQuestionLog { get; set; }
@@ -75,6 +77,7 @@ public sealed class AdaptivePracticeV2Options
             EnableLiveClassroom,
             EnableDiagnosticV2)
         {
+            RouteAllReadyVerifiedLessons = RouteAllReadyVerifiedLessons,
             EnableLiveGroupSession = EnableLiveGroupSession,
             EnablePsychometricReadiness = EnablePsychometricReadiness,
             EnableResearchProgramme = EnableResearchProgramme,
