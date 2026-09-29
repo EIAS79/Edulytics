@@ -46,14 +46,8 @@ public sealed class RichLessonExternalHelpTests
             "en");
 
         Assert.Equal(first.SearchSuggestions, second.SearchSuggestions);
-        Assert.Equal(2, first.SearchSuggestions.Count);
+        Assert.Single(first.SearchSuggestions);
 
-        Assert.Contains(
-            first.SearchSuggestions,
-            x => x.Provider == "Google" &&
-                 x.Url.StartsWith(
-                     "https://www.google.com/search?q=",
-                     StringComparison.Ordinal));
         Assert.Contains(
             first.SearchSuggestions,
             x => x.Provider == "YouTube" &&
@@ -90,7 +84,7 @@ public sealed class RichLessonExternalHelpTests
 
         Assert.Empty(help.ApprovedResources);
         Assert.Empty(help.ApprovedVideos);
-        Assert.Equal(2, help.SearchSuggestions.Count);
+        Assert.Single(help.SearchSuggestions);
     }
 
     [Fact]
@@ -134,36 +128,51 @@ public sealed class RichLessonExternalHelpTests
     }
 
     [Fact]
-    public void Phase8A_SharedRenderer_EmbedsReviewedHelpAndDoesNotExposeSearchExits()
+    public void Phase8A_StudentYouTubeStudio_OwnsEmbedAndYouTubeOnlySearch()
     {
         var root = FindRoot();
-        var partial = File.ReadAllText(Path.Combine(
+
+        var richPartial = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml"));
 
-        Assert.Contains(
-            "RichLessonExternalHelpRegistry.Resolve",
-            partial,
+        var studioPartial = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/Shared/_LessonYouTubeStudio.cshtml"));
+
+        var lessonView = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"));
+
+        Assert.DoesNotContain(
+            "youtube-nocookie.com/embed/",
+            richPartial,
             StringComparison.Ordinal);
+
         Assert.Contains(
-            "approvedExternalVideos",
-            partial,
+            "data-youtube-studio",
+            studioPartial,
             StringComparison.Ordinal);
         Assert.Contains(
             "youtube-nocookie.com/embed/",
-            partial,
+            studioPartial,
             StringComparison.Ordinal);
         Assert.Contains(
-            "Help content never affects mastery, assessment, or Adaptive decisions",
-            partial,
+            "www.youtube.com/results?search_query=",
+            studioPartial,
             StringComparison.Ordinal);
         Assert.DoesNotContain(
-            "externalHelp.SearchSuggestions.Count",
-            partial,
+            "google.com/search",
+            studioPartial,
+            StringComparison.OrdinalIgnoreCase);
+
+        Assert.Contains(
+            "_LessonYouTubeStudio",
+            lessonView,
             StringComparison.Ordinal);
-        Assert.DoesNotContain(
-            "suggestion.Url",
-            partial,
+        Assert.Contains(
+            "lesson-youtube-studio.js",
+            lessonView,
             StringComparison.Ordinal);
     }
 
