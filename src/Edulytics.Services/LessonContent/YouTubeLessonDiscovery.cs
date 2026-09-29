@@ -865,8 +865,11 @@ public sealed partial class YouTubeLessonDiscoveryService :
             @"\s+",
             " ").Trim();
 
-        if (learner.Length > 80)
-            learner = learner[..80];
+        learner = string.Concat(
+            learner
+                .EnumerateRunes()
+                .Take(80)
+                .Select(rune => rune.ToString()));
 
         var pieces = new[]
         {
