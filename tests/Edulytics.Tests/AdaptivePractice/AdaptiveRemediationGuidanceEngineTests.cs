@@ -92,6 +92,29 @@ public sealed class AdaptiveRemediationGuidanceEngineTests
     }
 
     [Fact]
+    public void GenericRecoveryNeverLeaksSingleTokenVerifiedAnswer()
+    {
+        var item = new AssessmentItem
+        {
+            CorrectAnswer = "7",
+            GenerationFamily = "supporting.number.multiply",
+            Solution = "The verified result is 7 after multiplying the factors."
+        };
+
+        var workedExample =
+            engine.BuildRecoveryWorkedExample(item);
+
+        Assert.DoesNotContain(
+            "7",
+            workedExample,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "Re-read the question",
+            workedExample,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void GenericFamilyStillProvidesBoundedProgressiveGuidance()
     {
         var item = new AssessmentItem
