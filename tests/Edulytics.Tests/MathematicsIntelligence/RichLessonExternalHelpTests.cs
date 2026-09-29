@@ -195,6 +195,10 @@ public sealed class RichLessonExternalHelpTests
             "No embeddable video passed the current lesson-match checks.",
             studioScript,
             StringComparison.Ordinal);
+        Assert.Contains(
+            "YouTube discovery could not load right now. Use the lesson-scoped YouTube links instead.",
+            studioScript,
+            StringComparison.Ordinal);
     }
 
     private static string FindRoot()
