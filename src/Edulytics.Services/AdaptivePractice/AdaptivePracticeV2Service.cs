@@ -176,7 +176,8 @@ public sealed class AdaptivePracticeV2Service(
                 Mode = policy.Mode.ToString(),
                 policy.MaxLessonQuestions,
                 policy.EnableMisconceptionLoop,
-                policy.RouteAllReadyVerifiedLessons
+                policy.RouteAllReadyVerifiedLessons,
+                policy.RouteAllReadyVerifiedCatalogue
             }),
             TargetQuestionCount = policy.MaxLessonQuestions,
             CurrentSequence = 1,
