@@ -501,7 +501,9 @@ public sealed class StudentPracticeController(
                     ? "correct"
                     : "incorrect";
             TempData["PracticeSolution"] =
-                result.Feedback ?? string.Empty;
+                result.IsCorrect == true
+                    ? result.Feedback ?? string.Empty
+                    : string.Empty;
         }
 
         return RedirectToAction(

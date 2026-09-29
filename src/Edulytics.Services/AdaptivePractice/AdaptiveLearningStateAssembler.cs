@@ -208,6 +208,20 @@ public sealed class AdaptiveLearningStateAssembler(
 
         foreach (var turn in answered)
         {
+            if (turn.IncorrectAttemptCount > 0)
+            {
+                state = remediationStateMachine.Apply(
+                    state,
+                    new AdaptivePracticeResponseObservation(
+                        turn.Sequence,
+                        IsCorrect: false,
+                        turn.MathematicalComplexityScore,
+                        turn.QuestionFamily,
+                        turn.Representation,
+                        turn.MisconceptionFocusId,
+                        IsIndependentConfirmation: false));
+            }
+
             state = remediationStateMachine.Apply(
                 state,
                 ToObservation(turn));

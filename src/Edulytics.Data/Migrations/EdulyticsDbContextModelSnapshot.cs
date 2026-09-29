@@ -331,8 +331,20 @@ namespace Edulytics.Data.Migrations
                         .HasColumnType("boolean")
                         .HasDefaultValue(false);
 
+                    b.Property<int>("IncorrectAttemptCount")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasDefaultValue(0);
+
                     b.Property<bool?>("IsCorrect")
                         .HasColumnType("boolean");
+
+                    b.Property<string>("LastIncorrectAnswer")
+                        .HasMaxLength(2000)
+                        .HasColumnType("character varying(2000)");
+
+                    b.Property<DateTime?>("LastIncorrectAtUtc")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("MathematicalComplexityScore")
                         .HasColumnType("integer");

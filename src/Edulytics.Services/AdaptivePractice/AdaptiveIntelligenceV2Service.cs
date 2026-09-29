@@ -171,6 +171,8 @@ public sealed class AdaptiveIntelligenceV2Service(
                     turn.Representation,
                     turn.MathematicalComplexityScore,
                     turn.SubmittedAnswer,
+                    turn.IncorrectAttemptCount,
+                    turn.LastIncorrectAnswer,
                     turn.IsCorrect,
                     turn.Feedback,
                     decision?.DecisionReasonCode ?? string.Empty,
@@ -322,6 +324,7 @@ public sealed class AdaptiveIntelligenceV2Service(
                 var needsIntervention =
                     student.HighestPriority >= EvaluationPriority.High ||
                     latestTurn?.IsCorrect == false ||
+                    latestTurn?.IncorrectAttemptCount > 0 ||
                     activeMisconceptions > 0;
 
                 return new AdaptiveClassroomStudentSignal(

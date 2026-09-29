@@ -9,19 +9,28 @@
 @inject AdaptivePracticeV2Policy AdaptivePolicy
 @{
     Layout = "_StudentLayout";
-    var locale = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
-    var lessonTitle = ViewData["LessonTitle"]?.ToString() ?? "Mathematics";
-    var unitTitle = ViewData["LessonUnitTitle"]?.ToString() ?? string.Empty;
+
+    var locale =
+        CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var lessonTitle =
+        ViewData["LessonTitle"]?.ToString() ?? "Mathematics";
+    var unitTitle =
+        ViewData["LessonUnitTitle"]?.ToString() ?? string.Empty;
     ViewData["Title"] = lessonTitle;
 
     var question = Model.CurrentQuestion;
-    var answeredCount = Math.Max(0, Model.CurrentSequence - 1);
+    var answeredCount =
+        Math.Max(0, Model.CurrentSequence - 1);
     var progress = Model.TargetQuestionCount <= 0
         ? 0d
-        : Math.Min(100d, answeredCount * 100d / Model.TargetQuestionCount);
+        : Math.Min(
+            100d,
+            answeredCount * 100d /
+            Model.TargetQuestionCount);
 
     LessonPracticeInteractionContract? interaction = null;
-    if (!string.IsNullOrWhiteSpace(question?.GenerationFamily))
+    if (!string.IsNullOrWhiteSpace(
+            question?.GenerationFamily))
     {
         LessonPracticeInteractionRegistry.TryResolve(
             question.GenerationFamily,
@@ -39,18 +48,22 @@
         prompt,
         @"(?<![A-Za-z0-9])([A-D])\)\s*",
         RegexOptions.CultureInvariant);
+
     var isPromptMultipleChoice =
         question is not null &&
         optionMatches.Count >= 2 &&
         optionMatches[0].Index > 0;
+
     var stem = isPromptMultipleChoice
         ? prompt[..optionMatches[0].Index].Trim()
         : prompt;
-    var choices = new List<(string Label, string Value)>();
 
+    var choices = new List<(string Label, string Value)>();
     if (isPromptMultipleChoice)
     {
-        for (var index = 0; index < optionMatches.Count; index++)
+        for (var index = 0;
+             index < optionMatches.Count;
+             index++)
         {
             var match = optionMatches[index];
             var start = match.Index + match.Length;
@@ -58,229 +71,466 @@
                 ? optionMatches[index + 1].Index
                 : prompt.Length;
             var value = prompt[start..end].Trim();
+
             if (value.Length > 0)
-                choices.Add((match.Groups[1].Value, value));
+            {
+                choices.Add(
+                    (match.Groups[1].Value, value));
+            }
         }
 
-        isPromptMultipleChoice = choices.Count >= 2;
+        isPromptMultipleChoice =
+            choices.Count >= 2;
     }
 
-    var feedbackKind = TempData["PracticeFeedback"]?.ToString();
-    var feedbackSolution = TempData["PracticeSolution"]?.ToString();
+    var feedbackKind =
+        TempData["PracticeFeedback"]?.ToString();
+    var feedbackSolution =
+        TempData["PracticeSolution"]?.ToString();
 
-    var backLabel = locale switch
-    {
-        "pl" => "Powrót do lekcji",
-        "ar" => "العودة إلى الدرس",
-        _ => "Back to lesson"
-    };
+    var guidanceText =
+        Edulytics.Web.GameRouting.LessonPracticeHintResolver.Resolve(
+            question?.GenerationFamily,
+            question?.GenerationParametersJson,
+            locale);
+
     var practiceLabel = locale switch
     {
         "pl" => "Ćwiczenie Edulytics",
         "ar" => "تدريب Edulytics",
         _ => "Edulytics Practice"
     };
-    var personalizedLabel = locale switch
-    {
-        "pl" => "Spersonalizowane",
-        "ar" => "مخصص لمستواك",
-        _ => "Personalized"
-    };
+
     var missionLabel = locale switch
     {
-        "pl" => "Twoje zadanie",
+        "pl" => "TWOJE ZADANIE",
         "ar" => "مهمتك",
-        _ => "Your mission"
+        _ => "YOUR MISSION"
     };
+
     var confirmationLabel = locale switch
     {
-        "pl" => "Niezależne potwierdzenie",
+        "pl" => "NIEZALEŻNE POTWIERDZENIE",
         "ar" => "تأكيد مستقل",
-        _ => "Fresh confirmation"
+        _ => "FRESH CONFIRMATION"
     };
+
+    var retryLabel = locale switch
+    {
+        "pl" => "Spróbuj ponownie",
+        "ar" => "حاول مرة أخرى",
+        _ => "Try again"
+    };
+
+    var remediationLabel = locale switch
+    {
+        "pl" => "Wskazówka naprawcza",
+        "ar" => "مساعدة علاجية",
+        _ => "Guided remediation"
+    };
+
+    var eddyMessage =
+        question is not null &&
+        question.IncorrectAttemptCount > 0
+            ? $"{remediationLabel}: {guidanceText}"
+            : question?.IsIndependentConfirmation == true
+                ? confirmationLabel
+                : guidanceText;
 }
 
 @section Head {
-<style>
-    .up-page{display:grid;gap:18px}
-    .up-hero{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;padding:24px;border-radius:24px;background:linear-gradient(135deg,#103846,#164f5d);color:#fff}
-    .up-eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:.8rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#c9f7e8}
-    .up-hero h1{margin:8px 0 6px;font-size:clamp(1.65rem,3vw,2.45rem)}
-    .up-hero p{margin:0;color:rgba(255,255,255,.82)}
-    .up-progress-wrap{min-width:180px;text-align:right}
-    .up-progress-label{font-weight:900}
-    .up-progress{height:10px;margin-top:10px;border-radius:999px;background:rgba(255,255,255,.18);overflow:hidden}
-    .up-progress span{display:block;height:100%;border-radius:inherit;background:#71e0c4}
-    .up-card{padding:24px;border:1px solid rgba(19,64,79,.12);border-radius:24px;background:#fff;box-shadow:0 14px 34px rgba(19,64,79,.08)}
-    .up-question-head{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:18px}
-    .up-question-number{font-size:.82rem;font-weight:900;color:#52717d;text-transform:uppercase;letter-spacing:.06em}
-    .up-badge{display:inline-flex;padding:6px 10px;border-radius:999px;background:#eafaf4;color:#17634f;font-size:.78rem;font-weight:900}
-    .up-prompt{font-size:clamp(1.25rem,2.4vw,1.8rem);font-weight:900;line-height:1.35;color:#173c47;text-align:center;margin:10px auto 22px;max-width:820px}
-    .up-visual{width:min(700px,100%);margin:0 auto 22px;padding:16px;border-radius:20px;background:#f7fbfc;border:1px solid #d9e8ec}
-    .up-visual svg{display:block;width:100%;height:auto;max-height:360px}
-    .up-form{display:grid;gap:16px;justify-items:center}
-    .up-input{width:min(440px,100%);min-height:58px;border:2px solid #bfd4da;border-radius:14px;padding:10px 16px;text-align:center;font-size:1.45rem;font-weight:900;color:#173c47;background:#fff}
-    .up-input:focus{outline:4px solid rgba(113,224,196,.28);border-color:#3d9d86}
-    .up-choices{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-    .up-choice{min-width:120px;border:1px solid #c8dce1;border-radius:14px;padding:13px 18px;background:#f8fbfc;color:#173c47;font-weight:900;cursor:pointer}
-    .up-choice:hover,.up-choice:focus{border-color:#3d9d86;background:#eefaf6}
-    .up-feedback{padding:14px 16px;border-radius:16px;font-weight:800}
-    .up-feedback.ok{background:#eafaf4;color:#145d4b;border:1px solid #b7eadb}
-    .up-feedback.bad{background:#fff1ef;color:#85332b;border:1px solid #f0c0ba}
-    .up-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-    .up-primary{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 18px;border:0;border-radius:12px;background:#133f4d;color:#fff;text-decoration:none;font-weight:900;cursor:pointer}
-    .up-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 18px;border:1px solid #c8dce1;border-radius:12px;background:#fff;color:#173c47;text-decoration:none;font-weight:800}
-    .up-coach{display:flex;gap:14px;align-items:center;padding:16px;border-radius:18px;background:#f7fbfc;border:1px solid #d9e8ec}
-    .up-coach img{width:64px;height:auto}
-    .up-complete{text-align:center;padding:34px}
-    .up-complete img{width:86px;height:auto}
-    @@media(max-width:720px){.up-hero{display:grid}.up-progress-wrap{text-align:left;min-width:0}.up-card{padding:18px}.up-question-head{align-items:flex-start}}
-</style>
+    <link rel="stylesheet"
+          href="~/css/game-workspace-v1.css"
+          asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/curriculum-workspace-runtime.css"
+          asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/eddy-overlap-v1.css"
+          asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/practice-unified-ui-v2.css"
+          asp-append-version="true" />
+    <style>
+        .adaptive-gw-shell {
+            display: grid;
+            gap: 14px;
+            width: min(1180px, 100%);
+            margin: 0 auto;
+        }
+
+        .adaptive-gw-shell .gw-game {
+            min-height: 650px !important;
+        }
+
+        .adaptive-gw-shell .gw-stage {
+            min-height: 510px !important;
+        }
+
+        .adaptive-gw-shell .lp-server-card {
+            display: grid;
+            place-items: center;
+            gap: 20px;
+            width: min(920px, 100%);
+            min-height: 330px;
+            margin: 0 auto;
+            padding: 24px 22px 42px;
+            border: 0;
+            background: transparent;
+        }
+
+        .adaptive-gw-shell .lp-server-visual {
+            width: min(620px, 100%);
+            margin: 0 auto 16px;
+            padding: 12px;
+            border-radius: 20px;
+            background: rgba(255,255,255,.95);
+            color: #123547;
+        }
+
+        .adaptive-gw-shell .lp-server-visual svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 330px;
+        }
+
+        .adaptive-gw-shell .lp-server-form {
+            display: grid;
+            gap: 16px;
+            justify-items: center;
+            width: min(760px, 100%);
+        }
+
+        .adaptive-gw-shell .lp-server-input {
+            width: min(430px, 100%);
+            min-height: 64px;
+            border: 3px solid rgba(255,212,95,.92);
+            border-radius: 16px;
+            background: #fff;
+            color: #173543;
+            padding: 10px 18px;
+            text-align: center;
+            font-size: 1.65rem;
+            font-weight: 900;
+            outline: none;
+        }
+
+        .adaptive-gw-shell .lp-server-input:focus {
+            box-shadow: 0 0 0 5px rgba(255,212,95,.2);
+        }
+
+        .adaptive-gw-shell .lp-server-choice-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .adaptive-gw-shell .lp-server-choice {
+            min-width: 126px;
+            border: 2px solid rgba(255,255,255,.68);
+            border-radius: 18px;
+            padding: 13px 18px;
+            background: linear-gradient(180deg,#fff2cf,#ead8ad);
+            color: #173c47;
+            font-size: 1.05rem;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 5px 0 rgba(111,85,39,.68);
+        }
+
+        .adaptive-feedback {
+            width: min(100%, 1180px);
+            margin: 0 auto;
+            padding: 13px 16px;
+            border-radius: 16px;
+            font-weight: 850;
+        }
+
+        .adaptive-feedback--ok {
+            color: #155c4a;
+            background: #e8faf3;
+            border: 1px solid #b3ead7;
+        }
+
+        .adaptive-feedback--bad {
+            color: #8a3028;
+            background: #fff1ef;
+            border: 1px solid #f1bbb4;
+        }
+
+        .adaptive-remediation-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(255,212,95,.16);
+            color: #ffe18b;
+            border: 1px solid rgba(255,212,95,.34);
+            font-size: .78rem;
+            font-weight: 900;
+        }
+
+        .adaptive-complete {
+            width: min(560px,100%);
+            margin: 72px auto;
+            padding: 32px;
+            text-align: center;
+            border-radius: 26px;
+            background: rgba(4,28,45,.84);
+            color: #fff;
+        }
+
+        .adaptive-complete img {
+            width: 92px;
+            height: 92px;
+            object-fit: contain;
+        }
+
+        .adaptive-complete-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        @@media (max-width: 720px) {
+            .adaptive-gw-shell .gw-game {
+                min-height: 720px !important;
+            }
+
+            .adaptive-gw-shell .lp-server-card {
+                padding-inline: 12px;
+            }
+        }
+    </style>
 }
 
-<section class="up-page">
-    <header class="up-hero">
-        <div>
-            <span class="up-eyebrow">@practiceLabel · @personalizedLabel</span>
-            <h1>@lessonTitle</h1>
-            <p>@unitTitle</p>
-        </div>
-        <div class="up-progress-wrap">
-            <div class="up-progress-label">
-                @(Model.IsCompleted ? Model.TargetQuestionCount : Model.CurrentSequence)
-                / @Model.TargetQuestionCount
-            </div>
-            <div class="up-progress"
-                 role="progressbar"
-                 aria-valuemin="0"
-                 aria-valuemax="100"
-                 aria-valuenow="@progress">
-                <span style="width:@progress%"></span>
-            </div>
-        </div>
-    </header>
-
+<section class="adaptive-gw-shell">
     @if (TempData["Error"] is string error)
     {
-        <div class="up-feedback bad" role="alert">@error</div>
+        <div class="adaptive-feedback adaptive-feedback--bad"
+             role="alert">@error</div>
     }
 
     @if (feedbackKind is not null)
     {
-        <div class="up-feedback @(feedbackKind == "correct" ? "ok" : "bad")" role="status">
-            <strong>@(feedbackKind == "correct" ? S["PracticeCorrect"].Value : S["PracticeIncorrect"].Value)</strong>
+        <div class="adaptive-feedback @(feedbackKind == "correct" ? "adaptive-feedback--ok" : "adaptive-feedback--bad")"
+             role="status"
+             aria-live="polite"
+             data-practice-feedback>
+            <strong>
+                @(feedbackKind == "correct"
+                    ? S["PracticeCorrect"].Value
+                    : S["PracticeIncorrect"].Value)
+            </strong>
             @if (!string.IsNullOrWhiteSpace(feedbackSolution))
             {
                 <span> @feedbackSolution</span>
             }
+            @if (feedbackKind == "incorrect")
+            {
+                <span> @retryLabel.</span>
+            }
         </div>
     }
 
-    @if (Model.IsPaused)
-    {
-        <section class="up-card up-complete">
-            <img src="~/images/public/edulaytiks-character.png?v=43" alt="" />
-            <h2>@(locale switch { "pl" => "Ćwiczenie zostało bezpiecznie wstrzymane", "ar" => "تم إيقاف التدريب مؤقتًا بأمان", _ => "Practice safely paused" })</h2>
-            <p>@(locale switch { "pl" => "Twoja ostatnia odpowiedź została zapisana. Spróbuj ponownie później.", "ar" => "تم حفظ إجابتك الأخيرة. حاول مرة أخرى لاحقًا.", _ => "Your last answer was saved. Try again later." })</p>
-            <div class="up-actions">
-                <a class="up-primary" asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">@backLabel</a>
-            </div>
-        </section>
-    }
-    else if (Model.IsCompleted)
-    {
-        <section class="up-card up-complete">
-            <img src="~/images/public/edulaytiks-character.png?v=43" alt="" />
-            <h2>@S["PracticeFinish"]</h2>
-            <p>@(locale switch { "pl" => "Sesja została zakończona. Twoje odpowiedzi zostały zapisane w historii nauki.", "ar" => "اكتملت الجلسة وتم حفظ إجاباتك في سجل التعلم.", _ => "Session complete. Your answers are saved in your learning history." })</p>
-            <div class="up-actions">
-                <a class="up-primary" asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">@backLabel</a>
-                @if (AdaptivePolicy.EnableQuestionLog)
-                {
-                    <a class="up-secondary" asp-controller="StudentAdaptiveIntelligence" asp-action="QuestionLog">Question log</a>
-                }
-            </div>
-        </section>
-    }
-    else if (question is not null)
-    {
-        <section class="up-card">
-            <div class="up-question-head">
-                <span class="up-question-number">@missionLabel · @question.Sequence / @Model.TargetQuestionCount</span>
-                @if (question.IsIndependentConfirmation)
-                {
-                    <span class="up-badge">@confirmationLabel</span>
-                }
+    <section class="gw-game gw-universal"
+             aria-label="@practiceLabel">
+        <div class="gw-hud">
+            <div class="gw-brand">
+                <div class="gw-brand-mark"
+                     aria-hidden="true">◆</div>
+                <div>
+                    <strong>EDULYTICS PRACTICE</strong>
+                    <small>@unitTitle</small>
+                </div>
             </div>
 
-            <div class="up-prompt">@stem</div>
+            <div class="gw-hud-right">
+                <span class="gw-pill">
+                    @(Model.IsCompleted
+                        ? Model.TargetQuestionCount
+                        : Model.CurrentSequence)
+                    /
+                    @Model.TargetQuestionCount
+                </span>
+                <button class="gw-icon"
+                        type="button"
+                        data-practice-sound
+                        aria-label="Sound"
+                        aria-pressed="true">🔊</button>
+            </div>
+        </div>
 
-            @if (!string.IsNullOrWhiteSpace(visualSvg))
+        <div class="gw-progress"
+             role="progressbar"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             aria-valuenow="@progress">
+            <span style="width:@progress%"></span>
+        </div>
+
+        <div class="gw-stage">
+            @if (Model.IsPaused)
             {
-                <div class="up-visual">@Html.Raw(visualSvg)</div>
+                <section class="adaptive-complete">
+                    <img src="~/images/public/edulaytiks-character.png?v=43"
+                         alt="" />
+                    <h2>Practice safely paused</h2>
+                    <p>Your latest learning evidence was saved. Please try again later.</p>
+                    <div class="adaptive-complete-actions">
+                        <a class="gw-primary"
+                           asp-controller="StudentPortal"
+                           asp-action="Lesson"
+                           asp-route-id="@Model.LessonId">Back to lesson</a>
+                    </div>
+                </section>
             }
-
-            @if (interaction is null)
+            else if (Model.IsCompleted)
             {
-                <div class="up-feedback bad">This Practice interaction is not available.</div>
+                <section class="adaptive-complete">
+                    <img src="~/images/public/edulaytiks-character.png?v=43"
+                         alt="" />
+                    <h2>@S["PracticeFinish"]</h2>
+                    <p>Your answers and learning evidence have been saved.</p>
+                    <div class="adaptive-complete-actions">
+                        <a class="gw-primary"
+                           asp-controller="StudentPortal"
+                           asp-action="Lesson"
+                           asp-route-id="@Model.LessonId">Back to lesson</a>
+                        @if (AdaptivePolicy.EnableQuestionLog)
+                        {
+                            <a class="gw-primary"
+                               asp-controller="StudentAdaptiveIntelligence"
+                               asp-action="QuestionLog">Question log</a>
+                        }
+                    </div>
+                </section>
             }
-            else
+            else if (question is not null)
             {
-                <form asp-action="AnswerAdaptiveLessonAttempt"
-                      asp-route-id="@Model.SessionId"
-                      method="post"
-                      class="up-form">
-                    @Html.AntiForgeryToken()
-                    <input type="hidden" name="sequence" value="@question.Sequence" />
-
-                    @if (isPromptMultipleChoice)
+                <div class="gw-mission">
+                    <span>
+                        @(question.IsIndependentConfirmation
+                            ? confirmationLabel
+                            : missionLabel)
+                        · @question.Sequence / @Model.TargetQuestionCount
+                    </span>
+                    <strong data-practice-question>@stem</strong>
+                    <small>@unitTitle</small>
+                    @if (question.IncorrectAttemptCount > 0)
                     {
-                        <div class="up-choices" role="radiogroup" aria-label="@S["YourAnswer"]">
-                            @foreach (var choice in choices)
-                            {
-                                <button class="up-choice" type="submit" name="answer" value="@choice.Value">
-                                    @choice.Label) @choice.Value
-                                </button>
-                            }
+                        <div class="adaptive-remediation-badge">
+                            @remediationLabel ·
+                            @question.IncorrectAttemptCount
+                            @(question.IncorrectAttemptCount == 1 ? "retry" : "retries")
                         </div>
                     }
-                    else if (interaction.InteractionKind == LessonPracticeInteractionKind.RelationChoice)
+                </div>
+
+                <section class="gw-runtime-board lp-server-card">
+                    @if (!string.IsNullOrWhiteSpace(visualSvg))
                     {
-                        <div class="up-choices" aria-label="@S["YourAnswer"]">
-                            @foreach (var relation in new[] { "<", "=", ">" })
-                            {
-                                <button class="up-choice" type="submit" name="answer" value="@relation">@relation</button>
-                            }
+                        <div class="lp-server-visual">
+                            @Html.Raw(visualSvg)
+                        </div>
+                    }
+
+                    @if (interaction is null)
+                    {
+                        <div class="gw-error">
+                            This Practice interaction is not available.
                         </div>
                     }
                     else
                     {
-                        <input class="up-input"
-                               name="answer"
-                               maxlength="128"
-                               required
-                               autocomplete="off"
-                               autofocus
-                               aria-label="@S["YourAnswer"]" />
-                        <button class="up-primary" type="submit">@S["PracticeCheckAnswer"]</button>
-                    }
-                </form>
-            }
-        </section>
+                        <form asp-action="AnswerAdaptiveLessonAttempt"
+                              asp-route-id="@Model.SessionId"
+                              method="post"
+                              class="lp-server-form">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden"
+                                   name="sequence"
+                                   value="@question.Sequence" />
 
-        <aside class="up-coach">
-            <img src="~/images/public/edulaytiks-character.png?v=43" alt="" />
-            <div>
-                <strong>EDDY</strong>
-                <p>@(question.IsIndependentConfirmation
-                    ? confirmationLabel
-                    : locale switch
-                    {
-                        "pl" => "Rozwiąż zadanie. Następne pytanie zostanie dobrane na podstawie Twojej odpowiedzi.",
-                        "ar" => "حل السؤال. سيتم اختيار السؤال التالي بناءً على إجابتك.",
-                        _ => "Solve the question. Your next question will be selected from your answer."
-                    })</p>
-            </div>
-        </aside>
-    }
+                            @if (isPromptMultipleChoice)
+                            {
+                                <div class="lp-server-choice-row"
+                                     role="radiogroup"
+                                     aria-label="@S["YourAnswer"]">
+                                    @foreach (var choice in choices)
+                                    {
+                                        <button class="lp-server-choice"
+                                                type="submit"
+                                                name="answer"
+                                                value="@choice.Value">
+                                            @choice.Label) @choice.Value
+                                        </button>
+                                    }
+                                </div>
+                            }
+                            else if (
+                                interaction.InteractionKind ==
+                                LessonPracticeInteractionKind.RelationChoice)
+                            {
+                                <div class="lp-server-choice-row"
+                                     aria-label="@S["YourAnswer"]">
+                                    @foreach (var relation in new[] { "<", "=", ">" })
+                                    {
+                                        <button class="lp-server-choice"
+                                                type="submit"
+                                                name="answer"
+                                                value="@relation">
+                                            @relation
+                                        </button>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <input id="lesson-practice-answer"
+                                       class="lp-server-input"
+                                       name="answer"
+                                       maxlength="128"
+                                       required
+                                       autocomplete="off"
+                                       autofocus
+                                       aria-label="@S["YourAnswer"]" />
+
+                                <button class="gw-primary"
+                                        type="submit">
+                                    @S["PracticeCheckAnswer"]
+                                </button>
+                            }
+                        </form>
+                    }
+                </section>
+
+                <aside class="gw-eddy">
+                    <img src="~/images/public/edulaytiks-character.png?v=43"
+                         alt=""
+                         width="98"
+                         height="132" />
+                    <div>
+                        <span>EDDY</span>
+                        <p data-practice-hint
+                           role="status"
+                           aria-live="polite">@eddyMessage</p>
+                    </div>
+                </aside>
+            }
+        </div>
+    </section>
 </section>
+
+@section Scripts {
+    <script src="~/js/practice-voice-runtime.js"
+            asp-append-version="true"></script>
+    <script src="~/js/student-lesson-practice.js"
+            asp-append-version="true"></script>
+}

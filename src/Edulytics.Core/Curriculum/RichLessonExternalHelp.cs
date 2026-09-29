@@ -20,6 +20,16 @@ public sealed record RichLessonExternalResource(
     RichLessonExternalResourceReviewStatus ReviewStatus,
     string CheckedAtUtc);
 
+public sealed record RichLessonExternalVideo(
+    string Provider,
+    string VideoId,
+    string Title,
+    string Creator,
+    string Language,
+    string WhyRecommended,
+    RichLessonExternalResourceReviewStatus ReviewStatus,
+    string CheckedAtUtc);
+
 public sealed record RichLessonSearchSuggestion(
     string Provider,
     string Label,
@@ -28,6 +38,7 @@ public sealed record RichLessonSearchSuggestion(
 
 public sealed record RichLessonExternalHelp(
     IReadOnlyList<RichLessonExternalResource> ApprovedResources,
+    IReadOnlyList<RichLessonExternalVideo> ApprovedVideos,
     IReadOnlyList<RichLessonSearchSuggestion> SearchSuggestions);
 
 /// <summary>
@@ -77,6 +88,23 @@ public static class RichLessonExternalHelpRegistry
                 ]
             };
 
+    private static readonly IReadOnlyDictionary<string, RichLessonExternalVideo[]>
+        VideosBySkill =
+            new Dictionary<string, RichLessonExternalVideo[]>(
+                StringComparer.Ordinal)
+            {
+                ["supporting.number.place_value_rounding"] =
+                [
+                    ApprovedVideo(
+                        "YouTube",
+                        "fd-E18EqSVk",
+                        "Math Antics - Rounding",
+                        "mathantics",
+                        "en",
+                        "Explains rounding through place value, nearest multiples and number-line reasoning that matches this lesson skill.")
+                ]
+            };
+
     public static RichLessonExternalHelp Resolve(
         string lessonCode,
         string lessonTitle,
@@ -95,6 +123,18 @@ public static class RichLessonExternalHelpRegistry
                 contract.SkillId,
                 out var resources)
                 ? resources
+                    .Where(x =>
+                        x.ReviewStatus ==
+                        RichLessonExternalResourceReviewStatus.Approved)
+                    .ToArray()
+                : [];
+
+        var approvedVideos =
+            contract is not null &&
+            VideosBySkill.TryGetValue(
+                contract.SkillId,
+                out var videos)
+                ? videos
                     .Where(x =>
                         x.ReviewStatus ==
                         RichLessonExternalResourceReviewStatus.Approved)
@@ -128,6 +168,7 @@ public static class RichLessonExternalHelpRegistry
 
         return new RichLessonExternalHelp(
             approvedResources,
+            approvedVideos,
             [
                 new RichLessonSearchSuggestion(
                     "Google",
@@ -171,7 +212,53 @@ public static class RichLessonExternalHelpRegistry
                     $"Invalid approved Rich Lesson external resource: {resource.Title}.");
             }
         }
+
+        foreach (var video in VideosBySkill.Values.SelectMany(x => x))
+        {
+            if (video.ReviewStatus !=
+                RichLessonExternalResourceReviewStatus.Approved)
+            {
+                continue;
+            }
+
+            if (!string.Equals(
+                    video.Provider,
+                    "YouTube",
+                    StringComparison.OrdinalIgnoreCase) ||
+                video.VideoId.Length != 11 ||
+                video.VideoId.Any(ch =>
+                    !(char.IsLetterOrDigit(ch) ||
+                      ch is '_' or '-')) ||
+                string.IsNullOrWhiteSpace(video.Title) ||
+                string.IsNullOrWhiteSpace(video.Creator) ||
+                string.IsNullOrWhiteSpace(video.WhyRecommended) ||
+                !DateTimeOffset.TryParse(
+                    video.CheckedAtUtc,
+                    out var checkedAt) ||
+                checkedAt.Offset != TimeSpan.Zero)
+            {
+                throw new InvalidOperationException(
+                    $"Invalid approved Rich Lesson external video: {video.Title}.");
+            }
+        }
     }
+
+    private static RichLessonExternalVideo ApprovedVideo(
+        string provider,
+        string videoId,
+        string title,
+        string creator,
+        string language,
+        string whyRecommended) =>
+        new(
+            provider,
+            videoId,
+            title,
+            creator,
+            language,
+            whyRecommended,
+            RichLessonExternalResourceReviewStatus.Approved,
+            "2026-09-29T00:00:00Z");
 
     private static RichLessonExternalResource Approved(
         string provider,

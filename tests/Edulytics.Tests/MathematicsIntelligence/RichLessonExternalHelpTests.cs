@@ -89,6 +89,7 @@ public sealed class RichLessonExternalHelpTests
             "en");
 
         Assert.Empty(help.ApprovedResources);
+        Assert.Empty(help.ApprovedVideos);
         Assert.Equal(2, help.SearchSuggestions.Count);
     }
 
@@ -117,7 +118,23 @@ public sealed class RichLessonExternalHelpTests
     }
 
     [Fact]
-    public void Phase8A_SharedRenderer_LabelsExternalSearchAsOptionalAndUnreviewed()
+    public void Phase8A_RoundingLesson_ResolvesReviewedEmbeddedVideo()
+    {
+        var help = RichLessonExternalHelpRegistry.Resolve(
+            "PED:UAE-MOE-MATH:L4:COMMON:01:02:ROUNDING-TO-POWERS-OF-TEN",
+            "Rounding to powers of ten",
+            "en");
+
+        var video = Assert.Single(help.ApprovedVideos);
+        Assert.Equal("YouTube", video.Provider);
+        Assert.Equal("fd-E18EqSVk", video.VideoId);
+        Assert.Equal(
+            RichLessonExternalResourceReviewStatus.Approved,
+            video.ReviewStatus);
+    }
+
+    [Fact]
+    public void Phase8A_SharedRenderer_EmbedsReviewedHelpAndDoesNotExposeSearchExits()
     {
         var root = FindRoot();
         var partial = File.ReadAllText(Path.Combine(
@@ -129,15 +146,23 @@ public sealed class RichLessonExternalHelpTests
             partial,
             StringComparison.Ordinal);
         Assert.Contains(
-            "External search results are not reviewed by Edulytics",
+            "approvedExternalVideos",
             partial,
             StringComparison.Ordinal);
         Assert.Contains(
-            "never affect mastery, assessment, or Adaptive decisions",
+            "youtube-nocookie.com/embed/",
             partial,
             StringComparison.Ordinal);
         Assert.Contains(
-            "noopener noreferrer external",
+            "Help content never affects mastery, assessment, or Adaptive decisions",
+            partial,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "externalHelp.SearchSuggestions.Count",
+            partial,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "suggestion.Url",
             partial,
             StringComparison.Ordinal);
     }

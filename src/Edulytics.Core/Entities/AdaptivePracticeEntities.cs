@@ -69,6 +69,9 @@ public sealed class AdaptivePracticeTurn : ISchoolScoped
     public DateTime PresentedAtUtc { get; set; }
     public DateTime? AnsweredAtUtc { get; set; }
     public string? SubmittedAnswer { get; set; }
+    public int IncorrectAttemptCount { get; set; }
+    public string? LastIncorrectAnswer { get; set; }
+    public DateTime? LastIncorrectAtUtc { get; set; }
     public bool? IsCorrect { get; set; }
     public decimal? Score { get; set; }
     public string? Feedback { get; set; }
