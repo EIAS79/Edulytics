@@ -40,7 +40,11 @@ public static class LessonContentRegistrationExtensions
                     client.Timeout = TimeSpan.FromSeconds(8);
                     client.DefaultRequestHeaders.UserAgent.ParseAdd(
                         "Edulytics-Lesson-YouTube/2.0");
-                });
+                })
+            // YouTube requires the API key on each request. Keep the default
+            // HttpClient loggers off this client so request URLs never leak
+            // the key through application request logging.
+            .RemoveAllLoggers();
 
         return services;
     }
