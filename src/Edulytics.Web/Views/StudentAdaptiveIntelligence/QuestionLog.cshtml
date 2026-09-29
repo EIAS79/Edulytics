@@ -7,11 +7,11 @@
 <section class="student-progress-page">
     <header class="student-progress-hero">
         <div>
-            <span class="student-eyebrow">Adaptive Practice V2</span>
+            <span class="student-eyebrow">Edulytics Practice</span>
             <h1>Question log</h1>
-            <p>@Model.QuestionCount questions across @Model.SessionCount adaptive sessions.</p>
+            <p>@Model.QuestionCount questions across @Model.SessionCount practice sessions.</p>
             <small>
-                This log is your own learner evidence. It shows why the adaptive engine selected each question.
+                This log is your own learner evidence. It shows why Edulytics selected each question and records guided retries.
             </small>
         </div>
     </header>
@@ -57,9 +57,18 @@
                             </div>
                         </div>
 
+                        @if (item.IncorrectAttemptCount > 0)
+                        {
+                            <p><strong>Guided retries:</strong> @item.IncorrectAttemptCount</p>
+                            @if (!string.IsNullOrWhiteSpace(item.LastIncorrectAnswer))
+                            {
+                                <p><strong>Last incorrect answer:</strong> @item.LastIncorrectAnswer</p>
+                            }
+                        }
+
                         @if (!string.IsNullOrWhiteSpace(item.SubmittedAnswer))
                         {
-                            <p><strong>Your answer:</strong> @item.SubmittedAnswer</p>
+                            <p><strong>Final accepted answer:</strong> @item.SubmittedAnswer</p>
                         }
 
                         @if (!string.IsNullOrWhiteSpace(item.DecisionReasonCode))
