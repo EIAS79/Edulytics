@@ -2,6 +2,7 @@ using Edulytics.Core.AdaptivePractice;
 using Edulytics.Core.Entities;
 using Edulytics.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 namespace Edulytics.Data.Repositories;
 
@@ -27,6 +28,9 @@ public sealed class AdaptivePracticeRepository(
 
         // One SaveChanges call is the atomic unit. Relational EF providers
         // (including PostgreSQL/Npgsql) wrap the save in a transaction.
+        Stamp(session);
+        Stamp(turn);
+
         context.AdaptivePracticeSessions.Add(session);
         context.AssessmentItems.Add(item);
         context.AssessmentItemOutcomes.AddRange(itemOutcomes);
@@ -34,7 +38,9 @@ public sealed class AdaptivePracticeRepository(
         context.AdaptiveDecisionSnapshots.Add(decision);
         context.AdaptivePracticeTurns.Add(turn);
 
-        await context.SaveChangesAsync(cancellationToken);
+        await SaveChangesWithConflictMappingAsync(
+            "Adaptive Practice session creation conflicted with another request.",
+            cancellationToken);
     }
 
     public Task<AdaptivePracticeSession?> GetSessionAsync(
@@ -268,7 +274,14 @@ public sealed class AdaptivePracticeRepository(
             context.AdaptivePracticeTurns.Add(nextTurn);
         }
 
-        await context.SaveChangesAsync(cancellationToken);
+        Stamp(session);
+        Stamp(answeredTurn);
+        if (nextTurn is not null)
+            Stamp(nextTurn);
+
+        await SaveChangesWithConflictMappingAsync(
+            "Adaptive Practice answer conflicted with another submission.",
+            cancellationToken);
     }
 
     public async Task<IReadOnlyList<StudentMisconceptionState>>
@@ -294,7 +307,9 @@ public sealed class AdaptivePracticeRepository(
         await ApplyMisconceptionStateAsync(
             state,
             cancellationToken);
-        await context.SaveChangesAsync(cancellationToken);
+        await SaveChangesWithConflictMappingAsync(
+            "Adaptive misconception state conflicted with another write.",
+            cancellationToken);
     }
 
     public async Task<IReadOnlyList<StudentRepresentationFluencyState>>
@@ -318,7 +333,9 @@ public sealed class AdaptivePracticeRepository(
         await ApplyRepresentationStateAsync(
             state,
             cancellationToken);
-        await context.SaveChangesAsync(cancellationToken);
+        await SaveChangesWithConflictMappingAsync(
+            "Adaptive representation state conflicted with another write.",
+            cancellationToken);
     }
 
     private async Task ApplyMisconceptionStateAsync(
@@ -337,6 +354,7 @@ public sealed class AdaptivePracticeRepository(
 
         if (existing is null)
         {
+            Stamp(state);
             context.StudentMisconceptionStates.Add(state);
             return;
         }
@@ -350,6 +368,7 @@ public sealed class AdaptivePracticeRepository(
         existing.LastRemediationAtUtc = state.LastRemediationAtUtc;
         existing.ResolvedAtUtc = state.ResolvedAtUtc;
         existing.EngineVersion = state.EngineVersion;
+        Stamp(existing);
     }
 
     private async Task ApplyRepresentationStateAsync(
@@ -368,6 +387,7 @@ public sealed class AdaptivePracticeRepository(
 
         if (existing is null)
         {
+            Stamp(state);
             context.StudentRepresentationFluencyStates.Add(state);
             return;
         }
@@ -377,6 +397,7 @@ public sealed class AdaptivePracticeRepository(
         existing.WeightedFluency = state.WeightedFluency;
         existing.LatestEvidenceAtUtc = state.LatestEvidenceAtUtc;
         existing.EngineVersion = state.EngineVersion;
+        Stamp(existing);
     }
 
     public async Task AddShadowObservationIfMissingAsync(
@@ -400,6 +421,42 @@ public sealed class AdaptivePracticeRepository(
 
         await context.SaveChangesAsync(cancellationToken);
     }
+
+    private async Task SaveChangesWithConflictMappingAsync(
+        string message,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            await context.SaveChangesAsync(cancellationToken);
+        }
+        catch (DbUpdateConcurrencyException exception)
+        {
+            throw new AdaptivePracticeWriteConflictException(
+                message,
+                exception);
+        }
+        catch (DbUpdateException exception)
+            when (exception.InnerException is PostgresException postgres &&
+                  postgres.SqlState == PostgresErrorCodes.UniqueViolation)
+        {
+            throw new AdaptivePracticeWriteConflictException(
+                message,
+                exception);
+        }
+    }
+
+    private static void Stamp(AdaptivePracticeSession entity) =>
+        entity.RowVersion = Guid.NewGuid().ToByteArray();
+
+    private static void Stamp(AdaptivePracticeTurn entity) =>
+        entity.RowVersion = Guid.NewGuid().ToByteArray();
+
+    private static void Stamp(StudentMisconceptionState entity) =>
+        entity.RowVersion = Guid.NewGuid().ToByteArray();
+
+    private static void Stamp(StudentRepresentationFluencyState entity) =>
+        entity.RowVersion = Guid.NewGuid().ToByteArray();
 
     private static void ValidateGeneratedTurn(
         AdaptivePracticeSession session,
