@@ -34,10 +34,10 @@
                             <span class="student-skill-status @(item.IsCorrect == true ? "is-positive" : item.IncorrectAttemptCount > 0 || item.IsCorrect == false ? "is-negative" : "is-muted")">
                                 @(item.IsCorrect == true
                                     ? "Correct"
-                                    : item.IncorrectAttemptCount > 0
-                                        ? "Guided retry"
-                                        : item.IsCorrect == false
-                                            ? "Needs review"
+                                    : item.IsCorrect == false
+                                        ? "Closed incorrect"
+                                        : item.IncorrectAttemptCount > 0
+                                            ? "Retry in progress"
                                             : "Not answered")
                             </span>
                         </div>
@@ -65,7 +65,7 @@
 
                         @if (item.IncorrectAttemptCount > 0)
                         {
-                            <p><strong>Guided retries:</strong> @item.IncorrectAttemptCount</p>
+                            <p><strong>Incorrect attempts:</strong> @item.IncorrectAttemptCount</p>
                             @if (!string.IsNullOrWhiteSpace(item.LastIncorrectAnswer))
                             {
                                 <p><strong>Last incorrect answer:</strong> @item.LastIncorrectAnswer</p>
@@ -74,7 +74,19 @@
 
                         @if (!string.IsNullOrWhiteSpace(item.SubmittedAnswer))
                         {
-                            <p><strong>Final accepted answer:</strong> @item.SubmittedAnswer</p>
+                            if (item.IsCorrect == true)
+                            {
+                                <p><strong>Final accepted answer:</strong> @item.SubmittedAnswer</p>
+                            }
+                            else
+                            {
+                                <p><strong>Final submitted answer:</strong> @item.SubmittedAnswer</p>
+                            }
+                        }
+
+                        @if (item.IsCorrect == false)
+                        {
+                            <p><strong>Item outcome:</strong> Closed after the allowed retry was used.</p>
                         }
 
                         @if (!string.IsNullOrWhiteSpace(item.DecisionReasonCode))
