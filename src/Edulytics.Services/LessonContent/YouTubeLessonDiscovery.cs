@@ -274,6 +274,8 @@ public sealed partial class YouTubeLessonDiscoveryService :
                 1,
                 10).ToString(
                     CultureInfo.InvariantCulture),
+            lessonCode.Trim(),
+            lessonTopicQuery,
             query);
 
         if (ResultCache.TryGetValue(cacheKey, out var cached) &&
