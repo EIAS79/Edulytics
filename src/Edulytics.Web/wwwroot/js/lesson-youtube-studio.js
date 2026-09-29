@@ -75,18 +75,82 @@
         const allResults = root.querySelector("[data-youtube-all-results]");
 
         let requestVersion = 0;
-        let fallbackPlayer = playerShell?.querySelector("iframe") || null;
-        let fallbackSnapshot = fallbackPlayer
+        const fallbackPlayer = playerShell?.querySelector("iframe") || null;
+        const fallbackSnapshot = fallbackPlayer
             ? {
                 src: fallbackPlayer.getAttribute("src") || "",
                 title: fallbackPlayer.getAttribute("title") || ""
             }
             : null;
+        const fallbackFeatureSnapshot = {
+            title: title?.textContent || "",
+            channel: channel?.textContent || "YouTube",
+            match: match?.textContent || "—",
+            matchDetail: matchDetail?.textContent || "—",
+            views: views?.textContent || "—",
+            likes: likes?.textContent || "—",
+            duration: duration?.textContent || "—",
+            watchHref: watch?.getAttribute("href") || "#",
+            metaNodes: featureMeta
+                ? Array.from(featureMeta.childNodes).map(node => node.cloneNode(true))
+                : []
+        };
 
         function setBusy(isBusy) {
             root.classList.toggle("is-loading", isBusy);
             form?.querySelector("button")?.toggleAttribute("disabled", isBusy);
             if (queryInput) queryInput.setAttribute("aria-busy", isBusy ? "true" : "false");
+        }
+
+        function restoreFallbackFeature(emptyMessage) {
+            if (playerShell) {
+                playerShell.replaceChildren();
+
+                if (fallbackSnapshot) {
+                    const iframe = create("iframe");
+                    iframe.dataset.youtubePlayer = "";
+                    iframe.src = fallbackSnapshot.src;
+                    iframe.title = fallbackSnapshot.title || "YouTube lesson video";
+                    iframe.loading = "lazy";
+                    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+                    iframe.allow =
+                        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                    iframe.allowFullscreen = true;
+                    playerShell.appendChild(iframe);
+                } else {
+                    playerShell.appendChild(
+                        create(
+                            "div",
+                            "yt-studio-player__empty",
+                            emptyMessage ||
+                                "No embeddable video passed the current lesson-match checks."
+                        )
+                    );
+                }
+            }
+
+            if (title) title.textContent = fallbackFeatureSnapshot.title;
+            if (channel) channel.textContent = fallbackFeatureSnapshot.channel;
+            if (match) match.textContent = fallbackFeatureSnapshot.match;
+            if (matchDetail) matchDetail.textContent = fallbackFeatureSnapshot.matchDetail;
+            if (views) views.textContent = fallbackFeatureSnapshot.views;
+            if (likes) likes.textContent = fallbackFeatureSnapshot.likes;
+            if (duration) duration.textContent = fallbackFeatureSnapshot.duration;
+
+            if (featureMeta) {
+                featureMeta.replaceChildren(
+                    ...fallbackFeatureSnapshot.metaNodes.map(node => node.cloneNode(true))
+                );
+            }
+
+            if (watch) {
+                watch.href = fallbackFeatureSnapshot.watchHref;
+                if (fallbackSnapshot && fallbackFeatureSnapshot.watchHref !== "#") {
+                    watch.removeAttribute("aria-disabled");
+                } else {
+                    watch.setAttribute("aria-disabled", "true");
+                }
+            }
         }
 
         function renderPlayer(video, autoplay = false) {
@@ -283,15 +347,9 @@
                     "YouTube search is temporarily unavailable. Use the lesson-scoped channel links instead.";
             }
 
-            if (!fallbackSnapshot && playerShell) {
-                playerShell.replaceChildren();
-                const empty = create("div", "yt-studio-player__empty");
-                empty.appendChild(create("span", "yt-studio-play-mark", "▶"));
-                empty.appendChild(
-                    create("strong", "", "Use the YouTube lesson search or a preferred channel below.")
-                );
-                playerShell.appendChild(empty);
-            }
+            restoreFallbackFeature(
+                "Use the YouTube lesson search or a preferred channel below."
+            );
         }
 
         function renderResult(raw) {
@@ -323,13 +381,9 @@
 
             if (result.featured) {
                 renderFeatured(result.featured);
-            } else if (!fallbackSnapshot && playerShell) {
-                playerShell.replaceChildren(
-                    create(
-                        "div",
-                        "yt-studio-player__empty",
-                        "No embeddable video passed the current lesson-match checks."
-                    )
+            } else {
+                restoreFallbackFeature(
+                    "No embeddable video passed the current lesson-match checks."
                 );
             }
 
