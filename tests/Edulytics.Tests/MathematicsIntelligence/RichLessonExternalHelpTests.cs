@@ -144,6 +144,11 @@ public sealed class RichLessonExternalHelpTests
             root,
             "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"));
 
+        var studioScript = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/lesson-youtube-studio.js"));
+
+
         Assert.Contains(
             "suppressLegacyLessonVideos",
             richPartial,
@@ -181,6 +186,14 @@ public sealed class RichLessonExternalHelpTests
         Assert.Contains(
             "lesson-youtube-studio.js",
             lessonView,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "restoreFallbackFeature",
+            studioScript,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "No embeddable video passed the current lesson-match checks.",
+            studioScript,
             StringComparison.Ordinal);
     }
 
