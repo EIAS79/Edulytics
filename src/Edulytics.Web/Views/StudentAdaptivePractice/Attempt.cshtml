@@ -459,12 +459,22 @@
                     </span>
                     <strong data-practice-question>@stem</strong>
                     <small>@unitTitle</small>
-                    @if (question.IncorrectAttemptCount > 0)
+                    @if (string.Equals(
+                            question.RemediationStageCode,
+                            AdaptiveRemediationStageCodes.TargetedRetry,
+                            StringComparison.Ordinal))
                     {
                         <div class="adaptive-remediation-badge">
-                            @remediationLabel ·
-                            @question.IncorrectAttemptCount
-                            @(question.IncorrectAttemptCount == 1 ? "retry" : "retries")
+                            @remediationLabel · one retry of this item
+                        </div>
+                    }
+                    else if (string.Equals(
+                        question.RemediationStageCode,
+                        AdaptiveRemediationStageCodes.ScaffoldedRecovery,
+                        StringComparison.Ordinal))
+                    {
+                        <div class="adaptive-remediation-badge">
+                            @remediationLabel · fresh recovery item
                         </div>
                     }
                 </div>
