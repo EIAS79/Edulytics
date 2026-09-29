@@ -61,9 +61,7 @@ public sealed class AdaptiveRemediationGuidanceEngine(
                 attemptNumber);
         }
 
-        var method = string.IsNullOrWhiteSpace(item.Solution)
-            ? "Re-read the question, identify the exact mathematical relationship, and check each step before trying again."
-            : item.Solution.Trim();
+        var method = SafeMethodText(item);
 
         if (attemptNumber == 1)
         {
@@ -131,6 +129,29 @@ public sealed class AdaptiveRemediationGuidanceEngine(
             $"Worked example: round {sample} to the nearest {place}. The deciding digit is 3, which is less than 5, so keep the target-place digit and replace all lower digits with zero. The result is {sampleRounded}.",
             misconceptionId,
             attemptNumber);
+    }
+
+    private static string SafeMethodText(
+        AssessmentItem item)
+    {
+        const string fallback =
+            "Re-read the question, identify the exact mathematical relationship, and check each step before trying again.";
+
+        if (string.IsNullOrWhiteSpace(item.Solution))
+            return fallback;
+
+        var method = item.Solution.Trim();
+        var answer = (item.CorrectAnswer ?? string.Empty).Trim();
+
+        if (answer.Length > 1 &&
+            method.Contains(
+                answer,
+                StringComparison.OrdinalIgnoreCase))
+        {
+            return fallback;
+        }
+
+        return method;
     }
 
     private static bool TryReadRoundingParameters(
