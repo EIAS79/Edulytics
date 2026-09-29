@@ -74,7 +74,11 @@ public sealed class AdaptiveV2C0C5ClosureTests
             view,
             StringComparison.Ordinal);
         Assert.Contains(
-            "question.WorkedExample",
+            "question?.WorkedExample",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "data-practice-scaffold",
             view,
             StringComparison.Ordinal);
     }
