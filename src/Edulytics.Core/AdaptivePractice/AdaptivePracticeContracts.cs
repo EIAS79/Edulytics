@@ -95,12 +95,16 @@ public sealed record AdaptivePracticeV2Policy(
             ? AllowedSchoolIds.Contains(schoolId)
             : AllowedSchoolIds.Count == 0 || AllowedSchoolIds.Contains(schoolId);
 
+    public bool RouteAllReadyVerifiedCatalogue { get; init; }
+
     public bool AllowsCurriculumLevel(string key) =>
+        RouteAllReadyVerifiedCatalogue ||
         AllowedCurriculumLevelKeys.Contains(key);
 
     public bool RouteAllReadyVerifiedLessons { get; init; }
 
     public bool AllowsLesson(string lessonCode) =>
+        RouteAllReadyVerifiedCatalogue ||
         RouteAllReadyVerifiedLessons ||
         (Mode == AdaptivePracticeV2Mode.Canary
             ? AllowedLessonCodes.Contains(lessonCode)
