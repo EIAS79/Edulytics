@@ -419,6 +419,11 @@
                 renderResult(data);
             } catch {
                 if (version !== requestVersion) return;
+
+                restoreFallbackFeature(
+                    "YouTube discovery could not load right now. Use the lesson-scoped YouTube links instead."
+                );
+
                 if (status) {
                     status.textContent =
                         "YouTube discovery could not load right now. The lesson remains available and you can use the direct YouTube links.";
