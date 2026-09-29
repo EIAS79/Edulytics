@@ -46,6 +46,36 @@
         }, 120);
     }
 
+    const answerForms = document.querySelectorAll("[data-adaptive-answer-form]");
+    for (const form of answerForms) {
+        let submitted = false;
+
+        form.addEventListener("submit", (event) => {
+            if (submitted) {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                return;
+            }
+
+            if (!form.checkValidity()) {
+                return;
+            }
+
+            submitted = true;
+            form.dataset.submitting = "true";
+            form.setAttribute("aria-busy", "true");
+
+            for (const button of form.querySelectorAll('button[type="submit"]')) {
+                button.setAttribute("aria-disabled", "true");
+            }
+
+            const answerInput = form.querySelector('input[name="answer"]');
+            if (answerInput instanceof HTMLInputElement) {
+                answerInput.readOnly = true;
+            }
+        });
+    }
+
     const input = document.getElementById("lesson-practice-answer");
     if (!input) return;
 
