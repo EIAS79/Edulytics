@@ -43,9 +43,12 @@ public sealed class AdaptivePracticeEligibilityResolver(
         if (level is null)
             return Reject(request, AdaptivePracticeEligibilityReasonCodes.CurriculumLevelUnknown);
 
-        // Primary rollout is intentionally bounded. The explicit allow-list
-        // below remains mandatory even for logical levels 1-6.
-        if (level.LogicalLevel is < 1 or > 6)
+        // Preserve the reviewed Primary rollout unless the explicit
+        // full-catalogue READY_VERIFIED policy is enabled. Full-catalogue
+        // routing still fails closed on unknown levels and on lessons without
+        // a READY_VERIFIED Practice contract below.
+        if (!policy.RouteAllReadyVerifiedCatalogue &&
+            level.LogicalLevel is < 1 or > 6)
         {
             return Reject(
                 request,
