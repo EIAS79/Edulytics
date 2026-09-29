@@ -1,0 +1,60 @@
+@model Edulytics.Services.LessonContent.StudentLessonDetail
+@using Edulytics.Core.Curriculum
+@using System.Globalization
+@{
+    var language =
+        CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var externalHelp =
+        RichLessonExternalHelpRegistry.Resolve(
+            Model.LessonCode,
+            Model.Title,
+            CultureInfo.CurrentUICulture.Name);
+    var resources =
+        externalHelp.ApprovedResources;
+    var sectionTitle = language switch
+    {
+        "pl" => "Sprawdzone materiały",
+        "ar" => "مصادر تمت مراجعتها",
+        _ => "Reviewed resources"
+    };
+    var notice = language switch
+    {
+        "pl" => "Opcjonalne, sprawdzone materiały zewnętrzne wspierające ten sam temat. Nie wpływają na ocenę ani decyzje adaptacyjne.",
+        "ar" => "مصادر خارجية اختيارية تمت مراجعتها لدعم نفس موضوع الدرس. لا تؤثر على التقييم أو القرارات التكيفية.",
+        _ => "Optional reviewed external resources that reinforce the same lesson target. They do not affect assessment or Adaptive decisions."
+    };
+    var openLabel = language switch
+    {
+        "pl" => "Otwórz materiał",
+        "ar" => "فتح المصدر",
+        _ => "Open resource"
+    };
+}
+@if (resources.Count > 0)
+{
+    <section class="lesson-learning-section lesson-learning-section--external-help rich-lesson-section">
+        <header class="lesson-learning-section__header">
+            <span class="lesson-learning-section__number">08</span>
+            <h2>@sectionTitle</h2>
+        </header>
+        <div class="rich-external-help">
+            <p class="rich-video-section__intro">@notice</p>
+            <div class="rich-video-grid">
+                @foreach (var resource in resources)
+                {
+                    <article class="rich-video-card">
+                        <div class="rich-video-card__body">
+                            <p class="rich-video-card__meta">@resource.Provider</p>
+                            <h3>@resource.Title</h3>
+                            <p>@resource.WhyRecommended</p>
+                            <a class="school-button"
+                               href="@resource.Url"
+                               target="_blank"
+                               rel="noopener noreferrer external">@openLabel</a>
+                        </div>
+                    </article>
+                }
+            </div>
+        </div>
+    </section>
+}
