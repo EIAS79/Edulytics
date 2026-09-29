@@ -217,6 +217,11 @@ public sealed partial class YouTubeLessonDiscoveryService :
             lessonCode,
             gradeLabel);
 
+        var lessonTopicQuery = BuildQuery(
+            lessonCode,
+            lessonTitle,
+            learnerQuery: null);
+
         var query = BuildQuery(
             lessonCode,
             lessonTitle,
@@ -297,7 +302,7 @@ public sealed partial class YouTubeLessonDiscoveryService :
 
             var candidates = await HydrateVideosAsync(
                 searchResults,
-                query,
+                lessonTopicQuery,
                 preferredIds,
                 cancellationToken);
 
@@ -618,7 +623,7 @@ public sealed partial class YouTubeLessonDiscoveryService :
 
     private async Task<IReadOnlyList<RankedVideo>> HydrateVideosAsync(
         IReadOnlyList<SearchHit> searchResults,
-        string query,
+        string lessonTopicQuery,
         HashSet<string> preferredChannelIds,
         CancellationToken cancellationToken)
     {
@@ -707,8 +712,12 @@ public sealed partial class YouTubeLessonDiscoveryService :
         return hydrated
             .Select(video =>
             {
+                // Hard lesson relevance is measured only against the
+                // immutable lesson title + verified skill contract. Learner
+                // refinement may influence YouTube's result order, but it can
+                // never make an off-topic video pass the lesson gate.
                 var relevance = CalculateRelevance(
-                    query,
+                    lessonTopicQuery,
                     video.Title,
                     video.Description);
 
