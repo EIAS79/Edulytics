@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using Edulytics.Web.Resilience;
 using Microsoft.AspNetCore.RateLimiting;
 
 namespace Edulytics.Web.Scale;
@@ -104,6 +105,13 @@ public sealed class
                     new SensitivePolicy(
                         "OperationalMutation",
                         30,
+                        TimeSpan.FromMinutes(10),
+                        PartitionKind.Actor),
+
+                BackendResiliencePolicyNames.YouTubeLessonSearch =>
+                    new SensitivePolicy(
+                        BackendResiliencePolicyNames.YouTubeLessonSearch,
+                        20,
                         TimeSpan.FromMinutes(10),
                         PartitionKind.Actor),
 
