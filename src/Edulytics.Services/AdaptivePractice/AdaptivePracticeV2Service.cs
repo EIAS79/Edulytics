@@ -376,7 +376,7 @@ public sealed class AdaptivePracticeV2Service(
                 item.Solution,
                 now);
 
-            var evidenceUpdate = evidenceProjector.Project(
+            var incorrectEvidenceUpdate = evidenceProjector.Project(
                 session,
                 observation,
                 item,
@@ -390,17 +390,17 @@ public sealed class AdaptivePracticeV2Service(
             turn.LastIncorrectAtUtc = now;
             turn.Feedback = item.Solution;
 
-            if (evidenceUpdate.MisconceptionState is not null)
+            if (incorrectEvidenceUpdate.MisconceptionState is not null)
             {
                 turn.MisconceptionFocusId =
-                    evidenceUpdate.MisconceptionState.MisconceptionId;
+                    incorrectEvidenceUpdate.MisconceptionState.MisconceptionId;
             }
 
             await adaptiveRepository.CommitAnsweredTurnAsync(
                 session,
                 turn,
-                evidenceUpdate.MisconceptionState,
-                evidenceUpdate.RepresentationState,
+                incorrectEvidenceUpdate.MisconceptionState,
+                incorrectEvidenceUpdate.RepresentationState,
                 null,
                 [],
                 null,
