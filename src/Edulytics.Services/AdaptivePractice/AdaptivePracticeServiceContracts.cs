@@ -28,7 +28,9 @@ public sealed record AdaptivePracticeQuestionView(
     string? GenerationParametersJson,
     string? Representation,
     int MathematicalComplexityScore,
-    bool IsIndependentConfirmation);
+    bool IsIndependentConfirmation,
+    int IncorrectAttemptCount,
+    string? LastIncorrectAnswer);
 
 public sealed record AdaptivePracticeSessionView(
     Guid SessionId,
