@@ -23,6 +23,7 @@ public sealed class AdaptivePracticeV2Service(
     AdaptiveNextItemDecisionEngine decisionEngine,
     AdaptiveVerifiedItemGenerator itemGenerator,
     AdaptivePracticeEvidenceProjector evidenceProjector,
+    AdaptiveRemediationGuidanceEngine guidanceEngine,
     AdaptivePracticeV2Policy policy)
     : IAdaptivePracticeV2Service
 {
