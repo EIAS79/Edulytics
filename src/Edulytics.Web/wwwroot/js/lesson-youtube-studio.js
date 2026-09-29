@@ -442,6 +442,12 @@
             }
         }
 
+        watch?.addEventListener("click", event => {
+            if (watch.getAttribute("aria-disabled") === "true") {
+                event.preventDefault();
+            }
+        });
+
         form?.addEventListener("submit", event => {
             event.preventDefault();
             load((queryInput?.value || "").trim());
