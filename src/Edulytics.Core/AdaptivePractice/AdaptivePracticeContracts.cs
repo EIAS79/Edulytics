@@ -13,7 +13,7 @@ public enum AdaptivePracticeV2Mode
 public static class AdaptivePracticeV2Versions
 {
     public const string EngineVersion = "adaptive-practice-v2.0";
-    public const string PolicyVersion = "primary-remediation-lock-v1";
+    public const string PolicyVersion = "unified-practice-ready-verified-v1";
 }
 
 public static class AdaptivePracticeEligibilityReasonCodes
