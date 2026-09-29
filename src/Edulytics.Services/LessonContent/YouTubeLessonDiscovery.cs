@@ -340,6 +340,20 @@ public sealed partial class YouTubeLessonDiscoveryService :
             return result;
         }
         catch (OperationCanceledException)
+            when (!cancellationToken.IsCancellationRequested)
+        {
+            return new(
+                false,
+                policy.Label,
+                query,
+                searchUrl,
+                preferredLinks,
+                null,
+                [],
+                false,
+                "YouTube search timed out. You can still use the lesson-scoped YouTube search links.");
+        }
+        catch (OperationCanceledException)
         {
             throw;
         }
