@@ -50,6 +50,16 @@ public sealed class StudentPracticeController(
         CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
+
+        if (scope == StudentPrivatePracticeScope.Lesson &&
+            lessonId.HasValue)
+        {
+            return await StartLessonPractice(
+                curriculumAdoptionId,
+                lessonId.Value,
+                cancellationToken);
+        }
+
         var result = await privatePractice.GenerateAsync(actorId,
             new GenerateStudentPrivatePracticeRequest(
                 curriculumAdoptionId, scope, lessonId, unitKey, difficulty, questionCount),
@@ -370,35 +380,26 @@ public sealed class StudentPracticeController(
         if (!TryActor(out var actorId)) return Forbid();
 
         var workspace = await privatePractice.GetWorkspaceAsync(
-            actorId, curriculumAdoptionId, cancellationToken);
+            actorId,
+            curriculumAdoptionId,
+            cancellationToken);
         var pilotLesson = workspace.Lessons.SingleOrDefault(x =>
             x.LessonId == lessonId &&
-            string.Equals(x.LessonCode, LessonPracticePilotCode, StringComparison.Ordinal));
-        if (pilotLesson is null || workspace.SelectedCurriculumAdoptionId != curriculumAdoptionId)
-            return NotFound();
+            string.Equals(
+                x.LessonCode,
+                LessonPracticePilotCode,
+                StringComparison.Ordinal));
 
-        var result = await privatePractice.GenerateAsync(
-            actorId,
-            new GenerateStudentPrivatePracticeRequest(
-                curriculumAdoptionId,
-                StudentPrivatePracticeScope.Lesson,
-                lessonId,
-                null,
-                StudentPrivatePracticeDifficulty.MyLevel,
-                LessonPracticeQuestionCount),
-            cancellationToken);
-
-        if (!result.Succeeded)
+        if (pilotLesson is null ||
+            workspace.SelectedCurriculumAdoptionId != curriculumAdoptionId)
         {
-            TempData["Error"] = PrivatePracticeErrorMessage(result.Error);
-            return RedirectToAction("Lesson", "StudentPortal", new { id = lessonId });
+            return NotFound();
         }
 
-        return RedirectToAction(nameof(Attempt), new
-        {
-            id = result.AttemptId,
-            mode = LessonGameMode
-        });
+        return await StartLessonPractice(
+            curriculumAdoptionId,
+            lessonId,
+            cancellationToken);
     }
 
     [HttpGet("adaptive/{id:guid}")]
