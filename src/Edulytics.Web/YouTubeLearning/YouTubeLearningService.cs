@@ -1,7 +1,7 @@
-using System.Collections.Concurrent;
 using System.Globalization;
 using System.Net;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace Edulytics.Web.YouTubeLearning;
@@ -469,6 +469,19 @@ public sealed class YouTubeLearningService(
 
     private static int? ExtractLevel(string code)
     {
+        // Canonical Rich V2 catalogue codes use :S6:, :G9:, :L10:, while
+        // legacy/imported codes may spell out stage/grade or use -g/-l.
+        var canonical = Regex.Match(
+            code,
+            @"(?:^|:)(?:s|g|l)(?<level>\d{1,2})(?::|$)",
+            RegexOptions.CultureInvariant);
+
+        if (canonical.Success &&
+            int.TryParse(canonical.Groups["level"].Value, out var canonicalLevel))
+        {
+            return canonicalLevel;
+        }
+
         foreach (var marker in new[] { "stage", "grade", "-g", "-l" })
         {
             var index = code.IndexOf(marker, StringComparison.Ordinal);
