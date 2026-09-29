@@ -28,6 +28,41 @@ public sealed class AdaptiveMisconceptionClassifierTests
         Assert.Equal(expectedId, result!.MisconceptionId);
     }
 
+    [Theory]
+    [InlineData("8822", "100", "8800", "8900", "rounding.wrong_direction_up")]
+    [InlineData("8872", "100", "8900", "8800", "rounding.wrong_direction_down")]
+    [InlineData("8822", "100", "8800", "8802", "rounding.lower_places_not_zeroed")]
+    [InlineData("8822", "100", "8800", "8700", "rounding.adjacent_multiple")]
+    public void ClassifiesReviewedWholeNumberRoundingErrors(
+        string value,
+        string place,
+        string correct,
+        string submitted,
+        string expectedId)
+    {
+        var item = new AssessmentItem
+        {
+            CorrectAnswer = correct,
+            GenerationFamily = "supporting.number.rounding",
+            GenerationParametersJson =
+                "{\"parameters\":{\"value\":" +
+                value +
+                ",\"place\":" +
+                place +
+                "}}"
+        };
+
+        var result = classifier.Classify(
+            item,
+            submitted);
+
+        Assert.NotNull(result);
+        Assert.Equal(
+            expectedId,
+            result!.MisconceptionId);
+        Assert.True(result.Confidence >= 0.70m);
+    }
+
     [Fact]
     public void ArbitraryWrongAnswerRemainsUnclassified()
     {

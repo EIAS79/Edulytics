@@ -1,5 +1,6 @@
 using System.Numerics;
 using System.Text.RegularExpressions;
+using System.Text.Json;
 using Edulytics.Core.Entities;
 
 namespace Edulytics.Services.AdaptivePractice;
@@ -54,6 +55,13 @@ public sealed partial class AdaptiveMisconceptionClassifier
                 2);
         }
 
+        var rounding = TryClassifyWholeNumberRounding(
+            item,
+            actual,
+            expected);
+        if (rounding is not null)
+            return rounding;
+
         if (!TryParseRational(expected, out var correct) ||
             !TryParseRational(actual, out var submitted))
         {
@@ -92,6 +100,110 @@ public sealed partial class AdaptiveMisconceptionClassifier
         }
 
         return null;
+    }
+
+    private static AdaptiveMisconceptionClassification?
+        TryClassifyWholeNumberRounding(
+            AssessmentItem item,
+            string actual,
+            string expected)
+    {
+        if (!string.Equals(
+                item.GenerationFamily,
+                "supporting.number.rounding",
+                StringComparison.Ordinal) ||
+            !int.TryParse(actual, out var submitted) ||
+            !int.TryParse(expected, out var correct) ||
+            !TryReadIntegerParameter(
+                item.GenerationParametersJson,
+                "value",
+                out var value) ||
+            !TryReadIntegerParameter(
+                item.GenerationParametersJson,
+                "place",
+                out var place) ||
+            place <= 0)
+        {
+            return null;
+        }
+
+        var lower = value / place * place;
+        var upper = lower + place;
+
+        if (submitted % place != 0)
+        {
+            return new(
+                "rounding.lower_places_not_zeroed",
+                0.98m,
+                1);
+        }
+
+        if (submitted == upper &&
+            correct == lower)
+        {
+            return new(
+                "rounding.wrong_direction_up",
+                0.99m,
+                1);
+        }
+
+        if (submitted == lower &&
+            correct == upper)
+        {
+            return new(
+                "rounding.wrong_direction_down",
+                0.99m,
+                1);
+        }
+
+        if (Math.Abs(submitted - correct) == place)
+        {
+            return new(
+                "rounding.adjacent_multiple",
+                0.92m,
+                1);
+        }
+
+        return null;
+    }
+
+    private static bool TryReadIntegerParameter(
+        string? generationParametersJson,
+        string name,
+        out int value)
+    {
+        value = 0;
+
+        if (string.IsNullOrWhiteSpace(
+                generationParametersJson))
+        {
+            return false;
+        }
+
+        try
+        {
+            using var document =
+                JsonDocument.Parse(
+                    generationParametersJson);
+
+            if (!document.RootElement.TryGetProperty(
+                    "parameters",
+                    out var parameters) ||
+                !parameters.TryGetProperty(
+                    name,
+                    out var element) ||
+                element.ValueKind !=
+                    JsonValueKind.Number)
+            {
+                return false;
+            }
+
+            return element.TryGetInt32(out value);
+        }
+        catch (JsonException)
+        {
+            return false;
+        }
     }
 
     private static bool TryReverseRelation(

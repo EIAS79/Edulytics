@@ -88,11 +88,19 @@
     var feedbackSolution =
         TempData["PracticeSolution"]?.ToString();
 
-    var guidanceText =
+    var baselineGuidance =
         Edulytics.Web.GameRouting.LessonPracticeHintResolver.Resolve(
             question?.GenerationFamily,
             question?.GenerationParametersJson,
             locale);
+
+    var guidanceText =
+        !string.IsNullOrWhiteSpace(question?.RemediationHint)
+            ? question.RemediationHint!
+            : baselineGuidance;
+
+    var workedExample =
+        question?.WorkedExample;
 
     var practiceLabel = locale switch
     {
@@ -131,11 +139,16 @@
 
     var eddyMessage =
         question is not null &&
-        question.IncorrectAttemptCount > 0
+        string.Equals(
+            question.RemediationStageCode,
+            AdaptiveRemediationStageCodes.TargetedRetry,
+            StringComparison.Ordinal)
             ? $"{remediationLabel}: {guidanceText}"
             : question?.IsIndependentConfirmation == true
                 ? confirmationLabel
-                : guidanceText;
+                : !string.IsNullOrWhiteSpace(workedExample)
+                    ? $"{remediationLabel}: {workedExample}"
+                    : guidanceText;
 }
 
 @section Head {
@@ -260,6 +273,23 @@
             border: 1px solid #f1bbb4;
         }
 
+        .adaptive-worked-example {
+            width: min(920px, 100%);
+            margin: 0 auto 12px;
+            padding: 16px 18px;
+            border: 1px solid rgba(255,212,95,.42);
+            border-radius: 18px;
+            background: rgba(255,244,203,.10);
+            color: #fff3c2;
+            line-height: 1.55;
+        }
+
+        .adaptive-worked-example strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #ffe18b;
+        }
+
         .adaptive-remediation-badge {
             display: inline-flex;
             align-items: center;
@@ -326,7 +356,9 @@
             <strong>
                 @(feedbackKind == "correct"
                     ? S["PracticeCorrect"].Value
-                    : S["PracticeIncorrect"].Value)
+                    : feedbackKind == "remediation"
+                        ? remediationLabel
+                        : S["PracticeIncorrect"].Value)
             </strong>
             @if (!string.IsNullOrWhiteSpace(feedbackSolution))
             {
@@ -335,6 +367,10 @@
             @if (feedbackKind == "incorrect")
             {
                 <span> @retryLabel.</span>
+            }
+            else if (feedbackKind == "remediation")
+            {
+                <span> The previous item is closed. Study the scaffold below, then solve the fresh recovery question.</span>
             }
         </div>
     }
@@ -423,15 +459,35 @@
                     </span>
                     <strong data-practice-question>@stem</strong>
                     <small>@unitTitle</small>
-                    @if (question.IncorrectAttemptCount > 0)
+                    @if (string.Equals(
+                            question.RemediationStageCode,
+                            AdaptiveRemediationStageCodes.TargetedRetry,
+                            StringComparison.Ordinal))
                     {
                         <div class="adaptive-remediation-badge">
-                            @remediationLabel ·
-                            @question.IncorrectAttemptCount
-                            @(question.IncorrectAttemptCount == 1 ? "retry" : "retries")
+                            @remediationLabel · one retry of this item
+                        </div>
+                    }
+                    else if (string.Equals(
+                        question.RemediationStageCode,
+                        AdaptiveRemediationStageCodes.ScaffoldedRecovery,
+                        StringComparison.Ordinal))
+                    {
+                        <div class="adaptive-remediation-badge">
+                            @remediationLabel · fresh recovery item
                         </div>
                     }
                 </div>
+
+                @if (!string.IsNullOrWhiteSpace(workedExample))
+                {
+                    <aside class="adaptive-worked-example"
+                           data-practice-scaffold
+                           role="note">
+                        <strong>@remediationLabel</strong>
+                        <span>@workedExample</span>
+                    </aside>
+                }
 
                 <section class="gw-runtime-board lp-server-card">
                     @if (!string.IsNullOrWhiteSpace(visualSvg))

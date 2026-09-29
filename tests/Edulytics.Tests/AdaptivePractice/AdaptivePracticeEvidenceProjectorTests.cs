@@ -142,6 +142,57 @@ public sealed class AdaptivePracticeEvidenceProjectorTests
         Assert.Equal(now, update.MisconceptionState.ResolvedAtUtc);
     }
 
+    [Fact]
+    public void CorrectedRetryOnConfirmationDoesNotResolveMisconception()
+    {
+        var now = DateTime.UtcNow;
+        var session = Session();
+        var existing = new StudentMisconceptionState
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = session.SchoolId,
+            StudentProfileId = session.StudentProfileId,
+            CurriculumAdoptionId = session.CurriculumAdoptionId,
+            SkillId = session.PrimarySkillId,
+            MisconceptionId = "fraction.reciprocal",
+            QuestionFamily = "fractions.equivalent.missing_value",
+            Status = AdaptiveMisconceptionStatus.Active,
+            Confidence = 0.95m,
+            ObservationCount = 2,
+            FirstObservedAtUtc = now.AddMinutes(-5),
+            LastObservedAtUtc = now.AddMinutes(-4),
+            EngineVersion = AdaptivePracticeV2Versions.EngineVersion
+        };
+
+        var turn = Turn(
+            correct: true,
+            answer: "3/4",
+            representation: "symbolic",
+            now: now);
+        turn.MisconceptionFocusId = existing.MisconceptionId;
+        turn.IsIndependentConfirmation = true;
+        turn.IncorrectAttemptCount = 1;
+        turn.LastIncorrectAnswer = "4/3";
+
+        var update = projector.Project(
+            session,
+            turn,
+            new AssessmentItem
+            {
+                CorrectAnswer = "3/4"
+            },
+            [existing],
+            [],
+            misconceptionLoopEnabled: true,
+            occurredAtUtc: now);
+
+        Assert.NotNull(update.MisconceptionState);
+        Assert.Equal(
+            AdaptiveMisconceptionStatus.Remediating,
+            update.MisconceptionState!.Status);
+        Assert.Null(update.MisconceptionState.ResolvedAtUtc);
+    }
+
     private static AdaptivePracticeSession Session() =>
         new()
         {

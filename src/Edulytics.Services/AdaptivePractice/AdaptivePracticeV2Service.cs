@@ -23,6 +23,7 @@ public sealed class AdaptivePracticeV2Service(
     AdaptiveNextItemDecisionEngine decisionEngine,
     AdaptiveVerifiedItemGenerator itemGenerator,
     AdaptivePracticeEvidenceProjector evidenceProjector,
+    AdaptiveRemediationGuidanceEngine guidanceEngine,
     AdaptivePracticeV2Policy policy)
     : IAdaptivePracticeV2Service
 {
@@ -367,16 +368,28 @@ public sealed class AdaptivePracticeV2Service(
                 session.PrimarySkillId,
                 cancellationToken);
 
+        AdaptivePracticeEvidenceUpdate evidenceUpdate;
+        AdaptiveRemediationGuidance? remediationGuidance = null;
+
         if (!correct)
         {
+            turn.IncorrectAttemptCount++;
+            turn.LastIncorrectAnswer = trimmed;
+            turn.LastIncorrectAtUtc = now;
+
+            remediationGuidance = guidanceEngine.Build(
+                item,
+                trimmed,
+                turn.IncorrectAttemptCount);
+
             var observation = CreateEvidenceObservation(
                 turn,
                 trimmed,
                 isCorrect: false,
-                item.Solution,
+                remediationGuidance.Hint,
                 now);
 
-            var incorrectEvidenceUpdate = evidenceProjector.Project(
+            evidenceUpdate = evidenceProjector.Project(
                 session,
                 observation,
                 item,
@@ -385,80 +398,75 @@ public sealed class AdaptivePracticeV2Service(
                 policy.EnableMisconceptionLoop,
                 now);
 
-            turn.IncorrectAttemptCount++;
-            turn.LastIncorrectAnswer = trimmed;
-            turn.LastIncorrectAtUtc = now;
-            turn.Feedback = item.Solution;
-
-            if (incorrectEvidenceUpdate.MisconceptionState is not null)
+            if (evidenceUpdate.MisconceptionState is not null)
             {
                 turn.MisconceptionFocusId =
-                    incorrectEvidenceUpdate.MisconceptionState.MisconceptionId;
+                    evidenceUpdate.MisconceptionState.MisconceptionId;
             }
 
-            await adaptiveRepository.CommitAnsweredTurnAsync(
-                session,
-                turn,
-                incorrectEvidenceUpdate.MisconceptionState,
-                incorrectEvidenceUpdate.RepresentationState,
-                null,
-                [],
-                null,
-                null,
-                null,
-                cancellationToken);
+            if (turn.IncorrectAttemptCount <=
+                AdaptivePracticeV2Behavior.MaximumSameItemRetries)
+            {
+                // C0/C2: exactly one retry of the exact same item is allowed.
+                // Keep the turn open, persist the evidence, and return the
+                // same sequence with a targeted answer-aware hint.
+                turn.Feedback = remediationGuidance.Hint;
 
-            return AdaptivePracticeAnswerResult.Success(
-                await BuildSessionViewAsync(
+                await adaptiveRepository.CommitAnsweredTurnAsync(
                     session,
                     turn,
-                    item,
-                    cancellationToken),
-                false,
-                item.Solution);
+                    evidenceUpdate.MisconceptionState,
+                    evidenceUpdate.RepresentationState,
+                    null,
+                    [],
+                    null,
+                    null,
+                    null,
+                    cancellationToken);
+
+                return AdaptivePracticeAnswerResult.Success(
+                    await BuildSessionViewAsync(
+                        session,
+                        turn,
+                        item,
+                        cancellationToken),
+                    false,
+                    remediationGuidance.Hint);
+            }
+
+            // C0/C2: Wrong #2 closes this exact item. No third retry is
+            // permitted. The decision engine will generate a fresh bounded
+            // remediation item from this completed incorrect evidence.
+            turn.SubmittedAnswer = trimmed;
+            turn.IsCorrect = false;
+            turn.Score = 0m;
+            turn.Feedback =
+                remediationGuidance.WorkedExample ??
+                remediationGuidance.Hint;
+            turn.AnsweredAtUtc = now;
+            turn.ResponseDurationMs = Math.Max(
+                0L,
+                (long)(now - turn.PresentedAtUtc).TotalMilliseconds);
         }
-
-        turn.SubmittedAnswer = trimmed;
-        turn.IsCorrect = true;
-        turn.Score = 1m;
-        turn.Feedback = item.Solution;
-        turn.AnsweredAtUtc = now;
-        turn.ResponseDurationMs = Math.Max(
-            0L,
-            (long)(now - turn.PresentedAtUtc).TotalMilliseconds);
-
-        var evidenceUpdate = evidenceProjector.Project(
-            session,
-            turn,
-            item,
-            existingMisconceptionStates,
-            existingRepresentationStates,
-            policy.EnableMisconceptionLoop,
-            now);
-
-        if (sequence >= session.TargetQuestionCount)
+        else
         {
-            session.Status =
-                AdaptivePracticeSessionStatus.Completed;
-            session.CompletedAtUtc = now;
-            session.StopReason = "QUESTION_BUDGET_REACHED";
+            turn.SubmittedAnswer = trimmed;
+            turn.IsCorrect = true;
+            turn.Score = 1m;
+            turn.Feedback = item.Solution;
+            turn.AnsweredAtUtc = now;
+            turn.ResponseDurationMs = Math.Max(
+                0L,
+                (long)(now - turn.PresentedAtUtc).TotalMilliseconds);
 
-            await adaptiveRepository.CommitAnsweredTurnAsync(
+            evidenceUpdate = evidenceProjector.Project(
                 session,
                 turn,
-                evidenceUpdate.MisconceptionState,
-                evidenceUpdate.RepresentationState,
-                null,
-                [],
-                null,
-                null,
-                null,
-                cancellationToken);
-
-            return AdaptivePracticeAnswerResult.Success(
-                BuildCompletedView(session),
-                correct,
-                item.Solution);
+                item,
+                existingMisconceptionStates,
+                existingRepresentationStates,
+                policy.EnableMisconceptionLoop,
+                now);
         }
 
         if (!string.Equals(
@@ -546,6 +554,49 @@ public sealed class AdaptivePracticeV2Service(
 
         var decision = decisionEngine.Decide(learningState);
 
+        if (sequence >= session.TargetQuestionCount)
+        {
+            var unresolvedAdaptiveWork =
+                decision.RemediationLockActive ||
+                decision.ConfirmationRequired ||
+                !correct;
+
+            if (unresolvedAdaptiveWork &&
+                session.TargetQuestionCount <
+                AdaptivePracticeV2Behavior.MaximumSessionItems)
+            {
+                // The ordinary item budget cannot end a session while a
+                // remediation/confirmation contract is still open.
+                session.TargetQuestionCount++;
+            }
+            else
+            {
+                session.Status =
+                    AdaptivePracticeSessionStatus.Completed;
+                session.CompletedAtUtc = now;
+                session.StopReason = unresolvedAdaptiveWork
+                    ? "MAX_REMEDIATION_BUDGET_REACHED"
+                    : "QUESTION_BUDGET_REACHED";
+
+                await adaptiveRepository.CommitAnsweredTurnAsync(
+                    session,
+                    turn,
+                    evidenceUpdate.MisconceptionState,
+                    evidenceUpdate.RepresentationState,
+                    null,
+                    [],
+                    null,
+                    null,
+                    null,
+                    cancellationToken);
+
+                return AdaptivePracticeAnswerResult.Success(
+                    BuildCompletedView(session),
+                    correct,
+                    turn.Feedback ?? item.Solution);
+            }
+        }
+
         AssessmentItem nextItem;
         try
         {
@@ -612,6 +663,17 @@ public sealed class AdaptivePracticeV2Service(
 
         nextTurn.Sequence = nextSequence;
         nextDecisionSnapshot.Sequence = nextSequence;
+
+        if (!correct &&
+            remediationGuidance is not null)
+        {
+            // Carry the stronger scaffold onto the fresh remediation item.
+            // The learner sees the worked example before attempting the new
+            // numbers; the current item's verified answer is never exposed.
+            nextTurn.Feedback =
+                remediationGuidance.WorkedExample ??
+                remediationGuidance.Hint;
+        }
 
         var nextExposure = CreateExposure(
             context.Student,
@@ -936,6 +998,33 @@ public sealed class AdaptivePracticeV2Service(
     {
         cancellationToken.ThrowIfCancellationRequested();
 
+        var remediationStageCode =
+            turn.IsIndependentConfirmation
+                ? AdaptiveRemediationStageCodes.FreshConfirmation
+                : turn.IncorrectAttemptCount > 0 &&
+                  !turn.AnsweredAtUtc.HasValue
+                    ? AdaptiveRemediationStageCodes.TargetedRetry
+                    : !turn.AnsweredAtUtc.HasValue &&
+                      !string.IsNullOrWhiteSpace(turn.Feedback)
+                        ? AdaptiveRemediationStageCodes.ScaffoldedRecovery
+                        : null;
+
+        var remediationHint =
+            string.Equals(
+                remediationStageCode,
+                AdaptiveRemediationStageCodes.TargetedRetry,
+                StringComparison.Ordinal)
+                ? turn.Feedback
+                : null;
+
+        var workedExample =
+            string.Equals(
+                remediationStageCode,
+                AdaptiveRemediationStageCodes.ScaffoldedRecovery,
+                StringComparison.Ordinal)
+                ? turn.Feedback
+                : null;
+
         return Task.FromResult(
             new AdaptivePracticeSessionView(
                 session.Id,
@@ -963,7 +1052,11 @@ public sealed class AdaptivePracticeV2Service(
                     turn.MathematicalComplexityScore,
                     turn.IsIndependentConfirmation,
                     turn.IncorrectAttemptCount,
-                    turn.LastIncorrectAnswer)));
+                    turn.LastIncorrectAnswer,
+                    remediationStageCode,
+                    remediationHint,
+                    workedExample,
+                    turn.MisconceptionFocusId)));
     }
 
     private static AdaptivePracticeSessionView BuildCompletedView(

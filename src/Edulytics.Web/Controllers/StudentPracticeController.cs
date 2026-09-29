@@ -496,10 +496,19 @@ public sealed class StudentPracticeController(
         }
         else
         {
+            var remediationStage =
+                result.Session?.CurrentQuestion?.RemediationStageCode;
+
             TempData["PracticeFeedback"] =
                 result.IsCorrect == true
                     ? "correct"
-                    : "incorrect";
+                    : string.Equals(
+                        remediationStage,
+                        AdaptiveRemediationStageCodes.ScaffoldedRecovery,
+                        StringComparison.Ordinal)
+                        ? "remediation"
+                        : "incorrect";
+
             TempData["PracticeSolution"] =
                 result.IsCorrect == true
                     ? result.Feedback ?? string.Empty

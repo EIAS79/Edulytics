@@ -30,7 +30,11 @@ public sealed record AdaptivePracticeQuestionView(
     int MathematicalComplexityScore,
     bool IsIndependentConfirmation,
     int IncorrectAttemptCount,
-    string? LastIncorrectAnswer);
+    string? LastIncorrectAnswer,
+    string? RemediationStageCode,
+    string? RemediationHint,
+    string? WorkedExample,
+    string? MisconceptionFocusId);
 
 public sealed record AdaptivePracticeSessionView(
     Guid SessionId,

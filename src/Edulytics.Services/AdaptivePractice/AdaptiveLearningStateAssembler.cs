@@ -78,8 +78,14 @@ public sealed class AdaptiveLearningStateAssembler(
         var recentSuccessfulItems = 0;
         foreach (var response in answered.Reverse())
         {
-            if (response.IsCorrect != true)
+            // Assisted success after a same-item retry is useful remediation
+            // evidence, but it is not independent progression evidence.
+            if (response.IsCorrect != true ||
+                response.IncorrectAttemptCount > 0)
+            {
                 break;
+            }
+
             recentSuccessfulItems++;
         }
 
@@ -208,7 +214,11 @@ public sealed class AdaptiveLearningStateAssembler(
 
         foreach (var turn in answered)
         {
-            if (turn.IncorrectAttemptCount > 0)
+            // A corrected retry represents two pedagogical events on one item:
+            // wrong evidence followed by assisted success. A turn closed after
+            // Wrong #2 is already incorrect, so it must not be replayed twice.
+            if (turn.IncorrectAttemptCount > 0 &&
+                turn.IsCorrect == true)
             {
                 state = remediationStateMachine.Apply(
                     state,
@@ -239,5 +249,6 @@ public sealed class AdaptiveLearningStateAssembler(
             turn.QuestionFamily,
             turn.Representation,
             turn.MisconceptionFocusId,
-            turn.IsIndependentConfirmation);
+            turn.IsIndependentConfirmation &&
+            turn.IncorrectAttemptCount == 0);
 }

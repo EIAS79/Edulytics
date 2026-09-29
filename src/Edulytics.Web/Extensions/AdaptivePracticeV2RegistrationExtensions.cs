@@ -93,6 +93,7 @@ public static class AdaptivePracticeV2RegistrationExtensions
         services.AddSingleton<AdaptivePracticeShadowEvaluator>();
         services.AddSingleton<AdaptiveVerifiedItemGenerator>();
         services.AddSingleton<AdaptiveMisconceptionClassifier>();
+        services.AddSingleton<AdaptiveRemediationGuidanceEngine>();
         services.AddSingleton<AdaptivePracticeEvidenceProjector>();
         services.AddSingleton<AdaptiveDiagnosticAssessmentEngine>();
         services.AddScoped<IAdaptivePracticeRepository, AdaptivePracticeRepository>();
