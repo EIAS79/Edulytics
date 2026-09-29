@@ -134,6 +134,50 @@ public sealed class YouTubeLessonDiscoveryPolicyTests
     }
 
     [Fact]
+    public async Task Cache_IsolatedByImmutableLessonTopic_WhenFlattenedSearchQueryMatches()
+    {
+        using var client =
+            new HttpClient(
+                new CacheIsolationYouTubeHandler());
+
+        var service =
+            new YouTubeLessonDiscoveryService(
+                client,
+                new YouTubeLessonDiscoveryOptions
+                {
+                    Enabled = true,
+                    ApiKey = "cache-isolation-test-key",
+                    MinimumRelevancePercent = 34,
+                    SearchResultCount = 8,
+                    RelatedResultCount = 6
+                });
+
+        var broadLesson =
+            await service.DiscoverAsync(
+                "PED:TEST:G8:CACHE-BROAD",
+                "Solve",
+                "Grade 8",
+                "en",
+                "linear equations");
+
+        Assert.NotNull(
+            broadLesson.Featured);
+
+        var preciseLesson =
+            await service.DiscoverAsync(
+                "PED:TEST:G8:CACHE-PRECISE",
+                "Solve linear equations",
+                "Grade 8",
+                "en",
+                null);
+
+        Assert.Null(
+            preciseLesson.Featured);
+        Assert.Empty(
+            preciseLesson.Related);
+    }
+
+    [Fact]
     public async Task LearnerRefinement_CannotMakeOffTopicVideoPassLessonGate()
     {
         using var client =
@@ -279,6 +323,90 @@ public sealed class YouTubeLessonDiscoveryPolicyTests
             "en",
             learnerQuery);
     }
+    private sealed class CacheIsolationYouTubeHandler
+        : HttpMessageHandler
+    {
+        protected override Task<HttpResponseMessage> SendAsync(
+            HttpRequestMessage request,
+            CancellationToken cancellationToken)
+        {
+            var path =
+                request.RequestUri?.AbsolutePath
+                ?? string.Empty;
+
+            var json =
+                path.EndsWith(
+                    "/channels",
+                    StringComparison.Ordinal)
+                    ? """{"items":[]}"""
+                    : path.EndsWith(
+                        "/search",
+                        StringComparison.Ordinal)
+                        ? """
+                          {
+                            "items": [
+                              {
+                                "id": { "videoId": "cache-isolation-1" },
+                                "snippet": {
+                                  "title": "Solve a cooking recipe",
+                                  "channelId": "UC-cache",
+                                  "channelTitle": "Cache Test",
+                                  "description": "A cooking demonstration",
+                                  "thumbnails": {
+                                    "high": {
+                                      "url": "https://i.ytimg.com/vi/cache-isolation-1/hqdefault.jpg"
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                          """
+                        : """
+                          {
+                            "items": [
+                              {
+                                "id": "cache-isolation-1",
+                                "status": {
+                                  "embeddable": true,
+                                  "privacyStatus": "public"
+                                },
+                                "snippet": {
+                                  "title": "Solve a cooking recipe",
+                                  "channelId": "UC-cache",
+                                  "channelTitle": "Cache Test",
+                                  "description": "A cooking demonstration",
+                                  "thumbnails": {
+                                    "high": {
+                                      "url": "https://i.ytimg.com/vi/cache-isolation-1/hqdefault.jpg"
+                                    }
+                                  }
+                                },
+                                "contentDetails": {
+                                  "duration": "PT4M"
+                                },
+                                "statistics": {
+                                  "viewCount": "2000",
+                                  "likeCount": "100"
+                                }
+                              }
+                            ]
+                          }
+                          """;
+
+            return Task.FromResult(
+                new HttpResponseMessage(
+                    HttpStatusCode.OK)
+                {
+                    Content =
+                        new StringContent(
+                            json,
+                            Encoding.UTF8,
+                            "application/json")
+                });
+        }
+    }
+
     private sealed class TimeoutYouTubeHandler
         : HttpMessageHandler
     {
