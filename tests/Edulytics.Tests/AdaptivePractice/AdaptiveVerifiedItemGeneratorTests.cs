@@ -61,6 +61,141 @@ public sealed class AdaptiveVerifiedItemGeneratorTests
     }
 
     [Fact]
+    public void FiniteSemanticFamily_SustainsMaximumAdaptiveBudgetWithRecentFreshness()
+    {
+        const string family =
+            "probability.theoretical.two_coins_exactly_one";
+
+        var contract =
+            LessonPracticeContractRegistry.All.First(
+                x => x.AllowedQuestionFamilies.Contains(
+                    family,
+                    StringComparer.Ordinal));
+
+        var generator =
+            new AdaptiveVerifiedItemGenerator();
+        var exposures =
+            new List<string>();
+        var semantics =
+            new List<string>();
+
+        for (var sequence = 1;
+             sequence <= AdaptivePracticeV2Behavior.MaximumSessionItems;
+             sequence++)
+        {
+            var decision =
+                Decision(
+                    contract,
+                    family,
+                    complexity: 42);
+
+            var item =
+                generator.GenerateOne(
+                    Guid.NewGuid(),
+                    Guid.NewGuid(),
+                    Guid.NewGuid(),
+                    Guid.NewGuid(),
+                    contract,
+                    decision,
+                    seed:
+                        unchecked(
+                            20260929 +
+                            sequence * 997),
+                    excludedExposureFingerprints:
+                        exposures,
+                    excludedSemanticIdentityKeys:
+                        semantics);
+
+            Assert.Equal(
+                family,
+                item.GenerationFamily);
+            Assert.DoesNotContain(
+                item.ExposureFingerprint,
+                exposures,
+                StringComparer.Ordinal);
+
+            RememberRecent(
+                exposures,
+                item.ExposureFingerprint,
+                AdaptivePracticeV2Behavior
+                    .RecentExposureFreshnessWindow);
+
+            RememberRecent(
+                semantics,
+                AdaptivePracticeSemanticIdentity.Resolve(
+                    item),
+                AdaptivePracticeV2Behavior
+                    .RecentSemanticFreshnessWindow);
+        }
+    }
+
+    [Fact]
+    public void CapabilityPartitionedFamily_RetriesWithoutFalseDifficultyLabel()
+    {
+        const string family =
+            "supporting.circle.angle_semicircle";
+
+        var contract =
+            LessonPracticeContractRegistry.All.First(
+                x => x.AllowedQuestionFamilies.Contains(
+                    family,
+                    StringComparer.Ordinal));
+
+        var generator =
+            new AdaptiveVerifiedItemGenerator();
+        var exposures =
+            new List<string>();
+        var semantics =
+            new List<string>();
+
+        for (var sequence = 1;
+             sequence <= AdaptivePracticeV2Behavior.MaximumSessionItems;
+             sequence++)
+        {
+            var decision =
+                Decision(
+                    contract,
+                    family,
+                    AdaptiveNextItemDecisionEngine
+                        .MaximumComplexityScore);
+
+            var item =
+                generator.GenerateOne(
+                    Guid.NewGuid(),
+                    Guid.NewGuid(),
+                    Guid.NewGuid(),
+                    Guid.NewGuid(),
+                    contract,
+                    decision,
+                    seed:
+                        unchecked(
+                            60260929 +
+                            sequence * 1301),
+                    excludedExposureFingerprints:
+                        exposures,
+                    excludedSemanticIdentityKeys:
+                        semantics);
+
+            Assert.Equal(
+                family,
+                item.GenerationFamily);
+
+            RememberRecent(
+                exposures,
+                item.ExposureFingerprint,
+                AdaptivePracticeV2Behavior
+                    .RecentExposureFreshnessWindow);
+
+            RememberRecent(
+                semantics,
+                AdaptivePracticeSemanticIdentity.Resolve(
+                    item),
+                AdaptivePracticeV2Behavior
+                    .RecentSemanticFreshnessWindow);
+        }
+    }
+
+    [Fact]
     public void RejectsFamilyOutsideLessonContract()
     {
         const string lessonCode =
@@ -99,4 +234,60 @@ public sealed class AdaptiveVerifiedItemGeneratorTests
                     seed: 731,
                     excludedExposureFingerprints: []));
     }
+    private static AdaptiveNextItemDecision Decision(
+        LessonPracticeContract contract,
+        string family,
+        int complexity) =>
+        new(
+            TargetSkillId:
+                contract.SkillId,
+            TargetComplexityScore:
+                complexity,
+            TargetQuestionFamily:
+                family,
+            TargetRepresentation:
+                "symbolic",
+            MisconceptionFocusId:
+                null,
+            ReasonCode:
+                AdaptivePracticeDecisionReasonCodes
+                    .ComplexityConsolidate,
+            RequiresFreshExposure:
+                true,
+            RemediationLockActive:
+                false,
+            ConfirmationRequired:
+                false,
+            IsIndependentConfirmation:
+                false,
+            ProgressionEligible:
+                false,
+            EngineVersion:
+                AdaptivePracticeV2Versions.EngineVersion,
+            PolicyVersion:
+                AdaptivePracticeV2Versions.PolicyVersion);
+
+    private static void RememberRecent(
+        List<string> values,
+        string? value,
+        int limit)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+            return;
+
+        values.RemoveAll(
+            x => string.Equals(
+                x,
+                value,
+                StringComparison.Ordinal));
+        values.Insert(0, value);
+
+        if (values.Count > limit)
+        {
+            values.RemoveRange(
+                limit,
+                values.Count - limit);
+        }
+    }
+
 }
