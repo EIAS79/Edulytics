@@ -251,8 +251,24 @@ public sealed partial class YouTubeLessonDiscoveryService :
 
         var cacheKey = string.Join(
             "\n",
+            "youtube-lesson-discovery-v2",
             policy.Code,
             NormalizeCulture(cultureCode),
+            Math.Clamp(
+                _options.MinimumRelevancePercent,
+                0,
+                100).ToString(
+                    CultureInfo.InvariantCulture),
+            Math.Clamp(
+                _options.SearchResultCount,
+                8,
+                50).ToString(
+                    CultureInfo.InvariantCulture),
+            Math.Clamp(
+                _options.RelatedResultCount,
+                1,
+                10).ToString(
+                    CultureInfo.InvariantCulture),
             query);
 
         if (ResultCache.TryGetValue(cacheKey, out var cached) &&
