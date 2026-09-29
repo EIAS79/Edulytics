@@ -144,6 +144,10 @@ public sealed class RichLessonExternalHelpTests
             root,
             "src/Edulytics.Web/Views/Shared/_LessonReviewedResources.cshtml"));
 
+        var studioScript = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/lesson-youtube-studio.js"));
+
         var lessonView = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"));
@@ -178,6 +182,15 @@ public sealed class RichLessonExternalHelpTests
             "google.com/search",
             studioPartial,
             StringComparison.OrdinalIgnoreCase);
+
+        Assert.Contains(
+            "YouTubeLessonChannelPolicy.Resolve",
+            studioPartial,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "load(\"\");",
+            studioScript,
+            StringComparison.Ordinal);
 
         Assert.Contains(
             "ApprovedResources",
