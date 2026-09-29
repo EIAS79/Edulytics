@@ -138,16 +138,11 @@ public sealed class YouTubeLearningService(
                 break;
         }
 
+        // Production student surfaces remain curated. We deliberately do not
+        // publish arbitrary-channel fallback results directly to learners.
+        // A future acquisition/review workflow can ingest broad-search candidates
+        // and promote them only after review.
         var usedFallback = false;
-        if (candidates.Count == 0)
-        {
-            usedFallback = true;
-            candidates.AddRange(await SearchAnyChannelAsync(
-                client,
-                query,
-                apiKey,
-                cancellationToken));
-        }
 
         var ranked = candidates
             .GroupBy(x => x.VideoId, StringComparer.Ordinal)
@@ -238,27 +233,6 @@ public sealed class YouTubeLearningService(
             query,
             channel.Handle,
             true,
-            apiKey,
-            cancellationToken);
-    }
-
-    private async Task<IReadOnlyList<YouTubeLearningVideo>> SearchAnyChannelAsync(
-        HttpClient client,
-        string query,
-        string apiKey,
-        CancellationToken cancellationToken)
-    {
-        var url =
-            $"search?part=snippet&type=video&videoEmbeddable=true&safeSearch=strict&maxResults=20" +
-            $"&order=relevance&q={Uri.EscapeDataString(query + " mathematics lesson")}" +
-            $"&key={Uri.EscapeDataString(apiKey)}";
-
-        return await SearchAndEnrichAsync(
-            client,
-            url,
-            query,
-            string.Empty,
-            false,
             apiKey,
             cancellationToken);
     }
