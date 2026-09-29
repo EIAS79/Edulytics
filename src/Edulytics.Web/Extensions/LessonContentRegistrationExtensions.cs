@@ -25,7 +25,7 @@ public static class LessonContentRegistrationExtensions
                 Enabled = ReadBool(configuration["Enabled"], true),
                 ApiKey = configuration["ApiKey"] ?? string.Empty,
                 CacheMinutes = ReadInt(configuration["CacheMinutes"], 720),
-                SearchResultCount = ReadInt(configuration["SearchResultCount"], 25),
+                SearchResultCount = ReadInt(configuration["SearchResultCount"], 50),
                 RelatedResultCount = ReadInt(configuration["RelatedResultCount"], 6),
                 MinimumRelevancePercent =
                     ReadInt(configuration["MinimumRelevancePercent"], 34)
