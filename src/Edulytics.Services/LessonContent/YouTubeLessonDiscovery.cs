@@ -305,13 +305,9 @@ public sealed partial class YouTubeLessonDiscoveryService :
                     .OrderByDescending(x => x.RankScore)
                     .ToArray();
 
-            if (ranked.Length == 0)
-            {
-                ranked = candidates
-                    .OrderByDescending(x => x.RankScore)
-                    .ToArray();
-            }
-
+            // MinimumRelevancePercent is a hard safety/quality boundary.
+            // If no candidate clears it, return no discovered video rather
+            // than silently bypassing the configured policy.
             var featured = ranked.FirstOrDefault()?.Video;
             var related = ranked
                 .Skip(1)
