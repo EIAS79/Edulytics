@@ -399,8 +399,9 @@ Rejected
 - do not gate payment specifically for access to the video;
 - prefer privacy-enhanced embedding for the school/student context;
 - do not expose unrestricted YouTube search directly to children as the default lesson experience;
-- search may be used in the content-acquisition pipeline to discover candidates;
-- candidate videos must be reviewed before publication.
+- curated or persisted video resources that become part of canonical lesson content must be reviewed before publication;
+- live learner YouTube discovery may return non-persisted external results only when it is lesson-scoped, strict-safe-search filtered, limited to public embeddable/syndicated videos, protected by a hard relevance threshold, prioritized by approved grade-band channels, and actor-rate-limited;
+- live discovery results are supplemental external search results, not canonical published Edulytics lesson content, and must not be persisted as approved resources without the normal review workflow.
 
 ---
 
@@ -825,7 +826,7 @@ copy copyrighted textbook prose or images without permission
 treat one generic example as full lesson coverage
 treat non-empty fields as proof of quality
 treat a decorative visual as instructional evidence
-publish arbitrary YouTube search results directly to students
+persist or publish arbitrary YouTube search results as canonical lesson content without review
 use an LLM as the sole mathematics verifier
 overwrite strong existing lesson content simply to make everything uniform
 ```
