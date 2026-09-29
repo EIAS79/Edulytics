@@ -240,6 +240,15 @@
             gap: 12px;
         }
 
+        .adaptive-gw-shell .lp-server-form[data-submitting="true"] {
+            opacity: .78;
+        }
+
+        .adaptive-gw-shell .lp-server-form[data-submitting="true"] button[type="submit"] {
+            pointer-events: none;
+            cursor: wait;
+        }
+
         .adaptive-gw-shell .lp-server-choice {
             min-width: 126px;
             border: 2px solid rgba(255,255,255,.68);
@@ -508,7 +517,8 @@
                         <form asp-action="AnswerAdaptiveLessonAttempt"
                               asp-route-id="@Model.SessionId"
                               method="post"
-                              class="lp-server-form">
+                              class="lp-server-form"
+                              data-adaptive-answer-form>
                             @Html.AntiForgeryToken()
                             <input type="hidden"
                                    name="sequence"
