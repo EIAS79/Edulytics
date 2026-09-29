@@ -324,6 +324,7 @@ public sealed class AdaptiveIntelligenceV2Service(
                 var needsIntervention =
                     student.HighestPriority >= EvaluationPriority.High ||
                     latestTurn?.IsCorrect == false ||
+                    latestTurn?.IncorrectAttemptCount > 0 ||
                     activeMisconceptions > 0;
 
                 return new AdaptiveClassroomStudentSignal(
