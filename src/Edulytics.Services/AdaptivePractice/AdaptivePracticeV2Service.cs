@@ -404,7 +404,8 @@ public sealed class AdaptivePracticeV2Service(
                     evidenceUpdate.MisconceptionState.MisconceptionId;
             }
 
-            if (turn.IncorrectAttemptCount == 1)
+            if (turn.IncorrectAttemptCount <=
+                AdaptivePracticeV2Behavior.MaximumSameItemRetries)
             {
                 // C0/C2: exactly one retry of the exact same item is allowed.
                 // Keep the turn open, persist the evidence, and return the
@@ -561,7 +562,8 @@ public sealed class AdaptivePracticeV2Service(
                 !correct;
 
             if (unresolvedAdaptiveWork &&
-                session.TargetQuestionCount < 30)
+                session.TargetQuestionCount <
+                AdaptivePracticeV2Behavior.MaximumSessionItems)
             {
                 // The ordinary item budget cannot end a session while a
                 // remediation/confirmation contract is still open.
