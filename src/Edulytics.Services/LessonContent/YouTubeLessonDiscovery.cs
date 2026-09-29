@@ -13,7 +13,7 @@ public sealed class YouTubeLessonDiscoveryOptions
     public bool Enabled { get; set; } = true;
     public string ApiKey { get; set; } = string.Empty;
     public int CacheMinutes { get; set; } = 720;
-    public int SearchResultCount { get; set; } = 25;
+    public int SearchResultCount { get; set; } = 50;
     public int RelatedResultCount { get; set; } = 6;
     public int MinimumRelevancePercent { get; set; } = 34;
 }
@@ -180,6 +180,7 @@ public sealed partial class YouTubeLessonDiscoveryService :
         ChannelIdCache = new(StringComparer.OrdinalIgnoreCase);
 
     private static readonly SemaphoreSlim ApiGate = new(4, 4);
+    private const int MaximumCacheEntries = 512;
 
     private static readonly HashSet<string> StopWords =
         new(
@@ -333,11 +334,12 @@ public sealed partial class YouTubeLessonDiscoveryService :
                         ? "Selected from the preferred grade-band teaching channels."
                         : "No strong preferred-channel result was returned, so the highest-ranked relevant YouTube result was used.");
 
-            ResultCache[cacheKey] =
+            StoreCachedResult(
+                cacheKey,
                 new(
                     DateTimeOffset.UtcNow.AddMinutes(
                         Math.Clamp(_options.CacheMinutes, 5, 1440)),
-                    result);
+                    result));
 
             return result;
         }
@@ -695,7 +697,7 @@ public sealed partial class YouTubeLessonDiscoveryService :
                       maxLikeLog;
 
                 var positionSignal =
-                    1d - Math.Min(1d, (video.Hit.Position - 1d) / 25d);
+                    1d - Math.Min(1d, (video.Hit.Position - 1d) / 50d);
 
                 var rankScore =
                     (relevance * .75d) +
@@ -727,6 +729,26 @@ public sealed partial class YouTubeLessonDiscoveryService :
             })
             .OrderByDescending(x => x.RankScore)
             .ToArray();
+    }
+
+    private static void StoreCachedResult(
+        string cacheKey,
+        CacheEntry entry)
+    {
+        if (ResultCache.Count >= MaximumCacheEntries)
+        {
+            var now = DateTimeOffset.UtcNow;
+            foreach (var pair in ResultCache)
+            {
+                if (pair.Value.ExpiresAtUtc <= now)
+                    ResultCache.TryRemove(pair.Key, out _);
+            }
+
+            if (ResultCache.Count >= MaximumCacheEntries)
+                ResultCache.Clear();
+        }
+
+        ResultCache[cacheKey] = entry;
     }
 
     private static double CalculateRelevance(
