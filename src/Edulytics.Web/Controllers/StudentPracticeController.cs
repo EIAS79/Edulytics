@@ -497,6 +497,21 @@ public sealed class StudentPracticeController(
                 nameof(AdaptiveLessonAttempt),
                 new { id });
         }
+        catch (AdaptivePracticeSharedStateWriteConflictException exception)
+        {
+            logger.LogWarning(
+                exception,
+                "Adaptive learner state changed concurrently for session {SessionId}, sequence {Sequence}; the answer transaction was rolled back and can be retried safely.",
+                id,
+                sequence);
+
+            TempData["Error"] =
+                text["PracticeOperationFailed"].Value;
+
+            return RedirectToAction(
+                nameof(AdaptiveLessonAttempt),
+                new { id });
+        }
 
         if (!result.Succeeded)
         {
