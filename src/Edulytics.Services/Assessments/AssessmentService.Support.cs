@@ -247,6 +247,25 @@ public sealed partial class AssessmentService
             assessment.SubjectId,
             cancellationToken);
 
+    private async Task<bool> CanEditAssessmentMetadataAsync(
+        Guid schoolId,
+        Assessment assessment,
+        CancellationToken cancellationToken)
+    {
+        if (await CanEditAssessmentContentAsync(
+                schoolId,
+                assessment,
+                cancellationToken))
+        {
+            return true;
+        }
+
+        return assessment.Status == AssessmentStatus.Open &&
+               assessment.AssessmentType == AssessmentType.Homework &&
+               assessment.DueAtUtc.HasValue &&
+               DateTime.UtcNow < assessment.DueAtUtc.Value;
+    }
+
     private async Task<bool> CanEditAssessmentContentAsync(
         Guid schoolId,
         Assessment assessment,
