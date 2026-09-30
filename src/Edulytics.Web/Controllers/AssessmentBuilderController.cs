@@ -48,6 +48,10 @@ public sealed class AssessmentBuilderController(
             paper,
             PdfLabels(),
             showMarks: result.Value.Details.Assessment.AssessmentType == AssessmentType.Exam);
+
+        if (result.Value.Details.Assessment.AssessmentType == AssessmentType.Worksheet)
+            AssessmentMetrics.WorksheetPdfGenerated();
+
         return File(bytes, "application/pdf", $"assessment-{assessmentId:N}-student-paper.pdf");
     }
 
