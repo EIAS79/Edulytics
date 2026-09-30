@@ -232,28 +232,28 @@
                 {
                     var taskTypeLabel = item.AssessmentType switch
                     {
-                        AssessmentType.Exam => "EXAM / TEST",
-                        AssessmentType.Homework => "HOMEWORK",
-                        AssessmentType.Worksheet => "WORKSHEET",
+                        AssessmentType.Exam => S["TaskTypeExamTest"].Value,
+                        AssessmentType.Homework => S["TaskTypeHomework"].Value,
+                        AssessmentType.Worksheet => S["TaskTypeWorksheet"].Value,
                         _ => "TASK"
                     };
                     var taskActionLabel = item.AssessmentType switch
                     {
                         AssessmentType.Exam => S["StartAssessment"].Value,
-                        AssessmentType.Homework => "Open homework",
-                        AssessmentType.Worksheet => "Open worksheet",
+                        AssessmentType.Homework => S["OpenHomework"].Value,
+                        AssessmentType.Worksheet => S["OpenWorksheet"].Value,
                         _ => S["StartAssessment"].Value
                     };
                     var taskSchedule = item.AssessmentType switch
                     {
                         AssessmentType.Exam when item.AvailableFromUtc.HasValue =>
-                            $"Starts: {LocalTime(item.AvailableFromUtc)}",
+                            $"{S["TaskStarts"].Value}: {LocalTime(item.AvailableFromUtc)}",
                         AssessmentType.Exam when item.DueAtUtc.HasValue =>
-                            $"Closes: {LocalTime(item.DueAtUtc)}",
+                            $"{S["TaskCloses"].Value}: {LocalTime(item.DueAtUtc)}",
                         AssessmentType.Homework when item.DueAtUtc.HasValue =>
-                            $"Due: {LocalTime(item.DueAtUtc)}",
+                            $"{S["TaskDue"].Value}: {LocalTime(item.DueAtUtc)}",
                         AssessmentType.Worksheet =>
-                            "No deadline",
+                            S["TaskNoDeadline"].Value,
                         _ =>
                             $"{S["AssessmentDate"]}: {item.AssessmentDate:yyyy-MM-dd}"
                     };
