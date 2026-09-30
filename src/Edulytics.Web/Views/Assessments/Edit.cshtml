@@ -6,6 +6,9 @@
     var assessment = Model.Details.Assessment;
     var hasQuestions = Model.Details.Questions.Count > 0;
     var isScored = assessment.AssessmentType == AssessmentType.Exam;
+    var isPublishedHomeworkDueEdit =
+        assessment.Status == AssessmentStatus.Open &&
+        assessment.AssessmentType == AssessmentType.Homework;
 
     TimeZoneInfo schoolTimeZone;
     try
@@ -55,14 +58,33 @@
                    value="@Convert.ToBase64String(assessment.RowVersion)" />
 
             <label for="title">@A["Title"]</label>
-            <input id="title" name="title"
-                   value="@assessment.Title" maxlength="200" required />
+            @if (isPublishedHomeworkDueEdit)
+            {
+                <input id="title" name="title"
+                       value="@assessment.Title" maxlength="200"
+                       readonly aria-readonly="true" required />
+            }
+            else
+            {
+                <input id="title" name="title"
+                       value="@assessment.Title" maxlength="200" required />
+            }
 
             <label for="assessmentDate">@A["AssessmentDate"]</label>
-            <input id="assessmentDate" name="assessmentDate"
-                   type="date"
-                   value="@assessment.AssessmentDate.ToString("yyyy-MM-dd")"
-                   required />
+            @if (isPublishedHomeworkDueEdit)
+            {
+                <input id="assessmentDate" name="assessmentDate"
+                       type="date"
+                       value="@assessment.AssessmentDate.ToString("yyyy-MM-dd")"
+                       readonly aria-readonly="true" required />
+            }
+            else
+            {
+                <input id="assessmentDate" name="assessmentDate"
+                       type="date"
+                       value="@assessment.AssessmentDate.ToString("yyyy-MM-dd")"
+                       required />
+            }
 
             @if (isScored)
             {
@@ -99,7 +121,13 @@
                        type="datetime-local"
                        value="@LocalInput(assessment.DueAtUtc)"
                        required />
-                <small class="assessment-info">School time zone: @Model.Details.SchoolTimeZoneId. Homework is online and unscored.</small>
+                <small class="assessment-info">
+                    School time zone: @Model.Details.SchoolTimeZoneId. Homework is online and unscored.
+                    @if (isPublishedHomeworkDueEdit)
+                    {
+                        <text> Only the due time can be changed after publishing.</text>
+                    }
+                </small>
             }
             else
             {
