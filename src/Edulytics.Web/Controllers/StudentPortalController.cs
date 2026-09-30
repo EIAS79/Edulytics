@@ -416,14 +416,18 @@ public sealed class StudentPortalController : Controller
             ref exactPracticeAdoptionId,
             ref pilotAdoptionId);
 
+        if (HasResolvedPracticeAvailability(
+                exactPracticeAdoptionId,
+                pilotAdoptionId))
+        {
+            return (
+                gameAdoptionId,
+                exactPracticeAdoptionId,
+                pilotAdoptionId);
+        }
+
         foreach (var curriculum in initial.Curricula)
         {
-            if (gameAdoptionId.HasValue &&
-                exactPracticeAdoptionId.HasValue &&
-                pilotAdoptionId.HasValue)
-            {
-                break;
-            }
             if (curriculum.CurriculumAdoptionId == initial.SelectedCurriculumAdoptionId)
                 continue;
 
@@ -438,10 +442,26 @@ public sealed class StudentPortalController : Controller
                 ref gameAdoptionId,
                 ref exactPracticeAdoptionId,
                 ref pilotAdoptionId);
+
+            // Exact Practice is the primary launch path and a legacy pilot is
+            // sufficient on its own. Neither requires scanning unrelated
+            // curriculum workspaces for a third optional presentation mode.
+            if (HasResolvedPracticeAvailability(
+                    exactPracticeAdoptionId,
+                    pilotAdoptionId))
+            {
+                break;
+            }
         }
 
         return (gameAdoptionId, exactPracticeAdoptionId, pilotAdoptionId);
     }
+
+    private static bool HasResolvedPracticeAvailability(
+        Guid? exactPracticeAdoptionId,
+        Guid? pilotAdoptionId) =>
+        exactPracticeAdoptionId.HasValue ||
+        pilotAdoptionId.HasValue;
 
     private static void InspectPracticeWorkspace(
         StudentPrivatePracticeWorkspace workspace,
