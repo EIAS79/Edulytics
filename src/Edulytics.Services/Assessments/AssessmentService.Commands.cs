@@ -1810,6 +1810,11 @@ public sealed partial class AssessmentService
             case AssessmentType.Exam:
                 if (!ValidMax(maxScore))
                     return (nameof(maxScore), AssessmentErrorCode.InvalidMaxScore);
+                if (deliveryMode == AssessmentDeliveryMode.Offline &&
+                    (available.HasValue || due.HasValue || attemptTimeLimitMinutes.HasValue))
+                {
+                    return (nameof(deliveryMode), AssessmentErrorCode.InvalidSchedule);
+                }
                 if (available.HasValue && due.HasValue && due.Value <= available.Value)
                     return (nameof(dueAtUtc), AssessmentErrorCode.InvalidSchedule);
                 if (attemptTimeLimitMinutes is <= 0 or > 480)
