@@ -478,8 +478,10 @@ internal static class SupportingPracticeCompletionEngine
         int s,
         int? preferredVariant = null)
     {
-        var variant = QuestionVariantPolicy.NormalizeSlot(
-            preferredVariant ?? 0);
+        var variant = ResolveNumberAdaptiveVariant(
+            r,
+            s,
+            preferredVariant);
         var power = r.Next(0, Math.Min(6, 2 + s * 2));
         var digit = r.Next(1, 10);
         var lower = r.Next(0, Math.Max(1, Pow10(power)));
@@ -564,8 +566,10 @@ internal static class SupportingPracticeCompletionEngine
         int s,
         int? preferredVariant = null)
     {
-        var variant = QuestionVariantPolicy.NormalizeSlot(
-            preferredVariant ?? 0);
+        var variant = ResolveNumberAdaptiveVariant(
+            r,
+            s,
+            preferredVariant);
 
         if (variant < 4)
         {
@@ -2023,6 +2027,26 @@ internal static class SupportingPracticeCompletionEngine
         };
 
         return answer.ToString(CultureInfo.InvariantCulture);
+    }
+
+    private static int ResolveNumberAdaptiveVariant(
+        Random random,
+        int scale,
+        int? preferredVariant)
+    {
+        var (start, width) = scale switch
+        {
+            <= 1 => (0, 4),
+            2 => (4, 4),
+            _ => (8, 8)
+        };
+
+        var offset = preferredVariant.HasValue
+            ? QuestionVariantPolicy.NormalizeSlot(
+                  preferredVariant.Value) % width
+            : random.Next(0, width);
+
+        return start + offset;
     }
 
     private static int RoundTo(int value, int place)
