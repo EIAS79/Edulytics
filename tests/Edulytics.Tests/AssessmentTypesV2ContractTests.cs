@@ -261,6 +261,45 @@ public sealed class AssessmentTypesV2ContractTests
         Assert.Contains("\"ResultReleaseStatus\" = 2", source);
     }
 
+    [Fact]
+    public void ObservabilityContract_CoversAssessmentLifecycle()
+    {
+        var root = Root();
+        var metrics = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Services/Assessments/AssessmentMetrics.cs"));
+        var commands = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Services/Assessments/AssessmentService.Commands.cs"));
+        var delivery = File.ReadAllText(
+            Path.Combine(
+                root,
+                "src/Edulytics.Services/Assessments/StudentAssessmentDeliveryService.cs"));
+
+        foreach (var metricName in new[]
+                 {
+                     "exam_scheduled_open_success",
+                     "exam_access_denied_before_start",
+                     "homework_submitted_before_due",
+                     "homework_missed_due",
+                     "worksheet_online_completed",
+                     "worksheet_pdf_generated",
+                     "non_exam_evaluation_evidence_blocked"
+                 })
+        {
+            Assert.Contains(metricName, metrics);
+        }
+
+        Assert.Contains("Assessment.Opened", commands);
+        Assert.Contains("Assessment.Closed", commands);
+        Assert.Contains("Assessment.ResultsPublished", commands);
+        Assert.Contains("StudentHomework.ProgressSaved", delivery);
+        Assert.Contains("StudentHomework.Submitted", delivery);
+        Assert.Contains("StudentWorksheet.Completed", delivery);
+    }
+
     private static EdulyticsDbContext CreateDb()
     {
         var options = new DbContextOptionsBuilder<EdulyticsDbContext>()
