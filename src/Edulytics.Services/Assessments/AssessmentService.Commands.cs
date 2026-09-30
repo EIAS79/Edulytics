@@ -29,18 +29,28 @@ public sealed partial class AssessmentService
         if (!Enum.IsDefined(request.DeliveryMode))
             return Fail(nameof(request.DeliveryMode), AssessmentErrorCode.InvalidDeliveryModeForType);
 
+        if (!TryConvertSchoolScheduleToUtc(
+                request.AvailableFromLocal,
+                request.DueAtLocal,
+                scope.School!.TimeZoneId,
+                out var availableFromUtc,
+                out var dueAtUtc))
+        {
+            return Fail(nameof(request.AvailableFromLocal), AssessmentErrorCode.InvalidSchedule);
+        }
+
         var typeValidation = ValidateTypeSettings(
             request.AssessmentType,
             request.DeliveryMode,
             request.MaxScore,
-            request.AvailableFromUtc,
-            request.DueAtUtc,
+            availableFromUtc,
+            dueAtUtc,
             request.AttemptTimeLimitMinutes,
             DateTime.UtcNow);
         if (typeValidation is not null)
             return Fail(typeValidation.Value.Field, typeValidation.Value.Error);
 
-        var schoolId = scope.School!.Id;
+        var schoolId = scope.School.Id;
         var classGroup = await _repo.GetClassGroupAsync(schoolId, request.ClassGroupId, cancellationToken);
         if (classGroup is null) return Fail(nameof(request.ClassGroupId), AssessmentErrorCode.ClassGroupNotFound);
 
@@ -89,10 +99,10 @@ public sealed partial class AssessmentService
                 ? AssessmentDeliveryMode.Online
                 : request.DeliveryMode,
             AvailableFromUtc = request.AssessmentType == AssessmentType.Exam
-                ? NormalizeUtc(request.AvailableFromUtc)
+                ? availableFromUtc
                 : null,
             DueAtUtc = request.AssessmentType is AssessmentType.Exam or AssessmentType.Homework
-                ? NormalizeUtc(request.DueAtUtc)
+                ? dueAtUtc
                 : null,
             AttemptTimeLimitMinutes = request.AssessmentType == AssessmentType.Exam
                 ? request.AttemptTimeLimitMinutes
@@ -384,12 +394,22 @@ public sealed partial class AssessmentService
         if (!Enum.IsDefined(requestedDelivery))
             return Fail(nameof(request.DeliveryMode), AssessmentErrorCode.InvalidDeliveryModeForType);
 
+        if (!TryConvertSchoolScheduleToUtc(
+                request.AvailableFromLocal,
+                request.DueAtLocal,
+                scope.School.TimeZoneId,
+                out var availableFromUtc,
+                out var dueAtUtc))
+        {
+            return Fail(nameof(request.AvailableFromLocal), AssessmentErrorCode.InvalidSchedule);
+        }
+
         var typeValidation = ValidateTypeSettings(
             assessment.AssessmentType,
             requestedDelivery,
             request.MaxScore,
-            request.AvailableFromUtc,
-            request.DueAtUtc,
+            availableFromUtc,
+            dueAtUtc,
             request.AttemptTimeLimitMinutes,
             DateTime.UtcNow);
         if (typeValidation is not null)
@@ -455,11 +475,11 @@ public sealed partial class AssessmentService
                 : requestedDelivery;
         assessment.AvailableFromUtc =
             assessment.AssessmentType == AssessmentType.Exam
-                ? NormalizeUtc(request.AvailableFromUtc)
+                ? availableFromUtc
                 : null;
         assessment.DueAtUtc =
             assessment.AssessmentType is AssessmentType.Exam or AssessmentType.Homework
-                ? NormalizeUtc(request.DueAtUtc)
+                ? dueAtUtc
                 : null;
         assessment.AttemptTimeLimitMinutes =
             assessment.AssessmentType == AssessmentType.Exam
@@ -1674,6 +1694,57 @@ public sealed partial class AssessmentService
             default:
                 return (nameof(assessmentType), AssessmentErrorCode.InvalidAssessmentType);
         }
+    }
+
+    private static bool TryConvertSchoolScheduleToUtc(
+        DateTime? availableFromLocal,
+        DateTime? dueAtLocal,
+        string timeZoneId,
+        out DateTime? availableFromUtc,
+        out DateTime? dueAtUtc)
+    {
+        availableFromUtc = null;
+        dueAtUtc = null;
+
+        TimeZoneInfo timeZone;
+        try
+        {
+            timeZone = TimeZoneInfo.FindSystemTimeZoneById(
+                string.IsNullOrWhiteSpace(timeZoneId) ? "UTC" : timeZoneId);
+        }
+        catch (TimeZoneNotFoundException)
+        {
+            return false;
+        }
+        catch (InvalidTimeZoneException)
+        {
+            return false;
+        }
+
+        if (!TryConvertSchoolLocalToUtc(availableFromLocal, timeZone, out availableFromUtc) ||
+            !TryConvertSchoolLocalToUtc(dueAtLocal, timeZone, out dueAtUtc))
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    private static bool TryConvertSchoolLocalToUtc(
+        DateTime? localValue,
+        TimeZoneInfo timeZone,
+        out DateTime? utcValue)
+    {
+        utcValue = null;
+        if (!localValue.HasValue)
+            return true;
+
+        var local = DateTime.SpecifyKind(localValue.Value, DateTimeKind.Unspecified);
+        if (timeZone.IsInvalidTime(local) || timeZone.IsAmbiguousTime(local))
+            return false;
+
+        utcValue = TimeZoneInfo.ConvertTimeToUtc(local, timeZone);
+        return true;
     }
 
     private static DateTime? NormalizeUtc(DateTime? value)
