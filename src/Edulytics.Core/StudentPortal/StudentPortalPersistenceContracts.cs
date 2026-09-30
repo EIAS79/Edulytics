@@ -14,4 +14,7 @@ public sealed record StudentPortalSnapshot(
     IReadOnlyList<CurriculumFrameworkVersion> FrameworkVersions,
     IReadOnlyList<CurriculumPackContentNode> CurriculumNodes,
     IReadOnlyList<Assessment> Assessments,
-    IReadOnlyList<AssessmentResult> Results);
+    IReadOnlyList<AssessmentResult> Results)
+{
+    public IReadOnlyList<AssessmentAttempt> AssessmentAttempts { get; init; } = [];
+}
