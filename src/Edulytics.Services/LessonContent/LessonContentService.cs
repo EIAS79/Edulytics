@@ -6,6 +6,7 @@ using Edulytics.Core.Enums;
 using Edulytics.Core.Interfaces;
 using Edulytics.Core.Lessons;
 using Edulytics.Core.Users;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Edulytics.Services.LessonContent;
 
@@ -18,12 +19,15 @@ public sealed class LessonContentService : ILessonContentService
     private readonly ISchoolUserRepository _users;
     private readonly ISchoolRepository _schools;
     private readonly IAcademicStructureRepository? _academics;
+    private readonly IMemoryCache? _cache;
+    private static readonly TimeSpan StudentContextCacheLifetime =
+        TimeSpan.FromSeconds(20);
 
     public LessonContentService(
         ILessonContentRepository lessons,
         ISchoolUserRepository users,
         ISchoolRepository schools)
-        : this(lessons, users, schools, null)
+        : this(lessons, users, schools, null, null)
     {
     }
 
@@ -31,12 +35,14 @@ public sealed class LessonContentService : ILessonContentService
         ILessonContentRepository lessons,
         ISchoolUserRepository users,
         ISchoolRepository schools,
-        IAcademicStructureRepository? academics)
+        IAcademicStructureRepository? academics,
+        IMemoryCache? cache = null)
     {
         _lessons = lessons;
         _users = users;
         _schools = schools;
         _academics = academics;
+        _cache = cache;
     }
 
     // Compatibility overload retained for legacy callers and historical tests.
@@ -270,19 +276,10 @@ public sealed class LessonContentService : ILessonContentService
                 .Failure(LessonContentErrorCode.AccessDenied);
         }
 
-        var contexts = await _lessons.ListStudentAdoptionsAsync(
+        var resolvableContexts = await GetStudentContextsAsync(
             actorUserId,
             scope.School!.Id,
             cancellationToken);
-        contexts = await ScopeAndEnrichStudentContextsAsync(
-            actorUserId,
-            scope.School.Id,
-            contexts,
-            cancellationToken);
-
-        var resolvableContexts = contexts
-            .Where(CanResolveContext)
-            .ToArray();
 
         var lessons = await _lessons.ListPedagogicalLessonsAsync(
             resolvableContexts
@@ -349,19 +346,10 @@ public sealed class LessonContentService : ILessonContentService
             return LessonContentQueryResult<StudentLessonDetail>.Failure(
                 LessonContentErrorCode.AccessDenied);
 
-        var contexts = await _lessons.ListStudentAdoptionsAsync(
+        var resolvableContexts = await GetStudentContextsAsync(
             actorUserId,
             scope.School!.Id,
             cancellationToken);
-        contexts = await ScopeAndEnrichStudentContextsAsync(
-            actorUserId,
-            scope.School.Id,
-            contexts,
-            cancellationToken);
-
-        var resolvableContexts = contexts
-            .Where(CanResolveContext)
-            .ToArray();
         var lessons = await _lessons.ListPedagogicalLessonsAsync(
             resolvableContexts
                 .Select(x => x.FrameworkVersionId)
@@ -553,6 +541,47 @@ public sealed class LessonContentService : ILessonContentService
             .Where(x => x is not null)
             .Select(x => x!)
             .ToArray();
+    }
+
+    private async Task<IReadOnlyList<CanonicalCurriculumContextRecord>>
+        GetStudentContextsAsync(
+            Guid actorUserId,
+            Guid schoolId,
+            CancellationToken cancellationToken)
+    {
+        var cacheKey =
+            $"lesson-content-student-contexts:{schoolId:N}:{actorUserId:N}";
+
+        if (_cache is not null &&
+            _cache.TryGetValue(
+                cacheKey,
+                out IReadOnlyList<CanonicalCurriculumContextRecord>? cached) &&
+            cached is not null)
+        {
+            return cached;
+        }
+
+        var contexts = await _lessons.ListStudentAdoptionsAsync(
+            actorUserId,
+            schoolId,
+            cancellationToken);
+
+        contexts = await ScopeAndEnrichStudentContextsAsync(
+            actorUserId,
+            schoolId,
+            contexts,
+            cancellationToken);
+
+        var resolvable = contexts
+            .Where(CanResolveContext)
+            .ToArray();
+
+        _cache?.Set(
+            cacheKey,
+            resolvable,
+            StudentContextCacheLifetime);
+
+        return resolvable;
     }
 
     private async Task<IReadOnlyList<CanonicalCurriculumContextRecord>> ScopeAndEnrichStudentContextsAsync(
