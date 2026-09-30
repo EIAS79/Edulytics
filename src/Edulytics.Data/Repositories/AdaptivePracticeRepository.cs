@@ -438,9 +438,17 @@ public sealed class AdaptivePracticeRepository(
             await context.SaveChangesAsync(cancellationToken);
         }
         catch (DbUpdateConcurrencyException exception)
+            when (IsSubmissionOwnedConflict(exception.Entries))
         {
             throw new AdaptivePracticeWriteConflictException(
                 message,
+                exception);
+        }
+        catch (DbUpdateConcurrencyException exception)
+            when (HasSharedLearnerStateConflict(exception.Entries))
+        {
+            throw new AdaptivePracticeSharedStateWriteConflictException(
+                "Adaptive learner state changed concurrently with this answer.",
                 exception);
         }
         catch (DbUpdateException exception)
@@ -454,7 +462,29 @@ public sealed class AdaptivePracticeRepository(
                 message,
                 exception);
         }
+        catch (DbUpdateException exception)
+            when (exception.InnerException is PostgresException postgres &&
+                  postgres.SqlState == PostgresErrorCodes.UniqueViolation &&
+                  HasSharedLearnerStateConflict(exception.Entries))
+        {
+            throw new AdaptivePracticeSharedStateWriteConflictException(
+                "Adaptive learner state changed concurrently with this answer.",
+                exception);
+        }
     }
+
+    private static bool IsSubmissionOwnedConflict(
+        IReadOnlyList<Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry> entries) =>
+        entries.Count > 0 &&
+        entries.All(entry =>
+            entry.Entity is AdaptivePracticeSession or
+                AdaptivePracticeTurn);
+
+    private static bool HasSharedLearnerStateConflict(
+        IReadOnlyList<Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry> entries) =>
+        entries.Any(entry =>
+            entry.Entity is StudentMisconceptionState or
+                StudentRepresentationFluencyState);
 
     private static void Stamp(AdaptivePracticeSession entity) =>
         entity.RowVersion = Guid.NewGuid().ToByteArray();
