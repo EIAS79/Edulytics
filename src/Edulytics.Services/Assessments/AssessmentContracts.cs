@@ -84,6 +84,10 @@ public sealed record AssessmentListItem(
     public DateTime? AvailableFromUtc { get; init; }
     public DateTime? DueAtUtc { get; init; }
     public int? AttemptTimeLimitMinutes { get; init; }
+    public AssessmentResultReleaseStatus ResultReleaseStatus { get; init; } =
+        AssessmentResultReleaseStatus.Withheld;
+    public DateTime? ResultsPublishedAtUtc { get; init; }
+    public Guid? ResultsPublishedByUserId { get; init; }
     public bool IsScored => AssessmentType == AssessmentType.Exam;
     public bool CountsTowardEvaluation => AssessmentType == AssessmentType.Exam;
 }
