@@ -24,6 +24,11 @@ public sealed class AssessmentTaskResponseConfiguration : IEntityTypeConfigurati
             x.AssessmentQuestionId
         }).IsUnique();
 
+        builder.HasOne<School>()
+            .WithMany()
+            .HasForeignKey(x => x.SchoolId)
+            .OnDelete(DeleteBehavior.Restrict);
+
         builder.HasOne<AssessmentAttempt>()
             .WithMany()
             .HasForeignKey(x => new { x.SchoolId, x.AssessmentAttemptId })
