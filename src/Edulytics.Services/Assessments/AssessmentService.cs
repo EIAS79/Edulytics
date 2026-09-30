@@ -106,7 +106,10 @@ public sealed partial class AssessmentService : IAssessmentService
                 outcomes,
                 workspace.ClassGroups,
                 workspace.Subjects,
-                workspace.Terms));
+                workspace.Terms)
+            {
+                SchoolTimeZoneId = scope.School.TimeZoneId
+            });
     }
 
     public async Task<AssessmentQueryResult<AssessmentQuestionItem>> GetQuestionAsync(
