@@ -284,6 +284,66 @@ public sealed class AdaptivePracticeV2Service(
                 cancellationToken));
     }
 
+    public async Task<AdaptivePracticeReviewResult> GetReviewAsync(
+        Guid studentUserId,
+        Guid sessionId,
+        int sequence,
+        CancellationToken cancellationToken = default)
+    {
+        if (sequence <= 0)
+        {
+            return AdaptivePracticeReviewResult.Failure(
+                AdaptivePracticeV2Error.TurnNotFound);
+        }
+
+        var access = await GetOwnedSessionAsync(
+            studentUserId,
+            sessionId,
+            cancellationToken);
+
+        if (access.Error.HasValue)
+        {
+            return AdaptivePracticeReviewResult.Failure(
+                access.Error.Value);
+        }
+
+        var session = access.Session!;
+        var turn = await adaptiveRepository.GetTurnAsync(
+            session.SchoolId,
+            session.Id,
+            sequence,
+            cancellationToken);
+
+        if (turn is null ||
+            !turn.AnsweredAtUtc.HasValue ||
+            !turn.IsCorrect.HasValue)
+        {
+            return AdaptivePracticeReviewResult.Failure(
+                AdaptivePracticeV2Error.TurnNotFound);
+        }
+
+        var item = await adaptiveRepository.GetItemAsync(
+            session.SchoolId,
+            turn.AssessmentItemId,
+            cancellationToken);
+
+        if (item is null)
+        {
+            return AdaptivePracticeReviewResult.Failure(
+                AdaptivePracticeV2Error.TurnNotFound);
+        }
+
+        var feedback = !string.IsNullOrWhiteSpace(turn.Feedback)
+            ? turn.Feedback!
+            : item.Solution;
+
+        return AdaptivePracticeReviewResult.Success(
+            new AdaptivePracticeReviewView(
+                BuildQuestionView(turn, item),
+                turn.IsCorrect == true,
+                feedback));
+    }
+
     public async Task<AdaptivePracticeAnswerResult> AnswerAsync(
         Guid studentUserId,
         Guid sessionId,
@@ -1059,25 +1119,38 @@ public sealed class AdaptivePracticeV2Service(
                 session.Status ==
                     AdaptivePracticeSessionStatus.Paused,
                 session.StopReason,
-                new AdaptivePracticeQuestionView(
-                    turn.Id,
-                    turn.Sequence,
-                    item.Id,
-                    item.ItemType,
-                    item.Difficulty,
-                    item.Prompt,
-                    item.GenerationFamily,
-                    item.GenerationParametersJson,
-                    turn.Representation,
-                    turn.MathematicalComplexityScore,
-                    turn.IsIndependentConfirmation,
-                    turn.IncorrectAttemptCount,
-                    turn.LastIncorrectAnswer,
+                BuildQuestionView(
+                    turn,
+                    item,
                     remediationStageCode,
                     remediationHint,
-                    workedExample,
-                    turn.MisconceptionFocusId)));
+                    workedExample)));
     }
+
+    private static AdaptivePracticeQuestionView BuildQuestionView(
+        AdaptivePracticeTurn turn,
+        AssessmentItem item,
+        string? remediationStageCode = null,
+        string? remediationHint = null,
+        string? workedExample = null) =>
+        new(
+            turn.Id,
+            turn.Sequence,
+            item.Id,
+            item.ItemType,
+            item.Difficulty,
+            item.Prompt,
+            item.GenerationFamily,
+            item.GenerationParametersJson,
+            turn.Representation,
+            turn.MathematicalComplexityScore,
+            turn.IsIndependentConfirmation,
+            turn.IncorrectAttemptCount,
+            turn.LastIncorrectAnswer,
+            remediationStageCode,
+            remediationHint,
+            workedExample,
+            turn.MisconceptionFocusId);
 
     private static AdaptivePracticeSessionView BuildCompletedView(
         AdaptivePracticeSession session) =>
