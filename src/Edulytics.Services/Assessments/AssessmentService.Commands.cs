@@ -383,7 +383,7 @@ public sealed partial class AssessmentService
         if (!await CanManageAssessmentAsync(scope, assessment, cancellationToken))
             return Fail(AssessmentErrorCode.AccessDenied);
 
-        if (!await CanEditAssessmentContentAsync(
+        if (!await CanEditAssessmentMetadataAsync(
                 scope.School.Id,
                 assessment,
                 cancellationToken))
@@ -419,6 +419,26 @@ public sealed partial class AssessmentService
             DateTime.UtcNow);
         if (typeValidation is not null)
             return Fail(typeValidation.Value.Field, typeValidation.Value.Error);
+
+        var isPublishedHomeworkDueEdit =
+            assessment.Status == AssessmentStatus.Open &&
+            assessment.AssessmentType == AssessmentType.Homework;
+
+        if (isPublishedHomeworkDueEdit)
+        {
+            if (!string.Equals(title, assessment.Title, StringComparison.Ordinal) ||
+                request.AssessmentDate != assessment.AssessmentDate ||
+                request.MaxScore != 0m ||
+                requestedDelivery != AssessmentDeliveryMode.Online ||
+                availableFromUtc.HasValue ||
+                request.AttemptTimeLimitMinutes.HasValue)
+            {
+                return Fail(AssessmentErrorCode.AssessmentNotDraft);
+            }
+
+            if (!dueAtUtc.HasValue || dueAtUtc.Value <= DateTime.UtcNow)
+                return Fail(nameof(request.DueAtLocal), AssessmentErrorCode.InvalidSchedule);
+        }
 
         var term = await _repo.GetTermAsync(scope.School.Id, assessment.TermId, cancellationToken);
         if (term is null) return Fail(AssessmentErrorCode.TermNotFound);
