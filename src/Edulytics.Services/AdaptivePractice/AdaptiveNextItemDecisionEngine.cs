@@ -72,7 +72,10 @@ public sealed class AdaptiveNextItemDecisionEngine(
                 latest.QuestionFamily,
                 family,
                 StringComparison.Ordinal)
-                ? latest.MisconceptionId
+                ? KeepMisconceptionForFamily(
+                    state,
+                    latest.MisconceptionId,
+                    family)
                 : null;
 
         var remediationMisconceptionId =
@@ -80,7 +83,10 @@ public sealed class AdaptiveNextItemDecisionEngine(
                 state.Remediation.PreferredQuestionFamily,
                 family,
                 StringComparison.Ordinal)
-                ? state.Remediation.BlockingMisconceptionId
+                ? KeepMisconceptionForFamily(
+                    state,
+                    state.Remediation.BlockingMisconceptionId,
+                    family)
                 : null;
 
         if (latest is not null && !latest.IsCorrect)
@@ -297,6 +303,31 @@ public sealed class AdaptiveNextItemDecisionEngine(
                 current - ComplexityStepLimit);
 
         return current;
+    }
+
+    private static string? KeepMisconceptionForFamily(
+        AdaptivePracticeLearningState state,
+        string? misconceptionId,
+        string family)
+    {
+        if (string.IsNullOrWhiteSpace(misconceptionId))
+            return null;
+
+        var known = state.Misconceptions.FirstOrDefault(x =>
+            string.Equals(
+                x.MisconceptionId,
+                misconceptionId,
+                StringComparison.Ordinal));
+
+        // A newly classified misconception can precede its persisted state.
+        // If evidence already exists, however, its owning family is authoritative.
+        return known is null ||
+               string.Equals(
+                   known.QuestionFamily,
+                   family,
+                   StringComparison.Ordinal)
+            ? misconceptionId
+            : null;
     }
 
     private static string SelectFamily(
