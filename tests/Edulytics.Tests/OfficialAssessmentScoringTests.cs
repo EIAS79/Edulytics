@@ -42,13 +42,19 @@ public sealed class OfficialAssessmentScoringTests
     }
 
     [Theory]
-    [InlineData(AssessmentStatus.Draft, false)]
-    [InlineData(AssessmentStatus.Open, false)]
-    [InlineData(AssessmentStatus.Closed, true)]
-    public void StudentSeesOfficialResultOnlyAfterTeacherClosesAssessment(
+    [InlineData(AssessmentStatus.Draft, AssessmentResultReleaseStatus.Withheld, false)]
+    [InlineData(AssessmentStatus.Open, AssessmentResultReleaseStatus.Published, false)]
+    [InlineData(AssessmentStatus.Closed, AssessmentResultReleaseStatus.Withheld, false)]
+    [InlineData(AssessmentStatus.Closed, AssessmentResultReleaseStatus.Published, true)]
+    public void StudentSeesOfficialResultOnlyAfterTeacherPublishesClosedAssessment(
         AssessmentStatus status,
+        AssessmentResultReleaseStatus releaseStatus,
         bool expected)
     {
-        Assert.Equal(expected, OfficialAssessmentResultReleasePolicy.CanStudentView(status));
+        Assert.Equal(
+            expected,
+            OfficialAssessmentResultReleasePolicy.CanStudentView(
+                status,
+                releaseStatus));
     }
 }
