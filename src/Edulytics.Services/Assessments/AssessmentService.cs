@@ -153,6 +153,9 @@ public sealed partial class AssessmentService : IAssessmentService
         if (!CanManage(scope, snapshot, assessment))
             return AssessmentQueryResult<AssessmentResultsWorkspace>.Failure(AssessmentErrorCode.AccessDenied);
 
+        if (assessment.AssessmentType != AssessmentType.Exam)
+            return AssessmentQueryResult<AssessmentResultsWorkspace>.Failure(AssessmentErrorCode.InvalidAssessmentType);
+
         if (assessment.Status == AssessmentStatus.Draft)
             return AssessmentQueryResult<AssessmentResultsWorkspace>.Failure(AssessmentErrorCode.AssessmentNotOpen);
 
