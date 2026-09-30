@@ -41,6 +41,8 @@
             <p>@Model.QuestionCount questions across @Model.SessionCount practice sessions.</p>
             <small>
                 Sessions are separated below so current Practice evidence is not mixed with older historical sessions.
+                Question form reports the difficulty of the generated item; Adaptive complexity reports the capability-bounded
+                target used for that turn. Older sessions keep the historical values recorded by their original engine version.
             </small>
         </div>
     </header>
@@ -102,11 +104,11 @@
 
                                 <div class="student-progress-skill-metrics">
                                     <div>
-                                        <span>Difficulty</span>
+                                        <span>Question form</span>
                                         <strong>@item.Difficulty</strong>
                                     </div>
                                     <div>
-                                        <span>Complexity</span>
+                                        <span>Adaptive complexity</span>
                                         <strong>@item.MathematicalComplexityScore</strong>
                                     </div>
                                     <div>
