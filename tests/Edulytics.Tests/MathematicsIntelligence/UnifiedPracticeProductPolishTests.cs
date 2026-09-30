@@ -38,6 +38,44 @@ public sealed class UnifiedPracticeProductPolishTests
     }
 
     [Fact]
+    public void PracticeVoice_ReviewReadsOnlyEddyFeedbackBeforeNextQuestion()
+    {
+        var root = FindRoot();
+        var script = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/student-lesson-practice.js"));
+
+        Assert.Contains(
+            "const review = document.querySelector(\"[data-practice-review]\")",
+            script,
+            StringComparison.Ordinal);
+
+        var reviewBranch = script.IndexOf("if (review)", StringComparison.Ordinal);
+        var reviewReturn = script.IndexOf(
+            "return parts;",
+            reviewBranch,
+            StringComparison.Ordinal);
+        var questionSpeech = script.IndexOf(
+            "parts.push(question.textContent.trim())",
+            reviewReturn,
+            StringComparison.Ordinal);
+
+        Assert.True(reviewBranch >= 0);
+        Assert.True(reviewReturn > reviewBranch);
+        Assert.Contains(
+            "feedback?.textContent.trim()",
+            script[reviewBranch..reviewReturn],
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "hint?.textContent.trim()",
+            script[reviewBranch..reviewReturn],
+            StringComparison.Ordinal);
+        Assert.True(
+            questionSpeech > reviewReturn,
+            "The answered question must not be spoken before Eddy feedback on review pages.");
+    }
+
+    [Fact]
     public void WrongAnswer_IsCommittedAsGuidedRetryWithoutAdvancingSequence()
     {
         var root = FindRoot();

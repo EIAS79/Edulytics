@@ -8,6 +8,7 @@
     const feedback = document.querySelector("[data-practice-feedback]");
     const soundButton = document.querySelector("[data-practice-sound]");
     const terminal = document.querySelector("[data-practice-terminal]");
+    const review = document.querySelector("[data-practice-review]");
     const nextButtons = document.querySelectorAll("[data-practice-next]");
 
     function stopVoice() {
@@ -30,6 +31,24 @@
 
     function currentSpeech() {
         const parts = [];
+
+        // Review pages keep the answered question visible so the learner can
+        // inspect it, but the voice should announce only Eddy's result for
+        // that completed turn. Re-reading the old question before feedback
+        // makes the narration sound as though it belongs to the next turn.
+        if (review) {
+            const reviewMessage =
+                feedback?.textContent.trim() ||
+                hint?.textContent.trim() ||
+                "";
+
+            if (reviewMessage) {
+                parts.push(reviewMessage);
+            }
+
+            return parts;
+        }
+
         if (feedback && feedback.textContent.trim()) {
             parts.push(feedback.textContent.trim());
         }
