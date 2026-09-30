@@ -31,7 +31,9 @@ public sealed class EvaluationEvidenceNormalizer
         ICollection<EvaluationEvidenceRecord> result)
     {
         var assessments = snapshot.Assessments
-            .Where(x => x.Status != AssessmentStatus.Draft)
+            .Where(x =>
+                x.Status != AssessmentStatus.Draft &&
+                x.AssessmentType == AssessmentType.Exam)
             .ToDictionary(x => x.Id);
         var results = snapshot.AssessmentResults
             .Where(x => assessments.ContainsKey(x.AssessmentId))
