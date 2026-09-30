@@ -99,6 +99,50 @@ public sealed class AssessmentRepository : IAssessmentRepository
                  x.StudentProfileId == studentProfileId,
             cancellationToken);
 
+    public async Task<AssessmentAttempt?> GetOrCreateAttemptAsync(
+        Guid schoolId,
+        Guid assessmentId,
+        Guid studentProfileId,
+        DateTime startedAtUtc,
+        CancellationToken cancellationToken = default)
+    {
+        var existing = await GetAttemptAsync(
+            schoolId,
+            assessmentId,
+            studentProfileId,
+            cancellationToken);
+        if (existing is not null)
+            return existing;
+
+        var attempt = new AssessmentAttempt
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = schoolId,
+            AssessmentId = assessmentId,
+            StudentProfileId = studentProfileId,
+            Status = Edulytics.Core.Enums.AssessmentAttemptStatus.Started,
+            StartedAtUtc = startedAtUtc,
+            CreatedAtUtc = startedAtUtc,
+            UpdatedAtUtc = startedAtUtc
+        };
+
+        await _db.AssessmentAttempts.AddAsync(attempt, cancellationToken);
+        try
+        {
+            await _db.SaveChangesAsync(cancellationToken);
+            return attempt;
+        }
+        catch (DbUpdateException)
+        {
+            _db.Entry(attempt).State = EntityState.Detached;
+            return await GetAttemptAsync(
+                schoolId,
+                assessmentId,
+                studentProfileId,
+                cancellationToken);
+        }
+    }
+
     public async Task<IReadOnlyList<AssessmentTaskResponse>> ListTaskResponsesAsync(
         Guid schoolId,
         Guid assessmentAttemptId,
