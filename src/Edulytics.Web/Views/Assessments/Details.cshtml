@@ -30,9 +30,25 @@
             <span class="assessment-context">@Model.SubjectName · @Model.ClassName · @Model.TermName</span>
             <h1>@assessment.Title</h1>
             <p>
-                @assessment.AssessmentDate.ToString("yyyy-MM-dd") ·
-                @A["MaxScore"]: @assessment.MaxScore.ToString("0.##") ·
-                @A["Status"]: @A[Model.StatusKey] ·
+                <strong>@(assessment.AssessmentType == AssessmentType.Exam
+                    ? "Exam / Test"
+                    : assessment.AssessmentType == AssessmentType.Homework
+                        ? "Homework"
+                        : "Worksheet")</strong>
+                · @assessment.AssessmentDate.ToString("yyyy-MM-dd")
+                @if (assessment.IsScored)
+                {
+                    <text> · @A["MaxScore"]: @assessment.MaxScore.ToString("0.##")</text>
+                }
+                @if (assessment.AssessmentType == AssessmentType.Homework && assessment.DueAtUtc.HasValue)
+                {
+                    <text> · Due: @assessment.DueAtUtc.Value.ToString("yyyy-MM-dd HH:mm") UTC</text>
+                }
+                @if (assessment.AssessmentType == AssessmentType.Exam && assessment.AvailableFromUtc.HasValue)
+                {
+                    <text> · Starts: @assessment.AvailableFromUtc.Value.ToString("yyyy-MM-dd HH:mm") UTC</text>
+                }
+                · @A["Status"]: @A[Model.StatusKey] ·
                 <strong>@B["CurrentDelivery"]:</strong>
                 <span class="ed-delivery-badge @deliveryClass">@B[deliveryKey]</span>
             </p>
@@ -71,9 +87,12 @@
                         @B["DownloadTeacherAnswerKey"]
                     </a>
                 }
-                <a class="school-button school-button-primary"
-                   asp-action="Results"
-                   asp-route-id="@assessment.Id">@A["Results"]</a>
+                @if (assessment.AssessmentType == AssessmentType.Exam)
+                {
+                    <a class="school-button school-button-primary"
+                       asp-action="Results"
+                       asp-route-id="@assessment.Id">@A["Results"]</a>
+                }
             }
         </div>
     </header>
@@ -96,7 +115,10 @@
         <div class="assessment-info">@A["OpenHelp"]</div>
     }
 
-    @if (canManage && Model.Details.Questions.Count > 0 && reusableClasses.Length > 0)
+    @if (canManage &&
+         assessment.AssessmentType == AssessmentType.Exam &&
+         Model.Details.Questions.Count > 0 &&
+         reusableClasses.Length > 0)
     {
         <section class="assessment-card">
             <h2>Reuse this assessment for another class</h2>
@@ -146,7 +168,10 @@
                     <header>
                         <div>
                             <h3>@question.Order. @question.Prompt</h3>
-                            <p>@A["QuestionMaxScore"]: @question.MaxScore.ToString("0.##")</p>
+                            @if (assessment.IsScored)
+                            {
+                                <p>@A["QuestionMaxScore"]: @question.MaxScore.ToString("0.##")</p>
+                            }
                         </div>
                     </header>
                     <div class="assessment-mappings">
