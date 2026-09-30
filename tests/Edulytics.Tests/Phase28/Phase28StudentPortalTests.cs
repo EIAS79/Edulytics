@@ -200,6 +200,10 @@ public sealed class Phase28StudentPortalTests
     {
         var fixture = BuildWorkspaceFixture();
 
+        fixture.Snapshot.Assessments[0].Status = AssessmentStatus.Closed;
+        fixture.Snapshot.Assessments[0].ResultReleaseStatus =
+            AssessmentResultReleaseStatus.Published;
+
         var otherResult =
             new AssessmentResult
             {
