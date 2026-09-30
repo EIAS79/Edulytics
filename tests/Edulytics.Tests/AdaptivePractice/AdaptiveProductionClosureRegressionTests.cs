@@ -126,6 +126,114 @@ public sealed class AdaptiveProductionClosureRegressionTests
             StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void LearnerLessonReaderUsesAvailableApplicationCanvas()
+    {
+        var css = Read(
+            "src/Edulytics.Web/wwwroot/css/site.css");
+
+        Assert.Contains(
+            "learner-production-layout-20260930",
+            css,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "width: min(100%, 1460px);",
+            css,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "grid-template-columns: minmax(0, 1fr) minmax(16rem, 18rem);",
+            css,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "max-width: 86ch;",
+            css,
+            StringComparison.Ordinal);
+
+        var studentLesson = Read(
+            "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml");
+
+        Assert.Contains(
+            "lesson-reader-layout--full",
+            studentLesson,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            ".lesson-reader-layout--full",
+            css,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void QuestionLogSeparatesHistoricalPracticeSessions()
+    {
+        var view = Read(
+            "src/Edulytics.Web/Views/StudentAdaptiveIntelligence/QuestionLog.cshtml");
+
+        Assert.Contains(
+            ".GroupBy(x => x.SessionId)",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "Practice session",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "Technical details",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "ReasonText(item.DecisionReasonCode)",
+            view,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void PracticeVoiceIsCancelledBeforeSubmitAndNavigation()
+    {
+        var javascript = Read(
+            "src/Edulytics.Web/wwwroot/js/student-lesson-practice.js");
+
+        Assert.Contains(
+            "function stopVoice()",
+            javascript,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "window.addEventListener(\"pagehide\", stopVoice)",
+            javascript,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "window.addEventListener(\"beforeunload\", stopVoice)",
+            javascript,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "submitted = true;\n            stopVoice();",
+            javascript,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void LessonPracticeAvailabilityStopsAfterUsableAdoption()
+    {
+        var controller = Read(
+            "src/Edulytics.Web/Controllers/StudentPortalController.cs");
+
+        Assert.Contains(
+            "HasResolvedPracticeAvailability(",
+            controller,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "exactPracticeAdoptionId.HasValue ||",
+            controller,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "pilotAdoptionId.HasValue;",
+            controller,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "gameAdoptionId.HasValue &&\n                exactPracticeAdoptionId.HasValue &&\n                pilotAdoptionId.HasValue",
+            controller,
+            StringComparison.Ordinal);
+    }
+
     private static string Read(string relativePath) =>
         File.ReadAllText(
             Path.Combine(

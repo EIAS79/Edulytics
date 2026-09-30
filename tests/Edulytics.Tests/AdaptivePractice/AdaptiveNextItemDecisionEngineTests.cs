@@ -148,6 +148,52 @@ public sealed class AdaptiveNextItemDecisionEngineTests
     }
 
     [Fact]
+    public void RemediationFamilyCannotInheritMisconceptionFromAnotherFamily()
+    {
+        var state = State(
+            currentComplexity: 48,
+            responses:
+            [
+                new AdaptivePracticeResponseObservation(
+                    2,
+                    IsCorrect: false,
+                    ComplexityScore: 48,
+                    QuestionFamily:
+                        "fractions.equivalent.recognize",
+                    MisconceptionId: "fraction.reciprocal")
+            ],
+            misconceptions:
+            [
+                new AdaptivePracticeMisconceptionEvidence(
+                    "fraction.reciprocal",
+                    3,
+                    IsBlocking: true,
+                    QuestionFamily:
+                        "fractions.equivalent.missing_value",
+                    LastObservedSequence: 1)
+            ],
+            remediation:
+                new AdaptivePracticeRemediationState(
+                    IsLocked: true,
+                    ConfirmationRequired: true,
+                    LockComplexityScore: 48,
+                    BlockingMisconceptionId: "fraction.reciprocal",
+                    PreferredQuestionFamily:
+                        "fractions.equivalent.recognize",
+                    PreferredRepresentation: "symbolic"));
+
+        var decision = engine.Decide(state);
+
+        Assert.Equal(
+            "fractions.equivalent.recognize",
+            decision.TargetQuestionFamily);
+        Assert.Null(decision.MisconceptionFocusId);
+        Assert.NotEqual(
+            AdaptivePracticeDecisionReasonCodes.MisconceptionRemediation,
+            decision.ReasonCode);
+    }
+
+    [Fact]
     public void BlockingMisconceptionFamilyIsPreferredWhenAllowed()
     {
         var state = State(
