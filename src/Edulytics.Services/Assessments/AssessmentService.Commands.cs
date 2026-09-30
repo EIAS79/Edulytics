@@ -1248,7 +1248,7 @@ public sealed partial class AssessmentService
 
         _repo.RemoveMapping(mapping);
 
-        context.Assessment.UpdatedAtUtc =
+        context.Assessment!.UpdatedAtUtc =
             DateTime.UtcNow;
 
         await QueueAuditAsync(
