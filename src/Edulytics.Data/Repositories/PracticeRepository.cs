@@ -48,6 +48,81 @@ public sealed class PracticeRepository(EdulyticsDbContext context) : IPracticeRe
             .Where(x => x.SchoolId == schoolId && itemIds.Contains(x.Id))
             .ToListAsync(cancellationToken);
 
+    public async Task<IReadOnlyDictionary<(Guid CurriculumAdoptionId, Guid LessonId), PracticeLessonDisplayMetadata>>
+        GetLessonDisplayMetadataAsync(
+            Guid schoolId,
+            IReadOnlyCollection<Guid> curriculumAdoptionIds,
+            IReadOnlyCollection<Guid> lessonIds,
+            CancellationToken cancellationToken = default)
+    {
+        if (schoolId == Guid.Empty ||
+            curriculumAdoptionIds.Count == 0 ||
+            lessonIds.Count == 0)
+        {
+            return new Dictionary<
+                (Guid CurriculumAdoptionId, Guid LessonId),
+                PracticeLessonDisplayMetadata>();
+        }
+
+        var adoptionIds =
+            curriculumAdoptionIds.Distinct().ToArray();
+        var pedagogicalLessonIds =
+            lessonIds.Distinct().ToArray();
+
+        var rows =
+            await context.SchoolCurriculumAdoptions
+                .AsNoTracking()
+                .Where(adoption =>
+                    adoption.SchoolId == schoolId &&
+                    adoptionIds.Contains(adoption.Id))
+                .Join(
+                    context.CurriculumFrameworkVersions.AsNoTracking(),
+                    adoption => adoption.FrameworkVersionId,
+                    version => version.Id,
+                    (adoption, version) => new
+                    {
+                        Adoption = adoption,
+                        Version = version
+                    })
+                .Join(
+                    context.CurriculumFrameworks.AsNoTracking(),
+                    row => row.Version.FrameworkId,
+                    framework => framework.Id,
+                    (row, framework) => new
+                    {
+                        row.Adoption,
+                        row.Version,
+                        Framework = framework
+                    })
+                .Join(
+                    context.CurriculumPedagogicalLessons.AsNoTracking()
+                        .Where(lesson =>
+                            pedagogicalLessonIds.Contains(lesson.Id)),
+                    row => row.Version.Id,
+                    lesson => lesson.FrameworkVersionId,
+                    (row, lesson) => new
+                    {
+                        CurriculumAdoptionId = row.Adoption.Id,
+                        LessonId = lesson.Id,
+                        CurriculumCode = row.Framework.Code,
+                        LessonTitle = lesson.Title
+                    })
+                .ToListAsync(cancellationToken);
+
+        return rows.ToDictionary(
+            row =>
+                (
+                    row.CurriculumAdoptionId,
+                    row.LessonId
+                ),
+            row =>
+                new PracticeLessonDisplayMetadata(
+                    row.CurriculumAdoptionId,
+                    row.LessonId,
+                    row.CurriculumCode,
+                    row.LessonTitle));
+    }
+
     public async Task<IReadOnlyDictionary<Guid, IReadOnlyList<Guid>>> GetOutcomeIdsAsync(
         Guid schoolId,
         IReadOnlyCollection<Guid> itemIds,
