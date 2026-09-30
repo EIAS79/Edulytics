@@ -2,6 +2,8 @@ using System.Reflection;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Data.Contexts;
+using Edulytics.Services.Assessments;
+using Edulytics.Services.StudentPortal;
 using Microsoft.EntityFrameworkCore;
 
 namespace Edulytics.Tests;
@@ -116,6 +118,147 @@ public sealed class AssessmentTypesV2ContractTests
         Assert.Contains("AssessmentType.Homework", source);
         Assert.Contains("AssessmentType.Worksheet", source);
         Assert.Contains("no deadline", source, StringComparison.OrdinalIgnoreCase);
+    }
+
+    [Fact]
+    public void StudentResultRelease_RequiresExplicitPublication()
+    {
+        Assert.False(
+            OfficialAssessmentResultReleasePolicy.CanStudentView(
+                AssessmentStatus.Open,
+                AssessmentResultReleaseStatus.Published));
+
+        Assert.False(
+            OfficialAssessmentResultReleasePolicy.CanStudentView(
+                AssessmentStatus.Closed,
+                AssessmentResultReleaseStatus.Withheld));
+
+        Assert.True(
+            OfficialAssessmentResultReleasePolicy.CanStudentView(
+                AssessmentStatus.Closed,
+                AssessmentResultReleaseStatus.Published));
+    }
+
+    [Fact]
+    public void LearningTaskSubmission_DoesNotCreateNumericAssessmentResult()
+    {
+        var source = File.ReadAllText(
+            Path.Combine(
+                Root(),
+                "src/Edulytics.Services/Assessments/StudentAssessmentDeliveryService.cs"));
+
+        var start = source.IndexOf(
+            "SubmitLearningTaskAsync(",
+            StringComparison.Ordinal);
+        var end = source.IndexOf(
+            "private async Task<ResolvedDelivery> ResolveAsync(",
+            start,
+            StringComparison.Ordinal);
+
+        Assert.True(start >= 0);
+        Assert.True(end > start);
+
+        var method = source[start..end];
+
+        Assert.Contains("AssessmentTaskResponse", method);
+        Assert.Contains("AssessmentAttemptStatus.Submitted", method);
+        Assert.Contains("AssessmentAttemptStatus.Completed", method);
+        Assert.DoesNotContain("new AssessmentResult", method);
+        Assert.DoesNotContain("new StudentAnswer", method);
+    }
+
+    [Fact]
+    public void LearningTaskProgressSave_DoesNotSubmitCompleteOrScore()
+    {
+        var source = File.ReadAllText(
+            Path.Combine(
+                Root(),
+                "src/Edulytics.Services/Assessments/StudentAssessmentDeliveryService.cs"));
+
+        var start = source.IndexOf(
+            "SaveProgressAsync(",
+            StringComparison.Ordinal);
+        var end = source.IndexOf(
+            "public async Task<StudentAssessmentDeliveryResult<StudentAssessmentSubmission>> SubmitAsync(",
+            start,
+            StringComparison.Ordinal);
+
+        Assert.True(start >= 0);
+        Assert.True(end > start);
+
+        var method = source[start..end];
+
+        Assert.Contains("AssessmentTaskResponse", method);
+        Assert.Contains("ProgressSaved", method);
+        Assert.DoesNotContain("AssessmentAttemptStatus.Submitted", method);
+        Assert.DoesNotContain("AssessmentAttemptStatus.Completed", method);
+        Assert.DoesNotContain("new AssessmentResult", method);
+    }
+
+    [Fact]
+    public void ScheduledExam_ServerGuardsStartWindowAndAttemptDeadline()
+    {
+        var source = File.ReadAllText(
+            Path.Combine(
+                Root(),
+                "src/Edulytics.Services/Assessments/StudentAssessmentDeliveryService.cs"));
+
+        Assert.Contains(
+            "nowUtc < assessment.AvailableFromUtc.Value",
+            source);
+        Assert.Contains(
+            "nowUtc >= assessment.DueAtUtc.Value",
+            source);
+        Assert.Contains(
+            "ResolveEffectiveAttemptDeadline",
+            source);
+        Assert.Contains(
+            "StudentAssessmentDeliveryErrorCode.AttemptExpired",
+            source);
+    }
+
+    [Fact]
+    public void ScheduledExam_RemainsEditableOnlyBeforeStartWithoutAttemptsOrResults()
+    {
+        var source = File.ReadAllText(
+            Path.Combine(
+                Root(),
+                "src/Edulytics.Services/Assessments/AssessmentService.Support.cs"));
+
+        Assert.Contains(
+            "DateTime.UtcNow < assessment.AvailableFromUtc.Value",
+            source);
+        Assert.Contains(
+            "!snapshot.AssessmentAttempts.Any",
+            source);
+        Assert.Contains(
+            "!snapshot.Results.Any",
+            source);
+    }
+
+    [Fact]
+    public void StudentUx_ProvidesProgressSaveAndTimedAutoSubmit()
+    {
+        var source = File.ReadAllText(
+            Path.Combine(
+                Root(),
+                "src/Edulytics.Web/Views/StudentPortal/TakeAssessment.cshtml"));
+
+        Assert.Contains("SaveAssessmentProgress", source);
+        Assert.Contains("assessment-countdown", source);
+        Assert.Contains("requestSubmit", source);
+    }
+
+    [Fact]
+    public void ResultReleaseMigration_PreservesHistoricalClosedResultVisibility()
+    {
+        var source = File.ReadAllText(
+            Path.Combine(
+                Root(),
+                "src/Edulytics.Data/Migrations/20260930225500_AddExplicitAssessmentResultRelease.cs"));
+
+        Assert.Contains("\"Status\" = 3", source);
+        Assert.Contains("\"ResultReleaseStatus\" = 2", source);
     }
 
     private static EdulyticsDbContext CreateDb()
