@@ -105,6 +105,17 @@
         review?.Feedback ??
         TempData["PracticeSolution"]?.ToString();
 
+    var reviewAnswer =
+        review?.SubmittedAnswer ?? string.Empty;
+    var retryAnswer =
+        TempData["PracticeSubmittedAnswer"]?.ToString() ?? string.Empty;
+    var isRetryFeedback =
+        !isReview &&
+        string.Equals(
+            feedbackKind,
+            "incorrect",
+            StringComparison.OrdinalIgnoreCase);
+
     var baselineGuidance =
         Edulytics.Web.GameRouting.LessonPracticeHintResolver.Resolve(
             question?.GenerationFamily,
@@ -318,6 +329,24 @@
             box-shadow: 0 5px 0 rgba(111,85,39,.68);
         }
 
+        .adaptive-gw-shell .lp-server-choice.is-selected,
+        .adaptive-gw-shell .lp-server-choice[aria-checked="true"] {
+            outline: 4px solid rgba(113,224,196,.52);
+            background: linear-gradient(180deg,#d8ffe7,#8fe5b0);
+        }
+
+        .adaptive-gw-shell .lp-server-choice[disabled] {
+            cursor: default;
+            opacity: 1;
+        }
+
+        .adaptive-review-form {
+            display: grid;
+            gap: 12px;
+            justify-items: center;
+            width: min(760px, 100%);
+        }
+
         .adaptive-feedback {
             width: min(100%, 1180px);
             margin: 0 auto;
@@ -405,7 +434,8 @@
     </style>
 }
 
-<section class="adaptive-gw-shell">
+<section class="adaptive-gw-shell"
+         @(isRetryFeedback ? "data-practice-retry-feedback" : null)>
     @if (TempData["Error"] is string error)
     {
         <div class="adaptive-feedback adaptive-feedback--bad"
@@ -536,8 +566,63 @@
 
                     @if (isReview)
                     {
-                        <div class="adaptive-review-actions"
+                        <div class="adaptive-review-form"
                              data-practice-review>
+                            @if (isPromptMultipleChoice)
+                            {
+                                <div class="lp-server-choice-row"
+                                     role="radiogroup"
+                                     aria-label="@S["YourAnswer"]"
+                                     aria-readonly="true">
+                                    @foreach (var choice in choices)
+                                    {
+                                        var selected =
+                                            string.Equals(
+                                                choice.Value,
+                                                reviewAnswer,
+                                                StringComparison.OrdinalIgnoreCase);
+                                        <button class="lp-server-choice @(selected ? "is-selected" : null)"
+                                                type="button"
+                                                disabled
+                                                aria-checked="@(selected ? "true" : "false")">
+                                            @choice.Label) @choice.Value
+                                        </button>
+                                    }
+                                </div>
+                            }
+                            else if (
+                                interaction?.InteractionKind ==
+                                LessonPracticeInteractionKind.RelationChoice)
+                            {
+                                <div class="lp-server-choice-row"
+                                     aria-label="@S["YourAnswer"]"
+                                     aria-readonly="true">
+                                    @foreach (var relation in new[] { "<", "=", ">" })
+                                    {
+                                        var selected =
+                                            string.Equals(
+                                                relation,
+                                                reviewAnswer,
+                                                StringComparison.Ordinal);
+                                        <button class="lp-server-choice @(selected ? "is-selected" : null)"
+                                                type="button"
+                                                disabled
+                                                aria-checked="@(selected ? "true" : "false")">
+                                            @relation
+                                        </button>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <input id="lesson-practice-answer"
+                                       class="lp-server-input"
+                                       value="@reviewAnswer"
+                                       readonly
+                                       aria-readonly="true"
+                                       aria-label="@S["YourAnswer"]" />
+                            }
+
                             <a class="gw-primary"
                                asp-controller="StudentPractice"
                                asp-action="AdaptiveLessonAttempt"
@@ -603,6 +688,7 @@
                                 <input id="lesson-practice-answer"
                                        class="lp-server-input"
                                        name="answer"
+                                       value="@retryAnswer"
                                        maxlength="128"
                                        required
                                        autocomplete="off"
