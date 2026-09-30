@@ -69,7 +69,14 @@ public sealed record StudentAssessmentItem(
     AssessmentDeliveryMode DeliveryMode = AssessmentDeliveryMode.Offline,
     AssessmentDifficultyBand DifficultyBand = AssessmentDifficultyBand.AtClassLevel,
     AssessmentTargetType TargetType = AssessmentTargetType.Class,
-    bool IsSubmitted = false);
+    bool IsSubmitted = false)
+{
+    public AssessmentType AssessmentType { get; init; } = AssessmentType.Exam;
+    public DateTime? AvailableFromUtc { get; init; }
+    public DateTime? DueAtUtc { get; init; }
+    public bool IsDeadlinePassed { get; init; }
+    public bool IsScored => AssessmentType == AssessmentType.Exam;
+}
 
 public sealed record StudentResultItem(
     Guid AssessmentId,
