@@ -24,7 +24,21 @@ public sealed partial class AssessmentService
         var title = Clean(request.Title);
         if (title.Length == 0) return Fail(nameof(request.Title), AssessmentErrorCode.Required);
         if (title.Length > 200) return Fail(nameof(request.Title), AssessmentErrorCode.InvalidText);
-        if (!ValidMax(request.MaxScore)) return Fail(nameof(request.MaxScore), AssessmentErrorCode.InvalidMaxScore);
+        if (!Enum.IsDefined(request.AssessmentType))
+            return Fail(nameof(request.AssessmentType), AssessmentErrorCode.InvalidAssessmentType);
+        if (!Enum.IsDefined(request.DeliveryMode))
+            return Fail(nameof(request.DeliveryMode), AssessmentErrorCode.InvalidDeliveryModeForType);
+
+        var typeValidation = ValidateTypeSettings(
+            request.AssessmentType,
+            request.DeliveryMode,
+            request.MaxScore,
+            request.AvailableFromUtc,
+            request.DueAtUtc,
+            request.AttemptTimeLimitMinutes,
+            DateTime.UtcNow);
+        if (typeValidation is not null)
+            return Fail(typeValidation.Value.Field, typeValidation.Value.Error);
 
         var schoolId = scope.School!.Id;
         var classGroup = await _repo.GetClassGroupAsync(schoolId, request.ClassGroupId, cancellationToken);
@@ -67,7 +81,22 @@ public sealed partial class AssessmentService
             TermId = term.Id,
             Title = title,
             AssessmentDate = request.AssessmentDate,
-            MaxScore = Round(request.MaxScore),
+            MaxScore = request.AssessmentType == AssessmentType.Exam
+                ? Round(request.MaxScore)
+                : 0m,
+            AssessmentType = request.AssessmentType,
+            DeliveryMode = request.AssessmentType == AssessmentType.Homework
+                ? AssessmentDeliveryMode.Online
+                : request.DeliveryMode,
+            AvailableFromUtc = request.AssessmentType == AssessmentType.Exam
+                ? NormalizeUtc(request.AvailableFromUtc)
+                : null,
+            DueAtUtc = request.AssessmentType is AssessmentType.Exam or AssessmentType.Homework
+                ? NormalizeUtc(request.DueAtUtc)
+                : null,
+            AttemptTimeLimitMinutes = request.AssessmentType == AssessmentType.Exam
+                ? request.AttemptTimeLimitMinutes
+                : null,
             Status = AssessmentStatus.Draft,
             CreatedByUserId = actorUserId,
             CreatedAtUtc = now,
@@ -101,6 +130,16 @@ public sealed partial class AssessmentService
                         entity.AssessmentDate,
                     ["maxScore"] =
                         entity.MaxScore,
+                    ["assessmentType"] =
+                        entity.AssessmentType.ToString(),
+                    ["deliveryMode"] =
+                        entity.DeliveryMode.ToString(),
+                    ["availableFromUtc"] =
+                        entity.AvailableFromUtc,
+                    ["dueAtUtc"] =
+                        entity.DueAtUtc,
+                    ["attemptTimeLimitMinutes"] =
+                        entity.AttemptTimeLimitMinutes,
                     ["status"] =
                         entity.Status.ToString()
                 },
@@ -136,6 +175,8 @@ public sealed partial class AssessmentService
             cancellationToken);
         if (source is null)
             return Fail(AssessmentErrorCode.AssessmentNotFound);
+        if (source.AssessmentType != AssessmentType.Exam)
+            return Fail(AssessmentErrorCode.InvalidAssessmentType);
         if (!await CanManageAssessmentAsync(scope, source, cancellationToken))
             return Fail(AssessmentErrorCode.AccessDenied);
 
@@ -214,6 +255,10 @@ public sealed partial class AssessmentService
             Title = title,
             AssessmentDate = source.AssessmentDate,
             MaxScore = source.MaxScore,
+            AssessmentType = AssessmentType.Exam,
+            AvailableFromUtc = null,
+            DueAtUtc = null,
+            AttemptTimeLimitMinutes = null,
             Status = AssessmentStatus.Draft,
             TargetType = AssessmentTargetType.Class,
             TargetStudentProfileId = null,
@@ -334,7 +379,21 @@ public sealed partial class AssessmentService
         var title = Clean(request.Title);
         if (title.Length == 0) return Fail(nameof(request.Title), AssessmentErrorCode.Required);
         if (title.Length > 200) return Fail(nameof(request.Title), AssessmentErrorCode.InvalidText);
-        if (!ValidMax(request.MaxScore)) return Fail(nameof(request.MaxScore), AssessmentErrorCode.InvalidMaxScore);
+
+        var requestedDelivery = request.DeliveryMode ?? assessment.DeliveryMode;
+        if (!Enum.IsDefined(requestedDelivery))
+            return Fail(nameof(request.DeliveryMode), AssessmentErrorCode.InvalidDeliveryModeForType);
+
+        var typeValidation = ValidateTypeSettings(
+            assessment.AssessmentType,
+            requestedDelivery,
+            request.MaxScore,
+            request.AvailableFromUtc,
+            request.DueAtUtc,
+            request.AttemptTimeLimitMinutes,
+            DateTime.UtcNow);
+        if (typeValidation is not null)
+            return Fail(typeValidation.Value.Field, typeValidation.Value.Error);
 
         var term = await _repo.GetTermAsync(scope.School.Id, assessment.TermId, cancellationToken);
         if (term is null) return Fail(AssessmentErrorCode.TermNotFound);
@@ -347,7 +406,12 @@ public sealed partial class AssessmentService
             .Where(x => x.AssessmentId == assessment.Id)
             .Sum(x => x.MaxScore);
 
-        if (request.MaxScore < questionTotal)
+        if (assessment.AssessmentType == AssessmentType.Exam &&
+            request.MaxScore < questionTotal)
+            return Fail(nameof(request.MaxScore), AssessmentErrorCode.AssessmentScoreMismatch);
+
+        if (assessment.AssessmentType != AssessmentType.Exam &&
+            questionTotal != 0m)
             return Fail(nameof(request.MaxScore), AssessmentErrorCode.AssessmentScoreMismatch);
 
         if (await _repo.AssessmentTitleExistsAsync(
@@ -367,14 +431,40 @@ public sealed partial class AssessmentService
                 ["assessmentDate"] =
                     assessment.AssessmentDate,
                 ["maxScore"] =
-                    assessment.MaxScore
+                    assessment.MaxScore,
+                ["deliveryMode"] =
+                    assessment.DeliveryMode.ToString(),
+                ["availableFromUtc"] =
+                    assessment.AvailableFromUtc,
+                ["dueAtUtc"] =
+                    assessment.DueAtUtc,
+                ["attemptTimeLimitMinutes"] =
+                    assessment.AttemptTimeLimitMinutes
             };
 
         assessment.Title = title;
         assessment.AssessmentDate =
             request.AssessmentDate;
         assessment.MaxScore =
-            Round(request.MaxScore);
+            assessment.AssessmentType == AssessmentType.Exam
+                ? Round(request.MaxScore)
+                : 0m;
+        assessment.DeliveryMode =
+            assessment.AssessmentType == AssessmentType.Homework
+                ? AssessmentDeliveryMode.Online
+                : requestedDelivery;
+        assessment.AvailableFromUtc =
+            assessment.AssessmentType == AssessmentType.Exam
+                ? NormalizeUtc(request.AvailableFromUtc)
+                : null;
+        assessment.DueAtUtc =
+            assessment.AssessmentType is AssessmentType.Exam or AssessmentType.Homework
+                ? NormalizeUtc(request.DueAtUtc)
+                : null;
+        assessment.AttemptTimeLimitMinutes =
+            assessment.AssessmentType == AssessmentType.Exam
+                ? request.AttemptTimeLimitMinutes
+                : null;
         assessment.UpdatedAtUtc =
             DateTime.UtcNow;
 
@@ -391,7 +481,15 @@ public sealed partial class AssessmentService
                 ["assessmentDate"] =
                     assessment.AssessmentDate,
                 ["maxScore"] =
-                    assessment.MaxScore
+                    assessment.MaxScore,
+                ["deliveryMode"] =
+                    assessment.DeliveryMode.ToString(),
+                ["availableFromUtc"] =
+                    assessment.AvailableFromUtc,
+                ["dueAtUtc"] =
+                    assessment.DueAtUtc,
+                ["attemptTimeLimitMinutes"] =
+                    assessment.AttemptTimeLimitMinutes
             },
             "Assessment updated.",
             cancellationToken);
@@ -1093,8 +1191,27 @@ public sealed partial class AssessmentService
         if (questions.Length == 0)
             return Fail(AssessmentErrorCode.AssessmentHasNoQuestions);
 
-        if (questions.Sum(x => x.MaxScore) != assessment.MaxScore)
+        if (assessment.AssessmentType == AssessmentType.Exam)
+        {
+            if (questions.Sum(x => x.MaxScore) != assessment.MaxScore)
+                return Fail(AssessmentErrorCode.AssessmentScoreMismatch);
+        }
+        else if (assessment.MaxScore != 0m || questions.Any(x => x.MaxScore != 0m))
+        {
             return Fail(AssessmentErrorCode.AssessmentScoreMismatch);
+        }
+
+        var openTypeValidation = ValidateTypeSettings(
+            assessment.AssessmentType,
+            assessment.DeliveryMode,
+            assessment.MaxScore,
+            assessment.AvailableFromUtc,
+            assessment.DueAtUtc,
+            assessment.AttemptTimeLimitMinutes,
+            DateTime.UtcNow,
+            requireFutureHomeworkDue: true);
+        if (openTypeValidation is not null)
+            return Fail(openTypeValidation.Value.Field, openTypeValidation.Value.Error);
 
         var questionIds = questions.Select(x => x.Id).ToHashSet();
         var mapped = snapshot.OutcomeMappings
@@ -1305,6 +1422,8 @@ public sealed partial class AssessmentService
         var assessment = await _repo.GetAssessmentAsync(schoolId, request.AssessmentId, cancellationToken);
 
         if (assessment is null) return Fail(AssessmentErrorCode.AssessmentNotFound);
+        if (assessment.AssessmentType != AssessmentType.Exam)
+            return Fail(AssessmentErrorCode.InvalidAssessmentType);
         if (!await CanManageAssessmentAsync(scope, assessment, cancellationToken))
             return Fail(AssessmentErrorCode.AccessDenied);
         if (assessment.Status != AssessmentStatus.Open)
@@ -1505,6 +1624,71 @@ public sealed partial class AssessmentService
                 result!.Id)
             : MapPersistence(saved);
     }
+    private static (string Field, AssessmentErrorCode Error)? ValidateTypeSettings(
+        AssessmentType assessmentType,
+        AssessmentDeliveryMode deliveryMode,
+        decimal maxScore,
+        DateTime? availableFromUtc,
+        DateTime? dueAtUtc,
+        int? attemptTimeLimitMinutes,
+        DateTime nowUtc,
+        bool requireFutureHomeworkDue = false)
+    {
+        if (!Enum.IsDefined(assessmentType))
+            return (nameof(assessmentType), AssessmentErrorCode.InvalidAssessmentType);
+
+        var available = NormalizeUtc(availableFromUtc);
+        var due = NormalizeUtc(dueAtUtc);
+
+        switch (assessmentType)
+        {
+            case AssessmentType.Exam:
+                if (!ValidMax(maxScore))
+                    return (nameof(maxScore), AssessmentErrorCode.InvalidMaxScore);
+                if (available.HasValue && due.HasValue && due.Value <= available.Value)
+                    return (nameof(dueAtUtc), AssessmentErrorCode.InvalidSchedule);
+                if (attemptTimeLimitMinutes is <= 0 or > 480)
+                    return (nameof(attemptTimeLimitMinutes), AssessmentErrorCode.InvalidSchedule);
+                return null;
+
+            case AssessmentType.Homework:
+                if (deliveryMode != AssessmentDeliveryMode.Online)
+                    return (nameof(deliveryMode), AssessmentErrorCode.InvalidDeliveryModeForType);
+                if (maxScore != 0m)
+                    return (nameof(maxScore), AssessmentErrorCode.InvalidMaxScore);
+                if (availableFromUtc.HasValue || attemptTimeLimitMinutes.HasValue)
+                    return (nameof(availableFromUtc), AssessmentErrorCode.InvalidSchedule);
+                if (!due.HasValue)
+                    return (nameof(dueAtUtc), AssessmentErrorCode.Required);
+                if (requireFutureHomeworkDue && due.Value <= nowUtc)
+                    return (nameof(dueAtUtc), AssessmentErrorCode.InvalidSchedule);
+                return null;
+
+            case AssessmentType.Worksheet:
+                if (maxScore != 0m)
+                    return (nameof(maxScore), AssessmentErrorCode.InvalidMaxScore);
+                if (availableFromUtc.HasValue || dueAtUtc.HasValue || attemptTimeLimitMinutes.HasValue)
+                    return (nameof(dueAtUtc), AssessmentErrorCode.InvalidSchedule);
+                return null;
+
+            default:
+                return (nameof(assessmentType), AssessmentErrorCode.InvalidAssessmentType);
+        }
+    }
+
+    private static DateTime? NormalizeUtc(DateTime? value)
+    {
+        if (!value.HasValue)
+            return null;
+
+        return value.Value.Kind switch
+        {
+            DateTimeKind.Utc => value.Value,
+            DateTimeKind.Local => value.Value.ToUniversalTime(),
+            _ => DateTime.SpecifyKind(value.Value, DateTimeKind.Utc)
+        };
+    }
+
     private static string MarkReusedQuestionAsDraft(
         string? metadataJson,
         Guid sourceAssessmentId)
