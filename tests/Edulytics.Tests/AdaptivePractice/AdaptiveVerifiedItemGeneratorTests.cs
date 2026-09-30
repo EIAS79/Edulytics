@@ -196,6 +196,109 @@ public sealed class AdaptiveVerifiedItemGeneratorTests
     }
 
     [Fact]
+    public void StandardOnlyFamilyCapsInflatedAdaptiveComplexityHonestly()
+    {
+        const string family =
+            "fractions.equivalent.missing_value";
+
+        var contract =
+            LessonPracticeContractRegistry.All.First(
+                x => x.AllowedQuestionFamilies.Contains(
+                    family,
+                    StringComparer.Ordinal));
+
+        var generator =
+            new AdaptiveVerifiedItemGenerator();
+
+        var requested =
+            Decision(
+                contract,
+                family,
+                AdaptiveNextItemDecisionEngine
+                    .MaximumComplexityScore) with
+            {
+                ReasonCode =
+                    AdaptivePracticeDecisionReasonCodes
+                        .ComplexityProgress,
+                ProgressionEligible = true
+            };
+
+        var normalized =
+            generator.NormalizeDecisionToTruthfulCapability(
+                requested,
+                currentComplexityScore: 55);
+
+        Assert.Equal(
+            55,
+            normalized.TargetComplexityScore);
+        Assert.Equal(
+            AdaptivePracticeDecisionReasonCodes
+                .ComplexityConsolidate,
+            normalized.ReasonCode);
+        Assert.False(
+            normalized.ProgressionEligible);
+
+        var item =
+            generator.GenerateOne(
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                contract,
+                normalized,
+                seed: 20260930,
+                excludedExposureFingerprints: []);
+
+        Assert.Equal(
+            family,
+            item.GenerationFamily);
+    }
+
+    [Fact]
+    public void ChallengeCapableFamilyPreservesChallengeComplexity()
+    {
+        const string family =
+            "supporting.geometry.shape_dimension";
+
+        var contract =
+            LessonPracticeContractRegistry.All.First(
+                x => x.AllowedQuestionFamilies.Contains(
+                    family,
+                    StringComparer.Ordinal));
+
+        var generator =
+            new AdaptiveVerifiedItemGenerator();
+
+        var requested =
+            Decision(
+                contract,
+                family,
+                AdaptiveNextItemDecisionEngine
+                    .MaximumComplexityScore) with
+            {
+                ReasonCode =
+                    AdaptivePracticeDecisionReasonCodes
+                        .ComplexityProgress,
+                ProgressionEligible = true
+            };
+
+        var normalized =
+            generator.NormalizeDecisionToTruthfulCapability(
+                requested,
+                currentComplexityScore: 67);
+
+        Assert.Equal(
+            AdaptiveNextItemDecisionEngine.MaximumComplexityScore,
+            normalized.TargetComplexityScore);
+        Assert.Equal(
+            AdaptivePracticeDecisionReasonCodes
+                .ComplexityProgress,
+            normalized.ReasonCode);
+        Assert.True(
+            normalized.ProgressionEligible);
+    }
+
+    [Fact]
     public void RejectsFamilyOutsideLessonContract()
     {
         const string lessonCode =
