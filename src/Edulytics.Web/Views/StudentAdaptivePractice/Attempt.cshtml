@@ -661,10 +661,16 @@
                                      aria-label="@S["YourAnswer"]">
                                     @foreach (var choice in choices)
                                     {
-                                        <button class="lp-server-choice"
+                                        var retrySelected =
+                                            string.Equals(
+                                                choice.Value,
+                                                retryAnswer,
+                                                StringComparison.OrdinalIgnoreCase);
+                                        <button class="lp-server-choice @(retrySelected ? "is-selected" : null)"
                                                 type="submit"
                                                 name="answer"
-                                                value="@choice.Value">
+                                                value="@choice.Value"
+                                                aria-pressed="@(retrySelected ? "true" : "false")">
                                             @choice.Label) @choice.Value
                                         </button>
                                     }
@@ -678,10 +684,16 @@
                                      aria-label="@S["YourAnswer"]">
                                     @foreach (var relation in new[] { "<", "=", ">" })
                                     {
-                                        <button class="lp-server-choice"
+                                        var retrySelected =
+                                            string.Equals(
+                                                relation,
+                                                retryAnswer,
+                                                StringComparison.Ordinal);
+                                        <button class="lp-server-choice @(retrySelected ? "is-selected" : null)"
                                                 type="submit"
                                                 name="answer"
-                                                value="@relation">
+                                                value="@relation"
+                                                aria-pressed="@(retrySelected ? "true" : "false")">
                                             @relation
                                         </button>
                                     }
