@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Edulytics.Core.AdaptivePractice;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.AdaptivePractice;
@@ -195,6 +196,118 @@ public sealed class AdaptiveVerifiedItemGeneratorTests
         }
     }
 
+    [Theory]
+    [InlineData(42, 0, 0, 3)]
+    [InlineData(66, 1, 4, 7)]
+    [InlineData(80, 2, 8, 15)]
+    public void PlaceValueAdaptiveDifficultyUsesDifferentCognitiveForms(
+        int complexity,
+        int minimumMode,
+        int minimumVariant,
+        int maximumVariant)
+    {
+        const string family =
+            "supporting.number.place_value";
+
+        var contract =
+            LessonPracticeContractRegistry.All.First(
+                x => x.AllowedQuestionFamilies.Contains(
+                    family,
+                    StringComparer.Ordinal));
+
+        var generator =
+            new AdaptiveVerifiedItemGenerator();
+        var decision =
+            generator.NormalizeDecisionToTruthfulCapability(
+                Decision(
+                    contract,
+                    family,
+                    complexity),
+                currentComplexityScore:
+                    Math.Min(complexity, 55));
+
+        Assert.Equal(
+            complexity,
+            decision.TargetComplexityScore);
+
+        var item =
+            generator.GenerateOne(
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                contract,
+                decision,
+                seed: 730000 + complexity,
+                excludedExposureFingerprints: []);
+
+        var parameters =
+            ReadParameters(item.GenerationParametersJson);
+
+        Assert.InRange(
+            parameters["variant"],
+            minimumVariant,
+            maximumVariant);
+        Assert.True(
+            parameters["mode"] >= minimumMode);
+    }
+
+    [Theory]
+    [InlineData(42, 0, 0, 3)]
+    [InlineData(66, 1, 4, 7)]
+    [InlineData(80, 3, 8, 15)]
+    public void RoundingAdaptiveDifficultyUsesDifferentCognitiveForms(
+        int complexity,
+        int minimumMode,
+        int minimumVariant,
+        int maximumVariant)
+    {
+        const string family =
+            "supporting.number.rounding";
+
+        var contract =
+            LessonPracticeContractRegistry.All.First(
+                x => x.AllowedQuestionFamilies.Contains(
+                    family,
+                    StringComparer.Ordinal));
+
+        var generator =
+            new AdaptiveVerifiedItemGenerator();
+        var decision =
+            generator.NormalizeDecisionToTruthfulCapability(
+                Decision(
+                    contract,
+                    family,
+                    complexity),
+                currentComplexityScore:
+                    Math.Min(complexity, 55));
+
+        Assert.Equal(
+            complexity,
+            decision.TargetComplexityScore);
+
+        var item =
+            generator.GenerateOne(
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                contract,
+                decision,
+                seed: 740000 + complexity,
+                excludedExposureFingerprints: []);
+
+        var parameters =
+            ReadParameters(item.GenerationParametersJson);
+
+        Assert.InRange(
+            parameters["variant"],
+            minimumVariant,
+            maximumVariant);
+        Assert.True(
+            parameters["mode"] >= minimumMode);
+    }
+
     [Fact]
     public void StandardOnlyFamilyCapsInflatedAdaptiveComplexityHonestly()
     {
@@ -369,6 +482,26 @@ public sealed class AdaptiveVerifiedItemGeneratorTests
                 AdaptivePracticeV2Versions.EngineVersion,
             PolicyVersion:
                 AdaptivePracticeV2Versions.PolicyVersion);
+
+    private static IReadOnlyDictionary<string, int>
+        ReadParameters(string? generationParametersJson)
+    {
+        Assert.False(
+            string.IsNullOrWhiteSpace(
+                generationParametersJson));
+
+        using var document =
+            JsonDocument.Parse(
+                generationParametersJson!);
+
+        return document.RootElement
+            .GetProperty("parameters")
+            .EnumerateObject()
+            .ToDictionary(
+                x => x.Name,
+                x => x.Value.GetInt32(),
+                StringComparer.Ordinal);
+    }
 
     private static void RememberRecent(
         List<string> values,
