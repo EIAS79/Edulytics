@@ -112,6 +112,11 @@ public sealed partial class AdaptiveMisconceptionClassifier
                 item.GenerationFamily,
                 "supporting.number.rounding",
                 StringComparison.Ordinal) ||
+            (TryReadIntegerParameter(
+                 item.GenerationParametersJson,
+                 "mode",
+                 out var roundingMode) &&
+             roundingMode != 0) ||
             !int.TryParse(actual, out var submitted) ||
             !int.TryParse(expected, out var correct) ||
             !TryReadIntegerParameter(
