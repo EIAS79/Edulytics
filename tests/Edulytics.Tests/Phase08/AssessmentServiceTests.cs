@@ -466,6 +466,283 @@ public sealed class AssessmentServiceTests
         }
     }
 
+
+    [Fact]
+    public async Task Homework_IsOnlineUnscoredAndRequiresDueTime()
+    {
+        using var f = Fixture.Create();
+
+        var missingDue = await f.Service.CreateAssessmentAsync(
+            f.Teacher.Id,
+            f.Request() with
+            {
+                AssessmentType = AssessmentType.Homework,
+                DeliveryMode = AssessmentDeliveryMode.Online,
+                MaxScore = 0m
+            });
+
+        Assert.False(missingDue.Succeeded);
+        Assert.Equal(AssessmentErrorCode.Required, missingDue.Error);
+
+        var offline = await f.Service.CreateAssessmentAsync(
+            f.Teacher.Id,
+            f.Request() with
+            {
+                Title = "Offline homework is invalid",
+                AssessmentType = AssessmentType.Homework,
+                DeliveryMode = AssessmentDeliveryMode.Offline,
+                MaxScore = 0m,
+                DueAtLocal = SchoolLocal(DateTime.UtcNow.AddDays(1))
+            });
+
+        Assert.False(offline.Succeeded);
+        Assert.Equal(
+            AssessmentErrorCode.InvalidDeliveryModeForType,
+            offline.Error);
+
+        var created = await f.Service.CreateAssessmentAsync(
+            f.Teacher.Id,
+            f.Request() with
+            {
+                Title = "Online homework",
+                AssessmentType = AssessmentType.Homework,
+                DeliveryMode = AssessmentDeliveryMode.Online,
+                MaxScore = 0m,
+                DueAtLocal = SchoolLocal(DateTime.UtcNow.AddDays(1))
+            });
+
+        Assert.True(created.Succeeded);
+
+        var details = await f.Service.GetDetailsAsync(
+            f.Teacher.Id,
+            created.EntityId!.Value);
+
+        Assert.NotNull(details.Value);
+        Assert.Equal(AssessmentType.Homework, details.Value!.Assessment.AssessmentType);
+        Assert.Equal(AssessmentDeliveryMode.Online, details.Value.Assessment.DeliveryMode);
+        Assert.Equal(0m, details.Value.Assessment.MaxScore);
+        Assert.NotNull(details.Value.Assessment.DueAtUtc);
+    }
+
+    [Fact]
+    public async Task Worksheet_IsUnscored_HasNoDeadline_AndCanBeOffline()
+    {
+        using var f = Fixture.Create();
+
+        var invalidDue = await f.Service.CreateAssessmentAsync(
+            f.Teacher.Id,
+            f.Request() with
+            {
+                Title = "Invalid worksheet deadline",
+                AssessmentType = AssessmentType.Worksheet,
+                DeliveryMode = AssessmentDeliveryMode.Online,
+                MaxScore = 0m,
+                DueAtLocal = SchoolLocal(DateTime.UtcNow.AddDays(1))
+            });
+
+        Assert.False(invalidDue.Succeeded);
+        Assert.Equal(AssessmentErrorCode.InvalidSchedule, invalidDue.Error);
+
+        var created = await f.Service.CreateAssessmentAsync(
+            f.Teacher.Id,
+            f.Request() with
+            {
+                Title = "Offline worksheet",
+                AssessmentType = AssessmentType.Worksheet,
+                DeliveryMode = AssessmentDeliveryMode.Offline,
+                MaxScore = 0m
+            });
+
+        Assert.True(created.Succeeded);
+
+        var details = await f.Service.GetDetailsAsync(
+            f.Teacher.Id,
+            created.EntityId!.Value);
+
+        Assert.NotNull(details.Value);
+        Assert.Equal(AssessmentType.Worksheet, details.Value!.Assessment.AssessmentType);
+        Assert.Equal(AssessmentDeliveryMode.Offline, details.Value.Assessment.DeliveryMode);
+        Assert.Equal(0m, details.Value.Assessment.MaxScore);
+        Assert.Null(details.Value.Assessment.DueAtUtc);
+
+        var question = await f.Service.CreateQuestionAsync(
+            f.Teacher.Id,
+            new CreateAssessmentQuestionRequest(
+                created.EntityId.Value,
+                "Unscored worksheet question",
+                0m,
+                1,
+                [f.Outcome.Id],
+                details.Value.Assessment.RowVersion));
+
+        Assert.True(question.Succeeded);
+
+        details = await f.Service.GetDetailsAsync(
+            f.Teacher.Id,
+            created.EntityId.Value);
+
+        var opened = await f.Service.OpenAssessmentAsync(
+            f.Teacher.Id,
+            created.EntityId.Value,
+            details.Value!.Assessment.RowVersion);
+
+        Assert.True(opened.Succeeded);
+
+        var results = await f.Service.GetResultsAsync(
+            f.Teacher.Id,
+            created.EntityId.Value);
+
+        Assert.Null(results.Value);
+        Assert.Equal(AssessmentErrorCode.InvalidAssessmentType, results.Error);
+    }
+
+    [Fact]
+    public async Task HomeworkAndWorksheetCannotAcceptNumericResults()
+    {
+        using var f = Fixture.Create();
+
+        foreach (var type in new[] { AssessmentType.Homework, AssessmentType.Worksheet })
+        {
+            var request = f.Request() with
+            {
+                Title = $"No score {type}",
+                AssessmentType = type,
+                DeliveryMode = type == AssessmentType.Homework
+                    ? AssessmentDeliveryMode.Online
+                    : AssessmentDeliveryMode.Offline,
+                MaxScore = 0m,
+                DueAtLocal = type == AssessmentType.Homework
+                    ? SchoolLocal(DateTime.UtcNow.AddDays(1))
+                    : null
+            };
+
+            var created = await f.Service.CreateAssessmentAsync(
+                f.Teacher.Id,
+                request);
+
+            Assert.True(created.Succeeded);
+
+            var saved = await f.Service.SaveStudentResultAsync(
+                f.Teacher.Id,
+                new SaveStudentAssessmentResultRequest(
+                    created.EntityId!.Value,
+                    f.Student.Id,
+                    [],
+                    [],
+                    null));
+
+            Assert.False(saved.Succeeded);
+            Assert.Equal(AssessmentErrorCode.InvalidAssessmentType, saved.Error);
+        }
+    }
+
+    [Fact]
+    public async Task ScheduledOnlineExam_RemainsEditableBeforeStart_ButLocksAfterAttemptExists()
+    {
+        using var f = Fixture.Create();
+
+        var startsLocal = SchoolLocal(DateTime.UtcNow.AddHours(2));
+        var created = await f.Service.CreateAssessmentAsync(
+            f.Teacher.Id,
+            f.Request() with
+            {
+                Title = "Scheduled exam",
+                AssessmentType = AssessmentType.Exam,
+                DeliveryMode = AssessmentDeliveryMode.Online,
+                AvailableFromLocal = startsLocal
+            });
+
+        Assert.True(created.Succeeded);
+        var assessmentId = created.EntityId!.Value;
+
+        await f.CreateQuestionAsync(assessmentId, "Q1", 4m, 1);
+        await f.CreateQuestionAsync(assessmentId, "Q2", 6m, 2);
+
+        var details = await f.Service.GetDetailsAsync(f.Teacher.Id, assessmentId);
+        var opened = await f.Service.OpenAssessmentAsync(
+            f.Teacher.Id,
+            assessmentId,
+            details.Value!.Assessment.RowVersion);
+        Assert.True(opened.Succeeded);
+
+        details = await f.Service.GetDetailsAsync(f.Teacher.Id, assessmentId);
+        var beforeStartEdit = await f.Service.UpdateAssessmentAsync(
+            f.Teacher.Id,
+            new UpdateAssessmentRequest(
+                assessmentId,
+                "Scheduled exam updated",
+                details.Value!.Assessment.AssessmentDate,
+                details.Value.Assessment.MaxScore,
+                details.Value.Assessment.RowVersion,
+                AssessmentDeliveryMode.Online,
+                startsLocal,
+                null,
+                null));
+
+        Assert.True(beforeStartEdit.Succeeded);
+
+        details = await f.Service.GetDetailsAsync(f.Teacher.Id, assessmentId);
+        f.Db.AssessmentAttempts.Add(
+            new AssessmentAttempt
+            {
+                Id = Guid.NewGuid(),
+                SchoolId = f.School.Id,
+                AssessmentId = assessmentId,
+                StudentProfileId = f.Student.Id,
+                Status = AssessmentAttemptStatus.Started,
+                StartedAtUtc = DateTime.UtcNow,
+                CreatedAtUtc = DateTime.UtcNow,
+                UpdatedAtUtc = DateTime.UtcNow,
+                RowVersion = BitConverter.GetBytes(1L)
+            });
+        await f.Db.SaveChangesAsync();
+
+        var afterAttemptEdit = await f.Service.UpdateAssessmentAsync(
+            f.Teacher.Id,
+            new UpdateAssessmentRequest(
+                assessmentId,
+                "Must remain locked",
+                details.Value!.Assessment.AssessmentDate,
+                details.Value.Assessment.MaxScore,
+                details.Value.Assessment.RowVersion,
+                AssessmentDeliveryMode.Online,
+                startsLocal,
+                null,
+                null));
+
+        Assert.False(afterAttemptEdit.Succeeded);
+        Assert.Equal(AssessmentErrorCode.AssessmentNotDraft, afterAttemptEdit.Error);
+    }
+
+    [Fact]
+    public async Task OfflineExamCannotUseOnlineSchedulingFields()
+    {
+        using var f = Fixture.Create();
+
+        var created = await f.Service.CreateAssessmentAsync(
+            f.Teacher.Id,
+            f.Request() with
+            {
+                Title = "Invalid offline schedule",
+                AssessmentType = AssessmentType.Exam,
+                DeliveryMode = AssessmentDeliveryMode.Offline,
+                AvailableFromLocal = SchoolLocal(DateTime.UtcNow.AddHours(2))
+            });
+
+        Assert.False(created.Succeeded);
+        Assert.Equal(AssessmentErrorCode.InvalidSchedule, created.Error);
+    }
+
+    private static DateTime SchoolLocal(DateTime utc)
+    {
+        var zone = TimeZoneInfo.FindSystemTimeZoneById("Europe/Warsaw");
+        return DateTime.SpecifyKind(
+            TimeZoneInfo.ConvertTimeFromUtc(
+                DateTime.SpecifyKind(utc, DateTimeKind.Utc),
+                zone),
+            DateTimeKind.Unspecified);
+    }
+
     private sealed class Fixture : IDisposable
     {
         private Fixture(
