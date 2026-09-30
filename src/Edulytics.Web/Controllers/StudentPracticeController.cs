@@ -408,6 +408,7 @@ public sealed class StudentPracticeController(
     [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
     public async Task<IActionResult> AdaptiveLessonAttempt(
         Guid id,
+        int? reviewSequence,
         CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId))
@@ -453,6 +454,21 @@ public sealed class StudentPracticeController(
             detailResult.Value.Title;
         ViewData["LessonUnitTitle"] =
             lesson?.UnitTitle ?? string.Empty;
+
+        if (reviewSequence.HasValue)
+        {
+            var review = await adaptivePractice.GetReviewAsync(
+                actorId,
+                id,
+                reviewSequence.Value,
+                cancellationToken);
+
+            if (review.Succeeded)
+            {
+                ViewData["AdaptiveReview"] =
+                    review.Review;
+            }
+        }
 
         Response.Headers["X-Robots-Tag"] =
             "noindex, nofollow, noarchive";
@@ -540,23 +556,36 @@ public sealed class StudentPracticeController(
         }
         else
         {
-            var remediationStage =
-                result.Session?.CurrentQuestion?.RemediationStageCode;
+            var remainsOnSameTurn =
+                result.Session is not null &&
+                !result.Session.IsCompleted &&
+                result.Session.CurrentQuestion?.Sequence == sequence;
 
-            TempData["PracticeFeedback"] =
-                result.IsCorrect == true
-                    ? "correct"
-                    : string.Equals(
-                        remediationStage,
-                        AdaptiveRemediationStageCodes.ScaffoldedRecovery,
-                        StringComparison.Ordinal)
-                        ? "remediation"
-                        : "incorrect";
+            if (result.IsCorrect == false &&
+                remainsOnSameTurn)
+            {
+                // Wrong #1: the exact item remains open for its single retry.
+                // Keep feedback inside Eddy on this same question.
+                TempData["PracticeFeedback"] = "incorrect";
+                TempData["PracticeSolution"] =
+                    result.Feedback ?? string.Empty;
 
-            TempData["PracticeSolution"] =
-                result.IsCorrect == true
-                    ? result.Feedback ?? string.Empty
-                    : string.Empty;
+                return RedirectToAction(
+                    nameof(AdaptiveLessonAttempt),
+                    new { id });
+            }
+
+            // Correct answers and closed incorrect items are reviewed on the
+            // answered question first. The canonical session has already
+            // advanced, but the learner moves to that next state only after
+            // selecting Next.
+            return RedirectToAction(
+                nameof(AdaptiveLessonAttempt),
+                new
+                {
+                    id,
+                    reviewSequence = sequence
+                });
         }
 
         return RedirectToAction(
