@@ -105,6 +105,22 @@ public sealed class AdaptiveProductionClosureRegressionTests
             repository,
             StringComparison.Ordinal);
         Assert.Contains(
+            "DuplicateSubmissionConstraints.Contains",
+            repository,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "IsSubmissionOwnedConflict(exception.Entries)",
+            repository,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "HasSharedLearnerStateConflict(exception.Entries)",
+            repository,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "AdaptivePracticeSharedStateWriteConflictException",
+            controller,
+            StringComparison.Ordinal);
+        Assert.Contains(
             "Stamp(answeredTurn)",
             repository,
             StringComparison.Ordinal);
