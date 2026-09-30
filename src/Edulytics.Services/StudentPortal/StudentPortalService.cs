@@ -267,8 +267,9 @@ public sealed class StudentPortalService : IStudentPortalService
             {
                 if (!assessmentMap.TryGetValue(result.AssessmentId, out var assessment) ||
                     assessment.AssessmentType != AssessmentType.Exam ||
-                    (assessment.DeliveryMode == AssessmentDeliveryMode.Online &&
-                     !OfficialAssessmentResultReleasePolicy.CanStudentView(assessment.Status)))
+                    !OfficialAssessmentResultReleasePolicy.CanStudentView(
+                        assessment.Status,
+                        assessment.ResultReleaseStatus))
                 {
                     return null;
                 }
