@@ -3,7 +3,6 @@ using System;
 using Edulytics.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,8 +10,6 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Edulytics.Data.Migrations
 {
-    [DbContext(typeof(EdulyticsDbContext))]
-    [Migration("20260930223000_AddAssessmentTypesAndAttempts")]
     partial class AddAssessmentTypesAndAttempts
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
