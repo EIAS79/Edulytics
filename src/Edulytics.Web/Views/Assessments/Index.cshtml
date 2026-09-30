@@ -16,6 +16,23 @@
         "pl",
         StringComparison.OrdinalIgnoreCase);
     string L(string en, string pl) => isPolish ? pl : en;
+
+    TimeZoneInfo schoolTimeZone;
+    try
+    {
+        schoolTimeZone = TimeZoneInfo.FindSystemTimeZoneById(Model.Workspace.SchoolTimeZoneId);
+    }
+    catch
+    {
+        schoolTimeZone = TimeZoneInfo.Utc;
+    }
+
+    string LocalTime(DateTime? utc) =>
+        utc.HasValue
+            ? TimeZoneInfo.ConvertTimeFromUtc(
+                DateTime.SpecifyKind(utc.Value, DateTimeKind.Utc),
+                schoolTimeZone).ToString("yyyy-MM-dd HH:mm")
+            : "—";
 }
 <link rel="stylesheet" href="~/css/round7-list-scroll.css" asp-append-version="true" />
 
@@ -242,7 +259,7 @@
                             }
                             @if (item.AssessmentType == AssessmentType.Homework && item.DueAtUtc.HasValue)
                             {
-                                <text> · @L("Due", "Termin"): @item.DueAtUtc.Value.ToString("yyyy-MM-dd HH:mm") UTC</text>
+                                <text> · @L("Due", "Termin"): @LocalTime(item.DueAtUtc) (@Model.Workspace.SchoolTimeZoneId)</text>
                             }
                             · @A[statusKey]
                             · <strong>@B["CurrentDelivery"]:</strong>
@@ -368,6 +385,7 @@
         const isExam = value === 'Exam';
         const isHomework = value === 'Homework';
         const isWorksheet = value === 'Worksheet';
+        const isOnlineExam = isExam && (!delivery || delivery.value === 'Online');
 
         if (scoreGroup) scoreGroup.hidden = !isExam;
         if (maxScore) {
@@ -381,9 +399,9 @@
             if (isHomework) delivery.value = 'Online';
         }
 
-        if (examSchedule) examSchedule.hidden = !isExam;
+        if (examSchedule) examSchedule.hidden = !isOnlineExam;
         [examStart, examDue, timeLimit].forEach(input => {
-            if (input) input.disabled = !isExam;
+            if (input) input.disabled = !isOnlineExam;
         });
 
         if (homeworkDueGroup) homeworkDueGroup.hidden = !isHomework;
@@ -405,6 +423,7 @@
     };
 
     type?.addEventListener('change', sync);
+    delivery?.addEventListener('change', sync);
     sync();
 })();
 </script>
