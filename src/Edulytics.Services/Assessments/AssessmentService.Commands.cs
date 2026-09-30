@@ -1216,7 +1216,7 @@ public sealed partial class AssessmentService
 
         return MapPersistence(
             await _repo.SaveWithRowVersionAsync(
-                context.Assessment,
+                assessment,
                 request.AssessmentRowVersion,
                 cancellationToken));
     }
@@ -1271,7 +1271,7 @@ public sealed partial class AssessmentService
 
         return MapPersistence(
             await _repo.SaveWithRowVersionAsync(
-                context.Assessment,
+                assessment,
                 request.AssessmentRowVersion,
                 cancellationToken));
     }
