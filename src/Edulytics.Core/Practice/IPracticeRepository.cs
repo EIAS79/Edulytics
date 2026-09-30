@@ -3,6 +3,12 @@ using Edulytics.Core.Entities;
 
 namespace Edulytics.Core.Practice;
 
+public sealed record PracticeLessonDisplayMetadata(
+    Guid CurriculumAdoptionId,
+    Guid LessonId,
+    string CurriculumCode,
+    string LessonTitle);
+
 public interface IPracticeRepository
 {
     Task<StudentProfile?> FindStudentByUserIdAsync(Guid userId, CancellationToken cancellationToken = default);
@@ -23,6 +29,13 @@ public interface IPracticeRepository
         Guid schoolId,
         IReadOnlyCollection<Guid> itemIds,
         CancellationToken cancellationToken = default);
+
+    Task<IReadOnlyDictionary<(Guid CurriculumAdoptionId, Guid LessonId), PracticeLessonDisplayMetadata>>
+        GetLessonDisplayMetadataAsync(
+            Guid schoolId,
+            IReadOnlyCollection<Guid> curriculumAdoptionIds,
+            IReadOnlyCollection<Guid> lessonIds,
+            CancellationToken cancellationToken = default);
 
     Task<IReadOnlyDictionary<Guid, IReadOnlyList<Guid>>> GetOutcomeIdsAsync(
         Guid schoolId,
