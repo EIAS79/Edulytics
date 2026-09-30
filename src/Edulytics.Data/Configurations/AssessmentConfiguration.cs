@@ -20,6 +20,9 @@ public sealed class AssessmentConfiguration : IEntityTypeConfiguration<Assessmen
         builder.Property(x => x.AvailableFromUtc);
         builder.Property(x => x.DueAtUtc);
         builder.Property(x => x.AttemptTimeLimitMinutes);
+        builder.Property(x => x.ResultReleaseStatus).HasConversion<int>().IsRequired();
+        builder.Property(x => x.ResultsPublishedAtUtc);
+        builder.Property(x => x.ResultsPublishedByUserId);
         builder.Property(x => x.Status).HasConversion<int>();
         builder.Property(x => x.TargetType).HasConversion<int>().IsRequired();
         builder.Property(x => x.DeliveryMode).HasConversion<int>().IsRequired();
