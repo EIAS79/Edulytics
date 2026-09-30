@@ -9,7 +9,7 @@
     const soundButton = document.querySelector("[data-practice-sound]");
     const terminal = document.querySelector("[data-practice-terminal]");
     const review = document.querySelector("[data-practice-review]");
-    const retryFeedback = document.querySelector("[data-practice-retry-feedback]");
+    const retryFeedback = document.querySelector('[data-practice-retry-feedback="true"]');
     const nextButtons = document.querySelectorAll("[data-practice-next]");
 
     function stopVoice() {
