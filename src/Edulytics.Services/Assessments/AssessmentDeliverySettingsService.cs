@@ -74,8 +74,17 @@ public sealed class AssessmentDeliverySettingsService(
             return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.Required);
 
         var assessment = details.Value.Assessment;
+        if (assessment.AssessmentType == AssessmentType.Homework &&
+            request.DeliveryMode != AssessmentDeliveryMode.Online)
+        {
+            return AssessmentCommandResult.Failure(
+                nameof(request.DeliveryMode),
+                AssessmentErrorCode.InvalidDeliveryModeForType);
+        }
+
         var isDraft = assessment.Status == AssessmentStatus.Draft;
         var isSafeOpenOfflineToOnlineCorrection =
+            assessment.AssessmentType == AssessmentType.Exam &&
             assessment.Status == AssessmentStatus.Open &&
             assessment.DeliveryMode == AssessmentDeliveryMode.Offline &&
             request.DeliveryMode == AssessmentDeliveryMode.Online &&
@@ -132,7 +141,10 @@ public sealed class AssessmentDeliverySettingsService(
         // Once an assessment is Open, the only allowed correction is
         // Offline -> Online before any result has been recorded. Targeting and
         // difficulty remain immutable, and Online -> Offline is never allowed.
-        context.Assessment.DeliveryMode = request.DeliveryMode;
+        context.Assessment.DeliveryMode =
+            context.Assessment.AssessmentType == AssessmentType.Homework
+                ? AssessmentDeliveryMode.Online
+                : request.DeliveryMode;
         context.Assessment.UpdatedAtUtc = DateTime.UtcNow;
 
         var saved = await repository.SaveAsync(
