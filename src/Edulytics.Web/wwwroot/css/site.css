@@ -14188,3 +14188,117 @@ a.lesson-content-row:hover
         grid-template-columns: minmax(0, 1fr);
     }
 }
+
+
+/* adaptive-question-log-session-history-20260930 */
+.adaptive-log-session-list {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.adaptive-log-session {
+    overflow: hidden;
+    padding: 0;
+}
+
+.adaptive-log-session__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.35rem;
+    border-bottom: 1px solid #e8edf5;
+    background: #f8faff;
+}
+
+.adaptive-log-session__header h2 {
+    margin: .2rem 0 .25rem;
+    color: #18243f;
+    font-size: 1.15rem;
+}
+
+.adaptive-log-session__header p {
+    margin: 0;
+    color: #738099;
+    font-size: .8rem;
+}
+
+.adaptive-log-session__count {
+    flex: 0 0 auto;
+    padding: .45rem .65rem;
+    border: 1px solid #dfe5f2;
+    border-radius: 999px;
+    background: #fff;
+    color: #506079;
+    font-size: .75rem;
+}
+
+.adaptive-log-session .student-progress-skill-list {
+    padding: 1rem 1.1rem 1.2rem;
+}
+
+.adaptive-log-question__prompt {
+    color: #24334e;
+    font-size: .96rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.adaptive-log-question__why {
+    padding: .75rem .85rem;
+    border-radius: .7rem;
+    background: #f3f7ff;
+    color: #354b73;
+}
+
+.adaptive-log-technical {
+    margin-top: .85rem;
+    padding-top: .75rem;
+    border-top: 1px solid #edf0f5;
+}
+
+.adaptive-log-technical > summary {
+    width: fit-content;
+    cursor: pointer;
+    color: #5267c8;
+    font-size: .76rem;
+    font-weight: 800;
+}
+
+.adaptive-log-technical dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .7rem 1rem;
+    margin: .85rem 0 0;
+    padding: .8rem;
+    border-radius: .7rem;
+    background: #f8fafc;
+}
+
+.adaptive-log-technical dl div {
+    min-width: 0;
+}
+
+.adaptive-log-technical dt {
+    color: #7b879a;
+    font-size: .68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.adaptive-log-technical dd {
+    margin: .2rem 0 0;
+    overflow-wrap: anywhere;
+    color: #344158;
+    font-size: .76rem;
+}
+
+@media (max-width: 640px) {
+    .adaptive-log-session__header {
+        flex-direction: column;
+    }
+
+    .adaptive-log-technical dl {
+        grid-template-columns: 1fr;
+    }
+}
