@@ -1483,7 +1483,7 @@ public sealed partial class AssessmentService
             return Fail(AssessmentErrorCode.InvalidAssessmentType);
 
         if (assessment.Status != AssessmentStatus.Closed)
-            return Fail(AssessmentErrorCode.AssessmentAlreadyClosed);
+            return Fail(AssessmentErrorCode.AssessmentResultsNotReady);
 
         if (assessment.ResultReleaseStatus == AssessmentResultReleaseStatus.Published)
             return AssessmentCommandResult.Success(assessment.Id);
