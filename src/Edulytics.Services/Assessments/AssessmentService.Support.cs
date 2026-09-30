@@ -244,6 +244,27 @@ public sealed partial class AssessmentService
             assessment.SubjectId,
             cancellationToken);
 
+    private async Task<bool> CanEditAssessmentContentAsync(
+        Guid schoolId,
+        Assessment assessment,
+        CancellationToken cancellationToken)
+    {
+        if (assessment.Status == AssessmentStatus.Draft)
+            return true;
+
+        if (assessment.Status != AssessmentStatus.Open ||
+            assessment.AssessmentType != AssessmentType.Exam ||
+            !assessment.AvailableFromUtc.HasValue ||
+            DateTime.UtcNow >= assessment.AvailableFromUtc.Value)
+        {
+            return false;
+        }
+
+        var snapshot = await _repo.GetSnapshotAsync(schoolId, cancellationToken);
+        return !snapshot.AssessmentAttempts.Any(x => x.AssessmentId == assessment.Id) &&
+               !snapshot.Results.Any(x => x.AssessmentId == assessment.Id);
+    }
+
     private static bool CanManage(
         ScopeResult scope,
         AssessmentSnapshot snapshot,
