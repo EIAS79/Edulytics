@@ -60,6 +60,9 @@ public sealed class AssessmentsController : Controller
     {
         if (!TryActor(out var actorId)) return Forbid();
 
+        if (assessmentType == AssessmentType.Homework)
+            deliveryMode = AssessmentDeliveryMode.Online;
+
         var result = await _service.CreateAssessmentAsync(
             actorId,
             new CreateAssessmentRequest(
