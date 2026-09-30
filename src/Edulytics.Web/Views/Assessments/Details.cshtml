@@ -16,6 +16,12 @@
         ? "is-online"
         : "is-offline";
     var sourceClass = Model.Details.ClassGroups.FirstOrDefault(x => x.Id == assessment.ClassGroupId);
+    var canEditContent =
+        assessment.Status == AssessmentStatus.Draft ||
+        (assessment.Status == AssessmentStatus.Open &&
+         assessment.AssessmentType == AssessmentType.Exam &&
+         assessment.AvailableFromUtc.HasValue &&
+         DateTime.UtcNow < assessment.AvailableFromUtc.Value);
     var reusableClasses = Model.Details.ClassGroups
         .Where(x =>
             x.Id != assessment.ClassGroupId &&
@@ -55,7 +61,7 @@
         </div>
         <div class="assessment-actions">
             <a class="school-button" asp-action="Index">@A["Assessments"]</a>
-            @if (assessment.Status == AssessmentStatus.Draft && canManage)
+            @if (canEditContent && canManage)
             {
                 <a class="school-button" asp-action="Edit" asp-route-id="@assessment.Id">@A["EditAssessment"]</a>
                 <a class="school-button school-button-primary"
