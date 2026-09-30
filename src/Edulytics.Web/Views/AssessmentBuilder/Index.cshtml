@@ -67,7 +67,7 @@
         <div class="ed-builder-summary-item"><span>@A["Class"]</span><strong>@(classItem?.Name ?? "—")</strong></div>
         <div class="ed-builder-summary-item"><span>@A["Subject"]</span><strong>@(subjectItem?.Name ?? "—")</strong></div>
         <div class="ed-builder-summary-item"><span>@A["Questions"]</span><strong>@Model.Questions.Count</strong></div>
-        <div class="ed-builder-summary-item"><span>@(isPolish ? "Type" : "Type")</span><strong>@typeLabel</strong></div>
+        <div class="ed-builder-summary-item"><span>@(isPolish ? "Typ" : "Type")</span><strong>@typeLabel</strong></div>
         @if (isScored)
         {
             <div class="ed-builder-summary-item"><span>@A["CurrentMarks"]</span><strong>@Model.CurrentMarks.ToString("0.##") / @assessment.MaxScore.ToString("0.##")</strong></div>
@@ -75,10 +75,8 @@
         else
         {
             <div class="ed-builder-summary-item">
-                <span>@(isPolish ? "Typ" : "Type")</span>
-                <strong>@(assessment.AssessmentType == AssessmentType.Homework
-                    ? (isPolish ? "Praca domowa" : "Homework")
-                    : (isPolish ? "Karta pracy" : "Worksheet")) · @(isPolish ? "bez ocen" : "unscored")</strong>
+                <span>@(isPolish ? "Ocenianie" : "Scoring")</span>
+                <strong>@(isPolish ? "Bez ocen" : "Unscored")</strong>
             </div>
         }
         <div class="ed-builder-summary-item">
@@ -434,7 +432,10 @@
                 </header>
 
                 <div class="ed-builder-question-meta">
-                    <span>@A["QuestionMaxScore"]: <strong>@question.MaxScore.ToString("0.##")</strong></span>
+                    @if (isScored)
+                    {
+                        <span>@A["QuestionMaxScore"]: <strong>@question.MaxScore.ToString("0.##")</strong></span>
+                    }
                     <span>@A["Difficulty"]: <strong>@(question.Difficulty?.ToString() ?? A["Legacy"].Value)</strong></span>
                     <span>@A["Source"]: <strong>@(question.Source?.ToString() ?? A["Legacy"].Value)</strong></span>
                     @if (question.LessonId.HasValue)
