@@ -195,8 +195,10 @@ public sealed class AdaptiveIntelligenceV2Service(
                         out var sessionMetadata)
                         ? sessionMetadata
                         : (
-                            BuildCurriculumLabel(session.LessonCode),
-                            BuildLessonTitle(session.LessonCode)
+                            CurriculumLabel:
+                                BuildCurriculumLabel(session.LessonCode),
+                            LessonTitle:
+                                BuildLessonTitle(session.LessonCode)
                         );
 
                 return new AdaptiveQuestionLogRow(
@@ -516,7 +518,7 @@ public sealed class AdaptiveIntelligenceV2Service(
 
         var identity = segments
             .FirstOrDefault(segment =>
-                segment.Contains('-', StringComparison.Ordinal) &&
+                segment.Contains("-", StringComparison.Ordinal) &&
                 !segment.StartsWith("PED", StringComparison.OrdinalIgnoreCase));
 
         if (string.IsNullOrWhiteSpace(identity))
