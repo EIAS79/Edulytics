@@ -211,41 +211,27 @@ public sealed class AdaptiveProductionClosureRegressionTests
     }
 
     [Fact]
-    public void StudentWorkspaceNavigationUsesShortValidatedCache()
+    public void LessonPracticeAvailabilityStopsAfterUsableAdoption()
     {
-        var service = Read(
-            "src/Edulytics.Services/StudentPortal/StudentPortalService.cs");
-        var registration = Read(
-            "src/Edulytics.Web/Extensions/StudentPortalRegistrationExtensions.cs");
+        var controller = Read(
+            "src/Edulytics.Web/Controllers/StudentPortalController.cs");
 
         Assert.Contains(
-            "WorkspaceCacheLifetime",
-            service,
+            "HasResolvedPracticeAvailability(",
+            controller,
             StringComparison.Ordinal);
         Assert.Contains(
-            "TimeSpan.FromSeconds(20)",
-            service,
+            "exactPracticeAdoptionId.HasValue ||",
+            controller,
             StringComparison.Ordinal);
         Assert.Contains(
-            "_cache.TryGetValue",
-            service,
+            "pilotAdoptionId.HasValue;",
+            controller,
             StringComparison.Ordinal);
-        Assert.Contains(
-            "services.AddMemoryCache()",
-            registration,
+        Assert.DoesNotContain(
+            "gameAdoptionId.HasValue &&\n                exactPracticeAdoptionId.HasValue &&\n                pilotAdoptionId.HasValue",
+            controller,
             StringComparison.Ordinal);
-
-        var schoolValidation = service.IndexOf(
-            "school.Status != SchoolStatus.Active",
-            StringComparison.Ordinal);
-        var cacheRead = service.IndexOf(
-            "_cache.TryGetValue",
-            StringComparison.Ordinal);
-
-        Assert.True(
-            schoolValidation >= 0 &&
-            cacheRead > schoolValidation,
-            "Access and school state must be validated before serving cached workspace data.");
     }
 
     private static string Read(string relativePath) =>
