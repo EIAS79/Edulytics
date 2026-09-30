@@ -27,6 +27,19 @@ public sealed class StudentAssessmentDeliveryService(
             return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(resolved.Error.Value);
 
         var assessment = resolved.Assessment!;
+
+        var context = await builder.GetContextAsync(resolved.SchoolId, assessmentId, cancellationToken);
+        if (context is null ||
+            context.Questions.Count == 0 ||
+            context.Questions.Any(x => context.Items.All(item => item.Id != x.Id)) ||
+            (assessment.AssessmentType == AssessmentType.Exam &&
+             assessment.AvailableFromUtc.HasValue &&
+             context.Items.Any(item => !IsBuilderApproved(item))))
+        {
+            return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(
+                StudentAssessmentDeliveryErrorCode.AssessmentNotOpen);
+        }
+
         var existingAttempt = await assessments.GetAttemptAsync(
             resolved.SchoolId,
             assessmentId,
@@ -68,15 +81,7 @@ public sealed class StudentAssessmentDeliveryService(
                 StudentAssessmentDeliveryErrorCode.AttemptExpired);
         }
 
-        var context = await builder.GetContextAsync(resolved.SchoolId, assessmentId, cancellationToken);
-        if (context is null)
-            return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(
-                StudentAssessmentDeliveryErrorCode.AssessmentNotFound);
-
         var itemMap = context.Items.ToDictionary(x => x.Id);
-        if (context.Questions.Count == 0 || context.Questions.Any(x => !itemMap.ContainsKey(x.Id)))
-            return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(
-                StudentAssessmentDeliveryErrorCode.AssessmentNotFound);
 
         var existingResponses = assessment.AssessmentType == AssessmentType.Exam
             ? new Dictionary<Guid, string>()
@@ -130,6 +135,18 @@ public sealed class StudentAssessmentDeliveryService(
         var assessment = resolved.Assessment!;
         var profile = resolved.Profile!;
 
+        var context = await builder.GetContextAsync(resolved.SchoolId, assessmentId, cancellationToken);
+        if (context is null ||
+            context.Questions.Count == 0 ||
+            context.Questions.Any(x => context.Items.All(item => item.Id != x.Id)) ||
+            (assessment.AssessmentType == AssessmentType.Exam &&
+             assessment.AvailableFromUtc.HasValue &&
+             context.Items.Any(item => !IsBuilderApproved(item))))
+        {
+            return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
+                StudentAssessmentDeliveryErrorCode.AssessmentNotOpen);
+        }
+
         if (assessment.AssessmentType == AssessmentType.Exam &&
             resolved.Snapshot!.Results.Any(x =>
                 x.AssessmentId == assessmentId &&
@@ -164,11 +181,6 @@ public sealed class StudentAssessmentDeliveryService(
             return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
                 StudentAssessmentDeliveryErrorCode.AttemptExpired);
         }
-
-        var context = await builder.GetContextAsync(resolved.SchoolId, assessmentId, cancellationToken);
-        if (context is null)
-            return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
-                StudentAssessmentDeliveryErrorCode.AssessmentNotFound);
 
         var questions = context.Questions.OrderBy(x => x.Order).ToArray();
         if (questions.Length == 0 ||
@@ -556,6 +568,27 @@ public sealed class StudentAssessmentDeliveryService(
                 ActorUserIdOverride: actorUserId,
                 ActorRoleOverride: RoleNames.Student),
             cancellationToken);
+    }
+
+    private static bool IsBuilderApproved(AssessmentItem item)
+    {
+        if (string.IsNullOrWhiteSpace(item.ValidationMetadataJson))
+            return false;
+
+        try
+        {
+            using var document = JsonDocument.Parse(item.ValidationMetadataJson);
+            return document.RootElement.TryGetProperty("builderStatus", out var status) &&
+                   status.ValueKind == JsonValueKind.String &&
+                   string.Equals(
+                       status.GetString(),
+                       AssessmentBuilderQuestionStatus.Approved.ToString(),
+                       StringComparison.OrdinalIgnoreCase);
+        }
+        catch (JsonException)
+        {
+            return false;
+        }
     }
 
     private static IReadOnlyList<string> ReadChoices(AssessmentItem item)
