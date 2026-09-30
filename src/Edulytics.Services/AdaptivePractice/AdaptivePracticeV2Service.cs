@@ -119,6 +119,11 @@ public sealed class AdaptivePracticeV2Service(
             representationStates);
 
         var proposed = decisionEngine.Decide(learningState);
+        proposed =
+            itemGenerator.NormalizeDecisionToTruthfulCapability(
+                proposed,
+                learningState.CurrentComplexityScore);
+
         var decision = proposed with
         {
             ReasonCode =
@@ -618,6 +623,10 @@ public sealed class AdaptivePracticeV2Service(
             representationStates);
 
         var decision = decisionEngine.Decide(learningState);
+        decision =
+            itemGenerator.NormalizeDecisionToTruthfulCapability(
+                decision,
+                learningState.CurrentComplexityScore);
 
         var budgetDecision =
             AdaptiveSessionBudgetPolicy.Evaluate(
