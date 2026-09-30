@@ -1,61 +1,129 @@
+@using System.Globalization
 @using Edulytics.Core.Enums
 @model Edulytics.Web.ViewModels.StudentPortal.StudentAssessmentsViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @{
     Layout = "_StudentLayout";
     ViewData["Title"] = S["AssessmentsTitle"].Value;
-    var toDo = Model.Workspace.Assessments
-        .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Online && !x.IsSubmitted)
+
+    var isPolish = string.Equals(
+        CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
+        "pl",
+        StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl) => isPolish ? pl : en;
+
+    TimeZoneInfo schoolTimeZone;
+    try
+    {
+        schoolTimeZone = TimeZoneInfo.FindSystemTimeZoneById(Model.Workspace.SchoolTimeZoneId);
+    }
+    catch
+    {
+        schoolTimeZone = TimeZoneInfo.Utc;
+    }
+
+    string LocalTime(DateTime? utc) =>
+        utc.HasValue
+            ? TimeZoneInfo.ConvertTimeFromUtc(
+                DateTime.SpecifyKind(utc.Value, DateTimeKind.Utc),
+                schoolTimeZone).ToString("yyyy-MM-dd HH:mm")
+            : "—";
+
+    var exams = Model.Workspace.Assessments
+        .Where(x => x.AssessmentType == AssessmentType.Exam)
         .OrderBy(x => x.AssessmentDate)
+        .ThenBy(x => x.Title)
         .ToArray();
-    var submitted = Model.Workspace.Assessments
+
+    var homework = Model.Workspace.Assessments
+        .Where(x => x.AssessmentType == AssessmentType.Homework)
+        .OrderBy(x => x.DueAtUtc ?? DateTime.MaxValue)
+        .ThenBy(x => x.Title)
+        .ToArray();
+
+    var worksheets = Model.Workspace.Assessments
+        .Where(x => x.AssessmentType == AssessmentType.Worksheet)
+        .OrderBy(x => x.AssessmentDate)
+        .ThenBy(x => x.Title)
+        .ToArray();
+
+    var openExams = exams
+        .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Online && !x.IsSubmitted && !x.IsDeadlinePassed)
+        .ToArray();
+    var submittedExams = exams
         .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Online && x.IsSubmitted)
-        .OrderByDescending(x => x.AssessmentDate)
         .ToArray();
-    var awaitingOffline = Model.Workspace.Assessments
-        .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Offline && !x.IsSubmitted)
-        .OrderBy(x => x.AssessmentDate)
+    var closedWindowExams = exams
+        .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Online && !x.IsSubmitted && x.IsDeadlinePassed)
+        .ToArray();
+    var offlineExams = exams
+        .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Offline)
+        .ToArray();
+
+    var homeworkToDo = homework
+        .Where(x => !x.IsSubmitted && !x.IsDeadlinePassed)
+        .ToArray();
+    var homeworkSubmitted = homework
+        .Where(x => x.IsSubmitted)
+        .ToArray();
+    var homeworkMissed = homework
+        .Where(x => !x.IsSubmitted && x.IsDeadlinePassed)
+        .ToArray();
+
+    var onlineWorksheets = worksheets
+        .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Online)
+        .ToArray();
+    var offlineWorksheets = worksheets
+        .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Offline)
         .ToArray();
 }
 <link rel="stylesheet" href="~/css/round7-list-scroll.css" asp-append-version="true" />
+
 <header class="student-page-header">
     <span class="student-eyebrow">@S["Assessments"]</span>
-    <h1>@S["AssessmentsTitle"]</h1>
-    <p>@S["AssessmentsSubtitle"]</p>
+    <h1>@L("Exams, homework and worksheets", "Egzaminy, prace domowe i karty pracy")</h1>
+    <p>@L(
+        "Your assessed exams, homework deadlines and practice worksheets are kept separate.",
+        "Egzaminy oceniane, terminy prac domowych i karty pracy są pokazane oddzielnie.")</p>
 </header>
 
-<nav class="student-assessment-state-nav" aria-label="@S["AssessmentStatus"]">
-    <a href="#to-do">@S["TasksToDo"] <strong>@toDo.Length</strong></a>
-    <a href="#submitted">@S["SubmittedInReview"] <strong>@submitted.Length</strong></a>
-    <a href="#offline">@S["AwaitingOfflineResult"] <strong>@awaitingOffline.Length</strong></a>
+<nav class="student-assessment-state-nav" aria-label="@L("Learning tasks", "Zadania")">
+    <a href="#exams">@L("Exams / Tests", "Egzaminy / testy") <strong>@exams.Length</strong></a>
+    <a href="#homework">@L("Homework", "Prace domowe") <strong>@homework.Length</strong></a>
+    <a href="#worksheets">@L("Worksheets", "Karty pracy") <strong>@worksheets.Length</strong></a>
     <a asp-action="Results">@S["CompletedResults"] <strong>@Model.Workspace.Results.Count</strong></a>
 </nav>
 
-<section id="to-do" class="student-assessment-state-section">
+<section id="exams" class="student-assessment-state-section">
     <div class="student-panel-heading">
         <div>
-            <span class="student-eyebrow">@S["OnlineAssessment"]</span>
-            <h2>@S["TasksToDo"]</h2>
+            <span class="student-eyebrow">@L("Scored", "Oceniane")</span>
+            <h2>@L("Exams / Tests", "Egzaminy / testy")</h2>
         </div>
     </div>
-    @if (toDo.Length == 0)
+
+    @if (exams.Length == 0)
     {
-        <div class="student-empty-state">@S["NoTasksToDo"]</div>
+        <div class="student-empty-state">@L("No exams are currently assigned.", "Brak aktualnie przypisanych egzaminów.")</div>
     }
     else
     {
         <div class="student-card-list ed-scroll-list">
-            @foreach (var item in toDo)
+            @foreach (var item in openExams)
             {
                 <article class="student-assessment-card">
                     <div>
                         <h3>@item.Title</h3>
-                        <p>@S["Class"]: @item.ClassName</p>
+                        <p>@item.SubjectName · @item.ClassName</p>
                         <p>@S["AssessmentDifficulty"]: @S[$"AssessmentDifficulty{item.DifficultyBand}"]</p>
                     </div>
                     <dl>
                         <div><dt>@S["AssessmentDate"]</dt><dd>@item.AssessmentDate.ToString("yyyy-MM-dd")</dd></div>
                         <div><dt>@S["MaxScore"]</dt><dd>@item.MaxScore.ToString("0.##")</dd></div>
+                        @if (item.DueAtUtc.HasValue)
+                        {
+                            <div><dt>@L("Closes", "Koniec")</dt><dd>@LocalTime(item.DueAtUtc)</dd></div>
+                        }
                     </dl>
                     <div class="student-actions">
                         <a class="student-button student-button-primary"
@@ -64,20 +132,8 @@
                     </div>
                 </article>
             }
-        </div>
-    }
-</section>
 
-<section id="submitted" class="student-assessment-state-section">
-    <div class="student-panel-heading"><h2>@S["SubmittedInReview"]</h2></div>
-    @if (submitted.Length == 0)
-    {
-        <div class="student-empty-state">@S["NoSubmittedAssessments"]</div>
-    }
-    else
-    {
-        <div class="student-card-list ed-scroll-list">
-            @foreach (var item in submitted)
+            @foreach (var item in submittedExams)
             {
                 <article class="student-assessment-card">
                     <div>
@@ -89,20 +145,21 @@
                     </div>
                 </article>
             }
-        </div>
-    }
-</section>
 
-<section id="offline" class="student-assessment-state-section">
-    <div class="student-panel-heading"><h2>@S["AwaitingOfflineResult"]</h2></div>
-    @if (awaitingOffline.Length == 0)
-    {
-        <div class="student-empty-state">@S["NoOfflineAssessmentsAwaitingResult"]</div>
-    }
-    else
-    {
-        <div class="student-card-list ed-scroll-list">
-            @foreach (var item in awaitingOffline)
+            @foreach (var item in closedWindowExams)
+            {
+                <article class="student-assessment-card">
+                    <div>
+                        <h3>@item.Title</h3>
+                        <p>@item.SubjectName · @item.ClassName</p>
+                    </div>
+                    <div class="student-actions">
+                        <span class="student-muted">@L("Exam window closed", "Okno egzaminu zamknięte")</span>
+                    </div>
+                </article>
+            }
+
+            @foreach (var item in offlineExams)
             {
                 <article class="student-assessment-card">
                     <div>
@@ -112,6 +169,123 @@
                     </div>
                     <div class="student-actions">
                         <span class="student-muted">@S["WaitingForTeacherResult"]</span>
+                    </div>
+                </article>
+            }
+        </div>
+    }
+</section>
+
+<section id="homework" class="student-assessment-state-section">
+    <div class="student-panel-heading">
+        <div>
+            <span class="student-eyebrow">@L("Unscored · does not affect Evaluation", "Bez oceny · nie wpływa na ocenę")</span>
+            <h2>@L("Homework", "Prace domowe")</h2>
+        </div>
+    </div>
+
+    @if (homework.Length == 0)
+    {
+        <div class="student-empty-state">@L("No homework is currently assigned.", "Brak aktualnie przypisanych prac domowych.")</div>
+    }
+    else
+    {
+        <div class="student-card-list ed-scroll-list">
+            @foreach (var item in homeworkToDo)
+            {
+                <article class="student-assessment-card">
+                    <div>
+                        <h3>@item.Title</h3>
+                        <p>@item.SubjectName · @item.ClassName</p>
+                        <p><strong>@L("Due", "Termin"):</strong> @LocalTime(item.DueAtUtc) (@Model.Workspace.SchoolTimeZoneId)</p>
+                    </div>
+                    <div class="student-actions">
+                        <a class="student-button student-button-primary"
+                           asp-action="TakeAssessment"
+                           asp-route-id="@item.AssessmentId">@L("Open homework", "Otwórz pracę domową")</a>
+                    </div>
+                </article>
+            }
+
+            @foreach (var item in homeworkSubmitted)
+            {
+                <article class="student-assessment-card">
+                    <div>
+                        <h3>@item.Title</h3>
+                        <p>@item.SubjectName · @item.ClassName</p>
+                        <p>@L("Due", "Termin"): @LocalTime(item.DueAtUtc)</p>
+                    </div>
+                    <div class="student-actions">
+                        <span class="student-muted">@L("Submitted", "Oddano")</span>
+                    </div>
+                </article>
+            }
+
+            @foreach (var item in homeworkMissed)
+            {
+                <article class="student-assessment-card">
+                    <div>
+                        <h3>@item.Title</h3>
+                        <p>@item.SubjectName · @item.ClassName</p>
+                        <p>@L("Due", "Termin"): @LocalTime(item.DueAtUtc)</p>
+                    </div>
+                    <div class="student-actions">
+                        <span class="student-muted">@L("Submission deadline passed", "Termin oddania minął")</span>
+                    </div>
+                </article>
+            }
+        </div>
+    }
+</section>
+
+<section id="worksheets" class="student-assessment-state-section">
+    <div class="student-panel-heading">
+        <div>
+            <span class="student-eyebrow">@L("Unscored · no deadline", "Bez oceny · bez terminu")</span>
+            <h2>@L("Worksheets", "Karty pracy")</h2>
+        </div>
+    </div>
+
+    @if (worksheets.Length == 0)
+    {
+        <div class="student-empty-state">@L("No worksheets are currently available.", "Brak aktualnie dostępnych kart pracy.")</div>
+    }
+    else
+    {
+        <div class="student-card-list ed-scroll-list">
+            @foreach (var item in onlineWorksheets)
+            {
+                <article class="student-assessment-card">
+                    <div>
+                        <h3>@item.Title</h3>
+                        <p>@item.SubjectName · @item.ClassName</p>
+                        <p>@L("Online worksheet · no return time", "Karta pracy online · bez terminu oddania")</p>
+                    </div>
+                    <div class="student-actions">
+                        <a class="student-button student-button-primary"
+                           asp-action="TakeAssessment"
+                           asp-route-id="@item.AssessmentId">
+                            @(item.IsSubmitted
+                                ? L("Open again", "Otwórz ponownie")
+                                : L("Open worksheet", "Otwórz kartę pracy"))
+                        </a>
+                        @if (item.IsSubmitted)
+                        {
+                            <span class="student-muted">@L("Completed", "Ukończono")</span>
+                        }
+                    </div>
+                </article>
+            }
+
+            @foreach (var item in offlineWorksheets)
+            {
+                <article class="student-assessment-card">
+                    <div>
+                        <h3>@item.Title</h3>
+                        <p>@item.SubjectName · @item.ClassName</p>
+                        <p>@L(
+                            "Offline worksheet · your teacher provides the printed copy · no deadline.",
+                            "Karta pracy offline · nauczyciel przekazuje wersję papierową · bez terminu.")</p>
                     </div>
                 </article>
             }
