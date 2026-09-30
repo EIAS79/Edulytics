@@ -26,7 +26,7 @@
         utc.HasValue
             ? TimeZoneInfo.ConvertTimeFromUtc(
                 DateTime.SpecifyKind(utc.Value, DateTimeKind.Utc),
-                schoolTimeZone).ToString("yyyy-MM-dd HH:mm")
+                schoolTimeZone).ToString("yyyy-MM-dd h:mm tt", System.Globalization.CultureInfo.InvariantCulture)
             : "—";
 
     var orderedAssessments = Model.Workspace.Assessments
@@ -203,7 +203,7 @@
                     <div>
                         <h3>@item.Title</h3>
                         <p>@item.SubjectName · @item.ClassName</p>
-                        <p><strong>@L("Due", "Termin"):</strong> @LocalTime(item.DueAtUtc) (@Model.Workspace.SchoolTimeZoneId)</p>
+                        <p><strong>@L("Due", "Termin"):</strong> @LocalTime(item.DueAtUtc)</p>
                     </div>
                     <div class="student-actions">
                         <a class="student-button student-button-primary"
