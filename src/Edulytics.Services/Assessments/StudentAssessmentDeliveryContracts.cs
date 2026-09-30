@@ -38,6 +38,7 @@ public sealed record StudentAssessmentAttempt(
     public DateTime? AvailableFromUtc { get; init; }
     public DateTime? DueAtUtc { get; init; }
     public DateTime? AttemptExpiresAtUtc { get; init; }
+    public string SchoolTimeZoneId { get; init; } = "UTC";
     public bool IsScored => AssessmentType == AssessmentType.Exam;
 }
 
