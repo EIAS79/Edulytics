@@ -383,8 +383,13 @@ public sealed partial class AssessmentService
         if (!await CanManageAssessmentAsync(scope, assessment, cancellationToken))
             return Fail(AssessmentErrorCode.AccessDenied);
 
-        if (assessment.Status != AssessmentStatus.Draft)
+        if (!await CanEditAssessmentContentAsync(
+                scope.School.Id,
+                assessment,
+                cancellationToken))
+        {
             return Fail(AssessmentErrorCode.AssessmentNotDraft);
+        }
 
         var title = Clean(request.Title);
         if (title.Length == 0) return Fail(nameof(request.Title), AssessmentErrorCode.Required);
@@ -546,8 +551,13 @@ public sealed partial class AssessmentService
             return Fail(AssessmentErrorCode.AccessDenied);
         }
 
-        if (assessment.Status != AssessmentStatus.Draft)
+        if (!await CanEditAssessmentContentAsync(
+                scope.School.Id,
+                assessment,
+                cancellationToken))
+        {
             return Fail(AssessmentErrorCode.AssessmentNotDraft);
+        }
 
         var prompt = Clean(request.Prompt);
 
@@ -743,8 +753,13 @@ public sealed partial class AssessmentService
         var assessment = context.Assessment!;
         var question = context.Question!;
 
-        if (assessment.Status != AssessmentStatus.Draft)
+        if (!await CanEditAssessmentContentAsync(
+                context.Scope!.School!.Id,
+                assessment,
+                cancellationToken))
+        {
             return Fail(AssessmentErrorCode.AssessmentNotDraft);
+        }
 
         var prompt = Clean(request.Prompt);
 
@@ -994,8 +1009,13 @@ public sealed partial class AssessmentService
             return Fail(AssessmentErrorCode.AccessDenied);
         }
 
-        if (assessment.Status != AssessmentStatus.Draft)
+        if (!await CanEditAssessmentContentAsync(
+                scope.School.Id,
+                assessment,
+                cancellationToken))
+        {
             return Fail(AssessmentErrorCode.AssessmentNotDraft);
+        }
 
         var oldValues =
             new Dictionary<string, object?>
@@ -1048,8 +1068,13 @@ public sealed partial class AssessmentService
         var assessment = context.Assessment!;
         var question = context.Question!;
 
-        if (assessment.Status != AssessmentStatus.Draft)
+        if (!await CanEditAssessmentContentAsync(
+                context.Scope!.School!.Id,
+                assessment,
+                cancellationToken))
+        {
             return Fail(AssessmentErrorCode.AssessmentNotDraft);
+        }
 
         var oldValues =
             new Dictionary<string, object?>
@@ -1092,10 +1117,15 @@ public sealed partial class AssessmentService
         var context = await ResolveQuestionContextAsync(actorUserId, request.QuestionId, cancellationToken);
         if (!context.Succeeded) return Fail(context.Error!.Value);
 
-        if (context.Assessment!.Status != AssessmentStatus.Draft)
+        if (!await CanEditAssessmentContentAsync(
+                context.Scope!.School!.Id,
+                context.Assessment!,
+                cancellationToken))
+        {
             return Fail(AssessmentErrorCode.AssessmentNotDraft);
+        }
 
-        var schoolId = context.Scope!.School!.Id;
+        var schoolId = context.Scope.School.Id;
         var outcome = await _repo.GetLearningOutcomeAsync(schoolId, request.OutcomeId, cancellationToken);
         if (outcome is null) return Fail(AssessmentErrorCode.OutcomeNotFound);
 
@@ -1177,8 +1207,13 @@ public sealed partial class AssessmentService
         var context = await ResolveQuestionContextAsync(actorUserId, request.QuestionId, cancellationToken);
         if (!context.Succeeded) return Fail(context.Error!.Value);
 
-        if (context.Assessment!.Status != AssessmentStatus.Draft)
+        if (!await CanEditAssessmentContentAsync(
+                context.Scope!.School!.Id,
+                context.Assessment!,
+                cancellationToken))
+        {
             return Fail(AssessmentErrorCode.AssessmentNotDraft);
+        }
 
         var mapping = await _repo.GetMappingAsync(
             context.Scope!.School!.Id,
