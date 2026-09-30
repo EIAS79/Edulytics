@@ -14131,6 +14131,10 @@ a.lesson-content-row:hover
     gap: 1.5rem;
 }
 
+.lesson-reader-layout--full {
+    grid-template-columns: minmax(0, 1fr);
+}
+
 .lesson-reader-main {
     width: 100%;
 }
