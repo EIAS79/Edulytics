@@ -1,4 +1,4 @@
-# Edulytics — خطة تطوير Assessment: الأنواع، الجدولة التلقائية، التسليم الورقي/PDF، المراجعة بالذكاء الاصطناعي، ونشر النتائج
+# Edulytics — خطة تطوير Assessment: Exam/Test + Homework + Worksheet
 
 **حالة الوثيقة:** خطة تحليل وتنفيذ فقط — لا تغيّر أي سلوك Production  
 **Repository:** `EIAS79/Edulytics`  
@@ -6,118 +6,176 @@
 **Baseline SHA:** `d7f42477e76a59f5624cf53cb54f755ec2013c04`  
 **تاريخ الخطة:** 2026-09-30  
 **اللغة:** العربية  
-**الهدف:** تحويل Assessment من كيان عام واحد إلى منظومة واضحة تدعم Exam/Test وWorksheet وHomework، مع جدولة تلقائية، قنوات تسليم متعددة، رفع PDF/صور، AI-assisted marking مع مراجعة بشرية إلزامية قبل اعتماد الدرجات، ونشر نتائج منفصل صراحة عن إغلاق المهمة.
+
+## الهدف
+
+توسيع نظام Assessment الحالي في Edulytics ليخدم ثلاثة أنواع واضحة:
+
+```text
+1. Exam / Test
+2. Homework
+3. Worksheet
+```
+
+مع إعادة استخدام نفس طريقة إنشاء الأسئلة الموجودة في Assessment Builder الحالي:
+
+```text
+Manual creation
+OR
+Edulytics generation / AI generation
+→ Review
+→ Edit
+→ Approve
+→ Publish / Assign
+```
+
+مع تثبيت القواعد التالية كقرارات Product أساسية:
+
+```text
+Exam/Test:
+- له درجات
+- يدخل Evaluation
+- Online أو Offline
+- يمكن أن يملك Start Time / Auto Timer
+
+Homework:
+- بلا درجات
+- لا يدخل Evaluation
+- Online فقط
+- له Due / Return time
+- بلا Exam Timer
+
+Worksheet:
+- بلا درجات
+- لا يدخل Evaluation
+- Online أو Offline
+- بلا Due / Return time
+- الطالب يستطيع حله في أي وقت أثناء توفره
+```
+
+رفع PDF **ليس طريقة لإنشاء الأسئلة أو المهمة** في هذا النطاق.
 
 ---
 
-# 1. قرار النطاق
+# 1. Scope Lock
 
-هذه الوثيقة **لا تنفذ الميزة** ولا تغيّر قاعدة البيانات أو الخدمات أو الواجهات الآن.
+هذه المرحلة تخطيط فقط.
 
-المطلوب في هذه المرحلة:
+لا يتم الآن:
 
-1. تثبيت فهم المتطلبات.
-2. توثيق الوضع الحالي الحقيقي من الكود الحالي.
-3. تحديد القرارات المعمارية.
-4. تحديد المخاطر.
-5. وضع خطة مراحل قابلة للتنفيذ والاختبار والدمج تدريجيًا.
-6. منع أي تغيير يكسر Assessment Builder أو Analytics أو Student Evaluation الحالي.
+- تعديل Entity؛
+- إنشاء Migration؛
+- تغيير Assessment Builder؛
+- تغيير Evaluation؛
+- تغيير Student Portal؛
+- تغيير Production behavior.
+
+الغرض هو تثبيت المتطلبات قبل التنفيذ.
 
 ---
 
-# 2. ملخص الوضع الحالي في المستودع
+# 2. Baseline الحقيقي من الكود الحالي
 
-## 2.1 آخر حالة `main`
+## 2.1 آخر حالة main
 
-الـbaseline المستخدم هنا هو:
+الـbaseline المستخدم:
 
 ```text
 d7f42477e76a59f5624cf53cb54f755ec2013c04
-Merge PR #323: complete Adaptive V2 learner flow and difficulty progression
+
+Merge PR #323:
+complete Adaptive V2 learner flow and difficulty progression
 ```
 
-أحدث سلسلة عمل كانت مرتبطة بـ Adaptive V2، ومنها:
+أحدث العمل قبل هذه الخطة كان متعلقًا بـAdaptive V2، بما في ذلك:
 
-- الحفاظ على اختيار الطالب أثناء شاشة المراجعة؛
-- إصلاح semantics الخاصة بالـradio controls في read-only review؛
-- إصلاح أسماء الدروس التاريخية في Question Log؛
-- ضبط difficulty/form variant alignment لبعض مولدات Place Value وRounding؛
-- تحسين ترتيب voice guidance؛
-- تثبيت progression/recovery behavior.
+- review-state للطالب؛
+- voice ordering؛
+- historical Question Log metadata؛
+- difficulty progression؛
+- accessibility semantics؛
+- Place Value / Rounding variant integrity.
 
-## 2.2 ملاحظة review حالية يجب ألا تُنسى
+## 2.2 Review finding قائم
 
-بعد دمج PR #323 ظهر review finding من نوع P2 ما زال غير outdated وغير resolved وقت إعداد هذه الخطة:
+وقت إعداد الخطة يوجد P2 حديث متعلق بـ:
 
-- بعض Challenge slots في `PracticeAssessmentTaxonomy` معلّمة كأنها `ErrorAnalysis`;
-- بينما بعض الأسئلة الفعلية الناتجة هي digit-replacement / inverse-place / interval-intersection؛
-- النتيجة: metadata يمكن أن تدّعي Question Form لم يحصل عليه الطالب بالفعل.
+```text
+PracticeAssessmentTaxonomy
+```
 
-هذه ليست جزءًا من ميزة Assessment الجديدة، لكن يجب حلها في corrective PR منفصل **قبل الاعتماد على Question Form metadata كدليل تقييم أو coverage**.
+حيث توجد بعض Challenge slots whose stored `questionForm` metadata لا تطابق الشكل الفعلي للسؤال.
+
+هذا ليس جزءًا من Homework/Worksheet feature، لكنه يجب ألا يُنسى إذا تم استخدام Question Form metadata لاحقًا في analytics أو coverage.
 
 ---
 
-# 3. ما هو موجود بالفعل في Assessment اليوم
+# 3. Assessment الحالي في Edulytics
 
-## 3.1 الحالة الحالية
-
-الـAssessment الحالي يملك:
+الـAssessment الحالي يعرف:
 
 ```text
-AssessmentStatus:
+AssessmentStatus
 - Draft
 - Open
 - Closed
 ```
 
-ويملك:
+ويعرف:
 
 ```text
-AssessmentDeliveryMode:
+AssessmentDeliveryMode
 - Offline
 - Online
 ```
 
-ويملك targeting:
+ويعرف:
 
 ```text
-AssessmentTargetType:
+AssessmentTargetType
 - Class
 - Student
 ```
 
-ويملك difficulty:
+ويعرف:
 
 ```text
 AssessmentDifficultyBand
 ```
 
-لكن لا يوجد حاليًا مفهوم رسمي يفرق بين:
+لكنه **لا يعرف حاليًا نوع المهمة**:
 
 ```text
-Exam/Test
-Worksheet
+Exam
 Homework
+Worksheet
 ```
 
-ولا يوجد في `Assessment` الحالي:
+والـAssessment entity الحالي يحتوي على:
 
-```text
-AvailableFromUtc
-DueAtUtc
-AttemptTimeLimitMinutes
-AutoOpen
-AutoClose
-ResultReleaseStatus
-ResultsPublishedAtUtc
-AssessmentType
-SubmissionChannels
-EvidenceRole
-```
+- Title؛
+- AssessmentDate؛
+- MaxScore؛
+- Status؛
+- Class؛
+- Subject؛
+- Term؛
+- Target؛
+- DeliveryMode؛
+- Difficulty.
 
-## 3.2 Assessment Builder الحالي
+ولا يحتوي حاليًا على domain semantics واضحة لـ:
 
-الـworkflow الحالي المهم يجب الحفاظ عليه:
+- AssessmentType؛
+- scheduled start؛
+- Homework due time؛
+- Worksheet timeless availability.
+
+---
+
+# 4. Assessment Builder الحالي يجب إعادة استخدامه
+
+الـworkflow الحالي:
 
 ```text
 Select
@@ -127,1865 +185,1409 @@ Select
 → Publish
 ```
 
-والـBuilder الحالي يدعم:
+ويدعم بالفعل:
 
-- إنشاء أسئلة يدويًا؛
-- generation؛
+- Manual question creation؛
+- generated questions؛
 - regenerate؛
 - edit؛
-- approve question؛
+- approve؛
 - approve all؛
 - delete؛
-- publish؛
-- Online/Offline settings؛
-- Class أو Student targeting؛
-- Difficulty؛
-- PDF للطالب في Offline؛
-- PDF Answer Key للمدرس في Offline.
+- lesson/outcome scoping؛
+- difficulty؛
+- Online/Offline Assessment؛
+- Offline PDF output؛
+- student Online Assessment delivery.
 
-## 3.3 Online Assessment الحالي
+القرار:
 
-في الوضع الحالي:
+> لا نبني Homework Builder وWorksheet Builder كمحركي أسئلة مستقلين.
 
-- الطالب لا يستطيع فتح Assessment إلا إذا:
-  - Status = Open؛
-  - DeliveryMode = Online؛
-  - الطالب enrolled في الفصل؛
-  - والـtarget يشمله.
-- Submit يحسب score آليًا في الأسئلة التي يمكن تقييمها باستخدام `MathematicsAnswerEquivalence`.
-- النتيجة تُحفظ فورًا.
-- لكن الطالب لا يرى نتيجة الـOnline Assessment إلا بعد أن يصبح Assessment = Closed.
-
-إذن يوجد بالفعل جزء من فكرة:
-```text
-Teacher-controlled result release
-```
-لكنها مربوطة اليوم بـ `Closed` وليس بزر مستقل اسمه `Post Results`.
-
-## 3.4 Offline Assessment الحالي
-
-يوجد بالفعل:
-
-- Student Paper PDF؛
-- Teacher Answer Key PDF؛
-- Offline Assessment Results XLSX workflow؛
-- Bulk import للدرجات؛
-- Preview قبل confirm؛
-- Student-centric result presentation.
-
-لكن غير موجود:
-
-```text
-Student uploads solved PDF
-→ OCR / handwriting extraction
-→ map answer regions to questions
-→ AI proposes grading
-→ Teacher reviews/overrides
-→ Teacher finalizes
-→ Teacher posts results
-```
-
-إذن الـPDF المقصود في المتطلب الجديد **ليس تكرارًا** للـPDF الموجود حاليًا.
+بل نستخدم نفس Core الخاص بالـAssessment Builder، مع اختلاف الـshell والقواعد حسب النوع.
 
 ---
 
-# 4. الفهم النهائي للأنواع الثلاثة
+# 5. الأنواع الثلاثة
 
-سنعتمد **3 أنواع Canonical فقط**:
+## 5.1 Exam / Test
 
-```text
-1. Exam
-2. Worksheet
-3. Homework
-```
-
-## 4.1 Exam / Test
-
-`Test` ليس نوعًا رابعًا في قاعدة البيانات.
-
-سيكون:
+`Test` ليس نوعًا رابعًا.
 
 ```text
-Canonical type: Exam
-UI label: Exam / Test
+Canonical Type = Exam
+UI label = Exam / Test
 ```
 
-ويمكن لاحقًا إضافة display subtype إذا احتجنا:
+الـExam/Test هو الامتداد الطبيعي للـAssessment الرسمي الحالي.
 
-```text
-ExamLabel:
-- Exam
-- Test
-- Quiz
-```
+### خصائصه
 
-لكن بدون خلق مسارات grading مختلفة بلا داعٍ.
-
-## 4.2 Worksheet
-
-قد تكون:
-
-- Online؛
-- Paper؛
-- File upload؛
-- أو أكثر من قناة تسليم إذا سمح المدرس.
-
-## 4.3 Homework
-
-قد تكون:
-
-- Online form؛
-- Paper solved then uploaded؛
-- PDF/Photo submission؛
-- أو mixed submission channels.
+- scored؛
+- له MaxScore؛
+- لكل سؤال marks؛
+- يدخل Evaluation؛
+- يمكن أن يكون Online؛
+- يمكن أن يكون Offline؛
+- يمكن أن يملك Start Time؛
+- يمكن أن يملك end window أو duration؛
+- يمكن أن يستخدم result-release policy.
 
 ---
 
-# 5. قرار معماري أساسي: لا نخلط Type مع Delivery مع Evaluation
+## 5.2 Homework
 
-هذه ثلاثة أبعاد مستقلة.
+Homework يشبه الـOnline Assessment الحالي في طريقة إنشاء الأسئلة وتجربة الحل، لكن **ليس اختبارًا مقيمًا بالدرجات**.
 
-## البعد الأول — Assessment Type
+### القواعد الثابتة
 
 ```text
-Exam
-Worksheet
+Delivery = Online only
+Marks = None
+Evaluation = Excluded
+DueAt = Required
+Exam timer = None
+```
+
+### تجربة المدرس
+
+المدرس:
+
+1. يختار Homework.
+2. يحدد الفصل/الطالب والمادة والنطاق.
+3. ينشئ الأسئلة:
+   - يدويًا؛ أو
+   - Generate من Edulytics.
+4. يراجع ويعدل الأسئلة.
+5. يعتمدها.
+6. يحدد Due / Return date and time.
+7. ينشر Homework.
+
+### تجربة الطالب
+
+الطالب:
+
+1. يرى Homework بعد نشرها.
+2. يفتحها داخل Edulytics.
+3. يجيب Online.
+4. يمكنه العودة إليها وفق save/progress policy.
+5. يضغط Submit قبل DueAt.
+6. يرى حالة Submitted.
+
+### غير موجود
+
+لا يوجد:
+
+- MaxScore؛
+- marks؛
+- percentage؛
+- grade؛
+- official result؛
+- Evaluation evidence؛
+- Exam countdown timer؛
+- Offline mode toggle.
+
+---
+
+## 5.3 Worksheet
+
+Worksheet تستخدم نفس أسلوب بناء الأسئلة، لكنها نشاط مفتوح بدون موعد تسليم.
+
+### القواعد الثابتة
+
+```text
+Delivery = Online OR Offline
+Marks = None
+Evaluation = Excluded
+DueAt = None
+Exam timer = None
+```
+
+### Online Worksheet
+
+- تُحل داخل Edulytics؛
+- لا يوجد deadline؛
+- لا يوجد marks؛
+- يمكن تتبع completion فقط؛
+- تظل متاحة ما دام المدرس لم يسحبها أو يؤرشفها.
+
+### Offline Worksheet
+
+الأسئلة:
+
+```text
+Created inside Edulytics
+→ Reviewed
+→ Approved
+→ Rendered as printable worksheet/PDF
+```
+
+أي أن PDF هنا **Output** من Edulytics، وليس Input لإنشاء Worksheet.
+
+لا يوجد:
+
+- result import؛
+- score؛
+- percentage؛
+- Evaluation.
+
+---
+
+# 6. قاعدة إنشاء الأسئلة
+
+بالنسبة للأنواع الثلاثة:
+
+```text
+Teacher selects:
+Class
+Subject
+Lesson / Outcome / Scope
+
+Then:
+
+Manual Question Creation
+OR
+Edulytics Generate / AI-assisted generation
+
+Then:
+
+Review
+Edit
+Regenerate if needed
+Approve
+Publish / Assign
+```
+
+## ممنوع في هذا scope
+
+لا يكون workflow الأساسي:
+
+```text
+Upload PDF
+→ Edulytics reads PDF
+→ creates Homework/Worksheet
+```
+
+هذا ليس المطلوب.
+
+---
+
+# 7. Domain Model المقترح
+
+إضافة:
+
+```csharp
+public enum AssessmentType
+{
+    Exam = 1,
+    Homework = 2,
+    Worksheet = 3
+}
+```
+
+## قواعد الـdomain
+
+### Exam
+
+```text
+AllowsMarks = true
+CountsTowardEvaluation = true
+AllowedDelivery = Online | Offline
+AllowsDueWindow = true
+AllowsAttemptTimer = true
+```
+
+### Homework
+
+```text
+AllowsMarks = false
+CountsTowardEvaluation = false
+AllowedDelivery = Online only
+RequiresDueAt = true
+AllowsAttemptTimer = false
+```
+
+### Worksheet
+
+```text
+AllowsMarks = false
+CountsTowardEvaluation = false
+AllowedDelivery = Online | Offline
+RequiresDueAt = false
+AllowsAttemptTimer = false
+```
+
+هذه القواعد يجب أن تكون enforced في Service/Domain layer وليس CSS أو UI فقط.
+
+---
+
+# 8. Marks model
+
+## Exam/Test
+
+يستمر current model:
+
+```text
+Assessment.MaxScore
+AssessmentQuestion.MaxScore
+AssessmentResult.Score
+AssessmentResult.Percentage
+StudentAnswer.Score
+```
+
+## Homework وWorksheet
+
+يجب ألا يعاملا كـzero-score Exam.
+
+أي لا يكون الحل:
+
+```text
+MaxScore = 0
+```
+
+ثم نترك بقية scoring pipeline تعمل.
+
+الأصح أن contracts الخاصة بـHomework/Worksheet لا تعرض score semantics من الأصل.
+
+لو بقيت legacy columns في جدول Assessment أثناء migration، تكون compatibility detail داخل persistence فقط.
+
+الـbusiness logic لا يسمح بmarks للنوعين.
+
+---
+
+# 9. Evaluation policy — قرار نهائي
+
+هذه النقطة ليست configurable في النسخة الحالية.
+
+```text
+Exam/Test
+→ Included in Evaluation
+
 Homework
+→ Never included in Evaluation
+
+Worksheet
+→ Never included in Evaluation
 ```
 
-يجيب عن:
+## Homework وWorksheet لا يظهران في Evaluate
 
-> ما طبيعة النشاط؟
+لا يدخلان:
 
-## البعد الثاني — Submission / Delivery
+- Official Mastery؛
+- Assessment Mastery؛
+- Current Mastery؛
+- confidence؛
+- Evaluation trend؛
+- intervention calculation؛
+- Student Self Evaluation؛
+- Teacher Evaluation؛
+- Supervisor Evaluation؛
+- evaluation PDFs/reports.
 
-يجيب عن:
+ولا يظهران حتى كـ"Formative section" داخل Evaluate.
 
-> كيف سيستلم الطالب المهمة وكيف سيرسل الحل؟
-
-يجب أن يسمح مستقبلًا بقنوات مثل:
+إذا أردنا مستقبلًا عرض Homework/Worksheet activity، يكون في:
 
 ```text
-OnlineForm
-StudentFileUpload
-TeacherRecordedPaper
+Activity / Assignments / Completion analytics
 ```
 
-ويمكن السماح بأكثر من قناة لنفس Homework/Worksheet.
-
-## البعد الثالث — Evidence Role
-
-يجيب عن:
-
-> هل هذه النتيجة يجب أن تغيّر Mastery/Evaluation الرسمي؟
-
-مثل:
-
-```text
-Summative
-Formative
-PracticeOnly
-```
-
-عدم فصل هذه الأبعاد سيؤدي إلى أخطاء مثل:
-
-- كل Homework يصبح تلقائيًا امتحانًا رسميًا؛
-- كل Worksheet يغيّر Mastery؛
-- Offline = غير رسمي؛
-- Online = رسمي؛
-
-وكل هذه استنتاجات غير صحيحة.
+وليس داخل Evaluation.
 
 ---
 
-# 6. التصميم المقترح للـAssessment Type
+# 10. التغيير المطلوب في Evaluation Engine
 
-إضافة enum جديدة:
+حاليًا Assessment evidence يمكن أن يدخل عندما Assessment ليس Draft.
+
+بعد إضافة `AssessmentType` يجب أن تكون القاعدة صريحة:
 
 ```text
-AssessmentType
-- Exam
-- Worksheet
-- Homework
+Only AssessmentType.Exam
+can generate official Assessment evaluation evidence.
 ```
 
-Defaults المقترحة:
+أي أن:
 
-| النوع | Evidence Role الافتراضي | Result Release الافتراضي |
-|---|---|---|
-| Exam/Test | Summative | Manual |
-| Worksheet | Formative أو PracticeOnly حسب سياق المدرسة | Manual |
-| Homework | PracticeOnly | Manual |
+```csharp
+if (assessment.AssessmentType != AssessmentType.Exam)
+{
+    continue;
+}
+```
 
-مهم: هذه defaults وليست قواعد صلبة تمنع المدرسة من تحديد policy مختلفة.
+يجب أن يكون جزءًا من normalization/business policy.
+
+ولا نعتمد على:
+
+- MaxScore = 0؛
+- lack of results؛
+- UI hiding؛
+
+لمنع Homework/Worksheet من التقييم.
 
 ---
 
-# 7. Auto Timer / Scheduling — التصميم الصحيح
+# 11. Exam Auto Timer
 
-فكرة Auto Timer يجب ألا تكون مجرد background task يقول:
-
-```text
-if time == 17:00:
-    set Open
-```
-
-هذا غير كافٍ، لأن worker قد يتأخر أو يتوقف.
-
-القاعدة الصحيحة:
-
-> **وقت الخادم + access guard هو مصدر الحقيقة.**
-
-## 7.1 الحقول الأساسية المقترحة
-
-```text
-AvailableFromUtc?
-DueAtUtc?
-AttemptTimeLimitMinutes?
-AutoOpenEnabled
-AutoCloseEnabled
-SchoolTimeZoneId
-```
-
-## 7.2 Exam/Test Online
+الـAuto Timer يخص **Online Exam/Test**.
 
 مثال:
 
 ```text
-Created: 14:00
-AvailableFrom: 17:00
-DueAt: 18:00
-AttemptTimeLimit: 60 minutes
+Teacher creates Exam at 14:00
+Start = 17:00
+End = 18:00
 ```
 
 قبل 17:00:
 
-- الطالب لا يراه في قائمة available assessments؛
-- لا يمكنه فتح URL مباشرة؛
-- لا يمكنه إنشاء attempt؛
-- لا يمكنه submit؛
-- المدرس يستطيع التعديل طالما لم تبدأ نافذة الاختبار ولم يبدأ أي attempt.
+- الطالب لا يستطيع الدخول؛
+- direct URL يجب أن يُرفض؛
+- لا Attempt؛
+- لا Submit؛
+- المدرس يستطيع التعديل قبل safe lock boundary.
 
 عند 17:00:
 
-- يصبح متاحًا تلقائيًا؛
-- يظهر للطلاب المستهدفين؛
-- يمكن إرسال notification؛
-- يبدأ global availability window.
+- Exam تصبح available تلقائيًا؛
+- تظهر للطلاب؛
+- يمكن إرسال notification.
 
-إذا استُخدم `AttemptTimeLimitMinutes`:
+## Security rule
 
-- وقت الطالب الشخصي يبدأ عندما يبدأ attempt؛
-- لكن لا يجوز له تجاوز global hard close إذا المدرسة اختارت hard end.
+لا نعتمد على background scheduler فقط.
 
-## 7.3 لا نعتمد على scheduler وحده
-
-يجب أن يكون هناك:
+يجب وجود server-side access guard:
 
 ```text
-CanAccessAssessment(nowUtc, assessment, student)
+CanStudentAccessExam(
+    nowUtc,
+    exam,
+    student,
+    attempt
+)
 ```
 
-ويتحقق من:
-
-```text
-target
-enrollment
-status
-delivery/submission channel
-AvailableFromUtc
-DueAtUtc
-attempt state
-time limit
-cancellation state
-```
-
-حتى لو background worker لم يعمل، لا يستطيع الطالب الدخول مبكرًا.
-
-## 7.4 وظيفة background scheduler
-
-تكون وظيفته:
-
-- إرسال notification عند الفتح؛
-- تحديث presentation status إذا احتجنا؛
-- auto-close للمهام المنتهية؛
-- إنشاء audit events؛
-- تشغيل outbox بشكل idempotent.
-
-لكن **ليس** هو security boundary.
+حتى لو worker متأخر، لا يمكن bypass للوقت.
 
 ---
 
-# 8. التعديل قبل بداية Exam
+# 12. Exam scheduling fields
 
-المتطلب:
+للـExam/Test:
 
-> المدرس يستطيع تعديل/تغيير/تمديد/حذف الاختبار قبل أن يبدأ.
+```text
+AvailableFromUtc?
+DueAtUtc?
+AttemptTimeLimitMinutes?
+AutoOpenEnabled
+AutoCloseEnabled
+```
 
-سيتم تثبيته هكذا:
+يمكن دعم:
 
-## قبل AvailableFromUtc
+### Global window
 
-يسمح بـ:
+```text
+17:00 → 18:00
+```
 
-- تعديل title؛
-- questions؛
-- marks؛
-- schedule؛
-- class/target ضمن القيود؛
-- duration؛
-- delivery؛
-- حذف كامل إذا لا توجد submissions/attempts.
+### Per-attempt duration
 
-## بعد الفتح وقبل أي Attempt
+مثال:
 
-يمكن السماح ببعض التعديلات الإدارية، لكن تغيير questions بعد الإتاحة مخاطرة.
+```text
+Student starts 17:10
+Duration = 45 min
+```
 
-القرار المقترح:
-
-- content يصبح locked عند أول إتاحة فعلية؛
-- أو عند أول attempt — أيهما أسبق حسب policy.
-
-## بعد وجود Attempt أو Submission
-
-لا يسمح بـ:
-
-- hard delete؛
-- تغيير question identity؛
-- تغيير answer key بطريقة صامتة؛
-- تقليل deadline بما يضر attempt قائم.
-
-يسمح بـ:
-
-- extend deadline؛
-- extend time window؛
-- cancel assessment مع reason؛
-- emergency correction من خلال versioned change + audit، وليس تعديل صامت.
+مع hard close policy عند الحاجة.
 
 ---
 
-# 9. Homework وWorksheet — Start Date + Due Date
+# 13. Homework Due / Return Time
 
-كلاهما يدعم:
+Homework لا تملك Exam timer.
+
+لها:
 
 ```text
-AvailableFromUtc
+PublishedAtUtc
 DueAtUtc
 ```
 
 مثال:
 
 ```text
-Homework created now
-Available: tomorrow 08:00
-Due: after 2 days at 18:00
+Published: 1 October 08:00
+Due: 3 October 18:00
 ```
 
-أو:
+الطالب يستطيع العمل عليها خلال الفترة.
+
+## v1 policy
+
+النسخة الأولى:
 
 ```text
-Available: now
-Due: after 1 hour
+now <= DueAtUtc
+→ Submit allowed
+
+now > DueAtUtc
+→ Submit blocked
 ```
 
-أو:
+Late submission يمكن إضافته مستقبلًا كسياسة منفصلة إذا تقرر ذلك.
 
-```text
-Available: now
-Due: after 5 minutes
-```
+## Teacher
 
-الواجهة يجب أن تسمح بطريقتين:
+قبل DueAt يستطيع:
 
-1. اختيار date/time صريح.
-2. اختيار relative duration ثم تحويله إلى timestamp واضح قبل الحفظ.
+- تعديل DueAt؛
+- تمديد DueAt؛
+- سحب Homework إذا لم تعد مطلوبة.
 
-لا نخزن فقط عبارة:
-```text
-"after 2 days"
-```
-بل نحسب ونخزن timestamp نهائيًا واضحًا.
+تغييرات مهمة بعد submissions يجب أن تكون audited.
 
 ---
 
-# 10. Late Submission Policy
+# 14. Worksheet بلا Return Time
 
-مطلوب من البداية لأن Due Date بدون policy ناقص.
-
-القيم المقترحة:
+Worksheet لا تملك:
 
 ```text
-BlockAfterDue
-AcceptAndMarkLate
-TeacherApprovalRequired
+DueAtUtc
+ReturnDate
+LateSubmission
+Countdown
 ```
 
-Defaults:
-
-- Exam: `BlockAfterDue`
-- Worksheet: حسب المدرسة
-- Homework: `AcceptAndMarkLate` أو school policy
-
-كل late submission يجب أن يسجل:
+بعد نشرها:
 
 ```text
-SubmittedAtUtc
-WasLate
-DueAtUtcAtSubmission
-LateBySeconds
+Published
+→ Available
+→ Student solves whenever
 ```
 
-حتى لو تم تمديد الموعد لاحقًا نحتفظ بالسياق التاريخي.
+وتظل كذلك حتى يقوم المدرس بـ:
+
+- Withdraw؛ أو
+- Archive.
+
+هذا قرار إداري وليس deadline.
 
 ---
 
-# 11. قنوات التسليم الجديدة
+# 15. Delivery rules
 
-بدل تحويل `AssessmentDeliveryMode` الحالي مباشرة إلى enum ضخمة، نبدأ بإضافة مفهوم مستقل متعدد القنوات.
-
-مقترح:
+## Exam
 
 ```text
-AssessmentSubmissionChannel
-- OnlineForm
-- StudentFileUpload
-- TeacherRecordedPaper
+Online
+Offline
 ```
 
-وقد يملك Assessment أكثر من channel.
+نستمر باستخدام current `AssessmentDeliveryMode`.
 
-أمثلة:
-
-## Exam Online
+## Homework
 
 ```text
-OnlineForm
+Online only
 ```
 
-## Exam Paper
+لا يظهر للمدرس Online/Offline selector.
+
+## Worksheet
 
 ```text
-TeacherRecordedPaper
+Online
+Offline
 ```
 
-## Homework Online
+Online = interactive inside Edulytics.
 
-```text
-OnlineForm
-```
-
-## Homework Offline solved on paper ثم upload
-
-```text
-StudentFileUpload
-```
-
-## Homework يسمح Online أو Scan
-
-```text
-OnlineForm + StudentFileUpload
-```
-
-هذا يحقق معنى أن Homework/Worksheet قد يدعمان online وoffline/mixed بدون كسر معنى `AssessmentDeliveryMode` الحالي فورًا.
+Offline = printable worksheet generated من الأسئلة التي بُنيت في Edulytics.
 
 ---
 
-# 12. Student PDF / Scan Upload Flow
+# 16. Student state model
 
-## 12.1 السيناريو
-
-```text
-Teacher creates Homework/Worksheet
-→ Paper/PDF is distributed
-→ Student solves on paper
-→ Student scans or photographs pages
-→ Student uploads PDF/images
-→ Edulytics validates file
-→ extraction/OCR
-→ answer-to-question mapping
-→ proposed grading
-→ Teacher review
-→ Teacher finalizes
-→ results remain hidden
-→ Teacher clicks Post Results
-→ student sees final result
-```
-
-## 12.2 أنواع الملفات
-
-المرحلة الأولى المقترحة:
+## Exam
 
 ```text
-PDF
-JPEG
-PNG
-```
-
-ثم normalization إلى document pages.
-
-## 12.3 قيود أمنية
-
-يجب وجود:
-
-- MIME validation؛
-- extension/content mismatch detection؛
-- file size limit؛
-- page count limit؛
-- image dimension limit؛
-- malware scan؛
-- safe PDF parsing؛
-- no active JavaScript/forms execution؛
-- private object storage؛
-- signed short-lived download URLs؛
-- school/tenant isolation؛
-- retention policy؛
-- audit trail.
-
----
-
-# 13. Paper Identity — كيف نعرف أن الورقة تخص أي Assessment وأي Student؟
-
-لا ينبغي الاعتماد فقط على اسم الملف.
-
-المقترح للـPDF الذي يولده Edulytics:
-
-- Assessment ID machine-readable token؛
-- paper version؛
-- optional Student-specific token؛
-- QR code أو barcode آمن/موقّع؛
-- question anchors/page coordinates إذا أمكن.
-
-هذا يجعل:
-
-```text
-scan
-→ identify assessment/version
-→ identify question regions
-```
-
-أكثر موثوقية بكثير.
-
-إذا رفع الطالب scan لورقة خارجية:
-
-- يسمح upload؛
-- لكن mapping يصبح manual/assisted وقد يحتاج teacher confirmation.
-
----
-
-# 14. OCR / Handwriting / AI Extraction
-
-## قاعدة مهمة
-
-الذكاء الاصطناعي **ليس المصحح النهائي**.
-
-المسار:
-
-```text
-Uploaded Document
-→ Document Normalization
-→ OCR / Handwriting Extraction
-→ Page Segmentation
-→ Question Region Detection
-→ Extracted Student Answer
-→ Confidence Score
-→ Mathematical / rubric evaluation
-→ Proposed Score
-→ Teacher Review
-```
-
-## 14.1 مستويات confidence
-
-مقترح:
-
-```text
-High
-Medium
-Low
-Unrecognized
-```
-
-كل answer يعرض للمدرس:
-
-- الصورة الأصلية للمنطقة؛
-- النص/المعادلة المستخرجة؛
-- confidence؛
-- correct answer/rubric؛
-- proposed score؛
-- explanation لماذا اقترح النظام الدرجة.
-
-## 14.2 Mathematics
-
-إذا answer يمكن تمثيله رياضيًا:
-
-- نستخدم Mathematics Answer Evaluator / Math Kernel عندما يكون capability verified؛
-- لا نعتمد على LLM كحكم رياضي وحيد.
-
-## 14.3 Free-response
-
-في الإجابات المقالية/الشرح:
-
-- AI قد يقترح rubric match؛
-- لكن الدرجة الرسمية تبقى pending حتى Teacher review.
-
----
-
-# 15. Teacher Review Queue
-
-إنشاء workflow واضح:
-
-```text
-Uploaded
-→ Processing
-→ ExtractionReady
-→ NeedsTeacherReview
-→ TeacherApproved
-→ Finalized
-→ ResultsPublished
-```
-
-Teacher UI المقترحة:
-
-يسار:
-- scan page / answer crop
-
-يمين:
-- question؛
-- expected answer/rubric؛
-- extracted answer؛
-- AI proposed score؛
-- confidence؛
-- teacher final score؛
-- teacher note؛
-- override reason عند اختلاف كبير.
-
-Actions:
-
-```text
-Approve
-Edit extracted answer
-Change score
-Flag unreadable
-Request resubmission
-Finalize student
-Finalize all
-```
-
----
-
-# 16. فصل Finalize عن Post Results
-
-هذا قرار أساسي.
-
-## Finalize
-
-يعني:
-
-> المدرس أنهى المراجعة وأصبح score نهائيًا داخل النظام.
-
-## Post Results
-
-يعني:
-
-> يسمح للطالب برؤية الدرجة والتعليقات.
-
-يجب ألا يكون:
-
-```text
-Close Assessment == Publish Results
-```
-
-دائمًا.
-
-إضافة مفهوم:
-
-```text
-ResultReleaseStatus
-- Withheld
-- Ready
-- Published
-```
-
-و:
-
-```text
-ResultsPublishedAtUtc?
-ResultsPublishedByUserId?
-```
-
-Default لكل الأنواع في v1:
-
-```text
-Manual result release
-```
-
-حتى لا تظهر نتيجة OCR/AI أو auto-grading قبل أن يعتمدها المدرس.
-
----
-
-# 17. ماذا يرى الطالب قبل Post Results؟
-
-بعد submission:
-
-```text
+Unavailable
+Available
+InProgress
 Submitted
-Awaiting teacher review
+Closed
+ResultWithheld
+ResultPublished
 ```
 
-ولا يرى:
+## Homework
 
-- provisional AI score؛
-- OCR confidence؛
-- internal extraction؛
-- answer key؛
-- teacher draft comments.
+```text
+NotStarted
+InProgress
+Submitted
+MissedDueDate
+```
 
-بعد Post Results فقط يرى:
+لا Grade state.
 
-- final score؛
-- percentage؛
-- teacher feedback؛
-- per-question breakdown إذا policy تسمح؛
-- correct solution إذا policy تسمح.
+## Worksheet Online
+
+```text
+NotStarted
+InProgress
+Completed
+```
+
+## Worksheet Offline
+
+يمكن أن يكون:
+
+```text
+AvailableForDownload
+```
+
+ولا يلزم وجود completion record في v1 إلا إذا قررنا أن الطالب يضغط Mark as completed.
 
 ---
 
-# 18. القرار بشأن Homework/Worksheet داخل Evaluation
+# 17. Result Release
 
-## 18.1 المشكلة الحالية
+## Exam/Test
 
-Evaluation الحالي يعرف أساسًا:
+يمكن تنفيذ الفصل بين:
 
 ```text
-Assessment
-Practice
+Close Exam
+!=
+Post Results
 ```
 
-وأي Assessment غير Draft يمكن أن يدخل في official evidence.
+حتى يعتمد المدرس النتائج قبل أن يراها الطلاب.
 
-إذا أضفنا Homework وWorksheet كـAssessment Types بدون policy إضافية:
+## Homework
 
-> Homework وWorksheet سيؤثران تلقائيًا على Official Mastery.
+لا يوجد Post Results رقمي لأن لا توجد marks.
 
-هذا غير مقبول.
+يمكن مستقبلًا إضافة:
 
-## 18.2 القرار المقترح
+- teacher comment؛
+- reviewed/not reviewed؛
+
+لكن بدون grade.
+
+## Worksheet
+
+لا يوجد Result Release.
+
+---
+
+# 18. PDF policy
+
+## PDF كـInput لإنشاء المهمة
+
+غير مطلوب.
+
+```text
+NO:
+Upload teacher PDF
+→ parse it
+→ create Homework/Worksheet questions
+```
+
+## PDF كـOutput
+
+مطلوب للـOffline Worksheet:
+
+```text
+Edulytics-authored questions
+→ Printable Worksheet PDF
+```
+
+وCurrent Offline Exam PDF workflow يبقى كما هو.
+
+## Student solved-PDF upload / OCR
+
+ليس جزءًا من Homework/Worksheet core scope في النسخة المعدلة من الخطة.
+
+لأن:
+
+- Homework Online only؛
+- Worksheet غير graded؛
+- ولا نحتاج AI grading لهما.
+
+إذا تقرر مستقبلًا OCR لـOffline Exam، يكون Phase منفصلة تخص Exam فقط.
+
+---
+
+# 19. AI role
+
+في هذا scope، AI دوره في Homework/Worksheet هو **إنشاء الأسئلة والمساعدة في authoring**، وليس إعطاء درجات.
+
+يسمح:
+
+```text
+Generate questions
+Regenerate
+Suggest variants
+Use lesson/outcome scope
+```
+
+ثم teacher review/approval.
+
+لا يوجد:
+
+```text
+Homework AI score
+Worksheet AI score
+Homework grading AI
+Worksheet grading AI
+```
+
+---
+
+# 20. Teacher creation UX
+
+صفحة Create Assessment الجديدة تعرض 3 cards:
+
+```text
+Exam / Test
+Homework
+Worksheet
+```
+
+## Exam selected
+
+تظهر:
+
+- class/target؛
+- subject/term؛
+- title؛
+- marks؛
+- online/offline؛
+- difficulty؛
+- optional schedule؛
+- timer/end settings.
+
+## Homework selected
+
+تظهر:
+
+- class/target؛
+- subject/term؛
+- title؛
+- Due date/time.
+
+ولا تظهر:
+
+- MaxScore؛
+- marks؛
+- Online/Offline؛
+- Evaluation setting؛
+- attempt timer.
+
+## Worksheet selected
+
+تظهر:
+
+- class/target؛
+- subject/term؛
+- title؛
+- Online/Offline.
+
+ولا تظهر:
+
+- MaxScore؛
+- marks؛
+- Due date؛
+- Evaluation setting؛
+- timer.
+
+---
+
+# 21. Shared Builder UX
+
+بعد إنشاء shell الأساسي، تدخل الأنواع الثلاثة إلى Builder المشترك.
+
+المكونات المشتركة:
+
+- learning scope؛
+- lesson selection؛
+- unit/outcome selection؛
+- manual question؛
+- generated questions؛
+- regenerate؛
+- edit؛
+- approve؛
+- approve all؛
+- ordering؛
+- preview.
+
+## Type-specific adaptation
+
+### Exam
+
+يعرض:
+
+- question marks؛
+- total marks؛
+- difficulty/evaluation semantics.
+
+### Homework
+
+يعرض question content فقط.
+
+### Worksheet
+
+يعرض question content فقط.
+
+---
+
+# 22. Data Model المقترح
+
+## Assessment
 
 إضافة:
 
 ```text
-AssessmentEvidenceRole
-- Summative
-- Formative
-- PracticeOnly
-```
-
-## 18.3 Exam/Test
-
-Default:
-
-```text
-Summative
-```
-
-ويؤثر في:
-
-- official assessment mastery؛
-- current mastery؛
-- confidence؛
-- trends؛
-- student evaluation؛
-- staff analytics.
-
-لكن فقط بعد final grading وفق الـpolicy المعتمدة.
-
-## 18.4 Homework
-
-Default:
-
-```text
-PracticeOnly
-```
-
-السبب:
-
-Homework قد يتم:
-
-- بكتاب مفتوح؛
-- بمساعدة ولي أمر؛
-- بمساعدة مدرس خاص؛
-- باستخدام AI؛
-- بعد retries متعددة؛
-- بدون إشراف.
-
-لذلك لا يصلح افتراضيًا كدليل مستقل قوي على mastery.
-
-لكن لا نهمله.
-
-يظهر في Student Self Evaluation داخل قسم منفصل مثل:
-
-```text
-Homework / Formative Progress
-```
-
-بدون خلطه تلقائيًا بالـofficial mastery.
-
-يمكن للمدرسة لاحقًا السماح لبعض Homework بأن تكون `Formative` إذا كانت policy واضحة.
-
-## 18.5 Worksheet
-
-Default يعتمد على السياق:
-
-### In-class supervised worksheet
-
-يمكن أن تكون:
-
-```text
-Formative
-```
-
-### Take-home worksheet
-
-الأفضل:
-
-```text
-PracticeOnly
-```
-
-## 18.6 لا نستخدم type وحده لتحديد القوة التقييمية
-
-الأصح:
-
-```text
-AssessmentType = Worksheet
-EvidenceRole = Formative
-```
-
-أو:
-
-```text
-AssessmentType = Worksheet
-EvidenceRole = PracticeOnly
-```
-
-بناءً على سياقها الحقيقي.
-
----
-
-# 19. weighting المقترح للتقييم
-
-لا أنصح ببدء النظام بوزن حر يكتبه كل مدرس مثل 0.17 أو 0.63.
-
-ابدأ presets governed:
-
-```text
-Summative   = full official evidence
-Formative   = reduced/capped official evidence
-PracticeOnly = no official mastery effect
-```
-
-للتجربة الأولى يمكن استخدام factor تقريبي مثل:
-
-```text
-Summative = 1.00
-Formative = 0.35
-PracticeOnly = 0.00
-```
-
-لكن هذه الأرقام **ليست final policy** ويجب معايرتها على بيانات حقيقية قبل تثبيتها.
-
-Formula المستقبلية يمكن أن تصبح:
-
-```text
-effectiveWeight =
-    mappingWeight
-  × difficultyWeight
-  × recencyWeight
-  × evidenceRoleWeight
-```
-
----
-
-# 20. قاعدة مهمة: AI provisional score لا يدخل Evaluation
-
-لا يدخل أي AI/OCR proposed score إلى:
-
-- Official Mastery؛
-- Student Evaluation؛
-- Teacher Analytics؛
-- intervention decisions؛
-- reports؛
-
-حتى يصبح:
-
-```text
-TeacherApproved / Finalized
-```
-
-ولمنع تسريب نتيجة قبل Post Results إلى الطالب من خلال Self Evaluation، يجب أن يكون مسار student-facing official evidence متوافقًا مع Result Release policy.
-
-الخيار الأبسط والأكثر أمانًا في v1:
-
-> Student-facing official evaluation يستهلك فقط النتائج النهائية المنشورة.
-
----
-
-# 21. State Model المقترح
-
-مع الحفاظ على `AssessmentStatus` القديم للـbackward compatibility، نضيف runtime state مشتقة بدل كسر كل المستهلكين دفعة واحدة.
-
-## Content lifecycle
-
-```text
-Draft
-→ Questions Reviewed
-→ Approved
-→ Assigned/Scheduled
-```
-
-## Availability lifecycle
-
-```text
-NotScheduled
-Scheduled
-Available
-ClosedForSubmission
-Cancelled
-```
-
-## Grading lifecycle
-
-```text
-NoSubmission
-Submitted
-AutoProcessed
-NeedsReview
-TeacherApproved
-Finalized
-```
-
-## Result lifecycle
-
-```text
-Withheld
-Ready
-Published
-```
-
-هذه المحاور لا يجب ضغطها كلها داخل enum واحدة.
-
----
-
-# 22. Permissions
-
-## Teacher / authorized assessment manager
-
-قبل الإتاحة:
-
-- full edit؛
-- scheduling؛
-- channels؛
-- evidence role ضمن school policy؛
-- delete.
-
-بعد الإتاحة:
-
-- extend deadline؛
-- close؛
-- cancel؛
-- review submissions؛
-- finalize؛
-- publish results.
-
-بعد وجود submission:
-
-- لا hard delete؛
-- لا silent question mutation؛
-- كل تغيير حساس audit event.
-
-## Student
-
-- لا يرى Exam قبل start إذا policy = hidden؛
-- لا يمكنه bypass بالرابط المباشر؛
-- يرسل فقط في النافذة المسموحة؛
-- يرى submission receipt؛
-- لا يرى score قبل result release.
-
----
-
-# 23. Notifications
-
-استخدام Outbox/Event pattern الحالي.
-
-Events المقترحة:
-
-```text
-AssessmentScheduled
-AssessmentOpened
-AssessmentDueSoon
-AssessmentClosed
-SubmissionReceived
-SubmissionNeedsReview
-ResultsReady
-ResultsPublished
-```
-
-يجب أن تكون idempotent لتجنب duplicate notifications.
-
----
-
-# 24. Time Zone
-
-كل timestamps تُخزن UTC.
-
-الواجهة تعرضها حسب:
-
-```text
-SchoolTimeZoneId
-```
-
-لا نستخدم local server time.
-
-عند scheduling:
-
-```text
-teacher local date/time
-→ school timezone
-→ UTC
-```
-
-ثم عند العرض:
-
-```text
-UTC
-→ school/user timezone
-```
-
-اختبارات DST مطلوبة.
-
----
-
-# 25. Data Model المقترح
-
-## 25.1 Assessment additions
-
-```text
 AssessmentType
+```
+
+### Exam fields
+
+```text
+MaxScore
 AvailableFromUtc?
 DueAtUtc?
 AttemptTimeLimitMinutes?
 AutoOpenEnabled
 AutoCloseEnabled
-EvidenceRole
-ResultReleaseStatus
-ResultsPublishedAtUtc?
-ResultsPublishedByUserId?
-CancelledAtUtc?
-CancellationReason?
 ```
 
-## 25.2 Submission channels
-
-كيان أو mapping:
+### Homework fields
 
 ```text
-AssessmentSubmissionChannel
-AssessmentId
-ChannelType
-IsEnabled
+DueAtUtc
 ```
 
-## 25.3 Student submission
+### Worksheet fields
 
 ```text
-AssessmentSubmission
-Id
-SchoolId
-AssessmentId
-StudentProfileId
-AttemptNumber
-StartedAtUtc?
-SubmittedAtUtc?
-WasLate
-Status
-SelectedChannel
-CreatedAtUtc
-UpdatedAtUtc
-RowVersion
+DeliveryMode
 ```
 
-## 25.4 Submission file
+## Activity records
+
+Homework/Worksheet لا يجب أن تستخدم `AssessmentResult` كأنها درجات.
+
+نحتاج activity/submission record مثل:
 
 ```text
-AssessmentSubmissionFile
-Id
-SubmissionId
-StorageKey
-OriginalFileName
-MimeType
-ByteSize
-PageCount?
-Sha256
-UploadStatus
-MalwareScanStatus
-CreatedAtUtc
+LearningTaskAttempt
+- Id
+- SchoolId
+- AssessmentId
+- StudentProfileId
+- StartedAtUtc?
+- SubmittedAtUtc?   // Homework
+- CompletedAtUtc?   // Worksheet Online
+- Status
+- UpdatedAtUtc
 ```
 
-## 25.5 Extraction
+هذه البيانات operational وليست Evaluation evidence.
+
+---
+
+# 23. Migration strategy
+
+الـAssessments التاريخية الحالية تمثل النظام الرسمي scored Assessment.
+
+لذلك migration المقترحة:
 
 ```text
-SubmissionExtraction
-Id
-SubmissionFileId
-Provider
-ProviderVersion
-Status
-Confidence
-StructuredPayload
-CreatedAtUtc
+Existing Assessment rows
+→ AssessmentType = Exam
 ```
 
-## 25.6 Extracted answer
+وبذلك:
+
+- current results remain valid؛
+- current mastery remains reconstructable؛
+- current Student Portal behavior لا يفقد semantics؛
+- Offline/Online assessments القديمة تظل Exams.
+
+لا نحاول infer Homework/Worksheet من البيانات التاريخية لأنه لا يوجد أساس موثوق لذلك.
+
+---
+
+# 24. Permissions
+
+## Teacher
+
+مشترك:
+
+- create؛
+- generate؛
+- edit؛
+- approve؛
+- publish؛
+- withdraw/archive وفق policy.
+
+### Exam
+
+- scores؛
+- delivery؛
+- schedule؛
+- close؛
+- results؛
+- post results.
+
+### Homework
+
+- set/extend DueAt؛
+- view student submission status؛
+- no grade controls.
+
+### Worksheet
+
+- choose Online/Offline؛
+- publish/archive؛
+- printable action للOffline؛
+- no due controls؛
+- no grade controls.
+
+## Student
+
+### Exam
+
+- time-gated access؛
+- submit؛
+- result visibility حسب policy.
+
+### Homework
+
+- Online solve؛
+- submit before DueAt؛
+- no score.
+
+### Worksheet
+
+- solve Online whenever available؛
+- أو download/print Offline؛
+- no due؛
+- no score.
+
+---
+
+# 25. Notifications
+
+استخدام Outbox/Event pattern الحالي.
+
+## Exam
 
 ```text
-ExtractedSubmissionAnswer
-SubmissionId
-AssessmentQuestionId
-ExtractedText
-NormalizedAnswer?
-Confidence
-PageNumber
-BoundingBox?
-ProposedScore?
-ProposedReason?
+ExamScheduled
+ExamOpened
+ExamClosed
+ExamResultsPublished
 ```
 
-## 25.7 Review/finalization
+## Homework
 
 ```text
-SubmissionReview
-SubmissionId
-AssessmentQuestionId
-TeacherUserId
-FinalScore
-FinalResponseText?
-TeacherComment?
-ReviewedAtUtc
-OverrideReason?
+HomeworkPublished
+HomeworkDueSoon
+HomeworkSubmitted
+HomeworkMissedDue
 ```
+
+## Worksheet
+
+```text
+WorksheetPublished
+```
+
+لا يوجد WorksheetDueSoon.
 
 ---
 
 # 26. Phase Plan
 
-# Phase 0 — Baseline lock + corrective dependency check
+## Phase 0 — Baseline Lock
 
-## الهدف
+الهدف:
 
-منع بناء الميزة فوق افتراضات قديمة.
+- تثبيت current Assessment behavior؛
+- تثبيت Builder contracts؛
+- تثبيت Evaluation behavior؛
+- إضافة regression coverage قبل التغيير.
 
-## المهام
-
-- تثبيت main SHA.
-- توثيق current Assessment routes/entities/statuses.
-- تثبيت current Online/Offline behavior.
-- تثبيت current Student result release behavior.
-- تثبيت current Evaluation evidence behavior.
-- إنشاء regression snapshot.
-- تسجيل P2 الحالي في PracticeAssessmentTaxonomy كـknown external dependency.
-
-## لا تغييرات behavior.
-
-## Exit Gate
-
-نعرف بالاختبارات ماذا يفعل النظام قبل التعديل.
+لا behavior change.
 
 ---
 
-# Phase 1 — Domain contracts فقط
-
-## الهدف
-
-إضافة vocabulary بدون تغيير behavior.
-
-## إضافة
-
-```text
-AssessmentType
-AssessmentEvidenceRole
-AssessmentResultReleaseStatus
-AssessmentSubmissionChannelType
-AssessmentAvailabilityPolicy
-LateSubmissionPolicy
-```
-
-## Migration
-
-- existing assessments backfill إلى:
-  - Type = Exam أو LegacyAssessment مؤقتًا داخليًا إذا احتجنا migration-safe path؛
-  - ResultReleaseStatus مبني على current status؛
-  - preserve current DeliveryMode.
-- لا تغيير في student visibility.
-
-## Exit Gate
-
-كل assessment تاريخي يُقرأ كما كان.
-
----
-
-# Phase 2 — Assessment Creation UX v2
-
-## الهدف
-
-عند Create Assessment يختار المدرس:
-
-```text
-Type
-Class/Student target
-Subject
-Term
-Title
-Max Score
-Submission channels
-Evidence role
-```
-
-مع defaults واضحة.
-
-## UX
-
-Cards:
-
-```text
-Exam / Test
-Worksheet
-Homework
-```
-
-بعد اختيار النوع تظهر الإعدادات المناسبة فقط.
-
-## Exit Gate
-
-إنشاء الأنواع الثلاثة بدون scheduling behavior بعد.
-
----
-
-# Phase 3 — Scheduling foundation
-
-## الهدف
+## Phase 1 — AssessmentType Contract
 
 إضافة:
 
 ```text
-AvailableFrom
-DueAt
-Time zone
-Auto-open
-Auto-close
+AssessmentType:
+Exam
+Homework
+Worksheet
 ```
 
-## Server Rules
+Migration:
 
-- timestamps valid؛
-- Due > Available؛
-- no invalid school timezone؛
-- direct URL blocked before availability؛
-- no submission after hard due؛
-- concurrency safe schedule edits.
+```text
+Existing rows → Exam
+```
 
-## Exit Gate
+Acceptance:
 
-student access guard يفرض الوقت حتى لو scheduler متوقف.
+- جميع الـAssessment الحالية تعمل كما قبل.
 
 ---
 
-# Phase 4 — Exam/Test Auto Timer
+## Phase 2 — Type-aware Create UX
 
-## الهدف
+إضافة cards:
 
-تنفيذ سيناريو 17:00 الحقيقي.
+```text
+Exam / Test
+Homework
+Worksheet
+```
 
-## Features
+والـform يصبح type-specific.
 
-- scheduled exam hidden before start؛
-- auto availability at start؛
-- notification؛
-- optional global end؛
-- optional per-attempt timer؛
-- teacher can extend؛
-- questions locked عند safe boundary؛
-- no hard delete after attempt starts.
+Acceptance:
 
-## Tests
-
-- exactly before start؛
-- exactly at start؛
-- after start؛
-- due boundary؛
-- extended deadline؛
-- worker delayed؛
-- direct URL attack؛
-- two concurrent start requests.
-
-## Exit Gate
-
-Auto Timer آمن ولا يعتمد على scheduler وحده.
+- Homework لا يعرض marks/delivery toggle؛
+- Worksheet لا يعرض marks/due؛
+- Exam يحتفظ بالحقول الحالية.
 
 ---
 
-# Phase 5 — Homework/Worksheet windows + late policy
+## Phase 3 — Shared Builder Refactor
 
-## الهدف
+الهدف:
 
-Start/Due date مثل Teams مع semantics أوضح.
+إعادة استخدام نفس question-authoring/generation system للثلاثة.
 
-## Features
+```text
+Manual
+Generate
+Regenerate
+Edit
+Review
+Approve
+```
+
+Acceptance:
+
+- لا يوجد duplicate generation engine؛
+- Homework/Worksheet لا ينشئان scored questions.
+
+---
+
+## Phase 4 — Exam Scheduling / Auto Timer
+
+إضافة:
 
 - AvailableFrom؛
-- DueAt؛
-- relative date helper؛
-- late policy؛
-- resubmission policy؛
+- End/Due window؛
+- Attempt duration عند الحاجة؛
+- server-side access guard؛
+- scheduler/outbox notifications؛
 - teacher extension؛
-- due-soon notification.
+- concurrency tests.
 
-## Exit Gate
+Acceptance:
 
-Homework وWorksheet يعملان independently من Exam timer.
+- لا يمكن للطالب الدخول قبل start حتى بالرابط المباشر.
 
 ---
 
-# Phase 6 — Submission Channels + Hybrid delivery
+## Phase 5 — Homework Online Workflow
 
-## الهدف
+إضافة:
 
-السماح بـ:
+- Online-only rendering؛
+- DueAt required؛
+- draft/progress save؛
+- Submit؛
+- server-side deadline check؛
+- teacher submission status view؛
+- student status view.
+
+لا marks.
+
+لا Evaluation.
+
+Acceptance:
 
 ```text
-OnlineForm
-StudentFileUpload
-TeacherRecordedPaper
+Homework cannot create AssessmentResult
+Homework cannot reach EvaluationEvidenceNormalizer
 ```
 
-مع multi-channel support.
+---
 
-## Backward compatibility
+## Phase 6 — Worksheet Workflow
 
-`AssessmentDeliveryMode` لا يزال يُقرأ للمحتوى القديم.
+### Online
 
-## Exit Gate
+- interactive question rendering؛
+- no due؛
+- no score؛
+- progress/completion state.
 
-يمكن لـHomework أن يسمح OnlineForm + FileUpload بدون duplication للAssessment.
+### Offline
+
+- printable PDF generated من system-authored questions؛
+- no score؛
+- no result import؛
+- no deadline.
+
+Acceptance:
+
+- Worksheet can never save a numeric grade.
 
 ---
 
-# Phase 7 — Secure PDF/Image upload
+## Phase 7 — Evaluation Hard Exclusion
 
-## الهدف
+تعديل:
 
-إضافة file submission بدون AI أولًا.
+- `EvaluationEvidenceNormalizer`؛
+- `MasteryEvidenceEngine`؛
+- Student Self Evaluation source selection؛
+- staff Evaluation source selection.
 
-## Features
-
-- upload؛
-- receipt؛
-- versioning؛
-- replace before due حسب policy؛
-- file validation؛
-- malware scan؛
-- storage isolation؛
-- download authorization؛
-- teacher preview؛
-- student submission history.
-
-## Exit Gate
-
-paper-to-digital workflow يعمل يدويًا بالكامل قبل إدخال OCR.
-
----
-
-# Phase 8 — OCR/AI extraction shadow mode
-
-## الهدف
-
-AI يساعد فقط ولا يغيّر grades.
-
-## Pipeline
+القاعدة:
 
 ```text
-file
-→ normalize
-→ OCR
-→ question mapping
-→ answer extraction
-→ confidence
-→ proposed grading
+Only AssessmentType.Exam
+is official assessment evidence.
 ```
 
-## Shadow Mode
+Acceptance:
 
-- teacher يرى proposal؛
-- النظام لا يحفظه كـfinal score؛
-- نقيس agreement مع teacher.
-
-## Metrics
-
-- extraction success؛
-- unreadable rate؛
-- question mapping accuracy؛
-- teacher override rate؛
-- score delta؛
-- latency؛
-- provider failure.
-
-## Exit Gate
-
-نعرف أين AI موثوق وأين لا.
+- Homework/Worksheet = zero Evaluation evidence by design.
 
 ---
 
-# Phase 9 — Teacher Moderation + Final Grades
+## Phase 8 — Student Portal Separation
 
-## الهدف
+واجهة الطالب تفصل بوضوح:
 
-إنشاء review workspace.
+```text
+Exams / Tests
+Homework
+Worksheets
+```
 
-## Features
+Exam card:
+- date/time؛
+- status؛
+- result status.
 
-- scan vs extracted answer side-by-side؛
-- approve/change score؛
-- override reason؛
-- unreadable flag؛
-- request resubmission؛
-- finalize one student؛
-- finalize class؛
-- audit log.
+Homework card:
+- due time؛
+- submission status.
 
-## Exit Gate
-
-لا توجد final score من AI فقط.
+Worksheet card:
+- online/offline؛
+- availability/completion.
 
 ---
 
-# Phase 10 — Explicit Post Results
+## Phase 9 — Teacher Management UX
 
-## الهدف
+إضافة:
 
-فصل grading عن student visibility.
-
-## Features
-
-```text
-Finalize
-!=
-Post Results
-```
-
-- results withheld by default؛
-- Post Results button؛
-- publish timestamp/user؛
-- student result appears only after release؛
-- optional bulk publish؛
-- no answer-key leakage before release.
-
-## Exit Gate
-
-لا يوجد أي route أو Self Evaluation leak يكشف النتيجة قبل النشر.
+- filters by type؛
+- badges؛
+- type-specific actions؛
+- Homework due management؛
+- Worksheet print/download؛
+- removal of irrelevant score actions.
 
 ---
 
-# Phase 11 — Evaluation / Mastery integration
+## Phase 10 — Exam Result Release
 
-## الهدف
+للـExam/Test فقط:
 
-إدخال الأنواع الجديدة بدون تشويه Student Evaluation.
-
-## Policy
-
-### Exam/Test
 ```text
-Summative default
+Close / Finalize
+→ Post Results
 ```
 
-### Homework
-```text
-PracticeOnly default
-```
-
-### Worksheet
-```text
-Formative when supervised
-PracticeOnly when take-home by default
-```
-
-## Engine Changes
-
-- EvidenceNormalizer يقرأ EvidenceRole؛
-- provisional results excluded؛
-- AI-only proposed scores excluded؛
-- student-facing evaluation respects result release؛
-- Formative evidence has governed weight factor؛
-- PracticeOnly displayed separately؛
-- reports label source type truthfully.
-
-## Exit Gate
-
-Homework لا يغيّر official mastery لمجرد أنه Assessment entity.
+Homework/Worksheet لا تدخل هذا المسار.
 
 ---
 
-# Phase 12 — Analytics, audit, observability
+## Phase 11 — Audit / Observability
 
-## Metrics
+Metrics:
 
 ```text
-scheduled_open_success
-scheduled_open_lag
-assessment_access_denied_before_start
-late_submission_count
-file_upload_failure
-ocr_failure
-ocr_low_confidence
-ai_teacher_agreement
-teacher_override_rate
-result_publish_delay
-result_release_leak_attempt
-evaluation_evidence_by_role
+exam_scheduled_open_success
+exam_access_denied_before_start
+homework_submitted_before_due
+homework_missed_due
+worksheet_online_completed
+worksheet_pdf_generated
+non_exam_evaluation_evidence_blocked
 ```
 
-## Audit events
+Audit:
 
-كل تغيير في:
-
-- schedule؛
-- duration؛
-- due date؛
-- grading؛
-- override؛
-- finalization؛
-- result publication؛
-- cancellation.
+- Exam schedule changes؛
+- Homework DueAt changes؛
+- publish/withdraw/archive actions.
 
 ---
 
-# Phase 13 — Hardening + rollout
+## Phase 12 — Hardening + Rollout
 
-## Feature flags
+Feature flags:
 
 ```text
 AssessmentTypesV2
-AssessmentSchedulingV1
-AssessmentFileSubmissionV1
-AssessmentAiReviewShadow
-AssessmentAiReviewTeacherAssist
-AssessmentExplicitResultRelease
-AssessmentEvidenceRoles
+ExamSchedulingV1
+HomeworkV1
+WorksheetV1
+ExamExplicitResultRelease
 ```
 
-## Rollout
+Rollout:
 
 ```text
-internal test school
+internal
 → selected teacher
 → selected class
-→ selected assessment type
-→ broader school rollout
+→ selected school
+→ wider rollout
 ```
-
-لا global cutover دفعة واحدة.
 
 ---
 
-# 27. PR sequence المقترح
+# 27. PR Sequence
 
 ```text
-PR 1  — contracts + enums + migrations, no behavior change
-PR 2  — assessment creation type UX
-PR 3  — scheduling fields + access guard
-PR 4  — exam auto timer + scheduler/outbox
-PR 5  — homework/worksheet due + late policy
-PR 6  — submission channel model
-PR 7  — secure file upload
-PR 8  — teacher file preview/manual review
-PR 9  — OCR extraction shadow pipeline
-PR 10 — AI grading proposal shadow mode
-PR 11 — teacher moderation/finalization
-PR 12 — explicit Post Results
-PR 13 — evaluation evidence-role integration
-PR 14 — analytics/observability/security hardening
-PR 15 — production rollout gates
+PR 1  — AssessmentType contracts + migration
+PR 2  — type-aware Create UX
+PR 3  — shared Builder refactor
+PR 4  — Exam Auto Timer / scheduling
+PR 5  — Homework online unscored workflow + DueAt
+PR 6  — Worksheet online/offline unscored workflow
+PR 7  — Worksheet printable PDF output
+PR 8  — Evaluation hard exclusion for non-Exam types
+PR 9  — Student Portal separation
+PR 10 — Teacher management UX
+PR 11 — Exam-only explicit result release
+PR 12 — audit, regression, hardening, rollout
 ```
 
 كل PR يجب أن يكون independently mergeable.
 
 ---
 
-# 28. Compatibility مع Assessment Builder الحالي
+# 28. Acceptance Matrix
 
-لا نكسر:
-
-```text
-Select
-Generate
-Review
-Approve
-Publish
-```
-
-لكن نوضح أن كلمة `Publish` الحالية يجب ألا تختلط مستقبلًا مع:
-
-```text
-Post Results
-```
-
-التسمية المقترحة في UX:
-
-```text
-Assign / Schedule Assessment
-Post Results
-```
-
-بدل استخدام كلمة Publish لنفس شيئين مختلفين.
+| النوع | إنشاء الأسئلة | Delivery | Marks | Due/Return | Timer | Evaluation |
+|---|---|---|---|---|---|---|
+| Exam/Test | Manual أو Generate داخل Edulytics | Online / Offline | نعم | Exam window حسب الإعداد | نعم عند الحاجة | نعم |
+| Homework | Manual أو Generate داخل Edulytics | Online فقط | لا | نعم، إلزامي | لا | لا |
+| Worksheet | Manual أو Generate داخل Edulytics | Online / Offline | لا | لا | لا | لا |
 
 ---
 
-# 29. Compatibility مع Generated Exam Engine
-
-لا نحول ExamGenerationEngine إلى scheduling engine.
-
-يبقى مسؤولا عن:
-
-- generated batch validation؛
-- materialization؛
-- question identity؛
-- review/approval lifecycle.
-
-Scheduling يكون subsystem منفصل فوق Assessment delivery.
-
----
-
-# 30. Acceptance Matrix
-
-| Scenario | Before start | During window | After due | Result before Post | Result after Post |
-|---|---|---|---|---|---|
-| Online Exam/Test | Hidden/blocked | Take exam | Block | Hidden | Visible |
-| Online Homework | Hidden أو scheduled حسب policy | Submit | Late/block حسب policy | Hidden | Visible |
-| Online Worksheet | Hidden أو scheduled | Submit | Late/block | Hidden | Visible |
-| Paper Homework + Upload | No upload | Upload scan | late/block | Hidden | Visible |
-| Paper Worksheet + Upload | No upload | Upload scan | late/block | Hidden | Visible |
-| Offline Exam + teacher record | Existing paper workflow | teacher records/imports | closed by teacher | Hidden إذا manual release | Visible |
-
----
-
-# 31. الاختبارات الإلزامية
+# 29. Mandatory Tests
 
 ## Domain
 
-- enum round-trip؛
-- migration backfill؛
-- legacy assessment compatibility.
+- Homework rejects marks.
+- Worksheet rejects marks.
+- Homework requires DueAt.
+- Homework rejects Offline.
+- Worksheet accepts Online/Offline.
+- Worksheet rejects DueAt semantics.
+- Exam preserves current scoring.
 
-## Scheduling
+## Builder
 
-- UTC boundaries؛
-- school timezone؛
-- DST؛
-- worker outage؛
-- clock boundary؛
-- concurrent open/submit؛
-- deadline extension.
+- all types can use manual question creation.
+- all types can use Edulytics generation.
+- review/approve flow works.
+- no PDF input is needed for authoring.
 
-## Authorization
+## Exam Scheduling
 
-- cross-school file access forbidden؛
-- student cannot access other student submission؛
-- crafted assessment ID blocked؛
-- teacher scope enforced.
+- before-start blocked.
+- exact-start allowed.
+- after-close blocked.
+- direct URL blocked.
+- worker delay does not bypass access guard.
+- teacher extension safe.
 
-## Files
+## Homework
 
-- oversized file؛
-- fake extension؛
-- malformed PDF؛
-- active content؛
-- malware status؛
-- duplicate upload؛
-- hash integrity.
+- before due submit allowed.
+- after due submit blocked in v1.
+- no result/score created.
+- no evaluation evidence created.
 
-## AI
+## Worksheet
 
-- low confidence forced review؛
-- unsupported math never silently graded؛
-- AI provider timeout؛
-- disagreement with verifier؛
-- no provisional score in official evaluation.
-
-## Result Release
-
-- submitted but withheld؛
-- finalized but withheld؛
-- published؛
-- self-evaluation leak regression؛
-- API direct access regression.
+- no due validation path.
+- Online works without deadline.
+- Offline PDF renders.
+- no result/score created.
+- no evaluation evidence created.
 
 ## Evaluation
 
-- Summative counts؛
-- Formative reduced weight؛
-- PracticeOnly excluded from official mastery؛
-- student still sees formative progress separately؛
-- historical evaluation remains reconstructable.
+- historical/current Exam evidence still works.
+- Homework excluded.
+- Worksheet excluded.
+- Student Self Evaluation excludes both.
+- staff Evaluation excludes both.
+- reports/PDFs exclude both as evaluation evidence.
 
 ---
 
-# 32. المخاطر الرئيسية
+# 30. Main Risks
 
-## Risk 1 — استخدام Status واحدة لكل شيء
+## Risk 1 — Reusing Assessment entity accidentally sends Homework/Worksheet into Evaluation
 
-الحل:
-فصل content, availability, grading, result release.
+**Solution:** explicit `AssessmentType.Exam` filtering in normalization.
 
-## Risk 2 — scheduler downtime
+## Risk 2 — UI hides marks but backend accepts them
 
-الحل:
-request-time access guard هو authority.
+**Solution:** domain/service validation.
 
-## Risk 3 — Homework يفسد mastery
+## Risk 3 — Worksheet accidentally inherits DueAt from Homework
 
-الحل:
-EvidenceRole صريح وdefault = PracticeOnly.
+**Solution:** type-specific contracts/view models and validation.
 
-## Risk 4 — AI يخطئ في handwriting
+## Risk 4 — Homework accidentally exposes Offline toggle
 
-الحل:
-confidence + teacher review + no direct final grade.
+**Solution:** Homework delivery is fixed Online in the domain.
 
-## Risk 5 — الطالب يرى نتيجة قبل المدرس
+## Risk 5 — Three separate Builders diverge
 
-الحل:
-ResultReleaseStatus مستقل + leak tests.
+**Solution:** shared Builder core.
 
-## Risk 6 — تغيير الأسئلة بعد بدء الطلاب
+## Risk 6 — PDF becomes authoring dependency
 
-الحل:
-content lock/versioning/audit.
+**Solution:** PDF is only an output for Offline Worksheet in this scope.
 
-## Risk 7 — PDF يفتح attack surface
+## Risk 7 — Exam scheduler downtime
 
-الحل:
-strict validation + malware scanning + sandboxed processing + private storage.
-
-## Risk 8 — خلط Exam/Test كنوعين مستقلين
-
-الحل:
-نوع Canonical واحد، UI alias فقط.
+**Solution:** request-time access guard is authoritative.
 
 ---
 
-# 33. قرارات Product المقترحة لاعتمادها قبل التنفيذ
+# 31. Product Decisions Locked by This Revision
 
-1. الأنواع canonical = Exam, Worksheet, Homework.
-2. Test = label/subtype لـExam وليس entity type رابع.
-3. Type مستقل عن submission channel.
-4. Type مستقل عن EvidenceRole.
-5. Exam online يدعم scheduled start + hard access guard.
-6. Homework/Worksheet يدعمان AvailableFrom + DueAt.
-7. multiple submission channels مسموحة للHomework/Worksheet.
-8. file upload يبنى أولًا بدون AI ثم AI shadow mode.
-9. AI لا يعتمد grade رسميًا.
-10. teacher finalization إلزامي للـscan/AI flow.
-11. Post Results مستقل عن Close/Finalize.
-12. Homework default = PracticeOnly.
-13. Worksheet default = Formative فقط عندما policy/supervision تسمح؛ وإلا PracticeOnly.
-14. Exam/Test default = Summative.
-15. Student Self Evaluation يعرض Homework/Worksheet progress حتى عندما لا تدخل official mastery، لكن في section منفصل.
-16. current Assessment Builder generation/review/approval workflow محفوظ.
-17. current historical assessments/results/mastery remain reconstructable.
-
----
-
-# 34. Definition of Done
-
-الميزة لا تعتبر مكتملة حتى:
-
-- [ ] Exam/Test schedule لا يمكن تجاوزه بالرابط المباشر.
-- [ ] start time يعمل حتى لو background worker متأخر.
-- [ ] due/late semantics واضحة.
-- [ ] Homework/Worksheet يملكان online/file/paper channels المناسبة.
-- [ ] student can upload PDF/image securely.
-- [ ] OCR extraction traceable.
-- [ ] low-confidence answers require review.
-- [ ] AI proposal never becomes official score alone.
-- [ ] teacher can finalize.
-- [ ] teacher must explicitly Post Results في manual mode.
-- [ ] student cannot infer result before release عبر أي صفحة أو API.
-- [ ] Homework PracticeOnly لا يؤثر official mastery.
-- [ ] Worksheet evidence role is explicit.
-- [ ] Exam/Test Summative evidence enters evaluation only under finalized policy.
-- [ ] current Assessment Builder remains operational.
-- [ ] current Offline XLSX import remains operational.
-- [ ] current historical data remains readable.
-- [ ] audit trail covers schedule/grade/release changes.
-- [ ] security/performance tests pass.
-- [ ] production rollout is feature-flagged.
+1. Canonical types are Exam, Homework, Worksheet.
+2. Test is a display label/subtype of Exam.
+3. Questions for all types are created inside Edulytics.
+4. Creation can be manual or generated by Edulytics/AI.
+5. No PDF upload is required to create questions.
+6. Exam/Test is scored.
+7. Exam/Test enters Evaluation.
+8. Exam/Test can be Online or Offline.
+9. Online Exam can use scheduled start / timer.
+10. Homework is Online only.
+11. Homework has no marks.
+12. Homework never enters Evaluation.
+13. Homework requires Due/Return date and time.
+14. Homework has no Exam attempt timer.
+15. Worksheet can be Online or Offline.
+16. Worksheet has no marks.
+17. Worksheet never enters Evaluation.
+18. Worksheet has no Due/Return date.
+19. Online Worksheet can be solved whenever it remains available.
+20. Offline Worksheet is generated/printed from questions authored inside Edulytics.
+21. Homework/Worksheet do not appear inside Evaluate, including Student Self Evaluation.
+22. No Formative weighting is used for Homework/Worksheet.
+23. No AI grading workflow is needed for Homework/Worksheet because they are unscored.
+24. Current Assessment Builder generation/review/approval concepts remain the foundation.
 
 ---
 
-# 35. القرار النهائي المقترح حول Evaluation
+# 32. Definition of Done
 
-**لا أوافق على إدخال Homework وWorksheet تلقائيًا في تقييم الطالب الرسمي.**
+- [ ] Teacher can choose Exam/Test, Homework, or Worksheet.
+- [ ] All three reuse the current question-authoring/generation architecture.
+- [ ] Exam/Test preserves current scoring and official Evaluation.
+- [ ] Exam scheduled access cannot be bypassed.
+- [ ] Homework is Online only.
+- [ ] Homework has required DueAt.
+- [ ] Homework has no score controls in UI or service contracts.
+- [ ] Homework cannot produce AssessmentResult/official Evaluation evidence.
+- [ ] Worksheet supports Online and Offline.
+- [ ] Worksheet has no DueAt.
+- [ ] Worksheet has no score controls.
+- [ ] Worksheet cannot produce official Evaluation evidence.
+- [ ] Online Worksheet can remain available without deadline.
+- [ ] Offline Worksheet PDF is generated from Edulytics-authored questions.
+- [ ] Student Portal clearly separates Exams, Homework, and Worksheets.
+- [ ] Student Evaluate contains no Homework/Worksheet evidence.
+- [ ] Teacher/Supervisor Evaluation contains no Homework/Worksheet evidence.
+- [ ] Historical Assessment data remains valid.
+- [ ] Current Online/Offline Exam behavior remains operational.
+- [ ] Full regression suite passes.
 
-التصميم الأقوى هو:
+---
+
+# 33. Final Behavioral Contract
 
 ```text
-Exam/Test
-→ Official Summative Evidence
+EXAM / TEST
+------------------------------------------------
+Question creation: Edulytics Manual / Generate
+Delivery: Online or Offline
+Marks: YES
+Evaluation: YES
+Scheduled Start: Optional
+Timer: Optional
+Result: Numeric / official
 
-Supervised Worksheet
-→ Controlled Formative Evidence
 
-Take-home Worksheet
-→ PracticeOnly by default
+HOMEWORK
+------------------------------------------------
+Question creation: Edulytics Manual / Generate
+Delivery: Online only
+Marks: NO
+Evaluation: NO
+Due / Return time: YES
+Exam Timer: NO
+Result: Submission state only
 
-Homework
-→ PracticeOnly by default
+
+WORKSHEET
+------------------------------------------------
+Question creation: Edulytics Manual / Generate
+Delivery: Online or Offline
+Marks: NO
+Evaluation: NO
+Due / Return time: NO
+Exam Timer: NO
+Result: Completion/use state only
 ```
 
-وفي نفس الوقت لا نخفي Homework/Worksheet من الطالب.
-
-بل نعرضها في Self Evaluation كدليل تعلم منفصل:
-
-```text
-Official Mastery
-Homework / Formative Progress
-Private Practice
-Assessment Transfer
-```
-
-وبذلك نحصل على أفضل شيء من الاتجاهين:
-
-- لا نلوّث mastery الرسمي بدليل قد لا يكون مستقلًا؛
-- ولا نفقد قيمة Homework/Worksheet في قياس التطور والممارسة.
-
----
-
-# 36. مبدأ التنفيذ
-
-المبدأ النهائي:
-
-```text
-Assessment Type
-!=
-Delivery Method
-!=
-Submission Method
-!=
-Evidence Strength
-!=
-Grading State
-!=
-Result Visibility
-```
-
-كل واحد منها يجب أن يكون قرارًا واضحًا ومستقلًا.
-
-هذا هو الأساس الذي يمنع Assessment من التحول إلى مجموعة استثناءات صعبة الصيانة عندما نضيف Homework وWorksheet وAI-assisted paper grading.
+هذا هو الـcontract الذي يجب أن يحكم الـUI والـServices والـPersistence والـEvaluation، وليس مجرد اختلاف شكلي في صفحة الإنشاء.
