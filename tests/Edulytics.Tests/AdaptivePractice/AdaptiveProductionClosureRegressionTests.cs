@@ -148,6 +148,18 @@ public sealed class AdaptiveProductionClosureRegressionTests
             "max-width: 86ch;",
             css,
             StringComparison.Ordinal);
+
+        var studentLesson = Read(
+            "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml");
+
+        Assert.Contains(
+            "lesson-reader-layout--full",
+            studentLesson,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            ".lesson-reader-layout--full",
+            css,
+            StringComparison.Ordinal);
     }
 
     [Fact]
