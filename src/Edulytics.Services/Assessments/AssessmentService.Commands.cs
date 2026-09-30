@@ -1459,6 +1459,66 @@ public sealed partial class AssessmentService
                 cancellationToken));
     }
 
+    public async Task<AssessmentCommandResult> PublishResultsAsync(
+        Guid actorUserId,
+        Guid assessmentId,
+        byte[] rowVersion,
+        CancellationToken cancellationToken = default)
+    {
+        var scope = await ResolveScopeAsync(actorUserId, cancellationToken);
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
+
+        var assessment = await _repo.GetAssessmentAsync(
+            scope.School!.Id,
+            assessmentId,
+            cancellationToken);
+        if (assessment is null)
+            return Fail(AssessmentErrorCode.AssessmentNotFound);
+
+        if (!await CanManageAssessmentAsync(scope, assessment, cancellationToken))
+            return Fail(AssessmentErrorCode.AccessDenied);
+
+        if (assessment.AssessmentType != AssessmentType.Exam)
+            return Fail(AssessmentErrorCode.InvalidAssessmentType);
+
+        if (assessment.Status != AssessmentStatus.Closed)
+            return Fail(AssessmentErrorCode.AssessmentAlreadyClosed);
+
+        if (assessment.ResultReleaseStatus == AssessmentResultReleaseStatus.Published)
+            return AssessmentCommandResult.Success(assessment.Id);
+
+        var now = DateTime.UtcNow;
+        assessment.ResultReleaseStatus = AssessmentResultReleaseStatus.Published;
+        assessment.ResultsPublishedAtUtc = now;
+        assessment.ResultsPublishedByUserId = actorUserId;
+        assessment.UpdatedAtUtc = now;
+
+        await QueueAuditAsync(
+            scope,
+            "Assessment.ResultsPublished",
+            "Assessment",
+            assessment.Id,
+            oldValues: new Dictionary<string, object?>
+            {
+                ["resultReleaseStatus"] = AssessmentResultReleaseStatus.Withheld.ToString()
+            },
+            newValues: new Dictionary<string, object?>
+            {
+                ["resultReleaseStatus"] = assessment.ResultReleaseStatus.ToString(),
+                ["resultsPublishedAtUtc"] = assessment.ResultsPublishedAtUtc,
+                ["resultsPublishedByUserId"] = assessment.ResultsPublishedByUserId
+            },
+            "Assessment results published to students.",
+            cancellationToken);
+
+        return MapPersistence(
+            await _repo.SaveWithRowVersionAsync(
+                assessment,
+                rowVersion,
+                cancellationToken));
+    }
+
     public async Task<AssessmentCommandResult> ImportStudentResultsAsync(
         Guid actorUserId,
         ImportAssessmentResultsRequest request,
