@@ -102,7 +102,10 @@ public sealed record AssessmentWorkspace(
     IReadOnlyList<AssessmentListItem> Assessments,
     IReadOnlyList<AssessmentTermItem> Terms,
     IReadOnlyList<AssessmentClassItem> ClassGroups,
-    IReadOnlyList<AssessmentSubjectItem> Subjects);
+    IReadOnlyList<AssessmentSubjectItem> Subjects)
+{
+    public string SchoolTimeZoneId { get; init; } = "UTC";
+}
 
 public sealed record AssessmentDetails(
     AssessmentListItem Assessment,
@@ -110,7 +113,10 @@ public sealed record AssessmentDetails(
     IReadOnlyList<AssessmentOutcomeItem> EligibleOutcomes,
     IReadOnlyList<AssessmentClassItem> ClassGroups,
     IReadOnlyList<AssessmentSubjectItem> Subjects,
-    IReadOnlyList<AssessmentTermItem> Terms);
+    IReadOnlyList<AssessmentTermItem> Terms)
+{
+    public string SchoolTimeZoneId { get; init; } = "UTC";
+}
 
 public sealed record AssessmentStudentResultItem(
     Guid StudentProfileId,
@@ -140,8 +146,8 @@ public sealed record CreateAssessmentRequest(
     decimal MaxScore,
     AssessmentType AssessmentType = AssessmentType.Exam,
     AssessmentDeliveryMode DeliveryMode = AssessmentDeliveryMode.Offline,
-    DateTime? AvailableFromUtc = null,
-    DateTime? DueAtUtc = null,
+    DateTime? AvailableFromLocal = null,
+    DateTime? DueAtLocal = null,
     int? AttemptTimeLimitMinutes = null);
 
 public sealed record ReuseAssessmentRequest(
@@ -156,8 +162,8 @@ public sealed record UpdateAssessmentRequest(
     decimal MaxScore,
     byte[] RowVersion,
     AssessmentDeliveryMode? DeliveryMode = null,
-    DateTime? AvailableFromUtc = null,
-    DateTime? DueAtUtc = null,
+    DateTime? AvailableFromLocal = null,
+    DateTime? DueAtLocal = null,
     int? AttemptTimeLimitMinutes = null);
 
 public sealed record CreateAssessmentQuestionRequest(
