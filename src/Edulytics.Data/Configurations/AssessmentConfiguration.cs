@@ -16,6 +16,10 @@ public sealed class AssessmentConfiguration : IEntityTypeConfiguration<Assessmen
         builder.Property(x => x.Title).HasMaxLength(200).IsRequired();
         builder.Property(x => x.AssessmentDate).HasColumnType("date");
         builder.Property(x => x.MaxScore).HasPrecision(10, 2).IsRequired();
+        builder.Property(x => x.AssessmentType).HasConversion<int>().IsRequired();
+        builder.Property(x => x.AvailableFromUtc);
+        builder.Property(x => x.DueAtUtc);
+        builder.Property(x => x.AttemptTimeLimitMinutes);
         builder.Property(x => x.Status).HasConversion<int>();
         builder.Property(x => x.TargetType).HasConversion<int>().IsRequired();
         builder.Property(x => x.DeliveryMode).HasConversion<int>().IsRequired();
