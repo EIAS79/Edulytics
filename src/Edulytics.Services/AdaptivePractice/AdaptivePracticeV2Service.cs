@@ -346,7 +346,10 @@ public sealed class AdaptivePracticeV2Service(
             new AdaptivePracticeReviewView(
                 BuildQuestionView(turn, item),
                 turn.IsCorrect == true,
-                feedback));
+                feedback,
+                turn.SubmittedAnswer ??
+                turn.LastIncorrectAnswer ??
+                string.Empty));
     }
 
     public async Task<AdaptivePracticeAnswerResult> AnswerAsync(
