@@ -420,6 +420,34 @@ public sealed class AssessmentsController : Controller
     }
 
     [Authorize(Roles = RoleNames.Teacher)]
+    [HttpPost("{id:guid}/results/publish")]
+    [ValidateAntiForgeryToken]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public async Task<IActionResult> PublishResults(
+        Guid id,
+        string rowVersion,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+
+        if (!TryDecodeRowVersion(rowVersion, out var bytes))
+        {
+            TempData["Error"] = _text["ErrorConcurrencyConflict"].Value;
+            return RedirectToAction(nameof(Details), new { id });
+        }
+
+        var result = await _service.PublishResultsAsync(
+            actorId,
+            id,
+            bytes,
+            cancellationToken);
+
+        SetFeedback(result, "SuccessResultsPublished");
+        return RedirectToAction(nameof(Details), new { id });
+    }
+
+    [Authorize(Roles = RoleNames.Teacher)]
     [HttpPost("{id:guid}/reuse")]
     [ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
@@ -531,6 +559,7 @@ public sealed class AssessmentsController : Controller
             AssessmentErrorCode.AssessmentNotDraft => "ErrorAssessmentNotDraft",
             AssessmentErrorCode.AssessmentNotOpen => "ErrorAssessmentNotOpen",
             AssessmentErrorCode.AssessmentAlreadyClosed => "ErrorAssessmentAlreadyClosed",
+            AssessmentErrorCode.AssessmentResultsNotReady => "ErrorAssessmentResultsNotReady",
             AssessmentErrorCode.AssessmentHasNoQuestions => "ErrorAssessmentHasNoQuestions",
             AssessmentErrorCode.AssessmentScoreMismatch => "ErrorAssessmentScoreMismatch",
             AssessmentErrorCode.QuestionMissingOutcome => "ErrorQuestionMissingOutcome",
