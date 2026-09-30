@@ -45,6 +45,12 @@ public sealed class AssessmentRepository : IAssessmentRepository
         {
             AssessmentItems = await _db.AssessmentItems.AsNoTracking()
                 .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken),
+            AssessmentAttempts = await _db.AssessmentAttempts.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken),
+            AssessmentTaskResponses = await _db.AssessmentTaskResponses.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
                 .ToListAsync(cancellationToken)
         };
     }
@@ -80,6 +86,37 @@ public sealed class AssessmentRepository : IAssessmentRepository
             x => x.SchoolId == schoolId &&
                  x.AssessmentResultId == resultId &&
                  x.AssessmentQuestionId == questionId,
+            cancellationToken);
+
+    public Task<AssessmentAttempt?> GetAttemptAsync(
+        Guid schoolId,
+        Guid assessmentId,
+        Guid studentProfileId,
+        CancellationToken cancellationToken = default) =>
+        _db.AssessmentAttempts.FirstOrDefaultAsync(
+            x => x.SchoolId == schoolId &&
+                 x.AssessmentId == assessmentId &&
+                 x.StudentProfileId == studentProfileId,
+            cancellationToken);
+
+    public async Task<IReadOnlyList<AssessmentTaskResponse>> ListTaskResponsesAsync(
+        Guid schoolId,
+        Guid assessmentAttemptId,
+        CancellationToken cancellationToken = default) =>
+        await _db.AssessmentTaskResponses
+            .Where(x => x.SchoolId == schoolId &&
+                        x.AssessmentAttemptId == assessmentAttemptId)
+            .ToListAsync(cancellationToken);
+
+    public Task<AssessmentTaskResponse?> GetTaskResponseAsync(
+        Guid schoolId,
+        Guid assessmentAttemptId,
+        Guid assessmentQuestionId,
+        CancellationToken cancellationToken = default) =>
+        _db.AssessmentTaskResponses.FirstOrDefaultAsync(
+            x => x.SchoolId == schoolId &&
+                 x.AssessmentAttemptId == assessmentAttemptId &&
+                 x.AssessmentQuestionId == assessmentQuestionId,
             cancellationToken);
 
     public Task<Term?> GetTermAsync(Guid schoolId, Guid id, CancellationToken cancellationToken = default) =>
@@ -167,6 +204,22 @@ public sealed class AssessmentRepository : IAssessmentRepository
         Assessment assessment,
         CancellationToken cancellationToken = default)
     {
+        var attempts = await _db.AssessmentAttempts
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                x.AssessmentId == assessment.Id)
+            .ToListAsync(cancellationToken);
+
+        var attemptIds = attempts
+            .Select(x => x.Id)
+            .ToArray();
+
+        var taskResponses = await _db.AssessmentTaskResponses
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                attemptIds.Contains(x.AssessmentAttemptId))
+            .ToListAsync(cancellationToken);
+
         var questions = await _db.AssessmentQuestions
             .Where(x =>
                 x.SchoolId == schoolId &&
@@ -201,6 +254,8 @@ public sealed class AssessmentRepository : IAssessmentRepository
             .ToListAsync(cancellationToken);
 
         _db.StudentAnswers.RemoveRange(answers);
+        _db.AssessmentTaskResponses.RemoveRange(taskResponses);
+        _db.AssessmentAttempts.RemoveRange(attempts);
         _db.QuestionLearningOutcomes.RemoveRange(mappings);
         _db.AssessmentResults.RemoveRange(results);
         _db.AssessmentQuestions.RemoveRange(questions);
