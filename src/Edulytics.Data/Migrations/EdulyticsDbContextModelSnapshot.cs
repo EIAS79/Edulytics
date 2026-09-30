@@ -748,6 +748,15 @@ namespace Edulytics.Data.Migrations
                     b.Property<DateOnly>("AssessmentDate")
                         .HasColumnType("date");
 
+                    b.Property<int>("AssessmentType")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("AttemptTimeLimitMinutes")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("AvailableFromUtc")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<Guid>("ClassGroupId")
                         .HasColumnType("uuid");
 
@@ -762,6 +771,9 @@ namespace Edulytics.Data.Migrations
 
                     b.Property<int>("DifficultyBand")
                         .HasColumnType("integer");
+
+                    b.Property<DateTime?>("DueAtUtc")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<decimal>("MaxScore")
                         .HasPrecision(10, 2)
@@ -814,6 +826,91 @@ namespace Edulytics.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("Assessments", (string)null);
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AssessmentAttempt", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("AssessmentId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime?>("CompletedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<Guid>("SchoolId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("StartedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("StudentProfileId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime?>("SubmittedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("SchoolId", "Id");
+
+                    b.HasIndex("SchoolId", "StudentProfileId");
+
+                    b.HasIndex("SchoolId", "AssessmentId", "StudentProfileId")
+                        .IsUnique();
+
+                    b.ToTable("AssessmentAttempts", (string)null);
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AssessmentTaskResponse", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("AssessmentAttemptId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("AssessmentQuestionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("ResponseText")
+                        .IsRequired()
+                        .HasMaxLength(4000)
+                        .HasColumnType("character varying(4000)");
+
+                    b.Property<Guid>("SchoolId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("SchoolId", "Id");
+
+                    b.HasIndex("SchoolId", "AssessmentQuestionId");
+
+                    b.HasIndex("SchoolId", "AssessmentAttemptId", "AssessmentQuestionId")
+                        .IsUnique();
+
+                    b.ToTable("AssessmentTaskResponses", (string)null);
                 });
 
             modelBuilder.Entity("Edulytics.Core.Entities.AssessmentItem", b =>
@@ -4577,6 +4674,52 @@ namespace Edulytics.Data.Migrations
                         .WithMany()
                         .HasForeignKey("SchoolId", "AcademicYearId", "TermId")
                         .HasPrincipalKey("SchoolId", "AcademicYearId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AssessmentAttempt", b =>
+                {
+                    b.HasOne("Edulytics.Core.Entities.Assessment", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "AssessmentId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.School", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.StudentProfile", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "StudentProfileId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AssessmentTaskResponse", b =>
+                {
+                    b.HasOne("Edulytics.Core.Entities.AssessmentAttempt", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "AssessmentAttemptId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.AssessmentQuestion", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "AssessmentQuestionId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.School", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
