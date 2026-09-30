@@ -529,6 +529,7 @@ internal static class SupportingPracticeCompletionEngine
                 $"Round {value} to the nearest {place}.",
                 "Locate the two multiples of the rounding place on either side and use the halfway point to choose the nearer multiple.",
                 ("mode", 0),
+                ("variant", slot),
                 ("value", value),
                 ("place", place));
         }
@@ -557,6 +558,7 @@ internal static class SupportingPracticeCompletionEngine
                     : $"A whole number rounds to {target} to the nearest {place}. What is the smallest possible whole number?",
                 "Work backwards from the rounding interval. The lower boundary is half a place below the rounded value and the upper whole-number boundary is one less than half a place above it.",
                 ("mode", askLargest ? 2 : 1),
+                ("variant", slot),
                 ("target", target),
                 ("place", place));
         }
@@ -583,6 +585,7 @@ internal static class SupportingPracticeCompletionEngine
                 : $"A whole number rounds to {targetHundred} to the nearest 100 and to {targetThousand} to the nearest 1000. What is the smallest possible whole number?",
             "Find the interval of whole numbers that satisfies each rounding statement, intersect the two intervals, then choose the requested endpoint.",
             ("mode", askLargestIntersection ? 4 : 3),
+            ("variant", slot),
             ("targetA", targetHundred),
             ("placeA", 100),
             ("targetB", targetThousand),
