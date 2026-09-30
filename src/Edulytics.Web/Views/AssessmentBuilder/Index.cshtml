@@ -6,8 +6,26 @@
 @model Edulytics.Services.Assessments.AssessmentBuilderWorkspace
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentBuilderResource> A
 @{
-    ViewData["Title"] = A["AssessmentBuilder"];
     var assessment = Model.Details.Assessment;
+    var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
+    var isHomework = assessment.AssessmentType == AssessmentType.Homework;
+    var isWorksheet = assessment.AssessmentType == AssessmentType.Worksheet;
+    var builderTitle = isHomework
+        ? A["AssessmentBuilderHomework"].Value
+        : isWorksheet
+            ? A["AssessmentBuilderWorksheet"].Value
+            : A["AssessmentBuilder"].Value;
+    var publishActionLabel = isHomework
+        ? A["PublishHomework"].Value
+        : isWorksheet
+            ? A["PublishWorksheet"].Value
+            : A["PublishAssessment"].Value;
+    var typeLabel = isHomework
+        ? (isPolish ? "Praca domowa" : "Homework")
+        : isWorksheet
+            ? (isPolish ? "Karta pracy" : "Worksheet")
+            : (isPolish ? "Egzamin / test" : "Exam / Test");
+    ViewData["Title"] = builderTitle;
     var rowVersion = Convert.ToBase64String(assessment.RowVersion);
     var targetStudents = Model.TargetStudents ?? Array.Empty<AssessmentTargetStudentOption>();
     var manualQuestionSaved = TempData["ManualQuestionSaved"] is bool saved && saved;
@@ -20,7 +38,6 @@
     var classItem = Model.Details.ClassGroups.FirstOrDefault(x => x.Id == assessment.ClassGroupId);
     var subjectItem = Model.Details.Subjects.FirstOrDefault(x => x.Id == assessment.SubjectId);
     var draftQuestionCount = Model.Questions.Count(x => x.Status == AssessmentBuilderQuestionStatus.Draft);
-    var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
     var approveAllLabel = isPolish ? "Zatwierdź wszystkie pytania robocze" : "Approve all draft questions";
     var isScored = assessment.AssessmentType == AssessmentType.Exam;
     var canEditContent =
@@ -35,7 +52,10 @@
 <section class="assessment-page ed-builder-page">
     <header class="assessment-header ed-builder-header">
         <div>
-            <span class="assessment-context">@A["AssessmentBuilder"]</span>
+            <div class="ed-builder-title-row">
+                <span class="assessment-context">@builderTitle</span>
+                <span class="ed-builder-type-badge @(isHomework ? "is-homework" : isWorksheet ? "is-worksheet" : "is-exam")">@typeLabel</span>
+            </div>
             <h1>@assessment.Title</h1>
         </div>
         <div class="assessment-actions">
@@ -47,6 +67,7 @@
         <div class="ed-builder-summary-item"><span>@A["Class"]</span><strong>@(classItem?.Name ?? "—")</strong></div>
         <div class="ed-builder-summary-item"><span>@A["Subject"]</span><strong>@(subjectItem?.Name ?? "—")</strong></div>
         <div class="ed-builder-summary-item"><span>@A["Questions"]</span><strong>@Model.Questions.Count</strong></div>
+        <div class="ed-builder-summary-item"><span>@(isPolish ? "Type" : "Type")</span><strong>@typeLabel</strong></div>
         @if (isScored)
         {
             <div class="ed-builder-summary-item"><span>@A["CurrentMarks"]</span><strong>@Model.CurrentMarks.ToString("0.##") / @assessment.MaxScore.ToString("0.##")</strong></div>
@@ -85,8 +106,17 @@
     {
         <div class="ed-builder-workspace-grid">
             <section class="assessment-card ed-builder-card">
-                <h2>@A["DeliverySettings"]</h2>
-                <p>@A["DeliverySettingsHelp"]</p>
+                <div class="ed-builder-card-heading">
+                    <div>
+                        <span class="ed-builder-section-kicker">@(isPolish ? "1. Ustawienia" : "1. Setup")</span>
+                        <h2>@(isHomework
+                            ? (isPolish ? "Ustawienia pracy domowej" : "Homework settings")
+                            : isWorksheet
+                                ? (isPolish ? "Ustawienia karty pracy" : "Worksheet settings")
+                                : A["DeliverySettings"])</h2>
+                        <p>@A["DeliverySettingsHelp"]</p>
+                    </div>
+                </div>
                 <form id="delivery-settings-form" asp-action="UpdateDeliverySettings" asp-route-assessmentId="@assessment.Id" method="post" class="assessment-form ed-builder-form">
                     @Html.AntiForgeryToken()
                     <input type="hidden" name="rowVersion" value="@rowVersion" />
@@ -346,14 +376,28 @@
         </details>
     }
 
-    @if (assessment.DeliveryMode == AssessmentDeliveryMode.Offline)
+    @if (Model.Questions.Count > 0)
     {
-        <section class="assessment-card ed-builder-card">
-            <h2>@A["OfflinePrint"]</h2>
-            <p>@A["OfflinePrintHelp"]</p>
-            <div class="assessment-actions">
-                <a class="school-button school-button-primary" asp-action="StudentPaperPdf" asp-route-assessmentId="@assessment.Id">@A["DownloadStudentPaper"]</a>
-                <a class="school-button" asp-action="AnswerKeyPdf" asp-route-assessmentId="@assessment.Id">@A["DownloadTeacherAnswerKey"]</a>
+        <section class="assessment-card ed-builder-card ed-builder-output-card">
+            <div class="ed-builder-card-heading">
+                <div>
+                    <span class="ed-builder-section-kicker">@(isPolish ? "Materiały" : "Materials")</span>
+                    <h2>@(assessment.DeliveryMode == AssessmentDeliveryMode.Offline
+                        ? A["OfflinePrint"]
+                        : (isPolish ? "Answer key" : "Answer key"))</h2>
+                    <p>@(assessment.DeliveryMode == AssessmentDeliveryMode.Offline
+                        ? A["OfflinePrintHelp"]
+                        : (isPolish
+                            ? "Klucz odpowiedzi PDF jest dostępny dla nauczyciela dla wszystkich typów zadań."
+                            : "A teacher-only PDF answer key is available for every task type."))</p>
+                </div>
+            </div>
+            <div class="assessment-actions ed-builder-output-actions">
+                @if (assessment.DeliveryMode == AssessmentDeliveryMode.Offline)
+                {
+                    <a class="school-button school-button-primary" asp-action="StudentPaperPdf" asp-route-assessmentId="@assessment.Id">@A["DownloadStudentPaper"]</a>
+                }
+                <a class="school-button @(assessment.DeliveryMode == AssessmentDeliveryMode.Offline ? "" : "school-button-primary")" asp-action="AnswerKeyPdf" asp-route-assessmentId="@assessment.Id">@A["DownloadTeacherAnswerKey"]</a>
             </div>
         </section>
     }
@@ -513,7 +557,7 @@
                 <form asp-action="Publish" asp-route-assessmentId="@assessment.Id" method="post">
                     @Html.AntiForgeryToken()
                     <input type="hidden" name="rowVersion" value="@rowVersion" />
-                    <button class="school-button school-button-primary" type="submit">@A["PublishAssessment"]</button>
+                    <button class="school-button school-button-primary" type="submit">@publishActionLabel</button>
                 </form>
             }
             else
