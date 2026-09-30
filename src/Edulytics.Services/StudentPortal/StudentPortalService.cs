@@ -200,18 +200,44 @@ public sealed class StudentPortalService : IStudentPortalService
             .Select(x => (x.ClassGroupId, x.AcademicYearId))
             .ToHashSet();
 
+        var nowUtc = DateTime.UtcNow;
+        var attemptByAssessmentId = snapshot.AssessmentAttempts
+            .Where(x => x.StudentProfileId == snapshot.Profile.Id)
+            .GroupBy(x => x.AssessmentId)
+            .ToDictionary(x => x.Key, x => x.OrderByDescending(y => y.UpdatedAtUtc).First());
+
         var openAssessments = snapshot.Assessments
             .Where(x =>
                 x.Status == AssessmentStatus.Open &&
                 enrollmentKeys.Contains((x.ClassGroupId, x.AcademicYearId)) &&
                 (x.TargetType == AssessmentTargetType.Class ||
-                 x.TargetStudentProfileId == snapshot.Profile.Id))
+                 x.TargetStudentProfileId == snapshot.Profile.Id) &&
+                !(x.AssessmentType == AssessmentType.Exam &&
+                  x.DeliveryMode == AssessmentDeliveryMode.Online &&
+                  x.AvailableFromUtc.HasValue &&
+                  nowUtc < x.AvailableFromUtc.Value))
             .OrderBy(x => x.AssessmentDate)
             .ThenBy(x => x.Title)
             .Select(x =>
             {
                 classMap.TryGetValue(x.ClassGroupId, out var classGroup);
                 subjectMap.TryGetValue(x.SubjectId, out var subject);
+                attemptByAssessmentId.TryGetValue(x.Id, out var attempt);
+
+                var isSubmitted = x.AssessmentType switch
+                {
+                    AssessmentType.Exam => snapshot.Results.Any(result =>
+                        result.AssessmentId == x.Id &&
+                        result.StudentProfileId == snapshot.Profile.Id),
+                    AssessmentType.Homework => attempt?.Status == AssessmentAttemptStatus.Submitted,
+                    AssessmentType.Worksheet => attempt?.Status == AssessmentAttemptStatus.Completed,
+                    _ => false
+                };
+
+                var deadlinePassed =
+                    x.AssessmentType is AssessmentType.Exam or AssessmentType.Homework &&
+                    x.DueAtUtc.HasValue &&
+                    nowUtc >= x.DueAtUtc.Value;
 
                 return new StudentAssessmentItem(
                     x.Id,
@@ -223,9 +249,13 @@ public sealed class StudentPortalService : IStudentPortalService
                     x.DeliveryMode,
                     x.DifficultyBand,
                     x.TargetType,
-                    snapshot.Results.Any(result =>
-                        result.AssessmentId == x.Id &&
-                        result.StudentProfileId == snapshot.Profile.Id));
+                    isSubmitted)
+                {
+                    AssessmentType = x.AssessmentType,
+                    AvailableFromUtc = x.AvailableFromUtc,
+                    DueAtUtc = x.DueAtUtc,
+                    IsDeadlinePassed = deadlinePassed
+                };
             })
             .ToArray();
 
@@ -236,6 +266,7 @@ public sealed class StudentPortalService : IStudentPortalService
             .Select(result =>
             {
                 if (!assessmentMap.TryGetValue(result.AssessmentId, out var assessment) ||
+                    assessment.AssessmentType != AssessmentType.Exam ||
                     (assessment.DeliveryMode == AssessmentDeliveryMode.Online &&
                      !OfficialAssessmentResultReleasePolicy.CanStudentView(assessment.Status)))
                 {
