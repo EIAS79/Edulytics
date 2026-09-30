@@ -181,7 +181,13 @@ public sealed partial class AssessmentService
             x.TargetType,
             x.TargetStudentProfileId,
             x.DeliveryMode,
-            x.DifficultyBand);
+            x.DifficultyBand)
+        {
+            AssessmentType = x.AssessmentType,
+            AvailableFromUtc = x.AvailableFromUtc,
+            DueAtUtc = x.DueAtUtc,
+            AttemptTimeLimitMinutes = x.AttemptTimeLimitMinutes
+        };
 
     private async Task<ScopeResult> ResolveScopeAsync(
         Guid actorUserId,
