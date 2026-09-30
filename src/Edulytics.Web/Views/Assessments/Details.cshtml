@@ -16,12 +16,18 @@
         ? "is-online"
         : "is-offline";
     var sourceClass = Model.Details.ClassGroups.FirstOrDefault(x => x.Id == assessment.ClassGroupId);
+    var nowUtc = DateTime.UtcNow;
     var canEditContent =
         assessment.Status == AssessmentStatus.Draft ||
         (assessment.Status == AssessmentStatus.Open &&
          assessment.AssessmentType == AssessmentType.Exam &&
          assessment.AvailableFromUtc.HasValue &&
-         DateTime.UtcNow < assessment.AvailableFromUtc.Value);
+         nowUtc < assessment.AvailableFromUtc.Value);
+    var canEditHomeworkDue =
+        assessment.Status == AssessmentStatus.Open &&
+        assessment.AssessmentType == AssessmentType.Homework &&
+        assessment.DueAtUtc.HasValue &&
+        nowUtc < assessment.DueAtUtc.Value;
     var reusableClasses = Model.Details.ClassGroups
         .Where(x =>
             x.Id != assessment.ClassGroupId &&
@@ -61,9 +67,12 @@
         </div>
         <div class="assessment-actions">
             <a class="school-button" asp-action="Index">@A["Assessments"]</a>
-            @if (canEditContent && canManage)
+            @if ((canEditContent || canEditHomeworkDue) && canManage)
             {
                 <a class="school-button" asp-action="Edit" asp-route-id="@assessment.Id">@A["EditAssessment"]</a>
+            }
+            @if (canEditContent && canManage)
+            {
                 <a class="school-button school-button-primary"
                    asp-controller="AssessmentBuilder"
                    asp-action="Index"
@@ -218,6 +227,27 @@
                 <input type="hidden" name="rowVersion" value="@rowVersion" />
                 <button type="submit" class="school-button">@A["CloseAssessment"]</button>
             </form>
+        }
+
+        @if (assessment.AssessmentType == AssessmentType.Exam &&
+             assessment.Status == AssessmentStatus.Closed)
+        {
+            @if (assessment.ResultReleaseStatus == AssessmentResultReleaseStatus.Published)
+            {
+                <div class="assessment-info">@A["ResultsPublished"]</div>
+            }
+            else
+            {
+                <div class="assessment-info">@A["ResultsWithheld"]</div>
+                @if (canManage)
+                {
+                    <form asp-action="PublishResults" asp-route-id="@assessment.Id" method="post">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="rowVersion" value="@rowVersion" />
+                        <button type="submit" class="school-button school-button-primary">@A["PostResults"]</button>
+                    </form>
+                }
+            }
         }
     </section>
 </section>
