@@ -122,7 +122,7 @@
                        value="@LocalInput(assessment.DueAtUtc)"
                        required />
                 <small class="assessment-info">
-                    School time zone: @Model.Details.SchoolTimeZoneId. Homework is online and unscored.
+                    Times use your school's configured local time. Homework is online and unscored.
                     @if (isPublishedHomeworkDueEdit)
                     {
                         <text> Only the due time can be changed after publishing.</text>
@@ -156,7 +156,7 @@
                            max="480"
                            step="1"
                            value="@assessment.AttemptTimeLimitMinutes" />
-                    <small class="assessment-info">School time zone: @Model.Details.SchoolTimeZoneId.</small>
+                    <small class="assessment-info">Times use your school's configured local time.</small>
                 }
             }
 

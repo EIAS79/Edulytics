@@ -57,7 +57,6 @@ public sealed class AssessmentBuilderController(
         if (!TryActor(out var actorId)) return Forbid();
         var result = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
         if (result.Value is null) return Handle(result.Error);
-        if (result.Value.Details.Assessment.DeliveryMode != AssessmentDeliveryMode.Offline) return BadRequest();
 
         var answerKey = AssessmentPrintDocumentFactory.CreateTeacherAnswerKey(result.Value);
         var bytes = AssessmentPdfRenderer.RenderTeacherAnswerKey(
@@ -348,7 +347,27 @@ public sealed class AssessmentBuilderController(
         if (!TryActor(out var actorId)) return Forbid();
         if (!TryDecode(rowVersion, out var version)) return ConcurrencyRedirect(assessmentId);
         var result = await service.PublishAsync(actorId, assessmentId, version, cancellationToken);
-        Feedback(result, "SuccessAssessmentOpened");
+
+        if (!result.Succeeded &&
+            result.Error is AssessmentErrorCode.Required or AssessmentErrorCode.InvalidSchedule)
+        {
+            var workspace = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
+            if (workspace.Value?.Details.Assessment.AssessmentType == AssessmentType.Homework)
+            {
+                TempData["Error"] = result.Error == AssessmentErrorCode.Required
+                    ? text["BuilderHomeworkDueRequired"].Value
+                    : text["BuilderHomeworkDuePast"].Value;
+            }
+            else
+            {
+                Feedback(result, "SuccessAssessmentOpened");
+            }
+        }
+        else
+        {
+            Feedback(result, "SuccessAssessmentOpened");
+        }
+
         return result.Succeeded
             ? RedirectToAction("Details", "Assessments", new { id = assessmentId })
             : RedirectToAction(nameof(Index), new { assessmentId });

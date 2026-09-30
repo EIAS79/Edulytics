@@ -31,7 +31,7 @@
         utc.HasValue
             ? TimeZoneInfo.ConvertTimeFromUtc(
                 DateTime.SpecifyKind(utc.Value, DateTimeKind.Utc),
-                schoolTimeZone).ToString("yyyy-MM-dd HH:mm")
+                schoolTimeZone).ToString("yyyy-MM-dd h:mm tt", System.Globalization.CultureInfo.InvariantCulture)
             : "—";
 }
 <link rel="stylesheet" href="~/css/round7-list-scroll.css" asp-append-version="true" />
@@ -138,13 +138,13 @@
                     <label for="attemptTimeLimitMinutes">@L("Attempt time limit in minutes (optional)", "Limit czasu w minutach (opcjonalny)")</label>
                     <input id="attemptTimeLimitMinutes" name="attemptTimeLimitMinutes"
                            type="number" min="1" max="480" step="1" />
-                    <small>@L($"Times use the school time zone: {Model.Workspace.SchoolTimeZoneId}.", $"Godziny używają strefy szkoły: {Model.Workspace.SchoolTimeZoneId}.")</small>
+                    <small>@L("Times use your school's configured local time.", "Czasy są podawane według lokalnego czasu skonfigurowanego dla szkoły.")</small>
                 </div>
 
                 <div id="assessment-homework-due" hidden>
                     <label for="homeworkDueAtLocal">@L("Return / due time", "Termin oddania")</label>
                     <input id="homeworkDueAtLocal" type="datetime-local" />
-                    <small>@L($"Required for Homework · {Model.Workspace.SchoolTimeZoneId}.", $"Wymagane dla pracy domowej · {Model.Workspace.SchoolTimeZoneId}.")</small>
+                    <small>@L("Required for Homework · uses your school's configured local time.", "Wymagane dla pracy domowej · używa lokalnego czasu skonfigurowanego dla szkoły.")</small>
                 </div>
 
                 <button type="submit"
@@ -259,7 +259,7 @@
                             }
                             @if (item.AssessmentType == AssessmentType.Homework && item.DueAtUtc.HasValue)
                             {
-                                <text> · @L("Due", "Termin"): @LocalTime(item.DueAtUtc) (@Model.Workspace.SchoolTimeZoneId)</text>
+                                <text> · @L("Due", "Termin"): @LocalTime(item.DueAtUtc)  </text>
                             }
                             · @A[statusKey]
                             · <strong>@B["CurrentDelivery"]:</strong>

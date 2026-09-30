@@ -1027,19 +1027,35 @@ public sealed class AssessmentBuilderService(
         var allAligned = questions.Length > 0 &&
             questions.All(x => x.OutcomeIds.Count > 0 || x.LessonId.HasValue);
         var isScored = details.Assessment.AssessmentType == AssessmentType.Exam;
+        var isHomework = details.Assessment.AssessmentType == AssessmentType.Homework;
+        var isWorksheet = details.Assessment.AssessmentType == AssessmentType.Worksheet;
         var marksMatch = isScored
             ? current == details.Assessment.MaxScore
             : current == 0m && details.Assessment.MaxScore == 0m;
+        var homeworkScheduleValid =
+            !isHomework ||
+            (details.Assessment.DueAtUtc.HasValue &&
+             details.Assessment.DueAtUtc.Value > DateTime.UtcNow);
         var ready = details.Assessment.Status == AssessmentStatus.Draft &&
             allApproved &&
             allAligned &&
-            marksMatch;
-        var message = ready ? "ReadyToPublish"
+            marksMatch &&
+            homeworkScheduleValid;
+        var message = ready
+            ? isHomework
+                ? "ReadyToAssignHomework"
+                : isWorksheet
+                    ? "ReadyToPublishWorksheet"
+                    : "ReadyToPublish"
             : !allRich ? "BuilderLegacyQuestionsNeedReplacement"
             : !allApproved ? "BuilderQuestionsNeedApproval"
             : !allAligned ? "BuilderQuestionsNeedOutcomes"
             : !marksMatch ? "BuilderMarksMustMatch"
-            : "BuilderNotDraft";
+            : isHomework && !details.Assessment.DueAtUtc.HasValue
+                ? "BuilderHomeworkDueRequired"
+                : isHomework
+                    ? "BuilderHomeworkDuePast"
+                    : "BuilderNotDraft";
 
         var eligibleOutcomeIds = details.EligibleOutcomes
             .Select(x => x.Id)

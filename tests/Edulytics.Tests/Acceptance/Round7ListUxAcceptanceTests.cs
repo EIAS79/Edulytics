@@ -35,13 +35,14 @@ public sealed class Round7ListUxAcceptanceTests
     }
 
     [Fact]
-    public void Assessment_builder_question_area_has_internal_scroll_without_reversing_question_order()
+    public void Assessment_builder_question_area_uses_page_scroll_without_nested_scroll()
     {
         var css = ReadRepositoryFile("src", "Edulytics.Web", "wwwroot", "css", "assessment-builder.css");
         var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "AssessmentBuilder", "Index.cshtml");
 
-        Assert.Contains("max-height: min(72vh, 820px)", css, StringComparison.Ordinal);
-        Assert.Contains("overflow-y: auto", css, StringComparison.Ordinal);
+        Assert.DoesNotContain("max-height: min(72vh, 820px)", css, StringComparison.Ordinal);
+        Assert.Contains(".ed-builder-question-list", css, StringComparison.Ordinal);
+        Assert.DoesNotContain(".ed-builder-question-list {\n    display: grid;\n    gap: .9rem;\n    max-height:", css, StringComparison.Ordinal);
         Assert.Contains("@foreach (var question in Model.Questions)", view, StringComparison.Ordinal);
         Assert.DoesNotContain("OrderByDescending(x => x.Order)", view, StringComparison.Ordinal);
     }

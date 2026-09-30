@@ -56,30 +56,38 @@ public sealed class AssessmentResultsBreakdownContractTests
             root,
             "src/Edulytics.Web/Views/Assessments/Details.cshtml"));
 
-        var publishedStart = details.IndexOf(
-            "@if (assessment.Status != AssessmentStatus.Draft)",
+        var outputStart = details.IndexOf(
+            "@if (canManage && Model.Details.Questions.Count > 0)",
             StringComparison.Ordinal);
         var headerEnd = details.IndexOf(
             "</header>",
-            publishedStart,
+            outputStart,
             StringComparison.Ordinal);
 
-        Assert.True(publishedStart >= 0);
-        Assert.True(headerEnd > publishedStart);
+        Assert.True(outputStart >= 0);
+        Assert.True(headerEnd > outputStart);
 
-        var publishedActions = details[publishedStart..headerEnd];
+        var outputActions = details[outputStart..headerEnd];
 
         Assert.Contains(
             "assessment.DeliveryMode == AssessmentDeliveryMode.Offline",
-            publishedActions,
+            outputActions,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "asp-action=\"StudentPaperPdf\"",
+            outputActions,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "asp-action=\"AnswerKeyPdf\"",
+            outputActions,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "assessment.Status != AssessmentStatus.Draft",
+            details,
             StringComparison.Ordinal);
         Assert.Contains(
             "asp-action=\"Results\"",
-            publishedActions,
-            StringComparison.Ordinal);
-        Assert.DoesNotContain(
-            "assessment.DeliveryMode == AssessmentDeliveryMode.Online",
-            publishedActions,
+            details,
             StringComparison.Ordinal);
     }
 
