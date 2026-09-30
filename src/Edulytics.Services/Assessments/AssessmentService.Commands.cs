@@ -561,10 +561,17 @@ public sealed partial class AssessmentService
                 nameof(request.Prompt),
                 AssessmentErrorCode.InvalidText);
 
-        if (!ValidMax(request.MaxScore))
+        var isScoredAssessment =
+            assessment.AssessmentType == AssessmentType.Exam;
+
+        if (isScoredAssessment
+                ? !ValidMax(request.MaxScore)
+                : request.MaxScore != 0m)
+        {
             return Fail(
                 nameof(request.MaxScore),
                 AssessmentErrorCode.InvalidQuestionScore);
+        }
 
         if (request.Order <= 0)
             return Fail(
@@ -598,7 +605,15 @@ public sealed partial class AssessmentService
             .Where(x => x.AssessmentId == assessment.Id)
             .Sum(x => x.MaxScore);
 
-        if (currentTotal + request.MaxScore > assessment.MaxScore)
+        if (isScoredAssessment &&
+            currentTotal + request.MaxScore > assessment.MaxScore)
+        {
+            return Fail(
+                nameof(request.MaxScore),
+                AssessmentErrorCode.AssessmentScoreMismatch);
+        }
+
+        if (!isScoredAssessment && currentTotal != 0m)
         {
             return Fail(
                 nameof(request.MaxScore),
@@ -631,7 +646,7 @@ public sealed partial class AssessmentService
             SchoolId = scope.School.Id,
             AssessmentId = assessment.Id,
             Prompt = prompt,
-            MaxScore = Round(request.MaxScore),
+            MaxScore = isScoredAssessment ? Round(request.MaxScore) : 0m,
             Order = request.Order
         };
 
@@ -743,10 +758,17 @@ public sealed partial class AssessmentService
                 nameof(request.Prompt),
                 AssessmentErrorCode.InvalidText);
 
-        if (!ValidMax(request.MaxScore))
+        var isScoredAssessment =
+            assessment.AssessmentType == AssessmentType.Exam;
+
+        if (isScoredAssessment
+                ? !ValidMax(request.MaxScore)
+                : request.MaxScore != 0m)
+        {
             return Fail(
                 nameof(request.MaxScore),
                 AssessmentErrorCode.InvalidQuestionScore);
+        }
 
         if (request.Order <= 0)
             return Fail(
@@ -783,7 +805,15 @@ public sealed partial class AssessmentService
                 x.Id != question.Id)
             .Sum(x => x.MaxScore);
 
-        if (otherTotal + request.MaxScore > assessment.MaxScore)
+        if (isScoredAssessment &&
+            otherTotal + request.MaxScore > assessment.MaxScore)
+        {
+            return Fail(
+                nameof(request.MaxScore),
+                AssessmentErrorCode.AssessmentScoreMismatch);
+        }
+
+        if (!isScoredAssessment && otherTotal != 0m)
         {
             return Fail(
                 nameof(request.MaxScore),
@@ -842,7 +872,7 @@ public sealed partial class AssessmentService
             };
 
         question.Prompt = prompt;
-        question.MaxScore = Round(request.MaxScore);
+        question.MaxScore = isScoredAssessment ? Round(request.MaxScore) : 0m;
         question.Order = request.Order;
         assessment.UpdatedAtUtc = DateTime.UtcNow;
 
