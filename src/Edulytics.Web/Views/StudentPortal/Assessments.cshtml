@@ -29,22 +29,23 @@
                 schoolTimeZone).ToString("yyyy-MM-dd HH:mm")
             : "—";
 
-    var exams = Model.Workspace.Assessments
-        .Where(x => x.AssessmentType == AssessmentType.Exam)
-        .OrderBy(x => x.AssessmentDate)
-        .ThenBy(x => x.Title)
+    var orderedAssessments = Model.Workspace.Assessments
+        .OrderByDescending(x => x.AssessmentDate)
+        .ThenByDescending(x => x.AssessmentId)
         .ToArray();
 
-    var homework = Model.Workspace.Assessments
+    var exams = orderedAssessments
+        .Where(x => x.AssessmentType == AssessmentType.Exam)
+        .ToArray();
+
+    var homework = orderedAssessments
         .Where(x => x.AssessmentType == AssessmentType.Homework)
         .OrderBy(x => x.DueAtUtc ?? DateTime.MaxValue)
         .ThenBy(x => x.Title)
         .ToArray();
 
-    var worksheets = Model.Workspace.Assessments
+    var worksheets = orderedAssessments
         .Where(x => x.AssessmentType == AssessmentType.Worksheet)
-        .OrderBy(x => x.AssessmentDate)
-        .ThenBy(x => x.Title)
         .ToArray();
 
     var openExams = exams
