@@ -1,14 +1,10 @@
 using System;
-using Edulytics.Data.Contexts;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace Edulytics.Data.Migrations;
 
-[DbContext(typeof(EdulyticsDbContext))]
-[Migration("20260930223000_AddAssessmentTypesAndAttempts")]
 public partial class AddAssessmentTypesAndAttempts : Migration
 {
     protected override void Up(MigrationBuilder migrationBuilder)
