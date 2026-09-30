@@ -44,6 +44,11 @@ public sealed record StudentAssessmentAttempt(
 
 public sealed record StudentAssessmentResponse(Guid QuestionId, string ResponseText);
 
+public sealed record StudentAssessmentProgress(
+    Guid AssessmentId,
+    AssessmentType AssessmentType,
+    DateTime SavedAtUtc);
+
 public sealed record StudentAssessmentSubmission(
     Guid AssessmentId,
     string Title,
@@ -68,6 +73,12 @@ public interface IStudentAssessmentDeliveryService
     Task<StudentAssessmentDeliveryResult<StudentAssessmentAttempt>> GetAttemptAsync(
         Guid actorUserId,
         Guid assessmentId,
+        CancellationToken cancellationToken = default);
+
+    Task<StudentAssessmentDeliveryResult<StudentAssessmentProgress>> SaveProgressAsync(
+        Guid actorUserId,
+        Guid assessmentId,
+        IReadOnlyList<StudentAssessmentResponse> responses,
         CancellationToken cancellationToken = default);
 
     Task<StudentAssessmentDeliveryResult<StudentAssessmentSubmission>> SubmitAsync(
