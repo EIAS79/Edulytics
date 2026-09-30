@@ -28,6 +28,11 @@ public sealed class AssessmentAttemptConfiguration : IEntityTypeConfiguration<As
             x.StudentProfileId
         }).IsUnique();
 
+        builder.HasOne<School>()
+            .WithMany()
+            .HasForeignKey(x => x.SchoolId)
+            .OnDelete(DeleteBehavior.Restrict);
+
         builder.HasOne<Assessment>()
             .WithMany()
             .HasForeignKey(x => new { x.SchoolId, x.AssessmentId })
