@@ -189,7 +189,10 @@ public sealed partial class AssessmentService
             AssessmentType = x.AssessmentType,
             AvailableFromUtc = x.AvailableFromUtc,
             DueAtUtc = x.DueAtUtc,
-            AttemptTimeLimitMinutes = x.AttemptTimeLimitMinutes
+            AttemptTimeLimitMinutes = x.AttemptTimeLimitMinutes,
+            ResultReleaseStatus = x.ResultReleaseStatus,
+            ResultsPublishedAtUtc = x.ResultsPublishedAtUtc,
+            ResultsPublishedByUserId = x.ResultsPublishedByUserId
         };
 
     private async Task<ScopeResult> ResolveScopeAsync(
