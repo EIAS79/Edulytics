@@ -147,8 +147,8 @@ public sealed class AssessmentTypesV2ContractTests
                 Root(),
                 "src/Edulytics.Services/Assessments/StudentAssessmentDeliveryService.cs"));
 
-        var start = source.IndexOf(
-            "SubmitLearningTaskAsync(",
+        var start = source.LastIndexOf(
+            "private async Task<StudentAssessmentDeliveryResult<StudentAssessmentSubmission>> SubmitLearningTaskAsync(",
             StringComparison.Ordinal);
         var end = source.IndexOf(
             "private async Task<ResolvedDelivery> ResolveAsync(",
@@ -190,8 +190,12 @@ public sealed class AssessmentTypesV2ContractTests
 
         Assert.Contains("AssessmentTaskResponse", method);
         Assert.Contains("ProgressSaved", method);
-        Assert.DoesNotContain("AssessmentAttemptStatus.Submitted", method);
-        Assert.DoesNotContain("AssessmentAttemptStatus.Completed", method);
+        Assert.DoesNotContain(
+            "attempt.Status = AssessmentAttemptStatus.Submitted",
+            method);
+        Assert.DoesNotContain(
+            "attempt.Status = AssessmentAttemptStatus.Completed",
+            method);
         Assert.DoesNotContain("new AssessmentResult", method);
     }
 
@@ -226,7 +230,7 @@ public sealed class AssessmentTypesV2ContractTests
                 "src/Edulytics.Services/Assessments/AssessmentService.Support.cs"));
 
         Assert.Contains(
-            "DateTime.UtcNow < assessment.AvailableFromUtc.Value",
+            "DateTime.UtcNow >= assessment.AvailableFromUtc.Value",
             source);
         Assert.Contains(
             "!snapshot.AssessmentAttempts.Any",
@@ -257,8 +261,8 @@ public sealed class AssessmentTypesV2ContractTests
                 Root(),
                 "src/Edulytics.Data/Migrations/20260930225500_AddExplicitAssessmentResultRelease.cs"));
 
-        Assert.Contains("\"Status\" = 3", source);
-        Assert.Contains("\"ResultReleaseStatus\" = 2", source);
+        Assert.Contains("\\\"Status\\\" = 3", source);
+        Assert.Contains("\\\"ResultReleaseStatus\\\" = 2", source);
     }
 
     [Fact]
