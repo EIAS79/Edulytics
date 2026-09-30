@@ -2,16 +2,45 @@
 @{
     Layout = "_StudentLayout";
     ViewData["Title"] = "Question log";
+
+    var sessions = Model.Questions
+        .GroupBy(x => x.SessionId)
+        .OrderByDescending(group => group.Max(x => x.PresentedAtUtc))
+        .ToArray();
+
+    static string ReasonText(string code) => code switch
+    {
+        "SESSION_BASELINE" =>
+            "This question established the starting point for this practice session.",
+        "MISCONCEPTION_REMEDIATION" =>
+            "This question was selected to rebuild a specific skill after an incorrect response.",
+        "MISCONCEPTION_CONFIRMATION_REQUIRED" =>
+            "This was a fresh check to confirm the skill independently after recovery.",
+        "REPRESENTATION_RECOVERY" =>
+            "Edulytics selected a recovery question to strengthen the current representation.",
+        "PREREQUISITE_RECOVERY" =>
+            "This question reinforced a prerequisite needed for the lesson.",
+        "COMPLEXITY_PROGRESS" =>
+            "Recent evidence supported a bounded increase in mathematical complexity.",
+        "COMPLEXITY_REDUCE" =>
+            "Edulytics reduced complexity to keep the next step productive.",
+        "COMPLEXITY_CONSOLIDATE" =>
+            "This question consolidated the current level before further progression.",
+        "UNCLASSIFIED_RECOVERY" =>
+            "This question provided a simpler fresh recovery opportunity.",
+        _ =>
+            "Edulytics selected this question from the learner evidence available at that point."
+    };
 }
 
-<section class="student-progress-page">
+<section class="student-progress-page adaptive-question-log">
     <header class="student-progress-hero">
         <div>
             <span class="student-eyebrow">Edulytics Practice</span>
             <h1>Question log</h1>
             <p>@Model.QuestionCount questions across @Model.SessionCount practice sessions.</p>
             <small>
-                This log is your own learner evidence. It shows why Edulytics selected each question and records guided retries.
+                Sessions are separated below so current Practice evidence is not mixed with older historical sessions.
             </small>
         </div>
     </header>
@@ -24,88 +53,121 @@
     }
     else
     {
-        <section class="student-panel">
-            <div class="student-progress-skill-list">
-                @foreach (var item in Model.Questions)
-                {
-                    <article class="student-progress-skill-row">
-                        <div class="student-progress-skill-name">
-                            <strong>#@item.Sequence · @item.SkillId</strong>
-                            <span class="student-skill-status @(item.IsCorrect == true ? "is-positive" : item.IncorrectAttemptCount > 0 || item.IsCorrect == false ? "is-negative" : "is-muted")">
-                                @(item.IsCorrect == true
-                                    ? "Correct"
-                                    : item.IsCorrect == false
-                                        ? "Closed incorrect"
-                                        : item.IncorrectAttemptCount > 0
-                                            ? "Retry in progress"
-                                            : "Not answered")
-                            </span>
+        <div class="adaptive-log-session-list">
+            @foreach (var session in sessions)
+            {
+                var orderedQuestions = session
+                    .OrderByDescending(x => x.Sequence)
+                    .ToArray();
+                var newest = session.Max(x => x.PresentedAtUtc);
+                var lessonCode = session
+                    .Select(x => x.LessonCode)
+                    .FirstOrDefault(x => !string.IsNullOrWhiteSpace(x))
+                    ?? "Practice";
+
+                <section class="student-panel adaptive-log-session">
+                    <header class="adaptive-log-session__header">
+                        <div>
+                            <span class="student-eyebrow">Practice session</span>
+                            <h2>@lessonCode</h2>
+                            <p>
+                                <time datetime="@newest.ToString("O")">
+                                    @newest.ToString("yyyy-MM-dd HH:mm") UTC
+                                </time>
+                            </p>
                         </div>
+                        <strong class="adaptive-log-session__count">
+                            @orderedQuestions.Length question@(orderedQuestions.Length == 1 ? "" : "s")
+                        </strong>
+                    </header>
 
-                        <p>@item.Prompt</p>
-
-                        <div class="student-progress-skill-metrics">
-                            <div>
-                                <span>Family</span>
-                                <strong>@item.QuestionFamily</strong>
-                            </div>
-                            <div>
-                                <span>Difficulty</span>
-                                <strong>@item.Difficulty</strong>
-                            </div>
-                            <div>
-                                <span>Complexity</span>
-                                <strong>@item.MathematicalComplexityScore</strong>
-                            </div>
-                            <div>
-                                <span>Representation</span>
-                                <strong>@(item.Representation ?? "—")</strong>
-                            </div>
-                        </div>
-
-                        @if (item.IncorrectAttemptCount > 0)
+                    <div class="student-progress-skill-list">
+                        @foreach (var item in orderedQuestions)
                         {
-                            <p><strong>Incorrect attempts:</strong> @item.IncorrectAttemptCount</p>
-                            @if (!string.IsNullOrWhiteSpace(item.LastIncorrectAnswer))
-                            {
-                                <p><strong>Last incorrect answer:</strong> @item.LastIncorrectAnswer</p>
-                            }
-                        }
+                            <article class="student-progress-skill-row adaptive-log-question">
+                                <div class="student-progress-skill-name">
+                                    <strong>#@item.Sequence</strong>
+                                    <span class="student-skill-status @(item.IsCorrect == true ? "is-positive" : item.IncorrectAttemptCount > 0 || item.IsCorrect == false ? "is-negative" : "is-muted")">
+                                        @(item.IsCorrect == true
+                                            ? "Correct"
+                                            : item.IsCorrect == false
+                                                ? "Closed incorrect"
+                                                : item.IncorrectAttemptCount > 0
+                                                    ? "Retry in progress"
+                                                    : "Not answered")
+                                    </span>
+                                </div>
 
-                        @if (!string.IsNullOrWhiteSpace(item.SubmittedAnswer))
-                        {
-                            if (item.IsCorrect == true)
-                            {
-                                <p><strong>Final accepted answer:</strong> @item.SubmittedAnswer</p>
-                            }
-                            else
-                            {
-                                <p><strong>Final submitted answer:</strong> @item.SubmittedAnswer</p>
-                            }
-                        }
+                                <p class="adaptive-log-question__prompt">@item.Prompt</p>
 
-                        @if (item.IsCorrect == false)
-                        {
-                            <p><strong>Item outcome:</strong> Closed after the allowed retry was used.</p>
-                        }
+                                <div class="student-progress-skill-metrics">
+                                    <div>
+                                        <span>Difficulty</span>
+                                        <strong>@item.Difficulty</strong>
+                                    </div>
+                                    <div>
+                                        <span>Complexity</span>
+                                        <strong>@item.MathematicalComplexityScore</strong>
+                                    </div>
+                                    <div>
+                                        <span>Representation</span>
+                                        <strong>@(item.Representation ?? "—")</strong>
+                                    </div>
+                                </div>
 
-                        @if (!string.IsNullOrWhiteSpace(item.DecisionReasonCode))
-                        {
-                            <p><strong>Why this question:</strong> @item.DecisionReasonCode</p>
-                        }
+                                @if (item.IncorrectAttemptCount > 0)
+                                {
+                                    <p><strong>Incorrect attempts:</strong> @item.IncorrectAttemptCount</p>
+                                    @if (!string.IsNullOrWhiteSpace(item.LastIncorrectAnswer))
+                                    {
+                                        <p><strong>Last incorrect answer:</strong> @item.LastIncorrectAnswer</p>
+                                    }
+                                }
 
-                        @if (!string.IsNullOrWhiteSpace(item.MisconceptionFocusId))
-                        {
-                            <p><strong>Misconception focus:</strong> @item.MisconceptionFocusId</p>
-                        }
+                                @if (!string.IsNullOrWhiteSpace(item.SubmittedAnswer))
+                                {
+                                    if (item.IsCorrect == true)
+                                    {
+                                        <p><strong>Final accepted answer:</strong> @item.SubmittedAnswer</p>
+                                    }
+                                    else
+                                    {
+                                        <p><strong>Final submitted answer:</strong> @item.SubmittedAnswer</p>
+                                    }
+                                }
 
-                        @if (item.IsIndependentConfirmation)
-                        {
-                            <p><strong>Independent confirmation:</strong> yes</p>
+                                @if (item.IsCorrect == false)
+                                {
+                                    <p><strong>Item outcome:</strong> Closed after the allowed retry was used.</p>
+                                }
+
+                                @if (!string.IsNullOrWhiteSpace(item.DecisionReasonCode))
+                                {
+                                    <p class="adaptive-log-question__why">
+                                        <strong>Why this question:</strong>
+                                        @ReasonText(item.DecisionReasonCode)
+                                    </p>
+                                }
+
+                                @if (item.IsIndependentConfirmation)
+                                {
+                                    <p><strong>Independent confirmation:</strong> yes</p>
+                                }
+
+                                <details class="adaptive-log-technical">
+                                    <summary>Technical details</summary>
+                                    <dl>
+                                        <div><dt>Skill</dt><dd>@item.SkillId</dd></div>
+                                        <div><dt>Family</dt><dd>@item.QuestionFamily</dd></div>
+                                        <div><dt>Decision code</dt><dd>@(string.IsNullOrWhiteSpace(item.DecisionReasonCode) ? "—" : item.DecisionReasonCode)</dd></div>
+                                        <div><dt>Misconception focus</dt><dd>@(string.IsNullOrWhiteSpace(item.MisconceptionFocusId) ? "—" : item.MisconceptionFocusId)</dd></div>
+                                    </dl>
+                                </details>
+                            </article>
                         }
-                    </article>
-                }
-            </div>
-        </section>
+                    </div>
+                </section>
+            }
+        </div>
     }
 </section>
