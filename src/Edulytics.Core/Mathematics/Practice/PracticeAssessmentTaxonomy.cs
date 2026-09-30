@@ -58,6 +58,34 @@ public static class PracticeQuestionFormCapabilityRegistry
 
         if (string.Equals(
                 family,
+                "supporting.number.rounding",
+                StringComparison.Ordinal))
+        {
+            return
+            [
+                new(
+                    PracticeQuestionForm.Calculate,
+                    PracticeCognitiveOperation.Apply,
+                    PracticeCognitiveDifficulty.Standard,
+                    PracticeCognitiveDifficulty.Standard,
+                    [0, 1, 2, 3]),
+                new(
+                    PracticeQuestionForm.Transfer,
+                    PracticeCognitiveOperation.Reason,
+                    PracticeCognitiveDifficulty.Stretch,
+                    PracticeCognitiveDifficulty.Stretch,
+                    [4, 5, 6, 7]),
+                new(
+                    PracticeQuestionForm.Transfer,
+                    PracticeCognitiveOperation.Transfer,
+                    PracticeCognitiveDifficulty.Challenge,
+                    PracticeCognitiveDifficulty.Challenge,
+                    [8, 9, 10, 11, 12, 13, 14, 15])
+            ];
+        }
+
+        if (string.Equals(
+                family,
                 "supporting.geometry.shape_dimension",
                 StringComparison.Ordinal))
         {
