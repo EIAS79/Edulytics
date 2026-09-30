@@ -53,8 +53,8 @@ public sealed class AssessmentsController : Controller
         decimal maxScore,
         AssessmentType assessmentType,
         AssessmentDeliveryMode deliveryMode,
-        DateTime? availableFromUtc,
-        DateTime? dueAtUtc,
+        DateTime? availableFromLocal,
+        DateTime? dueAtLocal,
         int? attemptTimeLimitMinutes,
         CancellationToken cancellationToken)
     {
@@ -71,8 +71,8 @@ public sealed class AssessmentsController : Controller
                 maxScore,
                 assessmentType,
                 deliveryMode,
-                availableFromUtc,
-                dueAtUtc,
+                availableFromLocal,
+                dueAtLocal,
                 attemptTimeLimitMinutes),
             cancellationToken);
 
@@ -117,8 +117,8 @@ public sealed class AssessmentsController : Controller
         DateOnly assessmentDate,
         decimal maxScore,
         AssessmentDeliveryMode? deliveryMode,
-        DateTime? availableFromUtc,
-        DateTime? dueAtUtc,
+        DateTime? availableFromLocal,
+        DateTime? dueAtLocal,
         int? attemptTimeLimitMinutes,
         string rowVersion,
         CancellationToken cancellationToken)
@@ -140,8 +140,8 @@ public sealed class AssessmentsController : Controller
                 maxScore,
                 bytes,
                 deliveryMode,
-                availableFromUtc,
-                dueAtUtc,
+                availableFromLocal,
+                dueAtLocal,
                 attemptTimeLimitMinutes),
             cancellationToken);
 
