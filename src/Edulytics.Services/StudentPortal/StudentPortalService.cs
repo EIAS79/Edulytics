@@ -3,6 +3,7 @@ using Edulytics.Core.Curriculum;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Interfaces;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Edulytics.Services.StudentPortal;
 
@@ -11,15 +12,20 @@ public sealed class StudentPortalService : IStudentPortalService
     private readonly IStudentPortalRepository _portal;
     private readonly ISchoolUserRepository _users;
     private readonly ISchoolRepository _schools;
+    private readonly IMemoryCache? _cache;
+    private static readonly TimeSpan WorkspaceCacheLifetime =
+        TimeSpan.FromSeconds(20);
 
     public StudentPortalService(
         IStudentPortalRepository portal,
         ISchoolUserRepository users,
-        ISchoolRepository schools)
+        ISchoolRepository schools,
+        IMemoryCache? cache = null)
     {
         _portal = portal;
         _users = users;
         _schools = schools;
+        _cache = cache;
     }
 
     public async Task<StudentPortalQueryResult<StudentPortalWorkspace>>
@@ -48,6 +54,19 @@ public sealed class StudentPortalService : IStudentPortalService
         {
             return StudentPortalQueryResult<StudentPortalWorkspace>
                 .Failure(StudentPortalErrorCode.SchoolNotActive);
+        }
+
+        var workspaceCacheKey =
+            $"student-portal-workspace:{school.Id:N}:{actorUserId:N}";
+
+        if (_cache is not null &&
+            _cache.TryGetValue(
+                workspaceCacheKey,
+                out StudentPortalWorkspace? cachedWorkspace) &&
+            cachedWorkspace is not null)
+        {
+            return StudentPortalQueryResult<StudentPortalWorkspace>
+                .Success(cachedWorkspace);
         }
 
         var snapshot = await _portal.GetSnapshotAsync(
@@ -259,17 +278,24 @@ public sealed class StudentPortalService : IStudentPortalService
             .ThenBy(x => x.AssessmentTitle)
             .ToArray();
 
-        return StudentPortalQueryResult<StudentPortalWorkspace>.Success(
-            new StudentPortalWorkspace(
-                school.Id,
-                school.Name,
-                snapshot.Profile.Id,
-                snapshot.Profile.StudentNumber,
-                snapshot.Profile.DisplayName,
-                enrollmentItems,
-                learning,
-                openAssessments,
-                resultItems));
+        var workspace = new StudentPortalWorkspace(
+            school.Id,
+            school.Name,
+            snapshot.Profile.Id,
+            snapshot.Profile.StudentNumber,
+            snapshot.Profile.DisplayName,
+            enrollmentItems,
+            learning,
+            openAssessments,
+            resultItems);
+
+        _cache?.Set(
+            workspaceCacheKey,
+            workspace,
+            WorkspaceCacheLifetime);
+
+        return StudentPortalQueryResult<StudentPortalWorkspace>
+            .Success(workspace);
     }
 
     private static bool TryResolveAdoption(
