@@ -2,6 +2,7 @@ using System.Text.Json;
 using Edulytics.Core.AdaptivePractice;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.AdaptivePractice;
+using Edulytics.Services.Mathematics;
 
 namespace Edulytics.Tests.MathematicsIntelligence.AdaptivePractice;
 
@@ -306,6 +307,41 @@ public sealed class AdaptiveVerifiedItemGeneratorTests
             maximumVariant);
         Assert.True(
             parameters["mode"] >= minimumMode);
+    }
+
+    [Theory]
+    [InlineData("supporting.number.place_value", ExactSkillQuestionDifficulty.Standard, 0, 3)]
+    [InlineData("supporting.number.place_value", ExactSkillQuestionDifficulty.Stretch, 4, 7)]
+    [InlineData("supporting.number.place_value", ExactSkillQuestionDifficulty.Challenge, 8, 15)]
+    [InlineData("supporting.number.rounding", ExactSkillQuestionDifficulty.Standard, 0, 3)]
+    [InlineData("supporting.number.rounding", ExactSkillQuestionDifficulty.Stretch, 4, 7)]
+    [InlineData("supporting.number.rounding", ExactSkillQuestionDifficulty.Challenge, 8, 15)]
+    public void SharedExactGeneratorKeepsNumberFormInsideRequestedDifficultyBand(
+        string family,
+        ExactSkillQuestionDifficulty difficulty,
+        int minimumVariant,
+        int maximumVariant)
+    {
+        var item =
+            new ExactSkillContractQuestionEngine()
+                .Generate(
+                    "adaptive-band-regression",
+                    family,
+                    [family],
+                    difficulty,
+                    questionCount: 1,
+                    seed: 20260930,
+                    excludedExposureFingerprints: [])
+                .Single();
+
+        Assert.True(
+            item.Parameters.TryGetValue(
+                "variant",
+                out var variant));
+        Assert.InRange(
+            variant,
+            minimumVariant,
+            maximumVariant);
     }
 
     [Fact]
