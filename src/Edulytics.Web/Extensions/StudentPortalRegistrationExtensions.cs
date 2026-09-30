@@ -12,8 +12,6 @@ public static class StudentPortalRegistrationExtensions
     public static IServiceCollection AddStudentPortalPhase28(
         this IServiceCollection services)
     {
-        services.AddMemoryCache();
-
         services.AddScoped<
             IStudentPortalRepository,
             StudentPortalRepository>();
