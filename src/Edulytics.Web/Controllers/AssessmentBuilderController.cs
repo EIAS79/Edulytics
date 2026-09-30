@@ -57,7 +57,6 @@ public sealed class AssessmentBuilderController(
         if (!TryActor(out var actorId)) return Forbid();
         var result = await service.GetWorkspaceAsync(actorId, assessmentId, cancellationToken);
         if (result.Value is null) return Handle(result.Error);
-        if (result.Value.Details.Assessment.DeliveryMode != AssessmentDeliveryMode.Offline) return BadRequest();
 
         var answerKey = AssessmentPrintDocumentFactory.CreateTeacherAnswerKey(result.Value);
         var bytes = AssessmentPdfRenderer.RenderTeacherAnswerKey(
@@ -384,6 +383,7 @@ public sealed class AssessmentBuilderController(
     {
         AssessmentErrorCode.OutcomeDoesNotMatchAssessment => text["ErrorOutcomeDoesNotMatchAssessment"].Value,
         AssessmentErrorCode.InvalidQuestionScore or AssessmentErrorCode.InvalidMaxScore => text["ErrorInvalidMarks"].Value,
+        AssessmentErrorCode.InvalidSchedule => text["BuilderHomeworkDuePast"].Value,
         AssessmentErrorCode.InvalidOrder => text["ErrorInvalidOrder"].Value,
         AssessmentErrorCode.AssessmentScoreMismatch => text["ErrorAssessmentScoreMismatch"].Value,
         AssessmentErrorCode.InvalidText or AssessmentErrorCode.Required => text["ErrorInvalidQuestionContent"].Value,
