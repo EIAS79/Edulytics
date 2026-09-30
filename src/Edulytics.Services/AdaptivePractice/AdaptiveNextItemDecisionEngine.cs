@@ -54,6 +54,35 @@ public sealed class AdaptiveNextItemDecisionEngine(
             family,
             weakestRepresentation);
 
+        // Misconception evidence is family-owned. A remediation preference can
+        // intentionally switch the next question family, but an older blocking
+        // misconception from another family must never be attached to that item.
+        var familyMisconception =
+            activeMisconception is not null &&
+            string.Equals(
+                activeMisconception.QuestionFamily,
+                family,
+                StringComparison.Ordinal)
+                ? activeMisconception
+                : null;
+
+        var latestMisconceptionId =
+            latest is not null &&
+            string.Equals(
+                latest.QuestionFamily,
+                family,
+                StringComparison.Ordinal)
+                ? latest.MisconceptionId
+                : null;
+
+        var remediationMisconceptionId =
+            string.Equals(
+                state.Remediation.PreferredQuestionFamily,
+                family,
+                StringComparison.Ordinal)
+                ? state.Remediation.BlockingMisconceptionId
+                : null;
+
         if (latest is not null && !latest.IsCorrect)
         {
             var observed = Math.Clamp(
@@ -65,7 +94,7 @@ public sealed class AdaptiveNextItemDecisionEngine(
                 0,
                 observed - ComplexityStepLimit);
 
-            var recoveryReason = activeMisconception is not null
+            var recoveryReason = familyMisconception is not null
                 ? AdaptivePracticeDecisionReasonCodes.MisconceptionRemediation
                 : state.PrerequisiteMastery < BlockingPrerequisiteThreshold
                     ? AdaptivePracticeDecisionReasonCodes.PrerequisiteRecovery
@@ -79,8 +108,8 @@ public sealed class AdaptiveNextItemDecisionEngine(
                 target,
                 family,
                 representation,
-                activeMisconception?.MisconceptionId ??
-                latest.MisconceptionId,
+                familyMisconception?.MisconceptionId ??
+                latestMisconceptionId,
                 recoveryReason,
                 remediationLockActive: true,
                 confirmationRequired: true,
@@ -109,8 +138,8 @@ public sealed class AdaptiveNextItemDecisionEngine(
                     target,
                     family,
                     representation,
-                    state.Remediation.BlockingMisconceptionId ??
-                    activeMisconception?.MisconceptionId,
+                    remediationMisconceptionId ??
+                    familyMisconception?.MisconceptionId,
                     AdaptivePracticeDecisionReasonCodes
                         .MisconceptionConfirmationRequired,
                     remediationLockActive: true,
@@ -119,14 +148,14 @@ public sealed class AdaptiveNextItemDecisionEngine(
                     progressionEligible: false);
             }
 
-            if (activeMisconception is not null)
+            if (familyMisconception is not null)
             {
                 return Decision(
                     state,
                     target,
                     family,
                     representation,
-                    activeMisconception.MisconceptionId,
+                    familyMisconception.MisconceptionId,
                     AdaptivePracticeDecisionReasonCodes.RemediationLockActive,
                     remediationLockActive: true,
                     confirmationRequired: true,
@@ -146,7 +175,7 @@ public sealed class AdaptiveNextItemDecisionEngine(
                 target,
                 family,
                 representation,
-                activeMisconception?.MisconceptionId,
+                familyMisconception?.MisconceptionId,
                 AdaptivePracticeDecisionReasonCodes.PrerequisiteRecovery,
                 remediationLockActive: false,
                 confirmationRequired: false,
@@ -181,7 +210,7 @@ public sealed class AdaptiveNextItemDecisionEngine(
         // This is what allows: recover → confirm → then progress one bounded step.
         if (state.RecentSuccessfulItems >= 2 &&
             state.PrerequisiteMastery >= BlockingPrerequisiteThreshold &&
-            activeMisconception is null)
+            familyMisconception is null)
         {
             desired = Math.Max(
                 desired,
