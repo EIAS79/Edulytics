@@ -30,7 +30,9 @@ public sealed class UnifiedPracticeProductPolishTests
         Assert.Contains("data-practice-sound", view, StringComparison.Ordinal);
         Assert.Contains("data-practice-question", view, StringComparison.Ordinal);
         Assert.Contains("data-practice-hint", view, StringComparison.Ordinal);
-        Assert.Contains("data-practice-feedback", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("data-practice-feedback", view, StringComparison.Ordinal);
+        Assert.Contains("data-practice-review", view, StringComparison.Ordinal);
+        Assert.Contains("data-practice-next", view, StringComparison.Ordinal);
         Assert.Contains("practice-voice-runtime.js", view, StringComparison.Ordinal);
         Assert.Contains("student-lesson-practice.js", view, StringComparison.Ordinal);
     }
