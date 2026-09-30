@@ -122,6 +122,158 @@ public sealed class StudentAssessmentDeliveryService(
             });
     }
 
+    public async Task<StudentAssessmentDeliveryResult<StudentAssessmentProgress>> SaveProgressAsync(
+        Guid actorUserId,
+        Guid assessmentId,
+        IReadOnlyList<StudentAssessmentResponse> responses,
+        CancellationToken cancellationToken = default)
+    {
+        var now = DateTime.UtcNow;
+        var resolved = await ResolveAsync(
+            actorUserId,
+            assessmentId,
+            now,
+            cancellationToken);
+
+        if (resolved.Error.HasValue)
+        {
+            return StudentAssessmentDeliveryResult<StudentAssessmentProgress>.Failure(
+                resolved.Error.Value);
+        }
+
+        var assessment = resolved.Assessment!;
+        if (assessment.AssessmentType is not (AssessmentType.Homework or AssessmentType.Worksheet))
+        {
+            return StudentAssessmentDeliveryResult<StudentAssessmentProgress>.Failure(
+                StudentAssessmentDeliveryErrorCode.InvalidSubmission);
+        }
+
+        var context = await builder.GetContextAsync(
+            resolved.SchoolId,
+            assessmentId,
+            cancellationToken);
+        if (context is null ||
+            context.Questions.Count == 0 ||
+            context.Questions.Any(x => context.Items.All(item => item.Id != x.Id)))
+        {
+            return StudentAssessmentDeliveryResult<StudentAssessmentProgress>.Failure(
+                StudentAssessmentDeliveryErrorCode.AssessmentNotOpen);
+        }
+
+        var attempt = await assessments.GetOrCreateAttemptAsync(
+            resolved.SchoolId,
+            assessmentId,
+            resolved.Profile!.Id,
+            now,
+            cancellationToken);
+        if (attempt is null)
+        {
+            return StudentAssessmentDeliveryResult<StudentAssessmentProgress>.Failure(
+                StudentAssessmentDeliveryErrorCode.PersistenceError);
+        }
+
+        if (assessment.AssessmentType == AssessmentType.Homework &&
+            attempt.Status == AssessmentAttemptStatus.Submitted)
+        {
+            return StudentAssessmentDeliveryResult<StudentAssessmentProgress>.Failure(
+                StudentAssessmentDeliveryErrorCode.AlreadySubmitted);
+        }
+
+        var questions = context.Questions
+            .OrderBy(x => x.Order)
+            .ToArray();
+        if (responses.Count != questions.Length ||
+            responses.Select(x => x.QuestionId).Distinct().Count() != questions.Length)
+        {
+            return StudentAssessmentDeliveryResult<StudentAssessmentProgress>.Failure(
+                StudentAssessmentDeliveryErrorCode.InvalidSubmission);
+        }
+
+        var responseMap = responses.ToDictionary(x => x.QuestionId);
+        var itemMap = context.Items.ToDictionary(x => x.Id);
+        if (questions.Any(x => !responseMap.ContainsKey(x.Id) || !itemMap.ContainsKey(x.Id)))
+        {
+            return StudentAssessmentDeliveryResult<StudentAssessmentProgress>.Failure(
+                StudentAssessmentDeliveryErrorCode.InvalidSubmission);
+        }
+
+        foreach (var question in questions)
+        {
+            var text = (responseMap[question.Id].ResponseText ?? string.Empty).Trim();
+            if (text.Length > 4000)
+            {
+                return StudentAssessmentDeliveryResult<StudentAssessmentProgress>.Failure(
+                    StudentAssessmentDeliveryErrorCode.InvalidSubmission);
+            }
+
+            var item = itemMap[question.Id];
+            var choices = ReadChoices(item);
+            if (item.ItemType == AssessmentItemType.MultipleChoice &&
+                choices.Count > 0 &&
+                text.Length > 0 &&
+                !choices.Contains(text, StringComparer.Ordinal))
+            {
+                return StudentAssessmentDeliveryResult<StudentAssessmentProgress>.Failure(
+                    StudentAssessmentDeliveryErrorCode.InvalidSubmission);
+            }
+
+            var response = await assessments.GetTaskResponseAsync(
+                resolved.SchoolId,
+                attempt.Id,
+                question.Id,
+                cancellationToken);
+
+            if (response is null)
+            {
+                await assessments.AddAsync(
+                    new AssessmentTaskResponse
+                    {
+                        Id = Guid.NewGuid(),
+                        SchoolId = resolved.SchoolId,
+                        AssessmentAttemptId = attempt.Id,
+                        AssessmentQuestionId = question.Id,
+                        ResponseText = text,
+                        UpdatedAtUtc = now
+                    },
+                    cancellationToken);
+            }
+            else
+            {
+                response.ResponseText = text;
+                response.UpdatedAtUtc = now;
+            }
+        }
+
+        attempt.UpdatedAtUtc = now;
+
+        await QueueStudentAuditAsync(
+            actorUserId,
+            resolved,
+            assessment.AssessmentType == AssessmentType.Homework
+                ? "StudentHomework.ProgressSaved"
+                : "StudentWorksheet.ProgressSaved",
+            "AssessmentAttempt",
+            attempt.Id,
+            questions.Length,
+            assessment.AssessmentType == AssessmentType.Homework
+                ? "Homework progress saved without submission."
+                : "Worksheet progress saved without changing completion state.",
+            cancellationToken);
+
+        var saved = await assessments.SaveAsync(cancellationToken);
+        if (!saved.Succeeded)
+        {
+            return StudentAssessmentDeliveryResult<StudentAssessmentProgress>.Failure(
+                StudentAssessmentDeliveryErrorCode.PersistenceError);
+        }
+
+        return StudentAssessmentDeliveryResult<StudentAssessmentProgress>.Success(
+            new StudentAssessmentProgress(
+                assessment.Id,
+                assessment.AssessmentType,
+                now));
+    }
+
     public async Task<StudentAssessmentDeliveryResult<StudentAssessmentSubmission>> SubmitAsync(
         Guid actorUserId,
         Guid assessmentId,
