@@ -24,6 +24,7 @@ public interface IAssessmentDeliverySettingsService
 public sealed class AssessmentDeliverySettingsService(
     IAssessmentService assessments,
     IAssessmentBuilderRepository repository,
+    IAssessmentRepository assessmentRepository,
     ISchoolUserRepository users) : IAssessmentDeliverySettingsService
 {
     public async Task<AssessmentQueryResult<AssessmentDeliverySettingsWorkspace>> GetAsync(
@@ -83,6 +84,23 @@ public sealed class AssessmentDeliverySettingsService(
         }
 
         var isDraft = assessment.Status == AssessmentStatus.Draft;
+        var isPreStartScheduledExam =
+            assessment.AssessmentType == AssessmentType.Exam &&
+            assessment.Status == AssessmentStatus.Open &&
+            assessment.AvailableFromUtc.HasValue &&
+            DateTime.UtcNow < assessment.AvailableFromUtc.Value;
+
+        if (isPreStartScheduledExam)
+        {
+            var snapshot = await assessmentRepository.GetSnapshotAsync(
+                actor.SchoolId.Value,
+                cancellationToken);
+
+            isPreStartScheduledExam =
+                !snapshot.AssessmentAttempts.Any(x => x.AssessmentId == assessment.Id) &&
+                !snapshot.Results.Any(x => x.AssessmentId == assessment.Id);
+        }
+
         var isSafeOpenOfflineToOnlineCorrection =
             assessment.AssessmentType == AssessmentType.Exam &&
             assessment.Status == AssessmentStatus.Open &&
@@ -92,7 +110,7 @@ public sealed class AssessmentDeliverySettingsService(
             request.TargetStudentProfileId == assessment.TargetStudentProfileId &&
             request.DifficultyBand == assessment.DifficultyBand;
 
-        if (!isDraft && !isSafeOpenOfflineToOnlineCorrection)
+        if (!isDraft && !isPreStartScheduledExam && !isSafeOpenOfflineToOnlineCorrection)
             return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.AssessmentNotDraft);
 
         if (isSafeOpenOfflineToOnlineCorrection)
@@ -117,7 +135,7 @@ public sealed class AssessmentDeliverySettingsService(
         if (context is null)
             return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.AssessmentNotFound);
 
-        if (isDraft)
+        if (isDraft || isPreStartScheduledExam)
         {
             Guid? targetStudentId = null;
             if (request.TargetType == AssessmentTargetType.Student)
