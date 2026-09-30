@@ -76,6 +76,15 @@
     }
 </header>
 
+@if (TempData["Success"] is string success)
+{
+    <div class="student-alert student-alert-success" role="status">@success</div>
+}
+@if (TempData["Error"] is string error)
+{
+    <div class="student-alert student-alert-error" role="alert">@error</div>
+}
+
 <form id="student-assessment-form"
       asp-action="SubmitAssessment"
       asp-route-id="@Model.AssessmentId"
@@ -141,9 +150,19 @@
         </article>
     }
 
-    <button id="student-assessment-submit"
-            class="student-button student-button-primary"
-            type="submit">@submitLabel</button>
+    <div class="student-actions">
+        @if (Model.AssessmentType is AssessmentType.Homework or AssessmentType.Worksheet)
+        {
+            <button class="student-button"
+                    type="submit"
+                    asp-action="SaveAssessmentProgress"
+                    asp-route-id="@Model.AssessmentId">@S["SaveProgress"]</button>
+        }
+
+        <button id="student-assessment-submit"
+                class="student-button student-button-primary"
+                type="submit">@submitLabel</button>
+    </div>
 </form>
 
 <script>
@@ -164,8 +183,23 @@
     const form = document.getElementById('student-assessment-form');
     const deadline = Date.parse(expiresUtc);
 
+    let autoSubmitting = false;
+
     const renderCountdown = () => {
         const remainingMs = deadline - Date.now();
+
+        if (Number.isFinite(remainingMs) &&
+            remainingMs > 0 &&
+            remainingMs <= 2000 &&
+            !autoSubmitting &&
+            form &&
+            submit) {
+            autoSubmitting = true;
+            if (countdown) countdown.textContent = '@L("Submitting…", "Wysyłanie…")';
+            form.requestSubmit(submit);
+            return false;
+        }
+
         if (!Number.isFinite(remainingMs) || remainingMs <= 0) {
             if (countdown) countdown.textContent = '@L("Time expired", "Czas minął")';
             if (submit) submit.disabled = true;
