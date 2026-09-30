@@ -104,7 +104,10 @@ public sealed class AdaptiveDecisionSnapshotConfiguration :
             x.SchoolId,
             x.SessionId,
             x.Sequence
-        }).IsUnique();
+        })
+            .IsUnique()
+            .HasDatabaseName(
+                "IX_AdaptiveDecisionSnapshots_SchoolId_SessionId_Sequence");
 
         builder.HasOne<AdaptivePracticeSession>().WithMany()
             .HasForeignKey(x => new { x.SchoolId, x.SessionId })
@@ -156,14 +159,20 @@ public sealed class AdaptivePracticeTurnConfiguration :
             x.SchoolId,
             x.SessionId,
             x.Sequence
-        }).IsUnique();
+        })
+            .IsUnique()
+            .HasDatabaseName(
+                "IX_AdaptivePracticeTurns_SchoolId_SessionId_Sequence");
 
         builder.HasIndex(x => new
         {
             x.SchoolId,
             x.SessionId,
             x.ExposureFingerprint
-        }).IsUnique();
+        })
+            .IsUnique()
+            .HasDatabaseName(
+                "IX_AdaptivePracticeTurns_SchoolId_SessionId_ExposureFingerprint");
 
         builder.HasOne<AdaptivePracticeSession>().WithMany()
             .HasForeignKey(x => new { x.SchoolId, x.SessionId })
