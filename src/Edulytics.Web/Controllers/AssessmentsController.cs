@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using Edulytics.Core.Constants;
+using Edulytics.Core.Enums;
 using Edulytics.Services.Assessments;
 using Edulytics.Web.Assessments;
 using Edulytics.Web.ViewModels.Assessments;
@@ -50,6 +51,11 @@ public sealed class AssessmentsController : Controller
         string title,
         DateOnly assessmentDate,
         decimal maxScore,
+        AssessmentType assessmentType,
+        AssessmentDeliveryMode deliveryMode,
+        DateTime? availableFromUtc,
+        DateTime? dueAtUtc,
+        int? attemptTimeLimitMinutes,
         CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
@@ -62,7 +68,12 @@ public sealed class AssessmentsController : Controller
                 termId,
                 title,
                 assessmentDate,
-                maxScore),
+                maxScore,
+                assessmentType,
+                deliveryMode,
+                availableFromUtc,
+                dueAtUtc,
+                attemptTimeLimitMinutes),
             cancellationToken);
 
         SetFeedback(result, "SuccessAssessmentCreated");
@@ -105,6 +116,10 @@ public sealed class AssessmentsController : Controller
         string title,
         DateOnly assessmentDate,
         decimal maxScore,
+        AssessmentDeliveryMode? deliveryMode,
+        DateTime? availableFromUtc,
+        DateTime? dueAtUtc,
+        int? attemptTimeLimitMinutes,
         string rowVersion,
         CancellationToken cancellationToken)
     {
@@ -118,7 +133,16 @@ public sealed class AssessmentsController : Controller
 
         var result = await _service.UpdateAssessmentAsync(
             actorId,
-            new UpdateAssessmentRequest(id, title, assessmentDate, maxScore, bytes),
+            new UpdateAssessmentRequest(
+                id,
+                title,
+                assessmentDate,
+                maxScore,
+                bytes,
+                deliveryMode,
+                availableFromUtc,
+                dueAtUtc,
+                attemptTimeLimitMinutes),
             cancellationToken);
 
         SetFeedback(result, "SuccessAssessmentUpdated");
@@ -482,6 +506,9 @@ public sealed class AssessmentsController : Controller
             AssessmentErrorCode.Required => "ErrorRequired",
             AssessmentErrorCode.InvalidText => "ErrorInvalidText",
             AssessmentErrorCode.InvalidDate => "ErrorInvalidDate",
+            AssessmentErrorCode.InvalidAssessmentType => "ErrorInvalidAssessmentType",
+            AssessmentErrorCode.InvalidSchedule => "ErrorInvalidSchedule",
+            AssessmentErrorCode.InvalidDeliveryModeForType => "ErrorInvalidDeliveryModeForType",
             AssessmentErrorCode.InvalidMaxScore => "ErrorInvalidMaxScore",
             AssessmentErrorCode.InvalidQuestionScore => "ErrorInvalidQuestionScore",
             AssessmentErrorCode.InvalidOrder => "ErrorInvalidOrder",
