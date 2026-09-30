@@ -37,6 +37,8 @@ public sealed record AdaptiveNextStepsView(
 public sealed record AdaptiveQuestionLogRow(
     Guid SessionId,
     string LessonCode,
+    string CurriculumLabel,
+    string LessonTitle,
     string SkillId,
     int Sequence,
     string Prompt,

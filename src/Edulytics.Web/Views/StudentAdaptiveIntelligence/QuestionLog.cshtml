@@ -11,26 +11,41 @@
     static string ReasonText(string code) => code switch
     {
         "SESSION_BASELINE" =>
-            "This question established the starting point for this practice session.",
-        "MISCONCEPTION_REMEDIATION" =>
-            "This question was selected to rebuild a specific skill after an incorrect response.",
-        "MISCONCEPTION_CONFIRMATION_REQUIRED" =>
-            "This was a fresh check to confirm the skill independently after recovery.",
-        "REPRESENTATION_RECOVERY" =>
-            "Edulytics selected a recovery question to strengthen the current representation.",
-        "PREREQUISITE_RECOVERY" =>
-            "This question reinforced a prerequisite needed for the lesson.",
-        "COMPLEXITY_PROGRESS" =>
-            "Recent evidence supported a bounded increase in mathematical complexity.",
-        "COMPLEXITY_REDUCE" =>
-            "Edulytics reduced complexity to keep the next step productive.",
+            "This was your starting question.",
+        "MISCONCEPTION_REMEDIATION" or
+        "REPRESENTATION_RECOVERY" or
+        "PREREQUISITE_RECOVERY" or
+        "UNCLASSIFIED_RECOVERY" or
+        "REMEDIATION_LOCK_ACTIVE" =>
+            "This question gives you more practice with the part you found difficult.",
+        "MISCONCEPTION_CONFIRMATION_REQUIRED" or
+        "CONFIRMATION_PASSED" =>
+            "This question checks that you can now solve it independently.",
+        "COMPLEXITY_PROGRESS" or
+        "PROGRESSION_ELIGIBLE" =>
+            "You answered recent questions correctly, so Edulytics increased the challenge.",
+        "COMPLEXITY_REDUCE" or
+        "PROGRESSION_BLOCKED_REPEATED_FAILURE" =>
+            "Edulytics lowered the challenge so you can strengthen the skill before moving on.",
         "COMPLEXITY_CONSOLIDATE" =>
-            "This question consolidated the current level before further progression.",
-        "UNCLASSIFIED_RECOVERY" =>
-            "This question provided a simpler fresh recovery opportunity.",
+            "This question checks that you are confident at your current level.",
         _ =>
-            "Edulytics selected this question from the learner evidence available at that point."
+            "This question was chosen from your recent answers in this practice session."
     };
+
+    static string DifficultyText(
+        Edulytics.Services.AdaptivePractice.AdaptiveQuestionLogRow item)
+    {
+        if (item.Difficulty == Edulytics.Core.Enums.AssessmentItemDifficulty.Medium)
+            return "Standard";
+
+        return item.MathematicalComplexityScore switch
+        {
+            <= 55 => "Standard",
+            <= 67 => "Stretch",
+            _ => "Challenge"
+        };
+    }
 }
 
 <section class="student-progress-page adaptive-question-log">
@@ -57,19 +72,16 @@
             @foreach (var session in sessions)
             {
                 var orderedQuestions = session
-                    .OrderByDescending(x => x.Sequence)
+                    .OrderBy(x => x.Sequence)
                     .ToArray();
                 var newest = session.Max(x => x.PresentedAtUtc);
-                var lessonCode = session
-                    .Select(x => x.LessonCode)
-                    .FirstOrDefault(x => !string.IsNullOrWhiteSpace(x))
-                    ?? "Practice";
+                var sessionInfo = session.First();
 
                 <section class="student-panel adaptive-log-session">
                     <header class="adaptive-log-session__header">
                         <div>
                             <span class="student-eyebrow">Practice session</span>
-                            <h2>@lessonCode</h2>
+                            <h2>@sessionInfo.CurriculumLabel — @sessionInfo.LessonTitle</h2>
                             <p>
                                 <time datetime="@newest.ToString("O")">
                                     @newest.ToString("yyyy-MM-dd HH:mm") UTC
@@ -89,7 +101,9 @@
                                     <strong>#@item.Sequence</strong>
                                     <span class="student-skill-status @(item.IsCorrect == true ? "is-positive" : item.IncorrectAttemptCount > 0 || item.IsCorrect == false ? "is-negative" : "is-muted")">
                                         @(item.IsCorrect == true
-                                            ? "Correct"
+                                            ? item.IncorrectAttemptCount > 0
+                                                ? "Correct after retry"
+                                                : "Correct first attempt"
                                             : item.IsCorrect == false
                                                 ? "Closed incorrect"
                                                 : item.IncorrectAttemptCount > 0
@@ -103,7 +117,7 @@
                                 <div class="student-progress-skill-metrics">
                                     <div>
                                         <span>Difficulty</span>
-                                        <strong>@item.Difficulty</strong>
+                                        <strong>@DifficultyText(item)</strong>
                                     </div>
                                     <div>
                                         <span>Complexity</span>
@@ -136,7 +150,12 @@
                                     }
                                 }
 
-                                @if (item.IsCorrect == false)
+                                @if (item.IsCorrect == true &&
+                                     item.IncorrectAttemptCount > 0)
+                                {
+                                    <p><strong>Item outcome:</strong> Correct after retrying the same question.</p>
+                                }
+                                else if (item.IsCorrect == false)
                                 {
                                     <p><strong>Item outcome:</strong> Closed after the allowed retry was used.</p>
                                 }

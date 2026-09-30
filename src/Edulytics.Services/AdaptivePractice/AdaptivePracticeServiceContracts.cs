@@ -67,7 +67,8 @@ public sealed record AdaptivePracticeStartResult(
 public sealed record AdaptivePracticeReviewView(
     AdaptivePracticeQuestionView Question,
     bool IsCorrect,
-    string Feedback);
+    string Feedback,
+    string SubmittedAnswer);
 
 public sealed record AdaptivePracticeReviewResult(
     AdaptivePracticeReviewView? Review,

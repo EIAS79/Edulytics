@@ -146,6 +146,46 @@ public sealed class AdaptiveIntelligenceV2Service(
         var itemsById =
             items.ToDictionary(x => x.Id);
 
+        var lessonDisplayMetadata =
+            await practiceRepository.GetLessonDisplayMetadataAsync(
+                student.SchoolId,
+                sessions
+                    .Select(x => x.CurriculumAdoptionId)
+                    .Distinct()
+                    .ToArray(),
+                sessions
+                    .Select(x => x.CurriculumPedagogicalLessonId)
+                    .Distinct()
+                    .ToArray(),
+                cancellationToken);
+
+        var sessionDisplay =
+            new Dictionary<Guid, (string CurriculumLabel, string LessonTitle)>();
+
+        foreach (var session in sessions)
+        {
+            if (lessonDisplayMetadata.TryGetValue(
+                    (
+                        session.CurriculumAdoptionId,
+                        session.CurriculumPedagogicalLessonId
+                    ),
+                    out var metadata))
+            {
+                sessionDisplay[session.Id] =
+                    (
+                        BuildCurriculumLabel(metadata.CurriculumCode),
+                        metadata.LessonTitle
+                    );
+                continue;
+            }
+
+            sessionDisplay[session.Id] =
+                (
+                    BuildCurriculumLabel(session.LessonCode),
+                    BuildLessonTitle(session.LessonCode)
+                );
+        }
+
         var rows = turns
             .OrderByDescending(x => x.PresentedAtUtc)
             .ThenByDescending(x => x.Sequence)
@@ -160,9 +200,23 @@ public sealed class AdaptiveIntelligenceV2Service(
                     turn.AssessmentItemId,
                     out var item);
 
+                var display =
+                    sessionDisplay.TryGetValue(
+                        session.Id,
+                        out var sessionMetadata)
+                        ? sessionMetadata
+                        : (
+                            CurriculumLabel:
+                                BuildCurriculumLabel(session.LessonCode),
+                            LessonTitle:
+                                BuildLessonTitle(session.LessonCode)
+                        );
+
                 return new AdaptiveQuestionLogRow(
                     session.Id,
                     session.LessonCode,
+                    display.CurriculumLabel,
+                    display.LessonTitle,
                     turn.SkillId,
                     turn.Sequence,
                     item?.Prompt ?? string.Empty,
@@ -460,6 +514,80 @@ public sealed class AdaptiveIntelligenceV2Service(
                     decision.Reason,
                     decision.FormulaVersion,
                     DateTime.UtcNow));
+    }
+
+    private static string BuildCurriculumLabel(string lessonCode)
+    {
+        if (string.IsNullOrWhiteSpace(lessonCode))
+            return "Mathematics";
+
+        var segments = lessonCode
+            .Split(
+                ':',
+                StringSplitOptions.RemoveEmptyEntries |
+                StringSplitOptions.TrimEntries);
+
+        var identity = segments
+            .FirstOrDefault(segment =>
+                segment.Contains("-", StringComparison.Ordinal) &&
+                !segment.StartsWith("PED", StringComparison.OrdinalIgnoreCase));
+
+        if (string.IsNullOrWhiteSpace(identity))
+            return "Mathematics";
+
+        return string.Join(
+            " ",
+            identity
+                .Split(
+                    '-',
+                    StringSplitOptions.RemoveEmptyEntries |
+                    StringSplitOptions.TrimEntries)
+                .Select(FormatCurriculumToken));
+    }
+
+    private static string FormatCurriculumToken(string token)
+    {
+        if (string.Equals(token, "MATH", StringComparison.OrdinalIgnoreCase))
+            return "Math";
+
+        if (token.Length <= 3)
+            return token.ToUpperInvariant();
+
+        return char.ToUpperInvariant(token[0]) +
+               token[1..].ToLowerInvariant();
+    }
+
+    private static string BuildLessonTitle(string lessonCode)
+    {
+        if (string.IsNullOrWhiteSpace(lessonCode))
+            return "Practice";
+
+        var segment = lessonCode
+            .Split(
+                ':',
+                StringSplitOptions.RemoveEmptyEntries |
+                StringSplitOptions.TrimEntries)
+            .LastOrDefault();
+
+        if (string.IsNullOrWhiteSpace(segment))
+            return "Practice";
+
+        var words = segment
+            .Split(
+                '-',
+                StringSplitOptions.RemoveEmptyEntries |
+                StringSplitOptions.TrimEntries)
+            .Select(word => word.ToLowerInvariant())
+            .ToArray();
+
+        if (words.Length == 0)
+            return "Practice";
+
+        words[0] =
+            char.ToUpperInvariant(words[0][0]) +
+            words[0][1..];
+
+        return string.Join(" ", words);
     }
 
     private bool IsFeatureEnabled(bool featureFlag) =>

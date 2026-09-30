@@ -9,6 +9,7 @@
     const soundButton = document.querySelector("[data-practice-sound]");
     const terminal = document.querySelector("[data-practice-terminal]");
     const review = document.querySelector("[data-practice-review]");
+    const retryFeedback = document.querySelector('[data-practice-retry-feedback="true"]');
     const nextButtons = document.querySelectorAll("[data-practice-next]");
 
     function stopVoice() {
@@ -46,6 +47,19 @@
                 parts.push(reviewMessage);
             }
 
+            return parts;
+        }
+
+        // Wrong #1 keeps the exact item open. Eddy's answer-aware guidance
+        // is spoken first, then the question is repeated so the learner can
+        // immediately retry with the guidance still in working memory.
+        if (retryFeedback) {
+            if (hint && hint.textContent.trim()) {
+                parts.push(hint.textContent.trim());
+            }
+            if (question && question.textContent.trim()) {
+                parts.push(question.textContent.trim());
+            }
             return parts;
         }
 

@@ -46,6 +46,47 @@ public sealed class PracticeAssessmentTaxonomyTests
             });
     }
 
+    [Theory]
+    [InlineData("supporting.number.place_value")]
+    [InlineData("supporting.number.rounding")]
+    public void CoreNumberFamiliesExposeStandardStretchAndChallengeTruthfully(
+        string family)
+    {
+        var capabilities =
+            PracticeQuestionFormCapabilityRegistry.Resolve(family);
+
+        Assert.Contains(
+            capabilities,
+            x =>
+                x.MinimumDifficulty <=
+                    PracticeCognitiveDifficulty.Standard &&
+                x.MaximumDifficulty >=
+                    PracticeCognitiveDifficulty.Standard);
+        Assert.Contains(
+            capabilities,
+            x =>
+                x.MinimumDifficulty <=
+                    PracticeCognitiveDifficulty.Stretch &&
+                x.MaximumDifficulty >=
+                    PracticeCognitiveDifficulty.Stretch);
+        Assert.Contains(
+            capabilities,
+            x =>
+                x.MinimumDifficulty <=
+                    PracticeCognitiveDifficulty.Challenge &&
+                x.MaximumDifficulty >=
+                    PracticeCognitiveDifficulty.Challenge);
+
+        for (var slot = 0; slot < 16; slot++)
+        {
+            Assert.NotNull(
+                PracticeQuestionFormCapabilityRegistry
+                    .ResolveForVariant(
+                        family,
+                        slot));
+        }
+    }
+
     [Fact]
     public void ShapeDimensionDeclaresFourGenuineCognitiveFormsAcrossAllVariantSlots()
     {

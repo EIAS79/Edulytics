@@ -577,6 +577,8 @@ public sealed class StudentPracticeController(
                 TempData["PracticeFeedback"] = "incorrect";
                 TempData["PracticeSolution"] =
                     result.Feedback ?? string.Empty;
+                TempData["PracticeSubmittedAnswer"] =
+                    answer?.Trim() ?? string.Empty;
 
                 return RedirectToAction(
                     nameof(AdaptiveLessonAttempt),

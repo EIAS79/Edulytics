@@ -148,8 +148,8 @@ internal static class SupportingPracticeCompletionEngine
 
         return family switch
         {
-            "supporting.number.place_value" => PlaceValue(random, scale),
-            "supporting.number.rounding" => Rounding(random, scale),
+            "supporting.number.place_value" => PlaceValue(random, scale, preferredVariant),
+            "supporting.number.rounding" => Rounding(random, scale, preferredVariant),
             "supporting.number.negative_operation" => NegativeOperation(random, scale),
             "supporting.number.order_operations" => OrderOperations(random, scale),
             "supporting.number.gcf" => GreatestCommonFactor(random, scale),
@@ -244,9 +244,9 @@ internal static class SupportingPracticeCompletionEngine
         return family switch
         {
             "supporting.number.place_value" =>
-                (p["digit"] * Pow10(p["power"])).ToString(CultureInfo.InvariantCulture),
+                SolvePlaceValue(p),
             "supporting.number.rounding" =>
-                RoundTo(p["value"], p["place"]).ToString(CultureInfo.InvariantCulture),
+                SolveRounding(p),
             "supporting.number.negative_operation" =>
                 (p["left"] + p["right"]).ToString(CultureInfo.InvariantCulture),
             "supporting.number.order_operations" =>
@@ -473,31 +473,201 @@ internal static class SupportingPracticeCompletionEngine
             StringComparison.Ordinal);
     }
 
-    private static Problem PlaceValue(Random r, int s)
+    private static Problem PlaceValue(
+        Random r,
+        int s,
+        int? preferredVariant = null)
     {
+        var variant = ResolveNumberAdaptiveVariant(
+            r,
+            s,
+            preferredVariant);
         var power = r.Next(0, Math.Min(6, 2 + s * 2));
         var digit = r.Next(1, 10);
         var lower = r.Next(0, Math.Max(1, Pow10(power)));
         var upper = r.Next(1, 20 + s * 20) * Pow10(power + 1);
         var number = upper + digit * Pow10(power) + lower;
-        return P("supporting.number.place_value",
-            $"In the number {number}, what is the value of the digit {digit} in the 10^{power} place?",
-            "A digit's value is digit × place value. Identify the correct power of ten, then multiply.",
-            ("digit", digit), ("power", power), ("number", number));
+
+        if (variant < 4)
+        {
+            return P(
+                "supporting.number.place_value",
+                $"In the number {number}, what is the value of the digit {digit} in the 10^{power} place?",
+                "A digit's value is digit × place value. Identify the correct power of ten, then multiply.",
+                ("mode", 0),
+                ("variant", variant),
+                ("digit", digit),
+                ("power", power),
+                ("number", number));
+        }
+
+        if (variant < 8)
+        {
+            var value = digit * Pow10(power);
+            return P(
+                "supporting.number.place_value",
+                $"In the number {number}, which digit has a value of {value}?",
+                "Work backwards from the value to the place. Divide the stated value by that place value to identify the digit.",
+                ("mode", 1),
+                ("variant", variant),
+                ("digit", digit),
+                ("power", power),
+                ("number", number),
+                ("value", value));
+        }
+
+        if (variant < 12)
+        {
+            var originalDigit = r.Next(1, 8);
+            var replacementDigit =
+                r.Next(originalDigit + 1, 10);
+            var challengeLower =
+                r.Next(0, Math.Max(1, Pow10(power)));
+            var challengeUpper =
+                r.Next(1, 20 + s * 20) *
+                Pow10(power + 1);
+            var challengeNumber =
+                challengeUpper +
+                originalDigit * Pow10(power) +
+                challengeLower;
+
+            return P(
+                "supporting.number.place_value",
+                $"In the number {challengeNumber}, the digit {originalDigit} in the 10^{power} place is replaced by {replacementDigit}. By how much does the number increase?",
+                "Only one place changes. Find the difference between the two digits, then multiply that difference by the place value.",
+                ("mode", 2),
+                ("variant", variant),
+                ("digit", originalDigit),
+                ("replacementDigit", replacementDigit),
+                ("power", power),
+                ("number", challengeNumber));
+        }
+
+        var fromDigit = r.Next(1, 7);
+        var toDigit = r.Next(fromDigit + 1, 10);
+        var increase =
+            (toDigit - fromDigit) *
+            Pow10(power);
+
+        return P(
+            "supporting.number.place_value",
+            $"A digit changes from {fromDigit} to {toDigit}, and the whole number increases by {increase}. What is the place value of that digit?",
+            "The increase equals the change in the digit multiplied by its place value. Divide the total increase by the digit change.",
+            ("mode", 3),
+            ("variant", variant),
+            ("digit", fromDigit),
+            ("replacementDigit", toDigit),
+            ("power", power),
+            ("increase", increase));
     }
 
-    private static Problem Rounding(Random r, int s)
+    private static Problem Rounding(
+        Random r,
+        int s,
+        int? preferredVariant = null)
     {
-        int[] places = [10, 100, 1000];
-        var place = places[r.Next(Math.Min(places.Length, s + 1))];
-        var quotient = r.Next(2, 50 + s * 50);
-        var remainder = r.Next(0, place);
-        if (remainder == place / 2) remainder++;
-        var value = quotient * place + remainder;
-        return P("supporting.number.rounding",
-            $"Round {value} to the nearest {place}.",
-            "Locate the two multiples of the rounding place on either side and use the halfway point to choose the nearer multiple.",
-            ("value", value), ("place", place));
+        var variant = ResolveNumberAdaptiveVariant(
+            r,
+            s,
+            preferredVariant);
+
+        if (variant < 4)
+        {
+            int[] places = [10, 100, 1000];
+            var place =
+                places[r.Next(Math.Min(places.Length, s + 1))];
+            var quotient = r.Next(2, 50 + s * 50);
+            var remainder = r.Next(0, place);
+            if (remainder == place / 2)
+                remainder++;
+            var value = quotient * place + remainder;
+
+            return P(
+                "supporting.number.rounding",
+                $"Round {value} to the nearest {place}.",
+                "Locate the two multiples of the rounding place on either side and use the halfway point to choose the nearer multiple.",
+                ("mode", 0),
+                ("variant", variant),
+                ("value", value),
+                ("place", place));
+        }
+
+        if (variant < 8)
+        {
+            int[] places = [10, 100, 1000];
+            var place =
+                places[r.Next(Math.Min(places.Length, s + 1))];
+            var rounded =
+                r.Next(3, 40 + s * 30) * place;
+
+            if (variant < 6)
+            {
+                return P(
+                    "supporting.number.rounding",
+                    $"What is the smallest whole number that rounds to {rounded} to the nearest {place}?",
+                    "Find the halfway point between this rounded value and the previous multiple. With standard half-up rounding, that halfway value is the first number that rounds up.",
+                    ("mode", 1),
+                    ("variant", variant),
+                    ("rounded", rounded),
+                    ("place", place));
+            }
+
+            return P(
+                "supporting.number.rounding",
+                $"What is the greatest whole number that rounds to {rounded} to the nearest {place}?",
+                "Find the halfway point to the next multiple. The greatest value that still rounds down is one less than that halfway point.",
+                ("mode", 2),
+                ("variant", variant),
+                ("rounded", rounded),
+                ("place", place));
+        }
+
+        if (variant < 12)
+        {
+            int[] places = [10, 100, 1000];
+            var place =
+                places[r.Next(Math.Min(places.Length, s + 1))];
+            var value =
+                r.Next(5, 80 + s * 50) * place +
+                r.Next(0, place);
+            var correct = RoundTo(value, place);
+            var offset =
+                r.Next(1, 3) * place;
+            var claimed =
+                correct + (r.Next(0, 2) == 0 ? offset : -offset);
+            if (claimed < 0)
+                claimed = correct + offset;
+
+            return P(
+                "supporting.number.rounding",
+                $"A student rounded {value} to the nearest {place} and wrote {claimed}. What is the difference between the student's answer and the correct rounded value?",
+                "Round the original number correctly first, then compare that result with the student's answer.",
+                ("mode", 3),
+                ("variant", variant),
+                ("value", value),
+                ("place", place),
+                ("claimed", claimed));
+        }
+
+        const int smallPlace = 100;
+        const int largePlace = 1000;
+        var target =
+            r.Next(1500, 95000);
+        var roundedSmall =
+            RoundTo(target, smallPlace);
+        var roundedLarge =
+            RoundTo(target, largePlace);
+
+        return P(
+            "supporting.number.rounding",
+            $"What is the smallest whole number that rounds to {roundedSmall} to the nearest {smallPlace} and also rounds to {roundedLarge} to the nearest {largePlace}?",
+            "Translate both rounding statements into intervals. The answer is the first whole number that lies in both intervals.",
+            ("mode", 4),
+            ("variant", variant),
+            ("roundedSmall", roundedSmall),
+            ("smallPlace", smallPlace),
+            ("roundedLarge", roundedLarge),
+            ("largePlace", largePlace));
     }
 
     private static Problem NegativeOperation(Random r, int s)
@@ -1809,6 +1979,74 @@ internal static class SupportingPracticeCompletionEngine
         var result = 1;
         for (var i = 0; i < exponent; i++) result = checked(result * value);
         return result;
+    }
+
+    private static string SolvePlaceValue(
+        IReadOnlyDictionary<string, int> p)
+    {
+        var mode =
+            p.TryGetValue("mode", out var persistedMode)
+                ? persistedMode
+                : 0;
+
+        var answer = mode switch
+        {
+            0 => p["digit"] * Pow10(p["power"]),
+            1 => p["digit"],
+            2 => (p["replacementDigit"] - p["digit"]) *
+                 Pow10(p["power"]),
+            3 => Pow10(p["power"]),
+            _ => throw new InvalidOperationException(
+                "Unsupported place-value question mode.")
+        };
+
+        return answer.ToString(CultureInfo.InvariantCulture);
+    }
+
+    private static string SolveRounding(
+        IReadOnlyDictionary<string, int> p)
+    {
+        var mode =
+            p.TryGetValue("mode", out var persistedMode)
+                ? persistedMode
+                : 0;
+
+        var answer = mode switch
+        {
+            0 => RoundTo(p["value"], p["place"]),
+            1 => p["rounded"] - p["place"] / 2,
+            2 => p["rounded"] + p["place"] / 2 - 1,
+            3 => Math.Abs(
+                p["claimed"] -
+                RoundTo(p["value"], p["place"])),
+            4 => Math.Max(
+                p["roundedSmall"] - p["smallPlace"] / 2,
+                p["roundedLarge"] - p["largePlace"] / 2),
+            _ => throw new InvalidOperationException(
+                "Unsupported rounding question mode.")
+        };
+
+        return answer.ToString(CultureInfo.InvariantCulture);
+    }
+
+    private static int ResolveNumberAdaptiveVariant(
+        Random random,
+        int scale,
+        int? preferredVariant)
+    {
+        var (start, width) = scale switch
+        {
+            <= 1 => (0, 4),
+            2 => (4, 4),
+            _ => (8, 8)
+        };
+
+        var offset = preferredVariant.HasValue
+            ? QuestionVariantPolicy.NormalizeSlot(
+                  preferredVariant.Value) % width
+            : random.Next(0, width);
+
+        return start + offset;
     }
 
     private static int RoundTo(int value, int place)
