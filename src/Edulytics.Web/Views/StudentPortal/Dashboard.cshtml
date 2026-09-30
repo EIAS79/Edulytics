@@ -1,4 +1,5 @@
 @using System.Globalization
+@using Edulytics.Core.Enums
 @model Edulytics.Web.ViewModels.StudentPortal.StudentDashboardViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @{
@@ -16,6 +17,25 @@
         recentAverage.ToString(
             "0.##",
             CultureInfo.InvariantCulture);
+
+    TimeZoneInfo schoolTimeZone;
+    try
+    {
+        schoolTimeZone = TimeZoneInfo.FindSystemTimeZoneById(Model.Workspace.SchoolTimeZoneId);
+    }
+    catch
+    {
+        schoolTimeZone = TimeZoneInfo.Utc;
+    }
+
+    string LocalTime(DateTime? utc) =>
+        utc.HasValue
+            ? TimeZoneInfo.ConvertTimeFromUtc(
+                DateTime.SpecifyKind(utc.Value, DateTimeKind.Utc),
+                schoolTimeZone).ToString(
+                    "yyyy-MM-dd h:mm tt",
+                    CultureInfo.InvariantCulture)
+            : "—";
 }
 
 <section class="student-hero student-dashboard-hero">
@@ -189,8 +209,8 @@
     <article class="student-panel student-dashboard-priority student-dashboard-list-panel">
         <div class="student-panel-heading">
             <div>
-                <span class="student-eyebrow">@S["TasksToDo"]</span>
-                <h2>@S["OnlineAssessments"]</h2>
+                <span class="student-eyebrow">@S["Assessments"]</span>
+                <h2>@S["TasksToDo"]</h2>
             </div>
             <a class="student-secondary-link"
                asp-action="Assessments">
@@ -210,16 +230,44 @@
             <div class="student-dashboard-task-list">
                 @foreach (var item in Model.ToDoAssessments)
                 {
-                    <article class="student-dashboard-task">
+                    var taskTypeLabel = item.AssessmentType switch
+                    {
+                        AssessmentType.Exam => "EXAM / TEST",
+                        AssessmentType.Homework => "HOMEWORK",
+                        AssessmentType.Worksheet => "WORKSHEET",
+                        _ => "TASK"
+                    };
+                    var taskActionLabel = item.AssessmentType switch
+                    {
+                        AssessmentType.Exam => S["StartAssessment"].Value,
+                        AssessmentType.Homework => "Open homework",
+                        AssessmentType.Worksheet => "Open worksheet",
+                        _ => S["StartAssessment"].Value
+                    };
+                    var taskSchedule = item.AssessmentType switch
+                    {
+                        AssessmentType.Exam when item.AvailableFromUtc.HasValue =>
+                            $"Starts: {LocalTime(item.AvailableFromUtc)}",
+                        AssessmentType.Exam when item.DueAtUtc.HasValue =>
+                            $"Closes: {LocalTime(item.DueAtUtc)}",
+                        AssessmentType.Homework when item.DueAtUtc.HasValue =>
+                            $"Due: {LocalTime(item.DueAtUtc)}",
+                        AssessmentType.Worksheet =>
+                            "No deadline",
+                        _ =>
+                            $"{S["AssessmentDate"]}: {item.AssessmentDate:yyyy-MM-dd}"
+                    };
+                    <article class="student-dashboard-task student-dashboard-task-@item.AssessmentType.ToString().ToLowerInvariant()">
                         <div>
+                            <span class="student-dashboard-task-type">@taskTypeLabel</span>
                             <strong>@item.Title</strong>
                             <span>@item.SubjectName · @item.ClassName</span>
-                            <small>@S["AssessmentDate"]: @item.AssessmentDate.ToString("yyyy-MM-dd")</small>
+                            <small>@taskSchedule</small>
                         </div>
                         <a class="student-button student-button-primary"
                            asp-action="TakeAssessment"
                            asp-route-id="@item.AssessmentId">
-                            @S["StartAssessment"]
+                            @taskActionLabel
                         </a>
                     </article>
                 }
