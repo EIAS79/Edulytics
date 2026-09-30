@@ -233,8 +233,21 @@ public sealed class AdaptiveRemediationGuidanceEngine(
 
             if (!document.RootElement.TryGetProperty(
                     "parameters",
-                    out var parameters) ||
-                !parameters.TryGetProperty(
+                    out var parameters))
+            {
+                return false;
+            }
+
+            if (parameters.TryGetProperty(
+                    "mode",
+                    out var modeElement) &&
+                modeElement.TryGetInt32(out var mode) &&
+                mode != 0)
+            {
+                return false;
+            }
+
+            if (!parameters.TryGetProperty(
                     "value",
                     out var valueElement) ||
                 !parameters.TryGetProperty(
