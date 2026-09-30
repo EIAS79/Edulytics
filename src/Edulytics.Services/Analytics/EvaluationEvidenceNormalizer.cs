@@ -1,6 +1,7 @@
 using Edulytics.Core.Analytics;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
+using Edulytics.Services.Assessments;
 
 namespace Edulytics.Services.Analytics;
 
@@ -30,6 +31,15 @@ public sealed class EvaluationEvidenceNormalizer
         AnalyticsProjectionSnapshot snapshot,
         ICollection<EvaluationEvidenceRecord> result)
     {
+        var nonExamAssessmentIds = snapshot.Assessments
+            .Where(x => x.AssessmentType != AssessmentType.Exam)
+            .Select(x => x.Id)
+            .ToHashSet();
+
+        AssessmentMetrics.NonExamEvaluationEvidenceBlocked(
+            snapshot.AssessmentResults.LongCount(
+                x => nonExamAssessmentIds.Contains(x.AssessmentId)));
+
         var assessments = snapshot.Assessments
             .Where(x =>
                 x.Status != AssessmentStatus.Draft &&
