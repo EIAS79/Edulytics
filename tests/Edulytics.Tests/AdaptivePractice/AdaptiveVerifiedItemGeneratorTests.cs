@@ -1,4 +1,5 @@
 using Edulytics.Core.AdaptivePractice;
+using Edulytics.Core.Enums;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.AdaptivePractice;
 using Edulytics.Services.Practice;
@@ -281,13 +282,13 @@ public sealed class AdaptiveVerifiedItemGeneratorTests
                 excludedExposureFingerprints: []);
 
         Assert.Equal(
-            StudentPrivatePracticeDifficulty.MyLevel,
+            AssessmentItemDifficulty.Medium,
             standard.Difficulty);
         Assert.Equal(
-            StudentPrivatePracticeDifficulty.Stretch,
+            AssessmentItemDifficulty.Challenging,
             stretch.Difficulty);
         Assert.Equal(
-            StudentPrivatePracticeDifficulty.Challenge,
+            AssessmentItemDifficulty.Challenging,
             challenge.Difficulty);
 
         Assert.Contains(
