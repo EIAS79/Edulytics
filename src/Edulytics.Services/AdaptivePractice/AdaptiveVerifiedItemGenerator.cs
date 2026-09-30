@@ -16,6 +16,69 @@ namespace Edulytics.Services.AdaptivePractice;
 /// </summary>
 public sealed class AdaptiveVerifiedItemGenerator
 {
+    public AdaptiveNextItemDecision NormalizeDecisionToTruthfulCapability(
+        AdaptiveNextItemDecision decision,
+        int currentComplexityScore)
+    {
+        ArgumentNullException.ThrowIfNull(decision);
+
+        if (currentComplexityScore is < 0 or >
+            AdaptiveNextItemDecisionEngine.MaximumComplexityScore)
+        {
+            throw new ArgumentOutOfRangeException(
+                nameof(currentComplexityScore));
+        }
+
+        var requestedCognitive =
+            CognitiveDifficultyFor(
+                decision.TargetComplexityScore);
+        var capability =
+            ResolveTruthfulCapability(
+                decision.TargetQuestionFamily,
+                requestedCognitive);
+        var effectiveCognitive =
+            requestedCognitive < capability.MinimumDifficulty
+                ? capability.MinimumDifficulty
+                : requestedCognitive > capability.MaximumDifficulty
+                    ? capability.MaximumDifficulty
+                    : requestedCognitive;
+
+        var achievedComplexity =
+            ClampComplexityToCognitiveBand(
+                decision.TargetComplexityScore,
+                effectiveCognitive);
+
+        var reason = decision.ReasonCode;
+        var progressionEligible =
+            decision.ProgressionEligible;
+
+        if (reason is
+            AdaptivePracticeDecisionReasonCodes.ComplexityProgress or
+            AdaptivePracticeDecisionReasonCodes.ComplexityReduce or
+            AdaptivePracticeDecisionReasonCodes.ComplexityConsolidate)
+        {
+            reason =
+                achievedComplexity > currentComplexityScore
+                    ? AdaptivePracticeDecisionReasonCodes
+                        .ComplexityProgress
+                    : achievedComplexity < currentComplexityScore
+                        ? AdaptivePracticeDecisionReasonCodes
+                            .ComplexityReduce
+                        : AdaptivePracticeDecisionReasonCodes
+                            .ComplexityConsolidate;
+
+            progressionEligible =
+                achievedComplexity > currentComplexityScore;
+        }
+
+        return decision with
+        {
+            TargetComplexityScore = achievedComplexity,
+            ReasonCode = reason,
+            ProgressionEligible = progressionEligible
+        };
+    }
+
     public AssessmentItem GenerateOne(
         Guid schoolId,
         Guid curriculumAdoptionId,
@@ -197,6 +260,26 @@ public sealed class AdaptiveVerifiedItemGenerator
             _ => PracticeCognitiveDifficulty.Challenge
         };
     }
+
+    private static int ClampComplexityToCognitiveBand(
+        int requestedComplexity,
+        PracticeCognitiveDifficulty effectiveDifficulty) =>
+        effectiveDifficulty switch
+        {
+            PracticeCognitiveDifficulty.Standard =>
+                Math.Min(requestedComplexity, 55),
+            PracticeCognitiveDifficulty.Stretch =>
+                Math.Clamp(requestedComplexity, 56, 67),
+            PracticeCognitiveDifficulty.Challenge =>
+                Math.Clamp(
+                    requestedComplexity,
+                    68,
+                    AdaptiveNextItemDecisionEngine
+                        .MaximumComplexityScore),
+            _ =>
+                throw new InvalidOperationException(
+                    "Unsupported adaptive cognitive difficulty.")
+        };
 
     private static StudentPrivatePracticeDifficulty DifficultyFor(
         PracticeCognitiveDifficulty difficulty) =>
