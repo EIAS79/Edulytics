@@ -146,33 +146,44 @@ public sealed class AdaptiveIntelligenceV2Service(
         var itemsById =
             items.ToDictionary(x => x.Id);
 
+        var lessonDisplayMetadata =
+            await practiceRepository.GetLessonDisplayMetadataAsync(
+                student.SchoolId,
+                sessions
+                    .Select(x => x.CurriculumAdoptionId)
+                    .Distinct()
+                    .ToArray(),
+                sessions
+                    .Select(x => x.CurriculumPedagogicalLessonId)
+                    .Distinct()
+                    .ToArray(),
+                cancellationToken);
+
         var sessionDisplay =
             new Dictionary<Guid, (string CurriculumLabel, string LessonTitle)>();
 
-        foreach (var adoptionGroup in sessions
-                     .GroupBy(x => x.CurriculumAdoptionId))
+        foreach (var session in sessions)
         {
-            var context =
-                await privatePracticeRepository.GetContextAsync(
-                    actorUserId,
-                    adoptionGroup.Key,
-                    cancellationToken);
-
-            foreach (var session in adoptionGroup)
+            if (lessonDisplayMetadata.TryGetValue(
+                    (
+                        session.CurriculumAdoptionId,
+                        session.CurriculumPedagogicalLessonId
+                    ),
+                    out var metadata))
             {
-                var lessonTitle = context?.Lessons
-                    .FirstOrDefault(x =>
-                        x.Id == session.CurriculumPedagogicalLessonId)
-                    ?.Title;
-
                 sessionDisplay[session.Id] =
                     (
-                        BuildCurriculumLabel(session.LessonCode),
-                        string.IsNullOrWhiteSpace(lessonTitle)
-                            ? BuildLessonTitle(session.LessonCode)
-                            : lessonTitle!
+                        BuildCurriculumLabel(metadata.CurriculumCode),
+                        metadata.LessonTitle
                     );
+                continue;
             }
+
+            sessionDisplay[session.Id] =
+                (
+                    BuildCurriculumLabel(session.LessonCode),
+                    BuildLessonTitle(session.LessonCode)
+                );
         }
 
         var rows = turns
