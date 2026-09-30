@@ -217,6 +217,118 @@ public sealed class AdaptiveProductionClosureRegressionTests
     }
 
     [Fact]
+    public void AdaptiveReviewKeepsSubmittedAnswerAndReplacesCheckWithNext()
+    {
+        var view = Read(
+            "src/Edulytics.Web/Views/StudentAdaptivePractice/Attempt.cshtml");
+        var contracts = Read(
+            "src/Edulytics.Services/AdaptivePractice/AdaptivePracticeServiceContracts.cs");
+        var service = Read(
+            "src/Edulytics.Services/AdaptivePractice/AdaptivePracticeV2Service.cs");
+
+        Assert.Contains(
+            "string SubmittedAnswer",
+            contracts,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "turn.SubmittedAnswer ??",
+            service,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "value=\"@reviewAnswer\"",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "readonly",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "data-practice-next",
+            view,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void AdaptiveWrongRetrySpeaksHintBeforeRepeatingQuestion()
+    {
+        var view = Read(
+            "src/Edulytics.Web/Views/StudentAdaptivePractice/Attempt.cshtml");
+        var javascript = Read(
+            "src/Edulytics.Web/wwwroot/js/student-lesson-practice.js");
+
+        Assert.Contains(
+            "data-practice-retry-feedback",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "const retryFeedback = document.querySelector(\"[data-practice-retry-feedback]\")",
+            javascript,
+            StringComparison.Ordinal);
+
+        var branchStart = javascript.IndexOf(
+            "if (retryFeedback)",
+            StringComparison.Ordinal);
+        var branchEnd = javascript.IndexOf(
+            "return parts;",
+            branchStart,
+            StringComparison.Ordinal);
+        var retryBranch = javascript[
+            branchStart..branchEnd];
+
+        Assert.True(branchStart >= 0);
+        Assert.True(branchEnd > branchStart);
+        Assert.True(
+            retryBranch.IndexOf(
+                "parts.push(hint.textContent.trim())",
+                StringComparison.Ordinal) <
+            retryBranch.IndexOf(
+                "parts.push(question.textContent.trim())",
+                StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public void StudentQuestionLogUsesLearnerFacingAdaptiveLanguage()
+    {
+        var view = Read(
+            "src/Edulytics.Web/Views/StudentAdaptiveIntelligence/QuestionLog.cshtml");
+        var contracts = Read(
+            "src/Edulytics.Services/AdaptivePractice/AdaptiveIntelligenceV2Contracts.cs");
+
+        Assert.Contains(
+            "Correct first attempt",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "Correct after retry",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "Closed incorrect",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "You answered recent questions correctly, so Edulytics increased the challenge.",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "CurriculumLabel",
+            contracts,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "LessonTitle",
+            contracts,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "bounded increase in mathematical complexity",
+            view,
+            StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain(
+            "Technical details",
+            view,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void CompletedAdaptivePracticeIsAlwaysSilent()
     {
         var view = Read(
