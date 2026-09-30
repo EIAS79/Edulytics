@@ -1137,9 +1137,11 @@ public sealed partial class AssessmentService
         var context = await ResolveQuestionContextAsync(actorUserId, request.QuestionId, cancellationToken);
         if (!context.Succeeded) return Fail(context.Error!.Value);
 
+        var assessment = context.Assessment!;
+
         if (!await CanEditAssessmentContentAsync(
                 context.Scope!.School!.Id,
-                context.Assessment!,
+                assessment,
                 cancellationToken))
         {
             return Fail(AssessmentErrorCode.AssessmentNotDraft);
@@ -1152,23 +1154,23 @@ public sealed partial class AssessmentService
         var topic = await _repo.GetCurriculumTopicAsync(schoolId, outcome.TopicId, cancellationToken);
         if (topic is null) return Fail(AssessmentErrorCode.OutcomeNotFound);
 
-        var classGroup = await _repo.GetClassGroupAsync(schoolId, context.Assessment.ClassGroupId, cancellationToken);
+        var classGroup = await _repo.GetClassGroupAsync(schoolId, assessment.ClassGroupId, cancellationToken);
         if (classGroup is null) return Fail(AssessmentErrorCode.ClassGroupNotFound);
 
         var snapshot = await _repo.GetSnapshotAsync(schoolId, cancellationToken);
         var eligibleFrameworkVersionIds =
             ResolveEligibleFrameworkVersionIds(
                 snapshot,
-                context.Assessment.AcademicYearId,
+                assessment.AcademicYearId,
                 classGroup.GradeLevelId,
-                context.Assessment.SubjectId,
+                assessment.SubjectId,
                 classGroup.AcademicProgramId);
 
         if (outcome.AcademicProgramId != classGroup.AcademicProgramId ||
             topic.AcademicProgramId != classGroup.AcademicProgramId ||
-            outcome.SubjectId != context.Assessment.SubjectId ||
+            outcome.SubjectId != assessment.SubjectId ||
             outcome.GradeLevelId != classGroup.GradeLevelId ||
-            topic.SubjectId != context.Assessment.SubjectId ||
+            topic.SubjectId != assessment.SubjectId ||
             topic.GradeLevelId != classGroup.GradeLevelId ||
             topic.FrameworkVersionId != outcome.FrameworkVersionId ||
             !eligibleFrameworkVersionIds.Contains(outcome.FrameworkVersionId))
@@ -1192,7 +1194,7 @@ public sealed partial class AssessmentService
             mapping,
             cancellationToken);
 
-        context.Assessment.UpdatedAtUtc =
+        assessment.UpdatedAtUtc =
             DateTime.UtcNow;
 
         await QueueAuditAsync(
@@ -1227,9 +1229,11 @@ public sealed partial class AssessmentService
         var context = await ResolveQuestionContextAsync(actorUserId, request.QuestionId, cancellationToken);
         if (!context.Succeeded) return Fail(context.Error!.Value);
 
+        var assessment = context.Assessment!;
+
         if (!await CanEditAssessmentContentAsync(
                 context.Scope!.School!.Id,
-                context.Assessment!,
+                assessment,
                 cancellationToken))
         {
             return Fail(AssessmentErrorCode.AssessmentNotDraft);
@@ -1245,7 +1249,7 @@ public sealed partial class AssessmentService
 
         _repo.RemoveMapping(mapping);
 
-        context.Assessment.UpdatedAtUtc =
+        assessment.UpdatedAtUtc =
             DateTime.UtcNow;
 
         await QueueAuditAsync(
