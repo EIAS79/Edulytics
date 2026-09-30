@@ -10,10 +10,9 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Edulytics.Data.Migrations
 {
-    [DbContext(typeof(EdulyticsDbContext))]
-    partial class EdulyticsDbContextModelSnapshot : ModelSnapshot
+    partial class AddAssessmentTypesAndAttempts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -140,7 +140,10 @@ public sealed partial class AssessmentService
             subjects
                 .OrderBy(x => x.Name)
                 .Select(x => new AssessmentSubjectItem(x.Id, x.Name, x.Code))
-                .ToArray());
+                .ToArray())
+        {
+            SchoolTimeZoneId = scope.School?.TimeZoneId ?? "UTC"
+        };
     }
 
     private static IReadOnlyList<AssessmentQuestionItem> BuildQuestions(
@@ -181,7 +184,16 @@ public sealed partial class AssessmentService
             x.TargetType,
             x.TargetStudentProfileId,
             x.DeliveryMode,
-            x.DifficultyBand);
+            x.DifficultyBand)
+        {
+            AssessmentType = x.AssessmentType,
+            AvailableFromUtc = x.AvailableFromUtc,
+            DueAtUtc = x.DueAtUtc,
+            AttemptTimeLimitMinutes = x.AttemptTimeLimitMinutes,
+            ResultReleaseStatus = x.ResultReleaseStatus,
+            ResultsPublishedAtUtc = x.ResultsPublishedAtUtc,
+            ResultsPublishedByUserId = x.ResultsPublishedByUserId
+        };
 
     private async Task<ScopeResult> ResolveScopeAsync(
         Guid actorUserId,
@@ -234,6 +246,46 @@ public sealed partial class AssessmentService
             assessment.ClassGroupId,
             assessment.SubjectId,
             cancellationToken);
+
+    private async Task<bool> CanEditAssessmentMetadataAsync(
+        Guid schoolId,
+        Assessment assessment,
+        CancellationToken cancellationToken)
+    {
+        if (await CanEditAssessmentContentAsync(
+                schoolId,
+                assessment,
+                cancellationToken))
+        {
+            return true;
+        }
+
+        return assessment.Status == AssessmentStatus.Open &&
+               assessment.AssessmentType == AssessmentType.Homework &&
+               assessment.DueAtUtc.HasValue &&
+               DateTime.UtcNow < assessment.DueAtUtc.Value;
+    }
+
+    private async Task<bool> CanEditAssessmentContentAsync(
+        Guid schoolId,
+        Assessment assessment,
+        CancellationToken cancellationToken)
+    {
+        if (assessment.Status == AssessmentStatus.Draft)
+            return true;
+
+        if (assessment.Status != AssessmentStatus.Open ||
+            assessment.AssessmentType != AssessmentType.Exam ||
+            !assessment.AvailableFromUtc.HasValue ||
+            DateTime.UtcNow >= assessment.AvailableFromUtc.Value)
+        {
+            return false;
+        }
+
+        var snapshot = await _repo.GetSnapshotAsync(schoolId, cancellationToken);
+        return !snapshot.AssessmentAttempts.Any(x => x.AssessmentId == assessment.Id) &&
+               !snapshot.Results.Any(x => x.AssessmentId == assessment.Id);
+    }
 
     private static bool CanManage(
         ScopeResult scope,

@@ -1,15 +1,44 @@
+@using Edulytics.Core.Enums
 @model Edulytics.Web.ViewModels.Assessments.AssessmentEditViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AssessmentResource> A
 @{
     ViewData["Title"] = A["EditAssessment"];
     var assessment = Model.Details.Assessment;
     var hasQuestions = Model.Details.Questions.Count > 0;
+    var isScored = assessment.AssessmentType == AssessmentType.Exam;
+    var isPublishedHomeworkDueEdit =
+        assessment.Status == AssessmentStatus.Open &&
+        assessment.AssessmentType == AssessmentType.Homework;
+
+    TimeZoneInfo schoolTimeZone;
+    try
+    {
+        schoolTimeZone = TimeZoneInfo.FindSystemTimeZoneById(Model.Details.SchoolTimeZoneId);
+    }
+    catch
+    {
+        schoolTimeZone = TimeZoneInfo.Utc;
+    }
+
+    string LocalInput(DateTime? utc) =>
+        utc.HasValue
+            ? TimeZoneInfo.ConvertTimeFromUtc(
+                DateTime.SpecifyKind(utc.Value, DateTimeKind.Utc),
+                schoolTimeZone).ToString("yyyy-MM-ddTHH:mm")
+            : string.Empty;
 }
 <section class="assessment-page assessment-edit-page">
     <header class="assessment-header">
         <div>
             <h1>@A["EditAssessment"]</h1>
-            <p>@assessment.Title</p>
+            <p>
+                @assessment.Title ·
+                <strong>@(assessment.AssessmentType == AssessmentType.Exam
+                    ? "Exam / Test"
+                    : assessment.AssessmentType == AssessmentType.Homework
+                        ? "Homework"
+                        : "Worksheet")</strong>
+            </p>
         </div>
         <a class="school-button"
            asp-action="Details"
@@ -29,33 +58,111 @@
                    value="@Convert.ToBase64String(assessment.RowVersion)" />
 
             <label for="title">@A["Title"]</label>
-            <input id="title" name="title"
-                   value="@assessment.Title" maxlength="200" required />
-
-            <label for="assessmentDate">@A["AssessmentDate"]</label>
-            <input id="assessmentDate" name="assessmentDate"
-                   type="date"
-                   value="@assessment.AssessmentDate.ToString("yyyy-MM-dd")"
-                   required />
-
-            <label for="maxScore">@A["MaxScore"]</label>
-            @if (hasQuestions)
+            @if (isPublishedHomeworkDueEdit)
             {
-                <input type="hidden" name="maxScore"
-                       value="@assessment.MaxScore.ToString(System.Globalization.CultureInfo.InvariantCulture)" />
-                <input id="maxScore"
-                       type="number"
-                       value="@assessment.MaxScore.ToString(System.Globalization.CultureInfo.InvariantCulture)"
-                       readonly
-                       aria-readonly="true" />
-                <small class="assessment-info">Maximum score is locked once questions exist and is controlled by question marks.</small>
+                <input id="title" name="title"
+                       value="@assessment.Title" maxlength="200"
+                       readonly aria-readonly="true" required />
             }
             else
             {
-                <input id="maxScore" name="maxScore"
-                       type="number" min="1" max="10000" step="1"
-                       value="@assessment.MaxScore.ToString(System.Globalization.CultureInfo.InvariantCulture)"
+                <input id="title" name="title"
+                       value="@assessment.Title" maxlength="200" required />
+            }
+
+            <label for="assessmentDate">@A["AssessmentDate"]</label>
+            @if (isPublishedHomeworkDueEdit)
+            {
+                <input id="assessmentDate" name="assessmentDate"
+                       type="date"
+                       value="@assessment.AssessmentDate.ToString("yyyy-MM-dd")"
+                       readonly aria-readonly="true" required />
+            }
+            else
+            {
+                <input id="assessmentDate" name="assessmentDate"
+                       type="date"
+                       value="@assessment.AssessmentDate.ToString("yyyy-MM-dd")"
                        required />
+            }
+
+            @if (isScored)
+            {
+                <label for="maxScore">@A["MaxScore"]</label>
+                @if (hasQuestions)
+                {
+                    <input type="hidden" name="maxScore"
+                           value="@assessment.MaxScore.ToString(System.Globalization.CultureInfo.InvariantCulture)" />
+                    <input id="maxScore"
+                           type="number"
+                           value="@assessment.MaxScore.ToString(System.Globalization.CultureInfo.InvariantCulture)"
+                           readonly
+                           aria-readonly="true" />
+                    <small class="assessment-info">Maximum score is locked once questions exist and is controlled by question marks.</small>
+                }
+                else
+                {
+                    <input id="maxScore" name="maxScore"
+                           type="number" min="1" max="10000" step="1"
+                           value="@assessment.MaxScore.ToString(System.Globalization.CultureInfo.InvariantCulture)"
+                           required />
+                }
+            }
+            else
+            {
+                <input type="hidden" name="maxScore" value="0" />
+            }
+
+            @if (assessment.AssessmentType == AssessmentType.Homework)
+            {
+                <input type="hidden" name="deliveryMode" value="@AssessmentDeliveryMode.Online" />
+                <label>Return / due time</label>
+                <input name="dueAtLocal"
+                       type="datetime-local"
+                       value="@LocalInput(assessment.DueAtUtc)"
+                       required />
+                <small class="assessment-info">
+                    School time zone: @Model.Details.SchoolTimeZoneId. Homework is online and unscored.
+                    @if (isPublishedHomeworkDueEdit)
+                    {
+                        <text> Only the due time can be changed after publishing.</text>
+                    }
+                </small>
+            }
+            else
+            {
+                <label>Delivery</label>
+                <select name="deliveryMode">
+                    <option value="@AssessmentDeliveryMode.Online" selected="@(assessment.DeliveryMode == AssessmentDeliveryMode.Online)">Online</option>
+                    <option value="@AssessmentDeliveryMode.Offline" selected="@(assessment.DeliveryMode == AssessmentDeliveryMode.Offline)">Offline</option>
+                </select>
+
+                @if (assessment.AssessmentType == AssessmentType.Exam)
+                {
+                    <label>Starts at (optional)</label>
+                    <input name="availableFromLocal"
+                           type="datetime-local"
+                           value="@LocalInput(assessment.AvailableFromUtc)" />
+
+                    <label>Hard end (optional)</label>
+                    <input name="dueAtLocal"
+                           type="datetime-local"
+                           value="@LocalInput(assessment.DueAtUtc)" />
+
+                    <label>Attempt time limit in minutes (optional)</label>
+                    <input name="attemptTimeLimitMinutes"
+                           type="number"
+                           min="1"
+                           max="480"
+                           step="1"
+                           value="@assessment.AttemptTimeLimitMinutes" />
+                    <small class="assessment-info">School time zone: @Model.Details.SchoolTimeZoneId.</small>
+                }
+            }
+
+            @if (assessment.AssessmentType == AssessmentType.Worksheet)
+            {
+                <div class="assessment-info">Worksheet has no marks and no due/return time.</div>
             }
 
             <button type="submit"

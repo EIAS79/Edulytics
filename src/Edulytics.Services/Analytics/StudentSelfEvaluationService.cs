@@ -111,10 +111,19 @@ public sealed class StudentSelfEvaluationService : IStudentSelfEvaluationService
         try
         {
             var now = DateTime.UtcNow;
+            var studentVisibleProjection = projection with
+            {
+                Assessments = projection.Assessments
+                    .Where(x =>
+                        x.AssessmentType != AssessmentType.Exam ||
+                        (x.Status == AssessmentStatus.Closed &&
+                         x.ResultReleaseStatus == AssessmentResultReleaseStatus.Published))
+                    .ToArray()
+            };
             var officialEvidence =
-                _evaluation.NormalizeOfficialEvidence(projection);
+                _evaluation.NormalizeOfficialEvidence(studentVisibleProjection);
             var official = _evaluation.BuildStudentSubject(
-                projection,
+                studentVisibleProjection,
                 officialEvidence,
                 student.Id,
                 academicYearId,
@@ -225,7 +234,7 @@ public sealed class StudentSelfEvaluationService : IStudentSelfEvaluationService
                 .ToArray();
 
             var assessmentRows = BuildAssessmentRows(
-                projection,
+                studentVisibleProjection,
                 officialEvidence
                     .Where(x =>
                         x.StudentProfileId == student.Id &&
@@ -239,7 +248,7 @@ public sealed class StudentSelfEvaluationService : IStudentSelfEvaluationService
                 subjectId);
 
             var termRows = BuildTermRows(
-                projection,
+                studentVisibleProjection,
                 officialEvidence
                     .Where(x =>
                         x.StudentProfileId == student.Id &&

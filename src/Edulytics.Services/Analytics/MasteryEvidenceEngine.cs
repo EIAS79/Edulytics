@@ -282,7 +282,9 @@ internal static class MasteryEvidenceEngine
         var students = source.StudentProfiles.ToDictionary(x => x.Id);
         var outcomes = source.LearningOutcomes.ToDictionary(x => x.Id);
         var assessments = source.Assessments
-            .Where(x => x.Status != AssessmentStatus.Draft)
+            .Where(x =>
+                x.Status != AssessmentStatus.Draft &&
+                x.AssessmentType == AssessmentType.Exam)
             .ToDictionary(x => x.Id);
         var questions = source.AssessmentQuestions.ToDictionary(x => x.Id);
         var results = source.AssessmentResults

@@ -78,6 +78,12 @@ public interface IAssessmentService
         byte[] rowVersion,
         CancellationToken cancellationToken = default);
 
+    Task<AssessmentCommandResult> PublishResultsAsync(
+        Guid actorUserId,
+        Guid assessmentId,
+        byte[] rowVersion,
+        CancellationToken cancellationToken = default);
+
     Task<AssessmentCommandResult> ImportStudentResultsAsync(
         Guid actorUserId,
         ImportAssessmentResultsRequest request,

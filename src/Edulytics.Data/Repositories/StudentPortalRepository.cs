@@ -167,6 +167,15 @@ public sealed class StudentPortalRepository : IStudentPortalRepository
                 .OrderByDescending(x => x.UpdatedAtUtc)
                 .ToArrayAsync(cancellationToken);
 
+        var assessmentAttempts =
+            await _db.AssessmentAttempts
+                .AsNoTracking()
+                .Where(
+                    x =>
+                        x.SchoolId == schoolId &&
+                        x.StudentProfileId == profile.Id)
+                .ToArrayAsync(cancellationToken);
+
         return new StudentPortalSnapshot(
             profile,
             enrollments,
@@ -179,7 +188,10 @@ public sealed class StudentPortalRepository : IStudentPortalRepository
             frameworkVersions,
             curriculumNodes,
             assessments,
-            results);
+            results)
+        {
+            AssessmentAttempts = assessmentAttempts
+        };
     }
 
     private static StudentPortalSnapshot Empty() =>

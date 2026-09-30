@@ -106,7 +106,10 @@ public sealed partial class AssessmentService : IAssessmentService
                 outcomes,
                 workspace.ClassGroups,
                 workspace.Subjects,
-                workspace.Terms));
+                workspace.Terms)
+            {
+                SchoolTimeZoneId = scope.School.TimeZoneId
+            });
     }
 
     public async Task<AssessmentQueryResult<AssessmentQuestionItem>> GetQuestionAsync(
@@ -152,6 +155,9 @@ public sealed partial class AssessmentService : IAssessmentService
 
         if (!CanManage(scope, snapshot, assessment))
             return AssessmentQueryResult<AssessmentResultsWorkspace>.Failure(AssessmentErrorCode.AccessDenied);
+
+        if (assessment.AssessmentType != AssessmentType.Exam)
+            return AssessmentQueryResult<AssessmentResultsWorkspace>.Failure(AssessmentErrorCode.InvalidAssessmentType);
 
         if (assessment.Status == AssessmentStatus.Draft)
             return AssessmentQueryResult<AssessmentResultsWorkspace>.Failure(AssessmentErrorCode.AssessmentNotOpen);

@@ -22,6 +22,13 @@
     var draftQuestionCount = Model.Questions.Count(x => x.Status == AssessmentBuilderQuestionStatus.Draft);
     var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
     var approveAllLabel = isPolish ? "Zatwierdź wszystkie pytania robocze" : "Approve all draft questions";
+    var isScored = assessment.AssessmentType == AssessmentType.Exam;
+    var canEditContent =
+        assessment.Status == AssessmentStatus.Draft ||
+        (assessment.Status == AssessmentStatus.Open &&
+         assessment.AssessmentType == AssessmentType.Exam &&
+         assessment.AvailableFromUtc.HasValue &&
+         DateTime.UtcNow < assessment.AvailableFromUtc.Value);
 }
 <link rel="stylesheet" href="~/css/assessment-builder.css" asp-append-version="true" />
 
@@ -40,7 +47,19 @@
         <div class="ed-builder-summary-item"><span>@A["Class"]</span><strong>@(classItem?.Name ?? "—")</strong></div>
         <div class="ed-builder-summary-item"><span>@A["Subject"]</span><strong>@(subjectItem?.Name ?? "—")</strong></div>
         <div class="ed-builder-summary-item"><span>@A["Questions"]</span><strong>@Model.Questions.Count</strong></div>
-        <div class="ed-builder-summary-item"><span>@A["CurrentMarks"]</span><strong>@Model.CurrentMarks.ToString("0.##") / @assessment.MaxScore.ToString("0.##")</strong></div>
+        @if (isScored)
+        {
+            <div class="ed-builder-summary-item"><span>@A["CurrentMarks"]</span><strong>@Model.CurrentMarks.ToString("0.##") / @assessment.MaxScore.ToString("0.##")</strong></div>
+        }
+        else
+        {
+            <div class="ed-builder-summary-item">
+                <span>@(isPolish ? "Typ" : "Type")</span>
+                <strong>@(assessment.AssessmentType == AssessmentType.Homework
+                    ? (isPolish ? "Praca domowa" : "Homework")
+                    : (isPolish ? "Karta pracy" : "Worksheet")) · @(isPolish ? "bez ocen" : "unscored")</strong>
+            </div>
+        }
         <div class="ed-builder-summary-item">
             <span>@A["CurrentDelivery"]</span>
             <strong class="ed-delivery-badge @(assessment.DeliveryMode == AssessmentDeliveryMode.Online ? "is-online" : "is-offline")">
@@ -62,7 +81,7 @@
     <div class="assessment-info">@A[Model.ReadinessMessage]</div>
 
 
-    @if (assessment.Status == AssessmentStatus.Draft)
+    @if (canEditContent)
     {
         <div class="ed-builder-workspace-grid">
             <section class="assessment-card ed-builder-card">
@@ -88,10 +107,21 @@
                     </select>
 
                     <label>@A["DeliveryMode"]</label>
-                    <select name="deliveryMode">
-                        <option value="@AssessmentDeliveryMode.Online" selected="@(assessment.DeliveryMode == AssessmentDeliveryMode.Online)">@A["DeliveryOnline"]</option>
-                        <option value="@AssessmentDeliveryMode.Offline" selected="@(assessment.DeliveryMode == AssessmentDeliveryMode.Offline)">@A["DeliveryOffline"]</option>
-                    </select>
+                    @if (assessment.AssessmentType == AssessmentType.Homework)
+                    {
+                        <input type="hidden" name="deliveryMode" value="@AssessmentDeliveryMode.Online" />
+                        <input value="@A["DeliveryOnline"]" readonly aria-readonly="true" />
+                        <small class="assessment-info">@(isPolish
+                            ? "Praca domowa jest zawsze wykonywana online."
+                            : "Homework is always completed online.")</small>
+                    }
+                    else
+                    {
+                        <select name="deliveryMode">
+                            <option value="@AssessmentDeliveryMode.Online" selected="@(assessment.DeliveryMode == AssessmentDeliveryMode.Online)">@A["DeliveryOnline"]</option>
+                            <option value="@AssessmentDeliveryMode.Offline" selected="@(assessment.DeliveryMode == AssessmentDeliveryMode.Offline)">@A["DeliveryOffline"]</option>
+                        </select>
+                    }
 
                     <label>@A["AssessmentDifficulty"]</label>
                     <select name="difficultyBand">
@@ -133,12 +163,22 @@
                                 <label for="ai-question-count">@A["PlannedQuestionCount"]</label>
                                 <input id="ai-question-count" name="questionCount" type="number" min="1" max="50" value="5" required inputmode="numeric" />
                             </div>
-                            <div>
-                                <label for="ai-max-score">@A["QuestionMaxScore"]</label>
-                                <input id="ai-max-score" name="maxScorePerQuestion" type="number" min="1" step="1" placeholder="@A["Automatic"]" />
-                            </div>
+                            @if (isScored)
+                            {
+                                <div>
+                                    <label for="ai-max-score">@A["QuestionMaxScore"]</label>
+                                    <input id="ai-max-score" name="maxScorePerQuestion" type="number" min="1" step="1" placeholder="@A["Automatic"]" />
+                                </div>
+                            }
+                            else
+                            {
+                                <input type="hidden" name="maxScorePerQuestion" value="0" />
+                            }
                         </div>
-                        <p class="assessment-info">@A["AiAutoMarksHelp"]</p>
+                        @if (isScored)
+                        {
+                            <p class="assessment-info">@A["AiAutoMarksHelp"]</p>
+                        }
 
                         <label for="ai-difficulty">@A["AssessmentDifficulty"]</label>
                         <select id="ai-difficulty" name="difficulty">
@@ -272,7 +312,14 @@
                 <textarea name="solution" maxlength="4000" rows="3"></textarea>
 
                 <div class="ed-builder-three-column-fields">
-                    <div><label>@A["QuestionMaxScore"]</label><input name="maxScore" type="number" min="1" max="10000" step="1" required /></div>
+                    @if (isScored)
+                    {
+                        <div><label>@A["QuestionMaxScore"]</label><input name="maxScore" type="number" min="1" max="10000" step="1" required /></div>
+                    }
+                    else
+                    {
+                        <input type="hidden" name="maxScore" value="0" />
+                    }
                     <div><label>@A["Order"]</label><input name="order" type="number" min="1" value="@(Model.Questions.Count + 1)" required /></div>
                     <div>
                         <label>@A["Difficulty"]</label>
@@ -317,7 +364,7 @@
                 <h2>@A["Questions"]</h2>
                 <span>@Model.Questions.Count</span>
             </div>
-            @if (assessment.Status == AssessmentStatus.Draft && draftQuestionCount > 0)
+            @if (canEditContent && draftQuestionCount > 0)
             {
                 <form asp-action="ApproveAll" asp-route-assessmentId="@assessment.Id" method="post" class="ed-builder-approve-all-form">
                     @Html.AntiForgeryToken()
@@ -377,7 +424,7 @@
                     }
                 </div>
 
-                @if (assessment.Status == AssessmentStatus.Draft && question.Status != AssessmentBuilderQuestionStatus.Legacy)
+                @if (canEditContent && question.Status != AssessmentBuilderQuestionStatus.Legacy)
                 {
                     @if (!isApproved)
                     {
@@ -393,7 +440,14 @@
                                 <label>@A["Solution"]</label>
                                 <textarea name="solution" maxlength="4000" rows="3">@question.Solution</textarea>
                                 <div class="ed-builder-three-column-fields">
-                                    <div><label>@A["QuestionMaxScore"]</label><input name="maxScore" type="number" min="1" max="10000" step="1" value="@question.MaxScore" required /></div>
+                                    @if (isScored)
+                                    {
+                                        <div><label>@A["QuestionMaxScore"]</label><input name="maxScore" type="number" min="1" max="10000" step="1" value="@question.MaxScore" required /></div>
+                                    }
+                                    else
+                                    {
+                                        <input type="hidden" name="maxScore" value="0" />
+                                    }
                                     <div><label>@A["Order"]</label><input name="order" type="number" min="1" value="@question.Order" required /></div>
                                     <div>
                                         <label>@A["Difficulty"]</label>
@@ -470,7 +524,7 @@
     }
 </section>
 
-@if (assessment.Status == AssessmentStatus.Draft)
+@if (canEditContent)
 {
     <script>
         (() => {

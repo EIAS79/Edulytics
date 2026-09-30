@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using Edulytics.Core.Constants;
+using Edulytics.Core.Enums;
 using Edulytics.Services.Assessments;
 using Edulytics.Web.Assessments;
 using Edulytics.Web.ViewModels.Assessments;
@@ -50,9 +51,17 @@ public sealed class AssessmentsController : Controller
         string title,
         DateOnly assessmentDate,
         decimal maxScore,
+        AssessmentType assessmentType,
+        AssessmentDeliveryMode deliveryMode,
+        DateTime? availableFromLocal,
+        DateTime? dueAtLocal,
+        int? attemptTimeLimitMinutes,
         CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
+
+        if (assessmentType == AssessmentType.Homework)
+            deliveryMode = AssessmentDeliveryMode.Online;
 
         var result = await _service.CreateAssessmentAsync(
             actorId,
@@ -62,7 +71,12 @@ public sealed class AssessmentsController : Controller
                 termId,
                 title,
                 assessmentDate,
-                maxScore),
+                maxScore,
+                assessmentType,
+                deliveryMode,
+                availableFromLocal,
+                dueAtLocal,
+                attemptTimeLimitMinutes),
             cancellationToken);
 
         SetFeedback(result, "SuccessAssessmentCreated");
@@ -105,6 +119,10 @@ public sealed class AssessmentsController : Controller
         string title,
         DateOnly assessmentDate,
         decimal maxScore,
+        AssessmentDeliveryMode? deliveryMode,
+        DateTime? availableFromLocal,
+        DateTime? dueAtLocal,
+        int? attemptTimeLimitMinutes,
         string rowVersion,
         CancellationToken cancellationToken)
     {
@@ -118,7 +136,16 @@ public sealed class AssessmentsController : Controller
 
         var result = await _service.UpdateAssessmentAsync(
             actorId,
-            new UpdateAssessmentRequest(id, title, assessmentDate, maxScore, bytes),
+            new UpdateAssessmentRequest(
+                id,
+                title,
+                assessmentDate,
+                maxScore,
+                bytes,
+                deliveryMode,
+                availableFromLocal,
+                dueAtLocal,
+                attemptTimeLimitMinutes),
             cancellationToken);
 
         SetFeedback(result, "SuccessAssessmentUpdated");
@@ -393,6 +420,34 @@ public sealed class AssessmentsController : Controller
     }
 
     [Authorize(Roles = RoleNames.Teacher)]
+    [HttpPost("{id:guid}/results/publish")]
+    [ValidateAntiForgeryToken]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public async Task<IActionResult> PublishResults(
+        Guid id,
+        string rowVersion,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+
+        if (!TryDecodeRowVersion(rowVersion, out var bytes))
+        {
+            TempData["Error"] = _text["ErrorConcurrencyConflict"].Value;
+            return RedirectToAction(nameof(Details), new { id });
+        }
+
+        var result = await _service.PublishResultsAsync(
+            actorId,
+            id,
+            bytes,
+            cancellationToken);
+
+        SetFeedback(result, "SuccessResultsPublished");
+        return RedirectToAction(nameof(Details), new { id });
+    }
+
+    [Authorize(Roles = RoleNames.Teacher)]
     [HttpPost("{id:guid}/reuse")]
     [ValidateAntiForgeryToken]
     [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
@@ -482,6 +537,9 @@ public sealed class AssessmentsController : Controller
             AssessmentErrorCode.Required => "ErrorRequired",
             AssessmentErrorCode.InvalidText => "ErrorInvalidText",
             AssessmentErrorCode.InvalidDate => "ErrorInvalidDate",
+            AssessmentErrorCode.InvalidAssessmentType => "ErrorInvalidAssessmentType",
+            AssessmentErrorCode.InvalidSchedule => "ErrorInvalidSchedule",
+            AssessmentErrorCode.InvalidDeliveryModeForType => "ErrorInvalidDeliveryModeForType",
             AssessmentErrorCode.InvalidMaxScore => "ErrorInvalidMaxScore",
             AssessmentErrorCode.InvalidQuestionScore => "ErrorInvalidQuestionScore",
             AssessmentErrorCode.InvalidOrder => "ErrorInvalidOrder",
@@ -501,6 +559,7 @@ public sealed class AssessmentsController : Controller
             AssessmentErrorCode.AssessmentNotDraft => "ErrorAssessmentNotDraft",
             AssessmentErrorCode.AssessmentNotOpen => "ErrorAssessmentNotOpen",
             AssessmentErrorCode.AssessmentAlreadyClosed => "ErrorAssessmentAlreadyClosed",
+            AssessmentErrorCode.AssessmentResultsNotReady => "ErrorAssessmentResultsNotReady",
             AssessmentErrorCode.AssessmentHasNoQuestions => "ErrorAssessmentHasNoQuestions",
             AssessmentErrorCode.AssessmentScoreMismatch => "ErrorAssessmentScoreMismatch",
             AssessmentErrorCode.QuestionMissingOutcome => "ErrorQuestionMissingOutcome",

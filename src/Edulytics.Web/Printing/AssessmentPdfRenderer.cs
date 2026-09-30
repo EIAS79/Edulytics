@@ -9,7 +9,8 @@ public static class AssessmentPdfRenderer
 {
     public static byte[] RenderStudentPaper(
         StudentAssessmentPaper paper,
-        AssessmentPdfLabels labels)
+        AssessmentPdfLabels labels,
+        bool showMarks = true)
     {
         ArgumentNullException.ThrowIfNull(paper);
         ArgumentNullException.ThrowIfNull(labels);
@@ -18,7 +19,7 @@ public static class AssessmentPdfRenderer
         var section = document.AddSection();
         ConfigurePage(section);
         AddHeading(section, labels.StudentPaperTitle, paper.Title);
-        AddAssessmentMeta(section, labels, paper.AssessmentDate, paper.MaxScore);
+        AddAssessmentMeta(section, labels, paper.AssessmentDate, paper.MaxScore, showMarks);
 
         var student = section.AddParagraph();
         student.Format.SpaceAfter = Unit.FromPoint(10);
@@ -30,8 +31,11 @@ public static class AssessmentPdfRenderer
             var paragraph = section.AddParagraph();
             paragraph.Format.SpaceBefore = Unit.FromPoint(10);
             paragraph.AddFormattedText($"{question.Order}. {question.Prompt}", TextFormat.Bold);
-            paragraph.AddLineBreak();
-            paragraph.AddText($"{labels.Marks}: {FormatScore(question.MaxScore)}");
+            if (showMarks)
+            {
+                paragraph.AddLineBreak();
+                paragraph.AddText($"{labels.Marks}: {FormatScore(question.MaxScore)}");
+            }
 
             var answerSpace = section.AddParagraph();
             answerSpace.Format.SpaceAfter = Unit.FromPoint(8);
@@ -45,7 +49,8 @@ public static class AssessmentPdfRenderer
 
     public static byte[] RenderTeacherAnswerKey(
         TeacherAssessmentAnswerKey answerKey,
-        AssessmentPdfLabels labels)
+        AssessmentPdfLabels labels,
+        bool showMarks = true)
     {
         ArgumentNullException.ThrowIfNull(answerKey);
         ArgumentNullException.ThrowIfNull(labels);
@@ -54,15 +59,18 @@ public static class AssessmentPdfRenderer
         var section = document.AddSection();
         ConfigurePage(section);
         AddHeading(section, labels.TeacherAnswerKeyTitle, answerKey.Title);
-        AddAssessmentMeta(section, labels, answerKey.AssessmentDate, answerKey.MaxScore);
+        AddAssessmentMeta(section, labels, answerKey.AssessmentDate, answerKey.MaxScore, showMarks);
 
         foreach (var question in answerKey.Questions)
         {
             var paragraph = section.AddParagraph();
             paragraph.Format.SpaceBefore = Unit.FromPoint(10);
             paragraph.AddFormattedText($"{question.Order}. {question.Prompt}", TextFormat.Bold);
-            paragraph.AddLineBreak();
-            paragraph.AddText($"{labels.Marks}: {FormatScore(question.MaxScore)}");
+            if (showMarks)
+            {
+                paragraph.AddLineBreak();
+                paragraph.AddText($"{labels.Marks}: {FormatScore(question.MaxScore)}");
+            }
 
             var answer = section.AddParagraph();
             answer.Format.SpaceAfter = Unit.FromPoint(3);
@@ -123,15 +131,19 @@ public static class AssessmentPdfRenderer
         Section section,
         AssessmentPdfLabels labels,
         DateOnly assessmentDate,
-        decimal maxScore)
+        decimal maxScore,
+        bool showMarks)
     {
         var meta = section.AddParagraph();
         meta.Format.SpaceAfter = Unit.FromPoint(8);
         meta.AddFormattedText($"{labels.Date}: ", TextFormat.Bold);
         meta.AddText(assessmentDate.ToString("d", CultureInfo.CurrentCulture));
-        meta.AddText("    ");
-        meta.AddFormattedText($"{labels.AssessmentMaxScore}: ", TextFormat.Bold);
-        meta.AddText(FormatScore(maxScore));
+        if (showMarks)
+        {
+            meta.AddText("    ");
+            meta.AddFormattedText($"{labels.AssessmentMaxScore}: ", TextFormat.Bold);
+            meta.AddText(FormatScore(maxScore));
+        }
     }
 
     private static byte[] Render(Document document)

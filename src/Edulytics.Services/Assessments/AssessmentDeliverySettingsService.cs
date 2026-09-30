@@ -24,6 +24,7 @@ public interface IAssessmentDeliverySettingsService
 public sealed class AssessmentDeliverySettingsService(
     IAssessmentService assessments,
     IAssessmentBuilderRepository repository,
+    IAssessmentRepository assessmentRepository,
     ISchoolUserRepository users) : IAssessmentDeliverySettingsService
 {
     public async Task<AssessmentQueryResult<AssessmentDeliverySettingsWorkspace>> GetAsync(
@@ -74,8 +75,34 @@ public sealed class AssessmentDeliverySettingsService(
             return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.Required);
 
         var assessment = details.Value.Assessment;
+        if (assessment.AssessmentType == AssessmentType.Homework &&
+            request.DeliveryMode != AssessmentDeliveryMode.Online)
+        {
+            return AssessmentCommandResult.Failure(
+                nameof(request.DeliveryMode),
+                AssessmentErrorCode.InvalidDeliveryModeForType);
+        }
+
         var isDraft = assessment.Status == AssessmentStatus.Draft;
+        var isPreStartScheduledExam =
+            assessment.AssessmentType == AssessmentType.Exam &&
+            assessment.Status == AssessmentStatus.Open &&
+            assessment.AvailableFromUtc.HasValue &&
+            DateTime.UtcNow < assessment.AvailableFromUtc.Value;
+
+        if (isPreStartScheduledExam)
+        {
+            var snapshot = await assessmentRepository.GetSnapshotAsync(
+                actor.SchoolId.Value,
+                cancellationToken);
+
+            isPreStartScheduledExam =
+                !snapshot.AssessmentAttempts.Any(x => x.AssessmentId == assessment.Id) &&
+                !snapshot.Results.Any(x => x.AssessmentId == assessment.Id);
+        }
+
         var isSafeOpenOfflineToOnlineCorrection =
+            assessment.AssessmentType == AssessmentType.Exam &&
             assessment.Status == AssessmentStatus.Open &&
             assessment.DeliveryMode == AssessmentDeliveryMode.Offline &&
             request.DeliveryMode == AssessmentDeliveryMode.Online &&
@@ -83,7 +110,7 @@ public sealed class AssessmentDeliverySettingsService(
             request.TargetStudentProfileId == assessment.TargetStudentProfileId &&
             request.DifficultyBand == assessment.DifficultyBand;
 
-        if (!isDraft && !isSafeOpenOfflineToOnlineCorrection)
+        if (!isDraft && !isPreStartScheduledExam && !isSafeOpenOfflineToOnlineCorrection)
             return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.AssessmentNotDraft);
 
         if (isSafeOpenOfflineToOnlineCorrection)
@@ -108,7 +135,7 @@ public sealed class AssessmentDeliverySettingsService(
         if (context is null)
             return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.AssessmentNotFound);
 
-        if (isDraft)
+        if (isDraft || isPreStartScheduledExam)
         {
             Guid? targetStudentId = null;
             if (request.TargetType == AssessmentTargetType.Student)
@@ -132,7 +159,10 @@ public sealed class AssessmentDeliverySettingsService(
         // Once an assessment is Open, the only allowed correction is
         // Offline -> Online before any result has been recorded. Targeting and
         // difficulty remain immutable, and Online -> Offline is never allowed.
-        context.Assessment.DeliveryMode = request.DeliveryMode;
+        context.Assessment.DeliveryMode =
+            context.Assessment.AssessmentType == AssessmentType.Homework
+                ? AssessmentDeliveryMode.Online
+                : request.DeliveryMode;
         context.Assessment.UpdatedAtUtc = DateTime.UtcNow;
 
         var saved = await repository.SaveAsync(

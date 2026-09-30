@@ -16,6 +16,30 @@
         ? "is-online"
         : "is-offline";
     var sourceClass = Model.Details.ClassGroups.FirstOrDefault(x => x.Id == assessment.ClassGroupId);
+    var nowUtc = DateTime.UtcNow;
+    var canEditContent =
+        assessment.Status == AssessmentStatus.Draft ||
+        (assessment.Status == AssessmentStatus.Open &&
+         assessment.AssessmentType == AssessmentType.Exam &&
+         assessment.AvailableFromUtc.HasValue &&
+         nowUtc < assessment.AvailableFromUtc.Value);
+    TimeZoneInfo schoolTimeZone;
+    try
+    {
+        schoolTimeZone = TimeZoneInfo.FindSystemTimeZoneById(Model.Details.SchoolTimeZoneId);
+    }
+    catch
+    {
+        schoolTimeZone = TimeZoneInfo.Utc;
+    }
+
+    string LocalTime(DateTime? utc) =>
+        utc.HasValue
+            ? TimeZoneInfo.ConvertTimeFromUtc(
+                DateTime.SpecifyKind(utc.Value, DateTimeKind.Utc),
+                schoolTimeZone).ToString("yyyy-MM-dd HH:mm")
+            : "—";
+
     var reusableClasses = Model.Details.ClassGroups
         .Where(x =>
             x.Id != assessment.ClassGroupId &&
@@ -30,18 +54,37 @@
             <span class="assessment-context">@Model.SubjectName · @Model.ClassName · @Model.TermName</span>
             <h1>@assessment.Title</h1>
             <p>
-                @assessment.AssessmentDate.ToString("yyyy-MM-dd") ·
-                @A["MaxScore"]: @assessment.MaxScore.ToString("0.##") ·
-                @A["Status"]: @A[Model.StatusKey] ·
+                <strong>@(assessment.AssessmentType == AssessmentType.Exam
+                    ? "Exam / Test"
+                    : assessment.AssessmentType == AssessmentType.Homework
+                        ? "Homework"
+                        : "Worksheet")</strong>
+                · @assessment.AssessmentDate.ToString("yyyy-MM-dd")
+                @if (assessment.IsScored)
+                {
+                    <text> · @A["MaxScore"]: @assessment.MaxScore.ToString("0.##")</text>
+                }
+                @if (assessment.AssessmentType == AssessmentType.Homework && assessment.DueAtUtc.HasValue)
+                {
+                    <text> · Due: @LocalTime(assessment.DueAtUtc) (@Model.Details.SchoolTimeZoneId)</text>
+                }
+                @if (assessment.AssessmentType == AssessmentType.Exam && assessment.AvailableFromUtc.HasValue)
+                {
+                    <text> · Starts: @LocalTime(assessment.AvailableFromUtc) (@Model.Details.SchoolTimeZoneId)</text>
+                }
+                · @A["Status"]: @A[Model.StatusKey] ·
                 <strong>@B["CurrentDelivery"]:</strong>
                 <span class="ed-delivery-badge @deliveryClass">@B[deliveryKey]</span>
             </p>
         </div>
         <div class="assessment-actions">
             <a class="school-button" asp-action="Index">@A["Assessments"]</a>
-            @if (assessment.Status == AssessmentStatus.Draft && canManage)
+            @if (canEditContent && canManage)
             {
                 <a class="school-button" asp-action="Edit" asp-route-id="@assessment.Id">@A["EditAssessment"]</a>
+            }
+            @if (canEditContent && canManage)
+            {
                 <a class="school-button school-button-primary"
                    asp-controller="AssessmentBuilder"
                    asp-action="Index"
@@ -71,9 +114,12 @@
                         @B["DownloadTeacherAnswerKey"]
                     </a>
                 }
-                <a class="school-button school-button-primary"
-                   asp-action="Results"
-                   asp-route-id="@assessment.Id">@A["Results"]</a>
+                @if (assessment.AssessmentType == AssessmentType.Exam)
+                {
+                    <a class="school-button school-button-primary"
+                       asp-action="Results"
+                       asp-route-id="@assessment.Id">@A["Results"]</a>
+                }
             }
         </div>
     </header>
@@ -96,7 +142,10 @@
         <div class="assessment-info">@A["OpenHelp"]</div>
     }
 
-    @if (canManage && Model.Details.Questions.Count > 0 && reusableClasses.Length > 0)
+    @if (canManage &&
+         assessment.AssessmentType == AssessmentType.Exam &&
+         Model.Details.Questions.Count > 0 &&
+         reusableClasses.Length > 0)
     {
         <section class="assessment-card">
             <h2>Reuse this assessment for another class</h2>
@@ -146,7 +195,10 @@
                     <header>
                         <div>
                             <h3>@question.Order. @question.Prompt</h3>
-                            <p>@A["QuestionMaxScore"]: @question.MaxScore.ToString("0.##")</p>
+                            @if (assessment.IsScored)
+                            {
+                                <p>@A["QuestionMaxScore"]: @question.MaxScore.ToString("0.##")</p>
+                            }
                         </div>
                     </header>
                     <div class="assessment-mappings">
@@ -187,6 +239,27 @@
                 <input type="hidden" name="rowVersion" value="@rowVersion" />
                 <button type="submit" class="school-button">@A["CloseAssessment"]</button>
             </form>
+        }
+
+        @if (assessment.AssessmentType == AssessmentType.Exam &&
+             assessment.Status == AssessmentStatus.Closed)
+        {
+            @if (assessment.ResultReleaseStatus == AssessmentResultReleaseStatus.Published)
+            {
+                <div class="assessment-info">@A["ResultsPublished"]</div>
+            }
+            else
+            {
+                <div class="assessment-info">@A["ResultsWithheld"]</div>
+                @if (canManage)
+                {
+                    <form asp-action="PublishResults" asp-route-id="@assessment.Id" method="post">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="rowVersion" value="@rowVersion" />
+                        <button type="submit" class="school-button school-button-primary">@A["PostResults"]</button>
+                    </form>
+                }
+            }
         }
     </section>
 </section>

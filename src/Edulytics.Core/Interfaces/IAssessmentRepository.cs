@@ -37,6 +37,30 @@ public interface IAssessmentRepository
         Guid questionId,
         CancellationToken cancellationToken = default);
 
+    Task<AssessmentAttempt?> GetAttemptAsync(
+        Guid schoolId,
+        Guid assessmentId,
+        Guid studentProfileId,
+        CancellationToken cancellationToken = default);
+
+    Task<AssessmentAttempt?> GetOrCreateAttemptAsync(
+        Guid schoolId,
+        Guid assessmentId,
+        Guid studentProfileId,
+        DateTime startedAtUtc,
+        CancellationToken cancellationToken = default);
+
+    Task<IReadOnlyList<AssessmentTaskResponse>> ListTaskResponsesAsync(
+        Guid schoolId,
+        Guid assessmentAttemptId,
+        CancellationToken cancellationToken = default);
+
+    Task<AssessmentTaskResponse?> GetTaskResponseAsync(
+        Guid schoolId,
+        Guid assessmentAttemptId,
+        Guid assessmentQuestionId,
+        CancellationToken cancellationToken = default);
+
     Task<Term?> GetTermAsync(
         Guid schoolId,
         Guid id,

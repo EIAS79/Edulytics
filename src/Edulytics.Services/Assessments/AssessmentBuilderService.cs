@@ -21,6 +21,7 @@ namespace Edulytics.Services.Assessments;
 public sealed class AssessmentBuilderService(
     IAssessmentService assessments,
     IAssessmentBuilderRepository repository,
+    IAssessmentRepository assessmentRepository,
     ISchoolUserRepository users) : IAssessmentBuilderService
 {
     public async Task<AssessmentQueryResult<AssessmentBuilderWorkspace>> GetWorkspaceAsync(
@@ -49,9 +50,12 @@ public sealed class AssessmentBuilderService(
         var solution = Clean(request.Solution);
         if (!ValidContent(prompt, answer, solution)) return Failure(AssessmentErrorCode.InvalidText);
         if (request.Order <= 0) return Failure(AssessmentErrorCode.InvalidOrder);
-        if (!ValidScore(request.MaxScore)) return Failure(AssessmentErrorCode.InvalidQuestionScore);
+        var isScored = context.Assessment.AssessmentType == AssessmentType.Exam;
+        if (isScored ? !ValidScore(request.MaxScore) : request.MaxScore != 0m)
+            return Failure(AssessmentErrorCode.InvalidQuestionScore);
         if (context.Questions.Any(x => x.Order == request.Order)) return Failure(AssessmentErrorCode.DuplicateQuestionOrder);
-        if (context.Questions.Sum(x => x.MaxScore) + request.MaxScore > context.Assessment.MaxScore)
+        if (isScored &&
+            context.Questions.Sum(x => x.MaxScore) + request.MaxScore > context.Assessment.MaxScore)
             return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
 
         var outcomeIds = NormalizeOutcomes(request.OutcomeIds);
@@ -82,7 +86,7 @@ public sealed class AssessmentBuilderService(
             SchoolId = resolved.SchoolId,
             AssessmentId = request.AssessmentId,
             Prompt = prompt,
-            MaxScore = Round(request.MaxScore),
+            MaxScore = isScored ? Round(request.MaxScore) : 0m,
             Order = request.Order
         };
         repository.AddBundle(new AssessmentBuilderQuestionBundle(
@@ -109,10 +113,13 @@ public sealed class AssessmentBuilderService(
         var solution = Clean(request.Solution);
         if (!ValidContent(prompt, answer, solution)) return Failure(AssessmentErrorCode.InvalidText);
         if (request.Order <= 0) return Failure(AssessmentErrorCode.InvalidOrder);
-        if (!ValidScore(request.MaxScore)) return Failure(AssessmentErrorCode.InvalidQuestionScore);
+        var isScored = context.Assessment.AssessmentType == AssessmentType.Exam;
+        if (isScored ? !ValidScore(request.MaxScore) : request.MaxScore != 0m)
+            return Failure(AssessmentErrorCode.InvalidQuestionScore);
         if (context.Questions.Any(x => x.Id != question.Id && x.Order == request.Order))
             return Failure(AssessmentErrorCode.DuplicateQuestionOrder);
-        if (context.Questions.Where(x => x.Id != question.Id).Sum(x => x.MaxScore) + request.MaxScore > context.Assessment.MaxScore)
+        if (isScored &&
+            context.Questions.Where(x => x.Id != question.Id).Sum(x => x.MaxScore) + request.MaxScore > context.Assessment.MaxScore)
             return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
 
         var outcomeIds = NormalizeOutcomes(request.OutcomeIds);
@@ -120,7 +127,7 @@ public sealed class AssessmentBuilderService(
             return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
 
         question.Prompt = prompt;
-        question.MaxScore = Round(request.MaxScore);
+        question.MaxScore = isScored ? Round(request.MaxScore) : 0m;
         question.Order = request.Order;
         item.Prompt = prompt;
         item.CorrectAnswer = answer;
@@ -170,10 +177,15 @@ public sealed class AssessmentBuilderService(
         var context = resolved.Context!;
         if (context.CurriculumAdoption is null || string.IsNullOrWhiteSpace(context.CurriculumAdoption.CurriculumLevelKey))
             return Failure(AssessmentErrorCode.OutcomeDoesNotMatchAssessment);
+        var isScored = context.Assessment.AssessmentType == AssessmentType.Exam;
         if (request.QuestionCount is < 1 or > 50 ||
-            request.MaxScorePerQuestion < 0m ||
-            (request.MaxScorePerQuestion > 0m && !ValidScore(request.MaxScorePerQuestion)))
+            (isScored &&
+             (request.MaxScorePerQuestion < 0m ||
+              (request.MaxScorePerQuestion > 0m && !ValidScore(request.MaxScorePerQuestion)))) ||
+            (!isScored && request.MaxScorePerQuestion != 0m))
+        {
             return Failure(AssessmentErrorCode.InvalidQuestionScore);
+        }
 
         var effectiveDifficulty = AssessmentBuilderGenerationPlanner.ResolveDifficulty(
             request.Difficulty,
@@ -183,10 +195,25 @@ public sealed class AssessmentBuilderService(
 
         var currentMarks = context.Questions.Sum(x => x.MaxScore);
         var remainingMarks = context.Assessment.MaxScore - currentMarks;
-        if (remainingMarks <= 0m || decimal.Truncate(remainingMarks) != remainingMarks || remainingMarks < request.QuestionCount)
+        if (isScored)
+        {
+            if (remainingMarks <= 0m ||
+                decimal.Truncate(remainingMarks) != remainingMarks ||
+                remainingMarks < request.QuestionCount)
+            {
+                return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
+            }
+
+            if (request.MaxScorePerQuestion > 0m &&
+                request.QuestionCount * request.MaxScorePerQuestion > remainingMarks)
+            {
+                return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
+            }
+        }
+        else if (currentMarks != 0m || context.Assessment.MaxScore != 0m)
+        {
             return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
-        if (request.MaxScorePerQuestion > 0m && request.QuestionCount * request.MaxScorePerQuestion > remainingMarks)
-            return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
+        }
 
         IReadOnlyList<ScopedGeneratedItem>? generatedItems;
         if (request.ScopeType == AssessmentGenerationScopeType.Outcomes)
@@ -239,10 +266,12 @@ public sealed class AssessmentBuilderService(
         if (generatedItems is null || generatedItems.Count != request.QuestionCount)
             return Failure(AssessmentErrorCode.PersistenceError);
 
-        var marks = AssessmentBuilderGenerationPlanner.DistributeMarks(
-            remainingMarks,
-            generatedItems.Select(x => x.Item.Difficulty).ToArray(),
-            request.MaxScorePerQuestion);
+        IReadOnlyList<decimal>? marks = isScored
+            ? AssessmentBuilderGenerationPlanner.DistributeMarks(
+                remainingMarks,
+                generatedItems.Select(x => x.Item.Difficulty).ToArray(),
+                request.MaxScorePerQuestion)
+            : Enumerable.Repeat(0m, generatedItems.Count).ToArray();
         if (marks is null || marks.Count != generatedItems.Count)
             return Failure(AssessmentErrorCode.AssessmentScoreMismatch);
 
@@ -425,9 +454,30 @@ public sealed class AssessmentBuilderService(
         Guid actorUserId, Guid assessmentId, CancellationToken cancellationToken)
     {
         var access = await ResolveAccessAsync(actorUserId, assessmentId, cancellationToken);
-        if (access.Error.HasValue) return (access.Details, null, access.SchoolId, access.Error);
-        if (access.Details!.Assessment.Status != AssessmentStatus.Draft)
+        if (access.Error.HasValue)
+            return (access.Details, null, access.SchoolId, access.Error);
+
+        var assessment = access.Details!.Assessment;
+        var editable = assessment.Status == AssessmentStatus.Draft;
+
+        if (!editable &&
+            assessment.Status == AssessmentStatus.Open &&
+            assessment.AssessmentType == AssessmentType.Exam &&
+            assessment.AvailableFromUtc.HasValue &&
+            DateTime.UtcNow < assessment.AvailableFromUtc.Value)
+        {
+            var snapshot = await assessmentRepository.GetSnapshotAsync(
+                access.SchoolId,
+                cancellationToken);
+
+            editable =
+                !snapshot.AssessmentAttempts.Any(x => x.AssessmentId == assessmentId) &&
+                !snapshot.Results.Any(x => x.AssessmentId == assessmentId);
+        }
+
+        if (!editable)
             return (access.Details, null, access.SchoolId, AssessmentErrorCode.AssessmentNotDraft);
+
         var context = await repository.GetContextAsync(access.SchoolId, assessmentId, cancellationToken);
         return context is null
             ? (access.Details, null, access.SchoolId, AssessmentErrorCode.AssessmentNotFound)
@@ -976,7 +1026,10 @@ public sealed class AssessmentBuilderService(
             questions.All(x => x.Status == AssessmentBuilderQuestionStatus.Approved);
         var allAligned = questions.Length > 0 &&
             questions.All(x => x.OutcomeIds.Count > 0 || x.LessonId.HasValue);
-        var marksMatch = current == details.Assessment.MaxScore;
+        var isScored = details.Assessment.AssessmentType == AssessmentType.Exam;
+        var marksMatch = isScored
+            ? current == details.Assessment.MaxScore
+            : current == 0m && details.Assessment.MaxScore == 0m;
         var ready = details.Assessment.Status == AssessmentStatus.Draft &&
             allApproved &&
             allAligned &&
@@ -1040,7 +1093,7 @@ public sealed class AssessmentBuilderService(
             details,
             questions,
             current,
-            Math.Max(0m, details.Assessment.MaxScore - current),
+            isScored ? Math.Max(0m, details.Assessment.MaxScore - current) : 0m,
             mastery,
             canGenerate,
             ready,

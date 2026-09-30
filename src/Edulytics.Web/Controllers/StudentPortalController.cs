@@ -324,15 +324,7 @@ public sealed class StudentPortalController : Controller
         if (!TryActor(out var actorId)) return Forbid();
         var attempt = await _assessmentDelivery.GetAttemptAsync(actorId, id, cancellationToken);
         if (attempt.Value is not null) return View(nameof(TakeAssessment), attempt.Value);
-        return attempt.Error switch
-        {
-            StudentAssessmentDeliveryErrorCode.AlreadySubmitted => RedirectToAction(nameof(Assessments)),
-            StudentAssessmentDeliveryErrorCode.AccessDenied or
-            StudentAssessmentDeliveryErrorCode.SchoolNotActive or
-            StudentAssessmentDeliveryErrorCode.ProfileNotLinked or
-            StudentAssessmentDeliveryErrorCode.NotTargeted => Forbid(),
-            _ => NotFound()
-        };
+        return HandleAssessmentDeliveryError(attempt.Error);
     }
 
     [HttpPost("assessments/{id:guid}/submit")]
@@ -352,16 +344,7 @@ public sealed class StudentPortalController : Controller
             .ToArray();
         var submitted = await _assessmentDelivery.SubmitAsync(actorId, id, payload, cancellationToken);
         if (submitted.Value is not null) return View("AssessmentSubmitted", submitted.Value);
-        return submitted.Error switch
-        {
-            StudentAssessmentDeliveryErrorCode.AlreadySubmitted => RedirectToAction(nameof(Assessments)),
-            StudentAssessmentDeliveryErrorCode.InvalidSubmission => BadRequest(),
-            StudentAssessmentDeliveryErrorCode.AccessDenied or
-            StudentAssessmentDeliveryErrorCode.SchoolNotActive or
-            StudentAssessmentDeliveryErrorCode.ProfileNotLinked or
-            StudentAssessmentDeliveryErrorCode.NotTargeted => Forbid(),
-            _ => NotFound()
-        };
+        return HandleAssessmentDeliveryError(submitted.Error);
     }
 
     [HttpGet("results")]
@@ -627,6 +610,51 @@ public sealed class StudentPortalController : Controller
         return workspace.Value is null
             ? (null, HandlePortalError(workspace.Error))
             : (workspace.Value, null);
+    }
+
+    private IActionResult HandleAssessmentDeliveryError(
+        StudentAssessmentDeliveryErrorCode? error)
+    {
+        if (error is StudentAssessmentDeliveryErrorCode.AccessDenied or
+            StudentAssessmentDeliveryErrorCode.SchoolNotActive or
+            StudentAssessmentDeliveryErrorCode.ProfileNotLinked or
+            StudentAssessmentDeliveryErrorCode.NotTargeted)
+        {
+            return Forbid();
+        }
+
+        if (error == StudentAssessmentDeliveryErrorCode.InvalidSubmission)
+            return BadRequest();
+
+        if (error is StudentAssessmentDeliveryErrorCode.AlreadySubmitted or
+            StudentAssessmentDeliveryErrorCode.NotYetAvailable or
+            StudentAssessmentDeliveryErrorCode.DeadlinePassed or
+            StudentAssessmentDeliveryErrorCode.AttemptExpired or
+            StudentAssessmentDeliveryErrorCode.AssessmentNotOpen)
+        {
+            var isPolish = string.Equals(
+                CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
+                "pl",
+                StringComparison.OrdinalIgnoreCase);
+
+            TempData["AssessmentNotice"] = error switch
+            {
+                StudentAssessmentDeliveryErrorCode.NotYetAvailable =>
+                    isPolish ? "Ten egzamin nie jest jeszcze dostępny." : "This exam is not available yet.",
+                StudentAssessmentDeliveryErrorCode.DeadlinePassed =>
+                    isPolish ? "Termin wykonania tego zadania minął." : "The submission window has closed.",
+                StudentAssessmentDeliveryErrorCode.AttemptExpired =>
+                    isPolish ? "Czas na ten egzamin minął." : "Your exam time has expired.",
+                StudentAssessmentDeliveryErrorCode.AssessmentNotOpen =>
+                    isPolish ? "To zadanie nie jest obecnie dostępne." : "This task is not currently available.",
+                _ =>
+                    isPolish ? "To zadanie zostało już przesłane." : "This task has already been submitted."
+            };
+
+            return RedirectToAction(nameof(Assessments));
+        }
+
+        return NotFound();
     }
 
     private IActionResult HandlePortalError(StudentPortalErrorCode? error) =>

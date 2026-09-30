@@ -1,37 +1,120 @@
+@using System.Globalization
 @using Edulytics.Core.Enums
 @model Edulytics.Services.Assessments.StudentAssessmentAttempt
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @{
     Layout = "_StudentLayout";
     ViewData["Title"] = Model.Title;
+
+    var isPolish = string.Equals(
+        CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
+        "pl",
+        StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl) => isPolish ? pl : en;
+
+    TimeZoneInfo schoolTimeZone;
+    try
+    {
+        schoolTimeZone = TimeZoneInfo.FindSystemTimeZoneById(Model.SchoolTimeZoneId);
+    }
+    catch
+    {
+        schoolTimeZone = TimeZoneInfo.Utc;
+    }
+
+    string LocalTime(DateTime? utc) =>
+        utc.HasValue
+            ? TimeZoneInfo.ConvertTimeFromUtc(
+                DateTime.SpecifyKind(utc.Value, DateTimeKind.Utc),
+                schoolTimeZone).ToString("yyyy-MM-dd HH:mm")
+            : "—";
+
+    var typeLabel = Model.AssessmentType switch
+    {
+        AssessmentType.Homework => L("Homework", "Praca domowa"),
+        AssessmentType.Worksheet => L("Worksheet", "Karta pracy"),
+        _ => L("Exam / Test", "Egzamin / test")
+    };
+
+    var submitLabel = Model.AssessmentType switch
+    {
+        AssessmentType.Homework => L("Submit homework", "Oddaj pracę domową"),
+        AssessmentType.Worksheet => L("Save / complete worksheet", "Zapisz / ukończ kartę pracy"),
+        _ => S["SubmitAssessment"].Value
+    };
+
+    var expiresUtc = Model.AttemptExpiresAtUtc.HasValue
+        ? DateTime.SpecifyKind(Model.AttemptExpiresAtUtc.Value, DateTimeKind.Utc).ToString("O")
+        : null;
 }
 <header class="student-page-header">
-    <span class="student-eyebrow">@S["OnlineAssessment"]</span>
+    <span class="student-eyebrow">@typeLabel</span>
     <h1>@Model.Title</h1>
-    <p>@S["AssessmentDifficulty"]: @S[$"AssessmentDifficulty{Model.DifficultyBand}"] · @S["MaxScore"]: @Model.MaxScore.ToString("0.##")</p>
+    <p>
+        @S["AssessmentDifficulty"]: @S[$"AssessmentDifficulty{Model.DifficultyBand}"]
+        @if (Model.IsScored)
+        {
+            <text> · @S["MaxScore"]: @Model.MaxScore.ToString("0.##")</text>
+        }
+        @if (Model.AssessmentType == AssessmentType.Homework)
+        {
+            <text> · @L("Due", "Termin"): @LocalTime(Model.DueAtUtc) (@Model.SchoolTimeZoneId)</text>
+        }
+        @if (Model.AssessmentType == AssessmentType.Worksheet)
+        {
+            <text> · @L("No marks · no deadline", "Bez oceny · bez terminu")</text>
+        }
+    </p>
+
+    @if (Model.AssessmentType == AssessmentType.Exam && Model.AttemptExpiresAtUtc.HasValue)
+    {
+        <div class="assessment-info" role="timer" aria-live="polite">
+            <strong>@L("Time remaining", "Pozostały czas"):</strong>
+            <span id="assessment-countdown">—</span>
+            <span class="student-muted">(@L("ends", "koniec") @LocalTime(Model.AttemptExpiresAtUtc))</span>
+        </div>
+    }
 </header>
-<form asp-action="SubmitAssessment" asp-route-id="@Model.AssessmentId" method="post" class="student-card-list">
+
+<form id="student-assessment-form"
+      asp-action="SubmitAssessment"
+      asp-route-id="@Model.AssessmentId"
+      method="post"
+      class="student-card-list">
     @Html.AntiForgeryToken()
+
     @foreach (var question in Model.Questions)
     {
         <article class="student-assessment-card">
             <div>
                 <span class="student-subject-code">@S["Question"] @question.Order</span>
                 <h2>@question.Prompt</h2>
-                <p>@S["MaxScore"]: @question.MaxScore.ToString("0.##")</p>
+                @if (Model.IsScored)
+                {
+                    <p>@S["MaxScore"]: @question.MaxScore.ToString("0.##")</p>
+                }
             </div>
+
             <input type="hidden" name="questionIds" value="@question.Id" />
-            <label for="answer-@question.Id">@S["YourAnswer"]</label>
+            <label id="answer-label-@question.Id" for="answer-@question.Id">@S["YourAnswer"]</label>
+
             @if (question.ItemType == AssessmentItemType.MultipleChoice && question.Choices.Count > 0)
             {
-                <input id="answer-@question.Id" type="hidden" name="responses" value="" data-choice-response="@question.Id" />
-                <div class="student-assessment-choices" role="radiogroup" aria-labelledby="answer-label-@question.Id">
+                <input id="answer-@question.Id"
+                       type="hidden"
+                       name="responses"
+                       value="@question.CurrentResponse"
+                       data-choice-response="@question.Id" />
+                <div class="student-assessment-choices"
+                     role="radiogroup"
+                     aria-labelledby="answer-label-@question.Id">
                     @foreach (var choice in question.Choices)
                     {
                         <label class="student-assessment-choice">
                             <input type="radio"
                                    name="choice-@question.Id"
                                    value="@choice"
+                                   checked="@(string.Equals(question.CurrentResponse, choice, StringComparison.Ordinal))"
                                    data-choice-for="@question.Id" />
                             <span>@choice</span>
                         </label>
@@ -45,24 +128,71 @@
                        type="text"
                        inputmode="decimal"
                        maxlength="200"
-                       autocomplete="off" />
+                       autocomplete="off"
+                       value="@question.CurrentResponse" />
             }
             else
             {
-                <textarea id="answer-@question.Id" name="responses" maxlength="4000" rows="4"></textarea>
+                <textarea id="answer-@question.Id"
+                          name="responses"
+                          maxlength="4000"
+                          rows="4">@question.CurrentResponse</textarea>
             }
         </article>
     }
-    <button class="student-button student-button-primary" type="submit">@S["SubmitAssessment"]</button>
+
+    <button id="student-assessment-submit"
+            class="student-button student-button-primary"
+            type="submit">@submitLabel</button>
 </form>
 
 <script>
-    (() => {
-        document.querySelectorAll('[data-choice-for]').forEach(input => {
-            input.addEventListener('change', () => {
-                const hidden = document.querySelector('[data-choice-response="' + input.dataset.choiceFor + '"]');
-                if (hidden) hidden.value = input.value;
-            });
+(() => {
+    document.querySelectorAll('[data-choice-for]').forEach(input => {
+        input.addEventListener('change', () => {
+            const hidden = document.querySelector(
+                '[data-choice-response="' + input.dataset.choiceFor + '"]');
+            if (hidden) hidden.value = input.value;
         });
-    })();
+    });
+
+    const expiresUtc = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(expiresUtc));
+    if (!expiresUtc) return;
+
+    const countdown = document.getElementById('assessment-countdown');
+    const submit = document.getElementById('student-assessment-submit');
+    const form = document.getElementById('student-assessment-form');
+    const deadline = Date.parse(expiresUtc);
+
+    const renderCountdown = () => {
+        const remainingMs = deadline - Date.now();
+        if (!Number.isFinite(remainingMs) || remainingMs <= 0) {
+            if (countdown) countdown.textContent = '@L("Time expired", "Czas minął")';
+            if (submit) submit.disabled = true;
+            if (form) {
+                form.querySelectorAll('input:not([type="hidden"]), textarea, button, select')
+                    .forEach(control => control.disabled = true);
+            }
+            return false;
+        }
+
+        const totalSeconds = Math.ceil(remainingMs / 1000);
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+
+        if (countdown) {
+            countdown.textContent =
+                (hours > 0 ? String(hours).padStart(2, '0') + ':' : '') +
+                String(minutes).padStart(2, '0') + ':' +
+                String(seconds).padStart(2, '0');
+        }
+        return true;
+    };
+
+    if (!renderCountdown()) return;
+    const timer = window.setInterval(() => {
+        if (!renderCountdown()) window.clearInterval(timer);
+    }, 1000);
+})();
 </script>

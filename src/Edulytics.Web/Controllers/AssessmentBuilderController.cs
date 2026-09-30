@@ -44,7 +44,10 @@ public sealed class AssessmentBuilderController(
         if (result.Value.Details.Assessment.DeliveryMode != AssessmentDeliveryMode.Offline) return BadRequest();
 
         var paper = AssessmentPrintDocumentFactory.CreateStudentPaper(result.Value);
-        var bytes = AssessmentPdfRenderer.RenderStudentPaper(paper, PdfLabels());
+        var bytes = AssessmentPdfRenderer.RenderStudentPaper(
+            paper,
+            PdfLabels(),
+            showMarks: result.Value.Details.Assessment.AssessmentType == AssessmentType.Exam);
         return File(bytes, "application/pdf", $"assessment-{assessmentId:N}-student-paper.pdf");
     }
 
@@ -57,7 +60,10 @@ public sealed class AssessmentBuilderController(
         if (result.Value.Details.Assessment.DeliveryMode != AssessmentDeliveryMode.Offline) return BadRequest();
 
         var answerKey = AssessmentPrintDocumentFactory.CreateTeacherAnswerKey(result.Value);
-        var bytes = AssessmentPdfRenderer.RenderTeacherAnswerKey(answerKey, PdfLabels());
+        var bytes = AssessmentPdfRenderer.RenderTeacherAnswerKey(
+            answerKey,
+            PdfLabels(),
+            showMarks: result.Value.Details.Assessment.AssessmentType == AssessmentType.Exam);
         return File(bytes, "application/pdf", $"assessment-{assessmentId:N}-teacher-answer-key.pdf");
     }
 

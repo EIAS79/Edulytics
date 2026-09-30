@@ -22,6 +22,8 @@ public sealed record AssessmentSnapshot(
     IReadOnlyList<StudentAnswer> StudentAnswers)
 {
     public IReadOnlyList<AssessmentItem> AssessmentItems { get; init; } = [];
+    public IReadOnlyList<AssessmentAttempt> AssessmentAttempts { get; init; } = [];
+    public IReadOnlyList<AssessmentTaskResponse> AssessmentTaskResponses { get; init; } = [];
 }
 
 public enum AssessmentPersistenceError
