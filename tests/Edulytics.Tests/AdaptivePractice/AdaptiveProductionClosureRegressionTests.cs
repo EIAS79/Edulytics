@@ -261,7 +261,7 @@ public sealed class AdaptiveProductionClosureRegressionTests
             view,
             StringComparison.Ordinal);
         Assert.Contains(
-            "const retryFeedback = document.querySelector(\"[data-practice-retry-feedback]\")",
+            "const retryFeedback = document.querySelector('[data-practice-retry-feedback=\"true\"]')",
             javascript,
             StringComparison.Ordinal);
 
