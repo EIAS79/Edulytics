@@ -1,6 +1,7 @@
 using Edulytics.Core.AdaptivePractice;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.AdaptivePractice;
+using Edulytics.Services.Practice;
 
 namespace Edulytics.Tests.MathematicsIntelligence.AdaptivePractice;
 
@@ -193,6 +194,148 @@ public sealed class AdaptiveVerifiedItemGeneratorTests
                 AdaptivePracticeV2Behavior
                     .RecentSemanticFreshnessWindow);
         }
+    }
+
+    [Fact]
+    public void RoundingFamilyProvidesGenuineStandardStretchAndChallengeForms()
+    {
+        const string family =
+            "supporting.number.rounding";
+
+        var contract =
+            LessonPracticeContractRegistry.All.First(
+                x => x.AllowedQuestionFamilies.Contains(
+                    family,
+                    StringComparer.Ordinal));
+
+        var generator =
+            new AdaptiveVerifiedItemGenerator();
+
+        var standardDecision =
+            generator.NormalizeDecisionToTruthfulCapability(
+                Decision(
+                    contract,
+                    family,
+                    complexity: 42),
+                currentComplexityScore: 42);
+
+        var stretchDecision =
+            generator.NormalizeDecisionToTruthfulCapability(
+                Decision(
+                    contract,
+                    family,
+                    complexity: 66) with
+                {
+                    ReasonCode =
+                        AdaptivePracticeDecisionReasonCodes
+                            .ComplexityProgress,
+                    ProgressionEligible = true
+                },
+                currentComplexityScore: 54);
+
+        var challengeDecision =
+            generator.NormalizeDecisionToTruthfulCapability(
+                Decision(
+                    contract,
+                    family,
+                    complexity: 90) with
+                {
+                    ReasonCode =
+                        AdaptivePracticeDecisionReasonCodes
+                            .ComplexityProgress,
+                    ProgressionEligible = true
+                },
+                currentComplexityScore: 66);
+
+        var standard =
+            generator.GenerateOne(
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                contract,
+                standardDecision,
+                seed: 1101,
+                excludedExposureFingerprints: []);
+
+        var stretch =
+            generator.GenerateOne(
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                contract,
+                stretchDecision,
+                seed: 2202,
+                excludedExposureFingerprints: []);
+
+        var challenge =
+            generator.GenerateOne(
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                Guid.NewGuid(),
+                contract,
+                challengeDecision,
+                seed: 3303,
+                excludedExposureFingerprints: []);
+
+        Assert.Equal(
+            StudentPrivatePracticeDifficulty.MyLevel,
+            standard.Difficulty);
+        Assert.Equal(
+            StudentPrivatePracticeDifficulty.Stretch,
+            stretch.Difficulty);
+        Assert.Equal(
+            StudentPrivatePracticeDifficulty.Challenge,
+            challenge.Difficulty);
+
+        Assert.Contains(
+            "Round ",
+            standard.Prompt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "possible whole number",
+            stretch.Prompt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "nearest 100 and to",
+            challenge.Prompt,
+            StringComparison.Ordinal);
+
+        Assert.True(
+            Stage18SkillContractPracticeEngine.VerifyPersistedItem(
+                new Stage18PracticeSkillContract(
+                    contract.LessonCode,
+                    contract.SkillId,
+                    contract.Mechanic,
+                    [family])
+                {
+                    SkillIds = contract.SkillIds
+                },
+                standard));
+        Assert.True(
+            Stage18SkillContractPracticeEngine.VerifyPersistedItem(
+                new Stage18PracticeSkillContract(
+                    contract.LessonCode,
+                    contract.SkillId,
+                    contract.Mechanic,
+                    [family])
+                {
+                    SkillIds = contract.SkillIds
+                },
+                stretch));
+        Assert.True(
+            Stage18SkillContractPracticeEngine.VerifyPersistedItem(
+                new Stage18PracticeSkillContract(
+                    contract.LessonCode,
+                    contract.SkillId,
+                    contract.Mechanic,
+                    [family])
+                {
+                    SkillIds = contract.SkillIds
+                },
+                challenge));
     }
 
     [Fact]
