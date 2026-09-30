@@ -1420,11 +1420,21 @@ public sealed partial class AssessmentService
             "Assessment opened.",
             cancellationToken);
 
-        return MapPersistence(
+        var opened = MapPersistence(
             await _repo.SaveWithRowVersionAsync(
                 assessment,
                 rowVersion,
                 cancellationToken));
+
+        if (opened.Succeeded &&
+            assessment.AssessmentType == AssessmentType.Exam &&
+            assessment.AvailableFromUtc.HasValue &&
+            assessment.AvailableFromUtc.Value > DateTime.UtcNow)
+        {
+            AssessmentMetrics.ScheduledExamOpened();
+        }
+
+        return opened;
     }
 
     public async Task<AssessmentCommandResult> CloseAssessmentAsync(
