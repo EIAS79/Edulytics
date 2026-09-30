@@ -511,7 +511,11 @@ public sealed class StudentPracticeController(
 
             return RedirectToAction(
                 nameof(AdaptiveLessonAttempt),
-                new { id });
+                new
+                {
+                    id,
+                    reviewSequence = sequence
+                });
         }
         catch (AdaptivePracticeSharedStateWriteConflictException exception)
         {
@@ -540,7 +544,11 @@ public sealed class StudentPracticeController(
                 // idempotent and render the authoritative current turn.
                 return RedirectToAction(
                     nameof(AdaptiveLessonAttempt),
-                    new { id });
+                    new
+                    {
+                        id,
+                        reviewSequence = sequence
+                    });
             }
 
             TempData["Error"] =
