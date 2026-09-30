@@ -176,7 +176,7 @@ public sealed class AdaptiveProductionClosureRegressionTests
             "Practice session",
             view,
             StringComparison.Ordinal);
-        Assert.Contains(
+        Assert.DoesNotContain(
             "Technical details",
             view,
             StringComparison.Ordinal);

@@ -154,15 +154,7 @@
                                     <p><strong>Independent confirmation:</strong> yes</p>
                                 }
 
-                                <details class="adaptive-log-technical">
-                                    <summary>Technical details</summary>
-                                    <dl>
-                                        <div><dt>Skill</dt><dd>@item.SkillId</dd></div>
-                                        <div><dt>Family</dt><dd>@item.QuestionFamily</dd></div>
-                                        <div><dt>Decision code</dt><dd>@(string.IsNullOrWhiteSpace(item.DecisionReasonCode) ? "—" : item.DecisionReasonCode)</dd></div>
-                                        <div><dt>Misconception focus</dt><dd>@(string.IsNullOrWhiteSpace(item.MisconceptionFocusId) ? "—" : item.MisconceptionFocusId)</dd></div>
-                                    </dl>
-                                </details>
+
                             </article>
                         }
                     </div>

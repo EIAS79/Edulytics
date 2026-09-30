@@ -35,7 +35,8 @@ public sealed class AdaptiveIntelligenceV2Phase10To13Tests
         Assert.Contains("GetDecisionSnapshotsForSessionsAsync", adaptive, StringComparison.Ordinal);
         Assert.Contains("EnableQuestionLog", adaptive, StringComparison.Ordinal);
         Assert.Contains("Why this question", view, StringComparison.Ordinal);
-        Assert.Contains("Misconception focus", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("Misconception focus", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("Technical details", view, StringComparison.Ordinal);
     }
 
     [Fact]
