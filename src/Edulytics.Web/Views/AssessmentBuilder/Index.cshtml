@@ -23,6 +23,12 @@
     var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
     var approveAllLabel = isPolish ? "Zatwierdź wszystkie pytania robocze" : "Approve all draft questions";
     var isScored = assessment.AssessmentType == AssessmentType.Exam;
+    var canEditContent =
+        assessment.Status == AssessmentStatus.Draft ||
+        (assessment.Status == AssessmentStatus.Open &&
+         assessment.AssessmentType == AssessmentType.Exam &&
+         assessment.AvailableFromUtc.HasValue &&
+         DateTime.UtcNow < assessment.AvailableFromUtc.Value);
 }
 <link rel="stylesheet" href="~/css/assessment-builder.css" asp-append-version="true" />
 
@@ -75,7 +81,7 @@
     <div class="assessment-info">@A[Model.ReadinessMessage]</div>
 
 
-    @if (assessment.Status == AssessmentStatus.Draft)
+    @if (canEditContent)
     {
         <div class="ed-builder-workspace-grid">
             <section class="assessment-card ed-builder-card">
@@ -358,7 +364,7 @@
                 <h2>@A["Questions"]</h2>
                 <span>@Model.Questions.Count</span>
             </div>
-            @if (assessment.Status == AssessmentStatus.Draft && draftQuestionCount > 0)
+            @if (canEditContent && draftQuestionCount > 0)
             {
                 <form asp-action="ApproveAll" asp-route-assessmentId="@assessment.Id" method="post" class="ed-builder-approve-all-form">
                     @Html.AntiForgeryToken()
@@ -418,7 +424,7 @@
                     }
                 </div>
 
-                @if (assessment.Status == AssessmentStatus.Draft && question.Status != AssessmentBuilderQuestionStatus.Legacy)
+                @if (canEditContent && question.Status != AssessmentBuilderQuestionStatus.Legacy)
                 {
                     @if (!isApproved)
                     {
@@ -518,7 +524,7 @@
     }
 </section>
 
-@if (assessment.Status == AssessmentStatus.Draft)
+@if (canEditContent)
 {
     <script>
         (() => {
