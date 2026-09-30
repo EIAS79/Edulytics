@@ -779,6 +779,15 @@ namespace Edulytics.Data.Migrations
                         .HasPrecision(10, 2)
                         .HasColumnType("numeric(10,2)");
 
+                    b.Property<int>("ResultReleaseStatus")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("ResultsPublishedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid?>("ResultsPublishedByUserId")
+                        .HasColumnType("uuid");
+
                     b.Property<byte[]>("RowVersion")
                         .IsConcurrencyToken()
                         .IsRequired()
