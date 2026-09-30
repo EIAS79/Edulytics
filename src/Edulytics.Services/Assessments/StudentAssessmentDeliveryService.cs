@@ -21,15 +21,52 @@ public sealed class StudentAssessmentDeliveryService(
         Guid assessmentId,
         CancellationToken cancellationToken = default)
     {
-        var resolved = await ResolveAsync(actorUserId, assessmentId, cancellationToken);
+        var now = DateTime.UtcNow;
+        var resolved = await ResolveAsync(actorUserId, assessmentId, now, cancellationToken);
         if (resolved.Error.HasValue)
             return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(resolved.Error.Value);
 
-        if (resolved.Snapshot!.Results.Any(x =>
+        var assessment = resolved.Assessment!;
+        var existingAttempt = await assessments.GetAttemptAsync(
+            resolved.SchoolId,
+            assessmentId,
+            resolved.Profile!.Id,
+            cancellationToken);
+
+        if (assessment.AssessmentType == AssessmentType.Exam &&
+            resolved.Snapshot!.Results.Any(x =>
                 x.AssessmentId == assessmentId &&
-                x.StudentProfileId == resolved.Profile!.Id))
+                x.StudentProfileId == resolved.Profile.Id))
+        {
             return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(
                 StudentAssessmentDeliveryErrorCode.AlreadySubmitted);
+        }
+
+        if (assessment.AssessmentType == AssessmentType.Homework &&
+            existingAttempt?.Status == AssessmentAttemptStatus.Submitted)
+        {
+            return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(
+                StudentAssessmentDeliveryErrorCode.AlreadySubmitted);
+        }
+
+        var attempt = existingAttempt ?? await assessments.GetOrCreateAttemptAsync(
+            resolved.SchoolId,
+            assessmentId,
+            resolved.Profile.Id,
+            now,
+            cancellationToken);
+        if (attempt is null)
+            return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(
+                StudentAssessmentDeliveryErrorCode.PersistenceError);
+
+        var effectiveDeadline = ResolveEffectiveAttemptDeadline(assessment, attempt);
+        if (assessment.AssessmentType == AssessmentType.Exam &&
+            effectiveDeadline.HasValue &&
+            now >= effectiveDeadline.Value)
+        {
+            return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(
+                StudentAssessmentDeliveryErrorCode.AttemptExpired);
+        }
 
         var context = await builder.GetContextAsync(resolved.SchoolId, assessmentId, cancellationToken);
         if (context is null)
@@ -40,6 +77,14 @@ public sealed class StudentAssessmentDeliveryService(
         if (context.Questions.Count == 0 || context.Questions.Any(x => !itemMap.ContainsKey(x.Id)))
             return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(
                 StudentAssessmentDeliveryErrorCode.AssessmentNotFound);
+
+        var existingResponses = assessment.AssessmentType == AssessmentType.Exam
+            ? new Dictionary<Guid, string>()
+            : (await assessments.ListTaskResponsesAsync(
+                    resolved.SchoolId,
+                    attempt.Id,
+                    cancellationToken))
+                .ToDictionary(x => x.AssessmentQuestionId, x => x.ResponseText);
 
         return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Success(
             new StudentAssessmentAttempt(
@@ -56,10 +101,19 @@ public sealed class StudentAssessmentDeliveryService(
                         return new StudentAssessmentQuestion(x.Id, x.Order, x.Prompt, x.MaxScore)
                         {
                             ItemType = item.ItemType,
-                            Choices = ReadChoices(item)
+                            Choices = ReadChoices(item),
+                            CurrentResponse = existingResponses.GetValueOrDefault(x.Id, string.Empty)
                         };
                     })
-                    .ToArray()));
+                    .ToArray())
+            {
+                AssessmentType = context.Assessment.AssessmentType,
+                AvailableFromUtc = context.Assessment.AvailableFromUtc,
+                DueAtUtc = context.Assessment.DueAtUtc,
+                AttemptExpiresAtUtc = context.Assessment.AssessmentType == AssessmentType.Exam
+                    ? effectiveDeadline
+                    : null
+            });
     }
 
     public async Task<StudentAssessmentDeliveryResult<StudentAssessmentSubmission>> SubmitAsync(
@@ -68,15 +122,48 @@ public sealed class StudentAssessmentDeliveryService(
         IReadOnlyList<StudentAssessmentResponse> responses,
         CancellationToken cancellationToken = default)
     {
-        var resolved = await ResolveAsync(actorUserId, assessmentId, cancellationToken);
+        var now = DateTime.UtcNow;
+        var resolved = await ResolveAsync(actorUserId, assessmentId, now, cancellationToken);
         if (resolved.Error.HasValue)
             return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(resolved.Error.Value);
 
-        if (resolved.Snapshot!.Results.Any(x =>
+        var assessment = resolved.Assessment!;
+        var profile = resolved.Profile!;
+
+        if (assessment.AssessmentType == AssessmentType.Exam &&
+            resolved.Snapshot!.Results.Any(x =>
                 x.AssessmentId == assessmentId &&
-                x.StudentProfileId == resolved.Profile!.Id))
+                x.StudentProfileId == profile.Id))
+        {
             return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
                 StudentAssessmentDeliveryErrorCode.AlreadySubmitted);
+        }
+
+        var attempt = await assessments.GetOrCreateAttemptAsync(
+            resolved.SchoolId,
+            assessmentId,
+            profile.Id,
+            now,
+            cancellationToken);
+        if (attempt is null)
+            return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
+                StudentAssessmentDeliveryErrorCode.PersistenceError);
+
+        if (assessment.AssessmentType == AssessmentType.Homework &&
+            attempt.Status == AssessmentAttemptStatus.Submitted)
+        {
+            return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
+                StudentAssessmentDeliveryErrorCode.AlreadySubmitted);
+        }
+
+        var effectiveDeadline = ResolveEffectiveAttemptDeadline(assessment, attempt);
+        if (assessment.AssessmentType == AssessmentType.Exam &&
+            effectiveDeadline.HasValue &&
+            now >= effectiveDeadline.Value)
+        {
+            return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
+                StudentAssessmentDeliveryErrorCode.AttemptExpired);
+        }
 
         var context = await builder.GetContextAsync(resolved.SchoolId, assessmentId, cancellationToken);
         if (context is null)
@@ -87,17 +174,20 @@ public sealed class StudentAssessmentDeliveryService(
         if (questions.Length == 0 ||
             responses.Count != questions.Length ||
             responses.Select(x => x.QuestionId).Distinct().Count() != questions.Length)
+        {
             return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
                 StudentAssessmentDeliveryErrorCode.InvalidSubmission);
+        }
 
         var responseMap = responses.ToDictionary(x => x.QuestionId);
         var itemMap = context.Items.ToDictionary(x => x.Id);
         if (questions.Any(x => !responseMap.ContainsKey(x.Id) || !itemMap.ContainsKey(x.Id)))
+        {
             return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
                 StudentAssessmentDeliveryErrorCode.InvalidSubmission);
+        }
 
-        decimal score = 0m;
-        var scored = new List<(AssessmentQuestion Question, string Response, decimal Score)>();
+        var normalizedResponses = new List<(AssessmentQuestion Question, AssessmentItem Item, string Response)>();
         foreach (var question in questions)
         {
             var response = (responseMap[question.Id].ResponseText ?? string.Empty).Trim();
@@ -109,34 +199,68 @@ public sealed class StudentAssessmentDeliveryService(
             var choices = ReadChoices(item);
             if (item.ItemType == AssessmentItemType.MultipleChoice &&
                 choices.Count > 0 &&
+                response.Length > 0 &&
                 !choices.Contains(response, StringComparer.Ordinal))
             {
                 return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
                     StudentAssessmentDeliveryErrorCode.InvalidSubmission);
             }
 
+            normalizedResponses.Add((question, item, response));
+        }
+
+        return assessment.AssessmentType == AssessmentType.Exam
+            ? await SubmitExamAsync(
+                actorUserId,
+                resolved,
+                attempt,
+                normalizedResponses,
+                now,
+                cancellationToken)
+            : await SubmitLearningTaskAsync(
+                actorUserId,
+                resolved,
+                attempt,
+                normalizedResponses,
+                now,
+                cancellationToken);
+    }
+
+    private async Task<StudentAssessmentDeliveryResult<StudentAssessmentSubmission>> SubmitExamAsync(
+        Guid actorUserId,
+        ResolvedDelivery resolved,
+        AssessmentAttempt attempt,
+        IReadOnlyList<(AssessmentQuestion Question, AssessmentItem Item, string Response)> rows,
+        DateTime now,
+        CancellationToken cancellationToken)
+    {
+        var assessment = resolved.Assessment!;
+        decimal score = 0m;
+        var scored = new List<(AssessmentQuestion Question, string Response, decimal Score)>();
+
+        foreach (var row in rows)
+        {
             var earned = MathematicsAnswerEquivalence.AreEquivalent(
-                response,
-                item.CorrectAnswer)
-                ? question.MaxScore
+                row.Response,
+                row.Item.CorrectAnswer)
+                ? row.Question.MaxScore
                 : 0m;
             earned = Round(earned);
             score += earned;
-            scored.Add((question, response, earned));
+            scored.Add((row.Question, row.Response, earned));
         }
 
         score = Round(score);
         var percentage = decimal.Round(
-            score / context.Assessment.MaxScore * 100m,
+            score / assessment.MaxScore * 100m,
             2,
             MidpointRounding.AwayFromZero);
-        var now = DateTime.UtcNow;
 
         var result = new AssessmentResult
         {
             Id = Guid.NewGuid(),
             SchoolId = resolved.SchoolId,
-            AssessmentId = assessmentId,
+            AssessmentId = assessment.Id,
             StudentProfileId = resolved.Profile!.Id,
             Score = score,
             Percentage = percentage,
@@ -162,14 +286,18 @@ public sealed class StudentAssessmentDeliveryService(
                 cancellationToken);
         }
 
+        attempt.Status = AssessmentAttemptStatus.Submitted;
+        attempt.SubmittedAtUtc = now;
+        attempt.UpdatedAtUtc = now;
+
         var eventId = Guid.NewGuid();
         var changed = new AssessmentResultChangedEvent(
             eventId,
             resolved.SchoolId,
-            assessmentId,
+            assessment.Id,
             result.Id,
-            context.Assessment.ClassGroupId,
-            context.Assessment.SubjectId,
+            assessment.ClassGroupId,
+            assessment.SubjectId,
             resolved.Profile.Id,
             now);
 
@@ -187,26 +315,15 @@ public sealed class StudentAssessmentDeliveryService(
             },
             cancellationToken);
 
-        if (audit is not null)
-        {
-            await audit.QueueAsync(
-                new AuditEvent(
-                    SchoolId: resolved.SchoolId,
-                    Action: "StudentAssessment.Submitted",
-                    EntityType: "AssessmentResult",
-                    EntityId: result.Id.ToString("D"),
-                    Feature: "Assessments",
-                    NewValues: new Dictionary<string, object?>
-                    {
-                        ["assessmentId"] = assessmentId,
-                        ["studentProfileId"] = resolved.Profile.Id,
-                        ["answerCount"] = scored.Count
-                    },
-                    ResultSummary: "Online assessment submitted by student.",
-                    ActorUserIdOverride: actorUserId,
-                    ActorRoleOverride: RoleNames.Student),
-                cancellationToken);
-        }
+        await QueueStudentAuditAsync(
+            actorUserId,
+            resolved,
+            "StudentAssessment.Submitted",
+            "AssessmentResult",
+            result.Id,
+            scored.Count,
+            "Online exam/test submitted by student.",
+            cancellationToken);
 
         var saved = await assessments.SaveAsync(cancellationToken);
         if (!saved.Succeeded)
@@ -215,23 +332,118 @@ public sealed class StudentAssessmentDeliveryService(
 
         return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Success(
             new StudentAssessmentSubmission(
-                assessmentId,
-                context.Assessment.Title,
+                assessment.Id,
+                assessment.Title,
                 score,
-                context.Assessment.MaxScore,
+                assessment.MaxScore,
                 percentage,
-                now));
+                now)
+            {
+                AssessmentType = AssessmentType.Exam
+            });
+    }
+
+    private async Task<StudentAssessmentDeliveryResult<StudentAssessmentSubmission>> SubmitLearningTaskAsync(
+        Guid actorUserId,
+        ResolvedDelivery resolved,
+        AssessmentAttempt attempt,
+        IReadOnlyList<(AssessmentQuestion Question, AssessmentItem Item, string Response)> rows,
+        DateTime now,
+        CancellationToken cancellationToken)
+    {
+        var assessment = resolved.Assessment!;
+        if (assessment.AssessmentType is not (AssessmentType.Homework or AssessmentType.Worksheet))
+        {
+            return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
+                StudentAssessmentDeliveryErrorCode.InvalidSubmission);
+        }
+
+        foreach (var row in rows)
+        {
+            var response = await assessments.GetTaskResponseAsync(
+                resolved.SchoolId,
+                attempt.Id,
+                row.Question.Id,
+                cancellationToken);
+
+            if (response is null)
+            {
+                await assessments.AddAsync(
+                    new AssessmentTaskResponse
+                    {
+                        Id = Guid.NewGuid(),
+                        SchoolId = resolved.SchoolId,
+                        AssessmentAttemptId = attempt.Id,
+                        AssessmentQuestionId = row.Question.Id,
+                        ResponseText = row.Response,
+                        UpdatedAtUtc = now
+                    },
+                    cancellationToken);
+            }
+            else
+            {
+                response.ResponseText = row.Response;
+                response.UpdatedAtUtc = now;
+            }
+        }
+
+        if (assessment.AssessmentType == AssessmentType.Homework)
+        {
+            attempt.Status = AssessmentAttemptStatus.Submitted;
+            attempt.SubmittedAtUtc = now;
+        }
+        else
+        {
+            attempt.Status = AssessmentAttemptStatus.Completed;
+            attempt.CompletedAtUtc = now;
+        }
+
+        attempt.UpdatedAtUtc = now;
+
+        await QueueStudentAuditAsync(
+            actorUserId,
+            resolved,
+            assessment.AssessmentType == AssessmentType.Homework
+                ? "StudentHomework.Submitted"
+                : "StudentWorksheet.Completed",
+            "AssessmentAttempt",
+            attempt.Id,
+            rows.Count,
+            assessment.AssessmentType == AssessmentType.Homework
+                ? "Homework submitted without numeric grading."
+                : "Worksheet completed without numeric grading.",
+            cancellationToken);
+
+        var saved = await assessments.SaveAsync(cancellationToken);
+        if (!saved.Succeeded)
+            return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
+                StudentAssessmentDeliveryErrorCode.PersistenceError);
+
+        return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Success(
+            new StudentAssessmentSubmission(
+                assessment.Id,
+                assessment.Title,
+                0m,
+                0m,
+                0m,
+                now)
+            {
+                AssessmentType = assessment.AssessmentType
+            });
     }
 
     private async Task<ResolvedDelivery> ResolveAsync(
         Guid actorUserId,
         Guid assessmentId,
+        DateTime nowUtc,
         CancellationToken cancellationToken)
     {
         var actor = await users.GetActorAsync(actorUserId, cancellationToken);
         if (actor is null || !actor.IsActive || actor.IsLocked || !actor.SchoolId.HasValue ||
             actor.Roles.Count != 1 || actor.Roles[0] != RoleNames.Student)
+        {
             return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.AccessDenied);
+        }
 
         var school = await schools.GetByIdAsync(actor.SchoolId.Value, cancellationToken);
         if (school is null || school.Status != SchoolStatus.Active)
@@ -262,9 +474,88 @@ public sealed class StudentAssessmentDeliveryService(
 
         if (assessment.TargetType == AssessmentTargetType.Student &&
             assessment.TargetStudentProfileId != profile.Id)
+        {
             return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.NotTargeted);
+        }
 
-        return ResolvedDelivery.Ok(school.Id, profile, snapshot);
+        if (assessment.AssessmentType == AssessmentType.Exam)
+        {
+            if (assessment.AvailableFromUtc.HasValue &&
+                nowUtc < assessment.AvailableFromUtc.Value)
+            {
+                return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.NotYetAvailable);
+            }
+
+            if (assessment.DueAtUtc.HasValue &&
+                nowUtc >= assessment.DueAtUtc.Value)
+            {
+                return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.DeadlinePassed);
+            }
+        }
+        else if (assessment.AssessmentType == AssessmentType.Homework)
+        {
+            if (!assessment.DueAtUtc.HasValue ||
+                nowUtc >= assessment.DueAtUtc.Value)
+            {
+                return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.DeadlinePassed);
+            }
+        }
+
+        return ResolvedDelivery.Ok(school.Id, profile, assessment, snapshot);
+    }
+
+    private static DateTime? ResolveEffectiveAttemptDeadline(
+        Assessment assessment,
+        AssessmentAttempt attempt)
+    {
+        if (assessment.AssessmentType != AssessmentType.Exam)
+            return null;
+
+        DateTime? deadline = assessment.DueAtUtc;
+
+        if (assessment.AttemptTimeLimitMinutes.HasValue)
+        {
+            var personal = attempt.StartedAtUtc.AddMinutes(
+                assessment.AttemptTimeLimitMinutes.Value);
+            deadline = !deadline.HasValue || personal < deadline.Value
+                ? personal
+                : deadline;
+        }
+
+        return deadline;
+    }
+
+    private async Task QueueStudentAuditAsync(
+        Guid actorUserId,
+        ResolvedDelivery resolved,
+        string action,
+        string entityType,
+        Guid entityId,
+        int answerCount,
+        string summary,
+        CancellationToken cancellationToken)
+    {
+        if (audit is null)
+            return;
+
+        await audit.QueueAsync(
+            new AuditEvent(
+                SchoolId: resolved.SchoolId,
+                Action: action,
+                EntityType: entityType,
+                EntityId: entityId.ToString("D"),
+                Feature: "Assessments",
+                NewValues: new Dictionary<string, object?>
+                {
+                    ["assessmentId"] = resolved.Assessment!.Id,
+                    ["assessmentType"] = resolved.Assessment.AssessmentType.ToString(),
+                    ["studentProfileId"] = resolved.Profile!.Id,
+                    ["answerCount"] = answerCount
+                },
+                ResultSummary: summary,
+                ActorUserIdOverride: actorUserId,
+                ActorRoleOverride: RoleNames.Student),
+            cancellationToken);
     }
 
     private static IReadOnlyList<string> ReadChoices(AssessmentItem item)
@@ -305,13 +596,18 @@ public sealed class StudentAssessmentDeliveryService(
     private sealed record ResolvedDelivery(
         Guid SchoolId,
         StudentProfile? Profile,
+        Assessment? Assessment,
         AssessmentSnapshot? Snapshot,
         StudentAssessmentDeliveryErrorCode? Error)
     {
-        public static ResolvedDelivery Ok(Guid schoolId, StudentProfile profile, AssessmentSnapshot snapshot) =>
-            new(schoolId, profile, snapshot, null);
+        public static ResolvedDelivery Ok(
+            Guid schoolId,
+            StudentProfile profile,
+            Assessment assessment,
+            AssessmentSnapshot snapshot) =>
+            new(schoolId, profile, assessment, snapshot, null);
 
         public static ResolvedDelivery Fail(StudentAssessmentDeliveryErrorCode error) =>
-            new(Guid.Empty, null, null, error);
+            new(Guid.Empty, null, null, null, error);
     }
 }
