@@ -117,7 +117,8 @@ public sealed class StudentAssessmentDeliveryService(
                 DueAtUtc = context.Assessment.DueAtUtc,
                 AttemptExpiresAtUtc = context.Assessment.AssessmentType == AssessmentType.Exam
                     ? effectiveDeadline
-                    : null
+                    : null,
+                SchoolTimeZoneId = resolved.SchoolTimeZoneId
             });
     }
 
@@ -513,7 +514,12 @@ public sealed class StudentAssessmentDeliveryService(
             }
         }
 
-        return ResolvedDelivery.Ok(school.Id, profile, assessment, snapshot);
+        return ResolvedDelivery.Ok(
+            school.Id,
+            school.TimeZoneId,
+            profile,
+            assessment,
+            snapshot);
     }
 
     private static DateTime? ResolveEffectiveAttemptDeadline(
@@ -628,6 +634,7 @@ public sealed class StudentAssessmentDeliveryService(
 
     private sealed record ResolvedDelivery(
         Guid SchoolId,
+        string SchoolTimeZoneId,
         StudentProfile? Profile,
         Assessment? Assessment,
         AssessmentSnapshot? Snapshot,
@@ -635,12 +642,19 @@ public sealed class StudentAssessmentDeliveryService(
     {
         public static ResolvedDelivery Ok(
             Guid schoolId,
+            string schoolTimeZoneId,
             StudentProfile profile,
             Assessment assessment,
             AssessmentSnapshot snapshot) =>
-            new(schoolId, profile, assessment, snapshot, null);
+            new(
+                schoolId,
+                string.IsNullOrWhiteSpace(schoolTimeZoneId) ? "UTC" : schoolTimeZoneId,
+                profile,
+                assessment,
+                snapshot,
+                null);
 
         public static ResolvedDelivery Fail(StudentAssessmentDeliveryErrorCode error) =>
-            new(Guid.Empty, null, null, null, error);
+            new(Guid.Empty, "UTC", null, null, null, error);
     }
 }
