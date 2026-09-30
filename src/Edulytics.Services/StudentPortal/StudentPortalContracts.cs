@@ -96,4 +96,7 @@ public sealed record StudentPortalWorkspace(
     IReadOnlyList<StudentEnrollmentItem> Enrollments,
     IReadOnlyList<StudentLearningSubjectItem> Learning,
     IReadOnlyList<StudentAssessmentItem> Assessments,
-    IReadOnlyList<StudentResultItem> Results);
+    IReadOnlyList<StudentResultItem> Results)
+{
+    public string SchoolTimeZoneId { get; init; } = "UTC";
+}
