@@ -7,6 +7,8 @@
     const hint = document.querySelector("[data-practice-hint]");
     const feedback = document.querySelector("[data-practice-feedback]");
     const soundButton = document.querySelector("[data-practice-sound]");
+    const terminal = document.querySelector("[data-practice-terminal]");
+    const nextButtons = document.querySelectorAll("[data-practice-next]");
 
     function stopVoice() {
         if (voice) {
@@ -58,10 +60,17 @@
         });
     }
 
-    if (voice) {
+    if (voice && !terminal) {
         window.setTimeout(() => {
-            voice.speakMany(currentSpeech(), locale);
+            const speech = currentSpeech();
+            if (speech.length > 0) {
+                voice.speakMany(speech, locale);
+            }
         }, 120);
+    }
+
+    for (const nextButton of nextButtons) {
+        nextButton.addEventListener("click", stopVoice);
     }
 
     const answerForms = document.querySelectorAll("[data-adaptive-answer-form]");

@@ -187,6 +187,88 @@ public sealed class AdaptiveProductionClosureRegressionTests
     }
 
     [Fact]
+    public void AdaptiveFeedbackStaysWithEddyUntilLearnerSelectsNext()
+    {
+        var view = Read(
+            "src/Edulytics.Web/Views/StudentAdaptivePractice/Attempt.cshtml");
+        var controller = Read(
+            "src/Edulytics.Web/Controllers/StudentPracticeController.cs");
+
+        Assert.Contains(
+            "ViewData[\"AdaptiveReview\"] as AdaptivePracticeReviewView",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "data-practice-review",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "data-practice-next",
+            view,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "data-practice-feedback",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "reviewSequence = sequence",
+            controller,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void CompletedAdaptivePracticeIsAlwaysSilent()
+    {
+        var view = Read(
+            "src/Edulytics.Web/Views/StudentAdaptivePractice/Attempt.cshtml");
+        var javascript = Read(
+            "src/Edulytics.Web/wwwroot/js/student-lesson-practice.js");
+
+        Assert.Contains(
+            "data-practice-terminal",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "const terminal = document.querySelector(\"[data-practice-terminal]\")",
+            javascript,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "if (voice && !terminal)",
+            javascript,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "nextButton.addEventListener(\"click\", stopVoice)",
+            javascript,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void AdaptiveComplexityIsNormalizedToGeneratedCapability()
+    {
+        var service = Read(
+            "src/Edulytics.Services/AdaptivePractice/AdaptivePracticeV2Service.cs");
+        var generator = Read(
+            "src/Edulytics.Services/AdaptivePractice/AdaptiveVerifiedItemGenerator.cs");
+
+        Assert.Contains(
+            "NormalizeDecisionToTruthfulCapability",
+            service,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "ClampComplexityToCognitiveBand",
+            generator,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "PracticeCognitiveDifficulty.Standard =>",
+            generator,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "Math.Min(requestedComplexity, 55)",
+            generator,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void PracticeVoiceIsCancelledBeforeSubmitAndNavigation()
     {
         var javascript = Read(
