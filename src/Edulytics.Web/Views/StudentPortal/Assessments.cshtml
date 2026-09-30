@@ -31,7 +31,7 @@
 
     var exams = Model.Workspace.Assessments
         .Where(x => x.AssessmentType == AssessmentType.Exam)
-        .OrderBy(x => x.AssessmentDate)
+        .OrderByDescending(x => x.AssessmentDate)
         .ThenBy(x => x.Title)
         .ToArray();
 
@@ -70,10 +70,10 @@
         .Where(x => !x.IsSubmitted && x.IsDeadlinePassed)
         .ToArray();
 
-    var onlineWorksheets = worksheets
+    var worksheetOnlineItems = worksheets
         .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Online)
         .ToArray();
-    var offlineWorksheets = worksheets
+    var worksheetOfflineItems = worksheets
         .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Offline)
         .ToArray();
 }
@@ -258,7 +258,7 @@
     else
     {
         <div class="student-card-list ed-scroll-list">
-            @foreach (var item in onlineWorksheets)
+            @foreach (var item in worksheetOnlineItems)
             {
                 <article class="student-assessment-card">
                     <div>
@@ -282,7 +282,7 @@
                 </article>
             }
 
-            @foreach (var item in offlineWorksheets)
+            @foreach (var item in worksheetOfflineItems)
             {
                 <article class="student-assessment-card">
                     <div>
