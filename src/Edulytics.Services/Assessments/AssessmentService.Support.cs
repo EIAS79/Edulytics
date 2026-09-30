@@ -140,7 +140,10 @@ public sealed partial class AssessmentService
             subjects
                 .OrderBy(x => x.Name)
                 .Select(x => new AssessmentSubjectItem(x.Id, x.Name, x.Code))
-                .ToArray());
+                .ToArray())
+        {
+            SchoolTimeZoneId = scope.School?.TimeZoneId ?? "UTC"
+        };
     }
 
     private static IReadOnlyList<AssessmentQuestionItem> BuildQuestions(
