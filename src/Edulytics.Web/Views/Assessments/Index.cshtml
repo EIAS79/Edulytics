@@ -55,6 +55,13 @@
                   class="assessment-form assessment-create-form">
                 @Html.AntiForgeryToken()
 
+                <label for="assessmentType">@L("Type", "Typ")</label>
+                <select id="assessmentType" name="assessmentType" required>
+                    <option value="@AssessmentType.Exam">@L("Exam / Test", "Egzamin / test")</option>
+                    <option value="@AssessmentType.Homework">@L("Homework", "Praca domowa")</option>
+                    <option value="@AssessmentType.Worksheet">@L("Worksheet", "Karta pracy")</option>
+                </select>
+
                 <label for="classGroupId">@A["ClassGroup"]</label>
                 <select id="classGroupId" name="classGroupId" required>
                     <option value="">@A["SelectClass"]</option>
@@ -89,10 +96,39 @@
                 <input id="assessmentDate" name="assessmentDate"
                        type="date" required />
 
-                <label for="maxScore">@A["MaxScore"]</label>
-                <input id="maxScore" name="maxScore"
-                       type="number" min="1" max="10000"
-                       step="1" required />
+                <div id="assessment-delivery-group">
+                    <label for="deliveryMode">@L("Delivery", "Tryb")</label>
+                    <select id="deliveryMode" name="deliveryMode">
+                        <option value="@AssessmentDeliveryMode.Online">Online</option>
+                        <option value="@AssessmentDeliveryMode.Offline">Offline</option>
+                    </select>
+                </div>
+
+                <div id="assessment-score-group">
+                    <label for="maxScore">@A["MaxScore"]</label>
+                    <input id="maxScore" name="maxScore"
+                           type="number" min="1" max="10000"
+                           step="1" value="100" />
+                </div>
+
+                <div id="assessment-exam-schedule">
+                    <label for="availableFromLocal">@L("Starts at (optional)", "Rozpoczęcie (opcjonalne)")</label>
+                    <input id="availableFromLocal" name="availableFromLocal" type="datetime-local" />
+
+                    <label for="examDueAtLocal">@L("Hard end (optional)", "Koniec (opcjonalny)")</label>
+                    <input id="examDueAtLocal" name="dueAtLocal" type="datetime-local" />
+
+                    <label for="attemptTimeLimitMinutes">@L("Attempt time limit in minutes (optional)", "Limit czasu w minutach (opcjonalny)")</label>
+                    <input id="attemptTimeLimitMinutes" name="attemptTimeLimitMinutes"
+                           type="number" min="1" max="480" step="1" />
+                    <small>@L($"Times use the school time zone: {Model.Workspace.SchoolTimeZoneId}.", $"Godziny używają strefy szkoły: {Model.Workspace.SchoolTimeZoneId}.")</small>
+                </div>
+
+                <div id="assessment-homework-due" hidden>
+                    <label for="homeworkDueAtLocal">@L("Return / due time", "Termin oddania")</label>
+                    <input id="homeworkDueAtLocal" type="datetime-local" />
+                    <small>@L($"Required for Homework · {Model.Workspace.SchoolTimeZoneId}.", $"Wymagane dla pracy domowej · {Model.Workspace.SchoolTimeZoneId}.")</small>
+                </div>
 
                 <button type="submit"
                         class="school-button school-button-primary">
@@ -125,6 +161,15 @@
                         <option value="Draft">@L("Draft", "Wersja robocza")</option>
                         <option value="Open">@L("Open", "Otwarty")</option>
                         <option value="Closed">@L("Closed", "Zamknięty")</option>
+                    </select>
+                </label>
+                <label>
+                    <span>@L("Type", "Typ")</span>
+                    <select id="assessment-type-filter">
+                        <option value="">@L("All types", "Wszystkie typy")</option>
+                        <option value="Exam">@L("Exam / Test", "Egzamin / test")</option>
+                        <option value="Homework">@L("Homework", "Praca domowa")</option>
+                        <option value="Worksheet">@L("Worksheet", "Karta pracy")</option>
                     </select>
                 </label>
                 <label>
@@ -174,6 +219,7 @@
                          data-assessment-card
                          data-search="@searchable"
                          data-status="@item.Status"
+                         data-type="@item.AssessmentType"
                          data-delivery="@item.DeliveryMode"
                          data-date="@item.AssessmentDate.ToString("yyyy-MM-dd")">
                     <div>
@@ -184,8 +230,20 @@
                         </span>
                         <h3>@item.Title</h3>
                         <p>
-                            @item.AssessmentDate.ToString("yyyy-MM-dd")
-                            · @A["MaxScore"]: @item.MaxScore.ToString("0.##")
+                            <strong>@(item.AssessmentType == AssessmentType.Exam
+                                ? L("Exam / Test", "Egzamin / test")
+                                : item.AssessmentType == AssessmentType.Homework
+                                    ? L("Homework", "Praca domowa")
+                                    : L("Worksheet", "Karta pracy"))</strong>
+                            · @item.AssessmentDate.ToString("yyyy-MM-dd")
+                            @if (item.IsScored)
+                            {
+                                <text> · @A["MaxScore"]: @item.MaxScore.ToString("0.##")</text>
+                            }
+                            @if (item.AssessmentType == AssessmentType.Homework && item.DueAtUtc.HasValue)
+                            {
+                                <text> · @L("Due", "Termin"): @item.DueAtUtc.Value.ToString("yyyy-MM-dd HH:mm") UTC</text>
+                            }
                             · @A[statusKey]
                             · <strong>@B["CurrentDelivery"]:</strong>
                             <span class="ed-delivery-badge @deliveryClass">@B[deliveryKey]</span>
@@ -195,7 +253,8 @@
                         <a class="school-button"
                            asp-action="Details"
                            asp-route-id="@item.Id">@A["Details"]</a>
-                        @if (item.Status != AssessmentStatus.Draft)
+                        @if (item.AssessmentType == AssessmentType.Exam &&
+                             item.Status != AssessmentStatus.Draft)
                         {
                             <a class="school-button school-button-primary"
                                asp-action="Results"
@@ -222,7 +281,7 @@
 </section>
 
 <style>
-.assessment-browser-controls{display:grid;grid-template-columns:minmax(260px,2fr) repeat(5,minmax(130px,1fr));gap:.8rem;align-items:end;margin:0 0 1rem;padding:1rem;border:1px solid #dbe4ef;border-radius:1rem;background:#fff}.assessment-browser-controls label{display:grid;gap:.35rem;min-width:0}.assessment-browser-controls label>span{font-size:.78rem;font-weight:800;color:#5a6b82}.assessment-browser-controls input,.assessment-browser-controls select{width:100%;min-height:2.75rem;padding:.55rem .7rem;border:1px solid #cfd9e7;border-radius:.65rem;background:#fff;color:#102540}.assessment-list-items{display:grid;gap:1rem}.assessment-browser-pagination{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1rem;padding:.7rem 0}.assessment-browser-pagination>span{font-weight:750;color:#5a6b82}@@media(max-width:1100px){.assessment-browser-controls{grid-template-columns:repeat(3,minmax(0,1fr))}.assessment-browser-search{grid-column:span 3}}@@media(max-width:700px){.assessment-browser-controls{grid-template-columns:1fr 1fr}.assessment-browser-search{grid-column:span 2}.assessment-browser-pagination{align-items:flex-start;flex-direction:column}}
+.assessment-browser-controls{display:grid;grid-template-columns:minmax(260px,2fr) repeat(6,minmax(130px,1fr));gap:.8rem;align-items:end;margin:0 0 1rem;padding:1rem;border:1px solid #dbe4ef;border-radius:1rem;background:#fff}.assessment-browser-controls label{display:grid;gap:.35rem;min-width:0}.assessment-browser-controls label>span{font-size:.78rem;font-weight:800;color:#5a6b82}.assessment-browser-controls input,.assessment-browser-controls select{width:100%;min-height:2.75rem;padding:.55rem .7rem;border:1px solid #cfd9e7;border-radius:.65rem;background:#fff;color:#102540}.assessment-list-items{display:grid;gap:1rem}.assessment-browser-pagination{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1rem;padding:.7rem 0}.assessment-browser-pagination>span{font-weight:750;color:#5a6b82}@@media(max-width:1100px){.assessment-browser-controls{grid-template-columns:repeat(3,minmax(0,1fr))}.assessment-browser-search{grid-column:span 3}}@@media(max-width:700px){.assessment-browser-controls{grid-template-columns:1fr 1fr}.assessment-browser-search{grid-column:span 2}.assessment-browser-pagination{align-items:flex-start;flex-direction:column}}
 </style>
 
 <script>
@@ -234,6 +293,7 @@
 
     const search = document.getElementById('assessment-search');
     const status = document.getElementById('assessment-status-filter');
+    const type = document.getElementById('assessment-type-filter');
     const delivery = document.getElementById('assessment-delivery-filter');
     const dateFrom = document.getElementById('assessment-date-from');
     const dateTo = document.getElementById('assessment-date-to');
@@ -249,6 +309,7 @@
         const q = normalized(search?.value);
         if (q && !normalized(card.dataset.search).includes(q)) return false;
         if (status?.value && card.dataset.status !== status.value) return false;
+        if (type?.value && card.dataset.type !== type.value) return false;
         if (delivery?.value && card.dataset.delivery !== delivery.value) return false;
         if (dateFrom?.value && (card.dataset.date || '') < dateFrom.value) return false;
         if (dateTo?.value && (card.dataset.date || '') > dateTo.value) return false;
@@ -273,7 +334,7 @@
         if (next) next.disabled = page >= pages || matches.length === 0;
     };
 
-    [search, status, delivery, dateFrom, dateTo, pageSize].forEach(control => {
+    [search, status, type, delivery, dateFrom, dateTo, pageSize].forEach(control => {
         control?.addEventListener(control === search ? 'input' : 'change', () => {
             page = 1;
             render();
@@ -282,5 +343,68 @@
     prev?.addEventListener('click', () => { page -= 1; render(); });
     next?.addEventListener('click', () => { page += 1; render(); });
     render();
+})();
+</script>
+
+<script>
+(() => {
+    const form = document.querySelector('.assessment-create-form');
+    if (!form) return;
+
+    const type = document.getElementById('assessmentType');
+    const delivery = document.getElementById('deliveryMode');
+    const deliveryGroup = document.getElementById('assessment-delivery-group');
+    const scoreGroup = document.getElementById('assessment-score-group');
+    const maxScore = document.getElementById('maxScore');
+    const examSchedule = document.getElementById('assessment-exam-schedule');
+    const examStart = document.getElementById('availableFromLocal');
+    const examDue = document.getElementById('examDueAtLocal');
+    const timeLimit = document.getElementById('attemptTimeLimitMinutes');
+    const homeworkDueGroup = document.getElementById('assessment-homework-due');
+    const homeworkDue = document.getElementById('homeworkDueAtLocal');
+
+    const sync = () => {
+        const value = type?.value || 'Exam';
+        const isExam = value === 'Exam';
+        const isHomework = value === 'Homework';
+        const isWorksheet = value === 'Worksheet';
+
+        if (scoreGroup) scoreGroup.hidden = !isExam;
+        if (maxScore) {
+            maxScore.required = isExam;
+            maxScore.disabled = !isExam;
+        }
+
+        if (deliveryGroup) deliveryGroup.hidden = isHomework;
+        if (delivery) {
+            delivery.disabled = isHomework;
+            if (isHomework) delivery.value = 'Online';
+        }
+
+        if (examSchedule) examSchedule.hidden = !isExam;
+        [examStart, examDue, timeLimit].forEach(input => {
+            if (input) input.disabled = !isExam;
+        });
+
+        if (homeworkDueGroup) homeworkDueGroup.hidden = !isHomework;
+        if (homeworkDue) {
+            homeworkDue.disabled = !isHomework;
+            homeworkDue.required = isHomework;
+            if (isHomework) homeworkDue.name = 'dueAtLocal';
+            else homeworkDue.removeAttribute('name');
+        }
+
+        if (examDue) {
+            if (isExam) examDue.name = 'dueAtLocal';
+            else examDue.removeAttribute('name');
+        }
+
+        if (isWorksheet && delivery && delivery.value !== 'Online' && delivery.value !== 'Offline') {
+            delivery.value = 'Online';
+        }
+    };
+
+    type?.addEventListener('change', sync);
+    sync();
 })();
 </script>
