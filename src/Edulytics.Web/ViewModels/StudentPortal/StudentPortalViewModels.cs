@@ -20,13 +20,16 @@ public sealed record StudentDashboardViewModel(
         Workspace.Assessments
             .Where(x =>
                 x.DeliveryMode == Edulytics.Core.Enums.AssessmentDeliveryMode.Online &&
-                !x.IsSubmitted)
+                !x.IsSubmitted &&
+                !x.IsDeadlinePassed)
             .OrderBy(x => x.AssessmentDate)
+            .ThenBy(x => x.Title)
             .ToArray();
 
     public IReadOnlyList<StudentAssessmentItem> SubmittedOnlineAssessments =>
         Workspace.Assessments
             .Where(x =>
+                x.AssessmentType == Edulytics.Core.Enums.AssessmentType.Exam &&
                 x.DeliveryMode == Edulytics.Core.Enums.AssessmentDeliveryMode.Online &&
                 x.IsSubmitted)
             .OrderByDescending(x => x.AssessmentDate)
@@ -35,6 +38,7 @@ public sealed record StudentDashboardViewModel(
     public IReadOnlyList<StudentAssessmentItem> AwaitingOfflineResults =>
         Workspace.Assessments
             .Where(x =>
+                x.AssessmentType == Edulytics.Core.Enums.AssessmentType.Exam &&
                 x.DeliveryMode == Edulytics.Core.Enums.AssessmentDeliveryMode.Offline &&
                 !x.IsSubmitted)
             .OrderBy(x => x.AssessmentDate)
