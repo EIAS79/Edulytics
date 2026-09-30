@@ -23,11 +23,23 @@
          assessment.AssessmentType == AssessmentType.Exam &&
          assessment.AvailableFromUtc.HasValue &&
          nowUtc < assessment.AvailableFromUtc.Value);
-    var canEditHomeworkDue =
-        assessment.Status == AssessmentStatus.Open &&
-        assessment.AssessmentType == AssessmentType.Homework &&
-        assessment.DueAtUtc.HasValue &&
-        nowUtc < assessment.DueAtUtc.Value;
+    TimeZoneInfo schoolTimeZone;
+    try
+    {
+        schoolTimeZone = TimeZoneInfo.FindSystemTimeZoneById(Model.Details.SchoolTimeZoneId);
+    }
+    catch
+    {
+        schoolTimeZone = TimeZoneInfo.Utc;
+    }
+
+    string LocalTime(DateTime? utc) =>
+        utc.HasValue
+            ? TimeZoneInfo.ConvertTimeFromUtc(
+                DateTime.SpecifyKind(utc.Value, DateTimeKind.Utc),
+                schoolTimeZone).ToString("yyyy-MM-dd HH:mm")
+            : "—";
+
     var reusableClasses = Model.Details.ClassGroups
         .Where(x =>
             x.Id != assessment.ClassGroupId &&
@@ -54,11 +66,11 @@
                 }
                 @if (assessment.AssessmentType == AssessmentType.Homework && assessment.DueAtUtc.HasValue)
                 {
-                    <text> · Due: @assessment.DueAtUtc.Value.ToString("yyyy-MM-dd HH:mm") UTC</text>
+                    <text> · Due: @LocalTime(assessment.DueAtUtc) (@Model.Details.SchoolTimeZoneId)</text>
                 }
                 @if (assessment.AssessmentType == AssessmentType.Exam && assessment.AvailableFromUtc.HasValue)
                 {
-                    <text> · Starts: @assessment.AvailableFromUtc.Value.ToString("yyyy-MM-dd HH:mm") UTC</text>
+                    <text> · Starts: @LocalTime(assessment.AvailableFromUtc) (@Model.Details.SchoolTimeZoneId)</text>
                 }
                 · @A["Status"]: @A[Model.StatusKey] ·
                 <strong>@B["CurrentDelivery"]:</strong>
@@ -67,7 +79,7 @@
         </div>
         <div class="assessment-actions">
             <a class="school-button" asp-action="Index">@A["Assessments"]</a>
-            @if ((canEditContent || canEditHomeworkDue) && canManage)
+            @if (canEditContent && canManage)
             {
                 <a class="school-button" asp-action="Edit" asp-route-id="@assessment.Id">@A["EditAssessment"]</a>
             }
