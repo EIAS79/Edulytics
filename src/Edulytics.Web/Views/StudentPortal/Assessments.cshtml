@@ -70,7 +70,7 @@
         .Where(x => !x.IsSubmitted && x.IsDeadlinePassed)
         .ToArray();
 
-    var onlineWorksheets = worksheets
+    var worksheetsOnline = worksheets
         .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Online)
         .ToArray();
     var offlineWorksheets = worksheets
@@ -258,7 +258,7 @@
     else
     {
         <div class="student-card-list ed-scroll-list">
-            @foreach (var item in onlineWorksheets)
+            @foreach (var item in worksheetsOnline)
             {
                 <article class="student-assessment-card">
                     <div>
