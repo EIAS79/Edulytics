@@ -64,6 +64,26 @@ public sealed record AdaptivePracticeStartResult(
         new(null, error);
 }
 
+public sealed record AdaptivePracticeReviewView(
+    AdaptivePracticeQuestionView Question,
+    bool IsCorrect,
+    string Feedback);
+
+public sealed record AdaptivePracticeReviewResult(
+    AdaptivePracticeReviewView? Review,
+    AdaptivePracticeV2Error? Error)
+{
+    public bool Succeeded => Review is not null && Error is null;
+
+    public static AdaptivePracticeReviewResult Success(
+        AdaptivePracticeReviewView review) =>
+        new(review, null);
+
+    public static AdaptivePracticeReviewResult Failure(
+        AdaptivePracticeV2Error error) =>
+        new(null, error);
+}
+
 public sealed record AdaptivePracticeAnswerResult(
     AdaptivePracticeSessionView? Session,
     bool? IsCorrect,
@@ -94,6 +114,12 @@ public interface IAdaptivePracticeV2Service
     Task<AdaptivePracticeStartResult> GetSessionAsync(
         Guid studentUserId,
         Guid sessionId,
+        CancellationToken cancellationToken = default);
+
+    Task<AdaptivePracticeReviewResult> GetReviewAsync(
+        Guid studentUserId,
+        Guid sessionId,
+        int sequence,
         CancellationToken cancellationToken = default);
 
     Task<AdaptivePracticeAnswerResult> AnswerAsync(
