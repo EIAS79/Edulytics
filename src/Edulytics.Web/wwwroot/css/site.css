@@ -14116,3 +14116,75 @@ a.lesson-content-row:hover
         text-align: left;
     }
 }
+
+
+/* learner-production-layout-20260930
+   Use the available application canvas for lesson content while preserving
+   a readable measure for prose. Cards, examples and media can use the full
+   lesson column instead of forcing the entire lesson into a narrow strip. */
+.lesson-reader {
+    width: min(100%, 1460px);
+}
+
+.lesson-reader-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 18rem);
+    gap: 1.5rem;
+}
+
+.lesson-reader-main {
+    width: 100%;
+}
+
+.rich-lesson-body > .lesson-reader-text {
+    max-width: 86ch;
+}
+
+.rich-concept-grid,
+.rich-example-grid,
+.rich-video-grid {
+    gap: 1.15rem;
+}
+
+.rich-mistake-grid {
+    gap: 1.15rem;
+}
+
+.rich-mistake-card {
+    display: grid;
+    align-content: start;
+    gap: .65rem;
+    padding: 1.15rem 1.2rem;
+}
+
+.rich-mistake-card h3,
+.rich-mistake-card p {
+    margin: 0;
+}
+
+.rich-mistake-card h3 {
+    color: #7f3834;
+    font-size: .78rem;
+    letter-spacing: .045em;
+    text-transform: uppercase;
+}
+
+.rich-mistake-card__mistake {
+    font-size: 1rem;
+    line-height: 1.48 !important;
+}
+
+@media (max-width: 1100px) and (min-width: 761px) {
+    .rich-mistake-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .rich-mistake-grid > .rich-mistake-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 960px) {
+    .lesson-reader-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
