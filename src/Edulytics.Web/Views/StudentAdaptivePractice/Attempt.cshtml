@@ -329,13 +329,12 @@
             box-shadow: 0 5px 0 rgba(111,85,39,.68);
         }
 
-        .adaptive-gw-shell .lp-server-choice.is-selected,
-        .adaptive-gw-shell .lp-server-choice[aria-checked="true"] {
+        .adaptive-gw-shell .lp-server-choice.is-selected {
             outline: 4px solid rgba(113,224,196,.52);
             background: linear-gradient(180deg,#d8ffe7,#8fe5b0);
         }
 
-        .adaptive-gw-shell .lp-server-choice[disabled] {
+        .adaptive-gw-shell .lp-server-choice:has(input:disabled) {
             cursor: default;
             opacity: 1;
         }
@@ -581,12 +580,14 @@
                                                 choice.Value,
                                                 reviewAnswer,
                                                 StringComparison.OrdinalIgnoreCase);
-                                        <button class="lp-server-choice @(selected ? "is-selected" : null)"
-                                                type="button"
-                                                disabled
-                                                aria-checked="@(selected ? "true" : "false")">
-                                            @choice.Label) @choice.Value
-                                        </button>
+                                        <label class="lp-server-choice @(selected ? "is-selected" : null)">
+                                            <input type="radio"
+                                                   name="review-answer"
+                                                   value="@choice.Value"
+                                                   checked="@selected"
+                                                   disabled />
+                                            <span>@choice.Label) @choice.Value</span>
+                                        </label>
                                     }
                                 </div>
                             }
@@ -595,6 +596,7 @@
                                 LessonPracticeInteractionKind.RelationChoice)
                             {
                                 <div class="lp-server-choice-row"
+                                     role="radiogroup"
                                      aria-label="@S["YourAnswer"]"
                                      aria-readonly="true">
                                     @foreach (var relation in new[] { "<", "=", ">" })
@@ -604,12 +606,14 @@
                                                 relation,
                                                 reviewAnswer,
                                                 StringComparison.Ordinal);
-                                        <button class="lp-server-choice @(selected ? "is-selected" : null)"
-                                                type="button"
-                                                disabled
-                                                aria-checked="@(selected ? "true" : "false")">
-                                            @relation
-                                        </button>
+                                        <label class="lp-server-choice @(selected ? "is-selected" : null)">
+                                            <input type="radio"
+                                                   name="review-answer"
+                                                   value="@relation"
+                                                   checked="@selected"
+                                                   disabled />
+                                            <span>@relation</span>
+                                        </label>
                                     }
                                 </div>
                             }
