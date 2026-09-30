@@ -31,6 +31,7 @@ public enum AssessmentErrorCode
     AssessmentNotDraft,
     AssessmentNotOpen,
     AssessmentAlreadyClosed,
+    AssessmentResultsNotReady,
     AssessmentHasNoQuestions,
     AssessmentScoreMismatch,
     QuestionMissingOutcome,
