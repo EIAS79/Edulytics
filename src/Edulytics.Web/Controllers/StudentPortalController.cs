@@ -14,6 +14,7 @@ using Edulytics.Web.ViewModels.StudentPortal;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
+using Microsoft.Extensions.Localization;
 
 namespace Edulytics.Web.Controllers;
 
@@ -30,6 +31,7 @@ public sealed class StudentPortalController : Controller
     private readonly IStudentPrivatePracticeService _privatePractice;
     private readonly IStudentSelfEvaluationService _selfEvaluation;
     private readonly IYouTubeLessonDiscoveryService _youTubeLessons;
+    private readonly IStringLocalizer<StudentResource> _studentText;
 
     public StudentPortalController(
         IStudentPortalService portal,
@@ -38,7 +40,8 @@ public sealed class StudentPortalController : Controller
         IStudentAssessmentDeliveryService assessmentDelivery,
         IStudentPrivatePracticeService privatePractice,
         IStudentSelfEvaluationService selfEvaluation,
-        IYouTubeLessonDiscoveryService youTubeLessons)
+        IYouTubeLessonDiscoveryService youTubeLessons,
+        IStringLocalizer<StudentResource> studentText)
     {
         _portal = portal;
         _notifications = notifications;
@@ -47,6 +50,7 @@ public sealed class StudentPortalController : Controller
         _privatePractice = privatePractice;
         _selfEvaluation = selfEvaluation;
         _youTubeLessons = youTubeLessons;
+        _studentText = studentText;
     }
 
     [HttpGet("")]
@@ -325,6 +329,63 @@ public sealed class StudentPortalController : Controller
         var attempt = await _assessmentDelivery.GetAttemptAsync(actorId, id, cancellationToken);
         if (attempt.Value is not null) return View(nameof(TakeAssessment), attempt.Value);
         return HandleAssessmentDeliveryError(attempt.Error);
+    }
+
+    [HttpPost("assessments/{id:guid}/save")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> SaveAssessmentProgress(
+        Guid id,
+        Guid[]? questionIds,
+        string[]? responses,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId)) return Forbid();
+
+        questionIds ??= [];
+        responses ??= [];
+        if (questionIds.Length != responses.Length)
+            return BadRequest();
+
+        var payload = questionIds
+            .Select((questionId, index) =>
+                new StudentAssessmentResponse(
+                    questionId,
+                    responses[index]))
+            .ToArray();
+
+        var saved = await _assessmentDelivery.SaveProgressAsync(
+            actorId,
+            id,
+            payload,
+            cancellationToken);
+
+        if (saved.Value is not null)
+        {
+            TempData["Success"] = _studentText["ProgressSaved"].Value;
+            return RedirectToAction(nameof(TakeAssessment), new { id });
+        }
+
+        return saved.Error switch
+        {
+            StudentAssessmentDeliveryErrorCode.AlreadySubmitted =>
+                RedirectToAction(nameof(Assessments)),
+            StudentAssessmentDeliveryErrorCode.InvalidSubmission =>
+                BadRequest(),
+            StudentAssessmentDeliveryErrorCode.DeadlinePassed or
+            StudentAssessmentDeliveryErrorCode.AttemptExpired =>
+                RedirectWithAssessmentError(
+                    nameof(Assessments),
+                    "AssessmentDeadlinePassed"),
+            StudentAssessmentDeliveryErrorCode.AccessDenied or
+            StudentAssessmentDeliveryErrorCode.SchoolNotActive or
+            StudentAssessmentDeliveryErrorCode.ProfileNotLinked or
+            StudentAssessmentDeliveryErrorCode.NotTargeted =>
+                Forbid(),
+            _ => RedirectWithAssessmentError(
+                nameof(TakeAssessment),
+                "ProgressSaveFailed",
+                new { id })
+        };
     }
 
     [HttpPost("assessments/{id:guid}/submit")]
@@ -655,6 +716,15 @@ public sealed class StudentPortalController : Controller
         }
 
         return NotFound();
+    }
+
+    private IActionResult RedirectWithAssessmentError(
+        string action,
+        string resourceKey,
+        object? routeValues = null)
+    {
+        TempData["Error"] = _studentText[resourceKey].Value;
+        return RedirectToAction(action, routeValues);
     }
 
     private IActionResult HandlePortalError(StudentPortalErrorCode? error) =>
