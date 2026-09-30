@@ -14,6 +14,10 @@ public sealed class Assessment : ISchoolScoped
     public string Title { get; set; } = string.Empty;
     public DateOnly AssessmentDate { get; set; }
     public decimal MaxScore { get; set; }
+    public AssessmentType AssessmentType { get; set; } = AssessmentType.Exam;
+    public DateTime? AvailableFromUtc { get; set; }
+    public DateTime? DueAtUtc { get; set; }
+    public int? AttemptTimeLimitMinutes { get; set; }
     public AssessmentStatus Status { get; set; }
     public AssessmentTargetType TargetType { get; set; } = AssessmentTargetType.Class;
     public Guid? TargetStudentProfileId { get; set; }
