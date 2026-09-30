@@ -8,6 +8,24 @@
     const feedback = document.querySelector("[data-practice-feedback]");
     const soundButton = document.querySelector("[data-practice-sound]");
 
+    function stopVoice() {
+        if (voice) {
+            voice.stop();
+        }
+    }
+
+    // A navigation can happen while SpeechSynthesis still has queued
+    // utterances from the previous question. Always clear that queue when
+    // this page initializes and whenever the practice page is left/hidden.
+    stopVoice();
+    window.addEventListener("pagehide", stopVoice);
+    window.addEventListener("beforeunload", stopVoice);
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") {
+            stopVoice();
+        }
+    });
+
     function currentSpeech() {
         const parts = [];
         if (feedback && feedback.textContent.trim()) {
@@ -62,6 +80,7 @@
             }
 
             submitted = true;
+            stopVoice();
             form.dataset.submitting = "true";
             form.setAttribute("aria-busy", "true");
 
