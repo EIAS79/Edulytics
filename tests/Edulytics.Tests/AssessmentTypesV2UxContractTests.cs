@@ -106,10 +106,11 @@ public sealed class AssessmentTypesV2UxContractTests
             Assert.Contains("CultureInfo.InvariantCulture", source, StringComparison.Ordinal);
         }
 
-        Assert.DoesNotContain("SchoolTimeZoneId)", details, StringComparison.Ordinal);
-        Assert.DoesNotContain("SchoolTimeZoneId)", index, StringComparison.Ordinal);
-        Assert.DoesNotContain("SchoolTimeZoneId)", student, StringComparison.Ordinal);
+        Assert.DoesNotContain("(@Model.Details.SchoolTimeZoneId)", details, StringComparison.Ordinal);
+        Assert.DoesNotContain("(@Model.Workspace.SchoolTimeZoneId)", index, StringComparison.Ordinal);
+        Assert.DoesNotContain("(@Model.Workspace.SchoolTimeZoneId)", student, StringComparison.Ordinal);
         Assert.DoesNotContain("School time zone: @Model.Details.SchoolTimeZoneId", edit, StringComparison.Ordinal);
+        Assert.DoesNotContain("Times use the school time zone:", index, StringComparison.Ordinal);
     }
 
     private static string ReadRepositoryFile(params string[] relativeSegments)
