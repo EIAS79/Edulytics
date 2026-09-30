@@ -184,6 +184,19 @@ public sealed class AdaptiveProductionClosureRegressionTests
             "ReasonText(item.DecisionReasonCode)",
             view,
             StringComparison.Ordinal);
+
+        Assert.Contains(
+            "Question form",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "Adaptive complexity",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "Older sessions keep the historical values",
+            view,
+            StringComparison.Ordinal);
     }
 
     [Fact]

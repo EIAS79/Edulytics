@@ -149,7 +149,11 @@ internal static class SupportingPracticeCompletionEngine
         return family switch
         {
             "supporting.number.place_value" => PlaceValue(random, scale),
-            "supporting.number.rounding" => Rounding(random, scale),
+            "supporting.number.rounding" =>
+                Rounding(
+                    random,
+                    scale,
+                    preferredVariant),
             "supporting.number.negative_operation" => NegativeOperation(random, scale),
             "supporting.number.order_operations" => OrderOperations(random, scale),
             "supporting.number.gcf" => GreatestCommonFactor(random, scale),
@@ -246,7 +250,8 @@ internal static class SupportingPracticeCompletionEngine
             "supporting.number.place_value" =>
                 (p["digit"] * Pow10(p["power"])).ToString(CultureInfo.InvariantCulture),
             "supporting.number.rounding" =>
-                RoundTo(p["value"], p["place"]).ToString(CultureInfo.InvariantCulture),
+                SolveRounding(p)
+                    .ToString(CultureInfo.InvariantCulture),
             "supporting.number.negative_operation" =>
                 (p["left"] + p["right"]).ToString(CultureInfo.InvariantCulture),
             "supporting.number.order_operations" =>
@@ -486,18 +491,148 @@ internal static class SupportingPracticeCompletionEngine
             ("digit", digit), ("power", power), ("number", number));
     }
 
-    private static Problem Rounding(Random r, int s)
+    private static Problem Rounding(
+        Random r,
+        int s,
+        int? preferredVariant)
     {
-        int[] places = [10, 100, 1000];
-        var place = places[r.Next(Math.Min(places.Length, s + 1))];
-        var quotient = r.Next(2, 50 + s * 50);
-        var remainder = r.Next(0, place);
-        if (remainder == place / 2) remainder++;
-        var value = quotient * place + remainder;
-        return P("supporting.number.rounding",
-            $"Round {value} to the nearest {place}.",
-            "Locate the two multiples of the rounding place on either side and use the halfway point to choose the nearer multiple.",
-            ("value", value), ("place", place));
+        var slot =
+            ((preferredVariant ?? 0) % 16 + 16) % 16;
+
+        if (slot <= 3)
+        {
+            int[] places = [10, 100, 1000];
+            var place =
+                places[
+                    r.Next(
+                        Math.Min(
+                            places.Length,
+                            s + 1))];
+            var quotient =
+                r.Next(
+                    2,
+                    50 + s * 50);
+            var remainder =
+                r.Next(
+                    0,
+                    place);
+
+            if (remainder == place / 2)
+                remainder++;
+
+            var value =
+                quotient * place +
+                remainder;
+
+            return P(
+                "supporting.number.rounding",
+                $"Round {value} to the nearest {place}.",
+                "Locate the two multiples of the rounding place on either side and use the halfway point to choose the nearer multiple.",
+                ("mode", 0),
+                ("variant", slot),
+                ("value", value),
+                ("place", place));
+        }
+
+        if (slot <= 7)
+        {
+            int[] places = [10, 100, 1000];
+            var place =
+                places[
+                    r.Next(
+                        Math.Min(
+                            places.Length,
+                            Math.Max(2, s + 1)))];
+            var target =
+                r.Next(
+                    4,
+                    60 + s * 40) *
+                place;
+            var askLargest =
+                slot % 2 == 1;
+
+            return P(
+                "supporting.number.rounding",
+                askLargest
+                    ? $"A whole number rounds to {target} to the nearest {place}. What is the largest possible whole number?"
+                    : $"A whole number rounds to {target} to the nearest {place}. What is the smallest possible whole number?",
+                "Work backwards from the rounding interval. The lower boundary is half a place below the rounded value and the upper whole-number boundary is one less than half a place above it.",
+                ("mode", askLargest ? 2 : 1),
+                ("variant", slot),
+                ("target", target),
+                ("place", place));
+        }
+
+        var seedValue =
+            r.Next(
+                2_000,
+                20_000 + s * 10_000);
+        var targetHundred =
+            RoundTo(
+                seedValue,
+                100);
+        var targetThousand =
+            RoundTo(
+                seedValue,
+                1000);
+        var askLargestIntersection =
+            slot >= 12;
+
+        return P(
+            "supporting.number.rounding",
+            askLargestIntersection
+                ? $"A whole number rounds to {targetHundred} to the nearest 100 and to {targetThousand} to the nearest 1000. What is the largest possible whole number?"
+                : $"A whole number rounds to {targetHundred} to the nearest 100 and to {targetThousand} to the nearest 1000. What is the smallest possible whole number?",
+            "Find the interval of whole numbers that satisfies each rounding statement, intersect the two intervals, then choose the requested endpoint.",
+            ("mode", askLargestIntersection ? 4 : 3),
+            ("variant", slot),
+            ("targetA", targetHundred),
+            ("placeA", 100),
+            ("targetB", targetThousand),
+            ("placeB", 1000));
+    }
+
+    private static int SolveRounding(
+        IReadOnlyDictionary<string, int> p)
+    {
+        var mode =
+            p.TryGetValue(
+                "mode",
+                out var storedMode)
+                ? storedMode
+                : 0;
+
+        return mode switch
+        {
+            0 =>
+                RoundTo(
+                    p["value"],
+                    p["place"]),
+            1 =>
+                p["target"] -
+                p["place"] / 2,
+            2 =>
+                p["target"] +
+                p["place"] / 2 -
+                1,
+            3 =>
+                Math.Max(
+                    p["targetA"] -
+                    p["placeA"] / 2,
+                    p["targetB"] -
+                    p["placeB"] / 2),
+            4 =>
+                Math.Min(
+                    p["targetA"] +
+                    p["placeA"] / 2 -
+                    1,
+                    p["targetB"] +
+                    p["placeB"] / 2 -
+                    1),
+            _ =>
+                throw new InvalidOperationException(
+                    "Unsupported rounding question mode.")
+        };
     }
 
     private static Problem NegativeOperation(Random r, int s)
