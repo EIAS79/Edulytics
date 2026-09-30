@@ -7,9 +7,54 @@
     align-items: flex-start;
 }
 
+.ed-builder-title-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .6rem;
+}
+
+.ed-builder-type-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.9rem;
+    padding: .25rem .65rem;
+    border: 1px solid var(--ed-border, #dbe3ea);
+    border-radius: 999px;
+    background: #f8fafc;
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .02em;
+}
+
+.ed-builder-type-badge.is-exam {
+    background: #eef5ff;
+    border-color: #bfd8ff;
+}
+
+.ed-builder-type-badge.is-homework {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+}
+
+.ed-builder-type-badge.is-worksheet {
+    background: #fff7ed;
+    border-color: #fed7aa;
+}
+
+.ed-builder-section-kicker {
+    display: block;
+    margin-bottom: .2rem;
+    color: var(--ed-muted, #64748b);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
 .ed-builder-summary {
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
     gap: .75rem;
     padding: 1rem;
     border: 1px solid var(--ed-border, #dbe3ea);
@@ -104,12 +149,6 @@
 .ed-builder-question-list {
     display: grid;
     gap: .9rem;
-    max-height: min(72vh, 820px);
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-right: .4rem;
-    overscroll-behavior: contain;
-    scrollbar-gutter: stable;
 }
 
 .ed-builder-section-heading {
@@ -233,17 +272,35 @@
     padding-top: .75rem;
 }
 
+.ed-builder-output-card {
+    border-color: rgba(30, 136, 229, .2);
+}
+
+.ed-builder-output-actions {
+    flex-wrap: wrap;
+}
+
 .ed-builder-publish-bar {
     position: sticky;
     bottom: .75rem;
     z-index: 5;
     display: flex;
-    justify-content: flex-end;
-    padding: .75rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: .9rem 1rem;
     border: 1px solid var(--ed-border, #dbe3ea);
-    border-radius: .85rem;
-    background: rgba(255, 255, 255, .96);
+    border-radius: .95rem;
+    background: rgba(255, 255, 255, .97);
+    box-shadow: 0 .5rem 1.5rem rgba(15, 23, 42, .08);
     backdrop-filter: blur(8px);
+}
+
+.ed-builder-publish-bar::before {
+    content: "Final step";
+    color: var(--ed-muted, #64748b);
+    font-size: .82rem;
+    font-weight: 700;
 }
 
 @media (max-width: 1100px) {
@@ -264,8 +321,17 @@
     }
 
     .ed-builder-question-list {
-        max-height: 64vh;
         padding-right: .2rem;
+    }
+
+    .ed-builder-publish-bar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .ed-builder-publish-bar form,
+    .ed-builder-publish-bar button {
+        width: 100%;
     }
 
     .ed-builder-question-header {
