@@ -10,6 +10,13 @@ public sealed class AdaptivePracticeRepository(
     EdulyticsDbContext context)
     : IAdaptivePracticeRepository
 {
+    private static readonly HashSet<string> DuplicateSubmissionConstraints =
+        new(StringComparer.Ordinal)
+        {
+            "IX_AdaptivePracticeTurns_SchoolId_SessionId_Sequence",
+            "IX_AdaptiveDecisionSnapshots_SchoolId_SessionId_Sequence"
+        };
+
     public async Task CreateSessionWithFirstTurnAsync(
         AdaptivePracticeSession session,
         AssessmentItem item,
@@ -438,7 +445,10 @@ public sealed class AdaptivePracticeRepository(
         }
         catch (DbUpdateException exception)
             when (exception.InnerException is PostgresException postgres &&
-                  postgres.SqlState == PostgresErrorCodes.UniqueViolation)
+                  postgres.SqlState == PostgresErrorCodes.UniqueViolation &&
+                  !string.IsNullOrWhiteSpace(postgres.ConstraintName) &&
+                  DuplicateSubmissionConstraints.Contains(
+                      postgres.ConstraintName))
         {
             throw new AdaptivePracticeWriteConflictException(
                 message,
