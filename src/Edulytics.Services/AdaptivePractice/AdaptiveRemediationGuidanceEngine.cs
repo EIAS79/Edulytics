@@ -57,6 +57,7 @@ public sealed class AdaptiveRemediationGuidanceEngine(
             return BuildRounding(
                 value,
                 place,
+                item.CorrectAnswer,
                 classification?.MisconceptionId,
                 attemptNumber);
         }
@@ -81,9 +82,37 @@ public sealed class AdaptiveRemediationGuidanceEngine(
             attemptNumber);
     }
 
+    public string BuildRecoveryWorkedExample(
+        AssessmentItem recoveryItem)
+    {
+        ArgumentNullException.ThrowIfNull(recoveryItem);
+
+        if (string.Equals(
+                recoveryItem.GenerationFamily,
+                "supporting.number.rounding",
+                StringComparison.Ordinal) &&
+            TryReadRoundingParameters(
+                recoveryItem.GenerationParametersJson,
+                out var value,
+                out var place))
+        {
+            return BuildRoundingWorkedExample(
+                value,
+                place,
+                recoveryItem.CorrectAnswer);
+        }
+
+        var method = SafeMethodText(recoveryItem);
+
+        return
+            $"Worked strategy for this recovery question: {method} " +
+            "Apply that method to the new values and verify the result before submitting.";
+    }
+
     private static AdaptiveRemediationGuidance BuildRounding(
         int value,
         int place,
+        string? correctAnswer,
         string? misconceptionId,
         int attemptNumber)
     {
@@ -118,17 +147,50 @@ public sealed class AdaptiveRemediationGuidanceEngine(
                 attemptNumber);
         }
 
-        var sampleBase = 4 * place;
-        var sampleOffset = Math.Max(1, 3 * rightPlace);
-        var sample = sampleBase + sampleOffset;
-        var sampleRounded = sampleBase;
-
         return new(
             AdaptiveRemediationStageCodes.ScaffoldedRecovery,
             "The same item is now closed. Use the worked example, then solve the fresh recovery question.",
-            $"Worked example: round {sample} to the nearest {place}. The deciding digit is 3, which is less than 5, so keep the target-place digit and replace all lower digits with zero. The result is {sampleRounded}.",
+            BuildRoundingWorkedExample(
+                value,
+                place,
+                correctAnswer),
             misconceptionId,
             attemptNumber);
+    }
+
+    private static string BuildRoundingWorkedExample(
+        int currentValue,
+        int place,
+        string? forbiddenAnswer)
+    {
+        var rightPlace = Math.Max(1, place / 10);
+        var normalizedForbidden =
+            (forbiddenAnswer ?? string.Empty).Trim();
+
+        foreach (var multiplier in new[] { 4, 6, 8, 3, 7, 9 })
+        {
+            var sampleBase = multiplier * place;
+            var sample = sampleBase + (3 * rightPlace);
+            var sampleRounded = sampleBase;
+
+            if (sample == currentValue ||
+                string.Equals(
+                    sampleRounded.ToString(
+                        System.Globalization.CultureInfo.InvariantCulture),
+                    normalizedForbidden,
+                    StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            return
+                $"Worked example: round {sample} to the nearest {place}. " +
+                "The deciding digit is 3, which is less than 5, so keep the target-place digit " +
+                $"and replace all lower digits with zero. The result is {sampleRounded}.";
+        }
+
+        throw new InvalidOperationException(
+            "Unable to build an answer-safe rounding recovery example.");
     }
 
     private static string SafeMethodText(
@@ -143,7 +205,7 @@ public sealed class AdaptiveRemediationGuidanceEngine(
         var method = item.Solution.Trim();
         var answer = (item.CorrectAnswer ?? string.Empty).Trim();
 
-        if (answer.Length > 1 &&
+        if (answer.Length > 0 &&
             method.Contains(
                 answer,
                 StringComparison.OrdinalIgnoreCase))

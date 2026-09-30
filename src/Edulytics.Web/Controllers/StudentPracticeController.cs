@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Security.Claims;
+using Edulytics.Core.AdaptivePractice;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.AdaptivePractice;
 using Edulytics.Services.LessonContent;
@@ -23,7 +24,8 @@ public sealed class StudentPracticeController(
     IAdaptivePracticeShadowObserver adaptiveShadowObserver,
     ILessonContentService lessonContent,
     Stage22ExactGameRuntime gameRuntime,
-    IStringLocalizer<StudentResource> text) : Controller
+    IStringLocalizer<StudentResource> text,
+    ILogger<StudentPracticeController> logger) : Controller
 {
     private const string LessonPracticePilotCode = "PED:CAMBRIDGE-INTL-MATH:S1:L10";
     private const string LessonGameMode = "lesson-game";
@@ -472,23 +474,65 @@ public sealed class StudentPracticeController(
         if (!TryActor(out var actorId))
             return Forbid();
 
-        var result = await adaptivePractice.AnswerAsync(
-            actorId,
-            id,
-            sequence,
-            answer,
-            cancellationToken);
+        AdaptivePracticeAnswerResult result;
+
+        try
+        {
+            result = await adaptivePractice.AnswerAsync(
+                actorId,
+                id,
+                sequence,
+                answer,
+                cancellationToken);
+        }
+        catch (AdaptivePracticeWriteConflictException exception)
+        {
+            logger.LogInformation(
+                exception,
+                "Ignored duplicate/concurrent Adaptive Practice submission for session {SessionId}, sequence {Sequence}.",
+                id,
+                sequence);
+
+            return RedirectToAction(
+                nameof(AdaptiveLessonAttempt),
+                new { id });
+        }
+        catch (AdaptivePracticeSharedStateWriteConflictException exception)
+        {
+            logger.LogWarning(
+                exception,
+                "Adaptive learner state changed concurrently for session {SessionId}, sequence {Sequence}; the answer transaction was rolled back and can be retried safely.",
+                id,
+                sequence);
+
+            TempData["Error"] =
+                text["PracticeOperationFailed"].Value;
+
+            return RedirectToAction(
+                nameof(AdaptiveLessonAttempt),
+                new { id });
+        }
 
         if (!result.Succeeded)
         {
+            if (result.Error is
+                AdaptivePracticeV2Error.TurnAlreadyAnswered or
+                AdaptivePracticeV2Error.TurnNotFound)
+            {
+                // A stale duplicate POST may arrive after the first submission
+                // already advanced the canonical session state. Treat it as
+                // idempotent and render the authoritative current turn.
+                return RedirectToAction(
+                    nameof(AdaptiveLessonAttempt),
+                    new { id });
+            }
+
             TempData["Error"] =
                 result.Error switch
                 {
                     AdaptivePracticeV2Error.InvalidAnswer =>
                         text["PracticeInvalidAnswer"].Value,
                     AdaptivePracticeV2Error.GenerationFailed =>
-                        text["PracticeOperationFailed"].Value,
-                    AdaptivePracticeV2Error.TurnAlreadyAnswered =>
                         text["PracticeOperationFailed"].Value,
                     _ =>
                         text["PracticeOperationFailed"].Value

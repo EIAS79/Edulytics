@@ -29,6 +29,26 @@ public enum AdaptiveMisconceptionStatus
     Reopened = 5
 }
 
+public sealed class AdaptivePracticeWriteConflictException : Exception
+{
+    public AdaptivePracticeWriteConflictException(
+        string message,
+        Exception innerException)
+        : base(message, innerException)
+    {
+    }
+}
+
+public sealed class AdaptivePracticeSharedStateWriteConflictException : Exception
+{
+    public AdaptivePracticeSharedStateWriteConflictException(
+        string message,
+        Exception innerException)
+        : base(message, innerException)
+    {
+    }
+}
+
 public interface IAdaptivePracticeRepository
 {
     Task CreateSessionWithFirstTurnAsync(
