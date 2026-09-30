@@ -18,6 +18,10 @@ public sealed class Assessment : ISchoolScoped
     public DateTime? AvailableFromUtc { get; set; }
     public DateTime? DueAtUtc { get; set; }
     public int? AttemptTimeLimitMinutes { get; set; }
+    public AssessmentResultReleaseStatus ResultReleaseStatus { get; set; } =
+        AssessmentResultReleaseStatus.Withheld;
+    public DateTime? ResultsPublishedAtUtc { get; set; }
+    public Guid? ResultsPublishedByUserId { get; set; }
     public AssessmentStatus Status { get; set; }
     public AssessmentTargetType TargetType { get; set; } = AssessmentTargetType.Class;
     public Guid? TargetStudentProfileId { get; set; }
