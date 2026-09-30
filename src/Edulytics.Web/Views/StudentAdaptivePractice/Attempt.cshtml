@@ -435,7 +435,7 @@
 }
 
 <section class="adaptive-gw-shell"
-         @(isRetryFeedback ? "data-practice-retry-feedback" : null)>
+         data-practice-retry-feedback="@(isRetryFeedback ? "true" : null)">
     @if (TempData["Error"] is string error)
     {
         <div class="adaptive-feedback adaptive-feedback--bad"
