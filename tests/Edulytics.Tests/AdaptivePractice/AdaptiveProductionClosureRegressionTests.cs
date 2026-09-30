@@ -126,6 +126,116 @@ public sealed class AdaptiveProductionClosureRegressionTests
             StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void LearnerLessonReaderUsesAvailableApplicationCanvas()
+    {
+        var css = Read(
+            "src/Edulytics.Web/wwwroot/css/site.css");
+
+        Assert.Contains(
+            "learner-production-layout-20260930",
+            css,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "width: min(100%, 1460px);",
+            css,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "grid-template-columns: minmax(0, 1fr) minmax(16rem, 18rem);",
+            css,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "max-width: 86ch;",
+            css,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void QuestionLogSeparatesHistoricalPracticeSessions()
+    {
+        var view = Read(
+            "src/Edulytics.Web/Views/StudentAdaptiveIntelligence/QuestionLog.cshtml");
+
+        Assert.Contains(
+            ".GroupBy(x => x.SessionId)",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "Practice session",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "Technical details",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "ReasonText(item.DecisionReasonCode)",
+            view,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void PracticeVoiceIsCancelledBeforeSubmitAndNavigation()
+    {
+        var javascript = Read(
+            "src/Edulytics.Web/wwwroot/js/student-lesson-practice.js");
+
+        Assert.Contains(
+            "function stopVoice()",
+            javascript,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "window.addEventListener(\"pagehide\", stopVoice)",
+            javascript,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "window.addEventListener(\"beforeunload\", stopVoice)",
+            javascript,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "submitted = true;\n            stopVoice();",
+            javascript,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void StudentWorkspaceNavigationUsesShortValidatedCache()
+    {
+        var service = Read(
+            "src/Edulytics.Services/StudentPortal/StudentPortalService.cs");
+        var registration = Read(
+            "src/Edulytics.Web/Extensions/StudentPortalRegistrationExtensions.cs");
+
+        Assert.Contains(
+            "WorkspaceCacheLifetime",
+            service,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "TimeSpan.FromSeconds(20)",
+            service,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "_cache.TryGetValue",
+            service,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "services.AddMemoryCache()",
+            registration,
+            StringComparison.Ordinal);
+
+        var schoolValidation = service.IndexOf(
+            "school.Status != SchoolStatus.Active",
+            StringComparison.Ordinal);
+        var cacheRead = service.IndexOf(
+            "_cache.TryGetValue",
+            StringComparison.Ordinal);
+
+        Assert.True(
+            schoolValidation >= 0 &&
+            cacheRead > schoolValidation,
+            "Access and school state must be validated before serving cached workspace data.");
+    }
+
     private static string Read(string relativePath) =>
         File.ReadAllText(
             Path.Combine(
