@@ -39,6 +39,16 @@ public sealed class AdaptivePracticeWriteConflictException : Exception
     }
 }
 
+public sealed class AdaptivePracticeSharedStateWriteConflictException : Exception
+{
+    public AdaptivePracticeSharedStateWriteConflictException(
+        string message,
+        Exception innerException)
+        : base(message, innerException)
+    {
+    }
+}
+
 public interface IAdaptivePracticeRepository
 {
     Task CreateSessionWithFirstTurnAsync(
