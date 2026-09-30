@@ -1,4 +1,5 @@
 using Edulytics.Core.AdaptivePractice;
+using Edulytics.Services.AdaptivePractice;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
 
@@ -115,27 +116,35 @@ public sealed class AdaptiveV2C0C5ClosureTests
     [Fact]
     public void C4_OpenRemediationCanExtendOrdinaryQuestionBudgetButIsHardBounded()
     {
-        var root = FindRoot();
-        var service = File.ReadAllText(Path.Combine(
-            root,
-            "src/Edulytics.Services/AdaptivePractice/AdaptivePracticeV2Service.cs"));
+        var extended =
+            AdaptiveSessionBudgetPolicy.Evaluate(
+                answeredSequence: 8,
+                targetQuestionCount: 8,
+                remediationLockActive: true,
+                confirmationRequired: true,
+                answerCorrect: false);
 
-        Assert.Contains(
-            "unresolvedAdaptiveWork",
-            service,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "session.TargetQuestionCount++",
-            service,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "AdaptivePracticeV2Behavior.MaximumSessionItems",
-            service,
-            StringComparison.Ordinal);
-        Assert.Contains(
+        Assert.True(extended.ExtendSession);
+        Assert.False(extended.CompleteSession);
+        Assert.Equal(9, extended.TargetQuestionCount);
+        Assert.Null(extended.StopReason);
+
+        var hardStop =
+            AdaptiveSessionBudgetPolicy.Evaluate(
+                AdaptivePracticeV2Behavior.MaximumSessionItems,
+                AdaptivePracticeV2Behavior.MaximumSessionItems,
+                remediationLockActive: true,
+                confirmationRequired: true,
+                answerCorrect: false);
+
+        Assert.False(hardStop.ExtendSession);
+        Assert.True(hardStop.CompleteSession);
+        Assert.Equal(
+            AdaptivePracticeV2Behavior.MaximumSessionItems,
+            hardStop.TargetQuestionCount);
+        Assert.Equal(
             "MAX_REMEDIATION_BUDGET_REACHED",
-            service,
-            StringComparison.Ordinal);
+            hardStop.StopReason);
     }
 
     [Fact]
