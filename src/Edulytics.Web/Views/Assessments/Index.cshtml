@@ -31,7 +31,7 @@
         utc.HasValue
             ? TimeZoneInfo.ConvertTimeFromUtc(
                 DateTime.SpecifyKind(utc.Value, DateTimeKind.Utc),
-                schoolTimeZone).ToString("yyyy-MM-dd HH:mm")
+                schoolTimeZone).ToString("yyyy-MM-dd h:mm tt", System.Globalization.CultureInfo.InvariantCulture)
             : "—";
 }
 <link rel="stylesheet" href="~/css/round7-list-scroll.css" asp-append-version="true" />
@@ -259,7 +259,7 @@
                             }
                             @if (item.AssessmentType == AssessmentType.Homework && item.DueAtUtc.HasValue)
                             {
-                                <text> · @L("Due", "Termin"): @LocalTime(item.DueAtUtc) (@Model.Workspace.SchoolTimeZoneId)</text>
+                                <text> · @L("Due", "Termin"): @LocalTime(item.DueAtUtc)  </text>
                             }
                             · @A[statusKey]
                             · <strong>@B["CurrentDelivery"]:</strong>
