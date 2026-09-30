@@ -300,7 +300,10 @@ public sealed class StudentPortalService : IStudentPortalService
                 enrollmentItems,
                 learning,
                 openAssessments,
-                resultItems));
+                resultItems)
+            {
+                SchoolTimeZoneId = school.TimeZoneId
+            });
     }
 
     private static bool TryResolveAdoption(
