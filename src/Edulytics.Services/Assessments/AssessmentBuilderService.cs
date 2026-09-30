@@ -21,6 +21,7 @@ namespace Edulytics.Services.Assessments;
 public sealed class AssessmentBuilderService(
     IAssessmentService assessments,
     IAssessmentBuilderRepository repository,
+    IAssessmentRepository assessmentRepository,
     ISchoolUserRepository users) : IAssessmentBuilderService
 {
     public async Task<AssessmentQueryResult<AssessmentBuilderWorkspace>> GetWorkspaceAsync(
@@ -453,9 +454,30 @@ public sealed class AssessmentBuilderService(
         Guid actorUserId, Guid assessmentId, CancellationToken cancellationToken)
     {
         var access = await ResolveAccessAsync(actorUserId, assessmentId, cancellationToken);
-        if (access.Error.HasValue) return (access.Details, null, access.SchoolId, access.Error);
-        if (access.Details!.Assessment.Status != AssessmentStatus.Draft)
+        if (access.Error.HasValue)
+            return (access.Details, null, access.SchoolId, access.Error);
+
+        var assessment = access.Details!.Assessment;
+        var editable = assessment.Status == AssessmentStatus.Draft;
+
+        if (!editable &&
+            assessment.Status == AssessmentStatus.Open &&
+            assessment.AssessmentType == AssessmentType.Exam &&
+            assessment.AvailableFromUtc.HasValue &&
+            DateTime.UtcNow < assessment.AvailableFromUtc.Value)
+        {
+            var snapshot = await assessmentRepository.GetSnapshotAsync(
+                access.SchoolId,
+                cancellationToken);
+
+            editable =
+                !snapshot.AssessmentAttempts.Any(x => x.AssessmentId == assessmentId) &&
+                !snapshot.Results.Any(x => x.AssessmentId == assessmentId);
+        }
+
+        if (!editable)
             return (access.Details, null, access.SchoolId, AssessmentErrorCode.AssessmentNotDraft);
+
         var context = await repository.GetContextAsync(access.SchoolId, assessmentId, cancellationToken);
         return context is null
             ? (access.Details, null, access.SchoolId, AssessmentErrorCode.AssessmentNotFound)
