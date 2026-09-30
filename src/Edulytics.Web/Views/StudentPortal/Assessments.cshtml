@@ -87,6 +87,11 @@
         "Egzaminy oceniane, terminy prac domowych i karty pracy są pokazane oddzielnie.")</p>
 </header>
 
+@if (TempData["AssessmentNotice"] is string notice)
+{
+    <div class="school-alert school-alert-info" role="status">@notice</div>
+}
+
 <nav class="student-assessment-state-nav" aria-label="@L("Learning tasks", "Zadania")">
     <a href="#exams">@L("Exams / Tests", "Egzaminy / testy") <strong>@exams.Length</strong></a>
     <a href="#homework">@L("Homework", "Prace domowe") <strong>@homework.Length</strong></a>
