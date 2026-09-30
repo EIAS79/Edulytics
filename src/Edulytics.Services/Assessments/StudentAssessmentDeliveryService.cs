@@ -495,6 +495,11 @@ public sealed class StudentAssessmentDeliveryService(
             return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
                 StudentAssessmentDeliveryErrorCode.PersistenceError);
 
+        if (assessment.AssessmentType == AssessmentType.Homework)
+            AssessmentMetrics.HomeworkSubmitted();
+        else
+            AssessmentMetrics.WorksheetCompleted();
+
         return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Success(
             new StudentAssessmentSubmission(
                 assessment.Id,
@@ -648,6 +653,7 @@ public sealed class StudentAssessmentDeliveryService(
             if (assessment.AvailableFromUtc.HasValue &&
                 nowUtc < assessment.AvailableFromUtc.Value)
             {
+                AssessmentMetrics.ExamBeforeStartDenied();
                 return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.NotYetAvailable);
             }
 
@@ -662,6 +668,7 @@ public sealed class StudentAssessmentDeliveryService(
             if (!assessment.DueAtUtc.HasValue ||
                 nowUtc >= assessment.DueAtUtc.Value)
             {
+                AssessmentMetrics.HomeworkMissedDue();
                 return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.DeadlinePassed);
             }
         }
