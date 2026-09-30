@@ -18,9 +18,21 @@
         ViewData["LessonUnitTitle"]?.ToString() ?? string.Empty;
     ViewData["Title"] = lessonTitle;
 
-    var question = Model.CurrentQuestion;
+    var review =
+        ViewData["AdaptiveReview"] as AdaptivePracticeReviewView;
+    var isReview = review is not null;
+    var question =
+        review?.Question ?? Model.CurrentQuestion;
+    var displaySequence =
+        review?.Question.Sequence ??
+        (Model.IsCompleted
+            ? Model.TargetQuestionCount
+            : Model.CurrentSequence);
     var answeredCount =
-        Math.Max(0, Model.CurrentSequence - 1);
+        review?.Question.Sequence ??
+        (Model.IsCompleted
+            ? Model.TargetQuestionCount
+            : Math.Max(0, Model.CurrentSequence - 1));
     var progress = Model.TargetQuestionCount <= 0
         ? 0d
         : Math.Min(
@@ -84,8 +96,13 @@
     }
 
     var feedbackKind =
-        TempData["PracticeFeedback"]?.ToString();
+        review is not null
+            ? review.IsCorrect
+                ? "correct"
+                : "incorrect"
+            : TempData["PracticeFeedback"]?.ToString();
     var feedbackSolution =
+        review?.Feedback ??
         TempData["PracticeSolution"]?.ToString();
 
     var baselineGuidance =
@@ -137,18 +154,40 @@
         _ => "Guided remediation"
     };
 
+    var nextLabel = locale switch
+    {
+        "pl" => "Dalej",
+        "ar" => "التالي",
+        _ => "Next"
+    };
+
+    var correctLabel =
+        S["PracticeCorrect"].Value;
+    var incorrectLabel =
+        S["PracticeIncorrect"].Value;
+
     var eddyMessage =
-        question is not null &&
-        string.Equals(
-            question.RemediationStageCode,
-            AdaptiveRemediationStageCodes.TargetedRetry,
-            StringComparison.Ordinal)
-            ? $"{remediationLabel}: {guidanceText}"
-            : question?.IsIndependentConfirmation == true
-                ? confirmationLabel
-                : !string.IsNullOrWhiteSpace(workedExample)
-                    ? $"{remediationLabel}: {workedExample}"
-                    : guidanceText;
+        feedbackKind == "correct"
+            ? string.IsNullOrWhiteSpace(feedbackSolution)
+                ? correctLabel
+                : $"{correctLabel}: {feedbackSolution}"
+            : feedbackKind == "incorrect"
+                ? string.IsNullOrWhiteSpace(feedbackSolution)
+                    ? $"{incorrectLabel}. {retryLabel}."
+                    : isReview
+                        ? $"{incorrectLabel}: {feedbackSolution}"
+                        : $"{incorrectLabel}: {feedbackSolution} {retryLabel}."
+                : question is not null &&
+                  string.Equals(
+                      question.RemediationStageCode,
+                      AdaptiveRemediationStageCodes.TargetedRetry,
+                      StringComparison.Ordinal)
+                    ? $"{remediationLabel}: {guidanceText}"
+                    : question?.IsIndependentConfirmation == true
+                        ? confirmationLabel
+                        : !string.IsNullOrWhiteSpace(workedExample)
+                            ? $"{remediationLabel}: {workedExample}"
+                            : guidanceText;
 }
 
 @section Head {
@@ -373,35 +412,6 @@
              role="alert">@error</div>
     }
 
-    @if (feedbackKind is not null &&
-         feedbackKind != "remediation")
-    {
-        <div class="adaptive-feedback @(feedbackKind == "correct" ? "adaptive-feedback--ok" : "adaptive-feedback--bad")"
-             role="status"
-             aria-live="polite"
-             data-practice-feedback>
-            <strong>
-                @(feedbackKind == "correct"
-                    ? S["PracticeCorrect"].Value
-                    : feedbackKind == "remediation"
-                        ? remediationLabel
-                        : S["PracticeIncorrect"].Value)
-            </strong>
-            @if (!string.IsNullOrWhiteSpace(feedbackSolution))
-            {
-                <span> @feedbackSolution</span>
-            }
-            @if (feedbackKind == "incorrect")
-            {
-                <span> @retryLabel.</span>
-            }
-            else if (feedbackKind == "remediation")
-            {
-                <span> The previous item is closed. Study the scaffold below, then solve the fresh recovery question.</span>
-            }
-        </div>
-    }
-
     <section class="gw-game gw-universal"
              aria-label="@practiceLabel">
         <div class="gw-hud">
@@ -416,9 +426,7 @@
 
             <div class="gw-hud-right">
                 <span class="gw-pill">
-                    @(Model.IsCompleted
-                        ? Model.TargetQuestionCount
-                        : Model.CurrentSequence)
+                    @displaySequence
                     /
                     @Model.TargetQuestionCount
                 </span>
@@ -439,9 +447,10 @@
         </div>
 
         <div class="gw-stage">
-            @if (Model.IsPaused)
+            @if (Model.IsPaused && !isReview)
             {
-                <section class="adaptive-complete">
+                <section class="adaptive-complete"
+                         data-practice-terminal>
                     <img src="~/images/public/edulaytiks-character.png?v=43"
                          alt="" />
                     <h2>Practice safely paused</h2>
@@ -454,9 +463,10 @@
                     </div>
                 </section>
             }
-            else if (Model.IsCompleted)
+            else if (Model.IsCompleted && !isReview)
             {
-                <section class="adaptive-complete">
+                <section class="adaptive-complete"
+                         data-practice-terminal>
                     <img src="~/images/public/edulaytiks-character.png?v=43"
                          alt="" />
                     <h2>@S["PracticeFinish"]</h2>
@@ -524,7 +534,20 @@
                         </div>
                     }
 
-                    @if (interaction is null)
+                    @if (isReview)
+                    {
+                        <div class="adaptive-review-actions"
+                             data-practice-review>
+                            <a class="gw-primary"
+                               asp-controller="StudentPractice"
+                               asp-action="AdaptiveLessonAttempt"
+                               asp-route-id="@Model.SessionId"
+                               data-practice-next>
+                                @nextLabel
+                            </a>
+                        </div>
+                    }
+                    else if (interaction is null)
                     {
                         <div class="gw-error">
                             This Practice interaction is not available.
