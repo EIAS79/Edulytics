@@ -1152,7 +1152,10 @@ public sealed partial class AssessmentService
         var topic = await _repo.GetCurriculumTopicAsync(schoolId, outcome.TopicId, cancellationToken);
         if (topic is null) return Fail(AssessmentErrorCode.OutcomeNotFound);
 
-        var classGroup = await _repo.GetClassGroupAsync(schoolId, context.Assessment.ClassGroupId, cancellationToken);
+        var classGroup = await _repo.GetClassGroupAsync(
+            schoolId,
+            context.Assessment!.ClassGroupId,
+            cancellationToken);
         if (classGroup is null) return Fail(AssessmentErrorCode.ClassGroupNotFound);
 
         var snapshot = await _repo.GetSnapshotAsync(schoolId, cancellationToken);
@@ -1192,7 +1195,7 @@ public sealed partial class AssessmentService
             mapping,
             cancellationToken);
 
-        context.Assessment.UpdatedAtUtc =
+        context.Assessment!.UpdatedAtUtc =
             DateTime.UtcNow;
 
         await QueueAuditAsync(
