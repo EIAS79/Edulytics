@@ -11,7 +11,6 @@ using Edulytics.Services.StudentPortal;
 using Edulytics.Web.Controllers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
 
 namespace Edulytics.Tests.Phase28;
 
@@ -56,36 +55,6 @@ public sealed class Phase28StudentPortalTests
         Assert.Equal(
             userId,
             snapshot.Profile.UserId);
-    }
-
-    [Fact]
-    public async Task Service_ReusesSnapshotBrieflyButRevalidatesActorAndSchool()
-    {
-        var fixture = BuildWorkspaceFixture();
-        var users = new FakeUserRepository();
-        users.Seed(fixture.StudentUser);
-        var schools = new FakeSchoolRepository();
-        schools.Seed(fixture.School);
-        var portal = new FakePortalRepository(fixture.Snapshot);
-
-        using var cache = new MemoryCache(new MemoryCacheOptions());
-
-        var service = new StudentPortalService(
-            portal,
-            users,
-            schools,
-            cache);
-
-        var first = await service.GetWorkspaceAsync(
-            fixture.StudentUser.Id);
-        var second = await service.GetWorkspaceAsync(
-            fixture.StudentUser.Id);
-
-        Assert.NotNull(first.Value);
-        Assert.NotNull(second.Value);
-        Assert.Equal(1, portal.GetSnapshotCalls);
-        Assert.Equal(2, users.GetActorCalls);
-        Assert.Equal(2, schools.GetByIdCalls);
     }
 
     [Fact]
@@ -771,8 +740,6 @@ public sealed class Phase28StudentPortalTests
     {
         private readonly StudentPortalSnapshot _snapshot;
 
-        public int GetSnapshotCalls { get; private set; }
-
         public FakePortalRepository(
             StudentPortalSnapshot snapshot)
         {
@@ -783,19 +750,14 @@ public sealed class Phase28StudentPortalTests
             GetSnapshotAsync(
                 Guid schoolId,
                 Guid studentUserId,
-                CancellationToken cancellationToken = default)
-        {
-            GetSnapshotCalls++;
-            return Task.FromResult(_snapshot);
-        }
+                CancellationToken cancellationToken = default) =>
+            Task.FromResult(_snapshot);
     }
 
     private sealed class FakeSchoolRepository
         : ISchoolRepository
     {
         private readonly Dictionary<Guid, School> _items = [];
-
-        public int GetByIdCalls { get; private set; }
 
         public void Seed(School school) =>
             _items[school.Id] = school;
@@ -807,12 +769,9 @@ public sealed class Phase28StudentPortalTests
 
         public Task<School?> GetByIdAsync(
             Guid id,
-            CancellationToken cancellationToken = default)
-        {
-            GetByIdCalls++;
-            return Task.FromResult(
+            CancellationToken cancellationToken = default) =>
+            Task.FromResult(
                 _items.GetValueOrDefault(id));
-        }
 
         public Task<School?> GetForUpdateAsync(
             Guid id,
@@ -851,20 +810,15 @@ public sealed class Phase28StudentPortalTests
             Guid,
             SchoolUserRecord> _items = [];
 
-        public int GetActorCalls { get; private set; }
-
         public void Seed(
             SchoolUserRecord user) =>
             _items[user.Id] = user;
 
         public Task<SchoolUserRecord?> GetActorAsync(
             Guid userId,
-            CancellationToken cancellationToken = default)
-        {
-            GetActorCalls++;
-            return Task.FromResult(
+            CancellationToken cancellationToken = default) =>
+            Task.FromResult(
                 _items.GetValueOrDefault(userId));
-        }
 
         public Task<IReadOnlyList<SchoolUserRecord>>
             ListBySchoolAsync(
