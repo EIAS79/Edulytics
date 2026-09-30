@@ -9,6 +9,9 @@ public enum AssessmentErrorCode
     Required,
     InvalidText,
     InvalidDate,
+    InvalidAssessmentType,
+    InvalidSchedule,
+    InvalidDeliveryModeForType,
     InvalidMaxScore,
     InvalidQuestionScore,
     InvalidOrder,
@@ -75,7 +78,15 @@ public sealed record AssessmentListItem(
     AssessmentTargetType TargetType = AssessmentTargetType.Class,
     Guid? TargetStudentProfileId = null,
     AssessmentDeliveryMode DeliveryMode = AssessmentDeliveryMode.Offline,
-    AssessmentDifficultyBand DifficultyBand = AssessmentDifficultyBand.AtClassLevel);
+    AssessmentDifficultyBand DifficultyBand = AssessmentDifficultyBand.AtClassLevel)
+{
+    public AssessmentType AssessmentType { get; init; } = AssessmentType.Exam;
+    public DateTime? AvailableFromUtc { get; init; }
+    public DateTime? DueAtUtc { get; init; }
+    public int? AttemptTimeLimitMinutes { get; init; }
+    public bool IsScored => AssessmentType == AssessmentType.Exam;
+    public bool CountsTowardEvaluation => AssessmentType == AssessmentType.Exam;
+}
 
 public sealed record AssessmentQuestionItem(
     Guid Id,
@@ -126,7 +137,12 @@ public sealed record CreateAssessmentRequest(
     Guid TermId,
     string Title,
     DateOnly AssessmentDate,
-    decimal MaxScore);
+    decimal MaxScore,
+    AssessmentType AssessmentType = AssessmentType.Exam,
+    AssessmentDeliveryMode DeliveryMode = AssessmentDeliveryMode.Offline,
+    DateTime? AvailableFromUtc = null,
+    DateTime? DueAtUtc = null,
+    int? AttemptTimeLimitMinutes = null);
 
 public sealed record ReuseAssessmentRequest(
     Guid SourceAssessmentId,
@@ -138,7 +154,11 @@ public sealed record UpdateAssessmentRequest(
     string Title,
     DateOnly AssessmentDate,
     decimal MaxScore,
-    byte[] RowVersion);
+    byte[] RowVersion,
+    AssessmentDeliveryMode? DeliveryMode = null,
+    DateTime? AvailableFromUtc = null,
+    DateTime? DueAtUtc = null,
+    int? AttemptTimeLimitMinutes = null);
 
 public sealed record CreateAssessmentQuestionRequest(
     Guid AssessmentId,
