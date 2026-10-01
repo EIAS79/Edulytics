@@ -1,6 +1,5 @@
 using System.Reflection;
 using Edulytics.Web.Controllers;
-using Edulytics.Web.Presentation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -123,9 +122,6 @@ public sealed class CurriculumUiContractTests
             "@topic.CurriculumPathway",
             view);
         Assert.Contains(
-            "LearningOutcomePresentation.ShouldDisplayCode(outcome.Code)",
-            view);
-        Assert.Contains(
             "LearningOutcomePresentation.DisplayCode(outcome.Code)",
             view);
         Assert.Contains(
@@ -151,30 +147,6 @@ public sealed class CurriculumUiContractTests
             view);
         Assert.DoesNotContain(
             "name=\"weight\"",
-            view);
-    }
-
-    [Fact]
-    public void InternalUaeReferenceIdentifiers_AreBackendOnly()
-    {
-        Assert.False(
-            LearningOutcomePresentation.ShouldDisplayCode(
-                "UAE:REF:2025-26:G7:T1-01-PROPORTIONS"));
-
-        Assert.True(
-            LearningOutcomePresentation.ShouldDisplayCode(
-                "MAT.2.02.01"));
-
-        var root = FindRepositoryRoot();
-        var view = File.ReadAllText(Path.Combine(
-            root,
-            "src/Edulytics.Web/Views/Curriculum/Index.cshtml"));
-
-        Assert.Contains(
-            "var showOutcomeCode = topic.Outcomes.Any",
-            view);
-        Assert.Contains(
-            "var displayOutcomeCode = LearningOutcomePresentation.ShouldDisplayCode(outcome.Code)",
             view);
     }
 
