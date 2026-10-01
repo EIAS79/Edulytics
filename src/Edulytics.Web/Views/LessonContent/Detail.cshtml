@@ -2,6 +2,7 @@
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonContentResource> L
 @using Edulytics.Core.Enums
 @using Edulytics.Web.Presentation
+@using Edulytics.Web.ViewModels.LessonContent
 @{
     Layout = "_AppLayout";
     ViewData["Title"] = Model.Lesson.LessonTitle;
@@ -85,6 +86,16 @@
                     <partial name="_LessonReaderSection" model="section" />
                 }
             }
+
+            <partial name="_LessonYouTubeStudio"
+                     model="@(new LessonYouTubeStudioViewModel(
+                         Model.Lesson.LessonId,
+                         Model.Lesson.LessonCode,
+                         Model.Lesson.LessonTitle,
+                         Model.Lesson.GradeName,
+                         Model.Lesson.FrameworkName,
+                         Model.Lesson.RichContent,
+                         Url.Action("LessonYouTube", "LessonContent", new { id = Model.Lesson.LessonId }) ?? string.Empty))" />
         </main>
 
         <aside class="lesson-reader-sidebar" aria-label="@L["LessonReference"]">
@@ -115,3 +126,12 @@
         </aside>
     </div>
 </div>
+
+
+@section Head {
+    <link rel="stylesheet" href="~/css/lesson-youtube-studio.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <script src="~/js/lesson-youtube-studio.js" asp-append-version="true"></script>
+}
