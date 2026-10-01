@@ -39,12 +39,6 @@
 
     var endpoint = Model.Endpoint;
 
-    var sectionTitle = language switch
-    {
-        "pl" => "Studio nauki YouTube",
-        "ar" => "استوديو تعلم YouTube",
-        _ => "YouTube Learning Studio"
-    };
     var searchPlaceholder = language switch
     {
         "pl" => "Doprecyzuj temat w ramach tej lekcji…",
@@ -152,7 +146,7 @@
                     {
                         <iframe data-youtube-player
                                 src="https://www.youtube-nocookie.com/embed/@(fallbackVideoId)?rel=0&amp;modestbranding=1"
-                                title="@(fallbackTitle ?? sectionTitle)"
+                                title="@(fallbackTitle ?? Model.Title)"
                                 loading="lazy"
                                 referrerpolicy="strict-origin-when-cross-origin"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
