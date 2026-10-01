@@ -45,12 +45,6 @@
         "ar" => "استوديو تعلم YouTube",
         _ => "YouTube Learning Studio"
     };
-    var sectionIntro = language switch
-    {
-        "pl" => "Filmy są oceniane względem tematu, celu lekcji, umiejętności, trudności i wymagań wstępnych. Preferowane kanały otrzymują niewielki bonus, ale nie blokują lepszego dopasowania.",
-        "ar" => "يتم تقييم الفيديو حسب موضوع الدرس والهدف التعليمي والمهارة والصعوبة والمتطلبات السابقة. القنوات المفضلة تحصل على أفضلية بسيطة فقط ولا تمنع اختيار فيديو أكثر تطابقًا.",
-        _ => "Videos are ranked against the lesson topic, learning objective, skill, difficulty and prerequisites. Preferred channels receive a small trust bonus, but never override a stronger lesson match."
-    };
     var searchPlaceholder = language switch
     {
         "pl" => "Doprecyzuj temat w ramach tej lekcji…",
@@ -110,17 +104,6 @@
          data-youtube-studio
          data-endpoint="@endpoint"
          data-lesson-title="@Model.Title">
-    <header class="lesson-learning-section__header yt-studio-section-header">
-        <span class="lesson-learning-section__number">07</span>
-        <div class="yt-studio-heading">
-            <div class="yt-studio-heading__line">
-                <h2>@sectionTitle</h2>
-                <span class="yt-studio-source-badge" aria-label="YouTube">YouTube</span>
-            </div>
-            <p>@sectionIntro</p>
-        </div>
-    </header>
-
     <div class="yt-studio-shell">
         <div class="yt-studio-commandbar">
             <div class="yt-studio-context">
