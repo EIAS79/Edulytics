@@ -25,7 +25,6 @@
     var definitionLabel = language switch { "pl" => "Znaczenie", "ar" => "التعريف", _ => "Meaning" };
     var ruleLabel = language switch { "pl" => "Reguła", "ar" => "القاعدة", _ => "Rule" };
     var exampleLabel = language switch { "pl" => "Przykład", "ar" => "مثال", _ => "Example" };
-    var mistakeLabel = language switch { "pl" => "Typowy błąd", "ar" => "خطأ شائع", _ => "Common mistake" };
     var whyWrongLabel = language switch { "pl" => "Dlaczego to błąd", "ar" => "لماذا هذا خطأ", _ => "Why it is wrong" };
     var correctionLabel = language switch { "pl" => "Jak poprawić", "ar" => "كيفية التصحيح", _ => "How to fix it" };
     var videoHelpLabel = language switch { "pl" => "Pomoc wideo", "ar" => "مساعدة بالفيديو", _ => "Video Help" };
@@ -152,7 +151,6 @@
         @foreach (var mistake in Model.CommonMistakes)
         {
             <article class="rich-mistake-card">
-                <h3>@mistakeLabel</h3>
                 <p class="rich-mistake-card__mistake">@mistake.Mistake</p>
                 <p><strong>@whyWrongLabel:</strong> @mistake.WhyWrong</p>
                 <p><strong>@correctionLabel:</strong> @mistake.Correction</p>
