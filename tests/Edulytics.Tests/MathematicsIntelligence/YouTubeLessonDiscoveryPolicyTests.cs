@@ -393,6 +393,14 @@ public sealed class YouTubeLessonDiscoveryPolicyTests
                 ]));
 
         Assert.NotNull(result.Featured);
+        Assert.DoesNotContain(
+            "advanced reasoning",
+            result.SearchQuery,
+            StringComparison.OrdinalIgnoreCase);
+        Assert.Contains(
+            "Linear modelling",
+            result.SearchQuery,
+            StringComparison.OrdinalIgnoreCase);
         Assert.True(result.Featured!.MatchPercent > 0);
         Assert.True(result.Featured.ObjectiveMatchPercent > 0);
         Assert.True(result.Featured.DifficultyMatchPercent > 0);
@@ -538,7 +546,7 @@ public sealed class YouTubeLessonDiscoveryPolicyTests
                               {
                                 "id": { "videoId": "linear-model-1" },
                                 "snippet": {
-                                  "title": "Linear modelling advanced reasoning worked examples",
+                                  "title": "Linear Modeling Explained with Worked Examples",
                                   "channelId": "UC-semantic",
                                   "channelTitle": "Math Teaching",
                                   "description": "Construct and interpret linear models from contextual information with step by step examples.",
@@ -562,7 +570,7 @@ public sealed class YouTubeLessonDiscoveryPolicyTests
                                   "privacyStatus": "public"
                                 },
                                 "snippet": {
-                                  "title": "Linear modelling advanced reasoning worked examples",
+                                  "title": "Linear Modeling Explained with Worked Examples",
                                   "channelId": "UC-semantic",
                                   "channelTitle": "Math Teaching",
                                   "description": "Construct and interpret linear models from contextual information with step by step examples.",
