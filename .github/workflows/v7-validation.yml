@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - fix/assessment-type-ux-v7
+  pull_request:
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
 
 permissions:
