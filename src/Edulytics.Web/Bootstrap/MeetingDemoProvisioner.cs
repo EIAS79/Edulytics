@@ -25,6 +25,8 @@ internal static class MeetingDemoProvisioner
     private const string TargetRenderServiceId = "srv-dakq5n2fngtc73a62i10";
     private const string SeedVersion = "production-rehearsal-2026-10-01-v1";
     private const string MarkerOperation = "ProductionRehearsalSeed";
+    private const string RepairMarkerOperation = "ProductionRehearsalRepair";
+    private const string RepairVersion = "production-rehearsal-repair-2026-10-01-v1";
 
     private static readonly string[] FirstNames =
     [
@@ -447,6 +449,272 @@ internal static class MeetingDemoProvisioner
             $"assessments={assessmentCount} results={resultCount} " +
             $"practiceAttempts={practiceCount} masteries={masteryCount} " +
             $"schoolSnapshots={snapshotCount}");
+    }
+
+    public static async Task RepairExistingAsync(
+        EdulyticsDbContext db,
+        CancellationToken cancellationToken = default)
+    {
+        if (!string.Equals(
+                Environment.GetEnvironmentVariable("RENDER_SERVICE_ID"),
+                TargetRenderServiceId,
+                StringComparison.Ordinal))
+        {
+            return;
+        }
+
+        var alreadyCompleted = await db.IdempotencyRecords
+            .AsNoTracking()
+            .AnyAsync(
+                x =>
+                    x.SchoolId == null &&
+                    x.ActorUserId == Guid.Empty &&
+                    x.Operation == RepairMarkerOperation &&
+                    x.IdempotencyKey == RepairVersion &&
+                    x.Status == IdempotencyStatus.Completed,
+                cancellationToken);
+
+        if (alreadyCompleted)
+        {
+            Console.WriteLine(
+                $"MEETING_DEMO_REPAIR_SKIPPED version={RepairVersion} reason=already-completed");
+            return;
+        }
+
+        Console.WriteLine($"MEETING_DEMO_REPAIR_BEGIN version={RepairVersion}");
+
+        var repairedClasses = 0;
+        var stillUnsupportedClasses = 0;
+        var touchedSchools = new List<Guid>();
+
+        foreach (var definition in Schools)
+        {
+            var school = await db.Schools
+                .SingleOrDefaultAsync(
+                    x => x.SchoolCode == definition.SchoolCode,
+                    cancellationToken);
+
+            if (school is null)
+            {
+                Console.WriteLine(
+                    $"MEETING_DEMO_REPAIR_SCHOOL_SKIPPED key={definition.Key} reason=school-not-found");
+                continue;
+            }
+
+            var academicYear = await db.AcademicYears
+                .Where(x => x.SchoolId == school.Id)
+                .OrderByDescending(x => x.StartsOn)
+                .FirstOrDefaultAsync(cancellationToken);
+            var subject = await db.Subjects
+                .SingleOrDefaultAsync(
+                    x => x.SchoolId == school.Id && x.NormalizedCode == "MATH",
+                    cancellationToken);
+
+            if (academicYear is null || subject is null)
+            {
+                Console.WriteLine(
+                    $"MEETING_DEMO_REPAIR_SCHOOL_SKIPPED key={definition.Key} reason=academic-structure-missing");
+                continue;
+            }
+
+            var term1 = await db.Terms
+                .Where(
+                    x =>
+                        x.SchoolId == school.Id &&
+                        x.AcademicYearId == academicYear.Id)
+                .OrderBy(x => x.StartsOn)
+                .FirstOrDefaultAsync(cancellationToken);
+
+            if (term1 is null)
+            {
+                Console.WriteLine(
+                    $"MEETING_DEMO_REPAIR_SCHOOL_SKIPPED key={definition.Key} reason=term-missing");
+                continue;
+            }
+
+            var adoptions = await db.SchoolCurriculumAdoptions
+                .Where(
+                    x =>
+                        x.SchoolId == school.Id &&
+                        x.AcademicYearId == academicYear.Id &&
+                        x.SubjectId == subject.Id &&
+                        x.IsActive)
+                .ToListAsync(cancellationToken);
+
+            foreach (var adoption in adoptions)
+            {
+                await OfficialCurriculumOutcomeMaterializer.EnsureAsync(
+                    db,
+                    adoption,
+                    cancellationToken);
+            }
+
+            var adoptionById = adoptions.ToDictionary(x => x.Id);
+            var grades = await db.GradeLevels
+                .Where(x => x.SchoolId == school.Id)
+                .ToDictionaryAsync(x => x.Id, cancellationToken);
+            var classGroups = await db.ClassGroups
+                .Where(
+                    x =>
+                        x.SchoolId == school.Id &&
+                        x.AcademicYearId == academicYear.Id &&
+                        x.CurriculumAdoptionId.HasValue)
+                .ToListAsync(cancellationToken);
+
+            var seededClasses = new List<SeededClass>();
+            foreach (var classGroup in classGroups)
+            {
+                if (!classGroup.CurriculumAdoptionId.HasValue ||
+                    !adoptionById.TryGetValue(
+                        classGroup.CurriculumAdoptionId.Value,
+                        out var adoption) ||
+                    !grades.TryGetValue(classGroup.GradeLevelId, out var grade))
+                {
+                    continue;
+                }
+
+                var level = CurriculumLevelIdentityRegistry.Find(
+                    adoption.CurriculumLevelKey);
+                if (level is null)
+                    continue;
+
+                seededClasses.Add(
+                    new SeededClass(
+                        classGroup,
+                        grade,
+                        adoption,
+                        level));
+            }
+
+            var deepClasses = SelectDeepClasses(
+                definition,
+                seededClasses);
+
+            foreach (var deepClass in deepClasses)
+            {
+                var hasAssessments = await db.Assessments
+                    .AsNoTracking()
+                    .AnyAsync(
+                        x =>
+                            x.SchoolId == school.Id &&
+                            x.ClassGroupId == deepClass.ClassGroup.Id,
+                        cancellationToken);
+
+                if (hasAssessments)
+                {
+                    Console.WriteLine(
+                        $"MEETING_DEMO_REPAIR_CLASS_SKIPPED school={school.Id:D} class={deepClass.ClassGroup.Id:D} logicalLevel={deepClass.Level.LogicalLevel} reason=already-seeded");
+                    continue;
+                }
+
+                var outcomeCount = await db.LearningOutcomes
+                    .AsNoTracking()
+                    .CountAsync(
+                        x =>
+                            x.SchoolId == school.Id &&
+                            x.CurriculumAdoptionId == deepClass.Adoption.Id,
+                        cancellationToken);
+
+                if (outcomeCount < 5)
+                {
+                    stillUnsupportedClasses++;
+                    Console.WriteLine(
+                        $"MEETING_DEMO_REPAIR_UNSUPPORTED school={school.Id:D} class={deepClass.ClassGroup.Id:D} logicalLevel={deepClass.Level.LogicalLevel} pathway={deepClass.Level.Pathway ?? "shared"} reason=insufficient-materialized-outcomes count={outcomeCount}");
+                    continue;
+                }
+
+                var studentIds = await db.StudentEnrollments
+                    .AsNoTracking()
+                    .Where(
+                        x =>
+                            x.SchoolId == school.Id &&
+                            x.AcademicYearId == academicYear.Id &&
+                            x.ClassGroupId == deepClass.ClassGroup.Id)
+                    .Select(x => x.StudentProfileId)
+                    .ToArrayAsync(cancellationToken);
+
+                var students = await db.StudentProfiles
+                    .Where(x => studentIds.Contains(x.Id))
+                    .OrderBy(x => x.StudentNumber)
+                    .ToListAsync(cancellationToken);
+
+                var teacherUserId = await db.TeacherAssignments
+                    .AsNoTracking()
+                    .Where(
+                        x =>
+                            x.SchoolId == school.Id &&
+                            x.AcademicYearId == academicYear.Id &&
+                            x.SubjectId == subject.Id &&
+                            x.ClassGroupId == deepClass.ClassGroup.Id)
+                    .Select(x => x.TeacherUserId)
+                    .FirstOrDefaultAsync(cancellationToken);
+
+                if (students.Count == 0 || teacherUserId == Guid.Empty)
+                {
+                    Console.WriteLine(
+                        $"MEETING_DEMO_REPAIR_CLASS_SKIPPED school={school.Id:D} class={deepClass.ClassGroup.Id:D} logicalLevel={deepClass.Level.LogicalLevel} reason=operational-links-missing");
+                    continue;
+                }
+
+                await SeedDeepClassDataAsync(
+                    db,
+                    school,
+                    academicYear,
+                    term1,
+                    subject,
+                    deepClass,
+                    students,
+                    teacherUserId,
+                    students.Any(x => x.UserId.HasValue),
+                    cancellationToken);
+
+                repairedClasses++;
+                if (!touchedSchools.Contains(school.Id))
+                    touchedSchools.Add(school.Id);
+
+                Console.WriteLine(
+                    $"MEETING_DEMO_REPAIR_CLASS_COMPLETED school={school.Id:D} class={deepClass.ClassGroup.Id:D} logicalLevel={deepClass.Level.LogicalLevel} outcomes={outcomeCount}");
+            }
+        }
+
+        var analytics = new AnalyticsProjectionRefreshService(
+            new AnalyticsRepository(db),
+            new AnalyticsProjectionBuilder());
+
+        foreach (var schoolId in touchedSchools)
+        {
+            var refresh = await analytics.RefreshSchoolAsync(
+                schoolId,
+                cancellationToken);
+
+            if (!refresh.Succeeded)
+            {
+                throw new InvalidOperationException(
+                    $"Meeting demo repair analytics refresh failed for school {schoolId:D}: {refresh.Error}.");
+            }
+        }
+
+        db.IdempotencyRecords.Add(
+            new IdempotencyRecord
+            {
+                Id = Guid.NewGuid(),
+                SchoolId = null,
+                ActorUserId = Guid.Empty,
+                Operation = RepairMarkerOperation,
+                IdempotencyKey = RepairVersion,
+                RequestHash = new string('0', 64),
+                Status = IdempotencyStatus.Completed,
+                ResultStatusCode = 200,
+                CreatedAtUtc = DateTime.UtcNow,
+                CompletedAtUtc = DateTime.UtcNow,
+                ExpiresAtUtc = DateTime.UtcNow.AddYears(10),
+                RowVersion = []
+            });
+
+        await db.SaveChangesAsync(cancellationToken);
+
+        Console.WriteLine(
+            $"MEETING_DEMO_REPAIR_COMPLETED version={RepairVersion} repairedClasses={repairedClasses} unsupportedClasses={stillUnsupportedClasses} touchedSchools={touchedSchools.Count}");
     }
 
     private static async Task ResetSchoolScopedDataAsync(
@@ -1479,19 +1747,33 @@ DELETE FROM "Schools";
         var logicalLevel = adoption.CurriculumLogicalLevel!.Value;
         var pathway = adoption.CurriculumPathway;
 
-        var compatibleLessonIds = await db.CurriculumPedagogicalLessons
+        var compatibleLessons = await db.CurriculumPedagogicalLessons
             .AsNoTracking()
             .Where(
                 x =>
                     x.FrameworkVersionId == adoption.FrameworkVersionId &&
                     x.LogicalLevelFrom <= logicalLevel &&
-                    logicalLevel <= x.LogicalLevelTo &&
-                    (string.IsNullOrWhiteSpace(pathway)
-                        ? x.Pathway == null || x.Pathway == ""
-                        : x.Pathway == pathway))
+                    logicalLevel <= x.LogicalLevelTo)
+            .OrderBy(x => x.SortOrder)
+            .Select(
+                x =>
+                    new
+                    {
+                        x.Id,
+                        x.Pathway,
+                        x.SortOrder
+                    })
+            .ToArrayAsync(cancellationToken);
+
+        var compatibleLessonIds = compatibleLessons
+            .Where(
+                x =>
+                    CurriculumPathwayCompatibility.Matches(
+                        pathway,
+                        x.Pathway))
             .OrderBy(x => x.SortOrder)
             .Select(x => x.Id)
-            .ToArrayAsync(cancellationToken);
+            .ToArray();
 
         if (compatibleLessonIds.Length == 0)
             return null;
