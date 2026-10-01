@@ -580,7 +580,7 @@ public sealed class StudentPrivatePracticeServiceTests
                 using var metadata = JsonDocument.Parse(
                     item.ValidationMetadataJson!);
                 Assert.Equal(
-                    "READY_NARROW",
+                    "READY_BALANCED",
                     metadata.RootElement
                         .GetProperty("sessionReadiness")
                         .GetString());
