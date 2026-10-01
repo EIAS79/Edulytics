@@ -55,8 +55,8 @@ public sealed class StudentAssessmentDeliveryService(
                 StudentAssessmentDeliveryErrorCode.AlreadySubmitted);
         }
 
-        if (assessment.AssessmentType == AssessmentType.Homework &&
-            existingAttempt?.Status == AssessmentAttemptStatus.Submitted)
+        if (assessment.AssessmentType is AssessmentType.Homework or AssessmentType.Worksheet &&
+            existingAttempt?.Status is AssessmentAttemptStatus.Submitted or AssessmentAttemptStatus.Completed)
         {
             return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(
                 StudentAssessmentDeliveryErrorCode.AlreadySubmitted);
@@ -172,8 +172,8 @@ public sealed class StudentAssessmentDeliveryService(
                 StudentAssessmentDeliveryErrorCode.PersistenceError);
         }
 
-        if (assessment.AssessmentType == AssessmentType.Homework &&
-            attempt.Status == AssessmentAttemptStatus.Submitted)
+        if (assessment.AssessmentType is AssessmentType.Homework or AssessmentType.Worksheet &&
+            attempt.Status is AssessmentAttemptStatus.Submitted or AssessmentAttemptStatus.Completed)
         {
             return StudentAssessmentDeliveryResult<StudentAssessmentProgress>.Failure(
                 StudentAssessmentDeliveryErrorCode.AlreadySubmitted);
@@ -319,8 +319,8 @@ public sealed class StudentAssessmentDeliveryService(
             return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
                 StudentAssessmentDeliveryErrorCode.PersistenceError);
 
-        if (assessment.AssessmentType == AssessmentType.Homework &&
-            attempt.Status == AssessmentAttemptStatus.Submitted)
+        if (assessment.AssessmentType is AssessmentType.Homework or AssessmentType.Worksheet &&
+            attempt.Status is AssessmentAttemptStatus.Submitted or AssessmentAttemptStatus.Completed)
         {
             return StudentAssessmentDeliveryResult<StudentAssessmentSubmission>.Failure(
                 StudentAssessmentDeliveryErrorCode.AlreadySubmitted);
