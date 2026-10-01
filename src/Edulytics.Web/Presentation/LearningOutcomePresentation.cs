@@ -26,6 +26,21 @@ public static class LearningOutcomePresentation
         @"Stage\s+(?<stage>[^\s]+).*reference\s+family\s+(?<family>[A-Za-z]+)",
         RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
 
+    public static bool ShouldDisplayCode(string? code)
+    {
+        var value = (code ?? string.Empty).Trim();
+        if (value.Length == 0)
+            return false;
+
+        // UAE:REF identifiers are Edulytics internal traceability keys for
+        // curriculum-aligned reference targets. They must never be presented
+        // as official Ministry outcome codes to end users.
+        if (value.StartsWith("UAE:REF:", StringComparison.OrdinalIgnoreCase))
+            return false;
+
+        return true;
+    }
+
     public static string DisplayCode(string? code)
     {
         var value = (code ?? string.Empty).Trim();
