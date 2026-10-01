@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Security.Claims;
 using Edulytics.Core.AdaptivePractice;
+using Edulytics.Core.Enums;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.AdaptivePractice;
 using Edulytics.Services.LessonContent;
