@@ -45,7 +45,6 @@ public sealed partial class AssessmentService
             request.MaxScore,
             availableFromUtc,
             dueAtUtc,
-            request.AttemptTimeLimitMinutes,
             DateTime.UtcNow);
         if (typeValidation is not null)
             return Fail(typeValidation.Value.Field, typeValidation.Value.Error);
@@ -104,9 +103,7 @@ public sealed partial class AssessmentService
             DueAtUtc = request.AssessmentType is AssessmentType.Exam or AssessmentType.Homework
                 ? dueAtUtc
                 : null,
-            AttemptTimeLimitMinutes = request.AssessmentType == AssessmentType.Exam
-                ? request.AttemptTimeLimitMinutes
-                : null,
+            AttemptTimeLimitMinutes = null,
             Status = AssessmentStatus.Draft,
             CreatedByUserId = actorUserId,
             CreatedAtUtc = now,
@@ -148,8 +145,6 @@ public sealed partial class AssessmentService
                         entity.AvailableFromUtc,
                     ["dueAtUtc"] =
                         entity.DueAtUtc,
-                    ["attemptTimeLimitMinutes"] =
-                        entity.AttemptTimeLimitMinutes,
                     ["status"] =
                         entity.Status.ToString()
                 },
@@ -415,7 +410,6 @@ public sealed partial class AssessmentService
             request.MaxScore,
             availableFromUtc,
             dueAtUtc,
-            request.AttemptTimeLimitMinutes,
             DateTime.UtcNow);
         if (typeValidation is not null)
             return Fail(typeValidation.Value.Field, typeValidation.Value.Error);
@@ -430,8 +424,7 @@ public sealed partial class AssessmentService
                 request.AssessmentDate != assessment.AssessmentDate ||
                 request.MaxScore != 0m ||
                 requestedDelivery != AssessmentDeliveryMode.Online ||
-                availableFromUtc.HasValue ||
-                request.AttemptTimeLimitMinutes.HasValue)
+                availableFromUtc.HasValue)
             {
                 return Fail(AssessmentErrorCode.AssessmentNotDraft);
             }
@@ -482,9 +475,7 @@ public sealed partial class AssessmentService
                 ["availableFromUtc"] =
                     assessment.AvailableFromUtc,
                 ["dueAtUtc"] =
-                    assessment.DueAtUtc,
-                ["attemptTimeLimitMinutes"] =
-                    assessment.AttemptTimeLimitMinutes
+                    assessment.DueAtUtc
             };
 
         assessment.Title = title;
@@ -506,10 +497,7 @@ public sealed partial class AssessmentService
             assessment.AssessmentType is AssessmentType.Exam or AssessmentType.Homework
                 ? dueAtUtc
                 : null;
-        assessment.AttemptTimeLimitMinutes =
-            assessment.AssessmentType == AssessmentType.Exam
-                ? request.AttemptTimeLimitMinutes
-                : null;
+        assessment.AttemptTimeLimitMinutes = null;
         assessment.UpdatedAtUtc =
             DateTime.UtcNow;
 
@@ -532,9 +520,7 @@ public sealed partial class AssessmentService
                 ["availableFromUtc"] =
                     assessment.AvailableFromUtc,
                 ["dueAtUtc"] =
-                    assessment.DueAtUtc,
-                ["attemptTimeLimitMinutes"] =
-                    assessment.AttemptTimeLimitMinutes
+                    assessment.DueAtUtc
             },
             "Assessment updated.",
             cancellationToken);
@@ -1315,7 +1301,6 @@ public sealed partial class AssessmentService
             assessment.MaxScore,
             assessment.AvailableFromUtc,
             assessment.DueAtUtc,
-            assessment.AttemptTimeLimitMinutes,
             DateTime.UtcNow,
             requireFutureHomeworkDue: true);
         if (openTypeValidation is not null)
@@ -1798,7 +1783,6 @@ public sealed partial class AssessmentService
         decimal maxScore,
         DateTime? availableFromUtc,
         DateTime? dueAtUtc,
-        int? attemptTimeLimitMinutes,
         DateTime nowUtc,
         bool requireFutureHomeworkDue = false)
     {
@@ -1814,14 +1798,12 @@ public sealed partial class AssessmentService
                 if (!ValidMax(maxScore))
                     return (nameof(maxScore), AssessmentErrorCode.InvalidMaxScore);
                 if (deliveryMode == AssessmentDeliveryMode.Offline &&
-                    (available.HasValue || due.HasValue || attemptTimeLimitMinutes.HasValue))
+                    (available.HasValue || due.HasValue))
                 {
                     return (nameof(deliveryMode), AssessmentErrorCode.InvalidSchedule);
                 }
                 if (available.HasValue && due.HasValue && due.Value <= available.Value)
                     return (nameof(dueAtUtc), AssessmentErrorCode.InvalidSchedule);
-                if (attemptTimeLimitMinutes is <= 0 or > 480)
-                    return (nameof(attemptTimeLimitMinutes), AssessmentErrorCode.InvalidSchedule);
                 return null;
 
             case AssessmentType.Homework:
@@ -1829,7 +1811,7 @@ public sealed partial class AssessmentService
                     return (nameof(deliveryMode), AssessmentErrorCode.InvalidDeliveryModeForType);
                 if (maxScore != 0m)
                     return (nameof(maxScore), AssessmentErrorCode.InvalidMaxScore);
-                if (availableFromUtc.HasValue || attemptTimeLimitMinutes.HasValue)
+                if (availableFromUtc.HasValue)
                     return (nameof(availableFromUtc), AssessmentErrorCode.InvalidSchedule);
                 if (!due.HasValue)
                     return (nameof(dueAtUtc), AssessmentErrorCode.Required);
@@ -1840,7 +1822,7 @@ public sealed partial class AssessmentService
             case AssessmentType.Worksheet:
                 if (maxScore != 0m)
                     return (nameof(maxScore), AssessmentErrorCode.InvalidMaxScore);
-                if (availableFromUtc.HasValue || dueAtUtc.HasValue || attemptTimeLimitMinutes.HasValue)
+                if (availableFromUtc.HasValue || dueAtUtc.HasValue)
                     return (nameof(dueAtUtc), AssessmentErrorCode.InvalidSchedule);
                 return null;
 
