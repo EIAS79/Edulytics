@@ -319,14 +319,13 @@ public sealed class StudentPortalController : Controller
     }
 
     [HttpGet("assessments/{id:guid}")]
+    [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
     public async Task<IActionResult> TakeAssessment(Guid id, CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
         var attempt = await _assessmentDelivery.GetAttemptAsync(actorId, id, cancellationToken);
         if (attempt.Value is not null)
         {
-            Response.Headers.CacheControl = "no-store, no-cache, must-revalidate";
-            Response.Headers.Pragma = "no-cache";
             return View(nameof(TakeAssessment), attempt.Value);
         }
         return HandleAssessmentDeliveryError(attempt.Error);
