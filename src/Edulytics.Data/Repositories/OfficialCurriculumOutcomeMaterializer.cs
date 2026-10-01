@@ -6,12 +6,10 @@ using Microsoft.EntityFrameworkCore;
 namespace Edulytics.Data.Repositories;
 
 /// <summary>
-/// Makes verified curriculum scope usable by operational assessment/practice flows.
-/// Official Standard/Outcome nodes remain the primary source. When an approved source-linked
-/// scope has no reusable official outcomes, an explicitly verified reference target may be
-/// projected instead. Reference targets never become synthetic official outcomes; UAE targets
-/// keep OfficialContentNodeId null, while Cambridge targets may point to an existing official
-/// Reference node without changing that node's kind.
+/// Makes the verified platform curriculum usable by operational assessment/practice flows.
+/// The source of truth remains CurriculumPackContentNode; this class only projects active
+/// official Standard/Outcome nodes into the school-scoped LearningOutcome model required by
+/// assessment, mastery and evidence foreign keys.
 /// </summary>
 public static class OfficialCurriculumOutcomeMaterializer
 {
@@ -75,15 +73,7 @@ public static class OfficialCurriculumOutcomeMaterializer
             .ToList();
 
         if (officialNodes.Count == 0)
-        {
-            await EnsureVerifiedReferenceTargetsAsync(
-                db,
-                adoption,
-                logicalLevel,
-                pathway,
-                cancellationToken);
             return;
-        }
 
         // A code represents one official assessable outcome in a curriculum level. De-duplicate
         // defensively without creating synthetic identifiers or text.
@@ -209,178 +199,6 @@ public static class OfficialCurriculumOutcomeMaterializer
             return;
 
         await db.SaveChangesAsync(cancellationToken);
-    }
-
-
-    private static async Task EnsureVerifiedReferenceTargetsAsync(
-        EdulyticsDbContext db,
-        SchoolCurriculumAdoption adoption,
-        int logicalLevel,
-        string? pathway,
-        CancellationToken cancellationToken)
-    {
-        var frameworkId = await db.CurriculumFrameworkVersions
-            .AsNoTracking()
-            .Where(x => x.Id == adoption.FrameworkVersionId)
-            .Select(x => x.FrameworkId)
-            .SingleOrDefaultAsync(cancellationToken);
-
-        if (frameworkId == Guid.Empty)
-            return;
-
-        var packCode = await db.CurriculumFrameworks
-            .AsNoTracking()
-            .Where(x => x.Id == frameworkId)
-            .Select(x => x.Code)
-            .SingleOrDefaultAsync(cancellationToken);
-
-        if (string.IsNullOrWhiteSpace(packCode))
-            return;
-
-        var targets = VerifiedCurriculumReferenceTargetRegistry
-            .ForScope(packCode, logicalLevel, pathway)
-            .ToArray();
-
-        if (targets.Length == 0)
-            return;
-
-        var officialReferenceCodes = targets
-            .Where(x => !string.IsNullOrWhiteSpace(x.OfficialReferenceCode))
-            .Select(x => x.OfficialReferenceCode!)
-            .Distinct(StringComparer.Ordinal)
-            .ToArray();
-
-        var officialReferenceNodeByCode =
-            officialReferenceCodes.Length == 0
-                ? new Dictionary<string, Guid>(StringComparer.Ordinal)
-                : await db.CurriculumPackContentNodes
-                    .AsNoTracking()
-                    .Where(x =>
-                        x.FrameworkVersionId == adoption.FrameworkVersionId &&
-                        x.IsOfficial &&
-                        x.IsActive &&
-                        x.NodeKind == "Reference" &&
-                        officialReferenceCodes.Contains(x.Code))
-                    .ToDictionaryAsync(x => x.Code, x => x.Id, StringComparer.Ordinal, cancellationToken);
-
-        var missingOfficialReferences = officialReferenceCodes
-            .Where(x => !officialReferenceNodeByCode.ContainsKey(x))
-            .ToArray();
-
-        if (missingOfficialReferences.Length > 0)
-        {
-            throw new InvalidOperationException(
-                $"Verified curriculum reference target points to missing official reference node(s): {string.Join(',', missingOfficialReferences)}.");
-        }
-
-        var existingTopics = await db.CurriculumTopics
-            .Where(x =>
-                x.SchoolId == adoption.SchoolId &&
-                x.AcademicProgramId == adoption.AcademicProgramId &&
-                x.FrameworkVersionId == adoption.FrameworkVersionId &&
-                x.SubjectId == adoption.SubjectId &&
-                x.GradeLevelId == adoption.GradeLevelId &&
-                (x.CurriculumAdoptionId == adoption.Id || x.CurriculumAdoptionId == null))
-            .OrderBy(x => x.Order)
-            .ToListAsync(cancellationToken);
-
-        var existingOutcomes = await db.LearningOutcomes
-            .Where(x =>
-                x.SchoolId == adoption.SchoolId &&
-                x.AcademicProgramId == adoption.AcademicProgramId &&
-                x.FrameworkVersionId == adoption.FrameworkVersionId &&
-                x.SubjectId == adoption.SubjectId &&
-                x.GradeLevelId == adoption.GradeLevelId &&
-                (x.CurriculumAdoptionId == adoption.Id || x.CurriculumAdoptionId == null))
-            .OrderBy(x => x.Order)
-            .ToListAsync(cancellationToken);
-
-        var topicByName = existingTopics
-            .GroupBy(x => NormalizeKey(x.Name), StringComparer.Ordinal)
-            .ToDictionary(x => x.Key, x => x.First(), StringComparer.Ordinal);
-
-        var nextTopicOrder = existingTopics
-            .Select(x => x.Order)
-            .DefaultIfEmpty(0)
-            .Max() + 1;
-
-        foreach (var targetGroup in targets
-                     .GroupBy(x => x.TopicName, StringComparer.Ordinal)
-                     .OrderBy(x => x.Key, StringComparer.Ordinal))
-        {
-            var topicKey = NormalizeKey(targetGroup.Key);
-            if (!topicByName.TryGetValue(topicKey, out var topic))
-            {
-                topic = new CurriculumTopic
-                {
-                    Id = Guid.NewGuid(),
-                    SchoolId = adoption.SchoolId,
-                    AcademicProgramId = adoption.AcademicProgramId,
-                    FrameworkVersionId = adoption.FrameworkVersionId,
-                    SubjectId = adoption.SubjectId,
-                    GradeLevelId = adoption.GradeLevelId,
-                    CurriculumAdoptionId = adoption.Id,
-                    Name = Compact(targetGroup.Key, 200),
-                    Order = nextTopicOrder++
-                };
-                db.CurriculumTopics.Add(topic);
-                existingTopics.Add(topic);
-                topicByName[topicKey] = topic;
-            }
-
-            var nextOutcomeOrder = existingOutcomes
-                .Where(x => x.TopicId == topic.Id)
-                .Select(x => x.Order)
-                .DefaultIfEmpty(0)
-                .Max() + 1;
-
-            foreach (var target in targetGroup.OrderBy(x => x.Code, StringComparer.Ordinal))
-            {
-                var current = existingOutcomes.FirstOrDefault(
-                    x => string.Equals(x.Code, target.Code, StringComparison.Ordinal));
-
-                Guid? officialNodeId = null;
-                if (!string.IsNullOrWhiteSpace(target.OfficialReferenceCode))
-                    officialNodeId = officialReferenceNodeByCode[target.OfficialReferenceCode!];
-
-                if (current is not null)
-                {
-                    if (!current.CurriculumAdoptionId.HasValue)
-                        current.CurriculumAdoptionId = adoption.Id;
-
-                    if (officialNodeId.HasValue &&
-                        !current.OfficialContentNodeId.HasValue)
-                    {
-                        current.OfficialContentNodeId = officialNodeId.Value;
-                    }
-
-                    continue;
-                }
-
-                var outcome = new LearningOutcome
-                {
-                    Id = Guid.NewGuid(),
-                    SchoolId = adoption.SchoolId,
-                    AcademicProgramId = adoption.AcademicProgramId,
-                    FrameworkVersionId = adoption.FrameworkVersionId,
-                    SubjectId = adoption.SubjectId,
-                    GradeLevelId = adoption.GradeLevelId,
-                    CurriculumAdoptionId = adoption.Id,
-                    TopicId = topic.Id,
-                    OfficialContentNodeId = officialNodeId,
-                    Code = target.Code,
-                    Description = Compact(target.Description, 1000),
-                    Weight = 1m,
-                    Order = nextOutcomeOrder++
-                };
-
-                db.LearningOutcomes.Add(outcome);
-                existingOutcomes.Add(outcome);
-            }
-        }
-
-        if (db.ChangeTracker.HasChanges())
-            await db.SaveChangesAsync(cancellationToken);
     }
 
     private static string GroupName(
