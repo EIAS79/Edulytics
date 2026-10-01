@@ -57,7 +57,12 @@ public static class OfficialCurriculumOutcomeMaterializer
                 x.FrameworkVersionId == adoption.FrameworkVersionId &&
                 x.IsOfficial &&
                 x.IsActive &&
-                (x.NodeKind == "Standard" || x.NodeKind == "Outcome") &&
+                (
+                    x.NodeKind == "Standard" ||
+                    x.NodeKind == "Outcome" ||
+                    (x.NodeKind == "Reference" &&
+                     x.Code.StartsWith("CAM:REF:9709:", StringComparison.Ordinal))
+                ) &&
                 x.LogicalLevelFrom <= logicalLevel &&
                 x.LogicalLevelTo >= logicalLevel)
             .OrderBy(x => x.SortOrder)
