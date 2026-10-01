@@ -15,7 +15,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Edulytics.Web.Bootstrap;
 
 /// <summary>
-/// One-shot meeting dataset provisioner for the production demo service.
+/// One-shot production-rehearsal dataset provisioner for the staging service.
 /// It resets school-scoped operational data while preserving the platform
 /// curriculum catalogue, EF migrations, Identity roles and data-protection keys.
 /// A platform-scoped idempotency marker prevents an accidental second reset.
@@ -23,10 +23,8 @@ namespace Edulytics.Web.Bootstrap;
 internal static class MeetingDemoProvisioner
 {
     private const string TargetRenderServiceId = "srv-dakq5n2fngtc73a62i10";
-    private const string SeedVersion = "meeting-demo-2026-09-23-v1";
-    private const string MarkerOperation = "MeetingDemoSeed";
-
-    private static readonly int[] DeepLogicalLevels = [2, 4, 5, 10, 11, 12];
+    private const string SeedVersion = "production-rehearsal-2026-10-01-v1";
+    private const string MarkerOperation = "ProductionRehearsalSeed";
 
     private static readonly string[] FirstNames =
     [
@@ -57,6 +55,9 @@ internal static class MeetingDemoProvisioner
         string PackCode,
         string ProgramName,
         string ProgramCode,
+        string StageKey,
+        int MinimumLogicalLevel,
+        int MaximumLogicalLevel,
         int PrimaryLoginLogicalLevel,
         int SecondaryLoginLogicalLevel,
         string? SecondaryLoginPathway);
@@ -80,9 +81,9 @@ internal static class MeetingDemoProvisioner
     private static readonly SchoolDefinition[] Schools =
     [
         new(
-            "cambridge",
-            "Horizon Cambridge Demo School",
-            "DEMO-CAMBRIDGE",
+            "cambridge-primary",
+            "Horizon British Primary School",
+            "REHEARSAL-GB-PRIMARY",
             "GB",
             "London",
             "en",
@@ -90,27 +91,51 @@ internal static class MeetingDemoProvisioner
             MathematicsCurriculumPackRegistry.CambridgeCode,
             "British Programme",
             "BRITISH",
+            "primary",
+            1,
+            6,
             4,
-            11,
-            "Extended"),
+            5,
+            null),
         new(
-            "uae",
-            "Emirates Future Demo Academy",
-            "DEMO-UAE",
-            "AE",
-            "Dubai",
+            "cambridge-middle",
+            "Horizon British Middle School",
+            "REHEARSAL-GB-MIDDLE",
+            "GB",
+            "London",
             "en",
-            "Asia/Dubai",
-            MathematicsCurriculumPackRegistry.UaeCode,
-            "UAE Programme",
-            "UAE",
-            4,
-            11,
-            "Advanced"),
+            "Europe/London",
+            MathematicsCurriculumPackRegistry.CambridgeCode,
+            "British Programme",
+            "BRITISH",
+            "middle",
+            7,
+            9,
+            8,
+            9,
+            null),
         new(
-            "commoncore",
-            "Liberty Common Core Demo School",
-            "DEMO-US",
+            "cambridge-secondary",
+            "Horizon British Secondary School",
+            "REHEARSAL-GB-SECONDARY",
+            "GB",
+            "London",
+            "en",
+            "Europe/London",
+            MathematicsCurriculumPackRegistry.CambridgeCode,
+            "British Programme",
+            "BRITISH",
+            "secondary",
+            10,
+            13,
+            11,
+            12,
+            "Extended"),
+
+        new(
+            "commoncore-primary",
+            "Liberty American Primary School",
+            "REHEARSAL-US-PRIMARY",
             "US",
             "Boston",
             "en",
@@ -118,13 +143,103 @@ internal static class MeetingDemoProvisioner
             MathematicsCurriculumPackRegistry.CommonCoreCode,
             "American Programme",
             "AMERICAN",
+            "primary",
+            1,
+            6,
             5,
-            12,
+            6,
             null),
         new(
-            "polish",
-            "Akademia Vistula Demo School",
-            "DEMO-PL",
+            "commoncore-middle",
+            "Liberty American Middle School",
+            "REHEARSAL-US-MIDDLE",
+            "US",
+            "Boston",
+            "en",
+            "America/New_York",
+            MathematicsCurriculumPackRegistry.CommonCoreCode,
+            "American Programme",
+            "AMERICAN",
+            "middle",
+            7,
+            9,
+            8,
+            9,
+            null),
+        new(
+            "commoncore-secondary",
+            "Liberty American Secondary School",
+            "REHEARSAL-US-SECONDARY",
+            "US",
+            "Boston",
+            "en",
+            "America/New_York",
+            MathematicsCurriculumPackRegistry.CommonCoreCode,
+            "American Programme",
+            "AMERICAN",
+            "secondary",
+            10,
+            13,
+            11,
+            13,
+            null),
+
+        new(
+            "uae-primary",
+            "Emirates Future Primary Academy",
+            "REHEARSAL-AE-PRIMARY",
+            "AE",
+            "Dubai",
+            "en",
+            "Asia/Dubai",
+            MathematicsCurriculumPackRegistry.UaeCode,
+            "UAE Programme",
+            "UAE",
+            "primary",
+            1,
+            4,
+            3,
+            4,
+            null),
+        new(
+            "uae-middle",
+            "Emirates Future Middle Academy",
+            "REHEARSAL-AE-MIDDLE",
+            "AE",
+            "Dubai",
+            "en",
+            "Asia/Dubai",
+            MathematicsCurriculumPackRegistry.UaeCode,
+            "UAE Programme",
+            "UAE",
+            "middle",
+            5,
+            8,
+            7,
+            8,
+            "Advanced"),
+        new(
+            "uae-secondary",
+            "Emirates Future Secondary Academy",
+            "REHEARSAL-AE-SECONDARY",
+            "AE",
+            "Dubai",
+            "en",
+            "Asia/Dubai",
+            MathematicsCurriculumPackRegistry.UaeCode,
+            "UAE Programme",
+            "UAE",
+            "secondary",
+            9,
+            12,
+            11,
+            12,
+            "Advanced"),
+
+        new(
+            "polish-primary",
+            "Akademia Vistula Szkoła Podstawowa",
+            "REHEARSAL-PL-PRIMARY",
             "PL",
             "Warsaw",
             "pl",
@@ -132,8 +247,45 @@ internal static class MeetingDemoProvisioner
             MathematicsCurriculumPackRegistry.PolandCode,
             "Polish Programme",
             "POLISH",
+            "primary",
+            1,
+            6,
             4,
+            6,
+            null),
+        new(
+            "polish-middle",
+            "Akademia Vistula Middle School",
+            "REHEARSAL-PL-MIDDLE",
+            "PL",
+            "Warsaw",
+            "pl",
+            "Europe/Warsaw",
+            MathematicsCurriculumPackRegistry.PolandCode,
+            "Polish Programme",
+            "POLISH",
+            "middle",
+            7,
+            8,
+            7,
+            8,
+            null),
+        new(
+            "polish-secondary",
+            "Akademia Vistula Liceum",
+            "REHEARSAL-PL-SECONDARY",
+            "PL",
+            "Warsaw",
+            "pl",
+            "Europe/Warsaw",
+            MathematicsCurriculumPackRegistry.PolandCode,
+            "Polish Programme",
+            "POLISH",
+            "secondary",
+            9,
+            13,
             11,
+            12,
             "Liceum ogólnokształcące")
     ];
 
@@ -251,6 +403,28 @@ internal static class MeetingDemoProvisioner
         await db.SaveChangesAsync(cancellationToken);
 
         var schoolCount = await db.Schools.CountAsync(cancellationToken);
+        if (schoolCount != Schools.Length)
+        {
+            throw new InvalidOperationException(
+                $"Production rehearsal verification failed: expected {Schools.Length} schools, found {schoolCount}.");
+        }
+
+        var seededCodes = await db.Schools
+            .AsNoTracking()
+            .Select(x => x.SchoolCode)
+            .ToArrayAsync(cancellationToken);
+
+        var missingCodes = Schools
+            .Select(x => x.SchoolCode)
+            .Except(seededCodes, StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+
+        if (missingCodes.Length > 0)
+        {
+            throw new InvalidOperationException(
+                $"Production rehearsal verification failed: missing schools {string.Join(',', missingCodes)}.");
+        }
+
         var classCount = await db.ClassGroups.CountAsync(cancellationToken);
         var studentCount = await db.StudentProfiles.CountAsync(cancellationToken);
         var enrollmentCount = await db.StudentEnrollments.CountAsync(cancellationToken);
@@ -545,11 +719,19 @@ DELETE FROM "Schools";
             .OrderByDescending(x => x.UpdatedAtUtc)
             .FirstAsync(cancellationToken);
 
-        var levels = CurriculumLevelIdentityRegistry.ForPack(definition.PackCode);
-        if (levels.Count == 0)
+        var levels = CurriculumLevelIdentityRegistry
+            .ForPack(definition.PackCode)
+            .Where(
+                x =>
+                    x.LogicalLevel >= definition.MinimumLogicalLevel &&
+                    x.LogicalLevel <= definition.MaximumLogicalLevel)
+            .ToArray();
+
+        if (levels.Length == 0)
         {
             throw new InvalidOperationException(
-                $"No curriculum levels registered for {definition.PackCode}.");
+                $"No curriculum levels registered for {definition.PackCode} " +
+                $"stage={definition.StageKey} range={definition.MinimumLogicalLevel}-{definition.MaximumLogicalLevel}.");
         }
 
         var gradeByLogicalLevel = new Dictionary<int, GradeLevel>();
@@ -1354,13 +1536,26 @@ DELETE FROM "Schools";
         SchoolDefinition definition,
         IReadOnlyList<SeededClass> classes)
     {
-        return DeepLogicalLevels
+        return new[]
+            {
+                definition.PrimaryLoginLogicalLevel,
+                definition.SecondaryLoginLogicalLevel
+            }
+            .Distinct()
             .Select(
                 logicalLevel =>
                 {
                     var candidates = classes
                         .Where(x => x.Level.LogicalLevel == logicalLevel)
                         .ToArray();
+
+                    if (candidates.Length == 0)
+                    {
+                        throw new InvalidOperationException(
+                            $"Production rehearsal stage '{definition.StageKey}' " +
+                            $"does not contain configured deep logical level {logicalLevel} " +
+                            $"for {definition.PackCode}.");
+                    }
 
                     var preferred = PreferredPathway(
                         definition.PackCode,
