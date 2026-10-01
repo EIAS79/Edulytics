@@ -105,6 +105,7 @@
 
             <div class="assessment-status-strip">
                 <span class="assessment-status-pill">@A[Model.StatusKey]</span>
+                <span class="assessment-delivery-label">@B["CurrentDelivery"]:</span>
                 <span class="ed-delivery-badge @deliveryClass">@B[deliveryKey]</span>
                 <span>@assessment.AssessmentDate.ToString("yyyy-MM-dd")</span>
                 @if (assessment.IsScored)
