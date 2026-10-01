@@ -527,6 +527,22 @@ public sealed class StudentPrivatePracticeService(
                 .OrderBy(x => x.SortOrder)
                 .ToArray();
         }
+        else if (request.Scope is
+                 StudentPrivatePracticeScope.WholeCurriculum or
+                 StudentPrivatePracticeScope.WeakAreas)
+        {
+            // Reference-only curricula can legitimately expose pedagogical
+            // lessons without formal LearningOutcome rows. Whole-curriculum
+            // private practice must still be able to build a trusted,
+            // context-only personal test from those lesson contracts/content.
+            // Weak Areas has no official mastery signal in that situation, so
+            // it truthfully falls back to the available curriculum lessons.
+            lessons = context.Lessons
+                .OrderBy(x => x.SortOrder)
+                .ThenBy(x => x.UnitKey)
+                .ThenBy(x => x.Code)
+                .ToArray();
+        }
         else
         {
             return [];

@@ -105,6 +105,60 @@ public sealed class StudentPrivatePracticeServiceTests
     }
 
     [Fact]
+    public async Task Whole_curriculum_reference_only_scope_uses_lesson_context_instead_of_zero_objectives()
+    {
+        var ids = Ids.Create();
+        var lessons = new[]
+        {
+            Lesson(
+                ids,
+                Guid.NewGuid(),
+                "ALG",
+                "Algebra",
+                "PED:REF:G10:FUNCTIONS",
+                "Functions — advanced reasoning",
+                1),
+            Lesson(
+                ids,
+                Guid.NewGuid(),
+                "ALG",
+                "Algebra",
+                "PED:REF:G10:LINEAR",
+                "Linear modelling — advanced reasoning",
+                2)
+        };
+
+        var repo = new FakeRepository
+        {
+            Context = BuildContext(ids, [], lessons)
+        };
+
+        var result = await new StudentPrivatePracticeService(repo).GenerateAsync(
+            ids.User,
+            new GenerateStudentPrivatePracticeRequest(
+                ids.Adoption,
+                StudentPrivatePracticeScope.WholeCurriculum,
+                null,
+                null,
+                StudentPrivatePracticeDifficulty.AtClassLevel,
+                2,
+                20261001));
+
+        Assert.True(result.Succeeded);
+        Assert.Null(result.Error);
+        Assert.NotNull(repo.SavedAttempt);
+        Assert.True(repo.SavedAttempt!.IsPrivate);
+        Assert.Equal(2, repo.SavedItems.Count);
+        Assert.Empty(repo.SavedOutcomes);
+        Assert.All(
+            repo.SavedItems,
+            item => Assert.Contains(
+                "pedagogical-context-only",
+                item.ValidationMetadataJson,
+                StringComparison.Ordinal));
+    }
+
+    [Fact]
     public async Task Non_mathematics_outcomes_still_fail_closed()
     {
         var ids = Ids.Create();
