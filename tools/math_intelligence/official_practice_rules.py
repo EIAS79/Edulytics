@@ -54,6 +54,28 @@ def _matches_reviewed_exact_title(
 
 
 
+def _matches_reviewed_title(
+    lesson_code: str,
+    title: str,
+    rule: SupportingRule,
+) -> bool:
+    normalized = normalize_title(title)
+
+    if rule.title_patterns and not any(
+        pattern.search(normalized)
+        for pattern in rule.title_patterns
+    ):
+        return False
+
+    if rule.code_patterns and not any(
+        pattern.search(lesson_code)
+        for pattern in rule.code_patterns
+    ):
+        return False
+
+    return True
+
+
 def _matches_reviewed_canonical_evidence(
     lesson_code: str,
     translation: dict[str, Any],
@@ -264,6 +286,20 @@ def load_reviewed_official_rule_mappings(
                     outcomes,
                     exact_candidates[0],
                     "EXACT_TITLE",
+                )
+                continue
+
+            reviewed_title_candidates = [
+                rule
+                for rule in rules
+                if _matches_reviewed_title(lesson_code, title, rule)
+            ]
+            if len(reviewed_title_candidates) == 1:
+                mappings[lesson_code] = mapping_from_rule(
+                    lesson_code,
+                    outcomes,
+                    reviewed_title_candidates[0],
+                    "UNIQUE_REVIEWED_TITLE",
                 )
                 continue
 
