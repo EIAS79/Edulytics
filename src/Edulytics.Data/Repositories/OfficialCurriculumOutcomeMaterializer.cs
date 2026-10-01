@@ -232,6 +232,7 @@ public static class OfficialCurriculumOutcomeMaterializer
             .Replace("UK:STD:", string.Empty, StringComparison.Ordinal)
             .Replace("CCSS:", string.Empty, StringComparison.Ordinal)
             .Replace("PL:REQ:", string.Empty, StringComparison.Ordinal)
+            .Replace("CAM:REF:9709:", string.Empty, StringComparison.Ordinal)
             .Trim();
 
     private static string? Normalize(string? value) =>

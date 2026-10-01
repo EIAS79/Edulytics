@@ -332,7 +332,8 @@ public static class PedagogicalLessonBlueprintContract
             "Domain",
             "Cluster",
             "NumberedStandard",
-            "StandardSubpart"
+            "StandardSubpart",
+            "OfficialReference"
         };
 
     private static readonly HashSet<string> ResolutionKinds =
@@ -340,7 +341,8 @@ public static class PedagogicalLessonBlueprintContract
         {
             "None",
             "ExactAcceptedStandard",
-            "SubpartToAcceptedParent"
+            "SubpartToAcceptedParent",
+            "ExactAcceptedReference"
         };
 
     private static readonly Regex Sha256Pattern =
@@ -647,7 +649,8 @@ public static class PedagogicalLessonBlueprintContract
                 var resolved =
                     alignment.ResolutionKind is
                         "ExactAcceptedStandard" or
-                        "SubpartToAcceptedParent";
+                        "SubpartToAcceptedParent" or
+                        "ExactAcceptedReference";
 
                 if (resolved)
                 {
@@ -709,7 +712,8 @@ public static class PedagogicalLessonBlueprintContract
                                 StringComparison.Ordinal) &&
                             (x.ResolutionKind is
                                 "ExactAcceptedStandard" or
-                                "SubpartToAcceptedParent")))
+                                "SubpartToAcceptedParent" or
+                                "ExactAcceptedReference")))
                 {
                     throw new InvalidOperationException(
                         $"Formal OutcomeCode lacks explicit " +
