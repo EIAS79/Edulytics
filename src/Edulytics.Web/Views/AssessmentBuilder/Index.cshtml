@@ -46,6 +46,11 @@
          assessment.AssessmentType == AssessmentType.Exam &&
          assessment.AvailableFromUtc.HasValue &&
          DateTime.UtcNow < assessment.AvailableFromUtc.Value);
+    var deliverySettingsSaved =
+        string.Equals(
+            TempData.Peek("DeliverySettingsSaved")?.ToString(),
+            "true",
+            StringComparison.OrdinalIgnoreCase);
 }
 <link rel="stylesheet" href="~/css/assessment-builder.css" asp-append-version="true" />
 
@@ -139,9 +144,6 @@
                     {
                         <input type="hidden" name="deliveryMode" value="@AssessmentDeliveryMode.Online" />
                         <input value="@A["DeliveryOnline"]" readonly aria-readonly="true" />
-                        <small class="assessment-info">@(isPolish
-                            ? "Praca domowa jest zawsze wykonywana online."
-                            : "Homework is always completed online.")</small>
                     }
                     else
                     {
@@ -162,7 +164,10 @@
                 </form>
             </section>
 
-            <section class="assessment-card ed-builder-card ed-ai-builder-card">
+            <section class="assessment-card ed-builder-card ed-ai-builder-card @(deliverySettingsSaved ? "is-unlocked" : "is-locked")"
+                     data-ai-card
+                     data-assessment-id="@assessment.Id"
+                     data-delivery-saved="@deliverySettingsSaved.ToString().ToLowerInvariant()">
                 <div class="ed-builder-card-heading">
                     <div>
                         <h2>@A["GenerateQuestionsWithAI"]</h2>
@@ -183,8 +188,18 @@
                           method="post"
                           class="assessment-form ed-builder-form"
                           data-ai-generate-form>
-                        @Html.AntiForgeryToken()
-                        <input type="hidden" name="rowVersion" value="@rowVersion" />
+                        @if (!deliverySettingsSaved)
+                        {
+                            <div class="ed-ai-lock-notice" data-ai-lock-notice>
+                                <strong>@(isPolish ? "AI jest zablokowane" : "AI is locked")</strong>
+                                <span>@(isPolish
+                                    ? "Najpierw zapisz ustawienia dostarczania."
+                                    : "Save delivery settings first.")</span>
+                            </div>
+                        }
+                        <fieldset class="ed-ai-fieldset" disabled="@(!deliverySettingsSaved)">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="rowVersion" value="@rowVersion" />
 
                         <div class="ed-builder-two-column-fields">
                             <div>
@@ -314,7 +329,8 @@
                             </p>
                         </div>
 
-                        <button class="school-button school-button-primary ed-ai-generate-button" type="submit">@A["GenerateQuestionsWithAI"]</button>
+                            <button class="school-button school-button-primary ed-ai-generate-button" type="submit">@A["GenerateQuestionsWithAI"]</button>
+                        </fieldset>
                     </form>
                 }
                 else
@@ -563,7 +579,7 @@
             }
             else
             {
-                <button class="school-button" type="button" disabled>@A["PublishAssessment"]</button>
+                <button class="school-button" type="button" disabled>@publishActionLabel</button>
             }
         </section>
     }
@@ -588,6 +604,36 @@
                     window.setTimeout(() => { if (details) details.open = false; }, 0);
                 });
             });
+
+            const aiCard = document.querySelector('[data-ai-card]');
+            const aiFieldset = aiCard?.querySelector('.ed-ai-fieldset');
+            const aiLockNotice = aiCard?.querySelector('[data-ai-lock-notice]');
+            const deliveryKey = 'edulytics:assessment-builder:delivery-saved:' + (aiCard?.dataset.assessmentId ?? '');
+
+            const unlockAi = () => {
+                if (!aiFieldset) return;
+                aiFieldset.disabled = false;
+                aiCard?.classList.remove('is-locked');
+                aiCard?.classList.add('is-unlocked');
+                if (aiLockNotice) aiLockNotice.hidden = true;
+                try {
+                    sessionStorage.setItem(deliveryKey, 'true');
+                } catch {
+                    // UI unlock still works if session storage is unavailable.
+                }
+            };
+
+            if (aiCard?.dataset.deliverySaved === 'true') {
+                unlockAi();
+            } else {
+                try {
+                    if (deliveryKey && sessionStorage.getItem(deliveryKey) === 'true') {
+                        unlockAi();
+                    }
+                } catch {
+                    // Ignore storage access errors.
+                }
+            }
 
             const scopeSelect = document.querySelector('[data-assessment-scope]');
             const scopePanels = Array.from(document.querySelectorAll('[data-scope-panel]'));
