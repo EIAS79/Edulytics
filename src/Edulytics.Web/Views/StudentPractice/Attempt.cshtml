@@ -403,8 +403,9 @@ else if (personalTestMode)
               class="student-card-list">
             @Html.AntiForgeryToken()
 
-            @foreach (var question in orderedQuestions)
+            @for (var questionIndex = 0; questionIndex < orderedQuestions.Length; questionIndex++)
             {
+                var question = orderedQuestions[questionIndex];
                 var prompt = question.Prompt ?? string.Empty;
                 var visualSvg = PracticeMathVisualRenderer.RenderSvg(
                     question.GenerationFamily,
@@ -435,7 +436,7 @@ else if (personalTestMode)
                 }
 
                 <article class="student-assessment-card">
-                    <input type="hidden" name="attemptItemIds" value="@question.AttemptItemId" />
+                    <input type="hidden" name="attemptItemIds[@questionIndex]" value="@question.AttemptItemId" />
                     <div class="practice-question-content">
                         <span class="student-subject-code">@S["Question"] @question.Order</span>
                         <h2>@stem</h2>
@@ -452,7 +453,7 @@ else if (personalTestMode)
                             @foreach (var choice in choices)
                             {
                                 <label class="practice-choice">
-                                    <input type="radio" name="answers" value="@choice.Value" required />
+                                    <input type="radio" name="answers[@questionIndex]" value="@choice.Value" required />
                                     <span class="practice-choice-letter">@choice.Label</span>
                                     <span class="practice-choice-text">@choice.Value</span>
                                 </label>
@@ -463,7 +464,7 @@ else if (personalTestMode)
                     {
                         <div class="assessment-form practice-answer-actions">
                             <label>@S["YourAnswer"]</label>
-                            <input name="answers" maxlength="2000" required autocomplete="off" />
+                            <input name="answers[@questionIndex]" maxlength="2000" required autocomplete="off" />
                         </div>
                     }
                 </article>
