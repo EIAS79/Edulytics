@@ -171,7 +171,7 @@ else
                         <p>@attempt.StartedAtUtc.ToString("yyyy-MM-dd HH:mm") · @attempt.Status</p>
                     </div>
                     <dl><div><dt>@S["Score"]</dt><dd>@attempt.Score.ToString("0.##") / @attempt.MaxScore.ToString("0.##")</dd></div><div><dt>@S["Percentage"]</dt><dd>@attempt.Percentage.ToString("0.##")%</dd></div></dl>
-                    <a class="school-button" asp-action="Attempt" asp-route-id="@attempt.AttemptId">@S["OpenPracticeAttempt"]</a>
+                    <a class="school-button" asp-action="Attempt" asp-route-id="@attempt.AttemptId" asp-route-mode="personal-test">@S["OpenPracticeAttempt"]</a>
                 </article>
             }
         </div>
