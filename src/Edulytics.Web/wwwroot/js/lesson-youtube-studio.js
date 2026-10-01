@@ -182,7 +182,7 @@
             if (title) title.textContent = video.title || "YouTube lesson video";
             if (channel) channel.textContent = video.channelTitle || "YouTube";
 
-            const percent = Number(video.relevancePercent || 0);
+            const percent = Number(video.matchPercent || video.relevancePercent || 0);
             const matchText = percent > 0 ? percent + "%" : "—";
             if (match) match.textContent = matchText;
             if (matchDetail) matchDetail.textContent = matchText;
@@ -194,7 +194,7 @@
                 featureMeta.replaceChildren();
                 if (video.isPreferredChannel) {
                     featureMeta.appendChild(
-                        create("span", "yt-studio-meta-pill yt-studio-meta-pill--preferred", "Preferred channel")
+                        create("span", "yt-studio-meta-pill yt-studio-meta-pill--preferred", "Preferred channel bonus")
                     );
                 }
                 if (video.durationLabel) {
@@ -299,7 +299,7 @@
                         video.isPreferredChannel
                             ? "yt-studio-result-signal is-preferred"
                             : "yt-studio-result-signal",
-                        (Number(video.relevancePercent || 0) || 0) + "% match"
+                        (Number(video.matchPercent || video.relevancePercent || 0) || 0) + "% match"
                     )
                 );
                 signals.appendChild(
