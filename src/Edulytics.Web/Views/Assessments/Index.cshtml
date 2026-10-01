@@ -72,48 +72,60 @@
                   class="assessment-form assessment-create-form">
                 @Html.AntiForgeryToken()
 
-                <label for="assessmentType">@L("Type", "Typ")</label>
-                <select id="assessmentType" name="assessmentType" required>
-                    <option value="@AssessmentType.Exam">@L("Exam / Test", "Egzamin / test")</option>
-                    <option value="@AssessmentType.Homework">@L("Homework", "Praca domowa")</option>
-                    <option value="@AssessmentType.Worksheet">@L("Worksheet", "Karta pracy")</option>
-                </select>
+                <div class="assessment-field">
+                    <label for="assessmentType">@L("Type", "Typ")</label>
+                    <select id="assessmentType" name="assessmentType" required>
+                        <option value="@AssessmentType.Exam">@L("Exam / Test", "Egzamin / test")</option>
+                        <option value="@AssessmentType.Homework">@L("Homework", "Praca domowa")</option>
+                        <option value="@AssessmentType.Worksheet">@L("Worksheet", "Karta pracy")</option>
+                    </select>
+                </div>
 
-                <label for="classGroupId">@A["ClassGroup"]</label>
-                <select id="classGroupId" name="classGroupId" required>
-                    <option value="">@A["SelectClass"]</option>
-                    @foreach (var item in Model.Workspace.ClassGroups)
-                    {
-                        <option value="@item.Id">@item.Name</option>
-                    }
-                </select>
+                <div class="assessment-field">
+                    <label for="classGroupId">@A["ClassGroup"]</label>
+                    <select id="classGroupId" name="classGroupId" required>
+                        <option value="">@A["SelectClass"]</option>
+                        @foreach (var item in Model.Workspace.ClassGroups)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </div>
 
-                <label for="subjectId">@A["Subject"]</label>
-                <select id="subjectId" name="subjectId" required>
-                    <option value="">@A["SelectSubject"]</option>
-                    @foreach (var item in Model.Workspace.Subjects)
-                    {
-                        <option value="@item.Id">@item.Name (@item.Code)</option>
-                    }
-                </select>
+                <div class="assessment-field">
+                    <label for="subjectId">@A["Subject"]</label>
+                    <select id="subjectId" name="subjectId" required>
+                        <option value="">@A["SelectSubject"]</option>
+                        @foreach (var item in Model.Workspace.Subjects)
+                        {
+                            <option value="@item.Id">@item.Name (@item.Code)</option>
+                        }
+                    </select>
+                </div>
 
-                <label for="termId">@A["Term"]</label>
-                <select id="termId" name="termId" required>
-                    <option value="">@A["SelectTerm"]</option>
-                    @foreach (var item in Model.Workspace.Terms)
-                    {
-                        <option value="@item.Id">@item.Name</option>
-                    }
-                </select>
+                <div class="assessment-field">
+                    <label for="termId">@A["Term"]</label>
+                    <select id="termId" name="termId" required>
+                        <option value="">@A["SelectTerm"]</option>
+                        @foreach (var item in Model.Workspace.Terms)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </div>
 
-                <label for="title">@A["Title"]</label>
-                <input id="title" name="title" maxlength="200" required />
+                <div class="assessment-field assessment-field-wide">
+                    <label for="title">@A["Title"]</label>
+                    <input id="title" name="title" maxlength="200" required />
+                </div>
 
-                <label for="assessmentDate">@A["AssessmentDate"]</label>
-                <input id="assessmentDate" name="assessmentDate"
-                       type="date" required />
+                <div class="assessment-field">
+                    <label for="assessmentDate">@A["AssessmentDate"]</label>
+                    <input id="assessmentDate" name="assessmentDate"
+                           type="date" required />
+                </div>
 
-                <div id="assessment-delivery-group">
+                <div id="assessment-delivery-group" class="assessment-field">
                     <label for="deliveryMode">@L("Delivery", "Tryb")</label>
                     <select id="deliveryMode" name="deliveryMode">
                         <option value="@AssessmentDeliveryMode.Online">Online</option>
@@ -121,36 +133,42 @@
                     </select>
                 </div>
 
-                <div id="assessment-score-group">
+                <div id="assessment-score-group" class="assessment-field">
                     <label for="maxScore">@A["MaxScore"]</label>
                     <input id="maxScore" name="maxScore"
                            type="number" min="1" max="10000"
                            step="1" value="100" />
                 </div>
 
-                <div id="assessment-exam-schedule">
-                    <label for="availableFromLocal">@L("Starts at (optional)", "Rozpoczęcie (opcjonalne)")</label>
-                    <input id="availableFromLocal" name="availableFromLocal" type="datetime-local" />
-
-                    <label for="examDueAtLocal">@L("Hard end (optional)", "Koniec (opcjonalny)")</label>
-                    <input id="examDueAtLocal" name="dueAtLocal" type="datetime-local" />
-
-                    <label for="attemptTimeLimitMinutes">@L("Attempt time limit in minutes (optional)", "Limit czasu w minutach (opcjonalny)")</label>
-                    <input id="attemptTimeLimitMinutes" name="attemptTimeLimitMinutes"
-                           type="number" min="1" max="480" step="1" />
-                    <small>@L("Times use your school's configured local time.", "Czasy są podawane według lokalnego czasu skonfigurowanego dla szkoły.")</small>
+                <div id="assessment-exam-schedule" class="assessment-field-wide assessment-schedule-fields">
+                    <div class="assessment-field">
+                        <label for="availableFromLocal">@L("Starts at (optional)", "Rozpoczęcie (opcjonalne)")</label>
+                        <input id="availableFromLocal" name="availableFromLocal" type="datetime-local" />
+                    </div>
+                    <div class="assessment-field">
+                        <label for="examDueAtLocal">@L("Hard end (optional)", "Koniec (opcjonalny)")</label>
+                        <input id="examDueAtLocal" name="dueAtLocal" type="datetime-local" />
+                    </div>
+                    <div class="assessment-field">
+                        <label for="attemptTimeLimitMinutes">@L("Attempt time limit in minutes (optional)", "Limit czasu w minutach (opcjonalny)")</label>
+                        <input id="attemptTimeLimitMinutes" name="attemptTimeLimitMinutes"
+                               type="number" min="1" max="480" step="1" />
+                    </div>
                 </div>
 
-                <div id="assessment-homework-due" hidden>
-                    <label for="homeworkDueAtLocal">@L("Return / due time", "Termin oddania")</label>
-                    <input id="homeworkDueAtLocal" type="datetime-local" />
-                    <small>@L("Required for Homework · uses your school's configured local time.", "Wymagane dla pracy domowej · używa lokalnego czasu skonfigurowanego dla szkoły.")</small>
+                <div id="assessment-homework-due" class="assessment-field-wide" hidden>
+                    <div class="assessment-field">
+                        <label for="homeworkDueAtLocal">@L("Return / due time", "Termin oddania")</label>
+                        <input id="homeworkDueAtLocal" type="datetime-local" />
+                    </div>
                 </div>
 
-                <button type="submit"
-                        class="school-button school-button-primary">
-                    @A["Create"]
-                </button>
+                <div class="assessment-create-submit assessment-field-wide">
+                    <button type="submit"
+                            class="school-button school-button-primary">
+                        @A["Create"]
+                    </button>
+                </div>
             </form>
         }
     </section>
