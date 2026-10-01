@@ -1,4 +1,5 @@
 @using System.Globalization
+@using Edulytics.Core.Assessments
 @using Edulytics.Core.Enums
 @model Edulytics.Web.ViewModels.StudentPortal.StudentAssessmentsViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
@@ -29,6 +30,13 @@
                 schoolTimeZone).ToString("yyyy-MM-dd h:mm tt", System.Globalization.CultureInfo.InvariantCulture)
             : "—";
 
+    var nowUtc = DateTime.UtcNow;
+    DateTime? nextBoundaryUtc = Model.Workspace.Assessments
+        .Select(x => x.NextStateChangeAtUtc)
+        .Where(x => x.HasValue && x.Value > nowUtc)
+        .OrderBy(x => x)
+        .FirstOrDefault();
+
     var orderedAssessments = Model.Workspace.Assessments
         .OrderByDescending(x => x.AssessmentDate)
         .ThenByDescending(x => x.AssessmentId)
@@ -48,14 +56,22 @@
         .Where(x => x.AssessmentType == AssessmentType.Worksheet)
         .ToArray();
 
+    var scheduledExams = exams
+        .Where(x =>
+            x.DeliveryMode == AssessmentDeliveryMode.Online &&
+            x.AvailabilityState == StudentAssessmentAvailabilityState.Scheduled)
+        .ToArray();
     var openExams = exams
-        .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Online && !x.IsSubmitted && !x.IsDeadlinePassed)
+        .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Online && x.CanStart)
         .ToArray();
     var submittedExams = exams
         .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Online && x.IsSubmitted)
         .ToArray();
     var closedWindowExams = exams
-        .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Online && !x.IsSubmitted && x.IsDeadlinePassed)
+        .Where(x =>
+            x.DeliveryMode == AssessmentDeliveryMode.Online &&
+            !x.IsSubmitted &&
+            x.AvailabilityState == StudentAssessmentAvailabilityState.Closed)
         .ToArray();
     var offlineExams = exams
         .Where(x => x.DeliveryMode == AssessmentDeliveryMode.Offline)
@@ -115,6 +131,32 @@
     else
     {
         <div class="student-card-list ed-scroll-list">
+            @foreach (var item in scheduledExams)
+            {
+                <article class="student-assessment-card">
+                    <div>
+                        <h3>@item.Title</h3>
+                        <p>@item.SubjectName · @item.ClassName</p>
+                        <p>@S["AssessmentDifficulty"]: @S[$"AssessmentDifficulty{item.DifficultyBand}"]</p>
+                    </div>
+                    <dl>
+                        <div><dt>@S["AssessmentDate"]</dt><dd>@item.AssessmentDate.ToString("yyyy-MM-dd")</dd></div>
+                        <div><dt>@S["MaxScore"]</dt><dd>@item.MaxScore.ToString("0.##")</dd></div>
+                        @if (item.AvailableFromUtc.HasValue)
+                        {
+                            <div><dt>@L("Starts", "Rozpoczęcie")</dt><dd>@LocalTime(item.AvailableFromUtc)</dd></div>
+                        }
+                        @if (item.DueAtUtc.HasValue)
+                        {
+                            <div><dt>@L("Hard end", "Koniec")</dt><dd>@LocalTime(item.DueAtUtc)</dd></div>
+                        }
+                    </dl>
+                    <div class="student-actions">
+                        <span class="student-muted">@L("Scheduled", "Zaplanowany")</span>
+                    </div>
+                </article>
+            }
+
             @foreach (var item in openExams)
             {
                 <article class="student-assessment-card">
@@ -126,9 +168,13 @@
                     <dl>
                         <div><dt>@S["AssessmentDate"]</dt><dd>@item.AssessmentDate.ToString("yyyy-MM-dd")</dd></div>
                         <div><dt>@S["MaxScore"]</dt><dd>@item.MaxScore.ToString("0.##")</dd></div>
+                        @if (item.AvailableFromUtc.HasValue)
+                        {
+                            <div><dt>@L("Starts", "Rozpoczęcie")</dt><dd>@LocalTime(item.AvailableFromUtc)</dd></div>
+                        }
                         @if (item.DueAtUtc.HasValue)
                         {
-                            <div><dt>@L("Closes", "Koniec")</dt><dd>@LocalTime(item.DueAtUtc)</dd></div>
+                            <div><dt>@L("Hard end", "Koniec")</dt><dd>@LocalTime(item.DueAtUtc)</dd></div>
                         }
                     </dl>
                     <div class="student-actions">
@@ -299,3 +345,27 @@
         </div>
     }
 </section>
+
+@if (nextBoundaryUtc.HasValue)
+{
+    var nextBoundaryIso = DateTime.SpecifyKind(nextBoundaryUtc.Value, DateTimeKind.Utc).ToString("O");
+    <script>
+    (() => {
+        const target = Date.parse(@Html.Raw(System.Text.Json.JsonSerializer.Serialize(nextBoundaryIso)));
+        if (!Number.isFinite(target)) return;
+        const maxDelay = 2147483000;
+        const refreshAtBoundary = () => {
+            const remaining = target - Date.now();
+            if (remaining <= 0) {
+                window.location.reload();
+                return;
+            }
+            window.setTimeout(refreshAtBoundary, Math.min(remaining + 250, maxDelay));
+        };
+        refreshAtBoundary();
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden && Date.now() >= target) window.location.reload();
+        });
+    })();
+    </script>
+}

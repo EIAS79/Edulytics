@@ -20,8 +20,7 @@ public sealed record StudentDashboardViewModel(
         Workspace.Assessments
             .Where(x =>
                 x.DeliveryMode == Edulytics.Core.Enums.AssessmentDeliveryMode.Online &&
-                !x.IsSubmitted &&
-                !x.IsDeadlinePassed)
+                x.CanStart)
             .OrderBy(x => x.AssessmentDate)
             .ThenBy(x => x.Title)
             .ToArray();

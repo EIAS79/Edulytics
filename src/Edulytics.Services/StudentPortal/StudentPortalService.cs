@@ -1,3 +1,4 @@
+using Edulytics.Core.Assessments;
 using Edulytics.Core.Constants;
 using Edulytics.Core.Curriculum;
 using Edulytics.Core.Entities;
@@ -211,11 +212,7 @@ public sealed class StudentPortalService : IStudentPortalService
                 x.Status == AssessmentStatus.Open &&
                 enrollmentKeys.Contains((x.ClassGroupId, x.AcademicYearId)) &&
                 (x.TargetType == AssessmentTargetType.Class ||
-                 x.TargetStudentProfileId == snapshot.Profile.Id) &&
-                !(x.AssessmentType == AssessmentType.Exam &&
-                  x.DeliveryMode == AssessmentDeliveryMode.Online &&
-                  x.AvailableFromUtc.HasValue &&
-                  nowUtc < x.AvailableFromUtc.Value))
+                 x.TargetStudentProfileId == snapshot.Profile.Id))
             .OrderBy(x => x.AssessmentDate)
             .ThenBy(x => x.Title)
             .Select(x =>
@@ -234,10 +231,18 @@ public sealed class StudentPortalService : IStudentPortalService
                     _ => false
                 };
 
+                var availability = StudentAssessmentAvailabilityPolicy.Evaluate(
+                    x.AssessmentType,
+                    x.DeliveryMode,
+                    x.Status,
+                    x.AvailableFromUtc,
+                    x.DueAtUtc,
+                    isSubmitted,
+                    nowUtc);
+
                 var deadlinePassed =
-                    x.AssessmentType is AssessmentType.Exam or AssessmentType.Homework &&
-                    x.DueAtUtc.HasValue &&
-                    nowUtc >= x.DueAtUtc.Value;
+                    availability.State == StudentAssessmentAvailabilityState.Closed &&
+                    x.AssessmentType is AssessmentType.Exam or AssessmentType.Homework;
 
                 return new StudentAssessmentItem(
                     x.Id,
@@ -254,7 +259,10 @@ public sealed class StudentPortalService : IStudentPortalService
                     AssessmentType = x.AssessmentType,
                     AvailableFromUtc = x.AvailableFromUtc,
                     DueAtUtc = x.DueAtUtc,
-                    IsDeadlinePassed = deadlinePassed
+                    IsDeadlinePassed = deadlinePassed,
+                    AvailabilityState = availability.State,
+                    CanStart = availability.CanStart,
+                    NextStateChangeAtUtc = availability.NextStateChangeAtUtc
                 };
             })
             .ToArray();

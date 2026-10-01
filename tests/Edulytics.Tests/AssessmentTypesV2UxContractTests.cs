@@ -78,7 +78,7 @@ public sealed class AssessmentTypesV2UxContractTests
         var dashboard = ReadRepositoryFile(
             "src", "Edulytics.Web", "Views", "StudentPortal", "Dashboard.cshtml");
 
-        Assert.Contains("!x.IsDeadlinePassed", viewModel, StringComparison.Ordinal);
+        Assert.Contains("x.CanStart", viewModel, StringComparison.Ordinal);
         Assert.Contains("x.AssessmentType == Edulytics.Core.Enums.AssessmentType.Exam", viewModel, StringComparison.Ordinal);
         Assert.Contains("S[" + '"' + "TasksToDo" + '"' + "]", dashboard, StringComparison.Ordinal);
         Assert.Contains("TaskTypeExamTest", dashboard, StringComparison.Ordinal);
@@ -111,6 +111,43 @@ public sealed class AssessmentTypesV2UxContractTests
         Assert.DoesNotContain("(@Model.Workspace.SchoolTimeZoneId)", student, StringComparison.Ordinal);
         Assert.DoesNotContain("School time zone: @Model.Details.SchoolTimeZoneId", edit, StringComparison.Ordinal);
         Assert.DoesNotContain("Times use the school time zone:", index, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void AssessmentTiming_UsesHardEndOnlyAndRemovesAttemptLimitInputs()
+    {
+        var create = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Views", "Assessments", "Index.cshtml");
+        var edit = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Views", "Assessments", "Edit.cshtml");
+        var delivery = ReadRepositoryFile(
+            "src", "Edulytics.Services", "Assessments", "StudentAssessmentDeliveryService.cs");
+
+        Assert.DoesNotContain("attemptTimeLimitMinutes", create, StringComparison.Ordinal);
+        Assert.DoesNotContain("attemptTimeLimitMinutes", edit, StringComparison.Ordinal);
+        Assert.DoesNotContain("StartedAtUtc.AddMinutes", delivery, StringComparison.Ordinal);
+        Assert.DoesNotContain("ResolveEffectiveAttemptDeadline", delivery, StringComparison.Ordinal);
+        Assert.Contains("? assessment.DueAtUtc", delivery, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void StudentAssessmentPages_UseSharedAvailabilityAndAutomaticBoundaryRefresh()
+    {
+        var portal = ReadRepositoryFile(
+            "src", "Edulytics.Services", "StudentPortal", "StudentPortalService.cs");
+        var dashboard = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Views", "StudentPortal", "Dashboard.cshtml");
+        var assessments = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Views", "StudentPortal", "Assessments.cshtml");
+
+        Assert.Contains("StudentAssessmentAvailabilityPolicy.Evaluate", portal, StringComparison.Ordinal);
+        Assert.DoesNotContain("nowUtc < x.AvailableFromUtc.Value", portal, StringComparison.Ordinal);
+        Assert.Contains("NextStateChangeAtUtc", dashboard, StringComparison.Ordinal);
+        Assert.Contains("window.location.reload()", dashboard, StringComparison.Ordinal);
+        Assert.Contains("x.CanStart", assessments, StringComparison.Ordinal);
+        Assert.Contains("StudentAssessmentAvailabilityState.Scheduled", assessments, StringComparison.Ordinal);
+        Assert.Contains("NextStateChangeAtUtc", assessments, StringComparison.Ordinal);
+        Assert.Contains("window.location.reload()", assessments, StringComparison.Ordinal);
     }
 
     [Fact]

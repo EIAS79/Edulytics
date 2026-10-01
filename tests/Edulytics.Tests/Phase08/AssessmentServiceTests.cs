@@ -676,7 +676,6 @@ public sealed class AssessmentServiceTests
                 details.Value.Assessment.RowVersion,
                 AssessmentDeliveryMode.Online,
                 startsLocal,
-                null,
                 null));
 
         Assert.True(beforeStartEdit.Succeeded);
@@ -707,7 +706,6 @@ public sealed class AssessmentServiceTests
                 details.Value.Assessment.RowVersion,
                 AssessmentDeliveryMode.Online,
                 startsLocal,
-                null,
                 null));
 
         Assert.False(afterAttemptEdit.Succeeded);
