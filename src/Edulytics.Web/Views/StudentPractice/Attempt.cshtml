@@ -9,6 +9,7 @@
     Layout = "_StudentLayout";
     ViewData["Title"] = S["PrivatePracticeAttemptTitle"].Value;
     var lessonGameMode = ViewData["LessonGameMode"] is true;
+    var personalTestMode = ViewData["PersonalTestMode"] is true;
     var orderedQuestions = Model.Questions.OrderBy(x => x.Order).ToArray();
     var answeredCount = orderedQuestions.Count(x => x.Answered);
     var totalQuestions = orderedQuestions.Length;
@@ -368,6 +369,135 @@
         }
     </section>
     <script src="~/js/student-lesson-practice.js" asp-append-version="true"></script>
+}
+else if (personalTestMode)
+{
+    <header class="student-page-header">
+        <span class="student-eyebrow">@S["PrivatePractice"]</span>
+        <h1>@S["PrivatePracticeAttemptTitle"]</h1>
+        <p>@S["PrivatePracticeAttemptSubtitle"]</p>
+    </header>
+
+    @if (TempData["Error"] is string personalError)
+    {
+        <div class="school-alert school-alert-error" role="alert">@personalError</div>
+    }
+
+    <section class="student-card">
+        <p><strong>@S["Status"]:</strong> @Model.Status</p>
+        @if (Model.Status == PracticeAttemptStatus.Submitted)
+        {
+            <p><strong>@S["Score"]:</strong> @Model.Score.ToString("0.##") / @Model.MaxScore.ToString("0.##") · <strong>@S["Percentage"]:</strong> @Model.Percentage.ToString("0.##")%</p>
+        }
+        else
+        {
+            <p>@S["PracticeAnswerAll"]</p>
+        }
+    </section>
+
+    @if (Model.Status == PracticeAttemptStatus.InProgress)
+    {
+        <form asp-action="SubmitPersonalTest"
+              asp-route-id="@Model.AttemptId"
+              method="post"
+              class="student-card-list">
+            @Html.AntiForgeryToken()
+
+            @foreach (var question in orderedQuestions)
+            {
+                var prompt = question.Prompt ?? string.Empty;
+                var visualSvg = PracticeMathVisualRenderer.RenderSvg(
+                    question.GenerationFamily,
+                    question.GenerationParametersJson);
+                var optionMatches = Regex.Matches(
+                    prompt,
+                    @"(?<![A-Za-z0-9])([A-D])\)\s*",
+                    RegexOptions.CultureInvariant);
+                var isMultipleChoice = optionMatches.Count >= 2 && optionMatches[0].Index > 0;
+                var stem = isMultipleChoice
+                    ? prompt[..optionMatches[0].Index].Trim()
+                    : prompt;
+                var choices = new List<(string Label, string Value)>();
+                if (isMultipleChoice)
+                {
+                    for (var choiceIndex = 0; choiceIndex < optionMatches.Count; choiceIndex++)
+                    {
+                        var match = optionMatches[choiceIndex];
+                        var start = match.Index + match.Length;
+                        var end = choiceIndex + 1 < optionMatches.Count
+                            ? optionMatches[choiceIndex + 1].Index
+                            : prompt.Length;
+                        var value = prompt[start..end].Trim();
+                        if (value.Length > 0)
+                            choices.Add((match.Groups[1].Value, value));
+                    }
+                    isMultipleChoice = choices.Count >= 2;
+                }
+
+                <article class="student-assessment-card">
+                    <input type="hidden" name="attemptItemIds" value="@question.AttemptItemId" />
+                    <div class="practice-question-content">
+                        <span class="student-subject-code">@S["Question"] @question.Order</span>
+                        <h2>@stem</h2>
+                        @if (!string.IsNullOrWhiteSpace(visualSvg))
+                        {
+                            <div class="practice-math-visual-wrap">@Html.Raw(visualSvg)</div>
+                        }
+                        <p>@S["AssessmentDifficulty"]: @question.Difficulty</p>
+                    </div>
+
+                    @if (isMultipleChoice)
+                    {
+                        <div class="practice-choice-list" role="radiogroup" aria-label="@S["YourAnswer"]">
+                            @foreach (var choice in choices)
+                            {
+                                <label class="practice-choice">
+                                    <input type="radio" name="answers" value="@choice.Value" required />
+                                    <span class="practice-choice-letter">@choice.Label</span>
+                                    <span class="practice-choice-text">@choice.Value</span>
+                                </label>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="assessment-form practice-answer-actions">
+                            <label>@S["YourAnswer"]</label>
+                            <input name="answers" maxlength="2000" required autocomplete="off" />
+                        </div>
+                    }
+                </article>
+            }
+
+            <section class="student-card">
+                <button class="school-button school-button-primary" type="submit">@S["PracticeFinish"]</button>
+            </section>
+        </form>
+    }
+    else
+    {
+        <div class="student-card-list">
+            @foreach (var question in orderedQuestions)
+            {
+                <article class="student-assessment-card">
+                    <div class="practice-question-content">
+                        <span class="student-subject-code">@S["Question"] @question.Order</span>
+                        <h2>@question.Prompt</h2>
+                        <p>@S["AssessmentDifficulty"]: @question.Difficulty</p>
+                    </div>
+                    <div class="school-alert @(question.IsCorrect == true ? "school-alert-success" : "school-alert-error")">
+                        @(question.IsCorrect == true ? S["PracticeCorrect"].Value : S["PracticeIncorrect"].Value)
+                        @if (!string.IsNullOrWhiteSpace(question.Feedback))
+                        {
+                            <div><strong>@S["PracticeSolution"]:</strong> @question.Feedback</div>
+                        }
+                    </div>
+                </article>
+            }
+        </div>
+    }
+
+    <a class="school-button" asp-action="Index">@S["BackToPrivatePractice"]</a>
 }
 else
 {
