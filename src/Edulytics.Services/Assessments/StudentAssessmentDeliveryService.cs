@@ -72,7 +72,9 @@ public sealed class StudentAssessmentDeliveryService(
             return StudentAssessmentDeliveryResult<StudentAssessmentAttempt>.Failure(
                 StudentAssessmentDeliveryErrorCode.PersistenceError);
 
-        var effectiveDeadline = ResolveEffectiveAttemptDeadline(assessment, attempt);
+        var effectiveDeadline = assessment.AssessmentType == AssessmentType.Exam
+            ? assessment.DueAtUtc
+            : null;
         if (assessment.AssessmentType == AssessmentType.Exam &&
             effectiveDeadline.HasValue &&
             now >= effectiveDeadline.Value)
@@ -326,7 +328,9 @@ public sealed class StudentAssessmentDeliveryService(
                 StudentAssessmentDeliveryErrorCode.AlreadySubmitted);
         }
 
-        var effectiveDeadline = ResolveEffectiveAttemptDeadline(assessment, attempt);
+        var effectiveDeadline = assessment.AssessmentType == AssessmentType.Exam
+            ? assessment.DueAtUtc
+            : null;
         if (assessment.AssessmentType == AssessmentType.Exam &&
             effectiveDeadline.HasValue &&
             now >= effectiveDeadline.Value)
@@ -643,28 +647,20 @@ public sealed class StudentAssessmentDeliveryService(
             return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.NotTargeted);
         }
 
-        if (assessment.AssessmentType == AssessmentType.Exam)
-        {
-            if (assessment.AvailableFromUtc.HasValue &&
-                nowUtc < assessment.AvailableFromUtc.Value)
-            {
-                return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.NotYetAvailable);
-            }
+        var availability = StudentAssessmentAvailabilityPolicy.Evaluate(
+            assessment.AssessmentType,
+            assessment.DeliveryMode,
+            assessment.Status,
+            assessment.AvailableFromUtc,
+            assessment.DueAtUtc,
+            isSubmitted: false,
+            nowUtc);
 
-            if (assessment.DueAtUtc.HasValue &&
-                nowUtc >= assessment.DueAtUtc.Value)
-            {
-                return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.DeadlinePassed);
-            }
-        }
-        else if (assessment.AssessmentType == AssessmentType.Homework)
-        {
-            if (!assessment.DueAtUtc.HasValue ||
-                nowUtc >= assessment.DueAtUtc.Value)
-            {
-                return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.DeadlinePassed);
-            }
-        }
+        if (availability.State == StudentAssessmentAvailabilityState.Scheduled)
+            return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.NotYetAvailable);
+
+        if (availability.State == StudentAssessmentAvailabilityState.Closed)
+            return ResolvedDelivery.Fail(StudentAssessmentDeliveryErrorCode.DeadlinePassed);
 
         return ResolvedDelivery.Ok(
             school.Id,
@@ -672,27 +668,6 @@ public sealed class StudentAssessmentDeliveryService(
             profile,
             assessment,
             snapshot);
-    }
-
-    private static DateTime? ResolveEffectiveAttemptDeadline(
-        Assessment assessment,
-        AssessmentAttempt attempt)
-    {
-        if (assessment.AssessmentType != AssessmentType.Exam)
-            return null;
-
-        DateTime? deadline = assessment.DueAtUtc;
-
-        if (assessment.AttemptTimeLimitMinutes.HasValue)
-        {
-            var personal = attempt.StartedAtUtc.AddMinutes(
-                assessment.AttemptTimeLimitMinutes.Value);
-            deadline = !deadline.HasValue || personal < deadline.Value
-                ? personal
-                : deadline;
-        }
-
-        return deadline;
     }
 
     private async Task QueueStudentAuditAsync(
