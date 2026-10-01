@@ -107,21 +107,19 @@
                 @foreach (var topic in explicitTopics)
                 {
                     var topicDisplayTitle = LearningOutcomePresentation.DisplayTopicTitle(topic.Name);
-                    var showOutcomeCode = topic.Outcomes.Any(outcome =>
-                        LearningOutcomePresentation.ShouldDisplayCode(outcome.Code));
                     <article class="curriculum-topic-card">
                         <header><div><span class="curriculum-context">@topic.AcademicYearName · @topic.AcademicProgramName · @topic.FrameworkName · @topic.CurriculumLevelLabel @if (!string.IsNullOrWhiteSpace(topic.CurriculumPathway)) { <span> · @topic.CurriculumPathway</span> }</span><h3>@topicDisplayTitle</h3></div></header>
                         <div class="curriculum-outcomes"><h4>@C["LearningOutcomes"]</h4>
                             @if (topic.Outcomes.Count == 0) { <p>@C["NoOutcomes"]</p> }
                             else
                             {
-                                <div class="curriculum-table-wrap"><table class="curriculum-table"><thead><tr><th>@C["Description"]</th>@if (showOutcomeCode) { <th>@C["OutcomeCode"]</th> }<th>AI</th></tr></thead><tbody>
+                                <div class="curriculum-table-wrap"><table class="curriculum-table"><thead><tr><th>@C["Description"]</th><th>@C["OutcomeCode"]</th><th>AI</th></tr></thead><tbody>
                                 @foreach (var outcome in topic.Outcomes)
                                 {
                                     var aiSupported = Edulytics.Services.Assessments.NativeMathematicsOutcomeProfileResolver.Supports(outcome.Code, outcome.Description);
+                                    var displayCode = LearningOutcomePresentation.DisplayCode(outcome.Code);
                                     var displayTitle = LearningOutcomePresentation.DisplayTitle(outcome.Code, outcome.Description);
-                                    var displayOutcomeCode = LearningOutcomePresentation.ShouldDisplayCode(outcome.Code);
-                                    <tr><td data-label="@C["Description"]"><strong>@displayTitle</strong></td>@if (showOutcomeCode) { <td data-label="@C["OutcomeCode"]">@if (displayOutcomeCode) { <span class="ed-outcome-code">@LearningOutcomePresentation.DisplayCode(outcome.Code)</span> }</td> }<td data-label="AI"><span class="ed-ai-capability-badge @(aiSupported ? "is-supported" : "is-manual")">@A[aiSupported ? "AiSupported" : "ManualOnly"]</span></td></tr>
+                                    <tr><td data-label="@C["Description"]"><strong>@displayTitle</strong></td><td data-label="@C["OutcomeCode"]"><span class="ed-outcome-code">@displayCode</span></td><td data-label="AI"><span class="ed-ai-capability-badge @(aiSupported ? "is-supported" : "is-manual")">@A[aiSupported ? "AiSupported" : "ManualOnly"]</span></td></tr>
                                 }
                                 </tbody></table></div>
                             }
