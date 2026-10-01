@@ -1,3 +1,4 @@
+using Edulytics.Core.Curriculum;
 using Edulytics.Core.Entities;
 using Edulytics.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
@@ -58,13 +59,18 @@ public static class OfficialCurriculumOutcomeMaterializer
                 x.IsActive &&
                 (x.NodeKind == "Standard" || x.NodeKind == "Outcome") &&
                 x.LogicalLevelFrom <= logicalLevel &&
-                x.LogicalLevelTo >= logicalLevel &&
-                (pathway == null
-                    ? x.Pathway == null || x.Pathway == string.Empty
-                    : x.Pathway == pathway))
+                x.LogicalLevelTo >= logicalLevel)
             .OrderBy(x => x.SortOrder)
             .ThenBy(x => x.Code)
             .ToListAsync(cancellationToken);
+
+        officialNodes = officialNodes
+            .Where(
+                x =>
+                    CurriculumPathwayCompatibility.Matches(
+                        pathway,
+                        x.Pathway))
+            .ToList();
 
         if (officialNodes.Count == 0)
             return;

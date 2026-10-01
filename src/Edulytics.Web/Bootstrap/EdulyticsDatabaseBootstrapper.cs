@@ -62,6 +62,8 @@ public sealed class EdulyticsDatabaseBootstrapper
                 _db,
                 _userManager,
                 _configuration);
+            await MeetingDemoProvisioner.RepairExistingAsync(
+                _db);
 
             return;
         }
@@ -106,6 +108,8 @@ public sealed class EdulyticsDatabaseBootstrapper
                 _db,
                 _userManager,
                 _configuration);
+            await MeetingDemoProvisioner.RepairExistingAsync(
+                _db);
 
         }
         finally
