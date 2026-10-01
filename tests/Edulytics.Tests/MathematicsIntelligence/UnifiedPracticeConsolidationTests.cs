@@ -208,24 +208,47 @@ public sealed class UnifiedPracticeConsolidationTests
     }
 
     [Fact]
-    public void U5_GenericLessonGeneration_UsesUnifiedStartPath()
+    public void U5_PrivateGeneratorAndLessonPractice_UseSeparateIntendedPaths()
     {
         var root = FindRoot();
         var controller = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Web/Controllers/StudentPracticeController.cs"));
 
+        var generateStart = controller.IndexOf(
+            "public async Task<IActionResult> Generate(",
+            StringComparison.Ordinal);
+        var lessonStart = controller.IndexOf(
+            "public async Task<IActionResult> StartLessonPractice(",
+            StringComparison.Ordinal);
+        var lessonGameStart = controller.IndexOf(
+            "[HttpPost(\"lesson-game/start\")",
+            lessonStart,
+            StringComparison.Ordinal);
+
+        var generateBlock = controller[generateStart..lessonStart];
+        var lessonBlock = controller[lessonStart..lessonGameStart];
+
         Assert.Contains(
-            "scope == StudentPrivatePracticeScope.Lesson",
-            controller,
+            "privatePractice.GenerateAsync",
+            generateBlock,
             StringComparison.Ordinal);
         Assert.Contains(
+            "mode = PersonalTestMode",
+            generateBlock,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
             "return await StartLessonPractice(",
-            controller,
+            generateBlock,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "adaptivePractice.StartLessonAsync",
+            lessonBlock,
             StringComparison.Ordinal);
         Assert.Contains(
             "Compatibility-only path",
-            controller,
+            lessonBlock,
             StringComparison.Ordinal);
     }
 
