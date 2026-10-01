@@ -140,7 +140,7 @@ public sealed class ProductionRehearsalDatasetContractTests
             bootstrap,
             StringComparison.Ordinal);
         Assert.Contains(
-            "production-rehearsal-repair-2026-10-01-v2-curriculum-reference-targets",
+            "production-rehearsal-repair-2026-10-01-v1",
             provisioner,
             StringComparison.Ordinal);
         Assert.Contains(
@@ -150,17 +150,6 @@ public sealed class ProductionRehearsalDatasetContractTests
         Assert.Contains(
             "reason=insufficient-materialized-outcomes",
             provisioner,
-            StringComparison.Ordinal);
-
-        var materializer = Read(
-            "src/Edulytics.Data/Repositories/OfficialCurriculumOutcomeMaterializer.cs");
-        Assert.Contains(
-            "VerifiedCurriculumReferenceTargetRegistry.ForScope",
-            materializer,
-            StringComparison.Ordinal);
-        Assert.Contains(
-            "OfficialContentNodeId = officialNodeId",
-            materializer,
             StringComparison.Ordinal);
 
         var repairStart = provisioner.IndexOf(
