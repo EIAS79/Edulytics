@@ -79,7 +79,13 @@ public sealed class AssessmentsController : Controller
                 attemptTimeLimitMinutes),
             cancellationToken);
 
-        SetFeedback(result, "SuccessAssessmentCreated");
+        var successKey = assessmentType switch
+        {
+            AssessmentType.Homework => "SuccessHomeworkCreated",
+            AssessmentType.Worksheet => "SuccessWorksheetCreated",
+            _ => "SuccessExamCreated"
+        };
+        SetFeedback(result, successKey);
 
         return result.Succeeded && result.EntityId.HasValue
             ? RedirectToAction(nameof(Details), new { id = result.EntityId.Value })

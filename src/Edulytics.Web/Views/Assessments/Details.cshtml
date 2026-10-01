@@ -47,56 +47,110 @@
             (sourceClass is null || x.GradeLevelId == sourceClass.GradeLevelId))
         .OrderBy(x => x.Name)
         .ToArray();
+
+    var typeLabel = assessment.AssessmentType switch
+    {
+        AssessmentType.Homework => "Homework",
+        AssessmentType.Worksheet => "Worksheet",
+        _ => "Exam / Test"
+    };
+    var typeClass = assessment.AssessmentType switch
+    {
+        AssessmentType.Homework => "is-homework",
+        AssessmentType.Worksheet => "is-worksheet",
+        _ => "is-exam"
+    };
+    var editLabel = assessment.AssessmentType switch
+    {
+        AssessmentType.Homework => A["EditHomework"].Value,
+        AssessmentType.Worksheet => A["EditWorksheet"].Value,
+        _ => A["EditAssessment"].Value
+    };
+    var builderLabel = assessment.AssessmentType switch
+    {
+        AssessmentType.Homework => A["AssessmentBuilderHomeworkLink"].Value,
+        AssessmentType.Worksheet => A["AssessmentBuilderWorksheetLink"].Value,
+        _ => B["AssessmentBuilder"].Value
+    };
+    var deleteLabel = assessment.AssessmentType switch
+    {
+        AssessmentType.Homework => A["DeleteHomework"].Value,
+        AssessmentType.Worksheet => A["DeleteWorksheet"].Value,
+        _ => A["DeleteAssessment"].Value
+    };
 }
-<section class="assessment-page @(canManage ? "" : "is-readonly")">
-    <header class="assessment-header">
-        <div>
-            <span class="assessment-context">@Model.SubjectName · @Model.ClassName · @Model.TermName</span>
-            <h1>@assessment.Title</h1>
-            <p>
-                <strong>@(assessment.AssessmentType == AssessmentType.Exam
-                    ? "Exam / Test"
-                    : assessment.AssessmentType == AssessmentType.Homework
-                        ? "Homework"
-                        : "Worksheet")</strong>
-                · @assessment.AssessmentDate.ToString("yyyy-MM-dd")
+<section class="assessment-page assessment-details-page @(canManage ? "" : "is-readonly")">
+    <header class="assessment-header assessment-hero">
+        <div class="assessment-hero-copy">
+            <span class="assessment-kicker">@A["Assessment"]</span>
+            <div class="assessment-title-row">
+                <h1>@assessment.Title</h1>
+                <span class="assessment-type-badge @typeClass">@typeLabel</span>
+            </div>
+
+            <div class="assessment-meta-grid" aria-label="@A["Assessment"]">
+                <div>
+                    <span>Subject</span>
+                    <strong>@Model.SubjectName</strong>
+                </div>
+                <div>
+                    <span>Class</span>
+                    <strong>@Model.ClassName</strong>
+                </div>
+                <div>
+                    <span>Term</span>
+                    <strong>@Model.TermName</strong>
+                </div>
+            </div>
+
+            <div class="assessment-status-strip">
+                <span class="assessment-status-pill">@A[Model.StatusKey]</span>
+                <span class="assessment-delivery-label">@B["CurrentDelivery"]:</span>
+                <span class="ed-delivery-badge @deliveryClass">@B[deliveryKey]</span>
+                <span>@assessment.AssessmentDate.ToString("yyyy-MM-dd")</span>
                 @if (assessment.IsScored)
                 {
-                    <text> · @A["MaxScore"]: @assessment.MaxScore.ToString("0.##")</text>
+                    <span>@A["MaxScore"]: @assessment.MaxScore.ToString("0.##")</span>
                 }
                 @if (assessment.AssessmentType == AssessmentType.Homework && assessment.DueAtUtc.HasValue)
                 {
-                    <text> · Due: @LocalTime(assessment.DueAtUtc)</text>
+                    <span>@A["Due"]: @LocalTime(assessment.DueAtUtc)</span>
                 }
                 @if (assessment.AssessmentType == AssessmentType.Exam && assessment.AvailableFromUtc.HasValue)
                 {
-                    <text> · Starts: @LocalTime(assessment.AvailableFromUtc)</text>
+                    <span>Starts: @LocalTime(assessment.AvailableFromUtc)</span>
                 }
-                · @A["Status"]: @A[Model.StatusKey] ·
-                <strong>@B["CurrentDelivery"]:</strong>
-                <span class="ed-delivery-badge @deliveryClass">@B[deliveryKey]</span>
-            </p>
+            </div>
         </div>
-        <div class="assessment-actions">
+
+        <div class="assessment-header-actions">
             <a class="school-button" asp-action="Index">@A["Assessments"]</a>
-            @if (canEditContent && canManage)
-            {
-                <a class="school-button" asp-action="Edit" asp-route-id="@assessment.Id">@A["EditAssessment"]</a>
-            }
             @if (canEditContent && canManage)
             {
                 <a class="school-button school-button-primary"
                    asp-controller="AssessmentBuilder"
                    asp-action="Index"
-                   asp-route-assessmentId="@assessment.Id">@B["AssessmentBuilder"]</a>
+                   asp-route-assessmentId="@assessment.Id">@builderLabel</a>
+                <a class="school-button"
+                   asp-action="Edit"
+                   asp-route-id="@assessment.Id">@editLabel</a>
                 <form asp-action="DeleteAssessment" asp-route-id="@assessment.Id" method="post">
                     @Html.AntiForgeryToken()
                     <input type="hidden" name="rowVersion" value="@rowVersion" />
-                    <button type="submit" class="school-button">@A["DeleteAssessment"]</button>
+                    <button type="submit" class="school-button assessment-danger-button">@deleteLabel</button>
                 </form>
             }
-            @if (canManage && Model.Details.Questions.Count > 0)
-            {
+        </div>
+    </header>
+
+    @if (canManage && Model.Details.Questions.Count > 0)
+    {
+        <div class="assessment-resource-bar">
+            <div>
+                <strong>@typeLabel resources</strong>
+                <span>@Model.Details.Questions.Count @A["Questions"].Value.ToLowerInvariant()</span>
+            </div>
+            <div class="assessment-actions">
                 @if (assessment.DeliveryMode == AssessmentDeliveryMode.Offline)
                 {
                     <a class="school-button"
@@ -106,21 +160,21 @@
                         @B["DownloadStudentPaper"]
                     </a>
                 }
-                <a class="school-button @(assessment.DeliveryMode == AssessmentDeliveryMode.Offline ? "" : "school-button-primary")"
+                <a class="school-button school-button-primary"
                    asp-controller="AssessmentBuilder"
                    asp-action="AnswerKeyPdf"
                    asp-route-assessmentId="@assessment.Id">
                     @B["DownloadTeacherAnswerKey"]
                 </a>
-            }
-            @if (assessment.AssessmentType == AssessmentType.Exam && assessment.Status != AssessmentStatus.Draft)
-            {
-                <a class="school-button school-button-primary"
-                   asp-action="Results"
-                   asp-route-id="@assessment.Id">@A["Results"]</a>
-            }
+                @if (assessment.AssessmentType == AssessmentType.Exam && assessment.Status != AssessmentStatus.Draft)
+                {
+                    <a class="school-button"
+                       asp-action="Results"
+                       asp-route-id="@assessment.Id">@A["Results"]</a>
+                }
+            </div>
         </div>
-    </header>
+    }
 
     @if (TempData["Success"] is string success)
     {

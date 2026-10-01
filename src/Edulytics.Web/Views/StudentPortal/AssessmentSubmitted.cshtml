@@ -1,15 +1,70 @@
+@using Edulytics.Core.Enums
 @model Edulytics.Services.Assessments.StudentAssessmentSubmission
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @{
     Layout = "_StudentLayout";
-    ViewData["Title"] = S["AssessmentSubmittedTitle"].Value;
+    var isPolish = string.Equals(
+        System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
+        "pl",
+        StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl) => isPolish ? pl : en;
+
+    var typeLabel = Model.AssessmentType switch
+    {
+        AssessmentType.Homework => L("Homework", "Praca domowa"),
+        AssessmentType.Worksheet => L("Worksheet", "Karta pracy"),
+        _ => L("Exam / Test", "Egzamin / test")
+    };
+
+    var title = Model.AssessmentType switch
+    {
+        AssessmentType.Homework => L("Homework submitted", "Praca domowa została oddana"),
+        AssessmentType.Worksheet => L("Worksheet completed", "Karta pracy została ukończona"),
+        _ => S["AssessmentSubmittedTitle"].Value
+    };
+
+    var subtitle = Model.AssessmentType switch
+    {
+        AssessmentType.Homework => L(
+            "Your homework has been submitted. You cannot edit it after submission.",
+            "Praca domowa została oddana. Po oddaniu nie można jej edytować."),
+        AssessmentType.Worksheet => L(
+            "Your worksheet has been completed. You cannot edit it after completion.",
+            "Karta pracy została ukończona. Po ukończeniu nie można jej edytować."),
+        _ => S["AssessmentSubmittedSubtitle"].Value
+    };
+
+    ViewData["Title"] = title;
 }
 <header class="student-page-header">
-    <span class="student-eyebrow">@S["Assessments"]</span>
-    <h1>@S["AssessmentSubmittedTitle"]</h1>
-    <p>@S["AssessmentSubmittedSubtitle"]</p>
+    <span class="student-eyebrow">@typeLabel</span>
+    <h1>@title</h1>
+    <p>@subtitle</p>
 </header>
-<section class="student-assessment-card">
-    <h2>@Model.Title</h2>
+
+<section class="student-assessment-card student-submission-confirmation">
+    <div>
+        <span class="student-submission-check">✓</span>
+        <h2>@Model.Title</h2>
+        @if (Model.IsScored)
+        {
+            <p>@S["Score"]: @Model.Score.ToString("0.##") / @Model.MaxScore.ToString("0.##") (@Model.Percentage.ToString("0.##")%)</p>
+        }
+        else
+        {
+            <p>@L("No marks are recorded for this task.", "To zadanie nie jest oceniane.")</p>
+        }
+    </div>
     <a class="student-button student-button-primary" asp-action="Assessments">@S["ViewAssessments"]</a>
 </section>
+
+<script>
+(() => {
+    const key = 'edulytics:assessment-submitted:@Model.AssessmentId';
+    try {
+        sessionStorage.setItem(key, 'true');
+    } catch {
+        // Server-side submission lock remains authoritative.
+    }
+})();
+</script>

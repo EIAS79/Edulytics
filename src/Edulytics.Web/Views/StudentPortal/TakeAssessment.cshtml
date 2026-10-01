@@ -26,7 +26,7 @@
         utc.HasValue
             ? TimeZoneInfo.ConvertTimeFromUtc(
                 DateTime.SpecifyKind(utc.Value, DateTimeKind.Utc),
-                schoolTimeZone).ToString("yyyy-MM-dd HH:mm")
+                schoolTimeZone).ToString("yyyy-MM-dd h:mm tt", CultureInfo.InvariantCulture)
             : "—";
 
     var typeLabel = Model.AssessmentType switch
@@ -58,7 +58,7 @@
         }
         @if (Model.AssessmentType == AssessmentType.Homework)
         {
-            <text> · @L("Due", "Termin"): @LocalTime(Model.DueAtUtc) (@Model.SchoolTimeZoneId)</text>
+            <text> · @L("Due", "Termin"): @LocalTime(Model.DueAtUtc)</text>
         }
         @if (Model.AssessmentType == AssessmentType.Worksheet)
         {
@@ -148,6 +148,24 @@
 
 <script>
 (() => {
+    const submittedKey = 'edulytics:assessment-submitted:@Model.AssessmentId';
+    const assessmentsUrl = '@Url.Action("Assessments", "StudentPortal")';
+
+    const blockSubmittedHistoryEntry = () => {
+        try {
+            if (sessionStorage.getItem(submittedKey) === 'true') {
+                window.location.replace(assessmentsUrl);
+                return true;
+            }
+        } catch {
+            // Server-side AlreadySubmitted remains authoritative.
+        }
+        return false;
+    };
+
+    if (blockSubmittedHistoryEntry()) return;
+    window.addEventListener('pageshow', () => blockSubmittedHistoryEntry());
+
     document.querySelectorAll('[data-choice-for]').forEach(input => {
         input.addEventListener('change', () => {
             const hidden = document.querySelector(

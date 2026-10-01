@@ -14306,3 +14306,245 @@ a.lesson-content-row:hover
         grid-template-columns: 1fr;
     }
 }
+
+
+
+/* Assessment type UX v7 */
+.assessment-create-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 1rem;
+}
+
+.assessment-field {
+    display: grid;
+    gap: .4rem;
+    min-width: 0;
+}
+
+.assessment-field > label {
+    font-size: .82rem;
+    font-weight: 800;
+    color: #42536b;
+}
+
+.assessment-field-wide {
+    grid-column: 1 / -1;
+}
+
+.assessment-schedule-fields {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .9rem;
+    padding: .9rem;
+    border: 1px solid #e2e8f0;
+    border-radius: .8rem;
+    background: #f8fafc;
+}
+
+.assessment-create-submit {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: .25rem;
+}
+
+.assessment-create-submit .school-button {
+    min-width: 10rem;
+}
+
+.assessment-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 2rem;
+    padding: 1.25rem 1.35rem;
+    border: 1px solid #dbe4ef;
+    border-radius: 1.1rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f7faff 100%);
+    box-shadow: 0 .55rem 1.8rem rgba(15, 23, 42, .06);
+}
+
+.assessment-kicker {
+    display: block;
+    margin-bottom: .35rem;
+    color: #64748b;
+    font-size: .72rem;
+    font-weight: 850;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.assessment-title-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .7rem;
+}
+
+.assessment-title-row h1 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+}
+
+.assessment-type-badge,
+.assessment-status-pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.9rem;
+    padding: .25rem .7rem;
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: 850;
+}
+
+.assessment-type-badge {
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+}
+
+.assessment-type-badge.is-exam {
+    border-color: #bfdbfe;
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.assessment-type-badge.is-homework {
+    border-color: #bbf7d0;
+    background: #f0fdf4;
+    color: #166534;
+}
+
+.assessment-type-badge.is-worksheet {
+    border-color: #fed7aa;
+    background: #fff7ed;
+    color: #9a3412;
+}
+
+.assessment-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    gap: .75rem;
+    margin-top: 1.1rem;
+}
+
+.assessment-meta-grid > div {
+    min-width: 0;
+    padding: .7rem .8rem;
+    border: 1px solid #e2e8f0;
+    border-radius: .75rem;
+    background: rgba(255, 255, 255, .82);
+}
+
+.assessment-meta-grid span {
+    display: block;
+    margin-bottom: .2rem;
+    color: #64748b;
+    font-size: .72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.assessment-meta-grid strong {
+    display: block;
+    overflow-wrap: anywhere;
+}
+
+.assessment-status-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem .8rem;
+    margin-top: .8rem;
+    color: #64748b;
+    font-size: .84rem;
+    font-weight: 650;
+}
+
+.assessment-status-pill {
+    background: #eef2ff;
+    color: #4338ca;
+}
+
+.assessment-header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: .55rem;
+    max-width: 27rem;
+}
+
+.assessment-header-actions form {
+    margin: 0;
+}
+
+.assessment-danger-button {
+    border-color: #fecaca;
+    color: #b91c1c;
+    background: #fff;
+}
+
+.assessment-resource-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .8rem 1rem;
+    border: 1px solid #dbe4ef;
+    border-radius: .9rem;
+    background: #fff;
+}
+
+.assessment-resource-bar > div:first-child {
+    display: grid;
+    gap: .15rem;
+}
+
+.assessment-resource-bar > div:first-child span {
+    color: #64748b;
+    font-size: .82rem;
+}
+
+@media (max-width: 950px) {
+    .assessment-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .assessment-header-actions {
+        justify-content: flex-start;
+        max-width: none;
+    }
+
+    .assessment-meta-grid,
+    .assessment-schedule-fields {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .assessment-create-form {
+        grid-template-columns: 1fr;
+    }
+
+    .assessment-field-wide {
+        grid-column: auto;
+    }
+
+    .assessment-resource-bar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .assessment-header-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .assessment-header-actions .school-button,
+    .assessment-header-actions form,
+    .assessment-header-actions button {
+        width: 100%;
+    }
+}

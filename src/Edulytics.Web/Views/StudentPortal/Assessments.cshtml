@@ -268,16 +268,17 @@
                         <p>@L("Online worksheet · no return time", "Karta pracy online · bez terminu oddania")</p>
                     </div>
                     <div class="student-actions">
-                        <a class="student-button student-button-primary"
-                           asp-action="TakeAssessment"
-                           asp-route-id="@item.AssessmentId">
-                            @(item.IsSubmitted
-                                ? L("Open again", "Otwórz ponownie")
-                                : L("Open worksheet", "Otwórz kartę pracy"))
-                        </a>
                         @if (item.IsSubmitted)
                         {
                             <span class="student-muted">@L("Completed", "Ukończono")</span>
+                        }
+                        else
+                        {
+                            <a class="student-button student-button-primary"
+                               asp-action="TakeAssessment"
+                               asp-route-id="@item.AssessmentId">
+                                @L("Open worksheet", "Otwórz kartę pracy")
+                            </a>
                         }
                     </div>
                 </article>

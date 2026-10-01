@@ -96,6 +96,8 @@ public sealed class AssessmentBuilderController(
             ? "DeliverySettingsSavedOnline"
             : "DeliverySettingsSavedOffline";
         Feedback(result, successKey);
+        if (result.Succeeded)
+            TempData["DeliverySettingsSaved"] = "true";
         return RedirectToAction(nameof(Index), new { assessmentId });
     }
 
