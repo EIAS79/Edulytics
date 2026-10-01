@@ -113,6 +113,73 @@ public sealed class AssessmentTypesV2UxContractTests
         Assert.DoesNotContain("Times use the school time zone:", index, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void AssessmentDetails_UsesTypeSpecificActionsAndCompactContext()
+    {
+        var controller = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Controllers", "AssessmentsController.cs");
+        var details = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Views", "Assessments", "Details.cshtml");
+
+        Assert.Contains("SuccessHomeworkCreated", controller, StringComparison.Ordinal);
+        Assert.Contains("SuccessWorksheetCreated", controller, StringComparison.Ordinal);
+        Assert.Contains("EditHomework", details, StringComparison.Ordinal);
+        Assert.Contains("EditWorksheet", details, StringComparison.Ordinal);
+        Assert.Contains("AssessmentBuilderHomeworkLink", details, StringComparison.Ordinal);
+        Assert.Contains("AssessmentBuilderWorksheetLink", details, StringComparison.Ordinal);
+        Assert.Contains("DeleteHomework", details, StringComparison.Ordinal);
+        Assert.Contains("DeleteWorksheet", details, StringComparison.Ordinal);
+        Assert.Contains("assessment-meta-grid", details, StringComparison.Ordinal);
+        Assert.DoesNotContain("@Model.SubjectName · @Model.ClassName · @Model.TermName", details, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void Builder_AiGenerationIsLockedUntilDeliverySettingsAreSaved()
+    {
+        var controller = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Controllers", "AssessmentBuilderController.cs");
+        var view = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Views", "AssessmentBuilder", "Index.cshtml");
+
+        Assert.Contains("TempData[\"DeliverySettingsSaved\"] = \"true\"", controller, StringComparison.Ordinal);
+        Assert.Contains("TempData.Peek(\"DeliverySettingsSaved\")", view, StringComparison.Ordinal);
+        Assert.Contains("ed-ai-fieldset", view, StringComparison.Ordinal);
+        Assert.Contains("Save delivery settings first.", view, StringComparison.Ordinal);
+        Assert.Contains("sessionStorage", view, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void StudentTaskSubmission_LocksHomeworkAndWorksheetAndBlocksHistoryReopen()
+    {
+        var service = ReadRepositoryFile(
+            "src", "Edulytics.Services", "Assessments", "StudentAssessmentDeliveryService.cs");
+        var take = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Views", "StudentPortal", "TakeAssessment.cshtml");
+        var submitted = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Views", "StudentPortal", "AssessmentSubmitted.cshtml");
+        var list = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Views", "StudentPortal", "Assessments.cshtml");
+
+        Assert.Contains("AssessmentType.Homework or AssessmentType.Worksheet", service, StringComparison.Ordinal);
+        Assert.Contains("AssessmentAttemptStatus.Submitted or AssessmentAttemptStatus.Completed", service, StringComparison.Ordinal);
+        Assert.Contains("pageshow", take, StringComparison.Ordinal);
+        Assert.Contains("edulytics:assessment-submitted:", submitted, StringComparison.Ordinal);
+        Assert.Contains("Cannot edit it after submission.", submitted, StringComparison.Ordinal);
+        Assert.Contains("Cannot edit it after completion.", submitted, StringComparison.Ordinal);
+        Assert.DoesNotContain("Open again", list, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void DeliveryLabels_AreShort()
+    {
+        var resources = ReadRepositoryFile(
+            "src", "Edulytics.Web", "Resources", "AssessmentBuilderResource.resx");
+
+        Assert.Contains("<data name=\"DeliveryOnline\" xml:space=\"preserve\"><value>Online</value></data>", resources, StringComparison.Ordinal);
+        Assert.Contains("<data name=\"DeliveryOffline\" xml:space=\"preserve\"><value>Offline</value></data>", resources, StringComparison.Ordinal);
+        Assert.DoesNotContain("student answers and submits in Edulytics", resources, StringComparison.Ordinal);
+    }
+
     private static string ReadRepositoryFile(params string[] relativeSegments)
     {
         var root = FindRoot();
