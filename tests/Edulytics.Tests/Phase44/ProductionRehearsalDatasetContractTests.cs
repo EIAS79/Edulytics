@@ -53,6 +53,45 @@ public sealed class ProductionRehearsalDatasetContractTests
     }
 
     [Fact]
+    public void Rehearsal_reset_deletes_new_child_tables_before_parent_items()
+    {
+        var source = Read(
+            "src/Edulytics.Web/Bootstrap/MeetingDemoProvisioner.cs");
+
+        var adaptiveTurns = source.IndexOf(
+            "DELETE FROM \"AdaptivePracticeTurns\";",
+            StringComparison.Ordinal);
+        var assessmentItems = source.IndexOf(
+            "DELETE FROM \"AssessmentItems\";",
+            StringComparison.Ordinal);
+        var taskResponses = source.IndexOf(
+            "DELETE FROM \"AssessmentTaskResponses\";",
+            StringComparison.Ordinal);
+        var assessments = source.IndexOf(
+            "DELETE FROM \"Assessments\";",
+            StringComparison.Ordinal);
+
+        Assert.True(adaptiveTurns >= 0 && adaptiveTurns < assessmentItems);
+        Assert.True(taskResponses >= 0 && taskResponses < assessments);
+
+        foreach (var table in new[]
+        {
+            "AdaptiveDecisionSnapshots",
+            "AdaptivePracticeShadowObservations",
+            "StudentMisconceptionStates",
+            "StudentRepresentationFluencyStates",
+            "AdaptivePracticeSessions",
+            "AssessmentAttempts"
+        })
+        {
+            Assert.Contains(
+                $"DELETE FROM \"{table}\";",
+                source,
+                StringComparison.Ordinal);
+        }
+    }
+
+    [Fact]
     public void Rehearsal_provisioner_is_wired_into_database_bootstrap()
     {
         var source = Read(
