@@ -55,7 +55,6 @@ public sealed class AssessmentsController : Controller
         AssessmentDeliveryMode deliveryMode,
         DateTime? availableFromLocal,
         DateTime? dueAtLocal,
-        int? attemptTimeLimitMinutes,
         CancellationToken cancellationToken)
     {
         if (!TryActor(out var actorId)) return Forbid();
@@ -75,8 +74,7 @@ public sealed class AssessmentsController : Controller
                 assessmentType,
                 deliveryMode,
                 availableFromLocal,
-                dueAtLocal,
-                attemptTimeLimitMinutes),
+                dueAtLocal),
             cancellationToken);
 
         var successKey = assessmentType switch
@@ -128,7 +126,6 @@ public sealed class AssessmentsController : Controller
         AssessmentDeliveryMode? deliveryMode,
         DateTime? availableFromLocal,
         DateTime? dueAtLocal,
-        int? attemptTimeLimitMinutes,
         string rowVersion,
         CancellationToken cancellationToken)
     {
@@ -150,8 +147,7 @@ public sealed class AssessmentsController : Controller
                 bytes,
                 deliveryMode,
                 availableFromLocal,
-                dueAtLocal,
-                attemptTimeLimitMinutes),
+                dueAtLocal),
             cancellationToken);
 
         SetFeedback(result, "SuccessAssessmentUpdated");
