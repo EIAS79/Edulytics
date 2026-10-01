@@ -127,6 +127,51 @@ public sealed class ProductionRehearsalDatasetContractTests
             StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void Rehearsal_repair_is_non_destructive_and_wired_into_bootstrap()
+    {
+        var bootstrap = Read(
+            "src/Edulytics.Web/Bootstrap/EdulyticsDatabaseBootstrapper.cs");
+        var provisioner = Read(
+            "src/Edulytics.Web/Bootstrap/MeetingDemoProvisioner.cs");
+
+        Assert.Contains(
+            "MeetingDemoProvisioner.RepairExistingAsync",
+            bootstrap,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "production-rehearsal-repair-2026-10-01-v1",
+            provisioner,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "reason=already-seeded",
+            provisioner,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "reason=insufficient-materialized-outcomes",
+            provisioner,
+            StringComparison.Ordinal);
+
+        var repairStart = provisioner.IndexOf(
+            "public static async Task RepairExistingAsync",
+            StringComparison.Ordinal);
+        var resetStart = provisioner.IndexOf(
+            "private static async Task ResetSchoolScopedDataAsync",
+            StringComparison.Ordinal);
+
+        Assert.True(repairStart >= 0 && resetStart > repairStart);
+
+        var repairSource = provisioner[repairStart..resetStart];
+        Assert.DoesNotContain(
+            "ResetSchoolScopedDataAsync",
+            repairSource,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "Edulytics:MeetingDemo:Password",
+            repairSource,
+            StringComparison.Ordinal);
+    }
+
     private static string Read(string relative) =>
         File.ReadAllText(Path.Combine(Root, relative));
 
