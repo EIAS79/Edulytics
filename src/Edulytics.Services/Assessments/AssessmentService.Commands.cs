@@ -1308,21 +1308,6 @@ public sealed partial class AssessmentService
 
         var questionIds = questions.Select(x => x.Id).ToHashSet();
 
-        if (assessment.AssessmentType == AssessmentType.Exam &&
-            assessment.DeliveryMode == AssessmentDeliveryMode.Online &&
-            assessment.AvailableFromUtc.HasValue)
-        {
-            var deliveryItems = snapshot.AssessmentItems
-                .Where(x => questionIds.Contains(x.Id))
-                .ToArray();
-
-            if (deliveryItems.Length != questions.Length ||
-                deliveryItems.Any(x => !IsStudentDeliveryApproved(x)))
-            {
-                return Fail(AssessmentErrorCode.AssessmentNotOpen);
-            }
-        }
-
         var mapped = snapshot.OutcomeMappings
             .Where(x => questionIds.Contains(x.AssessmentQuestionId))
             .Select(x => x.AssessmentQuestionId)
@@ -1844,27 +1829,6 @@ public sealed partial class AssessmentService
 
             default:
                 return (nameof(assessmentType), AssessmentErrorCode.InvalidAssessmentType);
-        }
-    }
-
-    private static bool IsStudentDeliveryApproved(AssessmentItem item)
-    {
-        if (string.IsNullOrWhiteSpace(item.ValidationMetadataJson))
-            return false;
-
-        try
-        {
-            using var document = JsonDocument.Parse(item.ValidationMetadataJson);
-            return document.RootElement.TryGetProperty("builderStatus", out var status) &&
-                   status.ValueKind == JsonValueKind.String &&
-                   string.Equals(
-                       status.GetString(),
-                       AssessmentBuilderQuestionStatus.Approved.ToString(),
-                       StringComparison.OrdinalIgnoreCase);
-        }
-        catch (JsonException)
-        {
-            return false;
         }
     }
 
