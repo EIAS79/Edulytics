@@ -164,8 +164,8 @@ public sealed class AssessmentTypesV2UxContractTests
         Assert.Contains("AssessmentAttemptStatus.Submitted or AssessmentAttemptStatus.Completed", service, StringComparison.Ordinal);
         Assert.Contains("pageshow", take, StringComparison.Ordinal);
         Assert.Contains("edulytics:assessment-submitted:", submitted, StringComparison.Ordinal);
-        Assert.Contains("Cannot edit it after submission.", submitted, StringComparison.Ordinal);
-        Assert.Contains("Cannot edit it after completion.", submitted, StringComparison.Ordinal);
+        Assert.Contains("You cannot edit it after submission.", submitted, StringComparison.Ordinal);
+        Assert.Contains("You cannot edit it after completion.", submitted, StringComparison.Ordinal);
         Assert.DoesNotContain("Open again", list, StringComparison.Ordinal);
     }
 
