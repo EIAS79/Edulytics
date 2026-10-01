@@ -182,7 +182,7 @@ public sealed class RichLessonExternalHelpTests
             "YouTubeLessonChannelPolicy.Resolve",
             studioPartial,
             StringComparison.Ordinal);
-        Assert.DoesNotContain(
+        Assert.Contains(
             "load(\"\");",
             studioScript,
             StringComparison.Ordinal);

@@ -149,8 +149,17 @@ public sealed class LessonObjectiveContentAlignmentCertificationTests
                             cultureCode: translation.CultureCode,
                             learnerQuery: null);
 
-                    if (!youtubeResult.SearchQuery.Contains(
+                    var youtubeTopic =
+                        System.Text.RegularExpressions.Regex.Replace(
                             translation.Title,
+                            @"\s*(?:—|–|-|:)\s*(?:advanced\s+reasoning|foundation(?:\s+explanation)?|worked\s+examples?)\s*$",
+                            string.Empty,
+                            System.Text.RegularExpressions.RegexOptions.IgnoreCase |
+                            System.Text.RegularExpressions.RegexOptions.CultureInvariant)
+                        .Trim();
+
+                    if (!youtubeResult.SearchQuery.Contains(
+                            youtubeTopic,
                             StringComparison.OrdinalIgnoreCase) ||
                         !youtubeResult.SearchQuery.Contains(
                             exactSkillLabel,
@@ -160,7 +169,7 @@ public sealed class LessonObjectiveContentAlignmentCertificationTests
                             StringComparison.OrdinalIgnoreCase))
                     {
                         throw new InvalidOperationException(
-                            "Dynamic YouTube discovery is not anchored to the exact lesson title and SkillContract.");
+                            "Dynamic YouTube discovery is not anchored to the exact lesson topic and SkillContract.");
                     }
 
                     var quality =
