@@ -335,3 +335,103 @@
         justify-self: start;
     }
 }
+
+
+
+/* Assessment builder UX v7 */
+.ed-ai-builder-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.ed-ai-builder-card.is-locked {
+    border-color: #dbe4ef;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.ed-ai-builder-card.is-locked .ed-builder-card-heading {
+    opacity: .82;
+}
+
+.ed-ai-lock-notice {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .8rem;
+    margin-bottom: .75rem;
+    padding: .75rem .85rem;
+    border: 1px solid #e2e8f0;
+    border-radius: .75rem;
+    background: #f8fafc;
+    color: #64748b;
+    font-size: .84rem;
+}
+
+.ed-ai-lock-notice strong {
+    color: #334155;
+}
+
+.ed-ai-fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.ed-ai-fieldset:disabled {
+    opacity: .58;
+}
+
+.ed-ai-fieldset:disabled .ed-ai-generate-button {
+    cursor: not-allowed;
+}
+
+.ed-ai-builder-card.is-unlocked .ed-ai-fieldset {
+    opacity: 1;
+}
+
+.ed-ai-builder-card.is-unlocked .ed-ai-lock-notice {
+    display: none;
+}
+
+.ed-builder-summary {
+    box-shadow: 0 .35rem 1.2rem rgba(15, 23, 42, .04);
+}
+
+.ed-builder-workspace-grid {
+    align-items: stretch;
+}
+
+.ed-builder-card {
+    height: 100%;
+}
+
+.ed-builder-card-heading h2 {
+    margin: 0;
+}
+
+.ed-builder-card-heading p {
+    max-width: 62ch;
+    color: var(--ed-muted, #64748b);
+}
+
+.ed-builder-output-card {
+    display: grid;
+    gap: .9rem;
+}
+
+.ed-builder-publish-bar {
+    justify-content: flex-end;
+}
+
+.ed-builder-publish-bar button:disabled {
+    cursor: not-allowed;
+    opacity: .55;
+}
+
+@media (max-width: 700px) {
+    .ed-ai-lock-notice {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
