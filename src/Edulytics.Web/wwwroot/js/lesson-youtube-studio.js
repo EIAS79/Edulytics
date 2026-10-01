@@ -454,10 +454,11 @@
             load((queryInput?.value || "").trim());
         });
 
-        // YouTube search.list is quota-expensive. Keep the reviewed
-        // fallback and server-rendered grade-band channel links visible on
-        // initial lesson view; call the live discovery API only after the
-        // learner explicitly submits this YouTube search form.
+        // Resolve the lesson video automatically when the lesson opens.
+        // Server-side caching prevents repeated YouTube API work for the same
+        // lesson/search context, while the manual search remains available for
+        // learner refinement.
+        load("");
     }
 
     document
