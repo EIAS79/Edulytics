@@ -26,7 +26,7 @@ internal static class MeetingDemoProvisioner
     private const string SeedVersion = "production-rehearsal-2026-10-01-v1";
     private const string MarkerOperation = "ProductionRehearsalSeed";
     private const string RepairMarkerOperation = "ProductionRehearsalRepair";
-    private const string RepairVersion = "production-rehearsal-repair-2026-10-01-v1";
+    private const string RepairVersion = "production-rehearsal-repair-2026-10-01-v2-curriculum-reference-targets";
 
     private static readonly string[] FirstNames =
     [
