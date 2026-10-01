@@ -149,11 +149,6 @@
                         <label for="examDueAtLocal">@L("Hard end (optional)", "Koniec (opcjonalny)")</label>
                         <input id="examDueAtLocal" name="dueAtLocal" type="datetime-local" />
                     </div>
-                    <div class="assessment-field">
-                        <label for="attemptTimeLimitMinutes">@L("Attempt time limit in minutes (optional)", "Limit czasu w minutach (opcjonalny)")</label>
-                        <input id="attemptTimeLimitMinutes" name="attemptTimeLimitMinutes"
-                               type="number" min="1" max="480" step="1" />
-                    </div>
                 </div>
 
                 <div id="assessment-homework-due" class="assessment-field-wide" hidden>
@@ -394,7 +389,6 @@
     const examSchedule = document.getElementById('assessment-exam-schedule');
     const examStart = document.getElementById('availableFromLocal');
     const examDue = document.getElementById('examDueAtLocal');
-    const timeLimit = document.getElementById('attemptTimeLimitMinutes');
     const homeworkDueGroup = document.getElementById('assessment-homework-due');
     const homeworkDue = document.getElementById('homeworkDueAtLocal');
 
@@ -418,7 +412,7 @@
         }
 
         if (examSchedule) examSchedule.hidden = !isOnlineExam;
-        [examStart, examDue, timeLimit].forEach(input => {
+        [examStart, examDue].forEach(input => {
             if (input) input.disabled = !isOnlineExam;
         });
 
