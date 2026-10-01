@@ -52,7 +52,8 @@ public sealed class StudentPrivatePracticeService(
                         x.Title,
                         officialNodeIdsByLesson.TryGetValue(x.Id, out var mappedNodeIds)
                             ? mappedNodeIds
-                            : []))
+                            : [],
+                        SupportedDifficultiesForLesson(x.Code)))
                     .ToArray();
 
                 unitOptions = lessons
@@ -121,6 +122,12 @@ public sealed class StudentPrivatePracticeService(
             if (LessonPracticeContractRegistry.TryResolve(exactLesson.Code, out var practiceContract) &&
                 practiceContract is not null)
             {
+                if (!SupportsDifficulty(practiceContract, request.Difficulty))
+                {
+                    return StudentPrivatePracticeResult.Failure(
+                        StudentPrivatePracticeError.UnsupportedDifficulty);
+                }
+
                 return await GenerateSkillContractLessonAsync(
                     studentUserId,
                     context,
@@ -146,6 +153,12 @@ public sealed class StudentPrivatePracticeService(
                     "Stage18VerifiedLesson",
                     "READY_VERIFIED",
                     "stage18-practice-v1");
+
+                if (!SupportsDifficulty(compatibleContract, request.Difficulty))
+                {
+                    return StudentPrivatePracticeResult.Failure(
+                        StudentPrivatePracticeError.UnsupportedDifficulty);
+                }
 
                 return await GenerateSkillContractLessonAsync(
                     studentUserId,
@@ -441,12 +454,97 @@ public sealed class StudentPrivatePracticeService(
         return StudentPrivatePracticeResult.Success(attemptId);
     }
 
+    private static IReadOnlyList<StudentPrivatePracticeDifficulty> SupportedDifficultiesForLesson(
+        string lessonCode)
+    {
+        if (LessonPracticeContractRegistry.TryResolve(lessonCode, out var contract) &&
+            contract is not null)
+        {
+            return SupportedDifficulties(contract);
+        }
+
+        if (Stage18PracticeSkillContracts.TryResolve(lessonCode, out var legacy) &&
+            legacy is not null)
+        {
+            return SupportedDifficulties(new LessonPracticeContract(
+                legacy.LessonCode,
+                legacy.SkillId,
+                legacy.Mechanic,
+                legacy.AllowedQuestionFamilies,
+                "Stage18VerifiedLesson",
+                "READY_VERIFIED",
+                "stage18-practice-v1"));
+        }
+
+        return Enum.GetValues<StudentPrivatePracticeDifficulty>();
+    }
+
+    private static IReadOnlyList<StudentPrivatePracticeDifficulty> SupportedDifficulties(
+        LessonPracticeContract contract)
+    {
+        var capabilities = contract.AllowedQuestionFamilies
+            .SelectMany(PracticeQuestionFormCapabilityRegistry.Resolve)
+            .ToArray();
+
+        var result = new List<StudentPrivatePracticeDifficulty>(4);
+        if (SupportsCognitiveDifficulty(
+                capabilities,
+                PracticeCognitiveDifficulty.Standard))
+        {
+            result.Add(StudentPrivatePracticeDifficulty.MyLevel);
+            result.Add(StudentPrivatePracticeDifficulty.AtClassLevel);
+        }
+
+        if (SupportsCognitiveDifficulty(
+                capabilities,
+                PracticeCognitiveDifficulty.Stretch))
+        {
+            result.Add(StudentPrivatePracticeDifficulty.Stretch);
+        }
+
+        if (SupportsCognitiveDifficulty(
+                capabilities,
+                PracticeCognitiveDifficulty.Challenge))
+        {
+            result.Add(StudentPrivatePracticeDifficulty.Challenge);
+        }
+
+        return result;
+    }
+
+    private static bool SupportsDifficulty(
+        LessonPracticeContract contract,
+        StudentPrivatePracticeDifficulty difficulty)
+    {
+        var target = difficulty switch
+        {
+            StudentPrivatePracticeDifficulty.Stretch =>
+                PracticeCognitiveDifficulty.Stretch,
+            StudentPrivatePracticeDifficulty.Challenge =>
+                PracticeCognitiveDifficulty.Challenge,
+            _ => PracticeCognitiveDifficulty.Standard
+        };
+
+        var capabilities = contract.AllowedQuestionFamilies
+            .SelectMany(PracticeQuestionFormCapabilityRegistry.Resolve)
+            .ToArray();
+
+        return SupportsCognitiveDifficulty(capabilities, target);
+    }
+
+    private static bool SupportsCognitiveDifficulty(
+        IReadOnlyList<PracticeQuestionFormCapability> capabilities,
+        PracticeCognitiveDifficulty target) =>
+        capabilities.Any(capability =>
+            target >= capability.MinimumDifficulty &&
+            target <= capability.MaximumDifficulty);
+
     private static int QuestionLimitForScope(StudentPrivatePracticeScope scope) => scope switch
     {
-        StudentPrivatePracticeScope.Lesson => 10,
-        StudentPrivatePracticeScope.Unit => 15,
+        StudentPrivatePracticeScope.Lesson => 5,
+        StudentPrivatePracticeScope.Unit => 10,
         StudentPrivatePracticeScope.WeakAreas => 15,
-        StudentPrivatePracticeScope.WholeCurriculum => 30,
+        StudentPrivatePracticeScope.WholeCurriculum => 15,
         _ => 0
     };
 
