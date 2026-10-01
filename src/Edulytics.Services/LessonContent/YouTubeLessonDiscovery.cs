@@ -250,11 +250,7 @@ internal static class YouTubeLessonSemanticContextResolver
             lessonTitle,
             objectives);
 
-        var topicQuery = string.Join(
-            " ",
-            new[] { lessonTitle }
-                .Concat(skillTerms.Take(2))
-                .Where(x => !string.IsNullOrWhiteSpace(x)));
+        var topicQuery = CleanLessonTopic(lessonTitle);
 
         return new(
             topicQuery,
@@ -293,6 +289,17 @@ internal static class YouTubeLessonSemanticContextResolver
 
     private static bool ContainsAny(string text, params string[] values) =>
         values.Any(value => text.Contains(value, StringComparison.OrdinalIgnoreCase));
+
+    internal static string CleanLessonTopic(string lessonTitle)
+    {
+        var cleaned = Regex.Replace(
+            lessonTitle ?? string.Empty,
+            @"\s*(?:—|–|-|:)\s*(?:advanced\s+reasoning|foundation(?:\s+explanation)?|worked\s+examples?)\s*$",
+            string.Empty,
+            RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+
+        return Regex.Replace(cleaned, @"\s+", " ").Trim();
+    }
 
     private static string ToSearchPhrase(string value) =>
         Regex.Replace(
@@ -537,6 +544,35 @@ public sealed partial class YouTubeLessonDiscoveryService :
                 .Where(x => x.RelevancePercent >= minimum)
                 .OrderByDescending(x => x.RankScore)
                 .ToArray();
+
+            if (ranked.Length == 0)
+            {
+                var broadQuery = BuildBroadQuery(
+                    semanticContext.TopicQuery,
+                    learnerQuery);
+
+                if (!string.Equals(
+                        broadQuery,
+                        query,
+                        StringComparison.OrdinalIgnoreCase))
+                {
+                    var broadSearchResults = await SearchAsync(
+                        broadQuery,
+                        cultureCode,
+                        cancellationToken);
+
+                    var broadCandidates = await HydrateVideosAsync(
+                        broadSearchResults,
+                        semanticContext,
+                        preferredIds,
+                        cancellationToken);
+
+                    ranked = broadCandidates
+                        .Where(x => x.RelevancePercent >= minimum)
+                        .OrderByDescending(x => x.RankScore)
+                        .ToArray();
+                }
+            }
 
             var usedPreferred =
                 ranked.FirstOrDefault()?.IsPreferredChannel == true;
@@ -1284,7 +1320,24 @@ public sealed partial class YouTubeLessonDiscoveryService :
     private static IEnumerable<string> Tokenize(string value) =>
         TokenRegex()
             .Matches(value ?? string.Empty)
-            .Select(match => match.Value.ToLowerInvariant());
+            .Select(match => NormalizeToken(match.Value.ToLowerInvariant()));
+
+    private static string NormalizeToken(string token) =>
+        token switch
+        {
+            "modelling" or "modeling" or "models" => "model",
+            "functions" => "function",
+            "expressions" => "expression",
+            "equations" => "equation",
+            "inequalities" => "inequality",
+            "fractions" => "fraction",
+            "ratios" => "ratio",
+            "percentages" => "percentage",
+            "polynomials" => "polynomial",
+            "quadratics" => "quadratic",
+            "graphs" => "graph",
+            _ => token
+        };
 
     private static string NormalizeText(string value) =>
         Regex.Replace(
@@ -1299,35 +1352,13 @@ public sealed partial class YouTubeLessonDiscoveryService :
         YouTubeLessonSemanticContext context,
         string? learnerQuery)
     {
-        var learner = Regex.Replace(
-            learnerQuery ?? string.Empty,
-            @"\s+",
-            " ").Trim();
-
-        learner = string.Concat(
-            learner
-                .EnumerateRunes()
-                .Take(80)
-                .Select(rune => rune.ToString()));
-
-        var objective = context.LearningObjectives.FirstOrDefault() ?? string.Empty;
-        objective = string.Concat(objective.EnumerateRunes().Take(120).Select(x => x.ToString()));
-
-        var difficultyPhrase = context.DifficultyLabel switch
-        {
-            "challenging" => "advanced reasoning",
-            "foundation" => "foundation explanation",
-            _ => "worked examples"
-        };
+        var learner = CleanLearnerQuery(learnerQuery);
 
         var pieces = new[]
         {
-            lessonTitle.Trim(),
+            context.TopicQuery,
             context.SkillTerms.FirstOrDefault() ?? string.Empty,
-            objective,
             gradeLabel,
-            frameworkName,
-            difficultyPhrase,
             learner,
             "math"
         }
@@ -1339,7 +1370,40 @@ public sealed partial class YouTubeLessonDiscoveryService :
             " ").Trim();
 
         return string.Concat(
-            query.EnumerateRunes().Take(350).Select(x => x.ToString()));
+            query.EnumerateRunes().Take(220).Select(x => x.ToString()));
+    }
+
+    private static string BuildBroadQuery(
+        string topicQuery,
+        string? learnerQuery)
+    {
+        var learner = CleanLearnerQuery(learnerQuery);
+        var pieces = new[]
+        {
+            topicQuery,
+            learner,
+            "math"
+        }
+        .Where(x => !string.IsNullOrWhiteSpace(x));
+
+        return Regex.Replace(
+            string.Join(" ", pieces),
+            @"\s+",
+            " ").Trim();
+    }
+
+    private static string CleanLearnerQuery(string? learnerQuery)
+    {
+        var learner = Regex.Replace(
+            learnerQuery ?? string.Empty,
+            @"\s+",
+            " ").Trim();
+
+        return string.Concat(
+            learner
+                .EnumerateRunes()
+                .Take(80)
+                .Select(rune => rune.ToString()));
     }
 
     private static string BuildChannelSearchUrl(
