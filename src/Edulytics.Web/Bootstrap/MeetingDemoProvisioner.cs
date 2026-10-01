@@ -474,6 +474,13 @@ DELETE FROM "IdempotencyRecords" WHERE "SchoolId" IS NOT NULL;
 DELETE FROM "OutboxMessages" WHERE "SchoolId" IS NOT NULL;
 DELETE FROM "AnalyticsRefreshStates";
 
+DELETE FROM "AdaptivePracticeTurns";
+DELETE FROM "AdaptiveDecisionSnapshots";
+DELETE FROM "AdaptivePracticeShadowObservations";
+DELETE FROM "StudentMisconceptionStates";
+DELETE FROM "StudentRepresentationFluencyStates";
+DELETE FROM "AdaptivePracticeSessions";
+
 DELETE FROM "PracticeResponses";
 DELETE FROM "LearningEvidence";
 DELETE FROM "StudentItemExposures";
@@ -488,6 +495,8 @@ DELETE FROM "ClassTopicSummaries";
 DELETE FROM "ClassAssessmentTrends";
 DELETE FROM "SchoolAnalyticsSnapshots";
 
+DELETE FROM "AssessmentTaskResponses";
+DELETE FROM "AssessmentAttempts";
 DELETE FROM "StudentAnswers";
 DELETE FROM "AssessmentResults";
 DELETE FROM "QuestionLearningOutcomes";
