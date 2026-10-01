@@ -77,9 +77,9 @@ else
                 <label>@S["PracticeScope"]</label>
                 <select id="practice-scope" name="scope">
                     <option value="@StudentPrivatePracticeScope.WeakAreas" data-question-limit="15">@S["PracticeWeakAreas"]</option>
-                    <option value="@StudentPrivatePracticeScope.Lesson" data-question-limit="10">@S["PracticeLesson"]</option>
-                    <option value="@StudentPrivatePracticeScope.Unit" data-question-limit="15">@S["PracticeUnit"]</option>
-                    <option value="@StudentPrivatePracticeScope.WholeCurriculum" data-question-limit="30">@S["PracticeWholeCurriculum"]</option>
+                    <option value="@StudentPrivatePracticeScope.Lesson" data-question-limit="5">@S["PracticeLesson"]</option>
+                    <option value="@StudentPrivatePracticeScope.Unit" data-question-limit="10">@S["PracticeUnit"]</option>
+                    <option value="@StudentPrivatePracticeScope.WholeCurriculum" data-question-limit="15">@S["PracticeWholeCurriculum"]</option>
                 </select>
                 <label for="practice-lesson">@S["Lesson"]</label>
                 <select id="practice-lesson" name="lessonId">
@@ -87,7 +87,8 @@ else
                     @foreach (var lesson in Model.Lessons)
                     {
                         <option value="@lesson.LessonId"
-                                data-learning-focus-node-ids="@string.Join(",", lesson.OfficialOutcomeNodeIds)">@lesson.UnitTitle · @lesson.LessonTitle</option>
+                                data-learning-focus-node-ids="@string.Join(",", lesson.OfficialOutcomeNodeIds)"
+                                data-supported-difficulties="@string.Join(",", lesson.SupportedDifficulties ?? Enum.GetValues<StudentPrivatePracticeDifficulty>())">@lesson.UnitTitle · @lesson.LessonTitle</option>
                     }
                 </select>
                 <label for="practice-unit">@S["Unit"]</label>
@@ -100,7 +101,7 @@ else
                     }
                 </select>
                 <label>@S["AssessmentDifficulty"]</label>
-                <select name="difficulty">
+                <select id="practice-difficulty" name="difficulty">
                     <option value="@StudentPrivatePracticeDifficulty.MyLevel">@S["PracticeMyLevel"]</option>
                     <option value="@StudentPrivatePracticeDifficulty.AtClassLevel">@S["AssessmentDifficultyAtClassLevel"]</option>
                     <option value="@StudentPrivatePracticeDifficulty.Stretch">@S["AssessmentDifficultyStretch"]</option>
@@ -203,6 +204,7 @@ else
             const unit = document.getElementById('practice-unit');
             const count = document.getElementById('practice-question-count');
             const help = document.getElementById('practice-question-limit');
+            const difficulty = document.getElementById('practice-difficulty');
             if (!scope || !count) return;
 
             const applyScope = () => {
@@ -219,6 +221,30 @@ else
                     unit.disabled = !isUnit;
                     unit.required = isUnit;
                     if (!isUnit) unit.value = '';
+                }
+
+                if (difficulty) {
+                    const selectedLesson = isLesson && lesson
+                        ? lesson.options[lesson.selectedIndex]
+                        : null;
+                    const supported = new Set(
+                        String(selectedLesson?.dataset.supportedDifficulties || '')
+                            .split(',')
+                            .map(value => value.trim())
+                            .filter(Boolean));
+
+                    Array.from(difficulty.options).forEach(option => {
+                        option.disabled = isLesson &&
+                            supported.size > 0 &&
+                            !supported.has(option.value);
+                    });
+
+                    const current = difficulty.options[difficulty.selectedIndex];
+                    if (current?.disabled) {
+                        const firstEnabled = Array.from(difficulty.options)
+                            .find(option => !option.disabled);
+                        if (firstEnabled) difficulty.value = firstEnabled.value;
+                    }
                 }
             };
 
@@ -237,6 +263,7 @@ else
             };
 
             scope.addEventListener('change', apply);
+            lesson?.addEventListener('change', apply);
             count.addEventListener('input', () => {
                 const limit = Number(count.max || 1);
                 if (Number(count.value) > limit) count.value = String(limit);
