@@ -42,10 +42,10 @@ public static class VerifiedCurriculumReferenceTargetRegistry
         "https://www.school-uae.com/2025/09/grade-7-advanced-integrated-math-reveal-student-book-term1-2025-2026.html";
 
     private const string UaeGrade8Evidence =
-        "https://www.scribd.com/document/973606416/";
+        "https://emirats-school.com/%D9%83%D8%AA%D8%A7%D8%A8-%D8%A7%D9%84%D8%B7%D8%A7%D9%84%D8%A8-reveal-%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA-%D9%84%D9%84%D8%B5%D9%81-%D8%A7%D9%84%D8%AB%D8%A7%D9%85%D9%86-%D8%A7%D9%84%D9%81%D8%B5/";
 
     private const string UaeGrade11Evidence =
-        "https://www.scribd.com/document/1071243808/";
+        "https://www.school-uae.com/2025/09/math-grade-11-advanced-term-1-uae-student-guide.html";
 
     private const string UaeGrade12Evidence =
         "https://www.scribd.com/document/948020975/";
@@ -121,7 +121,7 @@ public static class VerifiedCurriculumReferenceTargetRegistry
             throw new InvalidOperationException("Verified curriculum reference targets are required.");
 
         var duplicate = All
-            .GroupBy(x => (x.PackCode, x.Code))
+            .GroupBy(x => (x.PackCode, x.LogicalLevel, x.Code))
             .FirstOrDefault(x => x.Count() > 1);
         if (duplicate is not null)
             throw new InvalidOperationException($"Duplicate curriculum reference target: {duplicate.Key}.");
@@ -324,17 +324,20 @@ public static class VerifiedCurriculumReferenceTargetRegistry
             11,
             "Advanced",
             UaeGrade11Evidence,
-            "Reveal Math Integrated III UAE Edition Grade 11 Advanced, 2025/2026",
+            "UAE Grade 11 Advanced interactive Mathematics student guide, Term 1 2025/2026",
             [
-                ("01-QUADRATICS", "Quadratic functions", "Analyze and model quadratic functions using equations, graphs and key features."),
-                ("02-POLYNOMIAL-FUNCTIONS", "Polynomials and polynomial functions", "Operate with polynomials and analyze polynomial functions."),
-                ("03-POLYNOMIAL-EQUATIONS", "Polynomial equations", "Solve polynomial equations and connect zeros, factors and graphs."),
-                ("04-INVERSES-RADICALS", "Inverses and radical functions", "Analyze inverse relationships and solve problems involving radical functions."),
-                ("05-EXPONENTIAL", "Exponential functions", "Model and analyze exponential growth and decay."),
-                ("06-LOGARITHMIC", "Logarithmic functions", "Use logarithms to solve equations and analyze logarithmic functions."),
-                ("07-RATIONAL", "Rational functions", "Analyze rational functions, restrictions and asymptotic behavior."),
-                ("08-INFERENTIAL-STATISTICS", "Inferential statistics", "Use samples and statistical reasoning to make and evaluate inferences."),
-                ("09-TRIGONOMETRIC", "Trigonometric functions", "Analyze trigonometric functions, their graphs and applications.")
+                ("T1-U01-POWER-POLYNOMIAL-RATIONAL", "Power, polynomial and rational functions", "Analyze power, polynomial and rational functions through their equations, graphs and key features."),
+                ("T1-U02-EXP-LOG", "Exponential and logarithmic functions", "Represent and analyze exponential and logarithmic functions and their inverse relationship."),
+                ("T1-U03-TRIG-FUNCTIONS", "Trigonometric functions", "Represent and analyze trigonometric functions and their graphs."),
+                ("T1-U04-TRIG-IDENTITIES-EQUATIONS", "Trigonometric identities and equations", "Use trigonometric identities and solve trigonometric equations."),
+                ("T1-U05-SYSTEMS-MATRICES", "Systems of equations and matrices", "Represent and solve systems of equations using algebraic and matrix methods."),
+                ("T1-U06-CONICS-PARAMETRIC", "Conic sections and parametric equations", "Analyze conic sections and represent relationships using parametric equations."),
+                ("T1-U07-VECTORS", "Vectors", "Represent vectors and use vector operations to solve mathematical problems."),
+                ("T1-U08-POLAR-COMPLEX", "Polar coordinates and complex numbers", "Work with polar representations and complex numbers in multiple forms."),
+                ("T1-U09-SEQUENCES-SERIES", "Sequences and series", "Analyze sequences and series and use their patterns and formulas."),
+                ("T1-U10-STATISTICS-PROBABILITY", "Statistics and probability", "Use statistical and probability models to analyze data and uncertainty."),
+                ("T1-U11-FUNCTIONS-CALCULUS", "Functions from a calculus perspective", "Interpret function behavior through rates of change and calculus-oriented representations."),
+                ("T1-U12-CALCULUS", "Calculus", "Apply introductory differentiation and integration ideas to mathematical problems.")
             ]);
 
         AddUae(
