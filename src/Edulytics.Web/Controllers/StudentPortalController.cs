@@ -323,7 +323,12 @@ public sealed class StudentPortalController : Controller
     {
         if (!TryActor(out var actorId)) return Forbid();
         var attempt = await _assessmentDelivery.GetAttemptAsync(actorId, id, cancellationToken);
-        if (attempt.Value is not null) return View(nameof(TakeAssessment), attempt.Value);
+        if (attempt.Value is not null)
+        {
+            Response.Headers.CacheControl = "no-store, no-cache, must-revalidate";
+            Response.Headers.Pragma = "no-cache";
+            return View(nameof(TakeAssessment), attempt.Value);
+        }
         return HandleAssessmentDeliveryError(attempt.Error);
     }
 
