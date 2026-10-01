@@ -3,6 +3,7 @@
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonPracticeResource> P
 @using Edulytics.Web.Presentation
+@using Edulytics.Web.ViewModels.LessonContent
 @{
     Layout = "_StudentLayout";
     ViewData["Title"] = Model.Title;
@@ -112,7 +113,15 @@
             }
         }
 
-        <partial name="_LessonYouTubeStudio" model="Model" />
+        <partial name="_LessonYouTubeStudio"
+                 model="@(new LessonYouTubeStudioViewModel(
+                     Model.Id,
+                     Model.LessonCode,
+                     Model.Title,
+                     Model.GradeName,
+                     Model.FrameworkName,
+                     Model.RichContent,
+                     Url.Action("LessonYouTube", "StudentPortal", new { id = Model.Id }) ?? string.Empty))" />
         <partial name="_LessonReviewedResources" model="Model" />
     </main>@if (Model.Outcomes.Count > 0) { <aside class="lesson-reader-sidebar" aria-label="@L["LessonReference"]"><section class="lesson-reader-sidecard"><h2>@L["StandardsReference"]</h2><div class="lesson-reader-outcomes">@foreach (var outcome in Model.Outcomes) { <article class="lesson-reader-outcome"><strong>@outcome.Code</strong><p>@outcome.Description</p></article> }</div></section></aside> }</div>
 </div>
