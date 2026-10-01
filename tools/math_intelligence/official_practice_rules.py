@@ -267,31 +267,35 @@ def load_reviewed_official_rule_mappings(
                 )
                 continue
 
-            canonical_candidates = [
-                rule
-                for rule in rules
-                if _matches_reviewed_canonical_evidence(
-                    lesson_code,
-                    translation,
-                    rule,
-                )
-            ]
-            if len(canonical_candidates) > 1:
-                errors.append(
-                    "Official canonical-evidence Practice rule collision for "
-                    f"{lesson_code}: {title!r} -> "
-                    + ", ".join(rule.rule_id for rule in canonical_candidates)
-                )
-                continue
+            if (
+                pack_code == "CAMBRIDGE-INTL-MATH"
+                and any(code.startswith("CAM:REF:9709:") for code in outcomes)
+            ):
+                canonical_candidates = [
+                    rule
+                    for rule in rules
+                    if _matches_reviewed_canonical_evidence(
+                        lesson_code,
+                        translation,
+                        rule,
+                    )
+                ]
+                if len(canonical_candidates) > 1:
+                    errors.append(
+                        "Cambridge 9709 canonical-evidence Practice rule collision for "
+                        f"{lesson_code}: {title!r} -> "
+                        + ", ".join(rule.rule_id for rule in canonical_candidates)
+                    )
+                    continue
 
-            if len(canonical_candidates) == 1:
-                mappings[lesson_code] = mapping_from_rule(
-                    lesson_code,
-                    outcomes,
-                    canonical_candidates[0],
-                    "CANONICAL_EVIDENCE",
-                )
-                continue
+                if len(canonical_candidates) == 1:
+                    mappings[lesson_code] = mapping_from_rule(
+                        lesson_code,
+                        outcomes,
+                        canonical_candidates[0],
+                        "CANONICAL_EVIDENCE",
+                    )
+                    continue
 
             if all(
                 resolution is not None

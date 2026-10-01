@@ -262,7 +262,14 @@ public sealed class Phase29CambridgeCurriculumBaselineTests
         Assert.Equal(397, laterScopes.Length);
 
         var stageOneIds = stageOne.Select(x => x.Id).ToArray();
-        var supportingIds = stagesTwoToSix.Concat(laterScopes).Select(x => x.Id).ToArray();
+        var non9709SupportingIds = stagesTwoToSix
+            .Concat(laterScopes.Where(x => x.LogicalLevelFrom <= 11))
+            .Select(x => x.Id)
+            .ToArray();
+        var advanced9709Ids = laterScopes
+            .Where(x => x.LogicalLevelFrom is 12 or 13)
+            .Select(x => x.Id)
+            .ToArray();
 
         var mappings = await (
             from mapping in db.CurriculumPedagogicalLessonOutcomes
@@ -277,7 +284,19 @@ public sealed class Phase29CambridgeCurriculumBaselineTests
         Assert.False(
             await db.CurriculumPedagogicalLessonOutcomes.AnyAsync(
                 x => x.FrameworkVersionId == state.FrameworkVersionId &&
-                     supportingIds.Contains(x.PedagogicalLessonId)));
+                     non9709SupportingIds.Contains(x.PedagogicalLessonId)));
+
+        var advancedMappings = await (
+            from mapping in db.CurriculumPedagogicalLessonOutcomes
+            join node in db.CurriculumPackContentNodes on mapping.OutcomeNodeId equals node.Id
+            where mapping.FrameworkVersionId == state.FrameworkVersionId &&
+                  advanced9709Ids.Contains(mapping.PedagogicalLessonId)
+            select node.Code).ToArrayAsync();
+
+        Assert.Equal(49, advancedMappings.Length);
+        Assert.All(
+            advancedMappings,
+            code => Assert.StartsWith("CAM:REF:9709:", code, StringComparison.Ordinal));
 
         Assert.False(
             await db.CurriculumPedagogicalLessons.AnyAsync(
