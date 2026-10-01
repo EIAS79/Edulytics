@@ -403,6 +403,28 @@ internal static class MeetingDemoProvisioner
         await db.SaveChangesAsync(cancellationToken);
 
         var schoolCount = await db.Schools.CountAsync(cancellationToken);
+        if (schoolCount != Schools.Length)
+        {
+            throw new InvalidOperationException(
+                $"Production rehearsal verification failed: expected {Schools.Length} schools, found {schoolCount}.");
+        }
+
+        var seededCodes = await db.Schools
+            .AsNoTracking()
+            .Select(x => x.SchoolCode)
+            .ToArrayAsync(cancellationToken);
+
+        var missingCodes = Schools
+            .Select(x => x.SchoolCode)
+            .Except(seededCodes, StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+
+        if (missingCodes.Length > 0)
+        {
+            throw new InvalidOperationException(
+                $"Production rehearsal verification failed: missing schools {string.Join(',', missingCodes)}.");
+        }
+
         var classCount = await db.ClassGroups.CountAsync(cancellationToken);
         var studentCount = await db.StudentProfiles.CountAsync(cancellationToken);
         var enrollmentCount = await db.StudentEnrollments.CountAsync(cancellationToken);
@@ -697,11 +719,19 @@ DELETE FROM "Schools";
             .OrderByDescending(x => x.UpdatedAtUtc)
             .FirstAsync(cancellationToken);
 
-        var levels = CurriculumLevelIdentityRegistry.ForPack(definition.PackCode);
-        if (levels.Count == 0)
+        var levels = CurriculumLevelIdentityRegistry
+            .ForPack(definition.PackCode)
+            .Where(
+                x =>
+                    x.LogicalLevel >= definition.MinimumLogicalLevel &&
+                    x.LogicalLevel <= definition.MaximumLogicalLevel)
+            .ToArray();
+
+        if (levels.Length == 0)
         {
             throw new InvalidOperationException(
-                $"No curriculum levels registered for {definition.PackCode}.");
+                $"No curriculum levels registered for {definition.PackCode} " +
+                $"stage={definition.StageKey} range={definition.MinimumLogicalLevel}-{definition.MaximumLogicalLevel}.");
         }
 
         var gradeByLogicalLevel = new Dictionary<int, GradeLevel>();
@@ -1506,13 +1536,26 @@ DELETE FROM "Schools";
         SchoolDefinition definition,
         IReadOnlyList<SeededClass> classes)
     {
-        return DeepLogicalLevels
+        return new[]
+            {
+                definition.PrimaryLoginLogicalLevel,
+                definition.SecondaryLoginLogicalLevel
+            }
+            .Distinct()
             .Select(
                 logicalLevel =>
                 {
                     var candidates = classes
                         .Where(x => x.Level.LogicalLevel == logicalLevel)
                         .ToArray();
+
+                    if (candidates.Length == 0)
+                    {
+                        throw new InvalidOperationException(
+                            $"Production rehearsal stage '{definition.StageKey}' " +
+                            $"does not contain configured deep logical level {logicalLevel} " +
+                            $"for {definition.PackCode}.");
+                    }
 
                     var preferred = PreferredPathway(
                         definition.PackCode,
