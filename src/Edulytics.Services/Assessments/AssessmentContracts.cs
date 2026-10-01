@@ -152,8 +152,7 @@ public sealed record CreateAssessmentRequest(
     AssessmentType AssessmentType = AssessmentType.Exam,
     AssessmentDeliveryMode DeliveryMode = AssessmentDeliveryMode.Offline,
     DateTime? AvailableFromLocal = null,
-    DateTime? DueAtLocal = null,
-    int? AttemptTimeLimitMinutes = null);
+    DateTime? DueAtLocal = null);
 
 public sealed record ReuseAssessmentRequest(
     Guid SourceAssessmentId,
@@ -168,8 +167,7 @@ public sealed record UpdateAssessmentRequest(
     byte[] RowVersion,
     AssessmentDeliveryMode? DeliveryMode = null,
     DateTime? AvailableFromLocal = null,
-    DateTime? DueAtLocal = null,
-    int? AttemptTimeLimitMinutes = null);
+    DateTime? DueAtLocal = null);
 
 public sealed record CreateAssessmentQuestionRequest(
     Guid AssessmentId,
