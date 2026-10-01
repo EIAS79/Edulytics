@@ -34,7 +34,15 @@ public sealed record YouTubeLessonVideo(
     long ViewCount,
     long LikeCount,
     int RelevancePercent,
-    bool IsPreferredChannel);
+    bool IsPreferredChannel)
+{
+    public int MatchPercent { get; init; }
+    public int ObjectiveMatchPercent { get; init; }
+    public int SkillMatchPercent { get; init; }
+    public int DifficultyMatchPercent { get; init; }
+    public int PrerequisiteSuitabilityPercent { get; init; }
+    public int TeachingQualityPercent { get; init; }
+}
 
 public sealed record YouTubeLessonDiscoveryResult(
     bool Available,
@@ -47,8 +55,21 @@ public sealed record YouTubeLessonDiscoveryResult(
     bool UsedPreferredChannels,
     string? Message);
 
+public sealed record YouTubeLessonDiscoveryRequest(
+    string LessonCode,
+    string LessonTitle,
+    string GradeLabel,
+    string FrameworkName,
+    string CultureCode,
+    string? LearnerQuery,
+    IReadOnlyList<string> LearningObjectives);
+
 public interface IYouTubeLessonDiscoveryService
 {
+    Task<YouTubeLessonDiscoveryResult> DiscoverAsync(
+        YouTubeLessonDiscoveryRequest request,
+        CancellationToken cancellationToken = default);
+
     Task<YouTubeLessonDiscoveryResult> DiscoverAsync(
         string lessonCode,
         string lessonTitle,
@@ -170,6 +191,176 @@ public static partial class YouTubeLessonChannelPolicy
     private static partial Regex LessonCodeLevelRegex();
 }
 
+
+internal sealed record YouTubeLessonSemanticContext(
+    string TopicQuery,
+    IReadOnlyList<string> LearningObjectives,
+    IReadOnlyList<string> SkillTerms,
+    IReadOnlyList<string> PrerequisiteTerms,
+    string DifficultyLabel);
+
+internal static class YouTubeLessonSemanticContextResolver
+{
+    private const string MappingResource =
+        "Edulytics.Core.Mathematics.Curriculum.lesson-skill-mappings.v1.json";
+
+    private static readonly Lazy<IReadOnlyDictionary<string, MappingSignals>>
+        MappingIndex = new(LoadMappings);
+
+    public static YouTubeLessonSemanticContext Resolve(
+        string lessonCode,
+        string lessonTitle,
+        IReadOnlyList<string> learningObjectives)
+    {
+        var objectives = (learningObjectives ?? [])
+            .Where(x => !string.IsNullOrWhiteSpace(x))
+            .Select(x => x.Trim())
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+
+        var skills = new List<string>();
+        var prerequisites = new List<string>();
+
+        if (MappingIndex.Value.TryGetValue(lessonCode, out var mapping))
+        {
+            skills.AddRange(mapping.PrimarySkills);
+            skills.AddRange(mapping.SecondarySkills);
+            prerequisites.AddRange(mapping.Prerequisites);
+        }
+
+        if (LessonPracticeContractRegistry.TryResolve(lessonCode, out var practice) &&
+            practice is not null)
+        {
+            skills.AddRange(practice.SkillIds);
+        }
+
+        var skillTerms = skills
+            .Where(x => !string.IsNullOrWhiteSpace(x))
+            .Select(ToSearchPhrase)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+
+        var prerequisiteTerms = prerequisites
+            .Where(x => !string.IsNullOrWhiteSpace(x))
+            .Select(ToSearchPhrase)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+
+        var difficulty = ResolveDifficulty(
+            lessonTitle,
+            objectives);
+
+        var topicQuery = string.Join(
+            " ",
+            new[] { lessonTitle }
+                .Concat(skillTerms.Take(2))
+                .Where(x => !string.IsNullOrWhiteSpace(x)));
+
+        return new(
+            topicQuery,
+            objectives,
+            skillTerms,
+            prerequisiteTerms,
+            difficulty);
+    }
+
+    private static string ResolveDifficulty(
+        string lessonTitle,
+        IReadOnlyList<string> objectives)
+    {
+        var text = string.Join(" ", new[] { lessonTitle }.Concat(objectives))
+            .ToLowerInvariant();
+
+        if (ContainsAny(
+                text,
+                "advanced", "reasoning", "proof", "justify", "modelling",
+                "modeling", "multi-step", "multistep", "challenge",
+                "investigate", "interpret", "evaluate"))
+        {
+            return "challenging";
+        }
+
+        if (ContainsAny(
+                text,
+                "basic", "introduction", "introductory", "foundation",
+                "recall", "simple", "recognise", "recognize"))
+        {
+            return "foundation";
+        }
+
+        return "standard";
+    }
+
+    private static bool ContainsAny(string text, params string[] values) =>
+        values.Any(value => text.Contains(value, StringComparison.OrdinalIgnoreCase));
+
+    private static string ToSearchPhrase(string value) =>
+        Regex.Replace(
+            value.Replace('.', ' ').Replace('_', ' ').Replace('-', ' '),
+            @"\s+",
+            " ").Trim();
+
+    private static IReadOnlyDictionary<string, MappingSignals> LoadMappings()
+    {
+        var assembly = typeof(LessonPracticeContractRegistry).Assembly;
+        using var stream = assembly.GetManifestResourceStream(MappingResource);
+        if (stream is null)
+            return new Dictionary<string, MappingSignals>(StringComparer.Ordinal);
+
+        using var document = JsonDocument.Parse(stream);
+        var result = new Dictionary<string, MappingSignals>(StringComparer.Ordinal);
+
+        if (!document.RootElement.TryGetProperty("mappings", out var mappings) ||
+            mappings.ValueKind != JsonValueKind.Array)
+        {
+            return result;
+        }
+
+        foreach (var row in mappings.EnumerateArray())
+        {
+            var lessonCode = ReadString(row, "lessonCode");
+            if (string.IsNullOrWhiteSpace(lessonCode))
+                continue;
+
+            result[lessonCode] = new(
+                ReadStringArray(row, "primarySkills"),
+                ReadStringArray(row, "secondarySkills"),
+                ReadStringArray(row, "prerequisites"));
+        }
+
+        return result;
+    }
+
+    private static string ReadString(JsonElement element, string property) =>
+        element.TryGetProperty(property, out var node) &&
+        node.ValueKind == JsonValueKind.String
+            ? node.GetString() ?? string.Empty
+            : string.Empty;
+
+    private static IReadOnlyList<string> ReadStringArray(
+        JsonElement element,
+        string property)
+    {
+        if (!element.TryGetProperty(property, out var node) ||
+            node.ValueKind != JsonValueKind.Array)
+        {
+            return [];
+        }
+
+        return node.EnumerateArray()
+            .Where(x => x.ValueKind == JsonValueKind.String)
+            .Select(x => x.GetString())
+            .Where(x => !string.IsNullOrWhiteSpace(x))
+            .Cast<string>()
+            .ToArray();
+    }
+
+    private sealed record MappingSignals(
+        IReadOnlyList<string> PrimarySkills,
+        IReadOnlyList<string> SecondarySkills,
+        IReadOnlyList<string> Prerequisites);
+}
+
 public sealed partial class YouTubeLessonDiscoveryService :
     IYouTubeLessonDiscoveryService
 {
@@ -203,28 +394,52 @@ public sealed partial class YouTubeLessonDiscoveryService :
         _options = options;
     }
 
-    public async Task<YouTubeLessonDiscoveryResult> DiscoverAsync(
+    public Task<YouTubeLessonDiscoveryResult> DiscoverAsync(
         string lessonCode,
         string lessonTitle,
         string gradeLabel,
         string cultureCode,
         string? learnerQuery,
+        CancellationToken cancellationToken = default) =>
+        DiscoverAsync(
+            new YouTubeLessonDiscoveryRequest(
+                lessonCode,
+                lessonTitle,
+                gradeLabel,
+                string.Empty,
+                cultureCode,
+                learnerQuery,
+                []),
+            cancellationToken);
+
+    public async Task<YouTubeLessonDiscoveryResult> DiscoverAsync(
+        YouTubeLessonDiscoveryRequest request,
         CancellationToken cancellationToken = default)
     {
-        ArgumentException.ThrowIfNullOrWhiteSpace(lessonTitle);
+        ArgumentException.ThrowIfNullOrWhiteSpace(request.LessonTitle);
+
+        var lessonCode = request.LessonCode;
+        var lessonTitle = request.LessonTitle;
+        var gradeLabel = request.GradeLabel;
+        var cultureCode = request.CultureCode;
+        var learnerQuery = request.LearnerQuery;
 
         var policy = YouTubeLessonChannelPolicy.Resolve(
             lessonCode,
             gradeLabel);
 
-        var lessonTopicQuery = BuildQuery(
+        var semanticContext = YouTubeLessonSemanticContextResolver.Resolve(
             lessonCode,
             lessonTitle,
-            learnerQuery: null);
+            request.LearningObjectives);
+
+        var lessonTopicQuery = semanticContext.TopicQuery;
 
         var query = BuildQuery(
-            lessonCode,
             lessonTitle,
+            gradeLabel,
+            request.FrameworkName,
+            semanticContext,
             learnerQuery);
 
         var preferredLinks = policy.Channels
@@ -275,6 +490,11 @@ public sealed partial class YouTubeLessonDiscoveryService :
                 10).ToString(
                     CultureInfo.InvariantCulture),
             lessonCode.Trim(),
+            request.FrameworkName.Trim(),
+            string.Join("|", semanticContext.LearningObjectives),
+            string.Join("|", semanticContext.SkillTerms),
+            string.Join("|", semanticContext.PrerequisiteTerms),
+            semanticContext.DifficultyLabel,
             lessonTopicQuery,
             query);
 
@@ -304,7 +524,7 @@ public sealed partial class YouTubeLessonDiscoveryService :
 
             var candidates = await HydrateVideosAsync(
                 searchResults,
-                lessonTopicQuery,
+                semanticContext,
                 preferredIds,
                 cancellationToken);
 
@@ -313,20 +533,13 @@ public sealed partial class YouTubeLessonDiscoveryService :
                 0,
                 100);
 
-            var preferredCandidates = candidates
-                .Where(x =>
-                    x.IsPreferredChannel &&
-                    x.RelevancePercent >= minimum)
+            var ranked = candidates
+                .Where(x => x.RelevancePercent >= minimum)
                 .OrderByDescending(x => x.RankScore)
                 .ToArray();
 
-            var usedPreferred = preferredCandidates.Length > 0;
-            var ranked = usedPreferred
-                ? preferredCandidates
-                : candidates
-                    .Where(x => x.RelevancePercent >= minimum)
-                    .OrderByDescending(x => x.RankScore)
-                    .ToArray();
+            var usedPreferred =
+                ranked.FirstOrDefault()?.IsPreferredChannel == true;
 
             // MinimumRelevancePercent is a hard safety/quality boundary.
             // If no candidate clears it, return no discovered video rather
@@ -350,8 +563,8 @@ public sealed partial class YouTubeLessonDiscoveryService :
                 featured is null
                     ? "No embeddable YouTube result passed the lesson relevance checks."
                     : usedPreferred
-                        ? "Selected from the preferred grade-band teaching channels."
-                        : "No strong preferred-channel result was returned, so the highest-ranked relevant YouTube result was used.");
+                        ? "Selected as the strongest lesson match; preferred-channel trust contributed a small ranking bonus."
+                        : "Selected as the strongest lesson match across the relevant YouTube results.");
 
             StoreCachedResult(
                 cacheKey,
@@ -625,7 +838,7 @@ public sealed partial class YouTubeLessonDiscoveryService :
 
     private async Task<IReadOnlyList<RankedVideo>> HydrateVideosAsync(
         IReadOnlyList<SearchHit> searchResults,
-        string lessonTopicQuery,
+        YouTubeLessonSemanticContext semanticContext,
         HashSet<string> preferredChannelIds,
         CancellationToken cancellationToken)
     {
@@ -699,6 +912,7 @@ public sealed partial class YouTubeLessonDiscoveryService :
                         ReadLong(statistics, "viewCount"),
                         ReadLong(statistics, "likeCount"),
                         FormatDuration(GetString(contentDetails, "duration")),
+                        ReadDurationSeconds(GetString(contentDetails, "duration")),
                         preferredChannelIds.Contains(channelId)));
             }
         }
@@ -706,66 +920,303 @@ public sealed partial class YouTubeLessonDiscoveryService :
         if (hydrated.Count == 0)
             return [];
 
-        var maxViewLog = hydrated.Max(x =>
-            Math.Log10(Math.Max(1, x.ViewCount) + 1));
-        var maxLikeLog = hydrated.Max(x =>
-            Math.Log10(Math.Max(1, x.LikeCount) + 1));
-
-        return hydrated
+        var semanticRanked = hydrated
             .Select(video =>
             {
-                // Hard lesson relevance is measured only against the
-                // immutable lesson title + verified skill contract. Learner
-                // refinement may influence YouTube's result order, but it can
-                // never make an off-topic video pass the lesson gate.
-                var relevance = CalculateRelevance(
-                    lessonTopicQuery,
+                // Learner refinement can affect YouTube's search order, but
+                // every hard lesson signal is calculated from immutable lesson
+                // metadata: topic, official objectives, skill mapping,
+                // difficulty and prerequisites.
+                var topic = CalculateRelevance(
+                    semanticContext.TopicQuery,
                     video.Title,
                     video.Description);
+                var objective = CalculateAggregateMatch(
+                    semanticContext.LearningObjectives,
+                    video.Title,
+                    video.Description,
+                    neutralWhenEmpty: .5d);
+                var skill = CalculateAggregateMatch(
+                    semanticContext.SkillTerms,
+                    video.Title,
+                    video.Description,
+                    neutralWhenEmpty: .5d);
+                var prerequisite = CalculateAggregateMatch(
+                    semanticContext.PrerequisiteTerms,
+                    video.Title,
+                    video.Description,
+                    neutralWhenEmpty: .75d);
+                var difficulty = CalculateDifficultyMatch(
+                    semanticContext.DifficultyLabel,
+                    video.Title,
+                    video.Description);
+                var teaching = CalculateTeachingQuality(
+                    video.Title,
+                    video.Description,
+                    video.DurationSeconds);
 
-                var viewSignal = maxViewLog <= 0
-                    ? 0
-                    : Math.Log10(Math.Max(1, video.ViewCount) + 1) /
-                      maxViewLog;
+                var semanticScore =
+                    (topic * .20d) +
+                    (objective * .25d) +
+                    (skill * .20d) +
+                    (difficulty * .12d) +
+                    (prerequisite * .08d) +
+                    (teaching * .08d);
 
-                var likeSignal = maxLikeLog <= 0
-                    ? 0
-                    : Math.Log10(Math.Max(1, video.LikeCount) + 1) /
-                      maxLikeLog;
-
-                var positionSignal =
-                    1d - Math.Min(1d, (video.Hit.Position - 1d) / 50d);
-
-                var rankScore =
-                    (relevance * .75d) +
-                    (viewSignal * .14d) +
-                    (likeSignal * .06d) +
-                    (positionSignal * .05d);
-
-                var relevancePercent =
-                    (int)Math.Round(
-                        Math.Clamp(relevance, 0d, 1d) * 100d,
-                        MidpointRounding.AwayFromZero);
+                var topicPercent = Percent(topic);
+                var candidate = new YouTubeLessonVideo(
+                    video.Hit.VideoId,
+                    video.Title,
+                    video.ChannelTitle,
+                    $"https://www.youtube.com/watch?v={video.Hit.VideoId}",
+                    $"https://www.youtube-nocookie.com/embed/{video.Hit.VideoId}?rel=0&modestbranding=1",
+                    video.ThumbnailUrl,
+                    video.DurationLabel,
+                    video.ViewCount,
+                    video.LikeCount,
+                    topicPercent,
+                    video.IsPreferred)
+                {
+                    ObjectiveMatchPercent = Percent(objective),
+                    SkillMatchPercent = Percent(skill),
+                    DifficultyMatchPercent = Percent(difficulty),
+                    PrerequisiteSuitabilityPercent = Percent(prerequisite),
+                    TeachingQualityPercent = Percent(teaching)
+                };
 
                 return new RankedVideo(
-                    new YouTubeLessonVideo(
-                        video.Hit.VideoId,
-                        video.Title,
-                        video.ChannelTitle,
-                        $"https://www.youtube.com/watch?v={video.Hit.VideoId}",
-                        $"https://www.youtube-nocookie.com/embed/{video.Hit.VideoId}?rel=0&modestbranding=1",
-                        video.ThumbnailUrl,
-                        video.DurationLabel,
-                        video.ViewCount,
-                        video.LikeCount,
-                        relevancePercent,
-                        video.IsPreferred),
-                    relevancePercent,
+                    candidate,
+                    topicPercent,
                     video.IsPreferred,
-                    rankScore);
+                    semanticScore,
+                    semanticScore);
+            })
+            .OrderByDescending(x => x.SemanticScore)
+            .ToArray();
+
+        // Diversity is applied before channel and popularity bonuses so a
+        // duplicate cannot survive merely because it is popular or preferred.
+        var diverse = RemoveDuplicateOrSimilarVideos(semanticRanked);
+        if (diverse.Count == 0)
+            return [];
+
+        var maxViewLog = diverse.Max(x =>
+            Math.Log10(Math.Max(1, x.Video.ViewCount) + 1));
+        var maxLikeLog = diverse.Max(x =>
+            Math.Log10(Math.Max(1, x.Video.LikeCount) + 1));
+
+        return diverse
+            .Select(video =>
+            {
+                var viewSignal = maxViewLog <= 0
+                    ? 0
+                    : Math.Log10(Math.Max(1, video.Video.ViewCount) + 1) /
+                      maxViewLog;
+                var likeSignal = maxLikeLog <= 0
+                    ? 0
+                    : Math.Log10(Math.Max(1, video.Video.LikeCount) + 1) /
+                      maxLikeLog;
+                var position = searchResults
+                    .First(x => x.VideoId == video.Video.VideoId)
+                    .Position;
+                var positionSignal =
+                    1d - Math.Min(1d, (position - 1d) / 50d);
+
+                var youtubeSignal =
+                    (viewSignal * .50d) +
+                    (likeSignal * .30d) +
+                    (positionSignal * .20d);
+
+                var preferredBonus = video.IsPreferredChannel ? .04d : 0d;
+                var finalScore =
+                    video.SemanticScore +
+                    preferredBonus +
+                    (youtubeSignal * .03d);
+
+                return video with
+                {
+                    Video = video.Video with
+                    {
+                        MatchPercent = Percent(finalScore)
+                    },
+                    RankScore = finalScore
+                };
             })
             .OrderByDescending(x => x.RankScore)
             .ToArray();
+    }
+
+    private static double CalculateAggregateMatch(
+        IReadOnlyList<string> signals,
+        string title,
+        string description,
+        double neutralWhenEmpty)
+    {
+        if (signals.Count == 0)
+            return neutralWhenEmpty;
+
+        var scores = signals
+            .Select(signal => CalculateRelevance(signal, title, description))
+            .OrderByDescending(x => x)
+            .Take(2)
+            .ToArray();
+
+        return scores.Length == 1
+            ? scores[0]
+            : (scores[0] * .65d) + (scores[1] * .35d);
+    }
+
+    private static double CalculateDifficultyMatch(
+        string target,
+        string title,
+        string description)
+    {
+        var candidate = ClassifyDifficulty($"{title} {description}");
+        if (string.Equals(candidate, target, StringComparison.Ordinal))
+            return 1d;
+
+        return (target, candidate) switch
+        {
+            ("foundation", "standard") or
+            ("standard", "foundation") or
+            ("standard", "challenging") or
+            ("challenging", "standard") => .62d,
+            _ => .28d
+        };
+    }
+
+    private static string ClassifyDifficulty(string value)
+    {
+        var text = value.ToLowerInvariant();
+        if (new[]
+            {
+                "advanced", "reasoning", "proof", "modelling", "modeling",
+                "challenge", "exam", "hard", "multi-step", "multistep",
+                "application", "interpret"
+            }.Any(x => text.Contains(x, StringComparison.Ordinal)))
+        {
+            return "challenging";
+        }
+
+        if (new[]
+            {
+                "basic", "beginner", "introduction", "intro", "foundation",
+                "simple", "easy", "for beginners"
+            }.Any(x => text.Contains(x, StringComparison.Ordinal)))
+        {
+            return "foundation";
+        }
+
+        return "standard";
+    }
+
+    private static double CalculateTeachingQuality(
+        string title,
+        string description,
+        long durationSeconds)
+    {
+        var text = $"{title} {description}".ToLowerInvariant();
+        var instructionalTerms = new[]
+        {
+            "explain", "explained", "lesson", "tutorial", "worked example",
+            "examples", "step by step", "concept", "reasoning", "practice",
+            "how to", "understand"
+        };
+
+        var score = .42d;
+        score += Math.Min(
+            .32d,
+            instructionalTerms.Count(term =>
+                text.Contains(term, StringComparison.Ordinal)) * .08d);
+
+        if (durationSeconds is >= 240 and <= 2700)
+            score += .16d;
+        else if (durationSeconds is >= 120 and <= 5400)
+            score += .08d;
+        else if (durationSeconds is > 0 and < 60)
+            score -= .22d;
+
+        if (text.Contains("#shorts", StringComparison.Ordinal) ||
+            text.Contains("shorts", StringComparison.Ordinal))
+        {
+            score -= .12d;
+        }
+
+        if (new[] { "hack", "trick only", "answer only" }
+            .Any(term => text.Contains(term, StringComparison.Ordinal)))
+        {
+            score -= .08d;
+        }
+
+        return Math.Clamp(score, 0d, 1d);
+    }
+
+    private static IReadOnlyList<RankedVideo> RemoveDuplicateOrSimilarVideos(
+        IReadOnlyList<RankedVideo> ranked)
+    {
+        var selected = new List<RankedVideo>();
+
+        foreach (var candidate in ranked)
+        {
+            if (selected.Any(existing =>
+                    AreSimilar(existing.Video, candidate.Video)))
+            {
+                continue;
+            }
+
+            selected.Add(candidate);
+        }
+
+        return selected;
+    }
+
+    private static bool AreSimilar(
+        YouTubeLessonVideo left,
+        YouTubeLessonVideo right)
+    {
+        if (string.Equals(left.VideoId, right.VideoId, StringComparison.Ordinal))
+            return true;
+
+        var leftTokens = SimilarityTokens(left.Title);
+        var rightTokens = SimilarityTokens(right.Title);
+        if (leftTokens.Count == 0 || rightTokens.Count == 0)
+            return false;
+
+        var intersection = leftTokens.Intersect(rightTokens).Count();
+        var union = leftTokens.Union(rightTokens).Count();
+        var similarity = union == 0 ? 0d : (double)intersection / union;
+
+        var sameChannel = string.Equals(
+            left.ChannelTitle,
+            right.ChannelTitle,
+            StringComparison.OrdinalIgnoreCase);
+
+        return similarity >= (sameChannel ? .70d : .84d);
+    }
+
+    private static HashSet<string> SimilarityTokens(string title) =>
+        Tokenize(title)
+            .Where(token => !StopWords.Contains(token))
+            .ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+    private static int Percent(double value) =>
+        (int)Math.Round(
+            Math.Clamp(value, 0d, 1d) * 100d,
+            MidpointRounding.AwayFromZero);
+
+    private static long ReadDurationSeconds(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+            return 0;
+
+        try
+        {
+            return (long)Math.Round(XmlConvert.ToTimeSpan(value).TotalSeconds);
+        }
+        catch (FormatException)
+        {
+            return 0;
+        }
     }
 
     private static void StoreCachedResult(
@@ -842,24 +1293,12 @@ public sealed partial class YouTubeLessonDiscoveryService :
             " ").Trim();
 
     private static string BuildQuery(
-        string lessonCode,
         string lessonTitle,
+        string gradeLabel,
+        string frameworkName,
+        YouTubeLessonSemanticContext context,
         string? learnerQuery)
     {
-        string skillLabel = string.Empty;
-        if (LessonPracticeContractRegistry.TryResolve(
-                lessonCode,
-                out var contract) &&
-            contract is not null)
-        {
-            skillLabel = string.Join(
-                " ",
-                contract.SkillId
-                    .Split(
-                        ['.', '_', '-'],
-                        StringSplitOptions.RemoveEmptyEntries));
-        }
-
         var learner = Regex.Replace(
             learnerQuery ?? string.Empty,
             @"\s+",
@@ -871,19 +1310,36 @@ public sealed partial class YouTubeLessonDiscoveryService :
                 .Take(80)
                 .Select(rune => rune.ToString()));
 
+        var objective = context.LearningObjectives.FirstOrDefault() ?? string.Empty;
+        objective = string.Concat(objective.EnumerateRunes().Take(120).Select(x => x.ToString()));
+
+        var difficultyPhrase = context.DifficultyLabel switch
+        {
+            "challenging" => "advanced reasoning",
+            "foundation" => "foundation explanation",
+            _ => "worked examples"
+        };
+
         var pieces = new[]
         {
             lessonTitle.Trim(),
-            skillLabel,
+            context.SkillTerms.FirstOrDefault() ?? string.Empty,
+            objective,
+            gradeLabel,
+            frameworkName,
+            difficultyPhrase,
             learner,
             "math"
         }
         .Where(x => !string.IsNullOrWhiteSpace(x));
 
-        return Regex.Replace(
+        var query = Regex.Replace(
             string.Join(" ", pieces),
             @"\s+",
             " ").Trim();
+
+        return string.Concat(
+            query.EnumerateRunes().Take(350).Select(x => x.ToString()));
     }
 
     private static string BuildChannelSearchUrl(
@@ -998,11 +1454,13 @@ public sealed partial class YouTubeLessonDiscoveryService :
         long ViewCount,
         long LikeCount,
         string DurationLabel,
+        long DurationSeconds,
         bool IsPreferred);
 
     private sealed record RankedVideo(
         YouTubeLessonVideo Video,
         int RelevancePercent,
         bool IsPreferredChannel,
+        double SemanticScore,
         double RankScore);
 }

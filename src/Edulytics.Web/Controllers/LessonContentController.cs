@@ -3,6 +3,8 @@ using System.Security.Claims;
 using Edulytics.Core.Constants;
 using Edulytics.Services.LessonContent;
 using Edulytics.Web.ViewModels.LessonContent;
+using Edulytics.Web.Resilience;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace Edulytics.Web.Controllers;
@@ -12,7 +14,15 @@ namespace Edulytics.Web.Controllers;
 public sealed class LessonContentController : Controller
 {
     private readonly ILessonContentService _lessons;
-    public LessonContentController(ILessonContentService lessons)=>_lessons=lessons;
+    private readonly IYouTubeLessonDiscoveryService _youTubeLessons;
+
+    public LessonContentController(
+        ILessonContentService lessons,
+        IYouTubeLessonDiscoveryService youTubeLessons)
+    {
+        _lessons = lessons;
+        _youTubeLessons = youTubeLessons;
+    }
 
     [HttpGet("")]
     public async Task<IActionResult> Index(
@@ -60,6 +70,42 @@ public sealed class LessonContentController : Controller
         return View(
             new LessonContentDetailViewModel(
                 result.Value));
+    }
+
+    [HttpGet("{id:guid}/youtube")]
+    [EnableRateLimiting(BackendResiliencePolicyNames.YouTubeLessonSearch)]
+    public async Task<IActionResult> LessonYouTube(
+        Guid id,
+        string? q,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        var lesson = await _lessons.GetStaffLessonAsync(
+            actorId,
+            id,
+            CultureInfo.CurrentUICulture.Name,
+            cancellationToken);
+
+        if (lesson.Value is null)
+            return HandleError(lesson.Error);
+
+        var result = await _youTubeLessons.DiscoverAsync(
+            new YouTubeLessonDiscoveryRequest(
+                lesson.Value.LessonCode,
+                lesson.Value.LessonTitle,
+                lesson.Value.GradeName,
+                lesson.Value.FrameworkName,
+                CultureInfo.CurrentUICulture.Name,
+                q,
+                lesson.Value.Outcomes
+                    .Select(x => x.Description)
+                    .Where(x => !string.IsNullOrWhiteSpace(x))
+                    .ToArray()),
+            cancellationToken);
+
+        return Json(result);
     }
 
     private IActionResult HandleError(LessonContentErrorCode? error)=>

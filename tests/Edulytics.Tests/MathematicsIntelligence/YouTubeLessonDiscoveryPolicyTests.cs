@@ -341,6 +341,64 @@ public sealed class YouTubeLessonDiscoveryPolicyTests
             attribute!.PolicyName);
     }
 
+    [Fact]
+    public void StaffYouTubeEndpoint_UsesSameActorPartitionedRatePolicy()
+    {
+        var action =
+            typeof(LessonContentController)
+                .GetMethod(
+                    nameof(LessonContentController.LessonYouTube));
+
+        Assert.NotNull(action);
+
+        var attribute =
+            action!.GetCustomAttribute<
+                EnableRateLimitingAttribute>();
+
+        Assert.NotNull(attribute);
+        Assert.Equal(
+            BackendResiliencePolicyNames.YouTubeLessonSearch,
+            attribute!.PolicyName);
+    }
+
+    [Fact]
+    public async Task SemanticDiscovery_ExposesFinalLessonMatchSignals()
+    {
+        using var client =
+            new HttpClient(
+                new SemanticYouTubeHandler());
+
+        var service =
+            new YouTubeLessonDiscoveryService(
+                client,
+                new YouTubeLessonDiscoveryOptions
+                {
+                    Enabled = true,
+                    ApiKey = "semantic-test-key",
+                    MinimumRelevancePercent = 20,
+                    SearchResultCount = 8,
+                    RelatedResultCount = 6
+                });
+
+        var result = await service.DiscoverAsync(
+            new YouTubeLessonDiscoveryRequest(
+                "PED:TEST:G10:LINEAR-MODELLING",
+                "Linear modelling — advanced reasoning",
+                "Grade 10",
+                "Cambridge Mathematics",
+                "en",
+                null,
+                [
+                    "Construct and interpret linear models from contextual information."
+                ]));
+
+        Assert.NotNull(result.Featured);
+        Assert.True(result.Featured!.MatchPercent > 0);
+        Assert.True(result.Featured.ObjectiveMatchPercent > 0);
+        Assert.True(result.Featured.DifficultyMatchPercent > 0);
+        Assert.True(result.Featured.TeachingQualityPercent > 0);
+    }
+
     private static Task<YouTubeLessonDiscoveryResult> DiscoverAsync(
         string lessonCode,
         string title,
@@ -459,6 +517,81 @@ public sealed class YouTubeLessonDiscoveryPolicyTests
 
             return new HttpResponseMessage(
                 HttpStatusCode.OK);
+        }
+    }
+
+    private sealed class SemanticYouTubeHandler
+        : HttpMessageHandler
+    {
+        protected override Task<HttpResponseMessage> SendAsync(
+            HttpRequestMessage request,
+            CancellationToken cancellationToken)
+        {
+            var path = request.RequestUri?.AbsolutePath ?? string.Empty;
+            var json =
+                path.EndsWith("/channels", StringComparison.Ordinal)
+                    ? """{"items":[]}"""
+                    : path.EndsWith("/search", StringComparison.Ordinal)
+                        ? """
+                          {
+                            "items": [
+                              {
+                                "id": { "videoId": "linear-model-1" },
+                                "snippet": {
+                                  "title": "Linear modelling advanced reasoning worked examples",
+                                  "channelId": "UC-semantic",
+                                  "channelTitle": "Math Teaching",
+                                  "description": "Construct and interpret linear models from contextual information with step by step examples.",
+                                  "thumbnails": {
+                                    "high": {
+                                      "url": "https://i.ytimg.com/vi/linear-model-1/hqdefault.jpg"
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                          """
+                        : """
+                          {
+                            "items": [
+                              {
+                                "id": "linear-model-1",
+                                "status": {
+                                  "embeddable": true,
+                                  "privacyStatus": "public"
+                                },
+                                "snippet": {
+                                  "title": "Linear modelling advanced reasoning worked examples",
+                                  "channelId": "UC-semantic",
+                                  "channelTitle": "Math Teaching",
+                                  "description": "Construct and interpret linear models from contextual information with step by step examples.",
+                                  "thumbnails": {
+                                    "high": {
+                                      "url": "https://i.ytimg.com/vi/linear-model-1/hqdefault.jpg"
+                                    }
+                                  }
+                                },
+                                "contentDetails": {
+                                  "duration": "PT12M"
+                                },
+                                "statistics": {
+                                  "viewCount": "5000",
+                                  "likeCount": "350"
+                                }
+                              }
+                            ]
+                          }
+                          """;
+
+            return Task.FromResult(
+                new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(
+                        json,
+                        Encoding.UTF8,
+                        "application/json")
+                });
         }
     }
 

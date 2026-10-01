@@ -301,11 +301,17 @@ public sealed class StudentPortalController : Controller
         }
 
         var result = await _youTubeLessons.DiscoverAsync(
-            lesson.Value.LessonCode,
-            lesson.Value.Title,
-            lesson.Value.GradeName,
-            CultureInfo.CurrentUICulture.Name,
-            q,
+            new YouTubeLessonDiscoveryRequest(
+                lesson.Value.LessonCode,
+                lesson.Value.Title,
+                lesson.Value.GradeName,
+                lesson.Value.FrameworkName,
+                CultureInfo.CurrentUICulture.Name,
+                q,
+                lesson.Value.Outcomes
+                    .Select(x => x.Description)
+                    .Where(x => !string.IsNullOrWhiteSpace(x))
+                    .ToArray()),
             cancellationToken);
 
         return Json(result);

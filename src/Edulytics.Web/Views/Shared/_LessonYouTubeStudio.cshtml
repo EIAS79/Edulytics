@@ -1,4 +1,4 @@
-@model Edulytics.Services.LessonContent.StudentLessonDetail
+@model Edulytics.Web.ViewModels.LessonContent.LessonYouTubeStudioViewModel
 @using Edulytics.Core.Curriculum
 @using Edulytics.Services.LessonContent
 @using System.Globalization
@@ -37,10 +37,7 @@
         }
     }
 
-    var endpoint = Url.Action(
-        "LessonYouTube",
-        "StudentPortal",
-        new { id = Model.Id }) ?? string.Empty;
+    var endpoint = Model.Endpoint;
 
     var sectionTitle = language switch
     {
@@ -50,9 +47,9 @@
     };
     var sectionIntro = language switch
     {
-        "pl" => "Filmy są wyszukiwane wyłącznie w YouTube i dopasowywane do tematu tej lekcji. Najpierw sprawdzamy pięć kanałów dobranych do poziomu nauczania.",
-        "ar" => "يتم البحث داخل YouTube فقط وربط النتائج بموضوع هذا الدرس. نعطي الأولوية أولاً لخمسة قنوات تعليمية مناسبة للمرحلة.",
-        _ => "Videos are searched inside YouTube only and matched to this lesson. We prioritize five teaching channels selected for the learner's grade band."
+        "pl" => "Filmy są oceniane względem tematu, celu lekcji, umiejętności, trudności i wymagań wstępnych. Preferowane kanały otrzymują niewielki bonus, ale nie blokują lepszego dopasowania.",
+        "ar" => "يتم تقييم الفيديو حسب موضوع الدرس والهدف التعليمي والمهارة والصعوبة والمتطلبات السابقة. القنوات المفضلة تحصل على أفضلية بسيطة فقط ولا تمنع اختيار فيديو أكثر تطابقًا.",
+        _ => "Videos are ranked against the lesson topic, learning objective, skill, difficulty and prerequisites. Preferred channels receive a small trust bonus, but never override a stronger lesson match."
     };
     var searchPlaceholder = language switch
     {
@@ -80,9 +77,9 @@
     };
     var matchLabel = language switch
     {
-        "pl" => "Dopasowanie do tematu",
-        "ar" => "مدى التطابق مع الموضوع",
-        _ => "Topic match"
+        "pl" => "Dopasowanie do lekcji",
+        "ar" => "مدى التطابق مع الدرس",
+        _ => "Lesson match"
     };
     var loadingLabel = language switch
     {
