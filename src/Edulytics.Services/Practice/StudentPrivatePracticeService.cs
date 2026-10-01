@@ -92,12 +92,17 @@ public sealed class StudentPrivatePracticeService(
         CancellationToken cancellationToken = default)
     {
         var questionLimit = QuestionLimitForScope(request.Scope);
-        if (questionLimit == 0 ||
-            request.QuestionCount < 1 ||
-            request.QuestionCount > questionLimit ||
-            (request.UseLessonDifficultyProgression &&
-             (request.Scope != StudentPrivatePracticeScope.Lesson ||
-              request.QuestionCount != 8)))
+        var validProgressionRequest =
+            request.UseLessonDifficultyProgression &&
+            request.Scope == StudentPrivatePracticeScope.Lesson &&
+            request.QuestionCount == 8;
+        var validPersonalTestCount =
+            !request.UseLessonDifficultyProgression &&
+            questionLimit > 0 &&
+            request.QuestionCount >= 1 &&
+            request.QuestionCount <= questionLimit;
+
+        if (!validProgressionRequest && !validPersonalTestCount)
         {
             return StudentPrivatePracticeResult.Failure(
                 StudentPrivatePracticeError.InvalidQuestionCount);
