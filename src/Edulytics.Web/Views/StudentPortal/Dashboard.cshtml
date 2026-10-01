@@ -36,6 +36,13 @@
                     "yyyy-MM-dd h:mm tt",
                     CultureInfo.InvariantCulture)
             : "—";
+
+    var nowUtc = DateTime.UtcNow;
+    DateTime? nextBoundaryUtc = Model.Workspace.Assessments
+        .Select(x => x.NextStateChangeAtUtc)
+        .Where(x => x.HasValue && x.Value > nowUtc)
+        .OrderBy(x => x)
+        .FirstOrDefault();
 }
 
 <section class="student-hero student-dashboard-hero">
@@ -246,10 +253,6 @@
                     };
                     var taskSchedule = item.AssessmentType switch
                     {
-                        AssessmentType.Exam when item.AvailableFromUtc.HasValue =>
-                            $"{S["TaskStarts"].Value}: {LocalTime(item.AvailableFromUtc)}",
-                        AssessmentType.Exam when item.DueAtUtc.HasValue =>
-                            $"{S["TaskCloses"].Value}: {LocalTime(item.DueAtUtc)}",
                         AssessmentType.Homework when item.DueAtUtc.HasValue =>
                             $"{S["TaskDue"].Value}: {LocalTime(item.DueAtUtc)}",
                         AssessmentType.Worksheet =>
@@ -262,7 +265,21 @@
                             <span class="student-dashboard-task-type">@taskTypeLabel</span>
                             <strong>@item.Title</strong>
                             <span>@item.SubjectName · @item.ClassName</span>
-                            <small>@taskSchedule</small>
+                            @if (item.AssessmentType == AssessmentType.Exam)
+                            {
+                                @if (item.AvailableFromUtc.HasValue)
+                                {
+                                    <small>@S["TaskStarts"]: @LocalTime(item.AvailableFromUtc)</small>
+                                }
+                                @if (item.DueAtUtc.HasValue)
+                                {
+                                    <small>@S["TaskCloses"]: @LocalTime(item.DueAtUtc)</small>
+                                }
+                            }
+                            else
+                            {
+                                <small>@taskSchedule</small>
+                            }
                         </div>
                         <a class="student-button student-button-primary"
                            asp-action="TakeAssessment"
@@ -344,3 +361,27 @@
         </div>
     }
 </section>
+
+@if (nextBoundaryUtc.HasValue)
+{
+    var nextBoundaryIso = DateTime.SpecifyKind(nextBoundaryUtc.Value, DateTimeKind.Utc).ToString("O");
+    <script>
+    (() => {
+        const target = Date.parse(@Html.Raw(System.Text.Json.JsonSerializer.Serialize(nextBoundaryIso)));
+        if (!Number.isFinite(target)) return;
+        const maxDelay = 2147483000;
+        const refreshAtBoundary = () => {
+            const remaining = target - Date.now();
+            if (remaining <= 0) {
+                window.location.reload();
+                return;
+            }
+            window.setTimeout(refreshAtBoundary, Math.min(remaining + 250, maxDelay));
+        };
+        refreshAtBoundary();
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden && Date.now() >= target) window.location.reload();
+        });
+    })();
+    </script>
+}
