@@ -61,6 +61,54 @@ public sealed class PrivatePracticeUxContractTests
     }
 
     [Fact]
+    public void PrivatePracticeScopeLimits_AreFiveTenFifteenAndClientClampsInput()
+    {
+        var view = Read(
+            "src/Edulytics.Web/Views/StudentPractice/Index.cshtml");
+
+        Assert.Contains(
+            "StudentPrivatePracticeScope.Lesson\" data-question-limit=\"5\"",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "StudentPrivatePracticeScope.Unit\" data-question-limit=\"10\"",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "StudentPrivatePracticeScope.WholeCurriculum\" data-question-limit=\"15\"",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "count.max = String(limit)",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "if (current > limit) count.value = String(limit)",
+            view,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void LessonDifficultyOptions_AreDisabledFromActualLessonCapabilities()
+    {
+        var view = Read(
+            "src/Edulytics.Web/Views/StudentPractice/Index.cshtml");
+
+        Assert.Contains(
+            "data-supported-difficulties",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "option.disabled = isLesson",
+            view,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "lesson?.addEventListener('change', apply)",
+            view,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void PersonalTest_SubmitsAllAnswersBeforeShowingResults()
     {
         var controller = Read(
