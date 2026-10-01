@@ -1,3 +1,4 @@
+using Edulytics.Core.Assessments;
 using Edulytics.Core.Enums;
 
 namespace Edulytics.Services.StudentPortal;
@@ -75,6 +76,10 @@ public sealed record StudentAssessmentItem(
     public DateTime? AvailableFromUtc { get; init; }
     public DateTime? DueAtUtc { get; init; }
     public bool IsDeadlinePassed { get; init; }
+    public StudentAssessmentAvailabilityState AvailabilityState { get; init; } =
+        StudentAssessmentAvailabilityState.Available;
+    public bool CanStart { get; init; }
+    public DateTime? NextStateChangeAtUtc { get; init; }
     public bool IsScored => AssessmentType == AssessmentType.Exam;
 }
 
