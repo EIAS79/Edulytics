@@ -53,6 +53,38 @@ public sealed class StudentPrivatePracticeServiceTests
         Assert.Equal(0, repo.ContextCalls);
     }
 
+    [Theory]
+    [InlineData(StudentPrivatePracticeScope.Lesson, 6)]
+    [InlineData(StudentPrivatePracticeScope.Unit, 11)]
+    [InlineData(StudentPrivatePracticeScope.WholeCurriculum, 16)]
+    public async Task Generate_enforces_personal_test_question_limits_by_scope(
+        StudentPrivatePracticeScope scope,
+        int count)
+    {
+        var repo = new FakeRepository();
+        var service = new StudentPrivatePracticeService(repo);
+
+        var result = await service.GenerateAsync(
+            Guid.NewGuid(),
+            new GenerateStudentPrivatePracticeRequest(
+                Guid.NewGuid(),
+                scope,
+                scope == StudentPrivatePracticeScope.Lesson
+                    ? Guid.NewGuid()
+                    : null,
+                scope == StudentPrivatePracticeScope.Unit
+                    ? "U1"
+                    : null,
+                StudentPrivatePracticeDifficulty.MyLevel,
+                count,
+                1));
+
+        Assert.Equal(
+            StudentPrivatePracticeError.InvalidQuestionCount,
+            result.Error);
+        Assert.Equal(0, repo.ContextCalls);
+    }
+
     [Fact]
     public async Task Generate_fails_closed_for_unavailable_curriculum()
     {
@@ -199,6 +231,80 @@ public sealed class StudentPrivatePracticeServiceTests
         Assert.Equal(outcome.Id, repo.SavedOutcomes[0].LearningOutcomeId);
         Assert.Contains("student-private", repo.SavedItems[0].ValidationMetadataJson, StringComparison.Ordinal);
         Assert.Single(repo.SavedExposures);
+    }
+
+    [Fact]
+    public async Task Quadratic_lesson_exposes_only_truthfully_supported_standard_difficulties()
+    {
+        const string lessonCode =
+            "PED:UAE-MOE-MATH:L11:ADVANCED:02:13:QUADRATIC-EQUATIONS";
+
+        Assert.True(
+            LessonPracticeContractRegistry.TryResolve(
+                lessonCode,
+                out var contract));
+        Assert.NotNull(contract);
+        Assert.Equal(
+            new[] { "supporting.algebra.quadratic_larger_root" },
+            contract!.AllowedQuestionFamilies);
+
+        var ids = Ids.Create();
+        var lessonId = Guid.NewGuid();
+        var repo = new FakeRepository
+        {
+            Curricula =
+            [
+                new PrivatePracticeCurriculumOption(
+                    ids.Adoption,
+                    ids.Class,
+                    ids.Year,
+                    "Grade 11 Advanced",
+                    "11A")
+            ],
+            Context = BuildContext(
+                ids,
+                [],
+                [
+                    Lesson(
+                        ids,
+                        lessonId,
+                        "ALG",
+                        "Algebra",
+                        lessonCode,
+                        "Quadratic equations — advanced reasoning",
+                        1)
+                ])
+        };
+
+        var service = new StudentPrivatePracticeService(repo);
+        var workspace = await service.GetWorkspaceAsync(
+            ids.User,
+            ids.Adoption);
+
+        var option = Assert.Single(workspace.Lessons);
+        Assert.Equal(
+            new[]
+            {
+                StudentPrivatePracticeDifficulty.MyLevel,
+                StudentPrivatePracticeDifficulty.AtClassLevel
+            },
+            option.SupportedDifficulties);
+
+        var result = await service.GenerateAsync(
+            ids.User,
+            new GenerateStudentPrivatePracticeRequest(
+                ids.Adoption,
+                StudentPrivatePracticeScope.Lesson,
+                lessonId,
+                null,
+                StudentPrivatePracticeDifficulty.Challenge,
+                5,
+                20261001));
+
+        Assert.Equal(
+            StudentPrivatePracticeError.UnsupportedDifficulty,
+            result.Error);
+        Assert.Null(repo.SavedAttempt);
     }
 
     [Fact]
@@ -431,14 +537,14 @@ public sealed class StudentPrivatePracticeServiceTests
                     lessonId,
                     null,
                     StudentPrivatePracticeDifficulty.MyLevel,
-                    10,
+                    5,
                     20260923));
 
         Assert.True(result.Succeeded);
         Assert.Null(result.Error);
         Assert.NotNull(repo.SavedAttempt);
-        Assert.Equal(8, repo.SavedItems.Count);
-        Assert.Equal(8m, repo.SavedAttempt!.MaxScore);
+        Assert.Equal(5, repo.SavedItems.Count);
+        Assert.Equal(5m, repo.SavedAttempt!.MaxScore);
 
         var semanticPairs = new List<string>();
         var forms = new HashSet<int>();
@@ -474,7 +580,7 @@ public sealed class StudentPrivatePracticeServiceTests
                 using var metadata = JsonDocument.Parse(
                     item.ValidationMetadataJson!);
                 Assert.Equal(
-                    "READY_NARROW",
+                    "READY_BALANCED",
                     metadata.RootElement
                         .GetProperty("sessionReadiness")
                         .GetString());
@@ -483,7 +589,7 @@ public sealed class StudentPrivatePracticeServiceTests
                         .GetProperty("sessionQualityValidated")
                         .GetBoolean());
                 Assert.Equal(
-                    8,
+                    5,
                     metadata.RootElement
                         .GetProperty("sessionSemanticCount")
                         .GetInt32());

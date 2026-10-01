@@ -42,17 +42,17 @@ public sealed class Round3ProductUxAcceptanceTests
         var service = ReadRepositoryFile(
             "src", "Edulytics.Services", "Practice", "StudentPrivatePracticeService.cs");
 
-        Assert.Contains("StudentPrivatePracticeScope.Lesson\" data-question-limit=\"10\"", view, StringComparison.Ordinal);
-        Assert.Contains("StudentPrivatePracticeScope.Unit\" data-question-limit=\"15\"", view, StringComparison.Ordinal);
+        Assert.Contains("StudentPrivatePracticeScope.Lesson\" data-question-limit=\"5\"", view, StringComparison.Ordinal);
+        Assert.Contains("StudentPrivatePracticeScope.Unit\" data-question-limit=\"10\"", view, StringComparison.Ordinal);
         Assert.Contains("StudentPrivatePracticeScope.WeakAreas\" data-question-limit=\"15\"", view, StringComparison.Ordinal);
-        Assert.Contains("StudentPrivatePracticeScope.WholeCurriculum\" data-question-limit=\"30\"", view, StringComparison.Ordinal);
+        Assert.Contains("StudentPrivatePracticeScope.WholeCurriculum\" data-question-limit=\"15\"", view, StringComparison.Ordinal);
         Assert.Contains("count.max = String(limit)", view, StringComparison.Ordinal);
 
-        Assert.Contains("StudentPrivatePracticeScope.Lesson => 10", service, StringComparison.Ordinal);
-        Assert.Contains("StudentPrivatePracticeScope.Unit => 15", service, StringComparison.Ordinal);
+        Assert.Contains("StudentPrivatePracticeScope.Lesson => 5", service, StringComparison.Ordinal);
+        Assert.Contains("StudentPrivatePracticeScope.Unit => 10", service, StringComparison.Ordinal);
         Assert.Contains("StudentPrivatePracticeScope.WeakAreas => 15", service, StringComparison.Ordinal);
-        Assert.Contains("StudentPrivatePracticeScope.WholeCurriculum => 30", service, StringComparison.Ordinal);
-        Assert.Contains("request.QuestionCount > questionLimit", service, StringComparison.Ordinal);
+        Assert.Contains("StudentPrivatePracticeScope.WholeCurriculum => 15", service, StringComparison.Ordinal);
+        Assert.Contains("request.QuestionCount <= questionLimit", service, StringComparison.Ordinal);
     }
 
     [Fact]

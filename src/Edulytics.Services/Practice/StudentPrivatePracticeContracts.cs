@@ -26,7 +26,8 @@ public enum StudentPrivatePracticeError
     InvalidScope = 3,
     NoSupportedOutcomes = 4,
     GenerationFailed = 5,
-    InvalidQuestionCount = 6
+    InvalidQuestionCount = 6,
+    UnsupportedDifficulty = 7
 }
 
 public sealed record StudentPrivatePracticeLessonOption(
@@ -35,7 +36,8 @@ public sealed record StudentPrivatePracticeLessonOption(
     string UnitTitle,
     string LessonCode,
     string LessonTitle,
-    IReadOnlyList<Guid> OfficialOutcomeNodeIds);
+    IReadOnlyList<Guid> OfficialOutcomeNodeIds,
+    IReadOnlyList<StudentPrivatePracticeDifficulty>? SupportedDifficulties = null);
 
 public sealed record StudentPrivatePracticeUnitOption(
     string UnitKey,

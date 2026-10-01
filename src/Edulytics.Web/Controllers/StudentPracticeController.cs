@@ -967,6 +967,7 @@ public sealed class StudentPracticeController(
         StudentPrivatePracticeError.NoSupportedOutcomes => text["PrivatePracticeNoSupportedOutcomes"].Value,
         StudentPrivatePracticeError.CurriculumNotAvailable => text["PrivatePracticeCurriculumUnavailable"].Value,
         StudentPrivatePracticeError.InvalidQuestionCount => text["PrivatePracticeInvalidQuestionCount"].Value,
+        StudentPrivatePracticeError.UnsupportedDifficulty => text["PrivatePracticeUnsupportedDifficulty"].Value,
         StudentPrivatePracticeError.InvalidScope => text["PrivatePracticeInvalidScope"].Value,
         StudentPrivatePracticeError.GenerationFailed => text["PrivatePracticeGenerationFailed"].Value,
         StudentPrivatePracticeError.AccessDenied => text["PrivatePracticeAccessDenied"].Value,
