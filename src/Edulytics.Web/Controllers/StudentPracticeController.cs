@@ -29,6 +29,7 @@ public sealed class StudentPracticeController(
 {
     private const string LessonPracticePilotCode = "PED:CAMBRIDGE-INTL-MATH:S1:L10";
     private const string LessonGameMode = "lesson-game";
+    private const string PersonalTestMode = "personal-test";
     private const int LessonPracticeQuestionCount = 8;
 
     [HttpGet("")]
@@ -53,15 +54,6 @@ public sealed class StudentPracticeController(
     {
         if (!TryActor(out var actorId)) return Forbid();
 
-        if (scope == StudentPrivatePracticeScope.Lesson &&
-            lessonId.HasValue)
-        {
-            return await StartLessonPractice(
-                curriculumAdoptionId,
-                lessonId.Value,
-                cancellationToken);
-        }
-
         var result = await privatePractice.GenerateAsync(actorId,
             new GenerateStudentPrivatePracticeRequest(
                 curriculumAdoptionId, scope, lessonId, unitKey, difficulty, questionCount),
@@ -71,7 +63,13 @@ public sealed class StudentPracticeController(
             TempData["Error"] = PrivatePracticeErrorMessage(result.Error);
             return RedirectToAction(nameof(Index), new { curriculumAdoptionId });
         }
-        return RedirectToAction(nameof(Attempt), new { id = result.AttemptId });
+        return RedirectToAction(
+            nameof(Attempt),
+            new
+            {
+                id = result.AttemptId,
+                mode = PersonalTestMode
+            });
     }
 
     [HttpPost("lesson/start"), ValidateAntiForgeryToken]
@@ -762,6 +760,8 @@ public sealed class StudentPracticeController(
             return result.Error == PracticeErrorCode.AccessDenied ? Forbid() : NotFound();
         ViewData["LessonGameMode"] = string.Equals(
             mode, LessonGameMode, StringComparison.OrdinalIgnoreCase);
+        ViewData["PersonalTestMode"] = string.Equals(
+            mode, PersonalTestMode, StringComparison.OrdinalIgnoreCase);
         return View(result.Value);
     }
 
@@ -791,6 +791,84 @@ public sealed class StudentPracticeController(
             id,
             mode = NormalizeMode(mode)
         });
+    }
+
+    [HttpPost("attempt/{id:guid}/personal-test-submit"), ValidateAntiForgeryToken]
+    [RequestTimeout(BackendResiliencePolicyNames.InteractiveWrite)]
+    [EnableRateLimiting(BackendResiliencePolicyNames.HeavyWriteConcurrency)]
+    public async Task<IActionResult> SubmitPersonalTest(
+        Guid id,
+        Guid[]? attemptItemIds,
+        string[]? answers,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        var attempt = await practice.GetAttemptAsync(
+            actorId,
+            id,
+            cancellationToken);
+
+        if (attempt.Value is null)
+            return attempt.Error == PracticeErrorCode.AccessDenied
+                ? Forbid()
+                : NotFound();
+
+        if (attempt.Value.Status != PracticeAttemptStatus.InProgress)
+        {
+            return RedirectToAction(
+                nameof(Attempt),
+                new { id, mode = PersonalTestMode });
+        }
+
+        var ids = attemptItemIds ?? [];
+        var submittedAnswers = answers ?? [];
+        var expectedIds = attempt.Value.Questions
+            .OrderBy(x => x.Order)
+            .Select(x => x.AttemptItemId)
+            .ToArray();
+
+        if (ids.Length != expectedIds.Length ||
+            submittedAnswers.Length != expectedIds.Length ||
+            !ids.SequenceEqual(expectedIds) ||
+            submittedAnswers.Any(string.IsNullOrWhiteSpace))
+        {
+            TempData["Error"] = text["PracticeAnswerAll"].Value;
+            return RedirectToAction(
+                nameof(Attempt),
+                new { id, mode = PersonalTestMode });
+        }
+
+        for (var index = 0; index < ids.Length; index++)
+        {
+            var answered = await practice.AnswerAsync(
+                actorId,
+                id,
+                ids[index],
+                submittedAnswers[index],
+                cancellationToken);
+
+            if (answered.Value is null)
+            {
+                TempData["Error"] = PracticeErrorMessage(answered.Error);
+                return RedirectToAction(
+                    nameof(Attempt),
+                    new { id, mode = PersonalTestMode });
+            }
+        }
+
+        var submitted = await practice.SubmitAsync(
+            actorId,
+            id,
+            cancellationToken);
+
+        if (submitted.Value is null)
+            TempData["Error"] = PracticeErrorMessage(submitted.Error);
+
+        return RedirectToAction(
+            nameof(Attempt),
+            new { id, mode = PersonalTestMode });
     }
 
     [HttpPost("attempt/{id:guid}/submit"), ValidateAntiForgeryToken]
@@ -862,10 +940,26 @@ public sealed class StudentPracticeController(
                 lesson.QuickSummary
             }.Where(x => !string.IsNullOrWhiteSpace(x)));
 
-    private static string? NormalizeMode(string? mode) =>
-        string.Equals(mode, LessonGameMode, StringComparison.OrdinalIgnoreCase)
-            ? LessonGameMode
-            : null;
+    private static string? NormalizeMode(string? mode)
+    {
+        if (string.Equals(
+                mode,
+                LessonGameMode,
+                StringComparison.OrdinalIgnoreCase))
+        {
+            return LessonGameMode;
+        }
+
+        if (string.Equals(
+                mode,
+                PersonalTestMode,
+                StringComparison.OrdinalIgnoreCase))
+        {
+            return PersonalTestMode;
+        }
+
+        return null;
+    }
 
     private string PrivatePracticeErrorMessage(StudentPrivatePracticeError? error) => error switch
     {
