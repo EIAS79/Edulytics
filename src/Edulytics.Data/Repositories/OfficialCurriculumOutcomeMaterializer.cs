@@ -61,7 +61,7 @@ public static class OfficialCurriculumOutcomeMaterializer
                     x.NodeKind == "Standard" ||
                     x.NodeKind == "Outcome" ||
                     (x.NodeKind == "Reference" &&
-                     x.Code.StartsWith("CAM:REF:9709:", StringComparison.Ordinal))
+                     x.Code.StartsWith("CAM:REF:9709:"))
                 ) &&
                 x.LogicalLevelFrom <= logicalLevel &&
                 x.LogicalLevelTo >= logicalLevel)

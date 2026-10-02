@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Data.Common;
 using System.Text.Json;
 using Edulytics.Core.Assessments;
 using Edulytics.Core.Constants;
@@ -14,11 +15,31 @@ using Edulytics.Data.Seeding;
 using Edulytics.Services.Assessments;
 using Edulytics.Services.Mathematics;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
 
 public class RehearsalLessonGenerationTests
 {
+    [Fact]
+    public async Task Official_outcome_projection_translates_on_Postgres_before_opening_a_connection()
+    {
+        await using var db = new EdulyticsDbContext(new DbContextOptionsBuilder<EdulyticsDbContext>()
+            .UseNpgsql("Host=127.0.0.1;Port=1;Database=translation_test;Username=unused;Password=unused")
+            .AddInterceptors(new TranslationProbe()).Options);
+        await Assert.ThrowsAsync<TranslationReachedDatabaseException>(() => OfficialCurriculumOutcomeMaterializer.EnsureAsync(db,
+            new SchoolCurriculumAdoption { IsActive = true, CurriculumLogicalLevel = 12,
+                CurriculumLevelKey = "CAMBRIDGE-INTL-MATH:L12:SHARED", FrameworkVersionId = Guid.NewGuid() }));
+    }
+
+    private sealed class TranslationReachedDatabaseException : Exception;
+    private sealed class TranslationProbe : DbConnectionInterceptor
+    {
+        public override ValueTask<InterceptionResult> ConnectionOpeningAsync(DbConnection connection,
+            ConnectionEventData eventData, InterceptionResult result, CancellationToken cancellationToken = default) =>
+            throw new TranslationReachedDatabaseException();
+    }
+
     [Fact]
     public async Task Accepted_uae_baseline_upgrades_in_place_and_remains_idempotent()
     {
