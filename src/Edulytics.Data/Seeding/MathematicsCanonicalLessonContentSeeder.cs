@@ -607,6 +607,20 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                         expectedContentVersion,
                         StringComparison.Ordinal))
                 {
+                    if (CambridgeReviewedExampleContentCorrections
+                        .IsTarget(document, sourceLesson))
+                    {
+                        CambridgeReviewedExampleContentCorrections
+                            .ValidateExistingBodyBeforeUpgrade(
+                                document,
+                                sourceLesson,
+                                content.ContentVersion,
+                                translationsByContentId.TryGetValue(
+                                    content.Id, out var reviewedExistingRows)
+                                    ? reviewedExistingRows
+                                    : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
                     var canUpgradeReviewedCorrection =
                         CanonicalLessonContentMaterializer
                             .CanUpgradeExisting(
