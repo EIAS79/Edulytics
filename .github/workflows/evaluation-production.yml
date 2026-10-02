@@ -34,6 +34,7 @@ on:
       - 'tests/Edulytics.Tests/Phase44/**'
       - 'docs/evaluation/**'
       - 'tools/evaluation/**'
+      - 'scripts/ci-localization-parity.py'
       - '.github/workflows/evaluation-production.yml'
   push:
     branches:
@@ -68,6 +69,7 @@ on:
       - 'tests/Edulytics.Tests/Phase44/**'
       - 'docs/evaluation/**'
       - 'tools/evaluation/**'
+      - 'scripts/ci-localization-parity.py'
       - '.github/workflows/evaluation-production.yml'
   workflow_dispatch:
 

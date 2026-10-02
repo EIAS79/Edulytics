@@ -11,6 +11,12 @@ ROOT = Path(
     "src/Edulytics.Web/Resources"
 )
 
+LOCALIZED_CULTURES = ("pl", "ar")
+LOCALIZED_SUFFIXES = tuple(
+    f".{culture}.resx"
+    for culture in LOCALIZED_CULTURES
+)
+
 
 def fail(message: str) -> None:
     raise SystemExit(f"FAIL: {message}")
@@ -56,61 +62,74 @@ if not ROOT.is_dir():
 defaults = sorted(
     path
     for path in ROOT.rglob("*.resx")
-    if not path.name.endswith(".pl.resx")
+    if not path.name.endswith(
+        LOCALIZED_SUFFIXES
+    )
 )
 
 if not defaults:
     fail("no default resource files found")
 
-pair_count = 0
+localized_pair_count = 0
 key_count = 0
 
 for default in defaults:
-    polish = default.with_name(
-        default.stem + ".pl.resx"
-    )
-
-    if not polish.is_file():
-        fail(
-            f"Polish resource counterpart missing: "
-            f"{polish}"
-        )
-
     default_keys = keys(default)
-    polish_keys = keys(polish)
-
-    missing_pl = sorted(
-        default_keys - polish_keys
-    )
-
-    orphan_pl = sorted(
-        polish_keys - default_keys
-    )
-
-    if missing_pl or orphan_pl:
-        fail(
-            f"resource parity mismatch: {default}; "
-            f"missing_pl={missing_pl}; "
-            f"orphan_pl={orphan_pl}"
-        )
-
-    pair_count += 1
     key_count += len(default_keys)
 
-for polish in ROOT.rglob("*.pl.resx"):
-    base = polish.with_name(
-        polish.name.replace(
-            ".pl.resx",
-            ".resx"
+    for culture in LOCALIZED_CULTURES:
+        localized = default.with_name(
+            f"{default.stem}.{culture}.resx"
         )
-    )
 
-    if not base.is_file():
-        fail(
-            f"orphan Polish resource: {polish}"
+        if not localized.is_file():
+            fail(
+                f"{culture} resource counterpart missing: "
+                f"{localized}"
+            )
+
+        localized_keys = keys(localized)
+
+        missing = sorted(
+            default_keys - localized_keys
         )
+
+        orphan = sorted(
+            localized_keys - default_keys
+        )
+
+        if missing or orphan:
+            fail(
+                f"resource parity mismatch: {default}; "
+                f"culture={culture}; "
+                f"missing={missing}; "
+                f"orphan={orphan}"
+            )
+
+        localized_pair_count += 1
+
+for culture in LOCALIZED_CULTURES:
+    suffix = f".{culture}.resx"
+
+    for localized in ROOT.rglob(
+        f"*{suffix}"
+    ):
+        base = localized.with_name(
+            localized.name.removesuffix(
+                suffix
+            )
+            + ".resx"
+        )
+
+        if not base.is_file():
+            fail(
+                f"orphan {culture} resource: "
+                f"{localized}"
+            )
 
 print(
-    "PASS: EN/default ↔ PL resource parity "
-    f"pairs={pair_count}, keys={key_count}"
+    "PASS: EN/default ↔ PL ↔ AR resource parity "
+    f"sets={len(defaults)}, "
+    f"localized_pairs={localized_pair_count}, "
+    f"keys={key_count}"
 )
