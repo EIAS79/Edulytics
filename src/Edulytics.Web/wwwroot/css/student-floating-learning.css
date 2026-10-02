@@ -804,3 +804,95 @@ html[dir="rtl"] .floating-open-lesson::after{content:"←"}
     .math-formula,
     .math-wireframe{animation:none!important}
 }
+
+/* Final My Learning interaction + unified mathematics background */
+.student-learning-page .student-main{
+    position:relative;
+    background:
+        radial-gradient(circle at 78% 12%,rgba(48,165,244,.22),transparent 28%),
+        radial-gradient(circle at 20% 58%,rgba(32,111,201,.16),transparent 30%),
+        repeating-linear-gradient(0deg,rgba(114,205,255,.035) 0 1px,transparent 1px 44px),
+        repeating-linear-gradient(90deg,rgba(114,205,255,.03) 0 1px,transparent 1px 44px),
+        linear-gradient(180deg,#061b38 0%,#08294d 48%,#061b38 100%);
+}
+.student-learning-page .student-page-frame,
+.student-learning-page .student-learning-experience,
+.student-learning-page .ed-v3-footer{
+    background:transparent!important;
+}
+.student-learning-page .student-learning-experience{
+    border-radius:0;
+}
+.student-learning-page .ed-v3-footer{
+    border-top:1px solid rgba(126,207,255,.10);
+}
+
+.student-learning-page .learning-math-atmosphere{
+    z-index:0;
+}
+.student-learning-page .learning-hero,
+.student-learning-page .learning-context-zone,
+.student-learning-page .student-published-lessons{
+    position:relative;
+    z-index:1;
+}
+.student-learning-page .math-formula{
+    color:rgba(164,231,255,.36);
+    text-shadow:0 0 16px rgba(73,194,255,.20);
+}
+.student-learning-page .math-wireframe{
+    stroke:rgba(141,226,255,.30);
+    filter:drop-shadow(0 0 14px rgba(67,184,255,.16));
+}
+.student-learning-page .math-globe{
+    opacity:.48;
+}
+.student-learning-page .learning-math-atmosphere::after{
+    content:"∑   π   √x   x²   ½   ¾   ∆   ∠   f(x)   x + y   3.14   2³   ±   ≈   %";
+    position:absolute;
+    left:5%;
+    right:4%;
+    top:34%;
+    color:rgba(153,228,255,.14);
+    font-size:clamp(1.1rem,2vw,2rem);
+    font-weight:700;
+    letter-spacing:.65em;
+    line-height:3.8;
+    white-space:normal;
+    text-align:center;
+    text-shadow:0 0 18px rgba(67,184,255,.12);
+    transform:rotate(-3deg);
+}
+
+.floating-lesson-card-link{
+    position:relative;
+    z-index:3;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:100%;
+    color:inherit;
+    text-decoration:none;
+    cursor:pointer;
+    outline:none;
+}
+.floating-lesson-card-link:focus-visible{
+    border-radius:18px;
+    box-shadow:0 0 0 3px rgba(143,232,255,.48);
+}
+.floating-lesson-card:hover,
+.floating-lesson-card:focus-within{
+    animation:lesson-float var(--float-duration) ease-in-out var(--float-delay) infinite alternate!important;
+    animation-play-state:running!important;
+}
+.floating-lesson-card:hover .floating-open-lesson,
+.floating-lesson-card:focus-within .floating-open-lesson{
+    background:linear-gradient(135deg,#b8f3ff,#5ad9ff 58%,#5e9cff);
+    color:#05224a;
+    box-shadow:
+        0 12px 30px rgba(58,184,255,.28),
+        0 0 22px rgba(92,218,255,.2);
+}
+.floating-open-lesson{
+    pointer-events:none;
+}

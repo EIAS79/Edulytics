@@ -197,6 +197,11 @@
                     var visualKind = LessonVisualKind(lesson.Title, lesson.TopicName);
 
                     <article class="floating-lesson-card" data-floating-lesson data-visual="@visualKind">
+                        <a class="floating-lesson-card-link"
+                           asp-controller="StudentPortal"
+                           asp-action="Lesson"
+                           asp-route-id="@lesson.Id"
+                           aria-label="@($"{L["OpenLesson"]}: {lesson.Title}")">
                         <div class="floating-lesson-visual" aria-hidden="true">
                             @switch (visualKind)
                             {
@@ -317,15 +322,13 @@
                         </div>
 
                         <div class="floating-lesson-actions">
-                            <a class="floating-open-lesson"
-                               asp-controller="StudentPortal"
-                               asp-action="Lesson"
-                               asp-route-id="@lesson.Id">@L["OpenLesson"]</a>
+                            <span class="floating-open-lesson">@L["OpenLesson"]</span>
                             @if (lesson.IsSupporting)
                             {
                                 <span class="floating-supporting">@L["SupportingLesson"]</span>
                             }
                         </div>
+                        </a>
                     </article>
                 }
             </div>

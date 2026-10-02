@@ -33,6 +33,22 @@ public sealed class StudentLearningBackgroundContractTests
         Assert.Contains("@keyframes math-globe-drift", css, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void Whole_lesson_card_is_clickable_and_hover_keeps_idle_motion_stable()
+    {
+        var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
+        var css = ReadRepositoryFile("src", "Edulytics.Web", "wwwroot", "css", "student-floating-learning.css");
+
+        Assert.Contains("class=\"floating-lesson-card-link\"", view, StringComparison.Ordinal);
+        Assert.Contains("asp-action=\"Lesson\"", view, StringComparison.Ordinal);
+        Assert.Contains("asp-route-id=\"@lesson.Id\"", view, StringComparison.Ordinal);
+        Assert.Contains("<span class=\"floating-open-lesson\">@L[\"OpenLesson\"]</span>", view, StringComparison.Ordinal);
+        Assert.Contains("animation-play-state:running!important", css.Replace(" ", string.Empty), StringComparison.Ordinal);
+        Assert.Contains(".floating-lesson-card-link", css, StringComparison.Ordinal);
+        Assert.Contains("background:transparent!important", css.Replace(" ", string.Empty), StringComparison.Ordinal);
+        Assert.Contains("learning-math-atmosphere::after", css, StringComparison.Ordinal);
+    }
+
     private static string ReadRepositoryFile(params string[] relativeSegments)
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);
