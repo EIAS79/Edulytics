@@ -6,136 +6,163 @@
     Layout = "_StudentLayout";
     ViewData["Title"] = S["LearningTitle"].Value;
 }
-<link rel="stylesheet" href="~/css/round5-ux-fixes.css" asp-append-version="true" />
-<header class="student-page-header">
-    <span class="student-eyebrow">@S["MyLearning"]</span>
-    <h1>@S["LearningTitle"]</h1>
-    <p>@S["LearningSubtitle"]</p>
-</header>
-
-@if (Model.Workspace.Learning.Count == 0)
-{
-    <div class="student-empty-state">@S["NoLearningYet"]</div>
+@section Head {
+    <link rel="stylesheet" href="~/css/round5-ux-fixes.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/student-floating-learning.css" asp-append-version="true" />
 }
-else
-{
-    <div class="student-learning-stack">
-        @foreach (var subject in Model.Workspace.Learning)
-        {
-            var isSelectedContext =
-                Model.SelectedCurriculumAdoptionId == subject.CurriculumAdoptionId &&
-                Model.SelectedClassGroupId == subject.ClassGroupId;
-            var exactFocusNodeIds = isSelectedContext
-                ? Model.SelectedLearningNodeIds.Where(id => subject.Nodes.Any(node => node.Id == id)).ToHashSet()
-                : new HashSet<Guid>();
-            var focusTreeNodeIds = new HashSet<Guid>(exactFocusNodeIds);
-            var nodesById = subject.Nodes.ToDictionary(node => node.Id);
-            foreach (var focusNodeId in exactFocusNodeIds)
-            {
-                var currentNodeId = focusNodeId;
-                var visitedNodeIds = new HashSet<Guid>();
-                while (visitedNodeIds.Add(currentNodeId) &&
-                       nodesById.TryGetValue(currentNodeId, out var currentNode) &&
-                       currentNode.ParentId.HasValue)
-                {
-                    var parentId = currentNode.ParentId.Value;
-                    focusTreeNodeIds.Add(parentId);
-                    currentNodeId = parentId;
-                }
-            }
-            var focusAnchorAssigned = false;
 
-            <article id="@(isSelectedContext ? "selected-curriculum-context" : null)"
-                     class="student-learning-card @(isSelectedContext ? "is-selected-context" : null)"
-                     aria-current="@(isSelectedContext ? "true" : null)">
-                @if (isSelectedContext && exactFocusNodeIds.Count == 0)
-                {
-                    <span id="selected-learning-node" class="student-learning-focus-anchor" aria-hidden="true"></span>
-                }
-                <header>
-                    <div>
-                        <h2>@subject.SubjectName</h2>
-                        @if (isSelectedContext)
-                        {
-                            <span class="student-learning-context-badge">@S["PrivatePractice"]</span>
-                        }
-                    </div>
-                    <div class="student-learning-meta">
-                        <span><strong>@subject.GradeName · @subject.SubjectName</strong></span>
-                        <span>@subject.FrameworkName</span>
-                        <span>@S["Class"]: <strong>@subject.ClassName</strong></span>
-                        <span>@S["AcademicYear"]: <strong>@subject.AcademicYearName</strong></span>
-                    </div>
-                </header>
+<div class="student-learning-experience" data-floating-learning>
+    <div class="learning-hud-orb" aria-hidden="true"></div>
 
-                @if (subject.Nodes.Count == 0)
-                {
-                    <p class="student-empty">@S["NoLearningYet"]</p>
-                }
-                else
-                {
-                    <div class="student-curriculum-tree">
-                        @foreach (var node in subject.Nodes)
-                        {
-                            var isExactFocus = exactFocusNodeIds.Contains(node.Id);
-                            var isFocusPath = focusTreeNodeIds.Contains(node.Id);
-                            var focusAnchorId = isExactFocus && !focusAnchorAssigned ? "selected-learning-node" : null;
-                            if (focusAnchorId is not null) { focusAnchorAssigned = true; }
-
-                            <div id="@focusAnchorId"
-                                 class="student-node @(node.Kind == "Lesson" ? "is-lesson" : "is-unit") @(isFocusPath ? "is-practice-focus" : null) @(isExactFocus ? "is-practice-focus-exact" : null)"
-                                 aria-current="@(isExactFocus ? "location" : null)">
-                                <span class="student-node-kind">@(node.Kind == "Lesson" ? S["Lesson"] : S["Unit"])</span>
-                                <div>
-                                    <strong>@node.Title</strong>
-                                    @if (!string.IsNullOrWhiteSpace(node.Pathway))
-                                    {
-                                        <small>@S["Pathway"]: @node.Pathway</small>
-                                    }
-                                    @if (!string.IsNullOrWhiteSpace(node.OfficialText))
-                                    {
-                                        <p>@node.OfficialText</p>
-                                    }
-                                </div>
-                            </div>
-                        }
-                    </div>
-                }
-            </article>
-        }
-    </div>
-}
-<section class="student-published-lessons">
-    <header class="student-section-header">
-        <h2>@L["AvailableLessons"]</h2>
+    <header class="student-page-header learning-hero">
+        <span class="student-eyebrow">@S["MyLearning"]</span>
+        <h1>@S["LearningTitle"]</h1>
+        <p>@S["LearningSubtitle"]</p>
     </header>
 
-    @if (Model.Lessons.Count == 0)
-    {
-        <div class="student-empty-state">@L["NoPublishedLessons"]</div>
-    }
-    else
-    {
-        <div class="student-lesson-grid">
-            @foreach (var lesson in Model.Lessons)
-            {
-                <article class="student-lesson-card">
-                    <h3>@lesson.Title</h3>
-                    @if (lesson.IsSupporting)
+    <div class="learning-context-zone">
+        @if (Model.Workspace.Learning.Count == 0)
+        {
+            <div class="student-empty-state">@S["NoLearningYet"]</div>
+        }
+        else
+        {
+            <div class="student-learning-stack">
+                @foreach (var subject in Model.Workspace.Learning)
+                {
+                    var isSelectedContext =
+                        Model.SelectedCurriculumAdoptionId == subject.CurriculumAdoptionId &&
+                        Model.SelectedClassGroupId == subject.ClassGroupId;
+                    var exactFocusNodeIds = isSelectedContext
+                        ? Model.SelectedLearningNodeIds.Where(id => subject.Nodes.Any(node => node.Id == id)).ToHashSet()
+                        : new HashSet<Guid>();
+                    var focusTreeNodeIds = new HashSet<Guid>(exactFocusNodeIds);
+                    var nodesById = subject.Nodes.ToDictionary(node => node.Id);
+                    foreach (var focusNodeId in exactFocusNodeIds)
                     {
-                        <span class="lesson-content-status lesson-content-status--supporting">@L["SupportingLesson"]</span>
+                        var currentNodeId = focusNodeId;
+                        var visitedNodeIds = new HashSet<Guid>();
+                        while (visitedNodeIds.Add(currentNodeId) &&
+                               nodesById.TryGetValue(currentNodeId, out var currentNode) &&
+                               currentNode.ParentId.HasValue)
+                        {
+                            var parentId = currentNode.ParentId.Value;
+                            focusTreeNodeIds.Add(parentId);
+                            currentNodeId = parentId;
+                        }
                     }
-                    <p>@lesson.TopicName</p>
-                    <div class="student-learning-meta student-lesson-context">
-                        <span class="student-lesson-primary-context">@lesson.GradeName · Mathematics</span>
-                        <span class="student-lesson-secondary-context">@lesson.FrameworkName</span>
-                    </div>
-                    <a class="student-primary-link"
-                       asp-controller="StudentPortal"
-                       asp-action="Lesson"
-                       asp-route-id="@lesson.Id">@L["OpenLesson"]</a>
-                </article>
+                    var focusAnchorAssigned = false;
+
+                    <article id="@(isSelectedContext ? "selected-curriculum-context" : null)"
+                             class="student-learning-card @(isSelectedContext ? "is-selected-context" : null)"
+                             aria-current="@(isSelectedContext ? "true" : null)">
+                        @if (isSelectedContext && exactFocusNodeIds.Count == 0)
+                        {
+                            <span id="selected-learning-node" class="student-learning-focus-anchor" aria-hidden="true"></span>
+                        }
+                        <header>
+                            <div>
+                                <h2>@subject.SubjectName</h2>
+                                @if (isSelectedContext)
+                                {
+                                    <span class="student-learning-context-badge">@S["PrivatePractice"]</span>
+                                }
+                            </div>
+                            <div class="student-learning-meta">
+                                <span><strong>@subject.GradeName · @subject.SubjectName</strong></span>
+                                <span>@subject.FrameworkName</span>
+                                <span>@S["Class"]: <strong>@subject.ClassName</strong></span>
+                                <span>@S["AcademicYear"]: <strong>@subject.AcademicYearName</strong></span>
+                            </div>
+                        </header>
+
+                        @if (subject.Nodes.Count == 0)
+                        {
+                            <p class="student-empty">@S["NoLearningYet"]</p>
+                        }
+                        else
+                        {
+                            <div class="student-curriculum-tree">
+                                @foreach (var node in subject.Nodes)
+                                {
+                                    var isExactFocus = exactFocusNodeIds.Contains(node.Id);
+                                    var isFocusPath = focusTreeNodeIds.Contains(node.Id);
+                                    var focusAnchorId = isExactFocus && !focusAnchorAssigned ? "selected-learning-node" : null;
+                                    if (focusAnchorId is not null) { focusAnchorAssigned = true; }
+
+                                    <div id="@focusAnchorId"
+                                         class="student-node @(node.Kind == "Lesson" ? "is-lesson" : "is-unit") @(isFocusPath ? "is-practice-focus" : null) @(isExactFocus ? "is-practice-focus-exact" : null)"
+                                         aria-current="@(isExactFocus ? "location" : null)">
+                                        <span class="student-node-kind">@(node.Kind == "Lesson" ? S["Lesson"] : S["Unit"])</span>
+                                        <div>
+                                            <strong>@node.Title</strong>
+                                            @if (!string.IsNullOrWhiteSpace(node.Pathway))
+                                            {
+                                                <small>@S["Pathway"]: @node.Pathway</small>
+                                            }
+                                            @if (!string.IsNullOrWhiteSpace(node.OfficialText))
+                                            {
+                                                <p>@node.OfficialText</p>
+                                            }
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        }
+                    </article>
+                }
+            </div>
+        }
+    </div>
+
+    <section class="student-published-lessons student-published-lessons--floating">
+        <header class="floating-lessons-heading">
+            <div>
+                <h2>@L["AvailableLessons"]</h2>
+                <p>@S["LearningSubtitle"]</p>
+            </div>
+            @if (Model.Lessons.Count > 0)
+            {
+                <span class="floating-lessons-signal">@Model.Lessons.Count</span>
             }
-        </div>
-    }
-</section>
+        </header>
+
+        @if (Model.Lessons.Count == 0)
+        {
+            <div class="student-empty-state learning-empty-floating">@L["NoPublishedLessons"]</div>
+        }
+        else
+        {
+            <div class="floating-lesson-field" data-floating-lesson-field>
+                @foreach (var lesson in Model.Lessons)
+                {
+                    <article class="floating-lesson-card" data-floating-lesson>
+                        <div class="floating-lesson-card__top">
+                            <div class="floating-lesson-category">@lesson.TopicName</div>
+                            <h3>@lesson.Title</h3>
+                            <div class="floating-lesson-context student-lesson-context">
+                                <span class="student-lesson-primary-context">@lesson.GradeName · Mathematics</span>
+                                <span class="student-lesson-secondary-context">@lesson.FrameworkName</span>
+                            </div>
+                        </div>
+
+                        <div class="floating-lesson-actions">
+                            <a class="floating-open-lesson"
+                               asp-controller="StudentPortal"
+                               asp-action="Lesson"
+                               asp-route-id="@lesson.Id">@L["OpenLesson"]</a>
+                            @if (lesson.IsSupporting)
+                            {
+                                <span class="floating-supporting">@L["SupportingLesson"]</span>
+                            }
+                        </div>
+                    </article>
+                }
+            </div>
+        }
+    </section>
+</div>
+
+@section Scripts {
+    <script src="~/js/student-floating-learning.js" asp-append-version="true"></script>
+}
