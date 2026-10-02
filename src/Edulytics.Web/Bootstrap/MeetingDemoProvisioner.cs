@@ -7,6 +7,7 @@ using Edulytics.Core.MathematicsGeneration;
 using Edulytics.Data.Contexts;
 using Edulytics.Data.Identity;
 using Edulytics.Data.Repositories;
+using Edulytics.Data.Seeding;
 using Edulytics.Services.Analytics;
 using Edulytics.Services.AssessmentIntelligence;
 using Edulytics.Services.MathematicsGeneration;
@@ -729,6 +730,40 @@ internal static class MeetingDemoProvisioner
 
         Console.WriteLine(
             $"MEETING_DEMO_REPAIR_COMPLETED version={RepairVersion} repairedClasses={repairedClasses} unsupportedClasses={stillUnsupportedClasses} touchedSchools={touchedSchools.Count}");
+    }
+
+    public static async Task RepairLessonLinksAsync(
+        EdulyticsDbContext db,
+        CancellationToken cancellationToken = default)
+    {
+        if (!string.Equals(Environment.GetEnvironmentVariable("RENDER_SERVICE_ID"),
+                TargetRenderServiceId, StringComparison.Ordinal))
+            return;
+
+        const string operation = "ProductionRehearsalLessonLinkRepair";
+        const string version = "production-rehearsal-lesson-links-2026-10-02-v1";
+        if (await db.IdempotencyRecords.AsNoTracking().AnyAsync(x =>
+                x.SchoolId == null && x.ActorUserId == Guid.Empty &&
+                x.Operation == operation && x.IdempotencyKey == version &&
+                x.Status == IdempotencyStatus.Completed, cancellationToken))
+            return;
+
+        await using var transaction = db.Database.IsRelational()
+            ? await db.Database.BeginTransactionAsync(cancellationToken)
+            : null;
+        var result = await RehearsalLessonLinkRepair.RunAsync(
+            db, Schools.Select(x => x.SchoolCode).ToArray(), cancellationToken);
+        db.IdempotencyRecords.Add(new IdempotencyRecord {
+            Id = Guid.NewGuid(), SchoolId = null, ActorUserId = Guid.Empty,
+            Operation = operation, IdempotencyKey = version, RequestHash = new string('0', 64),
+            Status = IdempotencyStatus.Completed, ResultStatusCode = 200,
+            CreatedAtUtc = DateTime.UtcNow, CompletedAtUtc = DateTime.UtcNow,
+            ExpiresAtUtc = DateTime.UtcNow.AddYears(10), RowVersion = []
+        });
+        await db.SaveChangesAsync(cancellationToken);
+        if (transaction is not null)
+            await transaction.CommitAsync(cancellationToken);
+        Console.WriteLine($"MEETING_DEMO_LESSON_LINK_REPAIR items={result.Items} attempts={result.Attempts}");
     }
 
     private static async Task ResetSchoolScopedDataAsync(
@@ -1726,6 +1761,11 @@ DELETE FROM "Schools";
             .Select(x => x.OfficialContentNodeId!.Value)
             .ToArray();
 
+        // A batch can name a lesson only when that lesson covers every outcome.
+        if (officialNodeIds.Length != outcomes.Count || officialNodeIds.Length == 0)
+            return null;
+        var requiredOfficialCount = officialNodeIds.Distinct().Count();
+
         var logicalLevel = adoption.CurriculumLogicalLevel!.Value;
         var pathway = adoption.CurriculumPathway;
 
@@ -1768,15 +1808,17 @@ DELETE FROM "Schools";
                     x =>
                         compatibleLessonIds.Contains(x.PedagogicalLessonId) &&
                         officialNodeIds.Contains(x.OutcomeNodeId))
-                .OrderBy(x => x.SortOrder)
-                .Select(x => (Guid?)x.PedagogicalLessonId)
+                .GroupBy(x => x.PedagogicalLessonId)
+                .Where(x => x.Select(m => m.OutcomeNodeId).Distinct().Count() == requiredOfficialCount)
+                .OrderBy(x => x.Key)
+                .Select(x => (Guid?)x.Key)
                 .FirstOrDefaultAsync(cancellationToken);
 
             if (mapped.HasValue)
                 return mapped.Value;
         }
 
-        return compatibleLessonIds[0];
+        return null;
     }
 
     private static SeededClass SelectLoginClass(
