@@ -1,4 +1,45 @@
 /* Student My Learning — floating digital learning space */
+.student-learning-page,
+.student-learning-page .student-main{
+    background:
+        radial-gradient(circle at 82% 18%,rgba(50,154,236,.12),transparent 32%),
+        linear-gradient(180deg,#061a38 0%,#071b36 46%,#06172f 100%);
+}
+.student-learning-page .student-main{
+    min-height:100vh;
+}
+.student-learning-page .student-page-frame{
+    max-width:none;
+    margin:0;
+    padding:40px 34px 0;
+}
+.student-learning-page .student-learning-experience{
+    min-height:calc(100vh - 116px);
+    border-radius:30px 30px 0 0;
+    box-shadow:none;
+}
+.student-learning-page .ed-v3-footer{
+    margin:0;
+    padding:24px 28px 26px;
+    color:#91b7cf;
+    background:#06172f;
+}
+.student-learning-page .ed-v3-footer a{
+    color:#a8d9f3;
+}
+.student-learning-page .ed-v3-footer a:hover,
+.student-learning-page .ed-v3-footer a:focus-visible{
+    color:#fff;
+}
+@media(max-width:720px){
+    .student-learning-page .student-page-frame{
+        padding:20px 14px 0;
+    }
+    .student-learning-page .student-learning-experience{
+        min-height:calc(100vh - 96px);
+        border-radius:22px 22px 0 0;
+    }
+}
 .student-learning-experience{
     --learning-cyan:#6fdcff;
     --learning-blue:#4f7cff;
@@ -439,4 +480,327 @@ html[dir="rtl"] .floating-open-lesson::after{content:"←"}
     .floating-lesson-card{animation:none!important}
     .floating-lesson-card{transform:none!important}
     .floating-open-lesson{transition:none}
+}
+
+/* Immersive math-scene refinement */
+.student-learning-page,
+.student-learning-page .student-main{
+    background:
+        radial-gradient(circle at 82% 13%,rgba(24,146,255,.22),transparent 28%),
+        radial-gradient(circle at 18% 72%,rgba(25,88,183,.2),transparent 34%),
+        linear-gradient(180deg,#04142d 0%,#061f43 44%,#04162f 100%);
+}
+.student-learning-page .student-page-frame{
+    max-width:none;
+    margin:0;
+    padding:26px 26px 0;
+}
+.student-learning-page .student-learning-experience{
+    min-height:calc(100vh - 102px);
+    border-radius:28px 28px 0 0;
+    box-shadow:none;
+}
+.student-learning-page .ed-v3-footer{
+    margin:0;
+    padding:24px 28px 28px;
+    color:#8eb7d1;
+    background:#04162f;
+    border-top:1px solid rgba(126,207,255,.09);
+}
+.student-learning-page .ed-v3-footer a{color:#a8dcf7}
+.student-learning-page .ed-v3-footer a:hover,
+.student-learning-page .ed-v3-footer a:focus-visible{color:#fff}
+
+.student-learning-experience{
+    perspective:1400px;
+    transform-style:preserve-3d;
+    background:
+        radial-gradient(circle at 80% 11%,rgba(66,187,255,.32),transparent 24%),
+        radial-gradient(circle at 48% 50%,rgba(17,96,180,.16),transparent 35%),
+        linear-gradient(145deg,#03172f 0%,#0a3765 45%,#04172f 100%);
+}
+.student-learning-experience::before{
+    width:min(70vw,930px);
+    right:-12%;
+    top:-2%;
+    opacity:.55;
+    background:
+        repeating-radial-gradient(circle,rgba(116,222,255,.2) 0 1px,transparent 1px 18px),
+        radial-gradient(circle,rgba(62,187,255,.18),transparent 60%);
+}
+.student-learning-experience::after{
+    opacity:.3;
+    background-image:
+        linear-gradient(rgba(98,194,255,.1) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(98,194,255,.08) 1px,transparent 1px);
+    background-size:52px 52px;
+    mask-image:linear-gradient(to bottom,transparent 1%,#000 13%,#000 92%,transparent);
+}
+
+.learning-math-atmosphere{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:-1;
+}
+.learning-math-atmosphere::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 72% 22%,rgba(95,218,255,.11),transparent 15%),
+        radial-gradient(circle at 24% 52%,rgba(88,170,255,.09),transparent 20%),
+        radial-gradient(circle at 62% 80%,rgba(68,194,255,.08),transparent 16%);
+    animation:math-atmosphere-pulse 14s ease-in-out infinite alternate;
+}
+.math-globe{
+    position:absolute;
+    top:28px;
+    right:4%;
+    width:min(34vw,430px);
+    aspect-ratio:1;
+    border-radius:50%;
+    opacity:.38;
+    border:1px solid rgba(119,222,255,.24);
+    box-shadow:
+        inset 0 0 75px rgba(42,184,255,.12),
+        0 0 70px rgba(49,174,255,.08);
+    animation:math-globe-drift 18s ease-in-out infinite alternate;
+}
+.math-globe::before,
+.math-globe::after{
+    content:"";
+    position:absolute;
+    inset:8%;
+    border-radius:50%;
+    border:1px solid rgba(118,220,255,.18);
+}
+.math-globe::after{inset:24%}
+.math-globe-ring,
+.math-globe-axis{
+    position:absolute;
+    inset:15%;
+    border-radius:50%;
+    border:1px solid rgba(119,220,255,.2);
+}
+.math-globe-ring.ring-a{transform:rotateX(68deg)}
+.math-globe-ring.ring-b{transform:rotateY(62deg)}
+.math-globe-ring.ring-c{inset:32%;transform:rotateX(74deg) rotateZ(34deg)}
+.math-globe-axis{
+    inset:49% 9%;
+    border-radius:0;
+    border:0;
+    border-top:1px solid rgba(119,220,255,.2);
+}
+.math-globe-axis.axis-b{transform:rotate(90deg)}
+.math-formula{
+    position:absolute;
+    color:rgba(147,226,255,.23);
+    font-weight:650;
+    letter-spacing:.04em;
+    text-shadow:0 0 14px rgba(76,196,255,.18);
+    animation:math-formula-float 13s ease-in-out infinite alternate;
+}
+.formula-a{left:8%;top:19%;font-size:clamp(1.1rem,1.7vw,1.75rem);animation-delay:-2s}
+.formula-b{left:42%;top:12%;font-size:clamp(1rem,1.5vw,1.45rem);animation-delay:-6s}
+.formula-c{right:11%;top:51%;font-size:clamp(1rem,1.6vw,1.55rem);animation-delay:-4s}
+.formula-d{left:13%;bottom:13%;font-size:clamp(.95rem,1.45vw,1.35rem);animation-delay:-8s}
+.formula-e{right:34%;bottom:8%;font-size:clamp(.95rem,1.45vw,1.35rem);animation-delay:-10s}
+.math-wireframe{
+    position:absolute;
+    fill:none;
+    stroke:rgba(127,220,255,.18);
+    stroke-width:1.2;
+    filter:drop-shadow(0 0 12px rgba(67,184,255,.13));
+    animation:math-wireframe-drift 16s ease-in-out infinite alternate;
+}
+.math-wireframe--cube{width:150px;left:4%;bottom:2%;animation-delay:-3s}
+.math-wireframe--graph{width:180px;right:3%;bottom:1%;animation-delay:-8s}
+.math-wireframe--triangle{width:140px;left:3%;top:42%;animation-delay:-11s}
+@keyframes math-atmosphere-pulse{
+    from{opacity:.7;transform:scale(1)}
+    to{opacity:1;transform:scale(1.03)}
+}
+@keyframes math-globe-drift{
+    from{transform:translate3d(-4px,-5px,0) rotate(-2deg)}
+    to{transform:translate3d(8px,9px,0) rotate(3deg)}
+}
+@keyframes math-formula-float{
+    from{transform:translate3d(-5px,-6px,0)}
+    to{transform:translate3d(7px,8px,0)}
+}
+@keyframes math-wireframe-drift{
+    from{transform:translate3d(-5px,-4px,0) rotate(-1deg)}
+    to{transform:translate3d(8px,7px,0) rotate(2deg)}
+}
+
+.floating-lesson-field{
+    grid-template-columns:repeat(12,minmax(0,1fr));
+    gap:clamp(22px,2vw,32px);
+    align-items:start;
+    perspective:1600px;
+    transform-style:preserve-3d;
+    padding:22px 6px 48px;
+}
+.floating-lesson-card{
+    grid-column:span 4;
+    min-height:226px;
+    border:1px solid rgba(172,232,255,.48);
+    border-radius:22px;
+    overflow:visible;
+    background:
+        linear-gradient(155deg,rgba(176,231,255,.18),rgba(18,85,145,.08) 40%,rgba(5,31,65,.42)),
+        rgba(8,48,90,.54);
+    box-shadow:
+        0 28px 55px rgba(0,13,35,.32),
+        0 0 0 1px rgba(107,214,255,.07),
+        inset 0 1px 0 rgba(255,255,255,.24),
+        inset 0 -18px 34px rgba(0,20,48,.18);
+    backdrop-filter:blur(20px) saturate(145%);
+    transform-style:preserve-3d;
+}
+.floating-lesson-card:nth-child(6n+1){grid-column:1 / span 4}
+.floating-lesson-card:nth-child(6n+2){grid-column:5 / span 4;margin-top:26px}
+.floating-lesson-card:nth-child(6n+3){grid-column:9 / span 4;margin-top:6px}
+.floating-lesson-card:nth-child(6n+4){grid-column:1 / span 4;margin-left:5%;margin-top:18px}
+.floating-lesson-card:nth-child(6n+5){grid-column:5 / span 4;margin-top:38px}
+.floating-lesson-card:nth-child(6n+6){grid-column:9 / span 4;margin-right:5%;margin-top:16px}
+
+.floating-lesson-card::before{
+    width:170px;
+    height:170px;
+    right:-48px;
+    top:-62px;
+    background:
+        radial-gradient(circle,rgba(96,219,255,.34),rgba(58,163,255,.12) 38%,transparent 70%);
+    filter:blur(2px);
+}
+.floating-lesson-card::after{
+    inset:-1px;
+    border-radius:inherit;
+    background:
+        linear-gradient(112deg,rgba(255,255,255,.25),transparent 18% 66%,rgba(92,214,255,.18)),
+        linear-gradient(180deg,rgba(141,229,255,.08),transparent 44%);
+    box-shadow:
+        inset 0 0 0 1px rgba(186,238,255,.08),
+        0 0 22px rgba(62,191,255,.08);
+}
+.floating-lesson-card{
+    --tilt-x:1.4deg;
+    --tilt-y:-1.9deg;
+}
+.floating-lesson-card:nth-child(2n){--tilt-x:-1.2deg;--tilt-y:2.2deg}
+.floating-lesson-card:nth-child(3n){--tilt-x:.7deg;--tilt-y:1.5deg}
+@keyframes lesson-float{
+    0%{
+        transform:
+            perspective(1400px)
+            translate3d(calc(var(--parallax-x,0px) - var(--float-x)),calc(var(--parallax-y,0px) - var(--float-y)),0)
+            rotateX(var(--tilt-x))
+            rotateY(var(--tilt-y))
+            rotateZ(calc(0deg - var(--float-rot)));
+    }
+    50%{
+        transform:
+            perspective(1400px)
+            translate3d(calc(var(--parallax-x,0px) + var(--float-x)),var(--parallax-y,0px),12px)
+            rotateX(calc(0deg - var(--tilt-x)))
+            rotateY(calc(0deg - var(--tilt-y)))
+            rotateZ(0deg);
+    }
+    100%{
+        transform:
+            perspective(1400px)
+            translate3d(var(--parallax-x,0px),calc(var(--parallax-y,0px) + var(--float-y)),3px)
+            rotateX(var(--tilt-x))
+            rotateY(var(--tilt-y))
+            rotateZ(var(--float-rot));
+    }
+}
+.floating-lesson-card:hover,
+.floating-lesson-card:focus-within{
+    animation:none;
+    transform:
+        perspective(1400px)
+        translate3d(0,-5px,34px)
+        rotateX(0deg)
+        rotateY(0deg)
+        scale(1.018);
+    border-color:rgba(186,241,255,.86);
+    box-shadow:
+        0 34px 78px rgba(0,17,46,.38),
+        0 0 34px rgba(77,204,255,.22),
+        inset 0 1px 0 rgba(255,255,255,.32),
+        inset 0 -20px 38px rgba(0,18,45,.16);
+}
+.floating-lesson-card__top,
+.floating-lesson-actions{
+    transform:translateZ(24px);
+}
+.floating-lesson-visual{
+    transform:translateZ(38px);
+    width:clamp(80px,7.6vw,116px);
+    height:clamp(68px,6.8vw,94px);
+    color:#a8edff;
+    opacity:.94;
+    filter:
+        drop-shadow(0 0 10px rgba(88,205,255,.35))
+        drop-shadow(0 0 22px rgba(53,166,255,.16));
+}
+.floating-lesson-visual::before{
+    inset:2%;
+    border-color:rgba(153,232,255,.18);
+    box-shadow:
+        0 0 26px rgba(79,196,255,.12),
+        inset 0 0 18px rgba(82,201,255,.08);
+}
+.floating-lesson-card h3{
+    max-width:78%;
+    text-shadow:0 2px 14px rgba(0,0,0,.14);
+}
+.floating-open-lesson{
+    background:
+        linear-gradient(180deg,rgba(59,151,233,.26),rgba(19,91,170,.24)),
+        rgba(14,79,151,.28);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.17),
+        0 8px 22px rgba(0,25,64,.15);
+}
+.floating-lesson-card:hover .floating-open-lesson,
+.floating-open-lesson:focus-visible{
+    background:linear-gradient(135deg,#b8f3ff,#5ad9ff 58%,#5e9cff);
+    color:#05224a;
+    box-shadow:
+        0 12px 30px rgba(58,184,255,.28),
+        0 0 22px rgba(92,218,255,.2);
+}
+
+@media(max-width:1180px){
+    .floating-lesson-field{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .floating-lesson-card:nth-child(n){
+        grid-column:auto;
+        margin-inline:0;
+    }
+    .floating-lesson-card:nth-child(even){margin-top:22px}
+    .math-globe{width:min(46vw,390px);right:-4%}
+}
+@media(max-width:720px){
+    .student-learning-page .student-page-frame{padding:14px 12px 0}
+    .student-learning-page .student-learning-experience{
+        min-height:calc(100vh - 90px);
+        border-radius:20px 20px 0 0;
+    }
+    .math-globe{width:220px;right:-78px;top:60px;opacity:.27}
+    .math-wireframe--graph,
+    .math-wireframe--triangle{display:none}
+    .floating-lesson-field{display:flex}
+    .floating-lesson-card:nth-child(n){margin:0}
+    .floating-lesson-card h3{max-width:72%}
+}
+@media(prefers-reduced-motion:reduce){
+    .learning-math-atmosphere::before,
+    .math-globe,
+    .math-formula,
+    .math-wireframe{animation:none!important}
 }
