@@ -716,7 +716,7 @@ public sealed class MathematicsCurriculumPackSeeder
         foreach (var current in existing)
         {
             var expected = expectedByCode[current.Code];
-            var expectedParentId = expected.ParentCode is null
+            Guid? expectedParentId = expected.ParentCode is null
                 ? null
                 : expectedIds[expected.ParentCode];
 

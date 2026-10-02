@@ -17,7 +17,7 @@ public static class SupportingLessonPracticeContentCorrections
         CanonicalLessonContentPackDocument document,
         CanonicalLessonContentPackLesson lesson)
     {
-        if (lesson.OutcomeCodes.Count != 0 ||
+        if ((lesson.OutcomeCodes.Count != 0 && !PreservesReviewedRehearsalBody(document, lesson)) ||
             CambridgePrimaryStage6LessonContentCorrections.IsTarget(document, lesson))
         {
             return false;
@@ -33,6 +33,19 @@ public static class SupportingLessonPracticeContentCorrections
             english.Title,
             out _);
     }
+
+    // These OGL lessons already had reviewed, materialized bodies before official
+    // mapping. Adding an OutcomeCode must not restore their old generic raw prose
+    // or silently replace their persisted correction version.
+    private static bool PreservesReviewedRehearsalBody(
+        CanonicalLessonContentPackDocument document,
+        CanonicalLessonContentPackLesson lesson) =>
+        (document.PackCode == MathematicsCurriculumPackRegistry.CambridgeCode &&
+         (lesson.LessonCode.StartsWith("PED:CAMBRIDGE-INTL-MATH:L12:", StringComparison.Ordinal) ||
+          lesson.LessonCode.StartsWith("PED:CAMBRIDGE-INTL-MATH:L13:", StringComparison.Ordinal))) ||
+        (document.PackCode == MathematicsCurriculumPackRegistry.UaeCode &&
+         new[] { "L3:COMMON:", "L4:COMMON:", "L7:ADVANCED:", "L8:ADVANCED:", "L11:ADVANCED:", "L12:ADVANCED:" }
+             .Any(scope => lesson.LessonCode.StartsWith("PED:UAE-MOE-MATH:" + scope, StringComparison.Ordinal)));
 
     public static string GetExpectedContentVersion(
         CanonicalLessonContentPackDocument document,

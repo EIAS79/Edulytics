@@ -371,7 +371,7 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
                         x.OfficialLessonNodeId != null));
 
         Assert.Equal(
-            48,
+            123,
             await db.CurriculumPedagogicalLessonOutcomes
                 .CountAsync(
                     x =>

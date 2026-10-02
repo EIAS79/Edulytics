@@ -17,25 +17,26 @@
   "SourceLicense": "Open Government Licence v3.0",
   "RequiredDigitalAttribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
   "SourceSelectionReason": "The official curriculum source remains the academic authority. Edulytics uses open DfE Mathematics material only as lawful pedagogical scaffolding for independently authored lesson explanations where official copyrighted or source-linked prose is not reproduced.",
-  "SourceSelectionEvidence": "This scope contains 37 Edulytics-authored supporting lessons across 5 units. No formal outcome mapping is claimed without explicit source evidence; every formal OutcomeCodes collection is empty.",
+  "SourceSelectionEvidence": "Reviewed direct mappings to 12 existing accepted UAE MoE numbered standards cover 14 lessons. The remaining 23 lessons are Supporting. Official code identities and grade/pathway scopes are unchanged; standard meanings were checked against the MoE Strands and Standards Summary.",
   "SourceEvidenceUrls": [
     "https://minhaji.moe.gov.ae/",
     "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
     "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
     "https://uae.afedne.com/ShoTqehr0bon",
-    "https://uae.afedne.com/ShoaGZjhsPH5"
+    "https://uae.afedne.com/ShoaGZjhsPH5",
+    "https://www.scribd.com/document/826281797/Strands-and-Standards-Summary-MAT"
   ],
   "SourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official UAE Ministry of Education wording is not reproduced. Edulytics learner-facing bodies are independently authored.",
   "SemanticGraphSha256": "a56658b0070c7cc7bd529c21f3f81da9d67193d2057c6179fd9ff7862d0559b9",
   "AcquisitionDiagnostics": {
     "UnitCount": 5,
     "LessonCount": 37,
-    "OfficialStandardCount": 0,
-    "AddressingCoverageCount": 0,
-    "FormalMappingCount": 0,
-    "LessonsWithoutNumberedGradeReferenceAnyRole": 37,
-    "LessonsWithoutNumberedAddressingStandard": 37,
-    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 37,
+    "OfficialStandardCount": 12,
+    "AddressingCoverageCount": 12,
+    "FormalMappingCount": 14,
+    "LessonsWithoutNumberedGradeReferenceAnyRole": 23,
+    "LessonsWithoutNumberedAddressingStandard": 23,
+    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 23,
     "MultiStandardLessons": 0
   },
   "Units": [
@@ -147,8 +148,19 @@
       "SortOrder": 4,
       "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
       "SemanticSha256": "0a48c4c0b6cae8c0646af4b935d1b74c735ceadde81c345a6a00e0611d515928",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.1.07.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.1.07.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.07.02"
+      ],
       "ApplicableCourses": [
         "UAE-G7-ADVANCED-T1-OGL-V1"
       ],
@@ -164,8 +176,19 @@
       "SortOrder": 5,
       "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
       "SemanticSha256": "40bccc638a74a5a102688f35c7d9b95fa8b0cb50e5f809e915887475dfae0700",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.1.07.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.1.07.03",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.07.03"
+      ],
       "ApplicableCourses": [
         "UAE-G7-ADVANCED-T1-OGL-V1"
       ],
@@ -181,8 +204,19 @@
       "SortOrder": 6,
       "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
       "SemanticSha256": "0b936ec3213eb212ce6e603d9534fda49c1165a7f21b3cba49b138b2022e510f",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.1.07.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.1.07.01",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.07.01"
+      ],
       "ApplicableCourses": [
         "UAE-G7-ADVANCED-T1-OGL-V1"
       ],
@@ -232,8 +266,19 @@
       "SortOrder": 9,
       "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
       "SemanticSha256": "e4d17d8e88feba5327689cdec351c5e534f7a76c26cfdbb6e182e7ba7537364e",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.2.02.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.2.02.03",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.2.02.03"
+      ],
       "ApplicableCourses": [
         "UAE-G7-ADVANCED-T1-OGL-V1"
       ],
@@ -249,8 +294,19 @@
       "SortOrder": 10,
       "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
       "SemanticSha256": "6e983e22c3d12a274128de0815da8d56261a6af215acd76b6d5ab6494c2af13e",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.2.02.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.2.02.03",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.2.02.03"
+      ],
       "ApplicableCourses": [
         "UAE-G7-ADVANCED-T1-OGL-V1"
       ],
@@ -266,8 +322,19 @@
       "SortOrder": 11,
       "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
       "SemanticSha256": "ae64b5190243aa1dbbe48eae364db53fe643ee49c2ca16e05865b2b750a6af58",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.2.02.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.2.02.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.2.02.02"
+      ],
       "ApplicableCourses": [
         "UAE-G7-ADVANCED-T1-OGL-V1"
       ],
@@ -283,8 +350,19 @@
       "SortOrder": 12,
       "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
       "SemanticSha256": "c8f1c23276792d41def33fe63647e27b81912cfaef9aab122b9787129ba22401",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.2.02.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.2.02.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.2.02.02"
+      ],
       "ApplicableCourses": [
         "UAE-G7-ADVANCED-T1-OGL-V1"
       ],
@@ -300,8 +378,19 @@
       "SortOrder": 13,
       "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
       "SemanticSha256": "37f104e54206613acb3c0ea141228dc288d21cf5c1c690bb19c1344fc343a991",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.2.02.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.2.02.04",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.2.02.04"
+      ],
       "ApplicableCourses": [
         "UAE-G7-ADVANCED-T1-OGL-V1"
       ],
@@ -317,8 +406,19 @@
       "SortOrder": 14,
       "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
       "SemanticSha256": "bc17012df5f97b074870ceb8f1515296592991a8439302bbf6bdf93633898e48",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.2.02.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.2.02.05",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.2.02.05"
+      ],
       "ApplicableCourses": [
         "UAE-G7-ADVANCED-T1-OGL-V1"
       ],
@@ -351,8 +451,19 @@
       "SortOrder": 16,
       "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
       "SemanticSha256": "e3b315ffc147d803e1cfce258d31266db26177a24ac993465995d8816a7a9f54",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.2.02.08",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.2.02.08",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.2.02.08"
+      ],
       "ApplicableCourses": [
         "UAE-G7-ADVANCED-T1-OGL-V1"
       ],
@@ -402,8 +513,19 @@
       "SortOrder": 19,
       "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
       "SemanticSha256": "85fef591bf373f3bd547117b51a3325ee4aebc331f2139be2475bcebf02203be",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.3.05.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.3.05.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.3.05.02"
+      ],
       "ApplicableCourses": [
         "UAE-G7-ADVANCED-T1-OGL-V1"
       ],
@@ -419,8 +541,19 @@
       "SortOrder": 20,
       "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
       "SemanticSha256": "3509c344f77726dfb4f10157243ed8d5da4ea538d961ec5d5bf8f657acdb4fa4",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.3.05.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.3.05.01",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.3.05.01"
+      ],
       "ApplicableCourses": [
         "UAE-G7-ADVANCED-T1-OGL-V1"
       ],
@@ -436,8 +569,19 @@
       "SortOrder": 21,
       "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
       "SemanticSha256": "14df8233a8637044d23372986b3a56263e765b43228b3ddbb10a8eda58d92991",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.3.02.10",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.3.02.10",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.3.02.10"
+      ],
       "ApplicableCourses": [
         "UAE-G7-ADVANCED-T1-OGL-V1"
       ],
@@ -555,8 +699,19 @@
       "SortOrder": 28,
       "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
       "SemanticSha256": "ea039d6faba669b8c24ad91fe2a67a208ca622497ddaefddb43ee3ce66098d80",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.4.02.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.4.02.05",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.4.02.05"
+      ],
       "ApplicableCourses": [
         "UAE-G7-ADVANCED-T1-OGL-V1"
       ],
