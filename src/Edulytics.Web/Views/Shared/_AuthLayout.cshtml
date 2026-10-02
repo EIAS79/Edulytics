@@ -5,7 +5,7 @@
 }
 @using System.Globalization
 <!DOCTYPE html>
-<html lang="@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName">
+<html lang="@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName" dir="@(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "ar" ? "rtl" : "ltr")">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport"
@@ -21,6 +21,9 @@
           asp-append-version="true" />
     <link rel="stylesheet"
           href="~/css/auth-role-selector-v29.css"
+          asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/arabic-rtl.css"
           asp-append-version="true" />
 </head>
 <body class="ed-auth-body">

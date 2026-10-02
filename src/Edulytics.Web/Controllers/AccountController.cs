@@ -297,9 +297,10 @@ public sealed class AccountController : Controller
     {
         ModelState.AddModelError(
             nameof(LoginViewModel.AccountType),
-            IsPolishUi()
-                ? "Najpierw wybierz typ konta."
-                : "Choose your account type first.");
+            Ui(
+                "Choose your account type first.",
+                "Najpierw wybierz typ konta.",
+                "اختر نوع حسابك أولاً."));
     }
 
     private void AddAccountTypeMismatch(
@@ -309,20 +310,49 @@ public sealed class AccountController : Controller
 
         ModelState.AddModelError(
             nameof(LoginViewModel.AccountType),
-            IsPolishUi()
-                ? $"To konto nie jest zarejestrowane jako {label}. Wybierz właściwy typ konta."
-                : $"This account is not registered as {label}. Please choose the correct account type.");
+            Ui(
+                $"This account is not registered as {label}. Please choose the correct account type.",
+                $"To konto nie jest zarejestrowane jako {label}. Wybierz właściwy typ konta.",
+                $"هذا الحساب غير مسجل بصفة {label}. اختر نوع الحساب الصحيح."));
     }
 
-    private bool IsPolishUi() =>
+    private static bool IsPolishUi() =>
         string.Equals(
             CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
             "pl",
             StringComparison.OrdinalIgnoreCase);
 
+    private static bool IsArabicUi() =>
+        string.Equals(
+            CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,
+            "ar",
+            StringComparison.OrdinalIgnoreCase);
+
+    private static string Ui(
+        string en,
+        string pl,
+        string ar) =>
+        IsArabicUi()
+            ? ar
+            : IsPolishUi()
+                ? pl
+                : en;
+
     private string GetAccountTypeLabel(
         string accountType)
     {
+        if (IsArabicUi())
+        {
+            return accountType switch
+            {
+                RoleNames.SchoolAdmin => "مدير المدرسة",
+                RoleNames.SubjectSupervisor => "مشرف المادة",
+                RoleNames.Teacher => "معلم",
+                RoleNames.Student => "طالب",
+                _ => "نوع الحساب المحدد"
+            };
+        }
+
         if (IsPolishUi())
         {
             return accountType switch
@@ -334,6 +364,7 @@ public sealed class AccountController : Controller
                 _ => "wybrany typ konta"
             };
         }
+
         return accountType switch
         {
             RoleNames.SchoolAdmin => "a School Administrator",
@@ -343,7 +374,6 @@ public sealed class AccountController : Controller
             _ => "the selected account type"
         };
     }
-
     private static bool IsSupportedAccountType(
         string? accountType) =>
         !string.IsNullOrWhiteSpace(accountType) &&
@@ -357,29 +387,13 @@ public sealed class AccountController : Controller
                 .Trim()
                 .ToLowerInvariant();
 
-        // The public website supports Arabic, but the application/login
-        // gateway is intentionally bilingual. Arabic visitors enter the
-        // application through the English login experience.
-        if (string.Equals(
-                culture,
-                "ar",
-                StringComparison.Ordinal))
-        {
-            culture = "en";
-        }
-
-        if (culture is not ("en" or "pl"))
+        if (culture is not ("en" or "pl" or "ar"))
         {
             culture =
                 CultureCookie.TryRead(
                     Request,
                     out var cookieCulture)
-                    ? string.Equals(
-                        cookieCulture,
-                        "ar",
-                        StringComparison.Ordinal)
-                        ? "en"
-                        : cookieCulture
+                    ? cookieCulture
                     : "pl";
         }
 
@@ -396,7 +410,6 @@ public sealed class AccountController : Controller
 
         return culture;
     }
-
     private string ApplySetupCulture(
         string? culture)
     {

@@ -1,10 +1,12 @@
+@using System.Globalization
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SharedResource> Shared
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @{
+    var pageLanguage = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
     var localizedProductName = Shared["ProductName"].Value;
 }
 <!DOCTYPE html>
-<html lang="@System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName">
+<html lang="@pageLanguage" dir="@(pageLanguage == "ar" ? "rtl" : "ltr")">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport"
@@ -13,6 +15,9 @@
 
     <link rel="stylesheet"
           href="~/css/site.css"
+          asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/arabic-rtl.css"
           asp-append-version="true" />
 </head>
 
@@ -26,6 +31,7 @@
             </a>
 
             <div class="student-access-account">
+                <partial name="_AppLanguageSwitcher" />
                 <span>@User.Identity?.Name</span>
 
                 <form asp-controller="Account"

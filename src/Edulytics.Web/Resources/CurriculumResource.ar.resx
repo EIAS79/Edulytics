@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms</value></resheader>
+  <data name="CurriculumTitle" xml:space="preserve"><value>المناهج ونتائج التعلم</value></data>
+  <data name="CurriculumSubtitle" xml:space="preserve"><value>اختيار منهج الرياضيات المعتمد والصف أو المستوى وموضوعات التدريس والدروس ونتائج التعلم.</value></data>
+  <data name="ManageCurriculum" xml:space="preserve"><value>إدارة المناهج الدراسية</value></data>
+  <data name="BackToDashboard" xml:space="preserve"><value>العودة إلى لوحة القيادة المدرسة</value></data>
+  <data name="CreateTopic" xml:space="preserve"><value>إنشاء الموضوع</value></data>
+  <data name="EditTopic" xml:space="preserve"><value>تحرير الموضوع</value></data>
+  <data name="CreateOutcome" xml:space="preserve"><value>إنشاء نتائج التعلم</value></data>
+  <data name="EditOutcome" xml:space="preserve"><value>تحرير نتائج التعلم</value></data>
+  <data name="Subject" xml:space="preserve"><value>موضوع</value></data>
+  <data name="GradeLevel" xml:space="preserve"><value>مستوى الصف</value></data>
+  <data name="Topic" xml:space="preserve"><value>عنوان</value></data>
+  <data name="Topics" xml:space="preserve"><value>الوحدات / المواضيع</value></data>
+  <data name="Name" xml:space="preserve"><value>اسم</value></data>
+  <data name="Order" xml:space="preserve"><value>طلب</value></data>
+  <data name="OutcomeCode" xml:space="preserve"><value>رمز النتيجة</value></data>
+  <data name="Description" xml:space="preserve"><value>وصف</value></data>
+  <data name="Weight" xml:space="preserve"><value>وزن (٪)</value></data>
+  <data name="LearningOutcomes" xml:space="preserve"><value>نتائج التعلم</value></data>
+  <data name="SaveChanges" xml:space="preserve"><value>حفظ التغييرات</value></data>
+  <data name="Create" xml:space="preserve"><value>يخلق</value></data>
+  <data name="Edit" xml:space="preserve"><value>يحرر</value></data>
+  <data name="NoTopics" xml:space="preserve"><value>لم يتم إنشاء أي موضوعات للمناهج الدراسية حتى الآن.</value></data>
+  <data name="NoOutcomes" xml:space="preserve"><value>لم تتم إضافة أي نتائج تعليمية إلى موضوع التدريس هذا حتى الآن.</value></data>
+  <data name="InitialFocus" xml:space="preserve"><value>التركيز الأولي للمنتج: الرياضيات للصف السادس.</value></data>
+  <data name="OutcomeMappingReady" xml:space="preserve"><value>معرفات ورموز النتائج الثابتة جاهزة لتعيين أسئلة المرحلة 08.</value></data>
+  <data name="SuccessTopicCreated" xml:space="preserve"><value>تم إنشاء موضوع التدريس.</value></data>
+  <data name="SuccessTopicUpdated" xml:space="preserve"><value>تم تحديث موضوع التدريس</value></data>
+  <data name="SuccessOutcomeUpdated" xml:space="preserve"><value>تم تحديث نتائج التعلم.</value></data>
+  <data name="ErrorAccessDenied" xml:space="preserve"><value>ليس لديك إذن لإدارة المنهج.</value></data>
+  <data name="ErrorSchoolNotActive" xml:space="preserve"><value>لا يمكن تغيير المنهج أثناء عدم نشاط المدرسة.</value></data>
+  <data name="ErrorRequired" xml:space="preserve"><value>هذه الخانة مطلوبه.</value></data>
+  <data name="ErrorInvalidName" xml:space="preserve"><value>القيمة غير صالحة أو طويلة جدًا.</value></data>
+  <data name="ErrorInvalidOrder" xml:space="preserve"><value>يجب أن يكون الترتيب أكبر من الصفر.</value></data>
+  <data name="ErrorInvalidCode" xml:space="preserve"><value>استخدم 1-50 حرفًا: A-Z، 0-9، نقطة، شرطة سفلية أو واصلة.</value></data>
+  <data name="ErrorInvalidWeight" xml:space="preserve"><value>يجب أن يكون الوزن أكبر من 0 ولا يزيد عن 100.</value></data>
+  <data name="ErrorSubjectNotFound" xml:space="preserve"><value>الموضوع المحدد لا ينتمي إلى هذه المدرسة.</value></data>
+  <data name="ErrorGradeLevelNotFound" xml:space="preserve"><value>مستوى الصف المحدد لا ينتمي إلى هذه المدرسة.</value></data>
+  <data name="ErrorTopicNotFound" xml:space="preserve"><value>لم يتم العثور على موضوع التدريس.</value></data>
+  <data name="ErrorOutcomeNotFound" xml:space="preserve"><value>لم يتم العثور على نتيجة التعلم.</value></data>
+  <data name="ErrorDuplicateTopicName" xml:space="preserve"><value>هناك موضوع بهذا الاسم موجود بالفعل للمنهج والمستوى المحدد.</value></data>
+  <data name="ErrorDuplicateTopicOrder" xml:space="preserve"><value>تم استخدام ترتيب الموضوع هذا بالفعل للمنهج والمستوى المحددين.</value></data>
+  <data name="ErrorDuplicateOutcomeCode" xml:space="preserve"><value>توجد بالفعل نتيجة تعليمية بهذا الرمز في هذه المدرسة.</value></data>
+  <data name="ErrorDuplicateOutcomeOrder" xml:space="preserve"><value>تم استخدام ترتيب النتائج هذا بالفعل داخل الموضوع.</value></data>
+  <data name="ErrorPersistence" xml:space="preserve"><value>لا يمكن حفظ التغيير. أعد التحميل وحاول مرة أخرى.</value></data>
+  <data name="SelectSubject" xml:space="preserve"><value>حدد الموضوع</value></data>
+  <data name="SelectGrade" xml:space="preserve"><value>حدد مستوى الصف</value></data>
+  <data name="SelectTopic" xml:space="preserve"><value>اختر الوحدة/الموضوع</value></data>
+  <data name="WeightHelp" xml:space="preserve"><value>الوزن هو نسبة مئوية أكبر من 0 ولا تزيد عن 100. لا يتم فرض قاعدة المجموع إلى 100 لأن المواصفات لا تحدد واحدة.</value></data>
+  <data name="FrameworkTitle" xml:space="preserve"><value>إطار المنهج</value></data>
+  <data name="FrameworkSubtitle" xml:space="preserve"><value>اختر حزمة المنهج التي تم التحقق منها والتي يستخدمها هذا الصف وهذا الموضوع قبل إنشاء موضوعات من تأليف المدرسة.</value></data>
+  <data name="CurriculumFramework" xml:space="preserve"><value>حزمة المناهج</value></data>
+  <data name="SelectFramework" xml:space="preserve"><value>اختر حزمة المنهج</value></data>
+  <data name="UseFramework" xml:space="preserve"><value>استخدام المناهج الدراسية</value></data>
+  <data name="FrameworkHelp" xml:space="preserve"><value>حزم الرياضيات المتوفرة هي حزم Edulytics الأربع التي تم التحقق منها. يظل المحتوى الرسمي غير قابل للتغيير ويتم تحديده أدناه؛ تبقى الإضافات التي كتبتها المدرسة منفصلة.</value></data>
+  <data name="TopicRequiresFramework" xml:space="preserve"><value>قم أولاً باعتماد منهج ومستوى الرياضيات لهذه المدرسة.</value></data>
+  <data name="SuccessFrameworkSelected" xml:space="preserve"><value>تم اختيار إطار المنهج.</value></data>
+  <data name="ErrorFrameworkNotFound" xml:space="preserve"><value>حزمة المنهج التي تم التحقق منها غير متوفرة.</value></data>
+  <data name="ErrorCurriculumNotSelected" xml:space="preserve"><value>حدد المنهج والمستوى المعتمدين قبل إنشاء موضوع التدريس.</value></data>
+  <data name="ErrorCurriculumFrameworkInUse" xml:space="preserve"><value>يحتوي هذا المستوى بالفعل على موضوعات تعليمية ضمن حزمة مناهج أخرى، لذلك لا يمكن تغيير المنهج هنا.</value></data>
+  <data name="ActiveCurricula" xml:space="preserve"><value>اختيارات المناهج النشطة</value></data>
+  <data name="CreateSchoolTopic" xml:space="preserve"><value>إضافة وحدة / موضوع</value></data>
+  <data name="SchoolTopic" xml:space="preserve"><value>الوحدة / الموضوع</value></data>
+  <data name="AddOfficialOutcome" xml:space="preserve"><value>إضافة إلى خطة التدريس</value></data>
+  <data name="OfficialOutcomeHelp" xml:space="preserve"><value>اختر درسًا رسميًا أو معيارًا أو نتيجة تعليمية من المنهج المعتمد. يتم ملء الكود والوصف الرسمي الخاص به تلقائيًا ويظل للقراءة فقط.</value></data>
+  <data name="OfficialCurriculumItem" xml:space="preserve"><value>الدرس / المعيار / نتائج التعلم</value></data>
+  <data name="SelectOfficialItem" xml:space="preserve"><value>حدد الدرس أو المعيار أو نتيجة التعلم</value></data>
+  <data name="NoOfficialItemsForTopic" xml:space="preserve"><value>لا توجد عناصر منهج رسمية تم التحقق منها متاحة لهذا المنهج وهذا المستوى.</value></data>
+  <data name="OfficialOutcomeCode" xml:space="preserve"><value>الرمز الرسمي (تلقائي)</value></data>
+  <data name="OfficialDescription" xml:space="preserve"><value>الوصف الرسمي (تلقائي)</value></data>
+  <data name="Official" xml:space="preserve"><value>رسمي</value></data>
+  <data name="SuccessOfficialOutcomeAdded" xml:space="preserve"><value>تمت إضافة بند المنهج الرسمي إلى خطة التدريس.</value></data>
+  <data name="ErrorOfficialOutcomeNotFound" xml:space="preserve"><value>العنصر المحدد ليس عنصرًا رسميًا لهذا المنهج وهذا المستوى.</value></data>
+  <data name="ErrorOfficialOutcomeReadOnly" xml:space="preserve"><value>رموز المناهج الرسمية وأوصافها للقراءة فقط.</value></data>
+  <data name="CurriculumViewSubtitle" xml:space="preserve"><value>عرض منهج الرياضيات المعتمد حسب المستوى وموضوعات التدريس والدروس ومخرجات التعلم الرسمية.</value></data>
+  <data name="AcademicProgram" xml:space="preserve"><value>مقرر</value></data>
+  <data name="SelectProgram" xml:space="preserve"><value>اختر المنهج</value></data>
+  <data name="ErrorAcademicProgramNotFound" xml:space="preserve"><value>اختر منهجًا صالحًا.</value></data>
+  <data name="AcademicYear" xml:space="preserve"><value>العام الدراسي</value></data>
+  <data name="SelectAcademicYear" xml:space="preserve"><value>اختر العام الدراسي</value></data>
+  <data name="CurriculumLevel" xml:space="preserve"><value>الدرجة / المستوى</value></data>
+  <data name="SelectCurriculumLevel" xml:space="preserve"><value>حدد الصف / المستوى</value></data>
+  <data name="ShowCurriculum" xml:space="preserve"><value>عرض المنهج</value></data>
+  <data name="ChooseCurriculumContext" xml:space="preserve"><value>حدد العام الدراسي والمنهج الدراسي والصف/المستوى أولاً.</value></data>
+  <data name="OfficialCurriculum" xml:space="preserve"><value>المنهج الرسمي</value></data>
+  <data name="OfficialCurriculumHelp" xml:space="preserve"><value>هذا هو المنهج الرسمي المعتمد إنه للقراءة فقط هنا؛ تنظمه المدرسة للتدريس دون إعادة كتابة المحتوى الرسمي.</value></data>
+  <data name="SchoolTeachingPlan" xml:space="preserve"><value>الوحدات / المواضيع وخطة التدريس</value></data>
+  <data name="SchoolTeachingPlanHelp" xml:space="preserve"><value>تنظيم الدروس الرسمية ومخرجات التعلم في الخطة التعليمية للمدرسة دون تغيير محتوى المنهج الرسمي.</value></data>
+  <data name="Curriculum" xml:space="preserve"><value>مقرر</value></data>
+  <data name="StagePathway" xml:space="preserve"><value>المرحلة / المسار</value></data>
+  <data name="NoSchoolPlan" xml:space="preserve"><value>لم تتم إضافة أي وحدات أو موضوعات تعليمية لهذا المستوى الدراسي.</value></data>
+</root>

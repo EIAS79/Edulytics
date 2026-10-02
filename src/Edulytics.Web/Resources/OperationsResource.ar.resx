@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="DashboardOperationsTitle" xml:space="preserve">
+    <value>العمليات</value>
+  </data>
+  <data name="DashboardOperationsDescription" xml:space="preserve">
+    <value>مراقبة معالجة الخلفية والفشل وحالة الموصل ومعلومات الإصدار.</value>
+  </data>
+  <data name="OpenOperations" xml:space="preserve">
+    <value>العمليات المفتوحة</value>
+  </data>
+  <data name="OperationsTitle" xml:space="preserve">
+    <value>وحدة تحكم المشرف التشغيلية</value>
+  </data>
+  <data name="OperationsSubtitle" xml:space="preserve">
+    <value>رؤية تشغيلية آمنة للإنتاج والاسترداد الروتيني لـ Edulytics.</value>
+  </data>
+  <data name="BackToPlatformDashboard" xml:space="preserve">
+    <value>العودة إلى لوحة تحكم المنصة</value>
+  </data>
+  <data name="ReleaseSha" xml:space="preserve">
+    <value>الافراج عن شا</value>
+  </data>
+  <data name="MigrationVersion" xml:space="preserve">
+    <value>نسخة الهجرة</value>
+  </data>
+  <data name="WorkerState" xml:space="preserve">
+    <value>عامل صندوق الصادر</value>
+  </data>
+  <data name="WorkerStarted" xml:space="preserve">
+    <value>بدأت</value>
+  </data>
+  <data name="WorkerNotStarted" xml:space="preserve">
+    <value>لم يبدأ</value>
+  </data>
+  <data name="StartedAt" xml:space="preserve">
+    <value>بدأت في</value>
+  </data>
+  <data name="LastHeartbeat" xml:space="preserve">
+    <value>آخر نبضات القلب</value>
+  </data>
+  <data name="HeartbeatAge" xml:space="preserve">
+    <value>عمر نبضات القلب</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>ثواني</value>
+  </data>
+  <data name="EmailConnector" xml:space="preserve">
+    <value>موصل البريد الإلكتروني</value>
+  </data>
+  <data name="ConnectorStatus" xml:space="preserve">
+    <value>حالة</value>
+  </data>
+  <data name="ConsecutiveFailures" xml:space="preserve">
+    <value>إخفاقات متتالية</value>
+  </data>
+  <data name="CircuitOpenUntil" xml:space="preserve">
+    <value>الدائرة مفتوحة حتى</value>
+  </data>
+  <data name="ConnectorStatusHealthy" xml:space="preserve">
+    <value>صحيح</value>
+  </data>
+  <data name="ConnectorStatusDegraded" xml:space="preserve">
+    <value>متدهورة</value>
+  </data>
+  <data name="ConnectorStatusCircuitOpen" xml:space="preserve">
+    <value>الدائرة مفتوحة</value>
+  </data>
+  <data name="ConnectorStatusDisabled" xml:space="preserve">
+    <value>عاجز</value>
+  </data>
+  <data name="ConnectorStatusInvalidConfiguration" xml:space="preserve">
+    <value>تكوين غير صالح</value>
+  </data>
+  <data name="OutboxSummary" xml:space="preserve">
+    <value>ملخص البريد الصادر</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>قيد الانتظار</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>يعالج</value>
+  </data>
+  <data name="DeadLetters" xml:space="preserve">
+    <value>رسائل ميتة</value>
+  </data>
+  <data name="OldestPending" xml:space="preserve">
+    <value>الأقدم معلق</value>
+  </data>
+  <data name="OldestProcessing" xml:space="preserve">
+    <value>أقدم معالجة</value>
+  </data>
+  <data name="OutboxBacklog" xml:space="preserve">
+    <value>تراكم البريد الصادر</value>
+  </data>
+  <data name="NoBacklog" xml:space="preserve">
+    <value>لا توجد رسائل معلقة أو قيد المعالجة.</value>
+  </data>
+  <data name="NoDeadLetters" xml:space="preserve">
+    <value>لا رسائل ميتة.</value>
+  </data>
+  <data name="MessageId" xml:space="preserve">
+    <value>معرف الرسالة</value>
+  </data>
+  <data name="SchoolId" xml:space="preserve">
+    <value>معرف المدرسة</value>
+  </data>
+  <data name="EventType" xml:space="preserve">
+    <value>نوع الحدث</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>حالة</value>
+  </data>
+  <data name="Attempts" xml:space="preserve">
+    <value>محاولات</value>
+  </data>
+  <data name="OccurredAt" xml:space="preserve">
+    <value>حدثت عند</value>
+  </data>
+  <data name="AvailableAt" xml:space="preserve">
+    <value>متوفر في</value>
+  </data>
+  <data name="DeadLetteredAt" xml:space="preserve">
+    <value>بحروف ميتة في</value>
+  </data>
+  <data name="LastError" xml:space="preserve">
+    <value>الخطأ الأخير</value>
+  </data>
+  <data name="CorrelationId" xml:space="preserve">
+    <value>معرف الارتباط</value>
+  </data>
+  <data name="Requeue" xml:space="preserve">
+    <value>قائمة الانتظار</value>
+  </data>
+  <data name="RequeueReason" xml:space="preserve">
+    <value>سبب المشغل</value>
+  </data>
+  <data name="RequeueReasonPlaceholder" xml:space="preserve">
+    <value>قم بوصف سبب كون هذه الرسالة آمنة لإعادة المحاولة</value>
+  </data>
+  <data name="RequeueReasonValidation" xml:space="preserve">
+    <value>مطلوب سبب إعادة الانتظار بين 1 و500 حرف.</value>
+  </data>
+  <data name="RequeueSucceeded" xml:space="preserve">
+    <value>تمت إعادة وضع رسالة الرسالة الميتة بأمان.</value>
+  </data>
+  <data name="RequeueRejected" xml:space="preserve">
+    <value>تم رفض إعادة الانتظار بسبب تغيير حالة الرسالة أو بسبب عدم إمكانية إعادة محاولة المهمة التابعة لها بشكل آمن.</value>
+  </data>
+  <data name="AnalyticsFreshness" xml:space="preserve">
+    <value>نضارة التحليلات</value>
+  </data>
+  <data name="NoAnalyticsState" xml:space="preserve">
+    <value>لم يتم تسجيل أي حالة تحديث للتحليلات حاليًا.</value>
+  </data>
+  <data name="RequestedVersion" xml:space="preserve">
+    <value>النسخة المطلوبة</value>
+  </data>
+  <data name="CompletedVersion" xml:space="preserve">
+    <value>النسخة المكتملة</value>
+  </data>
+  <data name="Freshness" xml:space="preserve">
+    <value>نضارة</value>
+  </data>
+  <data name="Fresh" xml:space="preserve">
+    <value>طازج</value>
+  </data>
+  <data name="Behind" xml:space="preserve">
+    <value>خلف</value>
+  </data>
+  <data name="LastRequested" xml:space="preserve">
+    <value>آخر طلب</value>
+  </data>
+  <data name="LatestCalculated" xml:space="preserve">
+    <value>آخر حساب</value>
+  </data>
+  <data name="ImportFailures" xml:space="preserve">
+    <value>فشل الاستيراد</value>
+  </data>
+  <data name="NoImportFailures" xml:space="preserve">
+    <value>لا توجد حالات فشل حديثة في التحقق من صحة الاستيراد.</value>
+  </data>
+  <data name="ImportType" xml:space="preserve">
+    <value>نوع الاستيراد</value>
+  </data>
+  <data name="Rows" xml:space="preserve">
+    <value>الصفوف</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>أخطاء</value>
+  </data>
+  <data name="CreatedAt" xml:space="preserve">
+    <value>تم الإنشاء في</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>لا أحد</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>مجهول</value>
+  </data>
+  <data name="StatusPending" xml:space="preserve">
+    <value>قيد الانتظار</value>
+  </data>
+  <data name="StatusProcessing" xml:space="preserve">
+    <value>يعالج</value>
+  </data>
+</root>

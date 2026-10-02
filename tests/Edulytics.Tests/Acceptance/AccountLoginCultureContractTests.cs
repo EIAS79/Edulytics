@@ -3,7 +3,7 @@ namespace Edulytics.Tests.Acceptance;
 public sealed class AccountLoginCultureContractTests
 {
     [Fact]
-    public void RequestLocalization_ResolvesLoginCultureBeforeMvcAndMapsArabicToEnglish()
+    public void RequestLocalization_ResolvesArabicLoginCultureBeforeMvc()
     {
         var source = ReadRepositoryFile(
             "src",
@@ -29,23 +29,13 @@ public sealed class AccountLoginCultureContractTests
             StringComparison.Ordinal);
 
         Assert.Contains(
-            "if (string.Equals(\n                                    culture,\n                                    \"ar\"",
-            source,
-            StringComparison.Ordinal);
-
-        Assert.Contains(
-            "culture = \"en\";",
-            source,
-            StringComparison.Ordinal);
-
-        Assert.Contains(
-            "culture is not (\"en\" or \"pl\")",
+            "culture is not (\"en\" or \"pl\" or \"ar\")",
             source,
             StringComparison.Ordinal);
     }
 
     [Fact]
-    public void Login_HonorsExplicitEnglishOrPolishCulture()
+    public void Login_HonorsExplicitEnglishPolishOrArabicCulture()
     {
         var source = ReadRepositoryFile(
             "src",
@@ -59,7 +49,7 @@ public sealed class AccountLoginCultureContractTests
             StringComparison.Ordinal);
 
         Assert.Contains(
-            "culture is not (\"en\" or \"pl\")",
+            "culture is not (\"en\" or \"pl\" or \"ar\")",
             source,
             StringComparison.Ordinal);
 
@@ -70,7 +60,7 @@ public sealed class AccountLoginCultureContractTests
     }
 
     [Fact]
-    public void Login_MapsArabicWebsiteCultureToEnglish()
+    public void Login_PreservesArabicWebsiteCulture()
     {
         var source = ReadRepositoryFile(
             "src",
@@ -79,17 +69,17 @@ public sealed class AccountLoginCultureContractTests
             "AccountController.cs");
 
         Assert.Contains(
-            "string.Equals(\n                culture,\n                \"ar\"",
+            "culture is not (\"en\" or \"pl\" or \"ar\")",
             source,
             StringComparison.Ordinal);
 
-        Assert.Contains(
+        Assert.DoesNotContain(
             "culture = \"en\";",
             source,
             StringComparison.Ordinal);
 
         Assert.Contains(
-            "string.Equals(\n                        cookieCulture,\n                        \"ar\"",
+            "? cookieCulture\n                    : \"pl\";",
             source,
             StringComparison.Ordinal);
     }
@@ -114,8 +104,13 @@ public sealed class AccountLoginCultureContractTests
             source,
             StringComparison.Ordinal);
 
-        Assert.DoesNotContain(
-            "isArabic",
+        Assert.Contains(
+            "var isArabic = string.Equals(loginCulture, \"ar\"",
+            source,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "string L(string en, string pl, string ar)",
             source,
             StringComparison.Ordinal);
     }
