@@ -136,7 +136,8 @@ public static class CanonicalLessonContentMaterializer
                 .GetExpectedContentVersion(
                     document,
                     lesson,
-                    stage6);
+                    CambridgeReviewedExampleContentCorrections
+                        .GetExpectedContentVersion(document, lesson, stage6));
 
         var official =
             OfficialLessonPracticeContentCorrections
@@ -157,6 +158,8 @@ public static class CanonicalLessonContentMaterializer
         CanonicalLessonContentPackLesson lesson) =>
         CambridgePrimaryStage6LessonContentCorrections
             .IsTarget(document, lesson) ||
+        CambridgeReviewedExampleContentCorrections
+            .IsTarget(document, lesson) ||
         SupportingLessonPracticeContentCorrections
             .IsTarget(document, lesson) ||
         OfficialLessonPracticeContentCorrections
@@ -173,6 +176,8 @@ public static class CanonicalLessonContentMaterializer
                 document,
                 lesson,
                 existingContentVersion) ||
+        CambridgeReviewedExampleContentCorrections
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         SupportingLessonPracticeContentCorrections
             .CanUpgradeExisting(
                 document,
