@@ -45,23 +45,26 @@ public sealed class TestingHostIsolationTests
             "\"Testing\"",
             realtime);
 
+        var normalizedRealtime =
+            realtime.Replace("\r\n", "\n");
+
         var testingGate =
-            realtime.IndexOf(
+            normalizedRealtime.IndexOf(
                 "if (!environment.IsEnvironment(",
                 StringComparison.Ordinal);
 
         var outboxRegistration =
-            realtime.IndexOf(
+            normalizedRealtime.IndexOf(
                 "AddHostedService<"
-                + Environment.NewLine
+                + "\n"
                 + "                "
                 + "OutboxProcessorBackgroundService",
                 StringComparison.Ordinal);
 
         var analyticsRegistration =
-            realtime.IndexOf(
+            normalizedRealtime.IndexOf(
                 "AddHostedService<"
-                + Environment.NewLine
+                + "\n"
                 + "                "
                 + "AnalyticsRefreshBackgroundService",
                 StringComparison.Ordinal);
