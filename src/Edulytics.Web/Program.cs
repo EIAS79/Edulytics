@@ -126,15 +126,7 @@ builder.Services
                                     .Trim()
                                     .ToLowerInvariant();
 
-                            if (string.Equals(
-                                    culture,
-                                    "ar",
-                                    StringComparison.Ordinal))
-                            {
-                                culture = "en";
-                            }
-
-                            if (culture is not ("en" or "pl"))
+                            if (culture is not ("en" or "pl" or "ar"))
                             {
                                 return Task.FromResult<
                                     ProviderCultureResult?>(

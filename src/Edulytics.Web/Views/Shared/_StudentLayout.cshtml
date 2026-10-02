@@ -1,13 +1,15 @@
+@using System.Globalization
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SharedResource> Shared
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.SupportResource> Contact
 @{
+    var pageLanguage = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
     var localizedProductName = Shared["ProductName"].Value;
     var action = ViewContext.RouteData.Values["action"]?.ToString() ?? string.Empty;
     var controller = ViewContext.RouteData.Values["controller"]?.ToString() ?? string.Empty;
 }
 <!DOCTYPE html>
-<html lang="@System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName">
+<html lang="@pageLanguage" dir="@(pageLanguage == "ar" ? "rtl" : "ltr")">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,6 +17,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/acceptance-corrective.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/round4-ux-display.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/arabic-rtl.css" asp-append-version="true" />
     @await RenderSectionAsync("Head", required: false)
 </head>
 <body class="student-portal-body">
@@ -36,12 +39,13 @@
         </aside>
         <main class="student-main">
             <header class="student-topbar">
+                <partial name="_AppLanguageSwitcher" />
                 <div><span class="student-topbar-product">@localizedProductName</span><strong>@ViewData["Title"]</strong></div>
                 <form asp-controller="Account" asp-action="Logout" method="post"><button class="student-signout" type="submit">@S["SignOut"]</button></form>
             </header>
             <div class="student-page-frame">@RenderBody()</div>
             <footer class="ed-v3-footer">
-                <a href="/content-sources-licenses.html">Content sources &amp; licences</a> ·
+                <a href="/content-sources-licenses.html">@Shared["ContentSourcesLicences"]</a> ·
                 <a asp-controller="Contact" asp-action="Index">@Contact["ContactUs"]</a>
             </footer>
         </main>

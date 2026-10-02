@@ -18,7 +18,7 @@
 }
 
 <!DOCTYPE html>
-<html lang="@pageLanguage">
+<html lang="@pageLanguage" dir="@(pageLanguage == "ar" ? "rtl" : "ltr")">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,6 +30,9 @@
           asp-append-version="true" />
     <link rel="stylesheet"
           href="~/css/acceptance-corrective.css"
+          asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/arabic-rtl.css"
           asp-append-version="true" />
 </head>
 <body class="ed-app-body ed-v3-body">
@@ -269,6 +272,7 @@
                     </div>
 
                     <div class="ed-v3-topbar-actions">
+                        <partial name="_AppLanguageSwitcher" />
                         @if (isSuperAdmin || isSchoolAdmin)
                         {
                             <a class="ed-v3-topbar-button"
@@ -309,7 +313,7 @@
 
             <footer class="ed-v3-footer">
                 &copy; 2026 @localizedProductName · @S["V3Footer"] ·
-                <a href="/content-sources-licenses.html">Content sources &amp; licences</a> ·
+                <a href="/content-sources-licenses.html">@S["ContentSourcesLicences"]</a> ·
                 <a asp-controller="Contact" asp-action="Index">@Contact["ContactUs"]</a>
             </footer>
         </div>

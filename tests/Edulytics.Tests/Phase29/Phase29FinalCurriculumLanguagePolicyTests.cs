@@ -57,7 +57,7 @@ public sealed class Phase29FinalCurriculumLanguagePolicyTests
         var commonCore = Assert.Single(MathematicsCurriculumPackRegistry.All,
             x => x.Code == MathematicsCurriculumPackRegistry.CommonCoreCode);
         Assert.Equal("en", commonCore.AcademicLanguage);
-        Assert.Equal(new[] { "en", "pl" }, SupportedUiCultures());
+        Assert.Equal(new[] { "en", "pl", "ar" }, SupportedUiCultures());
 
         var service = File.ReadAllText(RepoPath("src/Edulytics.Services/LessonContent/LessonContentService.cs"));
         Assert.Contains("SelectAcademicContent", service, StringComparison.Ordinal);
@@ -76,7 +76,7 @@ public sealed class Phase29FinalCurriculumLanguagePolicyTests
         Assert.DoesNotContain("SourceSha256", File.ReadAllText(RepoPath("src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml")), StringComparison.Ordinal);
     }
 
-    private static string[] SupportedUiCultures() => ["en", "pl"];
+    private static string[] SupportedUiCultures() => ["en", "pl", "ar"];
 
     private static string RepoPath(string relative)
     {

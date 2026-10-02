@@ -14,7 +14,9 @@
     var loginCulture = (ViewData["LoginCulture"] as string)
         ?? CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
     var isPolish = string.Equals(loginCulture, "pl", StringComparison.OrdinalIgnoreCase);
-    string L(string en, string pl) => isPolish ? pl : en;
+    var isArabic = string.Equals(loginCulture, "ar", StringComparison.OrdinalIgnoreCase);
+    string L(string en, string pl, string ar) =>
+        isArabic ? ar : isPolish ? pl : en;
 }
 
 <section class="ed-login-v28">
@@ -23,17 +25,17 @@
             <a asp-controller="Home" asp-action="Index" aria-label="@localizedProductName">
                 <partial name="_LocalizedBrand" />
             </a>
-            <span class="ed-login-v28-language" aria-label="@L("Current language", "Bieżący język")">
+            <span class="ed-login-v28-language" aria-label="@L("Current language", "Bieżący język", "اللغة الحالية")">
                 @if (isPolish)
                 {
                     <span class="ed-login-v28-flag" aria-hidden="true"><span></span><span></span></span>
                 }
-                <span>@(isPolish ? "PL" : "EN")</span>
+                <span>@(isArabic ? "AR" : isPolish ? "PL" : "EN")</span>
             </span>
         </div>
         <div class="ed-login-v28-top-help">
-            @L("Need help signing in?", "Potrzebujesz pomocy z logowaniem?")
-            <a asp-controller="Contact" asp-action="Index">@L("Contact us", "Skontaktuj się")</a>
+            @L("Need help signing in?", "Potrzebujesz pomocy z logowaniem?", "هل تحتاج مساعدة في تسجيل الدخول؟")
+            <a asp-controller="Contact" asp-action="Index">@L("Contact us", "Skontaktuj się", "تواصل معنا")</a>
         </div>
     </header>
 
@@ -42,8 +44,8 @@
             <div class="ed-login-v28-role-heading">
                 <span class="ed-login-v28-step">1</span>
                 <div>
-                    <h2 id="account-type-heading">@L("Choose your account type", "Wybierz typ konta")</h2>
-                    <p>@L("School users select the role registered for this account.", "Użytkownicy szkolni wybierają rolę przypisaną do konta.")</p>
+                    <h2 id="account-type-heading">@L("Choose your account type", "Wybierz typ konta", "اختر نوع حسابك")</h2>
+                    <p>@L("School users select the role registered for this account.", "Użytkownicy szkolni wybierają rolę przypisaną do konta.", "يختار مستخدمو المدرسة الدور المسجل لهذا الحساب.")</p>
                 </div>
             </div>
 
@@ -62,7 +64,7 @@
                     <span class="ed-login-v28-audience-icon" aria-hidden="true">
                         <svg viewBox="0 0 48 48" width="34" height="34" fill="none"><path d="M8 40V19l16-10 16 10v21H8Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M15 26h5m8 0h5M15 33h5m8 0h5M22 40V29h4v11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
                     </span>
-                    <strong>@L("School administrator", "Administrator szkoły")</strong>
+                    <strong>@L("School administrator", "Administrator szkoły", "مدير المدرسة")</strong>
                     <span class="ed-login-v28-audience-check" aria-hidden="true">✓</span>
                 </label>
 
@@ -76,7 +78,7 @@
                     <span class="ed-login-v28-audience-icon" aria-hidden="true">
                         <svg viewBox="0 0 48 48" width="34" height="34" fill="none"><circle cx="16" cy="14" r="6" stroke="currentColor" stroke-width="2.5"/><path d="M7 35c1-7 4-11 9-11s8 4 9 11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><rect x="27" y="10" width="14" height="18" rx="2" stroke="currentColor" stroke-width="2.5"/><path d="m31 19 3 3 5-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </span>
-                    <strong>@L("Subject supervisor", "Opiekun przedmiotu")</strong>
+                    <strong>@L("Subject supervisor", "Opiekun przedmiotu", "مشرف المادة")</strong>
                     <span class="ed-login-v28-audience-check" aria-hidden="true">✓</span>
                 </label>
 
@@ -90,7 +92,7 @@
                     <span class="ed-login-v28-audience-icon" aria-hidden="true">
                         <svg viewBox="0 0 48 48" width="34" height="34" fill="none"><circle cx="16" cy="14" r="6" stroke="currentColor" stroke-width="2.5"/><path d="M7 35c1-7 4-11 9-11s8 4 9 11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M29 12h12v22H27V18" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M31 19h6M31 24h6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
                     </span>
-                    <strong>@L("Teacher", "Nauczyciel")</strong>
+                    <strong>@L("Teacher", "Nauczyciel", "معلم")</strong>
                     <span class="ed-login-v28-audience-check" aria-hidden="true">✓</span>
                 </label>
 
@@ -104,7 +106,7 @@
                     <span class="ed-login-v28-audience-icon" aria-hidden="true">
                         <svg viewBox="0 0 48 48" width="34" height="34" fill="none"><path d="m6 17 18-9 18 9-18 9-18-9Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M13 22v9c7 6 15 6 22 0v-9M42 17v12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
                     </span>
-                    <strong>@L("Student", "Uczeń")</strong>
+                    <strong>@L("Student", "Uczeń", "طالب")</strong>
                     <span class="ed-login-v28-audience-check" aria-hidden="true">✓</span>
                 </label>
             </div>
@@ -115,9 +117,9 @@
                 <span class="ed-login-v28-step ed-login-v28-step-inline">2</span>
                 <h1>@Text["SignInTitle"]</h1>
                 <p data-login-gated-copy
-                   data-locked-text="@L("School users choose an account type above.", "Użytkownicy szkolni wybierają typ konta powyżej.")"
-                   data-ready-text="@L("Enter the credentials for the selected account type.", "Wpisz dane logowania dla wybranego typu konta.")">
-                    @L("School users choose an account type above.", "Użytkownicy szkolni wybierają typ konta powyżej.")
+                   data-locked-text="@L("School users choose an account type above.", "Użytkownicy szkolni wybierają typ konta powyżej.", "اختر نوع الحساب من القائمة أعلاه.")"
+                   data-ready-text="@L("Enter the credentials for the selected account type.", "Wpisz dane logowania dla wybranego typu konta.", "أدخل بيانات الدخول لنوع الحساب المحدد.")">
+                    @L("School users choose an account type above.", "Użytkownicy szkolni wybierają typ konta powyżej.", "اختر نوع الحساب من القائمة أعلاه.")
                 </p>
             </div>
 
@@ -167,21 +169,21 @@
             </form>
 
             <p class="ed-login-v28-access-note">
-                @L("School accounts must match the selected role.", "Konta szkolne muszą odpowiadać wybranej roli.")
+                @L("School accounts must match the selected role.", "Konta szkolne muszą odpowiadać wybranej roli.", "يجب أن يتطابق حساب المدرسة مع الدور المحدد.")
                 <a asp-controller="Home" asp-action="Index">@Text["ChangeLanguage"]</a>
             </p>
         </div>
 
-        <aside class="ed-login-v28-proof" aria-label="@L("Why Edulytics", "Dlaczego Edulytics")">
+        <aside class="ed-login-v28-proof" aria-label="@L("Why Edulytics", "Dlaczego Edulytics", "لماذا Edulytics")">
             <div>
-                <h2>@L("Built for connected learning", "Stworzone dla spójnego uczenia się")</h2>
-                <p class="ed-login-v28-proof-footer">@L("Curriculum, teaching, assessment and progress stay connected in one mathematics platform.", "Program, nauczanie, ocenianie i postępy pozostają połączone w jednej platformie matematycznej.")</p>
+                <h2>@L("Built for connected learning", "Stworzone dla spójnego uczenia się", "مصمم لتعلّم مترابط")</h2>
+                <p class="ed-login-v28-proof-footer">@L("Curriculum, teaching, assessment and progress stay connected in one mathematics platform.", "Program, nauczanie, ocenianie i postępy pozostają połączone w jednej platformie matematycznej.", "المنهج والتدريس والتقييم والتقدم مترابطة في منصة رياضيات واحدة.")</p>
             </div>
             <div class="ed-login-v28-proof-list">
-                <div class="ed-login-v28-proof-item"><span class="ed-login-v28-proof-icon" aria-hidden="true">◎</span><span>@L("Curriculum-aligned learning", "Nauka zgodna z programem")</span></div>
-                <div class="ed-login-v28-proof-item"><span class="ed-login-v28-proof-icon" aria-hidden="true">✓</span><span>@L("Teachers control formal assessment", "Nauczyciel kontroluje formalne ocenianie")</span></div>
-                <div class="ed-login-v28-proof-item"><span class="ed-login-v28-proof-icon" aria-hidden="true">↻</span><span>@L("Practice supports learning", "Ćwiczenia wspierają naukę")</span></div>
-                <div class="ed-login-v28-proof-item"><span class="ed-login-v28-proof-icon" aria-hidden="true">→</span><span>@L("Results guide the next step", "Wyniki prowadzą do kolejnego kroku")</span></div>
+                <div class="ed-login-v28-proof-item"><span class="ed-login-v28-proof-icon" aria-hidden="true">◎</span><span>@L("Curriculum-aligned learning", "Nauka zgodna z programem", "تعلّم متوافق مع المنهج")</span></div>
+                <div class="ed-login-v28-proof-item"><span class="ed-login-v28-proof-icon" aria-hidden="true">✓</span><span>@L("Teachers control formal assessment", "Nauczyciel kontroluje formalne ocenianie", "المعلمون يتحكمون في التقييم الرسمي")</span></div>
+                <div class="ed-login-v28-proof-item"><span class="ed-login-v28-proof-icon" aria-hidden="true">↻</span><span>@L("Practice supports learning", "Ćwiczenia wspierają naukę", "التدريب يدعم التعلّم")</span></div>
+                <div class="ed-login-v28-proof-item"><span class="ed-login-v28-proof-icon" aria-hidden="true">→</span><span>@L("Results guide the next step", "Wyniki prowadzą do kolejnego kroku", "النتائج توجه الخطوة التالية")</span></div>
             </div>
         </aside>
     </div>
