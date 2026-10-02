@@ -2,6 +2,39 @@
 @model Edulytics.Web.ViewModels.StudentPortal.StudentLearningViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonContentResource> L
+@functions {
+    private static string LessonVisualKind(string title, string topic)
+    {
+        var text = $"{title} {topic}".ToLowerInvariant();
+
+        if (text.Contains("add") || text.Contains("subtract") || text.Contains("dodaw") || text.Contains("odejm"))
+            return "add-subtract";
+        if (text.Contains("multip") || text.Contains("times table") || text.Contains("mnoż"))
+            return "multiply";
+        if (text.Contains("divid") || text.Contains("division") || text.Contains("dziel"))
+            return "divide";
+        if (text.Contains("fraction") || text.Contains("ułam") || text.Contains("mixed number"))
+            return "fraction";
+        if (text.Contains("angle") || text.Contains("kąt"))
+            return "angle";
+        if (text.Contains("perimeter") || text.Contains("area") || text.Contains("obwód") || text.Contains("pole"))
+            return "area";
+        if (text.Contains("coordinate") || text.Contains("współrz"))
+            return "coordinates";
+        if (text.Contains("net") || text.Contains("3d") || text.Contains("cube") || text.Contains("brył"))
+            return "shape-net";
+        if (text.Contains("probab") || text.Contains("chance") || text.Contains("prawdopodob"))
+            return "probability";
+        if (text.Contains("data") || text.Contains("graph") || text.Contains("chart") || text.Contains("dane") || text.Contains("wykres"))
+            return "data";
+        if (text.Contains("place value") || text.Contains("round") || text.Contains("wartość miejsc") || text.Contains("zaokrągl"))
+            return "number";
+        if (text.Contains("symmetr") || text.Contains("reflect") || text.Contains("shape") || text.Contains("polygon") || text.Contains("geometry") || text.Contains("geometr"))
+            return "geometry";
+
+        return "learning";
+    }
+}
 @{
     Layout = "_StudentLayout";
     ViewData["Title"] = S["LearningTitle"].Value;
@@ -136,7 +169,119 @@
             <div class="floating-lesson-field" data-floating-lesson-field>
                 @foreach (var lesson in Model.Lessons)
                 {
-                    <article class="floating-lesson-card" data-floating-lesson>
+                    var visualKind = LessonVisualKind(lesson.Title, lesson.TopicName);
+
+                    <article class="floating-lesson-card" data-floating-lesson data-visual="@visualKind">
+                        <div class="floating-lesson-visual" aria-hidden="true">
+                            @switch (visualKind)
+                            {
+                                case "add-subtract":
+                                    <svg viewBox="0 0 96 72" role="presentation">
+                                        <path d="M14 24h26M27 11v26M54 48h28" />
+                                        <circle cx="68" cy="22" r="13" />
+                                        <path d="M61 22h14M68 15v14" />
+                                    </svg>
+                                    break;
+                                case "multiply":
+                                    <svg viewBox="0 0 96 72" role="presentation">
+                                        <path d="M20 16l28 28M48 16L20 44" />
+                                        <circle cx="69" cy="30" r="15" />
+                                        <path d="M62 23l14 14M76 23L62 37" />
+                                    </svg>
+                                    break;
+                                case "divide":
+                                    <svg viewBox="0 0 96 72" role="presentation">
+                                        <circle cx="48" cy="17" r="3" />
+                                        <path d="M24 30h48" />
+                                        <circle cx="48" cy="43" r="3" />
+                                        <path d="M18 55h60" />
+                                    </svg>
+                                    break;
+                                case "fraction":
+                                    <svg viewBox="0 0 96 72" role="presentation">
+                                        <circle cx="28" cy="34" r="20" />
+                                        <path d="M28 14v40M8 34h40" />
+                                        <path d="M60 18h22M60 34h22M60 50h22" />
+                                        <text x="68" y="31">1</text>
+                                        <text x="68" y="49">2</text>
+                                    </svg>
+                                    break;
+                                case "angle":
+                                    <svg viewBox="0 0 96 72" role="presentation">
+                                        <path d="M14 56h62M14 56l38-39" />
+                                        <path d="M31 55a17 17 0 0 1 5-12" />
+                                        <text x="44" y="47">65°</text>
+                                    </svg>
+                                    break;
+                                case "area":
+                                    <svg viewBox="0 0 96 72" role="presentation">
+                                        <rect x="18" y="16" width="48" height="40" rx="2" />
+                                        <path d="M18 26h48M28 16v40" />
+                                        <path d="M72 18v36M69 21l3-3 3 3M69 51l3 3 3-3" />
+                                    </svg>
+                                    break;
+                                case "coordinates":
+                                    <svg viewBox="0 0 96 72" role="presentation">
+                                        <path d="M18 58V12M12 52h64" />
+                                        <path d="M18 12l-4 6M18 12l4 6M76 52l-6-4M76 52l-6 4" />
+                                        <circle cx="55" cy="30" r="4" />
+                                        <path d="M55 30v22M18 30h37" stroke-dasharray="3 3" />
+                                    </svg>
+                                    break;
+                                case "shape-net":
+                                    <svg viewBox="0 0 96 72" role="presentation">
+                                        <rect x="35" y="25" width="22" height="22" />
+                                        <rect x="13" y="25" width="22" height="22" />
+                                        <rect x="57" y="25" width="22" height="22" />
+                                        <rect x="35" y="3" width="22" height="22" />
+                                        <rect x="35" y="47" width="22" height="22" />
+                                    </svg>
+                                    break;
+                                case "probability":
+                                    <svg viewBox="0 0 96 72" role="presentation">
+                                        <path d="M18 20l22-9 18 12-21 10zM18 20v25l19 13V33M37 33l21-10v25L37 58" />
+                                        <circle cx="28" cy="26" r="2" />
+                                        <circle cx="44" cy="22" r="2" />
+                                        <circle cx="48" cy="39" r="2" />
+                                        <circle cx="48" cy="50" r="2" />
+                                    </svg>
+                                    break;
+                                case "data":
+                                    <svg viewBox="0 0 96 72" role="presentation">
+                                        <path d="M14 58h70M14 58V12" />
+                                        <rect x="24" y="40" width="10" height="18" />
+                                        <rect x="42" y="30" width="10" height="28" />
+                                        <rect x="60" y="18" width="10" height="40" />
+                                        <path d="M20 31l18-8 17 4 22-13" />
+                                    </svg>
+                                    break;
+                                case "number":
+                                    <svg viewBox="0 0 96 72" role="presentation">
+                                        <rect x="10" y="20" width="22" height="30" rx="4" />
+                                        <rect x="37" y="20" width="22" height="30" rx="4" />
+                                        <rect x="64" y="20" width="22" height="30" rx="4" />
+                                        <text x="17" y="41">4</text>
+                                        <text x="44" y="41">7</text>
+                                        <text x="71" y="41">2</text>
+                                    </svg>
+                                    break;
+                                case "geometry":
+                                    <svg viewBox="0 0 96 72" role="presentation">
+                                        <path d="M15 54l23-40 23 40z" />
+                                        <rect x="58" y="18" width="24" height="24" />
+                                        <circle cx="71" cy="52" r="10" />
+                                    </svg>
+                                    break;
+                                default:
+                                    <svg viewBox="0 0 96 72" role="presentation">
+                                        <path d="M18 18h24c7 0 12 5 12 12v28c0-7-5-12-12-12H18z" />
+                                        <path d="M78 18H54v40c0-7 5-12 12-12h12z" />
+                                        <path d="M29 28h13M29 35h13M66 28h7M66 35h7" />
+                                    </svg>
+                                    break;
+                            }
+                        </div>
+
                         <div class="floating-lesson-card__top">
                             <div class="floating-lesson-category">@lesson.TopicName</div>
                             <h3>@lesson.Title</h3>
