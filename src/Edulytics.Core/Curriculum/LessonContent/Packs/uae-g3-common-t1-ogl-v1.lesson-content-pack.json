@@ -4,15 +4,15 @@
   "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-v1",
   "AcademicLanguage": "en",
   "CurriculumTranslationRequired": false,
-  "TargetCurriculumPeriod": "2026-2027 Term 1",
-  "SourceCurriculumPeriod": "2026-2027 Term 1",
-  "SourceVersionLabel": "2026-2027 Term 1",
+  "TargetCurriculumPeriod": "2025-2026 Term 1",
+  "SourceCurriculumPeriod": "2025-2026 Term 1",
+  "SourceVersionLabel": "2025-2026 Term 1",
   "SourceAuthority": "UAE Ministry of Education",
   "SourceUrl": "https://minhaji.moe.gov.ae/",
   "SourceCheckedAtUtc": "2026-09-01T00:00:00Z",
   "SourceResolution": "CurrentOfficial",
   "FallbackReason": "",
-  "ReviewMethod": "Scope inventory review, pathway isolation, OGL source-policy review, deterministic lesson/body generation, mathematical example verification and canonical body hashing.",
+  "ReviewMethod": "Scope inventory review, pathway isolation, OGL source-policy review, deterministic lesson/body generation, mathematical example verification and canonical body hashing. Direct mappings reviewed against existing accepted UAE standard meanings and grade/pathway applicability; lesson bodies preserved.",
   "SourcePolicyVersion": 2,
   "PedagogicalSourceType": "OpenEducationalResource",
   "PedagogicalSourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -21,17 +21,19 @@
   "PedagogicalSourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
   "PedagogicalSourceCheckedAtUtc": "2026-09-01T00:00:00Z",
   "PedagogicalSourceSelectionReason": "Open government Mathematics material is used as pedagogical scaffolding so Edulytics can publish independently authored explanations without copying restricted official curriculum prose.",
-  "PedagogicalSourceSelectionEvidence": "23 source-policy-compliant lessons generated for exactly one curriculum level/pathway scope; zero unverified formal OutcomeCodes.",
+  "PedagogicalSourceSelectionEvidence": "Reviewed direct mappings to 8 existing accepted UAE MoE numbered standards cover 15 lessons. The remaining 8 lessons are Supporting. Official code identities and grade/pathway scopes are unchanged; standard meanings were checked against the MoE Strands and Standards Summary.",
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Scope UAE-MOE-MATH/L3/Common: 23 lessons, 5 units, academic language en, zero unverified formal mappings.",
+  "ReviewEvidence": "UAE G3/common: 15 officially mapped lessons, 8 Supporting; evidence https://www.scribd.com/document/826281797/Strands-and-Standards-Summary-MAT; no synthetic references and no learner-facing body changes.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01:PLACE-VALUE-TO-THOUSANDS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.02.04"
+      ],
       "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Number and Calculation / 01",
@@ -64,7 +66,7 @@
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
       "OutcomeCodes": [],
-      "IsSupporting": false,
+      "IsSupporting": true,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Number and Calculation / 02",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -95,7 +97,9 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:03:ADDITION-WITH-REGROUPING",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.03.04"
+      ],
       "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Number and Calculation / 03",
@@ -127,7 +131,9 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:04:SUBTRACTION-WITH-REGROUPING",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.03.04"
+      ],
       "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Number and Calculation / 04",
@@ -159,7 +165,9 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:05:MULTIPLICATION-FACTS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.04.02"
+      ],
       "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Number and Calculation / 05",
@@ -191,7 +199,9 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:06:DIVISION-FACTS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.04.02"
+      ],
       "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Number and Calculation / 06",
@@ -224,7 +234,7 @@
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
       "OutcomeCodes": [],
-      "IsSupporting": false,
+      "IsSupporting": true,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Number and Calculation / 07",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -256,7 +266,7 @@
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
       "OutcomeCodes": [],
-      "IsSupporting": false,
+      "IsSupporting": true,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Number and Calculation / 08",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -287,7 +297,9 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:01:FRACTIONS-ON-A-NUMBER-LINE",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.05.02"
+      ],
       "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Fractions / 01",
@@ -319,7 +331,9 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:02:EQUIVALENT-FRACTIONS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.05.02"
+      ],
       "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Fractions / 02",
@@ -351,7 +365,9 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:03:COMPARE-FRACTIONS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.05.02"
+      ],
       "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Fractions / 03",
@@ -383,7 +399,9 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:04:ADD-AND-SUBTRACT-RELATED-FRACTIONS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.05.04"
+      ],
       "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Fractions / 04",
@@ -415,7 +433,9 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:03:01:PERIMETER",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.3.02.10"
+      ],
       "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Measurement / 01",
@@ -447,7 +467,9 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:03:02:AREA-BY-COUNTING-SQUARES",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.3.02.10"
+      ],
       "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Measurement / 02",
@@ -479,7 +501,9 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:03:03:TIME-AND-TIMETABLES",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.3.02.05"
+      ],
       "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Measurement / 03",
@@ -512,7 +536,7 @@
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
       "OutcomeCodes": [],
-      "IsSupporting": false,
+      "IsSupporting": true,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Measurement / 04",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -544,7 +568,7 @@
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
       "OutcomeCodes": [],
-      "IsSupporting": false,
+      "IsSupporting": true,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Geometry / 01",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -576,7 +600,7 @@
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
       "OutcomeCodes": [],
-      "IsSupporting": false,
+      "IsSupporting": true,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Geometry / 02",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -608,7 +632,7 @@
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
       "OutcomeCodes": [],
-      "IsSupporting": false,
+      "IsSupporting": true,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Geometry / 03",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -640,7 +664,7 @@
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
       "OutcomeCodes": [],
-      "IsSupporting": false,
+      "IsSupporting": true,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Geometry / 04",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -671,7 +695,9 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:05:01:BAR-CHARTS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.4.02.02"
+      ],
       "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Data / 01",
@@ -703,7 +729,9 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:05:02:TABLES-AND-SCALES",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.4.02.02"
+      ],
       "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Data / 02",
@@ -735,7 +763,9 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:05:03:INTERPRETING-DATA",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.4.02.02"
+      ],
       "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Data / 03",

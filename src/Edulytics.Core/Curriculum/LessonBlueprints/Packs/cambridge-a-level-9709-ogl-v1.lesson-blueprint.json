@@ -17,7 +17,7 @@
   "SourceLicense": "Open Government Licence v3.0",
   "RequiredDigitalAttribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
   "SourceSelectionReason": "The official curriculum source remains the academic authority. Edulytics uses open DfE Mathematics material only as lawful pedagogical scaffolding for independently authored lesson explanations where official copyrighted or source-linked prose is not reproduced.",
-  "SourceSelectionEvidence": "This scope contains 28 Edulytics-authored supporting lessons across 3 units. No formal outcome mapping is claimed without explicit source evidence; every formal OutcomeCodes collection is empty.",
+  "SourceSelectionEvidence": "Cambridge 9709 official syllabus section identifiers are mapped only where the lesson directly addresses that published section; additional pedagogical lessons remain supporting and no official identifier is invented.",
   "SourceEvidenceUrls": [
     "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
     "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
@@ -28,12 +28,12 @@
   "AcquisitionDiagnostics": {
     "UnitCount": 3,
     "LessonCount": 28,
-    "OfficialStandardCount": 0,
-    "AddressingCoverageCount": 0,
-    "FormalMappingCount": 0,
-    "LessonsWithoutNumberedGradeReferenceAnyRole": 28,
-    "LessonsWithoutNumberedAddressingStandard": 28,
-    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 28,
+    "OfficialStandardCount": 18,
+    "AddressingCoverageCount": 18,
+    "FormalMappingCount": 21,
+    "LessonsWithoutNumberedGradeReferenceAnyRole": 7,
+    "LessonsWithoutNumberedAddressingStandard": 7,
+    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 7,
     "MultiStandardLessons": 0
   },
   "Units": [
@@ -76,8 +76,19 @@
       "SortOrder": 1,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "aca4de69d7054e5c9192ccbbf51766ac97fbd00f9ec145dd1990cd3d5af5dfc3",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:3.1",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:3.1",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:3.1"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -93,8 +104,19 @@
       "SortOrder": 2,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "7b6f7205c5d0f3a184bdd86cbefee800b8b80f6468ee1559c3a8be2ca217dcd0",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:3.2",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:3.2",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:3.2"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -110,8 +132,19 @@
       "SortOrder": 3,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "621504dcfc02342c2341fb371b87b0591c9a2b5238bcbaf9b047464d8bd3a750",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:3.3",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:3.3",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:3.3"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -127,8 +160,19 @@
       "SortOrder": 4,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "86624cf851988f84d41bc63c3feef6bf04d4810de4d6656f3eecd642c673d824",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:3.4",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:3.4",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:3.4"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -144,8 +188,19 @@
       "SortOrder": 5,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "b95c9cd6a90ee5184b349a3d8454ae979537b8eeeefded560bae0c5f8ab74fb8",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:3.4",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:3.4",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:3.4"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -161,8 +216,19 @@
       "SortOrder": 6,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "beeb5f451b788f3b996a89e622551ed5a0645293de8fe373c17005bd6b8b546a",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:3.4",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:3.4",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:3.4"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -178,8 +244,19 @@
       "SortOrder": 7,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "5e43b443b01b80c5c421df9b8e9696ec2a7e75cd8f46ddeed23e894033ee8538",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:3.5",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:3.5",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:3.5"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -195,8 +272,19 @@
       "SortOrder": 8,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "53d6d12b4e7e8417779fe8c2b7f35e7f084440ebde76bf218b580b043eef9151",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:3.8",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:3.8",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:3.8"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -212,8 +300,19 @@
       "SortOrder": 9,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "bf0b18136cb90106776090999c2e00e1dbbcfb5bede8d3fed845d20d2b59cbed",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:3.6",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:3.6",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:3.6"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -229,8 +328,19 @@
       "SortOrder": 10,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "2d630ec543d67841da5bb275365183fa710fbc5bd55f952c097fa2ab97a6e870",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:3.7",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:3.7",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:3.7"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -246,8 +356,19 @@
       "SortOrder": 11,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "3b9661fa2bbc1d5fb78d012d1f5ab8c8e784366dc31e972f2f5569d23bb7c1b9",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:3.9",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:3.9",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:3.9"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -280,8 +401,19 @@
       "SortOrder": 13,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "966a0b24569e09654e4b442490a597944c7a88551c1cc4aee8dac7e0132150fa",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:6.1",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:6.1",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:6.1"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -297,8 +429,19 @@
       "SortOrder": 14,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "dd0bb635c79a27280ca252e9d83c7441cb214d9f9270ce9085a0353216561e25",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:6.3",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:6.3",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:6.3"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -314,8 +457,19 @@
       "SortOrder": 15,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "1d954ddfda009d86b6028fbf8699d024f291879eee1d4d2e6bfdeaf0ea98639c",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:6.4",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:6.4",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:6.4"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -331,8 +485,19 @@
       "SortOrder": 16,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "f5116174f663aa760b6da58ab3a6821c3aa164702b74385d6a30926fe6557b3b",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:6.4",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:6.4",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:6.4"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -348,8 +513,19 @@
       "SortOrder": 17,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "72a4e1258dd0b13e4621fe57ffab014906cc7d35a1c151df1b8aecc72e272512",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:6.5",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:6.5",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:6.5"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -382,8 +558,19 @@
       "SortOrder": 19,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "24ea843f34216babd1368c81d20740519ca684aecc9491f54c8d115266d62af4",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:6.2",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:6.2",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:6.2"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -433,8 +620,19 @@
       "SortOrder": 22,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "2d4acd58a1b4dbd005ba7a67db29af3ee393abb14019956efbed2ee95b328158",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:4.2",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:4.2",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:4.2"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -450,8 +648,19 @@
       "SortOrder": 23,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "5f7cc936fed35641d3b471873fbbe686120a3285cc94686d8c06ed1eaa38d097",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:4.3",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:4.3",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:4.3"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -467,8 +676,19 @@
       "SortOrder": 24,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "8cce2d95b3d6452f2f008818fc33f76d99457d18e6743c6c0e3eb36a2b9ed577",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:4.5",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:4.5",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:4.5"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],
@@ -518,8 +738,19 @@
       "SortOrder": 27,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "3c4b8efb3c6f1f1d5fb242db080f2d56c57ca0e953db96a5ba31b84d03ab76f7",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "CAM:REF:9709:4.1",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "CAM:REF:9709:4.1",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:REF:9709:4.1"
+      ],
       "ApplicableCourses": [
         "CAMBRIDGE-A-LEVEL-9709-OGL-V1"
       ],

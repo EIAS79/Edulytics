@@ -35,14 +35,17 @@ public sealed class Stage24AsALevel9709GateTests
             Assert.False(route.GetProperty("productRoutingEnabled").GetBoolean());
             Assert.Equal("GATED", route.GetProperty("capabilityClaim").GetString());
             Assert.Equal(0, route.GetProperty("verified").GetInt32());
-            Assert.Equal(0, route.GetProperty("formalOutcomeMapped").GetInt32());
+            Assert.Equal(
+                lessons.Count(lesson => lesson.GetProperty("paperRoute").GetString() == route.GetProperty("paperRoute").GetString()
+                    && lesson.GetProperty("formalOutcomeMapped").GetBoolean()),
+                route.GetProperty("formalOutcomeMapped").GetInt32());
         });
 
         var summary = manifest.RootElement.GetProperty("summary");
         Assert.Equal(0, summary.GetProperty("verified").GetInt32());
         Assert.Equal(25, summary.GetProperty("contextual").GetInt32());
         Assert.Equal(32, summary.GetProperty("unsupported").GetInt32());
-        Assert.Equal(0, summary.GetProperty("formalOutcomeMapped").GetInt32());
+        Assert.Equal(49, summary.GetProperty("formalOutcomeMapped").GetInt32());
         Assert.Equal(6, summary.GetProperty("paperRouteCount").GetInt32());
 
         var gate = manifest.RootElement.GetProperty("gatePolicy");
@@ -69,10 +72,22 @@ public sealed class Stage24AsALevel9709GateTests
             .Select(x => x.GetProperty("benchmarkId").GetString()!)
             .ToHashSet(StringComparer.Ordinal);
 
+        var sourceCodes = new Dictionary<string, string[]>(StringComparer.Ordinal);
+        foreach (var packName in new[] { "cambridge-as-level-9709-ogl-v1", "cambridge-a-level-9709-ogl-v1" })
+        {
+            using var pack = JsonDocument.Parse(File.ReadAllText(Path.Combine(root,
+                "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs", packName + ".lesson-blueprint.json")));
+            foreach (var row in pack.RootElement.GetProperty("Lessons").EnumerateArray())
+                sourceCodes.Add(row.GetProperty("LessonCode").GetString()!,
+                    row.GetProperty("OutcomeCodes").EnumerateArray().Select(x => x.GetString()!).ToArray());
+        }
+
         foreach (var lesson in manifest.RootElement.GetProperty("lessons").EnumerateArray())
         {
-            Assert.False(lesson.GetProperty("formalOutcomeMapped").GetBoolean());
-            Assert.Empty(lesson.GetProperty("formalOutcomeCodes").EnumerateArray());
+            var expectedCodes = sourceCodes[lesson.GetProperty("lessonCode").GetString()!];
+            Assert.Equal(expectedCodes.Length > 0, lesson.GetProperty("formalOutcomeMapped").GetBoolean());
+            Assert.Equal(expectedCodes,
+                lesson.GetProperty("formalOutcomeCodes").EnumerateArray().Select(x => x.GetString()!).ToArray());
 
             var status = lesson.GetProperty("status").GetString();
             var ids = lesson.GetProperty("benchmarkIds")

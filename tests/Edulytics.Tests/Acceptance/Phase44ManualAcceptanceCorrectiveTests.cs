@@ -73,7 +73,10 @@ public sealed class Phase44ManualAcceptanceCorrectiveTests
         Assert.Contains("OfficialCurriculumOutcomeMaterializer.EnsureAsync", practiceRepository, StringComparison.Ordinal);
         Assert.Contains("OfficialCurriculumOutcomeMaterializer.EnsureAllActiveAsync", assessmentRepository, StringComparison.Ordinal);
         Assert.Contains("x.IsOfficial", materializer, StringComparison.Ordinal);
-        Assert.Contains("x.NodeKind == \"Standard\" || x.NodeKind == \"Outcome\"", materializer, StringComparison.Ordinal);
+        Assert.Contains("x.NodeKind == \"Standard\"", materializer, StringComparison.Ordinal);
+        Assert.Contains("x.NodeKind == \"Outcome\"", materializer, StringComparison.Ordinal);
+        Assert.Contains("x.NodeKind == \"Reference\"", materializer, StringComparison.Ordinal);
+        Assert.Contains("CAM:REF:9709:", materializer, StringComparison.Ordinal);
         Assert.Contains("OfficialContentNodeId = node.Id", materializer, StringComparison.Ordinal);
         Assert.Contains("var code = DisplayCode(node.Code);", materializer, StringComparison.Ordinal);
         Assert.Contains("Code = code", materializer, StringComparison.Ordinal);

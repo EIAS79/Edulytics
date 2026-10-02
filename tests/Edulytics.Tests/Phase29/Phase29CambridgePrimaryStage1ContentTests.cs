@@ -398,7 +398,14 @@ public sealed class
         Assert.All(stageOne, x => Assert.Equal("Cambridge Primary Stage 1", x.NativeLevel));
 
         var stageOneIds = stageOne.Select(x => x.Id).ToArray();
-        var supportingIds = supporting.Select(x => x.Id).ToArray();
+        var non9709SupportingIds = supporting
+            .Where(x => x.LogicalLevelFrom <= 11)
+            .Select(x => x.Id)
+            .ToArray();
+        var advanced9709Ids = supporting
+            .Where(x => x.LogicalLevelFrom is 12 or 13)
+            .Select(x => x.Id)
+            .ToArray();
         var allLessonIds = lessons.Select(x => x.Id).ToArray();
 
         var mappings = await (
@@ -413,7 +420,16 @@ public sealed class
         Assert.DoesNotContain(mappings, x => x.StartsWith("TWM.", StringComparison.Ordinal));
         Assert.False(
             await db.CurriculumPedagogicalLessonOutcomes.AnyAsync(
-                x => x.FrameworkVersionId == versionId && supportingIds.Contains(x.PedagogicalLessonId)));
+                x => x.FrameworkVersionId == versionId && non9709SupportingIds.Contains(x.PedagogicalLessonId)));
+
+        var advancedMappings = await (
+            from mapping in db.CurriculumPedagogicalLessonOutcomes
+            join node in db.CurriculumPackContentNodes on mapping.OutcomeNodeId equals node.Id
+            where mapping.FrameworkVersionId == versionId &&
+                  advanced9709Ids.Contains(mapping.PedagogicalLessonId)
+            select node.Code).ToArrayAsync();
+        Assert.Equal(49, advancedMappings.Length);
+        Assert.All(advancedMappings, code => Assert.StartsWith("CAM:REF:9709:", code, StringComparison.Ordinal));
 
         Assert.Equal(
             566,

@@ -8,6 +8,7 @@ using Edulytics.Data.Contexts;
 using Edulytics.Data.Identity;
 using Edulytics.Data.Repositories;
 using Edulytics.Services.Analytics;
+using Edulytics.Services.AssessmentIntelligence;
 using Edulytics.Services.MathematicsGeneration;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -26,7 +27,7 @@ internal static class MeetingDemoProvisioner
     private const string SeedVersion = "production-rehearsal-2026-10-01-v1";
     private const string MarkerOperation = "ProductionRehearsalSeed";
     private const string RepairMarkerOperation = "ProductionRehearsalRepair";
-    private const string RepairVersion = "production-rehearsal-repair-2026-10-01-v1";
+    private const string RepairVersion = "production-rehearsal-repair-2026-10-02-v2";
 
     private static readonly string[] FirstNames =
     [
@@ -485,6 +486,7 @@ internal static class MeetingDemoProvisioner
 
         var repairedClasses = 0;
         var stillUnsupportedClasses = 0;
+        var completeClasses = 0;
         var touchedSchools = new List<Guid>();
 
         foreach (var definition in Schools)
@@ -602,6 +604,7 @@ internal static class MeetingDemoProvisioner
 
                 if (hasAssessments)
                 {
+                    completeClasses++;
                     Console.WriteLine(
                         $"MEETING_DEMO_REPAIR_CLASS_SKIPPED school={school.Id:D} class={deepClass.ClassGroup.Id:D} logicalLevel={deepClass.Level.LogicalLevel} reason=already-seeded");
                     continue;
@@ -615,7 +618,7 @@ internal static class MeetingDemoProvisioner
                             x.CurriculumAdoptionId == deepClass.Adoption.Id,
                         cancellationToken);
 
-                if (outcomeCount < 5)
+                if (outcomeCount == 0)
                 {
                     stillUnsupportedClasses++;
                     Console.WriteLine(
@@ -656,6 +659,7 @@ internal static class MeetingDemoProvisioner
                     continue;
                 }
 
+                await using var classTransaction = await db.Database.BeginTransactionAsync(cancellationToken);
                 await SeedDeepClassDataAsync(
                     db,
                     school,
@@ -668,7 +672,10 @@ internal static class MeetingDemoProvisioner
                     students.Any(x => x.UserId.HasValue),
                     cancellationToken);
 
+                await classTransaction.CommitAsync(cancellationToken);
+
                 repairedClasses++;
+                completeClasses++;
                 if (!touchedSchools.Contains(school.Id))
                     touchedSchools.Add(school.Id);
 
@@ -692,6 +699,13 @@ internal static class MeetingDemoProvisioner
                 throw new InvalidOperationException(
                     $"Meeting demo repair analytics refresh failed for school {schoolId:D}: {refresh.Error}.");
             }
+        }
+
+        if (stillUnsupportedClasses > 0 || completeClasses != Schools.Length * 2)
+        {
+            Console.WriteLine(
+                $"MEETING_DEMO_REPAIR_INCOMPLETE version={RepairVersion} completeClasses={completeClasses} expectedClasses={Schools.Length * 2} unsupportedClasses={stillUnsupportedClasses}");
+            return;
         }
 
         db.IdempotencyRecords.Add(
@@ -1318,7 +1332,7 @@ DELETE FROM "Schools";
             .ThenBy(x => x.Order)
             .ToListAsync(cancellationToken);
 
-        if (outcomes.Count < 5)
+        if (outcomes.Count == 0)
         {
             Console.WriteLine(
                 $"MEETING_DEMO_DEEP_SKIPPED school={school.Id:D} class={seededClass.ClassGroup.Id:D} logicalLevel={seededClass.Level.LogicalLevel} pathway={seededClass.Level.Pathway ?? "shared"} reason=insufficient-materialized-outcomes count={outcomes.Count}");
@@ -1679,50 +1693,18 @@ DELETE FROM "Schools";
                     })
             .ToArray();
 
-        var blueprint = new AssessmentBlueprint(
+        var blueprint = new AssessmentBlueprintEngine().Build(new AssessmentBlueprintRequest(
             schoolId,
             adoption.Id,
             adoption.CurriculumLevelKey!,
             topicId,
             lessonId,
+            outcomes.Select(outcome => outcome.Id).ToArray(),
+            null,
             purpose,
-            outcomes.Count,
-            outcomes
-                .Select(
-                    outcome =>
-                        new OutcomeBlueprintAllocation(
-                            outcome.Id,
-                            1,
-                            1m,
-                            "MeetingDemoCoverage"))
-                .ToArray(),
-            [
-                new DifficultyBlueprintAllocation(AssessmentItemDifficulty.Easy, 2),
-                new DifficultyBlueprintAllocation(AssessmentItemDifficulty.Medium, 2),
-                new DifficultyBlueprintAllocation(AssessmentItemDifficulty.Challenging, 1)
-            ],
-            [
-                new QuestionFamilyBlueprintAllocation(AssessmentQuestionFamily.DirectComputation, 1),
-                new QuestionFamilyBlueprintAllocation(AssessmentQuestionFamily.StructuredMethod, 1),
-                new QuestionFamilyBlueprintAllocation(AssessmentQuestionFamily.AppliedProblem, 2),
-                new QuestionFamilyBlueprintAllocation(AssessmentQuestionFamily.MathematicalReasoning, 1)
-            ],
-            [
-                new ItemTypeBlueprintAllocation(AssessmentItemType.Numeric, 2),
-                new ItemTypeBlueprintAllocation(AssessmentItemType.ShortAnswer, 2),
-                new ItemTypeBlueprintAllocation(AssessmentItemType.MultipleChoice, 1)
-            ],
-            outcomes
-                .Select(
-                    outcome =>
-                        new OutcomeEvidenceRequirement(
-                            outcome.Id,
-                            1,
-                            true,
-                            true))
-                .ToArray(),
-            [],
-            "meeting-demo-v1");
+            5,
+            new AssessmentDifficultyPolicy(40, 40, 20),
+            []));
 
         return new UniversalMathematicsQuestionGenerationEngine()
             .Generate(

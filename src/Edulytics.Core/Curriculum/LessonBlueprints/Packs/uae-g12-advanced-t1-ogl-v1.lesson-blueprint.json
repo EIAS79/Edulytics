@@ -17,26 +17,27 @@
   "SourceLicense": "Open Government Licence v3.0",
   "RequiredDigitalAttribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
   "SourceSelectionReason": "The official curriculum source remains the academic authority. Edulytics uses open DfE Mathematics material only as lawful pedagogical scaffolding for independently authored lesson explanations where official copyrighted or source-linked prose is not reproduced.",
-  "SourceSelectionEvidence": "This scope contains 57 Edulytics-authored supporting lessons across 5 units. No formal outcome mapping is claimed without explicit source evidence; every formal OutcomeCodes collection is empty.",
+  "SourceSelectionEvidence": "Reviewed direct mappings to 4 existing accepted UAE MoE numbered standards cover 6 lessons. The remaining 51 lessons are Supporting. Official code identities and grade/pathway scopes are unchanged; standard meanings were checked against the MoE Strands and Standards Summary.",
   "SourceEvidenceUrls": [
     "https://minhaji.moe.gov.ae/",
     "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
     "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
     "https://uae.afedne.com/Sho1ye1tAf3Y",
     "https://uae.afedne.com/Shoqg3a9vd2g",
-    "https://uae.afedne.com/ShoVNdbNxeeg"
+    "https://uae.afedne.com/ShoVNdbNxeeg",
+    "https://www.scribd.com/document/826281797/Strands-and-Standards-Summary-MAT"
   ],
   "SourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official UAE Ministry of Education wording is not reproduced. Edulytics learner-facing bodies are independently authored.",
   "SemanticGraphSha256": "a6303affe728e0a37294e44bc8f34f8d498c981f7a185adf9993d367b28f4b72",
   "AcquisitionDiagnostics": {
     "UnitCount": 5,
     "LessonCount": 57,
-    "OfficialStandardCount": 0,
-    "AddressingCoverageCount": 0,
-    "FormalMappingCount": 0,
-    "LessonsWithoutNumberedGradeReferenceAnyRole": 57,
-    "LessonsWithoutNumberedAddressingStandard": 57,
-    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 57,
+    "OfficialStandardCount": 4,
+    "AddressingCoverageCount": 4,
+    "FormalMappingCount": 6,
+    "LessonsWithoutNumberedGradeReferenceAnyRole": 51,
+    "LessonsWithoutNumberedAddressingStandard": 51,
+    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 51,
     "MultiStandardLessons": 0
   },
   "Units": [
@@ -335,8 +336,19 @@
       "SortOrder": 15,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "10af5f13024e08f257e5cc6d9b01f1c4167a02ba85aafa87b591631306e8679d",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.2.05.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.2.05.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.2.05.02"
+      ],
       "ApplicableCourses": [
         "UAE-G12-ADVANCED-T1-OGL-V1"
       ],
@@ -471,8 +483,19 @@
       "SortOrder": 23,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "f7d6fac975ebb07623fdccfa09774bffafb46d33364335341cdb04fb80f7f4ac",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.5.03.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.5.03.01",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.5.03.01"
+      ],
       "ApplicableCourses": [
         "UAE-G12-ADVANCED-T1-OGL-V1"
       ],
@@ -505,8 +528,19 @@
       "SortOrder": 25,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "aac0e8b54fb212d63c6637cdf91f04ea578309dcfdbafae7521dc769daca340f",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.5.03.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.5.03.01",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.5.03.01"
+      ],
       "ApplicableCourses": [
         "UAE-G12-ADVANCED-T1-OGL-V1"
       ],
@@ -522,8 +556,19 @@
       "SortOrder": 26,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "12fb14bca2ed163cfaf145dbcdd8aca8631375026700884cc3ffcb8e5f24f3f5",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.2.05.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.2.05.01",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.2.05.01"
+      ],
       "ApplicableCourses": [
         "UAE-G12-ADVANCED-T1-OGL-V1"
       ],
@@ -539,8 +584,19 @@
       "SortOrder": 27,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "3ed5f14b2e9d046a8e159fb8c329d4c84e65f509399f9944d8239ef790deb2ab",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.6.02.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.6.02.01",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.6.02.01"
+      ],
       "ApplicableCourses": [
         "UAE-G12-ADVANCED-T1-OGL-V1"
       ],
@@ -1049,8 +1105,19 @@
       "SortOrder": 57,
       "SourceUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
       "SemanticSha256": "f125d4c4dcee45329d91263ac05b985d74ce80ab63c2bad40265a107d006cf4f",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.6.02.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.6.02.01",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.6.02.01"
+      ],
       "ApplicableCourses": [
         "UAE-G12-ADVANCED-T1-OGL-V1"
       ],

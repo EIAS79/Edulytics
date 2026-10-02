@@ -57,7 +57,12 @@ public static class OfficialCurriculumOutcomeMaterializer
                 x.FrameworkVersionId == adoption.FrameworkVersionId &&
                 x.IsOfficial &&
                 x.IsActive &&
-                (x.NodeKind == "Standard" || x.NodeKind == "Outcome") &&
+                (
+                    x.NodeKind == "Standard" ||
+                    x.NodeKind == "Outcome" ||
+                    (x.NodeKind == "Reference" &&
+                     x.Code.StartsWith("CAM:REF:9709:"))
+                ) &&
                 x.LogicalLevelFrom <= logicalLevel &&
                 x.LogicalLevelTo >= logicalLevel)
             .OrderBy(x => x.SortOrder)
@@ -227,6 +232,7 @@ public static class OfficialCurriculumOutcomeMaterializer
             .Replace("UK:STD:", string.Empty, StringComparison.Ordinal)
             .Replace("CCSS:", string.Empty, StringComparison.Ordinal)
             .Replace("PL:REQ:", string.Empty, StringComparison.Ordinal)
+            .Replace("CAM:REF:9709:", string.Empty, StringComparison.Ordinal)
             .Trim();
 
     private static string? Normalize(string? value) =>

@@ -140,7 +140,7 @@ public sealed class ProductionRehearsalDatasetContractTests
             bootstrap,
             StringComparison.Ordinal);
         Assert.Contains(
-            "production-rehearsal-repair-2026-10-01-v1",
+            "production-rehearsal-repair-2026-10-02-v2",
             provisioner,
             StringComparison.Ordinal);
         Assert.Contains(

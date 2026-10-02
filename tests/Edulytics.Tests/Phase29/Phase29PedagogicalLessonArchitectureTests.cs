@@ -371,7 +371,7 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
                         x.OfficialLessonNodeId != null));
 
         Assert.Equal(
-            48,
+            123,
             await db.CurriculumPedagogicalLessonOutcomes
                 .CountAsync(
                     x =>
@@ -488,7 +488,14 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
         }
 
         var stageOneIds = stageOne.Select(x => x.Id).ToArray();
-        var supportingIds = supportingPrimary.Concat(supportingLater).Select(x => x.Id).ToArray();
+        var non9709SupportingIds = supportingPrimary
+            .Concat(supportingLater.Where(x => x.LogicalLevelFrom <= 11))
+            .Select(x => x.Id)
+            .ToArray();
+        var advanced9709Ids = supportingLater
+            .Where(x => x.LogicalLevelFrom is 12 or 13)
+            .Select(x => x.Id)
+            .ToArray();
 
         Assert.Contains(supportingLater, x => x.LogicalLevelFrom == 7);
         Assert.Contains(supportingLater, x => x.LogicalLevelFrom == 8);
@@ -507,7 +514,16 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
 
         Assert.False(
             await db.CurriculumPedagogicalLessonOutcomes.AnyAsync(
-                x => x.FrameworkVersionId == versionId && supportingIds.Contains(x.PedagogicalLessonId)));
+                x => x.FrameworkVersionId == versionId && non9709SupportingIds.Contains(x.PedagogicalLessonId)));
+
+        var advancedMappings = await (
+            from mapping in db.CurriculumPedagogicalLessonOutcomes
+            join node in db.CurriculumPackContentNodes on mapping.OutcomeNodeId equals node.Id
+            where mapping.FrameworkVersionId == versionId &&
+                  advanced9709Ids.Contains(mapping.PedagogicalLessonId)
+            select node.Code).ToArrayAsync();
+        Assert.Equal(49, advancedMappings.Length);
+        Assert.All(advancedMappings, code => Assert.StartsWith("CAM:REF:9709:", code, StringComparison.Ordinal));
 
         Assert.False(
             await db.CurriculumPedagogicalLessons.AnyAsync(

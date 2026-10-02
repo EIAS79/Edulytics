@@ -273,7 +273,7 @@ def audit() -> dict[str, Any]:
             source_type = "OfficialMapped" if outcomes else "PedagogicalUnmapped"
             supporting_rule = (
                 match_supporting_rule(lesson_code, title, supporting_rules)
-                if not outcomes
+                if not outcomes or effective_content_version == "supporting-practice-remediation-v1"
                 else None
             )
             translations = (

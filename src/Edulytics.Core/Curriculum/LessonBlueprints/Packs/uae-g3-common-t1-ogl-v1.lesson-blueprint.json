@@ -17,26 +17,27 @@
   "SourceLicense": "Open Government Licence v3.0",
   "RequiredDigitalAttribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
   "SourceSelectionReason": "The official curriculum source remains the academic authority. Edulytics uses open DfE Mathematics material only as lawful pedagogical scaffolding for independently authored lesson explanations where official copyrighted or source-linked prose is not reproduced.",
-  "SourceSelectionEvidence": "This scope contains 23 Edulytics-authored supporting lessons across 5 units. No formal outcome mapping is claimed without explicit source evidence; every formal OutcomeCodes collection is empty.",
+  "SourceSelectionEvidence": "Reviewed direct mappings to 8 existing accepted UAE MoE numbered standards cover 15 lessons. The remaining 8 lessons are Supporting. Official code identities and grade/pathway scopes are unchanged; standard meanings were checked against the MoE Strands and Standards Summary.",
   "SourceEvidenceUrls": [
     "https://minhaji.moe.gov.ae/",
     "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
     "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
     "https://uae.afedne.com/ShoV4qum2Ozc",
     "https://uae.afedne.com/ShouERIWejSJ",
-    "https://uae.afedne.com/ShorlLxRIYrx"
+    "https://uae.afedne.com/ShorlLxRIYrx",
+    "https://www.scribd.com/document/826281797/Strands-and-Standards-Summary-MAT"
   ],
   "SourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official UAE Ministry of Education wording is not reproduced. Edulytics learner-facing bodies are independently authored.",
   "SemanticGraphSha256": "abea7f5d33d52cc2cb4c03abf0ef214dd4b90eddc489464673648fd31e992b01",
   "AcquisitionDiagnostics": {
     "UnitCount": 5,
     "LessonCount": 23,
-    "OfficialStandardCount": 0,
-    "AddressingCoverageCount": 0,
-    "FormalMappingCount": 0,
-    "LessonsWithoutNumberedGradeReferenceAnyRole": 23,
-    "LessonsWithoutNumberedAddressingStandard": 23,
-    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 23,
+    "OfficialStandardCount": 8,
+    "AddressingCoverageCount": 8,
+    "FormalMappingCount": 15,
+    "LessonsWithoutNumberedGradeReferenceAnyRole": 8,
+    "LessonsWithoutNumberedAddressingStandard": 8,
+    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 8,
     "MultiStandardLessons": 0
   },
   "Units": [
@@ -97,8 +98,19 @@
       "SortOrder": 1,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "36feb8ad25426971d45bf2c125754c8b33a280301700ce5833a7399bad40d751",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.1.02.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.1.02.04",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.02.04"
+      ],
       "ApplicableCourses": [
         "UAE-G3-COMMON-T1-OGL-V1"
       ],
@@ -131,8 +143,19 @@
       "SortOrder": 3,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "c7c72337faf8d89f333295baecdaabe770c36fe7d8703b1c7d635765eb85816e",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.1.03.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.1.03.04",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.03.04"
+      ],
       "ApplicableCourses": [
         "UAE-G3-COMMON-T1-OGL-V1"
       ],
@@ -148,8 +171,19 @@
       "SortOrder": 4,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "49bee20f80f9a7b2d6edf7b977eb3d9a08af0d747651c54bb638965106dab134",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.1.03.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.1.03.04",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.03.04"
+      ],
       "ApplicableCourses": [
         "UAE-G3-COMMON-T1-OGL-V1"
       ],
@@ -165,8 +199,19 @@
       "SortOrder": 5,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "b6cc83562953bf0388a0df0f3dab112abf536d00d3c4f8a844ce49d1c7c182e7",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.1.04.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.1.04.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.04.02"
+      ],
       "ApplicableCourses": [
         "UAE-G3-COMMON-T1-OGL-V1"
       ],
@@ -182,8 +227,19 @@
       "SortOrder": 6,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "d12e930408f78165c92f34d0e791271d12d6b90190fc9971470228c76eb66633",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.1.04.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.1.04.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.04.02"
+      ],
       "ApplicableCourses": [
         "UAE-G3-COMMON-T1-OGL-V1"
       ],
@@ -233,8 +289,19 @@
       "SortOrder": 9,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "f10257eefcc51107cfea3fc79f5f963145487794ac01240d68839abccba7cda2",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.1.05.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.1.05.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.05.02"
+      ],
       "ApplicableCourses": [
         "UAE-G3-COMMON-T1-OGL-V1"
       ],
@@ -250,8 +317,19 @@
       "SortOrder": 10,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "74501ba21b9816dad4a26035a38365d7679f6e152100a8df7515d43ff148e970",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.1.05.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.1.05.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.05.02"
+      ],
       "ApplicableCourses": [
         "UAE-G3-COMMON-T1-OGL-V1"
       ],
@@ -267,8 +345,19 @@
       "SortOrder": 11,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "0bdbffef40731b03a03477b398b03f0ee19b2ade687b2433b2afed181b5440c2",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.1.05.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.1.05.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.05.02"
+      ],
       "ApplicableCourses": [
         "UAE-G3-COMMON-T1-OGL-V1"
       ],
@@ -284,8 +373,19 @@
       "SortOrder": 12,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "a30d3d673ed0bd36ea701e84562184693dbdb983385dce1487d05ff58de5906a",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.1.05.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.1.05.04",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.1.05.04"
+      ],
       "ApplicableCourses": [
         "UAE-G3-COMMON-T1-OGL-V1"
       ],
@@ -301,8 +401,19 @@
       "SortOrder": 13,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "689329ae1dc473f50ffdb23307a65131089bcfe2e1a4f48a1a61c69d6ad0e082",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.3.02.10",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.3.02.10",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.3.02.10"
+      ],
       "ApplicableCourses": [
         "UAE-G3-COMMON-T1-OGL-V1"
       ],
@@ -318,8 +429,19 @@
       "SortOrder": 14,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "846f2c07c24c108c2733780bff1b0b63d0bdd41143e6abe784f6703a08aae599",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.3.02.10",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.3.02.10",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.3.02.10"
+      ],
       "ApplicableCourses": [
         "UAE-G3-COMMON-T1-OGL-V1"
       ],
@@ -335,8 +457,19 @@
       "SortOrder": 15,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "5c561f2bad018d3083c15cc2ab9f7ca897e91a750345583f05fef07a8075517b",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.3.02.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.3.02.05",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.3.02.05"
+      ],
       "ApplicableCourses": [
         "UAE-G3-COMMON-T1-OGL-V1"
       ],
@@ -437,8 +570,19 @@
       "SortOrder": 21,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "afbde7c8111353bd0d9a51aa664ed538bcfb5411e74b5154c070f4ff6180cfa4",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.4.02.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.4.02.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.4.02.02"
+      ],
       "ApplicableCourses": [
         "UAE-G3-COMMON-T1-OGL-V1"
       ],
@@ -454,8 +598,19 @@
       "SortOrder": 22,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "03139d25c427993d17b67576bd7d2945951f7ba13a9bdd08ab3b9b7a9efeb70c",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.4.02.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.4.02.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.4.02.02"
+      ],
       "ApplicableCourses": [
         "UAE-G3-COMMON-T1-OGL-V1"
       ],
@@ -471,8 +626,19 @@
       "SortOrder": 23,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "6c9fcc86a99493f0a9a8733081c7e7bd15a679ad9da01a9723c7ee719edcee2a",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:STD:MAT.4.02.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "UAE:STD:MAT.4.02.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:STD:MAT.4.02.02"
+      ],
       "ApplicableCourses": [
         "UAE-G3-COMMON-T1-OGL-V1"
       ],

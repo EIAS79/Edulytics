@@ -123,9 +123,12 @@ internal static class OfficialLessonPracticeRuleProjection
 
                     var translation = ChooseTranslation(pack, lesson);
                     if (translation is not null &&
-                        SupportingPracticeTargetRuleRegistry.TryResolveReviewedExactTitle(
+                        SupportingPracticeTargetRuleRegistry.TryResolveReviewedOfficialLesson(
                             lesson.LessonCode,
                             translation.Title,
+                            translation.Explanation,
+                            translation.KeyConceptsAndRules,
+                            translation.WorkedExamples,
                             out var canonicalRule) &&
                         canonicalRule is not null &&
                         IsRuntimeReadyRule(canonicalRule, skillIds, familyById))
@@ -137,7 +140,7 @@ internal static class OfficialLessonPracticeRuleProjection
                             canonicalRule.Families
                                 .Distinct(StringComparer.Ordinal)
                                 .ToArray(),
-                            "OfficialReviewedExactTitleRule",
+                            "OfficialReviewedCanonicalLessonRule",
                             "READY_VERIFIED",
                             ContractVersion)
                         {

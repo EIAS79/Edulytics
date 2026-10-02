@@ -53,6 +53,60 @@ def _matches_reviewed_exact_title(
     return True
 
 
+
+def _matches_reviewed_title(
+    lesson_code: str,
+    title: str,
+    rule: SupportingRule,
+) -> bool:
+    normalized = normalize_title(title)
+
+    if rule.title_patterns and not any(
+        pattern.search(normalized)
+        for pattern in rule.title_patterns
+    ):
+        return False
+
+    if rule.code_patterns and not any(
+        pattern.search(lesson_code)
+        for pattern in rule.code_patterns
+    ):
+        return False
+
+    return True
+
+
+def _matches_reviewed_canonical_evidence(
+    lesson_code: str,
+    translation: dict[str, Any],
+    rule: SupportingRule,
+) -> bool:
+    title = normalize_title(
+        normalize_space(
+            get_case(translation, "Title", "title", default="")
+        )
+    )
+    evidence = normalize_space(" ".join([
+        title,
+        str(get_case(translation, "Explanation", "explanation", default="") or ""),
+        str(get_case(translation, "KeyConceptsAndRules", "keyConceptsAndRules", default="") or ""),
+        str(get_case(translation, "WorkedExamples", "workedExamples", default="") or ""),
+    ]))
+
+    if rule.title_patterns and not any(
+        pattern.search(evidence)
+        for pattern in rule.title_patterns
+    ):
+        return False
+
+    if rule.code_patterns and not any(
+        pattern.search(lesson_code)
+        for pattern in rule.code_patterns
+    ):
+        return False
+
+    return True
+
 def mapping_from_rule(
     lesson_code: str,
     outcome_codes: list[str],
@@ -234,6 +288,50 @@ def load_reviewed_official_rule_mappings(
                     "EXACT_TITLE",
                 )
                 continue
+
+            reviewed_title_candidates = [
+                rule
+                for rule in rules
+                if _matches_reviewed_title(lesson_code, title, rule)
+            ]
+            if len(reviewed_title_candidates) == 1:
+                mappings[lesson_code] = mapping_from_rule(
+                    lesson_code,
+                    outcomes,
+                    reviewed_title_candidates[0],
+                    "UNIQUE_REVIEWED_TITLE",
+                )
+                continue
+
+            if (
+                pack_code == "CAMBRIDGE-INTL-MATH"
+                and any(code.startswith("CAM:REF:9709:") for code in outcomes)
+            ):
+                canonical_candidates = [
+                    rule
+                    for rule in rules
+                    if _matches_reviewed_canonical_evidence(
+                        lesson_code,
+                        translation,
+                        rule,
+                    )
+                ]
+                if len(canonical_candidates) > 1:
+                    errors.append(
+                        "Cambridge 9709 canonical-evidence Practice rule collision for "
+                        f"{lesson_code}: {title!r} -> "
+                        + ", ".join(rule.rule_id for rule in canonical_candidates)
+                    )
+                    continue
+
+                if len(canonical_candidates) == 1:
+                    mappings[lesson_code] = mapping_from_rule(
+                        lesson_code,
+                        outcomes,
+                        canonical_candidates[0],
+                        "CANONICAL_EVIDENCE",
+                    )
+                    continue
 
             if all(
                 resolution is not None
