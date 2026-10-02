@@ -1061,7 +1061,7 @@ public static class AnalyticsPdfRenderer
                 "Gaps",
                 "Evidence confidence");
 
-            foreach (var item in studentsPage.Students.Take(120))
+            foreach (var item in studentsPage.Students)
             {
                 var row = students.AddRow();
                 row.VerticalAlignment = VerticalAlignment.Center;

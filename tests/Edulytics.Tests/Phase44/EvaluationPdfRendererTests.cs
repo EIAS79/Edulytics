@@ -2,11 +2,58 @@ using System.Text;
 using Edulytics.Core.Analytics;
 using Edulytics.Services.Analytics;
 using Edulytics.Web.Printing;
+using PdfSharp.Pdf;
+using PdfSharp.Pdf.IO;
 
 namespace Edulytics.Tests.Phase44;
 
 public sealed class EvaluationPdfRendererTests
 {
+    [Theory]
+    [InlineData(150)]
+    [InlineData(300)]
+    public void ClassEvaluationReport_PaginatesStudentsBeyondFormerRosterLimit(
+        int studentCount)
+    {
+        var yearId = Guid.NewGuid();
+        var classId = Guid.NewGuid();
+        var subjectId = Guid.NewGuid();
+        var roster = Enumerable.Range(1, studentCount)
+            .Select(index => new AnalyticsStudentEvaluationRow(
+                Guid.NewGuid(),
+                $"ST-{index:000}",
+                $"Learner {index:000} Extended family name for wrapping validation",
+                70m, 65m, 75m, -10m, 60m, 70m,
+                EvaluationConfidenceBand.Strong,
+                EvaluationTrendBand.Stable,
+                EvaluationTrendBand.Stable,
+                3, 2, 1, 0, EvaluationPriority.None))
+            .ToArray();
+        var page = new AnalyticsStudentsEvaluationPage(
+            yearId, "2026/2027", classId, "Large cohort", subjectId,
+            "Mathematics",
+            new AnalyticsEvaluationDistribution(
+                studentCount, 0, studentCount, 0, 0, 0, 0, studentCount, 0),
+            roster);
+        var topics = new AnalyticsTopicSkillEvaluationPage(
+            yearId, page.AcademicYearName, classId, page.ClassName,
+            subjectId, page.SubjectName, []);
+
+        var first120 = AnalyticsPdfRenderer.RenderClassEvaluationReport(
+            page with { Students = roster.Take(120).ToArray() }, topics);
+        var complete = AnalyticsPdfRenderer.RenderClassEvaluationReport(
+            page, topics);
+
+        using var first120Stream = new MemoryStream(first120);
+        using var completeStream = new MemoryStream(complete);
+        using var first120Pdf = PdfReader.Open(
+            first120Stream, PdfDocumentOpenMode.Import);
+        using var completePdf = PdfReader.Open(
+            completeStream, PdfDocumentOpenMode.Import);
+        Assert.True(completePdf.PageCount > first120Pdf.PageCount,
+            "The complete roster must continue onto additional pages after student 120.");
+    }
+
     [Fact]
     public void StudentEvaluationReport_RendersPdfFromEvaluationModel()
     {
