@@ -1,167 +1,477 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
-  <resheader name="version"><value>2.0</value></resheader>
-  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms</value></resheader>
-  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms</value></resheader>
-  <data name="AcademicYear" xml:space="preserve"><value>العام الدراسي</value></data>
-  <data name="AllClasses" xml:space="preserve"><value>جميع الفصول</value></data>
-  <data name="AllSubjects" xml:space="preserve"><value>جميع المواضيع</value></data>
-  <data name="AllYears" xml:space="preserve"><value>جميع السنوات الدراسية</value></data>
-  <data name="AnalyticsSubtitle" xml:space="preserve"><value>استكشف الإتقان والفجوات في نتائج التعلم ونقاط الضعف في الموضوع والتقدم والطلاب الذين قد يحتاجون إلى التدخل.</value></data>
-  <data name="AnalyticsTitle" xml:space="preserve"><value>التحليلات والإتقان</value></data>
-  <data name="ApplyFilters" xml:space="preserve"><value>تطبيق المرشحات</value></data>
-  <data name="Assessment" xml:space="preserve"><value>تقدير</value></data>
-  <data name="AtRisk" xml:space="preserve"><value>في خطر</value></data>
-  <data name="AtRiskStudents" xml:space="preserve"><value>الطلاب في خطر</value></data>
-  <data name="Average" xml:space="preserve"><value>متوسط</value></data>
-  <data name="BackToDashboard" xml:space="preserve"><value>العودة إلى لوحة القيادة المدرسة</value></data>
-  <data name="Class" xml:space="preserve"><value>فصل</value></data>
-  <data name="ClassHeatmap" xml:space="preserve"><value>خريطة الحرارة لإتقان الفصل</value></data>
-  <data name="ClassHeatmapHelp" xml:space="preserve"><value>إتقان نتائج التعلم حسب الفصل والموضوع.</value></data>
-  <data name="CriticalGaps" xml:space="preserve"><value>الفجوات الحرجة</value></data>
-  <data name="CriticalOutcomes" xml:space="preserve"><value>فجوات النتائج الحرجة</value></data>
-  <data name="Date" xml:space="preserve"><value>تاريخ</value></data>
-  <data name="ErrorAccessDenied" xml:space="preserve"><value>ليس لديك إذن لعرض هذه التحليلات.</value></data>
-  <data name="ErrorInvalidSourceData" xml:space="preserve"><value>لا يمكن حساب التحليلات لأن أدلة التقييم غير متسقة.</value></data>
-  <data name="ErrorPersistence" xml:space="preserve"><value>لا يمكن حفظ التحليلات. يرجى المحاولة مرة أخرى.</value></data>
-  <data name="ErrorRecalculateAdminOnly" xml:space="preserve"><value>يمكن لمدير المدرسة فقط إعادة حساب تحليلات المدرسة.</value></data>
-  <data name="ErrorSchoolNotActive" xml:space="preserve"><value>التحليلات غير متوفرة لأن المدرسة غير نشطة.</value></data>
-  <data name="Evidence" xml:space="preserve"><value>شهادة</value></data>
-  <data name="EvidenceRule" xml:space="preserve"><value>تستخدم التحليلات الأدلة المقدمة من التقييمات المفتوحة والمغلقة. تم استبعاد مسودة التقييمات.</value></data>
-  <data name="Filters" xml:space="preserve"><value>المرشحات</value></data>
-  <data name="GeneratedAt" xml:space="preserve"><value>محسوبة عند</value></data>
-  <data name="ManageAnalytics" xml:space="preserve"><value>فتح التحليلات</value></data>
-  <data name="Mastery" xml:space="preserve"><value>إتقان</value></data>
-  <data name="MasteryCritical" xml:space="preserve"><value>فجوة حرجة</value></data>
-  <data name="MasteryDeveloping" xml:space="preserve"><value>النامية</value></data>
-  <data name="MasteryLegend" xml:space="preserve"><value>مقياس الإتقان</value></data>
-  <data name="MasterySecure" xml:space="preserve"><value>يؤمن</value></data>
-  <data name="MasteryStrong" xml:space="preserve"><value>قوي</value></data>
-  <data name="MasteryWeak" xml:space="preserve"><value>ضعيف</value></data>
-  <data name="NoAnalytics" xml:space="preserve"><value>لا تتوفر أي تحليلات لنطاقك الحالي.</value></data>
-  <data name="NoAnalyticsHint" xml:space="preserve"><value>أدخل نتائج التقييم واطلب من مدير المدرسة إعادة حساب التحليلات.</value></data>
-  <data name="NoOutcomes" xml:space="preserve"><value>لا تتطابق أي تحليلات لنتائج التعلم مع عوامل التصفية هذه.</value></data>
-  <data name="NoRisks" xml:space="preserve"><value>لا يوجد طلاب حاليًا أقل من عتبة المخاطرة في هذا النطاق.</value></data>
-  <data name="NoTopics" xml:space="preserve"><value>لا تتطابق أي تحليلات للموضوع مع عوامل التصفية هذه.</value></data>
-  <data name="NoTrend" xml:space="preserve"><value>لا توجد بيانات اتجاه التقييم تتطابق مع عوامل التصفية هذه.</value></data>
-  <data name="Outcome" xml:space="preserve"><value>نتيجة التعلم</value></data>
-  <data name="Outcomes" xml:space="preserve"><value>النتائج</value></data>
-  <data name="OverallMastery" xml:space="preserve"><value>الإتقان الشامل</value></data>
-  <data name="Percent" xml:space="preserve"><value>نسبة مئوية</value></data>
-  <data name="ProgressOverTime" xml:space="preserve"><value>التقدم مع مرور الوقت</value></data>
-  <data name="Recalculate" xml:space="preserve"><value>إعادة حساب التحليلات</value></data>
-  <data name="RecalculateHelp" xml:space="preserve"><value>تعيد عملية إعادة الحساب بناء التوقعات المحسوبة من أدلة التقييم دون تغيير النتائج الأولية.</value></data>
-  <data name="RiskStudents" xml:space="preserve"><value>الطلاب في خطر</value></data>
-  <data name="StaleData" xml:space="preserve"><value>أحدث أدلة التقييم متاحة</value></data>
-  <data name="StaleDataHelp" xml:space="preserve"><value>التوقعات المعروضة أقدم من أحدث النتائج التي تم إدخالها. إعادة الحساب لتحديثها.</value></data>
-  <data name="Student" xml:space="preserve"><value>طالب</value></data>
-  <data name="StudentNumber" xml:space="preserve"><value>رقم الطالب</value></data>
-  <data name="Students" xml:space="preserve"><value>طلاب</value></data>
-  <data name="StudentsWithEvidence" xml:space="preserve"><value>الطلاب بالأدلة</value></data>
-  <data name="Subject" xml:space="preserve"><value>موضوع</value></data>
-  <data name="SuccessRecalculated" xml:space="preserve"><value>تمت إعادة حساب توقعات التحليلات بنجاح.</value></data>
-  <data name="Topic" xml:space="preserve"><value>عنوان</value></data>
-  <data name="TopicAnalysis" xml:space="preserve"><value>تحليل ضعف الموضوع</value></data>
-  <data name="UpToDate" xml:space="preserve"><value>التحليلات محدثة</value></data>
-  <data name="WeakOutcomes" xml:space="preserve"><value>نتائج ضعيفة</value></data>
-  <data name="WeakTopics" xml:space="preserve"><value>مواضيع ضعيفة</value></data>
-
-  <data name="EvaluationOverview" xml:space="preserve"><value>نظرة عامة على التقييم</value></data>
-  <data name="AllStudents" xml:space="preserve"><value>جميع الطلاب</value></data>
-  <data name="TopicsSkills" xml:space="preserve"><value>المواضيع والمهارات</value></data>
-  <data name="Student360" xml:space="preserve"><value>تقييم الطالب 360</value></data>
-  <data name="CurrentMastery" xml:space="preserve"><value>إتقان الحالي</value></data>
-  <data name="AssessmentMastery" xml:space="preserve"><value>إتقان التقييم</value></data>
-  <data name="PracticeMastery" xml:space="preserve"><value>ممارسة الإتقان</value></data>
-  <data name="TransferGap" xml:space="preserve"><value>الممارسة ← فجوة التقييم</value></data>
-  <data name="Coverage" xml:space="preserve"><value>تغطية المناهج الدراسية</value></data>
-  <data name="Confidence" xml:space="preserve"><value>ثقة الأدلة</value></data>
-  <data name="ShortTrend" xml:space="preserve"><value>الاتجاه الأخير</value></data>
-  <data name="LongTrend" xml:space="preserve"><value>الاتجاه طويل المدى</value></data>
-  <data name="SecureSkills" xml:space="preserve"><value>مهارات آمنة</value></data>
-  <data name="NeedsFocus" xml:space="preserve"><value>يحتاج إلى التركيز</value></data>
-  <data name="RetentionConcerns" xml:space="preserve"><value>مخاوف الاحتفاظ</value></data>
-  <data name="StrongSecure" xml:space="preserve"><value>قوي / آمن</value></data>
-  <data name="InsufficientEvidence" xml:space="preserve"><value>أدلة غير كافية</value></data>
-  <data name="Improving" xml:space="preserve"><value>تحسين</value></data>
-  <data name="Stable" xml:space="preserve"><value>مستقر</value></data>
-  <data name="Declining" xml:space="preserve"><value>انخفاض</value></data>
-  <data name="ViewEvaluation" xml:space="preserve"><value>عرض التقييم</value></data>
-  <data name="EvidenceDetails" xml:space="preserve"><value>تفاصيل الأدلة</value></data>
-  <data name="Source" xml:space="preserve"><value>مصدر</value></data>
-  <data name="Difficulty" xml:space="preserve"><value>صعوبة</value></data>
-  <data name="Result" xml:space="preserve"><value>نتيجة</value></data>
-  <data name="When" xml:space="preserve"><value>متى</value></data>
-  <data name="Skill" xml:space="preserve"><value>مهارة</value></data>
-  <data name="Priority" xml:space="preserve"><value>أولوية</value></data>
-  <data name="Prerequisites" xml:space="preserve"><value>المتطلبات الأساسية</value></data>
-  <data name="WeakPrerequisites" xml:space="preserve"><value>اشتراطات ضعيفة</value></data>
-  <data name="NotYetAssessed" xml:space="preserve"><value>لم يتم تقييمها بعد</value></data>
-  <data name="Trend" xml:space="preserve"><value>اتجاه</value></data>
-  <data name="ClassEvaluation" xml:space="preserve"><value>تقييم الصف</value></data>
-  <data name="AffectedStudents" xml:space="preserve"><value>الطلاب المتأثرين</value></data>
-  <data name="EvaluatedStudents" xml:space="preserve"><value>الطلاب الذين تم تقييمهم</value></data>
-  <data name="ClassMastery" xml:space="preserve"><value>إتقان الطبقة</value></data>
-  <data name="BackToStudents" xml:space="preserve"><value>العودة إلى جميع الطلاب</value></data>
-  <data name="AssessmentHistory" xml:space="preserve"><value>تاريخ التقييم</value></data>
-  <data name="Term" xml:space="preserve"><value>شرط</value></data>
-  <data name="Status" xml:space="preserve"><value>حالة</value></data>
-  <data name="EvaluationRequiresScope" xml:space="preserve"><value>حدد عامًا دراسيًا واحدًا وفصلًا وموضوعًا لفتح تقييم مفصل للطلاب.</value></data>
-
-  <data name="ComparableSkillGrowth" xml:space="preserve"><value>نمو المهارات المماثلة</value></data>
-  <data name="OverallChange" xml:space="preserve"><value>التغيير الشامل</value></data>
-  <data name="PracticeSessions" xml:space="preserve"><value>جلسات الممارسة</value></data>
-  <data name="ActiveDays" xml:space="preserve"><value>أيام التدريب النشط</value></data>
-  <data name="SkillsPracticed" xml:space="preserve"><value>المهارات التي تمارسها</value></data>
-  <data name="LatestPractice" xml:space="preserve"><value>أحدث الممارسات</value></data>
-  <data name="RecommendedNextSteps" xml:space="preserve"><value>الخطوات التالية الموصى بها</value></data>
-  <data name="Reason" xml:space="preserve"><value>لماذا يتم إعطاء الأولوية لهذا</value></data>
-  <data name="Retention" xml:space="preserve"><value>حفظ</value></data>
-  <data name="CombinedMastery" xml:space="preserve"><value>إتقان مجتمعة</value></data>
-
-  <data name="SubjectOverview" xml:space="preserve"><value>نظرة عامة على الموضوع</value></data>
-  <data name="Classes" xml:space="preserve"><value>فصول</value></data>
-  <data name="PriorityGaps" xml:space="preserve"><value>فجوات المهارات ذات الأولوية</value></data>
-  <data name="AffectedClasses" xml:space="preserve"><value>الطبقات المتضررة</value></data>
-  <data name="ImprovingStudents" xml:space="preserve"><value>تحسن الطلاب</value></data>
-  <data name="DecliningStudents" xml:space="preserve"><value>الطلاب يتراجعون</value></data>
-  <data name="CriticalStudents" xml:space="preserve"><value>الطلاب الذين يعانون من فجوات حرجة</value></data>
-  <data name="ViewClass" xml:space="preserve"><value>عرض الصف</value></data>
-
-  <data name="CreateInterventionCheck" xml:space="preserve"><value>إنشاء فحص مستهدف</value></data>
-  <data name="InterventionCheckHint" xml:space="preserve"><value>قم بإنشاء فحص شخصي عبر الإنترنت مكون من 5 أسئلة لهذه المهارة. تظل الأسئلة في المسودة حتى تقوم بمراجعتها والموافقة عليها.</value></data>
-  <data name="SuccessInterventionDraftCreated" xml:space="preserve"><value>تم إنشاء فحص التدخل الشخصي. قم بمراجعة الأسئلة التي تم إنشاؤها والموافقة عليها قبل النشر.</value></data>
-  <data name="ErrorInterventionSkillUnavailable" xml:space="preserve"><value>لا تحتوي هذه المهارة على ما يكفي من أدلة التقييم التي تم التحقق منها لإجراء فحص مستهدف.</value></data>
-  <data name="ErrorInterventionTermUnavailable" xml:space="preserve"><value>لا يوجد مصطلح أكاديمي متاح لفحص التدخل هذا.</value></data>
-  <data name="ErrorInterventionGenerationFailed" xml:space="preserve"><value>لا يمكن إنشاء الفحص المستهدف من تعيين المهارات التي تم التحقق منها. ولم يتم نشر أي تقييم.</value></data>
-
-  <data name="PersonalizedCheck" xml:space="preserve"><value>فحص شخصي</value></data>
-
-  <data name="ViewReport" xml:space="preserve"><value>عرض التقرير</value></data>
-  <data name="VisualAnalytics" xml:space="preserve"><value>التحليلات البصرية</value></data>
-  <data name="PerformanceComparison" xml:space="preserve"><value>مقارنة الأداء</value></data>
-  <data name="PerformanceComparisonHelp" xml:space="preserve"><value>يظل التقييم والممارسة منفصلين بحيث يكون النقل مرئيًا بدلاً من إخفائه في درجة واحدة.</value></data>
-  <data name="TransferGapHelp" xml:space="preserve"><value>الفرق بين التقييم الرسمي وأداء الممارسة.</value></data>
-  <data name="AssessmentProgressChart" xml:space="preserve"><value>تقدم التقييم</value></data>
-  <data name="AssessmentProgressChartHelp" xml:space="preserve"><value>درجات التقييم الخام مع مرور الوقت. ويظل نمو المهارات المماثلة هو المقياس الأكثر أمانًا لنمو التعلم.</value></data>
-  <data name="TopicMasteryChart" xml:space="preserve"><value>إتقان الموضوع</value></data>
-  <data name="TopicMasteryChartHelp" xml:space="preserve"><value>يتم عرض أقل مستوى من إتقان الموضوع الحالي أولاً حتى تظهر المجالات ذات الأولوية بسرعة.</value></data>
-  <data name="AssessmentChangeWaterfall" xml:space="preserve"><value>شلال تغيير التقييم</value></data>
-  <data name="AssessmentChangeWaterfallHelp" xml:space="preserve"><value>يُظهر اتجاه وحجم حركة النتيجة بين التقييمات المتعاقبة.</value></data>
-  <data name="DownloadPdf" xml:space="preserve"><value>تحميل قوات الدفاع الشعبي</value></data>
-  <data name="PrintReport" xml:space="preserve"><value>طباعة التقرير</value></data>
-  <data name="FullStudentReport" xml:space="preserve"><value>تقرير تقييم الطالب كاملاً</value></data>
-  <data name="ReportScope" xml:space="preserve"><value>نطاق التقرير</value></data>
-  <data name="TeacherComments" xml:space="preserve"><value>تعليقات المعلم</value></data>
-  <data name="ParentStudentReview" xml:space="preserve"><value>مراجعة ولي الأمر/الطالب</value></data>
-  <data name="ReportGenerated" xml:space="preserve"><value>تم إنشاؤها</value></data>
-  <data name="SelectTerm" xml:space="preserve"><value>التركيز على المدى</value></data>
-  <data name="AllTerms" xml:space="preserve"><value>عام دراسي كامل</value></data>
-  <data name="MasteryDistribution" xml:space="preserve"><value>توزيع الإتقان</value></data>
-  <data name="MovementDistribution" xml:space="preserve"><value>الحركة الطلابية</value></data>
-  <data name="ClassComparisonChart" xml:space="preserve"><value>مقارنة الطبقة</value></data>
-  <data name="PriorityGapChart" xml:space="preserve"><value>فجوات المهارات ذات الأولوية</value></data>
-  <data name="Report" xml:space="preserve"><value>تقرير</value></data>
-  <data name="Charts" xml:space="preserve"><value>الرسوم البيانية</value></data>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="AcademicYear" xml:space="preserve">
+    <value>العام الدراسي</value>
+  </data>
+  <data name="AllClasses" xml:space="preserve">
+    <value>جميع الفصول</value>
+  </data>
+  <data name="AllSubjects" xml:space="preserve">
+    <value>جميع المواضيع</value>
+  </data>
+  <data name="AllYears" xml:space="preserve">
+    <value>جميع السنوات الدراسية</value>
+  </data>
+  <data name="AnalyticsSubtitle" xml:space="preserve">
+    <value>استكشف الإتقان والفجوات في نتائج التعلم ونقاط الضعف في الموضوع والتقدم والطلاب الذين قد يحتاجون إلى التدخل.</value>
+  </data>
+  <data name="AnalyticsTitle" xml:space="preserve">
+    <value>التحليلات والإتقان</value>
+  </data>
+  <data name="ApplyFilters" xml:space="preserve">
+    <value>تطبيق المرشحات</value>
+  </data>
+  <data name="Assessment" xml:space="preserve">
+    <value>التقييم</value>
+  </data>
+  <data name="AtRisk" xml:space="preserve">
+    <value>في خطر</value>
+  </data>
+  <data name="AtRiskStudents" xml:space="preserve">
+    <value>الطلاب في خطر</value>
+  </data>
+  <data name="Average" xml:space="preserve">
+    <value>متوسط</value>
+  </data>
+  <data name="BackToDashboard" xml:space="preserve">
+    <value>العودة إلى لوحة تحكم المدرسة</value>
+  </data>
+  <data name="Class" xml:space="preserve">
+    <value>الفصل</value>
+  </data>
+  <data name="ClassHeatmap" xml:space="preserve">
+    <value>خريطة الحرارة لإتقان الفصل</value>
+  </data>
+  <data name="ClassHeatmapHelp" xml:space="preserve">
+    <value>إتقان نتائج التعلم حسب الفصل والموضوع.</value>
+  </data>
+  <data name="CriticalGaps" xml:space="preserve">
+    <value>الفجوات الحرجة</value>
+  </data>
+  <data name="CriticalOutcomes" xml:space="preserve">
+    <value>فجوات النتائج الحرجة</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاريخ</value>
+  </data>
+  <data name="ErrorAccessDenied" xml:space="preserve">
+    <value>ليس لديك إذن لعرض هذه التحليلات.</value>
+  </data>
+  <data name="ErrorInvalidSourceData" xml:space="preserve">
+    <value>لا يمكن حساب التحليلات لأن أدلة التقييم غير متسقة.</value>
+  </data>
+  <data name="ErrorPersistence" xml:space="preserve">
+    <value>لا يمكن حفظ التحليلات. يرجى المحاولة مرة أخرى.</value>
+  </data>
+  <data name="ErrorRecalculateAdminOnly" xml:space="preserve">
+    <value>يمكن لمدير المدرسة فقط إعادة حساب تحليلات المدرسة.</value>
+  </data>
+  <data name="ErrorSchoolNotActive" xml:space="preserve">
+    <value>التحليلات غير متوفرة لأن المدرسة غير نشطة.</value>
+  </data>
+  <data name="Evidence" xml:space="preserve">
+    <value>الأدلة</value>
+  </data>
+  <data name="EvidenceRule" xml:space="preserve">
+    <value>تستخدم التحليلات الأدلة المقدمة من التقييمات المفتوحة والمغلقة. تم استبعاد مسودة التقييمات.</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>المرشحات</value>
+  </data>
+  <data name="GeneratedAt" xml:space="preserve">
+    <value>محسوبة عند</value>
+  </data>
+  <data name="ManageAnalytics" xml:space="preserve">
+    <value>فتح التحليلات</value>
+  </data>
+  <data name="Mastery" xml:space="preserve">
+    <value>الإتقان</value>
+  </data>
+  <data name="MasteryCritical" xml:space="preserve">
+    <value>فجوة حرجة</value>
+  </data>
+  <data name="MasteryDeveloping" xml:space="preserve">
+    <value>النامية</value>
+  </data>
+  <data name="MasteryLegend" xml:space="preserve">
+    <value>مقياس الإتقان</value>
+  </data>
+  <data name="MasterySecure" xml:space="preserve">
+    <value>يؤمن</value>
+  </data>
+  <data name="MasteryStrong" xml:space="preserve">
+    <value>قوي</value>
+  </data>
+  <data name="MasteryWeak" xml:space="preserve">
+    <value>ضعيف</value>
+  </data>
+  <data name="NoAnalytics" xml:space="preserve">
+    <value>لا تتوفر أي تحليلات لنطاقك الحالي.</value>
+  </data>
+  <data name="NoAnalyticsHint" xml:space="preserve">
+    <value>أدخل نتائج التقييم واطلب من مدير المدرسة إعادة حساب التحليلات.</value>
+  </data>
+  <data name="NoOutcomes" xml:space="preserve">
+    <value>لا تتطابق أي تحليلات لنتائج التعلم مع عوامل التصفية هذه.</value>
+  </data>
+  <data name="NoRisks" xml:space="preserve">
+    <value>لا يوجد طلاب حاليًا أقل من عتبة المخاطرة في هذا النطاق.</value>
+  </data>
+  <data name="NoTopics" xml:space="preserve">
+    <value>لا تتطابق أي تحليلات للموضوع مع عوامل التصفية هذه.</value>
+  </data>
+  <data name="NoTrend" xml:space="preserve">
+    <value>لا توجد بيانات اتجاه التقييم تتطابق مع عوامل التصفية هذه.</value>
+  </data>
+  <data name="Outcome" xml:space="preserve">
+    <value>نتيجة التعلم</value>
+  </data>
+  <data name="Outcomes" xml:space="preserve">
+    <value>النتائج</value>
+  </data>
+  <data name="OverallMastery" xml:space="preserve">
+    <value>الإتقان الشامل</value>
+  </data>
+  <data name="Percent" xml:space="preserve">
+    <value>نسبة مئوية</value>
+  </data>
+  <data name="ProgressOverTime" xml:space="preserve">
+    <value>التقدم مع مرور الوقت</value>
+  </data>
+  <data name="Recalculate" xml:space="preserve">
+    <value>إعادة حساب التحليلات</value>
+  </data>
+  <data name="RecalculateHelp" xml:space="preserve">
+    <value>تعيد عملية إعادة الحساب بناء التوقعات المحسوبة من أدلة التقييم دون تغيير النتائج الأولية.</value>
+  </data>
+  <data name="RiskStudents" xml:space="preserve">
+    <value>الطلاب في خطر</value>
+  </data>
+  <data name="StaleData" xml:space="preserve">
+    <value>أحدث أدلة التقييم متاحة</value>
+  </data>
+  <data name="StaleDataHelp" xml:space="preserve">
+    <value>التوقعات المعروضة أقدم من أحدث النتائج التي تم إدخالها. إعادة الحساب لتحديثها.</value>
+  </data>
+  <data name="Student" xml:space="preserve">
+    <value>الطالب</value>
+  </data>
+  <data name="StudentNumber" xml:space="preserve">
+    <value>رقم الطالب</value>
+  </data>
+  <data name="Students" xml:space="preserve">
+    <value>الطلاب</value>
+  </data>
+  <data name="StudentsWithEvidence" xml:space="preserve">
+    <value>الطلاب بالأدلة</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>المادة</value>
+  </data>
+  <data name="SuccessRecalculated" xml:space="preserve">
+    <value>تمت إعادة حساب توقعات التحليلات بنجاح.</value>
+  </data>
+  <data name="Topic" xml:space="preserve">
+    <value>الموضوع</value>
+  </data>
+  <data name="TopicAnalysis" xml:space="preserve">
+    <value>تحليل ضعف الموضوع</value>
+  </data>
+  <data name="UpToDate" xml:space="preserve">
+    <value>التحليلات محدثة</value>
+  </data>
+  <data name="WeakOutcomes" xml:space="preserve">
+    <value>نتائج ضعيفة</value>
+  </data>
+  <data name="WeakTopics" xml:space="preserve">
+    <value>مواضيع ضعيفة</value>
+  </data>
+  <data name="EvaluationOverview" xml:space="preserve">
+    <value>نظرة عامة على التقييم</value>
+  </data>
+  <data name="AllStudents" xml:space="preserve">
+    <value>جميع الطلاب</value>
+  </data>
+  <data name="TopicsSkills" xml:space="preserve">
+    <value>المواضيع والمهارات</value>
+  </data>
+  <data name="Student360" xml:space="preserve">
+    <value>تقييم الطالب 360</value>
+  </data>
+  <data name="CurrentMastery" xml:space="preserve">
+    <value>الإتقان الحالي</value>
+  </data>
+  <data name="AssessmentMastery" xml:space="preserve">
+    <value>إتقان التقييم</value>
+  </data>
+  <data name="PracticeMastery" xml:space="preserve">
+    <value>ممارسة الإتقان</value>
+  </data>
+  <data name="TransferGap" xml:space="preserve">
+    <value>الممارسة ← فجوة التقييم</value>
+  </data>
+  <data name="Coverage" xml:space="preserve">
+    <value>تغطية المناهج الدراسية</value>
+  </data>
+  <data name="Confidence" xml:space="preserve">
+    <value>ثقة الأدلة</value>
+  </data>
+  <data name="ShortTrend" xml:space="preserve">
+    <value>الاتجاه الأخير</value>
+  </data>
+  <data name="LongTrend" xml:space="preserve">
+    <value>الاتجاه طويل المدى</value>
+  </data>
+  <data name="SecureSkills" xml:space="preserve">
+    <value>مهارات آمنة</value>
+  </data>
+  <data name="NeedsFocus" xml:space="preserve">
+    <value>يحتاج إلى التركيز</value>
+  </data>
+  <data name="RetentionConcerns" xml:space="preserve">
+    <value>مخاوف الاحتفاظ</value>
+  </data>
+  <data name="StrongSecure" xml:space="preserve">
+    <value>قوي / آمن</value>
+  </data>
+  <data name="InsufficientEvidence" xml:space="preserve">
+    <value>أدلة غير كافية</value>
+  </data>
+  <data name="Improving" xml:space="preserve">
+    <value>تحسين</value>
+  </data>
+  <data name="Stable" xml:space="preserve">
+    <value>مستقر</value>
+  </data>
+  <data name="Declining" xml:space="preserve">
+    <value>انخفاض</value>
+  </data>
+  <data name="ViewEvaluation" xml:space="preserve">
+    <value>عرض التقييم</value>
+  </data>
+  <data name="EvidenceDetails" xml:space="preserve">
+    <value>تفاصيل الأدلة</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>مصدر</value>
+  </data>
+  <data name="Difficulty" xml:space="preserve">
+    <value>صعوبة</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>نتيجة</value>
+  </data>
+  <data name="When" xml:space="preserve">
+    <value>متى</value>
+  </data>
+  <data name="Skill" xml:space="preserve">
+    <value>مهارة</value>
+  </data>
+  <data name="Priority" xml:space="preserve">
+    <value>أولوية</value>
+  </data>
+  <data name="Prerequisites" xml:space="preserve">
+    <value>المتطلبات الأساسية</value>
+  </data>
+  <data name="WeakPrerequisites" xml:space="preserve">
+    <value>اشتراطات ضعيفة</value>
+  </data>
+  <data name="NotYetAssessed" xml:space="preserve">
+    <value>لم يتم تقييمها بعد</value>
+  </data>
+  <data name="Trend" xml:space="preserve">
+    <value>اتجاه</value>
+  </data>
+  <data name="ClassEvaluation" xml:space="preserve">
+    <value>تقييم الصف</value>
+  </data>
+  <data name="AffectedStudents" xml:space="preserve">
+    <value>الطلاب المتأثرين</value>
+  </data>
+  <data name="EvaluatedStudents" xml:space="preserve">
+    <value>الطلاب الذين تم تقييمهم</value>
+  </data>
+  <data name="ClassMastery" xml:space="preserve">
+    <value>إتقان الطبقة</value>
+  </data>
+  <data name="BackToStudents" xml:space="preserve">
+    <value>العودة إلى جميع الطلاب</value>
+  </data>
+  <data name="AssessmentHistory" xml:space="preserve">
+    <value>تاريخ التقييم</value>
+  </data>
+  <data name="Term" xml:space="preserve">
+    <value>الفصل الدراسي</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="EvaluationRequiresScope" xml:space="preserve">
+    <value>حدد عامًا دراسيًا واحدًا وفصلًا وموضوعًا لفتح تقييم مفصل للطلاب.</value>
+  </data>
+  <data name="ComparableSkillGrowth" xml:space="preserve">
+    <value>نمو المهارات المماثلة</value>
+  </data>
+  <data name="OverallChange" xml:space="preserve">
+    <value>التغيير الشامل</value>
+  </data>
+  <data name="PracticeSessions" xml:space="preserve">
+    <value>جلسات الممارسة</value>
+  </data>
+  <data name="ActiveDays" xml:space="preserve">
+    <value>أيام التدريب النشط</value>
+  </data>
+  <data name="SkillsPracticed" xml:space="preserve">
+    <value>المهارات التي تمارسها</value>
+  </data>
+  <data name="LatestPractice" xml:space="preserve">
+    <value>أحدث الممارسات</value>
+  </data>
+  <data name="RecommendedNextSteps" xml:space="preserve">
+    <value>الخطوات التالية الموصى بها</value>
+  </data>
+  <data name="Reason" xml:space="preserve">
+    <value>لماذا يتم إعطاء الأولوية لهذا</value>
+  </data>
+  <data name="Retention" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="CombinedMastery" xml:space="preserve">
+    <value>إتقان مجتمعة</value>
+  </data>
+  <data name="SubjectOverview" xml:space="preserve">
+    <value>نظرة عامة على الموضوع</value>
+  </data>
+  <data name="Classes" xml:space="preserve">
+    <value>الفصول</value>
+  </data>
+  <data name="PriorityGaps" xml:space="preserve">
+    <value>فجوات المهارات ذات الأولوية</value>
+  </data>
+  <data name="AffectedClasses" xml:space="preserve">
+    <value>الطبقات المتضررة</value>
+  </data>
+  <data name="ImprovingStudents" xml:space="preserve">
+    <value>تحسن الطلاب</value>
+  </data>
+  <data name="DecliningStudents" xml:space="preserve">
+    <value>الطلاب يتراجعون</value>
+  </data>
+  <data name="CriticalStudents" xml:space="preserve">
+    <value>الطلاب الذين يعانون من فجوات حرجة</value>
+  </data>
+  <data name="ViewClass" xml:space="preserve">
+    <value>عرض الصف</value>
+  </data>
+  <data name="CreateInterventionCheck" xml:space="preserve">
+    <value>إنشاء فحص مستهدف</value>
+  </data>
+  <data name="InterventionCheckHint" xml:space="preserve">
+    <value>قم بإنشاء فحص شخصي عبر الإنترنت مكون من 5 أسئلة لهذه المهارة. تظل الأسئلة في المسودة حتى تقوم بمراجعتها والموافقة عليها.</value>
+  </data>
+  <data name="SuccessInterventionDraftCreated" xml:space="preserve">
+    <value>تم إنشاء فحص التدخل الشخصي. قم بمراجعة الأسئلة التي تم إنشاؤها والموافقة عليها قبل النشر.</value>
+  </data>
+  <data name="ErrorInterventionSkillUnavailable" xml:space="preserve">
+    <value>لا تحتوي هذه المهارة على ما يكفي من أدلة التقييم التي تم التحقق منها لإجراء فحص مستهدف.</value>
+  </data>
+  <data name="ErrorInterventionTermUnavailable" xml:space="preserve">
+    <value>لا يوجد مصطلح أكاديمي متاح لفحص التدخل هذا.</value>
+  </data>
+  <data name="ErrorInterventionGenerationFailed" xml:space="preserve">
+    <value>لا يمكن إنشاء الفحص المستهدف من تعيين المهارات التي تم التحقق منها. ولم يتم نشر أي تقييم.</value>
+  </data>
+  <data name="PersonalizedCheck" xml:space="preserve">
+    <value>فحص شخصي</value>
+  </data>
+  <data name="ViewReport" xml:space="preserve">
+    <value>عرض التقرير</value>
+  </data>
+  <data name="VisualAnalytics" xml:space="preserve">
+    <value>التحليلات البصرية</value>
+  </data>
+  <data name="PerformanceComparison" xml:space="preserve">
+    <value>مقارنة الأداء</value>
+  </data>
+  <data name="PerformanceComparisonHelp" xml:space="preserve">
+    <value>يظل التقييم والممارسة منفصلين بحيث يكون النقل مرئيًا بدلاً من إخفائه في درجة واحدة.</value>
+  </data>
+  <data name="TransferGapHelp" xml:space="preserve">
+    <value>الفرق بين التقييم الرسمي وأداء الممارسة.</value>
+  </data>
+  <data name="AssessmentProgressChart" xml:space="preserve">
+    <value>تقدم التقييم</value>
+  </data>
+  <data name="AssessmentProgressChartHelp" xml:space="preserve">
+    <value>درجات التقييم الخام مع مرور الوقت. ويظل نمو المهارات المماثلة هو المقياس الأكثر أمانًا لنمو التعلم.</value>
+  </data>
+  <data name="TopicMasteryChart" xml:space="preserve">
+    <value>إتقان الموضوع</value>
+  </data>
+  <data name="TopicMasteryChartHelp" xml:space="preserve">
+    <value>يتم عرض أقل مستوى من إتقان الموضوع الحالي أولاً حتى تظهر المجالات ذات الأولوية بسرعة.</value>
+  </data>
+  <data name="AssessmentChangeWaterfall" xml:space="preserve">
+    <value>شلال تغيير التقييم</value>
+  </data>
+  <data name="AssessmentChangeWaterfallHelp" xml:space="preserve">
+    <value>يُظهر اتجاه وحجم حركة النتيجة بين التقييمات المتعاقبة.</value>
+  </data>
+  <data name="DownloadPdf" xml:space="preserve">
+    <value>تحميل قوات الدفاع الشعبي</value>
+  </data>
+  <data name="PrintReport" xml:space="preserve">
+    <value>طباعة التقرير</value>
+  </data>
+  <data name="FullStudentReport" xml:space="preserve">
+    <value>تقرير تقييم الطالب كاملاً</value>
+  </data>
+  <data name="ReportScope" xml:space="preserve">
+    <value>نطاق التقرير</value>
+  </data>
+  <data name="TeacherComments" xml:space="preserve">
+    <value>تعليقات المعلم</value>
+  </data>
+  <data name="ParentStudentReview" xml:space="preserve">
+    <value>مراجعة ولي الأمر/الطالب</value>
+  </data>
+  <data name="ReportGenerated" xml:space="preserve">
+    <value>تم إنشاؤها</value>
+  </data>
+  <data name="SelectTerm" xml:space="preserve">
+    <value>التركيز على المدى</value>
+  </data>
+  <data name="AllTerms" xml:space="preserve">
+    <value>عام دراسي كامل</value>
+  </data>
+  <data name="MasteryDistribution" xml:space="preserve">
+    <value>توزيع الإتقان</value>
+  </data>
+  <data name="MovementDistribution" xml:space="preserve">
+    <value>الحركة الطلابية</value>
+  </data>
+  <data name="ClassComparisonChart" xml:space="preserve">
+    <value>مقارنة الطبقة</value>
+  </data>
+  <data name="PriorityGapChart" xml:space="preserve">
+    <value>فجوات المهارات ذات الأولوية</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>تقرير</value>
+  </data>
+  <data name="Charts" xml:space="preserve">
+    <value>الرسوم البيانية</value>
+  </data>
 </root>

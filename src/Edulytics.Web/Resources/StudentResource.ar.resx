@@ -1,110 +1,320 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
-  <resheader name="version"><value>2.0</value></resheader>
-  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
-  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
-  <data name="StudentPortal" xml:space="preserve"><value>بوابة الطالب</value></data>
-  <data name="Dashboard" xml:space="preserve"><value>لوحة التحكم</value></data>
-  <data name="StudentDashboard" xml:space="preserve"><value>لوحة الطالب</value></data>
-  <data name="MyLearning" xml:space="preserve"><value>تعلّمي</value></data>
-  <data name="Assessments" xml:space="preserve"><value>التقييمات</value></data>
-  <data name="MyResults" xml:space="preserve"><value>نتائجي</value></data>
-  <data name="Notifications" xml:space="preserve"><value>الإشعارات</value></data>
-  <data name="SignOut" xml:space="preserve"><value>تسجيل الخروج</value></data>
-  <data name="WelcomeBack" xml:space="preserve"><value>مرحبًا بعودتك</value></data>
-  <data name="DashboardSubtitle" xml:space="preserve"><value>المنهج الدراسي والتقييمات النشطة والنتائج وإخطارات المدرسة في مكان واحد.</value></data>
-  <data name="StudentNumber" xml:space="preserve"><value>رقم الطالب</value></data>
-  <data name="School" xml:space="preserve"><value>مدرسة</value></data>
-  <data name="ClassAndGrade" xml:space="preserve"><value>الطبقة والدرجة</value></data>
-  <data name="ActiveAssessments" xml:space="preserve"><value>التقييمات النشطة</value></data>
-  <data name="LearningSubjects" xml:space="preserve"><value>موضوعات التعلم</value></data>
-  <data name="UnreadNotifications" xml:space="preserve"><value>الإخطارات غير المقروءة</value></data>
-  <data name="RecentResults" xml:space="preserve"><value>النتائج الأخيرة</value></data>
-  <data name="OpenLearning" xml:space="preserve"><value>عرض هذا المنهج في تعلمي</value></data>
-  <data name="ShowPracticeOptions" xml:space="preserve"><value>عرض خيارات التدريب</value></data>
-  <data name="ViewAssessments" xml:space="preserve"><value>عرض التقييمات</value></data>
-  <data name="ViewResults" xml:space="preserve"><value>عرض جميع النتائج</value></data>
-  <data name="NoResultsYet" xml:space="preserve"><value>لا توجد نتائج التقييم متاحة بعد.</value></data>
-  <data name="LearningTitle" xml:space="preserve"><value>تعلمي</value></data>
-  <data name="LearningSubtitle" xml:space="preserve"><value>تصفح إطار المنهج والوحدات والدروس المخصصة لصفك المسجل.</value></data>
-  <data name="AcademicYear" xml:space="preserve"><value>العام الدراسي</value></data>
-  <data name="Grade" xml:space="preserve"><value>درجة</value></data>
-  <data name="Curriculum" xml:space="preserve"><value>مقرر</value></data>
-  <data name="Unit" xml:space="preserve"><value>وحدة</value></data>
-  <data name="Lesson" xml:space="preserve"><value>درس</value></data>
-  <data name="Pathway" xml:space="preserve"><value>المسار</value></data>
-  <data name="NoLearningYet" xml:space="preserve"><value>لا توجد وحدات أو دروس منهاج نشطة متاحة لتسجيلك الحالي.</value></data>
-  <data name="CurriculumNavigationOnly" xml:space="preserve"><value>تعرض المرحلة 28 الملاحة المنهجية التي تم التحقق منها. تتم إضافة شروحات الدروس التي تمت مراجعتها بالكامل بواسطة محرك محتوى الدرس.</value></data>
-  <data name="AssessmentsTitle" xml:space="preserve"><value>تقييماتي</value></data>
-  <data name="AssessmentsSubtitle" xml:space="preserve"><value>تظهر هنا فقط التقييمات المفتوحة حاليًا لفصلك المسجل.</value></data>
-  <data name="AssessmentDate" xml:space="preserve"><value>تاريخ</value></data>
-  <data name="Subject" xml:space="preserve"><value>موضوع</value></data>
-  <data name="Class" xml:space="preserve"><value>فصل</value></data>
-  <data name="MaxScore" xml:space="preserve"><value>الحد الأقصى للدرجة</value></data>
-  <data name="NoActiveAssessments" xml:space="preserve"><value>لا توجد تقييمات نشطة لفصلك.</value></data>
-  <data name="ResultsTitle" xml:space="preserve"><value>نتائجي</value></data>
-  <data name="ResultsSubtitle" xml:space="preserve"><value>نتائج التقييم المسجلة الخاصة بك. لا يتم تضمين بيانات الطالب الأخرى.</value></data>
-  <data name="Assessment" xml:space="preserve"><value>تقدير</value></data>
-  <data name="Score" xml:space="preserve"><value>نتيجة</value></data>
-  <data name="Percentage" xml:space="preserve"><value>نسبة مئوية</value></data>
-  <data name="NotificationsTitle" xml:space="preserve"><value>إشعارات</value></data>
-  <data name="NotificationsSubtitle" xml:space="preserve"><value>إشعارات مدرستك ورسائل حسابك.</value></data>
-  <data name="NoNotifications" xml:space="preserve"><value>ليس لديك أي إشعارات.</value></data>
-  <data name="Unread" xml:space="preserve"><value>غير مقروءة</value></data>
-  <data name="Read" xml:space="preserve"><value>يقرأ</value></data>
-  <data name="MarkRead" xml:space="preserve"><value>وضع علامة كمقروءة</value></data>
-  <data name="MarkUnread" xml:space="preserve"><value>وضع علامة كغير مقروءة</value></data>
-  <data name="AssessmentMode" xml:space="preserve"><value>وضع</value></data>
-  <data name="OnlineAssessment" xml:space="preserve"><value>التقييم عبر الإنترنت</value></data>
-  <data name="OfflineAssessment" xml:space="preserve"><value>التقييم دون الاتصال بالإنترنت/اليدوي</value></data>
-  <data name="AssessmentDifficulty" xml:space="preserve"><value>صعوبة</value></data>
-  <data name="AssessmentDifficultyAtClassLevel" xml:space="preserve"><value>على مستوى صفي</value></data>
-  <data name="AssessmentDifficultyStretch" xml:space="preserve"><value>تمتد</value></data>
-  <data name="AssessmentDifficultyChallenge" xml:space="preserve"><value>تحدي</value></data>
-  <data name="StartAssessment" xml:space="preserve"><value>ابدأ التقييم</value></data>
-  <data name="TeacherManagedAssessment" xml:space="preserve"><value>سيقوم معلمك بتسجيل أو استيراد نتيجة التقييم هذه.</value></data>
-  <data name="Question" xml:space="preserve"><value>سؤال</value></data>
-  <data name="YourAnswer" xml:space="preserve"><value>إجابتك</value></data>
-  <data name="SubmitAssessment" xml:space="preserve"><value>إرسال التقييم</value></data>
-  <data name="AssessmentSubmittedTitle" xml:space="preserve"><value>تم تقديم التقييم</value></data>
-  <data name="AssessmentSubmittedSubtitle" xml:space="preserve"><value>لقد تم إرسال تقييمك الرسمي وتسجيله.</value></data>
-  <data name="AssessmentScore" xml:space="preserve"><value>نتيجة</value></data>
-  <data name="PrivatePracticeTitle" xml:space="preserve"><value>ممارستي الخاصة للذكاء الاصطناعي</value></data>
-  <data name="PrivatePracticeSubtitle" xml:space="preserve"><value>قم بإنشاء اختبارات ذاتية مخصصة للرياضيات من منهجك الدراسي أو مستواك الحالي أو مناطق الضعف.</value></data>
-  <data name="PrivatePracticeNotice" xml:space="preserve"><value>هذه الممارسة خاصة بك. لا يتم عرض أسئلتك ومحاولاتك ونتائجك للمعلمين ولا تدخل في تحليلات تقييم المدرسة الرسمية.</value></data>
-  <data name="PrivatePracticeNoCurriculum" xml:space="preserve"><value>لا يوجد منهج مسجل مؤهل متاح للممارسة الشخصية.</value></data>
-  <data name="PrivatePracticeNoSupportedOutcomes" xml:space="preserve"><value>لا يوجد لدى Edulytics حتى الآن منشئ أسئلة موثوق به لنطاق التعلم المحدد. ربما لا يزال المنهج الدراسي الخاص بك مهيأ بالكامل؛ اختر درسًا أو وحدة أخرى، أو اطلب من معلمك تقييمًا يدويًا.</value></data>
-  <data name="PrivatePracticeCurriculumUnavailable" xml:space="preserve"><value>هذا المنهج غير متوفر للتسجيل الحالي الخاص بك.</value></data>
-  <data name="PrivatePracticeInvalidQuestionCount" xml:space="preserve"><value>اختر عددًا صحيحًا من الأسئلة.</value></data>
-  <data name="PrivatePracticeInvalidScope" xml:space="preserve"><value>اختر نطاق تدريب صالحًا والدرس أو الوحدة المطلوبة.</value></data>
-  <data name="PrivatePracticeUnsupportedDifficulty" xml:space="preserve"><value>الصعوبة المحددة غير متاحة لهذا الدرس. اختر أحد مستويات الصعوبة الممكّنة.</value></data>
-  <data name="PrivatePracticeGenerationFailed" xml:space="preserve"><value>لم يتمكن Edulytics من إنشاء مجموعة الممارسات هذه. راجع اختيارك وحاول مرة أخرى.</value></data>
-  <data name="PrivatePracticeAccessDenied" xml:space="preserve"><value>نطاق التدريب هذا غير متاح لحسابك.</value></data>
-  <data name="GeneratePrivatePractice" xml:space="preserve"><value>توليد ممارستي</value></data>
-  <data name="PracticeScope" xml:space="preserve"><value>نطاق الممارسة</value></data>
-  <data name="PracticeWeakAreas" xml:space="preserve"><value>مناطق ضعفي</value></data>
-  <data name="PracticeLesson" xml:space="preserve"><value>درس واحد</value></data>
-  <data name="PracticeUnit" xml:space="preserve"><value>وحدة واحدة</value></data>
-  <data name="PracticeWholeCurriculum" xml:space="preserve"><value>المنهج كله</value></data>
-  <data name="PracticeNotRequired" xml:space="preserve"><value>غير مطلوب لهذا النطاق</value></data>
-  <data name="PracticeMyLevel" xml:space="preserve"><value>مستواي — اختر تلقائيًا</value></data>
-  <data name="PracticeQuestionCount" xml:space="preserve"><value>عدد الأسئلة</value></data>
-  <data name="PrivatePracticeHistory" xml:space="preserve"><value>تاريخ ممارستي</value></data>
-  <data name="PrivatePracticeNoHistory" xml:space="preserve"><value>لم تقم بإنشاء اختبار الممارسة الشخصية حتى الآن.</value></data>
-  <data name="OpenPracticeAttempt" xml:space="preserve"><value>ممارسة مفتوحة</value></data>
-  <data name="PrivatePracticeAttemptTitle" xml:space="preserve"><value>اختبار الممارسة الشخصية</value></data>
-  <data name="PrivatePracticeAttemptSubtitle" xml:space="preserve"><value>أجب عن كل سؤال، وتحقق من الحل الخاص بك، ثم أكمل التدريب لترى نتيجتك.</value></data>
-  <data name="PracticeCorrect" xml:space="preserve"><value>صحيح</value></data>
-  <data name="PracticeIncorrect" xml:space="preserve"><value>ليس صحيحا بعد</value></data>
-  <data name="PracticeSolution" xml:space="preserve"><value>حل</value></data>
-  <data name="PracticeCheckAnswer" xml:space="preserve"><value>التحقق من الإجابة</value></data>
-  <data name="PracticeFinish" xml:space="preserve"><value>إنهاء الممارسة</value></data>
-  <data name="PracticeAnswerAll" xml:space="preserve"><value>أجب عن جميع الأسئلة قبل الانتهاء</value></data>
-  <data name="PracticeInvalidAnswer" xml:space="preserve"><value>أدخل إجابة صحيحة قبل التحقق منها.</value></data>
-  <data name="PracticeAttemptNotInProgress" xml:space="preserve"><value>لم تعد محاولة التدريب هذه قيد التقدم.</value></data>
-  <data name="PracticeOperationFailed" xml:space="preserve"><value>لا يمكن إكمال إجراء التدريب العملي. قم بتحديث الصفحة وحاول مرة أخرى.</value></data>
-  <data name="BackToPrivatePractice" xml:space="preserve"><value>العودة إلى ممارستي للذكاء الاصطناعي</value></data>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="StudentPortal" xml:space="preserve">
+    <value>بوابة الطالب</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>لوحة التحكم</value>
+  </data>
+  <data name="StudentDashboard" xml:space="preserve">
+    <value>لوحة الطالب</value>
+  </data>
+  <data name="MyLearning" xml:space="preserve">
+    <value>تعلّمي</value>
+  </data>
+  <data name="Assessments" xml:space="preserve">
+    <value>التقييمات</value>
+  </data>
+  <data name="MyResults" xml:space="preserve">
+    <value>نتائجي</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>الإشعارات</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
+  <data name="WelcomeBack" xml:space="preserve">
+    <value>مرحبًا بعودتك</value>
+  </data>
+  <data name="DashboardSubtitle" xml:space="preserve">
+    <value>المنهج الدراسي والتقييمات النشطة والنتائج وإخطارات المدرسة في مكان واحد.</value>
+  </data>
+  <data name="StudentNumber" xml:space="preserve">
+    <value>رقم الطالب</value>
+  </data>
+  <data name="School" xml:space="preserve">
+    <value>مدرسة</value>
+  </data>
+  <data name="ClassAndGrade" xml:space="preserve">
+    <value>الطبقة والدرجة</value>
+  </data>
+  <data name="ActiveAssessments" xml:space="preserve">
+    <value>التقييمات النشطة</value>
+  </data>
+  <data name="LearningSubjects" xml:space="preserve">
+    <value>موضوعات التعلم</value>
+  </data>
+  <data name="UnreadNotifications" xml:space="preserve">
+    <value>الإخطارات غير المقروءة</value>
+  </data>
+  <data name="RecentResults" xml:space="preserve">
+    <value>النتائج الأخيرة</value>
+  </data>
+  <data name="OpenLearning" xml:space="preserve">
+    <value>عرض هذا المنهج في تعلمي</value>
+  </data>
+  <data name="ShowPracticeOptions" xml:space="preserve">
+    <value>عرض خيارات التدريب</value>
+  </data>
+  <data name="ViewAssessments" xml:space="preserve">
+    <value>عرض التقييمات</value>
+  </data>
+  <data name="ViewResults" xml:space="preserve">
+    <value>عرض جميع النتائج</value>
+  </data>
+  <data name="NoResultsYet" xml:space="preserve">
+    <value>لا توجد نتائج التقييم متاحة بعد.</value>
+  </data>
+  <data name="LearningTitle" xml:space="preserve">
+    <value>تعلمي</value>
+  </data>
+  <data name="LearningSubtitle" xml:space="preserve">
+    <value>تصفح إطار المنهج والوحدات والدروس المخصصة لصفك المسجل.</value>
+  </data>
+  <data name="AcademicYear" xml:space="preserve">
+    <value>العام الدراسي</value>
+  </data>
+  <data name="Grade" xml:space="preserve">
+    <value>الصف الدراسي</value>
+  </data>
+  <data name="Curriculum" xml:space="preserve">
+    <value>المنهج</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>وحدة</value>
+  </data>
+  <data name="Lesson" xml:space="preserve">
+    <value>درس</value>
+  </data>
+  <data name="Pathway" xml:space="preserve">
+    <value>المسار</value>
+  </data>
+  <data name="NoLearningYet" xml:space="preserve">
+    <value>لا توجد وحدات أو دروس منهاج نشطة متاحة لتسجيلك الحالي.</value>
+  </data>
+  <data name="CurriculumNavigationOnly" xml:space="preserve">
+    <value>تعرض المرحلة 28 الملاحة المنهجية التي تم التحقق منها. تتم إضافة شروحات الدروس التي تمت مراجعتها بالكامل بواسطة محرك محتوى الدرس.</value>
+  </data>
+  <data name="AssessmentsTitle" xml:space="preserve">
+    <value>تقييماتي</value>
+  </data>
+  <data name="AssessmentsSubtitle" xml:space="preserve">
+    <value>تظهر هنا فقط التقييمات المفتوحة حاليًا لفصلك المسجل.</value>
+  </data>
+  <data name="AssessmentDate" xml:space="preserve">
+    <value>تاريخ</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>المادة</value>
+  </data>
+  <data name="Class" xml:space="preserve">
+    <value>الفصل</value>
+  </data>
+  <data name="MaxScore" xml:space="preserve">
+    <value>الحد الأقصى للدرجة</value>
+  </data>
+  <data name="NoActiveAssessments" xml:space="preserve">
+    <value>لا توجد تقييمات نشطة لفصلك.</value>
+  </data>
+  <data name="ResultsTitle" xml:space="preserve">
+    <value>نتائجي</value>
+  </data>
+  <data name="ResultsSubtitle" xml:space="preserve">
+    <value>نتائج التقييم المسجلة الخاصة بك. لا يتم تضمين بيانات الطالب الأخرى.</value>
+  </data>
+  <data name="Assessment" xml:space="preserve">
+    <value>التقييم</value>
+  </data>
+  <data name="Score" xml:space="preserve">
+    <value>الدرجة</value>
+  </data>
+  <data name="Percentage" xml:space="preserve">
+    <value>نسبة مئوية</value>
+  </data>
+  <data name="NotificationsTitle" xml:space="preserve">
+    <value>الإشعارات</value>
+  </data>
+  <data name="NotificationsSubtitle" xml:space="preserve">
+    <value>إشعارات مدرستك ورسائل حسابك.</value>
+  </data>
+  <data name="NoNotifications" xml:space="preserve">
+    <value>ليس لديك أي إشعارات.</value>
+  </data>
+  <data name="Unread" xml:space="preserve">
+    <value>غير مقروءة</value>
+  </data>
+  <data name="Read" xml:space="preserve">
+    <value>يقرأ</value>
+  </data>
+  <data name="MarkRead" xml:space="preserve">
+    <value>وضع علامة كمقروءة</value>
+  </data>
+  <data name="MarkUnread" xml:space="preserve">
+    <value>وضع علامة كغير مقروءة</value>
+  </data>
+  <data name="AssessmentMode" xml:space="preserve">
+    <value>وضع</value>
+  </data>
+  <data name="OnlineAssessment" xml:space="preserve">
+    <value>التقييم عبر الإنترنت</value>
+  </data>
+  <data name="OfflineAssessment" xml:space="preserve">
+    <value>التقييم دون الاتصال بالإنترنت/اليدوي</value>
+  </data>
+  <data name="AssessmentDifficulty" xml:space="preserve">
+    <value>صعوبة</value>
+  </data>
+  <data name="AssessmentDifficultyAtClassLevel" xml:space="preserve">
+    <value>على مستوى صفي</value>
+  </data>
+  <data name="AssessmentDifficultyStretch" xml:space="preserve">
+    <value>تمتد</value>
+  </data>
+  <data name="AssessmentDifficultyChallenge" xml:space="preserve">
+    <value>تحدي</value>
+  </data>
+  <data name="StartAssessment" xml:space="preserve">
+    <value>ابدأ التقييم</value>
+  </data>
+  <data name="TeacherManagedAssessment" xml:space="preserve">
+    <value>سيقوم معلمك بتسجيل أو استيراد نتيجة التقييم هذه.</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>سؤال</value>
+  </data>
+  <data name="YourAnswer" xml:space="preserve">
+    <value>إجابتك</value>
+  </data>
+  <data name="SubmitAssessment" xml:space="preserve">
+    <value>إرسال التقييم</value>
+  </data>
+  <data name="AssessmentSubmittedTitle" xml:space="preserve">
+    <value>تم تقديم التقييم</value>
+  </data>
+  <data name="AssessmentSubmittedSubtitle" xml:space="preserve">
+    <value>لقد تم إرسال تقييمك الرسمي وتسجيله.</value>
+  </data>
+  <data name="AssessmentScore" xml:space="preserve">
+    <value>الدرجة</value>
+  </data>
+  <data name="PrivatePracticeTitle" xml:space="preserve">
+    <value>ممارستي الخاصة للذكاء الاصطناعي</value>
+  </data>
+  <data name="PrivatePracticeSubtitle" xml:space="preserve">
+    <value>قم بإنشاء اختبارات ذاتية مخصصة للرياضيات من منهجك الدراسي أو مستواك الحالي أو مناطق الضعف.</value>
+  </data>
+  <data name="PrivatePracticeNotice" xml:space="preserve">
+    <value>هذه الممارسة خاصة بك. لا يتم عرض أسئلتك ومحاولاتك ونتائجك للمعلمين ولا تدخل في تحليلات تقييم المدرسة الرسمية.</value>
+  </data>
+  <data name="PrivatePracticeNoCurriculum" xml:space="preserve">
+    <value>لا يوجد منهج مسجل مؤهل متاح للممارسة الشخصية.</value>
+  </data>
+  <data name="PrivatePracticeNoSupportedOutcomes" xml:space="preserve">
+    <value>لا يوجد لدى Edulytics حتى الآن منشئ أسئلة موثوق به لنطاق التعلم المحدد. ربما لا يزال المنهج الدراسي الخاص بك مهيأ بالكامل؛ اختر درسًا أو وحدة أخرى، أو اطلب من معلمك تقييمًا يدويًا.</value>
+  </data>
+  <data name="PrivatePracticeCurriculumUnavailable" xml:space="preserve">
+    <value>هذا المنهج غير متوفر للتسجيل الحالي الخاص بك.</value>
+  </data>
+  <data name="PrivatePracticeInvalidQuestionCount" xml:space="preserve">
+    <value>اختر عددًا صحيحًا من الأسئلة.</value>
+  </data>
+  <data name="PrivatePracticeInvalidScope" xml:space="preserve">
+    <value>اختر نطاق تدريب صالحًا والدرس أو الوحدة المطلوبة.</value>
+  </data>
+  <data name="PrivatePracticeUnsupportedDifficulty" xml:space="preserve">
+    <value>الصعوبة المحددة غير متاحة لهذا الدرس. اختر أحد مستويات الصعوبة الممكّنة.</value>
+  </data>
+  <data name="PrivatePracticeGenerationFailed" xml:space="preserve">
+    <value>لم يتمكن Edulytics من إنشاء مجموعة الممارسات هذه. راجع اختيارك وحاول مرة أخرى.</value>
+  </data>
+  <data name="PrivatePracticeAccessDenied" xml:space="preserve">
+    <value>نطاق التدريب هذا غير متاح لحسابك.</value>
+  </data>
+  <data name="GeneratePrivatePractice" xml:space="preserve">
+    <value>توليد ممارستي</value>
+  </data>
+  <data name="PracticeScope" xml:space="preserve">
+    <value>نطاق الممارسة</value>
+  </data>
+  <data name="PracticeWeakAreas" xml:space="preserve">
+    <value>مناطق ضعفي</value>
+  </data>
+  <data name="PracticeLesson" xml:space="preserve">
+    <value>درس واحد</value>
+  </data>
+  <data name="PracticeUnit" xml:space="preserve">
+    <value>وحدة واحدة</value>
+  </data>
+  <data name="PracticeWholeCurriculum" xml:space="preserve">
+    <value>المنهج كله</value>
+  </data>
+  <data name="PracticeNotRequired" xml:space="preserve">
+    <value>غير مطلوب لهذا النطاق</value>
+  </data>
+  <data name="PracticeMyLevel" xml:space="preserve">
+    <value>مستواي — اختر تلقائيًا</value>
+  </data>
+  <data name="PracticeQuestionCount" xml:space="preserve">
+    <value>عدد الأسئلة</value>
+  </data>
+  <data name="PrivatePracticeHistory" xml:space="preserve">
+    <value>تاريخ ممارستي</value>
+  </data>
+  <data name="PrivatePracticeNoHistory" xml:space="preserve">
+    <value>لم تقم بإنشاء اختبار الممارسة الشخصية حتى الآن.</value>
+  </data>
+  <data name="OpenPracticeAttempt" xml:space="preserve">
+    <value>ممارسة مفتوحة</value>
+  </data>
+  <data name="PrivatePracticeAttemptTitle" xml:space="preserve">
+    <value>اختبار الممارسة الشخصية</value>
+  </data>
+  <data name="PrivatePracticeAttemptSubtitle" xml:space="preserve">
+    <value>أجب عن كل سؤال، وتحقق من الحل الخاص بك، ثم أكمل التدريب لترى نتيجتك.</value>
+  </data>
+  <data name="PracticeCorrect" xml:space="preserve">
+    <value>صحيح</value>
+  </data>
+  <data name="PracticeIncorrect" xml:space="preserve">
+    <value>ليس صحيحا بعد</value>
+  </data>
+  <data name="PracticeSolution" xml:space="preserve">
+    <value>حل</value>
+  </data>
+  <data name="PracticeCheckAnswer" xml:space="preserve">
+    <value>التحقق من الإجابة</value>
+  </data>
+  <data name="PracticeFinish" xml:space="preserve">
+    <value>إنهاء الممارسة</value>
+  </data>
+  <data name="PracticeAnswerAll" xml:space="preserve">
+    <value>أجب عن جميع الأسئلة قبل الانتهاء</value>
+  </data>
+  <data name="PracticeInvalidAnswer" xml:space="preserve">
+    <value>أدخل إجابة صحيحة قبل التحقق منها.</value>
+  </data>
+  <data name="PracticeAttemptNotInProgress" xml:space="preserve">
+    <value>لم تعد محاولة التدريب هذه قيد التقدم.</value>
+  </data>
+  <data name="PracticeOperationFailed" xml:space="preserve">
+    <value>لا يمكن إكمال إجراء التدريب العملي. قم بتحديث الصفحة وحاول مرة أخرى.</value>
+  </data>
+  <data name="BackToPrivatePractice" xml:space="preserve">
+    <value>العودة إلى ممارستي للذكاء الاصطناعي</value>
+  </data>
   <data name="TasksToDo" xml:space="preserve">
     <value>المهام التي يجب القيام بها</value>
   </data>
@@ -117,7 +327,9 @@
   <data name="RecentAverage" xml:space="preserve">
     <value>المتوسط ​​الأخير</value>
   </data>
-  <data name="NoTasksToDo" xml:space="preserve"><value>لا توجد مهام تحتاج إلى إجراء في الوقت الحالي.</value></data>
+  <data name="NoTasksToDo" xml:space="preserve">
+    <value>لا توجد مهام تحتاج إلى إجراء في الوقت الحالي.</value>
+  </data>
   <data name="NothingAwaitingResult" xml:space="preserve">
     <value>ولا يوجد شيء في انتظار النتيجة حاليا.</value>
   </data>
@@ -145,61 +357,166 @@
   <data name="NoOfflineAssessmentsAwaitingResult" xml:space="preserve">
     <value>لا توجد تقييمات دون اتصال بالإنترنت تنتظر نتيجة المعلم.</value>
   </data>
-
-  <data name="MyProgress" xml:space="preserve"><value>تقدمي</value></data>
-  <data name="MyEvaluation" xml:space="preserve"><value>تقييمي</value></data>
-  <data name="OpenFullEvaluation" xml:space="preserve"><value>فتح التقييم الكامل</value></data>
-  <data name="CurrentMastery" xml:space="preserve"><value>الإتقان الحالي</value></data>
-  <data name="AssessmentMastery" xml:space="preserve"><value>إتقان التقييمات</value></data>
-  <data name="PrivatePracticeMastery" xml:space="preserve"><value>إتقان الممارسة الخاصة بي</value></data>
-  <data name="PracticeAssessmentGap" xml:space="preserve"><value>الممارسة ← فجوة التقييم</value></data>
-  <data name="CurriculumCoverage" xml:space="preserve"><value>تغطية المناهج الدراسية</value></data>
-  <data name="EvidenceConfidence" xml:space="preserve"><value>ثقة الأدلة</value></data>
-  <data name="SkillsToStrengthen" xml:space="preserve"><value>مهارات تحتاج إلى تعزيز</value></data>
-  <data name="MySkills" xml:space="preserve"><value>مهاراتي</value></data>
-  <data name="MyNextSteps" xml:space="preserve"><value>خطواتي التالية</value></data>
-  <data name="PracticeSessions" xml:space="preserve"><value>جلسات الممارسة</value></data>
-  <data name="ActivePracticeDays" xml:space="preserve"><value>أيام الممارسة النشطة</value></data>
-  <data name="SkillsPracticed" xml:space="preserve"><value>المهارات التي تمارسها</value></data>
-  <data name="Evidence" xml:space="preserve"><value>شهادة</value></data>
-  <data name="Trend" xml:space="preserve"><value>اتجاه</value></data>
-  <data name="AssessmentHistory" xml:space="preserve"><value>تاريخ التقييم</value></data>
-  <data name="TermProgress" xml:space="preserve"><value>تقدم الأجل</value></data>
-  <data name="ComparableSkillGrowth" xml:space="preserve"><value>نمو المهارات المماثلة</value></data>
-  <data name="OfficialEvaluationNote" xml:space="preserve"><value>يتم الفصل بين الإتقان الرسمي والممارسة الخاصة حتى تتمكن من رؤية كليهما بوضوح.</value></data>
-  <data name="NotEnoughEvidence" xml:space="preserve"><value>لا توجد أدلة كافية حتى الآن</value></data>
-  <data name="NeedsFocus" xml:space="preserve"><value>يحتاج إلى التركيز</value></data>
-  <data name="Secure" xml:space="preserve"><value>يؤمن</value></data>
-  <data name="Developing" xml:space="preserve"><value>النامية</value></data>
-  <data name="Critical" xml:space="preserve"><value>يحتاج إلى تركيز عاجل</value></data>
-  <data name="StartLearning" xml:space="preserve"><value>ابدأ التعلّم</value></data>
-  <data name="StartPractice" xml:space="preserve"><value>ابدأ التدريب</value></data>
-
-  <data name="PersonalizedCheck" xml:space="preserve"><value>فحص شخصي</value></data>
-
-  <data name="MyProgressReport" xml:space="preserve"><value>تقرير التقدم الخاص بي</value></data>
-  <data name="ViewReport" xml:space="preserve"><value>عرض التقرير</value></data>
-  <data name="DownloadPdf" xml:space="preserve"><value>تحميل قوات الدفاع الشعبي</value></data>
-  <data name="PrintReport" xml:space="preserve"><value>طباعة التقرير</value></data>
-  <data name="VisualProgress" xml:space="preserve"><value>التقدم البصري</value></data>
-  <data name="AssessmentProgressChart" xml:space="preserve"><value>تقدم التقييم</value></data>
-  <data name="AssessmentPracticeComparison" xml:space="preserve"><value>التقييم مقابل الممارسة</value></data>
-  <data name="SkillProgressChart" xml:space="preserve"><value>تقدم المهارة</value></data>
-  <data name="TermChangeChart" xml:space="preserve"><value>حركة الأجل</value></data>
-  <data name="SelectTerm" xml:space="preserve"><value>التركيز على المدى</value></data>
-  <data name="AllTerms" xml:space="preserve"><value>عام دراسي كامل</value></data>
-  <data name="ReportGenerated" xml:space="preserve"><value>تم إنشاؤها</value></data>
-  <data name="StudentReflection" xml:space="preserve"><value>تفكيري</value></data>
-  <data name="ParentReview" xml:space="preserve"><value>مراجعة الوالدين</value></data>
-  <data name="AssessmentChangeChart" xml:space="preserve"><value>تغيير التقييم</value></data>
-  <data name="PrivatePractice" xml:space="preserve"><value>التدريب الخاص</value></data>
-  <data name="OpenHomework" xml:space="preserve"><value>افتح الواجب المنزلي</value></data>
-  <data name="OpenWorksheet" xml:space="preserve"><value>افتح ورقة العمل</value></data>
-  <data name="TaskTypeExamTest" xml:space="preserve"><value>الامتحان / الاختبار</value></data>
-  <data name="TaskTypeHomework" xml:space="preserve"><value>العمل في المنزل</value></data>
-  <data name="TaskTypeWorksheet" xml:space="preserve"><value>ورقة عمل</value></data>
-  <data name="TaskStarts" xml:space="preserve"><value>يبدأ</value></data>
-  <data name="TaskCloses" xml:space="preserve"><value>يغلق</value></data>
-  <data name="TaskDue" xml:space="preserve"><value>حق</value></data>
-  <data name="TaskNoDeadline" xml:space="preserve"><value>لا يوجد موعد نهائي</value></data>
+  <data name="MyProgress" xml:space="preserve">
+    <value>تقدمي</value>
+  </data>
+  <data name="MyEvaluation" xml:space="preserve">
+    <value>تقييمي</value>
+  </data>
+  <data name="OpenFullEvaluation" xml:space="preserve">
+    <value>فتح التقييم الكامل</value>
+  </data>
+  <data name="CurrentMastery" xml:space="preserve">
+    <value>الإتقان الحالي</value>
+  </data>
+  <data name="AssessmentMastery" xml:space="preserve">
+    <value>إتقان التقييمات</value>
+  </data>
+  <data name="PrivatePracticeMastery" xml:space="preserve">
+    <value>إتقان الممارسة الخاصة بي</value>
+  </data>
+  <data name="PracticeAssessmentGap" xml:space="preserve">
+    <value>الممارسة ← فجوة التقييم</value>
+  </data>
+  <data name="CurriculumCoverage" xml:space="preserve">
+    <value>تغطية المناهج الدراسية</value>
+  </data>
+  <data name="EvidenceConfidence" xml:space="preserve">
+    <value>ثقة الأدلة</value>
+  </data>
+  <data name="SkillsToStrengthen" xml:space="preserve">
+    <value>مهارات تحتاج إلى تعزيز</value>
+  </data>
+  <data name="MySkills" xml:space="preserve">
+    <value>مهاراتي</value>
+  </data>
+  <data name="MyNextSteps" xml:space="preserve">
+    <value>خطواتي التالية</value>
+  </data>
+  <data name="PracticeSessions" xml:space="preserve">
+    <value>جلسات الممارسة</value>
+  </data>
+  <data name="ActivePracticeDays" xml:space="preserve">
+    <value>أيام الممارسة النشطة</value>
+  </data>
+  <data name="SkillsPracticed" xml:space="preserve">
+    <value>المهارات التي تمارسها</value>
+  </data>
+  <data name="Evidence" xml:space="preserve">
+    <value>الأدلة</value>
+  </data>
+  <data name="Trend" xml:space="preserve">
+    <value>اتجاه</value>
+  </data>
+  <data name="AssessmentHistory" xml:space="preserve">
+    <value>تاريخ التقييم</value>
+  </data>
+  <data name="TermProgress" xml:space="preserve">
+    <value>تقدم الأجل</value>
+  </data>
+  <data name="ComparableSkillGrowth" xml:space="preserve">
+    <value>نمو المهارات المماثلة</value>
+  </data>
+  <data name="OfficialEvaluationNote" xml:space="preserve">
+    <value>يتم الفصل بين الإتقان الرسمي والممارسة الخاصة حتى تتمكن من رؤية كليهما بوضوح.</value>
+  </data>
+  <data name="NotEnoughEvidence" xml:space="preserve">
+    <value>لا توجد أدلة كافية حتى الآن</value>
+  </data>
+  <data name="NeedsFocus" xml:space="preserve">
+    <value>يحتاج إلى التركيز</value>
+  </data>
+  <data name="Secure" xml:space="preserve">
+    <value>يؤمن</value>
+  </data>
+  <data name="Developing" xml:space="preserve">
+    <value>النامية</value>
+  </data>
+  <data name="Critical" xml:space="preserve">
+    <value>يحتاج إلى تركيز عاجل</value>
+  </data>
+  <data name="StartLearning" xml:space="preserve">
+    <value>ابدأ التعلّم</value>
+  </data>
+  <data name="StartPractice" xml:space="preserve">
+    <value>ابدأ التدريب</value>
+  </data>
+  <data name="PersonalizedCheck" xml:space="preserve">
+    <value>فحص شخصي</value>
+  </data>
+  <data name="MyProgressReport" xml:space="preserve">
+    <value>تقرير التقدم الخاص بي</value>
+  </data>
+  <data name="ViewReport" xml:space="preserve">
+    <value>عرض التقرير</value>
+  </data>
+  <data name="DownloadPdf" xml:space="preserve">
+    <value>تحميل قوات الدفاع الشعبي</value>
+  </data>
+  <data name="PrintReport" xml:space="preserve">
+    <value>طباعة التقرير</value>
+  </data>
+  <data name="VisualProgress" xml:space="preserve">
+    <value>التقدم البصري</value>
+  </data>
+  <data name="AssessmentProgressChart" xml:space="preserve">
+    <value>تقدم التقييم</value>
+  </data>
+  <data name="AssessmentPracticeComparison" xml:space="preserve">
+    <value>التقييم مقابل الممارسة</value>
+  </data>
+  <data name="SkillProgressChart" xml:space="preserve">
+    <value>تقدم المهارة</value>
+  </data>
+  <data name="TermChangeChart" xml:space="preserve">
+    <value>حركة الأجل</value>
+  </data>
+  <data name="SelectTerm" xml:space="preserve">
+    <value>التركيز على المدى</value>
+  </data>
+  <data name="AllTerms" xml:space="preserve">
+    <value>عام دراسي كامل</value>
+  </data>
+  <data name="ReportGenerated" xml:space="preserve">
+    <value>تم إنشاؤها</value>
+  </data>
+  <data name="StudentReflection" xml:space="preserve">
+    <value>تفكيري</value>
+  </data>
+  <data name="ParentReview" xml:space="preserve">
+    <value>مراجعة الوالدين</value>
+  </data>
+  <data name="AssessmentChangeChart" xml:space="preserve">
+    <value>تغيير التقييم</value>
+  </data>
+  <data name="PrivatePractice" xml:space="preserve">
+    <value>التدريب الخاص</value>
+  </data>
+  <data name="OpenHomework" xml:space="preserve">
+    <value>افتح الواجب المنزلي</value>
+  </data>
+  <data name="OpenWorksheet" xml:space="preserve">
+    <value>افتح ورقة العمل</value>
+  </data>
+  <data name="TaskTypeExamTest" xml:space="preserve">
+    <value>الامتحان / الاختبار</value>
+  </data>
+  <data name="TaskTypeHomework" xml:space="preserve">
+    <value>العمل في المنزل</value>
+  </data>
+  <data name="TaskTypeWorksheet" xml:space="preserve">
+    <value>ورقة عمل</value>
+  </data>
+  <data name="TaskStarts" xml:space="preserve">
+    <value>يبدأ</value>
+  </data>
+  <data name="TaskCloses" xml:space="preserve">
+    <value>يغلق</value>
+  </data>
+  <data name="TaskDue" xml:space="preserve">
+    <value>موعد الاستحقاق</value>
+  </data>
+  <data name="TaskNoDeadline" xml:space="preserve">
+    <value>بدون موعد نهائي</value>
+  </data>
 </root>

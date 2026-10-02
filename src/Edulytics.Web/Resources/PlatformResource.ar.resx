@@ -58,7 +58,7 @@
     <value>رمز المدرسة</value>
   </data>
   <data name="Status" xml:space="preserve">
-    <value>حالة</value>
+    <value>الحالة</value>
   </data>
   <data name="CountryCode" xml:space="preserve">
     <value>دولة</value>
@@ -91,7 +91,7 @@
     <value>منظر</value>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>يحرر</value>
+    <value>تعديل</value>
   </data>
   <data name="BackToSchools" xml:space="preserve">
     <value>العودة إلى المدارس</value>
@@ -103,7 +103,7 @@
     <value>إنشاء مدرسة</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>يلغي</value>
+    <value>إلغاء</value>
   </data>
   <data name="SchoolDetails" xml:space="preserve">
     <value>تفاصيل المدرسة</value>
@@ -112,7 +112,7 @@
     <value>معلومات المدرسة</value>
   </data>
   <data name="StatusActive" xml:space="preserve">
-    <value>نشيط</value>
+    <value>نشط</value>
   </data>
   <data name="StatusSuspended" xml:space="preserve">
     <value>معلق</value>
@@ -256,7 +256,7 @@
     <value>قم بإنشاء حساب المستخدم الأول لهذه المدرسة.</value>
   </data>
   <data name="UserEmail" xml:space="preserve">
-    <value>بريد إلكتروني</value>
+    <value>البريد الإلكتروني</value>
   </data>
   <data name="UserRole" xml:space="preserve">
     <value>دور</value>
@@ -268,7 +268,7 @@
     <value>حالة القفل</value>
   </data>
   <data name="UserActive" xml:space="preserve">
-    <value>نشيط</value>
+    <value>نشط</value>
   </data>
   <data name="UserInactive" xml:space="preserve">
     <value>غير نشط</value>
@@ -292,7 +292,7 @@
     <value>العودة إلى المدرسة</value>
   </data>
   <data name="BackToDashboard" xml:space="preserve">
-    <value>العودة إلى لوحة القيادة</value>
+    <value>العودة إلى لوحة التحكم</value>
   </data>
   <data name="CreateUserIntro" xml:space="preserve">
     <value>قم بإنشاء حساب على مستوى المدرسة وقم بتعيين دور واحد.</value>
@@ -361,10 +361,10 @@
     <value>مشرف الموضوع</value>
   </data>
   <data name="RoleTeacher" xml:space="preserve">
-    <value>مدرس</value>
+    <value>المعلم</value>
   </data>
   <data name="RoleStudent" xml:space="preserve">
-    <value>طالب</value>
+    <value>الطالب</value>
   </data>
   <data name="You" xml:space="preserve">
     <value>أنت</value>
@@ -442,7 +442,7 @@
     <value>اذهب لتسجيل الدخول</value>
   </data>
   <data name="SchoolDashboardTitle" xml:space="preserve">
-    <value>لوحة المدرسة</value>
+    <value>لوحة تحكم المدرسة</value>
   </data>
   <data name="SchoolDashboardSubtitle" xml:space="preserve">
     <value>رؤية واضحة لمساحة العمل المدرسية والمسؤوليات والإجراءات التالية.</value>
@@ -494,375 +494,232 @@
   </data>
   <data name="InvalidCredentials" xml:space="preserve">\n    <value>عنوان البريد الإلكتروني أو كلمة المرور غير صحيحة.</value>\n  </data>\n  <data name="SubjectSupervisorAssignmentsTitle" xml:space="preserve">
     <value>مهام المشرف على الموضوع</value>
-  </data>
-  <data name="SubjectSupervisorAssignmentsSubtitle" xml:space="preserve">
+  </data><data name="SubjectSupervisorAssignmentsSubtitle" xml:space="preserve">
     <value>تعيين مشرفين على المواد المسموح لهم بالإشراف عليها في جميع أنحاء المدرسة.</value>
-  </data>
-  <data name="ManageSubjectSupervisorAssignments" xml:space="preserve">
+  </data><data name="ManageSubjectSupervisorAssignments" xml:space="preserve">
     <value>إدارة المشرفين على الموضوع</value>
-  </data>
-  <data name="AssignSubjectSupervisor" xml:space="preserve">
+  </data><data name="AssignSubjectSupervisor" xml:space="preserve">
     <value>تعيين المشرف</value>
-  </data>
-  <data name="SubjectSupervisorAssignmentHelp" xml:space="preserve">
+  </data><data name="SubjectSupervisorAssignmentHelp" xml:space="preserve">
     <value>تمنح كل مهمة مشرفًا نشطًا واحدًا على المادة إمكانية الوصول إلى التحليلات الخاصة بموضوع نشط واحد في المدرسة بأكملها.</value>
-  </data>
-  <data name="SubjectSupervisorSupervisor" xml:space="preserve">
+  </data><data name="SubjectSupervisorSupervisor" xml:space="preserve">
     <value>مشرف الموضوع</value>
-  </data>
-  <data name="SubjectSupervisorSubject" xml:space="preserve">
-    <value>موضوع</value>
-  </data>
-  <data name="SubjectSupervisorCurrentAssignments" xml:space="preserve">
+  </data><data name="SubjectSupervisorSubject" xml:space="preserve">
+    <value>المادة</value>
+  </data><data name="SubjectSupervisorCurrentAssignments" xml:space="preserve">
     <value>المهام الحالية</value>
-  </data>
-  <data name="SubjectSupervisorNoEligibleSupervisors" xml:space="preserve">
+  </data><data name="SubjectSupervisorNoEligibleSupervisors" xml:space="preserve">
     <value>لا يوجد مستخدمون نشطون وغير مؤمّنين ​​بدور المشرف على الموضوع.</value>
-  </data>
-  <data name="SubjectSupervisorNoActiveSubjects" xml:space="preserve">
+  </data><data name="SubjectSupervisorNoActiveSubjects" xml:space="preserve">
     <value>لا توجد مواضيع نشطة متاحة للتعيين.</value>
-  </data>
-  <data name="SubjectSupervisorNoAssignments" xml:space="preserve">
+  </data><data name="SubjectSupervisorNoAssignments" xml:space="preserve">
     <value>لا توجد مهام المشرف الموضوع</value>
-  </data>
-  <data name="SubjectSupervisorNoAssignmentsHelp" xml:space="preserve">
+  </data><data name="SubjectSupervisorNoAssignmentsHelp" xml:space="preserve">
     <value>قم بإنشاء مهمة لمنح المشرف على الموضوع حق الوصول إلى التحليلات على نطاق واسع.</value>
-  </data>
-  <data name="SubjectSupervisorRemoveAssignment" xml:space="preserve">
+  </data><data name="SubjectSupervisorRemoveAssignment" xml:space="preserve">
     <value>إزالة المهمة</value>
-  </data>
-  <data name="SubjectSupervisorAssignmentCreated" xml:space="preserve">
+  </data><data name="SubjectSupervisorAssignmentCreated" xml:space="preserve">
     <value>تم إنشاء مهمة المشرف على الموضوع بنجاح.</value>
-  </data>
-  <data name="SubjectSupervisorAssignmentRemoved" xml:space="preserve">
+  </data><data name="SubjectSupervisorAssignmentRemoved" xml:space="preserve">
     <value>تمت إزالة مهمة المشرف على الموضوع بنجاح.</value>
-  </data>
-  <data name="SubjectSupervisorErrorSupervisorNotEligible" xml:space="preserve">
+  </data><data name="SubjectSupervisorErrorSupervisorNotEligible" xml:space="preserve">
     <value>يجب أن يكون المستخدم المحدد نشطًا وغير مقفل ولديه دور المشرف على الموضوع بالضبط.</value>
-  </data>
-  <data name="SubjectSupervisorErrorSubjectInactive" xml:space="preserve">
+  </data><data name="SubjectSupervisorErrorSubjectInactive" xml:space="preserve">
     <value>الموضوع المحدد غير نشط.</value>
-  </data>
-  <data name="SubjectSupervisorErrorDuplicateAssignment" xml:space="preserve">
+  </data><data name="SubjectSupervisorErrorDuplicateAssignment" xml:space="preserve">
     <value>تم تعيين هذا المشرف بالفعل لهذا الموضوع.</value>
-  </data>
-  <data name="SubjectSupervisorErrorPersistenceError" xml:space="preserve">
+  </data><data name="SubjectSupervisorErrorPersistenceError" xml:space="preserve">
     <value>لا يمكن حفظ المهمة. حاول ثانية.</value>
-  </data>
-  <data name="SubjectSupervisorErrorAccessDenied" xml:space="preserve">
+  </data><data name="SubjectSupervisorErrorAccessDenied" xml:space="preserve">
     <value>لا يُسمح لك بإدارة مهام مشرف الموضوع.</value>
-  </data>
-  <data name="SubjectSupervisorErrorSupervisorNotFound" xml:space="preserve">
+  </data><data name="SubjectSupervisorErrorSupervisorNotFound" xml:space="preserve">
     <value>لا يمكن العثور على المشرف على الموضوع المحدد.</value>
-  </data>
-  <data name="SubjectSupervisorErrorSubjectNotFound" xml:space="preserve">
+  </data><data name="SubjectSupervisorErrorSubjectNotFound" xml:space="preserve">
     <value>لا يمكن العثور على الموضوع المحدد.</value>
-  </data>
-  <data name="SubjectSupervisorErrorAssignmentNotFound" xml:space="preserve">
+  </data><data name="SubjectSupervisorErrorAssignmentNotFound" xml:space="preserve">
     <value>تعذر العثور على المهمة.</value>
-  </data>
-  <data name="CountryPoland" xml:space="preserve">
+  </data><data name="CountryPoland" xml:space="preserve">
     <value>بولندا (PL)</value>
-  </data>
-  <data name="CountryUnitedArabEmirates" xml:space="preserve">
+  </data><data name="CountryUnitedArabEmirates" xml:space="preserve">
     <value>الإمارات العربية المتحدة (الإمارات العربية المتحدة)</value>
-  </data>
-  <data name="TimeZoneAutoHelp" xml:space="preserve">
+  </data><data name="TimeZoneAutoHelp" xml:space="preserve">
     <value>يتم الضبط تلقائيًا من البلد المحدد.</value>
-  </data>
-  <data name="InvalidCountryCode" xml:space="preserve">
+  </data><data name="InvalidCountryCode" xml:space="preserve">
     <value>اختر بولندا أو الإمارات العربية المتحدة.</value>
-  </data>
-  <data name="SchoolUsersAdminSubtitle" xml:space="preserve">
+  </data><data name="SchoolUsersAdminSubtitle" xml:space="preserve">
     <value>عرض مستخدمي المدرسة وحالة الحساب. يتم التعامل مع تغييرات حساب المستخدم من قبل مشرف الموضوع.</value>
-  </data>
-  <data name="SchoolUsersSupervisorSubtitle" xml:space="preserve">
+  </data><data name="SchoolUsersSupervisorSubtitle" xml:space="preserve">
     <value>إنشاء وإدارة حسابات المعلمين والطلاب لهذه المدرسة.</value>
-  </data>
-  <data name="SchoolUsersPlatformSubtitle" xml:space="preserve">
+  </data><data name="SchoolUsersPlatformSubtitle" xml:space="preserve">
     <value>إنشاء وإدارة حسابات المستخدمين على مستوى المدرسة.</value>
-  </data>
-  <data name="CreateOperationalUserIntro" xml:space="preserve">
+  </data><data name="CreateOperationalUserIntro" xml:space="preserve">
     <value>إنشاء حساب المعلم أو الطالب. يتم إنشاء رابط إعداد كلمة المرور الآمنة بعد إنشائها.</value>
-  </data>
-  <data name="DashboardRoleScope" xml:space="preserve">
+  </data><data name="DashboardRoleScope" xml:space="preserve">
     <value>وصولك</value>
-  </data>
-  <data name="AccessView" xml:space="preserve">
+  </data><data name="AccessView" xml:space="preserve">
     <value>عرض فقط</value>
-  </data>
-  <data name="AccessManage" xml:space="preserve">
+  </data><data name="AccessManage" xml:space="preserve">
     <value>يدير</value>
-  </data>
-  <data name="AccessMonitor" xml:space="preserve">
+  </data><data name="AccessMonitor" xml:space="preserve">
     <value>شاشة</value>
-  </data>
-  <data name="AccessTeach" xml:space="preserve">
+  </data><data name="AccessTeach" xml:space="preserve">
     <value>تعليم وتقييم</value>
-  </data>
-  <data name="AccessExport" xml:space="preserve">
+  </data><data name="AccessExport" xml:space="preserve">
     <value>إدارة وتصدير</value>
-  </data>
-  <data name="DashboardSchoolUsersAdminDescription" xml:space="preserve">
+  </data><data name="DashboardSchoolUsersAdminDescription" xml:space="preserve">
     <value>قم بمراجعة مستخدمي المدرسة والأدوار وحالة الحساب دون تغيير الحسابات.</value>
-  </data>
-  <data name="DashboardSchoolUsersSupervisorDescription" xml:space="preserve">
+  </data><data name="DashboardSchoolUsersSupervisorDescription" xml:space="preserve">
     <value>إنشاء وإدارة حسابات المعلمين والطلاب وحالة الوصول الخاصة بهم.</value>
-  </data>
-  <data name="DashboardSupervisorAssignmentsDescription" xml:space="preserve">
+  </data><data name="DashboardSupervisorAssignmentsDescription" xml:space="preserve">
     <value>تعيين المشرفين الحاليين على المواضيع التي يشرفون عليها.</value>
-  </data>
-  <data name="DashboardAcademicViewDescription" xml:space="preserve">
+  </data><data name="DashboardAcademicViewDescription" xml:space="preserve">
     <value>مراجعة السنوات والمصطلحات والدرجات والفصول والمواد والواجبات والتسجيل.</value>
-  </data>
-  <data name="DashboardAcademicManageDescription" xml:space="preserve">
+  </data><data name="DashboardAcademicManageDescription" xml:space="preserve">
     <value>إدارة السنوات والمصطلحات والدرجات والفصول الدراسية والمواد ومهام المعلم والتسجيل.</value>
-  </data>
-  <data name="DashboardCurriculumViewDescription" xml:space="preserve">
+  </data><data name="DashboardCurriculumViewDescription" xml:space="preserve">
     <value>مراجعة المناهج المعتمدة والموضوعات ومخرجات التعلم الرسمية.</value>
-  </data>
-  <data name="DashboardCurriculumManageDescription" xml:space="preserve">
+  </data><data name="DashboardCurriculumManageDescription" xml:space="preserve">
     <value>إدارة المناهج المعتمدة والموضوعات ومخرجات التعلم الرسمية.</value>
-  </data>
-  <data name="DashboardAssessmentMonitorDescription" xml:space="preserve">
+  </data><data name="DashboardAssessmentMonitorDescription" xml:space="preserve">
     <value>مراقبة التقييمات والأسئلة وتغطية نتائج التعلم ونتائج الطلاب.</value>
-  </data>
-  <data name="DashboardAssessmentTeacherDescription" xml:space="preserve">
+  </data><data name="DashboardAssessmentTeacherDescription" xml:space="preserve">
     <value>قم بإنشاء التقييمات وإدارة الأسئلة وتخطيط نتائج التعلم وإدخال النتائج.</value>
-  </data>
-  <data name="DashboardAnalyticsDescription" xml:space="preserve">
+  </data><data name="DashboardAnalyticsDescription" xml:space="preserve">
     <value>استكشف الإتقان وفجوات النتائج والتقدم والطلاب الذين قد يحتاجون إلى التدخل.</value>
-  </data>
-  <data name="DashboardReportsViewDescription" xml:space="preserve">
+  </data><data name="DashboardReportsViewDescription" xml:space="preserve">
     <value>قم بمراجعة التقارير المدرسية والصادرات التي تم إنشاؤها مسبقًا ضمن نطاق دورك.</value>
-  </data>
-  <data name="DashboardReportsManageDescription" xml:space="preserve">
+  </data><data name="DashboardReportsManageDescription" xml:space="preserve">
     <value>قم بإنشاء تقارير على مستوى الدور واطلب تصدير CSV/XLSX.</value>
-  </data>
-  <data name="DashboardImportsViewDescription" xml:space="preserve">
+  </data><data name="DashboardImportsViewDescription" xml:space="preserve">
     <value>مراجعة سجل الاستيراد وحالة الدفعة ونتائج التحقق من الصحة.</value>
-  </data>
-  <data name="DashboardImportsManageDescription" xml:space="preserve">
+  </data><data name="DashboardImportsManageDescription" xml:space="preserve">
     <value>التحقق من صحة بيانات المدرسة واستيرادها من ملفات CSV أو Excel.</value>
-  </data>
-  <data name="DashboardNotificationsDescription" xml:space="preserve">
+  </data><data name="DashboardNotificationsDescription" xml:space="preserve">
     <value>راجع صندوق الوارد الخاص بالإشعارات وحالة تسليم البريد الإلكتروني.</value>
-  </data>
-  <data name="ViewUsers" xml:space="preserve">
+  </data><data name="ViewUsers" xml:space="preserve">
     <value>عرض المستخدمين</value>
-  </data>
-  <data name="ManageUsersOperational" xml:space="preserve">
+  </data><data name="ManageUsersOperational" xml:space="preserve">
     <value>إدارة المستخدمين</value>
-  </data>
-  <data name="ManageSupervisors" xml:space="preserve">
+  </data><data name="ManageSupervisors" xml:space="preserve">
     <value>إدارة المشرفين</value>
-  </data>
-  <data name="ViewStructure" xml:space="preserve">
+  </data><data name="ViewStructure" xml:space="preserve">
     <value>عرض الهيكل</value>
-  </data>
-  <data name="ManageStructure" xml:space="preserve">
+  </data><data name="ManageStructure" xml:space="preserve">
     <value>إدارة الهيكل</value>
-  </data>
-  <data name="ViewCurriculum" xml:space="preserve">
+  </data><data name="ViewCurriculum" xml:space="preserve">
     <value>عرض المنهج</value>
-  </data>
-  <data name="ManageCurriculumLink" xml:space="preserve">
+  </data><data name="ManageCurriculumLink" xml:space="preserve">
     <value>إدارة المناهج الدراسية</value>
-  </data>
-  <data name="MonitorAssessments" xml:space="preserve">
+  </data><data name="MonitorAssessments" xml:space="preserve">
     <value>مراقبة التقييمات</value>
-  </data>
-  <data name="ManageAssessmentsLink" xml:space="preserve">
+  </data><data name="ManageAssessmentsLink" xml:space="preserve">
     <value>إدارة التقييمات</value>
-  </data>
-  <data name="ViewAnalytics" xml:space="preserve">
+  </data><data name="ViewAnalytics" xml:space="preserve">
     <value>عرض التحليلات</value>
-  </data>
-  <data name="ViewReports" xml:space="preserve">
+  </data><data name="ViewReports" xml:space="preserve">
     <value>عرض التقارير</value>
-  </data>
-  <data name="ManageReportsLink" xml:space="preserve">
+  </data><data name="ManageReportsLink" xml:space="preserve">
     <value>فتح التقارير والصادرات</value>
-  </data>
-  <data name="ViewImportHistory" xml:space="preserve">
+  </data><data name="ViewImportHistory" xml:space="preserve">
     <value>عرض تاريخ الاستيراد</value>
-  </data>
-  <data name="ManageImportsLink" xml:space="preserve">
+  </data><data name="ManageImportsLink" xml:space="preserve">
     <value>إدارة الواردات</value>
-  </data>
-  <data name="OpenNotificationsLink" xml:space="preserve">
+  </data><data name="OpenNotificationsLink" xml:space="preserve">
     <value>فتح الإخطارات</value>
-  </data>
-  <data name="AccessExportOwn" xml:space="preserve">
+  </data><data name="AccessExportOwn" xml:space="preserve">
     <value>تصدير النطاق الخاص</value>
-  </data>
-  <data name="DashboardReportsTeacherDescription" xml:space="preserve">
+  </data><data name="DashboardReportsTeacherDescription" xml:space="preserve">
     <value>قم بمراجعة التقارير الخاصة بالنطاق المخصص لك واطلب تصدير ملفات CSV/XLSX لهذا النطاق.</value>
-  </data>
-  <data name="ExportOwnScope" xml:space="preserve">
+  </data><data name="ExportOwnScope" xml:space="preserve">
     <value>تصدير النطاق الخاص</value>
-  </data>
-  <data name="StudentSetupTitle" xml:space="preserve"><value>إعداد حساب الطالب</value></data>
-  <data name="StudentSetupDescription" xml:space="preserve"><value>يتطلب دور الطالب ملف تعريف الطالب المرتبط والتسجيل في الفصل الدراسي. يتم استخدام هذه الحقول عند حفظ دور الطالب.</value></data>
-  <data name="StudentNumber" xml:space="preserve"><value>رقم الطالب</value></data>
-  <data name="FirstName" xml:space="preserve"><value>الاسم الأول</value></data>
-  <data name="LastName" xml:space="preserve"><value>اسم العائلة</value></data>
-  <data name="StudentClass" xml:space="preserve"><value>فصل</value></data>
-  <data name="SelectStudentClass" xml:space="preserve"><value>حدد فئة</value></data>
-  <data name="StudentSetupCurrentEnrollment" xml:space="preserve"><value>الالتحاق الحالي</value></data>
-  <data name="StudentSetupComplete" xml:space="preserve"><value>اكتمل الإعداد</value></data>
-  <data name="StudentSetupIncomplete" xml:space="preserve"><value>الإعداد مطلوب</value></data>
-  <data name="StudentSetupUnavailable" xml:space="preserve"><value>إعداد الطالب غير متاح لهذا الإجراء أو الحساب.</value></data>
-  <data name="StudentRoleSetupSuccess" xml:space="preserve"><value>تم حفظ دور الطالب والملف الشخصي والتسجيل بنجاح.</value></data>
-  <data name="StudentSetupMissingFields" xml:space="preserve"><value>رقم الطالب والاسم الأول واسم العائلة والفئة مطلوبة لدور الطالب.</value></data>
-  <data name="StudentSetupClassNotFound" xml:space="preserve"><value>الفصل المحدد غير متوفر في هذه المدرسة.</value></data>
-  <data name="StudentSetupEnrollmentConflict" xml:space="preserve"><value>هذا الطالب لديه بالفعل تسجيل في فصل دراسي مختلف لنفس العام الدراسي.</value></data>
-  <data name="StudentSetupFailed" xml:space="preserve"><value>لا يمكن إكمال إعداد الطالب. لم يتم ترك أي تحويل غير مكتمل من المعلم إلى الطالب.</value></data>
-  <data name="StudentSetupRecoveryFailed" xml:space="preserve"><value>فشل إعداد الطالب وتعذر إكمال الاسترداد التلقائي. قم بمراجعة هذا الحساب قبل إعادة المحاولة.</value></data>
-
-  <data name="StudentSetupDuplicateStudentNumber" xml:space="preserve"><value>رقم الطالب هذا موجود بالفعل. أدخل رقم طالب مختلف.</value></data>
-  <data name="StudentSetupSeatLimitReached" xml:space="preserve"><value>تم الوصول إلى الحد الأقصى المسموح به لمقاعد الطلاب. زيادة المقاعد الملتزم بها قبل إضافة طالب آخر نشط.</value></data>
-  <data name="StudentSetupInvalidStudentAccount" xml:space="preserve"><value>لا يمكن ربط هذا الحساب كحساب طالب نشط. قم بمراجعة حالة الحساب ودوره.</value></data>
-  <data name="StudentSetupDuplicateStudentUserLink" xml:space="preserve"><value>حساب تسجيل الدخول هذا مرتبط بالفعل بملف تعريف الطالب.</value></data>
-  <data name="StudentSetupDuplicateEnrollment" xml:space="preserve"><value>هذا الطالب مسجل بالفعل في فصل دراسي لهذا العام الدراسي.</value></data>
-  <data name="StudentSetupProfileStateChanged" xml:space="preserve"><value>تم تغيير ملف تعريف الطالب أثناء تشغيل الإعداد. أعد تحميل الحساب قبل إعادة المحاولة.</value></data>
-  <data name="StudentSetupConcurrencyConflict" xml:space="preserve"><value>تم تغيير سجل الطالب هذا أثناء قيامك بالحفظ. أعد تحميل الحساب وحاول مرة أخرى.</value></data>
-  <data name="StudentSetupInvalidStudentNumber" xml:space="preserve"><value>رقم الطالب غير صالح. استخدم فقط A-Z و0-9 والواصلة.</value></data>
-  <data name="StudentSetupInvalidName" xml:space="preserve"><value>الاسم الأول أو الأخير للطالب غير صالح أو طويل جدًا.</value></data>
-  <data name="StudentSetupPersistenceError" xml:space="preserve"><value>تعذر حفظ إعداد الطالب. تم التراجع عن تغيير الدور. أعد تحميل الحساب وحاول مرة أخرى.</value></data>
-  <data name="StatusTrial" xml:space="preserve">
+  </data><data name="StudentSetupTitle" xml:space="preserve"><value>إعداد حساب الطالب</value></data><data name="StudentSetupDescription" xml:space="preserve"><value>يتطلب دور الطالب ملف تعريف الطالب المرتبط والتسجيل في الفصل الدراسي. يتم استخدام هذه الحقول عند حفظ دور الطالب.</value></data><data name="StudentNumber" xml:space="preserve"><value>رقم الطالب</value></data><data name="FirstName" xml:space="preserve"><value>الاسم الأول</value></data><data name="LastName" xml:space="preserve"><value>اسم العائلة</value></data><data name="StudentClass" xml:space="preserve"><value>الفصل</value></data><data name="SelectStudentClass" xml:space="preserve"><value>حدد فئة</value></data><data name="StudentSetupCurrentEnrollment" xml:space="preserve"><value>الالتحاق الحالي</value></data><data name="StudentSetupComplete" xml:space="preserve"><value>اكتمل الإعداد</value></data><data name="StudentSetupIncomplete" xml:space="preserve"><value>الإعداد مطلوب</value></data><data name="StudentSetupUnavailable" xml:space="preserve"><value>إعداد الطالب غير متاح لهذا الإجراء أو الحساب.</value></data><data name="StudentRoleSetupSuccess" xml:space="preserve"><value>تم حفظ دور الطالب والملف الشخصي والتسجيل بنجاح.</value></data><data name="StudentSetupMissingFields" xml:space="preserve"><value>رقم الطالب والاسم الأول واسم العائلة والفئة مطلوبة لدور الطالب.</value></data><data name="StudentSetupClassNotFound" xml:space="preserve"><value>الفصل المحدد غير متوفر في هذه المدرسة.</value></data><data name="StudentSetupEnrollmentConflict" xml:space="preserve"><value>هذا الطالب لديه بالفعل تسجيل في فصل دراسي مختلف لنفس العام الدراسي.</value></data><data name="StudentSetupFailed" xml:space="preserve"><value>لا يمكن إكمال إعداد الطالب. لم يتم ترك أي تحويل غير مكتمل من المعلم إلى الطالب.</value></data><data name="StudentSetupRecoveryFailed" xml:space="preserve"><value>فشل إعداد الطالب وتعذر إكمال الاسترداد التلقائي. قم بمراجعة هذا الحساب قبل إعادة المحاولة.</value></data><data name="StudentSetupDuplicateStudentNumber" xml:space="preserve"><value>رقم الطالب هذا موجود بالفعل. أدخل رقم طالب مختلف.</value></data><data name="StudentSetupSeatLimitReached" xml:space="preserve"><value>تم الوصول إلى الحد الأقصى المسموح به لمقاعد الطلاب. زيادة المقاعد الملتزم بها قبل إضافة طالب آخر نشط.</value></data><data name="StudentSetupInvalidStudentAccount" xml:space="preserve"><value>لا يمكن ربط هذا الحساب كحساب طالب نشط. قم بمراجعة حالة الحساب ودوره.</value></data><data name="StudentSetupDuplicateStudentUserLink" xml:space="preserve"><value>حساب تسجيل الدخول هذا مرتبط بالفعل بملف تعريف الطالب.</value></data><data name="StudentSetupDuplicateEnrollment" xml:space="preserve"><value>هذا الطالب مسجل بالفعل في فصل دراسي لهذا العام الدراسي.</value></data><data name="StudentSetupProfileStateChanged" xml:space="preserve"><value>تم تغيير ملف تعريف الطالب أثناء تشغيل الإعداد. أعد تحميل الحساب قبل إعادة المحاولة.</value></data><data name="StudentSetupConcurrencyConflict" xml:space="preserve"><value>تم تغيير سجل الطالب هذا أثناء قيامك بالحفظ. أعد تحميل الحساب وحاول مرة أخرى.</value></data><data name="StudentSetupInvalidStudentNumber" xml:space="preserve"><value>رقم الطالب غير صالح. استخدم فقط A-Z و0-9 والواصلة.</value></data><data name="StudentSetupInvalidName" xml:space="preserve"><value>الاسم الأول أو الأخير للطالب غير صالح أو طويل جدًا.</value></data><data name="StudentSetupPersistenceError" xml:space="preserve"><value>تعذر حفظ إعداد الطالب. تم التراجع عن تغيير الدور. أعد تحميل الحساب وحاول مرة أخرى.</value></data><data name="StatusTrial" xml:space="preserve">
     <value>محاكمة</value>
-  </data>
-  <data name="Trial" xml:space="preserve">
+  </data><data name="Trial" xml:space="preserve">
     <value>محاكمة</value>
-  </data>
-  <data name="TrialStarts" xml:space="preserve">
+  </data><data name="TrialStarts" xml:space="preserve">
     <value>تبدأ المحاكمة</value>
-  </data>
-  <data name="TrialEnds" xml:space="preserve">
+  </data><data name="TrialEnds" xml:space="preserve">
     <value>تنتهي المحاكمة</value>
-  </data>
-  <data name="TrialAccess" xml:space="preserve">
+  </data><data name="TrialAccess" xml:space="preserve">
     <value>الوصول التجريبي</value>
-  </data>
-  <data name="TrialAvailable" xml:space="preserve">
+  </data><data name="TrialAvailable" xml:space="preserve">
     <value>متاح</value>
-  </data>
-  <data name="TrialExpired" xml:space="preserve">
+  </data><data name="TrialExpired" xml:space="preserve">
     <value>منتهي الصلاحية</value>
-  </data>
-  <data name="TrialDurationDays" xml:space="preserve">
+  </data><data name="TrialDurationDays" xml:space="preserve">
     <value>مدة النسخة التجريبية (أيام)</value>
-  </data>
-  <data name="StartTrial" xml:space="preserve">
+  </data><data name="StartTrial" xml:space="preserve">
     <value>ابدأ المحاكمة</value>
-  </data>
-  <data name="TrialStartedSuccess" xml:space="preserve">
+  </data><data name="TrialStartedSuccess" xml:space="preserve">
     <value>بدأت المحاكمة بنجاح.</value>
-  </data>
-  <data name="InvalidTrialDuration" xml:space="preserve">
+  </data><data name="InvalidTrialDuration" xml:space="preserve">
     <value>يجب أن تتراوح مدة النسخة التجريبية بين يوم واحد و365 يومًا.</value>
-  </data>
-  <data name="TrialAlreadyExists" xml:space="preserve">
+  </data><data name="TrialAlreadyExists" xml:space="preserve">
     <value>لقد تم بالفعل إنشاء تجربة لهذه المدرسة.</value>
-  </data>
-  <data name="AllUsers" xml:space="preserve">
+  </data><data name="AllUsers" xml:space="preserve">
     <value>كافة المستخدمين</value>
-  </data>
-  <data name="UserDirectoryFilters" xml:space="preserve">
+  </data><data name="UserDirectoryFilters" xml:space="preserve">
     <value>مرشحات دليل المستخدم</value>
-  </data>
-  <data name="SearchUsers" xml:space="preserve">
+  </data><data name="SearchUsers" xml:space="preserve">
     <value>بحث المستخدمين</value>
-  </data>
-  <data name="SearchUsersPlaceholder" xml:space="preserve">
+  </data><data name="SearchUsersPlaceholder" xml:space="preserve">
     <value>الاسم أو البريد الإلكتروني أو رقم الطالب أو معرف المستخدم</value>
-  </data>
-  <data name="AllStatuses" xml:space="preserve">
-    <value>الجميع</value>
-  </data>
-  <data name="RowsPerPage" xml:space="preserve">
+  </data><data name="AllStatuses" xml:space="preserve">
+    <value>الكل</value>
+  </data><data name="RowsPerPage" xml:space="preserve">
     <value>صفوف لكل صفحة</value>
-  </data>
-  <data name="ApplyFilters" xml:space="preserve">
+  </data><data name="ApplyFilters" xml:space="preserve">
     <value>تطبيق المرشحات</value>
-  </data>
-  <data name="ClearFilters" xml:space="preserve">
-    <value>واضح</value>
-  </data>
-  <data name="ShowingUsers" xml:space="preserve">
+  </data><data name="ClearFilters" xml:space="preserve">
+    <value>مسح</value>
+  </data><data name="ShowingUsers" xml:space="preserve">
     <value>عرض {0}–{1} من {2} من المستخدمين</value>
-  </data>
-  <data name="Pagination" xml:space="preserve">
+  </data><data name="Pagination" xml:space="preserve">
     <value>ترقيم الصفحات</value>
-  </data>
-  <data name="PreviousPage" xml:space="preserve">
-    <value>سابق</value>
-  </data>
-  <data name="NextPage" xml:space="preserve">
+  </data><data name="PreviousPage" xml:space="preserve">
+    <value>السابق</value>
+  </data><data name="NextPage" xml:space="preserve">
     <value>التالي</value>
-  </data>
-  <data name="PageOf" xml:space="preserve">
+  </data><data name="PageOf" xml:space="preserve">
     <value>صفحة {0} من {1}</value>
-  </data>
-  <data name="IdentityFilters" xml:space="preserve">
+  </data><data name="IdentityFilters" xml:space="preserve">
     <value>هوية</value>
-  </data>
-  <data name="UserName" xml:space="preserve">
-    <value>اسم</value>
-  </data>
-  <data name="UserNameFilterPlaceholder" xml:space="preserve">
+  </data><data name="UserName" xml:space="preserve">
+    <value>الاسم</value>
+  </data><data name="UserNameFilterPlaceholder" xml:space="preserve">
     <value>البحث حسب اسم الطالب</value>
-  </data>
-  <data name="UserId" xml:space="preserve">
+  </data><data name="UserId" xml:space="preserve">
     <value>معرف المستخدم</value>
-  </data>
-  <data name="UserIdFilterPlaceholder" xml:space="preserve">
+  </data><data name="UserIdFilterPlaceholder" xml:space="preserve">
     <value>الصق معرف المستخدم الدقيق</value>
-  </data>
-  <data name="UserEmailFilterPlaceholder" xml:space="preserve">
+  </data><data name="UserEmailFilterPlaceholder" xml:space="preserve">
     <value>البحث عن طريق البريد الإلكتروني</value>
-  </data>
-  <data name="AcademicFilters" xml:space="preserve">
+  </data><data name="AcademicFilters" xml:space="preserve">
     <value>السياق الأكاديمي</value>
-  </data>
-  <data name="AcademicYearFilter" xml:space="preserve">
+  </data><data name="AcademicYearFilter" xml:space="preserve">
     <value>العام الدراسي</value>
-  </data>
-  <data name="CurriculumFilter" xml:space="preserve">
-    <value>مقرر</value>
-  </data>
-  <data name="ClassFilter" xml:space="preserve">
-    <value>فصل</value>
-  </data>
-  <data name="AllAcademicYears" xml:space="preserve">
+  </data><data name="CurriculumFilter" xml:space="preserve">
+    <value>المنهج</value>
+  </data><data name="ClassFilter" xml:space="preserve">
+    <value>الفصل</value>
+  </data><data name="AllAcademicYears" xml:space="preserve">
     <value>جميع السنوات الدراسية</value>
-  </data>
-  <data name="AllCurricula" xml:space="preserve">
+  </data><data name="AllCurricula" xml:space="preserve">
     <value>جميع المناهج</value>
-  </data>
-  <data name="AllClasses" xml:space="preserve">
+  </data><data name="AllClasses" xml:space="preserve">
     <value>جميع الفصول</value>
-  </data>
-  <data name="AccountFilters" xml:space="preserve">
+  </data><data name="AccountFilters" xml:space="preserve">
     <value>حساب</value>
-  </data>
-  <data name="UserNameAndId" xml:space="preserve">
+  </data><data name="UserNameAndId" xml:space="preserve">
     <value>الاسم / الهوية</value>
-  </data>
-  <data name="AcademicContext" xml:space="preserve">
+  </data><data name="AcademicContext" xml:space="preserve">
     <value>السياق الأكاديمي</value>
-  </data>
-  <data name="NameUnavailable" xml:space="preserve">
+  </data><data name="NameUnavailable" xml:space="preserve">
     <value>الاسم غير متاح</value>
-  </data>
-  <data name="StudentNumberLabel" xml:space="preserve">
+  </data><data name="StudentNumberLabel" xml:space="preserve">
     <value>رقم الطالب</value>
-  </data>
-  <data name="NoAcademicContext" xml:space="preserve">
+  </data><data name="NoAcademicContext" xml:space="preserve">
     <value>لا يوجد تعيين الصف</value>
-  </data>
-  <data name="More" xml:space="preserve">
+  </data><data name="More" xml:space="preserve">
     <value>أكثر</value>
-  </data>
-</root>
+  </data></root>
