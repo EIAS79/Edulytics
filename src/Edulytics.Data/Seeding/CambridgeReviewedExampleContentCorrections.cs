@@ -173,4 +173,3 @@ public static class CambridgeReviewedExampleContentCorrections
                 translation.QuickSummary) + "\n")))
             .ToLowerInvariant();
 }
-
