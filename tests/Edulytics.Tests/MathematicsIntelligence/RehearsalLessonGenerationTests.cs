@@ -22,6 +22,55 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 public class RehearsalLessonGenerationTests
 {
     [Fact]
+    public async Task Existing_rehearsal_content_accepts_mapping_update_without_changing_bodies_or_versions()
+    {
+        await using var db = new EdulyticsDbContext(new DbContextOptionsBuilder<EdulyticsDbContext>()
+            .UseInMemoryDatabase(Guid.NewGuid().ToString()).Options);
+        await new MathematicsCurriculumPackSeeder(db).SeedAsync();
+        await new MathematicsPedagogicalLessonSeeder(db).SeedAsync();
+        var documents = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .Where(d => d.Lessons.Any(l => IsRehearsalLesson(l.LessonCode))).ToArray();
+        Assert.Equal(291, documents.Sum(d => d.Lessons.Count));
+        var codes = documents.SelectMany(d => d.Lessons).Select(l => l.LessonCode).ToArray();
+        var ids = await db.CurriculumPedagogicalLessons.Where(l => codes.Contains(l.Code)).Select(l => l.Id).ToArrayAsync();
+        var links = await db.CurriculumPedagogicalLessonOutcomes.Where(l => ids.Contains(l.PedagogicalLessonId)).ToArrayAsync();
+        db.CurriculumPedagogicalLessonOutcomes.RemoveRange(links);
+        await db.SaveChangesAsync();
+        var prior = JsonSerializer.Deserialize<CanonicalLessonContentPackDocument[]>(JsonSerializer.Serialize(documents))!;
+        foreach (var document in prior)
+        {
+            document.ContentVersion = document.ContentVersion.Replace("-official-map-v1", "-v1", StringComparison.Ordinal);
+            foreach (var lesson in document.Lessons)
+            {
+                lesson.OutcomeCodes.Clear();
+                lesson.IsSupporting = true;
+            }
+        }
+        var seeder = new MathematicsCanonicalLessonContentSeeder(db);
+        await seeder.SeedDocumentsAsync(prior);
+        var before = await StoredBodies(db);
+        var versions = await db.CurriculumLessonContents.ToDictionaryAsync(x => x.Id, x => x.ContentVersion);
+        db.CurriculumPedagogicalLessonOutcomes.AddRange(links);
+        await db.SaveChangesAsync();
+        await seeder.SeedDocumentsAsync(documents);
+        Assert.Equal(before, await StoredBodies(db));
+        Assert.Equal(versions, await db.CurriculumLessonContents.ToDictionaryAsync(x => x.Id, x => x.ContentVersion));
+    }
+
+    private static async Task<Dictionary<Guid, string>> StoredBodies(EdulyticsDbContext db) =>
+        (await db.CurriculumLessonContentTranslations.AsNoTracking().ToArrayAsync()).ToDictionary(x => x.Id,
+            x => JsonSerializer.Serialize(new { x.CultureCode, x.Title, x.Explanation, x.KeyConceptsAndRules,
+                x.WorkedExamples, x.StepByStepSolutions, x.CommonMistakes, x.QuickSummary }));
+
+    private static bool IsRehearsalLesson(string code) => new[]
+    {
+        "PED:CAMBRIDGE-INTL-MATH:L12:", "PED:CAMBRIDGE-INTL-MATH:L13:",
+        "PED:UAE-MOE-MATH:L3:COMMON:", "PED:UAE-MOE-MATH:L4:COMMON:",
+        "PED:UAE-MOE-MATH:L7:ADVANCED:", "PED:UAE-MOE-MATH:L8:ADVANCED:",
+        "PED:UAE-MOE-MATH:L11:ADVANCED:", "PED:UAE-MOE-MATH:L12:ADVANCED:"
+    }.Any(prefix => code.StartsWith(prefix, StringComparison.Ordinal));
+
+    [Fact]
     public async Task Official_outcome_projection_translates_on_Postgres_before_opening_a_connection()
     {
         await using var db = new EdulyticsDbContext(new DbContextOptionsBuilder<EdulyticsDbContext>()
@@ -83,9 +132,7 @@ public class RehearsalLessonGenerationTests
         var lessons = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
             .SelectMany(document => document.Lessons.Select(lesson => (document, lesson)))
             .Where(x => x.lesson.OutcomeCodes.Count > 0 &&
-                (x.lesson.LessonCode.StartsWith("PED:CAMBRIDGE-INTL-MATH:L12:", StringComparison.Ordinal) ||
-                 x.lesson.LessonCode.StartsWith("PED:CAMBRIDGE-INTL-MATH:L13:", StringComparison.Ordinal) ||
-                 (x.document.PackCode == "UAE-MOE-MATH" && x.document.ContentVersion.EndsWith("-official-map-v1", StringComparison.Ordinal))))
+                IsRehearsalLesson(x.lesson.LessonCode))
             .ToArray();
         Assert.Equal(124, lessons.Length);
         foreach (var (document, lesson) in lessons)

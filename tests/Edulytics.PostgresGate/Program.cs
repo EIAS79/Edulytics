@@ -1577,7 +1577,7 @@ await using (var db = await NewDbAsync())
 
     var uae = states.Single(x => x.FrameworkCode == "UAE-MOE-MATH");
     if (uae.VersionCode != "MOE-2026-2027-T1" ||
-        uae.OfficialNodeCount != 22 ||
+        uae.OfficialNodeCount != 47 ||
         uae.UnitCount != 6 ||
         uae.LessonCount != 42 ||
         uae.LinkCount != 48)

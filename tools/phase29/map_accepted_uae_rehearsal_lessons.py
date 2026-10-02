@@ -110,7 +110,7 @@ def apply():
             bp["SourceEvidenceUrls"].append(EVIDENCE)
         d = bp["AcquisitionDiagnostics"]
         d.update(OfficialStandardCount=standards, AddressingCoverageCount=standards, FormalMappingCount=mapped, LessonsWithoutNumberedGradeReferenceAnyRole=supporting, LessonsWithoutNumberedAddressingStandard=supporting, LessonsWithoutNumberedAddressingOrBuildingTowardsStandard=supporting, MultiStandardLessons=0)
-        cp["ContentVersion"] = f"p29-{stem}-official-map-v1"
+        cp["ContentVersion"] = f"p29-{stem}-v1"
         cp["TargetCurriculumPeriod"] = cp["SourceCurriculumPeriod"] = cp["SourceVersionLabel"] = "2025-2026 Term 1"
         review = "Direct mappings reviewed against existing accepted UAE standard meanings and grade/pathway applicability; lesson bodies preserved."
         if review not in cp["ReviewMethod"]:
