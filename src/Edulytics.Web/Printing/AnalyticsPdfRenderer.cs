@@ -1061,7 +1061,7 @@ public static class AnalyticsPdfRenderer
                 "Gaps",
                 "Evidence confidence");
 
-            foreach (var item in studentsPage.Students.Take(120))
+            foreach (var item in studentsPage.Students)
             {
                 var row = students.AddRow();
                 row.VerticalAlignment = VerticalAlignment.Center;
@@ -1520,6 +1520,7 @@ public static class AnalyticsPdfRenderer
         params string[] values)
     {
         var row = table.AddRow();
+        row.HeadingFormat = true;
         row.Format.Font.Bold = true;
         row.Format.Font.Color = Color.FromRgb(53, 67, 103);
         row.Shading.Color = Color.FromRgb(244, 246, 251);
@@ -1616,6 +1617,7 @@ public static class AnalyticsPdfRenderer
         string label,
         DateTime generatedAtUtc)
     {
+        section.PageSetup.FooterDistance = Unit.FromCentimeter(.6);
         var footer = section.Footers.Primary.AddParagraph();
         footer.Format.Font.Size = Unit.FromPoint(7);
         footer.Format.Font.Color = Color.FromRgb(128, 137, 155);
