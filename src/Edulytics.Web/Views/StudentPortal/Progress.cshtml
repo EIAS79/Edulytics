@@ -13,6 +13,10 @@
     string Value(decimal? value) =>
         value.HasValue ? $"{value.Value:0.#}%" : "—";
 
+    string DisplaySkillName(string skillKey, string skillName) =>
+        Edulytics.Web.ViewModels.StudentPortal.StudentSkillDisplayName
+            .Format(skillKey, skillName);
+
     string Trend(EvaluationTrendBand value) => value switch
     {
         EvaluationTrendBand.RapidlyImproving => "↑↑ Improving quickly",
@@ -264,7 +268,7 @@
                                     : string.Empty;
                         <div class="evaluation-lollipop-row @skillClass">
                             <span class="evaluation-lollipop-label"
-                                  title="@skill.SkillName">@skill.SkillName</span>
+                                  title="@DisplaySkillName(skill.SkillKey, skill.SkillName)">@DisplaySkillName(skill.SkillKey, skill.SkillName)</span>
                             <span class="evaluation-lollipop-track">
                                 <i class="evaluation-lollipop-stick"
                                    data-chart-value="@(skillValue?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"></i>
@@ -316,7 +320,7 @@
                                 @item.Priority
                             </span>
                             <div>
-                                <strong>@item.SkillName</strong>
+                                <strong>@DisplaySkillName(item.SkillKey, item.SkillName)</strong>
                                 <p>@item.Message</p>
                             </div>
                         </article>
@@ -389,7 +393,7 @@
             {
                 <article class="student-progress-skill-row">
                     <div class="student-progress-skill-name">
-                        <strong>@skill.SkillName</strong>
+                        <strong>@DisplaySkillName(skill.SkillKey, skill.SkillName)</strong>
                         <span class="student-skill-status @StatusClass(skill.OfficialStatus)">
                             @SkillStatus(skill.OfficialStatus)
                         </span>
