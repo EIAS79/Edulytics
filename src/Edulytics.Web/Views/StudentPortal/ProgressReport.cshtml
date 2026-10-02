@@ -12,6 +12,10 @@
     string Value(decimal? value) =>
         value.HasValue ? $"{value.Value:0.#}%" : "—";
 
+    string DisplaySkillName(string skillKey, string skillName) =>
+        Edulytics.Web.ViewModels.StudentPortal.StudentSkillDisplayName
+            .Format(skillKey, skillName);
+
     string Trend(EvaluationTrendBand value) => value switch
     {
         EvaluationTrendBand.RapidlyImproving => "↑↑ Improving quickly",
@@ -269,7 +273,7 @@
                         @foreach (var skill in strengths)
                         {
                             <span>
-                                <strong>@skill.SkillName</strong>
+                                <strong>@DisplaySkillName(skill.SkillKey, skill.SkillName)</strong>
                                 <small>@Value(skill.OfficialMasteryPercentage)</small>
                             </span>
                         }
@@ -292,7 +296,7 @@
                         @foreach (var skill in focus)
                         {
                             <span>
-                                <strong>@skill.SkillName</strong>
+                                <strong>@DisplaySkillName(skill.SkillKey, skill.SkillName)</strong>
                                 <small>@Value(skill.OfficialMasteryPercentage)</small>
                             </span>
                         }
@@ -321,7 +325,7 @@
                                 ? "is-warning"
                                 : string.Empty;
                     <div class="evaluation-lollipop-row @css">
-                        <span class="evaluation-lollipop-label">@skill.SkillName</span>
+                        <span class="evaluation-lollipop-label">@DisplaySkillName(skill.SkillKey, skill.SkillName)</span>
                         <span class="evaluation-lollipop-track">
                             <i class="evaluation-lollipop-stick"
                                data-chart-value="@(skillValue?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"></i>
@@ -407,7 +411,7 @@
                             @item.Priority
                         </span>
                         <div>
-                            <strong>@item.SkillName</strong>
+                            <strong>@DisplaySkillName(item.SkillKey, item.SkillName)</strong>
                             <p>@item.Message</p>
                         </div>
                     </article>
