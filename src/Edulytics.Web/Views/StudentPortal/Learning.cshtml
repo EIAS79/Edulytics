@@ -72,19 +72,9 @@
     </div>
     <div class="learning-hud-orb" aria-hidden="true"></div>
 
-    <header class="student-page-header learning-hero">
-        <span class="student-eyebrow">@S["MyLearning"]</span>
-        <h1>@S["LearningTitle"]</h1>
-        <p>@S["LearningSubtitle"]</p>
-    </header>
-
-    <div class="learning-context-zone">
-        @if (Model.Workspace.Learning.Count == 0)
-        {
-            <div class="student-empty-state">@S["NoLearningYet"]</div>
-        }
-        else
-        {
+    @if (Model.Workspace.Learning.Count > 0)
+    {
+        <div class="learning-context-zone">
             <div class="student-learning-stack">
                 @foreach (var subject in Model.Workspace.Learning)
                 {
@@ -170,20 +160,16 @@
                     </article>
                 }
             </div>
-        }
-    </div>
+        </div>
+    }
 
     <section class="student-published-lessons student-published-lessons--floating">
-        <header class="floating-lessons-heading">
-            <div>
-                <h2>@L["AvailableLessons"]</h2>
-                <p>@S["LearningSubtitle"]</p>
-            </div>
-            @if (Model.Lessons.Count > 0)
-            {
+        @if (Model.Lessons.Count > 0)
+        {
+            <div class="floating-lessons-toolbar" aria-label="Lesson count">
                 <span class="floating-lessons-signal">@Model.Lessons.Count</span>
-            }
-        </header>
+            </div>
+        }
 
         @if (Model.Lessons.Count == 0)
         {
