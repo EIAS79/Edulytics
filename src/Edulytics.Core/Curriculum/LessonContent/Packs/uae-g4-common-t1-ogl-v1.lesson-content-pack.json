@@ -12,7 +12,7 @@
   "SourceCheckedAtUtc": "2026-09-01T00:00:00Z",
   "SourceResolution": "CurrentOfficial",
   "FallbackReason": "",
-  "ReviewMethod": "Scope inventory review, pathway isolation, OGL source-policy review, deterministic lesson/body generation, mathematical example verification and canonical body hashing. Direct mappings reviewed against existing accepted UAE standard meanings and grade/pathway applicability; lesson bodies preserved.",
+  "ReviewMethod": "Scope inventory review, pathway isolation, OGL source-policy review, deterministic lesson/body generation, mathematical example verification and canonical body hashing. Direct mappings reviewed against existing accepted UAE standard meanings and grade/pathway applicability; lesson bodies preserved. Verified 5 exact UAE student-book reference mapping(s) from the supplied 2025-2026 UAE edition; official textbook wording is not reproduced and existing MAT mappings remain unchanged.",
   "SourcePolicyVersion": 2,
   "PedagogicalSourceType": "OpenEducationalResource",
   "PedagogicalSourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "UAE G4/common: 20 officially mapped lessons, 5 Supporting; evidence https://www.scribd.com/document/826281797/Strands-and-Standards-Summary-MAT; no synthetic references and no learner-facing body changes.",
+  "ReviewEvidence": "UAE G4/common: 20 officially mapped lessons, 5 Supporting; evidence https://www.scribd.com/document/826281797/Strands-and-Standards-Summary-MAT; no synthetic references and no learner-facing body changes. Verified 5 exact UAE student-book reference mapping(s) from the supplied 2025-2026 UAE edition; official textbook wording is not reproduced and existing MAT mappings remain unchanged.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:01:01:PLACE-VALUE-TO-LARGE-WHOLE-NUMBERS",
@@ -201,8 +201,10 @@
       "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:01:06:MULTIPLICATION-BY-ONE-DIGIT-NUMBERS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 4 / Common.",
-      "OutcomeCodes": [],
-      "IsSupporting": true,
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G4:COMMON:2025-2026:U4"
+      ],
+      "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 4 / Number and Operations / 06",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -233,8 +235,10 @@
       "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:01:07:DIVISION-WITH-REMAINDERS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 4 / Common.",
-      "OutcomeCodes": [],
-      "IsSupporting": true,
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G4:COMMON:2025-2026:U6-L5"
+      ],
+      "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 4 / Number and Operations / 07",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -673,8 +677,10 @@
       "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:03:QUADRILATERALS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 4 / Common.",
-      "OutcomeCodes": [],
-      "IsSupporting": true,
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G4:COMMON:2025-2026:U16-L7"
+      ],
+      "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 4 / Geometry / 03",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -739,8 +745,10 @@
       "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:05:LINE-SYMMETRY",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 4 / Common.",
-      "OutcomeCodes": [],
-      "IsSupporting": true,
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G4:COMMON:2025-2026:U12-L3"
+      ],
+      "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 4 / Geometry / 05",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -805,8 +813,10 @@
       "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:05:02:LINE-GRAPHS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 4 / Common.",
-      "OutcomeCodes": [],
-      "IsSupporting": true,
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G4:COMMON:2025-2026:U13-L2"
+      ],
+      "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 4 / Statistics / 02",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
