@@ -60,6 +60,20 @@ public sealed class StudentLearningBackgroundContractTests
         Assert.Contains("html[dir=\"rtl\"]", css, StringComparison.Ordinal);
     }
 
+
+    [Fact]
+    public void Classic_lesson_cards_are_compact_and_hide_redundant_context()
+    {
+        var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
+        var css = ReadRepositoryFile("src", "Edulytics.Web", "wwwroot", "css", "classic-learning-icons.css");
+
+        Assert.DoesNotContain("student-lesson-primary-context", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("student-lesson-secondary-context", view, StringComparison.Ordinal);
+        Assert.Contains("student-lesson-card--with-icon", view, StringComparison.Ordinal);
+        Assert.Contains("padding:20px 18px 18px", css, StringComparison.Ordinal);
+        Assert.Contains("min-height:0", css, StringComparison.Ordinal);
+    }
+
     private static string ReadRepositoryFile(params string[] relativeSegments)
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);
