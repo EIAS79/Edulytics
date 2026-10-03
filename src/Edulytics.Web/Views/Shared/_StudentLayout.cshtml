@@ -40,7 +40,10 @@
         <main class="student-main">
             <header class="student-topbar">
                 <partial name="_AppLanguageSwitcher" />
-                <div><span class="student-topbar-product">@localizedProductName</span><strong>@ViewData["Title"]</strong></div>
+                @if (!(controller == "StudentPortal" && action == "Learning"))
+                {
+                    <div><span class="student-topbar-product">@localizedProductName</span><strong>@ViewData["Title"]</strong></div>
+                }
                 <form asp-controller="Account" asp-action="Logout" method="post"><button class="student-signout" type="submit">@S["SignOut"]</button></form>
             </header>
             <div class="student-page-frame">@RenderBody()</div>

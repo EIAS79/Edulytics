@@ -113,12 +113,24 @@ public sealed class StudentLearningBackgroundContractTests
 
 
     [Fact]
-    public void My_learning_header_does_not_show_redundant_page_title()
+    public void My_learning_header_keeps_main_title_and_removes_only_the_small_eyebrow()
     {
         var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
 
-        Assert.DoesNotContain(@"<h1>@S[""LearningTitle""]</h1>", view, StringComparison.Ordinal);
+        Assert.Contains(@"<h1>@S[""LearningTitle""]</h1>", view, StringComparison.Ordinal);
         Assert.Contains(@"<p>@S[""LearningSubtitle""]</p>", view, StringComparison.Ordinal);
+        Assert.DoesNotContain(@"<span class=""student-eyebrow"">@S[""MyLearning""]</span>", view, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void My_learning_topbar_hides_product_and_page_title_but_keeps_controls()
+    {
+        var layout = ReadRepositoryFile("src", "Edulytics.Web", "Views", "Shared", "_StudentLayout.cshtml");
+
+        Assert.Contains(@"action == ""Learning""", layout, StringComparison.Ordinal);
+        Assert.Contains(@"<partial name=""_AppLanguageSwitcher"" />", layout, StringComparison.Ordinal);
+        Assert.Contains(@"class=""student-signout""", layout, StringComparison.Ordinal);
+        Assert.Contains(@"student-topbar-product", layout, StringComparison.Ordinal);
     }
 
     private static string ReadRepositoryFile(params string[] relativeSegments)
