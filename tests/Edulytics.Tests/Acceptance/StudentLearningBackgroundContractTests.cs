@@ -43,6 +43,23 @@ public sealed class StudentLearningBackgroundContractTests
         Assert.DoesNotContain("floating-lesson-card", view, StringComparison.Ordinal);
     }
 
+
+    [Fact]
+    public void Classic_lesson_cards_include_contextual_math_icons()
+    {
+        var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
+        var css = ReadRepositoryFile("src", "Edulytics.Web", "wwwroot", "css", "classic-learning-icons.css");
+
+        Assert.Contains("LessonVisualKind", view, StringComparison.Ordinal);
+        Assert.Contains("classic-lesson-icon", view, StringComparison.Ordinal);
+        Assert.Contains("data-lesson-visual", view, StringComparison.Ordinal);
+        Assert.Contains("case \"fraction\"", view, StringComparison.Ordinal);
+        Assert.Contains("case \"coordinates\"", view, StringComparison.Ordinal);
+        Assert.Contains("case \"geometry\"", view, StringComparison.Ordinal);
+        Assert.Contains("classic-lesson-icon", css, StringComparison.Ordinal);
+        Assert.Contains("html[dir=\"rtl\"]", css, StringComparison.Ordinal);
+    }
+
     private static string ReadRepositoryFile(params string[] relativeSegments)
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);
