@@ -61,7 +61,8 @@ public static class OfficialCurriculumOutcomeMaterializer
                     x.NodeKind == "Standard" ||
                     x.NodeKind == "Outcome" ||
                     (x.NodeKind == "Reference" &&
-                     x.Code.StartsWith("CAM:REF:9709:"))
+                     (x.Code.StartsWith("CAM:REF:9709:") ||
+                      x.Code.StartsWith("UAE:REF:BOOK:")))
                 ) &&
                 x.LogicalLevelFrom <= logicalLevel &&
                 x.LogicalLevelTo >= logicalLevel)
@@ -233,6 +234,7 @@ public static class OfficialCurriculumOutcomeMaterializer
             .Replace("CCSS:", string.Empty, StringComparison.Ordinal)
             .Replace("PL:REQ:", string.Empty, StringComparison.Ordinal)
             .Replace("CAM:REF:9709:", string.Empty, StringComparison.Ordinal)
+            .Replace("UAE:REF:BOOK:", string.Empty, StringComparison.Ordinal)
             .Trim();
 
     private static string? Normalize(string? value) =>
