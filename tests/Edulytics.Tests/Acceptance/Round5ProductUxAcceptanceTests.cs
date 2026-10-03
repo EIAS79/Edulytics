@@ -21,16 +21,14 @@ public sealed class Round5ProductUxAcceptanceTests
     }
 
     [Fact]
-    public void Student_lesson_metadata_has_explicit_left_aligned_context_contract()
+    public void Student_lesson_cards_keep_topic_without_redundant_context_block()
     {
         var view = ReadRepositoryFile(
             "src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
-        var css = ReadRepositoryFile(
-            "src", "Edulytics.Web", "wwwroot", "css", "round5-ux-fixes.css");
-
-        Assert.Contains("student-lesson-context", view, StringComparison.Ordinal);
-        Assert.Contains("text-align: left", css, StringComparison.Ordinal);
-        Assert.Contains("align-items: flex-start", css, StringComparison.Ordinal);
+        Assert.Contains("@lesson.TopicName", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("student-lesson-context", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("student-lesson-primary-context", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("student-lesson-secondary-context", view, StringComparison.Ordinal);
     }
 
     [Fact]
