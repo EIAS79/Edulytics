@@ -20,6 +20,18 @@
             string.Empty,
             System.Text.RegularExpressions.RegexOptions.IgnoreCase);
 
+        cleaned = System.Text.RegularExpressions.Regex.Replace(
+            cleaned,
+            @"\s*\(\s*same\s*(?::\s*)?(Build the Idea|Reason and Apply)?\s*\)?\s*$",
+            string.Empty,
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+
+        cleaned = System.Text.RegularExpressions.Regex.Replace(
+            cleaned,
+            @"\s*\(\s*same\s*$",
+            string.Empty,
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+
         return cleaned.Trim();
     }
 
