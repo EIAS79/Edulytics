@@ -12,7 +12,7 @@
   "SourceCheckedAtUtc": "2026-09-01T00:00:00Z",
   "SourceResolution": "CurrentOfficial",
   "FallbackReason": "",
-  "ReviewMethod": "Scope inventory review, pathway isolation, OGL source-policy review, deterministic lesson/body generation, mathematical example verification and canonical body hashing. Direct mappings reviewed against existing accepted UAE standard meanings and grade/pathway applicability; lesson bodies preserved.",
+  "ReviewMethod": "Scope inventory review, pathway isolation, OGL source-policy review, deterministic lesson/body generation, mathematical example verification and canonical body hashing. Direct mappings reviewed against existing accepted UAE standard meanings and grade/pathway applicability; lesson bodies preserved. Verified 4 exact UAE student-book reference mapping(s) from the supplied 2025-2026 UAE edition; official textbook wording is not reproduced and existing MAT mappings remain unchanged.",
   "SourcePolicyVersion": 2,
   "PedagogicalSourceType": "OpenEducationalResource",
   "PedagogicalSourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "UAE G3/common: 15 officially mapped lessons, 8 Supporting; evidence https://www.scribd.com/document/826281797/Strands-and-Standards-Summary-MAT; no synthetic references and no learner-facing body changes.",
+  "ReviewEvidence": "UAE G3/common: 15 officially mapped lessons, 8 Supporting; evidence https://www.scribd.com/document/826281797/Strands-and-Standards-Summary-MAT; no synthetic references and no learner-facing body changes. Verified 4 exact UAE student-book reference mapping(s) from the supplied 2025-2026 UAE edition; official textbook wording is not reproduced and existing MAT mappings remain unchanged.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01:PLACE-VALUE-TO-THOUSANDS",
@@ -65,8 +65,10 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:02:ROUNDING-AND-ESTIMATING",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
-      "IsSupporting": true,
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G3:COMMON:2025-2026:U1-L4-L5"
+      ],
+      "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Number and Calculation / 02",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -265,8 +267,10 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:08:WRITTEN-DIVISION-FOUNDATIONS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
-      "IsSupporting": true,
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G3:COMMON:2025-2026:U5"
+      ],
+      "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Number and Calculation / 08",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -567,8 +571,10 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:04:01:ANGLES-AS-TURNS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
-      "IsSupporting": true,
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G3:COMMON:2025-2026:U13-L2"
+      ],
+      "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Geometry / 01",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -631,8 +637,10 @@
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:04:03:TRIANGLES-AND-QUADRILATERALS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 3 / Common.",
-      "OutcomeCodes": [],
-      "IsSupporting": true,
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G3:COMMON:2025-2026:U13-L4-L6"
+      ],
+      "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 3 / Geometry / 03",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
