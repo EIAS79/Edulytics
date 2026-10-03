@@ -9,7 +9,7 @@ public sealed class StudentLearningBackgroundContractTests
         var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
 
         Assert.DoesNotContain("student-learning-page", layout, StringComparison.Ordinal);
-        Assert.Contains("student-page-header", view, StringComparison.Ordinal);
+        Assert.Contains("student-app-shell", layout, StringComparison.Ordinal);\n        Assert.Contains("student-page-header", view, StringComparison.Ordinal);
         Assert.Contains("student-learning-stack", view, StringComparison.Ordinal);
         Assert.Contains("student-published-lessons", view, StringComparison.Ordinal);
         Assert.Contains("student-lesson-grid", view, StringComparison.Ordinal);
