@@ -90,21 +90,15 @@
             }
         };
 
-        card.addEventListener("pointerenter", async event => {
+        card.addEventListener("pointerenter", event => {
             if (!event.pointerType || event.pointerType === "mouse") {
-                if (!soundUnlocked) {
-                    await unlockHoverSound();
-                }
                 activate(true);
+                if (!soundUnlocked) {
+                    void unlockHoverSound();
+                }
             }
         }, { passive: true });
         card.addEventListener("pointerleave", clearSceneFocus, { passive: true });
-        card.addEventListener("focusin", () => activate(false));
-        card.addEventListener("focusout", event => {
-            if (!card.contains(event.relatedTarget)) {
-                clearSceneFocus();
-            }
-        });
     });
 
     let frame = 0;
