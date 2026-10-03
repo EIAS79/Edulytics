@@ -47,11 +47,7 @@
     <p>@S["LearningSubtitle"]</p>
 </header>
 
-@if (Model.Workspace.Learning.Count == 0)
-{
-    <div class="student-empty-state">@S["NoLearningYet"]</div>
-}
-else
+@if (Model.Workspace.Learning.Any(subject => subject.Nodes.Count > 0))
 {
     <div class="student-learning-stack">
         @foreach (var subject in Model.Workspace.Learning.Where(subject => subject.Nodes.Count > 0))
