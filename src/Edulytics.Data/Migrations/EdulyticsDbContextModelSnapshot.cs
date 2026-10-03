@@ -22,6 +22,139 @@ namespace Edulytics.Data.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("Edulytics.Core.Entities.AcademicProgram", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsDefault")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("character varying(150)");
+
+                    b.Property<string>("NormalizedCode")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<Guid>("SchoolId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SchoolId")
+                        .IsUnique()
+                        .HasFilter("\"IsDefault\" = TRUE");
+
+                    b.HasIndex("SchoolId", "NormalizedCode")
+                        .IsUnique();
+
+                    b.ToTable("AcademicPrograms", (string)null);
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AcademicYear", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateOnly>("EndsOn")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<Guid>("SchoolId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateOnly>("StartsOn")
+                        .HasColumnType("date");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SchoolId", "Name")
+                        .IsUnique();
+
+                    b.ToTable("AcademicYears", (string)null);
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AcademicYearProgramOffering", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("AcademicProgramId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("AcademicYearId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsOffered")
+                        .HasColumnType("boolean");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<Guid>("SchoolId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SchoolId", "AcademicProgramId");
+
+                    b.HasIndex("SchoolId", "AcademicYearId", "AcademicProgramId")
+                        .IsUnique();
+
+                    b.ToTable("AcademicYearProgramOfferings", (string)null);
+                });
 
             modelBuilder.Entity("Edulytics.Core.Entities.AdaptiveDecisionSnapshot", b =>
                 {
@@ -101,10 +234,9 @@ namespace Edulytics.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasAlternateKey("SchoolId", "Id");
-
                     b.HasIndex("SchoolId", "SessionId", "Sequence")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasDatabaseName("IX_AdaptiveDecisionSnapshots_SchoolId_SessionId_Sequence");
 
                     b.ToTable("AdaptiveDecisionSnapshots", (string)null);
                 });
@@ -123,6 +255,9 @@ namespace Edulytics.Data.Migrations
                     b.Property<DateTime?>("CompletedAtUtc")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<int>("CurrentSequence")
+                        .HasColumnType("integer");
+
                     b.Property<Guid>("CurriculumAdoptionId")
                         .HasColumnType("uuid");
 
@@ -133,9 +268,6 @@ namespace Edulytics.Data.Migrations
 
                     b.Property<Guid>("CurriculumPedagogicalLessonId")
                         .HasColumnType("uuid");
-
-                    b.Property<int>("CurrentSequence")
-                        .HasColumnType("integer");
 
                     b.Property<string>("EngineVersion")
                         .IsRequired()
@@ -189,8 +321,6 @@ namespace Edulytics.Data.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
-
-                    b.HasAlternateKey("SchoolId", "Id");
 
                     b.HasIndex("CurriculumPedagogicalLessonId");
 
@@ -326,11 +456,6 @@ namespace Edulytics.Data.Migrations
                         .HasMaxLength(8000)
                         .HasColumnType("character varying(8000)");
 
-                    b.Property<bool>("IsIndependentConfirmation")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("boolean")
-                        .HasDefaultValue(false);
-
                     b.Property<int>("IncorrectAttemptCount")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
@@ -338,6 +463,11 @@ namespace Edulytics.Data.Migrations
 
                     b.Property<bool?>("IsCorrect")
                         .HasColumnType("boolean");
+
+                    b.Property<bool>("IsIndependentConfirmation")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("LastIncorrectAnswer")
                         .HasMaxLength(2000)
@@ -373,6 +503,9 @@ namespace Edulytics.Data.Migrations
                         .IsRequired()
                         .HasColumnType("bytea");
 
+                    b.Property<Guid>("SchoolId")
+                        .HasColumnType("uuid");
+
                     b.Property<decimal?>("Score")
                         .HasPrecision(10, 2)
                         .HasColumnType("numeric(10,2)");
@@ -400,9 +533,6 @@ namespace Edulytics.Data.Migrations
                     b.Property<int>("UiDifficultyBand")
                         .HasColumnType("integer");
 
-                    b.Property<Guid>("SchoolId")
-                        .HasColumnType("uuid");
-
                     b.HasKey("Id");
 
                     b.HasAlternateKey("SchoolId", "Id");
@@ -412,274 +542,14 @@ namespace Edulytics.Data.Migrations
                     b.HasIndex("SchoolId", "DecisionSnapshotId");
 
                     b.HasIndex("SchoolId", "SessionId", "ExposureFingerprint")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasDatabaseName("IX_AdaptivePracticeTurns_SchoolId_SessionId_ExposureFingerprint");
 
                     b.HasIndex("SchoolId", "SessionId", "Sequence")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasDatabaseName("IX_AdaptivePracticeTurns_SchoolId_SessionId_Sequence");
 
                     b.ToTable("AdaptivePracticeTurns", (string)null);
-                });
-
-            modelBuilder.Entity("Edulytics.Core.Entities.StudentMisconceptionState", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<decimal>("Confidence")
-                        .HasPrecision(8, 6)
-                        .HasColumnType("numeric(8,6)");
-
-                    b.Property<Guid>("CurriculumAdoptionId")
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("EngineVersion")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
-                    b.Property<DateTime>("FirstObservedAtUtc")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateTime?>("LastRemediationAtUtc")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateTime>("LastObservedAtUtc")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("MisconceptionId")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
-
-                    b.Property<int>("ObservationCount")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("QuestionFamily")
-                        .HasMaxLength(240)
-                        .HasColumnType("character varying(240)");
-
-                    b.Property<DateTime?>("ResolvedAtUtc")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .IsRequired()
-                        .HasColumnType("bytea");
-
-                    b.Property<Guid>("SchoolId")
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("SkillId")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("integer");
-
-                    b.Property<Guid>("StudentProfileId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasAlternateKey("SchoolId", "Id");
-
-                    b.HasIndex("SchoolId", "CurriculumAdoptionId");
-
-                    b.HasIndex("SchoolId", "StudentProfileId", "CurriculumAdoptionId", "SkillId", "MisconceptionId")
-                        .IsUnique();
-
-                    b.ToTable("StudentMisconceptionStates", (string)null);
-                });
-
-            modelBuilder.Entity("Edulytics.Core.Entities.StudentRepresentationFluencyState", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("EngineVersion")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
-                    b.Property<int>("EvidenceCount")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("LatestEvidenceAtUtc")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Representation")
-                        .IsRequired()
-                        .HasMaxLength(120)
-                        .HasColumnType("character varying(120)");
-
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .IsRequired()
-                        .HasColumnType("bytea");
-
-                    b.Property<Guid>("SchoolId")
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("SkillId")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
-
-                    b.Property<int>("SuccessCount")
-                        .HasColumnType("integer");
-
-                    b.Property<Guid>("StudentProfileId")
-                        .HasColumnType("uuid");
-
-                    b.Property<decimal>("WeightedFluency")
-                        .HasPrecision(8, 6)
-                        .HasColumnType("numeric(8,6)");
-
-                    b.HasKey("Id");
-
-                    b.HasAlternateKey("SchoolId", "Id");
-
-                    b.HasIndex("SchoolId", "StudentProfileId", "SkillId", "Representation")
-                        .IsUnique();
-
-                    b.ToTable("StudentRepresentationFluencyStates", (string)null);
-                });
-
-            modelBuilder.Entity("Edulytics.Core.Entities.AcademicProgram", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("Code")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
-                    b.Property<DateTime>("CreatedAtUtc")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<bool>("IsDefault")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("character varying(150)");
-
-                    b.Property<string>("NormalizedCode")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .IsRequired()
-                        .HasColumnType("bytea");
-
-                    b.Property<Guid>("SchoolId")
-                        .HasColumnType("uuid");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("UpdatedAtUtc")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SchoolId")
-                        .IsUnique()
-                        .HasFilter("\"IsDefault\" = TRUE");
-
-                    b.HasIndex("SchoolId", "NormalizedCode")
-                        .IsUnique();
-
-                    b.ToTable("AcademicPrograms", (string)null);
-                });
-
-            modelBuilder.Entity("Edulytics.Core.Entities.AcademicYear", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("CreatedAtUtc")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateOnly>("EndsOn")
-                        .HasColumnType("date");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .IsRequired()
-                        .HasColumnType("bytea");
-
-                    b.Property<Guid>("SchoolId")
-                        .HasColumnType("uuid");
-
-                    b.Property<DateOnly>("StartsOn")
-                        .HasColumnType("date");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("UpdatedAtUtc")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SchoolId", "Name")
-                        .IsUnique();
-
-                    b.ToTable("AcademicYears", (string)null);
-                });
-
-            modelBuilder.Entity("Edulytics.Core.Entities.AcademicYearProgramOffering", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("AcademicProgramId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("AcademicYearId")
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("CreatedAtUtc")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<bool>("IsOffered")
-                        .HasColumnType("boolean");
-
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .IsRequired()
-                        .HasColumnType("bytea");
-
-                    b.Property<Guid>("SchoolId")
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("UpdatedAtUtc")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SchoolId", "AcademicProgramId");
-
-                    b.HasIndex("SchoolId", "AcademicYearId", "AcademicProgramId")
-                        .IsUnique();
-
-                    b.ToTable("AcademicYearProgramOfferings", (string)null);
                 });
 
             modelBuilder.Entity("Edulytics.Core.Entities.AnalyticsRefreshState", b =>
@@ -877,49 +747,12 @@ namespace Edulytics.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasAlternateKey("SchoolId", "Id");
-
                     b.HasIndex("SchoolId", "StudentProfileId");
 
                     b.HasIndex("SchoolId", "AssessmentId", "StudentProfileId")
                         .IsUnique();
 
                     b.ToTable("AssessmentAttempts", (string)null);
-                });
-
-            modelBuilder.Entity("Edulytics.Core.Entities.AssessmentTaskResponse", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("AssessmentAttemptId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("AssessmentQuestionId")
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("ResponseText")
-                        .IsRequired()
-                        .HasMaxLength(4000)
-                        .HasColumnType("character varying(4000)");
-
-                    b.Property<Guid>("SchoolId")
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("UpdatedAtUtc")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.HasKey("Id");
-
-                    b.HasAlternateKey("SchoolId", "Id");
-
-                    b.HasIndex("SchoolId", "AssessmentQuestionId");
-
-                    b.HasIndex("SchoolId", "AssessmentAttemptId", "AssessmentQuestionId")
-                        .IsUnique();
-
-                    b.ToTable("AssessmentTaskResponses", (string)null);
                 });
 
             modelBuilder.Entity("Edulytics.Core.Entities.AssessmentItem", b =>
@@ -1115,6 +948,41 @@ namespace Edulytics.Data.Migrations
                     b.ToTable("AssessmentResults", (string)null);
                 });
 
+            modelBuilder.Entity("Edulytics.Core.Entities.AssessmentTaskResponse", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("AssessmentAttemptId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("AssessmentQuestionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("ResponseText")
+                        .IsRequired()
+                        .HasMaxLength(4000)
+                        .HasColumnType("character varying(4000)");
+
+                    b.Property<Guid>("SchoolId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("SchoolId", "Id");
+
+                    b.HasIndex("SchoolId", "AssessmentQuestionId");
+
+                    b.HasIndex("SchoolId", "AssessmentAttemptId", "AssessmentQuestionId")
+                        .IsUnique();
+
+                    b.ToTable("AssessmentTaskResponses", (string)null);
+                });
+
             modelBuilder.Entity("Edulytics.Core.Entities.AuditLog", b =>
                 {
                     b.Property<Guid>("Id")
@@ -1130,7 +998,6 @@ namespace Edulytics.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
-
                     b.Property<Guid?>("ActorUserId")
                         .HasColumnType("uuid");
 
@@ -2130,7 +1997,6 @@ namespace Edulytics.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(64)
                         .HasColumnType("character varying(64)");
-
                     b.Property<int>("UnitCount")
                         .HasColumnType("integer");
 
@@ -2515,6 +2381,52 @@ namespace Edulytics.Data.Migrations
                     b.HasIndex("Status", "CreatedAtUtc");
 
                     b.ToTable("DemoRequests", (string)null);
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.DirectStudentProfile", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("DisplayName")
+                        .IsRequired()
+                        .HasMaxLength(205)
+                        .HasColumnType("character varying(205)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("DirectStudentProfiles", (string)null);
                 });
 
             modelBuilder.Entity("Edulytics.Core.Entities.GradeLevel", b =>
@@ -3083,8 +2995,7 @@ namespace Edulytics.Data.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("character varying(200)");
 
-                    b.Property<Guid?>("LeaseToken")
-                        .HasColumnType("uuid");
+                    b.Property<Guid?>("LeaseToken")                        .HasColumnType("uuid");
 
                     b.Property<DateTime?>("LeaseUntilUtc")
                         .HasColumnType("timestamp with time zone");
@@ -3159,6 +3070,288 @@ namespace Edulytics.Data.Migrations
                     b.HasIndex("OutboxMessageId", "RequeuedAtUtc");
 
                     b.ToTable("OutboxRequeueAudits", (string)null);
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.PersonalEntitlement", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CurriculumLevelKey")
+                        .IsRequired()
+                        .HasMaxLength(160)
+                        .HasColumnType("character varying(160)");
+
+                    b.Property<string>("CurriculumLevelLabel")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<int>("CurriculumLogicalLevel")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("CurriculumPathway")
+                        .HasMaxLength(160)
+                        .HasColumnType("character varying(160)");
+
+                    b.Property<DateTime>("EndsAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("FrameworkCode")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("FrameworkName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<Guid>("FrameworkVersionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("FrameworkVersionName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<DateTime>("StartsAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("StudentUserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("SubjectCode")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("SubjectName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<Guid>("SubscriptionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FrameworkVersionId");
+
+                    b.HasIndex("SubscriptionId")
+                        .IsUnique();
+
+                    b.HasIndex("StudentUserId", "IsActive", "StartsAtUtc", "EndsAtUtc");
+
+                    b.ToTable("PersonalEntitlements", (string)null);
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.PersonalPaymentTransaction", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<decimal>("Amount")
+                        .HasPrecision(14, 2)
+                        .HasColumnType("numeric(14,2)");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CurrencyCode")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("character varying(3)");
+
+                    b.Property<string>("Provider")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("character varying(80)");
+
+                    b.Property<string>("ProviderCheckoutSessionId")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("character varying(256)");
+
+                    b.Property<string>("ProviderEventId")
+                        .HasMaxLength(256)
+                        .HasColumnType("character varying(256)");
+
+                    b.Property<string>("ProviderPaymentId")
+                        .HasMaxLength(256)
+                        .HasColumnType("character varying(256)");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("StudentUserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("SubscriptionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SubscriptionId");
+
+                    b.HasIndex("Provider", "ProviderCheckoutSessionId")
+                        .IsUnique();
+
+                    b.HasIndex("Provider", "ProviderEventId")
+                        .IsUnique()
+                        .HasFilter("\"ProviderEventId\" IS NOT NULL");
+
+                    b.HasIndex("StudentUserId", "CreatedAtUtc");
+
+                    b.ToTable("PersonalPaymentTransactions", (string)null);
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.PersonalSubscription", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime?>("ActivatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<decimal>("BaseAmount")
+                        .HasPrecision(14, 2)
+                        .HasColumnType("numeric(14,2)");
+
+                    b.Property<DateTime?>("CancelledAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CurrencyCode")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("character varying(3)");
+
+                    b.Property<string>("CurriculumLevelKey")
+                        .IsRequired()
+                        .HasMaxLength(160)
+                        .HasColumnType("character varying(160)");
+
+                    b.Property<string>("CurriculumLevelLabel")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<int>("CurriculumLogicalLevel")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("CurriculumPathway")
+                        .HasMaxLength(160)
+                        .HasColumnType("character varying(160)");
+
+                    b.Property<decimal>("DiscountPercent")
+                        .HasPrecision(5, 2)
+                        .HasColumnType("numeric(5,2)");
+
+                    b.Property<DateTime?>("EndsAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("ExternalCustomerReference")
+                        .HasMaxLength(256)
+                        .HasColumnType("character varying(256)");
+
+                    b.Property<string>("ExternalPaymentReference")
+                        .HasMaxLength(256)
+                        .HasColumnType("character varying(256)");
+
+                    b.Property<string>("FrameworkCode")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("FrameworkName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<Guid>("FrameworkVersionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("FrameworkVersionName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<decimal>("PaidAmount")
+                        .HasPrecision(14, 2)
+                        .HasColumnType("numeric(14,2)");
+
+                    b.Property<string>("PaymentProvider")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("character varying(80)");
+
+                    b.Property<int>("PlanType")
+                        .HasColumnType("integer");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<DateTime?>("StartsAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("StudentUserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("SubjectCode")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("SubjectName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExternalPaymentReference");
+
+                    b.HasIndex("FrameworkVersionId");
+
+                    b.HasIndex("StudentUserId", "Status", "EndsAtUtc");
+
+                    b.ToTable("PersonalSubscriptions", (string)null);
                 });
 
             modelBuilder.Entity("Edulytics.Core.Entities.PracticeAttempt", b =>
@@ -3801,8 +3994,7 @@ namespace Edulytics.Data.Migrations
 
                     b.HasIndex("SchoolId", "AssessmentQuestionId");
 
-                    b.HasIndex("SchoolId", "AssessmentResultId", "AssessmentQuestionId")
-                        .IsUnique();
+                    b.HasIndex("SchoolId", "AssessmentResultId", "AssessmentQuestionId")                        .IsUnique();
 
                     b.ToTable("StudentAnswers", (string)null);
                 });
@@ -3872,6 +4064,79 @@ namespace Edulytics.Data.Migrations
                     b.HasIndex("SchoolId", "StudentProfileId", "ExposureFingerprint", "ExposedAtUtc");
 
                     b.ToTable("StudentItemExposures", (string)null);
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.StudentMisconceptionState", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<decimal>("Confidence")
+                        .HasPrecision(8, 6)
+                        .HasColumnType("numeric(8,6)");
+
+                    b.Property<Guid>("CurriculumAdoptionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("EngineVersion")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<DateTime>("FirstObservedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("LastObservedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("LastRemediationAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("MisconceptionId")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<int>("ObservationCount")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("QuestionFamily")
+                        .HasMaxLength(240)
+                        .HasColumnType("character varying(240)");
+
+                    b.Property<DateTime?>("ResolvedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<Guid>("SchoolId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("SkillId")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("StudentProfileId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("SchoolId", "Id");
+
+                    b.HasIndex("SchoolId", "CurriculumAdoptionId");
+
+                    b.HasIndex("SchoolId", "StudentProfileId", "CurriculumAdoptionId", "SkillId", "MisconceptionId")
+                        .IsUnique();
+
+                    b.ToTable("StudentMisconceptionStates", (string)null);
                 });
 
             modelBuilder.Entity("Edulytics.Core.Entities.StudentOutcomeMastery", b =>
@@ -4002,6 +4267,61 @@ namespace Edulytics.Data.Migrations
                     b.HasIndex("SchoolId", "IsArchived", "Status");
 
                     b.ToTable("StudentProfiles", (string)null);
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.StudentRepresentationFluencyState", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("EngineVersion")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<int>("EvidenceCount")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("LatestEvidenceAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Representation")
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("character varying(120)");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<Guid>("SchoolId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("SkillId")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<Guid>("StudentProfileId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("SuccessCount")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("WeightedFluency")
+                        .HasPrecision(8, 6)
+                        .HasColumnType("numeric(8,6)");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("SchoolId", "Id");
+
+                    b.HasIndex("SchoolId", "StudentProfileId", "SkillId", "Representation")
+                        .IsUnique();
+
+                    b.ToTable("StudentRepresentationFluencyStates", (string)null);
                 });
 
             modelBuilder.Entity("Edulytics.Core.Entities.Subject", b =>
@@ -4480,6 +4800,46 @@ namespace Edulytics.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Edulytics.Core.Entities.AcademicProgram", b =>
+                {
+                    b.HasOne("Edulytics.Core.Entities.School", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AcademicYear", b =>
+                {
+                    b.HasOne("Edulytics.Core.Entities.School", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AcademicYearProgramOffering", b =>
+                {
+                    b.HasOne("Edulytics.Core.Entities.School", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.AcademicProgram", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "AcademicProgramId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.AcademicYear", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "AcademicYearId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
 
             modelBuilder.Entity("Edulytics.Core.Entities.AdaptiveDecisionSnapshot", b =>
                 {
@@ -4545,6 +4905,13 @@ namespace Edulytics.Data.Migrations
 
             modelBuilder.Entity("Edulytics.Core.Entities.AdaptivePracticeTurn", b =>
                 {
+                    b.HasOne("Edulytics.Core.Entities.AssessmentItem", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "AssessmentItemId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Edulytics.Core.Entities.AdaptiveDecisionSnapshot", null)
                         .WithMany()
                         .HasForeignKey("SchoolId", "DecisionSnapshotId")
@@ -4555,81 +4922,6 @@ namespace Edulytics.Data.Migrations
                     b.HasOne("Edulytics.Core.Entities.AdaptivePracticeSession", null)
                         .WithMany()
                         .HasForeignKey("SchoolId", "SessionId")
-                        .HasPrincipalKey("SchoolId", "Id")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Edulytics.Core.Entities.AssessmentItem", null)
-                        .WithMany()
-                        .HasForeignKey("SchoolId", "AssessmentItemId")
-                        .HasPrincipalKey("SchoolId", "Id")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Edulytics.Core.Entities.StudentMisconceptionState", b =>
-                {
-                    b.HasOne("Edulytics.Core.Entities.SchoolCurriculumAdoption", null)
-                        .WithMany()
-                        .HasForeignKey("SchoolId", "CurriculumAdoptionId")
-                        .HasPrincipalKey("SchoolId", "Id")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Edulytics.Core.Entities.StudentProfile", null)
-                        .WithMany()
-                        .HasForeignKey("SchoolId", "StudentProfileId")
-                        .HasPrincipalKey("SchoolId", "Id")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Edulytics.Core.Entities.StudentRepresentationFluencyState", b =>
-                {
-                    b.HasOne("Edulytics.Core.Entities.StudentProfile", null)
-                        .WithMany()
-                        .HasForeignKey("SchoolId", "StudentProfileId")
-                        .HasPrincipalKey("SchoolId", "Id")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Edulytics.Core.Entities.AcademicProgram", b =>
-                {
-                    b.HasOne("Edulytics.Core.Entities.School", null)
-                        .WithMany()
-                        .HasForeignKey("SchoolId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Edulytics.Core.Entities.AcademicYear", b =>
-                {
-                    b.HasOne("Edulytics.Core.Entities.School", null)
-                        .WithMany()
-                        .HasForeignKey("SchoolId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Edulytics.Core.Entities.AcademicYearProgramOffering", b =>
-                {
-                    b.HasOne("Edulytics.Core.Entities.School", null)
-                        .WithMany()
-                        .HasForeignKey("SchoolId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Edulytics.Core.Entities.AcademicProgram", null)
-                        .WithMany()
-                        .HasForeignKey("SchoolId", "AcademicProgramId")
-                        .HasPrincipalKey("SchoolId", "Id")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Edulytics.Core.Entities.AcademicYear", null)
-                        .WithMany()
-                        .HasForeignKey("SchoolId", "AcademicYearId")
                         .HasPrincipalKey("SchoolId", "Id")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -4689,46 +4981,22 @@ namespace Edulytics.Data.Migrations
 
             modelBuilder.Entity("Edulytics.Core.Entities.AssessmentAttempt", b =>
                 {
+                    b.HasOne("Edulytics.Core.Entities.School", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Edulytics.Core.Entities.Assessment", null)
                         .WithMany()
                         .HasForeignKey("SchoolId", "AssessmentId")
                         .HasPrincipalKey("SchoolId", "Id")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("Edulytics.Core.Entities.School", null)
-                        .WithMany()
-                        .HasForeignKey("SchoolId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("Edulytics.Core.Entities.StudentProfile", null)
                         .WithMany()
                         .HasForeignKey("SchoolId", "StudentProfileId")
                         .HasPrincipalKey("SchoolId", "Id")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Edulytics.Core.Entities.AssessmentTaskResponse", b =>
-                {
-                    b.HasOne("Edulytics.Core.Entities.AssessmentAttempt", null)
-                        .WithMany()
-                        .HasForeignKey("SchoolId", "AssessmentAttemptId")
-                        .HasPrincipalKey("SchoolId", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Edulytics.Core.Entities.AssessmentQuestion", null)
-                        .WithMany()
-                        .HasForeignKey("SchoolId", "AssessmentQuestionId")
-                        .HasPrincipalKey("SchoolId", "Id")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Edulytics.Core.Entities.School", null)
-                        .WithMany()
-                        .HasForeignKey("SchoolId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
@@ -4817,6 +5085,29 @@ namespace Edulytics.Data.Migrations
                     b.HasOne("Edulytics.Core.Entities.StudentProfile", null)
                         .WithMany()
                         .HasForeignKey("SchoolId", "StudentProfileId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.AssessmentTaskResponse", b =>
+                {
+                    b.HasOne("Edulytics.Core.Entities.School", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.AssessmentAttempt", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "AssessmentAttemptId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.AssessmentQuestion", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "AssessmentQuestionId")
                         .HasPrincipalKey("SchoolId", "Id")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -5211,6 +5502,15 @@ namespace Edulytics.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 
+            modelBuilder.Entity("Edulytics.Core.Entities.DirectStudentProfile", b =>
+                {
+                    b.HasOne("Edulytics.Data.Identity.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Edulytics.Core.Entities.GradeLevel", b =>
                 {
                     b.HasOne("Edulytics.Core.Entities.School", null)
@@ -5410,6 +5710,57 @@ namespace Edulytics.Data.Migrations
                     b.HasOne("Edulytics.Core.Entities.OutboxMessage", null)
                         .WithMany()
                         .HasForeignKey("OutboxMessageId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.PersonalEntitlement", b =>
+                {
+                    b.HasOne("Edulytics.Core.Entities.CurriculumFrameworkVersion", null)
+                        .WithMany()
+                        .HasForeignKey("FrameworkVersionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Data.Identity.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("StudentUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.PersonalSubscription", null)
+                        .WithOne()
+                        .HasForeignKey("Edulytics.Core.Entities.PersonalEntitlement", "SubscriptionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.PersonalPaymentTransaction", b =>
+                {
+                    b.HasOne("Edulytics.Data.Identity.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("StudentUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.PersonalSubscription", null)
+                        .WithMany()
+                        .HasForeignKey("SubscriptionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.PersonalSubscription", b =>
+                {
+                    b.HasOne("Edulytics.Core.Entities.CurriculumFrameworkVersion", null)
+                        .WithMany()
+                        .HasForeignKey("FrameworkVersionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Data.Identity.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("StudentUserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
@@ -5641,6 +5992,22 @@ namespace Edulytics.Data.Migrations
 
                     b.HasOne("Edulytics.Core.Entities.StudentProfile", null)
                         .WithMany()
+                        .HasForeignKey("SchoolId", "StudentProfileId")                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.StudentMisconceptionState", b =>
+                {
+                    b.HasOne("Edulytics.Core.Entities.SchoolCurriculumAdoption", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "CurriculumAdoptionId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Edulytics.Core.Entities.StudentProfile", null)
+                        .WithMany()
                         .HasForeignKey("SchoolId", "StudentProfileId")
                         .HasPrincipalKey("SchoolId", "Id")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -5703,6 +6070,16 @@ namespace Edulytics.Data.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("Edulytics.Core.Entities.StudentRepresentationFluencyState", b =>
+                {
+                    b.HasOne("Edulytics.Core.Entities.StudentProfile", null)
+                        .WithMany()
+                        .HasForeignKey("SchoolId", "StudentProfileId")
+                        .HasPrincipalKey("SchoolId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Edulytics.Core.Entities.Subject", b =>
