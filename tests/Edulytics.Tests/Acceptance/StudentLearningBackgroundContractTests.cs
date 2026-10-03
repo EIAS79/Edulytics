@@ -63,6 +63,21 @@ public sealed class StudentLearningBackgroundContractTests
         Assert.Contains("html[dir=\"rtl\"]", css, StringComparison.Ordinal);
     }
 
+
+    [Fact]
+    public void Classic_lesson_cards_use_tighter_vertical_spacing()
+    {
+        var css = ReadRepositoryFile("src", "Edulytics.Web", "wwwroot", "css", "classic-learning-icons.css");
+
+        Assert.Contains("student-learning-stack + .student-published-lessons", css, StringComparison.Ordinal);
+        Assert.Contains("margin-top:16px", css, StringComparison.Ordinal);
+        Assert.Contains("min-height:0", css, StringComparison.Ordinal);
+        Assert.Contains("height:auto", css, StringComparison.Ordinal);
+        Assert.Contains("margin:0 0 14px", css, StringComparison.Ordinal);
+        Assert.Contains("margin:0 0 16px", css, StringComparison.Ordinal);
+        Assert.Contains("margin-top:0", css, StringComparison.Ordinal);
+    }
+
     private static string ReadRepositoryFile(params string[] relativeSegments)
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);
