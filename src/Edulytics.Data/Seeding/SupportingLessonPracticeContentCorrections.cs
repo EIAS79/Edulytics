@@ -44,7 +44,7 @@ public static class SupportingLessonPracticeContentCorrections
          (lesson.LessonCode.StartsWith("PED:CAMBRIDGE-INTL-MATH:L12:", StringComparison.Ordinal) ||
           lesson.LessonCode.StartsWith("PED:CAMBRIDGE-INTL-MATH:L13:", StringComparison.Ordinal))) ||
         (document.PackCode == MathematicsCurriculumPackRegistry.UaeCode &&
-         new[] { "L3:COMMON:", "L4:COMMON:", "L7:ADVANCED:", "L8:ADVANCED:", "L11:ADVANCED:", "L12:ADVANCED:" }
+         new[] { "L3:COMMON:", "L4:COMMON:", "L7:ADVANCED:", "L8:ADVANCED:", "L11:GENERAL:", "L11:ADVANCED:", "L12:ADVANCED:" }
              .Any(scope => lesson.LessonCode.StartsWith("PED:UAE-MOE-MATH:" + scope, StringComparison.Ordinal)));
 
     public static string GetExpectedContentVersion(
