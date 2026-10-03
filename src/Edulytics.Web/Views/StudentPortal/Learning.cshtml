@@ -72,11 +72,11 @@
     </div>
     <div class="learning-hud-orb" aria-hidden="true"></div>
 
-    @if (Model.Workspace.Learning.Count > 0)
+    @if (Model.Workspace.Learning.Any(subject => subject.Nodes.Count > 0))
     {
         <div class="learning-context-zone">
             <div class="student-learning-stack">
-                @foreach (var subject in Model.Workspace.Learning)
+                @foreach (var subject in Model.Workspace.Learning.Where(subject => subject.Nodes.Count > 0))
                 {
                     var isSelectedContext =
                         Model.SelectedCurriculumAdoptionId == subject.CurriculumAdoptionId &&
