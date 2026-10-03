@@ -20,6 +20,12 @@
         const ny = Math.max(-1, Math.min(1, ((lastY - rect.top) / rect.height - 0.5) * 2));
 
         cards.forEach((card, index) => {
+            if (card.matches(":hover") || card.matches(":focus-within")) {
+                card.style.setProperty("--parallax-x", "0px");
+                card.style.setProperty("--parallax-y", "0px");
+                return;
+            }
+
             const depth = 2.25 + (index % 5) * 0.65;
             card.style.setProperty("--parallax-x", (nx * depth).toFixed(2) + "px");
             card.style.setProperty("--parallax-y", (ny * depth * 0.62).toFixed(2) + "px");

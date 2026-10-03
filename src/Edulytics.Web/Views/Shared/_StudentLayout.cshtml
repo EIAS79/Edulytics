@@ -38,6 +38,20 @@
             <div class="student-secure-card"><strong>@S["StudentPortal"]</strong><span>@User.Identity?.Name</span></div>
         </aside>
         <main class="student-main">
+            @if (controller == "StudentPortal" && action == "Learning")
+            {
+                <div class="student-learning-global-math" aria-hidden="true">
+                    <span class="global-math-mark global-math-mark--a">a² + b² = c²</span>
+                    <span class="global-math-mark global-math-mark--b">f(x) = 2x + 3</span>
+                    <span class="global-math-mark global-math-mark--c">½ + ¼ = ¾</span>
+                    <span class="global-math-mark global-math-mark--d">πr²</span>
+                    <span class="global-math-mark global-math-mark--e">∠ABC = 65°</span>
+                    <span class="global-math-mark global-math-mark--f">x + y = 12</span>
+                    <svg class="global-math-shape global-math-shape--graph" viewBox="0 0 220 150" role="presentation"><path d="M18 126V18M18 126h184M42 102l38-42 34 18 36-50 40 21"/><path d="M54 28v98M92 28v98M130 28v98M168 28v98M18 94h184M18 62h184" opacity=".32"/></svg>
+                    <svg class="global-math-shape global-math-shape--geometry" viewBox="0 0 180 150" role="presentation"><path d="M24 124L88 22l66 102zM88 22v102M24 124h130"/><circle cx="130" cy="58" r="22"/></svg>
+                    <svg class="global-math-shape global-math-shape--cube" viewBox="0 0 170 150" role="presentation"><path d="M28 48l56-28 54 28-54 30zM28 48v61l56 29V78M84 78l54-30v60l-54 30M56 34l56 31"/></svg>
+                </div>
+            }
             <header class="student-topbar">
                 <partial name="_AppLanguageSwitcher" />
                 <div><span class="student-topbar-product">@localizedProductName</span><strong>@ViewData["Title"]</strong></div>

@@ -896,3 +896,121 @@ html[dir="rtl"] .floating-open-lesson::after{content:"←"}
 .floating-open-lesson{
     pointer-events:none;
 }
+
+/* Unified full-page mathematics scene — October refinement */
+.student-learning-page .student-main{
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 78% 12%,rgba(49,169,255,.24),transparent 24%),
+        radial-gradient(circle at 18% 38%,rgba(25,111,211,.17),transparent 27%),
+        radial-gradient(circle at 70% 72%,rgba(66,194,255,.13),transparent 25%),
+        repeating-linear-gradient(0deg,rgba(124,213,255,.032) 0 1px,transparent 1px 42px),
+        repeating-linear-gradient(90deg,rgba(124,213,255,.028) 0 1px,transparent 1px 42px),
+        linear-gradient(180deg,#061b38 0%,#08294d 47%,#061b38 100%)!important;
+}
+.student-learning-page .student-topbar,
+.student-learning-page .student-page-frame,
+.student-learning-page .ed-v3-footer{
+    position:relative;
+    z-index:2;
+    background:transparent!important;
+}
+.student-learning-page .student-topbar{
+    border-bottom:1px solid rgba(146,219,255,.13);
+    box-shadow:0 10px 34px rgba(0,18,45,.13);
+    backdrop-filter:blur(16px) saturate(125%);
+}
+.student-learning-page .student-topbar strong{color:#f5fbff}
+.student-learning-page .student-topbar-product{color:#8fcdf0}
+.student-learning-global-math{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+.student-learning-global-math::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:.34;
+    background:
+        repeating-radial-gradient(circle at 77% 18%,rgba(135,224,255,.15) 0 1px,transparent 1px 18px),
+        linear-gradient(118deg,transparent 0 42%,rgba(100,210,255,.035) 42.2% 42.4%,transparent 42.6% 100%);
+    mask-image:linear-gradient(to bottom,#000 0 92%,transparent 100%);
+}
+.global-math-mark{
+    position:absolute;
+    color:rgba(160,230,255,.19);
+    font-weight:750;
+    letter-spacing:.06em;
+    text-shadow:0 0 18px rgba(69,194,255,.12);
+}
+.global-math-mark--a{top:7%;left:7%;font-size:clamp(1rem,1.6vw,1.6rem)}
+.global-math-mark--b{top:24%;right:8%;font-size:clamp(.9rem,1.35vw,1.35rem)}
+.global-math-mark--c{top:43%;left:10%;font-size:clamp(1rem,1.5vw,1.5rem)}
+.global-math-mark--d{top:61%;right:12%;font-size:clamp(1.05rem,1.65vw,1.7rem)}
+.global-math-mark--e{top:77%;left:18%;font-size:clamp(.9rem,1.3vw,1.3rem)}
+.global-math-mark--f{top:90%;right:24%;font-size:clamp(.9rem,1.25vw,1.25rem)}
+.global-math-shape{
+    position:absolute;
+    fill:none;
+    stroke:rgba(137,225,255,.18);
+    stroke-width:1.2;
+    filter:drop-shadow(0 0 16px rgba(73,190,255,.12));
+}
+.global-math-shape--graph{width:min(18vw,240px);top:13%;right:4%}
+.global-math-shape--geometry{width:min(15vw,190px);top:50%;left:4%}
+.global-math-shape--cube{width:min(14vw,175px);bottom:5%;right:5%}
+.student-learning-page .student-signout{
+    border-color:rgba(160,225,255,.28);
+    background:rgba(9,52,96,.42);
+    color:#f4fbff;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+}
+.student-learning-page .student-signout:hover,
+.student-learning-page .student-signout:focus-visible{
+    background:rgba(32,105,173,.5);
+    color:#fff;
+}
+.student-learning-page .app-language-option{
+    border-color:rgba(147,218,255,.22);
+    background:rgba(8,48,90,.32);
+    color:#c8eaff;
+}
+.student-learning-page .app-language-option.is-active{
+    background:rgba(65,146,224,.34);
+    color:#fff;
+    border-color:rgba(151,225,255,.48);
+}
+.floating-lesson-card-link::before{
+    content:"";
+    position:absolute;
+    inset:-12px;
+    border-radius:30px;
+}
+.floating-open-lesson{
+    pointer-events:auto;
+    cursor:pointer;
+}
+.floating-lesson-card:hover,
+.floating-lesson-card:focus-within{
+    animation:lesson-float var(--float-duration) ease-in-out var(--float-delay) infinite alternate!important;
+    animation-play-state:running!important;
+}
+@media(max-width:720px){
+    .student-learning-page .student-topbar{
+        background:rgba(5,28,59,.18)!important;
+    }
+    .global-math-mark--b,
+    .global-math-mark--e,
+    .global-math-shape--geometry{display:none}
+    .global-math-shape--graph{width:160px;right:-38px;top:20%}
+    .global-math-shape--cube{width:130px;right:-28px;bottom:8%}
+}
+@media(prefers-reduced-motion:reduce){
+    .floating-lesson-card:hover,
+    .floating-lesson-card:focus-within{animation:none!important}
+}
