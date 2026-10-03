@@ -31,7 +31,10 @@ public static class SchoolUserManagementRegistrationExtensions
                     provider.GetRequiredService<
                         ICustomerOnboardingRepository>(),
                     provider.GetRequiredService<
-                        ISchoolSubscriptionRepository>()));
+                        ISchoolSubscriptionRepository>(),
+                    directStudents:
+                        provider.GetService<
+                            IDirectStudentAccountRepository>()));
 
         services.AddScoped<
             DirectStudentCreationFilter>();

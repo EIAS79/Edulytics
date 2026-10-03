@@ -3,6 +3,7 @@ using System;
 using Edulytics.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Edulytics.Data.Migrations
 {
     [DbContext(typeof(EdulyticsDbContext))]
-    partial class EdulyticsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20261003092619_DirectStudentCommerceFoundation")]
+    partial class DirectStudentCommerceFoundation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -794,8 +797,7 @@ namespace Edulytics.Data.Migrations
                         .HasColumnType("character varying(200)");
 
                     b.Property<string>("GenerationMethod")
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                        .HasMaxLength(100)                        .HasColumnType("character varying(100)");
 
                     b.Property<string>("GenerationParametersJson")
                         .HasColumnType("jsonb");
@@ -998,6 +1000,7 @@ namespace Edulytics.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
+
                     b.Property<Guid?>("ActorUserId")
                         .HasColumnType("uuid");
 
@@ -1593,7 +1596,6 @@ namespace Edulytics.Data.Migrations
 
                     b.Property<int>("OutcomeCount")
                         .HasColumnType("integer");
-
                     b.Property<Guid>("SchoolId")
                         .HasColumnType("uuid");
 
@@ -1997,6 +1999,7 @@ namespace Edulytics.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(64)
                         .HasColumnType("character varying(64)");
+
                     b.Property<int>("UnitCount")
                         .HasColumnType("integer");
 
@@ -2392,8 +2395,7 @@ namespace Edulytics.Data.Migrations
                     b.Property<DateTime>("CreatedAtUtc")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("DisplayName")
-                        .IsRequired()
+                    b.Property<string>("DisplayName")                        .IsRequired()
                         .HasMaxLength(205)
                         .HasColumnType("character varying(205)");
 
@@ -2995,7 +2997,8 @@ namespace Edulytics.Data.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("character varying(200)");
 
-                    b.Property<Guid?>("LeaseToken")                        .HasColumnType("uuid");
+                    b.Property<Guid?>("LeaseToken")
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime?>("LeaseUntilUtc")
                         .HasColumnType("timestamp with time zone");
@@ -3192,7 +3195,6 @@ namespace Edulytics.Data.Migrations
                     b.Property<string>("ProviderEventId")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
-
                     b.Property<string>("ProviderPaymentId")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
@@ -3991,10 +3993,10 @@ namespace Edulytics.Data.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
-
                     b.HasIndex("SchoolId", "AssessmentQuestionId");
 
-                    b.HasIndex("SchoolId", "AssessmentResultId", "AssessmentQuestionId")                        .IsUnique();
+                    b.HasIndex("SchoolId", "AssessmentResultId", "AssessmentQuestionId")
+                        .IsUnique();
 
                     b.ToTable("StudentAnswers", (string)null);
                 });
@@ -4791,7 +4793,6 @@ namespace Edulytics.Data.Migrations
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
-
                     b.Property<string>("Value")
                         .HasColumnType("text");
 
@@ -4993,6 +4994,7 @@ namespace Edulytics.Data.Migrations
                         .HasPrincipalKey("SchoolId", "Id")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
                     b.HasOne("Edulytics.Core.Entities.StudentProfile", null)
                         .WithMany()
                         .HasForeignKey("SchoolId", "StudentProfileId")
@@ -5589,8 +5591,7 @@ namespace Edulytics.Data.Migrations
 
             modelBuilder.Entity("Edulytics.Core.Entities.LearningLesson", b =>
                 {
-                    b.HasOne("Edulytics.Core.Entities.School", null)
-                        .WithMany()
+                    b.HasOne("Edulytics.Core.Entities.School", null)                        .WithMany()
                         .HasForeignKey("SchoolId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -5992,7 +5993,8 @@ namespace Edulytics.Data.Migrations
 
                     b.HasOne("Edulytics.Core.Entities.StudentProfile", null)
                         .WithMany()
-                        .HasForeignKey("SchoolId", "StudentProfileId")                        .HasPrincipalKey("SchoolId", "Id")
+                        .HasForeignKey("SchoolId", "StudentProfileId")
+                        .HasPrincipalKey("SchoolId", "Id")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });

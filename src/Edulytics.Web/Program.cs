@@ -211,6 +211,9 @@ builder.Services
     .AddBillingPhase25D();
 
 builder.Services
+    .AddDirectStudentCommerce();
+
+builder.Services
     .AddSubjectSupervisorCompletionPhase19();
 
 builder.Services

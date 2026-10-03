@@ -39,6 +39,7 @@ public sealed class SchoolUserManagementService
     private readonly ICustomerOnboardingRepository? _onboarding;
     private readonly ISchoolSubscriptionRepository? _subscriptions;
     private readonly ISchoolTrialRepository? _trials;
+    private readonly IDirectStudentAccountRepository? _directStudents;
 
     public SchoolUserManagementService(
         ISchoolUserRepository users,
@@ -47,7 +48,8 @@ public sealed class SchoolUserManagementService
         IApplicationTransactionManager? transactions = null,
         ICustomerOnboardingRepository? onboarding = null,
         ISchoolSubscriptionRepository? subscriptions = null,
-        ISchoolTrialRepository? trials = null)
+        ISchoolTrialRepository? trials = null,
+        IDirectStudentAccountRepository? directStudents = null)
     {
         _users = users;
         _schools = schools;
@@ -56,6 +58,7 @@ public sealed class SchoolUserManagementService
         _onboarding = onboarding;
         _subscriptions = subscriptions;
         _trials = trials;
+        _directStudents = directStudents;
     }
 
     public Task<SchoolUserQueryResult<SchoolUserListData>>
@@ -662,13 +665,29 @@ public sealed class SchoolUserManagementService
 
         if (user.SchoolId is null)
         {
-            return role == RoleNames.SuperAdmin
-                ? new SchoolUserSignInDecision(
+            if (role == RoleNames.SuperAdmin)
+            {
+                return new SchoolUserSignInDecision(
                     true,
                     true,
                     null,
-                    role)
-                : Denied();
+                    role);
+            }
+
+            if (role == RoleNames.Student &&
+                _directStudents is not null &&
+                await _directStudents.ExistsAsync(
+                    user.Id,
+                    cancellationToken))
+            {
+                return new SchoolUserSignInDecision(
+                    true,
+                    false,
+                    null,
+                    role);
+            }
+
+            return Denied();
         }
 
         if (role is null ||
