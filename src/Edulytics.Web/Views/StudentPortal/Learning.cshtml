@@ -54,7 +54,7 @@
 else
 {
     <div class="student-learning-stack">
-        @foreach (var subject in Model.Workspace.Learning)
+        @foreach (var subject in Model.Workspace.Learning.Where(subject => subject.Nodes.Count > 0))
         {
             var isSelectedContext =
                 Model.SelectedCurriculumAdoptionId == subject.CurriculumAdoptionId &&
@@ -102,13 +102,7 @@ else
                     </div>
                 </header>
 
-                @if (subject.Nodes.Count == 0)
-                {
-                    <p class="student-empty">@S["NoLearningYet"]</p>
-                }
-                else
-                {
-                    <div class="student-curriculum-tree">
+                <div class="student-curriculum-tree">
                         @foreach (var node in subject.Nodes)
                         {
                             var isExactFocus = exactFocusNodeIds.Contains(node.Id);
@@ -134,16 +128,11 @@ else
                             </div>
                         }
                     </div>
-                }
             </article>
         }
     </div>
 }
 <section class="student-published-lessons">
-    <header class="student-section-header">
-        <h2>@L["AvailableLessons"]</h2>
-    </header>
-
     @if (Model.Lessons.Count == 0)
     {
         <div class="student-empty-state">@L["NoPublishedLessons"]</div>
