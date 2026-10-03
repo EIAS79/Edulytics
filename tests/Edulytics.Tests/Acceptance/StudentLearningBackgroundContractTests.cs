@@ -12,6 +12,7 @@ public sealed class StudentLearningBackgroundContractTests
         Assert.Contains("student-app-shell", layout, StringComparison.Ordinal);
         Assert.Contains("student-page-header", view, StringComparison.Ordinal);
         Assert.Contains("student-learning-stack", view, StringComparison.Ordinal);
+        Assert.Contains("Model.Workspace.Learning.Any(subject => subject.Nodes.Count > 0)", view, StringComparison.Ordinal);
         Assert.Contains("student-published-lessons", view, StringComparison.Ordinal);
         Assert.Contains("student-lesson-grid", view, StringComparison.Ordinal);
     }
@@ -24,7 +25,7 @@ public sealed class StudentLearningBackgroundContractTests
         Assert.Contains("student-learning-card", view, StringComparison.Ordinal);
         Assert.Contains("student-learning-meta", view, StringComparison.Ordinal);
         Assert.Contains("student-curriculum-tree", view, StringComparison.Ordinal);
-        Assert.Contains("@L[\"AvailableLessons\"]", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("@L[\"AvailableLessons\"]", view, StringComparison.Ordinal);
         Assert.Contains("student-lesson-card", view, StringComparison.Ordinal);
         Assert.Contains("@lesson.TopicName", view, StringComparison.Ordinal);
         Assert.DoesNotContain("@lesson.FrameworkName", view, StringComparison.Ordinal);
@@ -72,6 +73,17 @@ public sealed class StudentLearningBackgroundContractTests
         Assert.Contains("student-lesson-card--with-icon", view, StringComparison.Ordinal);
         Assert.Contains("padding:20px 18px 18px", css, StringComparison.Ordinal);
         Assert.Contains("min-height:0", css, StringComparison.Ordinal);
+    }
+
+
+    [Fact]
+    public void My_learning_hides_empty_curriculum_message_and_published_lessons_heading()
+    {
+        var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
+
+        Assert.DoesNotContain("Model.Workspace.Learning.Count == 0", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("@L[\"AvailableLessons\"]", view, StringComparison.Ordinal);
+        Assert.Contains("Model.Workspace.Learning.Any(subject => subject.Nodes.Count > 0)", view, StringComparison.Ordinal);
     }
 
     private static string ReadRepositoryFile(params string[] relativeSegments)
