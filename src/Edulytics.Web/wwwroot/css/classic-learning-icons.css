@@ -68,3 +68,67 @@ html[dir="rtl"] .student-lesson-card--with-icon > h3{
         padding-left:58px;
     }
 }
+
+/* Compact classic lesson cards */
+.student-lesson-grid .student-lesson-card--with-icon{
+    min-height:0;
+    padding:20px 18px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.student-lesson-card--with-icon > h3{
+    margin:0;
+    padding-right:58px;
+    line-height:1.25;
+}
+.student-lesson-card--with-icon > p{
+    margin:2px 0 4px;
+    line-height:1.3;
+}
+.student-lesson-card--with-icon .student-primary-link{
+    margin-top:6px;
+    align-self:flex-start;
+}
+.student-lesson-card--with-icon .classic-lesson-icon{
+    top:16px;
+    right:16px;
+    width:48px;
+    height:40px;
+    border-radius:12px;
+}
+.student-lesson-card--with-icon .classic-lesson-icon svg{
+    width:38px;
+    height:30px;
+}
+html[dir="rtl"] .student-lesson-card--with-icon > h3{
+    padding-right:0;
+    padding-left:58px;
+}
+html[dir="rtl"] .student-lesson-card--with-icon .classic-lesson-icon{
+    right:auto;
+    left:16px;
+}
+@media(max-width:640px){
+    .student-lesson-grid .student-lesson-card--with-icon{
+        padding:16px 14px 14px;
+        gap:8px;
+    }
+    .student-lesson-card--with-icon > h3{
+        padding-right:52px;
+    }
+    html[dir="rtl"] .student-lesson-card--with-icon > h3{
+        padding-right:0;
+        padding-left:52px;
+    }
+    .student-lesson-card--with-icon .classic-lesson-icon{
+        top:12px;
+        right:12px;
+        width:44px;
+        height:36px;
+    }
+    html[dir="rtl"] .student-lesson-card--with-icon .classic-lesson-icon{
+        right:auto;
+        left:12px;
+    }
+}
