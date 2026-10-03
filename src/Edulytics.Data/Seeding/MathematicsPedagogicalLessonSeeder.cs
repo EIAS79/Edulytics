@@ -289,12 +289,19 @@ public sealed class MathematicsPedagogicalLessonSeeder
                     (
                         official.NodeKind is not ("Standard" or "Outcome") &&
                         !(
-                            document.PackCode ==
-                                MathematicsCurriculumPackRegistry.CambridgeCode &&
                             official.NodeKind == "Reference" &&
-                            official.Code.StartsWith(
-                                "CAM:REF:9709:",
-                                StringComparison.Ordinal)
+                            (
+                                (document.PackCode ==
+                                    MathematicsCurriculumPackRegistry.CambridgeCode &&
+                                 official.Code.StartsWith(
+                                    "CAM:REF:9709:",
+                                    StringComparison.Ordinal)) ||
+                                (document.PackCode ==
+                                    MathematicsCurriculumPackRegistry.UaeCode &&
+                                 official.Code.StartsWith(
+                                    "UAE:REF:BOOK:",
+                                    StringComparison.Ordinal))
+                            )
                         )
                     ) ||
                     official.LogicalLevelFrom >
