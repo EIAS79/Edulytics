@@ -27,7 +27,7 @@ public sealed class StudentLearningBackgroundContractTests
         Assert.Contains("@L[\"AvailableLessons\"]", view, StringComparison.Ordinal);
         Assert.Contains("student-lesson-card", view, StringComparison.Ordinal);
         Assert.Contains("@lesson.TopicName", view, StringComparison.Ordinal);
-        Assert.Contains("@lesson.FrameworkName", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("@lesson.FrameworkName", view, StringComparison.Ordinal);
     }
 
     [Fact]
