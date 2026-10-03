@@ -76,7 +76,7 @@ public sealed class StudentLearningBackgroundContractTests
         Assert.Contains("height:auto", css, StringComparison.Ordinal);
         Assert.Contains("margin:0 0 14px", css, StringComparison.Ordinal);
         Assert.Contains("margin:0 0 16px", css, StringComparison.Ordinal);
-        Assert.Contains("margin-top:0", css, StringComparison.Ordinal);
+        Assert.Contains("margin-top:auto", css, StringComparison.Ordinal);
     }
 
 
@@ -131,6 +131,17 @@ public sealed class StudentLearningBackgroundContractTests
         Assert.Contains(@"<partial name=""_AppLanguageSwitcher"" />", layout, StringComparison.Ordinal);
         Assert.Contains(@"class=""student-signout""", layout, StringComparison.Ordinal);
         Assert.Contains(@"student-topbar-product", layout, StringComparison.Ordinal);
+    }
+
+
+    [Fact]
+    public void Classic_lesson_card_actions_align_at_the_bottom_of_each_row()
+    {
+        var css = ReadRepositoryFile("src", "Edulytics.Web", "wwwroot", "css", "classic-learning-icons.css");
+
+        Assert.Contains(".student-lesson-card--with-icon .student-primary-link", css, StringComparison.Ordinal);
+        Assert.Contains("margin-top:auto", css, StringComparison.Ordinal);
+        Assert.Contains("height:auto", css, StringComparison.Ordinal);
     }
 
     private static string ReadRepositoryFile(params string[] relativeSegments)
