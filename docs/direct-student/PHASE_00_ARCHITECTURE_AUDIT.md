@@ -1,6 +1,6 @@
 # Direct Student / Mobile Commerce — Phase 0 Architecture Audit
 
-Date: 2026-10-03  
+Date: 2026-10-03
 Branch: feat/direct-student-mobile-execution
 
 ## Executive finding
