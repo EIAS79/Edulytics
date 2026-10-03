@@ -175,9 +175,13 @@ public sealed class AccountController : Controller
                 RoleNames.Student,
                 StringComparison.Ordinal))
         {
-            return RedirectToAction(
-                "Dashboard",
-                "StudentPortal");
+            return access.SchoolId.HasValue
+                ? RedirectToAction(
+                    "Dashboard",
+                    "StudentPortal")
+                : RedirectToAction(
+                    "Dashboard",
+                    "DirectStudent");
         }
 
         return RedirectToAction(
