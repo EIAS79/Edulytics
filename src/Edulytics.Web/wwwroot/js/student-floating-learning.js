@@ -9,6 +9,27 @@
         return;
     }
 
+    const clearSceneFocus = () => {
+        field.classList.remove("is-card-focused");
+        cards.forEach(card => card.classList.remove("is-scene-focus"));
+    };
+
+    cards.forEach(card => {
+        const activate = () => {
+            field.classList.add("is-card-focused");
+            cards.forEach(item => item.classList.toggle("is-scene-focus", item === card));
+        };
+
+        card.addEventListener("pointerenter", activate, { passive: true });
+        card.addEventListener("pointerleave", clearSceneFocus, { passive: true });
+        card.addEventListener("focusin", activate);
+        card.addEventListener("focusout", event => {
+            if (!card.contains(event.relatedTarget)) {
+                clearSceneFocus();
+            }
+        });
+    });
+
     let frame = 0;
     let lastX = 0;
     let lastY = 0;
