@@ -64,6 +64,7 @@ public sealed class StudentLearningBackgroundContractTests
     }
 
 
+    // CI guard: classic lesson spacing remains intentionally compact.
     [Fact]
     public void Classic_lesson_cards_use_tighter_vertical_spacing()
     {
