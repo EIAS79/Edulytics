@@ -27,6 +27,10 @@ public class EdulyticsDbContext
     public DbSet<ClassGroup> ClassGroups => Set<ClassGroup>();
     public DbSet<Subject> Subjects => Set<Subject>();
     public DbSet<StudentProfile> StudentProfiles => Set<StudentProfile>();
+    public DbSet<DirectStudentProfile> DirectStudentProfiles => Set<DirectStudentProfile>();
+    public DbSet<PersonalSubscription> PersonalSubscriptions => Set<PersonalSubscription>();
+    public DbSet<PersonalEntitlement> PersonalEntitlements => Set<PersonalEntitlement>();
+    public DbSet<PersonalPaymentTransaction> PersonalPaymentTransactions => Set<PersonalPaymentTransaction>();
     public DbSet<TeacherAssignment> TeacherAssignments => Set<TeacherAssignment>();
     public DbSet<SubjectSupervisorAssignment> SubjectSupervisorAssignments => Set<SubjectSupervisorAssignment>();
     public DbSet<ReportExportJob> ReportExportJobs => Set<ReportExportJob>();
@@ -172,6 +176,10 @@ public class EdulyticsDbContext
         builder.ApplyConfiguration(new ClassGroupConfiguration());
         builder.ApplyConfiguration(new SubjectConfiguration());
         builder.ApplyConfiguration(new StudentProfileConfiguration());
+        builder.ApplyConfiguration(new DirectStudentProfileConfiguration());
+        builder.ApplyConfiguration(new PersonalSubscriptionConfiguration());
+        builder.ApplyConfiguration(new PersonalEntitlementConfiguration());
+        builder.ApplyConfiguration(new PersonalPaymentTransactionConfiguration());
         builder.ApplyConfiguration(new TeacherAssignmentConfiguration());
         builder.ApplyConfiguration(new SubjectSupervisorAssignmentConfiguration());
         builder.ApplyConfiguration(new ReportExportJobConfiguration());
