@@ -17,7 +17,7 @@
   "SourceLicense": "Open Government Licence v3.0",
   "RequiredDigitalAttribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
   "SourceSelectionReason": "The official curriculum source remains the academic authority. Edulytics uses open DfE Mathematics material only as lawful pedagogical scaffolding for independently authored lesson explanations where official copyrighted or source-linked prose is not reproduced.",
-  "SourceSelectionEvidence": "Reviewed direct mappings to 3 existing accepted UAE MoE numbered standards cover 3 lessons. The remaining 50 lessons are Supporting. Official code identities and grade/pathway scopes are unchanged; standard meanings were checked against the MoE Strands and Standards Summary.",
+  "SourceSelectionEvidence": "Reviewed direct mappings to 3 existing accepted UAE MoE numbered standards cover 3 lessons. The remaining 50 lessons are Supporting. Official code identities and grade/pathway scopes are unchanged; standard meanings were checked against the MoE Strands and Standards Summary. 1 lesson(s) now also have exact UAE MoE student-book references from reviewed 2025-2026 student books; no MAT identifier was invented.",
   "SourceEvidenceUrls": [
     "https://minhaji.moe.gov.ae/",
     "https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives",
@@ -32,9 +32,9 @@
   "AcquisitionDiagnostics": {
     "UnitCount": 5,
     "LessonCount": 53,
-    "OfficialStandardCount": 3,
-    "AddressingCoverageCount": 3,
-    "FormalMappingCount": 3,
+    "OfficialStandardCount": 4,
+    "AddressingCoverageCount": 4,
+    "FormalMappingCount": 4,
     "LessonsWithoutNumberedGradeReferenceAnyRole": 50,
     "LessonsWithoutNumberedAddressingStandard": 50,
     "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 50,
@@ -1015,8 +1015,19 @@
       "SortOrder": 53,
       "SourceUrl": "https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives",
       "SemanticSha256": "aa6339fae67fab57e051c6e564f038b9d274d4fc3d5ebf6578bce233100b8fce",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:BOOK:G11:ADVANCED:2025-2026:U12",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "UAE:REF:BOOK:G11:ADVANCED:2025-2026:U12",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G11:ADVANCED:2025-2026:U12"
+      ],
       "ApplicableCourses": [
         "UAE-G11-ADVANCED-T1-OGL-V1"
       ],
