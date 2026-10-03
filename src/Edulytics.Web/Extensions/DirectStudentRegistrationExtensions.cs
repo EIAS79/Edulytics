@@ -19,6 +19,14 @@ public static class DirectStudentRegistrationExtensions
             DirectStudentRegistrationService>();
 
         services.AddScoped<
+            IDirectCurriculumCatalogRepository,
+            DirectCurriculumCatalogRepository>();
+
+        services.AddScoped<
+            IDirectPremiumCatalogService,
+            DirectPremiumCatalogService>();
+
+        services.AddScoped<
             IPersonalEntitlementRepository,
             PersonalEntitlementRepository>();
 
