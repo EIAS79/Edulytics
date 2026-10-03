@@ -102,6 +102,15 @@ public sealed class StudentLearningBackgroundContractTests
         Assert.Contains(@"\s*\(\s*same\s*(?::\s*)?(Build the Idea|Reason and Apply)?\s*\)?\s*$", view, StringComparison.Ordinal);
     }
 
+
+    [Fact]
+    public void My_learning_header_does_not_show_redundant_eyebrow_label()
+    {
+        var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
+
+        Assert.DoesNotContain(@"<span class=""student-eyebrow"">@S[""MyLearning""]</span>", view, StringComparison.Ordinal);
+    }
+
     private static string ReadRepositoryFile(params string[] relativeSegments)
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);
