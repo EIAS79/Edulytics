@@ -80,19 +80,26 @@
     window.addEventListener("keydown", unlockHoverSound, { once: true });
 
     cards.forEach(card => {
-        const activate = () => {
+        const activate = (playSound = false) => {
             const wasFocused = card.classList.contains("is-scene-focus");
             field.classList.add("is-card-focused");
             cards.forEach(item => item.classList.toggle("is-scene-focus", item === card));
 
-            if (!wasFocused) {
+            if (playSound && !wasFocused) {
                 playHoverSound();
             }
         };
 
-        card.addEventListener("pointerenter", activate, { passive: true });
+        card.addEventListener("pointerenter", async event => {
+            if (!event.pointerType || event.pointerType === "mouse") {
+                if (!soundUnlocked) {
+                    await unlockHoverSound();
+                }
+                activate(true);
+            }
+        }, { passive: true });
         card.addEventListener("pointerleave", clearSceneFocus, { passive: true });
-        card.addEventListener("focusin", activate);
+        card.addEventListener("focusin", () => activate(false));
         card.addEventListener("focusout", event => {
             if (!card.contains(event.relatedTarget)) {
                 clearSceneFocus();
