@@ -1105,3 +1105,70 @@ html[dir="rtl"] .floating-open-lesson::after{content:"←"}
     .floating-lesson-card.is-scene-focus{animation:none!important;transform:none!important}
     .floating-lesson-field.is-card-focused .floating-lesson-card:not(.is-scene-focus){opacity:.74}
 }
+
+
+/* Focused-card detail reveal */
+.floating-lesson-details{
+    display:grid;
+    gap:8px;
+    margin-top:12px;
+    opacity:0;
+    max-height:0;
+    overflow:hidden;
+    transform:translateY(8px);
+    transition:
+        opacity .22s ease,
+        transform .28s ease,
+        max-height .32s ease;
+    pointer-events:none;
+}
+.floating-lesson-card.is-scene-focus .floating-lesson-card__top{
+    align-items:flex-start;
+    min-height:auto;
+    padding-inline-end:clamp(112px,10vw,150px);
+}
+.floating-lesson-card.is-scene-focus .floating-lesson-details{
+    opacity:1;
+    max-height:220px;
+    transform:translateY(0);
+    pointer-events:auto;
+}
+.floating-lesson-card.is-scene-focus .floating-lesson-category{
+    display:block;
+}
+.floating-lesson-card.is-scene-focus .floating-lesson-context{
+    display:grid;
+    gap:4px;
+}
+.floating-lesson-card.is-scene-focus .floating-lesson-actions{
+    display:flex;
+    gap:8px;
+    align-items:center;
+    margin-top:4px;
+}
+.floating-lesson-card.is-scene-focus .floating-open-lesson{
+    display:inline-flex;
+}
+.floating-lesson-card:not(.is-scene-focus) .floating-lesson-category,
+.floating-lesson-card:not(.is-scene-focus) .floating-lesson-context,
+.floating-lesson-card:not(.is-scene-focus) .floating-lesson-actions{
+    display:none;
+}
+.floating-lesson-card.is-scene-focus{
+    min-height:280px;
+}
+.floating-lesson-card.is-scene-focus .floating-lesson-card-link{
+    min-height:250px;
+    justify-content:flex-start;
+}
+@media(max-width:720px){
+    .floating-lesson-card.is-scene-focus{
+        min-height:240px;
+    }
+    .floating-lesson-card.is-scene-focus .floating-lesson-card-link{
+        min-height:215px;
+    }
+    .floating-lesson-card.is-scene-focus .floating-lesson-card__top{
+        padding-inline-end:96px;
+    }
+}
