@@ -92,6 +92,35 @@ public sealed class StudentLearningBackgroundContractTests
         Assert.DoesNotContain("<h3>@lesson.Title</h3>", view, StringComparison.Ordinal);
     }
 
+
+    [Fact]
+    public void Student_lesson_title_cleanup_removes_leftover_same_fragment()
+    {
+        var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
+
+        Assert.Contains(@"\s*\(\s*same\s*$", view, StringComparison.Ordinal);
+        Assert.Contains(@"\s*\(\s*same\s*(?::\s*)?(Build the Idea|Reason and Apply)?\s*\)?\s*$", view, StringComparison.Ordinal);
+    }
+
+
+    [Fact]
+    public void My_learning_header_does_not_show_redundant_eyebrow_label()
+    {
+        var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
+
+        Assert.DoesNotContain(@"<span class=""student-eyebrow"">@S[""MyLearning""]</span>", view, StringComparison.Ordinal);
+    }
+
+
+    [Fact]
+    public void My_learning_header_does_not_show_redundant_page_title()
+    {
+        var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
+
+        Assert.DoesNotContain(@"<h1>@S[""LearningTitle""]</h1>", view, StringComparison.Ordinal);
+        Assert.Contains(@"<p>@S[""LearningSubtitle""]</p>", view, StringComparison.Ordinal);
+    }
+
     private static string ReadRepositoryFile(params string[] relativeSegments)
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);
