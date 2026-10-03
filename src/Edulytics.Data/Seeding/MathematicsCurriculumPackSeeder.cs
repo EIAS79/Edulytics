@@ -98,7 +98,10 @@ public sealed class MathematicsCurriculumPackSeeder
                             d.PackCode ==
                                 MathematicsCurriculumPackRegistry.CambridgeCode
                                 ? x.Kind is "Outcome" or "Reference"
-                                : x.Kind is "Standard" or "Outcome"
+                                : d.PackCode ==
+                                    MathematicsCurriculumPackRegistry.UaeCode
+                                    ? x.Kind is "Standard" or "Outcome" or "Reference"
+                                    : x.Kind is "Standard" or "Outcome"
                         ))
                 .ToArray();
         if (official.Length != d.OfficialNodeCount)
@@ -128,8 +131,8 @@ public sealed class MathematicsCurriculumPackSeeder
         {
             if (d.SchemaVersion != 14 ||
                 d.VersionCode != "MOE-2026-2027-T1" ||
-                d.NodeCount != 137 ||
-                d.OfficialNodeCount != 47 ||
+                d.NodeCount != 155 ||
+                d.OfficialNodeCount != 65 ||
                 d.UnitCount != 6 ||
                 d.LessonCount != 42 ||
                 d.LinkCount != 48 ||
@@ -432,6 +435,15 @@ public sealed class MathematicsCurriculumPackSeeder
                 return;
             }
 
+            if (await TryRepairAcceptedUaeOfficialBookReferencesAsync(
+                    d,
+                    state,
+                    version,
+                    ct))
+            {
+                return;
+            }
+
             throw new InvalidOperationException(
                 $"Immutable accepted pack drift: {d.PackCode}");
         }
@@ -660,11 +672,11 @@ public sealed class MathematicsCurriculumPackSeeder
 
         if (d.SchemaVersion != 14 ||
             d.SourceDigest !=
-                "470e9bd35d26931e3c4a2e4666b97a35481c3212b72024060c49dd6160bf776f" ||
+                "3d367a4b9d441301d653854ae91b81cb655b6fd4502c3f1def086818450ac9d6" ||
             d.ContentDigest !=
-                "bac04756a72853ba6be0ccf41d0d0e55d0381be62c2001b9c5d4ae3382469ae4" ||
-            d.NodeCount != 137 ||
-            d.OfficialNodeCount != 47 ||
+                "bdfbde7d3b15c5353244b43ac8e68cd081b1b722a1082bd16ea734df5f345676" ||
+            d.NodeCount != 155 ||
+            d.OfficialNodeCount != 65 ||
             d.UnitCount != 6 ||
             d.LessonCount != 42 ||
             d.LinkCount != 48)
@@ -705,10 +717,10 @@ public sealed class MathematicsCurriculumPackSeeder
             .Except(existingByCode.Keys, StringComparer.Ordinal)
             .ToArray();
 
-        if (stale.Length != 0 || missing.Length != 38)
+        if (stale.Length != 0 || missing.Length != 56)
         {
             throw new InvalidOperationException(
-                "UAE 2025-2026 additive repair code-set fingerprint drift.");
+                "UAE additive repair code-set fingerprint drift.");
         }
 
         var now = DateTime.UtcNow;
@@ -805,6 +817,165 @@ public sealed class MathematicsCurriculumPackSeeder
 
         version.Name = d.VersionName;
         version.UpdatedAtUtc = now;
+
+        await _db.SaveChangesAsync(ct);
+        return true;
+    }
+
+    private async Task<bool> TryRepairAcceptedUaeOfficialBookReferencesAsync(
+        Doc d,
+        CurriculumPackImportState state,
+        CurriculumFrameworkVersion version,
+        CancellationToken ct)
+    {
+        if (d.PackCode != MathematicsCurriculumPackRegistry.UaeCode ||
+            state.FrameworkCode != MathematicsCurriculumPackRegistry.UaeCode ||
+            state.VersionCode != "MOE-2026-2027-T1")
+        {
+            return false;
+        }
+
+        // Fail closed: this upgrade may run only from the accepted 137-node
+        // UAE target-coverage baseline that immediately preceded the verified
+        // student-book reference batch.
+        if (state.SourceDigest !=
+                "470e9bd35d26931e3c4a2e4666b97a35481c3212b72024060c49dd6160bf776f" ||
+            state.ContentDigest !=
+                "bac04756a72853ba6be0ccf41d0d0e55d0381be62c2001b9c5d4ae3382469ae4" ||
+            state.NodeCount != 137 ||
+            state.OfficialNodeCount != 47 ||
+            state.UnitCount != 6 ||
+            state.LessonCount != 42 ||
+            state.LinkCount != 48 ||
+            !state.IsComplete)
+        {
+            return false;
+        }
+
+        if (d.SchemaVersion != 14 ||
+            d.SourceDigest !=
+                "3d367a4b9d441301d653854ae91b81cb655b6fd4502c3f1def086818450ac9d6" ||
+            d.ContentDigest !=
+                "bdfbde7d3b15c5353244b43ac8e68cd081b1b722a1082bd16ea734df5f345676" ||
+            d.NodeCount != 155 ||
+            d.OfficialNodeCount != 65 ||
+            d.UnitCount != 6 ||
+            d.LessonCount != 42 ||
+            d.LinkCount != 48)
+        {
+            throw new InvalidOperationException(
+                "UAE official student-book reference repair target drift.");
+        }
+
+        var existing = await _db.CurriculumPackContentNodes
+            .Where(x => x.FrameworkVersionId == version.Id)
+            .ToArrayAsync(ct);
+        var existingLinks = await _db.CurriculumPackNodeLinks
+            .Where(x => x.FrameworkVersionId == version.Id)
+            .ToArrayAsync(ct);
+
+        if (existing.Length != 137 || existingLinks.Length != 48)
+        {
+            throw new InvalidOperationException(
+                "UAE student-book repair persisted-row fingerprint drift.");
+        }
+
+        var expectedIds = d.Nodes.ToDictionary(
+            x => x.Code,
+            x => G($"node|{d.PackCode}|{d.VersionCode}|{x.Code}"),
+            StringComparer.Ordinal);
+        var expectedByCode = d.Nodes.ToDictionary(
+            x => x.Code,
+            StringComparer.Ordinal);
+        var existingByCode = existing.ToDictionary(
+            x => x.Code,
+            StringComparer.Ordinal);
+
+        var stale = existingByCode.Keys
+            .Except(expectedByCode.Keys, StringComparer.Ordinal)
+            .ToArray();
+        var missing = expectedByCode.Keys
+            .Except(existingByCode.Keys, StringComparer.Ordinal)
+            .OrderBy(x => x, StringComparer.Ordinal)
+            .ToArray();
+
+        if (stale.Length != 0 ||
+            missing.Length != 18 ||
+            missing.Any(x =>
+                !x.StartsWith(
+                    "UAE:REF:BOOK:",
+                    StringComparison.Ordinal)))
+        {
+            throw new InvalidOperationException(
+                "UAE student-book reference code-set fingerprint drift.");
+        }
+
+        foreach (var current in existing)
+        {
+            var expected = expectedByCode[current.Code];
+            Guid? expectedParentId = expected.ParentCode is null
+                ? null
+                : expectedIds[expected.ParentCode];
+
+            if (!PersistedNodeMatchesDocument(
+                    current,
+                    d,
+                    expected,
+                    expectedIds[expected.Code],
+                    expectedParentId,
+                    version.Id))
+            {
+                throw new InvalidOperationException(
+                    $"Unexpected UAE pre-book-reference drift: {current.Code}.");
+            }
+        }
+
+        var now = DateTime.UtcNow;
+        foreach (var expected in d.Nodes
+                     .Where(x => !existingByCode.ContainsKey(x.Code))
+                     .OrderBy(x => x.SortOrder))
+        {
+            _db.CurriculumPackContentNodes.Add(
+                new CurriculumPackContentNode
+                {
+                    Id = expectedIds[expected.Code],
+                    FrameworkVersionId = version.Id,
+                    FrameworkCode = d.PackCode,
+                    VersionCode = d.VersionCode,
+                    NodeKind = expected.Kind,
+                    Code = expected.Code,
+                    ParentId = expected.ParentCode is null
+                        ? null
+                        : expectedIds[expected.ParentCode],
+                    LogicalLevelFrom = expected.LogicalLevelFrom,
+                    LogicalLevelTo = expected.LogicalLevelTo,
+                    NativeLevel = expected.NativeLevel,
+                    Pathway = expected.Pathway,
+                    Title = expected.Title,
+                    OfficialText = expected.OfficialText,
+                    AuthorDescription = expected.AuthorDescription,
+                    SourceAuthority = expected.SourceAuthority,
+                    SourceUrl = expected.SourceUrl,
+                    SourceLocator = expected.SourceLocator,
+                    Attribution = expected.Attribution,
+                    IsOfficial = expected.IsOfficial,
+                    IsActive = expected.IsActive,
+                    SortOrder = expected.SortOrder,
+                    ContentHash = expected.ContentHash,
+                    CreatedAtUtc = now,
+                    UpdatedAtUtc = now
+                });
+        }
+
+        state.SourceDigest = d.SourceDigest;
+        state.ContentDigest = d.ContentDigest;
+        state.NodeCount = d.NodeCount;
+        state.OfficialNodeCount = d.OfficialNodeCount;
+        state.UnitCount = d.UnitCount;
+        state.LessonCount = d.LessonCount;
+        state.LinkCount = d.LinkCount;
+        state.IsComplete = true;
+        state.ImportedAtUtc = now;
 
         await _db.SaveChangesAsync(ct);
         return true;
