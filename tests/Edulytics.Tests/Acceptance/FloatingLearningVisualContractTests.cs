@@ -3,36 +3,26 @@ namespace Edulytics.Tests.Acceptance;
 public sealed class FloatingLearningVisualContractTests
 {
     [Fact]
-    public void Student_learning_uses_contextual_holographic_visuals_without_changing_lesson_route()
+    public void Student_learning_uses_classic_cards_without_floating_visual_runtime()
     {
         var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
 
-        Assert.Contains("LessonVisualKind", view, StringComparison.Ordinal);
-        Assert.Contains(@"data-visual=""@visualKind""", view, StringComparison.Ordinal);
-        Assert.Contains(@"case ""add-subtract""", view, StringComparison.Ordinal);
-        Assert.Contains(@"case ""fraction""", view, StringComparison.Ordinal);
-        Assert.Contains(@"case ""angle""", view, StringComparison.Ordinal);
-        Assert.Contains(@"case ""area""", view, StringComparison.Ordinal);
-        Assert.Contains(@"case ""coordinates""", view, StringComparison.Ordinal);
-        Assert.Contains(@"case ""shape-net""", view, StringComparison.Ordinal);
-        Assert.Contains(@"case ""probability""", view, StringComparison.Ordinal);
-        Assert.Contains(@"case ""data""", view, StringComparison.Ordinal);
+        Assert.Contains(@"class=""student-lesson-card""", view, StringComparison.Ordinal);
         Assert.Contains(@"asp-action=""Lesson""", view, StringComparison.Ordinal);
         Assert.Contains(@"asp-route-id=""@lesson.Id""", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("LessonVisualKind", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("data-floating-lesson", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("learning-math-atmosphere", view, StringComparison.Ordinal);
     }
 
     [Fact]
-    public void Floating_motion_runs_independently_of_pointer_and_respects_reduced_motion()
+    public void Classic_learning_view_does_not_reference_floating_assets()
     {
-        var css = ReadRepositoryFile("src", "Edulytics.Web", "wwwroot", "css", "student-floating-learning.css");
-        var js = ReadRepositoryFile("src", "Edulytics.Web", "wwwroot", "js", "student-floating-learning.js");
+        var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
 
-        Assert.Contains("animation:lesson-float", css, StringComparison.Ordinal);
-        Assert.Contains("@keyframes lesson-float", css, StringComparison.Ordinal);
-        Assert.Contains("infinite alternate", css, StringComparison.Ordinal);
-        Assert.Contains("@media(prefers-reduced-motion:reduce)", css, StringComparison.Ordinal);
-        Assert.Contains("prefers-reduced-motion: reduce", js, StringComparison.Ordinal);
-        Assert.Contains("pointermove", js, StringComparison.Ordinal);
+        Assert.DoesNotContain("student-floating-learning.css", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("student-floating-learning.js", view, StringComparison.Ordinal);
+        Assert.Contains("round5-ux-fixes.css", view, StringComparison.Ordinal);
     }
 
     private static string ReadRepositoryFile(params string[] relativeSegments)
