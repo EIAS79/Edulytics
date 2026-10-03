@@ -1341,3 +1341,50 @@ html[dir="rtl"] .floating-lesson-card.is-scene-focus .floating-lesson-card__top{
         inset-inline-end:10px;
     }
 }
+
+
+/* Resting card composition: icon above, full-width lesson title below */
+.floating-lesson-card:not(.is-scene-focus) .floating-lesson-card-link{
+    min-height:214px;
+    display:block;
+}
+.floating-lesson-card:not(.is-scene-focus) .floating-lesson-card__top{
+    min-height:214px;
+    display:block;
+    padding:108px 0 18px;
+}
+.floating-lesson-card:not(.is-scene-focus) .floating-lesson-card h3{
+    width:100%;
+    max-width:none;
+    margin:0;
+    font-size:clamp(1.08rem,1.32vw,1.26rem);
+    line-height:1.28;
+    text-wrap:balance;
+}
+.floating-lesson-card:not(.is-scene-focus) .floating-lesson-visual{
+    inset-block-start:18px;
+    inset-inline-end:18px;
+    width:clamp(92px,7.4vw,116px);
+    height:clamp(72px,6vw,92px);
+    transform:none;
+}
+html[dir="rtl"] .floating-lesson-card:not(.is-scene-focus) .floating-lesson-visual{
+    inset-inline-end:auto;
+    inset-inline-start:18px;
+}
+@media(max-width:720px){
+    .floating-lesson-card:not(.is-scene-focus) .floating-lesson-card__top{
+        min-height:188px;
+        padding:92px 0 14px;
+    }
+    .floating-lesson-card:not(.is-scene-focus) .floating-lesson-visual{
+        width:80px;
+        height:64px;
+        inset-block-start:14px;
+        inset-inline-end:12px;
+    }
+    html[dir="rtl"] .floating-lesson-card:not(.is-scene-focus) .floating-lesson-visual{
+        inset-inline-end:auto;
+        inset-inline-start:12px;
+    }
+}
