@@ -295,6 +295,14 @@ public sealed class MathematicsPedagogicalLessonSeeder
                             official.Code.StartsWith(
                                 "CAM:REF:9709:",
                                 StringComparison.Ordinal)
+                        ) &&
+                        !(
+                            document.PackCode ==
+                                MathematicsCurriculumPackRegistry.UaeCode &&
+                            official.NodeKind == "Reference" &&
+                            official.Code.StartsWith(
+                                "UAE:REF:BOOK:",
+                                StringComparison.Ordinal)
                         )
                     ) ||
                     official.LogicalLevelFrom >

@@ -17,7 +17,7 @@
   "SourceLicense": "Open Government Licence v3.0",
   "RequiredDigitalAttribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
   "SourceSelectionReason": "The official curriculum source remains the academic authority. Edulytics uses open DfE Mathematics material only as lawful pedagogical scaffolding for independently authored lesson explanations where official copyrighted or source-linked prose is not reproduced.",
-  "SourceSelectionEvidence": "Reviewed direct mappings to 13 existing accepted UAE MoE numbered standards cover 20 lessons. The remaining 5 lessons are Supporting. Official code identities and grade/pathway scopes are unchanged; standard meanings were checked against the MoE Strands and Standards Summary.",
+  "SourceSelectionEvidence": "Reviewed direct mappings to 13 existing accepted UAE MoE numbered standards cover 20 lessons. The remaining 5 Grade 4 lessons are now anchored to explicit 2026-2027 UAE Grade 4 General Student Book unit/lesson references; no numbered standard is invented.",
   "SourceEvidenceUrls": [
     "https://minhaji.moe.gov.ae/",
     "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
@@ -27,13 +27,13 @@
     "https://www.scribd.com/document/826281797/Strands-and-Standards-Summary-MAT"
   ],
   "SourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official UAE Ministry of Education wording is not reproduced. Edulytics learner-facing bodies are independently authored.",
-  "SemanticGraphSha256": "55b7740f15189e8a124c18439e659aaaea50ee0411b46817e8bd7a1dac9614b5",
+  "SemanticGraphSha256": "ed25491b1922646e217710bea87de22e7d290c17906161bdfac11a6f078c0e46",
   "AcquisitionDiagnostics": {
     "UnitCount": 5,
     "LessonCount": 25,
     "OfficialStandardCount": 13,
     "AddressingCoverageCount": 13,
-    "FormalMappingCount": 20,
+    "FormalMappingCount": 25,
     "LessonsWithoutNumberedGradeReferenceAnyRole": 5,
     "LessonsWithoutNumberedAddressingStandard": 5,
     "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 5,
@@ -237,8 +237,19 @@
       "SortOrder": 6,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "a9ca4d9283d0313905aea70818d1e823265138edb51ae51875f96b4607aa00c7",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:BOOK:G4:COMMON:T1:U04:MULTIPLICATION-BY-ONE-DIGIT-NUMBERS",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "UAE:REF:BOOK:G4:COMMON:T1:U04:MULTIPLICATION-BY-ONE-DIGIT-NUMBERS",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G4:COMMON:T1:U04:MULTIPLICATION-BY-ONE-DIGIT-NUMBERS"
+      ],
       "ApplicableCourses": [
         "UAE-G4-COMMON-T1-OGL-V1"
       ],
@@ -254,8 +265,19 @@
       "SortOrder": 7,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "56a5cebd75becf35048ae15b702d353e54e03ee4cdd7bb33b1a0575c89b586fa",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:BOOK:G4:COMMON:T1:U06:DIVISION-WITH-REMAINDERS",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "UAE:REF:BOOK:G4:COMMON:T1:U06:DIVISION-WITH-REMAINDERS",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G4:COMMON:T1:U06:DIVISION-WITH-REMAINDERS"
+      ],
       "ApplicableCourses": [
         "UAE-G4-COMMON-T1-OGL-V1"
       ],
@@ -607,8 +629,19 @@
       "SortOrder": 20,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "db3c8005914065bf76644515acbe9bca6d74102be067a604993bcf2ac13afd7f",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:BOOK:G4:COMMON:T1:U16:QUADRILATERALS",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "UAE:REF:BOOK:G4:COMMON:T1:U16:QUADRILATERALS",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G4:COMMON:T1:U16:QUADRILATERALS"
+      ],
       "ApplicableCourses": [
         "UAE-G4-COMMON-T1-OGL-V1"
       ],
@@ -652,8 +685,19 @@
       "SortOrder": 22,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "5035920e78098c6d9b37b127fb5b41feaf2a985b92c3e384e09185b442ede828",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:BOOK:G4:COMMON:T1:U12:LINE-SYMMETRY",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "UAE:REF:BOOK:G4:COMMON:T1:U12:LINE-SYMMETRY",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G4:COMMON:T1:U12:LINE-SYMMETRY"
+      ],
       "ApplicableCourses": [
         "UAE-G4-COMMON-T1-OGL-V1"
       ],
@@ -697,8 +741,19 @@
       "SortOrder": 24,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SemanticSha256": "e58c66dc53a60c16cec9a049bd13d62dddc7bc3185c873571874a4047a1e4238",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:BOOK:G4:COMMON:T1:U13:LINE-GRAPHS",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "UAE:REF:BOOK:G4:COMMON:T1:U13:LINE-GRAPHS",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G4:COMMON:T1:U13:LINE-GRAPHS"
+      ],
       "ApplicableCourses": [
         "UAE-G4-COMMON-T1-OGL-V1"
       ],
