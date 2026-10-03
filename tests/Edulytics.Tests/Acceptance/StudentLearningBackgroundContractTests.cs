@@ -17,17 +17,20 @@ public sealed class StudentLearningBackgroundContractTests
     }
 
     [Fact]
-    public void My_learning_page_restores_curriculum_and_lesson_context_blocks()
+    public void My_learning_page_keeps_curriculum_context_but_removes_redundant_lesson_copy()
     {
         var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
 
         Assert.Contains("student-learning-card", view, StringComparison.Ordinal);
         Assert.Contains("student-learning-meta", view, StringComparison.Ordinal);
         Assert.Contains("student-curriculum-tree", view, StringComparison.Ordinal);
-        Assert.Contains("@L[\"AvailableLessons\"]", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("@L[\"AvailableLessons\"]", view, StringComparison.Ordinal);
         Assert.Contains("student-lesson-card", view, StringComparison.Ordinal);
         Assert.Contains("@lesson.TopicName", view, StringComparison.Ordinal);
-        Assert.Contains("@lesson.FrameworkName", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("@lesson.FrameworkName", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("student-lesson-primary-context", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("student-lesson-secondary-context", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("<p class=\"student-empty\">@S[\"NoLearningYet\"]</p>", view, StringComparison.Ordinal);
     }
 
     [Fact]

@@ -17,14 +17,15 @@ public sealed class Round4ManualAcceptanceTests
     }
 
     [Fact]
-    public void Student_lesson_cards_remove_math_badge_prioritize_stage_and_align_actions()
+    public void Student_lesson_cards_remove_redundant_context_and_keep_actions_aligned()
     {
         var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
         var css = ReadRepositoryFile("src", "Edulytics.Web", "wwwroot", "css", "round4-ux-display.css");
 
         Assert.DoesNotContain("student-subject-code\">@lesson.SubjectCode", view, StringComparison.Ordinal);
-        Assert.Contains("@lesson.GradeName · Mathematics", view, StringComparison.Ordinal);
-        Assert.Contains("student-lesson-primary-context", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("@lesson.GradeName · Mathematics", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("student-lesson-primary-context", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("@lesson.FrameworkName", view, StringComparison.Ordinal);
         Assert.Contains("margin-top: auto", css, StringComparison.Ordinal);
         Assert.Contains("justify-content: center", css, StringComparison.Ordinal);
         Assert.Contains("align-items: center", css, StringComparison.Ordinal);
