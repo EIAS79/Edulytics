@@ -111,6 +111,16 @@ public sealed class StudentLearningBackgroundContractTests
         Assert.DoesNotContain(@"<span class=""student-eyebrow"">@S[""MyLearning""]</span>", view, StringComparison.Ordinal);
     }
 
+
+    [Fact]
+    public void My_learning_header_does_not_show_redundant_page_title()
+    {
+        var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
+
+        Assert.DoesNotContain(@"<h1>@S[""LearningTitle""]</h1>", view, StringComparison.Ordinal);
+        Assert.Contains(@"<p>@S[""LearningSubtitle""]</p>", view, StringComparison.Ordinal);
+    }
+
     private static string ReadRepositoryFile(params string[] relativeSegments)
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);
