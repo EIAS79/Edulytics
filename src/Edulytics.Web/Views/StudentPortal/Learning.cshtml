@@ -314,6 +314,20 @@
 
                         <div class="floating-lesson-card__top">
                             <h3>@lesson.Title</h3>
+                            <div class="floating-lesson-details">
+                                <div class="floating-lesson-category">@lesson.TopicName</div>
+                                <div class="floating-lesson-context student-lesson-context">
+                                    <span class="student-lesson-primary-context">@lesson.GradeName · Mathematics</span>
+                                    <span class="student-lesson-secondary-context">@lesson.FrameworkName</span>
+                                </div>
+                                <div class="floating-lesson-actions">
+                                    <span class="floating-open-lesson">@L["OpenLesson"]</span>
+                                    @if (lesson.IsSupporting)
+                                    {
+                                        <span class="floating-supporting">@L["SupportingLesson"]</span>
+                                    }
+                                </div>
+                            </div>
                         </div>
                         </a>
                     </article>
