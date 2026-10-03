@@ -2,327 +2,140 @@
 @model Edulytics.Web.ViewModels.StudentPortal.StudentLearningViewModel
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonContentResource> L
-@functions {
-    private static string LessonVisualKind(string title, string topic)
-    {
-        var text = $"{title} {topic}".ToLowerInvariant();
-
-        if (text.Contains("add") || text.Contains("subtract") || text.Contains("dodaw") || text.Contains("odejm"))
-            return "add-subtract";
-        if (text.Contains("multip") || text.Contains("times table") || text.Contains("mnoż"))
-            return "multiply";
-        if (text.Contains("divid") || text.Contains("division") || text.Contains("dziel"))
-            return "divide";
-        if (text.Contains("fraction") || text.Contains("ułam") || text.Contains("mixed number"))
-            return "fraction";
-        if (text.Contains("angle") || text.Contains("kąt"))
-            return "angle";
-        if (text.Contains("perimeter") || text.Contains("area") || text.Contains("obwód") || text.Contains("pole"))
-            return "area";
-        if (text.Contains("coordinate") || text.Contains("współrz"))
-            return "coordinates";
-        if (text.Contains("net") || text.Contains("3d") || text.Contains("cube") || text.Contains("brył"))
-            return "shape-net";
-        if (text.Contains("probab") || text.Contains("chance") || text.Contains("prawdopodob"))
-            return "probability";
-        if (text.Contains("data") || text.Contains("graph") || text.Contains("chart") || text.Contains("dane") || text.Contains("wykres"))
-            return "data";
-        if (text.Contains("place value") || text.Contains("round") || text.Contains("wartość miejsc") || text.Contains("zaokrągl"))
-            return "number";
-        if (text.Contains("symmetr") || text.Contains("reflect") || text.Contains("shape") || text.Contains("polygon") || text.Contains("geometry") || text.Contains("geometr"))
-            return "geometry";
-
-        return "learning";
-    }
-}
 @{
     Layout = "_StudentLayout";
     ViewData["Title"] = S["LearningTitle"].Value;
 }
-@section Head {
-    <link rel="stylesheet" href="~/css/round5-ux-fixes.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/student-floating-learning.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/round5-ux-fixes.css" asp-append-version="true" />
+<header class="student-page-header">
+    <span class="student-eyebrow">@S["MyLearning"]</span>
+    <h1>@S["LearningTitle"]</h1>
+    <p>@S["LearningSubtitle"]</p>
+</header>
+
+@if (Model.Workspace.Learning.Count == 0)
+{
+    <div class="student-empty-state">@S["NoLearningYet"]</div>
 }
-
-<div class="student-learning-experience" data-floating-learning>
-    <div class="learning-math-atmosphere" aria-hidden="true">
-        <div class="math-globe">
-            <span class="math-globe-ring ring-a"></span>
-            <span class="math-globe-ring ring-b"></span>
-            <span class="math-globe-ring ring-c"></span>
-            <span class="math-globe-axis axis-a"></span>
-            <span class="math-globe-axis axis-b"></span>
-        </div>
-        <span class="math-formula formula-a">a² + b² = c²</span>
-        <span class="math-formula formula-b">πr²</span>
-        <span class="math-formula formula-c">⅓ + ⅔ = 1</span>
-        <span class="math-formula formula-d">x + y = 12</span>
-        <span class="math-formula formula-e">∠ABC = 65°</span>
-        <svg class="math-wireframe math-wireframe--cube" viewBox="0 0 150 130" role="presentation">
-            <path d="M28 42l50-24 47 24-50 24zM28 42v55l47 25V66M75 66l50-24v54l-50 26M52 30l48 25" />
-        </svg>
-        <svg class="math-wireframe math-wireframe--graph" viewBox="0 0 180 120" role="presentation">
-            <path d="M18 96V18M18 96h145M34 82l28-30 26 13 27-37 36 17" />
-            <path d="M46 24v72M74 24v72M102 24v72M130 24v72M18 72h145M18 48h145" opacity=".35" />
-        </svg>
-        <svg class="math-wireframe math-wireframe--triangle" viewBox="0 0 140 120" role="presentation">
-            <path d="M18 98L68 18l52 80zM68 18v80M18 98h102" />
-            <path d="M42 98a25 25 0 0 1 10-20" />
-        </svg>
-    </div>
-    <div class="learning-hud-orb" aria-hidden="true"></div>
-
-    @if (Model.Workspace.Learning.Any(subject => subject.Nodes.Count > 0))
-    {
-        <div class="learning-context-zone">
-            <div class="student-learning-stack">
-                @foreach (var subject in Model.Workspace.Learning.Where(subject => subject.Nodes.Count > 0))
+else
+{
+    <div class="student-learning-stack">
+        @foreach (var subject in Model.Workspace.Learning)
+        {
+            var isSelectedContext =
+                Model.SelectedCurriculumAdoptionId == subject.CurriculumAdoptionId &&
+                Model.SelectedClassGroupId == subject.ClassGroupId;
+            var exactFocusNodeIds = isSelectedContext
+                ? Model.SelectedLearningNodeIds.Where(id => subject.Nodes.Any(node => node.Id == id)).ToHashSet()
+                : new HashSet<Guid>();
+            var focusTreeNodeIds = new HashSet<Guid>(exactFocusNodeIds);
+            var nodesById = subject.Nodes.ToDictionary(node => node.Id);
+            foreach (var focusNodeId in exactFocusNodeIds)
+            {
+                var currentNodeId = focusNodeId;
+                var visitedNodeIds = new HashSet<Guid>();
+                while (visitedNodeIds.Add(currentNodeId) &&
+                       nodesById.TryGetValue(currentNodeId, out var currentNode) &&
+                       currentNode.ParentId.HasValue)
                 {
-                    var isSelectedContext =
-                        Model.SelectedCurriculumAdoptionId == subject.CurriculumAdoptionId &&
-                        Model.SelectedClassGroupId == subject.ClassGroupId;
-                    var exactFocusNodeIds = isSelectedContext
-                        ? Model.SelectedLearningNodeIds.Where(id => subject.Nodes.Any(node => node.Id == id)).ToHashSet()
-                        : new HashSet<Guid>();
-                    var focusTreeNodeIds = new HashSet<Guid>(exactFocusNodeIds);
-                    var nodesById = subject.Nodes.ToDictionary(node => node.Id);
-                    foreach (var focusNodeId in exactFocusNodeIds)
-                    {
-                        var currentNodeId = focusNodeId;
-                        var visitedNodeIds = new HashSet<Guid>();
-                        while (visitedNodeIds.Add(currentNodeId) &&
-                               nodesById.TryGetValue(currentNodeId, out var currentNode) &&
-                               currentNode.ParentId.HasValue)
-                        {
-                            var parentId = currentNode.ParentId.Value;
-                            focusTreeNodeIds.Add(parentId);
-                            currentNodeId = parentId;
-                        }
-                    }
-                    var focusAnchorAssigned = false;
-
-                    <article id="@(isSelectedContext ? "selected-curriculum-context" : null)"
-                             class="student-learning-card @(isSelectedContext ? "is-selected-context" : null)"
-                             aria-current="@(isSelectedContext ? "true" : null)">
-                        @if (isSelectedContext && exactFocusNodeIds.Count == 0)
-                        {
-                            <span id="selected-learning-node" class="student-learning-focus-anchor" aria-hidden="true"></span>
-                        }
-                        <header>
-                            <div>
-                                <h2>@subject.SubjectName</h2>
-                                @if (isSelectedContext)
-                                {
-                                    <span class="student-learning-context-badge">@S["PrivatePractice"]</span>
-                                }
-                            </div>
-                            <div class="student-learning-meta">
-                                <span><strong>@subject.GradeName · @subject.SubjectName</strong></span>
-                                <span>@subject.FrameworkName</span>
-                                <span>@S["Class"]: <strong>@subject.ClassName</strong></span>
-                                <span>@S["AcademicYear"]: <strong>@subject.AcademicYearName</strong></span>
-                            </div>
-                        </header>
-
-                        @if (subject.Nodes.Count == 0)
-                        {
-                            <p class="student-empty">@S["NoLearningYet"]</p>
-                        }
-                        else
-                        {
-                            <div class="student-curriculum-tree">
-                                @foreach (var node in subject.Nodes)
-                                {
-                                    var isExactFocus = exactFocusNodeIds.Contains(node.Id);
-                                    var isFocusPath = focusTreeNodeIds.Contains(node.Id);
-                                    var focusAnchorId = isExactFocus && !focusAnchorAssigned ? "selected-learning-node" : null;
-                                    if (focusAnchorId is not null) { focusAnchorAssigned = true; }
-
-                                    <div id="@focusAnchorId"
-                                         class="student-node @(node.Kind == "Lesson" ? "is-lesson" : "is-unit") @(isFocusPath ? "is-practice-focus" : null) @(isExactFocus ? "is-practice-focus-exact" : null)"
-                                         aria-current="@(isExactFocus ? "location" : null)">
-                                        <span class="student-node-kind">@(node.Kind == "Lesson" ? S["Lesson"] : S["Unit"])</span>
-                                        <div>
-                                            <strong>@node.Title</strong>
-                                            @if (!string.IsNullOrWhiteSpace(node.Pathway))
-                                            {
-                                                <small>@S["Pathway"]: @node.Pathway</small>
-                                            }
-                                            @if (!string.IsNullOrWhiteSpace(node.OfficialText))
-                                            {
-                                                <p>@node.OfficialText</p>
-                                            }
-                                        </div>
-                                    </div>
-                                }
-                            </div>
-                        }
-                    </article>
+                    var parentId = currentNode.ParentId.Value;
+                    focusTreeNodeIds.Add(parentId);
+                    currentNodeId = parentId;
                 }
-            </div>
-        </div>
-    }
+            }
+            var focusAnchorAssigned = false;
 
-    <section class="student-published-lessons student-published-lessons--floating">
-        @if (Model.Lessons.Count > 0)
-        {
-            <div class="floating-lessons-toolbar" aria-label="Lesson count">
-                <span class="floating-lessons-signal">@Model.Lessons.Count</span>
-            </div>
-        }
-
-        @if (Model.Lessons.Count == 0)
-        {
-            <div class="student-empty-state learning-empty-floating">@L["NoPublishedLessons"]</div>
-        }
-        else
-        {
-            <div class="floating-lesson-field" data-floating-lesson-field>
-                @foreach (var lesson in Model.Lessons)
+            <article id="@(isSelectedContext ? "selected-curriculum-context" : null)"
+                     class="student-learning-card @(isSelectedContext ? "is-selected-context" : null)"
+                     aria-current="@(isSelectedContext ? "true" : null)">
+                @if (isSelectedContext && exactFocusNodeIds.Count == 0)
                 {
-                    var visualKind = LessonVisualKind(lesson.Title, lesson.TopicName);
+                    <span id="selected-learning-node" class="student-learning-focus-anchor" aria-hidden="true"></span>
+                }
+                <header>
+                    <div>
+                        <h2>@subject.SubjectName</h2>
+                        @if (isSelectedContext)
+                        {
+                            <span class="student-learning-context-badge">@S["PrivatePractice"]</span>
+                        }
+                    </div>
+                    <div class="student-learning-meta">
+                        <span><strong>@subject.GradeName · @subject.SubjectName</strong></span>
+                        <span>@subject.FrameworkName</span>
+                        <span>@S["Class"]: <strong>@subject.ClassName</strong></span>
+                        <span>@S["AcademicYear"]: <strong>@subject.AcademicYearName</strong></span>
+                    </div>
+                </header>
 
-                    <article class="floating-lesson-card" data-floating-lesson data-visual="@visualKind">
-                        <a class="floating-lesson-card-link"
-                           asp-controller="StudentPortal"
-                           asp-action="Lesson"
-                           asp-route-id="@lesson.Id"
-                           aria-label="@($"{L["OpenLesson"]}: {lesson.Title}")">
-                        <div class="floating-lesson-visual" aria-hidden="true">
-                            @switch (visualKind)
-                            {
-                                case "add-subtract":
-                                    <svg viewBox="0 0 96 72" role="presentation">
-                                        <path d="M14 24h26M27 11v26M54 48h28" />
-                                        <circle cx="68" cy="22" r="13" />
-                                        <path d="M61 22h14M68 15v14" />
-                                    </svg>
-                                    break;
-                                case "multiply":
-                                    <svg viewBox="0 0 96 72" role="presentation">
-                                        <path d="M20 16l28 28M48 16L20 44" />
-                                        <circle cx="69" cy="30" r="15" />
-                                        <path d="M62 23l14 14M76 23L62 37" />
-                                    </svg>
-                                    break;
-                                case "divide":
-                                    <svg viewBox="0 0 96 72" role="presentation">
-                                        <circle cx="48" cy="17" r="3" />
-                                        <path d="M24 30h48" />
-                                        <circle cx="48" cy="43" r="3" />
-                                        <path d="M18 55h60" />
-                                    </svg>
-                                    break;
-                                case "fraction":
-                                    <svg viewBox="0 0 96 72" role="presentation">
-                                        <circle cx="28" cy="34" r="20" />
-                                        <path d="M28 14v40M8 34h40" />
-                                        <path d="M60 18h22M60 34h22M60 50h22" />
-                                        <text x="68" y="31">1</text>
-                                        <text x="68" y="49">2</text>
-                                    </svg>
-                                    break;
-                                case "angle":
-                                    <svg viewBox="0 0 96 72" role="presentation">
-                                        <path d="M14 56h62M14 56l38-39" />
-                                        <path d="M31 55a17 17 0 0 1 5-12" />
-                                        <text x="44" y="47">65°</text>
-                                    </svg>
-                                    break;
-                                case "area":
-                                    <svg viewBox="0 0 96 72" role="presentation">
-                                        <rect x="18" y="16" width="48" height="40" rx="2" />
-                                        <path d="M18 26h48M28 16v40" />
-                                        <path d="M72 18v36M69 21l3-3 3 3M69 51l3 3 3-3" />
-                                    </svg>
-                                    break;
-                                case "coordinates":
-                                    <svg viewBox="0 0 96 72" role="presentation">
-                                        <path d="M18 58V12M12 52h64" />
-                                        <path d="M18 12l-4 6M18 12l4 6M76 52l-6-4M76 52l-6 4" />
-                                        <circle cx="55" cy="30" r="4" />
-                                        <path d="M55 30v22M18 30h37" stroke-dasharray="3 3" />
-                                    </svg>
-                                    break;
-                                case "shape-net":
-                                    <svg viewBox="0 0 96 72" role="presentation">
-                                        <rect x="35" y="25" width="22" height="22" />
-                                        <rect x="13" y="25" width="22" height="22" />
-                                        <rect x="57" y="25" width="22" height="22" />
-                                        <rect x="35" y="3" width="22" height="22" />
-                                        <rect x="35" y="47" width="22" height="22" />
-                                    </svg>
-                                    break;
-                                case "probability":
-                                    <svg viewBox="0 0 96 72" role="presentation">
-                                        <path d="M18 20l22-9 18 12-21 10zM18 20v25l19 13V33M37 33l21-10v25L37 58" />
-                                        <circle cx="28" cy="26" r="2" />
-                                        <circle cx="44" cy="22" r="2" />
-                                        <circle cx="48" cy="39" r="2" />
-                                        <circle cx="48" cy="50" r="2" />
-                                    </svg>
-                                    break;
-                                case "data":
-                                    <svg viewBox="0 0 96 72" role="presentation">
-                                        <path d="M14 58h70M14 58V12" />
-                                        <rect x="24" y="40" width="10" height="18" />
-                                        <rect x="42" y="30" width="10" height="28" />
-                                        <rect x="60" y="18" width="10" height="40" />
-                                        <path d="M20 31l18-8 17 4 22-13" />
-                                    </svg>
-                                    break;
-                                case "number":
-                                    <svg viewBox="0 0 96 72" role="presentation">
-                                        <rect x="10" y="20" width="22" height="30" rx="4" />
-                                        <rect x="37" y="20" width="22" height="30" rx="4" />
-                                        <rect x="64" y="20" width="22" height="30" rx="4" />
-                                        <text x="17" y="41">4</text>
-                                        <text x="44" y="41">7</text>
-                                        <text x="71" y="41">2</text>
-                                    </svg>
-                                    break;
-                                case "geometry":
-                                    <svg viewBox="0 0 96 72" role="presentation">
-                                        <path d="M15 54l23-40 23 40z" />
-                                        <rect x="58" y="18" width="24" height="24" />
-                                        <circle cx="71" cy="52" r="10" />
-                                    </svg>
-                                    break;
-                                default:
-                                    <svg viewBox="0 0 96 72" role="presentation">
-                                        <path d="M18 18h24c7 0 12 5 12 12v28c0-7-5-12-12-12H18z" />
-                                        <path d="M78 18H54v40c0-7 5-12 12-12h12z" />
-                                        <path d="M29 28h13M29 35h13M66 28h7M66 35h7" />
-                                    </svg>
-                                    break;
-                            }
-                        </div>
+                @if (subject.Nodes.Count == 0)
+                {
+                    <p class="student-empty">@S["NoLearningYet"]</p>
+                }
+                else
+                {
+                    <div class="student-curriculum-tree">
+                        @foreach (var node in subject.Nodes)
+                        {
+                            var isExactFocus = exactFocusNodeIds.Contains(node.Id);
+                            var isFocusPath = focusTreeNodeIds.Contains(node.Id);
+                            var focusAnchorId = isExactFocus && !focusAnchorAssigned ? "selected-learning-node" : null;
+                            if (focusAnchorId is not null) { focusAnchorAssigned = true; }
 
-                        <div class="floating-lesson-card__top">
-                            <h3>@lesson.Title</h3>
-                            <div class="floating-lesson-details">
-                                <div class="floating-lesson-category">@lesson.TopicName</div>
-                                <div class="floating-lesson-context student-lesson-context">
-                                    <span class="student-lesson-primary-context">@lesson.GradeName · Mathematics</span>
-                                    <span class="student-lesson-secondary-context">@lesson.FrameworkName</span>
-                                </div>
-                                <div class="floating-lesson-actions">
-                                    <span class="floating-open-lesson">@L["OpenLesson"]</span>
-                                    @if (lesson.IsSupporting)
+                            <div id="@focusAnchorId"
+                                 class="student-node @(node.Kind == "Lesson" ? "is-lesson" : "is-unit") @(isFocusPath ? "is-practice-focus" : null) @(isExactFocus ? "is-practice-focus-exact" : null)"
+                                 aria-current="@(isExactFocus ? "location" : null)">
+                                <span class="student-node-kind">@(node.Kind == "Lesson" ? S["Lesson"] : S["Unit"])</span>
+                                <div>
+                                    <strong>@node.Title</strong>
+                                    @if (!string.IsNullOrWhiteSpace(node.Pathway))
                                     {
-                                        <span class="floating-supporting">@L["SupportingLesson"]</span>
+                                        <small>@S["Pathway"]: @node.Pathway</small>
+                                    }
+                                    @if (!string.IsNullOrWhiteSpace(node.OfficialText))
+                                    {
+                                        <p>@node.OfficialText</p>
                                     }
                                 </div>
                             </div>
-                        </div>
-                        </a>
-                    </article>
+                        }
+                    </div>
                 }
-            </div>
+            </article>
         }
-    </section>
-</div>
-
-@section Scripts {
-    <script src="~/js/student-floating-learning.js" asp-append-version="true"></script>
+    </div>
 }
+<section class="student-published-lessons">
+    <header class="student-section-header">
+        <h2>@L["AvailableLessons"]</h2>
+    </header>
+
+    @if (Model.Lessons.Count == 0)
+    {
+        <div class="student-empty-state">@L["NoPublishedLessons"]</div>
+    }
+    else
+    {
+        <div class="student-lesson-grid">
+            @foreach (var lesson in Model.Lessons)
+            {
+                <article class="student-lesson-card">
+                    <h3>@lesson.Title</h3>
+                    @if (lesson.IsSupporting)
+                    {
+                        <span class="lesson-content-status lesson-content-status--supporting">@L["SupportingLesson"]</span>
+                    }
+                    <p>@lesson.TopicName</p>
+                    <div class="student-learning-meta student-lesson-context">
+                        <span class="student-lesson-primary-context">@lesson.GradeName · Mathematics</span>
+                        <span class="student-lesson-secondary-context">@lesson.FrameworkName</span>
+                    </div>
+                    <a class="student-primary-link"
+                       asp-controller="StudentPortal"
+                       asp-action="Lesson"
+                       asp-route-id="@lesson.Id">@L["OpenLesson"]</a>
+                </article>
+            }
+        </div>
+    }
+</section>
