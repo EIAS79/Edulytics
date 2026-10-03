@@ -90,8 +90,11 @@
             }
         };
 
-        card.addEventListener("pointerenter", event => {
+        card.addEventListener("pointerenter", async event => {
             if (!event.pointerType || event.pointerType === "mouse") {
+                if (!soundUnlocked) {
+                    await unlockHoverSound();
+                }
                 activate(true);
             }
         }, { passive: true });
