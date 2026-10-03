@@ -12,7 +12,7 @@
   "SourceCheckedAtUtc": "2026-09-01T00:00:00Z",
   "SourceResolution": "CurrentOfficial",
   "FallbackReason": "",
-  "ReviewMethod": "Scope inventory review, pathway isolation, OGL source-policy review, deterministic lesson/body generation, mathematical example verification and canonical body hashing. Direct mappings reviewed against existing accepted UAE standard meanings and grade/pathway applicability; lesson bodies preserved.",
+  "ReviewMethod": "Scope inventory review, pathway isolation, OGL source-policy review, deterministic lesson/body generation, mathematical example verification and canonical body hashing. Direct mappings reviewed against existing accepted UAE standard meanings and grade/pathway applicability; lesson bodies preserved. Verified 1 exact UAE student-book reference mapping(s) from the supplied 2025-2026 UAE edition; official textbook wording is not reproduced and existing MAT mappings remain unchanged.",
   "SourcePolicyVersion": 2,
   "PedagogicalSourceType": "OpenEducationalResource",
   "PedagogicalSourceTitle": "GCSE Mathematics subject content and assessment objectives",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "UAE G11/advanced: 3 officially mapped lessons, 50 Supporting; evidence https://www.scribd.com/document/826281797/Strands-and-Standards-Summary-MAT; no synthetic references and no learner-facing body changes.",
+  "ReviewEvidence": "UAE G11/advanced: 3 officially mapped lessons, 50 Supporting; evidence https://www.scribd.com/document/826281797/Strands-and-Standards-Summary-MAT; no synthetic references and no learner-facing body changes. Verified 1 exact UAE student-book reference mapping(s) from the supplied 2025-2026 UAE edition; official textbook wording is not reproduced and existing MAT mappings remain unchanged.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L11:ADVANCED:01:01:INTEGERS-AND-DIRECTED-NUMBER",
@@ -1701,8 +1701,10 @@
       "LessonCode": "PED:UAE-MOE-MATH:L11:ADVANCED:05:09:RATES-OF-CHANGE",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "GCSE Mathematics subject content and assessment objectives; Edulytics-authored scope sequence for Grade 11 / Advanced.",
-      "OutcomeCodes": [],
-      "IsSupporting": true,
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G11:ADVANCED:2025-2026:U12"
+      ],
+      "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives",
       "SourceLocator": "Grade 11 / Advanced Reasoning / 09",
       "SourceTitle": "GCSE Mathematics subject content and assessment objectives",
