@@ -17,7 +17,7 @@
   "SourceLicense": "Open Government Licence v3.0",
   "RequiredDigitalAttribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
   "SourceSelectionReason": "The official curriculum source remains the academic authority. Edulytics uses open DfE Mathematics material only as lawful pedagogical scaffolding for independently authored lesson explanations where official copyrighted or source-linked prose is not reproduced.",
-  "SourceSelectionEvidence": "This scope contains 44 Edulytics-authored supporting lessons across 4 units. No formal outcome mapping is claimed without explicit source evidence; every formal OutcomeCodes collection is empty.",
+  "SourceSelectionEvidence": "This scope contains 44 Edulytics-authored supporting lessons across 4 units. No formal outcome mapping is claimed without explicit source evidence; every formal OutcomeCodes collection is empty. 8 lesson(s) now also have exact UAE MoE student-book references from reviewed 2025-2026 student books; no MAT identifier was invented.",
   "SourceEvidenceUrls": [
     "https://minhaji.moe.gov.ae/",
     "https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives",
@@ -31,9 +31,9 @@
   "AcquisitionDiagnostics": {
     "UnitCount": 4,
     "LessonCount": 44,
-    "OfficialStandardCount": 0,
-    "AddressingCoverageCount": 0,
-    "FormalMappingCount": 0,
+    "OfficialStandardCount": 8,
+    "AddressingCoverageCount": 8,
+    "FormalMappingCount": 8,
     "LessonsWithoutNumberedGradeReferenceAnyRole": 44,
     "LessonsWithoutNumberedAddressingStandard": 44,
     "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 44,
@@ -156,8 +156,19 @@
       "SortOrder": 5,
       "SourceUrl": "https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives",
       "SemanticSha256": "9aa3d04c687a467650ac920a387178b625941b4d3a37f4df8d8033b5c59d869f",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:BOOK:G11:GENERAL:2025-2026:U1",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "UAE:REF:BOOK:G11:GENERAL:2025-2026:U1",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G11:GENERAL:2025-2026:U1"
+      ],
       "ApplicableCourses": [
         "UAE-G11-GENERAL-T1-OGL-V1"
       ],
@@ -224,8 +235,19 @@
       "SortOrder": 9,
       "SourceUrl": "https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives",
       "SemanticSha256": "74c1350aac64a730717042e14881c091d5c5be8f3293b6ed5c5eaa858fe2dffd",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:BOOK:G11:GENERAL:2025-2026:U6-L1",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "UAE:REF:BOOK:G11:GENERAL:2025-2026:U6-L1",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G11:GENERAL:2025-2026:U6-L1"
+      ],
       "ApplicableCourses": [
         "UAE-G11-GENERAL-T1-OGL-V1"
       ],
@@ -292,8 +314,19 @@
       "SortOrder": 13,
       "SourceUrl": "https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives",
       "SemanticSha256": "41987fd1fadb7b8845f91186ea3524cdd76804d7e4b408067f9e44abc8b452a2",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:BOOK:G11:GENERAL:2025-2026:U6-L3",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "UAE:REF:BOOK:G11:GENERAL:2025-2026:U6-L3",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G11:GENERAL:2025-2026:U6-L3"
+      ],
       "ApplicableCourses": [
         "UAE-G11-GENERAL-T1-OGL-V1"
       ],
@@ -309,8 +342,19 @@
       "SortOrder": 14,
       "SourceUrl": "https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives",
       "SemanticSha256": "af18052f6c384e3f0042e121ec66056e3d5fca57509daa149fd98d2e7bbd47a6",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:BOOK:G11:GENERAL:2025-2026:U6-L5",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "UAE:REF:BOOK:G11:GENERAL:2025-2026:U6-L5",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G11:GENERAL:2025-2026:U6-L5"
+      ],
       "ApplicableCourses": [
         "UAE-G11-GENERAL-T1-OGL-V1"
       ],
@@ -360,8 +404,19 @@
       "SortOrder": 17,
       "SourceUrl": "https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives",
       "SemanticSha256": "aeaa2cc333435ee4112b2a885ae1e3c28e151c5309aec288441c1cebfad27aae",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:BOOK:G11:GENERAL:2025-2026:U7-L1",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "UAE:REF:BOOK:G11:GENERAL:2025-2026:U7-L1",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G11:GENERAL:2025-2026:U7-L1"
+      ],
       "ApplicableCourses": [
         "UAE-G11-GENERAL-T1-OGL-V1"
       ],
@@ -581,8 +636,19 @@
       "SortOrder": 30,
       "SourceUrl": "https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives",
       "SemanticSha256": "574ceb469136cc9a5ac51bee3b0a107b5fa5d0e17009346180380d6cc71e6fca",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:BOOK:G11:GENERAL:2025-2026:U5",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "UAE:REF:BOOK:G11:GENERAL:2025-2026:U5",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G11:GENERAL:2025-2026:U5"
+      ],
       "ApplicableCourses": [
         "UAE-G11-GENERAL-T1-OGL-V1"
       ],
@@ -598,8 +664,19 @@
       "SortOrder": 31,
       "SourceUrl": "https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives",
       "SemanticSha256": "30ddcbdc22ff8a63b1cf762f5cd7b8ba6f956baccb917f9c04a90af187f6d6f2",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:BOOK:G11:GENERAL:2025-2026:U2-L2",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "UAE:REF:BOOK:G11:GENERAL:2025-2026:U2-L2",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G11:GENERAL:2025-2026:U2-L2"
+      ],
       "ApplicableCourses": [
         "UAE-G11-GENERAL-T1-OGL-V1"
       ],
@@ -632,8 +709,19 @@
       "SortOrder": 33,
       "SourceUrl": "https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives",
       "SemanticSha256": "d08a719424d83dd1e4ebf41db813ab59b03a01a034ce98a9af5a79bfca889145",
-      "Alignments": [],
-      "OutcomeCodes": [],
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:BOOK:G11:GENERAL:2025-2026:U2-L4",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": "UAE:REF:BOOK:G11:GENERAL:2025-2026:U2-L4",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G11:GENERAL:2025-2026:U2-L4"
+      ],
       "ApplicableCourses": [
         "UAE-G11-GENERAL-T1-OGL-V1"
       ],
