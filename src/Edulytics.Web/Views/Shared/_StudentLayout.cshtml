@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="~/css/arabic-rtl.css" asp-append-version="true" />
     @await RenderSectionAsync("Head", required: false)
 </head>
-<body class="student-portal-body @(controller == "StudentPortal" && action == "Learning" ? "student-learning-page" : string.Empty)">
+<body class="student-portal-body">
     <div class="student-app-shell">
         <aside class="student-sidebar" aria-label="@S["StudentPortal"]">
             <a class="student-brand-link" asp-controller="StudentPortal" asp-action="Dashboard"><partial name="_LocalizedBrand" /></a>
