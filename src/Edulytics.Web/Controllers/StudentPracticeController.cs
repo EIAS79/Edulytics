@@ -893,7 +893,10 @@ public sealed class StudentPracticeController(
         StudentLessonDetail detail,
         out LessonPracticePresentationRoute? presentation)
     {
-        var context = detail.IsSupporting
+        var requireLessonGrounding =
+            detail.Outcomes.Count == 0;
+
+        var context = requireLessonGrounding
             ? BuildLessonPracticeContext(detail)
             : null;
 
@@ -902,7 +905,7 @@ public sealed class StudentPracticeController(
             lesson.UnitTitle,
             detail.Title,
             context,
-            detail.IsSupporting,
+            requireLessonGrounding,
             MathematicsV2ProductMigrationPolicy
                 .IsEnabledFromEnvironment(),
             out presentation);
@@ -912,7 +915,7 @@ public sealed class StudentPracticeController(
         StudentPrivatePracticeLessonOption lesson,
         StudentLessonDetail detail)
     {
-        if (!detail.IsSupporting)
+        if (detail.Outcomes.Count > 0)
             return GameLessonRouteResolver.Resolve(
                 lesson.LessonCode,
                 lesson.UnitTitle,

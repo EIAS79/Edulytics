@@ -249,6 +249,63 @@ public sealed class MathematicsPedagogicalLessonSeeder
                     .Distinct(StringComparer.Ordinal)
                     .ToArray();
 
+            var officialReferenceCodes =
+                document.Lessons
+                    .Select(x => x.OfficialReferenceCode)
+                    .Where(x => !string.IsNullOrWhiteSpace(x))
+                    .Select(x => x!)
+                    .Distinct(StringComparer.Ordinal)
+                    .ToArray();
+
+            var officialReferenceNodes =
+                officialReferenceCodes.Length == 0
+                    ? []
+                    : await _db.CurriculumPackContentNodes
+                        .AsNoTracking()
+                        .Where(x =>
+                            x.FrameworkVersionId ==
+                                state.FrameworkVersionId &&
+                            x.FrameworkCode ==
+                                document.PackCode &&
+                            officialReferenceCodes.Contains(
+                                x.Code))
+                        .ToArrayAsync(ct);
+
+            var officialReferenceByCode =
+                officialReferenceNodes.ToDictionary(
+                    x => x.Code,
+                    StringComparer.Ordinal);
+
+            if (officialReferenceByCode.Count !=
+                officialReferenceCodes.Length)
+            {
+                var missingReferences =
+                    officialReferenceCodes
+                        .Except(
+                            officialReferenceByCode.Keys,
+                            StringComparer.Ordinal)
+                        .OrderBy(x => x)
+                        .ToArray();
+
+                throw new InvalidOperationException(
+                    $"Blueprint {document.BlueprintCode} " +
+                    $"references missing official references: " +
+                    string.Join(", ", missingReferences));
+            }
+
+            foreach (var reference in officialReferenceNodes)
+            {
+                if (!reference.IsOfficial ||
+                    !reference.IsActive ||
+                    reference.NodeKind != "Reference")
+                {
+                    throw new InvalidOperationException(
+                        $"Blueprint {document.BlueprintCode} " +
+                        $"resolved invalid official reference: " +
+                        $"{reference.Code}.");
+                }
+            }
+
             var officialNodes =
                 await _db.CurriculumPackContentNodes
                     .AsNoTracking()
@@ -341,7 +398,12 @@ public sealed class MathematicsPedagogicalLessonSeeder
                         Id = lessonId,
                         FrameworkVersionId =
                             state.FrameworkVersionId,
-                        OfficialLessonNodeId = null,
+                        OfficialLessonNodeId =
+                            string.IsNullOrWhiteSpace(
+                                lesson.OfficialReferenceCode)
+                                ? null
+                                : officialReferenceByCode[
+                                    lesson.OfficialReferenceCode].Id,
                         Code = lesson.LessonCode,
                         UnitKey =
                             document.SchemaVersion == 1
@@ -686,7 +748,9 @@ public sealed class MathematicsPedagogicalLessonSeeder
             throw new InvalidOperationException("Duplicate pedagogical lesson codes were generated.");
 
         var uaeLessonIds = lessons
-            .Where(x => x.OfficialLessonNodeId.HasValue)
+            .Where(x =>
+                x.OfficialLessonNodeId.HasValue &&
+                !blueprintLessonIds.Contains(x.Id))
             .Select(x => x.Id)
             .ToHashSet();
 
@@ -703,12 +767,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
             .GroupBy(x => x.PedagogicalLessonId)
             .ToDictionary(x => x.Key, x => x.Count());
 
-        var nonUaeLessons = lessons
-            .Where(x => !x.OfficialLessonNodeId.HasValue)
-            .ToArray();
-
         var blueprintLessons =
-            nonUaeLessons
+            lessons
                 .Where(
                     x =>
                         blueprintLessonIds.Contains(
@@ -723,11 +783,12 @@ public sealed class MathematicsPedagogicalLessonSeeder
         }
 
         var fallbackLessons =
-            nonUaeLessons
+            lessons
                 .Where(
                     x =>
                         !blueprintLessonIds.Contains(
-                            x.Id))
+                            x.Id) &&
+                        !uaeLessonIds.Contains(x.Id))
                 .ToArray();
 
         if (fallbackLessons.Any(

@@ -368,7 +368,26 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
                     x =>
                         x.FrameworkVersionId ==
                             uaeVersionId &&
-                        x.OfficialLessonNodeId != null));
+                        x.OfficialLessonNodeId != null &&
+                        db.CurriculumPackContentNodes.Any(
+                            node =>
+                                node.Id ==
+                                    x.OfficialLessonNodeId &&
+                                node.NodeKind == "Lesson")));
+
+        Assert.Equal(
+            265,
+            await db.CurriculumPedagogicalLessons
+                .CountAsync(
+                    x =>
+                        x.FrameworkVersionId ==
+                            uaeVersionId &&
+                        x.OfficialLessonNodeId != null &&
+                        db.CurriculumPackContentNodes.Any(
+                            node =>
+                                node.Id ==
+                                    x.OfficialLessonNodeId &&
+                                node.NodeKind == "Reference")));
 
         Assert.Equal(
             123,

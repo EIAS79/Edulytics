@@ -98,7 +98,10 @@ public sealed class MathematicsCurriculumPackSeeder
                             d.PackCode ==
                                 MathematicsCurriculumPackRegistry.CambridgeCode
                                 ? x.Kind is "Outcome" or "Reference"
-                                : x.Kind is "Standard" or "Outcome"
+                                : d.PackCode ==
+                                    MathematicsCurriculumPackRegistry.UaeCode
+                                    ? x.Kind is "Standard" or "Outcome" or "Reference"
+                                    : x.Kind is "Standard" or "Outcome"
                         ))
                 .ToArray();
         if (official.Length != d.OfficialNodeCount)
@@ -128,8 +131,8 @@ public sealed class MathematicsCurriculumPackSeeder
         {
             if (d.SchemaVersion != 14 ||
                 d.VersionCode != "MOE-2026-2027-T1" ||
-                d.NodeCount != 137 ||
-                d.OfficialNodeCount != 47 ||
+                d.NodeCount != 402 ||
+                d.OfficialNodeCount != 312 ||
                 d.UnitCount != 6 ||
                 d.LessonCount != 42 ||
                 d.LinkCount != 48 ||
@@ -423,6 +426,15 @@ public sealed class MathematicsCurriculumPackSeeder
                 return;
             }
 
+            if (await TryRepairAcceptedUaeTextbookReferencesAsync(
+                    d,
+                    state,
+                    version,
+                    ct))
+            {
+                return;
+            }
+
             if (await TryRepairAcceptedUae2025TargetCoverageAsync(
                     d,
                     state,
@@ -561,7 +573,9 @@ public sealed class MathematicsCurriculumPackSeeder
         if (d.PackCode !=
                 MathematicsCurriculumPackRegistry.CommonCoreCode &&
             d.PackCode !=
-                MathematicsCurriculumPackRegistry.CambridgeCode)
+                MathematicsCurriculumPackRegistry.CambridgeCode &&
+            d.PackCode !=
+                MathematicsCurriculumPackRegistry.UaeCode)
         {
             return;
         }
@@ -574,7 +588,10 @@ public sealed class MathematicsCurriculumPackSeeder
                         d.PackCode ==
                             MathematicsCurriculumPackRegistry.CambridgeCode
                             ? x.NodeKind is "Outcome" or "Reference"
-                            : x.NodeKind is "Standard" or "Outcome"
+                            : d.PackCode ==
+                                MathematicsCurriculumPackRegistry.UaeCode
+                                ? x.NodeKind is "Standard" or "Outcome" or "Reference"
+                                : x.NodeKind is "Standard" or "Outcome"
                     ));
 
         if (officialCount != d.OfficialNodeCount)
@@ -630,6 +647,187 @@ public sealed class MathematicsCurriculumPackSeeder
         }
     }
 
+    private async Task<bool> TryRepairAcceptedUaeTextbookReferencesAsync(
+        Doc d,
+        CurriculumPackImportState state,
+        CurriculumFrameworkVersion version,
+        CancellationToken ct)
+    {
+        if (d.PackCode != MathematicsCurriculumPackRegistry.UaeCode ||
+            state.FrameworkCode != MathematicsCurriculumPackRegistry.UaeCode ||
+            state.VersionCode != "MOE-2026-2027-T1")
+        {
+            return false;
+        }
+
+        // Fail closed: only the exact currently accepted UAE production
+        // baseline may receive the additive textbook-reference layer.
+        if (state.SourceDigest !=
+                "470e9bd35d26931e3c4a2e4666b97a35481c3212b72024060c49dd6160bf776f" ||
+            state.ContentDigest !=
+                "bac04756a72853ba6be0ccf41d0d0e55d0381be62c2001b9c5d4ae3382469ae4" ||
+            state.NodeCount != 137 ||
+            state.OfficialNodeCount != 47 ||
+            state.UnitCount != 6 ||
+            state.LessonCount != 42 ||
+            state.LinkCount != 48 ||
+            !state.IsComplete)
+        {
+            return false;
+        }
+
+        var references = d.Nodes
+            .Where(x =>
+                x.Kind == "Reference" &&
+                x.Code.StartsWith(
+                    "UAE:REF:TEXTBOOK:",
+                    StringComparison.Ordinal))
+            .ToArray();
+
+        if (d.SchemaVersion != 14 ||
+            d.SourceDigest !=
+                "470e9bd35d26931e3c4a2e4666b97a35481c3212b72024060c49dd6160bf776f" ||
+            references.Length == 0 ||
+            d.NodeCount != 137 + references.Length ||
+            d.OfficialNodeCount != 47 + references.Length ||
+            d.UnitCount != 6 ||
+            d.LessonCount != 42 ||
+            d.LinkCount != 48)
+        {
+            throw new InvalidOperationException(
+                "UAE textbook-reference repair target contract drift.");
+        }
+
+        var existing = await _db.CurriculumPackContentNodes
+            .Where(x => x.FrameworkVersionId == version.Id)
+            .ToArrayAsync(ct);
+
+        var existingLinks = await _db.CurriculumPackNodeLinks
+            .Where(x => x.FrameworkVersionId == version.Id)
+            .ToArrayAsync(ct);
+
+        if (existing.Length != 137 || existingLinks.Length != 48)
+        {
+            throw new InvalidOperationException(
+                "UAE textbook-reference accepted baseline row drift.");
+        }
+
+        var expectedIds = d.Nodes.ToDictionary(
+            x => x.Code,
+            x => G($"node|{d.PackCode}|{d.VersionCode}|{x.Code}"),
+            StringComparer.Ordinal);
+        var expectedByCode = d.Nodes.ToDictionary(
+            x => x.Code,
+            StringComparer.Ordinal);
+        var existingByCode = existing.ToDictionary(
+            x => x.Code,
+            StringComparer.Ordinal);
+
+        var unexpectedExisting = existingByCode.Keys
+            .Where(x =>
+                x.StartsWith(
+                    "UAE:REF:TEXTBOOK:",
+                    StringComparison.Ordinal))
+            .ToArray();
+
+        if (unexpectedExisting.Length != 0)
+        {
+            throw new InvalidOperationException(
+                "UAE textbook-reference baseline already contains partial references.");
+        }
+
+        foreach (var current in existing)
+        {
+            if (!expectedByCode.TryGetValue(
+                    current.Code,
+                    out var expected))
+            {
+                throw new InvalidOperationException(
+                    $"Unexpected UAE baseline node: {current.Code}.");
+            }
+
+            Guid? parentId = expected.ParentCode is null
+                ? null
+                : expectedIds[expected.ParentCode];
+
+            if (!PersistedNodeMatchesDocument(
+                    current,
+                    d,
+                    expected,
+                    expectedIds[expected.Code],
+                    parentId,
+                    version.Id))
+            {
+                throw new InvalidOperationException(
+                    $"Unexpected UAE baseline drift: {current.Code}.");
+            }
+        }
+
+        var now = DateTime.UtcNow;
+        foreach (var reference in references
+                     .OrderBy(x => x.SortOrder))
+        {
+            if (!reference.IsOfficial ||
+                !reference.IsActive ||
+                reference.OfficialText is not null ||
+                string.IsNullOrWhiteSpace(
+                    reference.AuthorDescription) ||
+                reference.SourceAuthority !=
+                    "UAE Ministry of Education" ||
+                reference.ParentCode is null ||
+                !reference.ParentCode.StartsWith(
+                    "UAE:CATALOG:",
+                    StringComparison.Ordinal))
+            {
+                throw new InvalidOperationException(
+                    $"Invalid UAE textbook reference: {reference.Code}.");
+            }
+
+            _db.CurriculumPackContentNodes.Add(
+                new CurriculumPackContentNode
+                {
+                    Id = expectedIds[reference.Code],
+                    FrameworkVersionId = version.Id,
+                    FrameworkCode = d.PackCode,
+                    VersionCode = d.VersionCode,
+                    NodeKind = reference.Kind,
+                    Code = reference.Code,
+                    ParentId = expectedIds[reference.ParentCode],
+                    LogicalLevelFrom = reference.LogicalLevelFrom,
+                    LogicalLevelTo = reference.LogicalLevelTo,
+                    NativeLevel = reference.NativeLevel,
+                    Pathway = reference.Pathway,
+                    Title = reference.Title,
+                    OfficialText = null,
+                    AuthorDescription = reference.AuthorDescription,
+                    SourceAuthority = reference.SourceAuthority,
+                    SourceUrl = reference.SourceUrl,
+                    SourceLocator = reference.SourceLocator,
+                    Attribution = reference.Attribution,
+                    IsOfficial = true,
+                    IsActive = true,
+                    SortOrder = reference.SortOrder,
+                    ContentHash = reference.ContentHash,
+                    CreatedAtUtc = now,
+                    UpdatedAtUtc = now
+                });
+        }
+
+        state.SourceDigest = d.SourceDigest;
+        state.ContentDigest = d.ContentDigest;
+        state.NodeCount = d.NodeCount;
+        state.OfficialNodeCount = d.OfficialNodeCount;
+        state.UnitCount = d.UnitCount;
+        state.LessonCount = d.LessonCount;
+        state.LinkCount = d.LinkCount;
+        state.IsComplete = true;
+        state.ImportedAtUtc = now;
+
+        await _db.SaveChangesAsync(ct);
+        await ValidatePersistedRowsAsync(d, version.Id, ct);
+        return true;
+    }
+
     private async Task<bool> TryRepairAcceptedUae2025TargetCoverageAsync(
         Doc d,
         CurriculumPackImportState state,
@@ -662,9 +860,9 @@ public sealed class MathematicsCurriculumPackSeeder
             d.SourceDigest !=
                 "470e9bd35d26931e3c4a2e4666b97a35481c3212b72024060c49dd6160bf776f" ||
             d.ContentDigest !=
-                "bac04756a72853ba6be0ccf41d0d0e55d0381be62c2001b9c5d4ae3382469ae4" ||
-            d.NodeCount != 137 ||
-            d.OfficialNodeCount != 47 ||
+                "40e7066131c4274942de8d2b052f924ee136aa4df342a7c780755544001c1f1e" ||
+            d.NodeCount != 402 ||
+            d.OfficialNodeCount != 312 ||
             d.UnitCount != 6 ||
             d.LessonCount != 42 ||
             d.LinkCount != 48)
@@ -705,7 +903,7 @@ public sealed class MathematicsCurriculumPackSeeder
             .Except(existingByCode.Keys, StringComparer.Ordinal)
             .ToArray();
 
-        if (stale.Length != 0 || missing.Length != 38)
+        if (stale.Length != 0 || missing.Length != 303)
         {
             throw new InvalidOperationException(
                 "UAE 2025-2026 additive repair code-set fingerprint drift.");

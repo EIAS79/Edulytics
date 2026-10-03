@@ -239,6 +239,12 @@ public sealed class PedagogicalLessonBlueprintLesson
     public List<string> OutcomeCodes { get; set; } =
         [];
 
+    /// <summary>
+    /// Optional Edulytics identifier for a verified official source reference
+    /// that proves curriculum scope without inventing an assessable outcome.
+    /// </summary>
+    public string? OfficialReferenceCode { get; set; }
+
     public List<string> ApplicableCourses { get; set; } =
         [];
 
@@ -646,13 +652,12 @@ public static class PedagogicalLessonBlueprintContract
                         $"{lesson.SourceLessonCode}.");
                 }
 
-                var resolved =
+                var resolvedStandard =
                     alignment.ResolutionKind is
                         "ExactAcceptedStandard" or
-                        "SubpartToAcceptedParent" or
-                        "ExactAcceptedReference";
+                        "SubpartToAcceptedParent";
 
-                if (resolved)
+                if (resolvedStandard)
                 {
                     if (!string.Equals(
                             alignment.Role,
@@ -667,6 +672,41 @@ public static class PedagogicalLessonBlueprintContract
                         throw new InvalidOperationException(
                             $"Resolved alignment is not an " +
                             $"explicit formal Addressing mapping: " +
+                            $"{lesson.SourceLessonCode}:" +
+                            $"{alignment.ReferenceCode}.");
+                    }
+                }
+                else if (alignment.ResolutionKind ==
+                             "ExactAcceptedReference")
+                {
+                    var legacyFormalReference =
+                        !string.IsNullOrWhiteSpace(
+                            alignment.OutcomeCode) &&
+                        lesson.OutcomeCodes.Contains(
+                            alignment.OutcomeCode!,
+                            StringComparer.Ordinal);
+
+                    var provenanceOnlyReference =
+                        string.IsNullOrWhiteSpace(
+                            alignment.OutcomeCode) &&
+                        !string.IsNullOrWhiteSpace(
+                            lesson.OfficialReferenceCode) &&
+                        string.Equals(
+                            lesson.OfficialReferenceCode,
+                            alignment.ReferenceCode,
+                            StringComparison.Ordinal);
+
+                    if (!string.Equals(
+                            alignment.Role,
+                            "Addressing",
+                            StringComparison.Ordinal) ||
+                        alignment.ReferenceKind !=
+                            "OfficialReference" ||
+                        (!legacyFormalReference &&
+                         !provenanceOnlyReference))
+                    {
+                        throw new InvalidOperationException(
+                            $"Resolved official reference is invalid: " +
                             $"{lesson.SourceLessonCode}:" +
                             $"{alignment.ReferenceCode}.");
                     }
@@ -691,6 +731,27 @@ public static class PedagogicalLessonBlueprintContract
                         $"{lesson.SourceLessonCode}:" +
                         $"{alignment.ReferenceCode}.");
                 }
+            }
+
+            if (!string.IsNullOrWhiteSpace(
+                    lesson.OfficialReferenceCode) &&
+                !lesson.Alignments.Any(
+                    x =>
+                        x.Role == "Addressing" &&
+                        x.ReferenceKind == "OfficialReference" &&
+                        x.ResolutionKind ==
+                            "ExactAcceptedReference" &&
+                        string.Equals(
+                            x.ReferenceCode,
+                            lesson.OfficialReferenceCode,
+                            StringComparison.Ordinal) &&
+                        string.IsNullOrWhiteSpace(
+                            x.OutcomeCode)))
+            {
+                throw new InvalidOperationException(
+                    $"OfficialReferenceCode lacks explicit " +
+                    $"provenance: {lesson.SourceLessonCode}:" +
+                    $"{lesson.OfficialReferenceCode}.");
             }
 
             foreach (var outcomeCode in

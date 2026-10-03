@@ -85,6 +85,7 @@ public sealed class CanonicalLessonContentPackLesson
         LessonTitleProvenance.LegacyUnspecified;
     public string TitleSourceReference { get; set; } = string.Empty;
     public List<string> OutcomeCodes { get; set; } = [];
+    public string? OfficialReferenceCode { get; set; }
     public bool IsSupporting { get; set; }
     public string SourceUrl { get; set; } = string.Empty;
     public string SourceLocator { get; set; } = string.Empty;
@@ -280,11 +281,14 @@ public static class CanonicalLessonContentPackContract
                 throw new InvalidOperationException(
                     $"Duplicate LessonCode: {lesson.LessonCode}.");
 
-            if ((lesson.IsSupporting && lesson.OutcomeCodes.Count != 0) ||
+            if ((lesson.IsSupporting &&
+                 (lesson.OutcomeCodes.Count != 0 ||
+                  !string.IsNullOrWhiteSpace(
+                      lesson.OfficialReferenceCode))) ||
                 lesson.OutcomeCodes.Any(string.IsNullOrWhiteSpace))
             {
                 throw new InvalidOperationException(
-                    $"Lesson {lesson.LessonCode} must have zero OutcomeCodes when Supporting; curriculum lessons may remain unmapped when no verified formal mapping exists.");
+                    $"Lesson {lesson.LessonCode} cannot be Supporting when it has a verified formal outcome or official reference.");
             }
 
             if (lesson.OutcomeCodes.Count !=

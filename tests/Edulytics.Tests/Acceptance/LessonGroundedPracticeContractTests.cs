@@ -73,7 +73,7 @@ public sealed class LessonGroundedPracticeContractTests
 
         Assert.Contains("ILessonContentService lessonContent", controller, StringComparison.Ordinal);
         Assert.Contains("GetPublishedForStudentAsync", controller, StringComparison.Ordinal);
-        Assert.Contains("detail.IsSupporting", controller, StringComparison.Ordinal);
+        Assert.Contains("detail.Outcomes.Count == 0", controller, StringComparison.Ordinal);
         Assert.Contains("BuildLessonPracticeContext", controller, StringComparison.Ordinal);
         Assert.Contains("lesson.Explanation", controller, StringComparison.Ordinal);
         Assert.Contains("lesson.KeyConceptsAndRules", controller, StringComparison.Ordinal);
@@ -93,7 +93,7 @@ public sealed class LessonGroundedPracticeContractTests
             "src/Edulytics.Web/Controllers/StudentPortalController.cs"));
 
         Assert.Contains("StudentLessonDetail lessonDetail", controller, StringComparison.Ordinal);
-        Assert.Contains("lessonDetail.IsSupporting", controller, StringComparison.Ordinal);
+        Assert.Contains("lessonDetail.Outcomes.Count == 0", controller, StringComparison.Ordinal);
         Assert.Contains("BuildLessonPracticeContext(lessonDetail)", controller, StringComparison.Ordinal);
         Assert.Contains("requireLessonGrounding: true", controller, StringComparison.Ordinal);
         Assert.Contains("LessonPracticeCapabilityResolver.TryResolve", controller, StringComparison.Ordinal);

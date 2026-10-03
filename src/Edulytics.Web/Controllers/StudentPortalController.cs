@@ -487,7 +487,7 @@ public sealed class StudentPortalController : Controller
         if (!exactPracticeAdoptionId.HasValue)
             exactPracticeAdoptionId = workspace.SelectedCurriculumAdoptionId;
 
-        var route = lessonDetail.IsSupporting
+        var route = lessonDetail.Outcomes.Count == 0
             ? GameLessonRouteResolver.Resolve(
                 lesson.LessonCode,
                 lesson.UnitTitle,
