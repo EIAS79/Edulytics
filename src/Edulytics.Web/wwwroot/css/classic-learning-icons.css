@@ -1,0 +1,70 @@
+/* Classic My Learning — contextual lesson icons */
+.student-lesson-card--with-icon{
+    position:relative;
+    padding-top:32px;
+}
+.classic-lesson-icon{
+    position:absolute;
+    top:18px;
+    right:18px;
+    width:54px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    background:linear-gradient(145deg,rgba(61,111,255,.10),rgba(103,79,238,.08));
+    border:1px solid rgba(78,97,214,.12);
+    color:#4558d8;
+    pointer-events:none;
+}
+.classic-lesson-icon svg{
+    width:42px;
+    height:32px;
+    overflow:visible;
+}
+.classic-lesson-icon svg path,
+.classic-lesson-icon svg circle,
+.classic-lesson-icon svg rect{
+    fill:none;
+    stroke:currentColor;
+    stroke-width:2.6;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+.classic-lesson-icon svg text{
+    fill:currentColor;
+    stroke:none;
+    font-size:12px;
+    font-weight:700;
+    font-family:inherit;
+}
+.student-lesson-card--with-icon > h3{
+    padding-right:66px;
+}
+html[dir="rtl"] .classic-lesson-icon{
+    right:auto;
+    left:18px;
+}
+html[dir="rtl"] .student-lesson-card--with-icon > h3{
+    padding-right:0;
+    padding-left:66px;
+}
+@media(max-width:640px){
+    .classic-lesson-icon{
+        width:48px;
+        height:40px;
+        top:14px;
+        right:14px;
+    }
+    html[dir="rtl"] .classic-lesson-icon{
+        right:auto;
+        left:14px;
+    }
+    .student-lesson-card--with-icon > h3{
+        padding-right:58px;
+    }
+    html[dir="rtl"] .student-lesson-card--with-icon > h3{
+        padding-left:58px;
+    }
+}
