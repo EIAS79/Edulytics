@@ -68,3 +68,39 @@ html[dir="rtl"] .student-lesson-card--with-icon > h3{
         padding-left:58px;
     }
 }
+
+/* Tighten vertical rhythm on classic My Learning */
+.student-learning-stack + .student-published-lessons{
+    margin-top:16px;
+}
+.student-lesson-grid .student-lesson-card--with-icon{
+    min-height:0;
+    height:auto;
+    padding:24px 22px 20px;
+}
+.student-lesson-card--with-icon > h3{
+    min-height:0;
+    margin:0 0 14px;
+    line-height:1.28;
+}
+.student-lesson-card--with-icon > p{
+    margin:0 0 16px;
+    line-height:1.35;
+}
+.student-lesson-card--with-icon .student-primary-link{
+    margin-top:0;
+}
+@media(max-width:640px){
+    .student-learning-stack + .student-published-lessons{
+        margin-top:12px;
+    }
+    .student-lesson-grid .student-lesson-card--with-icon{
+        padding:20px 16px 16px;
+    }
+    .student-lesson-card--with-icon > h3{
+        margin-bottom:12px;
+    }
+    .student-lesson-card--with-icon > p{
+        margin-bottom:14px;
+    }
+}
