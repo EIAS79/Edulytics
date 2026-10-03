@@ -98,8 +98,8 @@ public sealed class StudentLearningBackgroundContractTests
     {
         var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
 
-        Assert.Contains(@"\\s*\\(\\s*same\\s*$", view, StringComparison.Ordinal);
-        Assert.Contains(@"\\s*\\(\\s*same\\s*(?::\\s*)?(Build the Idea|Reason and Apply)?\\s*\\)?\\s*$", view, StringComparison.Ordinal);
+        Assert.Contains(@"\s*\(\s*same\s*$", view, StringComparison.Ordinal);
+        Assert.Contains(@"\s*\(\s*same\s*(?::\s*)?(Build the Idea|Reason and Apply)?\s*\)?\s*$", view, StringComparison.Ordinal);
     }
 
     private static string ReadRepositoryFile(params string[] relativeSegments)
