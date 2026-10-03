@@ -1,12 +1,12 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g4-common-t1-ogl-v1-v1",
+  "ContentVersion": "p29-uae-g4-common-t1-official-book-v2",
   "AcademicLanguage": "en",
   "CurriculumTranslationRequired": false,
-  "TargetCurriculumPeriod": "2025-2026 Term 1",
-  "SourceCurriculumPeriod": "2025-2026 Term 1",
-  "SourceVersionLabel": "2025-2026 Term 1",
+  "TargetCurriculumPeriod": "2026-2027 Term 1",
+  "SourceCurriculumPeriod": "2026-2027 Term 1",
+  "SourceVersionLabel": "2026-2027 Term 1",
   "SourceAuthority": "UAE Ministry of Education",
   "SourceUrl": "https://minhaji.moe.gov.ae/",
   "SourceCheckedAtUtc": "2026-09-01T00:00:00Z",
@@ -21,11 +21,11 @@
   "PedagogicalSourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
   "PedagogicalSourceCheckedAtUtc": "2026-09-01T00:00:00Z",
   "PedagogicalSourceSelectionReason": "Open government Mathematics material is used as pedagogical scaffolding so Edulytics can publish independently authored explanations without copying restricted official curriculum prose.",
-  "PedagogicalSourceSelectionEvidence": "Reviewed direct mappings to 13 existing accepted UAE MoE numbered standards cover 20 lessons. The remaining 5 lessons are Supporting. Official code identities and grade/pathway scopes are unchanged; standard meanings were checked against the MoE Strands and Standards Summary.",
+  "PedagogicalSourceSelectionEvidence": "All 25 Grade 4 lessons have a formal curriculum target: 20 use accepted UAE MoE numbered standards and 5 use explicit official 2026-2027 Grade 4 General Student Book references. Learner-facing explanatory prose remains independently authored.",
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "UAE G4/common: 20 officially mapped lessons, 5 Supporting; evidence https://www.scribd.com/document/826281797/Strands-and-Standards-Summary-MAT; no synthetic references and no learner-facing body changes.",
+  "ReviewEvidence": "UAE G4/Common: 25/25 formally anchored. Five previously Supporting lessons verified against the 2026-2027 UAE Grade 4 General Mathematics Student Book contents (Units 4, 6, 12, 13 and 16). No synthetic numbered standard was created.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:01:01:PLACE-VALUE-TO-LARGE-WHOLE-NUMBERS",
@@ -201,8 +201,10 @@
       "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:01:06:MULTIPLICATION-BY-ONE-DIGIT-NUMBERS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 4 / Common.",
-      "OutcomeCodes": [],
-      "IsSupporting": true,
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G4:COMMON:T1:U04:MULTIPLICATION-BY-ONE-DIGIT-NUMBERS"
+      ],
+      "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 4 / Number and Operations / 06",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -215,7 +217,7 @@
       "RetrievalUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "RetrievalChannel": "HTTPS",
       "RetrievalTimestamp": "2026-09-01T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored curriculum lesson informed by open OGL Mathematics pedagogy. The official curriculum remains the authority; no unverified formal mapping is claimed.",
+      "AdaptationStatus": "Edulytics-authored learner content formally anchored to the 2026-2027 UAE Grade 4 General Mathematics Student Book; no synthetic numbered standard is asserted.",
       "Translations": [
         {
           "CultureCode": "en",
@@ -233,8 +235,10 @@
       "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:01:07:DIVISION-WITH-REMAINDERS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 4 / Common.",
-      "OutcomeCodes": [],
-      "IsSupporting": true,
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G4:COMMON:T1:U06:DIVISION-WITH-REMAINDERS"
+      ],
+      "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 4 / Number and Operations / 07",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -247,7 +251,7 @@
       "RetrievalUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "RetrievalChannel": "HTTPS",
       "RetrievalTimestamp": "2026-09-01T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored curriculum lesson informed by open OGL Mathematics pedagogy. The official curriculum remains the authority; no unverified formal mapping is claimed.",
+      "AdaptationStatus": "Edulytics-authored learner content formally anchored to the 2026-2027 UAE Grade 4 General Mathematics Student Book; no synthetic numbered standard is asserted.",
       "Translations": [
         {
           "CultureCode": "en",
@@ -673,8 +677,10 @@
       "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:03:QUADRILATERALS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 4 / Common.",
-      "OutcomeCodes": [],
-      "IsSupporting": true,
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G4:COMMON:T1:U16:QUADRILATERALS"
+      ],
+      "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 4 / Geometry / 03",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -687,7 +693,7 @@
       "RetrievalUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "RetrievalChannel": "HTTPS",
       "RetrievalTimestamp": "2026-09-01T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored curriculum lesson informed by open OGL Mathematics pedagogy. The official curriculum remains the authority; no unverified formal mapping is claimed.",
+      "AdaptationStatus": "Edulytics-authored learner content formally anchored to the 2026-2027 UAE Grade 4 General Mathematics Student Book; no synthetic numbered standard is asserted.",
       "Translations": [
         {
           "CultureCode": "en",
@@ -739,8 +745,10 @@
       "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:05:LINE-SYMMETRY",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 4 / Common.",
-      "OutcomeCodes": [],
-      "IsSupporting": true,
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G4:COMMON:T1:U12:LINE-SYMMETRY"
+      ],
+      "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 4 / Geometry / 05",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -753,7 +761,7 @@
       "RetrievalUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "RetrievalChannel": "HTTPS",
       "RetrievalTimestamp": "2026-09-01T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored curriculum lesson informed by open OGL Mathematics pedagogy. The official curriculum remains the authority; no unverified formal mapping is claimed.",
+      "AdaptationStatus": "Edulytics-authored learner content formally anchored to the 2026-2027 UAE Grade 4 General Mathematics Student Book; no synthetic numbered standard is asserted.",
       "Translations": [
         {
           "CultureCode": "en",
@@ -805,8 +813,10 @@
       "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:05:02:LINE-GRAPHS",
       "TitleProvenance": "PedagogicalSource",
       "TitleSourceReference": "UK Department for Education primary Mathematics guidance; Edulytics-authored scope sequence for Grade 4 / Common.",
-      "OutcomeCodes": [],
-      "IsSupporting": true,
+      "OutcomeCodes": [
+        "UAE:REF:BOOK:G4:COMMON:T1:U13:LINE-GRAPHS"
+      ],
+      "IsSupporting": false,
       "SourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "SourceLocator": "Grade 4 / Statistics / 02",
       "SourceTitle": "UK Department for Education primary Mathematics guidance",
@@ -819,7 +829,7 @@
       "RetrievalUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
       "RetrievalChannel": "HTTPS",
       "RetrievalTimestamp": "2026-09-01T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored curriculum lesson informed by open OGL Mathematics pedagogy. The official curriculum remains the authority; no unverified formal mapping is claimed.",
+      "AdaptationStatus": "Edulytics-authored learner content formally anchored to the 2026-2027 UAE Grade 4 General Mathematics Student Book; no synthetic numbered standard is asserted.",
       "Translations": [
         {
           "CultureCode": "en",
