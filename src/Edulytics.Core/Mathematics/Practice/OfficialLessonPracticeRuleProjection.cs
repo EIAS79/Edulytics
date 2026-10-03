@@ -149,6 +149,42 @@ internal static class OfficialLessonPracticeRuleProjection
                         continue;
                     }
 
+                    // UAE textbook references promote a previously reviewed lesson
+                    // without inventing a MAT standard. Preserve the exact
+                    // lesson-scoped Practice contract that was already verified
+                    // while the lesson was Supporting.
+                    if (lesson.OutcomeCodes.Count > 0 &&
+                        lesson.OutcomeCodes.All(code =>
+                            code.StartsWith(
+                                "UAE:REF:BOOK:",
+                                StringComparison.Ordinal)) &&
+                        translation is not null &&
+                        SupportingPracticeTargetRuleRegistry.TryResolve(
+                            lesson.LessonCode,
+                            translation.Title,
+                            out var bookReferenceRule) &&
+                        bookReferenceRule is not null &&
+                        IsRuntimeReadyRule(
+                            bookReferenceRule,
+                            skillIds,
+                            familyById))
+                    {
+                        projected.Add(new LessonPracticeContract(
+                            lesson.LessonCode,
+                            bookReferenceRule.SkillId,
+                            bookReferenceRule.Mechanic,
+                            bookReferenceRule.Families
+                                .Distinct(StringComparer.Ordinal)
+                                .ToArray(),
+                            "OfficialBookReferenceReviewedRule",
+                            "READY_VERIFIED",
+                            ContractVersion)
+                        {
+                            SkillIds = [bookReferenceRule.SkillId]
+                        });
+                        continue;
+                    }
+
                     var resolvedOutcomes = lesson.OutcomeCodes
                         .Select(code =>
                             OfficialOutcomePracticeRuleRegistry.TryResolve(
