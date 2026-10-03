@@ -79,6 +79,19 @@ public sealed class StudentLearningBackgroundContractTests
         Assert.Contains("margin-top:0", css, StringComparison.Ordinal);
     }
 
+
+    [Fact]
+    public void Student_lesson_cards_strip_non_title_pathway_labels()
+    {
+        var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
+
+        Assert.Contains("DisplayLessonTitle", view, StringComparison.Ordinal);
+        Assert.Contains("Build the Idea|Reason and Apply", view, StringComparison.Ordinal);
+        Assert.Contains("same", view, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("@DisplayLessonTitle(lesson.Title)", view, StringComparison.Ordinal);
+        Assert.DoesNotContain("<h3>@lesson.Title</h3>", view, StringComparison.Ordinal);
+    }
+
     private static string ReadRepositoryFile(params string[] relativeSegments)
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);

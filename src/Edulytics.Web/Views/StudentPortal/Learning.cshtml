@@ -3,6 +3,26 @@
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonContentResource> L
 @functions {
+    private static string DisplayLessonTitle(string title)
+    {
+        if (string.IsNullOrWhiteSpace(title))
+            return title;
+
+        var cleaned = System.Text.RegularExpressions.Regex.Replace(
+            title,
+            @"\s*\(\s*same\s*:\s*(Build the Idea|Reason and Apply)\s*\)\s*$",
+            string.Empty,
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+
+        cleaned = System.Text.RegularExpressions.Regex.Replace(
+            cleaned,
+            @"\s*:\s*(Build the Idea|Reason and Apply)\s*$",
+            string.Empty,
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+
+        return cleaned.Trim();
+    }
+
     private static string LessonVisualKind(string title, string topic)
     {
         var text = $"{title} {topic}".ToLowerInvariant();
@@ -192,7 +212,7 @@ else
                                 break;
                         }
                     </div>
-                    <h3>@lesson.Title</h3>
+                    <h3>@DisplayLessonTitle(lesson.Title)</h3>
                     @if (lesson.IsSupporting)
                     {
                         <span class="lesson-content-status lesson-content-status--supporting">@L["SupportingLesson"]</span>
