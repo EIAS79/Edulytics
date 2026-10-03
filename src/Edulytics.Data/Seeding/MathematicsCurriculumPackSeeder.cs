@@ -95,10 +95,20 @@ public sealed class MathematicsCurriculumPackSeeder
                     x =>
                         x.IsOfficial &&
                         (
-                            d.PackCode ==
-                                MathematicsCurriculumPackRegistry.CambridgeCode
-                                ? x.Kind is "Outcome" or "Reference"
-                                : x.Kind is "Standard" or "Outcome"
+                            x.Kind is "Standard" or "Outcome" ||
+                            (
+                                d.PackCode ==
+                                    MathematicsCurriculumPackRegistry.CambridgeCode &&
+                                x.Kind == "Reference"
+                            ) ||
+                            (
+                                d.PackCode ==
+                                    MathematicsCurriculumPackRegistry.UaeCode &&
+                                x.Kind == "Reference" &&
+                                x.Code.StartsWith(
+                                    "UAE:REF:BOOK:",
+                                    StringComparison.Ordinal)
+                            )
                         ))
                 .ToArray();
         if (official.Length != d.OfficialNodeCount)
@@ -128,15 +138,15 @@ public sealed class MathematicsCurriculumPackSeeder
         {
             if (d.SchemaVersion != 14 ||
                 d.VersionCode != "MOE-2026-2027-T1" ||
-                d.NodeCount != 137 ||
-                d.OfficialNodeCount != 47 ||
+                d.NodeCount != 142 ||
+                d.OfficialNodeCount != 52 ||
                 d.UnitCount != 6 ||
                 d.LessonCount != 42 ||
                 d.LinkCount != 48 ||
-                !d.VersionName.Contains("2025-2026", StringComparison.Ordinal))
+                !d.VersionName.Contains("2026-2027", StringComparison.Ordinal))
             {
                 throw new InvalidOperationException(
-                    "UAE verified 2025-2026 target-coverage contract failed.");
+                    "UAE verified 2026-2027 target-coverage contract failed.");
             }
             if (d.Nodes.Any(x => x.LogicalLevelTo > 12) || d.Nodes.Any(x => x.Code.StartsWith("EDU:", StringComparison.Ordinal)))
                 throw new InvalidOperationException("UAE grade/synthetic-node guard failed.");
