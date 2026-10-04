@@ -1,3 +1,5 @@
+[Reading 557 lines from start (total: 557 lines, 0 remaining)]
+
 #!/usr/bin/env python3
 from __future__ import annotations
 
@@ -352,7 +354,20 @@ def audit() -> dict[str, Any]:
             seen_lessons.add(code)
 
             outcomes = clean_list(get_case(lesson, "OutcomeCodes", "outcomeCodes", default=[]))
-            source_type = "OfficialMapped" if outcomes else "PedagogicalUnmapped"
+            official_reference = str(
+                get_case(
+                    lesson,
+                    "OfficialReferenceCode",
+                    "officialReferenceCode",
+                    default="",
+                )
+                or ""
+            ).strip()
+            source_type = (
+                "OfficialMapped"
+                if outcomes or official_reference
+                else "PedagogicalUnmapped"
+            )
             fields = evidence_text(lesson)
             existing = mappings.get(code)
             supporting_mapping = supporting_mappings.get(code)
@@ -542,3 +557,5 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+[executed on device: Our-CS (5b833192-d785-448f-a352-2809eed61988)]
