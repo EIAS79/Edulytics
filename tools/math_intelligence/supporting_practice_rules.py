@@ -1,5 +1,5 @@
-[Reading 265 lines from start (total: 265 lines, 0 remaining)]
 
+﻿
 #!/usr/bin/env python3
 from __future__ import annotations
 
@@ -37,7 +37,7 @@ def normalize_space(value: Any) -> str:
 
 
 def normalize_title(title: str) -> str:
-    value = re.sub(r"\s*[—-]\s*advanced reasoning\s*$", "", title or "", flags=re.I)
+    value = re.sub(r"\s*[â€”-]\s*advanced reasoning\s*$", "", title or "", flags=re.I)
     value = re.sub(r":\s*(?:build the idea|reason and apply)\s*$", "", value, flags=re.I)
     value = re.sub(r"^\s*consolidating\s+", "", value, flags=re.I)
     return normalize_space(value)
@@ -265,5 +265,3 @@ def load_rule_mappings(content_dir: Path) -> tuple[dict[str, dict[str, Any]], li
             mappings[lesson_code] = mapping_from_rule(lesson_code, rule)
 
     return mappings, unmatched, errors
-
-[executed on device: Our-CS (5b833192-d785-448f-a352-2809eed61988)]
