@@ -1,4 +1,5 @@
 using Edulytics.Core.Constants;
+using Edulytics.Core.Curriculum;
 using Edulytics.Core.Enums;
 
 namespace Edulytics.Services.LessonContent;
@@ -38,6 +39,15 @@ public static class LessonContentPolicy
 
     public static bool IsCanonicalTarget(int officialOutcomeCount) =>
         officialOutcomeCount >= 0;
+
+    public static bool CanExposeStudentLesson(
+        string frameworkCode,
+        bool isSupporting) =>
+        !string.Equals(
+            frameworkCode,
+            MathematicsCurriculumPackRegistry.UaeCode,
+            StringComparison.Ordinal) ||
+        !isSupporting;
 
     public static bool IsProductionReady(
         CanonicalLessonContentStatus? status,
