@@ -102,7 +102,7 @@ public sealed class PolishRichLessonContentV2ClosureTests
             .OrderBy(x => x, StringComparer.Ordinal)
             .ToArray();
 
-        Assert.Equal(138, families.Length);
+        Assert.Equal(139, families.Length);
 
         var engine = new ExactSkillContractQuestionEngine();
 

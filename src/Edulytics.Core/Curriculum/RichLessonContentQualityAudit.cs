@@ -242,7 +242,10 @@ public static partial class RichLessonContentQualityAudit
         return new(
             lesson.LessonCode,
             document.PackCode,
-            lesson.IsSupporting || lesson.OutcomeCodes.Count == 0,
+            lesson.IsSupporting ||
+            (lesson.OutcomeCodes.Count == 0 &&
+             string.IsNullOrWhiteSpace(
+                 lesson.OfficialReferenceCode)),
             lesson.OutcomeCodes.Count,
             translation.Title,
             explanation,

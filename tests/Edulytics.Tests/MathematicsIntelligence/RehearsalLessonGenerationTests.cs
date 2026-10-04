@@ -43,6 +43,7 @@ public class RehearsalLessonGenerationTests
             foreach (var lesson in document.Lessons)
             {
                 lesson.OutcomeCodes.Clear();
+                lesson.OfficialReferenceCode = null;
                 lesson.IsSupporting = true;
             }
         }
@@ -116,14 +117,74 @@ public class RehearsalLessonGenerationTests
         await seeder.SeedAsync();
         var upgraded = await db.CurriculumPackImportStates.SingleAsync(x => x.FrameworkCode == "UAE-MOE-MATH");
         Assert.Equal(state.FrameworkVersionId, upgraded.FrameworkVersionId);
-        Assert.Equal(137, upgraded.NodeCount);
-        Assert.Equal(47, upgraded.OfficialNodeCount);
+        Assert.Equal(402, upgraded.NodeCount);
+        Assert.Equal(312, upgraded.OfficialNodeCount);
         var persisted = await db.CurriculumPackContentNodes.Where(x => x.FrameworkVersionId == state.FrameworkVersionId).ToArrayAsync();
-        Assert.Equal(137, persisted.Length);
+        Assert.Equal(402, persisted.Length);
         foreach (var node in persisted.Where(x => acceptedIds.ContainsKey(x.Code)))
             Assert.Equal(acceptedIds[node.Code], node.Id);
         Assert.Equal(48, await db.CurriculumPackNodeLinks.CountAsync(x => x.FrameworkVersionId == state.FrameworkVersionId));
         Assert.Contains(persisted, x => x.Code == "UAE:STD:MAT.1.02.04" && x.LogicalLevelFrom == 3);
+    }
+
+    [Fact]
+    public async Task Current_uae_137_node_baseline_adds_textbook_references_in_place()
+    {
+        await using var db = new EdulyticsDbContext(
+            new DbContextOptionsBuilder<EdulyticsDbContext>()
+                .UseInMemoryDatabase(Guid.NewGuid().ToString())
+                .Options);
+        var seeder = new MathematicsCurriculumPackSeeder(db);
+        await seeder.SeedAsync();
+
+        var state = await db.CurriculumPackImportStates.SingleAsync(
+            x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode);
+        var nodes = await db.CurriculumPackContentNodes
+            .Where(x => x.FrameworkVersionId == state.FrameworkVersionId)
+            .ToArrayAsync();
+
+        var textbookReferences = nodes
+            .Where(x => x.Code.StartsWith(
+                "UAE:REF:TEXTBOOK:",
+                StringComparison.Ordinal))
+            .ToArray();
+        Assert.Equal(265, textbookReferences.Length);
+
+        var acceptedIds = nodes
+            .Except(textbookReferences)
+            .ToDictionary(x => x.Code, x => x.Id, StringComparer.Ordinal);
+        Assert.Equal(137, acceptedIds.Count);
+
+        db.CurriculumPackContentNodes.RemoveRange(textbookReferences);
+        state.NodeCount = 137;
+        state.OfficialNodeCount = 47;
+        state.SourceDigest =
+            "470e9bd35d26931e3c4a2e4666b97a35481c3212b72024060c49dd6160bf776f";
+        state.ContentDigest =
+            "bac04756a72853ba6be0ccf41d0d0e55d0381be62c2001b9c5d4ae3382469ae4";
+        await db.SaveChangesAsync();
+        db.ChangeTracker.Clear();
+
+        await seeder.SeedAsync();
+        await seeder.SeedAsync();
+
+        var upgraded = await db.CurriculumPackImportStates.SingleAsync(
+            x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode);
+        Assert.Equal(402, upgraded.NodeCount);
+        Assert.Equal(312, upgraded.OfficialNodeCount);
+
+        var persisted = await db.CurriculumPackContentNodes
+            .Where(x => x.FrameworkVersionId == upgraded.FrameworkVersionId)
+            .ToArrayAsync();
+        Assert.Equal(402, persisted.Length);
+        Assert.Equal(
+            265,
+            persisted.Count(x => x.Code.StartsWith(
+                "UAE:REF:TEXTBOOK:",
+                StringComparison.Ordinal)));
+
+        foreach (var node in persisted.Where(x => acceptedIds.ContainsKey(x.Code)))
+            Assert.Equal(acceptedIds[node.Code], node.Id);
     }
 
     [Fact]

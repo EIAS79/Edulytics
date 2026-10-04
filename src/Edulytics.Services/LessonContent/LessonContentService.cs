@@ -426,7 +426,7 @@ public sealed class LessonContentService : ILessonContentService
                 translation.QuickSummary,
                 outcomes,
                 content.PublishedAtUtc ?? content.UpdatedAtUtc,
-                LessonContentPolicy.IsSupporting(lesson.OfficialOutcomeCount))
+                ResolveIsSupporting(lesson))
             {
                 LessonCode = lesson.Code,
                 RichContent =
