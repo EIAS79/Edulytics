@@ -75,18 +75,17 @@ public sealed class SupportingLessonPracticeR2Tests
     }
 
     [Fact]
-    public void PromotedHighConfidenceContractsDoNotClaimOfficialOutcomeMapping()
+    public void RebuiltUaeCurriculumDoesNotRetainLegacySupportingPracticeMapping()
     {
         var root = FindRoot();
         var mappingJson = File.ReadAllText(Path.Combine(
             root,
             "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json"));
 
-        Assert.Contains(
+        Assert.DoesNotContain(
             "PED:UAE-MOE-MATH:L12:ADVANCED:01:06:RATES-AND-UNIT-RATES",
             mappingJson,
             StringComparison.Ordinal);
-        Assert.Contains(@"""officialOutcomeMapped"": false", mappingJson, StringComparison.Ordinal);
     }
 
     private static string FindRoot()
