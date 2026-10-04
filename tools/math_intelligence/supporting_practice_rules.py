@@ -1,3 +1,5 @@
+[Reading 265 lines from start (total: 265 lines, 0 remaining)]
+
 #!/usr/bin/env python3
 from __future__ import annotations
 
@@ -231,7 +233,19 @@ def load_rule_mappings(content_dir: Path) -> tuple[dict[str, dict[str, Any]], li
             outcomes = clean_list(
                 get_case(lesson, "OutcomeCodes", "outcomeCodes", default=[])
             )
-            if outcomes:
+            official_reference = str(
+                get_case(
+                    lesson,
+                    "OfficialReferenceCode",
+                    "officialReferenceCode",
+                    default="",
+                )
+                or ""
+            ).strip()
+            is_supporting = bool(
+                get_case(lesson, "IsSupporting", "isSupporting", default=False)
+            )
+            if outcomes or official_reference or not is_supporting:
                 continue
 
             translation = choose_translation(lesson, academic_language)
@@ -251,3 +265,5 @@ def load_rule_mappings(content_dir: Path) -> tuple[dict[str, dict[str, Any]], li
             mappings[lesson_code] = mapping_from_rule(lesson_code, rule)
 
     return mappings, unmatched, errors
+
+[executed on device: Our-CS (5b833192-d785-448f-a352-2809eed61988)]
