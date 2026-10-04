@@ -1,5 +1,5 @@
-[Reading 557 lines from start (total: 557 lines, 0 remaining)]
 
+﻿
 #!/usr/bin/env python3
 from __future__ import annotations
 
@@ -206,7 +206,7 @@ def evidence_text(lesson: dict[str, Any]) -> dict[str, str]:
 
 def short_signal(text: str, limit: int = 220) -> str:
     text = normalize_space(text)
-    return text if len(text) <= limit else text[: limit - 1].rstrip() + "…"
+    return text if len(text) <= limit else text[: limit - 1].rstrip() + "â€¦"
 
 
 def score_rule(
@@ -557,5 +557,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
-[executed on device: Our-CS (5b833192-d785-448f-a352-2809eed61988)]
