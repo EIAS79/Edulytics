@@ -1577,11 +1577,24 @@ await using (var db = await NewDbAsync())
 
     var uae = states.Single(x => x.FrameworkCode == "UAE-MOE-MATH");
     if (uae.VersionCode != "MOE-2026-2027-T1" ||
-        uae.OfficialNodeCount != 47 ||
+        uae.NodeCount != 402 ||
+        uae.OfficialNodeCount != 312 ||
         uae.UnitCount != 6 ||
         uae.LessonCount != 42 ||
         uae.LinkCount != 48)
         throw new Exception("Phase27.5 PostgreSQL UAE verified-count contract failed.");
+
+    var textbookReferenceCount =
+        await db.CurriculumPackContentNodes
+            .AsNoTracking()
+            .CountAsync(x =>
+                x.FrameworkVersionId == uae.FrameworkVersionId &&
+                x.NodeKind == "Reference" &&
+                x.IsOfficial &&
+                x.Code.StartsWith("UAE:REF:TEXTBOOK:"));
+
+    if (textbookReferenceCount != 265)
+        throw new Exception("Phase27.5 PostgreSQL UAE textbook-reference count failed.");
 
     var lessons = await db.CurriculumPackContentNodes
         .AsNoTracking()
