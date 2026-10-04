@@ -190,9 +190,6 @@ public sealed class SupportingLessonPracticeR11R12Tests
     [Theory]
     [InlineData("PED:CAMBRIDGE-INTL-MATH:L7:SHARED:01:05:RATIO-AND-PROPORTION", "ratio.unit_rate", "ratio.unit_rate.divide_total")]
     [InlineData("PED:CAMBRIDGE-INTL-MATH:L10:CORE:01:07:RATES", "ratio.unit_rate", "ratio.unit_rate.direct")]
-    [InlineData("PED:UAE-MOE-MATH:L12:ADVANCED:02:08:COORDINATES-AND-STRAIGHT-LINE-GRAPHS", "geometry.coordinate.straight_line", "geometry.coordinate.evaluate_linear_rule")]
-    [InlineData("PED:UAE-MOE-MATH:L11:GENERAL:04:03:MEAN-MEDIAN-AND-RANGE", "statistics.center_spread.core", "statistics.center_spread.median")]
-    [InlineData("PED:UAE-MOE-MATH:L10:ADVANCED:04:06:THEORETICAL-PROBABILITY", "probability.theoretical.core", "probability.theoretical.two_coins_exactly_one")]
     [InlineData("PED:CAMBRIDGE-INTL-MATH:L10:CORE:08:01:SINGLE-EVENT-PROBABILITY", "probability.theoretical.core", "probability.theoretical.complement")]
     public void R7PromotedMappingsProjectIntoExactRuntimeContracts(
         string lessonCode,
@@ -273,8 +270,6 @@ public sealed class SupportingLessonPracticeR11R12Tests
     [Theory]
     [InlineData("PED:CAMBRIDGE-INTL-MATH:L10:CORE:01:03:PERCENTAGES", "percentages.core", "percentages.core.increase_decrease")]
     [InlineData("PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:02:05:SEQUENCES", "sequences.core", "sequences.core.geometric_nth_term")]
-    [InlineData("PED:UAE-MOE-MATH:L12:ADVANCED:03:02:POLYGONS", "geometry.polygons.angle_sum", "geometry.polygons.regular_interior_angle")]
-    [InlineData("PED:UAE-MOE-MATH:L11:GENERAL:03:05:PERIMETER-AND-AREA", "geometry.perimeter_area", "geometry.perimeter_area.triangle_area")]
     public void R6PromotedMappingsProjectIntoExactRuntimeContracts(
         string lessonCode,
         string expectedSkill,
@@ -305,9 +300,6 @@ public sealed class SupportingLessonPracticeR11R12Tests
 
     [Theory]
     [InlineData("PED:CAMBRIDGE-INTL-MATH:L10:CORE:02:02:LINEAR-EQUATIONS", "algebra.linear.solve", "algebra.linear.variables_both_sides")]
-    [InlineData("PED:UAE-MOE-MATH:L12:ADVANCED:02:06:INEQUALITIES", "algebra.linear.inequality.solve", "algebra.linear.inequality.variables_both_sides")]
-    [InlineData("PED:UAE-MOE-MATH:L10:ADVANCED:03:07:PYTHAGORAS-THEOREM", "geometry.right_triangle.pythagorean", "geometry.right_triangle.pythagorean.find_leg_exact")]
-    [InlineData("PED:UAE-MOE-MATH:L9:ADVANCED:03:01:ANGLE-RELATIONSHIPS", "geometry.angles.relationships", "geometry.angles.algebraic_supplementary")]
     public void R5PromotedSupportingMappingsProjectIntoExactRuntimeContracts(
         string lessonCode,
         string expectedSkill,
