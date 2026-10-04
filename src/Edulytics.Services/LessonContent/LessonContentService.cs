@@ -303,7 +303,10 @@ public sealed class LessonContentService : ILessonContentService
             foreach (var lesson in lessons.Where(x =>
                          MatchesContext(x, context) &&
                          LessonContentPolicy.IsCanonicalTarget(
-                             x.OfficialOutcomeCount)))
+                             x.OfficialOutcomeCount) &&
+                         LessonContentPolicy.CanExposeStudentLesson(
+                             context.FrameworkCode,
+                             x.IsSupporting == true)))
             {
                 if (!contentByLesson.TryGetValue(lesson.Id, out var content))
                     continue;
@@ -378,7 +381,10 @@ public sealed class LessonContentService : ILessonContentService
 
         var context = resolvableContexts.FirstOrDefault(x =>
             MatchesContext(lesson, x));
-        if (context is null)
+        if (context is null ||
+            !LessonContentPolicy.CanExposeStudentLesson(
+                context.FrameworkCode,
+                lesson.IsSupporting == true))
         {
             return LessonContentQueryResult<StudentLessonDetail>.Failure(
                 LessonContentErrorCode.LessonNotFound);
