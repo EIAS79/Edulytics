@@ -910,21 +910,61 @@ public sealed class MathematicsPedagogicalLessonSeeder
 
         if (unexpected.Length != 0)
         {
-            throw new InvalidOperationException(
-                "Unexpected existing pedagogical outcome alignment drift: " +
-                string.Join(
-                    ", ",
-                    unexpected.Select(
+            var expectedLessonById =
+                expectedLessons.ToDictionary(x => x.Id);
+
+            var unexpectedOutsideUae =
+                unexpected
+                    .Where(
                         x =>
-                            $"{x.PedagogicalLessonId}:" +
-                            $"{x.OutcomeNodeId}")));
+                            !expectedLessonById.TryGetValue(
+                                x.PedagogicalLessonId,
+                                out var lesson) ||
+                            !lesson.Code.StartsWith(
+                                "PED:UAE-MOE-MATH:",
+                                StringComparison.Ordinal))
+                    .ToArray();
+
+            if (unexpectedOutsideUae.Length != 0)
+            {
+                throw new InvalidOperationException(
+                    "Unexpected existing pedagogical outcome alignment drift: " +
+                    string.Join(
+                        ", ",
+                        unexpectedOutsideUae.Select(
+                            x =>
+                                $\"{x.PedagogicalLessonId}:\" +
+                                $\"{x.OutcomeNodeId}\")));
+            }
+
+            // UAE lesson identities are deterministic. The official rebuild
+            // can legitimately change the formal Outcome projected for an
+            // existing lesson slot. Replace only stale UAE mappings; every
+            // other framework remains fail-closed.
+            _db.CurriculumPedagogicalLessonOutcomes
+                .RemoveRange(unexpected);
         }
 
+        var unexpectedKeys =
+            unexpected
+                .Select(
+                    x => (
+                        x.PedagogicalLessonId,
+                        x.OutcomeNodeId))
+                .ToHashSet();
+
         var byKey =
-            existing.ToDictionary(
-                x => (
-                    x.PedagogicalLessonId,
-                    x.OutcomeNodeId));
+            existing
+                .Where(
+                    x =>
+                        !unexpectedKeys.Contains(
+                            (
+                                x.PedagogicalLessonId,
+                                x.OutcomeNodeId)))
+                .ToDictionary(
+                    x => (
+                        x.PedagogicalLessonId,
+                        x.OutcomeNodeId));
 
         foreach (var row in expected)
         {
