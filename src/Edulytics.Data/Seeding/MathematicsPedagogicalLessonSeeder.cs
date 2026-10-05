@@ -1122,6 +1122,64 @@ public sealed class MathematicsPedagogicalLessonSeeder
             await _db.SaveChangesAsync(ct);
         }
 
+        var expectedByStaleIdentity = expected
+            .GroupBy(x => (x.FrameworkVersionId, x.Code))
+            .ToDictionary(x => x.Key, x => x.Single());
+
+        var staleByLessonId = stale.ToDictionary(x => x.Id);
+        var assessmentItems = await _db.AssessmentItems
+            .Where(x =>
+                x.CurriculumPedagogicalLessonId.HasValue &&
+                staleIds.Contains(x.CurriculumPedagogicalLessonId.Value))
+            .ToArrayAsync(ct);
+        var practiceAttempts = await _db.PracticeAttempts
+            .Where(x =>
+                x.CurriculumPedagogicalLessonId.HasValue &&
+                staleIds.Contains(x.CurriculumPedagogicalLessonId.Value))
+            .ToArrayAsync(ct);
+
+        foreach (var reference in assessmentItems)
+        {
+            var obsolete = staleByLessonId[
+                reference.CurriculumPedagogicalLessonId!.Value];
+
+            if (!obsolete.Code.StartsWith(
+                    "PED:UAE-MOE-MATH:",
+                    StringComparison.Ordinal))
+            {
+                throw new InvalidOperationException(
+                    "Refusing to reconcile AssessmentItem references outside the UAE migration scope.");
+            }
+
+            reference.CurriculumPedagogicalLessonId =
+                expectedByStaleIdentity.TryGetValue(
+                    (obsolete.FrameworkVersionId, obsolete.Code),
+                    out var target)
+                    ? target.Id
+                    : null;
+        }
+
+        foreach (var reference in practiceAttempts)
+        {
+            var obsolete = staleByLessonId[
+                reference.CurriculumPedagogicalLessonId!.Value];
+
+            if (!obsolete.Code.StartsWith(
+                    "PED:UAE-MOE-MATH:",
+                    StringComparison.Ordinal))
+            {
+                throw new InvalidOperationException(
+                    "Refusing to reconcile PracticeAttempt references outside the UAE migration scope.");
+            }
+
+            reference.CurriculumPedagogicalLessonId =
+                expectedByStaleIdentity.TryGetValue(
+                    (obsolete.FrameworkVersionId, obsolete.Code),
+                    out var target)
+                    ? target.Id
+                    : null;
+        }
+
         var staleMappings = await _db.CurriculumPedagogicalLessonOutcomes
             .Where(x => staleIds.Contains(x.PedagogicalLessonId))
             .ToArrayAsync(ct);
