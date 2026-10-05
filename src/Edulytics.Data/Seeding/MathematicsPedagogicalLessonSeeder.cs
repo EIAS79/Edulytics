@@ -1025,22 +1025,21 @@ public sealed class MathematicsPedagogicalLessonSeeder
         // and resynchronize derived descriptive fields from that authoritative
         // node. This keeps production upgrades fail-closed for any identity
         // drift while allowing older Phase29 projections to converge.
-        if (current.Id != expected.Id ||
-            current.FrameworkVersionId != expected.FrameworkVersionId ||
-            !string.Equals(
-                current.Code,
-                expected.Code,
-                StringComparison.Ordinal) ||
-            (
-                current.OfficialLessonNodeId.HasValue &&
-                current.OfficialLessonNodeId != expected.OfficialLessonNodeId
-            ))
+        // UpsertLessonsAsync found this row by the exact deterministic
+        // official Lesson node primary key. For these 42 legacy UAE rows that
+        // primary key is the authoritative identity; all remaining columns are
+        // a rebuildable projection and may reflect an older Phase29 snapshot.
+        if (current.Id != expected.Id)
         {
             return false;
         }
 
+        current.FrameworkVersionId =
+            expected.FrameworkVersionId;
         current.OfficialLessonNodeId =
             expected.OfficialLessonNodeId;
+        current.Code =
+            expected.Code;
         current.UnitKey =
             expected.UnitKey;
         current.UnitTitle =
