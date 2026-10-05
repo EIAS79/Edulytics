@@ -30,14 +30,14 @@
   "academicReview": {
     "currentState": "REQUIRED",
     "approvedVerifiedLessonCount": 0,
-    "note": "The current Extended lesson packs are supporting pedagogical scaffolds with OutcomeCodes/FormalTargets empty. Engine overlap is therefore CONTEXTUAL, not VERIFIED, until a formal mapping and academic review are approved."
+    "note": "All Extended learner lessons now carry explicit official Cambridge 0580 syllabus mappings. Engine/product capability promotion remains a separate fail-closed gate and is not inferred from curriculum mapping alone."
   },
   "summary": {
     "totalLessons": 140,
     "verified": 0,
     "contextual": 28,
     "unsupported": 112,
-    "formalOutcomeMapped": 0
+    "formalOutcomeMapped": 140
   },
   "lessons": [
     {
@@ -47,13 +47,15 @@
       "lessonTitle": "Integers and order of operations",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.6"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:01:02:FRACTIONS-AND-DECIMALS",
@@ -62,13 +64,16 @@
       "lessonTitle": "Fractions and decimals",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.4.1",
+        "CAM:OUT:0580:E1.4.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:01:03:PERCENTAGES",
@@ -77,13 +82,19 @@
       "lessonTitle": "Percentages",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.13.1",
+        "CAM:OUT:0580:E1.13.2",
+        "CAM:OUT:0580:E1.13.3",
+        "CAM:OUT:0580:E1.13.4",
+        "CAM:OUT:0580:E1.13.5"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:01:04:RATIO-AND-PROPORTION",
@@ -92,13 +103,15 @@
       "lessonTitle": "Ratio and proportion",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.11"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:01:05:STANDARD-FORM",
@@ -107,13 +120,17 @@
       "lessonTitle": "Standard form",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.8.1",
+        "CAM:OUT:0580:E1.8.2",
+        "CAM:OUT:0580:E1.8.3"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:01:06:APPROXIMATION-AND-BOUNDS",
@@ -122,13 +139,19 @@
       "lessonTitle": "Approximation and bounds",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.9.1",
+        "CAM:OUT:0580:E1.9.2",
+        "CAM:OUT:0580:E1.9.3",
+        "CAM:OUT:0580:E1.10.1",
+        "CAM:OUT:0580:E1.10.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:01:07:RATES",
@@ -137,13 +160,16 @@
       "lessonTitle": "Rates",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.12.1",
+        "CAM:OUT:0580:E1.12.3"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:01:08:MONEY-AND-COMPOUND-MEASURES",
@@ -152,13 +178,17 @@
       "lessonTitle": "Money and compound measures",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.12.2",
+        "CAM:OUT:0580:E1.16.1",
+        "CAM:OUT:0580:E1.16.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:02:01:ALGEBRAIC-MANIPULATION",
@@ -167,13 +197,21 @@
       "lessonTitle": "Algebraic manipulation",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.2.1",
+        "CAM:OUT:0580:E2.2.2",
+        "CAM:OUT:0580:E2.2.3",
+        "CAM:OUT:0580:E2.2.4",
+        "CAM:OUT:0580:E2.2.5",
+        "CAM:OUT:0580:E2.3.1",
+        "CAM:OUT:0580:E2.3.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:02:02:LINEAR-EQUATIONS",
@@ -182,8 +220,12 @@
       "lessonTitle": "Linear equations",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.5.1",
+        "CAM:OUT:0580:E2.5.2",
+        "CAM:OUT:0580:E2.5.3"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "algebra.linear.solve"
@@ -192,7 +234,7 @@
         "igcse-bench-linear"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:02:03:SIMULTANEOUS-LINEAR-EQUATIONS",
@@ -201,8 +243,12 @@
       "lessonTitle": "Simultaneous linear equations",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.5.1",
+        "CAM:OUT:0580:E2.5.2",
+        "CAM:OUT:0580:E2.5.3"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "algebra.linear.systems.two_by_two.solve"
@@ -211,7 +257,7 @@
         "igcse-bench-systems"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:02:04:INEQUALITIES",
@@ -220,8 +266,13 @@
       "lessonTitle": "Inequalities",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.6.1",
+        "CAM:OUT:0580:E2.6.2",
+        "CAM:OUT:0580:E2.6.3",
+        "CAM:OUT:0580:E2.6.4"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "algebra.linear.inequality.solve"
@@ -230,7 +281,7 @@
         "igcse-bench-inequality"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:02:05:SEQUENCES",
@@ -239,8 +290,12 @@
       "lessonTitle": "Sequences",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.7.1",
+        "CAM:OUT:0580:E2.7.2",
+        "CAM:OUT:0580:E2.7.3"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "sequences.arithmetic.nth_term",
@@ -251,7 +306,7 @@
         "igcse-bench-geometric-sequence"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:02:06:FUNCTIONS-AND-NOTATION",
@@ -260,8 +315,10 @@
       "lessonTitle": "Functions and notation",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.13.1"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "functions.evaluate.exact"
@@ -270,7 +327,7 @@
         "igcse-bench-function-eval"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:02:07:STRAIGHT-LINE-GRAPHS",
@@ -279,13 +336,17 @@
       "lessonTitle": "Straight-line graphs",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E3.2",
+        "CAM:OUT:0580:E3.5",
+        "CAM:OUT:0580:E3.6"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:02:08:QUADRATIC-EXPRESSIONS-AND-EQUATIONS",
@@ -294,8 +355,11 @@
       "lessonTitle": "Quadratic expressions and equations",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.5.5",
+        "CAM:OUT:0580:E2.5.7"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "algebra.quadratic.solve.real_roots"
@@ -304,7 +368,7 @@
         "igcse-bench-quadratic"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:03:01:GRADIENT",
@@ -313,13 +377,16 @@
       "lessonTitle": "Gradient",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E3.3.1",
+        "CAM:OUT:0580:E3.3.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:03:02:EQUATION-OF-A-LINE",
@@ -328,13 +395,16 @@
       "lessonTitle": "Equation of a line",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E3.5",
+        "CAM:OUT:0580:E3.6"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:03:03:PARALLEL-AND-PERPENDICULAR-LINES",
@@ -343,13 +413,15 @@
       "lessonTitle": "Parallel and perpendicular lines",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E3.7"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:03:04:MIDPOINT-AND-DISTANCE",
@@ -358,13 +430,16 @@
       "lessonTitle": "Midpoint and distance",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E3.4.1",
+        "CAM:OUT:0580:E3.4.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:04:01:ANGLE-FACTS",
@@ -373,13 +448,17 @@
       "lessonTitle": "Angle facts",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E4.6.1",
+        "CAM:OUT:0580:E4.6.2",
+        "CAM:OUT:0580:E4.6.3"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:04:02:POLYGONS",
@@ -388,13 +467,19 @@
       "lessonTitle": "Polygons",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E4.1.1",
+        "CAM:OUT:0580:E4.1.2",
+        "CAM:OUT:0580:E4.1.3",
+        "CAM:OUT:0580:E4.5.1",
+        "CAM:OUT:0580:E4.5.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:04:03:SIMILARITY",
@@ -403,13 +488,17 @@
       "lessonTitle": "Similarity",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E4.4.1",
+        "CAM:OUT:0580:E4.4.2",
+        "CAM:OUT:0580:E4.4.3"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:04:04:CONGRUENCE",
@@ -418,13 +507,16 @@
       "lessonTitle": "Congruence",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E4.1.1",
+        "CAM:OUT:0580:E4.1.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:04:05:CIRCLE-GEOMETRY",
@@ -433,13 +525,16 @@
       "lessonTitle": "Circle geometry",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E4.7",
+        "CAM:OUT:0580:E4.8"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:04:06:TRANSFORMATIONS",
@@ -448,13 +543,18 @@
       "lessonTitle": "Transformations",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E7.1.1",
+        "CAM:OUT:0580:E7.1.2",
+        "CAM:OUT:0580:E7.1.3",
+        "CAM:OUT:0580:E7.1.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:05:01:PERIMETER-AND-AREA",
@@ -463,8 +563,10 @@
       "lessonTitle": "Perimeter and area",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E5.2"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "geometry.rectangle.area",
@@ -477,7 +579,7 @@
         "igcse-bench-triangle-area"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:05:02:CIRCLE-MEASURES",
@@ -486,13 +588,16 @@
       "lessonTitle": "Circle measures",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E5.3.1",
+        "CAM:OUT:0580:E5.3.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:05:03:SURFACE-AREA",
@@ -501,13 +606,15 @@
       "lessonTitle": "Surface area",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E5.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:05:04:VOLUME",
@@ -516,13 +623,15 @@
       "lessonTitle": "Volume",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E5.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:05:05:COMPOUND-SHAPES",
@@ -531,13 +640,16 @@
       "lessonTitle": "Compound shapes",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E5.5.1",
+        "CAM:OUT:0580:E5.5.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:06:01:PYTHAGORAS-THEOREM",
@@ -546,8 +658,10 @@
       "lessonTitle": "Pythagoras theorem",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E6.1"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "geometry.right_triangle.pythagorean"
@@ -556,7 +670,7 @@
         "igcse-bench-pythagoras"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:06:02:SINE-COSINE-AND-TANGENT",
@@ -565,8 +679,13 @@
       "lessonTitle": "Sine cosine and tangent",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E6.2.1",
+        "CAM:OUT:0580:E6.2.2",
+        "CAM:OUT:0580:E6.2.3",
+        "CAM:OUT:0580:E6.2.4"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "trigonometry.special_angles.evaluate"
@@ -575,7 +694,7 @@
         "igcse-bench-special-angle-trig"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:06:03:BEARINGS",
@@ -584,13 +703,17 @@
       "lessonTitle": "Bearings",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E4.3.1",
+        "CAM:OUT:0580:E4.3.2",
+        "CAM:OUT:0580:E6.2.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:06:04:THREE-DIMENSIONAL-PROBLEMS",
@@ -599,13 +722,15 @@
       "lessonTitle": "Three-dimensional problems",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E6.6"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:07:01:VECTOR-NOTATION",
@@ -614,13 +739,15 @@
       "lessonTitle": "Vector notation",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E7.2.1"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:07:02:VECTOR-ARITHMETIC",
@@ -629,8 +756,11 @@
       "lessonTitle": "Vector arithmetic",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E7.2.1",
+        "CAM:OUT:0580:E7.3"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "vectors.add.exact"
@@ -639,7 +769,7 @@
         "igcse-bench-vector-add"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:07:03:TRANSLATIONS",
@@ -648,13 +778,15 @@
       "lessonTitle": "Translations",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E7.2.1"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:07:04:ROTATIONS-REFLECTIONS-AND-ENLARGEMENTS",
@@ -663,13 +795,17 @@
       "lessonTitle": "Rotations reflections and enlargements",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E7.1.2",
+        "CAM:OUT:0580:E7.1.3",
+        "CAM:OUT:0580:E7.1.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:08:01:SINGLE-EVENT-PROBABILITY",
@@ -678,8 +814,10 @@
       "lessonTitle": "Single-event probability",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E8.1.2"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "probability.simple.evaluate.exact"
@@ -688,7 +826,7 @@
         "igcse-bench-simple-probability"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:08:02:COMBINED-EVENTS",
@@ -697,13 +835,15 @@
       "lessonTitle": "Combined events",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E8.3"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:08:03:TREE-DIAGRAMS",
@@ -712,13 +852,16 @@
       "lessonTitle": "Tree diagrams",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E8.3",
+        "CAM:OUT:0580:E8.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:08:04:EXPECTED-FREQUENCY",
@@ -727,13 +870,15 @@
       "lessonTitle": "Expected frequency",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E8.2.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:09:01:STATISTICAL-DIAGRAMS",
@@ -742,13 +887,15 @@
       "lessonTitle": "Statistical diagrams",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E9.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:09:02:AVERAGES-AND-SPREAD",
@@ -757,8 +904,12 @@
       "lessonTitle": "Averages and spread",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E9.2.1",
+        "CAM:OUT:0580:E9.2.2",
+        "CAM:OUT:0580:E9.2.3"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "statistics.mean.arithmetic.exact"
@@ -767,7 +918,7 @@
         "igcse-bench-arithmetic-mean"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:09:03:GROUPED-DATA",
@@ -776,8 +927,12 @@
       "lessonTitle": "Grouped data",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E9.3.1",
+        "CAM:OUT:0580:E9.3.2",
+        "CAM:OUT:0580:E9.3.3"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "statistics.mean.frequency_table.exact"
@@ -786,7 +941,7 @@
         "igcse-bench-frequency-mean"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:09:04:CUMULATIVE-FREQUENCY",
@@ -795,13 +950,16 @@
       "lessonTitle": "Cumulative frequency",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E9.6.1",
+        "CAM:OUT:0580:E9.6.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:09:05:SCATTER-DIAGRAMS",
@@ -810,13 +968,17 @@
       "lessonTitle": "Scatter diagrams",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E9.5.1",
+        "CAM:OUT:0580:E9.5.2",
+        "CAM:OUT:0580:E9.5.3"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:10:01:SURDS",
@@ -825,13 +987,16 @@
       "lessonTitle": "Surds",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.18.1",
+        "CAM:OUT:0580:E1.18.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:10:02:FRACTIONAL-INDICES",
@@ -840,13 +1005,16 @@
       "lessonTitle": "Fractional indices",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.7.1",
+        "CAM:OUT:0580:E1.7.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:10:03:ALGEBRAIC-FRACTIONS",
@@ -855,13 +1023,16 @@
       "lessonTitle": "Algebraic fractions",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.3.1",
+        "CAM:OUT:0580:E2.3.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:10:04:COMPLETING-THE-SQUARE",
@@ -870,13 +1041,15 @@
       "lessonTitle": "Completing the square",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.5.5"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:10:05:QUADRATIC-FORMULA",
@@ -885,8 +1058,10 @@
       "lessonTitle": "Quadratic formula",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.5.5"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "algebra.quadratic.solve.real_roots"
@@ -895,7 +1070,7 @@
         "igcse-bench-quadratic"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:10:06:DIRECT-AND-INVERSE-PROPORTION-ALGEBRA",
@@ -904,13 +1079,15 @@
       "lessonTitle": "Direct and inverse proportion algebra",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.8"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:10:07:COMPOSITE-FUNCTIONS",
@@ -919,13 +1096,15 @@
       "lessonTitle": "Composite functions",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.13.3"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:10:08:INVERSE-FUNCTIONS",
@@ -934,13 +1113,15 @@
       "lessonTitle": "Inverse functions",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.13.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:11:01:QUADRATIC-AND-CUBIC-GRAPHS",
@@ -949,13 +1130,15 @@
       "lessonTitle": "Quadratic and cubic graphs",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.11"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:11:02:GRAPHICAL-SOLUTION-OF-EQUATIONS",
@@ -964,13 +1147,15 @@
       "lessonTitle": "Graphical solution of equations",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E3.5"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:11:03:SIMILARITY-WITH-AREA-AND-VOLUME",
@@ -979,13 +1164,17 @@
       "lessonTitle": "Similarity with area and volume",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E4.4.1",
+        "CAM:OUT:0580:E4.4.2",
+        "CAM:OUT:0580:E4.4.3"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:11:04:CIRCLE-THEOREMS",
@@ -994,13 +1183,16 @@
       "lessonTitle": "Circle theorems",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E4.7",
+        "CAM:OUT:0580:E4.8"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:11:05:VECTOR-GEOMETRY",
@@ -1009,13 +1201,18 @@
       "lessonTitle": "Vector geometry",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E7.4.1",
+        "CAM:OUT:0580:E7.4.2",
+        "CAM:OUT:0580:E7.4.3",
+        "CAM:OUT:0580:E7.4.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:11:06:ADVANCED-TRANSFORMATIONS",
@@ -1024,13 +1221,18 @@
       "lessonTitle": "Advanced transformations",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E7.1.1",
+        "CAM:OUT:0580:E7.1.2",
+        "CAM:OUT:0580:E7.1.3",
+        "CAM:OUT:0580:E7.1.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:12:01:SINE-RULE",
@@ -1039,13 +1241,15 @@
       "lessonTitle": "Sine rule",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E6.5.1"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:12:02:COSINE-RULE",
@@ -1054,13 +1258,15 @@
       "lessonTitle": "Cosine rule",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E6.5.1"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:12:03:AREA-USING-SINE",
@@ -1069,13 +1275,15 @@
       "lessonTitle": "Area using sine",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E6.5.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:12:04:TRIGONOMETRIC-GRAPHS",
@@ -1084,13 +1292,16 @@
       "lessonTitle": "Trigonometric graphs",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E6.4.1",
+        "CAM:OUT:0580:E6.4.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:13:01:CONDITIONAL-PROBABILITY",
@@ -1099,13 +1310,15 @@
       "lessonTitle": "Conditional probability",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E8.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:13:02:SET-NOTATION-AND-VENN-DIAGRAMS",
@@ -1114,13 +1327,15 @@
       "lessonTitle": "Set notation and Venn diagrams",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:13:03:HISTOGRAMS",
@@ -1129,13 +1344,16 @@
       "lessonTitle": "Histograms",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E9.7.1",
+        "CAM:OUT:0580:E9.7.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:13:04:CUMULATIVE-FREQUENCY-AND-QUARTILES",
@@ -1144,13 +1362,16 @@
       "lessonTitle": "Cumulative frequency and quartiles",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E9.6.1",
+        "CAM:OUT:0580:E9.6.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:01:01:CONSOLIDATING-INTEGERS-AND-ORDER-OF-OPERATIONS",
@@ -1159,13 +1380,15 @@
       "lessonTitle": "Consolidating Integers and order of operations",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.6"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:01:02:CONSOLIDATING-FRACTIONS-AND-DECIMALS",
@@ -1174,13 +1397,16 @@
       "lessonTitle": "Consolidating Fractions and decimals",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.4.1",
+        "CAM:OUT:0580:E1.4.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:01:03:CONSOLIDATING-PERCENTAGES",
@@ -1189,13 +1415,19 @@
       "lessonTitle": "Consolidating Percentages",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.13.1",
+        "CAM:OUT:0580:E1.13.2",
+        "CAM:OUT:0580:E1.13.3",
+        "CAM:OUT:0580:E1.13.4",
+        "CAM:OUT:0580:E1.13.5"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:01:04:CONSOLIDATING-RATIO-AND-PROPORTION",
@@ -1204,13 +1436,15 @@
       "lessonTitle": "Consolidating Ratio and proportion",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.11"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:01:05:CONSOLIDATING-STANDARD-FORM",
@@ -1219,13 +1453,17 @@
       "lessonTitle": "Consolidating Standard form",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.8.1",
+        "CAM:OUT:0580:E1.8.2",
+        "CAM:OUT:0580:E1.8.3"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:01:06:CONSOLIDATING-APPROXIMATION-AND-BOUNDS",
@@ -1234,13 +1472,19 @@
       "lessonTitle": "Consolidating Approximation and bounds",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.9.1",
+        "CAM:OUT:0580:E1.9.2",
+        "CAM:OUT:0580:E1.9.3",
+        "CAM:OUT:0580:E1.10.1",
+        "CAM:OUT:0580:E1.10.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:01:07:CONSOLIDATING-RATES",
@@ -1249,13 +1493,16 @@
       "lessonTitle": "Consolidating Rates",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.12.1",
+        "CAM:OUT:0580:E1.12.3"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:01:08:CONSOLIDATING-MONEY-AND-COMPOUND-MEASURES",
@@ -1264,13 +1511,17 @@
       "lessonTitle": "Consolidating Money and compound measures",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.12.2",
+        "CAM:OUT:0580:E1.16.1",
+        "CAM:OUT:0580:E1.16.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:02:01:CONSOLIDATING-ALGEBRAIC-MANIPULATION",
@@ -1279,13 +1530,21 @@
       "lessonTitle": "Consolidating Algebraic manipulation",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.2.1",
+        "CAM:OUT:0580:E2.2.2",
+        "CAM:OUT:0580:E2.2.3",
+        "CAM:OUT:0580:E2.2.4",
+        "CAM:OUT:0580:E2.2.5",
+        "CAM:OUT:0580:E2.3.1",
+        "CAM:OUT:0580:E2.3.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:02:02:CONSOLIDATING-LINEAR-EQUATIONS",
@@ -1294,8 +1553,12 @@
       "lessonTitle": "Consolidating Linear equations",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.5.1",
+        "CAM:OUT:0580:E2.5.2",
+        "CAM:OUT:0580:E2.5.3"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "algebra.linear.solve"
@@ -1304,7 +1567,7 @@
         "igcse-bench-linear"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:02:03:CONSOLIDATING-SIMULTANEOUS-LINEAR-EQUATIONS",
@@ -1313,8 +1576,12 @@
       "lessonTitle": "Consolidating Simultaneous linear equations",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.5.1",
+        "CAM:OUT:0580:E2.5.2",
+        "CAM:OUT:0580:E2.5.3"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "algebra.linear.systems.two_by_two.solve"
@@ -1323,7 +1590,7 @@
         "igcse-bench-systems"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:02:04:CONSOLIDATING-INEQUALITIES",
@@ -1332,8 +1599,13 @@
       "lessonTitle": "Consolidating Inequalities",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.6.1",
+        "CAM:OUT:0580:E2.6.2",
+        "CAM:OUT:0580:E2.6.3",
+        "CAM:OUT:0580:E2.6.4"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "algebra.linear.inequality.solve"
@@ -1342,7 +1614,7 @@
         "igcse-bench-inequality"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:02:05:CONSOLIDATING-SEQUENCES",
@@ -1351,8 +1623,12 @@
       "lessonTitle": "Consolidating Sequences",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.7.1",
+        "CAM:OUT:0580:E2.7.2",
+        "CAM:OUT:0580:E2.7.3"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "sequences.arithmetic.nth_term",
@@ -1363,7 +1639,7 @@
         "igcse-bench-geometric-sequence"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:02:06:CONSOLIDATING-FUNCTIONS-AND-NOTATION",
@@ -1372,8 +1648,10 @@
       "lessonTitle": "Consolidating Functions and notation",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.13.1"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "functions.evaluate.exact"
@@ -1382,7 +1660,7 @@
         "igcse-bench-function-eval"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:02:07:CONSOLIDATING-STRAIGHT-LINE-GRAPHS",
@@ -1391,13 +1669,17 @@
       "lessonTitle": "Consolidating Straight-line graphs",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E3.2",
+        "CAM:OUT:0580:E3.5",
+        "CAM:OUT:0580:E3.6"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:02:08:CONSOLIDATING-QUADRATIC-EXPRESSIONS-AND-EQUATIONS",
@@ -1406,8 +1688,11 @@
       "lessonTitle": "Consolidating Quadratic expressions and equations",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.5.5",
+        "CAM:OUT:0580:E2.5.7"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "algebra.quadratic.solve.real_roots"
@@ -1416,7 +1701,7 @@
         "igcse-bench-quadratic"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:03:01:CONSOLIDATING-GRADIENT",
@@ -1425,13 +1710,16 @@
       "lessonTitle": "Consolidating Gradient",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E3.3.1",
+        "CAM:OUT:0580:E3.3.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:03:02:CONSOLIDATING-EQUATION-OF-A-LINE",
@@ -1440,13 +1728,16 @@
       "lessonTitle": "Consolidating Equation of a line",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E3.5",
+        "CAM:OUT:0580:E3.6"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:03:03:CONSOLIDATING-PARALLEL-AND-PERPENDICULAR-LINES",
@@ -1455,13 +1746,15 @@
       "lessonTitle": "Consolidating Parallel and perpendicular lines",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E3.7"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:03:04:CONSOLIDATING-MIDPOINT-AND-DISTANCE",
@@ -1470,13 +1763,16 @@
       "lessonTitle": "Consolidating Midpoint and distance",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E3.4.1",
+        "CAM:OUT:0580:E3.4.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:04:01:CONSOLIDATING-ANGLE-FACTS",
@@ -1485,13 +1781,17 @@
       "lessonTitle": "Consolidating Angle facts",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E4.6.1",
+        "CAM:OUT:0580:E4.6.2",
+        "CAM:OUT:0580:E4.6.3"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:04:02:CONSOLIDATING-POLYGONS",
@@ -1500,13 +1800,19 @@
       "lessonTitle": "Consolidating Polygons",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E4.1.1",
+        "CAM:OUT:0580:E4.1.2",
+        "CAM:OUT:0580:E4.1.3",
+        "CAM:OUT:0580:E4.5.1",
+        "CAM:OUT:0580:E4.5.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:04:03:CONSOLIDATING-SIMILARITY",
@@ -1515,13 +1821,17 @@
       "lessonTitle": "Consolidating Similarity",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E4.4.1",
+        "CAM:OUT:0580:E4.4.2",
+        "CAM:OUT:0580:E4.4.3"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:04:04:CONSOLIDATING-CONGRUENCE",
@@ -1530,13 +1840,16 @@
       "lessonTitle": "Consolidating Congruence",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E4.1.1",
+        "CAM:OUT:0580:E4.1.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:04:05:CONSOLIDATING-CIRCLE-GEOMETRY",
@@ -1545,13 +1858,16 @@
       "lessonTitle": "Consolidating Circle geometry",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E4.7",
+        "CAM:OUT:0580:E4.8"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:04:06:CONSOLIDATING-TRANSFORMATIONS",
@@ -1560,13 +1876,18 @@
       "lessonTitle": "Consolidating Transformations",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E7.1.1",
+        "CAM:OUT:0580:E7.1.2",
+        "CAM:OUT:0580:E7.1.3",
+        "CAM:OUT:0580:E7.1.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:05:01:CONSOLIDATING-PERIMETER-AND-AREA",
@@ -1575,8 +1896,10 @@
       "lessonTitle": "Consolidating Perimeter and area",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E5.2"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "geometry.rectangle.area",
@@ -1589,7 +1912,7 @@
         "igcse-bench-triangle-area"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:05:02:CONSOLIDATING-CIRCLE-MEASURES",
@@ -1598,13 +1921,16 @@
       "lessonTitle": "Consolidating Circle measures",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E5.3.1",
+        "CAM:OUT:0580:E5.3.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:05:03:CONSOLIDATING-SURFACE-AREA",
@@ -1613,13 +1939,15 @@
       "lessonTitle": "Consolidating Surface area",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E5.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:05:04:CONSOLIDATING-VOLUME",
@@ -1628,13 +1956,15 @@
       "lessonTitle": "Consolidating Volume",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E5.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:05:05:CONSOLIDATING-COMPOUND-SHAPES",
@@ -1643,13 +1973,16 @@
       "lessonTitle": "Consolidating Compound shapes",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E5.5.1",
+        "CAM:OUT:0580:E5.5.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:06:01:CONSOLIDATING-PYTHAGORAS-THEOREM",
@@ -1658,8 +1991,10 @@
       "lessonTitle": "Consolidating Pythagoras theorem",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E6.1"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "geometry.right_triangle.pythagorean"
@@ -1668,7 +2003,7 @@
         "igcse-bench-pythagoras"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:06:02:CONSOLIDATING-SINE-COSINE-AND-TANGENT",
@@ -1677,8 +2012,13 @@
       "lessonTitle": "Consolidating Sine cosine and tangent",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E6.2.1",
+        "CAM:OUT:0580:E6.2.2",
+        "CAM:OUT:0580:E6.2.3",
+        "CAM:OUT:0580:E6.2.4"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "trigonometry.special_angles.evaluate"
@@ -1687,7 +2027,7 @@
         "igcse-bench-special-angle-trig"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:06:03:CONSOLIDATING-BEARINGS",
@@ -1696,13 +2036,17 @@
       "lessonTitle": "Consolidating Bearings",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E4.3.1",
+        "CAM:OUT:0580:E4.3.2",
+        "CAM:OUT:0580:E6.2.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:06:04:CONSOLIDATING-THREE-DIMENSIONAL-PROBLEMS",
@@ -1711,13 +2055,15 @@
       "lessonTitle": "Consolidating Three-dimensional problems",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E6.6"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:07:01:CONSOLIDATING-VECTOR-NOTATION",
@@ -1726,13 +2072,15 @@
       "lessonTitle": "Consolidating Vector notation",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E7.2.1"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:07:02:CONSOLIDATING-VECTOR-ARITHMETIC",
@@ -1741,8 +2089,11 @@
       "lessonTitle": "Consolidating Vector arithmetic",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E7.2.1",
+        "CAM:OUT:0580:E7.3"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "vectors.add.exact"
@@ -1751,7 +2102,7 @@
         "igcse-bench-vector-add"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:07:03:CONSOLIDATING-TRANSLATIONS",
@@ -1760,13 +2111,15 @@
       "lessonTitle": "Consolidating Translations",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E7.2.1"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:07:04:CONSOLIDATING-ROTATIONS-REFLECTIONS-AND-ENLARGEMENTS",
@@ -1775,13 +2128,17 @@
       "lessonTitle": "Consolidating Rotations reflections and enlargements",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E7.1.2",
+        "CAM:OUT:0580:E7.1.3",
+        "CAM:OUT:0580:E7.1.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:08:01:CONSOLIDATING-SINGLE-EVENT-PROBABILITY",
@@ -1790,8 +2147,10 @@
       "lessonTitle": "Consolidating Single-event probability",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E8.1.2"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "probability.simple.evaluate.exact"
@@ -1800,7 +2159,7 @@
         "igcse-bench-simple-probability"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:08:02:CONSOLIDATING-COMBINED-EVENTS",
@@ -1809,13 +2168,15 @@
       "lessonTitle": "Consolidating Combined events",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E8.3"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:08:03:CONSOLIDATING-TREE-DIAGRAMS",
@@ -1824,13 +2185,16 @@
       "lessonTitle": "Consolidating Tree diagrams",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E8.3",
+        "CAM:OUT:0580:E8.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:08:04:CONSOLIDATING-EXPECTED-FREQUENCY",
@@ -1839,13 +2203,15 @@
       "lessonTitle": "Consolidating Expected frequency",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E8.2.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:09:01:CONSOLIDATING-STATISTICAL-DIAGRAMS",
@@ -1854,13 +2220,15 @@
       "lessonTitle": "Consolidating Statistical diagrams",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E9.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:09:02:CONSOLIDATING-AVERAGES-AND-SPREAD",
@@ -1869,8 +2237,12 @@
       "lessonTitle": "Consolidating Averages and spread",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E9.2.1",
+        "CAM:OUT:0580:E9.2.2",
+        "CAM:OUT:0580:E9.2.3"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "statistics.mean.arithmetic.exact"
@@ -1879,7 +2251,7 @@
         "igcse-bench-arithmetic-mean"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:09:03:CONSOLIDATING-GROUPED-DATA",
@@ -1888,8 +2260,12 @@
       "lessonTitle": "Consolidating Grouped data",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E9.3.1",
+        "CAM:OUT:0580:E9.3.2",
+        "CAM:OUT:0580:E9.3.3"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "statistics.mean.frequency_table.exact"
@@ -1898,7 +2274,7 @@
         "igcse-bench-frequency-mean"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:09:04:CONSOLIDATING-CUMULATIVE-FREQUENCY",
@@ -1907,13 +2283,16 @@
       "lessonTitle": "Consolidating Cumulative frequency",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E9.6.1",
+        "CAM:OUT:0580:E9.6.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:09:05:CONSOLIDATING-SCATTER-DIAGRAMS",
@@ -1922,13 +2301,17 @@
       "lessonTitle": "Consolidating Scatter diagrams",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E9.5.1",
+        "CAM:OUT:0580:E9.5.2",
+        "CAM:OUT:0580:E9.5.3"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:10:01:CONSOLIDATING-SURDS",
@@ -1937,13 +2320,16 @@
       "lessonTitle": "Consolidating Surds",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.18.1",
+        "CAM:OUT:0580:E1.18.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:10:02:CONSOLIDATING-FRACTIONAL-INDICES",
@@ -1952,13 +2338,16 @@
       "lessonTitle": "Consolidating Fractional indices",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.7.1",
+        "CAM:OUT:0580:E1.7.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:10:03:CONSOLIDATING-ALGEBRAIC-FRACTIONS",
@@ -1967,13 +2356,16 @@
       "lessonTitle": "Consolidating Algebraic fractions",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.3.1",
+        "CAM:OUT:0580:E2.3.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:10:04:CONSOLIDATING-COMPLETING-THE-SQUARE",
@@ -1982,13 +2374,15 @@
       "lessonTitle": "Consolidating Completing the square",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.5.5"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:10:05:CONSOLIDATING-QUADRATIC-FORMULA",
@@ -1997,8 +2391,10 @@
       "lessonTitle": "Consolidating Quadratic formula",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.5.5"
+      ],
       "status": "CONTEXTUAL",
       "engineSkillIds": [
         "algebra.quadratic.solve.real_roots"
@@ -2007,7 +2403,7 @@
         "igcse-bench-quadratic"
       ],
       "academicReviewStatus": "REQUIRED",
-      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge pack has no formal OutcomeCode/FormalTarget mapping and no approved academic review for a Cambridge capability claim."
+      "reason": "Exact engine capability overlaps this Edulytics supporting lesson, but the Cambridge lesson now has an explicit official syllabus mapping, while Stage 23 product capability promotion still requires the separate engine evidence and academic-review gate."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:10:06:CONSOLIDATING-DIRECT-AND-INVERSE-PROPORTION-ALGEBRA",
@@ -2016,13 +2412,15 @@
       "lessonTitle": "Consolidating Direct and inverse proportion algebra",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.8"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:10:07:CONSOLIDATING-COMPOSITE-FUNCTIONS",
@@ -2031,13 +2429,15 @@
       "lessonTitle": "Consolidating Composite functions",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.13.3"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:10:08:CONSOLIDATING-INVERSE-FUNCTIONS",
@@ -2046,13 +2446,15 @@
       "lessonTitle": "Consolidating Inverse functions",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.13.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:11:01:CONSOLIDATING-QUADRATIC-AND-CUBIC-GRAPHS",
@@ -2061,13 +2463,15 @@
       "lessonTitle": "Consolidating Quadratic and cubic graphs",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E2.11"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:11:02:CONSOLIDATING-GRAPHICAL-SOLUTION-OF-EQUATIONS",
@@ -2076,13 +2480,15 @@
       "lessonTitle": "Consolidating Graphical solution of equations",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E3.5"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:11:03:CONSOLIDATING-SIMILARITY-WITH-AREA-AND-VOLUME",
@@ -2091,13 +2497,17 @@
       "lessonTitle": "Consolidating Similarity with area and volume",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E4.4.1",
+        "CAM:OUT:0580:E4.4.2",
+        "CAM:OUT:0580:E4.4.3"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:11:04:CONSOLIDATING-CIRCLE-THEOREMS",
@@ -2106,13 +2516,16 @@
       "lessonTitle": "Consolidating Circle theorems",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E4.7",
+        "CAM:OUT:0580:E4.8"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:11:05:CONSOLIDATING-VECTOR-GEOMETRY",
@@ -2121,13 +2534,18 @@
       "lessonTitle": "Consolidating Vector geometry",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E7.4.1",
+        "CAM:OUT:0580:E7.4.2",
+        "CAM:OUT:0580:E7.4.3",
+        "CAM:OUT:0580:E7.4.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:11:06:CONSOLIDATING-ADVANCED-TRANSFORMATIONS",
@@ -2136,13 +2554,18 @@
       "lessonTitle": "Consolidating Advanced transformations",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E7.1.1",
+        "CAM:OUT:0580:E7.1.2",
+        "CAM:OUT:0580:E7.1.3",
+        "CAM:OUT:0580:E7.1.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:12:01:CONSOLIDATING-SINE-RULE",
@@ -2151,13 +2574,15 @@
       "lessonTitle": "Consolidating Sine rule",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E6.5.1"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:12:02:CONSOLIDATING-COSINE-RULE",
@@ -2166,13 +2591,15 @@
       "lessonTitle": "Consolidating Cosine rule",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E6.5.1"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:12:03:CONSOLIDATING-AREA-USING-SINE",
@@ -2181,13 +2608,15 @@
       "lessonTitle": "Consolidating Area using sine",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E6.5.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:12:04:CONSOLIDATING-TRIGONOMETRIC-GRAPHS",
@@ -2196,13 +2625,16 @@
       "lessonTitle": "Consolidating Trigonometric graphs",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E6.4.1",
+        "CAM:OUT:0580:E6.4.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:13:01:CONSOLIDATING-CONDITIONAL-PROBABILITY",
@@ -2211,13 +2643,15 @@
       "lessonTitle": "Consolidating Conditional probability",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E8.4"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:13:02:CONSOLIDATING-SET-NOTATION-AND-VENN-DIAGRAMS",
@@ -2226,13 +2660,15 @@
       "lessonTitle": "Consolidating Set notation and Venn diagrams",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E1.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:13:03:CONSOLIDATING-HISTOGRAMS",
@@ -2241,13 +2677,16 @@
       "lessonTitle": "Consolidating Histograms",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E9.7.1",
+        "CAM:OUT:0580:E9.7.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     },
     {
       "lessonCode": "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:13:04:CONSOLIDATING-CUMULATIVE-FREQUENCY-AND-QUARTILES",
@@ -2256,13 +2695,16 @@
       "lessonTitle": "Consolidating Cumulative frequency and quartiles",
       "sourceAuthority": "Cambridge International Education",
       "officialSourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
-      "formalOutcomeMapped": false,
-      "formalOutcomeCodes": [],
+      "formalOutcomeMapped": true,
+      "formalOutcomeCodes": [
+        "CAM:OUT:0580:E9.6.1",
+        "CAM:OUT:0580:E9.6.2"
+      ],
       "status": "UNSUPPORTED",
       "engineSkillIds": [],
       "benchmarkIds": [],
       "academicReviewStatus": "NOT_READY",
-      "reason": "No reviewed exact Cambridge SkillContract mapping is approved for this supporting lesson; Stage 23 blocks capability claims rather than inferring one from the lesson title."
+      "reason": "The Cambridge lesson now has an explicit official syllabus mapping; Stage 23 still blocks engine capability promotion unless reviewed SkillContract/benchmark evidence is separately approved."
     }
   ]
 }
