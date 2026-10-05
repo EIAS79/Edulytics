@@ -221,17 +221,20 @@ internal static class YouTubeLessonSemanticContextResolver
         var skills = new List<string>();
         var prerequisites = new List<string>();
 
+        // The verified Practice contract is the exact learner-facing skill target.
+        // Put it first so dynamic help queries are always anchored to that contract,
+        // even when a broader curriculum mapping also exists for the lesson.
+        if (LessonPracticeContractRegistry.TryResolve(lessonCode, out var practice) &&
+            practice is not null)
+        {
+            skills.AddRange(practice.SkillIds);
+        }
+
         if (MappingIndex.Value.TryGetValue(lessonCode, out var mapping))
         {
             skills.AddRange(mapping.PrimarySkills);
             skills.AddRange(mapping.SecondarySkills);
             prerequisites.AddRange(mapping.Prerequisites);
-        }
-
-        if (LessonPracticeContractRegistry.TryResolve(lessonCode, out var practice) &&
-            practice is not null)
-        {
-            skills.AddRange(practice.SkillIds);
         }
 
         var skillTerms = skills
