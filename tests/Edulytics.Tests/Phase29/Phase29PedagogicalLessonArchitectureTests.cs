@@ -709,6 +709,72 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
     }
 
     [Fact]
+    public async Task SeederRetiresUaeCanonicalContentOnlyWhenCodeWasRemovedFromCurrentPacks()
+    {
+        await using var db = CreateDb();
+
+        await new MathematicsCurriculumPackSeeder(db).SeedAsync();
+        var seeder = new MathematicsPedagogicalLessonSeeder(db);
+        await seeder.SeedAsync();
+
+        var uaeVersionId = await db.CurriculumPackImportStates
+            .Where(x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode)
+            .Select(x => x.FrameworkVersionId)
+            .SingleAsync();
+
+        var staleId = Guid.NewGuid();
+        const string retiredCode =
+            "PED:UAE-MOE-MATH:L10:ADVANCED:03:07:PYTHAGORAS-THEOREM";
+
+        Assert.DoesNotContain(
+            MathematicsCanonicalLessonContentSeeder
+                .LoadEmbeddedDocuments()
+                .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.UaeCode)
+                .SelectMany(x => x.Lessons)
+                .Select(x => x.LessonCode),
+            x => string.Equals(x, retiredCode, StringComparison.Ordinal));
+
+        db.CurriculumPedagogicalLessons.Add(
+            new CurriculumPedagogicalLesson
+            {
+                Id = staleId,
+                FrameworkVersionId = uaeVersionId,
+                OfficialLessonNodeId = staleId,
+                Code = retiredCode,
+                UnitKey = "legacy-uae",
+                UnitTitle = "Legacy UAE",
+                Title = "Pythagoras theorem — advanced reasoning",
+                LogicalLevelFrom = 10,
+                LogicalLevelTo = 10,
+                NativeLevel = "Grade 10",
+                Pathway = "Advanced",
+                SortOrder = 999,
+                CreatedAtUtc = DateTime.UtcNow,
+                UpdatedAtUtc = DateTime.UtcNow
+            });
+
+        var contentId = Guid.NewGuid();
+        db.CurriculumLessonContents.Add(
+            new CurriculumLessonContent
+            {
+                Id = contentId,
+                FrameworkVersionId = uaeVersionId,
+                PedagogicalLessonId = staleId,
+                Status = Edulytics.Core.Enums.CanonicalLessonContentStatus.Draft,
+                ContentVersion = "retired-uae-test",
+                CreatedAtUtc = DateTime.UtcNow,
+                UpdatedAtUtc = DateTime.UtcNow,
+                RowVersion = []
+            });
+
+        await db.SaveChangesAsync();
+        await seeder.SeedAsync();
+
+        Assert.False(await db.CurriculumLessonContents.AnyAsync(x => x.Id == contentId));
+        Assert.False(await db.CurriculumPedagogicalLessons.AnyAsync(x => x.Id == staleId));
+    }
+
+    [Fact]
     public async Task SeederRefusesCanonicalContentReconciliationOutsideUae()
     {
         await using var db = CreateDb();
