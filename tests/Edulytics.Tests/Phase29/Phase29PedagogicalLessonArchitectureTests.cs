@@ -709,6 +709,38 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
     }
 
     [Fact]
+    public async Task CurrentUaeCanonicalContentCodesAreAllInTheExpectedPedagogicalGraph()
+    {
+        await using var db = CreateDb();
+
+        await new MathematicsCurriculumPackSeeder(db).SeedAsync();
+        await new MathematicsPedagogicalLessonSeeder(db).SeedAsync();
+
+        var uaeVersionId = await db.CurriculumPackImportStates
+            .Where(x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode)
+            .Select(x => x.FrameworkVersionId)
+            .SingleAsync();
+
+        var pedagogicalCodes = await db.CurriculumPedagogicalLessons
+            .Where(x => x.FrameworkVersionId == uaeVersionId)
+            .Select(x => x.Code)
+            .ToHashSetAsync();
+
+        var canonicalCodes = MathematicsCanonicalLessonContentSeeder
+            .LoadEmbeddedDocuments()
+            .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.UaeCode)
+            .SelectMany(x => x.Lessons)
+            .Select(x => x.LessonCode)
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+
+        Assert.NotEmpty(canonicalCodes);
+        Assert.All(
+            canonicalCodes,
+            code => Assert.Contains(code, pedagogicalCodes));
+    }
+
+    [Fact]
     public async Task SeederRetiresUaeCanonicalContentOnlyWhenCodeWasRemovedFromCurrentPacks()
     {
         await using var db = CreateDb();
