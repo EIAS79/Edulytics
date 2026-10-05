@@ -20,7 +20,6 @@ REPORT = ROOT / "artifacts/math-intelligence/stage22-game-runtime-closure-audit.
 EXPECTED_RUNTIME = "stage22-server-authoritative-game-v1"
 EXPECTED_MECHANICS = {
     "TWO_UNKNOWNS",
-    "SCALE_READING",
     "FRACTION_COMPARE_UNLIKE",
     "FRACTION_EQUIVALENT",
     "UNIT_RATE",
@@ -54,7 +53,7 @@ def audit() -> dict[str, Any]:
 
     manifest_mechanics = set(str(x) for x in stage22.get("exactMechanics") or [])
     if manifest_mechanics != EXPECTED_MECHANICS:
-        blockers.append("Stage 22 exact mechanic scope does not match the accepted five-mechanic registry.")
+        blockers.append("Stage 22 exact mechanic scope does not match the accepted four-mechanic registry.")
 
     authority = stage22.get("authoritativeComponents") or {}
     if authority.get("browserAuthority") is not False:
