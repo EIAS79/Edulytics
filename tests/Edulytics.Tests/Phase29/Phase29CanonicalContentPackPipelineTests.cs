@@ -435,6 +435,78 @@ public sealed class Phase29CanonicalContentPackPipelineTests
     }
 
     [Fact]
+    public async Task UaeOfficialRebuildCanReplaceSameVersionLegacyLearnerBody()
+    {
+        await using var db = CreateDb();
+
+        await new MathematicsCurriculumPackSeeder(db)
+            .SeedAsync();
+
+        await new MathematicsPedagogicalLessonSeeder(db)
+            .SeedAsync();
+
+        var document =
+            MathematicsCanonicalLessonContentSeeder
+                .LoadEmbeddedDocuments()
+                .Single(x =>
+                    x.PackCode ==
+                        MathematicsCurriculumPackRegistry.UaeCode &&
+                    x.Lessons.Any(lesson =>
+                        lesson.LessonCode ==
+                            "PED:UAE-MOE-MATH:L1:COMMON:01:01"));
+
+        document.Lessons = document.Lessons
+            .Where(x =>
+                x.LessonCode ==
+                    "PED:UAE-MOE-MATH:L1:COMMON:01:01")
+            .ToList();
+
+        var seeder =
+            new MathematicsCanonicalLessonContentSeeder(db);
+
+        await seeder.SeedDocumentsAsync([document]);
+
+        var lesson =
+            await db.CurriculumPedagogicalLessons
+                .SingleAsync(x =>
+                    x.Code ==
+                        "PED:UAE-MOE-MATH:L1:COMMON:01:01");
+
+        var content =
+            await db.CurriculumLessonContents
+                .SingleAsync(x =>
+                    x.PedagogicalLessonId == lesson.Id);
+
+        var english =
+            await db.CurriculumLessonContentTranslations
+                .SingleAsync(x =>
+                    x.CurriculumLessonContentId == content.Id &&
+                    x.CultureCode == "en");
+
+        var expectedExplanation =
+            document.Lessons.Single()
+                .Translations.Single(x => x.CultureCode == "en")
+                .Explanation;
+
+        english.Explanation =
+            "legacy pre-rebuild learner body";
+
+        await db.SaveChangesAsync();
+
+        await seeder.SeedDocumentsAsync([document]);
+
+        var repaired =
+            await db.CurriculumLessonContentTranslations
+                .SingleAsync(x =>
+                    x.CurriculumLessonContentId == content.Id &&
+                    x.CultureCode == "en");
+
+        Assert.Equal(
+            expectedExplanation,
+            repaired.Explanation);
+    }
+
+    [Fact]
     public void EmbeddedUaePilotIsPublishedReviewedAndExactlyMapped()
     {
         var documents =
