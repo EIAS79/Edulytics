@@ -15,6 +15,12 @@ public static class CambridgeOfficialMappingContentCorrections
     private const string PriorCorrectionContentVersion =
         "cambridge-official-mapping-content-v1";
 
+    private const string PriorSupportingPracticeContentVersion =
+        "supporting-practice-remediation-v1";
+
+    private const string CurrentSupportingPracticeContentVersion =
+        "supporting-practice-remediation-v2";
+
     private static readonly HashSet<string> TargetLessonCodes =
         new(StringComparer.Ordinal)
         {
@@ -111,6 +117,14 @@ public static class CambridgeOfficialMappingContentCorrections
             string.Equals(
                 existingContentVersion,
                 PriorCorrectionContentVersion,
+                StringComparison.Ordinal) ||
+            string.Equals(
+                existingContentVersion,
+                PriorSupportingPracticeContentVersion,
+                StringComparison.Ordinal) ||
+            string.Equals(
+                existingContentVersion,
+                CurrentSupportingPracticeContentVersion,
                 StringComparison.Ordinal) ||
             string.Equals(
                 existingContentVersion,
