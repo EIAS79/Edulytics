@@ -1027,19 +1027,84 @@ public sealed class MathematicsPedagogicalLessonSeeder
             .Select(x => x.Id)
             .ToArray();
 
-        var referencedByCanonicalContent =
+        var canonicalContents =
             await _db.CurriculumLessonContents
-                .AsNoTracking()
                 .Where(x => staleIds.Contains(x.PedagogicalLessonId))
-                .Select(x => x.PedagogicalLessonId)
-                .Distinct()
                 .ToArrayAsync(ct);
 
-        if (referencedByCanonicalContent.Length != 0)
+        if (canonicalContents.Length != 0)
         {
-            throw new InvalidOperationException(
-                "Refusing to remove obsolete pseudo-lessons because canonical lesson content references them. " +
-                $"Referenced lesson ids: {string.Join(", ", referencedByCanonicalContent)}");
+            var expectedByIdentity = expected
+                .GroupBy(x => (x.FrameworkVersionId, x.Code))
+                .ToDictionary(
+                    x => x.Key,
+                    x => x.Single());
+
+            var staleById = stale.ToDictionary(x => x.Id);
+            var nonUaeReferences = canonicalContents
+                .Where(content =>
+                    !staleById[content.PedagogicalLessonId].Code.StartsWith(
+                        "PED:UAE-MOE-MATH:",
+                        StringComparison.Ordinal))
+                .Select(x => x.PedagogicalLessonId)
+                .Distinct()
+                .ToArray();
+
+            if (nonUaeReferences.Length != 0)
+            {
+                throw new InvalidOperationException(
+                    "Refusing to reconcile obsolete pseudo-lesson canonical content outside the UAE migration scope. " +
+                    $"Referenced lesson ids: {string.Join(", ", nonUaeReferences)}");
+            }
+
+            var targetIds = canonicalContents
+                .Select(content =>
+                {
+                    var obsolete = staleById[content.PedagogicalLessonId];
+                    return expectedByIdentity.TryGetValue(
+                        (obsolete.FrameworkVersionId, obsolete.Code),
+                        out var target)
+                            ? target.Id
+                            : Guid.Empty;
+                })
+                .Where(x => x != Guid.Empty)
+                .Distinct()
+                .ToArray();
+
+            var occupiedTargetIds = targetIds.Length == 0
+                ? []
+                : await _db.CurriculumLessonContents
+                    .AsNoTracking()
+                    .Where(x => targetIds.Contains(x.PedagogicalLessonId))
+                    .Select(x => x.PedagogicalLessonId)
+                    .Distinct()
+                    .ToArrayAsync(ct);
+
+            if (occupiedTargetIds.Length != 0)
+            {
+                throw new InvalidOperationException(
+                    "Refusing to reconcile obsolete UAE pseudo-lesson content because the canonical target already has content. " +
+                    $"Target lesson ids: {string.Join(", ", occupiedTargetIds)}");
+            }
+
+            foreach (var content in canonicalContents)
+            {
+                var obsolete = staleById[content.PedagogicalLessonId];
+
+                if (!expectedByIdentity.TryGetValue(
+                        (obsolete.FrameworkVersionId, obsolete.Code),
+                        out var target))
+                {
+                    throw new InvalidOperationException(
+                        "Refusing to remove obsolete UAE pseudo-lesson because canonical content cannot be mapped by exact framework/code identity. " +
+                        $"Lesson id: {obsolete.Id}; code: {obsolete.Code}.");
+                }
+
+                content.PedagogicalLessonId = target.Id;
+                content.UpdatedAtUtc = DateTime.UtcNow;
+            }
+
+            await _db.SaveChangesAsync(ct);
         }
 
         var staleMappings = await _db.CurriculumPedagogicalLessonOutcomes
