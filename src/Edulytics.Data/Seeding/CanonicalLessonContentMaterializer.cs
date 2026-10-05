@@ -146,11 +146,16 @@ public static class CanonicalLessonContentMaterializer
                     lesson,
                     supporting);
 
-        return PolishLessonPracticeContentCorrections
-            .GetExpectedContentVersion(
-                document,
-                lesson,
-                official);
+        var polish =
+            PolishLessonPracticeContentCorrections
+                .GetExpectedContentVersion(
+                    document,
+                    lesson,
+                    official);
+
+        return IsUaeGrade1OfficialRebuildTarget(document, lesson)
+            ? "p29-uae-g1-common-t1-ogl-v1-v2"
+            : polish;
     }
 
     public static bool IsReviewedCorrectionTarget(
@@ -165,7 +170,8 @@ public static class CanonicalLessonContentMaterializer
         OfficialLessonPracticeContentCorrections
             .IsTarget(document, lesson) ||
         PolishLessonPracticeContentCorrections
-            .IsTarget(document, lesson);
+            .IsTarget(document, lesson) ||
+        IsUaeGrade1OfficialRebuildTarget(document, lesson);
 
     public static bool CanUpgradeExisting(
         CanonicalLessonContentPackDocument document,
@@ -192,7 +198,31 @@ public static class CanonicalLessonContentMaterializer
             .CanUpgradeExisting(
                 document,
                 lesson,
-                existingContentVersion);
+                existingContentVersion) ||
+        (IsUaeGrade1OfficialRebuildTarget(document, lesson) &&
+         string.Equals(
+             existingContentVersion,
+             "p29-uae-g1-common-t1-ogl-v1-v1",
+             StringComparison.Ordinal));
+
+    private static bool IsUaeGrade1OfficialRebuildTarget(
+        CanonicalLessonContentPackDocument document,
+        CanonicalLessonContentPackLesson lesson) =>
+        string.Equals(
+            document.PackCode,
+            MathematicsCurriculumPackRegistry.UaeCode,
+            StringComparison.Ordinal) &&
+        string.Equals(
+            document.VersionCode,
+            "MOE-2026-2027-T1",
+            StringComparison.Ordinal) &&
+        string.Equals(
+            document.ContentVersion,
+            "p29-uae-g1-common-t1-ogl-v1-v1",
+            StringComparison.Ordinal) &&
+        lesson.LessonCode.StartsWith(
+            "PED:UAE-MOE-MATH:L1:COMMON:",
+            StringComparison.Ordinal);
 
     public static string ComputeLessonFingerprint(
         CanonicalLessonContentPackDocument document,
