@@ -32,7 +32,10 @@ public sealed class EffectiveLessonContentSnapshotTests
                         reviewEvidence = document.ReviewEvidence,
                         reviewMethod = document.ReviewMethod,
                         outcomeCodes = lesson.OutcomeCodes,
-                        isSupporting = lesson.OutcomeCodes.Count == 0,
+                        officialReferenceCode = lesson.OfficialReferenceCode,
+                        isSupporting =
+                            lesson.OutcomeCodes.Count == 0 &&
+                            string.IsNullOrWhiteSpace(lesson.OfficialReferenceCode),
                         translations = lesson.Translations.Select(translation => new
                         {
                             cultureCode = translation.CultureCode,
@@ -47,7 +50,7 @@ public sealed class EffectiveLessonContentSnapshotTests
                     }))
             .ToArray();
 
-        Assert.Equal(4453, rows.Length);
+        Assert.Equal(5110, rows.Length);
 
         var quantified = Assert.Single(
             rows,

@@ -57,13 +57,13 @@ def load_approved_mappings() -> tuple[dict[str, dict[str, Any]], list[str]]:
             result[code] = row
 
     content_dir = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs"
-    supporting, unmatched, errors = load_supporting_rule_mappings(content_dir)
-    for code, row in supporting.items():
+    official, errors = load_reviewed_official_rule_mappings(content_dir)
+    for code, row in official.items():
         result.setdefault(code, row)
 
-    official, official_errors = load_reviewed_official_rule_mappings(content_dir)
-    errors.extend(official_errors)
-    for code, row in official.items():
+    supporting, unmatched, supporting_errors = load_supporting_rule_mappings(content_dir)
+    errors.extend(supporting_errors)
+    for code, row in supporting.items():
         result.setdefault(code, row)
 
     explicit_codes = {
@@ -71,10 +71,11 @@ def load_approved_mappings() -> tuple[dict[str, dict[str, Any]], list[str]]:
         for row in doc.get("mappings") or []
         if isinstance(row, dict)
     }
+    covered_by_non_supporting_mapping = explicit_codes | set(official)
     errors.extend(
         f"Supporting Practice target rule missing for {row['lessonCode']}: {row['title']}"
         for row in unmatched
-        if row["lessonCode"] not in explicit_codes
+        if row["lessonCode"] not in covered_by_non_supporting_mapping
     )
     return result, errors
 
@@ -142,6 +143,32 @@ def capability_for_mapping(
             "Mapped SkillIds are absent from the registry: " + ", ".join(sorted(missing))
         ]
 
+    mapped_families = clean_list(mapping.get("allowedQuestionFamilies"))
+    if mapped_families:
+        family_errors: list[str] = []
+        for family_id in mapped_families:
+            family = families.get(family_id)
+            if family is None:
+                family_errors.append(f"Mapped family {family_id} is missing from the registry.")
+                continue
+            family_skill = str(family.get("skillId") or "").strip()
+            if family_skill not in primary_skills:
+                family_errors.append(
+                    f"Mapped family {family_id} belongs to {family_skill!r}, not an approved primary SkillId."
+                )
+            if family.get("lessonPracticeRouting") is not True:
+                family_errors.append(
+                    f"Mapped family {family_id} is not enabled for lesson Practice routing."
+                )
+            if not str(family.get("verificationPolicy") or "").strip():
+                family_errors.append(
+                    f"Mapped family {family_id} has no verification policy."
+                )
+        if not family_errors:
+            return True, True, True, False, [
+                "Approved mapping declares exact lesson Practice families with valid routing and verification policies."
+            ]
+
     question_family_flags: list[bool] = []
     verified_flags: list[bool] = []
     contextual_flags: list[bool] = []
@@ -199,6 +226,15 @@ def decide(
         return "BLOCKED", ["Semantic content audit blocked the lesson."]
     if skill_status == "CONFLICT" or semantic_status == "MAPPING_CONFLICT":
         return "MAPPING_CONFLICT", ["Mapping evidence contains a conflict."]
+    if (
+        has_reviewed_official_mapping
+        and has_approved_mapping
+        and has_question_family
+        and has_verified
+    ):
+        return "READY_VERIFIED", [
+            "Reviewed official Practice mapping supplies an exact approved skill, question family, and verified runtime capability."
+        ]
     if semantic_status == "CONTENT_WEAK":
         return "CONTENT_WEAK", ["Worked examples do not demonstrate the recognized mathematical target strongly enough."]
     if semantic_status == "REVIEW_REQUIRED":
@@ -265,15 +301,24 @@ def audit() -> dict[str, Any]:
             capabilities,
             families,
         )
+        mapping_source = "" if mapping is None else str(mapping.get("sourceType") or "")
+        lesson_source = str(skill.get("sourceType") or semantic.get("sourceType") or "Unknown")
         reviewed_official_mapping = bool(
             mapping
-            and str(mapping.get("sourceType") or "") in {
-                "OfficialReviewedExactTitleRule",
-                "OfficialReviewedUniqueTitleRule",
-                "OfficialReviewedCanonicalEvidence",
-                "OfficialOutcomeRule",
-                "PolishOfficialOutcomeMap",
-            }
+            and (
+                mapping_source in {
+                    "OfficialReviewedExactCodeRule",
+                    "OfficialReviewedExactTitleRule",
+                    "OfficialReviewedUniqueTitleRule",
+                    "OfficialReviewedCanonicalEvidence",
+                    "OfficialOutcomeRule",
+                    "PolishOfficialOutcomeMap",
+                }
+                or (
+                    lesson_source == "OfficialMapped"
+                    and mapping_source == "SupportingRule"
+                )
+            )
         )
         readiness, reasons = decide(
             skill_status,

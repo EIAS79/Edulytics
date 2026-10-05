@@ -118,8 +118,33 @@ internal static class OfficialLessonPracticeRuleProjection
                         continue;
                     }
 
-                    if (lesson.OutcomeCodes.Count == 0)
+                    if (string.Equals(
+                            pack.PackCode,
+                            MathematicsCurriculumPackRegistry.UaeCode,
+                            StringComparison.Ordinal) &&
+                        TryResolveUaeAdvancedUnit5ExactPractice(
+                            lesson.LessonCode,
+                            out var uaeUnit5Contract) &&
+                        uaeUnit5Contract is not null)
+                    {
+                        projected.Add(uaeUnit5Contract);
                         continue;
+                    }
+
+                    var hasOutcomeCodes = lesson.OutcomeCodes.Count > 0;
+                    var isVerifiedUaeTextbookReference =
+                        string.Equals(
+                            pack.PackCode,
+                            MathematicsCurriculumPackRegistry.UaeCode,
+                            StringComparison.Ordinal) &&
+                        !string.IsNullOrWhiteSpace(
+                            lesson.OfficialReferenceCode);
+
+                    if (!hasOutcomeCodes &&
+                        !isVerifiedUaeTextbookReference)
+                    {
+                        continue;
+                    }
 
                     var translation = ChooseTranslation(pack, lesson);
                     if (translation is not null &&
@@ -148,6 +173,9 @@ internal static class OfficialLessonPracticeRuleProjection
                         });
                         continue;
                     }
+
+                    if (!hasOutcomeCodes)
+                        continue;
 
                     var resolvedOutcomes = lesson.OutcomeCodes
                         .Select(code =>
@@ -282,6 +310,61 @@ internal static class OfficialLessonPracticeRuleProjection
             if (document is not null)
                 yield return document;
         }
+    }
+
+    private static bool TryResolveUaeAdvancedUnit5ExactPractice(
+        string lessonCode,
+        out LessonPracticeContract? contract)
+    {
+        contract = lessonCode switch
+        {
+            "PED:UAE-MOE-MATH:L11:ADVANCED:05:01:MULTIVARIABLE-LINEAR-SYSTEMS-AND-ELEMENTARY-ROW-OPERATIONS" =>
+                new LessonPracticeContract(
+                    lessonCode,
+                    "supporting.algebra.equations",
+                    "SIMULTANEOUS",
+                    ["supporting.algebra.simultaneous"],
+                    "OfficialReviewedCanonicalLessonRule",
+                    "READY_VERIFIED",
+                    ContractVersion),
+            "PED:UAE-MOE-MATH:L11:ADVANCED:05:03:SOLVING-LINEAR-SYSTEMS-USING-INVERSES-AND-CRAMER-S-RULE" =>
+                new LessonPracticeContract(
+                    lessonCode,
+                    "supporting.algebra.equations",
+                    "SIMULTANEOUS",
+                    ["supporting.algebra.simultaneous"],
+                    "OfficialReviewedCanonicalLessonRule",
+                    "READY_VERIFIED",
+                    ContractVersion),
+            "PED:UAE-MOE-MATH:L11:ADVANCED:05:04:PARTIAL-FRACTIONS" =>
+                new LessonPracticeContract(
+                    lessonCode,
+                    "supporting.algebra.expressions",
+                    "ALGEBRAIC_FRACTION",
+                    ["supporting.algebra.algebraic_fraction"],
+                    "OfficialReviewedCanonicalLessonRule",
+                    "READY_VERIFIED",
+                    ContractVersion),
+            "PED:UAE-MOE-MATH:L11:ADVANCED:05:05:LINEAR-PROGRAMMING" =>
+                new LessonPracticeContract(
+                    lessonCode,
+                    "supporting.algebra.systems_inequalities",
+                    "LINEAR_PROGRAMMING",
+                    ["supporting.algebra.linear_programming.vertex_optimum"],
+                    "OfficialReviewedCanonicalLessonRule",
+                    "READY_VERIFIED",
+                    ContractVersion),
+            _ => null
+        };
+
+        if (contract is null)
+            return false;
+
+        contract = contract with
+        {
+            SkillIds = [contract.SkillId]
+        };
+        return true;
     }
 
     private static bool Equivalent(
