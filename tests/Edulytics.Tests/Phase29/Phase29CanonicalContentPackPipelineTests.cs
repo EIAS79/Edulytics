@@ -356,6 +356,67 @@ public sealed class Phase29CanonicalContentPackPipelineTests
     }
 
     [Fact]
+    public async Task SameVersionLearnerBodyDriftOutsideUaeRebuildRemainsFailClosed()
+    {
+        await using var db = CreateDb();
+
+        await new MathematicsCurriculumPackSeeder(db)
+            .SeedAsync();
+
+        await new MathematicsPedagogicalLessonSeeder(db)
+            .SeedAsync();
+
+        var state =
+            await db.CurriculumPackImportStates
+                .SingleAsync(x =>
+                    x.FrameworkCode ==
+                        MathematicsCurriculumPackRegistry.CommonCoreCode);
+
+        var fixture =
+            await SelectSingleMappedLessonFixtureAsync(
+                db,
+                state.FrameworkVersionId);
+
+        var document =
+            ValidDocument(
+                state.VersionCode,
+                fixture.LessonCode,
+                fixture.OutcomeCode);
+
+        var seeder =
+            new MathematicsCanonicalLessonContentSeeder(db);
+
+        await seeder.SeedDocumentsAsync([document]);
+
+        var content =
+            await db.CurriculumLessonContents
+                .SingleAsync(x =>
+                    x.PedagogicalLessonId ==
+                        fixture.LessonId);
+
+        var english =
+            await db.CurriculumLessonContentTranslations
+                .SingleAsync(x =>
+                    x.CurriculumLessonContentId == content.Id &&
+                    x.CultureCode == "en");
+
+        english.Explanation =
+            "unauthorized same-version learner body drift";
+
+        await db.SaveChangesAsync();
+
+        var error =
+            await Assert.ThrowsAsync<InvalidOperationException>(
+                () =>
+                    seeder.SeedDocumentsAsync([document]));
+
+        Assert.Contains(
+            "Canonical lesson body drift",
+            error.Message,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public async Task ReviewedProductionCorrectionsRepairStalePersistedLearnerBodyAndCloseParity()
     {
         await using var db = CreateDb();
