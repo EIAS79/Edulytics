@@ -21,7 +21,8 @@ public static class SupportingLessonPracticeContentCorrections
         CanonicalLessonContentPackLesson lesson)
     {
         if ((lesson.OutcomeCodes.Count != 0 && !PreservesReviewedRehearsalBody(document, lesson)) ||
-            CambridgePrimaryStage6LessonContentCorrections.IsTarget(document, lesson))
+            CambridgePrimaryStage6LessonContentCorrections.IsTarget(document, lesson) ||
+            CambridgeOfficialMappingContentCorrections.IsTarget(document, lesson))
         {
             return false;
         }
