@@ -848,6 +848,9 @@ public sealed class MathematicsPedagogicalLessonSeeder
             {
                 if (!TryUpgradeAcceptedCommonCoreGrade1B3Lesson(
                         current,
+                        row) &&
+                    !TryUpgradeAcceptedUaeVerifiedBlueprintLesson(
+                        current,
                         row))
                 {
                     EnsureLessonMatches(
@@ -1003,6 +1006,102 @@ public sealed class MathematicsPedagogicalLessonSeeder
         _db.CurriculumPedagogicalLessonOutcomes.RemoveRange(staleMappings);
         _db.CurriculumPedagogicalLessons.RemoveRange(stale);
         await _db.SaveChangesAsync(ct);
+    }
+
+    private static bool TryUpgradeAcceptedUaeVerifiedBlueprintLesson(
+        CurriculumPedagogicalLesson current,
+        CurriculumPedagogicalLesson expected)
+    {
+        const string prefix =
+            "PED:UAE-MOE-MATH:";
+
+        if (!expected.Code.StartsWith(
+                prefix,
+                StringComparison.Ordinal) ||
+            string.Equals(
+                current.Code,
+                expected.Code,
+                StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        var match = Regex.Match(
+            expected.Code,
+            @"^PED:UAE-MOE-MATH:L(?<level>\d+):(?<pathway>[A-Z]+):(?<unit>\d{2}):(?<lesson>\d{2})$",
+            RegexOptions.CultureInvariant);
+
+        if (!match.Success ||
+            !current.Code.StartsWith(
+                expected.Code + ":",
+                StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        var historicalSuffix =
+            current.Code[
+                (expected.Code.Length + 1)..];
+
+        if (historicalSuffix.Length == 0 ||
+            !Regex.IsMatch(
+                historicalSuffix,
+                @"^[A-Z0-9]+(?:-[A-Z0-9]+)*$",
+                RegexOptions.CultureInvariant))
+        {
+            return false;
+        }
+
+        var historicalReferenceCode =
+            $"UAE:REF:TEXTBOOK:G{match.Groups["level"].Value}:" +
+            $"{match.Groups["pathway"].Value}:T1:EDU:" +
+            $"{match.Groups["unit"].Value}:" +
+            $"{match.Groups["lesson"].Value}";
+
+        var historicalReferenceId =
+            G(
+                $"node|{MathematicsCurriculumPackRegistry.UaeCode}|" +
+                $"MOE-2026-2027-T1|{historicalReferenceCode}");
+
+        if (current.FrameworkVersionId !=
+                expected.FrameworkVersionId ||
+            current.OfficialLessonNodeId !=
+                historicalReferenceId ||
+            !expected.OfficialLessonNodeId.HasValue ||
+            !string.Equals(
+                current.UnitKey,
+                expected.UnitKey,
+                StringComparison.Ordinal) ||
+            current.LogicalLevelFrom !=
+                expected.LogicalLevelFrom ||
+            current.LogicalLevelTo !=
+                expected.LogicalLevelTo ||
+            !string.Equals(
+                current.NativeLevel,
+                expected.NativeLevel,
+                StringComparison.Ordinal) ||
+            !string.Equals(
+                current.Pathway,
+                expected.Pathway,
+                StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        current.OfficialLessonNodeId =
+            expected.OfficialLessonNodeId;
+        current.Code =
+            expected.Code;
+        current.UnitTitle =
+            expected.UnitTitle;
+        current.Title =
+            expected.Title;
+        current.SortOrder =
+            expected.SortOrder;
+        current.UpdatedAtUtc =
+            DateTime.UtcNow;
+
+        return true;
     }
 
     private static bool TryUpgradeAcceptedCommonCoreGrade1B3Lesson(
