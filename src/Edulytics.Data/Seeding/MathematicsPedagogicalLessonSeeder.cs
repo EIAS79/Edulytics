@@ -1081,8 +1081,30 @@ public sealed class MathematicsPedagogicalLessonSeeder
 
         // UAE blueprint lesson identities are deterministic and persisted.
         // The official-reference rebuild added authoritative Reference links
-        // without changing the pedagogical lesson identity. Accept only the
-        // same Id/version/code and only a null-or-matching prior reference.
+        // without changing the pedagogical lesson identity. Production may
+        // also contain the accepted intermediate T1:EDU textbook-reference
+        // projection that preceded the final ANNUAL reference rebuild.
+        var codeParts = expected.Code.Split(
+            ':',
+            StringSplitOptions.RemoveEmptyEntries);
+
+        if (codeParts.Length != 7 ||
+            !codeParts[2].StartsWith("L", StringComparison.Ordinal) ||
+            codeParts[2].Length <= 1)
+        {
+            return false;
+        }
+
+        var acceptedIntermediateReferenceCode =
+            $"UAE:REF:TEXTBOOK:G{codeParts[2][1..]}:" +
+            $"{codeParts[3]}:T1:EDU:{codeParts[4]}:{codeParts[5]}";
+
+        var acceptedIntermediateReferenceId =
+            G(
+                $"node|{MathematicsCurriculumPackRegistry.UaeCode}|" +
+                $"MOE-2026-2027-T1|" +
+                acceptedIntermediateReferenceCode);
+
         if (current.Id != expected.Id ||
             current.FrameworkVersionId != expected.FrameworkVersionId ||
             !string.Equals(
@@ -1091,7 +1113,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
                 StringComparison.Ordinal) ||
             (
                 current.OfficialLessonNodeId.HasValue &&
-                current.OfficialLessonNodeId != expected.OfficialLessonNodeId
+                current.OfficialLessonNodeId != expected.OfficialLessonNodeId &&
+                current.OfficialLessonNodeId != acceptedIntermediateReferenceId
             ))
         {
             return false;
