@@ -1086,57 +1086,22 @@ public sealed class MathematicsPedagogicalLessonSeeder
             return false;
         }
 
-        // UAE blueprint lesson identities are deterministic and persisted.
-        // The official-reference rebuild added authoritative Reference links
-        // without changing the pedagogical lesson identity. Production may
-        // also contain the accepted intermediate T1:EDU textbook-reference
-        // projection that preceded the final ANNUAL reference rebuild.
-        var codeParts = expected.Code.Split(
-            ':',
-            StringSplitOptions.RemoveEmptyEntries);
-
-        if (codeParts.Length != 6 ||
-            !codeParts[2].StartsWith("L", StringComparison.Ordinal) ||
-            codeParts[2].Length <= 1)
-        {
-            return false;
-        }
-
-        var acceptedIntermediateReferenceCode =
-            $"UAE:REF:TEXTBOOK:G{codeParts[2][1..]}:" +
-            $"{codeParts[3]}:T1:EDU:{codeParts[4]}:{codeParts[5]}";
-
-        var acceptedIntermediateReferenceId =
-            G(
-                $"node|{MathematicsCurriculumPackRegistry.UaeCode}|" +
-                $"MOE-2026-2027-T1|" +
-                acceptedIntermediateReferenceCode);
-
-        var acceptedLegacyCode =
-            string.Equals(
-                current.Code,
-                expected.Code,
-                StringComparison.Ordinal) ||
-            current.Code.StartsWith(
-                expected.Code + ":",
-                StringComparison.Ordinal);
-
+        // UAE blueprint lesson Ids are deterministic from
+        // FrameworkVersionId + BlueprintCode + SourceLessonCode. The official
+        // rebuild intentionally changed the projected LessonCode/title/unit
+        // and official reference for some source lesson slots while retaining
+        // that deterministic pedagogical identity. Reconcile only an exact
+        // identity match; any Id/version drift still fails closed.
         if (current.Id != expected.Id ||
-            current.FrameworkVersionId != expected.FrameworkVersionId ||
-            !acceptedLegacyCode ||
-            (
-                current.OfficialLessonNodeId.HasValue &&
-                current.OfficialLessonNodeId != expected.OfficialLessonNodeId &&
-                current.OfficialLessonNodeId != acceptedIntermediateReferenceId
-            ))
+            current.FrameworkVersionId != expected.FrameworkVersionId)
         {
             return false;
         }
 
-        current.Code =
-            expected.Code;
         current.OfficialLessonNodeId =
             expected.OfficialLessonNodeId;
+        current.Code =
+            expected.Code;
         current.UnitKey =
             expected.UnitKey;
         current.UnitTitle =
