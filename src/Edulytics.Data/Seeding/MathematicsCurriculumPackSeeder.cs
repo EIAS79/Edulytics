@@ -721,7 +721,7 @@ public sealed class MathematicsCurriculumPackSeeder
             d.LessonCount != 42 ||
             d.LinkCount != 48 ||
             textbookReferences.Length != 1373 ||
-            sourceCatalogs.Length != 30)
+            sourceCatalogs.Length != 42)
         {
             throw new InvalidOperationException(
                 "UAE legacy-137 rebuild target contract drift.");
