@@ -852,6 +852,9 @@ public sealed class MathematicsPedagogicalLessonSeeder
                     !TryReconcileAcceptedUaeBlueprintLessonProjection(
                         current,
                         row) &&
+                    !TryReconcileAcceptedCambridgeBlueprintLessonProjection(
+                        current,
+                        row) &&
                     !TryUpgradeAcceptedCommonCoreGrade1B3Lesson(
                         current,
                         row))
@@ -913,34 +916,40 @@ public sealed class MathematicsPedagogicalLessonSeeder
             var expectedLessonById =
                 expectedLessons.ToDictionary(x => x.Id);
 
-            var unexpectedOutsideUae =
+            var unexpectedOutsideAcceptedRebuilds =
                 unexpected
                     .Where(
                         x =>
                             !expectedLessonById.TryGetValue(
                                 x.PedagogicalLessonId,
                                 out var lesson) ||
-                            !lesson.Code.StartsWith(
-                                "PED:UAE-MOE-MATH:",
-                                StringComparison.Ordinal))
+                            (
+                                !lesson.Code.StartsWith(
+                                    "PED:UAE-MOE-MATH:",
+                                    StringComparison.Ordinal) &&
+                                !lesson.Code.StartsWith(
+                                    "PED:CAMBRIDGE-INTL-MATH:",
+                                    StringComparison.Ordinal)
+                            ))
                     .ToArray();
 
-            if (unexpectedOutsideUae.Length != 0)
+            if (unexpectedOutsideAcceptedRebuilds.Length != 0)
             {
                 throw new InvalidOperationException(
                     "Unexpected existing pedagogical outcome alignment drift: " +
                     string.Join(
                         ", ",
-                        unexpectedOutsideUae.Select(
+                        unexpectedOutsideAcceptedRebuilds.Select(
                             x =>
                                 $"{x.PedagogicalLessonId}:" +
                                 $"{x.OutcomeNodeId}")));
             }
 
-            // UAE lesson identities are deterministic. The official rebuild
-            // can legitimately change the formal Outcome projected for an
-            // existing lesson slot. Replace only stale UAE mappings; every
-            // other framework remains fail-closed.
+            // UAE and Cambridge rebuild lesson identities are deterministic.
+            // A reviewed source-driven rebuild can legitimately replace the
+            // formal target for an existing stable lesson slot. Remove only
+            // stale mappings belonging to those explicitly accepted rebuild
+            // scopes; every other framework remains fail-closed.
             _db.CurriculumPedagogicalLessonOutcomes
                 .RemoveRange(unexpected);
         }
@@ -1280,6 +1289,57 @@ public sealed class MathematicsPedagogicalLessonSeeder
             expected.OfficialLessonNodeId;
         current.Code =
             expected.Code;
+        current.UnitKey =
+            expected.UnitKey;
+        current.UnitTitle =
+            expected.UnitTitle;
+        current.Title =
+            expected.Title;
+        current.LogicalLevelFrom =
+            expected.LogicalLevelFrom;
+        current.LogicalLevelTo =
+            expected.LogicalLevelTo;
+        current.NativeLevel =
+            expected.NativeLevel;
+        current.Pathway =
+            expected.Pathway;
+        current.SortOrder =
+            expected.SortOrder;
+        current.UpdatedAtUtc =
+            DateTime.UtcNow;
+
+        return true;
+    }
+
+    private static bool TryReconcileAcceptedCambridgeBlueprintLessonProjection(
+        CurriculumPedagogicalLesson current,
+        CurriculumPedagogicalLesson expected)
+    {
+        if (!expected.Code.StartsWith(
+                "PED:CAMBRIDGE-INTL-MATH:",
+                StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        // Cambridge blueprint lesson identities are deterministic and remain
+        // stable across the reviewed official-mapping rebuild. Some legacy
+        // slots were intentionally retitled/re-scoped in place when the old
+        // topic did not belong to the current Stage/tier/syllabus. Reconcile
+        // only the exact persisted identity and framework version; any identity
+        // drift remains fail-closed.
+        if (current.Id != expected.Id ||
+            current.FrameworkVersionId != expected.FrameworkVersionId ||
+            !string.Equals(
+                current.Code,
+                expected.Code,
+                StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        current.OfficialLessonNodeId =
+            expected.OfficialLessonNodeId;
         current.UnitKey =
             expected.UnitKey;
         current.UnitTitle =
