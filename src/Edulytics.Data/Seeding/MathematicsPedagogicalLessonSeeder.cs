@@ -933,8 +933,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
                         ", ",
                         unexpectedOutsideUae.Select(
                             x =>
-                                $\"{x.PedagogicalLessonId}:\" +
-                                $\"{x.OutcomeNodeId}\")));
+                                $"{x.PedagogicalLessonId}:\" +
+                                $"{x.OutcomeNodeId}")));
             }
 
             // UAE lesson identities are deterministic. The official rebuild
