@@ -168,16 +168,27 @@ public sealed class CambridgeStage6LessonContentAlignmentTests
             seeder,
             StringComparison.Ordinal);
 
-        var correctionCall = program.IndexOf(
-            ".SeedApprovedProductionCorrectionsAsync()",
-            StringComparison.Ordinal);
         var broadMaintenanceGate = program.IndexOf(
             "if (runStartupDataMaintenance)",
             StringComparison.Ordinal);
+        var pedagogicalSeedCall = program.IndexOf(
+            "await mathematicsPedagogicalLessonSeeder",
+            StringComparison.Ordinal);
+        var firstCorrectionCall = program.IndexOf(
+            ".SeedApprovedProductionCorrectionsAsync()",
+            StringComparison.Ordinal);
+        var secondCorrectionCall = program.LastIndexOf(
+            ".SeedApprovedProductionCorrectionsAsync()",
+            StringComparison.Ordinal);
+        var maintenanceSkippedMarker = program.IndexOf(
+            "STARTUP_DATA_MAINTENANCE_SKIPPED",
+            StringComparison.Ordinal);
 
-        Assert.True(correctionCall >= 0);
         Assert.True(broadMaintenanceGate >= 0);
-        Assert.True(correctionCall < broadMaintenanceGate);
+        Assert.True(pedagogicalSeedCall > broadMaintenanceGate);
+        Assert.True(firstCorrectionCall > pedagogicalSeedCall);
+        Assert.True(secondCorrectionCall > firstCorrectionCall);
+        Assert.True(maintenanceSkippedMarker > secondCorrectionCall);
         Assert.Contains(
             "STARTUP_APPROVED_CONTENT_CORRECTIONS_COMPLETED",
             program,

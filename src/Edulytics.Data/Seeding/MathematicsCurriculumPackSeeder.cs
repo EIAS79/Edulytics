@@ -426,6 +426,15 @@ public sealed class MathematicsCurriculumPackSeeder
                 return;
             }
 
+            if (await TryRepairAcceptedUaeLegacy137ToOfficialReferenceRebuildAsync(
+                    d,
+                    state,
+                    version,
+                    ct))
+            {
+                return;
+            }
+
             if (await TryRepairAcceptedUaeOfficialReferenceRebuildAsync(
                     d,
                     state,
@@ -656,6 +665,234 @@ public sealed class MathematicsCurriculumPackSeeder
         }
     }
 
+
+    private async Task<bool> TryRepairAcceptedUaeLegacy137ToOfficialReferenceRebuildAsync(
+        Doc d,
+        CurriculumPackImportState state,
+        CurriculumFrameworkVersion version,
+        CancellationToken ct)
+    {
+        if (d.PackCode != MathematicsCurriculumPackRegistry.UaeCode ||
+            state.FrameworkCode != MathematicsCurriculumPackRegistry.UaeCode ||
+            state.VersionCode != "MOE-2026-2027-T1")
+        {
+            return false;
+        }
+
+        // Production can legitimately still be on the accepted 137-node UAE
+        // baseline when startup maintenance has been disabled across prior
+        // curriculum releases. Reconcile only that exact persisted contract
+        // directly into the current official-reference rebuild.
+        if (state.SourceDigest !=
+                "470e9bd35d26931e3c4a2e4666b97a35481c3212b72024060c49dd6160bf776f" ||
+            state.ContentDigest !=
+                "bac04756a72853ba6be0ccf41d0d0e55d0381be62c2001b9c5d4ae3382469ae4" ||
+            state.NodeCount != 137 ||
+            state.OfficialNodeCount != 47 ||
+            state.UnitCount != 6 ||
+            state.LessonCount != 42 ||
+            state.LinkCount != 48 ||
+            !state.IsComplete)
+        {
+            return false;
+        }
+
+        var textbookReferences = d.Nodes
+            .Where(x =>
+                x.Kind == "Reference" &&
+                x.Code.StartsWith(
+                    "UAE:REF:TEXTBOOK:",
+                    StringComparison.Ordinal))
+            .ToArray();
+
+        var sourceCatalogs = d.Nodes
+            .Where(x => x.Kind == "SourceCatalog")
+            .ToArray();
+
+        if (d.SchemaVersion != 14 ||
+            d.VersionCode != "MOE-2026-2027-T1" ||
+            d.SourceDigest !=
+                "470e9bd35d26931e3c4a2e4666b97a35481c3212b72024060c49dd6160bf776f" ||
+            d.ContentDigest !=
+                "ff6200142b1eea8f12a7d5ff0fd172259582044359c642aeb3c045e5e8886372" ||
+            d.NodeCount != 1532 ||
+            d.OfficialNodeCount != 1420 ||
+            d.UnitCount != 6 ||
+            d.LessonCount != 42 ||
+            d.LinkCount != 48 ||
+            textbookReferences.Length != 1373 ||
+            sourceCatalogs.Length != 30)
+        {
+            throw new InvalidOperationException(
+                "UAE legacy-137 rebuild target contract drift.");
+        }
+
+        var existing = await _db.CurriculumPackContentNodes
+            .Where(x => x.FrameworkVersionId == version.Id)
+            .ToArrayAsync(ct);
+
+        var existingLinks = await _db.CurriculumPackNodeLinks
+            .Where(x => x.FrameworkVersionId == version.Id)
+            .ToArrayAsync(ct);
+
+        if (existing.Length != 137 || existingLinks.Length != 48)
+        {
+            throw new InvalidOperationException(
+                "UAE accepted 137-node baseline persisted-row drift.");
+        }
+
+        var expectedIds = d.Nodes.ToDictionary(
+            x => x.Code,
+            x => G($"node|{d.PackCode}|{d.VersionCode}|{x.Code}"),
+            StringComparer.Ordinal);
+        var expectedByCode = d.Nodes.ToDictionary(
+            x => x.Code,
+            StringComparer.Ordinal);
+        var existingByCode = existing.ToDictionary(
+            x => x.Code,
+            StringComparer.Ordinal);
+
+        var expectedStaleCodes = new HashSet<string>(
+            new[]
+            {
+                "UAE:CATALOG:G1:COMMON:T1",
+                "UAE:CATALOG:G2:COMMON:T1",
+                "UAE:CATALOG:G3:COMMON:T1",
+                "UAE:CATALOG:G5:GENERAL:T1",
+                "UAE:CATALOG:G5:ADVANCED:T1",
+                "UAE:CATALOG:G6:ADVANCED:T1",
+                "UAE:CATALOG:G10:GENERAL:T1",
+                "UAE:CATALOG:G10:ADVANCED:T1"
+            },
+            StringComparer.Ordinal);
+
+        var stale = existing
+            .Where(x => !expectedByCode.ContainsKey(x.Code))
+            .ToArray();
+
+        if (stale.Length != 8 ||
+            !expectedStaleCodes.SetEquals(
+                stale.Select(x => x.Code)) ||
+            stale.Any(x => x.NodeKind != "SourceCatalog"))
+        {
+            throw new InvalidOperationException(
+                "UAE accepted 137-node stale-row fingerprint drift.");
+        }
+
+        var retained = existing
+            .Where(x => expectedByCode.ContainsKey(x.Code))
+            .ToArray();
+
+        if (retained.Length != 129)
+        {
+            throw new InvalidOperationException(
+                "UAE accepted 137-node retained-row fingerprint drift.");
+        }
+
+        foreach (var current in retained)
+        {
+            var expected = expectedByCode[current.Code];
+            Guid? parentId = expected.ParentCode is null
+                ? null
+                : expectedIds[expected.ParentCode];
+
+            if (!PersistedNodeMatchesDocument(
+                    current,
+                    d,
+                    expected,
+                    expectedIds[expected.Code],
+                    parentId,
+                    version.Id))
+            {
+                throw new InvalidOperationException(
+                    $"Unexpected retained UAE legacy-137 node drift: {current.Code}.");
+            }
+        }
+
+        var expectedLinkKeys = d.Links
+            .Select(x =>
+                $"{expectedIds[x.FromCode]}|{expectedIds[x.ToCode]}|{x.LinkKind}")
+            .ToHashSet(StringComparer.Ordinal);
+        var existingLinkKeys = existingLinks
+            .Select(x =>
+                $"{x.FromNodeId}|{x.ToNodeId}|{x.LinkKind}")
+            .ToHashSet(StringComparer.Ordinal);
+
+        if (!expectedLinkKeys.SetEquals(existingLinkKeys))
+        {
+            throw new InvalidOperationException(
+                "UAE accepted 137-node link fingerprint drift.");
+        }
+
+        var missing = d.Nodes
+            .Where(x => !existingByCode.ContainsKey(x.Code))
+            .ToArray();
+
+        if (missing.Length != 1403 ||
+            missing.Count(x => x.Kind == "Reference") != 1373 ||
+            missing.Count(x => x.Kind == "SourceCatalog") != 30 ||
+            missing.Any(x =>
+                x.Kind is not ("Reference" or "SourceCatalog")))
+        {
+            throw new InvalidOperationException(
+                "UAE legacy-137 rebuild missing-row fingerprint drift.");
+        }
+
+        _db.CurriculumPackContentNodes.RemoveRange(stale);
+
+        var now = DateTime.UtcNow;
+        foreach (var expected in missing
+                     .OrderBy(x => x.SortOrder))
+        {
+            _db.CurriculumPackContentNodes.Add(
+                new CurriculumPackContentNode
+                {
+                    Id = expectedIds[expected.Code],
+                    FrameworkVersionId = version.Id,
+                    FrameworkCode = d.PackCode,
+                    VersionCode = d.VersionCode,
+                    NodeKind = expected.Kind,
+                    Code = expected.Code,
+                    ParentId = expected.ParentCode is null
+                        ? null
+                        : expectedIds[expected.ParentCode],
+                    LogicalLevelFrom = expected.LogicalLevelFrom,
+                    LogicalLevelTo = expected.LogicalLevelTo,
+                    NativeLevel = expected.NativeLevel,
+                    Pathway = expected.Pathway,
+                    Title = expected.Title,
+                    OfficialText = expected.OfficialText,
+                    AuthorDescription = expected.AuthorDescription,
+                    SourceAuthority = expected.SourceAuthority,
+                    SourceUrl = expected.SourceUrl,
+                    SourceLocator = expected.SourceLocator,
+                    Attribution = expected.Attribution,
+                    IsOfficial = expected.IsOfficial,
+                    IsActive = expected.IsActive,
+                    SortOrder = expected.SortOrder,
+                    ContentHash = expected.ContentHash,
+                    CreatedAtUtc = now,
+                    UpdatedAtUtc = now
+                });
+        }
+
+        state.SourceDigest = d.SourceDigest;
+        state.ContentDigest = d.ContentDigest;
+        state.NodeCount = d.NodeCount;
+        state.OfficialNodeCount = d.OfficialNodeCount;
+        state.UnitCount = d.UnitCount;
+        state.LessonCount = d.LessonCount;
+        state.LinkCount = d.LinkCount;
+        state.IsComplete = true;
+        state.ImportedAtUtc = now;
+
+        version.Name = d.VersionName;
+        version.UpdatedAtUtc = now;
+
+        await _db.SaveChangesAsync(ct);
+        await ValidatePersistedRowsAsync(d, version.Id, ct);
+        return true;
+    }
 
     private async Task<bool> TryRepairAcceptedUaeOfficialReferenceRebuildAsync(
         Doc d,
