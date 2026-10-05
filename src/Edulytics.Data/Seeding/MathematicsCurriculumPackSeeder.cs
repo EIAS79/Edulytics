@@ -132,7 +132,7 @@ public sealed class MathematicsCurriculumPackSeeder
             if (d.SchemaVersion != 14 ||
                 d.VersionCode != "MOE-2026-2027-T1" ||
                 d.NodeCount != 1532 ||
-                d.OfficialNodeCount != 1420 ||
+                d.OfficialNodeCount != 1441 ||
                 d.UnitCount != 6 ||
                 d.LessonCount != 42 ||
                 d.LinkCount != 48 ||
@@ -721,7 +721,7 @@ public sealed class MathematicsCurriculumPackSeeder
             d.LessonCount != 42 ||
             d.LinkCount != 48 ||
             textbookReferences.Length != 1373 ||
-            sourceCatalogs.Length != 30)
+            sourceCatalogs.Length != 42)
         {
             throw new InvalidOperationException(
                 "UAE legacy-137 rebuild target contract drift.");
