@@ -162,7 +162,7 @@ public sealed class AdvancedMathematicsV3ClosureTests
                 .GetProperty("productRoutingEnabled")
                 .GetBoolean());
         Assert.Equal(
-            0,
+            140,
             igcse.RootElement
                 .GetProperty("summary")
                 .GetProperty("formalOutcomeMapped")
