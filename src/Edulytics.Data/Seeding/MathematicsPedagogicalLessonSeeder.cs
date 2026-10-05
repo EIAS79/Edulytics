@@ -1105,12 +1105,18 @@ public sealed class MathematicsPedagogicalLessonSeeder
                 $"MOE-2026-2027-T1|" +
                 acceptedIntermediateReferenceCode);
 
-        if (current.Id != expected.Id ||
-            current.FrameworkVersionId != expected.FrameworkVersionId ||
-            !string.Equals(
+        var acceptedLegacyCode =
+            string.Equals(
                 current.Code,
                 expected.Code,
                 StringComparison.Ordinal) ||
+            current.Code.StartsWith(
+                expected.Code + ":",
+                StringComparison.Ordinal);
+
+        if (current.Id != expected.Id ||
+            current.FrameworkVersionId != expected.FrameworkVersionId ||
+            !acceptedLegacyCode ||
             (
                 current.OfficialLessonNodeId.HasValue &&
                 current.OfficialLessonNodeId != expected.OfficialLessonNodeId &&
@@ -1120,6 +1126,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
             return false;
         }
 
+        current.Code =
+            expected.Code;
         current.OfficialLessonNodeId =
             expected.OfficialLessonNodeId;
         current.UnitKey =
