@@ -112,6 +112,37 @@ public sealed class CanonicalLessonContentMaterializerTests
     }
 
     [Fact]
+    public void CambridgeOfficialMappingTarget_CanUpgradeLegacySupportingPracticeVersion()
+    {
+        const string lessonCode =
+            "PED:CAMBRIDGE-INTL-MATH:L13:COMPONENT-ROUTE-STRUCTURE-PRESERVED-IN-REFERENCE-GRAPH:01:07:INTEGRATION-TECHNIQUES";
+
+        var pair = MathematicsCanonicalLessonContentSeeder
+            .LoadEmbeddedDocuments()
+            .SelectMany(document =>
+                document.Lessons.Select(lesson => (document, lesson)))
+            .Single(x =>
+                string.Equals(
+                    x.lesson.LessonCode,
+                    lessonCode,
+                    StringComparison.Ordinal));
+
+        Assert.True(
+            CambridgeOfficialMappingContentCorrections
+                .CanUpgradeExisting(
+                    pair.document,
+                    pair.lesson,
+                    "supporting-practice-remediation-v1"));
+
+        Assert.Equal(
+            "cambridge-official-mapping-content-v2",
+            CanonicalLessonContentMaterializer
+                .GetEffectiveContentVersion(
+                    pair.document,
+                    pair.lesson));
+    }
+
+    [Fact]
     public void ReviewedCorrectionTargetSet_IsResolvedByOneAuthority()
     {
         var targets = MathematicsCanonicalLessonContentSeeder
