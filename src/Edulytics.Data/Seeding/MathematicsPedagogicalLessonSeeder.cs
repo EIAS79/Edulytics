@@ -846,7 +846,10 @@ public sealed class MathematicsPedagogicalLessonSeeder
         {
             if (byId.TryGetValue(row.Id, out var current))
             {
-                if (!TryUpgradeAcceptedCommonCoreGrade1B3Lesson(
+                if (!TryReconcileAcceptedUaeOfficialLessonProjection(
+                        current,
+                        row) &&
+                    !TryUpgradeAcceptedCommonCoreGrade1B3Lesson(
                         current,
                         row))
                 {
@@ -1003,6 +1006,61 @@ public sealed class MathematicsPedagogicalLessonSeeder
         _db.CurriculumPedagogicalLessonOutcomes.RemoveRange(staleMappings);
         _db.CurriculumPedagogicalLessons.RemoveRange(stale);
         await _db.SaveChangesAsync(ct);
+    }
+
+    private static bool TryReconcileAcceptedUaeOfficialLessonProjection(
+        CurriculumPedagogicalLesson current,
+        CurriculumPedagogicalLesson expected)
+    {
+        if (!expected.Code.StartsWith(
+                "PED:UAE-MOE-MATH:",
+                StringComparison.Ordinal) ||
+            expected.OfficialLessonNodeId != expected.Id)
+        {
+            return false;
+        }
+
+        // These 42 rows are a deterministic projection of already-validated
+        // official UAE Lesson nodes. Accept only the same persisted identity
+        // and resynchronize derived descriptive fields from that authoritative
+        // node. This keeps production upgrades fail-closed for any identity
+        // drift while allowing older Phase29 projections to converge.
+        if (current.Id != expected.Id ||
+            current.FrameworkVersionId != expected.FrameworkVersionId ||
+            !string.Equals(
+                current.Code,
+                expected.Code,
+                StringComparison.Ordinal) ||
+            (
+                current.OfficialLessonNodeId.HasValue &&
+                current.OfficialLessonNodeId != expected.OfficialLessonNodeId
+            ))
+        {
+            return false;
+        }
+
+        current.OfficialLessonNodeId =
+            expected.OfficialLessonNodeId;
+        current.UnitKey =
+            expected.UnitKey;
+        current.UnitTitle =
+            expected.UnitTitle;
+        current.Title =
+            expected.Title;
+        current.LogicalLevelFrom =
+            expected.LogicalLevelFrom;
+        current.LogicalLevelTo =
+            expected.LogicalLevelTo;
+        current.NativeLevel =
+            expected.NativeLevel;
+        current.Pathway =
+            expected.Pathway;
+        current.SortOrder =
+            expected.SortOrder;
+        current.UpdatedAtUtc =
+            DateTime.UtcNow;
+
+        return true;
     }
 
     private static bool TryUpgradeAcceptedCommonCoreGrade1B3Lesson(
