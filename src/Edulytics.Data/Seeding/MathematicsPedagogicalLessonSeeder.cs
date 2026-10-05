@@ -1087,21 +1087,45 @@ public sealed class MathematicsPedagogicalLessonSeeder
                     $"Target lesson ids: {string.Join(", ", occupiedTargetIds)}");
             }
 
+            var currentUaeContentCodes =
+                MathematicsCanonicalLessonContentSeeder
+                    .LoadEmbeddedDocuments()
+                    .Where(document =>
+                        document.PackCode ==
+                            MathematicsCurriculumPackRegistry.UaeCode)
+                    .SelectMany(document =>
+                        document.Lessons.Select(lesson => lesson.LessonCode))
+                    .ToHashSet(StringComparer.Ordinal);
+
+            var retiredContents =
+                new List<CurriculumLessonContent>();
+
             foreach (var content in canonicalContents)
             {
                 var obsolete = staleById[content.PedagogicalLessonId];
 
-                if (!expectedByIdentity.TryGetValue(
+                if (expectedByIdentity.TryGetValue(
                         (obsolete.FrameworkVersionId, obsolete.Code),
                         out var target))
                 {
+                    content.PedagogicalLessonId = target.Id;
+                    content.UpdatedAtUtc = DateTime.UtcNow;
+                    continue;
+                }
+
+                if (currentUaeContentCodes.Contains(obsolete.Code))
+                {
                     throw new InvalidOperationException(
-                        "Refusing to remove obsolete UAE pseudo-lesson because canonical content cannot be mapped by exact framework/code identity. " +
+                        "Refusing to retire obsolete UAE pseudo-lesson content because its LessonCode is still present in the current canonical UAE content packs. " +
                         $"Lesson id: {obsolete.Id}; code: {obsolete.Code}.");
                 }
 
-                content.PedagogicalLessonId = target.Id;
-                content.UpdatedAtUtc = DateTime.UtcNow;
+                retiredContents.Add(content);
+            }
+
+            if (retiredContents.Count != 0)
+            {
+                _db.CurriculumLessonContents.RemoveRange(retiredContents);
             }
 
             await _db.SaveChangesAsync(ct);
