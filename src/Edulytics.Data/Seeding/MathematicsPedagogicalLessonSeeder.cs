@@ -933,7 +933,7 @@ public sealed class MathematicsPedagogicalLessonSeeder
                         ", ",
                         unexpectedOutsideUae.Select(
                             x =>
-                                $"{x.PedagogicalLessonId}:\" +
+                                $"{x.PedagogicalLessonId}:" +
                                 $"{x.OutcomeNodeId}")));
             }
 
