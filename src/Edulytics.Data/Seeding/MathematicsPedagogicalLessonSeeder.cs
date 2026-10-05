@@ -1041,6 +1041,22 @@ public sealed class MathematicsPedagogicalLessonSeeder
                     x => x.Single());
 
             var staleById = stale.ToDictionary(x => x.Id);
+            var nonUaeReferences = canonicalContents
+                .Where(content =>
+                    !staleById[content.PedagogicalLessonId].Code.StartsWith(
+                        "PED:UAE-MOE-MATH:",
+                        StringComparison.Ordinal))
+                .Select(x => x.PedagogicalLessonId)
+                .Distinct()
+                .ToArray();
+
+            if (nonUaeReferences.Length != 0)
+            {
+                throw new InvalidOperationException(
+                    "Refusing to reconcile obsolete pseudo-lesson canonical content outside the UAE migration scope. " +
+                    $"Referenced lesson ids: {string.Join(", ", nonUaeReferences)}");
+            }
+
             var targetIds = canonicalContents
                 .Select(content =>
                 {
@@ -1067,7 +1083,7 @@ public sealed class MathematicsPedagogicalLessonSeeder
             if (occupiedTargetIds.Length != 0)
             {
                 throw new InvalidOperationException(
-                    "Refusing to reconcile obsolete pseudo-lesson content because the canonical target already has content. " +
+                    "Refusing to reconcile obsolete UAE pseudo-lesson content because the canonical target already has content. " +
                     $"Target lesson ids: {string.Join(", ", occupiedTargetIds)}");
             }
 
@@ -1080,7 +1096,7 @@ public sealed class MathematicsPedagogicalLessonSeeder
                         out var target))
                 {
                     throw new InvalidOperationException(
-                        "Refusing to remove obsolete pseudo-lesson because canonical content cannot be mapped by exact framework/code identity. " +
+                        "Refusing to remove obsolete UAE pseudo-lesson because canonical content cannot be mapped by exact framework/code identity. " +
                         $"Lesson id: {obsolete.Id}; code: {obsolete.Code}.");
                 }
 
