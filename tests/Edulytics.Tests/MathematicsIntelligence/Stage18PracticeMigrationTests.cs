@@ -36,7 +36,7 @@ public sealed class Stage18PracticeMigrationTests
                 x => x,
                 StringComparer.Ordinal);
 
-        Assert.Equal(14, stage17ByCode.Count);
+        Assert.Equal(13, stage17ByCode.Count);
         Assert.Equal(stage17ByCode.Keys.OrderBy(x => x), stage18ByCode.Keys.OrderBy(x => x));
         Assert.Equal(stage17ByCode.Count, Stage18PracticeSkillContracts.All.Count);
 
