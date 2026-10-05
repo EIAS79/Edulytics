@@ -849,6 +849,9 @@ public sealed class MathematicsPedagogicalLessonSeeder
                 if (!TryReconcileAcceptedUaeOfficialLessonProjection(
                         current,
                         row) &&
+                    !TryReconcileAcceptedUaeBlueprintLessonProjection(
+                        current,
+                        row) &&
                     !TryUpgradeAcceptedCommonCoreGrade1B3Lesson(
                         current,
                         row))
@@ -1025,6 +1028,61 @@ public sealed class MathematicsPedagogicalLessonSeeder
         // and resynchronize derived descriptive fields from that authoritative
         // node. This keeps production upgrades fail-closed for any identity
         // drift while allowing older Phase29 projections to converge.
+        if (current.Id != expected.Id ||
+            current.FrameworkVersionId != expected.FrameworkVersionId ||
+            !string.Equals(
+                current.Code,
+                expected.Code,
+                StringComparison.Ordinal) ||
+            (
+                current.OfficialLessonNodeId.HasValue &&
+                current.OfficialLessonNodeId != expected.OfficialLessonNodeId
+            ))
+        {
+            return false;
+        }
+
+        current.OfficialLessonNodeId =
+            expected.OfficialLessonNodeId;
+        current.UnitKey =
+            expected.UnitKey;
+        current.UnitTitle =
+            expected.UnitTitle;
+        current.Title =
+            expected.Title;
+        current.LogicalLevelFrom =
+            expected.LogicalLevelFrom;
+        current.LogicalLevelTo =
+            expected.LogicalLevelTo;
+        current.NativeLevel =
+            expected.NativeLevel;
+        current.Pathway =
+            expected.Pathway;
+        current.SortOrder =
+            expected.SortOrder;
+        current.UpdatedAtUtc =
+            DateTime.UtcNow;
+
+        return true;
+    }
+
+    private static bool TryReconcileAcceptedUaeBlueprintLessonProjection(
+        CurriculumPedagogicalLesson current,
+        CurriculumPedagogicalLesson expected)
+    {
+        if (!expected.Code.StartsWith(
+                "PED:UAE-MOE-MATH:",
+                StringComparison.Ordinal) ||
+            !expected.OfficialLessonNodeId.HasValue ||
+            expected.OfficialLessonNodeId == expected.Id)
+        {
+            return false;
+        }
+
+        // UAE blueprint lesson identities are deterministic and persisted.
+        // The official-reference rebuild added authoritative Reference links
+        // without changing the pedagogical lesson identity. Accept only the
+        // same Id/version/code and only a null-or-matching prior reference.
         if (current.Id != expected.Id ||
             current.FrameworkVersionId != expected.FrameworkVersionId ||
             !string.Equals(
