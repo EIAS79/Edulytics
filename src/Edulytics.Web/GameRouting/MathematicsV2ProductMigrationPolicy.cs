@@ -38,8 +38,7 @@ public static class MathematicsV2ProductMigrationPolicy
     private static readonly Grade16RolloutEntry[] Grade16Rollout =
     [
         new(TwoUnknownsLessonCode, "algebra.relationships.two_unknowns", "algebra-reasoning", 6, "TWO_UNKNOWNS", "READY_VERIFIED", false),
-        new(ScaleReadingLessonCode, "measurement.scale.read_equal_intervals", "measurement", 6, "SCALE_READING", "READY_VERIFIED", false),
-        new(FractionCompareLessonCode, "fractions.compare.unlike_denominators", "fractions", 6, "FRACTION_COMPARE_UNLIKE", "READY_VERIFIED", false),
+new(FractionCompareLessonCode, "fractions.compare.unlike_denominators", "fractions", 6, "FRACTION_COMPARE_UNLIKE", "READY_VERIFIED", false),
         new(FractionCompareApplyLessonCode, "fractions.compare.unlike_denominators", "fractions", 6, "FRACTION_COMPARE_UNLIKE", "READY_VERIFIED", false),
         new(EquivalentFractionsBuildLessonCode, "fractions.equivalent", "fractions", 5, "FRACTION_EQUIVALENT", "READY_VERIFIED", false),
         new(EquivalentFractionsApplyLessonCode, "fractions.equivalent", "fractions", 5, "FRACTION_EQUIVALENT", "READY_VERIFIED", false),
