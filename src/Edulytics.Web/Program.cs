@@ -367,17 +367,6 @@ using (var scope =
             .GetRequiredService<
                 Edulytics.Data.Seeding.MathematicsCanonicalLessonContentSeeder>();
 
-    var approvedCorrectionTimer =
-        Stopwatch.StartNew();
-
-    await mathematicsCanonicalLessonContentSeeder
-        .SeedApprovedProductionCorrectionsAsync();
-
-    approvedCorrectionTimer.Stop();
-
-    Console.WriteLine(
-        $"STARTUP_APPROVED_CONTENT_CORRECTIONS_COMPLETED elapsedMs={approvedCorrectionTimer.ElapsedMilliseconds}");
-
     if (runStartupDataMaintenance)
     {
         var maintenanceTimer =
@@ -407,6 +396,17 @@ using (var scope =
         await mathematicsPedagogicalLessonSeeder
             .SeedAsync();
 
+        var approvedCorrectionTimer =
+            Stopwatch.StartNew();
+
+        await mathematicsCanonicalLessonContentSeeder
+            .SeedApprovedProductionCorrectionsAsync();
+
+        approvedCorrectionTimer.Stop();
+
+        Console.WriteLine(
+            $"STARTUP_APPROVED_CONTENT_CORRECTIONS_COMPLETED elapsedMs={approvedCorrectionTimer.ElapsedMilliseconds}");
+
         await mathematicsCanonicalLessonContentSeeder
             .SeedAsync();
 
@@ -417,6 +417,17 @@ using (var scope =
     }
     else
     {
+        var approvedCorrectionTimer =
+            Stopwatch.StartNew();
+
+        await mathematicsCanonicalLessonContentSeeder
+            .SeedApprovedProductionCorrectionsAsync();
+
+        approvedCorrectionTimer.Stop();
+
+        Console.WriteLine(
+            $"STARTUP_APPROVED_CONTENT_CORRECTIONS_COMPLETED elapsedMs={approvedCorrectionTimer.ElapsedMilliseconds}");
+
         Console.WriteLine(
             "STARTUP_DATA_MAINTENANCE_SKIPPED");
     }
