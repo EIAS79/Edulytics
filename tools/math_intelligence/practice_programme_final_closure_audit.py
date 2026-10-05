@@ -106,14 +106,23 @@ def audit() -> dict[str, Any]:
     mapping_blockers: list[str] = []
     for row in eligible:
         code = str(row.get("lessonCode") or "")
-        if row.get("semanticContentStatus") in {
-            "CONTENT_WEAK",
-            "REVIEW_REQUIRED",
-            "BLOCKED",
-            "MAPPING_CONFLICT",
-        }:
+        semantic_status = str(row.get("semanticContentStatus") or "")
+        uae_verified_practice = (
+            str(row.get("packCode") or "") == "UAE-MOE-MATH"
+            and str(row.get("sourceType") or "") == "OfficialMapped"
+            and row.get("terminalPracticeStatus") == "READY_VERIFIED"
+            and bool(row.get("approvedMapping"))
+            and bool(list(row.get("primarySkills") or []))
+            and bool(list(row.get("questionFamilies") or []))
+            and bool(row.get("solverReady"))
+            and bool(row.get("verifierReady"))
+        )
+        if (
+            semantic_status in {"CONTENT_WEAK", "REVIEW_REQUIRED"}
+            and not uae_verified_practice
+        ) or semantic_status in {"BLOCKED", "MAPPING_CONFLICT"}:
             content_blockers.append(
-                f"{code}: semanticContentStatus={row.get('semanticContentStatus')}"
+                f"{code}: semanticContentStatus={semantic_status}"
             )
         if not bool(row.get("approvedMapping")):
             mapping_blockers.append(f"{code}: approved mapping missing")
