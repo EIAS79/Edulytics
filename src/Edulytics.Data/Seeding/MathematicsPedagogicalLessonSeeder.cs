@@ -852,6 +852,9 @@ public sealed class MathematicsPedagogicalLessonSeeder
                     !TryReconcileAcceptedUaeBlueprintLessonProjection(
                         current,
                         row) &&
+                    !TryReconcileAcceptedCambridgeBlueprintLessonProjection(
+                        current,
+                        row) &&
                     !TryUpgradeAcceptedCommonCoreGrade1B3Lesson(
                         current,
                         row))
@@ -1280,6 +1283,56 @@ public sealed class MathematicsPedagogicalLessonSeeder
             expected.OfficialLessonNodeId;
         current.Code =
             expected.Code;
+        current.UnitKey =
+            expected.UnitKey;
+        current.UnitTitle =
+            expected.UnitTitle;
+        current.Title =
+            expected.Title;
+        current.LogicalLevelFrom =
+            expected.LogicalLevelFrom;
+        current.LogicalLevelTo =
+            expected.LogicalLevelTo;
+        current.NativeLevel =
+            expected.NativeLevel;
+        current.Pathway =
+            expected.Pathway;
+        current.SortOrder =
+            expected.SortOrder;
+        current.UpdatedAtUtc =
+            DateTime.UtcNow;
+
+        return true;
+    }
+
+    private static bool TryReconcileAcceptedCambridgeBlueprintLessonProjection(
+        CurriculumPedagogicalLesson current,
+        CurriculumPedagogicalLesson expected)
+    {
+        if (!expected.Code.StartsWith(
+                "PED:CAMBRIDGE-INTL-MATH:",
+                StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        // The Cambridge official rebuild keeps the deterministic pedagogical
+        // lesson identity and slot code while replacing legacy descriptive
+        // projections with the reviewed current-stage/tier official mapping.
+        // Accept only that exact identity/version/code triple; any unrelated
+        // drift remains fail-closed.
+        if (current.Id != expected.Id ||
+            current.FrameworkVersionId != expected.FrameworkVersionId ||
+            !string.Equals(
+                current.Code,
+                expected.Code,
+                StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        current.OfficialLessonNodeId =
+            expected.OfficialLessonNodeId;
         current.UnitKey =
             expected.UnitKey;
         current.UnitTitle =
