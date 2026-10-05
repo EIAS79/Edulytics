@@ -520,6 +520,12 @@ public sealed class MathematicsCanonicalLessonContentSeeder
             document.AcademicLanguage == "en" &&
             !document.CurriculumTranslationRequired;
 
+        var isApprovedUaeOfficialRebuildReplacement =
+            document.PackCode == MathematicsCurriculumPackRegistry.UaeCode &&
+            document.VersionCode == "MOE-2026-2027-T1" &&
+            document.AcademicLanguage == "en" &&
+            !document.CurriculumTranslationRequired;
+
         foreach (var sourceLesson in document.Lessons)
         {
             var lesson =
@@ -629,6 +635,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                                 content.ContentVersion);
 
                     if (!isApprovedCommonCoreReplacement &&
+                        !isApprovedUaeOfficialRebuildReplacement &&
                         !canUpgradeReviewedCorrection)
                     {
                         throw new InvalidOperationException(
@@ -695,7 +702,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
 
             if (unexpected.Length != 0)
             {
-                if (!isApprovedCommonCoreReplacement)
+                if (!isApprovedCommonCoreReplacement &&
+                    !isApprovedUaeOfficialRebuildReplacement)
                 {
                     throw new InvalidOperationException(
                         $"Canonical translation drift for " +
@@ -722,6 +730,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                         out var current))
                 {
                     if (isApprovedCommonCoreReplacement ||
+                        isApprovedUaeOfficialRebuildReplacement ||
                         didUpgradeReviewedCorrection)
                     {
                         current.Title = incoming.Title;
