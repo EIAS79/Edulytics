@@ -807,6 +807,64 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
     }
 
     [Fact]
+    public async Task SeederDetachesPracticeReferencesBeforeRetiringRemovedUaeLesson()
+    {
+        await using var db = CreateDb();
+
+        await new MathematicsCurriculumPackSeeder(db).SeedAsync();
+        var seeder = new MathematicsPedagogicalLessonSeeder(db);
+        await seeder.SeedAsync();
+
+        var uaeVersionId = await db.CurriculumPackImportStates
+            .Where(x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode)
+            .Select(x => x.FrameworkVersionId)
+            .SingleAsync();
+
+        var staleId = Guid.NewGuid();
+        db.CurriculumPedagogicalLessons.Add(
+            new CurriculumPedagogicalLesson
+            {
+                Id = staleId,
+                FrameworkVersionId = uaeVersionId,
+                OfficialLessonNodeId = staleId,
+                Code = "PED:UAE-MOE-MATH:L10:ADVANCED:99:99:RETIRED-PRACTICE-TARGET",
+                UnitKey = "legacy-uae",
+                UnitTitle = "Legacy UAE",
+                Title = "Retired practice target",
+                LogicalLevelFrom = 10,
+                LogicalLevelTo = 10,
+                NativeLevel = "Grade 10",
+                Pathway = "Advanced",
+                SortOrder = 999,
+                CreatedAtUtc = DateTime.UtcNow,
+                UpdatedAtUtc = DateTime.UtcNow
+            });
+
+        var schoolId = Guid.NewGuid();
+        var adoptionId = Guid.NewGuid();
+        var item = new AssessmentItem
+        {
+            Id = Guid.NewGuid(),
+            SchoolId = schoolId,
+            CurriculumAdoptionId = adoptionId,
+            CurriculumPedagogicalLessonId = staleId,
+            Prompt = "legacy",
+            CorrectAnswer = "legacy",
+            Solution = "legacy",
+            ExposureFingerprint = "legacy",
+            CreatedAtUtc = DateTime.UtcNow,
+            RowVersion = []
+        };
+        db.AssessmentItems.Add(item);
+
+        await db.SaveChangesAsync();
+        await seeder.SeedAsync();
+
+        Assert.Null(item.CurriculumPedagogicalLessonId);
+        Assert.False(await db.CurriculumPedagogicalLessons.AnyAsync(x => x.Id == staleId));
+    }
+
+    [Fact]
     public async Task SeederRefusesCanonicalContentReconciliationOutsideUae()
     {
         await using var db = CreateDb();
