@@ -45,10 +45,10 @@ public static class LessonPracticeContractRegistry
             Version),
         new(
             "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:APPLY",
-            "measurement.scale.read_equal_intervals",
-            "SCALE_READING",
-            ["measurement.scale.equal_intervals.read_value"],
-            "SupportingLesson",
+            "supporting.number.place_value_rounding",
+            "ROUNDING",
+            ["supporting.number.rounding"],
+            "OfficialMappingUpgrade",
             "READY_VERIFIED",
             Version),
         new(
@@ -526,11 +526,27 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version),
         new(
+            "PED:CAMBRIDGE-INTL-MATH:S5:5NPV-5:BUILD",
+            "supporting.decimals.core",
+            "DECIMAL_ROUNDING",
+            ["supporting.decimals.round"],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:S5:5NPV-5:APPLY",
+            "supporting.decimals.core",
+            "DECIMAL_ROUNDING",
+            ["supporting.decimals.round"],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
             "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:BUILD",
-            "measurement.scale.read_equal_intervals",
-            "SCALE_READING",
-            ["measurement.scale.equal_intervals.read_value"],
-            "SupportingLesson",
+            "supporting.number.place_value_rounding",
+            "ROUNDING",
+            ["supporting.number.rounding"],
+            "OfficialMappingUpgrade",
             "READY_VERIFIED",
             Version),
         new(
@@ -688,6 +704,169 @@ public static class LessonPracticeContractRegistry
             "TWO_UNKNOWNS",
             ["algebra.relationships.two_unknowns.total_difference"],
             "SupportingLesson",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:L10:CORE:02:07:STRAIGHT-LINE-GRAPHS",
+            "geometry.coordinate.straight_line",
+            "STRAIGHT_LINE",
+            [
+                "geometry.coordinate.gradient_between_points",
+                "geometry.coordinate.evaluate_linear_rule",
+                "geometry.coordinate.y_intercept_from_rule"
+            ],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:02:07:STRAIGHT-LINE-GRAPHS",
+            "geometry.coordinate.straight_line",
+            "STRAIGHT_LINE",
+            [
+                "geometry.coordinate.gradient_between_points",
+                "geometry.coordinate.evaluate_linear_rule",
+                "geometry.coordinate.y_intercept_from_rule"
+            ],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:L11:CORE:02:07:CONSOLIDATING-STRAIGHT-LINE-GRAPHS",
+            "geometry.coordinate.straight_line",
+            "STRAIGHT_LINE",
+            [
+                "geometry.coordinate.gradient_between_points",
+                "geometry.coordinate.evaluate_linear_rule",
+                "geometry.coordinate.y_intercept_from_rule"
+            ],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:02:07:CONSOLIDATING-STRAIGHT-LINE-GRAPHS",
+            "geometry.coordinate.straight_line",
+            "STRAIGHT_LINE",
+            [
+                "geometry.coordinate.gradient_between_points",
+                "geometry.coordinate.evaluate_linear_rule",
+                "geometry.coordinate.y_intercept_from_rule"
+            ],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:L10:EXTENDED:10:05:QUADRATIC-FORMULA",
+            "supporting.algebra.equations",
+            "QUADRATIC",
+            ["supporting.algebra.quadratic_larger_root"],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:L11:EXTENDED:10:05:CONSOLIDATING-QUADRATIC-FORMULA",
+            "supporting.algebra.equations",
+            "QUADRATIC",
+            ["supporting.algebra.quadratic_larger_root"],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:01:03:DECIMALS-AND-ROUNDING",
+            "supporting.decimals.core",
+            "DECIMAL_COMPARE_ROUND",
+            [
+                "supporting.decimals.compare",
+                "supporting.decimals.round"
+            ],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:L8:SHARED:01:03:DECIMALS-AND-ROUNDING",
+            "supporting.decimals.core",
+            "DECIMAL_COMPARE_ROUND",
+            [
+                "supporting.decimals.compare",
+                "supporting.decimals.round"
+            ],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:L9:SHARED:01:03:DECIMALS-AND-ROUNDING",
+            "supporting.decimals.core",
+            "DECIMAL_COMPARE_ROUND",
+            [
+                "supporting.decimals.compare",
+                "supporting.decimals.round"
+            ],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:01:08:STANDARD-FORM-AND-ESTIMATION",
+            "supporting.indices.roots_standard_form",
+            "STANDARD_FORM",
+            ["supporting.standard_form.power10_exponent"],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:L8:SHARED:01:08:STANDARD-FORM-AND-ESTIMATION",
+            "supporting.indices.roots_standard_form",
+            "STANDARD_FORM",
+            ["supporting.standard_form.power10_exponent"],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:L9:SHARED:01:08:STANDARD-FORM-AND-ESTIMATION",
+            "supporting.indices.roots_standard_form",
+            "STANDARD_FORM",
+            ["supporting.standard_form.power10_exponent"],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:S3:3G-2:BUILD",
+            "geometry.angles.relationships",
+            "PARALLEL_PERPENDICULAR",
+            ["geometry.angles.parallel_lines"],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:S3:3G-2:APPLY",
+            "geometry.angles.relationships",
+            "PARALLEL_PERPENDICULAR",
+            ["geometry.angles.parallel_lines"],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-1:BUILD",
+            "supporting.indices.roots_standard_form",
+            "POWERS_OF_TEN",
+            [
+                "supporting.powers10.evaluate",
+                "supporting.powers10.multiply",
+                "supporting.powers10.divide",
+                "supporting.powers10.missing_exponent"
+            ],
+            "OfficialMappingUpgrade",
+            "READY_VERIFIED",
+            Version),
+        new(
+            "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-1:APPLY",
+            "supporting.indices.roots_standard_form",
+            "POWERS_OF_TEN",
+            [
+                "supporting.powers10.evaluate",
+                "supporting.powers10.multiply",
+                "supporting.powers10.divide",
+                "supporting.powers10.missing_exponent"
+            ],
+            "OfficialMappingUpgrade",
             "READY_VERIFIED",
             Version),
     ];

@@ -9,7 +9,7 @@ public sealed class StudentLessonContentQualityTests
         "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:BUILD";
 
     [Fact]
-    public void ReadingScalesBuildLessonIsLearnerFacingAndTargetSpecific()
+    public void DecimalRoundingBuildLessonIsLearnerFacingAndTargetSpecific()
     {
         var lesson = MathematicsCanonicalLessonContentSeeder
             .LoadEmbeddedDocuments()
@@ -27,19 +27,19 @@ public sealed class StudentLessonContentQualityTests
                     StringComparison.OrdinalIgnoreCase));
 
         Assert.Contains(
-            "equal intervals",
+            "nearest target place value",
             english.Explanation,
             StringComparison.OrdinalIgnoreCase);
         Assert.Contains(
-            "60 − 20 = 40",
+            "4.36",
             english.WorkedExamples,
             StringComparison.Ordinal);
         Assert.Contains(
-            "40 ÷ 4 = 10",
+            "4.4",
             english.WorkedExamples,
             StringComparison.Ordinal);
         Assert.Contains(
-            "Count spaces",
+            "hundredths digit",
             english.KeyConceptsAndRules,
             StringComparison.OrdinalIgnoreCase);
 
@@ -175,33 +175,20 @@ public sealed class StudentLessonContentQualityTests
     }
 
     [Fact]
-    public void ReadingScalesBuildLessonAndPracticeResolveToTheSameExactTarget()
+    public void DecimalRoundingBuildLessonAndPracticeResolveToTheSameExactTarget()
     {
-        const string title =
-            "Reading scales with 2, 4, 5 or 10 intervals: Build the Idea";
-
-        Assert.True(
-            SupportingPracticeTargetRuleRegistry.TryResolve(
-                ScaleBuildCode,
-                title,
-                out var rule));
-        Assert.NotNull(rule);
-        Assert.Equal(
-            "measurement.scale.read_equal_intervals",
-            rule!.SkillId);
-        Assert.Contains(
-            "measurement.scale.equal_intervals.read_value",
-            rule.Families);
-
         Assert.True(
             LessonPracticeCapabilityResolver.TryResolve(
                 ScaleBuildCode,
                 out var contract));
         Assert.NotNull(contract);
-        Assert.Equal(rule.SkillId, contract!.SkillId);
+        Assert.Equal(
+            "supporting.number.place_value_rounding",
+            contract!.SkillId);
         Assert.Contains(
-            "measurement.scale.equal_intervals.read_value",
+            "supporting.number.rounding",
             contract.AllowedQuestionFamilies);
+        Assert.Equal("READY_VERIFIED", contract.Readiness);
     }
 
     [Fact]

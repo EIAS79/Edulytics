@@ -11,13 +11,7 @@ public sealed class MathematicsV2ProductMigrationPilotTests
         "Solve problems with 2 unknowns: Reason and Apply",
         "Use two linked unknowns and two independent equations.",
         "TWO_UNKNOWNS")]
-    [InlineData(
-        MathematicsV2ProductMigrationPolicy.ScaleReadingLessonCode,
-        "Number and Place Value",
-        "Reading scales with 2, 4, 5 or 10 intervals: Reason and Apply",
-        "Read equal intervals on a scale and identify the marked value.",
-        "SCALE_READING")]
-    [InlineData(
+[InlineData(
         MathematicsV2ProductMigrationPolicy.FractionCompareLessonCode,
         "Fractions",
         "Compare fractions with different denominators: Build the Idea",
@@ -79,7 +73,7 @@ public sealed class MathematicsV2ProductMigrationPilotTests
     {
         var entries = MathematicsV2ProductMigrationPolicy.ApprovedGrade16Entries;
 
-        Assert.Equal(14, entries.Count);
+        Assert.Equal(13, entries.Count);
         Assert.All(entries, entry =>
         {
             Assert.InRange(entry.Grade, 1, 6);
@@ -91,8 +85,8 @@ public sealed class MathematicsV2ProductMigrationPilotTests
             Assert.False(entry.UsesV2ShadowSolver);
         });
 
-        Assert.Equal(14, entries.Select(entry => entry.LessonCode).Distinct(StringComparer.Ordinal).Count());
-        Assert.Equal(5, entries.Select(entry => entry.SkillId).Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(13, entries.Select(entry => entry.LessonCode).Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(4, entries.Select(entry => entry.SkillId).Distinct(StringComparer.Ordinal).Count());
     }
 
     [Theory]

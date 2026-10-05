@@ -26,8 +26,8 @@ public sealed class Stage23IgcseExtendedGateTests
 
         Assert.All(lessons, lesson =>
         {
-            Assert.False(lesson.GetProperty("formalOutcomeMapped").GetBoolean());
-            Assert.Empty(lesson.GetProperty("formalOutcomeCodes").EnumerateArray());
+            Assert.True(lesson.GetProperty("formalOutcomeMapped").GetBoolean());
+            Assert.NotEmpty(lesson.GetProperty("formalOutcomeCodes").EnumerateArray());
             Assert.Contains(
                 lesson.GetProperty("status").GetString(),
                 new[] { "CONTEXTUAL", "UNSUPPORTED" });
@@ -41,7 +41,7 @@ public sealed class Stage23IgcseExtendedGateTests
         Assert.Equal(0, summary.GetProperty("verified").GetInt32());
         Assert.Equal(28, summary.GetProperty("contextual").GetInt32());
         Assert.Equal(112, summary.GetProperty("unsupported").GetInt32());
-        Assert.Equal(0, summary.GetProperty("formalOutcomeMapped").GetInt32());
+        Assert.Equal(140, summary.GetProperty("formalOutcomeMapped").GetInt32());
     }
 
     [Fact]

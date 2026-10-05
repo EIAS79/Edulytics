@@ -27,12 +27,7 @@ public static class Stage18PracticeSkillContracts
             "algebra.relationships.two_unknowns",
             "TWO_UNKNOWNS",
             ["algebra.relationships.two_unknowns.total_difference"]),
-        new(
-            "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:APPLY",
-            "measurement.scale.read_equal_intervals",
-            "SCALE_READING",
-            ["measurement.scale.equal_intervals.read_value"]),
-        new(
+new(
             "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:BUILD",
             "fractions.compare.unlike_denominators",
             "FRACTION_COMPARE_UNLIKE",
