@@ -1088,7 +1088,7 @@ public sealed class MathematicsPedagogicalLessonSeeder
             ':',
             StringSplitOptions.RemoveEmptyEntries);
 
-        if (codeParts.Length != 7 ||
+        if (codeParts.Length != 6 ||
             !codeParts[2].StartsWith("L", StringComparison.Ordinal) ||
             codeParts[2].Length <= 1)
         {
