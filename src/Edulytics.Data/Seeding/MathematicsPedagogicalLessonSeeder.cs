@@ -1028,6 +1028,12 @@ public sealed class MathematicsPedagogicalLessonSeeder
         // and resynchronize derived descriptive fields from that authoritative
         // node. This keeps production upgrades fail-closed for any identity
         // drift while allowing older Phase29 projections to converge.
+        var legacyOfficialLessonNodeId =
+            G(
+                $"node|{MathematicsCurriculumPackRegistry.UaeCode}|" +
+                $"MOE-2026-2027-T1|" +
+                $"{expected.Code["PED:".Length..]}");
+
         if (current.Id != expected.Id ||
             current.FrameworkVersionId != expected.FrameworkVersionId ||
             !string.Equals(
@@ -1036,7 +1042,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
                 StringComparison.Ordinal) ||
             (
                 current.OfficialLessonNodeId.HasValue &&
-                current.OfficialLessonNodeId != expected.OfficialLessonNodeId
+                current.OfficialLessonNodeId != expected.OfficialLessonNodeId &&
+                current.OfficialLessonNodeId != legacyOfficialLessonNodeId
             ))
         {
             return false;
