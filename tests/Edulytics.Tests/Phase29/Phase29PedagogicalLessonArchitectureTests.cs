@@ -646,6 +646,133 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
     }
 
     [Fact]
+    public async Task SeederReattachesUaeCanonicalContentByExactFrameworkAndCodeIdentity()
+    {
+        await using var db = CreateDb();
+
+        await new MathematicsCurriculumPackSeeder(db).SeedAsync();
+        var seeder = new MathematicsPedagogicalLessonSeeder(db);
+        await seeder.SeedAsync();
+
+        var uaeVersionId = await db.CurriculumPackImportStates
+            .Where(x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode)
+            .Select(x => x.FrameworkVersionId)
+            .SingleAsync();
+
+        var target = await db.CurriculumPedagogicalLessons
+            .Where(x =>
+                x.FrameworkVersionId == uaeVersionId &&
+                x.Code.StartsWith("PED:UAE-MOE-MATH:"))
+            .OrderBy(x => x.Code)
+            .FirstAsync();
+
+        var staleId = Guid.NewGuid();
+        db.CurriculumPedagogicalLessons.Add(
+            new CurriculumPedagogicalLesson
+            {
+                Id = staleId,
+                FrameworkVersionId = target.FrameworkVersionId,
+                OfficialLessonNodeId = target.OfficialLessonNodeId,
+                Code = target.Code,
+                UnitKey = target.UnitKey,
+                UnitTitle = target.UnitTitle,
+                Title = target.Title,
+                LogicalLevelFrom = target.LogicalLevelFrom,
+                LogicalLevelTo = target.LogicalLevelTo,
+                NativeLevel = target.NativeLevel,
+                Pathway = target.Pathway,
+                SortOrder = target.SortOrder,
+                CreatedAtUtc = DateTime.UtcNow,
+                UpdatedAtUtc = DateTime.UtcNow
+            });
+
+        var contentId = Guid.NewGuid();
+        db.CurriculumLessonContents.Add(
+            new CurriculumLessonContent
+            {
+                Id = contentId,
+                FrameworkVersionId = uaeVersionId,
+                PedagogicalLessonId = staleId,
+                Status = Edulytics.Core.Enums.CanonicalLessonContentStatus.Draft,
+                ContentVersion = "legacy-uae-test",
+                CreatedAtUtc = DateTime.UtcNow,
+                UpdatedAtUtc = DateTime.UtcNow,
+                RowVersion = []
+            });
+
+        await db.SaveChangesAsync();
+        await seeder.SeedAsync();
+
+        var content = await db.CurriculumLessonContents.SingleAsync(x => x.Id == contentId);
+        Assert.Equal(target.Id, content.PedagogicalLessonId);
+        Assert.False(await db.CurriculumPedagogicalLessons.AnyAsync(x => x.Id == staleId));
+    }
+
+    [Fact]
+    public async Task SeederRefusesCanonicalContentReconciliationOutsideUae()
+    {
+        await using var db = CreateDb();
+
+        await new MathematicsCurriculumPackSeeder(db).SeedAsync();
+        var seeder = new MathematicsPedagogicalLessonSeeder(db);
+        await seeder.SeedAsync();
+
+        var commonCoreVersionId = await db.CurriculumPackImportStates
+            .Where(x => x.FrameworkCode == MathematicsCurriculumPackRegistry.CommonCoreCode)
+            .Select(x => x.FrameworkVersionId)
+            .SingleAsync();
+
+        var target = await db.CurriculumPedagogicalLessons
+            .Where(x => x.FrameworkVersionId == commonCoreVersionId)
+            .OrderBy(x => x.Code)
+            .FirstAsync();
+
+        var staleId = Guid.NewGuid();
+        db.CurriculumPedagogicalLessons.Add(
+            new CurriculumPedagogicalLesson
+            {
+                Id = staleId,
+                FrameworkVersionId = target.FrameworkVersionId,
+                OfficialLessonNodeId = target.OfficialLessonNodeId,
+                Code = target.Code,
+                UnitKey = target.UnitKey,
+                UnitTitle = target.UnitTitle,
+                Title = target.Title,
+                LogicalLevelFrom = target.LogicalLevelFrom,
+                LogicalLevelTo = target.LogicalLevelTo,
+                NativeLevel = target.NativeLevel,
+                Pathway = target.Pathway,
+                SortOrder = target.SortOrder,
+                CreatedAtUtc = DateTime.UtcNow,
+                UpdatedAtUtc = DateTime.UtcNow
+            });
+
+        db.CurriculumLessonContents.Add(
+            new CurriculumLessonContent
+            {
+                Id = Guid.NewGuid(),
+                FrameworkVersionId = commonCoreVersionId,
+                PedagogicalLessonId = staleId,
+                Status = Edulytics.Core.Enums.CanonicalLessonContentStatus.Draft,
+                ContentVersion = "non-uae-legacy-test",
+                CreatedAtUtc = DateTime.UtcNow,
+                UpdatedAtUtc = DateTime.UtcNow,
+                RowVersion = []
+            });
+
+        await db.SaveChangesAsync();
+
+        var error = await Assert.ThrowsAsync<InvalidOperationException>(
+            () => seeder.SeedAsync());
+
+        Assert.Contains(
+            "outside the UAE migration scope",
+            error.Message,
+            StringComparison.Ordinal);
+        Assert.True(await db.CurriculumPedagogicalLessons.AnyAsync(x => x.Id == staleId));
+    }
+
+    [Fact]
     public void CanonicalContentForeignKeyTargetsPedagogicalLesson()
     {
         using var db =
