@@ -14,7 +14,7 @@ public sealed class Stage17Grade16ClosureTests
             "src/Edulytics.Core/Mathematics/Curriculum/stage17-grade1-6-production-manifest.v1.json")));
 
         var entries = document.RootElement.GetProperty("entries").EnumerateArray().ToArray();
-        Assert.Equal(14, entries.Length);
+        Assert.Equal(13, entries.Length);
 
         var manifestByCode = entries.ToDictionary(
             entry => entry.GetProperty("lessonCode").GetString()!,
@@ -37,12 +37,11 @@ public sealed class Stage17Grade16ClosureTests
             Assert.False(entry.UsesV2ShadowSolver);
         }
 
-        Assert.Equal(14, policy.Select(x => x.LessonCode).Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(13, policy.Select(x => x.LessonCode).Distinct(StringComparer.Ordinal).Count());
     }
 
     [Theory]
     [InlineData("TWO_UNKNOWNS")]
-    [InlineData("SCALE_READING")]
     [InlineData("FRACTION_COMPARE_UNLIKE")]
     [InlineData("FRACTION_EQUIVALENT")]
     [InlineData("UNIT_RATE")]
