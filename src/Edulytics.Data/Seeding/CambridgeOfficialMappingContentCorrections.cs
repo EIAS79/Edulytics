@@ -10,6 +10,9 @@ namespace Edulytics.Data.Seeding;
 public static class CambridgeOfficialMappingContentCorrections
 {
     public const string CorrectionContentVersion =
+        "cambridge-official-mapping-content-v3";
+
+    private const string PriorCorrectionContentVersionV2 =
         "cambridge-official-mapping-content-v2";
 
     private const string PriorCorrectionContentVersion =
@@ -113,6 +116,10 @@ public static class CambridgeOfficialMappingContentCorrections
             string.Equals(
                 existingContentVersion,
                 CambridgePrimaryStage6LessonContentCorrections.CorrectionContentVersion,
+                StringComparison.Ordinal) ||
+            string.Equals(
+                existingContentVersion,
+                PriorCorrectionContentVersionV2,
                 StringComparison.Ordinal) ||
             string.Equals(
                 existingContentVersion,
