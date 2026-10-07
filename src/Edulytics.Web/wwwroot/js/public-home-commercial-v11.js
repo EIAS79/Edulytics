@@ -30,19 +30,19 @@
 
   const sharedStrengths = {
     en: [
-      ['Learning Built for Understanding', '#experience'],
-      ['Results Backed by Data', '#platform'],
-      ['Support You Can Rely On', '/contact']
+      ['Learning Built for Understanding', '/product/learning-built-for-understanding'],
+      ['Results Backed by Data', '/product/results-backed-by-data'],
+      ['Support You Can Rely On', '/product/support-you-can-rely-on']
     ],
     pl: [
-      ['Nauka oparta na zrozumieniu', '#experience'],
-      ['Wyniki potwierdzone danymi', '#platform'],
-      ['Wsparcie, na którym możesz polegać', '/contact']
+      ['Nauka oparta na zrozumieniu', '/product/learning-built-for-understanding'],
+      ['Wyniki potwierdzone danymi', '/product/results-backed-by-data'],
+      ['Wsparcie, na którym możesz polegać', '/product/support-you-can-rely-on']
     ],
     ar: [
-      ['تعلّم قائم على الفهم', '#experience'],
-      ['نتائج تثبتها البيانات', '#platform'],
-      ['دعم يمكنك الاعتماد عليه', '/contact']
+      ['تعلّم قائم على الفهم', '/product/learning-built-for-understanding'],
+      ['نتائج تثبتها البيانات', '/product/results-backed-by-data'],
+      ['دعم يمكنك الاعتماد عليه', '/product/support-you-can-rely-on']
     ]
   };
 
@@ -55,9 +55,9 @@
         leadBody: 'Discover learning, assessment, progress and the tools that connect them in one mathematics platform.',
         groups: [
           ['What sets us apart', sharedStrengths.en],
-          ['Ways to Explore', [['Explore Student Portal', '#experience'], ['Math Quizzes', '#ai'], ['Weekly Challenge', '#experience']]],
-          ['Subjects', [['Mathematics', '#curricula'], ['Financial Literacy', '#experience']]],
-          ['Overview', [['Product Features', '#platform'], ['AI Assistant', '#ai'], ['Multilingual Editions', '#curricula'], ['Technical Requirements', '/contact']]]
+          ['Ways to Explore', [['Explore Student Portal', '/product/student-portal'], ['Math Quizzes', '/product/assessment-and-practice'], ['Weekly Challenge', '/product/mastery-and-next-step']]],
+          ['Subjects', [['Mathematics', '/product/mathematics'], ['Financial Literacy', '/product/mathematics']]],
+          ['Overview', [['Product Features', '/product/features'], ['AI Assistant', '/product/edulytics-ai'], ['Multilingual Editions', '/product/languages'], ['Technical Requirements', '/product/technical-requirements']]]
         ]
       },
       teachers: {
@@ -65,7 +65,7 @@
         leadBody: 'Bring engaging, evidence-informed mathematics learning and efficient assessment into your classroom.',
         groups: [
           ['What sets us apart', sharedStrengths.en],
-          ['Teaching with Edulytics', [['Why Edulytics for Teachers?', '#teachers'], ['AI Assistant', '#ai'], ['Activities & Curriculum', '#curricula']]]
+          ['Teaching with Edulytics', [['Why Edulytics for Teachers?', '/teachers/overview'], ['AI Assistant', '/product/edulytics-ai'], ['Activities & Curriculum', '/teachers/assessment-and-curriculum']]]
         ]
       },
       parents: {
@@ -73,7 +73,7 @@
         leadBody: 'Support your child with engaging mathematics learning and clearer visibility into progress.',
         groups: [
           ['What sets us apart', [...sharedStrengths.en, ['Explore Student Portal', '#experience']]],
-          ['Learning with Edulytics', [['Why Edulytics for Home?', '#parents'], ['Activities & Curriculum', '#curricula']]]
+          ['Learning with Edulytics', [['Why Edulytics for Home?', '/parents/overview'], ['Activities & Curriculum', '/product/curricula']]]
         ]
       },
       leaders: {
@@ -81,7 +81,7 @@
         leadBody: 'Connect curriculum, teaching, assessment and learning evidence across your school or education network.',
         groups: [
           ['What sets us apart', sharedStrengths.en],
-          ['Transform Education', [['Why Edulytics for Education Leaders?', '#schools'], ['AI for Teachers', '#ai'], ['Global Partnerships', '/contact']]]
+          ['Transform Education', [['Why Edulytics for Education Leaders?', '/schools/overview'], ['AI for Teachers', '/product/edulytics-ai'], ['Global Partnerships', '/company/partnerships']]]
         ]
       }
     },
@@ -93,9 +93,9 @@
         leadBody: 'Poznaj naukę, ocenianie, postępy i narzędzia, które łączą je w jednej platformie matematycznej.',
         groups: [
           ['Co nas wyróżnia', sharedStrengths.pl],
-          ['Sposoby odkrywania', [['Poznaj portal ucznia', '#experience'], ['Quizy matematyczne', '#ai'], ['Cotygodniowe wyzwanie', '#experience']]],
-          ['Tematy', [['Matematyka', '#curricula'], ['Edukacja finansowa', '#experience']]],
-          ['Przegląd', [['Funkcje produktu', '#platform'], ['Asystent AI', '#ai'], ['Wersje wielojęzyczne', '#curricula'], ['Wymagania techniczne', '/contact']]]
+          ['Sposoby odkrywania', [['Poznaj portal ucznia', '/product/student-portal'], ['Quizy matematyczne', '/product/assessment-and-practice'], ['Cotygodniowe wyzwanie', '/product/mastery-and-next-step']]],
+          ['Tematy', [['Matematyka', '/product/mathematics'], ['Edukacja finansowa', '/product/mathematics']]],
+          ['Przegląd', [['Funkcje produktu', '/product/features'], ['Asystent AI', '/product/edulytics-ai'], ['Wersje wielojęzyczne', '/product/languages'], ['Wymagania techniczne', '/product/technical-requirements']]]
         ]
       },
       teachers: {
@@ -103,7 +103,7 @@
         leadBody: 'Wprowadź do swojej klasy angażującą naukę matematyki i sprawniejsze ocenianie oparte na danych.',
         groups: [
           ['Co nas wyróżnia', sharedStrengths.pl],
-          ['Nauczanie z Edulytics', [['Dlaczego Edulytics dla nauczycieli?', '#teachers'], ['Asystent AI', '#ai'], ['Aktywności i program nauczania', '#curricula']]]
+          ['Nauczanie z Edulytics', [['Dlaczego Edulytics dla nauczycieli?', '/teachers/overview'], ['Asystent AI', '/product/edulytics-ai'], ['Aktywności i program nauczania', '/teachers/assessment-and-curriculum']]]
         ]
       },
       parents: {
@@ -111,7 +111,7 @@
         leadBody: 'Wspieraj dziecko w nauce matematyki i lepiej rozumiej jego postępy.',
         groups: [
           ['Co nas wyróżnia', [...sharedStrengths.pl, ['Poznaj portal ucznia', '#experience']]],
-          ['Nauka z Edulytics', [['Dlaczego Edulytics w domu?', '#parents'], ['Aktywności i program nauczania', '#curricula']]]
+          ['Nauka z Edulytics', [['Dlaczego Edulytics w domu?', '/parents/overview'], ['Aktywności i program nauczania', '/product/curricula']]]
         ]
       },
       leaders: {
@@ -119,7 +119,7 @@
         leadBody: 'Połącz program, nauczanie, ocenianie i dane o uczeniu się w szkole lub sieci edukacyjnej.',
         groups: [
           ['Co nas wyróżnia', sharedStrengths.pl],
-          ['Transformacja edukacji', [['Dlaczego Edulytics dla liderów edukacji?', '#schools'], ['AI dla nauczycieli', '#ai'], ['Partnerstwa globalne', '/contact']]]
+          ['Transformacja edukacji', [['Dlaczego Edulytics dla liderów edukacji?', '/schools/overview'], ['AI dla nauczycieli', '/product/edulytics-ai'], ['Partnerstwa globalne', '/company/partnerships']]]
         ]
       }
     },
@@ -131,9 +131,9 @@
         leadBody: 'تعرّف على التعلّم والتقييم والتقدّم والأدوات التي تربطها في منصة واحدة للرياضيات.',
         groups: [
           ['ما الذي يميزنا؟', sharedStrengths.ar],
-          ['طرق الاستكشاف', [['استكشف بوابة الطالب', '#experience'], ['اختبارات الرياضيات', '#ai'], ['التحدي الأسبوعي', '#experience']]],
-          ['المواضيع', [['الرياضيات', '#curricula'], ['المعرفة المالية', '#experience']]],
-          ['نظرة عامة', [['ميزات المنتج', '#platform'], ['مساعد الذكاء الاصطناعي', '#ai'], ['إصدارات متعددة اللغات', '#curricula'], ['المتطلبات الفنية', '/contact']]]
+          ['طرق الاستكشاف', [['استكشف بوابة الطالب', '/product/student-portal'], ['اختبارات الرياضيات', '/product/assessment-and-practice'], ['التحدي الأسبوعي', '/product/mastery-and-next-step']]],
+          ['المواضيع', [['الرياضيات', '/product/mathematics'], ['المعرفة المالية', '/product/mathematics']]],
+          ['نظرة عامة', [['ميزات المنتج', '/product/features'], ['مساعد الذكاء الاصطناعي', '/product/edulytics-ai'], ['إصدارات متعددة اللغات', '/product/languages'], ['المتطلبات الفنية', '/product/technical-requirements']]]
         ]
       },
       teachers: {
@@ -141,7 +141,7 @@
         leadBody: 'أثرِ صفك بتعلّم رياضيات أكثر تفاعلًا وتقييم أكثر كفاءة قائم على البيانات.',
         groups: [
           ['ما الذي يميزنا؟', sharedStrengths.ar],
-          ['التدريس باستخدام Edulytics', [['لماذا Edulytics للمعلمين؟', '#teachers'], ['مساعد الذكاء الاصطناعي', '#ai'], ['الأنشطة والمناهج الدراسية', '#curricula']]]
+          ['التدريس باستخدام Edulytics', [['لماذا Edulytics للمعلمين؟', '/teachers/overview'], ['مساعد الذكاء الاصطناعي', '/product/edulytics-ai'], ['الأنشطة والمناهج الدراسية', '/teachers/assessment-and-curriculum']]]
         ]
       },
       parents: {
@@ -149,7 +149,7 @@
         leadBody: 'ادعم تعلّم طفلك للرياضيات وافهم تقدّمه بصورة أوضح.',
         groups: [
           ['ما الذي يميزنا؟', [...sharedStrengths.ar, ['استكشف بوابة الطالب', '#experience']]],
-          ['التعلّم مع Edulytics', [['لماذا Edulytics للمنزل؟', '#parents'], ['الأنشطة والمناهج الدراسية', '#curricula']]]
+          ['التعلّم مع Edulytics', [['لماذا Edulytics للمنزل؟', '/parents/overview'], ['الأنشطة والمناهج الدراسية', '/product/curricula']]]
         ]
       },
       leaders: {
@@ -157,7 +157,7 @@
         leadBody: 'اربط المناهج والتدريس والتقييم وبيانات التعلّم عبر مدرستك أو منظومتك التعليمية.',
         groups: [
           ['ما الذي يميزنا؟', sharedStrengths.ar],
-          ['تطوير التعليم', [['لماذا Edulytics للقيادات التعليمية؟', '#schools'], ['الذكاء الاصطناعي للمعلمين', '#ai'], ['الشراكات العالمية', '/contact']]]
+          ['تطوير التعليم', [['لماذا Edulytics للقيادات التعليمية؟', '/schools/overview'], ['الذكاء الاصطناعي للمعلمين', '/product/edulytics-ai'], ['الشراكات العالمية', '/company/partnerships']]]
         ]
       }
     }
@@ -272,11 +272,14 @@
   const polishFlag = root.querySelector('.ed-home-flag');
   if (polishFlag) polishFlag.hidden = language !== 'pl';
 
-  if (language === 'ar') {
+  {
     const login = root.querySelector('.ed-home-actions>.ed-home-login');
     const topCta = root.querySelector('.ed-home-actions>.ed-home-cta');
     if (login) login.textContent = text.nav.login;
-    if (topCta) text.nav.try && (topCta.textContent = text.nav.try);
+    if (topCta) {
+      topCta.textContent = text.nav.try;
+      topCta.setAttribute('href', '/contact/request-demo');
+    }
   }
 
   const mobilePanel = root.querySelector('.ed-home-mobile-panel');
