@@ -471,6 +471,28 @@ if (!app.Environment.IsDevelopment())
         "/system/status/{0}");
 }
 
+// Static snapshots use /__frontdoor-live as a same-origin bridge after the
+// browser has confirmed that the free application is ready. Render's static
+// rewrite forwards this otherwise-missing path to the web service; strip the
+// bridge prefix before MVC routing so the real anonymous endpoint handles the
+// request and emits fresh cookies / anti-forgery tokens.
+app.Use(async (context, next) =>
+{
+    const string frontDoorLivePrefix = "/__frontdoor-live";
+
+    if (context.Request.Path.StartsWithSegments(
+            frontDoorLivePrefix,
+            out var remainingPath))
+    {
+        context.Request.Path =
+            remainingPath.HasValue
+                ? remainingPath
+                : "/";
+    }
+
+    await next();
+});
+
 app.UseRouting();
 
 // The always-on static public front door wakes this free web service in the
