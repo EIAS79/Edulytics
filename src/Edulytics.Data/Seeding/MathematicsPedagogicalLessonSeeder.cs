@@ -929,7 +929,9 @@ public sealed class MathematicsPedagogicalLessonSeeder
                                     StringComparison.Ordinal) &&
                                 !lesson.Code.StartsWith(
                                     "PED:CAMBRIDGE-INTL-MATH:",
-                                    StringComparison.Ordinal)
+                                    StringComparison.Ordinal) &&
+                                !CommonCoreOfficialOutcomeMappingCorrections
+                                    .IsTarget(lesson.Code)
                             ))
                     .ToArray();
 
