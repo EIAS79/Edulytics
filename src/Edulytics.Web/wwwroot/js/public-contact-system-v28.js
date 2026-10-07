@@ -231,6 +231,26 @@
 
   const localizedCopy = language === 'ar' ? ar : language === 'en' ? en : null;
 
+  // Legacy/fallback snapshots used an off-screen left offset for the anti-bot
+  // honeypot. In RTL that creates a huge horizontal scroll area. Normalize the
+  // wrapper without changing form semantics.
+  const honeypot = document.getElementById('contact-website');
+  if (honeypot?.parentElement) {
+    Object.assign(honeypot.parentElement.style, {
+      position: 'absolute',
+      left: 'auto',
+      right: 'auto',
+      width: '1px',
+      height: '1px',
+      padding: '0',
+      margin: '-1px',
+      overflow: 'hidden',
+      clip: 'rect(0, 0, 0, 0)',
+      whiteSpace: 'nowrap',
+      border: '0'
+    });
+  }
+
   const pageTitles = {
     en: {
       '/contact': 'Contact | Edulytics',
