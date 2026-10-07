@@ -91,6 +91,18 @@ public sealed class PublicStaticFrontDoorContractTests
             build,
             StringComparison.Ordinal);
         Assert.Contains(
+            "data-frontdoor-language-bootstrap",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "d.dataset.snapshotLanguage=d.lang||\"pl\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "localStorage.getItem(\"edulytics.frontdoor.language\")",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
             "\"$SNAPSHOT_ORIGIN/${language}/\"",
             build,
             StringComparison.Ordinal);
@@ -261,6 +273,18 @@ public sealed class PublicStaticFrontDoorContractTests
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
+            "return liveHydrationRoutes.has(path);",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "PUBLIC_LANGUAGE_KEY",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "window.localStorage.setItem(PUBLIC_LANGUAGE_KEY",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
             "preferredLanguage() !== 'pl'",
             runtime,
             StringComparison.Ordinal);
