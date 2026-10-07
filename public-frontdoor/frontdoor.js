@@ -274,6 +274,35 @@
     return publicStaticRoutes.has(path);
   }
 
+  function canonicalStaticUrl(url) {
+    const target = new URL(url.toString());
+    const path = normalizePath(target.pathname);
+
+    if (!publicStaticRoutes.has(path) || path === '/') return target;
+
+    target.pathname = `${path}/`;
+    return target;
+  }
+
+  function normalizeStaticLinks() {
+    document.querySelectorAll('a[href]').forEach(anchor => {
+      const raw = anchor.getAttribute('href');
+      if (!raw || raw.startsWith('#') ||
+          raw.startsWith('mailto:') || raw.startsWith('tel:') ||
+          raw.startsWith('javascript:')) {
+        return;
+      }
+
+      const url = new URL(raw, window.location.href);
+      if (url.origin !== window.location.origin || !shouldStayStatic(url)) return;
+
+      const canonical = canonicalStaticUrl(url);
+      anchor.setAttribute(
+        'href',
+        `${canonical.pathname}${canonical.search}${canonical.hash}`);
+    });
+  }
+
   function installBackendRouting() {
     document.addEventListener('click', async event => {
       if (event.defaultPrevented || event.button !== 0 ||
@@ -298,11 +327,17 @@
         shouldStayStatic(url);
 
       if (isStaticPublic) {
+        event.preventDefault();
+
         try {
           window.localStorage.setItem(LANGUAGE_KEY, preferredLanguage());
         } catch {
           // The destination can still fall back to its rendered language.
         }
+
+        const canonicalUrl = canonicalStaticUrl(url);
+        window.location.assign(
+          `${canonicalUrl.pathname}${canonicalUrl.search}${canonicalUrl.hash}`);
         return;
       }
 
@@ -467,6 +502,7 @@
   restorePreferredLanguage();
 
   document.addEventListener('DOMContentLoaded', () => {
+    normalizeStaticLinks();
     installLanguageRouting();
     installBackendRouting();
 

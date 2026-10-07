@@ -131,4 +131,16 @@ for route in "${PUBLIC_ROUTES[@]}"; do
   snapshot_public_route "$route"
 done
 
+# Render serves directory snapshots canonically at paths that end in "/".
+# Rewrite every generated internal public link to that canonical form at build
+# time so navigation never falls through to a sleeping dynamic service before
+# frontdoor.js has a chance to run.
+for route in "${PUBLIC_ROUTES[@]}"; do
+  canonical="${route}/"
+  while IFS= read -r -d '' html; do
+    sed -i "s#href=\"${route}\"#href=\"${canonical}\"#g" "$html"
+    sed -i "s#href='${route}'#href='${canonical}'#g" "$html"
+  done < <(find "$OUT" -type f -name '*.html' -print0)
+done
+
 echo "Exact server-rendered public snapshots built at $OUT"

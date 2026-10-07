@@ -66,6 +66,14 @@ public sealed class PublicStaticFrontDoorContractTests
             "<script src=\"/frontdoor.js\" defer></script>",
             build,
             StringComparison.Ordinal);
+        Assert.Contains(
+            "canonical=\"${route}/\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "find \"$OUT\" -type f -name '*.html' -print0",
+            build,
+            StringComparison.Ordinal);
     }
 
     [Fact]
@@ -210,6 +218,22 @@ public sealed class PublicStaticFrontDoorContractTests
             StringComparison.Ordinal);
         Assert.Contains(
             "unlockInteractiveSnapshot();",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "canonicalStaticUrl",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "normalizeStaticLinks();",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "target.pathname = `${path}/`;",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "event.preventDefault();",
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
