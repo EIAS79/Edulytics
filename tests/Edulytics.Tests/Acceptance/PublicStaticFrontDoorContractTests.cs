@@ -265,7 +265,11 @@ public sealed class PublicStaticFrontDoorContractTests
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
-            "window.localStorage.setItem(LANGUAGE_KEY, preferredLanguage())",
+            "window.localStorage.setItem(LANGUAGE_KEY, selectedLanguage)",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "window.localStorage.setItem(PUBLIC_LANGUAGE_KEY, selectedLanguage)",
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
