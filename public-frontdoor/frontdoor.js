@@ -1,5 +1,6 @@
 (() => {
   const APP_ORIGIN = 'https://staging.edulytiks.com';
+  const LIVE_PREFIX = '/__frontdoor-live';
   const LANGUAGE_KEY = 'edulytics.frontdoor.language';
   let backendReady = false;
   let wakePromise = null;
@@ -19,11 +20,33 @@
     }
   };
 
+  const liveHydrationRoutes = new Set([
+    '/account/login',
+    '/contact/sales-enquiry',
+    '/contact/request-demo',
+    '/contact/support',
+    '/contact/message'
+  ]);
+
   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
   function language() {
     const value = (document.documentElement.lang || 'pl').toLowerCase();
     return value.startsWith('ar') ? 'ar' : value.startsWith('en') ? 'en' : 'pl';
+  }
+
+  function preferredLanguage() {
+    const query = new URL(window.location.href).searchParams.get('culture');
+    if (query === 'pl' || query === 'en' || query === 'ar') return query;
+
+    try {
+      const stored = window.localStorage.getItem(LANGUAGE_KEY);
+      if (stored === 'pl' || stored === 'en' || stored === 'ar') return stored;
+    } catch {
+      // Fall back to the language rendered into the snapshot.
+    }
+
+    return language();
   }
 
   async function probeReady() {
@@ -105,7 +128,7 @@
 
   function showStatus(key) {
     const host = ensureStatus();
-    const copy = statusCopy[language()] || statusCopy.pl;
+    const copy = statusCopy[preferredLanguage()] || statusCopy.pl;
     host.textContent = copy[key] || copy.preparing;
     host.hidden = false;
   }
@@ -140,7 +163,7 @@
 
   function withPublicCulture(url) {
     const target = new URL(url.toString());
-    const currentLanguage = language();
+    const currentLanguage = preferredLanguage();
     const isLoginRoute =
       target.pathname.toLowerCase().replace(/\/+$/, '') === '/account/login';
 
@@ -183,9 +206,6 @@
 
       const url = new URL(raw, window.location.href);
 
-      // Keep every application URL on edulytiks.com. Render's static-site
-      // rewrite forwards missing dynamic paths to staging.edulytiks.com
-      // without changing the address shown in the browser.
       const isBackend =
         url.origin === window.location.origin &&
         !shouldStayStatic(url);
@@ -208,6 +228,118 @@
     }, true);
   }
 
+  function normalizePath(pathname) {
+    const normalized = pathname.toLowerCase().replace(/\/+$/, '');
+    return normalized || '/';
+  }
+
+  function shouldHydrateFromLiveApplication() {
+    const path = normalizePath(window.location.pathname);
+    if (path.startsWith(LIVE_PREFIX)) return false;
+
+    if (liveHydrationRoutes.has(path)) return true;
+
+    // Polish snapshots can remain fully static. EN/AR public pages are
+    // refreshed from the live application after wake-up so server-side
+    // localization stays exact instead of showing a Polish snapshot.
+    return path !== '/' &&
+           path !== '/pl' &&
+           path !== '/en' &&
+           path !== '/ar' &&
+           preferredLanguage() !== 'pl';
+  }
+
+  function lockInteractiveSnapshot() {
+    const path = normalizePath(window.location.pathname);
+    if (!liveHydrationRoutes.has(path)) return;
+
+    document.documentElement.dataset.frontdoorHydrating = 'true';
+
+    document
+      .querySelectorAll('form input, form select, form textarea, form button, input[form], button[form]')
+      .forEach(control => {
+        if ('disabled' in control) control.disabled = true;
+      });
+  }
+
+  function liveBridgeUrl() {
+    const current = new URL(window.location.href);
+    const target = new URL(
+      `${LIVE_PREFIX}${current.pathname}`,
+      current.origin);
+
+    for (const [key, value] of current.searchParams.entries()) {
+      target.searchParams.append(key, value);
+    }
+
+    if (!target.searchParams.has('culture')) {
+      target.searchParams.set('culture', preferredLanguage());
+    }
+
+    return target;
+  }
+
+  function rewritePostFormsToLiveBridge(html) {
+    const parser = new DOMParser();
+    const parsed = parser.parseFromString(html, 'text/html');
+
+    parsed.querySelectorAll('form').forEach(form => {
+      const method = (form.getAttribute('method') || 'get').toLowerCase();
+      if (method !== 'post') return;
+
+      const rawAction = form.getAttribute('action') || window.location.pathname;
+      const action = new URL(rawAction, window.location.origin);
+      if (action.origin !== window.location.origin ||
+          action.pathname.startsWith(LIVE_PREFIX)) {
+        return;
+      }
+
+      action.pathname = `${LIVE_PREFIX}${action.pathname}`;
+      form.setAttribute(
+        'action',
+        `${action.pathname}${action.search}${action.hash}`);
+    });
+
+    return '<!DOCTYPE html>\n' + parsed.documentElement.outerHTML;
+  }
+
+  async function hydrateFromLiveApplication() {
+    if (!shouldHydrateFromLiveApplication()) return;
+
+    lockInteractiveSnapshot();
+
+    if (liveHydrationRoutes.has(normalizePath(window.location.pathname))) {
+      showStatus('preparing');
+    }
+
+    const ready = await ensureBackendReady();
+    if (!ready) {
+      showStatus('delayed');
+      return;
+    }
+
+    try {
+      const response = await fetch(liveBridgeUrl(), {
+        method: 'GET',
+        cache: 'no-store',
+        credentials: 'same-origin',
+        headers: {
+          Accept: 'text/html',
+          'X-Edulytics-Frontdoor': 'hydrate'
+        }
+      });
+
+      if (!response.ok) throw new Error('live hydration failed');
+
+      const html = rewritePostFormsToLiveBridge(await response.text());
+      document.open();
+      document.write(html);
+      document.close();
+    } catch {
+      showStatus('delayed');
+    }
+  }
+
   function restorePreferredLanguage() {
     if (window.location.pathname !== '/') return;
 
@@ -227,7 +359,10 @@
     installLanguageRouting();
     installBackendRouting();
 
-    // Wake the free application immediately without blocking the public page.
+    // Every static public page wakes the free application immediately.
+    // Interactive snapshots then hydrate from the live application only after
+    // readiness, so the visitor never sees Render's cold-start loading page.
     ensureBackendReady();
+    hydrateFromLiveApplication();
   });
 })();

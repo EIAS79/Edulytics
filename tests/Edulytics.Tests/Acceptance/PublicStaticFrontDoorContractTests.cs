@@ -15,15 +15,35 @@ public sealed class PublicStaticFrontDoorContractTests
             build,
             StringComparison.Ordinal);
         Assert.Contains(
-            "snapshot \"pl\" \"$OUT/pl/index.html\"",
+            "snapshot_home \"pl\" \"$OUT/pl/index.html\"",
             build,
             StringComparison.Ordinal);
         Assert.Contains(
-            "snapshot \"en\" \"$OUT/en/index.html\"",
+            "snapshot_home \"en\" \"$OUT/en/index.html\"",
             build,
             StringComparison.Ordinal);
         Assert.Contains(
-            "snapshot \"ar\" \"$OUT/ar/index.html\"",
+            "snapshot_home \"ar\" \"$OUT/ar/index.html\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "\"/account/login\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "\"/schools/overview\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "\"/contact/request-demo\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "\"/legal/privacy\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "snapshot_public_route",
             build,
             StringComparison.Ordinal);
         Assert.Contains(
@@ -77,6 +97,22 @@ public sealed class PublicStaticFrontDoorContractTests
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
+            "LIVE_PREFIX = '/__frontdoor-live'",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "hydrateFromLiveApplication",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "rewritePostFormsToLiveBridge",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "'/account/login'",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
             "url.origin === window.location.origin",
             runtime,
             StringComparison.Ordinal);
@@ -113,6 +149,28 @@ public sealed class PublicStaticFrontDoorContractTests
         Assert.DoesNotContain(
             "frontdoor-hero-card",
             runtime,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void FrontDoor_LiveBridge_IsRewrittenBeforeMvcRouting()
+    {
+        var root = FindRoot();
+        var program = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/Program.cs"));
+
+        Assert.Contains(
+            "\"/__frontdoor-live\"",
+            program,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "context.Request.Path.StartsWithSegments",
+            program,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "context.Request.Path =",
+            program,
             StringComparison.Ordinal);
     }
 
