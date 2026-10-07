@@ -293,6 +293,19 @@
 
       const url = new URL(raw, window.location.href);
 
+      const isStaticPublic =
+        url.origin === window.location.origin &&
+        shouldStayStatic(url);
+
+      if (isStaticPublic) {
+        try {
+          window.localStorage.setItem(LANGUAGE_KEY, preferredLanguage());
+        } catch {
+          // The destination can still fall back to its rendered language.
+        }
+        return;
+      }
+
       const isBackend =
         url.origin === window.location.origin &&
         !shouldStayStatic(url);
@@ -345,7 +358,20 @@
     document
       .querySelectorAll('form input, form select, form textarea, form button, input[form], button[form]')
       .forEach(control => {
-        if ('disabled' in control) control.disabled = true;
+        if (!('disabled' in control) || control.disabled) return;
+        control.dataset.frontdoorTemporarilyDisabled = 'true';
+        control.disabled = true;
+      });
+  }
+
+  function unlockInteractiveSnapshot() {
+    document.documentElement.dataset.frontdoorHydrating = 'false';
+
+    document
+      .querySelectorAll('[data-frontdoor-temporarily-disabled="true"]')
+      .forEach(control => {
+        if ('disabled' in control) control.disabled = false;
+        delete control.dataset.frontdoorTemporarilyDisabled;
       });
   }
 
@@ -396,7 +422,10 @@
     lockInteractiveSnapshot();
 
     const ready = await ensureBackendReady();
-    if (!ready) return;
+    if (!ready) {
+      unlockInteractiveSnapshot();
+      return;
+    }
 
     try {
       const response = await fetch(liveBridgeUrl(), {
@@ -418,6 +447,7 @@
     } catch {
       // Keep the already-rendered static snapshot usable if the silent
       // interactive refresh cannot reach the live application.
+      unlockInteractiveSnapshot();
     }
   }
 
