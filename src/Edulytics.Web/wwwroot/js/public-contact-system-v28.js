@@ -3,10 +3,108 @@
   if (!root) return;
 
   const storageKey = 'edulytics.public.siteLanguage';
-  let language = (document.documentElement.lang || 'en').toLowerCase().startsWith('pl') ? 'pl' : 'en';
+  const frontdoorLanguageKey = 'edulytics.frontdoor.language';
+  const documentLanguage = (document.documentElement.lang || 'en').toLowerCase();
+  let language = documentLanguage.startsWith('ar') ? 'ar' : documentLanguage.startsWith('pl') ? 'pl' : 'en';
   try {
-    if (window.localStorage.getItem(storageKey) === 'ar') language = 'ar';
+    const selected = window.localStorage.getItem(frontdoorLanguageKey)
+      || window.localStorage.getItem(storageKey);
+    if (selected === 'en' || selected === 'pl' || selected === 'ar') language = selected;
   } catch { }
+
+  const en = {
+    contactEyebrow: 'CONTACT EDULYTICS',
+    contactTitle: 'How can we help?',
+    contactLead: 'Whether you are exploring Edulytics for a school or classroom, or you need support, choose the route that best matches what you need.',
+    audienceTeachers: 'Teachers',
+    audienceLeaders: 'Schools & education leaders',
+    audienceParents: 'Parents & students',
+    visualTitle: 'Choose a starting point',
+    visualSales: 'Questions about the product, plans and school use',
+    visualDemo: 'See the platform in your education context',
+    visualHelp: 'Help with access, use and technical support',
+    waysTitle: 'Choose what you need',
+    waysLead: 'We separated contact into clear routes so you can reach the right next step without sending the same request more than once.',
+    salesTitle: 'Sales enquiry',
+    salesBody: 'Ask about Edulytics, your school\'s requirements, or how to start using the platform.',
+    salesAction: 'Send an enquiry',
+    demoTitle: 'Request a demo',
+    demoBody: 'Request a walkthrough of how Edulytics connects curriculum, assessment, practice and measurable progress.',
+    demoAction: 'Request the demo',
+    helpTitle: 'Help center',
+    helpBody: 'Find guidance for accounts, access, curricula, assessment, student practice and technical support.',
+    helpAction: 'Explore help',
+    directTitle: 'Prefer to contact us directly?',
+    directBody: 'Use the official Edulytics contact routes below.',
+    emailAction: 'Send a message',
+    callAction: 'Call us',
+    salesEyebrow: 'SALES ENQUIRY',
+    salesPageTitle: 'Talk to us about Edulytics.',
+    salesPageLead: 'Tell us about your school or requirement and we will help you determine whether Edulytics fits and how to get started.',
+    demoEyebrow: 'EDULYTICS DEMO',
+    demoPageTitle: 'See Edulytics in your school\'s context.',
+    demoPageLead: 'Share a little about your role and school so the walkthrough can focus on what you want to evaluate.',
+    supportEyebrow: 'SUPPORT REQUEST',
+    supportPageTitle: 'How can we help you?',
+    supportPageLead: 'Describe the access, account or technical issue and send it directly to the Edulytics team.',
+    generalEyebrow: 'CONTACT EDULYTICS',
+    generalPageTitle: 'Send us a message.',
+    generalPageLead: 'Use this form for a general question that does not fit sales, demo or technical support.',
+    backContact: 'Back to contact',
+    trustCurriculum: 'Built around curriculum and learning outcomes',
+    trustTeacher: 'Teachers remain in control of formal assessment',
+    trustPractice: 'Practice stays separate from official school grades',
+    trustNext: 'Results lead to a clear next learning step',
+    formSalesTitle: 'Tell us what you need',
+    formSalesLead: 'Complete the details below and send your enquiry directly from this website.',
+    formDemoTitle: 'Request your demo',
+    formDemoLead: 'Complete the details below and send your request directly to the Edulytics team.',
+    formSupportTitle: 'Tell us what you need help with',
+    formSupportLead: 'Complete the form and your support request will be sent securely from this website.',
+    formGeneralTitle: 'Send your message',
+    formGeneralLead: 'Complete the form and send your message directly from this website.',
+    firstName: 'First name',
+    lastName: 'Last name',
+    email: 'Work email',
+    organisation: 'School or organisation',
+    role: 'Role',
+    rolePlaceholder: 'Choose your role',
+    roleTeacher: 'Teacher',
+    roleLeader: 'Education leader / school administration',
+    roleSupervisor: 'Subject supervisor',
+    roleParent: 'Parent',
+    roleOther: 'Other',
+    country: 'Country',
+    students: 'Approximate number of students',
+    message: 'What would you like to discuss?',
+    messageDemo: 'What would you like to see in the demo?',
+    messageSupport: 'What do you need help with?',
+    messageGeneral: 'How can we help?',
+    turnstileNote: 'This form is protected by Cloudflare Turnstile. The verification is checked again on the server before any email is sent.',
+    submitSales: 'Send sales enquiry',
+    submitDemo: 'Send demo request',
+    submitSupport: 'Send support request',
+    submitGeneral: 'Send message',
+    mailNote: 'Your message is sent securely from this website and no email application will be opened.',
+    helpEyebrow: 'EDULYTICS HELP CENTER',
+    helpPageTitle: 'What do you need help with?',
+    helpLead: 'Start with search or choose a category. The center focuses on real Edulytics workflows and support topics.',
+    helpSearch: 'Search help topics…',
+    helpGettingTitle: 'Getting started & sign-in',
+    helpGettingBody: 'Signing in, setting a password, accessing your account and understanding the right starting point.',
+    helpAccountsTitle: 'Accounts & roles',
+    helpAccountsBody: 'Administrator, supervisor, teacher and student: who sees what and who owns each action.',
+    helpCurriculumTitle: 'Curricula & lessons',
+    helpCurriculumBody: 'Curriculum and level selection, learning outcomes and the lesson structure used by the platform.',
+    helpAssessmentTitle: 'Assessments & teacher controls',
+    helpAssessmentBody: 'Creating assessments, reviewing questions, approval and publication of formal assessment.',
+    helpPracticeTitle: 'Student practice & mastery',
+    helpPracticeBody: 'Personal practice, weak areas, mastery and the next step after a result.',
+    helpTechnicalTitle: 'Technical support',
+    helpTechnicalBody: 'Browser, access and technical issues, plus the direct support route when you cannot find the answer.',
+    contactSupport: 'Contact support',
+    noHelpResults: 'No matching category found. Try different words or contact us directly.'
+  };
 
   const ar = {
     contactEyebrow: 'تواصل مع Edulytics',
@@ -131,17 +229,19 @@
     }
   };
 
-  if (language === 'ar') {
-    document.documentElement.lang = 'ar';
-    document.documentElement.dir = 'rtl';
-    document.documentElement.classList.add('ed-site-ar');
-    root.classList.add('is-site-ar');
+  const localizedCopy = language === 'ar' ? ar : language === 'en' ? en : null;
+  document.documentElement.lang = language;
+  document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+  document.documentElement.classList.toggle('ed-site-ar', language === 'ar');
+  root.classList.toggle('is-site-ar', language === 'ar');
+
+  if (localizedCopy) {
     root.querySelectorAll('[data-contact-key]').forEach(node => {
-      const value = ar[node.dataset.contactKey];
+      const value = localizedCopy[node.dataset.contactKey];
       if (value) node.textContent = value;
     });
     root.querySelectorAll('[data-contact-placeholder]').forEach(node => {
-      const value = ar[node.dataset.contactPlaceholder];
+      const value = localizedCopy[node.dataset.contactPlaceholder];
       if (value) node.setAttribute('placeholder', value);
     });
   }
