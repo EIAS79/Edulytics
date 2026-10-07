@@ -153,6 +153,69 @@ public sealed class PublicStaticFrontDoorContractTests
     }
 
     [Fact]
+    public void FrontDoor_PublicRoutesStayStaticAndRenderWakeupIsBackgroundOnly()
+    {
+        var root = FindRoot();
+        var runtime = File.ReadAllText(Path.Combine(
+            root,
+            "public-frontdoor/frontdoor.js"));
+
+        Assert.Contains(
+            "const publicStaticRoutes = new Set([",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "'/product/learning-built-for-understanding'",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "'/contact'",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "return publicStaticRoutes.has(path);",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "READY_AT_KEY",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "READY_TTL_MS",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "KEEP_WARM_INTERVAL_MS",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "window.sessionStorage.setItem(READY_AT_KEY",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "warmBackendInBackground();",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "installKeepWarm();",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "return liveHydrationRoutes.has(path);",
+            runtime,
+            StringComparison.Ordinal);
+
+        Assert.DoesNotContain(
+            "preferredLanguage() !== 'pl'",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "if (liveHydrationRoutes.has(normalizePath(window.location.pathname))) {\n      showStatus('preparing');",
+            runtime,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void FrontDoor_LiveBridge_IsRewrittenBeforeMvcRouting()
     {
         var root = FindRoot();
