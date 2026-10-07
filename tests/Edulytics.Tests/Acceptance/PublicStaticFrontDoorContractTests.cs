@@ -153,6 +153,10 @@ public sealed class PublicStaticFrontDoorContractTests
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
+            "staticLanguageDestination",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
             "installBackendRouting",
             runtime,
             StringComparison.Ordinal);
