@@ -39,13 +39,79 @@ if [ "$ready" -ne 1 ]; then
   SOURCE_MODE="static"
 fi
 
-curl -fsS --retry 5 --retry-all-errors --retry-delay 2 --max-time 120 \
-  "$SNAPSHOT_ORIGIN/css/public-site-v44.css" \
-  -o "$OUT/css/public-site-v44.css"
+bundle_files() {
+  local target="$1"
+  shift
+  : > "$target"
 
-curl -fsS --retry 5 --retry-all-errors --retry-delay 2 --max-time 120 \
-  "$SNAPSHOT_ORIGIN/js/public-site-v45.js" \
-  -o "$OUT/js/public-site-v45.js"
+  for relative in "$@"; do
+    printf '/* %s */\n' "$relative" >> "$target"
+    cat "$SRC/$relative" >> "$target"
+    printf '\n;\n' >> "$target"
+  done
+}
+
+# Build the generated public bundles directly from repository sources. This is
+# the same source order used by PublicAssetBundleController, but it does not
+# require the dynamic ASP.NET service to be awake.
+PUBLIC_CSS_FILES=(
+  "css/round2-product-fixes.css"
+  "css/public-home.css"
+  "css/round4-ux-display.css"
+  "css/public-home-commercial-v4.css"
+  "css/public-home-commercial-v5.css"
+  "css/public-home-commercial-v6.css"
+  "css/public-home-commercial-v10.css"
+  "css/public-home-commercial-v11.css"
+  "css/public-home-commercial-v12.css"
+  "css/public-home-commercial-v13.css"
+  "css/public-home-commercial-v14.css"
+  "css/public-home-commercial-v15.css"
+  "css/public-home-commercial-v16.css"
+  "css/public-home-commercial-v17.css"
+  "css/public-home-philosophy-v23.css"
+  "css/public-contact-v4.css"
+  "css/public-contact-system-v28.css"
+  "css/public-home-footer-v24.css"
+  "css/public-home-navbar-v25.css"
+  "css/public-understanding-v1.css"
+  "css/public-content-pages-v27.css"
+  "css/public-arabic-rtl-v29.css"
+  "css/public-home-visual-contract-v32.css"
+  "css/public-home-mascot-transparency-v35.css"
+)
+
+PUBLIC_JS_FILES=(
+  "js/public-home-commercial-v4.js"
+  "js/public-home-commercial-v5.js"
+  "js/public-home-commercial-v6.js"
+  "js/public-home-commercial-v9.js"
+  "js/public-home-commercial-v10.js"
+  "js/public-home-commercial-v11.js"
+  "js/public-home-commercial-v12.js"
+  "js/public-home-commercial-v13.js"
+  "js/public-home-commercial-v14.js"
+  "js/public-home-commercial-v15.js"
+  "js/public-home-cartoon-cleanup.js"
+  "js/public-home-experience-v20.js"
+  "js/public-home-curricula-v21.js"
+  "js/public-home-ai-spotlight-v22.js"
+  "js/public-site-routing-v27.js"
+  "js/public-site-routing-v28.js"
+  "js/public-understanding-v1.js"
+  "js/public-contact-system-v28.js"
+)
+
+PUBLIC_CONTENT_JS_FILES=(
+  "js/public-content-pages-v27-en.js"
+  "js/public-content-pages-v27-pl.js"
+  "js/public-content-pages-v27-ar.js"
+  "js/public-content-pages-v27.js"
+)
+
+bundle_files "$OUT/css/public-site-v44.css" "${PUBLIC_CSS_FILES[@]}"
+bundle_files "$OUT/js/public-site-v45.js" "${PUBLIC_JS_FILES[@]}"
+bundle_files "$OUT/js/public-content-v33.js" "${PUBLIC_CONTENT_JS_FILES[@]}"
 
 inject_frontdoor_runtime() {
   local target="$1"
