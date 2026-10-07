@@ -1,0 +1,50 @@
+name: Common Core Official Closure
+
+on:
+  pull_request:
+    paths:
+      - 'src/Edulytics.Core/Curriculum/Packs/us-ccss-math.curriculum-pack.json'
+      - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-**'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-**'
+      - 'src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json'
+      - 'src/Edulytics.Data/Seeding/**'
+      - 'tests/Edulytics.Tests/Phase29/Phase29CommonCore**'
+      - 'tools/curriculum/audit-common-core-**'
+      - '.github/workflows/common-core-official-closure.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'src/Edulytics.Core/Curriculum/Packs/us-ccss-math.curriculum-pack.json'
+      - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-**'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-**'
+      - 'src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json'
+      - 'src/Edulytics.Data/Seeding/**'
+      - 'tests/Edulytics.Tests/Phase29/Phase29CommonCore**'
+      - 'tools/curriculum/audit-common-core-**'
+      - '.github/workflows/common-core-official-closure.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  official-outcome-closure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Common Core official closure
+        run: node tools/curriculum/audit-common-core-official-outcome-closure.mjs
+      - name: Check Common Core lesson explanations and rich content
+        run: node tools/curriculum/audit-common-core-rich-content.mjs
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore
+        run: dotnet restore Edulytics.sln
+      - name: Verify Common Core regression tests
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
+            --no-restore \
+            --filter 'FullyQualifiedName~Phase29CommonCore|FullyQualifiedName~Phase29PedagogicalLessonArchitectureTests.CommonCoreGradeSixBlueprintLocksExactSourceSemantics|FullyQualifiedName~Phase29PedagogicalLessonArchitectureTests.SeederCreatesExactGradeSixBlueprintAndPreservesFallbacks|FullyQualifiedName~Phase29FinalCurriculumLanguagePolicyTests.CommonCoreCanonicalPackHasFinalEnglishCoverageAndProvenance'

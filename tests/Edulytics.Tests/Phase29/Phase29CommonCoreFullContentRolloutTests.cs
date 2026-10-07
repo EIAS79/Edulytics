@@ -33,9 +33,9 @@ public sealed class Phase29CommonCoreFullContentRolloutTests
             .Where(x => x.Outcomes.Length > 0)
             .ToArray();
 
-        Assert.Equal(1466, expected.Length);
-        Assert.Equal(1466, expected.Select(x => x.LessonCode).Distinct(StringComparer.Ordinal).Count());
-        Assert.Equal(94, 1560 - expected.Length);
+        Assert.Equal(1560, expected.Length);
+        Assert.Equal(1560, expected.Select(x => x.LessonCode).Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(0, 1560 - expected.Length);
 
         var documents = MathematicsCanonicalLessonContentSeeder
             .LoadEmbeddedDocuments()
@@ -59,7 +59,7 @@ public sealed class Phase29CommonCoreFullContentRolloutTests
         var actualRows = documents.SelectMany(x => x.Lessons).ToArray();
         Assert.Equal(1560, actualRows.Length);
         Assert.Equal(1560, actualRows.Select(x => x.LessonCode).Distinct(StringComparer.Ordinal).Count());
-        Assert.Equal(94, actualRows.Count(x => x.IsSupporting));
+        Assert.Equal(0, actualRows.Count(x => x.IsSupporting));
         Assert.All(actualRows.Where(x => x.IsSupporting), x => Assert.Empty(x.OutcomeCodes));
         var actual = actualRows.ToDictionary(x => x.LessonCode, StringComparer.Ordinal);
 

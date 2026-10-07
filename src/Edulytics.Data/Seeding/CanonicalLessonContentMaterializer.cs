@@ -158,11 +158,18 @@ public static class CanonicalLessonContentMaterializer
                     lesson,
                     supporting);
 
-        return PolishLessonPracticeContentCorrections
+        var polish =
+            PolishLessonPracticeContentCorrections
+                .GetExpectedContentVersion(
+                    document,
+                    lesson,
+                    official);
+
+        return CommonCoreRichContentCorrections
             .GetExpectedContentVersion(
                 document,
                 lesson,
-                official);
+                polish);
     }
 
     public static bool IsReviewedCorrectionTarget(
@@ -179,6 +186,8 @@ public static class CanonicalLessonContentMaterializer
         OfficialLessonPracticeContentCorrections
             .IsTarget(document, lesson) ||
         PolishLessonPracticeContentCorrections
+            .IsTarget(document, lesson) ||
+        CommonCoreRichContentCorrections
             .IsTarget(document, lesson);
 
     public static bool CanUpgradeExisting(
@@ -208,6 +217,11 @@ public static class CanonicalLessonContentMaterializer
                 lesson,
                 existingContentVersion) ||
         PolishLessonPracticeContentCorrections
+            .CanUpgradeExisting(
+                document,
+                lesson,
+                existingContentVersion) ||
+        CommonCoreRichContentCorrections
             .CanUpgradeExisting(
                 document,
                 lesson,

@@ -22,8 +22,8 @@ public sealed class Phase29FinalCurriculumLanguagePolicyTests
             .ToDictionary(x => x.LessonCode, StringComparer.Ordinal);
 
         Assert.Equal(1560, lessons.Count);
-        Assert.Equal(1466, lessons.Values.Count(x => !x.IsSupporting));
-        Assert.Equal(94, lessons.Values.Count(x => x.IsSupporting));
+        Assert.Equal(1560, lessons.Values.Count(x => !x.IsSupporting));
+        Assert.Equal(0, lessons.Values.Count(x => x.IsSupporting));
         Assert.All(lessons.Values.Where(x => x.IsSupporting), x => Assert.Empty(x.OutcomeCodes));
 
         foreach (var lesson in lessons.Values)

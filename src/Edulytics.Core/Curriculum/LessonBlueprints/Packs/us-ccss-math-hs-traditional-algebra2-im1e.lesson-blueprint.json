@@ -16,7 +16,7 @@
   "SourceCheckedAtUtc": "2026-08-29T00:00:00Z",
   "SourceSelectionReason": "Phase 29 accepted High School pedagogical source strategy.",
   "SourceSelectionEvidence": "Immutable Phase 29 High School source, placement, evidence, sequence and Blueprint V2 contract locks.",
-  "SemanticGraphSha256": "56aa40e59f759c0a73889141a21770a7028640a39d93f8acaaea33b47f50ee2b",
+  "SemanticGraphSha256": "abd49ea902983099bcf958ec88e3bb10ccd5219f212232f4b8e1bdb62e240ec0",
   "Sources": [
     {
       "SourceKey": "IM-FIRST-EDITION",
@@ -37,13 +37,13 @@
   "AcquisitionDiagnostics": {
     "UnitCount": 7,
     "LessonCount": 120,
-    "OfficialStandardCount": 51,
-    "AddressingCoverageCount": 51,
-    "FormalMappingCount": 200,
+    "OfficialStandardCount": 55,
+    "AddressingCoverageCount": 55,
+    "FormalMappingCount": 222,
     "LessonsWithoutNumberedGradeReferenceAnyRole": 0,
-    "LessonsWithoutNumberedAddressingStandard": 12,
-    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 12,
-    "MultiStandardLessons": 65
+    "LessonsWithoutNumberedAddressingStandard": 0,
+    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 0,
+    "MultiStandardLessons": 73
   },
   "Units": [
     {
@@ -143,7 +143,40 @@
       "ApplicableCourses": [
         "Algebra 2"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:HSF-BF.A.1",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/1/1/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSF-BF.A.1.",
+              "EvidenceSha256": "6a92b0320f75fa8783e47f3be36aa4613d6f20fb1ba0e2745761a6f32b2c0ead",
+              "License": "CC BY 4.0"
+            }
+          ]
+        },
+        {
+          "OutcomeCode": "CCSS:HSF-BF.A.2",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 2,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/1/1/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSF-BF.A.2.",
+              "EvidenceSha256": "6a92b0320f75fa8783e47f3be36aa4613d6f20fb1ba0e2745761a6f32b2c0ead",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C3:U01:L02",
@@ -177,7 +210,40 @@
       "ApplicableCourses": [
         "Algebra 2"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:HSF-BF.A.2",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/1/2/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSF-BF.A.2.",
+              "EvidenceSha256": "a81514a99507528761722afda52c87f90380916cd8fd02aaabb88fb360f67f23",
+              "License": "CC BY 4.0"
+            }
+          ]
+        },
+        {
+          "OutcomeCode": "CCSS:HSF-LE.A.2",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 2,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/1/2/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSF-LE.A.2.",
+              "EvidenceSha256": "a81514a99507528761722afda52c87f90380916cd8fd02aaabb88fb360f67f23",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C3:U01:L03",
@@ -235,7 +301,56 @@
       "ApplicableCourses": [
         "Algebra 2"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:HSF-BF.A.2",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/1/3/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSF-BF.A.2.",
+              "EvidenceSha256": "7f69344e782f696d5be2e0539a0a2114280eba360a0f96214d1df8a321fcb7eb",
+              "License": "CC BY 4.0"
+            }
+          ]
+        },
+        {
+          "OutcomeCode": "CCSS:HSF-IF.A.3",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 2,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/1/3/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSF-IF.A.3.",
+              "EvidenceSha256": "7f69344e782f696d5be2e0539a0a2114280eba360a0f96214d1df8a321fcb7eb",
+              "License": "CC BY 4.0"
+            }
+          ]
+        },
+        {
+          "OutcomeCode": "CCSS:HSF-LE.A.2",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 3,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/1/3/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSF-LE.A.2.",
+              "EvidenceSha256": "7f69344e782f696d5be2e0539a0a2114280eba360a0f96214d1df8a321fcb7eb",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C3:U01:L04",
@@ -277,7 +392,24 @@
       "ApplicableCourses": [
         "Algebra 2"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:MP.5",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/1/4/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:MP.5.",
+              "EvidenceSha256": "84611d068ab782600529147f9b76f127b6d8af979834754e1e9ce2b90d07501c",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C3:U01:L05",
@@ -1331,7 +1463,40 @@
       "ApplicableCourses": [
         "Algebra 2"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:HSA-APR.B.3",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/2/8/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSA-APR.B.3.",
+              "EvidenceSha256": "cfe06d958fa5b196668de0b9738209ac91af4c43a13efda7ce5eaeb1059984da",
+              "License": "CC BY 4.0"
+            }
+          ]
+        },
+        {
+          "OutcomeCode": "CCSS:HSF-IF.C.7",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 2,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/2/8/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSF-IF.C.7.",
+              "EvidenceSha256": "cfe06d958fa5b196668de0b9738209ac91af4c43a13efda7ce5eaeb1059984da",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C3:U02:L09",
@@ -1373,7 +1538,24 @@
       "ApplicableCourses": [
         "Algebra 2"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:HSF-BF.B.3",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/2/9/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSF-BF.B.3.",
+              "EvidenceSha256": "4c1f01dc78e547954b35c32e9bb974d2d21b2f191b72a17506cfdee2ba122fbe",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C3:U02:L10",
@@ -1611,7 +1793,24 @@
       "ApplicableCourses": [
         "Algebra 2"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:HSA-APR.B.2",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/2/13/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSA-APR.B.2.",
+              "EvidenceSha256": "efd5795e69f9db00a53038ec83933226736cf7984caea4967cfe7977a0ac1a7f",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C3:U02:L14",
@@ -2507,7 +2706,40 @@
       "ApplicableCourses": [
         "Algebra 2"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:HSN-RN.A.1",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/3/1/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSN-RN.A.1.",
+              "EvidenceSha256": "6a32bdb69772f7a82c9fc2a7ab5dee89fc510927ec05d658276121db12f03b97",
+              "License": "CC BY 4.0"
+            }
+          ]
+        },
+        {
+          "OutcomeCode": "CCSS:HSN-RN.A.2",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 2,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/3/1/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSN-RN.A.2.",
+              "EvidenceSha256": "6a32bdb69772f7a82c9fc2a7ab5dee89fc510927ec05d658276121db12f03b97",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C3:U03:L02",
@@ -2557,7 +2789,40 @@
       "ApplicableCourses": [
         "Algebra 2"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:HSN-RN.A.1",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/3/2/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSN-RN.A.1.",
+              "EvidenceSha256": "c99ae72ccfe35169405f706017a9e3cbcb23719782ee7cdd3bb391bb44d02841",
+              "License": "CC BY 4.0"
+            }
+          ]
+        },
+        {
+          "OutcomeCode": "CCSS:HSN-RN.A.2",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 2,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/3/2/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSN-RN.A.2.",
+              "EvidenceSha256": "c99ae72ccfe35169405f706017a9e3cbcb23719782ee7cdd3bb391bb44d02841",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C3:U03:L03",
@@ -5306,7 +5571,56 @@
       "ApplicableCourses": [
         "Algebra 2"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:MP.1",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/6/1/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:MP.1.",
+              "EvidenceSha256": "a843345ede8f070cb8fafaedacfa1aefe50f45d029d4e017bb71bc789001e8dc",
+              "License": "CC BY 4.0"
+            }
+          ]
+        },
+        {
+          "OutcomeCode": "CCSS:MP.2",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 2,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/6/1/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:MP.2.",
+              "EvidenceSha256": "a843345ede8f070cb8fafaedacfa1aefe50f45d029d4e017bb71bc789001e8dc",
+              "License": "CC BY 4.0"
+            }
+          ]
+        },
+        {
+          "OutcomeCode": "CCSS:MP.6",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 3,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/6/1/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:MP.6.",
+              "EvidenceSha256": "a843345ede8f070cb8fafaedacfa1aefe50f45d029d4e017bb71bc789001e8dc",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C3:U06:L02",
@@ -5348,7 +5662,40 @@
       "ApplicableCourses": [
         "Algebra 2"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:HSF-TF.A.2",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/6/2/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSF-TF.A.2.",
+              "EvidenceSha256": "4f8b2fc7b9ca73bdba9dec9f20addc94e609b8638e53abdfb51600f8d37427a5",
+              "License": "CC BY 4.0"
+            }
+          ]
+        },
+        {
+          "OutcomeCode": "CCSS:HSF-TF.C.8",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 2,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/6/2/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSF-TF.C.8.",
+              "EvidenceSha256": "4f8b2fc7b9ca73bdba9dec9f20addc94e609b8638e53abdfb51600f8d37427a5",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C3:U06:L03",
@@ -5692,7 +6039,24 @@
       "ApplicableCourses": [
         "Algebra 2"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:HSF-TF.B.5",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/3/6/7/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSF-TF.B.5.",
+              "EvidenceSha256": "e5eadf6f9005576cb638bcb2d5df0c95fa61f45de13e4e56df60c15b9fbd2c0a",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C3:U06:L08",

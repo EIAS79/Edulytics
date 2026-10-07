@@ -31,55 +31,55 @@ public sealed class Phase29CommonCoreElementaryBatchTests
             2,
             8,
             146,
-            411,
-            21,
-            2,
+            414,
+            23,
+            0,
             "1e3d264fc9d6b2da2d0b494c3379370d3216b967f497242c912e9a3fc3934eb8",
-            "440cde99e64b19a409bcdc6a1c5cd33d38fc1bcef1f3b5273b1fc2540ae3898a",
+            "4c7aec07ca974daf1f6a2c7ad122f3495213163e898a38114e3e40b3f09492ca",
             [15, 22, 28, 23, 14, 17, 17, 10]),
         new(
             2,
             3,
             9,
             146,
-            330,
+            334,
             26,
-            3,
+            0,
             "5566fcd85ca099f10cd62021c8d0cd778093b3789fe7f72d2a1b1a1cc6594c74",
-            "21a401ad90fee5953763955922f81eac74e40cb80a480be5bdd201510edb7dbe",
+            "480c9b7996ebfcef0ea97a24a1f3f8305a00d8dcb9fb8ea46a314910c3956281",
             [18, 16, 18, 15, 14, 21, 18, 13, 13]),
         new(
             3,
             4,
             8,
             143,
-            222,
+            230,
             25,
-            8,
+            0,
             "4ef968a9f5024e97199617425c7b18244886b12285498160e46284a5141648e0",
-            "a4e226b0cca877a12679b3bae1a3347ef8eec6b0105445bac43c0d0b005eef5e",
+            "1c6351085790000dea34c4687acb125ce2119ea4b7818a87442ebd5130ce1a4f",
             [21, 15, 21, 22, 18, 16, 15, 15]),
         new(
             4,
             5,
             9,
             149,
-            253,
-            28,
-            7,
+            263,
+            30,
+            0,
             "fe06ae8a0daabaa0ad36c8c6f956b2348705bd732873f52c60730731d61c03f1",
-            "936b8d1f772ce196989cd6a39d60f0adac709169ec784da270f7a42d7f7aae43",
+            "caccb7beeb9380e6e4b3fbab451bbf512f19187e10e20babf6c55ffd3294e1f6",
             [8, 17, 20, 23, 18, 25, 16, 10, 12]),
         new(
             5,
             6,
             8,
             148,
-            210,
-            26,
-            5,
+            215,
+            27,
+            0,
             "7d99645b607df03449c2ceb9a64114f51634c1206632f0396ccf3dd1da19d848",
-            "89c502822aeca4503e9a5f860d14c8cf2cf207df19a6df049d209484d3300899",
+            "90db8f4d444f4bd790dcbd7a73f29819d5f48cbd2d8d9f3303815446c0a1bf54",
             [12, 17, 20, 21, 26, 21, 13, 18])
     ];
 
@@ -249,9 +249,14 @@ public sealed class Phase29CommonCoreElementaryBatchTests
                         lesson.OutcomeCodes,
                         code =>
                         {
-                            Assert.StartsWith(
-                                $"CCSS:{spec.Grade}.",
-                                code);
+                            Assert.True(
+                                code.StartsWith(
+                                    $"CCSS:{spec.Grade}.",
+                                    StringComparison.Ordinal) ||
+                                Regex.IsMatch(
+                                    code,
+                                    @"^CCSS:MP\.[1-8]$",
+                                    RegexOptions.CultureInvariant));
 
                             Assert.Contains(
                                 lesson.Alignments,
@@ -292,13 +297,13 @@ public sealed class Phase29CommonCoreElementaryBatchTests
             Specs.Sum(x => x.LessonCount));
 
         Assert.Equal(
-            1426,
+            1456,
             Specs.Sum(
                 x =>
                     x.FormalMappingCount));
 
         Assert.Equal(
-            126,
+            131,
             Specs.Sum(
                 x =>
                     x.OfficialStandardCount));
@@ -595,7 +600,7 @@ public sealed class Phase29CommonCoreElementaryBatchTests
                 .ToArray();
 
         Assert.Equal(
-            1426,
+            1456,
             await db
                 .CurriculumPedagogicalLessonOutcomes
                 .CountAsync(
@@ -701,13 +706,20 @@ public sealed class Phase29CommonCoreElementaryBatchTests
                             x.Code)
                     .ToArray();
 
+            // Fallback source nodes are the complete grade registry,
+            // independent of the closure's distinct lesson mappings.
+            var officialRegistryNodeCounts =
+                new Dictionary<int, int>
+                {
+                    [1] = 29,
+                    [2] = 34,
+                    [3] = 33,
+                    [4] = 36,
+                    [5] = 34
+                };
+
             Assert.Equal(
-                Specs.Single(
-                        x =>
-                            x.Grade ==
-                            grade)
-                    .OfficialStandardCount +
-                8,
+                officialRegistryNodeCounts[grade],
                 applicable.Length);
 
             var unitCounters =
@@ -856,17 +868,17 @@ public sealed class Phase29CommonCoreElementaryBatchTests
                 (
                     Grade: "Grade 6",
                     Lessons: 147,
-                    Mappings: 208
+                    Mappings: 237
                 ),
                 (
                     Grade: "Grade 7",
                     Lessons: 145,
-                    Mappings: 199
+                    Mappings: 208
                 ),
                 (
                     Grade: "Grade 8",
                     Lessons: 131,
-                    Mappings: 146
+                    Mappings: 179
                 )
             };
 
