@@ -324,10 +324,16 @@
     const path = normalizePath(window.location.pathname);
     if (path.startsWith(LIVE_PREFIX)) return false;
 
-    // Product, company, legal and audience pages remain the static snapshot
-    // for their entire lifecycle. Only interactive public snapshots need a
-    // silent refresh for fresh cookies / anti-forgery tokens.
-    return liveHydrationRoutes.has(path);
+    if (liveHydrationRoutes.has(path)) return true;
+
+    // EN/AR content snapshots are refreshed silently after the background
+    // wake-up so server-side localization remains exact. The static snapshot
+    // stays visible while Render wakes and no cold-start status is shown.
+    return path !== '/' &&
+           path !== '/pl' &&
+           path !== '/en' &&
+           path !== '/ar' &&
+           preferredLanguage() !== 'pl';
   }
 
   function lockInteractiveSnapshot() {
