@@ -51,11 +51,11 @@ public sealed class PublicStaticFrontDoorContractTests
             build,
             StringComparison.Ordinal);
         Assert.Contains(
-            "$ORIGIN/css/public-site-v44.css",
+            "$SNAPSHOT_ORIGIN/css/public-site-v44.css",
             build,
             StringComparison.Ordinal);
         Assert.Contains(
-            "$ORIGIN/js/public-site-v45.js",
+            "$SNAPSHOT_ORIGIN/js/public-site-v45.js",
             build,
             StringComparison.Ordinal);
         Assert.Contains(
