@@ -201,6 +201,18 @@ public sealed class PublicStaticFrontDoorContractTests
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
+            "window.localStorage.setItem(LANGUAGE_KEY, preferredLanguage())",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "frontdoorTemporarilyDisabled",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "unlockInteractiveSnapshot();",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
             "preferredLanguage() !== 'pl'",
             runtime,
             StringComparison.Ordinal);
