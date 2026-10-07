@@ -2,6 +2,9 @@
   const APP_ORIGIN = 'https://staging.edulytiks.com';
   const LIVE_PREFIX = '/__frontdoor-live';
   const LANGUAGE_KEY = 'edulytics.frontdoor.language';
+  const READY_AT_KEY = 'edulytics.frontdoor.readyAt';
+  const READY_TTL_MS = 4 * 60 * 1000;
+  const KEEP_WARM_INTERVAL_MS = 5 * 60 * 1000;
   let backendReady = false;
   let wakePromise = null;
 
@@ -19,6 +22,49 @@
       delayed: 'استغرق تشغيل البرنامج وقتًا أطول من المعتاد. حاول مرة أخرى.'
     }
   };
+
+  const publicStaticRoutes = new Set([
+    '/',
+    '/pl',
+    '/en',
+    '/ar',
+    '/product',
+    '/teachers',
+    '/parents',
+    '/schools',
+    '/students',
+    '/product/learning-built-for-understanding',
+    '/product/results-backed-by-data',
+    '/product/support-you-can-rely-on',
+    '/product/student-portal',
+    '/product/assessment-and-practice',
+    '/product/mastery-and-next-step',
+    '/product/mathematics',
+    '/product/curricula',
+    '/product/features',
+    '/product/edulytics-ai',
+    '/product/languages',
+    '/product/technical-requirements',
+    '/teachers/overview',
+    '/teachers/assessment-and-curriculum',
+    '/parents/overview',
+    '/schools/overview',
+    '/students/overview',
+    '/company/partnerships',
+    '/company/about',
+    '/contact',
+    '/contact/sales-enquiry',
+    '/contact/request-demo',
+    '/contact/support',
+    '/contact/message',
+    '/contact/help',
+    '/help',
+    '/legal/privacy',
+    '/legal/terms',
+    '/legal/data-processing-agreement',
+    '/legal/content-sources',
+    '/account/login'
+  ]);
 
   const liveHydrationRoutes = new Set([
     '/account/login',
@@ -74,8 +120,35 @@
     }
   }
 
-  async function ensureBackendReady(maxWaitMs = 90000) {
-    if (backendReady) return true;
+  function markBackendReady() {
+    backendReady = true;
+    document.documentElement.dataset.backendReady = 'true';
+
+    try {
+      window.sessionStorage.setItem(READY_AT_KEY, String(Date.now()));
+    } catch {
+      // Readiness caching is an optimization only.
+    }
+  }
+
+  function hasFreshReadinessCache() {
+    try {
+      const readyAt = Number(window.sessionStorage.getItem(READY_AT_KEY) || 0);
+      return Number.isFinite(readyAt) &&
+             readyAt > 0 &&
+             Date.now() - readyAt < READY_TTL_MS;
+    } catch {
+      return false;
+    }
+  }
+
+  async function ensureBackendReady(maxWaitMs = 90000, forceProbe = false) {
+    if (!forceProbe && (backendReady || hasFreshReadinessCache())) {
+      backendReady = true;
+      document.documentElement.dataset.backendReady = 'true';
+      return true;
+    }
+
     if (wakePromise) return wakePromise;
 
     wakePromise = (async () => {
@@ -83,20 +156,38 @@
 
       while (Date.now() - started < maxWaitMs) {
         if (await probeReady()) {
-          backendReady = true;
-          document.documentElement.dataset.backendReady = 'true';
+          markBackendReady();
           return true;
         }
 
         await sleep(1500);
       }
 
+      backendReady = false;
+      document.documentElement.dataset.backendReady = 'false';
       return false;
     })();
 
     const result = await wakePromise;
     wakePromise = null;
     return result;
+  }
+
+  function warmBackendInBackground() {
+    void ensureBackendReady(90000, true);
+  }
+
+  function installKeepWarm() {
+    window.setInterval(() => {
+      if (document.visibilityState !== 'visible') return;
+      void ensureBackendReady(15000, true);
+    }, KEEP_WARM_INTERVAL_MS);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState !== 'visible') return;
+      if (hasFreshReadinessCache()) return;
+      void ensureBackendReady(15000, true);
+    });
   }
 
   function ensureStatus() {
@@ -179,12 +270,8 @@
   function shouldStayStatic(url) {
     if (url.origin !== window.location.origin) return true;
 
-    if (url.pathname === '/' && url.hash) return true;
-    if (url.pathname === '/' && !url.search && !url.hash) return true;
-
-    return url.pathname === '/pl/' ||
-           url.pathname === '/en/' ||
-           url.pathname === '/ar/';
+    const path = normalizePath(url.pathname);
+    return publicStaticRoutes.has(path);
   }
 
   function installBackendRouting() {
@@ -205,6 +292,19 @@
       }
 
       const url = new URL(raw, window.location.href);
+
+      const isStaticPublic =
+        url.origin === window.location.origin &&
+        shouldStayStatic(url);
+
+      if (isStaticPublic) {
+        try {
+          window.localStorage.setItem(LANGUAGE_KEY, preferredLanguage());
+        } catch {
+          // The destination can still fall back to its rendered language.
+        }
+        return;
+      }
 
       const isBackend =
         url.origin === window.location.origin &&
@@ -239,9 +339,9 @@
 
     if (liveHydrationRoutes.has(path)) return true;
 
-    // Polish snapshots can remain fully static. EN/AR public pages are
-    // refreshed from the live application after wake-up so server-side
-    // localization stays exact instead of showing a Polish snapshot.
+    // EN/AR content snapshots are refreshed silently after the background
+    // wake-up so server-side localization remains exact. The static snapshot
+    // stays visible while Render wakes and no cold-start status is shown.
     return path !== '/' &&
            path !== '/pl' &&
            path !== '/en' &&
@@ -258,7 +358,20 @@
     document
       .querySelectorAll('form input, form select, form textarea, form button, input[form], button[form]')
       .forEach(control => {
-        if ('disabled' in control) control.disabled = true;
+        if (!('disabled' in control) || control.disabled) return;
+        control.dataset.frontdoorTemporarilyDisabled = 'true';
+        control.disabled = true;
+      });
+  }
+
+  function unlockInteractiveSnapshot() {
+    document.documentElement.dataset.frontdoorHydrating = 'false';
+
+    document
+      .querySelectorAll('[data-frontdoor-temporarily-disabled="true"]')
+      .forEach(control => {
+        if ('disabled' in control) control.disabled = false;
+        delete control.dataset.frontdoorTemporarilyDisabled;
       });
   }
 
@@ -308,13 +421,9 @@
 
     lockInteractiveSnapshot();
 
-    if (liveHydrationRoutes.has(normalizePath(window.location.pathname))) {
-      showStatus('preparing');
-    }
-
     const ready = await ensureBackendReady();
     if (!ready) {
-      showStatus('delayed');
+      unlockInteractiveSnapshot();
       return;
     }
 
@@ -336,7 +445,9 @@
       document.write(html);
       document.close();
     } catch {
-      showStatus('delayed');
+      // Keep the already-rendered static snapshot usable if the silent
+      // interactive refresh cannot reach the live application.
+      unlockInteractiveSnapshot();
     }
   }
 
@@ -359,10 +470,11 @@
     installLanguageRouting();
     installBackendRouting();
 
-    // Every static public page wakes the free application immediately.
-    // Interactive snapshots then hydrate from the live application only after
-    // readiness, so the visitor never sees Render's cold-start loading page.
-    ensureBackendReady();
+    // Public pages render immediately from the static front door. Wake Render
+    // only in the background, keep readiness warm while the visitor is active,
+    // and never surface cold-start status on public-page navigation.
+    warmBackendInBackground();
+    installKeepWarm();
     hydrateFromLiveApplication();
   });
 })();
