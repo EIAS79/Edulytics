@@ -2,6 +2,7 @@
   const APP_ORIGIN = 'https://staging.edulytiks.com';
   const LIVE_PREFIX = '/__frontdoor-live';
   const LANGUAGE_KEY = 'edulytics.frontdoor.language';
+  const PUBLIC_LANGUAGE_KEY = 'edulytics.public.siteLanguage';
   const READY_AT_KEY = 'edulytics.frontdoor.readyAt';
   const READY_TTL_MS = 4 * 60 * 1000;
   const KEEP_WARM_INTERVAL_MS = 5 * 60 * 1000;
@@ -247,7 +248,10 @@
       if (target !== 'pl' && target !== 'en' && target !== 'ar') return;
 
       event.preventDefault();
-      try { window.localStorage.setItem(LANGUAGE_KEY, target); } catch { /* no-op */ }
+      try {
+        window.localStorage.setItem(LANGUAGE_KEY, target);
+        window.localStorage.setItem(PUBLIC_LANGUAGE_KEY, target);
+      } catch { /* no-op */ }
       window.location.assign(staticLanguagePath(target));
     }, true);
   }
@@ -330,7 +334,9 @@
         event.preventDefault();
 
         try {
-          window.localStorage.setItem(LANGUAGE_KEY, preferredLanguage());
+          const selectedLanguage = preferredLanguage();
+          window.localStorage.setItem(LANGUAGE_KEY, selectedLanguage);
+          window.localStorage.setItem(PUBLIC_LANGUAGE_KEY, selectedLanguage);
         } catch {
           // The destination can still fall back to its rendered language.
         }
@@ -372,16 +378,10 @@
     const path = normalizePath(window.location.pathname);
     if (path.startsWith(LIVE_PREFIX)) return false;
 
-    if (liveHydrationRoutes.has(path)) return true;
-
-    // EN/AR content snapshots are refreshed silently after the background
-    // wake-up so server-side localization remains exact. The static snapshot
-    // stays visible while Render wakes and no cold-start status is shown.
-    return path !== '/' &&
-           path !== '/pl' &&
-           path !== '/en' &&
-           path !== '/ar' &&
-           preferredLanguage() !== 'pl';
+    // Marketing/public content is fully rendered from the static snapshot and
+    // its client-side language catalogs. Only genuinely interactive snapshots
+    // refresh from the live application for fresh form/session state.
+    return liveHydrationRoutes.has(path);
   }
 
   function lockInteractiveSnapshot() {
@@ -454,13 +454,10 @@
   async function hydrateFromLiveApplication() {
     if (!shouldHydrateFromLiveApplication()) return;
 
-    lockInteractiveSnapshot();
-
     const ready = await ensureBackendReady();
-    if (!ready) {
-      unlockInteractiveSnapshot();
-      return;
-    }
+    if (!ready) return;
+
+    lockInteractiveSnapshot();
 
     try {
       const response = await fetch(liveBridgeUrl(), {
