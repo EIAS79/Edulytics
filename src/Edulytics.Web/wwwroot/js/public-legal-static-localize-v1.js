@@ -31,6 +31,9 @@
       const value = node.dataset[language];
       if (typeof value === 'string') node.textContent = value;
     });
+  } else {
+    const eyebrow = root.querySelector('.ed-legal-eyebrow');
+    if (eyebrow) eyebrow.textContent = 'معلومات قانونية';
   }
 
   const title = language === 'ar'
