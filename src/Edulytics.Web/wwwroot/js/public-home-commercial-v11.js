@@ -305,8 +305,8 @@
            <button type="button" data-v11-mobile-lang="pl" class="${language === 'pl' ? 'is-active' : ''}">PL</button>
            <button type="button" data-v11-mobile-lang="ar" class="${language === 'ar' ? 'is-active' : ''}">AR</button>
          </div>
-         <a class="ed-home-v11-mobile-login" href="/Account/Login">${escapeHtml(text.nav.login)}</a>
-         <a class="ed-home-v11-mobile-cta" href="/contact">${escapeHtml(text.nav.try)}</a>
+         <a class="ed-home-v11-mobile-login" href="/account/login/">${escapeHtml(text.nav.login)}</a>
+         <a class="ed-home-v11-mobile-cta" href="/contact/request-demo/">${escapeHtml(text.nav.try)}</a>
        </div>`;
 
     mobilePanel.querySelectorAll('[data-v11-mobile-lang]').forEach(button => {
