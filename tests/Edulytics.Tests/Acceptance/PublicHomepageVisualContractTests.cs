@@ -105,6 +105,28 @@ public sealed class PublicHomepageVisualContractTests
         Assert.DoesNotContain("border-radius:0!important", transparencyCss, StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void PublicAudiencePages_UseHomepageAiAssessmentArtwork()
+    {
+        var root = FindRoot();
+        var css = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/css/public-content-pages-v27.css"));
+        var artworkPath = Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/images/public/edulaytiks-character-background.png");
+
+        Assert.True(File.Exists(artworkPath));
+        Assert.Contains(
+            "/images/public/edulaytiks-character-background.png?v=43",
+            css,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "/images/public/edulytics-math-mascot-2.png",
+            css,
+            StringComparison.Ordinal);
+    }
+
     private static string FindRoot()
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);
