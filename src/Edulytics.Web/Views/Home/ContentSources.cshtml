@@ -4,10 +4,17 @@
     Layout = "_PublicLayout";
     var polish = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "pl";
     ViewData["Title"] = polish ? "Źródła treści i licencje" : "Content Sources & Licences";
-    string L(string en, string pl) => polish ? pl : en;
+    string LT(string en, string pl) => polish ? pl : en;
+    Microsoft.AspNetCore.Html.IHtmlContent L(string en, string pl)
+    {
+        var value = LT(en, pl);
+        var encoder = System.Text.Encodings.Web.HtmlEncoder.Default;
+        return new Microsoft.AspNetCore.Html.HtmlString(
+            $"<span data-public-l10n data-en=\"{encoder.Encode(en)}\" data-pl=\"{encoder.Encode(pl)}\">{encoder.Encode(value)}</span>");
+    }
 }
 
-<div class="ed-home ed-legal-page ed-content-sources-v30">
+<div class="ed-home ed-legal-page ed-content-sources-v30" data-legal-title-en="Content Sources & Licences" data-legal-title-pl="Źródła treści i licencje" data-legal-title-ar="مصادر المحتوى والتراخيص">
     <partial name="_PublicSiteHeader" />
 
     <main class="ed-legal-shell">
