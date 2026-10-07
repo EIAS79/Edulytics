@@ -49,6 +49,17 @@ curl -fsS --retry 5 --retry-all-errors --retry-delay 2 --max-time 120 \
 
 inject_frontdoor_runtime() {
   local target="$1"
+
+  # Fallback snapshots may already contain the previous frontdoor runtime.
+  # Remove it before injecting the current runtime so listeners are installed once.
+  sed -i 's#<script src="/frontdoor.js" defer></script>##g' "$target"
+  sed -i 's#<script data-frontdoor-language-bootstrap>.*</script>##g' "$target"
+
+  # Public content snapshots are Polish by default. Before the bundled public
+  # scripts execute, restore the language selected on the static front door so
+  # their existing EN/PL/AR client catalogs render the correct copy immediately.
+  sed -i 's#<head>#<head><script data-frontdoor-language-bootstrap>(function(){try{var d=document.documentElement;d.dataset.snapshotLanguage=d.lang||"pl";var l=localStorage.getItem("edulytics.frontdoor.language");if(l==="en"||l==="pl"||l==="ar"){d.lang=l;d.dir=l==="ar"?"rtl":"ltr";}}catch(e){}})();</script>#' "$target"
+
   sed -i 's#</body>#<script src="/frontdoor.js" defer></script></body>#' "$target"
 }
 
