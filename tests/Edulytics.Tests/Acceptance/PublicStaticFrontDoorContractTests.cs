@@ -74,6 +74,30 @@ public sealed class PublicStaticFrontDoorContractTests
             "find \"$OUT\" -type f -name '*.html' -print0",
             build,
             StringComparison.Ordinal);
+        Assert.Contains(
+            "STATIC_FALLBACK_ORIGIN=\"https://edulytics-public.onrender.com\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "SNAPSHOT_ORIGIN=\"$ORIGIN\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "SOURCE_MODE=\"static\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "Staging is unavailable; rebuilding from the last live static snapshots.",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "\"$SNAPSHOT_ORIGIN/${language}/\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "\"$SNAPSHOT_ORIGIN$route/\"",
+            build,
+            StringComparison.Ordinal);
     }
 
     [Fact]
