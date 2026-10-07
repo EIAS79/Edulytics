@@ -236,6 +236,21 @@
     return '/';
   }
 
+  function staticLanguageDestination(targetLanguage) {
+    const currentPath = normalizePath(window.location.pathname);
+    const isHome =
+      currentPath === '/' ||
+      currentPath === '/pl' ||
+      currentPath === '/en' ||
+      currentPath === '/ar';
+
+    if (isHome) return staticLanguagePath(targetLanguage);
+
+    const url = new URL(window.location.href);
+    const canonical = canonicalStaticUrl(url);
+    return `${canonical.pathname}${canonical.search}${canonical.hash}`;
+  }
+
   function installLanguageRouting() {
     document.addEventListener('submit', event => {
       const form = event.target;
@@ -252,7 +267,7 @@
         window.localStorage.setItem(LANGUAGE_KEY, target);
         window.localStorage.setItem(PUBLIC_LANGUAGE_KEY, target);
       } catch { /* no-op */ }
-      window.location.assign(staticLanguagePath(target));
+      window.location.assign(staticLanguageDestination(target));
     }, true);
   }
 
