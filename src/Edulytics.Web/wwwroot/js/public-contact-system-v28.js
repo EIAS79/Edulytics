@@ -230,6 +230,39 @@
   };
 
   const localizedCopy = language === 'ar' ? ar : language === 'en' ? en : null;
+
+  const pageTitles = {
+    en: {
+      '/contact': 'Contact | Edulytics',
+      '/contact/sales-enquiry': 'Sales enquiry | Edulytics',
+      '/contact/request-demo': 'Request a demo | Edulytics',
+      '/contact/support': 'Contact support | Edulytics',
+      '/contact/message': 'Contact Edulytics | Edulytics',
+      '/contact/help': 'Help center | Edulytics',
+      '/help': 'Help center | Edulytics'
+    },
+    pl: {
+      '/contact': 'Kontakt | Edulityks',
+      '/contact/sales-enquiry': 'Zapytanie sprzedażowe | Edulityks',
+      '/contact/request-demo': 'Poproś o demo | Edulityks',
+      '/contact/support': 'Skontaktuj się z pomocą | Edulityks',
+      '/contact/message': 'Kontakt z Edulytics | Edulityks',
+      '/contact/help': 'Centrum pomocy | Edulityks',
+      '/help': 'Centrum pomocy | Edulityks'
+    },
+    ar: {
+      '/contact': 'تواصل مع Edulytics | Edulytics',
+      '/contact/sales-enquiry': 'استفسار المبيعات | Edulytics',
+      '/contact/request-demo': 'اطلب عرضًا تجريبيًا | Edulytics',
+      '/contact/support': 'تواصل مع الدعم | Edulytics',
+      '/contact/message': 'تواصل مع Edulytics | Edulytics',
+      '/contact/help': 'مركز المساعدة | Edulytics',
+      '/help': 'مركز المساعدة | Edulytics'
+    }
+  };
+  const normalizedPath = window.location.pathname.replace(/\/+$/, '') || '/';
+  const localizedTitle = pageTitles[language]?.[normalizedPath];
+  if (localizedTitle) document.title = localizedTitle;
   document.documentElement.lang = language;
   document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
   document.documentElement.classList.toggle('ed-site-ar', language === 'ar');
