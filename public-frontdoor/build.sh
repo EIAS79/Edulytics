@@ -5,6 +5,9 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SRC="$ROOT/src/Edulytics.Web/wwwroot"
 OUT="$ROOT/public-frontdoor/dist"
 ORIGIN="https://staging.edulytiks.com"
+STATIC_FALLBACK_ORIGIN="https://edulytics-public.onrender.com"
+SNAPSHOT_ORIGIN="$ORIGIN"
+SOURCE_MODE="backend"
 
 rm -rf "$OUT"
 mkdir -p "$OUT/pl" "$OUT/en" "$OUT/ar"
@@ -19,7 +22,7 @@ mkdir -p "$OUT/css" "$OUT/js"
 
 echo "Waking the application before taking public-site snapshots..."
 ready=0
-for attempt in $(seq 1 60); do
+for attempt in $(seq 1 8); do
   if curl -fsS --connect-timeout 5 --max-time 10 "$ORIGIN/health/ready" | grep -q '"Healthy"'; then
     ready=1
     break
@@ -28,16 +31,20 @@ for attempt in $(seq 1 60); do
 done
 
 if [ "$ready" -ne 1 ]; then
-  echo "The staging application did not become ready in time." >&2
-  exit 1
+  # The public front door must remain deployable even when the dynamic service
+  # or its database is temporarily unavailable. Reuse the last live static
+  # snapshots, then inject the new frontdoor runtime and canonical-link fixes.
+  echo "Staging is unavailable; rebuilding from the last live static snapshots."
+  SNAPSHOT_ORIGIN="$STATIC_FALLBACK_ORIGIN"
+  SOURCE_MODE="static"
 fi
 
 curl -fsS --retry 5 --retry-all-errors --retry-delay 2 --max-time 120 \
-  "$ORIGIN/css/public-site-v44.css" \
+  "$SNAPSHOT_ORIGIN/css/public-site-v44.css" \
   -o "$OUT/css/public-site-v44.css"
 
 curl -fsS --retry 5 --retry-all-errors --retry-delay 2 --max-time 120 \
-  "$ORIGIN/js/public-site-v45.js" \
+  "$SNAPSHOT_ORIGIN/js/public-site-v45.js" \
   -o "$OUT/js/public-site-v45.js"
 
 inject_frontdoor_runtime() {
@@ -51,10 +58,17 @@ snapshot_home() {
   local cookie="Edulytics.Culture=c=${language}|uic=${language}"
 
   echo "Snapshotting homepage language: $language"
-  curl -fsS --retry 5 --retry-all-errors --retry-delay 2 --max-time 120 \
-    -H "Cookie: $cookie" \
-    "$ORIGIN/" \
-    -o "$target"
+
+  if [ "$SOURCE_MODE" = "backend" ]; then
+    curl -fsS --retry 5 --retry-all-errors --retry-delay 2 --max-time 120 \
+      -H "Cookie: $cookie" \
+      "$SNAPSHOT_ORIGIN/" \
+      -o "$target"
+  else
+    curl -fsS --retry 5 --retry-all-errors --retry-delay 2 --max-time 120 \
+      "$SNAPSHOT_ORIGIN/${language}/" \
+      -o "$target"
+  fi
 
   inject_frontdoor_runtime "$target"
 }
@@ -68,11 +82,17 @@ snapshot_public_route() {
   mkdir -p "$(dirname "$target")"
   echo "Snapshotting public route: $route"
 
-  # -L follows intentional public aliases such as /product -> /product/features.
-  curl -fsSL --retry 5 --retry-all-errors --retry-delay 2 --max-time 120 \
-    -H "Cookie: $cookie" \
-    "$ORIGIN$route" \
-    -o "$target"
+  if [ "$SOURCE_MODE" = "backend" ]; then
+    # -L follows intentional public aliases such as /product -> /product/features.
+    curl -fsSL --retry 5 --retry-all-errors --retry-delay 2 --max-time 120 \
+      -H "Cookie: $cookie" \
+      "$SNAPSHOT_ORIGIN$route" \
+      -o "$target"
+  else
+    curl -fsS --retry 5 --retry-all-errors --retry-delay 2 --max-time 120 \
+      "$SNAPSHOT_ORIGIN$route/" \
+      -o "$target"
+  fi
 
   inject_frontdoor_runtime "$target"
 }

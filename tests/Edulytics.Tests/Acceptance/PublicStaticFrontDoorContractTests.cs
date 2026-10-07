@@ -51,11 +51,11 @@ public sealed class PublicStaticFrontDoorContractTests
             build,
             StringComparison.Ordinal);
         Assert.Contains(
-            "$ORIGIN/css/public-site-v44.css",
+            "$SNAPSHOT_ORIGIN/css/public-site-v44.css",
             build,
             StringComparison.Ordinal);
         Assert.Contains(
-            "$ORIGIN/js/public-site-v45.js",
+            "$SNAPSHOT_ORIGIN/js/public-site-v45.js",
             build,
             StringComparison.Ordinal);
         Assert.Contains(
@@ -72,6 +72,30 @@ public sealed class PublicStaticFrontDoorContractTests
             StringComparison.Ordinal);
         Assert.Contains(
             "find \"$OUT\" -type f -name '*.html' -print0",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "STATIC_FALLBACK_ORIGIN=\"https://edulytics-public.onrender.com\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "SNAPSHOT_ORIGIN=\"$ORIGIN\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "SOURCE_MODE=\"static\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "Staging is unavailable; rebuilding from the last live static snapshots.",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "\"$SNAPSHOT_ORIGIN/${language}/\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "\"$SNAPSHOT_ORIGIN$route/\"",
             build,
             StringComparison.Ordinal);
     }
