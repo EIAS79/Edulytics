@@ -11,8 +11,8 @@ namespace Edulytics.Tests.Phase29;
 public sealed class Phase29PedagogicalLessonArchitectureTests
 {
     private const string GradeSixSemanticGraphSha =
-        "edae65cc700ae2b2f3a5a7828275a3ff" +
-        "dded4fbf07759489801e7c4e5059e0e9";
+        "f1085f83d8af03792e3eebae08d25728" +
+        "069e3e4c41e730cce53d08719ff6a2a5";
 
     [Fact]
     public void CommonCoreGradeSixBlueprintLocksExactSourceSemantics()
@@ -104,13 +104,13 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
             });
 
         Assert.Equal(
-            208,
+            237,
             blueprint.Lessons.Sum(
                 x =>
                     x.OutcomeCodes.Count));
 
         Assert.Equal(
-            17,
+            0,
             blueprint.Lessons.Count(
                 x =>
                     x.OutcomeCodes.Count == 0));
@@ -125,15 +125,21 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
                 .ToArray();
 
         Assert.Equal(
-            29,
+            37,
             formalCoverage.Length);
 
         Assert.All(
             formalCoverage,
             code =>
-                Assert.Matches(
-                    @"^CCSS:6\.(RP|NS|EE|G|SP)\.[A-Z]\.\d+$",
-                    code));
+                Assert.True(
+                    Regex.IsMatch(
+                        code,
+                        @"^CCSS:6\.(RP|NS|EE|G|SP)\.[A-Z]\.\d+$",
+                        RegexOptions.CultureInvariant) ||
+                    Regex.IsMatch(
+                        code,
+                        @"^CCSS:MP\.[1-8]$",
+                        RegexOptions.CultureInvariant)));
 
         var noNumberedGradeSix =
             blueprint.Lessons
@@ -278,7 +284,7 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
                 .ToArrayAsync();
 
         Assert.Equal(
-            208,
+            237,
             mappings.Length);
 
         var mappedNodeIds =
@@ -298,7 +304,7 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
                     x => x.Code);
 
         Assert.Equal(
-            29,
+            37,
             nodeCodes.Values
                 .Distinct(
                     StringComparer.Ordinal)
@@ -347,7 +353,7 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
         }
 
         Assert.Equal(
-            17,
+            0,
             gradeSixLessons.Count(
                 lesson =>
                     !mappings.Any(

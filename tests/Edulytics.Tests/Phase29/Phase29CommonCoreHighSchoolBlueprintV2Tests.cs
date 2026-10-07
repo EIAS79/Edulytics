@@ -16,9 +16,9 @@ public sealed class
         Matrix =
         new(StringComparer.Ordinal)
         {
-            ["ALG1"] = (7, 132, 284),
-            ["GEO"] = (8, 124, 237),
-            ["ALG2"] = (7, 120, 200),
+            ["ALG1"] = (7, 132, 291),
+            ["GEO"] = (8, 124, 246),
+            ["ALG2"] = (7, 120, 222),
             ["TRAD-SUPPLEMENT"] = (4, 11, 13),
             ["ADV-ALG-FUNC"] = (1, 2, 3),
             ["ADV-TRIG-GEO"] = (1, 5, 6),
@@ -138,7 +138,7 @@ public sealed class
                 .ToArray();
 
         Assert.Equal(
-            764,
+            802,
             targets.Length);
 
         Assert.Equal(
@@ -156,7 +156,7 @@ public sealed class
                     "PrimarySourceExplicitStandardAlignment"));
 
         Assert.Equal(
-            8,
+            46,
             targets.Count(
                 x =>
                     x.EvidenceKind ==
@@ -298,7 +298,7 @@ public sealed class
                 .ToArrayAsync();
 
         Assert.Equal(
-            764,
+            802,
             mappings.Length);
 
         var core =
@@ -326,7 +326,7 @@ public sealed class
                 .ToHashSet();
 
         Assert.Equal(
-            721,
+            759,
             mappings.Count(
                 x =>
                     coreIds.Contains(

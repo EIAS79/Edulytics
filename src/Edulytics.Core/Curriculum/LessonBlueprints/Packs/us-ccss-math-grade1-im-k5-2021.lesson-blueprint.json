@@ -24,17 +24,17 @@
     "https://corestandards.org/wp-content/uploads/2023/09/ADA-Compliant-Math-Standards.pdf"
   ],
   "SourceRightsNote": "The pedagogical unit/lesson sequence, lesson titles and alignment metadata are captured from the CC BY 4.0 source with attribution. IM/Kendall Hunt names or logos, book-cover artwork, proprietary visual design and assessment content are not imported. Edulytics lesson explanations, worked examples, diagrams, common mistakes and summaries remain independently authored and reviewed.",
-  "SemanticGraphSha256": "440cde99e64b19a409bcdc6a1c5cd33d38fc1bcef1f3b5273b1fc2540ae3898a",
+  "SemanticGraphSha256": "4c7aec07ca974daf1f6a2c7ad122f3495213163e898a38114e3e40b3f09492ca",
   "AcquisitionDiagnostics": {
     "UnitCount": 8,
     "LessonCount": 146,
-    "OfficialStandardCount": 21,
-    "AddressingCoverageCount": 21,
-    "FormalMappingCount": 411,
-    "LessonsWithoutNumberedGradeReferenceAnyRole": 2,
-    "LessonsWithoutNumberedAddressingStandard": 2,
-    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 2,
-    "MultiStandardLessons": 117
+    "OfficialStandardCount": 23,
+    "AddressingCoverageCount": 23,
+    "FormalMappingCount": 414,
+    "LessonsWithoutNumberedGradeReferenceAnyRole": 0,
+    "LessonsWithoutNumberedAddressingStandard": 0,
+    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 0,
+    "MultiStandardLessons": 118
   },
   "Units": [
     {
@@ -5673,9 +5673,19 @@
           "ResolutionKind": "None",
           "OutcomeCode": null,
           "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "MP.6",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CCSS:MP.6",
+          "SortOrder": 2
         }
       ],
-      "OutcomeCodes": []
+      "OutcomeCodes": [
+        "CCSS:MP.6"
+      ]
     },
     {
       "SourceLessonCode": "1.7.2",
@@ -5727,9 +5737,28 @@
           "ResolutionKind": "None",
           "OutcomeCode": null,
           "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "MP.3",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CCSS:MP.3",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "MP.6",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CCSS:MP.6",
+          "SortOrder": 3
         }
       ],
-      "OutcomeCodes": []
+      "OutcomeCodes": [
+        "CCSS:MP.3",
+        "CCSS:MP.6"
+      ]
     },
     {
       "SourceLessonCode": "1.7.4",

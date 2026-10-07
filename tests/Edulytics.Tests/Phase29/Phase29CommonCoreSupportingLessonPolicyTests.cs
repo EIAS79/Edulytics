@@ -11,7 +11,7 @@ public sealed class
 {
     [Fact]
     public void
-        AcceptedSourceBlueprintsLockExactly94SupportingLessons()
+        AcceptedSourceBlueprintsHaveFullOfficialLessonClosure()
     {
         var documents =
             PedagogicalLessonBlueprintRegistry
@@ -60,59 +60,13 @@ public sealed class
                             : x.Lesson.OutcomeCodes.Count == 0)
                 .ToArray();
 
-        Assert.Equal(
-            94,
-            supporting.Length);
+        Assert.Empty(supporting);
 
-        var distribution =
-            supporting
-                .GroupBy(
-                    x =>
-                        x.Document.SchemaVersion == 2
-                            ? x.Document.CourseCode
-                            : x.Document.NativeLevel)
-                .ToDictionary(
-                    x => x.Key,
-                    x => x.Count(),
-                    StringComparer.Ordinal);
-
-        var expected =
-            new Dictionary<string, int>(
-                StringComparer.Ordinal)
-            {
-                ["Grade 1"] = 2,
-                ["Grade 2"] = 3,
-                ["Grade 3"] = 8,
-                ["Grade 4"] = 7,
-                ["Grade 5"] = 5,
-                ["Grade 6"] = 17,
-                ["Grade 7"] = 7,
-                ["Grade 8"] = 22,
-                ["ALG1"] = 6,
-                ["GEO"] = 5,
-                ["ALG2"] = 12
-            };
-
-        Assert.Equal(
-            expected.Count,
-            distribution.Count);
-
-        foreach (var pair in expected)
-        {
-            Assert.True(
-                distribution.TryGetValue(
-                    pair.Key,
-                    out var actual));
-
-            Assert.Equal(
-                pair.Value,
-                actual);
-        }
     }
 
     [Fact]
     public async Task
-        SeededRuntimeGraphExcludesKindergartenAndLocks1466StandaloneAnd94Supporting()
+        SeededRuntimeGraphMapsAll1560StandaloneLessons()
     {
         await using var db =
             CreateDb();
@@ -201,11 +155,11 @@ public sealed class
             lessonIds.Length);
 
         Assert.Equal(
-            1466,
+            1560,
             mappedLessonIds.Length);
 
         Assert.Equal(
-            94,
+            0,
             lessonIds.Length -
             mappedLessonIds.Length);
 

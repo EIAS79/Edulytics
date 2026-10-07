@@ -16,7 +16,7 @@
   "SourceCheckedAtUtc": "2026-08-29T00:00:00Z",
   "SourceSelectionReason": "Phase 29 accepted High School pedagogical source strategy.",
   "SourceSelectionEvidence": "Immutable Phase 29 High School source, placement, evidence, sequence and Blueprint V2 contract locks.",
-  "SemanticGraphSha256": "f3a016dccd2759ece39da0e7cb3ef81aaf1373d0d77ecc9a621c7fd17c69110b",
+  "SemanticGraphSha256": "c885358fd01294e87ee6bddbc10851a1bf4f38f4cd853d4b01f93ef8e0b4a697",
   "Sources": [
     {
       "SourceKey": "IM-FIRST-EDITION",
@@ -37,13 +37,13 @@
   "AcquisitionDiagnostics": {
     "UnitCount": 8,
     "LessonCount": 124,
-    "OfficialStandardCount": 55,
-    "AddressingCoverageCount": 55,
-    "FormalMappingCount": 237,
+    "OfficialStandardCount": 59,
+    "AddressingCoverageCount": 59,
+    "FormalMappingCount": 246,
     "LessonsWithoutNumberedGradeReferenceAnyRole": 0,
-    "LessonsWithoutNumberedAddressingStandard": 5,
-    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 5,
-    "MultiStandardLessons": 80
+    "LessonsWithoutNumberedAddressingStandard": 0,
+    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 0,
+    "MultiStandardLessons": 82
   },
   "Units": [
     {
@@ -2537,7 +2537,40 @@
       "ApplicableCourses": [
         "Geometry"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:MP.5",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/2/2/11/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:MP.5.",
+              "EvidenceSha256": "efa1d7c334578a3423a6eb2d615bce41e3d88300d60e35e183dbb015b6c71b84",
+              "License": "CC BY 4.0"
+            }
+          ]
+        },
+        {
+          "OutcomeCode": "CCSS:MP.7",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 2,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/2/2/11/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:MP.7.",
+              "EvidenceSha256": "efa1d7c334578a3423a6eb2d615bce41e3d88300d60e35e183dbb015b6c71b84",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C2:U02:L12",
@@ -3415,7 +3448,72 @@
       "ApplicableCourses": [
         "Geometry"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:MP.3",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/2/3/10/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:MP.3.",
+              "EvidenceSha256": "ac6eb846e9384188a6fb2633466742355c0fbb5c5c729ec699bb9082b653abea",
+              "License": "CC BY 4.0"
+            }
+          ]
+        },
+        {
+          "OutcomeCode": "CCSS:MP.5",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 2,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/2/3/10/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:MP.5.",
+              "EvidenceSha256": "ac6eb846e9384188a6fb2633466742355c0fbb5c5c729ec699bb9082b653abea",
+              "License": "CC BY 4.0"
+            }
+          ]
+        },
+        {
+          "OutcomeCode": "CCSS:MP.7",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 3,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/2/3/10/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:MP.7.",
+              "EvidenceSha256": "ac6eb846e9384188a6fb2633466742355c0fbb5c5c729ec699bb9082b653abea",
+              "License": "CC BY 4.0"
+            }
+          ]
+        },
+        {
+          "OutcomeCode": "CCSS:MP.8",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 4,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/2/3/10/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:MP.8.",
+              "EvidenceSha256": "ac6eb846e9384188a6fb2633466742355c0fbb5c5c729ec699bb9082b653abea",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C2:U03:L11",
@@ -5287,7 +5385,24 @@
       "ApplicableCourses": [
         "Geometry"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:HSG-GMD.A.1",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/2/5/12/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSG-GMD.A.1.",
+              "EvidenceSha256": "7a57bbb79d4b9ed862d5eadacfaf5636781bbaab3143122edf1a9473001a6731",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C2:U05:L13",
@@ -7495,7 +7610,24 @@
       "ApplicableCourses": [
         "Geometry"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:HSG-C.B.5",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/2/7/9/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSG-C.B.5.",
+              "EvidenceSha256": "41897c23f8d8eae3584ffa757c3ba245ba8b73213962a4cac7038d91f71df517",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C2:U07:L10",
@@ -7861,7 +7993,24 @@
       "ApplicableCourses": [
         "Geometry"
       ],
-      "FormalTargets": []
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:HSS-CP.A.1",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": null,
+              "SourceFamily": "Illustrative Mathematics / Kendall Hunt",
+              "SourceUrl": "https://im.kendallhunt.com/HS/teachers/2/8/1/preparation.html",
+              "SectionOrTask": "Exact lesson preparation and learner-facing tasks reviewed for Common Core official closure against CCSS:HSS-CP.A.1.",
+              "EvidenceSha256": "8150b233699052c57665826004d4f5e9f56f1125da1f0b0a89bc323c2fecc2a4",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
     },
     {
       "SourceLessonCode": "IM-HS:C2:U08:L02",

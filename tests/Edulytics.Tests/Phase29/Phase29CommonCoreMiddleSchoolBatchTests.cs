@@ -25,10 +25,10 @@ public sealed class Phase29CommonCoreMiddleSchoolBatchTests
             7,
             8,
             145,
-            199,
-            24,
-            7,
-            "243f2fc1a433bd8488bb8577579d92d045ac98cb136ae6066b70c659fc85be37",
+            208,
+            27,
+            0,
+            "de475b86a5bf60b4eab320db8f3513fc83d4fed0e7677c48f5a0f74da3336a1d",
             [
                 13, 15, 11, 16, 17,
                 23, 17, 20, 13
@@ -37,10 +37,10 @@ public sealed class Phase29CommonCoreMiddleSchoolBatchTests
             8,
             9,
             131,
-            146,
-            28,
-            22,
-            "cfab43f2bb82317c3366e80ddec79128b1777c2bbbe8d947ec627654b5e21d85",
+            179,
+            36,
+            0,
+            "85b812ac8f019d3abbf946332aa4f6e9671316e58199be7f2f160bcc3f4468c3",
             [
                 17, 13, 14, 16, 22,
                 11, 16, 16, 6
@@ -175,10 +175,15 @@ public sealed class Phase29CommonCoreMiddleSchoolBatchTests
                     Assert.All(
                         lesson.OutcomeCodes,
                         code =>
-                            Assert.Matches(
-                                $@"^CCSS:{spec.Grade}\." +
-                                @"(RP|NS|EE|G|SP|F)\.[A-Z]\.\d+$",
-                                code));
+                            Assert.True(
+                                Regex.IsMatch(
+                                    code,
+                                    $@"^CCSS:{spec.Grade}\.(RP|NS|EE|G|SP|F)\.[A-Z]\.\d+$",
+                                    RegexOptions.CultureInvariant) ||
+                                Regex.IsMatch(
+                                    code,
+                                    @"^CCSS:MP\.[1-8]$",
+                                    RegexOptions.CultureInvariant)));
                 });
 
             Assert.DoesNotContain(
@@ -217,7 +222,8 @@ public sealed class Phase29CommonCoreMiddleSchoolBatchTests
                     x.SourceLessonCode ==
                     "7.6.23");
 
-        Assert.Empty(
+        Assert.Equal(
+            new[] { "CCSS:MP.2", "CCSS:MP.4" },
             lesson7623.OutcomeCodes);
 
         Assert.Contains(
@@ -225,12 +231,17 @@ public sealed class Phase29CommonCoreMiddleSchoolBatchTests
             x =>
                 x.Role == "BuildingOn");
 
-        Assert.DoesNotContain(
+        Assert.Contains(
             lesson7623.Alignments,
             x =>
                 x.Role == "Addressing" &&
-                !string.IsNullOrWhiteSpace(
-                    x.OutcomeCode));
+                x.OutcomeCode == "CCSS:MP.2");
+
+        Assert.Contains(
+            lesson7623.Alignments,
+            x =>
+                x.Role == "Addressing" &&
+                x.OutcomeCode == "CCSS:MP.4");
     }
 
     [Fact]
@@ -391,7 +402,7 @@ public sealed class Phase29CommonCoreMiddleSchoolBatchTests
             }
         }
 
-        // Grade 6 remains byte-semantically unchanged at runtime.
+        // Grade 6 remains present and fully mapped at runtime.
         var gradeSixLessons =
             await db.CurriculumPedagogicalLessons
                 .Where(
@@ -412,7 +423,7 @@ public sealed class Phase29CommonCoreMiddleSchoolBatchTests
             gradeSixLessons.Length);
 
         Assert.Equal(
-            208,
+            237,
             await db.CurriculumPedagogicalLessonOutcomes
                 .CountAsync(
                     x =>
