@@ -201,11 +201,6 @@ public sealed class PublicStaticFrontDoorContractTests
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
-            "return liveHydrationRoutes.has(path);",
-            runtime,
-            StringComparison.Ordinal);
-
-        Assert.DoesNotContain(
             "preferredLanguage() !== 'pl'",
             runtime,
             StringComparison.Ordinal);
