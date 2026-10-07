@@ -33,6 +33,40 @@ public sealed class PublicHomepageVisualContractTests
     }
 
     [Fact]
+    public void HomepageMegaMenu_UsesRealPublicRoutesInsteadOfDeadSectionHashes()
+    {
+        var root = FindRoot();
+        var script = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/public-home-commercial-v11.js"));
+
+        Assert.Contains(
+            "['Learning Built for Understanding', '/product/learning-built-for-understanding']",
+            script,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "['Results Backed by Data', '/product/results-backed-by-data']",
+            script,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "['Why Edulytics for Education Leaders?', '/schools/overview']",
+            script,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "['AI for Teachers', '/product/edulytics-ai']",
+            script,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "['Global Partnerships', '/company/partnerships']",
+            script,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "['Why Edulytics for Education Leaders?', '#schools']",
+            script,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void HomepageMascot_UsesRequestedTransparentPublicAssetDirectly()
     {
         var root = FindRoot();

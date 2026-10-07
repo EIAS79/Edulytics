@@ -2,8 +2,145 @@
   const root = document.querySelector('.ed-understanding');
   if (!root) return;
 
-  const language = (root.dataset.siteLanguage || document.documentElement.lang || 'en').toLowerCase();
-  if (!language.startsWith('ar')) return;
+  const frontdoorLanguageKey = 'edulytics.frontdoor.language';
+  let language = (root.dataset.siteLanguage || document.documentElement.lang || 'en').toLowerCase();
+  try {
+    const selected = window.localStorage.getItem(frontdoorLanguageKey);
+    if (selected === 'en' || selected === 'pl' || selected === 'ar') language = selected;
+  } catch { }
+  language = language.startsWith('ar') ? 'ar' : language.startsWith('pl') ? 'pl' : 'en';
+  if (language === 'pl') return;
+
+  const en = {
+    "breadcrumbHome": "Home",
+    "breadcrumbProduct": "Product",
+    "breadcrumbCurrent": "Learning Built for Understanding",
+    "heroKicker": "LEARNING BUILT FOR UNDERSTANDING",
+    "heroTitle": "Understanding comes before a score.",
+    "heroBody": "Edulytics connects curriculum, lessons, practice, assessment and mastery so students can understand what they are learning, see where they need more work and know what comes next.",
+    "heroPrimary": "See the learning flow",
+    "heroSecondary": "Explore the platform",
+    "systemHub": "Connected learning",
+    "nodeCurriculum": "Curriculum",
+    "nodeLesson": "Lesson",
+    "nodePractice": "Practice",
+    "nodeAssessment": "Assessment",
+    "nodeMastery": "Mastery",
+    "nodeNext": "Next step",
+    "meaningKicker": "WHAT UNDERSTANDING MEANS",
+    "meaningTitle": "More than getting the answer right.",
+    "meaningBody": "In Edulytics, understanding is not treated as a single score. It is supported by clear curriculum context, structured learning content and evidence that helps students and teachers decide what to do next.",
+    "meaningCard1Title": "Know what is being learned",
+    "meaningCard1Body": "Learning stays connected to the selected curriculum, level and learning outcomes rather than becoming a collection of disconnected questions.",
+    "meaningCard2Title": "Build before measuring",
+    "meaningCard2Body": "Students can learn from structured explanations, examples, common mistakes and summaries before assessment evidence is used to measure progress.",
+    "meaningCard3Title": "Turn evidence into action",
+    "meaningCard3Body": "Results help reveal mastery and weaker areas, then guide review, targeted practice and a new opportunity to demonstrate progress.",
+    "curriculumKicker": "CURRICULUM AT THE CORE",
+    "curriculumTitle": "Understanding starts with a clear learning destination.",
+    "curriculumBody": "Edulytics keeps lessons, assessments and learning insights grounded in the selected curriculum and its learning outcomes. That gives every learning activity a clear academic context.",
+    "curriculumPoint1": "Curriculum and level remain visible throughout the learning journey.",
+    "curriculumPoint2": "Lessons and assessments stay connected to the intended learning scope.",
+    "curriculumPoint3": "Progress can be interpreted in the same academic context in which learning took place.",
+    "curriculumVisualTitle": "Learning context",
+    "curriculumVisualBadge": "Curriculum aligned",
+    "curriculumVisual1Title": "Curriculum & level",
+    "curriculumVisual1Body": "Defines the academic context",
+    "curriculumVisual2Title": "Learning outcomes",
+    "curriculumVisual2Body": "Clarify what should be learned",
+    "curriculumVisual3Title": "Lessons & assessment",
+    "curriculumVisual3Body": "Use the same learning scope",
+    "lessonKicker": "LESSONS BUILD THE FOUNDATION",
+    "lessonTitle": "Students need something to understand before they are asked to prove it.",
+    "lessonBody": "Edulytics provides structured lesson content for the selected learning scope. Explanations, examples, common mistakes and summaries give students a stable reference point before and after assessment.",
+    "lessonPoint1": "Reviewed lesson content provides a consistent foundation.",
+    "lessonPoint2": "Students can return to the relevant lesson when a weak area is identified.",
+    "lessonPoint3": "Examples and common mistakes help connect explanation with application.",
+    "lessonVisualTitle": "Solving linear equations",
+    "lessonVisualBody": "A structured lesson that students can revisit whenever they need to strengthen understanding.",
+    "lessonBlock1Title": "Explanation",
+    "lessonBlock1Body": "Clear concept and method",
+    "lessonBlock2Title": "Examples",
+    "lessonBlock2Body": "Worked mathematical examples",
+    "lessonBlock3Title": "Common mistakes",
+    "lessonBlock3Body": "What to watch for",
+    "lessonBlock4Title": "Summary",
+    "lessonBlock4Body": "Key ideas to remember",
+    "practiceKicker": "PRACTICE IS FOR LEARNING",
+    "practiceTitle": "Mistakes can become part of the learning process.",
+    "practiceBody": "Private student practice is deliberately kept separate from official school grading. Students can try, review and strengthen weaker areas without turning every attempt into a formal result.",
+    "practicePoint1": "Practice supports improvement rather than automatic official grading.",
+    "practicePoint2": "Students can focus practice on a lesson, unit or identified weak area.",
+    "practicePoint3": "A new attempt can use new questions rather than simply repeating what was already seen.",
+    "practiceVisualBadge": "Private practice",
+    "practiceVisualScope": "Algebra · Stage 7",
+    "practiceVisualAction1": "Review lesson",
+    "practiceVisualAction2": "Try a new question",
+    "practiceVisualNote": "This practice does not become an official school grade.",
+    "evidenceKicker": "ASSESSMENT BECOMES EVIDENCE",
+    "evidenceTitle": "A score is useful. Knowing what it means is more useful.",
+    "evidenceBody": "Edulytics uses assessment evidence to identify mastery, weaker outcomes and progress. Instead of stopping at a total score, the platform helps connect the result to the learning that should happen next.",
+    "evidencePoint1": "Mastery is interpreted from learning evidence, not from a label alone.",
+    "evidencePoint2": "Weak areas can be linked back to the relevant learning scope.",
+    "evidencePoint3": "Reassessment can provide fresh evidence after review and targeted practice.",
+    "masteryVisualTitle": "Learning evidence",
+    "masteryVisualBadge": "Outcome view",
+    "masteryRow1": "Algebraic expressions",
+    "masteryRow1State": "Strong",
+    "masteryRow2": "Linear equations",
+    "masteryRow2State": "Needs work",
+    "masteryRow3": "Number operations",
+    "masteryRow3State": "Progressing",
+    "loopKicker": "FROM RESULT TO NEXT STEP",
+    "loopTitle": "Understanding becomes a continuous learning loop.",
+    "loopBody": "When evidence shows that more work is needed, Edulytics can connect the result back to learning rather than leaving the student with a score and no direction.",
+    "loop1Title": "Result",
+    "loop1Body": "Assessment creates learning evidence.",
+    "loop2Title": "Weak area",
+    "loop2Body": "Evidence highlights where more work is needed.",
+    "loop3Title": "Relevant lesson",
+    "loop3Body": "The student returns to the right learning content.",
+    "loop4Title": "Targeted practice",
+    "loop4Body": "Practice focuses on the area that needs improvement.",
+    "loop5Title": "New reassessment",
+    "loop5Body": "New questions provide a fresh opportunity to demonstrate progress.",
+    "loop6Title": "Updated mastery",
+    "loop6Body": "New evidence updates the picture of learning.",
+    "teacherKicker": "TEACHERS STAY IN CONTROL",
+    "teacherTitle": "Technology supports academic judgment. It does not replace it.",
+    "teacherBody": "Edulytics can help generate assessment questions and surface learning evidence, but formal school assessments remain teacher-controlled. Teachers review, edit, approve and publish before they become part of official assessment.",
+    "teacherVisual1Title": "Generate",
+    "teacherVisual1Body": "AI-assisted assessment questions",
+    "teacherVisual1State": "Support",
+    "teacherVisual2Title": "Review & edit",
+    "teacherVisual2Body": "Teacher checks the assessment",
+    "teacherVisual2State": "Teacher",
+    "teacherVisual3Title": "Approve & publish",
+    "teacherVisual3Body": "Formal use starts only after approval",
+    "teacherVisual3State": "Controlled",
+    "finalKicker": "EDULYTICS",
+    "finalBody": "See how curriculum, lessons, practice, assessment and mastery work together in one mathematics platform.",
+    "finalPrimary": "Request a demo",
+    "footerPlatform": "Platform",
+    "footerUnderstanding": "Learning Built for Understanding",
+    "footerCurricula": "Curricula",
+    "footerSchools": "For schools",
+    "footerOverview": "Overview",
+    "footerExperience": "Experience",
+    "footerDemo": "Request a demo",
+    "footerTeachers": "Teachers",
+    "footerStudents": "Students",
+    "footerLogin": "Log in",
+    "footerAbout": "About",
+    "footerContact": "Contact",
+    "footerLegal": "Privacy · Terms · Content licences",
+    "finalTitle": "Build learning around understanding, evidence and the next step.",
+    "finalSecondary": "Contact",
+    "footerTagline": "Mathematics. Learning. Progress.",
+    "footerCompany": "Company",
+    "footerSources": "Content sources & licences",
+    "footerUsers": "For users"
+};
 
   const ar = {
     breadcrumbHome: 'الرئيسية',
@@ -136,16 +273,19 @@
     footerLegal: 'الخصوصية · الشروط · تراخيص المحتوى'
   };
 
-  root.classList.add('is-site-ar');
-  root.setAttribute('dir', 'rtl');
-  document.documentElement.lang = 'ar';
-  document.documentElement.dir = 'rtl';
-  document.title = 'تعلّم قائم على الفهم | Edulytics';
+  const copy = language === 'ar' ? ar : en;
+  root.classList.toggle('is-site-ar', language === 'ar');
+  root.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
+  document.documentElement.lang = language;
+  document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+  document.title = language === 'ar'
+    ? 'تعلّم قائم على الفهم | Edulytics'
+    : 'Learning Built for Understanding | Edulytics';
 
   root.querySelectorAll('[data-understanding-key]').forEach(element => {
     const key = element.dataset.understandingKey;
-    if (Object.prototype.hasOwnProperty.call(ar, key)) {
-      element.textContent = ar[key];
+    if (Object.prototype.hasOwnProperty.call(copy, key)) {
+      element.textContent = copy[key];
     }
   });
 })();

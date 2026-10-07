@@ -362,14 +362,36 @@
   color:#fff!important;
 }
 
-@media(max-width:1450px){
+@media(max-width:1700px) and (min-width:1321px){
+  .ed-home-nav-shell{gap:10px}
+  .ed-home-brand-row{flex:0 0 auto}
+  .ed-home-links.ed-home-v11-links{
+    min-width:0;
+    flex:1 1 auto;
+    gap:2px;
+  }
   .ed-home-v11-nav-trigger,
-  .ed-home-v11-contact-link{padding-inline:9px;font-size:.88rem}
-  .ed-home-links.ed-home-v11-links{gap:3px}
-  .ed-home-actions{gap:7px}
+  .ed-home-v11-contact-link{
+    padding-inline:8px;
+    font-size:.85rem;
+  }
+  .ed-home-actions{
+    flex:0 0 auto;
+    gap:6px;
+  }
+  .ed-home-actions>.ed-home-lang{flex:0 0 auto}
+  .ed-home-actions>.ed-home-login,
+  .ed-home-actions>.ed-home-cta{white-space:nowrap}
 }
 
-@media(max-width:1180px){
+@media(max-width:1450px){
+  .ed-home-v11-nav-trigger,
+  .ed-home-v11-contact-link{padding-inline:7px;font-size:.82rem}
+  .ed-home-links.ed-home-v11-links{gap:1px}
+  .ed-home-actions{gap:5px}
+}
+
+@media(max-width:1320px){
   .ed-home-links{display:none!important}
   .ed-home-actions>.ed-home-lang,
   .ed-home-actions>.ed-home-login,
@@ -379,7 +401,7 @@
   .ed-home-brand img{height:42px}
 }
 
-@media(min-width:1181px){
+@media(min-width:1321px){
   .ed-home-mobile-menu{display:none!important}
 }
 

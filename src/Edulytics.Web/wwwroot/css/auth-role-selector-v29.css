@@ -149,7 +149,11 @@
 
   .ed-login-v28-audience {
     min-height: 90px;
-    grid-template-columns: 48px 1fr 28px;
+    grid-template-columns: 48px minmax(0,1fr);
+  }
+
+  .ed-login-v28-audience-check {
+    display: none;
   }
 }
 

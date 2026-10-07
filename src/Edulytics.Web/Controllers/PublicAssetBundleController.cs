@@ -57,6 +57,7 @@ public sealed class PublicAssetBundleController(IWebHostEnvironment environment)
         "js/public-site-routing-v27.js",
         "js/public-site-routing-v28.js",
         "js/public-understanding-v1.js",
+        "js/public-legal-static-localize-v1.js",
         "js/public-contact-system-v28.js"
     ];
 

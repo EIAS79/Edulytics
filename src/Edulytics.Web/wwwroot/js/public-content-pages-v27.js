@@ -3,10 +3,20 @@
   if (!root) return;
 
   const storageKey = 'edulytics.public.siteLanguage';
-  const serverLanguage = (document.documentElement.lang || 'en').toLowerCase().startsWith('pl') ? 'pl' : 'en';
+  const frontdoorLanguageKey = 'edulytics.frontdoor.language';
+  const documentLanguage = (document.documentElement.lang || 'en').toLowerCase();
+  const serverLanguage = documentLanguage.startsWith('ar') ? 'ar' : documentLanguage.startsWith('pl') ? 'pl' : 'en';
   let storedLanguage = null;
-  try { storedLanguage = window.localStorage.getItem(storageKey); } catch { /* no-op */ }
-  const language = storedLanguage === 'ar' ? 'ar' : serverLanguage;
+  try {
+    const frontdoorLanguage = window.localStorage.getItem(frontdoorLanguageKey);
+    const legacyLanguage = window.localStorage.getItem(storageKey);
+    storedLanguage = ['en', 'pl', 'ar'].includes(frontdoorLanguage)
+      ? frontdoorLanguage
+      : ['en', 'pl', 'ar'].includes(legacyLanguage)
+        ? legacyLanguage
+        : null;
+  } catch { /* no-op */ }
+  const language = storedLanguage || serverLanguage;
   const pageKey = root.dataset.marketingPage || window.location.pathname.replace(/^\//, '').replace(/\/$/, '');
   const catalog = window.EdulyticsPublicPages || {};
   const page = catalog[language]?.[pageKey] || catalog.en?.[pageKey];

@@ -51,11 +51,27 @@ public sealed class PublicStaticFrontDoorContractTests
             build,
             StringComparison.Ordinal);
         Assert.Contains(
-            "$SNAPSHOT_ORIGIN/css/public-site-v44.css",
+            "bundle_files \"$OUT/css/public-site-v44.css\"",
             build,
             StringComparison.Ordinal);
         Assert.Contains(
-            "$SNAPSHOT_ORIGIN/js/public-site-v45.js",
+            "bundle_files \"$OUT/js/public-site-v45.js\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "bundle_files \"$OUT/js/public-content-v33.js\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "\"js/public-home-commercial-v11.js\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "\"js/public-contact-system-v28.js\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "\"js/public-content-pages-v27.js\"",
             build,
             StringComparison.Ordinal);
         Assert.Contains(
@@ -91,6 +107,18 @@ public sealed class PublicStaticFrontDoorContractTests
             build,
             StringComparison.Ordinal);
         Assert.Contains(
+            "data-frontdoor-language-bootstrap",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "d.dataset.snapshotLanguage=d.lang||\"pl\"",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "localStorage.getItem(\"edulytics.frontdoor.language\")",
+            build,
+            StringComparison.Ordinal);
+        Assert.Contains(
             "\"$SNAPSHOT_ORIGIN/${language}/\"",
             build,
             StringComparison.Ordinal);
@@ -122,6 +150,10 @@ public sealed class PublicStaticFrontDoorContractTests
             StringComparison.Ordinal);
         Assert.Contains(
             "installLanguageRouting",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "staticLanguageDestination",
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
@@ -233,7 +265,11 @@ public sealed class PublicStaticFrontDoorContractTests
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
-            "window.localStorage.setItem(LANGUAGE_KEY, preferredLanguage())",
+            "window.localStorage.setItem(LANGUAGE_KEY, selectedLanguage)",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "window.localStorage.setItem(PUBLIC_LANGUAGE_KEY, selectedLanguage)",
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
@@ -261,6 +297,18 @@ public sealed class PublicStaticFrontDoorContractTests
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
+            "return liveHydrationRoutes.has(path);",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "PUBLIC_LANGUAGE_KEY",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "window.localStorage.setItem(PUBLIC_LANGUAGE_KEY",
+            runtime,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
             "preferredLanguage() !== 'pl'",
             runtime,
             StringComparison.Ordinal);
