@@ -17,7 +17,7 @@ cp "$ROOT/public-frontdoor/frontdoor.js" "$OUT/frontdoor.js"
 # as physical files, so snapshot those generated bundles as static assets too.
 mkdir -p "$OUT/css" "$OUT/js"
 
-echo "Waking the application before taking the public-site snapshot..."
+echo "Waking the application before taking public-site snapshots..."
 ready=0
 for attempt in $(seq 1 60); do
   if curl -fsS --connect-timeout 5 --max-time 10 "$ORIGIN/health/ready" | grep -q '"Healthy"'; then
@@ -32,28 +32,103 @@ if [ "$ready" -ne 1 ]; then
   exit 1
 fi
 
-curl -fsS --retry 5 --retry-all-errors --retry-delay 2 --max-time 120   "$ORIGIN/css/public-site-v44.css"   -o "$OUT/css/public-site-v44.css"
+curl -fsS --retry 5 --retry-all-errors --retry-delay 2 --max-time 120 \
+  "$ORIGIN/css/public-site-v44.css" \
+  -o "$OUT/css/public-site-v44.css"
 
-curl -fsS --retry 5 --retry-all-errors --retry-delay 2 --max-time 120   "$ORIGIN/js/public-site-v45.js"   -o "$OUT/js/public-site-v45.js"
+curl -fsS --retry 5 --retry-all-errors --retry-delay 2 --max-time 120 \
+  "$ORIGIN/js/public-site-v45.js" \
+  -o "$OUT/js/public-site-v45.js"
 
-snapshot() {
+inject_frontdoor_runtime() {
+  local target="$1"
+  sed -i 's#</body>#<script src="/frontdoor.js" defer></script></body>#' "$target"
+}
+
+snapshot_home() {
   local language="$1"
   local target="$2"
   local cookie="Edulytics.Culture=c=${language}|uic=${language}"
 
   echo "Snapshotting homepage language: $language"
-  curl -fsS --retry 5 --retry-all-errors --retry-delay 2 --max-time 120     -H "Cookie: $cookie"     "$ORIGIN/"     -o "$target"
+  curl -fsS --retry 5 --retry-all-errors --retry-delay 2 --max-time 120 \
+    -H "Cookie: $cookie" \
+    "$ORIGIN/" \
+    -o "$target"
 
-  # Add only the static-front-door behavior. The visual markup, CSS and all
-  # existing public-site scripts remain exactly as emitted by ASP.NET.
-  sed -i 's#</body>#<script src="/frontdoor.js" defer></script></body>#' "$target"
+  inject_frontdoor_runtime "$target"
 }
 
-snapshot "pl" "$OUT/pl/index.html"
-snapshot "en" "$OUT/en/index.html"
-snapshot "ar" "$OUT/ar/index.html"
+snapshot_public_route() {
+  local route="$1"
+  local relative="${route#/}"
+  local target="$OUT/$relative/index.html"
+  local cookie="Edulytics.Culture=c=pl|uic=pl"
+
+  mkdir -p "$(dirname "$target")"
+  echo "Snapshotting public route: $route"
+
+  # -L follows intentional public aliases such as /product -> /product/features.
+  curl -fsSL --retry 5 --retry-all-errors --retry-delay 2 --max-time 120 \
+    -H "Cookie: $cookie" \
+    "$ORIGIN$route" \
+    -o "$target"
+
+  inject_frontdoor_runtime "$target"
+}
+
+snapshot_home "pl" "$OUT/pl/index.html"
+snapshot_home "en" "$OUT/en/index.html"
+snapshot_home "ar" "$OUT/ar/index.html"
 
 # Polish remains the public default at the root domain.
 cp "$OUT/pl/index.html" "$OUT/index.html"
+
+# Every anonymous GET page linked from the public website receives an exact
+# server-rendered static snapshot. A direct visit therefore renders immediately
+# from Edulytics Public while frontdoor.js wakes the free application in the
+# background instead of exposing Render's cold-start page.
+PUBLIC_ROUTES=(
+  "/product"
+  "/teachers"
+  "/parents"
+  "/schools"
+  "/students"
+  "/product/learning-built-for-understanding"
+  "/product/results-backed-by-data"
+  "/product/support-you-can-rely-on"
+  "/product/student-portal"
+  "/product/assessment-and-practice"
+  "/product/mastery-and-next-step"
+  "/product/mathematics"
+  "/product/curricula"
+  "/product/features"
+  "/product/edulytics-ai"
+  "/product/languages"
+  "/product/technical-requirements"
+  "/teachers/overview"
+  "/teachers/assessment-and-curriculum"
+  "/parents/overview"
+  "/schools/overview"
+  "/students/overview"
+  "/company/partnerships"
+  "/company/about"
+  "/contact"
+  "/contact/sales-enquiry"
+  "/contact/request-demo"
+  "/contact/support"
+  "/contact/message"
+  "/contact/help"
+  "/help"
+  "/legal/privacy"
+  "/legal/terms"
+  "/legal/data-processing-agreement"
+  "/legal/content-sources"
+  "/account/login"
+)
+
+for route in "${PUBLIC_ROUTES[@]}"; do
+  snapshot_public_route "$route"
+done
 
 echo "Exact server-rendered public snapshots built at $OUT"
