@@ -3,17 +3,10 @@
     Layout = "_PublicLayout";
     var polish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
     ViewData["Title"] = polish ? "Polityka prywatności" : "Privacy Policy";
-    string LT(string en, string pl) => polish ? pl : en;
-    Microsoft.AspNetCore.Html.IHtmlContent L(string en, string pl)
-    {
-        var value = LT(en, pl);
-        var encoder = System.Text.Encodings.Web.HtmlEncoder.Default;
-        return new Microsoft.AspNetCore.Html.HtmlString(
-            $"<span data-public-l10n data-en=\"{encoder.Encode(en)}\" data-pl=\"{encoder.Encode(pl)}\">{encoder.Encode(value)}</span>");
-    }
+    string L(string en, string pl) => polish ? pl : en;
 }
 
-<div class="ed-home ed-legal-page" data-legal-title-en="Privacy Policy" data-legal-title-pl="Polityka prywatności" data-legal-title-ar="سياسة الخصوصية">
+<div class="ed-home ed-legal-page">
     <partial name="_PublicSiteHeader" />
 
     <main class="ed-legal-shell">
