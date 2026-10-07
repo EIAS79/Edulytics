@@ -34,6 +34,28 @@ public sealed class PublicContactVisualCleanupContractTests
     }
 
     [Fact]
+    public void StaticPublicPages_HonorFrontDoorLanguageWithoutBackendHydration()
+    {
+        var root = FindRoot();
+        var contact = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/public-contact-system-v28.js"));
+        var content = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/public-content-pages-v27.js"));
+        var understanding = File.ReadAllText(Path.Combine(
+            root,
+            "src/Edulytics.Web/wwwroot/js/public-understanding-v1.js"));
+
+        Assert.Contains("edulytics.frontdoor.language", contact, StringComparison.Ordinal);
+        Assert.Contains("contactTitle: 'How can we help?'", contact, StringComparison.Ordinal);
+        Assert.Contains("edulytics.frontdoor.language", content, StringComparison.Ordinal);
+        Assert.Contains("const language = storedLanguage || serverLanguage;", content, StringComparison.Ordinal);
+        Assert.Contains("edulytics.frontdoor.language", understanding, StringComparison.Ordinal);
+        Assert.Contains("const copy = language === 'ar' ? ar : en;", understanding, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void ArabicInquiryHeadline_HasDesktopOnlyBalanceRule()
     {
         var root = FindRoot();
