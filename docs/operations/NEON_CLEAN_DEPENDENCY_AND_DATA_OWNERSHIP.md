@@ -1,7 +1,7 @@
 # Clean Neon rebuild — dependency and ownership map
 
-**Repository:** EIAS79/Edulytics  
-**Transition branch:** feat/neon-clean-bootstrap-json-content-20261008  
+**Repository:** EIAS79/Edulytics
+**Transition branch:** feat/neon-clean-bootstrap-json-content-20261008
 **2026-10-08 — source-level review** (requires CI/integration verification; not production parity evidence).
 
 ## Storage and data classification
