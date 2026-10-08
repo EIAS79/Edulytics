@@ -254,43 +254,19 @@ public sealed class LessonContentRepository : ILessonContentRepository
             .Distinct()
             .ToArray();
 
-        var contents = await _db.CurriculumLessonContents
-            .AsNoTracking()
-            .Where(x => lessonIds.Contains(x.PedagogicalLessonId))
-            .ToArrayAsync(cancellationToken);
-
-        if (contents.Length == 0)
-            return [];
-
         if (_readFromJson)
         {
-            var codes = await _db.CurriculumPedagogicalLessons
-                .AsNoTracking()
-                .Where(x => lessonIds.Contains(x.Id))
-                .Select(x => new { x.Id, x.Code })
-                .ToArrayAsync(cancellationToken);
-
-            var codeById = codes.ToDictionary(x => x.Id, x => x.Code);
-            var result = new List<CanonicalLessonContentRecord>(contents.Length);
-
-            foreach (var content in contents)
-            {
-                if (!codeById.TryGetValue(content.PedagogicalLessonId, out var code) ||
-                    !JsonIndex.TryGet(code, out var body))
+            // Query only the compact public-lesson identity and publication fields.
+            // The associated authorized lesson body is read from embedded JSON.
+            // This is ONE SQL statement: avoid independently fetching Content and
+            // CurriculumPedagogicalLesson then joining the result in application code.
+            var metadata = await (
+                from content in _db.CurriculumLessonContents.AsNoTracking()
+                join lesson in _db.CurriculumPedagogicalLessons.AsNoTracking()
+                    on content.PedagogicalLessonId equals lesson.Id
+                where lessonIds.Contains(content.PedagogicalLessonId)
+                select new
                 {
-                    // Do not expose a lesson without an approved JSON body.
-                    continue;
-                }
-
-                if (!string.Equals(content.ContentVersion,
-                        body.ContentVersion, StringComparison.Ordinal) ||
-                    content.Status != body.Status)
-                {
-                    throw new InvalidOperationException(
-                        "Canonical JSON/metadata version or publication drift: " + code);
-                }
-
-                result.Add(new CanonicalLessonContentRecord(
                     content.Id,
                     content.FrameworkVersionId,
                     content.PedagogicalLessonId,
@@ -299,11 +275,48 @@ public sealed class LessonContentRepository : ILessonContentRepository
                     content.VerifiedAtUtc,
                     content.PublishedAtUtc,
                     content.UpdatedAtUtc,
+                    LessonCode = lesson.Code
+                }).ToArrayAsync(cancellationToken);
+
+            var result = new List<CanonicalLessonContentRecord>(metadata.Length);
+            foreach (var item in metadata)
+            {
+                if (!JsonIndex.TryGet(item.LessonCode, out var body))
+                {
+                    // Fail closed: no approved JSON body, no learner content.
+                    continue;
+                }
+
+                if (!string.Equals(item.ContentVersion, body.ContentVersion,
+                        StringComparison.Ordinal) || item.Status != body.Status)
+                {
+                    throw new InvalidOperationException(
+                        "Canonical JSON/metadata version or publication drift: " +
+                        item.LessonCode);
+                }
+
+                result.Add(new CanonicalLessonContentRecord(
+                    item.Id,
+                    item.FrameworkVersionId,
+                    item.PedagogicalLessonId,
+                    item.Status,
+                    item.ContentVersion,
+                    item.VerifiedAtUtc,
+                    item.PublishedAtUtc,
+                    item.UpdatedAtUtc,
                     body.Translations));
             }
 
             return result;
         }
+
+        var contents = await _db.CurriculumLessonContents
+            .AsNoTracking()
+            .Where(x => lessonIds.Contains(x.PedagogicalLessonId))
+            .ToArrayAsync(cancellationToken);
+
+        if (contents.Length == 0)
+            return [];
 
         var contentIds = contents
             .Select(x => x.Id)
