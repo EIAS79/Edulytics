@@ -159,8 +159,16 @@ public sealed class EdulyticsDatabaseBootstrapper
             .SeedAsync();
         await new MathematicsPedagogicalLessonSeeder(_db)
             .SeedAsync();
-        await new MathematicsCanonicalLessonContentSeeder(_db)
-            .SeedAsync();
+        var contentSeeder = new MathematicsCanonicalLessonContentSeeder(_db);
+        if (_configuration.GetValue<bool>(
+                "Edulytics:LessonContent:ReadFromJson"))
+        {
+            await contentSeeder.SeedMetadataOnlyAsync();
+        }
+        else
+        {
+            await contentSeeder.SeedAsync();
+        }
     }
 
     private async Task<bool> TryAcquireAdvisoryLockAsync()
