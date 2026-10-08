@@ -23,8 +23,9 @@
 ## الدليل التجريبي الحالي
 - اختبار إعادة بناء PostgreSQL 18: [CI](https://github.com/EIAS79/Edulytics/actions/runs/37853249607) **PASS**. حمّل 4 مناهج و5,110 هوية درس مع `users=0 schools=0 postgresProseRows=0`.
 - المسار **C** بعد استعلام SQL مضغوط: `CLEAN_JSON_READ_QUERY_BUDGET_PASS sqlQueries=1 proseSqlQueries=0` على PostgreSQL 18، مع شرح يُسترجع من JSON.
-- مسار **A**: استعلام بيانات المرجع ونصوص الترجمة من PostgreSQL سابقًا كان يصدر أمرين في نفس الوظيفة؛ اختبار مقارنة مباشر في CI الجديد قيد التحقق. **لا نعطيه رقمًا نهائيًا قبل نجاح الاختبار.**
+- مسار **A** مقابل **C**: [مقارنة PostgreSQL 18 ناجحة](https://github.com/EIAS79/Edulytics/actions/runs/37853446113): `legacySqlQueries=2 jsonHybridSqlQueries=1` لنفس هوية الدرس في قاعدة اختبار مؤقتة. **هذه مقارنة لأوامر SQL، لا لتكافؤ متن الدرس** لأن جدول النصوص في الوضع الجديد فارغ.
 - المسار **B**: لم تُثبت بعد مماثلة النتائج أو قابلية حذف FKs على النظام الحالي. لا يجوز وصف استهلاكه الحقيقي بأنه 0 للاستعلامات، لأن صلاحيات الطالب/التبنّي/السجلات تتطلب بيانات تشغيل.
+- اختبار دفعة 25 درسًا على نفس PostgreSQL 18: `lessons=25 jsonHybridSqlQueries=1 proseSqlQueries=0`، [السجل](https://github.com/EIAS79/Edulytics/actions/runs/37853446113).
 - **لم تُقَس** أحجام نقل الصفوف، p50/p95، استهلاك Neon في الإنتاج، ولا سلوك الذاكرة تحت الحمل.
 - فحص Phase29 الصارم يقف عند `62/64`: `UAE-MOE-MATH:L05:Advanced` و`UAE-MOE-MATH:L06:Advanced` غير مكتملين.
 
