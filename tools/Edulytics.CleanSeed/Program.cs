@@ -30,6 +30,17 @@ if (string.IsNullOrWhiteSpace(target.Host) ||
     throw new InvalidOperationException("Invalid target host or database.");
 }
 
+// Fail closed if even the host is not an independently approved target.
+// A database name alone is not sufficient to distinguish old and new Neon.
+var expectedHost = Environment.GetEnvironmentVariable(
+    "EDULYTICS_CLEAN_DATABASE_HOST");
+if (string.IsNullOrWhiteSpace(expectedHost) ||
+    !string.Equals(target.Host, expectedHost, StringComparison.OrdinalIgnoreCase))
+{
+    throw new InvalidOperationException(
+        "Target PostgreSQL host must exactly match independently approved host.");
+}
+
 // The operator must bind the independently verified target database name.
 // This prevents accidental use of a default/unintended local database.
 var expectedDatabase = Environment.GetEnvironmentVariable(
