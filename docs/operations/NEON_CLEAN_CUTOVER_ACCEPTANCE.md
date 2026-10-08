@@ -113,3 +113,17 @@ The Neon connector was reauthorized and these checks **succeeded**:
 - This branch is for migration and smoke-test validation; no SQL migrations or seed were applied to Neon at this point. The original production branch remains untouched.
 
 **Previous authorization error resolved.** Remaining go-live gates: verify UAE mathematics source status for grades 5/6 Advanced without speculation; source coverage/CI tests; allocate staging compute only when required; apply EF migrations and approved JSON metadata-only seeding to the staging branch; production cutover and quotas/rollback after all acceptance tests. Do not use the exhausted old Neon project.
+
+## LIVE staging deployment evidence — 2026-10-09
+
+**Isolated staging is deployed and verified; this is NOT production signoff.**
+
+- Neon project `tiny-lab-44877119` / branch `br-ancient-smoke-b5694k1f`, database `neondb`; original `br-frosty-block-b52tnjky` production branch remains untouched (no tables at the last read-only check).
+- Render staging service `srv-db42982d0e5s73fhvpd0` — `https://edulytics-v2-neon-staging.onrender.com` — independent **Free** plan, Ohio, Docker, V2 feature branch, automatic source deployments disabled.
+- Initial staging deployment `dep-db4298id0e5s73fhvrag` **live** after `efbundle` applied 30 EF Core migrations and the staged clean-bootstrap imported the reference corpus.
+- Verified SQL on that staging branch: **4** frameworks, **5,110** pedagogical lessons, **5,749** lesson-to-outcome links, **5,110** canonical publication/version metadata rows, **0** canonical prose translation rows, **5** roles, **0** users, **0** schools.
+- Subsequently changed staging service env, without replacing connection secrets, to `RunStartupMigrations=false`, `SeedCurriculum=false`, `RunStartupDataMaintenance=false`, and `ReadFromJson=true`. Set longer idle worker backoff and less verbose EF query logging.
+- Follow-up deployment `dep-db42chijnfac73b9iob0` **live**; after it, external HTTP checks returned `{"status":"Healthy"}` from both `/health/live` and `/health/ready`; `/account/login` rendered the Polish login page.
+- Live egress and CU-hour savings are not yet independently established; Neon usage metrics may be delayed, and performance/load/security UAT still need production evidence.
+
+**Remaining production blockers**: strict source-closure gate shows 62/64 UAE curriculum scopes (G5/G6 Advanced mathematics sources unverified), final complete main-branch CI/QA and production migration/rollback plan, user/security UAT and Neon free-tier consumption evidence. **Do not switch existing Render `Edulytics` `srv-dakq5n2fngtc73a62i10` or merge draft PR #419 before resolving these.**
