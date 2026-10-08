@@ -2,6 +2,7 @@ using Edulytics.Data.Contexts;
 using Edulytics.Data.Repositories;
 using Edulytics.Data.Seeding;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Npgsql;
 
 // This executable only accepts a separately configured, EMPTY target database.
@@ -99,6 +100,29 @@ if (await db.Users.AnyAsync() || await db.Schools.AnyAsync() ||
     throw new InvalidOperationException(
         "Unexpected user, school or billing records after seed.");
 }
+
+// Real PostgreSQL read path: retain identity and publication metadata in
+// PostgreSQL, but resolve the published learner body from bundled JSON.
+const string smokeCode = "PED:UAE:G9:ADV:T1:L1-2";
+var sample = await db.CurriculumPedagogicalLessons.AsNoTracking()
+    .SingleAsync(x => x.Code == smokeCode);
+var jsonReadConfiguration = new ConfigurationBuilder()
+    .AddInMemoryCollection(new Dictionary<string, string?>
+    {
+        ["Edulytics:LessonContent:ReadFromJson"] = "true"
+    })
+    .Build();
+var sampleContent = await new LessonContentRepository(db, jsonReadConfiguration)
+    .ListCanonicalContentsAsync([sample.Id]);
+if (sampleContent.Count != 1 ||
+    sampleContent[0].Translations.Count == 0 ||
+    string.IsNullOrWhiteSpace(sampleContent[0].Translations[0].Explanation))
+{
+    throw new InvalidOperationException(
+        "Clean PostgreSQL JSON-backed lesson read smoke test failed.");
+}
+
+Console.WriteLine("CLEAN_JSON_READ_GATE_PASS code=" + smokeCode);
 
 Console.WriteLine(
     $"EDULYTICS_CLEAN_SEED_PASS frameworks={versions} " +
