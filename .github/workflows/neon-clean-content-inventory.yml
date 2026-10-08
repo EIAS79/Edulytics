@@ -9,6 +9,10 @@ on:
       - 'tests/python/test_clean_neon_content_inventory.py'
       - 'src/Edulytics.Core/Curriculum/**'
       - 'src/Edulytics.Web/Bootstrap/**'
+      - 'src/Edulytics.Web/Program.cs'
+      - 'src/Edulytics.Data/Repositories/**'
+      - 'src/Edulytics.Data/Seeding/**'
+      - 'tests/Edulytics.Tests/Phase29/CleanNeonEmbeddedJsonReadTests.cs'
       - 'tests/Edulytics.Tests/Bootstrap/**'
       - 'tests/Edulytics.Tests/Acceptance/StagingCurriculumBootstrapContractTests.cs'
       - '.github/workflows/neon-clean-content-inventory.yml'
@@ -18,6 +22,10 @@ on:
       - 'tests/python/test_clean_neon_content_inventory.py'
       - 'src/Edulytics.Core/Curriculum/**'
       - 'src/Edulytics.Web/Bootstrap/**'
+      - 'src/Edulytics.Web/Program.cs'
+      - 'src/Edulytics.Data/Repositories/**'
+      - 'src/Edulytics.Data/Seeding/**'
+      - 'tests/Edulytics.Tests/Phase29/CleanNeonEmbeddedJsonReadTests.cs'
       - 'tests/Edulytics.Tests/Bootstrap/**'
       - 'tests/Edulytics.Tests/Acceptance/StagingCurriculumBootstrapContractTests.cs'
       - '.github/workflows/neon-clean-content-inventory.yml'
@@ -46,7 +54,7 @@ jobs:
           dotnet restore Edulytics.sln
           dotnet build Edulytics.sln --no-restore
       - name: Clean bootstrap and curriculum seed contract tests
-        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --filter 'FullyQualifiedName~EdulyticsDatabaseBootstrapperTests|FullyQualifiedName~StagingCurriculumBootstrapContractTests'
+        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --filter 'FullyQualifiedName~EdulyticsDatabaseBootstrapperTests|FullyQualifiedName~StagingCurriculumBootstrapContractTests|FullyQualifiedName~CleanNeonEmbeddedJsonReadTests'
       - name: Upload non-personal audit report
         if: always()
         uses: actions/upload-artifact@v4
