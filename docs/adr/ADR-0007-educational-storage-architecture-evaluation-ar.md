@@ -1,8 +1,8 @@
 # ADR-0007: أين تُخزّن مناهج Edulytics الثابتة؟ — قرار قيد الاختبار
 
-**الحالة:** PROPOSED / NOT FINAL  
-**التاريخ:** 2026-10-09  
-**المستودع:** EIAS79/Edulytics، فرع `feat/neon-clean-bootstrap-json-content-20261008`  
+**الحالة:** PROPOSED / NOT FINAL
+**التاريخ:** 2026-10-09
+**المستودع:** EIAS79/Edulytics، فرع `feat/neon-clean-bootstrap-json-content-20261008`
 **الخطة المرجعية:** [خطة V2](../operations/EDULYTICS_V2_ARCHITECTURE_FIRST_12_STAGE_PLAN_AR.md)
 
 ## سؤال القرار
