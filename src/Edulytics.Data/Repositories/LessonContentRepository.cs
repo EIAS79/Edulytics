@@ -4,6 +4,7 @@ using Edulytics.Core.Interfaces;
 using Edulytics.Core.Lessons;
 using Edulytics.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Edulytics.Data.Repositories;
 
