@@ -34,11 +34,15 @@ if (string.IsNullOrWhiteSpace(target.Host) ||
 // A database name alone is not sufficient to distinguish old and new Neon.
 var expectedHost = Environment.GetEnvironmentVariable(
     "EDULYTICS_CLEAN_DATABASE_HOST");
-if (string.IsNullOrWhiteSpace(expectedHost) ||
-    !string.Equals(target.Host, expectedHost, StringComparison.OrdinalIgnoreCase))
+var isLocalCi =
+    string.Equals(target.Host, "127.0.0.1", StringComparison.Ordinal) &&
+    string.Equals(target.Database, "edulytics_clean_ci", StringComparison.Ordinal);
+if (!isLocalCi &&
+    (string.IsNullOrWhiteSpace(expectedHost) ||
+     !string.Equals(target.Host, expectedHost, StringComparison.OrdinalIgnoreCase)))
 {
     throw new InvalidOperationException(
-        "Target PostgreSQL host must exactly match independently approved host.");
+        "Remote target PostgreSQL host must match independently approved host.");
 }
 
 // The operator must bind the independently verified target database name.
