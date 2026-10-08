@@ -119,7 +119,7 @@ PostgreSQL 18 + EF migrations + تحميل من المصدر فقط، ولا ح�
 ## 8. سجل تنفيذ V2 — دليل قابل لإعادة الفحص
 **9 أكتوبر 2026 (نتائج CI مسجلة مساء 8 أكتوبر UTC):**
 - [x] إنشاء V2 واستبعاد V1 من المرجع التنفيذي.
-- [x] توثيق [ADR-0007](../../adr/ADR-0007-educational-storage-architecture-evaluation-ar.md) بحالة «قيد الاختبار»، وليس قرارًا نهائيًا.
+- [x] توثيق [ADR-0007](../adr/ADR-0007-educational-storage-architecture-evaluation-ar.md) بحالة «قيد الاختبار»، وليس قرارًا نهائيًا.
 - [x] تحسين استعلام `LessonContentRepository.ListCanonicalContentsAsync`: جدول metadata + درس تربوي في `JOIN` محدود الحقول بدلاً من أمرين SQL.
 - [x] [PG18 CI](https://github.com/EIAS79/Edulytics/actions/runs/37853446113): `legacySqlQueries=2` مقابل `jsonHybridSqlQueries=1` لدرس واحد.
 - [x] نفس الاختبار على **دفعة 25 درسًا**: `jsonHybridSqlQueries=1` و`proseSqlQueries=0`.
