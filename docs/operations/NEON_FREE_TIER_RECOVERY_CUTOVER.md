@@ -39,3 +39,25 @@ Once database access is available (after quota reset or an allowed provider-side
 8. Retain old database intact for rollback until owner explicitly approves retirement.
 
 **Blockers:** The current source Neon endpoint is refusing connections due to quota, and no newly selected authenticated Neon destination account/workspace has been provided. Do not claim a backup, restore, cutover or production success until these steps have actually occurred.
+
+
+## 2026-10-09 correction: clean V2 staging exists — production still NO-GO
+
+This dated section supersedes the earlier *as-of-2026-10-08* statements that no replacement account/project or staging deployment exists. The earlier section is retained as historical evidence and should not be interpreted as the current state.
+
+- **Clean V2 rebuild is deliberately not a lift-and-shift:** no legacy users, students, schools, accounts, grades, notifications or other tenant/operational data will be migrated, under the architecture-first clean-rebuild plan. The backup-and-restore procedure in Phase B above describes a different data-preserving migration strategy and **must not be executed as this clean V2 plan**.
+- New independently verified Neon Free project: `tiny-lab-44877119` (Edulytiks), PostgreSQL 18, Ohio; original default `production` branch `br-frosty-block-b52tnjky` retained empty. Isolated staging `br-ancient-smoke-b5694k1f` receives V2 migrations and reference-only seed. Never use the legacy exhausted project `gentle-star-10318776`.
+- V2 staging Render: `srv-db42982d0e5s73fhvpd0` (`edulytics-v2-neon-staging`, Ohio, Free). Its automatic Git deploys and PR previews are disabled. Original `Edulytics` production Render `srv-dakq5n2fngtc73a62i10` remains in Oregon, following `main` with `checksPass` autoDeploy — merging PR #419 would risk immediate production deployment, so **keep PR #419 draft/unmerged** until go/no-go approval.
+- Staging bootstrap applied 30 EF migrations. Direct SQL read-back verified 5,110 pedagogical lesson identities, 5,749 lesson-to-outcome links, 0 users, 0 schools, 0 school subscriptions and 0 canonical lesson-prose translation rows. Passing those structural counts does not establish end-to-end authorization, answer correctness or lesson parity.
+- Latest PR-head workflows: clean PostgreSQL 18 rebuild, Common Core official closure, evaluation production regression and Mathematics Intelligence Foundation passed; strict offline content inventory remains failed at 62/64 scopes. Missing `UAE-MOE-MATH:L05:Advanced` and `UAE-MOE-MATH:L06:Advanced` must have authoritative source provenance and academic review, or officially evidenced shared-syllabus mapping. Do not fake content, delete the test, or modify the 64-scope denominator just to pass.
+- Render bandwidth has shown a limited 0.52840424 MB sampling bucket; that is **not Neon database egress**, not a load-test benchmark, and not quota signoff. Cross-region production Render Oregon ↔ new Neon Ohio must be latency-tested or Render regional placement explicitly revised.
+
+### Required clean V2 go/no-go sequence
+
+1. Close tracked source gap [issue #420](https://github.com/EIAS79/Edulytics/issues/420) with ministry-authorized mathematics source(s), content/outcome provenance, lawful Edulytics-authored explanations, language and mathematical review, and strict `64/64` PASS. Unknown source must remain blocked, not invented.
+2. Run current-HEAD full CI, security/dependency scanning and E2E validation with newly generated synthetic test accounts: school isolation, all roles, authentication, Practice, assessment approval, translation and content version parity. Synthetic users only in disposable test environments, not final clean production.
+3. Benchmark A/B/C storage alternatives using equivalent datasets and auth rules: query counts, bytes, p50/p95, cold/warm cache, worker idle polls, memory and real Neon egress/CU-hours. Finalize ADR-0007 from measurements, not estimates.
+4. Verify restore/rebuild drill and backout steps; preserve the original service and legacy DB, Render configuration and protection keys. Choose the exact new-production Neon database/branch and ensure **zero tenant rows** before approved initialization.
+5. Only after checks: approve PR #419 for merge, controlled Render environment cutover, one monitored production deploy and rollback readiness. Confirm health *and* authenticated academic journeys. Monitor at least a representative operating window and usage budgets. Do not mistake a healthy `/health` for release acceptance.
+
+Current decision: **PRODUCTION NO-GO**. See `docs/operations/NEON_CLEAN_CUTOVER_ACCEPTANCE.md` for the principal status record. No automatic database switch or merge is authorized by this document.
