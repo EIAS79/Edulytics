@@ -85,3 +85,19 @@ This file is a **status record**, not a claim that all 12 phases have been deliv
 **What has NOT happened:** No writes to legacy Neon; no new Neon project created through this ChatGPT session; no Render environment edits/deploy; no merge to `main`; no migration of user/school/student/staff/customer data.
 
 **Release gate:** DO NOT MERGE/DEPLOY until all four open groups above pass.
+
+
+## Identified replacement Neon target — 2026-10-09 (no API access yet)
+
+The account owner's Neon Console screenshot provides:
+- Project display name: `Edulytiks`
+- Project ID: `tiny-lab-44877119`
+- Default branch display name: `production`
+- Branch ID: `br-frosty-block-b52tnjky`
+- Organization account shown: `247abcnews@gmail.com`
+- Region shown: AWS US East 2 (Ohio)
+- Console: https://console.neon.tech/app/projects/tiny-lab-44877119/branches/br-frosty-block-b52tnjky
+
+**Connector access check:** Neon `describe_project`, `list_branches` and `list_postgres_databases` with these explicit IDs returned `HTTP 404` authorization/internal-access errors. This **does not establish** a working write connection to this project; cannot migrate/seed or switch Render based on screenshot alone. Ask the operator to authorize/select the new Neon account with matching project access. Do not fall back to the suspended old project.
+
+**No database change:** The new Neon project and the old Neon project have not been accessed through SQL by this plan. The clean PostgreSQL 18 tests are isolated GitHub Actions test databases.
