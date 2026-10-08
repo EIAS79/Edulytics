@@ -1,3 +1,5 @@
+> **SUPERSEDED / للإطلاع فقط:** المرجع التنفيذي الحالي هو [خطة V2 — الاختيار المعماري أولًا](./EDULYTICS_V2_ARCHITECTURE_FIRST_12_STAGE_PLAN_AR.md). لا تُنفّذ خطوات تخزين المناهج في هذه النسخة القديمة قبل اجتياز اختبار مقارنة A/B/C واختيار ADR النهائي. أُبقيت V1 كسجل تاريخي فقط.
+
 # Edulytics — Clean Neon Rebuild & JSON Lesson Delivery
 
 **Status:** Phase 1 implementation started — no Neon or Render changes.
