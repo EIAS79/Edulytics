@@ -73,6 +73,70 @@ if (migrations.Any())
         "Apply all reviewed EF Core migrations before running clean seed.");
 }
 
+// Database-wide fail-closed preflight: a fresh target may contain only
+// migration history or platform role definitions. Repeated seed executions may
+// contain the exact set of shared curriculum-reference tables shown below.
+// Any other populated table (including legacy jobs, payments or audit logs)
+// means this is NOT an empty/clean target and must not be modified.
+var permittedPopulatedTables = new HashSet<string>(StringComparer.Ordinal)
+{
+    "__EFMigrationsHistory",
+    "AspNetRoles",
+    "CurriculumFrameworks",
+    "CurriculumFrameworkVersions",
+    "CurriculumPackContentNodes",
+    "CurriculumPackNodeLinks",
+    "CurriculumPackImportStates",
+    "CurriculumPedagogicalLessons",
+    "CurriculumPedagogicalLessonOutcomes",
+    "CurriculumLessonContents"
+};
+var dbConnection = db.Database.GetDbConnection();
+await db.Database.OpenConnectionAsync();
+try
+{
+    var tableNames = new List<string>();
+    await using (var tableQuery = dbConnection.CreateCommand())
+    {
+        tableQuery.CommandText =
+            "SELECT tablename FROM pg_catalog.pg_tables " +
+            "WHERE schemaname = current_schema() ORDER BY tablename";
+        await using var rows = await tableQuery.ExecuteReaderAsync();
+        while (await rows.ReadAsync())
+            tableNames.Add(rows.GetString(0));
+    }
+
+    var unexpectedTables = new List<string>();
+    foreach (var tableName in tableNames)
+    {
+        if (permittedPopulatedTables.Contains(tableName))
+            continue;
+
+        // Identifiers originate from PostgreSQL's own table catalog.
+        var safeName = tableName.Replace("\"", "\"\"", StringComparison.Ordinal);
+        await using var existenceQuery = dbConnection.CreateCommand();
+        existenceQuery.CommandText =
+            $"SELECT EXISTS (SELECT 1 FROM \"{safeName}\" LIMIT 1)";
+        if ((bool)(await existenceQuery.ExecuteScalarAsync() ?? false))
+            unexpectedTables.Add(tableName);
+    }
+
+    if (unexpectedTables.Count > 0)
+    {
+        throw new InvalidOperationException(
+            "Refusing to modify a database containing non-reference records: " +
+            string.Join(", ", unexpectedTables));
+    }
+
+    Console.WriteLine(
+        $"EDULYTICS_CLEAN_PREFLIGHT_PASS checkedTables={tableNames.Count} " +
+        $"unexpectedPopulatedTables=0");
+}
+finally
+{
+    await db.Database.CloseConnectionAsync();
+}
+
 // No old or existing tenant data is allowed: avoid modifying an operational DB.
 var hasTenantRecords =
     await db.Users.AnyAsync() ||
