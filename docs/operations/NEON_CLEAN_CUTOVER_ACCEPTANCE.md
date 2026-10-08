@@ -101,3 +101,16 @@ The account owner's Neon Console screenshot provides:
 **Connector access check:** Neon `describe_project`, `list_branches` and `list_postgres_databases` with these explicit IDs returned `HTTP 404` authorization/internal-access errors. This **does not establish** a working write connection to this project; cannot migrate/seed or switch Render based on screenshot alone. Ask the operator to authorize/select the new Neon account with matching project access. Do not fall back to the suspended old project.
 
 **No database change:** The new Neon project and the old Neon project have not been accessed through SQL by this plan. The clean PostgreSQL 18 tests are isolated GitHub Actions test databases.
+
+## Verified new Neon connection and isolated staging — 2026-10-09
+
+The Neon connector was reauthorized and these checks **succeeded**:
+
+- New project `tiny-lab-44877119` (`Edulytiks`), owning organization `org-icy-sea-65672687` and owner email `247abcnews@gmail.com`. Current connector project permission: `ADMIN`. PostgreSQL: 18, region `aws-us-east-2`, Free tier.
+- Existing default branch `production`: `br-frosty-block-b52tnjky`; default database `neondb` owned by `neondb_owner`.
+- `get_database_tables(project, production, neondb)` returned `[]` (no application tables at this moment). This verifies initial schema absence, not future lifecycle readiness.
+- Created **isolated, no-compute** staging branch `edulytics-clean-staging-20261009`, ID `br-ancient-smoke-b5694k1f`, copied from empty production. Neon confirmed branch `ready` with no compute time or activity.
+- This branch is for migration and smoke-test validation; no SQL migrations or seed were applied to Neon at this point. The original production branch remains untouched.
+
+**Previous authorization error resolved.** Remaining go-live gates: verify UAE mathematics source status for grades 5/6 Advanced without speculation; source coverage/CI tests; allocate staging compute only when required; apply EF migrations and approved JSON metadata-only seeding to the staging branch; production cutover and quotas/rollback after all acceptance tests. Do not use the exhausted old Neon project.
+
