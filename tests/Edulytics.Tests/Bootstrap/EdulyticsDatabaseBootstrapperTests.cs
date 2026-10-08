@@ -123,6 +123,45 @@ public class EdulyticsDatabaseBootstrapperTests
         Assert.True(await userManager.IsInRoleAsync(persistedUser, RoleNames.SuperAdmin));
     }
 
+    [Fact]
+    public async Task InitializeAsync_CleanBootstrap_CreatesOnlyRoleDefinitions()
+    {
+        var services = BuildServices();
+        var bootstrapper = CreateBootstrapper(services, null, null, cleanBootstrap: true);
+
+        await bootstrapper.InitializeAsync();
+
+        var users = services.GetRequiredService<UserManager<ApplicationUser>>();
+        var roles = services.GetRequiredService<RoleManager<ApplicationRole>>();
+        var db = services.GetRequiredService<EdulyticsDbContext>();
+        Assert.Equal(5, await roles.Roles.CountAsync());
+        Assert.Empty(await users.Users.ToListAsync());
+        Assert.Empty(await db.Schools.ToListAsync());
+    }
+
+    [Theory]
+    [InlineData("Edulytics:SuperAdmin:Email", "admin@example.com")]
+    [InlineData("Edulytics:SuperAdmin:Password", "placeholder-not-a-secret")]
+    [InlineData("Edulytics:PresentationDemo:Provision", "true")]
+    [InlineData("Edulytics:MeetingDemo:ResetAndSeed", "true")]
+    public void CleanBootstrap_RejectsContradictoryProvisioningFlags(
+        string configKey,
+        string configValue)
+    {
+        var configuration = new ConfigurationBuilder()
+            .AddInMemoryCollection(new Dictionary<string, string?>
+            {
+                ["Edulytics:Deployment:CleanBootstrap"] = "true",
+                [configKey] = configValue
+            })
+            .Build();
+
+        var exception = Assert.Throws<InvalidOperationException>(
+            () => CleanBootstrapPolicy.ShouldSkipOptionalProvisioning(configuration));
+
+        Assert.Contains("CleanBootstrap", exception.Message);
+    }
+
     private static ServiceProvider BuildServices()
     {
         var services = new ServiceCollection();
@@ -141,13 +180,14 @@ public class EdulyticsDatabaseBootstrapperTests
         return services.BuildServiceProvider();
     }
 
-    private static EdulyticsDatabaseBootstrapper CreateBootstrapper(ServiceProvider services, string? email, string? password)
+    private static EdulyticsDatabaseBootstrapper CreateBootstrapper(ServiceProvider services, string? email, string? password, bool cleanBootstrap = false)
     {
         var configuration = new ConfigurationBuilder()
             .AddInMemoryCollection(new Dictionary<string, string?>
             {
                 ["Edulytics:SuperAdmin:Email"] = email,
-                ["Edulytics:SuperAdmin:Password"] = password
+                ["Edulytics:SuperAdmin:Password"] = password,
+                ["Edulytics:Deployment:CleanBootstrap"] = cleanBootstrap ? "true" : "false"
             })
             .Build();
 
