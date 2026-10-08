@@ -57,6 +57,10 @@ public sealed class OutboxProcessorBackgroundService
     protected override async Task ExecuteAsync(
         CancellationToken stoppingToken)
     {
+        var idleBackoff = new IdlePollBackoff(
+            _options.PollDelayMilliseconds,
+            _options.MaxIdlePollDelayMilliseconds);
+
         _health.MarkStarted(
             DateTime.UtcNow);
 
@@ -77,12 +81,14 @@ public sealed class OutboxProcessorBackgroundService
                 _health.RecordHeartbeat(
                     DateTime.UtcNow);
 
-                if (!found)
+                if (found)
+                {
+                    idleBackoff.Reset();
+                }
+                else
                 {
                     await Task.Delay(
-                        TimeSpan.FromMilliseconds(
-                            _options
-                                .PollDelayMilliseconds),
+                        idleBackoff.NextDelay(),
                         stoppingToken);
                 }
             }
@@ -99,10 +105,13 @@ public sealed class OutboxProcessorBackgroundService
                     ex,
                     "Outbox v2 polling failed.");
 
+                idleBackoff.Reset();
+
                 await Task.Delay(
                     TimeSpan.FromMilliseconds(
-                        _options
-                            .ErrorDelayMilliseconds),
+                        Math.Max(
+                            IdlePollBackoff.MinimumDelayMilliseconds,
+                            _options.ErrorDelayMilliseconds)),
                     stoppingToken);
             }
         }
