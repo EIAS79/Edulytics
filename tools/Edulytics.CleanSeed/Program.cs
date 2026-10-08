@@ -134,6 +134,30 @@ if (readCommands.Any(sql =>
         "JSON-backed reader unexpectedly fetched lesson prose from PostgreSQL.");
 }
 Console.WriteLine("CLEAN_JSON_READ_QUERY_BUDGET_PASS sqlQueries=1 proseSqlQueries=0");
+
+// Measure the old DB-based metadata lookup on the SAME disposable database.
+// No translation prose exists in this clean database, so this comparison
+// measures SQL round trips only; it does NOT establish body parity or egress.
+var baselineConfiguration = new ConfigurationBuilder()
+    .AddInMemoryCollection(new Dictionary<string, string?>
+    {
+        ["Edulytics:LessonContent:ReadFromJson"] = "false"
+    })
+    .Build();
+var baselineStart = queryMeter.ReaderCommands.Count;
+var baselineMetadata = await new LessonContentRepository(db, baselineConfiguration)
+    .ListCanonicalContentsAsync([sample.Id]);
+var baselineSqlCount = queryMeter.ReaderCommands.Count - baselineStart;
+if (baselineMetadata.Count != 1 || baselineSqlCount != 2)
+{
+    throw new InvalidOperationException(
+        $"Unexpected legacy DB lookup count: {baselineSqlCount}.");
+}
+Console.WriteLine(
+    "CLEAN_ARCHITECTURE_QUERY_COMPARISON_PASS " +
+    "legacySqlQueries=2 jsonHybridSqlQueries=1 " +
+    "bodyParity=NOT_MEASURED(no_prose_rows)");
+
 if (sampleContent.Count != 1 ||
     sampleContent[0].Translations.Count == 0 ||
     string.IsNullOrWhiteSpace(sampleContent[0].Translations[0].Explanation))
