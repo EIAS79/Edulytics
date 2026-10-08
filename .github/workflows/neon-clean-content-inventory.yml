@@ -8,12 +8,18 @@ on:
       - 'tools/phase29/clean_neon_content_inventory.py'
       - 'tests/python/test_clean_neon_content_inventory.py'
       - 'src/Edulytics.Core/Curriculum/**'
+      - 'src/Edulytics.Web/Bootstrap/**'
+      - 'tests/Edulytics.Tests/Bootstrap/**'
+      - 'tests/Edulytics.Tests/Acceptance/StagingCurriculumBootstrapContractTests.cs'
       - '.github/workflows/neon-clean-content-inventory.yml'
   pull_request:
     paths:
       - 'tools/phase29/clean_neon_content_inventory.py'
       - 'tests/python/test_clean_neon_content_inventory.py'
       - 'src/Edulytics.Core/Curriculum/**'
+      - 'src/Edulytics.Web/Bootstrap/**'
+      - 'tests/Edulytics.Tests/Bootstrap/**'
+      - 'tests/Edulytics.Tests/Acceptance/StagingCurriculumBootstrapContractTests.cs'
       - '.github/workflows/neon-clean-content-inventory.yml'
   workflow_dispatch:
 
@@ -32,6 +38,15 @@ jobs:
         run: python3 -m unittest discover -s tests/python -p 'test_clean_neon_content_inventory.py' -v
       - name: Inventory all curriculum files without Neon connection
         run: python3 tools/phase29/clean_neon_content_inventory.py --strict --write-report
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore and build .NET solution
+        run: |
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --no-restore
+      - name: Clean bootstrap and curriculum seed contract tests
+        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --filter 'FullyQualifiedName~EdulyticsDatabaseBootstrapperTests|FullyQualifiedName~StagingCurriculumBootstrapContractTests'
       - name: Upload non-personal audit report
         if: always()
         uses: actions/upload-artifact@v4
