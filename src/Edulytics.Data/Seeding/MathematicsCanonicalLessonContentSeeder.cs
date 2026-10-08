@@ -512,7 +512,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                 .ToArray();
 
         var existingTranslations = metadataOnly
-            ? []
+            ? Array.Empty<CurriculumLessonContentTranslation>()
             : await _db
                 .CurriculumLessonContentTranslations
                 .Where(
