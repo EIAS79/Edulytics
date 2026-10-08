@@ -63,3 +63,25 @@ The project's code generator proposes generic OGL-based *unaligned* supporting l
 - No post-cutover quota and query monitoring.
 
 This file is a **status record**, not a claim that all 12 phases have been delivered.
+
+
+## V2 status update — 2026-10-09
+
+**Architecture choice:** [ADR-0007](../adr/ADR-0007-educational-storage-architecture-evaluation-ar.md) selects JSON-first, minimal-FK hybrid **for staging** only. Production release is still blocked.
+
+**New implementations:**
+- Consolidated JSON lesson metadata lookup uses one projected SQL query rather than two; verified for one and 25 lessons on isolated PostgreSQL 18.
+- Clean seeding requires explicit project database name and remote host approval. Loopback test database is separately recognized.
+- Fail-closed preflight rejects non-reference rows in all application tables, not only the previous short list of tenant tables.
+- Fixed whitespace causing the production-regression workflow to fail. New CI verification is pending.
+- UAE source-gap report: [Grades 5 and 6 Advanced](./UAE_ADVANCED_GRADES_5_6_SOURCE_GAP_2026_2027_AR.md). A deterministic generator was invoked in an isolated GitHub Action, which correctly stopped at missing `SourceCatalog` for G5 Advanced; no placeholder lessons were merged.
+
+**Still unsatisfied:**
+1. Phase29 strict `64/64` educational scope acceptance: source catalogs for Grade 5/6 Advanced not verified, current `62/64`.
+2. Final latest-head CI and full end-to-end practice/authorization/performance gates.
+3. New independent Neon Free **account/project access**, which is not established by the current connector. Old exhausted project must never be reused.
+4. Migration and clean seed on the correct new Neon, Render `Edulytics` (`srv-dakq5n2fngtc73a62i10`) release cutover, post-deploy consumption, monitoring and restore drill.
+
+**What has NOT happened:** No writes to legacy Neon; no new Neon project created through this ChatGPT session; no Render environment edits/deploy; no merge to `main`; no migration of user/school/student/staff/customer data.
+
+**Release gate:** DO NOT MERGE/DEPLOY until all four open groups above pass.
