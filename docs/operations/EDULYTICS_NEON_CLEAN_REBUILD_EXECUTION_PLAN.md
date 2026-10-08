@@ -63,3 +63,12 @@ These are source entries, not a validated distinct/import-ready database count. 
     python3 tools/phase29/full_curriculum_closure_audit.py --strict --write-report
 
 The clean Neon plan does not supersede the separate curriculum-intelligence and advanced mathematics engine roadmaps.
+
+## Verification 2026-10-08
+
+- [GitHub Actions run #37845473560](https://github.com/EIAS79/Edulytics/actions/runs/37845473560): **success** on the latest implementation commit.
+- Python inventory regression suite: **5 passed**.
+- Actual source corpus: **5,110 lesson entries, 5,110 unique codes, 0 structural errors, 0 missing-translation warnings**; this still does not certify the database import or educational QA.
+- .NET solution build: **succeeded**.
+- Focused bootstrap and curriculum contract tests: **11 passed, 0 failed**.
+- New Neon project, Render deployment, full end-to-end migration: **not yet performed**.
