@@ -337,11 +337,20 @@ builder.Services
 var app =
     builder.Build();
 
+var cleanBootstrap =
+    app.Configuration.GetValue<bool>("Edulytics:Deployment:CleanBootstrap");
+var readCanonicalJson =
+    app.Configuration.GetValue<bool>("Edulytics:LessonContent:ReadFromJson");
 var runStartupDataMaintenance =
-    app.Configuration
-        .GetValue<bool?>(
-            "Edulytics:Deployment:RunStartupDataMaintenance") ??
-    true;
+    app.Configuration.GetValue<bool?>(
+        "Edulytics:Deployment:RunStartupDataMaintenance") ??
+    !cleanBootstrap;
+
+if (cleanBootstrap && !readCanonicalJson)
+{
+    throw new InvalidOperationException(
+        "CleanBootstrap requires ReadFromJson=true to avoid persisting lesson prose.");
+}
 
 using (var scope =
        app.Services.CreateScope())
@@ -396,19 +405,23 @@ using (var scope =
         await mathematicsPedagogicalLessonSeeder
             .SeedAsync();
 
-        var approvedCorrectionTimer =
-            Stopwatch.StartNew();
+        if (readCanonicalJson)
+        {
+            await mathematicsCanonicalLessonContentSeeder
+                .SeedMetadataOnlyAsync();
 
-        await mathematicsCanonicalLessonContentSeeder
-            .SeedApprovedProductionCorrectionsAsync();
-
-        approvedCorrectionTimer.Stop();
-
-        Console.WriteLine(
-            $"STARTUP_APPROVED_CONTENT_CORRECTIONS_COMPLETED elapsedMs={approvedCorrectionTimer.ElapsedMilliseconds}");
-
-        await mathematicsCanonicalLessonContentSeeder
-            .SeedAsync();
+            Console.WriteLine("STARTUP_CANONICAL_JSON_METADATA_ONLY_SEEDED");
+        }
+        else
+        {
+            var approvedCorrectionTimer = Stopwatch.StartNew();
+            await mathematicsCanonicalLessonContentSeeder
+                .SeedApprovedProductionCorrectionsAsync();
+            approvedCorrectionTimer.Stop();
+            Console.WriteLine(
+                $"STARTUP_APPROVED_CONTENT_CORRECTIONS_COMPLETED elapsedMs={approvedCorrectionTimer.ElapsedMilliseconds}");
+            await mathematicsCanonicalLessonContentSeeder.SeedAsync();
+        }
 
         maintenanceTimer.Stop();
 
@@ -417,19 +430,16 @@ using (var scope =
     }
     else
     {
-        var approvedCorrectionTimer =
-            Stopwatch.StartNew();
-
-        await mathematicsCanonicalLessonContentSeeder
-            .SeedApprovedProductionCorrectionsAsync();
-
-        approvedCorrectionTimer.Stop();
-
-        Console.WriteLine(
-            $"STARTUP_APPROVED_CONTENT_CORRECTIONS_COMPLETED elapsedMs={approvedCorrectionTimer.ElapsedMilliseconds}");
-
-        Console.WriteLine(
-            "STARTUP_DATA_MAINTENANCE_SKIPPED");
+        if (!readCanonicalJson)
+        {
+            var approvedCorrectionTimer = Stopwatch.StartNew();
+            await mathematicsCanonicalLessonContentSeeder
+                .SeedApprovedProductionCorrectionsAsync();
+            approvedCorrectionTimer.Stop();
+            Console.WriteLine(
+                $"STARTUP_APPROVED_CONTENT_CORRECTIONS_COMPLETED elapsedMs={approvedCorrectionTimer.ElapsedMilliseconds}");
+        }
+        Console.WriteLine("STARTUP_DATA_MAINTENANCE_SKIPPED");
     }
 }
 
