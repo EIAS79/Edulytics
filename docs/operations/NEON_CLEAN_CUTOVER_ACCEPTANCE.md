@@ -113,4 +113,3 @@ The Neon connector was reauthorized and these checks **succeeded**:
 - This branch is for migration and smoke-test validation; no SQL migrations or seed were applied to Neon at this point. The original production branch remains untouched.
 
 **Previous authorization error resolved.** Remaining go-live gates: verify UAE mathematics source status for grades 5/6 Advanced without speculation; source coverage/CI tests; allocate staging compute only when required; apply EF migrations and approved JSON metadata-only seeding to the staging branch; production cutover and quotas/rollback after all acceptance tests. Do not use the exhausted old Neon project.
-
