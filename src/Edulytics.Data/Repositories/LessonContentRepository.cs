@@ -10,8 +10,17 @@ namespace Edulytics.Data.Repositories;
 public sealed class LessonContentRepository : ILessonContentRepository
 {
     private readonly EdulyticsDbContext _db;
+    private readonly bool _readFromJson;
+    private static readonly EmbeddedCanonicalLessonContentIndex JsonIndex = new();
 
-    public LessonContentRepository(EdulyticsDbContext db) => _db = db;
+    public LessonContentRepository(
+        EdulyticsDbContext db,
+        Microsoft.Extensions.Configuration.IConfiguration? configuration = null)
+    {
+        _db = db;
+        _readFromJson = configuration?.GetValue<bool>(
+            "Edulytics:LessonContent:ReadFromJson") == true;
+    }
 
     public async Task<IReadOnlyList<CanonicalCurriculumContextRecord>> ListStaffAdoptionsAsync(
         Guid schoolId,
@@ -251,6 +260,49 @@ public sealed class LessonContentRepository : ILessonContentRepository
 
         if (contents.Length == 0)
             return [];
+
+        if (_readFromJson)
+        {
+            var codes = await _db.CurriculumPedagogicalLessons
+                .AsNoTracking()
+                .Where(x => lessonIds.Contains(x.Id))
+                .Select(x => new { x.Id, x.Code })
+                .ToArrayAsync(cancellationToken);
+
+            var codeById = codes.ToDictionary(x => x.Id, x => x.Code);
+            var result = new List<CanonicalLessonContentRecord>(contents.Length);
+
+            foreach (var content in contents)
+            {
+                if (!codeById.TryGetValue(content.PedagogicalLessonId, out var code) ||
+                    !JsonIndex.TryGet(code, out var body))
+                {
+                    // Do not expose a lesson without an approved JSON body.
+                    continue;
+                }
+
+                if (!string.Equals(content.ContentVersion,
+                        body.ContentVersion, StringComparison.Ordinal) ||
+                    content.Status != body.Status)
+                {
+                    throw new InvalidOperationException(
+                        "Canonical JSON/metadata version or publication drift: " + code);
+                }
+
+                result.Add(new CanonicalLessonContentRecord(
+                    content.Id,
+                    content.FrameworkVersionId,
+                    content.PedagogicalLessonId,
+                    content.Status,
+                    content.ContentVersion,
+                    content.VerifiedAtUtc,
+                    content.PublishedAtUtc,
+                    content.UpdatedAtUtc,
+                    body.Translations));
+            }
+
+            return result;
+        }
 
         var contentIds = contents
             .Select(x => x.Id)
