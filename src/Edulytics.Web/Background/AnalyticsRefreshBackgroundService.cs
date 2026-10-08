@@ -44,6 +44,10 @@ public sealed class AnalyticsRefreshBackgroundService
     protected override async Task ExecuteAsync(
         CancellationToken stoppingToken)
     {
+        var idleBackoff = new IdlePollBackoff(
+            _options.AnalyticsPollDelayMilliseconds,
+            _options.MaxIdlePollDelayMilliseconds);
+
         _logger.LogInformation(
             "Analytics coalescing worker "
             + "{WorkerId} started.",
@@ -56,12 +60,14 @@ public sealed class AnalyticsRefreshBackgroundService
                 var found =
                     await ProcessOneAsync();
 
-                if (!found)
+                if (found)
+                {
+                    idleBackoff.Reset();
+                }
+                else
                 {
                     await Task.Delay(
-                        TimeSpan.FromMilliseconds(
-                            _options
-                                .AnalyticsPollDelayMilliseconds),
+                        idleBackoff.NextDelay(),
                         stoppingToken);
                 }
             }
@@ -79,10 +85,13 @@ public sealed class AnalyticsRefreshBackgroundService
                     "Analytics coalescing loop "
                     + "failed.");
 
+                idleBackoff.Reset();
+
                 await Task.Delay(
                     TimeSpan.FromMilliseconds(
-                        _options
-                            .ErrorDelayMilliseconds),
+                        Math.Max(
+                            IdlePollBackoff.MinimumDelayMilliseconds,
+                            _options.ErrorDelayMilliseconds)),
                     stoppingToken);
             }
         }
