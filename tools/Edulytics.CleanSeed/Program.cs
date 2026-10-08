@@ -158,6 +158,30 @@ Console.WriteLine(
     "legacySqlQueries=2 jsonHybridSqlQueries=1 " +
     "bodyParity=NOT_MEASURED(no_prose_rows)");
 
+// Distinct 25-lesson batch: query count must remain constant as catalogue
+// sizes grow. This is not a p95 latency, throughput or egress benchmark.
+var batchIds = await db.CurriculumPedagogicalLessons
+    .AsNoTracking()
+    .OrderBy(x => x.Code)
+    .Select(x => x.Id)
+    .Take(25)
+    .ToArrayAsync();
+var batchStart = queryMeter.ReaderCommands.Count;
+var batchBodies = await new LessonContentRepository(db, jsonReadConfiguration)
+    .ListCanonicalContentsAsync(batchIds);
+var batchSqlCount = queryMeter.ReaderCommands.Count - batchStart;
+if (batchIds.Length != 25 || batchBodies.Count != batchIds.Length ||
+    batchSqlCount != 1)
+{
+    throw new InvalidOperationException(
+        $"JSON batch query budget failed: ids={batchIds.Length}, " +
+        $"bodies={batchBodies.Count}, queries={batchSqlCount}.");
+}
+Console.WriteLine(
+    "CLEAN_ARCHITECTURE_BATCH_QUERY_PASS " +
+    "lessons=25 jsonHybridSqlQueries=1 proseSqlQueries=0");
+
+
 if (sampleContent.Count != 1 ||
     sampleContent[0].Translations.Count == 0 ||
     string.IsNullOrWhiteSpace(sampleContent[0].Translations[0].Explanation))
