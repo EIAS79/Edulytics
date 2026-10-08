@@ -55,6 +55,10 @@ jobs:
           dotnet build Edulytics.sln --no-restore
       - name: Clean bootstrap and curriculum seed contract tests
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --filter 'FullyQualifiedName~EdulyticsDatabaseBootstrapperTests|FullyQualifiedName~StagingCurriculumBootstrapContractTests|FullyQualifiedName~CleanNeonEmbeddedJsonReadTests'
+      - name: Full .NET application regression suite
+        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore
+      - name: Architecture boundary checks
+        run: python3 scripts/ci-architecture-gate.py
       - name: Strict curriculum-to-lesson closure
         run: python3 tools/phase29/full_curriculum_closure_audit.py --strict --write-report
       - name: Upload non-personal audit report
