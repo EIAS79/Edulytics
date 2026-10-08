@@ -1,0 +1,41 @@
+name: Neon Clean Rebuild - Offline Content Inventory
+
+on:
+  push:
+    branches:
+      - feat/neon-clean-bootstrap-json-content-20261008
+    paths:
+      - 'tools/phase29/clean_neon_content_inventory.py'
+      - 'tests/python/test_clean_neon_content_inventory.py'
+      - 'src/Edulytics.Core/Curriculum/**'
+      - '.github/workflows/neon-clean-content-inventory.yml'
+  pull_request:
+    paths:
+      - 'tools/phase29/clean_neon_content_inventory.py'
+      - 'tests/python/test_clean_neon_content_inventory.py'
+      - 'src/Edulytics.Core/Curriculum/**'
+      - '.github/workflows/neon-clean-content-inventory.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-content-inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run inventory regression tests
+        run: python3 -m unittest discover -s tests/python -p 'test_clean_neon_content_inventory.py' -v
+      - name: Inventory all curriculum files without Neon connection
+        run: python3 tools/phase29/clean_neon_content_inventory.py --strict --write-report
+      - name: Upload non-personal audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clean-neon-content-inventory
+          path: artifacts/phase29/clean-neon-content-inventory.json
+          retention-days: 14
