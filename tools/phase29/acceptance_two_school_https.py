@@ -124,7 +124,7 @@ for key, schoolname in SCHOOLS:
     assert attempt_csrf and question_ids, (key, "assessment form incomplete")
     fields = [("__RequestVerificationToken", attempt_csrf.group(1))]
     for question_id in question_ids:
-        fields.extend((("questionIds", question_id), ("responses", "1")))
+        fields.extend((("questionIds", question_id), ("responses", "")))
     try:
         with student.open(urllib.request.Request(
             BASE + "/student/assessments/" + assessment_id + "/submit",
