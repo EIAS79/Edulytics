@@ -21,6 +21,14 @@ internal static class PresentationDemoProvisioner
         ("demo.student@edulytiks.com", RoleNames.Student)
     ];
 
+    private static readonly (string Email, string Role)[] SecondDemoUsers =
+    [
+        ("demo2.admin@edulytiks.com", RoleNames.SchoolAdmin),
+        ("demo2.supervisor@edulytiks.com", RoleNames.SubjectSupervisor),
+        ("demo2.teacher@edulytiks.com", RoleNames.Teacher),
+        ("demo2.student@edulytiks.com", RoleNames.Student)
+    ];
+
     public static async Task RunAsync(
         EdulyticsDbContext db,
         UserManager<ApplicationUser> userManager,
@@ -83,6 +91,27 @@ internal static class PresentationDemoProvisioner
                 school.Id,
                 createdUsers[RoleNames.Student].Id);
 
+            if (configuration.GetValue<bool>("Edulytics:PresentationDemo:SecondSchool"))
+            {
+                var secondSchool = await EnsureDemoSchoolAsync(
+                    db, "EDULYTICS-DEMO-SECOND", "Edulytics Second Demo School");
+                var secondUsers = new Dictionary<string, ApplicationUser>(
+                    StringComparer.OrdinalIgnoreCase);
+
+                foreach (var definition in SecondDemoUsers)
+                {
+                    secondUsers[definition.Role] = await EnsureDemoUserAsync(
+                        userManager, secondSchool.Id, definition.Email,
+                        definition.Role, password);
+                }
+
+                await EnsureStudentProfileAsync(
+                    db, secondSchool.Id, secondUsers[RoleNames.Student].Id,
+                    "DEMO-STU-SECOND");
+                Console.WriteLine(
+                    $"PRESENTATION_DEMO_SECOND_SCHOOL_VERIFIED schoolId={secondSchool.Id:D} users=4");
+            }
+
             await transaction.CommitAsync();
 
             Console.WriteLine(
@@ -97,10 +126,12 @@ internal static class PresentationDemoProvisioner
     }
 
     private static async Task<School> EnsureDemoSchoolAsync(
-        EdulyticsDbContext db)
+        EdulyticsDbContext db,
+        string code = DemoSchoolCode,
+        string name = "Edulytics Demo School")
     {
         var school = await db.Schools.SingleOrDefaultAsync(
-            x => x.NormalizedSchoolCode == DemoSchoolCode);
+            x => x.NormalizedSchoolCode == code);
 
         var now = DateTime.UtcNow;
 
@@ -109,9 +140,9 @@ internal static class PresentationDemoProvisioner
             school = new School
             {
                 Id = Guid.NewGuid(),
-                Name = "Edulytics Demo School",
-                SchoolCode = DemoSchoolCode,
-                NormalizedSchoolCode = DemoSchoolCode,
+                Name = name,
+                SchoolCode = code,
+                NormalizedSchoolCode = code,
                 Status = SchoolStatus.Active,
                 CountryCode = "PL",
                 City = "Warsaw",
@@ -129,7 +160,7 @@ internal static class PresentationDemoProvisioner
         }
         else
         {
-            school.Name = "Edulytics Demo School";
+            school.Name = name;
             school.Status = SchoolStatus.Active;
             school.CountryCode = "PL";
             school.City = "Warsaw";
@@ -142,7 +173,7 @@ internal static class PresentationDemoProvisioner
         }
 
         Console.WriteLine(
-            $"PRESENTATION_DEMO_SCHOOL_VERIFIED schoolId={school.Id:D} code={DemoSchoolCode}");
+            $"PRESENTATION_DEMO_SCHOOL_VERIFIED schoolId={school.Id:D} code={code}");
 
         return school;
     }
@@ -233,7 +264,8 @@ internal static class PresentationDemoProvisioner
     private static async Task EnsureStudentProfileAsync(
         EdulyticsDbContext db,
         Guid schoolId,
-        Guid studentUserId)
+        Guid studentUserId,
+        string studentNumber = "DEMO-STU-001")
     {
         var profile = await db.StudentProfiles.SingleOrDefaultAsync(
             x => x.UserId == studentUserId);
@@ -247,8 +279,8 @@ internal static class PresentationDemoProvisioner
                 Id = Guid.NewGuid(),
                 SchoolId = schoolId,
                 UserId = studentUserId,
-                StudentNumber = "DEMO-STU-001",
-                NormalizedStudentNumber = "DEMO-STU-001",
+                StudentNumber = studentNumber,
+                NormalizedStudentNumber = studentNumber,
                 FirstName = "Alex",
                 LastName = "Morgan",
                 DisplayName = "Alex Morgan",
@@ -270,8 +302,8 @@ internal static class PresentationDemoProvisioner
                     "The demo student profile is linked to a different school.");
             }
 
-            profile.StudentNumber = "DEMO-STU-001";
-            profile.NormalizedStudentNumber = "DEMO-STU-001";
+            profile.StudentNumber = studentNumber;
+            profile.NormalizedStudentNumber = studentNumber;
             profile.FirstName = "Alex";
             profile.LastName = "Morgan";
             profile.DisplayName = "Alex Morgan";

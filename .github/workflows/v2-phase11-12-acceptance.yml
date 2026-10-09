@@ -90,6 +90,7 @@ jobs:
           RENDER_SERVICE_ID: srv-da1o4url550s73aecsn0
           Edulytics__Deployment__CleanBootstrap: 'false'
           Edulytics__PresentationDemo__Provision: 'true'
+          Edulytics__PresentationDemo__SecondSchool: 'true'
           ASPNETCORE_ENVIRONMENT: Staging
           Edulytics__Deployment__RunStartupMigrations: 'false'
           Edulytics__Deployment__SeedCurriculum: 'false'
@@ -130,7 +131,7 @@ jobs:
           from pathlib import Path
           rows=tuple(map(int,Path('/tmp/phase-uat-roles-counts.txt').read_text().strip().split('|')))
           print("DISPOSABLE_FOUR_ROLE_BOOTSTRAP",rows)
-          assert rows==(1,4,1), f"Role-bootstrap fixture was not initialized: {rows}"
+          assert rows==(2,8,2), f"Role-bootstrap fixture was not initialized: {rows}"
           PY
           login_status="$(curl --silent --show-error --cacert /tmp/phase-uat-cert.pem --output /tmp/phase-uat-login.html --write-out '%{http_code}' https://localhost:5051/account/login || true)"
           echo "DISPOSABLE_LOGIN_HTTP_STATUS $login_status"
@@ -157,6 +158,10 @@ jobs:
               ('demo.supervisor@edulytiks.com', 'SubjectSupervisor'),
               ('demo.teacher@edulytiks.com', 'Teacher'),
               ('demo.student@edulytiks.com', 'Student'),
+              ('demo2.admin@edulytiks.com', 'SchoolAdmin'),
+              ('demo2.supervisor@edulytiks.com', 'SubjectSupervisor'),
+              ('demo2.teacher@edulytiks.com', 'Teacher'),
+              ('demo2.student@edulytiks.com', 'Student'),
           ]
           # Missing antiforgery token must never establish a session.
           probe_jar = http.cookiejar.CookieJar()
