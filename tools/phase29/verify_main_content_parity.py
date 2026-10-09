@@ -57,6 +57,24 @@ def run():
             errors.append(f"modified original curriculum standards/outcomes/mapping: {path}")
         compared_packs += 1
     print(f"MAIN_TO_V2_OFFICIAL_PACK_PARITY compared={compared_packs} errors={len(errors)}")
+    # All original published academic blueprints are immutable in a storage-only migration.
+    blueprint_dir = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs"
+    blueprint_files = subprocess.check_output(
+        ["git", "ls-tree", "-r", "--name-only", "origin/main", "--", blueprint_dir],
+        cwd=ROOT, text=True,
+    ).splitlines()
+    verified_blueprints = 0
+    for path in blueprint_files:
+        if not path.endswith(".lesson-blueprint.json"):
+            continue
+        current = ROOT / path
+        if not current.is_file():
+            errors.append(f"missing original lesson blueprint: {path}")
+            continue
+        if subprocess.check_output(["git", "show", f"origin/main:{path}"], cwd=ROOT) != current.read_bytes():
+            errors.append(f"changed original lesson blueprint: {path}")
+        verified_blueprints += 1
+    print(f"MAIN_TO_V2_BLUEPRINT_PARITY compared={verified_blueprints}")
     missing = sorted(set(baseline) - set(candidate))
     changed = sorted(key for key in baseline.keys() & candidate.keys()
                      if baseline[key].get("Translations", baseline[key].get("translations"))

@@ -1,0 +1,236 @@
+name: V2 Phase 2-3-6-8-11-12 Acceptance
+
+on:
+  pull_request:
+    paths:
+      - 'docs/operations/PHASE11_12_FULL_PRODUCT_ACCEPTANCE_20261009.md'
+      - 'docs/adr/ADR-0007-educational-storage-architecture-evaluation-ar.md'
+      - '.github/workflows/v2-phase11-12-acceptance.yml'
+      - 'src/**'
+      - 'tools/phase29/**'
+      - 'tools/Edulytics.CleanSeed/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-full-product-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: edulytics_clean_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      ConnectionStrings__DefaultConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ConnectionStrings__MigrationConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
+      EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
+      Edulytics__Deployment__CleanBootstrap: 'true'
+      Edulytics__LessonContent__ReadFromJson: 'true'
+      Edulytics__Deployment__RunStartupDataMaintenance: 'false'
+      Edulytics__PresentationDemo__Provision: 'false'
+      Edulytics__MeetingDemo__ResetAndSeed: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify all original lessons and official source packs
+        run: python3 tools/phase29/verify_main_content_parity.py
+      - name: Preserve historical 62/64 finding without blocking storage acceptance
+        run: python3 tools/phase29/full_curriculum_closure_audit.py --write-report
+      - name: Restore, build and run full application regression
+        run: |
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --no-restore
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --logger 'trx;LogFileName=v2-full-regression.trx' --results-directory artifacts/acceptance
+      - name: Apply clean PostgreSQL 18 schema
+        run: dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
+      - name: Compile and run guarded metadata-only canonical seed
+        run: dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Assert zero people and prose, exact identity and outcome counts
+        env:
+          PGPASSWORD: postgres
+        run: |
+          python3 - <<'PY'
+          import subprocess
+          sql = """SELECT
+            (SELECT count(*) FROM "CurriculumFrameworks"),
+            (SELECT count(*) FROM "CurriculumPedagogicalLessons"),
+            (SELECT count(*) FROM "CurriculumPedagogicalLessonOutcomes"),
+            (SELECT count(*) FROM "CurriculumLessonContents"),
+            (SELECT count(*) FROM "CurriculumLessonContentTranslations"),
+            (SELECT count(*) FROM "AspNetUsers"),
+            (SELECT count(*) FROM "Schools");"""
+          result = subprocess.check_output(['psql','-h','127.0.0.1','-U','postgres','-d','edulytics_clean_ci','-A','-t','-F','|','-c',sql],text=True).strip()
+          data = tuple(map(int,result.split('|')))
+          expected = (4,5110,5749,5110,0,0,0)
+          print('ACCEPTANCE_DB_COUNTS', data, 'EXPECTED', expected)
+          assert data == expected, 'Database invariant failure'
+          PY
+      - name: Provision disposable school and four role accounts through application bootstrap
+        env:
+          PGPASSWORD: postgres
+          RENDER_SERVICE_ID: srv-da1o4url550s73aecsn0
+          Edulytics__Deployment__CleanBootstrap: 'false'
+          Edulytics__PresentationDemo__Provision: 'true'
+          ASPNETCORE_ENVIRONMENT: Staging
+          Edulytics__Deployment__RunStartupMigrations: 'false'
+          Edulytics__Deployment__SeedCurriculum: 'false'
+        run: |
+          set -euo pipefail
+          demo_password="$(openssl rand -hex 24)Aa1!"
+          echo "::add-mask::$demo_password"
+          export Edulytics__PresentationDemo__Password="$demo_password"
+          # Dedicated local TLS endpoint. Keep antiforgery SecurePolicy=Always unchanged.
+          openssl req -x509 -newkey rsa:2048 -nodes -days 1 \
+            -keyout /tmp/phase-uat-key.pem -out /tmp/phase-uat-cert.pem \
+            -subj '/CN=localhost' \
+            -addext 'subjectAltName=DNS:localhost,IP:127.0.0.1' >/dev/null 2>&1
+          openssl pkcs12 -export -out /tmp/phase-uat-identity.pfx \
+            -inkey /tmp/phase-uat-key.pem -in /tmp/phase-uat-cert.pem \
+            -passout pass:local-test-tls >/dev/null 2>&1
+          export ASPNETCORE_URLS='https://127.0.0.1:5051'
+          export ASPNETCORE_Kestrel__Certificates__Default__Path=/tmp/phase-uat-identity.pfx
+          export ASPNETCORE_Kestrel__Certificates__Default__Password=local-test-tls
+          dotnet run --no-build --no-launch-profile --project src/Edulytics.Web/Edulytics.Web.csproj > /tmp/phase-uat-web.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          healthy=false
+          for attempt in $(seq 1 90); do
+            if curl --fail --silent --max-time 2 --cacert /tmp/phase-uat-cert.pem https://localhost:5051/health/ready > /tmp/phase-uat-health.json; then
+              healthy=true
+              break
+            fi
+            if ! kill -0 "$server_pid" 2>/dev/null; then
+              sed -E 's/([Pp]assword=)[^ ;]+/\\1[REDACTED]/g' /tmp/phase-uat-web.log | tail -60
+              exit 1
+            fi
+            sleep 2
+          done
+          test "$healthy" = true
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -A -t -F '|' -c 'SELECT (SELECT count(*) FROM "Schools"), (SELECT count(*) FROM "AspNetUsers"), (SELECT count(*) FROM "StudentProfiles");' > /tmp/phase-uat-roles-counts.txt
+          python3 - <<'PY'
+          from pathlib import Path
+          rows=tuple(map(int,Path('/tmp/phase-uat-roles-counts.txt').read_text().strip().split('|')))
+          print("DISPOSABLE_FOUR_ROLE_BOOTSTRAP",rows)
+          assert rows==(1,4,1), f"Role-bootstrap fixture was not initialized: {rows}"
+          PY
+          login_status="$(curl --silent --show-error --cacert /tmp/phase-uat-cert.pem --output /tmp/phase-uat-login.html --write-out '%{http_code}' https://localhost:5051/account/login || true)"
+          echo "DISPOSABLE_LOGIN_HTTP_STATUS $login_status"
+          if [ "$login_status" != "200" ]; then
+            echo "Application diagnostic tail (test environment only):"
+            tail -70 /tmp/phase-uat-web.log | sed -E 's/([Pp]assword=)[^ ;]+/\\1[REDACTED]/g'
+            exit 1
+          fi
+          # Exercise real form POSTs and authenticated redirects over TLS.
+          # All identities live solely in the disposable PostgreSQL CI service.
+          python3 - <<'PY'
+          import http.cookiejar
+          import urllib.error
+          import re
+          import ssl
+          import urllib.parse
+          import urllib.request
+
+          base = 'https://localhost:5051'
+          context = ssl.create_default_context(cafile='/tmp/phase-uat-cert.pem')
+          password = __import__('os').environ['Edulytics__PresentationDemo__Password']
+          users = [
+              ('demo.admin@edulytiks.com', 'SchoolAdmin'),
+              ('demo.supervisor@edulytiks.com', 'SubjectSupervisor'),
+              ('demo.teacher@edulytiks.com', 'Teacher'),
+              ('demo.student@edulytiks.com', 'Student'),
+          ]
+          # Missing antiforgery token must never establish a session.
+          probe_jar = http.cookiejar.CookieJar()
+          probe = urllib.request.build_opener(
+              urllib.request.HTTPCookieProcessor(probe_jar),
+              urllib.request.HTTPSHandler(context=context),
+          )
+          with probe.open(base+'/account/login?culture=en', timeout=15) as response:
+              assert response.status == 200
+          missing_csrf = urllib.request.Request(
+              base+'/account/login?culture=en',
+              data=urllib.parse.urlencode({
+                  'Email': users[0][0], 'Password': password,
+                  'AccountType': users[0][1],
+              }).encode(),
+              method='POST')
+          try:
+              probe.open(missing_csrf, timeout=15)
+              raise AssertionError('Login accepted a request without CSRF')
+          except urllib.error.HTTPError as e:
+              assert e.code in (400, 403, 404), ('CSRF expected rejection', e.code)
+          assert not any('application' in c.name.lower() for c in probe_jar), 'Missing CSRF created an auth session'
+          print('DISPOSABLE_HTTPS_CSRF_REJECTION_PASS')
+          # Valid credentials paired with another registered role must fail.
+          wrong_jar = http.cookiejar.CookieJar()
+          wrong = urllib.request.build_opener(
+              urllib.request.HTTPCookieProcessor(wrong_jar),
+              urllib.request.HTTPSHandler(context=context),
+          )
+          with wrong.open(base+'/account/login?culture=en', timeout=15) as response:
+              page = response.read().decode('utf-8')
+          wrong_token = re.search(r'name="__RequestVerificationToken"[^>]*value="([^"]+)"', page)
+          assert wrong_token
+          wrong_body = urllib.parse.urlencode({
+              'Email': users[0][0], 'Password': password,
+              'AccountType': 'Student',
+              '__RequestVerificationToken': wrong_token.group(1),
+          }).encode()
+          with wrong.open(urllib.request.Request(base+'/account/login?culture=en',
+                           data=wrong_body, method='POST'), timeout=15) as response:
+              assert urllib.parse.urlparse(response.url).path.lower() == '/account/login'
+          assert not any('application' in c.name.lower() for c in wrong_jar), 'Wrong-role created an auth session'
+          print('DISPOSABLE_HTTPS_WRONG_ROLE_REJECTION_PASS')
+          for email, role in users:
+              jar = http.cookiejar.CookieJar()
+              opener = urllib.request.build_opener(
+                  urllib.request.HTTPCookieProcessor(jar),
+                  urllib.request.HTTPSHandler(context=context),
+              )
+              with opener.open(base+'/account/login?culture=en', timeout=15) as response:
+                  html = response.read().decode('utf-8')
+                  assert response.status == 200, (role, 'login GET')
+              token = re.search(r'name="__RequestVerificationToken"[^>]*value="([^"]+)"', html)
+              assert token, (role, 'missing CSRF token')
+              body = urllib.parse.urlencode({
+                  'Email': email, 'Password': password,
+                  'AccountType': role, '__RequestVerificationToken': token.group(1),
+              }).encode()
+              request = urllib.request.Request(base+'/account/login?culture=en', data=body, method='POST')
+              with opener.open(request, timeout=20) as response:
+                  target = urllib.parse.urlparse(response.url).path.lower()
+                  assert response.status == 200, (role, 'login POST', response.status)
+                  assert target != '/account/login', (role, 'did not establish login', target)
+              assert any(c.secure for c in jar), (role, 'missing secure session cookie')
+              print('DISPOSABLE_HTTPS_ROLE_LOGIN_PASS', role, target)
+          PY
+          echo 'DISPOSABLE_ROLE_BOOTSTRAP_PASS'
+      - name: Assert application layer boundaries
+        run: python3 scripts/ci-architecture-gate.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v2-phase-acceptance
+          path: |
+            artifacts/acceptance/**
+            artifacts/phase29/full-curriculum-closure-audit.json
+          retention-days: 30

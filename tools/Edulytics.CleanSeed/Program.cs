@@ -261,6 +261,28 @@ Console.WriteLine(
     "lessons=25 jsonHybridSqlQueries=1 proseSqlQueries=0");
 
 
+// Stage 2: bounded, reproducible warm-cache lookup timing on a local or approved
+// clean PostgreSQL database. These are operational samples, NOT production
+// egress, cold-start p95, or identical-payload proof for the legacy path.
+var latencySamplesMs = new List<double>(20);
+for (var iteration = 0; iteration < 20; iteration++)
+{
+    var started = System.Diagnostics.Stopwatch.GetTimestamp();
+    var repeated = await new LessonContentRepository(db, jsonReadConfiguration)
+        .ListCanonicalContentsAsync(batchIds);
+    if (repeated.Count != 25)
+        throw new InvalidOperationException("JSON benchmark returned an incomplete lesson batch.");
+    latencySamplesMs.Add(System.Diagnostics.Stopwatch.GetElapsedTime(started).TotalMilliseconds);
+}
+latencySamplesMs.Sort();
+var warmP50 = latencySamplesMs[9];
+var warmP95 = latencySamplesMs[18];
+Console.WriteLine(
+    $"CLEAN_JSON_WARM_BATCH_LATENCY lessons=25 runs=20 " +
+    $"p50Ms={warmP50:F3} p95Ms={warmP95:F3} " +
+    "comparisonScope=hybrid-only noColdStart=true " +
+    "neonEgress=NOT_MEASURED legacyBodyParity=NOT_MEASURED");
+
 if (sampleContent.Count != 1 ||
     sampleContent[0].Translations.Count == 0 ||
     string.IsNullOrWhiteSpace(sampleContent[0].Translations[0].Explanation))
