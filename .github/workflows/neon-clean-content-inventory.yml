@@ -5,6 +5,9 @@ on:
     branches:
       - feat/neon-clean-bootstrap-json-content-20261008
     paths:
+      - 'Dockerfile'
+      - 'docker/render-entrypoint.sh'
+      - 'tools/Edulytics.CleanSeed/**'
       - 'tools/phase29/clean_neon_content_inventory.py'
       - 'tools/phase29/verify_main_content_parity.py'
       - 'tests/python/test_clean_neon_content_inventory.py'
@@ -58,6 +61,11 @@ jobs:
         run: |
           dotnet restore Edulytics.sln
           dotnet build Edulytics.sln --no-restore
+      - name: Verify production bootstrap packaging prerequisites
+        run: |
+          sh -n docker/render-entrypoint.sh
+          dotnet restore tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+          dotnet publish tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj -c Release --no-restore -o /tmp/edulytics-clean-seed
       - name: Clean bootstrap and curriculum seed contract tests
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --filter 'FullyQualifiedName~EdulyticsDatabaseBootstrapperTests|FullyQualifiedName~StagingCurriculumBootstrapContractTests|FullyQualifiedName~CleanNeonEmbeddedJsonReadTests'
       - name: Full .NET application regression suite
