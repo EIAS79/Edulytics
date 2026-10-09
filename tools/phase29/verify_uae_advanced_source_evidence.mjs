@@ -42,5 +42,6 @@ const count = (g, v, maxUnit = 999) => key(g, v).printedUnits
 assert.equal(count(5, 1), 44, 'G5 Advanced V1 printed TOC lessons');
 assert.equal(count(5, 2), 48, 'G5 Advanced V2 printed TOC lessons');
 assert.equal(count(6, 1, 5), 33, 'G6 Advanced V1 first five modules');
-console.log('UAE_ADVANCED_SOURCE_EVIDENCE_PASS: G5 V1=44, G5 V2=48, G6 modules 1-5=33');
+assert.equal(count(6, 1), 59, 'G6 Advanced 2025-2026 V1 all 10 modules');
+console.log('UAE_ADVANCED_SOURCE_EVIDENCE_PASS: G5 V1=44, G5 V2=48, G6 V1=59 (first 5 modules=33)');
 console.log('This does NOT assert full 64/64 closure or approve any production deployment.');
