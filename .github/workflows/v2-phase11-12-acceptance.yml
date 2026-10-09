@@ -98,13 +98,23 @@ jobs:
           demo_password="$(openssl rand -hex 24)Aa1!"
           echo "::add-mask::$demo_password"
           export Edulytics__PresentationDemo__Password="$demo_password"
-          export ASPNETCORE_URLS="http://127.0.0.1:5050"
+          # Dedicated local TLS endpoint. Keep antiforgery SecurePolicy=Always unchanged.
+          openssl req -x509 -newkey rsa:2048 -nodes -days 1 \
+            -keyout /tmp/phase-uat-key.pem -out /tmp/phase-uat-cert.pem \
+            -subj '/CN=localhost' \
+            -addext 'subjectAltName=DNS:localhost,IP:127.0.0.1' >/dev/null 2>&1
+          openssl pkcs12 -export -out /tmp/phase-uat-identity.pfx \
+            -inkey /tmp/phase-uat-key.pem -in /tmp/phase-uat-cert.pem \
+            -passout pass:local-test-tls >/dev/null 2>&1
+          export ASPNETCORE_URLS='https://127.0.0.1:5051'
+          export ASPNETCORE_Kestrel__Certificates__Default__Path=/tmp/phase-uat-identity.pfx
+          export ASPNETCORE_Kestrel__Certificates__Default__Password=local-test-tls
           dotnet run --no-build --no-launch-profile --project src/Edulytics.Web/Edulytics.Web.csproj > /tmp/phase-uat-web.log 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
           healthy=false
           for attempt in $(seq 1 90); do
-            if curl --fail --silent --max-time 2 http://127.0.0.1:5050/health/ready > /tmp/phase-uat-health.json; then
+            if curl --fail --silent --max-time 2 --cacert /tmp/phase-uat-cert.pem https://localhost:5051/health/ready > /tmp/phase-uat-health.json; then
               healthy=true
               break
             fi
@@ -122,7 +132,7 @@ jobs:
           print("DISPOSABLE_FOUR_ROLE_BOOTSTRAP",rows)
           assert rows==(1,4,1), f"Role-bootstrap fixture was not initialized: {rows}"
           PY
-          login_status="$(curl --silent --show-error --output /tmp/phase-uat-login.html --write-out '%{http_code}' http://127.0.0.1:5050/account/login || true)"
+          login_status="$(curl --silent --show-error --cacert /tmp/phase-uat-cert.pem --output /tmp/phase-uat-login.html --write-out '%{http_code}' https://localhost:5051/account/login || true)"
           echo "DISPOSABLE_LOGIN_HTTP_STATUS $login_status"
           if [ "$login_status" != "200" ]; then
             echo "Application diagnostic tail (test environment only):"
