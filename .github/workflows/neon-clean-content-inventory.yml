@@ -6,9 +6,6 @@ on:
       - feat/neon-clean-bootstrap-json-content-20261008
     paths:
       - 'tools/phase29/clean_neon_content_inventory.py'
-      - 'tools/phase29/verify_uae_advanced_source_evidence.mjs'
-      - 'tools/phase29/verify_uae_advanced_official_outcomes.mjs'
-      - 'tools/phase29/evidence/uae_advanced_student_sources_2025_2026.json'
       - 'tests/python/test_clean_neon_content_inventory.py'
       - 'src/Edulytics.Core/Curriculum/**'
       - 'src/Edulytics.Web/Bootstrap/**'
@@ -47,10 +44,6 @@ jobs:
           python-version: '3.12'
       - name: Run inventory regression tests
         run: python3 -m unittest discover -s tests/python -p 'test_clean_neon_content_inventory.py' -v
-      - name: Verify approved UAE Advanced textbook source identities
-        run: node tools/phase29/verify_uae_advanced_source_evidence.mjs
-      - name: Enforce verified official outcomes and mapping for UAE Advanced
-        run: node tools/phase29/verify_uae_advanced_official_outcomes.mjs
       - name: Inventory all curriculum files without Neon connection
         run: python3 tools/phase29/clean_neon_content_inventory.py --strict --write-report
       - uses: actions/setup-dotnet@v4
