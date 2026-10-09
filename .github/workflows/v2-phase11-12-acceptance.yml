@@ -1,0 +1,95 @@
+name: V2 Phase 2-3-6-8-11-12 Acceptance
+
+on:
+  pull_request:
+    paths:
+      - 'docs/operations/PHASE11_12_FULL_PRODUCT_ACCEPTANCE_20261009.md'
+      - 'docs/adr/ADR-0007-educational-storage-architecture-evaluation-ar.md'
+      - '.github/workflows/v2-phase11-12-acceptance.yml'
+      - 'src/**'
+      - 'tools/phase29/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-full-product-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: edulytics_clean_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      ConnectionStrings__DefaultConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ConnectionStrings__MigrationConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
+      EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
+      Edulytics__Deployment__CleanBootstrap: 'true'
+      Edulytics__LessonContent__ReadFromJson: 'true'
+      Edulytics__Deployment__RunStartupDataMaintenance: 'false'
+      Edulytics__PresentationDemo__Provision: 'false'
+      Edulytics__MeetingDemo__ResetAndSeed: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify all original lessons and official source packs
+        run: python3 tools/phase29/verify_main_content_parity.py
+      - name: Preserve historical 62/64 finding without blocking storage acceptance
+        run: python3 tools/phase29/full_curriculum_closure_audit.py --write-report
+      - name: Restore, build and run full application regression
+        run: |
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --no-restore
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --logger 'trx;LogFileName=v2-full-regression.trx' --results-directory artifacts/acceptance
+      - name: Apply clean PostgreSQL 18 schema
+        run: dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
+      - name: Compile and run guarded metadata-only canonical seed
+        run: dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Assert zero people and prose, exact identity and outcome counts
+        env:
+          PGPASSWORD: postgres
+        run: |
+          python3 - <<'PY'
+          import subprocess
+          sql = """SELECT
+            (SELECT count(*) FROM "CurriculumFrameworks"),
+            (SELECT count(*) FROM "CurriculumPedagogicalLessons"),
+            (SELECT count(*) FROM "CurriculumPedagogicalLessonOutcomes"),
+            (SELECT count(*) FROM "CurriculumLessonContents"),
+            (SELECT count(*) FROM "CurriculumLessonContentTranslations"),
+            (SELECT count(*) FROM "AspNetUsers"),
+            (SELECT count(*) FROM "Schools");"""
+          result = subprocess.check_output(['psql','-h','127.0.0.1','-U','postgres','-d','edulytics_clean_ci','-A','-t','-F','|','-c',sql],text=True).strip()
+          data = tuple(map(int,result.split('|')))
+          expected = (4,5110,5749,5110,0,0,0)
+          print('ACCEPTANCE_DB_COUNTS', data, 'EXPECTED', expected)
+          assert data == expected, 'Database invariant failure'
+          PY
+      - name: Assert application layer boundaries
+        run: python3 scripts/ci-architecture-gate.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v2-phase-acceptance
+          path: |
+            artifacts/acceptance/**
+            artifacts/phase29/full-curriculum-closure-audit.json
+          retention-days: 30
