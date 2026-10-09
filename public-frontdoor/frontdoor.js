@@ -274,14 +274,9 @@
   function withPublicCulture(url) {
     const target = new URL(url.toString());
     const currentLanguage = preferredLanguage();
-    const isLoginRoute =
-      target.pathname.toLowerCase().replace(/\/+$/, '') === '/account/login';
-
-    target.searchParams.set(
-      'culture',
-      isLoginRoute && currentLanguage === 'ar'
-        ? 'en'
-        : currentLanguage);
+    // Preserve the visitor's selected language for the authentication
+    // flow; the application supports en, pl and ar natively.
+    target.searchParams.set('culture', currentLanguage);
 
     return target;
   }
@@ -511,10 +506,34 @@
     }
   }
 
+  // A dedicated school-demo entry on the official domain. Authentication
+  // stays in the same-origin /__frontdoor-live/demo bridge, not on Render.
+  function installSchoolDemoEntry() {
+    const login = [...document.querySelectorAll('a[href]')].find(anchor => {
+      try {
+        return normalizePath(new URL(anchor.href, window.location.href).pathname)
+          === '/account/login';
+      } catch {
+        return false;
+      }
+    });
+    if (!login || document.querySelector('[data-edulytics-demo-entry]')) return;
+    const selected = preferredLanguage();
+    const demo = document.createElement('a');
+    demo.setAttribute('data-edulytics-demo-entry', 'true');
+    demo.className = login.className + ' edulytics-demo-entry';
+    demo.textContent = selected === 'ar' ? 'تجربة المدارس' :
+      selected === 'pl' ? 'Demo dla szkół' : 'School demo';
+    demo.href = '/__frontdoor-live/demo/account/login?culture=' +
+      encodeURIComponent(selected);
+    login.insertAdjacentElement('afterend', demo);
+  }
+
   restorePreferredLanguage();
 
   document.addEventListener('DOMContentLoaded', () => {
     normalizeStaticLinks();
+    installSchoolDemoEntry();
     installLanguageRouting();
     installBackendRouting();
 

@@ -6,6 +6,7 @@ using Edulytics.Web;
 using Edulytics.Web.Bootstrap;
 using Edulytics.Web.Extensions;
 using Edulytics.Web.Health;
+using Edulytics.Web.Hosting;
 using Edulytics.Web.Hubs;
 using Edulytics.Web.Localization;
 using Edulytics.Web.Middleware;
@@ -445,6 +446,27 @@ using (var scope =
 
 app.UseForwardedHeaders();
 
+// The public static front door already routes /__frontdoor-live/* to this
+// application. Keep the demo tenant on that SAME public origin while proxying
+// only from the approved main service to the dedicated, isolated demo service.
+// Never activate on the demo service itself or on a developer machine.
+app.Use(async (context, next) =>
+{
+    if (app.Configuration.GetValue<bool>("Edulytics:DemoGateway:Enabled") &&
+        string.Equals(
+            Environment.GetEnvironmentVariable("RENDER_SERVICE_ID"),
+            "srv-dakq5n2fngtc73a62i10",
+            StringComparison.Ordinal) &&
+        context.Request.Path.StartsWithSegments(
+            "/__frontdoor-live/demo", out var demoPath))
+    {
+        await DemoSameOriginGateway.ForwardAsync(context, demoPath);
+        return;
+    }
+
+    await next();
+});
+
 app.UseMiddleware<
     CorrelationIdMiddleware>();
 
@@ -490,7 +512,19 @@ app.Use(async (context, next) =>
 {
     const string frontDoorLivePrefix = "/__frontdoor-live";
 
-    if (context.Request.Path.StartsWithSegments(
+    // The dedicated demo application needs PathBase so MVC links, forms,
+    // redirects and auth-cookie paths stay under the same-origin /demo bridge.
+    if (string.Equals(
+            Environment.GetEnvironmentVariable("RENDER_SERVICE_ID"),
+            "srv-db4jtht9fdbs73fioa20",
+            StringComparison.Ordinal) &&
+        context.Request.Path.StartsWithSegments(
+            "/__frontdoor-live/demo", out var demoRemaining))
+    {
+        context.Request.PathBase = "/__frontdoor-live/demo";
+        context.Request.Path = demoRemaining.HasValue ? demoRemaining : "/";
+    }
+    else if (context.Request.Path.StartsWithSegments(
             frontDoorLivePrefix,
             out var remainingPath))
     {

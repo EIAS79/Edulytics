@@ -170,6 +170,15 @@ public static class ServiceCollectionExtensions
             options.Cookie.HttpOnly = true;
             options.Cookie.IsEssential = true;
             options.Cookie.SameSite = SameSiteMode.Strict;
+            // On the official domain the demo shares the HTTPS origin but
+            // must never share its authentication ticket with live tenants.
+            if (string.Equals(
+                    Environment.GetEnvironmentVariable("RENDER_SERVICE_ID"),
+                    "srv-db4jtht9fdbs73fioa20",
+                    StringComparison.Ordinal))
+            {
+                options.Cookie.Name = ".Edulytics.SchoolsDemo.Auth";
+            }
         });
 
         services.AddScoped<EdulyticsDatabaseBootstrapper>();
