@@ -422,10 +422,19 @@ internal static class MeetingDemoProvisioner
         await db.SaveChangesAsync(cancellationToken);
 
         var schoolCount = await db.Schools.CountAsync(cancellationToken);
-        if (schoolCount != activeSchools.Length)
+        if (!disposableCi)
+        {
+            // Preserve the strict twelve-school production rehearsal contract.
+            if (schoolCount != Schools.Length)
+            {
+                throw new InvalidOperationException(
+                    $"Production rehearsal verification failed: expected {Schools.Length} schools, found {schoolCount}.");
+            }
+        }
+        else if (schoolCount != activeSchools.Length)
         {
             throw new InvalidOperationException(
-                $"Production rehearsal verification failed: expected {activeSchools.Length} schools, found {schoolCount}.");
+                $"Disposable rehearsal verification failed: expected {activeSchools.Length} schools, found {schoolCount}.");
         }
 
         var seededCodes = await db.Schools
