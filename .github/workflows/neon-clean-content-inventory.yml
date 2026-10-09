@@ -1,0 +1,96 @@
+name: Neon Clean Rebuild - Offline Content Inventory
+
+on:
+  push:
+    branches:
+      - feat/neon-clean-bootstrap-json-content-20261008
+    paths:
+      - 'Dockerfile'
+      - 'docker/render-entrypoint.sh'
+      - 'tools/Edulytics.CleanSeed/**'
+      - 'tools/phase29/clean_neon_content_inventory.py'
+      - 'tools/phase29/verify_main_content_parity.py'
+      - 'tests/python/test_clean_neon_content_inventory.py'
+      - 'src/Edulytics.Core/Curriculum/**'
+      - 'src/Edulytics.Web/Bootstrap/**'
+      - 'src/Edulytics.Web/Program.cs'
+      - 'src/Edulytics.Data/Repositories/**'
+      - 'src/Edulytics.Data/Seeding/**'
+      - 'tests/Edulytics.Tests/Phase29/CleanNeonEmbeddedJsonReadTests.cs'
+      - 'tests/Edulytics.Tests/Bootstrap/**'
+      - 'tests/Edulytics.Tests/Acceptance/StagingCurriculumBootstrapContractTests.cs'
+      - '.github/workflows/neon-clean-content-inventory.yml'
+  pull_request:
+    paths:
+      - 'tools/phase29/clean_neon_content_inventory.py'
+      - 'tests/python/test_clean_neon_content_inventory.py'
+      - 'src/Edulytics.Core/Curriculum/**'
+      - 'src/Edulytics.Web/Bootstrap/**'
+      - 'src/Edulytics.Web/Program.cs'
+      - 'src/Edulytics.Data/Repositories/**'
+      - 'src/Edulytics.Data/Seeding/**'
+      - 'tests/Edulytics.Tests/Phase29/CleanNeonEmbeddedJsonReadTests.cs'
+      - 'tests/Edulytics.Tests/Bootstrap/**'
+      - 'tests/Edulytics.Tests/Acceptance/StagingCurriculumBootstrapContractTests.cs'
+      - '.github/workflows/neon-clean-content-inventory.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-content-inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run inventory regression tests
+        run: python3 -m unittest discover -s tests/python -p 'test_clean_neon_content_inventory.py' -v
+      - name: Verify original main-branch JSON lesson parity
+        run: python3 tools/phase29/verify_main_content_parity.py
+      - name: Inventory all curriculum files without Neon connection
+        run: python3 tools/phase29/clean_neon_content_inventory.py --strict --write-report
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore and build .NET solution
+        run: |
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --no-restore
+      - name: Verify production bootstrap packaging prerequisites
+        run: |
+          sh -n docker/render-entrypoint.sh
+          dotnet restore tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+          dotnet publish tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj -c Release --no-restore -o /tmp/edulytics-clean-seed
+      - name: Clean bootstrap and curriculum seed contract tests
+        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --filter 'FullyQualifiedName~EdulyticsDatabaseBootstrapperTests|FullyQualifiedName~StagingCurriculumBootstrapContractTests|FullyQualifiedName~CleanNeonEmbeddedJsonReadTests'
+      - name: Full .NET application regression suite
+        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore
+      - name: Verify release Docker image includes guarded clean-seed and migrations
+        run: |
+          docker build --file Dockerfile --tag edulytics-v2-release-check .
+          image_id=$(docker create edulytics-v2-release-check)
+          docker cp "$image_id:/app/clean-seed/Edulytics.CleanSeed.dll" /tmp/edulytics-clean-seed.dll
+          docker cp "$image_id:/app/efbundle" /tmp/edulytics-efbundle
+          docker rm "$image_id"
+          test -s /tmp/edulytics-clean-seed.dll
+          test -s /tmp/edulytics-efbundle
+      - name: Architecture boundary checks
+        run: python3 scripts/ci-architecture-gate.py
+      - name: Record historical full curriculum closure (known 62/64; non-blocking for storage migration)
+        run: python3 tools/phase29/full_curriculum_closure_audit.py --write-report
+      - name: Check original 5,110 lesson and outcome-source parity for storage migration
+        run: python3 tools/phase29/verify_main_content_parity.py
+      - name: Upload non-personal audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clean-neon-content-inventory
+          path: |
+            artifacts/phase29/clean-neon-content-inventory.json
+            artifacts/phase29/full-curriculum-closure-audit.json
+          retention-days: 14

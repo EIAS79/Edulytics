@@ -4,14 +4,24 @@ using Edulytics.Core.Interfaces;
 using Edulytics.Core.Lessons;
 using Edulytics.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Edulytics.Data.Repositories;
 
 public sealed class LessonContentRepository : ILessonContentRepository
 {
     private readonly EdulyticsDbContext _db;
+    private readonly bool _readFromJson;
+    private static readonly EmbeddedCanonicalLessonContentIndex JsonIndex = new();
 
-    public LessonContentRepository(EdulyticsDbContext db) => _db = db;
+    public LessonContentRepository(
+        EdulyticsDbContext db,
+        Microsoft.Extensions.Configuration.IConfiguration? configuration = null)
+    {
+        _db = db;
+        _readFromJson = configuration?.GetValue<bool>(
+            "Edulytics:LessonContent:ReadFromJson") == true;
+    }
 
     public async Task<IReadOnlyList<CanonicalCurriculumContextRecord>> ListStaffAdoptionsAsync(
         Guid schoolId,
@@ -243,6 +253,62 @@ public sealed class LessonContentRepository : ILessonContentRepository
         var lessonIds = pedagogicalLessonIds
             .Distinct()
             .ToArray();
+
+        if (_readFromJson)
+        {
+            // Query only the compact public-lesson identity and publication fields.
+            // The associated authorized lesson body is read from embedded JSON.
+            // This is ONE SQL statement: avoid independently fetching Content and
+            // CurriculumPedagogicalLesson then joining the result in application code.
+            var metadata = await (
+                from content in _db.CurriculumLessonContents.AsNoTracking()
+                join lesson in _db.CurriculumPedagogicalLessons.AsNoTracking()
+                    on content.PedagogicalLessonId equals lesson.Id
+                where lessonIds.Contains(content.PedagogicalLessonId)
+                select new
+                {
+                    content.Id,
+                    content.FrameworkVersionId,
+                    content.PedagogicalLessonId,
+                    content.Status,
+                    content.ContentVersion,
+                    content.VerifiedAtUtc,
+                    content.PublishedAtUtc,
+                    content.UpdatedAtUtc,
+                    LessonCode = lesson.Code
+                }).ToArrayAsync(cancellationToken);
+
+            var result = new List<CanonicalLessonContentRecord>(metadata.Length);
+            foreach (var item in metadata)
+            {
+                if (!JsonIndex.TryGet(item.LessonCode, out var body))
+                {
+                    // Fail closed: no approved JSON body, no learner content.
+                    continue;
+                }
+
+                if (!string.Equals(item.ContentVersion, body.ContentVersion,
+                        StringComparison.Ordinal) || item.Status != body.Status)
+                {
+                    throw new InvalidOperationException(
+                        "Canonical JSON/metadata version or publication drift: " +
+                        item.LessonCode);
+                }
+
+                result.Add(new CanonicalLessonContentRecord(
+                    item.Id,
+                    item.FrameworkVersionId,
+                    item.PedagogicalLessonId,
+                    item.Status,
+                    item.ContentVersion,
+                    item.VerifiedAtUtc,
+                    item.PublishedAtUtc,
+                    item.UpdatedAtUtc,
+                    body.Translations));
+            }
+
+            return result;
+        }
 
         var contents = await _db.CurriculumLessonContents
             .AsNoTracking()

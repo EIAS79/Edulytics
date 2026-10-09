@@ -71,6 +71,13 @@ def expected_scopes() -> list[Scope]:
     scopes.append(Scope("CAMBRIDGE-INTL-MATH", 12, AS_A_PATHWAY))
     scopes.append(Scope("CAMBRIDGE-INTL-MATH", 13, AS_A_PATHWAY))
 
+    # Scope policy: grade 5/6 Advanced enrolment IS documented by the UAE
+    # Ministry's 2026-27 Cycle 2 registration guide (pages 16-17):
+    # https://www.moe.gov.ae/en/guides/Documents/Registration-2026-2027/Registration-guide-2026-2027-Ar.pdf
+    # Enrolment-stream existence does NOT establish a separately verified
+    # Advanced mathematics syllabus. Keep the exact scopes and require
+    # source-backed pedagogy/content OR a reviewed, explicit shared-syllabus
+    # curriculum mapping. Never create a fake lesson just to turn CI green.
     scopes.extend(Scope("UAE-MOE-MATH", level, "Common") for level in range(1, 5))
     for level in range(5, 13):
         scopes.append(Scope("UAE-MOE-MATH", level, "General"))

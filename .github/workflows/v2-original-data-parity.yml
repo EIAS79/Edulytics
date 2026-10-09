@@ -1,0 +1,39 @@
+name: V2 Original Curriculum and JSON Parity
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feat/neon-clean-bootstrap-json-content-20261008
+    paths:
+      - 'tools/phase29/verify_main_content_parity.py'
+      - 'src/Edulytics.Core/Curriculum/Packs/**'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/**'
+      - '.github/workflows/v2-original-data-parity.yml'
+  pull_request:
+    paths:
+      - 'tools/phase29/verify_main_content_parity.py'
+      - 'src/Edulytics.Core/Curriculum/Packs/**'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/**'
+      - '.github/workflows/v2-original-data-parity.yml'
+permissions:
+  contents: read
+jobs:
+  original-data-parity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Assert canonical lessons and official curriculum sources unchanged from main
+        run: python3 tools/phase29/verify_main_content_parity.py
+      - name: Verify original JSON catalog structure
+        run: python3 tools/phase29/clean_neon_content_inventory.py --strict --write-report
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v2-original-data-parity
+          path: artifacts/phase29/clean-neon-content-inventory.json
+          retention-days: 14

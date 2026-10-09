@@ -50,6 +50,20 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         await SeedDocumentsAsync(documents, ct);
     }
 
+    /// <summary>
+    /// For a newly created clean database: seed validated canonical identities,
+    /// publication state and version without duplicating JSON lesson prose in
+    /// PostgreSQL. Only use together with ReadFromJson=true.
+    /// </summary>
+    public async Task SeedMetadataOnlyAsync(CancellationToken ct = default)
+    {
+        var documents = LoadEmbeddedDocuments();
+        if (documents.Count == 0)
+            return;
+
+        await SeedDocumentsAsync(documents, ct, metadataOnly: true);
+    }
+
     public async Task SeedApprovedProductionCorrectionsAsync(
         CancellationToken ct = default)
     {
@@ -302,7 +316,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
 
     public async Task SeedDocumentsAsync(
         IReadOnlyCollection<CanonicalLessonContentPackDocument> documents,
-        CancellationToken ct = default)
+        CancellationToken ct = default,
+        bool metadataOnly = false)
     {
         if (documents.Count == 0)
             return;
@@ -328,7 +343,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                          .OrderBy(x => x.PackCode, StringComparer.Ordinal)
                          .ThenBy(x => x.VersionCode, StringComparer.Ordinal))
             {
-                await SeedOneAsync(document, ct);
+                await SeedOneAsync(document, ct, metadataOnly);
             }
 
             await transaction.CommitAsync(ct);
@@ -339,13 +354,14 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                      .OrderBy(x => x.PackCode, StringComparer.Ordinal)
                      .ThenBy(x => x.VersionCode, StringComparer.Ordinal))
         {
-            await SeedOneAsync(document, ct);
+            await SeedOneAsync(document, ct, metadataOnly);
         }
     }
 
     private async Task SeedOneAsync(
         CanonicalLessonContentPackDocument document,
-        CancellationToken ct)
+        CancellationToken ct,
+        bool metadataOnly)
     {
         var state =
             await _db.CurriculumPackImportStates
@@ -495,8 +511,9 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                 .Distinct()
                 .ToArray();
 
-        var existingTranslations =
-            await _db
+        var existingTranslations = metadataOnly
+            ? Array.Empty<CurriculumLessonContentTranslation>()
+            : await _db
                 .CurriculumLessonContentTranslations
                 .Where(
                     x =>
@@ -674,6 +691,13 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                     content,
                     document.Status,
                     now);
+            }
+
+            if (metadataOnly)
+            {
+                // Version/status/outcome identity is already verified above.
+                // Full localized prose is resolved by the embedded JSON index.
+                continue;
             }
 
             var currentTranslations =

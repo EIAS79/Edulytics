@@ -1,0 +1,113 @@
+name: Edulytics - Clean PostgreSQL 18 Rebuild
+
+on:
+  push:
+    branches:
+      - feat/neon-clean-bootstrap-json-content-20261008
+    paths:
+      - 'src/Edulytics.Data/**'
+      - 'src/Edulytics.Core/Curriculum/**'
+      - 'src/Edulytics.Web/Program.cs'
+      - 'src/Edulytics.Web/Bootstrap/**'
+      - 'tools/Edulytics.CleanSeed/**'
+      - '.github/workflows/neon-clean-postgres-rebuild.yml'
+  pull_request:
+    paths:
+      - 'src/Edulytics.Data/**'
+      - 'src/Edulytics.Core/Curriculum/**'
+      - 'src/Edulytics.Web/Program.cs'
+      - 'src/Edulytics.Web/Bootstrap/**'
+      - 'tools/Edulytics.CleanSeed/**'
+      - '.github/workflows/neon-clean-postgres-rebuild.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  clean-postgresql:
+    name: clean-schema-and-json-metadata
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: edulytics_clean_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=20
+
+    env:
+      ConnectionStrings__DefaultConnection: "Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable"
+      ConnectionStrings__MigrationConnection: "Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable"
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: "Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable"
+      EDULYTICS_CLEAN_DATABASE_NAME: "edulytics_clean_ci"
+      EDULYTICS_CLEAN_SEED_CONFIRM: "I_CONFIRM_NEW_EMPTY_DATABASE"
+      Edulytics__Deployment__CleanBootstrap: "true"
+      Edulytics__LessonContent__ReadFromJson: "true"
+      Edulytics__Deployment__RunStartupDataMaintenance: "false"
+      Edulytics__PresentationDemo__Provision: "false"
+      Edulytics__MeetingDemo__ResetAndSeed: "false"
+      DOTNET_NOLOGO: "true"
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore dotnet tools and dependencies
+        run: |
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+      - name: Build application and dedicated seeder
+        run: |
+          dotnet build Edulytics.sln --no-restore
+          dotnet build tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Apply clean EF Core migrations
+        run: |
+          dotnet ef database update \
+            --project src/Edulytics.Data/Edulytics.Data.csproj \
+            --startup-project src/Edulytics.Web/Edulytics.Web.csproj \
+            --context EdulyticsDbContext
+      - name: Verify clean schema and seed only shared curriculum metadata
+        run: |
+          dotnet run --no-build \
+            --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Assert no lesson text or old users were inserted
+        env:
+          PGPASSWORD: postgres
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os
+          import subprocess
+          sql = """
+          SELECT
+            (SELECT count(*) FROM "Schools") AS schools,
+            (SELECT count(*) FROM "AspNetUsers") AS users,
+            (SELECT count(*) FROM "CurriculumLessonContentTranslations") AS prose,
+            (SELECT count(*) FROM "CurriculumLessonContents") AS metadata,
+            (SELECT count(*) FROM "CurriculumPedagogicalLessons") AS lessons,
+            (SELECT count(*) FROM "CurriculumPedagogicalLessonOutcomes") AS outcome_links,
+            (SELECT count(*) FROM "AspNetRoles") AS roles,
+            (SELECT count(*) FROM "SchoolCurriculumAdoptions") AS adoptions,
+            (SELECT count(*) FROM "SchoolSubscriptions") AS subscriptions;
+          """
+          result = subprocess.check_output(
+              ["psql", "-h", "127.0.0.1", "-U", "postgres",
+               "-d", "edulytics_clean_ci", "-A", "-t", "-F", "|", "-c", sql],
+              text=True,
+              env=os.environ,
+          ).strip()
+          schools, users, prose, metadata, lessons, outcome_links, roles, adoptions, subscriptions = map(int, result.split("|"))
+          assert (schools, users, prose, adoptions, subscriptions) == (0, 0, 0, 0, 0), result
+          # The curriculum-only CLI does not bootstrap Identity roles.\n          # Startup EdulyticsDatabaseBootstrapper creates the five roles; its\n          # clean-bootstrap regression tests verify that behavior separately.\n          assert (metadata, lessons, outcome_links, roles) == (5110, 5110, 5749, 0), result
+          print("CLEAN_POSTGRES_GATE_PASS", result)
+          PY

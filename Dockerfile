@@ -22,11 +22,21 @@ RUN dotnet restore \
 RUN dotnet tool restore
 
 COPY src/ src/
+COPY tools/Edulytics.CleanSeed/ tools/Edulytics.CleanSeed/
+
+RUN dotnet restore tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
 
 RUN dotnet publish \
     src/Edulytics.Web/Edulytics.Web.csproj \
     -c Release \
     -o /app/publish \
+    --no-restore \
+    /p:UseAppHost=false
+
+RUN dotnet publish \
+    tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj \
+    -c Release \
+    -o /app/clean-seed \
     --no-restore \
     /p:UseAppHost=false
 
@@ -55,6 +65,7 @@ WORKDIR /app
 
 COPY --from=build /app/publish ./
 COPY --from=build /app/efbundle /app/efbundle
+COPY --from=build /app/clean-seed/ /app/clean-seed/
 COPY docker/render-entrypoint.sh /app/render-entrypoint.sh
 COPY docker/phase27-predeploy.sh /app/phase27-predeploy.sh
 

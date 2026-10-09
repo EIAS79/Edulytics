@@ -49,22 +49,28 @@ public sealed class EdulyticsDatabaseBootstrapper
 
     public async Task InitializeAsync()
     {
+        var cleanBootstrap =
+            CleanBootstrapPolicy.ShouldSkipOptionalProvisioning(_configuration);
+
         if (!_db.Database.IsNpgsql())
         {
             await EnsureRolesExistAsync();
-            await EnsureSuperAdminAsync();
+            if (!cleanBootstrap)
+                await EnsureSuperAdminAsync();
             await SeedCurriculumIfRequestedAsync();
-            await PresentationDemoProvisioner.RunAsync(
-                _db,
-                _userManager,
-                _configuration);
-            await MeetingDemoProvisioner.RunAsync(
-                _db,
-                _userManager,
-                _configuration);
-            await MeetingDemoProvisioner.RepairExistingAsync(
-                _db);
-            await MeetingDemoProvisioner.RepairLessonLinksAsync(_db);
+            if (!cleanBootstrap)
+            {
+                await PresentationDemoProvisioner.RunAsync(
+                    _db,
+                    _userManager,
+                    _configuration);
+                await MeetingDemoProvisioner.RunAsync(
+                    _db,
+                    _userManager,
+                    _configuration);
+                await MeetingDemoProvisioner.RepairExistingAsync(_db);
+                await MeetingDemoProvisioner.RepairLessonLinksAsync(_db);
+            }
 
             return;
         }
@@ -99,19 +105,22 @@ public sealed class EdulyticsDatabaseBootstrapper
             }
 
             await EnsureRolesExistAsync();
-            await EnsureSuperAdminAsync();
+            if (!cleanBootstrap)
+                await EnsureSuperAdminAsync();
             await SeedCurriculumIfRequestedAsync();
-            await PresentationDemoProvisioner.RunAsync(
-                _db,
-                _userManager,
-                _configuration);
-            await MeetingDemoProvisioner.RunAsync(
-                _db,
-                _userManager,
-                _configuration);
-            await MeetingDemoProvisioner.RepairExistingAsync(
-                _db);
-            await MeetingDemoProvisioner.RepairLessonLinksAsync(_db);
+            if (!cleanBootstrap)
+            {
+                await PresentationDemoProvisioner.RunAsync(
+                    _db,
+                    _userManager,
+                    _configuration);
+                await MeetingDemoProvisioner.RunAsync(
+                    _db,
+                    _userManager,
+                    _configuration);
+                await MeetingDemoProvisioner.RepairExistingAsync(_db);
+                await MeetingDemoProvisioner.RepairLessonLinksAsync(_db);
+            }
 
         }
         finally
@@ -150,8 +159,16 @@ public sealed class EdulyticsDatabaseBootstrapper
             .SeedAsync();
         await new MathematicsPedagogicalLessonSeeder(_db)
             .SeedAsync();
-        await new MathematicsCanonicalLessonContentSeeder(_db)
-            .SeedAsync();
+        var contentSeeder = new MathematicsCanonicalLessonContentSeeder(_db);
+        if (_configuration.GetValue<bool>(
+                "Edulytics:LessonContent:ReadFromJson"))
+        {
+            await contentSeeder.SeedMetadataOnlyAsync();
+        }
+        else
+        {
+            await contentSeeder.SeedAsync();
+        }
     }
 
     private async Task<bool> TryAcquireAdvisoryLockAsync()
