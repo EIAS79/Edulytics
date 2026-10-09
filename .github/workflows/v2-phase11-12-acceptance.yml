@@ -84,6 +84,46 @@ jobs:
           print('ACCEPTANCE_DB_COUNTS', data, 'EXPECTED', expected)
           assert data == expected, 'Database invariant failure'
           PY
+      - name: Provision disposable school and four role accounts through application bootstrap
+        env:
+          PGPASSWORD: postgres
+          RENDER_SERVICE_ID: srv-da1o4url550s73aecsn0
+          Edulytics__Deployment__CleanBootstrap: 'false'
+          Edulytics__PresentationDemo__Provision: 'true'
+          ASPNETCORE_ENVIRONMENT: Staging
+          Edulytics__Deployment__RunStartupMigrations: 'false'
+          Edulytics__Deployment__SeedCurriculum: 'false'
+        run: |
+          set -euo pipefail
+          demo_password="$(openssl rand -hex 24)Aa1!"
+          echo "::add-mask::$demo_password"
+          export Edulytics__PresentationDemo__Password="$demo_password"
+          export ASPNETCORE_URLS="http://127.0.0.1:5050"
+          dotnet run --no-build --no-launch-profile --project src/Edulytics.Web/Edulytics.Web.csproj > /tmp/phase-uat-web.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          healthy=false
+          for attempt in $(seq 1 90); do
+            if curl --fail --silent --max-time 2 http://127.0.0.1:5050/health/ready > /tmp/phase-uat-health.json; then
+              healthy=true
+              break
+            fi
+            if ! kill -0 "$server_pid" 2>/dev/null; then
+              sed -E 's/([Pp]assword=)[^ ;]+/\\1[REDACTED]/g' /tmp/phase-uat-web.log | tail -60
+              exit 1
+            fi
+            sleep 2
+          done
+          test "$healthy" = true
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -A -t -F '|' -c 'SELECT (SELECT count(*) FROM "Schools"), (SELECT count(*) FROM "AspNetUsers"), (SELECT count(*) FROM "StudentProfiles");' > /tmp/phase-uat-roles-counts.txt
+          python3 - <<'PY'
+          from pathlib import Path
+          rows=tuple(map(int,Path('/tmp/phase-uat-roles-counts.txt').read_text().strip().split('|')))
+          print("DISPOSABLE_FOUR_ROLE_BOOTSTRAP",rows)
+          assert rows==(1,4,1), f"Role-bootstrap fixture was not initialized: {rows}"
+          PY
+          curl --fail --silent http://127.0.0.1:5050/Account/Login >/dev/null
+          echo 'DISPOSABLE_ROLE_BOOTSTRAP_PASS'
       - name: Assert application layer boundaries
         run: python3 scripts/ci-architecture-gate.py
       - uses: actions/upload-artifact@v4
