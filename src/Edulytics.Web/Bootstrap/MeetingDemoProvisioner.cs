@@ -299,7 +299,20 @@ internal static class MeetingDemoProvisioner
         IConfiguration configuration,
         CancellationToken cancellationToken = default)
     {
-        if (!string.Equals(
+        // Disposable CI rehearsal is separate from the production-only reset path.
+        // Four independent guards prevent this option from touching Neon or a
+        // long-lived demo database, even if an environment flag is misconfigured.
+        var disposableCi =
+            string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
+                "true", StringComparison.OrdinalIgnoreCase) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
+                "true", StringComparison.OrdinalIgnoreCase) &&
+            string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
+                "Staging", StringComparison.Ordinal) &&
+            string.Equals(db.Database.GetDbConnection().Database,
+                "edulytics_clean_ci", StringComparison.Ordinal);
+
+        if (!disposableCi && !string.Equals(
                 Environment.GetEnvironmentVariable("RENDER_SERVICE_ID"),
                 TargetRenderServiceId,
                 StringComparison.Ordinal))
@@ -309,6 +322,8 @@ internal static class MeetingDemoProvisioner
 
         if (!configuration.GetValue<bool>("Edulytics:MeetingDemo:ResetAndSeed"))
             return;
+
+        var activeSchools = disposableCi ? Schools.Take(2).ToArray() : Schools;
 
         var password = configuration["Edulytics:MeetingDemo:Password"];
         if (string.IsNullOrWhiteSpace(password))
@@ -347,7 +362,7 @@ internal static class MeetingDemoProvisioner
                 await ResetSchoolScopedDataAsync(db, cancellationToken);
                 db.ChangeTracker.Clear();
 
-                foreach (var definition in Schools)
+                foreach (var definition in activeSchools)
                 {
                     seededSchools.Add(
                         await SeedSchoolAsync(
@@ -407,10 +422,19 @@ internal static class MeetingDemoProvisioner
         await db.SaveChangesAsync(cancellationToken);
 
         var schoolCount = await db.Schools.CountAsync(cancellationToken);
-        if (schoolCount != Schools.Length)
+        if (!disposableCi)
+        {
+            // Preserve the strict twelve-school production rehearsal contract.
+            if (schoolCount != Schools.Length)
+            {
+                throw new InvalidOperationException(
+                    $"Production rehearsal verification failed: expected {Schools.Length} schools, found {schoolCount}.");
+            }
+        }
+        else if (schoolCount != activeSchools.Length)
         {
             throw new InvalidOperationException(
-                $"Production rehearsal verification failed: expected {Schools.Length} schools, found {schoolCount}.");
+                $"Disposable rehearsal verification failed: expected {activeSchools.Length} schools, found {schoolCount}.");
         }
 
         var seededCodes = await db.Schools
@@ -418,7 +442,7 @@ internal static class MeetingDemoProvisioner
             .Select(x => x.SchoolCode)
             .ToArrayAsync(cancellationToken);
 
-        var missingCodes = Schools
+        var missingCodes = activeSchools
             .Select(x => x.SchoolCode)
             .Except(seededCodes, StringComparer.OrdinalIgnoreCase)
             .ToArray();
