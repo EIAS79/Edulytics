@@ -25,6 +25,7 @@ namespace Edulytics.Web.Bootstrap;
 internal static class MeetingDemoProvisioner
 {
     private const string TargetRenderServiceId = "srv-dakq5n2fngtc73a62i10";
+    private const string DedicatedDemoServiceId = "srv-db4jtht9fdbs73fioa20";
     private const string SeedVersion = "production-rehearsal-2026-10-01-v1";
     private const string MarkerOperation = "ProductionRehearsalSeed";
     private const string RepairMarkerOperation = "ProductionRehearsalRepair";
@@ -312,7 +313,22 @@ internal static class MeetingDemoProvisioner
             string.Equals(db.Database.GetDbConnection().Database,
                 "edulytics_clean_ci", StringComparison.Ordinal);
 
-        if (!disposableCi && !string.Equals(
+        // Dedicated, permanent school demo: only the explicitly named FREE
+        // Render service and its dedicated Neon branch may provision records.
+        // This option is strictly one-shot and never resets populated data.
+        var permanentDemo =
+            string.Equals(Environment.GetEnvironmentVariable("RENDER_SERVICE_ID"),
+                DedicatedDemoServiceId, StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
+                "Staging", StringComparison.Ordinal) &&
+            configuration.GetValue<bool>("Edulytics:MeetingDemo:PermanentDemo") &&
+            string.Equals(db.Database.GetDbConnection().Host,
+                configuration["Edulytics:MeetingDemo:DedicatedDatabaseHost"],
+                StringComparison.OrdinalIgnoreCase) &&
+            !string.IsNullOrWhiteSpace(
+                configuration["Edulytics:MeetingDemo:DedicatedDatabaseHost"]);
+
+        if (!disposableCi && !permanentDemo && !string.Equals(
                 Environment.GetEnvironmentVariable("RENDER_SERVICE_ID"),
                 TargetRenderServiceId,
                 StringComparison.Ordinal))
@@ -323,7 +339,9 @@ internal static class MeetingDemoProvisioner
         if (!configuration.GetValue<bool>("Edulytics:MeetingDemo:ResetAndSeed"))
             return;
 
-        var activeSchools = disposableCi ? Schools.Take(2).ToArray() : Schools;
+        var activeSchools = disposableCi || permanentDemo
+            ? Schools.Take(2).ToArray()
+            : Schools;
 
         var password = configuration["Edulytics:MeetingDemo:Password"];
         if (string.IsNullOrWhiteSpace(password))
@@ -348,6 +366,12 @@ internal static class MeetingDemoProvisioner
             Console.WriteLine(
                 $"MEETING_DEMO_SEED_SKIPPED version={SeedVersion} reason=already-completed");
             return;
+        }
+
+        if (permanentDemo && await db.Schools.AnyAsync(cancellationToken))
+        {
+            throw new InvalidOperationException(
+                "Permanent demo is populated without the seed marker; refusing any reset.");
         }
 
         Console.WriteLine($"MEETING_DEMO_SEED_BEGIN version={SeedVersion}");
@@ -422,7 +446,7 @@ internal static class MeetingDemoProvisioner
         await db.SaveChangesAsync(cancellationToken);
 
         var schoolCount = await db.Schools.CountAsync(cancellationToken);
-        if (!disposableCi)
+        if (!disposableCi && !permanentDemo)
         {
             // Preserve the strict twelve-school production rehearsal contract.
             if (schoolCount != Schools.Length)
