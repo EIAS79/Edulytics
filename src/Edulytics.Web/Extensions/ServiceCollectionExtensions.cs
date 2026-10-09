@@ -178,6 +178,9 @@ public static class ServiceCollectionExtensions
                     StringComparison.Ordinal))
             {
                 options.Cookie.Name = ".Edulytics.SchoolsDemo.Auth";
+                // Browser must send this signed demo ticket on the original
+                // /student/* and /school/* paths, not only on /demo/*.
+                options.Cookie.Path = "/";
             }
         });
 
