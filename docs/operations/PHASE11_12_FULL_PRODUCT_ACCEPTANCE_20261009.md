@@ -38,3 +38,18 @@
 | Actual Neon idle/load egress time-series and p95 | **Open** |
 | Rollback drill and cleanup proof | **Open** |
 | Final sign-off | **Open** |
+
+## Remaining phases 2/3/6/8/11/12 — expanded execution ledger
+
+The release is live but the original 12-stage plan is not automatically fully complete. The following evidence must be tracked separately:
+
+| Stage | Implemented evidence | Not yet proven |
+|---|---|---|
+| 2 — A/B/C benchmarking | Existing SQL-query parity test: 2 legacy reads vs 1 hybrid reference read; 25-lesson batch 1 hybrid SQL | Full identical-payload A/B/C benchmark, end-to-end p95, bytes and cache warming. B is not implemented and cannot be benchmarked as an actual released architecture. |
+| 3 — architecture decision | ADR-0007 provisionally selects C to preserve FK/authorization with prose in JSON | Quantified three-way decision under equal load; amend ADR only with measured data. |
+| 6 — DB reference minimization | Existing 5,110 lesson identities, 5,749 outcome links; zero prose in production Neon | Detailed runtime query inventory and safe FK-by-FK elimination decision. |
+| 8 — comprehensive product tests | Full regression/clean PG18 seed CI workflow created in PR #421 | Authenticated two-school, all-role browser workflows and worksheet/assessment/practice/result lifecycle. |
+| 11 — consumption | Read-only Neon transfer and compute project counters observed as 8,941,338 bytes / 2,360 seconds at sample time; Render CPU/memory/bandwidth samples exist. | These counters are not production branch-attributed; HTTP request/latency series returned no data in initial query. Need baseline versus representative load and per-branch network statistics. |
+| 12 — release sign-off | Production app live from commit 73fdfb3, Neon production lesson metadata 5,110, 0 prose, 0 schools/users | Functional E2E, complete resource evidence, disaster/rollback demonstration, and final acceptance. |
+
+**No synthetic accounts have been inserted into production under this PR.** Approval of clean database deployment must not be interpreted as consent to create or delete a large set of synthetic production users without safeguards.
