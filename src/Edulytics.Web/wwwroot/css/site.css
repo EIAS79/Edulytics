@@ -14548,3 +14548,61 @@ a.lesson-content-row:hover
         width: 100%;
     }
 }
+
+
+/* Student Rich Lesson V2: use the same readable, full-width card rhythm
+   as Step-by-step solutions across concepts, examples and mistakes. */
+.lesson-reader--student .rich-concept-grid,
+.lesson-reader--student .rich-example-grid,
+.lesson-reader--student .rich-mistake-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.lesson-reader--student .rich-concept-card,
+.lesson-reader--student .rich-example-card,
+.lesson-reader--student .rich-mistake-card {
+    border-color: #e4e9f2;
+    border-radius: .85rem;
+    background: #fff;
+    box-shadow: none;
+}
+
+.lesson-reader--student .rich-concept-card,
+.lesson-reader--student .rich-mistake-card {
+    padding: 1.15rem 1.2rem 1.2rem;
+}
+
+.lesson-reader--student .rich-concept-card dl {
+    gap: .9rem;
+}
+
+.lesson-reader--student .rich-concept-card dd,
+.lesson-reader--student .rich-example-card__body,
+.lesson-reader--student .rich-mistake-card p {
+    overflow-wrap: anywhere;
+}
+
+.lesson-reader--student .rich-example-card {
+    grid-template-columns: 2.6rem minmax(0, 1fr);
+    background: #fff;
+}
+
+.lesson-reader--student .rich-mistake-card {
+    border-left: .25rem solid #d66e68;
+    background: #fffafa;
+}
+
+@media (max-width: 520px) {
+    .lesson-reader--student .rich-concept-grid,
+    .lesson-reader--student .rich-example-grid,
+    .lesson-reader--student .rich-mistake-grid {
+        padding: 1rem;
+    }
+    .lesson-reader--student .rich-concept-card,
+    .lesson-reader--student .rich-mistake-card {
+        padding: 1rem;
+    }
+}
