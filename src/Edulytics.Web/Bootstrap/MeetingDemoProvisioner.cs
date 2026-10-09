@@ -13,6 +13,7 @@ using Edulytics.Services.AssessmentIntelligence;
 using Edulytics.Services.MathematicsGeneration;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 namespace Edulytics.Web.Bootstrap;
 
@@ -322,7 +323,8 @@ internal static class MeetingDemoProvisioner
             string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
                 "Staging", StringComparison.Ordinal) &&
             configuration.GetValue<bool>("Edulytics:MeetingDemo:PermanentDemo") &&
-            string.Equals(db.Database.GetDbConnection().Host,
+            string.Equals(new NpgsqlConnectionStringBuilder(
+                    db.Database.GetDbConnection().ConnectionString).Host,
                 configuration["Edulytics:MeetingDemo:DedicatedDatabaseHost"],
                 StringComparison.OrdinalIgnoreCase) &&
             !string.IsNullOrWhiteSpace(
