@@ -40,6 +40,21 @@
 
 **النتيجة المحصورة:** تقرير سبتمبر يتضمن مراجع ملفات **غير موجودة حاليًا** في المستودع، ولا يجوز معاملته كدليل اكتمال أو كبرهان على اختلاف محتوى رياضيات General وAdvanced. يبقى المساران بحالة `SOURCE_NOT_VERIFIED` حتى التحقق من مادة الرياضيات المقابلة لهما، ولا نولّد دروسًا تخمينية.
 
+
+## Evidence from locally inspected UAE Reveal Math student editions (2026-10-09)
+
+The operator supplied PDF student editions for **review only**. Their first-page covers and printed tables of contents were inspected; no PDF binaries or copyrighted textbook paragraphs are committed to this repository.
+
+| Cover identity | Published edition | Volume | Pages | Evidence / limitation |
+|---|---|---|---:|---|
+| Reveal Math UAE Edition, **Grade 5 Advanced** | **2023–2024** | **2** | 289 | Printed contents of Volume 2 list modules 8–14: Divide Decimals; Add/Subtract Fractions; Multiply Fractions; Divide Fractions; Measurement and Data; Geometry; Algebraic Thinking. A summary also lists Volume 1 modules 1–7, but **the Volume 1 PDF was not provided**. |
+| Reveal Math UAE Edition, **Grade 6 Advanced** | **2024–2025** | **1** | 304 | Printed contents summarize 10 modules: ratios/rates, fractions/decimals/percents, arithmetic, integers/rationals/coordinate plane, algebraic expressions, equations/inequalities, relationships, area, volume/surface area, statistics. |
+| Reveal Math UAE Edition, **Grade 6 General** | **2025–2026** | **1** | 304 | Clearly marked **General** and therefore must NOT be cataloged as Advanced. Two operator-provided copies were byte-identical by SHA-256 (`E00533D7514548BD176B09858C2DD59AD3C3567E9C2A687804918CD891FA4431`). |
+
+**What this proves:** UAE-specific Advanced editions existed in the respective prior years, and their older high-level mathematical scope can be compared against the canonical curriculum. The copies **do not establish** the 2026–2027 approved content, sequence, learning outcomes, all school-year volumes, a redistribution license, or a shared-syllabus policy. In particular, do not convert an older book's table of contents into `SourceCatalog` with falsely asserted 2026–2027 provenance.
+
+**Required follow-up:** obtain a ministry/publisher-licensed **2026–2027 Grade 5 Advanced Volume 1 + other prescribed volumes** and **2026–2027 Grade 6 Advanced prescribed volumes**, or an authoritative current-year curriculum/outcome map, then record issuer, school-year, grade, stream, volume, source location, review date and rights. Only after independent mathematical review can the two strict audit scopes be closed.
+
 ## إجراءات الإغلاق الملزمة
 1. الحصول على مرجع رسمي أو معتمد من الوزارة لكل من G5 Advanced وG6 Advanced للعام الدراسي 2026–2027، مع معرف المصدر/المحتوى والترخيص وتاريخ الاسترجاع.
 2. تحديد هل المقصود **مسار مستقل ذو محتوى مختلف** أم جدول حصص للمسار مع منهج مشترك؛ لا نفترض تساوي الحالتين.
