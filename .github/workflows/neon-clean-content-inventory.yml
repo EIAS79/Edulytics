@@ -6,6 +6,7 @@ on:
       - feat/neon-clean-bootstrap-json-content-20261008
     paths:
       - 'tools/phase29/clean_neon_content_inventory.py'
+      - 'tools/phase29/verify_main_content_parity.py'
       - 'tests/python/test_clean_neon_content_inventory.py'
       - 'src/Edulytics.Core/Curriculum/**'
       - 'src/Edulytics.Web/Bootstrap/**'
@@ -39,11 +40,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Run inventory regression tests
         run: python3 -m unittest discover -s tests/python -p 'test_clean_neon_content_inventory.py' -v
+      - name: Verify original main-branch JSON lesson parity
+        run: python3 tools/phase29/verify_main_content_parity.py
       - name: Inventory all curriculum files without Neon connection
         run: python3 tools/phase29/clean_neon_content_inventory.py --strict --write-report
       - uses: actions/setup-dotnet@v4
