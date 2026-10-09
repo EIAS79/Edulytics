@@ -108,6 +108,6 @@ jobs:
           ).strip()
           schools, users, prose, metadata, lessons, outcome_links, roles, adoptions, subscriptions = map(int, result.split("|"))
           assert (schools, users, prose, adoptions, subscriptions) == (0, 0, 0, 0, 0), result
-          assert (metadata, lessons, outcome_links, roles) == (5110, 5110, 5749, 5), result
+          # The curriculum-only CLI does not bootstrap Identity roles.\n          # Startup EdulyticsDatabaseBootstrapper creates the five roles; its\n          # clean-bootstrap regression tests verify that behavior separately.\n          assert (metadata, lessons, outcome_links, roles) == (5110, 5110, 5749, 0), result
           print("CLEAN_POSTGRES_GATE_PASS", result)
           PY
