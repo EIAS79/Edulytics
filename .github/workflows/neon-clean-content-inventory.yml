@@ -70,6 +70,15 @@ jobs:
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --filter 'FullyQualifiedName~EdulyticsDatabaseBootstrapperTests|FullyQualifiedName~StagingCurriculumBootstrapContractTests|FullyQualifiedName~CleanNeonEmbeddedJsonReadTests'
       - name: Full .NET application regression suite
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore
+      - name: Verify release Docker image includes guarded clean-seed and migrations
+        run: |
+          docker build --file Dockerfile --tag edulytics-v2-release-check .
+          image_id=$(docker create edulytics-v2-release-check)
+          docker cp "$image_id:/app/clean-seed/Edulytics.CleanSeed.dll" /tmp/edulytics-clean-seed.dll
+          docker cp "$image_id:/app/efbundle" /tmp/edulytics-efbundle
+          docker rm "$image_id"
+          test -s /tmp/edulytics-clean-seed.dll
+          test -s /tmp/edulytics-efbundle
       - name: Architecture boundary checks
         run: python3 scripts/ci-architecture-gate.py
       - name: Record historical full curriculum closure (known 62/64; non-blocking for storage migration)
