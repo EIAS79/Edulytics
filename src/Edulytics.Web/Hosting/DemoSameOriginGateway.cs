@@ -32,7 +32,14 @@ internal static class DemoSameOriginGateway
             "Upgrade", "Content-Length"
         };
 
-    public static async Task ForwardAsync(HttpContext context, PathString path)
+    public static Task ForwardAsync(HttpContext context, PathString path) =>
+        ForwardCoreAsync(context, path, useOriginalPath: false);
+
+    public static Task ForwardOriginalPathAsync(HttpContext context) =>
+        ForwardCoreAsync(context, context.Request.Path, useOriginalPath: true);
+
+    private static async Task ForwardCoreAsync(
+        HttpContext context, PathString path, bool useOriginalPath)
     {
         if (context.WebSockets.IsWebSocketRequest)
         {
@@ -41,7 +48,7 @@ internal static class DemoSameOriginGateway
         }
 
         var relative = path.HasValue ? path.ToUriComponent() : "/";
-        var destination = new Uri(DemoOrigin + Prefix + relative +
+        var destination = new Uri(DemoOrigin + (useOriginalPath ? "" : Prefix) + relative +
                                   context.Request.QueryString.ToUriComponent());
         using var outbound = new HttpRequestMessage(
             new HttpMethod(context.Request.Method), destination);
@@ -101,10 +108,15 @@ internal static class DemoSameOriginGateway
                         StringComparison.OrdinalIgnoreCase))
                 {
                     context.Response.Headers.Location =
-                        (location.AbsolutePath.StartsWith(
-                            Prefix, StringComparison.OrdinalIgnoreCase)
-                            ? location.AbsolutePath
-                            : Prefix + location.AbsolutePath)
+                        (useOriginalPath
+                            ? location.AbsolutePath.StartsWith(
+                                Prefix, StringComparison.OrdinalIgnoreCase)
+                                ? location.AbsolutePath[Prefix.Length..]
+                                : location.AbsolutePath
+                            : location.AbsolutePath.StartsWith(
+                                Prefix, StringComparison.OrdinalIgnoreCase)
+                                ? location.AbsolutePath
+                                : Prefix + location.AbsolutePath)
                         + location.Query + location.Fragment;
                 }
                 else if (!location.IsAbsoluteUri &&
@@ -113,7 +125,7 @@ internal static class DemoSameOriginGateway
                              StringComparison.OrdinalIgnoreCase))
                 {
                     context.Response.Headers.Location =
-                        Prefix + location.OriginalString;
+                        (useOriginalPath ? "" : Prefix) + location.OriginalString;
                 }
             }
 

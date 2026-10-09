@@ -54,11 +54,36 @@
       if (!field) throw new Error('Form security token unavailable');
 
       field.value = token.value;
-      form.action = destination;
+
+      // Exchange the demo credential on the SAME official origin. A native
+      // form POST would expose /__frontdoor-live/demo in the address bar.
+      // Resolve the authenticated destination and navigate to its ORIGINAL
+      // application path instead.
+      const credentials = new URLSearchParams(new FormData(form));
+      const signedIn = await fetch(destination, {
+        method: 'POST',
+        credentials: 'same-origin',
+        body: credentials,
+        cache: 'no-store',
+        redirect: 'follow'
+      });
+      const finalUrl = new URL(signedIn.url, location.href);
+      const prefix = '/__frontdoor-live/demo';
+      if (!signedIn.ok || finalUrl.origin !== location.origin ||
+          !finalUrl.pathname.startsWith(prefix + '/') ||
+          finalUrl.pathname.toLowerCase().includes('/account/login')) {
+        throw new Error('Demo credentials rejected');
+      }
+
+      const originalRoute = finalUrl.pathname.slice(prefix.length);
+      if (!originalRoute.startsWith('/student/') &&
+          !originalRoute.startsWith('/school/') &&
+          !originalRoute.startsWith('/platform/')) {
+        throw new Error('Unexpected demo redirect');
+      }
       routing = true;
-      // Submit the original role/email/password fields as an ordinary browser
-      // form POST. Never send credentials to a third-party origin.
-      HTMLFormElement.prototype.submit.call(form);
+      window.location.assign(
+        originalRoute + finalUrl.search + finalUrl.hash);
     } catch (_) {
       routing = false;
       if (submit) submit.disabled = false;

@@ -456,12 +456,27 @@ app.Use(async (context, next) =>
         string.Equals(
             Environment.GetEnvironmentVariable("RENDER_SERVICE_ID"),
             "srv-dakq5n2fngtc73a62i10",
-            StringComparison.Ordinal) &&
-        context.Request.Path.StartsWithSegments(
-            "/__frontdoor-live/demo", out var demoPath))
+            StringComparison.Ordinal))
     {
-        await DemoSameOriginGateway.ForwardAsync(context, demoPath);
-        return;
+        if (context.Request.Path.StartsWithSegments(
+                "/__frontdoor-live/demo", out var demoPath))
+        {
+            await DemoSameOriginGateway.ForwardAsync(context, demoPath);
+            return;
+        }
+
+        // The cookie is issued ONLY by the isolated demo application. Route
+        // authenticated demo sessions through the ORIGINAL MVC paths, rather
+        // than introducing visible /demo routes. An invalid/spoofed cookie
+        // cannot authenticate: upstream still verifies its signed ticket.
+        if (context.Request.Cookies.ContainsKey(
+                ".Edulytics.SchoolsDemo.Auth") &&
+            !context.Request.Path.StartsWithSegments("/health") &&
+            !context.Request.Path.StartsWithSegments("/__frontdoor-live"))
+        {
+            await DemoSameOriginGateway.ForwardOriginalPathAsync(context);
+            return;
+        }
     }
 
     await next();
