@@ -127,3 +127,23 @@ The Neon connector was reauthorized and these checks **succeeded**:
 - Live egress and CU-hour savings are not yet independently established; Neon usage metrics may be delayed, and performance/load/security UAT still need production evidence.
 
 **Remaining production blockers**: strict source-closure gate shows 62/64 UAE curriculum scopes (G5/G6 Advanced mathematics sources unverified), final complete main-branch CI/QA and production migration/rollback plan, user/security UAT and Neon free-tier consumption evidence. **Do not switch existing Render `Edulytics` `srv-dakq5n2fngtc73a62i10` or merge draft PR #419 before resolving these.**
+
+
+## Execution checkpoint — 2026-10-09 (post operator source approval)
+
+Operator requested continuation through release. This is an **execution authorization subject to existing acceptance gates**, not a waiver of safety, performance, curricular accuracy, or rollback requirements.
+
+**Freshly verified via connected services:**
+- PR #419 is `open`, `draft=true`, `merged=false`; merging remains prohibited while release gates fail.
+- Render isolated V2 service `srv-db42982d0e5s73fhvpd0` tracks the feature branch with `autoDeploy=no` and preview generation disabled. Original production service and static public site have not been modified by this checkpoint.
+- Neon new project `tiny-lab-44877119`, isolated branch `br-ancient-smoke-b5694k1f`: read-only SQL check returned **85 public tables and 30 EF migrations**. No mutation was performed in this check.
+- Source-decision evidence: [UAE_G5_G6_ADVANCED_OPERATOR_SOURCE_DECISION_20261009.md](./UAE_G5_G6_ADVANCED_OPERATOR_SOURCE_DECISION_20261009.md). Operator approved Grade 5 Advanced Volume 2 2023–2024 as a project source; TOCs align with Grade 5 General 2025–2026 for 7 units/48 numbered lessons, but this does not certify full-book equivalence, missing Volume 1, publisher rights, or ministry 2025–2026 Advanced recognition. Grade 6 Advanced Volume 1 2025–2026 cover exists locally.
+
+**Current release blockers:**
+1. Generate/review Grade 5/6 Advanced source catalogs, independently authored blueprints and content, official reference/outcome alignment, and confirm full year/volume coverage. Strict 64/64 must pass on the resulting code; last established audit was 62/64, not a new test result.
+2. Current-HEAD full CI/security and synthetic all-role authentication/tenant-isolation/Practice/assessment E2E must pass, including reproducible content parity.
+3. Benchmark representative A/B/C workload with measured **Neon database egress**, query counts, p50/p95, worker idle load and compute usage; finalize the architecture decision with data.
+4. Verify clean-production database selection, no tenant rows, tested recoverability/backout and Render secret/data-protection preservation before any cutover.
+5. Explicit final GO with controlled one-time deployment, functional postdeploy acceptance and an operating-window usage watch.
+
+**Decision: NO-GO at this checkpoint.** Do not auto-merge PR #419, change original Render service settings, or redirect production database while blockers exist. This checkpoint records actual inspections and sources, **not a completed implementation or a successful test run**.
