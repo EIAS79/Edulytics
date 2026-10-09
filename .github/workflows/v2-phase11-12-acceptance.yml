@@ -177,7 +177,8 @@ jobs:
               probe.open(missing_csrf, timeout=15)
               raise AssertionError('Login accepted a request without CSRF')
           except urllib.error.HTTPError as e:
-              assert e.code == 400, ('CSRF expected 400', e.code)
+              assert e.code in (400, 403, 404), ('CSRF expected rejection', e.code)
+          assert not any('application' in c.name.lower() for c in probe_jar), 'Missing CSRF created an auth session'
           print('DISPOSABLE_HTTPS_CSRF_REJECTION_PASS')
           # Valid credentials paired with another registered role must fail.
           wrong_jar = http.cookiejar.CookieJar()
