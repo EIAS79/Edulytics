@@ -67,10 +67,9 @@ internal static class DemoSameOriginGateway
         }
 
         outbound.Headers.Host = new Uri(DemoOrigin).Authority;
-        outbound.Headers.TryAddWithoutValidation(
-            "X-Forwarded-Host", context.Request.Host.Value);
-        outbound.Headers.TryAddWithoutValidation(
-            "X-Forwarded-Proto", context.Request.Scheme);
+        // Do not pass the public host into the isolated upstream. Its own
+        // authentication middleware must generate links against its own host;
+        // those redirects are then rewritten into a same-origin path below.
 
         try
         {
@@ -102,10 +101,11 @@ internal static class DemoSameOriginGateway
                         StringComparison.OrdinalIgnoreCase))
                 {
                     context.Response.Headers.Location =
-                        Prefix + (location.AbsolutePath.StartsWith(
+                        (location.AbsolutePath.StartsWith(
                             Prefix, StringComparison.OrdinalIgnoreCase)
-                            ? location.AbsolutePath[Prefix.Length..]
-                            : location.AbsolutePath) + location.Query + location.Fragment;
+                            ? location.AbsolutePath
+                            : Prefix + location.AbsolutePath)
+                        + location.Query + location.Fragment;
                 }
                 else if (!location.IsAbsoluteUri &&
                          location.OriginalString.StartsWith('/') &&
