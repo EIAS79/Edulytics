@@ -125,13 +125,17 @@ for key, schoolname in SCHOOLS:
     fields = [("__RequestVerificationToken", attempt_csrf.group(1))]
     for question_id in question_ids:
         fields.extend((("questionIds", question_id), ("responses", "1")))
-    with student.open(urllib.request.Request(
-        BASE + "/student/assessments/" + assessment_id + "/submit",
+    try:
+        with student.open(urllib.request.Request(
+            BASE + "/student/assessments/" + assessment_id + "/submit",
         data=urllib.parse.urlencode(fields).encode(), method="POST"
-    ), timeout=40) as submitted:
-        assert submitted.status == 200, (key, "submit POST failed")
-        result_html = submitted.read().decode("utf-8")
-        assert "student-assessment" in result_html or "Submitted" in result_html, key
+        ), timeout=40) as submitted:
+            assert submitted.status == 200, (key, "submit POST failed")
+            result_html = submitted.read().decode("utf-8")
+            assert "student-assessment" in result_html or "Submitted" in result_html, key
+    except urllib.error.HTTPError as error:
+        print("STUDENT_SUBMIT_FAILURE", key, error.code, error.url)
+        raise
     after_attempts = int(sql('SELECT count(*) FROM "AssessmentAttempts";'))
     assert after_attempts > before_attempts, (key, before_attempts, after_attempts)
     get_page(student, "/student/results")
