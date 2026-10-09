@@ -229,6 +229,15 @@ for route in "${PUBLIC_ROUTES[@]}"; do
   snapshot_public_route "$route"
 done
 
+# The public login is an immutable static snapshot, unlike the dynamic MVC
+# application. Keep the same unified sign-in routing on that primary page even
+# when snapshots were taken from a previous backend deploy.
+LOGIN_SNAPSHOT="$OUT/account/login/index.html"
+if [ -f "$LOGIN_SNAPSHOT" ] &&
+   ! grep -q 'unified-demo-login.js' "$LOGIN_SNAPSHOT"; then
+  sed -i 's#</body>#<script src="/js/unified-demo-login.js" defer></script></body>#' "$LOGIN_SNAPSHOT"
+fi
+
 # Render serves directory snapshots canonically at paths that end in "/".
 # Rewrite every generated internal public link to that canonical form at build
 # time so navigation never falls through to a sleeping dynamic service before
