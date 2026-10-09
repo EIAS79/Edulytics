@@ -296,7 +296,11 @@ jobs:
             tail -60 /tmp/phase-uat-academic.log
             exit 1
           fi
-          python3 tools/phase29/acceptance_two_school_https.py
+          if ! python3 tools/phase29/acceptance_two_school_https.py; then
+            echo 'Academic acceptance diagnostic log (disposable CI only):'
+            tail -90 /tmp/phase-uat-academic.log
+            exit 1
+          fi
       - name: Assert application layer boundaries
         run: python3 scripts/ci-architecture-gate.py
       - uses: actions/upload-artifact@v4
