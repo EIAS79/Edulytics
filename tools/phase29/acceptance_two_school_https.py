@@ -105,6 +105,38 @@ for key, schoolname in SCHOOLS:
     get_page(student, "/student/practice")
     deny(student, "/school/assessments")
     deny(teacher, "/student/dashboard")
+    # Complete a real student assessment: GET form, CSRF-protected POST,
+    # and verify a new submitted assessment attempt in this disposable DB.
+    student_index = get_page(student, "/student/assessments")
+    open_link = re.search(
+        r'href="([^"]*/student/assessments/([0-9a-fA-F-]{36}))"',
+        student_index, re.IGNORECASE)
+    assert open_link, (key, "no available assessment")
+    assessment_id = open_link.group(2)
+    before_attempts = int(sql('SELECT count(*) FROM "AssessmentAttempts";'))
+    attempt_html = get_page(student, "/student/assessments/" + assessment_id)
+    attempt_csrf = re.search(
+        r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+        attempt_html)
+    question_ids = re.findall(
+        r'name="questionIds"[^>]*value="([0-9a-fA-F-]{36})"',
+        attempt_html)
+    assert attempt_csrf and question_ids, (key, "assessment form incomplete")
+    fields = [("__RequestVerificationToken", attempt_csrf.group(1))]
+    for question_id in question_ids:
+        fields.extend((("questionIds", question_id), ("responses", "1")))
+    with student.open(urllib.request.Request(
+        BASE + "/student/assessments/" + assessment_id + "/submit",
+        data=urllib.parse.urlencode(fields).encode(), method="POST"
+    ), timeout=40) as submitted:
+        assert submitted.status == 200, (key, "submit POST failed")
+        result_html = submitted.read().decode("utf-8")
+        assert "student-assessment" in result_html or "Submitted" in result_html, key
+    after_attempts = int(sql('SELECT count(*) FROM "AssessmentAttempts";'))
+    assert after_attempts > before_attempts, (key, before_attempts, after_attempts)
+    get_page(student, "/student/results")
+    print("DISPOSABLE_STUDENT_ASSESSMENT_SUBMISSION_PASS", key, assessment_id)
+
     teachers[key] = teacher
     print("DISPOSABLE_ACADEMIC_ROLE_WORKFLOWS_PASS", key)
 
