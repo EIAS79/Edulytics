@@ -34,6 +34,48 @@ public sealed class YouTubeLessonStudioContractTests
     }
 
     [Fact]
+    public void StudentRichLesson_UsesSingleColumnCards_ForKeyConceptsExamplesAndMistakes()
+    {
+        var css = Read("src/Edulytics.Web/wwwroot/css/site.css");
+        var richLesson = Read(
+            "src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml");
+
+        Assert.Contains(
+            ".lesson-reader--student .rich-concept-grid,",
+            css, StringComparison.Ordinal);
+        Assert.Contains(
+            ".lesson-reader--student .rich-example-grid,",
+            css, StringComparison.Ordinal);
+        Assert.Contains(
+            ".lesson-reader--student .rich-mistake-grid {",
+            css, StringComparison.Ordinal);
+        Assert.Contains(
+            "grid-template-columns: minmax(0, 1fr);",
+            css, StringComparison.Ordinal);
+        Assert.Contains(
+            "class=\"rich-solution-list\"",
+            richLesson, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void YouTubeSearch_RequiresConfiguredDataApiKey_AndDoesNotClaimResults()
+    {
+        var discovery = Read(
+            "src/Edulytics.Services/LessonContent/YouTubeLessonDiscovery.cs");
+        var settings = Read("src/Edulytics.Web/appsettings.json");
+
+        Assert.Contains(
+            "string.IsNullOrWhiteSpace(_options.ApiKey)",
+            discovery, StringComparison.Ordinal);
+        Assert.Contains(
+            "YouTube Data API key is not configured",
+            discovery, StringComparison.Ordinal);
+        Assert.Contains(
+            "\"ApiKey\": \"\"",
+            settings, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void StaffAndStudent_UseTheSameYouTubeStudioPartial()
     {
         var staff = Read(
