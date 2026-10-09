@@ -221,6 +221,33 @@ jobs:
                   assert response.status == 200, (role, 'login POST', response.status)
                   assert target != '/account/login', (role, 'did not establish login', target)
               assert any(c.secure for c in jar), (role, 'missing secure session cookie')
+              # Role-scoped live HTTP checks against actual authenticated sessions.
+              # Follow 403/404/redirects defensively: never permit another role's private page.
+              must_allow = {
+                  'SchoolAdmin': ['/school/dashboard', '/school/reports'],
+                  'SubjectSupervisor': ['/school/dashboard', '/school/reports'],
+                  'Teacher': ['/school/dashboard', '/school/assessments'],
+                  'Student': ['/student/dashboard', '/student/practice'],
+              }
+              must_deny = {
+                  'SchoolAdmin': ['/student/dashboard', '/student/practice'],
+                  'SubjectSupervisor': ['/student/dashboard', '/student/practice'],
+                  'Teacher': ['/student/dashboard', '/student/practice'],
+                  'Student': ['/school/dashboard', '/school/assessments', '/school/reports'],
+              }
+              for path in must_allow[role]:
+                  with opener.open(base+path, timeout=20) as resource:
+                      final_path = urllib.parse.urlparse(resource.url).path.lower()
+                      assert resource.status == 200 and final_path != '/account/login', (role, path, final_path)
+                  print('DISPOSABLE_AUTHORIZED_PAGE_PASS', role, path)
+              for path in must_deny[role]:
+                  try:
+                      with opener.open(base+path, timeout=20) as resource:
+                          final_path = urllib.parse.urlparse(resource.url).path.lower()
+                          assert final_path != path.lower(), (role, 'restricted page accessible', path)
+                  except urllib.error.HTTPError as e:
+                      assert e.code in (401, 403, 404), (role, path, e.code)
+                  print('DISPOSABLE_CROSS_ROLE_DENIAL_PASS', role, path)
               print('DISPOSABLE_HTTPS_ROLE_LOGIN_PASS', role, target)
           PY
           echo 'DISPOSABLE_ROLE_BOOTSTRAP_PASS'
