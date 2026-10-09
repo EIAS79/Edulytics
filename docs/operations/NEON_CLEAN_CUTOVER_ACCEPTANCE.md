@@ -147,3 +147,12 @@ Operator requested continuation through release. This is an **execution authoriz
 5. Explicit final GO with controlled one-time deployment, functional postdeploy acceptance and an operating-window usage watch.
 
 **Decision: NO-GO at this checkpoint.** Do not auto-merge PR #419, change original Render service settings, or redirect production database while blockers exist. This checkpoint records actual inspections and sources, **not a completed implementation or a successful test run**.
+
+
+## 2026-10-09 — original-content preservation and isolated staging deployment checkpoint
+
+- Source parity workflow `37926815352`: `MAIN_TO_V2_OFFICIAL_PACK_PARITY compared=4 errors=0`; `MAIN_TO_V2_PARITY original=5110 matched=5110 missing=0 changedBodies=0`. All 2,201 .NET regression tests passed; 14 focused tests passed. The strict historical curriculum scope audit remains **62/64 FAIL** for G5/G6 UAE Advanced; do not reclassify this check as green or alter the course catalogue as part of storage-only migration.
+- Isolated Render staging service `srv-db42982d0e5s73fhvpd0` successfully deployed commit `6cb9059f88d563a0c1eb6ea5e896c6ce2f3e0c86` as `dep-db4dfdt9fdbs73bk5m30` (`live` 2026-10-09 12:04:31 UTC). This is **staging deployment success**, not authenticated application acceptance or production cutover.
+- Isolated Neon branch `br-ancient-smoke-b5694k1f`: curriculum lesson identities `5110`; canonical prose translation rows `0`; user rows `0`; school rows `0` (read-only count). No original production DB rows were modified.
+- Render application logs shortly after staging deployment show recurring EF Core reads of `AnalyticsRefreshStates` and `OutboxMessages`; the required idle-poll/egress measurement is therefore still **open**. Do not extrapolate a savings percentage from logs without query/bytes and time-series baselines.
+- Production GO remains **NO**: full E2E/auth/role parity, an agreed disposition for unchanged baseline 62/64, matched-payload A/B/C/Neon egress measurements, and rollback drill are not signed off. Preserve original production and database; no merge of PR #419 on this evidence alone.
