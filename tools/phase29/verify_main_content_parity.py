@@ -34,6 +34,29 @@ def run():
                 key = (pack, code)
                 if key in bucket: errors.append(f"duplicate identity {key} in {'main' if bucket is baseline else 'V2'}")
                 bucket[key] = lesson
+    # Original official curriculum nodes, outcome codes and their mapping links
+    # must survive the storage migration byte-for-byte. This is a source parity
+    # check, not a new academic certification policy.
+    curriculum_base = "src/Edulytics.Core/Curriculum/Packs"
+    original_packs = subprocess.check_output(
+        ["git", "ls-tree", "-r", "--name-only", "origin/main", "--", curriculum_base],
+        cwd=ROOT, text=True,
+    ).splitlines()
+    compared_packs = 0
+    for path in original_packs:
+        if not path.endswith(".curriculum-pack.json"):
+            continue
+        current = ROOT / path
+        if not current.is_file():
+            errors.append(f"missing original curriculum pack: {path}")
+            continue
+        original_bytes = subprocess.check_output(
+            ["git", "show", f"origin/main:{path}"], cwd=ROOT,
+        )
+        if original_bytes != current.read_bytes():
+            errors.append(f"modified original curriculum standards/outcomes/mapping: {path}")
+        compared_packs += 1
+    print(f"MAIN_TO_V2_OFFICIAL_PACK_PARITY compared={compared_packs} errors={len(errors)}")
     missing = sorted(set(baseline) - set(candidate))
     changed = sorted(key for key in baseline.keys() & candidate.keys()
                      if baseline[key].get("Translations", baseline[key].get("translations"))
