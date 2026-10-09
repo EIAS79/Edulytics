@@ -63,3 +63,16 @@ These measurements add a **limited** runtime data point to Stage 2 of the latest
 This is *not* a valid A/B/C end-to-end comparison: metadata-only and join queries do not return identical fields; the direct database baseline excludes client network latency, application-side JSON lookup, authorization, cold cache, server load, and transferred bytes. The samples are too small for a reliable p95. Do not infer Neon egress savings or production readiness from these figures. The separate CI test establishing `legacySqlQueries=2` vs `jsonHybridSqlQueries=1` remains the comparable round-trip-count gate.
 
 At this checkpoint, a read-only Neon SQL count returned `pedagogicalLessons=5110`, `lessonOutcomeLinks=5749`, `users=0`, `schools=0`, `postgresProseTranslations=0` on isolated staging. Project usage counter read-back: `data_transfer_bytes=8941338`, `compute_time_seconds=2360`; these are cumulative counters, **not** attributed to this microbenchmark. Full representative-workday Neon egress, production-authenticated E2E, and identical-payload A/B/C comparisons remain mandatory before cutover.
+
+
+## تحديث القرار بعد النشر — مراحل 2 و3 و6 و11 و12 (9 أكتوبر 2026)
+
+**حالة التنفيذ:** التصميم C مستخدم بالفعل في Render الإنتاجي المرتبط بفرع Neon `production`؛ أما **الاعتماد النهائي بأنه الأمثل من A/B/C فلم يكتمل**. النص السابق «للتجربة فقط» يصف قرار ما قبل النشر، ولا يمثل حالة تشغيل الموقع الحالية.
+
+- **ما نعرفه بثقة:** CI أثبت 5,110 هوية درس + 5,749 ارتباطًا بالمخرجات، و5,110 سجل إصدار/نشر و0 شروحات PostgreSQL، ونجاح 2,201 اختبار تطبيق. الهويات والعلاقات المرجعية باقية لسلامة المفاتيح والعزل؛ قراءة الشرح من ملفات JSON.
+- **مقارنة محدودة متاحة:** في الاختبار المعزول، قراءة الهوية القديمة تستخدم استعلامين مقابل واحد في التصميم C لدرس، وواحد لدفعة 25 درسًا. المقارنة لا تتضمن متنًا متماثلًا؛ لذا ليست دليلًا على نسبة خفض الاستهلاك.
+- **فحص أداء إضافي:** أُضيفت 20 قراءة متكررة لدفعة 25 درسًا في أداة التهيئة الآمنة لقياس p50 وp95 للذاكرة الساخنة + PostgreSQL 18؛ المخرجات تعلن صراحة أنها ليست p95 باردًا أو بيانات egress الإنتاج.
+- **المتبقي الحاسم:** تنفيذ B الفعلي غير موجود وليس مناسبًا افتراض صفر استعلامات له؛ المقارنة المتماثلة A/B/C غير مثبتة، ولا توجد بعد قياسات تحميل مصادق عليه تشمل مدرستين، صفحات التقييم وPractice وWorksheets أو egress من Neon مرتبط بنوافذ تشغيل محددة. لذلك يبقى قرار C *معتمدًا للتشغيل الحالي مع مراقبة* وليس معتمدًا كأفضل تصميم بالأرقام.
+- **القياس الحالي من الموصلات:** Neon أعاد مقياس نقل تراكميًا للمشروع مقداره 8,941,338 بايت وcompute تراكمي 2,360 ثانية؛ لا يمثل الاستهلاك الفعلي للدروس على الإنتاج أو معدلًا لفترة زمنية بعينها. Render يعيد عينات CPU/ذاكرة ونقل، لكن سلسلة HTTP latency وعدد الطلبات كانت فارغة وقت الاستعلام. لا يجوز اشتقاق توفير مزعوم من هذه الأرقام.
+
+**قرار تقليل جداول المرحلة 6:** لا نحذف أي سجل مرجعي له FK مستخدم بالمدارس أو الاختبارات أو Practice دون إعادة تصميم وعزل واختبارات. إزالة نصوص الشروحات من Neon حققت صفر صفوف Prose؛ أما تقليص هوية الدرس وروابط المخرجات فمؤجل إلى حين بيانات قياس مماثلة.
