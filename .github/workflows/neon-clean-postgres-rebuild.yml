@@ -93,7 +93,12 @@ jobs:
             (SELECT count(*) FROM "Schools") AS schools,
             (SELECT count(*) FROM "AspNetUsers") AS users,
             (SELECT count(*) FROM "CurriculumLessonContentTranslations") AS prose,
-            (SELECT count(*) FROM "CurriculumLessonContents") AS metadata;
+            (SELECT count(*) FROM "CurriculumLessonContents") AS metadata,
+            (SELECT count(*) FROM "CurriculumPedagogicalLessons") AS lessons,
+            (SELECT count(*) FROM "CurriculumPedagogicalLessonOutcomes") AS outcome_links,
+            (SELECT count(*) FROM "AspNetRoles") AS roles,
+            (SELECT count(*) FROM "SchoolCurriculumAdoptions") AS adoptions,
+            (SELECT count(*) FROM "SchoolSubscriptions") AS subscriptions;
           """
           result = subprocess.check_output(
               ["psql", "-h", "127.0.0.1", "-U", "postgres",
@@ -101,8 +106,8 @@ jobs:
               text=True,
               env=os.environ,
           ).strip()
-          schools, users, prose, metadata = map(int, result.split("|"))
-          assert (schools, users, prose) == (0, 0, 0), result
-          assert metadata == 5110, result
+          schools, users, prose, metadata, lessons, outcome_links, roles, adoptions, subscriptions = map(int, result.split("|"))
+          assert (schools, users, prose, adoptions, subscriptions) == (0, 0, 0, 0, 0), result
+          assert (metadata, lessons, outcome_links, roles) == (5110, 5110, 5749, 5), result
           print("CLEAN_POSTGRES_GATE_PASS", result)
           PY
