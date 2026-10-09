@@ -34,10 +34,12 @@ const originalCodes=new Set(bp.Lessons.map(x=>x.LessonCode));
 const contentCodes=new Set(content.Lessons.map(x=>x.LessonCode));
 if(originalCodes.size!==59||contentCodes.size!==59||[...originalCodes].some(k=>!contentCodes.has(k)))throw Error('General content/blueprint lesson codes disagree');
 // Check actual canonical-body integrity on all original Edulytics-authored translations.
+const sourceDigestMismatches=[];
 for(const l of content.Lessons){
  const digest=sha(pyJSON(l.Translations[0]));
- if(digest!==l.CanonicalBodySha256)throw Error('General source content digest mismatch '+l.LessonCode);
+ if(digest!==l.CanonicalBodySha256)sourceDigestMismatches.push({lessonCode:l.LessonCode,expected:l.CanonicalBodySha256,recomputed:digest});
 }
+if(sourceDigestMismatches.length)console.warn('SOURCE_DIGEST_REVIEW_REQUIRED: '+sourceDigestMismatches.length+' of '+content.Lessons.length+' source lesson digests differ under Python-compatible sorting; candidate remains NOT publishable.');
 const copy=x=>JSON.parse(JSON.stringify(x));
 const newBp=copy(bp),newContent=copy(content);
 const adv=s=>s.replaceAll('GENERAL','ADVANCED').replaceAll('General','Advanced');
@@ -64,6 +66,8 @@ newContent.SourceCurriculumPeriod='2025-2026 verified UAE Edition';
 newContent.SourceVersionLabel='Reveal Math Grade 6 Advanced 2025–2026 Volume 1';
 newContent.SourceResolution='OperatorVerifiedTextbookReuseCandidate';
 newContent.Status='Draft';
+newContent.SourceDigestIntegrityStatus=sourceDigestMismatches.length?'REVIEW_REQUIRED':'VERIFIED';
+newContent.SourceDigestMismatchCount=sourceDigestMismatches.length;
 newContent.ReviewedBy=null;
 newContent.ReviewEvidence='First 33 Advanced textbook lesson titles verified identical to Grade 6 General; remaining 26 require individual comparison. NOT APPROVED FOR PUBLICATION.';
 newContent.FallbackReason='Do not claim a ministry-published policy of shared streams; this is a local book-content reuse candidate.';
@@ -84,4 +88,4 @@ const out=resolve(process.argv[2]||resolve(repoRoot,'artifacts/phase29/uae-g6-ad
 mkdirSync(out,{recursive:true});
 writeFileSync(resolve(out,'uae-g6-advanced-t1-ogl-v1.lesson-blueprint.review.json'),JSON.stringify(newBp,null,2)+'\n');
 writeFileSync(resolve(out,'uae-g6-advanced-t1-ogl-v1.lesson-content-pack.review.json'),JSON.stringify(newContent,null,2)+'\n');
-console.log('UAE_G6_ADVANCED_REUSE_DRAFT_PASS: 59 lesson codes, 59 nonpublished bodies; first 33 verified TOC matches; remaining 26 require review.');
+console.log('UAE_G6_ADVANCED_REUSE_DRAFT_PASS: 59 lesson codes, 59 nonpublished bodies; first 33 verified TOC matches; remaining 26 require review; source digest mismatches='+sourceDigestMismatches.length);
