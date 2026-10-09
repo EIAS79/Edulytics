@@ -495,7 +495,6 @@ if (!edgeEnforcesHttps)
     app.UseHttpsRedirection();
 }
 
-app.UseRequestLocalization();
 
 if (!app.Environment.IsDevelopment())
 {
@@ -536,6 +535,10 @@ app.Use(async (context, next) =>
 
     await next();
 });
+
+// Parse culture AFTER normalizing the same-origin demo PathBase so EN, PL
+// and AR apply to both localized content and the document's html/dir tags.
+app.UseRequestLocalization();
 
 app.UseRouting();
 
