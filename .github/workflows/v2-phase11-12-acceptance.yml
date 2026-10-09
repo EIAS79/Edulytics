@@ -143,6 +143,7 @@ jobs:
           # All identities live solely in the disposable PostgreSQL CI service.
           python3 - <<'PY'
           import http.cookiejar
+          import urllib.error
           import re
           import ssl
           import urllib.parse
@@ -157,6 +158,47 @@ jobs:
               ('demo.teacher@edulytiks.com', 'Teacher'),
               ('demo.student@edulytiks.com', 'Student'),
           ]
+          # Missing antiforgery token must never establish a session.
+          probe_jar = http.cookiejar.CookieJar()
+          probe = urllib.request.build_opener(
+              urllib.request.HTTPCookieProcessor(probe_jar),
+              urllib.request.HTTPSHandler(context=context),
+          )
+          with probe.open(base+'/account/login?culture=en', timeout=15) as response:
+              assert response.status == 200
+          missing_csrf = urllib.request.Request(
+              base+'/account/login?culture=en',
+              data=urllib.parse.urlencode({
+                  'Email': users[0][0], 'Password': password,
+                  'AccountType': users[0][1],
+              }).encode(),
+              method='POST')
+          try:
+              probe.open(missing_csrf, timeout=15)
+              raise AssertionError('Login accepted a request without CSRF')
+          except urllib.error.HTTPError as e:
+              assert e.code == 400, ('CSRF expected 400', e.code)
+          print('DISPOSABLE_HTTPS_CSRF_REJECTION_PASS')
+          # Valid credentials paired with another registered role must fail.
+          wrong_jar = http.cookiejar.CookieJar()
+          wrong = urllib.request.build_opener(
+              urllib.request.HTTPCookieProcessor(wrong_jar),
+              urllib.request.HTTPSHandler(context=context),
+          )
+          with wrong.open(base+'/account/login?culture=en', timeout=15) as response:
+              page = response.read().decode('utf-8')
+          wrong_token = re.search(r'name="__RequestVerificationToken"[^>]*value="([^"]+)"', page)
+          assert wrong_token
+          wrong_body = urllib.parse.urlencode({
+              'Email': users[0][0], 'Password': password,
+              'AccountType': 'Student',
+              '__RequestVerificationToken': wrong_token.group(1),
+          }).encode()
+          with wrong.open(urllib.request.Request(base+'/account/login?culture=en',
+                           data=wrong_body, method='POST'), timeout=15) as response:
+              assert urllib.parse.urlparse(response.url).path.lower() == '/account/login'
+          assert not any('application' in c.name.lower() for c in wrong_jar), 'Wrong-role created an auth session'
+          print('DISPOSABLE_HTTPS_WRONG_ROLE_REJECTION_PASS')
           for email, role in users:
               jar = http.cookiejar.CookieJar()
               opener = urllib.request.build_opener(
