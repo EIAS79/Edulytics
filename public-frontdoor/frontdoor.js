@@ -274,14 +274,9 @@
   function withPublicCulture(url) {
     const target = new URL(url.toString());
     const currentLanguage = preferredLanguage();
-    const isLoginRoute =
-      target.pathname.toLowerCase().replace(/\/+$/, '') === '/account/login';
-
-    target.searchParams.set(
-      'culture',
-      isLoginRoute && currentLanguage === 'ar'
-        ? 'en'
-        : currentLanguage);
+    // Preserve the visitor's selected language for the authentication
+    // flow; the application supports en, pl and ar natively.
+    target.searchParams.set('culture', currentLanguage);
 
     return target;
   }

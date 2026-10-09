@@ -185,11 +185,11 @@ public sealed class PublicStaticFrontDoorContractTests
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
-            "isLoginRoute && currentLanguage === 'ar'",
+            "target.searchParams.set('culture', currentLanguage);",
             runtime,
             StringComparison.Ordinal);
-        Assert.Contains(
-            "? 'en'",
+        Assert.DoesNotContain(
+            "isLoginRoute && currentLanguage === 'ar'",
             runtime,
             StringComparison.Ordinal);
 
