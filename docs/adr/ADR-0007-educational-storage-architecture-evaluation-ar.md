@@ -49,3 +49,17 @@
 - عدم توجيه Render للإصدار الجديد قبل اجتياز بوابات المصدر والبيانات والتشغيل وقياسات الأداء.
 
 **القرار التنفيذي هو أقل مرجع PostgreSQL لازم لسلامة العلاقات + JSON للمحتوى الثابت؛ ولا يُفسَّر كترخيص لحذف بيانات أو نشر منتج غير مُختبَر.**
+
+
+## Read-only PostgreSQL staging measurements — 2026-10-09
+
+These measurements add a **limited** runtime data point to Stage 2 of the latest cutover plan. Recorded against the verified isolated Neon PostgreSQL 18 branch `br-ancient-smoke-b5694k1f` of project `tiny-lab-44877119` using `EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON)` on 25 Grade 5 General metadata rows. Each query was executed five times; no inserts, updates or schema changes were made.
+
+| Query shape | Five server-side execution times, ms (ascending) | Median, ms |
+|---|---|---:|
+| Metadata-only (lesson code/title/unit) | 0.243; 0.247; 0.264; 0.340; 19.810 | **0.264** |
+| Metadata + content-version left join | 1.112; 1.156; 1.219; 1.240; 12.094 | **1.219** |
+
+This is *not* a valid A/B/C end-to-end comparison: metadata-only and join queries do not return identical fields; the direct database baseline excludes client network latency, application-side JSON lookup, authorization, cold cache, server load, and transferred bytes. The samples are too small for a reliable p95. Do not infer Neon egress savings or production readiness from these figures. The separate CI test establishing `legacySqlQueries=2` vs `jsonHybridSqlQueries=1` remains the comparable round-trip-count gate.
+
+At this checkpoint, a read-only Neon SQL count returned `pedagogicalLessons=5110`, `lessonOutcomeLinks=5749`, `users=0`, `schools=0`, `postgresProseTranslations=0` on isolated staging. Project usage counter read-back: `data_transfer_bytes=8941338`, `compute_time_seconds=2360`; these are cumulative counters, **not** attributed to this microbenchmark. Full representative-workday Neon egress, production-authenticated E2E, and identical-payload A/B/C comparisons remain mandatory before cutover.
