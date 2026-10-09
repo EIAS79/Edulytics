@@ -122,7 +122,13 @@ jobs:
           print("DISPOSABLE_FOUR_ROLE_BOOTSTRAP",rows)
           assert rows==(1,4,1), f"Role-bootstrap fixture was not initialized: {rows}"
           PY
-          curl --fail --silent http://127.0.0.1:5050/Account/Login >/dev/null
+          login_status="$(curl --silent --show-error --output /tmp/phase-uat-login.html --write-out '%{http_code}' http://127.0.0.1:5050/account/login || true)"
+          echo "DISPOSABLE_LOGIN_HTTP_STATUS $login_status"
+          if [ "$login_status" != "200" ]; then
+            echo "Application diagnostic tail (test environment only):"
+            tail -70 /tmp/phase-uat-web.log | sed -E 's/([Pp]assword=)[^ ;]+/\\1[REDACTED]/g'
+            exit 1
+          fi
           echo 'DISPOSABLE_ROLE_BOOTSTRAP_PASS'
       - name: Assert application layer boundaries
         run: python3 scripts/ci-architecture-gate.py
