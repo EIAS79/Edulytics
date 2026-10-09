@@ -120,4 +120,29 @@ for source, _ in SCHOOLS:
     deny(teachers[source], "/school/assessments/" + foreign_id)
     print("DISPOSABLE_CROSS_TENANT_ASSESSMENT_DENIAL_PASS", source, target)
 
+# POST real teacher assessment and validate persistence on disposable DB.
+import uuid
+teacher = teachers["cambridge-primary"]
+values = sql("""SELECT a."ClassGroupId",a."SubjectId",a."TermId"
+FROM "Assessments" a JOIN "Schools" s ON a."SchoolId"=s."Id"
+WHERE s."SchoolCode"='REHEARSAL-GB-PRIMARY' LIMIT 1;""").split("|")
+assert len(values) == 3, values
+html = get_page(teacher, "/school/assessments")
+token = re.search(r'name="__RequestVerificationToken"[^>]*value="([^"]+)"', html)
+assert token
+title = "CI acceptance " + uuid.uuid4().hex[:12]
+data = urllib.parse.urlencode({
+    "classGroupId": values[0], "subjectId": values[1],
+    "termId": values[2], "title": title,
+    "assessmentDate": "2026-10-09", "maxScore": "100",
+    "assessmentType": "Exam", "deliveryMode": "Online",
+    "__RequestVerificationToken": token.group(1)
+}).encode()
+with teacher.open(urllib.request.Request(
+    BASE+"/school/assessments", data=data, method="POST"
+), timeout=30) as response:
+    assert response.status == 200
+assert sql('SELECT count(*) FROM "Assessments" WHERE "Title"=\''+title+'\';') == "1"
+print("DISPOSABLE_TEACHER_ASSESSMENT_POST_PASS")
+
 print("DISPOSABLE_TWO_SCHOOL_FULL_DATA_HTTP_REHEARSAL_PASS")
