@@ -139,6 +139,47 @@ jobs:
             tail -70 /tmp/phase-uat-web.log | sed -E 's/([Pp]assword=)[^ ;]+/\\1[REDACTED]/g'
             exit 1
           fi
+          # Exercise real form POSTs and authenticated redirects over TLS.
+          # All identities live solely in the disposable PostgreSQL CI service.
+          python3 - <<'PY'
+          import http.cookiejar
+          import re
+          import ssl
+          import urllib.parse
+          import urllib.request
+
+          base = 'https://localhost:5051'
+          context = ssl.create_default_context(cafile='/tmp/phase-uat-cert.pem')
+          password = __import__('os').environ['Edulytics__PresentationDemo__Password']
+          users = [
+              ('demo.admin@edulytiks.com', 'SchoolAdmin'),
+              ('demo.supervisor@edulytiks.com', 'SubjectSupervisor'),
+              ('demo.teacher@edulytiks.com', 'Teacher'),
+              ('demo.student@edulytiks.com', 'Student'),
+          ]
+          for email, role in users:
+              jar = http.cookiejar.CookieJar()
+              opener = urllib.request.build_opener(
+                  urllib.request.HTTPCookieProcessor(jar),
+                  urllib.request.HTTPSHandler(context=context),
+              )
+              with opener.open(base+'/account/login?culture=en', timeout=15) as response:
+                  html = response.read().decode('utf-8')
+                  assert response.status == 200, (role, 'login GET')
+              token = re.search(r'name="__RequestVerificationToken"[^>]*value="([^"]+)"', html)
+              assert token, (role, 'missing CSRF token')
+              body = urllib.parse.urlencode({
+                  'Email': email, 'Password': password,
+                  'AccountType': role, '__RequestVerificationToken': token.group(1),
+              }).encode()
+              request = urllib.request.Request(base+'/account/login?culture=en', data=body, method='POST')
+              with opener.open(request, timeout=20) as response:
+                  target = urllib.parse.urlparse(response.url).path.lower()
+                  assert response.status == 200, (role, 'login POST', response.status)
+                  assert target != '/account/login', (role, 'did not establish login', target)
+              assert any(c.secure for c in jar), (role, 'missing secure session cookie')
+              print('DISPOSABLE_HTTPS_ROLE_LOGIN_PASS', role, target)
+          PY
           echo 'DISPOSABLE_ROLE_BOOTSTRAP_PASS'
       - name: Assert application layer boundaries
         run: python3 scripts/ci-architecture-gate.py
