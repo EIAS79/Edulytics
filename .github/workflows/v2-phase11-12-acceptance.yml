@@ -99,6 +99,8 @@ jobs:
           demo_password="$(openssl rand -hex 24)Aa1!"
           echo "::add-mask::$demo_password"
           export Edulytics__PresentationDemo__Password="$demo_password"
+          # Test-only fixture tool never runs in the deployed Web application.
+          dotnet run --project tools/Edulytics.CiFixtures/Edulytics.CiFixtures.csproj -- roles
           # Dedicated local TLS endpoint. Keep antiforgery SecurePolicy=Always unchanged.
           openssl req -x509 -newkey rsa:2048 -nodes -days 1 \
             -keyout /tmp/phase-uat-key.pem -out /tmp/phase-uat-cert.pem \
@@ -272,6 +274,8 @@ jobs:
           rehearsal_password="$(openssl rand -hex 24)Aa1!"
           echo "::add-mask::$rehearsal_password"
           export Edulytics__MeetingDemo__Password="$rehearsal_password"
+          dotnet run --project tools/Edulytics.CiFixtures/Edulytics.CiFixtures.csproj -- academic > /tmp/phase-uat-fixture.log 2>&1
+          grep -q 'MEETING_DEMO_SEED_COMPLETED' /tmp/phase-uat-fixture.log
           export ASPNETCORE_URLS='https://127.0.0.1:5052'
           export ASPNETCORE_Kestrel__Certificates__Default__Path=/tmp/phase-uat-identity.pfx
           export ASPNETCORE_Kestrel__Certificates__Default__Password=local-test-tls
@@ -280,8 +284,7 @@ jobs:
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
           ready=false
           for attempt in $(seq 1 100); do
-            if grep -q 'MEETING_DEMO_SEED_COMPLETED' /tmp/phase-uat-academic.log &&
-              curl --fail --silent --cacert /tmp/phase-uat-cert.pem https://localhost:5052/health/ready >/dev/null; then
+            if curl --fail --silent --cacert /tmp/phase-uat-cert.pem https://localhost:5052/health/ready >/dev/null; then
               ready=true
               break
             fi
