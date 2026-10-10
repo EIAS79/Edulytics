@@ -609,7 +609,7 @@ public sealed partial class YouTubeLessonDiscoveryService :
                 related,
                 usedPreferred,
                 featured is null
-                    ? "No embeddable YouTube result passed the minimum {minimum}% lesson-match threshold."
+                    ? $"No embeddable YouTube result passed the minimum {minimum}% lesson-match threshold."
                     : usedPreferred
                         ? "Selected as the strongest lesson match; preferred-channel trust contributed a small ranking bonus."
                         : "Selected as the strongest lesson match across the relevant YouTube results.");
