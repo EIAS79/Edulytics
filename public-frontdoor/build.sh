@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SRC="$ROOT/src/Edulytics.Web/wwwroot"
 OUT="$ROOT/public-frontdoor/dist"
-ORIGIN="https://staging.edulytiks.com"
+ORIGIN="https://edulytics-4346.onrender.com"
 STATIC_FALLBACK_ORIGIN="https://edulytics-public.onrender.com"
 SNAPSHOT_ORIGIN="$ORIGIN"
 SOURCE_MODE="backend"
@@ -34,7 +34,7 @@ if [ "$ready" -ne 1 ]; then
   # The public front door must remain deployable even when the dynamic service
   # or its database is temporarily unavailable. Reuse the last live static
   # snapshots, then inject the new frontdoor runtime and canonical-link fixes.
-  echo "Staging is unavailable; rebuilding from the last live static snapshots."
+  echo "Main application is unavailable; rebuilding from the last live static snapshots."
   SNAPSHOT_ORIGIN="$STATIC_FALLBACK_ORIGIN"
   SOURCE_MODE="static"
 fi
@@ -228,15 +228,6 @@ PUBLIC_ROUTES=(
 for route in "${PUBLIC_ROUTES[@]}"; do
   snapshot_public_route "$route"
 done
-
-# The public login is an immutable static snapshot, unlike the dynamic MVC
-# application. Keep the same unified sign-in routing on that primary page even
-# when snapshots were taken from a previous backend deploy.
-LOGIN_SNAPSHOT="$OUT/account/login/index.html"
-if [ -f "$LOGIN_SNAPSHOT" ] &&
-   ! grep -q 'unified-demo-login.js' "$LOGIN_SNAPSHOT"; then
-  sed -i 's#</body>#<script src="/js/unified-demo-login.js" defer></script></body>#' "$LOGIN_SNAPSHOT"
-fi
 
 # Render serves directory snapshots canonically at paths that end in "/".
 # Rewrite every generated internal public link to that canonical form at build

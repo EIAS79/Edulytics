@@ -1,5 +1,5 @@
 (() => {
-  const APP_ORIGIN = 'https://staging.edulytiks.com';
+  const APP_ORIGIN = 'https://edulytics-4346.onrender.com';
   const LIVE_PREFIX = '/__frontdoor-live';
   const LANGUAGE_KEY = 'edulytics.frontdoor.language';
   const PUBLIC_LANGUAGE_KEY = 'edulytics.public.siteLanguage';

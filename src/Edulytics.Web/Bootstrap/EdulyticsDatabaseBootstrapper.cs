@@ -58,20 +58,6 @@ public sealed class EdulyticsDatabaseBootstrapper
             if (!cleanBootstrap)
                 await EnsureSuperAdminAsync();
             await SeedCurriculumIfRequestedAsync();
-            if (!cleanBootstrap)
-            {
-                await PresentationDemoProvisioner.RunAsync(
-                    _db,
-                    _userManager,
-                    _configuration);
-                await MeetingDemoProvisioner.RunAsync(
-                    _db,
-                    _userManager,
-                    _configuration);
-                await MeetingDemoProvisioner.RepairExistingAsync(_db);
-                await MeetingDemoProvisioner.RepairLessonLinksAsync(_db);
-            }
-
             return;
         }
 
@@ -108,19 +94,6 @@ public sealed class EdulyticsDatabaseBootstrapper
             if (!cleanBootstrap)
                 await EnsureSuperAdminAsync();
             await SeedCurriculumIfRequestedAsync();
-            if (!cleanBootstrap)
-            {
-                await PresentationDemoProvisioner.RunAsync(
-                    _db,
-                    _userManager,
-                    _configuration);
-                await MeetingDemoProvisioner.RunAsync(
-                    _db,
-                    _userManager,
-                    _configuration);
-                await MeetingDemoProvisioner.RepairExistingAsync(_db);
-                await MeetingDemoProvisioner.RepairLessonLinksAsync(_db);
-            }
 
         }
         finally

@@ -452,34 +452,6 @@ using (var scope =
 
 app.UseForwardedHeaders();
 
-// The public static front door already routes /__frontdoor-live/* to this
-// application. Keep the demo tenant on that SAME public origin while proxying
-// only from the approved main service to the dedicated, isolated demo service.
-// Never activate on the demo service itself or on a developer machine.
-app.Use(async (context, next) =>
-{
-    if (app.Configuration.GetValue<bool>("Edulytics:DemoGateway:Enabled") &&
-        string.Equals(
-            Environment.GetEnvironmentVariable("RENDER_SERVICE_ID"),
-            "srv-dakq5n2fngtc73a62i10",
-            StringComparison.Ordinal))
-    {
-        if (context.Request.Path.StartsWithSegments(
-                "/__frontdoor-live/demo", out var demoPath))
-        {
-            await DemoSameOriginGateway.ForwardAsync(context, demoPath);
-            return;
-        }
-
-        // Demo access is only through the explicit /__frontdoor-live/demo path.
-        // Never infer the destination from a browser cookie: an old demo
-        // cookie can coexist with a real school's production session.
-
-    }
-
-    await next();
-});
-
 app.UseMiddleware<
     CorrelationIdMiddleware>();
 
@@ -524,33 +496,17 @@ app.Use(async (context, next) =>
 {
     const string frontDoorLivePrefix = "/__frontdoor-live";
 
-    // The dedicated demo application needs PathBase so MVC links, forms,
-    // redirects and auth-cookie paths stay under the same-origin /demo bridge.
-    if (string.Equals(
-            Environment.GetEnvironmentVariable("RENDER_SERVICE_ID"),
-            "srv-db4jtht9fdbs73fioa20",
-            StringComparison.Ordinal) &&
-        context.Request.Path.StartsWithSegments(
-            "/__frontdoor-live/demo", out var demoRemaining))
-    {
-        context.Request.PathBase = "/__frontdoor-live/demo";
-        context.Request.Path = demoRemaining.HasValue ? demoRemaining : "/";
-    }
-    else if (context.Request.Path.StartsWithSegments(
+    if (context.Request.Path.StartsWithSegments(
             frontDoorLivePrefix,
             out var remainingPath))
     {
-        context.Request.Path =
-            remainingPath.HasValue
-                ? remainingPath
-                : "/";
+        context.Request.Path = remainingPath.HasValue ? remainingPath : "/";
     }
 
     await next();
 });
 
-// Parse culture AFTER normalizing the same-origin demo PathBase so EN, PL
-// and AR apply to both localized content and the document's html/dir tags.
+// Parse culture after the static-to-main-application bridge has been normalized.
 app.UseRequestLocalization();
 
 app.UseRouting();
@@ -666,24 +622,6 @@ app.MapFallback(
     .AllowAnonymous();
 
 await app.StartAsync();
-
-try
-{
-    using var meetingDemoScope =
-        app.Services.CreateScope();
-
-    await MeetingDemoProvisioner.RunAsync(
-        meetingDemoScope.ServiceProvider
-            .GetRequiredService<Edulytics.Data.Contexts.EdulyticsDbContext>(),
-        meetingDemoScope.ServiceProvider
-            .GetRequiredService<Microsoft.AspNetCore.Identity.UserManager<Edulytics.Data.Identity.ApplicationUser>>(),
-        app.Configuration);
-}
-catch (Exception exception)
-{
-    Console.Error.WriteLine(
-        $"MEETING_DEMO_POST_START_FAILED type={exception.GetType().Name} message={exception.Message}");
-}
 
 await app.WaitForShutdownAsync();
 
