@@ -339,6 +339,11 @@ builder.Services
 var app =
     builder.Build();
 
+// Resolve and log YouTube configuration at application startup, even before
+// an authenticated lesson request reaches the discovery service.
+// The options factory logs presence flags only; it never logs the API key.
+_ = app.Services.GetRequiredService<YouTubeLessonDiscoveryOptions>();
+
 var cleanBootstrap =
     app.Configuration.GetValue<bool>("Edulytics:Deployment:CleanBootstrap");
 var readCanonicalJson =
