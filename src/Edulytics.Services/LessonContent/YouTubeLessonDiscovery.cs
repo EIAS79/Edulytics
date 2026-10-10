@@ -5,6 +5,8 @@ using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Xml;
 using Edulytics.Core.Mathematics.Practice;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 
 namespace Edulytics.Services.LessonContent;
 
@@ -395,13 +397,16 @@ public sealed partial class YouTubeLessonDiscoveryService :
 
     private readonly HttpClient _httpClient;
     private readonly YouTubeLessonDiscoveryOptions _options;
+    private readonly ILogger<YouTubeLessonDiscoveryService> _logger;
 
     public YouTubeLessonDiscoveryService(
         HttpClient httpClient,
-        YouTubeLessonDiscoveryOptions options)
+        YouTubeLessonDiscoveryOptions options,
+        ILogger<YouTubeLessonDiscoveryService>? logger = null)
     {
         _httpClient = httpClient;
         _options = options;
+        _logger = logger ?? NullLogger<YouTubeLessonDiscoveryService>.Instance;
     }
 
     public Task<YouTubeLessonDiscoveryResult> DiscoverAsync(
@@ -632,8 +637,13 @@ public sealed partial class YouTubeLessonDiscoveryService :
         {
             throw;
         }
-        catch (HttpRequestException)
+        catch (HttpRequestException exception)
         {
+            // Never log request URLs: YouTube API URLs contain the secret key.
+            // Status codes distinguish key/quota/provider failures safely.
+            _logger.LogWarning(
+                "YouTube Data API discovery failed; statusCode={StatusCode}",
+                (int?)exception.StatusCode);
             return new(
                 false,
                 policy.Label,

@@ -362,6 +362,21 @@ public sealed class PublicStaticFrontDoorContractTests
             StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void DemoGateway_CannotHijackRealSchoolSessionViaLegacyCookie()
+    {
+        var root = FindRoot();
+        var program = File.ReadAllText(Path.Combine(
+            root, "src/Edulytics.Web/Program.cs"));
+        var login = File.ReadAllText(Path.Combine(
+            root, "src/Edulytics.Web/wwwroot/js/unified-demo-login.js"));
+
+        Assert.Contains("\"/__frontdoor-live/demo\"", program, StringComparison.Ordinal);
+        Assert.DoesNotContain(".Edulytics.SchoolsDemo.Auth", program, StringComparison.Ordinal);
+        Assert.DoesNotContain("ForwardOriginalPathAsync", program, StringComparison.Ordinal);
+        Assert.DoesNotContain("demoSchoolPrefixes", login, StringComparison.Ordinal);
+    }
+
     private static string FindRoot()
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);

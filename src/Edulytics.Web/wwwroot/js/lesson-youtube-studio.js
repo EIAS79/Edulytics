@@ -410,14 +410,23 @@
                     headers: { Accept: "application/json" }
                 });
 
+                // Authentication middleware may redirect this JSON request
+                // to HTML (including a legacy demo login page).
+                if (response.redirected) {
+                    throw new Error("session-redirected");
+                }
                 if (!response.ok) {
                     throw new Error("YouTube discovery request failed with " + response.status);
+                }
+                const contentType = response.headers.get("content-type") || "";
+                if (!contentType.toLowerCase().includes("application/json")) {
+                    throw new Error("unexpected-non-json");
                 }
 
                 const data = await response.json();
                 if (version !== requestVersion) return;
                 renderResult(data);
-            } catch {
+            } catch (error) {
                 if (version !== requestVersion) return;
 
                 restoreFallbackFeature(
@@ -425,8 +434,12 @@
                 );
 
                 if (status) {
-                    status.textContent =
-                        "YouTube discovery could not load right now. The lesson remains available and you can use the direct YouTube links.";
+                    const sessionProblem = error instanceof Error &&
+                        (error.message === "session-redirected" ||
+                         error.message === "unexpected-non-json");
+                    status.textContent = sessionProblem
+                        ? "The student session did not return lesson data. Please sign in again using the normal Edulytiks login."
+                        : "YouTube discovery could not load right now. The lesson remains available and you can use the direct YouTube links.";
                 }
                 if (resultCount) resultCount.textContent = "0";
                 if (related) {

@@ -471,18 +471,10 @@ app.Use(async (context, next) =>
             return;
         }
 
-        // The cookie is issued ONLY by the isolated demo application. Route
-        // authenticated demo sessions through the ORIGINAL MVC paths, rather
-        // than introducing visible /demo routes. An invalid/spoofed cookie
-        // cannot authenticate: upstream still verifies its signed ticket.
-        if (context.Request.Cookies.ContainsKey(
-                ".Edulytics.SchoolsDemo.Auth") &&
-            !context.Request.Path.StartsWithSegments("/health") &&
-            !context.Request.Path.StartsWithSegments("/__frontdoor-live"))
-        {
-            await DemoSameOriginGateway.ForwardOriginalPathAsync(context);
-            return;
-        }
+        // Demo access is only through the explicit /__frontdoor-live/demo path.
+        // Never infer the destination from a browser cookie: an old demo
+        // cookie can coexist with a real school's production session.
+
     }
 
     await next();
