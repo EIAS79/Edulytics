@@ -10450,6 +10450,88 @@
         "commonMistake": "Do not subtract the smaller digit from the larger digit independently when regrouping is required.",
         "summary": "Subtract by place value and verify with addition."
       }
+    },
+    {
+      "id": "us-ccss-g5-first-quadrant",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^CCSS:5\\.G\\.A\\.1$"
+      ],
+      "skillId": "supporting.geometry.analytic",
+      "mechanic": "COORDINATE_GEOMETRY",
+      "families": [
+        "usccss.geometry.first_quadrant_point"
+      ],
+      "content": {
+        "concept": "Write ordered pairs in the first quadrant only; no midpoint, negative coordinates or high-school analytic geometry.",
+        "workedExample": "Use the age-appropriate, verified question family for this official standard.",
+        "solution": "Use exact arithmetic or geometric definition and verify against the original parameters.",
+        "commonMistake": "Do not substitute a general topic question for the exact grade-specific standard.",
+        "summary": "Write ordered pairs in the first quadrant only; no midpoint, negative coordinates or high-school analytic geometry."
+      }
+    },
+    {
+      "id": "us-ccss-g5-unit-fraction-division",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^CCSS:5\\.NF\\.B\\.7$"
+      ],
+      "skillId": "supporting.fractions.multiply_divide",
+      "mechanic": "FRACTION_MULTIPLY_DIVIDE",
+      "families": [
+        "usccss.fractions.unit_divide_whole",
+        "usccss.fractions.whole_divide_unit"
+      ],
+      "content": {
+        "concept": "Divide unit fractions by whole numbers and whole numbers by unit fractions, without unrestricted fraction-division question types.",
+        "workedExample": "Use the age-appropriate, verified question family for this official standard.",
+        "solution": "Use exact arithmetic or geometric definition and verify against the original parameters.",
+        "commonMistake": "Do not substitute a general topic question for the exact grade-specific standard.",
+        "summary": "Divide unit fractions by whole numbers and whole numbers by unit fractions, without unrestricted fraction-division question types."
+      }
+    },
+    {
+      "id": "us-ccss-g6-expression-structure",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^CCSS:6\\.EE\\.A\\.2$"
+      ],
+      "skillId": "supporting.algebra.expressions",
+      "mechanic": "ALGEBRA_EXPRESSIONS",
+      "families": [
+        "usccss.algebra.expression_words",
+        "usccss.algebra.expression_coefficient",
+        "usccss.algebra.expression_power_value",
+        "supporting.algebra.substitute"
+      ],
+      "content": {
+        "concept": "Write and evaluate variable expressions, identify coefficients and use integer powers.",
+        "workedExample": "Use the age-appropriate, verified question family for this official standard.",
+        "solution": "Use exact arithmetic or geometric definition and verify against the original parameters.",
+        "commonMistake": "Do not substitute a general topic question for the exact grade-specific standard.",
+        "summary": "Write and evaluate variable expressions, identify coefficients and use integer powers."
+      }
+    },
+    {
+      "id": "us-ccss-g7-rational-operations",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^CCSS:7\\.NS\\.A\\.2$"
+      ],
+      "skillId": "supporting.fractions.multiply_divide",
+      "mechanic": "FRACTION_MULTIPLY_DIVIDE",
+      "families": [
+        "usccss.number.signed_rational_multiply",
+        "usccss.number.signed_rational_divide",
+        "usccss.number.rational_terminating_decimal"
+      ],
+      "content": {
+        "concept": "Multiply and divide signed rational numbers; recognize terminating rational decimals, with recurring decimals still requiring independent certification.",
+        "workedExample": "Use the age-appropriate, verified question family for this official standard.",
+        "solution": "Use exact arithmetic or geometric definition and verify against the original parameters.",
+        "commonMistake": "Do not substitute a general topic question for the exact grade-specific standard.",
+        "summary": "Multiply and divide signed rational numbers; recognize terminating rational decimals, with recurring decimals still requiring independent certification."
+      }
     }
   ]
 }

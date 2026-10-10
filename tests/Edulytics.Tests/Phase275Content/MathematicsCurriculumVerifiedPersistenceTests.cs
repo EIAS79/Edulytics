@@ -40,6 +40,18 @@ public sealed class MathematicsCurriculumVerifiedPersistenceTests
             stream);
     }
 
+    private static JsonDocument LoadCommonCoreAuthorityCorrectionManifest()
+    {
+        var assembly = typeof(MathematicsCurriculumPackRegistry).Assembly;
+        var name = assembly.GetManifestResourceNames()
+            .Single(x => x.EndsWith(
+                "us-ccss-math.authority-text-repairs.json",
+                StringComparison.OrdinalIgnoreCase));
+        using var stream = assembly.GetManifestResourceStream(name)
+            ?? throw new InvalidOperationException("Common Core text repair manifest not found.");
+        return JsonDocument.Parse(stream);
+    }
+
     private static string Sha256(
         string value)
     {
@@ -167,11 +179,17 @@ public sealed class MathematicsCurriculumVerifiedPersistenceTests
                     "SourcePdfSha256")
                 .GetString());
 
+        // The immutable original PDF corpus remains the historical integrity
+        // baseline; only the four source-verified text corrections carry a
+        // separate hash-checked manifest and import-state digest.
+        using var corrections = LoadCommonCoreAuthorityCorrectionManifest();
+        var repairRoot = corrections.RootElement;
+        Assert.Equal(
+            root.GetProperty("CorrectedContentDigest").GetString(),
+            repairRoot.GetProperty("baselineContentDigest").GetString());
         Assert.Equal(
             state.ContentDigest,
-            root.GetProperty(
-                    "CorrectedContentDigest")
-                .GetString());
+            repairRoot.GetProperty("patchedContentDigest").GetString());
 
         Assert.Equal(
             385,
@@ -211,6 +229,13 @@ public sealed class MathematicsCurriculumVerifiedPersistenceTests
         Assert.Equal(
             385,
             expectedHashes.Count);
+
+        foreach (var corrected in
+                 repairRoot.GetProperty("replacements").EnumerateArray())
+        {
+            expectedHashes[corrected.GetProperty("code").GetString()!] =
+                corrected.GetProperty("correctedTextSha256").GetString()!;
+        }
 
         var versionId =
             state.FrameworkVersionId;
