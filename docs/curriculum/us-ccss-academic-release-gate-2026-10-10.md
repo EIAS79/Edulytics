@@ -22,9 +22,9 @@ Evidence: `docs/curriculum/reference/us-ccss-official-codes.snapshot.json` and `
 - The normalized HTML-to-pack comparison found 256 exact parent-text matches, 107 differences, including 21 low token-overlap cases (threshold < 0.90). Some differences involve source-document footnotes, mathematical typography or the integration of child clauses; **do not assume all differences are content errors**.
 - Examples requiring source-by-source review: `1.G.A.3` (extraneous footnote), `5.G.A.1` and `6.EE.A.2` (apparent truncation), and parent standards with subordinate requirements.
 - 35 lessons are linked to Mathematical Practices only. They have a valid official MP mapping, but do not yet have verified independent content-standard alignment. Review original publisher material before assigning any content standard; do not manufacture links.
-- The 2,882 production Lesson→Standard links reported in the earlier DB audit have **not** been independently compared row-by-row in this working copy: the connected Neon account returned no project. The blueprint audit is not a replacement for live DB verification.
+- **Neon production row-by-row comparison: PASS.** Read-only export from Edulytiks production project `tiny-lab-44877119`, branch `br-frosty-block-b52tnjky`, confirmed all 1,560 US lessons and all 2,882 distinct lesson→outcome links match the 17 accepted source blueprints exactly, with **zero** missing/extra lessons or mismatched outcome identities. This is a structural identity pass, **not** a semantic endorsement of the 2,882 links. No production row was modified. Reproducible diff script/report: `tools/us-ccss-neon-blueprint-diff.cjs` and `docs/curriculum/us-ccss-neon-blueprint-diff.json`.
 
-Evidence: `docs/curriculum/us-ccss-official-text-diff.json` and earlier production audit dated 2026-10-10.
+Evidence: `docs/curriculum/us-ccss-official-text-diff.json`, `docs/curriculum/us-ccss-neon-blueprint-diff.json` and earlier production audit dated 2026-10-10.
 
 ## Gate 3 — Skill/family Practice runtime: PASS for tested deterministic cases; full academic certification PENDING
 
@@ -39,7 +39,7 @@ Evidence: `docs/curriculum/us-ccss-official-text-diff.json` and earlier producti
 1. Review and resolve 107 official-text discrepancies, paying particular attention to the 21 high-risk candidates; update legal provenance, source hashes and data migrations if any official content changes.
 2. Review all 121 subordinate CCSS requirements against lesson examples, SkillContracts and covered question families.
 3. Adjudicate each of the 35 MP-only lessons with a documented `keep_mp_only` or content-outcome mapping decision with publisher evidence.
-4. Compare the live Neon production 2,882 Lesson→Standard links with accepted blueprints (read-only baseline, transactional corrections with rollback and tests).
+4. **DONE — structural only:** 1,560 lessons and 2,882 live Neon links match the source blueprint exactly; review the correctness of those links academically, not by assuming numeric equality.
 5. Run full relevant CI (tests, build, static checks, database contract and browser smoke tests) against the exact release SHA, then stage and review. Verify Render/Vercel service, workspace, environment and migration readiness.
 6. Approve explicit release evidence; deploy once, then verify live Practice, Assessment, learner mastery isolation, uptime and rollback.
 
@@ -49,6 +49,7 @@ Evidence: `docs/curriculum/us-ccss-official-text-diff.json` and earlier producti
 node tools/us-ccss-standards-audit.cjs --strict
 node tools/us-ccss-standards-audit.cjs --refresh-official --strict
 node tools/us-ccss-official-text-audit.cjs
+node tools/us-ccss-neon-blueprint-diff.cjs /path/to/read-only-neon-baseline.json
 dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --filter FullyQualifiedName~UsCommonCoreFullLessonPracticeAuditTests
 ```
 
