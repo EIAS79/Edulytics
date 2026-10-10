@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Security.Claims;
 using System.Threading.RateLimiting;
 using Edulytics.Web;
+using Edulytics.Services.LessonContent;
 using Edulytics.Web.Bootstrap;
 using Edulytics.Web.Extensions;
 using Edulytics.Web.Health;
@@ -592,6 +593,18 @@ app.UseRateLimiter();
 app.UseAuthorization();
 
 app.UseMiddleware<IdempotencyMiddleware>();
+
+// Diagnostic endpoint is authenticated, returns presence flags only, and reads
+// the exact singleton instance used by YouTubeLessonDiscoveryService.
+app.MapGet(
+        "/internal/diagnostics/youtube",
+        (YouTubeLessonDiscoveryOptions options) =>
+            Results.Json(new
+            {
+                enabled = options.Enabled,
+                apiKeyConfigured = !string.IsNullOrWhiteSpace(options.ApiKey)
+            }))
+    .RequireAuthorization();
 
 app.MapHealthChecks(
         "/health/live",
