@@ -20,7 +20,7 @@ public static class LessonContentRegistrationExtensions
                 sp.GetRequiredService<IConfiguration>()
                     .GetSection("Edulytics:YouTubeLessons");
 
-            return new YouTubeLessonDiscoveryOptions
+            var options = new YouTubeLessonDiscoveryOptions
             {
                 Enabled = ReadBool(configuration["Enabled"], true),
                 ApiKey = configuration["ApiKey"] ?? string.Empty,
@@ -30,6 +30,16 @@ public static class LessonContentRegistrationExtensions
                 MinimumRelevancePercent =
                     ReadInt(configuration["MinimumRelevancePercent"], 34)
             };
+
+            // Log configuration state only; never log the key itself.
+            sp.GetRequiredService<ILoggerFactory>()
+                .CreateLogger("Edulytics.YouTubeConfiguration")
+                .LogInformation(
+                    "YouTube configuration resolved: enabled={Enabled}, apiKeyConfigured={ApiKeyConfigured}",
+                    options.Enabled,
+                    !string.IsNullOrWhiteSpace(options.ApiKey));
+
+            return options;
         });
 
         services.AddHttpClient<
