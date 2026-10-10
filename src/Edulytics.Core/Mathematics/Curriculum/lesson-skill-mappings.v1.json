@@ -4276,6 +4276,60 @@
       "officialOutcomeCodes": [
         "CCSS:7.NS.A.2"
       ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:VECTOR-MATRIX:U01:L01",
+      "primarySkills": [
+        "supporting.vectors.core"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Source lesson title and its source artifacts verified in US-CCSS curriculum lesson blueprint",
+        "CCSS HSN-VM.B.4–5 or HSS-MD.B.5 subsection tasks reviewed against mathematical definitions",
+        "Independent randomized solver recomputation tests for each allowed family"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "VECTOR_COMPONENTS_MAGNITUDE_DIRECTION",
+      "allowedQuestionFamilies": [
+        "usccss.vector.add_x",
+        "usccss.vector.subtract_y",
+        "usccss.vector.scalar_y",
+        "usccss.vector.sum_magnitude",
+        "usccss.vector.scalar_magnitude",
+        "usccss.vector.resultant_angle"
+      ],
+      "officialOutcomeCodes": [
+        "CCSS:HSN-VM.A.1",
+        "CCSS:HSN-VM.A.2",
+        "CCSS:HSN-VM.A.3",
+        "CCSS:HSN-VM.B.4",
+        "CCSS:HSN-VM.B.5"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:PROB-DECISION:U01:L05",
+      "primarySkills": [
+        "supporting.probability_statistics.core"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "mappingConfidence": "High",
+      "evidence": [
+        "Source lesson title and its source artifacts verified in US-CCSS curriculum lesson blueprint",
+        "CCSS HSN-VM.B.4–5 or HSS-MD.B.5 subsection tasks reviewed against mathematical definitions",
+        "Independent randomized solver recomputation tests for each allowed family"
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "EXPECTED_NET_VALUE_DECISION",
+      "allowedQuestionFamilies": [
+        "usccss.probability.expected_net_payoff",
+        "usccss.probability.compare_expected_cost"
+      ],
+      "officialOutcomeCodes": [
+        "CCSS:HSS-MD.B.5"
+      ]
     }
   ]
 }
