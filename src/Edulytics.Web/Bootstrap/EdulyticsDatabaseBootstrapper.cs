@@ -57,6 +57,8 @@ public sealed class EdulyticsDatabaseBootstrapper
             await EnsureRolesExistAsync();
             if (!cleanBootstrap)
                 await EnsureSuperAdminAsync();
+            if (!cleanBootstrap)
+                await ActivateProductionTestAccountsAsync();
             await SeedCurriculumIfRequestedAsync();
             if (!cleanBootstrap)
             {
@@ -107,6 +109,8 @@ public sealed class EdulyticsDatabaseBootstrapper
             await EnsureRolesExistAsync();
             if (!cleanBootstrap)
                 await EnsureSuperAdminAsync();
+            if (!cleanBootstrap)
+                await ActivateProductionTestAccountsAsync();
             await SeedCurriculumIfRequestedAsync();
             if (!cleanBootstrap)
             {
@@ -292,4 +296,47 @@ public sealed class EdulyticsDatabaseBootstrapper
             throw new InvalidOperationException($"Failed to add created SuperAdmin user to role '{RoleNames.SuperAdmin}': {string.Join("; ", roleResultForNewUser.Errors.Select(e => e.Description))}");
         }
     }
+    // One-time, opt-in setup of pre-existing synthetic QA users; never changes
+    // passwords of already configured accounts or touches other schools.
+    private async Task ActivateProductionTestAccountsAsync()
+    {
+        if (!_configuration.GetValue<bool>("Edulytics:ProductionTestAccounts:Enabled"))
+            return;
+
+        var school = await _db.Schools.AsNoTracking()
+            .SingleOrDefaultAsync(x => x.NormalizedSchoolCode == "CAMBRIDGE-MIDDLE");
+        if (school is null)
+            throw new InvalidOperationException("The Cambridge Middle QA school does not exist.");
+
+        var accounts = new (string Email, string Role, string SecretName)[]
+        {
+            ("cambridge-middle.admin@edulytiks.com", RoleNames.SchoolAdmin, "SchoolAdmin"),
+            ("cambridge-middle.supervisor@edulytiks.com", RoleNames.SubjectSupervisor, "SubjectSupervisor"),
+            ("cambridge-middle.teacher@edulytiks.com", RoleNames.Teacher, "Teacher"),
+            ("cambridge-middle.student@edulytiks.com", RoleNames.Student, "Student")
+        };
+
+        foreach (var (email, role, secretName) in accounts)
+        {
+            var password = _configuration[$"Edulytics:ProductionTestAccounts:Passwords:{secretName}"];
+            if (string.IsNullOrWhiteSpace(password))
+                throw new InvalidOperationException($"Missing QA password setting for {secretName}.");
+
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user is null || user.SchoolId != school.Id ||
+                !user.IsActive || !await _userManager.IsInRoleAsync(user, role))
+                throw new InvalidOperationException($"QA account not provisioned with expected school/role: {secretName}.");
+
+            // Existing credentials must never be reset by an environment toggle.
+            if (await _userManager.HasPasswordAsync(user))
+                continue;
+
+            var result = await _userManager.AddPasswordAsync(user, password);
+            if (!result.Succeeded)
+                throw new InvalidOperationException(
+                    $"QA password setup failed for {secretName}: " +
+                    string.Join("; ", result.Errors.Select(e => e.Code)));
+        }
+    }
+
 }
