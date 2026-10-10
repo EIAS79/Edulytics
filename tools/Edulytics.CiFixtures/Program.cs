@@ -1,3 +1,4 @@
+using Edulytics.Core.Constants;
 using Edulytics.Data.Contexts;
 using Edulytics.Data.Identity;
 using Edulytics.Web.Bootstrap;
@@ -46,6 +47,20 @@ using var provider = services.BuildServiceProvider();
 using var scope = provider.CreateScope();
 var db = scope.ServiceProvider.GetRequiredService<EdulyticsDbContext>();
 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<ApplicationRole>>();
+foreach (var roleName in new[]
+{
+    RoleNames.SuperAdmin, RoleNames.SchoolAdmin, RoleNames.SubjectSupervisor,
+    RoleNames.Teacher, RoleNames.Student
+})
+{
+    if (await roleManager.RoleExistsAsync(roleName))
+        continue;
+    var created = await roleManager.CreateAsync(new ApplicationRole { Name = roleName });
+    if (!created.Succeeded)
+        throw new InvalidOperationException(
+            "CI role setup failed: " + string.Join("; ", created.Errors.Select(x => x.Code)));
+}
 if (args[0] == "roles")
 {
     await PresentationDemoProvisioner.RunAsync(db, userManager, configuration);
