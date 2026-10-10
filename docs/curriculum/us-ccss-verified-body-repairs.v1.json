@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "description": "Exactly two publisher-sourced US CCSS body errors reviewed and repaired without modifying student records or official curriculum graph",
+  "allowUnlistedContentChanges": false,
+  "repairs": [
+    {
+      "packCode": "US-CCSS-MATH",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:VECTOR-MATRIX:U01:L01",
+      "file": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-vector-matrix-phase29-v1.lesson-content-pack.json",
+      "expectedOriginalCanonicalBodySha256": "9cdd1e99780afddfd311fbb980cb1020092d2a02ba6d20b97b091c0b36b4b657",
+      "expectedCorrectedCanonicalBodySha256": "5364e307194f1a7ea4a9944ef4e47eec1fbcb04dea89e36904b7ea551c985210",
+      "expectedUnchangedSourceSha256": "4aca916e175d944d966894469d103b6b34b32ae9f032ae0e1b4e534bb189fd56"
+    },
+    {
+      "packCode": "US-CCSS-MATH",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:PROB-DECISION:U01:L05",
+      "file": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-prob-decision-phase29-v1.lesson-content-pack.json",
+      "expectedOriginalCanonicalBodySha256": "baac0ed92ca80780792618caaeea3fce11bec66d3e2dd0e14a36f5cb5fcdae82",
+      "expectedCorrectedCanonicalBodySha256": "0c3c03b91ca681c5c2ffe3c08d2c69d5b9a780c505cd0a87a3116a932881eeb0",
+      "expectedUnchangedSourceSha256": "df09abb5b0a444ecd29567977492987593b9e1603a4d4ec2559b35d7ca7986c1"
+    }
+  ]
+}
