@@ -328,7 +328,10 @@ public sealed class LessonContentService : ILessonContentService
                         DisplayLevel(context),
                         context.FrameworkName,
                         lesson.SortOrder,
-                        ResolveIsSupporting(lesson)));
+                        ResolveIsSupporting(lesson))
+                    {
+                        LessonCode = lesson.Code
+                    });
             }
         }
 

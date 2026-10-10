@@ -40,7 +40,8 @@
         <main class="student-main">
             <header class="student-topbar">
                 <partial name="_AppLanguageSwitcher" />
-                @if (!(controller == "StudentPortal" && action == "Learning"))
+                @if (!(controller == "StudentPortal" &&
+                      (action == "Learning" || action == "Lesson" || action == "LessonBySlug")))
                 {
                     <div><span class="student-topbar-product">@localizedProductName</span><strong>@ViewData["Title"]</strong></div>
                 }

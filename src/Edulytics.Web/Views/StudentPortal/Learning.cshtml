@@ -1,5 +1,6 @@
 @using System.Collections.Generic
 @model Edulytics.Web.ViewModels.StudentPortal.StudentLearningViewModel
+@using Edulytics.Web.Presentation
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonContentResource> L
 @functions {
@@ -231,8 +232,8 @@ else
                     <p>@lesson.TopicName</p>
                     <a class="student-primary-link"
                        asp-controller="StudentPortal"
-                       asp-action="Lesson"
-                       asp-route-id="@lesson.Id">@L["OpenLesson"]</a>
+                       asp-action="LessonBySlug"
+                       asp-route-slug="@StudentLessonSlug.Create(lesson)">@L["OpenLesson"]</a>
                 </article>
             }
         </div>

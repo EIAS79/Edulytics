@@ -9,6 +9,7 @@ using Edulytics.Services.Practice;
 using Edulytics.Services.StudentPortal;
 using Edulytics.Web.GameRouting;
 using Edulytics.Web.Printing;
+using Edulytics.Web.Presentation;
 using Edulytics.Web.Resilience;
 using Edulytics.Web.ViewModels.StudentPortal;
 using Microsoft.AspNetCore.Authorization;
@@ -275,6 +276,47 @@ public sealed class StudentPortalController : Controller
         ViewData["ExactPracticeAdoptionId"] = availability.ExactPracticeAdoptionId;
         ViewData["LessonPracticePilotAdoptionId"] = availability.PilotAdoptionId;
         return View(nameof(Lesson), lesson.Value);
+    }
+
+    // Resolve only from the authenticated student's accessible published
+    // catalogue; preserve GUID links and the original authorization checks.
+    [HttpGet("learning/lesson/{slug}")]
+    public async Task<IActionResult> LessonBySlug(
+        string slug,
+        CancellationToken cancellationToken)
+    {
+        if (!TryActor(out var actorId))
+            return Forbid();
+
+        var codeToken = StudentLessonSlug.GetCodeToken(slug);
+        if (codeToken is null)
+            return NotFound();
+
+        var published = await _lessonContent.ListPublishedForStudentAsync(
+            actorId,
+            CultureInfo.CurrentUICulture.Name,
+            cancellationToken);
+        if (published.Value is null)
+            return published.Error == LessonContentErrorCode.AccessDenied
+                ? Forbid()
+                : NotFound();
+
+        var matches = published.Value
+            .Where(lesson => string.Equals(
+                StudentLessonSlug.CodeToken(lesson.LessonCode),
+                codeToken,
+                StringComparison.Ordinal))
+            .Take(2)
+            .ToArray();
+
+        if (matches.Length != 1)
+            return NotFound();
+
+        var canonicalSlug = StudentLessonSlug.Create(matches[0]);
+        if (!string.Equals(slug, canonicalSlug, StringComparison.Ordinal))
+            return RedirectToAction(nameof(LessonBySlug), new { slug = canonicalSlug });
+
+        return await Lesson(matches[0].Id, cancellationToken);
     }
 
     [HttpGet("learning/lesson/{id:guid}/youtube")]

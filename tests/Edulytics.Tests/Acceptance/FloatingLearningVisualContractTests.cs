@@ -8,8 +8,8 @@ public sealed class FloatingLearningVisualContractTests
         var view = ReadRepositoryFile("src", "Edulytics.Web", "Views", "StudentPortal", "Learning.cshtml");
 
         Assert.Contains("student-lesson-card", view, StringComparison.Ordinal);
-        Assert.Contains(@"asp-action=""Lesson""", view, StringComparison.Ordinal);
-        Assert.Contains(@"asp-route-id=""@lesson.Id""", view, StringComparison.Ordinal);
+        Assert.Contains(@"asp-action=""LessonBySlug""", view, StringComparison.Ordinal);
+        Assert.Contains(@"asp-route-slug=""@StudentLessonSlug.Create(lesson)""", view, StringComparison.Ordinal);
         Assert.Contains("LessonVisualKind", view, StringComparison.Ordinal);
         Assert.Contains("classic-lesson-icon", view, StringComparison.Ordinal);
         Assert.DoesNotContain("data-floating-lesson", view, StringComparison.Ordinal);
