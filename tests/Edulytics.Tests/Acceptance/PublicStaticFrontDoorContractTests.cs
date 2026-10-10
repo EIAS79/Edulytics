@@ -380,7 +380,8 @@ public sealed class PublicStaticFrontDoorContractTests
         Assert.DoesNotContain("PresentationDemoProvisioner", bootstrap, StringComparison.Ordinal);
         Assert.DoesNotContain("MeetingDemoProvisioner", bootstrap, StringComparison.Ordinal);
         Assert.DoesNotContain("unified-demo-login.js", login, StringComparison.Ordinal);
-        Assert.DoesNotContain("unified-demo-login.js", publicBuild, StringComparison.Ordinal);
+        Assert.Contains("Old cached HTML may retain the retired demo login interceptor.",
+            publicBuild, StringComparison.Ordinal);
         Assert.Contains("ORIGIN=\\"https://edulytics-4346.onrender.com\\"", publicBuild, StringComparison.Ordinal);
     }
 

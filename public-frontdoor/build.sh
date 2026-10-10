@@ -120,6 +120,9 @@ inject_frontdoor_runtime() {
   # Fallback snapshots may already contain the previous frontdoor runtime.
   # Remove it before injecting the current runtime so listeners are installed once.
   sed -i 's#<script src="/frontdoor.js" defer></script>##g' "$target"
+  # Old cached HTML may retain the retired demo login interceptor.
+  # Remove it even when the static build must use cached public snapshots.
+  sed -i -E 's#<script[^>]*src="[^"]*/js/unified-demo-login\.js[^"]*"[^>]*></script>##g' "$target"
   sed -i 's#<script data-frontdoor-language-bootstrap>.*</script>##g' "$target"
 
   # Public content snapshots are Polish by default. Before the bundled public
