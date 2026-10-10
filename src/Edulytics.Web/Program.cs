@@ -7,7 +7,6 @@ using Edulytics.Services.LessonContent;
 using Edulytics.Web.Bootstrap;
 using Edulytics.Web.Extensions;
 using Edulytics.Web.Health;
-using Edulytics.Web.Hosting;
 using Edulytics.Web.Hubs;
 using Edulytics.Web.Localization;
 using Edulytics.Web.Middleware;
