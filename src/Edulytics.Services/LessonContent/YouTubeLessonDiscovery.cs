@@ -17,7 +17,7 @@ public sealed class YouTubeLessonDiscoveryOptions
     public int CacheMinutes { get; set; } = 720;
     public int SearchResultCount { get; set; } = 50;
     public int RelatedResultCount { get; set; } = 6;
-    public int MinimumRelevancePercent { get; set; } = 70;
+    public int MinimumRelevancePercent { get; set; } = 34;
 }
 
 public sealed record YouTubePreferredChannel(
@@ -548,11 +548,8 @@ public sealed partial class YouTubeLessonDiscoveryService :
                 0,
                 100);
 
-            // Enforce the exact match score displayed to students,
-            // retaining the 34% topic floor against unrelated results.
             var ranked = candidates
-                .Where(x => x.RelevancePercent >= 34 &&
-                            x.Video.MatchPercent >= minimum)
+                .Where(x => x.RelevancePercent >= minimum)
                 .OrderByDescending(x => x.RankScore)
                 .ToArray();
 
@@ -579,8 +576,7 @@ public sealed partial class YouTubeLessonDiscoveryService :
                         cancellationToken);
 
                     ranked = broadCandidates
-                        .Where(x => x.RelevancePercent >= 34 &&
-                                    x.Video.MatchPercent >= minimum)
+                        .Where(x => x.RelevancePercent >= minimum)
                         .OrderByDescending(x => x.RankScore)
                         .ToArray();
                 }
@@ -609,7 +605,7 @@ public sealed partial class YouTubeLessonDiscoveryService :
                 related,
                 usedPreferred,
                 featured is null
-                    ? $"No embeddable YouTube result passed the minimum {minimum}% lesson-match threshold."
+                    ? "No embeddable YouTube result passed the lesson relevance checks."
                     : usedPreferred
                         ? "Selected as the strongest lesson match; preferred-channel trust contributed a small ranking bonus."
                         : "Selected as the strongest lesson match across the relevant YouTube results.");
