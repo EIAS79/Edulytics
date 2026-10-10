@@ -28,7 +28,10 @@ public static class LessonContentRegistrationExtensions
                 SearchResultCount = ReadInt(configuration["SearchResultCount"], 50),
                 RelatedResultCount = ReadInt(configuration["RelatedResultCount"], 6),
                 MinimumRelevancePercent =
-                    ReadInt(configuration["MinimumRelevancePercent"], 34)
+                    Math.Clamp(
+                        ReadInt(configuration["MinimumRelevancePercent"], 70),
+                        70,
+                        100)
             };
 
             // Log configuration state only; never log the key itself.
