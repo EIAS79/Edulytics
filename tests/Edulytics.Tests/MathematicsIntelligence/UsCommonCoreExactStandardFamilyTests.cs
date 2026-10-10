@@ -14,7 +14,10 @@ public sealed class UsCommonCoreExactStandardFamilyTests
         "usccss.algebra.expression_power_value",
         "usccss.number.signed_rational_multiply",
         "usccss.number.signed_rational_divide",
-        "usccss.number.rational_terminating_decimal"
+        "usccss.number.rational_terminating_decimal",
+        "usccss.number.repeating_decimal_digit",
+        "usccss.number.signed_rate_displacement",
+        "usccss.algebra.exponent_product_value"
     ];
 
     [Fact]
@@ -54,6 +57,6 @@ public sealed class UsCommonCoreExactStandardFamilyTests
                 }
             }
         }
-        Assert.Equal(9 * 3 * 12, successes);
+        Assert.Equal(12 * 3 * 12, successes);
     }
 }

@@ -106,4 +106,37 @@ internal static partial class SupportingPracticeCompletionEngine
             "Find an equivalent fraction with denominator 100, then place the decimal point two digits from the right.",
             ("numerator", numerator), ("denominator", d));
     }
+
+    // Remaining Grade 6/7 subclauses: these families are exact and independently solved.
+    private static Problem UsExponentProductValue(Random r, int scale)
+    {
+        var baseNumber = r.Next(2, 10 + scale * 3);
+        var exponent = r.Next(2, 6);
+        return P("usccss.algebra.exponent_product_value",
+            $"Evaluate {baseNumber}^{exponent} by writing it as {exponent} equal factors and multiplying.",
+            "An exponent represents repeated multiplication of the base. Do not multiply base by exponent.",
+            ("base", baseNumber), ("exponent", exponent));
+    }
+
+    private static Problem UsSignedRateDisplacement(Random r, int scale)
+    {
+        var speed = r.Next(2, 8 + scale * 3) * (r.Next(2) == 0 ? -1 : 1);
+        var time = r.Next(2, 7 + scale * 2);
+        return P("usccss.number.signed_rate_displacement",
+            $"A signed velocity is {speed} km/h for {time} hours. What is the signed displacement in kilometres?",
+            "Signed displacement equals velocity multiplied by elapsed time. Preserve the direction sign.",
+            ("velocity", speed), ("time", time));
+    }
+
+    private static Problem UsRepeatingDecimalDigit(Random r, int scale)
+    {
+        var denominator = r.Next(2) == 0 ? 3 : 9;
+        var numerator = r.Next(1, denominator);
+        var whole = r.Next(0, 8 + scale * 4);
+        var improperNumerator = denominator * whole + numerator;
+        return P("usccss.number.repeating_decimal_digit",
+            $"Using long division, find the digit that repeats in the decimal expansion of {improperNumerator}/{denominator}. Enter the single repeated digit.",
+            "Division by 3 or 9 in these cases produces a repeating decimal. Continue the remainder cycle to verify its digit.",
+            ("numerator", numerator), ("denominator", denominator), ("whole", whole));
+    }
 }

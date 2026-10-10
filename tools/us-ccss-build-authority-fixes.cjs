@@ -3,9 +3,9 @@ const root=path.resolve(__dirname,'..');
 const pack=require(path.join(root,'src/Edulytics.Core/Curriculum/Packs/us-ccss-math.curriculum-pack.json'));
 const authority=require(path.join(root,'docs/curriculum/us-ccss-authority-repair-candidates.json'));
 const hash=x=>crypto.createHash('sha256').update(x,'utf8').digest('hex');
-const codes=['5.G.A.1','5.NF.B.7','6.EE.A.2','7.NS.A.2'];
+const codes=['5.G.A.1','5.NF.B.7','6.EE.A.2','7.NS.A.2','HSF-TF.C.8'];
 function officialText(code){
- const r=authority.rows.find(x=>x.code===code);
+ const r=authority.rows.find(x=>x.code===code.replace(/^HS([NAFGS])-([A-Z]{1,3})\./,'HS$1.$2.'));
  if(!r)throw Error('Missing source authority '+code);
  let s=r.officialCombinedText
   .replace(/&divide;/g,'÷').replace(/&times;/g,'×').replace(/&plusmn;/g,'±')
@@ -16,6 +16,7 @@ function officialText(code){
   if(!s.includes(needle))throw Error('Exponent source fragment missing');
   s=s.replace(needle,'the formulas V = s³ and A = 6s² to find');
  }
+ if(code==='HSF-TF.C.8')s='Prove the Pythagorean identity sin²(θ) + cos²(θ) = 1 and use it to find sin(θ), cos(θ), or tan(θ) given sin(θ), cos(θ), or tan(θ) and the quadrant of the angle.';
  if(code==='5.G.A.1')s=s.replace(/x -axis/g,'x-axis').replace(/x -coordinate/g,'x-coordinate').replace(/y -axis/g,'y-axis').replace(/y -coordinate/g,'y-coordinate');
  return {body:s,url:r.sourceUrl};
 }

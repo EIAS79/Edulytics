@@ -10,7 +10,8 @@ public sealed class CommonCoreVerifiedAuthorityTextRepairTests
     private static readonly string[] ExpectedCodes =
     [
         "CCSS:5.G.A.1", "CCSS:5.NF.B.7",
-        "CCSS:6.EE.A.2", "CCSS:7.NS.A.2"
+        "CCSS:6.EE.A.2", "CCSS:7.NS.A.2",
+        "CCSS:HSF-TF.C.8"
     ];
 
     [Fact]
@@ -80,6 +81,8 @@ public sealed class CommonCoreVerifiedAuthorityTextRepairTests
             repairs[3].GetProperty("correctedOfficialText").GetString());
         Assert.Contains("d. Convert a rational number to a decimal",
             repairs[3].GetProperty("correctedOfficialText").GetString());
+        Assert.Contains("sin²(θ) + cos²(θ) = 1",
+            repairs[4].GetProperty("correctedOfficialText").GetString());
 
         var calculatedDigest = Sha(
             "EDULYTIKS-CCSS-TEXT-V1\n" +

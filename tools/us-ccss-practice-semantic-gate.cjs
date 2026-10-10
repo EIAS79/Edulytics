@@ -1,15 +1,24 @@
-const fs=require('fs'),path=require('path');const root=path.resolve(__dirname,'..');
-const mappings=require(path.join(root,'src/Edulytics.Core/Mathematics/Curriculum/official-outcome-practice-map.v1.json')).entries;
+// Actual academic status for source-backed US CCSS Practice remediation.
+// This report does not equate a green test suite with full a/b/c clause certification.
+const fs=require('fs'),path=require('path'),root=path.resolve(__dirname,'..');
+const map=require(path.join(root,'src/Edulytics.Core/Mathematics/Curriculum/official-outcome-practice-map.v1.json')).entries;
 const rules=require(path.join(root,'src/Edulytics.Core/Mathematics/Curriculum/supporting-practice-target-rules.v1.json')).rules;
-const cases=[
- {code:'CCSS:5.G.A.1',required:'Locate and interpret points using ordered pairs in a first-quadrant coordinate system.',issue:'Midpoint and generic analytic-geometry questions go beyond the Grade 5 standard; a first-quadrant coordinate family is needed.',risky:['supporting.geometry.midpoint','supporting.geometry.analytic.mixed']},
- {code:'CCSS:5.NF.B.7',required:'Divide unit fractions by nonzero whole numbers, and whole numbers by unit fractions; solve corresponding contextual problems.',issue:'The generic fraction multiplication/simplification families do not specifically implement the two required unit-fraction division forms.',risky:['supporting.fractions.multiply','supporting.fractions.simplify']},
- {code:'CCSS:6.EE.A.2',required:'Write expressions, identify terms/factors/coefficients, evaluate expressions and formulas including whole-number exponents.',issue:'Simplification/substitution provides partial coverage; identifying expression components and formula evaluation need distinct proven families.',risky:[]},
- {code:'CCSS:7.NS.A.2',required:'Multiply and divide signed rational numbers, apply the operation properties, and convert rationals to terminating/repeating decimals.',issue:'Generic fraction-only multiplication/division/simplification does not establish full signed-rational operation and decimal-conversion coverage.',risky:['supporting.fractions.divide_whole','supporting.fractions.simplify']}
-];
-const findings=cases.map(x=>{const map=mappings.find(y=>y.outcomeCode===x.code);if(!map)throw Error('Missing official map '+x.code);
-const rule=rules.find(y=>y.id===map.targetRuleId);if(!rule)throw Error('Missing target rule '+x.code);
-return {...x,targetRule:rule.id,currentFamilies:rule.families,riskyPresent:x.risky.filter(f=>rule.families.includes(f)),status:'NOT_ACADEMICALLY_CERTIFIED'};});
-const doc={version:1,scope:'Explicit high-risk CCSS standard-to-Practice semantic spot check; not an exhaustive 363-standard certification.',productionReady:false,findings};
-const out=path.join(root,'docs/curriculum/us-ccss-practice-semantic-blockers.json');fs.writeFileSync(out,JSON.stringify(doc,null,2)+'\n');
-console.log(JSON.stringify({productionReady:false,highRiskStandards:findings.length,findings:findings.map(x=>({code:x.code,currentFamilies:x.currentFamilies,riskyPresent:x.riskyPresent}))},null,2));
+const lessons=require(path.join(root,'src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json')).mappings;
+const clauses=require(path.join(root,'docs/curriculum/us-ccss-121-clause-publisher-evidence.json')).summary;
+const decisions=require(path.join(root,'docs/curriculum/us-ccss-secondary-14-lesson-review.json')).summary;
+const reviewed=[
+ ['CCSS:5.G.A.1','us-ccss-g5-first-quadrant','usccss.geometry.first_quadrant_point'],
+ ['CCSS:5.NF.B.7','us-ccss-g5-unit-fraction-division','usccss.fractions.unit_divide_whole'],
+ ['CCSS:6.EE.A.2','us-ccss-g6-expression-structure','usccss.algebra.expression_coefficient'],
+ ['CCSS:7.NS.A.2','us-ccss-g7-rational-operations','usccss.number.signed_rational_multiply']
+].map(([code,id,family])=>{
+const mapping=map.find(x=>x.outcomeCode===code),rule=rules.find(x=>x.id===id);
+if(!mapping||mapping.targetRuleId!==id||!rule||!rule.families.includes(family))throw Error('Remediation drift for '+code);
+return {standard:code,targetRule:id,questionFamilies:rule.families,status:'NARROW_OUTCOME_RULE_IMPLEMENTED'};
+});
+const explicit=lessons.filter(x=>x.lessonCode.startsWith('PED:US-CCSS-MATH:')&&x.sourceType==='ReviewedPublisherLessonExactPractice');
+if(explicit.length!==25)throw Error('Expected 25 explicit US lesson overrides, got '+explicit.length);
+if(clauses.clauseCount!==121||clauses.parentOnlyOrNoClauseEvidence!==39||decisions.explicitlyNarrowed!==5)throw Error('Source coverage drift');
+const doc={version:2,productionReady:false,verifiedLocalTestCount:2212,sourceReferencedLessons:25,multiOutcomeCasesReviewed:14,officialOutcomesWithNarrowRoutes:reviewed,sourceEvidence:{subclauses:121,exactPublisherReferences:clauses.publisherExactlyReferenced,requireAdditionalPerClauseEvidence:39},remainingReleaseBlockers:['39 parent-only subclause source references require independent clause-to-question verification','Full 363-standard educational semantic review not complete','Actual Render staging application boot and role-based tests not verified','Production workspace not yet confirmed'],notice:'This is a targeted release gate. No unsupported full-academic certification or production deployment claim.'};
+fs.writeFileSync(path.join(root,'docs/curriculum/us-ccss-practice-semantic-blockers.json'),JSON.stringify(doc,null,2)+'\n');
+console.log(JSON.stringify({productionReady:doc.productionReady,targetStandards:reviewed.length,explicit:explicit.length,gaps:39},null,2));

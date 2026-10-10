@@ -34,8 +34,8 @@ public sealed partial class MathematicsCurriculumPackSeeder
             manifest.VersionCode != d.VersionCode ||
             manifest.BaselineContentDigest != d.ContentDigest ||
             d.SchemaVersion != 14 ||
-            manifest.Replacements.Count != 4 ||
-            manifest.Replacements.Select(x => x.Code).Distinct(StringComparer.Ordinal).Count() != 4)
+            manifest.Replacements.Count != 5 ||
+            manifest.Replacements.Select(x => x.Code).Distinct(StringComparer.Ordinal).Count() != 5)
             throw new InvalidOperationException("Unexpected CCSS authority repair baseline.");
 
         var byCode = d.Nodes.ToDictionary(x => x.Code, StringComparer.Ordinal);

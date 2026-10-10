@@ -1,81 +1,62 @@
 {
-  "version": 1,
-  "scope": "Explicit high-risk CCSS standard-to-Practice semantic spot check; not an exhaustive 363-standard certification.",
+  "version": 2,
   "productionReady": false,
-  "findings": [
+  "verifiedLocalTestCount": 2212,
+  "sourceReferencedLessons": 25,
+  "multiOutcomeCasesReviewed": 14,
+  "officialOutcomesWithNarrowRoutes": [
     {
-      "code": "CCSS:5.G.A.1",
-      "required": "Locate and interpret points using ordered pairs in a first-quadrant coordinate system.",
-      "issue": "Midpoint and generic analytic-geometry questions go beyond the Grade 5 standard; a first-quadrant coordinate family is needed.",
-      "risky": [
-        "supporting.geometry.midpoint",
-        "supporting.geometry.analytic.mixed"
+      "standard": "CCSS:5.G.A.1",
+      "targetRule": "us-ccss-g5-first-quadrant",
+      "questionFamilies": [
+        "usccss.geometry.first_quadrant_point"
       ],
-      "targetRule": "coordinates",
-      "currentFamilies": [
-        "supporting.geometry.midpoint",
-        "supporting.geometry.axis_distance",
-        "supporting.geometry.analytic.mixed"
-      ],
-      "riskyPresent": [
-        "supporting.geometry.midpoint",
-        "supporting.geometry.analytic.mixed"
-      ],
-      "status": "NOT_ACADEMICALLY_CERTIFIED"
+      "status": "NARROW_OUTCOME_RULE_IMPLEMENTED"
     },
     {
-      "code": "CCSS:5.NF.B.7",
-      "required": "Divide unit fractions by nonzero whole numbers, and whole numbers by unit fractions; solve corresponding contextual problems.",
-      "issue": "The generic fraction multiplication/simplification families do not specifically implement the two required unit-fraction division forms.",
-      "risky": [
-        "supporting.fractions.multiply",
-        "supporting.fractions.simplify"
+      "standard": "CCSS:5.NF.B.7",
+      "targetRule": "us-ccss-g5-unit-fraction-division",
+      "questionFamilies": [
+        "usccss.fractions.unit_divide_whole",
+        "usccss.fractions.whole_divide_unit"
       ],
-      "targetRule": "fraction-multiply-divide",
-      "currentFamilies": [
-        "supporting.fractions.multiply",
-        "supporting.fractions.divide_whole",
-        "supporting.fractions.simplify"
-      ],
-      "riskyPresent": [
-        "supporting.fractions.multiply",
-        "supporting.fractions.simplify"
-      ],
-      "status": "NOT_ACADEMICALLY_CERTIFIED"
+      "status": "NARROW_OUTCOME_RULE_IMPLEMENTED"
     },
     {
-      "code": "CCSS:6.EE.A.2",
-      "required": "Write expressions, identify terms/factors/coefficients, evaluate expressions and formulas including whole-number exponents.",
-      "issue": "Simplification/substitution provides partial coverage; identifying expression components and formula evaluation need distinct proven families.",
-      "risky": [],
-      "targetRule": "algebra-expressions",
-      "currentFamilies": [
-        "supporting.algebra.simplify",
+      "standard": "CCSS:6.EE.A.2",
+      "targetRule": "us-ccss-g6-expression-structure",
+      "questionFamilies": [
+        "usccss.algebra.expression_words",
+        "usccss.algebra.expression_coefficient",
+        "usccss.algebra.expression_power_value",
         "supporting.algebra.substitute",
-        "supporting.algebra.expressions.mixed"
+        "usccss.algebra.exponent_product_value"
       ],
-      "riskyPresent": [],
-      "status": "NOT_ACADEMICALLY_CERTIFIED"
+      "status": "NARROW_OUTCOME_RULE_IMPLEMENTED"
     },
     {
-      "code": "CCSS:7.NS.A.2",
-      "required": "Multiply and divide signed rational numbers, apply the operation properties, and convert rationals to terminating/repeating decimals.",
-      "issue": "Generic fraction-only multiplication/division/simplification does not establish full signed-rational operation and decimal-conversion coverage.",
-      "risky": [
-        "supporting.fractions.divide_whole",
-        "supporting.fractions.simplify"
+      "standard": "CCSS:7.NS.A.2",
+      "targetRule": "us-ccss-g7-rational-operations",
+      "questionFamilies": [
+        "usccss.number.signed_rational_multiply",
+        "usccss.number.signed_rational_divide",
+        "usccss.number.rational_terminating_decimal",
+        "usccss.number.repeating_decimal_digit",
+        "usccss.number.signed_rate_displacement"
       ],
-      "targetRule": "fraction-multiply-divide",
-      "currentFamilies": [
-        "supporting.fractions.multiply",
-        "supporting.fractions.divide_whole",
-        "supporting.fractions.simplify"
-      ],
-      "riskyPresent": [
-        "supporting.fractions.divide_whole",
-        "supporting.fractions.simplify"
-      ],
-      "status": "NOT_ACADEMICALLY_CERTIFIED"
+      "status": "NARROW_OUTCOME_RULE_IMPLEMENTED"
     }
-  ]
+  ],
+  "sourceEvidence": {
+    "subclauses": 121,
+    "exactPublisherReferences": 82,
+    "requireAdditionalPerClauseEvidence": 39
+  },
+  "remainingReleaseBlockers": [
+    "39 parent-only subclause source references require independent clause-to-question verification",
+    "Full 363-standard educational semantic review not complete",
+    "Actual Render staging application boot and role-based tests not verified",
+    "Production workspace not yet confirmed"
+  ],
+  "notice": "This is a targeted release gate. No unsupported full-academic certification or production deployment claim."
 }

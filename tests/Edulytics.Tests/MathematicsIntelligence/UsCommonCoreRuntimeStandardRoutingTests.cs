@@ -5,6 +5,27 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 
 public sealed class UsCommonCoreRuntimeStandardRoutingTests
 {
+
+    [Fact]
+    public void FiveAdditionalMultiOutcomeLessonsKeepTheirPrimaryAcademicQuestionScope()
+    {
+        var expected = new Dictionary<string, string[]>(StringComparer.Ordinal)
+        {
+            ["PED:US-CCSS-MATH:G6:U06:L10"] = ["supporting.algebra.expand", "supporting.algebra.simplify"],
+            ["PED:US-CCSS-MATH:G6:U06:L11"] = ["supporting.algebra.expand", "supporting.algebra.simplify"],
+            ["PED:US-CCSS-MATH:G6:U06:L15"] = ["usccss.algebra.exponent_product_value"],
+            ["PED:US-CCSS-MATH:G6:U06:L19"] = ["supporting.functions.evaluate"],
+            ["PED:US-CCSS-MATH:G7:U05:L08"] = ["usccss.number.signed_rate_displacement"]
+        };
+        foreach (var (lessonCode, families) in expected)
+        {
+            Assert.True(LessonPracticeCapabilityResolver.TryResolve(lessonCode, out var contract));
+            Assert.NotNull(contract);
+            Assert.Equal(families, contract!.AllowedQuestionFamilies);
+            Assert.DoesNotContain("supporting.logarithms.evaluate", contract.AllowedQuestionFamilies);
+        }
+    }
+
     [Fact]
     public void LessonsWithOneOfFourCorrectedContentOutcomesUseNarrowPracticeRouting()
     {
