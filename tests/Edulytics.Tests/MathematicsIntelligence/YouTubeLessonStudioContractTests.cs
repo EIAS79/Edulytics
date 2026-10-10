@@ -94,6 +94,21 @@ public sealed class YouTubeLessonStudioContractTests
             StringComparison.Ordinal);
     }
 
+    [Fact]
+    public void YouTubeDiscovery_DetectsSessionRedirects_AndLogsSafeProviderStatus()
+    {
+        var script = Read("src/Edulytics.Web/wwwroot/js/lesson-youtube-studio.js");
+        var discovery = Read("src/Edulytics.Services/LessonContent/YouTubeLessonDiscovery.cs");
+
+        Assert.Contains("response.redirected", script, StringComparison.Ordinal);
+        Assert.Contains("session-redirected", script, StringComparison.Ordinal);
+        Assert.Contains("unexpected-non-json", script, StringComparison.Ordinal);
+        Assert.Contains("YouTube Data API discovery failed; statusCode=", discovery,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain("exception.Message", discovery,
+            StringComparison.Ordinal);
+    }
+
     private static string Read(string relative) =>
         File.ReadAllText(Path.Combine(Root, relative));
 

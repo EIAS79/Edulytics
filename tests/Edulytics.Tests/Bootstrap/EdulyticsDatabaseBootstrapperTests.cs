@@ -142,8 +142,6 @@ public class EdulyticsDatabaseBootstrapperTests
     [Theory]
     [InlineData("Edulytics:SuperAdmin:Email", "admin@example.com")]
     [InlineData("Edulytics:SuperAdmin:Password", "placeholder-not-a-secret")]
-    [InlineData("Edulytics:PresentationDemo:Provision", "true")]
-    [InlineData("Edulytics:MeetingDemo:ResetAndSeed", "true")]
     public void CleanBootstrap_RejectsContradictoryProvisioningFlags(
         string configKey,
         string configValue)

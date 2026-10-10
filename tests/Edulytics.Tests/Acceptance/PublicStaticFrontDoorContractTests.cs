@@ -11,7 +11,7 @@ public sealed class PublicStaticFrontDoorContractTests
             "public-frontdoor/build.sh"));
 
         Assert.Contains(
-            "ORIGIN=\"https://staging.edulytiks.com\"",
+            "ORIGIN=\"https://edulytics-4346.onrender.com\"",
             build,
             StringComparison.Ordinal);
         Assert.Contains(
@@ -103,7 +103,7 @@ public sealed class PublicStaticFrontDoorContractTests
             build,
             StringComparison.Ordinal);
         Assert.Contains(
-            "Staging is unavailable; rebuilding from the last live static snapshots.",
+            "Main application is unavailable; rebuilding from the last live static snapshots.",
             build,
             StringComparison.Ordinal);
         Assert.Contains(
@@ -137,7 +137,7 @@ public sealed class PublicStaticFrontDoorContractTests
             "public-frontdoor/frontdoor.js"));
 
         Assert.Contains(
-            "https://staging.edulytiks.com",
+            "https://edulytics-4346.onrender.com",
             runtime,
             StringComparison.Ordinal);
         Assert.Contains(
@@ -360,6 +360,29 @@ public sealed class PublicStaticFrontDoorContractTests
             "CacheControl = \"no-store\"",
             program,
             StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void ProductionRouting_DoesNotInvokeSuspendedDemoServices()
+    {
+        var root = FindRoot();
+        var program = File.ReadAllText(Path.Combine(
+            root, "src/Edulytics.Web/Program.cs"));
+        var login = File.ReadAllText(Path.Combine(
+            root, "src/Edulytics.Web/Views/Account/Login.cshtml"));
+        var bootstrap = File.ReadAllText(Path.Combine(
+            root, "src/Edulytics.Web/Bootstrap/EdulyticsDatabaseBootstrapper.cs"));
+        var publicBuild = File.ReadAllText(Path.Combine(
+            root, "public-frontdoor/build.sh"));
+
+        Assert.DoesNotContain("DemoSameOriginGateway", program, StringComparison.Ordinal);
+        Assert.DoesNotContain("MeetingDemoProvisioner", program, StringComparison.Ordinal);
+        Assert.DoesNotContain("PresentationDemoProvisioner", bootstrap, StringComparison.Ordinal);
+        Assert.DoesNotContain("MeetingDemoProvisioner", bootstrap, StringComparison.Ordinal);
+        Assert.DoesNotContain("unified-demo-login.js", login, StringComparison.Ordinal);
+        Assert.Contains("Old cached HTML may retain the retired demo login interceptor.",
+            publicBuild, StringComparison.Ordinal);
+        Assert.Contains("ORIGIN=\"https://edulytics-4346.onrender.com\"", publicBuild, StringComparison.Ordinal);
     }
 
     private static string FindRoot()
