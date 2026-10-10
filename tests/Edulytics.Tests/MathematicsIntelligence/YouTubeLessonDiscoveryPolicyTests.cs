@@ -249,6 +249,51 @@ public sealed class YouTubeLessonDiscoveryPolicyTests
     }
 
     [Fact]
+    public async Task Minimum70Percent_RejectsVideosWithLowerDisplayedScores()
+    {
+        using var client = new HttpClient(new CacheIsolationYouTubeHandler());
+        var relaxed = new YouTubeLessonDiscoveryService(
+            client,
+            new YouTubeLessonDiscoveryOptions
+            {
+                Enabled = true,
+                ApiKey = "lesson-score-floor-test",
+                MinimumRelevancePercent = 34,
+                SearchResultCount = 8
+            });
+        var oldResult = await relaxed.DiscoverAsync(
+            "PED:TEST:G8:MATCH-FLOOR",
+            "Solve",
+            "Grade 8",
+            "en",
+            null);
+
+        Assert.NotNull(oldResult.Featured);
+        Assert.InRange(oldResult.Featured!.MatchPercent, 0, 69);
+
+        var strict = new YouTubeLessonDiscoveryService(
+            client,
+            new YouTubeLessonDiscoveryOptions
+            {
+                Enabled = true,
+                ApiKey = "lesson-score-floor-test",
+                MinimumRelevancePercent = 70,
+                SearchResultCount = 8
+            });
+        var result = await strict.DiscoverAsync(
+            "PED:TEST:G8:MATCH-FLOOR",
+            "Solve",
+            "Grade 8",
+            "en",
+            null);
+
+        Assert.True(result.Available);
+        Assert.Null(result.Featured);
+        Assert.Empty(result.Related);
+        Assert.Contains("70%", result.Message, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public async Task HardRelevanceThreshold_DoesNotFallBackToUnrelatedVideo()
     {
         using var client =
