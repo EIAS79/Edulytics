@@ -80,8 +80,41 @@ def run():
                      if baseline[key].get("Translations", baseline[key].get("translations"))
                      != candidate[key].get("Translations", candidate[key].get("translations")))
     if missing: errors.append(f"missing original lesson identities: {len(missing)}; sample {missing[:5]}")
-    if changed: errors.append(f"changed original lesson teaching bodies: {len(changed)}; sample {changed[:5]}")
-    print(f"MAIN_TO_V2_PARITY original={len(baseline)} matched={len(set(baseline)&set(candidate))} missing={len(missing)} changedBodies={len(changed)}")
+
+    # Never disable immutable content parity for routine migrations. Two
+    # independently reviewed US-CCSS pedagogical corrections are the only
+    # exceptions, pinned to both old and new body hashes and original source.
+    manifest_path = ROOT / "docs/curriculum/us-ccss-verified-body-repairs.v1.json"
+    repair_doc = json.loads(manifest_path.read_text(encoding="utf8"))
+    approved = {(row["packCode"], row["lessonCode"]): row
+                for row in repair_doc["repairs"]}
+    if repair_doc.get("schemaVersion") != 1 or repair_doc.get("allowUnlistedContentChanges") is not False or len(approved) != 2:
+        errors.append("Reviewed Common Core body repair allowlist is malformed")
+    if changed and set(changed) != set(approved):
+        errors.append(f"unapproved or missing body repair: actual={changed[:6]}, approved={sorted(approved)}")
+    for key in changed:
+        row = approved.get(key)
+        if row is None:
+            continue
+        before, after = baseline[key], candidate[key]
+        before_body = before.get("Translations", before.get("translations"))
+        after_body = after.get("Translations", after.get("translations"))
+        before_hash = before.get("CanonicalBodySha256", before.get("canonicalBodySha256"))
+        after_hash = after.get("CanonicalBodySha256", after.get("canonicalBodySha256"))
+        source_hash = before.get("SourceSha256", before.get("sourceSha256"))
+        if (before_hash != row["expectedOriginalCanonicalBodySha256"] or
+            after_hash != row["expectedCorrectedCanonicalBodySha256"] or
+            source_hash != row["expectedUnchangedSourceSha256"]):
+            errors.append(f"verified old/new body hash or original source mismatch: {key}")
+        before_other, after_other = dict(before), dict(after)
+        for record in (before_other, after_other):
+            for field in ("Translations", "translations", "CanonicalBodySha256", "canonicalBodySha256"):
+                record.pop(field, None)
+        if before_other != after_other:
+            errors.append(f"non-teaching metadata changed in reviewed repair: {key}")
+        if not before_body or not after_body or before_body == after_body:
+            errors.append(f"teaching body was not meaningfully changed: {key}")
+    print(f"MAIN_TO_V2_PARITY original={len(baseline)} matched={len(set(baseline)&set(candidate))} missing={len(missing)} changedBodies={len(changed)} reviewedExceptions={len(changed) if not errors else 0}")
     for e in errors: print("ERROR:",e)
     return 1 if errors else 0
 
