@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Edulytics.Data.Seeding;
 
-public sealed class MathematicsCurriculumPackSeeder
+public sealed partial class MathematicsCurriculumPackSeeder
 {
     private static readonly HashSet<string> Expected =
     [
@@ -407,6 +407,16 @@ public sealed class MathematicsCurriculumPackSeeder
 
         if (state is not null)
         {
+            if (d.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode)
+            {
+                var authority = LoadAuthorityRepair(d);
+                if (IsAuthorityRepairedState(d, state, authority))
+                {
+                    await ValidateAuthorityRepairedRowsAsync(d, version.Id, authority, ct);
+                    return;
+                }
+            }
+
             if (StateMatchesDocument(state, d))
             {
                 await ValidatePersistedRowsAsync(
@@ -414,6 +424,7 @@ public sealed class MathematicsCurriculumPackSeeder
                     version.Id,
                     ct);
 
+                await ApplyAuthorityRepairAsync(d, state, version.Id, ct);
                 return;
             }
 
@@ -423,6 +434,7 @@ public sealed class MathematicsCurriculumPackSeeder
                     version.Id,
                     ct))
             {
+                await ApplyAuthorityRepairAsync(d, state, version.Id, ct);
                 return;
             }
 
@@ -541,6 +553,13 @@ public sealed class MathematicsCurriculumPackSeeder
         });
 
         await _db.SaveChangesAsync(ct);
+        if (d.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode)
+        {
+            var newState = await _db.CurriculumPackImportStates
+                .SingleAsync(x => x.FrameworkVersionId == version.Id, ct);
+            await ValidatePersistedRowsAsync(d, version.Id, ct);
+            await ApplyAuthorityRepairAsync(d, newState, version.Id, ct);
+        }
     }
 
     private static bool StateMatchesDocument(

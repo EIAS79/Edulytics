@@ -10,7 +10,7 @@ namespace Edulytics.Services.Mathematics;
 /// owns parameter generation, solving and independent verification.
 /// Answers are never stored in generation parameters.
 /// </summary>
-internal static class SupportingPracticeCompletionEngine
+internal static partial class SupportingPracticeCompletionEngine
 {
     private static readonly IReadOnlySet<string> Families =
         new HashSet<string>(StringComparer.Ordinal)
@@ -31,6 +31,18 @@ internal static class SupportingPracticeCompletionEngine
             "supporting.fractions.multiply",
             "supporting.fractions.divide_whole",
             "supporting.fractions.simplify",
+            "usccss.fractions.unit_divide_whole",
+            "usccss.fractions.whole_divide_unit",
+            "usccss.geometry.first_quadrant_point",
+            "usccss.algebra.expression_coefficient",
+            "usccss.algebra.expression_words",
+            "usccss.algebra.expression_power_value",
+            "usccss.number.signed_rational_multiply",
+            "usccss.number.signed_rational_divide",
+            "usccss.number.rational_terminating_decimal",
+            "usccss.number.repeating_decimal_digit",
+            "usccss.number.signed_rate_displacement",
+            "usccss.algebra.exponent_product_value",
             "supporting.fdp.percent_equivalent",
             "supporting.measurement.unit_conversion",
             "supporting.measurement.time_elapsed",
@@ -165,6 +177,18 @@ internal static class SupportingPracticeCompletionEngine
             "supporting.fractions.multiply" => FractionMultiply(random, scale),
             "supporting.fractions.divide_whole" => FractionDivideWhole(random, scale),
             "supporting.fractions.simplify" => FractionSimplify(random, scale),
+            "usccss.fractions.unit_divide_whole" => UsUnitDivideWhole(random, scale),
+            "usccss.fractions.whole_divide_unit" => UsWholeDivideUnit(random, scale),
+            "usccss.geometry.first_quadrant_point" => UsFirstQuadrantCoordinate(random, scale),
+            "usccss.algebra.expression_coefficient" => UsExpressionCoefficient(random, scale),
+            "usccss.algebra.expression_words" => UsExpressionWords(random, scale),
+            "usccss.algebra.expression_power_value" => UsExpressionPower(random, scale),
+            "usccss.number.signed_rational_multiply" => UsRationalMultiply(random, scale),
+            "usccss.number.signed_rational_divide" => UsRationalDivide(random, scale),
+            "usccss.number.rational_terminating_decimal" => UsRationalDecimal(random, scale),
+            "usccss.number.repeating_decimal_digit" => UsRepeatingDecimalDigit(random, scale),
+            "usccss.number.signed_rate_displacement" => UsSignedRateDisplacement(random, scale),
+            "usccss.algebra.exponent_product_value" => UsExponentProductValue(random, scale),
             "supporting.fdp.percent_equivalent" => FractionDecimalPercent(random, scale),
             "supporting.measurement.unit_conversion" => UnitConversion(random, scale),
             "supporting.measurement.time_elapsed" => TimeElapsed(random, scale),
@@ -277,6 +301,18 @@ internal static class SupportingPracticeCompletionEngine
                 SimplifyFraction(p["n"], p["d"] * p["whole"]),
             "supporting.fractions.simplify" =>
                 SimplifyFraction(p["n"], p["d"]),
+            "usccss.fractions.unit_divide_whole" => SimplifyFraction(1, p["denominator"] * p["whole"]),
+            "usccss.fractions.whole_divide_unit" => (p["whole"] * p["denominator"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.geometry.first_quadrant_point" => FormatPair(p["x"], p["y"]),
+            "usccss.algebra.expression_coefficient" => p["coefficient"].ToString(CultureInfo.InvariantCulture),
+            "usccss.algebra.expression_words" => $"{p["coefficient"]}x + {p["constant"]}",
+            "usccss.algebra.expression_power_value" => (p["coefficient"] * p["x"] * p["x"] + p["constant"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.number.signed_rational_multiply" => SimplifyFraction(p["n1"] * p["n2"], p["d1"] * p["d2"]),
+            "usccss.number.signed_rational_divide" => SimplifyFraction(p["n1"] * p["d2"], p["d1"] * p["n2"]),
+            "usccss.number.rational_terminating_decimal" => FormatHundredths(p["numerator"] * 100 / p["denominator"]),
+            "usccss.number.repeating_decimal_digit" => (p["numerator"] * (9 / p["denominator"])).ToString(CultureInfo.InvariantCulture),
+            "usccss.number.signed_rate_displacement" => (p["velocity"] * p["time"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.algebra.exponent_product_value" => IntPow(p["base"], p["exponent"]).ToString(CultureInfo.InvariantCulture),
             "supporting.fdp.percent_equivalent" =>
                 (p["numerator"] * 100 / p["denominator"]).ToString(CultureInfo.InvariantCulture),
             "supporting.measurement.unit_conversion" =>

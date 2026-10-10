@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "productionReady": false,
+  "verifiedLocalTestCount": 2212,
+  "sourceReferencedLessons": 25,
+  "multiOutcomeCasesReviewed": 14,
+  "officialOutcomesWithNarrowRoutes": [
+    {
+      "standard": "CCSS:5.G.A.1",
+      "targetRule": "us-ccss-g5-first-quadrant",
+      "questionFamilies": [
+        "usccss.geometry.first_quadrant_point"
+      ],
+      "status": "NARROW_OUTCOME_RULE_IMPLEMENTED"
+    },
+    {
+      "standard": "CCSS:5.NF.B.7",
+      "targetRule": "us-ccss-g5-unit-fraction-division",
+      "questionFamilies": [
+        "usccss.fractions.unit_divide_whole",
+        "usccss.fractions.whole_divide_unit"
+      ],
+      "status": "NARROW_OUTCOME_RULE_IMPLEMENTED"
+    },
+    {
+      "standard": "CCSS:6.EE.A.2",
+      "targetRule": "us-ccss-g6-expression-structure",
+      "questionFamilies": [
+        "usccss.algebra.expression_words",
+        "usccss.algebra.expression_coefficient",
+        "usccss.algebra.expression_power_value",
+        "supporting.algebra.substitute",
+        "usccss.algebra.exponent_product_value"
+      ],
+      "status": "NARROW_OUTCOME_RULE_IMPLEMENTED"
+    },
+    {
+      "standard": "CCSS:7.NS.A.2",
+      "targetRule": "us-ccss-g7-rational-operations",
+      "questionFamilies": [
+        "usccss.number.signed_rational_multiply",
+        "usccss.number.signed_rational_divide",
+        "usccss.number.rational_terminating_decimal",
+        "usccss.number.repeating_decimal_digit",
+        "usccss.number.signed_rate_displacement"
+      ],
+      "status": "NARROW_OUTCOME_RULE_IMPLEMENTED"
+    }
+  ],
+  "sourceEvidence": {
+    "subclauses": 121,
+    "exactPublisherReferences": 82,
+    "requireAdditionalPerClauseEvidence": 39
+  },
+  "remainingReleaseBlockers": [
+    "39 parent-only subclause source references require independent clause-to-question verification",
+    "Full 363-standard educational semantic review not complete",
+    "Actual Render staging application boot and role-based tests not verified",
+    "Production workspace not yet confirmed"
+  ],
+  "notice": "This is a targeted release gate. No unsupported full-academic certification or production deployment claim."
+}
