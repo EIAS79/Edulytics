@@ -40,8 +40,8 @@ public sealed class StudentLearningBackgroundContractTests
 
         Assert.Contains("class=\"student-primary-link\"", view, StringComparison.Ordinal);
         Assert.Contains("asp-controller=\"StudentPortal\"", view, StringComparison.Ordinal);
-        Assert.Contains("asp-action=\"Lesson\"", view, StringComparison.Ordinal);
-        Assert.Contains("asp-route-id=\"@lesson.Id\"", view, StringComparison.Ordinal);
+        Assert.Contains("asp-action=\"LessonBySlug\"", view, StringComparison.Ordinal);
+        Assert.Contains("asp-route-slug=\"@StudentLessonSlug.Create(lesson)\"", view, StringComparison.Ordinal);
         Assert.Contains("@L[\"OpenLesson\"]", view, StringComparison.Ordinal);
         Assert.DoesNotContain("floating-lesson-card", view, StringComparison.Ordinal);
     }
