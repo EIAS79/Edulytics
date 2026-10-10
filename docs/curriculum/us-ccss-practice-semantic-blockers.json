@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "scope": "Explicit high-risk CCSS standard-to-Practice semantic spot check; not an exhaustive 363-standard certification.",
+  "productionReady": false,
+  "findings": [
+    {
+      "code": "CCSS:5.G.A.1",
+      "required": "Locate and interpret points using ordered pairs in a first-quadrant coordinate system.",
+      "issue": "Midpoint and generic analytic-geometry questions go beyond the Grade 5 standard; a first-quadrant coordinate family is needed.",
+      "risky": [
+        "supporting.geometry.midpoint",
+        "supporting.geometry.analytic.mixed"
+      ],
+      "targetRule": "coordinates",
+      "currentFamilies": [
+        "supporting.geometry.midpoint",
+        "supporting.geometry.axis_distance",
+        "supporting.geometry.analytic.mixed"
+      ],
+      "riskyPresent": [
+        "supporting.geometry.midpoint",
+        "supporting.geometry.analytic.mixed"
+      ],
+      "status": "NOT_ACADEMICALLY_CERTIFIED"
+    },
+    {
+      "code": "CCSS:5.NF.B.7",
+      "required": "Divide unit fractions by nonzero whole numbers, and whole numbers by unit fractions; solve corresponding contextual problems.",
+      "issue": "The generic fraction multiplication/simplification families do not specifically implement the two required unit-fraction division forms.",
+      "risky": [
+        "supporting.fractions.multiply",
+        "supporting.fractions.simplify"
+      ],
+      "targetRule": "fraction-multiply-divide",
+      "currentFamilies": [
+        "supporting.fractions.multiply",
+        "supporting.fractions.divide_whole",
+        "supporting.fractions.simplify"
+      ],
+      "riskyPresent": [
+        "supporting.fractions.multiply",
+        "supporting.fractions.simplify"
+      ],
+      "status": "NOT_ACADEMICALLY_CERTIFIED"
+    },
+    {
+      "code": "CCSS:6.EE.A.2",
+      "required": "Write expressions, identify terms/factors/coefficients, evaluate expressions and formulas including whole-number exponents.",
+      "issue": "Simplification/substitution provides partial coverage; identifying expression components and formula evaluation need distinct proven families.",
+      "risky": [],
+      "targetRule": "algebra-expressions",
+      "currentFamilies": [
+        "supporting.algebra.simplify",
+        "supporting.algebra.substitute",
+        "supporting.algebra.expressions.mixed"
+      ],
+      "riskyPresent": [],
+      "status": "NOT_ACADEMICALLY_CERTIFIED"
+    },
+    {
+      "code": "CCSS:7.NS.A.2",
+      "required": "Multiply and divide signed rational numbers, apply the operation properties, and convert rationals to terminating/repeating decimals.",
+      "issue": "Generic fraction-only multiplication/division/simplification does not establish full signed-rational operation and decimal-conversion coverage.",
+      "risky": [
+        "supporting.fractions.divide_whole",
+        "supporting.fractions.simplify"
+      ],
+      "targetRule": "fraction-multiply-divide",
+      "currentFamilies": [
+        "supporting.fractions.multiply",
+        "supporting.fractions.divide_whole",
+        "supporting.fractions.simplify"
+      ],
+      "riskyPresent": [
+        "supporting.fractions.divide_whole",
+        "supporting.fractions.simplify"
+      ],
+      "status": "NOT_ACADEMICALLY_CERTIFIED"
+    }
+  ]
+}
