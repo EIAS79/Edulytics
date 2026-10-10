@@ -69,7 +69,10 @@ public sealed record CanonicalLessonDetail(
 
 public sealed record StudentLessonSummary(
     Guid Id,string Title,string TopicName,string SubjectName,string SubjectCode,string GradeName,string FrameworkName,int Order,
-    bool IsSupporting=false);
+    bool IsSupporting=false)
+{
+    public string LessonCode { get; init; } = string.Empty;
+}
 
 public sealed record StudentLessonDetail(
     Guid Id,string Title,string TopicName,string SubjectName,string SubjectCode,string GradeName,string FrameworkName,
