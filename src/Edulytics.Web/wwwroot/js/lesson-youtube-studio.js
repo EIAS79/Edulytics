@@ -102,11 +102,11 @@
             if (queryInput) queryInput.setAttribute("aria-busy", isBusy ? "true" : "false");
         }
 
-        function restoreFallbackFeature(emptyMessage, allowFallback = true) {
+        function restoreFallbackFeature(emptyMessage) {
             if (playerShell) {
                 playerShell.replaceChildren();
 
-                if (allowFallback && fallbackSnapshot) {
+                if (fallbackSnapshot) {
                     const iframe = create("iframe");
                     iframe.dataset.youtubePlayer = "";
                     iframe.src = fallbackSnapshot.src;
@@ -129,23 +129,23 @@
                 }
             }
 
-            if (title) title.textContent = allowFallback ? fallbackFeatureSnapshot.title : "No qualifying video";
-            if (channel) channel.textContent = allowFallback ? fallbackFeatureSnapshot.channel : "YouTube";
-            if (match) match.textContent = allowFallback ? fallbackFeatureSnapshot.match : "—";
-            if (matchDetail) matchDetail.textContent = allowFallback ? fallbackFeatureSnapshot.matchDetail : "—";
-            if (views) views.textContent = allowFallback ? fallbackFeatureSnapshot.views : "—";
-            if (likes) likes.textContent = allowFallback ? fallbackFeatureSnapshot.likes : "—";
-            if (duration) duration.textContent = allowFallback ? fallbackFeatureSnapshot.duration : "—";
+            if (title) title.textContent = fallbackFeatureSnapshot.title;
+            if (channel) channel.textContent = fallbackFeatureSnapshot.channel;
+            if (match) match.textContent = fallbackFeatureSnapshot.match;
+            if (matchDetail) matchDetail.textContent = fallbackFeatureSnapshot.matchDetail;
+            if (views) views.textContent = fallbackFeatureSnapshot.views;
+            if (likes) likes.textContent = fallbackFeatureSnapshot.likes;
+            if (duration) duration.textContent = fallbackFeatureSnapshot.duration;
 
             if (featureMeta) {
                 featureMeta.replaceChildren(
-                    ...(allowFallback ? fallbackFeatureSnapshot.metaNodes.map(node => node.cloneNode(true)) : [])
+                    ...fallbackFeatureSnapshot.metaNodes.map(node => node.cloneNode(true))
                 );
             }
 
             if (watch) {
-                watch.href = allowFallback ? fallbackFeatureSnapshot.watchHref : "#";
-                if (allowFallback && fallbackSnapshot && fallbackFeatureSnapshot.watchHref !== "#") {
+                watch.href = fallbackFeatureSnapshot.watchHref;
+                if (fallbackSnapshot && fallbackFeatureSnapshot.watchHref !== "#") {
                     watch.removeAttribute("aria-disabled");
                 } else {
                     watch.setAttribute("aria-disabled", "true");
@@ -383,8 +383,7 @@
                 renderFeatured(result.featured);
             } else {
                 restoreFallbackFeature(
-                    result.message || "No video met the minimum lesson-match threshold.",
-                    false
+                    "No embeddable video passed the current lesson-match checks."
                 );
             }
 
