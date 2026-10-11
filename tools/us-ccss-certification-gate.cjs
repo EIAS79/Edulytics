@@ -23,6 +23,11 @@ if (!['predeploy', 'final'].includes(stage))
   throw Error('Allowed gate stages: predeploy or final');
 const externalFlag = process.argv.find(a => a.startsWith('--approval-dir='));
 const externalDir = externalFlag ? path.resolve(externalFlag.slice('--approval-dir='.length)) : null;
+if (externalDir) {
+  const relative = path.relative(root, externalDir);
+  if (!relative.startsWith('..' + path.sep) && relative !== '..')
+    throw Error('Human release approvals must be external to the repository checkout');
+}
 const externalNames = new Set(['stagingEvidence', 'academicReviews', 'releaseDecision', 'productionEvidence']);
 const files = Object.freeze({
   structural: 'docs/curriculum/us-ccss-g1-g12-structural-audit.json',
@@ -147,14 +152,19 @@ readyEvidence('childTrace', 121, 'clauseCode', 'ACADEMICALLY_CERTIFIED');
 for (const name of ['familyEvidence', 'gradingEvidence', 'routingEvidence']) {
   explicitPass(name, ['testEvidenceSha', 'academicScopeEvidenceId']);
 }
-explicitPass('stagingEvidence', ['commitSha', 'studentEvidenceId', 'teacherEvidenceId',
+const stagingOk = explicitPass('stagingEvidence', ['commitSha', 'studentEvidenceId', 'teacherEvidenceId',
   'schoolAdminEvidenceId', 'crossSchoolIsolationEvidenceId']);
+if (stagingOk) {
+  const staging = load('stagingEvidence', false);
+  check(staging.commitSha === sha, 'STAGING_SHA_MISMATCH',
+    'Staging evidence must be from the exact release-candidate SHA');
+}
 const reviews = load('academicReviews', false);
 check(Boolean(reviews) && reviews.status === 'APPROVED' &&
   Array.isArray(reviews.independentReviewerSignoffs) &&
   reviews.independentReviewerSignoffs.length > 0 &&
   reviews.independentReviewerSignoffs.every(x => x.reviewerId && x.signedAtUtc && x.signedScope &&
-    x.evidenceId) && reviews.openObjections === 0,
+    x.evidenceId && x.signedSha === sha) && reviews.openObjections === 0,
   'INDEPENDENT_ACADEMIC_APPROVAL_MISSING',
   'Human mathematics reviewers must independently sign the fixed scope, evidence and version');
 const release = load('releaseDecision', false);
