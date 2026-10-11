@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "version": "CCSSM-2010",
+  "date": "2026-10-12",
+  "scope": "Grades 1-8 and high school pathways/courses serving Grades 9-12, Kindergarten excluded",
+  "status": "PARTIAL_NOT_GATE_PASSED",
+  "reviewedSourceBaselineSha": "fd72849823ae31b92e58fb420a373218fc25b328",
+  "checkedPrHeadSha": "1c001a78948b664bf98b232a21bf903c5713eb60",
+  "prNumber": 464,
+  "prDraft": true,
+  "sourceEvidence": {
+    "sourceAuditPath": "artifacts/academic-us-ccss/04-lesson-academic-audit.json",
+    "sourceAuditGitBlobSha": "d324343f1d60a12732a5bd9231dc59b93fc5e3bf",
+    "sourceLessonCount": 1560,
+    "verifiedUniqueLessonCodes": 1560,
+    "blueprintCount": 17,
+    "officialParentCodes": 363,
+    "subordinateClauses": 121,
+    "licenseReviewer": "NOT_ASSIGNED"
+  },
+  "technicalCi": {
+    "sha": "1c001a78948b664bf98b232a21bf903c5713eb60",
+    "workflowCount": 9,
+    "successCount": 9,
+    "failedCount": 0,
+    "note": "Pre-documentation and ledger changes; must rerun after code/artifact commit."
+  },
+  "git": {
+    "mainSha": "fd72849823ae31b92e58fb420a373218fc25b328",
+    "pr461": "MERGED",
+    "pr464": "OPEN_DRAFT",
+    "issue453": "OPEN"
+  },
+  "neonObservedReadOnly": {
+    "projectId": "tiny-lab-44877119",
+    "branchId": "br-frosty-block-b52tnjky",
+    "frameworkCode": "US-CCSS-MATH",
+    "frameworkVersion": "CCSSM-2010",
+    "persistedPedagogicalLessonCount": 1560,
+    "lessonOutcomeLinks": 2882,
+    "importIsComplete": true,
+    "sourceDigest": "5f80bbc801950969d2f4085cd31b113851fd09fc07d3066d5395eb7102c9df36",
+    "contentDigest": "b9e10bdceab9cb587ba9ea25797336d85b9ef76442b8783dff0ef770696c747f",
+    "authorizesWrites": false
+  },
+  "render": {
+    "status": "UNVERIFIED_IN_THIS_EXECUTION",
+    "reason": "Render connector workspace selection has not been confirmed for service reads; earlier published observations remain historical."
+  },
+  "staging": {
+    "status": "NOT_VERIFIED",
+    "authenticatedUsersTested": false
+  },
+  "independentReviewer": {
+    "status": "NOT_ASSIGNED",
+    "signed": false
+  },
+  "releaseCandidateSha": null,
+  "releaseGate": "NO-GO",
+  "outstanding": [
+    "Confirm Render workspace and match deployed SHA to repository",
+    "Re-run audited source inventory on final immutable release candidate SHA",
+    "Assign independent academic owner/reviewer for baseline and signoff",
+    "Verify staging identity and licensed source edition",
+    "Resolve Issue #453 before dependent release gates"
+  ]
+}

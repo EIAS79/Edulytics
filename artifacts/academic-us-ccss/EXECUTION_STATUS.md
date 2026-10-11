@@ -78,3 +78,14 @@ This entry supersedes earlier optimistic phase-progress labels. **No phase is ma
 **Release classification:** technical code live from prior PRs; G1–G12 internal academic certification **NO-GO**; NO external accreditation claim. Follow-up changes are on a clean source baseline for review, not automatically deployed. No destructive Neon operation, grade/course remapping or production certification performed.
 
 **Do not fix by automated replacement:** exact solution text repetition, source mapping and constructed-response correctness require source-grounded, competency-by-competency editorial and independent mathematical review. A code agent cannot sign its own academic approval.
+
+
+## V1.1 bootstrap — 2026-10-12 (source-faithful, NOT a completed certification phase)
+
+- Source snapshot `fd72849823ae31b92e58fb420a373218fc25b328` remains the auditable curriculum baseline; PR #464 HEAD at read-only verification was `1c001a78948b664bf98b232a21bf903c5713eb60` with 9/9 successful CI checks for that head. PR #461 was merged; issue #453 still open.
+- Neon production was queried **read-only**: exactly 1,560 US pedagogical lessons and 2,882 lesson/outcome links; source/content digests recorded in `00-observed-phase00-2026-10-12.json`. These are database state, **not independent mathematical correctness**.
+- Render workspace has not yet been selected for authorized deployment inspection. Do **not** infer current Render deployment SHA from a prior smoke check.
+- Added full `04-lesson-certification-records.json` initial ledger containing **1,560 unique lessons, seven independent gates per lesson, zero fabricated evidence and zero academic signoffs**. The data-driven tool refuses to overwrite existing reviewer work; the checker rejects missing/duplicate lessons, source drift, invalid PASS, and uncertified human signoff. This is preparatory Phase 04 instrumentation, not lesson review.
+- Independent academic reviewer identity and final release SHA are absent; Phase 00 remains **PARTIAL**, Phase 04 **NOT CERTIFIED**, programme **NO-GO**. Do not claim these gates are closed.
+- V1.1 plan is the controlling procedure; 00–12 phase boundaries and full reviewer gates are preserved.
+

@@ -9,6 +9,9 @@ on:
       - 'docs/curriculum/EDULYTICS_US_CCSS_ACADEMIC_CERTIFICATION_EXECUTION_PLAN_2026-10-11.md'
       - 'tools/us-ccss-certification-gate.cjs'
       - 'tests/academic-us-ccss-certification-gate.test.cjs'
+      - 'tests/academic-us-ccss-lesson-records.test.cjs'
+      - 'tools/us-ccss-lesson-certification-records.cjs'
+      - 'docs/curriculum/EDULYTICS_US_CCSS_ACADEMIC_CERTIFICATION_EXECUTION_PLAN_V1_1.md'
       - 'artifacts/academic-us-ccss/**'
       - '.github/workflows/us-ccss-academic-certification-evidence.yml'
   workflow_dispatch:
@@ -27,6 +30,10 @@ jobs:
           node-version: '24'
       - name: Check evidence gate unit tests
         run: node --test tests/academic-us-ccss-certification-gate.test.cjs
+      - name: Validate all 1560 lesson certification ledger records (no signoff granted)
+        run: |
+          node --test tests/academic-us-ccss-lesson-records.test.cjs
+          node tools/us-ccss-lesson-certification-records.cjs --check
       - name: Verify certification gate exit semantics without granting approval
         shell: bash
         run: |
