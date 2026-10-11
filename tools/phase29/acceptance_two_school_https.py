@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Real HTTPS two-tenant smoke test. Run only against disposable CI PostgreSQL."""
 import http.cookiejar
+import json
 import os
+from pathlib import Path
 import re
 import ssl
 import subprocess
@@ -172,16 +174,62 @@ for key, schoolname in SCHOOLS:
         practice_html)
     assert practice_token and adoption, (key, "private Practice form missing")
     before_practice = int(sql('SELECT count(*) FROM "PracticeAttempts";'))
-    practice_fields = urllib.parse.urlencode({
+    practice_fields = {
         "curriculumAdoptionId": adoption.group(1),
         "scope": "WholeCurriculum",
         "difficulty": "AtClassLevel",
         "questionCount": "1",
         "__RequestVerificationToken": practice_token.group(1),
-    }).encode()
+    }
+    expected_families = None
+    chosen_lesson_id = None
+    if PROGRAMME == "US-CCSS":
+        # Do not mistake "an American student can log in" for "the
+        # American curriculum is actually assigned to this student."
+        framework = sql("""
+            SELECT f."Code" || '|' || v."VersionCode"
+            FROM "SchoolCurriculumAdoptions" a
+            JOIN "CurriculumFrameworkVersions" v ON v."Id"=a."FrameworkVersionId"
+            JOIN "CurriculumFrameworks" f ON f."Id"=v."FrameworkId"
+            WHERE a."Id"='""" + adoption.group(1) + """';""")
+        assert framework == "US-CCSS-MATH|CCSSM-2010", (key, "wrong curriculum", framework)
+
+        # Select a real lesson displayed to the student and independently
+        # prove the lesson has a READY_VERIFIED, exact-family US route.
+        offered_ids = re.findall(
+            r'<option value="([0-9a-fA-F-]{36})"\s+data-learning-focus-node-ids=',
+            practice_html)
+        assert offered_ids, (key, "no US student lessons offered")
+        mappings_path = Path("src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json")
+        mappings = json.loads(mappings_path.read_text(encoding="utf-8"))["mappings"]
+        verified = {
+            row["lessonCode"]: row["allowedQuestionFamilies"]
+            for row in mappings
+            if row.get("lessonCode", "").startswith("PED:US-CCSS-MATH:")
+            and row.get("practiceReadiness") == "READY_VERIFIED"
+            and row.get("allowedQuestionFamilies")
+        }
+        ids = ",".join("'" + i + "'" for i in offered_ids)
+        offered = sql("""
+            SELECT l."Id"::text || '|' || l."Code"
+            FROM "CurriculumPedagogicalLessons" l
+            WHERE l."Id" IN (""" + ids + """)
+            ORDER BY l."Code";""").splitlines()
+        candidates = []
+        for row in offered:
+            parts = row.split("|", 1)
+            if len(parts) == 2 and parts[1] in verified:
+                candidates.append((parts[0], parts[1]))
+        assert candidates, (key, "no learner-visible READY_VERIFIED US CCSS lesson")
+        chosen_lesson_id, chosen_lesson_code = candidates[0]
+        expected_families = verified[chosen_lesson_code]
+        practice_fields["scope"] = "Lesson"
+        practice_fields["lessonId"] = chosen_lesson_id
+        print("DISPOSABLE_US_CCSS_LESSON_ROUTE_READY", key, chosen_lesson_code)
+    practice_body = urllib.parse.urlencode(practice_fields).encode()
     with student.open(urllib.request.Request(
         BASE + "/student/practice/generate",
-        data=practice_fields, method="POST"
+        data=practice_body, method="POST"
     ), timeout=60) as generated:
         generated_path = urllib.parse.urlparse(generated.url).path.lower()
         assert generated.status == 200, (key, generated.status)
@@ -192,6 +240,59 @@ for key, schoolname in SCHOOLS:
         assert "practice" in generated_body.lower(), (key, "no Practice page content")
     after_practice = int(sql('SELECT count(*) FROM "PracticeAttempts";'))
     assert after_practice > before_practice, (key, before_practice, after_practice)
+
+    if PROGRAMME == "US-CCSS":
+        # Verify the persisted question's exact family and lesson identity,
+        # not merely that the HTTP redirect showed a Practice page.
+        item_rows = sql("""
+            SELECT a."CurriculumPedagogicalLessonId"::text, i."GenerationFamily",
+                   pi."Id"::text, i."CorrectAnswer"
+            FROM "PracticeAttempts" a
+            JOIN "PracticeAttemptItems" pi ON pi."PracticeAttemptId"=a."Id"
+            JOIN "AssessmentItems" i ON i."Id"=pi."AssessmentItemId"
+            WHERE a."Id"='""" + match_attempt.group(1) + """'
+            ORDER BY pi."Order";""").splitlines()
+        assert len(item_rows) == 1, (key, "missing generated exact item")
+        actual_lesson, generated_family, item_id, expected_answer = item_rows[0].split("|", 3)
+        assert actual_lesson == chosen_lesson_id, (key, "practice lesson identity mismatch")
+        assert generated_family in expected_families, (key, "wrong lesson question family", generated_family)
+        assert expected_answer.strip(), (key, "empty exact answer")
+
+        # Exercise actual student answer grading and private-attempt persistence
+        # on disposable CI, never relying solely on generation success.
+        csrf = re.search(
+            r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+            generated_body)
+        html_id = re.search(
+            r'name="attemptItemIds\[0\]"[^>]*value="([0-9a-fA-F-]{36})"',
+            generated_body)
+        assert csrf and html_id and html_id.group(1) == item_id, (
+            key, "personal test answer form mismatch")
+        answer_body = urllib.parse.urlencode({
+            "__RequestVerificationToken": csrf.group(1),
+            "attemptItemIds[0]": item_id,
+            "answers[0]": expected_answer,
+        }).encode()
+        with student.open(urllib.request.Request(
+            BASE + "/student/practice/attempt/" + match_attempt.group(1)
+            + "/personal-test-submit",
+            data=answer_body, method="POST",
+        ), timeout=60) as submitted_practice:
+            assert submitted_practice.status == 200, (key, "Practice submission HTTP failure")
+        evidence = sql("""
+            SELECT CASE WHEN p."SubmittedAtUtc" IS NOT NULL THEN 1 ELSE 0 END,
+                   p."Score"::text, COUNT(r."Id")::text
+            FROM "PracticeAttempts" p
+            JOIN "PracticeAttemptItems" ai ON ai."PracticeAttemptId"=p."Id"
+            LEFT JOIN "PracticeResponses" r
+                ON r."PracticeAttemptItemId"=ai."Id" AND r."IsCorrect"=true
+            WHERE p."Id"='""" + match_attempt.group(1) + """'
+            GROUP BY p."Id", p."SubmittedAtUtc", p."Score";""")
+        complete, score, correct_responses = evidence.split("|")
+        assert complete == "1" and float(score) == 1.0 and correct_responses == "1", (
+            key, "exact Practice answer not scored and persisted", evidence)
+        print("DISPOSABLE_US_CCSS_EXACT_LESSON_ANSWER_PASS", key, generated_family)
+
     practice_attempts[key] = match_attempt.group(1)
     students[key] = student
     teachers[key] = teacher
