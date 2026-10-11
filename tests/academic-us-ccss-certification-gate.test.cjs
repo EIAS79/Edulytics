@@ -25,7 +25,8 @@ test('US CCSS academic gate defaults to read-only and reports NO-GO without sign
   const blockers = new Set(report.blockers.map(x=>x.code));
   for (const required of [
     'OFFICIAL_TEXT_NOT_CLOSED', 'SUBCLAUSE_NOT_CERTIFIED',
-    'SEMANTIC_RELEASE_BLOCKED', 'MISSING_LESSONAUDIT',
+    'SEMANTIC_RELEASE_BLOCKED', 'INCOMPLETE_LESSONAUDIT',
+    'INCOMPLETE_PARENTTRACE', 'INCOMPLETE_CHILDTRACE',
     'INDEPENDENT_ACADEMIC_APPROVAL_MISSING',
     'RELEASE_AUTHORIZATION_MISSING', 'PRODUCTION_VALIDATION_MISSING'
   ]) assert.ok(blockers.has(required), required + ' must be a release blocker');
