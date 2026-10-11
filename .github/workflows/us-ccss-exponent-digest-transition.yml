@@ -1,0 +1,117 @@
+name: US CCSS Exponent Digest Transition
+
+on:
+  pull_request:
+    paths:
+      - 'src/Edulytics.Data/Seeding/MathematicsCurriculumPackSeeder.CommonCoreAuthorityRepair.cs'
+      - 'src/Edulytics.Data/Seeding/MathematicsCurriculumPackSeeder.cs'
+      - 'src/Edulytics.Core/Curriculum/Packs/us-ccss-math.exponent-text-repair.json'
+      - 'tests/Edulytics.Tests/Phase275/CommonCoreVerifiedExponentTextRepairTests.cs'
+      - '.github/workflows/us-ccss-exponent-digest-transition.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-three-authority-states:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: edulytics_clean_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      ConnectionStrings__DefaultConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ConnectionStrings__MigrationConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
+      EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
+      PGPASSWORD: postgres
+      ASPNETCORE_ENVIRONMENT: Staging
+      Edulytics__LessonContent__ReadFromJson: 'true'
+      Edulytics__Deployment__CleanBootstrap: 'true'
+      Edulytics__Deployment__RunStartupDataMaintenance: 'false'
+      Edulytics__Deployment__SeedCurriculum: 'false'
+      Edulytics__PresentationDemo__Provision: 'false'
+      Edulytics__MeetingDemo__ResetAndSeed: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Build and migrate disposable PostgreSQL only
+        run: |
+          set -euo pipefail
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --no-restore
+          dotnet build tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+          dotnet ef database update \
+            --project src/Edulytics.Data/Edulytics.Data.csproj \
+            --startup-project src/Edulytics.Web/Edulytics.Web.csproj \
+            --context EdulyticsDbContext
+      - name: New empty database transitions baseline to five to six and validates result
+        run: |
+          set -euo pipefail
+          dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj \
+            > /tmp/us-exponent-first.log 2>&1 || { tail -n 70 /tmp/us-exponent-first.log; exit 1; }
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci \
+            -v ON_ERROR_STOP=1 <<'SQL'
+          DO $$
+          DECLARE n integer;
+          BEGIN
+            SELECT count(*) INTO n FROM "CurriculumPackContentNodes"
+            WHERE "FrameworkCode"='US-CCSS-MATH'
+              AND "Code"='CCSS:8.EE.A.1'
+              AND "OfficialText" LIKE '%3² × 3⁻⁵ = 3⁻³ = 1/3³ = 1/27%'
+              AND "ContentHash"='5158fc348ad0bddef604ca0dd20dfa08d9b0472c9aef5101e16dcbcf26ce9f52';
+            IF n<>1 THEN RAISE EXCEPTION 'Grade 8 correction not seeded'; END IF;
+            SELECT count(*) INTO n FROM "CurriculumPackImportStates"
+            WHERE "FrameworkCode"='US-CCSS-MATH'
+              AND "ContentDigest"='b9e10bdceab9cb587ba9ea25797336d85b9ef76442b8783dff0ef770696c747f';
+            IF n<>1 THEN RAISE EXCEPTION 'Next digest not persisted'; END IF;
+          END $$;
+          SQL
+      - name: Rehearse exact previously shipped five-fix state to sixth correction, then idempotency
+        run: |
+          set -euo pipefail
+          non_target_sql='SELECT count(*)::text || chr(58) || md5(string_agg("Code" || chr(58) || "ContentHash",chr(124) ORDER BY "Code")) FROM "CurriculumPackContentNodes" WHERE "FrameworkCode"='\''US-CCSS-MATH'\'' AND "Code"<>'\''CCSS:8.EE.A.1'\'';'
+          before="$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c "$non_target_sql")"
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -v ON_ERROR_STOP=1 <<'SQL'
+          BEGIN;
+          DO $$
+          DECLARE n integer;
+          BEGIN
+            UPDATE "CurriculumPackContentNodes"
+            SET "OfficialText"='Know and apply the properties of integer exponents to generate equivalent numerical expressions. For example, 32 × 3–5 = 3–3 = 1/33 = 1/27.',
+                "ContentHash"='fd1feefe65af5b20a1ab8987eed47236ab11260e76ae8f97ac16acf7a2840bd1'
+            WHERE "FrameworkCode"='US-CCSS-MATH'
+              AND "Code"='CCSS:8.EE.A.1'
+              AND "ContentHash"='5158fc348ad0bddef604ca0dd20dfa08d9b0472c9aef5101e16dcbcf26ce9f52';
+            GET DIAGNOSTICS n=ROW_COUNT;
+            IF n<>1 THEN RAISE EXCEPTION 'Not the verified sixth repair predecessor'; END IF;
+            UPDATE "CurriculumPackImportStates"
+            SET "ContentDigest"='ff7ed43424c744515341defc0324701e49ca9c02701f918e99e9c27ba751fded'
+            WHERE "FrameworkCode"='US-CCSS-MATH'
+              AND "ContentDigest"='b9e10bdceab9cb587ba9ea25797336d85b9ef76442b8783dff0ef770696c747f';
+            GET DIAGNOSTICS n=ROW_COUNT;
+            IF n<>1 THEN RAISE EXCEPTION 'Not the verified five-fix digest predecessor'; END IF;
+          END $$;
+          COMMIT;
+          SQL
+          dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj \
+            > /tmp/us-exponent-upgrade.log 2>&1 || { tail -n 70 /tmp/us-exponent-upgrade.log; exit 1; }
+          after="$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c "$non_target_sql")"
+          test "$before" = "$after"
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c "SELECT count(*) FROM \"CurriculumPackImportStates\" WHERE \"FrameworkCode\"='US-CCSS-MATH' AND \"ContentDigest\"='b9e10bdceab9cb587ba9ea25797336d85b9ef76442b8783dff0ef770696c747f';")" = 1
+          dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj \
+            > /tmp/us-exponent-idempotent.log 2>&1 || { tail -n 70 /tmp/us-exponent-idempotent.log; exit 1; }
+          echo 'CCSS_G8_BASELINE_FIVE_SIX_AND_IDEMPOTENT_PASS'

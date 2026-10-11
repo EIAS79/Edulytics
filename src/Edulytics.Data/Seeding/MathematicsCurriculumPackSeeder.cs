@@ -410,9 +410,16 @@ public sealed partial class MathematicsCurriculumPackSeeder
             if (d.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode)
             {
                 var authority = LoadAuthorityRepair(d);
+                var exponent = LoadExponentRepair(d, authority);
+                if (IsExponentRepairedState(d, state, exponent))
+                {
+                    await ValidateAuthorityRepairedRowsAsync(
+                        d, version.Id, authority, ct, exponentPatched: true);
+                    return;
+                }
                 if (IsAuthorityRepairedState(d, state, authority))
                 {
-                    await ValidateAuthorityRepairedRowsAsync(d, version.Id, authority, ct);
+                    await ApplyExponentRepairAsync(d, state, version.Id, ct);
                     return;
                 }
             }
@@ -425,6 +432,7 @@ public sealed partial class MathematicsCurriculumPackSeeder
                     ct);
 
                 await ApplyAuthorityRepairAsync(d, state, version.Id, ct);
+                await ApplyExponentRepairAsync(d, state, version.Id, ct);
                 return;
             }
 
@@ -435,6 +443,7 @@ public sealed partial class MathematicsCurriculumPackSeeder
                     ct))
             {
                 await ApplyAuthorityRepairAsync(d, state, version.Id, ct);
+                await ApplyExponentRepairAsync(d, state, version.Id, ct);
                 return;
             }
 
@@ -559,6 +568,7 @@ public sealed partial class MathematicsCurriculumPackSeeder
                 .SingleAsync(x => x.FrameworkVersionId == version.Id, ct);
             await ValidatePersistedRowsAsync(d, version.Id, ct);
             await ApplyAuthorityRepairAsync(d, newState, version.Id, ct);
+            await ApplyExponentRepairAsync(d, newState, version.Id, ct);
         }
     }
 
