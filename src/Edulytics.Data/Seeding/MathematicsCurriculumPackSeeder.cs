@@ -411,15 +411,23 @@ public sealed partial class MathematicsCurriculumPackSeeder
             {
                 var authority = LoadAuthorityRepair(d);
                 var exponent = LoadExponentRepair(d, authority);
-                if (IsExponentRepairedState(d, state, exponent))
+                var hsNotation = LoadHsNotationRepair(d, exponent);
+                if (IsHsNotationRepairedState(d, state, hsNotation))
                 {
                     await ValidateAuthorityRepairedRowsAsync(
-                        d, version.Id, authority, ct, exponentPatched: true);
+                        d, version.Id, authority, ct,
+                        exponentPatched: true, hsNotationPatched: true);
+                    return;
+                }
+                if (IsExponentRepairedState(d, state, exponent))
+                {
+                    await ApplyHsNotationRepairAsync(d, state, version.Id, ct);
                     return;
                 }
                 if (IsAuthorityRepairedState(d, state, authority))
                 {
                     await ApplyExponentRepairAsync(d, state, version.Id, ct);
+                    await ApplyHsNotationRepairAsync(d, state, version.Id, ct);
                     return;
                 }
             }
@@ -433,6 +441,7 @@ public sealed partial class MathematicsCurriculumPackSeeder
 
                 await ApplyAuthorityRepairAsync(d, state, version.Id, ct);
                 await ApplyExponentRepairAsync(d, state, version.Id, ct);
+                await ApplyHsNotationRepairAsync(d, state, version.Id, ct);
                 return;
             }
 
@@ -444,6 +453,7 @@ public sealed partial class MathematicsCurriculumPackSeeder
             {
                 await ApplyAuthorityRepairAsync(d, state, version.Id, ct);
                 await ApplyExponentRepairAsync(d, state, version.Id, ct);
+                await ApplyHsNotationRepairAsync(d, state, version.Id, ct);
                 return;
             }
 
@@ -569,6 +579,7 @@ public sealed partial class MathematicsCurriculumPackSeeder
             await ValidatePersistedRowsAsync(d, version.Id, ct);
             await ApplyAuthorityRepairAsync(d, newState, version.Id, ct);
             await ApplyExponentRepairAsync(d, newState, version.Id, ct);
+            await ApplyHsNotationRepairAsync(d, newState, version.Id, ct);
         }
     }
 
