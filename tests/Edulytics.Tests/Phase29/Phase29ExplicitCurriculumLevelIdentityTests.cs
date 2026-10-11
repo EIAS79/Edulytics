@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Text.Json;
 using Edulytics.Core.Curriculum;
 using Edulytics.Core.Entities;
@@ -127,6 +128,30 @@ public sealed class Phase29ExplicitCurriculumLevelIdentityTests
                 Pathway: (string?)x.Pathway))
             .OrderBy(x => x.Code).ToArray();
         Assert.Equal(observed, registry);
+    }
+
+    [Fact]
+    public void SchoolGradePlacementCannotReuseDifferent_HS_grade_with_same_course_label()
+    {
+        var course = Assert.Single(
+            CurriculumLevelIdentityRegistry.ForPack(MathematicsCurriculumPackRegistry.CommonCoreCode),
+            x => x.LogicalLevel == 11 && x.CourseCode == "ALG1");
+        var levels = new[]
+        {
+            new GradeLevel { Id = Guid.NewGuid(), Name = "Algebra 1", Order = 10 },
+            new GradeLevel { Id = Guid.NewGuid(), Name = "Grade 10", Order = 11 }
+        };
+        var type = typeof(Edulytics.Services.Curriculum.ExplicitCurriculumLevelService);
+        var resolver = type.GetMethod("ResolveCompatibilityGrade",
+            BindingFlags.NonPublic | BindingFlags.Static);
+        var namer = type.GetMethod("CompatibilityGradeName",
+            BindingFlags.NonPublic | BindingFlags.Static);
+        Assert.NotNull(resolver);
+        Assert.NotNull(namer);
+        var resolved = (GradeLevel?)resolver!.Invoke(null, [levels, course]);
+        Assert.NotNull(resolved);
+        Assert.Equal(11, resolved!.Order);
+        Assert.Equal("Grade 10", namer!.Invoke(null, [course]));
     }
 
     [Fact]
