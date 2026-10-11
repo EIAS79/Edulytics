@@ -74,8 +74,15 @@ jobs:
           rehearsal_password="$(openssl rand -hex 24)Aa1!"
           echo "::add-mask::$rehearsal_password"
           export Edulytics__MeetingDemo__Password="$rehearsal_password"
-          dotnet run --project tools/Edulytics.CiFixtures/Edulytics.CiFixtures.csproj -- academic > /tmp/us-ccss-fixture.log 2>&1
-          grep -q 'MEETING_DEMO_SEED_COMPLETED' /tmp/us-ccss-fixture.log
+          if ! dotnet run --project tools/Edulytics.CiFixtures/Edulytics.CiFixtures.csproj -- academic > /tmp/us-ccss-fixture.log 2>&1; then
+            echo 'Disposable US CCSS academic fixture failed; last diagnostic lines:'
+            tail -n 100 /tmp/us-ccss-fixture.log
+            exit 1
+          fi
+          if ! grep -q 'MEETING_DEMO_SEED_COMPLETED' /tmp/us-ccss-fixture.log; then
+            tail -n 100 /tmp/us-ccss-fixture.log
+            exit 1
+          fi
           # Only the disposable American secondary fixture is assigned a
           # reviewed, source-backed Traditional / ALG1 course. All real-school
           # legacy adoptions remain unresolved until an authorized administrator
@@ -119,6 +126,7 @@ jobs:
             fi
             if ! kill -0 "$server_pid" 2>/dev/null; then
               echo 'Disposable US CCSS web process exited before readiness'
+              tail -n 100 /tmp/us-ccss-web.log
               exit 1
             fi
             sleep 3
