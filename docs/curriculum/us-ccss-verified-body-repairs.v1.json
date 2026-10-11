@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "description": "Exactly two publisher-sourced US CCSS body errors reviewed and repaired without modifying student records or official curriculum graph",
+  "description": "Reviewed US-CCSS targeted source-preserving text repairs with exact original and corrected body fingerprints; no unlisted edits allowed",
   "allowUnlistedContentChanges": false,
   "repairs": [
     {
@@ -18,6 +18,54 @@
       "expectedOriginalCanonicalBodySha256": "baac0ed92ca80780792618caaeea3fce11bec66d3e2dd0e14a36f5cb5fcdae82",
       "expectedCorrectedCanonicalBodySha256": "0c3c03b91ca681c5c2ffe3c08d2c69d5b9a780c505cd0a87a3116a932881eeb0",
       "expectedUnchangedSourceSha256": "df09abb5b0a444ecd29567977492987593b9e1603a4d4ec2559b35d7ca7986c1"
+    },
+    {
+      "packCode": "US-CCSS-MATH",
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L15",
+      "file": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-alg1-phase29-v1.lesson-content-pack.json",
+      "expectedOriginalCanonicalBodySha256": "df60aab3b7e66652277795a2c4ce636943bec959574280c3a8c9c9d0d4edb711",
+      "expectedUnchangedSourceSha256": "a19d17ea2c29667277c1c6fb911c73d6c81fb1c8a72fe73804712eb4f21a9638",
+      "expectedCorrectedCanonicalBodySha256": "1c5945f04fe52362dad19b5653684cf2b340024441f7c30a16958e881e07cb93"
+    },
+    {
+      "packCode": "US-CCSS-MATH",
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L16",
+      "file": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-alg1-phase29-v1.lesson-content-pack.json",
+      "expectedOriginalCanonicalBodySha256": "c8cd23ed4468332bbbb76fa38cef088d195f4e3adacfaadeb95cd7289f5fbc79",
+      "expectedUnchangedSourceSha256": "e0b2bd472f6bd2f59202d1c790ea64926a7eba272ae6e060f59da6c3b3e34ce5",
+      "expectedCorrectedCanonicalBodySha256": "e021a8d18202a427f63d49a9d5fc826655f3d788ffeff74a1022b8a6881a8ae1"
+    },
+    {
+      "packCode": "US-CCSS-MATH",
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L17",
+      "file": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-alg1-phase29-v1.lesson-content-pack.json",
+      "expectedOriginalCanonicalBodySha256": "debaf394cf273f2d06ecb7ede342576feebc221df68e2f169a6b8a78a51fc1a4",
+      "expectedUnchangedSourceSha256": "bd7207ede997ed48b8790f8d3ce945c7d99b3f90ef8e35c0f831f76895f36dad",
+      "expectedCorrectedCanonicalBodySha256": "2100608d602c85b31601ebfe6699cd01e948e4a8794fa7a54ba5b7a1e29cd207"
+    },
+    {
+      "packCode": "US-CCSS-MATH",
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L17",
+      "file": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-alg2-phase29-v1.lesson-content-pack.json",
+      "expectedOriginalCanonicalBodySha256": "43bfeea379a35ba0c16f4f5fd0ce1127f7bf98ffed8c22009222e4d38bfa2fca",
+      "expectedUnchangedSourceSha256": "e9c5162a6ffd803015252d60afd12fb6d221393caa7c6ff10aca46a614cc8941",
+      "expectedCorrectedCanonicalBodySha256": "3315af016897966299ed734f0fd74d4a3e75f85b62ed4006444c9d91373127fb"
+    },
+    {
+      "packCode": "US-CCSS-MATH",
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L18",
+      "file": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-alg2-phase29-v1.lesson-content-pack.json",
+      "expectedOriginalCanonicalBodySha256": "b09e2eced6777e69dea9cfb5e2f1b804db6fd5e350a19c70663d6f4457252846",
+      "expectedUnchangedSourceSha256": "3ec01ea514d3a8d8edbd6bf1d5271079d0941e66e5558f508ce233ff5391ece0",
+      "expectedCorrectedCanonicalBodySha256": "7cbc61c03b9ab3dcd69a13aed4fd3b580850f54446795458174cfa5e3b9fc475"
+    },
+    {
+      "packCode": "US-CCSS-MATH",
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L10",
+      "file": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-alg2-phase29-v1.lesson-content-pack.json",
+      "expectedOriginalCanonicalBodySha256": "3d088f020668dd2511f574f333930028d82cc53c3520948dc934fe81ba1b3496",
+      "expectedUnchangedSourceSha256": "e179a39196685a7055c257ae3eab85a2e6b80b4ab49864fb6b9251b8d349cf77",
+      "expectedCorrectedCanonicalBodySha256": "c879b773235c11d8a90160565ec76ca687f600a024e7a08b56c8cf362c532737"
     }
   ]
 }
