@@ -290,6 +290,13 @@ public sealed class ExplicitCurriculumLevelService : IExplicitCurriculumLevelSer
         if (level is null)
             return Fail(nameof(request.CurriculumLevelKey), ExplicitCurriculumLevelErrorCode.CurriculumLevelNotFound);
 
+        if (CurriculumLevelIdentityRegistry
+                .IsUnresolvedAmericanHighSchoolPathway(level))
+        {
+            return Fail(nameof(request.CurriculumLevelKey),
+                ExplicitCurriculumLevelErrorCode.CurriculumLevelNotFound);
+        }
+
         var expectedPackCode = CurriculumLevelIdentityRegistry.PackCodeForProgramCode(program.Code);
         if (!string.Equals(expectedPackCode, level.PackCode, StringComparison.Ordinal))
         {

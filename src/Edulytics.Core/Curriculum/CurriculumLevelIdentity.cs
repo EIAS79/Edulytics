@@ -26,7 +26,11 @@ public static class CurriculumLevelIdentityRegistry
 
     public static IReadOnlyList<CurriculumLevelIdentity> All { get; } =
         MathematicsCurriculumPackRegistry.All
-            .SelectMany(pack => pack.Levels.Select(level => Create(pack.Code, level)))
+            // Retain the old placeholder identity for reading existing school
+            // records, but offer actual source-backed HS pathways for NEW
+            // American school adoptions. No implicit Algebra 1/2 assignment.
+            .SelectMany(pack => pack.Levels.SelectMany(level =>
+                ExpandSourceBackedHighSchoolPathways(pack.Code, level)))
             .GroupBy(x => x.Key, StringComparer.Ordinal)
             .Select(x => x.First())
             .OrderBy(x => x.PackCode, StringComparer.Ordinal)
@@ -43,7 +47,35 @@ public static class CurriculumLevelIdentityRegistry
 
         return All
             .Where(x => string.Equals(x.PackCode, normalized, StringComparison.Ordinal))
+            // Existing generic keys remain resolvable via Find(), but are not
+            // valid selectable new American HS paths.
+            .Where(x => !IsUnresolvedAmericanHighSchoolPathway(x))
             .ToArray();
+    }
+
+    public static bool IsUnresolvedAmericanHighSchoolPathway(
+        CurriculumLevelIdentity? level) =>
+        level is not null &&
+        level.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode &&
+        level.LogicalLevel is >= 10 and <= 13 &&
+        string.Equals(level.Pathway, "Course/pathway mapping",
+            StringComparison.Ordinal);
+
+    private static IEnumerable<CurriculumLevelIdentity> ExpandSourceBackedHighSchoolPathways(
+        string packCode, AcademicLevelMapping level)
+    {
+        yield return Create(packCode, level);
+        if (packCode != MathematicsCurriculumPackRegistry.CommonCoreCode ||
+            level.LogicalLevel is < 10 or > 13 ||
+            !string.Equals(level.Pathway, "Course/pathway mapping",
+                StringComparison.Ordinal))
+            yield break;
+
+        // Both pathway names are verified against the accepted publisher
+        // HS Traditional and Fourth Courses lesson blueprints. This is
+        // selection of an actual route, NOT selection of Algebra 1/2/Geometry.
+        yield return Create(packCode, level with { Pathway = "Traditional" });
+        yield return Create(packCode, level with { Pathway = "Fourth Courses" });
     }
 
     public static CurriculumLevelIdentity? Find(string? key)

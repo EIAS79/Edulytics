@@ -47,6 +47,39 @@ public sealed class Phase29ExplicitCurriculumLevelIdentityTests
     }
 
     [Fact]
+    public void CommonCoreHighSchoolNewAdoptionsOfferExplicitSourcePathwaysOnly()
+    {
+        var pack = MathematicsCurriculumPackRegistry.CommonCoreCode;
+        var levels = CurriculumLevelIdentityRegistry.ForPack(pack);
+        foreach (var logical in new[] {10, 11, 12, 13})
+        {
+            var options = levels.Where(x => x.LogicalLevel == logical).ToArray();
+            Assert.Equal(2, options.Length);
+            var traditional = Assert.Single(options, x => x.Pathway == "Traditional");
+            var fourth = Assert.Single(options, x => x.Pathway == "Fourth Courses");
+            Assert.Equal(CurriculumLevelIdentityRegistry.BuildKey(
+                pack, logical, "Traditional"), traditional.Key);
+            Assert.Equal(CurriculumLevelIdentityRegistry.BuildKey(
+                pack, logical, "Fourth Courses"), fourth.Key);
+            Assert.NotEqual(traditional.Key, fourth.Key);
+            Assert.False(CurriculumLevelIdentityRegistry
+                .IsUnresolvedAmericanHighSchoolPathway(traditional));
+            Assert.False(CurriculumLevelIdentityRegistry
+                .IsUnresolvedAmericanHighSchoolPathway(fourth));
+            // Old keys remain readable but must never be offered for creation.
+            var legacyKey = CurriculumLevelIdentityRegistry.BuildKey(
+                pack, logical, "Course/pathway mapping");
+            var legacy = CurriculumLevelIdentityRegistry.Find(legacyKey);
+            Assert.NotNull(legacy);
+            Assert.True(CurriculumLevelIdentityRegistry
+                .IsUnresolvedAmericanHighSchoolPathway(legacy));
+            Assert.DoesNotContain(options, x => x.Key == legacyKey);
+        }
+        Assert.Null(CurriculumLevelIdentityRegistry.ResolveLegacy(
+            pack, "Grade 10", gradeOrder: 11));
+    }
+
+    [Fact]
     public void CambridgeCoreAndExtended_AreDistinctStableIdentities()
     {
         var packCode = CurriculumLevelIdentityRegistry
