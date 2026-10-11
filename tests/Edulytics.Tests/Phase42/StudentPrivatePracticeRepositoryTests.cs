@@ -182,6 +182,39 @@ public sealed class StudentPrivatePracticeRepositoryTests
     }
 
     [Theory]
+    [InlineData("Course/pathway mapping", null, true)]
+    [InlineData("Traditional", null, true)]
+    [InlineData("Fourth Courses", null, true)]
+    [InlineData("Traditional", "ALG1", false)]
+    [InlineData("Traditional", "GEO", false)]
+    [InlineData("Fourth Courses", "COMPLEX", false)]
+    public async Task Student_can_see_legacy_US_HS_adoption_but_cannot_start_unselected_course(
+        string pathway, string? courseCode, bool expectedRequiresSelection)
+    {
+        await using var db = CreateDb();
+        var ids = Ids.Create();
+        var now = DateTime.UtcNow;
+        var adoption = Adoption(ids, now);
+        adoption.CurriculumLogicalLevel = 11;
+        adoption.CurriculumPathway = pathway;
+        adoption.CurriculumLevelKey = CurriculumLevelIdentityRegistry.BuildKey(
+            MathematicsCurriculumPackRegistry.CommonCoreCode, 11, pathway, courseCode);
+        adoption.CurriculumLevelLabel = "Grade 10";
+        await db.AddRangeAsync(Student(ids, now), adoption, Class(ids, ids.Adoption),
+            Enrollment(ids, ids.Class));
+        await db.SaveChangesAsync();
+
+        var repo = new StudentPrivatePracticeRepository(db);
+        var curricula = await repo.ListCurriculaAsync(ids.User);
+
+        var visible = Assert.Single(curricula);
+        Assert.Equal(ids.Adoption, visible.CurriculumAdoptionId);
+        Assert.Equal(expectedRequiresSelection, visible.RequiresSchoolCourseSelection);
+        if (expectedRequiresSelection)
+            Assert.Null(await repo.GetContextAsync(ids.User, ids.Adoption));
+    }
+
+    [Theory]
     [InlineData("ALG1", "Algebra 1", "Traditional")]
     [InlineData("GEO", "Geometry", "Traditional")]
     [InlineData("ALG2", "Algebra 2", "Traditional")]

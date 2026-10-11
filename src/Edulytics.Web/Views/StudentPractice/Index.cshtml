@@ -9,6 +9,7 @@
     var selectedCurriculum = selected.HasValue
         ? Model.Curricula.FirstOrDefault(x => x.CurriculumAdoptionId == selected.Value)
         : null;
+    var requiresSchoolCourseSelection = selectedCurriculum?.RequiresSchoolCourseSelection == true;
     var unitOptions = Model.Units ?? Array.Empty<StudentPrivatePracticeUnitOption>();
     var orderedAttempts = Model.Attempts
         .OrderByDescending(x => x.StartedAtUtc)
@@ -67,7 +68,15 @@ else
             </div>
         }
     </section>
-    @if (selected.HasValue)
+    @if (requiresSchoolCourseSelection)
+    {
+        <div class="school-alert school-alert-error" role="alert" data-us-hs-course-pending>
+            @L(
+                "Your school has not yet selected the mathematics course for this high-school class. Ask your school curriculum supervisor to choose Algebra 1, Geometry, Algebra 2, or the appropriate source course. Practice is unavailable until that selection is confirmed.",
+                "Szkoła nie wybrała jeszcze kursu matematyki dla tej klasy szkoły średniej. Poproś szkolnego opiekuna programu o wskazanie właściwego kursu, np. Algebra 1, Geometria lub Algebra 2. Ćwiczenia będą dostępne po zatwierdzeniu tego wyboru.")
+        </div>
+    }
+    @if (selected.HasValue && !requiresSchoolCourseSelection)
     {
         <section class="student-card">
             <h2>@S["GeneratePrivatePractice"]</h2>

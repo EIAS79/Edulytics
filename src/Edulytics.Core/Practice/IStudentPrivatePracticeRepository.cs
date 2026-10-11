@@ -8,7 +8,8 @@ public sealed record PrivatePracticeCurriculumOption(
     Guid ClassGroupId,
     Guid AcademicYearId,
     string CurriculumLevelLabel,
-    string ClassName);
+    string ClassName,
+    bool RequiresSchoolCourseSelection = false);
 
 public sealed record StudentPrivatePracticeContext(
     StudentProfile Student,
