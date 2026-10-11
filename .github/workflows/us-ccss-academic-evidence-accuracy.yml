@@ -10,6 +10,8 @@ on:
       - 'docs/curriculum/us-ccss-official-text-diff.json'
       - 'src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json'
       - 'src/Edulytics.Core/Curriculum/Packs/us-ccss-math.authority-text-repairs.json'
+      - 'src/Edulytics.Core/Curriculum/Packs/us-ccss-math.exponent-text-repair.json'
+      - 'src/Edulytics.Core/Curriculum/Packs/us-ccss-math.hs-notation-text-repairs.json'
       - '.github/workflows/us-ccss-academic-evidence-accuracy.yml'
   workflow_dispatch:
 permissions:

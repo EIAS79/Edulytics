@@ -25,7 +25,7 @@ if(clauses.summary.allClauses!==121||clauses.summary.withPublisherExactDirectCod
 const s=ledger.summary;
 if(s.clauses!==121||s.exactPublisherChildCodeEvidence!==106
   ||s.parentOnlyChildCodeEvidence!==15||s.officialTextDiffsInBaseline!==107
-  ||s.hashGuardedOfficialCorrections!==5||s.academicallyCertified!==0
+  ||s.hashGuardedOfficialCorrections!==9||s.academicallyCertified!==0
   ||s.releaseReady!==false||ledger.clauseEvidence.some(c=>c.certificationStatus!=='NOT_FULLY_CERTIFIED'))
  throw Error('US academic truthfulness release gate breached');
 const report={
@@ -36,12 +36,13 @@ const report={
  independentlyCertifiedChildClauses:0,
  authenticatedDisposableUsSchoolFlow:'PASSED_PR_452',
  authenticatedLiveStagingFlow:'NOT_VERIFIED',
- sourceTextDiscrepancyAudit:{baselineFlagged:107,confirmedHashGuardedRepairManifest:5,
-  pendingReviewOrDisposition:102,baselineComparisonNotUpdatedForRuntimeRepairs:true},
+ sourceTextDiscrepancyAudit:{baselineFlagged:107,confirmedHashGuardedRepairManifest:9,
+  verifiedInLiveNeon:6,pendingLiveNeonVerification:3,
+  pendingReviewOrDisposition:98,baselineComparisonNotUpdatedForRuntimeRepairs:true},
  remainingReleaseBlockers:[
   '121 child clauses require independent full educational explanation, question-family and grading-rubric signoff; 106 exact publisher child references are not proof of mastery',
   '15 parent-only child-code alignments require clause-specific provenance review; do not invent publisher links',
-  '107 baseline text differences were detected; 5 confirmed correction entries have SHA-guarded manifests, 102 still need independently documented disposition',
+  '107 baseline differences were detected; 9 source-reviewed corrections have SHA-guarded manifests, 98 still need independently documented disposition, and 3 of the 9 have not been verified against live Neon',
   'Graph construction, graphical vectors, and free-form mathematical justification require assessment/rubric proof beyond existing numeric and recognition Practice',
   'American high-school adoption still needs explicit course/pathway configuration (issue #453), not the disposable CI fixture workaround',
   'Live staging student and teacher browser acceptance has not yet been verified; disposable CI HTTPS acceptance passed in PR #452'
@@ -55,5 +56,5 @@ if(process.argv.includes('--check')){
  if(fs.readFileSync(outfile,'utf8')!==content)throw Error('Semantic blocker report drift; run node tools/us-ccss-practice-semantic-gate.cjs and review');
 }else fs.writeFileSync(outfile,content);
 console.log(JSON.stringify({productionReady:false,independentlyCertifiedChildClauses:0,
- clauses:s.clauses,sourceUnmatched:s.parentOnlyChildCodeEvidence,sourceTextReview:102,
+ clauses:s.clauses,sourceUnmatched:s.parentOnlyChildCodeEvidence,sourceTextReview:98,
  authenticatedDisposableUsSchoolFlow:report.authenticatedDisposableUsSchoolFlow}));

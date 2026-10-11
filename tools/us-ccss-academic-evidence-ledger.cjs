@@ -11,16 +11,28 @@ const input={
   clauses:'docs/curriculum/us-ccss-121-clause-evidence-corrected.json',
   diff:'docs/curriculum/us-ccss-official-text-diff.json',
   mappings:'src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json',
-  repairs:'src/Edulytics.Core/Curriculum/Packs/us-ccss-math.authority-text-repairs.json'
+  repairs:'src/Edulytics.Core/Curriculum/Packs/us-ccss-math.authority-text-repairs.json',
+  grade8:'src/Edulytics.Core/Curriculum/Packs/us-ccss-math.exponent-text-repair.json',
+  highSchool:'src/Edulytics.Core/Curriculum/Packs/us-ccss-math.hs-notation-text-repairs.json'
 };
 const normalize=s=>String(s||'').replace(/^CCSS:/,'')
   .replace(/^(HS[NAFGS])-([A-Z]{1,3})\./,'$1.$2.').toUpperCase();
 const clauses=read(input.clauses), diff=read(input.diff);
 const mappings=read(input.mappings).mappings;
 const repairs=read(input.repairs);
+const exponent=read(input.grade8);
+const highSchool=read(input.highSchool);
+if(repairs.replacements.length!==5 ||
+   exponent.previousPatchedContentDigest!==repairs.patchedContentDigest ||
+   highSchool.previousPatchedContentDigest!==exponent.patchedContentDigest ||
+   highSchool.replacements.length!==3)
+ throw Error('CCSS six-to-nine official authority provenance chain invalid');
+const allReplacements=[...repairs.replacements,exponent,...highSchool.replacements];
 const ready=mappings.filter(x=>x.lessonCode?.startsWith('PED:US-CCSS-MATH:')
   &&x.practiceReadiness==='READY_VERIFIED'&&x.allowedQuestionFamilies?.length>0);
-const byRepair=new Map(repairs.replacements.map(x=>[normalize(x.code),x]));
+const byRepair=new Map(allReplacements.map(x=>[normalize(x.code),x]));
+if(byRepair.size!==9)
+ throw Error('CCSS authority repair code duplication or missing stage');
 const rows=clauses.clauses.map(c=>{
  const parent=normalize(c.parent),code=normalize(c.clause);
  const candidates=ready.filter(m=>m.officialOutcomeCodes?.some(v=>
@@ -56,7 +68,12 @@ const textRows=diff.nonIdenticalResults.map(row=>({
   correctedTextSha256:byRepair.get(normalize(row.code)).correctedTextSha256,
   authorityUrl:byRepair.get(normalize(row.code)).authorityUrl
  }:null,
- warning:'Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.'
+ warning:'Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.',
+ productionEvidence:byRepair.has(normalize(row.code))
+   ?(['HSA.SSE.A.2','HSA.APR.C.4','HSN.RN.A.1'].includes(normalize(row.code))
+     ?'NOT_VERIFIED_LIVE_NEON'
+     :'VERIFIED_LIVE_NEON_READ_ONLY_2026_10_11')
+   :'NOT_REVIEWED'
 }));
 const summary={
  clauses:rows.length,
@@ -67,19 +84,22 @@ const summary={
  officialTextDiffsInBaseline:textRows.length,
  hashGuardedOfficialCorrections:byRepair.size,
  textDifferencesPendingIndependentDisposition:textRows.filter(x=>x.correctionManifest===null).length,
+ correctionsVerifiedInLiveNeonByReadOnlyEvidence:6,
+ correctionsPendingLiveNeonVerification:3,
  authenticatedDisposableUSSchoolWorkflow:'PASSED_PR_452',
  authenticatedLiveStagingWorkflow:'NOT_VERIFIED',
  releaseReady:false
 };
 if(summary.clauses!==121||summary.exactPublisherChildCodeEvidence!==106
   ||summary.parentOnlyChildCodeEvidence!==15||summary.officialTextDiffsInBaseline!==107
-  ||summary.hashGuardedOfficialCorrections!==5||summary.academicallyCertified!==0)
+  ||summary.hashGuardedOfficialCorrections!==9||summary.academicallyCertified!==0)
  throw Error('Academic evidence source count or verdict drift: '+JSON.stringify(summary));
 const output={
  schemaVersion:1,kind:'US_CCSS_ACADEMIC_EVIDENCE_AND_DISPOSITION_REGISTER',
  sourceBasis:{
   clauses:input.clauses,officialTextDiff:input.diff,
-  mappings:input.mappings,authorityRepairManifest:input.repairs
+  mappings:input.mappings,authorityRepairManifest:input.repairs,
+  grade8Correction:input.grade8,highSchoolNotationCorrections:input.highSchool
  },
  reviewMethod:'Offline committed source and checked-in SHA-guarded amendments; no new publisher assertions; active lesson-contract routes are candidates, never semantic certification.',
  summary,clauseEvidence:rows,officialTextDiscrepancies:textRows

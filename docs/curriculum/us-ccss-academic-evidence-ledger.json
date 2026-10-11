@@ -5,7 +5,9 @@
     "clauses": "docs/curriculum/us-ccss-121-clause-evidence-corrected.json",
     "officialTextDiff": "docs/curriculum/us-ccss-official-text-diff.json",
     "mappings": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
-    "authorityRepairManifest": "src/Edulytics.Core/Curriculum/Packs/us-ccss-math.authority-text-repairs.json"
+    "authorityRepairManifest": "src/Edulytics.Core/Curriculum/Packs/us-ccss-math.authority-text-repairs.json",
+    "grade8Correction": "src/Edulytics.Core/Curriculum/Packs/us-ccss-math.exponent-text-repair.json",
+    "highSchoolNotationCorrections": "src/Edulytics.Core/Curriculum/Packs/us-ccss-math.hs-notation-text-repairs.json"
   },
   "reviewMethod": "Offline committed source and checked-in SHA-guarded amendments; no new publisher assertions; active lesson-contract routes are candidates, never semantic certification.",
   "summary": {
@@ -15,8 +17,10 @@
     "clausesWithAnyCandidateReadyLesson": 58,
     "academicallyCertified": 0,
     "officialTextDiffsInBaseline": 107,
-    "hashGuardedOfficialCorrections": 5,
-    "textDifferencesPendingIndependentDisposition": 102,
+    "hashGuardedOfficialCorrections": 9,
+    "textDifferencesPendingIndependentDisposition": 98,
+    "correctionsVerifiedInLiveNeonByReadOnlyEvidence": 6,
+    "correctionsPendingLiveNeonVerification": 3,
     "authenticatedDisposableUSSchoolWorkflow": "PASSED_PR_452",
     "authenticatedLiveStagingWorkflow": "NOT_VERIFIED",
     "releaseReady": false
@@ -4136,7 +4140,8 @@
       "officialTail": "s, and right circular cylinders) to create a composite shape, and compose new shapes from the composite shape.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "1.G.A.3",
@@ -4147,7 +4152,8 @@
       "officialTail": "r of the shares. Understand for these examples that decomposing into more equal shares creates smaller shares.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "1.NBT.B.2",
@@ -4158,7 +4164,8 @@
       "officialTail": "30, 40, 50, 60, 70, 80, 90 refer to one, two, three, four, five, six, seven, eight, or nine tens (and 0 ones).",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "1.OA.A.1",
@@ -4169,7 +4176,8 @@
       "officialTail": "e.g., by using objects, drawings, and equations with a symbol for the unknown number to represent the problem.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "1.OA.B.3",
@@ -4180,7 +4188,8 @@
       "officialTail": "second two numbers can be added to make a ten, so 2 + 6 + 4 = 2 + 10 = 12. (Associative property of addition.)",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "1.OA.D.8",
@@ -4191,7 +4200,8 @@
       "officialTail": "ne the unknown number that makes the equation true in each of the equations 8 + ? = 11, 5 = _ - 3, 6 + 6 = _ .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "2.G.A.1",
@@ -4202,7 +4212,8 @@
       "officialTail": "f angles or a given number of equal faces. Identify triangles, quadrilaterals, pentagons, hexagons, and cubes.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "2.G.A.3",
@@ -4213,7 +4224,8 @@
       "officialTail": "ves, three thirds, four fourths. Recognize that equal shares of identical wholes need not have the same shape.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "2.MD.C.8",
@@ -4224,7 +4236,8 @@
       "officialTail": "ng $ and &cent; symbols appropriately. Example: If you have 2 dimes and 3 pennies, how many cents do you have?",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "2.MD.D.10",
@@ -4235,7 +4248,8 @@
       "officialTail": "ories. Solve simple put-together, take-apart, and compare problems using information presented in a bar graph.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "2.NBT.B.9",
@@ -4246,7 +4260,8 @@
       "officialTail": "Explain why addition and subtraction strategies work, using place value and the properties of operations.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "2.OA.A.1",
@@ -4257,7 +4272,8 @@
       "officialTail": "ositions, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "2.OA.B.2",
@@ -4268,7 +4284,8 @@
       "officialTail": "ract within 20 using mental strategies. By end of Grade 2, know from memory all sums of two one-digit numbers.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "2.OA.C.4",
@@ -4279,7 +4296,8 @@
       "officialTail": "rrays with up to 5 rows and up to 5 columns; write an equation to express the total as a sum of equal addends.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "3.MD.A.2",
@@ -4290,7 +4308,8 @@
       "officialTail": " the same units, e.g., by using drawings (such as a beaker with a measurement scale) to represent the problem.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "3.MD.C.7",
@@ -4301,7 +4320,8 @@
       "officialTail": "ngles and adding the areas of the non-overlapping parts, applying this technique to solve real world problems.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "3.NBT.A.3",
@@ -4312,7 +4332,8 @@
       "officialTail": "e 10-90 (e.g., 9 &times; 80, 5 &times; 60) using strategies based on place value and properties of operations.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "3.OA.A.1",
@@ -4323,7 +4344,8 @@
       "officialTail": "cts each. For example, describe a context in which a total number of objects can be expressed as 5 &times; 7 .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "3.OA.A.2",
@@ -4334,7 +4356,8 @@
       "officialTail": "mple, describe a context in which a number of shares or a number of groups can be expressed as 56 &divide; 8 .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "3.OA.A.3",
@@ -4345,7 +4368,8 @@
       "officialTail": "antities, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "3.OA.A.4",
@@ -4356,7 +4380,8 @@
       "officialTail": "mber that makes the equation true in each of the equations 8 &times; ? = 48, 5 = _ &divide; 3, 6 &times; 6 = ?",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "3.OA.B.5",
@@ -4367,7 +4392,8 @@
       "officialTail": "find 8 &times; 7 as 8 &times; (5 + 2) = (8 &times; 5) + (8 &times; 2) = 40 + 16 = 56. (Distributive property.)",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "3.OA.B.6",
@@ -4378,7 +4404,8 @@
       "officialTail": "own-factor problem. For example, find 32 &divide; 8 by finding the number that makes 32 when multiplied by 8 .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "3.OA.C.7",
@@ -4389,7 +4416,8 @@
       "officialTail": "8) or properties of operations. By the end of Grade 3, know from memory all products of two one-digit numbers.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "3.OA.D.8",
@@ -4400,7 +4428,8 @@
       "officialTail": "y. Assess the reasonableness of answers using mental computation and estimation strategies including rounding.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "3.OA.D.9",
@@ -4411,7 +4440,8 @@
       "officialTail": "t 4 times a number is always even, and explain why 4 times a number can be decomposed into two equal addends .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "4.NBT.A.1",
@@ -4422,7 +4452,8 @@
       "officialTail": "its right. For example, recognize that 700 &divide; 70 = 10 by applying concepts of place value and division .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "4.NBT.B.5",
@@ -4433,7 +4464,8 @@
       "officialTail": "operations. Illustrate and explain the calculation by using equations, rectangular arrays, and/or area models.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "4.NF.A.1",
@@ -4444,7 +4476,8 @@
       "officialTail": "two fractions themselves are the same size. Use this principle to recognize and generate equivalent fractions.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "4.NF.B.4",
@@ -4455,7 +4488,8 @@
       "officialTail": " the party, how many pounds of roast beef will be needed? Between what two whole numbers does your answer lie?",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "4.NF.C.5",
@@ -4466,7 +4500,8 @@
       "officialTail": " with respective denominators 10 and 100. For example, express 3/10 as 30/100, and add 3/10 + 4/100 = 34/100 .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "4.NF.C.7",
@@ -4477,7 +4512,8 @@
       "officialTail": "esults of comparisons with the symbols >, =, or <, and justify the conclusions, e.g., by using a visual model.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "4.OA.A.1",
@@ -4488,7 +4524,8 @@
       "officialTail": "d 7 times as many as 5. Represent verbal statements of multiplicative comparisons as multiplication equations.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "4.OA.A.2",
@@ -4499,7 +4536,8 @@
       "officialTail": "he unknown number to represent the problem, distinguishing multiplicative comparison from additive comparison.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "4.OA.A.3",
@@ -4510,7 +4548,8 @@
       "officialTail": "y. Assess the reasonableness of answers using mental computation and estimation strategies including rounding.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "5.G.A.1",
@@ -4525,7 +4564,8 @@
         "correctedTextSha256": "595f80e6d87229c078d52b9c1bbe630804b66b9d0813571e2014b7065da20eba",
         "authorityUrl": "https://www.thecorestandards.org/Math/Content/5/G/"
       },
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "VERIFIED_LIVE_NEON_READ_ONLY_2026_10_11"
     },
     {
       "code": "5.MD.C.5",
@@ -4536,7 +4576,8 @@
       "officialTail": "isms by adding the volumes of the non-overlapping parts, applying this technique to solve real world problems.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "5.NBT.A.3",
@@ -4547,7 +4588,8 @@
       "officialTail": "based on meanings of the digits in each place, using >, =, and < symbols to record the results of comparisons.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "5.NF.B.3",
@@ -4558,7 +4600,8 @@
       "officialTail": "y weight, how many pounds of rice should each person get? Between what two whole numbers does your answer lie?",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "5.NF.B.5",
@@ -4569,7 +4612,8 @@
       "officialTail": "ciple of fraction equivalence a / b = ( n &times; a )/( n &times; b ) to the effect of multiplying a / b by 1.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "5.NF.B.7",
@@ -4584,7 +4628,8 @@
         "correctedTextSha256": "8340a1d7b275d8aeeeed2f2ad3a775b518223d3ade2071e3ba3204dda45fe409",
         "authorityUrl": "https://www.thecorestandards.org/Math/Content/5/NF/"
       },
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "VERIFIED_LIVE_NEON_READ_ONLY_2026_10_11"
     },
     {
       "code": "5.OA.A.2",
@@ -4595,7 +4640,8 @@
       "officialTail": "8932 + 921) is three times as large as 18932 + 921, without having to calculate the indicated sum or product .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "6.EE.A.2",
@@ -4610,7 +4656,8 @@
         "correctedTextSha256": "4b51734a7b377a6310dcc142535c09e476409b722c638ced160ed00dc18c1ee9",
         "authorityUrl": "https://www.thecorestandards.org/Math/Content/6/EE/"
       },
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "VERIFIED_LIVE_NEON_READ_ONLY_2026_10_11"
     },
     {
       "code": "6.NS.A.1",
@@ -4621,7 +4668,8 @@
       "officialTail": "n 2/3 of a cup of yogurt? How wide is a rectangular strip of land with length 3/4 mi and area 1/2 square mi? .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "6.NS.C.7",
@@ -4632,7 +4680,8 @@
       "officialTail": "r example, recognize that an account balance less than -30 dollars represents a debt greater than 30 dollars .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "7.NS.A.2",
@@ -4647,7 +4696,8 @@
         "correctedTextSha256": "c4bdbd2c4c158e18d6d3dbc45c914278737c84756f83357dca041a6c5bc82c1e",
         "authorityUrl": "https://www.thecorestandards.org/Math/Content/7/NS/"
       },
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "VERIFIED_LIVE_NEON_READ_ONLY_2026_10_11"
     },
     {
       "code": "7.NS.A.3",
@@ -4658,7 +4708,8 @@
       "officialTail": "Solve real-world and mathematical problems involving the four operations with rational numbers.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "8.EE.A.1",
@@ -4667,9 +4718,14 @@
       "officialLength": 139,
       "sourceTail": " of integer exponents to generate equivalent numerical expressions. For example, 32 × 3–5 = 3–3 = 1/33 = 1/27.",
       "officialTail": " of integer exponents to generate equivalent numerical expressions. For example, 3 &times; 3 = 3 = 1/3 = 1/27.",
-      "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
-      "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "disposition": "HASH_GUARDED_CORRECTION_RECORDED__POST_REPAIR_COMPARISON_PENDING",
+      "correctionManifest": {
+        "code": "CCSS:8.EE.A.1",
+        "correctedTextSha256": "7baa6224859a9cd58f6df2bbeebb026f7b4519c44d2289a977e9c27442a4943e",
+        "authorityUrl": "https://www.thecorestandards.org/Math/Content/8/EE/"
+      },
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "VERIFIED_LIVE_NEON_READ_ONLY_2026_10_11"
     },
     {
       "code": "8.EE.A.2",
@@ -4680,7 +4736,8 @@
       "officialTail": "square roots of small perfect squares and cube roots of small perfect cubes. Know that &radic;2 is irrational.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "8.EE.A.3",
@@ -4691,7 +4748,8 @@
       "officialTail": " population of the world as 7 times 10, and determine that the world population is more than 20 times larger .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "8.F.A.1",
@@ -4702,7 +4760,8 @@
       "officialTail": "tput. The graph of a function is the set of ordered pairs consisting of an input and the corresponding output.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "8.F.A.3",
@@ -4713,7 +4772,8 @@
       "officialTail": "is not linear because its graph contains the points (1,1), (2,4) and (3,9), which are not on a straight line .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "8.F.B.5",
@@ -4724,7 +4784,8 @@
       "officialTail": "linear). Sketch a graph that exhibits the qualitative features of a function that has been described verbally.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "8.NS.A.2",
@@ -4735,7 +4796,8 @@
       "officialTail": ";2 is between 1 and 2, then between 1.4 and 1.5, and explain how to continue on to get better approximations .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSA.APR.C.4",
@@ -4744,9 +4806,14 @@
       "officialLength": 185,
       "sourceTail": "example, the polynomial identity (x2 + y2)2 = (x2 – y2)2 + (2xy)2 can be used to generate Pythagorean triples.",
       "officialTail": "s. For example, the polynomial identity (x + y) = (x - y) + (2xy) can be used to generate Pythagorean triples.",
-      "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
-      "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "disposition": "HASH_GUARDED_CORRECTION_RECORDED__POST_REPAIR_COMPARISON_PENDING",
+      "correctionManifest": {
+        "code": "CCSS:HSA-APR.C.4",
+        "correctedTextSha256": "4a3752f6d26b8bdde329f47e4feea470247bcef0ac32971a616cc936d95ef009",
+        "authorityUrl": "https://www.thecorestandards.org/Math/Content/HSA/APR/"
+      },
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_VERIFIED_LIVE_NEON"
     },
     {
       "code": "HSA.APR.C.5",
@@ -4757,7 +4824,8 @@
       "officialTail": "tive integer n , where x and y are any numbers, with coefficients determined for example by Pascal's Triangle.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSA.APR.D.6",
@@ -4768,7 +4836,8 @@
       "officialTail": "of b ( x ), using inspection, long division, or, for the more complicated examples, a computer algebra system.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSA.CED.A.3",
@@ -4779,7 +4848,8 @@
       "officialTail": "ample, represent inequalities describing nutritional and cost constraints on combinations of different foods .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSA.REI.B.4",
@@ -4790,7 +4860,8 @@
       "officialTail": " when the quadratic formula gives complex solutions and write them as a &plusmn; bi for real numbers a and b .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSA.REI.C.7",
@@ -4801,7 +4872,8 @@
       "officialTail": " graphically. For example, find the points of intersection between the line y = -3 x and the circle x + y = 3.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSA.REI.C.9",
@@ -4812,7 +4884,8 @@
       "officialTail": "e it to solve systems of linear equations (using technology for matrices of dimension 3 &times; 3 or greater).",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSA.REI.D.11",
@@ -4823,7 +4896,8 @@
       "officialTail": "( x ) and/or g ( x ) are linear, polynomial, rational, absolute value, exponential, and logarithmic functions.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSA.SSE.A.1",
@@ -4834,7 +4908,8 @@
       "officialTail": " parts as a single entity. For example, interpret P(1+r) as the product of P and a factor not depending on P .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSA.SSE.A.2",
@@ -4843,9 +4918,14 @@
       "officialLength": 191,
       "sourceTail": "4 as (x2)2 – (y2)2, thus recognizing it as a difference of squares that can be factored as (x2 – y2)(x2 + y2).",
       "officialTail": "ee x - y as (x) - (y), thus recognizing it as a difference of squares that can be factored as (x - y)(x + y) .",
-      "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
-      "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "disposition": "HASH_GUARDED_CORRECTION_RECORDED__POST_REPAIR_COMPARISON_PENDING",
+      "correctionManifest": {
+        "code": "CCSS:HSA-SSE.A.2",
+        "correctedTextSha256": "2f482d40052a012f72c3c5a2de0393935c4fa089054a4fb70a0d83ced87512f4",
+        "authorityUrl": "https://www.thecorestandards.org/Math/Content/HSA/SSE/"
+      },
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_VERIFIED_LIVE_NEON"
     },
     {
       "code": "HSA.SSE.B.3",
@@ -4856,7 +4936,8 @@
       "officialTail": "as (1.15) &asymp; 1.012 to reveal the approximate equivalent monthly interest rate if the annual rate is 15% .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSF.BF.B.4",
@@ -4867,7 +4948,8 @@
       "officialTail": "as an inverse. d. (+) Produce an invertible function from a non-invertible function by restricting the domain.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSF.IF.A.3",
@@ -4878,7 +4960,8 @@
       "officialTail": "ample, the Fibonacci sequence is defined recursively by f(0) = f(1) = 1, f(n+1) = f(n) + f(n-1) for n &ge; 1 .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSF.IF.B.4",
@@ -4889,7 +4972,8 @@
       "officialTail": "decreasing, positive, or negative; relative maximums and minimums; symmetries; end behavior; and periodicity .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSF.IF.C.7",
@@ -4900,7 +4984,8 @@
       "officialTail": "ons, showing intercepts and end behavior, and trigonometric functions, showing period, midline, and amplitude.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSF.LE.A.4",
@@ -4911,7 +4996,8 @@
       "officialTail": "b = d where a , c , and d are numbers and the base b is 2, 10, or e ; evaluate the logarithm using technology.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSF.TF.A.3",
@@ -4922,7 +5008,8 @@
       "officialTail": "ine, and tangent for x , &pi; + x , and 2&pi; - x in terms of their values for x , where x is any real number.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSF.TF.B.6",
@@ -4933,7 +5020,8 @@
       "officialTail": "nction to a domain on which it is always increasing or always decreasing allows its inverse to be constructed.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSF.TF.B.7",
@@ -4944,7 +5032,8 @@
       "officialTail": "ise in modeling contexts; evaluate the solutions using technology, and interpret them in terms of the context.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSF.TF.C.8",
@@ -4959,7 +5048,8 @@
         "correctedTextSha256": "d6e56314967e089ae33878077073204268512edbf8f0326ff5c1428ddfbc0c9b",
         "authorityUrl": "https://www.thecorestandards.org/Math/Content/HSF/TF/"
       },
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "VERIFIED_LIVE_NEON_READ_ONLY_2026_10_11"
     },
     {
       "code": "HSF.TF.C.9",
@@ -4970,7 +5060,8 @@
       "officialTail": "(+) Prove the addition and subtraction formulas for sine, cosine, and tangent and use them to solve problems.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSG.CO.C.10",
@@ -4981,7 +5072,8 @@
       "officialTail": "s of a triangle is parallel to the third side and half the length; the medians of a triangle meet at a point .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSG.GMD.A.2",
@@ -4992,7 +5084,8 @@
       "officialTail": "rmal argument using Cavalieri's principle for the formulas for the volume of a sphere and other solid figures.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSG.GPE.A.3",
@@ -5003,7 +5096,8 @@
       "officialTail": "d hyperbolas given the foci, using the fact that the sum or difference of distances from the foci is constant.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSG.GPE.B.4",
@@ -5014,7 +5108,8 @@
       "officialTail": "sprove that the point (1, &radic;3) lies on the circle centered at the origin and containing the point (0, 2).",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSG.SRT.A.2",
@@ -5025,7 +5120,8 @@
       "officialTail": "the equality of all corresponding pairs of angles and the proportionality of all corresponding pairs of sides.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSG.SRT.D.11",
@@ -5036,7 +5132,8 @@
       "officialTail": "es to find unknown measurements in right and non-right triangles (e.g., surveying problems, resultant forces).",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.CN.A.1",
@@ -5047,7 +5144,8 @@
       "officialTail": " there is a complex number i such that i = -1, and every complex number has the form a + bi with a and b real.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.CN.A.2",
@@ -5058,7 +5156,8 @@
       "officialTail": " and the commutative, associative, and distributive properties to add, subtract, and multiply complex numbers.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.CN.A.3",
@@ -5069,7 +5168,8 @@
       "officialTail": "(+) Find the conjugate of a complex number; use conjugates to find moduli and quotients of complex numbers.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.CN.B.4",
@@ -5080,7 +5180,8 @@
       "officialTail": "numbers), and explain why the rectangular and polar forms of a given complex number represent the same number.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.CN.B.5",
@@ -5091,7 +5192,8 @@
       "officialTail": "computation. For example, (-1 + &radic;3 i) = 8 because (-1 + &radic;3 i) has modulus 2 and argument 120&deg;.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.CN.B.6",
@@ -5102,7 +5204,8 @@
       "officialTail": "s the modulus of the difference, and the midpoint of a segment as the average of the numbers at its endpoints.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.CN.C.8",
@@ -5113,7 +5216,8 @@
       "officialTail": "(+) Extend polynomial identities to the complex numbers. For example, rewrite x + 4 as (x + 2i)(x - 2i) .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.RN.A.1",
@@ -5122,9 +5226,14 @@
       "officialLength": 313,
       "sourceTail": "e, we define 51/3 to be the cube root of 5 because we want (51/3)3 = 5(1/3)3 to hold, so (51/3)3 must equal 5.",
       "officialTail": "ents. For example, we define 5 to be the cube root of 5 because we want (5) = 5 to hold, so (5) must equal 5 .",
-      "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
-      "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "disposition": "HASH_GUARDED_CORRECTION_RECORDED__POST_REPAIR_COMPARISON_PENDING",
+      "correctionManifest": {
+        "code": "CCSS:HSN-RN.A.1",
+        "correctedTextSha256": "5cce3a0e71b076c09eb7e08bb335bf4c479b551a8e44fadacc72513f17829049",
+        "authorityUrl": "https://www.thecorestandards.org/Math/Content/HSN/RN/"
+      },
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_VERIFIED_LIVE_NEON"
     },
     {
       "code": "HSN.VM.A.1",
@@ -5135,7 +5244,8 @@
       "officialTail": "ed line segments, and use appropriate symbols for vectors and their magnitudes (e.g., v , | v |, || v ||, v ).",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.VM.A.2",
@@ -5146,7 +5256,8 @@
       "officialTail": "nents of a vector by subtracting the coordinates of an initial point from the coordinates of a terminal point.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.VM.A.3",
@@ -5157,7 +5268,8 @@
       "officialTail": "(+) Solve problems involving velocity and other quantities that can be represented by vectors.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.VM.B.5",
@@ -5168,7 +5280,8 @@
       "officialTail": "knowing that when | c | v &ne; 0, the direction of c v is either along v (for c > 0) or against v (for c < 0).",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.VM.C.10",
@@ -5179,7 +5292,8 @@
       "officialTail": "numbers. The determinant of a square matrix is nonzero if and only if the matrix has a multiplicative inverse.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.VM.C.11",
@@ -5190,7 +5304,8 @@
       "officialTail": "y a matrix of suitable dimensions to produce another vector. Work with matrices as transformations of vectors.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.VM.C.12",
@@ -5201,7 +5316,8 @@
       "officialTail": "rices as a transformations of the plane, and interpret the absolute value of the determinant in terms of area.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.VM.C.6",
@@ -5212,7 +5328,8 @@
       "officialTail": "matrices to represent and manipulate data, e.g., to represent payoffs or incidence relationships in a network.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.VM.C.7",
@@ -5223,7 +5340,8 @@
       "officialTail": " Multiply matrices by scalars to produce new matrices, e.g., as when all of the payoffs in a game are doubled.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSN.VM.C.9",
@@ -5234,7 +5352,8 @@
       "officialTail": "uare matrices is not a commutative operation, but still satisfies the associative and distributive properties.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSS.MD.A.3",
@@ -5245,7 +5364,8 @@
       "officialTail": "e-choice test where each question has four choices, and find the expected grade under various grading schemes.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSS.MD.A.4",
@@ -5256,7 +5376,8 @@
       "officialTail": "d number of sets per household. How many TV sets would you expect to find in 100 randomly selected households?",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSS.MD.B.5",
@@ -5267,7 +5388,8 @@
       "officialTail": "ible automobile insurance policy using various, but reasonable, chances of having a minor or a major accident.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSS.MD.B.6",
@@ -5278,7 +5400,8 @@
       "officialTail": "(+) Use probabilities to make fair decisions (e.g., drawing by lots, using a random number generator).",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "HSS.MD.B.7",
@@ -5289,7 +5412,8 @@
       "officialTail": "g probability concepts (e.g., product testing, medical testing, pulling a hockey goalie at the end of a game).",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "6.RP.A.2",
@@ -5300,7 +5424,8 @@
       "officialTail": "3/4 cup of flour for each cup of sugar.\" \"We paid $75 for 15 hamburgers, which is a rate of $5 per hamburger.\"",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "6.RP.A.3",
@@ -5311,7 +5436,8 @@
       "officialTail": "nvert measurement units; manipulate and transform units appropriately when multiplying or dividing quantities.",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     },
     {
       "code": "7.RP.A.1",
@@ -5322,7 +5448,8 @@
       "officialTail": " 1/4 hour, compute the unit rate as the complex fraction / 1/4 miles per hour, equivalently 2 miles per hour .",
       "disposition": "OFFICIAL_SOURCE_DISCREPANCY_REVIEW_REQUIRED",
       "correctionManifest": null,
-      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal."
+      "warning": "Snapshot compares original accepted pack text, not repaired runtime standard prose; no automatic typo/footnote dismissal.",
+      "productionEvidence": "NOT_REVIEWED"
     }
   ]
 }

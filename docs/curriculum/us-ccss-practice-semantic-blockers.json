@@ -14,14 +14,16 @@
   "authenticatedLiveStagingFlow": "NOT_VERIFIED",
   "sourceTextDiscrepancyAudit": {
     "baselineFlagged": 107,
-    "confirmedHashGuardedRepairManifest": 5,
-    "pendingReviewOrDisposition": 102,
+    "confirmedHashGuardedRepairManifest": 9,
+    "verifiedInLiveNeon": 6,
+    "pendingLiveNeonVerification": 3,
+    "pendingReviewOrDisposition": 98,
     "baselineComparisonNotUpdatedForRuntimeRepairs": true
   },
   "remainingReleaseBlockers": [
     "121 child clauses require independent full educational explanation, question-family and grading-rubric signoff; 106 exact publisher child references are not proof of mastery",
     "15 parent-only child-code alignments require clause-specific provenance review; do not invent publisher links",
-    "107 baseline text differences were detected; 5 confirmed correction entries have SHA-guarded manifests, 102 still need independently documented disposition",
+    "107 baseline differences were detected; 9 source-reviewed corrections have SHA-guarded manifests, 98 still need independently documented disposition, and 3 of the 9 have not been verified against live Neon",
     "Graph construction, graphical vectors, and free-form mathematical justification require assessment/rubric proof beyond existing numeric and recognition Practice",
     "American high-school adoption still needs explicit course/pathway configuration (issue #453), not the disposable CI fixture workaround",
     "Live staging student and teacher browser acceptance has not yet been verified; disposable CI HTTPS acceptance passed in PR #452"
