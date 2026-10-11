@@ -1,4 +1,7 @@
+using System.Security.Cryptography;
+using System.Text;
 using Edulytics.Core.Curriculum;
+using Edulytics.Core.Entities;
 
 namespace Edulytics.Data.Seeding;
 
@@ -129,4 +132,56 @@ public static class CommonCoreG4MultiplesSourceCorrection
         string.Equals(existingVersion,
             CommonCoreRichContentCorrections.CorrectionContentVersion,
             StringComparison.Ordinal);
+
+    // Hash of the unmodified, published English source body using canonical
+    // culture/title/explanation/concepts/examples/steps/mistakes/summary order.
+    // This is NOT the differently defined Source CanonicalBodySha256 field.
+    private const string ExpectedOldPersistedBodySha256 =
+        "571eb6a1892e2fc1d83420b774c6175aab2a44c396eedf8b9f169420f4f01242";
+
+    public static void ValidateExistingBodyBeforeUpgrade(
+        CanonicalLessonContentPackDocument document,
+        CanonicalLessonContentPackLesson lesson,
+        string existingVersion,
+        IReadOnlyCollection<CurriculumLessonContentTranslation> persistedTranslations)
+    {
+        if (!CanUpgradeExisting(document, lesson, existingVersion))
+            throw new InvalidOperationException(
+                "G4 multiples correction requires the exact preceding Common Core content version.");
+
+        // ReadFromJson environments legitimately have metadata with no persisted prose.
+        if (persistedTranslations.Count == 0)
+            return;
+
+        if (persistedTranslations.Count != 1 ||
+            !string.Equals(persistedTranslations.Single().CultureCode,
+                "en", StringComparison.Ordinal))
+            throw new InvalidOperationException(
+                "Refusing G4 multiples upgrade of unexpected persisted translation cultures.");
+
+        var current = persistedTranslations.Single();
+        var existingSha = ComputeBodySha256(
+            current.CultureCode, current.Title, current.Explanation,
+            current.KeyConceptsAndRules, current.WorkedExamples,
+            current.StepByStepSolutions, current.CommonMistakes, current.QuickSummary);
+
+        var reviewedEnglish = lesson.Translations.Single(t =>
+            string.Equals(t.CultureCode, "en", StringComparison.Ordinal));
+        var newSha = ComputeBodySha256(
+            reviewedEnglish.CultureCode, reviewedEnglish.Title,
+            reviewedEnglish.Explanation, reviewedEnglish.KeyConceptsAndRules,
+            reviewedEnglish.WorkedExamples, reviewedEnglish.StepByStepSolutions,
+            reviewedEnglish.CommonMistakes, reviewedEnglish.QuickSummary);
+
+        if (!string.Equals(existingSha, ExpectedOldPersistedBodySha256,
+                StringComparison.Ordinal) &&
+            !string.Equals(existingSha, newSha, StringComparison.Ordinal))
+            throw new InvalidOperationException(
+                "Unrecognized persisted G4 multiples learner text; refusing silent replacement.");
+    }
+
+    private static string ComputeBodySha256(params string[] fields) =>
+        Convert.ToHexString(SHA256.HashData(
+            Encoding.UTF8.GetBytes(string.Join("\n", fields) + "\n")))
+            .ToLowerInvariant();
 }

@@ -1,5 +1,6 @@
 using Edulytics.Data.Seeding;
 using Edulytics.Core.Curriculum;
+using Edulytics.Core.Entities;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
 
@@ -89,4 +90,34 @@ public sealed class CommonCoreG4MultiplesSourceCorrectionTests
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc, another));
         Assert.False(CommonCoreG4MultiplesSourceCorrection.IsTarget(doc, another));
     }
+
+    [Fact]
+    public void HistoricalDatabaseUpgrade_RequiresExactPredecessorAndRejectsUnexpectedProse()
+    {
+        var (doc, lesson, _) = GetEffectiveLesson();
+
+        CommonCoreG4MultiplesSourceCorrection.ValidateExistingBodyBeforeUpgrade(
+            doc, lesson,
+            CommonCoreRichContentCorrections.CorrectionContentVersion,
+            Array.Empty<CurriculumLessonContentTranslation>());
+
+        Assert.Throws<InvalidOperationException>(() =>
+            CommonCoreG4MultiplesSourceCorrection.ValidateExistingBodyBeforeUpgrade(
+                doc, lesson, "unrecognized-historical-version",
+                Array.Empty<CurriculumLessonContentTranslation>()));
+
+        var tampered = new CurriculumLessonContentTranslation
+        {
+            CultureCode = "en",
+            Title = "Unrecognized content from another source",
+            Explanation = "No source verification"
+        };
+
+        Assert.Throws<InvalidOperationException>(() =>
+            CommonCoreG4MultiplesSourceCorrection.ValidateExistingBodyBeforeUpgrade(
+                doc, lesson,
+                CommonCoreRichContentCorrections.CorrectionContentVersion,
+                new[] { tampered }));
+    }
+
 }
