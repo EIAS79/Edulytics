@@ -1,0 +1,28 @@
+name: US CCSS Academic Evidence Accuracy
+on:
+  pull_request:
+    paths:
+      - 'tools/us-ccss-academic-evidence-ledger.cjs'
+      - 'tools/us-ccss-practice-semantic-gate.cjs'
+      - 'docs/curriculum/us-ccss-academic-evidence-ledger.json'
+      - 'docs/curriculum/us-ccss-practice-semantic-blockers.json'
+      - 'docs/curriculum/us-ccss-121-clause-evidence-corrected.json'
+      - 'docs/curriculum/us-ccss-official-text-diff.json'
+      - 'src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json'
+      - 'src/Edulytics.Core/Curriculum/Packs/us-ccss-math.authority-text-repairs.json'
+      - '.github/workflows/us-ccss-academic-evidence-accuracy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  assert-academic-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prevent invented academic certification and ensure ledger parity
+        run: |
+          node tools/us-ccss-academic-evidence-ledger.cjs
+          node tools/us-ccss-practice-semantic-gate.cjs --check
