@@ -12,10 +12,27 @@ import urllib.request
 BASE = "https://localhost:5052"
 CTX = ssl.create_default_context(cafile="/tmp/phase-uat-cert.pem")
 PASSWORD = os.environ["Edulytics__MeetingDemo__Password"]
-SCHOOLS = [
-    ("cambridge-primary", "Horizon British Primary School"),
-    ("cambridge-middle", "Horizon British Middle School"),
-]
+PROGRAMME = os.environ.get("EDULYTICS_CI_REHEARSAL_PROGRAMME", "CAMBRIDGE")
+if PROGRAMME == "US-CCSS":
+    SCHOOLS = [
+        ("commoncore-primary", "Liberty American Primary School"),
+        ("commoncore-secondary", "Liberty American Secondary School"),
+    ]
+    SCHOOL_CODES = {
+        "commoncore-primary": "REHEARSAL-US-PRIMARY",
+        "commoncore-secondary": "REHEARSAL-US-SECONDARY",
+    }
+elif PROGRAMME == "CAMBRIDGE":
+    SCHOOLS = [
+        ("cambridge-primary", "Horizon British Primary School"),
+        ("cambridge-middle", "Horizon British Middle School"),
+    ]
+    SCHOOL_CODES = {
+        "cambridge-primary": "REHEARSAL-GB-PRIMARY",
+        "cambridge-middle": "REHEARSAL-GB-MIDDLE",
+    }
+else:
+    raise RuntimeError("Unsupported disposable rehearsal programme")
 
 
 def sql(query):
@@ -88,6 +105,8 @@ def deny(opener, path):
 
 
 teachers = {}
+students = {}
+practice_attempts = {}
 for key, schoolname in SCHOOLS:
     admin = connect(key, "SchoolAdmin")
     supervisor = connect(key, "SubjectSupervisor")
@@ -102,6 +121,7 @@ for key, schoolname in SCHOOLS:
     get_page(supervisor, "/school/reports")
     get_page(teacher, "/school/assessments")
     get_page(student, "/student/dashboard")
+    get_page(student, "/student/learning")
     get_page(student, "/student/practice")
     deny(student, "/school/assessments")
     deny(teacher, "/student/dashboard")
@@ -141,27 +161,63 @@ for key, schoolname in SCHOOLS:
     get_page(student, "/student/results")
     print("DISPOSABLE_STUDENT_ASSESSMENT_SUBMISSION_PASS", key, assessment_id)
 
+    # Generate actual private Practice through HTTPS; these attempts exist
+    # only in the disposable localhost PostgreSQL database.
+    practice_html = get_page(student, "/student/practice")
+    practice_token = re.search(
+        r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+        practice_html)
+    adoption = re.search(
+        r'name="curriculumAdoptionId"[^>]*value="([0-9a-fA-F-]{36})"',
+        practice_html)
+    assert practice_token and adoption, (key, "private Practice form missing")
+    before_practice = int(sql('SELECT count(*) FROM "PracticeAttempts";'))
+    practice_fields = urllib.parse.urlencode({
+        "curriculumAdoptionId": adoption.group(1),
+        "scope": "WholeCurriculum",
+        "difficulty": "AtClassLevel",
+        "questionCount": "1",
+        "__RequestVerificationToken": practice_token.group(1),
+    }).encode()
+    with student.open(urllib.request.Request(
+        BASE + "/student/practice/generate",
+        data=practice_fields, method="POST"
+    ), timeout=60) as generated:
+        generated_path = urllib.parse.urlparse(generated.url).path.lower()
+        assert generated.status == 200, (key, generated.status)
+        match_attempt = re.fullmatch(
+            r"/student/practice/attempt/([0-9a-f-]{36})", generated_path)
+        assert match_attempt, (key, "practice generation did not open an attempt", generated_path)
+        generated_body = generated.read().decode("utf-8")
+        assert "practice" in generated_body.lower(), (key, "no Practice page content")
+    after_practice = int(sql('SELECT count(*) FROM "PracticeAttempts";'))
+    assert after_practice > before_practice, (key, before_practice, after_practice)
+    practice_attempts[key] = match_attempt.group(1)
+    students[key] = student
     teachers[key] = teacher
+    print("DISPOSABLE_STUDENT_PRIVATE_PRACTICE_PASS", key)
     print("DISPOSABLE_ACADEMIC_ROLE_WORKFLOWS_PASS", key)
 
 
 for source, _ in SCHOOLS:
     target = next(key for key, _ in SCHOOLS if key != source)
     query = ("""SELECT a."Id" FROM "Assessments" a JOIN "Schools" s
-        ON s."Id"=a."SchoolId" WHERE s."SchoolCode"='REHEARSAL-"""
-        + ("GB-PRIMARY" if target == "cambridge-primary" else "GB-MIDDLE")
-        + """' ORDER BY a."Id" LIMIT 1;""")
+        ON s."Id"=a."SchoolId" WHERE s."SchoolCode"='"""
+        + SCHOOL_CODES[target] + """' ORDER BY a."Id" LIMIT 1;""")
     foreign_id = sql(query)
     assert re.fullmatch(r"[0-9a-fA-F-]{36}", foreign_id), (target, foreign_id)
     deny(teachers[source], "/school/assessments/" + foreign_id)
+    deny(students[source], "/student/assessments/" + foreign_id)
+    deny(students[source], "/student/practice/attempt/" + practice_attempts[target])
     print("DISPOSABLE_CROSS_TENANT_ASSESSMENT_DENIAL_PASS", source, target)
+    print("DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS", source, target)
 
 # POST real teacher assessment and validate persistence on disposable DB.
 import uuid
-teacher = teachers["cambridge-primary"]
+teacher = teachers[SCHOOLS[0][0]]
 values = sql("""SELECT a."ClassGroupId",a."SubjectId",a."TermId"
 FROM "Assessments" a JOIN "Schools" s ON a."SchoolId"=s."Id"
-WHERE s."SchoolCode"='REHEARSAL-GB-PRIMARY' LIMIT 1;""").split("|")
+WHERE s."SchoolCode"='""" + SCHOOL_CODES[SCHOOLS[0][0]] + """' LIMIT 1;""").split("|")
 assert len(values) == 3, values
 html = get_page(teacher, "/school/assessments")
 token = re.search(r'name="__RequestVerificationToken"[^>]*value="([^"]+)"', html)

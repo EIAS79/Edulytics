@@ -341,9 +341,17 @@ internal static class MeetingDemoProvisioner
         if (!configuration.GetValue<bool>("Edulytics:MeetingDemo:ResetAndSeed"))
             return;
 
-        var activeSchools = disposableCi || permanentDemo
-            ? Schools.Take(2).ToArray()
-            : Schools;
+        // The American fixture selection is allowed ONLY on the disposable
+        // localhost GitHub CI path; permanent and production data paths
+        // retain their existing, unchanged school selection behavior.
+        var ciProgramme = Environment.GetEnvironmentVariable(
+            "EDULYTICS_CI_REHEARSAL_PROGRAMME");
+        var activeSchools = disposableCi &&
+            string.Equals(ciProgramme, "US-CCSS", StringComparison.Ordinal)
+            ? Schools.Where(s => s.Key is "commoncore-primary" or "commoncore-secondary").ToArray()
+            : disposableCi || permanentDemo
+                ? Schools.Take(2).ToArray()
+                : Schools;
 
         var password = configuration["Edulytics:MeetingDemo:Password"];
         if (string.IsNullOrWhiteSpace(password))
