@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "kind": "POST_DEPLOY_TECHNICAL_SMOKE_NOT_ACADEMIC_CERTIFICATE",
+  "date": "2026-10-11",
+  "scope": "US-CCSS-MATH/CCSSM-2010/G1-G12",
+  "git": {
+    "pullRequest": 462,
+    "merged": true,
+    "mergeCommit": "9f0b6b0c3bde7d5f31c815c6b1cc42a01a877cbc",
+    "verifiedPullRequestHead": "d3576b571e40f671f0ce8f2d51c8f0be2360ecd1",
+    "requiredWorkflowConclusions": "6/6 success"
+  },
+  "render": {
+    "serviceId": "srv-dakq5n2fngtc73a62i10",
+    "deployId": "dep-db5uqffavr4c73fgqk40",
+    "status": "live",
+    "commit": "9f0b6b0c3bde7d5f31c815c6b1cc42a01a877cbc",
+    "url": "https://edulytics-4346.onrender.com",
+    "errorLevelLogsObservedInWindow": 0,
+    "errorLogWindowUtc": [
+      "2026-10-11T20:13:20Z",
+      "2026-10-11T20:45:00Z"
+    ]
+  },
+  "unauthenticatedHttp": [
+    {
+      "path": "/health/live",
+      "status": 200
+    },
+    {
+      "path": "/health/ready",
+      "status": 200
+    },
+    {
+      "path": "/account/login?culture=en",
+      "status": 200
+    },
+    {
+      "path": "/",
+      "status": 200
+    }
+  ],
+  "neonReadOnly": {
+    "project": "tiny-lab-44877119",
+    "branch": "br-frosty-block-b52tnjky",
+    "usLessons": 1560,
+    "ambiguousHistoricHighSchoolAdoptions": 8,
+    "confirmedExplicitCourseAdoptions": 0,
+    "mathNotationCorrectionsStillMissing": [
+      "CCSS:HSA-SSE.A.2",
+      "CCSS:HSA-APR.C.4",
+      "CCSS:HSN-RN.A.1"
+    ]
+  },
+  "staging": {
+    "authenticatedUserJourneys": "NOT_VERIFIED",
+    "reason": "User-suspended Staging service and no authenticated role-based production smoke recorded"
+  },
+  "academic": {
+    "childClausesFullyReviewed": 0,
+    "childClausesRequired": 121,
+    "officialTextDispositionsPending": 98,
+    "reviewerSignoff": "NOT_RECEIVED",
+    "status": "NO-GO"
+  },
+  "note": "Public health and login page checks do not establish real-tenant HTTPS user authorization, math question correctness, grades, mastery, independent academic review, or production content digest equality."
+}
