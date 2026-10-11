@@ -1,3 +1,4 @@
+using Edulytics.Core.Curriculum;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Data.Contexts;
@@ -176,6 +177,78 @@ public sealed class StudentPrivatePracticeRepositoryTests
         await db.SaveChangesAsync();
 
         var context = await new StudentPrivatePracticeRepository(db).GetContextAsync(ids.User, ids.Adoption);
+
+        Assert.Null(context);
+    }
+
+    [Fact]
+    public async Task American_HS_course_adoption_filters_student_lessons_to_exact_course()
+    {
+        await using var db = CreateDb();
+        var ids = Ids.Create();
+        var now = DateTime.UtcNow;
+        var adoption = Adoption(ids, now);
+        adoption.CurriculumLogicalLevel = 11;
+        adoption.CurriculumPathway = "Traditional";
+        adoption.CurriculumLevelKey = CurriculumLevelIdentityRegistry.BuildKey(
+            MathematicsCurriculumPackRegistry.CommonCoreCode, 11, "Traditional", "ALG1");
+        adoption.CurriculumLevelLabel = "Algebra 1";
+        var lessons = new[]
+        {
+            ("ALG1-1", "Algebra 1", "Traditional"),
+            ("GEO-1", "Geometry", "Traditional"),
+            ("ALG2-1", "Algebra 2", "Traditional"),
+            ("FOURTH-1", "Vectors & Matrices", "Fourth Courses")
+        }.Select((item, index) => new CurriculumPedagogicalLesson
+        {
+            Id = Guid.NewGuid(),
+            FrameworkVersionId = ids.Framework,
+            Code = item.Item1,
+            UnitKey = "U1",
+            UnitTitle = "Source",
+            Title = item.Item1,
+            NativeLevel = item.Item2,
+            Pathway = item.Item3,
+            LogicalLevelFrom = 10,
+            LogicalLevelTo = 13,
+            SortOrder = index + 1,
+            CreatedAtUtc = now,
+            UpdatedAtUtc = now
+        }).ToArray();
+
+        await db.AddRangeAsync(Student(ids, now), adoption, Class(ids, ids.Adoption),
+            Enrollment(ids, ids.Class));
+        await db.CurriculumPedagogicalLessons.AddRangeAsync(lessons);
+        await db.SaveChangesAsync();
+
+        var context = await new StudentPrivatePracticeRepository(db)
+            .GetContextAsync(ids.User, ids.Adoption);
+
+        Assert.NotNull(context);
+        Assert.Equal("ALG1-1", Assert.Single(context!.Lessons).Code);
+        Assert.Equal("Algebra 1", Assert.Single(context.Lessons).NativeLevel);
+    }
+
+    [Theory]
+    [InlineData("Course/pathway mapping")]
+    [InlineData("Traditional")]
+    [InlineData("Fourth Courses")]
+    public async Task American_HS_legacy_pathway_only_adoptions_fail_closed(string pathway)
+    {
+        await using var db = CreateDb();
+        var ids = Ids.Create();
+        var now = DateTime.UtcNow;
+        var adoption = Adoption(ids, now);
+        adoption.CurriculumLogicalLevel = 11;
+        adoption.CurriculumPathway = pathway;
+        adoption.CurriculumLevelKey = CurriculumLevelIdentityRegistry.BuildKey(
+            MathematicsCurriculumPackRegistry.CommonCoreCode, 11, pathway);
+        await db.AddRangeAsync(Student(ids, now), adoption, Class(ids, ids.Adoption),
+            Enrollment(ids, ids.Class));
+        await db.SaveChangesAsync();
+
+        var context = await new StudentPrivatePracticeRepository(db)
+            .GetContextAsync(ids.User, ids.Adoption);
 
         Assert.Null(context);
     }
