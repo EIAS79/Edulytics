@@ -25,6 +25,7 @@ public sealed class UsCommonCoreContextualGraphReasoningTests
         var engine = new ExactSkillContractQuestionEngine();
         int count = 0, hole=0, pole=0, positive=0, negative=0,
             same=0, reverse=0, zero=0, expected=0, worst=0;
+        var decisionChoices = new HashSet<string>(StringComparer.Ordinal);
 
         foreach (var (family, lesson) in Cases)
         {
@@ -53,7 +54,9 @@ public sealed class UsCommonCoreContextualGraphReasoningTests
                         "usccss.vector.scalar_direction_class" =>
                             p["k"]>0 ? 1 : p["k"]<0 ? 2 : 0,
                         "usccss.probability.expected_vs_worst_case" =>
-                            p["objective"]==0 ? 2 : 1,
+                            p["objective"]==0
+                                ? (p["fixedCost"] < p["baseCost"]+p["extra"]/p["denom"] ? 1 : 2)
+                                : (p["fixedCost"] < p["baseCost"]+p["extra"] ? 1 : 2),
                         _ => throw new InvalidOperationException(family)
                     };
                     Assert.Equal(expectedAnswer.ToString(CultureInfo.InvariantCulture),q.CorrectAnswer);
@@ -77,8 +80,12 @@ public sealed class UsCommonCoreContextualGraphReasoningTests
                     {
                         var avgB=p["baseCost"]+p["extra"]/p["denom"];
                         var worstB=p["baseCost"]+p["extra"];
-                        Assert.True(avgB<p["fixedCost"]);
-                        Assert.True(p["fixedCost"]<worstB);
+                        Assert.Equal(2,p["scenarioVersion"]);
+                        Assert.Equal(0,p["extra"]%p["denom"]);
+                        Assert.True(p["fixedCost"]>0);
+                        Assert.NotEqual(avgB,p["fixedCost"]);
+                        Assert.NotEqual(worstB,p["fixedCost"]);
+                        decisionChoices.Add($"{p["objective"]}:{expectedAnswer}");
                         if (p["objective"]==0) expected++; else worst++;
                     }
                     count++;
@@ -91,5 +98,8 @@ public sealed class UsCommonCoreContextualGraphReasoningTests
         Assert.True(positive>0 && negative>0);
         Assert.True(same>0 && reverse>0 && zero>0);
         Assert.True(expected>0 && worst>0);
+        // The criterion alone must never determine the correct plan.
+        Assert.True(decisionChoices.SetEquals(["0:1","0:2","1:1","1:2"]),
+            $"Missing risk-decision outcome diversity: {string.Join(", ",decisionChoices)}");
     }
 }
