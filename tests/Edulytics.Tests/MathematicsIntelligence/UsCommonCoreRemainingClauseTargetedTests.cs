@@ -30,7 +30,7 @@ public sealed class UsCommonCoreRemainingClauseTargetedTests
         ["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L15"] = ["usccss.hs.inverse_composition", "usccss.hs.inverse_table", "usccss.hs.restricted_inverse"],
         ["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L16"] = ["usccss.hs.inverse_table"],
         ["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L17"] = ["usccss.hs.inverse_composition"],
-        ["PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L17"] = ["usccss.hs.rational_vertical_asymptote", "usccss.hs.rational_x_intercept", "usccss.hs.rational_horizontal_asymptote"]
+        ["PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L17"] = ["usccss.hs.rational_vertical_asymptote", "usccss.hs.rational_x_intercept", "usccss.hs.rational_horizontal_asymptote", "usccss.hs.rational_hole_or_pole", "usccss.hs.rational_branch_limit_sign"]
     };
 
     [Fact]
