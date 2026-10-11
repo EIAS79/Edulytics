@@ -76,15 +76,17 @@ jobs:
           export Edulytics__MeetingDemo__Password="$rehearsal_password"
           dotnet run --project tools/Edulytics.CiFixtures/Edulytics.CiFixtures.csproj -- academic > /tmp/us-ccss-fixture.log 2>&1
           grep -q 'MEETING_DEMO_SEED_COMPLETED' /tmp/us-ccss-fixture.log
-          # On legacy fixtures the secondary adoption uses a generic placeholder;
-          # with explicit US high-school pathways it may already be Traditional.
-          # Accept only those two source-supported starting states, and require
-          # exactly one matching disposable secondary row (fail closed otherwise).
-          # This is intentionally NOT a change to live-school defaults.
+          # Only the disposable American secondary fixture is assigned a
+          # reviewed, source-backed Traditional / ALG1 course. All real-school
+          # legacy adoptions remain unresolved until an authorized administrator
+          # explicitly chooses their course; no default school data is migrated.
+          # Require one and only one matching fixture row (fail closed).
           configured="$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -A -t -c "
             WITH selected AS (
               UPDATE \"SchoolCurriculumAdoptions\" a
-              SET \"CurriculumPathway\"='Traditional'
+              SET \"CurriculumPathway\"='Traditional',
+                  \"CurriculumLevelKey\"='US-CCSS-MATH:L11:TRADITIONAL:COURSE-ALG1',
+                  \"CurriculumLevelLabel\"='Algebra 1'
               FROM \"Schools\" s
               WHERE a.\"SchoolId\"=s.\"Id\"
                 AND s.\"SchoolCode\"='REHEARSAL-US-SECONDARY'
@@ -93,7 +95,7 @@ jobs:
               RETURNING a.\"Id\"
             ) SELECT count(*) FROM selected;")"
           test "$configured" = 1
-          echo 'DISPOSABLE_US_HIGH_SCHOOL_EXPLICIT_TRADITIONAL_COURSE_BOUND'
+          echo 'DISPOSABLE_US_HIGH_SCHOOL_EXPLICIT_ALG1_COURSE_BOUND'
           openssl req -x509 -newkey rsa:2048 -nodes -days 1 \
             -keyout /tmp/us-ccss-key.pem -out /tmp/us-ccss-cert.pem \
             -subj '/CN=localhost' \
