@@ -51,3 +51,22 @@ test('PHASE 04 records content quality concerns and never awards automatic acade
  assert.ok(d.lessons.some(x=>x.lessonCode==='PED:US-CCSS-MATH:G4:U01:L01' &&
    x.contentRiskFlags.includes('MATH_TOPIC_PROCEDURE_CONFLICT_MULTIPLES_VS_FIGURE_CLASSIFICATION')));
 });
+
+test('PHASE 04 prioritizes all 1560 independent reviews without treating machine flags as approval',()=>{
+ check('us-ccss-prioritized-review-queue.cjs');
+ const directory=path.join(root,'artifacts/academic-us-ccss');
+ const report=fs.readFileSync(path.join(directory,'04-review-queue.md'),'utf8');
+ const csv=fs.readFileSync(path.join(directory,'04-prioritized-lesson-review-queue.csv'),'utf8');
+ const lines=csv.trim().split('\n');
+ assert.equal(lines.length,1561);
+ const count=p=>lines.slice(1).filter(x=>x.includes(',"'+p+'",')).length;
+ assert.equal(count('P0'),1);
+ assert.equal(count('P1'),19);
+ assert.equal(count('P2'),1400);
+ assert.equal(count('P3'),140);
+ assert.ok(lines.some(x=>x.startsWith('"PED:US-CCSS-MATH:G4:U01:L01","P0",')));
+ assert.match(report,/0\/1,560 independently reviewed/);
+ assert.match(report,/guarded correction/);
+ assert.match(report,/do not assume learner-visible failure/i);
+ assert.match(report,/NO-GO/);
+});
