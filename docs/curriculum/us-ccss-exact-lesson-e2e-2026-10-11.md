@@ -19,3 +19,12 @@ The existing Cambridge rehearsal remains `WholeCurriculum` and its original beha
 ## Academic and deployment boundaries
 
 This tests accurate **runtime routing of specific source-reviewed CCSS lesson question families**, not formal certification of all child standards, learner-drawn graph grading, essay grading, publisher child-reference attribution, or live staging authentication. Keep `productionReady:false` and all 121 clauses `NOT_FULLY_CERTIFIED`. Merge only after both US and Cambridge isolated acceptance checks pass. No production model, migrations, app source, framework content, school records, credential or release service change.
+
+
+## High-school course-selection blocker found by the first strict run
+
+The initial US secondary account had no learner-visible lessons. The reason is structural: the Common Core high-school `CurriculumLevelIdentityRegistry` contains a **placeholder** `Course/pathway mapping` for Grade 9–12, but accepted high-school source blueprints have concrete `Pathway` values such as `Traditional` and `Fourth Courses`. The private Practice repository matches these values exactly; a placeholder cannot match a course. Passing generic Whole Curriculum tests had previously concealed this.
+
+The isolated acceptance job now explicitly binds the single **disposable secondary test adoption** for logical level 11 to the existing, source-recognized `Traditional` course before starting the HTTPS server. An assertion requires exactly one update. This validates the supported explicit course flow; it does **not** silently choose an American course for any real school or alter the curriculum level registry. Production-ready school setup still needs a formal pathway/course selector with identity-safe persistence and routing, and must never automatically combine unrelated high-school course sequences.
+
+The 121 subordinate-clause academic release remains NO-GO, and live high-school adoption without an explicit course is also not cleared by this CI fixture.
