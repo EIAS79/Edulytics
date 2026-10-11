@@ -1,3 +1,5 @@
+using System.Reflection;
+using System.Text.Json;
 using Edulytics.Core.Curriculum;
 using Edulytics.Core.Entities;
 using Edulytics.Data.Contexts;
@@ -44,6 +46,112 @@ public sealed class Phase29ExplicitCurriculumLevelIdentityTests
         Assert.Equal(8, identity!.LogicalLevel);
         Assert.Equal("Grade 7", identity.Label);
         Assert.Null(identity.Pathway);
+    }
+
+    [Fact]
+    public void CommonCoreHighSchoolRequiresSourceCourseAndKeepsLegacyKeysReadOnly()
+    {
+        var pack = MathematicsCurriculumPackRegistry.CommonCoreCode;
+        var levels = CurriculumLevelIdentityRegistry.ForPack(pack);
+        Assert.Equal(9, CurriculumLevelIdentityRegistry.SourceBackedAmericanHighSchoolCourses.Count);
+        foreach (var logical in new[] { 10, 11, 12, 13 })
+        {
+            var options = levels.Where(x => x.LogicalLevel == logical).ToArray();
+            Assert.Equal(9, options.Length);
+            Assert.Equal(9, options.Select(x => x.Key).Distinct().Count());
+            foreach (var source in CurriculumLevelIdentityRegistry.SourceBackedAmericanHighSchoolCourses)
+            {
+                var item = Assert.Single(options, x => x.CourseCode == source.Code);
+                Assert.Equal(source.Pathway, item.Pathway);
+                Assert.Equal(source.Label, item.Label);
+                Assert.Equal(CurriculumLevelIdentityRegistry.BuildKey(
+                    pack, logical, source.Pathway, source.Code), item.Key);
+                Assert.False(CurriculumLevelIdentityRegistry.IsUnresolvedAmericanHighSchoolPathway(item));
+                Assert.Same(item, CurriculumLevelIdentityRegistry.Find(item.Key));
+            }
+            foreach (var legacyPath in new[] { "Course/pathway mapping", "Traditional", "Fourth Courses" })
+            {
+                var oldKey = CurriculumLevelIdentityRegistry.BuildKey(pack, logical, legacyPath);
+                var old = CurriculumLevelIdentityRegistry.Find(oldKey);
+                Assert.NotNull(old);
+                Assert.True(CurriculumLevelIdentityRegistry.IsUnresolvedAmericanHighSchoolPathway(old));
+                Assert.DoesNotContain(options, x => x.Key == oldKey);
+            }
+        }
+        Assert.Null(CurriculumLevelIdentityRegistry.ResolveLegacy(
+            pack, "Grade 10", gradeOrder: 11));
+    }
+
+    [Fact]
+    public void AmericanHighSchoolCourseSelectionPreservesAllNonAmericanLevelKeys()
+    {
+        foreach (var code in new[]
+        {
+            MathematicsCurriculumPackRegistry.CambridgeCode,
+            MathematicsCurriculumPackRegistry.UaeCode,
+            MathematicsCurriculumPackRegistry.PolandCode
+        })
+        {
+            Assert.All(CurriculumLevelIdentityRegistry.ForPack(code),
+                level => Assert.Null(level.CourseCode));
+        }
+        var elementary = CurriculumLevelIdentityRegistry.ForPack(
+            MathematicsCurriculumPackRegistry.CommonCoreCode)
+            .Where(level => level.LogicalLevel <= 9);
+        Assert.All(elementary, level => Assert.Null(level.CourseCode));
+    }
+
+    [Fact]
+    public void HighSchoolCourseIdentityRegistryExactlyMatchesAcceptedPublisherBlueprints()
+    {
+        var root = FindRepositoryRoot();
+        var packDir = Path.Combine(root,
+            "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs");
+        var files = Directory.GetFiles(packDir,
+            "us-ccss-math-hs-*.lesson-blueprint.json");
+        Assert.Equal(9, files.Length);
+        var observed = files.Select(file =>
+        {
+            using var json = JsonDocument.Parse(File.ReadAllText(file));
+            var blueprint = json.RootElement;
+            Assert.Equal("US-CCSS-MATH",
+                blueprint.GetProperty("PackCode").GetString());
+            Assert.True(blueprint.GetProperty("Lessons").GetArrayLength() > 0);
+            return (
+                Code: blueprint.GetProperty("CourseCode").GetString(),
+                Label: blueprint.GetProperty("NativeLevel").GetString(),
+                Pathway: blueprint.GetProperty("Pathway").GetString());
+        }).OrderBy(x => x.Code).ToArray();
+        var registry = CurriculumLevelIdentityRegistry
+            .SourceBackedAmericanHighSchoolCourses
+            .Select(x => (Code: (string?)x.Code, Label: (string?)x.Label,
+                Pathway: (string?)x.Pathway))
+            .OrderBy(x => x.Code).ToArray();
+        Assert.Equal(observed, registry);
+    }
+
+    [Fact]
+    public void SchoolGradePlacementCannotReuseDifferent_HS_grade_with_same_course_label()
+    {
+        var course = Assert.Single(
+            CurriculumLevelIdentityRegistry.ForPack(MathematicsCurriculumPackRegistry.CommonCoreCode),
+            x => x.LogicalLevel == 11 && x.CourseCode == "ALG1");
+        var levels = new[]
+        {
+            new GradeLevel { Id = Guid.NewGuid(), Name = "Algebra 1", Order = 10 },
+            new GradeLevel { Id = Guid.NewGuid(), Name = "Grade 10", Order = 11 }
+        };
+        var type = typeof(Edulytics.Services.Curriculum.ExplicitCurriculumLevelService);
+        var resolver = type.GetMethod("ResolveCompatibilityGrade",
+            BindingFlags.NonPublic | BindingFlags.Static);
+        var namer = type.GetMethod("CompatibilityGradeName",
+            BindingFlags.NonPublic | BindingFlags.Static);
+        Assert.NotNull(resolver);
+        Assert.NotNull(namer);
+        var resolved = (GradeLevel?)resolver!.Invoke(null, [levels, course]);
+        Assert.NotNull(resolved);
+        Assert.Equal(11, resolved!.Order);
+        Assert.Equal("Grade 10", namer!.Invoke(null, [course]));
     }
 
     [Fact]

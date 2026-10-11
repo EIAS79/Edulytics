@@ -290,6 +290,13 @@ public sealed class ExplicitCurriculumLevelService : IExplicitCurriculumLevelSer
         if (level is null)
             return Fail(nameof(request.CurriculumLevelKey), ExplicitCurriculumLevelErrorCode.CurriculumLevelNotFound);
 
+        if (CurriculumLevelIdentityRegistry
+                .IsUnresolvedAmericanHighSchoolPathway(level))
+        {
+            return Fail(nameof(request.CurriculumLevelKey),
+                ExplicitCurriculumLevelErrorCode.CurriculumLevelNotFound);
+        }
+
         var expectedPackCode = CurriculumLevelIdentityRegistry.PackCodeForProgramCode(program.Code);
         if (!string.Equals(expectedPackCode, level.PackCode, StringComparison.Ordinal))
         {
@@ -640,7 +647,8 @@ public sealed class ExplicitCurriculumLevelService : IExplicitCurriculumLevelSer
         CurriculumLevelIdentity level)
     {
         var exact = grades
-            .Where(x => string.Equals(x.Name, level.Label, StringComparison.OrdinalIgnoreCase))
+            .Where(x => x.Order == level.LogicalLevel &&
+                string.Equals(x.Name, level.Label, StringComparison.OrdinalIgnoreCase))
             .ToArray();
         if (exact.Length == 1)
             return exact[0];
@@ -651,6 +659,15 @@ public sealed class ExplicitCurriculumLevelService : IExplicitCurriculumLevelSer
 
     private static string CompatibilityGradeName(CurriculumLevelIdentity level)
     {
+        // Course name is not the student's grade. Grade levels must retain
+        // their placement identity when different US HS courses share it.
+        if (level.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode &&
+            level.LogicalLevel is >= 10 and <= 13 &&
+            !string.IsNullOrWhiteSpace(level.CourseCode))
+        {
+            return $"Grade {level.LogicalLevel - 1}";
+        }
+
         var label = level.Label.Trim();
         if (label.Length <= 100)
             return label;

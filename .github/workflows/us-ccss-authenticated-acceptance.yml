@@ -74,26 +74,35 @@ jobs:
           rehearsal_password="$(openssl rand -hex 24)Aa1!"
           echo "::add-mask::$rehearsal_password"
           export Edulytics__MeetingDemo__Password="$rehearsal_password"
-          dotnet run --project tools/Edulytics.CiFixtures/Edulytics.CiFixtures.csproj -- academic > /tmp/us-ccss-fixture.log 2>&1
-          grep -q 'MEETING_DEMO_SEED_COMPLETED' /tmp/us-ccss-fixture.log
-          # The generic CCSS high-school registry level has only the
-          # 'Course/pathway mapping' placeholder and thus no matching
-          # Traditional/Fourth-Courses lessons. Bind an EXPLICIT reviewed
-          # course to this single disposable secondary test adoption.
-          # This is intentionally NOT a change to the live school defaults.
+          if ! dotnet run --project tools/Edulytics.CiFixtures/Edulytics.CiFixtures.csproj -- academic > /tmp/us-ccss-fixture.log 2>&1; then
+            echo 'Disposable US CCSS academic fixture failed; last diagnostic lines:'
+            tail -n 100 /tmp/us-ccss-fixture.log
+            exit 1
+          fi
+          if ! grep -q 'MEETING_DEMO_SEED_COMPLETED' /tmp/us-ccss-fixture.log; then
+            tail -n 100 /tmp/us-ccss-fixture.log
+            exit 1
+          fi
+          # Only the disposable American secondary fixture is assigned a
+          # reviewed, source-backed Traditional / ALG1 course. All real-school
+          # legacy adoptions remain unresolved until an authorized administrator
+          # explicitly chooses their course; no default school data is migrated.
+          # Require one and only one matching fixture row (fail closed).
           configured="$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -A -t -c "
             WITH selected AS (
               UPDATE \"SchoolCurriculumAdoptions\" a
-              SET \"CurriculumPathway\"='Traditional'
+              SET \"CurriculumPathway\"='Traditional',
+                  \"CurriculumLevelKey\"='US-CCSS-MATH:L11:TRADITIONAL:COURSE-ALG1',
+                  \"CurriculumLevelLabel\"='Algebra 1'
               FROM \"Schools\" s
               WHERE a.\"SchoolId\"=s.\"Id\"
                 AND s.\"SchoolCode\"='REHEARSAL-US-SECONDARY'
                 AND a.\"CurriculumLogicalLevel\"=11
-                AND a.\"CurriculumPathway\"='Course/pathway mapping'
+                AND a.\"CurriculumPathway\" IN ('Course/pathway mapping', 'Traditional')
               RETURNING a.\"Id\"
             ) SELECT count(*) FROM selected;")"
           test "$configured" = 1
-          echo 'DISPOSABLE_US_HIGH_SCHOOL_EXPLICIT_TRADITIONAL_COURSE_BOUND'
+          echo 'DISPOSABLE_US_HIGH_SCHOOL_EXPLICIT_ALG1_COURSE_BOUND'
           openssl req -x509 -newkey rsa:2048 -nodes -days 1 \
             -keyout /tmp/us-ccss-key.pem -out /tmp/us-ccss-cert.pem \
             -subj '/CN=localhost' \
@@ -117,6 +126,7 @@ jobs:
             fi
             if ! kill -0 "$server_pid" 2>/dev/null; then
               echo 'Disposable US CCSS web process exited before readiness'
+              tail -n 100 /tmp/us-ccss-web.log
               exit 1
             fi
             sleep 3
