@@ -26,6 +26,7 @@ public static class CanonicalLessonContentMaterializer
         PolishLessonPracticeContentCorrections
             .ApplyApprovedCorrections(document);
         CommonCoreG4MultiplesSourceCorrection.Apply(document);
+        CommonCoreG2StoryProblemsSourceCorrection.Apply(document);
 
         ValidateUnicode(document);
         CanonicalLessonContentPackContract.Validate(document);
@@ -166,15 +167,14 @@ public static class CanonicalLessonContentMaterializer
                     lesson,
                     official);
 
-        return CommonCoreG4MultiplesSourceCorrection
-            .GetExpectedContentVersion(
-                document,
-                lesson,
-                CommonCoreRichContentCorrections
-                    .GetExpectedContentVersion(
-                        document,
-                        lesson,
-                        polish));
+        var commonCoreRich = CommonCoreRichContentCorrections
+            .GetExpectedContentVersion(document, lesson, polish);
+
+        var g4 = CommonCoreG4MultiplesSourceCorrection
+            .GetExpectedContentVersion(document, lesson, commonCoreRich);
+
+        return CommonCoreG2StoryProblemsSourceCorrection
+            .GetExpectedContentVersion(document, lesson, g4);
     }
 
     public static bool IsReviewedCorrectionTarget(
@@ -195,6 +195,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreRichContentCorrections
             .IsTarget(document, lesson) ||
         CommonCoreG4MultiplesSourceCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2StoryProblemsSourceCorrection
             .IsTarget(document, lesson);
 
     public static bool CanUpgradeExisting(
@@ -234,6 +236,11 @@ public static class CanonicalLessonContentMaterializer
                 lesson,
                 existingContentVersion) ||
         CommonCoreG4MultiplesSourceCorrection
+            .CanUpgradeExisting(
+                document,
+                lesson,
+                existingContentVersion) ||
+        CommonCoreG2StoryProblemsSourceCorrection
             .CanUpgradeExisting(
                 document,
                 lesson,
