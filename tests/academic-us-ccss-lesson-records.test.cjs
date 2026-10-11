@@ -66,7 +66,7 @@ test('PASS without evidence and reviewer metadata cannot certify', () => {
 test('Uncertified lesson cannot contain a superficially passed human gate', () => {
   const source = loadSource(), base = createInitialLedger(source);
   const row = base.records[1];
-  row.gates.L7 = { status: 'PASS', evidenceIds: ['invented-id'], verifiedAtUtc: '2026-10-12T01:00:00Z' };
+  row.gates.L7 = { status: 'PASS', evidenceIds: ['invented-id'], verifiedAtUtc: '2026-10-12T01:00:00Z', sourceSha: 'a'.repeat(40) };
   assert.throws(() => validateLedger(source,base), /cannot PASS an uncertified lesson/);
 });
 
