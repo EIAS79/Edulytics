@@ -52,6 +52,17 @@ public sealed class MathematicsCurriculumVerifiedPersistenceTests
         return JsonDocument.Parse(stream);
     }
 
+    private static JsonDocument LoadCommonCoreExponentCorrectionManifest()
+    {
+        var assembly = typeof(MathematicsCurriculumPackRegistry).Assembly;
+        var name = assembly.GetManifestResourceNames().Single(x =>
+            x.EndsWith("us-ccss-math.exponent-text-repair.json",
+                StringComparison.OrdinalIgnoreCase));
+        using var stream = assembly.GetManifestResourceStream(name)
+            ?? throw new InvalidOperationException("Common Core exponent text addendum not found.");
+        return JsonDocument.Parse(stream);
+    }
+
     private static string Sha256(
         string value)
     {
@@ -179,17 +190,22 @@ public sealed class MathematicsCurriculumVerifiedPersistenceTests
                     "SourcePdfSha256")
                 .GetString());
 
-        // The immutable original PDF corpus remains the historical integrity
-        // baseline; only the four source-verified text corrections carry a
-        // separate hash-checked manifest and import-state digest.
+        // The original PDF corpus remains the immutable integrity baseline.
+        // First verify the shipped five-repair digest, then the separate
+        // Grade 8 exponent addendum digest; do not replace the predecessor.
         using var corrections = LoadCommonCoreAuthorityCorrectionManifest();
         var repairRoot = corrections.RootElement;
         Assert.Equal(
             root.GetProperty("CorrectedContentDigest").GetString(),
             repairRoot.GetProperty("baselineContentDigest").GetString());
+        using var exponentCorrection = LoadCommonCoreExponentCorrectionManifest();
+        var exponentRoot = exponentCorrection.RootElement;
+        Assert.Equal(
+            repairRoot.GetProperty("patchedContentDigest").GetString(),
+            exponentRoot.GetProperty("previousPatchedContentDigest").GetString());
         Assert.Equal(
             state.ContentDigest,
-            repairRoot.GetProperty("patchedContentDigest").GetString());
+            exponentRoot.GetProperty("patchedContentDigest").GetString());
 
         Assert.Equal(
             385,
@@ -236,6 +252,8 @@ public sealed class MathematicsCurriculumVerifiedPersistenceTests
             expectedHashes[corrected.GetProperty("code").GetString()!] =
                 corrected.GetProperty("correctedTextSha256").GetString()!;
         }
+        expectedHashes[exponentRoot.GetProperty("code").GetString()!] =
+            exponentRoot.GetProperty("correctedTextSha256").GetString()!;
 
         var versionId =
             state.FrameworkVersionId;
