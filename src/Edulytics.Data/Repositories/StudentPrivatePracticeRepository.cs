@@ -1,3 +1,4 @@
+using Edulytics.Core.Curriculum;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
 using Edulytics.Core.Practice;
@@ -98,6 +99,26 @@ public sealed class StudentPrivatePracticeRepository(EdulyticsDbContext db)
         }
         if (classGroup is null || enrollment is null) return null;
 
+        // No ambiguous American high-school adoption may implicitly expose
+        // every Algebra 1 / Geometry / Algebra 2 lesson under one pathway.
+        // The persisted canonical level key carries the accepted CourseCode;
+        // existing placeholder and pathway-only rows stay readable to school
+        // administrators but cannot silently generate mixed student sessions.
+        var isAmericanHighSchool =
+            adoption.CurriculumLevelKey.StartsWith("US-CCSS-MATH:", StringComparison.Ordinal) &&
+            adoption.CurriculumLogicalLevel.Value is >= 10 and <= 13;
+        var courseIdentity = isAmericanHighSchool
+            ? CurriculumLevelIdentityRegistry.Find(adoption.CurriculumLevelKey)
+            : null;
+        if (isAmericanHighSchool &&
+            (string.IsNullOrWhiteSpace(courseIdentity?.CourseCode) ||
+             courseIdentity.LogicalLevel != adoption.CurriculumLogicalLevel ||
+             !string.Equals(courseIdentity.Pathway, adoption.CurriculumPathway,
+                 StringComparison.Ordinal)))
+        {
+            return null;
+        }
+
         // Private practice and the teacher Builder must consume the same authoritative
         // adopted curriculum outcomes. Existing adoptions are repaired idempotently here.
         await OfficialCurriculumOutcomeMaterializer.EnsureAsync(
@@ -118,13 +139,15 @@ public sealed class StudentPrivatePracticeRepository(EdulyticsDbContext db)
 
         var logicalLevel = adoption.CurriculumLogicalLevel.Value;
         var pathway = adoption.CurriculumPathway;
+        var adoptedCourseNativeLevel = isAmericanHighSchool ? courseIdentity!.Label : null;
         var lessons = await db.CurriculumPedagogicalLessons.AsNoTracking()
             .Where(x =>
                 x.FrameworkVersionId == adoption.FrameworkVersionId &&
                 x.LogicalLevelFrom <= logicalLevel && logicalLevel <= x.LogicalLevelTo &&
                 (string.IsNullOrWhiteSpace(pathway)
                     ? x.Pathway == null || x.Pathway == ""
-                    : x.Pathway == pathway))
+                    : x.Pathway == pathway) &&
+                (adoptedCourseNativeLevel == null || x.NativeLevel == adoptedCourseNativeLevel))
             .OrderBy(x => x.SortOrder)
             .ToListAsync(cancellationToken);
         var lessonIds = lessons.Select(x => x.Id).ToArray();
