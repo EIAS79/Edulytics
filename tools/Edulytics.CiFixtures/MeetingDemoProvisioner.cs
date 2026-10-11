@@ -1109,6 +1109,14 @@ DELETE FROM "Schools";
                 x =>
                     x.LogicalLevel >= definition.MinimumLogicalLevel &&
                     x.LogicalLevel <= definition.MaximumLogicalLevel)
+            // Disposable American secondary rehearsal deliberately uses an
+            // explicit ALG1 source course for each HS grade placement rather
+            // than provisioning nine conflicting school-course adoptions.
+            // This is fixture policy, NEVER a real-school migration/default.
+            .Where(x =>
+                definition.PackCode != MathematicsCurriculumPackRegistry.CommonCoreCode ||
+                x.LogicalLevel <= 9 ||
+                x.CourseCode == "ALG1")
             .ToArray();
 
         if (levels.Length == 0)
@@ -1174,10 +1182,14 @@ DELETE FROM "Schools";
             };
 
             var pathToken = PathToken(level.Pathway);
-            var classCode = $"L{level.LogicalLevel:D2}-{pathToken}-A";
+            var courseToken = string.IsNullOrWhiteSpace(level.CourseCode)
+                ? string.Empty : $"-{level.CourseCode}";
+            var classCode = $"L{level.LogicalLevel:D2}-{pathToken}{courseToken}-A";
             var className = string.IsNullOrWhiteSpace(level.Pathway)
                 ? $"{level.Label} — A"
-                : $"{level.Label} — {level.Pathway} — A";
+                : $"{level.Label} — {level.Pathway}" +
+                  (string.IsNullOrWhiteSpace(level.CourseCode)
+                      ? " — A" : $" — Level {level.LogicalLevel} — A");
 
             var classGroup = new ClassGroup
             {

@@ -215,6 +215,27 @@ for key, schoolname in SCHOOLS:
             FROM "CurriculumPedagogicalLessons" l
             WHERE l."Id" IN (""" + ids + """)
             ORDER BY l."Code";""").splitlines()
+        if key == "commoncore-secondary":
+            # The same publisher pathway spans Algebra 1, Geometry and
+            # Algebra 2. This accepted fixture explicitly chose ALG1; verify
+            # HTTPS did not offer any other high-school source course.
+            native_levels = sql("""
+                SELECT DISTINCT l."NativeLevel"
+                FROM "CurriculumPedagogicalLessons" l
+                WHERE l."Id" IN (""" + ids + """)
+                ORDER BY l."NativeLevel";""").splitlines()
+            assert native_levels == ["Algebra 1"], (
+                "secondary practice leaked another source course", native_levels)
+            configured = sql("""
+                SELECT "CurriculumLevelKey" || '|' ||
+                       "CurriculumPathway" || '|' ||
+                       "CurriculumLevelLabel"
+                FROM "SchoolCurriculumAdoptions"
+                WHERE "Id"='""" + adoption.group(1) + """';""")
+            assert configured == (
+                "US-CCSS-MATH:L11:TRADITIONAL:COURSE-ALG1|Traditional|Algebra 1"
+            ), ("secondary adoption lacks explicit course identity", configured)
+            print("DISPOSABLE_US_CCSS_HS_ALG1_COURSE_ISOLATION_PASS")
         candidates = []
         for row in offered:
             parts = row.split("|", 1)

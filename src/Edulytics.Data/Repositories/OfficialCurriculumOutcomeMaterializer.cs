@@ -51,6 +51,44 @@ public static class OfficialCurriculumOutcomeMaterializer
         var logicalLevel = adoption.CurriculumLogicalLevel.Value;
         var pathway = Normalize(adoption.CurriculumPathway);
 
+        // A high-school pathway contains multiple distinct US publisher courses.
+        // No legacy generic adoption may materialize the union of their official
+        // outcomes. Course identity is stored in the canonical level key, which
+        // is validated against the registry rather than inferred from grade.
+        var isUsHs = adoption.CurriculumLevelKey.StartsWith(
+            "US-CCSS-MATH:", StringComparison.Ordinal) && logicalLevel is >= 10 and <= 13;
+        var selected = isUsHs
+            ? CurriculumLevelIdentityRegistry.Find(adoption.CurriculumLevelKey)
+            : null;
+        if (isUsHs &&
+            (string.IsNullOrWhiteSpace(selected?.CourseCode) ||
+             selected.LogicalLevel != logicalLevel ||
+             !string.Equals(selected.Pathway, pathway, StringComparison.Ordinal)))
+        {
+            return;
+        }
+
+        var approvedOfficialNodeIds = Array.Empty<Guid>();
+        if (isUsHs)
+        {
+            var courseLessonIds = await db.CurriculumPedagogicalLessons.AsNoTracking()
+                .Where(x => x.FrameworkVersionId == adoption.FrameworkVersionId &&
+                    x.NativeLevel == selected!.Label && x.Pathway == pathway &&
+                    x.LogicalLevelFrom <= logicalLevel && x.LogicalLevelTo >= logicalLevel)
+                .Select(x => x.Id)
+                .ToArrayAsync(cancellationToken);
+            if (courseLessonIds.Length == 0)
+                return;
+            approvedOfficialNodeIds = await db.CurriculumPedagogicalLessonOutcomes.AsNoTracking()
+                .Where(x => courseLessonIds.Contains(x.PedagogicalLessonId) &&
+                    x.FrameworkVersionId == adoption.FrameworkVersionId)
+                .Select(x => x.OutcomeNodeId)
+                .Distinct()
+                .ToArrayAsync(cancellationToken);
+            if (approvedOfficialNodeIds.Length == 0)
+                return;
+        }
+
         var officialNodes = await db.CurriculumPackContentNodes
             .AsNoTracking()
             .Where(x =>
@@ -74,7 +112,8 @@ public static class OfficialCurriculumOutcomeMaterializer
                 x =>
                     CurriculumPathwayCompatibility.Matches(
                         pathway,
-                        x.Pathway))
+                        x.Pathway) &&
+                    (!isUsHs || approvedOfficialNodeIds.Contains(x.Id)))
             .ToList();
 
         if (officialNodes.Count == 0)

@@ -12,7 +12,8 @@ public sealed record CurriculumLevelIdentity(
     int LogicalLevel,
     string Label,
     string Stage,
-    string? Pathway)
+    string? Pathway,
+    string? CourseCode = null)
 {
     public string DisplayLabel =>
         string.IsNullOrWhiteSpace(Pathway)
@@ -24,14 +25,35 @@ public static class CurriculumLevelIdentityRegistry
 {
     private const string SharedPathwayToken = "SHARED";
 
+    public sealed record AmericanHighSchoolCourse(string Code, string Label, string Pathway);
+    // Exact CourseCode, NativeLevel and Pathway from the nine accepted
+    // src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-hs-*.json files.
+    public static IReadOnlyList<AmericanHighSchoolCourse> SourceBackedAmericanHighSchoolCourses { get; } =
+    [
+        new("ALG1", "Algebra 1", "Traditional"),
+        new("GEO", "Geometry", "Traditional"),
+        new("ALG2", "Algebra 2", "Traditional"),
+        new("TRAD-SUPPLEMENT", "Traditional Advanced Supplements", "Traditional"),
+        new("ADV-ALG-FUNC", "Advanced Algebra & Functions", "Fourth Courses"),
+        new("ADV-TRIG-GEO", "Advanced Trigonometry & Geometry", "Fourth Courses"),
+        new("COMPLEX", "Complex Numbers", "Fourth Courses"),
+        new("PROB-DECISION", "Probability & Decision Making", "Fourth Courses"),
+        new("VECTOR-MATRIX", "Vectors & Matrices", "Fourth Courses")
+    ];
+
     public static IReadOnlyList<CurriculumLevelIdentity> All { get; } =
         MathematicsCurriculumPackRegistry.All
-            .SelectMany(pack => pack.Levels.Select(level => Create(pack.Code, level)))
+            // Retain the old placeholder identity for reading existing school
+            // records, but offer actual source-backed HS pathways for NEW
+            // American school adoptions. No implicit Algebra 1/2 assignment.
+            .SelectMany(pack => pack.Levels.SelectMany(level =>
+                ExpandSourceBackedHighSchoolPathways(pack.Code, level)))
             .GroupBy(x => x.Key, StringComparer.Ordinal)
             .Select(x => x.First())
             .OrderBy(x => x.PackCode, StringComparer.Ordinal)
             .ThenBy(x => x.LogicalLevel)
             .ThenBy(x => x.Pathway ?? string.Empty, StringComparer.Ordinal)
+            .ThenBy(x => x.CourseCode ?? string.Empty, StringComparer.Ordinal)
             .ToArray();
 
     public static IReadOnlyList<CurriculumLevelIdentity> ForPack(
@@ -43,7 +65,44 @@ public static class CurriculumLevelIdentityRegistry
 
         return All
             .Where(x => string.Equals(x.PackCode, normalized, StringComparison.Ordinal))
+            // Existing generic keys remain resolvable via Find(), but are not
+            // valid selectable new American HS paths.
+            .Where(x => !IsUnresolvedAmericanHighSchoolPathway(x))
             .ToArray();
+    }
+
+    public static bool IsUnresolvedAmericanHighSchoolPathway(
+        CurriculumLevelIdentity? level) =>
+        level is not null &&
+        level.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode &&
+        level.LogicalLevel is >= 10 and <= 13 &&
+        string.IsNullOrWhiteSpace(level.CourseCode);
+
+    private static IEnumerable<CurriculumLevelIdentity> ExpandSourceBackedHighSchoolPathways(
+        string packCode, AcademicLevelMapping level)
+    {
+        yield return Create(packCode, level);
+        if (packCode != MathematicsCurriculumPackRegistry.CommonCoreCode ||
+            level.LogicalLevel is < 10 or > 13 ||
+            !string.Equals(level.Pathway, "Course/pathway mapping",
+                StringComparison.Ordinal))
+            yield break;
+
+        // Pathway-only identities remain readable for legacy adoptions but
+        // cannot be selected for NEW schools because they mix distinct courses.
+        yield return Create(packCode, level with { Pathway = "Traditional" });
+        yield return Create(packCode, level with { Pathway = "Fourth Courses" });
+        foreach (var course in SourceBackedAmericanHighSchoolCourses)
+        {
+            yield return new CurriculumLevelIdentity(
+                BuildKey(packCode, level.LogicalLevel, course.Pathway, course.Code),
+                NormalizePackCode(packCode),
+                level.LogicalLevel,
+                course.Label,
+                level.Stage,
+                course.Pathway,
+                course.Code);
+        }
     }
 
     public static CurriculumLevelIdentity? Find(string? key)
@@ -132,7 +191,8 @@ public static class CurriculumLevelIdentityRegistry
     public static string BuildKey(
         string packCode,
         int logicalLevel,
-        string? pathway)
+        string? pathway,
+        string? courseCode = null)
     {
         var normalizedPackCode = NormalizePackCode(packCode);
         if (normalizedPackCode.Length == 0)
@@ -145,7 +205,10 @@ public static class CurriculumLevelIdentityRegistry
             ? SharedPathwayToken
             : NormalizeToken(pathway);
 
-        return $"{normalizedPackCode}:L{logicalLevel:D2}:{pathwayToken}";
+        var baseKey = $"{normalizedPackCode}:L{logicalLevel:D2}:{pathwayToken}";
+        return string.IsNullOrWhiteSpace(courseCode)
+            ? baseKey
+            : $"{baseKey}:COURSE-{NormalizeToken(courseCode)}";
     }
 
     private static CurriculumLevelIdentity? ResolveDeterministicLegacyAlias(
