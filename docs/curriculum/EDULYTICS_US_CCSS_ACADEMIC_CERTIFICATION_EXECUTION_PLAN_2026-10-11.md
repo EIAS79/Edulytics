@@ -1,13 +1,13 @@
 # Edulytics — US Common Core Mathematics
 ## خطة التنفيذ والإثبات للوصول إلى الاعتماد الأكاديمي الداخلي الكامل
 
-**Document ID:** `EDU-US-CCSS-ACADEMIC-CERTIFICATION-2026-10-11`  
-**Version:** `1.0 — execution baseline`  
-**Prepared:** `2026-10-11`  
-**Repository:** [`EIAS79/Edulytics`](https://github.com/EIAS79/Edulytics)  
-**Curriculum:** `US-CCSS-MATH` / `CCSSM-2010`  
-**Scope:** Mathematics, Grades **1–8** and high-school pathways/courses serving **Grades 9–12**. **Kindergarten is excluded** from this certification scope.  
-**Current academic release decision:** **`NO-GO`**.  
+**Document ID:** `EDU-US-CCSS-ACADEMIC-CERTIFICATION-2026-10-11`
+**Version:** `1.0 — execution baseline`
+**Prepared:** `2026-10-11`
+**Repository:** [`EIAS79/Edulytics`](https://github.com/EIAS79/Edulytics)
+**Curriculum:** `US-CCSS-MATH` / `CCSSM-2010`
+**Scope:** Mathematics, Grades **1–8** and high-school pathways/courses serving **Grades 9–12**. **Kindergarten is excluded** from this certification scope.
+**Current academic release decision:** **`NO-GO`**.
 **Document owner:** Edulytics Curriculum / Academic Quality + Engineering; independent academic reviewer sign-off required.
 
 > **نطاق عبارة «معتمد أكاديميًا»:** المقصود هنا **اعتماد داخلي قائم على أدلة قابلة للتدقيق** بأن محتوى Edulytics ومهاراته وأسئلته وتقييمه يغطي نطاق Common Core الأمريكي المحدد. **هذا لا يساوي ولا يدّعي شهادة اعتماد من وزارة أو جهة تنظيمية أو ناشر أو منظمة Common Core.** أي اعتماد رسمي خارجي يتطلب عملية وقرارًا منفصلين صادرين عن الجهة المخولة.
