@@ -10535,6 +10535,25 @@
         "commonMistake": "Do not substitute a general topic question for the exact grade-specific standard.",
         "summary": "Multiply and divide signed rational numbers; recognize terminating rational decimals, with recurring decimals still requiring independent certification."
       }
+    },
+    {
+      "id": "ccss-g8-integer-exponent-laws",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^CCSS:8\\.EE\\.A\\.1$"
+      ],
+      "skillId": "supporting.indices.roots_standard_form",
+      "mechanic": "POWERS_ROOTS",
+      "families": [
+        "usccss.g8.integer_exponent_laws"
+      ],
+      "content": {
+        "concept": "The properties of integer exponents preserve a nonzero base across products, quotients and powers of powers. Zero exponents equal 1 and negative exponents denote reciprocals.",
+        "workedExample": "3² × 3⁻⁵ = 3⁻³ = 1/27.",
+        "solution": "Combine exponents using a^m × a^n = a^(m+n), a^m ÷ a^n = a^(m−n), or (a^m)^n = a^(mn), and express negative powers as exact fractions.",
+        "commonMistake": "Do not multiply bases or misread a negative exponent as a negative number; do not substitute logarithms.",
+        "summary": "Verify the equivalent exact numerical value using the integer-exponent rules."
+      }
     }
   ]
 }
