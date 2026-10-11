@@ -181,40 +181,45 @@ public sealed class StudentPrivatePracticeRepositoryTests
         Assert.Null(context);
     }
 
-    [Fact]
-    public async Task American_HS_course_adoption_filters_student_lessons_to_exact_course()
+    [Theory]
+    [InlineData("ALG1", "Algebra 1", "Traditional")]
+    [InlineData("GEO", "Geometry", "Traditional")]
+    [InlineData("ALG2", "Algebra 2", "Traditional")]
+    [InlineData("TRAD-SUPPLEMENT", "Traditional Advanced Supplements", "Traditional")]
+    [InlineData("ADV-ALG-FUNC", "Advanced Algebra & Functions", "Fourth Courses")]
+    [InlineData("ADV-TRIG-GEO", "Advanced Trigonometry & Geometry", "Fourth Courses")]
+    [InlineData("COMPLEX", "Complex Numbers", "Fourth Courses")]
+    [InlineData("PROB-DECISION", "Probability & Decision Making", "Fourth Courses")]
+    [InlineData("VECTOR-MATRIX", "Vectors & Matrices", "Fourth Courses")]
+    public async Task American_HS_course_adoption_never_leaks_other_publisher_course(
+        string courseCode, string courseName, string pathway)
     {
         await using var db = CreateDb();
         var ids = Ids.Create();
         var now = DateTime.UtcNow;
         var adoption = Adoption(ids, now);
         adoption.CurriculumLogicalLevel = 11;
-        adoption.CurriculumPathway = "Traditional";
+        adoption.CurriculumPathway = pathway;
         adoption.CurriculumLevelKey = CurriculumLevelIdentityRegistry.BuildKey(
-            MathematicsCurriculumPackRegistry.CommonCoreCode, 11, "Traditional", "ALG1");
-        adoption.CurriculumLevelLabel = "Algebra 1";
-        var lessons = new[]
-        {
-            ("ALG1-1", "Algebra 1", "Traditional"),
-            ("GEO-1", "Geometry", "Traditional"),
-            ("ALG2-1", "Algebra 2", "Traditional"),
-            ("FOURTH-1", "Vectors & Matrices", "Fourth Courses")
-        }.Select((item, index) => new CurriculumPedagogicalLesson
-        {
-            Id = Guid.NewGuid(),
-            FrameworkVersionId = ids.Framework,
-            Code = item.Item1,
-            UnitKey = "U1",
-            UnitTitle = "Source",
-            Title = item.Item1,
-            NativeLevel = item.Item2,
-            Pathway = item.Item3,
-            LogicalLevelFrom = 10,
-            LogicalLevelTo = 13,
-            SortOrder = index + 1,
-            CreatedAtUtc = now,
-            UpdatedAtUtc = now
-        }).ToArray();
+            MathematicsCurriculumPackRegistry.CommonCoreCode, 11, pathway, courseCode);
+        adoption.CurriculumLevelLabel = courseName;
+        var lessons = CurriculumLevelIdentityRegistry.SourceBackedAmericanHighSchoolCourses
+            .Select((item, index) => new CurriculumPedagogicalLesson
+            {
+                Id = Guid.NewGuid(),
+                FrameworkVersionId = ids.Framework,
+                Code = item.Code,
+                UnitKey = "U1",
+                UnitTitle = "Source",
+                Title = item.Label,
+                NativeLevel = item.Label,
+                Pathway = item.Pathway,
+                LogicalLevelFrom = 10,
+                LogicalLevelTo = 13,
+                SortOrder = index + 1,
+                CreatedAtUtc = now,
+                UpdatedAtUtc = now
+            }).ToArray();
 
         await db.AddRangeAsync(Student(ids, now), adoption, Class(ids, ids.Adoption),
             Enrollment(ids, ids.Class));
@@ -225,8 +230,10 @@ public sealed class StudentPrivatePracticeRepositoryTests
             .GetContextAsync(ids.User, ids.Adoption);
 
         Assert.NotNull(context);
-        Assert.Equal("ALG1-1", Assert.Single(context!.Lessons).Code);
-        Assert.Equal("Algebra 1", Assert.Single(context.Lessons).NativeLevel);
+        var offered = Assert.Single(context!.Lessons);
+        Assert.Equal(courseCode, offered.Code);
+        Assert.Equal(courseName, offered.NativeLevel);
+        Assert.Equal(pathway, offered.Pathway);
     }
 
     [Theory]
