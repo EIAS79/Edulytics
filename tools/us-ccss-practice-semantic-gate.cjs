@@ -33,6 +33,7 @@ const report={
  sourceEvidence:{childClauses:121,exactPublisherCodeReferences:106,
   withoutExactPublisherChildCodeReference:15},
  numericPracticeFamiliesAdded:11,
+ originalEdulyticsExtensions:[{"clause":"HSF-BF.A.1.c","lessonCode":"PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L10","bodyPolicy":"ORIGINAL_NOT_PUBLISHER_ATTRIBUTED","scopedFamily":"usccss.hs.function_composition","fullSemanticCertification":false},{"clause":"HSF-BF.B.4.d","lessonCode":"PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L15","bodyPolicy":"ORIGINAL_NOT_PUBLISHER_ATTRIBUTED","scopedFamily":"usccss.hs.restricted_inverse","fullSemanticCertification":false}],
  independentlyCertifiedChildClauses:0,
  authenticatedDisposableUsSchoolFlow:'PASSED_PR_452',
  authenticatedLiveStagingFlow:'NOT_VERIFIED',
