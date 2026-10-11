@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "certificationType": "INTERNAL_EVIDENCE_BASED",
+  "scope": "US-CCSS-MATH/CCSSM-2010/Grades-1-12",
+  "sourceCommitSha": "822fec91846009f11eca838403f4cae4e6699dff",
+  "decision": "NO-GO",
+  "facts": {
+    "scope": "US-CCSS-MATH/CCSSM-2010/Grades-1-12",
+    "kindergartenExcluded": true,
+    "sourceCommitSha": "822fec91846009f11eca838403f4cae4e6699dff",
+    "blueprintLessons": 1560,
+    "officialParentStandards": 363,
+    "subordinateClauses": 121,
+    "childPublisherDirectRefs": 106,
+    "childParentOnlyRefs": 15,
+    "certifiedChildClauses": 0,
+    "textDiffsPendingDisposition": 98,
+    "textCorrectionsUnverifiedLive": 3,
+    "authenticatedLiveStaging": "NOT_VERIFIED"
+  },
+  "inputFiles": {
+    "structural": {
+      "path": "docs/curriculum/us-ccss-g1-g12-structural-audit.json",
+      "sha256": "d72f62b542bfbb65485290e30ee5467dc83016b4c20665c5cf05464966d9f902"
+    },
+    "ledger": {
+      "path": "docs/curriculum/us-ccss-academic-evidence-ledger.json",
+      "sha256": "094309d47f16ca407470047b0d17128dcbdfbc22424c4060aad5e7c1ce37a9b9"
+    },
+    "clauses": {
+      "path": "docs/curriculum/us-ccss-121-clause-evidence-corrected.json",
+      "sha256": "7e2e8ac45bc37bedb0e48152944e0e98a9bc61bb0122d2d43377a6ae2587d39c"
+    },
+    "semantic": {
+      "path": "docs/curriculum/us-ccss-practice-semantic-blockers.json",
+      "sha256": "7e9679a39ae88a6e23433ec49002423879e375851658d4f10631b778a2c1733d"
+    },
+    "textDiff": {
+      "path": "docs/curriculum/us-ccss-official-text-diff.json",
+      "sha256": "0a2971b22cbce8aa53e1db192383538ca42befef4d165bb61bfcf3544720284e"
+    }
+  },
+  "blockers": [
+    {
+      "code": "OFFICIAL_TEXT_NOT_CLOSED",
+      "explanation": "Every source difference must have an adjudication, and repairs must be verified live"
+    },
+    {
+      "code": "SUBCLAUSE_NOT_CERTIFIED",
+      "explanation": "121 independent teaching, assessment and grading signoffs required"
+    },
+    {
+      "code": "SEMANTIC_RELEASE_BLOCKED",
+      "explanation": "Cannot certify while practice semantic gate is NO-GO"
+    },
+    {
+      "code": "MISSING_LESSONAUDIT",
+      "explanation": "No independently reviewed lessonAudit evidence"
+    },
+    {
+      "code": "MISSING_PARENTTRACE",
+      "explanation": "No independently reviewed parentTrace evidence"
+    },
+    {
+      "code": "MISSING_CHILDTRACE",
+      "explanation": "No independently reviewed childTrace evidence"
+    },
+    {
+      "code": "MISSING_FAMILYEVIDENCE",
+      "explanation": "artifacts/academic-us-ccss/06-question-family-acceptance.json"
+    },
+    {
+      "code": "MISSING_GRADINGEVIDENCE",
+      "explanation": "artifacts/academic-us-ccss/07-math-verification-evidence.json"
+    },
+    {
+      "code": "MISSING_ROUTINGEVIDENCE",
+      "explanation": "artifacts/academic-us-ccss/08-surface-routing-evidence.json"
+    },
+    {
+      "code": "MISSING_STAGINGEVIDENCE",
+      "explanation": "artifacts/academic-us-ccss/09-staging-acceptance.json"
+    },
+    {
+      "code": "INDEPENDENT_ACADEMIC_APPROVAL_MISSING",
+      "explanation": "Human mathematics reviewers must independently sign the fixed scope, evidence and version"
+    },
+    {
+      "code": "RELEASE_AUTHORIZATION_MISSING",
+      "explanation": "Release must be approved for the exact current SHA by academic/security/release owners"
+    },
+    {
+      "code": "PRODUCTION_VALIDATION_MISSING",
+      "explanation": "Deployed SHA, canonical digest and real user smoke proofs required"
+    }
+  ]
+}
