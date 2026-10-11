@@ -44,7 +44,7 @@ public sealed class CommonCoreG1SourceGroundedInstructionalCorrectionsTests
 
         if (code == CommonCoreG1SourceGroundedInstructionalCorrections.DataQuestionsLessonCode)
         {
-            Assert.Contains("questions about data", en.KeyConceptsAndRules,
+            Assert.Contains("information shown in a picture graph", en.KeyConceptsAndRules,
                 StringComparison.OrdinalIgnoreCase);
             Assert.Contains("7 - 3 = 4", en.WorkedExamples);
             Assert.Contains("7 + 5 + 3 = 15", en.WorkedExamples);
