@@ -76,11 +76,11 @@ jobs:
           export Edulytics__MeetingDemo__Password="$rehearsal_password"
           dotnet run --project tools/Edulytics.CiFixtures/Edulytics.CiFixtures.csproj -- academic > /tmp/us-ccss-fixture.log 2>&1
           grep -q 'MEETING_DEMO_SEED_COMPLETED' /tmp/us-ccss-fixture.log
-          # The generic CCSS high-school registry level has only the
-          # 'Course/pathway mapping' placeholder and thus no matching
-          # Traditional/Fourth-Courses lessons. Bind an EXPLICIT reviewed
-          # course to this single disposable secondary test adoption.
-          # This is intentionally NOT a change to the live school defaults.
+          # On legacy fixtures the secondary adoption uses a generic placeholder;
+          # with explicit US high-school pathways it may already be Traditional.
+          # Accept only those two source-supported starting states, and require
+          # exactly one matching disposable secondary row (fail closed otherwise).
+          # This is intentionally NOT a change to live-school defaults.
           configured="$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -A -t -c "
             WITH selected AS (
               UPDATE \"SchoolCurriculumAdoptions\" a
@@ -89,7 +89,7 @@ jobs:
               WHERE a.\"SchoolId\"=s.\"Id\"
                 AND s.\"SchoolCode\"='REHEARSAL-US-SECONDARY'
                 AND a.\"CurriculumLogicalLevel\"=11
-                AND a.\"CurriculumPathway\"='Course/pathway mapping'
+                AND a.\"CurriculumPathway\" IN ('Course/pathway mapping', 'Traditional')
               RETURNING a.\"Id\"
             ) SELECT count(*) FROM selected;")"
           test "$configured" = 1
