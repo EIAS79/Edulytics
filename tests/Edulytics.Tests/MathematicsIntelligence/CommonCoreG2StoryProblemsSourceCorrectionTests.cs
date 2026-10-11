@@ -60,7 +60,7 @@ public sealed class CommonCoreG2StoryProblemsSourceCorrectionTests
             CanonicalLessonContentMaterializer.ComputeLessonFingerprint(doc, lesson));
 
         var sibling = Assert.Single(doc.Lessons,
-            x => x.LessonCode == "PED:US-CCSS-MATH:G2:U09:L11");
+            x => x.LessonCode == "PED:US-CCSS-MATH:G2:U09:L10");
         Assert.Equal(CommonCoreRichContentCorrections.CorrectionContentVersion,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc, sibling));
         Assert.False(CommonCoreG2StoryProblemsSourceCorrection.IsTarget(doc, sibling));
