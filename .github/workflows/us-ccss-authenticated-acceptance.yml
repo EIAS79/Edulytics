@@ -1,0 +1,110 @@
+name: US CCSS Authenticated Academic Acceptance
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/us-ccss-authenticated-acceptance.yml'
+      - 'tools/Edulytics.CiFixtures/**'
+      - 'tools/phase29/acceptance_two_school_https.py'
+      - 'src/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  isolated-us-school-https:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: edulytics_clean_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      ConnectionStrings__DefaultConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ConnectionStrings__MigrationConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
+      EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
+      EDULYTICS_CI_REHEARSAL: 'true'
+      EDULYTICS_CI_REHEARSAL_PROGRAMME: 'US-CCSS'
+      ASPNETCORE_ENVIRONMENT: Staging
+      PGPASSWORD: postgres
+      Edulytics__LessonContent__ReadFromJson: 'true'
+      Edulytics__Deployment__CleanBootstrap: 'true'
+      Edulytics__Deployment__RunStartupDataMaintenance: 'false'
+      Edulytics__Deployment__SeedCurriculum: 'false'
+      Edulytics__PresentationDemo__Provision: 'false'
+      Edulytics__MeetingDemo__ResetAndSeed: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prove embedded content is unchanged
+        run: python3 tools/phase29/verify_main_content_parity.py
+      - name: Build application and apply only disposable schema
+        run: |
+          set -euo pipefail
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --no-restore
+          dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
+          dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Create American primary and secondary school fixtures, then exercise real HTTPS student/teacher flows
+        env:
+          RENDER_SERVICE_ID: ci-disposable
+          Edulytics__Deployment__CleanBootstrap: 'false'
+          Edulytics__MeetingDemo__ResetAndSeed: 'true'
+          Edulytics__Deployment__RunStartupMigrations: 'false'
+        run: |
+          set -euo pipefail
+          rehearsal_password="$(openssl rand -hex 24)Aa1!"
+          echo "::add-mask::$rehearsal_password"
+          export Edulytics__MeetingDemo__Password="$rehearsal_password"
+          dotnet run --project tools/Edulytics.CiFixtures/Edulytics.CiFixtures.csproj -- academic > /tmp/us-ccss-fixture.log 2>&1
+          grep -q 'MEETING_DEMO_SEED_COMPLETED' /tmp/us-ccss-fixture.log
+          openssl req -x509 -newkey rsa:2048 -nodes -days 1 \
+            -keyout /tmp/us-ccss-key.pem -out /tmp/us-ccss-cert.pem \
+            -subj '/CN=localhost' \
+            -addext 'subjectAltName=DNS:localhost,IP:127.0.0.1' >/dev/null 2>&1
+          openssl pkcs12 -export -out /tmp/phase-uat-identity.pfx \
+            -inkey /tmp/us-ccss-key.pem -in /tmp/us-ccss-cert.pem \
+            -passout pass:local-test-tls >/dev/null 2>&1
+          cp /tmp/us-ccss-cert.pem /tmp/phase-uat-cert.pem
+          export ASPNETCORE_URLS='https://127.0.0.1:5052'
+          export ASPNETCORE_Kestrel__Certificates__Default__Path=/tmp/phase-uat-identity.pfx
+          export ASPNETCORE_Kestrel__Certificates__Default__Password=local-test-tls
+          export Edulytics__MeetingDemo__ResetAndSeed='false'
+          dotnet run --no-build --no-launch-profile --project src/Edulytics.Web/Edulytics.Web.csproj > /tmp/us-ccss-web.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          ready=false
+          for attempt in $(seq 1 100); do
+            if curl --fail --silent --cacert /tmp/phase-uat-cert.pem https://localhost:5052/health/ready > /dev/null; then
+              ready=true
+              break
+            fi
+            if ! kill -0 "$server_pid" 2>/dev/null; then
+              echo 'Disposable US CCSS web process exited before readiness'
+              exit 1
+            fi
+            sleep 3
+          done
+          test "$ready" = true
+          python3 tools/phase29/acceptance_two_school_https.py
+      - name: Verify only two synthetic schools were created
+        run: |
+          set -euo pipefail
+          ids="$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -A -t -c 'SELECT "SchoolCode" FROM "Schools" ORDER BY "SchoolCode";')"
+          test "$ids" = "$(printf 'REHEARSAL-US-PRIMARY\nREHEARSAL-US-SECONDARY')"
