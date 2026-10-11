@@ -10,8 +10,8 @@ This register reports **implemented and evidenced work only**. A status of QUEUE
 |---|---|---|
 | 00 — Reproducible baseline | **PARTIAL** | `00-baseline.json` created and source files SHA-256 fingerprinted; structural input audit references an older commit. Re-run inventory and validate exact release SHA before Gate 00 PASS. |
 | 01 — Authority and licensing | **PARTIAL** | Existing 17 publisher blueprints and 363/121 Common Core source inventory; full licensing/source review and sign-off outstanding. |
-| 02 — Official text | **BLOCKED / 98 REVIEW QUEUED** | `02-official-text-review-queue.json` contains 98 unsignoff historical mismatches; 9 hash-guarded corrections previously recorded, of which 3 remain unverified in live Neon. |
-| 03 — HS courses | **BLOCKED** | [PR #461](https://github.com/EIAS79/Edulytics/pull/461) gives only pathway choices; [issue #453](https://github.com/EIAS79/Edulytics/issues/453) still needs explicit `CourseCode`, permission-safe school selection, safe legacy reconciliation and end-to-end route proof. |
+| 02 — Official text | **BLOCKED / 98 REVIEW QUEUED** | `02-official-text-review-queue.json` contains 98 unsigned historical mismatches; live official HTML recheck on 2026-10-11 confirmed 363 parent/121 child/107 original text differences with zero fetch errors; 9 hash-guarded corrections previously recorded, of which 3 remain unverified in live Neon. |
+| 03 — HS courses | **BLOCKED** | [PR #461](https://github.com/EIAS79/Edulytics/pull/461) gives source-backed nine-course selection and course-scoped student Practice implemented on open PR #461, CI/compatibility pending; [issue #453](https://github.com/EIAS79/Edulytics/issues/453) still needs explicit `CourseCode`, permission-safe school selection, safe legacy reconciliation and end-to-end route proof. |
 | 04 — Lesson audit | **1,560 QUEUED; 0 APPROVED** | `04-lesson-academic-audit.json` contains publisher-linked lesson review records; these are not reviewed lesson bodies or certifications. |
 | 05 — Parent and child traceability | **363 + 121 QUEUED; 0 APPROVED** | Separate `05-parent-standard-traceability.json` and `05-child-clause-traceability.json`; no human review/assessments signed. |
 | 06 — Skill and question families | **BLOCKED** | Competency-level family proof / negative tests and missing constructed-response forms outstanding. |
@@ -47,3 +47,10 @@ node tools/us-ccss-certification-gate.cjs --strict
 ```
 
 Every future milestone must record a tested SHA, evidence links, reviewed competency scope, open blockers and named external academic approvals; never substitute optimistic progress labels for signed evidence.
+
+## Continuation execution evidence (2026-10-11)
+
+- The [technical HS PR #461](https://github.com/EIAS79/Edulytics/pull/461) now implements an explicit `CourseCode` in US HS level identities for nine source-backed courses and restricts learner lessons plus official-outcome projection by the chosen course. A school grade-placement matching defect and disposable fixture uniqueness defect were repaired on that branch. **31 scoped .NET tests passed locally on its `4a6c548` head**. The latest CI and the full suite must be evaluated independently before merge.
+- One earlier whole-suite run saw **2,247 pass + 1 timeout/concurrency test fail**, which passed when rerun alone. This is not yet evidence of a clean full suite on the exact latest SHA.
+- The official source refresh result is stored at [02-official-html-refresh-2026-10-11.md](02-official-html-refresh-2026-10-11.md). No academic source mismatch or child clause has been auto-approved.
+- Production/Neon data still untouched. Existing eight ambiguous school adoptions require deliberate reviewed rebind; approval, staging and deployment gates remain NO-GO.
