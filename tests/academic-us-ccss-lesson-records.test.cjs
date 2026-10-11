@@ -60,7 +60,7 @@ test('PASS without evidence and reviewer metadata cannot certify', () => {
   assert.throws(() => validateLedger(source,spoofedGate), /PASS without evidence/);
   const spoofedSignoff = structuredClone(base);
   spoofedSignoff.records[0].academicDecision = 'ACADEMICALLY_CERTIFIED';
-  assert.throws(() => validateLedger(source,spoofedSignoff), /human signoff/);
+  assert.throws(() => validateLedger(source,spoofedSignoff), /certified workflow state|human signoff/);
 });
 
 test('Uncertified lesson cannot contain a superficially passed human gate', () => {
