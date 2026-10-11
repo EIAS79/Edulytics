@@ -156,6 +156,18 @@ public sealed class StudentPrivatePracticeRepository(EdulyticsDbContext db)
             .OrderBy(x => x.SortOrder)
             .ToListAsync(cancellationToken);
 
+        if (isAmericanHighSchool)
+        {
+            // A historical/shared school outcome must not turn unrelated
+            // courses into target skills for this student's chosen class.
+            var courseOutcomeNodeIds = lessonOutcomes
+                .Select(x => x.OutcomeNodeId).ToHashSet();
+            outcomes = outcomes.Where(x =>
+                    x.OfficialContentNodeId.HasValue &&
+                    courseOutcomeNodeIds.Contains(x.OfficialContentNodeId.Value))
+                .ToList();
+        }
+
         MathematicsOutcomeSemanticHintLoader.Apply(outcomes, lessons, lessonOutcomes);
 
         var masteries = await db.StudentOutcomeMasteries.AsNoTracking()
