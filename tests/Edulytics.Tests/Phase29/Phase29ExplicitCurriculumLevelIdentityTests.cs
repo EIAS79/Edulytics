@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Edulytics.Core.Curriculum;
 using Edulytics.Core.Entities;
 using Edulytics.Data.Contexts;
@@ -97,6 +98,35 @@ public sealed class Phase29ExplicitCurriculumLevelIdentityTests
             MathematicsCurriculumPackRegistry.CommonCoreCode)
             .Where(level => level.LogicalLevel <= 9);
         Assert.All(elementary, level => Assert.Null(level.CourseCode));
+    }
+
+    [Fact]
+    public void HighSchoolCourseIdentityRegistryExactlyMatchesAcceptedPublisherBlueprints()
+    {
+        var root = FindRepositoryRoot();
+        var packDir = Path.Combine(root,
+            "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs");
+        var files = Directory.GetFiles(packDir,
+            "us-ccss-math-hs-*.lesson-blueprint.json");
+        Assert.Equal(9, files.Length);
+        var observed = files.Select(file =>
+        {
+            using var json = JsonDocument.Parse(File.ReadAllText(file));
+            var blueprint = json.RootElement;
+            Assert.Equal("US-CCSS-MATH",
+                blueprint.GetProperty("PackCode").GetString());
+            Assert.True(blueprint.GetProperty("Lessons").GetArrayLength() > 0);
+            return (
+                Code: blueprint.GetProperty("CourseCode").GetString(),
+                Label: blueprint.GetProperty("NativeLevel").GetString(),
+                Pathway: blueprint.GetProperty("Pathway").GetString());
+        }).OrderBy(x => x.Code).ToArray();
+        var registry = CurriculumLevelIdentityRegistry
+            .SourceBackedAmericanHighSchoolCourses
+            .Select(x => (Code: (string?)x.Code, Label: (string?)x.Label,
+                Pathway: (string?)x.Pathway))
+            .OrderBy(x => x.Code).ToArray();
+        Assert.Equal(observed, registry);
     }
 
     [Fact]
