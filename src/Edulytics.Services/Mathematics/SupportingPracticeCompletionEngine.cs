@@ -43,6 +43,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "usccss.number.repeating_decimal_digit",
             "usccss.number.signed_rate_displacement",
             "usccss.algebra.exponent_product_value",
+            "usccss.g8.integer_exponent_laws",
             "usccss.vector.add_x",
             "usccss.vector.subtract_y",
             "usccss.vector.scalar_y",
@@ -213,6 +214,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "usccss.number.repeating_decimal_digit" => UsRepeatingDecimalDigit(random, scale),
             "usccss.number.signed_rate_displacement" => UsSignedRateDisplacement(random, scale),
             "usccss.algebra.exponent_product_value" => UsExponentProductValue(random, scale),
+            "usccss.g8.integer_exponent_laws" => UsGrade8IntegerExponentLaws(random),
             "usccss.vector.add_x" => VectorComponentSum(random, scale),
             "usccss.vector.subtract_y" => VectorDifference(random, scale),
             "usccss.vector.scalar_y" => VectorScalar(random, scale),
@@ -361,6 +363,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "usccss.number.repeating_decimal_digit" => (p["numerator"] * (9 / p["denominator"])).ToString(CultureInfo.InvariantCulture),
             "usccss.number.signed_rate_displacement" => (p["velocity"] * p["time"]).ToString(CultureInfo.InvariantCulture),
             "usccss.algebra.exponent_product_value" => IntPow(p["base"], p["exponent"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g8.integer_exponent_laws" => SolveUsGrade8IntegerExponentLaws(p),
             "usccss.vector.add_x" => (p["ax"]+p["bx"]).ToString(CultureInfo.InvariantCulture),
             "usccss.vector.subtract_y" => (p["ay"]-p["by"]).ToString(CultureInfo.InvariantCulture),
             "usccss.vector.scalar_y" => (p["y"]*p["k"]).ToString(CultureInfo.InvariantCulture),
@@ -543,6 +546,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.fractions.multiply" or
             "supporting.fractions.divide_whole" or
             "supporting.fractions.simplify" or
+            "usccss.g8.integer_exponent_laws" or
             "supporting.statistics.experimental_probability" or
             "supporting.probability.conditional_simple" or
             "supporting.probability_statistics.mixed" or
@@ -2098,6 +2102,45 @@ internal static partial class SupportingPracticeCompletionEngine
         var result = 1;
         for (var i = 0; i < power; i++) result = checked(result * 10);
         return result;
+    }
+
+
+    // CCSS 8.EE.A.1 only: three distinct laws, including zero and negative
+    // exponents. Use 2<=base<=4 and exponents <=2 to keep exact answers
+    // human-computable and avoid integer overflow.
+    private static Problem UsGrade8IntegerExponentLaws(Random r)
+    {
+        var baseNumber = r.Next(2, 5);
+        var left = r.Next(-2, 3);
+        var right = r.Next(-2, 3);
+        var mode = r.Next(3);
+        if (mode == 2)
+            right = 2;
+        var statement = mode switch
+        {
+            0 => $"{baseNumber}^({left}) × {baseNumber}^({right})",
+            1 => $"{baseNumber}^({left}) ÷ {baseNumber}^({right})",
+            _ => $"({baseNumber}^({left}))^({right})"
+        };
+        return P("usccss.g8.integer_exponent_laws",
+            $"Use integer-exponent laws to evaluate {statement}. Enter the exact numerical value as an integer or a simplified fraction.",
+            "When multiplying powers with the same nonzero base add exponents; when dividing subtract exponents; when raising a power multiply exponents. A negative exponent means a reciprocal, and a zero exponent means 1.",
+            ("base",baseNumber),("left",left),("right",right),("mode",mode));
+    }
+
+    private static string SolveUsGrade8IntegerExponentLaws(
+        IReadOnlyDictionary<string, int> p)
+    {
+        var exponent = p["mode"] switch
+        {
+            0 => p["left"] + p["right"],
+            1 => p["left"] - p["right"],
+            2 => p["left"] * p["right"],
+            _ => throw new InvalidOperationException("Unknown CCSS exponent-law mode.")
+        };
+        return exponent < 0
+            ? SimplifyFraction(1, IntPow(p["base"], -exponent))
+            : IntPow(p["base"], exponent).ToString(CultureInfo.InvariantCulture);
     }
 
     private static int IntPow(int value, int exponent)

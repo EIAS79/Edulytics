@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            287,
+            288,
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(

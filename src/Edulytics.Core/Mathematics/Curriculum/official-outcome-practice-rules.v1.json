@@ -4,6 +4,15 @@
   "resolutionPolicy": "Highest-priority unique match only. Ties fail closed. Code scope is mandatory for every rule.",
   "rules": [
     {
+      "id": "ccss-grade8-integer-exponent-laws",
+      "priority": 400,
+      "codePatterns": [
+        "^CCSS:8\\.EE\\.A\\.1$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "ccss-g8-integer-exponent-laws"
+    },
+    {
       "id": "ccss-fraction-add-subtract",
       "priority": 310,
       "codePatterns": [
