@@ -47,36 +47,56 @@ public sealed class Phase29ExplicitCurriculumLevelIdentityTests
     }
 
     [Fact]
-    public void CommonCoreHighSchoolNewAdoptionsOfferExplicitSourcePathwaysOnly()
+    public void CommonCoreHighSchoolRequiresSourceCourseAndKeepsLegacyKeysReadOnly()
     {
         var pack = MathematicsCurriculumPackRegistry.CommonCoreCode;
         var levels = CurriculumLevelIdentityRegistry.ForPack(pack);
-        foreach (var logical in new[] {10, 11, 12, 13})
+        Assert.Equal(9, CurriculumLevelIdentityRegistry.SourceBackedAmericanHighSchoolCourses.Count);
+        foreach (var logical in new[] { 10, 11, 12, 13 })
         {
             var options = levels.Where(x => x.LogicalLevel == logical).ToArray();
-            Assert.Equal(2, options.Length);
-            var traditional = Assert.Single(options, x => x.Pathway == "Traditional");
-            var fourth = Assert.Single(options, x => x.Pathway == "Fourth Courses");
-            Assert.Equal(CurriculumLevelIdentityRegistry.BuildKey(
-                pack, logical, "Traditional"), traditional.Key);
-            Assert.Equal(CurriculumLevelIdentityRegistry.BuildKey(
-                pack, logical, "Fourth Courses"), fourth.Key);
-            Assert.NotEqual(traditional.Key, fourth.Key);
-            Assert.False(CurriculumLevelIdentityRegistry
-                .IsUnresolvedAmericanHighSchoolPathway(traditional));
-            Assert.False(CurriculumLevelIdentityRegistry
-                .IsUnresolvedAmericanHighSchoolPathway(fourth));
-            // Old keys remain readable but must never be offered for creation.
-            var legacyKey = CurriculumLevelIdentityRegistry.BuildKey(
-                pack, logical, "Course/pathway mapping");
-            var legacy = CurriculumLevelIdentityRegistry.Find(legacyKey);
-            Assert.NotNull(legacy);
-            Assert.True(CurriculumLevelIdentityRegistry
-                .IsUnresolvedAmericanHighSchoolPathway(legacy));
-            Assert.DoesNotContain(options, x => x.Key == legacyKey);
+            Assert.Equal(9, options.Length);
+            Assert.Equal(9, options.Select(x => x.Key).Distinct().Count());
+            foreach (var source in CurriculumLevelIdentityRegistry.SourceBackedAmericanHighSchoolCourses)
+            {
+                var item = Assert.Single(options, x => x.CourseCode == source.Code);
+                Assert.Equal(source.Pathway, item.Pathway);
+                Assert.Equal(source.Label, item.Label);
+                Assert.Equal(CurriculumLevelIdentityRegistry.BuildKey(
+                    pack, logical, source.Pathway, source.Code), item.Key);
+                Assert.False(CurriculumLevelIdentityRegistry.IsUnresolvedAmericanHighSchoolPathway(item));
+                Assert.Same(item, CurriculumLevelIdentityRegistry.Find(item.Key));
+            }
+            foreach (var legacyPath in new[] { "Course/pathway mapping", "Traditional", "Fourth Courses" })
+            {
+                var oldKey = CurriculumLevelIdentityRegistry.BuildKey(pack, logical, legacyPath);
+                var old = CurriculumLevelIdentityRegistry.Find(oldKey);
+                Assert.NotNull(old);
+                Assert.True(CurriculumLevelIdentityRegistry.IsUnresolvedAmericanHighSchoolPathway(old));
+                Assert.DoesNotContain(options, x => x.Key == oldKey);
+            }
         }
         Assert.Null(CurriculumLevelIdentityRegistry.ResolveLegacy(
             pack, "Grade 10", gradeOrder: 11));
+    }
+
+    [Fact]
+    public void AmericanHighSchoolCourseSelectionPreservesAllNonAmericanLevelKeys()
+    {
+        foreach (var code in new[]
+        {
+            MathematicsCurriculumPackRegistry.CambridgeCode,
+            MathematicsCurriculumPackRegistry.UaeCode,
+            MathematicsCurriculumPackRegistry.PolandCode
+        })
+        {
+            Assert.All(CurriculumLevelIdentityRegistry.ForPack(code),
+                level => Assert.Null(level.CourseCode));
+        }
+        var elementary = CurriculumLevelIdentityRegistry.ForPack(
+            MathematicsCurriculumPackRegistry.CommonCoreCode)
+            .Where(level => level.LogicalLevel <= 9);
+        Assert.All(elementary, level => Assert.Null(level.CourseCode));
     }
 
     [Fact]
