@@ -53,6 +53,7 @@ jobs:
           dotnet tool restore
           dotnet restore Edulytics.sln
           dotnet build Edulytics.sln --no-restore
+          dotnet build tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
           dotnet ef database update \
             --project src/Edulytics.Data/Edulytics.Data.csproj \
             --startup-project src/Edulytics.Web/Edulytics.Web.csproj \
