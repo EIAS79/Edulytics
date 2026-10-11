@@ -20,10 +20,16 @@ public static partial class PracticeMathVisualRenderer
         var left = hasHole ? Math.Min(pole, removed) - 4.0 : pole - 6.0;
         var right = hasHole ? Math.Max(pole, removed) + 4.0 : pole + 6.0;
         var span = right - left;
-        const double yLimit = 8;
-        double X(double x) => 32 + 356 * (x - left) / span;
-        double Y(double y) => 130 - y * 12.5;
+        // The canceled-factor hole can lie beyond the former fixed +/-8
+        // plotting range. Scale the viewport to retain the open-circle mark.
+        // Keep the original scale for ordinary holes and pole-only graphs.
         double Value(double x) => hasHole ? (x - root) / (x - pole) : numerator / (x - pole);
+        var holeValue = hasHole ? Value(removed) : double.NaN;
+        var yLimit = double.IsFinite(holeValue)
+            ? Math.Max(8d, Math.Abs(holeValue) + 1d)
+            : 8d;
+        double X(double x) => 32 + 356 * (x - left) / span;
+        double Y(double y) => 130 - y * 100d / yLimit;
         var sb = SvgStart("Graph showing the branches of the rational expression and marked excluded input locations.");
         sb.Append("<line x1='32' y1='130' x2='390' y2='130' class='axis'/>");
         if (left <= 0 && right >= 0)
@@ -75,12 +81,8 @@ public static partial class PracticeMathVisualRenderer
         Flush();
 
         sb.Append($"<line x1='{F(X(pole))}' y1='25' x2='{F(X(pole))}' y2='232' class='axis dash'/>");
-        if (hasHole)
-        {
-            var holeY = Value(removed);
-            if (double.IsFinite(holeY) && Math.Abs(holeY) <= yLimit)
-                sb.Append($"<circle cx='{F(X(removed))}' cy='{F(Y(holeY))}' r='6' fill='white' stroke='currentColor' stroke-width='2'/>");
-        }
+        if (hasHole && double.IsFinite(holeValue))
+            sb.Append($"<circle cx='{F(X(removed))}' cy='{F(Y(holeValue))}' r='6' fill='white' stroke='currentColor' stroke-width='2'/>");
         Text(sb, 385, 148, "x", "hint");
         Text(sb, 30, 24, "y", "hint");
         Text(sb, 210, 252, "Dashed line: excluded-input asymptote. Open circle: removable hole.", "hint");
