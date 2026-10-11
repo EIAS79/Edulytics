@@ -38,7 +38,7 @@ public static class CommonCoreG4MultiplesSourceCorrection
         "Example 2 — Test a possible area. A rectangle 3 units wide cannot have area 28 square units with a whole-number length: " +
         "3 × 9 = 27 and 3 × 10 = 30, so there is no whole number of columns giving 28. " +
         "An area of 30 square units is possible using width 3 and length 10.\n" +
-        "Example 3 — Compare widths. A 4-by-7 rectangle has area 28 square units, so 28 is a multiple of 4. " +
+        "Example 3 — Compare widths. A 4-by-7 rectangle has area 4 × 7 = 28 square units, so 28 is a multiple of 4. " +
         "The same area is not a multiple of 3. Check each claim with multiplication, an array of unit squares, or division with remainder.";
 
     public const string NewStepByStepSolutions =
