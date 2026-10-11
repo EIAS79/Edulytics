@@ -23,6 +23,9 @@ public sealed class UsGrade8IntegerExponentOutcomeTests
         Assert.DoesNotContain("supporting.logarithms.evaluate", resolved.TargetRule.Families);
         Assert.True(SupportingPracticeTargetRuleRegistry.TryGetById(recorded.TargetRuleId, out var target));
         Assert.Equal([Family], target!.Families);
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(Family, out var interfaceContract));
+        Assert.Equal(LessonPracticeInteractionKind.FractionEntry, interfaceContract!.InteractionKind);
+        Assert.Equal("exact_rational", interfaceContract.AnswerType);
     }
 
     [Fact]
