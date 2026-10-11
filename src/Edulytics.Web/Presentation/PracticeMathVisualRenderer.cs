@@ -11,7 +11,7 @@ namespace Edulytics.Web.Presentation;
 /// server-owned exact question-family parameters. No arbitrary HTML or
 /// model-generated image content is accepted.
 /// </summary>
-public static class PracticeMathVisualRenderer
+public static partial class PracticeMathVisualRenderer
 {
     public static string? RenderSvg(string? family, string? generationParametersJson)
     {
@@ -89,6 +89,10 @@ public static class PracticeMathVisualRenderer
                 "supporting.geometry.plane.mixed" or
                 "supporting.geometry.triangle_area" => PlaneGeometryParameterVisual(parameters),
                 "supporting.trigonometry.graph_special" => TrigonometryGraphVisual(parameters),
+                "usccss.hs.rational_hole_or_pole" => UsRationalGraph(parameters, hasHole: true),
+                "usccss.hs.rational_branch_limit_sign" => UsRationalGraph(parameters, hasHole: false),
+                "usccss.vector.head_tail_endpoint_y" => UsVectorHeadTailDiagram(parameters),
+                "usccss.vector.scalar_direction_class" => UsVectorScalarDiagram(parameters),
                 "supporting.trigonometry.area_sine_double" or
                 "supporting.trigonometry.bearing" or
                 "supporting.trigonometry.cosine_rule_square" or
