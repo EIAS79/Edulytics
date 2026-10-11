@@ -86,6 +86,30 @@ public sealed class UsCommonCoreGraphVectorVisualTests
         Assert.DoesNotContain("Infinity",svg!,StringComparison.Ordinal);
     }
 
+    [Theory]
+    [InlineData(-2, -1, 8)]   // hole y = +10, beyond old +8 clipping range
+    [InlineData(2, 3, -8)]   // hole y = -10, beyond old -8 clipping range
+    public void RemovableHoleMarkerRemainsVisibleWhenItsYValueExceedsFixedPlotRange(
+        int removed, int pole, int root)
+    {
+        var svg = PracticeMathVisualRenderer.RenderSvg(
+            "usccss.hs.rational_hole_or_pole",
+            JsonSerializer.Serialize(new { parameters = new
+            {
+                removed, pole, root, ask = removed
+            }}));
+        Assert.NotNull(svg);
+        var marker = System.Text.RegularExpressions.Regex.Match(
+            svg!, @"<circle cx='[^']+' cy='(?<y>[^']+)' r='6'");
+        Assert.True(marker.Success, "The excluded input must be shown as an open circle.");
+        var y = double.Parse(marker.Groups["y"].Value,
+            System.Globalization.CultureInfo.InvariantCulture);
+        Assert.InRange(y, 25d, 235d);
+        Assert.Contains("<polyline", svg!, StringComparison.Ordinal);
+        Assert.DoesNotContain("NaN", svg!, StringComparison.Ordinal);
+        Assert.DoesNotContain("Infinity", svg!, StringComparison.Ordinal);
+    }
+
     [Fact]
     public void MalformedOrAbsentParametersFailClosed()
     {
