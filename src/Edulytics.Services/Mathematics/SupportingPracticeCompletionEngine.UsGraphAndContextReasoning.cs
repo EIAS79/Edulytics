@@ -57,12 +57,20 @@ internal static partial class SupportingPracticeCompletionEngine
         int step=r.Next(2,9+scale);
         int baseCost=r.Next(2,16+scale);
         int extra=denom*step;
-        int fixedCost=baseCost+step+1;
+        // Three disjoint cost regimes prevent the question's objective from
+        // revealing its answer: A wins both, mixed, or B wins both.
+        // Strict comparisons avoid ties; all costs stay positive.
+        int fixedCost=r.Next(3) switch
+        {
+            0 => baseCost+step-r.Next(1,Math.Min(step,3)+1),
+            1 => baseCost+step+r.Next(1,(denom-1)*step),
+            _ => baseCost+extra+r.Next(1,5+scale)
+        };
         int objective=r.Next(2);
         string criterion=objective==0?"MINIMUM EXPECTED COST":"MINIMUM WORST-CASE COST";
         return P("usccss.probability.expected_vs_worst_case",
             $"Plan A always costs $${fixedCost}. Plan B costs $${baseCost}, plus $${extra} in an incident with probability 1/${denom}. Choose the plan with ${criterion} (enter 1 for A or 2 for B).",
-            "B's expected cost is base+extra/denominator; worst-case B is base+extra. Compare by the stated criterion. Numeric selection alone does not grade written justification.",
-            ("denom",denom),("step",step),("baseCost",baseCost),("extra",extra),("fixedCost",fixedCost),("objective",objective));
+            $"B's expected cost is ${baseCost} + (1/{denom}) × ${extra} = ${baseCost+step}; its worst-case cost is ${baseCost+extra}. A always costs ${fixedCost}. Compare using the specified criterion. Numeric selection alone does not grade written justification.",
+            ("denom",denom),("step",step),("baseCost",baseCost),("extra",extra),("fixedCost",fixedCost),("objective",objective),("scenarioVersion",2));
     }
 }
