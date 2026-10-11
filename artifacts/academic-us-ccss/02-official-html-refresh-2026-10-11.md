@@ -1,7 +1,7 @@
 # Phase 02 — read-only official CCSS HTML refresh (2026-10-11)
 
-**Command:** `node tools/us-ccss-official-text-audit.cjs`  
-**Environment:** authorized isolated local clone of `EIAS79/Edulytics`, no Neon/Render write.  
+**Command:** `node tools/us-ccss-official-text-audit.cjs`
+**Environment:** authorized isolated local clone of `EIAS79/Edulytics`, no Neon/Render write.
 **Authority:** `thecorestandards.org` standard HTML pages listed in the repository's retained official source snapshot.
 
 | Inspection | Observed |

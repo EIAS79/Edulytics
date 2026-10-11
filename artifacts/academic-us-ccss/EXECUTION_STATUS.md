@@ -1,7 +1,7 @@
 # US CCSS academic certification — execution status
 
-**Programme:** `US-CCSS-MATH` / `CCSSM-2010` • **Scope:** Grades 1–12 (Kindergarten excluded)  
-**Decision:** **NO-GO** for full *internal* academic certification. **Not** a third-party accreditation.  
+**Programme:** `US-CCSS-MATH` / `CCSSM-2010` • **Scope:** Grades 1–12 (Kindergarten excluded)
+**Decision:** **NO-GO** for full *internal* academic certification. **Not** a third-party accreditation.
 **Plan:** [13-phase execution plan](../../docs/curriculum/EDULYTICS_US_CCSS_ACADEMIC_CERTIFICATION_EXECUTION_PLAN_2026-10-11.md)
 
 This register reports **implemented and evidenced work only**. A status of QUEUED or PARTIAL is never equivalent to PASS or academic sign-off.

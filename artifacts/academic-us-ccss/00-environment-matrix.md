@@ -1,6 +1,6 @@
 # Phase 00 — Connected environment verification matrix
 
-**Observed:** 2026-10-11. **Scope:** `US-CCSS-MATH / CCSSM-2010`, Grades 1–12 (Kindergarten excluded).  
+**Observed:** 2026-10-11. **Scope:** `US-CCSS-MATH / CCSSM-2010`, Grades 1–12 (Kindergarten excluded).
 **Status:** **PARTIAL / NO-GO**. All live data inspection was **read-only**.
 
 | Boundary | Verified finding | Release meaning |
