@@ -75,6 +75,90 @@ public sealed partial class MathematicsCurriculumPackSeeder
     private static string HashOfficialText(string text) =>
         Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(text))).ToLowerInvariant();
 
+    // Next immutable authority stage: five existing fixes -> Grade 8 superscript fix.
+    // Preserve the previously shipped five-fix manifest/digest unchanged.
+    private static VerifiedCommonCoreExponentRepair LoadExponentRepair(
+        Doc d, VerifiedCommonCoreAuthorityRepair previous)
+    {
+        var assembly = typeof(MathematicsCurriculumPackRegistry).Assembly;
+        var name = assembly.GetManifestResourceNames().SingleOrDefault(x =>
+            x.EndsWith("us-ccss-math.exponent-text-repair.json",
+                StringComparison.OrdinalIgnoreCase))
+            ?? throw new InvalidOperationException("Missing CCSS exponent authority addendum.");
+        using var stream = assembly.GetManifestResourceStream(name)
+            ?? throw new InvalidOperationException("Cannot read CCSS exponent authority addendum.");
+        var patch = JsonSerializer.Deserialize<VerifiedCommonCoreExponentRepair>(stream,
+            new JsonSerializerOptions { PropertyNameCaseInsensitive = true })
+            ?? throw new InvalidOperationException("Invalid CCSS exponent authority addendum.");
+        var original = d.Nodes.Single(x => x.Code == "CCSS:8.EE.A.1");
+        if (patch.SchemaVersion != 1 ||
+            patch.PackCode != MathematicsCurriculumPackRegistry.CommonCoreCode ||
+            patch.VersionCode != d.VersionCode ||
+            patch.Code != original.Code ||
+            patch.PreviousPatchedContentDigest != previous.PatchedContentDigest ||
+            original.Kind != "Standard" || !original.IsOfficial ||
+            patch.ExpectedOldContentHash != original.ContentHash ||
+            patch.ExpectedOldTextSha256 != HashOfficialText(original.OfficialText ?? "") ||
+            patch.CorrectedTextSha256 != HashOfficialText(patch.CorrectedOfficialText) ||
+            patch.CorrectedContentHash != HashOfficialText(
+                "EDULYTIKS-CCSS-TEXT-V1\n" + patch.Code + "\n" +
+                original.ContentHash + "\n" + patch.CorrectedOfficialText) ||
+            patch.PatchedContentDigest != HashOfficialText(
+                "EDULYTIKS-CCSS-TEXT-V1\n" +
+                patch.PreviousPatchedContentDigest + "\n" +
+                patch.Code + ":" + patch.CorrectedContentHash) ||
+            !Uri.TryCreate(patch.AuthorityUrl, UriKind.Absolute, out var url) ||
+            url.Scheme != Uri.UriSchemeHttps ||
+            (url.Host != "thecorestandards.org" &&
+             url.Host != "www.thecorestandards.org") ||
+            !patch.CorrectedOfficialText.Contains(
+                "3² × 3⁻⁵ = 3⁻³ = 1/3³ = 1/27", StringComparison.Ordinal))
+            throw new InvalidOperationException("CCSS exponent patch identity/hash/authority drift.");
+        return patch;
+    }
+
+    private static bool IsExponentRepairedState(
+        Doc d, CurriculumPackImportState state,
+        VerifiedCommonCoreExponentRepair exponent) =>
+        state.FrameworkCode == d.PackCode &&
+        state.VersionCode == d.VersionCode &&
+        state.SourceDigest == d.SourceDigest &&
+        state.ContentDigest == exponent.PatchedContentDigest &&
+        state.NodeCount == d.NodeCount &&
+        state.OfficialNodeCount == d.OfficialNodeCount &&
+        state.UnitCount == d.UnitCount &&
+        state.LessonCount == d.LessonCount &&
+        state.LinkCount == d.LinkCount &&
+        state.IsComplete;
+
+    private async Task ApplyExponentRepairAsync(
+        Doc d, CurriculumPackImportState state, Guid frameworkVersionId,
+        CancellationToken ct)
+    {
+        if (d.PackCode != MathematicsCurriculumPackRegistry.CommonCoreCode)
+            return;
+        var previous = LoadAuthorityRepair(d);
+        var patch = LoadExponentRepair(d, previous);
+        // Refuse altered/unknown states: exact predecessor digest only.
+        if (!IsAuthorityRepairedState(d, state, previous))
+            throw new InvalidOperationException("CCSS exponent transition requires exact five-fix predecessor.");
+        await ValidateAuthorityRepairedRowsAsync(d, frameworkVersionId, previous, ct);
+
+        var row = await _db.CurriculumPackContentNodes.SingleAsync(
+            x => x.FrameworkVersionId == frameworkVersionId && x.Code == patch.Code, ct);
+        if (row.ContentHash != patch.ExpectedOldContentHash ||
+            HashOfficialText(row.OfficialText ?? "") != patch.ExpectedOldTextSha256)
+            throw new InvalidOperationException("CCSS exponent row is not in its proven predecessor state.");
+        row.OfficialText = patch.CorrectedOfficialText;
+        row.ContentHash = patch.CorrectedContentHash;
+        row.UpdatedAtUtc = DateTime.UtcNow;
+        state.ContentDigest = patch.PatchedContentDigest;
+        state.ImportedAtUtc = DateTime.UtcNow;
+        await _db.SaveChangesAsync(ct);
+        await ValidateAuthorityRepairedRowsAsync(
+            d, frameworkVersionId, previous, ct, exponentPatched: true);
+    }
+
     private static bool IsAuthorityRepairedState(
         Doc d,
         CurriculumPackImportState state,
@@ -133,8 +217,10 @@ public sealed partial class MathematicsCurriculumPackSeeder
         Doc d,
         Guid frameworkVersionId,
         VerifiedCommonCoreAuthorityRepair manifest,
-        CancellationToken ct)
+        CancellationToken ct,
+        bool exponentPatched = false)
     {
+        var exponent = exponentPatched ? LoadExponentRepair(d, manifest) : null;
         var rows = await _db.CurriculumPackContentNodes.AsNoTracking()
             .Where(x => x.FrameworkVersionId == frameworkVersionId)
             .ToArrayAsync(ct);
@@ -163,9 +249,30 @@ public sealed partial class MathematicsCurriculumPackSeeder
                 ? patch.CorrectedOfficialText
                 : expected.OfficialText;
             var newHash = patch is null ? expected.ContentHash : patch.CorrectedContentHash;
+            if (exponent is not null && expected.Code == exponent.Code)
+            {
+                newText = exponent.CorrectedOfficialText;
+                newHash = exponent.CorrectedContentHash;
+            }
             if (row.OfficialText != newText || row.ContentHash != newHash)
                 throw new InvalidOperationException($"CCSS authority repair text/hash drift: {expected.Code}");
         }
+    }
+
+    private sealed class VerifiedCommonCoreExponentRepair
+    {
+        public int SchemaVersion { get; set; }
+        public string PackCode { get; set; } = "";
+        public string VersionCode { get; set; } = "";
+        public string PreviousPatchedContentDigest { get; set; } = "";
+        public string PatchedContentDigest { get; set; } = "";
+        public string Code { get; set; } = "";
+        public string AuthorityUrl { get; set; } = "";
+        public string ExpectedOldContentHash { get; set; } = "";
+        public string ExpectedOldTextSha256 { get; set; } = "";
+        public string CorrectedOfficialText { get; set; } = "";
+        public string CorrectedTextSha256 { get; set; } = "";
+        public string CorrectedContentHash { get; set; } = "";
     }
 
     private sealed class VerifiedCommonCoreAuthorityRepair
