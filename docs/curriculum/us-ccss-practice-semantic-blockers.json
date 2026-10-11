@@ -11,10 +11,26 @@
   "numericPracticeFamiliesAdded": 11,
   "remainingReleaseBlockers": [
     "Exact source child references missing for 15 clauses; 8 parent-standard lesson contexts received scoped numeric Practice fixes",
-    "HSF-BF.A.1.c function composition and HSF-BF.B.4.d restricting inverse domains need source-linked learner content, not just an unused correct numeric family",
+    "HSF-BF.A.1.c composition and HSF-BF.B.4.d quadratic domain restriction now have explicitly Edulytics-authored worked extensions and exact numeric families, but publisher child-code evidence remains absent and graphical/domain-reasoning grading is still not certified",
     "HSF-IF.C.7.d graph shape, asymptotes and end behavior require visual answer assessment beyond numeric parameters",
     "Diagram-based vector standards and explanatory probability decision-making need their own semantic and graphical graders",
     "No authenticated student/teacher end-to-end sessions yet; explicitly deferred by user"
   ],
-  "notice": "Targeted numeric code fixes may be released after CI, but full academic 121-clause certification is not yet proven."
+  "notice": "Targeted numeric code fixes may be released after CI, but full academic 121-clause certification is not yet proven.",
+  "originalEdulyticsExtensions": [
+    {
+      "clause": "HSF-BF.A.1.c",
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L10",
+      "bodyPolicy": "ORIGINAL_NOT_PUBLISHER_ATTRIBUTED",
+      "scopedFamily": "usccss.hs.function_composition",
+      "fullSemanticCertification": false
+    },
+    {
+      "clause": "HSF-BF.B.4.d",
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L15",
+      "bodyPolicy": "ORIGINAL_NOT_PUBLISHER_ATTRIBUTED",
+      "scopedFamily": "usccss.hs.restricted_inverse",
+      "fullSemanticCertification": false
+    }
+  ]
 }
