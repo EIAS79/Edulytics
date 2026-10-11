@@ -106,11 +106,15 @@ def run():
         source_new = after.get("SourceSha256", after.get("sourceSha256"))
         old_hash = row["expectedOriginalCanonicalBodySha256"]
         new_hash = row["expectedCorrectedCanonicalBodySha256"]
-        if old_hash == new_hash or previous not in (old_hash, new_hash):
+        intermediate = row.get("previousCorrectedCanonicalBodySha256")
+        if intermediate is not None and (intermediate == old_hash or intermediate == new_hash):
+            errors.append(f"invalid intermediate body fingerprint: {key}")
+        accepted_baselines = (old_hash, new_hash) + ((intermediate,) if intermediate else ())
+        if old_hash == new_hash or previous not in accepted_baselines:
             errors.append(f"approved baseline hash changed unexpectedly: {key}")
         if current != new_hash or source_old != row["expectedUnchangedSourceSha256"] or source_new != source_old:
             errors.append(f"verified corrected body/source hash mismatch: {key}")
-        if previous == old_hash:
+        if previous == old_hash or (intermediate is not None and previous == intermediate):
             changes_expected.add(key)
         if previous == new_hash and before.get("Translations", before.get("translations")) != after.get("Translations", after.get("translations")):
             errors.append(f"already-approved lesson edited again without a new body version: {key}")

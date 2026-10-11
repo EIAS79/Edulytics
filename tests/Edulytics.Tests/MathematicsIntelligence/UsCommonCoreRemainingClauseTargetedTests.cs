@@ -26,15 +26,15 @@ public sealed class UsCommonCoreRemainingClauseTargetedTests
         ["PED:US-CCSS-MATH:G3:U02:L08"] = ["usccss.g3.rectangle_unit_tiles"],
         ["PED:US-CCSS-MATH:G5:U01:L01"] = ["usccss.g5.unit_cube_count"],
         ["PED:US-CCSS-MATH:G6:U08:L17"] = ["usccss.g6.observation_count"],
-        ["PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L10"] = ["usccss.hs.function_sum"],
-        ["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L15"] = ["usccss.hs.inverse_composition", "usccss.hs.inverse_table"],
+        ["PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L10"] = ["usccss.hs.function_sum", "usccss.hs.function_composition"],
+        ["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L15"] = ["usccss.hs.inverse_composition", "usccss.hs.inverse_table", "usccss.hs.restricted_inverse"],
         ["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L16"] = ["usccss.hs.inverse_table"],
         ["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L17"] = ["usccss.hs.inverse_composition"],
         ["PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L17"] = ["usccss.hs.rational_vertical_asymptote", "usccss.hs.rational_x_intercept", "usccss.hs.rational_horizontal_asymptote"]
     };
 
     [Fact]
-    public void ExactPublisherLessonsHaveGradeAppropriateFamilyRouting()
+    public void ReviewedLessonsAndOriginalExtensionsHaveGradeAppropriateFamilyRouting()
     {
         Assert.Equal(8, PublisherLessons.Count);
         foreach (var (lessonCode, families) in PublisherLessons)
