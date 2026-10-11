@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHASE_04_GRADE_1_SOURCE_VERIFIED_CORRECTION_CANDIDATES",
+  "baselineSha": "2e1ea623514182259b73548db5dea6987094341a",
+  "humanAcademicApproval": "NOT_GRANTED",
+  "sourceLicensingApproval": "NOT_GRANTED",
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L13",
+      "publisherSource": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-13/preparation.html",
+      "canonicalSourceSha": "619ca1727ce80aad07b6487cedd836c7017369cf251c425d2090c2d32662affa",
+      "originalEnglishTextSha": "9d47d76f36eaa815741f5ce83bf807b30c490f30a48cb550812981ddef1864b9",
+      "issue": "Worked examples all generic arithmetic, failing central skill of questioning and interpreting categorical-data displays",
+      "repair": "Four Edulytics-original classroom data questions with values, comparison, total and unsupported-question contrast",
+      "contentVersion": "us-ccss-g1-u01-l13-data-questions-correction-v1"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L15",
+      "publisherSource": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-15/preparation.html",
+      "canonicalSourceSha": "68afdf12b866c914150e889635bda34a23420fc2ead634c36082b2fc4712f4ed",
+      "originalEnglishTextSha": "524c8057fd7450477edf66b60aa88c2057435e8abbb44ca6db0924f85b932882",
+      "issue": "Grade 1 survey lesson taught unsupported negative integer examples 1-4=-3 and 0-4=-4, unrelated to survey and tallies",
+      "repair": "Collect/organize/tally simple animal-survey data with valid positive differences",
+      "contentVersion": "us-ccss-g1-u01-l15-survey-and-tallies-correction-v1"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G1:U04:L03",
+      "publisherSource": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-3/lesson.html",
+      "canonicalSourceSha": "e353f2b71bd5eb8973dcf261433992a18a0bd8f454d84f27c0db0c33270f4a16",
+      "originalEnglishTextSha": "bcb915fa6c9669eebf4dfb723002e53aacccb21001948f1f11822dd480e5cf94",
+      "issue": "Multiples of ten lesson supplied 2-3=-1 and no tens examples",
+      "repair": "Multiple-of-ten examples using cube towers and inverse checks",
+      "contentVersion": "us-ccss-g1-u04-l03-tens-strategy-correction-v1"
+    }
+  ],
+  "guards": [
+    "Original canonical sources not edited",
+    "Source URL and canonical body SHA exact match",
+    "Full old English translation SHA check",
+    "Strict previous database version and stored-body SHA checks",
+    "Other lesson versions unchanged",
+    "No course/standard remapping"
+  ],
+  "approval": "NO-GO"
+}

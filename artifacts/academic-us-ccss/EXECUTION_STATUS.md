@@ -89,3 +89,12 @@ This entry supersedes earlier optimistic phase-progress labels. **No phase is ma
 - Independent academic reviewer identity and final release SHA are absent; Phase 00 remains **PARTIAL**, Phase 04 **NOT CERTIFIED**, programme **NO-GO**. Do not claim these gates are closed.
 - V1.1 plan is the controlling procedure; 00–12 phase boundaries and full reviewer gates are preserved.
 
+
+
+## V1.1 Phase 04 engineering candidate batch — Grade 1 source-aligned math (NO academic signoff)
+
+- Following machine-assisted review, the original embedded source contained three high-confidence topical defects in G1: Unit 1 Lessons 13 and 15 (categorical data questions and survey practice) and Unit 4 Lesson 3 (add/subtract tens).
+- Corrected Edulytics-owned learner-facing steps/examples with exact source SHA and prior full translation SHA guards. No official standard identifiers, publisher source pack text, production rows or child learning history modified.
+- Added independent arithmetic identity checks, correction idempotence/source drift/unknown persisted version fail-closed regression, and Rich V2 runtime verification.
+- Evidence: `04-grade1-source-verified-instructional-repair-candidates.json`. Human academic signoff and separate source license review are still required. Source-error candidates do **not** count as ACADEMICALLY_CERTIFIED.
+- Fixed whitespace carried from the V1.1 Markdown upload so the existing Evaluation Production Gate whitespace check does not fail. All CI must be rerun on the resulting SHA.
