@@ -1,5 +1,6 @@
 using System.Collections.Concurrent;
 using System.Globalization;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -680,10 +681,25 @@ public static partial class RichLessonContentV2RuntimeComposer
 
     private static string Clean(string? value)
     {
+        // Canonical publisher examples may contain encoded spacing and markup.
+        // Decode before composing Rich V2: this route bypasses the classic
+        // LessonPresentationParser. Only remove known formatting tags;
+        // mathematical comparisons such as 3/5 < 5/8 must survive intact.
+        // Razor still HTML-encodes the result when it is displayed.
+        var decoded = WebUtility.HtmlDecode(WebUtility.HtmlDecode(
+            value ?? string.Empty));
+
+        var plain = Regex.Replace(
+            decoded,
+            @"</?(?:p|div|br|strong|em|span|b|i)\b[^<>]*>",
+            " ",
+            RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+
         var normalized = Regex.Replace(
-            value ?? string.Empty,
+            plain,
             @"\s+",
-            " ").Trim();
+            " ",
+            RegexOptions.CultureInvariant).Trim();
 
         if (!string.IsNullOrWhiteSpace(normalized))
             return normalized;
