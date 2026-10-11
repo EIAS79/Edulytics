@@ -25,6 +25,7 @@ public static class CanonicalLessonContentMaterializer
             .ApplyApprovedCorrections(document);
         PolishLessonPracticeContentCorrections
             .ApplyApprovedCorrections(document);
+        CommonCoreG4MultiplesSourceCorrection.Apply(document);
 
         ValidateUnicode(document);
         CanonicalLessonContentPackContract.Validate(document);
@@ -165,11 +166,15 @@ public static class CanonicalLessonContentMaterializer
                     lesson,
                     official);
 
-        return CommonCoreRichContentCorrections
+        return CommonCoreG4MultiplesSourceCorrection
             .GetExpectedContentVersion(
                 document,
                 lesson,
-                polish);
+                CommonCoreRichContentCorrections
+                    .GetExpectedContentVersion(
+                        document,
+                        lesson,
+                        polish));
     }
 
     public static bool IsReviewedCorrectionTarget(
@@ -188,6 +193,8 @@ public static class CanonicalLessonContentMaterializer
         PolishLessonPracticeContentCorrections
             .IsTarget(document, lesson) ||
         CommonCoreRichContentCorrections
+            .IsTarget(document, lesson) ||
+        CommonCoreG4MultiplesSourceCorrection
             .IsTarget(document, lesson);
 
     public static bool CanUpgradeExisting(
@@ -222,6 +229,11 @@ public static class CanonicalLessonContentMaterializer
                 lesson,
                 existingContentVersion) ||
         CommonCoreRichContentCorrections
+            .CanUpgradeExisting(
+                document,
+                lesson,
+                existingContentVersion) ||
+        CommonCoreG4MultiplesSourceCorrection
             .CanUpgradeExisting(
                 document,
                 lesson,

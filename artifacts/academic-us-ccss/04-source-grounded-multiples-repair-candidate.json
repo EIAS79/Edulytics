@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "scope": "US-CCSS-MATH/CCSSM-2010/G1-G12",
+  "stage": "PHASE_04_CONTENT_REPAIR_CANDIDATE",
+  "recordedAtUtc": "2026-10-11",
+  "sourceBaselineSha": "fd72849823ae31b92e58fb420a373218fc25b328",
+  "lessonCode": "PED:US-CCSS-MATH:G4:U01:L01",
+  "officialStandard": "CCSS:4.OA.B.4",
+  "publisherLessonPage": "https://im.kendallhunt.com/k5/teachers/grade-4/unit-1/lesson-1/lesson.html",
+  "publisherPreparationPage": "https://im.kendallhunt.com/k5/teachers/grade-4/unit-1/lesson-1/preparation.html",
+  "publisherLessonFocus": "Rectangular arrays with fixed widths, area by multiplication, multiples and divisibility by whole numbers",
+  "originalCanonicalBodySha256": "b18e1bed2b1e3ad2d363bf493e5327be0f117e834958a6779ef018cc8c2e8b81",
+  "legacyProblem": "Original Grade 4 multiples explanatory focus was followed by geometric shape-classification solution steps, a mismatched key concept, and an HTML entity in worked examples.",
+  "candidateCorrection": "Original Edulytics-authored worked examples for fixed-width rectangular arrays, 3*n areas, area 28 feasibility, 4*7, distinct five-step multiplication reasoning, precise common mistakes.",
+  "candidateImplementation": {
+    "class": "CommonCoreG4MultiplesSourceCorrection",
+    "materializer": "CanonicalLessonContentMaterializer",
+    "contentVersion": "us-ccss-g4-u01-l01-multiples-source-correction-v1",
+    "sourceRowMutation": false,
+    "existingOtherLessonsPreserved": true,
+    "expectedTests": [
+      "source/provenance guard",
+      "idempotence",
+      "numeric invariants",
+      "unchanged unrelated Grade 4 lesson"
+    ],
+    "productionDeployment": false
+  },
+  "verification": {
+    "publisherLessonIndependentRead": "DONE",
+    "mathematicalArithmeticChecks": "IN_CODE_TESTS_AWAITING_CI",
+    "seederPersistenceAndHistoricalRehearsal": "NOT_VERIFIED",
+    "independentAcademicReviewer": "NOT_ASSIGNED",
+    "academicSignoff": "PENDING"
+  },
+  "releaseDecision": "NO-GO",
+  "warning": "Source-grounded engineering candidate only. Do not count this as an independently certified lesson or deploy it before exact-SHA regression, stage acceptance, and release authorization."
+}
