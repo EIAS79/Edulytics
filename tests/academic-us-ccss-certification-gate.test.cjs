@@ -43,3 +43,23 @@ test('tracked authority inputs are SHA-256 fingerprinted', () => {
     assert.ok(report.inputFiles[name].path.startsWith('docs/curriculum/'));
   }
 });
+
+test('predeployment gate does not demand impossible postdeployment verification', () => {
+  const {result, report} = run(['--stage=predeploy']);
+  assert.equal(result.status, 0);
+  assert.equal(report.gateStage, 'predeploy');
+  assert.equal(report.decision, 'NO-GO');
+  assert.ok(report.blockers.some(x => x.code === 'RELEASE_AUTHORIZATION_MISSING'));
+  assert.ok(!report.blockers.some(x => x.code === 'PRODUCTION_VALIDATION_MISSING'));
+});
+test('final gate requires production verification even with the same baseline', () => {
+  const {result, report} = run(['--stage=final', '--strict']);
+  assert.equal(result.status, 2);
+  assert.equal(report.gateStage, 'final');
+  assert.ok(report.blockers.some(x => x.code === 'PRODUCTION_VALIDATION_MISSING'));
+});
+test('invalid gate stages cannot accidentally permit academic certification', () => {
+  const result = spawnSync(process.execPath, [tool, '--stage=ignore-production'], {encoding:'utf8'});
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /Allowed gate stages/);
+});
