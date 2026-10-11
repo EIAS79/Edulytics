@@ -10,6 +10,9 @@ const root = path.resolve(__dirname, '..');
 const auditPath = path.join(root, 'artifacts/academic-us-ccss/04-lesson-academic-audit.json');
 const recordsPath = path.join(root, 'artifacts/academic-us-ccss/04-lesson-certification-records.json');
 const gateNames = ['L1','L2','L3','L4','L5','L6','L7'];
+const workflowStates = new Set(['QUEUED','AUTOMATED_SCREENED','CONTENT_REVIEWED',
+  'EVIDENCE_READY','AWAITING_ACADEMIC_SIGNOFF','ACADEMICALLY_CERTIFIED',
+  'BLOCKED','REWORK_REQUIRED']);
 const EXPECTED_LESSONS = 1560;
 const SOURCE_SCOPE = 'US-CCSS-MATH/CCSSM-2010/G1-G12';
 
@@ -18,6 +21,11 @@ const assert = (condition, message) => {
 };
 const nonempty = value => typeof value === 'string' && value.trim().length > 0;
 const isSha = value => typeof value === 'string' && /^[a-f0-9]{64}$/i.test(value);
+const isCommitSha = value => typeof value === 'string' && /^[a-f0-9]{40}$/i.test(value);
+const isUtcTimestamp = value => typeof value === 'string' &&
+  /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?Z$/.test(value) &&
+  Number.isFinite(Date.parse(value)) &&
+  new Date(value).toISOString().replace(/\.000Z$/, 'Z') === value.replace(/\.000Z$/, 'Z');
 
 function loadSource(file = auditPath) {
   const input = JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -38,7 +46,7 @@ function loadSource(file = auditPath) {
   return input;
 }
 
-const emptyGate = () => ({ status: 'NOT_STARTED', evidenceIds: [], verifiedAtUtc: null });
+const emptyGate = () => ({ status: 'NOT_STARTED', evidenceIds: [], verifiedAtUtc: null, sourceSha: null });
 function createInitialLedger(source) {
   const records = source.records.map(row => ({
     lessonCode: row.lessonCode,
@@ -109,12 +117,34 @@ function validateLedger(source, ledger) {
       if (gate.status === 'PASS') {
         assert(gate.evidenceIds.length > 0 && nonempty(gate.verifiedAtUtc),
           'PASS without evidence/time: ' + row.lessonCode + '/' + gateName);
+        assert(isUtcTimestamp(gate.verifiedAtUtc),
+          'PASS without valid UTC verification timestamp: ' + row.lessonCode + '/' + gateName);
+        assert(isCommitSha(gate.sourceSha),
+          'PASS without exact source commit SHA: ' + row.lessonCode + '/' + gateName);
       }
     }
     assert(Array.isArray(row.unresolvedDefects),
       'Missing defect list: ' + row.lessonCode);
+    assert(workflowStates.has(row.status),
+      'Unknown lesson workflow state: ' + row.lessonCode);
+    const contentGatesPassed = ['L1','L2','L3','L4']
+      .every(g => row.gates[g].status === 'PASS');
+    const technicalGatesPassed = ['L1','L2','L3','L4','L5','L6']
+      .every(g => row.gates[g].status === 'PASS');
+    if (row.status === 'CONTENT_REVIEWED') {
+      assert(contentGatesPassed, 'Content-reviewed state requires L1-L4: ' + row.lessonCode);
+    }
+    if (row.status === 'EVIDENCE_READY' || row.status === 'AWAITING_ACADEMIC_SIGNOFF') {
+      assert(technicalGatesPassed, 'Evidence-ready state requires L1-L6: ' + row.lessonCode);
+    }
     const allPassed = gateNames.every(g => row.gates[g].status === 'PASS');
     if (row.academicDecision === 'ACADEMICALLY_CERTIFIED') {
+      assert(row.status === 'ACADEMICALLY_CERTIFIED',
+        'Certified decision requires certified workflow state: ' + row.lessonCode);
+      assert(isCommitSha(ledger.releaseCandidateSha),
+        'Certified lesson requires pinned release candidate SHA: ' + row.lessonCode);
+      assert(row.gates.L7.sourceSha === ledger.releaseCandidateSha,
+        'L7 signature SHA differs from release candidate: ' + row.lessonCode);
       assert(allPassed && nonempty(row.independentReviewerId) &&
         nonempty(row.signedAtUtc) && nonempty(row.signoffEvidenceId) &&
         row.unresolvedDefects.length === 0,
@@ -125,6 +155,8 @@ function validateLedger(source, ledger) {
         'Unrecognized academic decision: ' + row.lessonCode);
       assert(row.gates.L7.status !== 'PASS',
         'L7 human signature cannot PASS an uncertified lesson: ' + row.lessonCode);
+      assert(row.status !== 'ACADEMICALLY_CERTIFIED',
+        'Unsigned lesson cannot hold certified workflow state: ' + row.lessonCode);
     }
     if (row.status === 'AWAITING_ACADEMIC_SIGNOFF') summary.awaitingSignoff++;
     if (row.status === 'EVIDENCE_READY') summary.evidenceReady++;
@@ -132,7 +164,7 @@ function validateLedger(source, ledger) {
   }
   assert(seen.size === EXPECTED_LESSONS,'Certification ledger is incomplete');
   if (ledger.releaseCandidateSha !== null) {
-    assert(/^[0-9a-f]{40}$/i.test(ledger.releaseCandidateSha),
+    assert(isCommitSha(ledger.releaseCandidateSha),
       'Release candidate must be null or a full git SHA');
   }
   return summary;

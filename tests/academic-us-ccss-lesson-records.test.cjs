@@ -75,3 +75,48 @@ test('Release candidate SHA is only null or exact git SHA', () => {
   base.releaseCandidateSha = 'not-a-sha';
   assert.throws(() => validateLedger(source,base), /full git SHA/);
 });
+
+test('Workflow states cannot outrun evidence from L1-L6', () => {
+  const source = loadSource(), original = createInitialLedger(source);
+  for (const state of ['CONTENT_REVIEWED','EVIDENCE_READY','AWAITING_ACADEMIC_SIGNOFF']) {
+    const ledger = structuredClone(original);
+    ledger.records[0].status = state;
+    assert.throws(() => validateLedger(source, ledger), /requires L1-L[46]/);
+  }
+  const invalid = structuredClone(original);
+  invalid.records[0].status = 'SIGNED_BY_AI';
+  assert.throws(() => validateLedger(source, invalid), /Unknown lesson workflow state/);
+});
+
+test('Gate PASS needs valid UTC timestamp and exact source SHA', () => {
+  const source = loadSource(), base = createInitialLedger(source);
+  const gate = base.records[0].gates.L1;
+  gate.status = 'PASS'; gate.evidenceIds = ['proof'];
+  gate.sourceSha = 'a'.repeat(40); gate.verifiedAtUtc = '2026-02-30T10:00:00Z';
+  assert.throws(() => validateLedger(source,base), /valid UTC verification timestamp/);
+  gate.verifiedAtUtc = '2026-10-12T01:00:00Z'; gate.sourceSha = 'bad-sha';
+  assert.throws(() => validateLedger(source,base), /exact source commit SHA/);
+  gate.sourceSha = 'a'.repeat(40);
+  assert.equal(validateLedger(source,base).certified,0);
+});
+
+test('Unsigned lessons cannot claim the certified workflow state', () => {
+  const source = loadSource(), base = createInitialLedger(source);
+  base.records[0].status = 'ACADEMICALLY_CERTIFIED';
+  assert.throws(() => validateLedger(source,base), /Unsigned lesson cannot hold certified workflow state/);
+});
+
+test('Synthetic PASS metadata cannot certify without a pinned matching release SHA', () => {
+  const source = loadSource(), base = createInitialLedger(source);
+  const row = base.records[0];
+  for (const name of ['L1','L2','L3','L4','L5','L6','L7']) {
+    row.gates[name] = {status: 'PASS', evidenceIds: ['proof:'+name],
+      verifiedAtUtc: '2026-10-12T01:00:00Z', sourceSha: 'a'.repeat(40)};
+  }
+  row.status = 'ACADEMICALLY_CERTIFIED'; row.academicDecision = 'ACADEMICALLY_CERTIFIED';
+  row.independentReviewerId = 'synthetic'; row.signedAtUtc = '2026-10-12T01:00:00Z';
+  row.signoffEvidenceId = 'synthetic';
+  assert.throws(() => validateLedger(source,base), /pinned release candidate SHA/);
+  base.releaseCandidateSha = 'b'.repeat(40);
+  assert.throws(() => validateLedger(source,base), /L7 signature SHA differs/);
+});
