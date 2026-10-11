@@ -54,3 +54,27 @@ Every future milestone must record a tested SHA, evidence links, reviewed compet
 - One earlier whole-suite run saw **2,247 pass + 1 timeout/concurrency test fail**, which passed when rerun alone. This is not yet evidence of a clean full suite on the exact latest SHA.
 - The official source refresh result is stored at [02-official-html-refresh-2026-10-11.md](02-official-html-refresh-2026-10-11.md). No academic source mismatch or child clause has been auto-approved.
 - Production/Neon data still untouched. Existing eight ambiguous school adoptions require deliberate reviewed rebind; approval, staging and deployment gates remain NO-GO.
+
+## Strict phase-close audit — 2026-10-11 (source baseline fd728498)
+
+This entry supersedes earlier optimistic phase-progress labels. **No phase is marked academically PASS merely because it has a JSON register or green engineering CI.** The input baseline is `fd72849823ae31b92e58fb420a373218fc25b328`, not a self-signed final release candidate.
+
+| Phase | Implementation / evidence added in this batch | Unresolved exit gate |
+|---|---|---|
+| 00 | Recomputed 363 parents, 121 children, 17 source blueprints, 1560 lessons. New `00-source-manifest.json` and refreshed `00-environment-matrix.md`. | External academic owner/reviewer and final target SHA not locked; PARTIAL |
+| 01 | `01-authority-registry.json` with page URLs/hashes, `01-publisher-provenance.json` with all 1560 lesson URL/source claims including nested HS sources, `01-licensing-review.md`. No missing committed source URLs or source roots after correct V2 parser. | License/edition permissions and attribution not independently signed; PARTIAL |
+| 02 | Re-fetched official HTML: 363 parents, 121 child codes, 107 historical original-pack mismatches; 9 prior SHA-guarded repairs; exactly 98 independent decisions open (12 P1, 26 P2, 60 P3). `02-*dispositions.json`, reviewed-manifest and digest-chain reports, direct Neon read-only proof of 3 old HS rows and predecessor digest. | 98 decisions unreviewed, 3 corrections not migrated; Neon refused fresh snapshot: snapshots limit exceeded; BLOCKED |
+| 03 | Previously deployed nine-source-course model and fail-closed practice; issue #453 remains open. | Eight real legacy school adoptions need **authorized individual course choice** and complete cross-course teacher/assessment/staging proof; BLOCKED |
+| 04 | `04-automated-content-risk-audit.json` covers 1560 lesson bodies. 1420 reuse a solution-procedure text shared with at least 3 other lessons; most common template occurs in 747. Twenty HTML entity leaks and one narrow high-confidence topic/procedure mismatch flagged. | 1560 independent academic reviews plus verified, non-generic examples/solutions outstanding. Repetition is a review trigger, not proof every reused procedure is wrong; BLOCKED |
+| 05 | `05-clause-coverage-gaps.md` lists 63 child clauses with no ready candidate and 15 parent-only publisher references; existing separate traceability queues cover 363+121. | 0/121 clauses independently certified; 363 parent standards require full competency evidence; BLOCKED |
+| 06 | No speculative new skills/families were invented. | Independently reviewed exact SkillContract/question families for unserved clauses not complete |
+| 07 | Existing math runtime checks and prior CI evidence remain engineering-only. | Independent solvers, constructed-response rubrics, graphs/proofs and teacher review not signed |
+| 08 | Previously deployed private Practice HS course isolation. | Every scope/Assessment/Adaptive/Mastery surface still needs full rubric/tenancy integration evidence |
+| 09 | New deterministic Node audit tests **3/3 PASS**, existing certification fail-closed tests **6/6 PASS**. Prior CI accepted software release SHA fd728498. | Local full .NET rerun was **not executed successfully**: device ran out of disk; real authenticated Staging and exact final candidate still needed |
+| 10 | Academic signoff controls continue to fail closed. | Independent human review/signatures **not provided** |
+| 11 | Evidence gate returns **NO-GO**, correctly. | A `GO` cannot be issued without all prior gates and release owners |
+| 12 | The earlier technical bugfix is live on Render `fd728498`; read-only production data untouched by this batch. | **No academically certified rollout**; new clean snapshot denied, restoring backup and approved live content migration still required |
+
+**Release classification:** technical code live from prior PRs; G1–G12 internal academic certification **NO-GO**; NO external accreditation claim. Follow-up changes are on a clean source baseline for review, not automatically deployed. No destructive Neon operation, grade/course remapping or production certification performed.
+
+**Do not fix by automated replacement:** exact solution text repetition, source mapping and constructed-response correctness require source-grounded, competency-by-competency editorial and independent mathematical review. A code agent cannot sign its own academic approval.
