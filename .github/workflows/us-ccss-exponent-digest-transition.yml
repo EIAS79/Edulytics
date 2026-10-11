@@ -1,4 +1,4 @@
-name: US CCSS Exponent Digest Transition
+name: US CCSS Official Notation Digest Transition
 
 on:
   pull_request:
@@ -6,6 +6,8 @@ on:
       - 'src/Edulytics.Data/Seeding/MathematicsCurriculumPackSeeder.CommonCoreAuthorityRepair.cs'
       - 'src/Edulytics.Data/Seeding/MathematicsCurriculumPackSeeder.cs'
       - 'src/Edulytics.Core/Curriculum/Packs/us-ccss-math.exponent-text-repair.json'
+      - 'src/Edulytics.Core/Curriculum/Packs/us-ccss-math.hs-notation-text-repairs.json'
+      - 'tests/Edulytics.Tests/Phase275/CommonCoreVerifiedHighSchoolNotationRepairTests.cs'
       - 'tests/Edulytics.Tests/Phase275/CommonCoreVerifiedExponentTextRepairTests.cs'
       - '.github/workflows/us-ccss-exponent-digest-transition.yml'
   workflow_dispatch:
@@ -58,7 +60,7 @@ jobs:
             --project src/Edulytics.Data/Edulytics.Data.csproj \
             --startup-project src/Edulytics.Web/Edulytics.Web.csproj \
             --context EdulyticsDbContext
-      - name: New empty database transitions baseline to five to six and validates result
+      - name: New empty database applies all nine source-verified corrections in order
         run: |
           set -euo pipefail
           dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj \
@@ -76,42 +78,77 @@ jobs:
             IF n<>1 THEN RAISE EXCEPTION 'Grade 8 correction not seeded'; END IF;
             SELECT count(*) INTO n FROM "CurriculumPackImportStates"
             WHERE "FrameworkCode"='US-CCSS-MATH'
-              AND "ContentDigest"='b9e10bdceab9cb587ba9ea25797336d85b9ef76442b8783dff0ef770696c747f';
+              AND "ContentDigest"='be9a88634c634bd75cc102cbadf556f3791daaa003f2874d7d458cfc27da4e87';
             IF n<>1 THEN RAISE EXCEPTION 'Next digest not persisted'; END IF;
           END $$;
           SQL
-      - name: Rehearse exact previously shipped five-fix state to sixth correction, then idempotency
+
+      - name: Rehearse six-fix predecessor to nine fixes, preserve unrelated nodes and idempotency
         run: |
           set -euo pipefail
-          non_target_sql='SELECT count(*)::text || chr(58) || md5(string_agg("Code" || chr(58) || "ContentHash",chr(124) ORDER BY "Code")) FROM "CurriculumPackContentNodes" WHERE "FrameworkCode"='\''US-CCSS-MATH'\'' AND "Code"<>'\''CCSS:8.EE.A.1'\'';'
-          before="$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c "$non_target_sql")"
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At <<'SQL' > /tmp/ccss-other-hashes.before
+          SELECT count(*)::text || ':' ||
+            md5(string_agg("Code" || ':' || "ContentHash", '|'
+                ORDER BY "Code"))
+          FROM "CurriculumPackContentNodes"
+          WHERE "FrameworkCode"='US-CCSS-MATH'
+            AND "Code" NOT IN ('CCSS:HSA-SSE.A.2', 'CCSS:HSA-APR.C.4', 'CCSS:HSN-RN.A.1');
+          SQL
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -v ON_ERROR_STOP=1 <<'SQL'
           BEGIN;
           DO $$
           DECLARE n integer;
           BEGIN
             UPDATE "CurriculumPackContentNodes"
-            SET "OfficialText"='Know and apply the properties of integer exponents to generate equivalent numerical expressions. For example, 32 × 3–5 = 3–3 = 1/33 = 1/27.',
-                "ContentHash"='fd1feefe65af5b20a1ab8987eed47236ab11260e76ae8f97ac16acf7a2840bd1'
+            SET "OfficialText"='Use the structure of an expression to identify ways to rewrite it. For example, see x4 – y4 as (x2)2 – (y2)2, thus recognizing it as a difference of squares that can be factored as (x2 – y2)(x2 + y2).',
+                "ContentHash"='d775594f77f821543895496c1148e9d8e507e33d6b2bf5c44313ed6ed83487e7'
             WHERE "FrameworkCode"='US-CCSS-MATH'
-              AND "Code"='CCSS:8.EE.A.1'
-              AND "ContentHash"='5158fc348ad0bddef604ca0dd20dfa08d9b0472c9aef5101e16dcbcf26ce9f52';
+              AND "Code"='CCSS:HSA-SSE.A.2'
+              AND "ContentHash"='20104345040da34562d22b60f6605445825d92a164abff4354286380698eb18e';
             GET DIAGNOSTICS n=ROW_COUNT;
-            IF n<>1 THEN RAISE EXCEPTION 'Not the verified sixth repair predecessor'; END IF;
+            IF n<>1 THEN RAISE EXCEPTION 'Cannot reconstruct verified six-fix predecessor for CCSS:HSA-SSE.A.2'; END IF;
+            UPDATE "CurriculumPackContentNodes"
+            SET "OfficialText"='Prove polynomial identities and use them to describe numerical relationships. For example, the polynomial identity (x2 + y2)2 = (x2 – y2)2 + (2xy)2 can be used to generate Pythagorean triples.',
+                "ContentHash"='37c5686ccf2ee8fdeef8b0dc73b95b0ed591025da8dde74d20e44e673ec37633'
+            WHERE "FrameworkCode"='US-CCSS-MATH'
+              AND "Code"='CCSS:HSA-APR.C.4'
+              AND "ContentHash"='903a4daac7b28dd71b5ce58567ecc90632d91fb4de0d36cf91d3a7db9df47c98';
+            GET DIAGNOSTICS n=ROW_COUNT;
+            IF n<>1 THEN RAISE EXCEPTION 'Cannot reconstruct verified six-fix predecessor for CCSS:HSA-APR.C.4'; END IF;
+            UPDATE "CurriculumPackContentNodes"
+            SET "OfficialText"='Explain how the definition of the meaning of rational exponents follows from extending the properties of integer exponents to those values, allowing for a notation for radicals in terms of rational exponents. For example, we define 51/3 to be the cube root of 5 because we want (51/3)3 = 5(1/3)3 to hold, so (51/3)3 must equal 5.',
+                "ContentHash"='e824cb57e54b599daf535ff4b827bb6f8c99a9056fa0775d9417175e7efcde12'
+            WHERE "FrameworkCode"='US-CCSS-MATH'
+              AND "Code"='CCSS:HSN-RN.A.1'
+              AND "ContentHash"='f5fdb7014f26c082afea5993bd2dd1c7bc96031b59cfd7f32d33936a9e97eb20';
+            GET DIAGNOSTICS n=ROW_COUNT;
+            IF n<>1 THEN RAISE EXCEPTION 'Cannot reconstruct verified six-fix predecessor for CCSS:HSN-RN.A.1'; END IF;
             UPDATE "CurriculumPackImportStates"
-            SET "ContentDigest"='ff7ed43424c744515341defc0324701e49ca9c02701f918e99e9c27ba751fded'
+            SET "ContentDigest"='b9e10bdceab9cb587ba9ea25797336d85b9ef76442b8783dff0ef770696c747f'
             WHERE "FrameworkCode"='US-CCSS-MATH'
-              AND "ContentDigest"='b9e10bdceab9cb587ba9ea25797336d85b9ef76442b8783dff0ef770696c747f';
+              AND "ContentDigest"='be9a88634c634bd75cc102cbadf556f3791daaa003f2874d7d458cfc27da4e87';
             GET DIAGNOSTICS n=ROW_COUNT;
-            IF n<>1 THEN RAISE EXCEPTION 'Not the verified five-fix digest predecessor'; END IF;
+            IF n<>1 THEN RAISE EXCEPTION 'Cannot reconstruct verified six-fix predecessor digest'; END IF;
           END $$;
           COMMIT;
           SQL
           dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj \
-            > /tmp/us-exponent-upgrade.log 2>&1 || { tail -n 70 /tmp/us-exponent-upgrade.log; exit 1; }
-          after="$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c "$non_target_sql")"
-          test "$before" = "$after"
-          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c "SELECT count(*) FROM \"CurriculumPackImportStates\" WHERE \"FrameworkCode\"='US-CCSS-MATH' AND \"ContentDigest\"='b9e10bdceab9cb587ba9ea25797336d85b9ef76442b8783dff0ef770696c747f';")" = 1
+            > /tmp/us-hs-nine-upgrade.log 2>&1 || { tail -n 70 /tmp/us-hs-nine-upgrade.log; exit 1; }
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At <<'SQL' > /tmp/ccss-other-hashes.after
+          SELECT count(*)::text || ':' ||
+            md5(string_agg("Code" || ':' || "ContentHash", '|'
+                ORDER BY "Code"))
+          FROM "CurriculumPackContentNodes"
+          WHERE "FrameworkCode"='US-CCSS-MATH'
+            AND "Code" NOT IN ('CCSS:HSA-SSE.A.2', 'CCSS:HSA-APR.C.4', 'CCSS:HSN-RN.A.1');
+          SQL
+          cmp /tmp/ccss-other-hashes.before /tmp/ccss-other-hashes.after
+          digest="$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At <<'SQL'
+          SELECT "ContentDigest" FROM "CurriculumPackImportStates"
+          WHERE "FrameworkCode"='US-CCSS-MATH';
+          SQL
+          )"
+          test "$digest" = 'be9a88634c634bd75cc102cbadf556f3791daaa003f2874d7d458cfc27da4e87'
           dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj \
-            > /tmp/us-exponent-idempotent.log 2>&1 || { tail -n 70 /tmp/us-exponent-idempotent.log; exit 1; }
-          echo 'CCSS_G8_BASELINE_FIVE_SIX_AND_IDEMPOTENT_PASS'
+            > /tmp/us-hs-nine-idempotent.log 2>&1 || { tail -n 70 /tmp/us-hs-nine-idempotent.log; exit 1; }
+          echo 'CCSS_HS_BASELINE_SIX_NINE_AND_IDEMPOTENT_PASS'

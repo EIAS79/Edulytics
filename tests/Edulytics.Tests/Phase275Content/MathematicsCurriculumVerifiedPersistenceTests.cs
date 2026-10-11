@@ -63,6 +63,17 @@ public sealed class MathematicsCurriculumVerifiedPersistenceTests
         return JsonDocument.Parse(stream);
     }
 
+    private static JsonDocument LoadCommonCoreHsNotationCorrectionManifest()
+    {
+        var assembly = typeof(MathematicsCurriculumPackRegistry).Assembly;
+        var name = assembly.GetManifestResourceNames().Single(x =>
+            x.EndsWith("us-ccss-math.hs-notation-text-repairs.json",
+                StringComparison.OrdinalIgnoreCase));
+        using var stream = assembly.GetManifestResourceStream(name)
+            ?? throw new InvalidOperationException("Common Core high school notation addendum missing.");
+        return JsonDocument.Parse(stream);
+    }
+
     private static string Sha256(
         string value)
     {
@@ -203,9 +214,12 @@ public sealed class MathematicsCurriculumVerifiedPersistenceTests
         Assert.Equal(
             repairRoot.GetProperty("patchedContentDigest").GetString(),
             exponentRoot.GetProperty("previousPatchedContentDigest").GetString());
-        Assert.Equal(
-            state.ContentDigest,
-            exponentRoot.GetProperty("patchedContentDigest").GetString());
+        using var hsNotationCorrection = LoadCommonCoreHsNotationCorrectionManifest();
+        var hsNotationRoot = hsNotationCorrection.RootElement;
+        Assert.Equal(exponentRoot.GetProperty("patchedContentDigest").GetString(),
+            hsNotationRoot.GetProperty("previousPatchedContentDigest").GetString());
+        Assert.Equal(state.ContentDigest,
+            hsNotationRoot.GetProperty("patchedContentDigest").GetString());
 
         Assert.Equal(
             385,
@@ -254,6 +268,9 @@ public sealed class MathematicsCurriculumVerifiedPersistenceTests
         }
         expectedHashes[exponentRoot.GetProperty("code").GetString()!] =
             exponentRoot.GetProperty("correctedTextSha256").GetString()!;
+        foreach (var patched in hsNotationRoot.GetProperty("replacements").EnumerateArray())
+            expectedHashes[patched.GetProperty("code").GetString()!] =
+                patched.GetProperty("correctedTextSha256").GetString()!;
 
         var versionId =
             state.FrameworkVersionId;

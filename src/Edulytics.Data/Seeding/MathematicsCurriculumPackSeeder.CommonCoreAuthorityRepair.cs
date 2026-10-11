@@ -159,6 +159,125 @@ public sealed partial class MathematicsCurriculumPackSeeder
             d, frameworkVersionId, previous, ct, exponentPatched: true);
     }
 
+
+    // Third, additive authority stage. The original accepted pack, five-fix
+    // manifest and Grade 8 exponent addendum remain immutable predecessors.
+    private static VerifiedCommonCoreHsNotationRepair LoadHsNotationRepair(
+        Doc d, VerifiedCommonCoreExponentRepair prior)
+    {
+        var assembly = typeof(MathematicsCurriculumPackRegistry).Assembly;
+        var name = assembly.GetManifestResourceNames().SingleOrDefault(x =>
+            x.EndsWith("us-ccss-math.hs-notation-text-repairs.json",
+                StringComparison.OrdinalIgnoreCase))
+            ?? throw new InvalidOperationException("Missing CCSS high school notation addendum.");
+        using var stream = assembly.GetManifestResourceStream(name)
+            ?? throw new InvalidOperationException("Cannot read CCSS high school notation addendum.");
+        var patchSet = JsonSerializer.Deserialize<VerifiedCommonCoreHsNotationRepair>(stream,
+            new JsonSerializerOptions { PropertyNameCaseInsensitive = true })
+            ?? throw new InvalidOperationException("Invalid CCSS high school notation addendum.");
+        var expectedCodes = new[]
+        {
+            "CCSS:HSA-SSE.A.2", "CCSS:HSA-APR.C.4", "CCSS:HSN-RN.A.1"
+        };
+        if (patchSet.SchemaVersion != 1 ||
+            patchSet.PackCode != MathematicsCurriculumPackRegistry.CommonCoreCode ||
+            patchSet.VersionCode != d.VersionCode ||
+            patchSet.PreviousPatchedContentDigest != prior.PatchedContentDigest ||
+            patchSet.Replacements.Count != expectedCodes.Length ||
+            !patchSet.Replacements.Select(x => x.Code)
+                .OrderBy(x => x, StringComparer.Ordinal)
+                .SequenceEqual(expectedCodes.OrderBy(x => x, StringComparer.Ordinal)) ||
+            patchSet.Replacements.Any(p => !Uri.TryCreate(p.AuthorityUrl,
+                    UriKind.Absolute, out var url) ||
+                url.Scheme != Uri.UriSchemeHttps ||
+                (url.Host != "thecorestandards.org" &&
+                 url.Host != "www.thecorestandards.org")))
+            throw new InvalidOperationException("CCSS high-school correction identity/source drift.");
+
+        var originals = d.Nodes.ToDictionary(x => x.Code, StringComparer.Ordinal);
+        foreach (var patch in patchSet.Replacements)
+        {
+            if (!originals.TryGetValue(patch.Code, out var original) ||
+                original.Kind != "Standard" || !original.IsOfficial ||
+                patch.ExpectedOldContentHash != original.ContentHash ||
+                patch.ExpectedOldTextSha256 != HashOfficialText(original.OfficialText ?? "") ||
+                patch.CorrectedTextSha256 != HashOfficialText(patch.CorrectedOfficialText) ||
+                patch.CorrectedContentHash != HashOfficialText(
+                    "EDULYTIKS-CCSS-TEXT-V1\n" + patch.Code + "\n" +
+                    original.ContentHash + "\n" + patch.CorrectedOfficialText))
+                throw new InvalidOperationException(
+                    $"CCSS high-school official notation hash drift: {patch.Code}");
+        }
+        if (patchSet.PatchedContentDigest != HashOfficialText(
+            "EDULYTIKS-CCSS-TEXT-V1\n" + patchSet.PreviousPatchedContentDigest +
+            "\n" + string.Join("\n",
+                patchSet.Replacements.Select(p => p.Code + ":" + p.CorrectedContentHash))))
+            throw new InvalidOperationException("CCSS high-school notation chain digest drift.");
+
+        if (!patchSet.Replacements.Single(x => x.Code == "CCSS:HSA-SSE.A.2")
+                .CorrectedOfficialText.Contains(
+                    "(x² − y²)(x² + y²)", StringComparison.Ordinal) ||
+            !patchSet.Replacements.Single(x => x.Code == "CCSS:HSA-APR.C.4")
+                .CorrectedOfficialText.Contains(
+                    "(x² + y²)² = (x² − y²)² + (2xy)²", StringComparison.Ordinal) ||
+            !patchSet.Replacements.Single(x => x.Code == "CCSS:HSN-RN.A.1")
+                .CorrectedOfficialText.Contains(
+                    "(5^(1/3))³ = 5^((1/3)3)", StringComparison.Ordinal))
+            throw new InvalidOperationException("CCSS high school exponent notation invalid.");
+        return patchSet;
+    }
+
+    private static bool IsHsNotationRepairedState(
+        Doc d, CurriculumPackImportState state,
+        VerifiedCommonCoreHsNotationRepair patchSet) =>
+        state.FrameworkCode == d.PackCode &&
+        state.VersionCode == d.VersionCode &&
+        state.SourceDigest == d.SourceDigest &&
+        state.ContentDigest == patchSet.PatchedContentDigest &&
+        state.NodeCount == d.NodeCount &&
+        state.OfficialNodeCount == d.OfficialNodeCount &&
+        state.UnitCount == d.UnitCount &&
+        state.LessonCount == d.LessonCount &&
+        state.LinkCount == d.LinkCount &&
+        state.IsComplete;
+
+    private async Task ApplyHsNotationRepairAsync(
+        Doc d, CurriculumPackImportState state, Guid frameworkVersionId,
+        CancellationToken ct)
+    {
+        if (d.PackCode != MathematicsCurriculumPackRegistry.CommonCoreCode)
+            return;
+        var authority = LoadAuthorityRepair(d);
+        var exponent = LoadExponentRepair(d, authority);
+        var patchSet = LoadHsNotationRepair(d, exponent);
+        if (!IsExponentRepairedState(d, state, exponent))
+            throw new InvalidOperationException("CCSS high-school notation must follow exact six-repair state.");
+        await ValidateAuthorityRepairedRowsAsync(d, frameworkVersionId, authority, ct,
+            exponentPatched: true);
+
+        var codes = patchSet.Replacements.Select(p => p.Code).ToArray();
+        var rows = await _db.CurriculumPackContentNodes
+            .Where(x => x.FrameworkVersionId == frameworkVersionId &&
+                codes.Contains(x.Code)).ToArrayAsync(ct);
+        if (rows.Length != patchSet.Replacements.Count)
+            throw new InvalidOperationException("CCSS high-school target row-count drift.");
+        foreach (var patch in patchSet.Replacements)
+        {
+            var row = rows.Single(x => x.Code == patch.Code);
+            if (row.ContentHash != patch.ExpectedOldContentHash ||
+                HashOfficialText(row.OfficialText ?? "") != patch.ExpectedOldTextSha256)
+                throw new InvalidOperationException($"CCSS high school predecessor changed: {patch.Code}");
+            row.OfficialText = patch.CorrectedOfficialText;
+            row.ContentHash = patch.CorrectedContentHash;
+            row.UpdatedAtUtc = DateTime.UtcNow;
+        }
+        state.ContentDigest = patchSet.PatchedContentDigest;
+        state.ImportedAtUtc = DateTime.UtcNow;
+        await _db.SaveChangesAsync(ct);
+        await ValidateAuthorityRepairedRowsAsync(d, frameworkVersionId, authority, ct,
+            exponentPatched: true, hsNotationPatched: true);
+    }
+
     private static bool IsAuthorityRepairedState(
         Doc d,
         CurriculumPackImportState state,
@@ -218,9 +337,17 @@ public sealed partial class MathematicsCurriculumPackSeeder
         Guid frameworkVersionId,
         VerifiedCommonCoreAuthorityRepair manifest,
         CancellationToken ct,
-        bool exponentPatched = false)
+        bool exponentPatched = false,
+        bool hsNotationPatched = false)
     {
+        if (hsNotationPatched && !exponentPatched)
+            throw new InvalidOperationException("CCSS high-school stage requires exponent stage.");
         var exponent = exponentPatched ? LoadExponentRepair(d, manifest) : null;
+        var hsNotation = hsNotationPatched
+            ? LoadHsNotationRepair(d, exponent!)
+            : null;
+        var byHighSchool = hsNotation?.Replacements.ToDictionary(x => x.Code,
+            StringComparer.Ordinal);
         var rows = await _db.CurriculumPackContentNodes.AsNoTracking()
             .Where(x => x.FrameworkVersionId == frameworkVersionId)
             .ToArrayAsync(ct);
@@ -254,9 +381,25 @@ public sealed partial class MathematicsCurriculumPackSeeder
                 newText = exponent.CorrectedOfficialText;
                 newHash = exponent.CorrectedContentHash;
             }
+            if (byHighSchool is not null &&
+                byHighSchool.TryGetValue(expected.Code, out var highSchoolPatch))
+            {
+                newText = highSchoolPatch.CorrectedOfficialText;
+                newHash = highSchoolPatch.CorrectedContentHash;
+            }
             if (row.OfficialText != newText || row.ContentHash != newHash)
                 throw new InvalidOperationException($"CCSS authority repair text/hash drift: {expected.Code}");
         }
+    }
+
+    private sealed class VerifiedCommonCoreHsNotationRepair
+    {
+        public int SchemaVersion { get; set; }
+        public string PackCode { get; set; } = "";
+        public string VersionCode { get; set; } = "";
+        public string PreviousPatchedContentDigest { get; set; } = "";
+        public string PatchedContentDigest { get; set; } = "";
+        public List<VerifiedCommonCoreTextPatch> Replacements { get; set; } = [];
     }
 
     private sealed class VerifiedCommonCoreExponentRepair
