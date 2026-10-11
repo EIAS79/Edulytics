@@ -12,6 +12,18 @@ const cp = require('node:child_process');
 
 const root = path.resolve(__dirname, '..');
 const artifactDir = path.join(root, 'artifacts', 'academic-us-ccss');
+// Phase 11 is the PRE-DEPLOY approval gate. Phase 12 independently verifies
+// the actual deployed SHA/digest. Requiring post-deploy proof before release
+// authorization would create an impossible circular dependency.
+// Dynamic human approvals must be supplied out-of-band after the candidate
+// commit exists; a file committed inside its own SHA cannot reference that SHA.
+const stageFlag = process.argv.find(a => a.startsWith('--stage='));
+const stage = stageFlag ? stageFlag.slice('--stage='.length) : 'final';
+if (!['predeploy', 'final'].includes(stage))
+  throw Error('Allowed gate stages: predeploy or final');
+const externalFlag = process.argv.find(a => a.startsWith('--approval-dir='));
+const externalDir = externalFlag ? path.resolve(externalFlag.slice('--approval-dir='.length)) : null;
+const externalNames = new Set(['stagingEvidence', 'academicReviews', 'releaseDecision', 'productionEvidence']);
 const files = Object.freeze({
   structural: 'docs/curriculum/us-ccss-g1-g12-structural-audit.json',
   ledger: 'docs/curriculum/us-ccss-academic-evidence-ledger.json',
@@ -37,14 +49,18 @@ function check(ok, code, explanation) {
   return Boolean(ok);
 }
 function load(name, required = true) {
-  const file = path.join(root, files[name]);
+  const file = externalDir && externalNames.has(name)
+    ? path.join(externalDir, path.basename(files[name]))
+    : path.join(root, files[name]);
   if (!fs.existsSync(file)) {
     if (required) check(false, 'MISSING_' + name.toUpperCase(), files[name]);
     return null;
   }
   try {
     const buffer = fs.readFileSync(file);
-    source[name] = {path: files[name], sha256: crypto.createHash('sha256').update(buffer).digest('hex')};
+    source[name] = {path: externalDir && externalNames.has(name)
+      ? '[external approvals]/' + path.basename(files[name]) : files[name],
+      sha256: crypto.createHash('sha256').update(buffer).digest('hex')};
     return JSON.parse(buffer.toString('utf8'));
   } catch (error) {
     check(false, 'INVALID_' + name.toUpperCase(), String(error.message));
@@ -146,17 +162,23 @@ check(Boolean(release) && release.status === 'GO' && release.targetSha === sha &
   release.academicApprovalEvidenceId && release.securityApprovalEvidenceId &&
   release.releaseOwnerApprovalEvidenceId, 'RELEASE_AUTHORIZATION_MISSING',
   'Release must be approved for the exact current SHA by academic/security/release owners');
-const production = load('productionEvidence', false);
-check(Boolean(production) && production.status === 'PASS' && production.deployedSha === sha &&
-  production.contentDigestEvidenceId && production.userJourneyEvidenceId,
-  'PRODUCTION_VALIDATION_MISSING', 'Deployed SHA, canonical digest and real user smoke proofs required');
+if (stage === 'final') {
+  const production = load('productionEvidence', false);
+  check(Boolean(production) && production.status === 'PASS' && production.deployedSha === sha &&
+    production.contentDigestEvidenceId && production.userJourneyEvidenceId,
+    'PRODUCTION_VALIDATION_MISSING',
+    'Deployed SHA, canonical digest and real user smoke proofs required');
+}
 
 const output = {
   schemaVersion: 1,
   certificationType: 'INTERNAL_EVIDENCE_BASED',
+  gateStage: stage,
   scope: facts.scope,
   sourceCommitSha: sha,
-  decision: problems.length === 0 ? 'ACADEMICALLY_CERTIFIED_FULL' : 'NO-GO',
+  decision: problems.length === 0
+    ? (stage === 'predeploy' ? 'RELEASE_CANDIDATE_APPROVED' : 'ACADEMICALLY_CERTIFIED_FULL')
+    : 'NO-GO',
   facts, inputFiles: source, blockers: problems
 };
 if (process.argv.includes('--write-baseline')) {
@@ -164,6 +186,6 @@ if (process.argv.includes('--write-baseline')) {
   fs.writeFileSync(path.join(artifactDir, '00-baseline.json'), JSON.stringify(output, null, 2) + '\n');
 }
 console.log(JSON.stringify(output, null, 2));
-if (process.argv.includes('--strict') && output.decision !== 'ACADEMICALLY_CERTIFIED_FULL') {
+if (process.argv.includes('--strict') && output.decision === 'NO-GO') {
   process.exitCode = 2;
 }
