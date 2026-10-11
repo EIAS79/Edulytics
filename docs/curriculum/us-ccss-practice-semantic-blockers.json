@@ -1,62 +1,20 @@
 {
-  "version": 2,
+  "schemaVersion": 3,
   "productionReady": false,
-  "verifiedLocalTestCount": 2212,
-  "sourceReferencedLessons": 25,
-  "multiOutcomeCasesReviewed": 14,
-  "officialOutcomesWithNarrowRoutes": [
-    {
-      "standard": "CCSS:5.G.A.1",
-      "targetRule": "us-ccss-g5-first-quadrant",
-      "questionFamilies": [
-        "usccss.geometry.first_quadrant_point"
-      ],
-      "status": "NARROW_OUTCOME_RULE_IMPLEMENTED"
-    },
-    {
-      "standard": "CCSS:5.NF.B.7",
-      "targetRule": "us-ccss-g5-unit-fraction-division",
-      "questionFamilies": [
-        "usccss.fractions.unit_divide_whole",
-        "usccss.fractions.whole_divide_unit"
-      ],
-      "status": "NARROW_OUTCOME_RULE_IMPLEMENTED"
-    },
-    {
-      "standard": "CCSS:6.EE.A.2",
-      "targetRule": "us-ccss-g6-expression-structure",
-      "questionFamilies": [
-        "usccss.algebra.expression_words",
-        "usccss.algebra.expression_coefficient",
-        "usccss.algebra.expression_power_value",
-        "supporting.algebra.substitute",
-        "usccss.algebra.exponent_product_value"
-      ],
-      "status": "NARROW_OUTCOME_RULE_IMPLEMENTED"
-    },
-    {
-      "standard": "CCSS:7.NS.A.2",
-      "targetRule": "us-ccss-g7-rational-operations",
-      "questionFamilies": [
-        "usccss.number.signed_rational_multiply",
-        "usccss.number.signed_rational_divide",
-        "usccss.number.rational_terminating_decimal",
-        "usccss.number.repeating_decimal_digit",
-        "usccss.number.signed_rate_displacement"
-      ],
-      "status": "NARROW_OUTCOME_RULE_IMPLEMENTED"
-    }
-  ],
+  "sourceReferencedLessons": 35,
+  "targetedNewLessonRoutes": 8,
   "sourceEvidence": {
-    "subclauses": 121,
-    "exactPublisherReferences": 82,
-    "requireAdditionalPerClauseEvidence": 39
+    "childClauses": 121,
+    "exactPublisherCodeReferences": 106,
+    "withoutExactPublisherChildCodeReference": 15
   },
+  "numericPracticeFamiliesAdded": 11,
   "remainingReleaseBlockers": [
-    "39 parent-only subclause source references require independent clause-to-question verification",
-    "Full 363-standard educational semantic review not complete",
-    "Actual Render staging application boot and role-based tests not verified",
-    "Production workspace not yet confirmed"
+    "Exact source child references missing for 15 clauses; 8 parent-standard lesson contexts received scoped numeric Practice fixes",
+    "HSF-BF.A.1.c function composition and HSF-BF.B.4.d restricting inverse domains need source-linked learner content, not just an unused correct numeric family",
+    "HSF-IF.C.7.d graph shape, asymptotes and end behavior require visual answer assessment beyond numeric parameters",
+    "Diagram-based vector standards and explanatory probability decision-making need their own semantic and graphical graders",
+    "No authenticated student/teacher end-to-end sessions yet; explicitly deferred by user"
   ],
-  "notice": "This is a targeted release gate. No unsupported full-academic certification or production deployment claim."
+  "notice": "Targeted numeric code fixes may be released after CI, but full academic 121-clause certification is not yet proven."
 }
