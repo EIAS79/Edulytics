@@ -4,7 +4,10 @@
 const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'..'),writing=process.argv.includes('--write');
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
-const sha=cp.execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
+// Baseline SHA identifies source inputs. Final candidate SHA is separately
+// checked at the independent academic/release signoff gate.
+const sha=JSON.parse(fs.readFileSync(path.join(root,
+ 'artifacts/academic-us-ccss/00-source-manifest.json'),'utf8')).sourceCommitSha;
 const norm=s=>String(s||'').replace(/^CCSS:/,'').replace(/^(HS[NAFGS])-([A-Z]{1,3})\./,'$1.$2.');
 const hash=t=>crypto.createHash('sha256').update(String(t||'')).digest('hex');
 const snapshot=read('docs/curriculum/reference/us-ccss-official-codes.snapshot.json');

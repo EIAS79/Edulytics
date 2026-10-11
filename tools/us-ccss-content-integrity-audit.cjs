@@ -3,7 +3,10 @@
 // PHASE 04: machine-detectable content risks. Flags are NOT academic decisions.
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),cp=require('node:child_process');
 const root=path.resolve(__dirname,'..'),write=process.argv.includes('--write');
-const sha=cp.execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
+// Baseline SHA identifies source inputs. Final candidate SHA is separately
+// checked at the independent academic/release signoff gate.
+const sha=JSON.parse(fs.readFileSync(path.join(root,
+ 'artifacts/academic-us-ccss/00-source-manifest.json'),'utf8')).sourceCommitSha;
 const hash=s=>crypto.createHash('sha256').update(String(s||'')).digest('hex');
 const bpDir='src/Edulytics.Core/Curriculum/LessonBlueprints/Packs';
 const cpDir='src/Edulytics.Core/Curriculum/LessonContent/Packs';

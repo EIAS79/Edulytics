@@ -10,7 +10,13 @@ const rel={
  licensing:'artifacts/academic-us-ccss/01-licensing-review.md'
 };
 const norm=s=>String(s||'').replace(/^CCSS:/,'').replace(/^(HS[NAFGS])-([A-Z]{1,3})\./,'$1.$2.');
-const sha=cp.execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
+// An artifact committed inside a Git commit cannot embed its own future SHA.
+// Pin source INPUT to the first audited main baseline, not release-candidate HEAD.
+const manifestPath=path.join(root,'artifacts/academic-us-ccss/00-source-manifest.json');
+const sha=fs.existsSync(manifestPath)
+ ? JSON.parse(fs.readFileSync(manifestPath,'utf8')).sourceCommitSha
+ : cp.execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
+if(!/^[0-9a-f]{40}$/.test(sha))throw Error('Invalid immutable source baseline SHA');
 const sources={};
 function read(p){const b=fs.readFileSync(path.join(root,p));sources[p]={sha256:crypto.createHash('sha256').update(b).digest('hex'),bytes:b.length};return JSON.parse(b.toString('utf8'));}
 const reference='docs/curriculum/reference/us-ccss-official-codes.snapshot.json';
