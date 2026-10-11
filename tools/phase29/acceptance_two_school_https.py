@@ -264,7 +264,7 @@ for key, schoolname in SCHOOLS:
             r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
             generated_body)
         html_id = re.search(
-            r'name="attemptItemIds\\[0\\]"[^>]*value="([0-9a-fA-F-]{36})"',
+            r'name="attemptItemIds\[0\]"[^>]*value="([0-9a-fA-F-]{36})"',
             generated_body)
         assert csrf and html_id and html_id.group(1) == item_id, (
             key, "personal test answer form mismatch")
