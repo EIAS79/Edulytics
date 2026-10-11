@@ -18,13 +18,16 @@ public sealed class UsCommonCoreAcademicContentClosureTests
         "usccss.vector.scalar_y",
         "usccss.vector.sum_magnitude",
         "usccss.vector.scalar_magnitude",
-        "usccss.vector.resultant_angle"
+        "usccss.vector.resultant_angle",
+        "usccss.vector.head_tail_endpoint_y",
+        "usccss.vector.scalar_direction_class"
     ];
 
     private static readonly string[] ExpectedValueFamilies =
     [
         "usccss.probability.expected_net_payoff",
-        "usccss.probability.compare_expected_cost"
+        "usccss.probability.compare_expected_cost",
+        "usccss.probability.expected_vs_worst_case"
     ];
 
     [Theory]
@@ -118,6 +121,6 @@ public sealed class UsCommonCoreAcademicContentClosureTests
                 }
             }
         }
-        Assert.Equal(8 * 3 * 12, checkedCount);
+        Assert.Equal(11 * 3 * 12, checkedCount);
     }
 }
