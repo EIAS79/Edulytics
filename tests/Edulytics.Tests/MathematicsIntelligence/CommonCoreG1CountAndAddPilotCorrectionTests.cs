@@ -166,6 +166,24 @@ public sealed class CommonCoreG1CountAndAddPilotCorrectionTests
         Assert.Contains("5 + 3 = 8", core.Example);
         Assert.Contains("ten-frame", core.Example);
         Assert.Contains("16 counters", string.Join(" ", rich.ExplanationParagraphs));
-        Assert.NotEmpty(rich.Visuals);
+
+        var tenFrame = Assert.Single(rich.Visuals,
+            visual => visual.Title == "Count and show 16 counters");
+        Assert.Equal(RichLessonVisualKind.PlaceValueChart, tenFrame.Kind);
+        Assert.Equal(4, tenFrame.Rows.Count);
+        Assert.Equal(16, tenFrame.Rows.Sum(row =>
+            row.Cells.Count(cell => cell == "●")));
+        Assert.Equal(10, tenFrame.Rows.Take(2).Sum(row =>
+            row.Cells.Count(cell => cell == "●")));
+
+        var cubeDots = Assert.Single(rich.Visuals,
+            visual => visual.Title == "Add dots on two cubes");
+        Assert.Equal(RichLessonVisualKind.PlaceValueChart, cubeDots.Kind);
+        Assert.Equal(2, cubeDots.Rows.Count);
+        Assert.Equal(5, cubeDots.Rows[0].Cells.Count(cell => cell == "●"));
+        Assert.Equal(3, cubeDots.Rows[1].Cells.Count(cell => cell == "●"));
+        Assert.Contains("5 + 3 = 8", cubeDots.Description);
+        Assert.Contains(rich.Visuals,
+            visual => visual.Kind == RichLessonVisualKind.EquationSet);
     }
 }
