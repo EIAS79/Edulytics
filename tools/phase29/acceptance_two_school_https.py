@@ -167,6 +167,60 @@ for key, schoolname in SCHOOLS:
                 "G1 U01 L01 authenticated Rich V2 content missing", required)
         assert "rich-lesson-visual--placevaluechart" in pilot_page, (
             "G1 U01 L01 ten-frame and dot-cube representation is not rendered")
+        # Real Chromium rendering at desktop + mobile viewport. The validated
+        # student login cookie is transferred only into the disposable CI browser.
+        # This does not interact with Render or a real user's school account.
+        from playwright.sync_api import sync_playwright
+        jar = next(
+            handler.cookiejar for handler in student.handlers
+            if isinstance(handler, urllib.request.HTTPCookieProcessor))
+        cookies = [{"name": cookie.name, "value": cookie.value, "url": BASE}
+                   for cookie in jar if cookie.secure]
+        assert cookies, "Authenticated Grade 1 browser session lacks secure cookies"
+        with sync_playwright() as playwright:
+            browser = playwright.chromium.launch(headless=True, args=["--no-sandbox"])
+            try:
+                for screen, width, height in (
+                    ("desktop", 1440, 900),
+                    ("mobile", 390, 844),
+                ):
+                    context = browser.new_context(
+                        ignore_https_errors=True,
+                        viewport={"width": width, "height": height})
+                    try:
+                        context.add_cookies(cookies)
+                        page = context.new_page()
+                        response = page.goto(
+                            BASE + "/student/learning/lesson/" + pilot_lesson_id,
+                            wait_until="domcontentloaded", timeout=40000)
+                        assert response is not None and response.status == 200, (
+                            screen, "Grade 1 browser lesson was not accessible")
+                        figures = page.locator(
+                            "figure.rich-lesson-visual--placevaluechart")
+                        assert figures.count() == 2, (
+                            screen, "expected both Count and Add representations")
+                        assert figures.nth(0).locator(
+                            ".rich-lesson-table td").all_text_contents().count("●") == 16, (
+                            screen, "10+6 model lost counters")
+                        assert figures.nth(1).locator(
+                            ".rich-lesson-table td").all_text_contents().count("●") == 8, (
+                            screen, "5+3 cube model lost dots")
+                        assert figures.nth(0).get_by_text(
+                            "Count and show 16 counters").is_visible(), (
+                            screen, "counting representation not visible")
+                        assert figures.nth(1).get_by_text(
+                            "Add dots on two cubes").is_visible(), (
+                            screen, "cube representation not visible")
+                        assert page.get_by_text("CC BY 4.0").first.is_visible(), (
+                            screen, "publisher source attribution hidden")
+                        page.screenshot(
+                            path=f"/tmp/g1-u01-l01-{screen}.png", full_page=True)
+                        print("DISPOSABLE_G1_L01_CHROMIUM_VIEWPORT_PASS",
+                              screen, width, height, flush=True)
+                    finally:
+                        context.close()
+            finally:
+                browser.close()
         print("DISPOSABLE_US_CCSS_G1_U01_L01_STUDENT_RICH_V2_RENDER_PASS",
               pilot_code, pilot_lesson_id)
     get_page(student, "/student/practice")
