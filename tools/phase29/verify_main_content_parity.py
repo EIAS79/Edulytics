@@ -5,6 +5,7 @@ Purely read-only. No curriculum scope additions, DB connections, or updates.
 Use a full git checkout with origin/main available.
 """
 import json
+import hashlib
 import subprocess
 from pathlib import Path
 
@@ -93,6 +94,73 @@ def run():
         repair_doc.get("allowUnlistedContentChanges") is not False or
         len(rows) != 8 or len(approved) != 8):
         errors.append("Reviewed Common Core body repair allowlist is malformed")
+
+    # Phase 04: additional *candidate* body repairs (NOT academic signoffs).
+    # Accept only exact 7 old->new content digests, publisher SHA, identity
+    # and metadata equality. Do not weaken the original storage-only parity.
+    candidate_path = ROOT / "docs/curriculum/us-ccss-phase04-hs-content-repair-pilot.json"
+    if candidate_path.exists():
+        candidate_doc = json.loads(candidate_path.read_text(encoding="utf8"))
+        candidates = candidate_doc.get("repairs") or []
+        candidate_keys = set()
+        if (candidate_doc.get("gate") != "NO-GO" or
+            candidate_doc.get("scope") != "US-CCSS-MATH/CCSSM-2010/G1-G12" or
+            len(candidates) != 7):
+            errors.append("Phase04 candidate repair manifest malformed or signed")
+        for entry in candidates:
+            key = ("US-CCSS-MATH", entry["lessonCode"])
+            if (key in approved or key in candidate_keys):
+                errors.append(f"duplicate/overlapping Phase04 repair: {key}")
+                continue
+            candidate_keys.add(key)
+            if (entry.get("humanAcademicSignoff") != "PENDING" or
+                entry.get("contentPackFile", "").startswith(str(BASE) + "/") is False):
+                errors.append(f"Phase04 repair approval/path metadata invalid: {key}")
+            approved[key] = {
+                "packCode": "US-CCSS-MATH",
+                "lessonCode": entry["lessonCode"],
+                "expectedOriginalCanonicalBodySha256": entry["expectedOldCanonicalBodySha256"],
+                "expectedCorrectedCanonicalBodySha256": entry["correctedCanonicalBodySha256"],
+                "expectedUnchangedSourceSha256": entry["unchangedPublisherSourceSha256"],
+                "_candidateSourceFile": entry["contentPackFile"],
+            }
+    else:
+        errors.append("Phase04 candidate repair manifest missing")
+
+    # The new candidates must use the exact body fingerprint recomputed from
+    # the seven English learner fields; the older 8 source allowlist entries
+    # remain immutable and independently validated by their original rules.
+    candidate_fields = ("title","explanation","keyConceptsAndRules",
+                        "workedExamples","stepByStepSolutions","commonMistakes",
+                        "quickSummary")
+    for key, entry in approved.items():
+        if "_candidateSourceFile" not in entry: continue
+        if key not in baseline or key not in candidate: continue
+        b, a = baseline[key], candidate[key]
+        if len(a.get("translations") or []) != len(b.get("translations") or []):
+            errors.append(f"Phase04 changed translation count: {key}")
+            continue
+        source_file = entry["_candidateSourceFile"]
+        base_document = load_main(source_file)
+        if not any(x.get("lessonCode")==key[1] for x in base_document.get("lessons",[])):
+            errors.append(f"Phase04 wrong source file path: {key}")
+        tr = next((x for x in a.get("translations",[]) if x.get("cultureCode")=="en"),None)
+        before_tr = next((x for x in b.get("translations",[]) if x.get("cultureCode")=="en"),None)
+        if tr is None or before_tr is None:
+            errors.append(f"Phase04 English translation absent: {key}")
+            continue
+        # Before initial merge the original must actually differ; after merge,
+        # an already-reviewed candidate SHA may legitimately match main.
+        if tr == before_tr and b.get("canonicalBodySha256") != entry["expectedCorrectedCanonicalBodySha256"]:
+            errors.append(f"Phase04 content changed without its expected baseline: {key}")
+            continue
+        if any(x.get("cultureCode")!="en" and x != y for x,y in
+               zip(a.get("translations",[]),b.get("translations",[]))):
+            errors.append(f"Phase04 non-English translation changed: {key}")
+        actual = hashlib.sha256("\n".join(
+            f"{field}:{tr[field]}" for field in candidate_fields).encode("utf8")).hexdigest()
+        if actual != entry["expectedCorrectedCanonicalBodySha256"]:
+            errors.append(f"Phase04 canonical SHA fails recomputation: {key}")
 
     changes_expected = set()
     for key, row in approved.items():
