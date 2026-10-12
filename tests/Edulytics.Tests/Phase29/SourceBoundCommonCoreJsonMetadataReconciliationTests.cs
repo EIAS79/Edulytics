@@ -1,0 +1,70 @@
+using Edulytics.Core.Curriculum;
+using Edulytics.Data.Repositories;
+using Edulytics.Data.Seeding;
+
+namespace Edulytics.Tests.Phase29;
+
+/// <summary>
+/// Guards the previous release's seven source-bound corrections plus the five
+/// new Grade 2 candidates, without claiming human certification. Only these
+/// lessons may have JSON production metadata versions reconciled on startup.
+/// </summary>
+public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
+{
+    [Fact]
+    public void MetadataOnlyStartupSelector_ExposesExactlyTwelveSourceBoundLessons()
+    {
+        var documents = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
+        var chosen = documents.SelectMany(d => d.Lessons
+                .Where(l => MathematicsCanonicalLessonContentSeeder
+                    .IsSourceBoundJsonMetadataCandidate(d, l))
+                .Select(l => (Doc: d, Lesson: l)))
+            .ToArray();
+
+        Assert.Equal(12, chosen.Length);
+        Assert.Equal(12, chosen.Select(x => x.Lesson.LessonCode)
+            .Distinct(StringComparer.Ordinal).Count());
+        Assert.All(chosen, x =>
+        {
+            Assert.Equal(MathematicsCurriculumPackRegistry.CommonCoreCode,
+                x.Doc.PackCode);
+            Assert.Equal("CCSSM-2010", x.Doc.VersionCode);
+            Assert.NotEqual(CommonCoreRichContentCorrections.CorrectionContentVersion,
+                CanonicalLessonContentMaterializer
+                    .GetEffectiveContentVersion(x.Doc, x.Lesson));
+            Assert.True(x.Lesson.CanonicalBodySha256.Length == 64);
+        });
+
+        var selected = chosen.Select(x => x.Lesson.LessonCode)
+            .ToHashSet(StringComparer.Ordinal);
+        Assert.Contains("PED:US-CCSS-MATH:G1:U01:L13", selected);
+        Assert.Contains("PED:US-CCSS-MATH:G1:U04:L03", selected);
+        Assert.Contains("PED:US-CCSS-MATH:G2:U01:L01", selected);
+        Assert.Contains("PED:US-CCSS-MATH:G2:U06:L07", selected);
+        Assert.Contains("PED:US-CCSS-MATH:G2:U06:L08", selected);
+        Assert.Contains("PED:US-CCSS-MATH:G2:U06:L09", selected);
+        Assert.Contains("PED:US-CCSS-MATH:G2:U09:L05", selected);
+        Assert.Contains("PED:US-CCSS-MATH:G2:U09:L11", selected);
+        Assert.Contains("PED:US-CCSS-MATH:G2:U09:L12", selected);
+        Assert.Contains("PED:US-CCSS-MATH:G2:U09:L13", selected);
+        Assert.Contains("PED:US-CCSS-MATH:G4:U01:L01", selected);
+
+        var nonTarget = documents
+            .Single(x => x.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode &&
+                x.Lessons.Any(l => l.LessonCode == "PED:US-CCSS-MATH:G2:U01:L02"));
+        Assert.False(MathematicsCanonicalLessonContentSeeder
+            .IsSourceBoundJsonMetadataCandidate(nonTarget,
+                nonTarget.Lessons.Single(l =>
+                    l.LessonCode == "PED:US-CCSS-MATH:G2:U01:L02")));
+    }
+
+    [Fact]
+    public void JsonIndex_AndDatabaseVersionContract_NeedMetadataSynchronization()
+    {
+        var index = new EmbeddedCanonicalLessonContentIndex();
+        Assert.True(index.TryGet("PED:US-CCSS-MATH:G2:U06:L08", out var content));
+        Assert.Equal(
+            CommonCoreG2SourceGroundedFoundationsCorrections.CorrectedContentVersion,
+            content.ContentVersion);
+    }
+}

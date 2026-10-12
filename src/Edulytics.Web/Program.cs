@@ -436,7 +436,20 @@ using (var scope =
     }
     else
     {
-        if (!readCanonicalJson)
+        if (readCanonicalJson)
+        {
+            // Under JSON delivery, an unchanged DB ContentVersion and a
+            // newly corrected embedded body would fail the repository's
+            // exact-version contract. Reconcile ONLY explicitly source-bound
+            // reviewed editorial candidates in a guarded atomic transaction.
+            var metadataTimer = Stopwatch.StartNew();
+            await mathematicsCanonicalLessonContentSeeder
+                .SeedSourceBoundJsonMetadataCorrectionsAsync();
+            metadataTimer.Stop();
+            Console.WriteLine(
+                $"STARTUP_SOURCE_BOUND_JSON_METADATA_RECONCILED elapsedMs={metadataTimer.ElapsedMilliseconds}");
+        }
+        else
         {
             var approvedCorrectionTimer = Stopwatch.StartNew();
             await mathematicsCanonicalLessonContentSeeder

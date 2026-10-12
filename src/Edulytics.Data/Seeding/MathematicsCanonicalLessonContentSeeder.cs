@@ -64,6 +64,150 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         await SeedDocumentsAsync(documents, ct, metadataOnly: true);
     }
 
+    /// <summary>
+    /// Metadata-only reconciliation for the narrowly source-hash-guarded CCSS
+    /// editorial candidates when ReadFromJson=true and the host intentionally
+    /// skips full startup data maintenance. Never insert lesson prose or update
+    /// learner, adoption or assessment records. Existing PostgreSQL content
+    /// identities/versions and the absence of persisted translations must be
+    /// checked BEFORE any version mutation; the actual seeder uses one
+    /// advisory-locked transaction and revalidates outcomes and source hashes.
+    /// This is a technical content release, not academic certification.
+    /// </summary>
+    public async Task SeedSourceBoundJsonMetadataCorrectionsAsync(
+        CancellationToken ct = default)
+    {
+        var accepted = await _db.CurriculumPackImportStates.AsNoTracking()
+            .SingleOrDefaultAsync(x =>
+                x.FrameworkCode == MathematicsCurriculumPackRegistry.CommonCoreCode &&
+                x.VersionCode == "CCSSM-2010" &&
+                x.IsComplete, ct);
+
+        if (accepted is null)
+            return;
+
+        var documents = LoadEmbeddedDocuments()
+            .Where(d => d.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode &&
+                d.VersionCode == "CCSSM-2010")
+            .ToArray();
+
+        foreach (var document in documents)
+        {
+            document.Lessons = document.Lessons
+                .Where(lesson => IsSourceBoundJsonMetadataCandidate(document, lesson))
+                .ToList();
+        }
+
+        var selected = documents.Where(d => d.Lessons.Count > 0).ToArray();
+        var targets = selected.SelectMany(d => d.Lessons.Select(lesson =>
+            (Document: d, Lesson: lesson))).ToArray();
+        var codes = targets.Select(x => x.Lesson.LessonCode).ToArray();
+
+        // Fail closed on omissions/additions to the exact, previously reviewed
+        // engineering release set: G1 x3, G2 x8, G4 x1.
+        if (codes.Length != 12 ||
+            codes.Distinct(StringComparer.Ordinal).Count() != 12)
+            throw new InvalidOperationException(
+                "Source-bound Common Core JSON metadata correction inventory drift.");
+
+        var lessons = await _db.CurriculumPedagogicalLessons.AsNoTracking()
+            .Where(x =>
+                x.FrameworkVersionId == accepted.FrameworkVersionId &&
+                codes.Contains(x.Code))
+            .Select(x => new { x.Id, x.Code })
+            .ToArrayAsync(ct);
+
+        if (lessons.Length != codes.Length)
+            throw new InvalidOperationException(
+                "Refusing to create missing Common Core production lesson identities.");
+
+        var ids = lessons.Select(x => x.Id).ToArray();
+        var contents = await _db.CurriculumLessonContents.AsNoTracking()
+            .Where(x =>
+                x.FrameworkVersionId == accepted.FrameworkVersionId &&
+                ids.Contains(x.PedagogicalLessonId))
+            .ToArrayAsync(ct);
+
+        if (contents.Length != codes.Length)
+            throw new InvalidOperationException(
+                "Refusing to create missing Common Core production JSON content metadata.");
+
+        var contentIds = contents.Select(x => x.Id).ToArray();
+        if (await _db.CurriculumLessonContentTranslations.AsNoTracking()
+            .AnyAsync(x => contentIds.Contains(x.CurriculumLessonContentId), ct))
+            throw new InvalidOperationException(
+                "Persisted lesson prose exists: refusing a JSON-only metadata upgrade.");
+
+        var contentsByCode = (
+                from lesson in lessons
+                join content in contents on lesson.Id equals content.PedagogicalLessonId
+                select new { lesson.Code, Content = content })
+            .ToDictionary(x => x.Code, x => x.Content, StringComparer.Ordinal);
+
+        var hasMismatch = false;
+        foreach (var target in targets)
+        {
+            if (!contentsByCode.TryGetValue(target.Lesson.LessonCode,
+                    out var content) || content.Status != target.Document.Status)
+                throw new InvalidOperationException(
+                    "CCSS lesson publication metadata status or identity drift.");
+
+            var expectedVersion = CanonicalLessonContentMaterializer
+                .GetEffectiveContentVersion(target.Document, target.Lesson);
+
+            if (string.Equals(content.ContentVersion, expectedVersion,
+                    StringComparison.Ordinal))
+                continue;
+
+            if (!CanonicalLessonContentMaterializer.CanUpgradeExisting(
+                    target.Document, target.Lesson, content.ContentVersion))
+                throw new InvalidOperationException(
+                    "CCSS lesson content version is not the guarded predecessor: " +
+                    target.Lesson.LessonCode);
+
+            hasMismatch = true;
+        }
+
+        if (!hasMismatch)
+            return;
+
+        await SeedDocumentsAsync(selected, ct, metadataOnly: true);
+
+        var after = await _db.CurriculumLessonContents.AsNoTracking()
+            .Where(x => ids.Contains(x.PedagogicalLessonId))
+            .Select(x => new { x.PedagogicalLessonId, x.ContentVersion })
+            .ToArrayAsync(ct);
+        var versions = after.ToDictionary(x => x.PedagogicalLessonId,
+            x => x.ContentVersion);
+
+        foreach (var target in targets)
+        {
+            var lessonId = lessons.Single(x =>
+                x.Code == target.Lesson.LessonCode).Id;
+            if (!versions.TryGetValue(lessonId, out var version) ||
+                version != CanonicalLessonContentMaterializer
+                    .GetEffectiveContentVersion(target.Document, target.Lesson))
+                throw new InvalidOperationException(
+                    "Post-reconciliation CCSS JSON metadata version mismatch: " +
+                    target.Lesson.LessonCode);
+        }
+    }
+
+    /// <summary>
+    /// Deliberately exclude all other Common Core content and unrelated
+    /// curriculum packs. Audit-only risk flags do not authorize an upgrade.
+    /// </summary>
+    public static bool IsSourceBoundJsonMetadataCandidate(
+        CanonicalLessonContentPackDocument document,
+        CanonicalLessonContentPackLesson lesson) =>
+        document.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode &&
+        document.VersionCode == "CCSSM-2010" &&
+        (CommonCoreG4MultiplesSourceCorrection.IsTarget(document, lesson) ||
+         CommonCoreG2StoryProblemsSourceCorrection.IsTarget(document, lesson) ||
+         CommonCoreG2TapeDiagramAndStoryResolutionCorrection.IsTarget(document, lesson) ||
+         CommonCoreG1SourceGroundedInstructionalCorrections.IsTarget(document, lesson) ||
+         CommonCoreG2SourceGroundedFoundationsCorrections.IsTarget(document, lesson));
+
     public async Task SeedApprovedProductionCorrectionsAsync(
         CancellationToken ct = default)
     {
@@ -683,6 +827,20 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                                 translationsByContentId.TryGetValue(
                                     content.Id, out var g2U09ExistingRows)
                                     ? g2U09ExistingRows
+                                    : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG2SourceGroundedFoundationsCorrections
+                        .IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2SourceGroundedFoundationsCorrections
+                            .ValidateExistingBodyBeforeUpgrade(
+                                document,
+                                sourceLesson,
+                                content.ContentVersion,
+                                translationsByContentId.TryGetValue(
+                                    content.Id, out var g2FoundationsExistingRows)
+                                    ? g2FoundationsExistingRows
                                     : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
