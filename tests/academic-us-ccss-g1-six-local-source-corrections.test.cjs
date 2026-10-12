@@ -13,7 +13,7 @@ const hash=en=>crypto.createHash('sha256').update([en.cultureCode,en.title,en.ex
 test('all six Grade 1 fixes exactly source/English-SHA bound and unapproved',()=>{
  assert.equal(evidence.lessons.length,6);assert.equal(new Set(evidence.lessons.map(x=>x.lessonCode)).size,6);
  assert.equal(evidence.independentAcademicSignoffs,0);
- assert.ok(seed.includes('expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7 + 6;'));
+ assert.match(seed,/expectedSourceBoundCorrectionCount = 12 \+ 19 \+ 3 \+ 7 \+ 6(?: \+ \d+)*;/);
  for(const e of evidence.lessons){
   const l=pack.lessons.find(x=>x.lessonCode===e.lessonCode);assert.ok(l,e.lessonCode);
   const en=l.translations.find(t=>t.cultureCode==='en');

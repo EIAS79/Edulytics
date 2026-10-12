@@ -65,6 +65,23 @@ The full 146-row machine-readable evidence register is [G01-146-local-teacher-so
 
 **Limits:** finding a preparation file and checking its goal does **not** validate the entire student lesson, actual rendered Rich V2 content, questions and rubrics, all individual math solutions, publisher rights or independent L7 academic approval. The original grade-wide source screen remains a screen only. **Grade 1 academic status is still NO-GO; no individual L7 signoffs recorded.** Work continues within G1; no G2 review or production deployment.
 
+## Six additional teacher-goal-matched Grade 1 learner-content corrections
+
+After all 146 local teacher preparation source files were matched to lesson codes, six more original Grade 1 learner bodies were found to contain incomplete or off-topic worked instruction. They now have **proposed exact-source- and persisted-body-SHA-guarded corrections**:
+
+| Lesson | Goal confirmed against local teacher source | Replacement worked evidence |
+|---|---|---|
+| `G1:U01:L08` | Sort and count shape cards by category | Three-category picture graph with actual category totals |
+| `G1:U01:L09` | Collect, organize and represent class survey data | Tally and picture-graph representations with valid totals |
+| `G1:U03:L28` | Compose and solve stories, including three addends | Worked three-addend stories and unknown positions |
+| `G1:U06:L11` | Apply story addition/subtraction to length measurements | Shoe-length stories with correct same-unit differences |
+| `G1:U07:L06` | Identify/draw squares, rectangles and non-examples | Geometric construction and correct square/rectangle relationship |
+| `G1:U07:L08` | Work with solid/flat shapes and arithmetic | Constructed composite shapes plus worked addition/subtraction |
+
+Evidence: [G01-six-source-goal-content-repairs.json](G01-six-source-goal-content-repairs.json), prior source fingerprints in [G01-146-local-teacher-source-evidence.json](G01-146-local-teacher-source-evidence.json), and test `tests/academic-us-ccss-g1-six-source-goal-teaching-repairs.test.cjs`. The source packs remain immutable; guarded materialization handles only these exact lesson identities on approved original body versions. CI verification and actual learner runtime inspection are required. No L7 signature has been granted.
+
+**Grade 1 scope has not changed: one 146-lesson continuous academic review, one whole-grade report and no Grade 2 work.**
+
 ## Required next actions, still **within Grade 1**
 
 1. Compare original raw source with the actual content materialized into Rich V2, especially prior repairs U01:L13, U01:L15 and U04:L03; never label the old raw defect as a live defect without verification.
