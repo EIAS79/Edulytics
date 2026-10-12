@@ -52,6 +52,6 @@ test('each repair teaches the publisher goal rather than only generic steps',()=
  assert.match(get('ClassFavoriteSurveyExamples'),/picture graph|tally/i);
  assert.match(get('AroundRoomStoryProblemsExamples'),/4 \+ 3 \+ 5 = 12/);
  assert.match(get('MeasuredShoesStoriesExamples'),/cube lengths/i);
- assert.match(get('RectanglesSquaresAttributesExamples'),/square is also a rectangle/i);
+ assert.match(get('RectanglesSquaresAttributesExamples'),/it is also a rectangle/i);
  assert.match(get('CompositeShapesAndFactsCenterExamples'),/larger flat rectangle|combined solid/i);
 });
