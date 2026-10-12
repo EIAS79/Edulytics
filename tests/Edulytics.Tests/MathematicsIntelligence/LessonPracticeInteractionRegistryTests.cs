@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            288,
+            290, // +2 exact source-bound G1 U01 L01 practice families
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(
@@ -47,6 +47,17 @@ public sealed class LessonPracticeInteractionRegistryTests
                     Enum.IsDefined(
                         contract.InteractionKind));
             });
+    }
+
+    [Theory]
+    [InlineData("usccss.g1.u01.l01.count_collection_to20")]
+    [InlineData("usccss.g1.u01.l01.add_dot_cubes_to10")]
+    public void G1CountAndAddInteractiveQuestionsUseDotVisualsAndIntegerKeypad(string family)
+    {
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(family, out var contract));
+        Assert.NotNull(contract);
+        Assert.True(contract!.HasVisualRepresentation);
+        Assert.Equal(LessonPracticeInteractionKind.IntegerKeypad, contract.InteractionKind);
     }
 
     [Theory]
