@@ -156,9 +156,16 @@ public sealed class CommonCoreG1CountAndAddPilotCorrectionTests
                 en.Explanation, en.KeyConceptsAndRules, en.WorkedExamples,
                 en.StepByStepSolutions, en.CommonMistakes, en.QuickSummary));
 
-        // The composer is conditional on SkillContract readiness. This does NOT
-        // claim that staging renders or that the grading engine is approved.
-        if (rich is not null)
-            Assert.NotEmpty(rich.KeyConcepts);
+        // Actual core Rich V2 runtime composition must expose the corrected
+        // 16-object counting and dot-cube worked example text to the learner.
+        // This is still NOT proof of browser/staging/interactive drawing output.
+        Assert.NotNull(rich);
+        var core = Assert.Single(rich!.KeyConcepts, x => x.Title == "Core idea");
+        Assert.Contains("Count every object once", core.Rule);
+        Assert.Contains("16 counters", core.Example);
+        Assert.Contains("5 + 3 = 8", core.Example);
+        Assert.Contains("ten-frame", core.Example);
+        Assert.Contains("16 counters", string.Join(" ", rich.ExplanationParagraphs));
+        Assert.NotEmpty(rich.Visuals);
     }
 }
