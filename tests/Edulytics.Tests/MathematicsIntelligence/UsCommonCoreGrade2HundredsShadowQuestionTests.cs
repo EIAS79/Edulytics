@@ -38,6 +38,52 @@ public sealed class UsCommonCoreGrade2HundredsShadowQuestionTests
     }
 
     [Fact]
+    public void AllThreeSourceAnchoredMappingsStayShadowAndPreserveOfficialOutcomeIdentity()
+    {
+        var asm = typeof(LessonPracticeCapabilityResolver).Assembly;
+        using var mapStream = asm.GetManifestResourceStream(
+            "Edulytics.Core.Mathematics.Curriculum.lesson-skill-mappings.v1.json");
+        using var familyStream = asm.GetManifestResourceStream(
+            "Edulytics.Core.Mathematics.Generation.question-family-registry.v1.json");
+        Assert.NotNull(mapStream);
+        Assert.NotNull(familyStream);
+        using var mapDoc = System.Text.Json.JsonDocument.Parse(mapStream!);
+        using var familyDoc = System.Text.Json.JsonDocument.Parse(familyStream!);
+        var allMappings = mapDoc.RootElement.GetProperty("mappings").EnumerateArray()
+            .Where(x => x.GetProperty("lessonCode").GetString() is string code &&
+                code.StartsWith("PED:US-CCSS-MATH:G2:U05:L0", StringComparison.Ordinal))
+            .ToArray();
+        var exactThree = allMappings.Where(x => new[] { "L01", "L02", "L03" }
+            .Any(y => x.GetProperty("lessonCode").GetString()!.EndsWith(y,
+                StringComparison.Ordinal))).ToArray();
+        Assert.Equal(3, exactThree.Length);
+        foreach (var row in exactThree)
+        {
+            Assert.Equal("SHADOW_VERIFIED_NOT_STUDENT_ROUTED",
+                row.GetProperty("practiceReadiness").GetString());
+            var mappedFamilies = row.GetProperty("allowedQuestionFamilies")
+                .EnumerateArray().Select(x => x.GetString()).ToArray();
+            Assert.NotEmpty(mappedFamilies);
+            Assert.All(mappedFamilies, family => Assert.Contains(family, FamilyIds));
+        }
+
+        var l3 = Assert.Single(exactThree, x =>
+            x.GetProperty("lessonCode").GetString()!.EndsWith("L03",
+                StringComparison.Ordinal));
+        Assert.Equal(
+            new[] { "CCSS:2.NBT.A.1", "CCSS:2.NBT.A.2", "CCSS:2.NBT.B.5" },
+            l3.GetProperty("officialOutcomeCodes").EnumerateArray()
+                .Select(x => x.GetString()).ToArray());
+
+        var registered = familyDoc.RootElement.GetProperty("families")
+            .EnumerateArray().Where(x => FamilyIds.Contains(
+                x.GetProperty("id").GetString())).ToArray();
+        Assert.Equal(2, registered.Length);
+        Assert.All(registered, x =>
+            Assert.False(x.GetProperty("lessonPracticeRouting").GetBoolean()));
+    }
+
+    [Fact]
     public void HundredsAndTensAreIndependentCorrectAndRejectWrongAnswersAtAllDifficulties()
     {
         var engine = new ExactSkillContractQuestionEngine();
