@@ -29,6 +29,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2StoryProblemsSourceCorrection.Apply(document);
         CommonCoreG2TapeDiagramAndStoryResolutionCorrection.Apply(document);
         CommonCoreG1SourceGroundedInstructionalCorrections.Apply(document);
+        CommonCoreG2SourceGroundedFoundationsCorrections.Apply(document);
 
         ValidateUnicode(document);
         CanonicalLessonContentPackContract.Validate(document);
@@ -181,8 +182,11 @@ public static class CanonicalLessonContentMaterializer
         var g2Tape = CommonCoreG2TapeDiagramAndStoryResolutionCorrection
             .GetExpectedContentVersion(document, lesson, g2Story);
 
-        return CommonCoreG1SourceGroundedInstructionalCorrections
+        var g1 = CommonCoreG1SourceGroundedInstructionalCorrections
             .GetExpectedContentVersion(document, lesson, g2Tape);
+
+        return CommonCoreG2SourceGroundedFoundationsCorrections
+            .GetExpectedContentVersion(document, lesson, g1);
     }
 
     public static bool IsReviewedCorrectionTarget(
@@ -209,6 +213,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreG2TapeDiagramAndStoryResolutionCorrection
             .IsTarget(document, lesson) ||
         CommonCoreG1SourceGroundedInstructionalCorrections
+            .IsTarget(document, lesson) ||
+        CommonCoreG2SourceGroundedFoundationsCorrections
             .IsTarget(document, lesson);
 
     public static bool CanUpgradeExisting(
@@ -263,6 +269,11 @@ public static class CanonicalLessonContentMaterializer
                 lesson,
                 existingContentVersion) ||
         CommonCoreG1SourceGroundedInstructionalCorrections
+            .CanUpgradeExisting(
+                document,
+                lesson,
+                existingContentVersion) ||
+        CommonCoreG2SourceGroundedFoundationsCorrections
             .CanUpgradeExisting(
                 document,
                 lesson,
