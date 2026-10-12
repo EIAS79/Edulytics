@@ -223,6 +223,48 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
     public const string ReadClockDailyScheduleSteps = "Step 1: Read a schedule time and identify whether the minutes are :00 or :30.\nStep 2: Put the long minute hand on 12 for :00 or on 6 for :30.\nStep 3: Put the short hour hand on the hour number for :00, or halfway to the next for :30.\nStep 4: Label the analog clock with its digital time and event.\nStep 5: Double-check 6:30 versus 12:30 by looking at the shorter hand.";
     public const string ReadClockDailyScheduleMistakes = "Mistake: confusing 6:30 and 12:30 because the minute hand points to 6. Correction: inspect the hour hand. Mistake: keeping the hour hand on 6 at 6:30. Correction: move it halfway toward 7.";
 
+    public const string SortMathToolsLessonCode = "PED:US-CCSS-MATH:G1:U01:L07";
+    public const string SortMathToolsVersion = "us-ccss-g1-g1-u01-l07-instruction-v1";
+    public const string SortMathToolsConcepts = "Sort familiar math tools into labeled categories and count how many objects are in each. Each object must belong to exactly one chosen category; category labels and accurate counts make a display meaningful.";
+    public const string SortMathToolsExamples = "Example 1 — Make categories. Sort 4 pattern blocks, 3 two-color counters and 2 inch tiles into three labeled piles. Count 4 blocks, 3 counters, and 2 tiles.\nExample 2 — Make a display. Draw a picture graph with rows labeled 'pattern blocks', 'counters' and 'inch tiles' and show 4, 3 and 2 identical marks. Each mark stands for one tool.\nExample 3 — Read and compare. Four blocks versus two tiles gives 4 - 2 = 2 more pattern blocks. Altogether there are 4 + 3 + 2 = 9 tools.\nExample 4 — Explain another rule. Re-sort the same tools into 'can show a shape' and 'can show a count'; choose one rule per display and explain where every tool goes.";
+    public const string SortMathToolsSteps = "Step 1: Choose and say the rule used to sort the math tools.\nStep 2: Create distinct category labels for pattern blocks, two-color counters and inch tiles.\nStep 3: Place each tool in one category and count the objects.\nStep 4: Show those counts using one picture mark for one tool, or a labeled table.\nStep 5: Ask a question about the counts; for 4 blocks and 2 tiles, 4 - 2 = 2 more blocks.";
+    public const string SortMathToolsMistakes = "Mistake: mixing two sorting rules in one graph. Correction: choose and state one rule before sorting.\nMistake: placing the same tool in two categories. Correction: count each item exactly once.\nMistake: using bigger pictures to imply more tools. Correction: one equal mark must mean one tool.";
+
+    public const string ClassPetSurveyStatementsLessonCode = "PED:US-CCSS-MATH:G1:U01:L11";
+    public const string ClassPetSurveyStatementsVersion = "us-ccss-g1-g1-u01-l11-instruction-v1";
+    public const string ClassPetSurveyStatementsConcepts = "Read a class-pet tally chart, write statements supported by data, and test whether a proposed statement is true or false. Five tallies are often shown as a group of four crossed by a fifth mark, but each tally still counts as one response.";
+    public const string ClassPetSurveyStatementsExamples = "Example 1 — Read tally data. A class survey reports cats: 6, dogs: 4, and fish: 2. These are three labeled categories with 12 responses in all: 6 + 4 + 2 = 12.\nExample 2 — Check a true statement. 'More children chose cats than dogs' is true because the cat count is 6 and the dog count is 4; 6 > 4.\nExample 3 — Check a false statement. 'Dogs were chosen by 5 children' is false because the dog tally count is 4, not 5.\nExample 4 — Write a comparison. There are 6 - 2 = 4 more votes for cats than for fish. This statement can be verified from the chart.";
+    public const string ClassPetSurveyStatementsSteps = "Step 1: Read the survey question and category labels, for example cats, dogs and fish.\nStep 2: Count each tally carefully, remembering a crossed bundle of five marks represents five.\nStep 3: Choose a statement to test; identify the two categories or total it refers to.\nStep 4: Compare the numbers in the data to decide whether the statement is true or false.\nStep 5: Write your own supported statement, such as 6 - 2 = 4 more cat votes than fish votes.";
+    public const string ClassPetSurveyStatementsMistakes = "Mistake: reading a crossed group of five tallies as four. Correction: the diagonal stroke is a fifth tally.\nMistake: deciding a statement is true without reading its category labels. Correction: point to the supporting counts.\nMistake: treating personal pet preferences as survey results. Correction: use only the responses collected.";
+
+    public const string ChooseIndirectLengthComparatorLessonCode = "PED:US-CCSS-MATH:G1:U06:L03";
+    public const string ChooseIndirectLengthComparatorVersion = "us-ccss-g1-g1-u06-l03-instruction-v1";
+    public const string ChooseIndirectLengthComparatorConcepts = "Choose an appropriate third object to compare two lengths indirectly. The same comparison tool must retain its length, and the object's endpoints must be aligned each time; a string with marked endpoints may be used when the objects cannot be moved.";
+    public const string ChooseIndirectLengthComparatorExamples = "Example 1 — Pick a tool. Two classroom shelves cannot be moved side by side, so use a piece of string with the endpoints of Shelf A marked. Hold it beside Shelf B without stretching it. If B ends before the marked string endpoint, Shelf A is longer.\nExample 2 — Use a common pencil. A ribbon is longer than the pencil, while a crayon is shorter than that same pencil. The ribbon is longer than the crayon.\nExample 3 — Check whether a comparison is supported. If both ribbons are longer than the pencil, we still do not know which ribbon is longer. Choose a longer shared reference or mark their endpoints on the same string.\nExample 4 — Choose a flexible comparator. To compare two curved paper strips, trace each strip with the same non-stretching string, then straighten the marked lengths against a common baseline.";
+    public const string ChooseIndirectLengthComparatorSteps = "Step 1: Name the two objects whose lengths cannot be compared directly.\nStep 2: Select a portable third object such as a marked piece of string or a pencil.\nStep 3: Align one end and compare the first object's length against the unchanged third object.\nStep 4: Make the same comparison with the second object, keeping the reference length unchanged.\nStep 5: Explain whether the evidence proves longer, shorter, or equal lengths; choose a new reference if it does not.";
+    public const string ChooseIndirectLengthComparatorMistakes = "Mistake: stretching the string when measuring the second item. Correction: use non-stretching string and keep endpoint marks unchanged.\nMistake: forgetting to align the starting ends. Correction: line up both starting points.\nMistake: claiming A is longer than B just because both exceed the reference. Correction: that evidence alone cannot rank them.";
+
+    public const string ClockHourIntroductionLessonCode = "PED:US-CCSS-MATH:G1:U07:L13";
+    public const string ClockHourIntroductionVersion = "us-ccss-g1-g1-u07-l13-instruction-v1";
+    public const string ClockHourIntroductionConcepts = "Tell and write whole-hour times on an analog clock. The long minute hand points to 12 at an exact hour; the short hour hand points to the hour number. The number on a clock face is not a measurement with connecting cubes.";
+    public const string ClockHourIntroductionExamples = "Example 1 — Read 5 o'clock. The minute hand points to 12 and the hour hand points to 5. Say 'five o'clock' and write 5:00.\nExample 2 — Read 4 o'clock. The long minute hand points straight up to 12, and the short hour hand to 4. This clock shows 4:00.\nExample 3 — Draw an hour. For 9:00, put the long minute hand at 12 and the short hour hand at 9. Write 9:00 below the drawing.\nExample 4 — Read noon. Both the long minute hand and the short hour hand point to 12, so the clock shows 12:00.";
+    public const string ClockHourIntroductionSteps = "Step 1: Identify which hand is longer (minute hand) and which is shorter (hour hand).\nStep 2: Check that the long minute hand points to 12 to show a whole hour, :00.\nStep 3: Read the numeral indicated by the short hour hand.\nStep 4: Write the hour, colon and 00, for example 5:00.\nStep 5: Draw or check the two hand positions to verify the written time.";
+    public const string ClockHourIntroductionMistakes = "Mistake: using the long minute hand's position as the hour number. Correction: read the shorter hour hand for the hour.\nMistake: reading the numeral 12 as twelve elapsed minutes. Correction: at 12, the long hand indicates :00.\nMistake: forgetting the two minute digits when writing time. Correction: write 5:00, not 5.";
+
+    public const string DrawFlatShapesOnDotsLessonCode = "PED:US-CCSS-MATH:G1:U07:L04";
+    public const string DrawFlatShapesOnDotsVersion = "us-ccss-g1-g1-u07-l04-instruction-v1";
+    public const string DrawFlatShapesOnDotsConcepts = "Draw two-dimensional shapes on dot paper, using their defining attributes. A triangle has three straight sides and three vertices; rectangles have four straight sides with right-angle corners. Rotate a drawing without changing those attributes.";
+    public const string DrawFlatShapesOnDotsExamples = "Example 1 — Draw a triangle. Connect three non-collinear dots with three straight segments to form a closed triangular shape. Count 3 sides and 3 vertices.\nExample 2 — Draw a rectangle. Use dot-paper points (1,1), (5,1), (5,3) and (1,3); connect the points in order and close the shape. The rectangle has 4 sides and 4 right-angle corners.\nExample 3 — Draw a square. On equally spaced dot paper connect (1,1), (3,1), (3,3) and (1,3). All 4 sides have equal length.\nExample 4 — Compare orientations. Rotate the triangle or square on your page: its side count and corner count remain unchanged.";
+    public const string DrawFlatShapesOnDotsSteps = "Step 1: Choose the target two-dimensional shape and name its defining sides and corners.\nStep 2: Select appropriate dots to form its vertices; for a triangle use three non-collinear dots.\nStep 3: Join neighboring dots with straight lines and close the shape.\nStep 4: Check the side count, corners, and equal lengths or right angles when relevant.\nStep 5: Rotate the drawing and explain why the shape's defining properties remain the same.";
+    public const string DrawFlatShapesOnDotsMistakes = "Mistake: joining three dots on a straight line and calling it a triangle. Correction: choose three non-collinear points to form a closed shape.\nMistake: counting an open path as a polygon. Correction: connect the final vertex back to the first.\nMistake: calling every four-sided shape a rectangle. Correction: a rectangle has four right angles.";
+
+    public const string ComposeFlatPatternShapesLessonCode = "PED:US-CCSS-MATH:G1:U07:L07";
+    public const string ComposeFlatPatternShapesVersion = "us-ccss-g1-g1-u07-l07-instruction-v1";
+    public const string ComposeFlatPatternShapesConcepts = "Compose larger two-dimensional shapes by connecting smaller flat shapes along their full edges. Describe the shapes used and the shape created; identifying the number of sides without constructing a composite does not complete the lesson.";
+    public const string ComposeFlatPatternShapesExamples = "Example 1 — Make a rectangle. Place two identical square tiles next to each other, sharing a full edge. The resulting larger shape is a rectangle twice as wide as one square.\nExample 2 — Make a square with triangles. Join two congruent right-isosceles triangular paper pieces along their equal hypotenuse edges; together they make a larger square shape.\nExample 3 — Make a new square. Place four congruent square tiles in two rows of two, with no overlaps or gaps. The outer boundary is a square, formed from 4 smaller squares.\nExample 4 — Explain the pieces. Cover a large rectangle with two smaller rectangles, then move the pieces to make a different flat shape and describe which edges were joined.";
+    public const string ComposeFlatPatternShapesSteps = "Step 1: Select pattern blocks or flat paper shapes such as two small squares or triangles.\nStep 2: Place the pieces together along matching full edges without gaps or overlaps.\nStep 3: Trace the outer boundary of the new composite flat shape.\nStep 4: Name and describe the larger resulting shape, for example a rectangle from two squares.\nStep 5: Try a different arrangement and explain how the same pieces compose another shape.";
+    public const string ComposeFlatPatternShapesMistakes = "Mistake: merely counting three sides on a triangle without joining pieces. Correction: compose and trace the new outer boundary.\nMistake: leaving gaps and claiming the result is one solid flat shape. Correction: make the edges touch.\nMistake: including an interior joining line as part of the final outer boundary. Correction: trace the boundary around all the joined pieces.";
+
     private static readonly IReadOnlyDictionary<string, Repair> Repairs =
         new Dictionary<string, Repair>(StringComparer.Ordinal)
         {
@@ -368,7 +410,79 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
                 ReadClockDailyScheduleConcepts,
                 ReadClockDailyScheduleExamples,
                 ReadClockDailyScheduleSteps,
-                ReadClockDailyScheduleMistakes)
+                ReadClockDailyScheduleMistakes),
+            [SortMathToolsLessonCode] = new Repair(
+                SortMathToolsLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-7/preparation.html",
+                "b3b1211bc301554a40a002320038b0061372672481ff3aee3241ac32bea9bde4",
+                "a75376803e94155affb6c612601bf45203e532ddce5a1f9499882512ac5b3583",
+                SortMathToolsVersion,
+                ["CCSS:1.MD.C.4", "CCSS:1.OA.C.5", "CCSS:1.OA.C.6"],
+                "Step 1: Read the category labels and the scale or counts.\nStep 2: Identify the values needed for the question.\nStep 3: Compare or combine the values as required.\nStep 4: State the conclusion using the data.",
+                SortMathToolsConcepts,
+                SortMathToolsExamples,
+                SortMathToolsSteps,
+                SortMathToolsMistakes),
+            [ClassPetSurveyStatementsLessonCode] = new Repair(
+                ClassPetSurveyStatementsLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-11/preparation.html",
+                "1248db8c7dc7302a6677f06a190fb5a75599ead2f582eec30be7785ed32cdc75",
+                "bb626ccc7886894e3ad63c8fa6170b5145dfc005c11e952fc2df3811fb7ea485",
+                ClassPetSurveyStatementsVersion,
+                ["CCSS:1.MD.C.4", "CCSS:1.OA.B.4", "CCSS:1.OA.C.5", "CCSS:1.OA.C.6"],
+                "Step 1: Read the category labels and the scale or counts.\nStep 2: Identify the values needed for the question.\nStep 3: Compare or combine the values as required.\nStep 4: State the conclusion using the data.",
+                ClassPetSurveyStatementsConcepts,
+                ClassPetSurveyStatementsExamples,
+                ClassPetSurveyStatementsSteps,
+                ClassPetSurveyStatementsMistakes),
+            [ChooseIndirectLengthComparatorLessonCode] = new Repair(
+                ChooseIndirectLengthComparatorLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-3/preparation.html",
+                "46494ce0ab057e2044125ea8d24054b633a73d7d3e43bd3cd6613a611de04678",
+                "7b46f4014213115f70ec094af62a1af1533847fd1a2688757deb45d60b3934d0",
+                ChooseIndirectLengthComparatorVersion,
+                ["CCSS:1.MD.A.1"],
+                "Step 1: Identify the attribute being measured.\nStep 2: Choose equal-size units and place them without gaps or overlaps.\nStep 3: Count the units used.\nStep 4: State the measurement with its unit and check that it is reasonable.",
+                ChooseIndirectLengthComparatorConcepts,
+                ChooseIndirectLengthComparatorExamples,
+                ChooseIndirectLengthComparatorSteps,
+                ChooseIndirectLengthComparatorMistakes),
+            [ClockHourIntroductionLessonCode] = new Repair(
+                ClockHourIntroductionLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-13/preparation.html",
+                "4f58f40ffa994e8ab85d00273e14315f1fa2e04e82df51313a75492cbc0f0704",
+                "9960a84efcd887cb955e58b1a3440fc824bb5197211494c84a1d569e62ad4b2c",
+                ClockHourIntroductionVersion,
+                ["CCSS:1.MD.B.3"],
+                "Step 1: Identify the attribute being measured.\nStep 2: Choose equal-size units and place them without gaps or overlaps.\nStep 3: Count the units used.\nStep 4: State the measurement with its unit and check that it is reasonable.",
+                ClockHourIntroductionConcepts,
+                ClockHourIntroductionExamples,
+                ClockHourIntroductionSteps,
+                ClockHourIntroductionMistakes),
+            [DrawFlatShapesOnDotsLessonCode] = new Repair(
+                DrawFlatShapesOnDotsLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-4/preparation.html",
+                "50db64bffe87408d19b1dc5ecd7470ed9bc7be23ffdb477d5e2978ccdc4efb69",
+                "8e466fef74d455a26a1a1a35bb97d15ac57e53412d21581d46dfc3d927824dee",
+                DrawFlatShapesOnDotsVersion,
+                ["CCSS:1.G.A.1", "CCSS:1.NBT.C.4", "CCSS:1.OA.C.6"],
+                "Step 1: Look at the defining properties of the shape.\nStep 2: Count or describe relevant sides, corners, faces, or curved surfaces.\nStep 3: Use those properties to sort or identify the shape.\nStep 4: Check that turning or moving the shape would not change its classification.",
+                DrawFlatShapesOnDotsConcepts,
+                DrawFlatShapesOnDotsExamples,
+                DrawFlatShapesOnDotsSteps,
+                DrawFlatShapesOnDotsMistakes),
+            [ComposeFlatPatternShapesLessonCode] = new Repair(
+                ComposeFlatPatternShapesLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-7/preparation.html",
+                "f391d575b24bb0223c206921799ca8e95ade5b94f7dd866ce486c02d690a729c",
+                "eeecb355035aaa81a7b818cad9418fbe201e1f3117a6f26b1415383b0e574d81",
+                ComposeFlatPatternShapesVersion,
+                ["CCSS:1.G.A.2"],
+                "Step 1: Look at the defining properties of the shape.\nStep 2: Count or describe relevant sides, corners, faces, or curved surfaces.\nStep 3: Use those properties to sort or identify the shape.\nStep 4: Check that turning or moving the shape would not change its classification.",
+                ComposeFlatPatternShapesConcepts,
+                ComposeFlatPatternShapesExamples,
+                ComposeFlatPatternShapesSteps,
+                ComposeFlatPatternShapesMistakes)
         };
 
     public static bool IsTarget(CanonicalLessonContentPackDocument document,

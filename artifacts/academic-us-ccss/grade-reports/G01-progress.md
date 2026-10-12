@@ -44,6 +44,19 @@ The Grade 1 **same whole-grade review** has produced seven more targeted Edulyti
 
 Publisher purposes and learning goals were checked separately against the corresponding Illustrative Mathematics / Kendall Hunt preparation/lesson references. These are **bounded source and persisted-body SHA-guarded candidate learner corrections**, and they preserve original source packs and official outcome mappings. Their engineering regression, staging and licensing/human L1-L7 gates remain required; neither the number of corrections nor a green PR test counts as an academic certificate.
 
+## Six more locally cross-checked source-grounded instructional corrections
+
+The authorized local Grade 1 Illustrative Mathematics/Kendall Hunt teacher preparation HTML files were read in **read-only mode** at `C:\Users\khali\Downloads\New folder (2)\Common Core\01_Grade_1_IM_K5\Exact_Sources`. Six relevant files were matched against lesson identities, learning goals and source SHA-256 hashes; exact local file fingerprints and original content guards are recorded in [G01-six-local-source-verified-corrections.json](G01-six-local-source-verified-corrections.json).
+
+- `G1:U01:L07` — categorize pattern blocks, counters and inch tiles and report actual frequencies.
+- `G1:U01:L11` — interpret class-pet tallies, verify true/false data statements.
+- `G1:U06:L03` — **choose** a common third object and compare lengths indirectly, rather than merely count identical length units.
+- `G1:U07:L13` — read/write analog clock times to whole hours, rather than linear measurement steps.
+- `G1:U07:L04` — draw flat polygons using dot paper and identify defining properties.
+- `G1:U07:L07` — **compose** larger 2D shapes from smaller pattern blocks.
+
+These authored repairs are guarded by exact lesson codes, canonical SHA, original English body SHA, outcome codes and source URLs. **No local files were modified.** The linked HTML pages are teacher-preparation goals rather than complete independent proof of student visual delivery, question correctness, licensing rights or L7 signoff. All six remain **not academically certified** until the L1–L7 grade plan is fulfilled.
+
 ## Required next actions, still **within Grade 1**
 
 1. Compare original raw source with the actual content materialized into Rich V2, especially prior repairs U01:L13, U01:L15 and U04:L03; never label the old raw defect as a live defect without verification.
