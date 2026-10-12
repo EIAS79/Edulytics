@@ -34,6 +34,10 @@ public sealed class CommonCoreG1CountAndAddPilotCorrectionTests
         var (doc, lesson, en) = Effective();
         Assert.Equal(CommonCoreG1CountAndAddPilotCorrection.CorrectedVersion,
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc, lesson));
+        // Independently recomputed from the fixed source-corrected learner body.
+        // Fail closed if a later change invalidates certified lesson evidence.
+        Assert.Equal("2555913fbe468d3a3733aa5f3ead3642d7ff46767b952c95566fc62256506680",
+            CanonicalLessonContentMaterializer.ComputeLessonFingerprint(doc, lesson));
         Assert.Equal(new[] { "CCSS:1.OA.C.5", "CCSS:1.OA.C.6" }, lesson.OutcomeCodes);
 
         Assert.Contains("16 counters", en.WorkedExamples);
