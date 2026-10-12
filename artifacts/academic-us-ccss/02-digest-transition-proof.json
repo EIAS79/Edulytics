@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "scope": "US-CCSS-MATH/CCSSM-2010/G1-G12",
+  "sourceCommitSha": "fd72849823ae31b92e58fb420a373218fc25b328",
+  "originalToFiveFix": "ff7ed43424c744515341defc0324701e49ca9c02701f918e99e9c27ba751fded",
+  "fiveToSixFix": "b9e10bdceab9cb587ba9ea25797336d85b9ef76442b8783dff0ef770696c747f",
+  "sixToNineFix": "be9a88634c634bd75cc102cbadf556f3791daaa003f2874d7d458cfc27da4e87",
+  "expectedCurrentPredecessorDigest": "b9e10bdceab9cb587ba9ea25797336d85b9ef76442b8783dff0ef770696c747f",
+  "targetDigest": "be9a88634c634bd75cc102cbadf556f3791daaa003f2874d7d458cfc27da4e87",
+  "targetedHighSchoolCodes": [
+    "CCSS:HSA-SSE.A.2",
+    "CCSS:HSA-APR.C.4",
+    "CCSS:HSN-RN.A.1"
+  ],
+  "source": "Committed guarded seeder and correction manifests; disposable PostgreSQL CI evidence in PR #459",
+  "actualLiveStatus": "SEE_02_LIVE_NEON_READONLY_PROOF",
+  "productionMutationApproved": false,
+  "releaseGate": "NO-GO",
+  "constraints": [
+    "Independent production snapshot and rehearsed restore",
+    "Exact predecessor import digest and each old standard ContentHash/text SHA",
+    "Three affected standards only",
+    "Exact target canonical node/link counts",
+    "Post-write digest and individual row verification",
+    "Authorized release owner and rollback decision"
+  ]
+}

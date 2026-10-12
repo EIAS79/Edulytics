@@ -413,6 +413,38 @@
                                     {
                                         <span> — @item.Pathway</span>
                                     }
+                                    @if (item.FrameworkCode == "US-CCSS-MATH" &&
+                                        item.LogicalLevel is >= 10 and <= 13 &&
+                                        item.Pathway == "Course/pathway mapping")
+                                    {
+                                        <p role="alert" class="academic-help">
+                                            Course selection required before high-school lesson Practice.
+                                            This choice changes the adopted course for all linked classes.
+                                        </p>
+                                        @if (canManageAcademic)
+                                        {
+                                            <form asp-action="ReconcileLegacyUsHighSchoolCourse" method="post">
+                                                <input type="hidden" name="curriculumAdoptionId" value="@item.Id" />
+                                                <input type="hidden" name="rowVersion"
+                                                       value="@Convert.ToBase64String(item.RowVersion)" />
+                                                <label for="legacy-course-@item.Id">Confirm the school's actual course</label>
+                                                <select id="legacy-course-@item.Id"
+                                                        name="curriculumLevelKey" required>
+                                                    <option value="">Choose course (no default)</option>
+                                                    @foreach (var course in explicitCurriculum.AvailableLevels
+                                                        .Where(x => x.AcademicProgramId == item.AcademicProgramId &&
+                                                            x.LogicalLevel == item.LogicalLevel &&
+                                                            x.CourseCode is not null))
+                                                    {
+                                                        <option value="@course.LevelKey">@course.DisplayLabel</option>
+                                                    }
+                                                </select>
+                                                <button class="school-button school-button-small" type="submit">
+                                                    Confirm course
+                                                </button>
+                                            </form>
+                                        }
+                                    }
                                 </td>
                             </tr>
                         }

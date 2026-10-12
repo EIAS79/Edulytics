@@ -30,7 +30,10 @@ public enum ExplicitCurriculumLevelErrorCode
     OfficialOutcomeNotFound = 20,
     DuplicateOutcomeCode = 21,
     DuplicateOutcomeOrder = 22,
-    PersistenceError = 23
+    PersistenceError = 23,
+    LegacyCourseSelectionRequired = 24,
+    CourseLevelMismatch = 25,
+    StaleCourseSelection = 26
 }
 
 public sealed record ExplicitCurriculumLevelCommandResult(
@@ -69,7 +72,10 @@ public sealed record ExplicitCurriculumLevelOption(
     string Label,
     string Stage,
     string? Pathway,
-    string DisplayLabel);
+    string DisplayLabel)
+{
+    public string? CourseCode { get; init; }
+}
 
 public sealed record ExplicitCurriculumAdoptionItem(
     Guid Id,
@@ -85,7 +91,10 @@ public sealed record ExplicitCurriculumAdoptionItem(
     int LogicalLevel,
     string Label,
     string Stage,
-    string? Pathway);
+    string? Pathway)
+{
+    public byte[] RowVersion { get; init; } = [];
+}
 
 public sealed record ExplicitCurriculumLevelDashboard(
     IReadOnlyList<ExplicitCurriculumLevelOption> AvailableLevels,
@@ -95,6 +104,11 @@ public sealed record AdoptExplicitCurriculumLevelRequest(
     Guid AcademicYearId,
     Guid AcademicProgramId,
     string CurriculumLevelKey);
+
+public sealed record ReconcileLegacyUsHighSchoolCourseRequest(
+    Guid CurriculumAdoptionId,
+    string CurriculumLevelKey,
+    byte[] ExpectedRowVersion);
 
 public sealed record CreateClassForCurriculumLevelRequest(
     Guid AcademicYearId,
@@ -127,6 +141,11 @@ public interface IExplicitCurriculumLevelService
     Task<ExplicitCurriculumLevelCommandResult> AdoptLevelAsync(
         Guid actorUserId,
         AdoptExplicitCurriculumLevelRequest request,
+        CancellationToken cancellationToken = default);
+
+    Task<ExplicitCurriculumLevelCommandResult> ReconcileLegacyUsHighSchoolCourseAsync(
+        Guid actorUserId,
+        ReconcileLegacyUsHighSchoolCourseRequest request,
         CancellationToken cancellationToken = default);
 
     Task<ExplicitCurriculumLevelCommandResult> CreateClassAsync(
@@ -216,7 +235,7 @@ public sealed class ExplicitCurriculumLevelService : IExplicitCurriculumLevelSer
                         level.Label,
                         level.Stage,
                         level.Pathway,
-                        level.DisplayLabel))
+                        level.DisplayLabel) { CourseCode = level.CourseCode })
                     .ToArray();
             })
             .OrderBy(x => x.AcademicProgramName)
@@ -225,6 +244,8 @@ public sealed class ExplicitCurriculumLevelService : IExplicitCurriculumLevelSer
             .ToArray();
 
         var yearNames = snapshot.AcademicYears.ToDictionary(x => x.Id, x => x.Name);
+        var adoptionVersions = snapshot.CurriculumAdoptions
+            .ToDictionary(x => x.Id, x => x.RowVersion);
         var adoptions = contexts
             .Where(x =>
                 x.AdoptionId != Guid.Empty &&
@@ -245,7 +266,10 @@ public sealed class ExplicitCurriculumLevelService : IExplicitCurriculumLevelSer
                 x.CurriculumLogicalLevel!.Value,
                 x.CurriculumLevelLabel ?? string.Empty,
                 x.CurriculumStage ?? string.Empty,
-                x.CurriculumPathway))
+                x.CurriculumPathway)
+            {
+                RowVersion = adoptionVersions.GetValueOrDefault(x.AdoptionId) ?? []
+            })
             .OrderByDescending(x => x.AcademicYearName)
             .ThenBy(x => x.AcademicProgramName)
             .ThenBy(x => x.LogicalLevel)
@@ -378,6 +402,89 @@ public sealed class ExplicitCurriculumLevelService : IExplicitCurriculumLevelSer
 
         await _academic.AddAsync(adoption, cancellationToken);
         return Map(await _academic.SaveAsync(cancellationToken));
+    }
+
+    // An authorized school supervisor must explicitly choose ONE source-backed
+    // US high-school course. This method never silently migrates legacy rows.
+    public async Task<ExplicitCurriculumLevelCommandResult> ReconcileLegacyUsHighSchoolCourseAsync(
+        Guid actorUserId,
+        ReconcileLegacyUsHighSchoolCourseRequest request,
+        CancellationToken cancellationToken = default)
+    {
+        var scope = await ResolveSupervisorScopeAsync(actorUserId, cancellationToken);
+        if (!scope.Succeeded)
+            return Fail(scope.Error!.Value);
+
+        if (request.CurriculumAdoptionId == Guid.Empty ||
+            request.ExpectedRowVersion is null || request.ExpectedRowVersion.Length == 0)
+            return Fail(nameof(request.CurriculumAdoptionId),
+                ExplicitCurriculumLevelErrorCode.StaleCourseSelection);
+
+        var selected = CurriculumLevelIdentityRegistry.Find(request.CurriculumLevelKey);
+        if (selected is null ||
+            selected.PackCode != MathematicsCurriculumPackRegistry.CommonCoreCode ||
+            selected.LogicalLevel is < 10 or > 13 ||
+            string.IsNullOrWhiteSpace(selected.CourseCode) ||
+            CurriculumLevelIdentityRegistry.IsUnresolvedAmericanHighSchoolPathway(selected))
+            return Fail(nameof(request.CurriculumLevelKey),
+                ExplicitCurriculumLevelErrorCode.LegacyCourseSelectionRequired);
+
+        var schoolId = scope.School!.Id;
+        var adoption = await _academic.GetCurriculumAdoptionAsync(
+            schoolId, request.CurriculumAdoptionId, cancellationToken);
+        if (adoption is null || !adoption.IsActive)
+            return Fail(nameof(request.CurriculumAdoptionId),
+                ExplicitCurriculumLevelErrorCode.CurriculumAdoptionNotFound);
+
+        if (!adoption.RowVersion.SequenceEqual(request.ExpectedRowVersion))
+            return Fail(nameof(request.CurriculumAdoptionId),
+                ExplicitCurriculumLevelErrorCode.StaleCourseSelection);
+
+        // Refuse already-selected, unrelated, or ambiguously imported courses.
+        var old = CurriculumLevelIdentityRegistry.Find(adoption.CurriculumLevelKey);
+        if (old is null ||
+            !CurriculumLevelIdentityRegistry.IsUnresolvedAmericanHighSchoolPathway(old) ||
+            adoption.CurriculumLogicalLevel != selected.LogicalLevel ||
+            !string.Equals(adoption.CurriculumPathway, "Course/pathway mapping",
+                StringComparison.Ordinal))
+            return Fail(nameof(request.CurriculumLevelKey),
+                ExplicitCurriculumLevelErrorCode.CourseLevelMismatch);
+
+        var activeFrameworkId = await _curriculum.GetActivePlatformFrameworkVersionIdAsync(
+            MathematicsCurriculumPackRegistry.CommonCoreCode, cancellationToken);
+        if (!activeFrameworkId.HasValue ||
+            activeFrameworkId.Value != adoption.FrameworkVersionId)
+            return Fail(nameof(request.CurriculumAdoptionId),
+                ExplicitCurriculumLevelErrorCode.CourseLevelMismatch);
+
+        if (_subjectSupervisorAssignments is not null)
+        {
+            var assignments = await _subjectSupervisorAssignments
+                .ListActiveBySupervisorAsync(schoolId, actorUserId, cancellationToken);
+            if (!assignments.Any(x => x.SubjectId == adoption.SubjectId))
+                return Fail(ExplicitCurriculumLevelErrorCode.AccessDenied);
+        }
+
+        var snapshot = await _academic.GetSnapshotAsync(schoolId, cancellationToken);
+        if (snapshot.CurriculumAdoptions.Any(x =>
+            x.Id != adoption.Id &&
+            x.IsActive &&
+            x.AcademicYearId == adoption.AcademicYearId &&
+            x.AcademicProgramId == adoption.AcademicProgramId &&
+            x.SubjectId == adoption.SubjectId &&
+            string.Equals(x.CurriculumLevelKey, selected.Key, StringComparison.Ordinal)))
+            return Fail(nameof(request.CurriculumLevelKey),
+                ExplicitCurriculumLevelErrorCode.DuplicateCurriculumAdoption);
+
+        // Do not touch grade placement, school/class/student links or past results.
+        // Use the original row version to reject competing administrator updates.
+        adoption.CurriculumLevelKey = selected.Key;
+        adoption.CurriculumLevelLabel = selected.Label;
+        adoption.CurriculumStage = selected.Stage;
+        adoption.CurriculumPathway = selected.Pathway;
+        adoption.UpdatedAtUtc = DateTime.UtcNow;
+        return Map(await _academic.SaveWithRowVersionAsync(
+            adoption, request.ExpectedRowVersion, cancellationToken));
     }
 
     public async Task<ExplicitCurriculumLevelCommandResult> CreateClassAsync(

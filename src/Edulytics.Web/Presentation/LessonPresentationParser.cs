@@ -1228,6 +1228,10 @@ public static class LessonPresentationParser
     private static string NormalizeText(
         string value)
     {
+        // Decoding &#160; and &nbsp; produces a non-breaking space. In
+        // learner-facing prose it must behave like normal whitespace.
+        value = value.Replace('\u00A0', ' ');
+
         var result =
             Regex.Replace(
                 value,

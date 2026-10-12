@@ -644,6 +644,62 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                                     : Array.Empty<CurriculumLessonContentTranslation>());
                     }
 
+                    if (CommonCoreG4MultiplesSourceCorrection
+                        .IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG4MultiplesSourceCorrection
+                            .ValidateExistingBodyBeforeUpgrade(
+                                document,
+                                sourceLesson,
+                                content.ContentVersion,
+                                translationsByContentId.TryGetValue(
+                                    content.Id, out var g4ExistingRows)
+                                    ? g4ExistingRows
+                                    : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG2StoryProblemsSourceCorrection
+                        .IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2StoryProblemsSourceCorrection
+                            .ValidateExistingBodyBeforeUpgrade(
+                                document,
+                                sourceLesson,
+                                content.ContentVersion,
+                                translationsByContentId.TryGetValue(
+                                    content.Id, out var g2ExistingRows)
+                                    ? g2ExistingRows
+                                    : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG2TapeDiagramAndStoryResolutionCorrection
+                        .IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG2TapeDiagramAndStoryResolutionCorrection
+                            .ValidateExistingBodyBeforeUpgrade(
+                                document,
+                                sourceLesson,
+                                content.ContentVersion,
+                                translationsByContentId.TryGetValue(
+                                    content.Id, out var g2U09ExistingRows)
+                                    ? g2U09ExistingRows
+                                    : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
+                    if (CommonCoreG1SourceGroundedInstructionalCorrections
+                        .IsTarget(document, sourceLesson))
+                    {
+                        CommonCoreG1SourceGroundedInstructionalCorrections
+                            .ValidateExistingBodyBeforeUpgrade(
+                                document,
+                                sourceLesson,
+                                content.ContentVersion,
+                                translationsByContentId.TryGetValue(
+                                    content.Id, out var g1ExistingRows)
+                                    ? g1ExistingRows
+                                    : Array.Empty<CurriculumLessonContentTranslation>());
+                    }
+
                     var canUpgradeReviewedCorrection =
                         CanonicalLessonContentMaterializer
                             .CanUpgradeExisting(

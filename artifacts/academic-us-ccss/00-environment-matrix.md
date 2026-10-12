@@ -1,26 +1,35 @@
-# Phase 00 — Connected environment verification matrix
+# PHASE 00 — verified source / deployment / database baseline
 
-**Observed:** 2026-10-11. **Scope:** `US-CCSS-MATH / CCSSM-2010`, Grades 1–12 (Kindergarten excluded).
-**Status:** **PARTIAL / NO-GO**. All live data inspection was **read-only**.
+**Scope:** `US-CCSS-MATH` • `CCSSM-2010` • Grades 1–12 only; Kindergarten excluded.
 
-| Boundary | Verified finding | Release meaning |
+**Code/input baseline:** `fd72849823ae31b92e58fb420a373218fc25b328` on `EIAS79/Edulytics/main` at start of this bounded audit. This SHA identifies the *inputs* to the audit, not the eventual academic release candidate or an internal certification decision.
+
+| System | Observed evidence | Meaning |
 |---|---|---|
-| GitHub | `EIAS79/Edulytics`, branch `docs/us-ccss-academic-certification-20261011` contains exact 13-phase plan and preliminary academic evidence tooling | Not merged to `main`; not a deployed certification |
-| Existing HS PR | [#461](https://github.com/EIAS79/Edulytics/pull/461) was open; four associated CI workflows passed for the previous reviewed head | Adds pathway choices but **not** per-course (`CourseCode`) adoption |
-| HS production defect | [#453](https://github.com/EIAS79/Edulytics/issues/453) open | Lesson-scoped Practice still needs safe exact course routing |
-| Render account / workspace | **Khalifa → My Workspace** (`tea-dakq3dh594qs7395pgt0`) | Explicit production target, not an assumption about another workspace |
-| Render production web service | `Edulytics` (`srv-dakq5n2fngtc73a62i10`), https://edulytics-4346.onrender.com | Latest checked deploy ID `dep-db5t2mh5efls73b0rb30` at SHA `4dfbfcac04cc900076c8f7af744b3576131d78f2`, status `live`; **not** proof of full user journey |
-| Render staging (last service inventory) | `edulytics-v2-neon-staging` (`srv-db42982d0e5s73fhvpd0`) was suspended with manual deployment | Real staging acceptance has **not** been signed off; not substituted by disposable CI |
-| Neon production | Project `tiny-lab-44877119`, branch `br-frosty-block-b52tnjky`, account `KHAlid` | Read-only SQL: **1,560** `PED:US-CCSS-MATH:%` lessons |
-| Neon HS school adoptions | **8** production adoptions still have `Course/pathway mapping` | Do not assign ALG1/GEO/ALG2 automatically; require authorized SchoolAdmin course choice |
-| Neon standard prose | Previous read-only check observed three guarded high-school exponent/notation corrections not yet applied | Must perform guarded, rehearsed migration; no ad hoc SQL against live data |
-| Current academic register | 363 parent standards, 121 child clauses; 0/121 full independent certification, 98 historical unreviewed source-text mismatches | Academic certification remains **NO-GO** |
-| User data | No production write, migration, school/adoption record update, sign-in with real account or deploy invoked in this evidence batch | User data remains untouched by this execution step |
+| GitHub | Main `fd72849823ae31b92e58fb420a373218fc25b328`; #461, #462, #463 merged | Technical change baseline, not signoff |
+| Render production | Service `srv-dakq5n2fngtc73a62i10`; verified live deploy `dep-db5v77gu01pc73f3b390` at exactly `fd728498...` | Technical application deployment |
+| HTTP | `/health/live`, `/health/ready`, `/account/login?culture=en`, `/` each returned HTTP 200 after prior deployment | Unauthenticated smoke only, **not** staging student/admin/teacher acceptance |
+| Neon production | Project `tiny-lab-44877119`, branch `br-frosty-block-b52tnjky`; canonical US import state content digest `b9e10bdceab9cb587ba9ea25797336d85b9ef76442b8783dff0ef770696c747f` | Live data is at six-source-corrections predecessor, not the nine-correction state |
+| Official standards | 363 parent and 121 child codes; source snapshot 60 pages | Reproducible source inventory, not semantic review |
+| Source lessons | 17 blueprints and 1,560 lessons; source URL for every lesson (V2 HS metadata lives in nested `Sources[]`) | Source fields known, independent license and teaching quality pending |
+| Live school routing | Eight `Course/pathway mapping` HS adoptions, zero confirmed new explicit HS course keys at preceding read-only check | No automatic course assignment; authorized individual school choice required |
+| Official HS repairs | Three persisted old-`ContentHash` values and import digest matched the protected before-state of the committed manifest | Exactly three **eligible for guarded review**, not permission to mutate production |
+| Backup/snapshot | 2026-10-11 attempt to create a fresh snapshot was rejected by Neon: `snapshots limit exceeded` | **Production canonical migration blocked** until a verifiable backup/rollback alternative and operations signoff exist |
+| Academic reviewers | No independent reviewers/signoff identities supplied | Full internal certification **NO-GO** |
 
-## Release controls
+All database reads in this closure batch were read-only. No SQL UPDATE or DELETE was executed against production. Do not use the unverified historical snapshot as an automatically equivalent fresh backup.
 
-1. Treat GitHub `main`, Render live SHA, and Neon canonical content digests as **three separately verified states**.
-2. `live` only establishes Render deployment status, not curriculum completeness.
-3. Resolve the eight ambiguous HS adoption rows by explicit verified course assignment, preserving school scope/history; do not silently mutate.
-4. Before any candidate production deployment: immutable candidate SHA, successful applicable CI, disposable migration rehearsal, authenticated real staging, independent academic review and sign-off, and authorized GO decision.
-5. No current evidence supports `ACADEMICALLY_CERTIFIED_FULL`. The strict gate must continue to exit nonzero until independently supported.
+## Reproducing the baseline
+
+```bash
+node tools/us-ccss-standards-audit.cjs --strict
+node tools/us-ccss-academic-evidence-ledger.cjs
+node tools/us-ccss-practice-semantic-gate.cjs --check
+node tools/us-ccss-source-provenance-audit.cjs
+node tools/us-ccss-official-adjudication-queue.cjs
+node tools/us-ccss-content-integrity-audit.cjs
+node tools/us-ccss-clause-gaps.cjs
+node tools/us-ccss-certification-gate.cjs --stage=predeploy --strict
+```
+
+**Gate 00 still PARTIAL**, because an independent academic reviewer and the ultimate approved immutable target SHA have not been established. This document must be refreshed against that release candidate before final decision.

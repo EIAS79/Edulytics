@@ -25,6 +25,10 @@ public static class CanonicalLessonContentMaterializer
             .ApplyApprovedCorrections(document);
         PolishLessonPracticeContentCorrections
             .ApplyApprovedCorrections(document);
+        CommonCoreG4MultiplesSourceCorrection.Apply(document);
+        CommonCoreG2StoryProblemsSourceCorrection.Apply(document);
+        CommonCoreG2TapeDiagramAndStoryResolutionCorrection.Apply(document);
+        CommonCoreG1SourceGroundedInstructionalCorrections.Apply(document);
 
         ValidateUnicode(document);
         CanonicalLessonContentPackContract.Validate(document);
@@ -165,11 +169,20 @@ public static class CanonicalLessonContentMaterializer
                     lesson,
                     official);
 
-        return CommonCoreRichContentCorrections
-            .GetExpectedContentVersion(
-                document,
-                lesson,
-                polish);
+        var commonCoreRich = CommonCoreRichContentCorrections
+            .GetExpectedContentVersion(document, lesson, polish);
+
+        var g4 = CommonCoreG4MultiplesSourceCorrection
+            .GetExpectedContentVersion(document, lesson, commonCoreRich);
+
+        var g2Story = CommonCoreG2StoryProblemsSourceCorrection
+            .GetExpectedContentVersion(document, lesson, g4);
+
+        var g2Tape = CommonCoreG2TapeDiagramAndStoryResolutionCorrection
+            .GetExpectedContentVersion(document, lesson, g2Story);
+
+        return CommonCoreG1SourceGroundedInstructionalCorrections
+            .GetExpectedContentVersion(document, lesson, g2Tape);
     }
 
     public static bool IsReviewedCorrectionTarget(
@@ -188,6 +201,14 @@ public static class CanonicalLessonContentMaterializer
         PolishLessonPracticeContentCorrections
             .IsTarget(document, lesson) ||
         CommonCoreRichContentCorrections
+            .IsTarget(document, lesson) ||
+        CommonCoreG4MultiplesSourceCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2StoryProblemsSourceCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG2TapeDiagramAndStoryResolutionCorrection
+            .IsTarget(document, lesson) ||
+        CommonCoreG1SourceGroundedInstructionalCorrections
             .IsTarget(document, lesson);
 
     public static bool CanUpgradeExisting(
@@ -222,6 +243,26 @@ public static class CanonicalLessonContentMaterializer
                 lesson,
                 existingContentVersion) ||
         CommonCoreRichContentCorrections
+            .CanUpgradeExisting(
+                document,
+                lesson,
+                existingContentVersion) ||
+        CommonCoreG4MultiplesSourceCorrection
+            .CanUpgradeExisting(
+                document,
+                lesson,
+                existingContentVersion) ||
+        CommonCoreG2StoryProblemsSourceCorrection
+            .CanUpgradeExisting(
+                document,
+                lesson,
+                existingContentVersion) ||
+        CommonCoreG2TapeDiagramAndStoryResolutionCorrection
+            .CanUpgradeExisting(
+                document,
+                lesson,
+                existingContentVersion) ||
+        CommonCoreG1SourceGroundedInstructionalCorrections
             .CanUpgradeExisting(
                 document,
                 lesson,
