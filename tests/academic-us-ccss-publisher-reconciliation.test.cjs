@@ -8,6 +8,10 @@ test('PHASE 05: all 17 source blueprint packs yield 106/15 child references repr
   [path.join(root,'tools/us-ccss-publisher-clause-reconciliation.cjs'),'--check'],
   {cwd:root,encoding:'utf8'});
  assert.equal(r.status,0,r.stderr||r.stdout);
+ const legacy = cp.spawnSync(process.execPath,
+  [path.join(root,'tools/us-ccss-clause-evidence.cjs'),'--check'],
+  {cwd:root,encoding:'utf8'});
+ assert.equal(legacy.status,0,legacy.stderr||legacy.stdout);
  const s=evidence.summary;
  assert.deepEqual([s.clauses,s.publisherExactReferenced,s.publisherUnresolved,
   s.previousLegacyExactReferenced,s.legacyFalseNegativeRepairs],[121,106,15,82,24]);
