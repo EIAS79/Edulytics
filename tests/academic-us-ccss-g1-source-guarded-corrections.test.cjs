@@ -33,7 +33,7 @@ const oldBody = en => createHash('sha256').update([
 ].join('\n') + '\n').digest('hex');
 
 test('exact three Grade 1 original bodies, source locations, standard arrays and persistent hashes are pinned', () => {
-  assert.ok(sourceBoundSeeder.includes('const int expectedSourceBoundCorrectionCount = 12 + 19 + 3;'));
+  assert.match(sourceBoundSeeder,/const int expectedSourceBoundCorrectionCount = 12 \+ 19 \+ 3(?: \+ \d+)*;/);;
   assert.ok(sourceBoundSeeder.includes('codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount'));
   assert.ok(materializer.includes('CommonCoreG1SourceGroundedInstructionalCorrections.Apply(document)'));
   assert.match(materializer, /CommonCoreG1SourceGroundedInstructionalCorrections\s*\.GetExpectedContentVersion/);

@@ -30,6 +30,20 @@ Three direct original-source mismatches now have **Edulytics-original, source- a
 
 **Evidence:** [G01-first-three-content-corrections.json](G01-first-three-content-corrections.json) and `tests/academic-us-ccss-g1-source-guarded-corrections.test.cjs`. This is an **engineering correction candidate**, NOT an independent mathematics approval, not authenticated Rich V2 browser verification, and not a production update. The raw source signals in the table below deliberately remain unchanged because the original publisher-derived pack is immutable and materialization supplies corrected student-facing text.
 
+## Seven additional verified source-topic corrections (engineering stage)
+
+The Grade 1 **same whole-grade review** has produced seven more targeted Edulytics-original corrections, as recorded in [G01-seven-topic-mismatch-corrections.json](G01-seven-topic-mismatch-corrections.json):
+
+- `G1:U04:L21`: compare 2-digit base-ten representations, including regrouped tens and ones, instead of only solving introductory addition.
+- `G1:U06:L02`: compare object lengths indirectly via the same third object, not the arithmetic warm-up.
+- `G1:U06:L05`: measure object length with connecting cubes, not cube and prism face geometry.
+- `G1:U07:L02`: construct composite 3D solids from smaller blocks, not merely name solid properties.
+- `G1:U07:L14`: clock hands at half past the hour, not number-talk sums.
+- `G1:U07:L15`: translate hour and half-hour clock faces into digital notation, not sums.
+- `G1:U07:L16`: draw/read challenging hour/half-hour clocks in a daily schedule, not addition within 100.
+
+Publisher purposes and learning goals were checked separately against the corresponding Illustrative Mathematics / Kendall Hunt preparation/lesson references. These are **bounded source and persisted-body SHA-guarded candidate learner corrections**, and they preserve original source packs and official outcome mappings. Their engineering regression, staging and licensing/human L1-L7 gates remain required; neither the number of corrections nor a green PR test counts as an academic certificate.
+
 ## Required next actions, still **within Grade 1**
 
 1. Compare original raw source with the actual content materialized into Rich V2, especially prior repairs U01:L13, U01:L15 and U04:L03; never label the old raw defect as a live defect without verification.

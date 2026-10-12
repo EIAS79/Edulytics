@@ -105,8 +105,8 @@ public sealed class MathematicsCanonicalLessonContentSeeder
 
         // Fail closed on source-bound technical release inventory drift:
         // 12 previous mathematics repairs + 19 entity display corrections
-        // + 3 exact new Grade 1 source-grounded learner-body repairs.
-        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3;
+        // + 3 first Grade 1 repairs + 7 further source-grounded G1 content repairs.
+        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3 + 7;
         if (codes.Length != expectedSourceBoundCorrectionCount ||
             codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount)
             throw new InvalidOperationException(
