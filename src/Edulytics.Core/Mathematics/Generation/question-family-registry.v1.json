@@ -5669,6 +5669,44 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g2.hundreds_as_tens",
+      "version": 1,
+      "skillId": "usccss.g2.hundreds_place_value",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "integer",
+      "verificationPolicy": "independent-recomputation-from-original-question-parameters",
+      "representations": [
+        "base-ten-bundles",
+        "place-value",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.g2.hundreds_digit_to_number",
+      "version": 1,
+      "skillId": "usccss.g2.hundreds_place_value",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "integer",
+      "verificationPolicy": "independent-recomputation-from-original-question-parameters",
+      "representations": [
+        "base-ten-bundles",
+        "place-value",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
     }
   ],
   "variantPolicy": {
