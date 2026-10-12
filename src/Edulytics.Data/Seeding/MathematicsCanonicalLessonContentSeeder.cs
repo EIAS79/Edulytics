@@ -104,9 +104,11 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         var codes = targets.Select(x => x.Lesson.LessonCode).ToArray();
 
         // Fail closed on source-bound technical release inventory drift:
-        // 12 previous mathematics repairs + 19 entity display corrections.
-        if (codes.Length != 31 ||
-            codes.Distinct(StringComparer.Ordinal).Count() != 31)
+        // 12 previous mathematics repairs + 19 entity display corrections
+        // + 3 exact new Grade 1 source-grounded learner-body repairs.
+        const int expectedSourceBoundCorrectionCount = 12 + 19 + 3;
+        if (codes.Length != expectedSourceBoundCorrectionCount ||
+            codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount)
             throw new InvalidOperationException(
                 "Source-bound Common Core JSON metadata correction inventory drift.");
 

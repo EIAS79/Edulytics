@@ -153,6 +153,27 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
         "Mistake: using a negative one-digit subtraction example rather than " +
         "the intended tens relationship. Correction: model 60 - 10 = 50 with towers.";
 
+    public const string CountBackOneOrTwoLessonCode = "PED:US-CCSS-MATH:G1:U01:L04";
+    public const string CountBackOneOrTwoVersion = "us-ccss-g1-u01-l04-count-back-one-two-v1";
+    public const string CountBackOneOrTwoConcepts = "Learning goal: Subtract 1 or 2 within 10 by counting backward one step for each counter removed. When you begin at 6 and remove 2, count 5, 4 to find 4 left. You can show each subtraction on a ten-frame or number path. Addition checks a subtraction: 6 - 2 = 4 because 4 + 2 = 6.";
+    public const string CountBackOneOrTwoExamples = "Example 1 — Subtract one: Show 6 counters. Remove 1 counter; 5 remain. The matching equation is 6 - 1 = 5. Check 5 + 1 = 6.\nExample 2 — Subtract two: On a number path, start at 6 and take two steps back: 6 to 5, then 5 to 4. Therefore 6 - 2 = 4.\nExample 3 — Another starting number: Begin at 8, count back one to 7. Thus 8 - 1 = 7 and 7 + 1 = 8.\nExample 4 — Reach zero: Put out 2 counters, take both away, and see 0 left. Therefore 2 - 2 = 0.";
+    public const string CountBackOneOrTwoSteps = "Step 1: Read the starting quantity and the number being taken away (for example, 6 and 2).\nStep 2: Put 6 counters on a ten-frame or mark 6 on a number path.\nStep 3: Remove 2 counters or move back two distinct steps: from 6 to 5, then to 4.\nStep 4: State the remaining quantity and equation: 6 - 2 = 4.\nStep 5: Check by adding the removed amount back: 4 + 2 = 6.";
+    public const string CountBackOneOrTwoMistakes = "Mistake: counting the starting number 6 as the first backward step. Correction: the first step from 6 lands on 5, and the second lands on 4.\nMistake: adding 2 instead of subtracting it. Correction: removal makes the quantity smaller or the same, never larger.\nMistake: writing 6 - 2 = 5 after one step. Correction: make two moves or remove two physical counters.";
+
+    public const string CenterAddSubtractLessonCode = "PED:US-CCSS-MATH:G1:U01:L10";
+    public const string CenterAddSubtractVersion = "us-ccss-g1-u01-l10-center-add-subtract-v1";
+    public const string CenterAddSubtractConcepts = "Learning goals: Add and subtract within 10 and explain how one addition fact helps solve a related subtraction fact. Use connecting cubes, a ten-frame, or counting on and back. A missing addend can be found by subtraction: 6 + ? = 10 means 10 - 6 = 4. Each number in a fact must match the represented cubes.";
+    public const string CenterAddSubtractExamples = "Example 1 — Make 10 with cubes. Place 6 red and 4 blue cubes into a ten-frame; all ten spaces are full. Write 6 + 4 = 10.\nExample 2 — Take away from 10. Keep the same frame but remove 4 blue cubes. Six red cubes remain: 10 - 4 = 6. Check that 6 + 4 = 10.\nExample 3 — Find the missing part. A frame holds 7 counters. How many more reach 10? Three empty spaces show 7 + 3 = 10; 10 - 7 = 3.\nExample 4 — Subtract within 10. Start with 9 cubes, hide 2, and count 7 visible cubes: 9 - 2 = 7. Check 7 + 2 = 9.";
+    public const string CenterAddSubtractSteps = "Step 1: Identify what is known: a whole, its parts, and whether the question asks for a sum or a part.\nStep 2: Model the numbers with a ten-frame or two colors of counters. For 6 and 4, fill 6 red spaces and 4 blue spaces.\nStep 3: Write and solve the addition equation: 6 + 4 = 10.\nStep 4: Remove the four blue counters and write the related subtraction: 10 - 4 = 6.\nStep 5: Check each expression against the ten-frame and explain how addition and subtraction undo one another.";
+    public const string CenterAddSubtractMistakes = "Mistake: treating a quoted classroom reflection as a solved math example. Correction: give a numerical problem and its worked solution.\nMistake: writing 10 - 4 = 4 after four counters are removed. Correction: count the six remaining counters and verify 6 + 4 = 10.\nMistake: reading a missing-addend equation as a command to add 10. Correction: show the known part and count the empty spaces to find the unknown.";
+
+    public const string PuppiesTulipsCompareLessonCode = "PED:US-CCSS-MATH:G1:U06:L17";
+    public const string PuppiesTulipsCompareVersion = "us-ccss-g1-u06-l17-puppies-tulips-compare-v1";
+    public const string PuppiesTulipsCompareConcepts = "Learning goals: Tell, model, and solve Compare story problems about puppies and origami tulips using 'more' and 'fewer'. Compare two non-negative quantities by matching objects one-to-one, then count the unmatched objects. Use addition to find a larger group given the smaller group and the difference, or subtraction to find the difference when both groups are known.";
+    public const string PuppiesTulipsCompareExamples = "Example 1 — Find the difference. Lina makes 7 puppy models and 4 tulips. Match four puppies to four tulips; three puppies remain unmatched. She has 7 - 4 = 3 more puppies than tulips.\nExample 2 — Fewer means the same difference. In the same display, there are 3 fewer tulips than puppies because 4 + 3 = 7.\nExample 3 — Find the larger group. Amir makes 5 tulips and 3 more puppies than tulips. He makes 5 + 3 = 8 puppies. Check 8 - 5 = 3.\nExample 4 — Find the smaller group. There are 9 puppies, which is 2 more than the number of tulips. Let t be the tulip count: t + 2 = 9, so t = 7. Check 9 - 7 = 2.";
+    public const string PuppiesTulipsCompareSteps = "Step 1: Read the two types of objects and decide whether 'more' or 'fewer' compares their counts.\nStep 2: Draw or place one marker for each puppy and each tulip; pair as many markers as possible.\nStep 3: If both counts are known, subtract the smaller from the larger: 7 - 4 = 3 unpaired puppy models.\nStep 4: If one count and the difference are known, add or subtract to find the missing group: 5 + 3 = 8 puppies.\nStep 5: Check the story, units, and equation by matching groups or using the inverse fact.";
+    public const string PuppiesTulipsCompareMistakes = "Mistake: subtracting the greater count from the smaller and reporting a negative number of models. Correction: difference in this story is 7 - 4 = 3 unmatched objects.\nMistake: treating 'more' as an instruction to add in every story. Correction: if both counts are given, subtract to find how many more.\nMistake: omitting what the number represents. Correction: say '3 more puppy models than tulips' instead of only '3'.";
+
     private static readonly IReadOnlyDictionary<string, Repair> Repairs =
         new Dictionary<string, Repair>(StringComparer.Ordinal)
         {
@@ -178,7 +199,43 @@ public static class CommonCoreG1SourceGroundedInstructionalCorrections
                 TensVersion,
                 ["CCSS:1.NBT.B.2", "CCSS:1.NBT.C.4", "CCSS:1.NBT.C.5",
                  "CCSS:1.NBT.C.6", "CCSS:1.OA.C.5", "CCSS:1.OA.C.6", "CCSS:1.OA.D.8"],
-                OldTensSteps, TensConcepts, TensExamples, TensSteps, TensMistakes)
+                OldTensSteps, TensConcepts, TensExamples, TensSteps, TensMistakes),
+            [CountBackOneOrTwoLessonCode] = new Repair(
+                CountBackOneOrTwoLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-4/preparation.html",
+                "8806fa7a4977ea12d0c5bb3fe2dd20d8f04e440f4c64ca2ac4b4849234c7cbd4",
+                "5041bfe615b64551b0fc59735b02065bcc4a6036ebea865faaf769e608f17eec",
+                CountBackOneOrTwoVersion,
+                ["CCSS:1.OA.C.5", "CCSS:1.OA.C.6"],
+                "Step 1: Identify the two quantities, 6 and 1.\nStep 2: Start at 6 and count on 1 more, or combine the two groups.\nStep 3: The total is 7, so 6 + 1 = 7.\nStep 4: Check that the result matches the quantities and the lesson goal.",
+                CountBackOneOrTwoConcepts,
+                CountBackOneOrTwoExamples,
+                CountBackOneOrTwoSteps,
+                CountBackOneOrTwoMistakes),
+            [CenterAddSubtractLessonCode] = new Repair(
+                CenterAddSubtractLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-10/preparation.html",
+                "522589f8997d542348d02624d4a654a6643134cc7b052355d2e1a0caf4e3b5cd",
+                "287e0dcb25fc726798717075fc858e5f4cf529eead1b35837835ccfc2f7a20b8",
+                CenterAddSubtractVersion,
+                ["CCSS:1.OA.B.4", "CCSS:1.OA.C.5", "CCSS:1.OA.C.6"],
+                "Step 1: Represent the quantities or objects in the task.\nStep 2: Describe the relationship or pattern you notice.\nStep 3: Use the lesson key idea to reach a conclusion.\nStep 4: Check the conclusion against the original task.",
+                CenterAddSubtractConcepts,
+                CenterAddSubtractExamples,
+                CenterAddSubtractSteps,
+                CenterAddSubtractMistakes),
+            [PuppiesTulipsCompareLessonCode] = new Repair(
+                PuppiesTulipsCompareLessonCode,
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-17/preparation.html",
+                "b54d271acd6cde5e44bd8ac7b7b7dc694be00b109c6316c2e09d329cac57f3bd",
+                "39bce6dd35872fc984af0b9017b8c7c61be8abc23c678db5b0b10f93c462e9dd",
+                PuppiesTulipsCompareVersion,
+                ["CCSS:1.OA.A.1", "CCSS:1.OA.C.6"],
+                "Step 1: Identify the two quantities, 2 and 5.\nStep 2: Start at 2 and count on 5 more, or combine the two groups.\nStep 3: The total is 7, so 2 + 5 = 7.\nStep 4: Check that the result matches the quantities and the lesson goal.",
+                PuppiesTulipsCompareConcepts,
+                PuppiesTulipsCompareExamples,
+                PuppiesTulipsCompareSteps,
+                PuppiesTulipsCompareMistakes)
         };
 
     public static bool IsTarget(CanonicalLessonContentPackDocument document,

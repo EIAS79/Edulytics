@@ -20,10 +20,20 @@
 | Earlier corrected negative example still in original pack | 2 | Do not re-fix until effective materialized body checked |
 | Earlier corrected data mismatch still in original pack | 1 | Do not re-fix until effective materialized body checked |
 
+## Guarded correction implementation after the initial source screen
+
+Three direct original-source mismatches now have **Edulytics-original, source- and stored-body-SHA-guarded learner-content corrections** in the canonical materializer:
+
+- `G1:U01:L04` — subtract 1 or 2 with fully worked count-back and ten-frame explanations (instead of addition-only examples).
+- `G1:U01:L10` — teach add/subtract within 10 using a ten-frame and related facts (instead of quoted teacher reflection and raw SVG `<path>` markup).
+- `G1:U06:L17` — use puppy/tulip comparison problems with valid non-negative whole-number answers.
+
+**Evidence:** [G01-first-three-content-corrections.json](G01-first-three-content-corrections.json) and `tests/academic-us-ccss-g1-source-guarded-corrections.test.cjs`. This is an **engineering correction candidate**, NOT an independent mathematics approval, not authenticated Rich V2 browser verification, and not a production update. The raw source signals in the table below deliberately remain unchanged because the original publisher-derived pack is immutable and materialization supplies corrected student-facing text.
+
 ## Required next actions, still **within Grade 1**
 
 1. Compare original raw source with the actual content materialized into Rich V2, especially prior repairs U01:L13, U01:L15 and U04:L03; never label the old raw defect as a live defect without verification.
-2. Prioritize the direct source mismatches at U01:L04 (subtraction lesson taught addition), U01:L10 (inline SVG/path site fragment), and U06:L17 (negative answer inappropriate for Grade 1). Verify official publisher page/edition and create tightly guarded original corrections only if not already superseded.
+2. Validate the now-authored guarded corrections for U01:L04, U01:L10 and U06:L17 with scoped CI, persisted-content version checks, and authenticated Rich V2 staging when authorized. Preserve the original source pack and do not count these corrections as academic signoffs.
 3. For every one of the 146 lessons, complete a source-grounded human/qualified mathematics review of the eight dimensions; establish actual question-family/assessment/grading, drawings and Rich V2 behavior; resolve L1–L6 evidence gates.
 4. Obtain real independent academic L7 approval for each lesson. Then generate **one final Grade 1 report covering all 146 lessons**. Do **not** move to Grade 2 or issue a false GO.
 
