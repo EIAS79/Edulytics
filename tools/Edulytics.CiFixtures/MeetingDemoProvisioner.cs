@@ -152,7 +152,7 @@ internal static class MeetingDemoProvisioner
             "primary",
             1,
             6,
-            5,
+            1, // Grade 1 student login for exact Count and Add pilot HTTPS
             6,
             null),
         new(
