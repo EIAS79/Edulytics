@@ -16,7 +16,6 @@ ENGINE = ROOT / "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEn
 WEB_POLICY = ROOT / "src/Edulytics.Web/GameRouting/MathematicsV2ProductMigrationPolicy.cs"
 WEB_RESOLVER = ROOT / "src/Edulytics.Web/GameRouting/GameLessonRouteResolver.cs"
 TESTS = ROOT / "tests/Edulytics.Tests/MathematicsIntelligence/Stage26To28ProductionClosureTests.cs"
-CURRENT = ROOT / "docs/roadmaps/CURRENT_PLAN.md"
 REPORT = ROOT / "artifacts/math-intelligence/stage26-28-production-closure-audit.json"
 
 EXPECTED_MODES = {"LegacyOnly", "ShadowV2", "V2VerifiedOnly", "V2Preferred", "V2Only"}
@@ -181,15 +180,9 @@ def audit() -> dict[str, Any]:
         if token not in tests:
             blockers.append(f"Final production acceptance coverage is missing token: {token}")
 
-    current = CURRENT.read_text(encoding="utf-8")
-    for token in [
-        "Programme Stage 26 — Security and resource controls: COMPLETE.",
-        "Programme Stage 27 — Observability: COMPLETE.",
-        "Programme Stage 28 — Production rollout: COMPLETE.",
-        "Integrated Mathematics Intelligence Master Execution Plan: COMPLETE",
-    ]:
-        if token not in current:
-            blockers.append(f"CURRENT_PLAN does not record final programme closure: {token}")
+    # The obsolete CURRENT_PLAN.md was deliberately deleted. Closure must
+    # come from the versioned manifest and actual source/tests validated above,
+    # not from a mutable prose claim of completion.
 
     return {
         "schemaVersion": 1,
